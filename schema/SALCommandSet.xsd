@@ -1,0 +1,52 @@
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+        elementFormDefault="unqualified"
+        attributeFormDefault="unqualified">
+
+  <xsd:annotation>
+    <xsd:documentation xml:lang="en">
+     SAL Command data item schema for LSST
+    </xsd:documentation>
+  </xsd:annotation>
+
+ <xsd:element name="SALCommandSet"   type="commandSetType"/>
+ <xsd:element name="SALCommand"      type="commandType"/>
+ <xsd:element name="SALCommandItem"  type="commandItemType"/>
+
+ <xsd:complexType name="commandItemType">
+    <xsd:sequence>
+        <xsd:element name="EFDB_Name"     type="xsd:string"/>
+        <xsd:element name="Description"   type="xsd:string"/>
+        <xsd:element name="IDL_Type"      type="xsd:string"/>
+        <xsd:element name="IDL_Size"      type="xsd:string"/>
+        <xsd:element name="Units"         type="xsd:string"/>
+        <xsd:element name="Count" type="xsd:positiveInteger"/>
+    </xsd:sequence>
+ </xsd:complexType>
+
+ <xsd:complexType name="commandType">
+   <xsd:sequence>
+      <xsd:element   name="Subsystem"     type="xsd:string"/>
+      <xsd:element   name="Version"       type="xsd:decimal"/>
+      <xsd:element   name="Author"        type="xsd:string"/>
+      <xsd:element   name="EFDB_Topic"    type="xsd:string"/>
+      <xsd:element   name="Alias"         type="xsd:string"/>
+      <xsd:element   name="Device"        type="xsd:string"/>
+      <xsd:element   name="Property"      type="xsd:string"/>
+      <xsd:element   name="Action"        type="xsd:string"/>
+      <xsd:element   name="Value"         type="xsd:string"/>
+      <xsd:element   name="Explanation"   minOccurs="0" maxOccurs="1"  type="xsd:anyURI"/>
+      <xsd:element   name="item" minOccurs="0" maxOccurs="unbounded" type="commandItemType"/>
+   </xsd:sequence>
+ </xsd:complexType>
+
+
+ <xsd:complexType name="commandSetType">
+ <xsd:sequence>
+    <xsd:element name="SALCommand" minOccurs="1" maxOccurs="unbounded" type="commandType"/>
+ </xsd:sequence>
+ </xsd:complexType>
+
+ <xsd:attribute name="updateDate"    type="xsd:date"/>
+
+</xsd:schema>
+

@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="SALCommandSet.xsl"?>
+<!-- Is there a web accessible version of the xsd that we can point to for validation -->
+<SALCommandSet xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+               xsi:noNamespaceSchemaLocation="SALCommandSet.xsd">
+
+    <SALCommand>
+        <Subsystem>camera</Subsystem>
+        <Version>2.4</Version>
+        <Author>salgenerator</Author>
+        <EFDB_Topic>camera_command_configure</EFDB_Topic>
+        <Alias>configure</Alias>
+        <!-- What does Device mean? -->
+        <Device>configure</Device>
+        <Property></Property>
+        <Action></Action>
+        <Value></Value>
+        <Explanation>http://sal.lsst.org/SAL/Commands/camera_command_configure.html</Explanation>
+        <item>
+            <EFDB_Name>specId</EFDB_Name>
+            <Description> </Description>
+            <IDL_Type>string</IDL_Type>
+            <Units> </Units>
+            <Count>1</Count>
+        </item>
+    </SALCommand>
+
+    <SALCommand>
+        <Subsystem>camera</Subsystem>
+        <Version>2.4</Version>
+        <Author>salgenerator</Author>
+        <EFDB_Topic>camera_command_setFilter</EFDB_Topic>
+        <Alias>setFilter</Alias>
+        <Device>filter</Device>
+        <!-- position does not look right, but I do not understand the significance
+        of Property, Action, Value -->
+        <Property>position</Property>
+        <Action></Action>
+        <Value></Value>
+        <Explanation>http://sal.lsst.org/SAL/Commands/camera_command_setFilter.html</Explanation>
+        <item>
+            <!-- Not clear if this the filter type (g-r-i-z-y-u) or explicit filter name 
+            e.g. u-123 -->
+            <EFDB_Name>name</EFDB_Name>
+            <Description> </Description>
+            <IDL_Type>string</IDL_Type>
+            <Units> </Units>
+            <Count>1</Count>
+        </item>
+    </SALCommand>
+
+    <SALCommand>
+        <Subsystem>camera</Subsystem>
+        <Version>2.4</Version>
+        <Author>salgenerator</Author>
+        <EFDB_Topic>camera_command_initGuiders</EFDB_Topic>
+        <Alias>initGuiders</Alias>
+        <Device>guiders</Device>
+        <Property>roi</Property>
+        <Action>set</Action>
+        <Value></Value>
+        <Explanation>http://sal.lsst.org/SAL/Commands/camera_command_initGuiders.html</Explanation>
+        <item>
+            <EFDB_Name>roiSpec</EFDB_Name>
+            <Description> </Description>
+            <!-- is it possible to define a structure here? We should at a minimum define
+            the format of the string. Perhaps: x:y:xSize:ySize:xBinning:yBinning:exposureTime -->
+            <IDL_Type>string</IDL_Type>
+            <Units> </Units>
+            <Count>8</Count>
+        </item>
+    </SALCommand>
+
+    <SALCommand>
+        <Subsystem>camera</Subsystem>
+        <Version>2.4</Version>
+        <Author>salgenerator</Author>
+        <EFDB_Topic>camera_command_takeImages</EFDB_Topic>
+        <Alias>takeImages</Alias>
+        <Device>imager</Device>
+        <Property>expose</Property>
+        <Action></Action>
+        <Value></Value>
+        <Explanation>http://sal.lsst.org/SAL/Commands/camera_command_takeImages.html</Explanation>
+        <item>
+            <EFDB_Name>numImages</EFDB_Name>
+            <Description> </Description>
+            <IDL_Type>long</IDL_Type>
+            <Units> </Units>
+            <Count>1</Count>
+        </item>
+        <item>
+            <EFDB_Name>expTime</EFDB_Name>
+            <Description> </Description>
+            <IDL_Type>double</IDL_Type>
+            <Units>Seconds</Units>
+            <Count>1</Count>
+        </item>
+        <item>
+            <EFDB_Name>shutter</EFDB_Name>
+            <Description>Whether to really open the shutter or not.</Description>
+            <IDL_Type>boolean</IDL_Type>
+            <Units> </Units>
+            <Count>1</Count>
+        </item>
+        <item>
+            <EFDB_Name>science</EFDB_Name>
+            <Description>Whether to read out the science rafts or not</Description>
+            <IDL_Type>boolean</IDL_Type>
+            <Units> </Units>
+            <Count>1</Count>
+        </item>
+        <item>
+            <EFDB_Name>guide</EFDB_Name>
+            <Description>Whether to read out the guiders or not</Description>
+            <IDL_Type>boolean</IDL_Type>
+            <Units> </Units>
+            <Count>1</Count>
+        </item>
+        <item>
+            <EFDB_Name>wfs</EFDB_Name>
+            <Description>Whether to read out the wavefront sensors or not</Description>
+            <IDL_Type>boolean</IDL_Type>
+            <Units> </Units>
+            <Count>1</Count>
+        </item>
+        <item>
+            <EFDB_Name>imageSequenceName</EFDB_Name>
+            <Description> </Description>
+            <IDL_Type>string</IDL_Type>
+            <Units> </Units>
+            <Count>1</Count>
+        </item>
+    </SALCommand>
+    
+    <SALCommand>
+        <Subsystem>camera</Subsystem>
+        <Version>2.4</Version>
+        <Author>salgenerator</Author>
+        <EFDB_Topic>camera_command_initImage</EFDB_Topic>
+        <Alias>initImage</Alias>
+        <Device>imager</Device>
+        <Property></Property>
+        <Action></Action>
+        <Value></Value>
+        <Explanation>http://sal.lsst.org/SAL/Commands/camera_command_initImage.html</Explanation>
+        <item>
+            <!-- It may make more sense for this to be an absolute TAI time -->
+            <EFDB_Name>deltaT</EFDB_Name>
+            <Description>Expected time for following initImages command</Description>
+            <IDL_Type>double</IDL_Type>
+            <Units>Seconds </Units>
+            <Count>1</Count>
+        </item>
+    </SALCommand>
+</SALCommandSet>

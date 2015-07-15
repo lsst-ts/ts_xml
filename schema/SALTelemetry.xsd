@@ -1,0 +1,96 @@
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+        xmlns:tlm="http://sal.lsst.org/SALTelemetry"
+        targetNamespace="http://sal.lsst.org/SALTelemetry"
+        elementFormDefault="unqualified"
+        attributeFormDefault="unqualified">
+
+  <xsd:annotation>
+    <xsd:documentation xml:lang="en">
+     SAL telemetry data item schema for LSST
+    </xsd:documentation>
+  </xsd:annotation>
+
+  <xsd:element name="SALTelemetry" type="tlm:SALTelemetryType"/>
+
+  <xsd:complexType name="SALTelemetryType">
+    <xsd:sequence>
+      <xsd:element   name="Subsystem"     type="xsd:string"/>
+      <xsd:element   name="Version"       type="xsd:decimal"/>
+      <xsd:element   name="Author"        type="xsd:string"/>
+      <xsd:element   name="item" minOccurs="1" maxOccurs="unbounded">
+        <xsd:complexType>
+          <xsd:sequence>
+
+              <xsd:element name="EFDB_Topic"    type="xsd:string"/>
+              <xsd:element name="EFDB_Name"     type="xsd:string"/>
+              <xsd:element name="Description"   type="xsd:string"/>
+
+              <xsd:element name="Frequency">
+                <xsd:simpleType>
+                  <xsd:restriction base="xsd:decimal">
+                  </xsd:restriction>
+                </xsd:simpleType>
+              </xsd:element>
+
+              <xsd:element name="Publishers">
+                <xsd:simpleType>
+                  <xsd:restriction base="xsd:positiveInteger">
+                  </xsd:restriction>
+                </xsd:simpleType>
+              </xsd:element>
+
+              <xsd:element name="Values_per_Publisher">
+                <xsd:simpleType>
+                  <xsd:restriction base="xsd:positiveInteger">
+                  </xsd:restriction>
+                </xsd:simpleType>
+              </xsd:element>
+
+              <xsd:element name="Size_in_bytes">
+                <xsd:simpleType>
+                  <xsd:restriction base="xsd:positiveInteger">
+                  </xsd:restriction>
+                </xsd:simpleType>
+              </xsd:element>
+
+              <xsd:element name="IDL_Type"        type="xsd:string"/>
+              <xsd:element name="Units"           type="xsd:string"/>
+              <xsd:element name="Conversion"      type="xsd:string"/>
+              <xsd:element name="Sensor_location" type="xsd:string"/>
+
+              <xsd:element name="Count">
+                <xsd:simpleType>
+                  <xsd:restriction base="xsd:positiveInteger">
+                  </xsd:restriction>
+                </xsd:simpleType>
+              </xsd:element>
+
+              <xsd:element name="Instances_per_night">
+                <xsd:simpleType>
+                  <xsd:restriction base="xsd:positiveInteger">
+                  </xsd:restriction>
+                </xsd:simpleType>
+              </xsd:element>
+
+              <xsd:element name="Bytes_per_night">
+                <xsd:simpleType>
+                  <xsd:restriction base="xsd:positiveInteger">
+                  </xsd:restriction>
+                </xsd:simpleType>
+              </xsd:element>
+
+              <xsd:element name="Needed_by_DM"     minOccurs="0" maxOccurs="1"  type="xsd:boolean"/>
+              <xsd:element name="Needed_by_Camera" minOccurs="0" maxOccurs="1"  type="xsd:boolean"/>
+              <xsd:element name="Needed_by_OCS"    minOccurs="0" maxOccurs="1"  type="xsd:boolean"/>
+              <xsd:element name="Needed_by_TCS"    minOccurs="0" maxOccurs="1"  type="xsd:boolean"/>
+              <xsd:element name="Needed_by_EPO"    minOccurs="0" maxOccurs="1"  type="xsd:boolean"/>
+              <xsd:element name="Explanation"      minOccurs="0" maxOccurs="1"  type="xsd:anyURI"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+    </xsd:sequence>
+    <xsd:attribute name="updateDate"    type="xsd:date"/>
+  </xsd:complexType>
+
+</xsd:schema>
+
