@@ -3,18 +3,6 @@
 <SALCommandSet xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:noNamespaceSchemaLocation="http://lsst-sal.tuc.noao.edu/schema/SALCommandSet.xsd">
 
-<SALCommand>
- <Subsystem>m1m3</Subsystem>
- <Version>2.5.2</Version>
- <Author>salgenerator</Author>
- <EFDB_Topic>m1m3_command_abort</EFDB_Topic>
- <Alias>abort</Alias>
- <Device>abort</Device>
- <Property></Property>
- <Action></Action>
- <Value></Value>
- <Explanation>http://sal.lsst.org/SAL/Commands/m1m3_command_abort.html</Explanation>
-</SALCommand>
 
 <SALCommand>
  <Subsystem>m1m3</Subsystem>
@@ -47,20 +35,15 @@
  <Action></Action>
  <Value></Value>
  <Explanation>http://sal.lsst.org/SAL/Commands/m1m3_command_status.html</Explanation>
+    <item>
+      <EFDB_Name>topic_name</EFDB_Name>
+      <Description> </Description>
+       <IDL_Type>string</IDL_Type>
+      <Units> </Units>
+      <Count>1</Count>
+    </item>
 </SALCommand>
 
-<SALCommand>
- <Subsystem>m1m3</Subsystem>
- <Version>2.5.2</Version>
- <Author>salgenerator</Author>
- <EFDB_Topic>m1m3_command_stop</EFDB_Topic>
- <Alias>stop</Alias>
- <Device>stop</Device>
- <Property></Property>
- <Action></Action>
- <Value></Value>
- <Explanation>http://sal.lsst.org/SAL/Commands/m1m3_command_stop.html</Explanation>
-</SALCommand>
 
 <SALCommand>
  <Subsystem>m1m3</Subsystem>
@@ -88,6 +71,25 @@
       <Count>1</Count>
     </item>
 </SALCommand>
+<SALCommand>
+ <Subsystem>m1m3</Subsystem>
+ <Version>2.5.2</Version>
+ <Author>salgenerator</Author>
+ <EFDB_Topic>m1m3_command_thermal</EFDB_Topic>
+ <Alias>update</Alias>
+ <Device>update</Device>
+ <Property>lut</Property>
+ <Action></Action>
+ <Value></Value>
+ <Explanation>http://sal.lsst.org/SAL/Commands/m1m3_command_update.html</Explanation>
+    <item>
+      <EFDB_Name>setpoint</EFDB_Name>
+      <Description> </Description>
+       <IDL_Type>double</IDL_Type>
+      <Units> </Units>
+      <Count>1</Count>
+    </item>
+</SALCommand>
 
 <SALCommand>
  <Subsystem>m1m3</Subsystem>
@@ -101,11 +103,11 @@
  <Value></Value>
  <Explanation>http://sal.lsst.org/SAL/Commands/m1m3_command_update.html</Explanation>
     <item>
-      <EFDB_Name>lut_id</EFDB_Name>
+      <EFDB_Name>lut</EFDB_Name>
       <Description> </Description>
-       <IDL_Type>string</IDL_Type>
+       <IDL_Type>double</IDL_Type>
       <Units> </Units>
-      <Count>1</Count>
+      <Count>120</Count>
     </item>
 </SALCommand>
 </SALCommandSet>

@@ -7,6 +7,19 @@
  <Subsystem>mount</Subsystem>
  <Version>2.5.2</Version>
  <Author>salgenerator</Author>
+ <EFDB_Topic>mount_command_closeMirrorCover</EFDB_Topic>
+ <Alias>closeMirrorCover</Alias>
+ <Device>mirrorCover</Device>
+ <Property>position</Property>
+ <Action></Action>
+ <Value></Value>
+ <Explanation>http://sal.lsst.org/SAL/Commands/mount_command_closeMirrorCover.html</Explanation>
+</SALCommand>
+
+<SALCommand>
+ <Subsystem>mount</Subsystem>
+ <Version>2.5.2</Version>
+ <Author>salgenerator</Author>
  <EFDB_Topic>mount_command_configure</EFDB_Topic>
  <Alias>configure</Alias>
  <Device>configure</Device>
@@ -27,37 +40,30 @@
  <Subsystem>mount</Subsystem>
  <Version>2.5.2</Version>
  <Author>salgenerator</Author>
- <EFDB_Topic>mount_command_moveCamWrap</EFDB_Topic>
- <Alias>moveCamWrap</Alias>
+ <EFDB_Topic>mount_command_disableCamWrap</EFDB_Topic>
+ <Alias>disableCamWrap</Alias>
  <Device>wrap</Device>
- <Property>position</Property>
+ <Property>mode</Property>
  <Action></Action>
  <Value></Value>
- <Explanation>http://sal.lsst.org/SAL/Commands/mount_command_moveCamWrap.html</Explanation>
-    <item>
-      <EFDB_Name>angle</EFDB_Name>
-      <Description> </Description>
-       <IDL_Type>double</IDL_Type>
-      <Units> </Units>
-      <Count>1</Count>
-    </item>
+ <Explanation>http://sal.lsst.org/SAL/Commands/mount_command_disableCamWrap.html</Explanation>
 </SALCommand>
 
 <SALCommand>
  <Subsystem>mount</Subsystem>
  <Version>2.5.2</Version>
  <Author>salgenerator</Author>
- <EFDB_Topic>mount_command_moveMirrorCover</EFDB_Topic>
- <Alias>moveMirrorCover</Alias>
- <Device>mirrorCover</Device>
- <Property>position</Property>
+ <EFDB_Topic>mount_command_enableCamWrap</EFDB_Topic>
+ <Alias>enableCamWrap</Alias>
+ <Device>wrap</Device>
+ <Property>mode</Property>
  <Action></Action>
  <Value></Value>
- <Explanation>http://sal.lsst.org/SAL/Commands/mount_command_moveMirrorCover.html</Explanation>
+ <Explanation>http://sal.lsst.org/SAL/Commands/mount_command_enableCamWrap.html</Explanation>
     <item>
-      <EFDB_Name>position</EFDB_Name>
+      <EFDB_Name>angle</EFDB_Name>
       <Description> </Description>
-       <IDL_Type>string</IDL_Type>
+       <IDL_Type>double</IDL_Type>
       <Units> </Units>
       <Count>1</Count>
     </item>
@@ -88,21 +94,75 @@
       <Units> </Units>
       <Count>1</Count>
     </item>
+    <item>
+      <EFDB_Name>cable_wrap</EFDB_Name>
+      <Description> </Description>
+       <IDL_Type>string</IDL_Type>
+      <Units> </Units>
+      <Count>1</Count>
+    </item>
 </SALCommand>
 
 <SALCommand>
  <Subsystem>mount</Subsystem>
  <Version>2.5.2</Version>
  <Author>salgenerator</Author>
- <EFDB_Topic>mount_command_test</EFDB_Topic>
- <Alias>test</Alias>
- <Device>all</Device>
- <Property>test</Property>
+ <EFDB_Topic>mount_command_openMirrorCover</EFDB_Topic>
+ <Alias>openMirrorCover</Alias>
+ <Device>mirrorCover</Device>
+ <Property>position</Property>
  <Action></Action>
  <Value></Value>
- <Explanation>http://sal.lsst.org/SAL/Commands/mount_command_test.html</Explanation>
+ <Explanation>http://sal.lsst.org/SAL/Commands/mount_command_openMirrorCover.html</Explanation>
+</SALCommand>
+
+<SALCommand>
+ <Subsystem>mount</Subsystem>
+ <Version>2.5.2</Version>
+ <Author>salgenerator</Author>
+ <EFDB_Topic>mount_command_stopMount</EFDB_Topic>
+ <Alias>stopMount</Alias>
+ <Device>axes</Device>
+ <Property>motion</Property>
+ <Action></Action>
+ <Value></Value>
+ <Explanation>http://sal.lsst.org/SAL/Commands/mount_command_stopMount.html</Explanation>
+</SALCommand>
+
+<SALCommand>
+ <Subsystem>mount</Subsystem>
+ <Version>2.5.2</Version>
+ <Author>salgenerator</Author>
+ <EFDB_Topic>mount_command_trackTarget</EFDB_Topic>
+ <Alias>trackTarget</Alias>
+ <Device>target</Device>
+ <Property>position</Property>
+ <Action></Action>
+ <Value></Value>
+ <Explanation>http://sal.lsst.org/SAL/Commands/mount_command_trackTarget.html</Explanation>
     <item>
-      <EFDB_Name>spec_id</EFDB_Name>
+      <EFDB_Name>azimuth</EFDB_Name>
+      <Description> </Description>
+       <IDL_Type>string</IDL_Type>
+      <Units> </Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>elevation</EFDB_Name>
+      <Description> </Description>
+       <IDL_Type>string</IDL_Type>
+      <Units> </Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>time</EFDB_Name>
+      <Description> </Description>
+       <IDL_Type>double</IDL_Type>
+      <Units> </Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>cable_wrap</EFDB_Name>
       <Description> </Description>
        <IDL_Type>string</IDL_Type>
       <Units> </Units>
