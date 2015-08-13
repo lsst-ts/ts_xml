@@ -1,0 +1,79 @@
+<SALTelemetrySet>
+<SALTelemetry>
+     <Subsystem>dm</Subsystem>
+     <Version>2.4</Version>
+     <Author>K.T.</Author>
+     <EFDB_Topic>dm_successfully_archived</EFDB_Topic>
+	<item>
+	        <EFDB_Name>current_mode_image_count</EFDB_Name>
+        	<Description>Number of successfully archived raft images since entering current mode</Description>
+	        <Frequency>0.054</Frequency>
+	        <Latency>5</Latency>
+	        <Comment>Successfully archive = DM takes responsibility</Comment>
+        	<IDL_Type>long</IDL_Type>
+            	<Count>1</Count>
+        </item>
+        <item>
+	        <EFDB_Name>operations_image_count</EFDB_Name>
+        	<Description>Number of successfully archived raft images since beginning of operations
+	        </Description>	
+	        <Frequency>0.054</Frequency>
+	        <Latency>5</Latency>
+	        <Comment></Comment>
+ 	        <IDL_Type>long</IDL_Type>
+            	<Count>1</Count>
+        </item>
+	<item>
+	        <EFDB_Name>raft_images_not_sent</EFDB_Name>
+	        <Description>Number of raft images in network outage buffer NOT sent to Archive Center</Description>
+	        <Frequency>0.054</Frequency>
+	        <Latency>20</Latency>
+	       	<Comment></Comment>
+	        <IDL_Type>long</IDL_Type>
+            	<Count>1</Count>
+        </item>
+</SALTelemetry>
+
+<SALTelemetry>
+     <Subsystem>dm</Subsystem>
+     <Version>2.4</Version>
+     <Author>K.T.</Author>
+     <EFDB_Topic>dm_raft_images_sent_current</EFDB_Topic>
+     <item>
+	        <EFDB_Name>current_mode_image_count</EFDB_Name>
+	        <Description>Number of images sent to Archive Center since entering current mode</Description>
+	        <Frequency>0.054</Frequency>
+	        <Latency>10</Latency>
+	        <Comment></Comment>
+            	<IDL_Type>long</IDL_Type>
+            	<Count>1</Count>
+     </item>
+     <item>
+	        <EFDB_Name>operations_image_count</EFDB_Name>
+	        <Description>Number of images sent to Archive Center since begining of operations</Description>
+	        <Frequency>0.054</Frequency>
+	        <Latency>10</Latency>
+	        <Comment></Comment>
+            	<IDL_Type>long</IDL_Type>
+            	<Count>1</Count>
+     </item>
+</SALTelemetry>
+
+<SALTelemetry>
+     <Subsystem>dm</Subsystem>
+     <Version>2.4</Version>
+     <Author>K.T.</Author>
+     <EFDB_Topic>dm_available_replicators_distributors</EFDB_Topic>
+     <item>
+        	<EFDB_Name>machine_count</EFDB_Name>
+        	<Description>Number of known-available replicator/distributor machines</Description>
+        	<Frequency>0.01</Frequency>
+        	<Latency>10</Latency>
+        	<Comment></Comment>
+        	<IDL_Type>long</IDL_Type>
+            	<Count>1</Count>
+    </item>
+</SALTelemetry>
+</SALTelemetrySet>
+
+
