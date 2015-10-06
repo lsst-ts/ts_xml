@@ -7,30 +7,24 @@
  <Subsystem>m2ms</Subsystem>
  <Version>2.5.3</Version>
  <Author>salgenerator</Author>
- <EFDB_Topic>m2ms_command_abort</EFDB_Topic>
- <Alias>abort</Alias>
- <Device>abort</Device>
- <Property></Property>
+ <EFDB_Topic>m2ms_command_slew</EFDB_Topic>
+ <Alias>slew</Alias>
+ <Device>support</Device>
+ <Property>actuators</Property>
  <Action></Action>
  <Value></Value>
- <Explanation>http://sal.lsst.org/SAL/Commands/m2ms_command_abort.html</Explanation>
-</SALCommand>
-
-<SALCommand>
- <Subsystem>m2ms</Subsystem>
- <Version>2.5.3</Version>
- <Author>salgenerator</Author>
- <EFDB_Topic>m2ms_command_configure</EFDB_Topic>
- <Alias>configure</Alias>
- <Device>configure</Device>
- <Property></Property>
- <Action></Action>
- <Value></Value>
- <Explanation>http://sal.lsst.org/SAL/Commands/m2ms_command_configure.html</Explanation>
+ <Explanation>http://sal.lsst.org/SAL/Commands/m2ms_command_slew.html</Explanation>
     <item>
-      <EFDB_Name>spec_id</EFDB_Name>
+      <EFDB_Name>azimuth</EFDB_Name>
       <Description> </Description>
-       <IDL_Type>string</IDL_Type>
+       <IDL_Type>double</IDL_Type>
+      <Units> </Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>elevation</EFDB_Name>
+      <Description> </Description>
+       <IDL_Type>double</IDL_Type>
       <Units> </Units>
       <Count>1</Count>
     </item>
@@ -40,39 +34,13 @@
  <Subsystem>m2ms</Subsystem>
  <Version>2.5.3</Version>
  <Author>salgenerator</Author>
- <EFDB_Topic>m2ms_command_status</EFDB_Topic>
- <Alias>status</Alias>
- <Device>status</Device>
- <Property></Property>
+ <EFDB_Topic>m2ms_command_adjust</EFDB_Topic>
+ <Alias>adjust</Alias>
+ <Device>support</Device>
+ <Property>actuators</Property>
  <Action></Action>
  <Value></Value>
- <Explanation>http://sal.lsst.org/SAL/Commands/m2ms_command_status.html</Explanation>
-</SALCommand>
-
-<SALCommand>
- <Subsystem>m2ms</Subsystem>
- <Version>2.5.3</Version>
- <Author>salgenerator</Author>
- <EFDB_Topic>m2ms_command_stop</EFDB_Topic>
- <Alias>stop</Alias>
- <Device>stop</Device>
- <Property></Property>
- <Action></Action>
- <Value></Value>
- <Explanation>http://sal.lsst.org/SAL/Commands/m2ms_command_stop.html</Explanation>
-</SALCommand>
-
-<SALCommand>
- <Subsystem>m2ms</Subsystem>
- <Version>2.5.3</Version>
- <Author>salgenerator</Author>
- <EFDB_Topic>m2ms_command_target</EFDB_Topic>
- <Alias>target</Alias>
- <Device>target</Device>
- <Property>position</Property>
- <Action></Action>
- <Value></Value>
- <Explanation>http://sal.lsst.org/SAL/Commands/m2ms_command_target.html</Explanation>
+ <Explanation>http://sal.lsst.org/SAL/Commands/m2ms_command_adjust.html</Explanation>
     <item>
       <EFDB_Name>azimuth</EFDB_Name>
       <Description> </Description>
@@ -95,8 +63,8 @@
  <Author>salgenerator</Author>
  <EFDB_Topic>m2ms_command_update</EFDB_Topic>
  <Alias>update</Alias>
- <Device>update</Device>
- <Property>lut</Property>
+ <Device>lut</Device>
+ <Property>id</Property>
  <Action></Action>
  <Value></Value>
  <Explanation>http://sal.lsst.org/SAL/Commands/m2ms_command_update.html</Explanation>
@@ -106,6 +74,26 @@
        <IDL_Type>string</IDL_Type>
       <Units> </Units>
       <Count>1</Count>
+    </item>
+</SALCommand>
+
+<SALCommand>
+ <Subsystem>m2ms</Subsystem>
+ <Version>2.5.3</Version>
+ <Author>salgenerator</Author>
+ <EFDB_Topic>m2ms_command_axialForces</EFDB_Topic>
+ <Alias>axialForces</Alias>
+ <Device>actuators</Device>
+ <Property>force</Property>
+ <Action>adjust</Action>
+ <Value></Value>
+ <Explanation>http://sal.lsst.org/SAL/Commands/m2ms_command_axialForces.html</Explanation>
+    <item>
+      <EFDB_Name>deltaForce</EFDB_Name>
+      <Description> </Description>
+       <IDL_Type>double</IDL_Type>
+      <Units> </Units>
+      <Count>72</Count>
     </item>
 </SALCommand>
 </SALCommandSet>
