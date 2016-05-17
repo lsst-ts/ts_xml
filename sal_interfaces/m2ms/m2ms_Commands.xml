@@ -5,95 +5,125 @@
 
 <SALCommand>
  <Subsystem>m2ms</Subsystem>
- <Version>2.5.3</Version>
+ <Version>3.0</Version>
  <Author>salgenerator</Author>
- <EFDB_Topic>m2ms_command_slew</EFDB_Topic>
- <Alias>slew</Alias>
+ <EFDB_Topic>m2ms_command_ApplyBendingMode</EFDB_Topic>
+ <Alias>ApplyBendingMode</Alias>
  <Device>support</Device>
  <Property>actuators</Property>
  <Action></Action>
  <Value></Value>
- <Explanation>http://sal.lsst.org/SAL/Commands/m2ms_command_slew.html</Explanation>
+ <Explanation>http://sal.lsst.org/SAL/Commands/m2ms_command_ApplyBendingMode.html</Explanation>
     <item>
-      <EFDB_Name>azimuth</EFDB_Name>
-      <Description> </Description>
-       <IDL_Type>double</IDL_Type>
+      <EFDB_Name>bendingModeNbr</EFDB_Name>
+      <Description>Number of each bending mode</Description>
+       <IDL_Type>short</IDL_Type>
       <Units> </Units>
-      <Count>1</Count>
+      <Count>32</Count>
     </item>
     <item>
-      <EFDB_Name>elevation</EFDB_Name>
-      <Description> </Description>
+      <EFDB_Name>bendingModeValue</EFDB_Name>
+      <Description>Value for each bending mode</Description>
        <IDL_Type>double</IDL_Type>
-      <Units> </Units>
-      <Count>1</Count>
+      <Units>microns</Units>
+      <Count>32</Count>
     </item>
 </SALCommand>
-
 <SALCommand>
  <Subsystem>m2ms</Subsystem>
- <Version>2.5.3</Version>
+ <Version>3.0</Version>
  <Author>salgenerator</Author>
- <EFDB_Topic>m2ms_command_adjust</EFDB_Topic>
- <Alias>adjust</Alias>
+ <EFDB_Topic>m2ms_command_ApplyForce</EFDB_Topic>
+ <Alias>ApplyForce</Alias>
  <Device>support</Device>
  <Property>actuators</Property>
  <Action></Action>
  <Value></Value>
- <Explanation>http://sal.lsst.org/SAL/Commands/m2ms_command_adjust.html</Explanation>
+ <Explanation>http://sal.lsst.org/SAL/Commands/m2ms_command_ApplyForce.html</Explanation>
     <item>
-      <EFDB_Name>azimuth</EFDB_Name>
-      <Description> </Description>
+      <EFDB_Name>forceSetPoint</EFDB_Name>
+      <Description>Force in newtons, increasing force corresponds to increasing tension on the load cell</Description>
        <IDL_Type>double</IDL_Type>
-      <Units> </Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>elevation</EFDB_Name>
-      <Description> </Description>
-       <IDL_Type>double</IDL_Type>
-      <Units> </Units>
-      <Count>1</Count>
-    </item>
-</SALCommand>
-
-<SALCommand>
- <Subsystem>m2ms</Subsystem>
- <Version>2.5.3</Version>
- <Author>salgenerator</Author>
- <EFDB_Topic>m2ms_command_update</EFDB_Topic>
- <Alias>update</Alias>
- <Device>lut</Device>
- <Property>id</Property>
- <Action></Action>
- <Value></Value>
- <Explanation>http://sal.lsst.org/SAL/Commands/m2ms_command_update.html</Explanation>
-    <item>
-      <EFDB_Name>lut_id</EFDB_Name>
-      <Description> </Description>
-       <IDL_Type>string</IDL_Type>
-      <Units> </Units>
-      <Count>1</Count>
-    </item>
-</SALCommand>
-
-<SALCommand>
- <Subsystem>m2ms</Subsystem>
- <Version>2.5.3</Version>
- <Author>salgenerator</Author>
- <EFDB_Topic>m2ms_command_axialForces</EFDB_Topic>
- <Alias>axialForces</Alias>
- <Device>actuators</Device>
- <Property>force</Property>
- <Action>adjust</Action>
- <Value></Value>
- <Explanation>http://sal.lsst.org/SAL/Commands/m2ms_command_axialForces.html</Explanation>
-    <item>
-      <EFDB_Name>deltaForce</EFDB_Name>
-      <Description> </Description>
-       <IDL_Type>double</IDL_Type>
-      <Units> </Units>
+      <Units>Newtons</Units>
       <Count>72</Count>
+    </item>
+</SALCommand>
+<SALCommand>
+ <Subsystem>m2ms</Subsystem>
+ <Version>3.0</Version>
+ <Author>salgenerator</Author>
+ <EFDB_Topic>m2ms_command_SetCorrectionBendingMode</EFDB_Topic>
+ <Alias>SetCorrectionBendingMode</Alias>
+ <Device>support</Device>
+ <Property>actuators</Property>
+ <Action></Action>
+ <Value></Value>
+ <Explanation>http://sal.lsst.org/SAL/Commands/m2ms_command_SetCorrectionBendingMode.html</Explanation>
+    <item>
+      <EFDB_Name>Mode</EFDB_Name>
+      <Description>An enumeration , 1 = BendingMode, 2 = Force</Description>
+       <IDL_Type>double</IDL_Type>
+      <Units>Newtons</Units>
+      <Count>72</Count>
+    </item>
+</SALCommand>
+<SALCommand>
+ <Subsystem>m2ms</Subsystem>
+ <Version>3.0</Version>
+ <Author>salgenerator</Author>
+ <EFDB_Topic>m2ms_command_PositionMirror</EFDB_Topic>
+ <Alias>PositionMirror</Alias>
+ <Device>support</Device>
+ <Property>actuators</Property>
+ <Action></Action>
+ <Value></Value>
+ <Explanation>http://sal.lsst.org/SAL/Commands/m2ms_command_PositionMirror.html</Explanation>
+    <item>
+      <EFDB_Name>xTilt</EFDB_Name>
+      <Description>Tilt in xy plane</Description>
+       <IDL_Type>double</IDL_Type>
+      <Units>radians</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>yTilt</EFDB_Name>
+      <Description>Tilt in xy plane</Description>
+       <IDL_Type>double</IDL_Type>
+      <Units>radians</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>piston</EFDB_Name>
+      <Description>Position in Z (along optical axis)</Description>
+       <IDL_Type>double</IDL_Type>
+      <Units>microns</Units>
+      <Count>1</Count>
+    </item>
+</SALCommand>
+<SALCommand>
+ <Subsystem>m2ms</Subsystem>
+ <Version>3.0</Version>
+ <Author>salgenerator</Author>
+ <EFDB_Topic>m2ms_command_MoveAxialActuator</EFDB_Topic>
+ <Alias>MoveAxialActuator</Alias>
+ <Device>support</Device>
+ <Property>actuators</Property>
+ <Action></Action>
+ <Value></Value>
+ <Explanation>http://sal.lsst.org/SAL/Commands/m2ms_command_MoveAxialActuator.html</Explanation>
+    <item>
+      <EFDB_Name>axialActuatorID</EFDB_Name>
+      <Description>ID number of an actuator</Description>
+       <IDL_Type>short</IDL_Type>
+      <Units></Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>relativeStepsToMove</EFDB_Name>
+      <Description>Increasing steps correspond to counterclockwise rotation of th motor shaft, looking along the motor shaft in the direction of the motor</Description>
+       <IDL_Type>long</IDL_Type>
+      <Units></Units>
+      <Count>1</Count>
     </item>
 </SALCommand>
 </SALCommandSet>
