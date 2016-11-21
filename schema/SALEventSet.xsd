@@ -28,7 +28,7 @@
  <xsd:complexType name="eventType">
      <xsd:sequence>
       		<xsd:element   name="Subsystem"      minOccurs="1" maxOccurs="1" type="xsd:string"/>
-      		<xsd:element   name="Version"        type="xsd:decimal"/>
+      		<xsd:element   name="Version"        type="version"/>
       		<xsd:element   name="Author"         type="xsd:string"/>
       		<xsd:element   name="EFDB_Topic"     minOccurs="1" maxOccurs="1" type="xsd:string"/>
       		<xsd:element   name="Alias"          minOccurs="1" maxOccurs="1" type="xsd:string"/>
@@ -50,13 +50,18 @@
               	<xsd:element name="Description"   type="xsd:string"/>
               	<xsd:element name="URL"           minOccurs="1" maxOccurs="1" type="xsd:anyURI"/>
               	<xsd:element name="Generator"     minOccurs="1" maxOccurs="1" type="xsd:string"/>
-              	<xsd:element name="Version"       minOccurs="1" maxOccurs="1" type="xsd:string"/>
+              	<xsd:element name="Version"       minOccurs="1" maxOccurs="1" type="version"/>
               	<xsd:element name="Checksum"      minOccurs="1" maxOccurs="1" type="xsd:string"/>
               	<xsd:element name="Mime_Type"     type="xsd:string"/>
               	<xsd:element name="Byte_Size"     type="xsd:positiveInteger"/>
               	<xsd:element name="Explanation"   minOccurs="0" maxOccurs="1"  type="xsd:anyURI"/>
     </xsd:sequence>
  </xsd:complexType>
+  <xsd:simpleType name="version">
+    <xsd:restriction base="xsd:token">
+      <xsd:pattern value="\d+\.\d+(\.\d+)?"/>
+    </xsd:restriction>
+  </xsd:simpleType>
 
  <xsd:attribute name="updateDate"    type="xsd:date"/>
 

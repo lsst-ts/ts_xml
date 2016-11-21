@@ -26,7 +26,7 @@
  <xsd:complexType name="commandType">
    <xsd:sequence>
       <xsd:element   name="Subsystem"     type="xsd:string"/>
-      <xsd:element   name="Version"       type="xsd:decimal"/>
+      <xsd:element   name="Version"       type="version"/>
       <xsd:element   name="Author"        type="xsd:string"/>
       <xsd:element   name="EFDB_Topic"    type="xsd:string"/>
       <xsd:element   name="Alias"         type="xsd:string"/>
@@ -47,6 +47,12 @@
  </xsd:complexType>
 
  <xsd:attribute name="updateDate"    type="xsd:date"/>
+
+ <xsd:simpleType name="version">
+    <xsd:restriction base="xsd:token">
+      <xsd:pattern value="\d+\.\d+(\.\d+)?"/>
+    </xsd:restriction>
+ </xsd:simpleType>
 
 </xsd:schema>
 
