@@ -3,212 +3,22 @@
 <SALEventSet xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:noNamespaceSchemaLocation="http://lsst-sal.tuc.noao.edu/schema/SALEventSet.xsd">
 
-<SALEvent>
- <Subsystem>dome</Subsystem>
-<Version>3.2.0</Version>
- <Author>salgenerator</Author>
- <EFDB_Topic>dome_logevent_AccLimit</EFDB_Topic>
- <Alias>AccLimit</Alias>
- <Explanation>http://sal.lsst.org/SAL/Events/dome_logevent_AccLimit.html</Explanation>
-</SALEvent>
 
 <SALEvent>
  <Subsystem>dome</Subsystem>
-<Version>3.2.0</Version>
- <Author>salgenerator</Author>
- <EFDB_Topic>dome_logevent_VelLimit</EFDB_Topic>
- <Alias>VelLimit</Alias>
- <Explanation>http://sal.lsst.org/SAL/Events/dome_logevent_VelLimit.html</Explanation>
+ <Version>1.0.0</Version>
+ <Author>ebragante</Author>
+ <EFDB_Topic>dome_logevent_StateChanged</EFDB_Topic>
+ <Alias>StateChanged</Alias>
+ <Explanation>Subsystem state changed</Explanation>
+ <item>
+	<EFDB_Name>newState</EFDB_Name>
+	<Description>Reached state</Description>
+	<IDL_Type>int</IDL_Type>
+	<Units>NA</Units>
+	<Count>1</Count>
+ </item>
 </SALEvent>
 
-<SALEvent>
- <Subsystem>dome</Subsystem>
-<Version>3.2.0</Version>
- <Author>salgenerator</Author>
- <EFDB_Topic>dome_logevent_crawlLost</EFDB_Topic>
- <Alias>crawlLost</Alias>
- <Explanation>http://sal.lsst.org/SAL/Events/dome_logevent_crawlLost.html</Explanation>
-</SALEvent>
 
-<SALEvent>
- <Subsystem>dome</Subsystem>
-<Version>3.2.0</Version>
- <Author>salgenerator</Author>
- <EFDB_Topic>dome_logevent_crawling</EFDB_Topic>
- <Alias>crawling</Alias>
- <Explanation>http://sal.lsst.org/SAL/Events/dome_logevent_crawling.html</Explanation>
-</SALEvent>
-
-<SALEvent>
- <Subsystem>dome</Subsystem>
-<Version>3.2.0</Version>
- <Author>salgenerator</Author>
- <EFDB_Topic>dome_logevent_interlock</EFDB_Topic>
- <Alias>interlock</Alias>
- <Explanation>http://sal.lsst.org/SAL/Events/dome_logevent_interlock.html</Explanation>
-    <item>
-      <EFDB_Name>detail</EFDB_Name>
-      <Description> </Description>
-       <IDL_Type>string</IDL_Type>
-      <Units> </Units>
-      <Count>1</Count>
-    </item>
-</SALEvent>
-
-<SALEvent>
- <Subsystem>dome</Subsystem>
-<Version>3.2.0</Version>
- <Author>salgenerator</Author>
- <EFDB_Topic>dome_logevent_jerkLimit</EFDB_Topic>
- <Alias>jerkLimit</Alias>
- <Explanation>http://sal.lsst.org/SAL/Events/dome_logevent_jerkLimit.html</Explanation>
-</SALEvent>
-
-<SALEvent>
- <Subsystem>dome</Subsystem>
-<Version>3.2.0</Version>
- <Author>salgenerator</Author>
- <EFDB_Topic>dome_logevent_lldvError</EFDB_Topic>
- <Alias>lldvError</Alias>
- <Explanation>http://sal.lsst.org/SAL/Events/dome_logevent_lldvError.html</Explanation>
-</SALEvent>
-
-<SALEvent>
- <Subsystem>dome</Subsystem>
-<Version>3.2.0</Version>
- <Author>salgenerator</Author>
- <EFDB_Topic>dome_logevent_lldvOK</EFDB_Topic>
- <Alias>lldvOK</Alias>
- <Explanation>http://sal.lsst.org/SAL/Events/dome_logevent_lldvOK.html</Explanation>
-</SALEvent>
-
-<SALEvent>
- <Subsystem>dome</Subsystem>
-<Version>3.2.0</Version>
- <Author>salgenerator</Author>
- <EFDB_Topic>dome_logevent_posLimit</EFDB_Topic>
- <Alias>posLimit</Alias>
- <Explanation>http://sal.lsst.org/SAL/Events/dome_logevent_posLimit.html</Explanation>
-    <item>
-      <EFDB_Name>device</EFDB_Name>
-      <Description> </Description>
-       <IDL_Type>string</IDL_Type>
-      <Units> </Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>limit</EFDB_Name>
-      <Description> </Description>
-       <IDL_Type>string</IDL_Type>
-      <Units> </Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>type</EFDB_Name>
-      <Description> </Description>
-       <IDL_Type>string</IDL_Type>
-      <Units> </Units>
-      <Count>1</Count>
-    </item>
-</SALEvent>
-
-<SALEvent>
- <Subsystem>dome</Subsystem>
-<Version>3.2.0</Version>
- <Author>salgenerator</Author>
- <EFDB_Topic>dome_logevent_powerError</EFDB_Topic>
- <Alias>powerError</Alias>
- <Explanation>http://sal.lsst.org/SAL/Events/dome_logevent_powerError.html</Explanation>
-    <item>
-      <EFDB_Name>device</EFDB_Name>
-      <Description> </Description>
-       <IDL_Type>string</IDL_Type>
-      <Units> </Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>severity</EFDB_Name>
-      <Description> </Description>
-       <IDL_Type>long</IDL_Type>
-      <Units> </Units>
-      <Count>1</Count>
-    </item>
-</SALEvent>
-
-<SALEvent>
- <Subsystem>dome</Subsystem>
-<Version>3.2.0</Version>
- <Author>salgenerator</Author>
- <EFDB_Topic>dome_logevent_screenLimit</EFDB_Topic>
- <Alias>screenLimit</Alias>
- <Explanation>http://sal.lsst.org/SAL/Events/dome_logevent_screenLimit.html</Explanation>
-</SALEvent>
-
-<SALEvent>
- <Subsystem>dome</Subsystem>
-<Version>3.2.0</Version>
- <Author>salgenerator</Author>
- <EFDB_Topic>dome_logevent_slewError</EFDB_Topic>
- <Alias>slewError</Alias>
- <Explanation>http://sal.lsst.org/SAL/Events/dome_logevent_slewError.html</Explanation>
-</SALEvent>
-
-<SALEvent>
- <Subsystem>dome</Subsystem>
-<Version>3.2.0</Version>
- <Author>salgenerator</Author>
- <EFDB_Topic>dome_logevent_slewOK</EFDB_Topic>
- <Alias>slewOK</Alias>
- <Explanation>http://sal.lsst.org/SAL/Events/dome_logevent_slewOK.html</Explanation>
-</SALEvent>
-
-<SALEvent>
- <Subsystem>dome</Subsystem>
-<Version>3.2.0</Version>
- <Author>salgenerator</Author>
- <EFDB_Topic>dome_logevent_slewReady</EFDB_Topic>
- <Alias>slewReady</Alias>
- <Explanation>http://sal.lsst.org/SAL/Events/dome_logevent_slewReady.html</Explanation>
-</SALEvent>
-
-<SALEvent>
- <Subsystem>dome</Subsystem>
-<Version>3.2.0</Version>
- <Author>salgenerator</Author>
- <EFDB_Topic>dome_logevent_tempError</EFDB_Topic>
- <Alias>tempError</Alias>
- <Explanation>http://sal.lsst.org/SAL/Events/dome_logevent_tempError.html</Explanation>
-    <item>
-      <EFDB_Name>device</EFDB_Name>
-      <Description> </Description>
-       <IDL_Type>string</IDL_Type>
-      <Units> </Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>severity</EFDB_Name>
-      <Description> </Description>
-       <IDL_Type>long</IDL_Type>
-      <Units> </Units>
-      <Count>1</Count>
-    </item>
-</SALEvent>
-
-<SALEvent>
- <Subsystem>dome</Subsystem>
-<Version>3.2.0</Version>
- <Author>salgenerator</Author>
- <EFDB_Topic>dome_logevent_trackLost</EFDB_Topic>
- <Alias>trackLost</Alias>
- <Explanation>http://sal.lsst.org/SAL/Events/dome_logevent_trackLost.html</Explanation>
-</SALEvent>
-
-<SALEvent>
- <Subsystem>dome</Subsystem>
-<Version>3.2.0</Version>
- <Author>salgenerator</Author>
- <EFDB_Topic>dome_logevent_tracking</EFDB_Topic>
- <Alias>tracking</Alias>
- <Explanation>http://sal.lsst.org/SAL/Events/dome_logevent_tracking.html</Explanation>
-</SALEvent>
 </SALEventSet>

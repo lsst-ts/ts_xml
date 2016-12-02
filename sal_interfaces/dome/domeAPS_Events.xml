@@ -1,0 +1,301 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="http://lsst-sal.tuc.noao.edu/schema/SALEventSet.xsl"?>
+<SALEventSet xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="http://lsst-sal.tuc.noao.edu/schema/SALEventSet.xsd">
+
+
+<SALEvent>
+ <Subsystem>domeAPS</Subsystem>
+ <Version>1.0.0</Version>
+ <Author>ebragante</Author>
+ <EFDB_Topic>domeAPS_logevent_StateChanged</EFDB_Topic>
+ <Alias>StateChanged</Alias>
+ <Explanation>Subsystem state changed</Explanation>
+ <item>
+	<EFDB_Name>newState</EFDB_Name>
+	<Description>Reached state</Description>
+	<IDL_Type>int</IDL_Type>
+	<Units>NA</Units>
+	<Count>1</Count>
+ </item>
+</SALEvent>
+
+<SALEvent>
+ <Subsystem>domeAPS</Subsystem>
+ <Version>1.0.0</Version>
+ <Author>ebragante</Author>
+ <EFDB_Topic>domeAPS_logevent_DriveEnabled</EFDB_Topic>
+ <Alias>DriveEnabled</Alias>
+ <Explanation></Explanation>
+ <item>
+	<EFDB_Name>driveId</EFDB_Name>
+	<Description>Unique identifier of the drive (1 to 4)</Description>
+	<IDL_Type>int</IDL_Type>
+	<Units>NA</Units>
+	<Count>1</Count>
+ </item>
+</SALEvent>
+
+<SALEvent>
+ <Subsystem>domeAPS</Subsystem>
+ <Version>1.0.0</Version>
+ <Author>ebragante</Author>
+ <EFDB_Topic>domeAPS_logevent_DriveDisabled</EFDB_Topic>
+ <Alias>DriveDisabled</Alias>
+ <Explanation></Explanation>
+ <item>
+	<EFDB_Name>driveId</EFDB_Name>
+	<Description>Unique identifier of the drive (1 to 4)</Description>
+	<IDL_Type>int</IDL_Type>
+	<Units>NA</Units>
+	<Count>1</Count>
+ </item>
+</SALEvent>
+
+<SALEvent>
+ <Subsystem>domeAPS</Subsystem>
+ <Version>1.0.0</Version>
+ <Author>ebragante</Author>
+ <EFDB_Topic>domeAPS_logevent_DriveReady</EFDB_Topic>
+ <Alias>DriveReady</Alias>
+ <Explanation></Explanation>
+ <item>
+	<EFDB_Name>driveId</EFDB_Name>
+	<Description>Unique identifier of the drive (1 to 4)</Description>
+	<IDL_Type>int</IDL_Type>
+	<Units>NA</Units>
+	<Count>1</Count>
+ </item>
+</SALEvent>
+
+<SALEvent>
+ <Subsystem>domeAPS</Subsystem>
+ <Version>1.0.0</Version>
+ <Author>ebragante</Author>
+ <EFDB_Topic>domeAPS_logevent_DriveOverTemp</EFDB_Topic>
+ <Alias>DriveOverTemp</Alias>
+ <Explanation></Explanation>
+ <item>
+	<EFDB_Name>driveId</EFDB_Name>
+	<Description>Unique identifier of the drive (1 to 4)</Description>
+	<IDL_Type>int</IDL_Type>
+	<Units>NA</Units>
+	<Count>1</Count>
+ </item>
+</SALEvent>
+
+<SALEvent>
+ <Subsystem>domeAPS</Subsystem>
+ <Version>1.0.0</Version>
+ <Author>ebragante</Author>
+ <EFDB_Topic>domeAPS_logevent_DriveFault</EFDB_Topic>
+ <Alias>DriveFault</Alias>
+ <Explanation></Explanation>
+ <item>
+	<EFDB_Name>driveId</EFDB_Name>
+	<Description>Unique identifier of the drive (1 to 4)</Description>
+	<IDL_Type>int</IDL_Type>
+	<Units>NA</Units>
+	<Count>1</Count>
+ </item>
+ <item>
+	<EFDB_Name>errorCode</EFDB_Name>
+	<Description></Description>
+	<IDL_Type>string</IDL_Type>
+	<Units>NA</Units>
+	<Count>1</Count>
+ </item>
+</SALEvent>
+
+<SALEvent>
+ <Subsystem>domeAPS</Subsystem>
+ <Version>1.0.0</Version>
+ <Author>ebragante</Author>
+ <EFDB_Topic>domeAPS_logevent_MovementEnabled</EFDB_Topic>
+ <Alias>MovementEnabled</Alias>
+ <Explanation></Explanation>
+</SALEvent>
+
+<SALEvent>
+ <Subsystem>domeAPS</Subsystem>
+ <Version>1.0.0</Version>
+ <Author>ebragante</Author>
+ <EFDB_Topic>domeAPS_logevent_MovementPrevented</EFDB_Topic>
+ <Alias>MovementPrevented</Alias>
+ <Explanation></Explanation>
+ <item>
+	<EFDB_Name>causeId</EFDB_Name>
+	<Description>Unique identifier of the cause</Description>
+	<IDL_Type>string</IDL_Type>
+	<Units>NA</Units>
+	<Count>1</Count>
+ </item>
+</SALEvent>
+
+<SALEvent>
+ <Subsystem>domeAPS</Subsystem>
+ <Version>1.0.0</Version>
+ <Author>ebragante</Author>
+ <EFDB_Topic>domeAPS_logevent_LockingPinEngaged</EFDB_Topic>
+ <Alias>LockingPinEngaged</Alias>
+ <Explanation>Locking pin in locking position</Explanation>
+ <item>
+	<EFDB_Name>lockingPinID</EFDB_Name>
+	<Description>Unique identifier of the locking pin(1 to 4)</Description>
+	<IDL_Type>int</IDL_Type>
+	<Units>NA</Units>
+	<Count>1</Count>
+ </item>
+</SALEvent>
+
+<SALEvent>
+ <Subsystem>domeAPS</Subsystem>
+ <Version>1.0.0</Version>
+ <Author>ebragante</Author>
+ <EFDB_Topic>domeAPS_logevent_LockingPinDisengaged</EFDB_Topic>
+ <Alias>LockingPinDisengaged</Alias>
+ <Explanation>Locking pin removed from locking position</Explanation>
+ <item>
+	<EFDB_Name>lockingPinID</EFDB_Name>
+	<Description>Unique identifier of the locking pin(1 to 4)</Description>
+	<IDL_Type>int</IDL_Type>
+	<Units>NA</Units>
+	<Count>1</Count>
+ </item>
+</SALEvent>
+
+<SALEvent>
+ <Subsystem>domeAPS</Subsystem>
+ <Version>1.0.0</Version>
+ <Author>ebragante</Author>
+ <EFDB_Topic>domeAPS_logevent_LockingPinHomed</EFDB_Topic>
+ <Alias>LockingPinHomed</Alias>
+ <Explanation>Locking pin in its home position</Explanation>
+ <item>
+	<EFDB_Name>lockingPinID</EFDB_Name>
+	<Description>Unique identifier of the locking pin(1 to 4)</Description>
+	<IDL_Type>int</IDL_Type>
+	<Units>NA</Units>
+	<Count>1</Count>
+ </item>
+</SALEvent>
+
+<SALEvent>
+ <Subsystem>domeAPS</Subsystem>
+ <Version>1.0.0</Version>
+ <Author>ebragante</Author>
+ <EFDB_Topic>domeAPS_logevent_LockingPinFloating</EFDB_Topic>
+ <Alias>LockingPinFloating</Alias>
+ <Explanation>Locking pin removed from its home position</Explanation>
+ <item>
+	<EFDB_Name>lockingPinID</EFDB_Name>
+	<Description>Unique identifier of the locking pin(1 to 4)</Description>
+	<IDL_Type>int</IDL_Type>
+	<Units>NA</Units>
+	<Count>1</Count>
+ </item>
+</SALEvent>
+
+<SALEvent>
+ <Subsystem>domeAPS</Subsystem>
+ <Version>1.0.0</Version>
+ <Author>ebragante</Author>
+ <EFDB_Topic>domeAPS_logevent_CentralLockingPinEngaged</EFDB_Topic>
+ <Alias>CentralLockingPinEngaged</Alias>
+ <Explanation>Central locking pin in locking position</Explanation>
+</SALEvent>
+
+<SALEvent>
+ <Subsystem>domeAPS</Subsystem>
+ <Version>1.0.0</Version>
+ <Author>ebragante</Author>
+ <EFDB_Topic>domeAPS_logevent_CentralLockingPinDisengaged</EFDB_Topic>
+ <Alias>CentralLockingPinDisengaged</Alias>
+ <Explanation>Central lLocking pin removed from locking position</Explanation>
+</SALEvent>
+
+<SALEvent>
+ <Subsystem>domeAPS</Subsystem>
+ <Version>1.0.0</Version>
+ <Author>ebragante</Author>
+ <EFDB_Topic>domeAPS_logevent_CentralLockingPinHomed</EFDB_Topic>
+ <Alias>CentralLockingPinHomed</Alias>
+ <Explanation>Central Locking pin in its home position</Explanation>
+</SALEvent>
+
+<SALEvent>
+ <Subsystem>domeAPS</Subsystem>
+ <Version>1.0.0</Version>
+ <Author>ebragante</Author>
+ <EFDB_Topic>domeAPS_logevent_CentralLockingPinFloating</EFDB_Topic>
+ <Alias>CentralLockingPinFloating</Alias>
+ <Explanation>Central Locking pin removed from its home position</Explanation>
+</SALEvent>
+
+
+<SALEvent>
+ <Subsystem>domeAPS</Subsystem>
+ <Version>1.0.0</Version>
+ <Author>ebragante</Author>
+ <EFDB_Topic>domeAPS_logevent_BrakeEngaged</EFDB_Topic>
+ <Alias>BrakeEngaged</Alias>
+ <Explanation></Explanation>
+ <item>
+	<EFDB_Name>brakeId</EFDB_Name>
+	<Description>Unique identifier of the brake (1 to 4)</Description>
+	<IDL_Type>int</IDL_Type>
+	<Units>NA</Units>
+	<Count>1</Count>
+ </item>
+</SALEvent>
+
+<SALEvent>
+ <Subsystem>domeAPS</Subsystem>
+ <Version>1.0.0</Version>
+ <Author>ebragante</Author>
+ <EFDB_Topic>domeAPS_logevent_BrakeDisengaged</EFDB_Topic>
+ <Alias>BrakeDisengaged</Alias>
+ <Explanation></Explanation>
+ <item>
+	<EFDB_Name>brakeId</EFDB_Name>
+	<Description>Unique identifier of the brake (1 to 4)</Description>
+	<IDL_Type>int</IDL_Type>
+	<Units>NA</Units>
+	<Count>1</Count>
+ </item>
+</SALEvent>
+
+<SALEvent>
+ <Subsystem>domeAPS</Subsystem>
+ <Version>1.0.0</Version>
+ <Author>ebragante</Author>
+ <EFDB_Topic>domeAPS_logevent_EchoResponse</EFDB_Topic>
+ <Alias>EchoResponse</Alias>
+ <Explanation></Explanation>
+ <item>
+	<EFDB_Name>response</EFDB_Name>
+	<Description></Description>
+	<IDL_Type>string</IDL_Type>
+	<Units>NA</Units>
+	<Count>1</Count>
+ </item>
+</SALEvent>
+
+<SALEvent>
+ <Subsystem>domeAPS</Subsystem>
+ <Version>1.0.0</Version>
+ <Author>ebragante</Author>
+ <EFDB_Topic>domeAPS_logevent_APSSubsystemError</EFDB_Topic>
+ <Alias>APSSubsystemError</Alias>
+ <Explanation></Explanation>
+ <item>
+	<EFDB_Name>errorCode</EFDB_Name>
+	<Description></Description>
+	<IDL_Type>string</IDL_Type>
+	<Units>NA</Units>
+	<Count>1</Count>
+ </item>
+</SALEvent>
+</SALEventSet>
+
+

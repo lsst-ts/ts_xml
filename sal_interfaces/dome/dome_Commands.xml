@@ -5,75 +5,49 @@
 
 <SALCommand>
  <Subsystem>dome</Subsystem>
-<Version>3.2.0</Version>
- <Author>salgenerator</Author>
- <EFDB_Topic>dome_command_CloseShutter</EFDB_Topic>
- <Alias>CloseShutter</Alias>
- <Device>shutter</Device>
- <Property>position</Property>
- <Action>close</Action>
- <Value></Value>
- <Explanation>http://sal.lsst.org/SAL/Commands/dome_command_CloseShutter.html</Explanation>
-</SALCommand>
-
-<SALCommand>
- <Subsystem>dome</Subsystem>
-<Version>3.2.0</Version>
- <Author>salgenerator</Author>
+ <Version>1.0.0</Version>
+ <Author>ebragante</Author>
  <EFDB_Topic>dome_command_Crawl</EFDB_Topic>
  <Alias>Crawl</Alias>
  <Device>target</Device>
  <Property>velocity</Property>
  <Action></Action>
  <Value></Value>
- <Explanation>http://sal.lsst.org/SAL/Commands/dome_command_Crawl.html</Explanation>
-    <item>
-      <EFDB_Name>azVelocity</EFDB_Name>
-      <Description> </Description>
-       <IDL_Type>double</IDL_Type>
-      <Units> </Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>elVelocity</EFDB_Name>
-      <Description> </Description>
-       <IDL_Type>double</IDL_Type>
-      <Units> </Units>
-      <Count>1</Count>
-    </item>
+ <Explanation></Explanation>
+     <item>
+	<EFDB_Name>azPosition</EFDB_Name>
+	<Description></Description>
+	<IDL_Type>double</IDL_Type>
+	<Units> </Units>
+	<Count>1</Count>
+    </item>   
+     <item>
+	<EFDB_Name>elPosition</EFDB_Name>
+	<Description></Description>
+	<IDL_Type>double</IDL_Type>
+	<Units> </Units>
+	<Count>1</Count>
+    </item>   
+     <item>
+	<EFDB_Name>demandTime</EFDB_Name>
+	<Description></Description>
+	<IDL_Type>long</IDL_Type>
+	<Units> </Units>
+	<Count>1</Count>
+    </item>   
 </SALCommand>
 
 <SALCommand>
  <Subsystem>dome</Subsystem>
-<Version>3.2.0</Version>
- <Author>salgenerator</Author>
- <EFDB_Topic>dome_command_Louvers</EFDB_Topic>
- <Alias>Louvers</Alias>
- <Device>louvers</Device>
- <Property>position</Property>
- <Action>set</Action>
- <Value></Value>
- <Explanation>http://sal.lsst.org/SAL/Commands/dome_command_Louvers.html</Explanation>
-    <item>
-      <EFDB_Name>openPercent</EFDB_Name>
-      <Description> </Description>
-       <IDL_Type>double</IDL_Type>
-      <Units> </Units>
-      <Count>72</Count>
-    </item>
-</SALCommand>
-
-<SALCommand>
- <Subsystem>dome</Subsystem>
-<Version>3.2.0</Version>
- <Author>salgenerator</Author>
+ <Version>1.0.0</Version>
+ <Author>ebragante</Author>
  <EFDB_Topic>dome_command_Move</EFDB_Topic>
  <Alias>Move</Alias>
  <Device>target</Device>
  <Property>position</Property>
  <Action></Action>
  <Value></Value>
- <Explanation>http://sal.lsst.org/SAL/Commands/dome_command_Move.html</Explanation>
+ <Explanation></Explanation>
     <item>
       <EFDB_Name>azimuth</EFDB_Name>
       <Description> </Description>
@@ -92,60 +66,74 @@
 
 <SALCommand>
  <Subsystem>dome</Subsystem>
-<Version>3.2.0</Version>
- <Author>salgenerator</Author>
- <EFDB_Topic>dome_command_MovetoCal</EFDB_Topic>
- <Alias>MovetoCal</Alias>
- <Device>target</Device>
- <Property>position</Property>
- <Action></Action>
- <Value></Value>
- <Explanation>http://sal.lsst.org/SAL/Commands/dome_command_MovetoCal.html</Explanation>
-</SALCommand>
-
-<SALCommand>
- <Subsystem>dome</Subsystem>
-<Version>3.2.0</Version>
- <Author>salgenerator</Author>
- <EFDB_Topic>dome_command_OpenShutter</EFDB_Topic>
- <Alias>OpenShutter</Alias>
- <Device>shutter</Device>
- <Property>position</Property>
- <Action>open</Action>
- <Value></Value>
- <Explanation>http://sal.lsst.org/SAL/Commands/dome_command_OpenShutter.html</Explanation>
-</SALCommand>
-
-<SALCommand>
- <Subsystem>dome</Subsystem>
-<Version>3.2.0</Version>
- <Author>salgenerator</Author>
+ <Version>1.0.0</Version>
+ <Author>ebragante</Author>
  <EFDB_Topic>dome_command_Park</EFDB_Topic>
  <Alias>Park</Alias>
  <Device>target</Device>
  <Property>position</Property>
  <Action></Action>
  <Value></Value>
- <Explanation>http://sal.lsst.org/SAL/Commands/dome_command_Park.html</Explanation>
+ <Explanation></Explanation>
 </SALCommand>
 
 <SALCommand>
  <Subsystem>dome</Subsystem>
-<Version>3.2.0</Version>
- <Author>salgenerator</Author>
- <EFDB_Topic>dome_command_Track</EFDB_Topic>
- <Alias>Track</Alias>
- <Device>track</Device>
- <Property>mode</Property>
+ <Version>1.0.0</Version>
+ <Author>ebragante</Author>
+ <EFDB_Topic>dome_command_SetLouvers</EFDB_Topic>
+ <Alias>SetLouvers</Alias>
+ <Device>louvers</Device>
+ <Property>position</Property>
  <Action></Action>
  <Value></Value>
- <Explanation>http://sal.lsst.org/SAL/Commands/dome_command_Track.html</Explanation>
+ <Explanation></Explanation>
     <item>
-      <EFDB_Name>mode</EFDB_Name>
+      <EFDB_Name>position</EFDB_Name>
       <Description> </Description>
-       <IDL_Type>string</IDL_Type>
+       <IDL_Type>int</IDL_Type>
       <Units> </Units>
-      <Count>1</Count>
+      <Count>34</Count>
     </item>
 </SALCommand>
+
+<SALCommand>
+ <Subsystem>dome</Subsystem>
+ <Version>1.0.0</Version>
+ <Author>ebragante</Author>
+ <EFDB_Topic>dome_command_CloseShutter</EFDB_Topic>
+ <Alias>CloseShutter</Alias>
+ <Device>aps</Device>
+ <Property>position</Property>
+ <Action></Action>
+ <Value></Value>
+ <Explanation></Explanation>
+</SALCommand>
+
+<SALCommand>
+ <Subsystem>dome</Subsystem>
+ <Version>1.0.0</Version>
+ <Author>ebragante</Author>
+ <EFDB_Topic>dome_command_OpenShutter</EFDB_Topic>
+ <Alias>OpenShutter</Alias>
+ <Device>aps</Device>
+ <Property>position</Property>
+ <Action></Action>
+ <Value></Value>
+ <Explanation></Explanation>
+</SALCommand>
+
+<SALCommand>
+ <Subsystem>dome</Subsystem>
+ <Version>1.0.0</Version>
+ <Author>ebragante</Author>
+ <EFDB_Topic>dome_command_StopShutter</EFDB_Topic>
+ <Alias>StopShutter</Alias>
+ <Device>aps</Device>
+ <Property></Property>
+ <Action></Action>
+ <Value></Value>
+ <Explanation></Explanation>
+</SALCommand>
+
 </SALCommandSet>
