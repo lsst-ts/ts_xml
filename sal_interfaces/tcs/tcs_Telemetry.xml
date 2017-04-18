@@ -1288,7 +1288,7 @@
           <Explanation>http://sal.lsst.org/SAL/Telemetry/tcs_kernel_PointingLog_Casspa.html</Explanation>
       </item>
       <item>
-          <EFDB_Name>tDec</EFDB_Name>
+          <EFDB_Name>Dec</EFDB_Name>
           <Description></Description>
           <Frequency>0.054</Frequency>
           <Publishers>1</Publishers>
@@ -1301,7 +1301,7 @@
           <Count>1</Count>
           <Instances_per_night>2332</Instances_per_night>
           <Bytes_per_night>9331</Bytes_per_night>
-          <Explanation>http://sal.lsst.org/SAL/Telemetry/tcs_kernel_PointingLog_tDec.html</Explanation>
+          <Explanation>http://sal.lsst.org/SAL/Telemetry/tcs_kernel_PointingLog_Dec.html</Explanation>
       </item>
       <item>
           <EFDB_Name>Fl</EFDB_Name>
@@ -1599,7 +1599,7 @@
           <Frequency>0.054</Frequency>
           <Publishers>1</Publishers>
           <Values_per_Publisher>256</Values_per_Publisher>
-          <Size_in_bytes>32</Size_in_bytes>
+          <Size_in_bytes>256</Size_in_bytes>
           <IDL_Type>char</IDL_Type>
           <Units></Units>
           <Conversion></Conversion>
@@ -1782,7 +1782,7 @@
  <Author>salgenerator</Author>
  <EFDB_Topic>tcs_kernel_FK5Target</EFDB_Topic>
       <item>
-          <EFDB_Name>tdec</EFDB_Name>
+          <EFDB_Name>dec</EFDB_Name>
           <Description></Description>
           <Frequency>0.054</Frequency>
           <Publishers>1</Publishers>
@@ -1795,7 +1795,7 @@
           <Count>1</Count>
           <Instances_per_night>2332</Instances_per_night>
           <Bytes_per_night>9331</Bytes_per_night>
-          <Explanation>http://sal.lsst.org/SAL/Telemetry/tcs_kernel_FK5Target_tdec.html</Explanation>
+          <Explanation>http://sal.lsst.org/SAL/Telemetry/tcs_kernel_FK5Target_dec.html</Explanation>
       </item>
       <item>
           <EFDB_Name>epoc</EFDB_Name>
@@ -1910,4 +1910,37 @@
           <Explanation>http://sal.lsst.org/SAL/Telemetry/tcs_kernel_FK5Target_rv.html</Explanation>
       </item>
 </SALTelemetry>
+
+<SALTelemetry>
+ <Subsystem>tcs</Subsystem>
+ <Version>3.5.0</Version>
+ <Author>hsundararaman</Author>
+ <EFDB_Topic>tcs_LoopTime_ms</EFDB_Topic>
+      <item>
+          <EFDB_Name>LoopTime_ms</EFDB_Name>
+          <IDL_Type>double</IDL_Type>
+          <Units></Units>
+          <Conversion></Conversion>
+          <Sensor_location></Sensor_location>
+          <Count>1</Count>
+          <Explanation>The actual loop time in ms.</Explanation>
+      </item>
+</SALTelemetry>
+
+<SALTelemetry>
+ <Subsystem>tcs</Subsystem>
+ <Version>3.5.0</Version>
+ <Author>hsundararaman</Author>
+ <EFDB_Topic>tcs_Timestamp</EFDB_Topic>
+      <item>
+          <EFDB_Name>Timestamp</EFDB_Name>
+          <IDL_Type>string</IDL_Type>
+          <Units></Units>
+          <Conversion></Conversion>
+          <Sensor_location></Sensor_location>
+          <Count>1</Count>
+          <Explanation>The system time.</Explanation>
+      </item>
+</SALTelemetry>
+
 </SALTelemetrySet>
