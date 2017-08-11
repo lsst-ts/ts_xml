@@ -2,6 +2,10 @@
 import sys
 import xml.etree.ElementTree
 
+ignoreGlobals = True
+globalCommands = ["Start", "Enable", "Disable", "Standby"]
+globalEvents = ["ErrorCode", "SummaryState", "SettingVersions", "AppliedSettingsMatchStart", "SettingsApplied"]
+
 class UMLParser:
     def Open(self, subsystem, version, umlFile):
         tempUMLFile = umlFile + ".tmp"
@@ -30,7 +34,8 @@ class UMLParser:
             commandFile.write(header)
             for item in commands:
                 if item.name != "Command":
-                    commandFile.write(item.CreateSALXML())
+                    if not (ignoreGlobals and item.name in globalCommands):
+                        commandFile.write(item.CreateSALXML())
             commandFile.write(footer)          
             
     def WriteEvents(self, events):
@@ -43,7 +48,8 @@ class UMLParser:
             eventFile.write(header)
             for item in events:
                 if item.name != "Event":
-                    eventFile.write(item.CreateSALXML())
+                    if not (ignoreGlobals and item.name in globalEvents):
+                        eventFile.write(item.CreateSALXML())
             eventFile.write(footer)     
 
     def WriteTelemetry(self, telemetry):
@@ -228,12 +234,12 @@ class SALTelemetry:
         return self.template % (self.subsystem, self.version, self.author, topic, items)
 
         
-if len(sys.argv) != 5:
+if len(sys.argv) != 6:
     print """
-Version: 1.0
+Version: 1.1
     
-usage: *.py <SubSystem> <SALVersion> <UMLFile> <OutputDirectory>
-example: *.py m2ms 3.5.0 D:\Temp\SALTemp.xml D:\Temp
+usage: *.py <SubSystem> <SALVersion> <UMLFile> <OutputDirectory> <IgnoreGlobals(T/F)>
+example: *.py m2ms 3.5.0 D:\Temp\SALTemp.xml D:\Temp T
 
 Notes:
     1. Commands must be a direct child of a package named Command
@@ -244,6 +250,7 @@ Notes:
     6. Telemetry must not be named Telemetry, otherwise it will be ignored
     7. If you want parameters to have units defined, create a new tag named 'unit'"""
 else:
+    ignoreGlobals = sys.argv[5] == "T"
     uml = UMLParser()
     uml.Open(sys.argv[1], sys.argv[2], sys.argv[3])
-    uml.Parse(sys.argv[4])    
+    uml.Parse(sys.argv[4])
