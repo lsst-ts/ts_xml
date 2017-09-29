@@ -54,16 +54,106 @@
 
 <SALCommand>
  <Subsystem>tcs</Subsystem>
-<Version>3.2.0</Version>
- <Author>hsundararaman</Author>
- <EFDB_Topic>tcs_command_injectError</EFDB_Topic>
- <Alias>injectError</Alias>
+<Version>3.6.0</Version>
+ <Author>aanania</Author>
+ <EFDB_Topic>tcs_command_filterChangeRequest</EFDB_Topic>
+ <Alias>filterChangeRequest</Alias>
   <Value></Value>
- <Explanation>inject Error</Explanation>
+ <Explanation>Move to required position to execute a filter change</Explanation>
     <item>
-      <EFDB_Name>injectError</EFDB_Name>
+      <EFDB_Name>filterChangeRequest</EFDB_Name>
       <Description> </Description>
-       <IDL_Type>boolean</IDL_Type>
+       <IDL_Type>string</IDL_Type>
+	<IDL_Size>64</IDL_Size>
+       <Units> </Units>
+      <Count>1</Count>
+    </item>
+</SALCommand>
+</SALCommandSet>
+
+<SALCommand>
+ <Subsystem>tcs</Subsystem>
+<Version>3.6.0</Version>
+ <Author>aanania</Author>
+ <EFDB_Topic>tcs_command_target</EFDB_Topic>
+ <Alias>target</Alias>
+  <Value></Value>
+ <Explanation>Target to point the telescope</Explanation>
+    <item>
+      <EFDB_Name>targetId</EFDB_Name>
+      <Description> </Description>
+       <IDL_Type>long</IDL_Type>
+       <Units> </Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>fieldId</EFDB_Name>
+      <Description> </Description>
+       <IDL_Type>long</IDL_Type>
+       <Units> </Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>groupId</EFDB_Name>
+      <Description> </Description>
+       <IDL_Type>long</IDL_Type>
+       <Units> </Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>filter</EFDB_Name>
+      <Description> </Description>
+       <IDL_Type>string</IDL_Type>
+	<IDL_Size>64</IDL_Size>
+       <Units> </Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>requestTime</EFDB_Name>
+      <Description> </Description>
+       <IDL_Type>double</IDL_Type>
+       <Units> </Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>ra</EFDB_Name>
+      <Description>Right ascension</Description>
+       <IDL_Type>double</IDL_Type>
+       <Units> </Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>dec</EFDB_Name>
+      <Description>Declination</Description>
+       <IDL_Type>double</IDL_Type>
+       <Units> </Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>angle</EFDB_Name>
+      <Description> </Description>
+       <IDL_Type>double</IDL_Type>
+       <Units> </Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>num_exposures</EFDB_Name>
+      <Description> </Description>
+       <IDL_Type>long</IDL_Type>
+       <Units> </Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>exposure_times</EFDB_Name>
+      <Description> </Description>
+       <IDL_Type>long</IDL_Type>
+       <Units> </Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>slew_time</EFDB_Name>
+      <Description> </Description>
+       <IDL_Type>double</IDL_Type>
        <Units> </Units>
       <Count>1</Count>
     </item>
