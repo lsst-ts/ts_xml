@@ -47,7 +47,7 @@
 
 <SALEvent>
  <Subsystem>tcs</Subsystem>
- <Version>3.5.0</Version>
+ <Version>3.6.0</Version>
  <Author>hsundararaman</Author>
  <EFDB_Topic>tcs_logevent_InternalCommand</EFDB_Topic>
  <Alias>InternalCommand</Alias>
@@ -55,10 +55,9 @@
  <item>
 	<EFDB_Name>CommandObject</EFDB_Name>
 	<Description>Command Object</Description>
-	<IDL_Type>char</IDL_Type>
-	<IDL_Size>1000</IDL_Size>
+	<IDL_Type>byte</IDL_Type>
 	<Units>NA</Units>
-	<Count>1</Count>
+	<Count>1000</Count>
  </item>
 </SALEvent>
 
@@ -125,17 +124,16 @@
 	<Count>1</Count>
  </item>
  <item>
-	<EFDB_Name>DisabledState</EFDB_Name>
-	<Description>Disabled State</Description>
+	<EFDB_Name>detailedState</EFDB_Name>
+	<Description>Detailed State</Description>
 	<IDL_Type>unsigned short</IDL_Type>
 	<Units>NA</Units>
 	<Count>1</Count>
  </item>
 <item>
-	<EFDB_Name>TimeStamp</EFDB_Name>
+	<EFDB_Name>timestamp</EFDB_Name>
 	<Description>The system time.</Description>
-	<IDL_Type>string</IDL_Type>
-    <IDL_Size>1</IDL_Size>
+	<IDL_Type>double</IDL_Type>
 	<Units>NA</Units>
 	<Count>1</Count>
  </item>
@@ -155,5 +153,61 @@
 	<Units>NA</Units>
 	<Count>1</Count>
  </item>
+</SALEvent>
+
+<SALEvent>
+ <Subsystem>tcs</Subsystem>
+ <Version>3.6.0</Version>
+ <Author>aanania</Author>
+ <EFDB_Topic>tcs_logevent_FilterChangeInPosition</EFDB_Topic>
+ <Alias>FilterChangeInPosition</Alias>
+ <Explanation>Rotator is in position for a filter change.</Explanation>
+ <item>
+	<EFDB_Name>FilterChangeInPosition</EFDB_Name>
+	<Description>Event to announce to OCS that rotator is in position for a filter change.</Description>
+	<IDL_Type>boolean</IDL_Type>
+	<Units>NA</Units>
+	<Count>1</Count>
+ </item>
+</SALEvent>
+
+<SALEvent>
+ <Subsystem>tcs</Subsystem>
+ <Version>3.6.0</Version>
+ <Author>aanania</Author>
+ <EFDB_Topic>tcs_logevent_TargetInPosition</EFDB_Topic>
+ <Alias>TargetInPosition</Alias>
+ <Explanation>Telescope is in position .</Explanation>
+ <item>
+	<EFDB_Name>TargetInPosition</EFDB_Name>
+	<Description>Event to announce to OCS that the telescope is in position.</Description>
+	<IDL_Type>boolean</IDL_Type>
+	<Units>NA</Units>
+	<Count>1</Count>
+ </item>
+</SALEvent>
+<SALEvent>
+    <Subsystem>tcs</Subsystem>
+    <Version>3.6.0</Version>
+    <Author>aanania</Author>
+    <EFDB_Topic>tcs_logevent_SettingsApplied</EFDB_Topic>
+    <Alias>SettingsApplied</Alias>
+    <Explanation>http://sal.lsst.org</Explanation>
+    <item>
+        <EFDB_Name>settings</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>string</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+        <Explanation>http://sal.lsst.org</Explanation>
+    </item>
+    <item>
+        <EFDB_Name>timestamp</EFDB_Name>
+        <Description>The timestamp for when the event occurred.</Description>
+        <IDL_Type>double</IDL_Type>
+        <Units>Seconds</Units>
+        <Count>1</Count>
+        <Explanation>http://sal.lsst.org</Explanation>
+    </item>
 </SALEvent>
 </SALEventSet>
