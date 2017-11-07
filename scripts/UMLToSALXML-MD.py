@@ -1,7 +1,10 @@
 
 import sys
 import xml.etree.ElementTree
-import re
+
+ignoreGlobals = True
+globalCommands = ["Start", "Enable", "Disable", "Standby"]
+globalEvents = ["ErrorCode", "SummaryState", "SettingVersions", "AppliedSettingsMatchStart", "SettingsApplied"]
 
 class UMLParser:
     def Open(self, subsystem, version, umlFile):
@@ -9,7 +12,7 @@ class UMLParser:
         with open(tempUMLFile, "w") as tempFile:
             with open(umlFile, "r") as inputFile:
                 for line in inputFile:
-                    tempFile.write(line.replace("%20", " "))
+                    tempFile.write(line.replace("<UML:", "<").replace("</UML:", "</").replace("xmi:id","xmiid"))
 
         self.subsystem = subsystem
         self.version = version
@@ -31,7 +34,8 @@ class UMLParser:
             commandFile.write(header)
             for item in commands:
                 if item.name != "Command":
-                    commandFile.write(item.CreateSALXML())
+                    if not (ignoreGlobals and item.name in globalCommands):
+                        commandFile.write(item.CreateSALXML())
             commandFile.write(footer)          
             
     def WriteEvents(self, events):
@@ -44,7 +48,8 @@ class UMLParser:
             eventFile.write(header)
             for item in events:
                 if item.name != "Event":
-                    eventFile.write(item.CreateSALXML())
+                    if not (ignoreGlobals and item.name in globalEvents):
+                        eventFile.write(item.CreateSALXML())
             eventFile.write(footer)     
 
     def WriteTelemetry(self, telemetry):
@@ -79,67 +84,75 @@ class UMLParser:
         return telemetry
         
     def CreateSALCommand(self, command):
-        basePath = ".//eSubpackages[@name='CommandSet']/eClassifiers[@name='%s']" % (command)
-        author = self.GetAttribute(self.uml.find(basePath), "author", "UNDEFINED")
+        basePath = ".//packagedElement[@name='SAL interface']/packagedElement[@name='Command']/packagedElement[@name='%s']/ownedAttribute" % (command)
+        author = ""#self.GetValue(self.uml.find(basePath % "author"), "UNDEFINED")
         parameters = []
         for parameter in self.GetCommandParameterList(command):
-            parameters.append(self.CreateSALParameter("CommandSet", command, parameter))
+            parameters.append(self.CreateSALParameter("Command", command, parameter))
         return SALCommand(self.subsystem, self.version, author, command, parameters)
         
     def CreateSALEvent(self, event):
-        basePath = ".//eSubpackages[@name='EventSet']/eClassifiers[@name='%s']" % (event)
-        author = self.GetAttribute(self.uml.find(basePath), "author", "UNDEFINED")
+        basePath = ".//packagedElement[@name='SAL interface']/packagedElement[@name='Event']/packagedElement[@name='%s']/ownedAttribute" % (event)
+        author = ""#self.GetValue(self.uml.find(basePath), "UNDEFINED")
         parameters = []
         for parameter in self.GetEventParameterList(event):
-            parameters.append(self.CreateSALParameter("EventSet", event, parameter))
+            parameters.append(self.CreateSALParameter("Event", event, parameter))
         return SALEvent(self.subsystem, self.version, author, event, parameters)
         
     def CreateSALTelemetry(self, telemetry):
-        basePath = ".//eSubpackages[@name='TelemetrySet']/eClassifiers[@name='%s']" % (telemetry)
-        author = self.GetAttribute(self.uml.find(basePath), "author", "UNDEFINED")
+        basePath = ".//packagedElement[@name='SAL interface']/packagedElement[@name='Telemetry']/packagedElement[@name='%s']/ownedAttribute" % (telemetry)
+        author = ""#self.GetValue(self.uml.find(basePath % "author"), "UNDEFINED")
         parameters = []
         for parameter in self.GetTelemetryParameterList(telemetry):
-            parameters.append(self.CreateSALParameter("TelemetrySet", telemetry, parameter))
+            parameters.append(self.CreateSALParameter("Telemetry", telemetry, parameter))
         return SALTelemetry(self.subsystem, self.version, author, telemetry, parameters)
 
-    def CreateSALParameter(self, type, topic, parameter):
-        basePath = ".//eSubpackages[@name='%s']/eClassifiers[@name='%s']/eStructuralFeatures[@name='%s']" % (type, topic, parameter)
-        description = self.GetAttribute(self.uml.find(basePath), "description", "")
-        units, type = self.GetUnitAndType(self.GetAttribute(self.uml.find(basePath), "eType", ""))
-        count = self.GetAttribute(self.uml.find(basePath), "lowerBound", "UNDEFINED")
-        return SALParameter(parameter, description, type, units, count)
+    def CreateSALParameter(self, type, command, parameter):
+        basePath = ".//packagedElement[@name='SAL interface']/packagedElement[@name='%s']/packagedElement[@name='%s']/ownedAttribute[@name='%s']%s" % (type, command, parameter,'%s')
+        description = self.GetValueByName(self.uml.find(basePath % "/ownedComment"), "body", "")
+        description = description.replace("<html><pre>", "").replace("</html></pre>", "")
+		
+        typeID = self.GetValueByName(self.uml.find(basePath % ""), "type", "UNDEFINED")
+        type = self.TypeIDtoType(typeID)
+        
+        units = self.GetValueByName(self.uml.find(basePath % ""),"unit", " ") 
+        units = "" if units is None else units
+		
+        if type == "string":
+            count = self.GetValueByName(self.uml.find(basePath % "/upperValue"),"value", "256")
+            return SALParameterString(parameter, description, type, units, count)
+        else:
+            count = self.GetValueByName(self.uml.find(basePath % "/upperValue"),"value", "1")
+            return SALParameter(parameter, description, type, units, count)
         
     def GetCommandList(self):
-        return [command.get("name") for command in self.uml.findall(".//eSubpackages[@name='CommandSet']/eClassifiers")]
+        return [command.get("name") for command in self.uml.findall(".//packagedElement[@name='SAL interface']/packagedElement[@name='Command']/packagedElement")]
   
     def GetCommandParameterList(self, command):
-        return [parameter.get("name") for parameter in self.uml.findall(".//eSubpackages[@name='CommandSet']/eClassifiers[@name='%s']/eStructuralFeatures" % command)]
+        return [parameter.get("name") for parameter in self.uml.findall(".//packagedElement[@name='SAL interface']/packagedElement[@name='Command']/packagedElement[@name='%s']/ownedAttribute" % command)]
 
     def GetEventList(self):
-        return [event.get("name") for event in self.uml.findall(".//eSubpackages[@name='EventSet']/eClassifiers")]
+        return [event.get("name") for event in self.uml.findall(".//packagedElement[@name='SAL interface']/packagedElement[@name='Event']/packagedElement")]
         
     def GetEventParameterList(self, event):
-        return [parameter.get("name") for parameter in self.uml.findall(".//eSubpackages[@name='EventSet']/eClassifiers[@name='%s']/eStructuralFeatures" % event)]
+        return [parameter.get("name") for parameter in self.uml.findall(".//packagedElement[@name='SAL interface']/packagedElement[@name='Event']/packagedElement[@name='%s']/ownedAttribute" % event)]
                 
     def GetTelemetryList(self):
-        return [telemetry.get("name") for telemetry in self.uml.findall(".//eSubpackages[@name='TelemetrySet']/eClassifiers")]
+        return [telemetry.get("name") for telemetry in self.uml.findall(".//packagedElement[@name='SAL interface']/packagedElement[@name='Telemetry']/packagedElement")]
         
     def GetTelemetryParameterList(self, telemetry):
-        return [parameter.get("name") for parameter in self.uml.findall(".//eSubpackages[@name='TelemetrySet']/eClassifiers[@name='%s']/eStructuralFeatures" % telemetry)]      
-        
-    def GetUnitAndType(self, text):
-        if text == "":
-            return "", "UNDEFINED"
-        else:
-            match = re.search("[\w]*[:][\w\s.#]*[//][//]([\w\s]*)[//]([\w\s]*)", text)
-            return match.group(1).replace("BasicTypes", ""), match.group(2)
+        return [parameter.get("name") for parameter in self.uml.findall(".//packagedElement[@name='SAL interface']/packagedElement[@name='Telemetry']/packagedElement[@name='%s']/ownedAttribute" % telemetry)]      
 
-    def GetAttribute(self, node, attribute, default):
-        if node is not None:
-            value = node.get(attribute)
-            if value is not None:
-                return value
-        return default
+    def GetValue(self, node, default):
+        return node.get("value") if node is not None else default
+
+    def GetValueByName(self, node, value, default):
+        return node.get(value) if node is not None else default
+
+    def TypeIDtoType(self, typeID):
+        path = ".//packagedElement[@name='IDL Datatype']/packagedElement[@xmiid='%s']" % typeID 
+        node = self.uml.find(path)
+        return node.get("name") if node is not None else 'Error'
 
 class SALParameter:
     template = """
@@ -161,7 +174,29 @@ class SALParameter:
         
     def CreateSALXML(self):
         return self.template % (self.name, self.description, self.type, self.units, self.count)
+
+class SALParameterString:
+    template = """
+    <item>
+        <EFDB_Name>%s</EFDB_Name>
+        <Description>%s</Description>
+        <IDL_Type>%s</IDL_Type>
+        <IDL_Size>%s</IDL_Size>
+        <Units>%s</Units>
+        <Count>%s</Count>
+        <Explanation>http://sal.lsst.org</Explanation>
+    </item>"""
+    
+    def __init__(self, name, description, type, units, count):
+        self.name = name
+        self.description = description
+        self.type = type
+        self.units = units
+        self.count = count
         
+    def CreateSALXML(self):
+        return self.template % (self.name, self.description, self.type, self.count, self.units, '1')
+		
 class SALCommand:
     template = """
 <SALCommand>
@@ -238,21 +273,29 @@ class SALTelemetry:
             items = items + parameter.CreateSALXML()
         return self.template % (self.subsystem, self.version, self.author, topic, items)
 
-if len(sys.argv) != 5:
+        
+if len(sys.argv) != 6:
     print """
-Version: 1.0
+Version: 1.1
     
-usage: *.py <SubSystem> <SALVersion> <UMLFile> <OutputDirectory>
-example: *.py m2ms 3.5.0 D:\Temp\SALTemp.ecore D:\Temp
+usage: *.py <SubSystem> <SALVersion> <UMLFile> <OutputDirectory> <IgnoreGlobals(T/F)>
+example: *.py m2ms 3.5.0 D:\Temp\SALTemp.xml D:\Temp T
 
 Notes:
-    1. Commands must be a direct child of a package named CommandSet
+    1. Commands must be a direct child of a package named Command
     2. Commands must not be named Command, otherwise it will be ignored
-    3. Events must be a direct child of a package named EventSet
+    3. Events must be a direct child of a package named Event
     4. Events must not be named Event, otherwise it will be ignored
-    5. Telemetry must be a direct child of a package named TelemetrySet
-    6. Telemetry must not be named Telemetry, otherwise it will be ignored"""
+    5. Telemetry must be a direct child of a package named Telemetry
+    6. Telemetry must not be named Telemetry, otherwise it will be ignored
+    7. If you want parameters to have units defined, create a new tag named 'unit'"""
 else:
+    ignoreGlobals = sys.argv[5] == "T"
+    print("Executing UML XMI 2.1 from MagicDraw to SAL XML")
+    print("UML Parser...")
     uml = UMLParser()
+    print("Opening XML Model...")
     uml.Open(sys.argv[1], sys.argv[2], sys.argv[3])
-    uml.Parse(sys.argv[4])    
+    print("Parsing...")
+    uml.Parse(sys.argv[4])
+    print("Completed succesfully...")
