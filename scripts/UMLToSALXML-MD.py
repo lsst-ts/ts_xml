@@ -12,7 +12,7 @@ class UMLParser:
         with open(tempUMLFile, "w") as tempFile:
             with open(umlFile, "r") as inputFile:
                 for line in inputFile:
-                    tempFile.write(line.replace("<UML:", "<").replace("</UML:", "</").replace("xmi:id","xmiid"))
+                    tempFile.write(line.replace("<UML:", "<").replace("</UML:", "</").replace("xmi:id","xmiid").replace("xmi:Extension", "xmiExtension"))
 
         self.subsystem = subsystem
         self.version = version
@@ -111,9 +111,16 @@ class UMLParser:
         basePath = ".//packagedElement[@name='SAL interface']/packagedElement[@name='%s']/packagedElement[@name='%s']/ownedAttribute[@name='%s']%s" % (type, command, parameter,'%s')
         description = self.GetValueByName(self.uml.find(basePath % "/ownedComment"), "body", "")
         description = description.replace("<html><pre>", "").replace("</html></pre>", "")
+        typePath = basePath % "/type/xmiExtension/referenceExtension"
 		
-        typeID = self.GetValueByName(self.uml.find(basePath % ""), "type", "UNDEFINED")
-        type = self.TypeIDtoType(typeID)
+        type = self.GetValueByName(self.uml.find(typePath), "referentPath", "UNDEFINED")
+        if type is "UNDEFINED":
+            typeID = self.GetValueByName(self.uml.find(basePath % ""), "type", "UNDEFINED")
+            type = self.TypeIDtoType(typeID)
+        else:
+            length = len(type)
+            lastIndex = type.rfind(':')
+            type = type[-(length-lastIndex-1):] 
         
         units = self.GetValueByName(self.uml.find(basePath % ""),"unit", " ") 
         units = "" if units is None else units
@@ -153,7 +160,7 @@ class UMLParser:
         path = ".//packagedElement[@name='IDL Datatype']/packagedElement[@xmiid='%s']" % typeID 
         node = self.uml.find(path)
         return node.get("name") if node is not None else 'Error'
-
+        
 class SALParameter:
     template = """
     <item>
@@ -275,7 +282,7 @@ class SALTelemetry:
 
         
 if len(sys.argv) != 6:
-    print """
+    print("""
 Version: 1.1
     
 usage: *.py <SubSystem> <SALVersion> <UMLFile> <OutputDirectory> <IgnoreGlobals(T/F)>
@@ -288,7 +295,7 @@ Notes:
     4. Events must not be named Event, otherwise it will be ignored
     5. Telemetry must be a direct child of a package named Telemetry
     6. Telemetry must not be named Telemetry, otherwise it will be ignored
-    7. If you want parameters to have units defined, create a new tag named 'unit'"""
+    7. If you want parameters to have units defined, create a new tag named 'unit'""")
 else:
     ignoreGlobals = sys.argv[5] == "T"
     print("Executing UML XMI 2.1 from MagicDraw to SAL XML")
