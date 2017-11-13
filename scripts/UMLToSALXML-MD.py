@@ -169,7 +169,6 @@ class SALParameter:
         <IDL_Type>%s</IDL_Type>
         <Units>%s</Units>
         <Count>%s</Count>
-        <Explanation>http://sal.lsst.org</Explanation>
     </item>"""
     
     def __init__(self, name, description, type, units, count):
@@ -191,7 +190,6 @@ class SALParameterString:
         <IDL_Size>%s</IDL_Size>
         <Units>%s</Units>
         <Count>%s</Count>
-        <Explanation>http://sal.lsst.org</Explanation>
     </item>"""
     
     def __init__(self, name, description, type, units, count):
@@ -212,6 +210,10 @@ class SALCommand:
     <Author>%s</Author>
     <EFDB_Topic>%s</EFDB_Topic>
     <Alias>%s</Alias>
+    <Device></Device>
+    <Property></Property>
+    <Action></Action>
+    <Value></Value>
     <Explanation>http://sal.lsst.org</Explanation>%s
 </SALCommand>"""
     
@@ -239,6 +241,7 @@ class SALEvent:
     <EFDB_Topic>%s</EFDB_Topic>
     <Alias>%s</Alias>
     <Explanation>http://sal.lsst.org</Explanation>%s
+    <File_Reference></File_Reference>
 </SALEvent>"""
 
     def __init__(self, subsystem, version, author, name, parameters):
@@ -262,8 +265,7 @@ class SALTelemetry:
     <Subsystem>%s</Subsystem>
     <Version>%s</Version>
     <Author>%s</Author>
-    <EFDB_Topic>%s</EFDB_Topic>
-    <Explanation>http://sal.lsst.org</Explanation>%s
+    <EFDB_Topic>%s</EFDB_Topic>%s
 </SALTelemetry>"""
 
     def __init__(self, subsystem, version, author, name, parameters):

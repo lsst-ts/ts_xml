@@ -144,7 +144,6 @@ class SALParameter:
         <IDL_Type>%s</IDL_Type>
         <Units>%s</Units>
         <Count>%s</Count>
-        <Explanation>http://sal.lsst.org</Explanation>
     </item>"""
     
     def __init__(self, name, description, type, units, count):
@@ -165,6 +164,10 @@ class SALCommand:
     <Author>%s</Author>
     <EFDB_Topic>%s</EFDB_Topic>
     <Alias>%s</Alias>
+    <Device></Device>
+    <Property></Property>
+    <Action></Action>
+    <Value></Value>
     <Explanation>http://sal.lsst.org</Explanation>%s
 </SALCommand>"""
     
@@ -192,6 +195,7 @@ class SALEvent:
     <EFDB_Topic>%s</EFDB_Topic>
     <Alias>%s</Alias>
     <Explanation>http://sal.lsst.org</Explanation>%s
+    <File_Reference></File_Reference>
 </SALEvent>"""
 
     def __init__(self, subsystem, version, author, name, parameters):
@@ -215,8 +219,7 @@ class SALTelemetry:
     <Subsystem>%s</Subsystem>
     <Version>%s</Version>
     <Author>%s</Author>
-    <EFDB_Topic>%s</EFDB_Topic>
-    <Explanation>http://sal.lsst.org</Explanation>%s
+    <EFDB_Topic>%s</EFDB_Topic>%s
 </SALTelemetry>"""
 
     def __init__(self, subsystem, version, author, name, parameters):
@@ -235,7 +238,7 @@ class SALTelemetry:
 
         
 if len(sys.argv) != 6:
-    print """
+    print("""
 Version: 1.1
     
 usage: *.py <SubSystem> <SALVersion> <UMLFile> <OutputDirectory> <IgnoreGlobals(T/F)>
@@ -248,7 +251,7 @@ Notes:
     4. Events must not be named Event, otherwise it will be ignored
     5. Telemetry must be a direct child of a package named Telemetry
     6. Telemetry must not be named Telemetry, otherwise it will be ignored
-    7. If you want parameters to have units defined, create a new tag named 'unit'"""
+    7. If you want parameters to have units defined, create a new tag named 'unit'""")
 else:
     ignoreGlobals = sys.argv[5] == "T"
     uml = UMLParser()
