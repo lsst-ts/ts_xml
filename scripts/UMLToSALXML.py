@@ -195,7 +195,6 @@ class SALEvent:
     <EFDB_Topic>%s</EFDB_Topic>
     <Alias>%s</Alias>
     <Explanation>http://sal.lsst.org</Explanation>%s
-    <File_Reference></File_Reference>
 </SALEvent>"""
 
     def __init__(self, subsystem, version, author, name, parameters):
