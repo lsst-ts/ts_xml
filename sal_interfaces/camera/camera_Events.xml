@@ -137,9 +137,34 @@
         <Alias>startIntegration</Alias>
         <Explanation>http://sal.lsst.org/SAL/Events/camera_logevent_startIntegration.html</Explanation>
         <item>
-            <EFDB_Name>imageName</EFDB_Name>
-            <Description> </Description>
+            <EFDB_Name>imageSequenceName</EFDB_Name>
+            <Description>The imageSequenceName as passed to the takeImages command</Description>
             <IDL_Type>string</IDL_Type>
+            <IDL_Size>1</IDL_Size>
+            <Units> </Units>
+            <Count>1</Count>
+        </item>
+        <item>
+            <EFDB_Name>imageName</EFDB_Name>
+            <Description>The imageName for this specific exposure</Description>
+            <IDL_Type>string</IDL_Type>
+            <IDL_Size>1</IDL_Size>
+            <Units> </Units>
+            <Count>1</Count>
+        </item>
+        <item>
+            <EFDB_Name>imageSequenceNumber</EFDB_Name>
+            <Description>The zero based sequence number for this specific exposure</Description>
+            <IDL_Type>string</IDL_Type>
+            <IDL_Size>1</IDL_Size>
+            <Units> </Units>
+            <Count>1</Count>
+        </item>
+        
+        <item>
+            <EFDB_Name>startIntegrationTime</EFDB_Name>
+            <Description>The effective time at which the image acquisition started (i.e. the end of the previous clear or readout)</Description>
+            <IDL_Type>timeStamp</IDL_Type>
             <IDL_Size>1</IDL_Size>
             <Units> </Units>
             <Count>1</Count>
@@ -298,5 +323,29 @@
             <Count>1</Count>
         </item>
     </SALEvent>     
-       
+
+    <SALEvent>
+        <Subsystem>camera</Subsystem>
+        <Version>3.5.0</Version>
+        <Author>tonyj</Author>
+        <EFDB_Topic>camera_logevent_availableFilters</EFDB_Topic>
+        <Alias>availableFilters</Alias>
+        <item>
+            <EFDB_Name>filterTypes</EFDB_Name>
+            <Description>A list of installed filter types (comma delimimted, u,g,r,z,y)</Description>
+            <IDL_Type>string</IDL_Type>
+            <IDL_Size>1</IDL_Size>
+            <Units> </Units>
+            <Count>1</Count>
+        </item>
+        <item>
+            <EFDB_Name>filterNames</EFDB_Name>
+            <Description>A list of installed filter names (comma delimimted, U-001,G-004,R-010,Z-012,Y-014), in the same order as the list of filter types.</Description>
+            <IDL_Type>string</IDL_Type>
+            <IDL_Size>1</IDL_Size>
+            <Units> </Units>
+            <Count>1</Count>
+        </item>
+    </SALEvent>          
+                     
 </SALEventSet>
