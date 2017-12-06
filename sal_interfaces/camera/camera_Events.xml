@@ -64,6 +64,15 @@
         <EFDB_Topic>camera_logevent_endSetFilter</EFDB_Topic>
         <Alias>endSetFilter</Alias>
         <Explanation>http://sal.lsst.org/SAL/Events/camera_logevent_endSetFilter.html</Explanation>
+        <Explanation>http://sal.lsst.org/SAL/Events/camera_logevent_startSetFilter.html</Explanation>
+        <item>
+            <EFDB_Name>filterName</EFDB_Name>
+            <Description>The name of the filter being installed (e.g. U-001)</Description>
+            <IDL_Type>string</IDL_Type>
+            <IDL_Size>1</IDL_Size>
+            <Units> </Units>
+            <Count>1</Count>
+        </item>
     </SALEvent>
 
     <SALEvent>
@@ -205,6 +214,14 @@
         <EFDB_Topic>camera_logevent_startSetFilter</EFDB_Topic>
         <Alias>startSetFilter</Alias>
         <Explanation>http://sal.lsst.org/SAL/Events/camera_logevent_startSetFilter.html</Explanation>
+        <item>
+            <EFDB_Name>filterName</EFDB_Name>
+            <Description>The name of the filter being installed (e.g. U-001)</Description>
+            <IDL_Type>string</IDL_Type>
+            <IDL_Size>1</IDL_Size>
+            <Units> </Units>
+            <Count>1</Count>
+        </item>
     </SALEvent>
 
     <SALEvent>
@@ -253,8 +270,8 @@
         <Subsystem>camera</Subsystem>
         <Version>3.5.0</Version>
         <Author>tonyj</Author>
-        <EFDB_Topic>camera_logevent_idleBusyDetailedState</EFDB_Topic>
-        <Alias>idleBusyDetailedState</Alias>
+        <EFDB_Topic>camera_logevent_CCSCommandState</EFDB_Topic>
+        <Alias>ccsCommandState</Alias>
         <item>
             <EFDB_Name>substate</EFDB_Name>
             <Description>Enumeration of valid subsubstates</Description>
@@ -328,16 +345,23 @@
         <Subsystem>camera</Subsystem>
         <Version>3.5.0</Version>
         <Author>tonyj</Author>
-        <EFDB_Topic>camera_logevent_availableFilters</EFDB_Topic>
-        <Alias>availableFilters</Alias>
+        <EFDB_Topic>camera_logevent_CalibrationDetailedState</EFDB_Topic>
+        <Alias>calibrationDetailedState</Alias>
         <item>
-            <EFDB_Name>filterTypes</EFDB_Name>
-            <Description>A list of installed filter types (comma delimimted, u,g,r,z,y)</Description>
-            <IDL_Type>string</IDL_Type>
-            <IDL_Size>1</IDL_Size>
-            <Units> </Units>
+            <EFDB_Name>substate</EFDB_Name>
+            <Description>Enumeration of valid subsubstates</Description>
+            <IDL_Type>short</IDL_Type>
+            <Enumeration>DISABLED, ENABLED, INTEGRATING</Enumeration>
             <Count>1</Count>
         </item>
+    </SALEvent> 
+    
+    <SALEvent>
+        <Subsystem>camera</Subsystem>
+        <Version>3.5.0</Version>
+        <Author>tonyj</Author>
+        <EFDB_Topic>camera_logevent_availableFilters</EFDB_Topic>
+        <Alias>availableFilters</Alias>
         <item>
             <EFDB_Name>filterNames</EFDB_Name>
             <Description>A list of installed filter names (comma delimimted, U-001,G-004,R-010,Z-012,Y-014), in the same order as the list of filter types.</Description>
