@@ -1,10 +1,11 @@
-
+#This script does the same as UMLToSALXML but additionally can create ENUMS from the UML XMI 1.1 model.... 
 import sys
 import xml.etree.ElementTree
 
 ignoreGlobals = True
 globalCommands = ["Start", "Enable", "Disable", "Standby"]
 globalEvents = ["ErrorCode", "SummaryState", "SettingVersions", "AppliedSettingsMatchStart", "SettingsApplied"]
+salTypes = ["short", "long", "long long", "unsigned short", "unsigned long", "unsigned long long", "float", "double", "char", "boolean", "octet", "string", "byte"]
 
 class UMLParser:
     def Open(self, subsystem, version, umlFile):
@@ -17,13 +18,13 @@ class UMLParser:
         self.subsystem = subsystem
         self.version = version
         self.uml = xml.etree.ElementTree.parse(tempUMLFile)
-        
+        self.typedefs = self.GetTypedefsNames()
     def Parse(self, outputDirectory):
         self.outputDirectory = outputDirectory
         self.WriteCommands(self.GetCommands())
         self.WriteEvents(self.GetEvents())
         self.WriteTelemetry(self.GetTelemetry())
-        
+		
     def WriteCommands(self, commands):
         header = """<?xml version="1.0" encoding="UTF-8"?>
 <?xml-stylesheet type="text/xsl" href="http://lsst-sal.tuc.noao.edu/schema/SALCommandSet.xsl"?>
@@ -108,12 +109,23 @@ class UMLParser:
         return SALTelemetry(self.subsystem, self.version, author, telemetry, parameters)
 
     def CreateSALParameter(self, type, command, parameter):
+        isEnum = False
+        enumNames = ""
+        
         basePath = ".//Package[@name='%s']/Namespace.ownedElement/Class[@name='%s']/Classifier.feature/Attribute[@name='%s']/ModelElement.taggedValue/TaggedValue[@tag='%s']" % (type, command, parameter, "%s")
         description = self.GetValue(self.uml.find(basePath % "description"), "")
+		
         type = self.GetValue(self.uml.find(basePath % "type"), "UNDEFINED")
+        print(type)
+        if(type in self.typedefs):
+            isEnum = self.TypedefsIsEnum(type)
+            enumNames = self.GetEnumNames(type)
+        else:
+            pass
+        
         units = self.GetValue(self.uml.find(basePath % "unit"), "")
         count = self.GetValue(self.uml.find(basePath % "upperBound"), "UNDEFINED")
-        return SALParameter(parameter, description, type, units, count)
+        return SALParameter(parameter, description, type, units, count, isEnum, enumNames)
         
     def GetCommandList(self):
         return [command.get("name") for command in self.uml.findall(".//Package[@name='Command']/Namespace.ownedElement/Class")]
@@ -136,6 +148,34 @@ class UMLParser:
     def GetValue(self, node, default):
         return node.get("value") if node is not None else default
 
+    def GetTypedefsNames(self):
+        basePath = ".//Package[@name='Typedefs']/Namespace.ownedElement/Class"
+        a = [event.get("name") for event in self.uml.findall(basePath)]
+        print(a)
+        for j in a:
+            print(j)
+            self.GetEnumNames(j)
+            self.TypedefsIsEnum(j)
+        return [event.get("name") for event in self.uml.findall(basePath)]
+		
+    def TypedefsIsEnum(self, enumName):
+        basePath = ".//Package[@name='Typedefs']/Namespace.ownedElement/Class[@name='%s']/ModelElement.stereotype/Stereotype" % (enumName)
+        type = self.uml.find(basePath).get("name")
+        return (type=="enumeration")
+        
+    def GetEnumNames(self, enumName):
+        basePath = ".//Package[@name='Typedefs']/Namespace.ownedElement/Class[@name='%s']/Classifier.feature/Attribute" % (enumName)
+        enumNames = ""
+        enumNamesArray = [event.get("name") for event in self.uml.findall(basePath)]
+        for j in enumNamesArray:
+            if(enumNames == ""):
+                enumNames = j
+            else:
+                enumNames = enumNames + "," + j
+        return enumNames
+        
+#class ENUMs:
+
 class SALParameter:
     template = """
     <item>
@@ -146,15 +186,46 @@ class SALParameter:
         <Count>%s</Count>
     </item>"""
     
-    def __init__(self, name, description, type, units, count):
+    templateEnums = """
+    <item>
+        <EFDB_Name>%s</EFDB_Name>
+        <Description>%s</Description>
+        <IDL_Type>short</IDL_Type>
+        <Enumeration>%s</Enumeration>
+        <Units>%s</Units>
+        <Count>%s</Count>
+    </item>"""
+	
+    templateStrings = """
+    <item>
+        <EFDB_Name>%s</EFDB_Name>
+        <Description>%s</Description>
+        <IDL_Type>%s</IDL_Type>
+        <IDL_Size>%s</IDL_Size>
+        <Units>%s</Units>
+        <Count>1</Count>
+    </item>"""
+	
+    def __init__(self, name, description, type, units, count, isEnum=False, enumNames=""):
         self.name = name
         self.description = description
         self.type = type
         self.units = units
         self.count = count
+        self.isEnum = isEnum
+        self.enumNames = enumNames
         
     def CreateSALXML(self):
-        return self.template % (self.name, self.description, self.type, self.units, self.count)
+        print(self.type)
+        print(salTypes)
+        if(self.type in salTypes):
+            if(self.type == "string"):
+                return self.templateStrings % (self.name, self.description, self.type, self.count, self.units)
+            else:
+                return self.template % (self.name, self.description, self.type, self.units, self.count)
+        else:
+            return self.templateEnums % (self.name, self.description, self.enumNames, self.units, self.count)
+
         
 class SALCommand:
     template = """
