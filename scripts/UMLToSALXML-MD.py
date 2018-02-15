@@ -5,24 +5,34 @@ import xml.etree.ElementTree
 ignoreGlobals = True
 globalCommands = ["Start", "Enable", "Disable", "Standby"]
 globalEvents = ["ErrorCode", "SummaryState", "SettingVersions", "AppliedSettingsMatchStart", "SettingsApplied"]
+salTypes = ["short", "long", "long long", "unsigned short", "unsigned long", "unsigned long long", "float", "double", "char", "boolean", "octet", "string", "byte"]
 
 class UMLParser:
+    def __init__(self):
+        self.error = False
+
     def Open(self, subsystem, version, umlFile):
+        print("Creating temporary file")
         tempUMLFile = umlFile + ".tmp"
         with open(tempUMLFile, "w") as tempFile:
             with open(umlFile, "r") as inputFile:
                 for line in inputFile:
-                    tempFile.write(line.replace("<UML:", "<").replace("</UML:", "</").replace("xmi:id","xmiid").replace("xmi:Extension", "xmiExtension"))
+                    tempFile.write(line.replace("<UML:", "<").replace("</UML:", "</").replace("xmi:id","xmiid").replace("xmi:Extension", "xmiExtension").replace("xmi:type", "xmitype"))
 
         self.subsystem = subsystem
         self.version = version
         self.uml = xml.etree.ElementTree.parse(tempUMLFile)
         
     def Parse(self, outputDirectory):
+        print("Parsing temporary file")
         self.outputDirectory = outputDirectory
         self.WriteCommands(self.GetCommands())
         self.WriteEvents(self.GetEvents())
         self.WriteTelemetry(self.GetTelemetry())
+        if self.error:
+            print("ERROR DURING PARSING")
+        else:
+            print("Completed succesfully")
         
     def WriteCommands(self, commands):
         header = """<?xml version="1.0" encoding="UTF-8"?>
@@ -34,6 +44,7 @@ class UMLParser:
             commandFile.write(header)
             for item in commands:
                 if item.name != "Command":
+                    print("Writing command %s" % item.name)
                     if not (ignoreGlobals and item.name in globalCommands):
                         commandFile.write(item.CreateSALXML())
             commandFile.write(footer)          
@@ -48,6 +59,7 @@ class UMLParser:
             eventFile.write(header)
             for item in events:
                 if item.name != "Event":
+                    print("Writing event %s" % item.name)
                     if not (ignoreGlobals and item.name in globalEvents):
                         eventFile.write(item.CreateSALXML())
             eventFile.write(footer)     
@@ -62,6 +74,7 @@ class UMLParser:
             telemetryFile.write(header)
             for item in telemetry:
                 if item.name != "Telemetry":
+                    print("Writing telemetry %s" % item.name)
                     telemetryFile.write(item.CreateSALXML())
             telemetryFile.write(footer)     
 
@@ -128,9 +141,15 @@ class UMLParser:
         if type == "string":
             count = self.GetValueByName(self.uml.find(basePath % "/upperValue"),"value", "256")
             return SALParameterString(parameter, description, type, units, count)
-        else:
+        elif type in salTypes:
             count = self.GetValueByName(self.uml.find(basePath % "/upperValue"),"value", "1")
             return SALParameter(parameter, description, type, units, count)
+        elif self.TypeIsEnumeration(type):
+            count = self.GetValueByName(self.uml.find(basePath % "/upperValue"),"value", "1")
+            return SALParameterEnumeration(parameter, description, self.GetEnumerationValues(type), units, count)
+        else:
+            self.error = True
+            return 0
         
     def GetCommandList(self):
         return [command.get("name") for command in self.uml.findall(".//packagedElement[@name='SAL interface']/packagedElement[@name='Command']/packagedElement")]
@@ -149,6 +168,10 @@ class UMLParser:
         
     def GetTelemetryParameterList(self, telemetry):
         return [parameter.get("name") for parameter in self.uml.findall(".//packagedElement[@name='SAL interface']/packagedElement[@name='Telemetry']/packagedElement[@name='%s']/ownedAttribute" % telemetry)]      
+        
+    def GetEnumerationValues(self, enumeration):
+        names = [value.get("name") for value in self.uml.findall(".//packagedElement[@name='IDL Datatype']/packagedElement[@name='%s']/ownedLiteral" % enumeration)]
+        return ",".join(names)
 
     def GetValue(self, node, default):
         return node.get("value") if node is not None else default
@@ -160,6 +183,11 @@ class UMLParser:
         path = ".//packagedElement[@name='IDL Datatype']/packagedElement[@xmiid='%s']" % typeID 
         node = self.uml.find(path)
         return node.get("name") if node is not None else 'Error'
+        
+    def TypeIsEnumeration(self, name):
+        path = ".//packagedElement[@name='IDL Datatype']/packagedElement[@name='%s']" % name
+        node = self.uml.find(path)
+        return node.get("xmitype") == "uml:Enumeration"
         
 class SALParameter:
     template = """
@@ -201,6 +229,27 @@ class SALParameterString:
         
     def CreateSALXML(self):
         return self.template % (self.name, self.description, self.type, self.count, self.units, '1')
+        
+class SALParameterEnumeration:
+    template = """
+    <item>
+        <EFDB_Name>%s</EFDB_Name>
+        <Description>%s</Description>
+        <IDL_Type>short</IDL_Type>
+        <Enumeration>%s</Enumeration>
+        <Units>%s</Units>
+        <Count>%s</Count>
+    </item>"""
+    
+    def __init__(self, name, description, enumerationValues, units, count):
+        self.name = name
+        self.description = description
+        self.enumerationValues = enumerationValues
+        self.units = units
+        self.count = count
+        
+    def CreateSALXML(self):
+        return self.template % (self.name, self.description, self.enumerationValues, self.units, self.count)
 		
 class SALCommand:
     template = """
@@ -300,10 +349,9 @@ Notes:
 else:
     ignoreGlobals = sys.argv[5] == "T"
     print("Executing UML XMI 2.1 from MagicDraw to SAL XML")
-    print("UML Parser...")
+    print("UML Parser")
     uml = UMLParser()
-    print("Opening XML Model...")
+    print("Opening XML Model")
     uml.Open(sys.argv[1], sys.argv[2], sys.argv[3])
-    print("Parsing...")
+    print("Parsing")
     uml.Parse(sys.argv[4])
-    print("Completed succesfully...")
