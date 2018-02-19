@@ -235,7 +235,7 @@ class SALParameterEnumeration:
     <item>
         <EFDB_Name>%s</EFDB_Name>
         <Description>%s</Description>
-        <IDL_Type>short</IDL_Type>
+        <IDL_Type>long</IDL_Type>
         <Enumeration>%s</Enumeration>
         <Units>%s</Units>
         <Count>%s</Count>
