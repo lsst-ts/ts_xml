@@ -46,6 +46,46 @@
         <EFDB_Topic>camera_logevent_endReadout</EFDB_Topic>
         <Alias>endReadout</Alias>
         <Explanation>http://sal.lsst.org/SAL/Events/camera_logevent_endReadout.html</Explanation>
+        <item>
+            <EFDB_Name>imageSequenceName</EFDB_Name>
+            <Description>The imageSequenceName as passed to the takeImages command</Description>
+            <IDL_Type>string</IDL_Type>
+            <IDL_Size>1</IDL_Size>
+            <Units> </Units>
+            <Count>1</Count>
+        </item>
+        <item>
+            <EFDB_Name>imageName</EFDB_Name>
+            <Description>The imageName for this specific exposure</Description>
+            <IDL_Type>string</IDL_Type>
+            <IDL_Size>1</IDL_Size>
+            <Units> </Units>
+            <Count>1</Count>
+        </item>
+        <item>
+            <EFDB_Name>imageIndex</EFDB_Name>
+            <Description>The zero based index number for this specific exposure within the sequence</Description>
+            <IDL_Type>int</IDL_Type>
+            <IDL_Size>1</IDL_Size>
+            <Units> </Units>
+            <Count>1</Count>
+        </item>        
+        <item>
+            <EFDB_Name>timeStamp</EFDB_Name>
+            <Description>The effective time at which the image acquisition started (i.e. the end of the previous clear or readout)</Description>
+            <IDL_Type>double</IDL_Type>
+            <IDL_Size>1</IDL_Size>
+            <Units> </Units>
+            <Count>1</Count>
+        </item>
+        <item>
+            <EFDB_Name>exposureTime</EFDB_Name>
+            <Description>The requested exposure time</Description>
+            <IDL_Type>double</IDL_Type>
+            <IDL_Size>1</IDL_Size>
+            <Units>Seconds</Units>
+            <Count>1</Count>
+        </item>
     </SALEvent>
 
     <SALEvent>
@@ -64,7 +104,6 @@
         <EFDB_Topic>camera_logevent_endSetFilter</EFDB_Topic>
         <Alias>endSetFilter</Alias>
         <Explanation>http://sal.lsst.org/SAL/Events/camera_logevent_endSetFilter.html</Explanation>
-        <Explanation>http://sal.lsst.org/SAL/Events/camera_logevent_startSetFilter.html</Explanation>
         <item>
             <EFDB_Name>filterName</EFDB_Name>
             <Description>The name of the filter being installed (e.g. U-001)</Description>
@@ -164,18 +203,25 @@
         <item>
             <EFDB_Name>imageIndex</EFDB_Name>
             <Description>The zero based index number for this specific exposure within the sequence</Description>
-            <IDL_Type>string</IDL_Type>
+            <IDL_Type>int</IDL_Type>
             <IDL_Size>1</IDL_Size>
             <Units> </Units>
             <Count>1</Count>
-        </item>
-        
+        </item>        
         <item>
             <EFDB_Name>timeStamp</EFDB_Name>
             <Description>The effective time at which the image acquisition started (i.e. the end of the previous clear or readout)</Description>
             <IDL_Type>double</IDL_Type>
             <IDL_Size>1</IDL_Size>
             <Units> </Units>
+            <Count>1</Count>
+        </item>
+        <item>
+            <EFDB_Name>exposureTime</EFDB_Name>
+            <Description>The requested exposure time</Description>
+            <IDL_Type>double</IDL_Type>
+            <IDL_Size>1</IDL_Size>
+            <Units>Seconds</Units>
             <Count>1</Count>
         </item>
     </SALEvent>
@@ -196,8 +242,97 @@
         <EFDB_Topic>camera_logevent_startReadout</EFDB_Topic>
         <Alias>startReadout</Alias>
         <Explanation>http://sal.lsst.org/SAL/Events/camera_logevent_startReadout.html</Explanation>
+        <item>
+            <EFDB_Name>imageSequenceName</EFDB_Name>
+            <Description>The imageSequenceName as passed to the takeImages command</Description>
+            <IDL_Type>string</IDL_Type>
+            <IDL_Size>1</IDL_Size>
+            <Units> </Units>
+            <Count>1</Count>
+        </item>
+        <item>
+            <EFDB_Name>imageName</EFDB_Name>
+            <Description>The imageName for this specific exposure</Description>
+            <IDL_Type>string</IDL_Type>
+            <IDL_Size>1</IDL_Size>
+            <Units> </Units>
+            <Count>1</Count>
+        </item>
+        <item>
+            <EFDB_Name>imageIndex</EFDB_Name>
+            <Description>The zero based index number for this specific exposure within the sequence</Description>
+            <IDL_Type>int</IDL_Type>
+            <IDL_Size>1</IDL_Size>
+            <Units> </Units>
+            <Count>1</Count>
+        </item>        
+        <item>
+            <EFDB_Name>timeStamp</EFDB_Name>
+            <Description>The effective time at which the image acquisition started (i.e. the end of the previous clear or readout)</Description>
+            <IDL_Type>double</IDL_Type>
+            <IDL_Size>1</IDL_Size>
+            <Units> </Units>
+            <Count>1</Count>
+        </item>
+        <item>
+            <EFDB_Name>exposureTime</EFDB_Name>
+            <Description>The requested exposure time</Description>
+            <IDL_Type>double</IDL_Type>
+            <IDL_Size>1</IDL_Size>
+            <Units>Seconds</Units>
+            <Count>1</Count>
+        </item>
     </SALEvent>
-
+    
+    <SALEvent>
+        <Subsystem>camera</Subsystem>
+        <Version>3.2.0</Version>
+        <Author>salgenerator</Author>
+        <EFDB_Topic>camera_logevent_endOfImageTelemetry</EFDB_Topic>
+        <Alias>endOfImageTelemetry</Alias>
+        <Explanation>http://sal.lsst.org/SAL/Events/camera_logevent_endOfImageTelemetry.html</Explanation>
+        <item>
+            <EFDB_Name>imageSequenceName</EFDB_Name>
+            <Description>The imageSequenceName as passed to the takeImages command</Description>
+            <IDL_Type>string</IDL_Type>
+            <IDL_Size>1</IDL_Size>
+            <Units> </Units>
+            <Count>1</Count>
+        </item>
+        <item>
+            <EFDB_Name>imageName</EFDB_Name>
+            <Description>The imageName for this specific exposure</Description>
+            <IDL_Type>string</IDL_Type>
+            <IDL_Size>1</IDL_Size>
+            <Units> </Units>
+            <Count>1</Count>
+        </item>
+        <item>
+            <EFDB_Name>imageIndex</EFDB_Name>
+            <Description>The zero based index number for this specific exposure within the sequence</Description>
+            <IDL_Type>int</IDL_Type>
+            <IDL_Size>1</IDL_Size>
+            <Units> </Units>
+            <Count>1</Count>
+        </item>        
+        <item>
+            <EFDB_Name>timeStamp</EFDB_Name>
+            <Description>The effective time at which the image acquisition started (i.e. the end of the previous clear or readout)</Description>
+            <IDL_Type>double</IDL_Type>
+            <IDL_Size>1</IDL_Size>
+            <Units> </Units>
+            <Count>1</Count>
+        </item>
+        <item>
+            <EFDB_Name>exposureTime</EFDB_Name>
+            <Description>The requested exposure time</Description>
+            <IDL_Type>double</IDL_Type>
+            <IDL_Size>1</IDL_Size>
+            <Units>Seconds</Units>
+            <Count>1</Count>
+        </item>
+    </SALEvent>
+    
     <SALEvent>
         <Subsystem>camera</Subsystem>
         <Version>3.2.0</Version>
