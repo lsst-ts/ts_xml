@@ -2,19 +2,9 @@
 <?xml-stylesheet type="text/xsl" href="http://lsst-sal.tuc.noao.edu/schema/SALEventSet.xsl"?>
 <SALEventSet xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:noNamespaceSchemaLocation="http://lsst-sal.tuc.noao.edu/schema/SALEventSet.xsd">
-
 <SALEvent>
  <Subsystem>hexapod</Subsystem>
-<Version>3.2.0</Version>
- <Author>salgenerator</Author>
- <EFDB_Topic>hexapod_logevent_error</EFDB_Topic>
- <Alias>error</Alias>
- <Explanation>http://sal.lsst.org/SAL/Events/hexapod_logevent_error.html</Explanation>
-</SALEvent>
-
-<SALEvent>
- <Subsystem>hexapod</Subsystem>
-<Version>3.2.0</Version>
+<Version>3.3.0</Version>
  <Author>salgenerator</Author>
  <EFDB_Topic>hexapod_logevent_interlock</EFDB_Topic>
  <Alias>interlock</Alias>
@@ -23,14 +13,14 @@
       <EFDB_Name>detail</EFDB_Name>
       <Description> </Description>
        <IDL_Type>string</IDL_Type>
+       <IDL_Size>1</IDL_Size>
       <Units> </Units>
       <Count>1</Count>
     </item>
 </SALEvent>
-
 <SALEvent>
  <Subsystem>hexapod</Subsystem>
-<Version>3.2.0</Version>
+<Version>3.3.0</Version>
  <Author>salgenerator</Author>
  <EFDB_Topic>hexapod_logevent_limit</EFDB_Topic>
  <Alias>limit</Alias>
@@ -39,13 +29,15 @@
       <EFDB_Name>axis</EFDB_Name>
       <Description> </Description>
        <IDL_Type>string</IDL_Type>
+       <IDL_Size>1</IDL_Size>
       <Units> </Units>
       <Count>1</Count>
     </item>
     <item>
-      <EFDB_Name>limit</EFDB_Name>
+      <EFDB_Name>llimit</EFDB_Name>
       <Description> </Description>
        <IDL_Type>string</IDL_Type>
+       <IDL_Size>1</IDL_Size>
       <Units> </Units>
       <Count>1</Count>
     </item>
@@ -53,31 +45,31 @@
       <EFDB_Name>type</EFDB_Name>
       <Description> </Description>
        <IDL_Type>string</IDL_Type>
+       <IDL_Size>1</IDL_Size>
       <Units> </Units>
       <Count>1</Count>
     </item>
 </SALEvent>
-
 <SALEvent>
  <Subsystem>hexapod</Subsystem>
-<Version>3.2.0</Version>
+<Version>3.3.0</Version>
  <Author>salgenerator</Author>
- <EFDB_Topic>hexapod_logevent_slewOK</EFDB_Topic>
- <Alias>slewOK</Alias>
- <Explanation>http://sal.lsst.org/SAL/Events/hexapod_logevent_slewOK.html</Explanation>
+ <EFDB_Topic>hexapod_logevent_inPosition</EFDB_Topic>
+ <Alias>inPosition</Alias>
+ <Explanation>http://sal.lsst.org/SAL/Events/hexapod_logevent_inPosition.html</Explanation>
 </SALEvent>
-
 <SALEvent>
  <Subsystem>hexapod</Subsystem>
-<Version>3.2.0</Version>
+<Version>3.3.0</Version>
  <Author>salgenerator</Author>
- <EFDB_Topic>hexapod_logevent_tempError</EFDB_Topic>
- <Alias>tempError</Alias>
- <Explanation>http://sal.lsst.org/SAL/Events/hexapod_logevent_tempError.html</Explanation>
+ <EFDB_Topic>hexapod_logevent_error</EFDB_Topic>
+ <Alias>error</Alias>
+ <Explanation>http://sal.lsst.org/SAL/Events/hexapod_logevent_error.html</Explanation>
     <item>
       <EFDB_Name>axis</EFDB_Name>
       <Description> </Description>
        <IDL_Type>string</IDL_Type>
+       <IDL_Size>1</IDL_Size>
       <Units> </Units>
       <Count>1</Count>
     </item>
@@ -85,6 +77,7 @@
       <EFDB_Name>device</EFDB_Name>
       <Description> </Description>
        <IDL_Type>string</IDL_Type>
+       <IDL_Size>1</IDL_Size>
       <Units> </Units>
       <Count>1</Count>
     </item>
@@ -95,30 +88,81 @@
       <Units> </Units>
       <Count>1</Count>
     </item>
+</SALEvent>
+<SALEvent>
+ <Subsystem>hexapod</Subsystem>
+<Version>3.3.0</Version>
+ <Author>salgenerator</Author>
+ <EFDB_Topic>hexapod_logevent_Tracking</EFDB_Topic>
+ <Alias>Tracking</Alias>
+ <Explanation>http://sal.lsst.org/SAL/Events/hexapod_logevent_Tracking.html</Explanation>
     <item>
-      <EFDB_Name>temp</EFDB_Name>
+      <EFDB_Name>severity</EFDB_Name>
       <Description> </Description>
-       <IDL_Type>double</IDL_Type>
+       <IDL_Type>long</IDL_Type>
       <Units> </Units>
       <Count>1</Count>
     </item>
 </SALEvent>
-
 <SALEvent>
  <Subsystem>hexapod</Subsystem>
-<Version>3.2.0</Version>
+<Version>3.3.0</Version>
  <Author>salgenerator</Author>
- <EFDB_Topic>hexapod_logevent_trackLost</EFDB_Topic>
- <Alias>trackLost</Alias>
- <Explanation>http://sal.lsst.org/SAL/Events/hexapod_logevent_trackLost.html</Explanation>
+ <EFDB_Topic>hexapod_logevent_TrackLost</EFDB_Topic>
+ <Alias>TrackLost</Alias>
+ <Explanation>http://sal.lsst.org/SAL/Events/hexapod_logevent_TrackLost.html</Explanation>
+    <item>
+      <EFDB_Name>severity</EFDB_Name>
+      <Description> </Description>
+       <IDL_Type>long</IDL_Type>
+      <Units> </Units>
+      <Count>1</Count>
+    </item>
 </SALEvent>
-
 <SALEvent>
  <Subsystem>hexapod</Subsystem>
-<Version>3.2.0</Version>
+<Version>3.3.0</Version>
  <Author>salgenerator</Author>
- <EFDB_Topic>hexapod_logevent_tracking</EFDB_Topic>
- <Alias>tracking</Alias>
- <Explanation>http://sal.lsst.org/SAL/Events/hexapod_logevent_tracking.html</Explanation>
+ <EFDB_Topic>hexapod_logevent_TempError</EFDB_Topic>
+ <Alias>TempError</Alias>
+ <Explanation>http://sal.lsst.org/SAL/Events/hexapod_logevent_TempError.html</Explanation>
+    <item>
+      <EFDB_Name>severity</EFDB_Name>
+      <Description> </Description>
+       <IDL_Type>long</IDL_Type>
+      <Units> </Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>axis</EFDB_Name>
+      <Description> </Description>
+       <IDL_Type>string</IDL_Type>
+       <IDL_Size>1</IDL_Size>
+      <Units> </Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>temp</EFDB_Name>
+      <Description> </Description>
+       <IDL_Type>float</IDL_Type>
+       <IDL_Size>1</IDL_Size>
+      <Units> </Units>
+      <Count>1</Count>
+    </item>
+</SALEvent>
+<SALEvent>
+ <Subsystem>hexapod</Subsystem>
+<Version>3.3.0</Version>
+ <Author>salgenerator</Author>
+ <EFDB_Topic>hexapod_logevent_SlewOk</EFDB_Topic>
+ <Alias>SlewOk</Alias>
+ <Explanation>http://sal.lsst.org/SAL/Events/hexapod_logevent_SlewOk.html</Explanation>
+    <item>
+      <EFDB_Name>severity</EFDB_Name>
+      <Description> </Description>
+       <IDL_Type>long</IDL_Type>
+      <Units> </Units>
+      <Count>1</Count>
+    </item>
 </SALEvent>
 </SALEventSet>
