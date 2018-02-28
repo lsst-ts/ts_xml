@@ -5,7 +5,7 @@ import xml.etree.ElementTree
 ignoreGlobals = True
 globalCommands = ["Start", "Enable", "Disable", "Standby"]
 globalEvents = ["ErrorCode", "SummaryState", "SettingVersions", "AppliedSettingsMatchStart", "SettingsApplied"]
-salTypes = ["short", "long", "long long", "unsigned short", "unsigned long", "unsigned long long", "float", "double", "char", "boolean", "octet", "string", "byte"]
+salTypes = ["short", "long", "long long", "unsigned short", "unsigned long", "unsigned long long", "float", "double", "char", "boolean", "octet", "string", "byte", "int"]
 
 class UMLParser:
     def Open(self, subsystem, version, umlFile):
