@@ -46,6 +46,46 @@
         <EFDB_Topic>camera_logevent_endReadout</EFDB_Topic>
         <Alias>endReadout</Alias>
         <Explanation>http://sal.lsst.org/SAL/Events/camera_logevent_endReadout.html</Explanation>
+        <item>
+            <EFDB_Name>imageSequenceName</EFDB_Name>
+            <Description>The imageSequenceName as passed to the takeImages command</Description>
+            <IDL_Type>string</IDL_Type>
+            <IDL_Size>1</IDL_Size>
+            <Units> </Units>
+            <Count>1</Count>
+        </item>
+        <item>
+            <EFDB_Name>imageName</EFDB_Name>
+            <Description>The imageName for this specific exposure</Description>
+            <IDL_Type>string</IDL_Type>
+            <IDL_Size>1</IDL_Size>
+            <Units> </Units>
+            <Count>1</Count>
+        </item>
+        <item>
+            <EFDB_Name>imageIndex</EFDB_Name>
+            <Description>The zero based index number for this specific exposure within the sequence</Description>
+            <IDL_Type>int</IDL_Type>
+            <IDL_Size>1</IDL_Size>
+            <Units> </Units>
+            <Count>1</Count>
+        </item>        
+        <item>
+            <EFDB_Name>timeStamp</EFDB_Name>
+            <Description>The effective time at which the image acquisition started (i.e. the end of the previous clear or readout)</Description>
+            <IDL_Type>double</IDL_Type>
+            <IDL_Size>1</IDL_Size>
+            <Units> </Units>
+            <Count>1</Count>
+        </item>
+        <item>
+            <EFDB_Name>exposureTime</EFDB_Name>
+            <Description>The requested exposure time</Description>
+            <IDL_Type>double</IDL_Type>
+            <IDL_Size>1</IDL_Size>
+            <Units>Seconds</Units>
+            <Count>1</Count>
+        </item>
     </SALEvent>
 
     <SALEvent>
@@ -64,6 +104,14 @@
         <EFDB_Topic>camera_logevent_endSetFilter</EFDB_Topic>
         <Alias>endSetFilter</Alias>
         <Explanation>http://sal.lsst.org/SAL/Events/camera_logevent_endSetFilter.html</Explanation>
+        <item>
+            <EFDB_Name>filterName</EFDB_Name>
+            <Description>The name of the filter being installed (e.g. U-001)</Description>
+            <IDL_Type>string</IDL_Type>
+            <IDL_Size>1</IDL_Size>
+            <Units> </Units>
+            <Count>1</Count>
+        </item>
     </SALEvent>
 
     <SALEvent>
@@ -137,11 +185,43 @@
         <Alias>startIntegration</Alias>
         <Explanation>http://sal.lsst.org/SAL/Events/camera_logevent_startIntegration.html</Explanation>
         <item>
-            <EFDB_Name>imageName</EFDB_Name>
-            <Description> </Description>
+            <EFDB_Name>imageSequenceName</EFDB_Name>
+            <Description>The imageSequenceName as passed to the takeImages command</Description>
             <IDL_Type>string</IDL_Type>
             <IDL_Size>1</IDL_Size>
             <Units> </Units>
+            <Count>1</Count>
+        </item>
+        <item>
+            <EFDB_Name>imageName</EFDB_Name>
+            <Description>The imageName for this specific exposure</Description>
+            <IDL_Type>string</IDL_Type>
+            <IDL_Size>1</IDL_Size>
+            <Units> </Units>
+            <Count>1</Count>
+        </item>
+        <item>
+            <EFDB_Name>imageIndex</EFDB_Name>
+            <Description>The zero based index number for this specific exposure within the sequence</Description>
+            <IDL_Type>int</IDL_Type>
+            <IDL_Size>1</IDL_Size>
+            <Units> </Units>
+            <Count>1</Count>
+        </item>        
+        <item>
+            <EFDB_Name>timeStamp</EFDB_Name>
+            <Description>The effective time at which the image acquisition started (i.e. the end of the previous clear or readout)</Description>
+            <IDL_Type>double</IDL_Type>
+            <IDL_Size>1</IDL_Size>
+            <Units> </Units>
+            <Count>1</Count>
+        </item>
+        <item>
+            <EFDB_Name>exposureTime</EFDB_Name>
+            <Description>The requested exposure time</Description>
+            <IDL_Type>double</IDL_Type>
+            <IDL_Size>1</IDL_Size>
+            <Units>Seconds</Units>
             <Count>1</Count>
         </item>
     </SALEvent>
@@ -162,8 +242,97 @@
         <EFDB_Topic>camera_logevent_startReadout</EFDB_Topic>
         <Alias>startReadout</Alias>
         <Explanation>http://sal.lsst.org/SAL/Events/camera_logevent_startReadout.html</Explanation>
+        <item>
+            <EFDB_Name>imageSequenceName</EFDB_Name>
+            <Description>The imageSequenceName as passed to the takeImages command</Description>
+            <IDL_Type>string</IDL_Type>
+            <IDL_Size>1</IDL_Size>
+            <Units> </Units>
+            <Count>1</Count>
+        </item>
+        <item>
+            <EFDB_Name>imageName</EFDB_Name>
+            <Description>The imageName for this specific exposure</Description>
+            <IDL_Type>string</IDL_Type>
+            <IDL_Size>1</IDL_Size>
+            <Units> </Units>
+            <Count>1</Count>
+        </item>
+        <item>
+            <EFDB_Name>imageIndex</EFDB_Name>
+            <Description>The zero based index number for this specific exposure within the sequence</Description>
+            <IDL_Type>int</IDL_Type>
+            <IDL_Size>1</IDL_Size>
+            <Units> </Units>
+            <Count>1</Count>
+        </item>        
+        <item>
+            <EFDB_Name>timeStamp</EFDB_Name>
+            <Description>The effective time at which the image acquisition started (i.e. the end of the previous clear or readout)</Description>
+            <IDL_Type>double</IDL_Type>
+            <IDL_Size>1</IDL_Size>
+            <Units> </Units>
+            <Count>1</Count>
+        </item>
+        <item>
+            <EFDB_Name>exposureTime</EFDB_Name>
+            <Description>The requested exposure time</Description>
+            <IDL_Type>double</IDL_Type>
+            <IDL_Size>1</IDL_Size>
+            <Units>Seconds</Units>
+            <Count>1</Count>
+        </item>
     </SALEvent>
-
+    
+    <SALEvent>
+        <Subsystem>camera</Subsystem>
+        <Version>3.2.0</Version>
+        <Author>salgenerator</Author>
+        <EFDB_Topic>camera_logevent_endOfImageTelemetry</EFDB_Topic>
+        <Alias>endOfImageTelemetry</Alias>
+        <Explanation>http://sal.lsst.org/SAL/Events/camera_logevent_endOfImageTelemetry.html</Explanation>
+        <item>
+            <EFDB_Name>imageSequenceName</EFDB_Name>
+            <Description>The imageSequenceName as passed to the takeImages command</Description>
+            <IDL_Type>string</IDL_Type>
+            <IDL_Size>1</IDL_Size>
+            <Units> </Units>
+            <Count>1</Count>
+        </item>
+        <item>
+            <EFDB_Name>imageName</EFDB_Name>
+            <Description>The imageName for this specific exposure</Description>
+            <IDL_Type>string</IDL_Type>
+            <IDL_Size>1</IDL_Size>
+            <Units> </Units>
+            <Count>1</Count>
+        </item>
+        <item>
+            <EFDB_Name>imageIndex</EFDB_Name>
+            <Description>The zero based index number for this specific exposure within the sequence</Description>
+            <IDL_Type>int</IDL_Type>
+            <IDL_Size>1</IDL_Size>
+            <Units> </Units>
+            <Count>1</Count>
+        </item>        
+        <item>
+            <EFDB_Name>timeStamp</EFDB_Name>
+            <Description>The effective time at which the image acquisition started (i.e. the end of the previous clear or readout)</Description>
+            <IDL_Type>double</IDL_Type>
+            <IDL_Size>1</IDL_Size>
+            <Units> </Units>
+            <Count>1</Count>
+        </item>
+        <item>
+            <EFDB_Name>exposureTime</EFDB_Name>
+            <Description>The requested exposure time</Description>
+            <IDL_Type>double</IDL_Type>
+            <IDL_Size>1</IDL_Size>
+            <Units>Seconds</Units>
+            <Count>1</Count>
+        </item>
+    </SALEvent>
+    
     <SALEvent>
         <Subsystem>camera</Subsystem>
         <Version>3.2.0</Version>
@@ -180,6 +349,14 @@
         <EFDB_Topic>camera_logevent_startSetFilter</EFDB_Topic>
         <Alias>startSetFilter</Alias>
         <Explanation>http://sal.lsst.org/SAL/Events/camera_logevent_startSetFilter.html</Explanation>
+        <item>
+            <EFDB_Name>filterName</EFDB_Name>
+            <Description>The name of the filter being installed (e.g. U-001)</Description>
+            <IDL_Type>string</IDL_Type>
+            <IDL_Size>1</IDL_Size>
+            <Units> </Units>
+            <Count>1</Count>
+        </item>
     </SALEvent>
 
     <SALEvent>
@@ -228,8 +405,8 @@
         <Subsystem>camera</Subsystem>
         <Version>3.5.0</Version>
         <Author>tonyj</Author>
-        <EFDB_Topic>camera_logevent_idleBusyDetailedState</EFDB_Topic>
-        <Alias>idleBusyDetailedState</Alias>
+        <EFDB_Topic>camera_logevent_ccsCommandState</EFDB_Topic>
+        <Alias>ccsCommandState</Alias>
         <item>
             <EFDB_Name>substate</EFDB_Name>
             <Description>Enumeration of valid subsubstates</Description>
@@ -298,5 +475,36 @@
             <Count>1</Count>
         </item>
     </SALEvent>     
-       
+
+    <SALEvent>
+        <Subsystem>camera</Subsystem>
+        <Version>3.5.0</Version>
+        <Author>tonyj</Author>
+        <EFDB_Topic>camera_logevent_calibrationDetailedState</EFDB_Topic>
+        <Alias>calibrationDetailedState</Alias>
+        <item>
+            <EFDB_Name>substate</EFDB_Name>
+            <Description>Enumeration of valid subsubstates</Description>
+            <IDL_Type>short</IDL_Type>
+            <Enumeration>DISABLED, ENABLED, INTEGRATING</Enumeration>
+            <Count>1</Count>
+        </item>
+    </SALEvent> 
+    
+    <SALEvent>
+        <Subsystem>camera</Subsystem>
+        <Version>3.5.0</Version>
+        <Author>tonyj</Author>
+        <EFDB_Topic>camera_logevent_availableFilters</EFDB_Topic>
+        <Alias>availableFilters</Alias>
+        <item>
+            <EFDB_Name>filterNames</EFDB_Name>
+            <Description>A list of installed filter names (comma delimimted, U-001,G-004,R-010,Z-012,Y-014), in the same order as the list of filter types.</Description>
+            <IDL_Type>string</IDL_Type>
+            <IDL_Size>1</IDL_Size>
+            <Units> </Units>
+            <Count>1</Count>
+        </item>
+    </SALEvent>          
+                     
 </SALEventSet>

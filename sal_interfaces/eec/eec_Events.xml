@@ -3,10 +3,10 @@
 <SALEventSet xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:noNamespaceSchemaLocation="http://lsst-sal.tuc.noao.edu/schema/SALEventSet.xsd">
 <SALEvent>
-    <Subsystem>dmHeaderService</Subsystem>
+    <Subsystem>eec</Subsystem>
     <Version>3.5.1</Version>
     <Author>ccontaxis</Author>
-    <EFDB_Topic>dmHeaderService_logevent_AppliedSettingsMatchStart</EFDB_Topic>
+    <EFDB_Topic>eec_logevent_AppliedSettingsMatchStart</EFDB_Topic>
     <Alias>AppliedSettingsMatchStart</Alias>
     <Explanation>http://sal.lsst.org</Explanation>
     <item>
@@ -25,10 +25,25 @@
     </item>
 </SALEvent>
 <SALEvent>
-    <Subsystem>dmHeaderService</Subsystem>
+    <Subsystem>eec</Subsystem>
+    <Version>3.5.1</Version>
+    <Author>gschumacher</Author>
+    <EFDB_Topic>eec_logevent_nighttimefail</EFDB_Topic>
+    <Alias>nighttimefail</Alias>
+    <Explanation>http://sal.lsst.org</Explanation>
+    <item>
+        <EFDB_Name>status</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>int</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+</SALEvent>
+<SALEvent>
+    <Subsystem>eec</Subsystem>
     <Version>3.5.1</Version>
     <Author>ccontaxis</Author>
-    <EFDB_Topic>dmHeaderService_logevent_RejectedCommand</EFDB_Topic>
+    <EFDB_Topic>eec_logevent_RejectedCommand</EFDB_Topic>
     <Alias>RejectedCommand</Alias>
     <Explanation>http://sal.lsst.org</Explanation>
     <item>
@@ -54,10 +69,10 @@
     </item>
 </SALEvent>
 <SALEvent>
-    <Subsystem>dmHeaderService</Subsystem>
+    <Subsystem>eec</Subsystem>
     <Version>3.5.1</Version>
     <Author>ccontaxis</Author>
-    <EFDB_Topic>dmHeaderService_logevent_SettingsApplied</EFDB_Topic>
+    <EFDB_Topic>eec_logevent_SettingsApplied</EFDB_Topic>
     <Alias>SettingsApplied</Alias>
     <Explanation>http://sal.lsst.org</Explanation>
     <item>
@@ -76,10 +91,10 @@
     </item>
 </SALEvent>
 <SALEvent>
-    <Subsystem>dmHeaderService</Subsystem>
+    <Subsystem>eec</Subsystem>
     <Version>3.5.1</Version>
     <Author>ccontaxis</Author>
-    <EFDB_Topic>dmHeaderService_logevent_DetailedState</EFDB_Topic>
+    <EFDB_Topic>eec_logevent_DetailedState</EFDB_Topic>
     <Alias>DetailedState</Alias>
     <Explanation>http://sal.lsst.org</Explanation>
     <item>
@@ -91,10 +106,25 @@
     </item>
 </SALEvent>
 <SALEvent>
-    <Subsystem>dmHeaderService</Subsystem>
+    <Subsystem>eec</Subsystem>
+    <Version>3.5.1</Version>
+    <Author>gschumacher</Author>
+    <EFDB_Topic>eec_logevent_daytimefail</EFDB_Topic>
+    <Alias>daytimefail</Alias>
+    <Explanation>http://sal.lsst.org</Explanation>
+    <item>
+        <EFDB_Name>status</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>int</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+</SALEvent>
+<SALEvent>
+    <Subsystem>eec</Subsystem>
     <Version>3.5.1</Version>
     <Author>ccontaxis</Author>
-    <EFDB_Topic>dmHeaderService_logevent_InternalCommand</EFDB_Topic>
+    <EFDB_Topic>eec_logevent_InternalCommand</EFDB_Topic>
     <Alias>InternalCommand</Alias>
     <Explanation>http://sal.lsst.org</Explanation>
     <item>
@@ -106,10 +136,10 @@
     </item>
 </SALEvent>
 <SALEvent>
-    <Subsystem>dmHeaderService</Subsystem>
+    <Subsystem>eec</Subsystem>
     <Version>3.5.1</Version>
     <Author>ccontaxis</Author>
-    <EFDB_Topic>dmHeaderService_logevent_LoopTimeOutOfRange</EFDB_Topic>
+    <EFDB_Topic>eec_logevent_LoopTimeOutOfRange</EFDB_Topic>
     <Alias>LoopTimeOutOfRange</Alias>
     <Explanation>http://sal.lsst.org</Explanation>
     <item>
@@ -121,63 +151,10 @@
     </item>
 </SALEvent>
 <SALEvent>
-    <Subsystem>dmHeaderService</Subsystem>
-    <Version>3.5.1</Version>
-    <Author>dmills</Author>
-    <EFDB_Topic>dmHeaderService_logevent_LargeFileObjectAvailable</EFDB_Topic>
-    <Alias>LargeFileObjectAvailable</Alias>
-    <Explanation>http://sal.lsst.org</Explanation>
-    <item>
-        <EFDB_Name>Byte_Size</EFDB_Name>
-        <Description>Size of file in bytes</Description>
-        <IDL_Type>long</IDL_Type>
-        <Units></Units>
-        <Count>1</Count>
-    </item>
-    <item>
-        <EFDB_Name>Checksum</EFDB_Name>
-        <Description>Hexadecimal character string holding the checksum of the file</Description>
-        <IDL_Type>string</IDL_Type>
-        <Units></Units>
-        <Count>1</Count>
-    </item>
-    <item>
-        <EFDB_Name>Generator</EFDB_Name>
-        <Description>Name of the package which generated the file being announced</Description>
-        <IDL_Type>string</IDL_Type>
-        <Units></Units>
-        <Count>1</Count>
-    </item>
-    <item>
-        <EFDB_Name>Mime Type</EFDB_Name>
-        <Description>Mime Type code for the file</Description>
-        <IDL_Type>string</IDL_Type>
-        <Units></Units>
-        <Count>1</Count>
-    </item>
-    <item>
-        <EFDB_Name>URL</EFDB_Name>
-        <Description>A Uniform Resource Locator which links to a Large File Object
-either for ingest into the EFD Large File Annex, or to announce
-the successful copy of same to the EFD Large File Annex.
-Protocols are those supported by the cURL library.</Description>
-        <IDL_Type>string</IDL_Type>
-        <Units></Units>
-        <Count>1</Count>
-    </item>
-    <item>
-        <EFDB_Name>Version</EFDB_Name>
-        <Description>A dotted x.y version number denoting the file format revision</Description>
-        <IDL_Type>float</IDL_Type>
-        <Units></Units>
-        <Count>1</Count>
-    </item>
-</SALEvent>
-<SALEvent>
-    <Subsystem>dmHeaderService</Subsystem>
+    <Subsystem>eec</Subsystem>
     <Version>3.5.1</Version>
     <Author>ccontaxis</Author>
-    <EFDB_Topic>dmHeaderService_logevent_SummaryState</EFDB_Topic>
+    <EFDB_Topic>eec_logevent_SummaryState</EFDB_Topic>
     <Alias>SummaryState</Alias>
     <Explanation>http://sal.lsst.org</Explanation>
     <item>
@@ -196,10 +173,10 @@ Protocols are those supported by the cURL library.</Description>
     </item>
 </SALEvent>
 <SALEvent>
-    <Subsystem>dmHeaderService</Subsystem>
+    <Subsystem>eec</Subsystem>
     <Version>3.5.1</Version>
     <Author>ccontaxis</Author>
-    <EFDB_Topic>dmHeaderService_logevent_ErrorCode</EFDB_Topic>
+    <EFDB_Topic>eec_logevent_ErrorCode</EFDB_Topic>
     <Alias>ErrorCode</Alias>
     <Explanation>http://sal.lsst.org</Explanation>
     <item>
@@ -218,10 +195,10 @@ Protocols are those supported by the cURL library.</Description>
     </item>
 </SALEvent>
 <SALEvent>
-    <Subsystem>dmHeaderService</Subsystem>
+    <Subsystem>eec</Subsystem>
     <Version>3.5.1</Version>
     <Author>ccontaxis</Author>
-    <EFDB_Topic>dmHeaderService_logevent_Heartbeat</EFDB_Topic>
+    <EFDB_Topic>eec_logevent_Heartbeat</EFDB_Topic>
     <Alias>Heartbeat</Alias>
     <Explanation>http://sal.lsst.org</Explanation>
     <item>
@@ -233,10 +210,10 @@ Protocols are those supported by the cURL library.</Description>
     </item>
 </SALEvent>
 <SALEvent>
-    <Subsystem>dmHeaderService</Subsystem>
+    <Subsystem>eec</Subsystem>
     <Version>3.5.1</Version>
     <Author>ccontaxis</Author>
-    <EFDB_Topic>dmHeaderService_logevent_SettingVersions</EFDB_Topic>
+    <EFDB_Topic>eec_logevent_SettingVersions</EFDB_Topic>
     <Alias>SettingVersions</Alias>
     <Explanation>http://sal.lsst.org</Explanation>
     <item>
