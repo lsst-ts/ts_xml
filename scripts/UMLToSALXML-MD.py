@@ -236,9 +236,9 @@ class SALParameterEnumeration:
         <EFDB_Name>%s</EFDB_Name>
         <Description>%s</Description>
         <IDL_Type>long</IDL_Type>
-        <Enumeration>%s</Enumeration>
         <Units>%s</Units>
         <Count>%s</Count>
+        <Enumeration>%s</Enumeration>
     </item>"""
     
     def __init__(self, name, description, enumerationValues, units, count):
@@ -249,7 +249,7 @@ class SALParameterEnumeration:
         self.count = count
         
     def CreateSALXML(self):
-        return self.template % (self.name, self.description, self.enumerationValues, self.units, self.count)
+        return self.template % (self.name, self.description, self.units, self.count, self.enumerationValues)
 		
 class SALCommand:
     template = """
