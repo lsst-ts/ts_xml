@@ -134,8 +134,10 @@ class UMLParser:
             length = len(type)
             lastIndex = type.rfind(':')
             type = type[-(length-lastIndex-1):] 
-        
-        units = self.GetValueByName(self.uml.find(basePath % ""),"unit", " ") 
+
+        units = self.uml.find(basePath % "/defaultValue/body")
+        if units is not None:
+            units = units.text
         units = "" if units is None else units
 		
         if type == "string":
@@ -150,7 +152,7 @@ class UMLParser:
         else:
             self.error = True
             return 0
-        
+                    
     def GetCommandList(self):
         return [command.get("name") for command in self.uml.findall(".//packagedElement[@name='SAL interface']/packagedElement[@name='Command']/packagedElement")]
   
