@@ -1,27 +1,257 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-stylesheet type="text/xsl" href="http://lsst-sal.tuc.noao.edu/schema/SALTelemetrySet.xsl"?>
 <SALTelemetrySet xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-                 xsi:noNamespaceSchemaLocation="http://lsst-sal.tuc.noao.edu/schema/SALTelemetrySet.xsd">
+                 xsi:noEFDB_NamespaceSchemaLocation="http://lsst-sal.tuc.noao.edu/schema/SALTelemetrySet.xsd">
     <SALTelemetry>
         <Subsystem>accs</Subsystem>
-        <Version>3.2.0</Version>
+        <Version>3.5.1</Version>
         <Author>salgenerator</Author>
         <EFDB_Topic>accs_WREB</EFDB_Topic>
+
         <item>
-            <EFDB_Name>Compressor_load</EFDB_Name>
-            <Description>Compressor electrical load</Description>
-            <Frequency>0.010</Frequency>
-            <Publishers>1</Publishers>
-            <Values_per_Publisher>6</Values_per_Publisher>
-            <Size_in_bytes>24</Size_in_bytes>
+            <EFDB_Name>CKPSH_V</EFDB_Name>
+            <IDL_Type>float</IDL_Type>
+            <Units>Volts</Units>
+            <Description>Parallel clock lower voltage</Description>
+            <Count>1</Count>
+        </item>
+        <item>
+            <EFDB_Name>CKP0V</EFDB_Name>
+            <IDL_Type>float</IDL_Type>
+            <Units>Volts</Units>
+            <Description>Actual parallel clock voltage</Description>
+            <Count>1</Count>
+        </item>
+        <item>
+            <EFDB_Name>OG0V</EFDB_Name>
+            <IDL_Type>float</IDL_Type>
+            <Units>Volts</Units>
+            <Description>Applied OG voltage</Description>
+            <Count>1</Count>
+        </item>
+        <item>
+            <EFDB_Name>Temp1</EFDB_Name>
+            <IDL_Type>float</IDL_Type>
+            <Units>°C</Units>
+            <Description>On-board temperature measurement 1</Description>
+            <Count>1</Count>
+        </item>
+        <item>
+            <EFDB_Name>Temp2</EFDB_Name>
+            <IDL_Type>float</IDL_Type>
+            <Units>°C</Units>
+            <Description>On-board temperature measurement 2</Description>
+            <Count>1</Count>
+        </item>
+        <item>
+            <EFDB_Name>Temp3</EFDB_Name>
+            <IDL_Type>float</IDL_Type>
+            <Units>°C</Units>
+            <Description>On-board temperature measurement 3</Description>
+            <Count>1</Count>
+        </item>
+        <item>
+            <EFDB_Name>Temp4</EFDB_Name>
+            <IDL_Type>float</IDL_Type>
+            <Units>°C</Units>
+            <Description>On-board temperature measurement 4</Description>
+            <Count>1</Count>
+        </item>
+        <item>
+            <EFDB_Name>Temp5</EFDB_Name>
+            <IDL_Type>float</IDL_Type>
+            <Units>°C</Units>
+            <Description>On-board temperature measurement 5</Description>
+            <Count>1</Count>
+        </item>
+        <item>
+            <EFDB_Name>Temp6</EFDB_Name>
+            <IDL_Type>float</IDL_Type>
+            <Units>°C</Units>
+            <Description>On-board temperature measurement 6</Description>
+            <Count>1</Count>
+        </item>
+        <item>
+            <EFDB_Name>Atemp0U</EFDB_Name>
+            <IDL_Type>float</IDL_Type>
+            <Units>°C</Units>
+            <Description>ASPIC temperature Upper</Description>
+            <Count>1</Count>
+        </item>
+        <item>
+            <EFDB_Name>Atemp0L</EFDB_Name>
+            <IDL_Type>float</IDL_Type>
+            <Units>°C</Units>
+            <Description>ASPIC temperature Lower</Description>
+            <Count>1</Count>
+        </item>
+        <item>
+            <EFDB_Name>CCDtemp0</EFDB_Name>
+            <IDL_Type>float</IDL_Type>
+            <Units>°C</Units>
+            <Description>Temperature for CCD</Description>
+            <Count>1</Count>
+        </item>
+        <item>
+            <EFDB_Name>RTDtemp</EFDB_Name>
+            <IDL_Type>float</IDL_Type>
+            <Units>°C</Units>
+            <Description>RTD temperature (on baseplate??)</Description>
+            <Count>1</Count>
+        </item>
+        <item>
+            <EFDB_Name>DigPS_V</EFDB_Name>
+            <IDL_Type>float</IDL_Type>
+            <Units>Volts</Units>
+            <Description>Digital PS voltage measured on REB</Description>
+            <Count>1</Count>
+        </item>
+        <item>
+            <EFDB_Name>DigPS_I</EFDB_Name>
+            <IDL_Type>float</IDL_Type>
+            <Units>mA</Units>
+            <Description>Digital PS current measured on REB</Description>
+            <Count>1</Count>
+        </item>
+        <item>
+            <EFDB_Name>AnaPS_V</EFDB_Name>
+            <IDL_Type>float</IDL_Type>
+            <Units>Volts</Units>
+            <Description>Analog PS voltage measured at REB</Description>
+            <Count>1</Count>
+        </item>
+        <item>
+            <EFDB_Name>AnaPS_I</EFDB_Name>
+            <IDL_Type>float</IDL_Type>
+            <Units>mA</Units>
+            <Description>Analog PS current measured at REB</Description>
+            <Count>1</Count>
+        </item>
+        <item>
+            <EFDB_Name>ClkHPS_V</EFDB_Name>
+            <IDL_Type>float</IDL_Type>
+            <Units>Volts</Units>
+            <Description>Clock High PS Voltage measured on REB</Description>
+            <Count>1</Count>
+        </item>
+        <item>
+            <EFDB_Name>ClkHPS_I</EFDB_Name>
+            <IDL_Type>float</IDL_Type>
+            <Units>mA</Units>
+            <Description>Clock High PS Current measured on REB</Description>
+            <Count>1</Count>
+        </item>
+        <item>
+            <EFDB_Name>ODPS_V</EFDB_Name>
+            <IDL_Type>float</IDL_Type>
+            <Units>Volts</Units>
+            <Description>Output Drain PS voltage (OD)</Description>
+            <Count>1</Count>
+        </item>
+        <item>
+            <EFDB_Name>ODPS_I</EFDB_Name>
+            <IDL_Type>float</IDL_Type>
+            <Units>mA</Units>
+            <Description>Output Drain PS current (OD)</Description>
+            <Count>1</Count>
+        </item>
+        <item>
+            <EFDB_Name>HtrPS_V</EFDB_Name>
+            <IDL_Type>float</IDL_Type>
+            <Units>Volts</Units>
+            <Description>Heater PS voltage</Description>
+            <Count>1</Count>
+        </item>
+        <item>
+            <EFDB_Name>HtrPS_I</EFDB_Name>
+            <IDL_Type>float</IDL_Type>
+            <Units>mA</Units>
+            <Description>Heater PS current</Description>
+            <Count>1</Count>
+        </item>
+        <item>
+            <EFDB_Name>Power</EFDB_Name>
             <IDL_Type>float</IDL_Type>
             <Units>Watts</Units>
-            <Conversion>none</Conversion>
-            <Sensor_location>Utility room</Sensor_location>
-            <Count>6</Count>
-            <Instances_per_night>432</Instances_per_night>
-            <Bytes_per_night>10368</Bytes_per_night>
-            <Explanation>http://sal.lsst.org/SAL/Telemetry/camera_Cold_Compressor_load.html</Explanation>
+            <Description>Total power consumption of REB including heater by summing V*I for all power inputs</Description>
+            <Count>1</Count>
+        </item>
+        <item>
+            <EFDB_Name>SCKU_V</EFDB_Name>
+            <IDL_Type>float</IDL_Type>
+            <Units>Volts</Units>
+            <Description>Serial clock upper voltage</Description>
+            <Count>1</Count>
+        </item>
+        <item>
+            <EFDB_Name>SCKL_V</EFDB_Name>
+            <IDL_Type>float</IDL_Type>
+            <Units>Volts</Units>
+            <Description>Serial clock lower voltage</Description>
+            <Count>1</Count>
+        </item>
+        <item>
+            <EFDB_Name>RG_V</EFDB_Name>
+            <IDL_Type>float</IDL_Type>
+            <Units>Volts</Units>
+            <Description>***Obsolete***</Description>
+            <Count>1</Count>
+        </item>
+        <item>
+            <EFDB_Name>RGU_V</EFDB_Name>
+            <IDL_Type>float</IDL_Type>
+            <Units>Volts</Units>
+            <Description>Reset gate upper voltage</Description>
+            <Count>1</Count>
+        </item>
+        <item>
+            <EFDB_Name>RGL_V</EFDB_Name>
+            <IDL_Type>float</IDL_Type>
+            <Units>Volts</Units>
+            <Description>Reset gate lower voltage</Description>
+            <Count>1</Count>
+        </item>
+        <item>
+            <EFDB_Name>CKS0V</EFDB_Name>
+            <IDL_Type>float</IDL_Type>
+            <Units>Volts</Units>
+            <Description>Actual serial clock voltage</Description>
+            <Count>1</Count>
+        </item>
+        <item>
+            <EFDB_Name>RG0V</EFDB_Name>
+            <IDL_Type>float</IDL_Type>
+            <Units>Volts</Units>
+            <Description>Actual reset gate voltage</Description>
+            <Count>1</Count>
+        </item>
+        <item>
+            <EFDB_Name>OD0V</EFDB_Name>
+            <IDL_Type>float</IDL_Type>
+            <Units>Volts</Units>
+            <Description>Applied OD voltage</Description>
+            <Count>1</Count>
+        </item>
+        <item>
+            <EFDB_Name>RD0V</EFDB_Name>
+            <IDL_Type>float</IDL_Type>
+            <Units>Volts</Units>
+            <Description>Applied RD voltage</Description>
+            <Count>1</Count>
+        </item>
+        <item>
+            <EFDB_Name>GD0V</EFDB_Name>
+            <IDL_Type>float</IDL_Type>
+            <Units>Volts</Units>
+            <Description>Applied GD voltage</Description>
+            <Count>1</Count>
+        </item>
+        <item>
+            <EFDB_Name>OD0I</EFDB_Name>
+            <IDL_Type>float</IDL_Type>
+            <Units>mA</Units>
+            <Description>Applied OD current</Description>
+            <Count>1</Count>
         </item>
     </SALTelemetry>
 </SALTelemetrySet>
