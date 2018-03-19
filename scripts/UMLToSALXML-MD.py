@@ -24,10 +24,10 @@ class UMLParser:
         self.uml = xml.etree.ElementTree.parse(tempUMLFile)
         
     def Parse(self, outputDirectory):
-        print("Parsing temporary file")
+        print("Parsing temporary file")       
         self.outputDirectory = outputDirectory
         self.WriteCommands(self.GetCommands())
-        self.WriteEvents(self.GetEvents())
+        self.WriteEvents(self.GetEnumerationList(), self.GetEvents())
         self.WriteTelemetry(self.GetTelemetry())
         if self.error:
             print("ERROR DURING PARSING")
@@ -49,7 +49,7 @@ class UMLParser:
                         commandFile.write(item.CreateSALXML())
             commandFile.write(footer)          
             
-    def WriteEvents(self, events):
+    def WriteEvents(self, enumerations, events):
         header = """<?xml version="1.0" encoding="UTF-8"?>
 <?xml-stylesheet type="text/xsl" href="http://lsst-sal.tuc.noao.edu/schema/SALEventSet.xsl"?>
 <SALEventSet xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -57,6 +57,11 @@ class UMLParser:
         footer = """</SALEventSet>"""
         with open("%s\\%s_Events.xml" % (self.outputDirectory, self.subsystem), "w") as eventFile:  
             eventFile.write(header)
+            eventFile.write("\n")
+            for item in enumerations:
+                values = self.GetEnumerationValues(item)
+                if len(values) > 0:
+                    eventFile.write("<Enumeration>%s</Enumeration>\n" % (self.GetEnumerationValues(item)))
             for item in events:
                 if item.name != "Event":
                     print("Writing event %s" % item.name)
@@ -148,7 +153,7 @@ class UMLParser:
             return SALParameter(parameter, description, type, units, count)
         elif self.TypeIsEnumeration(type):
             count = self.GetValueByName(self.uml.find(basePath % "/upperValue"),"value", "1")
-            return SALParameterEnumeration(parameter, description, self.GetEnumerationValues(type), units, count)
+            return SALParameterEnumeration(parameter, description, type, units, count)
         else:
             self.error = True
             return 0
@@ -171,8 +176,11 @@ class UMLParser:
     def GetTelemetryParameterList(self, telemetry):
         return [parameter.get("name") for parameter in self.uml.findall(".//packagedElement[@name='SAL interface']/packagedElement[@name='Telemetry']/packagedElement[@name='%s']/ownedAttribute" % telemetry)]      
         
+    def GetEnumerationList(self):
+        return [enum.get("name") for enum in self.uml.findall(".//packagedElement[@name='IDL Datatype']/packagedElement[@xmitype='uml:Enumeration']")]
+        
     def GetEnumerationValues(self, enumeration):
-        names = [value.get("name") for value in self.uml.findall(".//packagedElement[@name='IDL Datatype']/packagedElement[@name='%s']/ownedLiteral" % enumeration)]
+        names = ["%s_%s" % (enumeration, value.get("name")) for value in self.uml.findall(".//packagedElement[@name='IDL Datatype']/packagedElement[@name='%s']/ownedLiteral" % enumeration)]
         return ",".join(names)
 
     def GetValue(self, node, default):
@@ -237,21 +245,21 @@ class SALParameterEnumeration:
     <item>
         <EFDB_Name>%s</EFDB_Name>
         <Description>%s</Description>
+        <!-- Enumeration: %s -->
         <IDL_Type>long</IDL_Type>
         <Units>%s</Units>
         <Count>%s</Count>
-        <Enumeration>%s</Enumeration>
     </item>"""
     
-    def __init__(self, name, description, enumerationValues, units, count):
+    def __init__(self, name, description, enumeration, units, count):
         self.name = name
         self.description = description
-        self.enumerationValues = enumerationValues
+        self.enumeration = enumeration
         self.units = units
         self.count = count
         
     def CreateSALXML(self):
-        return self.template % (self.name, self.description, self.units, self.count, self.enumerationValues)
+        return self.template % (self.name, self.description, self.enumeration, self.units, self.count)
 		
 class SALCommand:
     template = """
