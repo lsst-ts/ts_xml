@@ -6,6 +6,21 @@
     <Subsystem>dmHeaderService</Subsystem>
     <Version>3.5.1</Version>
     <Author>ccontaxis</Author>
+    <EFDB_Topic>dmHeaderService_logevent_Heartbeat</EFDB_Topic>
+    <Alias>Heartbeat</Alias>
+    <Explanation>http://sal.lsst.org</Explanation>
+    <item>
+        <EFDB_Name>heartbeat</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>boolean</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+</SALEvent>
+<SALEvent>
+    <Subsystem>dmHeaderService</Subsystem>
+    <Version>3.5.1</Version>
+    <Author>ccontaxis</Author>
     <EFDB_Topic>dmHeaderService_logevent_AppliedSettingsMatchStart</EFDB_Topic>
     <Alias>AppliedSettingsMatchStart</Alias>
     <Explanation>http://sal.lsst.org</Explanation>
@@ -21,6 +36,21 @@
         <Description>The timestamp for when the event occurred.</Description>
         <IDL_Type>double</IDL_Type>
         <Units>Seconds</Units>
+        <Count>1</Count>
+    </item>
+</SALEvent>
+<SALEvent>
+    <Subsystem>dmHeaderService</Subsystem>
+    <Version>3.5.1</Version>
+    <Author>ccontaxis</Author>
+    <EFDB_Topic>dmHeaderService_logevent_LoopTimeOutOfRange</EFDB_Topic>
+    <Alias>LoopTimeOutOfRange</Alias>
+    <Explanation>http://sal.lsst.org</Explanation>
+    <item>
+        <EFDB_Name>loopTimeOutOfRange</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>boolean</IDL_Type>
+        <Units></Units>
         <Count>1</Count>
     </item>
 </SALEvent>
@@ -64,6 +94,7 @@
         <EFDB_Name>settings</EFDB_Name>
         <Description></Description>
         <IDL_Type>string</IDL_Type>
+        <IDL_Size>32</IDL_Size>
         <Units></Units>
         <Count>1</Count>
     </item>
@@ -108,21 +139,6 @@
 <SALEvent>
     <Subsystem>dmHeaderService</Subsystem>
     <Version>3.5.1</Version>
-    <Author>ccontaxis</Author>
-    <EFDB_Topic>dmHeaderService_logevent_LoopTimeOutOfRange</EFDB_Topic>
-    <Alias>LoopTimeOutOfRange</Alias>
-    <Explanation>http://sal.lsst.org</Explanation>
-    <item>
-        <EFDB_Name>loopTimeOutOfRange</EFDB_Name>
-        <Description></Description>
-        <IDL_Type>boolean</IDL_Type>
-        <Units></Units>
-        <Count>1</Count>
-    </item>
-</SALEvent>
-<SALEvent>
-    <Subsystem>dmHeaderService</Subsystem>
-    <Version>3.5.1</Version>
     <Author>dmills</Author>
     <EFDB_Topic>dmHeaderService_logevent_LargeFileObjectAvailable</EFDB_Topic>
     <Alias>LargeFileObjectAvailable</Alias>
@@ -138,6 +154,7 @@
         <EFDB_Name>Checksum</EFDB_Name>
         <Description>Hexadecimal character string holding the checksum of the file</Description>
         <IDL_Type>string</IDL_Type>
+        <IDL_Size>32</IDL_Size>
         <Units></Units>
         <Count>1</Count>
     </item>
@@ -145,6 +162,7 @@
         <EFDB_Name>Generator</EFDB_Name>
         <Description>Name of the package which generated the file being announced</Description>
         <IDL_Type>string</IDL_Type>
+        <IDL_Size>32</IDL_Size>
         <Units></Units>
         <Count>1</Count>
     </item>
@@ -152,6 +170,7 @@
         <EFDB_Name>Mime Type</EFDB_Name>
         <Description>Mime Type code for the file</Description>
         <IDL_Type>string</IDL_Type>
+        <IDL_Size>32</IDL_Size>
         <Units></Units>
         <Count>1</Count>
     </item>
@@ -162,6 +181,7 @@ either for ingest into the EFD Large File Annex, or to announce
 the successful copy of same to the EFD Large File Annex.
 Protocols are those supported by the cURL library.</Description>
         <IDL_Type>string</IDL_Type>
+        <IDL_Size>256</IDL_Size>
         <Units></Units>
         <Count>1</Count>
     </item>
@@ -169,6 +189,14 @@ Protocols are those supported by the cURL library.</Description>
         <EFDB_Name>Version</EFDB_Name>
         <Description>A dotted x.y version number denoting the file format revision</Description>
         <IDL_Type>float</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>ID</EFDB_Name>
+        <Description>A generic identifier field</Description>
+        <IDL_Type>string</IDL_Type>
+        <IDL_Size>32</IDL_Size>
         <Units></Units>
         <Count>1</Count>
     </item>
@@ -221,21 +249,6 @@ Protocols are those supported by the cURL library.</Description>
     <Subsystem>dmHeaderService</Subsystem>
     <Version>3.5.1</Version>
     <Author>ccontaxis</Author>
-    <EFDB_Topic>dmHeaderService_logevent_Heartbeat</EFDB_Topic>
-    <Alias>Heartbeat</Alias>
-    <Explanation>http://sal.lsst.org</Explanation>
-    <item>
-        <EFDB_Name>heartbeat</EFDB_Name>
-        <Description></Description>
-        <IDL_Type>boolean</IDL_Type>
-        <Units></Units>
-        <Count>1</Count>
-    </item>
-</SALEvent>
-<SALEvent>
-    <Subsystem>dmHeaderService</Subsystem>
-    <Version>3.5.1</Version>
-    <Author>ccontaxis</Author>
     <EFDB_Topic>dmHeaderService_logevent_SettingVersions</EFDB_Topic>
     <Alias>SettingVersions</Alias>
     <Explanation>http://sal.lsst.org</Explanation>
@@ -243,6 +256,7 @@ Protocols are those supported by the cURL library.</Description>
         <EFDB_Name>recommendedSettingsVersion</EFDB_Name>
         <Description></Description>
         <IDL_Type>string</IDL_Type>
+        <IDL_Size>32</IDL_Size>
         <Units></Units>
         <Count>1</Count>
     </item>
