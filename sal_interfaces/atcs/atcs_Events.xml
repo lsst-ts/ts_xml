@@ -2,6 +2,11 @@
 <?xml-stylesheet type="text/xsl" href="http://lsst-sal.tuc.noao.edu/schema/SALEventSet.xsl"?>
 <SALEventSet xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:noNamespaceSchemaLocation="http://lsst-sal.tuc.noao.edu/schema/SALEventSet.xsd">
+<Enumeration>SummaryState_DisabledState,SummaryState_EnabledState,SummaryState_FaultState,SummaryState_OfflineState,SummaryState_StandbyState</Enumeration>
+<Enumeration>DetailedState_DisabledState,DetailedState_EnabledState,DetailedState_FaultState,DetailedState_OfflineState,DetailedState_StandbyState,DetailedState_StoppedState</Enumeration>
+<Enumeration>Filter_Filter1,Filter_Filter2,Filter_Filter3,Filter_Filter4,Filter_StandbyState,Filter_StoppedState</Enumeration>
+<Enumeration>Grating_Grating1,Grating_Grating2,Grating_Grating3,Grating_StandbyState,Grating_Grating4,Grating_StoppedState</Enumeration>
+
 <SALEvent>
     <Subsystem>atcs</Subsystem>
     <Version>3.5.1</Version>
@@ -42,7 +47,8 @@
     <item>
         <EFDB_Name>summaryState</EFDB_Name>
         <Description>An enumeration indicating the subsystem summary state. See the SummaryStateValue enumeration defined in the Typedefs package.</pre></html></Description>
-        <IDL_Type>SummaryState</IDL_Type>
+        <!-- Enumeration: SummaryState -->
+        <IDL_Type>long</IDL_Type>
         <Units></Units>
         <Count>1</Count>
     </item>
@@ -57,7 +63,8 @@
     <item>
         <EFDB_Name>detailedState</EFDB_Name>
         <Description></Description>
-        <IDL_Type>DetailedState</IDL_Type>
+        <!-- Enumeration: DetailedState -->
+        <IDL_Type>long</IDL_Type>
         <Units></Units>
         <Count>1</Count>
     </item>
@@ -137,7 +144,8 @@
     <item>
         <EFDB_Name>detailedState</EFDB_Name>
         <Description></Description>
-        <IDL_Type>DetailedState</IDL_Type>
+        <!-- Enumeration: DetailedState -->
+        <IDL_Type>long</IDL_Type>
         <Units></Units>
         <Count>1</Count>
     </item>
@@ -189,14 +197,16 @@
     <item>
         <EFDB_Name>recommendedSettingsVersion</EFDB_Name>
         <Description></Description>
-        <IDL_Type>Error</IDL_Type>
+        <IDL_Type>string</IDL_Type>
+        <IDL_Size>256</IDL_Size>
         <Units></Units>
         <Count>1</Count>
     </item>
     <item>
         <EFDB_Name>recommendedSettingsLabels</EFDB_Name>
         <Description></Description>
-        <IDL_Type>Error</IDL_Type>
+        <IDL_Type>string</IDL_Type>
+        <IDL_Size>256</IDL_Size>
         <Units></Units>
         <Count>1</Count>
     </item>
