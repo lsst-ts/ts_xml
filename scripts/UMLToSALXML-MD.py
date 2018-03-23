@@ -59,9 +59,9 @@ class UMLParser:
             eventFile.write(header)
             eventFile.write("\n")
             for item in enumerations:
-                values = self.GetEnumerationValues(item)
+                values = self.GetEnumerationValues("", item)
                 if len(values) > 0:
-                    eventFile.write("<Enumeration>%s</Enumeration>\n" % (self.GetEnumerationValues(item)))
+                    eventFile.write("<Enumeration>%s</Enumeration>\n" % (self.GetEnumerationValues("", item)))
             for item in events:
                 if item.name != "Event":
                     print("Writing event %s" % item.name)
@@ -153,7 +153,7 @@ class UMLParser:
             return SALParameter(parameter, description, type, units, count)
         elif self.TypeIsEnumeration(type):
             count = self.GetValueByName(self.uml.find(basePath % "/upperValue"),"value", "1")
-            return SALParameterEnumeration(parameter, description, type, units, count)
+            return SALParameterEnumeration(parameter, description, type, units, count, self.GetEnumerationValues(parameter + "_", type))
         else:
             self.error = True
             return 0
@@ -179,8 +179,8 @@ class UMLParser:
     def GetEnumerationList(self):
         return [enum.get("name") for enum in self.uml.findall(".//packagedElement[@name='IDL Datatype']/packagedElement[@xmitype='uml:Enumeration']")]
         
-    def GetEnumerationValues(self, enumeration):
-        names = ["%s_%s" % (enumeration, value.get("name")) for value in self.uml.findall(".//packagedElement[@name='IDL Datatype']/packagedElement[@name='%s']/ownedLiteral" % enumeration)]
+    def GetEnumerationValues(self, field, enumeration):
+        names = ["%s%s_%s" % (field, enumeration, value.get("name")) for value in self.uml.findall(".//packagedElement[@name='IDL Datatype']/packagedElement[@name='%s']/ownedLiteral" % enumeration)]
         return ",".join(names)
 
     def GetValue(self, node, default):
@@ -249,17 +249,19 @@ class SALParameterEnumeration:
         <IDL_Type>long</IDL_Type>
         <Units>%s</Units>
         <Count>%s</Count>
+        <Enumeration>%s</Enumeration>
     </item>"""
     
-    def __init__(self, name, description, enumeration, units, count):
+    def __init__(self, name, description, enumeration, units, count, enumerations):
         self.name = name
         self.description = description
         self.enumeration = enumeration
         self.units = units
         self.count = count
+        self.enumerations = enumerations
         
     def CreateSALXML(self):
-        return self.template % (self.name, self.description, self.enumeration, self.units, self.count)
+        return self.template % (self.name, self.description, self.enumeration, self.units, self.count, self.enumerations)
 		
 class SALCommand:
     template = """
