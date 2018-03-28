@@ -6,8 +6,8 @@
     <Subsystem>hexapod</Subsystem>
     <Version>3.5.1</Version>
     <Author></Author>
-    <EFDB_Topic>hexapod_logevent_Interlock</EFDB_Topic>
-    <Alias>Interlock</Alias>
+    <EFDB_Topic>hexapod_logevent_interlock</EFDB_Topic>
+    <Alias>interlock</Alias>
     <Explanation>http://sal.lsst.org</Explanation>
     <item>
         <EFDB_Name>detail</EFDB_Name>
@@ -29,8 +29,8 @@
     <Subsystem>hexapod</Subsystem>
     <Version>3.5.1</Version>
     <Author></Author>
-    <EFDB_Topic>hexapod_logevent_Limit</EFDB_Topic>
-    <Alias>Limit</Alias>
+    <EFDB_Topic>hexapod_logevent_limit</EFDB_Topic>
+    <Alias>limit</Alias>
     <Explanation>http://sal.lsst.org</Explanation>
     <item>
         <EFDB_Name>axis</EFDB_Name>
@@ -68,8 +68,8 @@
     <Subsystem>hexapod</Subsystem>
     <Version>3.5.1</Version>
     <Author></Author>
-    <EFDB_Topic>hexapod_logevent_InPosition</EFDB_Topic>
-    <Alias>InPosition</Alias>
+    <EFDB_Topic>hexapod_logevent_inPosition</EFDB_Topic>
+    <Alias>inPosition</Alias>
     <Explanation>http://sal.lsst.org</Explanation>
     <item>
         <EFDB_Name>timeStamp</EFDB_Name>
@@ -83,17 +83,9 @@
     <Subsystem>hexapod</Subsystem>
     <Version>3.5.1</Version>
     <Author></Author>
-    <EFDB_Topic>hexapod_logevent_Error</EFDB_Topic>
-    <Alias>Error</Alias>
+    <EFDB_Topic>hexapod_logevent_deviceError</EFDB_Topic>
+    <Alias>deviceError</Alias>
     <Explanation>http://sal.lsst.org</Explanation>
-    <item>
-        <EFDB_Name>axis</EFDB_Name>
-        <Description></Description>
-        <IDL_Type>string</IDL_Type>
-        <IDL_Size>256</IDL_Size>
-        <Units></Units>
-        <Count>1</Count>
-    </item>
     <item>
         <EFDB_Name>device</EFDB_Name>
         <Description></Description>
@@ -113,6 +105,14 @@
         <EFDB_Name>timeStamp</EFDB_Name>
         <Description></Description>
         <IDL_Type>double</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>code</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>string</IDL_Type>
+        <IDL_Size>256</IDL_Size>
         <Units></Units>
         <Count>1</Count>
     </item>
@@ -197,5 +197,4 @@
         <Units></Units>
         <Count>1</Count>
     </item>
-</SALEvent>
-</SALEventSet>
+</SALEvent></SALEventSet>
