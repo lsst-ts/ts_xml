@@ -32,17 +32,17 @@
     <Alias>SummaryState</Alias>
     <Explanation>http://sal.lsst.org</Explanation>
     <item>
-        <EFDB_Name>summaryState</EFDB_Name>
-        <Description>An enumeration indicating the subsystem summary state. See the SummaryStateValue enumeration defined in the Typedefs package.</Description>
-        <IDL_Type>long</IDL_Type>
-        <Units></Units>
-        <Count>1</Count>
-    </item>
-    <item>
         <EFDB_Name>timestamp</EFDB_Name>
         <Description>The timestamp for when the event occurred.</Description>
         <IDL_Type>double</IDL_Type>
         <Units>Seconds</Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>summaryState</EFDB_Name>
+        <Description>An enumeration indicating the subsystem summary state. See the SummaryStateValue enumeration defined in the Typedefs package.</Description>
+        <IDL_Type>long</IDL_Type>
+        <Units></Units>
         <Count>1</Count>
     </item>
 </SALEvent>
@@ -71,29 +71,46 @@
 <SALEvent>
     <Subsystem>calibrationElectrometer</Subsystem>
     <Version>3.5.1</Version>
+    <Author>hsundararaman</Author>
+    <EFDB_Topic>calibrationElectrometer_logevent_ReadingOutOfLimit</EFDB_Topic>
+    <Alias>ReadingOutOfLimit</Alias>
+    <Explanation>http://sal.lsst.org</Explanation>
+    <item>
+        <EFDB_Name>readingOutOfLimit</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>boolean</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+</SALEvent>
+<SALEvent>
+    <Subsystem>calibrationElectrometer</Subsystem>
+    <Version>3.5.1</Version>
     <Author>ccontaxis</Author>
     <EFDB_Topic>calibrationElectrometer_logevent_SettingVersions</EFDB_Topic>
     <Alias>SettingVersions</Alias>
     <Explanation>http://sal.lsst.org</Explanation>
     <item>
-        <EFDB_Name>recommendedSettingLabels</EFDB_Name>
-        <Description></Description>
-        <IDL_Type>string</IDL_Type>
-        <Units></Units>
+        <EFDB_Name>timestamp</EFDB_Name>
+        <Description>The timestamp for when the event occurred.</Description>
+        <IDL_Type>double</IDL_Type>
+        <Units>Seconds</Units>
         <Count>1</Count>
     </item>
     <item>
         <EFDB_Name>recommendedSettingsVersion</EFDB_Name>
         <Description></Description>
         <IDL_Type>string</IDL_Type>
+        <IDL_Size>1</IDL_Size>
         <Units></Units>
         <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>timestamp</EFDB_Name>
-        <Description>The timestamp for when the event occurred.</Description>
-        <IDL_Type>double</IDL_Type>
-        <Units>Seconds</Units>
+        <EFDB_Name>recommendedSettingLabels</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>string</IDL_Type>
+        <IDL_Size>1</IDL_Size>
+        <Units></Units>
         <Count>1</Count>
     </item>
 </SALEvent>
@@ -120,17 +137,17 @@
     <Alias>ErrorCode</Alias>
     <Explanation>http://sal.lsst.org</Explanation>
     <item>
-        <EFDB_Name>errorCode</EFDB_Name>
-        <Description>The error code being published.</Description>
-        <IDL_Type>long</IDL_Type>
-        <Units></Units>
-        <Count>1</Count>
-    </item>
-    <item>
         <EFDB_Name>timestamp</EFDB_Name>
         <Description>The timestamp for when the event occurred.</Description>
         <IDL_Type>double</IDL_Type>
         <Units>Seconds</Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>errorCode</EFDB_Name>
+        <Description>The error code being published.</Description>
+        <IDL_Type>long</IDL_Type>
+        <Units></Units>
         <Count>1</Count>
     </item>
 </SALEvent>
@@ -142,17 +159,17 @@
     <Alias>measureRange</Alias>
     <Explanation>http://sal.lsst.org</Explanation>
     <item>
+        <EFDB_Name>rangeValue</EFDB_Name>
+        <Description>The range for the intensity for measure selected.</Description>
+        <IDL_Type>float</IDL_Type>
+        <Units>Seconds</Units>
+        <Count>1</Count>
+    </item>
+    <item>
         <EFDB_Name>electId</EFDB_Name>
         <Description></Description>
         <IDL_Type>short</IDL_Type>
         <Units></Units>
-        <Count>1</Count>
-    </item>
-    <item>
-        <EFDB_Name>range</EFDB_Name>
-        <Description>The range for the intensity for measure selected.</Description>
-        <IDL_Type>float</IDL_Type>
-        <Units>Seconds</Units>
         <Count>1</Count>
     </item>
 </SALEvent>
@@ -181,6 +198,7 @@
         <EFDB_Name>unit</EFDB_Name>
         <Description></Description>
         <IDL_Type>string</IDL_Type>
+        <IDL_Size>1</IDL_Size>
         <Units></Units>
         <Count>1</Count>
     </item>
@@ -229,17 +247,17 @@
     <Alias>AppliedSettingsMatchStart</Alias>
     <Explanation>http://sal.lsst.org</Explanation>
     <item>
-        <EFDB_Name>appliedSettingsMatchStartIsTrue</EFDB_Name>
-        <Description></Description>
-        <IDL_Type>boolean</IDL_Type>
-        <Units></Units>
-        <Count>1</Count>
-    </item>
-    <item>
         <EFDB_Name>timestamp</EFDB_Name>
         <Description>The timestamp for when the event occurred.</Description>
         <IDL_Type>double</IDL_Type>
         <Units>Seconds</Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>appliedSettingsMatchStartIsTrue</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>boolean</IDL_Type>
+        <Units></Units>
         <Count>1</Count>
     </item>
 </SALEvent>
@@ -284,6 +302,7 @@
         <EFDB_Name>errorPath</EFDB_Name>
         <Description>path for the electrometer error csv file</Description>
         <IDL_Type>string</IDL_Type>
+        <IDL_Size>1</IDL_Size>
         <Units></Units>
         <Count>1</Count>
     </item>
@@ -408,6 +427,7 @@
         <EFDB_Name>unit</EFDB_Name>
         <Description></Description>
         <IDL_Type>string</IDL_Type>
+        <IDL_Size>1</IDL_Size>
         <Units></Units>
         <Count>1</Count>
     </item>
@@ -434,16 +454,16 @@
         <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>electId</EFDB_Name>
+        <EFDB_Name>timestamp</EFDB_Name>
         <Description></Description>
-        <IDL_Type>short</IDL_Type>
+        <IDL_Type>double</IDL_Type>
         <Units></Units>
         <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>timestamp</EFDB_Name>
+        <EFDB_Name>electId</EFDB_Name>
         <Description></Description>
-        <IDL_Type>double</IDL_Type>
+        <IDL_Type>short</IDL_Type>
         <Units></Units>
         <Count>1</Count>
     </item>
@@ -456,28 +476,15 @@
     <Alias>SettingsApplied_SerialConfiguration</Alias>
     <Explanation>http://sal.lsst.org</Explanation>
     <item>
+        <EFDB_Name>visaResource</EFDB_Name>
+        <Description>The timestamp for when the event occurred.</Description>
+        <IDL_Type>string</IDL_Type>
+        <IDL_Size>1</IDL_Size>
+        <Units>Seconds</Units>
+        <Count>1</Count>
+    </item>
+    <item>
         <EFDB_Name>baudRate</EFDB_Name>
-        <Description>Enum</Description>
-        <IDL_Type>int</IDL_Type>
-        <Units></Units>
-        <Count>1</Count>
-    </item>
-    <item>
-        <EFDB_Name>dataBits</EFDB_Name>
-        <Description></Description>
-        <IDL_Type>int</IDL_Type>
-        <Units></Units>
-        <Count>1</Count>
-    </item>
-    <item>
-        <EFDB_Name>electId</EFDB_Name>
-        <Description></Description>
-        <IDL_Type>short</IDL_Type>
-        <Units></Units>
-        <Count>1</Count>
-    </item>
-    <item>
-        <EFDB_Name>flowControl</EFDB_Name>
         <Description>Enum</Description>
         <IDL_Type>int</IDL_Type>
         <Units></Units>
@@ -491,8 +498,22 @@
         <Count>1</Count>
     </item>
     <item>
+        <EFDB_Name>dataBits</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>int</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
         <EFDB_Name>stopBits</EFDB_Name>
         <Description></Description>
+        <IDL_Type>int</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>flowControl</EFDB_Name>
+        <Description>Enum</Description>
         <IDL_Type>int</IDL_Type>
         <Units></Units>
         <Count>1</Count>
@@ -505,10 +526,10 @@
         <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>visaResource</EFDB_Name>
-        <Description>The timestamp for when the event occurred.</Description>
-        <IDL_Type>string</IDL_Type>
-        <Units>Seconds</Units>
+        <EFDB_Name>electId</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>short</IDL_Type>
+        <Units></Units>
         <Count>1</Count>
     </item>
 </SALEvent>
@@ -525,13 +546,6 @@
         <IDL_Type>byte</IDL_Type>
         <Units></Units>
         <Count>1000</Count>
-    </item>
-    <item>
-        <EFDB_Name>electId</EFDB_Name>
-        <Description></Description>
-        <IDL_Type>short</IDL_Type>
-        <Units></Units>
-        <Count>1</Count>
     </item>
 </SALEvent>
 <SALEvent>
