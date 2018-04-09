@@ -22,7 +22,7 @@
               	<xsd:element name="Units"         type="xsd:string"/>
               	<xsd:element name="Count"         type="xsd:positiveInteger"/>
               	<xsd:element name="Explanation"   minOccurs="0" maxOccurs="1"  type="xsd:anyURI"/>
-                <xsd:element name="Enumeration"    minOccurs="0" maxOccurs="1" type="xsd:string"/>
+                <xsd:element name="Enumeration"   minOccurs="0" maxOccurs="1" type="xsd:string"/>
       </xsd:sequence>
  </xsd:complexType>
 
@@ -41,8 +41,8 @@
 
  <xsd:complexType name="eventSetType">
   <xsd:sequence>
+   <xsd:element name="Enumeration" minOccurs="0" maxOccurs="unbounded" type="xsd:string"/>
    <xsd:element name="SALEvent" minOccurs="1"    maxOccurs="unbounded" type="eventType"/>
-   <xsd:element name="Enumeration" minOccurs="0" maxOccurs="1" type="xsd:string"/>
   </xsd:sequence>
  </xsd:complexType>
 
