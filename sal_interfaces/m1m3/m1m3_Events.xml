@@ -3,7 +3,7 @@
 <SALEventSet xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:noNamespaceSchemaLocation="http://lsst-sal.tuc.noao.edu/schema/SALEventSet.xsd">
 <Enumeration>SummaryStates_DisabledState,SummaryStates_EnabledState,SummaryStates_FaultState,SummaryStates_OfflineState,SummaryStates_StandbyState</Enumeration>
-<Enumeration>DetailedStates_DisabledState,DetailedStates_EnabledState,DetailedStates_FaultState,DetailedStates_OfflineState,DetailedStates_StandbyState,DetailedStates_ParkedState,DetailedStates_RaisingState,DetailedStates_ActiveState,DetailedStates_LoweringState,DetailedStates_EngineeringState,DetailedStates_ParkedEngineeringState,DetailedStates_RaisingEngineeringState,DetailedStates_ActiveEngineeringState,DetailedStates_LoweringEngineeringState,DetailedStates_LoweringFaultState,DetailedStates_ProfileHardpointCorrectionState</Enumeration>
+<Enumeration>DetailedStates_DisabledState,DetailedStates_EnabledState,DetailedStates_FaultState,DetailedStates_OfflineState,DetailedStates_StandbyState,DetailedStates_ParkedState,DetailedStates_RaisingState,DetailedStates_ActiveState,DetailedStates_LoweringState,DetailedStates_EngineeringState,DetailedStates_ParkedEngineeringState,DetailedStates_RaisingEngineeringState,DetailedStates_ActiveEngineeringState,DetailedStates_LoweringEngineeringState,DetailedStates_LoweringFaultState</Enumeration>
 
 <SALEvent>
     <Subsystem>m1m3</Subsystem>
@@ -123,7 +123,7 @@
         <IDL_Type>long</IDL_Type>
         <Units></Units>
         <Count>1</Count>
-        <Enumeration>DetailedState_DetailedStates_DisabledState,DetailedState_DetailedStates_EnabledState,DetailedState_DetailedStates_FaultState,DetailedState_DetailedStates_OfflineState,DetailedState_DetailedStates_StandbyState,DetailedState_DetailedStates_ParkedState,DetailedState_DetailedStates_RaisingState,DetailedState_DetailedStates_ActiveState,DetailedState_DetailedStates_LoweringState,DetailedState_DetailedStates_EngineeringState,DetailedState_DetailedStates_ParkedEngineeringState,DetailedState_DetailedStates_RaisingEngineeringState,DetailedState_DetailedStates_ActiveEngineeringState,DetailedState_DetailedStates_LoweringEngineeringState,DetailedState_DetailedStates_LoweringFaultState,DetailedState_DetailedStates_ProfileHardpointCorrectionState</Enumeration>
+        <Enumeration>DetailedState_DetailedStates_DisabledState,DetailedState_DetailedStates_EnabledState,DetailedState_DetailedStates_FaultState,DetailedState_DetailedStates_OfflineState,DetailedState_DetailedStates_StandbyState,DetailedState_DetailedStates_ParkedState,DetailedState_DetailedStates_RaisingState,DetailedState_DetailedStates_ActiveState,DetailedState_DetailedStates_LoweringState,DetailedState_DetailedStates_EngineeringState,DetailedState_DetailedStates_ParkedEngineeringState,DetailedState_DetailedStates_RaisingEngineeringState,DetailedState_DetailedStates_ActiveEngineeringState,DetailedState_DetailedStates_LoweringEngineeringState,DetailedState_DetailedStates_LoweringFaultState</Enumeration>
     </item>
 </SALEvent>
 <SALEvent>
@@ -165,9 +165,51 @@
         <Count>1</Count>
     </item>
     <item>
+        <EFDB_Name>ReferenceId</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>short</IDL_Type>
+        <Units></Units>
+        <Count>6</Count>
+    </item>
+    <item>
         <EFDB_Name>ReferencePosition</EFDB_Name>
         <Description></Description>
         <IDL_Type>long</IDL_Type>
+        <Units></Units>
+        <Count>6</Count>
+    </item>
+    <item>
+        <EFDB_Name>ModbusSubnet</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>short</IDL_Type>
+        <Units></Units>
+        <Count>6</Count>
+    </item>
+    <item>
+        <EFDB_Name>ModbusAddress</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>short</IDL_Type>
+        <Units></Units>
+        <Count>6</Count>
+    </item>
+    <item>
+        <EFDB_Name>XPosition</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>float</IDL_Type>
+        <Units></Units>
+        <Count>6</Count>
+    </item>
+    <item>
+        <EFDB_Name>YPosition</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>float</IDL_Type>
+        <Units></Units>
+        <Count>6</Count>
+    </item>
+    <item>
+        <EFDB_Name>ZPosition</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>float</IDL_Type>
         <Units></Units>
         <Count>6</Count>
     </item>
@@ -181,49 +223,42 @@
     <item>
         <EFDB_Name>ILCApplicationType</EFDB_Name>
         <Description></Description>
-        <IDL_Type>octet</IDL_Type>
+        <IDL_Type>short</IDL_Type>
         <Units></Units>
         <Count>6</Count>
     </item>
     <item>
         <EFDB_Name>NetworkNodeType</EFDB_Name>
         <Description></Description>
-        <IDL_Type>octet</IDL_Type>
+        <IDL_Type>short</IDL_Type>
         <Units></Units>
         <Count>6</Count>
     </item>
     <item>
         <EFDB_Name>ILCSelectedOptions</EFDB_Name>
         <Description></Description>
-        <IDL_Type>octet</IDL_Type>
+        <IDL_Type>short</IDL_Type>
         <Units></Units>
         <Count>6</Count>
     </item>
     <item>
         <EFDB_Name>NetworkNodeOptions</EFDB_Name>
         <Description></Description>
-        <IDL_Type>octet</IDL_Type>
+        <IDL_Type>short</IDL_Type>
         <Units></Units>
         <Count>6</Count>
     </item>
     <item>
-        <EFDB_Name>MajorRevision</EFDB_Name>
+        <EFDB_Name>Revision</EFDB_Name>
         <Description></Description>
-        <IDL_Type>octet</IDL_Type>
-        <Units></Units>
-        <Count>6</Count>
-    </item>
-    <item>
-        <EFDB_Name>MinorRevision</EFDB_Name>
-        <Description></Description>
-        <IDL_Type>octet</IDL_Type>
+        <IDL_Type>unsigned short</IDL_Type>
         <Units></Units>
         <Count>6</Count>
     </item>
     <item>
         <EFDB_Name>ADCScanRate</EFDB_Name>
         <Description></Description>
-        <IDL_Type>octet</IDL_Type>
+        <IDL_Type>short</IDL_Type>
         <Units></Units>
         <Count>6</Count>
     </item>
@@ -268,203 +303,6 @@
         <IDL_Type>float</IDL_Type>
         <Units></Units>
         <Count>6</Count>
-    </item>
-</SALEvent>
-<SALEvent>
-    <Subsystem>m1m3</Subsystem>
-    <Version>3.5.2</Version>
-    <Author></Author>
-    <EFDB_Topic>m1m3_logevent_ForceActuatorInfo</EFDB_Topic>
-    <Alias>ForceActuatorInfo</Alias>
-    <Explanation>http://sal.lsst.org</Explanation>
-    <item>
-        <EFDB_Name>Timestamp</EFDB_Name>
-        <Description></Description>
-        <IDL_Type>double</IDL_Type>
-        <Units></Units>
-        <Count>1</Count>
-    </item>
-    <item>
-        <EFDB_Name>ILCUniqueId</EFDB_Name>
-        <Description></Description>
-        <IDL_Type>long long</IDL_Type>
-        <Units></Units>
-        <Count>156</Count>
-    </item>
-    <item>
-        <EFDB_Name>ILCApplicationType</EFDB_Name>
-        <Description></Description>
-        <IDL_Type>octet</IDL_Type>
-        <Units></Units>
-        <Count>156</Count>
-    </item>
-    <item>
-        <EFDB_Name>NetworkNodeType</EFDB_Name>
-        <Description></Description>
-        <IDL_Type>octet</IDL_Type>
-        <Units></Units>
-        <Count>156</Count>
-    </item>
-    <item>
-        <EFDB_Name>ILCSelectedOptions</EFDB_Name>
-        <Description></Description>
-        <IDL_Type>octet</IDL_Type>
-        <Units></Units>
-        <Count>156</Count>
-    </item>
-    <item>
-        <EFDB_Name>NetworkNodeOptions</EFDB_Name>
-        <Description></Description>
-        <IDL_Type>octet</IDL_Type>
-        <Units></Units>
-        <Count>156</Count>
-    </item>
-    <item>
-        <EFDB_Name>MajorRevision</EFDB_Name>
-        <Description></Description>
-        <IDL_Type>octet</IDL_Type>
-        <Units></Units>
-        <Count>156</Count>
-    </item>
-    <item>
-        <EFDB_Name>MinorRevision</EFDB_Name>
-        <Description></Description>
-        <IDL_Type>octet</IDL_Type>
-        <Units></Units>
-        <Count>156</Count>
-    </item>
-    <item>
-        <EFDB_Name>ADCScanRate</EFDB_Name>
-        <Description></Description>
-        <IDL_Type>octet</IDL_Type>
-        <Units></Units>
-        <Count>156</Count>
-    </item>
-    <item>
-        <EFDB_Name>MainPrimaryCylinderCoefficient</EFDB_Name>
-        <Description></Description>
-        <IDL_Type>float</IDL_Type>
-        <Units></Units>
-        <Count>156</Count>
-    </item>
-    <item>
-        <EFDB_Name>MainSecondaryCylinderCoefficient</EFDB_Name>
-        <Description></Description>
-        <IDL_Type>float</IDL_Type>
-        <Units></Units>
-        <Count>156</Count>
-    </item>
-    <item>
-        <EFDB_Name>MainPrimaryCylinderLoadCellOffset</EFDB_Name>
-        <Description></Description>
-        <IDL_Type>float</IDL_Type>
-        <Units></Units>
-        <Count>156</Count>
-    </item>
-    <item>
-        <EFDB_Name>MainSecondaryCylinderLoadCellOffset</EFDB_Name>
-        <Description></Description>
-        <IDL_Type>float</IDL_Type>
-        <Units></Units>
-        <Count>156</Count>
-    </item>
-    <item>
-        <EFDB_Name>MainPrimaryCylinderLoadCellSensitivity</EFDB_Name>
-        <Description></Description>
-        <IDL_Type>float</IDL_Type>
-        <Units></Units>
-        <Count>156</Count>
-    </item>
-    <item>
-        <EFDB_Name>MainSecondaryCylinderLoadCellSensitivity</EFDB_Name>
-        <Description></Description>
-        <IDL_Type>float</IDL_Type>
-        <Units></Units>
-        <Count>156</Count>
-    </item>
-    <item>
-        <EFDB_Name>BackupPrimaryCylinderCoefficient</EFDB_Name>
-        <Description></Description>
-        <IDL_Type>float</IDL_Type>
-        <Units></Units>
-        <Count>156</Count>
-    </item>
-    <item>
-        <EFDB_Name>BackupSecondaryCylinderCoefficient</EFDB_Name>
-        <Description></Description>
-        <IDL_Type>float</IDL_Type>
-        <Units></Units>
-        <Count>156</Count>
-    </item>
-    <item>
-        <EFDB_Name>BackupPrimaryCylinderLoadCellOffset</EFDB_Name>
-        <Description></Description>
-        <IDL_Type>float</IDL_Type>
-        <Units></Units>
-        <Count>156</Count>
-    </item>
-    <item>
-        <EFDB_Name>BackupSecondaryCylinderLoadCellOffset</EFDB_Name>
-        <Description></Description>
-        <IDL_Type>float</IDL_Type>
-        <Units></Units>
-        <Count>156</Count>
-    </item>
-    <item>
-        <EFDB_Name>BackupPrimaryCylinderLoadCellSensitivity</EFDB_Name>
-        <Description></Description>
-        <IDL_Type>float</IDL_Type>
-        <Units></Units>
-        <Count>156</Count>
-    </item>
-    <item>
-        <EFDB_Name>BackupSecondaryCylinderLoadCellSensitivity</EFDB_Name>
-        <Description></Description>
-        <IDL_Type>float</IDL_Type>
-        <Units></Units>
-        <Count>156</Count>
-    </item>
-    <item>
-        <EFDB_Name>MezzaninePrimaryCylinderGain</EFDB_Name>
-        <Description></Description>
-        <IDL_Type>float</IDL_Type>
-        <Units></Units>
-        <Count>156</Count>
-    </item>
-    <item>
-        <EFDB_Name>MezzanineSecondaryCylinderGain</EFDB_Name>
-        <Description></Description>
-        <IDL_Type>float</IDL_Type>
-        <Units></Units>
-        <Count>156</Count>
-    </item>
-    <item>
-        <EFDB_Name>MezzanineUniqueId</EFDB_Name>
-        <Description></Description>
-        <IDL_Type>long long</IDL_Type>
-        <Units></Units>
-        <Count>156</Count>
-    </item>
-    <item>
-        <EFDB_Name>MezzanineFirmwareType</EFDB_Name>
-        <Description></Description>
-        <IDL_Type>octet</IDL_Type>
-        <Units></Units>
-        <Count>156</Count>
-    </item>
-    <item>
-        <EFDB_Name>MezzanineMajorRevision</EFDB_Name>
-        <Description></Description>
-        <IDL_Type>octet</IDL_Type>
-        <Units></Units>
-        <Count>156</Count>
-    </item>
-    <item>
-        <EFDB_Name>MezzanineMinorRevision</EFDB_Name>
-        <Description></Description>
-        <IDL_Type>octet</IDL_Type>
-        <Units></Units>
-        <Count>156</Count>
     </item>
 </SALEvent>
 <SALEvent>
@@ -996,9 +834,9 @@
     <item>
         <EFDB_Name>SafetyLimitWarning</EFDB_Name>
         <Description></Description>
-        <IDL_Type>boolean</IDL_Type>
+        <IDL_Type>long long</IDL_Type>
         <Units></Units>
-        <Count>156</Count>
+        <Count>3</Count>
     </item>
     <item>
         <EFDB_Name>XMomentWarning</EFDB_Name>
@@ -1031,9 +869,9 @@
     <item>
         <EFDB_Name>NearNeighborWarning</EFDB_Name>
         <Description></Description>
-        <IDL_Type>boolean</IDL_Type>
+        <IDL_Type>long long</IDL_Type>
         <Units></Units>
-        <Count>156</Count>
+        <Count>3</Count>
     </item>
     <item>
         <EFDB_Name>MagnitudeWarning</EFDB_Name>
@@ -1052,9 +890,9 @@
     <item>
         <EFDB_Name>FarNeighborWarning</EFDB_Name>
         <Description></Description>
-        <IDL_Type>boolean</IDL_Type>
+        <IDL_Type>long long</IDL_Type>
         <Units></Units>
-        <Count>156</Count>
+        <Count>3</Count>
     </item>
     <item>
         <EFDB_Name>AnyElevationForceWarning</EFDB_Name>
@@ -1066,9 +904,9 @@
     <item>
         <EFDB_Name>ElevationForceWarning</EFDB_Name>
         <Description></Description>
-        <IDL_Type>boolean</IDL_Type>
+        <IDL_Type>long long</IDL_Type>
         <Units></Units>
-        <Count>156</Count>
+        <Count>3</Count>
     </item>
     <item>
         <EFDB_Name>AnyAzimuthForceWarning</EFDB_Name>
@@ -1080,9 +918,9 @@
     <item>
         <EFDB_Name>AzimuthForceWarning</EFDB_Name>
         <Description></Description>
-        <IDL_Type>boolean</IDL_Type>
+        <IDL_Type>long long</IDL_Type>
         <Units></Units>
-        <Count>156</Count>
+        <Count>3</Count>
     </item>
     <item>
         <EFDB_Name>AnyThermalForceWarning</EFDB_Name>
@@ -1094,9 +932,9 @@
     <item>
         <EFDB_Name>ThermalForceWarning</EFDB_Name>
         <Description></Description>
-        <IDL_Type>boolean</IDL_Type>
+        <IDL_Type>long long</IDL_Type>
         <Units></Units>
-        <Count>156</Count>
+        <Count>3</Count>
     </item>
     <item>
         <EFDB_Name>AnyBalanceForceWarning</EFDB_Name>
@@ -1108,9 +946,9 @@
     <item>
         <EFDB_Name>BalanceForceWarning</EFDB_Name>
         <Description></Description>
-        <IDL_Type>boolean</IDL_Type>
+        <IDL_Type>long long</IDL_Type>
         <Units></Units>
-        <Count>156</Count>
+        <Count>3</Count>
     </item>
     <item>
         <EFDB_Name>AnyAccelerationForceWarning</EFDB_Name>
@@ -1122,9 +960,9 @@
     <item>
         <EFDB_Name>AccelerationForceWarning</EFDB_Name>
         <Description></Description>
-        <IDL_Type>boolean</IDL_Type>
+        <IDL_Type>long long</IDL_Type>
         <Units></Units>
-        <Count>156</Count>
+        <Count>3</Count>
     </item>
     <item>
         <EFDB_Name>ActiveOpticNetForceWarning</EFDB_Name>
@@ -1143,9 +981,9 @@
     <item>
         <EFDB_Name>ActiveOpticForceWarning</EFDB_Name>
         <Description></Description>
-        <IDL_Type>boolean</IDL_Type>
+        <IDL_Type>long long</IDL_Type>
         <Units></Units>
-        <Count>156</Count>
+        <Count>3</Count>
     </item>
     <item>
         <EFDB_Name>AnyStaticForceWarning</EFDB_Name>
@@ -1157,9 +995,9 @@
     <item>
         <EFDB_Name>StaticForceWarning</EFDB_Name>
         <Description></Description>
-        <IDL_Type>boolean</IDL_Type>
+        <IDL_Type>long long</IDL_Type>
         <Units></Units>
-        <Count>156</Count>
+        <Count>3</Count>
     </item>
     <item>
         <EFDB_Name>AberrationNetForceWarning</EFDB_Name>
@@ -1178,9 +1016,9 @@
     <item>
         <EFDB_Name>AberrationForceWarning</EFDB_Name>
         <Description></Description>
-        <IDL_Type>boolean</IDL_Type>
+        <IDL_Type>long long</IDL_Type>
         <Units></Units>
-        <Count>156</Count>
+        <Count>3</Count>
     </item>
     <item>
         <EFDB_Name>AnyOffsetForceWarning</EFDB_Name>
@@ -1192,9 +1030,9 @@
     <item>
         <EFDB_Name>OffsetForceWarning</EFDB_Name>
         <Description></Description>
-        <IDL_Type>boolean</IDL_Type>
+        <IDL_Type>long long</IDL_Type>
         <Units></Units>
-        <Count>156</Count>
+        <Count>3</Count>
     </item>
     <item>
         <EFDB_Name>AnyVelocityForceWarning</EFDB_Name>
@@ -1206,9 +1044,9 @@
     <item>
         <EFDB_Name>VelocityForceWarning</EFDB_Name>
         <Description></Description>
-        <IDL_Type>boolean</IDL_Type>
+        <IDL_Type>long long</IDL_Type>
         <Units></Units>
-        <Count>156</Count>
+        <Count>3</Count>
     </item>
     <item>
         <EFDB_Name>AnyForceWarning</EFDB_Name>
@@ -1220,9 +1058,9 @@
     <item>
         <EFDB_Name>ForceWarning</EFDB_Name>
         <Description></Description>
-        <IDL_Type>boolean</IDL_Type>
+        <IDL_Type>long long</IDL_Type>
         <Units></Units>
-        <Count>156</Count>
+        <Count>3</Count>
     </item>
 </SALEvent>
 <SALEvent>
@@ -1242,7 +1080,7 @@
     <item>
         <EFDB_Name>ILCState</EFDB_Name>
         <Description></Description>
-        <IDL_Type>octet</IDL_Type>
+        <IDL_Type>short</IDL_Type>
         <Units></Units>
         <Count>156</Count>
     </item>
@@ -1346,6 +1184,27 @@
         <Count>1</Count>
     </item>
     <item>
+        <EFDB_Name>ReferenceId</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>short</IDL_Type>
+        <Units></Units>
+        <Count>6</Count>
+    </item>
+    <item>
+        <EFDB_Name>ModbusSubnet</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>short</IDL_Type>
+        <Units></Units>
+        <Count>6</Count>
+    </item>
+    <item>
+        <EFDB_Name>ModbusAddress</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>short</IDL_Type>
+        <Units></Units>
+        <Count>6</Count>
+    </item>
+    <item>
         <EFDB_Name>ILCUniqueId</EFDB_Name>
         <Description></Description>
         <IDL_Type>long long</IDL_Type>
@@ -1355,28 +1214,21 @@
     <item>
         <EFDB_Name>ILCApplicationType</EFDB_Name>
         <Description></Description>
-        <IDL_Type>octet</IDL_Type>
+        <IDL_Type>short</IDL_Type>
         <Units></Units>
         <Count>6</Count>
     </item>
     <item>
         <EFDB_Name>NetworkNodeType</EFDB_Name>
         <Description></Description>
-        <IDL_Type>octet</IDL_Type>
+        <IDL_Type>short</IDL_Type>
         <Units></Units>
         <Count>6</Count>
     </item>
     <item>
-        <EFDB_Name>MajorRevision</EFDB_Name>
+        <EFDB_Name>Revision</EFDB_Name>
         <Description></Description>
-        <IDL_Type>octet</IDL_Type>
-        <Units></Units>
-        <Count>6</Count>
-    </item>
-    <item>
-        <EFDB_Name>MinorRevision</EFDB_Name>
-        <Description></Description>
-        <IDL_Type>octet</IDL_Type>
+        <IDL_Type>unsigned short</IDL_Type>
         <Units></Units>
         <Count>6</Count>
     </item>
@@ -1390,21 +1242,21 @@
     <item>
         <EFDB_Name>MezzanineFirmwareType</EFDB_Name>
         <Description></Description>
-        <IDL_Type>octet</IDL_Type>
+        <IDL_Type>short</IDL_Type>
         <Units></Units>
         <Count>6</Count>
     </item>
     <item>
         <EFDB_Name>MezzanineMajorRevision</EFDB_Name>
         <Description></Description>
-        <IDL_Type>octet</IDL_Type>
+        <IDL_Type>short</IDL_Type>
         <Units></Units>
         <Count>6</Count>
     </item>
     <item>
         <EFDB_Name>MezzanineMinorRevision</EFDB_Name>
         <Description></Description>
-        <IDL_Type>octet</IDL_Type>
+        <IDL_Type>short</IDL_Type>
         <Units></Units>
         <Count>6</Count>
     </item>
@@ -1717,9 +1569,9 @@
     <item>
         <EFDB_Name>PrimaryAxisMeasuredForceWarning</EFDB_Name>
         <Description></Description>
-        <IDL_Type>boolean</IDL_Type>
+        <IDL_Type>long long</IDL_Type>
         <Units></Units>
-        <Count>156</Count>
+        <Count>3</Count>
     </item>
     <item>
         <EFDB_Name>AnySecondaryAxisMeasuredForceWarning</EFDB_Name>
@@ -1731,9 +1583,9 @@
     <item>
         <EFDB_Name>SecondaryAxisMeasuredForceWarning</EFDB_Name>
         <Description></Description>
-        <IDL_Type>boolean</IDL_Type>
+        <IDL_Type>long long</IDL_Type>
         <Units></Units>
-        <Count>156</Count>
+        <Count>3</Count>
     </item>
     <item>
         <EFDB_Name>AnyPrimaryAxisFollowingErrorWarning</EFDB_Name>
@@ -1745,9 +1597,9 @@
     <item>
         <EFDB_Name>PrimaryAxisFollowingErrorWarning</EFDB_Name>
         <Description></Description>
-        <IDL_Type>boolean</IDL_Type>
+        <IDL_Type>long long</IDL_Type>
         <Units></Units>
-        <Count>156</Count>
+        <Count>3</Count>
     </item>
     <item>
         <EFDB_Name>AnySecondaryAxisFollowingErrorWarning</EFDB_Name>
@@ -1759,9 +1611,9 @@
     <item>
         <EFDB_Name>SecondaryAxisFollowingErrorWarning</EFDB_Name>
         <Description></Description>
-        <IDL_Type>boolean</IDL_Type>
+        <IDL_Type>long long</IDL_Type>
         <Units></Units>
-        <Count>156</Count>
+        <Count>3</Count>
     </item>
 </SALEvent>
 <SALEvent>
@@ -3509,14 +3361,14 @@
     <item>
         <EFDB_Name>ILCState</EFDB_Name>
         <Description></Description>
-        <IDL_Type>octet</IDL_Type>
+        <IDL_Type>short</IDL_Type>
         <Units></Units>
         <Count>6</Count>
     </item>
     <item>
         <EFDB_Name>MotionState</EFDB_Name>
         <Description></Description>
-        <IDL_Type>octet</IDL_Type>
+        <IDL_Type>short</IDL_Type>
         <Units></Units>
         <Count>6</Count>
     </item>
@@ -3538,7 +3390,7 @@
     <item>
         <EFDB_Name>ILCState</EFDB_Name>
         <Description></Description>
-        <IDL_Type>octet</IDL_Type>
+        <IDL_Type>short</IDL_Type>
         <Units></Units>
         <Count>6</Count>
     </item>
@@ -3574,9 +3426,9 @@
     <item>
         <EFDB_Name>MajorFault</EFDB_Name>
         <Description></Description>
-        <IDL_Type>boolean</IDL_Type>
+        <IDL_Type>long long</IDL_Type>
         <Units></Units>
-        <Count>156</Count>
+        <Count>3</Count>
     </item>
     <item>
         <EFDB_Name>AnyMinorFault</EFDB_Name>
@@ -3588,9 +3440,9 @@
     <item>
         <EFDB_Name>MinorFault</EFDB_Name>
         <Description></Description>
-        <IDL_Type>boolean</IDL_Type>
+        <IDL_Type>long long</IDL_Type>
         <Units></Units>
-        <Count>156</Count>
+        <Count>3</Count>
     </item>
     <item>
         <EFDB_Name>AnyFaultOverride</EFDB_Name>
@@ -3602,9 +3454,9 @@
     <item>
         <EFDB_Name>FaultOverride</EFDB_Name>
         <Description></Description>
-        <IDL_Type>boolean</IDL_Type>
+        <IDL_Type>long long</IDL_Type>
         <Units></Units>
-        <Count>156</Count>
+        <Count>3</Count>
     </item>
     <item>
         <EFDB_Name>AnyMainCalibrationError</EFDB_Name>
@@ -3616,9 +3468,9 @@
     <item>
         <EFDB_Name>MainCalibrationError</EFDB_Name>
         <Description></Description>
-        <IDL_Type>boolean</IDL_Type>
+        <IDL_Type>long long</IDL_Type>
         <Units></Units>
-        <Count>156</Count>
+        <Count>3</Count>
     </item>
     <item>
         <EFDB_Name>AnyBackupCalibrationError</EFDB_Name>
@@ -3630,9 +3482,9 @@
     <item>
         <EFDB_Name>BackupCalibrationError</EFDB_Name>
         <Description></Description>
-        <IDL_Type>boolean</IDL_Type>
+        <IDL_Type>long long</IDL_Type>
         <Units></Units>
-        <Count>156</Count>
+        <Count>3</Count>
     </item>
     <item>
         <EFDB_Name>AnyMezzanineError</EFDB_Name>
@@ -3644,9 +3496,9 @@
     <item>
         <EFDB_Name>MezzanineError</EFDB_Name>
         <Description></Description>
-        <IDL_Type>boolean</IDL_Type>
+        <IDL_Type>long long</IDL_Type>
         <Units></Units>
-        <Count>156</Count>
+        <Count>3</Count>
     </item>
     <item>
         <EFDB_Name>AnyMezzanineBootloaderActive</EFDB_Name>
@@ -3658,9 +3510,9 @@
     <item>
         <EFDB_Name>MezzanineBootloaderActive</EFDB_Name>
         <Description></Description>
-        <IDL_Type>boolean</IDL_Type>
+        <IDL_Type>long long</IDL_Type>
         <Units></Units>
-        <Count>156</Count>
+        <Count>3</Count>
     </item>
     <item>
         <EFDB_Name>AnyUniqueIdCRCError</EFDB_Name>
@@ -3672,9 +3524,9 @@
     <item>
         <EFDB_Name>UniqueIdCRCError</EFDB_Name>
         <Description></Description>
-        <IDL_Type>boolean</IDL_Type>
+        <IDL_Type>long long</IDL_Type>
         <Units></Units>
-        <Count>156</Count>
+        <Count>3</Count>
     </item>
     <item>
         <EFDB_Name>AnyApplicationTypeMismatch</EFDB_Name>
@@ -3686,9 +3538,9 @@
     <item>
         <EFDB_Name>ApplicationTypeMismatch</EFDB_Name>
         <Description></Description>
-        <IDL_Type>boolean</IDL_Type>
+        <IDL_Type>long long</IDL_Type>
         <Units></Units>
-        <Count>156</Count>
+        <Count>3</Count>
     </item>
     <item>
         <EFDB_Name>AnyApplicationMissing</EFDB_Name>
@@ -3700,9 +3552,9 @@
     <item>
         <EFDB_Name>ApplicationMissing</EFDB_Name>
         <Description></Description>
-        <IDL_Type>boolean</IDL_Type>
+        <IDL_Type>long long</IDL_Type>
         <Units></Units>
-        <Count>156</Count>
+        <Count>3</Count>
     </item>
     <item>
         <EFDB_Name>AnyApplicationCRCMismatch</EFDB_Name>
@@ -3714,9 +3566,9 @@
     <item>
         <EFDB_Name>ApplicationCRCMismatch</EFDB_Name>
         <Description></Description>
-        <IDL_Type>boolean</IDL_Type>
+        <IDL_Type>long long</IDL_Type>
         <Units></Units>
-        <Count>156</Count>
+        <Count>3</Count>
     </item>
     <item>
         <EFDB_Name>AnyOneWireMissing</EFDB_Name>
@@ -3728,9 +3580,9 @@
     <item>
         <EFDB_Name>OneWireMissing</EFDB_Name>
         <Description></Description>
-        <IDL_Type>boolean</IDL_Type>
+        <IDL_Type>long long</IDL_Type>
         <Units></Units>
-        <Count>156</Count>
+        <Count>3</Count>
     </item>
     <item>
         <EFDB_Name>AnyOneWire1Mismatch</EFDB_Name>
@@ -3742,9 +3594,9 @@
     <item>
         <EFDB_Name>OneWire1Mismatch</EFDB_Name>
         <Description></Description>
-        <IDL_Type>boolean</IDL_Type>
+        <IDL_Type>long long</IDL_Type>
         <Units></Units>
-        <Count>156</Count>
+        <Count>3</Count>
     </item>
     <item>
         <EFDB_Name>AnyOneWire2Mismatch</EFDB_Name>
@@ -3756,9 +3608,9 @@
     <item>
         <EFDB_Name>OneWire2Mismatch</EFDB_Name>
         <Description></Description>
-        <IDL_Type>boolean</IDL_Type>
+        <IDL_Type>long long</IDL_Type>
         <Units></Units>
-        <Count>156</Count>
+        <Count>3</Count>
     </item>
     <item>
         <EFDB_Name>AnyWatchdogReset</EFDB_Name>
@@ -3770,9 +3622,9 @@
     <item>
         <EFDB_Name>WatchdogReset</EFDB_Name>
         <Description></Description>
-        <IDL_Type>boolean</IDL_Type>
+        <IDL_Type>long long</IDL_Type>
         <Units></Units>
-        <Count>156</Count>
+        <Count>3</Count>
     </item>
     <item>
         <EFDB_Name>AnyBrownOut</EFDB_Name>
@@ -3784,9 +3636,9 @@
     <item>
         <EFDB_Name>BrownOut</EFDB_Name>
         <Description></Description>
-        <IDL_Type>boolean</IDL_Type>
+        <IDL_Type>long long</IDL_Type>
         <Units></Units>
-        <Count>156</Count>
+        <Count>3</Count>
     </item>
     <item>
         <EFDB_Name>AnyEventTrapReset</EFDB_Name>
@@ -3798,9 +3650,9 @@
     <item>
         <EFDB_Name>EventTrapReset</EFDB_Name>
         <Description></Description>
-        <IDL_Type>boolean</IDL_Type>
+        <IDL_Type>long long</IDL_Type>
         <Units></Units>
-        <Count>156</Count>
+        <Count>3</Count>
     </item>
     <item>
         <EFDB_Name>AnySSRPowerFault</EFDB_Name>
@@ -3812,9 +3664,9 @@
     <item>
         <EFDB_Name>SSRPowerFault</EFDB_Name>
         <Description></Description>
-        <IDL_Type>boolean</IDL_Type>
+        <IDL_Type>long long</IDL_Type>
         <Units></Units>
-        <Count>156</Count>
+        <Count>3</Count>
     </item>
     <item>
         <EFDB_Name>AnyAuxPowerFault</EFDB_Name>
@@ -3826,9 +3678,9 @@
     <item>
         <EFDB_Name>AuxPowerFault</EFDB_Name>
         <Description></Description>
-        <IDL_Type>boolean</IDL_Type>
+        <IDL_Type>long long</IDL_Type>
         <Units></Units>
-        <Count>156</Count>
+        <Count>3</Count>
     </item>
     <item>
         <EFDB_Name>AnyMezzaninePowerFault</EFDB_Name>
@@ -3840,9 +3692,9 @@
     <item>
         <EFDB_Name>MezzaninePowerFault</EFDB_Name>
         <Description></Description>
-        <IDL_Type>boolean</IDL_Type>
+        <IDL_Type>long long</IDL_Type>
         <Units></Units>
-        <Count>156</Count>
+        <Count>3</Count>
     </item>
     <item>
         <EFDB_Name>AnyMezzanineCurrentAmp1Fault</EFDB_Name>
@@ -3854,9 +3706,9 @@
     <item>
         <EFDB_Name>MezzanineCurrentAmp1Fault</EFDB_Name>
         <Description></Description>
-        <IDL_Type>boolean</IDL_Type>
+        <IDL_Type>long long</IDL_Type>
         <Units></Units>
-        <Count>156</Count>
+        <Count>3</Count>
     </item>
     <item>
         <EFDB_Name>AnyMezzanineCurrentAmp2Fault</EFDB_Name>
@@ -3868,9 +3720,9 @@
     <item>
         <EFDB_Name>MezzanineCurrentAmp2Fault</EFDB_Name>
         <Description></Description>
-        <IDL_Type>boolean</IDL_Type>
+        <IDL_Type>long long</IDL_Type>
         <Units></Units>
-        <Count>156</Count>
+        <Count>3</Count>
     </item>
     <item>
         <EFDB_Name>AnyMezzanineUniqueIdCRCError</EFDB_Name>
@@ -3882,9 +3734,9 @@
     <item>
         <EFDB_Name>MezzanineUniqueIdCRCError</EFDB_Name>
         <Description></Description>
-        <IDL_Type>boolean</IDL_Type>
+        <IDL_Type>long long</IDL_Type>
         <Units></Units>
-        <Count>156</Count>
+        <Count>3</Count>
     </item>
     <item>
         <EFDB_Name>AnyMezzanineMainCalibrationError</EFDB_Name>
@@ -3896,9 +3748,9 @@
     <item>
         <EFDB_Name>MezzanineMainCalibrationError</EFDB_Name>
         <Description></Description>
-        <IDL_Type>boolean</IDL_Type>
+        <IDL_Type>long long</IDL_Type>
         <Units></Units>
-        <Count>156</Count>
+        <Count>3</Count>
     </item>
     <item>
         <EFDB_Name>AnyMezzanineBackupCalibrationError</EFDB_Name>
@@ -3910,9 +3762,9 @@
     <item>
         <EFDB_Name>MezzanineBackupCalibrationError</EFDB_Name>
         <Description></Description>
-        <IDL_Type>boolean</IDL_Type>
+        <IDL_Type>long long</IDL_Type>
         <Units></Units>
-        <Count>156</Count>
+        <Count>3</Count>
     </item>
     <item>
         <EFDB_Name>AnyMezzanineEventTrapReset</EFDB_Name>
@@ -3924,9 +3776,9 @@
     <item>
         <EFDB_Name>MezzanineEventTrapReset</EFDB_Name>
         <Description></Description>
-        <IDL_Type>boolean</IDL_Type>
+        <IDL_Type>long long</IDL_Type>
         <Units></Units>
-        <Count>156</Count>
+        <Count>3</Count>
     </item>
     <item>
         <EFDB_Name>AnyMezzanineApplicationMissing</EFDB_Name>
@@ -3938,9 +3790,9 @@
     <item>
         <EFDB_Name>MezzanineApplicationMissing</EFDB_Name>
         <Description></Description>
-        <IDL_Type>boolean</IDL_Type>
+        <IDL_Type>long long</IDL_Type>
         <Units></Units>
-        <Count>156</Count>
+        <Count>3</Count>
     </item>
     <item>
         <EFDB_Name>AnyMezzanineApplicationCRCMismatch</EFDB_Name>
@@ -3952,9 +3804,9 @@
     <item>
         <EFDB_Name>MezzanineApplicationCRCMismatch</EFDB_Name>
         <Description></Description>
-        <IDL_Type>boolean</IDL_Type>
+        <IDL_Type>long long</IDL_Type>
         <Units></Units>
-        <Count>156</Count>
+        <Count>3</Count>
     </item>
     <item>
         <EFDB_Name>AnyILCFault</EFDB_Name>
@@ -3966,9 +3818,9 @@
     <item>
         <EFDB_Name>ILCFault</EFDB_Name>
         <Description></Description>
-        <IDL_Type>boolean</IDL_Type>
+        <IDL_Type>long long</IDL_Type>
         <Units></Units>
-        <Count>156</Count>
+        <Count>3</Count>
     </item>
     <item>
         <EFDB_Name>AnyBroadcastCounterWarning</EFDB_Name>
@@ -3980,9 +3832,9 @@
     <item>
         <EFDB_Name>BroadcastCounterWarning</EFDB_Name>
         <Description></Description>
-        <IDL_Type>boolean</IDL_Type>
+        <IDL_Type>long long</IDL_Type>
         <Units></Units>
-        <Count>156</Count>
+        <Count>3</Count>
     </item>
 </SALEvent>
 <SALEvent>
@@ -5400,6 +5252,256 @@
         <EFDB_Name>PrimaryCylinderForces</EFDB_Name>
         <Description></Description>
         <IDL_Type>long</IDL_Type>
+        <Units></Units>
+        <Count>156</Count>
+    </item>
+</SALEvent>
+<SALEvent>
+    <Subsystem>m1m3</Subsystem>
+    <Version>3.5.2</Version>
+    <Author></Author>
+    <EFDB_Topic>m1m3_logevent_ForceActuatorMainCalibrationInfo</EFDB_Topic>
+    <Alias>ForceActuatorMainCalibrationInfo</Alias>
+    <Explanation>http://sal.lsst.org</Explanation>
+    <item>
+        <EFDB_Name>Timestamp</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>double</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>MainPrimaryCylinderCoefficient</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>float</IDL_Type>
+        <Units></Units>
+        <Count>156</Count>
+    </item>
+    <item>
+        <EFDB_Name>MainSecondaryCylinderCoefficient</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>float</IDL_Type>
+        <Units></Units>
+        <Count>156</Count>
+    </item>
+    <item>
+        <EFDB_Name>MainPrimaryCylinderLoadCellOffset</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>float</IDL_Type>
+        <Units></Units>
+        <Count>156</Count>
+    </item>
+    <item>
+        <EFDB_Name>MainSecondaryCylinderLoadCellOffset</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>float</IDL_Type>
+        <Units></Units>
+        <Count>156</Count>
+    </item>
+    <item>
+        <EFDB_Name>MainPrimaryCylinderLoadCellSensitivity</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>float</IDL_Type>
+        <Units></Units>
+        <Count>156</Count>
+    </item>
+    <item>
+        <EFDB_Name>MainSecondaryCylinderLoadCellSensitivity</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>float</IDL_Type>
+        <Units></Units>
+        <Count>156</Count>
+    </item>
+</SALEvent>
+<SALEvent>
+    <Subsystem>m1m3</Subsystem>
+    <Version>3.5.2</Version>
+    <Author></Author>
+    <EFDB_Topic>m1m3_logevent_ForceActuatorBackupCalibrationInfo</EFDB_Topic>
+    <Alias>ForceActuatorBackupCalibrationInfo</Alias>
+    <Explanation>http://sal.lsst.org</Explanation>
+    <item>
+        <EFDB_Name>Timestamp</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>double</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>BackupPrimaryCylinderCoefficient</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>float</IDL_Type>
+        <Units></Units>
+        <Count>156</Count>
+    </item>
+    <item>
+        <EFDB_Name>BackupSecondaryCylinderCoefficient</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>float</IDL_Type>
+        <Units></Units>
+        <Count>156</Count>
+    </item>
+    <item>
+        <EFDB_Name>BackupPrimaryCylinderLoadCellOffset</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>float</IDL_Type>
+        <Units></Units>
+        <Count>156</Count>
+    </item>
+    <item>
+        <EFDB_Name>BackupSecondaryCylinderLoadCellOffset</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>float</IDL_Type>
+        <Units></Units>
+        <Count>156</Count>
+    </item>
+    <item>
+        <EFDB_Name>BackupPrimaryCylinderLoadCellSensitivity</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>float</IDL_Type>
+        <Units></Units>
+        <Count>156</Count>
+    </item>
+    <item>
+        <EFDB_Name>BackupSecondaryCylinderLoadCellSensitivity</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>float</IDL_Type>
+        <Units></Units>
+        <Count>156</Count>
+    </item>
+</SALEvent>
+<SALEvent>
+    <Subsystem>m1m3</Subsystem>
+    <Version>3.5.2</Version>
+    <Author></Author>
+    <EFDB_Topic>m1m3_logevent_ForceActuatorMezzanineInfo</EFDB_Topic>
+    <Alias>ForceActuatorMezzanineInfo</Alias>
+    <Explanation>http://sal.lsst.org</Explanation>
+    <item>
+        <EFDB_Name>Timestamp</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>double</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>MezzaninePrimaryCylinderGain</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>float</IDL_Type>
+        <Units></Units>
+        <Count>156</Count>
+    </item>
+    <item>
+        <EFDB_Name>MezzanineSecondaryCylinderGain</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>float</IDL_Type>
+        <Units></Units>
+        <Count>156</Count>
+    </item>
+    <item>
+        <EFDB_Name>MezzanineUniqueId</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>long long</IDL_Type>
+        <Units></Units>
+        <Count>156</Count>
+    </item>
+    <item>
+        <EFDB_Name>MezzanineFirmwareType</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>short</IDL_Type>
+        <Units></Units>
+        <Count>156</Count>
+    </item>
+    <item>
+        <EFDB_Name>MezzanineMajorRevision</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>short</IDL_Type>
+        <Units></Units>
+        <Count>156</Count>
+    </item>
+    <item>
+        <EFDB_Name>MezzanineMinorRevision</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>short</IDL_Type>
+        <Units></Units>
+        <Count>156</Count>
+    </item>
+</SALEvent>
+<SALEvent>
+    <Subsystem>m1m3</Subsystem>
+    <Version>3.5.2</Version>
+    <Author></Author>
+    <EFDB_Topic>m1m3_logevent_ForceActuatorADCInfo</EFDB_Topic>
+    <Alias>ForceActuatorADCInfo</Alias>
+    <Explanation>http://sal.lsst.org</Explanation>
+    <item>
+        <EFDB_Name>Timestamp</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>double</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>ADCScanRate</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>short</IDL_Type>
+        <Units></Units>
+        <Count>156</Count>
+    </item>
+</SALEvent>
+<SALEvent>
+    <Subsystem>m1m3</Subsystem>
+    <Version>3.5.2</Version>
+    <Author></Author>
+    <EFDB_Topic>m1m3_logevent_ForceActuatorInfo</EFDB_Topic>
+    <Alias>ForceActuatorInfo</Alias>
+    <Explanation>http://sal.lsst.org</Explanation>
+    <item>
+        <EFDB_Name>Timestamp</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>double</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>ILCUniqueId</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>long long</IDL_Type>
+        <Units></Units>
+        <Count>156</Count>
+    </item>
+    <item>
+        <EFDB_Name>ILCApplicationType</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>short</IDL_Type>
+        <Units></Units>
+        <Count>156</Count>
+    </item>
+    <item>
+        <EFDB_Name>NetworkNodeType</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>short</IDL_Type>
+        <Units></Units>
+        <Count>156</Count>
+    </item>
+    <item>
+        <EFDB_Name>ILCSelectedOptions</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>short</IDL_Type>
+        <Units></Units>
+        <Count>156</Count>
+    </item>
+    <item>
+        <EFDB_Name>NetworkNodeOptions</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>short</IDL_Type>
+        <Units></Units>
+        <Count>156</Count>
+    </item>
+    <item>
+        <EFDB_Name>Revision</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>unsigned short</IDL_Type>
         <Units></Units>
         <Count>156</Count>
     </item>
