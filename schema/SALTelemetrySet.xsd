@@ -115,6 +115,7 @@
           <xsd:documentation>Is this required by the EPO?</xsd:documentation>
         </xsd:annotation>
       </xsd:element>
+      <xsd:element name="Enumeration"   minOccurs="0" maxOccurs="1" type="xsd:string"/>
     </xsd:sequence>
   </xsd:complexType>
   <xsd:complexType name="telemetryType">
@@ -145,6 +146,7 @@
 
   <xsd:complexType name="telemetrySetType">
     <xsd:sequence>
+      <xsd:element name="Enumeration" minOccurs="0" maxOccurs="unbounded" type="xsd:string"/>
       <xsd:element name="SALTelemetry" minOccurs="1" maxOccurs="unbounded" type="telemetryType"/>
     </xsd:sequence>
   </xsd:complexType>
