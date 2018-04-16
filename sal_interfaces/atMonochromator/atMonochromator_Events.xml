@@ -3,10 +3,11 @@
 <SALEventSet xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:noNamespaceSchemaLocation="http://lsst-sal.tuc.noao.edu/schema/SALEventSet.xsd">
 <Enumeration>SummaryState_DisabledState,SummaryState_EnabledState,SummaryState_FaultState,SummaryState_OfflineState,SummaryState_StandbyState</Enumeration>
-<Enumeration>DetailedState_DisabledState,DetailedState_EnabledState,DetailedState_FaultState,DetailedState_OfflineState,DetailedState_StandbyState</Enumeration>
+<Enumeration>DetailedState_DisabledState,DetailedState_EnabledState,DetailedState_FaultState,DetailedState_OfflineState,DetailedState_StandbyState,DetailedState_MonoSettingUpState,DetailedState_StoppedState,DetailedState_StoppedCoolerOffState,DetailedState_StoppedLightOffState,DetailedState_StoppedLightOnState,DetailedState_MonoManualSetup,DetailedState_MonoAutomaticSetup</Enumeration>
 <Enumeration>Grating_Blue,Grating_Red,Grating_Mirror</Enumeration>
 <Enumeration>Slit_FrontEntrance,Slit_FrontExit</Enumeration>
 <Enumeration>LightStatus_On,LightStatus_Off</Enumeration>
+<Enumeration>Device_Monochromator,Device_LightSource,Device_ThermoelectricCooler</Enumeration>
 
 <SALEvent>
     <Subsystem>atMonochromator</Subsystem>
@@ -93,7 +94,7 @@
         <IDL_Type>long</IDL_Type>
         <Units></Units>
         <Count>1</Count>
-        <Enumeration>detailedState_DetailedState_DisabledState,detailedState_DetailedState_EnabledState,detailedState_DetailedState_FaultState,detailedState_DetailedState_OfflineState,detailedState_DetailedState_StandbyState</Enumeration>
+        <Enumeration>detailedState_DetailedState_DisabledState,detailedState_DetailedState_EnabledState,detailedState_DetailedState_FaultState,detailedState_DetailedState_OfflineState,detailedState_DetailedState_StandbyState,detailedState_DetailedState_MonoSettingUpState,detailedState_DetailedState_StoppedState,detailedState_DetailedState_StoppedCoolerOffState,detailedState_DetailedState_StoppedLightOffState,detailedState_DetailedState_StoppedLightOnState,detailedState_DetailedState_MonoManualSetup,detailedState_DetailedState_MonoAutomaticSetup</Enumeration>
     </item>
 </SALEvent>
 <SALEvent>
@@ -162,7 +163,7 @@
         <IDL_Type>long</IDL_Type>
         <Units></Units>
         <Count>1</Count>
-        <Enumeration>detailedState_DetailedState_DisabledState,detailedState_DetailedState_EnabledState,detailedState_DetailedState_FaultState,detailedState_DetailedState_OfflineState,detailedState_DetailedState_StandbyState</Enumeration>
+        <Enumeration>detailedState_DetailedState_DisabledState,detailedState_DetailedState_EnabledState,detailedState_DetailedState_FaultState,detailedState_DetailedState_OfflineState,detailedState_DetailedState_StandbyState,detailedState_DetailedState_MonoSettingUpState,detailedState_DetailedState_StoppedState,detailedState_DetailedState_StoppedCoolerOffState,detailedState_DetailedState_StoppedLightOffState,detailedState_DetailedState_StoppedLightOnState,detailedState_DetailedState_MonoManualSetup,detailedState_DetailedState_MonoAutomaticSetup</Enumeration>
     </item>
     <item>
         <EFDB_Name>timestamp</EFDB_Name>
@@ -381,6 +382,15 @@
         <IDL_Type>boolean</IDL_Type>
         <Units></Units>
         <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>device</EFDB_Name>
+        <Description></Description>
+        <!-- Enumeration: Device -->
+        <IDL_Type>long</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+        <Enumeration>device_Device_Monochromator,device_Device_LightSource,device_Device_ThermoelectricCooler</Enumeration>
     </item>
 </SALEvent>
 <SALEvent>
