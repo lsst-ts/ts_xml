@@ -3,49 +3,31 @@
 <SALCommandSet xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:noNamespaceSchemaLocation="http://lsst-sal.tuc.noao.edu/schema/SALCommandSet.xsd">
 <SALCommand>
-    <Subsystem>rotator</Subsystem>
+    <Subsystem>archiver</Subsystem>
     <Version>3.5.1</Version>
     <Author></Author>
-    <EFDB_Topic>rotator_command_configureAcceleration</EFDB_Topic>
-    <Alias>configureAcceleration</Alias>
+    <EFDB_Topic>archiver_command_Start</EFDB_Topic>
+    <Alias>Start</Alias>
     <Device></Device>
     <Property></Property>
     <Action></Action>
     <Value></Value>
     <Explanation>http://sal.lsst.org</Explanation>
     <item>
-        <EFDB_Name>alimit</EFDB_Name>
+        <EFDB_Name>configuration</EFDB_Name>
         <Description></Description>
-        <IDL_Type>double</IDL_Type>
+        <IDL_Type>string</IDL_Type>
+        <IDL_Size>256</IDL_Size>
         <Units></Units>
         <Count>1</Count>
     </item>
 </SALCommand>
 <SALCommand>
-    <Subsystem>rotator</Subsystem>
+    <Subsystem>archiver</Subsystem>
     <Version>3.5.1</Version>
     <Author></Author>
-    <EFDB_Topic>rotator_command_configureVelocity</EFDB_Topic>
-    <Alias>configureVelocity</Alias>
-    <Device></Device>
-    <Property></Property>
-    <Action></Action>
-    <Value></Value>
-    <Explanation>http://sal.lsst.org</Explanation>
-    <item>
-        <EFDB_Name>vlimit</EFDB_Name>
-        <Description></Description>
-        <IDL_Type>double</IDL_Type>
-        <Units></Units>
-        <Count>1</Count>
-    </item>
-</SALCommand>
-<SALCommand>
-    <Subsystem>rotator</Subsystem>
-    <Version>3.5.1</Version>
-    <Author></Author>
-    <EFDB_Topic>rotator_command_move</EFDB_Topic>
-    <Alias>move</Alias>
+    <EFDB_Topic>archiver_command_Enable</EFDB_Topic>
+    <Alias>Enable</Alias>
     <Device></Device>
     <Property></Property>
     <Action></Action>
@@ -60,70 +42,11 @@
     </item>
 </SALCommand>
 <SALCommand>
-    <Subsystem>rotator</Subsystem>
+    <Subsystem>archiver</Subsystem>
     <Version>3.5.1</Version>
     <Author></Author>
-    <EFDB_Topic>rotator_command_track</EFDB_Topic>
-    <Alias>track</Alias>
-    <Device></Device>
-    <Property></Property>
-    <Action></Action>
-    <Value></Value>
-    <Explanation>http://sal.lsst.org</Explanation>
-    <item>
-        <EFDB_Name>angle</EFDB_Name>
-        <Description></Description>
-        <IDL_Type>double</IDL_Type>
-        <Units></Units>
-        <Count>1</Count>
-    </item>
-    <item>
-        <EFDB_Name>velocity</EFDB_Name>
-        <Description></Description>
-        <IDL_Type>double</IDL_Type>
-        <Units></Units>
-        <Count>1</Count>
-    </item>
-    <item>
-        <EFDB_Name>tai</EFDB_Name>
-        <Description></Description>
-        <IDL_Type>double</IDL_Type>
-        <Units></Units>
-        <Count>1</Count>
-    </item>
-</SALCommand>
-<SALCommand>
-    <Subsystem>rotator</Subsystem>
-    <Version>3.5.1</Version>
-    <Author></Author>
-    <EFDB_Topic>rotator_command_test</EFDB_Topic>
-    <Alias>test</Alias>
-    <Device></Device>
-    <Property></Property>
-    <Action></Action>
-    <Value></Value>
-    <Explanation>http://sal.lsst.org</Explanation>
-    <item>
-        <EFDB_Name>ivalue1</EFDB_Name>
-        <Description></Description>
-        <IDL_Type>long</IDL_Type>
-        <Units></Units>
-        <Count>1</Count>
-    </item>
-    <item>
-        <EFDB_Name>ivalue2</EFDB_Name>
-        <Description></Description>
-        <IDL_Type>long</IDL_Type>
-        <Units></Units>
-        <Count>1</Count>
-    </item>
-</SALCommand>
-<SALCommand>
-    <Subsystem>rotator</Subsystem>
-    <Version>3.5.1</Version>
-    <Author></Author>
-    <EFDB_Topic>rotator_command_trackStart</EFDB_Topic>
-    <Alias>trackStart</Alias>
+    <EFDB_Topic>archiver_command_Disable</EFDB_Topic>
+    <Alias>Disable</Alias>
     <Device></Device>
     <Property></Property>
     <Action></Action>
@@ -138,11 +61,11 @@
     </item>
 </SALCommand>
 <SALCommand>
-    <Subsystem>rotator</Subsystem>
+    <Subsystem>archiver</Subsystem>
     <Version>3.5.1</Version>
     <Author></Author>
-    <EFDB_Topic>rotator_command_clearError</EFDB_Topic>
-    <Alias>clearError</Alias>
+    <EFDB_Topic>archiver_command_Standby</EFDB_Topic>
+    <Alias>Standby</Alias>
     <Device></Device>
     <Property></Property>
     <Action></Action>
@@ -157,21 +80,79 @@
     </item>
 </SALCommand>
 <SALCommand>
-    <Subsystem>rotator</Subsystem>
+    <Subsystem>archiver</Subsystem>
     <Version>3.5.1</Version>
     <Author></Author>
-    <EFDB_Topic>rotator_command_positionSet</EFDB_Topic>
-    <Alias>positionSet</Alias>
+    <EFDB_Topic>archiver_command_EnterControl</EFDB_Topic>
+    <Alias>EnterControl</Alias>
     <Device></Device>
     <Property></Property>
     <Action></Action>
     <Value></Value>
     <Explanation>http://sal.lsst.org</Explanation>
     <item>
-        <EFDB_Name>angle</EFDB_Name>
+        <EFDB_Name>state</EFDB_Name>
         <Description></Description>
-        <IDL_Type>float</IDL_Type>
-        <Units>degree</Units>
+        <IDL_Type>boolean</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+</SALCommand>
+<SALCommand>
+    <Subsystem>archiver</Subsystem>
+    <Version>3.5.1</Version>
+    <Author></Author>
+    <EFDB_Topic>archiver_command_ExitControl</EFDB_Topic>
+    <Alias>ExitControl</Alias>
+    <Device></Device>
+    <Property></Property>
+    <Action></Action>
+    <Value></Value>
+    <Explanation>http://sal.lsst.org</Explanation>
+    <item>
+        <EFDB_Name>state</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>boolean</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+</SALCommand>
+<SALCommand>
+    <Subsystem>archiver</Subsystem>
+    <Version>3.5.1</Version>
+    <Author></Author>
+    <EFDB_Topic>archiver_command_SetValue</EFDB_Topic>
+    <Alias>SetValue</Alias>
+    <Device></Device>
+    <Property></Property>
+    <Action></Action>
+    <Value></Value>
+    <Explanation>http://sal.lsst.org</Explanation>
+    <item>
+        <EFDB_Name>json_parameters</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>string</IDL_Type>
+        <IDL_Size>256</IDL_Size>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+</SALCommand>
+<SALCommand>
+    <Subsystem>archiver</Subsystem>
+    <Version>3.5.1</Version>
+    <Author></Author>
+    <EFDB_Topic>archiver_command_Abort</EFDB_Topic>
+    <Alias>Abort</Alias>
+    <Device></Device>
+    <Property></Property>
+    <Action></Action>
+    <Value></Value>
+    <Explanation>http://sal.lsst.org</Explanation>
+    <item>
+        <EFDB_Name>state</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>boolean</IDL_Type>
+        <Units></Units>
         <Count>1</Count>
     </item>
 </SALCommand></SALCommandSet>

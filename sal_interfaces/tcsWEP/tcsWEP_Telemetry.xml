@@ -3,30 +3,28 @@
 <SALTelemetrySet xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:noNamespaceSchemaLocation="http://lsst-sal.tuc.noao.edu/schema/SALTelemetrySet.xsd">
 <SALTelemetry>
-    <Subsystem>archiver</Subsystem>
+    <Subsystem>tcsWEP</Subsystem>
     <Version>3.5.1</Version>
-    <Author></Author>
-    <EFDB_Topic>archiver_SequencerHeartbeat</EFDB_Topic>
+    <Author>ttsai</Author>
+    <EFDB_Topic>tcsWEP_WavefrontError</EFDB_Topic>
     <item>
-        <EFDB_Name>Name</EFDB_Name>
-        <Description></Description>
+        <EFDB_Name>sensorID</EFDB_Name>
+        <Description>Wavefront sensor ID.</Description>
         <IDL_Type>string</IDL_Type>
-        <IDL_Size>256</IDL_Size>
         <Units></Units>
         <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>Identifier</EFDB_Name>
-        <Description></Description>
-        <IDL_Type>float</IDL_Type>
+        <EFDB_Name>annularZerikePolynomials</EFDB_Name>
+        <Description>z4-z22 terms of annular Zernike polynomials.</Description>
+        <IDL_Type>double</IDL_Type>
         <Units></Units>
-        <Count>1</Count>
+        <Count>19</Count>
     </item>
     <item>
-        <EFDB_Name>Timestamp</EFDB_Name>
-        <Description></Description>
-        <IDL_Type>string</IDL_Type>
-        <IDL_Size>256</IDL_Size>
+        <EFDB_Name>timestamp</EFDB_Name>
+        <Description>The timestamp for when the telemetry was sampled.</Description>
+        <IDL_Type>double</IDL_Type>
         <Units></Units>
         <Count>1</Count>
     </item>

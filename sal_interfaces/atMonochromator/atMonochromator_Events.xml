@@ -1,0 +1,454 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="http://lsst-sal.tuc.noao.edu/schema/SALEventSet.xsl"?>
+<SALEventSet xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="http://lsst-sal.tuc.noao.edu/schema/SALEventSet.xsd">
+<Enumeration>SummaryState_DisabledState,SummaryState_EnabledState,SummaryState_FaultState,SummaryState_OfflineState,SummaryState_StandbyState</Enumeration>
+<Enumeration>DetailedState_DisabledState,DetailedState_EnabledState,DetailedState_FaultState,DetailedState_OfflineState,DetailedState_StandbyState,DetailedState_MonoSettingUpState,DetailedState_StoppedState,DetailedState_StoppedCoolerOffState,DetailedState_StoppedLightOffState,DetailedState_StoppedLightOnState,DetailedState_MonoManualSetup,DetailedState_MonoAutomaticSetup</Enumeration>
+<Enumeration>Grating_Blue,Grating_Red,Grating_Mirror</Enumeration>
+<Enumeration>Slit_FrontEntrance,Slit_FrontExit</Enumeration>
+<Enumeration>LightStatus_On,LightStatus_Off</Enumeration>
+<Enumeration>Device_Monochromator,Device_LightSource,Device_ThermoelectricCooler</Enumeration>
+
+<SALEvent>
+    <Subsystem>atMonochromator</Subsystem>
+    <Version>3.5.2</Version>
+    <Author></Author>
+    <EFDB_Topic>atMonochromator_logevent_AppliedSettingsMatchStart</EFDB_Topic>
+    <Alias>AppliedSettingsMatchStart</Alias>
+    <Explanation>http://sal.lsst.org</Explanation>
+    <item>
+        <EFDB_Name>appliedSettingsMatchStartIsTrue</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>boolean</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+</SALEvent>
+<SALEvent>
+    <Subsystem>atMonochromator</Subsystem>
+    <Version>3.5.2</Version>
+    <Author></Author>
+    <EFDB_Topic>atMonochromator_logevent_ErrorCode</EFDB_Topic>
+    <Alias>ErrorCode</Alias>
+    <Explanation>http://sal.lsst.org</Explanation>
+    <item>
+        <EFDB_Name>errorCode</EFDB_Name>
+        <Description>The error code being published.</Description>
+        <IDL_Type>long</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+</SALEvent>
+<SALEvent>
+    <Subsystem>atMonochromator</Subsystem>
+    <Version>3.5.2</Version>
+    <Author></Author>
+    <EFDB_Topic>atMonochromator_logevent_SettingVersions</EFDB_Topic>
+    <Alias>SettingVersions</Alias>
+    <Explanation>http://sal.lsst.org</Explanation>
+    <item>
+        <EFDB_Name>recommendedSettingsVersion</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>string</IDL_Type>
+        <IDL_Size>256</IDL_Size>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>recommendedSettingsLabels</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>string</IDL_Type>
+        <IDL_Size>256</IDL_Size>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+</SALEvent>
+<SALEvent>
+    <Subsystem>atMonochromator</Subsystem>
+    <Version>3.5.2</Version>
+    <Author></Author>
+    <EFDB_Topic>atMonochromator_logevent_SummaryState</EFDB_Topic>
+    <Alias>SummaryState</Alias>
+    <Explanation>http://sal.lsst.org</Explanation>
+    <item>
+        <EFDB_Name>summaryState</EFDB_Name>
+        <Description>An enumeration indicating the subsystem summary state. See the SummaryStateValue enumeration defined in the Typedefs package.</Description>
+        <!-- Enumeration: SummaryState -->
+        <IDL_Type>long</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+        <Enumeration>summaryState_SummaryState_DisabledState,summaryState_SummaryState_EnabledState,summaryState_SummaryState_FaultState,summaryState_SummaryState_OfflineState,summaryState_SummaryState_StandbyState</Enumeration>
+    </item>
+</SALEvent>
+<SALEvent>
+    <Subsystem>atMonochromator</Subsystem>
+    <Version>3.5.2</Version>
+    <Author></Author>
+    <EFDB_Topic>atMonochromator_logevent_DetailedState</EFDB_Topic>
+    <Alias>DetailedState</Alias>
+    <Explanation>http://sal.lsst.org</Explanation>
+    <item>
+        <EFDB_Name>detailedState</EFDB_Name>
+        <Description></Description>
+        <!-- Enumeration: DetailedState -->
+        <IDL_Type>long</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+        <Enumeration>detailedState_DetailedState_DisabledState,detailedState_DetailedState_EnabledState,detailedState_DetailedState_FaultState,detailedState_DetailedState_OfflineState,detailedState_DetailedState_StandbyState,detailedState_DetailedState_MonoSettingUpState,detailedState_DetailedState_StoppedState,detailedState_DetailedState_StoppedCoolerOffState,detailedState_DetailedState_StoppedLightOffState,detailedState_DetailedState_StoppedLightOnState,detailedState_DetailedState_MonoManualSetup,detailedState_DetailedState_MonoAutomaticSetup</Enumeration>
+    </item>
+</SALEvent>
+<SALEvent>
+    <Subsystem>atMonochromator</Subsystem>
+    <Version>3.5.2</Version>
+    <Author></Author>
+    <EFDB_Topic>atMonochromator_logevent_InternalCommand</EFDB_Topic>
+    <Alias>InternalCommand</Alias>
+    <Explanation>http://sal.lsst.org</Explanation>
+    <item>
+        <EFDB_Name>CommandObject</EFDB_Name>
+        <Description>The error code being published.</Description>
+        <IDL_Type>byte</IDL_Type>
+        <Units></Units>
+        <Count>1000</Count>
+    </item>
+</SALEvent>
+<SALEvent>
+    <Subsystem>atMonochromator</Subsystem>
+    <Version>3.5.2</Version>
+    <Author></Author>
+    <EFDB_Topic>atMonochromator_logevent_Heartbeat</EFDB_Topic>
+    <Alias>Heartbeat</Alias>
+    <Explanation>http://sal.lsst.org</Explanation>
+    <item>
+        <EFDB_Name>heartbeat</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>boolean</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+</SALEvent>
+<SALEvent>
+    <Subsystem>atMonochromator</Subsystem>
+    <Version>3.5.2</Version>
+    <Author></Author>
+    <EFDB_Topic>atMonochromator_logevent_LoopTimeOutOfRange</EFDB_Topic>
+    <Alias>LoopTimeOutOfRange</Alias>
+    <Explanation>http://sal.lsst.org</Explanation>
+    <item>
+        <EFDB_Name>loopTimeOutOfRange</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>boolean</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+</SALEvent>
+<SALEvent>
+    <Subsystem>atMonochromator</Subsystem>
+    <Version>3.5.2</Version>
+    <Author></Author>
+    <EFDB_Topic>atMonochromator_logevent_RejectedCommand</EFDB_Topic>
+    <Alias>RejectedCommand</Alias>
+    <Explanation>http://sal.lsst.org</Explanation>
+    <item>
+        <EFDB_Name>commandValue</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>unsigned short</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>detailedState</EFDB_Name>
+        <Description></Description>
+        <!-- Enumeration: DetailedState -->
+        <IDL_Type>long</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+        <Enumeration>detailedState_DetailedState_DisabledState,detailedState_DetailedState_EnabledState,detailedState_DetailedState_FaultState,detailedState_DetailedState_OfflineState,detailedState_DetailedState_StandbyState,detailedState_DetailedState_MonoSettingUpState,detailedState_DetailedState_StoppedState,detailedState_DetailedState_StoppedCoolerOffState,detailedState_DetailedState_StoppedLightOffState,detailedState_DetailedState_StoppedLightOnState,detailedState_DetailedState_MonoManualSetup,detailedState_DetailedState_MonoAutomaticSetup</Enumeration>
+    </item>
+    <item>
+        <EFDB_Name>timestamp</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>double</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+</SALEvent>
+<SALEvent>
+    <Subsystem>atMonochromator</Subsystem>
+    <Version>3.5.2</Version>
+    <Author></Author>
+    <EFDB_Topic>atMonochromator_logevent_CoolingMonitoring</EFDB_Topic>
+    <Alias>CoolingMonitoring</Alias>
+    <Explanation>http://sal.lsst.org</Explanation>
+    <item>
+        <EFDB_Name>inputTemperature</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>float</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>outputTemperature</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>float</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>flowRate</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>float</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+</SALEvent>
+<SALEvent>
+    <Subsystem>atMonochromator</Subsystem>
+    <Version>3.5.2</Version>
+    <Author></Author>
+    <EFDB_Topic>atMonochromator_logevent_SettingsAppliedMonoCommunication</EFDB_Topic>
+    <Alias>SettingsAppliedMonoCommunication</Alias>
+    <Explanation>http://sal.lsst.org</Explanation>
+    <item>
+        <EFDB_Name>IP</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>string</IDL_Type>
+        <IDL_Size>15</IDL_Size>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>portRange</EFDB_Name>
+        <Description>port range, it will try to connect to any of the ports in this range</Description>
+        <IDL_Type>long</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>readTimeout</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>float</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>writeTimeout</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>float</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>connectionTimeout</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>float</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+</SALEvent>
+<SALEvent>
+    <Subsystem>atMonochromator</Subsystem>
+    <Version>3.5.2</Version>
+    <Author></Author>
+    <EFDB_Topic>atMonochromator_logevent_LightStatus</EFDB_Topic>
+    <Alias>LightStatus</Alias>
+    <Explanation>http://sal.lsst.org</Explanation>
+    <item>
+        <EFDB_Name>lightStatus</EFDB_Name>
+        <Description></Description>
+        <!-- Enumeration: LightStatus -->
+        <IDL_Type>long</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+        <Enumeration>lightStatus_LightStatus_On,lightStatus_LightStatus_Off</Enumeration>
+    </item>
+    <item>
+        <EFDB_Name>timestamp</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>double</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+</SALEvent>
+<SALEvent>
+    <Subsystem>atMonochromator</Subsystem>
+    <Version>3.5.2</Version>
+    <Author></Author>
+    <EFDB_Topic>atMonochromator_logevent_SelectedGrating</EFDB_Topic>
+    <Alias>SelectedGrating</Alias>
+    <Explanation>http://sal.lsst.org</Explanation>
+    <item>
+        <EFDB_Name>gratingType</EFDB_Name>
+        <Description></Description>
+        <!-- Enumeration: Grating -->
+        <IDL_Type>long</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+        <Enumeration>gratingType_Grating_Blue,gratingType_Grating_Red,gratingType_Grating_Mirror</Enumeration>
+    </item>
+    <item>
+        <EFDB_Name>timestamp</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>double</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+</SALEvent>
+<SALEvent>
+    <Subsystem>atMonochromator</Subsystem>
+    <Version>3.5.2</Version>
+    <Author></Author>
+    <EFDB_Topic>atMonochromator_logevent_Wavelength</EFDB_Topic>
+    <Alias>Wavelength</Alias>
+    <Explanation>http://sal.lsst.org</Explanation>
+    <item>
+        <EFDB_Name>wavelength</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>float</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>timestamp</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>double</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+</SALEvent>
+<SALEvent>
+    <Subsystem>atMonochromator</Subsystem>
+    <Version>3.5.2</Version>
+    <Author></Author>
+    <EFDB_Topic>atMonochromator_logevent_LightIntensity</EFDB_Topic>
+    <Alias>LightIntensity</Alias>
+    <Explanation>http://sal.lsst.org</Explanation>
+    <item>
+        <EFDB_Name>intensity</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>float</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>timestamp</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>double</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+</SALEvent>
+<SALEvent>
+    <Subsystem>atMonochromator</Subsystem>
+    <Version>3.5.2</Version>
+    <Author></Author>
+    <EFDB_Topic>atMonochromator_logevent_SlitWidth</EFDB_Topic>
+    <Alias>SlitWidth</Alias>
+    <Explanation>http://sal.lsst.org</Explanation>
+    <item>
+        <EFDB_Name>slit</EFDB_Name>
+        <Description></Description>
+        <!-- Enumeration: Slit -->
+        <IDL_Type>long</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+        <Enumeration>slit_Slit_FrontEntrance,slit_Slit_FrontExit</Enumeration>
+    </item>
+    <item>
+        <EFDB_Name>slitPosition</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>float</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>timestamp</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>double</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+</SALEvent>
+<SALEvent>
+    <Subsystem>atMonochromator</Subsystem>
+    <Version>3.5.2</Version>
+    <Author></Author>
+    <EFDB_Topic>atMonochromator_logevent_inPosition</EFDB_Topic>
+    <Alias>inPosition</Alias>
+    <Explanation>http://sal.lsst.org</Explanation>
+    <item>
+        <EFDB_Name>inPosition</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>boolean</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>device</EFDB_Name>
+        <Description></Description>
+        <!-- Enumeration: Device -->
+        <IDL_Type>long</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+        <Enumeration>device_Device_Monochromator,device_Device_LightSource,device_Device_ThermoelectricCooler</Enumeration>
+    </item>
+</SALEvent>
+<SALEvent>
+    <Subsystem>atMonochromator</Subsystem>
+    <Version>3.5.2</Version>
+    <Author></Author>
+    <EFDB_Topic>atMonochromator_logevent_MonochromatorConnected</EFDB_Topic>
+    <Alias>MonochromatorConnected</Alias>
+    <Explanation>http://sal.lsst.org</Explanation>
+    <item>
+        <EFDB_Name>connected</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>boolean</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+</SALEvent>
+<SALEvent>
+    <Subsystem>atMonochromator</Subsystem>
+    <Version>3.5.2</Version>
+    <Author></Author>
+    <EFDB_Topic>atMonochromator_logevent_SettingsAppliedMonoHeartbeat</EFDB_Topic>
+    <Alias>SettingsAppliedMonoHeartbeat</Alias>
+    <Explanation>http://sal.lsst.org</Explanation>
+    <item>
+        <EFDB_Name>period</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>float</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>timeout</EFDB_Name>
+        <Description>Time out for the heartbeat to test communication between linux and windows controller</Description>
+        <IDL_Type>float</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+</SALEvent>
+<SALEvent>
+    <Subsystem>atMonochromator</Subsystem>
+    <Version>3.5.2</Version>
+    <Author></Author>
+    <EFDB_Topic>atMonochromator_logevent_SettingsAppliedLoop</EFDB_Topic>
+    <Alias>SettingsAppliedLoop</Alias>
+    <Explanation>http://sal.lsst.org</Explanation>
+    <item>
+        <EFDB_Name>period</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>double</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>periodAllowedJitter</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>double</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+</SALEvent></SALEventSet>

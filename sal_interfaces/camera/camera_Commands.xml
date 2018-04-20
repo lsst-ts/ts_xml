@@ -1,432 +1,429 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-stylesheet type="text/xsl" href="http://lsst-sal.tuc.noao.edu/schema/SALCommandSet.xsl"?>
 <SALCommandSet xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-               xsi:noNamespaceSchemaLocation="http://lsst-sal.tuc.noao.edu/schema/SALCommandSet.xsd">
-
-
-    <SALCommand>
-        <Subsystem>camera</Subsystem>
-        <Version>3.2.0</Version>
-        <Author>salgenerator</Author>
-        <EFDB_Topic>camera_command_initImage</EFDB_Topic>
-        <Alias>initImage</Alias>
-        <Device>initImage</Device>
-        <Property></Property>
-        <Action></Action>
-        <Value></Value>
-        <Explanation>http://sal.lsst.org/SAL/Commands/camera_command_initImage.html</Explanation>
-        <item>
-            <EFDB_Name>deltaT</EFDB_Name>
-            <Description> </Description>
-            <IDL_Type>double</IDL_Type>
-            <Units> </Units>
-            <Count>1</Count>
-        </item>
-    </SALCommand>
-
-    <SALCommand>
-        <Subsystem>camera</Subsystem>
-        <Version>3.2.0</Version>
-        <Author>salgenerator</Author>
-        <EFDB_Topic>camera_command_setFilter</EFDB_Topic>
-        <Alias>setFilter</Alias>
-        <Device>setFilter</Device>
-        <Property></Property>
-        <Action></Action>
-        <Value></Value>
-        <Explanation>http://sal.lsst.org/SAL/Commands/camera_command_setFilter.html</Explanation>
-        <item>
-            <EFDB_Name>name</EFDB_Name>
-            <Description> </Description>
-            <IDL_Type>string</IDL_Type>
-            <IDL_Size>1</IDL_Size>
-            <Units> </Units>
-            <Count>1</Count>
-        </item>
-    </SALCommand>
-
-    <SALCommand>
-        <Subsystem>camera</Subsystem>
-        <Version>3.2.0</Version>
-        <Author>salgenerator</Author>
-        <EFDB_Topic>camera_command_takeImages</EFDB_Topic>
-        <Alias>takeImages</Alias>
-        <Device>takeImages</Device>
-        <Property></Property>
-        <Action></Action>
-        <Value></Value>
-        <Explanation>http://sal.lsst.org/SAL/Commands/camera_command_takeImages.html</Explanation>
-        <item>
-            <EFDB_Name>numImages</EFDB_Name>
-            <Description> </Description>
-            <IDL_Type>long</IDL_Type>
-            <Units> </Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>expTime</EFDB_Name>
-            <Description> </Description>
-            <IDL_Type>double</IDL_Type>
-            <Units>Seconds</Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>shutter</EFDB_Name>
-            <Description> </Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units> </Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>science</EFDB_Name>
-            <Description> </Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units> </Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>guide</EFDB_Name>
-            <Description> </Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units> </Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>wfs</EFDB_Name>
-            <Description> </Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units> </Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>imageSequenceName</EFDB_Name>
-            <Description> </Description>
-            <IDL_Type>string</IDL_Type>
-            <IDL_Size>1</IDL_Size>
-            <Units> </Units>
-            <Count>1</Count>
-        </item>
-    </SALCommand>
-    
-    <!-- Commands added in LSE-71 v 4 -->
-    
-    <SALCommand>
-        <Subsystem>camera</Subsystem>
-        <Version>3.2.0</Version>
-        <Author>salgenerator</Author>
-        <EFDB_Topic>camera_command_clear</EFDB_Topic>
-        <Alias>clear</Alias>
-        <Device>clear</Device>
-        <Property></Property>
-        <Action></Action>
-        <Value></Value>
-        <Explanation>http://sal.lsst.org/SAL/Commands/camera_command_clear.html</Explanation>
-        <item>
-            <EFDB_Name>nClears</EFDB_Name>
-            <Description> </Description>
-            <IDL_Type>int</IDL_Type>
-            <IDL_Size>1</IDL_Size>
-            <Units> </Units>
-            <Count>1</Count>
-        </item>
-    </SALCommand>
-    
-    <SALCommand>
-        <Subsystem>camera</Subsystem>
-        <Version>3.2.0</Version>
-        <Author>salgenerator</Author>
-        <EFDB_Topic>camera_command_startImage</EFDB_Topic>
-        <Alias>startImage</Alias>
-        <Device>startImage</Device>
-        <Property></Property>
-        <Action></Action>
-        <Value></Value>
-        <Explanation>http://sal.lsst.org/SAL/Commands/camera_command_startImage.html</Explanation>
-        <item>
-            <EFDB_Name>imageSequenceName</EFDB_Name>
-            <Description> </Description>
-            <IDL_Type>string</IDL_Type>
-            <IDL_Size>1</IDL_Size>
-            <Units> </Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>shutter</EFDB_Name>
-            <Description> </Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units> </Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>science</EFDB_Name>
-            <Description> </Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units> </Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>guide</EFDB_Name>
-            <Description> </Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units> </Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>wfs</EFDB_Name>
-            <Description> </Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units> </Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>timeout</EFDB_Name>
-            <Description> </Description>
-            <IDL_Type>double</IDL_Type>
-            <Units>Seconds</Units>
-            <Count>1</Count>
-        </item>
-    </SALCommand> 
-    
-    <SALCommand>
-        <Subsystem>camera</Subsystem>
-        <Version>3.2.0</Version>
-        <Author>salgenerator</Author>
-        <EFDB_Topic>camera_command_endImage</EFDB_Topic>
-        <Alias>endImage</Alias>
-        <Device>endImage</Device>
-        <Property></Property>
-        <Action></Action>
-        <Value></Value>
-        <Explanation>http://sal.lsst.org/SAL/Commands/camera_command_endImage.html</Explanation>
-    </SALCommand>     
-
-    <SALCommand>
-        <Subsystem>camera</Subsystem>
-        <Version>3.2.0</Version>
-        <Author>salgenerator</Author>
-        <EFDB_Topic>camera_command_discardRows</EFDB_Topic>
-        <Alias>discardRows</Alias>
-        <Device>discardRows</Device>
-        <Property></Property>
-        <Action></Action>
-        <Value></Value>
-        <Explanation>http://sal.lsst.org/SAL/Commands/camera_command_discardRows.html</Explanation>
-        <item>
-            <EFDB_Name>nRows</EFDB_Name>
-            <Description> </Description>
-            <IDL_Type>int</IDL_Type>
-            <IDL_Size>1</IDL_Size>
-            <Units> </Units>
-            <Count>1</Count>
-        </item>
-    </SALCommand>   
-
-    <SALCommand>
-        <Subsystem>camera</Subsystem>
-        <Version>3.2.0</Version>
-        <Author>salgenerator</Author>
-        <EFDB_Topic>camera_command_initGuiders</EFDB_Topic>
-        <Alias>initGuiders</Alias>
-        <Device>initGuiders</Device>
-        <Property></Property>
-        <Action></Action>
-        <Value></Value>
-        <Explanation>http://sal.lsst.org/SAL/Commands/camera_command_initGuiders.html</Explanation>
-        <item>
-            <EFDB_Name>nRows</EFDB_Name>
-            <Description> </Description>
-            <IDL_Type>int</IDL_Type>
-            <IDL_Size>1</IDL_Size>
-            <Units> </Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>nCols</EFDB_Name>
-            <Description> </Description>
-            <IDL_Type>int</IDL_Type>
-            <IDL_Size>1</IDL_Size>
-            <Units> </Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>integrationWindow</EFDB_Name>
-            <Description> </Description>
-            <IDL_Type>int</IDL_Type>
-            <IDL_Size>1</IDL_Size>
-            <Units> </Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>binRows</EFDB_Name>
-            <Description> </Description>
-            <IDL_Type>int</IDL_Type>
-            <IDL_Size>1</IDL_Size>
-            <Units> </Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>binCols</EFDB_Name>
-            <Description> </Description>
-            <IDL_Type>int</IDL_Type>
-            <IDL_Size>1</IDL_Size>
-            <Units> </Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>startRow_00_1</EFDB_Name>
-            <Description> </Description>
-            <IDL_Type>int</IDL_Type>
-            <IDL_Size>1</IDL_Size>
-            <Units> </Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>startCol_00_1</EFDB_Name>
-            <Description> </Description>
-            <IDL_Type>int</IDL_Type>
-            <IDL_Size>1</IDL_Size>
-            <Units> </Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>startRow_00_2</EFDB_Name>
-            <Description> </Description>
-            <IDL_Type>int</IDL_Type>
-            <IDL_Size>1</IDL_Size>
-            <Units> </Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>startCol_00_2</EFDB_Name>
-            <Description> </Description>
-            <IDL_Type>int</IDL_Type>
-            <IDL_Size>1</IDL_Size>
-            <Units> </Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>startRow_04_1</EFDB_Name>
-            <Description> </Description>
-            <IDL_Type>int</IDL_Type>
-            <IDL_Size>1</IDL_Size>
-            <Units> </Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>startCol_04_1</EFDB_Name>
-            <Description> </Description>
-            <IDL_Type>int</IDL_Type>
-            <IDL_Size>1</IDL_Size>
-            <Units> </Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>startRow_04_2</EFDB_Name>
-            <Description> </Description>
-            <IDL_Type>int</IDL_Type>
-            <IDL_Size>1</IDL_Size>
-            <Units> </Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>startCol_04_2</EFDB_Name>
-            <Description> </Description>
-            <IDL_Type>int</IDL_Type>
-            <IDL_Size>1</IDL_Size>
-            <Units> </Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>startRow_40_1</EFDB_Name>
-            <Description> </Description>
-            <IDL_Type>int</IDL_Type>
-            <IDL_Size>1</IDL_Size>
-            <Units> </Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>startCol_40_1</EFDB_Name>
-            <Description> </Description>
-            <IDL_Type>int</IDL_Type>
-            <IDL_Size>1</IDL_Size>
-            <Units> </Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>startRow_40_2</EFDB_Name>
-            <Description> </Description>
-            <IDL_Type>int</IDL_Type>
-            <IDL_Size>1</IDL_Size>
-            <Units> </Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>startCol_40_2</EFDB_Name>
-            <Description> </Description>
-            <IDL_Type>int</IDL_Type>
-            <IDL_Size>1</IDL_Size>
-            <Units> </Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>startRow_44_1</EFDB_Name>
-            <Description> </Description>
-            <IDL_Type>int</IDL_Type>
-            <IDL_Size>1</IDL_Size>
-            <Units> </Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>startCol_44_1</EFDB_Name>
-            <Description> </Description>
-            <IDL_Type>int</IDL_Type>
-            <IDL_Size>1</IDL_Size>
-            <Units> </Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>startRow_44_2</EFDB_Name>
-            <Description> </Description>
-            <IDL_Type>int</IDL_Type>
-            <IDL_Size>1</IDL_Size>
-            <Units> </Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>startCol_44_2</EFDB_Name>
-            <Description> </Description>
-            <IDL_Type>int</IDL_Type>
-            <IDL_Size>1</IDL_Size>
-            <Units> </Units>
-            <Count>1</Count>
-        </item>
-    </SALCommand> 
-
-    <SALCommand>
-        <Subsystem>camera</Subsystem>
-        <Version>3.2.0</Version>
-        <Author>salgenerator</Author>
-        <EFDB_Topic>camera_command_enableCalibration</EFDB_Topic>
-        <Alias>enableCalibration</Alias>
-        <Device>enableCalibration</Device>
-        <Property></Property>
-        <Action></Action>
-        <Value></Value>
-        <Explanation>http://sal.lsst.org/SAL/Commands/camera_command_enableCalibration.html</Explanation>
-    </SALCommand> 
-    
-    <SALCommand>
-        <Subsystem>camera</Subsystem>
-        <Version>3.2.0</Version>
-        <Author>salgenerator</Author>
-        <EFDB_Topic>camera_command_disableCalibration</EFDB_Topic>
-        <Alias>disableCalibration</Alias>
-        <Device>disableCalibration</Device>
-        <Property></Property>
-        <Action></Action>
-        <Value></Value>
-        <Explanation>http://sal.lsst.org/SAL/Commands/camera_command_disableCalibration.html</Explanation>
-    </SALCommand> 
-                                                                                                                                            
-</SALCommandSet>
-
+	xsi:noNamespaceSchemaLocation="http://lsst-sal.tuc.noao.edu/schema/SALCommandSet.xsd">
+<SALCommand>
+    <Subsystem>camera</Subsystem>
+    <Version>3.5.1</Version>
+    <Author></Author>
+    <EFDB_Topic>camera_command_discardRows</EFDB_Topic>
+    <Alias>discardRows</Alias>
+    <Device></Device>
+    <Property></Property>
+    <Action></Action>
+    <Value></Value>
+    <Explanation>http://sal.lsst.org</Explanation>
+    <item>
+        <EFDB_Name>nRows</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>long</IDL_Type>
+        <Units>UNDEFINED</Units>
+        <Count>1</Count>
+    </item>
+</SALCommand>
+<SALCommand>
+    <Subsystem>camera</Subsystem>
+    <Version>3.5.1</Version>
+    <Author></Author>
+    <EFDB_Topic>camera_command_Enable</EFDB_Topic>
+    <Alias>Enable</Alias>
+    <Device></Device>
+    <Property></Property>
+    <Action></Action>
+    <Value></Value>
+    <Explanation>http://sal.lsst.org</Explanation>
+    <item>
+        <EFDB_Name>state</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>boolean</IDL_Type>
+        <Units>UNDEFINED</Units>
+        <Count>1</Count>
+    </item>
+</SALCommand>
+<SALCommand>
+    <Subsystem>camera</Subsystem>
+    <Version>3.5.1</Version>
+    <Author></Author>
+    <EFDB_Topic>camera_command_SetValue</EFDB_Topic>
+    <Alias>SetValue</Alias>
+    <Device></Device>
+    <Property></Property>
+    <Action></Action>
+    <Value></Value>
+    <Explanation>http://sal.lsst.org</Explanation>
+    <item>
+        <EFDB_Name>json_parameters</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>string</IDL_Type>
+        <IDL_Size>256</IDL_Size>
+        <Units>UNDEFINED</Units>
+        <Count>1</Count>
+    </item>
+</SALCommand>
+<SALCommand>
+    <Subsystem>camera</Subsystem>
+    <Version>3.5.1</Version>
+    <Author></Author>
+    <EFDB_Topic>camera_command_startImage</EFDB_Topic>
+    <Alias>startImage</Alias>
+    <Device></Device>
+    <Property></Property>
+    <Action></Action>
+    <Value></Value>
+    <Explanation>http://sal.lsst.org</Explanation>
+    <item>
+        <EFDB_Name>imageSequenceName</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>string</IDL_Type>
+        <IDL_Size>256</IDL_Size>
+        <Units>UNDEFINED</Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>shutter</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>boolean</IDL_Type>
+        <Units>UNDEFINED</Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>science</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>boolean</IDL_Type>
+        <Units>UNDEFINED</Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>guide</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>boolean</IDL_Type>
+        <Units>UNDEFINED</Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>wfs</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>boolean</IDL_Type>
+        <Units>UNDEFINED</Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>timeout</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>double</IDL_Type>
+        <Units>second</Units>
+        <Count>1</Count>
+    </item>
+</SALCommand>
+<SALCommand>
+    <Subsystem>camera</Subsystem>
+    <Version>3.5.1</Version>
+    <Author></Author>
+    <EFDB_Topic>camera_command_disableCalibration</EFDB_Topic>
+    <Alias>disableCalibration</Alias>
+    <Device></Device>
+    <Property></Property>
+    <Action></Action>
+    <Value></Value>
+    <Explanation>http://sal.lsst.org</Explanation>
+    <item>
+        <EFDB_Name>state</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>boolean</IDL_Type>
+        <Units>UNDEFINED</Units>
+        <Count>1</Count>
+    </item>
+</SALCommand>
+<SALCommand>
+    <Subsystem>camera</Subsystem>
+    <Version>3.5.1</Version>
+    <Author></Author>
+    <EFDB_Topic>camera_command_initGuiders</EFDB_Topic>
+    <Alias>initGuiders</Alias>
+    <Device></Device>
+    <Property></Property>
+    <Action></Action>
+    <Value></Value>
+    <Explanation>http://sal.lsst.org</Explanation>
+    <item>
+        <EFDB_Name>roiSpec</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>string</IDL_Type>
+        <IDL_Size>256</IDL_Size>
+        <Units>UNDEFINED</Units>
+        <Count>1</Count>
+    </item>
+</SALCommand>
+<SALCommand>
+    <Subsystem>camera</Subsystem>
+    <Version>3.5.1</Version>
+    <Author></Author>
+    <EFDB_Topic>camera_command_Standby</EFDB_Topic>
+    <Alias>Standby</Alias>
+    <Device></Device>
+    <Property></Property>
+    <Action></Action>
+    <Value></Value>
+    <Explanation>http://sal.lsst.org</Explanation>
+    <item>
+        <EFDB_Name>state</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>boolean</IDL_Type>
+        <Units>UNDEFINED</Units>
+        <Count>1</Count>
+    </item>
+</SALCommand>
+<SALCommand>
+    <Subsystem>camera</Subsystem>
+    <Version>3.5.1</Version>
+    <Author></Author>
+    <EFDB_Topic>camera_command_enableCalibration</EFDB_Topic>
+    <Alias>enableCalibration</Alias>
+    <Device></Device>
+    <Property></Property>
+    <Action></Action>
+    <Value></Value>
+    <Explanation>http://sal.lsst.org</Explanation>
+    <item>
+        <EFDB_Name>state</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>boolean</IDL_Type>
+        <Units>UNDEFINED</Units>
+        <Count>1</Count>
+    </item>
+</SALCommand>
+<SALCommand>
+    <Subsystem>camera</Subsystem>
+    <Version>3.5.1</Version>
+    <Author></Author>
+    <EFDB_Topic>camera_command_initImage</EFDB_Topic>
+    <Alias>initImage</Alias>
+    <Device></Device>
+    <Property></Property>
+    <Action></Action>
+    <Value></Value>
+    <Explanation>http://sal.lsst.org</Explanation>
+    <item>
+        <EFDB_Name>deltaT</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>double</IDL_Type>
+        <Units>UNDEFINED</Units>
+        <Count>1</Count>
+    </item>
+</SALCommand>
+<SALCommand>
+    <Subsystem>camera</Subsystem>
+    <Version>3.5.1</Version>
+    <Author></Author>
+    <EFDB_Topic>camera_command_EnterControl</EFDB_Topic>
+    <Alias>EnterControl</Alias>
+    <Device></Device>
+    <Property></Property>
+    <Action></Action>
+    <Value></Value>
+    <Explanation>http://sal.lsst.org</Explanation>
+    <item>
+        <EFDB_Name>state</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>boolean</IDL_Type>
+        <Units>UNDEFINED</Units>
+        <Count>1</Count>
+    </item>
+</SALCommand>
+<SALCommand>
+    <Subsystem>camera</Subsystem>
+    <Version>3.5.1</Version>
+    <Author></Author>
+    <EFDB_Topic>camera_command_endImage</EFDB_Topic>
+    <Alias>endImage</Alias>
+    <Device></Device>
+    <Property></Property>
+    <Action></Action>
+    <Value></Value>
+    <Explanation>http://sal.lsst.org</Explanation>
+    <item>
+        <EFDB_Name>state</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>boolean</IDL_Type>
+        <Units>UNDEFINED</Units>
+        <Count>1</Count>
+    </item>
+</SALCommand>
+<SALCommand>
+    <Subsystem>camera</Subsystem>
+    <Version>3.5.1</Version>
+    <Author></Author>
+    <EFDB_Topic>camera_command_setFilter</EFDB_Topic>
+    <Alias>setFilter</Alias>
+    <Device></Device>
+    <Property></Property>
+    <Action></Action>
+    <Value></Value>
+    <Explanation>http://sal.lsst.org</Explanation>
+    <item>
+        <EFDB_Name>name</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>string</IDL_Type>
+        <IDL_Size>256</IDL_Size>
+        <Units>UNDEFINED</Units>
+        <Count>1</Count>
+    </item>
+</SALCommand>
+<SALCommand>
+    <Subsystem>camera</Subsystem>
+    <Version>3.5.1</Version>
+    <Author></Author>
+    <EFDB_Topic>camera_command_Disable</EFDB_Topic>
+    <Alias>Disable</Alias>
+    <Device></Device>
+    <Property></Property>
+    <Action></Action>
+    <Value></Value>
+    <Explanation>http://sal.lsst.org</Explanation>
+    <item>
+        <EFDB_Name>state</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>boolean</IDL_Type>
+        <Units>UNDEFINED</Units>
+        <Count>1</Count>
+    </item>
+</SALCommand>
+<SALCommand>
+    <Subsystem>camera</Subsystem>
+    <Version>3.5.1</Version>
+    <Author></Author>
+    <EFDB_Topic>camera_command_Abort</EFDB_Topic>
+    <Alias>Abort</Alias>
+    <Device></Device>
+    <Property></Property>
+    <Action></Action>
+    <Value></Value>
+    <Explanation>http://sal.lsst.org</Explanation>
+    <item>
+        <EFDB_Name>state</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>boolean</IDL_Type>
+        <Units>UNDEFINED</Units>
+        <Count>1</Count>
+    </item>
+</SALCommand>
+<SALCommand>
+    <Subsystem>camera</Subsystem>
+    <Version>3.5.1</Version>
+    <Author></Author>
+    <EFDB_Topic>camera_command_clear</EFDB_Topic>
+    <Alias>clear</Alias>
+    <Device></Device>
+    <Property></Property>
+    <Action></Action>
+    <Value></Value>
+    <Explanation>http://sal.lsst.org</Explanation>
+    <item>
+        <EFDB_Name>nClears</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>long</IDL_Type>
+        <Units>UNDEFINED</Units>
+        <Count>1</Count>
+    </item>
+</SALCommand>
+<SALCommand>
+    <Subsystem>camera</Subsystem>
+    <Version>3.5.1</Version>
+    <Author></Author>
+    <EFDB_Topic>camera_command_ExitControl</EFDB_Topic>
+    <Alias>ExitControl</Alias>
+    <Device></Device>
+    <Property></Property>
+    <Action></Action>
+    <Value></Value>
+    <Explanation>http://sal.lsst.org</Explanation>
+    <item>
+        <EFDB_Name>state</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>boolean</IDL_Type>
+        <Units>UNDEFINED</Units>
+        <Count>1</Count>
+    </item>
+</SALCommand>
+<SALCommand>
+    <Subsystem>camera</Subsystem>
+    <Version>3.5.1</Version>
+    <Author></Author>
+    <EFDB_Topic>camera_command_takeImages</EFDB_Topic>
+    <Alias>takeImages</Alias>
+    <Device></Device>
+    <Property></Property>
+    <Action></Action>
+    <Value></Value>
+    <Explanation>http://sal.lsst.org</Explanation>
+    <item>
+        <EFDB_Name>numImages</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>long</IDL_Type>
+        <Units>UNDEFINED</Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>expTime</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>double</IDL_Type>
+        <Units>second</Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>shutter</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>boolean</IDL_Type>
+        <Units>UNDEFINED</Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>science</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>boolean</IDL_Type>
+        <Units>UNDEFINED</Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>guide</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>boolean</IDL_Type>
+        <Units>UNDEFINED</Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>wfs</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>boolean</IDL_Type>
+        <Units>UNDEFINED</Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>imageSequenceName</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>string</IDL_Type>
+        <IDL_Size>256</IDL_Size>
+        <Units>UNDEFINED</Units>
+        <Count>1</Count>
+    </item>
+</SALCommand>
+<SALCommand>
+    <Subsystem>camera</Subsystem>
+    <Version>3.5.1</Version>
+    <Author></Author>
+    <EFDB_Topic>camera_command_Start</EFDB_Topic>
+    <Alias>Start</Alias>
+    <Device></Device>
+    <Property></Property>
+    <Action></Action>
+    <Value></Value>
+    <Explanation>http://sal.lsst.org</Explanation>
+    <item>
+        <EFDB_Name>configuration</EFDB_Name>
+        <Description>Identifies the configuration that the subsystem should set</Description>
+        <IDL_Type>string</IDL_Type>
+        <IDL_Size>256</IDL_Size>
+        <Units>UNDEFINED</Units>
+        <Count>1</Count>
+    </item>
+</SALCommand></SALCommandSet>

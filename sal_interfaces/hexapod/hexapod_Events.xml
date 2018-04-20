@@ -3,90 +3,71 @@
 <SALEventSet xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:noNamespaceSchemaLocation="http://lsst-sal.tuc.noao.edu/schema/SALEventSet.xsd">
 <SALEvent>
- <Subsystem>hexapod</Subsystem>
-<Version>3.3.0</Version>
- <Author>salgenerator</Author>
- <EFDB_Topic>hexapod_logevent_interlock</EFDB_Topic>
- <Alias>interlock</Alias>
- <Explanation>http://sal.lsst.org/SAL/Events/hexapod_logevent_interlock.html</Explanation>
+    <Subsystem>hexapod</Subsystem>
+    <Version>3.5.1</Version>
+    <Author></Author>
+    <EFDB_Topic>hexapod_logevent_interlock</EFDB_Topic>
+    <Alias>interlock</Alias>
+    <Explanation>http://sal.lsst.org</Explanation>
     <item>
-      <EFDB_Name>detail</EFDB_Name>
-      <Description> </Description>
-       <IDL_Type>string</IDL_Type>
-       <IDL_Size>1</IDL_Size>
-      <Units> </Units>
-      <Count>1</Count>
+        <EFDB_Name>detail</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>string</IDL_Type>
+        <IDL_Size>256</IDL_Size>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>timestamp</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>double</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
     </item>
 </SALEvent>
 <SALEvent>
- <Subsystem>hexapod</Subsystem>
-<Version>3.3.0</Version>
- <Author>salgenerator</Author>
- <EFDB_Topic>hexapod_logevent_limit</EFDB_Topic>
- <Alias>limit</Alias>
- <Explanation>http://sal.lsst.org/SAL/Events/hexapod_logevent_limit.html</Explanation>
+    <Subsystem>hexapod</Subsystem>
+    <Version>3.5.1</Version>
+    <Author></Author>
+    <EFDB_Topic>hexapod_logevent_inPosition</EFDB_Topic>
+    <Alias>inPosition</Alias>
+    <Explanation>http://sal.lsst.org</Explanation>
     <item>
-      <EFDB_Name>axis</EFDB_Name>
-      <Description> </Description>
-       <IDL_Type>string</IDL_Type>
-       <IDL_Size>1</IDL_Size>
-      <Units> </Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>llimit</EFDB_Name>
-      <Description> </Description>
-       <IDL_Type>string</IDL_Type>
-       <IDL_Size>1</IDL_Size>
-      <Units> </Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>type</EFDB_Name>
-      <Description> </Description>
-       <IDL_Type>string</IDL_Type>
-       <IDL_Size>1</IDL_Size>
-      <Units> </Units>
-      <Count>1</Count>
+        <EFDB_Name>timestamp</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>double</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
     </item>
 </SALEvent>
 <SALEvent>
- <Subsystem>hexapod</Subsystem>
-<Version>3.3.0</Version>
- <Author>salgenerator</Author>
- <EFDB_Topic>hexapod_logevent_inPosition</EFDB_Topic>
- <Alias>inPosition</Alias>
- <Explanation>http://sal.lsst.org/SAL/Events/hexapod_logevent_inPosition.html</Explanation>
-</SALEvent>
-<SALEvent>
- <Subsystem>hexapod</Subsystem>
-<Version>3.3.0</Version>
- <Author>salgenerator</Author>
- <EFDB_Topic>hexapod_logevent_error</EFDB_Topic>
- <Alias>error</Alias>
- <Explanation>http://sal.lsst.org/SAL/Events/hexapod_logevent_error.html</Explanation>
+    <Subsystem>hexapod</Subsystem>
+    <Version>3.5.1</Version>
+    <Author></Author>
+    <EFDB_Topic>hexapod_logevent_deviceError</EFDB_Topic>
+    <Alias>deviceError</Alias>
+    <Explanation>http://sal.lsst.org</Explanation>
     <item>
-      <EFDB_Name>axis</EFDB_Name>
-      <Description> </Description>
-       <IDL_Type>string</IDL_Type>
-       <IDL_Size>1</IDL_Size>
-      <Units> </Units>
-      <Count>1</Count>
+        <EFDB_Name>device</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>string</IDL_Type>
+        <IDL_Size>256</IDL_Size>
+        <Units></Units>
+        <Count>1</Count>
     </item>
     <item>
-      <EFDB_Name>device</EFDB_Name>
-      <Description> </Description>
-       <IDL_Type>string</IDL_Type>
-       <IDL_Size>1</IDL_Size>
-      <Units> </Units>
-      <Count>1</Count>
+        <EFDB_Name>severity</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>long</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
     </item>
     <item>
-      <EFDB_Name>severity</EFDB_Name>
-      <Description> </Description>
-       <IDL_Type>long</IDL_Type>
-      <Units> </Units>
-      <Count>1</Count>
+        <EFDB_Name>timestamp</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>double</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
     </item>
 </SALEvent>
 <SALEvent>
@@ -97,72 +78,11 @@
  <Alias>Tracking</Alias>
  <Explanation>http://sal.lsst.org/SAL/Events/hexapod_logevent_Tracking.html</Explanation>
     <item>
-      <EFDB_Name>severity</EFDB_Name>
-      <Description> </Description>
-       <IDL_Type>long</IDL_Type>
-      <Units> </Units>
-      <Count>1</Count>
+        <EFDB_Name>code</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>string</IDL_Type>
+        <IDL_Size>256</IDL_Size>
+        <Units></Units>
+        <Count>1</Count>
     </item>
-</SALEvent>
-<SALEvent>
- <Subsystem>hexapod</Subsystem>
-<Version>3.3.0</Version>
- <Author>salgenerator</Author>
- <EFDB_Topic>hexapod_logevent_TrackLost</EFDB_Topic>
- <Alias>TrackLost</Alias>
- <Explanation>http://sal.lsst.org/SAL/Events/hexapod_logevent_TrackLost.html</Explanation>
-    <item>
-      <EFDB_Name>severity</EFDB_Name>
-      <Description> </Description>
-       <IDL_Type>long</IDL_Type>
-      <Units> </Units>
-      <Count>1</Count>
-    </item>
-</SALEvent>
-<SALEvent>
- <Subsystem>hexapod</Subsystem>
-<Version>3.3.0</Version>
- <Author>salgenerator</Author>
- <EFDB_Topic>hexapod_logevent_TempError</EFDB_Topic>
- <Alias>TempError</Alias>
- <Explanation>http://sal.lsst.org/SAL/Events/hexapod_logevent_TempError.html</Explanation>
-    <item>
-      <EFDB_Name>severity</EFDB_Name>
-      <Description> </Description>
-       <IDL_Type>long</IDL_Type>
-      <Units> </Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>axis</EFDB_Name>
-      <Description> </Description>
-       <IDL_Type>string</IDL_Type>
-       <IDL_Size>1</IDL_Size>
-      <Units> </Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>temp</EFDB_Name>
-      <Description> </Description>
-       <IDL_Type>float</IDL_Type>
-       <IDL_Size>1</IDL_Size>
-      <Units> </Units>
-      <Count>1</Count>
-    </item>
-</SALEvent>
-<SALEvent>
- <Subsystem>hexapod</Subsystem>
-<Version>3.3.0</Version>
- <Author>salgenerator</Author>
- <EFDB_Topic>hexapod_logevent_SlewOk</EFDB_Topic>
- <Alias>SlewOk</Alias>
- <Explanation>http://sal.lsst.org/SAL/Events/hexapod_logevent_SlewOk.html</Explanation>
-    <item>
-      <EFDB_Name>severity</EFDB_Name>
-      <Description> </Description>
-       <IDL_Type>long</IDL_Type>
-      <Units> </Units>
-      <Count>1</Count>
-    </item>
-</SALEvent>
-</SALEventSet>
+</SALEvent></SALEventSet>
