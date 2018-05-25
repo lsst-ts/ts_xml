@@ -8,15 +8,15 @@
     <Author>ttsai</Author>
     <EFDB_Topic>tcsWEP_WavefrontError</EFDB_Topic>
     <item>
-        <EFDB_Name>sensorID</EFDB_Name>
+        <EFDB_Name>sensorId</EFDB_Name>
         <Description>Wavefront sensor ID.</Description>
-        <IDL_Type>string</IDL_Type>
+        <IDL_Type>int</IDL_Type>
         <Units></Units>
         <Count>1</Count>
     </item>
     <item>
         <EFDB_Name>annularZerikePolynomials</EFDB_Name>
-        <Description>z4-z22 terms of annular Zernike polynomials.</Description>
+        <Description>z4-z22 terms of annular Zernike polynomials.The unit should be decided in a latter time.</Description>
         <IDL_Type>double</IDL_Type>
         <Units></Units>
         <Count>19</Count>
@@ -27,5 +27,18 @@
         <IDL_Type>double</IDL_Type>
         <Units></Units>
         <Count>1</Count>
+    </item>
+</SALTelemetry>
+<SALTelemetry>
+    <Subsystem>tcsWEP</Subsystem>
+    <Version>3.5.1</Version>
+    <Author>ttsai</Author>
+    <EFDB_Topic>tcsWEP_TargetSciSensorIdList</EFDB_Topic>
+    <item>
+        <EFDB_Name>sensorIdList</EFDB_Name>
+        <Description>List of sensor Id. Put 0-188 for sensor and put -1 for unused element.</Description>
+        <IDL_Type>int</IDL_Type>
+        <Units></Units>
+        <Count>189</Count>
     </item>
 </SALTelemetry></SALTelemetrySet>
