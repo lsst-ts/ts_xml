@@ -23,9 +23,9 @@
         <EFDB_Name>package_versions</EFDB_Name>
         <Description></Description>
         <Frequency>0.054</Frequency>
-        <IDL_Type>long</IDL_Type>
+        <IDL_Type>string</IDL_Type>
         <Units></Units>
-        <Count>512</Count>
+        <Count>1600</Count>
     </item>
     <item>
         <EFDB_Name>aliases</EFDB_Name>
@@ -122,7 +122,15 @@
         <Count>1</Count>
     </item>
 	<item>
-        <EFDB_Name>mjd_observation</EFDB_Name>
+        <EFDB_Name>request_time</EFDB_Name>
+        <Description></Description>
+        <Frequency>0.054</Frequency>
+        <IDL_Type>double</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+	<item>
+        <EFDB_Name>request_mjd</EFDB_Name>
         <Description></Description>
         <Frequency>0.054</Frequency>
         <IDL_Type>double</IDL_Type>
@@ -202,6 +210,14 @@
         <Count>1</Count>
     </item>
 	<item>
+        <EFDB_Name>num_proposals</EFDB_Name>
+        <Description></Description>
+        <Frequency>0.054</Frequency>
+        <IDL_Type>long</IDL_Type>
+        <Units></Units>
+        <Count></Count>
+    </item>
+	<item>
         <EFDB_Name>proposal_id</EFDB_Name>
         <Description></Description>
         <Frequency>0.054</Frequency>
@@ -235,6 +251,126 @@
     </item>
 	<item>
         <EFDB_Name>sequence_duration</EFDB_Name>
+        <Description></Description>
+        <Frequency>0.054</Frequency>
+        <IDL_Type>double</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+	<item>
+        <EFDB_Name>airmass</EFDB_Name>
+        <Description></Description>
+        <Frequency>0.054</Frequency>
+        <IDL_Type>double</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+	<item>
+        <EFDB_Name>sky_brightness</EFDB_Name>
+        <Description></Description>
+        <Frequency>0.054</Frequency>
+        <IDL_Type>double</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+	<item>
+        <EFDB_Name>cloud</EFDB_Name>
+        <Description></Description>
+        <Frequency>0.054</Frequency>
+        <IDL_Type>double</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+	<item>
+        <EFDB_Name>seeing</EFDB_Name>
+        <Description></Description>
+        <Frequency>0.054</Frequency>
+        <IDL_Type>double</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+	<item>
+        <EFDB_Name>moon_ra</EFDB_Name>
+        <Description></Description>
+        <Frequency>0.054</Frequency>
+        <IDL_Type>double</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+	<item>
+        <EFDB_Name>moon_dec</EFDB_Name>
+        <Description></Description>
+        <Frequency>0.054</Frequency>
+        <IDL_Type>double</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+	<item>
+        <EFDB_Name>moon_alt</EFDB_Name>
+        <Description></Description>
+        <Frequency>0.054</Frequency>
+        <IDL_Type>double</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+	<item>
+        <EFDB_Name>moon_az</EFDB_Name>
+        <Description></Description>
+        <Frequency>0.054</Frequency>
+        <IDL_Type>double</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+	<item>
+        <EFDB_Name>moon_distance</EFDB_Name>
+        <Description></Description>
+        <Frequency>0.054</Frequency>
+        <IDL_Type>double</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+	<item>
+        <EFDB_Name>moon_phase</EFDB_Name>
+        <Description></Description>
+        <Frequency>0.054</Frequency>
+        <IDL_Type>double</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+	<item>
+        <EFDB_Name>sun_ra</EFDB_Name>
+        <Description></Description>
+        <Frequency>0.054</Frequency>
+        <IDL_Type>double</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+	<item>
+        <EFDB_Name>sun_dec</EFDB_Name>
+        <Description></Description>
+        <Frequency>0.054</Frequency>
+        <IDL_Type>double</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+	<item>
+        <EFDB_Name>sun_alt</EFDB_Name>
+        <Description></Description>
+        <Frequency>0.054</Frequency>
+        <IDL_Type>double</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+	<item>
+        <EFDB_Name>sun_az</EFDB_Name>
+        <Description></Description>
+        <Frequency>0.054</Frequency>
+        <IDL_Type>double</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+	<item>
+        <EFDB_Name>solar_elong</EFDB_Name>
         <Description></Description>
         <Frequency>0.054</Frequency>
         <IDL_Type>double</IDL_Type>
@@ -280,19 +416,25 @@
     <EFDB_Topic>scheduler_logevent_needFilterSwap</EFDB_Topic>
     <Alias>needFilterSwap</Alias>
     <item>
-        <EFDB_Name>filter_swap_needed</EFDB_Name>
+        <EFDB_Name>need_swap</EFDB_Name>
         <Description></Description>
         <Frequency>0.054</Frequency>
+        <Size_in_bytes></Size_in_bytes>
         <IDL_Type>boolean</IDL_Type>
         <Units></Units>
+        <Conversion></Conversion>
+        <Sensor_location></Sensor_location>
         <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>timestamp</EFDB_Name>
+        <EFDB_Name>filter_to_unmount</EFDB_Name>
         <Description></Description>
         <Frequency>0.054</Frequency>
-        <IDL_Type>double</IDL_Type>
+        <Size_in_bytes></Size_in_bytes>
+        <IDL_Type>string</IDL_Type>
         <Units></Units>
+        <Conversion></Conversion>
+        <Sensor_location></Sensor_location>
         <Count>1</Count>
     </item>
 </SALEvent>
