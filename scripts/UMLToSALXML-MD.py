@@ -128,7 +128,7 @@ class UMLParser:
     def CreateSALParameter(self, type, command, parameter):
         basePath = ".//packagedElement[@name='SAL interface']/packagedElement[@name='%s']/packagedElement[@name='%s']/ownedAttribute[@name='%s']%s" % (type, command, parameter,'%s')
         description = self.GetValueByName(self.uml.find(basePath % "/ownedComment"), "body", "")
-        description = description.replace("<html><pre>", "").replace("</html></pre>", "")
+        description = description.replace("<html>", "").replace("<pre>", "").replace("</html>", "").replace("</pre>", "")
         typePath = basePath % "/type/xmiExtension/referenceExtension"
 		
         type = self.GetValueByName(self.uml.find(typePath), "referentPath", "UNDEFINED")
