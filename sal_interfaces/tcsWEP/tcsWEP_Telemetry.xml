@@ -5,12 +5,39 @@
 <SALTelemetry>
     <Subsystem>tcsWEP</Subsystem>
     <Version>3.5.1</Version>
-    <Author>ttsai</Author>
-    <EFDB_Topic>tcsWEP_WavefrontError</EFDB_Topic>
+    <Author></Author>
+    <EFDB_Topic>tcsWEP_timestamp</EFDB_Topic>
+    <item>
+        <EFDB_Name>timestamp</EFDB_Name>
+        <Description>The system time (TAI).</Description>
+        <IDL_Type>double</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+</SALTelemetry>
+<SALTelemetry>
+    <Subsystem>tcsWEP</Subsystem>
+    <Version>3.5.1</Version>
+    <Author></Author>
+    <EFDB_Topic>tcsWEP_loopTimeMs</EFDB_Topic>
+    <item>
+        <EFDB_Name>loopTimeMs</EFDB_Name>
+        <Description>The actual loop time is ms.
+</Description>
+        <IDL_Type>double</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+</SALTelemetry>
+<SALTelemetry>
+    <Subsystem>tcsWEP</Subsystem>
+    <Version>3.5.1</Version>
+    <Author></Author>
+    <EFDB_Topic>tcsWEP_wavefrontError</EFDB_Topic>
     <item>
         <EFDB_Name>sensorId</EFDB_Name>
         <Description>Wavefront sensor ID.</Description>
-        <IDL_Type>int</IDL_Type>
+        <IDL_Type>unsigned short</IDL_Type>
         <Units></Units>
         <Count>1</Count>
     </item>
@@ -23,7 +50,7 @@
     </item>
     <item>
         <EFDB_Name>timestamp</EFDB_Name>
-        <Description>The timestamp for when the telemetry was sampled.</Description>
+        <Description>The time stamp for when the telemetry was sampled.</Description>
         <IDL_Type>double</IDL_Type>
         <Units></Units>
         <Count>1</Count>
@@ -32,13 +59,60 @@
 <SALTelemetry>
     <Subsystem>tcsWEP</Subsystem>
     <Version>3.5.1</Version>
-    <Author>ttsai</Author>
-    <EFDB_Topic>tcsWEP_TargetSciSensorIdList</EFDB_Topic>
+    <Author></Author>
+    <EFDB_Topic>tcsWEP_comcamTargetWfsList</EFDB_Topic>
     <item>
         <EFDB_Name>sensorIdList</EFDB_Name>
-        <Description>List of sensor Id. Put 0-188 for sensor and put -1 for unused element.</Description>
-        <IDL_Type>int</IDL_Type>
+        <Description>List of target sensor Id list. Put -1 for unused element.</Description>
+        <IDL_Type>unsigned short</IDL_Type>
+        <Units></Units>
+        <Count>9</Count>
+    </item>
+    <item>
+        <EFDB_Name>timestamp</EFDB_Name>
+        <Description>The time stamp for when the telemetry was sampled.</Description>
+        <IDL_Type>double</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+</SALTelemetry>
+<SALTelemetry>
+    <Subsystem>tcsWEP</Subsystem>
+    <Version>3.5.1</Version>
+    <Author></Author>
+    <EFDB_Topic>tcsWEP_famTargetWfsList</EFDB_Topic>
+    <item>
+        <EFDB_Name>sensorIdList</EFDB_Name>
+        <Description>List of target sensor Id list. Put -1 for unused element.</Description>
+        <IDL_Type>unsigned short</IDL_Type>
         <Units></Units>
         <Count>189</Count>
+    </item>
+    <item>
+        <EFDB_Name>timestamp</EFDB_Name>
+        <Description>The time stamp for when the telemetry was sampled.</Description>
+        <IDL_Type>double</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+</SALTelemetry>
+<SALTelemetry>
+    <Subsystem>tcsWEP</Subsystem>
+    <Version>3.5.1</Version>
+    <Author></Author>
+    <EFDB_Topic>tcsWEP_normalTargetWfsList</EFDB_Topic>
+    <item>
+        <EFDB_Name>sensorIdList</EFDB_Name>
+        <Description>List of target sensor Id list. Put -1 for unused element.</Description>
+        <IDL_Type>unsigned short</IDL_Type>
+        <Units></Units>
+        <Count>4</Count>
+    </item>
+    <item>
+        <EFDB_Name>timestamp</EFDB_Name>
+        <Description>The time stamp for when the telemetry was sampled.</Description>
+        <IDL_Type>double</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
     </item>
 </SALTelemetry></SALTelemetrySet>
