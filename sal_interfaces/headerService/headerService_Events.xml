@@ -4,10 +4,10 @@
 	xsi:noNamespaceSchemaLocation="http://lsst-sal.tuc.noao.edu/schema/SALEventSet.xsd">
 <SALEvent>
     <Subsystem>headerService</Subsystem>
-    <Version>3.5.2</Version>
+    <Version>3.5.1</Version>
     <Author>ccontaxis</Author>
-    <EFDB_Topic>headerService_logevent_heartbeat</EFDB_Topic>
-    <Alias>heartbeat</Alias>
+    <EFDB_Topic>headerService_logevent_Heartbeat</EFDB_Topic>
+    <Alias>Heartbeat</Alias>
     <Explanation>http://sal.lsst.org</Explanation>
     <item>
         <EFDB_Name>heartbeat</EFDB_Name>
@@ -19,11 +19,18 @@
 </SALEvent>
 <SALEvent>
     <Subsystem>headerService</Subsystem>
-    <Version>3.5.2</Version>
+    <Version>3.5.1</Version>
     <Author>ccontaxis</Author>
-    <EFDB_Topic>headerService_logevent_appliedSettingsMatchStart</EFDB_Topic>
-    <Alias>appliedSettingsMatchStart</Alias>
+    <EFDB_Topic>headerService_logevent_AppliedSettingsMatchStart</EFDB_Topic>
+    <Alias>AppliedSettingsMatchStart</Alias>
     <Explanation>http://sal.lsst.org</Explanation>
+    <item>
+        <EFDB_Name>timestamp</EFDB_Name>
+        <Description>The timestamp for when the event occurred.</Description>
+        <IDL_Type>double</IDL_Type>
+        <Units>Seconds</Units>
+        <Count>1</Count>
+    </item>
     <item>
         <EFDB_Name>appliedSettingsMatchStartIsTrue</EFDB_Name>
         <Description></Description>
@@ -34,10 +41,25 @@
 </SALEvent>
 <SALEvent>
     <Subsystem>headerService</Subsystem>
-    <Version>3.5.2</Version>
+    <Version>3.5.1</Version>
     <Author>ccontaxis</Author>
-    <EFDB_Topic>headerService_logevent_rejectedCommand</EFDB_Topic>
-    <Alias>rejectedCommand</Alias>
+    <EFDB_Topic>headerService_logevent_LoopTimeOutOfRange</EFDB_Topic>
+    <Alias>LoopTimeOutOfRange</Alias>
+    <Explanation>http://sal.lsst.org</Explanation>
+    <item>
+        <EFDB_Name>loopTimeOutOfRange</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>boolean</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+</SALEvent>
+<SALEvent>
+    <Subsystem>headerService</Subsystem>
+    <Version>3.5.1</Version>
+    <Author>ccontaxis</Author>
+    <EFDB_Topic>headerService_logevent_RejectedCommand</EFDB_Topic>
+    <Alias>RejectedCommand</Alias>
     <Explanation>http://sal.lsst.org</Explanation>
     <item>
         <EFDB_Name>commandValue</EFDB_Name>
@@ -53,14 +75,28 @@
         <Units></Units>
         <Count>1</Count>
     </item>
+    <item>
+        <EFDB_Name>timestamp</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>double</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
 </SALEvent>
 <SALEvent>
     <Subsystem>headerService</Subsystem>
-    <Version>3.5.2</Version>
+    <Version>3.5.1</Version>
     <Author>ccontaxis</Author>
-    <EFDB_Topic>headerService_logevent_settingsApplied</EFDB_Topic>
-    <Alias>settingsApplied</Alias>
+    <EFDB_Topic>headerService_logevent_SettingsApplied</EFDB_Topic>
+    <Alias>SettingsApplied</Alias>
     <Explanation>http://sal.lsst.org</Explanation>
+    <item>
+        <EFDB_Name>timestamp</EFDB_Name>
+        <Description>The timestamp for when the event occurred.</Description>
+        <IDL_Type>double</IDL_Type>
+        <Units>Seconds</Units>
+        <Count>1</Count>
+    </item>
     <item>
         <EFDB_Name>settings</EFDB_Name>
         <Description></Description>
@@ -72,28 +108,28 @@
 </SALEvent>
 <SALEvent>
     <Subsystem>headerService</Subsystem>
-    <Version>3.5.2</Version>
+    <Version>3.5.1</Version>
     <Author>ccontaxis</Author>
-    <EFDB_Topic>headerService_logevent_detailedState</EFDB_Topic>
-    <Alias>detailedState</Alias>
+    <EFDB_Topic>headerService_logevent_DetailedState</EFDB_Topic>
+    <Alias>DetailedState</Alias>
     <Explanation>http://sal.lsst.org</Explanation>
     <item>
         <EFDB_Name>detailedState</EFDB_Name>
         <Description>An enumeration indicating the subsystem detailed state. See the DetailedStateValue enumeration defined in the Typedefs package.</Description>
-        <IDL_Type>long</IDL_Type>
+        <IDL_Type>unsigned short</IDL_Type>
         <Units></Units>
         <Count>1</Count>
     </item>
 </SALEvent>
 <SALEvent>
     <Subsystem>headerService</Subsystem>
-    <Version>3.5.2</Version>
+    <Version>3.5.1</Version>
     <Author>dmills</Author>
-    <EFDB_Topic>headerService_logevent_largeFileObjectAvailable</EFDB_Topic>
-    <Alias>largeFileObjectAvailable</Alias>
+    <EFDB_Topic>headerService_logevent_LargeFileObjectAvailable</EFDB_Topic>
+    <Alias>LargeFileObjectAvailable</Alias>
     <Explanation>http://sal.lsst.org</Explanation>
     <item>
-        <EFDB_Name>url</EFDB_Name>
+        <EFDB_Name>URL</EFDB_Name>
         <Description>A Uniform Resource Locator which links to a Large File Object
 either for ingest into the EFD Large File Annex, or to announce
 the successful copy of same to the EFD Large File Annex.
@@ -104,7 +140,7 @@ Protocols are those supported by the cURL library.</Description>
         <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>generator</EFDB_Name>
+        <EFDB_Name>Generator</EFDB_Name>
         <Description>Name of the package which generated the file being announced</Description>
         <IDL_Type>string</IDL_Type>
         <IDL_Size>32</IDL_Size>
@@ -112,14 +148,14 @@ Protocols are those supported by the cURL library.</Description>
         <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>version</EFDB_Name>
+        <EFDB_Name>Version</EFDB_Name>
         <Description>A dotted x.y version number denoting the file format revision</Description>
         <IDL_Type>float</IDL_Type>
         <Units></Units>
         <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>checkSum</EFDB_Name>
+        <EFDB_Name>Checksum</EFDB_Name>
         <Description>Hexadecimal character string holding the checksum of the file</Description>
         <IDL_Type>string</IDL_Type>
         <IDL_Size>32</IDL_Size>
@@ -127,7 +163,7 @@ Protocols are those supported by the cURL library.</Description>
         <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>mimeType</EFDB_Name>
+        <EFDB_Name>Mime_Type</EFDB_Name>
         <Description>Mime Type code for the file</Description>
         <IDL_Type>string</IDL_Type>
         <IDL_Size>32</IDL_Size>
@@ -135,14 +171,14 @@ Protocols are those supported by the cURL library.</Description>
         <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>byteSize</EFDB_Name>
+        <EFDB_Name>Byte_Size</EFDB_Name>
         <Description>Size of file in bytes</Description>
         <IDL_Type>long</IDL_Type>
         <Units></Units>
         <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>id</EFDB_Name>
+        <EFDB_Name>ID</EFDB_Name>
         <Description>A generic identifier field
 </Description>
         <IDL_Type>string</IDL_Type>
@@ -153,11 +189,18 @@ Protocols are those supported by the cURL library.</Description>
 </SALEvent>
 <SALEvent>
     <Subsystem>headerService</Subsystem>
-    <Version>3.5.2</Version>
+    <Version>3.5.1</Version>
     <Author>ccontaxis</Author>
-    <EFDB_Topic>headerService_logevent_summaryState</EFDB_Topic>
-    <Alias>summaryState</Alias>
+    <EFDB_Topic>headerService_logevent_SummaryState</EFDB_Topic>
+    <Alias>SummaryState</Alias>
     <Explanation>http://sal.lsst.org</Explanation>
+    <item>
+        <EFDB_Name>timestamp</EFDB_Name>
+        <Description>The timestamp for when the event occurred.</Description>
+        <IDL_Type>double</IDL_Type>
+        <Units>Seconds</Units>
+        <Count>1</Count>
+    </item>
     <item>
         <EFDB_Name>summaryState</EFDB_Name>
         <Description>An enumeration indicating the subsystem summary state. See the SummaryStateValue enumeration defined in the Typedefs package.</Description>
@@ -165,21 +208,21 @@ Protocols are those supported by the cURL library.</Description>
         <Units></Units>
         <Count>1</Count>
     </item>
-    <item>
-        <EFDB_Name>timestamp</EFDB_Name>
-        <Description></Description>
-        <IDL_Type>double</IDL_Type>
-        <Units></Units>
-        <Count>1</Count>
-    </item>
 </SALEvent>
 <SALEvent>
     <Subsystem>headerService</Subsystem>
-    <Version>3.5.2</Version>
+    <Version>3.5.1</Version>
     <Author>ccontaxis</Author>
-    <EFDB_Topic>headerService_logevent_errorCode</EFDB_Topic>
-    <Alias>errorCode</Alias>
+    <EFDB_Topic>headerService_logevent_ErrorCode</EFDB_Topic>
+    <Alias>ErrorCode</Alias>
     <Explanation>http://sal.lsst.org</Explanation>
+    <item>
+        <EFDB_Name>timestamp</EFDB_Name>
+        <Description>The timestamp for when the event occurred.</Description>
+        <IDL_Type>double</IDL_Type>
+        <Units>Seconds</Units>
+        <Count>1</Count>
+    </item>
     <item>
         <EFDB_Name>errorCode</EFDB_Name>
         <Description>The error code being published.</Description>
@@ -190,11 +233,18 @@ Protocols are those supported by the cURL library.</Description>
 </SALEvent>
 <SALEvent>
     <Subsystem>headerService</Subsystem>
-    <Version>3.5.2</Version>
+    <Version>3.5.1</Version>
     <Author>ccontaxis</Author>
-    <EFDB_Topic>headerService_logevent_settingVersions</EFDB_Topic>
-    <Alias>settingVersions</Alias>
+    <EFDB_Topic>headerService_logevent_SettingVersions</EFDB_Topic>
+    <Alias>SettingVersions</Alias>
     <Explanation>http://sal.lsst.org</Explanation>
+    <item>
+        <EFDB_Name>timestamp</EFDB_Name>
+        <Description>The timestamp for when the event occurred.</Description>
+        <IDL_Type>double</IDL_Type>
+        <Units>Seconds</Units>
+        <Count>1</Count>
+    </item>
     <item>
         <EFDB_Name>recommendedSettingsVersion</EFDB_Name>
         <Description></Description>
