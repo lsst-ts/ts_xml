@@ -33,6 +33,13 @@
         <Units></Units>
         <Count>1</Count>
     </item>
+     <item>
+        <EFDB_Name>imagesInSequence</EFDB_Name>
+        <Description>The total  number of requested images in sequence</Description>
+        <IDL_Type>long</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
     <item>
         <EFDB_Name>imageName</EFDB_Name>
         <Description>The imageName for this specific exposure</Description>
@@ -201,6 +208,13 @@
         <Description>The imageSequenceName as passed to the takeImages command</Description>
         <IDL_Type>string</IDL_Type>
         <IDL_Size>256</IDL_Size>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>imagesInSequence</EFDB_Name>
+        <Description>The total  number of requested images in sequence</Description>
+        <IDL_Type>long</IDL_Type>
         <Units></Units>
         <Count>1</Count>
     </item>
@@ -378,6 +392,13 @@
         <Count>1</Count>
     </item>
     <item>
+        <EFDB_Name>imagesInSequence</EFDB_Name>
+        <Description>The total  number of requested images in sequence</Description>
+        <IDL_Type>long</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
         <EFDB_Name>imageName</EFDB_Name>
         <Description>The imageName for this specific exposure</Description>
         <IDL_Type>string</IDL_Type>
@@ -438,11 +459,18 @@
     <Alias>SettingsApplied</Alias>
     <Explanation>http://project.lsst.org/ts/sal_objects/help/camera_logevent_SettingsApplied.html</Explanation>
     <item>
-        <EFDB_Name>Settings</EFDB_Name>
+        <EFDB_Name>settings</EFDB_Name>
         <Description></Description>
         <IDL_Type>string</IDL_Type>
         <IDL_Size>256</IDL_Size>
         <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>timestamp</EFDB_Name>
+        <Description>The timestamp for when the event occurred.</Description>
+        <IDL_Type>double</IDL_Type>
+        <Units>Seconds</Units>
         <Count>1</Count>
     </item>
 </SALEvent>
@@ -518,6 +546,13 @@
         <Count>1</Count>
     </item>
     <item>
+        <EFDB_Name>imagesInSequence</EFDB_Name>
+        <Description>The total  number of requested images in sequence</Description>
+        <IDL_Type>long</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
         <EFDB_Name>imageName</EFDB_Name>
         <Description>The imageName for this specific exposure</Description>
         <IDL_Type>string</IDL_Type>
@@ -554,4 +589,101 @@
     <EFDB_Topic>camera_logevent_startRotateCarousel</EFDB_Topic>
     <Alias>startRotateCarousel</Alias>
     <Explanation>http://project.lsst.org/ts/sal_objects/help/camera_logevent_startRotateCarousel.html</Explanation>
-</SALEvent></SALEventSet>
+</SALEvent>
+    <SALEvent>
+        <Subsystem>camera</Subsystem>
+        <Version>3.5.0</Version>
+        <Author>tonyj</Author>
+        <EFDB_Topic>camera_logevent_imageReadoutParameters</EFDB_Topic>
+        <Alias>imageReadoutParameters</Alias>
+        <item>
+            <EFDB_Name>imageName</EFDB_Name>
+            <Description>The imageName for this specific exposure</Description>
+            <IDL_Type>string</IDL_Type>
+            <IDL_Size>1</IDL_Size>
+            <Units> </Units>
+            <Count>1</Count>
+        </item>
+        <item>
+            <EFDB_Name>ccdNames</EFDB_Name>
+            <Description>A list of all ccds currently configured, of the form RnnSnn,: delimited (empty if entry not used)</Description>
+            <IDL_Type>string</IDL_Type>
+            <IDL_Size>1</IDL_Size>
+            <Units> </Units>
+            <Count>1</Count>
+        </item>
+        <item>
+            <EFDB_Name>ccdType</EFDB_Name>
+            <Description>The type of each CCD, this determines segRows, segCols and serCols</Description>
+            <IDL_Type>int</IDL_Type>
+            <IDL_Size>1</IDL_Size>
+            <Units> </Units>
+            <Count>201</Count>
+            <Enumeration>E2V, ITL</Enumeration>
+        </item>
+        <item>
+            <EFDB_Name>overRows</EFDB_Name>
+            <Description>See CCD Readout Parameters Diagram</Description>
+            <IDL_Type>int</IDL_Type>
+            <IDL_Size>1</IDL_Size>
+            <Units> </Units>
+            <Count>201</Count>
+        </item>
+        <item>
+            <EFDB_Name>overCols</EFDB_Name>
+            <Description>See CCD Readout Parameters Diagram</Description>
+            <IDL_Type>int</IDL_Type>
+            <IDL_Size>1</IDL_Size>
+            <Units> </Units>
+            <Count>201</Count>
+        </item>
+        <item>
+            <EFDB_Name>readRows</EFDB_Name>
+            <Description>See CCD Readout Parameters Diagram</Description>
+            <IDL_Type>int</IDL_Type>
+            <IDL_Size>1</IDL_Size>
+            <Units> </Units>
+            <Count>201</Count>
+        </item>
+        <item>
+            <EFDB_Name>readCols</EFDB_Name>
+            <Description>See CCD Readout Parameters Diagram</Description>
+            <IDL_Type>int</IDL_Type>
+            <IDL_Size>1</IDL_Size>
+            <Units> </Units>
+            <Count>201</Count>
+        </item>
+        <item>
+            <EFDB_Name>readCols2</EFDB_Name>
+            <Description>See CCD Readout Parameters Diagram</Description>
+            <IDL_Type>int</IDL_Type>
+            <IDL_Size>1</IDL_Size>
+            <Units> </Units>
+            <Count>201</Count>
+        </item>
+        <item>
+            <EFDB_Name>preCols</EFDB_Name>
+            <Description>See CCD Readout Parameters Diagram</Description>
+            <IDL_Type>int</IDL_Type>
+            <IDL_Size>1</IDL_Size>
+            <Units> </Units>
+            <Count>201</Count>
+        </item>
+        <item>
+            <EFDB_Name>preRows</EFDB_Name>
+            <Description>See CCD Readout Parameters Diagram</Description>
+            <IDL_Type>int</IDL_Type>
+            <IDL_Size>1</IDL_Size>
+            <Units> </Units>
+            <Count>201</Count>
+        </item>
+        <item>
+            <EFDB_Name>postCols</EFDB_Name>
+            <Description>See CCD Readout Parameters Diagram</Description>
+            <IDL_Type>int</IDL_Type>
+            <IDL_Size>1</IDL_Size>
+            <Units> </Units>
+            <Count>201</Count>
+        </item>
+    </SALEvent>
+</SALEventSet>
