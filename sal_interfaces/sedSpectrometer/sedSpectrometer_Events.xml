@@ -26,7 +26,7 @@
     <Explanation>http://sal.lsst.org</Explanation>
     <item>
         <EFDB_Name>errorCode</EFDB_Name>
-        <Description>The error code being published.</pre></html></Description>
+        <Description>The error code being published.</Description>
         <IDL_Type>long</IDL_Type>
         <Units></Units>
         <Count>1</Count>
@@ -65,7 +65,7 @@
     <Explanation>http://sal.lsst.org</Explanation>
     <item>
         <EFDB_Name>summaryState</EFDB_Name>
-        <Description>An enumeration indicating the subsystem summary state. See the SummaryStateValue enumeration defined in the Typedefs package.</pre></html></Description>
+        <Description>An enumeration indicating the subsystem summary state. See the SummaryStateValue enumeration defined in the Typedefs package.</Description>
         <IDL_Type>long</IDL_Type>
         <Units></Units>
         <Count>1</Count>
@@ -97,7 +97,7 @@
     <Explanation>http://sal.lsst.org</Explanation>
     <item>
         <EFDB_Name>URL</EFDB_Name>
-        <Description></Description>
+        <Description>A Uniform Resource Locator which links to a Large File Object either for ingest into the EFD Large File Annex, or to announce the successful copy of same to the EFD Large File Annex.Protocols are those supported by the cURL library.</Description>
         <IDL_Type>string</IDL_Type>
         <IDL_Size>256</IDL_Size>
         <Units></Units>
@@ -105,16 +105,47 @@
     </item>
     <item>
         <EFDB_Name>Generator</EFDB_Name>
-        <Description></Description>
+        <Description>Name of the package which generated the file being announced</Description>
         <IDL_Type>string</IDL_Type>
-        <IDL_Size>256</IDL_Size>
+        <IDL_Size>32</IDL_Size>
         <Units></Units>
         <Count>1</Count>
     </item>
     <item>
         <EFDB_Name>Version</EFDB_Name>
-        <Description></Description>
+        <Description>A dotted x.y version number denoting the file format revision</Description>
         <IDL_Type>float</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>Byte_Size</EFDB_Name>
+        <Description>Size of file in bytes</Description>
+        <IDL_Type>long</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>Checksum</EFDB_Name>
+        <Description>Hexadecimal character string holding the checksum of the file</Description>
+        <IDL_Type>string</IDL_Type>
+        <IDL_Size>32</IDL_Size>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>Mime_Type</EFDB_Name>
+        <Description>Mime Type code for the file</Description>
+        <IDL_Type>string</IDL_Type>
+        <IDL_Size>32</IDL_Size>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>ID</EFDB_Name>
+        <Description>A generic identifier field</Description>
+        <IDL_Type>string</IDL_Type>
+        <IDL_Size>32</IDL_Size>
         <Units></Units>
         <Count>1</Count>
     </item>
@@ -139,31 +170,17 @@
         <Description></Description>
         <IDL_Type>double</IDL_Type>
         <Units></Units>
-        <Count>2048</Count>
+        <Count>2047</Count>
     </item>
     <item>
         <EFDB_Name>intensity</EFDB_Name>
         <Description></Description>
         <IDL_Type>double</IDL_Type>
         <Units></Units>
-        <Count>2048</Count>
+        <Count>2047</Count>
     </item>
     <item>
         <EFDB_Name>integrationTime</EFDB_Name>
-        <Description></Description>
-        <IDL_Type>float</IDL_Type>
-        <Units></Units>
-        <Count>1</Count>
-    </item>
-    <item>
-        <EFDB_Name>demandedExposureTime</EFDB_Name>
-        <Description></Description>
-        <IDL_Type>float</IDL_Type>
-        <Units></Units>
-        <Count>1</Count>
-    </item>
-    <item>
-        <EFDB_Name>elapsedTime</EFDB_Name>
         <Description></Description>
         <IDL_Type>float</IDL_Type>
         <Units></Units>
