@@ -1,22 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-stylesheet type="text/xsl" href="http://lsst-sal.tuc.noao.edu/schema/SALTelemetrySet.xsl"?>
-<SALTelemetrySet xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://lsst-sal.tuc.noao.edu/schema/SALTelemetrySet.xsd">
-
- <!-- sequencer heartbeat -->
- <SALTelemetry>
-  <Subsystem>atWhiteLight</Subsystem>
-  <Version>3.5.1</Version>
-  <Author>salgenerator</Author>
-  <EFDB_Topic>atWhiteLight_Heartbeat</EFDB_Topic>
-  <item>
-   <EFDB_Name>status</EFDB_Name>
-   <Description>Default telemetry</Description>
-   <Frequency>0.02</Frequency>
-   <IDL_Type>int</IDL_Type>
-   <IDL_Size>1</IDL_Size>
-   <Units>None</Units>
-   <Count>1</Count>
-   <Explanation>http://project.lsst.org/ts/Telemetry/atWhiteLight_Heartbeat.html</Explanation>
-  </item>
- </SALTelemetry>
-</SALTelemetrySet>
+<SALTelemetrySet xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="http://lsst-sal.tuc.noao.edu/schema/SALTelemetrySet.xsd">
+<SALTelemetry>
+    <Subsystem>atWhiteLight</Subsystem>
+    <Version>3.5.2</Version>
+    <Author></Author>
+    <EFDB_Topic>atWhiteLight_timestamp</EFDB_Topic>
+    <item>
+        <EFDB_Name>timestamp</EFDB_Name>
+        <Description>The system time (TAI).</Description>
+        <IDL_Type>double</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+</SALTelemetry>
+<SALTelemetry>
+    <Subsystem>atWhiteLight</Subsystem>
+    <Version>3.5.2</Version>
+    <Author></Author>
+    <EFDB_Topic>atWhiteLight_loopTimeMs</EFDB_Topic>
+    <item>
+        <EFDB_Name>loopTimeMs</EFDB_Name>
+        <Description>The actual loop time is ms.
+</Description>
+        <IDL_Type>double</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+</SALTelemetry></SALTelemetrySet>

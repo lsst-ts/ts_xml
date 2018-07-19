@@ -1,524 +1,595 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-stylesheet type="text/xsl" href="http://lsst-sal.tuc.noao.edu/schema/SALEventSet.xsl"?>
+<?xml-stylesheet type="text/xsl" href="http://project.lsst.org/ts/sal_objects/schema/SALEventSet.xsl"?>
 <SALEventSet xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-             xsi:noNamespaceSchemaLocation="http://lsst-sal.tuc.noao.edu/schema/SALEventSet.xsd">
-
-    <SALEvent>
-        <Subsystem>camera</Subsystem>
-        <Version>3.2.0</Version>
-        <Author>salgenerator</Author>
-        <EFDB_Topic>camera_logevent_endLoadFilter</EFDB_Topic>
-        <Alias>endLoadFilter</Alias>
-        <Explanation>http://sal.lsst.org/SAL/Events/camera_logevent_endLoadFilter.html</Explanation>
-    </SALEvent>
-
-    <SALEvent>
-        <Subsystem>camera</Subsystem>
-        <Version>3.2.0</Version>
-        <Author>salgenerator</Author>
-        <EFDB_Topic>camera_logevent_endReadout</EFDB_Topic>
-        <Alias>endReadout</Alias>
-        <Explanation>http://sal.lsst.org/SAL/Events/camera_logevent_endReadout.html</Explanation>
-        <item>
-            <EFDB_Name>imageSequenceName</EFDB_Name>
-            <Description>The imageSequenceName as passed to the takeImages command</Description>
-            <IDL_Type>string</IDL_Type>
-            <IDL_Size>1</IDL_Size>
-            <Units> </Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>imagesInSequence</EFDB_Name>
-            <Description>The total number of requested images in sequence</Description>
-            <IDL_Type>int</IDL_Type>
-            <IDL_Size>1</IDL_Size>
-            <Units> </Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>imageName</EFDB_Name>
-            <Description>The imageName for this specific exposure</Description>
-            <IDL_Type>string</IDL_Type>
-            <IDL_Size>1</IDL_Size>
-            <Units> </Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>imageIndex</EFDB_Name>
-            <Description>The zero based index number for this specific exposure within the sequence</Description>
-            <IDL_Type>int</IDL_Type>
-            <IDL_Size>1</IDL_Size>
-            <Units> </Units>
-            <Count>1</Count>
-        </item>        
-        <item>
-            <EFDB_Name>timeStamp</EFDB_Name>
-            <Description>The effective time at which the image acquisition started (i.e. the end of the previous clear or readout)</Description>
-            <IDL_Type>double</IDL_Type>
-            <IDL_Size>1</IDL_Size>
-            <Units> </Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>exposureTime</EFDB_Name>
-            <Description>The requested exposure time</Description>
-            <IDL_Type>double</IDL_Type>
-            <IDL_Size>1</IDL_Size>
-            <Units>Seconds</Units>
-            <Count>1</Count>
-        </item>
-    </SALEvent>
-
-    <SALEvent>
-        <Subsystem>camera</Subsystem>
-        <Version>3.2.0</Version>
-        <Author>salgenerator</Author>
-        <EFDB_Topic>camera_logevent_endRotateCarousel</EFDB_Topic>
-        <Alias>endRotateCarousel</Alias>
-        <Explanation>http://sal.lsst.org/SAL/Events/camera_logevent_endRotateCarousel.html</Explanation>
-    </SALEvent>
-
-    <SALEvent>
-        <Subsystem>camera</Subsystem>
-        <Version>3.2.0</Version>
-        <Author>salgenerator</Author>
-        <EFDB_Topic>camera_logevent_endSetFilter</EFDB_Topic>
-        <Alias>endSetFilter</Alias>
-        <Explanation>http://sal.lsst.org/SAL/Events/camera_logevent_endSetFilter.html</Explanation>
-        <item>
-            <EFDB_Name>filterName</EFDB_Name>
-            <Description>The name of the filter being installed (e.g. U-001)</Description>
-            <IDL_Type>string</IDL_Type>
-            <IDL_Size>1</IDL_Size>
-            <Units> </Units>
-            <Count>1</Count>
-        </item>
-    </SALEvent>
-
-    <SALEvent>
-        <Subsystem>camera</Subsystem>
-        <Version>3.2.0</Version>
-        <Author>salgenerator</Author>
-        <EFDB_Topic>camera_logevent_endShutterClose</EFDB_Topic>
-        <Alias>endShutterClose</Alias>
-        <Explanation>http://sal.lsst.org/SAL/Events/camera_logevent_endShutterClose.html</Explanation>
-    </SALEvent>
-
-    <SALEvent>
-        <Subsystem>camera</Subsystem>
-        <Version>3.2.0</Version>
-        <Author>salgenerator</Author>
-        <EFDB_Topic>camera_logevent_endShutterOpen</EFDB_Topic>
-        <Alias>endShutterOpen</Alias>
-        <Explanation>http://sal.lsst.org/SAL/Events/camera_logevent_endShutterOpen.html</Explanation>
-    </SALEvent>
-
-    <SALEvent>
-        <Subsystem>camera</Subsystem>
-        <Version>3.2.0</Version>
-        <Author>salgenerator</Author>
-        <EFDB_Topic>camera_logevent_endTakeImage</EFDB_Topic>
-        <Alias>endTakeImage</Alias>
-        <Explanation>http://sal.lsst.org/SAL/Events/camera_logevent_endTakeImage.html</Explanation>
-    </SALEvent>
-
-    <SALEvent>
-        <Subsystem>camera</Subsystem>
-        <Version>3.2.0</Version>
-        <Author>salgenerator</Author>
-        <EFDB_Topic>camera_logevent_endUnloadFilter</EFDB_Topic>
-        <Alias>endUnloadFilter</Alias>
-        <Explanation>http://sal.lsst.org/SAL/Events/camera_logevent_endUnloadFilter.html</Explanation>
-    </SALEvent>
-
-    <SALEvent>
-        <Subsystem>camera</Subsystem>
-        <Version>3.2.0</Version>
-        <Author>salgenerator</Author>
-        <EFDB_Topic>camera_logevent_notReadyToTakeImage</EFDB_Topic>
-        <Alias>notReadyToTakeImage</Alias>
-        <Explanation>http://sal.lsst.org/SAL/Events/camera_logevent_notReadyToTakeImage.html</Explanation>
-    </SALEvent>
-
-    <SALEvent>
-        <Subsystem>camera</Subsystem>
-        <Version>3.2.0</Version>
-        <Author>salgenerator</Author>
-        <EFDB_Topic>camera_logevent_prepareToTakeImage</EFDB_Topic>
-        <Alias>prepareToTakeImage</Alias>
-        <Explanation>http://sal.lsst.org/SAL/Events/camera_logevent_prepareToTakeImage.html</Explanation>
-    </SALEvent>
-
-    <SALEvent>
-        <Subsystem>camera</Subsystem>
-        <Version>3.2.0</Version>
-        <Author>salgenerator</Author>
-        <EFDB_Topic>camera_logevent_readyToTakeImage</EFDB_Topic>
-        <Alias>readyToTakeImage</Alias>
-        <Explanation>http://sal.lsst.org/SAL/Events/camera_logevent_readyToTakeImage.html</Explanation>
-    </SALEvent>
-
-    <SALEvent>
-        <Subsystem>camera</Subsystem>
-        <Version>3.2.0</Version>
-        <Author>salgenerator</Author>
-        <EFDB_Topic>camera_logevent_startIntegration</EFDB_Topic>
-        <Alias>startIntegration</Alias>
-        <Explanation>http://sal.lsst.org/SAL/Events/camera_logevent_startIntegration.html</Explanation>
-        <item>
-            <EFDB_Name>imageSequenceName</EFDB_Name>
-            <Description>The imageSequenceName as passed to the takeImages command</Description>
-            <IDL_Type>string</IDL_Type>
-            <IDL_Size>1</IDL_Size>
-            <Units> </Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>imagesInSequence</EFDB_Name>
-            <Description>The total number of requested images in sequence</Description>
-            <IDL_Type>int</IDL_Type>
-            <IDL_Size>1</IDL_Size>
-            <Units> </Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>imageName</EFDB_Name>
-            <Description>The imageName for this specific exposure</Description>
-            <IDL_Type>string</IDL_Type>
-            <IDL_Size>1</IDL_Size>
-            <Units> </Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>imageIndex</EFDB_Name>
-            <Description>The zero based index number for this specific exposure within the sequence</Description>
-            <IDL_Type>int</IDL_Type>
-            <IDL_Size>1</IDL_Size>
-            <Units> </Units>
-            <Count>1</Count>
-        </item>        
-        <item>
-            <EFDB_Name>timeStamp</EFDB_Name>
-            <Description>The effective time at which the image acquisition started (i.e. the end of the previous clear or readout)</Description>
-            <IDL_Type>double</IDL_Type>
-            <IDL_Size>1</IDL_Size>
-            <Units> </Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>exposureTime</EFDB_Name>
-            <Description>The requested exposure time</Description>
-            <IDL_Type>double</IDL_Type>
-            <IDL_Size>1</IDL_Size>
-            <Units>Seconds</Units>
-            <Count>1</Count>
-        </item>
-    </SALEvent>
-
-    <SALEvent>
-        <Subsystem>camera</Subsystem>
-        <Version>3.2.0</Version>
-        <Author>salgenerator</Author>
-        <EFDB_Topic>camera_logevent_startLoadFilter</EFDB_Topic>
-        <Alias>startLoadFilter</Alias>
-        <Explanation>http://sal.lsst.org/SAL/Events/camera_logevent_startLoadFilter.html</Explanation>
-    </SALEvent>
-
-    <SALEvent>
-        <Subsystem>camera</Subsystem>
-        <Version>3.2.0</Version>
-        <Author>salgenerator</Author>
-        <EFDB_Topic>camera_logevent_startReadout</EFDB_Topic>
-        <Alias>startReadout</Alias>
-        <Explanation>http://sal.lsst.org/SAL/Events/camera_logevent_startReadout.html</Explanation>
-        <item>
-            <EFDB_Name>imageSequenceName</EFDB_Name>
-            <Description>The imageSequenceName as passed to the takeImages command</Description>
-            <IDL_Type>string</IDL_Type>
-            <IDL_Size>1</IDL_Size>
-            <Units> </Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>imagesInSequence</EFDB_Name>
-            <Description>The total number of requested images in sequence</Description>
-            <IDL_Type>int</IDL_Type>
-            <IDL_Size>1</IDL_Size>
-            <Units> </Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>imageName</EFDB_Name>
-            <Description>The imageName for this specific exposure</Description>
-            <IDL_Type>string</IDL_Type>
-            <IDL_Size>1</IDL_Size>
-            <Units> </Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>imageIndex</EFDB_Name>
-            <Description>The zero based index number for this specific exposure within the sequence</Description>
-            <IDL_Type>int</IDL_Type>
-            <IDL_Size>1</IDL_Size>
-            <Units> </Units>
-            <Count>1</Count>
-        </item>        
-        <item>
-            <EFDB_Name>timeStamp</EFDB_Name>
-            <Description>The effective time at which the image acquisition started (i.e. the end of the previous clear or readout)</Description>
-            <IDL_Type>double</IDL_Type>
-            <IDL_Size>1</IDL_Size>
-            <Units> </Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>exposureTime</EFDB_Name>
-            <Description>The requested exposure time</Description>
-            <IDL_Type>double</IDL_Type>
-            <IDL_Size>1</IDL_Size>
-            <Units>Seconds</Units>
-            <Count>1</Count>
-        </item>
-    </SALEvent>
-    
-    <SALEvent>
-        <Subsystem>camera</Subsystem>
-        <Version>3.2.0</Version>
-        <Author>salgenerator</Author>
-        <EFDB_Topic>camera_logevent_endOfImageTelemetry</EFDB_Topic>
-        <Alias>endOfImageTelemetry</Alias>
-        <Explanation>http://sal.lsst.org/SAL/Events/camera_logevent_endOfImageTelemetry.html</Explanation>
-        <item>
-            <EFDB_Name>imageSequenceName</EFDB_Name>
-            <Description>The imageSequenceName as passed to the takeImages command</Description>
-            <IDL_Type>string</IDL_Type>
-            <IDL_Size>1</IDL_Size>
-            <Units> </Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>imageName</EFDB_Name>
-            <Description>The imageName for this specific exposure</Description>
-            <IDL_Type>string</IDL_Type>
-            <IDL_Size>1</IDL_Size>
-            <Units> </Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>imagesInSequence</EFDB_Name>
-            <Description>The total number of requested images in sequence</Description>
-            <IDL_Type>int</IDL_Type>
-            <IDL_Size>1</IDL_Size>
-            <Units> </Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>imageIndex</EFDB_Name>
-            <Description>The zero based index number for this specific exposure within the sequence</Description>
-            <IDL_Type>int</IDL_Type>
-            <IDL_Size>1</IDL_Size>
-            <Units> </Units>
-            <Count>1</Count>
-        </item>        
-        <item>
-            <EFDB_Name>timeStamp</EFDB_Name>
-            <Description>The effective time at which the image acquisition started (i.e. the end of the previous clear or readout)</Description>
-            <IDL_Type>double</IDL_Type>
-            <IDL_Size>1</IDL_Size>
-            <Units> </Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>exposureTime</EFDB_Name>
-            <Description>The requested exposure time</Description>
-            <IDL_Type>double</IDL_Type>
-            <IDL_Size>1</IDL_Size>
-            <Units>Seconds</Units>
-            <Count>1</Count>
-        </item>
-    </SALEvent>
-    
-    <SALEvent>
-        <Subsystem>camera</Subsystem>
-        <Version>3.2.0</Version>
-        <Author>salgenerator</Author>
-        <EFDB_Topic>camera_logevent_startRotateCarousel</EFDB_Topic>
-        <Alias>startRotateCarousel</Alias>
-        <Explanation>http://sal.lsst.org/SAL/Events/camera_logevent_startRotateCarousel.html</Explanation>
-    </SALEvent>
-
-    <SALEvent>
-        <Subsystem>camera</Subsystem>
-        <Version>3.2.0</Version>
-        <Author>salgenerator</Author>
-        <EFDB_Topic>camera_logevent_startSetFilter</EFDB_Topic>
-        <Alias>startSetFilter</Alias>
-        <Explanation>http://sal.lsst.org/SAL/Events/camera_logevent_startSetFilter.html</Explanation>
-        <item>
-            <EFDB_Name>filterName</EFDB_Name>
-            <Description>The name of the filter being installed (e.g. U-001)</Description>
-            <IDL_Type>string</IDL_Type>
-            <IDL_Size>1</IDL_Size>
-            <Units> </Units>
-            <Count>1</Count>
-        </item>
-    </SALEvent>
-
-    <SALEvent>
-        <Subsystem>camera</Subsystem>
-        <Version>3.2.0</Version>
-        <Author>salgenerator</Author>
-        <EFDB_Topic>camera_logevent_startShutterClose</EFDB_Topic>
-        <Alias>startShutterClose</Alias>
-        <Explanation>http://sal.lsst.org/SAL/Events/camera_logevent_startShutterClose.html</Explanation>
-    </SALEvent>
-
-    <SALEvent>
-        <Subsystem>camera</Subsystem>
-        <Version>3.2.0</Version>
-        <Author>salgenerator</Author>
-        <EFDB_Topic>camera_logevent_startShutterOpen</EFDB_Topic>
-        <Alias>startShutterOpen</Alias>
-        <Explanation>http://sal.lsst.org/SAL/Events/camera_logevent_startShutterOpen.html</Explanation>
-    </SALEvent>
-
-    <SALEvent>
-        <Subsystem>camera</Subsystem>
-        <Version>3.2.0</Version>
-        <Author>salgenerator</Author>
-        <EFDB_Topic>camera_logevent_startUnloadFilter</EFDB_Topic>
-        <Alias>startUnloadFilter</Alias>
-        <Explanation>http://sal.lsst.org/SAL/Events/camera_logevent_startUnloadFilter.html</Explanation>
-    </SALEvent>
-    
-    <SALEvent>
-        <Subsystem>camera</Subsystem>
-        <Version>3.5.0</Version>
-        <Author>tonyj</Author>
-        <EFDB_Topic>camera_logevent_offlineDetailedState</EFDB_Topic>
-        <Alias>offlineDetailedState</Alias>
-        <item>
-            <EFDB_Name>substate</EFDB_Name>
-            <Description>Enumeration of valid subsubstates</Description>
-            <IDL_Type>short</IDL_Type>
-            <Units></Units>
-            <Count>1</Count>
-            <Enumeration>OFFLINE_AVAILABLE, OFFLINE_PUBLISH_ONLY</Enumeration>
-        </item>
-    </SALEvent>
-
-    <SALEvent>
-        <Subsystem>camera</Subsystem>
-        <Version>3.5.0</Version>
-        <Author>tonyj</Author>
-        <EFDB_Topic>camera_logevent_ccsCommandState</EFDB_Topic>
-        <Alias>ccsCommandState</Alias>
-        <item>
-            <EFDB_Name>substate</EFDB_Name>
-            <Description>Enumeration of valid subsubstates</Description>
-            <IDL_Type>short</IDL_Type>
-            <Units></Units>
-            <Count>1</Count>
-            <Enumeration>IDLE, BUSY</Enumeration>
-        </item>
-    </SALEvent>
-
-    <SALEvent>
-        <Subsystem>camera</Subsystem>
-        <Version>3.5.0</Version>
-        <Author>tonyj</Author>
-        <EFDB_Topic>camera_logevent_shutterDetailedState</EFDB_Topic>
-        <Alias>shutterDetailedState</Alias>
-        <item>
-            <EFDB_Name>substate</EFDB_Name>
-            <Description>Enumeration of valid subsubstates</Description>
-            <IDL_Type>short</IDL_Type>
-            <Units></Units>
-            <Count>1</Count>
-            <Enumeration>CLOSED, OPEN, CLOSING, OPENING</Enumeration>
-        </item>
-    </SALEvent>
-
-    <SALEvent>
-        <Subsystem>camera</Subsystem>
-        <Version>3.5.0</Version>
-        <Author>tonyj</Author>
-        <EFDB_Topic>camera_logevent_raftsDetailedState</EFDB_Topic>
-        <Alias>raftsDetailedState</Alias>
-        <item>
-            <EFDB_Name>substate</EFDB_Name>
-            <Description>Enumeration of valid subsubstates</Description>
-            <IDL_Type>short</IDL_Type>
-            <Units></Units>
-            <Count>1</Count>
-            <Enumeration>NEEDS_CLEAR, CLEARING, INTEGRATING, READING_OUT, QUIESCENT</Enumeration>
-        </item>
-    </SALEvent>    
-
-    <SALEvent>
-        <Subsystem>camera</Subsystem>
-        <Version>3.5.0</Version>
-        <Author>tonyj</Author>
-        <EFDB_Topic>camera_logevent_imageReadinessDetailedState</EFDB_Topic>
-        <Alias>imageReadinessDetailedState</Alias>
-        <item>
-            <EFDB_Name>substate</EFDB_Name>
-            <Description>Enumeration of valid subsubstates</Description>
-            <IDL_Type>short</IDL_Type>
-            <Units></Units>
-            <Count>1</Count>
-            <Enumeration>READY, NOT_READY, GETTING_READY</Enumeration>
-        </item>
-    </SALEvent>
-    
-    <SALEvent>
-        <Subsystem>camera</Subsystem>
-        <Version>3.5.0</Version>
-        <Author>tonyj</Author>
-        <EFDB_Topic>camera_logevent_filterChangerDetailedState</EFDB_Topic>
-        <Alias>filterChangerDetailedState</Alias>
-        <item>
-            <EFDB_Name>substate</EFDB_Name>
-            <Description>Enumeration of valid subsubstates</Description>
-            <IDL_Type>short</IDL_Type>
-            <Units></Units>
-            <Count>1</Count>
-            <Enumeration>UNLOADING, LOADING, LOADED, UNLOADED, ROTATING</Enumeration>
-        </item>
-    </SALEvent>     
-
-    <SALEvent>
-        <Subsystem>camera</Subsystem>
-        <Version>3.5.0</Version>
-        <Author>tonyj</Author>
-        <EFDB_Topic>camera_logevent_calibrationDetailedState</EFDB_Topic>
-        <Alias>calibrationDetailedState</Alias>
-        <item>
-            <EFDB_Name>substate</EFDB_Name>
-            <Description>Enumeration of valid subsubstates</Description>
-            <IDL_Type>short</IDL_Type>
-            <Units></Units>
-            <Count>1</Count>
-            <Enumeration>DISABLED, ENABLED, INTEGRATING</Enumeration>
-        </item>
-    </SALEvent> 
-    
-    <SALEvent>
-        <Subsystem>camera</Subsystem>
-        <Version>3.5.0</Version>
-        <Author>tonyj</Author>
-        <EFDB_Topic>camera_logevent_availableFilters</EFDB_Topic>
-        <Alias>availableFilters</Alias>
-        <item>
-            <EFDB_Name>filterNames</EFDB_Name>
-            <Description>A list of installed filter names (comma delimimted, U-001,G-004,R-010,Z-012,Y-014), in the same order as the list of filter types.</Description>
-            <IDL_Type>string</IDL_Type>
-            <IDL_Size>1</IDL_Size>
-            <Units> </Units>
-            <Count>1</Count>
-        </item>
-    </SALEvent>   
-    
+	xsi:noNamespaceSchemaLocation="http://project.lsst.org/ts/sal_objects/schema/SALEventSet.xsd">
+<SALEvent>
+    <Subsystem>camera</Subsystem>
+    <Version>3.5.2</Version>
+    <Author></Author>
+    <EFDB_Topic>camera_logevent_offlineDetailedState</EFDB_Topic>
+    <Alias>offlineDetailedState</Alias>
+    <Explanation>http://project.lsst.org/ts/sal_objects/help/camera_logevent_offlineDetailedState.html</Explanation>
+    <item>
+        <EFDB_Name>substate</EFDB_Name>
+        <Description>Enumeration of valid substates</Description>
+        <IDL_Type>long</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+        <Enumeration>OFFLINE_AVAILABLE,OFFLINE_PUBLISH_ONLY</Enumeration>
+    </item>
+</SALEvent>
+<SALEvent>
+    <Subsystem>camera</Subsystem>
+    <Version>3.5.2</Version>
+    <Author></Author>
+    <EFDB_Topic>camera_logevent_endReadout</EFDB_Topic>
+    <Alias>endReadout</Alias>
+    <Explanation>http://project.lsst.org/ts/sal_objects/help/camera_logevent_endReadout.html</Explanation>
+    <item>
+        <EFDB_Name>imageSequenceName</EFDB_Name>
+        <Description>The imageSequenceName as passed to the takeImages command</Description>
+        <IDL_Type>string</IDL_Type>
+        <IDL_Size>256</IDL_Size>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+     <item>
+        <EFDB_Name>imagesInSequence</EFDB_Name>
+        <Description>The total  number of requested images in sequence</Description>
+        <IDL_Type>long</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>imageName</EFDB_Name>
+        <Description>The imageName for this specific exposure</Description>
+        <IDL_Type>string</IDL_Type>
+        <IDL_Size>256</IDL_Size>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>imageIndex</EFDB_Name>
+        <Description>The zero based index number for this specific exposure within the sequence</Description>
+        <IDL_Type>long</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>timeStamp</EFDB_Name>
+        <Description>The effective time at which the image acquisition started (i.e. the end of the previous clear or readout)</Description>
+        <IDL_Type>double</IDL_Type>
+        <Units>second</Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>exposureTime</EFDB_Name>
+        <Description>The requested exposure time</Description>
+        <IDL_Type>double</IDL_Type>
+        <Units>second</Units>
+        <Count>1</Count>
+    </item>
+</SALEvent>
+<SALEvent>
+    <Subsystem>camera</Subsystem>
+    <Version>3.5.2</Version>
+    <Author></Author>
+    <EFDB_Topic>camera_logevent_endTakeImage</EFDB_Topic>
+    <Alias>endTakeImage</Alias>
+    <Explanation>http://project.lsst.org/ts/sal_objects/help/camera_logevent_endTakeImage.html</Explanation>
+</SALEvent>
+<SALEvent>
+    <Subsystem>camera</Subsystem>
+    <Version>3.5.2</Version>
+    <Author></Author>
+    <EFDB_Topic>camera_logevent_imageReadinessDetailedState</EFDB_Topic>
+    <Alias>imageReadinessDetailedState</Alias>
+    <Explanation>http://project.lsst.org/ts/sal_objects/help/camera_logevent_imageReadinessDetailedState.html</Explanation>
+    <item>
+        <EFDB_Name>substate</EFDB_Name>
+        <Description>Enumeration of valid substates</Description>
+        <IDL_Type>long</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+        <Enumeration>READY,NOT_READY,GETTING_READY</Enumeration>
+    </item>
+</SALEvent>
+<SALEvent>
+    <Subsystem>camera</Subsystem>
+    <Version>3.5.2</Version>
+    <Author></Author>
+    <EFDB_Topic>camera_logevent_SettingVersions</EFDB_Topic>
+    <Alias>SettingVersions</Alias>
+    <Explanation>http://project.lsst.org/ts/sal_objects/help/camera_logevent_SettingVersions.html</Explanation>
+    <item>
+        <EFDB_Name>recommendedSettingVersion</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>string</IDL_Type>
+        <IDL_Size>256</IDL_Size>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+</SALEvent>
+<SALEvent>
+    <Subsystem>camera</Subsystem>
+    <Version>3.5.2</Version>
+    <Author></Author>
+    <EFDB_Topic>camera_logevent_startSetFilter</EFDB_Topic>
+    <Alias>startSetFilter</Alias>
+    <Explanation>http://project.lsst.org/ts/sal_objects/help/camera_logevent_startSetFilter.html</Explanation>
+    <item>
+        <EFDB_Name>filterName</EFDB_Name>
+        <Description>The name of the filter being installed (e.g. U-001)</Description>
+        <IDL_Type>string</IDL_Type>
+        <IDL_Size>256</IDL_Size>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+</SALEvent>
+<SALEvent>
+    <Subsystem>camera</Subsystem>
+    <Version>3.5.2</Version>
+    <Author></Author>
+    <EFDB_Topic>camera_logevent_startUnloadFilter</EFDB_Topic>
+    <Alias>startUnloadFilter</Alias>
+    <Explanation>http://project.lsst.org/ts/sal_objects/help/camera_logevent_startUnloadFilter.html</Explanation>
+</SALEvent>
+<SALEvent>
+    <Subsystem>camera</Subsystem>
+    <Version>3.5.2</Version>
+    <Author></Author>
+    <EFDB_Topic>camera_logevent_notReadyToTakeImage</EFDB_Topic>
+    <Alias>notReadyToTakeImage</Alias>
+    <Explanation>http://project.lsst.org/ts/sal_objects/help/camera_logevent_notReadyToTakeImage.html</Explanation>
+</SALEvent>
+<SALEvent>
+    <Subsystem>camera</Subsystem>
+    <Version>3.5.2</Version>
+    <Author></Author>
+    <EFDB_Topic>camera_logevent_startShutterClose</EFDB_Topic>
+    <Alias>startShutterClose</Alias>
+    <Explanation>http://project.lsst.org/ts/sal_objects/help/camera_logevent_startShutterClose.html</Explanation>
+</SALEvent>
+<SALEvent>
+    <Subsystem>camera</Subsystem>
+    <Version>3.5.2</Version>
+    <Author></Author>
+    <EFDB_Topic>camera_logevent_AppliedSettingsMatchStart</EFDB_Topic>
+    <Alias>AppliedSettingsMatchStart</Alias>
+    <Explanation>http://project.lsst.org/ts/sal_objects/help/camera_logevent_AppliedSettingsMatchStart.html</Explanation>
+    <item>
+        <EFDB_Name>appliedSettingsMatchStartIsTrue</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>boolean</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+</SALEvent>
+<SALEvent>
+    <Subsystem>camera</Subsystem>
+    <Version>3.5.2</Version>
+    <Author></Author>
+    <EFDB_Topic>camera_logevent_ErrorCode</EFDB_Topic>
+    <Alias>ErrorCode</Alias>
+    <Explanation>http://project.lsst.org/ts/sal_objects/help/camera_logevent_ErrorCode.html</Explanation>
+    <item>
+        <EFDB_Name>errorCode</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>long</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+</SALEvent>
+<SALEvent>
+    <Subsystem>camera</Subsystem>
+    <Version>3.5.2</Version>
+    <Author></Author>
+    <EFDB_Topic>camera_logevent_endInitializeGuider</EFDB_Topic>
+    <Alias>endInitializeGuider</Alias>
+    <Explanation>http://project.lsst.org/ts/sal_objects/help/camera_logevent_endInitializeGuider.html</Explanation>
+</SALEvent>
+<SALEvent>
+    <Subsystem>camera</Subsystem>
+    <Version>3.5.2</Version>
+    <Author></Author>
+    <EFDB_Topic>camera_logevent_endShutterClose</EFDB_Topic>
+    <Alias>endShutterClose</Alias>
+    <Explanation>http://project.lsst.org/ts/sal_objects/help/camera_logevent_endShutterClose.html</Explanation>
+</SALEvent>
+<SALEvent>
+    <Subsystem>camera</Subsystem>
+    <Version>3.5.2</Version>
+    <Author></Author>
+    <EFDB_Topic>camera_logevent_endOfImageTelemetry</EFDB_Topic>
+    <Alias>endOfImageTelemetry</Alias>
+    <Explanation>http://project.lsst.org/ts/sal_objects/help/camera_logevent_endOfImageTelemetry.html</Explanation>
+    <item>
+        <EFDB_Name>imageSequenceName</EFDB_Name>
+        <Description>The imageSequenceName as passed to the takeImages command</Description>
+        <IDL_Type>string</IDL_Type>
+        <IDL_Size>256</IDL_Size>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>imagesInSequence</EFDB_Name>
+        <Description>The total  number of requested images in sequence</Description>
+        <IDL_Type>long</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>imageName</EFDB_Name>
+        <Description>The imageName for this specific exposure</Description>
+        <IDL_Type>string</IDL_Type>
+        <IDL_Size>256</IDL_Size>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>imageIndex</EFDB_Name>
+        <Description>The zero based index number for this specific exposure within the sequence</Description>
+        <IDL_Type>long</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>timeStamp</EFDB_Name>
+        <Description>The effective time at which the image acquisition started (i.e. the end of the previous clear or readout)</Description>
+        <IDL_Type>double</IDL_Type>
+        <Units>second</Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>exposureTime</EFDB_Name>
+        <Description>The requested exposure time</Description>
+        <IDL_Type>double</IDL_Type>
+        <Units>second</Units>
+        <Count>1</Count>
+    </item>
+</SALEvent>
+<SALEvent>
+    <Subsystem>camera</Subsystem>
+    <Version>3.5.2</Version>
+    <Author></Author>
+    <EFDB_Topic>camera_logevent_endUnloadFilter</EFDB_Topic>
+    <Alias>endUnloadFilter</Alias>
+    <Explanation>http://project.lsst.org/ts/sal_objects/help/camera_logevent_endUnloadFilter.html</Explanation>
+</SALEvent>
+<SALEvent>
+    <Subsystem>camera</Subsystem>
+    <Version>3.5.2</Version>
+    <Author></Author>
+    <EFDB_Topic>camera_logevent_calibrationDetailedState</EFDB_Topic>
+    <Alias>calibrationDetailedState</Alias>
+    <Explanation>http://project.lsst.org/ts/sal_objects/help/camera_logevent_calibrationDetailedState.html</Explanation>
+    <item>
+        <EFDB_Name>substate</EFDB_Name>
+        <Description>Enumeration of valid substates</Description>
+        <IDL_Type>long</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+        <Enumeration>DISABLED,ENABLED,INTEGRATING</Enumeration>
+    </item>
+</SALEvent>
+<SALEvent>
+    <Subsystem>camera</Subsystem>
+    <Version>3.5.2</Version>
+    <Author></Author>
+    <EFDB_Topic>camera_logevent_endRotateCarousel</EFDB_Topic>
+    <Alias>endRotateCarousel</Alias>
+    <Explanation>http://project.lsst.org/ts/sal_objects/help/camera_logevent_endRotateCarousel.html</Explanation>
+</SALEvent>
+<SALEvent>
+    <Subsystem>camera</Subsystem>
+    <Version>3.5.2</Version>
+    <Author></Author>
+    <EFDB_Topic>camera_logevent_startLoadFilter</EFDB_Topic>
+    <Alias>startLoadFilter</Alias>
+    <Explanation>http://project.lsst.org/ts/sal_objects/help/camera_logevent_startLoadFilter.html</Explanation>
+</SALEvent>
+<SALEvent>
+    <Subsystem>camera</Subsystem>
+    <Version>3.5.2</Version>
+    <Author></Author>
+    <EFDB_Topic>camera_logevent_filterChangerDetailedState</EFDB_Topic>
+    <Alias>filterChangerDetailedState</Alias>
+    <Explanation>http://project.lsst.org/ts/sal_objects/help/camera_logevent_filterChangerDetailedState.html</Explanation>
+    <item>
+        <EFDB_Name>substate</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>long</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+        <Enumeration>UNLOADING,LOADING,LOADED,UNLOADED,ROTATING</Enumeration>
+    </item>
+</SALEvent>
+<SALEvent>
+    <Subsystem>camera</Subsystem>
+    <Version>3.5.2</Version>
+    <Author></Author>
+    <EFDB_Topic>camera_logevent_shutterDetailedState</EFDB_Topic>
+    <Alias>shutterDetailedState</Alias>
+    <Explanation>http://project.lsst.org/ts/sal_objects/help/camera_logevent_shutterDetailedState.html</Explanation>
+    <item>
+        <EFDB_Name>substate</EFDB_Name>
+        <Description>Enumeration of valid substates</Description>
+        <IDL_Type>long</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+        <Enumeration>CLOSED,OPEN,CLOSING,OPENING</Enumeration>
+    </item>
+</SALEvent>
+<SALEvent>
+    <Subsystem>camera</Subsystem>
+    <Version>3.5.2</Version>
+    <Author></Author>
+    <EFDB_Topic>camera_logevent_readyToTakeImage</EFDB_Topic>
+    <Alias>readyToTakeImage</Alias>
+    <Explanation>http://project.lsst.org/ts/sal_objects/help/camera_logevent_readyToTakeImage.html</Explanation>
+</SALEvent>
+<SALEvent>
+    <Subsystem>camera</Subsystem>
+    <Version>3.5.2</Version>
+    <Author></Author>
+    <EFDB_Topic>camera_logevent_ccsCommandState</EFDB_Topic>
+    <Alias>ccsCommandState</Alias>
+    <Explanation>http://project.lsst.org/ts/sal_objects/help/camera_logevent_ccsCommandState.html</Explanation>
+    <item>
+        <EFDB_Name>substate</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>long</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+        <Enumeration>IDLE,BUSY</Enumeration>
+    </item>
+</SALEvent>
+<SALEvent>
+    <Subsystem>camera</Subsystem>
+    <Version>3.5.2</Version>
+    <Author></Author>
+    <EFDB_Topic>camera_logevent_prepareToTakeImage</EFDB_Topic>
+    <Alias>prepareToTakeImage</Alias>
+    <Explanation>http://project.lsst.org/ts/sal_objects/help/camera_logevent_prepareToTakeImage.html</Explanation>
+</SALEvent>
+<SALEvent>
+    <Subsystem>camera</Subsystem>
+    <Version>3.5.2</Version>
+    <Author></Author>
+    <EFDB_Topic>camera_logevent_ccsConfigured</EFDB_Topic>
+    <Alias>ccsConfigured</Alias>
+    <Explanation>http://project.lsst.org/ts/sal_objects/help/camera_logevent_ccsConfigured.html</Explanation>
+</SALEvent>
+<SALEvent>
+    <Subsystem>camera</Subsystem>
+    <Version>3.5.2</Version>
+    <Author></Author>
+    <EFDB_Topic>camera_logevent_endLoadFilter</EFDB_Topic>
+    <Alias>endLoadFilter</Alias>
+    <Explanation>http://project.lsst.org/ts/sal_objects/help/camera_logevent_endLoadFilter.html</Explanation>
+</SALEvent>
+<SALEvent>
+    <Subsystem>camera</Subsystem>
+    <Version>3.5.2</Version>
+    <Author></Author>
+    <EFDB_Topic>camera_logevent_endShutterOpen</EFDB_Topic>
+    <Alias>endShutterOpen</Alias>
+    <Explanation>http://project.lsst.org/ts/sal_objects/help/camera_logevent_endShutterOpen.html</Explanation>
+</SALEvent>
+<SALEvent>
+    <Subsystem>camera</Subsystem>
+    <Version>3.5.2</Version>
+    <Author></Author>
+    <EFDB_Topic>camera_logevent_startIntegration</EFDB_Topic>
+    <Alias>startIntegration</Alias>
+    <Explanation>http://project.lsst.org/ts/sal_objects/help/camera_logevent_startIntegration.html</Explanation>
+    <item>
+        <EFDB_Name>imageSequenceName</EFDB_Name>
+        <Description>The imageSequenceName as passed to the takeImages command</Description>
+        <IDL_Type>string</IDL_Type>
+        <IDL_Size>256</IDL_Size>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>imagesInSequence</EFDB_Name>
+        <Description>The total  number of requested images in sequence</Description>
+        <IDL_Type>long</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>imageName</EFDB_Name>
+        <Description>The imageName for this specific exposure</Description>
+        <IDL_Type>string</IDL_Type>
+        <IDL_Size>256</IDL_Size>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>imageIndex</EFDB_Name>
+        <Description>The zero based index number for this specific exposure within the sequence</Description>
+        <IDL_Type>long</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>timeStamp</EFDB_Name>
+        <Description>The effective time at which the image acquisition started (i.e. the end of the previous clear or readout)</Description>
+        <IDL_Type>double</IDL_Type>
+        <Units>second</Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>exposureTime</EFDB_Name>
+        <Description>The requested exposure time</Description>
+        <IDL_Type>double</IDL_Type>
+        <Units>second</Units>
+        <Count>1</Count>
+    </item>
+</SALEvent>
+<SALEvent>
+    <Subsystem>camera</Subsystem>
+    <Version>3.5.2</Version>
+    <Author></Author>
+    <EFDB_Topic>camera_logevent_SummaryState</EFDB_Topic>
+    <Alias>SummaryState</Alias>
+    <Explanation>http://project.lsst.org/ts/sal_objects/help/camera_logevent_SummaryState.html</Explanation>
+    <item>
+        <EFDB_Name>SummaryStateValue</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>long</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+</SALEvent>
+<SALEvent>
+    <Subsystem>camera</Subsystem>
+    <Version>3.5.2</Version>
+    <Author></Author>
+    <EFDB_Topic>camera_logevent_endInitializeImage</EFDB_Topic>
+    <Alias>endInitializeImage</Alias>
+    <Explanation>http://project.lsst.org/ts/sal_objects/help/camera_logevent_endInitializeImage.html</Explanation>
+</SALEvent>
+<SALEvent>
+    <Subsystem>camera</Subsystem>
+    <Version>3.5.2</Version>
+    <Author></Author>
+    <EFDB_Topic>camera_logevent_SettingsApplied</EFDB_Topic>
+    <Alias>SettingsApplied</Alias>
+    <Explanation>http://project.lsst.org/ts/sal_objects/help/camera_logevent_SettingsApplied.html</Explanation>
+    <item>
+        <EFDB_Name>settings</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>string</IDL_Type>
+        <IDL_Size>256</IDL_Size>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>timestamp</EFDB_Name>
+        <Description>The timestamp for when the event occurred.</Description>
+        <IDL_Type>double</IDL_Type>
+        <Units>Seconds</Units>
+        <Count>1</Count>
+    </item>
+</SALEvent>
+<SALEvent>
+    <Subsystem>camera</Subsystem>
+    <Version>3.5.2</Version>
+    <Author></Author>
+    <EFDB_Topic>camera_logevent_endSetFilter</EFDB_Topic>
+    <Alias>endSetFilter</Alias>
+    <Explanation>http://project.lsst.org/ts/sal_objects/help/camera_logevent_endSetFilter.html</Explanation>
+    <item>
+        <EFDB_Name>filterName</EFDB_Name>
+        <Description>The name of the filter being installed (e.g. U-001)</Description>
+        <IDL_Type>string</IDL_Type>
+        <IDL_Size>256</IDL_Size>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+</SALEvent>
+<SALEvent>
+    <Subsystem>camera</Subsystem>
+    <Version>3.5.2</Version>
+    <Author></Author>
+    <EFDB_Topic>camera_logevent_startShutterOpen</EFDB_Topic>
+    <Alias>startShutterOpen</Alias>
+    <Explanation>http://project.lsst.org/ts/sal_objects/help/camera_logevent_startShutterOpen.html</Explanation>
+</SALEvent>
+<SALEvent>
+    <Subsystem>camera</Subsystem>
+    <Version>3.5.2</Version>
+    <Author></Author>
+    <EFDB_Topic>camera_logevent_raftsDetailedState</EFDB_Topic>
+    <Alias>raftsDetailedState</Alias>
+    <Explanation>http://project.lsst.org/ts/sal_objects/help/camera_logevent_raftsDetailedState.html</Explanation>
+    <item>
+        <EFDB_Name>substate</EFDB_Name>
+        <Description>Enumeration of valid substates</Description>
+        <IDL_Type>long</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+        <Enumeration>NEEDS_CLEAR,CLEARING,INTEGRATING,READING_OUT,QUIESCENT</Enumeration>
+    </item>
+</SALEvent>
+<SALEvent>
+    <Subsystem>camera</Subsystem>
+    <Version>3.5.2</Version>
+    <Author></Author>
+    <EFDB_Topic>camera_logevent_availableFilters</EFDB_Topic>
+    <Alias>availableFilters</Alias>
+    <Explanation>http://project.lsst.org/ts/sal_objects/help/camera_logevent_availableFilters.html</Explanation>
+    <item>
+        <EFDB_Name>filterNames</EFDB_Name>
+        <Description>A list of installed filter names (comma delimimted, U-001,G-004,R-010,Z-012,Y-014), in the same order as the list of filter types.</Description>
+        <IDL_Type>string</IDL_Type>
+        <IDL_Size>256</IDL_Size>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+</SALEvent>
+<SALEvent>
+    <Subsystem>camera</Subsystem>
+    <Version>3.5.2</Version>
+    <Author></Author>
+    <EFDB_Topic>camera_logevent_startReadout</EFDB_Topic>
+    <Alias>startReadout</Alias>
+    <Explanation>http://project.lsst.org/ts/sal_objects/help/camera_logevent_startReadout.html</Explanation>
+    <item>
+        <EFDB_Name>imageSequenceName</EFDB_Name>
+        <Description>The imageSequenceName as passed to the takeImages command</Description>
+        <IDL_Type>string</IDL_Type>
+        <IDL_Size>256</IDL_Size>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>imagesInSequence</EFDB_Name>
+        <Description>The total  number of requested images in sequence</Description>
+        <IDL_Type>long</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>imageName</EFDB_Name>
+        <Description>The imageName for this specific exposure</Description>
+        <IDL_Type>string</IDL_Type>
+        <IDL_Size>256</IDL_Size>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>imageIndex</EFDB_Name>
+        <Description>The zero based index number for this specific exposure within the sequence</Description>
+        <IDL_Type>long</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>timeStamp</EFDB_Name>
+        <Description>The effective time at which the image acquisition started (i.e. the end of the previous clear or readout)</Description>
+        <IDL_Type>double</IDL_Type>
+        <Units>second</Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>exposureTime</EFDB_Name>
+        <Description>The requested exposure time</Description>
+        <IDL_Type>double</IDL_Type>
+        <Units>second</Units>
+        <Count>1</Count>
+    </item>
+</SALEvent>
+<SALEvent>
+    <Subsystem>camera</Subsystem>
+    <Version>3.5.2</Version>
+    <Author></Author>
+    <EFDB_Topic>camera_logevent_startRotateCarousel</EFDB_Topic>
+    <Alias>startRotateCarousel</Alias>
+    <Explanation>http://project.lsst.org/ts/sal_objects/help/camera_logevent_startRotateCarousel.html</Explanation>
+</SALEvent>
     <SALEvent>
         <Subsystem>camera</Subsystem>
         <Version>3.5.0</Version>
@@ -544,7 +615,7 @@
         <item>
             <EFDB_Name>ccdType</EFDB_Name>
             <Description>The type of each CCD, this determines segRows, segCols and serCols</Description>
-            <IDL_Type>short</IDL_Type>
+            <IDL_Type>int</IDL_Type>
             <IDL_Size>1</IDL_Size>
             <Units> </Units>
             <Count>201</Count>
@@ -615,25 +686,4 @@
             <Count>201</Count>
         </item>
     </SALEvent>
-    <SALEvent>
-        <Subsystem>camera</Subsystem>
-        <Version>3.5.0</Version>
-        <Author>tonyj</Author>
-        <EFDB_Topic>camera_logevent_SettingsApplied</EFDB_Topic>
-        <Alias>SettingsApplied</Alias>
-        <item>
-            <EFDB_Name>settings</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>string</IDL_Type>
-            <Units></Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>timestamp</EFDB_Name>
-            <Description>The timestamp for when the event occurred.</Description>
-            <IDL_Type>double</IDL_Type>
-            <Units>Seconds</Units>
-            <Count>1</Count>
-        </item>
-    </SALEvent> 
 </SALEventSet>
