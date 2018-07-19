@@ -4,10 +4,10 @@
 	xsi:noNamespaceSchemaLocation="http://lsst-sal.tuc.noao.edu/schema/SALEventSet.xsd">
 <SALEvent>
     <Subsystem>summitFacility</Subsystem>
-    <Version>3.5.1</Version>
+    <Version>3.5.2</Version>
     <Author>ccontaxis</Author>
-    <EFDB_Topic>summitFacility_logevent_AppliedSettingsMatchStart</EFDB_Topic>
-    <Alias>AppliedSettingsMatchStart</Alias>
+    <EFDB_Topic>summitFacility_logevent_appliedSettingsMatchStart</EFDB_Topic>
+    <Alias>appliedSettingsMatchStart</Alias>
     <Explanation>http://sal.lsst.org</Explanation>
     <item>
         <EFDB_Name>appliedSettingsMatchStartIsTrue</EFDB_Name>
@@ -16,20 +16,28 @@
         <Units></Units>
         <Count>1</Count>
     </item>
+</SALEvent>
+<SALEvent>
+    <Subsystem>summitFacility</Subsystem>
+    <Version>3.5.2</Version>
+    <Author>ccontaxis</Author>
+    <EFDB_Topic>summitFacility_logevent_detailedState</EFDB_Topic>
+    <Alias>detailedState</Alias>
+    <Explanation>http://sal.lsst.org</Explanation>
     <item>
-        <EFDB_Name>timestamp</EFDB_Name>
-        <Description>The timestamp for when the event occurred.</Description>
-        <IDL_Type>double</IDL_Type>
-        <Units>Seconds</Units>
+        <EFDB_Name>detailedState</EFDB_Name>
+        <Description>An enumeration indicating the subsystem summary state. See the SummaryStateValue enumeration defined in the Typedefs package.</Description>
+        <IDL_Type>long</IDL_Type>
+        <Units></Units>
         <Count>1</Count>
     </item>
 </SALEvent>
 <SALEvent>
     <Subsystem>summitFacility</Subsystem>
-    <Version>3.5.1</Version>
+    <Version>3.5.2</Version>
     <Author>ccontaxis</Author>
-    <EFDB_Topic>summitFacility_logevent_SummaryState</EFDB_Topic>
-    <Alias>SummaryState</Alias>
+    <EFDB_Topic>summitFacility_logevent_summaryState</EFDB_Topic>
+    <Alias>summaryState</Alias>
     <Explanation>http://sal.lsst.org</Explanation>
     <item>
         <EFDB_Name>summaryState</EFDB_Name>
@@ -38,20 +46,13 @@
         <Units></Units>
         <Count>1</Count>
     </item>
-    <item>
-        <EFDB_Name>timestamp</EFDB_Name>
-        <Description>The timestamp for when the event occurred.</Description>
-        <IDL_Type>double</IDL_Type>
-        <Units>Seconds</Units>
-        <Count>1</Count>
-    </item>
 </SALEvent>
 <SALEvent>
     <Subsystem>summitFacility</Subsystem>
-    <Version>3.5.1</Version>
+    <Version>3.5.2</Version>
     <Author>ccontaxis</Author>
-    <EFDB_Topic>summitFacility_logevent_ErrorCode</EFDB_Topic>
-    <Alias>ErrorCode</Alias>
+    <EFDB_Topic>summitFacility_logevent_errorCode</EFDB_Topic>
+    <Alias>errorCode</Alias>
     <Explanation>http://sal.lsst.org</Explanation>
     <item>
         <EFDB_Name>errorCode</EFDB_Name>
@@ -60,40 +61,28 @@
         <Units></Units>
         <Count>1</Count>
     </item>
-    <item>
-        <EFDB_Name>timestamp</EFDB_Name>
-        <Description>The timestamp for when the event occurred.</Description>
-        <IDL_Type>double</IDL_Type>
-        <Units>Seconds</Units>
-        <Count>1</Count>
-    </item>
 </SALEvent>
 <SALEvent>
     <Subsystem>summitFacility</Subsystem>
-    <Version>3.5.1</Version>
+    <Version>3.5.2</Version>
     <Author>ccontaxis</Author>
-    <EFDB_Topic>summitFacility_logevent_SettingVersions</EFDB_Topic>
-    <Alias>SettingVersions</Alias>
+    <EFDB_Topic>summitFacility_logevent_settingVersions</EFDB_Topic>
+    <Alias>settingVersions</Alias>
     <Explanation>http://sal.lsst.org</Explanation>
-    <item>
-        <EFDB_Name>recommendedSettingsLabel</EFDB_Name>
-        <Description></Description>
-        <IDL_Type>string</IDL_Type>
-        <Units></Units>
-        <Count>1</Count>
-    </item>
     <item>
         <EFDB_Name>recommendedSettingsVersion</EFDB_Name>
         <Description></Description>
         <IDL_Type>string</IDL_Type>
+        <IDL_Size>1</IDL_Size>
         <Units></Units>
         <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>timestamp</EFDB_Name>
-        <Description>The timestamp for when the event occurred.</Description>
-        <IDL_Type>double</IDL_Type>
-        <Units>Seconds</Units>
+        <EFDB_Name>recommendedSettingsLabel</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>string</IDL_Type>
+        <IDL_Size>1</IDL_Size>
+        <Units></Units>
         <Count>1</Count>
     </item>
 </SALEvent></SALEventSet>
