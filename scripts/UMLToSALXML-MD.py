@@ -15,6 +15,7 @@ class UMLParser:
     def Open(self, subsystem, version, umlFile):
         print("Creating temporary file")
         tempUMLFile = umlFile + ".tmp"
+        print(tempUMLFile)
         with open(tempUMLFile, "w") as tempFile:
             with open(umlFile, "r") as inputFile:
                 for line in inputFile:
@@ -67,7 +68,13 @@ class UMLParser:
                 if item.name != "Event":
                     print("Writing event %s" % item.name)
                     if not (ignoreGlobals and item.name in globalEvents):
-                        eventFile.write(item.CreateSALXML())
+                        try:
+                            eventFile.write(item.CreateSALXML())
+                        except Exception as e: 
+                            print(item.CreateSALXML())
+                            print("Possible error for documentation in model for: %s", item.name)
+                            print(e)
+                            exit()
             eventFile.write(footer)     
 
     def WriteTelemetry(self, telemetry):
@@ -129,6 +136,7 @@ class UMLParser:
     def CreateSALParameter(self, type, command, parameter):
         basePath = ".//packagedElement[@name='SAL interface']/packagedElement[@name='%s']/packagedElement[@name='%s']/ownedAttribute[@name='%s']%s" % (type, command, parameter,'%s')
         description = self.GetValueByName(self.uml.find(basePath % "/ownedComment"), "body", "")
+        if(description is None): description = ""
         description = description.replace("<html>", "").replace("<pre>", "").replace("</html>", "").replace("</pre>", "")
         typePath = basePath % "/type/xmiExtension/referenceExtension"
 		
