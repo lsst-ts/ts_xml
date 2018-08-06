@@ -3,9 +3,10 @@ import sys
 import xml.etree.ElementTree
 
 ignoreGlobals = True
+isForLabVIEW = False
 globalCommands = ["Start", "Enable", "Disable", "Standby"]
 globalEvents = ["ErrorCode", "SummaryState", "SettingVersions", "AppliedSettingsMatchStart", "SettingsApplied"]
-salTypes = ["short", "long", "long long", "unsigned short", "unsigned long", "unsigned long long", "float", "double", "char", "boolean", "octet", "string", "byte"]
+salTypes = ["short", "long", "long long", "unsigned short", "unsigned long", "unsigned long long", "float", "double", "char", "boolean", "octet", "string", "byte", "int"]
 
 class UMLParser:
     def __init__(self):
@@ -241,17 +242,7 @@ class SALParameterString:
         return self.template % (self.name, self.description, self.type, self.count, self.units, '1')
         
 class SALParameterEnumeration:
-    template = """
-    <item>
-        <EFDB_Name>%s</EFDB_Name>
-        <Description>%s</Description>
-        <!-- Enumeration: %s -->
-        <IDL_Type>long</IDL_Type>
-        <Units>%s</Units>
-        <Count>%s</Count>
-        <Enumeration>%s</Enumeration>
-    </item>"""
-    
+
     def __init__(self, name, description, enumeration, units, count, enumerations):
         self.name = name
         self.description = description
@@ -259,10 +250,35 @@ class SALParameterEnumeration:
         self.units = units
         self.count = count
         self.enumerations = enumerations
+
+        if(isForLabVIEW):
+            self.template = """
+            <item>
+                <EFDB_Name>%s</EFDB_Name>
+                <Description>%s</Description>
+                <!-- Enumeration: %s -->
+                <IDL_Type>long</IDL_Type>
+                <Units>%s</Units>
+                <Count>%s</Count>
+                <Enumeration>%s</Enumeration>
+            </item>"""
+        else:
+            self.template = """
+            <item>
+                <EFDB_Name>%s</EFDB_Name>
+                <Description>%s</Description>
+                <!-- Enumeration: %s -->
+                <IDL_Type>long</IDL_Type>
+                <Units>%s</Units>
+                <Count>%s</Count>
+            </item>"""
         
     def CreateSALXML(self):
-        return self.template % (self.name, self.description, self.enumeration, self.units, self.count, self.enumerations)
-		
+        if(isForLabVIEW):
+            return self.template % (self.name, self.description, self.enumeration, self.units, self.count, self.enumerations)
+        else:
+            return self.template % (self.name, self.description, self.enumeration, self.units, self.count)
+
 class SALCommand:
     template = """
 <SALCommand>
@@ -343,12 +359,12 @@ class SALTelemetry:
         return self.template % (self.subsystem, self.version, self.author, topic, items)
 
         
-if len(sys.argv) != 6:
+if len(sys.argv) != 7:
     print("""
-Version: 1.1
+Version: 1.2
     
-usage: *.py <SubSystem> <SALVersion> <UMLFile> <OutputDirectory> <IgnoreGlobals(T/F)>
-example: *.py m2ms 3.5.0 D:\Temp\SALTemp.xml D:\Temp T
+usage: *.py <SubSystem> <SALVersion> <UMLFile> <OutputDirectory> <IgnoreGlobals(T/F)> <isForLabVIEW(T/F)>
+example: *.py m2ms 3.5.0 D:\Temp\SALTemp.xml D:\Temp T F
 
 Notes:
     1. Commands must be a direct child of a package named Command
@@ -360,7 +376,8 @@ Notes:
     7. If you want parameters to have units defined, create a new tag named 'unit'""")
 else:
     ignoreGlobals = sys.argv[5] == "T"
-    print("Executing UML XMI 2.1 from MagicDraw to SAL XML")
+    isForLabVIEW = sys.argv[6] == "T"
+    print("Executing UML XMI 2.5 from MagicDraw to SAL XML")
     print("UML Parser")
     uml = UMLParser()
     print("Opening XML Model")
