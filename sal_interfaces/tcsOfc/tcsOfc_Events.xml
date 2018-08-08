@@ -3,11 +3,11 @@
 <SALEventSet xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:noNamespaceSchemaLocation="http://lsst-sal.tuc.noao.edu/schema/SALEventSet.xsd">
 <Enumeration>SummaryState_DisabledState,SummaryState_EnabledState,SummaryState_FaultState,SummaryState_OfflineState,SummaryState_StandbyState</Enumeration>
-<Enumeration>DetailedState_DisabledState,DetailedState_EnabledState,DetailedState_FaultState,DetailedState_OfflineState,DetailedState_StandbyState</Enumeration>
+<Enumeration>DetailedState_DisabledState,DetailedState_EnabledState,DetailedState_FaultState,DetailedState_OfflineState,DetailedState_StandbyState,DetailedState_GetWfState,DetailedState_CalcDofState</Enumeration>
 
 <SALEvent>
     <Subsystem>tcsOfc</Subsystem>
-    <Version>3.5.1</Version>
+    <Version>3.7.0</Version>
     <Author></Author>
     <EFDB_Topic>tcsOfc_logevent_appliedSettingsMatchStart</EFDB_Topic>
     <Alias>appliedSettingsMatchStart</Alias>
@@ -22,7 +22,7 @@
 </SALEvent>
 <SALEvent>
     <Subsystem>tcsOfc</Subsystem>
-    <Version>3.5.1</Version>
+    <Version>3.7.0</Version>
     <Author></Author>
     <EFDB_Topic>tcsOfc_logevent_errorCode</EFDB_Topic>
     <Alias>errorCode</Alias>
@@ -37,7 +37,7 @@
 </SALEvent>
 <SALEvent>
     <Subsystem>tcsOfc</Subsystem>
-    <Version>3.5.1</Version>
+    <Version>3.7.0</Version>
     <Author></Author>
     <EFDB_Topic>tcsOfc_logevent_settingVersions</EFDB_Topic>
     <Alias>settingVersions</Alias>
@@ -61,41 +61,41 @@
 </SALEvent>
 <SALEvent>
     <Subsystem>tcsOfc</Subsystem>
-    <Version>3.5.1</Version>
+    <Version>3.7.0</Version>
     <Author></Author>
     <EFDB_Topic>tcsOfc_logevent_summaryState</EFDB_Topic>
     <Alias>summaryState</Alias>
     <Explanation>http://sal.lsst.org</Explanation>
-    <item>
-        <EFDB_Name>summaryState</EFDB_Name>
-        <Description>An enumeration indicating the subsystem summary state. See the SummaryStateValue enumeration defined in the Typedefs package.</Description>
-        <!-- Enumeration: SummaryState -->
-        <IDL_Type>long</IDL_Type>
-        <Units></Units>
-        <Count>1</Count>
-        <Enumeration>summaryState_SummaryState_DisabledState,summaryState_SummaryState_EnabledState,summaryState_SummaryState_FaultState,summaryState_SummaryState_OfflineState,summaryState_SummaryState_StandbyState</Enumeration>
-    </item>
+            <item>
+                <EFDB_Name>summaryState</EFDB_Name>
+                <Description>An enumeration indicating the subsystem summary state. See the SummaryStateValue enumeration defined in the Typedefs package.</Description>
+                <!-- Enumeration: SummaryState -->
+                <IDL_Type>long</IDL_Type>
+                <Units></Units>
+                <Count>1</Count>
+                <Enumeration>summaryState_SummaryState_DisabledState,summaryState_SummaryState_EnabledState,summaryState_SummaryState_FaultState,summaryState_SummaryState_OfflineState,summaryState_SummaryState_StandbyState</Enumeration>
+            </item>
 </SALEvent>
 <SALEvent>
     <Subsystem>tcsOfc</Subsystem>
-    <Version>3.5.1</Version>
+    <Version>3.7.0</Version>
     <Author></Author>
     <EFDB_Topic>tcsOfc_logevent_detailedState</EFDB_Topic>
     <Alias>detailedState</Alias>
     <Explanation>http://sal.lsst.org</Explanation>
-    <item>
-        <EFDB_Name>detailedState</EFDB_Name>
-        <Description></Description>
-        <!-- Enumeration: DetailedState -->
-        <IDL_Type>long</IDL_Type>
-        <Units></Units>
-        <Count>1</Count>
-        <Enumeration>detailedState_DetailedState_DisabledState,detailedState_DetailedState_EnabledState,detailedState_DetailedState_FaultState,detailedState_DetailedState_OfflineState,detailedState_DetailedState_StandbyState</Enumeration>
-    </item>
+            <item>
+                <EFDB_Name>detailedState</EFDB_Name>
+                <Description></Description>
+                <!-- Enumeration: DetailedState -->
+                <IDL_Type>long</IDL_Type>
+                <Units></Units>
+                <Count>1</Count>
+                <Enumeration>detailedState_DetailedState_DisabledState,detailedState_DetailedState_EnabledState,detailedState_DetailedState_FaultState,detailedState_DetailedState_OfflineState,detailedState_DetailedState_StandbyState,detailedState_DetailedState_GetWfState,detailedState_DetailedState_CalcDofState</Enumeration>
+            </item>
 </SALEvent>
 <SALEvent>
     <Subsystem>tcsOfc</Subsystem>
-    <Version>3.5.1</Version>
+    <Version>3.7.0</Version>
     <Author></Author>
     <EFDB_Topic>tcsOfc_logevent_internalCommand</EFDB_Topic>
     <Alias>internalCommand</Alias>
@@ -110,7 +110,7 @@
 </SALEvent>
 <SALEvent>
     <Subsystem>tcsOfc</Subsystem>
-    <Version>3.5.1</Version>
+    <Version>3.7.0</Version>
     <Author></Author>
     <EFDB_Topic>tcsOfc_logevent_heartbeat</EFDB_Topic>
     <Alias>heartbeat</Alias>
@@ -125,7 +125,7 @@
 </SALEvent>
 <SALEvent>
     <Subsystem>tcsOfc</Subsystem>
-    <Version>3.5.1</Version>
+    <Version>3.7.0</Version>
     <Author></Author>
     <EFDB_Topic>tcsOfc_logevent_loopTimeOutOfRange</EFDB_Topic>
     <Alias>loopTimeOutOfRange</Alias>
@@ -140,7 +140,7 @@
 </SALEvent>
 <SALEvent>
     <Subsystem>tcsOfc</Subsystem>
-    <Version>3.5.1</Version>
+    <Version>3.7.0</Version>
     <Author></Author>
     <EFDB_Topic>tcsOfc_logevent_rejectedCommand</EFDB_Topic>
     <Alias>rejectedCommand</Alias>
@@ -152,15 +152,15 @@
         <Units></Units>
         <Count>1</Count>
     </item>
-    <item>
-        <EFDB_Name>detailedState</EFDB_Name>
-        <Description></Description>
-        <!-- Enumeration: DetailedState -->
-        <IDL_Type>long</IDL_Type>
-        <Units></Units>
-        <Count>1</Count>
-        <Enumeration>detailedState_DetailedState_DisabledState,detailedState_DetailedState_EnabledState,detailedState_DetailedState_FaultState,detailedState_DetailedState_OfflineState,detailedState_DetailedState_StandbyState</Enumeration>
-    </item>
+            <item>
+                <EFDB_Name>detailedState</EFDB_Name>
+                <Description></Description>
+                <!-- Enumeration: DetailedState -->
+                <IDL_Type>long</IDL_Type>
+                <Units></Units>
+                <Count>1</Count>
+                <Enumeration>detailedState_DetailedState_DisabledState,detailedState_DetailedState_EnabledState,detailedState_DetailedState_FaultState,detailedState_DetailedState_OfflineState,detailedState_DetailedState_StandbyState,detailedState_DetailedState_GetWfState,detailedState_DetailedState_CalcDofState</Enumeration>
+            </item>
     <item>
         <EFDB_Name>timestamp</EFDB_Name>
         <Description></Description>
@@ -171,7 +171,7 @@
 </SALEvent>
 <SALEvent>
     <Subsystem>tcsOfc</Subsystem>
-    <Version>3.5.1</Version>
+    <Version>3.7.0</Version>
     <Author></Author>
     <EFDB_Topic>tcsOfc_logevent_noEnoughZernikeTerm</EFDB_Topic>
     <Alias>noEnoughZernikeTerm</Alias>
@@ -179,6 +179,28 @@
     <item>
         <EFDB_Name>timestamp</EFDB_Name>
         <Description>The time stamp for when the event occurred.</Description>
+        <IDL_Type>double</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+</SALEvent>
+<SALEvent>
+    <Subsystem>tcsOfc</Subsystem>
+    <Version>3.7.0</Version>
+    <Author></Author>
+    <EFDB_Topic>tcsOfc_logevent_degreeOfFreedom</EFDB_Topic>
+    <Alias>degreeOfFreedom</Alias>
+    <Explanation>http://sal.lsst.org</Explanation>
+    <item>
+        <EFDB_Name>dof</EFDB_Name>
+        <Description>Calculated degree of freedom (DOF) based on the control algorithm.</Description>
+        <IDL_Type>double</IDL_Type>
+        <Units></Units>
+        <Count>50</Count>
+    </item>
+    <item>
+        <EFDB_Name>timestamp</EFDB_Name>
+        <Description></Description>
         <IDL_Type>double</IDL_Type>
         <Units></Units>
         <Count>1</Count>
