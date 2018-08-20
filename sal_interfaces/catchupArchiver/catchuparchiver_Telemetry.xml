@@ -3,21 +3,30 @@
 <SALTelemetrySet xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:noNamespaceSchemaLocation="http://project.lsst.org/ts/sal_objects/schema/SALTelemetrySet.xsd">
 <SALTelemetry>
-    <Subsystem>archiver</Subsystem>
+    <Subsystem>catchupArchiver</Subsystem>
     <Version>3.7.1</Version>
     <Author></Author>
-    <EFDB_Topic>archiver_sequencerHeartbeat</EFDB_Topic>
+    <EFDB_Topic>catchupArchiver_sequencerHeartbeat</EFDB_Topic>
     <item>
-        <EFDB_Name>heartbeat</EFDB_Name>
+        <EFDB_Name>name</EFDB_Name>
         <Description></Description>
-        <IDL_Type>boolean</IDL_Type>
+        <IDL_Type>string</IDL_Type>
+        <IDL_Size>128</IDL_Size>
         <Units></Units>
         <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>priority</EFDB_Name>
+        <EFDB_Name>identifier</EFDB_Name>
         <Description></Description>
-        <IDL_Type>long</IDL_Type>
+        <IDL_Type>float</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>timestamp</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>string</IDL_Type>
+        <IDL_Size>256</IDL_Size>
         <Units></Units>
         <Count>1</Count>
     </item>

@@ -4,13 +4,13 @@
 	xsi:noNamespaceSchemaLocation="http://project.lsst.org/ts/sal_objects/schema/SALEventSet.xsd">
 <SALEvent>
     <Subsystem>archiver</Subsystem>
-    <Version>3.5.2</Version>
+    <Version>3.7.1</Version>
     <Author></Author>
     <EFDB_Topic>archiver_logevent_archiverEntityShutdown</EFDB_Topic>
     <Alias>archiverEntityShutdown</Alias>
     <Explanation>http://project.lsst.org/ts/sal_objects/help/archiver_logevent_archiverEntityShutdown.html</Explanation>
     <item>
-        <EFDB_Name>Name</EFDB_Name>
+        <EFDB_Name>name</EFDB_Name>
         <Description></Description>
         <IDL_Type>string</IDL_Type>
         <IDL_Size>128</IDL_Size>
@@ -18,14 +18,14 @@
         <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>Identifier</EFDB_Name>
+        <EFDB_Name>identifier</EFDB_Name>
         <Description></Description>
         <IDL_Type>double</IDL_Type>
         <Units></Units>
         <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>Timestamp</EFDB_Name>
+        <EFDB_Name>timestamp</EFDB_Name>
         <Description></Description>
         <IDL_Type>string</IDL_Type>
         <IDL_Size>256</IDL_Size>
@@ -33,7 +33,7 @@
         <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>Address</EFDB_Name>
+        <EFDB_Name>address</EFDB_Name>
         <Description></Description>
         <IDL_Type>long</IDL_Type>
         <Units></Units>
@@ -42,13 +42,13 @@
 </SALEvent>
 <SALEvent>
     <Subsystem>archiver</Subsystem>
-    <Version>3.5.2</Version>
+    <Version>3.7.1</Version>
     <Author></Author>
-    <EFDB_Topic>archiver_logevent_DetailedState</EFDB_Topic>
-    <Alias>DetailedState</Alias>
-    <Explanation>http://project.lsst.org/ts/sal_objects/help/archiver_logevent_DetailedState.html</Explanation>
+    <EFDB_Topic>archiver_logevent_detailedState</EFDB_Topic>
+    <Alias>detailedState</Alias>
+    <Explanation>http://project.lsst.org/ts/sal_objects/help/archiver_logevent_detailedState.html</Explanation>
     <item>
-        <EFDB_Name>DetailedState</EFDB_Name>
+        <EFDB_Name>detailedState</EFDB_Name>
         <Description></Description>
         <IDL_Type>long</IDL_Type>
         <Units></Units>
@@ -57,13 +57,13 @@
 </SALEvent>
 <SALEvent>
     <Subsystem>archiver</Subsystem>
-    <Version>3.5.2</Version>
+    <Version>3.7.1</Version>
     <Author></Author>
     <EFDB_Topic>archiver_logevent_archiverEntityStartup</EFDB_Topic>
     <Alias>archiverEntityStartup</Alias>
     <Explanation>http://project.lsst.org/ts/sal_objects/help/archiver_logevent_archiverEntityStartup.html</Explanation>
     <item>
-        <EFDB_Name>Name</EFDB_Name>
+        <EFDB_Name>name</EFDB_Name>
         <Description></Description>
         <IDL_Type>string</IDL_Type>
         <IDL_Size>128</IDL_Size>
@@ -71,14 +71,14 @@
         <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>Identifier</EFDB_Name>
+        <EFDB_Name>identifier</EFDB_Name>
         <Description></Description>
         <IDL_Type>double</IDL_Type>
         <Units></Units>
         <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>Timestamp</EFDB_Name>
+        <EFDB_Name>timestamp</EFDB_Name>
         <Description></Description>
         <IDL_Type>string</IDL_Type>
         <IDL_Size>256</IDL_Size>
@@ -86,7 +86,7 @@
         <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>Address</EFDB_Name>
+        <EFDB_Name>address</EFDB_Name>
         <Description></Description>
         <IDL_Type>long</IDL_Type>
         <Units></Units>
@@ -95,28 +95,53 @@
 </SALEvent>
 <SALEvent>
     <Subsystem>archiver</Subsystem>
-    <Version>3.5.2</Version>
+    <Version>3.7.1</Version>
     <Author></Author>
-    <EFDB_Topic>archiver_logevent_SummaryState</EFDB_Topic>
-    <Alias>SummaryState</Alias>
-    <Explanation>http://project.lsst.org/ts/sal_objects/help/archiver_logevent_SummaryState.html</Explanation>
+    <EFDB_Topic>archiver_logevent_summaryState</EFDB_Topic>
+    <Alias>summaryState</Alias>
+    <Explanation>http://project.lsst.org/ts/sal_objects/help/archiver_logevent_summaryState.html</Explanation>
     <item>
-        <EFDB_Name>SummaryStateValue</EFDB_Name>
+        <EFDB_Name>summaryStateValue</EFDB_Name>
         <Description></Description>
         <IDL_Type>long</IDL_Type>
         <Units></Units>
         <Count>1</Count>
+        <Enumeration>DisabledState,EnabledState,FaultState,OfflineState,StandbyState</Enumeration>
     </item>
 </SALEvent>
 <SALEvent>
     <Subsystem>archiver</Subsystem>
-    <Version>3.5.2</Version>
+    <Version>3.7.1</Version>
     <Author></Author>
-    <EFDB_Topic>archiver_logevent_SettingsApplied</EFDB_Topic>
-    <Alias>SettingsApplied</Alias>
-    <Explanation>http://project.lsst.org/ts/sal_objects/help/archiver_logevent_SettingsApplied.html</Explanation>
+    <EFDB_Topic>archiver_logevent_settingsApplied</EFDB_Topic>
+    <Alias>settingsApplied</Alias>
+    <Explanation>http://project.lsst.org/ts/sal_objects/help/archiver_logevent_settingsApplied.html</Explanation>
     <item>
-        <EFDB_Name>Settings</EFDB_Name>
+        <EFDB_Name>settings</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>string</IDL_Type>
+        <IDL_Size>256</IDL_Size>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>tsXMLVersion</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>string</IDL_Type>
+        <IDL_Size>256</IDL_Size>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>tsSALVersion</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>string</IDL_Type>
+        <IDL_Size>256</IDL_Size>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>l1dmRepoTag</EFDB_Name>
         <Description></Description>
         <IDL_Type>string</IDL_Type>
         <IDL_Size>256</IDL_Size>
@@ -126,11 +151,11 @@
 </SALEvent>
 <SALEvent>
     <Subsystem>archiver</Subsystem>
-    <Version>3.5.2</Version>
+    <Version>3.7.1</Version>
     <Author></Author>
-    <EFDB_Topic>archiver_logevent_SettingVersions</EFDB_Topic>
-    <Alias>SettingVersions</Alias>
-    <Explanation>http://project.lsst.org/ts/sal_objects/help/archiver_logevent_SettingVersions.html</Explanation>
+    <EFDB_Topic>archiver_logevent_settingVersions</EFDB_Topic>
+    <Alias>settingVersions</Alias>
+    <Explanation>http://project.lsst.org/ts/sal_objects/help/archiver_logevent_settingVersions.html</Explanation>
     <item>
         <EFDB_Name>recommendedSettingVersion</EFDB_Name>
         <Description></Description>
@@ -142,11 +167,11 @@
 </SALEvent>
 <SALEvent>
     <Subsystem>archiver</Subsystem>
-    <Version>3.5.2</Version>
+    <Version>3.7.1</Version>
     <Author></Author>
-    <EFDB_Topic>archiver_logevent_AppliedSettingsMatchStart</EFDB_Topic>
-    <Alias>AppliedSettingsMatchStart</Alias>
-    <Explanation>http://project.lsst.org/ts/sal_objects/help/archiver_logevent_AppliedSettingsMatchStart.html</Explanation>
+    <EFDB_Topic>archiver_logevent_appliedSettingsMatchStart</EFDB_Topic>
+    <Alias>appliedSettingsMatchStart</Alias>
+    <Explanation>http://project.lsst.org/ts/sal_objects/help/archiver_logevent_appliedSettingsMatchStart.html</Explanation>
     <item>
         <EFDB_Name>appliedSettingsMatchStartIsTrue</EFDB_Name>
         <Description></Description>
@@ -157,11 +182,11 @@
 </SALEvent>
 <SALEvent>
     <Subsystem>archiver</Subsystem>
-    <Version>3.5.2</Version>
+    <Version>3.7.1</Version>
     <Author></Author>
-    <EFDB_Topic>archiver_logevent_ErrorCode</EFDB_Topic>
-    <Alias>ErrorCode</Alias>
-    <Explanation>http://project.lsst.org/ts/sal_objects/help/archiver_logevent_ErrorCode.html</Explanation>
+    <EFDB_Topic>archiver_logevent_errorCode</EFDB_Topic>
+    <Alias>errorCode</Alias>
+    <Explanation>http://project.lsst.org/ts/sal_objects/help/archiver_logevent_errorCode.html</Explanation>
     <item>
         <EFDB_Name>errorCode</EFDB_Name>
         <Description></Description>
@@ -172,13 +197,13 @@
 </SALEvent>
 <SALEvent>
     <Subsystem>archiver</Subsystem>
-    <Version>3.5.2</Version>
+    <Version>3.7.1</Version>
     <Author></Author>
     <EFDB_Topic>archiver_logevent_archiverEntitySummaryState</EFDB_Topic>
     <Alias>archiverEntitySummaryState</Alias>
     <Explanation>http://project.lsst.org/ts/sal_objects/help/archiver_logevent_archiverEntitySummaryState.html</Explanation>
     <item>
-        <EFDB_Name>Name</EFDB_Name>
+        <EFDB_Name>name</EFDB_Name>
         <Description></Description>
         <IDL_Type>string</IDL_Type>
         <IDL_Size>128</IDL_Size>
@@ -186,14 +211,14 @@
         <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>Identifier</EFDB_Name>
+        <EFDB_Name>identifier</EFDB_Name>
         <Description></Description>
         <IDL_Type>double</IDL_Type>
         <Units></Units>
         <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>Timestamp</EFDB_Name>
+        <EFDB_Name>timestamp</EFDB_Name>
         <Description></Description>
         <IDL_Type>string</IDL_Type>
         <IDL_Size>256</IDL_Size>
@@ -201,14 +226,14 @@
         <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>Address</EFDB_Name>
+        <EFDB_Name>address</EFDB_Name>
         <Description></Description>
         <IDL_Type>long</IDL_Type>
         <Units></Units>
         <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>CurrentState</EFDB_Name>
+        <EFDB_Name>currentState</EFDB_Name>
         <Description></Description>
         <IDL_Type>string</IDL_Type>
         <IDL_Size>128</IDL_Size>
@@ -216,7 +241,7 @@
         <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>PreviousState</EFDB_Name>
+        <EFDB_Name>previousState</EFDB_Name>
         <Description></Description>
         <IDL_Type>string</IDL_Type>
         <IDL_Size>128</IDL_Size>
@@ -224,7 +249,7 @@
         <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>Executing</EFDB_Name>
+        <EFDB_Name>executing</EFDB_Name>
         <Description></Description>
         <IDL_Type>string</IDL_Type>
         <IDL_Size>128</IDL_Size>
@@ -232,7 +257,7 @@
         <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>CommandsAvailable</EFDB_Name>
+        <EFDB_Name>commandsAvailable</EFDB_Name>
         <Description></Description>
         <IDL_Type>string</IDL_Type>
         <IDL_Size>128</IDL_Size>
@@ -240,7 +265,7 @@
         <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>ConfigurationsAvailable</EFDB_Name>
+        <EFDB_Name>configurationsAvailable</EFDB_Name>
         <Description></Description>
         <IDL_Type>string</IDL_Type>
         <IDL_Size>128</IDL_Size>
