@@ -1,0 +1,406 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="http://lsst-sal.tuc.noao.edu/schema/SALEventSet.xsl"?>
+<SALEventSet xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="http://lsst-sal.tuc.noao.edu/schema/SALEventSet.xsd">
+<Enumeration>SummaryState_DisabledState,SummaryState_EnabledState,SummaryState_FaultState,SummaryState_OfflineState,SummaryState_StandbyState</Enumeration>
+<Enumeration>DetailedState_DisabledState,DetailedState_EnabledState,DetailedState_FaultState,DetailedState_OfflineState,DetailedState_StandbyState</Enumeration>
+<Enumeration>FilterType_U,FilterType_G,FilterType_R,FilterType_I,FilterType_Z,FilterType_Y</Enumeration>
+<Enumeration>InstType_ComCam,InstType_Lsst</Enumeration>
+
+<SALEvent>
+    <Subsystem>tcsWEP</Subsystem>
+    <Version>3.7.0</Version>
+    <Author></Author>
+    <EFDB_Topic>tcsWEP_logevent_appliedSettingsMatchStart</EFDB_Topic>
+    <Alias>appliedSettingsMatchStart</Alias>
+    <Explanation>http://sal.lsst.org</Explanation>
+    <item>
+        <EFDB_Name>appliedSettingsMatchStartIsTrue</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>boolean</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+</SALEvent>
+<SALEvent>
+    <Subsystem>tcsWEP</Subsystem>
+    <Version>3.7.0</Version>
+    <Author></Author>
+    <EFDB_Topic>tcsWEP_logevent_errorCode</EFDB_Topic>
+    <Alias>errorCode</Alias>
+    <Explanation>http://sal.lsst.org</Explanation>
+    <item>
+        <EFDB_Name>errorCode</EFDB_Name>
+        <Description>The error code being published.</Description>
+        <IDL_Type>long</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+</SALEvent>
+<SALEvent>
+    <Subsystem>tcsWEP</Subsystem>
+    <Version>3.7.0</Version>
+    <Author></Author>
+    <EFDB_Topic>tcsWEP_logevent_settingVersions</EFDB_Topic>
+    <Alias>settingVersions</Alias>
+    <Explanation>http://sal.lsst.org</Explanation>
+    <item>
+        <EFDB_Name>recommendedSettingsVersion</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>string</IDL_Type>
+        <IDL_Size>256</IDL_Size>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>recommendedSettingsLabels</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>string</IDL_Type>
+        <IDL_Size>256</IDL_Size>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+</SALEvent>
+<SALEvent>
+    <Subsystem>tcsWEP</Subsystem>
+    <Version>3.7.0</Version>
+    <Author></Author>
+    <EFDB_Topic>tcsWEP_logevent_summaryState</EFDB_Topic>
+    <Alias>summaryState</Alias>
+    <Explanation>http://sal.lsst.org</Explanation>
+            <item>
+                <EFDB_Name>summaryState</EFDB_Name>
+                <Description>An enumeration indicating the subsystem summary state. See the SummaryStateValue enumeration defined in the Typedefs package.</Description>
+                <!-- Enumeration: SummaryState -->
+                <IDL_Type>long</IDL_Type>
+                <Units></Units>
+                <Count>1</Count>
+            </item>
+</SALEvent>
+<SALEvent>
+    <Subsystem>tcsWEP</Subsystem>
+    <Version>3.7.0</Version>
+    <Author></Author>
+    <EFDB_Topic>tcsWEP_logevent_detailedState</EFDB_Topic>
+    <Alias>detailedState</Alias>
+    <Explanation>http://sal.lsst.org</Explanation>
+            <item>
+                <EFDB_Name>detailedState</EFDB_Name>
+                <Description></Description>
+                <!-- Enumeration: DetailedState -->
+                <IDL_Type>long</IDL_Type>
+                <Units></Units>
+                <Count>1</Count>
+            </item>
+</SALEvent>
+<SALEvent>
+    <Subsystem>tcsWEP</Subsystem>
+    <Version>3.7.0</Version>
+    <Author></Author>
+    <EFDB_Topic>tcsWEP_logevent_internalCommand</EFDB_Topic>
+    <Alias>internalCommand</Alias>
+    <Explanation>http://sal.lsst.org</Explanation>
+    <item>
+        <EFDB_Name>commandObject</EFDB_Name>
+        <Description>The error code being published.</Description>
+        <IDL_Type>byte</IDL_Type>
+        <Units></Units>
+        <Count>800</Count>
+    </item>
+</SALEvent>
+<SALEvent>
+    <Subsystem>tcsWEP</Subsystem>
+    <Version>3.7.0</Version>
+    <Author></Author>
+    <EFDB_Topic>tcsWEP_logevent_heartbeat</EFDB_Topic>
+    <Alias>heartbeat</Alias>
+    <Explanation>http://sal.lsst.org</Explanation>
+    <item>
+        <EFDB_Name>heartbeat</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>boolean</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+</SALEvent>
+<SALEvent>
+    <Subsystem>tcsWEP</Subsystem>
+    <Version>3.7.0</Version>
+    <Author></Author>
+    <EFDB_Topic>tcsWEP_logevent_loopTimeOutOfRange</EFDB_Topic>
+    <Alias>loopTimeOutOfRange</Alias>
+    <Explanation>http://sal.lsst.org</Explanation>
+    <item>
+        <EFDB_Name>loopTimeOutOfRange</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>boolean</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+</SALEvent>
+<SALEvent>
+    <Subsystem>tcsWEP</Subsystem>
+    <Version>3.7.0</Version>
+    <Author></Author>
+    <EFDB_Topic>tcsWEP_logevent_rejectedCommand</EFDB_Topic>
+    <Alias>rejectedCommand</Alias>
+    <Explanation>http://sal.lsst.org</Explanation>
+    <item>
+        <EFDB_Name>commandValue</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>unsigned short</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+            <item>
+                <EFDB_Name>detailedState</EFDB_Name>
+                <Description></Description>
+                <!-- Enumeration: DetailedState -->
+                <IDL_Type>long</IDL_Type>
+                <Units></Units>
+                <Count>1</Count>
+            </item>
+    <item>
+        <EFDB_Name>timestamp</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>double</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+</SALEvent>
+<SALEvent>
+    <Subsystem>tcsWEP</Subsystem>
+    <Version>3.7.0</Version>
+    <Author></Author>
+    <EFDB_Topic>tcsWEP_logevent_noEnoughWfsNum</EFDB_Topic>
+    <Alias>noEnoughWfsNum</Alias>
+    <Explanation>http://sal.lsst.org</Explanation>
+    <item>
+        <EFDB_Name>timestamp</EFDB_Name>
+        <Description>The time stamp for when the event occurred.</Description>
+        <IDL_Type>double</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+</SALEvent>
+<SALEvent>
+    <Subsystem>tcsWEP</Subsystem>
+    <Version>3.7.0</Version>
+    <Author></Author>
+    <EFDB_Topic>tcsWEP_logevent_wavefrontError</EFDB_Topic>
+    <Alias>wavefrontError</Alias>
+    <Explanation>http://sal.lsst.org</Explanation>
+    <item>
+        <EFDB_Name>sensorId</EFDB_Name>
+        <Description>Wavefront sensor ID.</Description>
+        <IDL_Type>short</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>annularZernikePoly</EFDB_Name>
+        <Description>z4-z22 terms of annular Zernike polynomials.The unit should be decided in a latter time.</Description>
+        <IDL_Type>double</IDL_Type>
+        <Units></Units>
+        <Count>19</Count>
+    </item>
+    <item>
+        <EFDB_Name>timestamp</EFDB_Name>
+        <Description>The time stamp for when the telemetry was sampled.</Description>
+        <IDL_Type>double</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+</SALEvent>
+<SALEvent>
+    <Subsystem>tcsWEP</Subsystem>
+    <Version>3.7.0</Version>
+    <Author></Author>
+    <EFDB_Topic>tcsWEP_logevent_normalTargetWfsList</EFDB_Topic>
+    <Alias>normalTargetWfsList</Alias>
+    <Explanation>http://sal.lsst.org</Explanation>
+    <item>
+        <EFDB_Name>sensorIdList</EFDB_Name>
+        <Description>List of target sensor Id list. Put -1 for unused element.</Description>
+        <IDL_Type>short</IDL_Type>
+        <Units></Units>
+        <Count>4</Count>
+    </item>
+    <item>
+        <EFDB_Name>timestamp</EFDB_Name>
+        <Description>The time stamp for when the telemetry was sampled.</Description>
+        <IDL_Type>double</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+</SALEvent>
+<SALEvent>
+    <Subsystem>tcsWEP</Subsystem>
+    <Version>3.7.0</Version>
+    <Author></Author>
+    <EFDB_Topic>tcsWEP_logevent_comcamTargetWfsList</EFDB_Topic>
+    <Alias>comcamTargetWfsList</Alias>
+    <Explanation>http://sal.lsst.org</Explanation>
+    <item>
+        <EFDB_Name>sensorIdList</EFDB_Name>
+        <Description>List of target sensor Id list. Put -1 for unused element.</Description>
+        <IDL_Type>short</IDL_Type>
+        <Units></Units>
+        <Count>9</Count>
+    </item>
+    <item>
+        <EFDB_Name>timestamp</EFDB_Name>
+        <Description>The time stamp for when the telemetry was sampled.</Description>
+        <IDL_Type>double</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+</SALEvent>
+<SALEvent>
+    <Subsystem>tcsWEP</Subsystem>
+    <Version>3.7.0</Version>
+    <Author></Author>
+    <EFDB_Topic>tcsWEP_logevent_famTargetWfsList</EFDB_Topic>
+    <Alias>famTargetWfsList</Alias>
+    <Explanation>http://sal.lsst.org</Explanation>
+    <item>
+        <EFDB_Name>sensorIdList</EFDB_Name>
+        <Description>List of target sensor Id list. Put -1 for unused element.</Description>
+        <IDL_Type>short</IDL_Type>
+        <Units></Units>
+        <Count>189</Count>
+    </item>
+    <item>
+        <EFDB_Name>timestamp</EFDB_Name>
+        <Description>The time stamp for when the telemetry was sampled.</Description>
+        <IDL_Type>double</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+</SALEvent>
+<SALEvent>
+    <Subsystem>tcsWEP</Subsystem>
+    <Version>3.7.0</Version>
+    <Author></Author>
+    <EFDB_Topic>tcsWEP_logevent_sensorPssnList</EFDB_Topic>
+    <Alias>sensorPssnList</Alias>
+    <Explanation>http://sal.lsst.org</Explanation>
+    <item>
+        <EFDB_Name>pssnList</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>double</IDL_Type>
+        <Units></Units>
+        <Count>31</Count>
+    </item>
+    <item>
+        <EFDB_Name>sensorIdList</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>short</IDL_Type>
+        <Units></Units>
+        <Count>31</Count>
+    </item>
+    <item>
+        <EFDB_Name>timestamp</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>double</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+</SALEvent>
+<SALEvent>
+    <Subsystem>tcsWEP</Subsystem>
+    <Version>3.7.0</Version>
+    <Author></Author>
+    <EFDB_Topic>tcsWEP_logevent_simParamList</EFDB_Topic>
+    <Alias>simParamList</Alias>
+    <Explanation>http://sal.lsst.org</Explanation>
+            <item>
+                <EFDB_Name>inst</EFDB_Name>
+                <Description></Description>
+                <!-- Enumeration: InstType -->
+                <IDL_Type>long</IDL_Type>
+                <Units></Units>
+                <Count>1</Count>
+            </item>
+    <item>
+        <EFDB_Name>ra</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>short</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>decl</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>short</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>camRot</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>double</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+            <item>
+                <EFDB_Name>filter</EFDB_Name>
+                <Description></Description>
+                <!-- Enumeration: FilterType -->
+                <IDL_Type>long</IDL_Type>
+                <Units></Units>
+                <Count>1</Count>
+            </item>
+    <item>
+        <EFDB_Name>timestamp</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>double</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+</SALEvent>
+<SALEvent>
+    <Subsystem>tcsWEP</Subsystem>
+    <Version>3.7.0</Version>
+    <Author></Author>
+    <EFDB_Topic>tcsWEP_logevent_imageReady</EFDB_Topic>
+    <Alias>imageReady</Alias>
+    <Explanation>http://sal.lsst.org</Explanation>
+    <item>
+        <EFDB_Name>imageDir</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>string</IDL_Type>
+        <IDL_Size>256</IDL_Size>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>opdDir</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>string</IDL_Type>
+        <IDL_Size>256</IDL_Size>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>intraFocalVisitId</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>long</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>extraFocalVisitId</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>long</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>timestamp</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>double</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+</SALEvent></SALEventSet>
