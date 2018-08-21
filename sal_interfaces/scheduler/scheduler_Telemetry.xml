@@ -1,4155 +1,2354 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-stylesheet type="text/xsl" href="http://lsst-sal.tuc.noao.edu/schema/SALTelemetrySet.xsl"?>
-<SALTelemetrySet xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://lsst-sal.tuc.noao.edu/schema/SALTelemetrySet.xsd">
+<SALTelemetrySet xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="http://lsst-sal.tuc.noao.edu/schema/SALTelemetrySet.xsd">
 <SALTelemetry>
     <Subsystem>scheduler</Subsystem>
-    <Version>3.2.0</Version>
-    <Author>salgenerator</Author>
-    <EFDB_Topic>scheduler_timeHandler</EFDB_Topic>
+    <Version>3.5.2</Version>
+    <Author></Author>
+    <EFDB_Topic>scheduler_timestamp</EFDB_Topic>
+    <item>
+        <EFDB_Name>timestamp</EFDB_Name>
+        <Description>The system time (TAI).</Description>
+        <IDL_Type>double</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+</SALTelemetry>
+<SALTelemetry>
+    <Subsystem>scheduler</Subsystem>
+    <Version>3.5.2</Version>
+    <Author></Author>
+    <EFDB_Topic>scheduler_loopTimeMs</EFDB_Topic>
+    <item>
+        <EFDB_Name>loopTimeMs</EFDB_Name>
+        <Description>The actual loop time is ms.
+</Description>
+        <IDL_Type>double</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+</SALTelemetry>
+<SALTelemetry>
+    <Subsystem>scheduler</Subsystem>
+    <Version>3.5.2</Version>
+    <Author></Author>
+    <EFDB_Topic>scheduler_nightSummary</EFDB_Topic>
+    <item>
+        <EFDB_Name>totalVisits</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>double</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
     <item>
         <EFDB_Name>timestamp</EFDB_Name>
         <Description></Description>
-        <Frequency>0.054</Frequency>
-        <Size_in_bytes>8</Size_in_bytes>
         <IDL_Type>double</IDL_Type>
-        <Units>seconds</Units>
-        <Conversion></Conversion>
-        <Sensor_location></Sensor_location>
-        <Count>1</Count>
-    </item>
-    <item>
-        <EFDB_Name>night</EFDB_Name>
-        <Description></Description>
-        <Frequency>0.054</Frequency>
-        <Size_in_bytes>8</Size_in_bytes>
-        <IDL_Type>long</IDL_Type>
         <Units></Units>
-        <Conversion></Conversion>
-        <Sensor_location></Sensor_location>
-        <Count>1</Count>
-    </item>
-    <item>
-        <EFDB_Name>is_down</EFDB_Name>
-        <Description></Description>
-        <Frequency>0.054</Frequency>
-        <Size_in_bytes>1</Size_in_bytes>
-        <IDL_Type>boolean</IDL_Type>
-        <Units></Units>
-        <Conversion></Conversion>
-        <Sensor_location></Sensor_location>
-        <Count>1</Count>
-    </item>
-    <item>
-        <EFDB_Name>down_duration</EFDB_Name>
-        <Description></Description>
-        <Frequency>0.054</Frequency>
-        <Size_in_bytes>8</Size_in_bytes>
-        <IDL_Type>double</IDL_Type>
-        <Units>days</Units>
-        <Conversion></Conversion>
-        <Sensor_location></Sensor_location>
         <Count>1</Count>
     </item>
 </SALTelemetry>
 <SALTelemetry>
     <Subsystem>scheduler</Subsystem>
-    <Version>3.2.0</Version>
-    <Author>salgenerator</Author>
-    <EFDB_Topic>scheduler_cloud</EFDB_Topic>
-    <item>
-        <EFDB_Name>timestamp</EFDB_Name>
-        <Description></Description>
-        <Frequency>0.054</Frequency>
-        <Size_in_bytes>8</Size_in_bytes>
-        <IDL_Type>double</IDL_Type>
-        <Units>seconds</Units>
-        <Conversion></Conversion>
-        <Sensor_location></Sensor_location>
-        <Count>1</Count>
-    </item>
-    <item>
-        <EFDB_Name>cloud</EFDB_Name>
-        <Description></Description>
-        <Frequency>0.054</Frequency>
-        <Size_in_bytes>8</Size_in_bytes>
-        <IDL_Type>double</IDL_Type>
-        <Units></Units>
-        <Conversion></Conversion>
-        <Sensor_location></Sensor_location>
-        <Count>1</Count>
-    </item>
-</SALTelemetry>
-<SALTelemetry>
-    <Subsystem>scheduler</Subsystem>
-    <Version>3.2.0</Version>
-    <Author>salgenerator</Author>
-    <EFDB_Topic>scheduler_seeing</EFDB_Topic>
-    <item>
-        <EFDB_Name>timestamp</EFDB_Name>
-        <Description></Description>
-        <Frequency>0.054</Frequency>
-        <Size_in_bytes>8</Size_in_bytes>
-        <IDL_Type>double</IDL_Type>
-        <Units>seconds</Units>
-        <Conversion></Conversion>
-        <Sensor_location></Sensor_location>
-        <Count>1</Count>
-    </item>
-    <item>
-        <EFDB_Name>seeing</EFDB_Name>
-        <Description></Description>
-        <Frequency>0.054</Frequency>
-        <Size_in_bytes>8</Size_in_bytes>
-        <IDL_Type>double</IDL_Type>
-        <Units>arcseconds</Units>
-        <Conversion></Conversion>
-        <Sensor_location></Sensor_location>
-        <Count>1</Count>
-    </item>
-</SALTelemetry>
-<SALTelemetry>
-    <Subsystem>scheduler</Subsystem>
-    <Version>3.2.0</Version>
-    <Author>salgenerator</Author>
-    <EFDB_Topic>scheduler_filterSwap</EFDB_Topic>
-    <item>
-        <EFDB_Name>need_swap</EFDB_Name>
-        <Description></Description>
-        <Frequency>0.054</Frequency>
-        <Size_in_bytes></Size_in_bytes>
-        <IDL_Type>boolean</IDL_Type>
-        <Units></Units>
-        <Conversion></Conversion>
-        <Sensor_location></Sensor_location>
-        <Count>1</Count>
-    </item>
-    <item>
-        <EFDB_Name>filter_to_unmount</EFDB_Name>
-        <Description></Description>
-        <Frequency>0.054</Frequency>
-        <Size_in_bytes></Size_in_bytes>
-        <IDL_Type>string</IDL_Type>
-        <Units></Units>
-        <Conversion></Conversion>
-        <Sensor_location></Sensor_location>
-        <Count>1</Count>
-    </item>
-</SALTelemetry>
-<SALTelemetry>
-    <Subsystem>scheduler</Subsystem>
-    <Version>3.2.0</Version>
-    <Author>salgenerator</Author>
-    <EFDB_Topic>scheduler_schedulerConfig</EFDB_Topic>
-    <item>
-        <EFDB_Name>survey_duration</EFDB_Name>
-        <Description></Description>
-        <Frequency>0.054</Frequency>
-        <Size_in_bytes>8</Size_in_bytes>
-        <IDL_Type>double</IDL_Type>
-        <Units>days</Units>
-        <Conversion></Conversion>
-        <Sensor_location></Sensor_location>
-        <Count>1</Count>
-    </item>
-</SALTelemetry>
-<SALTelemetry>
-    <Subsystem>scheduler</Subsystem>
-    <Version>3.2.0</Version>
-    <Author>salgenerator</Author>
-    <EFDB_Topic>scheduler_driverConfig</EFDB_Topic>
-    <item>
-        <EFDB_Name>coadd_values</EFDB_Name>
-        <Description></Description>
-        <Frequency>0.054</Frequency>
-        <Size_in_bytes></Size_in_bytes>
-        <IDL_Type>boolean</IDL_Type>
-        <Units></Units>
-        <Conversion></Conversion>
-        <Sensor_location></Sensor_location>
-        <Count>1</Count>
-    </item>
-    <item>
-        <EFDB_Name>time_balancing</EFDB_Name>
-        <Description></Description>
-        <Frequency>0.054</Frequency>
-        <Size_in_bytes></Size_in_bytes>
-        <IDL_Type>boolean</IDL_Type>
-        <Units></Units>
-        <Conversion></Conversion>
-        <Sensor_location></Sensor_location>
-        <Count>1</Count>
-    </item>
-    <item>
-        <EFDB_Name>timecost_time_max</EFDB_Name>
-        <Description></Description>
-        <Frequency>0.054</Frequency>
-        <Size_in_bytes>8</Size_in_bytes>
-        <IDL_Type>double</IDL_Type>
-        <Units></Units>
-        <Conversion></Conversion>
-        <Sensor_location></Sensor_location>
-        <Count>1</Count>
-    </item>
-    <item>
-        <EFDB_Name>timecost_time_ref</EFDB_Name>
-        <Description></Description>
-        <Frequency>0.054</Frequency>
-        <Size_in_bytes>8</Size_in_bytes>
-        <IDL_Type>double</IDL_Type>
-        <Units></Units>
-        <Conversion></Conversion>
-        <Sensor_location></Sensor_location>
-        <Count>1</Count>
-    </item>
-    <item>
-        <EFDB_Name>timecost_cost_ref</EFDB_Name>
-        <Description></Description>
-        <Frequency>0.054</Frequency>
-        <Size_in_bytes>8</Size_in_bytes>
-        <IDL_Type>double</IDL_Type>
-        <Units></Units>
-        <Conversion></Conversion>
-        <Sensor_location></Sensor_location>
-        <Count>1</Count>
-    </item>
-    <item>
-        <EFDB_Name>timecost_weight</EFDB_Name>
-        <Description></Description>
-        <Frequency>0.054</Frequency>
-        <Size_in_bytes>8</Size_in_bytes>
-        <IDL_Type>double</IDL_Type>
-        <Units></Units>
-        <Conversion></Conversion>
-        <Sensor_location></Sensor_location>
-        <Count>1</Count>
-    </item>
-    <item>
-        <EFDB_Name>filtercost_weight</EFDB_Name>
-        <Description></Description>
-        <Frequency>0.054</Frequency>
-        <Size_in_bytes>8</Size_in_bytes>
-        <IDL_Type>double</IDL_Type>
-        <Units></Units>
-        <Conversion></Conversion>
-        <Sensor_location></Sensor_location>
-        <Count>1</Count>
-    </item>
-    <item>
-        <EFDB_Name>propboost_weight</EFDB_Name>
-        <Description></Description>
-        <Frequency>0.054</Frequency>
-        <Size_in_bytes>8</Size_in_bytes>
-        <IDL_Type>double</IDL_Type>
-        <Units></Units>
-        <Conversion></Conversion>
-        <Sensor_location></Sensor_location>
-        <Count>1</Count>
-    </item>
-    <item>
-        <EFDB_Name>night_boundary</EFDB_Name>
-        <Description></Description>
-        <Frequency>0.054</Frequency>
-        <Size_in_bytes>8</Size_in_bytes>
-        <IDL_Type>double</IDL_Type>
-        <Units></Units>
-        <Conversion></Conversion>
-        <Sensor_location></Sensor_location>
-        <Count>1</Count>
-    </item>
-    <item>
-        <EFDB_Name>new_moon_phase_threshold</EFDB_Name>
-        <Description></Description>
-        <Frequency>0.054</Frequency>
-        <Size_in_bytes>8</Size_in_bytes>
-        <IDL_Type>double</IDL_Type>
-        <Units></Units>
-        <Conversion></Conversion>
-        <Sensor_location></Sensor_location>
-        <Count>1</Count>
-    </item>
-    <item>
-        <EFDB_Name>ignore_sky_brightness</EFDB_Name>
-        <Description></Description>
-        <Frequency>0.054</Frequency>
-        <Size_in_bytes>1</Size_in_bytes>
-        <IDL_Type>boolean</IDL_Type>
-        <Units></Units>
-        <Conversion></Conversion>
-        <Sensor_location></Sensor_location>
-        <Count>1</Count>
-    </item>
-    <item>
-        <EFDB_Name>ignore_airmass</EFDB_Name>
-        <Description></Description>
-        <Frequency>0.054</Frequency>
-        <Size_in_bytes>1</Size_in_bytes>
-        <IDL_Type>boolean</IDL_Type>
-        <Units></Units>
-        <Conversion></Conversion>
-        <Sensor_location></Sensor_location>
-        <Count>1</Count>
-    </item>
-    <item>
-        <EFDB_Name>ignore_clouds</EFDB_Name>
-        <Description></Description>
-        <Frequency>0.054</Frequency>
-        <Size_in_bytes>1</Size_in_bytes>
-        <IDL_Type>boolean</IDL_Type>
-        <Units></Units>
-        <Conversion></Conversion>
-        <Sensor_location></Sensor_location>
-        <Count>1</Count>
-    </item>
-    <item>
-        <EFDB_Name>ignore_seeing</EFDB_Name>
-        <Description></Description>
-        <Frequency>0.054</Frequency>
-        <Size_in_bytes>1</Size_in_bytes>
-        <IDL_Type>boolean</IDL_Type>
-        <Units></Units>
-        <Conversion></Conversion>
-        <Sensor_location></Sensor_location>
-        <Count>1</Count>
-    </item>
-</SALTelemetry>
-<SALTelemetry>
-    <Subsystem>scheduler</Subsystem>
-    <Version>3.2.0</Version>
-    <Author>salgenerator</Author>
-    <EFDB_Topic>scheduler_field</EFDB_Topic>
-    <item>
-        <EFDB_Name>ID</EFDB_Name>
-        <Description></Description>
-        <Frequency>0.054</Frequency>
-        <Size_in_bytes>8</Size_in_bytes>
-        <IDL_Type>int</IDL_Type>
-        <Units></Units>
-        <Conversion></Conversion>
-        <Sensor_location></Sensor_location>
-        <Count>1</Count>
-    </item>
-    <item>
-        <EFDB_Name>fov</EFDB_Name>
-        <Description></Description>
-        <Frequency>0.054</Frequency>
-        <Size_in_bytes>8</Size_in_bytes>
-        <IDL_Type>double</IDL_Type>
-        <Units>degrees</Units>
-        <Conversion></Conversion>
-        <Sensor_location></Sensor_location>
-        <Count>1</Count>
-    </item>
+    <Version>3.5.2</Version>
+    <Author></Author>
+    <EFDB_Topic>scheduler_predictedSchedule</EFDB_Topic>
     <item>
         <EFDB_Name>ra</EFDB_Name>
         <Description></Description>
-        <Frequency>0.054</Frequency>
-        <Size_in_bytes>8</Size_in_bytes>
         <IDL_Type>double</IDL_Type>
-        <Units>degrees</Units>
-        <Conversion></Conversion>
-        <Sensor_location></Sensor_location>
+        <Units></Units>
         <Count>1</Count>
     </item>
     <item>
         <EFDB_Name>decl</EFDB_Name>
         <Description></Description>
-        <Frequency>0.054</Frequency>
-        <Size_in_bytes>8</Size_in_bytes>
         <IDL_Type>double</IDL_Type>
-        <Units>degrees</Units>
-        <Conversion></Conversion>
-        <Sensor_location></Sensor_location>
+        <Units></Units>
         <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>gl</EFDB_Name>
+        <EFDB_Name>skyAngle</EFDB_Name>
         <Description></Description>
-        <Frequency>0.054</Frequency>
-        <Size_in_bytes>8</Size_in_bytes>
         <IDL_Type>double</IDL_Type>
-        <Units>degrees</Units>
-        <Conversion></Conversion>
-        <Sensor_location></Sensor_location>
+        <Units></Units>
         <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>gb</EFDB_Name>
+        <EFDB_Name>visitTime</EFDB_Name>
         <Description></Description>
-        <Frequency>0.054</Frequency>
-        <Size_in_bytes>8</Size_in_bytes>
         <IDL_Type>double</IDL_Type>
-        <Units>degrees</Units>
-        <Conversion></Conversion>
-        <Sensor_location></Sensor_location>
+        <Units></Units>
         <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>el</EFDB_Name>
+        <EFDB_Name>filter</EFDB_Name>
         <Description></Description>
-        <Frequency>0.054</Frequency>
-        <Size_in_bytes>8</Size_in_bytes>
         <IDL_Type>double</IDL_Type>
-        <Units>degrees</Units>
-        <Conversion></Conversion>
-        <Sensor_location></Sensor_location>
-        <Count>1</Count>
-    </item>
-    <item>
-        <EFDB_Name>eb</EFDB_Name>
-        <Description></Description>
-        <Frequency>0.054</Frequency>
-        <Size_in_bytes>8</Size_in_bytes>
-        <IDL_Type>double</IDL_Type>
-        <Units>degrees</Units>
-        <Conversion></Conversion>
-        <Sensor_location></Sensor_location>
+        <Units></Units>
         <Count>1</Count>
     </item>
 </SALTelemetry>
 <SALTelemetry>
     <Subsystem>scheduler</Subsystem>
-    <Version>3.2.0</Version>
-    <Author>salgenerator</Author>
+    <Version>3.5.2</Version>
+    <Author></Author>
+    <EFDB_Topic>scheduler_surveyTopology</EFDB_Topic>
+    <item>
+        <EFDB_Name>numGeneralProps</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>long</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>generalPropos</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>string</IDL_Type>
+        <IDL_Size>256</IDL_Size>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>numSeqProps</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>long</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>sequencePropos</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>string</IDL_Type>
+        <IDL_Size>256</IDL_Size>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+</SALTelemetry>
+<SALTelemetry>
+    <Subsystem>scheduler</Subsystem>
+    <Version>3.5.2</Version>
+    <Author></Author>
+    <EFDB_Topic>scheduler_schedulerConfig</EFDB_Topic>
+    <item>
+        <EFDB_Name>surveyDuration</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>double</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+</SALTelemetry>
+<SALTelemetry>
+    <Subsystem>scheduler</Subsystem>
+    <Version>3.5.2</Version>
+    <Author></Author>
+    <EFDB_Topic>scheduler_driverConfig</EFDB_Topic>
+    <item>
+        <EFDB_Name>coaddValues</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>boolean</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>timeBalancing</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>boolean</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>timecostTimeMax</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>double</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>timecostTimeRef</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>double</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>timecostCostRef</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>double</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>timecostWeight</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>double</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>filtercostWeight</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>double</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>propboostWeight</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>double</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>nightBoundary</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>double</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>newMoonThreshold</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>double</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>ignoreSkyBrightness</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>boolean</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>ignoreAirmass</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>boolean</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>ignoreClouds</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>boolean</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>ignoreSeeing</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>boolean</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>lookaheadWindowSize</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>float</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>lookaheadBonusWeight</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>double</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+</SALTelemetry>
+<SALTelemetry>
+    <Subsystem>scheduler</Subsystem>
+    <Version>3.5.2</Version>
+    <Author></Author>
     <EFDB_Topic>scheduler_obsSiteConfig</EFDB_Topic>
     <item>
         <EFDB_Name>name</EFDB_Name>
         <Description></Description>
-        <Frequency>0.054</Frequency>
-        <Size_in_bytes></Size_in_bytes>
         <IDL_Type>string</IDL_Type>
+        <IDL_Size>256</IDL_Size>
         <Units></Units>
-        <Conversion></Conversion>
-        <Sensor_location></Sensor_location>
         <Count>1</Count>
     </item>
     <item>
         <EFDB_Name>latitude</EFDB_Name>
         <Description></Description>
-        <Frequency>0.054</Frequency>
-        <Size_in_bytes>8</Size_in_bytes>
         <IDL_Type>double</IDL_Type>
-        <Units>degrees</Units>
-        <Conversion></Conversion>
-        <Sensor_location></Sensor_location>
+        <Units></Units>
         <Count>1</Count>
     </item>
     <item>
         <EFDB_Name>longitude</EFDB_Name>
         <Description></Description>
-        <Frequency>0.054</Frequency>
-        <Size_in_bytes>8</Size_in_bytes>
         <IDL_Type>double</IDL_Type>
-        <Units>degrees</Units>
-        <Conversion></Conversion>
-        <Sensor_location></Sensor_location>
+        <Units></Units>
         <Count>1</Count>
     </item>
     <item>
         <EFDB_Name>height</EFDB_Name>
         <Description></Description>
-        <Frequency>0.054</Frequency>
-        <Size_in_bytes>8</Size_in_bytes>
         <IDL_Type>double</IDL_Type>
-        <Units>meters</Units>
-        <Conversion></Conversion>
-        <Sensor_location></Sensor_location>
+        <Units></Units>
         <Count>1</Count>
     </item>
     <item>
         <EFDB_Name>pressure</EFDB_Name>
         <Description></Description>
-        <Frequency>0.054</Frequency>
-        <Size_in_bytes>8</Size_in_bytes>
         <IDL_Type>double</IDL_Type>
-        <Units>millibars</Units>
-        <Conversion></Conversion>
-        <Sensor_location></Sensor_location>
+        <Units></Units>
         <Count>1</Count>
     </item>
     <item>
         <EFDB_Name>temperature</EFDB_Name>
         <Description></Description>
-        <Frequency>0.054</Frequency>
-        <Size_in_bytes>8</Size_in_bytes>
-        <IDL_Type>double</IDL_Type>
-        <Units>degrees C</Units>
-        <Conversion></Conversion>
-        <Sensor_location></Sensor_location>
-        <Count>1</Count>
-    </item>
-    <item>
-        <EFDB_Name>relative_humidity</EFDB_Name>
-        <Description></Description>
-        <Frequency>0.054</Frequency>
-        <Size_in_bytes>8</Size_in_bytes>
         <IDL_Type>double</IDL_Type>
         <Units></Units>
-        <Conversion></Conversion>
-        <Sensor_location></Sensor_location>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>relativeHumidty</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>double</IDL_Type>
+        <Units></Units>
         <Count>1</Count>
     </item>
 </SALTelemetry>
 <SALTelemetry>
     <Subsystem>scheduler</Subsystem>
-    <Version>3.2.0</Version>
-    <Author>salgenerator</Author>
+    <Version>3.5.2</Version>
+    <Author></Author>
     <EFDB_Topic>scheduler_telescopeConfig</EFDB_Topic>
     <item>
-        <EFDB_Name>altitude_minpos</EFDB_Name>
+        <EFDB_Name>altitudeMinpos</EFDB_Name>
         <Description></Description>
-        <Frequency>0.054</Frequency>
-        <Size_in_bytes>8</Size_in_bytes>
         <IDL_Type>double</IDL_Type>
-        <Units>degrees</Units>
-        <Conversion></Conversion>
-        <Sensor_location></Sensor_location>
+        <Units></Units>
         <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>altitude_maxpos</EFDB_Name>
+        <EFDB_Name>altitudeMaxpos</EFDB_Name>
         <Description></Description>
-        <Frequency>0.054</Frequency>
-        <Size_in_bytes>8</Size_in_bytes>
         <IDL_Type>double</IDL_Type>
-        <Units>degrees</Units>
-        <Conversion></Conversion>
-        <Sensor_location></Sensor_location>
+        <Units></Units>
         <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>azimuth_minpos</EFDB_Name>
+        <EFDB_Name>azimuthMinpos</EFDB_Name>
         <Description></Description>
-        <Frequency>0.054</Frequency>
-        <Size_in_bytes>8</Size_in_bytes>
         <IDL_Type>double</IDL_Type>
-        <Units>degrees</Units>
-        <Conversion></Conversion>
-        <Sensor_location></Sensor_location>
+        <Units></Units>
         <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>azimuth_maxpos</EFDB_Name>
+        <EFDB_Name>azimuthMaxpos</EFDB_Name>
         <Description></Description>
-        <Frequency>0.054</Frequency>
-        <Size_in_bytes>8</Size_in_bytes>
         <IDL_Type>double</IDL_Type>
-        <Units>degrees</Units>
-        <Conversion></Conversion>
-        <Sensor_location></Sensor_location>
+        <Units></Units>
         <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>altitude_maxspeed</EFDB_Name>
+        <EFDB_Name>altitudeMaxspeed</EFDB_Name>
         <Description></Description>
-        <Frequency>0.054</Frequency>
-        <Size_in_bytes>8</Size_in_bytes>
         <IDL_Type>double</IDL_Type>
-        <Units>degrees/seconds</Units>
-        <Conversion></Conversion>
-        <Sensor_location></Sensor_location>
+        <Units></Units>
         <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>altitude_accel</EFDB_Name>
+        <EFDB_Name>altitudeAccel</EFDB_Name>
         <Description></Description>
-        <Frequency>0.054</Frequency>
-        <Size_in_bytes>8</Size_in_bytes>
         <IDL_Type>double</IDL_Type>
-        <Units>degrees/seconds**2</Units>
-        <Conversion></Conversion>
-        <Sensor_location></Sensor_location>
+        <Units></Units>
         <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>altitude_decel</EFDB_Name>
+        <EFDB_Name>altitudeDecel</EFDB_Name>
         <Description></Description>
-        <Frequency>0.054</Frequency>
-        <Size_in_bytes>8</Size_in_bytes>
         <IDL_Type>double</IDL_Type>
-        <Units>degrees/seconds**2</Units>
-        <Conversion></Conversion>
-        <Sensor_location></Sensor_location>
+        <Units></Units>
         <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>azimuth_maxspeed</EFDB_Name>
+        <EFDB_Name>azimuthMaxspeed</EFDB_Name>
         <Description></Description>
-        <Frequency>0.054</Frequency>
-        <Size_in_bytes>8</Size_in_bytes>
         <IDL_Type>double</IDL_Type>
-        <Units>degrees/seconds</Units>
-        <Conversion></Conversion>
-        <Sensor_location></Sensor_location>
+        <Units></Units>
         <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>azimuth_accel</EFDB_Name>
+        <EFDB_Name>azimuthDecel</EFDB_Name>
         <Description></Description>
-        <Frequency>0.054</Frequency>
-        <Size_in_bytes>8</Size_in_bytes>
         <IDL_Type>double</IDL_Type>
-        <Units>degrees/seconds**2</Units>
-        <Conversion></Conversion>
-        <Sensor_location></Sensor_location>
+        <Units></Units>
         <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>azimuth_decel</EFDB_Name>
+        <EFDB_Name>settleTime</EFDB_Name>
         <Description></Description>
-        <Frequency>0.054</Frequency>
-        <Size_in_bytes>8</Size_in_bytes>
         <IDL_Type>double</IDL_Type>
-        <Units>degrees/seconds**2</Units>
-        <Conversion></Conversion>
-        <Sensor_location></Sensor_location>
-        <Count>1</Count>
-    </item>
-    <item>
-        <EFDB_Name>settle_time</EFDB_Name>
-        <Description></Description>
-        <Frequency>0.054</Frequency>
-        <Size_in_bytes>8</Size_in_bytes>
-        <IDL_Type>double</IDL_Type>
-        <Units>seconds</Units>
-        <Conversion></Conversion>
-        <Sensor_location></Sensor_location>
+        <Units></Units>
         <Count>1</Count>
     </item>
 </SALTelemetry>
 <SALTelemetry>
     <Subsystem>scheduler</Subsystem>
-    <Version>3.2.0</Version>
-    <Author>salgenerator</Author>
+    <Version>3.5.2</Version>
+    <Author></Author>
     <EFDB_Topic>scheduler_rotatorConfig</EFDB_Topic>
     <item>
         <EFDB_Name>minpos</EFDB_Name>
         <Description></Description>
-        <Frequency>0.054</Frequency>
-        <Size_in_bytes>8</Size_in_bytes>
         <IDL_Type>double</IDL_Type>
-        <Units>degrees</Units>
-        <Conversion></Conversion>
-        <Sensor_location></Sensor_location>
+        <Units></Units>
         <Count>1</Count>
     </item>
     <item>
         <EFDB_Name>maxpos</EFDB_Name>
         <Description></Description>
-        <Frequency>0.054</Frequency>
-        <Size_in_bytes>8</Size_in_bytes>
         <IDL_Type>double</IDL_Type>
-        <Units>degrees</Units>
-        <Conversion></Conversion>
-        <Sensor_location></Sensor_location>
+        <Units></Units>
         <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>filter_change_pos</EFDB_Name>
+        <EFDB_Name>filterChangePos</EFDB_Name>
         <Description></Description>
-        <Frequency>0.054</Frequency>
-        <Size_in_bytes>8</Size_in_bytes>
         <IDL_Type>double</IDL_Type>
-        <Units>degrees</Units>
-        <Conversion></Conversion>
-        <Sensor_location></Sensor_location>
+        <Units></Units>
         <Count>1</Count>
     </item>
     <item>
         <EFDB_Name>maxspeed</EFDB_Name>
         <Description></Description>
-        <Frequency>0.054</Frequency>
-        <Size_in_bytes>8</Size_in_bytes>
         <IDL_Type>double</IDL_Type>
-        <Units>degrees/seconds</Units>
-        <Conversion></Conversion>
-        <Sensor_location></Sensor_location>
+        <Units></Units>
         <Count>1</Count>
     </item>
     <item>
         <EFDB_Name>accel</EFDB_Name>
         <Description></Description>
-        <Frequency>0.054</Frequency>
-        <Size_in_bytes>8</Size_in_bytes>
         <IDL_Type>double</IDL_Type>
-        <Units>degrees/seconds**2</Units>
-        <Conversion></Conversion>
-        <Sensor_location></Sensor_location>
+        <Units></Units>
         <Count>1</Count>
     </item>
     <item>
         <EFDB_Name>decel</EFDB_Name>
         <Description></Description>
-        <Frequency>0.054</Frequency>
-        <Size_in_bytes>8</Size_in_bytes>
         <IDL_Type>double</IDL_Type>
-        <Units>degrees/seconds**2</Units>
-        <Conversion></Conversion>
-        <Sensor_location></Sensor_location>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>manualRotator</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>double</IDL_Type>
+        <Units></Units>
         <Count>1</Count>
     </item>
     <item>
         <EFDB_Name>followsky</EFDB_Name>
         <Description></Description>
-        <Frequency>0.054</Frequency>
-        <Size_in_bytes></Size_in_bytes>
         <IDL_Type>boolean</IDL_Type>
         <Units></Units>
-        <Conversion></Conversion>
-        <Sensor_location></Sensor_location>
         <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>resume_angle</EFDB_Name>
+        <EFDB_Name>resumeAngle</EFDB_Name>
         <Description></Description>
-        <Frequency>0.054</Frequency>
-        <Size_in_bytes></Size_in_bytes>
         <IDL_Type>boolean</IDL_Type>
         <Units></Units>
-        <Conversion></Conversion>
-        <Sensor_location></Sensor_location>
         <Count>1</Count>
     </item>
 </SALTelemetry>
 <SALTelemetry>
     <Subsystem>scheduler</Subsystem>
-    <Version>3.2.0</Version>
-    <Author>salgenerator</Author>
+    <Version>3.5.2</Version>
+    <Author></Author>
     <EFDB_Topic>scheduler_domeConfig</EFDB_Topic>
     <item>
-        <EFDB_Name>altitude_maxspeed</EFDB_Name>
+        <EFDB_Name>altitudeMaxspeed</EFDB_Name>
         <Description></Description>
-        <Frequency>0.054</Frequency>
-        <Size_in_bytes>8</Size_in_bytes>
         <IDL_Type>double</IDL_Type>
-        <Units>degrees/seconds</Units>
-        <Conversion></Conversion>
-        <Sensor_location></Sensor_location>
+        <Units></Units>
         <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>altitude_accel</EFDB_Name>
+        <EFDB_Name>altitudeAccel</EFDB_Name>
         <Description></Description>
-        <Frequency>0.054</Frequency>
-        <Size_in_bytes>8</Size_in_bytes>
         <IDL_Type>double</IDL_Type>
-        <Units>degrees/seconds**2</Units>
-        <Conversion></Conversion>
-        <Sensor_location></Sensor_location>
+        <Units></Units>
         <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>altitude_decel</EFDB_Name>
+        <EFDB_Name>altitudeDecel</EFDB_Name>
         <Description></Description>
-        <Frequency>0.054</Frequency>
-        <Size_in_bytes>8</Size_in_bytes>
         <IDL_Type>double</IDL_Type>
-        <Units>degrees/seconds**2</Units>
-        <Conversion></Conversion>
-        <Sensor_location></Sensor_location>
+        <Units></Units>
         <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>azimuth_maxspeed</EFDB_Name>
+        <EFDB_Name>altitudeFreerange</EFDB_Name>
         <Description></Description>
-        <Frequency>0.054</Frequency>
-        <Size_in_bytes>8</Size_in_bytes>
         <IDL_Type>double</IDL_Type>
-        <Units>degrees/seconds</Units>
-        <Conversion></Conversion>
-        <Sensor_location></Sensor_location>
+        <Units></Units>
         <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>azimuth_accel</EFDB_Name>
+        <EFDB_Name>azimuthMaxspeed</EFDB_Name>
         <Description></Description>
-        <Frequency>0.054</Frequency>
-        <Size_in_bytes>8</Size_in_bytes>
         <IDL_Type>double</IDL_Type>
-        <Units>degrees/seconds**2</Units>
-        <Conversion></Conversion>
-        <Sensor_location></Sensor_location>
+        <Units></Units>
         <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>azimuth_decel</EFDB_Name>
+        <EFDB_Name>azimuthAccel</EFDB_Name>
         <Description></Description>
-        <Frequency>0.054</Frequency>
-        <Size_in_bytes>8</Size_in_bytes>
         <IDL_Type>double</IDL_Type>
-        <Units>degrees/seconds**2</Units>
-        <Conversion></Conversion>
-        <Sensor_location></Sensor_location>
+        <Units></Units>
         <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>settle_time</EFDB_Name>
+        <EFDB_Name>azimuthDecel</EFDB_Name>
         <Description></Description>
-        <Frequency>0.054</Frequency>
-        <Size_in_bytes>8</Size_in_bytes>
         <IDL_Type>double</IDL_Type>
-        <Units>degrees/seconds**2</Units>
-        <Conversion></Conversion>
-        <Sensor_location></Sensor_location>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>azimuthFreerange</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>double</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>settleTime</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>double</IDL_Type>
+        <Units></Units>
         <Count>1</Count>
     </item>
 </SALTelemetry>
 <SALTelemetry>
     <Subsystem>scheduler</Subsystem>
-    <Version>3.2.0</Version>
-    <Author>salgenerator</Author>
+    <Version>3.5.2</Version>
+    <Author></Author>
     <EFDB_Topic>scheduler_cameraConfig</EFDB_Topic>
     <item>
-        <EFDB_Name>readout_time</EFDB_Name>
+        <EFDB_Name>readoutTime</EFDB_Name>
         <Description></Description>
-        <Frequency>0.054</Frequency>
-        <Size_in_bytes>8</Size_in_bytes>
         <IDL_Type>double</IDL_Type>
-        <Units>seconds</Units>
-        <Conversion></Conversion>
-        <Sensor_location></Sensor_location>
+        <Units></Units>
         <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>shutter_time</EFDB_Name>
+        <EFDB_Name>shutterTime</EFDB_Name>
         <Description></Description>
-        <Frequency>0.054</Frequency>
-        <Size_in_bytes>8</Size_in_bytes>
         <IDL_Type>double</IDL_Type>
-        <Units>seconds</Units>
-        <Conversion></Conversion>
-        <Sensor_location></Sensor_location>
+        <Units></Units>
         <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>filter_mount_time</EFDB_Name>
+        <EFDB_Name>filterMountTime</EFDB_Name>
         <Description></Description>
-        <Frequency>0.054</Frequency>
-        <Size_in_bytes>8</Size_in_bytes>
         <IDL_Type>double</IDL_Type>
-        <Units>seconds</Units>
-        <Conversion></Conversion>
-        <Sensor_location></Sensor_location>
+        <Units></Units>
         <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>filter_change_time</EFDB_Name>
+        <EFDB_Name>filterChangeTime</EFDB_Name>
         <Description></Description>
-        <Frequency>0.054</Frequency>
-        <Size_in_bytes>8</Size_in_bytes>
         <IDL_Type>double</IDL_Type>
-        <Units>seconds</Units>
-        <Conversion></Conversion>
-        <Sensor_location></Sensor_location>
+        <Units></Units>
         <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>filter_max_changes_burst_num</EFDB_Name>
+        <EFDB_Name>filterMaxChangesBurstTime</EFDB_Name>
         <Description></Description>
-        <Frequency>0.054</Frequency>
-        <Size_in_bytes>8</Size_in_bytes>
+        <IDL_Type>double</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>filterMaxChangesAvgNum</EFDB_Name>
+        <Description></Description>
         <IDL_Type>long</IDL_Type>
         <Units></Units>
-        <Conversion></Conversion>
-        <Sensor_location></Sensor_location>
         <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>filter_max_changes_burst_time</EFDB_Name>
+        <EFDB_Name>filterMaxChangesAvgTime</EFDB_Name>
         <Description></Description>
-        <Frequency>0.054</Frequency>
-        <Size_in_bytes>8</Size_in_bytes>
         <IDL_Type>double</IDL_Type>
-        <Units>seconds</Units>
-        <Conversion></Conversion>
-        <Sensor_location></Sensor_location>
-        <Count>1</Count>
-    </item>
-    <item>
-        <EFDB_Name>filter_max_changes_avg_num</EFDB_Name>
-        <Description></Description>
-        <Frequency>0.054</Frequency>
-        <Size_in_bytes>8</Size_in_bytes>
-        <IDL_Type>long</IDL_Type>
         <Units></Units>
-        <Conversion></Conversion>
-        <Sensor_location></Sensor_location>
         <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>filter_max_changes_avg_time</EFDB_Name>
+        <EFDB_Name>filterMounted</EFDB_Name>
         <Description></Description>
-        <Frequency>0.054</Frequency>
-        <Size_in_bytes>8</Size_in_bytes>
-        <IDL_Type>double</IDL_Type>
-        <Units>seconds</Units>
-        <Conversion></Conversion>
-        <Sensor_location></Sensor_location>
-        <Count>1</Count>
-    </item>
-    <item>
-        <EFDB_Name>filter_mounted</EFDB_Name>
-        <Description></Description>
-        <Frequency>0.054</Frequency>
-        <Size_in_bytes></Size_in_bytes>
         <IDL_Type>string</IDL_Type>
+        <IDL_Size>256</IDL_Size>
         <Units></Units>
-        <Conversion></Conversion>
-        <Sensor_location></Sensor_location>
         <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>filter_pos</EFDB_Name>
+        <EFDB_Name>filterPos</EFDB_Name>
         <Description></Description>
-        <Frequency>0.054</Frequency>
-        <Size_in_bytes></Size_in_bytes>
         <IDL_Type>string</IDL_Type>
+        <IDL_Size>256</IDL_Size>
         <Units></Units>
-        <Conversion></Conversion>
-        <Sensor_location></Sensor_location>
         <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>filter_removable</EFDB_Name>
+        <EFDB_Name>filterRemovable</EFDB_Name>
         <Description></Description>
-        <Frequency>0.054</Frequency>
-        <Size_in_bytes></Size_in_bytes>
         <IDL_Type>string</IDL_Type>
+        <IDL_Size>256</IDL_Size>
         <Units></Units>
-        <Conversion></Conversion>
-        <Sensor_location></Sensor_location>
         <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>filter_unmounted</EFDB_Name>
+        <EFDB_Name>filterUnmounted</EFDB_Name>
         <Description></Description>
-        <Frequency>0.054</Frequency>
-        <Size_in_bytes></Size_in_bytes>
         <IDL_Type>string</IDL_Type>
+        <IDL_Size>256</IDL_Size>
         <Units></Units>
-        <Conversion></Conversion>
-        <Sensor_location></Sensor_location>
         <Count>1</Count>
     </item>
 </SALTelemetry>
 <SALTelemetry>
     <Subsystem>scheduler</Subsystem>
-    <Version>3.2.0</Version>
-    <Author>salgenerator</Author>
+    <Version>3.5.2</Version>
+    <Author></Author>
     <EFDB_Topic>scheduler_slewConfig</EFDB_Topic>
     <item>
-        <EFDB_Name>prereq_domalt</EFDB_Name>
+        <EFDB_Name>prereqDomalt</EFDB_Name>
         <Description></Description>
-        <Frequency>0.054</Frequency>
-        <Size_in_bytes></Size_in_bytes>
         <IDL_Type>string</IDL_Type>
+        <IDL_Size>256</IDL_Size>
         <Units></Units>
-        <Conversion></Conversion>
-        <Sensor_location></Sensor_location>
         <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>prereq_domaz</EFDB_Name>
+        <EFDB_Name>prereqDomaz</EFDB_Name>
         <Description></Description>
-        <Frequency>0.054</Frequency>
-        <Size_in_bytes></Size_in_bytes>
         <IDL_Type>string</IDL_Type>
+        <IDL_Size>256</IDL_Size>
         <Units></Units>
-        <Conversion></Conversion>
-        <Sensor_location></Sensor_location>
         <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>prereq_domazsettle</EFDB_Name>
+        <EFDB_Name>prereqDomazsettle</EFDB_Name>
         <Description></Description>
-        <Frequency>0.054</Frequency>
-        <Size_in_bytes></Size_in_bytes>
         <IDL_Type>string</IDL_Type>
+        <IDL_Size>256</IDL_Size>
         <Units></Units>
-        <Conversion></Conversion>
-        <Sensor_location></Sensor_location>
         <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>prereq_telalt</EFDB_Name>
+        <EFDB_Name>prereqTelalt</EFDB_Name>
         <Description></Description>
-        <Frequency>0.054</Frequency>
-        <Size_in_bytes></Size_in_bytes>
         <IDL_Type>string</IDL_Type>
+        <IDL_Size>256</IDL_Size>
         <Units></Units>
-        <Conversion></Conversion>
-        <Sensor_location></Sensor_location>
         <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>prereq_telaz</EFDB_Name>
+        <EFDB_Name>prereqTelaz</EFDB_Name>
         <Description></Description>
-        <Frequency>0.054</Frequency>
-        <Size_in_bytes></Size_in_bytes>
         <IDL_Type>string</IDL_Type>
+        <IDL_Size>256</IDL_Size>
         <Units></Units>
-        <Conversion></Conversion>
-        <Sensor_location></Sensor_location>
         <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>prereq_telopticsopenloop</EFDB_Name>
+        <EFDB_Name>prereqTelopticsOpenLoop</EFDB_Name>
         <Description></Description>
-        <Frequency>0.054</Frequency>
-        <Size_in_bytes></Size_in_bytes>
         <IDL_Type>string</IDL_Type>
+        <IDL_Size>256</IDL_Size>
         <Units></Units>
-        <Conversion></Conversion>
-        <Sensor_location></Sensor_location>
         <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>prereq_telopticsclosedloop</EFDB_Name>
+        <EFDB_Name>prereqTelOpticsClosedLoop</EFDB_Name>
         <Description></Description>
-        <Frequency>0.054</Frequency>
-        <Size_in_bytes></Size_in_bytes>
         <IDL_Type>string</IDL_Type>
+        <IDL_Size>256</IDL_Size>
         <Units></Units>
-        <Conversion></Conversion>
-        <Sensor_location></Sensor_location>
         <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>prereq_telsettle</EFDB_Name>
+        <EFDB_Name>prereqTelSettle</EFDB_Name>
         <Description></Description>
-        <Frequency>0.054</Frequency>
-        <Size_in_bytes></Size_in_bytes>
         <IDL_Type>string</IDL_Type>
+        <IDL_Size>256</IDL_Size>
         <Units></Units>
-        <Conversion></Conversion>
-        <Sensor_location></Sensor_location>
         <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>prereq_telrot</EFDB_Name>
+        <EFDB_Name>prereqTelrot</EFDB_Name>
         <Description></Description>
-        <Frequency>0.054</Frequency>
-        <Size_in_bytes></Size_in_bytes>
         <IDL_Type>string</IDL_Type>
+        <IDL_Size>256</IDL_Size>
         <Units></Units>
-        <Conversion></Conversion>
-        <Sensor_location></Sensor_location>
         <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>prereq_filter</EFDB_Name>
+        <EFDB_Name>prereqFilter</EFDB_Name>
         <Description></Description>
-        <Frequency>0.054</Frequency>
-        <Size_in_bytes></Size_in_bytes>
         <IDL_Type>string</IDL_Type>
+        <IDL_Size>256</IDL_Size>
         <Units></Units>
-        <Conversion></Conversion>
-        <Sensor_location></Sensor_location>
         <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>prereq_exposures</EFDB_Name>
+        <EFDB_Name>prereqExposures</EFDB_Name>
         <Description></Description>
-        <Frequency>0.054</Frequency>
-        <Size_in_bytes></Size_in_bytes>
         <IDL_Type>string</IDL_Type>
+        <IDL_Size>256</IDL_Size>
         <Units></Units>
-        <Conversion></Conversion>
-        <Sensor_location></Sensor_location>
         <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>prereq_readout</EFDB_Name>
+        <EFDB_Name>prereqReadout</EFDB_Name>
         <Description></Description>
-        <Frequency>0.054</Frequency>
-        <Size_in_bytes></Size_in_bytes>
         <IDL_Type>string</IDL_Type>
+        <IDL_Size>256</IDL_Size>
         <Units></Units>
-        <Conversion></Conversion>
-        <Sensor_location></Sensor_location>
         <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>prereq_adc</EFDB_Name>
+        <EFDB_Name>prereqAdc</EFDB_Name>
         <Description></Description>
-        <Frequency>0.054</Frequency>
-        <Size_in_bytes></Size_in_bytes>
         <IDL_Type>string</IDL_Type>
+        <IDL_Size>256</IDL_Size>
         <Units></Units>
-        <Conversion></Conversion>
-        <Sensor_location></Sensor_location>
         <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>prereq_ins_optics</EFDB_Name>
+        <EFDB_Name>prereqInsOptics</EFDB_Name>
         <Description></Description>
-        <Frequency>0.054</Frequency>
-        <Size_in_bytes></Size_in_bytes>
         <IDL_Type>string</IDL_Type>
+        <IDL_Size>256</IDL_Size>
         <Units></Units>
-        <Conversion></Conversion>
-        <Sensor_location></Sensor_location>
         <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>prereq_guider_pos</EFDB_Name>
+        <EFDB_Name>prereqGuiderPos</EFDB_Name>
         <Description></Description>
-        <Frequency>0.054</Frequency>
-        <Size_in_bytes></Size_in_bytes>
         <IDL_Type>string</IDL_Type>
+        <IDL_Size>256</IDL_Size>
         <Units></Units>
-        <Conversion></Conversion>
-        <Sensor_location></Sensor_location>
         <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>prereq_guider_adq</EFDB_Name>
+        <EFDB_Name>prereqGuiderAdq</EFDB_Name>
         <Description></Description>
-        <Frequency>0.054</Frequency>
-        <Size_in_bytes></Size_in_bytes>
         <IDL_Type>string</IDL_Type>
+        <IDL_Size>256</IDL_Size>
         <Units></Units>
-        <Conversion></Conversion>
-        <Sensor_location></Sensor_location>
         <Count>1</Count>
     </item>
 </SALTelemetry>
 <SALTelemetry>
     <Subsystem>scheduler</Subsystem>
-    <Version>3.2.0</Version>
-    <Author>salgenerator</Author>
+    <Version>3.5.2</Version>
+    <Author></Author>
     <EFDB_Topic>scheduler_opticsLoopCorrConfig</EFDB_Topic>
     <item>
-        <EFDB_Name>tel_optics_ol_slope</EFDB_Name>
+        <EFDB_Name>telOpticsOlSlope</EFDB_Name>
         <Description></Description>
-        <Frequency>0.054</Frequency>
-        <Size_in_bytes>8</Size_in_bytes>
         <IDL_Type>double</IDL_Type>
-        <Units>seconds/(degrees in ALT slew)</Units>
-        <Conversion></Conversion>
-        <Sensor_location></Sensor_location>
+        <Units></Units>
         <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>tel_optics_cl_alt_limit</EFDB_Name>
+        <EFDB_Name>telOpticsClAltLimit</EFDB_Name>
         <Description></Description>
-        <Frequency>0.054</Frequency>
-        <Size_in_bytes>8</Size_in_bytes>
         <IDL_Type>double</IDL_Type>
-        <Units>degrees</Units>
-        <Conversion></Conversion>
-        <Sensor_location></Sensor_location>
+        <Units></Units>
         <Count>3</Count>
     </item>
     <item>
-        <EFDB_Name>tel_optics_cl_delay</EFDB_Name>
+        <EFDB_Name>telOpticsClDelay</EFDB_Name>
         <Description></Description>
-        <Frequency>0.054</Frequency>
-        <Size_in_bytes>8</Size_in_bytes>
         <IDL_Type>double</IDL_Type>
-        <Units>seconds</Units>
-        <Conversion></Conversion>
-        <Sensor_location></Sensor_location>
+        <Units></Units>
         <Count>2</Count>
     </item>
 </SALTelemetry>
 <SALTelemetry>
     <Subsystem>scheduler</Subsystem>
-    <Version>3.2.0</Version>
-    <Author>salgenerator</Author>
+    <Version>3.5.2</Version>
+    <Author></Author>
     <EFDB_Topic>scheduler_parkConfig</EFDB_Topic>
     <item>
-        <EFDB_Name>telescope_altitude</EFDB_Name>
+        <EFDB_Name>telescopeAltitude</EFDB_Name>
         <Description></Description>
-        <Frequency>0.054</Frequency>
-        <Size_in_bytes>8</Size_in_bytes>
         <IDL_Type>double</IDL_Type>
-        <Units>degrees</Units>
-        <Conversion></Conversion>
-        <Sensor_location></Sensor_location>
-        <Count>1</Count>
-    </item>
-    <item>
-        <EFDB_Name>telescope_azimuth</EFDB_Name>
-        <Description></Description>
-        <Frequency>0.054</Frequency>
-        <Size_in_bytes>8</Size_in_bytes>
-        <IDL_Type>double</IDL_Type>
-        <Units>degrees</Units>
-        <Conversion></Conversion>
-        <Sensor_location></Sensor_location>
-        <Count>1</Count>
-    </item>
-    <item>
-        <EFDB_Name>telescope_rotator</EFDB_Name>
-        <Description></Description>
-        <Frequency>0.054</Frequency>
-        <Size_in_bytes>8</Size_in_bytes>
-        <IDL_Type>double</IDL_Type>
-        <Units>degrees</Units>
-        <Conversion></Conversion>
-        <Sensor_location></Sensor_location>
-        <Count>1</Count>
-    </item>
-    <item>
-        <EFDB_Name>dome_altitude</EFDB_Name>
-        <Description></Description>
-        <Frequency>0.054</Frequency>
-        <Size_in_bytes>8</Size_in_bytes>
-        <IDL_Type>double</IDL_Type>
-        <Units>degrees</Units>
-        <Conversion></Conversion>
-        <Sensor_location></Sensor_location>
-        <Count>1</Count>
-    </item>
-    <item>
-        <EFDB_Name>dome_azimuth</EFDB_Name>
-        <Description></Description>
-        <Frequency>0.054</Frequency>
-        <Size_in_bytes>8</Size_in_bytes>
-        <IDL_Type>double</IDL_Type>
-        <Units>degrees</Units>
-        <Conversion></Conversion>
-        <Sensor_location></Sensor_location>
-        <Count>1</Count>
-    </item>
-    <item>
-        <EFDB_Name>filter_position</EFDB_Name>
-        <Description></Description>
-        <Frequency>0.054</Frequency>
-        <Size_in_bytes></Size_in_bytes>
-        <IDL_Type>string</IDL_Type>
         <Units></Units>
-        <Conversion></Conversion>
-        <Sensor_location></Sensor_location>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>telescopeAzimuth</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>double</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>telescopeRotator</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>double</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>domeAltitude</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>double</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>domeAzimuth</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>double</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>filterPosition</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>string</IDL_Type>
+        <IDL_Size>256</IDL_Size>
+        <Units></Units>
         <Count>1</Count>
     </item>
 </SALTelemetry>
 <SALTelemetry>
     <Subsystem>scheduler</Subsystem>
-    <Version>3.2.0</Version>
-    <Author>salgenerator</Author>
+    <Version>3.5.2</Version>
+    <Author></Author>
     <EFDB_Topic>scheduler_generalPropConfig</EFDB_Topic>
     <item>
         <EFDB_Name>name</EFDB_Name>
         <Description></Description>
-        <Frequency>0.054</Frequency>
-        <Size_in_bytes></Size_in_bytes>
         <IDL_Type>string</IDL_Type>
+        <IDL_Size>256</IDL_Size>
         <Units></Units>
-        <Conversion></Conversion>
-        <Sensor_location></Sensor_location>
         <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>prop_id</EFDB_Name>
+        <EFDB_Name>propId</EFDB_Name>
         <Description></Description>
-        <Frequency>0.054</Frequency>
-        <Size_in_bytes>8</Size_in_bytes>
         <IDL_Type>long</IDL_Type>
         <Units></Units>
-        <Conversion></Conversion>
-        <Sensor_location></Sensor_location>
         <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>twilight_boundary</EFDB_Name>
+        <EFDB_Name>twilightBoundary</EFDB_Name>
         <Description></Description>
-        <Frequency>0.054</Frequency>
-        <Size_in_bytes>8</Size_in_bytes>
-        <IDL_Type>double</IDL_Type>
-        <Units>degrees</Units>
-        <Conversion></Conversion>
-        <Sensor_location></Sensor_location>
-        <Count>1</Count>
-    </item>
-    <item>
-        <EFDB_Name>delta_lst</EFDB_Name>
-        <Description></Description>
-        <Frequency>0.054</Frequency>
-        <Size_in_bytes>8</Size_in_bytes>
-        <IDL_Type>double</IDL_Type>
-        <Units>degrees</Units>
-        <Conversion></Conversion>
-        <Sensor_location></Sensor_location>
-        <Count>1</Count>
-    </item>
-    <item>
-        <EFDB_Name>dec_window</EFDB_Name>
-        <Description></Description>
-        <Frequency>0.054</Frequency>
-        <Size_in_bytes>8</Size_in_bytes>
-        <IDL_Type>double</IDL_Type>
-        <Units>degrees</Units>
-        <Conversion></Conversion>
-        <Sensor_location></Sensor_location>
-        <Count>1</Count>
-    </item>
-    <item>
-        <EFDB_Name>max_airmass</EFDB_Name>
-        <Description></Description>
-        <Frequency>0.054</Frequency>
-        <Size_in_bytes>8</Size_in_bytes>
         <IDL_Type>double</IDL_Type>
         <Units></Units>
-        <Conversion></Conversion>
-        <Sensor_location></Sensor_location>
         <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>max_cloud</EFDB_Name>
+        <EFDB_Name>deltaLst</EFDB_Name>
         <Description></Description>
-        <Frequency>0.054</Frequency>
-        <Size_in_bytes>8</Size_in_bytes>
         <IDL_Type>double</IDL_Type>
         <Units></Units>
-        <Conversion></Conversion>
-        <Sensor_location></Sensor_location>
         <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>min_distance_moon</EFDB_Name>
+        <EFDB_Name>decWindow</EFDB_Name>
         <Description></Description>
-        <Frequency>0.054</Frequency>
-        <Size_in_bytes>8</Size_in_bytes>
         <IDL_Type>double</IDL_Type>
         <Units></Units>
-        <Conversion></Conversion>
-        <Sensor_location></Sensor_location>
         <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>exclude_planets</EFDB_Name>
+        <EFDB_Name>maxAirmass</EFDB_Name>
         <Description></Description>
-        <Frequency>0.054</Frequency>
-        <Size_in_bytes></Size_in_bytes>
+        <IDL_Type>double</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>maxCloud</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>double</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>minDistanceMoon</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>double</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>excludePlanets</EFDB_Name>
+        <Description></Description>
         <IDL_Type>boolean</IDL_Type>
         <Units></Units>
-        <Conversion></Conversion>
-        <Sensor_location></Sensor_location>
         <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>num_region_selections</EFDB_Name>
+        <EFDB_Name>numRegionSelections</EFDB_Name>
         <Description></Description>
-        <Frequency>0.054</Frequency>
-        <Size_in_bytes>8</Size_in_bytes>
         <IDL_Type>long</IDL_Type>
         <Units></Units>
-        <Conversion></Conversion>
-        <Sensor_location></Sensor_location>
         <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>region_types</EFDB_Name>
+        <EFDB_Name>regionTypes</EFDB_Name>
         <Description></Description>
-        <Frequency>0.054</Frequency>
-        <Size_in_bytes></Size_in_bytes>
         <IDL_Type>string</IDL_Type>
+        <IDL_Size>256</IDL_Size>
         <Units></Units>
-        <Conversion></Conversion>
-        <Sensor_location></Sensor_location>
         <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>region_minimums</EFDB_Name>
+        <EFDB_Name>regionMinimums</EFDB_Name>
         <Description></Description>
-        <Frequency>0.054</Frequency>
-        <Size_in_bytes>8</Size_in_bytes>
         <IDL_Type>double</IDL_Type>
-        <Units>degrees</Units>
-        <Conversion></Conversion>
-        <Sensor_location></Sensor_location>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>regionMaximums</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>double</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>regionBounds</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>double</IDL_Type>
+        <Units></Units>
         <Count>10</Count>
     </item>
     <item>
-        <EFDB_Name>region_maximums</EFDB_Name>
+        <EFDB_Name>regionCombiners</EFDB_Name>
         <Description></Description>
-        <Frequency>0.054</Frequency>
-        <Size_in_bytes>8</Size_in_bytes>
-        <IDL_Type>double</IDL_Type>
-        <Units>degrees</Units>
-        <Conversion></Conversion>
-        <Sensor_location></Sensor_location>
-        <Count>10</Count>
-    </item>
-    <item>
-        <EFDB_Name>region_bounds</EFDB_Name>
-        <Description></Description>
-        <Frequency>0.054</Frequency>
-        <Size_in_bytes>8</Size_in_bytes>
-        <IDL_Type>double</IDL_Type>
-        <Units>degrees</Units>
-        <Conversion></Conversion>
-        <Sensor_location></Sensor_location>
-        <Count>10</Count>
-    </item>
-    <item>
-        <EFDB_Name>region_combiners</EFDB_Name>
-        <Description></Description>
-        <Frequency>0.054</Frequency>
-        <Size_in_bytes></Size_in_bytes>
         <IDL_Type>string</IDL_Type>
+        <IDL_Size>256</IDL_Size>
         <Units></Units>
-        <Conversion></Conversion>
-        <Sensor_location></Sensor_location>
         <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>num_time_ranges</EFDB_Name>
+        <EFDB_Name>numTimeRanges</EFDB_Name>
         <Description></Description>
-        <Frequency>0.054</Frequency>
-        <Size_in_bytes>8</Size_in_bytes>
         <IDL_Type>long</IDL_Type>
         <Units></Units>
-        <Conversion></Conversion>
-        <Sensor_location></Sensor_location>
         <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>time_range_starts</EFDB_Name>
+        <EFDB_Name>timeRangeStarts</EFDB_Name>
         <Description></Description>
-        <Frequency>0.054</Frequency>
-        <Size_in_bytes>8</Size_in_bytes>
         <IDL_Type>long</IDL_Type>
         <Units></Units>
-        <Conversion></Conversion>
-        <Sensor_location></Sensor_location>
         <Count>20</Count>
     </item>
     <item>
-        <EFDB_Name>time_range_ends</EFDB_Name>
+        <EFDB_Name>timeRangeEnds</EFDB_Name>
         <Description></Description>
-        <Frequency>0.054</Frequency>
-        <Size_in_bytes>8</Size_in_bytes>
         <IDL_Type>long</IDL_Type>
         <Units></Units>
-        <Conversion></Conversion>
-        <Sensor_location></Sensor_location>
         <Count>20</Count>
     </item>
     <item>
-        <EFDB_Name>num_selection_mappings</EFDB_Name>
+        <EFDB_Name>numSelectionMappings</EFDB_Name>
         <Description></Description>
-        <Frequency>0.054</Frequency>
-        <Size_in_bytes>8</Size_in_bytes>
         <IDL_Type>long</IDL_Type>
         <Units></Units>
-        <Conversion></Conversion>
-        <Sensor_location></Sensor_location>
         <Count>20</Count>
     </item>
     <item>
-        <EFDB_Name>selection_mappings</EFDB_Name>
+        <EFDB_Name>selectionMappings</EFDB_Name>
         <Description></Description>
-        <Frequency>0.054</Frequency>
-        <Size_in_bytes>8</Size_in_bytes>
         <IDL_Type>long</IDL_Type>
         <Units></Units>
-        <Conversion></Conversion>
-        <Sensor_location></Sensor_location>
         <Count>100</Count>
     </item>
     <item>
-        <EFDB_Name>num_exclusion_selections</EFDB_Name>
+        <EFDB_Name>numExclusionSelections</EFDB_Name>
         <Description></Description>
-        <Frequency>0.054</Frequency>
-        <Size_in_bytes>8</Size_in_bytes>
         <IDL_Type>long</IDL_Type>
         <Units></Units>
-        <Conversion></Conversion>
-        <Sensor_location></Sensor_location>
         <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>exclusion_types</EFDB_Name>
+        <EFDB_Name>exlusionTypers</EFDB_Name>
         <Description></Description>
-        <Frequency>0.054</Frequency>
-        <Size_in_bytes></Size_in_bytes>
         <IDL_Type>string</IDL_Type>
+        <IDL_Size>256</IDL_Size>
         <Units></Units>
-        <Conversion></Conversion>
-        <Sensor_location></Sensor_location>
         <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>exclusion_minimums</EFDB_Name>
+        <EFDB_Name>exclusionMinimums</EFDB_Name>
         <Description></Description>
-        <Frequency>0.054</Frequency>
-        <Size_in_bytes>8</Size_in_bytes>
         <IDL_Type>double</IDL_Type>
-        <Units>degrees</Units>
-        <Conversion></Conversion>
-        <Sensor_location></Sensor_location>
+        <Units></Units>
         <Count>10</Count>
     </item>
     <item>
-        <EFDB_Name>exclusion_maximums</EFDB_Name>
+        <EFDB_Name>exclusionMaximums</EFDB_Name>
         <Description></Description>
-        <Frequency>0.054</Frequency>
-        <Size_in_bytes>8</Size_in_bytes>
         <IDL_Type>double</IDL_Type>
-        <Units>degrees</Units>
-        <Conversion></Conversion>
-        <Sensor_location></Sensor_location>
+        <Units></Units>
         <Count>10</Count>
     </item>
     <item>
-        <EFDB_Name>exclusion_bounds</EFDB_Name>
+        <EFDB_Name>exclusionBounds</EFDB_Name>
         <Description></Description>
-        <Frequency>0.054</Frequency>
-        <Size_in_bytes>8</Size_in_bytes>
         <IDL_Type>double</IDL_Type>
-        <Units>degrees</Units>
-        <Conversion></Conversion>
-        <Sensor_location></Sensor_location>
+        <Units></Units>
         <Count>10</Count>
     </item>
     <item>
-        <EFDB_Name>field_revisit_limit</EFDB_Name>
+        <EFDB_Name>fieldRevisitLimit</EFDB_Name>
         <Description></Description>
-        <Frequency>0.054</Frequency>
-        <Size_in_bytes>8</Size_in_bytes>
         <IDL_Type>long</IDL_Type>
         <Units></Units>
-        <Conversion></Conversion>
-        <Sensor_location></Sensor_location>
         <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>num_filters</EFDB_Name>
+        <EFDB_Name>numFilters</EFDB_Name>
         <Description></Description>
-        <Frequency>0.054</Frequency>
-        <Size_in_bytes>8</Size_in_bytes>
         <IDL_Type>long</IDL_Type>
         <Units></Units>
-        <Conversion></Conversion>
-        <Sensor_location></Sensor_location>
         <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>filter_names</EFDB_Name>
+        <EFDB_Name>filterNames</EFDB_Name>
         <Description></Description>
-        <Frequency>0.054</Frequency>
-        <Size_in_bytes></Size_in_bytes>
         <IDL_Type>string</IDL_Type>
+        <IDL_Size>256</IDL_Size>
         <Units></Units>
-        <Conversion></Conversion>
-        <Sensor_location></Sensor_location>
         <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>num_visits</EFDB_Name>
+        <EFDB_Name>numVisits</EFDB_Name>
         <Description></Description>
-        <Frequency>0.054</Frequency>
-        <Size_in_bytes>8</Size_in_bytes>
         <IDL_Type>long</IDL_Type>
         <Units></Units>
-        <Conversion></Conversion>
-        <Sensor_location></Sensor_location>
         <Count>10</Count>
     </item>
     <item>
-        <EFDB_Name>num_grouped_visits</EFDB_Name>
+        <EFDB_Name>numGroupedVisits</EFDB_Name>
         <Description></Description>
-        <Frequency>0.054</Frequency>
-        <Size_in_bytes>8</Size_in_bytes>
         <IDL_Type>long</IDL_Type>
         <Units></Units>
-        <Conversion></Conversion>
-        <Sensor_location></Sensor_location>
         <Count>10</Count>
     </item>
     <item>
-        <EFDB_Name>max_grouped_visits</EFDB_Name>
+        <EFDB_Name>maxGroupedVisits</EFDB_Name>
         <Description></Description>
-        <Frequency>0.054</Frequency>
-        <Size_in_bytes>8</Size_in_bytes>
         <IDL_Type>long</IDL_Type>
         <Units></Units>
-        <Conversion></Conversion>
-        <Sensor_location></Sensor_location>
         <Count>10</Count>
     </item>
     <item>
-        <EFDB_Name>bright_limit</EFDB_Name>
+        <EFDB_Name>brightLimit</EFDB_Name>
         <Description></Description>
-        <Frequency>0.054</Frequency>
-        <Size_in_bytes>8</Size_in_bytes>
         <IDL_Type>double</IDL_Type>
         <Units></Units>
-        <Conversion></Conversion>
-        <Sensor_location></Sensor_location>
         <Count>10</Count>
     </item>
     <item>
-        <EFDB_Name>dark_limit</EFDB_Name>
+        <EFDB_Name>darkLimit</EFDB_Name>
         <Description></Description>
-        <Frequency>0.054</Frequency>
-        <Size_in_bytes>8</Size_in_bytes>
         <IDL_Type>double</IDL_Type>
         <Units></Units>
-        <Conversion></Conversion>
-        <Sensor_location></Sensor_location>
         <Count>10</Count>
     </item>
     <item>
-        <EFDB_Name>max_seeing</EFDB_Name>
+        <EFDB_Name>maxSeeing</EFDB_Name>
         <Description></Description>
-        <Frequency>0.054</Frequency>
-        <Size_in_bytes>8</Size_in_bytes>
         <IDL_Type>double</IDL_Type>
         <Units></Units>
-        <Conversion></Conversion>
-        <Sensor_location></Sensor_location>
         <Count>10</Count>
     </item>
     <item>
-        <EFDB_Name>num_filter_exposures</EFDB_Name>
+        <EFDB_Name>numFIlterExposures</EFDB_Name>
         <Description></Description>
-        <Frequency>0.054</Frequency>
-        <Size_in_bytes>8</Size_in_bytes>
         <IDL_Type>long</IDL_Type>
         <Units></Units>
-        <Conversion></Conversion>
-        <Sensor_location></Sensor_location>
         <Count>10</Count>
     </item>
     <item>
         <EFDB_Name>exposures</EFDB_Name>
         <Description></Description>
-        <Frequency>0.054</Frequency>
-        <Size_in_bytes>8</Size_in_bytes>
         <IDL_Type>double</IDL_Type>
-        <Units>seconds</Units>
-        <Conversion></Conversion>
-        <Sensor_location></Sensor_location>
-        <Count>50</Count>
+        <Units></Units>
+        <Count>10</Count>
     </item>
     <item>
-        <EFDB_Name>max_num_targets</EFDB_Name>
+        <EFDB_Name>maxNumTargets</EFDB_Name>
         <Description></Description>
-        <Frequency>0.054</Frequency>
-        <Size_in_bytes>8</Size_in_bytes>
         <IDL_Type>long</IDL_Type>
         <Units></Units>
-        <Conversion></Conversion>
-        <Sensor_location></Sensor_location>
-        <Count>1</Count>
+        <Count>10</Count>
     </item>
     <item>
-        <EFDB_Name>accept_serendipity</EFDB_Name>
+        <EFDB_Name>acceptSerendipity</EFDB_Name>
         <Description></Description>
-        <Frequency>0.054</Frequency>
-        <Size_in_bytes></Size_in_bytes>
         <IDL_Type>boolean</IDL_Type>
         <Units></Units>
-        <Conversion></Conversion>
-        <Sensor_location></Sensor_location>
         <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>accept_consecutive_visits</EFDB_Name>
+        <EFDB_Name>acceptConsecutiveVisits</EFDB_Name>
         <Description></Description>
-        <Frequency>0.054</Frequency>
-        <Size_in_bytes></Size_in_bytes>
         <IDL_Type>boolean</IDL_Type>
         <Units></Units>
-        <Conversion></Conversion>
-        <Sensor_location></Sensor_location>
         <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>airmass_bonus</EFDB_Name>
+        <EFDB_Name>restartLostSequences</EFDB_Name>
         <Description></Description>
-        <Frequency>0.054</Frequency>
-        <Size_in_bytes>8</Size_in_bytes>
-        <IDL_Type>double</IDL_Type>
-        <Units></Units>
-        <Conversion></Conversion>
-        <Sensor_location></Sensor_location>
-        <Count>1</Count>
-    </item>
-    <item>
-        <EFDB_Name>hour_angle_bonus</EFDB_Name>
-        <Description></Description>
-        <Frequency>0.054</Frequency>
-        <Size_in_bytes>8</Size_in_bytes>
-        <IDL_Type>double</IDL_Type>
-        <Units></Units>
-        <Conversion></Conversion>
-        <Sensor_location></Sensor_location>
-        <Count>1</Count>
-    </item>
-    <item>
-        <EFDB_Name>hour_angle_max</EFDB_Name>
-        <Description></Description>
-        <Frequency>0.054</Frequency>
-        <Size_in_bytes>8</Size_in_bytes>
-        <IDL_Type>double</IDL_Type>
-        <Units></Units>
-        <Conversion></Conversion>
-        <Sensor_location></Sensor_location>
-        <Count>1</Count>
-    </item>
-    <item>
-        <EFDB_Name>restrict_grouped_visits</EFDB_Name>
-        <Description></Description>
-        <Frequency>0.054</Frequency>
-        <Size_in_bytes></Size_in_bytes>
         <IDL_Type>boolean</IDL_Type>
         <Units></Units>
-        <Conversion></Conversion>
-        <Sensor_location></Sensor_location>
         <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>time_interval</EFDB_Name>
+        <EFDB_Name>restartCompleteSequences</EFDB_Name>
         <Description></Description>
-        <Frequency>0.054</Frequency>
-        <Size_in_bytes>8</Size_in_bytes>
-        <IDL_Type>double</IDL_Type>
+        <IDL_Type>boolean</IDL_Type>
         <Units></Units>
-        <Conversion></Conversion>
-        <Sensor_location></Sensor_location>
         <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>time_window_start</EFDB_Name>
+        <EFDB_Name>maxVisitsGoal</EFDB_Name>
         <Description></Description>
-        <Frequency>0.054</Frequency>
-        <Size_in_bytes>8</Size_in_bytes>
-        <IDL_Type>double</IDL_Type>
+        <IDL_Type>long</IDL_Type>
         <Units></Units>
-        <Conversion></Conversion>
-        <Sensor_location></Sensor_location>
         <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>time_window_max</EFDB_Name>
+        <EFDB_Name>airmassBonus</EFDB_Name>
         <Description></Description>
-        <Frequency>0.054</Frequency>
-        <Size_in_bytes>8</Size_in_bytes>
         <IDL_Type>double</IDL_Type>
         <Units></Units>
-        <Conversion></Conversion>
-        <Sensor_location></Sensor_location>
         <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>time_window_end</EFDB_Name>
+        <EFDB_Name>hourAngleBonus</EFDB_Name>
         <Description></Description>
-        <Frequency>0.054</Frequency>
-        <Size_in_bytes>8</Size_in_bytes>
         <IDL_Type>double</IDL_Type>
         <Units></Units>
-        <Conversion></Conversion>
-        <Sensor_location></Sensor_location>
         <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>time_weight</EFDB_Name>
+        <EFDB_Name>hourAngleMax</EFDB_Name>
         <Description></Description>
-        <Frequency>0.054</Frequency>
-        <Size_in_bytes>8</Size_in_bytes>
         <IDL_Type>double</IDL_Type>
         <Units></Units>
-        <Conversion></Conversion>
-        <Sensor_location></Sensor_location>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>restrictGroupedVisits</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>boolean</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>timeInterval</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>double</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>timeWindowStart</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>double</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>timeWindowMax</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>double</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>timeWindowEnd</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>double</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>timeWeight</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>double</IDL_Type>
+        <Units></Units>
         <Count>1</Count>
     </item>
 </SALTelemetry>
 <SALTelemetry>
     <Subsystem>scheduler</Subsystem>
-    <Version>3.2.0</Version>
-    <Author>salgenerator</Author>
+    <Version>3.5.2</Version>
+    <Author></Author>
     <EFDB_Topic>scheduler_sequencePropConfig</EFDB_Topic>
     <item>
         <EFDB_Name>name</EFDB_Name>
         <Description></Description>
-        <Frequency>0.054</Frequency>
-        <Size_in_bytes></Size_in_bytes>
         <IDL_Type>string</IDL_Type>
+        <IDL_Size>256</IDL_Size>
         <Units></Units>
-        <Conversion></Conversion>
-        <Sensor_location></Sensor_location>
         <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>prop_id</EFDB_Name>
+        <EFDB_Name>propId</EFDB_Name>
         <Description></Description>
-        <Frequency>0.054</Frequency>
-        <Size_in_bytes>8</Size_in_bytes>
         <IDL_Type>long</IDL_Type>
         <Units></Units>
-        <Conversion></Conversion>
-        <Sensor_location></Sensor_location>
         <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>twilight_boundary</EFDB_Name>
+        <EFDB_Name>twilightBoundary</EFDB_Name>
         <Description></Description>
-        <Frequency>0.054</Frequency>
-        <Size_in_bytes>8</Size_in_bytes>
-        <IDL_Type>double</IDL_Type>
-        <Units>degrees</Units>
-        <Conversion></Conversion>
-        <Sensor_location></Sensor_location>
-        <Count>1</Count>
-    </item>
-    <item>
-        <EFDB_Name>delta_lst</EFDB_Name>
-        <Description></Description>
-        <Frequency>0.054</Frequency>
-        <Size_in_bytes>8</Size_in_bytes>
-        <IDL_Type>double</IDL_Type>
-        <Units>degrees</Units>
-        <Conversion></Conversion>
-        <Sensor_location></Sensor_location>
-        <Count>1</Count>
-    </item>
-    <item>
-        <EFDB_Name>dec_window</EFDB_Name>
-        <Description></Description>
-        <Frequency>0.054</Frequency>
-        <Size_in_bytes>8</Size_in_bytes>
-        <IDL_Type>double</IDL_Type>
-        <Units>degrees</Units>
-        <Conversion></Conversion>
-        <Sensor_location></Sensor_location>
-        <Count>1</Count>
-    </item>
-    <item>
-        <EFDB_Name>max_airmass</EFDB_Name>
-        <Description></Description>
-        <Frequency>0.054</Frequency>
-        <Size_in_bytes>8</Size_in_bytes>
         <IDL_Type>double</IDL_Type>
         <Units></Units>
-        <Conversion></Conversion>
-        <Sensor_location></Sensor_location>
         <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>max_cloud</EFDB_Name>
+        <EFDB_Name>deltaLst</EFDB_Name>
         <Description></Description>
-        <Frequency>0.054</Frequency>
-        <Size_in_bytes>8</Size_in_bytes>
         <IDL_Type>double</IDL_Type>
         <Units></Units>
-        <Conversion></Conversion>
-        <Sensor_location></Sensor_location>
         <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>min_distance_moon</EFDB_Name>
+        <EFDB_Name>decWindow</EFDB_Name>
         <Description></Description>
-        <Frequency>0.054</Frequency>
-        <Size_in_bytes>8</Size_in_bytes>
         <IDL_Type>double</IDL_Type>
         <Units></Units>
-        <Conversion></Conversion>
-        <Sensor_location></Sensor_location>
         <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>exclude_planets</EFDB_Name>
+        <EFDB_Name>maxAirmass</EFDB_Name>
         <Description></Description>
-        <Frequency>0.054</Frequency>
-        <Size_in_bytes></Size_in_bytes>
+        <IDL_Type>double</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>maxCloud</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>double</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>minDistanceMoon</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>double</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>excludePlanets</EFDB_Name>
+        <Description></Description>
         <IDL_Type>boolean</IDL_Type>
         <Units></Units>
-        <Conversion></Conversion>
-        <Sensor_location></Sensor_location>
         <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>num_user_regions</EFDB_Name>
+        <EFDB_Name>numUserRegions</EFDB_Name>
         <Description></Description>
-        <Frequency>0.054</Frequency>
-        <Size_in_bytes>8</Size_in_bytes>
         <IDL_Type>long</IDL_Type>
         <Units></Units>
-        <Conversion></Conversion>
-        <Sensor_location></Sensor_location>
         <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>user_region_ids</EFDB_Name>
+        <EFDB_Name>userRegionIds</EFDB_Name>
         <Description></Description>
-        <Frequency>0.054</Frequency>
-        <Size_in_bytes>8</Size_in_bytes>
         <IDL_Type>long</IDL_Type>
         <Units></Units>
-        <Conversion></Conversion>
-        <Sensor_location></Sensor_location>
-        <Count>20</Count>
-    </item>
-    <item>
-        <EFDB_Name>num_sub_sequences</EFDB_Name>
-        <Description></Description>
-        <Frequency>0.054</Frequency>
-        <Size_in_bytes>8</Size_in_bytes>
-        <IDL_Type>long</IDL_Type>
-        <Units></Units>
-        <Conversion></Conversion>
-        <Sensor_location></Sensor_location>
         <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>sub_sequence_names</EFDB_Name>
+        <EFDB_Name>numSubSequences</EFDB_Name>
         <Description></Description>
-        <Frequency>0.054</Frequency>
-        <Size_in_bytes></Size_in_bytes>
+        <IDL_Type>long</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>subSequenceNames</EFDB_Name>
+        <Description></Description>
         <IDL_Type>string</IDL_Type>
+        <IDL_Size>256</IDL_Size>
         <Units></Units>
-        <Conversion></Conversion>
-        <Sensor_location></Sensor_location>
         <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>num_sub_sequence_filters</EFDB_Name>
+        <EFDB_Name>numSubSequenceFilters</EFDB_Name>
         <Description></Description>
-        <Frequency>0.054</Frequency>
-        <Size_in_bytes>8</Size_in_bytes>
         <IDL_Type>long</IDL_Type>
         <Units></Units>
-        <Conversion></Conversion>
-        <Sensor_location></Sensor_location>
-        <Count>10</Count>
+        <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>sub_sequence_filters</EFDB_Name>
+        <EFDB_Name>subSequenceFilters</EFDB_Name>
         <Description></Description>
-        <Frequency>0.054</Frequency>
-        <Size_in_bytes></Size_in_bytes>
         <IDL_Type>string</IDL_Type>
+        <IDL_Size>256</IDL_Size>
         <Units></Units>
-        <Conversion></Conversion>
-        <Sensor_location></Sensor_location>
         <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>num_sub_sequence_filter_visits</EFDB_Name>
+        <EFDB_Name>numSubSequenceFilterVisits</EFDB_Name>
         <Description></Description>
-        <Frequency>0.054</Frequency>
-        <Size_in_bytes>8</Size_in_bytes>
         <IDL_Type>long</IDL_Type>
         <Units></Units>
-        <Conversion></Conversion>
-        <Sensor_location></Sensor_location>
-        <Count>60</Count>
-    </item>
-    <item>
-        <EFDB_Name>num_sub_sequence_events</EFDB_Name>
-        <Description></Description>
-        <Frequency>0.054</Frequency>
-        <Size_in_bytes>8</Size_in_bytes>
-        <IDL_Type>long</IDL_Type>
-        <Units></Units>
-        <Conversion></Conversion>
-        <Sensor_location></Sensor_location>
-        <Count>10</Count>
-    </item>
-    <item>
-        <EFDB_Name>num_sub_sequence_max_missed</EFDB_Name>
-        <Description></Description>
-        <Frequency>0.054</Frequency>
-        <Size_in_bytes>8</Size_in_bytes>
-        <IDL_Type>long</IDL_Type>
-        <Units></Units>
-        <Conversion></Conversion>
-        <Sensor_location></Sensor_location>
-        <Count>10</Count>
-    </item>
-    <item>
-        <EFDB_Name>sub_sequence_time_intervals</EFDB_Name>
-        <Description></Description>
-        <Frequency>0.054</Frequency>
-        <Size_in_bytes>8</Size_in_bytes>
-        <IDL_Type>double</IDL_Type>
-        <Units></Units>
-        <Conversion></Conversion>
-        <Sensor_location></Sensor_location>
-        <Count>10</Count>
-    </item>
-    <item>
-        <EFDB_Name>sub_sequence_time_window_starts</EFDB_Name>
-        <Description></Description>
-        <Frequency>0.054</Frequency>
-        <Size_in_bytes>8</Size_in_bytes>
-        <IDL_Type>double</IDL_Type>
-        <Units></Units>
-        <Conversion></Conversion>
-        <Sensor_location></Sensor_location>
-        <Count>10</Count>
-    </item>
-    <item>
-        <EFDB_Name>sub_sequence_time_window_maximums</EFDB_Name>
-        <Description></Description>
-        <Frequency>0.054</Frequency>
-        <Size_in_bytes>8</Size_in_bytes>
-        <IDL_Type>double</IDL_Type>
-        <Units></Units>
-        <Conversion></Conversion>
-        <Sensor_location></Sensor_location>
-        <Count>10</Count>
-    </item>
-    <item>
-        <EFDB_Name>sub_sequence_time_window_ends</EFDB_Name>
-        <Description></Description>
-        <Frequency>0.054</Frequency>
-        <Size_in_bytes>8</Size_in_bytes>
-        <IDL_Type>double</IDL_Type>
-        <Units></Units>
-        <Conversion></Conversion>
-        <Sensor_location></Sensor_location>
-        <Count>10</Count>
-    </item>
-    <item>
-        <EFDB_Name>sub_sequence_time_weights</EFDB_Name>
-        <Description></Description>
-        <Frequency>0.054</Frequency>
-        <Size_in_bytes>8</Size_in_bytes>
-        <IDL_Type>double</IDL_Type>
-        <Units></Units>
-        <Conversion></Conversion>
-        <Sensor_location></Sensor_location>
-        <Count>10</Count>
-    </item>
-    <item>
-        <EFDB_Name>num_master_sub_sequences</EFDB_Name>
-        <Description></Description>
-        <Frequency>0.054</Frequency>
-        <Size_in_bytes>8</Size_in_bytes>
-        <IDL_Type>long</IDL_Type>
-        <Units></Units>
-        <Conversion></Conversion>
-        <Sensor_location></Sensor_location>
         <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>master_sub_sequence_names</EFDB_Name>
+        <EFDB_Name>numSubSequenceEvents</EFDB_Name>
         <Description></Description>
-        <Frequency>0.054</Frequency>
-        <Size_in_bytes></Size_in_bytes>
+        <IDL_Type>long</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>numSubSequenceMaxMissed</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>long</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>subSequenceTimeIntervals</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>double</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>subSequenceTimeWindowStarts</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>double</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>subSequenceTimeWindowMaximums</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>double</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>subSequenceTimeWindowEnds</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>double</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>subSequenceTimeWeights</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>double</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>numMasterSubSequences</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>long</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>masterSubSequenceNames</EFDB_Name>
+        <Description></Description>
         <IDL_Type>string</IDL_Type>
+        <IDL_Size>256</IDL_Size>
         <Units></Units>
-        <Conversion></Conversion>
-        <Sensor_location></Sensor_location>
         <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>num_nested_sub_sequences</EFDB_Name>
+        <EFDB_Name>numNestedSubSequences</EFDB_Name>
         <Description></Description>
-        <Frequency>0.054</Frequency>
-        <Size_in_bytes>8</Size_in_bytes>
         <IDL_Type>long</IDL_Type>
         <Units></Units>
-        <Conversion></Conversion>
-        <Sensor_location></Sensor_location>
-        <Count>10</Count>
+        <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>nested_sub_sequence_names</EFDB_Name>
+        <EFDB_Name>nestedSubSequenceNames</EFDB_Name>
         <Description></Description>
-        <Frequency>0.054</Frequency>
-        <Size_in_bytes></Size_in_bytes>
         <IDL_Type>string</IDL_Type>
+        <IDL_Size>256</IDL_Size>
         <Units></Units>
-        <Conversion></Conversion>
-        <Sensor_location></Sensor_location>
         <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>num_master_sub_sequence_events</EFDB_Name>
+        <EFDB_Name>numMasterSubSequenceEvents</EFDB_Name>
         <Description></Description>
-        <Frequency>0.054</Frequency>
-        <Size_in_bytes>8</Size_in_bytes>
         <IDL_Type>long</IDL_Type>
         <Units></Units>
-        <Conversion></Conversion>
-        <Sensor_location></Sensor_location>
-        <Count>10</Count>
+        <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>num_master_sub_sequence_max_missed</EFDB_Name>
+        <EFDB_Name>numMasterSubSequenceMaxMissed</EFDB_Name>
         <Description></Description>
-        <Frequency>0.054</Frequency>
-        <Size_in_bytes>8</Size_in_bytes>
         <IDL_Type>long</IDL_Type>
         <Units></Units>
-        <Conversion></Conversion>
-        <Sensor_location></Sensor_location>
-        <Count>10</Count>
+        <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>master_sub_sequence_time_intervals</EFDB_Name>
+        <EFDB_Name>masterSubSequenceTimeIntervals</EFDB_Name>
         <Description></Description>
-        <Frequency>0.054</Frequency>
-        <Size_in_bytes>8</Size_in_bytes>
         <IDL_Type>double</IDL_Type>
         <Units></Units>
-        <Conversion></Conversion>
-        <Sensor_location></Sensor_location>
-        <Count>10</Count>
+        <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>master_sub_sequence_time_window_starts</EFDB_Name>
+        <EFDB_Name>masterSubSequenceTimeWindowStarts</EFDB_Name>
         <Description></Description>
-        <Frequency>0.054</Frequency>
-        <Size_in_bytes>8</Size_in_bytes>
         <IDL_Type>double</IDL_Type>
         <Units></Units>
-        <Conversion></Conversion>
-        <Sensor_location></Sensor_location>
-        <Count>10</Count>
+        <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>master_sub_sequence_time_window_maximums</EFDB_Name>
+        <EFDB_Name>masterSubSequenceTimeWindowMaximums</EFDB_Name>
         <Description></Description>
-        <Frequency>0.054</Frequency>
-        <Size_in_bytes>8</Size_in_bytes>
         <IDL_Type>double</IDL_Type>
         <Units></Units>
-        <Conversion></Conversion>
-        <Sensor_location></Sensor_location>
-        <Count>10</Count>
+        <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>master_sub_sequence_time_window_ends</EFDB_Name>
+        <EFDB_Name>masterSubSequenceTimeWindowEnds</EFDB_Name>
         <Description></Description>
-        <Frequency>0.054</Frequency>
-        <Size_in_bytes>8</Size_in_bytes>
         <IDL_Type>double</IDL_Type>
         <Units></Units>
-        <Conversion></Conversion>
-        <Sensor_location></Sensor_location>
-        <Count>10</Count>
+        <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>master_sub_sequence_time_weights</EFDB_Name>
+        <EFDB_Name>masterSubSeuenceTimeWeights</EFDB_Name>
         <Description></Description>
-        <Frequency>0.054</Frequency>
-        <Size_in_bytes>8</Size_in_bytes>
         <IDL_Type>double</IDL_Type>
         <Units></Units>
-        <Conversion></Conversion>
-        <Sensor_location></Sensor_location>
-        <Count>10</Count>
+        <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>num_nested_sub_sequence_filters</EFDB_Name>
+        <EFDB_Name>numNestedSubSequenceFilters</EFDB_Name>
         <Description></Description>
-        <Frequency>0.054</Frequency>
-        <Size_in_bytes>8</Size_in_bytes>
         <IDL_Type>long</IDL_Type>
         <Units></Units>
-        <Conversion></Conversion>
-        <Sensor_location></Sensor_location>
-        <Count>100</Count>
+        <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>nested_sub_sequence_filters</EFDB_Name>
+        <EFDB_Name>nestedSubSequenceFilters</EFDB_Name>
         <Description></Description>
-        <Frequency>0.054</Frequency>
-        <Size_in_bytes></Size_in_bytes>
         <IDL_Type>string</IDL_Type>
+        <IDL_Size>256</IDL_Size>
         <Units></Units>
-        <Conversion></Conversion>
-        <Sensor_location></Sensor_location>
         <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>num_nested_sub_sequence_filter_visits</EFDB_Name>
+        <EFDB_Name>numNestedSubSequenceFilterVisits</EFDB_Name>
         <Description></Description>
-        <Frequency>0.054</Frequency>
-        <Size_in_bytes>8</Size_in_bytes>
         <IDL_Type>long</IDL_Type>
         <Units></Units>
-        <Conversion></Conversion>
-        <Sensor_location></Sensor_location>
-        <Count>600</Count>
-    </item>
-    <item>
-        <EFDB_Name>num_nested_sub_sequence_events</EFDB_Name>
-        <Description></Description>
-        <Frequency>0.054</Frequency>
-        <Size_in_bytes>8</Size_in_bytes>
-        <IDL_Type>long</IDL_Type>
-        <Units></Units>
-        <Conversion></Conversion>
-        <Sensor_location></Sensor_location>
-        <Count>100</Count>
-    </item>
-    <item>
-        <EFDB_Name>num_nested_sub_sequence_max_missed</EFDB_Name>
-        <Description></Description>
-        <Frequency>0.054</Frequency>
-        <Size_in_bytes>8</Size_in_bytes>
-        <IDL_Type>long</IDL_Type>
-        <Units></Units>
-        <Conversion></Conversion>
-        <Sensor_location></Sensor_location>
-        <Count>100</Count>
-    </item>
-    <item>
-        <EFDB_Name>nested_sub_sequence_time_intervals</EFDB_Name>
-        <Description></Description>
-        <Frequency>0.054</Frequency>
-        <Size_in_bytes>8</Size_in_bytes>
-        <IDL_Type>double</IDL_Type>
-        <Units></Units>
-        <Conversion></Conversion>
-        <Sensor_location></Sensor_location>
-        <Count>100</Count>
-    </item>
-    <item>
-        <EFDB_Name>nested_sub_sequence_time_window_starts</EFDB_Name>
-        <Description></Description>
-        <Frequency>0.054</Frequency>
-        <Size_in_bytes>8</Size_in_bytes>
-        <IDL_Type>double</IDL_Type>
-        <Units></Units>
-        <Conversion></Conversion>
-        <Sensor_location></Sensor_location>
-        <Count>100</Count>
-    </item>
-    <item>
-        <EFDB_Name>nested_sub_sequence_time_window_maximums</EFDB_Name>
-        <Description></Description>
-        <Frequency>0.054</Frequency>
-        <Size_in_bytes>8</Size_in_bytes>
-        <IDL_Type>double</IDL_Type>
-        <Units></Units>
-        <Conversion></Conversion>
-        <Sensor_location></Sensor_location>
-        <Count>100</Count>
-    </item>
-    <item>
-        <EFDB_Name>nested_sub_sequence_time_window_ends</EFDB_Name>
-        <Description></Description>
-        <Frequency>0.054</Frequency>
-        <Size_in_bytes>8</Size_in_bytes>
-        <IDL_Type>double</IDL_Type>
-        <Units></Units>
-        <Conversion></Conversion>
-        <Sensor_location></Sensor_location>
-        <Count>100</Count>
-    </item>
-    <item>
-        <EFDB_Name>nested_sub_sequence_time_weights</EFDB_Name>
-        <Description></Description>
-        <Frequency>0.054</Frequency>
-        <Size_in_bytes>8</Size_in_bytes>
-        <IDL_Type>double</IDL_Type>
-        <Units></Units>
-        <Conversion></Conversion>
-        <Sensor_location></Sensor_location>
-        <Count>100</Count>
-    </item>
-    <item>
-        <EFDB_Name>num_filters</EFDB_Name>
-        <Description></Description>
-        <Frequency>0.054</Frequency>
-        <Size_in_bytes>8</Size_in_bytes>
-        <IDL_Type>long</IDL_Type>
-        <Units></Units>
-        <Conversion></Conversion>
-        <Sensor_location></Sensor_location>
         <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>filter_names</EFDB_Name>
+        <EFDB_Name>numNestedSubSequenceEvents</EFDB_Name>
         <Description></Description>
-        <Frequency>0.054</Frequency>
-        <Size_in_bytes></Size_in_bytes>
+        <IDL_Type>long</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>numNestedSubSequenceMaxMissed</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>long</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>nestedSubSequenceTimeIntervals</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>double</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>nestedSubSequenceTimeWindowStarts</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>double</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>nestedSubSequenceTimeWindowMaximums</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>double</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>nestedSubSequenceTimeWindowEnds</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>double</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>nestedSubSequenceTimeWights</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>double</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>numFilters</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>long</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>filterNames</EFDB_Name>
+        <Description></Description>
         <IDL_Type>string</IDL_Type>
+        <IDL_Size>256</IDL_Size>
         <Units></Units>
-        <Conversion></Conversion>
-        <Sensor_location></Sensor_location>
         <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>bright_limit</EFDB_Name>
+        <EFDB_Name>brightLimit</EFDB_Name>
         <Description></Description>
-        <Frequency>0.054</Frequency>
-        <Size_in_bytes>8</Size_in_bytes>
         <IDL_Type>double</IDL_Type>
         <Units></Units>
-        <Conversion></Conversion>
-        <Sensor_location></Sensor_location>
-        <Count>10</Count>
+        <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>dark_limit</EFDB_Name>
+        <EFDB_Name>darkLimit</EFDB_Name>
         <Description></Description>
-        <Frequency>0.054</Frequency>
-        <Size_in_bytes>8</Size_in_bytes>
         <IDL_Type>double</IDL_Type>
         <Units></Units>
-        <Conversion></Conversion>
-        <Sensor_location></Sensor_location>
-        <Count>10</Count>
+        <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>max_seeing</EFDB_Name>
+        <EFDB_Name>maxSeeing</EFDB_Name>
         <Description></Description>
-        <Frequency>0.054</Frequency>
-        <Size_in_bytes>8</Size_in_bytes>
         <IDL_Type>double</IDL_Type>
         <Units></Units>
-        <Conversion></Conversion>
-        <Sensor_location></Sensor_location>
-        <Count>10</Count>
+        <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>num_filter_exposures</EFDB_Name>
+        <EFDB_Name>numFilterExposures</EFDB_Name>
         <Description></Description>
-        <Frequency>0.054</Frequency>
-        <Size_in_bytes>8</Size_in_bytes>
         <IDL_Type>long</IDL_Type>
         <Units></Units>
-        <Conversion></Conversion>
-        <Sensor_location></Sensor_location>
-        <Count>10</Count>
+        <Count>1</Count>
     </item>
     <item>
         <EFDB_Name>exposures</EFDB_Name>
         <Description></Description>
-        <Frequency>0.054</Frequency>
-        <Size_in_bytes>8</Size_in_bytes>
         <IDL_Type>double</IDL_Type>
-        <Units>seconds</Units>
-        <Conversion></Conversion>
-        <Sensor_location></Sensor_location>
-        <Count>50</Count>
+        <Units></Units>
+        <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>max_num_targets</EFDB_Name>
+        <EFDB_Name>maxNumTargets</EFDB_Name>
         <Description></Description>
-        <Frequency>0.054</Frequency>
-        <Size_in_bytes>8</Size_in_bytes>
         <IDL_Type>long</IDL_Type>
         <Units></Units>
-        <Conversion></Conversion>
-        <Sensor_location></Sensor_location>
         <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>accept_serendipity</EFDB_Name>
+        <EFDB_Name>acceptSerendipity</EFDB_Name>
         <Description></Description>
-        <Frequency>0.054</Frequency>
-        <Size_in_bytes></Size_in_bytes>
         <IDL_Type>boolean</IDL_Type>
         <Units></Units>
-        <Conversion></Conversion>
-        <Sensor_location></Sensor_location>
         <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>accept_consecutive_visits</EFDB_Name>
+        <EFDB_Name>acceptConsecutiveVisits</EFDB_Name>
         <Description></Description>
-        <Frequency>0.054</Frequency>
-        <Size_in_bytes></Size_in_bytes>
         <IDL_Type>boolean</IDL_Type>
         <Units></Units>
-        <Conversion></Conversion>
-        <Sensor_location></Sensor_location>
         <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>restart_lost_sequences</EFDB_Name>
+        <EFDB_Name>restartLostSequences</EFDB_Name>
         <Description></Description>
-        <Frequency>0.054</Frequency>
-        <Size_in_bytes></Size_in_bytes>
         <IDL_Type>boolean</IDL_Type>
         <Units></Units>
-        <Conversion></Conversion>
-        <Sensor_location></Sensor_location>
         <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>restart_complete_sequences</EFDB_Name>
+        <EFDB_Name>restartCompleteSequences</EFDB_Name>
         <Description></Description>
-        <Frequency>0.054</Frequency>
-        <Size_in_bytes></Size_in_bytes>
         <IDL_Type>boolean</IDL_Type>
         <Units></Units>
-        <Conversion></Conversion>
-        <Sensor_location></Sensor_location>
         <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>max_visits_goal</EFDB_Name>
+        <EFDB_Name>maxVisitsGoal</EFDB_Name>
         <Description></Description>
-        <Frequency>0.054</Frequency>
-        <Size_in_bytes>8</Size_in_bytes>
         <IDL_Type>long</IDL_Type>
         <Units></Units>
-        <Conversion></Conversion>
-        <Sensor_location></Sensor_location>
         <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>airmass_bonus</EFDB_Name>
+        <EFDB_Name>airmassBonus</EFDB_Name>
         <Description></Description>
-        <Frequency>0.054</Frequency>
-        <Size_in_bytes>8</Size_in_bytes>
         <IDL_Type>double</IDL_Type>
         <Units></Units>
-        <Conversion></Conversion>
-        <Sensor_location></Sensor_location>
         <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>hour_angle_bonus</EFDB_Name>
+        <EFDB_Name>hourAngleBonus</EFDB_Name>
         <Description></Description>
-        <Frequency>0.054</Frequency>
-        <Size_in_bytes>8</Size_in_bytes>
         <IDL_Type>double</IDL_Type>
         <Units></Units>
-        <Conversion></Conversion>
-        <Sensor_location></Sensor_location>
         <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>hour_angle_max</EFDB_Name>
+        <EFDB_Name>hourAngleMax</EFDB_Name>
         <Description></Description>
-        <Frequency>0.054</Frequency>
-        <Size_in_bytes>8</Size_in_bytes>
         <IDL_Type>double</IDL_Type>
         <Units></Units>
-        <Conversion></Conversion>
-        <Sensor_location></Sensor_location>
         <Count>1</Count>
     </item>
 </SALTelemetry>
 <SALTelemetry>
     <Subsystem>scheduler</Subsystem>
-    <Version>3.2.0</Version>
-    <Author>salgenerator</Author>
-    <EFDB_Topic>scheduler_blockPusher</EFDB_Topic>
-    <item>
-        <EFDB_Name>timestamp</EFDB_Name>
-        <Description></Description>
-        <Frequency>0.054</Frequency>
-        <Size_in_bytes>8</Size_in_bytes>
-        <IDL_Type>long</IDL_Type>
-        <Units>seconds</Units>
-        <Conversion></Conversion>
-        <Sensor_location></Sensor_location>
-        <Count>1</Count>
-    </item>
-    <item>
-        <EFDB_Name>block</EFDB_Name>
-        <Description></Description>
-        <Frequency>0.054</Frequency>
-        <Size_in_bytes>1600000</Size_in_bytes>
-        <IDL_Type>double</IDL_Type>
-        <Units></Units>
-        <Conversion></Conversion>
-        <Sensor_location></Sensor_location>
-        <Count>200000</Count>
-    </item>
-</SALTelemetry>
-<SALTelemetry>
-    <Subsystem>scheduler</Subsystem>
-    <Version>3.2.0</Version>
-    <Author>salgenerator</Author>
+    <Version>3.5.2</Version>
+    <Author></Author>
     <EFDB_Topic>scheduler_observatoryState</EFDB_Topic>
     <item>
         <EFDB_Name>timestamp</EFDB_Name>
         <Description></Description>
-        <Frequency>0.054</Frequency>
-        <Size_in_bytes>8</Size_in_bytes>
         <IDL_Type>double</IDL_Type>
-        <Units>seconds</Units>
-        <Conversion></Conversion>
-        <Sensor_location></Sensor_location>
+        <Units></Units>
         <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>pointing_ra</EFDB_Name>
+        <EFDB_Name>pointingRa</EFDB_Name>
         <Description></Description>
-        <Frequency>0.054</Frequency>
-        <Size_in_bytes>8</Size_in_bytes>
         <IDL_Type>double</IDL_Type>
-        <Units>degrees</Units>
-        <Conversion></Conversion>
-        <Sensor_location></Sensor_location>
+        <Units></Units>
         <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>pointing_dec</EFDB_Name>
+        <EFDB_Name>pointingDec</EFDB_Name>
         <Description></Description>
-        <Frequency>0.054</Frequency>
-        <Size_in_bytes>8</Size_in_bytes>
         <IDL_Type>double</IDL_Type>
-        <Units>degrees</Units>
-        <Conversion></Conversion>
-        <Sensor_location></Sensor_location>
+        <Units></Units>
         <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>pointing_angle</EFDB_Name>
+        <EFDB_Name>pointingAngle</EFDB_Name>
         <Description></Description>
-        <Frequency>0.054</Frequency>
-        <Size_in_bytes>8</Size_in_bytes>
         <IDL_Type>double</IDL_Type>
-        <Units>degrees</Units>
-        <Conversion></Conversion>
-        <Sensor_location></Sensor_location>
+        <Units></Units>
         <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>pointing_altitude</EFDB_Name>
+        <EFDB_Name>pointingAltitude</EFDB_Name>
         <Description></Description>
-        <Frequency>0.054</Frequency>
-        <Size_in_bytes>8</Size_in_bytes>
         <IDL_Type>double</IDL_Type>
-        <Units>degrees</Units>
-        <Conversion></Conversion>
-        <Sensor_location></Sensor_location>
+        <Units></Units>
         <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>pointing_azimuth</EFDB_Name>
+        <EFDB_Name>pointingAzimuth</EFDB_Name>
         <Description></Description>
-        <Frequency>0.054</Frequency>
-        <Size_in_bytes>8</Size_in_bytes>
         <IDL_Type>double</IDL_Type>
-        <Units>degrees</Units>
-        <Conversion></Conversion>
-        <Sensor_location></Sensor_location>
+        <Units></Units>
         <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>pointing_pa</EFDB_Name>
+        <EFDB_Name>pointingPa</EFDB_Name>
         <Description></Description>
-        <Frequency>0.054</Frequency>
-        <Size_in_bytes>8</Size_in_bytes>
         <IDL_Type>double</IDL_Type>
-        <Units>degrees</Units>
-        <Conversion></Conversion>
-        <Sensor_location></Sensor_location>
+        <Units></Units>
         <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>pointing_rot</EFDB_Name>
+        <EFDB_Name>pointingRot</EFDB_Name>
         <Description></Description>
-        <Frequency>0.054</Frequency>
-        <Size_in_bytes>8</Size_in_bytes>
         <IDL_Type>double</IDL_Type>
-        <Units>degrees</Units>
-        <Conversion></Conversion>
-        <Sensor_location></Sensor_location>
+        <Units></Units>
         <Count>1</Count>
     </item>
     <item>
         <EFDB_Name>tracking</EFDB_Name>
         <Description></Description>
-        <Frequency>0.054</Frequency>
-        <Size_in_bytes></Size_in_bytes>
-        <IDL_Type>boolean</IDL_Type>
+        <IDL_Type>double</IDL_Type>
         <Units></Units>
-        <Conversion></Conversion>
-        <Sensor_location></Sensor_location>
         <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>telescope_altitude</EFDB_Name>
+        <EFDB_Name>telescopeAltitude</EFDB_Name>
         <Description></Description>
-        <Frequency>0.054</Frequency>
-        <Size_in_bytes>8</Size_in_bytes>
         <IDL_Type>double</IDL_Type>
-        <Units>degrees</Units>
-        <Conversion></Conversion>
-        <Sensor_location></Sensor_location>
+        <Units></Units>
         <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>telescope_azimuth</EFDB_Name>
+        <EFDB_Name>telescopeAzimuth</EFDB_Name>
         <Description></Description>
-        <Frequency>0.054</Frequency>
-        <Size_in_bytes>8</Size_in_bytes>
         <IDL_Type>double</IDL_Type>
-        <Units>degrees</Units>
-        <Conversion></Conversion>
-        <Sensor_location></Sensor_location>
+        <Units></Units>
         <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>telescope_rotator</EFDB_Name>
+        <EFDB_Name>telescopeRotator</EFDB_Name>
         <Description></Description>
-        <Frequency>0.054</Frequency>
-        <Size_in_bytes>8</Size_in_bytes>
         <IDL_Type>double</IDL_Type>
-        <Units>degrees</Units>
-        <Conversion></Conversion>
-        <Sensor_location></Sensor_location>
+        <Units></Units>
         <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>dome_altitude</EFDB_Name>
+        <EFDB_Name>domeAltitude</EFDB_Name>
         <Description></Description>
-        <Frequency>0.054</Frequency>
-        <Size_in_bytes>8</Size_in_bytes>
         <IDL_Type>double</IDL_Type>
-        <Units>degrees</Units>
-        <Conversion></Conversion>
-        <Sensor_location></Sensor_location>
+        <Units></Units>
         <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>dome_azimuth</EFDB_Name>
+        <EFDB_Name>domeAzimuth</EFDB_Name>
         <Description></Description>
-        <Frequency>0.054</Frequency>
-        <Size_in_bytes>8</Size_in_bytes>
         <IDL_Type>double</IDL_Type>
-        <Units>degrees</Units>
-        <Conversion></Conversion>
-        <Sensor_location></Sensor_location>
+        <Units></Units>
         <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>filter_position</EFDB_Name>
+        <EFDB_Name>filterPosition</EFDB_Name>
         <Description></Description>
-        <Frequency>0.054</Frequency>
-        <Size_in_bytes></Size_in_bytes>
         <IDL_Type>string</IDL_Type>
+        <IDL_Size>256</IDL_Size>
         <Units></Units>
-        <Conversion></Conversion>
-        <Sensor_location></Sensor_location>
         <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>filter_mounted</EFDB_Name>
+        <EFDB_Name>filterMounted</EFDB_Name>
         <Description></Description>
-        <Frequency>0.054</Frequency>
-        <Size_in_bytes></Size_in_bytes>
         <IDL_Type>string</IDL_Type>
+        <IDL_Size>256</IDL_Size>
         <Units></Units>
-        <Conversion></Conversion>
-        <Sensor_location></Sensor_location>
         <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>filter_unmounted</EFDB_Name>
+        <EFDB_Name>filterUnmounted</EFDB_Name>
         <Description></Description>
-        <Frequency>0.054</Frequency>
-        <Size_in_bytes></Size_in_bytes>
         <IDL_Type>string</IDL_Type>
+        <IDL_Size>256</IDL_Size>
         <Units></Units>
-        <Conversion></Conversion>
-        <Sensor_location></Sensor_location>
         <Count>1</Count>
     </item>
 </SALTelemetry>
 <SALTelemetry>
     <Subsystem>scheduler</Subsystem>
-    <Version>3.2.0</Version>
-    <Author>salgenerator</Author>
-    <EFDB_Topic>scheduler_target</EFDB_Topic>
-    <item>
-        <EFDB_Name>targetId</EFDB_Name>
-        <Description></Description>
-        <Frequency>0.054</Frequency>
-        <Size_in_bytes>8</Size_in_bytes>
-        <IDL_Type>long</IDL_Type>
-        <Units></Units>
-        <Conversion></Conversion>
-        <Sensor_location></Sensor_location>
-        <Count>1</Count>
-    </item>
-    <item>
-        <EFDB_Name>fieldId</EFDB_Name>
-        <Description></Description>
-        <Frequency>0.054</Frequency>
-        <Size_in_bytes>8</Size_in_bytes>
-        <IDL_Type>long</IDL_Type>
-        <Units></Units>
-        <Conversion></Conversion>
-        <Sensor_location></Sensor_location>
-        <Count>1</Count>
-    </item>
-    <item>
-        <EFDB_Name>groupId</EFDB_Name>
-        <Description></Description>
-        <Frequency>0.054</Frequency>
-        <Size_in_bytes>8</Size_in_bytes>
-        <IDL_Type>long</IDL_Type>
-        <Units></Units>
-        <Conversion></Conversion>
-        <Sensor_location></Sensor_location>
-        <Count>1</Count>
-    </item>
-    <item>
-        <EFDB_Name>filter</EFDB_Name>
-        <Description></Description>
-        <Frequency>0.054</Frequency>
-        <Size_in_bytes>8</Size_in_bytes>
-        <IDL_Type>string</IDL_Type>
-        <Units></Units>
-        <Conversion></Conversion>
-        <Sensor_location></Sensor_location>
-        <Count>1</Count>
-    </item>
-    <item>
-        <EFDB_Name>request_time</EFDB_Name>
-        <Description></Description>
-        <Frequency>0.054</Frequency>
-        <Size_in_bytes>8</Size_in_bytes>
-        <IDL_Type>double</IDL_Type>
-        <Units>seconds</Units>
-        <Conversion></Conversion>
-        <Sensor_location></Sensor_location>
-        <Count>1</Count>
-    </item>
-    <item>
-        <EFDB_Name>request_mjd</EFDB_Name>
-        <Description></Description>
-        <Frequency>0.054</Frequency>
-        <Size_in_bytes>8</Size_in_bytes>
-        <IDL_Type>double</IDL_Type>
-        <Units>seconds</Units>
-        <Conversion></Conversion>
-        <Sensor_location></Sensor_location>
-        <Count>1</Count>
-    </item>
-    <item>
-        <EFDB_Name>ra</EFDB_Name>
-        <Description></Description>
-        <Frequency>0.054</Frequency>
-        <Size_in_bytes>8</Size_in_bytes>
-        <IDL_Type>double</IDL_Type>
-        <Units>degrees</Units>
-        <Conversion></Conversion>
-        <Sensor_location></Sensor_location>
-        <Count>1</Count>
-    </item>
-    <item>
-        <EFDB_Name>decl</EFDB_Name>
-        <Description></Description>
-        <Frequency>0.054</Frequency>
-        <Size_in_bytes>8</Size_in_bytes>
-        <IDL_Type>double</IDL_Type>
-        <Units>degrees</Units>
-        <Conversion></Conversion>
-        <Sensor_location></Sensor_location>
-        <Count>1</Count>
-    </item>
-    <item>
-        <EFDB_Name>angle</EFDB_Name>
-        <Description></Description>
-        <Frequency>0.054</Frequency>
-        <Size_in_bytes>8</Size_in_bytes>
-        <IDL_Type>double</IDL_Type>
-        <Units>degrees</Units>
-        <Conversion></Conversion>
-        <Sensor_location></Sensor_location>
-        <Count>1</Count>
-    </item>
-    <item>
-        <EFDB_Name>num_exposures</EFDB_Name>
-        <Description></Description>
-        <Frequency>0.054</Frequency>
-        <Size_in_bytes>8</Size_in_bytes>
-        <IDL_Type>long</IDL_Type>
-        <Units></Units>
-        <Conversion></Conversion>
-        <Sensor_location></Sensor_location>
-        <Count>1</Count>
-    </item>
-    <item>
-        <EFDB_Name>exposure_times</EFDB_Name>
-        <Description></Description>
-        <Frequency>0.054</Frequency>
-        <Size_in_bytes>80</Size_in_bytes>
-        <IDL_Type>long</IDL_Type>
-        <Units>seconds</Units>
-        <Conversion></Conversion>
-        <Sensor_location></Sensor_location>
-        <Count>10</Count>
-    </item>
-    <item>
-        <EFDB_Name>airmass</EFDB_Name>
-        <Description></Description>
-        <Frequency>0.054</Frequency>
-        <Size_in_bytes>8</Size_in_bytes>
-        <IDL_Type>double</IDL_Type>
-        <Units></Units>
-        <Conversion></Conversion>
-        <Sensor_location></Sensor_location>
-        <Count>1</Count>
-    </item>
-    <item>
-        <EFDB_Name>sky_brightness</EFDB_Name>
-        <Description></Description>
-        <Frequency>0.054</Frequency>
-        <Size_in_bytes>8</Size_in_bytes>
-        <IDL_Type>double</IDL_Type>
-        <Units>mags/arcseconds**2</Units>
-        <Conversion></Conversion>
-        <Sensor_location></Sensor_location>
-        <Count>1</Count>
-    </item>
-    <item>
-        <EFDB_Name>cloud</EFDB_Name>
-        <Description></Description>
-        <Frequency>0.054</Frequency>
-        <Size_in_bytes>8</Size_in_bytes>
-        <IDL_Type>double</IDL_Type>
-        <Units></Units>
-        <Conversion></Conversion>
-        <Sensor_location></Sensor_location>
-        <Count>1</Count>
-    </item>
-    <item>
-        <EFDB_Name>seeing</EFDB_Name>
-        <Description></Description>
-        <Frequency>0.054</Frequency>
-        <Size_in_bytes>8</Size_in_bytes>
-        <IDL_Type>double</IDL_Type>
-        <Units>arcseconds</Units>
-        <Conversion></Conversion>
-        <Sensor_location></Sensor_location>
-        <Count>1</Count>
-    </item>
-    <item>
-        <EFDB_Name>slew_time</EFDB_Name>
-        <Description></Description>
-        <Frequency>0.054</Frequency>
-        <Size_in_bytes>8</Size_in_bytes>
-        <IDL_Type>double</IDL_Type>
-        <Units>seconds</Units>
-        <Conversion></Conversion>
-        <Sensor_location></Sensor_location>
-        <Count>1</Count>
-    </item>
-    <item>
-        <EFDB_Name>cost</EFDB_Name>
-        <Description></Description>
-        <Frequency>0.054</Frequency>
-        <Size_in_bytes>8</Size_in_bytes>
-        <IDL_Type>double</IDL_Type>
-        <Units></Units>
-        <Conversion></Conversion>
-        <Sensor_location></Sensor_location>
-        <Count>1</Count>
-    </item>
-    <item>
-        <EFDB_Name>prop_boost</EFDB_Name>
-        <Description></Description>
-        <Frequency>0.054</Frequency>
-        <Size_in_bytes>8</Size_in_bytes>
-        <IDL_Type>double</IDL_Type>
-        <Units></Units>
-        <Conversion></Conversion>
-        <Sensor_location></Sensor_location>
-        <Count>1</Count>
-    </item>
-    <item>
-        <EFDB_Name>rank</EFDB_Name>
-        <Description></Description>
-        <Frequency>0.054</Frequency>
-        <Size_in_bytes>8</Size_in_bytes>
-        <IDL_Type>double</IDL_Type>
-        <Units></Units>
-        <Conversion></Conversion>
-        <Sensor_location></Sensor_location>
-        <Count>1</Count>
-    </item>
-    <item>
-        <EFDB_Name>num_proposals</EFDB_Name>
-        <Description></Description>
-        <Frequency>0.054</Frequency>
-        <Size_in_bytes>8</Size_in_bytes>
-        <IDL_Type>long</IDL_Type>
-        <Units></Units>
-        <Conversion></Conversion>
-        <Sensor_location></Sensor_location>
-        <Count>1</Count>
-    </item>
-    <item>
-        <EFDB_Name>proposal_Ids</EFDB_Name>
-        <Description></Description>
-        <Frequency>0.054</Frequency>
-        <Size_in_bytes>80</Size_in_bytes>
-        <IDL_Type>long</IDL_Type>
-        <Units></Units>
-        <Conversion></Conversion>
-        <Sensor_location></Sensor_location>
-        <Count>10</Count>
-    </item>
-    <item>
-        <EFDB_Name>proposal_values</EFDB_Name>
-        <Description></Description>
-        <Frequency>0.054</Frequency>
-        <Size_in_bytes>80</Size_in_bytes>
-        <IDL_Type>double</IDL_Type>
-        <Units></Units>
-        <Conversion></Conversion>
-        <Sensor_location></Sensor_location>
-        <Count>10</Count>
-    </item>
-    <item>
-        <EFDB_Name>proposal_needs</EFDB_Name>
-        <Description></Description>
-        <Frequency>0.054</Frequency>
-        <Size_in_bytes>80</Size_in_bytes>
-        <IDL_Type>double</IDL_Type>
-        <Units></Units>
-        <Conversion></Conversion>
-        <Sensor_location></Sensor_location>
-        <Count>10</Count>
-    </item>
-    <item>
-        <EFDB_Name>proposal_bonuses</EFDB_Name>
-        <Description></Description>
-        <Frequency>0.054</Frequency>
-        <Size_in_bytes>80</Size_in_bytes>
-        <IDL_Type>double</IDL_Type>
-        <Units></Units>
-        <Conversion></Conversion>
-        <Sensor_location></Sensor_location>
-        <Count>10</Count>
-    </item>
-    <item>
-        <EFDB_Name>proposal_boosts</EFDB_Name>
-        <Description></Description>
-        <Frequency>0.054</Frequency>
-        <Size_in_bytes>80</Size_in_bytes>
-        <IDL_Type>double</IDL_Type>
-        <Units></Units>
-        <Conversion></Conversion>
-        <Sensor_location></Sensor_location>
-        <Count>10</Count>
-    </item>
-    <item>
-        <EFDB_Name>moon_ra</EFDB_Name>
-        <Description></Description>
-        <Frequency>0.054</Frequency>
-        <Size_in_bytes>8</Size_in_bytes>
-        <IDL_Type>double</IDL_Type>
-        <Units>degrees</Units>
-        <Conversion></Conversion>
-        <Sensor_location></Sensor_location>
-        <Count>1</Count>
-    </item>
-    <item>
-        <EFDB_Name>moon_dec</EFDB_Name>
-        <Description></Description>
-        <Frequency>0.054</Frequency>
-        <Size_in_bytes>8</Size_in_bytes>
-        <IDL_Type>double</IDL_Type>
-        <Units>degrees</Units>
-        <Conversion></Conversion>
-        <Sensor_location></Sensor_location>
-        <Count>1</Count>
-    </item>
-    <item>
-        <EFDB_Name>moon_alt</EFDB_Name>
-        <Description></Description>
-        <Frequency>0.054</Frequency>
-        <Size_in_bytes>8</Size_in_bytes>
-        <IDL_Type>double</IDL_Type>
-        <Units>degrees</Units>
-        <Conversion></Conversion>
-        <Sensor_location></Sensor_location>
-        <Count>1</Count>
-    </item>
-    <item>
-        <EFDB_Name>moon_az</EFDB_Name>
-        <Description></Description>
-        <Frequency>0.054</Frequency>
-        <Size_in_bytes>8</Size_in_bytes>
-        <IDL_Type>double</IDL_Type>
-        <Units>degrees</Units>
-        <Conversion></Conversion>
-        <Sensor_location></Sensor_location>
-        <Count>1</Count>
-    </item>
-    <item>
-        <EFDB_Name>moon_phase</EFDB_Name>
-        <Description></Description>
-        <Frequency>0.054</Frequency>
-        <Size_in_bytes>8</Size_in_bytes>
-        <IDL_Type>double</IDL_Type>
-        <Units></Units>
-        <Conversion></Conversion>
-        <Sensor_location></Sensor_location>
-        <Count>1</Count>
-    </item>
-    <item>
-        <EFDB_Name>moon_distance</EFDB_Name>
-        <Description></Description>
-        <Frequency>0.054</Frequency>
-        <Size_in_bytes>8</Size_in_bytes>
-        <IDL_Type>double</IDL_Type>
-        <Units>degrees</Units>
-        <Conversion></Conversion>
-        <Sensor_location></Sensor_location>
-        <Count>1</Count>
-    </item>
-    <item>
-        <EFDB_Name>sun_alt</EFDB_Name>
-        <Description></Description>
-        <Frequency>0.054</Frequency>
-        <Size_in_bytes>8</Size_in_bytes>
-        <IDL_Type>double</IDL_Type>
-        <Units>degrees</Units>
-        <Conversion></Conversion>
-        <Sensor_location></Sensor_location>
-        <Count>1</Count>
-    </item>
-    <item>
-        <EFDB_Name>sun_az</EFDB_Name>
-        <Description></Description>
-        <Frequency>0.054</Frequency>
-        <Size_in_bytes>8</Size_in_bytes>
-        <IDL_Type>double</IDL_Type>
-        <Units>degrees</Units>
-        <Conversion></Conversion>
-        <Sensor_location></Sensor_location>
-        <Count>1</Count>
-    </item>
-    <item>
-        <EFDB_Name>sun_ra</EFDB_Name>
-        <Description></Description>
-        <Frequency>0.054</Frequency>
-        <Size_in_bytes>8</Size_in_bytes>
-        <IDL_Type>double</IDL_Type>
-        <Units>degrees</Units>
-        <Conversion></Conversion>
-        <Sensor_location></Sensor_location>
-        <Count>1</Count>
-    </item>
-    <item>
-        <EFDB_Name>sun_dec</EFDB_Name>
-        <Description></Description>
-        <Frequency>0.054</Frequency>
-        <Size_in_bytes>8</Size_in_bytes>
-        <IDL_Type>double</IDL_Type>
-        <Units>degrees</Units>
-        <Conversion></Conversion>
-        <Sensor_location></Sensor_location>
-        <Count>1</Count>
-    </item>
-    <item>
-        <EFDB_Name>solar_elong</EFDB_Name>
-        <Description></Description>
-        <Frequency>0.054</Frequency>
-        <Size_in_bytes>8</Size_in_bytes>
-        <IDL_Type>double</IDL_Type>
-        <Units>degrees</Units>
-        <Conversion></Conversion>
-        <Sensor_location></Sensor_location>
-        <Count>1</Count>
-    </item>
-</SALTelemetry>
-<SALTelemetry>
-    <Subsystem>scheduler</Subsystem>
-    <Version>3.2.0</Version>
-    <Author>salgenerator</Author>
+    <Version>3.5.2</Version>
+    <Author></Author>
     <EFDB_Topic>scheduler_observation</EFDB_Topic>
     <item>
         <EFDB_Name>observationId</EFDB_Name>
         <Description></Description>
-        <Frequency>0.054</Frequency>
-        <Size_in_bytes>8</Size_in_bytes>
         <IDL_Type>long</IDL_Type>
         <Units></Units>
-        <Conversion></Conversion>
-        <Sensor_location></Sensor_location>
         <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>observation_start_time</EFDB_Name>
+        <EFDB_Name>observationStartTime</EFDB_Name>
         <Description></Description>
-        <Frequency>0.054</Frequency>
-        <Size_in_bytes>8</Size_in_bytes>
         <IDL_Type>double</IDL_Type>
-        <Units>seconds</Units>
-        <Conversion></Conversion>
-        <Sensor_location></Sensor_location>
+        <Units></Units>
         <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>observation_start_mjd</EFDB_Name>
+        <EFDB_Name>observationStartMjd</EFDB_Name>
         <Description></Description>
-        <Frequency>0.054</Frequency>
-        <Size_in_bytes>8</Size_in_bytes>
         <IDL_Type>double</IDL_Type>
-        <Units>seconds</Units>
-        <Conversion></Conversion>
-        <Sensor_location></Sensor_location>
+        <Units></Units>
         <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>observation_start_lst</EFDB_Name>
+        <EFDB_Name>observationStartLst</EFDB_Name>
         <Description></Description>
-        <Frequency>0.054</Frequency>
-        <Size_in_bytes>8</Size_in_bytes>
         <IDL_Type>double</IDL_Type>
-        <Units>hours</Units>
-        <Conversion></Conversion>
-        <Sensor_location></Sensor_location>
+        <Units></Units>
         <Count>1</Count>
     </item>
     <item>
         <EFDB_Name>night</EFDB_Name>
         <Description></Description>
-        <Frequency>0.054</Frequency>
-        <Size_in_bytes>8</Size_in_bytes>
         <IDL_Type>long</IDL_Type>
         <Units></Units>
-        <Conversion></Conversion>
-        <Sensor_location></Sensor_location>
         <Count>1</Count>
     </item>
     <item>
         <EFDB_Name>targetId</EFDB_Name>
         <Description></Description>
-        <Frequency>0.054</Frequency>
-        <Size_in_bytes>8</Size_in_bytes>
         <IDL_Type>long</IDL_Type>
         <Units></Units>
-        <Conversion></Conversion>
-        <Sensor_location></Sensor_location>
         <Count>1</Count>
     </item>
     <item>
         <EFDB_Name>fieldId</EFDB_Name>
         <Description></Description>
-        <Frequency>0.054</Frequency>
-        <Size_in_bytes>8</Size_in_bytes>
         <IDL_Type>long</IDL_Type>
         <Units></Units>
-        <Conversion></Conversion>
-        <Sensor_location></Sensor_location>
         <Count>1</Count>
     </item>
     <item>
         <EFDB_Name>groupId</EFDB_Name>
         <Description></Description>
-        <Frequency>0.054</Frequency>
-        <Size_in_bytes>8</Size_in_bytes>
         <IDL_Type>long</IDL_Type>
         <Units></Units>
-        <Conversion></Conversion>
-        <Sensor_location></Sensor_location>
         <Count>1</Count>
     </item>
     <item>
         <EFDB_Name>filter</EFDB_Name>
         <Description></Description>
-        <Frequency>0.054</Frequency>
-        <Size_in_bytes></Size_in_bytes>
         <IDL_Type>string</IDL_Type>
+        <IDL_Size>256</IDL_Size>
         <Units></Units>
-        <Conversion></Conversion>
-        <Sensor_location></Sensor_location>
         <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>num_proposals</EFDB_Name>
+        <EFDB_Name>numProposals</EFDB_Name>
         <Description></Description>
-        <Frequency>0.054</Frequency>
-        <Size_in_bytes>8</Size_in_bytes>
         <IDL_Type>long</IDL_Type>
         <Units></Units>
-        <Conversion></Conversion>
-        <Sensor_location></Sensor_location>
         <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>proposal_Ids</EFDB_Name>
+        <EFDB_Name>proposalIds</EFDB_Name>
         <Description></Description>
-        <Frequency>0.054</Frequency>
-        <Size_in_bytes>8</Size_in_bytes>
         <IDL_Type>long</IDL_Type>
         <Units></Units>
-        <Conversion></Conversion>
-        <Sensor_location></Sensor_location>
         <Count>10</Count>
     </item>
     <item>
         <EFDB_Name>ra</EFDB_Name>
         <Description></Description>
-        <Frequency>0.054</Frequency>
-        <Size_in_bytes>8</Size_in_bytes>
         <IDL_Type>double</IDL_Type>
-        <Units>degrees</Units>
-        <Conversion></Conversion>
-        <Sensor_location></Sensor_location>
+        <Units></Units>
         <Count>1</Count>
     </item>
     <item>
         <EFDB_Name>decl</EFDB_Name>
         <Description></Description>
-        <Frequency>0.054</Frequency>
-        <Size_in_bytes>8</Size_in_bytes>
         <IDL_Type>double</IDL_Type>
-        <Units>degrees</Units>
-        <Conversion></Conversion>
-        <Sensor_location></Sensor_location>
+        <Units></Units>
         <Count>1</Count>
     </item>
     <item>
         <EFDB_Name>angle</EFDB_Name>
         <Description></Description>
-        <Frequency>0.054</Frequency>
-        <Size_in_bytes>8</Size_in_bytes>
         <IDL_Type>double</IDL_Type>
-        <Units>degrees</Units>
-        <Conversion></Conversion>
-        <Sensor_location></Sensor_location>
+        <Units></Units>
         <Count>1</Count>
     </item>
     <item>
         <EFDB_Name>altitude</EFDB_Name>
         <Description></Description>
-        <Frequency>0.054</Frequency>
-        <Size_in_bytes>8</Size_in_bytes>
         <IDL_Type>double</IDL_Type>
-        <Units>degrees</Units>
-        <Conversion></Conversion>
-        <Sensor_location></Sensor_location>
+        <Units></Units>
         <Count>1</Count>
     </item>
     <item>
         <EFDB_Name>azimuth</EFDB_Name>
         <Description></Description>
-        <Frequency>0.054</Frequency>
-        <Size_in_bytes>8</Size_in_bytes>
         <IDL_Type>double</IDL_Type>
-        <Units>degrees</Units>
-        <Conversion></Conversion>
-        <Sensor_location></Sensor_location>
+        <Units></Units>
         <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>num_exposures</EFDB_Name>
+        <EFDB_Name>numExposures</EFDB_Name>
         <Description></Description>
-        <Frequency>0.054</Frequency>
-        <Size_in_bytes>8</Size_in_bytes>
         <IDL_Type>long</IDL_Type>
         <Units></Units>
-        <Conversion></Conversion>
-        <Sensor_location></Sensor_location>
         <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>exposure_times</EFDB_Name>
+        <EFDB_Name>exposureTimes</EFDB_Name>
         <Description></Description>
-        <Frequency>0.054</Frequency>
-        <Size_in_bytes>8</Size_in_bytes>
         <IDL_Type>long</IDL_Type>
-        <Units>seconds</Units>
-        <Conversion></Conversion>
-        <Sensor_location></Sensor_location>
+        <Units></Units>
         <Count>10</Count>
     </item>
     <item>
-        <EFDB_Name>visit_time</EFDB_Name>
+        <EFDB_Name>visitTime</EFDB_Name>
         <Description></Description>
-        <Frequency>0.054</Frequency>
-        <Size_in_bytes>8</Size_in_bytes>
         <IDL_Type>double</IDL_Type>
-        <Units>seconds</Units>
-        <Conversion></Conversion>
-        <Sensor_location></Sensor_location>
+        <Units></Units>
         <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>sky_brightness</EFDB_Name>
+        <EFDB_Name>skyBrightness</EFDB_Name>
         <Description></Description>
-        <Frequency>0.054</Frequency>
-        <Size_in_bytes>8</Size_in_bytes>
         <IDL_Type>double</IDL_Type>
         <Units></Units>
-        <Conversion></Conversion>
-        <Sensor_location></Sensor_location>
         <Count>1</Count>
     </item>
     <item>
         <EFDB_Name>airmass</EFDB_Name>
         <Description></Description>
-        <Frequency>0.054</Frequency>
-        <Size_in_bytes>8</Size_in_bytes>
         <IDL_Type>double</IDL_Type>
         <Units></Units>
-        <Conversion></Conversion>
-        <Sensor_location></Sensor_location>
         <Count>1</Count>
     </item>
     <item>
         <EFDB_Name>cloud</EFDB_Name>
         <Description></Description>
-        <Frequency>0.054</Frequency>
-        <Size_in_bytes>8</Size_in_bytes>
         <IDL_Type>double</IDL_Type>
         <Units></Units>
-        <Conversion></Conversion>
-        <Sensor_location></Sensor_location>
         <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>seeing_fwhm_500</EFDB_Name>
+        <EFDB_Name>seeingFwhm500</EFDB_Name>
         <Description></Description>
-        <Frequency>0.054</Frequency>
-        <Size_in_bytes>8</Size_in_bytes>
-        <IDL_Type>double</IDL_Type>
-        <Units>arcseconds</Units>
-        <Conversion></Conversion>
-        <Sensor_location></Sensor_location>
-        <Count>1</Count>
-    </item>
-    <item>
-        <EFDB_Name>seeing_fwhm_geom</EFDB_Name>
-        <Description></Description>
-        <Frequency>0.054</Frequency>
-        <Size_in_bytes>8</Size_in_bytes>
-        <IDL_Type>double</IDL_Type>
-        <Units>arcseconds</Units>
-        <Conversion></Conversion>
-        <Sensor_location></Sensor_location>
-        <Count>1</Count>
-    </item>
-    <item>
-        <EFDB_Name>seeing_fwhm_eff</EFDB_Name>
-        <Description></Description>
-        <Frequency>0.054</Frequency>
-        <Size_in_bytes>8</Size_in_bytes>
-        <IDL_Type>double</IDL_Type>
-        <Units>arcseconds</Units>
-        <Conversion></Conversion>
-        <Sensor_location></Sensor_location>
-        <Count>1</Count>
-    </item>
-    <item>
-        <EFDB_Name>five_sigma_depth</EFDB_Name>
-        <Description></Description>
-        <Frequency>0.054</Frequency>
-        <Size_in_bytes>8</Size_in_bytes>
-        <IDL_Type>double</IDL_Type>
-        <Units>magnitudes</Units>
-        <Conversion></Conversion>
-        <Sensor_location></Sensor_location>
-        <Count>1</Count>
-    </item>
-    <item>
-        <EFDB_Name>moon_ra</EFDB_Name>
-        <Description></Description>
-        <Frequency>0.054</Frequency>
-        <Size_in_bytes>8</Size_in_bytes>
-        <IDL_Type>double</IDL_Type>
-        <Units>degrees</Units>
-        <Conversion></Conversion>
-        <Sensor_location></Sensor_location>
-        <Count>1</Count>
-    </item>
-    <item>
-        <EFDB_Name>moon_dec</EFDB_Name>
-        <Description></Description>
-        <Frequency>0.054</Frequency>
-        <Size_in_bytes>8</Size_in_bytes>
-        <IDL_Type>double</IDL_Type>
-        <Units>degrees</Units>
-        <Conversion></Conversion>
-        <Sensor_location></Sensor_location>
-        <Count>1</Count>
-    </item>
-    <item>
-        <EFDB_Name>moon_alt</EFDB_Name>
-        <Description></Description>
-        <Frequency>0.054</Frequency>
-        <Size_in_bytes>8</Size_in_bytes>
-        <IDL_Type>double</IDL_Type>
-        <Units>degrees</Units>
-        <Conversion></Conversion>
-        <Sensor_location></Sensor_location>
-        <Count>1</Count>
-    </item>
-    <item>
-        <EFDB_Name>moon_az</EFDB_Name>
-        <Description></Description>
-        <Frequency>0.054</Frequency>
-        <Size_in_bytes>8</Size_in_bytes>
-        <IDL_Type>double</IDL_Type>
-        <Units>degrees</Units>
-        <Conversion></Conversion>
-        <Sensor_location></Sensor_location>
-        <Count>1</Count>
-    </item>
-    <item>
-        <EFDB_Name>moon_phase</EFDB_Name>
-        <Description></Description>
-        <Frequency>0.054</Frequency>
-        <Size_in_bytes>8</Size_in_bytes>
         <IDL_Type>double</IDL_Type>
         <Units></Units>
-        <Conversion></Conversion>
-        <Sensor_location></Sensor_location>
         <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>moon_distance</EFDB_Name>
+        <EFDB_Name>seeingFwhmGeom</EFDB_Name>
         <Description></Description>
-        <Frequency>0.054</Frequency>
-        <Size_in_bytes>8</Size_in_bytes>
-        <IDL_Type>double</IDL_Type>
-        <Units>degrees</Units>
-        <Conversion></Conversion>
-        <Sensor_location></Sensor_location>
-        <Count>1</Count>
-    </item>
-    <item>
-        <EFDB_Name>sun_alt</EFDB_Name>
-        <Description></Description>
-        <Frequency>0.054</Frequency>
-        <Size_in_bytes>8</Size_in_bytes>
-        <IDL_Type>double</IDL_Type>
-        <Units>degrees</Units>
-        <Conversion></Conversion>
-        <Sensor_location></Sensor_location>
-        <Count>1</Count>
-    </item>
-    <item>
-        <EFDB_Name>sun_az</EFDB_Name>
-        <Description></Description>
-        <Frequency>0.054</Frequency>
-        <Size_in_bytes>8</Size_in_bytes>
-        <IDL_Type>double</IDL_Type>
-        <Units>degrees</Units>
-        <Conversion></Conversion>
-        <Sensor_location></Sensor_location>
-        <Count>1</Count>
-    </item>
-    <item>
-        <EFDB_Name>sun_ra</EFDB_Name>
-        <Description></Description>
-        <Frequency>0.054</Frequency>
-        <Size_in_bytes>8</Size_in_bytes>
-        <IDL_Type>double</IDL_Type>
-        <Units>degrees</Units>
-        <Conversion></Conversion>
-        <Sensor_location></Sensor_location>
-        <Count>1</Count>
-    </item>
-    <item>
-        <EFDB_Name>sun_dec</EFDB_Name>
-        <Description></Description>
-        <Frequency>0.054</Frequency>
-        <Size_in_bytes>8</Size_in_bytes>
-        <IDL_Type>double</IDL_Type>
-        <Units>degrees</Units>
-        <Conversion></Conversion>
-        <Sensor_location></Sensor_location>
-        <Count>1</Count>
-    </item>
-    <item>
-        <EFDB_Name>solar_elong</EFDB_Name>
-        <Description></Description>
-        <Frequency>0.054</Frequency>
-        <Size_in_bytes>8</Size_in_bytes>
-        <IDL_Type>double</IDL_Type>
-        <Units>degrees</Units>
-        <Conversion></Conversion>
-        <Sensor_location></Sensor_location>
-        <Count>1</Count>
-    </item>
-</SALTelemetry>
-<SALTelemetry>
-    <Subsystem>scheduler</Subsystem>
-    <Version>3.2.0</Version>
-    <Author>salgenerator</Author>
-    <EFDB_Topic>scheduler_interestedProposal</EFDB_Topic>
-    <item>
-        <EFDB_Name>observationId</EFDB_Name>
-        <Description></Description>
-        <Frequency>0.054</Frequency>
-        <Size_in_bytes>8</Size_in_bytes>
-        <IDL_Type>long</IDL_Type>
-        <Units></Units>
-        <Conversion></Conversion>
-        <Sensor_location></Sensor_location>
-        <Count>1</Count>
-    </item>
-    <item>
-        <EFDB_Name>num_proposals</EFDB_Name>
-        <Description></Description>
-        <Frequency>0.054</Frequency>
-        <Size_in_bytes>8</Size_in_bytes>
-        <IDL_Type>long</IDL_Type>
-        <Units></Units>
-        <Conversion></Conversion>
-        <Sensor_location></Sensor_location>
-        <Count>1</Count>
-    </item>
-    <item>
-        <EFDB_Name>proposal_Ids</EFDB_Name>
-        <Description></Description>
-        <Frequency>0.054</Frequency>
-        <Size_in_bytes>80</Size_in_bytes>
-        <IDL_Type>long</IDL_Type>
-        <Units></Units>
-        <Conversion></Conversion>
-        <Sensor_location></Sensor_location>
-        <Count>10</Count>
-    </item>
-    <item>
-        <EFDB_Name>proposal_values</EFDB_Name>
-        <Description></Description>
-        <Frequency>0.054</Frequency>
-        <Size_in_bytes>80</Size_in_bytes>
         <IDL_Type>double</IDL_Type>
         <Units></Units>
-        <Conversion></Conversion>
-        <Sensor_location></Sensor_location>
-        <Count>10</Count>
+        <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>proposal_needs</EFDB_Name>
+        <EFDB_Name>seeingFwhmEff</EFDB_Name>
         <Description></Description>
-        <Frequency>0.054</Frequency>
-        <Size_in_bytes>80</Size_in_bytes>
         <IDL_Type>double</IDL_Type>
         <Units></Units>
-        <Conversion></Conversion>
-        <Sensor_location></Sensor_location>
-        <Count>10</Count>
+        <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>proposal_bonuses</EFDB_Name>
+        <EFDB_Name>fiveSigmaDepth</EFDB_Name>
         <Description></Description>
-        <Frequency>0.054</Frequency>
-        <Size_in_bytes>80</Size_in_bytes>
         <IDL_Type>double</IDL_Type>
         <Units></Units>
-        <Conversion></Conversion>
-        <Sensor_location></Sensor_location>
-        <Count>10</Count>
-    </item>
-    <item>
-        <EFDB_Name>proposal_boosts</EFDB_Name>
-        <Description></Description>
-        <Frequency>0.054</Frequency>
-        <Size_in_bytes>80</Size_in_bytes>
-        <IDL_Type>double</IDL_Type>
-        <Units></Units>
-        <Conversion></Conversion>
-        <Sensor_location></Sensor_location>
-        <Count>10</Count>
-    </item>
-</SALTelemetry>
-<SALTelemetry>
-    <Subsystem>scheduler</Subsystem>
-    <Version>3.2.0</Version>
-    <Author>salgenerator</Author>
-    <EFDB_Topic>scheduler_parameters</EFDB_Topic>
-    <item>
-        <EFDB_Name>parameters</EFDB_Name>
-        <Description></Description>
-        <Frequency>0.054</Frequency>
-        <Size_in_bytes>512</Size_in_bytes>
-        <IDL_Type>long</IDL_Type>
-        <Units></Units>
-        <Conversion></Conversion>
-        <Sensor_location></Sensor_location>
-        <Count>128</Count>
-        <Bytes_per_night>1194393</Bytes_per_night>
-        <Explanation>http://sal.lsst.org/SAL/Telemetry/scheduler_parameters_parameters.html</Explanation>
-    </item>
-</SALTelemetry>
-<SALTelemetry>
-    <Subsystem>scheduler</Subsystem>
-    <Version>3.2.0</Version>
-    <Author>salgenerator</Author>
-    <EFDB_Topic>scheduler_Application</EFDB_Topic>
-    <item>
-        <EFDB_Name>data</EFDB_Name>
-        <Description></Description>
-        <Frequency>0.054</Frequency>
-
-        <Values_per_Publisher>200</Values_per_Publisher>
-        <Size_in_bytes>800</Size_in_bytes>
-        <IDL_Type>float</IDL_Type>
-        <Units></Units>
-        <Conversion></Conversion>
-        <Sensor_location></Sensor_location>
-        <Count>200</Count>
-        <Bytes_per_night>1866240</Bytes_per_night>
-        <Explanation>http://sal.lsst.org/SAL/Telemetry/scheduler_Application_data.html</Explanation>
-    </item>
-</SALTelemetry>
-<SALTelemetry>
-    <Subsystem>scheduler</Subsystem>
-    <Version>3.2.0</Version>
-    <Author>salgenerator</Author>
-    <EFDB_Topic>scheduler_program</EFDB_Topic>
-    <item>
-        <EFDB_Name>completion</EFDB_Name>
-        <Description></Description>
-        <Frequency>0.054</Frequency>
-        <Size_in_bytes>4</Size_in_bytes>
-        <IDL_Type>float</IDL_Type>
-        <Units></Units>
-        <Conversion></Conversion>
-        <Sensor_location></Sensor_location>
         <Count>1</Count>
-        <Bytes_per_night>9331</Bytes_per_night>
-        <Explanation>http://sal.lsst.org/SAL/Telemetry/scheduler_program_completion.html</Explanation>
-    </item>
-    <item>
-        <EFDB_Name>id</EFDB_Name>
-        <Description></Description>
-        <Frequency>0.054</Frequency>
-        <Size_in_bytes>4</Size_in_bytes>
-        <IDL_Type>long</IDL_Type>
-        <Units></Units>
-        <Conversion></Conversion>
-        <Sensor_location></Sensor_location>
-        <Count>1</Count>
-        <Bytes_per_night>9331</Bytes_per_night>
-        <Explanation>http://sal.lsst.org/SAL/Telemetry/scheduler_program_id.html</Explanation>
-    </item>
-    <item>
-        <EFDB_Name>priority</EFDB_Name>
-        <Description></Description>
-        <Frequency>0.054</Frequency>
-        <Size_in_bytes>4</Size_in_bytes>
-        <IDL_Type>long</IDL_Type>
-        <Units></Units>
-        <Conversion></Conversion>
-        <Sensor_location></Sensor_location>
-        <Count>1</Count>
-        <Bytes_per_night>9331</Bytes_per_night>
-        <Explanation>http://sal.lsst.org/SAL/Telemetry/scheduler_program_priority.html</Explanation>
-    </item>
-    <item>
-        <EFDB_Name>status</EFDB_Name>
-        <Description></Description>
-        <Frequency>0.054</Frequency>
-        <Size_in_bytes>4</Size_in_bytes>
-        <IDL_Type>long</IDL_Type>
-        <Units></Units>
-        <Conversion></Conversion>
-        <Sensor_location></Sensor_location>
-        <Count>1</Count>
-        <Bytes_per_night>9331</Bytes_per_night>
-        <Explanation>http://sal.lsst.org/SAL/Telemetry/scheduler_program_status.html</Explanation>
-    </item>
-</SALTelemetry>
-<SALTelemetry>
-    <Subsystem>scheduler</Subsystem>
-    <Version>3.2.0</Version>
-    <Author>salgenerator</Author>
-    <EFDB_Topic>scheduler_progress</EFDB_Topic>
-    <item>
-        <EFDB_Name>completion</EFDB_Name>
-        <Description></Description>
-        <Frequency>0.054</Frequency>
-        <Values_per_Publisher>32</Values_per_Publisher>
-        <Size_in_bytes>256</Size_in_bytes>
-        <IDL_Type>double</IDL_Type>
-        <Units></Units>
-        <Conversion></Conversion>
-        <Sensor_location></Sensor_location>
-        <Count>32</Count>
-        <Bytes_per_night>597196</Bytes_per_night>
-        <Explanation>http://sal.lsst.org/SAL/Telemetry/scheduler_progress_completion.html</Explanation>
-    </item>
-    <item>
-        <EFDB_Name>priority</EFDB_Name>
-        <Description></Description>
-        <Frequency>0.054</Frequency>
-        <Values_per_Publisher>32</Values_per_Publisher>
-        <Size_in_bytes>128</Size_in_bytes>
-        <IDL_Type>long</IDL_Type>
-        <Units></Units>
-        <Conversion></Conversion>
-        <Sensor_location></Sensor_location>
-        <Count>32</Count>
-        <Bytes_per_night>298598</Bytes_per_night>
-        <Explanation>http://sal.lsst.org/SAL/Telemetry/scheduler_progress_priority.html</Explanation>
-    </item>
-    <item>
-        <EFDB_Name>projection</EFDB_Name>
-        <Description></Description>
-        <Frequency>0.054</Frequency>
-        <Values_per_Publisher>32</Values_per_Publisher>
-        <Size_in_bytes>128</Size_in_bytes>
-        <IDL_Type>long</IDL_Type>
-        <Units></Units>
-        <Conversion></Conversion>
-        <Sensor_location></Sensor_location>
-        <Count>32</Count>
-        <Explanation>http://sal.lsst.org/SAL/Telemetry/scheduler_progress_projection.html</Explanation>
-    </item>
-    <item>
-        <EFDB_Name>taskid</EFDB_Name>
-        <Description></Description>
-        <Frequency>0.054</Frequency>
-        <Values_per_Publisher>32</Values_per_Publisher>
-        <Size_in_bytes>128</Size_in_bytes>
-        <IDL_Type>long</IDL_Type>
-        <Units></Units>
-        <Conversion></Conversion>
-        <Sensor_location></Sensor_location>
-        <Count>32</Count>
-        <Bytes_per_night>298598</Bytes_per_night>
-        <Explanation>http://sal.lsst.org/SAL/Telemetry/scheduler_progress_taskid.html</Explanation>
-    </item>
-</SALTelemetry>
-<SALTelemetry>
-    <Subsystem>scheduler</Subsystem>
-    <Version>3.2.0</Version>
-    <Author>salgenerator</Author>
-    <EFDB_Topic>scheduler_rankingData</EFDB_Topic>
-    <item>
-        <EFDB_Name>LST</EFDB_Name>
-        <Description></Description>
-        <Frequency>0.054</Frequency>
-        <Size_in_bytes>8</Size_in_bytes>
-        <IDL_Type>double</IDL_Type>
-        <Units></Units>
-        <Conversion></Conversion>
-        <Sensor_location></Sensor_location>
-        <Count>1</Count>
-        <Bytes_per_night>18662</Bytes_per_night>
-        <Explanation>http://sal.lsst.org/SAL/Telemetry/scheduler_rankingData_LST.html</Explanation>
-    </item>
-    <item>
-        <EFDB_Name>MJD</EFDB_Name>
-        <Description></Description>
-        <Frequency>0.054</Frequency>
-        <Size_in_bytes>8</Size_in_bytes>
-        <IDL_Type>double</IDL_Type>
-        <Units></Units>
-        <Conversion></Conversion>
-        <Sensor_location></Sensor_location>
-        <Count>1</Count>
-        <Bytes_per_night>18662</Bytes_per_night>
-        <Explanation>http://sal.lsst.org/SAL/Telemetry/scheduler_rankingData_MJD.html</Explanation>
-    </item>
-    <item>
-        <EFDB_Name>date</EFDB_Name>
-        <Description></Description>
-        <Frequency>0.054</Frequency>
-        <Size_in_bytes>8</Size_in_bytes>
-        <IDL_Type>double</IDL_Type>
-        <Units></Units>
-        <Conversion></Conversion>
-        <Sensor_location></Sensor_location>
-        <Count>1</Count>
-        <Bytes_per_night>18662</Bytes_per_night>
-        <Explanation>http://sal.lsst.org/SAL/Telemetry/scheduler_rankingData_date.html</Explanation>
-    </item>
-    <item>
-        <EFDB_Name>decl</EFDB_Name>
-        <Description></Description>
-        <Frequency>0.054</Frequency>
-        <Size_in_bytes>8</Size_in_bytes>
-        <IDL_Type>double</IDL_Type>
-        <Units></Units>
-        <Conversion></Conversion>
-        <Sensor_location></Sensor_location>
-        <Count>1</Count>
-        <Bytes_per_night>18662</Bytes_per_night>
-        <Explanation>http://sal.lsst.org/SAL/Telemetry/scheduler_rankingData_dec.html</Explanation>
-    </item>
-    <item>
-        <EFDB_Name>exposureTime</EFDB_Name>
-        <Description></Description>
-        <Frequency>0.054</Frequency>
-        <Values_per_Publisher>10</Values_per_Publisher>
-        <Size_in_bytes>80</Size_in_bytes>
-        <IDL_Type>double</IDL_Type>
-        <Units></Units>
-        <Conversion></Conversion>
-        <Sensor_location></Sensor_location>
-        <Count>10</Count>
-        <Bytes_per_night>186624</Bytes_per_night>
-        <Explanation>http://sal.lsst.org/SAL/Telemetry/scheduler_rankingData_exposureTime.html</Explanation>
-    </item>
-    <item>
-        <EFDB_Name>fieldId</EFDB_Name>
-        <Description></Description>
-        <Frequency>0.054</Frequency>
-        <IDL_Type>long</IDL_Type>
-        <Units></Units>
-        <Conversion></Conversion>
-        <Sensor_location></Sensor_location>
-        <Count>1</Count>
-        <Bytes_per_night>9331</Bytes_per_night>
-        <Explanation>http://sal.lsst.org/SAL/Telemetry/scheduler_rankingData_fieldId.html</Explanation>
-    </item>
-    <item>
-        <EFDB_Name>filter</EFDB_Name>
-        <Description></Description>
-        <Frequency>0.054</Frequency>
-        <Values_per_Publisher>32</Values_per_Publisher>
-        <Size_in_bytes>32</Size_in_bytes>
-        <IDL_Type>string</IDL_Type>
-        <Units></Units>
-        <Conversion></Conversion>
-        <Sensor_location></Sensor_location>
-        <Count>32</Count>
-        <Bytes_per_night>74649</Bytes_per_night>
-        <Explanation>http://sal.lsst.org/SAL/Telemetry/scheduler_rankingData_filter.html</Explanation>
-    </item>
-    <item>
-        <EFDB_Name>moonAlt</EFDB_Name>
-        <Description></Description>
-        <Frequency>0.054</Frequency>
-        <Size_in_bytes>8</Size_in_bytes>
-        <IDL_Type>double</IDL_Type>
-        <Units></Units>
-        <Conversion></Conversion>
-        <Sensor_location></Sensor_location>
-        <Count>1</Count>
-        <Bytes_per_night>18662</Bytes_per_night>
-        <Explanation>http://sal.lsst.org/SAL/Telemetry/scheduler_rankingData_moonAlt.html</Explanation>
-    </item>
-    <item>
-        <EFDB_Name>moonAz</EFDB_Name>
-        <Description></Description>
-        <Frequency>0.054</Frequency>
-        <Size_in_bytes>8</Size_in_bytes>
-        <IDL_Type>double</IDL_Type>
-        <Units></Units>
-        <Conversion></Conversion>
-        <Sensor_location></Sensor_location>
-        <Count>1</Count>
-        <Bytes_per_night>18662</Bytes_per_night>
-        <Explanation>http://sal.lsst.org/SAL/Telemetry/scheduler_rankingData_moonAz.html</Explanation>
-    </item>
-    <item>
-        <EFDB_Name>moonDec</EFDB_Name>
-        <Description></Description>
-        <Frequency>0.054</Frequency>
-        <Size_in_bytes>8</Size_in_bytes>
-        <IDL_Type>double</IDL_Type>
-        <Units></Units>
-        <Conversion></Conversion>
-        <Sensor_location></Sensor_location>
-        <Count>1</Count>
-        <Bytes_per_night>18662</Bytes_per_night>
-        <Explanation>http://sal.lsst.org/SAL/Telemetry/scheduler_rankingData_moonDec.html</Explanation>
-    </item>
-    <item>
-        <EFDB_Name>moonDistance</EFDB_Name>
-        <Description></Description>
-        <Frequency>0.054</Frequency>
-        <Size_in_bytes>8</Size_in_bytes>
-        <IDL_Type>double</IDL_Type>
-        <Units></Units>
-        <Conversion></Conversion>
-        <Sensor_location></Sensor_location>
-        <Count>1</Count>
-        <Bytes_per_night>18662</Bytes_per_night>
-        <Explanation>http://sal.lsst.org/SAL/Telemetry/scheduler_rankingData_moonDistance.html</Explanation>
-    </item>
-    <item>
-        <EFDB_Name>moonIllumination</EFDB_Name>
-        <Description></Description>
-        <Frequency>0.054</Frequency>
-        <Size_in_bytes>8</Size_in_bytes>
-        <IDL_Type>double</IDL_Type>
-        <Units></Units>
-        <Conversion></Conversion>
-        <Sensor_location></Sensor_location>
-        <Count>1</Count>
-        <Bytes_per_night>18662</Bytes_per_night>
-        <Explanation>http://sal.lsst.org/SAL/Telemetry/scheduler_rankingData_moonIllumination.html</Explanation>
     </item>
     <item>
         <EFDB_Name>moonRa</EFDB_Name>
         <Description></Description>
-        <Frequency>0.054</Frequency>
-        <Size_in_bytes>8</Size_in_bytes>
         <IDL_Type>double</IDL_Type>
         <Units></Units>
-        <Conversion></Conversion>
-        <Sensor_location></Sensor_location>
         <Count>1</Count>
-        <Bytes_per_night>18662</Bytes_per_night>
-        <Explanation>http://sal.lsst.org/SAL/Telemetry/scheduler_rankingData_moonRa.html</Explanation>
     </item>
     <item>
-        <EFDB_Name>mountAltitude</EFDB_Name>
+        <EFDB_Name>moonDec</EFDB_Name>
         <Description></Description>
-        <Frequency>0.054</Frequency>
-        <Size_in_bytes>8</Size_in_bytes>
         <IDL_Type>double</IDL_Type>
         <Units></Units>
-        <Conversion></Conversion>
-        <Sensor_location></Sensor_location>
         <Count>1</Count>
-        <Bytes_per_night>18662</Bytes_per_night>
-        <Explanation>http://sal.lsst.org/SAL/Telemetry/scheduler_rankingData_mountAltitude.html</Explanation>
     </item>
     <item>
-        <EFDB_Name>mountAzimuth</EFDB_Name>
+        <EFDB_Name>moonAlt</EFDB_Name>
         <Description></Description>
-        <Frequency>0.054</Frequency>
-        <Size_in_bytes>8</Size_in_bytes>
         <IDL_Type>double</IDL_Type>
         <Units></Units>
-        <Conversion></Conversion>
-        <Sensor_location></Sensor_location>
         <Count>1</Count>
-        <Bytes_per_night>18662</Bytes_per_night>
-        <Explanation>http://sal.lsst.org/SAL/Telemetry/scheduler_rankingData_mountAzimuth.html</Explanation>
     </item>
     <item>
-        <EFDB_Name>observationNight</EFDB_Name>
+        <EFDB_Name>moonAz</EFDB_Name>
         <Description></Description>
-        <Frequency>0.054</Frequency>
-        <Size_in_bytes>4</Size_in_bytes>
-        <IDL_Type>long</IDL_Type>
-        <Units></Units>
-        <Conversion></Conversion>
-        <Sensor_location></Sensor_location>
-        <Count>1</Count>
-        <Bytes_per_night>9331</Bytes_per_night>
-        <Explanation>http://sal.lsst.org/SAL/Telemetry/scheduler_rankingData_observationNight.html</Explanation>
-    </item>
-    <item>
-        <EFDB_Name>ra</EFDB_Name>
-        <Description></Description>
-        <Frequency>0.054</Frequency>
-        <Size_in_bytes>8</Size_in_bytes>
         <IDL_Type>double</IDL_Type>
         <Units></Units>
-        <Conversion></Conversion>
-        <Sensor_location></Sensor_location>
         <Count>1</Count>
-        <Bytes_per_night>18662</Bytes_per_night>
-        <Explanation>http://sal.lsst.org/SAL/Telemetry/scheduler_rankingData_ra.html</Explanation>
     </item>
     <item>
-        <EFDB_Name>rotatorAngle</EFDB_Name>
+        <EFDB_Name>moonPhase</EFDB_Name>
         <Description></Description>
-        <Frequency>0.054</Frequency>
-        <Size_in_bytes>8</Size_in_bytes>
         <IDL_Type>double</IDL_Type>
         <Units></Units>
-        <Conversion></Conversion>
-        <Sensor_location></Sensor_location>
         <Count>1</Count>
-        <Bytes_per_night>18662</Bytes_per_night>
-        <Explanation>http://sal.lsst.org/SAL/Telemetry/scheduler_rankingData_rotatorAngle.html</Explanation>
     </item>
     <item>
-        <EFDB_Name>seeing</EFDB_Name>
+        <EFDB_Name>moonDistance</EFDB_Name>
         <Description></Description>
-        <Frequency>0.054</Frequency>
-        <Size_in_bytes>8</Size_in_bytes>
         <IDL_Type>double</IDL_Type>
         <Units></Units>
-        <Conversion></Conversion>
-        <Sensor_location></Sensor_location>
         <Count>1</Count>
-        <Bytes_per_night>18662</Bytes_per_night>
-        <Explanation>http://sal.lsst.org/SAL/Telemetry/scheduler_rankingData_seeing.html</Explanation>
-    </item>
-    <item>
-        <EFDB_Name>skyAngle</EFDB_Name>
-        <Description></Description>
-        <Frequency>0.054</Frequency>
-        <Size_in_bytes>8</Size_in_bytes>
-        <IDL_Type>double</IDL_Type>
-        <Units></Units>
-        <Conversion></Conversion>
-        <Sensor_location></Sensor_location>
-        <Count>1</Count>
-        <Bytes_per_night>18662</Bytes_per_night>
-        <Explanation>http://sal.lsst.org/SAL/Telemetry/scheduler_rankingData_skyAngle.html</Explanation>
-    </item>
-    <item>
-        <EFDB_Name>skyBrightnessFilter</EFDB_Name>
-        <Description></Description>
-        <Frequency>0.054</Frequency>
-        <Size_in_bytes>8</Size_in_bytes>
-        <IDL_Type>double</IDL_Type>
-        <Units></Units>
-        <Conversion></Conversion>
-        <Sensor_location></Sensor_location>
-        <Count>1</Count>
-        <Bytes_per_night>18662</Bytes_per_night>
-        <Explanation>http://sal.lsst.org/SAL/Telemetry/scheduler_rankingData_skyBrightnessFilter.html</Explanation>
-    </item>
-    <item>
-        <EFDB_Name>skyBrightnessV</EFDB_Name>
-        <Description></Description>
-        <Frequency>0.054</Frequency>
-        <Size_in_bytes>8</Size_in_bytes>
-        <IDL_Type>double</IDL_Type>
-        <Units></Units>
-        <Conversion></Conversion>
-        <Sensor_location></Sensor_location>
-        <Count>1</Count>
-        <Bytes_per_night>18662</Bytes_per_night>
-        <Explanation>http://sal.lsst.org/SAL/Telemetry/scheduler_rankingData_skyBrightnessV.html</Explanation>
-    </item>
-    <item>
-        <EFDB_Name>slewTime</EFDB_Name>
-        <Description></Description>
-        <Frequency>0.054</Frequency>
-        <Size_in_bytes>8</Size_in_bytes>
-        <IDL_Type>double</IDL_Type>
-        <Units></Units>
-        <Conversion></Conversion>
-        <Sensor_location></Sensor_location>
-        <Count>1</Count>
-        <Bytes_per_night>18662</Bytes_per_night>
-        <Explanation>http://sal.lsst.org/SAL/Telemetry/scheduler_rankingData_slewTime.html</Explanation>
     </item>
     <item>
         <EFDB_Name>sunAlt</EFDB_Name>
         <Description></Description>
-        <Frequency>0.054</Frequency>
-        <Size_in_bytes>8</Size_in_bytes>
         <IDL_Type>double</IDL_Type>
         <Units></Units>
-        <Conversion></Conversion>
-        <Sensor_location></Sensor_location>
         <Count>1</Count>
-        <Bytes_per_night>18662</Bytes_per_night>
-        <Explanation>http://sal.lsst.org/SAL/Telemetry/scheduler_rankingData_sunAlt.html</Explanation>
     </item>
     <item>
         <EFDB_Name>sunAz</EFDB_Name>
         <Description></Description>
-        <Frequency>0.054</Frequency>
-        <Size_in_bytes>8</Size_in_bytes>
         <IDL_Type>double</IDL_Type>
         <Units></Units>
-        <Conversion></Conversion>
-        <Sensor_location></Sensor_location>
         <Count>1</Count>
-        <Bytes_per_night>18662</Bytes_per_night>
-        <Explanation>http://sal.lsst.org/SAL/Telemetry/scheduler_rankingData_sunAz.html</Explanation>
     </item>
     <item>
-        <EFDB_Name>sunElongation</EFDB_Name>
+        <EFDB_Name>sunRa</EFDB_Name>
         <Description></Description>
-        <Frequency>0.054</Frequency>
-        <Size_in_bytes>8</Size_in_bytes>
         <IDL_Type>double</IDL_Type>
         <Units></Units>
-        <Conversion></Conversion>
-        <Sensor_location></Sensor_location>
         <Count>1</Count>
-        <Bytes_per_night>18662</Bytes_per_night>
-        <Explanation>http://sal.lsst.org/SAL/Telemetry/scheduler_rankingData_sunElongation.html</Explanation>
     </item>
     <item>
-        <EFDB_Name>transparency</EFDB_Name>
+        <EFDB_Name>sunDec</EFDB_Name>
         <Description></Description>
-        <Frequency>0.054</Frequency>
-        <Size_in_bytes>8</Size_in_bytes>
         <IDL_Type>double</IDL_Type>
         <Units></Units>
-        <Conversion></Conversion>
-        <Sensor_location></Sensor_location>
         <Count>1</Count>
-        <Bytes_per_night>18662</Bytes_per_night>
-        <Explanation>http://sal.lsst.org/SAL/Telemetry/scheduler_rankingData_transparency.html</Explanation>
     </item>
     <item>
-        <EFDB_Name>visitTime</EFDB_Name>
+        <EFDB_Name>solarElong</EFDB_Name>
         <Description></Description>
-        <Frequency>0.054</Frequency>
-        <Size_in_bytes>8</Size_in_bytes>
         <IDL_Type>double</IDL_Type>
         <Units></Units>
-        <Conversion></Conversion>
-        <Sensor_location></Sensor_location>
         <Count>1</Count>
-        <Bytes_per_night>18662</Bytes_per_night>
-        <Explanation>http://sal.lsst.org/SAL/Telemetry/scheduler_rankingData_visitTime.html</Explanation>
-    </item>
-    <item>
-        <EFDB_Name>weatherHumidity</EFDB_Name>
-        <Description></Description>
-        <Frequency>0.054</Frequency>
-        <Size_in_bytes>8</Size_in_bytes>
-        <IDL_Type>double</IDL_Type>
-        <Units></Units>
-        <Conversion></Conversion>
-        <Sensor_location></Sensor_location>
-        <Count>1</Count>
-        <Bytes_per_night>18662</Bytes_per_night>
-        <Explanation>http://sal.lsst.org/SAL/Telemetry/scheduler_rankingData_weatherHumidity.html</Explanation>
-    </item>
-    <item>
-        <EFDB_Name>weatherWindDirection</EFDB_Name>
-        <Description></Description>
-        <Frequency>0.054</Frequency>
-        <Size_in_bytes>8</Size_in_bytes>
-        <IDL_Type>double</IDL_Type>
-        <Units></Units>
-        <Conversion></Conversion>
-        <Sensor_location></Sensor_location>
-        <Count>1</Count>
-        <Bytes_per_night>18662</Bytes_per_night>
-        <Explanation>http://sal.lsst.org/SAL/Telemetry/scheduler_rankingData_weatherWindDirection.html</Explanation>
-    </item>
-    <item>
-        <EFDB_Name>weatherWindSpeed</EFDB_Name>
-        <Description></Description>
-        <Frequency>0.054</Frequency>
-        <Size_in_bytes>8</Size_in_bytes>
-        <IDL_Type>double</IDL_Type>
-        <Units></Units>
-        <Conversion></Conversion>
-        <Sensor_location></Sensor_location>
-        <Count>1</Count>
-        <Bytes_per_night>18662</Bytes_per_night>
-        <Explanation>http://sal.lsst.org/SAL/Telemetry/scheduler_rankingData_weatherWindSpeed.html</Explanation>
     </item>
 </SALTelemetry>
 <SALTelemetry>
     <Subsystem>scheduler</Subsystem>
-    <Version>3.2.0</Version>
-    <Author>salgenerator</Author>
-    <EFDB_Topic>scheduler_econstraints</EFDB_Topic>
+    <Version>3.5.2</Version>
+    <Author></Author>
+    <EFDB_Topic>scheduler_interestedProposal</EFDB_Topic>
     <item>
-        <EFDB_Name>codes</EFDB_Name>
+        <EFDB_Name>observationId</EFDB_Name>
         <Description></Description>
-        <Frequency>0.054</Frequency>
-        <Values_per_Publisher>32</Values_per_Publisher>
-        <Size_in_bytes>128</Size_in_bytes>
         <IDL_Type>long</IDL_Type>
         <Units></Units>
-        <Conversion></Conversion>
-        <Sensor_location></Sensor_location>
-        <Count>32</Count>
-        <Explanation>http://sal.lsst.org/SAL/Telemetry/scheduler_econstraints_codes.html</Explanation>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>numProposals</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>long</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>proposalIds</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>long</IDL_Type>
+        <Units></Units>
+        <Count>10</Count>
+    </item>
+    <item>
+        <EFDB_Name>proposalValues</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>double</IDL_Type>
+        <Units></Units>
+        <Count>10</Count>
+    </item>
+    <item>
+        <EFDB_Name>proposalNeeds</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>double</IDL_Type>
+        <Units></Units>
+        <Count>10</Count>
+    </item>
+    <item>
+        <EFDB_Name>proposalBonuses</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>double</IDL_Type>
+        <Units></Units>
+        <Count>10</Count>
+    </item>
+    <item>
+        <EFDB_Name>proposalBoosts</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>double</IDL_Type>
+        <Units></Units>
+        <Count>10</Count>
     </item>
 </SALTelemetry>
 <SALTelemetry>
     <Subsystem>scheduler</Subsystem>
-    <Version>3.2.0</Version>
-    <Author>salgenerator</Author>
-    <EFDB_Topic>scheduler_iconstraints</EFDB_Topic>
+    <Version>3.5.2</Version>
+    <Author></Author>
+    <EFDB_Topic>scheduler_timeHandler</EFDB_Topic>
     <item>
-        <EFDB_Name>codes</EFDB_Name>
+        <EFDB_Name>night</EFDB_Name>
         <Description></Description>
-        <Frequency>0.054</Frequency>
-        <Values_per_Publisher>32</Values_per_Publisher>
-        <Size_in_bytes>128</Size_in_bytes>
         <IDL_Type>long</IDL_Type>
         <Units></Units>
-        <Conversion></Conversion>
-        <Sensor_location></Sensor_location>
-        <Count>32</Count>
-        <Bytes_per_night>298598</Bytes_per_night>
-        <Explanation>http://sal.lsst.org/SAL/Telemetry/scheduler_iconstraints_codes.html</Explanation>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>isDown</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>boolean</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>downDuration</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>double</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>timestamp</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>double</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
     </item>
 </SALTelemetry>
-
-</SALTelemetrySet>
+<SALTelemetry>
+    <Subsystem>scheduler</Subsystem>
+    <Version>3.5.2</Version>
+    <Author></Author>
+    <EFDB_Topic>scheduler_bulkCloud</EFDB_Topic>
+    <item>
+        <EFDB_Name>bulkCloud</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>double</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>timestamp</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>double</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+</SALTelemetry>
+<SALTelemetry>
+    <Subsystem>scheduler</Subsystem>
+    <Version>3.5.2</Version>
+    <Author></Author>
+    <EFDB_Topic>scheduler_cloudMap</EFDB_Topic>
+    <item>
+        <EFDB_Name>cloudMap</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>long</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>scale</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>float</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>zero</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>float</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>timestamp</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>double</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+</SALTelemetry>
+<SALTelemetry>
+    <Subsystem>scheduler</Subsystem>
+    <Version>3.5.2</Version>
+    <Author></Author>
+    <EFDB_Topic>scheduler_seeing</EFDB_Topic>
+    <item>
+        <EFDB_Name>seeing</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>double</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>timestamp</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>double</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+</SALTelemetry>
+<SALTelemetry>
+    <Subsystem>scheduler</Subsystem>
+    <Version>3.5.2</Version>
+    <Author></Author>
+    <EFDB_Topic>scheduler_wind</EFDB_Topic>
+    <item>
+        <EFDB_Name>speed</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>double</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>direction</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>double</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>timestamp</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>double</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+</SALTelemetry>
+<SALTelemetry>
+    <Subsystem>scheduler</Subsystem>
+    <Version>3.5.2</Version>
+    <Author></Author>
+    <EFDB_Topic>scheduler_temperature</EFDB_Topic>
+    <item>
+        <EFDB_Name>temperature</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>double</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>timestamp</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>double</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+</SALTelemetry>
+<SALTelemetry>
+    <Subsystem>scheduler</Subsystem>
+    <Version>3.5.2</Version>
+    <Author></Author>
+    <EFDB_Topic>scheduler_skyBrightness</EFDB_Topic>
+    <item>
+        <EFDB_Name>skyBrightnress</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>long</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>scale</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>float</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>zero</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>float</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>filter</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>string</IDL_Type>
+        <IDL_Size>256</IDL_Size>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>timestamp</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>double</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+</SALTelemetry>
+<SALTelemetry>
+    <Subsystem>scheduler</Subsystem>
+    <Version>3.5.2</Version>
+    <Author></Author>
+    <EFDB_Topic>scheduler_photometricQuality</EFDB_Topic>
+    <item>
+        <EFDB_Name>photometricQuality</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>double</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>timestamp</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>double</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+</SALTelemetry>
+<SALTelemetry>
+    <Subsystem>scheduler</Subsystem>
+    <Version>3.5.2</Version>
+    <Author></Author>
+    <EFDB_Topic>scheduler_avoidanceRegions</EFDB_Topic>
+    <item>
+        <EFDB_Name>avoidanceRegions</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>long</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>scale</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>float</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>zero</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>float</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>timestamp</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>double</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+</SALTelemetry>
+<SALTelemetry>
+    <Subsystem>scheduler</Subsystem>
+    <Version>3.5.2</Version>
+    <Author></Author>
+    <EFDB_Topic>scheduler_downtime</EFDB_Topic>
+    <item>
+        <EFDB_Name>scheduledDowntime</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>long</IDL_Type>
+        <Units></Units>
+        <Count>200</Count>
+    </item>
+    <item>
+        <EFDB_Name>unscheduledDowntimes</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>long</IDL_Type>
+        <Units></Units>
+        <Count>200</Count>
+    </item>
+    <item>
+        <EFDB_Name>timestamp</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>double</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+</SALTelemetry></SALTelemetrySet>
