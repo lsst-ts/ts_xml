@@ -2,551 +2,489 @@
 <?xml-stylesheet type="text/xsl" href="http://lsst-sal.tuc.noao.edu/schema/SALCommandSet.xsl"?>
 <SALCommandSet xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:noNamespaceSchemaLocation="http://lsst-sal.tuc.noao.edu/schema/SALCommandSet.xsd">
+
 <SALCommand>
-    <Subsystem>hexapod</Subsystem>
-    <Version>3.5.1</Version>
-    <Author></Author>
-    <EFDB_Topic>hexapod_command_configureAcceleration</EFDB_Topic>
-    <Alias>configureAcceleration</Alias>
-    <Device></Device>
-    <Property></Property>
-    <Action></Action>
-    <Value></Value>
-    <Explanation>http://sal.lsst.org</Explanation>
+ <Subsystem>hexapod</Subsystem>
+ <Version>3.3.0</Version>
+ <Author>salgenerator</Author>
+ <EFDB_Topic>hexapod_command_configureAcceleration</EFDB_Topic>
+ <Alias>configureAcceleration</Alias>
+ <Device>drive</Device>
+ <Property>acceleration</Property>
+ <Action></Action>
+ <Value></Value>
+ <Explanation>http://sal.lsst.org/SAL/Commands/hexapod_command_configureAcceleration.html</Explanation>
     <item>
-        <EFDB_Name>accmax</EFDB_Name>
-        <Description></Description>
-        <IDL_Type>double</IDL_Type>
-        <Units>um/s^2</Units>
-        <Count>1</Count>
+      <EFDB_Name>accmax</EFDB_Name>
+      <Description> </Description>
+       <IDL_Type>float</IDL_Type>
+      <Units> </Units>
+      <Count>1</Count>
+    </item>
+</SALCommand>
+
+<SALCommand>
+ <Subsystem>hexapod</Subsystem>
+ <Version>3.3.0</Version>
+ <Author>salgenerator</Author>
+ <EFDB_Topic>hexapod_command_configureLimits</EFDB_Topic>
+ <Alias>configureLimits</Alias>
+ <Device>actuators</Device>
+ <Property>limits</Property>
+ <Action></Action>
+ <Value></Value>
+ <Explanation>http://sal.lsst.org/SAL/Commands/hexapod_command_configureLimits.html</Explanation>
+    <item>
+      <EFDB_Name>xmin</EFDB_Name>
+      <Description> </Description>
+       <IDL_Type>float</IDL_Type>
+      <Units>microns</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>xmax</EFDB_Name>
+      <Description> </Description>
+       <IDL_Type>float</IDL_Type>
+      <Units>microns</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>ymin</EFDB_Name>
+      <Description> </Description>
+       <IDL_Type>float</IDL_Type>
+      <Units>microns</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>ymax</EFDB_Name>
+      <Description> </Description>
+       <IDL_Type>float</IDL_Type>
+      <Units>microns</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>zmin</EFDB_Name>
+      <Description> </Description>
+       <IDL_Type>float</IDL_Type>
+      <Units>microns</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>zmax</EFDB_Name>
+      <Description> </Description>
+       <IDL_Type>float</IDL_Type>
+      <Units> </Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>umin</EFDB_Name>
+      <Description> </Description>
+       <IDL_Type>float</IDL_Type>
+      <Units> </Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>umax</EFDB_Name>
+      <Description> </Description>
+       <IDL_Type>float</IDL_Type>
+      <Units> degrees</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>vmin</EFDB_Name>
+      <Description> </Description>
+       <IDL_Type>float</IDL_Type>
+      <Units>degrees</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>vmax</EFDB_Name>
+      <Description> </Description>
+       <IDL_Type>float</IDL_Type>
+      <Units>degrees</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>wwmin</EFDB_Name>
+      <Description> </Description>
+       <IDL_Type>float</IDL_Type>
+      <Units>degrees</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>wmax</EFDB_Name>
+      <Description> </Description>
+       <IDL_Type>float</IDL_Type>
+      <Units>degrees</Units>
+      <Count>1</Count>
+    </item>
+</SALCommand>
+
+<SALCommand>
+ <Subsystem>hexapod</Subsystem>
+ <Version>3.3.0</Version>
+ <Author>salgenerator</Author>
+ <EFDB_Topic>hexapod_command_configureLut</EFDB_Topic>
+ <Alias>configureLut</Alias>
+ <Device>target</Device>
+ <Property>lut</Property>
+ <Action></Action>
+ <Value></Value>
+ <Explanation>http://sal.lsst.org/SAL/Commands/hexapod_command_configureLut.html</Explanation>
+    <item>
+      <EFDB_Name>xlut</EFDB_Name>
+      <Description> </Description>
+       <IDL_Type>float</IDL_Type>
+      <Units> </Units>
+      <Count>90</Count>
+    </item>
+    <item>
+      <EFDB_Name>ylut</EFDB_Name>
+      <Description> </Description>
+       <IDL_Type>float</IDL_Type>
+      <Units> </Units>
+      <Count>90</Count>
+    </item>
+    <item>
+      <EFDB_Name>zlut</EFDB_Name>
+      <Description> </Description>
+       <IDL_Type>float</IDL_Type>
+      <Units> </Units>
+      <Count>90</Count>
+    </item>
+    <item>
+      <EFDB_Name>ulut</EFDB_Name>
+      <Description> </Description>
+       <IDL_Type>float</IDL_Type>
+      <Units> </Units>
+      <Count>90</Count>
+    </item>
+    <item>
+      <EFDB_Name>vlut</EFDB_Name>
+      <Description> </Description>
+       <IDL_Type>float</IDL_Type>
+      <Units> </Units>
+      <Count>90</Count>
+    </item>
+    <item>
+      <EFDB_Name>wlut</EFDB_Name>
+      <Description> </Description>
+       <IDL_Type>float</IDL_Type>
+      <Units> </Units>
+      <Count>90</Count>
+    </item>
+</SALCommand>
+
+<SALCommand>
+ <Subsystem>hexapod</Subsystem>
+ <Version>3.3.0</Version>
+ <Author>salgenerator</Author>
+ <EFDB_Topic>hexapod_command_move</EFDB_Topic>
+ <Alias>move</Alias>
+ <Device>actuators</Device>
+ <Property>position</Property>
+ <Action>coords</Action>
+ <Value></Value>
+ <Explanation>http://sal.lsst.org/SAL/Commands/hexapod_command_move.html</Explanation>
+</SALCommand>
+
+<SALCommand>
+ <Subsystem>hexapod</Subsystem>
+ <Version>3.3.0</Version>
+ <Author>salgenerator</Author>
+ <EFDB_Topic>hexapod_command_moveAbsolute</EFDB_Topic>
+ <Alias>moveAbsolute</Alias>
+ <Device>actuators</Device>
+ <Property>position</Property>
+ <Action>raw</Action>
+ <Value></Value>
+ <Explanation>http://sal.lsst.org/SAL/Commands/hexapod_command_moveAbsolute.html</Explanation>
+</SALCommand>
+
+<SALCommand>
+ <Subsystem>hexapod</Subsystem>
+ <Version>3.3.0</Version>
+ <Author>salgenerator</Author>
+ <EFDB_Topic>hexapod_command_positionSet</EFDB_Topic>
+ <Alias>positionSet</Alias>
+ <Device>actuators</Device>
+ <Property>position</Property>
+ <Action>coords</Action>
+ <Value></Value>
+ <Explanation>http://sal.lsst.org/SAL/Commands/hexapod_command_positionSet.html</Explanation>
+    <item>
+      <EFDB_Name>x</EFDB_Name>
+      <Description> </Description>
+       <IDL_Type>float</IDL_Type>
+      <Units>microns</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>y</EFDB_Name>
+      <Description> </Description>
+       <IDL_Type>float</IDL_Type>
+      <Units>microns</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>z</EFDB_Name>
+      <Description> </Description>
+       <IDL_Type>float</IDL_Type>
+      <Units>microns</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>u</EFDB_Name>
+      <Description> </Description>
+       <IDL_Type>float</IDL_Type>
+      <Units>degrees</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>v</EFDB_Name>
+      <Description> </Description>
+       <IDL_Type>float</IDL_Type>
+      <Units>degrees</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>w</EFDB_Name>
+      <Description> </Description>
+       <IDL_Type>float</IDL_Type>
+      <Units>degrees</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>sync</EFDB_Name>
+      <Description> </Description>
+       <IDL_Type>boolean</IDL_Type>
+      <Units> </Units>
+      <Count>1</Count>
+    </item>
+</SALCommand>
+
+<SALCommand>
+ <Subsystem>hexapod</Subsystem>
+ <Version>3.3.0</Version>
+ <Author>salgenerator</Author>
+ <EFDB_Topic>hexapod_command_rawPositionSet</EFDB_Topic>
+ <Alias>rawPositionSet</Alias>
+ <Device>actuators</Device>
+ <Property>position</Property>
+ <Action>coords</Action>
+ <Value></Value>
+ <Explanation>http://sal.lsst.org/SAL/Commands/hexapod_command_rawPositionSet.html</Explanation>
+    <item>
+      <EFDB_Name>a1</EFDB_Name>
+      <Description> </Description>
+       <IDL_Type>long</IDL_Type>
+      <Units>steps</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>a2</EFDB_Name>
+      <Description> </Description>
+       <IDL_Type>long</IDL_Type>
+      <Units>steps</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>a3</EFDB_Name>
+      <Description> </Description>
+       <IDL_Type>long</IDL_Type>
+      <Units>steps</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>a4</EFDB_Name>
+      <Description> </Description>
+       <IDL_Type>long</IDL_Type>
+      <Units>steps</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>a5</EFDB_Name>
+      <Description> </Description>
+       <IDL_Type>long</IDL_Type>
+      <Units>steps</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>a6</EFDB_Name>
+      <Description> </Description>
+       <IDL_Type>long</IDL_Type>
+      <Units>steps</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>sync</EFDB_Name>
+      <Description> </Description>
+       <IDL_Type>boolean</IDL_Type>
+      <Units> </Units>
+      <Count>1</Count>
     </item>
 </SALCommand>
 <SALCommand>
-    <Subsystem>hexapod</Subsystem>
-    <Version>3.5.1</Version>
-    <Author></Author>
-    <EFDB_Topic>hexapod_command_configureLimits</EFDB_Topic>
-    <Alias>configureLimits</Alias>
-    <Device></Device>
-    <Property></Property>
-    <Action></Action>
-    <Value></Value>
-    <Explanation>http://sal.lsst.org</Explanation>
+ <Subsystem>hexapod</Subsystem>
+ <Version>3.3.0</Version>
+ <Author>salgenerator</Author>
+ <EFDB_Topic>hexapod_command_configureVelocity</EFDB_Topic>
+ <Alias>configureVelocity</Alias>
+ <Device>drive</Device>
+ <Property>velocity</Property>
+ <Action></Action>
+ <Value></Value>
+ <Explanation>http://sal.lsst.org/SAL/Commands/hexapod_command_configureVelocity.html</Explanation>
     <item>
-        <EFDB_Name>xymax</EFDB_Name>
-        <Description></Description>
-        <IDL_Type>double</IDL_Type>
-        <Units>um</Units>
-        <Count>1</Count>
+      <EFDB_Name>xymax</EFDB_Name>
+      <Description> </Description>
+       <IDL_Type>float</IDL_Type>
+      <Units> </Units>
+      <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>zmin</EFDB_Name>
-        <Description></Description>
-        <IDL_Type>double</IDL_Type>
-        <Units>um</Units>
-        <Count>1</Count>
-    </item>
-    <item>
-        <EFDB_Name>zmax</EFDB_Name>
-        <Description></Description>
-        <IDL_Type>double</IDL_Type>
-        <Units>um</Units>
-        <Count>1</Count>
-    </item>
-    <item>
-        <EFDB_Name>uvmax</EFDB_Name>
-        <Description></Description>
-        <IDL_Type>double</IDL_Type>
-        <Units>deg</Units>
-        <Count>1</Count>
-    </item>
-    <item>
-        <EFDB_Name>wmin</EFDB_Name>
-        <Description></Description>
-        <IDL_Type>double</IDL_Type>
-        <Units>deg</Units>
-        <Count>1</Count>
-    </item>
-    <item>
-        <EFDB_Name>wmax</EFDB_Name>
-        <Description></Description>
-        <IDL_Type>double</IDL_Type>
-        <Units>deg</Units>
-        <Count>1</Count>
+      <EFDB_Name>rmax</EFDB_Name>
+      <Description> </Description>
+       <IDL_Type>float</IDL_Type>
+      <Units> </Units>
+      <Count>1</Count>
     </item>
 </SALCommand>
+
 <SALCommand>
-    <Subsystem>hexapod</Subsystem>
-    <Version>3.5.1</Version>
-    <Author></Author>
-    <EFDB_Topic>hexapod_command_configureElevationRawLUT</EFDB_Topic>
-    <Alias>configureElevationRawLUT</Alias>
-    <Device></Device>
-    <Property></Property>
-    <Action></Action>
-    <Value></Value>
-    <Explanation>http://sal.lsst.org</Explanation>
+ <Subsystem>hexapod</Subsystem>
+ <Version>3.3.0</Version>
+ <Author>salgenerator</Author>
+ <EFDB_Topic>hexapod_command_offset</EFDB_Topic>
+ <Alias>offset</Alias>
+ <Device>actuators</Device>
+ <Property>position</Property>
+ <Action>offset</Action>
+ <Value></Value>
+ <Explanation>http://sal.lsst.org/SAL/Commands/hexapod_command_offset.html</Explanation>
     <item>
-        <EFDB_Name>elevIndex</EFDB_Name>
-        <Description></Description>
-        <IDL_Type>short</IDL_Type>
-        <Units></Units>
-        <Count>19</Count>
+      <EFDB_Name>x</EFDB_Name>
+      <Description> </Description>
+       <IDL_Type>float</IDL_Type>
+      <Units>microns</Units>
+      <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>x</EFDB_Name>
-        <Description></Description>
-        <IDL_Type>double</IDL_Type>
-        <Units></Units>
-        <Count>19</Count>
+      <EFDB_Name>y</EFDB_Name>
+      <Description> </Description>
+       <IDL_Type>float</IDL_Type>
+      <Units>microns </Units>
+      <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>y</EFDB_Name>
-        <Description></Description>
-        <IDL_Type>double</IDL_Type>
-        <Units></Units>
-        <Count>19</Count>
+      <EFDB_Name>z</EFDB_Name>
+      <Description> </Description>
+       <IDL_Type>float</IDL_Type>
+      <Units>microns </Units>
+      <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>z</EFDB_Name>
-        <Description></Description>
-        <IDL_Type>double</IDL_Type>
-        <Units></Units>
-        <Count>19</Count>
+      <EFDB_Name>u</EFDB_Name>
+      <Description> </Description>
+       <IDL_Type>float</IDL_Type>
+      <Units>degrees</Units>
+      <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>rx</EFDB_Name>
-        <Description></Description>
-        <IDL_Type>double</IDL_Type>
-        <Units></Units>
-        <Count>19</Count>
+      <EFDB_Name>v</EFDB_Name>
+      <Description> </Description>
+       <IDL_Type>float</IDL_Type>
+      <Units>degrees</Units>
+      <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>ry</EFDB_Name>
-        <Description></Description>
-        <IDL_Type>double</IDL_Type>
-        <Units></Units>
-        <Count>19</Count>
+      <EFDB_Name>w</EFDB_Name>
+      <Description> </Description>
+       <IDL_Type>float</IDL_Type>
+      <Units>degrees</Units>
+      <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>rz</EFDB_Name>
-        <Description></Description>
-        <IDL_Type>double</IDL_Type>
-        <Units></Units>
-        <Count>19</Count>
+      <EFDB_Name>sync</EFDB_Name>
+      <Description> </Description>
+       <IDL_Type>boolean</IDL_Type>
+      <Units></Units>
+      <Count>1</Count>
     </item>
 </SALCommand>
+
 <SALCommand>
-    <Subsystem>hexapod</Subsystem>
-    <Version>3.5.1</Version>
-    <Author></Author>
-    <EFDB_Topic>hexapod_command_move</EFDB_Topic>
-    <Alias>move</Alias>
-    <Device></Device>
-    <Property></Property>
-    <Action></Action>
-    <Value></Value>
-    <Explanation>http://sal.lsst.org</Explanation>
+ <Subsystem>hexapod</Subsystem>
+ <Version>3.3.0</Version>
+ <Author>salgenerator</Author>
+ <EFDB_Topic>hexapod_command_pivot</EFDB_Topic>
+ <Alias>pivot</Alias>
+ <Device>actuators</Device>
+ <Property>pivot</Property>
+ <Action></Action>
+ <Value></Value>
+ <Explanation>http://sal.lsst.org/SAL/Commands/hexapod_command_pivot.html</Explanation>
     <item>
-        <EFDB_Name>state</EFDB_Name>
-        <Description></Description>
-        <IDL_Type>boolean</IDL_Type>
-        <Units></Units>
-        <Count>1</Count>
+      <EFDB_Name>x</EFDB_Name>
+      <Description> </Description>
+       <IDL_Type>float</IDL_Type>
+      <Units>microns</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>y</EFDB_Name>
+      <Description> </Description>
+       <IDL_Type>float</IDL_Type>
+      <Units>microns</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>z</EFDB_Name>
+      <Description> </Description>
+       <IDL_Type>float</IDL_Type>
+      <Units>microns</Units>
+      <Count>1</Count>
     </item>
 </SALCommand>
+
 <SALCommand>
-    <Subsystem>hexapod</Subsystem>
-    <Version>3.5.1</Version>
-    <Author></Author>
-    <EFDB_Topic>hexapod_command_positionSet</EFDB_Topic>
-    <Alias>positionSet</Alias>
-    <Device></Device>
-    <Property></Property>
-    <Action></Action>
-    <Value></Value>
-    <Explanation>http://sal.lsst.org</Explanation>
+ <Subsystem>hexapod</Subsystem>
+ <Version>3.3.0</Version>
+ <Author>salgenerator</Author>
+ <EFDB_Topic>hexapod_command_clearError</EFDB_Topic>
+ <Alias>clearError</Alias>
+ <Device>all</Device>
+ <Property></Property>
+ <Action></Action>
+ <Value></Value>
+ <Explanation>http://sal.lsst.org/SAL/Commands/hexapod_command_clearError.html</Explanation>
+</SALCommand>
+
+
+<SALCommand>
+ <Subsystem>hexapod</Subsystem>
+ <Version>3.3.0</Version>
+ <Author>salgenerator</Author>
+ <EFDB_Topic>hexapod_command_test</EFDB_Topic>
+ <Alias>test</Alias>
+ <Device>test</Device>
+ <Property></Property>
+ <Action></Action>
+ <Value></Value>
+ <Explanation>http://sal.lsst.org/SAL/Commands/hexapod_command_test.html</Explanation>
     <item>
-        <EFDB_Name>x</EFDB_Name>
-        <Description></Description>
-        <IDL_Type>double</IDL_Type>
-        <Units>um</Units>
-        <Count>1</Count>
+      <EFDB_Name>ivalue1</EFDB_Name>
+      <Description> </Description>
+       <IDL_Type>int</IDL_Type>
+      <Units> </Units>
+      <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>y</EFDB_Name>
-        <Description></Description>
-        <IDL_Type>double</IDL_Type>
-        <Units>um</Units>
-        <Count>1</Count>
-    </item>
-    <item>
-        <EFDB_Name>z</EFDB_Name>
-        <Description></Description>
-        <IDL_Type>double</IDL_Type>
-        <Units>um</Units>
-        <Count>1</Count>
-    </item>
-    <item>
-        <EFDB_Name>u</EFDB_Name>
-        <Description></Description>
-        <IDL_Type>double</IDL_Type>
-        <Units>deg</Units>
-        <Count>1</Count>
-    </item>
-    <item>
-        <EFDB_Name>v</EFDB_Name>
-        <Description></Description>
-        <IDL_Type>double</IDL_Type>
-        <Units>deg</Units>
-        <Count>1</Count>
-    </item>
-    <item>
-        <EFDB_Name>w</EFDB_Name>
-        <Description></Description>
-        <IDL_Type>double</IDL_Type>
-        <Units>deg</Units>
-        <Count>1</Count>
-    </item>
-    <item>
-        <EFDB_Name>sync</EFDB_Name>
-        <Description></Description>
-        <IDL_Type>boolean</IDL_Type>
-        <Units></Units>
-        <Count>1</Count>
+      <EFDB_Name>ivalue2</EFDB_Name>
+      <Description> </Description>
+       <IDL_Type>int</IDL_Type>
+      <Units> </Units>
+      <Count>1</Count>
     </item>
 </SALCommand>
-<SALCommand>
-    <Subsystem>hexapod</Subsystem>
-    <Version>3.5.1</Version>
-    <Author></Author>
-    <EFDB_Topic>hexapod_command_configureVelocity</EFDB_Topic>
-    <Alias>configureVelocity</Alias>
-    <Device></Device>
-    <Property></Property>
-    <Action></Action>
-    <Value></Value>
-    <Explanation>http://sal.lsst.org</Explanation>
-    <item>
-        <EFDB_Name>xymax</EFDB_Name>
-        <Description></Description>
-        <IDL_Type>double</IDL_Type>
-        <Units>um/s</Units>
-        <Count>1</Count>
-    </item>
-    <item>
-        <EFDB_Name>rxrymax</EFDB_Name>
-        <Description></Description>
-        <IDL_Type>double</IDL_Type>
-        <Units>deg/s</Units>
-        <Count>1</Count>
-    </item>
-    <item>
-        <EFDB_Name>zmax</EFDB_Name>
-        <Description></Description>
-        <IDL_Type>double</IDL_Type>
-        <Units>um/s</Units>
-        <Count>1</Count>
-    </item>
-    <item>
-        <EFDB_Name>rzmax</EFDB_Name>
-        <Description></Description>
-        <IDL_Type>double</IDL_Type>
-        <Units>deg/s</Units>
-        <Count>1</Count>
-    </item>
-</SALCommand>
-<SALCommand>
-    <Subsystem>hexapod</Subsystem>
-    <Version>3.5.1</Version>
-    <Author></Author>
-    <EFDB_Topic>hexapod_command_offset</EFDB_Topic>
-    <Alias>offset</Alias>
-    <Device></Device>
-    <Property></Property>
-    <Action></Action>
-    <Value></Value>
-    <Explanation>http://sal.lsst.org</Explanation>
-    <item>
-        <EFDB_Name>x</EFDB_Name>
-        <Description></Description>
-        <IDL_Type>double</IDL_Type>
-        <Units>um</Units>
-        <Count>1</Count>
-    </item>
-    <item>
-        <EFDB_Name>y</EFDB_Name>
-        <Description></Description>
-        <IDL_Type>double</IDL_Type>
-        <Units>um</Units>
-        <Count>1</Count>
-    </item>
-    <item>
-        <EFDB_Name>z</EFDB_Name>
-        <Description></Description>
-        <IDL_Type>double</IDL_Type>
-        <Units>um</Units>
-        <Count>1</Count>
-    </item>
-    <item>
-        <EFDB_Name>u</EFDB_Name>
-        <Description></Description>
-        <IDL_Type>double</IDL_Type>
-        <Units>deg</Units>
-        <Count>1</Count>
-    </item>
-    <item>
-        <EFDB_Name>v</EFDB_Name>
-        <Description></Description>
-        <IDL_Type>double</IDL_Type>
-        <Units>deg</Units>
-        <Count>1</Count>
-    </item>
-    <item>
-        <EFDB_Name>w</EFDB_Name>
-        <Description></Description>
-        <IDL_Type>double</IDL_Type>
-        <Units>deg</Units>
-        <Count>1</Count>
-    </item>
-    <item>
-        <EFDB_Name>sync</EFDB_Name>
-        <Description></Description>
-        <IDL_Type>boolean</IDL_Type>
-        <Units></Units>
-        <Count>1</Count>
-    </item>
-</SALCommand>
-<SALCommand>
-    <Subsystem>hexapod</Subsystem>
-    <Version>3.5.1</Version>
-    <Author></Author>
-    <EFDB_Topic>hexapod_command_pivot</EFDB_Topic>
-    <Alias>pivot</Alias>
-    <Device></Device>
-    <Property></Property>
-    <Action></Action>
-    <Value></Value>
-    <Explanation>http://sal.lsst.org</Explanation>
-    <item>
-        <EFDB_Name>x</EFDB_Name>
-        <Description></Description>
-        <IDL_Type>double</IDL_Type>
-        <Units>um</Units>
-        <Count>1</Count>
-    </item>
-    <item>
-        <EFDB_Name>y</EFDB_Name>
-        <Description></Description>
-        <IDL_Type>double</IDL_Type>
-        <Units>um</Units>
-        <Count>1</Count>
-    </item>
-    <item>
-        <EFDB_Name>z</EFDB_Name>
-        <Description></Description>
-        <IDL_Type>double</IDL_Type>
-        <Units>um</Units>
-        <Count>1</Count>
-    </item>
-</SALCommand>
-<SALCommand>
-    <Subsystem>hexapod</Subsystem>
-    <Version>3.5.1</Version>
-    <Author></Author>
-    <EFDB_Topic>hexapod_command_clearError</EFDB_Topic>
-    <Alias>clearError</Alias>
-    <Device></Device>
-    <Property></Property>
-    <Action></Action>
-    <Value></Value>
-    <Explanation>http://sal.lsst.org</Explanation>
-    <item>
-        <EFDB_Name>state</EFDB_Name>
-        <Description></Description>
-        <IDL_Type>boolean</IDL_Type>
-        <Units></Units>
-        <Count>1</Count>
-    </item>
-</SALCommand>
-<SALCommand>
-    <Subsystem>hexapod</Subsystem>
-    <Version>3.5.1</Version>
-    <Author></Author>
-    <EFDB_Topic>hexapod_command_test</EFDB_Topic>
-    <Alias>test</Alias>
-    <Device></Device>
-    <Property></Property>
-    <Action></Action>
-    <Value></Value>
-    <Explanation>http://sal.lsst.org</Explanation>
-    <item>
-        <EFDB_Name>ivalue1</EFDB_Name>
-        <Description></Description>
-        <IDL_Type>long</IDL_Type>
-        <Units></Units>
-        <Count>1</Count>
-    </item>
-    <item>
-        <EFDB_Name>ivalue2</EFDB_Name>
-        <Description></Description>
-        <IDL_Type>long</IDL_Type>
-        <Units></Units>
-        <Count>1</Count>
-    </item>
-</SALCommand>
-<SALCommand>
-    <Subsystem>hexapod</Subsystem>
-    <Version>3.5.1</Version>
-    <Author></Author>
-    <EFDB_Topic>hexapod_command_configureAzimuthRawLUT</EFDB_Topic>
-    <Alias>configureAzimuthRawLUT</Alias>
-    <Device></Device>
-    <Property></Property>
-    <Action></Action>
-    <Value></Value>
-    <Explanation>http://sal.lsst.org</Explanation>
-    <item>
-        <EFDB_Name>azIndex</EFDB_Name>
-        <Description></Description>
-        <IDL_Type>short</IDL_Type>
-        <Units></Units>
-        <Count>37</Count>
-    </item>
-    <item>
-        <EFDB_Name>x</EFDB_Name>
-        <Description></Description>
-        <IDL_Type>double</IDL_Type>
-        <Units></Units>
-        <Count>37</Count>
-    </item>
-    <item>
-        <EFDB_Name>y</EFDB_Name>
-        <Description></Description>
-        <IDL_Type>double</IDL_Type>
-        <Units></Units>
-        <Count>37</Count>
-    </item>
-    <item>
-        <EFDB_Name>z</EFDB_Name>
-        <Description></Description>
-        <IDL_Type>double</IDL_Type>
-        <Units></Units>
-        <Count>37</Count>
-    </item>
-    <item>
-        <EFDB_Name>rx</EFDB_Name>
-        <Description></Description>
-        <IDL_Type>double</IDL_Type>
-        <Units></Units>
-        <Count>37</Count>
-    </item>
-    <item>
-        <EFDB_Name>ry</EFDB_Name>
-        <Description></Description>
-        <IDL_Type>double</IDL_Type>
-        <Units></Units>
-        <Count>37</Count>
-    </item>
-    <item>
-        <EFDB_Name>rz</EFDB_Name>
-        <Description></Description>
-        <IDL_Type>double</IDL_Type>
-        <Units></Units>
-        <Count>37</Count>
-    </item>
-</SALCommand>
-<SALCommand>
-    <Subsystem>hexapod</Subsystem>
-    <Version>3.5.1</Version>
-    <Author></Author>
-    <EFDB_Topic>hexapod_command_configureTemperatureRawLUT</EFDB_Topic>
-    <Alias>configureTemperatureRawLUT</Alias>
-    <Device></Device>
-    <Property></Property>
-    <Action></Action>
-    <Value></Value>
-    <Explanation>http://sal.lsst.org</Explanation>
-    <item>
-        <EFDB_Name>tempIndex</EFDB_Name>
-        <Description></Description>
-        <IDL_Type>short</IDL_Type>
-        <Units></Units>
-        <Count>9</Count>
-    </item>
-    <item>
-        <EFDB_Name>x</EFDB_Name>
-        <Description></Description>
-        <IDL_Type>double</IDL_Type>
-        <Units></Units>
-        <Count>9</Count>
-    </item>
-    <item>
-        <EFDB_Name>y</EFDB_Name>
-        <Description></Description>
-        <IDL_Type>double</IDL_Type>
-        <Units></Units>
-        <Count>9</Count>
-    </item>
-    <item>
-        <EFDB_Name>z</EFDB_Name>
-        <Description></Description>
-        <IDL_Type>double</IDL_Type>
-        <Units></Units>
-        <Count>9</Count>
-    </item>
-    <item>
-        <EFDB_Name>rx</EFDB_Name>
-        <Description></Description>
-        <IDL_Type>double</IDL_Type>
-        <Units></Units>
-        <Count>9</Count>
-    </item>
-    <item>
-        <EFDB_Name>ry</EFDB_Name>
-        <Description></Description>
-        <IDL_Type>double</IDL_Type>
-        <Units></Units>
-        <Count>9</Count>
-    </item>
-    <item>
-        <EFDB_Name>rz</EFDB_Name>
-        <Description></Description>
-        <IDL_Type>double</IDL_Type>
-        <Units></Units>
-        <Count>9</Count>
-    </item>
-</SALCommand>
-<SALCommand>
-    <Subsystem>hexapod</Subsystem>
-    <Version>3.5.1</Version>
-    <Author></Author>
-    <EFDB_Topic>hexapod_command_moveLUT</EFDB_Topic>
-    <Alias>moveLUT</Alias>
-    <Device></Device>
-    <Property></Property>
-    <Action></Action>
-    <Value></Value>
-    <Explanation>http://sal.lsst.org</Explanation>
-    <item>
-        <EFDB_Name>az</EFDB_Name>
-        <Description></Description>
-        <IDL_Type>double</IDL_Type>
-        <Units></Units>
-        <Count>1</Count>
-    </item>
-    <item>
-        <EFDB_Name>elev</EFDB_Name>
-        <Description></Description>
-        <IDL_Type>double</IDL_Type>
-        <Units></Units>
-        <Count>1</Count>
-    </item>
-    <item>
-        <EFDB_Name>temp</EFDB_Name>
-        <Description></Description>
-        <IDL_Type>double</IDL_Type>
-        <Units></Units>
-        <Count>1</Count>
-    </item>
-</SALCommand></SALCommandSet>
+</SALCommandSet>

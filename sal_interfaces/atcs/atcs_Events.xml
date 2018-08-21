@@ -2,14 +2,9 @@
 <?xml-stylesheet type="text/xsl" href="http://lsst-sal.tuc.noao.edu/schema/SALEventSet.xsl"?>
 <SALEventSet xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:noNamespaceSchemaLocation="http://lsst-sal.tuc.noao.edu/schema/SALEventSet.xsd">
-<Enumeration>SummaryState_DisabledState,SummaryState_EnabledState,SummaryState_FaultState,SummaryState_OfflineState,SummaryState_StandbyState</Enumeration>
-<Enumeration>DetailedState_DisabledState,DetailedState_EnabledState,DetailedState_FaultState,DetailedState_OfflineState,DetailedState_StandbyState</Enumeration>
-<Enumeration>Filter_Filter1,Filter_Filter2,Filter_Filter3,Filter_Filter4</Enumeration>
-<Enumeration>Grating_Grating1,Grating_Grating2,Grating_Grating3,Grating_Grating4</Enumeration>
-
 <SALEvent>
     <Subsystem>atcs</Subsystem>
-    <Version>3.5.2</Version>
+    <Version>3.5.1</Version>
     <Author></Author>
     <EFDB_Topic>atcs_logevent_AppliedSettingsMatchStart</EFDB_Topic>
     <Alias>AppliedSettingsMatchStart</Alias>
@@ -24,14 +19,14 @@
 </SALEvent>
 <SALEvent>
     <Subsystem>atcs</Subsystem>
-    <Version>3.5.2</Version>
+    <Version>3.5.1</Version>
     <Author></Author>
     <EFDB_Topic>atcs_logevent_ErrorCode</EFDB_Topic>
     <Alias>ErrorCode</Alias>
     <Explanation>http://sal.lsst.org</Explanation>
     <item>
         <EFDB_Name>errorCode</EFDB_Name>
-        <Description>The error code being published.</Description>
+        <Description>The error code being published.</pre></html></Description>
         <IDL_Type>long</IDL_Type>
         <Units></Units>
         <Count>1</Count>
@@ -39,24 +34,23 @@
 </SALEvent>
 <SALEvent>
     <Subsystem>atcs</Subsystem>
-    <Version>3.5.2</Version>
+    <Version>3.5.1</Version>
     <Author></Author>
     <EFDB_Topic>atcs_logevent_SummaryState</EFDB_Topic>
     <Alias>SummaryState</Alias>
     <Explanation>http://sal.lsst.org</Explanation>
     <item>
         <EFDB_Name>summaryState</EFDB_Name>
-        <Description>An enumeration indicating the subsystem summary state. See the SummaryStateValue enumeration defined in the Typedefs package.</Description>
-        <!-- Enumeration: SummaryState -->
+        <Description>An enumeration indicating the subsystem summary state. See the SummaryStateValue enumeration defined in the Typedefs package.</pre></html></Description>
         <IDL_Type>long</IDL_Type>
         <Units></Units>
         <Count>1</Count>
-        <Enumeration>summaryState_SummaryState_DisabledState,summaryState_SummaryState_EnabledState,summaryState_SummaryState_FaultState,summaryState_SummaryState_OfflineState,summaryState_SummaryState_StandbyState</Enumeration>
+        <Enumeration>DisabledState,EnabledState,FaultState,OfflineState,StandbyState</Enumeration>
     </item>
 </SALEvent>
 <SALEvent>
     <Subsystem>atcs</Subsystem>
-    <Version>3.5.2</Version>
+    <Version>3.5.1</Version>
     <Author></Author>
     <EFDB_Topic>atcs_logevent_DetailedState</EFDB_Topic>
     <Alias>DetailedState</Alias>
@@ -64,16 +58,15 @@
     <item>
         <EFDB_Name>detailedState</EFDB_Name>
         <Description></Description>
-        <!-- Enumeration: DetailedState -->
         <IDL_Type>long</IDL_Type>
         <Units></Units>
         <Count>1</Count>
-        <Enumeration>detailedState_DetailedState_DisabledState,detailedState_DetailedState_EnabledState,detailedState_DetailedState_FaultState,detailedState_DetailedState_OfflineState,detailedState_DetailedState_StandbyState</Enumeration>
+        <Enumeration>DisabledState,EnabledState,FaultState,OfflineState,StandbyState</Enumeration>
     </item>
 </SALEvent>
 <SALEvent>
     <Subsystem>atcs</Subsystem>
-    <Version>3.5.2</Version>
+    <Version>3.5.1</Version>
     <Author></Author>
     <EFDB_Topic>atcs_logevent_SpectrographInPosition</EFDB_Topic>
     <Alias>SpectrographInPosition</Alias>
@@ -88,7 +81,7 @@
 </SALEvent>
 <SALEvent>
     <Subsystem>atcs</Subsystem>
-    <Version>3.5.2</Version>
+    <Version>3.5.1</Version>
     <Author></Author>
     <EFDB_Topic>atcs_logevent_TelescopeInPosition</EFDB_Topic>
     <Alias>TelescopeInPosition</Alias>
@@ -103,7 +96,7 @@
 </SALEvent>
 <SALEvent>
     <Subsystem>atcs</Subsystem>
-    <Version>3.5.2</Version>
+    <Version>3.5.1</Version>
     <Author></Author>
     <EFDB_Topic>atcs_logevent_RejectedCommand</EFDB_Topic>
     <Alias>RejectedCommand</Alias>
@@ -118,11 +111,10 @@
     <item>
         <EFDB_Name>detailedState</EFDB_Name>
         <Description></Description>
-        <!-- Enumeration: DetailedState -->
         <IDL_Type>long</IDL_Type>
         <Units></Units>
         <Count>1</Count>
-        <Enumeration>detailedState_DetailedState_DisabledState,detailedState_DetailedState_EnabledState,detailedState_DetailedState_FaultState,detailedState_DetailedState_OfflineState,detailedState_DetailedState_StandbyState</Enumeration>
+        <Enumeration>DisabledState,EnabledState,FaultState,OfflineState,StandbyState</Enumeration>
     </item>
     <item>
         <EFDB_Name>timestamp</EFDB_Name>
@@ -134,7 +126,7 @@
 </SALEvent>
 <SALEvent>
     <Subsystem>atcs</Subsystem>
-    <Version>3.5.2</Version>
+    <Version>3.5.1</Version>
     <Author></Author>
     <EFDB_Topic>atcs_logevent_InternalCommand</EFDB_Topic>
     <Alias>InternalCommand</Alias>
@@ -149,7 +141,7 @@
 </SALEvent>
 <SALEvent>
     <Subsystem>atcs</Subsystem>
-    <Version>3.5.2</Version>
+    <Version>3.5.1</Version>
     <Author></Author>
     <EFDB_Topic>atcs_logevent_Heartbeat</EFDB_Topic>
     <Alias>Heartbeat</Alias>
@@ -164,7 +156,7 @@
 </SALEvent>
 <SALEvent>
     <Subsystem>atcs</Subsystem>
-    <Version>3.5.2</Version>
+    <Version>3.5.1</Version>
     <Author></Author>
     <EFDB_Topic>atcs_logevent_SettingVersions</EFDB_Topic>
     <Alias>SettingVersions</Alias>
@@ -188,7 +180,7 @@
 </SALEvent>
 <SALEvent>
     <Subsystem>atcs</Subsystem>
-    <Version>3.5.2</Version>
+    <Version>3.5.1</Version>
     <Author></Author>
     <EFDB_Topic>atcs_logevent_LoopTimeOutOfRange</EFDB_Topic>
     <Alias>LoopTimeOutOfRange</Alias>
@@ -203,7 +195,7 @@
 </SALEvent>
 <SALEvent>
     <Subsystem>atcs</Subsystem>
-    <Version>3.5.2</Version>
+    <Version>3.5.1</Version>
     <Author></Author>
     <EFDB_Topic>atcs_logevent_SettingsApplied_Example</EFDB_Topic>
     <Alias>SettingsApplied_Example</Alias>

@@ -4,1149 +4,417 @@
 	xsi:noNamespaceSchemaLocation="http://lsst-sal.tuc.noao.edu/schema/SALCommandSet.xsd">
 <SALCommand>
     <Subsystem>m1m3</Subsystem>
-    <Version>3.7.0</Version>
-    <Author></Author>
-    <EFDB_Topic>m1m3_command_Start</EFDB_Topic>
-    <Alias>Start</Alias>
-    <Device></Device>
-    <Property></Property>
-    <Action></Action>
-    <Value></Value>
-    <Explanation>http://sal.lsst.org</Explanation>
-    <item>
-        <EFDB_Name>Start</EFDB_Name>
-        <Description></Description>
-        <IDL_Type>boolean</IDL_Type>
-        <Units></Units>
-        <Count>1</Count>
-    </item>
-    <item>
-        <EFDB_Name>SettingsToApply</EFDB_Name>
-        <Description></Description>
-        <IDL_Type>string</IDL_Type>
-        <IDL_Size>256</IDL_Size>
-        <Units></Units>
-        <Count>1</Count>
-    </item>
-</SALCommand>
-<SALCommand>
-    <Subsystem>m1m3</Subsystem>
-    <Version>3.7.0</Version>
-    <Author></Author>
+    <Version>3.6</Version>
+    <Author>ccontaxis</Author>
     <EFDB_Topic>m1m3_command_Enable</EFDB_Topic>
     <Alias>Enable</Alias>
-    <Device></Device>
-    <Property></Property>
-    <Action></Action>
-    <Value></Value>
     <Explanation>http://sal.lsst.org</Explanation>
     <item>
         <EFDB_Name>Enable</EFDB_Name>
-        <Description></Description>
+        <Description>If true the state transition occurs.</Description>
         <IDL_Type>boolean</IDL_Type>
         <Units></Units>
         <Count>1</Count>
+        <Explanation>http://sal.lsst.org</Explanation>
     </item>
 </SALCommand>
 <SALCommand>
     <Subsystem>m1m3</Subsystem>
-    <Version>3.7.0</Version>
-    <Author></Author>
-    <EFDB_Topic>m1m3_command_RaiseM1M3</EFDB_Topic>
-    <Alias>RaiseM1M3</Alias>
-    <Device></Device>
-    <Property></Property>
-    <Action></Action>
-    <Value></Value>
+    <Version>3.6</Version>
+    <Author>ccontaxis</Author>
+    <EFDB_Topic>m1m3_command_EnterMaintenance</EFDB_Topic>
+    <Alias>EnterMaintenance</Alias>
     <Explanation>http://sal.lsst.org</Explanation>
     <item>
-        <EFDB_Name>RaiseM1M3</EFDB_Name>
-        <Description></Description>
+        <EFDB_Name>EnterMaintenance</EFDB_Name>
+        <Description>If true the state transition occurs.</Description>
         <IDL_Type>boolean</IDL_Type>
         <Units></Units>
         <Count>1</Count>
-    </item>
-    <item>
-        <EFDB_Name>BypassReferencePosition</EFDB_Name>
-        <Description></Description>
-        <IDL_Type>boolean</IDL_Type>
-        <Units></Units>
-        <Count>1</Count>
+        <Explanation>http://sal.lsst.org</Explanation>
     </item>
 </SALCommand>
 <SALCommand>
     <Subsystem>m1m3</Subsystem>
-    <Version>3.7.0</Version>
-    <Author></Author>
-    <EFDB_Topic>m1m3_command_AbortRaiseM1M3</EFDB_Topic>
-    <Alias>AbortRaiseM1M3</Alias>
-    <Device></Device>
-    <Property></Property>
-    <Action></Action>
-    <Value></Value>
-    <Explanation>http://sal.lsst.org</Explanation>
-    <item>
-        <EFDB_Name>AbortRaiseM1M3</EFDB_Name>
-        <Description></Description>
-        <IDL_Type>boolean</IDL_Type>
-        <Units></Units>
-        <Count>1</Count>
-    </item>
-</SALCommand>
-<SALCommand>
-    <Subsystem>m1m3</Subsystem>
-    <Version>3.7.0</Version>
-    <Author></Author>
-    <EFDB_Topic>m1m3_command_LowerM1M3</EFDB_Topic>
-    <Alias>LowerM1M3</Alias>
-    <Device></Device>
-    <Property></Property>
-    <Action></Action>
-    <Value></Value>
-    <Explanation>http://sal.lsst.org</Explanation>
-    <item>
-        <EFDB_Name>LowerM1M3</EFDB_Name>
-        <Description></Description>
-        <IDL_Type>boolean</IDL_Type>
-        <Units></Units>
-        <Count>1</Count>
-    </item>
-</SALCommand>
-<SALCommand>
-    <Subsystem>m1m3</Subsystem>
-    <Version>3.7.0</Version>
-    <Author></Author>
-    <EFDB_Topic>m1m3_command_EnterEngineering</EFDB_Topic>
-    <Alias>EnterEngineering</Alias>
-    <Device></Device>
-    <Property></Property>
-    <Action></Action>
-    <Value></Value>
-    <Explanation>http://sal.lsst.org</Explanation>
-    <item>
-        <EFDB_Name>EnterEngineering</EFDB_Name>
-        <Description></Description>
-        <IDL_Type>boolean</IDL_Type>
-        <Units></Units>
-        <Count>1</Count>
-    </item>
-</SALCommand>
-<SALCommand>
-    <Subsystem>m1m3</Subsystem>
-    <Version>3.7.0</Version>
-    <Author></Author>
-    <EFDB_Topic>m1m3_command_ExitEngineering</EFDB_Topic>
-    <Alias>ExitEngineering</Alias>
-    <Device></Device>
-    <Property></Property>
-    <Action></Action>
-    <Value></Value>
-    <Explanation>http://sal.lsst.org</Explanation>
-    <item>
-        <EFDB_Name>ExitEngineering</EFDB_Name>
-        <Description></Description>
-        <IDL_Type>boolean</IDL_Type>
-        <Units></Units>
-        <Count>1</Count>
-    </item>
-</SALCommand>
-<SALCommand>
-    <Subsystem>m1m3</Subsystem>
-    <Version>3.7.0</Version>
-    <Author></Author>
-    <EFDB_Topic>m1m3_command_TurnAirOn</EFDB_Topic>
-    <Alias>TurnAirOn</Alias>
-    <Device></Device>
-    <Property></Property>
-    <Action></Action>
-    <Value></Value>
-    <Explanation>http://sal.lsst.org</Explanation>
-    <item>
-        <EFDB_Name>TurnAirOn</EFDB_Name>
-        <Description></Description>
-        <IDL_Type>boolean</IDL_Type>
-        <Units></Units>
-        <Count>1</Count>
-    </item>
-</SALCommand>
-<SALCommand>
-    <Subsystem>m1m3</Subsystem>
-    <Version>3.7.0</Version>
-    <Author></Author>
-    <EFDB_Topic>m1m3_command_TurnAirOff</EFDB_Topic>
-    <Alias>TurnAirOff</Alias>
-    <Device></Device>
-    <Property></Property>
-    <Action></Action>
-    <Value></Value>
-    <Explanation>http://sal.lsst.org</Explanation>
-    <item>
-        <EFDB_Name>TurnAirOff</EFDB_Name>
-        <Description></Description>
-        <IDL_Type>boolean</IDL_Type>
-        <Units></Units>
-        <Count>1</Count>
-    </item>
-</SALCommand>
-<SALCommand>
-    <Subsystem>m1m3</Subsystem>
-    <Version>3.7.0</Version>
-    <Author></Author>
-    <EFDB_Topic>m1m3_command_TestAir</EFDB_Topic>
-    <Alias>TestAir</Alias>
-    <Device></Device>
-    <Property></Property>
-    <Action></Action>
-    <Value></Value>
-    <Explanation>http://sal.lsst.org</Explanation>
-    <item>
-        <EFDB_Name>TestAir</EFDB_Name>
-        <Description></Description>
-        <IDL_Type>boolean</IDL_Type>
-        <Units></Units>
-        <Count>1</Count>
-    </item>
-</SALCommand>
-<SALCommand>
-    <Subsystem>m1m3</Subsystem>
-    <Version>3.7.0</Version>
-    <Author></Author>
-    <EFDB_Topic>m1m3_command_MoveHardpointActuators</EFDB_Topic>
-    <Alias>MoveHardpointActuators</Alias>
-    <Device></Device>
-    <Property></Property>
-    <Action></Action>
-    <Value></Value>
-    <Explanation>http://sal.lsst.org</Explanation>
-    <item>
-        <EFDB_Name>Steps</EFDB_Name>
-        <Description></Description>
-        <IDL_Type>long</IDL_Type>
-        <Units></Units>
-        <Count>6</Count>
-    </item>
-</SALCommand>
-<SALCommand>
-    <Subsystem>m1m3</Subsystem>
-    <Version>3.7.0</Version>
-    <Author></Author>
-    <EFDB_Topic>m1m3_command_StopHardpointMotion</EFDB_Topic>
-    <Alias>StopHardpointMotion</Alias>
-    <Device></Device>
-    <Property></Property>
-    <Action></Action>
-    <Value></Value>
-    <Explanation>http://sal.lsst.org</Explanation>
-    <item>
-        <EFDB_Name>StopHardpointMotion</EFDB_Name>
-        <Description></Description>
-        <IDL_Type>boolean</IDL_Type>
-        <Units></Units>
-        <Count>1</Count>
-    </item>
-</SALCommand>
-<SALCommand>
-    <Subsystem>m1m3</Subsystem>
-    <Version>3.7.0</Version>
-    <Author></Author>
-    <EFDB_Topic>m1m3_command_TestHardpoint</EFDB_Topic>
-    <Alias>TestHardpoint</Alias>
-    <Device></Device>
-    <Property></Property>
-    <Action></Action>
-    <Value></Value>
-    <Explanation>http://sal.lsst.org</Explanation>
-    <item>
-        <EFDB_Name>HardpointActuator</EFDB_Name>
-        <Description></Description>
-        <IDL_Type>short</IDL_Type>
-        <Units></Units>
-        <Count>1</Count>
-    </item>
-</SALCommand>
-<SALCommand>
-    <Subsystem>m1m3</Subsystem>
-    <Version>3.7.0</Version>
-    <Author></Author>
-    <EFDB_Topic>m1m3_command_EnableHardpointChase</EFDB_Topic>
-    <Alias>EnableHardpointChase</Alias>
-    <Device></Device>
-    <Property></Property>
-    <Action></Action>
-    <Value></Value>
-    <Explanation>http://sal.lsst.org</Explanation>
-    <item>
-        <EFDB_Name>HardpointActuator</EFDB_Name>
-        <Description></Description>
-        <IDL_Type>short</IDL_Type>
-        <Units></Units>
-        <Count>1</Count>
-    </item>
-</SALCommand>
-<SALCommand>
-    <Subsystem>m1m3</Subsystem>
-    <Version>3.7.0</Version>
-    <Author></Author>
-    <EFDB_Topic>m1m3_command_DisableHardpointChase</EFDB_Topic>
-    <Alias>DisableHardpointChase</Alias>
-    <Device></Device>
-    <Property></Property>
-    <Action></Action>
-    <Value></Value>
-    <Explanation>http://sal.lsst.org</Explanation>
-    <item>
-        <EFDB_Name>HardpointActuator</EFDB_Name>
-        <Description></Description>
-        <IDL_Type>short</IDL_Type>
-        <Units></Units>
-        <Count>1</Count>
-    </item>
-</SALCommand>
-<SALCommand>
-    <Subsystem>m1m3</Subsystem>
-    <Version>3.7.0</Version>
-    <Author></Author>
-    <EFDB_Topic>m1m3_command_TestForceActuator</EFDB_Topic>
-    <Alias>TestForceActuator</Alias>
-    <Device></Device>
-    <Property></Property>
-    <Action></Action>
-    <Value></Value>
-    <Explanation>http://sal.lsst.org</Explanation>
-    <item>
-        <EFDB_Name>ForceActuator</EFDB_Name>
-        <Description></Description>
-        <IDL_Type>short</IDL_Type>
-        <Units></Units>
-        <Count>1</Count>
-    </item>
-</SALCommand>
-<SALCommand>
-    <Subsystem>m1m3</Subsystem>
-    <Version>3.7.0</Version>
-    <Author></Author>
-    <EFDB_Topic>m1m3_command_ApplyOffsetForces</EFDB_Topic>
-    <Alias>ApplyOffsetForces</Alias>
-    <Device></Device>
-    <Property></Property>
-    <Action></Action>
-    <Value></Value>
-    <Explanation>http://sal.lsst.org</Explanation>
-    <item>
-        <EFDB_Name>XForces</EFDB_Name>
-        <Description></Description>
-        <IDL_Type>float</IDL_Type>
-        <Units></Units>
-        <Count>12</Count>
-    </item>
-    <item>
-        <EFDB_Name>YForces</EFDB_Name>
-        <Description></Description>
-        <IDL_Type>float</IDL_Type>
-        <Units></Units>
-        <Count>100</Count>
-    </item>
-    <item>
-        <EFDB_Name>ZForces</EFDB_Name>
-        <Description></Description>
-        <IDL_Type>float</IDL_Type>
-        <Units></Units>
-        <Count>156</Count>
-    </item>
-</SALCommand>
-<SALCommand>
-    <Subsystem>m1m3</Subsystem>
-    <Version>3.7.0</Version>
-    <Author></Author>
-    <EFDB_Topic>m1m3_command_Disable</EFDB_Topic>
-    <Alias>Disable</Alias>
-    <Device></Device>
-    <Property></Property>
-    <Action></Action>
-    <Value></Value>
-    <Explanation>http://sal.lsst.org</Explanation>
-    <item>
-        <EFDB_Name>Disable</EFDB_Name>
-        <Description></Description>
-        <IDL_Type>boolean</IDL_Type>
-        <Units></Units>
-        <Count>1</Count>
-    </item>
-</SALCommand>
-<SALCommand>
-    <Subsystem>m1m3</Subsystem>
-    <Version>3.7.0</Version>
-    <Author></Author>
+    <Version>3.6</Version>
+    <Author>ccontaxis</Author>
     <EFDB_Topic>m1m3_command_Standby</EFDB_Topic>
     <Alias>Standby</Alias>
-    <Device></Device>
-    <Property></Property>
-    <Action></Action>
-    <Value></Value>
     <Explanation>http://sal.lsst.org</Explanation>
     <item>
         <EFDB_Name>Standby</EFDB_Name>
-        <Description></Description>
+        <Description>If true the state transition occurs.</Description>
         <IDL_Type>boolean</IDL_Type>
         <Units></Units>
         <Count>1</Count>
+        <Explanation>http://sal.lsst.org</Explanation>
     </item>
 </SALCommand>
 <SALCommand>
     <Subsystem>m1m3</Subsystem>
-    <Version>3.7.0</Version>
-    <Author></Author>
-    <EFDB_Topic>m1m3_command_Shutdown</EFDB_Topic>
-    <Alias>Shutdown</Alias>
-    <Device></Device>
-    <Property></Property>
-    <Action></Action>
-    <Value></Value>
+    <Version>3.6</Version>
+    <Author>ccontaxis</Author>
+    <EFDB_Topic>m1m3_command_AbortLowerM1M3</EFDB_Topic>
+    <Alias>AbortLowerM1M3</Alias>
     <Explanation>http://sal.lsst.org</Explanation>
     <item>
-        <EFDB_Name>Shutdown</EFDB_Name>
-        <Description></Description>
+        <EFDB_Name>AbortLowerM1M3</EFDB_Name>
+        <Description>If true the state transition occurs.</Description>
         <IDL_Type>boolean</IDL_Type>
         <Units></Units>
         <Count>1</Count>
+        <Explanation>http://sal.lsst.org</Explanation>
     </item>
 </SALCommand>
 <SALCommand>
     <Subsystem>m1m3</Subsystem>
-    <Version>3.7.0</Version>
-    <Author></Author>
-    <EFDB_Topic>m1m3_command_TranslateM1M3</EFDB_Topic>
-    <Alias>TranslateM1M3</Alias>
-    <Device></Device>
-    <Property></Property>
-    <Action></Action>
-    <Value></Value>
+    <Version>3.6</Version>
+    <Author>ccontaxis</Author>
+    <EFDB_Topic>m1m3_command_ApplyAberrationByForces</EFDB_Topic>
+    <Alias>ApplyAberrationByForces</Alias>
+    <Explanation>http://sal.lsst.org</Explanation>
+    <item>
+        <EFDB_Name>ZForces</EFDB_Name>
+        <Description>The forces in newtons to be applied by each of the force actuators. The index into this array used by each force actuat</Description>
+        <IDL_Type>double</IDL_Type>
+        <Units></Units>
+        <Count>156</Count>
+        <Explanation>http://sal.lsst.org</Explanation>
+    </item>
+</SALCommand>
+<SALCommand>
+    <Subsystem>m1m3</Subsystem>
+    <Version>3.6</Version>
+    <Author>ccontaxis</Author>
+    <EFDB_Topic>m1m3_command_ApplyAOSCorrectionByBendingModes</EFDB_Topic>
+    <Alias>ApplyAOSCorrectionByBendingModes</Alias>
+    <Explanation>http://sal.lsst.org</Explanation>
+    <item>
+        <EFDB_Name>Coefficients</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>double</IDL_Type>
+        <Units></Units>
+        <Count>22</Count>
+        <Explanation>http://sal.lsst.org</Explanation>
+    </item>
+</SALCommand>
+<SALCommand>
+    <Subsystem>m1m3</Subsystem>
+    <Version>3.6</Version>
+    <Author>ccontaxis</Author>
+    <EFDB_Topic>m1m3_command_ClearAOSCorrection</EFDB_Topic>
+    <Alias>ClearAOSCorrection</Alias>
+    <Explanation>http://sal.lsst.org</Explanation>
+    <item>
+        <EFDB_Name>ClearAOSCorrection</EFDB_Name>
+        <Description>If true the AOS corrections are cleared.</Description>
+        <IDL_Type>boolean</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+        <Explanation>http://sal.lsst.org</Explanation>
+    </item>
+</SALCommand>
+<SALCommand>
+    <Subsystem>m1m3</Subsystem>
+    <Version>3.6</Version>
+    <Author>ccontaxis</Author>
+    <EFDB_Topic>m1m3_command_Start</EFDB_Topic>
+    <Alias>Start</Alias>
+    <Explanation>http://sal.lsst.org</Explanation>
+    <item>
+        <EFDB_Name>Start</EFDB_Name>
+        <Description>If true the state transition occurs.</Description>
+        <IDL_Type>boolean</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+        <Explanation>http://sal.lsst.org</Explanation>
+    </item>
+    <item>
+        <EFDB_Name>SettingsToApply</EFDB_Name>
+        <Description>Settings to apply during the transition from StandByState to DisabledState.</Description>
+        <IDL_Type>string</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+        <Explanation>http://sal.lsst.org</Explanation>
+    </item>
+</SALCommand>
+<SALCommand>
+    <Subsystem>m1m3</Subsystem>
+    <Version>3.6</Version>
+    <Author>ccontaxis</Author>
+    <EFDB_Topic>m1m3_command_RaiseM1M3</EFDB_Topic>
+    <Alias>RaiseM1M3</Alias>
+    <Explanation>http://sal.lsst.org</Explanation>
+    <item>
+        <EFDB_Name>RaiseM1M3</EFDB_Name>
+        <Description>If true the state transition begins.</Description>
+        <IDL_Type>boolean</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+        <Explanation>http://sal.lsst.org</Explanation>
+    </item>
+</SALCommand>
+<SALCommand>
+    <Subsystem>m1m3</Subsystem>
+    <Version>3.6</Version>
+    <Author>ccontaxis</Author>
+    <EFDB_Topic>m1m3_command_TestForceActuator</EFDB_Topic>
+    <Alias>TestForceActuator</Alias>
+    <Explanation>http://sal.lsst.org</Explanation>
+    <item>
+        <EFDB_Name>ActuatorId</EFDB_Name>
+        <Description>An enumeration indicating the M1M3 actuator. See the ActuatorIds enumeration defined in the Typedefs package.</Description>
+        <IDL_Type>long</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+        <Explanation>http://sal.lsst.org</Explanation>
+    </item>
+</SALCommand>
+<SALCommand>
+    <Subsystem>m1m3</Subsystem>
+    <Version>3.6</Version>
+    <Author>ccontaxis</Author>
+    <EFDB_Topic>m1m3_command_LowerM1M3</EFDB_Topic>
+    <Alias>LowerM1M3</Alias>
+    <Explanation>http://sal.lsst.org</Explanation>
+    <item>
+        <EFDB_Name>LowerM1M3</EFDB_Name>
+        <Description>If true the state transition begins.</Description>
+        <IDL_Type>boolean</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+        <Explanation>http://sal.lsst.org</Explanation>
+    </item>
+</SALCommand>
+<SALCommand>
+    <Subsystem>m1m3</Subsystem>
+    <Version>3.6</Version>
+    <Author>ccontaxis</Author>
+    <EFDB_Topic>m1m3_command_ApplyAOSCorrectionByForces</EFDB_Topic>
+    <Alias>ApplyAOSCorrectionByForces</Alias>
+    <Explanation>http://sal.lsst.org</Explanation>
+    <item>
+        <EFDB_Name>ZForces</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>double</IDL_Type>
+        <Units></Units>
+        <Count>156</Count>
+        <Explanation>http://sal.lsst.org</Explanation>
+    </item>
+</SALCommand>
+<SALCommand>
+    <Subsystem>m1m3</Subsystem>
+    <Version>3.6</Version>
+    <Author>ccontaxis</Author>
+    <EFDB_Topic>m1m3_command_Disable</EFDB_Topic>
+    <Alias>Disable</Alias>
+    <Explanation>http://sal.lsst.org</Explanation>
+    <item>
+        <EFDB_Name>Disable</EFDB_Name>
+        <Description>If true the state transition occurs.</Description>
+        <IDL_Type>boolean</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+        <Explanation>http://sal.lsst.org</Explanation>
+    </item>
+</SALCommand>
+<SALCommand>
+    <Subsystem>m1m3</Subsystem>
+    <Version>3.6</Version>
+    <Author>ccontaxis</Author>
+    <EFDB_Topic>m1m3_command_ApplyAberrationByBendingModes</EFDB_Topic>
+    <Alias>ApplyAberrationByBendingModes</Alias>
+    <Explanation>http://sal.lsst.org</Explanation>
+    <item>
+        <EFDB_Name>Coefficients</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>double</IDL_Type>
+        <Units></Units>
+        <Count>22</Count>
+        <Explanation>http://sal.lsst.org</Explanation>
+    </item>
+</SALCommand>
+<SALCommand>
+    <Subsystem>m1m3</Subsystem>
+    <Version>3.6</Version>
+    <Author>ccontaxis</Author>
+    <EFDB_Topic>m1m3_command_TestHardpoint</EFDB_Topic>
+    <Alias>TestHardpoint</Alias>
+    <Explanation>http://sal.lsst.org</Explanation>
+    <item>
+        <EFDB_Name>ActuatorId</EFDB_Name>
+        <Description>An enumeration indicating the M1M3 actuator. See the ActuatorIds enumeration defined in the Typedefs package.</Description>
+        <IDL_Type>long</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+        <Explanation>http://sal.lsst.org</Explanation>
+    </item>
+</SALCommand>
+<SALCommand>
+    <Subsystem>m1m3</Subsystem>
+    <Version>3.6</Version>
+    <Author>ccontaxis</Author>
+    <EFDB_Topic>m1m3_command_ManipulateM1M3</EFDB_Topic>
+    <Alias>ManipulateM1M3</Alias>
     <Explanation>http://sal.lsst.org</Explanation>
     <item>
         <EFDB_Name>XTranslation</EFDB_Name>
         <Description></Description>
-        <IDL_Type>float</IDL_Type>
+        <IDL_Type>double</IDL_Type>
         <Units></Units>
         <Count>1</Count>
+        <Explanation>http://sal.lsst.org</Explanation>
     </item>
     <item>
         <EFDB_Name>YTranslation</EFDB_Name>
         <Description></Description>
-        <IDL_Type>float</IDL_Type>
+        <IDL_Type>double</IDL_Type>
         <Units></Units>
         <Count>1</Count>
+        <Explanation>http://sal.lsst.org</Explanation>
     </item>
     <item>
         <EFDB_Name>ZTranslation</EFDB_Name>
         <Description></Description>
-        <IDL_Type>float</IDL_Type>
+        <IDL_Type>double</IDL_Type>
         <Units></Units>
         <Count>1</Count>
+        <Explanation>http://sal.lsst.org</Explanation>
     </item>
     <item>
         <EFDB_Name>XRotation</EFDB_Name>
         <Description></Description>
-        <IDL_Type>float</IDL_Type>
+        <IDL_Type>double</IDL_Type>
         <Units></Units>
         <Count>1</Count>
+        <Explanation>http://sal.lsst.org</Explanation>
     </item>
     <item>
         <EFDB_Name>YRotation</EFDB_Name>
         <Description></Description>
-        <IDL_Type>float</IDL_Type>
+        <IDL_Type>double</IDL_Type>
         <Units></Units>
         <Count>1</Count>
+        <Explanation>http://sal.lsst.org</Explanation>
     </item>
     <item>
         <EFDB_Name>ZRotation</EFDB_Name>
         <Description></Description>
-        <IDL_Type>float</IDL_Type>
-        <Units></Units>
-        <Count>1</Count>
-    </item>
-</SALCommand>
-<SALCommand>
-    <Subsystem>m1m3</Subsystem>
-    <Version>3.7.0</Version>
-    <Author></Author>
-    <EFDB_Topic>m1m3_command_ClearOffsetForces</EFDB_Topic>
-    <Alias>ClearOffsetForces</Alias>
-    <Device></Device>
-    <Property></Property>
-    <Action></Action>
-    <Value></Value>
-    <Explanation>http://sal.lsst.org</Explanation>
-    <item>
-        <EFDB_Name>ClearOffsetForces</EFDB_Name>
-        <Description></Description>
-        <IDL_Type>boolean</IDL_Type>
-        <Units></Units>
-        <Count>1</Count>
-    </item>
-</SALCommand>
-<SALCommand>
-    <Subsystem>m1m3</Subsystem>
-    <Version>3.7.0</Version>
-    <Author></Author>
-    <EFDB_Topic>m1m3_command_ApplyAberrationForcesByBendingModes</EFDB_Topic>
-    <Alias>ApplyAberrationForcesByBendingModes</Alias>
-    <Device></Device>
-    <Property></Property>
-    <Action></Action>
-    <Value></Value>
-    <Explanation>http://sal.lsst.org</Explanation>
-    <item>
-        <EFDB_Name>Coefficients</EFDB_Name>
-        <Description></Description>
-        <IDL_Type>float</IDL_Type>
-        <Units></Units>
-        <Count>22</Count>
-    </item>
-</SALCommand>
-<SALCommand>
-    <Subsystem>m1m3</Subsystem>
-    <Version>3.7.0</Version>
-    <Author></Author>
-    <EFDB_Topic>m1m3_command_ApplyAberrationForces</EFDB_Topic>
-    <Alias>ApplyAberrationForces</Alias>
-    <Device></Device>
-    <Property></Property>
-    <Action></Action>
-    <Value></Value>
-    <Explanation>http://sal.lsst.org</Explanation>
-    <item>
-        <EFDB_Name>ZForces</EFDB_Name>
-        <Description></Description>
-        <IDL_Type>float</IDL_Type>
-        <Units></Units>
-        <Count>156</Count>
-    </item>
-</SALCommand>
-<SALCommand>
-    <Subsystem>m1m3</Subsystem>
-    <Version>3.7.0</Version>
-    <Author></Author>
-    <EFDB_Topic>m1m3_command_ClearAberrationForces</EFDB_Topic>
-    <Alias>ClearAberrationForces</Alias>
-    <Device></Device>
-    <Property></Property>
-    <Action></Action>
-    <Value></Value>
-    <Explanation>http://sal.lsst.org</Explanation>
-    <item>
-        <EFDB_Name>ClearAberrationForces</EFDB_Name>
-        <Description></Description>
-        <IDL_Type>boolean</IDL_Type>
-        <Units></Units>
-        <Count>1</Count>
-    </item>
-</SALCommand>
-<SALCommand>
-    <Subsystem>m1m3</Subsystem>
-    <Version>3.7.0</Version>
-    <Author></Author>
-    <EFDB_Topic>m1m3_command_ApplyActiveOpticForcesByBendingModes</EFDB_Topic>
-    <Alias>ApplyActiveOpticForcesByBendingModes</Alias>
-    <Device></Device>
-    <Property></Property>
-    <Action></Action>
-    <Value></Value>
-    <Explanation>http://sal.lsst.org</Explanation>
-    <item>
-        <EFDB_Name>Coefficients</EFDB_Name>
-        <Description></Description>
-        <IDL_Type>float</IDL_Type>
-        <Units></Units>
-        <Count>22</Count>
-    </item>
-</SALCommand>
-<SALCommand>
-    <Subsystem>m1m3</Subsystem>
-    <Version>3.7.0</Version>
-    <Author></Author>
-    <EFDB_Topic>m1m3_command_ApplyActiveOpticForces</EFDB_Topic>
-    <Alias>ApplyActiveOpticForces</Alias>
-    <Device></Device>
-    <Property></Property>
-    <Action></Action>
-    <Value></Value>
-    <Explanation>http://sal.lsst.org</Explanation>
-    <item>
-        <EFDB_Name>ZForces</EFDB_Name>
-        <Description></Description>
-        <IDL_Type>float</IDL_Type>
-        <Units></Units>
-        <Count>156</Count>
-    </item>
-</SALCommand>
-<SALCommand>
-    <Subsystem>m1m3</Subsystem>
-    <Version>3.7.0</Version>
-    <Author></Author>
-    <EFDB_Topic>m1m3_command_ClearActiveOpticForces</EFDB_Topic>
-    <Alias>ClearActiveOpticForces</Alias>
-    <Device></Device>
-    <Property></Property>
-    <Action></Action>
-    <Value></Value>
-    <Explanation>http://sal.lsst.org</Explanation>
-    <item>
-        <EFDB_Name>ClearActiveOpticForces</EFDB_Name>
-        <Description></Description>
-        <IDL_Type>boolean</IDL_Type>
-        <Units></Units>
-        <Count>1</Count>
-    </item>
-</SALCommand>
-<SALCommand>
-    <Subsystem>m1m3</Subsystem>
-    <Version>3.7.0</Version>
-    <Author></Author>
-    <EFDB_Topic>m1m3_command_PositionM1M3</EFDB_Topic>
-    <Alias>PositionM1M3</Alias>
-    <Device></Device>
-    <Property></Property>
-    <Action></Action>
-    <Value></Value>
-    <Explanation>http://sal.lsst.org</Explanation>
-    <item>
-        <EFDB_Name>XPosition</EFDB_Name>
-        <Description></Description>
-        <IDL_Type>float</IDL_Type>
-        <Units></Units>
-        <Count>1</Count>
-    </item>
-    <item>
-        <EFDB_Name>YPosition</EFDB_Name>
-        <Description></Description>
-        <IDL_Type>float</IDL_Type>
-        <Units></Units>
-        <Count>1</Count>
-    </item>
-    <item>
-        <EFDB_Name>ZPosition</EFDB_Name>
-        <Description></Description>
-        <IDL_Type>float</IDL_Type>
-        <Units></Units>
-        <Count>1</Count>
-    </item>
-    <item>
-        <EFDB_Name>XRotation</EFDB_Name>
-        <Description></Description>
-        <IDL_Type>float</IDL_Type>
-        <Units></Units>
-        <Count>1</Count>
-    </item>
-    <item>
-        <EFDB_Name>YRotation</EFDB_Name>
-        <Description></Description>
-        <IDL_Type>float</IDL_Type>
-        <Units></Units>
-        <Count>1</Count>
-    </item>
-    <item>
-        <EFDB_Name>ZRotation</EFDB_Name>
-        <Description></Description>
-        <IDL_Type>float</IDL_Type>
-        <Units></Units>
-        <Count>1</Count>
-    </item>
-</SALCommand>
-<SALCommand>
-    <Subsystem>m1m3</Subsystem>
-    <Version>3.7.0</Version>
-    <Author></Author>
-    <EFDB_Topic>m1m3_command_TurnLightsOn</EFDB_Topic>
-    <Alias>TurnLightsOn</Alias>
-    <Device></Device>
-    <Property></Property>
-    <Action></Action>
-    <Value></Value>
-    <Explanation>http://sal.lsst.org</Explanation>
-    <item>
-        <EFDB_Name>TurnLightsOn</EFDB_Name>
-        <Description></Description>
-        <IDL_Type>boolean</IDL_Type>
-        <Units></Units>
-        <Count>1</Count>
-    </item>
-</SALCommand>
-<SALCommand>
-    <Subsystem>m1m3</Subsystem>
-    <Version>3.7.0</Version>
-    <Author></Author>
-    <EFDB_Topic>m1m3_command_TurnLightsOff</EFDB_Topic>
-    <Alias>TurnLightsOff</Alias>
-    <Device></Device>
-    <Property></Property>
-    <Action></Action>
-    <Value></Value>
-    <Explanation>http://sal.lsst.org</Explanation>
-    <item>
-        <EFDB_Name>TurnLightsOff</EFDB_Name>
-        <Description></Description>
-        <IDL_Type>boolean</IDL_Type>
-        <Units></Units>
-        <Count>1</Count>
-    </item>
-</SALCommand>
-<SALCommand>
-    <Subsystem>m1m3</Subsystem>
-    <Version>3.7.0</Version>
-    <Author></Author>
-    <EFDB_Topic>m1m3_command_TurnPowerOn</EFDB_Topic>
-    <Alias>TurnPowerOn</Alias>
-    <Device></Device>
-    <Property></Property>
-    <Action></Action>
-    <Value></Value>
-    <Explanation>http://sal.lsst.org</Explanation>
-    <item>
-        <EFDB_Name>TurnPowerNetworkAOn</EFDB_Name>
-        <Description></Description>
-        <IDL_Type>boolean</IDL_Type>
-        <Units></Units>
-        <Count>1</Count>
-    </item>
-    <item>
-        <EFDB_Name>TurnPowerNetworkBOn</EFDB_Name>
-        <Description></Description>
-        <IDL_Type>boolean</IDL_Type>
-        <Units></Units>
-        <Count>1</Count>
-    </item>
-    <item>
-        <EFDB_Name>TurnPowerNetworkCOn</EFDB_Name>
-        <Description></Description>
-        <IDL_Type>boolean</IDL_Type>
-        <Units></Units>
-        <Count>1</Count>
-    </item>
-    <item>
-        <EFDB_Name>TurnPowerNetworkDOn</EFDB_Name>
-        <Description></Description>
-        <IDL_Type>boolean</IDL_Type>
-        <Units></Units>
-        <Count>1</Count>
-    </item>
-    <item>
-        <EFDB_Name>TurnAuxPowerNetworkAOn</EFDB_Name>
-        <Description></Description>
-        <IDL_Type>boolean</IDL_Type>
-        <Units></Units>
-        <Count>1</Count>
-    </item>
-    <item>
-        <EFDB_Name>TurnAuxPowerNetworkBOn</EFDB_Name>
-        <Description></Description>
-        <IDL_Type>boolean</IDL_Type>
-        <Units></Units>
-        <Count>1</Count>
-    </item>
-    <item>
-        <EFDB_Name>TurnAuxPowerNetworkCOn</EFDB_Name>
-        <Description></Description>
-        <IDL_Type>boolean</IDL_Type>
-        <Units></Units>
-        <Count>1</Count>
-    </item>
-    <item>
-        <EFDB_Name>TurnAuxPowerNetworkDOn</EFDB_Name>
-        <Description></Description>
-        <IDL_Type>boolean</IDL_Type>
-        <Units></Units>
-        <Count>1</Count>
-    </item>
-</SALCommand>
-<SALCommand>
-    <Subsystem>m1m3</Subsystem>
-    <Version>3.7.0</Version>
-    <Author></Author>
-    <EFDB_Topic>m1m3_command_TurnPowerOff</EFDB_Topic>
-    <Alias>TurnPowerOff</Alias>
-    <Device></Device>
-    <Property></Property>
-    <Action></Action>
-    <Value></Value>
-    <Explanation>http://sal.lsst.org</Explanation>
-    <item>
-        <EFDB_Name>TurnPowerNetworkAOff</EFDB_Name>
-        <Description></Description>
-        <IDL_Type>boolean</IDL_Type>
-        <Units></Units>
-        <Count>1</Count>
-    </item>
-    <item>
-        <EFDB_Name>TurnPowerNetworkBOff</EFDB_Name>
-        <Description></Description>
-        <IDL_Type>boolean</IDL_Type>
-        <Units></Units>
-        <Count>1</Count>
-    </item>
-    <item>
-        <EFDB_Name>TurnPowerNetworkCOff</EFDB_Name>
-        <Description></Description>
-        <IDL_Type>boolean</IDL_Type>
-        <Units></Units>
-        <Count>1</Count>
-    </item>
-    <item>
-        <EFDB_Name>TurnPowerNetworkDOff</EFDB_Name>
-        <Description></Description>
-        <IDL_Type>boolean</IDL_Type>
-        <Units></Units>
-        <Count>1</Count>
-    </item>
-    <item>
-        <EFDB_Name>TurnAuxPowerNetworkAOff</EFDB_Name>
-        <Description></Description>
-        <IDL_Type>boolean</IDL_Type>
-        <Units></Units>
-        <Count>1</Count>
-    </item>
-    <item>
-        <EFDB_Name>TurnAuxPowerNetworkBOff</EFDB_Name>
-        <Description></Description>
-        <IDL_Type>boolean</IDL_Type>
-        <Units></Units>
-        <Count>1</Count>
-    </item>
-    <item>
-        <EFDB_Name>TurnAuxPowerNetworkCOff</EFDB_Name>
-        <Description></Description>
-        <IDL_Type>boolean</IDL_Type>
-        <Units></Units>
-        <Count>1</Count>
-    </item>
-    <item>
-        <EFDB_Name>TurnAuxPowerNetworkDOff</EFDB_Name>
-        <Description></Description>
-        <IDL_Type>boolean</IDL_Type>
-        <Units></Units>
-        <Count>1</Count>
-    </item>
-</SALCommand>
-<SALCommand>
-    <Subsystem>m1m3</Subsystem>
-    <Version>3.7.0</Version>
-    <Author></Author>
-    <EFDB_Topic>m1m3_command_EnableHardpointCorrections</EFDB_Topic>
-    <Alias>EnableHardpointCorrections</Alias>
-    <Device></Device>
-    <Property></Property>
-    <Action></Action>
-    <Value></Value>
-    <Explanation>http://sal.lsst.org</Explanation>
-    <item>
-        <EFDB_Name>EnableHardpointCorrections</EFDB_Name>
-        <Description></Description>
-        <IDL_Type>boolean</IDL_Type>
-        <Units></Units>
-        <Count>1</Count>
-    </item>
-</SALCommand>
-<SALCommand>
-    <Subsystem>m1m3</Subsystem>
-    <Version>3.7.0</Version>
-    <Author></Author>
-    <EFDB_Topic>m1m3_command_DisableHardpointCorrections</EFDB_Topic>
-    <Alias>DisableHardpointCorrections</Alias>
-    <Device></Device>
-    <Property></Property>
-    <Action></Action>
-    <Value></Value>
-    <Explanation>http://sal.lsst.org</Explanation>
-    <item>
-        <EFDB_Name>DisableHardpointCorrections</EFDB_Name>
-        <Description></Description>
-        <IDL_Type>boolean</IDL_Type>
-        <Units></Units>
-        <Count>1</Count>
-    </item>
-</SALCommand>
-<SALCommand>
-    <Subsystem>m1m3</Subsystem>
-    <Version>3.7.0</Version>
-    <Author></Author>
-    <EFDB_Topic>m1m3_command_RunMirrorForceProfile</EFDB_Topic>
-    <Alias>RunMirrorForceProfile</Alias>
-    <Device></Device>
-    <Property></Property>
-    <Action></Action>
-    <Value></Value>
-    <Explanation>http://sal.lsst.org</Explanation>
-    <item>
-        <EFDB_Name>XForce</EFDB_Name>
-        <Description></Description>
-        <IDL_Type>float</IDL_Type>
-        <Units></Units>
-        <Count>1000</Count>
-    </item>
-    <item>
-        <EFDB_Name>YForce</EFDB_Name>
-        <Description></Description>
-        <IDL_Type>float</IDL_Type>
-        <Units></Units>
-        <Count>1000</Count>
-    </item>
-    <item>
-        <EFDB_Name>ZForce</EFDB_Name>
-        <Description></Description>
-        <IDL_Type>float</IDL_Type>
-        <Units></Units>
-        <Count>1000</Count>
-    </item>
-    <item>
-        <EFDB_Name>XMoment</EFDB_Name>
-        <Description></Description>
-        <IDL_Type>float</IDL_Type>
-        <Units></Units>
-        <Count>1000</Count>
-    </item>
-    <item>
-        <EFDB_Name>YMoment</EFDB_Name>
-        <Description></Description>
-        <IDL_Type>float</IDL_Type>
-        <Units></Units>
-        <Count>1000</Count>
-    </item>
-    <item>
-        <EFDB_Name>ZMoment</EFDB_Name>
-        <Description></Description>
-        <IDL_Type>float</IDL_Type>
-        <Units></Units>
-        <Count>1000</Count>
-    </item>
-</SALCommand>
-<SALCommand>
-    <Subsystem>m1m3</Subsystem>
-    <Version>3.7.0</Version>
-    <Author></Author>
-    <EFDB_Topic>m1m3_command_AbortProfile</EFDB_Topic>
-    <Alias>AbortProfile</Alias>
-    <Device></Device>
-    <Property></Property>
-    <Action></Action>
-    <Value></Value>
-    <Explanation>http://sal.lsst.org</Explanation>
-    <item>
-        <EFDB_Name>AbortProfile</EFDB_Name>
-        <Description></Description>
-        <IDL_Type>boolean</IDL_Type>
-        <Units></Units>
-        <Count>1</Count>
-    </item>
-</SALCommand>
-<SALCommand>
-    <Subsystem>m1m3</Subsystem>
-    <Version>3.7.0</Version>
-    <Author></Author>
-    <EFDB_Topic>m1m3_command_ApplyOffsetForcesByMirrorForce</EFDB_Topic>
-    <Alias>ApplyOffsetForcesByMirrorForce</Alias>
-    <Device></Device>
-    <Property></Property>
-    <Action></Action>
-    <Value></Value>
-    <Explanation>http://sal.lsst.org</Explanation>
-    <item>
-        <EFDB_Name>XForce</EFDB_Name>
-        <Description></Description>
-        <IDL_Type>float</IDL_Type>
-        <Units></Units>
-        <Count>1</Count>
-    </item>
-    <item>
-        <EFDB_Name>YForce</EFDB_Name>
-        <Description></Description>
-        <IDL_Type>float</IDL_Type>
-        <Units></Units>
-        <Count>1</Count>
-    </item>
-    <item>
-        <EFDB_Name>ZForce</EFDB_Name>
-        <Description></Description>
-        <IDL_Type>float</IDL_Type>
-        <Units></Units>
-        <Count>1</Count>
-    </item>
-    <item>
-        <EFDB_Name>XMoment</EFDB_Name>
-        <Description></Description>
-        <IDL_Type>float</IDL_Type>
-        <Units></Units>
-        <Count>1</Count>
-    </item>
-    <item>
-        <EFDB_Name>YMoment</EFDB_Name>
-        <Description></Description>
-        <IDL_Type>float</IDL_Type>
-        <Units></Units>
-        <Count>1</Count>
-    </item>
-    <item>
-        <EFDB_Name>ZMoment</EFDB_Name>
-        <Description></Description>
-        <IDL_Type>float</IDL_Type>
-        <Units></Units>
-        <Count>1</Count>
-    </item>
-</SALCommand>
-<SALCommand>
-    <Subsystem>m1m3</Subsystem>
-    <Version>3.7.0</Version>
-    <Author></Author>
-    <EFDB_Topic>m1m3_command_UpdatePID</EFDB_Topic>
-    <Alias>UpdatePID</Alias>
-    <Device></Device>
-    <Property></Property>
-    <Action></Action>
-    <Value></Value>
-    <Explanation>http://sal.lsst.org</Explanation>
-    <item>
-        <EFDB_Name>PID</EFDB_Name>
-        <Description></Description>
-        <IDL_Type>short</IDL_Type>
-        <Units></Units>
-        <Count>1</Count>
-    </item>
-    <item>
-        <EFDB_Name>Timestep</EFDB_Name>
-        <Description></Description>
         <IDL_Type>double</IDL_Type>
         <Units></Units>
         <Count>1</Count>
-    </item>
-    <item>
-        <EFDB_Name>P</EFDB_Name>
-        <Description></Description>
-        <IDL_Type>double</IDL_Type>
-        <Units></Units>
-        <Count>1</Count>
-    </item>
-    <item>
-        <EFDB_Name>I</EFDB_Name>
-        <Description></Description>
-        <IDL_Type>double</IDL_Type>
-        <Units></Units>
-        <Count>1</Count>
-    </item>
-    <item>
-        <EFDB_Name>D</EFDB_Name>
-        <Description></Description>
-        <IDL_Type>double</IDL_Type>
-        <Units></Units>
-        <Count>1</Count>
-    </item>
-    <item>
-        <EFDB_Name>N</EFDB_Name>
-        <Description></Description>
-        <IDL_Type>double</IDL_Type>
-        <Units></Units>
-        <Count>1</Count>
+        <Explanation>http://sal.lsst.org</Explanation>
     </item>
 </SALCommand>
 <SALCommand>
     <Subsystem>m1m3</Subsystem>
-    <Version>3.7.0</Version>
-    <Author></Author>
-    <EFDB_Topic>m1m3_command_ResetPID</EFDB_Topic>
-    <Alias>ResetPID</Alias>
-    <Device></Device>
-    <Property></Property>
-    <Action></Action>
-    <Value></Value>
+    <Version>3.6</Version>
+    <Author>ccontaxis</Author>
+    <EFDB_Topic>m1m3_command_ClearAberration</EFDB_Topic>
+    <Alias>ClearAberration</Alias>
     <Explanation>http://sal.lsst.org</Explanation>
     <item>
-        <EFDB_Name>PID</EFDB_Name>
+        <EFDB_Name>ClearAberration</EFDB_Name>
         <Description></Description>
-        <IDL_Type>short</IDL_Type>
+        <IDL_Type>boolean</IDL_Type>
         <Units></Units>
         <Count>1</Count>
+        <Explanation>http://sal.lsst.org</Explanation>
     </item>
 </SALCommand>
 <SALCommand>
     <Subsystem>m1m3</Subsystem>
-    <Version>3.7.0</Version>
-    <Author></Author>
-    <EFDB_Topic>m1m3_command_SetThermalSetpoint</EFDB_Topic>
-    <Alias>SetThermalSetpoint</Alias>
-    <Device></Device>
-    <Property></Property>
-    <Action></Action>
-    <Value></Value>
+    <Version>3.6</Version>
+    <Author>ccontaxis</Author>
+    <EFDB_Topic>m1m3_command_Exit</EFDB_Topic>
+    <Alias>Exit</Alias>
     <Explanation>http://sal.lsst.org</Explanation>
     <item>
-        <EFDB_Name>Setpoint</EFDB_Name>
-        <Description></Description>
-        <IDL_Type>float</IDL_Type>
+        <EFDB_Name>Exit</EFDB_Name>
+        <Description>If true the state transition occurs.</Description>
+        <IDL_Type>boolean</IDL_Type>
         <Units></Units>
         <Count>1</Count>
+        <Explanation>http://sal.lsst.org</Explanation>
     </item>
 </SALCommand>
 <SALCommand>
     <Subsystem>m1m3</Subsystem>
-    <Version>3.7.0</Version>
-    <Author></Author>
-    <EFDB_Topic>m1m3_command_ProgramILC</EFDB_Topic>
-    <Alias>ProgramILC</Alias>
-    <Device></Device>
-    <Property></Property>
-    <Action></Action>
-    <Value></Value>
+    <Version>3.6</Version>
+    <Author>ccontaxis</Author>
+    <EFDB_Topic>m1m3_command_TestAir</EFDB_Topic>
+    <Alias>TestAir</Alias>
     <Explanation>http://sal.lsst.org</Explanation>
     <item>
-        <EFDB_Name>ActuatorId</EFDB_Name>
-        <Description></Description>
-        <IDL_Type>long</IDL_Type>
+        <EFDB_Name>TestAir</EFDB_Name>
+        <Description>If true the air is tested.</Description>
+        <IDL_Type>boolean</IDL_Type>
         <Units></Units>
         <Count>1</Count>
-    </item>
-    <item>
-        <EFDB_Name>FilePath</EFDB_Name>
-        <Description></Description>
-        <IDL_Type>string</IDL_Type>
-        <IDL_Size>256</IDL_Size>
-        <Units></Units>
-        <Count>1</Count>
+        <Explanation>http://sal.lsst.org</Explanation>
     </item>
 </SALCommand>
 <SALCommand>
     <Subsystem>m1m3</Subsystem>
-    <Version>3.7.0</Version>
-    <Author></Author>
-    <EFDB_Topic>m1m3_command_ModbusTransmit</EFDB_Topic>
-    <Alias>ModbusTransmit</Alias>
-    <Device></Device>
-    <Property></Property>
-    <Action></Action>
-    <Value></Value>
+    <Version>3.6</Version>
+    <Author>ccontaxis</Author>
+    <EFDB_Topic>m1m3_command_AbortRaiseM1M3</EFDB_Topic>
+    <Alias>AbortRaiseM1M3</Alias>
     <Explanation>http://sal.lsst.org</Explanation>
     <item>
-        <EFDB_Name>ActuatorId</EFDB_Name>
-        <Description></Description>
-        <IDL_Type>long</IDL_Type>
+        <EFDB_Name>AbortRaiseM1M3</EFDB_Name>
+        <Description>If true the state transition occurs.</Description>
+        <IDL_Type>boolean</IDL_Type>
         <Units></Units>
         <Count>1</Count>
+        <Explanation>http://sal.lsst.org</Explanation>
     </item>
+</SALCommand>
+<SALCommand>
+    <Subsystem>m1m3</Subsystem>
+    <Version>3.6</Version>
+    <Author>ccontaxis</Author>
+    <EFDB_Topic>m1m3_command_MoveHardpointActuators</EFDB_Topic>
+    <Alias>MoveHardpointActuators</Alias>
+    <Explanation>http://sal.lsst.org</Explanation>
     <item>
-        <EFDB_Name>FunctionCode</EFDB_Name>
-        <Description></Description>
-        <IDL_Type>short</IDL_Type>
+        <EFDB_Name>Steps</EFDB_Name>
+        <Description>The number of steps to move (-128 to +127). The actuator to index can be found in the ActuatorIds enumeration under the alias column.</Description>
+        <IDL_Type>octet</IDL_Type>
+        <Units></Units>
+        <Count>6</Count>
+        <Explanation>http://sal.lsst.org</Explanation>
+    </item>
+</SALCommand>
+<SALCommand>
+    <Subsystem>m1m3</Subsystem>
+    <Version>3.6</Version>
+    <Author>ccontaxis</Author>
+    <EFDB_Topic>m1m3_command_ExitMaintenance</EFDB_Topic>
+    <Alias>ExitMaintenance</Alias>
+    <Explanation>http://sal.lsst.org</Explanation>
+    <item>
+        <EFDB_Name>ExitMaintenance</EFDB_Name>
+        <Description>If true the state transition occurs.</Description>
+        <IDL_Type>boolean</IDL_Type>
         <Units></Units>
         <Count>1</Count>
+        <Explanation>http://sal.lsst.org</Explanation>
     </item>
+</SALCommand>
+<SALCommand>
+    <Subsystem>m1m3</Subsystem>
+    <Version>3.6</Version>
+    <Author>ccontaxis</Author>
+    <EFDB_Topic>m1m3_command_Shutdown</EFDB_Topic>
+    <Alias>Shutdown</Alias>
+    <Explanation>http://sal.lsst.org</Explanation>
     <item>
-        <EFDB_Name>Data</EFDB_Name>
-        <Description></Description>
-        <IDL_Type>short</IDL_Type>
-        <Units></Units>
-        <Count>252</Count>
-    </item>
-    <item>
-        <EFDB_Name>DataLength</EFDB_Name>
-        <Description></Description>
-        <IDL_Type>short</IDL_Type>
+        <EFDB_Name>Shutdown</EFDB_Name>
+        <Description>If true the state transition occurs.</Description>
+        <IDL_Type>boolean</IDL_Type>
         <Units></Units>
         <Count>1</Count>
+        <Explanation>http://sal.lsst.org</Explanation>
     </item>
 </SALCommand></SALCommandSet>
