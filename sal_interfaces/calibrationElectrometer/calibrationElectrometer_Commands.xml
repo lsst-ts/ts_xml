@@ -4,8 +4,8 @@
 	xsi:noNamespaceSchemaLocation="http://lsst-sal.tuc.noao.edu/schema/SALCommandSet.xsd">
 <SALCommand>
     <Subsystem>calibrationElectrometer</Subsystem>
-    <Version>3.5.2</Version>
-    <Author>aanania</Author>
+    <Version>3.7.1</Version>
+    <Author></Author>
     <EFDB_Topic>calibrationElectrometer_command_disable</EFDB_Topic>
     <Alias>disable</Alias>
     <Device></Device>
@@ -14,7 +14,7 @@
     <Value></Value>
     <Explanation>http://sal.lsst.org</Explanation>
     <item>
-        <EFDB_Name>disable</EFDB_Name>
+        <EFDB_Name>value</EFDB_Name>
         <Description></Description>
         <IDL_Type>boolean</IDL_Type>
         <Units></Units>
@@ -23,22 +23,53 @@
 </SALCommand>
 <SALCommand>
     <Subsystem>calibrationElectrometer</Subsystem>
-    <Version>3.5.2</Version>
-    <Author>aanania</Author>
-    <EFDB_Topic>calibrationElectrometer_command_Power</EFDB_Topic>
-    <Alias>Power</Alias>
+    <Version>3.7.1</Version>
+    <Author></Author>
+    <EFDB_Topic>calibrationElectrometer_command_enable</EFDB_Topic>
+    <Alias>enable</Alias>
     <Device></Device>
     <Property></Property>
     <Action></Action>
     <Value></Value>
     <Explanation>http://sal.lsst.org</Explanation>
     <item>
-        <EFDB_Name>electId</EFDB_Name>
+        <EFDB_Name>value</EFDB_Name>
         <Description></Description>
-        <IDL_Type>short</IDL_Type>
+        <IDL_Type>boolean</IDL_Type>
         <Units></Units>
         <Count>1</Count>
     </item>
+</SALCommand>
+<SALCommand>
+    <Subsystem>calibrationElectrometer</Subsystem>
+    <Version>3.7.1</Version>
+    <Author></Author>
+    <EFDB_Topic>calibrationElectrometer_command_performZeroCalib</EFDB_Topic>
+    <Alias>performZeroCalib</Alias>
+    <Device></Device>
+    <Property></Property>
+    <Action></Action>
+    <Value></Value>
+    <Explanation>http://sal.lsst.org</Explanation>
+    <item>
+        <EFDB_Name>value</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>boolean</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+</SALCommand>
+<SALCommand>
+    <Subsystem>calibrationElectrometer</Subsystem>
+    <Version>3.7.1</Version>
+    <Author></Author>
+    <EFDB_Topic>calibrationElectrometer_command_power</EFDB_Topic>
+    <Alias>power</Alias>
+    <Device></Device>
+    <Property></Property>
+    <Action></Action>
+    <Value></Value>
+    <Explanation>http://sal.lsst.org</Explanation>
     <item>
         <EFDB_Name>power</EFDB_Name>
         <Description></Description>
@@ -49,119 +80,10 @@
 </SALCommand>
 <SALCommand>
     <Subsystem>calibrationElectrometer</Subsystem>
-    <Version>3.5.2</Version>
-    <Author>aanania</Author>
-    <EFDB_Topic>calibrationElectrometer_command_StartScanReachIntensity</EFDB_Topic>
-    <Alias>StartScanReachIntensity</Alias>
-    <Device></Device>
-    <Property></Property>
-    <Action></Action>
-    <Value></Value>
-    <Explanation>http://sal.lsst.org</Explanation>
-    <item>
-        <EFDB_Name>electId</EFDB_Name>
-        <Description></Description>
-        <IDL_Type>short</IDL_Type>
-        <Units></Units>
-        <Count>1</Count>
-    </item>
-    <item>
-        <EFDB_Name>intensity</EFDB_Name>
-        <Description></Description>
-        <IDL_Type>float</IDL_Type>
-        <Units></Units>
-        <Count>1</Count>
-    </item>
-</SALCommand>
-<SALCommand>
-    <Subsystem>calibrationElectrometer</Subsystem>
-    <Version>3.5.2</Version>
-    <Author>aanania</Author>
-    <EFDB_Topic>calibrationElectrometer_command_SetIntegrationTime</EFDB_Topic>
-    <Alias>SetIntegrationTime</Alias>
-    <Device></Device>
-    <Property></Property>
-    <Action></Action>
-    <Value></Value>
-    <Explanation>http://sal.lsst.org</Explanation>
-    <item>
-        <EFDB_Name>electId</EFDB_Name>
-        <Description></Description>
-        <IDL_Type>short</IDL_Type>
-        <Units></Units>
-        <Count>1</Count>
-    </item>
-    <item>
-        <EFDB_Name>intTime</EFDB_Name>
-        <Description>set voltage, will have to be within limits</Description>
-        <IDL_Type>float</IDL_Type>
-        <Units></Units>
-        <Count>1</Count>
-    </item>
-</SALCommand>
-<SALCommand>
-    <Subsystem>calibrationElectrometer</Subsystem>
-    <Version>3.5.2</Version>
-    <Author>aanania</Author>
-    <EFDB_Topic>calibrationElectrometer_command_exitControl</EFDB_Topic>
-    <Alias>exitControl</Alias>
-    <Device></Device>
-    <Property></Property>
-    <Action></Action>
-    <Value></Value>
-    <Explanation>http://sal.lsst.org</Explanation>
-    <item>
-        <EFDB_Name>exitControl</EFDB_Name>
-        <Description></Description>
-        <IDL_Type>boolean</IDL_Type>
-        <Units></Units>
-        <Count>1</Count>
-    </item>
-</SALCommand>
-<SALCommand>
-    <Subsystem>calibrationElectrometer</Subsystem>
-    <Version>3.5.2</Version>
-    <Author>aanania</Author>
-    <EFDB_Topic>calibrationElectrometer_command_enable</EFDB_Topic>
-    <Alias>enable</Alias>
-    <Device></Device>
-    <Property></Property>
-    <Action></Action>
-    <Value></Value>
-    <Explanation>http://sal.lsst.org</Explanation>
-    <item>
-        <EFDB_Name>enable</EFDB_Name>
-        <Description></Description>
-        <IDL_Type>boolean</IDL_Type>
-        <Units></Units>
-        <Count>1</Count>
-    </item>
-</SALCommand>
-<SALCommand>
-    <Subsystem>calibrationElectrometer</Subsystem>
-    <Version>3.5.2</Version>
-    <Author>aanania</Author>
-    <EFDB_Topic>calibrationElectrometer_command_standby</EFDB_Topic>
-    <Alias>standby</Alias>
-    <Device></Device>
-    <Property></Property>
-    <Action></Action>
-    <Value></Value>
-    <Explanation>http://sal.lsst.org</Explanation>
-    <item>
-        <EFDB_Name>standby</EFDB_Name>
-        <Description></Description>
-        <IDL_Type>boolean</IDL_Type>
-        <Units></Units>
-        <Count>1</Count>
-    </item>
-</SALCommand>
-<SALCommand>
-    <Subsystem>calibrationElectrometer</Subsystem>
-    <Version>3.5.2</Version>
-    <Author>aanania</Author>
-    <EFDB_Topic>calibrationElectrometer_command_SetDigitalFilter</EFDB_Topic>
-    <Alias>SetDigitalFilter</Alias>
+    <Version>3.7.1</Version>
+    <Author></Author>
+    <EFDB_Topic>calibrationElectrometer_command_setDigitalFilter</EFDB_Topic>
+    <Alias>setDigitalFilter</Alias>
     <Device></Device>
     <Property></Property>
     <Action></Action>
@@ -185,13 +107,6 @@
         <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>electId</EFDB_Name>
-        <Description></Description>
-        <IDL_Type>short</IDL_Type>
-        <Units></Units>
-        <Count>1</Count>
-    </item>
-    <item>
         <EFDB_Name>medianFilter</EFDB_Name>
         <Description>true to activate and false to de-activate this filter.</Description>
         <IDL_Type>boolean</IDL_Type>
@@ -201,25 +116,18 @@
 </SALCommand>
 <SALCommand>
     <Subsystem>calibrationElectrometer</Subsystem>
-    <Version>3.5.2</Version>
-    <Author>aanania</Author>
-    <EFDB_Topic>calibrationElectrometer_command_StartScanDt</EFDB_Topic>
-    <Alias>StartScanDt</Alias>
+    <Version>3.7.1</Version>
+    <Author></Author>
+    <EFDB_Topic>calibrationElectrometer_command_setIntegrationTime</EFDB_Topic>
+    <Alias>setIntegrationTime</Alias>
     <Device></Device>
     <Property></Property>
     <Action></Action>
     <Value></Value>
     <Explanation>http://sal.lsst.org</Explanation>
     <item>
-        <EFDB_Name>electId</EFDB_Name>
-        <Description></Description>
-        <IDL_Type>short</IDL_Type>
-        <Units></Units>
-        <Count>1</Count>
-    </item>
-    <item>
-        <EFDB_Name>time</EFDB_Name>
-        <Description>Time in seconds.</Description>
+        <EFDB_Name>intTime</EFDB_Name>
+        <Description>set voltage, will have to be within limits</Description>
         <IDL_Type>float</IDL_Type>
         <Units></Units>
         <Count>1</Count>
@@ -227,22 +135,15 @@
 </SALCommand>
 <SALCommand>
     <Subsystem>calibrationElectrometer</Subsystem>
-    <Version>3.5.2</Version>
-    <Author>aanania</Author>
-    <EFDB_Topic>calibrationElectrometer_command_SetMode</EFDB_Topic>
-    <Alias>SetMode</Alias>
+    <Version>3.7.1</Version>
+    <Author></Author>
+    <EFDB_Topic>calibrationElectrometer_command_setMode</EFDB_Topic>
+    <Alias>setMode</Alias>
     <Device></Device>
     <Property></Property>
     <Action></Action>
     <Value></Value>
     <Explanation>http://sal.lsst.org</Explanation>
-    <item>
-        <EFDB_Name>electtId</EFDB_Name>
-        <Description></Description>
-        <IDL_Type>short</IDL_Type>
-        <Units></Units>
-        <Count>1</Count>
-    </item>
     <item>
         <EFDB_Name>mode</EFDB_Name>
         <Description>Set electrometer to use different modes:
@@ -259,46 +160,46 @@
 </SALCommand>
 <SALCommand>
     <Subsystem>calibrationElectrometer</Subsystem>
-    <Version>3.5.2</Version>
-    <Author>aanania</Author>
-    <EFDB_Topic>calibrationElectrometer_command_StartScan</EFDB_Topic>
-    <Alias>StartScan</Alias>
+    <Version>3.7.1</Version>
+    <Author></Author>
+    <EFDB_Topic>calibrationElectrometer_command_setRange</EFDB_Topic>
+    <Alias>setRange</Alias>
     <Device></Device>
     <Property></Property>
     <Action></Action>
     <Value></Value>
     <Explanation>http://sal.lsst.org</Explanation>
     <item>
-        <EFDB_Name>electId</EFDB_Name>
-        <Description></Description>
-        <IDL_Type>short</IDL_Type>
+        <EFDB_Name>setRange</EFDB_Name>
+        <Description>-1 for automatic range.</Description>
+        <IDL_Type>float</IDL_Type>
         <Units></Units>
         <Count>1</Count>
     </item>
 </SALCommand>
 <SALCommand>
     <Subsystem>calibrationElectrometer</Subsystem>
-    <Version>3.5.2</Version>
-    <Author>aanania</Author>
-    <EFDB_Topic>calibrationElectrometer_command_PerformZeroCalib</EFDB_Topic>
-    <Alias>PerformZeroCalib</Alias>
+    <Version>3.7.1</Version>
+    <Author></Author>
+    <EFDB_Topic>calibrationElectrometer_command_standby</EFDB_Topic>
+    <Alias>standby</Alias>
     <Device></Device>
     <Property></Property>
     <Action></Action>
     <Value></Value>
     <Explanation>http://sal.lsst.org</Explanation>
     <item>
-        <EFDB_Name>electId</EFDB_Name>
+        <EFDB_Name>value</EFDB_Name>
         <Description></Description>
-        <IDL_Type>short</IDL_Type>
+        <IDL_Type>boolean</IDL_Type>
         <Units></Units>
         <Count>1</Count>
     </item>
 </SALCommand>
 <SALCommand>
     <Subsystem>calibrationElectrometer</Subsystem>
-    <Version>3.5.2</Version>
-    <Author>aanania</Author>
+    <Version>3.7.1</Version>
+    <Author></Author>
     <EFDB_Topic>calibrationElectrometer_command_start</EFDB_Topic>
     <Alias>start</Alias>
     <Device></Device>
@@ -310,32 +211,44 @@
         <EFDB_Name>settingsToApply</EFDB_Name>
         <Description></Description>
         <IDL_Type>string</IDL_Type>
-        <IDL_Size>1</IDL_Size>
+        <IDL_Size>256</IDL_Size>
         <Units></Units>
         <Count>1</Count>
     </item>
 </SALCommand>
 <SALCommand>
     <Subsystem>calibrationElectrometer</Subsystem>
-    <Version>3.5.2</Version>
-    <Author>aanania</Author>
-    <EFDB_Topic>calibrationElectrometer_command_SetRange</EFDB_Topic>
-    <Alias>SetRange</Alias>
+    <Version>3.7.1</Version>
+    <Author></Author>
+    <EFDB_Topic>calibrationElectrometer_command_startScan</EFDB_Topic>
+    <Alias>startScan</Alias>
     <Device></Device>
     <Property></Property>
     <Action></Action>
     <Value></Value>
     <Explanation>http://sal.lsst.org</Explanation>
     <item>
-        <EFDB_Name>electtId</EFDB_Name>
+        <EFDB_Name>value</EFDB_Name>
         <Description></Description>
-        <IDL_Type>short</IDL_Type>
+        <IDL_Type>boolean</IDL_Type>
         <Units></Units>
         <Count>1</Count>
     </item>
+</SALCommand>
+<SALCommand>
+    <Subsystem>calibrationElectrometer</Subsystem>
+    <Version>3.7.1</Version>
+    <Author></Author>
+    <EFDB_Topic>calibrationElectrometer_command_startScanDt</EFDB_Topic>
+    <Alias>startScanDt</Alias>
+    <Device></Device>
+    <Property></Property>
+    <Action></Action>
+    <Value></Value>
+    <Explanation>http://sal.lsst.org</Explanation>
     <item>
-        <EFDB_Name>setRange</EFDB_Name>
-        <Description>-1 for automatic range.</Description>
+        <EFDB_Name>time</EFDB_Name>
+        <Description>Time in seconds.</Description>
         <IDL_Type>float</IDL_Type>
         <Units></Units>
         <Count>1</Count>
@@ -343,19 +256,57 @@
 </SALCommand>
 <SALCommand>
     <Subsystem>calibrationElectrometer</Subsystem>
-    <Version>3.5.2</Version>
-    <Author>aanania</Author>
-    <EFDB_Topic>calibrationElectrometer_command_StopScan</EFDB_Topic>
-    <Alias>StopScan</Alias>
+    <Version>3.7.1</Version>
+    <Author></Author>
+    <EFDB_Topic>calibrationElectrometer_command_startScanReachIntensity</EFDB_Topic>
+    <Alias>startScanReachIntensity</Alias>
     <Device></Device>
     <Property></Property>
     <Action></Action>
     <Value></Value>
     <Explanation>http://sal.lsst.org</Explanation>
     <item>
-        <EFDB_Name>electId</EFDB_Name>
+        <EFDB_Name>intensity</EFDB_Name>
         <Description></Description>
-        <IDL_Type>short</IDL_Type>
+        <IDL_Type>float</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+</SALCommand>
+<SALCommand>
+    <Subsystem>calibrationElectrometer</Subsystem>
+    <Version>3.7.1</Version>
+    <Author></Author>
+    <EFDB_Topic>calibrationElectrometer_command_stopScan</EFDB_Topic>
+    <Alias>stopScan</Alias>
+    <Device></Device>
+    <Property></Property>
+    <Action></Action>
+    <Value></Value>
+    <Explanation>http://sal.lsst.org</Explanation>
+    <item>
+        <EFDB_Name>value</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>boolean</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+</SALCommand>
+<SALCommand>
+    <Subsystem>calibrationElectrometer</Subsystem>
+    <Version>3.7.1</Version>
+    <Author></Author>
+    <EFDB_Topic>calibrationElectrometer_command_exitControl</EFDB_Topic>
+    <Alias>exitControl</Alias>
+    <Device></Device>
+    <Property></Property>
+    <Action></Action>
+    <Value></Value>
+    <Explanation>http://sal.lsst.org</Explanation>
+    <item>
+        <EFDB_Name>value</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>boolean</IDL_Type>
         <Units></Units>
         <Count>1</Count>
     </item>
