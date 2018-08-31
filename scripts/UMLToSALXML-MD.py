@@ -4,8 +4,8 @@ import xml.etree.ElementTree
 
 ignoreGlobals = True
 isForLabVIEW = False
-globalCommands = ["Start", "Enable", "Disable", "Standby"]
-globalEvents = ["ErrorCode", "SummaryState", "SettingVersions", "AppliedSettingsMatchStart", "SettingsApplied"]
+globalCommands = ["start", "enable", "disable", "standby", "exitControl"]
+globalEvents = ["errorCode", "summaryState", "settingVersions", "appliedSettingsMatchStart", "settingsApplied"]
 salTypes = ["short", "long", "long long", "unsigned short", "unsigned long", "unsigned long long", "float", "double", "char", "boolean", "octet", "string", "byte", "int"]
 
 class UMLParser:
@@ -155,7 +155,7 @@ class UMLParser:
         units = "" if units is None else units
 		
         if type == "string":
-            count = self.GetValueByName(self.uml.find(basePath % "/upperValue"),"value", "256")
+            count = self.GetValueByName(self.uml.find(basePath % "/upperValue"),"value", "1")
             return SALParameterString(parameter, description, type, units, count)
         elif type in salTypes:
             count = self.GetValueByName(self.uml.find(basePath % "/upperValue"),"value", "1")
