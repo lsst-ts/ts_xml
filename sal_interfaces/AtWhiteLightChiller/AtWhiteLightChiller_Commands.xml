@@ -3,10 +3,10 @@
 <SALCommandSet xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:noNamespaceSchemaLocation="http://lsst-sal.tuc.noao.edu/schema/SALCommandSet.xsd">
 <SALCommand>
-    <Subsystem>AtWhiteLight</Subsystem>
+    <Subsystem>AtWhiteLightChiller</Subsystem>
     <Version>3.7.1</Version>
     <Author></Author>
-    <EFDB_Topic>AtWhiteLight_command_disable</EFDB_Topic>
+    <EFDB_Topic>AtWhiteLightChiller_command_disable</EFDB_Topic>
     <Alias>disable</Alias>
     <Device></Device>
     <Property></Property>
@@ -22,10 +22,10 @@
     </item>
 </SALCommand>
 <SALCommand>
-    <Subsystem>AtWhiteLight</Subsystem>
+    <Subsystem>AtWhiteLightChiller</Subsystem>
     <Version>3.7.1</Version>
     <Author></Author>
-    <EFDB_Topic>AtWhiteLight_command_enable</EFDB_Topic>
+    <EFDB_Topic>AtWhiteLightChiller_command_enable</EFDB_Topic>
     <Alias>enable</Alias>
     <Device></Device>
     <Property></Property>
@@ -41,10 +41,10 @@
     </item>
 </SALCommand>
 <SALCommand>
-    <Subsystem>AtWhiteLight</Subsystem>
+    <Subsystem>AtWhiteLightChiller</Subsystem>
     <Version>3.7.1</Version>
     <Author></Author>
-    <EFDB_Topic>AtWhiteLight_command_exitControl</EFDB_Topic>
+    <EFDB_Topic>AtWhiteLightChiller_command_exitControl</EFDB_Topic>
     <Alias>exitControl</Alias>
     <Device></Device>
     <Property></Property>
@@ -60,10 +60,10 @@
     </item>
 </SALCommand>
 <SALCommand>
-    <Subsystem>AtWhiteLight</Subsystem>
+    <Subsystem>AtWhiteLightChiller</Subsystem>
     <Version>3.7.1</Version>
     <Author></Author>
-    <EFDB_Topic>AtWhiteLight_command_standby</EFDB_Topic>
+    <EFDB_Topic>AtWhiteLightChiller_command_standby</EFDB_Topic>
     <Alias>standby</Alias>
     <Device></Device>
     <Property></Property>
@@ -79,10 +79,10 @@
     </item>
 </SALCommand>
 <SALCommand>
-    <Subsystem>AtWhiteLight</Subsystem>
+    <Subsystem>AtWhiteLightChiller</Subsystem>
     <Version>3.7.1</Version>
     <Author></Author>
-    <EFDB_Topic>AtWhiteLight_command_start</EFDB_Topic>
+    <EFDB_Topic>AtWhiteLightChiller_command_start</EFDB_Topic>
     <Alias>start</Alias>
     <Device></Device>
     <Property></Property>
@@ -99,18 +99,37 @@
     </item>
 </SALCommand>
 <SALCommand>
-    <Subsystem>AtWhiteLight</Subsystem>
+    <Subsystem>AtWhiteLightChiller</Subsystem>
     <Version>3.7.1</Version>
     <Author></Author>
-    <EFDB_Topic>AtWhiteLight_command_powerLightOn</EFDB_Topic>
-    <Alias>powerLightOn</Alias>
+    <EFDB_Topic>AtWhiteLightChiller_command_setTemperature</EFDB_Topic>
+    <Alias>setTemperature</Alias>
     <Device></Device>
     <Property></Property>
     <Action></Action>
     <Value></Value>
     <Explanation>http://sal.lsst.org</Explanation>
     <item>
-        <EFDB_Name>power</EFDB_Name>
+        <EFDB_Name>temperature</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>float</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+</SALCommand>
+<SALCommand>
+    <Subsystem>AtWhiteLightChiller</Subsystem>
+    <Version>3.7.1</Version>
+    <Author></Author>
+    <EFDB_Topic>AtWhiteLightChiller_command_powerChillerOn</EFDB_Topic>
+    <Alias>powerChillerOn</Alias>
+    <Device></Device>
+    <Property></Property>
+    <Action></Action>
+    <Value></Value>
+    <Explanation>http://sal.lsst.org</Explanation>
+    <item>
+        <EFDB_Name>powerOn</EFDB_Name>
         <Description></Description>
         <IDL_Type>boolean</IDL_Type>
         <Units></Units>
@@ -118,38 +137,19 @@
     </item>
 </SALCommand>
 <SALCommand>
-    <Subsystem>AtWhiteLight</Subsystem>
+    <Subsystem>AtWhiteLightChiller</Subsystem>
     <Version>3.7.1</Version>
     <Author></Author>
-    <EFDB_Topic>AtWhiteLight_command_powerLightOff</EFDB_Topic>
-    <Alias>powerLightOff</Alias>
+    <EFDB_Topic>AtWhiteLightChiller_command_powerChillerOff</EFDB_Topic>
+    <Alias>powerChillerOff</Alias>
     <Device></Device>
     <Property></Property>
     <Action></Action>
     <Value></Value>
     <Explanation>http://sal.lsst.org</Explanation>
     <item>
-        <EFDB_Name>power</EFDB_Name>
+        <EFDB_Name>powerOffTime</EFDB_Name>
         <Description></Description>
-        <IDL_Type>boolean</IDL_Type>
-        <Units></Units>
-        <Count>1</Count>
-    </item>
-</SALCommand>
-<SALCommand>
-    <Subsystem>AtWhiteLight</Subsystem>
-    <Version>3.7.1</Version>
-    <Author></Author>
-    <EFDB_Topic>AtWhiteLight_command_setLightPower</EFDB_Topic>
-    <Alias>setLightPower</Alias>
-    <Device></Device>
-    <Property></Property>
-    <Action></Action>
-    <Value></Value>
-    <Explanation>http://sal.lsst.org</Explanation>
-    <item>
-        <EFDB_Name>power</EFDB_Name>
-        <Description>Power intensity, it could a value between 800 to 1200W. Any value under this range will power the light off safely.</Description>
         <IDL_Type>float</IDL_Type>
         <Units></Units>
         <Count>1</Count>
