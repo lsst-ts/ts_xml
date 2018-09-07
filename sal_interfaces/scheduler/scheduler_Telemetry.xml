@@ -4,7 +4,7 @@
 	xsi:noNamespaceSchemaLocation="http://lsst-sal.tuc.noao.edu/schema/SALTelemetrySet.xsd">
 <SALTelemetry>
     <Subsystem>scheduler</Subsystem>
-    <Version>3.5.2</Version>
+    <Version>3.7</Version>
     <Author></Author>
     <EFDB_Topic>scheduler_timestamp</EFDB_Topic>
     <item>
@@ -17,7 +17,7 @@
 </SALTelemetry>
 <SALTelemetry>
     <Subsystem>scheduler</Subsystem>
-    <Version>3.5.2</Version>
+    <Version>3.7</Version>
     <Author></Author>
     <EFDB_Topic>scheduler_loopTimeMs</EFDB_Topic>
     <item>
@@ -31,7 +31,7 @@
 </SALTelemetry>
 <SALTelemetry>
     <Subsystem>scheduler</Subsystem>
-    <Version>3.5.2</Version>
+    <Version>3.7</Version>
     <Author></Author>
     <EFDB_Topic>scheduler_nightSummary</EFDB_Topic>
     <item>
@@ -51,7 +51,7 @@
 </SALTelemetry>
 <SALTelemetry>
     <Subsystem>scheduler</Subsystem>
-    <Version>3.5.2</Version>
+    <Version>3.7</Version>
     <Author></Author>
     <EFDB_Topic>scheduler_predictedSchedule</EFDB_Topic>
     <item>
@@ -85,14 +85,15 @@
     <item>
         <EFDB_Name>filter</EFDB_Name>
         <Description></Description>
-        <IDL_Type>double</IDL_Type>
+        <IDL_Type>string</IDL_Type>
+        <IDL_Size>256</IDL_Size>
         <Units></Units>
         <Count>1</Count>
     </item>
 </SALTelemetry>
 <SALTelemetry>
     <Subsystem>scheduler</Subsystem>
-    <Version>3.5.2</Version>
+    <Version>3.7</Version>
     <Author></Author>
     <EFDB_Topic>scheduler_surveyTopology</EFDB_Topic>
     <item>
@@ -128,7 +129,7 @@
 </SALTelemetry>
 <SALTelemetry>
     <Subsystem>scheduler</Subsystem>
-    <Version>3.5.2</Version>
+    <Version>3.7</Version>
     <Author></Author>
     <EFDB_Topic>scheduler_schedulerConfig</EFDB_Topic>
     <item>
@@ -141,7 +142,7 @@
 </SALTelemetry>
 <SALTelemetry>
     <Subsystem>scheduler</Subsystem>
-    <Version>3.5.2</Version>
+    <Version>3.7</Version>
     <Author></Author>
     <EFDB_Topic>scheduler_driverConfig</EFDB_Topic>
     <item>
@@ -208,7 +209,7 @@
         <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>newMoonThreshold</EFDB_Name>
+        <EFDB_Name>newMoonPhaseThreshold</EFDB_Name>
         <Description></Description>
         <IDL_Type>double</IDL_Type>
         <Units></Units>
@@ -256,10 +257,26 @@
         <Units></Units>
         <Count>1</Count>
     </item>
+    <item>
+        <EFDB_Name>startupType</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>string</IDL_Type>
+        <IDL_Size>256</IDL_Size>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>startupDatabase</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>string</IDL_Type>
+        <IDL_Size>256</IDL_Size>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
 </SALTelemetry>
 <SALTelemetry>
     <Subsystem>scheduler</Subsystem>
-    <Version>3.5.2</Version>
+    <Version>3.7</Version>
     <Author></Author>
     <EFDB_Topic>scheduler_obsSiteConfig</EFDB_Topic>
     <item>
@@ -306,7 +323,7 @@
         <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>relativeHumidty</EFDB_Name>
+        <EFDB_Name>relativeHumidity</EFDB_Name>
         <Description></Description>
         <IDL_Type>double</IDL_Type>
         <Units></Units>
@@ -315,7 +332,7 @@
 </SALTelemetry>
 <SALTelemetry>
     <Subsystem>scheduler</Subsystem>
-    <Version>3.5.2</Version>
+    <Version>3.7</Version>
     <Author></Author>
     <EFDB_Topic>scheduler_telescopeConfig</EFDB_Topic>
     <item>
@@ -375,6 +392,13 @@
         <Count>1</Count>
     </item>
     <item>
+        <EFDB_Name>azimuthAccel</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>double</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
         <EFDB_Name>azimuthDecel</EFDB_Name>
         <Description></Description>
         <IDL_Type>double</IDL_Type>
@@ -391,7 +415,7 @@
 </SALTelemetry>
 <SALTelemetry>
     <Subsystem>scheduler</Subsystem>
-    <Version>3.5.2</Version>
+    <Version>3.7</Version>
     <Author></Author>
     <EFDB_Topic>scheduler_rotatorConfig</EFDB_Topic>
     <item>
@@ -439,7 +463,7 @@
     <item>
         <EFDB_Name>manualRotator</EFDB_Name>
         <Description></Description>
-        <IDL_Type>double</IDL_Type>
+        <IDL_Type>boolean</IDL_Type>
         <Units></Units>
         <Count>1</Count>
     </item>
@@ -460,7 +484,7 @@
 </SALTelemetry>
 <SALTelemetry>
     <Subsystem>scheduler</Subsystem>
-    <Version>3.5.2</Version>
+    <Version>3.7</Version>
     <Author></Author>
     <EFDB_Topic>scheduler_domeConfig</EFDB_Topic>
     <item>
@@ -529,7 +553,7 @@
 </SALTelemetry>
 <SALTelemetry>
     <Subsystem>scheduler</Subsystem>
-    <Version>3.5.2</Version>
+    <Version>3.7</Version>
     <Author></Author>
     <EFDB_Topic>scheduler_cameraConfig</EFDB_Topic>
     <item>
@@ -557,6 +581,13 @@
         <EFDB_Name>filterChangeTime</EFDB_Name>
         <Description></Description>
         <IDL_Type>double</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>filterMaxChangesBurstNum</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>long</IDL_Type>
         <Units></Units>
         <Count>1</Count>
     </item>
@@ -616,7 +647,7 @@
 </SALTelemetry>
 <SALTelemetry>
     <Subsystem>scheduler</Subsystem>
-    <Version>3.5.2</Version>
+    <Version>3.7</Version>
     <Author></Author>
     <EFDB_Topic>scheduler_slewConfig</EFDB_Topic>
     <item>
@@ -636,7 +667,7 @@
         <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>prereqDomazsettle</EFDB_Name>
+        <EFDB_Name>prereqDomazSettle</EFDB_Name>
         <Description></Description>
         <IDL_Type>string</IDL_Type>
         <IDL_Size>256</IDL_Size>
@@ -660,7 +691,7 @@
         <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>prereqTelopticsOpenLoop</EFDB_Name>
+        <EFDB_Name>prereqTelOpticsOpenLoop</EFDB_Name>
         <Description></Description>
         <IDL_Type>string</IDL_Type>
         <IDL_Size>256</IDL_Size>
@@ -684,7 +715,7 @@
         <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>prereqTelrot</EFDB_Name>
+        <EFDB_Name>prereqTelRot</EFDB_Name>
         <Description></Description>
         <IDL_Type>string</IDL_Type>
         <IDL_Size>256</IDL_Size>
@@ -750,7 +781,7 @@
 </SALTelemetry>
 <SALTelemetry>
     <Subsystem>scheduler</Subsystem>
-    <Version>3.5.2</Version>
+    <Version>3.7</Version>
     <Author></Author>
     <EFDB_Topic>scheduler_opticsLoopCorrConfig</EFDB_Topic>
     <item>
@@ -777,7 +808,7 @@
 </SALTelemetry>
 <SALTelemetry>
     <Subsystem>scheduler</Subsystem>
-    <Version>3.5.2</Version>
+    <Version>3.7</Version>
     <Author></Author>
     <EFDB_Topic>scheduler_parkConfig</EFDB_Topic>
     <item>
@@ -826,7 +857,7 @@
 </SALTelemetry>
 <SALTelemetry>
     <Subsystem>scheduler</Subsystem>
-    <Version>3.5.2</Version>
+    <Version>3.7</Version>
     <Author></Author>
     <EFDB_Topic>scheduler_generalPropConfig</EFDB_Topic>
     <item>
@@ -913,14 +944,14 @@
         <Description></Description>
         <IDL_Type>double</IDL_Type>
         <Units></Units>
-        <Count>1</Count>
+        <Count>10</Count>
     </item>
     <item>
         <EFDB_Name>regionMaximums</EFDB_Name>
         <Description></Description>
         <IDL_Type>double</IDL_Type>
         <Units></Units>
-        <Count>1</Count>
+        <Count>10</Count>
     </item>
     <item>
         <EFDB_Name>regionBounds</EFDB_Name>
@@ -980,7 +1011,7 @@
         <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>exlusionTypers</EFDB_Name>
+        <EFDB_Name>exclusionTypes</EFDB_Name>
         <Description></Description>
         <IDL_Type>string</IDL_Type>
         <IDL_Size>256</IDL_Size>
@@ -1073,7 +1104,7 @@
         <Count>10</Count>
     </item>
     <item>
-        <EFDB_Name>numFIlterExposures</EFDB_Name>
+        <EFDB_Name>numFilterExposures</EFDB_Name>
         <Description></Description>
         <IDL_Type>long</IDL_Type>
         <Units></Units>
@@ -1084,14 +1115,14 @@
         <Description></Description>
         <IDL_Type>double</IDL_Type>
         <Units></Units>
-        <Count>10</Count>
+        <Count>20</Count>
     </item>
     <item>
         <EFDB_Name>maxNumTargets</EFDB_Name>
         <Description></Description>
         <IDL_Type>long</IDL_Type>
         <Units></Units>
-        <Count>10</Count>
+        <Count>1</Count>
     </item>
     <item>
         <EFDB_Name>acceptSerendipity</EFDB_Name>
@@ -1194,7 +1225,7 @@
 </SALTelemetry>
 <SALTelemetry>
     <Subsystem>scheduler</Subsystem>
-    <Version>3.5.2</Version>
+    <Version>3.7</Version>
     <Author></Author>
     <EFDB_Topic>scheduler_sequencePropConfig</EFDB_Topic>
     <item>
@@ -1273,7 +1304,7 @@
         <Description></Description>
         <IDL_Type>long</IDL_Type>
         <Units></Units>
-        <Count>1</Count>
+        <Count>20</Count>
     </item>
     <item>
         <EFDB_Name>numSubSequences</EFDB_Name>
@@ -1295,7 +1326,7 @@
         <Description></Description>
         <IDL_Type>long</IDL_Type>
         <Units></Units>
-        <Count>1</Count>
+        <Count>20</Count>
     </item>
     <item>
         <EFDB_Name>subSequenceFilters</EFDB_Name>
@@ -1310,56 +1341,56 @@
         <Description></Description>
         <IDL_Type>long</IDL_Type>
         <Units></Units>
-        <Count>1</Count>
+        <Count>60</Count>
     </item>
     <item>
         <EFDB_Name>numSubSequenceEvents</EFDB_Name>
         <Description></Description>
         <IDL_Type>long</IDL_Type>
         <Units></Units>
-        <Count>1</Count>
+        <Count>10</Count>
     </item>
     <item>
         <EFDB_Name>numSubSequenceMaxMissed</EFDB_Name>
         <Description></Description>
         <IDL_Type>long</IDL_Type>
         <Units></Units>
-        <Count>1</Count>
+        <Count>10</Count>
     </item>
     <item>
         <EFDB_Name>subSequenceTimeIntervals</EFDB_Name>
         <Description></Description>
         <IDL_Type>double</IDL_Type>
         <Units></Units>
-        <Count>1</Count>
+        <Count>10</Count>
     </item>
     <item>
         <EFDB_Name>subSequenceTimeWindowStarts</EFDB_Name>
         <Description></Description>
         <IDL_Type>double</IDL_Type>
         <Units></Units>
-        <Count>1</Count>
+        <Count>10</Count>
     </item>
     <item>
         <EFDB_Name>subSequenceTimeWindowMaximums</EFDB_Name>
         <Description></Description>
         <IDL_Type>double</IDL_Type>
         <Units></Units>
-        <Count>1</Count>
+        <Count>10</Count>
     </item>
     <item>
         <EFDB_Name>subSequenceTimeWindowEnds</EFDB_Name>
         <Description></Description>
         <IDL_Type>double</IDL_Type>
         <Units></Units>
-        <Count>1</Count>
+        <Count>10</Count>
     </item>
     <item>
         <EFDB_Name>subSequenceTimeWeights</EFDB_Name>
         <Description></Description>
         <IDL_Type>double</IDL_Type>
         <Units></Units>
-        <Count>1</Count>
+        <Count>10</Count>
     </item>
     <item>
         <EFDB_Name>numMasterSubSequences</EFDB_Name>
@@ -1434,7 +1465,7 @@
         <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>masterSubSeuenceTimeWeights</EFDB_Name>
+        <EFDB_Name>masterSubSequenceTimeWeights</EFDB_Name>
         <Description></Description>
         <IDL_Type>double</IDL_Type>
         <Units></Units>
@@ -1531,35 +1562,35 @@
         <Description></Description>
         <IDL_Type>double</IDL_Type>
         <Units></Units>
-        <Count>1</Count>
+        <Count>10</Count>
     </item>
     <item>
         <EFDB_Name>darkLimit</EFDB_Name>
         <Description></Description>
         <IDL_Type>double</IDL_Type>
         <Units></Units>
-        <Count>1</Count>
+        <Count>10</Count>
     </item>
     <item>
         <EFDB_Name>maxSeeing</EFDB_Name>
         <Description></Description>
         <IDL_Type>double</IDL_Type>
         <Units></Units>
-        <Count>1</Count>
+        <Count>10</Count>
     </item>
     <item>
         <EFDB_Name>numFilterExposures</EFDB_Name>
         <Description></Description>
         <IDL_Type>long</IDL_Type>
         <Units></Units>
-        <Count>1</Count>
+        <Count>10</Count>
     </item>
     <item>
         <EFDB_Name>exposures</EFDB_Name>
         <Description></Description>
         <IDL_Type>double</IDL_Type>
         <Units></Units>
-        <Count>1</Count>
+        <Count>50</Count>
     </item>
     <item>
         <EFDB_Name>maxNumTargets</EFDB_Name>
@@ -1627,7 +1658,7 @@
 </SALTelemetry>
 <SALTelemetry>
     <Subsystem>scheduler</Subsystem>
-    <Version>3.5.2</Version>
+    <Version>3.7</Version>
     <Author></Author>
     <EFDB_Topic>scheduler_observatoryState</EFDB_Topic>
     <item>
@@ -1689,7 +1720,7 @@
     <item>
         <EFDB_Name>tracking</EFDB_Name>
         <Description></Description>
-        <IDL_Type>double</IDL_Type>
+        <IDL_Type>boolean</IDL_Type>
         <Units></Units>
         <Count>1</Count>
     </item>
@@ -1755,7 +1786,7 @@
 </SALTelemetry>
 <SALTelemetry>
     <Subsystem>scheduler</Subsystem>
-    <Version>3.5.2</Version>
+    <Version>3.7</Version>
     <Author></Author>
     <EFDB_Topic>scheduler_observation</EFDB_Topic>
     <item>
@@ -2018,10 +2049,25 @@
         <Units></Units>
         <Count>1</Count>
     </item>
+    <item>
+        <EFDB_Name>slewTime</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>double</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>note</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>string</IDL_Type>
+        <IDL_Size>256</IDL_Size>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
 </SALTelemetry>
 <SALTelemetry>
     <Subsystem>scheduler</Subsystem>
-    <Version>3.5.2</Version>
+    <Version>3.7</Version>
     <Author></Author>
     <EFDB_Topic>scheduler_interestedProposal</EFDB_Topic>
     <item>
@@ -2076,7 +2122,7 @@
 </SALTelemetry>
 <SALTelemetry>
     <Subsystem>scheduler</Subsystem>
-    <Version>3.5.2</Version>
+    <Version>3.7</Version>
     <Author></Author>
     <EFDB_Topic>scheduler_timeHandler</EFDB_Topic>
     <item>
@@ -2110,7 +2156,7 @@
 </SALTelemetry>
 <SALTelemetry>
     <Subsystem>scheduler</Subsystem>
-    <Version>3.5.2</Version>
+    <Version>3.7</Version>
     <Author></Author>
     <EFDB_Topic>scheduler_bulkCloud</EFDB_Topic>
     <item>
@@ -2130,7 +2176,7 @@
 </SALTelemetry>
 <SALTelemetry>
     <Subsystem>scheduler</Subsystem>
-    <Version>3.5.2</Version>
+    <Version>3.7</Version>
     <Author></Author>
     <EFDB_Topic>scheduler_cloudMap</EFDB_Topic>
     <item>
@@ -2164,7 +2210,7 @@
 </SALTelemetry>
 <SALTelemetry>
     <Subsystem>scheduler</Subsystem>
-    <Version>3.5.2</Version>
+    <Version>3.7</Version>
     <Author></Author>
     <EFDB_Topic>scheduler_seeing</EFDB_Topic>
     <item>
@@ -2184,7 +2230,7 @@
 </SALTelemetry>
 <SALTelemetry>
     <Subsystem>scheduler</Subsystem>
-    <Version>3.5.2</Version>
+    <Version>3.7</Version>
     <Author></Author>
     <EFDB_Topic>scheduler_wind</EFDB_Topic>
     <item>
@@ -2211,7 +2257,7 @@
 </SALTelemetry>
 <SALTelemetry>
     <Subsystem>scheduler</Subsystem>
-    <Version>3.5.2</Version>
+    <Version>3.7</Version>
     <Author></Author>
     <EFDB_Topic>scheduler_temperature</EFDB_Topic>
     <item>
@@ -2231,7 +2277,7 @@
 </SALTelemetry>
 <SALTelemetry>
     <Subsystem>scheduler</Subsystem>
-    <Version>3.5.2</Version>
+    <Version>3.7</Version>
     <Author></Author>
     <EFDB_Topic>scheduler_skyBrightness</EFDB_Topic>
     <item>
@@ -2273,7 +2319,7 @@
 </SALTelemetry>
 <SALTelemetry>
     <Subsystem>scheduler</Subsystem>
-    <Version>3.5.2</Version>
+    <Version>3.7</Version>
     <Author></Author>
     <EFDB_Topic>scheduler_photometricQuality</EFDB_Topic>
     <item>
@@ -2293,7 +2339,7 @@
 </SALTelemetry>
 <SALTelemetry>
     <Subsystem>scheduler</Subsystem>
-    <Version>3.5.2</Version>
+    <Version>3.7</Version>
     <Author></Author>
     <EFDB_Topic>scheduler_avoidanceRegions</EFDB_Topic>
     <item>
@@ -2327,7 +2373,7 @@
 </SALTelemetry>
 <SALTelemetry>
     <Subsystem>scheduler</Subsystem>
-    <Version>3.5.2</Version>
+    <Version>3.7</Version>
     <Author></Author>
     <EFDB_Topic>scheduler_downtime</EFDB_Topic>
     <item>
