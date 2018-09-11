@@ -85,7 +85,7 @@
         <IDL_Type>long</IDL_Type>
         <Units></Units>
         <Count>1</Count>
-        <Enumeration>DisabledState,EnabledState,FaultState,OfflineState,StandbyState,stationaryState,movingState</Enumeration>
+        <Enumeration>DisabledState,EnabledState,FaultState,OfflineState,StandbyState</Enumeration>
     </item>
 </SALEvent>
 <SALEvent>
@@ -205,7 +205,7 @@
         <IDL_Type>long</IDL_Type>
         <Units></Units>
         <Count>1</Count>
-        <Enumeration>filter0,filter1,filter2,filter3,filter4</Enumeration>
+        <Enumeration>filter0,filter1,filter2,filter3,inbetween</Enumeration>
     </item>
 </SALEvent>
 <SALEvent>
@@ -221,7 +221,7 @@
         <IDL_Type>long</IDL_Type>
         <Units></Units>
         <Count>1</Count>
-        <Enumeration>disperser0,disperser1,disperser2,disperser3,disperser4</Enumeration>
+        <Enumeration>disperser0,disperser1,disperser2,disperser3,inbetween</Enumeration>
     </item>
 </SALEvent>
 <SALEvent>
@@ -252,5 +252,37 @@
         <IDL_Type>boolean</IDL_Type>
         <Units></Units>
         <Count>1</Count>
+    </item>
+</SALEvent>
+<SALEvent>
+    <Subsystem>Spectrograph</Subsystem>
+    <Version>3.7.2</Version>
+    <Author></Author>
+    <EFDB_Topic>Spectrograph_logevent_fwState</EFDB_Topic>
+    <Alias>fwState</Alias>
+    <Explanation>http://sal.lsst.org</Explanation>
+    <item>
+        <EFDB_Name>fwState</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>long</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+        <Enumeration>fwStationaryState,fwMovingState</Enumeration>
+    </item>
+</SALEvent>
+<SALEvent>
+    <Subsystem>Spectrograph</Subsystem>
+    <Version>3.7.2</Version>
+    <Author></Author>
+    <EFDB_Topic>Spectrograph_logevent_gwState</EFDB_Topic>
+    <Alias>gwState</Alias>
+    <Explanation>http://sal.lsst.org</Explanation>
+    <item>
+        <EFDB_Name>gwState</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>long</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+        <Enumeration>gwStationaryState,gwMovingState</Enumeration>
     </item>
 </SALEvent></SALEventSet>
