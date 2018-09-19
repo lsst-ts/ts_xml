@@ -3,10 +3,10 @@
 <SALCommandSet xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:noNamespaceSchemaLocation="http://lsst-sal.tuc.noao.edu/schema/SALCommandSet.xsd">
 <SALCommand>
-    <Subsystem>Spectrograph</Subsystem>
+    <Subsystem>AtSpectrograph</Subsystem>
     <Version>3.7.2</Version>
     <Author></Author>
-    <EFDB_Topic>Spectrograph_command_disable</EFDB_Topic>
+    <EFDB_Topic>AtSpectrograph_command_disable</EFDB_Topic>
     <Alias>disable</Alias>
     <Device></Device>
     <Property></Property>
@@ -22,10 +22,10 @@
     </item>
 </SALCommand>
 <SALCommand>
-    <Subsystem>Spectrograph</Subsystem>
+    <Subsystem>AtSpectrograph</Subsystem>
     <Version>3.7.2</Version>
     <Author></Author>
-    <EFDB_Topic>Spectrograph_command_enable</EFDB_Topic>
+    <EFDB_Topic>AtSpectrograph_command_enable</EFDB_Topic>
     <Alias>enable</Alias>
     <Device></Device>
     <Property></Property>
@@ -41,10 +41,10 @@
     </item>
 </SALCommand>
 <SALCommand>
-    <Subsystem>Spectrograph</Subsystem>
+    <Subsystem>AtSpectrograph</Subsystem>
     <Version>3.7.2</Version>
     <Author></Author>
-    <EFDB_Topic>Spectrograph_command_exitControl</EFDB_Topic>
+    <EFDB_Topic>AtSpectrograph_command_exitControl</EFDB_Topic>
     <Alias>exitControl</Alias>
     <Device></Device>
     <Property></Property>
@@ -60,10 +60,10 @@
     </item>
 </SALCommand>
 <SALCommand>
-    <Subsystem>Spectrograph</Subsystem>
+    <Subsystem>AtSpectrograph</Subsystem>
     <Version>3.7.2</Version>
     <Author></Author>
-    <EFDB_Topic>Spectrograph_command_standby</EFDB_Topic>
+    <EFDB_Topic>AtSpectrograph_command_standby</EFDB_Topic>
     <Alias>standby</Alias>
     <Device></Device>
     <Property></Property>
@@ -79,10 +79,10 @@
     </item>
 </SALCommand>
 <SALCommand>
-    <Subsystem>Spectrograph</Subsystem>
+    <Subsystem>AtSpectrograph</Subsystem>
     <Version>3.7.2</Version>
     <Author></Author>
-    <EFDB_Topic>Spectrograph_command_abort</EFDB_Topic>
+    <EFDB_Topic>AtSpectrograph_command_abort</EFDB_Topic>
     <Alias>abort</Alias>
     <Device></Device>
     <Property></Property>
@@ -98,50 +98,52 @@
     </item>
 </SALCommand>
 <SALCommand>
-    <Subsystem>Spectrograph</Subsystem>
+    <Subsystem>AtSpectrograph</Subsystem>
     <Version>3.7.2</Version>
     <Author></Author>
-    <EFDB_Topic>Spectrograph_command_changeFilter</EFDB_Topic>
+    <EFDB_Topic>AtSpectrograph_command_changeFilter</EFDB_Topic>
     <Alias>changeFilter</Alias>
     <Device></Device>
     <Property></Property>
     <Action></Action>
     <Value></Value>
     <Explanation>http://sal.lsst.org</Explanation>
-    <item>
-        <EFDB_Name>filter</EFDB_Name>
-        <Description></Description>
-        <IDL_Type>long</IDL_Type>
-        <Units></Units>
-        <Count>1</Count>
-        <Enumeration>filter0,filter1,filter2,filter3</Enumeration>
-    </item>
+            <item>
+                <EFDB_Name>filter</EFDB_Name>
+                <Description></Description>
+                <!-- Enumeration: filter -->
+                <IDL_Type>long</IDL_Type>
+                <Units></Units>
+                <Count>1</Count>
+                <Enumeration>filter_filter_slot0,filter_filter_slot1,filter_filter_slot2,filter_filter_slot3</Enumeration>
+            </item>
 </SALCommand>
 <SALCommand>
-    <Subsystem>Spectrograph</Subsystem>
+    <Subsystem>AtSpectrograph</Subsystem>
     <Version>3.7.2</Version>
     <Author></Author>
-    <EFDB_Topic>Spectrograph_command_changeDisperser</EFDB_Topic>
+    <EFDB_Topic>AtSpectrograph_command_changeDisperser</EFDB_Topic>
     <Alias>changeDisperser</Alias>
     <Device></Device>
     <Property></Property>
     <Action></Action>
     <Value></Value>
     <Explanation>http://sal.lsst.org</Explanation>
-    <item>
-        <EFDB_Name>disperser</EFDB_Name>
-        <Description></Description>
-        <IDL_Type>long</IDL_Type>
-        <Units></Units>
-        <Count>1</Count>
-        <Enumeration>disperser0,disperser1,disperser2,disperser3</Enumeration>
-    </item>
+            <item>
+                <EFDB_Name>disperser</EFDB_Name>
+                <Description></Description>
+                <!-- Enumeration: disperser -->
+                <IDL_Type>long</IDL_Type>
+                <Units></Units>
+                <Count>1</Count>
+                <Enumeration>disperser_disperser_slot0,disperser_disperser_slot1,disperser_disperser_slot2,disperser_disperser_slot3</Enumeration>
+            </item>
 </SALCommand>
 <SALCommand>
-    <Subsystem>Spectrograph</Subsystem>
+    <Subsystem>AtSpectrograph</Subsystem>
     <Version>3.7.2</Version>
     <Author></Author>
-    <EFDB_Topic>Spectrograph_command_moveLinearStage</EFDB_Topic>
+    <EFDB_Topic>AtSpectrograph_command_moveLinearStage</EFDB_Topic>
     <Alias>moveLinearStage</Alias>
     <Device></Device>
     <Property></Property>
@@ -157,10 +159,10 @@
     </item>
 </SALCommand>
 <SALCommand>
-    <Subsystem>Spectrograph</Subsystem>
+    <Subsystem>AtSpectrograph</Subsystem>
     <Version>3.7.2</Version>
     <Author></Author>
-    <EFDB_Topic>Spectrograph_command_start</EFDB_Topic>
+    <EFDB_Topic>AtSpectrograph_command_start</EFDB_Topic>
     <Alias>start</Alias>
     <Device></Device>
     <Property></Property>
@@ -171,16 +173,16 @@
         <EFDB_Name>settingsToApply</EFDB_Name>
         <Description></Description>
         <IDL_Type>string</IDL_Type>
-        <IDL_Size>256</IDL_Size>
+        <IDL_Size>1</IDL_Size>
         <Units></Units>
         <Count>1</Count>
     </item>
 </SALCommand>
 <SALCommand>
-    <Subsystem>Spectrograph</Subsystem>
+    <Subsystem>AtSpectrograph</Subsystem>
     <Version>3.7.2</Version>
     <Author></Author>
-    <EFDB_Topic>Spectrograph_command_homeLinearStage</EFDB_Topic>
+    <EFDB_Topic>AtSpectrograph_command_homeLinearStage</EFDB_Topic>
     <Alias>homeLinearStage</Alias>
     <Device></Device>
     <Property></Property>
@@ -196,10 +198,10 @@
     </item>
 </SALCommand>
 <SALCommand>
-    <Subsystem>Spectrograph</Subsystem>
+    <Subsystem>AtSpectrograph</Subsystem>
     <Version>3.7.2</Version>
     <Author></Author>
-    <EFDB_Topic>Spectrograph_command_stopAllAxis</EFDB_Topic>
+    <EFDB_Topic>AtSpectrograph_command_stopAllAxis</EFDB_Topic>
     <Alias>stopAllAxis</Alias>
     <Device></Device>
     <Property></Property>
