@@ -2,6 +2,15 @@
 <?xml-stylesheet type="text/xsl" href="http://lsst-sal.tuc.noao.edu/schema/SALEventSet.xsl"?>
 <SALEventSet xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:noNamespaceSchemaLocation="http://lsst-sal.tuc.noao.edu/schema/SALEventSet.xsd">
+<Enumeration>summaryState_DisabledState,summaryState_EnabledState,summaryState_FaultState,summaryState_OfflineState,summaryState_StandbyState</Enumeration>
+<Enumeration>detailedState_DisabledState,detailedState_EnabledState,detailedState_FaultState,detailedState_OfflineState,detailedState_StandbyState</Enumeration>
+<Enumeration>filter_slot0,filter_slot1,filter_slot2,filter_slot3</Enumeration>
+<Enumeration>disperser_slot0,disperser_slot1,disperser_slot2,disperser_slot3</Enumeration>
+<Enumeration>filterPosition_filter0,filterPosition_filter1,filterPosition_filter2,filterPosition_filter3,filterPosition_inbetween</Enumeration>
+<Enumeration>disperserPosition_disperser0,disperserPosition_disperser1,disperserPosition_disperser2,disperserPosition_disperser3,disperserPosition_inbetween</Enumeration>
+<Enumeration>fwState_fwStationaryState,fwState_fwMovingState</Enumeration>
+<Enumeration>gwState_gwStationaryState,gwState_gwMovingState</Enumeration>
+
 <SALEvent>
     <Subsystem>AtSpectrograph</Subsystem>
     <Version>3.7.2</Version>
@@ -43,7 +52,7 @@
         <EFDB_Name>recommendedSettingsVersion</EFDB_Name>
         <Description></Description>
         <IDL_Type>string</IDL_Type>
-        <IDL_Size>256</IDL_Size>
+        <IDL_Size>1</IDL_Size>
         <Units></Units>
         <Count>1</Count>
     </item>
@@ -51,7 +60,7 @@
         <EFDB_Name>recommendedSettingsLabel</EFDB_Name>
         <Description></Description>
         <IDL_Type>string</IDL_Type>
-        <IDL_Size>256</IDL_Size>
+        <IDL_Size>1</IDL_Size>
         <Units></Units>
         <Count>1</Count>
     </item>
@@ -63,14 +72,15 @@
     <EFDB_Topic>AtSpectrograph_logevent_summaryState</EFDB_Topic>
     <Alias>summaryState</Alias>
     <Explanation>http://sal.lsst.org</Explanation>
-    <item>
-        <EFDB_Name>summaryState</EFDB_Name>
-        <Description>An enumeration indicating the subsystem summary state. See the SummaryStateValue enumeration defined in the Typedefs package.</Description>
-        <IDL_Type>long</IDL_Type>
-        <Units></Units>
-        <Count>1</Count>
-        <Enumeration>DisabledState,EnabledState,FaultState,OfflineState,StandbyState</Enumeration>
-    </item>
+            <item>
+                <EFDB_Name>summaryState</EFDB_Name>
+                <Description>An enumeration indicating the subsystem summary state. See the SummaryStateValue enumeration defined in the Typedefs package.</Description>
+                <!-- Enumeration: summaryState -->
+                <IDL_Type>long</IDL_Type>
+                <Units></Units>
+                <Count>1</Count>
+                <Enumeration>summaryState_summaryState_DisabledState,summaryState_summaryState_EnabledState,summaryState_summaryState_FaultState,summaryState_summaryState_OfflineState,summaryState_summaryState_StandbyState</Enumeration>
+            </item>
 </SALEvent>
 <SALEvent>
     <Subsystem>AtSpectrograph</Subsystem>
@@ -79,14 +89,15 @@
     <EFDB_Topic>AtSpectrograph_logevent_detailedState</EFDB_Topic>
     <Alias>detailedState</Alias>
     <Explanation>http://sal.lsst.org</Explanation>
-    <item>
-        <EFDB_Name>detailedState</EFDB_Name>
-        <Description></Description>
-        <IDL_Type>long</IDL_Type>
-        <Units></Units>
-        <Count>1</Count>
-        <Enumeration>DisabledState,EnabledState,FaultState,OfflineState,StandbyState</Enumeration>
-    </item>
+            <item>
+                <EFDB_Name>detailedState</EFDB_Name>
+                <Description></Description>
+                <!-- Enumeration: detailedState -->
+                <IDL_Type>long</IDL_Type>
+                <Units></Units>
+                <Count>1</Count>
+                <Enumeration>detailedState_detailedState_DisabledState,detailedState_detailedState_EnabledState,detailedState_detailedState_FaultState,detailedState_detailedState_OfflineState,detailedState_detailedState_StandbyState</Enumeration>
+            </item>
 </SALEvent>
 <SALEvent>
     <Subsystem>AtSpectrograph</Subsystem>
@@ -199,14 +210,15 @@
     <EFDB_Topic>AtSpectrograph_logevent_reportedFilterPosition</EFDB_Topic>
     <Alias>reportedFilterPosition</Alias>
     <Explanation>http://sal.lsst.org</Explanation>
-    <item>
-        <EFDB_Name>reportedFilterPosition</EFDB_Name>
-        <Description></Description>
-        <IDL_Type>long</IDL_Type>
-        <Units></Units>
-        <Count>1</Count>
-        <Enumeration>filter0,filter1,filter2,filter3,inbetween</Enumeration>
-    </item>
+            <item>
+                <EFDB_Name>reportedFilterPosition</EFDB_Name>
+                <Description></Description>
+                <!-- Enumeration: filterPosition -->
+                <IDL_Type>long</IDL_Type>
+                <Units></Units>
+                <Count>1</Count>
+                <Enumeration>reportedFilterPosition_filterPosition_filter0,reportedFilterPosition_filterPosition_filter1,reportedFilterPosition_filterPosition_filter2,reportedFilterPosition_filterPosition_filter3,reportedFilterPosition_filterPosition_inbetween</Enumeration>
+            </item>
 </SALEvent>
 <SALEvent>
     <Subsystem>AtSpectrograph</Subsystem>
@@ -215,14 +227,15 @@
     <EFDB_Topic>AtSpectrograph_logevent_reportedDisperserPosition</EFDB_Topic>
     <Alias>reportedDisperserPosition</Alias>
     <Explanation>http://sal.lsst.org</Explanation>
-    <item>
-        <EFDB_Name>reportedDisperserPosition</EFDB_Name>
-        <Description></Description>
-        <IDL_Type>long</IDL_Type>
-        <Units></Units>
-        <Count>1</Count>
-        <Enumeration>disperser0,disperser1,disperser2,disperser3,inbetween</Enumeration>
-    </item>
+            <item>
+                <EFDB_Name>reportedDisperserPosition</EFDB_Name>
+                <Description></Description>
+                <!-- Enumeration: disperserPosition -->
+                <IDL_Type>long</IDL_Type>
+                <Units></Units>
+                <Count>1</Count>
+                <Enumeration>reportedDisperserPosition_disperserPosition_disperser0,reportedDisperserPosition_disperserPosition_disperser1,reportedDisperserPosition_disperserPosition_disperser2,reportedDisperserPosition_disperserPosition_disperser3,reportedDisperserPosition_disperserPosition_inbetween</Enumeration>
+            </item>
 </SALEvent>
 <SALEvent>
     <Subsystem>AtSpectrograph</Subsystem>
@@ -261,14 +274,15 @@
     <EFDB_Topic>AtSpectrograph_logevent_fwState</EFDB_Topic>
     <Alias>fwState</Alias>
     <Explanation>http://sal.lsst.org</Explanation>
-    <item>
-        <EFDB_Name>fwState</EFDB_Name>
-        <Description></Description>
-        <IDL_Type>long</IDL_Type>
-        <Units></Units>
-        <Count>1</Count>
-        <Enumeration>fwStationaryState,fwMovingState</Enumeration>
-    </item>
+            <item>
+                <EFDB_Name>fwState</EFDB_Name>
+                <Description></Description>
+                <!-- Enumeration: fwState -->
+                <IDL_Type>long</IDL_Type>
+                <Units></Units>
+                <Count>1</Count>
+                <Enumeration>fwState_fwState_fwStationaryState,fwState_fwState_fwMovingState</Enumeration>
+            </item>
 </SALEvent>
 <SALEvent>
     <Subsystem>AtSpectrograph</Subsystem>
@@ -277,12 +291,13 @@
     <EFDB_Topic>AtSpectrograph_logevent_gwState</EFDB_Topic>
     <Alias>gwState</Alias>
     <Explanation>http://sal.lsst.org</Explanation>
-    <item>
-        <EFDB_Name>gwState</EFDB_Name>
-        <Description></Description>
-        <IDL_Type>long</IDL_Type>
-        <Units></Units>
-        <Count>1</Count>
-        <Enumeration>gwStationaryState,gwMovingState</Enumeration>
-    </item>
+            <item>
+                <EFDB_Name>gwState</EFDB_Name>
+                <Description></Description>
+                <!-- Enumeration: gwState -->
+                <IDL_Type>long</IDL_Type>
+                <Units></Units>
+                <Count>1</Count>
+                <Enumeration>gwState_gwState_gwStationaryState,gwState_gwState_gwMovingState</Enumeration>
+            </item>
 </SALEvent></SALEventSet>
