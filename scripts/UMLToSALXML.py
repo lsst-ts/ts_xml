@@ -1,5 +1,6 @@
 #This script does the same as UMLToSALXML but additionally can create ENUMS from the UML XMI 1.1 model.... 
 import sys
+import os
 import xml.etree.ElementTree
 
 ignoreGlobals = True
@@ -31,7 +32,8 @@ class UMLParser:
 <SALCommandSet xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:noNamespaceSchemaLocation="http://lsst-sal.tuc.noao.edu/schema/SALCommandSet.xsd">"""
         footer = """</SALCommandSet>"""
-        with open("%s\\%s_Commands.xml" % (self.outputDirectory, self.subsystem), "w") as commandFile:  
+        path = os.path.join(self.outputDirectory, "%s_Commands.xml" % (self.subsystem))
+        with open(path, "w") as commandFile:  
             commandFile.write(header)
             for item in commands:
                 if item.name != "Command":
@@ -45,7 +47,8 @@ class UMLParser:
 <SALEventSet xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:noNamespaceSchemaLocation="http://lsst-sal.tuc.noao.edu/schema/SALEventSet.xsd">"""
         footer = """</SALEventSet>"""
-        with open("%s\\%s_Events.xml" % (self.outputDirectory, self.subsystem), "w") as eventFile:  
+        path = os.path.join(self.outputDirectory, "%s_Events.xml" % (self.subsystem))
+        with open(path, "w") as eventFile:  
             eventFile.write(header)
             for item in events:
                 if item.name != "Event":
@@ -59,7 +62,8 @@ class UMLParser:
 <SALTelemetrySet xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:noNamespaceSchemaLocation="http://lsst-sal.tuc.noao.edu/schema/SALTelemetrySet.xsd">"""
         footer = """</SALTelemetrySet>"""
-        with open("%s\\%s_Telemetry.xml" % (self.outputDirectory, self.subsystem), "w") as telemetryFile:  
+        path = os.path.join(self.outputDirectory, "%s_Telemetry.xml" % (self.subsystem))
+        with open(path, "w") as telemetryFile:  
             telemetryFile.write(header)
             for item in telemetry:
                 if item.name != "Telemetry":
