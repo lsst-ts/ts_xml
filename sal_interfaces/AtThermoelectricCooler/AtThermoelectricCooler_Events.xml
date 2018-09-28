@@ -3,11 +3,12 @@
 <SALEventSet xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:noNamespaceSchemaLocation="http://lsst-sal.tuc.noao.edu/schema/SALEventSet.xsd">
 <Enumeration>SummaryState_DisabledState,SummaryState_EnabledState,SummaryState_FaultState,SummaryState_OfflineState,SummaryState_StandbyState</Enumeration>
-<Enumeration>DetailedState_DisabledState,DetailedState_EnabledState,DetailedState_FaultState,DetailedState_OfflineState,DetailedState_StandbyState,DetailedState_ChillerRunningState,DetailedState_ChillerStoppedState,DetailedState_StoppingChillerState,DetailedState_InTemperatureState,DetailedState_NotInTemperatureState</Enumeration>
+<Enumeration>DetailedState_DisabledState,DetailedState_EnabledState,DetailedState_FaultState,DetailedState_OfflineState,DetailedState_StandbyState,DetailedState_ChillerRunningState,DetailedState_ChillerStoppedState,DetailedState_StoppingChillerState</Enumeration>
 <Enumeration>ChillerStatus_Standby,ChillerStatus_Running</Enumeration>
 <Enumeration>PumpStatusFlag_PumpOff,PumpStatusFlag_PumpOn</Enumeration>
 <Enumeration>AlarmStatusFlag_NoAlarm,AlarmStatusFlag_AlarmPresent</Enumeration>
 <Enumeration>WarningStatusFlag_NoWarning,WarningStatusFlag_WarningPresent</Enumeration>
+<Enumeration>inTemperatureStatus_InsideTemperatureRange,inTemperatureStatus_OutsideTemperatureRange</Enumeration>
 
 <SALEvent>
     <Subsystem>AtThermoelectricCooler</Subsystem>
@@ -64,7 +65,7 @@
         <EFDB_Name>recommendedSettingsVersion</EFDB_Name>
         <Description></Description>
         <IDL_Type>string</IDL_Type>
-        <IDL_Size>256</IDL_Size>
+        <IDL_Size>1</IDL_Size>
         <Units></Units>
         <Count>1</Count>
     </item>
@@ -72,7 +73,7 @@
         <EFDB_Name>recommendedSettingsLabels</EFDB_Name>
         <Description></Description>
         <IDL_Type>string</IDL_Type>
-        <IDL_Size>256</IDL_Size>
+        <IDL_Size>1</IDL_Size>
         <Units></Units>
         <Count>1</Count>
     </item>
@@ -98,6 +99,7 @@
                 <IDL_Type>long</IDL_Type>
                 <Units></Units>
                 <Count>1</Count>
+                <Enumeration>summaryState_SummaryState_DisabledState,summaryState_SummaryState_EnabledState,summaryState_SummaryState_FaultState,summaryState_SummaryState_OfflineState,summaryState_SummaryState_StandbyState</Enumeration>
             </item>
     <item>
         <EFDB_Name>timestamp</EFDB_Name>
@@ -121,6 +123,7 @@
                 <IDL_Type>long</IDL_Type>
                 <Units></Units>
                 <Count>1</Count>
+                <Enumeration>detailedState_DetailedState_DisabledState,detailedState_DetailedState_EnabledState,detailedState_DetailedState_FaultState,detailedState_DetailedState_OfflineState,detailedState_DetailedState_StandbyState,detailedState_DetailedState_ChillerRunningState,detailedState_DetailedState_ChillerStoppedState,detailedState_DetailedState_StoppingChillerState</Enumeration>
             </item>
     <item>
         <EFDB_Name>timestamp</EFDB_Name>
@@ -217,6 +220,7 @@
                 <IDL_Type>long</IDL_Type>
                 <Units></Units>
                 <Count>1</Count>
+                <Enumeration>detailedState_DetailedState_DisabledState,detailedState_DetailedState_EnabledState,detailedState_DetailedState_FaultState,detailedState_DetailedState_OfflineState,detailedState_DetailedState_StandbyState,detailedState_DetailedState_ChillerRunningState,detailedState_DetailedState_ChillerStoppedState,detailedState_DetailedState_StoppingChillerState</Enumeration>
             </item>
     <item>
         <EFDB_Name>timestamp</EFDB_Name>
@@ -235,20 +239,7 @@
     <Explanation>http://sal.lsst.org</Explanation>
     <item>
         <EFDB_Name>deviceCode</EFDB_Name>
-        <Description>
-  <head>
-		<style>
-			p {padding:0px; margin:0px;}
-		</style>
-	</head>
-  <body>
-    Error code directly from the device. For more information check the documentation.
-
-    <p>
-&#160;
-</p>
-
-</body>
+        <Description>Error code directly from the device. For more information check the documentation.
 </Description>
         <IDL_Type>long</IDL_Type>
         <Units></Units>
@@ -271,20 +262,7 @@
     <Explanation>http://sal.lsst.org</Explanation>
     <item>
         <EFDB_Name>warning</EFDB_Name>
-        <Description>
-  <head>
-		<style>
-			p {padding:0px; margin:0px;}
-		</style>
-	</head>
-  <body>
-    Error code directly from the device. For more information check the documentation.
-
-    <p>
-&#160;
-</p>
-
-</body>
+        <Description>Error code directly from the device. For more information check the documentation. 
 </Description>
         <IDL_Type>boolean</IDL_Type>
         <Units></Units>
@@ -302,27 +280,35 @@
     <Subsystem>AtThermoelectricCooler</Subsystem>
     <Version>3.7.1</Version>
     <Author></Author>
-    <EFDB_Topic>AtThermoelectricCooler_logevent_temperatureReached</EFDB_Topic>
-    <Alias>temperatureReached</Alias>
+    <EFDB_Topic>AtThermoelectricCooler_logevent_insideTemperatureRange</EFDB_Topic>
+    <Alias>insideTemperatureRange</Alias>
     <Explanation>http://sal.lsst.org</Explanation>
     <item>
-        <EFDB_Name>inTemperature</EFDB_Name>
+        <EFDB_Name>inRange</EFDB_Name>
         <Description>
-  <head>
-		<style>
-			p {padding:0px; margin:0px;}
-		</style>
-	</head>
-  <body>
-    Error code directly from the device. For more information check the documentation.
-
-    <p>
-&#160;
-</p>
-
-</body>
 </Description>
         <IDL_Type>boolean</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>currentTemperature</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>float</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>highRangeLimit</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>float</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>lowRangeLimit</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>float</IDL_Type>
         <Units></Units>
         <Count>1</Count>
     </item>
