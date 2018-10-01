@@ -2,10 +2,10 @@
 <?xml-stylesheet type="text/xsl" href="http://lsst-sal.tuc.noao.edu/schema/SALEventSet.xsl"?>
 <SALEventSet xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:noNamespaceSchemaLocation="http://lsst-sal.tuc.noao.edu/schema/SALEventSet.xsd">
-<Enumeration>summaryState_disabledState,summaryState_enabledState,summaryState_faultState,summaryState_offlineState,summaryState_standbyState</Enumeration>
-<Enumeration>detailedStateAzimuth_disabledState,detailedStateAzimuth_enabledState,detailedStateAzimuth_faultState,detailedStateAzimuth_offlineState,detailedStateAzimuth_standbyState,detailedStateAzimuth_notInMotionState,detailedStateAzimuth_inMotionState,detailedStateAzimuth_movingCWState,detailedStateAzimuth_movingCCWState,detailedStateAzimuth_stoppingMotionState</Enumeration>
+<Enumeration>summaryState_DisabledState,summaryState_EnabledState,summaryState_FaultState,summaryState_OfflineState,summaryState_StandbyState</Enumeration>
+<Enumeration>detailedStateAzimuth_DisabledState,detailedStateAzimuth_EnabledState,detailedStateAzimuth_FaultState,detailedStateAzimuth_OfflineState,detailedStateAzimuth_StandbyState,detailedStateAzimuth_NotInMotionState,detailedStateAzimuth_InMotionState,detailedStateAzimuth_MovingCWState,detailedStateAzimuth_MovingCCWState,detailedStateAzimuth_StoppingMotionState</Enumeration>
 <Enumeration>movingDirection_ClockWise,movingDirection_CounterClockWise,movingDirection_NotMoving</Enumeration>
-<Enumeration>detailedStateShutterDoor_disabledState,detailedStateShutterDoor_enabledState,detailedStateShutterDoor_faultState,detailedStateShutterDoor_offlineState,detailedStateShutterDoor_standbyState,detailedStateShutterDoor_closedState,detailedStateShutterDoor_openedState,detailedStateShutterDoor_partiallyOpenedState,detailedStateShutterDoor_notInMotionState,detailedStateShutterDoor_openingState,detailedStateShutterDoor_closingState</Enumeration>
+<Enumeration>detailedStateShutterDoor_DisabledState,detailedStateShutterDoor_EnabledState,detailedStateShutterDoor_FaultState,detailedStateShutterDoor_OfflineState,detailedStateShutterDoor_StandbyState,detailedStateShutterDoor_ClosedState,detailedStateShutterDoor_OpenedState,detailedStateShutterDoor_PartiallyOpenedState,detailedStateShutterDoor_NotInMotionState,detailedStateShutterDoor_OpeningState,detailedStateShutterDoor_ClosingState</Enumeration>
 
 <SALEvent>
     <Subsystem>AtDome</Subsystem>
@@ -75,7 +75,6 @@
                 <IDL_Type>long</IDL_Type>
                 <Units></Units>
                 <Count>1</Count>
-                <Enumeration>summaryState_summaryState_disabledState,summaryState_summaryState_enabledState,summaryState_summaryState_faultState,summaryState_summaryState_offlineState,summaryState_summaryState_standbyState</Enumeration>
             </item>
 </SALEvent>
 <SALEvent>
@@ -92,7 +91,6 @@
                 <IDL_Type>long</IDL_Type>
                 <Units></Units>
                 <Count>1</Count>
-                <Enumeration>detailedState_detailedStateAzimuth_disabledState,detailedState_detailedStateAzimuth_enabledState,detailedState_detailedStateAzimuth_faultState,detailedState_detailedStateAzimuth_offlineState,detailedState_detailedStateAzimuth_standbyState,detailedState_detailedStateAzimuth_notInMotionState,detailedState_detailedStateAzimuth_inMotionState,detailedState_detailedStateAzimuth_movingCWState,detailedState_detailedStateAzimuth_movingCCWState,detailedState_detailedStateAzimuth_stoppingMotionState</Enumeration>
             </item>
 </SALEvent>
 <SALEvent>
@@ -161,7 +159,6 @@
                 <IDL_Type>long</IDL_Type>
                 <Units></Units>
                 <Count>1</Count>
-                <Enumeration>detailedState_detailedStateAzimuth_disabledState,detailedState_detailedStateAzimuth_enabledState,detailedState_detailedStateAzimuth_faultState,detailedState_detailedStateAzimuth_offlineState,detailedState_detailedStateAzimuth_standbyState,detailedState_detailedStateAzimuth_notInMotionState,detailedState_detailedStateAzimuth_inMotionState,detailedState_detailedStateAzimuth_movingCWState,detailedState_detailedStateAzimuth_movingCCWState,detailedState_detailedStateAzimuth_stoppingMotionState</Enumeration>
             </item>
     <item>
         <EFDB_Name>timestamp</EFDB_Name>
@@ -220,8 +217,8 @@
     <Subsystem>AtDome</Subsystem>
     <Version>3.7.1</Version>
     <Author></Author>
-    <EFDB_Topic>AtDome_logevent_SCBLink</EFDB_Topic>
-    <Alias>SCBLink</Alias>
+    <EFDB_Topic>AtDome_logevent_scbLink</EFDB_Topic>
+    <Alias>scbLink</Alias>
     <Explanation>http://sal.lsst.org</Explanation>
     <item>
         <EFDB_Name>active</EFDB_Name>
@@ -275,7 +272,6 @@
                 <IDL_Type>long</IDL_Type>
                 <Units></Units>
                 <Count>1</Count>
-                <Enumeration>motionStatus_movingDirection_ClockWise,motionStatus_movingDirection_CounterClockWise,motionStatus_movingDirection_NotMoving</Enumeration>
             </item>
 </SALEvent>
 <SALEvent>
@@ -301,7 +297,7 @@
     </item>
     <item>
         <EFDB_Name>tolerance</EFDB_Name>
-        <Description>minimum allowed move, in degrees, where 0.0 &lt;= value &lt; 3.</Description>
+        <Description>minimum allowed move, in degrees, where 0.0<=value<3.</Description>
         <IDL_Type>float</IDL_Type>
         <Units></Units>
         <Count>1</Count>
@@ -322,14 +318,14 @@
     </item>
     <item>
         <EFDB_Name>watchdogTimer</EFDB_Name>
-        <Description>sets the time interval between loss of communication and the dome closing, where 0 &lt; t &lt; 1000. In practice, to allow for host computer reboots, etc., we have found a time of 600 seconds (10 minutes) to be an acceptable value. If bad weather occurs in the watchdog timer 600 seconds interval, the dome will close if the rain-snow sensor is enabled.</Description>
+        <Description>sets the time interval between loss of communication and the dome closing, where 0 < t < 1000. In practice, to allow for host computer reboots, etc., we have found a time of 600 seconds (10 minutes) to be an acceptable value. If bad weather occurs in the watchdog timer 600 seconds interval, the dome will close if the rain-snow sensor is enabled.</Description>
         <IDL_Type>float</IDL_Type>
         <Units></Units>
         <Count>1</Count>
     </item>
     <item>
         <EFDB_Name>reversalDelay</EFDB_Name>
-        <Description>The t RD (Reversal Delay) sets the delay between reversing motor directions for the shutter doors, where 0 &lt; t &lt;= 6) seconds. For a 240 VAC system this parameter can be set to 0.0.</Description>
+        <Description>The t RD (Reversal Delay) sets the delay between reversing motor directions for the shutter doors, where 0 < t <= 6) seconds. For a 240 VAC system this parameter can be set to 0.0.</Description>
         <IDL_Type>float</IDL_Type>
         <Units></Units>
         <Count>1</Count>
@@ -359,7 +355,6 @@ The AF (Automation oFf) command disables the automatic shutdown of the observato
                 <IDL_Type>long</IDL_Type>
                 <Units></Units>
                 <Count>1</Count>
-                <Enumeration>detailedState_detailedStateShutterDoor_disabledState,detailedState_detailedStateShutterDoor_enabledState,detailedState_detailedStateShutterDoor_faultState,detailedState_detailedStateShutterDoor_offlineState,detailedState_detailedStateShutterDoor_standbyState,detailedState_detailedStateShutterDoor_closedState,detailedState_detailedStateShutterDoor_openedState,detailedState_detailedStateShutterDoor_partiallyOpenedState,detailedState_detailedStateShutterDoor_notInMotionState,detailedState_detailedStateShutterDoor_openingState,detailedState_detailedStateShutterDoor_closingState</Enumeration>
             </item>
 </SALEvent>
 <SALEvent>
@@ -376,6 +371,5 @@ The AF (Automation oFf) command disables the automatic shutdown of the observato
                 <IDL_Type>long</IDL_Type>
                 <Units></Units>
                 <Count>1</Count>
-                <Enumeration>detailedState_detailedStateShutterDoor_disabledState,detailedState_detailedStateShutterDoor_enabledState,detailedState_detailedStateShutterDoor_faultState,detailedState_detailedStateShutterDoor_offlineState,detailedState_detailedStateShutterDoor_standbyState,detailedState_detailedStateShutterDoor_closedState,detailedState_detailedStateShutterDoor_openedState,detailedState_detailedStateShutterDoor_partiallyOpenedState,detailedState_detailedStateShutterDoor_notInMotionState,detailedState_detailedStateShutterDoor_openingState,detailedState_detailedStateShutterDoor_closingState</Enumeration>
             </item>
 </SALEvent></SALEventSet>
