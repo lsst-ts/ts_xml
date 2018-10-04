@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="http://lsst-sal.tuc.noao.edu/schema/SALCommandSet.xsl"?>
+<SALCommandSet xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="http://lsst-sal.tuc.noao.edu/schema/SALCommandSet.xsd">
+<SALCommand>
+    <Subsystem>AtMCS</Subsystem>
+    <Version>3.7.1</Version>
+    <Author></Author>
+    <EFDB_Topic>AtMCS_command_enable</EFDB_Topic>
+    <Alias>enable</Alias>
+    <Device></Device>
+    <Property></Property>
+    <Action></Action>
+    <Value></Value>
+    <Explanation>http://sal.lsst.org</Explanation>
+    <item>
+        <EFDB_Name>value</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>boolean</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+</SALCommand>
+<SALCommand>
+    <Subsystem>AtMCS</Subsystem>
+    <Version>3.7.1</Version>
+    <Author></Author>
+    <EFDB_Topic>AtMCS_command_exitControl</EFDB_Topic>
+    <Alias>exitControl</Alias>
+    <Device></Device>
+    <Property></Property>
+    <Action></Action>
+    <Value></Value>
+    <Explanation>http://sal.lsst.org</Explanation>
+    <item>
+        <EFDB_Name>value</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>boolean</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+</SALCommand>
+<SALCommand>
+    <Subsystem>AtMCS</Subsystem>
+    <Version>3.7.1</Version>
+    <Author></Author>
+    <EFDB_Topic>AtMCS_command_standby</EFDB_Topic>
+    <Alias>standby</Alias>
+    <Device></Device>
+    <Property></Property>
+    <Action></Action>
+    <Value></Value>
+    <Explanation>http://sal.lsst.org</Explanation>
+    <item>
+        <EFDB_Name>value</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>boolean</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+</SALCommand>
+<SALCommand>
+    <Subsystem>AtMCS</Subsystem>
+    <Version>3.7.1</Version>
+    <Author></Author>
+    <EFDB_Topic>AtMCS_command_start</EFDB_Topic>
+    <Alias>start</Alias>
+    <Device></Device>
+    <Property></Property>
+    <Action></Action>
+    <Value></Value>
+    <Explanation>http://sal.lsst.org</Explanation>
+    <item>
+        <EFDB_Name>settingsToApply</EFDB_Name>
+        <Description>May be the name of an SettingVersion, or a SettingsLabel. (This defeats the point of strict typing, unfortunately, but SAL
+does not support dynamic objects.) A component may break up its settings into sections at the top level, hence this is an array</Description>
+        <IDL_Type>string</IDL_Type>
+        <IDL_Size>1</IDL_Size>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+</SALCommand>
+<SALCommand>
+    <Subsystem>AtMCS</Subsystem>
+    <Version>3.7.1</Version>
+    <Author></Author>
+    <EFDB_Topic>AtMCS_command_startTracking</EFDB_Topic>
+    <Alias>startTracking</Alias>
+    <Device></Device>
+    <Property></Property>
+    <Action></Action>
+    <Value></Value>
+    <Explanation>http://sal.lsst.org</Explanation>
+    <item>
+        <EFDB_Name>activate</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>boolean</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+</SALCommand>
+<SALCommand>
+    <Subsystem>AtMCS</Subsystem>
+    <Version>3.7.1</Version>
+    <Author></Author>
+    <EFDB_Topic>AtMCS_command_trackTarget</EFDB_Topic>
+    <Alias>trackTarget</Alias>
+    <Device></Device>
+    <Property></Property>
+    <Action></Action>
+    <Value></Value>
+    <Explanation>http://sal.lsst.org</Explanation>
+    <item>
+        <EFDB_Name>azimuth</EFDB_Name>
+        <Description>Mount azimuth angle in deg</Description>
+        <IDL_Type>double</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+            <item>
+                <EFDB_Name>azimuthDirection</EFDB_Name>
+                <Description>Rotator angle velocity in deg/sec</Description>
+                <!-- Enumeration: azimuthDirection -->
+                <IDL_Type>long</IDL_Type>
+                <Units></Units>
+                <Count>1</Count>
+            </item>
+    <item>
+        <EFDB_Name>azimuthVelocity</EFDB_Name>
+        <Description>Mount azimuth velocity in deg/sec</Description>
+        <IDL_Type>double</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>elevation</EFDB_Name>
+        <Description>Mount elevation angle in deg</Description>
+        <IDL_Type>double</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>elevationVelocity</EFDB_Name>
+        <Description>Mount elevation angle velocity in deg/ec</Description>
+        <IDL_Type>double</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>nasmyth1RotatorAngle</EFDB_Name>
+        <Description>Rotator angle in deg</Description>
+        <IDL_Type>double</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>nasmyth1RotatorAngleVelocity</EFDB_Name>
+        <Description>Rotator angle velocity in deg/sec</Description>
+        <IDL_Type>double</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>nasmyth2RotatorAngle</EFDB_Name>
+        <Description>Rotator angle in deg</Description>
+        <IDL_Type>double</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>nasmyth2RotatorAngleVelocity</EFDB_Name>
+        <Description>Rotator angle velocity in deg/sec</Description>
+        <IDL_Type>double</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>time</EFDB_Name>
+        <Description>tai time in seconds</Description>
+        <IDL_Type>double</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>trackId</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>long</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+</SALCommand>
+<SALCommand>
+    <Subsystem>AtMCS</Subsystem>
+    <Version>3.7.1</Version>
+    <Author></Author>
+    <EFDB_Topic>AtMCS_command_disable</EFDB_Topic>
+    <Alias>disable</Alias>
+    <Device></Device>
+    <Property></Property>
+    <Action></Action>
+    <Value></Value>
+    <Explanation>http://sal.lsst.org</Explanation>
+    <item>
+        <EFDB_Name>value</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>boolean</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+</SALCommand>
+<SALCommand>
+    <Subsystem>AtMCS</Subsystem>
+    <Version>3.7.1</Version>
+    <Author></Author>
+    <EFDB_Topic>AtMCS_command_setInstrumentPort</EFDB_Topic>
+    <Alias>setInstrumentPort</Alias>
+    <Device></Device>
+    <Property></Property>
+    <Action></Action>
+    <Value></Value>
+    <Explanation>http://sal.lsst.org</Explanation>
+            <item>
+                <EFDB_Name>port</EFDB_Name>
+                <Description></Description>
+                <!-- Enumeration: m3ExitPort -->
+                <IDL_Type>long</IDL_Type>
+                <Units></Units>
+                <Count>1</Count>
+            </item>
+</SALCommand>
+<SALCommand>
+    <Subsystem>AtMCS</Subsystem>
+    <Version>3.7.1</Version>
+    <Author></Author>
+    <EFDB_Topic>AtMCS_command_stopTracking</EFDB_Topic>
+    <Alias>stopTracking</Alias>
+    <Device></Device>
+    <Property></Property>
+    <Action></Action>
+    <Value></Value>
+    <Explanation>http://sal.lsst.org</Explanation>
+    <item>
+        <EFDB_Name>stop</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>boolean</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+</SALCommand></SALCommandSet>

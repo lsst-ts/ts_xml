@@ -3,10 +3,10 @@
 <SALCommandSet xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:noNamespaceSchemaLocation="http://lsst-sal.tuc.noao.edu/schema/SALCommandSet.xsd">
 <SALCommand>
-    <Subsystem>tcsOfc</Subsystem>
-    <Version>3.7.0</Version>
+    <Subsystem>AtThermoelectricCooler</Subsystem>
+    <Version>3.7.1</Version>
     <Author></Author>
-    <EFDB_Topic>tcsOfc_command_disable</EFDB_Topic>
+    <EFDB_Topic>AtThermoelectricCooler_command_disable</EFDB_Topic>
     <Alias>disable</Alias>
     <Device></Device>
     <Property></Property>
@@ -14,7 +14,7 @@
     <Value></Value>
     <Explanation>http://sal.lsst.org</Explanation>
     <item>
-        <EFDB_Name>state</EFDB_Name>
+        <EFDB_Name>value</EFDB_Name>
         <Description></Description>
         <IDL_Type>boolean</IDL_Type>
         <Units></Units>
@@ -22,10 +22,10 @@
     </item>
 </SALCommand>
 <SALCommand>
-    <Subsystem>tcsOfc</Subsystem>
-    <Version>3.7.0</Version>
+    <Subsystem>AtThermoelectricCooler</Subsystem>
+    <Version>3.7.1</Version>
     <Author></Author>
-    <EFDB_Topic>tcsOfc_command_enable</EFDB_Topic>
+    <EFDB_Topic>AtThermoelectricCooler_command_enable</EFDB_Topic>
     <Alias>enable</Alias>
     <Device></Device>
     <Property></Property>
@@ -33,7 +33,7 @@
     <Value></Value>
     <Explanation>http://sal.lsst.org</Explanation>
     <item>
-        <EFDB_Name>state</EFDB_Name>
+        <EFDB_Name>value</EFDB_Name>
         <Description></Description>
         <IDL_Type>boolean</IDL_Type>
         <Units></Units>
@@ -41,10 +41,10 @@
     </item>
 </SALCommand>
 <SALCommand>
-    <Subsystem>tcsOfc</Subsystem>
-    <Version>3.7.0</Version>
+    <Subsystem>AtThermoelectricCooler</Subsystem>
+    <Version>3.7.1</Version>
     <Author></Author>
-    <EFDB_Topic>tcsOfc_command_exitControl</EFDB_Topic>
+    <EFDB_Topic>AtThermoelectricCooler_command_exitControl</EFDB_Topic>
     <Alias>exitControl</Alias>
     <Device></Device>
     <Property></Property>
@@ -52,7 +52,7 @@
     <Value></Value>
     <Explanation>http://sal.lsst.org</Explanation>
     <item>
-        <EFDB_Name>state</EFDB_Name>
+        <EFDB_Name>value</EFDB_Name>
         <Description></Description>
         <IDL_Type>boolean</IDL_Type>
         <Units></Units>
@@ -60,10 +60,10 @@
     </item>
 </SALCommand>
 <SALCommand>
-    <Subsystem>tcsOfc</Subsystem>
-    <Version>3.7.0</Version>
+    <Subsystem>AtThermoelectricCooler</Subsystem>
+    <Version>3.7.1</Version>
     <Author></Author>
-    <EFDB_Topic>tcsOfc_command_standby</EFDB_Topic>
+    <EFDB_Topic>AtThermoelectricCooler_command_standby</EFDB_Topic>
     <Alias>standby</Alias>
     <Device></Device>
     <Property></Property>
@@ -71,7 +71,7 @@
     <Value></Value>
     <Explanation>http://sal.lsst.org</Explanation>
     <item>
-        <EFDB_Name>state</EFDB_Name>
+        <EFDB_Name>value</EFDB_Name>
         <Description></Description>
         <IDL_Type>boolean</IDL_Type>
         <Units></Units>
@@ -79,10 +79,10 @@
     </item>
 </SALCommand>
 <SALCommand>
-    <Subsystem>tcsOfc</Subsystem>
-    <Version>3.7.0</Version>
+    <Subsystem>AtThermoelectricCooler</Subsystem>
+    <Version>3.7.1</Version>
     <Author></Author>
-    <EFDB_Topic>tcsOfc_command_start</EFDB_Topic>
+    <EFDB_Topic>AtThermoelectricCooler_command_start</EFDB_Topic>
     <Alias>start</Alias>
     <Device></Device>
     <Property></Property>
@@ -99,18 +99,37 @@
     </item>
 </SALCommand>
 <SALCommand>
-    <Subsystem>tcsOfc</Subsystem>
-    <Version>3.7.0</Version>
+    <Subsystem>AtThermoelectricCooler</Subsystem>
+    <Version>3.7.1</Version>
     <Author></Author>
-    <EFDB_Topic>tcsOfc_command_enterControl</EFDB_Topic>
-    <Alias>enterControl</Alias>
+    <EFDB_Topic>AtThermoelectricCooler_command_setTemperature</EFDB_Topic>
+    <Alias>setTemperature</Alias>
     <Device></Device>
     <Property></Property>
     <Action></Action>
     <Value></Value>
     <Explanation>http://sal.lsst.org</Explanation>
     <item>
-        <EFDB_Name>state</EFDB_Name>
+        <EFDB_Name>temperature</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>float</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+</SALCommand>
+<SALCommand>
+    <Subsystem>AtThermoelectricCooler</Subsystem>
+    <Version>3.7.1</Version>
+    <Author></Author>
+    <EFDB_Topic>AtThermoelectricCooler_command_powerChillerOn</EFDB_Topic>
+    <Alias>powerChillerOn</Alias>
+    <Device></Device>
+    <Property></Property>
+    <Action></Action>
+    <Value></Value>
+    <Explanation>http://sal.lsst.org</Explanation>
+    <item>
+        <EFDB_Name>powerOn</EFDB_Name>
         <Description></Description>
         <IDL_Type>boolean</IDL_Type>
         <Units></Units>
@@ -118,49 +137,21 @@
     </item>
 </SALCommand>
 <SALCommand>
-    <Subsystem>tcsOfc</Subsystem>
-    <Version>3.7.0</Version>
+    <Subsystem>AtThermoelectricCooler</Subsystem>
+    <Version>3.7.1</Version>
     <Author></Author>
-    <EFDB_Topic>tcsOfc_command_readShwfsFile</EFDB_Topic>
-    <Alias>readShwfsFile</Alias>
+    <EFDB_Topic>AtThermoelectricCooler_command_powerChillerOff</EFDB_Topic>
+    <Alias>powerChillerOff</Alias>
     <Device></Device>
     <Property></Property>
     <Action></Action>
     <Value></Value>
     <Explanation>http://sal.lsst.org</Explanation>
     <item>
-        <EFDB_Name>fileName</EFDB_Name>
+        <EFDB_Name>powerOffTime</EFDB_Name>
         <Description></Description>
-        <IDL_Type>string</IDL_Type>
-        <IDL_Size>1</IDL_Size>
+        <IDL_Type>float</IDL_Type>
         <Units></Units>
         <Count>1</Count>
-    </item>
-</SALCommand>
-<SALCommand>
-    <Subsystem>tcsOfc</Subsystem>
-    <Version>3.7.0</Version>
-    <Author></Author>
-    <EFDB_Topic>tcsOfc_command_readWfsFile</EFDB_Topic>
-    <Alias>readWfsFile</Alias>
-    <Device></Device>
-    <Property></Property>
-    <Action></Action>
-    <Value></Value>
-    <Explanation>http://sal.lsst.org</Explanation>
-    <item>
-        <EFDB_Name>fileName</EFDB_Name>
-        <Description></Description>
-        <IDL_Type>string</IDL_Type>
-        <IDL_Size>1</IDL_Size>
-        <Units></Units>
-        <Count>1</Count>
-    </item>
-    <item>
-        <EFDB_Name>sensorIdList</EFDB_Name>
-        <Description></Description>
-        <IDL_Type>short</IDL_Type>
-        <Units></Units>
-        <Count>9</Count>
     </item>
 </SALCommand></SALCommandSet>
