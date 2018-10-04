@@ -127,8 +127,8 @@
     <Author>rowen</Author>
     <EFDB_Topic>Test_command_setScalars</EFDB_Topic>
     <Alias>setScalars</Alias>
-    <Device>target</Device>
-    <Property>data1</Property>
+    <Device></Device>
+    <Property></Property>
     <Action></Action>
     <Value></Value>
     <Explanation>Set scalar values</Explanation>
@@ -238,8 +238,8 @@
     <Author>rowen</Author>
     <EFDB_Topic>Test_command_setArrays</EFDB_Topic>
     <Alias>setArrays</Alias>
-    <Device>target</Device>
-    <Property>position</Property>
+    <Device></Device>
+    <Property></Property>
     <Action></Action>
     <Value></Value>
     <Explanation>Set array values</Explanation>
@@ -333,6 +333,51 @@
         <IDL_Type>double</IDL_Type>
         <Units></Units>
         <Count>5</Count>
+    </item>
+</SALCommand>
+<SALCommand>
+    <Subsystem>Test</Subsystem>
+    <Version>1.0.0</Version>
+    <Author>rowen</Author>
+    <EFDB_Topic>Test_command_fault</EFDB_Topic>
+    <Alias>fault</Alias>
+    <Device></Device>
+    <Property></Property>
+    <Action></Action>
+    <Value></Value>
+    <Explanation>Enter the Fault summary state.</Explanation>
+    <item>
+        <EFDB_Name>null</EFDB_Name>
+        <Description>Ignored.</Description>
+        <IDL_Type>boolean</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+</SALCommand>
+<SALCommand>
+    <Subsystem>Test</Subsystem>
+    <Version>1.0.0</Version>
+    <Author>rowen</Author>
+    <EFDB_Topic>Test_command_wait</EFDB_Topic>
+    <Alias>wait</Alias>
+    <Device></Device>
+    <Property></Property>
+    <Action></Action>
+    <Value></Value>
+    <Explanation>Wait for the specified period.</Explanation>
+    <item>
+        <EFDB_Name>ack</EFDB_Name>
+        <Description>Final ack code, typically a SAL__CMD constant</Description>
+        <IDL_Type>int</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>duration</EFDB_Name>
+        <Description>Desired command duration</Description>
+        <IDL_Type>double</IDL_Type>
+        <Units>seconds</Units>
+        <Count>1</Count>
     </item>
 </SALCommand>
 
