@@ -2,14 +2,15 @@
 <?xml-stylesheet type="text/xsl" href="http://lsst-sal.tuc.noao.edu/schema/SALEventSet.xsl"?>
 <SALEventSet xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:noNamespaceSchemaLocation="http://lsst-sal.tuc.noao.edu/schema/SALEventSet.xsd">
-<Enumeration>summaryState_DisabledState,summaryState_EnabledState,summaryState_FaultState,summaryState_OfflineState,summaryState_StandbyState</Enumeration>
-<Enumeration>m3ExitPort_Nasmyth1,m3ExitPort_Nasmyth2,m3ExitPort_Port3</Enumeration>
-<Enumeration>detailedStateMirrorCovers_DisabledState,detailedStateMirrorCovers_EnabledState,detailedStateMirrorCovers_FaultState,detailedStateMirrorCovers_OfflineState,detailedStateMirrorCovers_StandbyState,detailedStateMirrorCovers_MirrorCoversClosedState,detailedStateMirrorCovers_MirrorCoversOpenedState,detailedStateMirrorCovers_InMotionState</Enumeration>
-<Enumeration>detailedStateM3_DisabledState,detailedStateM3_EnabledState,detailedStateM3_FaultState,detailedStateM3_OfflineState,detailedStateM3_StandbyState,detailedStateM3_Nasmyth1State,detailedStateM3_Nasmyth2State,detailedStateM3_Port3State,detailedStateM3_InMotionState</Enumeration>
-<Enumeration>detailedStateCellVents_DisabledState,detailedStateCellVents_EnabledState,detailedStateCellVents_FaultState,detailedStateCellVents_OfflineState,detailedStateCellVents_StandbyState,detailedStateCellVents_CellVentsOpenedState,detailedStateCellVents_CellVentsClosedState,detailedStateCellVents_InMotionState</Enumeration>
-<Enumeration>detailedStateAirValve_DisabledState,detailedStateAirValve_EnabledState,detailedStateAirValve_FaultState,detailedStateAirValve_OfflineState,detailedStateAirValve_StandbyState,detailedStateAirValve_ValveOpenedState,detailedStateAirValve_ValveClosedState</Enumeration>
+<Enumeration>SummaryState_DisabledState,SummaryState_EnabledState,SummaryState_FaultState,SummaryState_OfflineState,SummaryState_StandbyState</Enumeration>
+<Enumeration>M3ExitPort_Nasmyth1,M3ExitPort_Nasmyth2,M3ExitPort_Port3</Enumeration>
+<Enumeration>MirrorCoverState_DisabledState,MirrorCoverState_EnabledState,MirrorCoverState_FaultState,MirrorCoverState_OfflineState,MirrorCoverState_StandbyState,MirrorCoverState_MirrorCoversClosedState,MirrorCoverState_MirrorCoversOpenedState,MirrorCoverState_InMotionState</Enumeration>
+<Enumeration>M3State_DisabledState,M3State_EnabledState,M3State_FaultState,M3State_OfflineState,M3State_StandbyState,M3State_Nasmyth1State,M3State_Nasmyth2State,M3State_Port3State,M3State_InMotionState</Enumeration>
+<Enumeration>CellVentState_DisabledState,CellVentState_EnabledState,CellVentState_FaultState,CellVentState_OfflineState,CellVentState_StandbyState,CellVentState_CellVentsOpenedState,CellVentState_CellVentsClosedState,CellVentState_InMotionState</Enumeration>
+<Enumeration>AirValveState_DisabledState,AirValveState_EnabledState,AirValveState_FaultState,AirValveState_OfflineState,AirValveState_StandbyState,AirValveState_ValveOpenedState,AirValveState_ValveClosedState</Enumeration>
 <Enumeration>coverPosition_Opened,coverPosition_Closed,coverPosition_PartiallyOpened</Enumeration>
 <Enumeration>ventsPosition_Opened,ventsPosition_Closed,ventsPosition_PartiallyOpened</Enumeration>
+<Enumeration>DetailedState_DisabledState,DetailedState_EnabledState,DetailedState_FaultState,DetailedState_OfflineState,DetailedState_StandbyState</Enumeration>
 
 <SALEvent>
     <Subsystem>AtPneumatics</Subsystem>
@@ -67,7 +68,7 @@
             <item>
                 <EFDB_Name>summaryState</EFDB_Name>
                 <Description>An enumeration indicating the subsystem summary state. See the SummaryStateValue enumeration defined in the Typedefs package.</Description>
-                <!-- Enumeration: summaryState -->
+                <!-- Enumeration: SummaryState -->
                 <IDL_Type>long</IDL_Type>
                 <Units></Units>
                 <Count>1</Count>
@@ -222,13 +223,13 @@
     <Subsystem>AtPneumatics</Subsystem>
     <Version>3.7.1</Version>
     <Author></Author>
-    <EFDB_Topic>AtPneumatics_logevent_detailedStateM1Cover</EFDB_Topic>
-    <Alias>detailedStateM1Cover</Alias>
+    <EFDB_Topic>AtPneumatics_logevent_m1CoverState</EFDB_Topic>
+    <Alias>m1CoverState</Alias>
     <Explanation>http://sal.lsst.org</Explanation>
             <item>
-                <EFDB_Name>detailedState</EFDB_Name>
+                <EFDB_Name>state</EFDB_Name>
                 <Description></Description>
-                <!-- Enumeration: detailedStateMirrorCovers -->
+                <!-- Enumeration: MirrorCoverState -->
                 <IDL_Type>long</IDL_Type>
                 <Units></Units>
                 <Count>1</Count>
@@ -238,13 +239,13 @@
     <Subsystem>AtPneumatics</Subsystem>
     <Version>3.7.1</Version>
     <Author></Author>
-    <EFDB_Topic>AtPneumatics_logevent_detailedStateM1</EFDB_Topic>
-    <Alias>detailedStateM1</Alias>
+    <EFDB_Topic>AtPneumatics_logevent_m1State</EFDB_Topic>
+    <Alias>m1State</Alias>
     <Explanation>http://sal.lsst.org</Explanation>
             <item>
-                <EFDB_Name>detailedState</EFDB_Name>
+                <EFDB_Name>state</EFDB_Name>
                 <Description></Description>
-                <!-- Enumeration: detailedStateAirValve -->
+                <!-- Enumeration: AirValveState -->
                 <IDL_Type>long</IDL_Type>
                 <Units></Units>
                 <Count>1</Count>
@@ -254,13 +255,13 @@
     <Subsystem>AtPneumatics</Subsystem>
     <Version>3.7.1</Version>
     <Author></Author>
-    <EFDB_Topic>AtPneumatics_logevent_detailedStateM2</EFDB_Topic>
-    <Alias>detailedStateM2</Alias>
+    <EFDB_Topic>AtPneumatics_logevent_m2State</EFDB_Topic>
+    <Alias>m2State</Alias>
     <Explanation>http://sal.lsst.org</Explanation>
             <item>
-                <EFDB_Name>detailedState</EFDB_Name>
+                <EFDB_Name>state</EFDB_Name>
                 <Description></Description>
-                <!-- Enumeration: detailedStateAirValve -->
+                <!-- Enumeration: AirValveState -->
                 <IDL_Type>long</IDL_Type>
                 <Units></Units>
                 <Count>1</Count>
@@ -270,13 +271,13 @@
     <Subsystem>AtPneumatics</Subsystem>
     <Version>3.7.1</Version>
     <Author></Author>
-    <EFDB_Topic>AtPneumatics_logevent_detailedStateInstrument</EFDB_Topic>
-    <Alias>detailedStateInstrument</Alias>
+    <EFDB_Topic>AtPneumatics_logevent_instrumentState</EFDB_Topic>
+    <Alias>instrumentState</Alias>
     <Explanation>http://sal.lsst.org</Explanation>
             <item>
-                <EFDB_Name>detailedState</EFDB_Name>
+                <EFDB_Name>state</EFDB_Name>
                 <Description></Description>
-                <!-- Enumeration: detailedStateAirValve -->
+                <!-- Enumeration: AirValveState -->
                 <IDL_Type>long</IDL_Type>
                 <Units></Units>
                 <Count>1</Count>
@@ -286,13 +287,13 @@
     <Subsystem>AtPneumatics</Subsystem>
     <Version>3.7.1</Version>
     <Author></Author>
-    <EFDB_Topic>AtPneumatics_logevent_detailedStateCellVents</EFDB_Topic>
-    <Alias>detailedStateCellVents</Alias>
+    <EFDB_Topic>AtPneumatics_logevent_cellVentsState</EFDB_Topic>
+    <Alias>cellVentsState</Alias>
     <Explanation>http://sal.lsst.org</Explanation>
             <item>
-                <EFDB_Name>detailedState</EFDB_Name>
+                <EFDB_Name>state</EFDB_Name>
                 <Description></Description>
-                <!-- Enumeration: detailedStateCellVents -->
+                <!-- Enumeration: CellVentState -->
                 <IDL_Type>long</IDL_Type>
                 <Units></Units>
                 <Count>1</Count>
@@ -302,13 +303,13 @@
     <Subsystem>AtPneumatics</Subsystem>
     <Version>3.7.1</Version>
     <Author></Author>
-    <EFDB_Topic>AtPneumatics_logevent_detailedStateMainValve</EFDB_Topic>
-    <Alias>detailedStateMainValve</Alias>
+    <EFDB_Topic>AtPneumatics_logevent_mainValveState</EFDB_Topic>
+    <Alias>mainValveState</Alias>
     <Explanation>http://sal.lsst.org</Explanation>
             <item>
-                <EFDB_Name>detailedState</EFDB_Name>
+                <EFDB_Name>state</EFDB_Name>
                 <Description></Description>
-                <!-- Enumeration: detailedStateAirValve -->
+                <!-- Enumeration: AirValveState -->
                 <IDL_Type>long</IDL_Type>
                 <Units></Units>
                 <Count>1</Count>
@@ -341,6 +342,22 @@
                 <EFDB_Name>position</EFDB_Name>
                 <Description></Description>
                 <!-- Enumeration: ventsPosition -->
+                <IDL_Type>long</IDL_Type>
+                <Units></Units>
+                <Count>1</Count>
+            </item>
+</SALEvent>
+<SALEvent>
+    <Subsystem>AtPneumatics</Subsystem>
+    <Version>3.7.1</Version>
+    <Author></Author>
+    <EFDB_Topic>AtPneumatics_logevent_detailedState</EFDB_Topic>
+    <Alias>detailedState</Alias>
+    <Explanation>http://sal.lsst.org</Explanation>
+            <item>
+                <EFDB_Name>detailedState</EFDB_Name>
+                <Description>An enumeration indicating the subsystem summary state. See the SummaryStateValue enumeration defined in the Typedefs package.</Description>
+                <!-- Enumeration: DetailedState -->
                 <IDL_Type>long</IDL_Type>
                 <Units></Units>
                 <Count>1</Count>
