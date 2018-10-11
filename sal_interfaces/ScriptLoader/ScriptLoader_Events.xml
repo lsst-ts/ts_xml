@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="http://lsst-sal.tuc.noao.edu/schema/SALEventSet.xsl"?>
+<SALEventSet xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="http://lsst-sal.tuc.noao.edu/schema/SALEventSet.xsd">
+<Enumeration>SummaryState_DisabledState,SummaryState_EnabledState,SummaryState_FaultState,SummaryState_OfflineState,SummaryState_StandbyState</Enumeration>
+
+<!--Standard CSC events-->
+<SALEvent>
+    <Subsystem>ScriptLoader</Subsystem>
+    <Version>1.0.0</Version>
+    <Author></Author>
+    <EFDB_Topic>ScriptLoader_logevent_appliedSettingsMatchStart</EFDB_Topic>
+    <Alias>appliedSettingsMatchStart</Alias>
+    <Explanation>http://sal.lsst.org</Explanation>
+    <item>
+        <EFDB_Name>appliedSettingsMatchStartIsTrue</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>boolean</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+</SALEvent>
+<SALEvent>
+    <Subsystem>ScriptLoader</Subsystem>
+    <Version>1.0.0</Version>
+    <Author></Author>
+    <EFDB_Topic>ScriptLoader_logevent_errorCode</EFDB_Topic>
+    <Alias>errorCode</Alias>
+    <Explanation>http://sal.lsst.org</Explanation>
+    <item>
+        <EFDB_Name>errorCode</EFDB_Name>
+        <Description>The error code being published.</Description>
+        <IDL_Type>long</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+</SALEvent>
+<SALEvent>
+    <Subsystem>ScriptLoader</Subsystem>
+    <Version>1.0.0</Version>
+    <Author></Author>
+    <EFDB_Topic>ScriptLoader_logevent_heartbeat</EFDB_Topic>
+    <Alias>heartbeat</Alias>
+    <Explanation>http://sal.lsst.org</Explanation>
+    <item>
+        <EFDB_Name>heartbeat</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>boolean</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+</SALEvent>
+<SALEvent>
+    <Subsystem>ScriptLoader</Subsystem>
+    <Version>1.0.0</Version>
+    <Author></Author>
+    <EFDB_Topic>ScriptLoader_logevent_settingVersions</EFDB_Topic>
+    <Alias>settingVersions</Alias>
+    <Explanation>http://sal.lsst.org</Explanation>
+    <item>
+        <EFDB_Name>recommendedSettingsVersion</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>string</IDL_Type>
+        <IDL_Size>256</IDL_Size>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>recommendedSettingsLabels</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>string</IDL_Type>
+        <IDL_Size>256</IDL_Size>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+</SALEvent>
+<SALEvent>
+    <Subsystem>ScriptLoader</Subsystem>
+    <Version>1.0.0</Version>
+    <Author></Author>
+    <EFDB_Topic>ScriptLoader_logevent_summaryState</EFDB_Topic>
+    <Alias>summaryState</Alias>
+    <Explanation>http://sal.lsst.org</Explanation>
+    <item>
+        <EFDB_Name>summaryState</EFDB_Name>
+        <Description>An enumeration indicating the subsystem summary state. See the SummaryStateValue enumeration defined in the Typedefs package.</Description>
+        <IDL_Type>long</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+</SALEvent>
+<!--End standard CSC events-->
+
+<SALEvent>
+    <Subsystem>ScriptLoader</Subsystem>
+    <Version>1.0.0</Version>
+    <Author></Author>
+    <EFDB_Topic>ScriptLoader_logevent_available_scripts</EFDB_Topic>
+    <Alias>available_scripts</Alias>
+    <Explanation>List of available scripts.</Explanation>
+    <item>
+        <EFDB_Name>standard</EFDB_Name>
+        <Description>Colon-separated paths to standard scripts, relative to the standard root directory.</Description>
+        <IDL_Type>string</IDL_Type>
+        <IDL_Size>1</IDL_Size>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>external</EFDB_Name>
+        <Description>Colon-separated paths to external scripts, relative to the external root directory.</Description>
+        <IDL_Type>string</IDL_Type>
+        <IDL_Size>1</IDL_Size>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+</SALEvent>
+<SALEvent>
+    <Subsystem>ScriptLoader</Subsystem>
+    <Version>1.0.0</Version>
+    <Author></Author>
+    <EFDB_Topic>ScriptLoader_logevent_script_info</EFDB_Topic>
+    <Alias>script_info</Alias>
+    <Explanation>Information about a loaded script.</Explanation>
+    <item>
+        <EFDB_Name>cmd_id</EFDB_Name>
+        <Description>ID of command which loaded this script.</Description>
+        <IDL_Type>int</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>index</EFDB_Name>
+        <Description>Index of Script SAL component.</Description>
+        <IDL_Type>int</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>is_standard</EFDB_Name>
+        <Description>True if this is a standard script, False if an external script.</Description>
+        <IDL_Type>boolean</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>path</EFDB_Name>
+        <Description>Path of script, relative to standard or external root directory.</Description>
+        <IDL_Type>string</IDL_Type>
+        <IDL_Size>1</IDL_Size>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>timestamp_start</EFDB_Name>
+        <Description>Time at which the script process started.</Description>
+        <IDL_Type>double</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>timestamp_end</EFDB_Name>
+        <Description>Time at which the script process ended, or 0 if still running.</Description>
+        <IDL_Type>double</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>process_state</EFDB_Name>
+        <Description>State of script process.</Description>
+        <IDL_Type>byte</IDL_Type>
+        <Enumeration>LOADED,COMPLETE,FAILED,TERMINATED</Enumeration>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+</SALEvent>
+
+</SALEventSet>
