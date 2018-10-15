@@ -10,7 +10,6 @@
 <Enumeration>DisperserPosition_Disperser0,DisperserPosition_Disperser1,DisperserPosition_Disperser2,DisperserPosition_Disperser3,DisperserPosition_Inbetween</Enumeration>
 <Enumeration>FwState_FwStationaryState,FwState_FwMovingState</Enumeration>
 <Enumeration>GwState_GwStationaryState,GwState_GwMovingState</Enumeration>
-<Enumeration>CommandValue_Disable,CommandValue_Enable,CommandValue_Exit,CommandValue_GoToStandby,CommandValue_OnElementCommand,CommandValue_OnElementEvent,CommandValue_OnHeartbeat,CommandValue_OnIncomingMessagingError,CommandValue_OnInterrupt,CommandValue_Start</Enumeration>
 
 <SALEvent>
     <Subsystem>AtSpectrograph</Subsystem>
@@ -96,7 +95,6 @@
                 <IDL_Type>long</IDL_Type>
                 <Units></Units>
                 <Count>1</Count>
-                <Enumeration>summaryState_SummaryState_DisabledState,summaryState_SummaryState_EnabledState,summaryState_SummaryState_FaultState,summaryState_SummaryState_OfflineState,summaryState_SummaryState_StandbyState</Enumeration>
             </item>
 </SALEvent>
 <SALEvent>
@@ -113,7 +111,6 @@
                 <IDL_Type>long</IDL_Type>
                 <Units></Units>
                 <Count>1</Count>
-                <Enumeration>detailedState_DetailedState_DisabledState,detailedState_DetailedState_EnabledState,detailedState_DetailedState_FaultState,detailedState_DetailedState_OfflineState,detailedState_DetailedState_StandbyState</Enumeration>
             </item>
 </SALEvent>
 <SALEvent>
@@ -168,24 +165,22 @@
     <EFDB_Topic>AtSpectrograph_logevent_rejectedCommand</EFDB_Topic>
     <Alias>rejectedCommand</Alias>
     <Explanation>http://sal.lsst.org</Explanation>
-            <item>
-                <EFDB_Name>commandValue</EFDB_Name>
-                <Description></Description>
-                <!-- Enumeration: CommandValue -->
-                <IDL_Type>long</IDL_Type>
-                <Units></Units>
-                <Count>1</Count>
-                <Enumeration>commandValue_CommandValue_Disable,commandValue_CommandValue_Enable,commandValue_CommandValue_Exit,commandValue_CommandValue_GoToStandby,commandValue_CommandValue_OnElementCommand,commandValue_CommandValue_OnElementEvent,commandValue_CommandValue_OnHeartbeat,commandValue_CommandValue_OnIncomingMessagingError,commandValue_CommandValue_OnInterrupt,commandValue_CommandValue_Start</Enumeration>
-            </item>
-            <item>
-                <EFDB_Name>detailedState</EFDB_Name>
-                <Description></Description>
-                <!-- Enumeration: DetailedState -->
-                <IDL_Type>long</IDL_Type>
-                <Units></Units>
-                <Count>1</Count>
-                <Enumeration>detailedState_DetailedState_DisabledState,detailedState_DetailedState_EnabledState,detailedState_DetailedState_FaultState,detailedState_DetailedState_OfflineState,detailedState_DetailedState_StandbyState</Enumeration>
-            </item>
+    <item>
+        <EFDB_Name>command</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>string</IDL_Type>
+        <IDL_Size>1</IDL_Size>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>state</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>string</IDL_Type>
+        <IDL_Size>1</IDL_Size>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
     <item>
         <EFDB_Name>timestamp</EFDB_Name>
         <Description></Description>
@@ -238,7 +233,6 @@
                 <IDL_Type>long</IDL_Type>
                 <Units></Units>
                 <Count>1</Count>
-                <Enumeration>reportedFilterPosition_FilterPosition_Filter0,reportedFilterPosition_FilterPosition_Filter1,reportedFilterPosition_FilterPosition_Filter2,reportedFilterPosition_FilterPosition_Filter3,reportedFilterPosition_FilterPosition_Inbetween</Enumeration>
             </item>
 </SALEvent>
 <SALEvent>
@@ -255,7 +249,6 @@
                 <IDL_Type>long</IDL_Type>
                 <Units></Units>
                 <Count>1</Count>
-                <Enumeration>reportedDisperserPosition_DisperserPosition_Disperser0,reportedDisperserPosition_DisperserPosition_Disperser1,reportedDisperserPosition_DisperserPosition_Disperser2,reportedDisperserPosition_DisperserPosition_Disperser3,reportedDisperserPosition_DisperserPosition_Inbetween</Enumeration>
             </item>
 </SALEvent>
 <SALEvent>
@@ -302,7 +295,6 @@
                 <IDL_Type>long</IDL_Type>
                 <Units></Units>
                 <Count>1</Count>
-                <Enumeration>fwState_FwState_FwStationaryState,fwState_FwState_FwMovingState</Enumeration>
             </item>
 </SALEvent>
 <SALEvent>
@@ -319,6 +311,5 @@
                 <IDL_Type>long</IDL_Type>
                 <Units></Units>
                 <Count>1</Count>
-                <Enumeration>gwState_GwState_GwStationaryState,gwState_GwState_GwMovingState</Enumeration>
             </item>
 </SALEvent></SALEventSet>
