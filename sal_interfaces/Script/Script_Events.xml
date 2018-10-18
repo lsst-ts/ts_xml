@@ -2,7 +2,6 @@
 <?xml-stylesheet type="text/xsl" href="http://lsst-sal.tuc.noao.edu/schema/SALEventSet.xsl"?>
 <SALEventSet xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:noNamespaceSchemaLocation="http://lsst-sal.tuc.noao.edu/schema/SALEventSet.xsd">
-<Enumeration>SummaryState_DisabledState,SummaryState_EnabledState,SummaryState_FaultState,SummaryState_OfflineState,SummaryState_StandbyState</Enumeration>
 
 <!--Subset of standard CSC events (Script is not a CSC, but use what might be useful)-->
 <SALEvent>
@@ -50,21 +49,6 @@
     <Subsystem>Script</Subsystem>
     <Version>1.0.0</Version>
     <Author></Author>
-    <EFDB_Topic>Script_logevent_estimated_duration</EFDB_Topic>
-    <Alias>estimated_duration</Alias>
-    <Description>Estimated duration.</Description>
-    <item>
-        <EFDB_Name>duration</EFDB_Name>
-        <Description>Estimated time it will take to run this script, given its current configuration.</Description>
-        <IDL_Type>float</IDL_Type>
-        <Units>seconds</Units>
-        <Count>1</Count>
-    </item>
-</SALEvent>
-<SALEvent>
-    <Subsystem>Script</Subsystem>
-    <Version>1.0.0</Version>
-    <Author></Author>
     <EFDB_Topic>Script_logevent_log_message</EFDB_Topic>
     <Alias>log_message</Alias>
     <Description></Description>
@@ -88,15 +72,101 @@
     <Subsystem>Script</Subsystem>
     <Version>1.0.0</Version>
     <Author></Author>
-    <EFDB_Topic>Script_logevent_name</EFDB_Topic>
-    <Alias>name</Alias>
-    <Description>Script name</Description>
+    <EFDB_Topic>Script_logevent_description</EFDB_Topic>
+    <Alias>description</Alias>
+    <Description>Script, class name, description and a list of the remotes it uses -- basically metadata that does not depend on configuration.</Description>
     <item>
-        <EFDB_Name>name</EFDB_Name>
-        <Description></Description>
+        <EFDB_Name>classname</EFDB_Name>
+        <Description>Name of script class.</Description>
         <IDL_Type>string</IDL_Type>
         <IDL_Size>1</IDL_Size>
         <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>description</EFDB_Name>
+        <Description>Brief description of the script.</Description>
+        <IDL_Type>string</IDL_Type>
+        <IDL_Size>1</IDL_Size>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>remotes</EFDB_Name>
+        <Description>Remote SAL components used by the script as a comma-separated list. Each name is appended with :<index> if the component is indexed (and possibly with :0 if not indexed).</Description>
+        <IDL_Type>string</IDL_Type>
+        <IDL_Size>1</IDL_Size>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+</SALEvent>
+<SALEvent>
+    <Subsystem>Script</Subsystem>
+    <Version>1.0.0</Version>
+    <Author></Author>
+    <EFDB_Topic>Script_logevent_metadata</EFDB_Topic>
+    <Alias>metadata</Alias>
+    <Description>Script metadata that may depend on configuration.</Description>
+    <item>
+        <EFDB_Name>coordinate_system</EFDB_Name>
+        <Description>Coordinate system for position. CSYS_OBSERVED is refracted apparent topocentric, e.g. similar to CSYS_MOUNT but the telescope model is applied and the azimuth is wrapped. If CSYS_NONE then position should be ignored.</Description>
+        <IDL_Type>short</IDL_Type>
+        <Enumeration>CSYS_NONE,CSYS_ICRS,CSYS_OBSERVED,CSYS_MOUNT</Enumeration>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>position</EFDB_Name>
+        <Description>Longitude, latitude axes of position in coordinate_system</Description>
+        <IDL_Type>double</IDL_Type>
+        <Units>degrees</Units>
+        <Count>2</Count>
+    </item>
+    <item>
+        <EFDB_Name>rotation_system</EFDB_Name>
+        <Description>Rotation system for camera_angle:
+        * ROT_NONE: The camera rotator is not used; ignore camera_angle.
+        * ROT_SKY: Position angle of focal plane +Y, measured from N through E.
+          At 0 degrees, +Y is along N and +X is along E/W depending on handedness.
+          At 90 degrees, +Y is along E and +X is along S/N depending on handedness.
+        * ROT_HORIZON: Position angle of focal plane +Y, measured from +Alt through +Az.
+          At 0 degrees, +Y is along +Alt and +X is along +/-Az, depending on handedness.
+          At 90 degrees, +Y is along +Az and +X is along -/+Alt, depending on handedness.
+        * ROT_MOUNT: The position sent to the instrument rotator; the details depend on the rotator.
+        </Description>
+        <IDL_Type>short</IDL_Type>
+        <Enumeration>ROT_NONE,ROT_SKY,ROT_HORIZON,ROT_MOUNT</Enumeration>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>camera_angle</EFDB_Name>
+        <Description>Camera angle in rotation_system</Description>
+        <IDL_Type>double</IDL_Type>
+        <Units>degrees</Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>filters</EFDB_Name>
+        <Description>Comma-separated names of acceptable filters, or blank for any filter.</Description>
+        <IDL_Type>string</IDL_Type>
+        <IDL_Size>1</IDL_Size>
+        <Units>seconds</Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>dome</EFDB_Name>
+        <Description>Desired dome state.</Description>
+        <IDL_Type>short</IDL_Type>
+        <Enumeration>DOME_CLOSED,DOME_OPEN,DOME_EITHER</Enumeration>
+        <Units>seconds</Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>duration</EFDB_Name>
+        <Description>Estimated duration of the script, excluding slewing to the initial position required by the script.</Description>
+        <IDL_Type>double</IDL_Type>
+        <Units>seconds</Units>
         <Count>1</Count>
     </item>
 </SALEvent>
