@@ -64,6 +64,7 @@ class UMLParser:
 #        with open("%s\\%s_Events.xml" % (self.outputDirectory, self.subsystem), "w") as eventFile:  
             eventFile.write(header)
             eventFile.write("\n")
+            print("enumerations: %s " % enumerations)
             for item in enumerations:
                 values = self.GetEnumerationValues("", item)
                 if len(values) > 0:

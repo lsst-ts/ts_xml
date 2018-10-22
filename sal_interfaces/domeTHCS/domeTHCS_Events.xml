@@ -2,83 +2,162 @@
 <?xml-stylesheet type="text/xsl" href="http://lsst-sal.tuc.noao.edu/schema/SALEventSet.xsl"?>
 <SALEventSet xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:noNamespaceSchemaLocation="http://lsst-sal.tuc.noao.edu/schema/SALEventSet.xsd">
-
-
-
-<SALEvent>
- <Subsystem>domeTHCS</Subsystem>
- <Version>3.5.0</Version>
- <Author>ebragante</Author>
- <EFDB_Topic>domeTHCS_logevent_StateChanged</EFDB_Topic>
- <Alias>StateChanged</Alias>
- <Explanation>Subsystem state changed</Explanation>
- <item>
-	<EFDB_Name>newState</EFDB_Name>
-	<Description>Reached state</Description>
-	<IDL_Type>int</IDL_Type>
-	<Units>NA</Units>
-	<Count>1</Count>
- </item>
-</SALEvent>
+<Enumeration>SummaryState_DisabledState,SummaryState_EnabledState,SummaryState_FaultState,SummaryState_OfflineState,SummaryState_StandbyState</Enumeration>
+<Enumeration>DetailedState_DisabledState,DetailedState_EnabledState,DetailedState_FaultState,DetailedState_OfflineState,DetailedState_StandbyState</Enumeration>
 
 <SALEvent>
- <Subsystem>domeTHCS</Subsystem>
- <Version>3.5.0</Version>
- <Author>ebragante</Author>
- <EFDB_Topic>domeTHCS_logevent_MovementEnabled</EFDB_Topic>
- <Alias>MovementEnabled</Alias>
- <Explanation></Explanation>
-</SALEvent>
-
-<SALEvent>
- <Subsystem>domeTHCS</Subsystem>
- <Version>3.5.0</Version>
- <Author>ebragante</Author>
- <EFDB_Topic>domeTHCS_logevent_MovementPrevented</EFDB_Topic>
- <Alias>MovementPrevented</Alias>
- <Explanation></Explanation>
- <item>
-	<EFDB_Name>causeId</EFDB_Name>
-	<Description>Unique identifier of the cause</Description>
-	<IDL_Type>string</IDL_Type>
-    <IDL_Size>1</IDL_Size>
-	<Units>NA</Units>
-	<Count>1</Count>
- </item>
+    <Subsystem>domeTHCS</Subsystem>
+    <Version>3.7.1</Version>
+    <Author></Author>
+    <EFDB_Topic>domeTHCS_logevent_appliedSettingsMatchStart</EFDB_Topic>
+    <Alias>appliedSettingsMatchStart</Alias>
+    <Explanation>http://sal.lsst.org</Explanation>
+    <item>
+        <EFDB_Name>appliedSettingsMatchStartIsTrue</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>boolean</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
 </SALEvent>
 <SALEvent>
- <Subsystem>domeTHCS</Subsystem>
- <Version>3.5.0</Version>
- <Author>ebragante</Author>
- <EFDB_Topic>domeTHCS_logevent_EchoResponse</EFDB_Topic>
- <Alias>EchoResponse</Alias>
- <Explanation></Explanation>
- <item>
-	<EFDB_Name>response</EFDB_Name>
-	<Description></Description>
-	<IDL_Type>string</IDL_Type>
-    <IDL_Size>1</IDL_Size>
-	<Units>NA</Units>
-	<Count>1</Count>
- </item>
+    <Subsystem>domeTHCS</Subsystem>
+    <Version>3.7.1</Version>
+    <Author></Author>
+    <EFDB_Topic>domeTHCS_logevent_errorCode</EFDB_Topic>
+    <Alias>errorCode</Alias>
+    <Explanation>http://sal.lsst.org</Explanation>
+    <item>
+        <EFDB_Name>errorCode</EFDB_Name>
+        <Description>The error code being published.</Description>
+        <IDL_Type>long</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
 </SALEvent>
-
 <SALEvent>
- <Subsystem>domeTHCS</Subsystem>
- <Version>3.5.0</Version>
- <Author>ebragante</Author>
- <EFDB_Topic>domeTHCS_logevent_SubsystemError</EFDB_Topic>
- <Alias>SubsystemError</Alias>
- <Explanation></Explanation>
- <item>
-	<EFDB_Name>errorCode</EFDB_Name>
-	<Description></Description>
-	<IDL_Type>string</IDL_Type>
-    <IDL_Size>1</IDL_Size>
-	<Units>NA</Units>
-	<Count>1</Count>
- </item>
+    <Subsystem>domeTHCS</Subsystem>
+    <Version>3.7.1</Version>
+    <Author></Author>
+    <EFDB_Topic>domeTHCS_logevent_settingVersions</EFDB_Topic>
+    <Alias>settingVersions</Alias>
+    <Explanation>http://sal.lsst.org</Explanation>
+    <item>
+        <EFDB_Name>recommendedSettingVersion</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>string</IDL_Type>
+        <IDL_Size>1</IDL_Size>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
 </SALEvent>
-</SALEventSet>
-
-
+<SALEvent>
+    <Subsystem>domeTHCS</Subsystem>
+    <Version>3.7.1</Version>
+    <Author></Author>
+    <EFDB_Topic>domeTHCS_logevent_summaryState</EFDB_Topic>
+    <Alias>summaryState</Alias>
+    <Explanation>http://sal.lsst.org</Explanation>
+            <item>
+                <EFDB_Name>summaryState</EFDB_Name>
+                <Description>An enumeration indicating the subsystem summary state. See the SummaryStateValue enumeration defined in the Typedefs package.</Description>
+                <!-- Enumeration: SummaryState -->
+                <IDL_Type>long</IDL_Type>
+                <Units></Units>
+                <Count>1</Count>
+            </item>
+</SALEvent>
+<SALEvent>
+    <Subsystem>domeTHCS</Subsystem>
+    <Version>3.7.1</Version>
+    <Author></Author>
+    <EFDB_Topic>domeTHCS_logevent_detailedState</EFDB_Topic>
+    <Alias>detailedState</Alias>
+    <Explanation>http://sal.lsst.org</Explanation>
+            <item>
+                <EFDB_Name>detailedState</EFDB_Name>
+                <Description></Description>
+                <!-- Enumeration: DetailedState -->
+                <IDL_Type>long</IDL_Type>
+                <Units></Units>
+                <Count>1</Count>
+            </item>
+</SALEvent>
+<SALEvent>
+    <Subsystem>domeTHCS</Subsystem>
+    <Version>3.7.1</Version>
+    <Author></Author>
+    <EFDB_Topic>domeTHCS_logevent_stateChanged</EFDB_Topic>
+    <Alias>stateChanged</Alias>
+    <Explanation>http://sal.lsst.org</Explanation>
+    <item>
+        <EFDB_Name>newState</EFDB_Name>
+        <Description>Reached state</Description>
+        <IDL_Type>int</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+</SALEvent>
+<SALEvent>
+    <Subsystem>domeTHCS</Subsystem>
+    <Version>3.7.1</Version>
+    <Author></Author>
+    <EFDB_Topic>domeTHCS_logevent_movementEnabled</EFDB_Topic>
+    <Alias>movementEnabled</Alias>
+    <Explanation>http://sal.lsst.org</Explanation>
+    <item>
+        <EFDB_Name>status</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>boolean</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+</SALEvent>
+<SALEvent>
+    <Subsystem>domeTHCS</Subsystem>
+    <Version>3.7.1</Version>
+    <Author></Author>
+    <EFDB_Topic>domeTHCS_logevent_movementPrevented</EFDB_Topic>
+    <Alias>movementPrevented</Alias>
+    <Explanation>http://sal.lsst.org</Explanation>
+    <item>
+        <EFDB_Name>causeId</EFDB_Name>
+        <Description>Unique identifier of the cause</Description>
+        <IDL_Type>string</IDL_Type>
+        <IDL_Size>1</IDL_Size>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+</SALEvent>
+<SALEvent>
+    <Subsystem>domeTHCS</Subsystem>
+    <Version>3.7.1</Version>
+    <Author></Author>
+    <EFDB_Topic>domeTHCS_logevent_echoResponse</EFDB_Topic>
+    <Alias>echoResponse</Alias>
+    <Explanation>http://sal.lsst.org</Explanation>
+    <item>
+        <EFDB_Name>response</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>string</IDL_Type>
+        <IDL_Size>1</IDL_Size>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+</SALEvent>
+<SALEvent>
+    <Subsystem>domeTHCS</Subsystem>
+    <Version>3.7.1</Version>
+    <Author></Author>
+    <EFDB_Topic>domeTHCS_logevent_subsystemError</EFDB_Topic>
+    <Alias>subsystemError</Alias>
+    <Explanation>http://sal.lsst.org</Explanation>
+    <item>
+        <EFDB_Name>errorCode</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>string</IDL_Type>
+        <IDL_Size>1</IDL_Size>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+</SALEvent></SALEventSet>

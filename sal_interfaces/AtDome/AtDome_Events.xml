@@ -2,10 +2,11 @@
 <?xml-stylesheet type="text/xsl" href="http://lsst-sal.tuc.noao.edu/schema/SALEventSet.xsl"?>
 <SALEventSet xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:noNamespaceSchemaLocation="http://lsst-sal.tuc.noao.edu/schema/SALEventSet.xsd">
-<Enumeration>summaryState_disabledState,summaryState_enabledState,summaryState_faultState,summaryState_offlineState,summaryState_standbyState</Enumeration>
-<Enumeration>detailedStateAzimuth_disabledState,detailedStateAzimuth_enabledState,detailedStateAzimuth_faultState,detailedStateAzimuth_offlineState,detailedStateAzimuth_standbyState,detailedStateAzimuth_notInMotionState,detailedStateAzimuth_inMotionState,detailedStateAzimuth_movingCWState,detailedStateAzimuth_movingCCWState,detailedStateAzimuth_stoppingMotionState</Enumeration>
-<Enumeration>movingDirection_ClockWise,movingDirection_CounterClockWise,movingDirection_NotMoving</Enumeration>
-<Enumeration>detailedStateShutterDoor_disabledState,detailedStateShutterDoor_enabledState,detailedStateShutterDoor_faultState,detailedStateShutterDoor_offlineState,detailedStateShutterDoor_standbyState,detailedStateShutterDoor_closedState,detailedStateShutterDoor_openedState,detailedStateShutterDoor_partiallyOpenedState,detailedStateShutterDoor_notInMotionState,detailedStateShutterDoor_openingState,detailedStateShutterDoor_closingState</Enumeration>
+<Enumeration>SummaryState_DisabledState,SummaryState_EnabledState,SummaryState_FaultState,SummaryState_OfflineState,SummaryState_StandbyState</Enumeration>
+<Enumeration>AzimuthState_NotInMotionState,AzimuthState_InMotionState,AzimuthState_MovingCWState,AzimuthState_MovingCCWState,AzimuthState_StoppingMotionState</Enumeration>
+<Enumeration>MovingDirection_ClockWise,MovingDirection_CounterClockWise,MovingDirection_NotMoving</Enumeration>
+<Enumeration>ShutterDoorState_ClosedState,ShutterDoorState_OpenedState,ShutterDoorState_PartiallyOpenedState,ShutterDoorState_NotInMotionState,ShutterDoorState_OpeningState,ShutterDoorState_ClosingState</Enumeration>
+<Enumeration>DetailedState_DisabledState,DetailedState_EnabledState,DetailedState_FaultState,DetailedState_OfflineState,DetailedState_StandbyState</Enumeration>
 
 <SALEvent>
     <Subsystem>AtDome</Subsystem>
@@ -33,6 +34,22 @@
         <EFDB_Name>errorCode</EFDB_Name>
         <Description>The error code being published.</Description>
         <IDL_Type>long</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>errorReport</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>string</IDL_Type>
+        <IDL_Size>1</IDL_Size>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>traceback</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>string</IDL_Type>
+        <IDL_Size>1</IDL_Size>
         <Units></Units>
         <Count>1</Count>
     </item>
@@ -71,28 +88,26 @@
             <item>
                 <EFDB_Name>summaryState</EFDB_Name>
                 <Description>An enumeration indicating the subsystem summary state. See the SummaryStateValue enumeration defined in the Typedefs package.</Description>
-                <!-- Enumeration: summaryState -->
+                <!-- Enumeration: SummaryState -->
                 <IDL_Type>long</IDL_Type>
                 <Units></Units>
                 <Count>1</Count>
-                <Enumeration>summaryState_summaryState_disabledState,summaryState_summaryState_enabledState,summaryState_summaryState_faultState,summaryState_summaryState_offlineState,summaryState_summaryState_standbyState</Enumeration>
             </item>
 </SALEvent>
 <SALEvent>
     <Subsystem>AtDome</Subsystem>
     <Version>3.7.1</Version>
     <Author></Author>
-    <EFDB_Topic>AtDome_logevent_detailedStateAzimuth</EFDB_Topic>
-    <Alias>detailedStateAzimuth</Alias>
+    <EFDB_Topic>AtDome_logevent_azimuthState</EFDB_Topic>
+    <Alias>azimuthState</Alias>
     <Explanation>http://sal.lsst.org</Explanation>
             <item>
-                <EFDB_Name>detailedState</EFDB_Name>
+                <EFDB_Name>state</EFDB_Name>
                 <Description></Description>
-                <!-- Enumeration: detailedStateAzimuth -->
+                <!-- Enumeration: AzimuthState -->
                 <IDL_Type>long</IDL_Type>
                 <Units></Units>
                 <Count>1</Count>
-                <Enumeration>detailedState_detailedStateAzimuth_disabledState,detailedState_detailedStateAzimuth_enabledState,detailedState_detailedStateAzimuth_faultState,detailedState_detailedStateAzimuth_offlineState,detailedState_detailedStateAzimuth_standbyState,detailedState_detailedStateAzimuth_notInMotionState,detailedState_detailedStateAzimuth_inMotionState,detailedState_detailedStateAzimuth_movingCWState,detailedState_detailedStateAzimuth_movingCCWState,detailedState_detailedStateAzimuth_stoppingMotionState</Enumeration>
             </item>
 </SALEvent>
 <SALEvent>
@@ -148,21 +163,21 @@
     <Alias>rejectedCommand</Alias>
     <Explanation>http://sal.lsst.org</Explanation>
     <item>
-        <EFDB_Name>commandValue</EFDB_Name>
+        <EFDB_Name>command</EFDB_Name>
         <Description></Description>
-        <IDL_Type>unsigned short</IDL_Type>
+        <IDL_Type>string</IDL_Type>
+        <IDL_Size>1</IDL_Size>
         <Units></Units>
         <Count>1</Count>
     </item>
-            <item>
-                <EFDB_Name>detailedState</EFDB_Name>
-                <Description></Description>
-                <!-- Enumeration: detailedStateAzimuth -->
-                <IDL_Type>long</IDL_Type>
-                <Units></Units>
-                <Count>1</Count>
-                <Enumeration>detailedState_detailedStateAzimuth_disabledState,detailedState_detailedStateAzimuth_enabledState,detailedState_detailedStateAzimuth_faultState,detailedState_detailedStateAzimuth_offlineState,detailedState_detailedStateAzimuth_standbyState,detailedState_detailedStateAzimuth_notInMotionState,detailedState_detailedStateAzimuth_inMotionState,detailedState_detailedStateAzimuth_movingCWState,detailedState_detailedStateAzimuth_movingCCWState,detailedState_detailedStateAzimuth_stoppingMotionState</Enumeration>
-            </item>
+    <item>
+        <EFDB_Name>state</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>string</IDL_Type>
+        <IDL_Size>1</IDL_Size>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
     <item>
         <EFDB_Name>timestamp</EFDB_Name>
         <Description></Description>
@@ -220,8 +235,8 @@
     <Subsystem>AtDome</Subsystem>
     <Version>3.7.1</Version>
     <Author></Author>
-    <EFDB_Topic>AtDome_logevent_SCBLink</EFDB_Topic>
-    <Alias>SCBLink</Alias>
+    <EFDB_Topic>AtDome_logevent_scbLink</EFDB_Topic>
+    <Alias>scbLink</Alias>
     <Explanation>http://sal.lsst.org</Explanation>
     <item>
         <EFDB_Name>active</EFDB_Name>
@@ -271,19 +286,18 @@
             <item>
                 <EFDB_Name>motionStatus</EFDB_Name>
                 <Description></Description>
-                <!-- Enumeration: movingDirection -->
+                <!-- Enumeration: MovingDirection -->
                 <IDL_Type>long</IDL_Type>
                 <Units></Units>
                 <Count>1</Count>
-                <Enumeration>motionStatus_movingDirection_ClockWise,motionStatus_movingDirection_CounterClockWise,motionStatus_movingDirection_NotMoving</Enumeration>
             </item>
 </SALEvent>
 <SALEvent>
     <Subsystem>AtDome</Subsystem>
     <Version>3.7.1</Version>
     <Author></Author>
-    <EFDB_Topic>AtDome_logevent_settingsApplied</EFDB_Topic>
-    <Alias>settingsApplied</Alias>
+    <EFDB_Topic>AtDome_logevent_settingsAppliedDomeController</EFDB_Topic>
+    <Alias>settingsAppliedDomeController</Alias>
     <Explanation>http://sal.lsst.org</Explanation>
     <item>
         <EFDB_Name>rainSensorActivated</EFDB_Name>
@@ -301,7 +315,7 @@
     </item>
     <item>
         <EFDB_Name>tolerance</EFDB_Name>
-        <Description>minimum allowed move, in degrees, where 0.0<=value<3.</Description>
+        <Description>minimum allowed move, in degrees, where 0.0 less or equal than value and value is less than 3.</Description>
         <IDL_Type>float</IDL_Type>
         <Units></Units>
         <Count>1</Count>
@@ -322,14 +336,14 @@
     </item>
     <item>
         <EFDB_Name>watchdogTimer</EFDB_Name>
-        <Description>sets the time interval between loss of communication and the dome closing, where 0 < t < 1000. In practice, to allow for host computer reboots, etc., we have found a time of 600 seconds (10 minutes) to be an acceptable value. If bad weather occurs in the watchdog timer 600 seconds interval, the dome will close if the rain-snow sensor is enabled.</Description>
+        <Description>sets the time interval between loss of communication and the dome closing, where 0 less than t and t is less than 1000. In practice, to allow for host computer reboots, etc., we have found a time of 600 seconds (10 minutes) to be an acceptable value. If bad weather occurs in the watchdog timer 600 seconds interval, the dome will close if the rain-snow sensor is enabled.</Description>
         <IDL_Type>float</IDL_Type>
         <Units></Units>
         <Count>1</Count>
     </item>
     <item>
         <EFDB_Name>reversalDelay</EFDB_Name>
-        <Description>The t RD (Reversal Delay) sets the delay between reversing motor directions for the shutter doors, where 0 < t <= 6) seconds. For a 240 VAC system this parameter can be set to 0.0.</Description>
+        <Description>The t RD (Reversal Delay) sets the delay between reversing motor directions for the shutter doors, where 0 less than t and t is less or equal than 6 seconds. For a 240 VAC system this parameter can be set to 0.0.</Description>
         <IDL_Type>float</IDL_Type>
         <Units></Units>
         <Count>1</Count>
@@ -349,33 +363,91 @@ The AF (Automation oFf) command disables the automatic shutdown of the observato
     <Subsystem>AtDome</Subsystem>
     <Version>3.7.1</Version>
     <Author></Author>
-    <EFDB_Topic>AtDome_logevent_detailedStateDropoutDoor</EFDB_Topic>
-    <Alias>detailedStateDropoutDoor</Alias>
+    <EFDB_Topic>AtDome_logevent_dropoutDoorState</EFDB_Topic>
+    <Alias>dropoutDoorState</Alias>
     <Explanation>http://sal.lsst.org</Explanation>
             <item>
-                <EFDB_Name>detailedState</EFDB_Name>
+                <EFDB_Name>state</EFDB_Name>
                 <Description></Description>
-                <!-- Enumeration: detailedStateShutterDoor -->
+                <!-- Enumeration: ShutterDoorState -->
                 <IDL_Type>long</IDL_Type>
                 <Units></Units>
                 <Count>1</Count>
-                <Enumeration>detailedState_detailedStateShutterDoor_disabledState,detailedState_detailedStateShutterDoor_enabledState,detailedState_detailedStateShutterDoor_faultState,detailedState_detailedStateShutterDoor_offlineState,detailedState_detailedStateShutterDoor_standbyState,detailedState_detailedStateShutterDoor_closedState,detailedState_detailedStateShutterDoor_openedState,detailedState_detailedStateShutterDoor_partiallyOpenedState,detailedState_detailedStateShutterDoor_notInMotionState,detailedState_detailedStateShutterDoor_openingState,detailedState_detailedStateShutterDoor_closingState</Enumeration>
             </item>
 </SALEvent>
 <SALEvent>
     <Subsystem>AtDome</Subsystem>
     <Version>3.7.1</Version>
     <Author></Author>
-    <EFDB_Topic>AtDome_logevent_detailedStateMainDoor</EFDB_Topic>
-    <Alias>detailedStateMainDoor</Alias>
+    <EFDB_Topic>AtDome_logevent_mainDoorState</EFDB_Topic>
+    <Alias>mainDoorState</Alias>
     <Explanation>http://sal.lsst.org</Explanation>
             <item>
-                <EFDB_Name>detailedState</EFDB_Name>
+                <EFDB_Name>state</EFDB_Name>
                 <Description></Description>
-                <!-- Enumeration: detailedStateShutterDoor -->
+                <!-- Enumeration: ShutterDoorState -->
                 <IDL_Type>long</IDL_Type>
                 <Units></Units>
                 <Count>1</Count>
-                <Enumeration>detailedState_detailedStateShutterDoor_disabledState,detailedState_detailedStateShutterDoor_enabledState,detailedState_detailedStateShutterDoor_faultState,detailedState_detailedStateShutterDoor_offlineState,detailedState_detailedStateShutterDoor_standbyState,detailedState_detailedStateShutterDoor_closedState,detailedState_detailedStateShutterDoor_openedState,detailedState_detailedStateShutterDoor_partiallyOpenedState,detailedState_detailedStateShutterDoor_notInMotionState,detailedState_detailedStateShutterDoor_openingState,detailedState_detailedStateShutterDoor_closingState</Enumeration>
+            </item>
+</SALEvent>
+<SALEvent>
+    <Subsystem>AtDome</Subsystem>
+    <Version>3.7.1</Version>
+    <Author></Author>
+    <EFDB_Topic>AtDome_logevent_settingsAppliedDomeTcp</EFDB_Topic>
+    <Alias>settingsAppliedDomeTcp</Alias>
+    <Explanation>http://sal.lsst.org</Explanation>
+    <item>
+        <EFDB_Name>ip</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>string</IDL_Type>
+        <IDL_Size>15</IDL_Size>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>portRange</EFDB_Name>
+        <Description>port range, it will try to connect to any of the ports in this range</Description>
+        <IDL_Type>long</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>readTimeout</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>float</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>writeTimeout</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>float</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>connectionTimeout</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>float</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+</SALEvent>
+<SALEvent>
+    <Subsystem>AtDome</Subsystem>
+    <Version>3.7.1</Version>
+    <Author></Author>
+    <EFDB_Topic>AtDome_logevent_detailedState</EFDB_Topic>
+    <Alias>detailedState</Alias>
+    <Explanation>http://sal.lsst.org</Explanation>
+            <item>
+                <EFDB_Name>detailedState</EFDB_Name>
+                <Description>An enumeration indicating the subsystem summary state. See the SummaryStateValue enumeration defined in the Typedefs package.</Description>
+                <!-- Enumeration: DetailedState -->
+                <IDL_Type>long</IDL_Type>
+                <Units></Units>
+                <Count>1</Count>
             </item>
 </SALEvent></SALEventSet>
