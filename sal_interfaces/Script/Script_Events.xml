@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="http://lsst-sal.tuc.noao.edu/schema/SALEventSet.xsl"?>
+<SALEventSet xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="http://lsst-sal.tuc.noao.edu/schema/SALEventSet.xsd">
+
+<!--Subset of standard CSC events (Script is not a CSC, but use what might be useful)-->
+<SALEvent>
+    <Subsystem>Script</Subsystem>
+    <Version>1.0.0</Version>
+    <Author></Author>
+    <EFDB_Topic>Script_logevent_heartbeat</EFDB_Topic>
+    <Alias>heartbeat</Alias>
+    <Explanation>http://sal.lsst.org</Explanation>
+    <item>
+        <EFDB_Name>heartbeat</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>boolean</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+</SALEvent>
+<!--End subset of standard CSC events-->
+
+<SALEvent>
+    <Subsystem>Script</Subsystem>
+    <Version>1.0.0</Version>
+    <Author></Author>
+    <EFDB_Topic>Script_logevent_checkpoints</EFDB_Topic>
+    <Alias>checkpoints</Alias>
+    <Description>Pause and stop checkpoints.</Description>
+    <item>
+        <EFDB_Name>pause</EFDB_Name>
+        <Description>Checkpoint(s) at which to pause, as a regular expression. No checkpoints if blank; all checkpoints if ".*".</Description>
+        <IDL_Type>string</IDL_Type>
+        <IDL_Size>1</IDL_Size>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>stop</EFDB_Name>
+        <Description>Checkpoint(s) at which to stop, as a regular expression. No checkpoints if blank; all checkpoints if ".*".</Description>
+        <IDL_Type>string</IDL_Type>
+        <IDL_Size>1</IDL_Size>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+</SALEvent>
+<SALEvent>
+    <Subsystem>Script</Subsystem>
+    <Version>1.0.0</Version>
+    <Author></Author>
+    <EFDB_Topic>Script_logevent_logMessage</EFDB_Topic>
+    <Alias>logMessage</Alias>
+    <Description></Description>
+    <item>
+        <EFDB_Name>level</EFDB_Name>
+        <Description>Message level, a Python logging level: error=40, warning=30, info=20, debug=10.</Description>
+        <IDL_Type>int</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>message</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>string</IDL_Type>
+        <IDL_Size>1</IDL_Size>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+</SALEvent>
+<SALEvent>
+    <Subsystem>Script</Subsystem>
+    <Version>1.0.0</Version>
+    <Author></Author>
+    <EFDB_Topic>Script_logevent_description</EFDB_Topic>
+    <Alias>description</Alias>
+    <Description>Script, class name, description and a list of the remotes it uses -- basically metadata that does not depend on configuration.</Description>
+    <item>
+        <EFDB_Name>classname</EFDB_Name>
+        <Description>Name of script class.</Description>
+        <IDL_Type>string</IDL_Type>
+        <IDL_Size>1</IDL_Size>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>description</EFDB_Name>
+        <Description>Brief description of the script.</Description>
+        <IDL_Type>string</IDL_Type>
+        <IDL_Size>1</IDL_Size>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>remotes</EFDB_Name>
+        <Description>Remote SAL components used by the script as a comma-separated list. Each name is appended with :<index> if the component is indexed (and possibly with :0 if not indexed).</Description>
+        <IDL_Type>string</IDL_Type>
+        <IDL_Size>1</IDL_Size>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+</SALEvent>
+<SALEvent>
+    <Subsystem>Script</Subsystem>
+    <Version>1.0.0</Version>
+    <Author></Author>
+    <EFDB_Topic>Script_logevent_metadata</EFDB_Topic>
+    <Alias>metadata</Alias>
+    <Description>Script metadata that may depend on configuration.</Description>
+    <item>
+        <EFDB_Name>coordinateSystem</EFDB_Name>
+        <Description>Coordinate system for position. CSys_Observed is refracted apparent topocentric, e.g. similar to CSys_Mount but the telescope model is applied and the azimuth is wrapped. If CSys_None then position should be ignored.</Description>
+        <IDL_Type>short</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+        <Enumeration>CSys_None, CSys_ICRS, CSys_Observed, CSys_Mount</Enumeration>
+    </item>
+    <item>
+        <EFDB_Name>position</EFDB_Name>
+        <Description>Longitude, latitude axes of position in coordinateSystem</Description>
+        <IDL_Type>double</IDL_Type>
+        <Units>degrees</Units>
+        <Count>2</Count>
+    </item>
+    <item>
+        <EFDB_Name>rotationSystem</EFDB_Name>
+        <Description>Rotation system for cameraAngle:
+        * Rot_NONE: The camera rotator is not used; ignore cameraAngle.
+        * Rot_SKY: Position angle of focal plane +Y, measured from N through E.
+          At 0 degrees, +Y is along N and +X is along E/W depending on handedness.
+          At 90 degrees, +Y is along E and +X is along S/N depending on handedness.
+        * Rot_HORIZON: Position angle of focal plane +Y, measured from +Alt through +Az.
+          At 0 degrees, +Y is along +Alt and +X is along +/-Az, depending on handedness.
+          At 90 degrees, +Y is along +Az and +X is along -/+Alt, depending on handedness.
+        * Rot_MOUNT: The position sent to the instrument rotator; the details depend on the rotator.
+        </Description>
+        <IDL_Type>short</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+        <Enumeration>Rot_None,Rot_Sky,Rot_Horizon,Rot_Mount</Enumeration>
+    </item>
+    <item>
+        <EFDB_Name>cameraAngle</EFDB_Name>
+        <Description>Camera angle in rotationSystem</Description>
+        <IDL_Type>double</IDL_Type>
+        <Units>degrees</Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>filters</EFDB_Name>
+        <Description>Comma-separated names of acceptable filters, or blank for any filter.</Description>
+        <IDL_Type>string</IDL_Type>
+        <IDL_Size>1</IDL_Size>
+        <Units>seconds</Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>dome</EFDB_Name>
+        <Description>Desired dome state.</Description>
+        <IDL_Type>short</IDL_Type>
+        <Units>seconds</Units>
+        <Count>1</Count>
+        <Enumeration>Dome_Closed,Dome_Open,Dome_Either</Enumeration>
+    </item>
+    <item>
+        <EFDB_Name>duration</EFDB_Name>
+        <Description>Estimated duration of the script, excluding slewing to the initial position required by the script.</Description>
+        <IDL_Type>double</IDL_Type>
+        <Units>seconds</Units>
+        <Count>1</Count>
+    </item>
+</SALEvent>
+<SALEvent>
+    <Subsystem>Script</Subsystem>
+    <Version>1.0.0</Version>
+    <Author></Author>
+    <EFDB_Topic>Script_logevent_state</EFDB_Topic>
+    <Alias>state</Alias>
+    <Description>Script state.</Description>
+    <item>
+        <EFDB_Name>state</EFDB_Name>
+        <Description>An enumeration indicating the script state.</Description>
+        <IDL_Type>byte</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+        <Enumeration>Unconfigured,Configured,Running,Paused,Ending,Stopping,Failing,Done,Stopped,Failed</Enumeration>
+    </item>
+    <item>
+        <EFDB_Name>reason</EFDB_Name>
+        <Description>More information about the state change; typically a reason for failure if the state is FAILED.</Description>
+        <IDL_Type>string</IDL_Type>
+        <IDL_Size>1</IDL_Size>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>lastCheckpoint</EFDB_Name>
+        <Description>Name of most recently seen checkpoint.</Description>
+        <IDL_Type>string</IDL_Type>
+        <IDL_Size>1</IDL_Size>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+</SALEvent>
+
+</SALEventSet>
