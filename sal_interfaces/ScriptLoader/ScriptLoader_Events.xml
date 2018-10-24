@@ -2,8 +2,6 @@
 <?xml-stylesheet type="text/xsl" href="http://lsst-sal.tuc.noao.edu/schema/SALEventSet.xsl"?>
 <SALEventSet xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:noNamespaceSchemaLocation="http://lsst-sal.tuc.noao.edu/schema/SALEventSet.xsd">
-<Enumeration>SummaryState_DisabledState,SummaryState_EnabledState,SummaryState_FaultState,SummaryState_OfflineState,SummaryState_StandbyState</Enumeration>
-
 <!--Standard CSC events-->
 <SALEvent>
     <Subsystem>ScriptLoader</Subsystem>
@@ -95,8 +93,8 @@
     <Subsystem>ScriptLoader</Subsystem>
     <Version>1.0.0</Version>
     <Author></Author>
-    <EFDB_Topic>ScriptLoader_logevent_available_scripts</EFDB_Topic>
-    <Alias>available_scripts</Alias>
+    <EFDB_Topic>ScriptLoader_logevent_availableScripts</EFDB_Topic>
+    <Alias>availableScripts</Alias>
     <Explanation>List of available scripts.</Explanation>
     <item>
         <EFDB_Name>standard</EFDB_Name>
@@ -119,25 +117,25 @@
     <Subsystem>ScriptLoader</Subsystem>
     <Version>1.0.0</Version>
     <Author></Author>
-    <EFDB_Topic>ScriptLoader_logevent_script_info</EFDB_Topic>
-    <Alias>script_info</Alias>
+    <EFDB_Topic>ScriptLoader_logevent_scriptInfo</EFDB_Topic>
+    <Alias>scriptInfo</Alias>
     <Explanation>Information about a loaded script.</Explanation>
     <item>
-        <EFDB_Name>cmd_id</EFDB_Name>
+        <EFDB_Name>cmdId</EFDB_Name>
         <Description>ID of command which loaded this script.</Description>
         <IDL_Type>int</IDL_Type>
         <Units></Units>
         <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>index</EFDB_Name>
+        <EFDB_Name>ind</EFDB_Name>
         <Description>Index of Script SAL component.</Description>
         <IDL_Type>int</IDL_Type>
         <Units></Units>
         <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>is_standard</EFDB_Name>
+        <EFDB_Name>isStandard</EFDB_Name>
         <Description>True if this is a standard script, False if an external script.</Description>
         <IDL_Type>boolean</IDL_Type>
         <Units></Units>
@@ -166,12 +164,12 @@
         <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>process_state</EFDB_Name>
+        <EFDB_Name>processState</EFDB_Name>
         <Description>State of script process.</Description>
         <IDL_Type>byte</IDL_Type>
-        <Enumeration>LOADED,COMPLETE,FAILED,TERMINATED</Enumeration>
         <Units></Units>
         <Count>1</Count>
+        <Enumeration>Loaded,Complete,Failed,Terminated</Enumeration>
     </item>
 </SALEvent>
 
