@@ -2,14 +2,14 @@
 <?xml-stylesheet type="text/xsl" href="http://lsst-sal.tuc.noao.edu/schema/SALEventSet.xsl"?>
 <SALEventSet xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:noNamespaceSchemaLocation="http://lsst-sal.tuc.noao.edu/schema/SALEventSet.xsd">
-<Enumeration>summaryState_DisabledState,summaryState_EnabledState,summaryState_FaultState,summaryState_OfflineState,summaryState_StandbyState</Enumeration>
-<Enumeration>detailedState_DisabledState,detailedState_EnabledState,detailedState_FaultState,detailedState_OfflineState,detailedState_StandbyState</Enumeration>
-<Enumeration>filter_slot0,filter_slot1,filter_slot2,filter_slot3</Enumeration>
-<Enumeration>disperser_slot0,disperser_slot1,disperser_slot2,disperser_slot3</Enumeration>
-<Enumeration>filterPosition_filter0,filterPosition_filter1,filterPosition_filter2,filterPosition_filter3,filterPosition_inbetween</Enumeration>
-<Enumeration>disperserPosition_disperser0,disperserPosition_disperser1,disperserPosition_disperser2,disperserPosition_disperser3,disperserPosition_inbetween</Enumeration>
-<Enumeration>fwState_fwStationaryState,fwState_fwMovingState</Enumeration>
-<Enumeration>gwState_gwStationaryState,gwState_gwMovingState</Enumeration>
+<Enumeration>SummaryState_DisabledState,SummaryState_EnabledState,SummaryState_FaultState,SummaryState_OfflineState,SummaryState_StandbyState</Enumeration>
+<Enumeration>DetailedState_DisabledState,DetailedState_EnabledState,DetailedState_FaultState,DetailedState_OfflineState,DetailedState_StandbyState</Enumeration>
+<Enumeration>Filter_Slot0,Filter_Slot1,Filter_Slot2,Filter_Slot3</Enumeration>
+<Enumeration>Disperser_Slot0,Disperser_Slot1,Disperser_Slot2,Disperser_Slot3</Enumeration>
+<Enumeration>FilterPosition_Filter0,FilterPosition_Filter1,FilterPosition_Filter2,FilterPosition_Filter3,FilterPosition_Inbetween</Enumeration>
+<Enumeration>DisperserPosition_Disperser0,DisperserPosition_Disperser1,DisperserPosition_Disperser2,DisperserPosition_Disperser3,DisperserPosition_Inbetween</Enumeration>
+<Enumeration>FwState_FwStationaryState,FwState_FwMovingState</Enumeration>
+<Enumeration>GwState_GwStationaryState,GwState_GwMovingState</Enumeration>
 
 <SALEvent>
     <Subsystem>AtSpectrograph</Subsystem>
@@ -37,6 +37,22 @@
         <EFDB_Name>errorCode</EFDB_Name>
         <Description>The error code being published.</Description>
         <IDL_Type>long</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>errorReport</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>string</IDL_Type>
+        <IDL_Size>1</IDL_Size>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>traceback</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>string</IDL_Type>
+        <IDL_Size>1</IDL_Size>
         <Units></Units>
         <Count>1</Count>
     </item>
@@ -75,11 +91,10 @@
             <item>
                 <EFDB_Name>summaryState</EFDB_Name>
                 <Description>An enumeration indicating the subsystem summary state. See the SummaryStateValue enumeration defined in the Typedefs package.</Description>
-                <!-- Enumeration: summaryState -->
+                <!-- Enumeration: SummaryState -->
                 <IDL_Type>long</IDL_Type>
                 <Units></Units>
                 <Count>1</Count>
-                <Enumeration>summaryState_summaryState_DisabledState,summaryState_summaryState_EnabledState,summaryState_summaryState_FaultState,summaryState_summaryState_OfflineState,summaryState_summaryState_StandbyState</Enumeration>
             </item>
 </SALEvent>
 <SALEvent>
@@ -92,11 +107,10 @@
             <item>
                 <EFDB_Name>detailedState</EFDB_Name>
                 <Description></Description>
-                <!-- Enumeration: detailedState -->
+                <!-- Enumeration: DetailedState -->
                 <IDL_Type>long</IDL_Type>
                 <Units></Units>
                 <Count>1</Count>
-                <Enumeration>detailedState_detailedState_DisabledState,detailedState_detailedState_EnabledState,detailedState_detailedState_FaultState,detailedState_detailedState_OfflineState,detailedState_detailedState_StandbyState</Enumeration>
             </item>
 </SALEvent>
 <SALEvent>
@@ -152,16 +166,18 @@
     <Alias>rejectedCommand</Alias>
     <Explanation>http://sal.lsst.org</Explanation>
     <item>
-        <EFDB_Name>commandValue</EFDB_Name>
+        <EFDB_Name>command</EFDB_Name>
         <Description></Description>
-        <IDL_Type>unsigned short</IDL_Type>
+        <IDL_Type>string</IDL_Type>
+        <IDL_Size>1</IDL_Size>
         <Units></Units>
         <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>detailedState</EFDB_Name>
+        <EFDB_Name>state</EFDB_Name>
         <Description></Description>
-        <IDL_Type>unsigned short</IDL_Type>
+        <IDL_Type>string</IDL_Type>
+        <IDL_Size>1</IDL_Size>
         <Units></Units>
         <Count>1</Count>
     </item>
@@ -213,11 +229,10 @@
             <item>
                 <EFDB_Name>reportedFilterPosition</EFDB_Name>
                 <Description></Description>
-                <!-- Enumeration: filterPosition -->
+                <!-- Enumeration: FilterPosition -->
                 <IDL_Type>long</IDL_Type>
                 <Units></Units>
                 <Count>1</Count>
-                <Enumeration>reportedFilterPosition_filterPosition_filter0,reportedFilterPosition_filterPosition_filter1,reportedFilterPosition_filterPosition_filter2,reportedFilterPosition_filterPosition_filter3,reportedFilterPosition_filterPosition_inbetween</Enumeration>
             </item>
 </SALEvent>
 <SALEvent>
@@ -230,11 +245,10 @@
             <item>
                 <EFDB_Name>reportedDisperserPosition</EFDB_Name>
                 <Description></Description>
-                <!-- Enumeration: disperserPosition -->
+                <!-- Enumeration: DisperserPosition -->
                 <IDL_Type>long</IDL_Type>
                 <Units></Units>
                 <Count>1</Count>
-                <Enumeration>reportedDisperserPosition_disperserPosition_disperser0,reportedDisperserPosition_disperserPosition_disperser1,reportedDisperserPosition_disperserPosition_disperser2,reportedDisperserPosition_disperserPosition_disperser3,reportedDisperserPosition_disperserPosition_inbetween</Enumeration>
             </item>
 </SALEvent>
 <SALEvent>
@@ -277,11 +291,10 @@
             <item>
                 <EFDB_Name>fwState</EFDB_Name>
                 <Description></Description>
-                <!-- Enumeration: fwState -->
+                <!-- Enumeration: FwState -->
                 <IDL_Type>long</IDL_Type>
                 <Units></Units>
                 <Count>1</Count>
-                <Enumeration>fwState_fwState_fwStationaryState,fwState_fwState_fwMovingState</Enumeration>
             </item>
 </SALEvent>
 <SALEvent>
@@ -294,10 +307,9 @@
             <item>
                 <EFDB_Name>gwState</EFDB_Name>
                 <Description></Description>
-                <!-- Enumeration: gwState -->
+                <!-- Enumeration: GwState -->
                 <IDL_Type>long</IDL_Type>
                 <Units></Units>
                 <Count>1</Count>
-                <Enumeration>gwState_gwState_gwStationaryState,gwState_gwState_gwMovingState</Enumeration>
             </item>
 </SALEvent></SALEventSet>

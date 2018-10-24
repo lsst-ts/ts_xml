@@ -2,11 +2,12 @@
 <?xml-stylesheet type="text/xsl" href="http://lsst-sal.tuc.noao.edu/schema/SALEventSet.xsl"?>
 <SALEventSet xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:noNamespaceSchemaLocation="http://lsst-sal.tuc.noao.edu/schema/SALEventSet.xsd">
-<Enumeration>summaryState_DisabledState,summaryState_EnabledState,summaryState_FaultState,summaryState_OfflineState,summaryState_StandbyState</Enumeration>
-<Enumeration>detailedStateAtMount_DisabledState,detailedStateAtMount_EnabledState,detailedStateAtMount_FaultState,detailedStateAtMount_OfflineState,detailedStateAtMount_StandbyState,detailedStateAtMount_TrackingDisabledState,detailedStateAtMount_TrackingEnabledState,detailedStateAtMount_StoppingState</Enumeration>
-<Enumeration>m3ExitPort_Nasmyth1,m3ExitPort_Nasmyth2,m3ExitPort_Port3</Enumeration>
-<Enumeration>detailedStateM3_DisabledState,detailedStateM3_EnabledState,detailedStateM3_FaultState,detailedStateM3_OfflineState,detailedStateM3_StandbyState,detailedStateM3_Nasmyth1State,detailedStateM3_Nasmyth2State,detailedStateM3_Port3State,detailedStateM3_InMotionState,detailedStateM3_UnknownPositionState</Enumeration>
+<Enumeration>SummaryState_DisabledState,SummaryState_EnabledState,SummaryState_FaultState,SummaryState_OfflineState,SummaryState_StandbyState</Enumeration>
+<Enumeration>AtMountState_DisabledState,AtMountState_EnabledState,AtMountState_FaultState,AtMountState_OfflineState,AtMountState_StandbyState,AtMountState_TrackingDisabledState,AtMountState_TrackingEnabledState,AtMountState_StoppingState</Enumeration>
+<Enumeration>M3ExitPort_Nasmyth1,M3ExitPort_Nasmyth2,M3ExitPort_Port3</Enumeration>
+<Enumeration>M3State_DisabledState,M3State_EnabledState,M3State_FaultState,M3State_OfflineState,M3State_StandbyState,M3State_Nasmyth1State,M3State_Nasmyth2State,M3State_Port3State,M3State_InMotionState,M3State_UnknownPositionState</Enumeration>
 <Enumeration>azimuthDirection_ClockWise,azimuthDirection_CounterClockWise</Enumeration>
+<Enumeration>DetailedState_DisabledState,DetailedState_EnabledState,DetailedState_FaultState,DetailedState_OfflineState,DetailedState_StandbyState</Enumeration>
 
 <SALEvent>
     <Subsystem>AtMCS</Subsystem>
@@ -64,7 +65,7 @@
             <item>
                 <EFDB_Name>summaryState</EFDB_Name>
                 <Description>An enumeration indicating the subsystem summary state. See the SummaryStateValue enumeration defined in the Typedefs package.</Description>
-                <!-- Enumeration: summaryState -->
+                <!-- Enumeration: SummaryState -->
                 <IDL_Type>long</IDL_Type>
                 <Units></Units>
                 <Count>1</Count>
@@ -74,13 +75,13 @@
     <Subsystem>AtMCS</Subsystem>
     <Version>3.7.1</Version>
     <Author></Author>
-    <EFDB_Topic>AtMCS_logevent_detailedStateM3</EFDB_Topic>
-    <Alias>detailedStateM3</Alias>
+    <EFDB_Topic>AtMCS_logevent_m3State</EFDB_Topic>
+    <Alias>m3State</Alias>
     <Explanation>http://sal.lsst.org</Explanation>
             <item>
-                <EFDB_Name>detailedState</EFDB_Name>
+                <EFDB_Name>state</EFDB_Name>
                 <Description></Description>
-                <!-- Enumeration: detailedStateM3 -->
+                <!-- Enumeration: M3State -->
                 <IDL_Type>long</IDL_Type>
                 <Units></Units>
                 <Count>1</Count>
@@ -480,13 +481,13 @@
     <Subsystem>AtMCS</Subsystem>
     <Version>3.7.1</Version>
     <Author></Author>
-    <EFDB_Topic>AtMCS_logevent_detailedStateMount</EFDB_Topic>
-    <Alias>detailedStateMount</Alias>
+    <EFDB_Topic>AtMCS_logevent_atMountState</EFDB_Topic>
+    <Alias>atMountState</Alias>
     <Explanation>http://sal.lsst.org</Explanation>
             <item>
-                <EFDB_Name>detailedState</EFDB_Name>
+                <EFDB_Name>state</EFDB_Name>
                 <Description></Description>
-                <!-- Enumeration: detailedStateAtMount -->
+                <!-- Enumeration: AtMountState -->
                 <IDL_Type>long</IDL_Type>
                 <Units></Units>
                 <Count>1</Count>
@@ -576,7 +577,23 @@
             <item>
                 <EFDB_Name>selected</EFDB_Name>
                 <Description></Description>
-                <!-- Enumeration: m3ExitPort -->
+                <!-- Enumeration: M3ExitPort -->
+                <IDL_Type>long</IDL_Type>
+                <Units></Units>
+                <Count>1</Count>
+            </item>
+</SALEvent>
+<SALEvent>
+    <Subsystem>AtMCS</Subsystem>
+    <Version>3.7.1</Version>
+    <Author></Author>
+    <EFDB_Topic>AtMCS_logevent_detailedState</EFDB_Topic>
+    <Alias>detailedState</Alias>
+    <Explanation>http://sal.lsst.org</Explanation>
+            <item>
+                <EFDB_Name>detailedState</EFDB_Name>
+                <Description></Description>
+                <!-- Enumeration: DetailedState -->
                 <IDL_Type>long</IDL_Type>
                 <Units></Units>
                 <Count>1</Count>
