@@ -3,37 +3,18 @@
 <SALCommandSet xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:noNamespaceSchemaLocation="http://lsst-sal.tuc.noao.edu/schema/SALCommandSet.xsd">
 <SALCommand>
-    <Subsystem>AtThermoelectricCooler</Subsystem>
+    <Subsystem>ATWhiteLight</Subsystem>
     <Version>3.7.1</Version>
     <Author></Author>
-    <EFDB_Topic>AtThermoelectricCooler_command_setTemperature</EFDB_Topic>
-    <Alias>setTemperature</Alias>
+    <EFDB_Topic>ATWhiteLight_command_powerLightOn</EFDB_Topic>
+    <Alias>powerLightOn</Alias>
     <Device></Device>
     <Property></Property>
     <Action></Action>
     <Value></Value>
     <Explanation>http://sal.lsst.org</Explanation>
     <item>
-        <EFDB_Name>temperature</EFDB_Name>
-        <Description></Description>
-        <IDL_Type>float</IDL_Type>
-        <Units></Units>
-        <Count>1</Count>
-    </item>
-</SALCommand>
-<SALCommand>
-    <Subsystem>AtThermoelectricCooler</Subsystem>
-    <Version>3.7.1</Version>
-    <Author></Author>
-    <EFDB_Topic>AtThermoelectricCooler_command_powerChillerOn</EFDB_Topic>
-    <Alias>powerChillerOn</Alias>
-    <Device></Device>
-    <Property></Property>
-    <Action></Action>
-    <Value></Value>
-    <Explanation>http://sal.lsst.org</Explanation>
-    <item>
-        <EFDB_Name>powerOn</EFDB_Name>
+        <EFDB_Name>power</EFDB_Name>
         <Description></Description>
         <IDL_Type>boolean</IDL_Type>
         <Units></Units>
@@ -41,19 +22,38 @@
     </item>
 </SALCommand>
 <SALCommand>
-    <Subsystem>AtThermoelectricCooler</Subsystem>
+    <Subsystem>ATWhiteLight</Subsystem>
     <Version>3.7.1</Version>
     <Author></Author>
-    <EFDB_Topic>AtThermoelectricCooler_command_powerChillerOff</EFDB_Topic>
-    <Alias>powerChillerOff</Alias>
+    <EFDB_Topic>ATWhiteLight_command_powerLightOff</EFDB_Topic>
+    <Alias>powerLightOff</Alias>
     <Device></Device>
     <Property></Property>
     <Action></Action>
     <Value></Value>
     <Explanation>http://sal.lsst.org</Explanation>
     <item>
-        <EFDB_Name>powerOffTime</EFDB_Name>
+        <EFDB_Name>power</EFDB_Name>
         <Description></Description>
+        <IDL_Type>boolean</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+</SALCommand>
+<SALCommand>
+    <Subsystem>ATWhiteLight</Subsystem>
+    <Version>3.7.1</Version>
+    <Author></Author>
+    <EFDB_Topic>ATWhiteLight_command_setLightPower</EFDB_Topic>
+    <Alias>setLightPower</Alias>
+    <Device></Device>
+    <Property></Property>
+    <Action></Action>
+    <Value></Value>
+    <Explanation>http://sal.lsst.org</Explanation>
+    <item>
+        <EFDB_Name>power</EFDB_Name>
+        <Description>Power intensity, it could a value between 800 to 1200W. Any value under this range will power the light off safely.</Description>
         <IDL_Type>float</IDL_Type>
         <Units></Units>
         <Count>1</Count>
