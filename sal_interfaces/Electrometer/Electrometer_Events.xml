@@ -6,10 +6,41 @@
 <Enumeration>SummaryState_DisabledState,SummaryState_EnabledState,SummaryState_FaultState,SummaryState_OfflineState,SummaryState_StandbyState</Enumeration>
 
 <SALEvent>
-    <Subsystem>MtAtElectrometer</Subsystem>
-    <Version>3.7.2</Version>
+    <Subsystem>Electrometer</Subsystem>
+    <Version>3.8</Version>
     <Author></Author>
-    <EFDB_Topic>MtAtElectrometer_logevent_digitalFilterChange</EFDB_Topic>
+    <EFDB_Topic>Electrometer_logevent_appliedSettingsMatchStart</EFDB_Topic>
+    <Alias>appliedSettingsMatchStart</Alias>
+    <Explanation>http://sal.lsst.org</Explanation>
+    <item>
+        <EFDB_Name>appliedSettingsMatchStartIsTrue</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>boolean</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+</SALEvent>
+<SALEvent>
+    <Subsystem>Electrometer</Subsystem>
+    <Version>3.8</Version>
+    <Author></Author>
+    <EFDB_Topic>Electrometer_logevent_detailedState</EFDB_Topic>
+    <Alias>detailedState</Alias>
+    <Explanation>http://sal.lsst.org</Explanation>
+            <item>
+                <EFDB_Name>detailedState</EFDB_Name>
+                <Description>An enumeration indicating the Monochrometer detailed state. See the DetailedStateValue enumeration defined in the Typedefs package.</Description>
+                <!-- Enumeration: DetailedState -->
+                <IDL_Type>long</IDL_Type>
+                <Units></Units>
+                <Count>1</Count>
+            </item>
+</SALEvent>
+<SALEvent>
+    <Subsystem>Electrometer</Subsystem>
+    <Version>3.8</Version>
+    <Author></Author>
+    <EFDB_Topic>Electrometer_logevent_digitalFilterChange</EFDB_Topic>
     <Alias>digitalFilterChange</Alias>
     <Explanation>http://sal.lsst.org</Explanation>
     <item>
@@ -35,10 +66,25 @@
     </item>
 </SALEvent>
 <SALEvent>
-    <Subsystem>MtAtElectrometer</Subsystem>
-    <Version>3.7.2</Version>
+    <Subsystem>Electrometer</Subsystem>
+    <Version>3.8</Version>
     <Author></Author>
-    <EFDB_Topic>MtAtElectrometer_logevent_heartbeat</EFDB_Topic>
+    <EFDB_Topic>Electrometer_logevent_errorCode</EFDB_Topic>
+    <Alias>errorCode</Alias>
+    <Explanation>http://sal.lsst.org</Explanation>
+    <item>
+        <EFDB_Name>errorCode</EFDB_Name>
+        <Description>The error code being published.</Description>
+        <IDL_Type>long</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+</SALEvent>
+<SALEvent>
+    <Subsystem>Electrometer</Subsystem>
+    <Version>3.8</Version>
+    <Author></Author>
+    <EFDB_Topic>Electrometer_logevent_heartbeat</EFDB_Topic>
     <Alias>heartbeat</Alias>
     <Explanation>http://sal.lsst.org</Explanation>
     <item>
@@ -50,10 +96,10 @@
     </item>
 </SALEvent>
 <SALEvent>
-    <Subsystem>MtAtElectrometer</Subsystem>
-    <Version>3.7.2</Version>
+    <Subsystem>Electrometer</Subsystem>
+    <Version>3.8</Version>
     <Author></Author>
-    <EFDB_Topic>MtAtElectrometer_logevent_integrationTime</EFDB_Topic>
+    <EFDB_Topic>Electrometer_logevent_integrationTime</EFDB_Topic>
     <Alias>integrationTime</Alias>
     <Explanation>http://sal.lsst.org</Explanation>
     <item>
@@ -65,10 +111,10 @@
     </item>
 </SALEvent>
 <SALEvent>
-    <Subsystem>MtAtElectrometer</Subsystem>
-    <Version>3.7.2</Version>
+    <Subsystem>Electrometer</Subsystem>
+    <Version>3.8</Version>
     <Author></Author>
-    <EFDB_Topic>MtAtElectrometer_logevent_intensity</EFDB_Topic>
+    <EFDB_Topic>Electrometer_logevent_intensity</EFDB_Topic>
     <Alias>intensity</Alias>
     <Explanation>http://sal.lsst.org</Explanation>
     <item>
@@ -95,10 +141,10 @@
     </item>
 </SALEvent>
 <SALEvent>
-    <Subsystem>MtAtElectrometer</Subsystem>
-    <Version>3.7.2</Version>
+    <Subsystem>Electrometer</Subsystem>
+    <Version>3.8</Version>
     <Author></Author>
-    <EFDB_Topic>MtAtElectrometer_logevent_internalCommand</EFDB_Topic>
+    <EFDB_Topic>Electrometer_logevent_internalCommand</EFDB_Topic>
     <Alias>internalCommand</Alias>
     <Explanation>http://sal.lsst.org</Explanation>
     <item>
@@ -110,10 +156,10 @@
     </item>
 </SALEvent>
 <SALEvent>
-    <Subsystem>MtAtElectrometer</Subsystem>
-    <Version>3.7.2</Version>
+    <Subsystem>Electrometer</Subsystem>
+    <Version>3.8</Version>
     <Author></Author>
-    <EFDB_Topic>MtAtElectrometer_logevent_largeFileObjectAvailable</EFDB_Topic>
+    <EFDB_Topic>Electrometer_logevent_largeFileObjectAvailable</EFDB_Topic>
     <Alias>largeFileObjectAvailable</Alias>
     <Explanation>http://sal.lsst.org</Explanation>
     <item>
@@ -176,10 +222,10 @@ Protocols are those supported by the cURL library.</Description>
     </item>
 </SALEvent>
 <SALEvent>
-    <Subsystem>MtAtElectrometer</Subsystem>
-    <Version>3.7.2</Version>
+    <Subsystem>Electrometer</Subsystem>
+    <Version>3.8</Version>
     <Author></Author>
-    <EFDB_Topic>MtAtElectrometer_logevent_loopTimeOutOfRange</EFDB_Topic>
+    <EFDB_Topic>Electrometer_logevent_loopTimeOutOfRange</EFDB_Topic>
     <Alias>loopTimeOutOfRange</Alias>
     <Explanation>http://sal.lsst.org</Explanation>
     <item>
@@ -191,10 +237,10 @@ Protocols are those supported by the cURL library.</Description>
     </item>
 </SALEvent>
 <SALEvent>
-    <Subsystem>MtAtElectrometer</Subsystem>
-    <Version>3.7.2</Version>
+    <Subsystem>Electrometer</Subsystem>
+    <Version>3.8</Version>
     <Author></Author>
-    <EFDB_Topic>MtAtElectrometer_logevent_measureRange</EFDB_Topic>
+    <EFDB_Topic>Electrometer_logevent_measureRange</EFDB_Topic>
     <Alias>measureRange</Alias>
     <Explanation>http://sal.lsst.org</Explanation>
     <item>
@@ -206,10 +252,10 @@ Protocols are those supported by the cURL library.</Description>
     </item>
 </SALEvent>
 <SALEvent>
-    <Subsystem>MtAtElectrometer</Subsystem>
-    <Version>3.7.2</Version>
+    <Subsystem>Electrometer</Subsystem>
+    <Version>3.8</Version>
     <Author></Author>
-    <EFDB_Topic>MtAtElectrometer_logevent_measureType</EFDB_Topic>
+    <EFDB_Topic>Electrometer_logevent_measureType</EFDB_Topic>
     <Alias>measureType</Alias>
     <Explanation>http://sal.lsst.org</Explanation>
     <item>
@@ -225,10 +271,10 @@ Protocols are those supported by the cURL library.</Description>
     </item>
 </SALEvent>
 <SALEvent>
-    <Subsystem>MtAtElectrometer</Subsystem>
-    <Version>3.7.2</Version>
+    <Subsystem>Electrometer</Subsystem>
+    <Version>3.8</Version>
     <Author></Author>
-    <EFDB_Topic>MtAtElectrometer_logevent_rejectedCommand</EFDB_Topic>
+    <EFDB_Topic>Electrometer_logevent_rejectedCommand</EFDB_Topic>
     <Alias>rejectedCommand</Alias>
     <Explanation>http://sal.lsst.org</Explanation>
     <item>
@@ -254,10 +300,10 @@ Protocols are those supported by the cURL library.</Description>
     </item>
 </SALEvent>
 <SALEvent>
-    <Subsystem>MtAtElectrometer</Subsystem>
-    <Version>3.7.2</Version>
+    <Subsystem>Electrometer</Subsystem>
+    <Version>3.8</Version>
     <Author></Author>
-    <EFDB_Topic>MtAtElectrometer_logevent_settingsAppliedReadSets</EFDB_Topic>
+    <EFDB_Topic>Electrometer_logevent_settingsAppliedReadSets</EFDB_Topic>
     <Alias>settingsAppliedReadSets</Alias>
     <Explanation>http://sal.lsst.org</Explanation>
     <item>
@@ -325,10 +371,10 @@ Protocols are those supported by the cURL library.</Description>
     </item>
 </SALEvent>
 <SALEvent>
-    <Subsystem>MtAtElectrometer</Subsystem>
-    <Version>3.7.2</Version>
+    <Subsystem>Electrometer</Subsystem>
+    <Version>3.8</Version>
     <Author></Author>
-    <EFDB_Topic>MtAtElectrometer_logevent_settingsAppliedSerConf</EFDB_Topic>
+    <EFDB_Topic>Electrometer_logevent_settingsAppliedSerConf</EFDB_Topic>
     <Alias>settingsAppliedSerConf</Alias>
     <Explanation>http://sal.lsst.org</Explanation>
     <item>
@@ -382,4 +428,43 @@ Protocols are those supported by the cURL library.</Description>
         <Count>1</Count>
     </item>
 </SALEvent>
-</SALEventSet>
+<SALEvent>
+    <Subsystem>Electrometer</Subsystem>
+    <Version>3.8</Version>
+    <Author></Author>
+    <EFDB_Topic>Electrometer_logevent_settingVersions</EFDB_Topic>
+    <Alias>settingVersions</Alias>
+    <Explanation>http://sal.lsst.org</Explanation>
+    <item>
+        <EFDB_Name>recommendedSettingsVersion</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>string</IDL_Type>
+        <IDL_Size>1</IDL_Size>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>recommendedSettingLabels</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>string</IDL_Type>
+        <IDL_Size>1</IDL_Size>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+</SALEvent>
+<SALEvent>
+    <Subsystem>Electrometer</Subsystem>
+    <Version>3.8</Version>
+    <Author></Author>
+    <EFDB_Topic>Electrometer_logevent_summaryState</EFDB_Topic>
+    <Alias>summaryState</Alias>
+    <Explanation>http://sal.lsst.org</Explanation>
+            <item>
+                <EFDB_Name>summaryState</EFDB_Name>
+                <Description>An enumeration indicating the subsystem summary state. See the SummaryStateValue enumeration defined in the Typedefs package.</Description>
+                <!-- Enumeration: SummaryState -->
+                <IDL_Type>long</IDL_Type>
+                <Units></Units>
+                <Count>1</Count>
+            </item>
+</SALEvent></SALEventSet>
