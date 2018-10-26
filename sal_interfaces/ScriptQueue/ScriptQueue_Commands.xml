@@ -1,0 +1,348 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="http://lsst-sal.tuc.noao.edu/schema/SALCommandSet.xsl"?>
+<SALCommandSet xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="http://lsst-sal.tuc.noao.edu/schema/SALCommandSet.xsd">
+
+<!--Standard CSC commands-->
+<SALCommand>
+    <Subsystem>ScriptQueue</Subsystem>
+    <Version>1.0.0</Version>
+    <Author></Author>
+    <EFDB_Topic>ScriptQueue_command_standby</EFDB_Topic>
+    <Alias>standby</Alias>
+    <Device></Device>
+    <Property></Property>
+    <Action></Action>
+    <Value></Value>
+    <Explanation>http://sal.lsst.org</Explanation>
+    <item>
+        <EFDB_Name>state</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>boolean</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+</SALCommand>
+<SALCommand>
+    <Subsystem>ScriptQueue</Subsystem>
+    <Version>1.0.0</Version>
+    <Author></Author>
+    <EFDB_Topic>ScriptQueue_command_start</EFDB_Topic>
+    <Alias>start</Alias>
+    <Device></Device>
+    <Property></Property>
+    <Action></Action>
+    <Value></Value>
+    <Explanation>http://sal.lsst.org</Explanation>
+    <item>
+        <EFDB_Name>settingsToApply</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>string</IDL_Type>
+        <IDL_Size>256</IDL_Size>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+</SALCommand>
+<SALCommand>
+    <Subsystem>ScriptQueue</Subsystem>
+    <Version>1.0.0</Version>
+    <Author></Author>
+    <EFDB_Topic>ScriptQueue_command_enable</EFDB_Topic>
+    <Alias>enable</Alias>
+    <Device></Device>
+    <Property></Property>
+    <Action></Action>
+    <Value></Value>
+    <Explanation>http://sal.lsst.org</Explanation>
+    <item>
+        <EFDB_Name>state</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>boolean</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+</SALCommand>
+<SALCommand>
+    <Subsystem>ScriptQueue</Subsystem>
+    <Version>1.0.0</Version>
+    <Author></Author>
+    <EFDB_Topic>ScriptQueue_command_exitControl</EFDB_Topic>
+    <Alias>exitControl</Alias>
+    <Device></Device>
+    <Property></Property>
+    <Action></Action>
+    <Value></Value>
+    <Explanation>http://sal.lsst.org</Explanation>
+    <item>
+        <EFDB_Name>state</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>boolean</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+</SALCommand>
+<SALCommand>
+    <Subsystem>ScriptQueue</Subsystem>
+    <Version>1.0.0</Version>
+    <Author></Author>
+    <EFDB_Topic>ScriptQueue_command_disable</EFDB_Topic>
+    <Alias>disable</Alias>
+    <Device></Device>
+    <Property></Property>
+    <Action></Action>
+    <Value></Value>
+    <Explanation>http://sal.lsst.org</Explanation>
+    <item>
+        <EFDB_Name>state</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>boolean</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+</SALCommand>
+<!--End standard CSC commands-->
+
+<SALCommand>
+    <Subsystem>ScriptQueue</Subsystem>
+    <Version>1.0.0</Version>
+    <Author></Author>
+    <EFDB_Topic>ScriptQueue_command_showAvailableScripts</EFDB_Topic>
+    <Alias>showAvailableScripts</Alias>
+    <Device></Device>
+    <Property></Property>
+    <Action></Action>
+    <Value></Value>
+    <Explanation>List the scripts that are available.</Explanation>
+    <item>
+        <EFDB_Name>ignored</EFDB_Name>
+        <Description>Dummy value that is ignored.</Description>
+        <IDL_Type>boolean</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+</SALCommand>
+<SALCommand>
+    <Subsystem>ScriptQueue</Subsystem>
+    <Version>1.0.0</Version>
+    <Author></Author>
+    <EFDB_Topic>ScriptQueue_command_showQueue</EFDB_Topic>
+    <Alias>showQueue</Alias>
+    <Device></Device>
+    <Property></Property>
+    <Action></Action>
+    <Value></Value>
+    <Explanation>List the scripts in the queue.</Explanation>
+    <item>
+        <EFDB_Name>ignored</EFDB_Name>
+        <Description>Dummy value that is ignored.</Description>
+        <IDL_Type>boolean</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+</SALCommand>
+<SALCommand>
+    <Subsystem>ScriptQueue</Subsystem>
+    <Version>1.0.0</Version>
+    <Author></Author>
+    <EFDB_Topic>ScriptQueue_command_showScriptInfo</EFDB_Topic>
+    <Alias>showScriptInfo</Alias>
+    <Device></Device>
+    <Property></Property>
+    <Action></Action>
+    <Value></Value>
+    <Explanation>Get scriptInfo for one script.</Explanation>
+    <item>
+        <EFDB_Name>salIndex</EFDB_Name>
+        <Description>SAL index of Script for which you want information.</Description>
+        <IDL_Type>int</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+</SALCommand>
+
+<SALCommand>
+    <Subsystem>ScriptQueue</Subsystem>
+    <Version>1.0.0</Version>
+    <Author></Author>
+    <EFDB_Topic>ScriptQueue_command_pause</EFDB_Topic>
+    <Alias>pause</Alias>
+    <Device></Device>
+    <Property></Property>
+    <Action></Action>
+    <Value></Value>
+    <Explanation>Pause the queue. If a script is executing it will continue, but once that script is done no new script will be run.</Explanation>
+    <item>
+        <EFDB_Name>ignored</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>boolean</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+</SALCommand>
+<SALCommand>
+    <Subsystem>ScriptQueue</Subsystem>
+    <Version>1.0.0</Version>
+    <Author></Author>
+    <EFDB_Topic>ScriptQueue_command_resume</EFDB_Topic>
+    <Alias>resume</Alias>
+    <Device></Device>
+    <Property></Property>
+    <Action></Action>
+    <Value></Value>
+    <Explanation>Resume normal operation (unpause the queue).</Explanation>
+    <item>
+        <EFDB_Name>ignored</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>boolean</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+</SALCommand>
+
+<SALCommand>
+    <Subsystem>ScriptQueue</Subsystem>
+    <Version>1.0.0</Version>
+    <Author></Author>
+    <EFDB_Topic>ScriptQueue_command_add</EFDB_Topic>
+    <Alias>add</Alias>
+    <Device></Device>
+    <Property></Property>
+    <Action></Action>
+    <Value></Value>
+    <Explanation>Add a script to the queue and configure it.</Explanation>
+    <item>
+        <EFDB_Name>isStandard</EFDB_Name>
+        <Description>Is this a standard script (True) or an external script (False)?</Description>
+        <IDL_Type>boolean</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>path</EFDB_Name>
+        <Description>Path to script, relative to the root directory for standard or external scripts.</Description>
+        <IDL_Type>string</IDL_Type>
+        <IDL_Size>1</IDL_Size>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>config</EFDB_Name>
+        <Description>Configuration as yaml text that is parsed to make a keyword argument dict for the script's configure method.</Description>
+        <IDL_Type>string</IDL_Type>
+        <IDL_Size>1</IDL_Size>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>descr</EFDB_Name>
+        <Description>Short description of why you are running this script.</Description>
+        <IDL_Type>string</IDL_Type>
+        <IDL_Size>1</IDL_Size>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>location</EFDB_Name>
+        <Description>Queue location.</Description>
+        <IDL_Type>byte</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+        <Enumeration>First,Last,Before,After</Enumeration>
+    </item>
+    <item>
+      <EFDB_Name>locationSalIndex</EFDB_Name>
+        <Description>Index of Script SAL component referred to by `location`; ignored unless `location` is `Before` or `After`.</Description>
+        <IDL_Type>int</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+</SALCommand>
+<SALCommand>
+    <Subsystem>ScriptQueue</Subsystem>
+    <Version>1.0.0</Version>
+    <Author></Author>
+    <EFDB_Topic>ScriptQueue_command_move</EFDB_Topic>
+    <Alias>move</Alias>
+    <Device></Device>
+    <Property></Property>
+    <Action></Action>
+    <Value></Value>
+    <Explanation>Move a script elsewhere in the queue. This will fail if the script is already running.</Explanation>
+    <item>
+      <EFDB_Name>salIndex</EFDB_Name>
+        <Description>Index of Script SAL component to move.</Description>
+        <IDL_Type>int</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>location</EFDB_Name>
+        <Description>Queue location.</Description>
+        <IDL_Type>byte</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+        <Enumeration>First,Last,Before,After</Enumeration>
+    </item>
+    <item>
+      <EFDB_Name>locationSalIndex</EFDB_Name>
+        <Description>Index of Script SAL component referred to by `location`; ignored unless `location` is `Before` or `After`.</Description>
+        <IDL_Type>int</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+</SALCommand>
+<SALCommand>
+    <Subsystem>ScriptQueue</Subsystem>
+    <Version>1.0.0</Version>
+    <Author></Author>
+    <EFDB_Topic>ScriptQueue_command_remove</EFDB_Topic>
+    <Alias>remove</Alias>
+    <Device></Device>
+    <Property></Property>
+    <Action></Action>
+    <Value></Value>
+    <Explanation>Remove a script from the queue. This will terminate the current script if it is running.</Explanation>
+    <item>
+      <EFDB_Name>salIndex</EFDB_Name>
+        <Description>Index of Script SAL component to remove.</Description>
+        <IDL_Type>int</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+</SALCommand>
+<SALCommand>
+    <Subsystem>ScriptQueue</Subsystem>
+    <Version>1.0.0</Version>
+    <Author></Author>
+    <EFDB_Topic>ScriptQueue_command_requeue</EFDB_Topic>
+    <Alias>requeue</Alias>
+    <Device></Device>
+    <Property></Property>
+    <Action></Action>
+    <Value></Value>
+    <Explanation>Put a script back on the queue that has already run, is running or is queued.</Explanation>
+    <item>
+      <EFDB_Name>salIndex</EFDB_Name>
+        <Description>Index of Script SAL component to requeue.</Description>
+        <IDL_Type>int</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>location</EFDB_Name>
+        <Description>Queue location.</Description>
+        <IDL_Type>byte</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+        <Enumeration>First,Last,Before,After</Enumeration>
+    </item>
+    <item>
+      <EFDB_Name>locationSalIndex</EFDB_Name>
+        <Description>Index of Script SAL component referred to by `location`; ignored unless `location` is `Before` or `After`.</Description>
+        <IDL_Type>int</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+</SALCommand>
+
+</SALCommandSet>
