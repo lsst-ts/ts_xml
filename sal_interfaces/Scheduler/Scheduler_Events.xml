@@ -6,10 +6,95 @@
 <Enumeration>DetailedState_DisabledState,DetailedState_EnabledState,DetailedState_FaultState,DetailedState_OfflineState,DetailedState_StandbyState</Enumeration>
 
 <SALEvent>
-    <Subsystem>MTScheduler</Subsystem>
-    <Version>3.7</Version>
+    <Subsystem>Scheduler</Subsystem>
+    <Version>3.8.13</Version>
     <Author></Author>
-    <EFDB_Topic>MTScheduler_logevent_internalCommand</EFDB_Topic>
+    <EFDB_Topic>Scheduler_logevent_appliedSettingsMatchStart</EFDB_Topic>
+    <Alias>appliedSettingsMatchStart</Alias>
+    <Explanation>http://sal.lsst.org</Explanation>
+    <item>
+        <EFDB_Name>appliedSettingsMatchStartIsTrue</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>boolean</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+</SALEvent>
+<SALEvent>
+    <Subsystem>Scheduler</Subsystem>
+    <Version>3.8.13</Version>
+    <Author></Author>
+    <EFDB_Topic>Scheduler_logevent_errorCode</EFDB_Topic>
+    <Alias>errorCode</Alias>
+    <Explanation>http://sal.lsst.org</Explanation>
+    <item>
+        <EFDB_Name>errorCode</EFDB_Name>
+        <Description>The error code being published.</Description>
+        <IDL_Type>long</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+</SALEvent>
+<SALEvent>
+    <Subsystem>Scheduler</Subsystem>
+    <Version>3.8.13</Version>
+    <Author></Author>
+    <EFDB_Topic>Scheduler_logevent_settingVersions</EFDB_Topic>
+    <Alias>settingVersions</Alias>
+    <Explanation>http://sal.lsst.org</Explanation>
+    <item>
+        <EFDB_Name>recommendedSettingsVersion</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>string</IDL_Type>
+        <IDL_Size>1</IDL_Size>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>recommendedSettingsLabels</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>string</IDL_Type>
+        <IDL_Size>1</IDL_Size>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+</SALEvent>
+<SALEvent>
+    <Subsystem>Scheduler</Subsystem>
+    <Version>3.8.13</Version>
+    <Author></Author>
+    <EFDB_Topic>Scheduler_logevent_summaryState</EFDB_Topic>
+    <Alias>summaryState</Alias>
+    <Explanation>http://sal.lsst.org</Explanation>
+    <item>
+        <EFDB_Name>summaryState</EFDB_Name>
+        <Description>An enumeration indicating the subsystem summary state. See the SummaryStateValue enumeration defined in the Typedefs package.</Description>
+        <IDL_Type>long</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+</SALEvent>
+<SALEvent>
+    <Subsystem>Scheduler</Subsystem>
+    <Version>3.8.13</Version>
+    <Author></Author>
+    <EFDB_Topic>Scheduler_logevent_detailedState</EFDB_Topic>
+    <Alias>detailedState</Alias>
+    <Explanation>http://sal.lsst.org</Explanation>
+            <item>
+                <EFDB_Name>detailedState</EFDB_Name>
+                <Description></Description>
+                <!-- Enumeration: DetailedState -->
+                <IDL_Type>long</IDL_Type>
+                <Units></Units>
+                <Count>1</Count>
+            </item>
+</SALEvent>
+<SALEvent>
+    <Subsystem>Scheduler</Subsystem>
+    <Version>3.8.13</Version>
+    <Author></Author>
+    <EFDB_Topic>Scheduler_logevent_internalCommand</EFDB_Topic>
     <Alias>internalCommand</Alias>
     <Explanation>http://sal.lsst.org</Explanation>
     <item>
@@ -21,10 +106,10 @@
     </item>
 </SALEvent>
 <SALEvent>
-    <Subsystem>MTScheduler</Subsystem>
-    <Version>3.7</Version>
+    <Subsystem>Scheduler</Subsystem>
+    <Version>3.8.13</Version>
     <Author></Author>
-    <EFDB_Topic>MTScheduler_logevent_heartbeat</EFDB_Topic>
+    <EFDB_Topic>Scheduler_logevent_heartbeat</EFDB_Topic>
     <Alias>heartbeat</Alias>
     <Explanation>http://sal.lsst.org</Explanation>
     <item>
@@ -36,10 +121,10 @@
     </item>
 </SALEvent>
 <SALEvent>
-    <Subsystem>MTScheduler</Subsystem>
-    <Version>3.7</Version>
+    <Subsystem>Scheduler</Subsystem>
+    <Version>3.8.13</Version>
     <Author></Author>
-    <EFDB_Topic>MTScheduler_logevent_loopTimeOutOfRange</EFDB_Topic>
+    <EFDB_Topic>Scheduler_logevent_loopTimeOutOfRange</EFDB_Topic>
     <Alias>loopTimeOutOfRange</Alias>
     <Explanation>http://sal.lsst.org</Explanation>
     <item>
@@ -51,10 +136,10 @@
     </item>
 </SALEvent>
 <SALEvent>
-    <Subsystem>MTScheduler</Subsystem>
-    <Version>3.7</Version>
+    <Subsystem>Scheduler</Subsystem>
+    <Version>3.8.13</Version>
     <Author></Author>
-    <EFDB_Topic>MTScheduler_logevent_rejectedCommand</EFDB_Topic>
+    <EFDB_Topic>Scheduler_logevent_rejectedCommand</EFDB_Topic>
     <Alias>rejectedCommand</Alias>
     <Explanation>http://sal.lsst.org</Explanation>
     <item>
@@ -64,15 +149,14 @@
         <Units></Units>
         <Count>1</Count>
     </item>
-    <item>
-        <EFDB_Name>detailedState</EFDB_Name>
-        <Description></Description>
-        <!-- Enumeration: DetailedState -->
-        <IDL_Type>long</IDL_Type>
-        <Units></Units>
-        <Count>1</Count>
-        <Enumeration>detailedState_DetailedState_DisabledState,detailedState_DetailedState_EnabledState,detailedState_DetailedState_FaultState,detailedState_DetailedState_OfflineState,detailedState_DetailedState_StandbyState</Enumeration>
-    </item>
+            <item>
+                <EFDB_Name>detailedState</EFDB_Name>
+                <Description></Description>
+                <!-- Enumeration: DetailedState -->
+                <IDL_Type>long</IDL_Type>
+                <Units></Units>
+                <Count>1</Count>
+            </item>
     <item>
         <EFDB_Name>timestamp</EFDB_Name>
         <Description></Description>
@@ -82,25 +166,25 @@
     </item>
 </SALEvent>
 <SALEvent>
-    <Subsystem>MTScheduler</Subsystem>
-    <Version>3.7</Version>
+    <Subsystem>Scheduler</Subsystem>
+    <Version>3.8.13</Version>
     <Author></Author>
-    <EFDB_Topic>MTScheduler_logevent_settingsApplied</EFDB_Topic>
+    <EFDB_Topic>Scheduler_logevent_settingsApplied</EFDB_Topic>
     <Alias>settingsApplied</Alias>
     <Explanation>http://sal.lsst.org</Explanation>
     <item>
         <EFDB_Name>version</EFDB_Name>
         <Description></Description>
         <IDL_Type>string</IDL_Type>
-        <IDL_Size>256</IDL_Size>
+        <IDL_Size>1</IDL_Size>
         <Units></Units>
         <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>MTScheduler</EFDB_Name>
+        <EFDB_Name>scheduler</EFDB_Name>
         <Description></Description>
         <IDL_Type>string</IDL_Type>
-        <IDL_Size>256</IDL_Size>
+        <IDL_Size>1</IDL_Size>
         <Units></Units>
         <Count>1</Count>
     </item>
@@ -108,7 +192,7 @@
         <EFDB_Name>cloudModel</EFDB_Name>
         <Description></Description>
         <IDL_Type>string</IDL_Type>
-        <IDL_Size>256</IDL_Size>
+        <IDL_Size>1</IDL_Size>
         <Units></Units>
         <Count>1</Count>
     </item>
@@ -116,7 +200,7 @@
         <EFDB_Name>downtimeModel</EFDB_Name>
         <Description></Description>
         <IDL_Type>string</IDL_Type>
-        <IDL_Size>256</IDL_Size>
+        <IDL_Size>1</IDL_Size>
         <Units></Units>
         <Count>1</Count>
     </item>
@@ -124,7 +208,7 @@
         <EFDB_Name>seeingModel</EFDB_Name>
         <Description></Description>
         <IDL_Type>string</IDL_Type>
-        <IDL_Size>256</IDL_Size>
+        <IDL_Size>1</IDL_Size>
         <Units></Units>
         <Count>1</Count>
     </item>
@@ -132,7 +216,7 @@
         <EFDB_Name>skybrightnessModel</EFDB_Name>
         <Description></Description>
         <IDL_Type>string</IDL_Type>
-        <IDL_Size>256</IDL_Size>
+        <IDL_Size>1</IDL_Size>
         <Units></Units>
         <Count>1</Count>
     </item>
@@ -140,7 +224,7 @@
         <EFDB_Name>observatoryModel</EFDB_Name>
         <Description></Description>
         <IDL_Type>string</IDL_Type>
-        <IDL_Size>256</IDL_Size>
+        <IDL_Size>1</IDL_Size>
         <Units></Units>
         <Count>1</Count>
     </item>
@@ -148,23 +232,23 @@
         <EFDB_Name>observatoryLocation</EFDB_Name>
         <Description></Description>
         <IDL_Type>string</IDL_Type>
-        <IDL_Size>256</IDL_Size>
+        <IDL_Size>1</IDL_Size>
         <Units></Units>
         <Count>1</Count>
     </item>
 </SALEvent>
 <SALEvent>
-    <Subsystem>MTScheduler</Subsystem>
-    <Version>3.7</Version>
+    <Subsystem>Scheduler</Subsystem>
+    <Version>3.8.13</Version>
     <Author></Author>
-    <EFDB_Topic>MTScheduler_logevent_validSettings</EFDB_Topic>
+    <EFDB_Topic>Scheduler_logevent_validSettings</EFDB_Topic>
     <Alias>validSettings</Alias>
     <Explanation>http://sal.lsst.org</Explanation>
     <item>
         <EFDB_Name>package</EFDB_Name>
         <Description></Description>
         <IDL_Type>string</IDL_Type>
-        <IDL_Size>256</IDL_Size>
+        <IDL_Size>1</IDL_Size>
         <Units></Units>
         <Count>1</Count>
     </item>
@@ -172,7 +256,7 @@
         <EFDB_Name>packageVersions</EFDB_Name>
         <Description></Description>
         <IDL_Type>string</IDL_Type>
-        <IDL_Size>256</IDL_Size>
+        <IDL_Size>1</IDL_Size>
         <Units></Units>
         <Count>1</Count>
     </item>
@@ -180,16 +264,16 @@
         <EFDB_Name>aliases</EFDB_Name>
         <Description></Description>
         <IDL_Type>string</IDL_Type>
-        <IDL_Size>256</IDL_Size>
+        <IDL_Size>1</IDL_Size>
         <Units></Units>
         <Count>1</Count>
     </item>
 </SALEvent>
 <SALEvent>
-    <Subsystem>MTScheduler</Subsystem>
-    <Version>3.7</Version>
+    <Subsystem>Scheduler</Subsystem>
+    <Version>3.8.13</Version>
     <Author></Author>
-    <EFDB_Topic>MTScheduler_logevent_target</EFDB_Topic>
+    <EFDB_Topic>Scheduler_logevent_target</EFDB_Topic>
     <Alias>target</Alias>
     <Explanation>http://sal.lsst.org</Explanation>
     <item>
@@ -238,7 +322,7 @@
         <EFDB_Name>filter</EFDB_Name>
         <Description></Description>
         <IDL_Type>string</IDL_Type>
-        <IDL_Size>256</IDL_Size>
+        <IDL_Size>1</IDL_Size>
         <Units></Units>
         <Count>1</Count>
     </item>
@@ -428,16 +512,16 @@
         <EFDB_Name>note</EFDB_Name>
         <Description></Description>
         <IDL_Type>string</IDL_Type>
-        <IDL_Size>256</IDL_Size>
+        <IDL_Size>1</IDL_Size>
         <Units></Units>
         <Count>1</Count>
     </item>
 </SALEvent>
 <SALEvent>
-    <Subsystem>MTScheduler</Subsystem>
-    <Version>3.7</Version>
+    <Subsystem>Scheduler</Subsystem>
+    <Version>3.8.13</Version>
     <Author></Author>
-    <EFDB_Topic>MTScheduler_logevent_invalidateTarget</EFDB_Topic>
+    <EFDB_Topic>Scheduler_logevent_invalidateTarget</EFDB_Topic>
     <Alias>invalidateTarget</Alias>
     <Explanation>http://sal.lsst.org</Explanation>
     <item>
@@ -463,10 +547,10 @@
     </item>
 </SALEvent>
 <SALEvent>
-    <Subsystem>MTScheduler</Subsystem>
-    <Version>3.7</Version>
+    <Subsystem>Scheduler</Subsystem>
+    <Version>3.8.13</Version>
     <Author></Author>
-    <EFDB_Topic>MTScheduler_logevent_needFilterSwap</EFDB_Topic>
+    <EFDB_Topic>Scheduler_logevent_needFilterSwap</EFDB_Topic>
     <Alias>needFilterSwap</Alias>
     <Explanation>http://sal.lsst.org</Explanation>
     <item>
@@ -480,7 +564,7 @@
         <EFDB_Name>filterToUnmount</EFDB_Name>
         <Description></Description>
         <IDL_Type>string</IDL_Type>
-        <IDL_Size>256</IDL_Size>
+        <IDL_Size>1</IDL_Size>
         <Units></Units>
         <Count>1</Count>
     </item>
