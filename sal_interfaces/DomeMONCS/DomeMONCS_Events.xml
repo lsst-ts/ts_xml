@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="http://lsst-sal.tuc.noao.edu/schema/SALEventSet.xsl"?>
+<SALEventSet xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="http://lsst-sal.tuc.noao.edu/schema/SALEventSet.xsd">
+<Enumeration>SummaryState_DisabledState,SummaryState_EnabledState,SummaryState_FaultState,SummaryState_OfflineState,SummaryState_StandbyState</Enumeration>
+<Enumeration>DetailedState_DisabledState,DetailedState_EnabledState,DetailedState_FaultState,DetailedState_OfflineState,DetailedState_StandbyState</Enumeration>
+
+<SALEvent>
+    <Subsystem>DomeMONCS</Subsystem>
+    <Version>3.7.1</Version>
+    <Author></Author>
+    <EFDB_Topic>DomeMONCS_logevent_stateChanged</EFDB_Topic>
+    <Alias>stateChanged</Alias>
+    <Explanation>http://sal.lsst.org</Explanation>
+    <item>
+        <EFDB_Name>newState</EFDB_Name>
+        <Description>Reached state</Description>
+        <IDL_Type>int</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+</SALEvent>
+<SALEvent>
+    <Subsystem>DomeMONCS</Subsystem>
+    <Version>3.7.1</Version>
+    <Author></Author>
+    <EFDB_Topic>DomeMONCS_logevent_echoResponse</EFDB_Topic>
+    <Alias>echoResponse</Alias>
+    <Explanation>http://sal.lsst.org</Explanation>
+    <item>
+        <EFDB_Name>response</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>string</IDL_Type>
+        <IDL_Size>1</IDL_Size>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+</SALEvent>
+<SALEvent>
+    <Subsystem>DomeMONCS</Subsystem>
+    <Version>3.7.1</Version>
+    <Author></Author>
+    <EFDB_Topic>DomeMONCS_logevent_subsystemError</EFDB_Topic>
+    <Alias>subsystemError</Alias>
+    <Explanation>http://sal.lsst.org</Explanation>
+    <item>
+        <EFDB_Name>errorCode</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>string</IDL_Type>
+        <IDL_Size>1</IDL_Size>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+</SALEvent>
+<SALEvent>
+    <Subsystem>DomeMONCS</Subsystem>
+    <Version>3.7.1</Version>
+    <Author></Author>
+    <EFDB_Topic>DomeMONCS_logevent_interlock</EFDB_Topic>
+    <Alias>interlock</Alias>
+    <Explanation>http://sal.lsst.org</Explanation>
+    <item>
+        <EFDB_Name>detail</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>string</IDL_Type>
+        <IDL_Size>1</IDL_Size>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+</SALEvent></SALEventSet>

@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="http://lsst-sal.tuc.noao.edu/schema/SALEventSet.xsl"?>
+<SALEventSet xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="http://lsst-sal.tuc.noao.edu/schema/SALEventSet.xsd">
+<Enumeration>SummaryState_DisabledState,SummaryState_EnabledState,SummaryState_FaultState,SummaryState_OfflineState,SummaryState_StandbyState</Enumeration>
+<Enumeration>DetailedState_DisabledState,DetailedState_EnabledState,DetailedState_FaultState,DetailedState_OfflineState,DetailedState_StandbyState</Enumeration>
+
+<SALEvent>
+    <Subsystem>DomeTHCS</Subsystem>
+    <Version>3.7.1</Version>
+    <Author></Author>
+    <EFDB_Topic>DomeTHCS_logevent_stateChanged</EFDB_Topic>
+    <Alias>stateChanged</Alias>
+    <Explanation>http://sal.lsst.org</Explanation>
+    <item>
+        <EFDB_Name>newState</EFDB_Name>
+        <Description>Reached state</Description>
+        <IDL_Type>int</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+</SALEvent>
+<SALEvent>
+    <Subsystem>DomeTHCS</Subsystem>
+    <Version>3.7.1</Version>
+    <Author></Author>
+    <EFDB_Topic>DomeTHCS_logevent_movementEnabled</EFDB_Topic>
+    <Alias>movementEnabled</Alias>
+    <Explanation>http://sal.lsst.org</Explanation>
+    <item>
+        <EFDB_Name>status</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>boolean</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+</SALEvent>
+<SALEvent>
+    <Subsystem>DomeTHCS</Subsystem>
+    <Version>3.7.1</Version>
+    <Author></Author>
+    <EFDB_Topic>DomeTHCS_logevent_movementPrevented</EFDB_Topic>
+    <Alias>movementPrevented</Alias>
+    <Explanation>http://sal.lsst.org</Explanation>
+    <item>
+        <EFDB_Name>causeId</EFDB_Name>
+        <Description>Unique identifier of the cause</Description>
+        <IDL_Type>string</IDL_Type>
+        <IDL_Size>1</IDL_Size>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+</SALEvent>
+<SALEvent>
+    <Subsystem>DomeTHCS</Subsystem>
+    <Version>3.7.1</Version>
+    <Author></Author>
+    <EFDB_Topic>DomeTHCS_logevent_echoResponse</EFDB_Topic>
+    <Alias>echoResponse</Alias>
+    <Explanation>http://sal.lsst.org</Explanation>
+    <item>
+        <EFDB_Name>response</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>string</IDL_Type>
+        <IDL_Size>1</IDL_Size>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+</SALEvent>
+<SALEvent>
+    <Subsystem>DomeTHCS</Subsystem>
+    <Version>3.7.1</Version>
+    <Author></Author>
+    <EFDB_Topic>DomeTHCS_logevent_subsystemError</EFDB_Topic>
+    <Alias>subsystemError</Alias>
+    <Explanation>http://sal.lsst.org</Explanation>
+    <item>
+        <EFDB_Name>errorCode</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>string</IDL_Type>
+        <IDL_Size>1</IDL_Size>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+</SALEvent></SALEventSet>
