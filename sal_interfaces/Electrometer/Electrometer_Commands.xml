@@ -6,44 +6,6 @@
     <Subsystem>Electrometer</Subsystem>
     <Version>3.8</Version>
     <Author></Author>
-    <EFDB_Topic>Electrometer_command_disable</EFDB_Topic>
-    <Alias>disable</Alias>
-    <Device></Device>
-    <Property></Property>
-    <Action></Action>
-    <Value></Value>
-    <Explanation>http://sal.lsst.org</Explanation>
-    <item>
-        <EFDB_Name>value</EFDB_Name>
-        <Description></Description>
-        <IDL_Type>boolean</IDL_Type>
-        <Units></Units>
-        <Count>1</Count>
-    </item>
-</SALCommand>
-<SALCommand>
-    <Subsystem>Electrometer</Subsystem>
-    <Version>3.8</Version>
-    <Author></Author>
-    <EFDB_Topic>Electrometer_command_enable</EFDB_Topic>
-    <Alias>enable</Alias>
-    <Device></Device>
-    <Property></Property>
-    <Action></Action>
-    <Value></Value>
-    <Explanation>http://sal.lsst.org</Explanation>
-    <item>
-        <EFDB_Name>value</EFDB_Name>
-        <Description></Description>
-        <IDL_Type>boolean</IDL_Type>
-        <Units></Units>
-        <Count>1</Count>
-    </item>
-</SALCommand>
-<SALCommand>
-    <Subsystem>Electrometer</Subsystem>
-    <Version>3.8</Version>
-    <Author></Author>
     <EFDB_Topic>Electrometer_command_performZeroCalib</EFDB_Topic>
     <Alias>performZeroCalib</Alias>
     <Device></Device>
@@ -71,24 +33,24 @@
     <Value></Value>
     <Explanation>http://sal.lsst.org</Explanation>
     <item>
-        <EFDB_Name>activateFilter</EFDB_Name>
+        <EFDB_Name>activateAvgFilter</EFDB_Name>
         <Description>Median and average filter can operate at the same time</Description>
         <IDL_Type>boolean</IDL_Type>
         <Units></Units>
         <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>averageFilter</EFDB_Name>
+        <EFDB_Name>activateFilter</EFDB_Name>
         <Description>Activate average filter, 
 1 - No filter
 2 - Scalar
 3 - Advanced</Description>
-        <IDL_Type>unsigned short</IDL_Type>
+        <IDL_Type>boolean</IDL_Type>
         <Units></Units>
         <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>medianFilter</EFDB_Name>
+        <EFDB_Name>activateMedFilter</EFDB_Name>
         <Description>true to activate and false to de-activate this filter.</Description>
         <IDL_Type>boolean</IDL_Type>
         <Units></Units>
@@ -125,19 +87,20 @@
     <Action></Action>
     <Value></Value>
     <Explanation>http://sal.lsst.org</Explanation>
-    <item>
-        <EFDB_Name>mode</EFDB_Name>
-        <Description>Set electrometer to use different modes:
+            <item>
+                <EFDB_Name>mode</EFDB_Name>
+                <Description>Set electrometer to use different modes:
 
 1.- Current
 2.- Volt
 3.- Charge
 4.- Resistance
 </Description>
-        <IDL_Type>unsigned short</IDL_Type>
-        <Units></Units>
-        <Count>1</Count>
-    </item>
+                <!-- Enumeration: UnitToRead -->
+                <IDL_Type>long</IDL_Type>
+                <Units></Units>
+                <Count>1</Count>
+            </item>
 </SALCommand>
 <SALCommand>
     <Subsystem>Electrometer</Subsystem>
@@ -154,45 +117,6 @@
         <EFDB_Name>setRange</EFDB_Name>
         <Description>-1 for automatic range.</Description>
         <IDL_Type>float</IDL_Type>
-        <Units></Units>
-        <Count>1</Count>
-    </item>
-</SALCommand>
-<SALCommand>
-    <Subsystem>Electrometer</Subsystem>
-    <Version>3.8</Version>
-    <Author></Author>
-    <EFDB_Topic>Electrometer_command_standby</EFDB_Topic>
-    <Alias>standby</Alias>
-    <Device></Device>
-    <Property></Property>
-    <Action></Action>
-    <Value></Value>
-    <Explanation>http://sal.lsst.org</Explanation>
-    <item>
-        <EFDB_Name>value</EFDB_Name>
-        <Description></Description>
-        <IDL_Type>boolean</IDL_Type>
-        <Units></Units>
-        <Count>1</Count>
-    </item>
-</SALCommand>
-<SALCommand>
-    <Subsystem>Electrometer</Subsystem>
-    <Version>3.8</Version>
-    <Author></Author>
-    <EFDB_Topic>Electrometer_command_start</EFDB_Topic>
-    <Alias>start</Alias>
-    <Device></Device>
-    <Property></Property>
-    <Action></Action>
-    <Value></Value>
-    <Explanation>http://sal.lsst.org</Explanation>
-    <item>
-        <EFDB_Name>settingsToApply</EFDB_Name>
-        <Description></Description>
-        <IDL_Type>string</IDL_Type>
-        <IDL_Size>1</IDL_Size>
         <Units></Units>
         <Count>1</Count>
     </item>
@@ -241,25 +165,6 @@
     <Author></Author>
     <EFDB_Topic>Electrometer_command_stopScan</EFDB_Topic>
     <Alias>stopScan</Alias>
-    <Device></Device>
-    <Property></Property>
-    <Action></Action>
-    <Value></Value>
-    <Explanation>http://sal.lsst.org</Explanation>
-    <item>
-        <EFDB_Name>value</EFDB_Name>
-        <Description></Description>
-        <IDL_Type>boolean</IDL_Type>
-        <Units></Units>
-        <Count>1</Count>
-    </item>
-</SALCommand>
-<SALCommand>
-    <Subsystem>Electrometer</Subsystem>
-    <Version>3.8</Version>
-    <Author></Author>
-    <EFDB_Topic>Electrometer_command_exitControl</EFDB_Topic>
-    <Alias>exitControl</Alias>
     <Device></Device>
     <Property></Property>
     <Action></Action>

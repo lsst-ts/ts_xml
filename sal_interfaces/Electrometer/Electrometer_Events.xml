@@ -2,24 +2,10 @@
 <?xml-stylesheet type="text/xsl" href="http://lsst-sal.tuc.noao.edu/schema/SALEventSet.xsl"?>
 <SALEventSet xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:noNamespaceSchemaLocation="http://lsst-sal.tuc.noao.edu/schema/SALEventSet.xsd">
-<Enumeration>DetailedState_DisabledState,DetailedState_EnabledState,DetailedState_FaultState,DetailedState_OfflineState,DetailedState_StandbyState,DetailedState_OperatingState,DetailedState_ConfiguringState</Enumeration>
+<Enumeration>DetailedState_DisabledState,DetailedState_EnabledState,DetailedState_FaultState,DetailedState_OfflineState,DetailedState_StandbyState,DetailedState_NotReadingState,DetailedState_ConfiguringState,DetailedState_ManualReadingState,DetailedState_ReadingBufferState,DetailedState_SetDurationReadingState</Enumeration>
 <Enumeration>SummaryState_DisabledState,SummaryState_EnabledState,SummaryState_FaultState,SummaryState_OfflineState,SummaryState_StandbyState</Enumeration>
+<Enumeration>UnitToRead_Current,UnitToRead_Charge</Enumeration>
 
-<SALEvent>
-    <Subsystem>Electrometer</Subsystem>
-    <Version>3.8</Version>
-    <Author></Author>
-    <EFDB_Topic>Electrometer_logevent_appliedSettingsMatchStart</EFDB_Topic>
-    <Alias>appliedSettingsMatchStart</Alias>
-    <Explanation>http://sal.lsst.org</Explanation>
-    <item>
-        <EFDB_Name>appliedSettingsMatchStartIsTrue</EFDB_Name>
-        <Description></Description>
-        <IDL_Type>boolean</IDL_Type>
-        <Units></Units>
-        <Count>1</Count>
-    </item>
-</SALEvent>
 <SALEvent>
     <Subsystem>Electrometer</Subsystem>
     <Version>3.8</Version>
@@ -44,38 +30,23 @@
     <Alias>digitalFilterChange</Alias>
     <Explanation>http://sal.lsst.org</Explanation>
     <item>
-        <EFDB_Name>avgFilterActive</EFDB_Name>
+        <EFDB_Name>activateMedianFilter</EFDB_Name>
         <Description>Average filter, true for set</Description>
         <IDL_Type>boolean</IDL_Type>
         <Units></Units>
         <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>filterStatus</EFDB_Name>
+        <EFDB_Name>activateAverageFilter</EFDB_Name>
         <Description>Filter status, if active will execute Average or Median filter when set, true for active. </Description>
         <IDL_Type>boolean</IDL_Type>
         <Units></Units>
         <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>medFilterActive</EFDB_Name>
+        <EFDB_Name>activateFilter</EFDB_Name>
         <Description>Median filter, true for set</Description>
         <IDL_Type>boolean</IDL_Type>
-        <Units></Units>
-        <Count>1</Count>
-    </item>
-</SALEvent>
-<SALEvent>
-    <Subsystem>Electrometer</Subsystem>
-    <Version>3.8</Version>
-    <Author></Author>
-    <EFDB_Topic>Electrometer_logevent_errorCode</EFDB_Topic>
-    <Alias>errorCode</Alias>
-    <Explanation>http://sal.lsst.org</Explanation>
-    <item>
-        <EFDB_Name>errorCode</EFDB_Name>
-        <Description>The error code being published.</Description>
-        <IDL_Type>long</IDL_Type>
         <Units></Units>
         <Count>1</Count>
     </item>
@@ -138,21 +109,6 @@
         <IDL_Type>double</IDL_Type>
         <Units></Units>
         <Count>1</Count>
-    </item>
-</SALEvent>
-<SALEvent>
-    <Subsystem>Electrometer</Subsystem>
-    <Version>3.8</Version>
-    <Author></Author>
-    <EFDB_Topic>Electrometer_logevent_internalCommand</EFDB_Topic>
-    <Alias>internalCommand</Alias>
-    <Explanation>http://sal.lsst.org</Explanation>
-    <item>
-        <EFDB_Name>commandObject</EFDB_Name>
-        <Description></Description>
-        <IDL_Type>byte</IDL_Type>
-        <Units></Units>
-        <Count>900</Count>
     </item>
 </SALEvent>
 <SALEvent>
@@ -225,21 +181,6 @@ Protocols are those supported by the cURL library.</Description>
     <Subsystem>Electrometer</Subsystem>
     <Version>3.8</Version>
     <Author></Author>
-    <EFDB_Topic>Electrometer_logevent_loopTimeOutOfRange</EFDB_Topic>
-    <Alias>loopTimeOutOfRange</Alias>
-    <Explanation>http://sal.lsst.org</Explanation>
-    <item>
-        <EFDB_Name>loopTimeOutOfRange</EFDB_Name>
-        <Description></Description>
-        <IDL_Type>boolean</IDL_Type>
-        <Units></Units>
-        <Count>1</Count>
-    </item>
-</SALEvent>
-<SALEvent>
-    <Subsystem>Electrometer</Subsystem>
-    <Version>3.8</Version>
-    <Author></Author>
     <EFDB_Topic>Electrometer_logevent_measureRange</EFDB_Topic>
     <Alias>measureRange</Alias>
     <Explanation>http://sal.lsst.org</Explanation>
@@ -258,46 +199,18 @@ Protocols are those supported by the cURL library.</Description>
     <EFDB_Topic>Electrometer_logevent_measureType</EFDB_Topic>
     <Alias>measureType</Alias>
     <Explanation>http://sal.lsst.org</Explanation>
-    <item>
-        <EFDB_Name>mode</EFDB_Name>
-        <Description>mode: 
+            <item>
+                <EFDB_Name>mode</EFDB_Name>
+                <Description>mode: 
 1- Current
 2- Charge
 3- Voltage
 4- Resistance</Description>
-        <IDL_Type>unsigned short</IDL_Type>
-        <Units></Units>
-        <Count>1</Count>
-    </item>
-</SALEvent>
-<SALEvent>
-    <Subsystem>Electrometer</Subsystem>
-    <Version>3.8</Version>
-    <Author></Author>
-    <EFDB_Topic>Electrometer_logevent_rejectedCommand</EFDB_Topic>
-    <Alias>rejectedCommand</Alias>
-    <Explanation>http://sal.lsst.org</Explanation>
-    <item>
-        <EFDB_Name>commandValue</EFDB_Name>
-        <Description></Description>
-        <IDL_Type>unsigned short</IDL_Type>
-        <Units></Units>
-        <Count>1</Count>
-    </item>
-    <item>
-        <EFDB_Name>detailedState</EFDB_Name>
-        <Description></Description>
-        <IDL_Type>unsigned short</IDL_Type>
-        <Units></Units>
-        <Count>1</Count>
-    </item>
-    <item>
-        <EFDB_Name>timestamp</EFDB_Name>
-        <Description></Description>
-        <IDL_Type>double</IDL_Type>
-        <Units></Units>
-        <Count>1</Count>
-    </item>
+                <!-- Enumeration: UnitToRead -->
+                <IDL_Type>long</IDL_Type>
+                <Units></Units>
+                <Count>1</Count>
+            </item>
 </SALEvent>
 <SALEvent>
     <Subsystem>Electrometer</Subsystem>
@@ -307,15 +220,15 @@ Protocols are those supported by the cURL library.</Description>
     <Alias>settingsAppliedReadSets</Alias>
     <Explanation>http://sal.lsst.org</Explanation>
     <item>
-        <EFDB_Name>avgFilterType</EFDB_Name>
+        <EFDB_Name>filterActive</EFDB_Name>
         <Description>Enum
 </Description>
-        <IDL_Type>long</IDL_Type>
+        <IDL_Type>boolean</IDL_Type>
         <Units></Units>
         <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>filterActive</EFDB_Name>
+        <EFDB_Name>avgFilterActive</EFDB_Name>
         <Description></Description>
         <IDL_Type>boolean</IDL_Type>
         <Units></Units>
@@ -336,39 +249,26 @@ Protocols are those supported by the cURL library.</Description>
         <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>medianFilterStatus</EFDB_Name>
+        <EFDB_Name>medianFilterActive</EFDB_Name>
         <Description></Description>
         <IDL_Type>boolean</IDL_Type>
         <Units></Units>
         <Count>1</Count>
     </item>
-    <item>
-        <EFDB_Name>mode</EFDB_Name>
-        <Description>enum:
+            <item>
+                <EFDB_Name>mode</EFDB_Name>
+                <Description>enum:
 
 0-Current
 1-Charge
 2-Voltage
 3-Resistance
 </Description>
-        <IDL_Type>long</IDL_Type>
-        <Units></Units>
-        <Count>1</Count>
-    </item>
-    <item>
-        <EFDB_Name>radingOption</EFDB_Name>
-        <Description>Enum</Description>
-        <IDL_Type>long</IDL_Type>
-        <Units></Units>
-        <Count>1</Count>
-    </item>
-    <item>
-        <EFDB_Name>readingTimeout</EFDB_Name>
-        <Description></Description>
-        <IDL_Type>long</IDL_Type>
-        <Units></Units>
-        <Count>1</Count>
-    </item>
+                <!-- Enumeration: UnitToRead -->
+                <IDL_Type>long</IDL_Type>
+                <Units></Units>
+                <Count>1</Count>
+            </item>
 </SALEvent>
 <SALEvent>
     <Subsystem>Electrometer</Subsystem>
@@ -432,39 +332,22 @@ Protocols are those supported by the cURL library.</Description>
     <Subsystem>Electrometer</Subsystem>
     <Version>3.8</Version>
     <Author></Author>
-    <EFDB_Topic>Electrometer_logevent_settingVersions</EFDB_Topic>
-    <Alias>settingVersions</Alias>
+    <EFDB_Topic>Electrometer_logevent_deviceErrorCode</EFDB_Topic>
+    <Alias>deviceErrorCode</Alias>
     <Explanation>http://sal.lsst.org</Explanation>
     <item>
-        <EFDB_Name>recommendedSettingsVersion</EFDB_Name>
-        <Description></Description>
+        <EFDB_Name>errorCode</EFDB_Name>
+        <Description>The error code being published.</Description>
+        <IDL_Type>long</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>errorReport</EFDB_Name>
+        <Description>handle a few sentences of higher-level information describing the error.</Description>
         <IDL_Type>string</IDL_Type>
         <IDL_Size>1</IDL_Size>
         <Units></Units>
         <Count>1</Count>
     </item>
-    <item>
-        <EFDB_Name>recommendedSettingLabels</EFDB_Name>
-        <Description></Description>
-        <IDL_Type>string</IDL_Type>
-        <IDL_Size>1</IDL_Size>
-        <Units></Units>
-        <Count>1</Count>
-    </item>
-</SALEvent>
-<SALEvent>
-    <Subsystem>Electrometer</Subsystem>
-    <Version>3.8</Version>
-    <Author></Author>
-    <EFDB_Topic>Electrometer_logevent_summaryState</EFDB_Topic>
-    <Alias>summaryState</Alias>
-    <Explanation>http://sal.lsst.org</Explanation>
-            <item>
-                <EFDB_Name>summaryState</EFDB_Name>
-                <Description>An enumeration indicating the subsystem summary state. See the SummaryStateValue enumeration defined in the Typedefs package.</Description>
-                <!-- Enumeration: SummaryState -->
-                <IDL_Type>long</IDL_Type>
-                <Units></Units>
-                <Count>1</Count>
-            </item>
 </SALEvent></SALEventSet>
