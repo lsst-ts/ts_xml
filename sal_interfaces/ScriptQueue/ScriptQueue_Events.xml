@@ -2,107 +2,20 @@
 <?xml-stylesheet type="text/xsl" href="http://lsst-sal.tuc.noao.edu/schema/SALEventSet.xsl"?>
 <SALEventSet xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:noNamespaceSchemaLocation="http://lsst-sal.tuc.noao.edu/schema/SALEventSet.xsd">
-<!--Standard CSC events-->
-<SALEvent>
-    <Subsystem>ScriptQueue</Subsystem>
-    <Version>1.0.0</Version>
-    <Author></Author>
-    <EFDB_Topic>ScriptQueue_logevent_appliedSettingsMatchStart</EFDB_Topic>
-    <Alias>appliedSettingsMatchStart</Alias>
-    <Explanation>http://sal.lsst.org</Explanation>
-    <item>
-        <EFDB_Name>appliedSettingsMatchStartIsTrue</EFDB_Name>
-        <Description></Description>
-        <IDL_Type>boolean</IDL_Type>
-        <Units></Units>
-        <Count>1</Count>
-    </item>
-</SALEvent>
-<SALEvent>
-    <Subsystem>ScriptQueue</Subsystem>
-    <Version>1.0.0</Version>
-    <Author></Author>
-    <EFDB_Topic>ScriptQueue_logevent_errorCode</EFDB_Topic>
-    <Alias>errorCode</Alias>
-    <Explanation>http://sal.lsst.org</Explanation>
-    <item>
-        <EFDB_Name>errorCode</EFDB_Name>
-        <Description>The error code being published.</Description>
-        <IDL_Type>long</IDL_Type>
-        <Units></Units>
-        <Count>1</Count>
-    </item>
-</SALEvent>
+
 <SALEvent>
     <Subsystem>ScriptQueue</Subsystem>
     <Version>1.0.0</Version>
     <Author></Author>
     <EFDB_Topic>ScriptQueue_logevent_heartbeat</EFDB_Topic>
     <Alias>heartbeat</Alias>
-    <Explanation>http://sal.lsst.org</Explanation>
+    <Explanation>A standard event but missing from SALGenerics.xml. Reported as TSS-3260</Explanation>
     <item>
         <EFDB_Name>heartbeat</EFDB_Name>
         <Description></Description>
         <IDL_Type>boolean</IDL_Type>
         <Units></Units>
         <Count>1</Count>
-    </item>
-</SALEvent>
-<SALEvent>
-    <Subsystem>ScriptQueue</Subsystem>
-    <Version>1.0.0</Version>
-    <Author></Author>
-    <EFDB_Topic>ScriptQueue_logevent_settingVersions</EFDB_Topic>
-    <Alias>settingVersions</Alias>
-    <Explanation>http://sal.lsst.org</Explanation>
-    <item>
-        <EFDB_Name>recommendedSettingsVersion</EFDB_Name>
-        <Description></Description>
-        <IDL_Type>string</IDL_Type>
-        <IDL_Size>256</IDL_Size>
-        <Units></Units>
-        <Count>1</Count>
-    </item>
-    <item>
-        <EFDB_Name>recommendedSettingsLabels</EFDB_Name>
-        <Description></Description>
-        <IDL_Type>string</IDL_Type>
-        <IDL_Size>256</IDL_Size>
-        <Units></Units>
-        <Count>1</Count>
-    </item>
-</SALEvent>
-<SALEvent>
-    <Subsystem>ScriptQueue</Subsystem>
-    <Version>1.0.0</Version>
-    <Author></Author>
-    <EFDB_Topic>ScriptQueue_logevent_summaryState</EFDB_Topic>
-    <Alias>summaryState</Alias>
-    <Explanation>http://sal.lsst.org</Explanation>
-    <item>
-        <EFDB_Name>summaryState</EFDB_Name>
-        <Description>An enumeration indicating the subsystem summary state. See the SummaryStateValue enumeration defined in the Typedefs package.</Description>
-        <IDL_Type>long</IDL_Type>
-        <Units></Units>
-        <Count>1</Count>
-    </item>
-</SALEvent>
-<!--End standard CSC events-->
-
-<SALEvent>
-    <Subsystem>ScriptQueue</Subsystem>
-    <Version>1.0.0</Version>
-    <Author></Author>
-    <EFDB_Topic>ScriptQueue_logevent_detailedState</EFDB_Topic>
-    <Alias>detailedState</Alias>
-    <Explanation>http://sal.lsst.org</Explanation>
-    <item>
-        <EFDB_Name>detailedState</EFDB_Name>
-        <Description>An enumeration indicating the detailed state. Disabled means that the summaryState is not Enabled. Running means the queue will automatically run the top script in the queue. Paused means that the queue will not run any new scripts but if a script is already running it can continue.
-        <IDL_Type>long</IDL_Type>
-        <Units></Units>
-        <Count>1</Count>
-        <Enumeration>Disabled, Running, Paused</Enumeration>
     </item>
 </SALEvent>
 
@@ -182,11 +95,11 @@
     </item>
     <item>
         <EFDB_Name>processState</EFDB_Name>
-        <Description>State of script process. Starting means the script process has not yet started or is starting. Alive means the script process is alive. Complete means the script process ended with an exit code of 0. Failed means the script process ended with a non-zero exit code. Terminated means the script queue terminated the script.</Description>
+        <Description>State of script process. Loading means the script is still being loaded and is not yet configured. Configured means the script has been configured and can be run. Running means the script has been commanded to run. Complete means the script process ended with an exit code of 0. Failed means the script process ended with a non-zero exit code. Terminated means the script queue terminated the script.</Description>
         <IDL_Type>byte</IDL_Type>
         <Units></Units>
         <Count>1</Count>
-        <Enumeration>Starting,Alive,Complete,Failed,Terminated</Enumeration>
+        <Enumeration>Loading,Configured,Running,Complete,Failed,Terminated</Enumeration>
     </item>
 </SALEvent>
 <SALEvent>
@@ -195,17 +108,45 @@
     <Author></Author>
     <EFDB_Topic>ScriptQueue_logevent_queue</EFDB_Topic>
     <Alias>queue</Alias>
-    <Explanation>Information about the queue.</Explanation>
+    <Explanation>SAL indices of scripts on the queue.</Explanation>
+    <item>
+        <EFDB_Name>running</EFDB_Name>
+        <Description>Is the queue running (True) or paused (False)?</Description>
+        <IDL_Type>boolean</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>currentSalIndex</EFDB_Name>
+        <Description>SAL index of script being run; 0 if none.</Description>
+        <IDL_Type>int</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
     <item>
         <EFDB_Name>length</EFDB_Name>
-        <Description>Number of scripts on the queue (including slot 0, even if it is empty).</Description>
+        <Description>Number of valid entries in salIndices.</Description>
         <IDL_Type>int</IDL_Type>
         <Units></Units>
         <Count>1</Count>
     </item>
     <item>
         <EFDB_Name>salIndices</EFDB_Name>
-        <Description>SAL index of each Script on the queue.</Description>
+        <Description>SAL index of each Script on the queue. Item 0 is the next script to be run.</Description>
+        <IDL_Type>int</IDL_Type>
+        <Units></Units>
+        <Count>1000</Count>
+    </item>
+    <item>
+        <EFDB_Name>pastLength</EFDB_Name>
+        <Description>Number of valid entries in pastSalIndices.</Description>
+        <IDL_Type>int</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>pastSalIndices</EFDB_Name>
+        <Description>SAL index of scripts that have been run. Item 0 is the script most recently run.</Description>
         <IDL_Type>int</IDL_Type>
         <Units></Units>
         <Count>1000</Count>

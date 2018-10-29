@@ -3,105 +3,6 @@
 <SALCommandSet xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:noNamespaceSchemaLocation="http://lsst-sal.tuc.noao.edu/schema/SALCommandSet.xsd">
 
-<!--Standard CSC commands-->
-<SALCommand>
-    <Subsystem>ScriptQueue</Subsystem>
-    <Version>1.0.0</Version>
-    <Author></Author>
-    <EFDB_Topic>ScriptQueue_command_standby</EFDB_Topic>
-    <Alias>standby</Alias>
-    <Device></Device>
-    <Property></Property>
-    <Action></Action>
-    <Value></Value>
-    <Explanation>http://sal.lsst.org</Explanation>
-    <item>
-        <EFDB_Name>state</EFDB_Name>
-        <Description></Description>
-        <IDL_Type>boolean</IDL_Type>
-        <Units></Units>
-        <Count>1</Count>
-    </item>
-</SALCommand>
-<SALCommand>
-    <Subsystem>ScriptQueue</Subsystem>
-    <Version>1.0.0</Version>
-    <Author></Author>
-    <EFDB_Topic>ScriptQueue_command_start</EFDB_Topic>
-    <Alias>start</Alias>
-    <Device></Device>
-    <Property></Property>
-    <Action></Action>
-    <Value></Value>
-    <Explanation>http://sal.lsst.org</Explanation>
-    <item>
-        <EFDB_Name>settingsToApply</EFDB_Name>
-        <Description></Description>
-        <IDL_Type>string</IDL_Type>
-        <IDL_Size>256</IDL_Size>
-        <Units></Units>
-        <Count>1</Count>
-    </item>
-</SALCommand>
-<SALCommand>
-    <Subsystem>ScriptQueue</Subsystem>
-    <Version>1.0.0</Version>
-    <Author></Author>
-    <EFDB_Topic>ScriptQueue_command_enable</EFDB_Topic>
-    <Alias>enable</Alias>
-    <Device></Device>
-    <Property></Property>
-    <Action></Action>
-    <Value></Value>
-    <Explanation>http://sal.lsst.org</Explanation>
-    <item>
-        <EFDB_Name>state</EFDB_Name>
-        <Description></Description>
-        <IDL_Type>boolean</IDL_Type>
-        <Units></Units>
-        <Count>1</Count>
-    </item>
-</SALCommand>
-<SALCommand>
-    <Subsystem>ScriptQueue</Subsystem>
-    <Version>1.0.0</Version>
-    <Author></Author>
-    <EFDB_Topic>ScriptQueue_command_exitControl</EFDB_Topic>
-    <Alias>exitControl</Alias>
-    <Device></Device>
-    <Property></Property>
-    <Action></Action>
-    <Value></Value>
-    <Explanation>http://sal.lsst.org</Explanation>
-    <item>
-        <EFDB_Name>state</EFDB_Name>
-        <Description></Description>
-        <IDL_Type>boolean</IDL_Type>
-        <Units></Units>
-        <Count>1</Count>
-    </item>
-</SALCommand>
-<SALCommand>
-    <Subsystem>ScriptQueue</Subsystem>
-    <Version>1.0.0</Version>
-    <Author></Author>
-    <EFDB_Topic>ScriptQueue_command_disable</EFDB_Topic>
-    <Alias>disable</Alias>
-    <Device></Device>
-    <Property></Property>
-    <Action></Action>
-    <Value></Value>
-    <Explanation>http://sal.lsst.org</Explanation>
-    <item>
-        <EFDB_Name>state</EFDB_Name>
-        <Description></Description>
-        <IDL_Type>boolean</IDL_Type>
-        <Units></Units>
-        <Count>1</Count>
-    </item>
-</SALCommand>
-<!--End standard CSC commands-->
-
 <SALCommand>
     <Subsystem>ScriptQueue</Subsystem>
     <Version>1.0.0</Version>
@@ -131,7 +32,7 @@
     <Property></Property>
     <Action></Action>
     <Value></Value>
-    <Explanation>List the scripts in the queue.</Explanation>
+    <Explanation>Output the queue event.</Explanation>
     <item>
         <EFDB_Name>ignored</EFDB_Name>
         <Description>Dummy value that is ignored.</Description>
@@ -144,13 +45,13 @@
     <Subsystem>ScriptQueue</Subsystem>
     <Version>1.0.0</Version>
     <Author></Author>
-    <EFDB_Topic>ScriptQueue_command_showScriptInfo</EFDB_Topic>
-    <Alias>showScriptInfo</Alias>
+    <EFDB_Topic>ScriptQueue_command_showScript</EFDB_Topic>
+    <Alias>showScript</Alias>
     <Device></Device>
     <Property></Property>
     <Action></Action>
     <Value></Value>
-    <Explanation>Get scriptInfo for one script.</Explanation>
+    <Explanation>Output script event for a specified script.</Explanation>
     <item>
         <EFDB_Name>salIndex</EFDB_Name>
         <Description>SAL index of Script for which you want information.</Description>
