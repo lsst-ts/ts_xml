@@ -4,13 +4,114 @@
 	xsi:noNamespaceSchemaLocation="http://project.lsst.org/ts/sal_objects/schema/SALEventSet.xsd">
 <SALEvent>
     <Subsystem>PromptProceessing</Subsystem>
-    <Version>3.5.2</Version>
+    <Version>3.8</Version>
     <Author></Author>
-    <EFDB_Topic>PromptProceessing_logevent_ErrorCode</EFDB_Topic>
-    <Alias>ErrorCode</Alias>
-    <Explanation>http://project.lsst.org/ts/sal_objects/help/PromptProceessing_logevent_ErrorCode.html</Explanation>
+    <EFDB_Topic>PromptProceessing_logevent_promptProceessingEntitySummaryState</EFDB_Topic>
+    <Alias>promptProceessingEntitySummaryState</Alias>
+    <Explanation>http://project.lsst.org/ts/sal_objects/help/PromptProceessing_logevent_promptProceessingEntitySummaryState.html</Explanation>
     <item>
-        <EFDB_Name>errorCode</EFDB_Name>
+        <EFDB_Name>name</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>string</IDL_Type>
+        <IDL_Size>256</IDL_Size>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>identifier</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>double</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>timestamp</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>string</IDL_Type>
+        <IDL_Size>256</IDL_Size>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>address</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>long</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>currentState</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>string</IDL_Type>
+        <IDL_Size>256</IDL_Size>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>previousState</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>string</IDL_Type>
+        <IDL_Size>256</IDL_Size>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>executing</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>string</IDL_Type>
+        <IDL_Size>256</IDL_Size>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>commandsAvailable</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>string</IDL_Type>
+        <IDL_Size>256</IDL_Size>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>configurationsAvailable</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>string</IDL_Type>
+        <IDL_Size>256</IDL_Size>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+</SALEvent>
+<SALEvent>
+    <Subsystem>PromptProceessing</Subsystem>
+    <Version>3.8</Version>
+    <Author></Author>
+    <EFDB_Topic>PromptProceessing_logevent_promptProceessingEntityStartup</EFDB_Topic>
+    <Alias>promptProceessingEntityStartup</Alias>
+    <Explanation>http://project.lsst.org/ts/sal_objects/help/PromptProceessing_logevent_promptProceessingEntityStartup.html</Explanation>
+    <item>
+        <EFDB_Name>name</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>string</IDL_Type>
+        <IDL_Size>256</IDL_Size>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>identifier</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>double</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>timestamp</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>string</IDL_Type>
+        <IDL_Size>256</IDL_Size>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>address</EFDB_Name>
         <Description></Description>
         <IDL_Type>long</IDL_Type>
         <Units></Units>
@@ -19,29 +120,13 @@
 </SALEvent>
 <SALEvent>
     <Subsystem>PromptProceessing</Subsystem>
-    <Version>3.5.2</Version>
+    <Version>3.8</Version>
     <Author></Author>
-    <EFDB_Topic>PromptProceessing_logevent_SettingsApplied</EFDB_Topic>
-    <Alias>SettingsApplied</Alias>
-    <Explanation>http://project.lsst.org/ts/sal_objects/help/PromptProceessing_logevent_SettingsApplied.html</Explanation>
+    <EFDB_Topic>PromptProceessing_logevent_promptProceessingEntityShutdown</EFDB_Topic>
+    <Alias>promptProceessingEntityShutdown</Alias>
+    <Explanation>http://project.lsst.org/ts/sal_objects/help/PromptProceessing_logevent_promptProceessingEntityShutdown.html</Explanation>
     <item>
-        <EFDB_Name>Settings</EFDB_Name>
-        <Description></Description>
-        <IDL_Type>string</IDL_Type>
-        <IDL_Size>256</IDL_Size>
-        <Units></Units>
-        <Count>1</Count>
-    </item>
-</SALEvent>
-<SALEvent>
-    <Subsystem>PromptProceessing</Subsystem>
-    <Version>3.5.2</Version>
-    <Author></Author>
-    <EFDB_Topic>PromptProceessing_logevent_PromptProceessingEntitySummaryState</EFDB_Topic>
-    <Alias>PromptProceessingEntitySummaryState</Alias>
-    <Explanation>http://project.lsst.org/ts/sal_objects/help/PromptProceessing_logevent_PromptProceessingEntitySummaryState.html</Explanation>
-    <item>
-        <EFDB_Name>Name</EFDB_Name>
+        <EFDB_Name>name</EFDB_Name>
         <Description></Description>
         <IDL_Type>string</IDL_Type>
         <IDL_Size>256</IDL_Size>
@@ -49,14 +134,14 @@
         <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>Identifier</EFDB_Name>
+        <EFDB_Name>identifier</EFDB_Name>
         <Description></Description>
         <IDL_Type>double</IDL_Type>
         <Units></Units>
         <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>Timestamp</EFDB_Name>
+        <EFDB_Name>timestamp</EFDB_Name>
         <Description></Description>
         <IDL_Type>string</IDL_Type>
         <IDL_Size>256</IDL_Size>
@@ -64,123 +149,7 @@
         <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>Address</EFDB_Name>
-        <Description></Description>
-        <IDL_Type>long</IDL_Type>
-        <Units></Units>
-        <Count>1</Count>
-    </item>
-    <item>
-        <EFDB_Name>CurrentState</EFDB_Name>
-        <Description></Description>
-        <IDL_Type>string</IDL_Type>
-        <IDL_Size>256</IDL_Size>
-        <Units></Units>
-        <Count>1</Count>
-    </item>
-    <item>
-        <EFDB_Name>PreviousState</EFDB_Name>
-        <Description></Description>
-        <IDL_Type>string</IDL_Type>
-        <IDL_Size>256</IDL_Size>
-        <Units></Units>
-        <Count>1</Count>
-    </item>
-    <item>
-        <EFDB_Name>Executing</EFDB_Name>
-        <Description></Description>
-        <IDL_Type>string</IDL_Type>
-        <IDL_Size>256</IDL_Size>
-        <Units></Units>
-        <Count>1</Count>
-    </item>
-    <item>
-        <EFDB_Name>CommandsAvailable</EFDB_Name>
-        <Description></Description>
-        <IDL_Type>string</IDL_Type>
-        <IDL_Size>256</IDL_Size>
-        <Units></Units>
-        <Count>1</Count>
-    </item>
-    <item>
-        <EFDB_Name>ConfigurationsAvailable</EFDB_Name>
-        <Description></Description>
-        <IDL_Type>string</IDL_Type>
-        <IDL_Size>256</IDL_Size>
-        <Units></Units>
-        <Count>1</Count>
-    </item>
-</SALEvent>
-<SALEvent>
-    <Subsystem>PromptProceessing</Subsystem>
-    <Version>3.5.2</Version>
-    <Author></Author>
-    <EFDB_Topic>PromptProceessing_logevent_PromptProceessingEntityStartup</EFDB_Topic>
-    <Alias>PromptProceessingEntityStartup</Alias>
-    <Explanation>http://project.lsst.org/ts/sal_objects/help/PromptProceessing_logevent_PromptProceessingEntityStartup.html</Explanation>
-    <item>
-        <EFDB_Name>Name</EFDB_Name>
-        <Description></Description>
-        <IDL_Type>string</IDL_Type>
-        <IDL_Size>256</IDL_Size>
-        <Units></Units>
-        <Count>1</Count>
-    </item>
-    <item>
-        <EFDB_Name>Identifier</EFDB_Name>
-        <Description></Description>
-        <IDL_Type>double</IDL_Type>
-        <Units></Units>
-        <Count>1</Count>
-    </item>
-    <item>
-        <EFDB_Name>Timestamp</EFDB_Name>
-        <Description></Description>
-        <IDL_Type>string</IDL_Type>
-        <IDL_Size>256</IDL_Size>
-        <Units></Units>
-        <Count>1</Count>
-    </item>
-    <item>
-        <EFDB_Name>Address</EFDB_Name>
-        <Description></Description>
-        <IDL_Type>long</IDL_Type>
-        <Units></Units>
-        <Count>1</Count>
-    </item>
-</SALEvent>
-<SALEvent>
-    <Subsystem>PromptProceessing</Subsystem>
-    <Version>3.5.2</Version>
-    <Author></Author>
-    <EFDB_Topic>PromptProceessing_logevent_PromptProceessingEntityShutdown</EFDB_Topic>
-    <Alias>PromptProceessingEntityShutdown</Alias>
-    <Explanation>http://project.lsst.org/ts/sal_objects/help/PromptProceessing_logevent_PromptProceessingEntityShutdown.html</Explanation>
-    <item>
-        <EFDB_Name>Name</EFDB_Name>
-        <Description></Description>
-        <IDL_Type>string</IDL_Type>
-        <IDL_Size>256</IDL_Size>
-        <Units></Units>
-        <Count>1</Count>
-    </item>
-    <item>
-        <EFDB_Name>Identifier</EFDB_Name>
-        <Description></Description>
-        <IDL_Type>double</IDL_Type>
-        <Units></Units>
-        <Count>1</Count>
-    </item>
-    <item>
-        <EFDB_Name>Timestamp</EFDB_Name>
-        <Description></Description>
-        <IDL_Type>string</IDL_Type>
-        <IDL_Size>256</IDL_Size>
-        <Units></Units>
-        <Count>1</Count>
-    </item>
-    <item>
-        <EFDB_Name>Address</EFDB_Name>
+        <EFDB_Name>address</EFDB_Name>
         <Description></Description>
         <IDL_Type>long</IDL_Type>
         <Units></Units>
