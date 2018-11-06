@@ -2,7 +2,6 @@
 <?xml-stylesheet type="text/xsl" href="http://lsst-sal.tuc.noao.edu/schema/SALCommandSet.xsl"?>
 <SALCommandSet xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://lsst-sal.tuc.noao.edu/schema/SALCommandSet.xsd">
 <!-- abort : Not implemented. Seperate commands exist for aborting specific actions. -->
-<!-- abortProfile : Aborts an active profile started with the runMirrorForceProfile command.-->
 <!-- abortRaiseM1M3 : Aborts an active raiseM1M3 command.-->
 <!-- applyAbberationForces : Applies an aberration force to the mirror using individual actuator forces.-->
 <!-- applyAberrationForcesByBendingModes : Applies an aberration force to the mirror using bending modes. -->
@@ -30,7 +29,6 @@
 <!-- programILC : Reprogram the specified ILC with the specified program file. -->
 <!-- raiseM1M3 : Transitions from the ParkedState to the RaisingState or from the ParkedEngineeringState to the RaisingEngineeringState. -->
 <!-- resetPID : Resets the specified PID coefficients. -->
-<!-- runMirrorForceProfile : Runs a set offset forces at 50Hz. -->
 <!-- setThermalSetpoint : Specifies the thermal setpoint to target. -->
 <!-- setValue : Not implemented -->
 <!-- shutdown : Transitions from the StandbyState to the OfflineState. -->
@@ -637,65 +635,11 @@
         <Value></Value>
         <Explanation>http://sal.lsst.org</Explanation>
         <item>
-            <EFDB_Name>pID</EFDB_Name>
+            <EFDB_Name>pid</EFDB_Name>
             <Description></Description>
             <IDL_Type>short</IDL_Type>
             <Units></Units>
             <Count>1</Count>
-        </item>
-    </SALCommand>
-    <SALCommand>
-        <Subsystem>MTM1M3</Subsystem>
-        <Version>3.7.0</Version>
-        <Author></Author>
-        <EFDB_Topic>MTM1M3_command_runMirrorForceProfile</EFDB_Topic>
-        <Alias>runMirrorForceProfile</Alias>
-        <Device></Device>
-        <Property></Property>
-        <Action></Action>
-        <Value></Value>
-        <Explanation>http://sal.lsst.org</Explanation>
-        <item>
-            <EFDB_Name>xForce</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>float</IDL_Type>
-            <Units></Units>
-            <Count>1000</Count>
-        </item>
-        <item>
-            <EFDB_Name>yForce</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>float</IDL_Type>
-            <Units></Units>
-            <Count>1000</Count>
-        </item>
-        <item>
-            <EFDB_Name>zForce</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>float</IDL_Type>
-            <Units></Units>
-            <Count>1000</Count>
-        </item>
-        <item>
-            <EFDB_Name>xMoment</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>float</IDL_Type>
-            <Units></Units>
-            <Count>1000</Count>
-        </item>
-        <item>
-            <EFDB_Name>yMoment</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>float</IDL_Type>
-            <Units></Units>
-            <Count>1000</Count>
-        </item>
-        <item>
-            <EFDB_Name>zMoment</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>float</IDL_Type>
-            <Units></Units>
-            <Count>1000</Count>
         </item>
     </SALCommand>
     <SALCommand>
@@ -1136,7 +1080,7 @@
         <Value></Value>
         <Explanation>http://sal.lsst.org</Explanation>
         <item>
-            <EFDB_Name>pID</EFDB_Name>
+            <EFDB_Name>pid</EFDB_Name>
             <Description></Description>
             <IDL_Type>short</IDL_Type>
             <Units></Units>
