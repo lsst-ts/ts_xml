@@ -110,8 +110,15 @@
     <Alias>queue</Alias>
     <Explanation>SAL indices of scripts on the queue.</Explanation>
     <item>
+        <EFDB_Name>enabled</EFDB_Name>
+        <Description>Is the ScriptQueue CSC enabled? New scripts will only be started if both `running` and `enable` are True.</Description>
+        <IDL_Type>boolean</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
         <EFDB_Name>running</EFDB_Name>
-        <Description>Is the queue running (True) or paused (False)?</Description>
+        <Description>Is the queue running (True) or paused (False)? New scripts will only be started if both `running` and `enable` are True.</Description>
         <IDL_Type>boolean</IDL_Type>
         <Units></Units>
         <Count>1</Count>
