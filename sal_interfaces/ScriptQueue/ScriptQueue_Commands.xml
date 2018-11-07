@@ -196,25 +196,6 @@
     <Subsystem>ScriptQueue</Subsystem>
     <Version>1.0.0</Version>
     <Author></Author>
-    <EFDB_Topic>ScriptQueue_command_remove</EFDB_Topic>
-    <Alias>remove</Alias>
-    <Device></Device>
-    <Property></Property>
-    <Action></Action>
-    <Value></Value>
-    <Explanation>Remove a script from the queue. This will terminate the current script if it is running.</Explanation>
-    <item>
-      <EFDB_Name>salIndex</EFDB_Name>
-        <Description>Index of Script SAL component to remove.</Description>
-        <IDL_Type>int</IDL_Type>
-        <Units></Units>
-        <Count>1</Count>
-    </item>
-</SALCommand>
-<SALCommand>
-    <Subsystem>ScriptQueue</Subsystem>
-    <Version>1.0.0</Version>
-    <Author></Author>
     <EFDB_Topic>ScriptQueue_command_requeue</EFDB_Topic>
     <Alias>requeue</Alias>
     <Device></Device>
@@ -240,6 +221,44 @@
     <item>
       <EFDB_Name>locationSalIndex</EFDB_Name>
         <Description>Index of Script SAL component referred to by `location`; ignored unless `location` is `Before` or `After`.</Description>
+        <IDL_Type>int</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+</SALCommand>
+<SALCommand>
+    <Subsystem>ScriptQueue</Subsystem>
+    <Version>1.0.0</Version>
+    <Author></Author>
+    <EFDB_Topic>ScriptQueue_command_stop</EFDB_Topic>
+    <Alias>stop</Alias>
+    <Device></Device>
+    <Property></Property>
+    <Action></Action>
+    <Value></Value>
+    <Explanation>Stop a queued or running script, giving a chance to clean up. Stop is preferred to "terminate" if you have time.</Explanation>
+    <item>
+      <EFDB_Name>salIndex</EFDB_Name>
+        <Description>Index of Script SAL component to stop.</Description>
+        <IDL_Type>int</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+</SALCommand>
+<SALCommand>
+    <Subsystem>ScriptQueue</Subsystem>
+    <Version>1.0.0</Version>
+    <Author></Author>
+    <EFDB_Topic>ScriptQueue_command_terminate</EFDB_Topic>
+    <Alias>terminate</Alias>
+    <Device></Device>
+    <Property></Property>
+    <Action></Action>
+    <Value></Value>
+    <Explanation>Stop a queued or running script without giving a chance to clean up. Please use "stop" if you have time, to allow the script to clean up.</Explanation>
+    <item>
+      <EFDB_Name>salIndex</EFDB_Name>
+        <Description>Index of Script SAL component to terminate.</Description>
         <IDL_Type>int</IDL_Type>
         <Units></Units>
         <Count>1</Count>
