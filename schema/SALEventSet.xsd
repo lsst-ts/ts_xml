@@ -48,7 +48,7 @@
  </xsd:complexType>
 
  <xsd:complexType name="eventFileRefType">
-     <xsd:sequence>
+     <xsd:choice maxOccurs="unbounded">
               	<xsd:element name="EFDB_Name"     minOccurs="1" maxOccurs="1" type="xsd:string"/>
               	<xsd:element name="Description"   type="xsd:string"/>
               	<xsd:element name="URL"           minOccurs="1" maxOccurs="1" type="xsd:anyURI"/>
@@ -59,7 +59,7 @@
               	<xsd:element name="Byte_Size"     type="xsd:positiveInteger"/>
               	<xsd:element name="ID"            minOccurs="1" maxOccurs="1" type="xsd:string"/>
               	<xsd:element name="Explanation"   minOccurs="0" maxOccurs="1" type="xsd:anyURI"/>
-    </xsd:sequence>
+    </xsd:choice>
  </xsd:complexType>
   <xsd:simpleType name="version">
     <xsd:restriction base="xsd:token">

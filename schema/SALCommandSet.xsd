@@ -25,7 +25,7 @@
  </xsd:complexType>
 
  <xsd:complexType name="commandType">
-   <xsd:sequence>
+   <xsd:choice maxOccurs="unbounded">
       <xsd:element   name="Subsystem"     type="xsd:string"/>
       <xsd:element   name="Version"       type="version"/>
       <xsd:element   name="Author"        type="xsd:string"/>
@@ -37,7 +37,7 @@
       <xsd:element   name="Value"         type="xsd:string"/>
       <xsd:element   name="Explanation"   minOccurs="0" maxOccurs="1"  type="xsd:anyURI"/>
       <xsd:element   name="item" minOccurs="0" maxOccurs="unbounded" type="commandItemType"/>
-   </xsd:sequence>
+   </xsd:choice>
  </xsd:complexType>
 
 
