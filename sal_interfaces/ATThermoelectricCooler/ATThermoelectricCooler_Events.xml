@@ -2,7 +2,6 @@
 <?xml-stylesheet type="text/xsl" href="http://lsst-sal.tuc.noao.edu/schema/SALEventSet.xsl"?>
 <SALEventSet xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:noNamespaceSchemaLocation="http://lsst-sal.tuc.noao.edu/schema/SALEventSet.xsd">
-<Enumeration>SummaryState_DisabledState,SummaryState_EnabledState,SummaryState_FaultState,SummaryState_OfflineState,SummaryState_StandbyState</Enumeration>
 <Enumeration>DetailedState_DisabledState,DetailedState_EnabledState,DetailedState_FaultState,DetailedState_OfflineState,DetailedState_StandbyState,DetailedState_ChillerRunningState,DetailedState_ChillerStoppedState,DetailedState_StoppingChillerState</Enumeration>
 <Enumeration>ChillerStatus_Standby,ChillerStatus_Running</Enumeration>
 <Enumeration>PumpStatusFlag_PumpOff,PumpStatusFlag_PumpOn</Enumeration>
@@ -13,113 +12,7 @@
     <Subsystem>ATThermoelectricCooler</Subsystem>
     <Version>3.8.2</Version>
     <Author></Author>
-<<<<<<< HEAD:sal_interfaces/AtThermoelectricCooler/AtThermoelectricCooler_Events.xml
-    <EFDB_Topic>AtThermoelectricCooler_logevent_internalCommand</EFDB_Topic>
-=======
-    <EFDB_Topic>ATThermoelectricCooler_logevent_appliedSettingsMatchStart</EFDB_Topic>
-    <Alias>appliedSettingsMatchStart</Alias>
-    <Explanation>http://sal.lsst.org</Explanation>
-    <item>
-        <EFDB_Name>appliedSettingsMatchStartIsTrue</EFDB_Name>
-        <Description></Description>
-        <IDL_Type>boolean</IDL_Type>
-        <Units></Units>
-        <Count>1</Count>
-    </item>
-</SALEvent>
-<SALEvent>
-    <Subsystem>ATThermoelectricCooler</Subsystem>
-    <Version>3.8.2</Version>
-    <Author></Author>
-    <EFDB_Topic>ATThermoelectricCooler_logevent_errorCode</EFDB_Topic>
-    <Alias>errorCode</Alias>
-    <Explanation>http://sal.lsst.org</Explanation>
-    <item>
-        <EFDB_Name>errorCode</EFDB_Name>
-        <Description>The error code being published.</Description>
-        <IDL_Type>long</IDL_Type>
-        <Units></Units>
-        <Count>1</Count>
-    </item>
-    <item>
-        <EFDB_Name>errorReport</EFDB_Name>
-        <Description></Description>
-        <IDL_Type>string</IDL_Type>
-        <IDL_Size>1</IDL_Size>
-        <Units></Units>
-        <Count>1</Count>
-    </item>
-    <item>
-        <EFDB_Name>trackback</EFDB_Name>
-        <Description></Description>
-        <IDL_Type>string</IDL_Type>
-        <IDL_Size>1</IDL_Size>
-        <Units></Units>
-        <Count>1</Count>
-    </item>
-</SALEvent>
-<SALEvent>
-    <Subsystem>ATThermoelectricCooler</Subsystem>
-    <Version>3.8.2</Version>
-    <Author></Author>
-    <EFDB_Topic>ATThermoelectricCooler_logevent_settingVersions</EFDB_Topic>
-    <Alias>settingVersions</Alias>
-    <Explanation>http://sal.lsst.org</Explanation>
-    <item>
-        <EFDB_Name>recommendedSettingsVersion</EFDB_Name>
-        <Description></Description>
-        <IDL_Type>string</IDL_Type>
-        <IDL_Size>1</IDL_Size>
-        <Units></Units>
-        <Count>1</Count>
-    </item>
-    <item>
-        <EFDB_Name>recommendedSettingsLabels</EFDB_Name>
-        <Description></Description>
-        <IDL_Type>string</IDL_Type>
-        <IDL_Size>1</IDL_Size>
-        <Units></Units>
-        <Count>1</Count>
-    </item>
-</SALEvent>
-<SALEvent>
-    <Subsystem>ATThermoelectricCooler</Subsystem>
-    <Version>3.8.2</Version>
-    <Author></Author>
-    <EFDB_Topic>ATThermoelectricCooler_logevent_summaryState</EFDB_Topic>
-    <Alias>summaryState</Alias>
-    <Explanation>http://sal.lsst.org</Explanation>
-            <item>
-                <EFDB_Name>summaryState</EFDB_Name>
-                <Description>An enumeration indicating the subsystem summary state. See the SummaryStateValue enumeration defined in the Typedefs package.</Description>
-                <!-- Enumeration: SummaryState -->
-                <IDL_Type>long</IDL_Type>
-                <Units></Units>
-                <Count>1</Count>
-            </item>
-</SALEvent>
-<SALEvent>
-    <Subsystem>ATThermoelectricCooler</Subsystem>
-    <Version>3.8.2</Version>
-    <Author></Author>
-    <EFDB_Topic>ATThermoelectricCooler_logevent_detailedState</EFDB_Topic>
-    <Alias>detailedState</Alias>
-    <Explanation>http://sal.lsst.org</Explanation>
-            <item>
-                <EFDB_Name>detailedState</EFDB_Name>
-                <Description></Description>
-                <!-- Enumeration: DetailedState -->
-                <IDL_Type>long</IDL_Type>
-                <Units></Units>
-                <Count>1</Count>
-            </item>
-</SALEvent>
-<SALEvent>
-    <Subsystem>ATThermoelectricCooler</Subsystem>
-    <Version>3.8.2</Version>
-    <Author></Author>
     <EFDB_Topic>ATThermoelectricCooler_logevent_internalCommand</EFDB_Topic>
->>>>>>> develop:sal_interfaces/ATThermoelectricCooler/ATThermoelectricCooler_Events.xml
     <Alias>internalCommand</Alias>
     <Explanation>http://sal.lsst.org</Explanation>
     <item>
@@ -200,21 +93,7 @@
     <Explanation>http://sal.lsst.org</Explanation>
     <item>
         <EFDB_Name>deviceCode</EFDB_Name>
-        <Description>
-  <head>
-		<style>
-			p {padding:0px; margin:0px;}
-		</style>
-	</head>
-  <body>
-    Error code directly from the device. For more information check the documentation.
-
-    <p>
-&#160;
-</p>
-
-</body>
-</Description>
+        <Description>Error code directly from the device. For more information check the documentation.</Description>
         <IDL_Type>long</IDL_Type>
         <Units></Units>
         <Count>1</Count>
@@ -236,21 +115,7 @@
     <Explanation>http://sal.lsst.org</Explanation>
     <item>
         <EFDB_Name>warning</EFDB_Name>
-        <Description>
-  <head>
-		<style>
-			p {padding:0px; margin:0px;}
-		</style>
-	</head>
-  <body>
-    Error code directly from the device. For more information check the documentation.
-
-    <p>
-&#160;
-</p>
-
-</body>
-</Description>
+        <Description>Error code directly from the device. For more information check the documentation.</Description>
         <IDL_Type>boolean</IDL_Type>
         <Units></Units>
         <Count>1</Count>
@@ -272,21 +137,7 @@
     <Explanation>http://sal.lsst.org</Explanation>
     <item>
         <EFDB_Name>inTemperature</EFDB_Name>
-        <Description>
-  <head>
-		<style>
-			p {padding:0px; margin:0px;}
-		</style>
-	</head>
-  <body>
-    Error code directly from the device. For more information check the documentation.
-
-    <p>
-&#160;
-</p>
-
-</body>
-</Description>
+        <Description>Error code directly from the device. For more information check the documentation.</Description>
         <IDL_Type>boolean</IDL_Type>
         <Units></Units>
         <Count>1</Count>
@@ -298,4 +149,5 @@
         <Units></Units>
         <Count>1</Count>
     </item>
-</SALEvent></SALEventSet>
+</SALEvent>
+</SALEventSet>

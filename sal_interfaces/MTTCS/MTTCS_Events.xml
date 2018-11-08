@@ -4,14 +4,14 @@
 	xsi:noNamespaceSchemaLocation="http://lsst-sal.tuc.noao.edu/schema/SALEventSet.xsd">
 
 <SALEvent>
- <Subsystem>TCS</Subsystem>
-<Version>3.2.0</Version>
+ <Subsystem>MTTCS</Subsystem>
+ <Version>3.8.0</Version>
  <Author>salgenerator</Author>
- <EFDB_Topic>TCS_logevent_wfpDataReady</EFDB_Topic>
+ <EFDB_Topic>MTTCS_logevent_wfpDataReady</EFDB_Topic>
  <Alias>wfpDataReady</Alias>
- <Explanation>http://sal.lsst.org/SAL/Events/TCS_logevent_wfpDataReady.html</Explanation>
+ <Explanation>http://sal.lsst.org/SAL/Events/MTTCS_logevent_wfpDataReady.html</Explanation>
     <item>
-      <EFDB_Name>images_location_URI</EFDB_Name>
+      <EFDB_Name>imagesLocationUri</EFDB_Name>
       <Description> </Description>
        <IDL_Type>string</IDL_Type>
        <IDL_Size>256</IDL_Size>
@@ -19,7 +19,7 @@
       <Count>1</Count>
     </item>
     <item>
-      <EFDB_Name>images_match_URI</EFDB_Name>
+      <EFDB_Name>imagesMatchUri</EFDB_Name>
       <Description> </Description>
        <IDL_Type>string</IDL_Type>
        <IDL_Size>64</IDL_Size>
@@ -29,47 +29,47 @@
 </SALEvent>
 
 <SALEvent>
- <Subsystem>TCS</Subsystem>
-<Version>3.2.0</Version>
+ <Subsystem>MTTCS</Subsystem>
+<Version>3.8.0</Version>
  <Author>salgenerator</Author>
- <EFDB_Topic>TCS_logevent_zemaxError</EFDB_Topic>
+ <EFDB_Topic>MTTCS_logevent_zemaxError</EFDB_Topic>
  <Alias>zemaxError</Alias>
- <Explanation>http://sal.lsst.org/SAL/Events/TCS_logevent_zemaxError.html</Explanation>
+ <Explanation>http://sal.lsst.org/SAL/Events/MTTCS_logevent_zemaxError.html</Explanation>
     <item>
       <EFDB_Name>details</EFDB_Name>
       <Description> </Description>
-       <IDL_Type>string</IDL_Type>
-       <IDL_Size>128</IDL_Size>
+      <IDL_Type>string</IDL_Type>
+      <IDL_Size>128</IDL_Size>
       <Units> </Units>
       <Count>1</Count>
     </item>
 </SALEvent>
 
 <SALEvent>
- <Subsystem>TCS</Subsystem>
- <Version>3.6.0</Version>
- <Author>hsundararaman</Author>
- <EFDB_Topic>TCS_logevent_InternalCommand</EFDB_Topic>
- <Alias>InternalCommand</Alias>
+ <Subsystem>MTTCS</Subsystem>
+ <Version>3.8.0</Version>
+ <Author>salgenerator</Author>
+ <EFDB_Topic>MTTCS_logevent_internalCommand</EFDB_Topic>
+ <Alias>internalCommand</Alias>
  <Explanation>Validate Command received from Datalistener</Explanation>
  <item>
-	<EFDB_Name>CommandObject</EFDB_Name>
+	<EFDB_Name>commandObject</EFDB_Name>
 	<Description>Command Object</Description>
 	<IDL_Type>byte</IDL_Type>
 	<Units>NA</Units>
-	<Count>1000</Count>
+	<Count>800</Count>
  </item>
 </SALEvent>
 
 <SALEvent>
- <Subsystem>TCS</Subsystem>
- <Version>3.5.0</Version>
- <Author>hsundararaman</Author>
- <EFDB_Topic>TCS_logevent_DetailedState</EFDB_Topic>
- <Alias>DetailedState</Alias>
+ <Subsystem>MTTCS</Subsystem>
+ <Version>3.8.0</Version>
+ <Author>salgenerator</Author>
+ <EFDB_Topic>MTTCS_logevent_detailedState</EFDB_Topic>
+ <Alias>detailedState</Alias>
  <Explanation>The current detailed state of the system.</Explanation>
  <item>
-	<EFDB_Name>DetailedState</EFDB_Name>
+	<EFDB_Name>detailedState</EFDB_Name>
 	<Description>The current detailed state of the system.</Description>
 	<IDL_Type>unsigned short</IDL_Type>
 	<Units>NA</Units>
@@ -78,14 +78,14 @@
 </SALEvent>
 
 <SALEvent>
- <Subsystem>TCS</Subsystem>
- <Version>3.5.0</Version>
- <Author>hsundararaman</Author>
- <EFDB_Topic>TCS_logevent_Heartbeat</EFDB_Topic>
- <Alias>Heartbeat</Alias>
+ <Subsystem>MTTCS</Subsystem>
+ <Version>3.8.0</Version>
+ <Author>salgenerator</Author>
+ <EFDB_Topic>MTTCS_logevent_heartbeat</EFDB_Topic>
+ <Alias>heartbeat</Alias>
  <Explanation>Heartbeat from the controller.</Explanation>
  <item>
-	<EFDB_Name>Heartbeat</EFDB_Name>
+	<EFDB_Name>heartbeat</EFDB_Name>
 	<Description>Heartbeat</Description>
 	<IDL_Type>boolean</IDL_Type>
 	<Units>NA</Units>
@@ -94,14 +94,14 @@
 </SALEvent>
 
 <SALEvent>
- <Subsystem>TCS</Subsystem>
- <Version>3.5.0</Version>
- <Author>hsundararaman</Author>
- <EFDB_Topic>TCS_logevent_LoopTimeOutOfRange</EFDB_Topic>
- <Alias>LoopTimeOutOfRange</Alias>
+ <Subsystem>MTTCS</Subsystem>
+ <Version>3.8.0</Version>
+ <Author>salgenerator</Author>
+ <EFDB_Topic>MTTCS_logevent_loopTimeOutOfRange</EFDB_Topic>
+ <Alias>loopTimeOutOfRange</Alias>
  <Explanation>True if the actual loop time is outside the specified limits.</Explanation>
  <item>
-	<EFDB_Name>LoopTimeOutOfRange</EFDB_Name>
+	<EFDB_Name>loopTimeOutOfRange</EFDB_Name>
 	<Description>True if the actual loop time is outside the specified limits.</Description>
 	<IDL_Type>boolean</IDL_Type>
 	<Units>NA</Units>
@@ -110,14 +110,14 @@
 </SALEvent>
 
 <SALEvent>
- <Subsystem>TCS</Subsystem>
- <Version>3.5.0</Version>
- <Author>hsundararaman</Author>
- <EFDB_Topic>TCS_logevent_RejectedCommand</EFDB_Topic>
- <Alias>RejectedCommand</Alias>
+ <Subsystem>MTTCS</Subsystem>
+ <Version>3.8.0</Version>
+ <Author>salgenerator</Author>
+ <EFDB_Topic>MTTCS_logevent_rejectedCommand</EFDB_Topic>
+ <Alias>rejectedCommand</Alias>
  <Explanation>Rejected Command</Explanation>
  <item>
-	<EFDB_Name>CommandValue</EFDB_Name>
+	<EFDB_Name>commandValue</EFDB_Name>
 	<Description>Command Value</Description>
 	<IDL_Type>unsigned short</IDL_Type>
 	<Units>NA</Units>
@@ -140,14 +140,14 @@
 </SALEvent>
 
 <SALEvent>
- <Subsystem>TCS</Subsystem>
- <Version>3.5.0</Version>
- <Author>hsundararaman</Author>
- <EFDB_Topic>TCS_logevent_HeartbeatIn</EFDB_Topic>
- <Alias>HeartbeatIn</Alias>
+ <Subsystem>MTTCS</Subsystem>
+ <Version>3.8.0</Version>
+ <Author>salgenerator</Author>
+ <EFDB_Topic>MTTCS_logevent_heartbeatIn</EFDB_Topic>
+ <Alias>heartbeatIn</Alias>
  <Explanation>Heartbeat to the controller.</Explanation>
  <item>
-	<EFDB_Name>HeartbeatIn</EFDB_Name>
+	<EFDB_Name>heartbeatIn</EFDB_Name>
 	<Description>Heartbeat to the controller.</Description>
 	<IDL_Type>boolean</IDL_Type>
 	<Units>NA</Units>
@@ -156,14 +156,14 @@
 </SALEvent>
 
 <SALEvent>
- <Subsystem>TCS</Subsystem>
- <Version>3.6.0</Version>
+ <Subsystem>MTTCS</Subsystem>
+ <Version>3.8.0</Version>
  <Author>aanania</Author>
- <EFDB_Topic>TCS_logevent_FilterChangeInPosition</EFDB_Topic>
- <Alias>FilterChangeInPosition</Alias>
+ <EFDB_Topic>MTTCS_logevent_filterChangeInPosition</EFDB_Topic>
+ <Alias>filterChangeInPosition</Alias>
  <Explanation>Rotator is in position for a filter change.</Explanation>
  <item>
-	<EFDB_Name>FilterChangeInPosition</EFDB_Name>
+	<EFDB_Name>filterChangeInPosition</EFDB_Name>
 	<Description>Event to announce to OCS that rotator is in position for a filter change.</Description>
 	<IDL_Type>boolean</IDL_Type>
 	<Units>NA</Units>
@@ -172,14 +172,14 @@
 </SALEvent>
 
 <SALEvent>
- <Subsystem>TCS</Subsystem>
- <Version>3.6.0</Version>
- <Author>aanania</Author>
- <EFDB_Topic>TCS_logevent_TargetInPosition</EFDB_Topic>
- <Alias>TargetInPosition</Alias>
+ <Subsystem>MTTCS</Subsystem>
+ <Version>3.8.0</Version>
+ <Author>salgenerator</Author>
+ <EFDB_Topic>MTTCS_logevent_targetInPosition</EFDB_Topic>
+ <Alias>targetInPosition</Alias>
  <Explanation>Telescope is in position .</Explanation>
  <item>
-	<EFDB_Name>TargetInPosition</EFDB_Name>
+	<EFDB_Name>targetInPosition</EFDB_Name>
 	<Description>Event to announce to OCS that the telescope is in position.</Description>
 	<IDL_Type>boolean</IDL_Type>
 	<Units>NA</Units>
@@ -187,11 +187,11 @@
  </item>
 </SALEvent>
 <SALEvent>
-    <Subsystem>TCS</Subsystem>
-    <Version>3.6.0</Version>
-    <Author>aanania</Author>
-    <EFDB_Topic>TCS_logevent_SettingsApplied</EFDB_Topic>
-    <Alias>SettingsApplied</Alias>
+    <Subsystem>MTTCS</Subsystem>
+    <Version>3.8.0</Version>
+    <Author>salgenerator</Author>
+    <EFDB_Topic>MTTCS_logevent_settingsApplied</EFDB_Topic>
+    <Alias>settingsApplied</Alias>
     <Explanation>http://sal.lsst.org</Explanation>
     <item>
         <EFDB_Name>settings</EFDB_Name>

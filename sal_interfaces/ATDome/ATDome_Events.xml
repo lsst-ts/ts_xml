@@ -2,7 +2,6 @@
 <?xml-stylesheet type="text/xsl" href="http://lsst-sal.tuc.noao.edu/schema/SALEventSet.xsl"?>
 <SALEventSet xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:noNamespaceSchemaLocation="http://lsst-sal.tuc.noao.edu/schema/SALEventSet.xsd">
-<Enumeration>SummaryState_DisabledState,SummaryState_EnabledState,SummaryState_FaultState,SummaryState_OfflineState,SummaryState_StandbyState</Enumeration>
 <Enumeration>AzimuthState_NotInMotionState,AzimuthState_InMotionState,AzimuthState_MovingCWState,AzimuthState_MovingCCWState,AzimuthState_StoppingMotionState</Enumeration>
 <Enumeration>MovingDirection_ClockWise,MovingDirection_CounterClockWise,MovingDirection_NotMoving</Enumeration>
 <Enumeration>ShutterDoorState_ClosedState,ShutterDoorState_OpenedState,ShutterDoorState_PartiallyOpenedState,ShutterDoorState_NotInMotionState,ShutterDoorState_OpeningState,ShutterDoorState_ClosingState</Enumeration>
@@ -10,93 +9,7 @@
 
 <SALEvent>
     <Subsystem>ATDome</Subsystem>
-    <Version>3.8</Version>
-    <Author></Author>
-    <EFDB_Topic>ATDome_logevent_appliedSettingsMatchStart</EFDB_Topic>
-    <Alias>appliedSettingsMatchStart</Alias>
-    <Explanation>http://sal.lsst.org</Explanation>
-    <item>
-        <EFDB_Name>appliedSettingsMatchStartIsTrue</EFDB_Name>
-        <Description></Description>
-        <IDL_Type>boolean</IDL_Type>
-        <Units></Units>
-        <Count>1</Count>
-    </item>
-</SALEvent>
-<SALEvent>
-    <Subsystem>ATDome</Subsystem>
-    <Version>3.8</Version>
-    <Author></Author>
-    <EFDB_Topic>ATDome_logevent_errorCode</EFDB_Topic>
-    <Alias>errorCode</Alias>
-    <Explanation>http://sal.lsst.org</Explanation>
-    <item>
-        <EFDB_Name>errorCode</EFDB_Name>
-        <Description>The error code being published.</Description>
-        <IDL_Type>long</IDL_Type>
-        <Units></Units>
-        <Count>1</Count>
-    </item>
-    <item>
-        <EFDB_Name>errorReport</EFDB_Name>
-        <Description></Description>
-        <IDL_Type>string</IDL_Type>
-        <IDL_Size>1</IDL_Size>
-        <Units></Units>
-        <Count>1</Count>
-    </item>
-    <item>
-        <EFDB_Name>traceback</EFDB_Name>
-        <Description></Description>
-        <IDL_Type>string</IDL_Type>
-        <IDL_Size>1</IDL_Size>
-        <Units></Units>
-        <Count>1</Count>
-    </item>
-</SALEvent>
-<SALEvent>
-    <Subsystem>ATDome</Subsystem>
-    <Version>3.8</Version>
-    <Author></Author>
-    <EFDB_Topic>ATDome_logevent_settingVersions</EFDB_Topic>
-    <Alias>settingVersions</Alias>
-    <Explanation>http://sal.lsst.org</Explanation>
-    <item>
-        <EFDB_Name>recommendedSettingsVersion</EFDB_Name>
-        <Description></Description>
-        <IDL_Type>string</IDL_Type>
-        <IDL_Size>1</IDL_Size>
-        <Units></Units>
-        <Count>1</Count>
-    </item>
-    <item>
-        <EFDB_Name>recommendedSettingsLabels</EFDB_Name>
-        <Description></Description>
-        <IDL_Type>string</IDL_Type>
-        <IDL_Size>1</IDL_Size>
-        <Units></Units>
-        <Count>1</Count>
-    </item>
-</SALEvent>
-<SALEvent>
-    <Subsystem>ATDome</Subsystem>
-    <Version>3.8</Version>
-    <Author></Author>
-    <EFDB_Topic>ATDome_logevent_summaryState</EFDB_Topic>
-    <Alias>summaryState</Alias>
-    <Explanation>http://sal.lsst.org</Explanation>
-            <item>
-                <EFDB_Name>summaryState</EFDB_Name>
-                <Description>An enumeration indicating the subsystem summary state. See the SummaryStateValue enumeration defined in the Typedefs package.</Description>
-                <!-- Enumeration: SummaryState -->
-                <IDL_Type>long</IDL_Type>
-                <Units></Units>
-                <Count>1</Count>
-            </item>
-</SALEvent>
-<SALEvent>
-    <Subsystem>ATDome</Subsystem>
-    <Version>3.8</Version>
+    <Version>3.8.2</Version>
     <Author></Author>
     <EFDB_Topic>ATDome_logevent_azimuthState</EFDB_Topic>
     <Alias>azimuthState</Alias>
@@ -112,7 +25,7 @@
 </SALEvent>
 <SALEvent>
     <Subsystem>ATDome</Subsystem>
-    <Version>3.8</Version>
+    <Version>3.8.2</Version>
     <Author></Author>
     <EFDB_Topic>ATDome_logevent_internalCommand</EFDB_Topic>
     <Alias>internalCommand</Alias>
@@ -127,7 +40,7 @@
 </SALEvent>
 <SALEvent>
     <Subsystem>ATDome</Subsystem>
-    <Version>3.8</Version>
+    <Version>3.8.2</Version>
     <Author></Author>
     <EFDB_Topic>ATDome_logevent_heartbeat</EFDB_Topic>
     <Alias>heartbeat</Alias>
@@ -142,7 +55,7 @@
 </SALEvent>
 <SALEvent>
     <Subsystem>ATDome</Subsystem>
-    <Version>3.8</Version>
+    <Version>3.8.2</Version>
     <Author></Author>
     <EFDB_Topic>ATDome_logevent_loopTimeOutOfRange</EFDB_Topic>
     <Alias>loopTimeOutOfRange</Alias>
@@ -157,7 +70,7 @@
 </SALEvent>
 <SALEvent>
     <Subsystem>ATDome</Subsystem>
-    <Version>3.8</Version>
+    <Version>3.8.2</Version>
     <Author></Author>
     <EFDB_Topic>ATDome_logevent_rejectedCommand</EFDB_Topic>
     <Alias>rejectedCommand</Alias>
@@ -188,7 +101,7 @@
 </SALEvent>
 <SALEvent>
     <Subsystem>ATDome</Subsystem>
-    <Version>3.8</Version>
+    <Version>3.8.2</Version>
     <Author></Author>
     <EFDB_Topic>ATDome_logevent_allAxisInPosition</EFDB_Topic>
     <Alias>allAxisInPosition</Alias>
@@ -203,7 +116,7 @@
 </SALEvent>
 <SALEvent>
     <Subsystem>ATDome</Subsystem>
-    <Version>3.8</Version>
+    <Version>3.8.2</Version>
     <Author></Author>
     <EFDB_Topic>ATDome_logevent_emergencyStop</EFDB_Topic>
     <Alias>emergencyStop</Alias>
@@ -218,7 +131,7 @@
 </SALEvent>
 <SALEvent>
     <Subsystem>ATDome</Subsystem>
-    <Version>3.8</Version>
+    <Version>3.8.2</Version>
     <Author></Author>
     <EFDB_Topic>ATDome_logevent_internalStatus</EFDB_Topic>
     <Alias>internalStatus</Alias>
@@ -233,7 +146,7 @@
 </SALEvent>
 <SALEvent>
     <Subsystem>ATDome</Subsystem>
-    <Version>3.8</Version>
+    <Version>3.8.2</Version>
     <Author></Author>
     <EFDB_Topic>ATDome_logevent_scbLink</EFDB_Topic>
     <Alias>scbLink</Alias>
@@ -248,7 +161,7 @@
 </SALEvent>
 <SALEvent>
     <Subsystem>ATDome</Subsystem>
-    <Version>3.8</Version>
+    <Version>3.8.2</Version>
     <Author></Author>
     <EFDB_Topic>ATDome_logevent_shutterInPosition</EFDB_Topic>
     <Alias>shutterInPosition</Alias>
@@ -263,7 +176,7 @@
 </SALEvent>
 <SALEvent>
     <Subsystem>ATDome</Subsystem>
-    <Version>3.8</Version>
+    <Version>3.8.2</Version>
     <Author></Author>
     <EFDB_Topic>ATDome_logevent_azimuthInPosition</EFDB_Topic>
     <Alias>azimuthInPosition</Alias>
@@ -278,7 +191,7 @@
 </SALEvent>
 <SALEvent>
     <Subsystem>ATDome</Subsystem>
-    <Version>3.8</Version>
+    <Version>3.8.2</Version>
     <Author></Author>
     <EFDB_Topic>ATDome_logevent_azimuthMovingDirection</EFDB_Topic>
     <Alias>azimuthMovingDirection</Alias>
@@ -294,7 +207,7 @@
 </SALEvent>
 <SALEvent>
     <Subsystem>ATDome</Subsystem>
-    <Version>3.8</Version>
+    <Version>3.8.2</Version>
     <Author></Author>
     <EFDB_Topic>ATDome_logevent_settingsAppliedDomeController</EFDB_Topic>
     <Alias>settingsAppliedDomeController</Alias>
@@ -361,7 +274,7 @@ The AF (Automation oFf) command disables the automatic shutdown of the observato
 </SALEvent>
 <SALEvent>
     <Subsystem>ATDome</Subsystem>
-    <Version>3.8</Version>
+    <Version>3.8.2</Version>
     <Author></Author>
     <EFDB_Topic>ATDome_logevent_dropoutDoorState</EFDB_Topic>
     <Alias>dropoutDoorState</Alias>
@@ -377,7 +290,7 @@ The AF (Automation oFf) command disables the automatic shutdown of the observato
 </SALEvent>
 <SALEvent>
     <Subsystem>ATDome</Subsystem>
-    <Version>3.8</Version>
+    <Version>3.8.2</Version>
     <Author></Author>
     <EFDB_Topic>ATDome_logevent_mainDoorState</EFDB_Topic>
     <Alias>mainDoorState</Alias>
@@ -393,7 +306,7 @@ The AF (Automation oFf) command disables the automatic shutdown of the observato
 </SALEvent>
 <SALEvent>
     <Subsystem>ATDome</Subsystem>
-    <Version>3.8</Version>
+    <Version>3.8.2</Version>
     <Author></Author>
     <EFDB_Topic>ATDome_logevent_settingsAppliedDomeTcp</EFDB_Topic>
     <Alias>settingsAppliedDomeTcp</Alias>
@@ -437,7 +350,7 @@ The AF (Automation oFf) command disables the automatic shutdown of the observato
 </SALEvent>
 <SALEvent>
     <Subsystem>ATDome</Subsystem>
-    <Version>3.8</Version>
+    <Version>3.8.2</Version>
     <Author></Author>
     <EFDB_Topic>ATDome_logevent_detailedState</EFDB_Topic>
     <Alias>detailedState</Alias>

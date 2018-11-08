@@ -18,7 +18,7 @@
     <xsd:annotation>
       <xsd:documentation>Telemetry items parameters and values</xsd:documentation>
     </xsd:annotation>
-    <xsd:sequence>
+    <xsd:choice maxOccurs="unbounded">
       <xsd:element name="EFDB_Name" type="xsd:string">
         <xsd:annotation>
           <xsd:documentation>Engineering and Facility Database name</xsd:documentation>
@@ -116,10 +116,10 @@
         </xsd:annotation>
       </xsd:element>
       <xsd:element name="Enumeration"   minOccurs="0" maxOccurs="1" type="xsd:string"/>
-    </xsd:sequence>
+    </xsd:choice>
   </xsd:complexType>
   <xsd:complexType name="telemetryType">
-    <xsd:sequence>
+    <xsd:choice maxOccurs="unbounded">
       <xsd:element name="Subsystem" type="xsd:string">
         <xsd:annotation>
           <xsd:documentation>Subsystem identifier</xsd:documentation>
@@ -146,7 +146,7 @@
         </xsd:annotation>
       </xsd:element>
       <xsd:element name="item" minOccurs="1" maxOccurs="unbounded" type="telemetryItemType"/>
-    </xsd:sequence>
+    </xsd:choice>
   </xsd:complexType>
 
   <xsd:complexType name="telemetrySetType">
