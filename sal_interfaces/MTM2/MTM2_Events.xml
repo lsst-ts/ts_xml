@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="http://lsst-sal.tuc.noao.edu/schema/SALEventSet.xsl"?>
+<SALEventSet xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="http://lsst-sal.tuc.noao.edu/schema/SALEventSet.xsd">
+    <Enumeration>SummaryStates_DisabledState,SummaryStates_EnabledState,SummaryStates_FaultState,SummaryStates_OfflineState,SummaryStates_StandbyState</Enumeration>
+    <Enumeration>DetailedStates_DisabledState,DetailedStates_EnabledState,DetailedStates_FaultState,DetailedStates_OfflineState,DetailedStates_StandbyState,DetailedStates_ParkedState,DetailedStates_RaisingState,DetailedStates_ActiveState,DetailedStates_LoweringState,DetailedStates_EngineeringState,DetailedStates_ParkedEngineeringState,DetailedStates_RaisingEngineeringState,DetailedStates_ActiveEngineeringState,DetailedStates_LoweringEngineeringState,DetailedStates_LoweringFaultState,DetailedStates_ProfileHardpointCorrectionState</Enumeration>
+      <Enumeration>FaultStates_ActuatorPlusLimit,FaultStates_ActuatorMinusLimit,FaultStates_ActuatorPlusForceLimit,FaultStates_ActuatorMinusForceLimit,FaultStates_ActuatorCommTimeout,FaultStates_FollowingError,FaultStates_ConfigurationError,FaultStates_UnresponsiveActuator,FaultStates_TangentLinkStrainFault,FaultStates_cRIOCommFailure,FaultStates_cRIOHeartbeatFailure,FaultStates_CurrentError,FaultStates_VoltageError,FaultStates_PowerRelayFault,FaultStates_PowerSupplyFault,FaultStates_TemperatureFault,FaultStates_TempSensorFailure,FaultStates_TelescopeElevationFault,FaultStates_GravitySensorFailure,FaultStates_ILCFault,FaultStates_CelRBPositionError,FaultStates_DisplacementSensor,FaultStates_ActuatorPlusSoftLimit,FaultStates_ActuatorMinusSoftLimit,FaultStates_CelTemperatureWarning</Enumeration>
+
+<SALEvent>
+ <Subsystem>MTM2</Subsystem>
+ <Version>3.8.0</Version>
+ <Author>salgenerator</Author>
+ <EFDB_Topic>MTM2_logevent_m2FaultState</EFDB_Topic>
+ <Alias>m2FaultState</Alias>
+ <Explanation>http://sal.lsst.org/SAL/Events/MTM2_logevent_m2FaultState.html</Explanation>
+    <item>
+      <EFDB_Name>state</EFDB_Name>
+      <Description> </Description>
+      <IDL_Type>short</IDL_Type>
+      <Units> </Units>
+      <Count>1</Count>
+      <Enumeration>FaultStates_ActuatorPlusLimit,FaultStates_ActuatorMinusLimit,FaultStates_ActuatorPlusForceLimit,FaultStates_ActuatorMinusForceLimit,FaultStates_ActuatorCommTimeout,FaultStates_FollowingError,FaultStates_ConfigurationError,FaultStates_UnresponsiveActuator,FaultStates_TangentLinkStrainFault,FaultStates_cRIOCommFailure,FaultStates_cRIOHeartbeatFailure,FaultStates_CurrentError,FaultStates_VoltageError,FaultStates_PowerRelayFault,FaultStates_PowerSupplyFault,FaultStates_TemperatureFault,FaultStates_TempSensorFailure,FaultStates_TelescopeElevationFault,FaultStates_GravitySensorFailure,FaultStates_ILCFault,FaultStates_CelRBPositionError,FaultStates_DisplacementSensor,FaultStates_ActuatorPlusSoftLimit,FaultStates_ActuatorMinusSoftLimit,FaultStates_CelTemperatureWarning
+      </Enumeration>
+    </item>
+</SALEvent>
+<SALEvent>
+ <Subsystem>MTM2</Subsystem>
+ <Version>3.8.0</Version>
+ <Author>salgenerator</Author>
+ <EFDB_Topic>MTM2_logevent_m2AssemblyInPosition</EFDB_Topic>
+ <Alias>m2AssemblyInPosition</Alias>
+ <Explanation>http://sal.lsst.org/SAL/Events/MTM2_logevent_m2AssemblyInPosition.html</Explanation>
+    <item>
+      <EFDB_Name>inPosition</EFDB_Name>
+      <Description> </Description>
+       <IDL_Type>boolean</IDL_Type>
+      <Units> </Units>
+      <Count>1</Count>
+    </item>
+</SALEvent>
+</SALEventSet>

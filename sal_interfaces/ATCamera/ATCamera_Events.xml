@@ -1,0 +1,873 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="http://lsst-sal.tuc.noao.edu/schema/SALEventSet.xsl"?>
+<SALEventSet xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="http://lsst-sal.tuc.noao.edu/schema/SALEventSet.xsd">
+<SALEvent>
+    <Subsystem>ATCamera</Subsystem>
+    <Version>3.7.1</Version>
+    <Author></Author>
+    <EFDB_Topic>ATCamera_logevent_offlineDetailedState</EFDB_Topic>
+    <Alias>offlineDetailedState</Alias>
+    <Explanation>http://project.lsst.org/ts/sal_objects/help/ATCamera_logevent_offlineDetailedState.html</Explanation>
+    <item>
+        <EFDB_Name>substate</EFDB_Name>
+        <Description>Enumeration of valid substates</Description>
+        <IDL_Type>long</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+        <Enumeration>OFFLINE_AVAILABLE,OFFLINE_PUBLISH_ONLY</Enumeration>
+    </item>
+</SALEvent>
+<SALEvent>
+    <Subsystem>ATCamera</Subsystem>
+    <Version>3.7.1</Version>
+    <Author></Author>
+    <EFDB_Topic>ATCamera_logevent_endReadout</EFDB_Topic>
+    <Alias>endReadout</Alias>
+    <Explanation>http://project.lsst.org/ts/sal_objects/help/ATCamera_logevent_endReadout.html</Explanation>
+    <item>
+        <EFDB_Name>imageSequenceName</EFDB_Name>
+        <Description>The imageSequenceName as passed to the takeImages command</Description>
+        <IDL_Type>string</IDL_Type>
+        <IDL_Size>256</IDL_Size>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>imagesInSequence</EFDB_Name>
+        <Description>The total  number of requested images in sequence</Description>
+        <IDL_Type>long</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>imageName</EFDB_Name>
+        <Description>The imageName for this specific exposure</Description>
+        <IDL_Type>string</IDL_Type>
+        <IDL_Size>256</IDL_Size>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>imageIndex</EFDB_Name>
+        <Description>The zero based index number for this specific exposure within the sequence</Description>
+        <IDL_Type>long</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>timeStamp</EFDB_Name>
+        <Description>The effective time at which the image acquisition started (i.e. the end of the previous clear or readout)</Description>
+        <IDL_Type>double</IDL_Type>
+        <Units>seconds</Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>exposureTime</EFDB_Name>
+        <Description>The requested exposure time</Description>
+        <IDL_Type>double</IDL_Type>
+        <Units>seconds</Units>
+        <Count>1</Count>
+    </item>
+</SALEvent>
+<SALEvent>
+    <Subsystem>ATCamera</Subsystem>
+    <Version>3.7.1</Version>
+    <Author></Author>
+    <EFDB_Topic>ATCamera_logevent_endTakeImage</EFDB_Topic>
+    <Alias>endTakeImage</Alias>
+    <Explanation>http://project.lsst.org/ts/sal_objects/help/ATCamera_logevent_endTakeImage.html</Explanation>
+</SALEvent>
+<SALEvent>
+    <Subsystem>ATCamera</Subsystem>
+    <Version>3.7.1</Version>
+    <Author></Author>
+    <EFDB_Topic>ATCamera_logevent_imageReadinessDetailedState</EFDB_Topic>
+    <Alias>imageReadinessDetailedState</Alias>
+    <Explanation>http://project.lsst.org/ts/sal_objects/help/ATCamera_logevent_imageReadinessDetailedState.html</Explanation>
+    <item>
+        <EFDB_Name>substate</EFDB_Name>
+        <Description>Enumeration of valid substates</Description>
+        <IDL_Type>long</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+        <Enumeration>READY,NOT_READY,GETTING_READY</Enumeration>
+    </item>
+</SALEvent>
+<SALEvent>
+    <Subsystem>ATCamera</Subsystem>
+    <Version>3.7.1</Version>
+    <Author></Author>
+    <EFDB_Topic>ATCamera_logevent_notReadyToTakeImage</EFDB_Topic>
+    <Alias>notReadyToTakeImage</Alias>
+    <Explanation>http://project.lsst.org/ts/sal_objects/help/ATCamera_logevent_notReadyToTakeImage.html</Explanation>
+</SALEvent>
+<SALEvent>
+    <Subsystem>ATCamera</Subsystem>
+    <Version>3.7.1</Version>
+    <Author></Author>
+    <EFDB_Topic>ATCamera_logevent_startShutterClose</EFDB_Topic>
+    <Alias>startShutterClose</Alias>
+    <Explanation>http://project.lsst.org/ts/sal_objects/help/ATCamera_logevent_startShutterClose.html</Explanation>
+</SALEvent>
+<SALEvent>
+    <Subsystem>ATCamera</Subsystem>
+    <Version>3.7.1</Version>
+    <Author></Author>
+    <EFDB_Topic>ATCamera_logevent_endShutterClose</EFDB_Topic>
+    <Alias>endShutterClose</Alias>
+    <Explanation>http://project.lsst.org/ts/sal_objects/help/ATCamera_logevent_endShutterClose.html</Explanation>
+</SALEvent>
+<SALEvent>
+    <Subsystem>ATCamera</Subsystem>
+    <Version>3.7.1</Version>
+    <Author></Author>
+    <EFDB_Topic>ATCamera_logevent_endOfImageTelemetry</EFDB_Topic>
+    <Alias>endOfImageTelemetry</Alias>
+    <Explanation>http://project.lsst.org/ts/sal_objects/help/ATCamera_logevent_endOfImageTelemetry.html</Explanation>
+    <item>
+        <EFDB_Name>imageSequenceName</EFDB_Name>
+        <Description>The imageSequenceName as passed to the takeImages command</Description>
+        <IDL_Type>string</IDL_Type>
+        <IDL_Size>256</IDL_Size>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>imagesInSequence</EFDB_Name>
+        <Description>The total  number of requested images in sequence</Description>
+        <IDL_Type>long</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>imageName</EFDB_Name>
+        <Description>The imageName for this specific exposure</Description>
+        <IDL_Type>string</IDL_Type>
+        <IDL_Size>256</IDL_Size>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>imageIndex</EFDB_Name>
+        <Description>The zero based index number for this specific exposure within the sequence</Description>
+        <IDL_Type>long</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>timeStamp</EFDB_Name>
+        <Description>The effective time at which the image acquisition started (i.e. the end of the previous clear or readout)</Description>
+        <IDL_Type>double</IDL_Type>
+        <Units>seconds</Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>exposureTime</EFDB_Name>
+        <Description>The requested exposure time</Description>
+        <IDL_Type>double</IDL_Type>
+        <Units>seconds</Units>
+        <Count>1</Count>
+    </item>
+</SALEvent>
+<SALEvent>
+    <Subsystem>ATCamera</Subsystem>
+    <Version>3.7.1</Version>
+    <Author></Author>
+    <EFDB_Topic>ATCamera_logevent_calibrationDetailedState</EFDB_Topic>
+    <Alias>calibrationDetailedState</Alias>
+    <Explanation>http://project.lsst.org/ts/sal_objects/help/ATCamera_logevent_calibrationDetailedState.html</Explanation>
+    <item>
+        <EFDB_Name>substate</EFDB_Name>
+        <Description>Enumeration of valid substates</Description>
+        <IDL_Type>long</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+        <Enumeration>DISABLED,ENABLED,INTEGRATING</Enumeration>
+    </item>
+</SALEvent>
+<SALEvent>
+    <Subsystem>ATCamera</Subsystem>
+    <Version>3.7.1</Version>
+    <Author></Author>
+    <EFDB_Topic>ATCamera_logevent_shutterDetailedState</EFDB_Topic>
+    <Alias>shutterDetailedState</Alias>
+    <Explanation>http://project.lsst.org/ts/sal_objects/help/ATCamera_logevent_shutterDetailedState.html</Explanation>
+    <item>
+        <EFDB_Name>substate</EFDB_Name>
+        <Description>Enumeration of valid substates</Description>
+        <IDL_Type>long</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+        <Enumeration>CLOSED,OPEN,CLOSING,OPENING</Enumeration>
+    </item>
+</SALEvent>
+<SALEvent>
+    <Subsystem>ATCamera</Subsystem>
+    <Version>3.7.1</Version>
+    <Author></Author>
+    <EFDB_Topic>ATCamera_logevent_readyToTakeImage</EFDB_Topic>
+    <Alias>readyToTakeImage</Alias>
+    <Explanation>http://project.lsst.org/ts/sal_objects/help/ATCamera_logevent_readyToTakeImage.html</Explanation>
+</SALEvent>
+<SALEvent>
+    <Subsystem>ATCamera</Subsystem>
+    <Version>3.7.1</Version>
+    <Author></Author>
+    <EFDB_Topic>ATCamera_logevent_ccsCommandState</EFDB_Topic>
+    <Alias>ccsCommandState</Alias>
+    <Explanation>http://project.lsst.org/ts/sal_objects/help/ATCamera_logevent_ccsCommandState.html</Explanation>
+    <item>
+        <EFDB_Name>substate</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>long</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+        <Enumeration>IDLE,BUSY</Enumeration>
+    </item>
+</SALEvent>
+<SALEvent>
+    <Subsystem>ATCamera</Subsystem>
+    <Version>3.7.1</Version>
+    <Author></Author>
+    <EFDB_Topic>ATCamera_logevent_prepareToTakeImage</EFDB_Topic>
+    <Alias>prepareToTakeImage</Alias>
+    <Explanation>http://project.lsst.org/ts/sal_objects/help/ATCamera_logevent_prepareToTakeImage.html</Explanation>
+</SALEvent>
+<SALEvent>
+    <Subsystem>ATCamera</Subsystem>
+    <Version>3.7.1</Version>
+    <Author></Author>
+    <EFDB_Topic>ATCamera_logevent_endShutterOpen</EFDB_Topic>
+    <Alias>endShutterOpen</Alias>
+    <Explanation>http://project.lsst.org/ts/sal_objects/help/ATCamera_logevent_endShutterOpen.html</Explanation>
+</SALEvent>
+<SALEvent>
+    <Subsystem>ATCamera</Subsystem>
+    <Version>3.7.1</Version>
+    <Author></Author>
+    <EFDB_Topic>ATCamera_logevent_startIntegration</EFDB_Topic>
+    <Alias>startIntegration</Alias>
+    <Explanation>http://project.lsst.org/ts/sal_objects/help/ATCamera_logevent_startIntegration.html</Explanation>
+    <item>
+        <EFDB_Name>imageSequenceName</EFDB_Name>
+        <Description>The imageSequenceName as passed to the takeImages command</Description>
+        <IDL_Type>string</IDL_Type>
+        <IDL_Size>256</IDL_Size>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>imagesInSequence</EFDB_Name>
+        <Description>The total number of requested images in sequence
+</Description>
+        <IDL_Type>long</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>imageName</EFDB_Name>
+        <Description>The imageName for this specific exposure</Description>
+        <IDL_Type>string</IDL_Type>
+        <IDL_Size>256</IDL_Size>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>imageIndex</EFDB_Name>
+        <Description>The zero based index number for this specific exposure within the sequence</Description>
+        <IDL_Type>long</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>timeStamp</EFDB_Name>
+        <Description>The effective time at which the image acquisition started (i.e. the end of the previous clear or readout)</Description>
+        <IDL_Type>double</IDL_Type>
+        <Units>seconds</Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>exposureTime</EFDB_Name>
+        <Description>The requested exposure time</Description>
+        <IDL_Type>double</IDL_Type>
+        <Units>seconds</Units>
+        <Count>1</Count>
+    </item>
+</SALEvent>
+<SALEvent>
+    <Subsystem>ATCamera</Subsystem>
+    <Version>3.7.1</Version>
+    <Author></Author>
+    <EFDB_Topic>ATCamera_logevent_startShutterOpen</EFDB_Topic>
+    <Alias>startShutterOpen</Alias>
+    <Explanation>http://project.lsst.org/ts/sal_objects/help/ATCamera_logevent_startShutterOpen.html</Explanation>
+</SALEvent>
+<SALEvent>
+    <Subsystem>ATCamera</Subsystem>
+    <Version>3.7.1</Version>
+    <Author></Author>
+    <EFDB_Topic>ATCamera_logevent_raftsDetailedState</EFDB_Topic>
+    <Alias>raftsDetailedState</Alias>
+    <Explanation>http://project.lsst.org/ts/sal_objects/help/ATCamera_logevent_raftsDetailedState.html</Explanation>
+    <item>
+        <EFDB_Name>substate</EFDB_Name>
+        <Description>Enumeration of valid substates</Description>
+        <IDL_Type>long</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+        <Enumeration>NEEDS_CLEAR,CLEARING,INTEGRATING,READING_OUT,QUIESCENT</Enumeration>
+    </item>
+</SALEvent>
+<SALEvent>
+    <Subsystem>ATCamera</Subsystem>
+    <Version>3.7.1</Version>
+    <Author></Author>
+    <EFDB_Topic>ATCamera_logevent_startReadout</EFDB_Topic>
+    <Alias>startReadout</Alias>
+    <Explanation>http://project.lsst.org/ts/sal_objects/help/ATCamera_logevent_startReadout.html</Explanation>
+    <item>
+        <EFDB_Name>imageSequenceName</EFDB_Name>
+        <Description>The imageSequenceName as passed to the takeImages command</Description>
+        <IDL_Type>string</IDL_Type>
+        <IDL_Size>256</IDL_Size>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>imagesInSequence</EFDB_Name>
+        <Description>The total  number of requested images in sequence</Description>
+        <IDL_Type>long</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>imageName</EFDB_Name>
+        <Description>The imageName for this specific exposure</Description>
+        <IDL_Type>string</IDL_Type>
+        <IDL_Size>256</IDL_Size>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>imageIndex</EFDB_Name>
+        <Description>The zero based index number for this specific exposure within the sequence</Description>
+        <IDL_Type>long</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>timeStamp</EFDB_Name>
+        <Description>The effective time at which the image acquisition started (i.e. the end of the previous clear or readout)</Description>
+        <IDL_Type>double</IDL_Type>
+        <Units>seconds</Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>exposureTime</EFDB_Name>
+        <Description>The requested exposure time</Description>
+        <IDL_Type>double</IDL_Type>
+        <Units>seconds</Units>
+        <Count>1</Count>
+    </item>
+</SALEvent>
+<SALEvent>
+    <Subsystem>ATCamera</Subsystem>
+    <Version>3.7.1</Version>
+    <Author></Author>
+    <EFDB_Topic>ATCamera_logevent_shutterMotionProfile</EFDB_Topic>
+    <Alias>shutterMotionProfile</Alias>
+    <Explanation>http://project.lsst.org/ts/sal_objects/help/ATCamera_logevent_shutterMotionProfile.html</Explanation>
+    <item>
+        <EFDB_Name>measuredExposureTime</EFDB_Name>
+        <Description>The measured average exposure time</Description>
+        <IDL_Type>double</IDL_Type>
+        <Units>seconds</Units>
+        <Count>1</Count>
+    </item>
+</SALEvent>
+<SALEvent>
+    <Subsystem>ATCamera</Subsystem>
+    <Version>3.7.1</Version>
+    <Author></Author>
+    <EFDB_Topic>ATCamera_logevent_imageReadoutParameters</EFDB_Topic>
+    <Alias>imageReadoutParameters</Alias>
+    <Explanation>http://project.lsst.org/ts/sal_objects/help/ATCamera_logevent_imageReadoutParameters.html</Explanation>
+    <item>
+        <EFDB_Name>imageName</EFDB_Name>
+        <Description>The imageName for this specific exposure</Description>
+        <IDL_Type>string</IDL_Type>
+        <IDL_Size>256</IDL_Size>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>ccdNames</EFDB_Name>
+        <Description>A list of all ccds currently configured, of the form RnnSnn, : delimited (empty if entry not used)</Description>
+        <IDL_Type>string</IDL_Type>
+        <IDL_Size>256</IDL_Size>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>ccdType</EFDB_Name>
+        <Description>The type of each CCD, this determines segRows, segCols and serCols</Description>
+        <IDL_Type>long</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+        <Enumeration>E2V,ITL</Enumeration>
+    </item>
+    <item>
+        <EFDB_Name>overRows</EFDB_Name>
+        <Description>See CCD Readout Parameters Diagram</Description>
+        <IDL_Type>long</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>overCols</EFDB_Name>
+        <Description>See CCD Readout Parameters Diagram</Description>
+        <IDL_Type>long</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>readRows</EFDB_Name>
+        <Description>See CCD Readout Parameters Diagram</Description>
+        <IDL_Type>long</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>readCols</EFDB_Name>
+        <Description>See CCD Readout Parameters Diagram</Description>
+        <IDL_Type>long</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>readCols2</EFDB_Name>
+        <Description>See CCD Readout Parameters Diagram</Description>
+        <IDL_Type>long</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>preCols</EFDB_Name>
+        <Description>See CCD Readout Parameters Diagram</Description>
+        <IDL_Type>long</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>preRows</EFDB_Name>
+        <Description>See CCD Readout Parameters Diagram</Description>
+        <IDL_Type>long</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>postCols</EFDB_Name>
+        <Description>See CCD Readout Parameters Diagram</Description>
+        <IDL_Type>long</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+</SALEvent>
+<SALEvent>
+    <Subsystem>ATCamera</Subsystem>
+    <Version>3.7.1</Version>
+    <Author></Author>
+    <EFDB_Topic>ATCamera_logevent_bonnShutterSettingsApplied</EFDB_Topic>
+    <Alias>bonnShutterSettingsApplied</Alias>
+    <Explanation>http://project.lsst.org/ts/sal_objects/help/ATCamera_logevent_bonnShutterSettingsApplied.html</Explanation>
+    <item>
+        <EFDB_Name>version</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>long</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>startA</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>float</IDL_Type>
+        <Units>ms</Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>startB</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>float</IDL_Type>
+        <Units>ms</Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>travelDistance</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>float</IDL_Type>
+        <Units>mm</Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>startVelocity</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>float</IDL_Type>
+        <Units>Steps/s</Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>acceleration</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>float</IDL_Type>
+        <Units>m/s^2</Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>maxVelocity</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>float</IDL_Type>
+        <Units>Steps/s</Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>threshold</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>float</IDL_Type>
+        <Units>Steps</Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>shutterVersion</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>string</IDL_Type>
+        <IDL_Size>256</IDL_Size>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>firmwareVersion</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>string</IDL_Type>
+        <IDL_Size>256</IDL_Size>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+</SALEvent>
+<SALEvent>
+    <Subsystem>ATCamera</Subsystem>
+    <Version>3.7.1</Version>
+    <Author></Author>
+    <EFDB_Topic>ATCamera_logevent_wrebSettingsApplied</EFDB_Topic>
+    <Alias>wrebSettingsApplied</Alias>
+    <Explanation>http://project.lsst.org/ts/sal_objects/help/ATCamera_logevent_wrebSettingsApplied.html</Explanation>
+    <item>
+        <EFDB_Name>version</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>long</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>sequencerKey</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>string</IDL_Type>
+        <IDL_Size>256</IDL_Size>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>daqVersion</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>long</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>firmwareVersion</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>long</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>aspic0_af1</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>long</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>aspic0_clamp</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>long</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>aspic0_gain</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>long</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>aspic0_rc</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>long</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>aspic0_tm</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>long</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>aspic1_af1</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>long</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>aspic1_clamp</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>long</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>aspic1_gain</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>long</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>aspic1_rc</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>long</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>aspic1_tm</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>long</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>bias0_csGate</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>long</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>bias0_csGateP</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>long</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>bias0_gd</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>long</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>bias0_gdP</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>long</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>bias0_od</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>long</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>bias0_odP</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>long</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>bias0_og</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>long</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>bias0_ogP</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>long</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>bias0_ogSh</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>long</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>bias0_rd</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>long</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>bias0_rdP</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>long</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>dac_csGate</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>long</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>dac_pclkHigh</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>long</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>dac_pclkHighP</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>long</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>dac_pclkHighSh</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>long</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>dac_pclkLow</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>long</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>dac_pclkLowP</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>long</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>dac_pclkLowSh</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>long</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>dac_rgHigh</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>long</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>dac_rgHighP</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>long</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>dac_rgHighSh</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>long</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>dac_rgLow</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>long</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>dac_rgLowP</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>long</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>dac_rgLowSh</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>long</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>dac_sclkHigh</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>long</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>dac_sclkHighP</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>long</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>dac_sclkHighSh</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>long</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>dac_sclkLow</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>long</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>dac_sclkLowP</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>long</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>dac_sclkLowSh</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>long</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+</SALEvent></SALEventSet>

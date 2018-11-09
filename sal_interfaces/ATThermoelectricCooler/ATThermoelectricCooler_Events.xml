@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="http://lsst-sal.tuc.noao.edu/schema/SALEventSet.xsl"?>
+<SALEventSet xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="http://lsst-sal.tuc.noao.edu/schema/SALEventSet.xsd">
+<Enumeration>DetailedState_DisabledState,DetailedState_EnabledState,DetailedState_FaultState,DetailedState_OfflineState,DetailedState_StandbyState,DetailedState_ChillerRunningState,DetailedState_ChillerStoppedState,DetailedState_StoppingChillerState</Enumeration>
+<Enumeration>ChillerStatus_Standby,ChillerStatus_Running</Enumeration>
+<Enumeration>PumpStatusFlag_PumpOff,PumpStatusFlag_PumpOn</Enumeration>
+<Enumeration>AlarmStatusFlag_NoAlarm,AlarmStatusFlag_AlarmPresent</Enumeration>
+<Enumeration>WarningStatusFlag_NoWarning,WarningStatusFlag_WarningPresent</Enumeration>
+
+<SALEvent>
+    <Subsystem>ATThermoelectricCooler</Subsystem>
+    <Version>3.8.2</Version>
+    <Author></Author>
+    <EFDB_Topic>ATThermoelectricCooler_logevent_internalCommand</EFDB_Topic>
+    <Alias>internalCommand</Alias>
+    <Explanation>http://sal.lsst.org</Explanation>
+    <item>
+        <EFDB_Name>commandObject</EFDB_Name>
+        <Description>The error code being published.</Description>
+        <IDL_Type>byte</IDL_Type>
+        <Units></Units>
+        <Count>800</Count>
+    </item>
+</SALEvent>
+<SALEvent>
+    <Subsystem>ATThermoelectricCooler</Subsystem>
+    <Version>3.8.2</Version>
+    <Author></Author>
+    <EFDB_Topic>ATThermoelectricCooler_logevent_heartbeat</EFDB_Topic>
+    <Alias>heartbeat</Alias>
+    <Explanation>http://sal.lsst.org</Explanation>
+    <item>
+        <EFDB_Name>heartbeat</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>boolean</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+</SALEvent>
+<SALEvent>
+    <Subsystem>ATThermoelectricCooler</Subsystem>
+    <Version>3.8.2</Version>
+    <Author></Author>
+    <EFDB_Topic>ATThermoelectricCooler_logevent_loopTimeOutOfRange</EFDB_Topic>
+    <Alias>loopTimeOutOfRange</Alias>
+    <Explanation>http://sal.lsst.org</Explanation>
+    <item>
+        <EFDB_Name>loopTimeOutOfRange</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>boolean</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+</SALEvent>
+<SALEvent>
+    <Subsystem>ATThermoelectricCooler</Subsystem>
+    <Version>3.8.2</Version>
+    <Author></Author>
+    <EFDB_Topic>ATThermoelectricCooler_logevent_rejectedCommand</EFDB_Topic>
+    <Alias>rejectedCommand</Alias>
+    <Explanation>http://sal.lsst.org</Explanation>
+    <item>
+        <EFDB_Name>command</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>string</IDL_Type>
+        <IDL_Size>1</IDL_Size>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>state</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>string</IDL_Type>
+        <IDL_Size>1</IDL_Size>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>timestamp</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>double</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+</SALEvent>
+<SALEvent>
+    <Subsystem>ATThermoelectricCooler</Subsystem>
+    <Version>3.8.2</Version>
+    <Author></Author>
+    <EFDB_Topic>ATThermoelectricCooler_logevent_deviceErrorCode</EFDB_Topic>
+    <Alias>deviceErrorCode</Alias>
+    <Explanation>http://sal.lsst.org</Explanation>
+    <item>
+        <EFDB_Name>deviceCode</EFDB_Name>
+        <Description>Error code directly from the device. For more information check the documentation.</Description>
+        <IDL_Type>long</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>timestamp</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>double</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+</SALEvent>
+<SALEvent>
+    <Subsystem>ATThermoelectricCooler</Subsystem>
+    <Version>3.8.2</Version>
+    <Author></Author>
+    <EFDB_Topic>ATThermoelectricCooler_logevent_hardwareWarning</EFDB_Topic>
+    <Alias>hardwareWarning</Alias>
+    <Explanation>http://sal.lsst.org</Explanation>
+    <item>
+        <EFDB_Name>warning</EFDB_Name>
+        <Description>Error code directly from the device. For more information check the documentation.</Description>
+        <IDL_Type>boolean</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>timestamp</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>double</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+</SALEvent>
+<SALEvent>
+    <Subsystem>ATThermoelectricCooler</Subsystem>
+    <Version>3.8.2</Version>
+    <Author></Author>
+    <EFDB_Topic>ATThermoelectricCooler_logevent_temperatureReached</EFDB_Topic>
+    <Alias>temperatureReached</Alias>
+    <Explanation>http://sal.lsst.org</Explanation>
+    <item>
+        <EFDB_Name>inTemperature</EFDB_Name>
+        <Description>Error code directly from the device. For more information check the documentation.</Description>
+        <IDL_Type>boolean</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>timestamp</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>double</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+</SALEvent>
+</SALEventSet>

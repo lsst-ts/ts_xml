@@ -1,0 +1,302 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="http://lsst-sal.tuc.noao.edu/schema/SALEventSet.xsl"?>
+<SALEventSet xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="http://lsst-sal.tuc.noao.edu/schema/SALEventSet.xsd">
+<Enumeration>M3ExitPort_Nasmyth1,M3ExitPort_Nasmyth2,M3ExitPort_Port3</Enumeration>
+<Enumeration>MirrorCoverState_DisabledState,MirrorCoverState_EnabledState,MirrorCoverState_FaultState,MirrorCoverState_OfflineState,MirrorCoverState_StandbyState,MirrorCoverState_MirrorCoversClosedState,MirrorCoverState_MirrorCoversOpenedState,MirrorCoverState_InMotionState</Enumeration>
+<Enumeration>M3State_DisabledState,M3State_EnabledState,M3State_FaultState,M3State_OfflineState,M3State_StandbyState,M3State_Nasmyth1State,M3State_Nasmyth2State,M3State_Port3State,M3State_InMotionState</Enumeration>
+<Enumeration>CellVentState_DisabledState,CellVentState_EnabledState,CellVentState_FaultState,CellVentState_OfflineState,CellVentState_StandbyState,CellVentState_CellVentsOpenedState,CellVentState_CellVentsClosedState,CellVentState_InMotionState</Enumeration>
+<Enumeration>AirValveState_DisabledState,AirValveState_EnabledState,AirValveState_FaultState,AirValveState_OfflineState,AirValveState_StandbyState,AirValveState_ValveOpenedState,AirValveState_ValveClosedState</Enumeration>
+<Enumeration>CoverPosition_Opened,CoverPosition_Closed,CoverPosition_PartiallyOpened</Enumeration>
+<Enumeration>VentsPosition_Opened,VentsPosition_Closed,VentsPosition_PartiallyOpened</Enumeration>
+<Enumeration>DetailedState_DisabledState,DetailedState_EnabledState,DetailedState_FaultState,DetailedState_OfflineState,DetailedState_StandbyState</Enumeration>
+
+<SALEvent>
+    <Subsystem>ATPneumatics</Subsystem>
+    <Version>3.7.1</Version>
+    <Author></Author>
+    <EFDB_Topic>ATPneumatics_logevent_m1CoverLimitSwitches</EFDB_Topic>
+    <Alias>m1CoverLimitSwitches</Alias>
+    <Explanation>http://sal.lsst.org</Explanation>
+    <item>
+        <EFDB_Name>cover1ClosedActive</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>boolean</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>cover2ClosedActive</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>boolean</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>cover3ClosedActive</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>boolean</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>cover4ClosedActive</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>boolean</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>cover1OpenedActive</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>boolean</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>cover2OpenedActive</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>boolean</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>cover3OpenedActive</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>boolean</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>cover4OpenedActive</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>boolean</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+</SALEvent>
+<SALEvent>
+    <Subsystem>ATPneumatics</Subsystem>
+    <Version>3.7.1</Version>
+    <Author></Author>
+    <EFDB_Topic>ATPneumatics_logevent_m1VentsLimitSwitches</EFDB_Topic>
+    <Alias>m1VentsLimitSwitches</Alias>
+    <Explanation>http://sal.lsst.org</Explanation>
+    <item>
+        <EFDB_Name>ventsClosedActive</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>boolean</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>ventsOpenedActive</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>boolean</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+</SALEvent>
+<SALEvent>
+    <Subsystem>ATPneumatics</Subsystem>
+    <Version>3.7.1</Version>
+    <Author></Author>
+    <EFDB_Topic>ATPneumatics_logevent_powerStatus</EFDB_Topic>
+    <Alias>powerStatus</Alias>
+    <Explanation>http://sal.lsst.org</Explanation>
+    <item>
+        <EFDB_Name>powerOnL1</EFDB_Name>
+        <Description>Status Power line 1</Description>
+        <IDL_Type>boolean</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>powerOnL2</EFDB_Name>
+        <Description>Status Power line 2</Description>
+        <IDL_Type>boolean</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>powerOnL3</EFDB_Name>
+        <Description>Status Power line 3</Description>
+        <IDL_Type>boolean</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+</SALEvent>
+<SALEvent>
+    <Subsystem>ATPneumatics</Subsystem>
+    <Version>3.7.1</Version>
+    <Author></Author>
+    <EFDB_Topic>ATPneumatics_logevent_eStopTriggered</EFDB_Topic>
+    <Alias>eStopTriggered</Alias>
+    <Explanation>http://sal.lsst.org</Explanation>
+    <item>
+        <EFDB_Name>triggered</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>boolean</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+</SALEvent>
+<SALEvent>
+    <Subsystem>ATPneumatics</Subsystem>
+    <Version>3.7.1</Version>
+    <Author></Author>
+    <EFDB_Topic>ATPneumatics_logevent_resetEStopTriggered</EFDB_Topic>
+    <Alias>resetEStopTriggered</Alias>
+    <Explanation>http://sal.lsst.org</Explanation>
+    <item>
+        <EFDB_Name>triggered</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>boolean</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+</SALEvent>
+<SALEvent>
+    <Subsystem>ATPneumatics</Subsystem>
+    <Version>3.7.1</Version>
+    <Author></Author>
+    <EFDB_Topic>ATPneumatics_logevent_m1CoverState</EFDB_Topic>
+    <Alias>m1CoverState</Alias>
+    <Explanation>http://sal.lsst.org</Explanation>
+            <item>
+                <EFDB_Name>state</EFDB_Name>
+                <Description></Description>
+                <!-- Enumeration: MirrorCoverState -->
+                <IDL_Type>long</IDL_Type>
+                <Units></Units>
+                <Count>1</Count>
+            </item>
+</SALEvent>
+<SALEvent>
+    <Subsystem>ATPneumatics</Subsystem>
+    <Version>3.7.1</Version>
+    <Author></Author>
+    <EFDB_Topic>ATPneumatics_logevent_m1State</EFDB_Topic>
+    <Alias>m1State</Alias>
+    <Explanation>http://sal.lsst.org</Explanation>
+            <item>
+                <EFDB_Name>state</EFDB_Name>
+                <Description></Description>
+                <!-- Enumeration: AirValveState -->
+                <IDL_Type>long</IDL_Type>
+                <Units></Units>
+                <Count>1</Count>
+            </item>
+</SALEvent>
+<SALEvent>
+    <Subsystem>ATPneumatics</Subsystem>
+    <Version>3.7.1</Version>
+    <Author></Author>
+    <EFDB_Topic>ATPneumatics_logevent_m2State</EFDB_Topic>
+    <Alias>m2State</Alias>
+    <Explanation>http://sal.lsst.org</Explanation>
+            <item>
+                <EFDB_Name>state</EFDB_Name>
+                <Description></Description>
+                <!-- Enumeration: AirValveState -->
+                <IDL_Type>long</IDL_Type>
+                <Units></Units>
+                <Count>1</Count>
+            </item>
+</SALEvent>
+<SALEvent>
+    <Subsystem>ATPneumatics</Subsystem>
+    <Version>3.7.1</Version>
+    <Author></Author>
+    <EFDB_Topic>ATPneumatics_logevent_instrumentState</EFDB_Topic>
+    <Alias>instrumentState</Alias>
+    <Explanation>http://sal.lsst.org</Explanation>
+            <item>
+                <EFDB_Name>state</EFDB_Name>
+                <Description></Description>
+                <!-- Enumeration: AirValveState -->
+                <IDL_Type>long</IDL_Type>
+                <Units></Units>
+                <Count>1</Count>
+            </item>
+</SALEvent>
+<SALEvent>
+    <Subsystem>ATPneumatics</Subsystem>
+    <Version>3.7.1</Version>
+    <Author></Author>
+    <EFDB_Topic>ATPneumatics_logevent_cellVentsState</EFDB_Topic>
+    <Alias>cellVentsState</Alias>
+    <Explanation>http://sal.lsst.org</Explanation>
+            <item>
+                <EFDB_Name>state</EFDB_Name>
+                <Description></Description>
+                <!-- Enumeration: CellVentState -->
+                <IDL_Type>long</IDL_Type>
+                <Units></Units>
+                <Count>1</Count>
+            </item>
+</SALEvent>
+<SALEvent>
+    <Subsystem>ATPneumatics</Subsystem>
+    <Version>3.7.1</Version>
+    <Author></Author>
+    <EFDB_Topic>ATPneumatics_logevent_mainValveState</EFDB_Topic>
+    <Alias>mainValveState</Alias>
+    <Explanation>http://sal.lsst.org</Explanation>
+            <item>
+                <EFDB_Name>state</EFDB_Name>
+                <Description></Description>
+                <!-- Enumeration: AirValveState -->
+                <IDL_Type>long</IDL_Type>
+                <Units></Units>
+                <Count>1</Count>
+            </item>
+</SALEvent>
+<SALEvent>
+    <Subsystem>ATPneumatics</Subsystem>
+    <Version>3.7.1</Version>
+    <Author></Author>
+    <EFDB_Topic>ATPneumatics_logevent_m1CoverPosition</EFDB_Topic>
+    <Alias>m1CoverPosition</Alias>
+    <Explanation>http://sal.lsst.org</Explanation>
+            <item>
+                <EFDB_Name>position</EFDB_Name>
+                <Description></Description>
+                <!-- Enumeration: CoverPosition -->
+                <IDL_Type>long</IDL_Type>
+                <Units></Units>
+                <Count>1</Count>
+            </item>
+</SALEvent>
+<SALEvent>
+    <Subsystem>ATPneumatics</Subsystem>
+    <Version>3.7.1</Version>
+    <Author></Author>
+    <EFDB_Topic>ATPneumatics_logevent_m1VentsPosition</EFDB_Topic>
+    <Alias>m1VentsPosition</Alias>
+    <Explanation>http://sal.lsst.org</Explanation>
+            <item>
+                <EFDB_Name>position</EFDB_Name>
+                <Description></Description>
+                <!-- Enumeration: VentsPosition -->
+                <IDL_Type>long</IDL_Type>
+                <Units></Units>
+                <Count>1</Count>
+            </item>
+</SALEvent>
+<SALEvent>
+    <Subsystem>ATPneumatics</Subsystem>
+    <Version>3.7.1</Version>
+    <Author></Author>
+    <EFDB_Topic>ATPneumatics_logevent_detailedState</EFDB_Topic>
+    <Alias>detailedState</Alias>
+    <Explanation>http://sal.lsst.org</Explanation>
+            <item>
+                <EFDB_Name>detailedState</EFDB_Name>
+                <Description>An enumeration indicating the subsystem summary state. See the SummaryStateValue enumeration defined in the Typedefs package.</Description>
+                <!-- Enumeration: DetailedState -->
+                <IDL_Type>long</IDL_Type>
+                <Units></Units>
+                <Count>1</Count>
+            </item>
+</SALEvent></SALEventSet>
