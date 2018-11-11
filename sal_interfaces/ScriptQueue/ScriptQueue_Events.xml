@@ -95,11 +95,18 @@
     </item>
     <item>
         <EFDB_Name>processState</EFDB_Name>
-        <Description>State of script process. Loading means the script is still being loaded and is not yet configured. Configured means the script has been configured and can be run. Running means the script has been commanded to run. Complete means the script process ended with an exit code of 0. Failed means the script process ended with a non-zero exit code. Terminated means the script queue terminated the script.</Description>
+        <Description>State of script process. Loading means the script is still being loaded and is not yet configured. Configured means the script has been configured and can be run. Running means the script has been commanded to run. Done means the script has finished (see scriptState to see whether it ran successfully). ConfigureFailed means the process was terminated because the `configure` command failed. Terminated means the process was terminated due to calling the `terminate` command, or due to calling the `stop` command when the script was not running or if running but stopping the script gently failed.</Description>
         <IDL_Type>byte</IDL_Type>
         <Units></Units>
         <Count>1</Count>
-        <Enumeration>Loading,Configured,Running,Complete,Failed,Terminated</Enumeration>
+        <Enumeration>Loading,Configured,Running,Done,ConfigureFailed,Terminated</Enumeration>
+    </item>
+    <item>
+        <EFDB_Name>scriptState</EFDB_Name>
+        <Description>State of the script; see Script_Events.xml for enum values; 0 if the script is not yet loaded.</Description>
+        <IDL_Type>byte</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
     </item>
 </SALEvent>
 <SALEvent>
