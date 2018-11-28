@@ -3,105 +3,6 @@
 <SALCommandSet xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:noNamespaceSchemaLocation="http://lsst-sal.tuc.noao.edu/schema/SALCommandSet.xsd">
 
-<!--Standard CSC commands-->
-<SALCommand>
-    <Subsystem>ScriptQueue</Subsystem>
-    <Version>1.0.0</Version>
-    <Author></Author>
-    <EFDB_Topic>ScriptQueue_command_standby</EFDB_Topic>
-    <Alias>standby</Alias>
-    <Device></Device>
-    <Property></Property>
-    <Action></Action>
-    <Value></Value>
-    <Explanation>http://sal.lsst.org</Explanation>
-    <item>
-        <EFDB_Name>state</EFDB_Name>
-        <Description></Description>
-        <IDL_Type>boolean</IDL_Type>
-        <Units></Units>
-        <Count>1</Count>
-    </item>
-</SALCommand>
-<SALCommand>
-    <Subsystem>ScriptQueue</Subsystem>
-    <Version>1.0.0</Version>
-    <Author></Author>
-    <EFDB_Topic>ScriptQueue_command_start</EFDB_Topic>
-    <Alias>start</Alias>
-    <Device></Device>
-    <Property></Property>
-    <Action></Action>
-    <Value></Value>
-    <Explanation>http://sal.lsst.org</Explanation>
-    <item>
-        <EFDB_Name>settingsToApply</EFDB_Name>
-        <Description></Description>
-        <IDL_Type>string</IDL_Type>
-        <IDL_Size>256</IDL_Size>
-        <Units></Units>
-        <Count>1</Count>
-    </item>
-</SALCommand>
-<SALCommand>
-    <Subsystem>ScriptQueue</Subsystem>
-    <Version>1.0.0</Version>
-    <Author></Author>
-    <EFDB_Topic>ScriptQueue_command_enable</EFDB_Topic>
-    <Alias>enable</Alias>
-    <Device></Device>
-    <Property></Property>
-    <Action></Action>
-    <Value></Value>
-    <Explanation>http://sal.lsst.org</Explanation>
-    <item>
-        <EFDB_Name>state</EFDB_Name>
-        <Description></Description>
-        <IDL_Type>boolean</IDL_Type>
-        <Units></Units>
-        <Count>1</Count>
-    </item>
-</SALCommand>
-<SALCommand>
-    <Subsystem>ScriptQueue</Subsystem>
-    <Version>1.0.0</Version>
-    <Author></Author>
-    <EFDB_Topic>ScriptQueue_command_exitControl</EFDB_Topic>
-    <Alias>exitControl</Alias>
-    <Device></Device>
-    <Property></Property>
-    <Action></Action>
-    <Value></Value>
-    <Explanation>http://sal.lsst.org</Explanation>
-    <item>
-        <EFDB_Name>state</EFDB_Name>
-        <Description></Description>
-        <IDL_Type>boolean</IDL_Type>
-        <Units></Units>
-        <Count>1</Count>
-    </item>
-</SALCommand>
-<SALCommand>
-    <Subsystem>ScriptQueue</Subsystem>
-    <Version>1.0.0</Version>
-    <Author></Author>
-    <EFDB_Topic>ScriptQueue_command_disable</EFDB_Topic>
-    <Alias>disable</Alias>
-    <Device></Device>
-    <Property></Property>
-    <Action></Action>
-    <Value></Value>
-    <Explanation>http://sal.lsst.org</Explanation>
-    <item>
-        <EFDB_Name>state</EFDB_Name>
-        <Description></Description>
-        <IDL_Type>boolean</IDL_Type>
-        <Units></Units>
-        <Count>1</Count>
-    </item>
-</SALCommand>
-<!--End standard CSC commands-->
-
 <SALCommand>
     <Subsystem>ScriptQueue</Subsystem>
     <Version>1.0.0</Version>
@@ -131,7 +32,7 @@
     <Property></Property>
     <Action></Action>
     <Value></Value>
-    <Explanation>List the scripts in the queue.</Explanation>
+    <Explanation>Output the queue event.</Explanation>
     <item>
         <EFDB_Name>ignored</EFDB_Name>
         <Description>Dummy value that is ignored.</Description>
@@ -144,13 +45,13 @@
     <Subsystem>ScriptQueue</Subsystem>
     <Version>1.0.0</Version>
     <Author></Author>
-    <EFDB_Topic>ScriptQueue_command_showScriptInfo</EFDB_Topic>
-    <Alias>showScriptInfo</Alias>
+    <EFDB_Topic>ScriptQueue_command_showScript</EFDB_Topic>
+    <Alias>showScript</Alias>
     <Device></Device>
     <Property></Property>
     <Action></Action>
     <Value></Value>
-    <Explanation>Get scriptInfo for one script.</Explanation>
+    <Explanation>Output script event for a specified script.</Explanation>
     <item>
         <EFDB_Name>salIndex</EFDB_Name>
         <Description>SAL index of Script for which you want information.</Description>
@@ -295,25 +196,6 @@
     <Subsystem>ScriptQueue</Subsystem>
     <Version>1.0.0</Version>
     <Author></Author>
-    <EFDB_Topic>ScriptQueue_command_remove</EFDB_Topic>
-    <Alias>remove</Alias>
-    <Device></Device>
-    <Property></Property>
-    <Action></Action>
-    <Value></Value>
-    <Explanation>Remove a script from the queue. This will terminate the current script if it is running.</Explanation>
-    <item>
-      <EFDB_Name>salIndex</EFDB_Name>
-        <Description>Index of Script SAL component to remove.</Description>
-        <IDL_Type>int</IDL_Type>
-        <Units></Units>
-        <Count>1</Count>
-    </item>
-</SALCommand>
-<SALCommand>
-    <Subsystem>ScriptQueue</Subsystem>
-    <Version>1.0.0</Version>
-    <Author></Author>
     <EFDB_Topic>ScriptQueue_command_requeue</EFDB_Topic>
     <Alias>requeue</Alias>
     <Device></Device>
@@ -340,6 +222,39 @@
       <EFDB_Name>locationSalIndex</EFDB_Name>
         <Description>Index of Script SAL component referred to by `location`; ignored unless `location` is `Before` or `After`.</Description>
         <IDL_Type>int</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+</SALCommand>
+<SALCommand>
+    <Subsystem>ScriptQueue</Subsystem>
+    <Version>1.0.0</Version>
+    <Author></Author>
+    <EFDB_Topic>ScriptQueue_command_stopScripts</EFDB_Topic>
+    <Alias>stopScripts</Alias>
+    <Device></Device>
+    <Property></Property>
+    <Action></Action>
+    <Value></Value>
+    <Explanation>Stop one or more queued scripts and/or the current script.</Explanation>
+    <item>
+        <EFDB_Name>length</EFDB_Name>
+        <Description>Number of valid entries in salIndices.</Description>
+        <IDL_Type>int</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>salIndices</EFDB_Name>
+        <Description>Indices of Script SAL component to stop, 0 terminated.</Description>
+        <IDL_Type>int</IDL_Type>
+        <Units></Units>
+        <Count>1000</Count>
+    </item>
+    <item>
+      <EFDB_Name>terminate</EFDB_Name>
+        <Description>If True, terminate the current script without giving it a chance to clean up. If False, try sending a stop command first, and only terminate if if that doesn't work in a timely fashion.</Description>
+        <IDL_Type>boolean</IDL_Type>
         <Units></Units>
         <Count>1</Count>
     </item>
