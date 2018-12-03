@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="http://project.lsst.org/ts/sal_objects/schema/SALCommandSet.xsl"?>
+<SALCommandSet xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="http://project.lsst.org/ts/sal_objects/schema/SALCommandSet.xsd">
+<SALCommand>
+    <Subsystem>ATAOS</Subsystem>
+    <Version>3.8</Version>
+    <Author>Tiago Ribeiro</Author>
+    <EFDB_Topic>ATAOS_command_enableCorrection</EFDB_Topic>
+    <Alias>enableCorrection</Alias>
+    <Device></Device>
+    <Property></Property>
+    <Action></Action>
+    <Value></Value>
+    <Explanation>http://project.lsst.org/ts/sal_objects/help</Explanation>
+    <item>
+        <EFDB_Name>enableAll</EFDB_Name>
+        <Description>Enable correction on all components.</Description>
+        <IDL_Type>boolean</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>m1</EFDB_Name>
+        <Description>Enable correction in M1 (ignored if all).</Description>
+        <IDL_Type>boolean</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>m2</EFDB_Name>
+        <Description>Enable correction in M2 (ignored if all).</Description>
+        <IDL_Type>boolean</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>hexapod</EFDB_Name>
+        <Description>Enable hexapod correction (ignored if all)</Description>
+        <IDL_Type>boolean</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>focus</EFDB_Name>
+        <Description>Enable focus correction (ignored if all)</Description>
+        <IDL_Type>boolean</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>moveWhileExposing</EFDB_Name>
+        <Description>Apply focus and hexapod corrections during exposures? (default is no)</Description>
+        <IDL_Type>boolean</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+</SALCommand>
+<SALCommand>
+    <Subsystem>ATAOS</Subsystem>
+    <Version>3.8</Version>
+    <Author>Tiago Ribeiro</Author>
+    <EFDB_Topic>ATAOS_command_disableCorrection</EFDB_Topic>
+    <Alias>disableCorrection</Alias>
+    <Device></Device>
+    <Property></Property>
+    <Action></Action>
+    <Value></Value>
+    <Explanation>http://project.lsst.org/ts/sal_objects/help</Explanation>
+    <item>
+        <EFDB_Name>disableAll</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>boolean</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>m1</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>boolean</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>m2</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>boolean</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>hexapod</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>boolean</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>focus</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>boolean</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>moveWhileExposing</EFDB_Name>
+        <Description>Apply focus and hexapod corrections during exposures? (default is no)</Description>
+        <IDL_Type>boolean</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+</SALCommand>
+<SALCommand>
+    <Subsystem>ATAOS</Subsystem>
+    <Version>3.8</Version>
+    <Author>Tiago Ribeiro</Author>
+    <EFDB_Topic>ATAOS_command_applyCorrection</EFDB_Topic>
+    <Alias>applyCorrection</Alias>
+    <Device></Device>
+    <Property></Property>
+    <Action></Action>
+    <Value></Value>
+    <Explanation>http://project.lsst.org/ts/sal_objects/help</Explanation>
+    <item>
+        <EFDB_Name>azimuth</EFDB_Name>
+        <Description>Azimuth position for the correction (must be larger then 0).</Description>
+        <IDL_Type>double</IDL_Type>
+        <Units>degrees</Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>elevation</EFDB_Name>
+        <Description>Elevation position for the correction (must be larger then 0).</Description>
+        <IDL_Type>double</IDL_Type>
+        <Units>degrees</Units>
+        <Count>1</Count>
+    </item>
+</SALCommand>
+<SALCommand>
+    <Subsystem>ATAOS</Subsystem>
+    <Version>3.8</Version>
+    <Author>Tiago Ribeiro</Author>
+    <EFDB_Topic>ATAOS_command_applyFocusOffset</EFDB_Topic>
+    <Alias>applyFocusOffset</Alias>
+    <Device></Device>
+    <Property></Property>
+    <Action></Action>
+    <Value></Value>
+    <Explanation>http://project.lsst.org/ts/sal_objects/help</Explanation>
+    <item>
+        <EFDB_Name>offset</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>float</IDL_Type>
+        <Units>mm</Units>
+        <Count>1</Count>
+    </item>
+</SALCommand>
+<SALCommand>
+    <Subsystem>ATAOS</Subsystem>
+    <Version>3.8</Version>
+    <Author>Tiago Ribeiro</Author>
+    <EFDB_Topic>ATAOS_command_setFocus</EFDB_Topic>
+    <Alias>setFocus</Alias>
+    <Device></Device>
+    <Property></Property>
+    <Action></Action>
+    <Value></Value>
+    <Explanation>http://project.lsst.org/ts/sal_objects/help</Explanation>
+    <item>
+        <EFDB_Name>focus</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>float</IDL_Type>
+        <Units>mm</Units>
+        <Count>1</Count>
+    </item>
+</SALCommand>
+</SALCommandSet>
