@@ -1,20 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-stylesheet type="text/xsl" href="http://lsst-sal.tuc.noao.edu/schema/SALTelemetrySet.xsl"?>
 <SALTelemetrySet xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://lsst-sal.tuc.noao.edu/schema/SALTelemetrySet.xsd">
-<!-- accelerometerData : Contains data collected from the DC accelerometers. -->
-<!-- forceActuatorData : Contains data collected from the force actuators. -->
-<!-- gyroData : Contains data collected from the gyro. -->
-<!-- hardpointActuatorData : Contains data collected from the hardpoint actuators. -->
-<!-- hardpointMonitorData : Contains data collected from the hardpoint monitors. -->
-<!-- inclinometerData : Contains data collected from the inclinometer. -->
-<!-- imsData : Contains data collected from the independent measurement system's displacement sensors. -->
-<!-- outerLoopData : Contains data about the software's outer loop cycle. -->
-<!-- pidData : Contains data about the software's force balance system PIDs. -->
-<!-- powerSupplyData : Contains data collected from the power supplies. -->
-<!-- thermalScannerData : Contains data collected from the thermal scanners. -->
     <SALTelemetry>
         <Subsystem>MTM1M3</Subsystem>
-        <Version>3.7.0</Version>
+        <Version>3.8.35</Version>
         <Author></Author>
         <EFDB_Topic>MTM1M3_accelerometerData</EFDB_Topic>
         <item>
@@ -25,14 +14,14 @@
             <Count>1</Count>
         </item>
         <item>
-            <EFDB_Name>rawAccelerometer</EFDB_Name>
+            <EFDB_Name>rawAccelerometers</EFDB_Name>
             <Description></Description>
             <IDL_Type>float</IDL_Type>
             <Units></Units>
             <Count>8</Count>
         </item>
         <item>
-            <EFDB_Name>accelerometer</EFDB_Name>
+            <EFDB_Name>accelerometers</EFDB_Name>
             <Description></Description>
             <IDL_Type>float</IDL_Type>
             <Units></Units>
@@ -62,7 +51,7 @@
     </SALTelemetry>
     <SALTelemetry>
         <Subsystem>MTM1M3</Subsystem>
-        <Version>3.7.0</Version>
+        <Version>3.8.35</Version>
         <Author></Author>
         <EFDB_Topic>MTM1M3_forceActuatorData</EFDB_Topic>
         <item>
@@ -159,7 +148,48 @@
     </SALTelemetry>
     <SALTelemetry>
         <Subsystem>MTM1M3</Subsystem>
-        <Version>3.7.0</Version>
+        <Version>3.8.35</Version>
+        <Author></Author>
+        <EFDB_Topic>MTM1M3_forceActuatorPressure</EFDB_Topic>
+        <item>
+            <EFDB_Name>timestamps</EFDB_Name>
+            <Description></Description>
+            <IDL_Type>double</IDL_Type>
+            <Units></Units>
+            <Count>156</Count>
+        </item>
+        <item>
+            <EFDB_Name>primaryCylinderPushPressures</EFDB_Name>
+            <Description></Description>
+            <IDL_Type>float</IDL_Type>
+            <Units></Units>
+            <Count>156</Count>
+        </item>
+        <item>
+            <EFDB_Name>primaryCylinderPullPressures</EFDB_Name>
+            <Description></Description>
+            <IDL_Type>float</IDL_Type>
+            <Units></Units>
+            <Count>156</Count>
+        </item>
+        <item>
+            <EFDB_Name>secondaryCylinderPushPressures</EFDB_Name>
+            <Description></Description>
+            <IDL_Type>float</IDL_Type>
+            <Units></Units>
+            <Count>112</Count>
+        </item>
+        <item>
+            <EFDB_Name>secondaryCylinderPullPressures</EFDB_Name>
+            <Description></Description>
+            <IDL_Type>float</IDL_Type>
+            <Units></Units>
+            <Count>112</Count>
+        </item>
+    </SALTelemetry>
+    <SALTelemetry>
+        <Subsystem>MTM1M3</Subsystem>
+        <Version>3.8.35</Version>
         <Author></Author>
         <EFDB_Topic>MTM1M3_gyroData</EFDB_Topic>
         <item>
@@ -207,7 +237,7 @@
     </SALTelemetry>
     <SALTelemetry>
         <Subsystem>MTM1M3</Subsystem>
-        <Version>3.7.0</Version>
+        <Version>3.8.35</Version>
         <Author></Author>
         <EFDB_Topic>MTM1M3_hardpointActuatorData</EFDB_Topic>
         <item>
@@ -216,20 +246,6 @@
             <IDL_Type>double</IDL_Type>
             <Units></Units>
             <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>stepsQueued</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>long</IDL_Type>
-            <Units></Units>
-            <Count>6</Count>
-        </item>
-        <item>
-            <EFDB_Name>stepsCommanded</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>short</IDL_Type>
-            <Units></Units>
-            <Count>6</Count>
         </item>
         <item>
             <EFDB_Name>measuredForce</EFDB_Name>
@@ -346,7 +362,7 @@
     </SALTelemetry>
     <SALTelemetry>
         <Subsystem>MTM1M3</Subsystem>
-        <Version>3.7.0</Version>
+        <Version>3.8.35</Version>
         <Author></Author>
         <EFDB_Topic>MTM1M3_hardpointMonitorData</EFDB_Topic>
         <item>
@@ -401,7 +417,7 @@
     </SALTelemetry>
     <SALTelemetry>
         <Subsystem>MTM1M3</Subsystem>
-        <Version>3.7.0</Version>
+        <Version>3.8.35</Version>
         <Author></Author>
         <EFDB_Topic>MTM1M3_imsData</EFDB_Topic>
         <item>
@@ -463,7 +479,7 @@
     </SALTelemetry>
     <SALTelemetry>
         <Subsystem>MTM1M3</Subsystem>
-        <Version>3.7.0</Version>
+        <Version>3.8.35</Version>
         <Author></Author>
         <EFDB_Topic>MTM1M3_inclinometerData</EFDB_Topic>
         <item>
@@ -483,7 +499,7 @@
     </SALTelemetry>
     <SALTelemetry>
         <Subsystem>MTM1M3</Subsystem>
-        <Version>3.7.0</Version>
+        <Version>3.8.35</Version>
         <Author></Author>
         <EFDB_Topic>MTM1M3_outerLoopData</EFDB_Topic>
         <item>
@@ -501,13 +517,6 @@
             <Count>1</Count>
         </item>
         <item>
-            <EFDB_Name>slewFlag</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units></Units>
-            <Count>1</Count>
-        </item>
-        <item>
             <EFDB_Name>executionTime</EFDB_Name>
             <Description></Description>
             <IDL_Type>double</IDL_Type>
@@ -517,7 +526,7 @@
     </SALTelemetry>
     <SALTelemetry>
         <Subsystem>MTM1M3</Subsystem>
-        <Version>3.7.0</Version>
+        <Version>3.8.35</Version>
         <Author></Author>
         <EFDB_Topic>MTM1M3_pidData</EFDB_Topic>
         <item>
@@ -586,9 +595,9 @@
     </SALTelemetry>
     <SALTelemetry>
         <Subsystem>MTM1M3</Subsystem>
-        <Version>3.7.0</Version>
+        <Version>3.8.35</Version>
         <Author></Author>
-        <EFDB_Topic>MTM1M3_powerSupplyData</EFDB_Topic>
+        <EFDB_Topic>MTM1M3_powerData</EFDB_Topic>
         <item>
             <EFDB_Name>timestamp</EFDB_Name>
             <Description></Description>
@@ -637,47 +646,6 @@
             <IDL_Type>float</IDL_Type>
             <Units></Units>
             <Count>1</Count>
-        </item>
-    </SALTelemetry>
-    <SALTelemetry>
-        <Subsystem>MTM1M3</Subsystem>
-        <Version>3.7.0</Version>
-        <Author></Author>
-        <EFDB_Topic>MTM1M3_thermalScannerData</EFDB_Topic>
-        <item>
-            <EFDB_Name>timestamp</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>double</IDL_Type>
-            <Units></Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>scanner1</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>float</IDL_Type>
-            <Units></Units>
-            <Count>94</Count>
-        </item>
-        <item>
-            <EFDB_Name>scanner2</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>float</IDL_Type>
-            <Units></Units>
-            <Count>94</Count>
-        </item>
-        <item>
-            <EFDB_Name>scanner3</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>float</IDL_Type>
-            <Units></Units>
-            <Count>94</Count>
-        </item>
-        <item>
-            <EFDB_Name>scanner4</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>float</IDL_Type>
-            <Units></Units>
-            <Count>94</Count>
         </item>
     </SALTelemetry>
 </SALTelemetrySet>

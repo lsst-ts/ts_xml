@@ -14,7 +14,7 @@
  <xsd:element name="SALEventFileRef"  type="eventFileRefType"/>
 
  <xsd:complexType name="eventItemType">
-      <xsd:sequence>
+     <xsd:choice maxOccurs="unbounded">
               	<xsd:element name="EFDB_Name"     type="xsd:string"/>
               	<xsd:element name="Description"   type="xsd:string"/>
               	<xsd:element name="IDL_Type"      type="xsd:string"/>
@@ -23,7 +23,7 @@
               	<xsd:element name="Count"         type="xsd:positiveInteger"/>
               	<xsd:element name="Explanation"   minOccurs="0" maxOccurs="1"  type="xsd:anyURI"/>
                 <xsd:element name="Enumeration"   minOccurs="0" maxOccurs="1"  type="xsd:string"/>
-      </xsd:sequence>
+      </xsd:choice>
  </xsd:complexType>
 
  <xsd:complexType name="eventType">

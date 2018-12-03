@@ -1,81 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-stylesheet type="text/xsl" href="http://lsst-sal.tuc.noao.edu/schema/SALEventSet.xsl"?>
 <SALEventSet xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://lsst-sal.tuc.noao.edu/schema/SALEventSet.xsd">
-<!-- accelerometerWarning : -->
-<!-- airSupplyStatus : -->
-<!-- airSupplyWarning : -->
-<!-- appliedAberrationForces : -->
-<!-- appliedAccelerationForces : -->
-<!-- appliedActiveOpticForces : -->
-<!-- appliedAzimuthForces : -->
-<!-- appliedBalanceForces : -->
-<!-- appliedCylinderForces : -->
-<!-- appliedElevationForces : -->
-<!-- appliedForces : -->
-<!-- appliedOffsetForces : -->
-<!-- appliedSettingsMatchStart : -->
-<!-- appliedStaticForces : -->
-<!-- appliedThermalForces : -->
-<!-- appliedVelocityForces : -->
-<!-- cellLightStatus : -->
-<!-- cellLightWarning : -->
-<!-- commandRejectionWarning : -->
-<!-- detailedState : -->
-<!-- displacementSensorWarning : -->
-<!-- errorCode : -->
-<!-- forceActuatorForceWarning : -->
-<!-- forceActuatorInfo : -->
-<!-- forceActuatorState : -->
-<!-- forceActuatorWarning : -->
-<!-- forceSetpointWarning : -->
-<!-- gyroWarning : -->
-<!-- hardpointActuatorInfo : -->
-<!-- hardpointActuatorState : -->
-<!-- hardpointActuatorWarning : -->
-<!-- hardpointMonitorInfo : -->
-<!-- hardpointMonitorState : -->
-<!-- hardpointMonitorWarning : -->
-<!-- ilcWarning : -->
-<!-- inclinometerSensorWarning : -->
-<!-- interlockStatus : -->
-<!-- interlockWarning : -->
-<!-- modbusResponse : -->
-<!-- pidInfo : -->
-<!-- powerStatus : -->
-<!-- powerSupplyStatus : -->
-<!-- powerWarning : -->
-<!-- rejectedAberrationForces : -->
-<!-- rejectedAccelerationForces : -->
-<!-- rejectedActiveOpticForces : -->
-<!-- rejectedAzimuthForces : -->
-<!-- rejectedBalanceForces : -->
-<!-- rejectedCylinderForces : -->
-<!-- rejectedElevationForces : -->
-<!-- rejectedForces : -->
-<!-- rejectedOffsetForces : -->
-<!-- rejectedStaticForces : -->
-<!-- rejectedThermalForces : -->
-<!-- rejectedVelocityForces : -->
-<!-- settingVersions : -->
-<!-- settingsApplied : -->
-<!-- summaryState : -->
+    <Enumeration>AccelerometerFlags_ResponseTimeout</Enumeration>
+    <Enumeration>AccelerometerIndexMap_Accelerometer1X,AccelerometerIndexMap_Accelerometer1Y,AccelerometerIndexMap_Accelerometer2X,AccelerometerIndexMap_Accelerometer2Y,AccelerometerIndexMap_Accelerometer3X,AccelerometerIndexMap_Accelerometer3Y,AccelerometerIndexMap_Accelerometer4X,AccelerometerIndexMap_Accelerometer4Y</Enumeration>
+    <Enumeration>AirSupplyFlags_AirValveSensorMismatch</Enumeration>
+    <Enumeration>CellLightFlags_CellLightSensorMismatch</Enumeration>
+    <Enumeration>DetailedStates_DisabledState,DetailedStates_EnabledState,DetailedStates_FaultState,DetailedStates_OfflineState,DetailedStates_StandbyState,DetailedStates_ParkedState,DetailedStates_RaisingState,DetailedStates_ActiveState,DetailedStates_LoweringState,DetailedStates_EngineeringState,DetailedStates_ParkedEngineeringState,DetailedStates_RaisingEngineeringState,DetailedStates_ActiveEngineeringState,DetailedStates_LoweringEngineeringState,DetailedStates_LoweringFaultState</Enumeration>
+    <Enumeration>DisplacementSensorFlags_SensorReportsInvalidCommand,DisplacementSensorFlags_SensorReportsCommunicationTimeoutError,DisplacementSensorFlags_SensorReportsDataLengthError,DisplacementSensorFlags_SensorReportsNumberOfParametersError,DisplacementSensorFlags_SensorReportsParameterError,DisplacementSensorFlags_SensorReportsCommunicationError,DisplacementSensorFlags_SensorReportsIDNumberError,DisplacementSensorFlags_SensorReportsExpansionLineError,DisplacementSensorFlags_SensorReportsWriteControlError,DisplacementSensorFlags_ResponseTimeout,DisplacementSensorFlags_InvalidLength,DisplacementSensorFlags_InvalidResponse,DisplacementSensorFlags_UnknownCommand,DisplacementSensorFlags_UnknownProblem</Enumeration>
+    <Enumeration>ForceActuatorFlags_ILCMajorFault,ForceActuatorFlags_ILCMinorFault,ForceActuatorFlags_ILCFaultOverride,ForceActuatorFlags_ILCMainCalibrationError,ForceActuatorFlags_ILCBackupCalibrationError,ForceActuatorFlags_ILCMezzanineError,ForceActuatorFlags_ILCMezzanineBootloaderActive,ForceActuatorFlags_ILCUniqueIdCRCError,ForceActuatorFlags_ILCApplicationTypeMismatch,ForceActuatorFlags_ILCApplicationMissing,ForceActuatorFlags_ILCApplicationCRCMismatch,ForceActuatorFlags_ILCOneWireMissing,ForceActuatorFlags_ILCOneWire1Mismatch,ForceActuatorFlags_ILCOneWire2Mismatch,ForceActuatorFlags_ILCWatchdogReset,ForceActuatorFlags_ILCBrownOut,ForceActuatorFlags_ILCEventTrapReset,ForceActuatorFlags_ILCSSRPowerFault,ForceActuatorFlags_ILCAuxPowerFault,ForceActuatorFlags_ILCMezzaninePowerFault,ForceActuatorFlags_ILCMezzanineCurrentAmp1Fault,ForceActuatorFlags_ILCMezzanineCurrentAmp2Fault,ForceActuatorFlags_ILCMezzanineUniqueIdCRCError,ForceActuatorFlags_ILCMezzanineMainCalibrationError,ForceActuatorFlags_ILCMezzanineBackupCalibrationError,ForceActuatorFlags_ILCMezzanineEventTrapReset,ForceActuatorFlags_ILCMezzanineApplicationMissing,ForceActuatorFlags_ILCMezzanineApplicationCRCMismatch,ForceActuatorFlags_ILCFault,ForceActuatorFlags_BroadcastCounterMismatch,ForceActuatorFlags_ForceSetpointCylinderForceClipped,ForceActuatorFlags_ForceSetpointNearNeighborLimitExceeded,ForceActuatorFlags_ForceSetpointFarNeighborLimitExceeded,ForceActuatorFlags_ForceSetpointElevationForceClipped,ForceActuatorFlags_ForceSetpointAzimuthForceClipped,ForceActuatorFlags_ForceSetpointThermalForceClipped,ForceActuatorFlags_ForceSetpointBalanceForceClipped,ForceActuatorFlags_ForceSetpointAccelerationForceClipped,ForceActuatorFlags_ForceSetpointActiveOpticForceClipped,ForceActuatorFlags_ForceSetpointStaticForceClipped,ForceActuatorFlags_ForceSetpointAberrationForceClipped,ForceActuatorFlags_ForceSetpointOffsetForceClipped,ForceActuatorFlags_ForceSetpointVelocityForceClipped,ForceActuatorFlags_ForceSetpointFinalForceClipped,ForceActuatorFlags_MeasuredForcePrimaryAxisForceWarning,ForceActuatorFlags_MeasuredForceSecondaryAxisForceWarning,ForceActuatorFlags_PrimaryAxisFollowingErrorWarning,ForceActuatorFlags_SecondaryAxisFollowingErrorWarning,ForceActuatorFlags_ResponseTimeout,ForceActuatorFlags_ModbusIllegalFunction,ForceActuatorFlags_ModbusIllegalDataAddress,ForceActuatorFlags_ModbusIllegalDataValue,ForceActuatorFlags_ModbusSlaveDeviceFailure,ForceActuatorFlags_ModbusAcknowledge,ForceActuatorFlags_ModbusSlaveDeviceBusy,ForceActuatorFlags_ModbusNegativeAcknowledge,ForceActuatorFlags_ModbusMemoryParityError,ForceActuatorFlags_ModbusGatewayPathUnavailable,ForceActuatorFlags_ModbusGatewayTargetDeviceFailedToRespond,ForceActuatorFlags_InvalidLength</Enumeration>
+    <Enumeration>ForceActuatorSIndexMap_FA102,ForceActuatorSIndexMap_FA103,ForceActuatorSIndexMap_FA104,ForceActuatorSIndexMap_FA105,ForceActuatorSIndexMap_FA108,ForceActuatorSIndexMap_FA109,ForceActuatorSIndexMap_FA110,ForceActuatorSIndexMap_FA111,ForceActuatorSIndexMap_FA113,ForceActuatorSIndexMap_FA112,ForceActuatorSIndexMap_FA114,ForceActuatorSIndexMap_FA115,ForceActuatorSIndexMap_FA116,ForceActuatorSIndexMap_FA117,ForceActuatorSIndexMap_FA118,ForceActuatorSIndexMap_FA120,ForceActuatorSIndexMap_FA121,ForceActuatorSIndexMap_FA122,ForceActuatorSIndexMap_FA123,ForceActuatorSIndexMap_FA124,ForceActuatorSIndexMap_FA126,ForceActuatorSIndexMap_FA127,ForceActuatorSIndexMap_FA128,ForceActuatorSIndexMap_FA129,ForceActuatorSIndexMap_FA130,ForceActuatorSIndexMap_FA132,ForceActuatorSIndexMap_FA133,ForceActuatorSIndexMap_FA134,ForceActuatorSIndexMap_FA135,ForceActuatorSIndexMap_FA137,ForceActuatorSIndexMap_FA138,ForceActuatorSIndexMap_FA208,ForceActuatorSIndexMap_FA209,ForceActuatorSIndexMap_FA210,ForceActuatorSIndexMap_FA211,ForceActuatorSIndexMap_FA212,ForceActuatorSIndexMap_FA214,ForceActuatorSIndexMap_FA215,ForceActuatorSIndexMap_FA216,ForceActuatorSIndexMap_FA217,ForceActuatorSIndexMap_FA218,ForceActuatorSIndexMap_FA220,ForceActuatorSIndexMap_FA221,ForceActuatorSIndexMap_FA222,ForceActuatorSIndexMap_FA223,ForceActuatorSIndexMap_FA224,ForceActuatorSIndexMap_FA227,ForceActuatorSIndexMap_FA228,ForceActuatorSIndexMap_FA229,ForceActuatorSIndexMap_FA230,ForceActuatorSIndexMap_FA232,ForceActuatorSIndexMap_FA233,ForceActuatorSIndexMap_FA234,ForceActuatorSIndexMap_FA235,ForceActuatorSIndexMap_FA237,ForceActuatorSIndexMap_FA238,ForceActuatorSIndexMap_FA302,ForceActuatorSIndexMap_FA303,ForceActuatorSIndexMap_FA304,ForceActuatorSIndexMap_FA305,ForceActuatorSIndexMap_FA308,ForceActuatorSIndexMap_FA309,ForceActuatorSIndexMap_FA310,ForceActuatorSIndexMap_FA311,ForceActuatorSIndexMap_FA312,ForceActuatorSIndexMap_FA313,ForceActuatorSIndexMap_FA314,ForceActuatorSIndexMap_FA315,ForceActuatorSIndexMap_FA316,ForceActuatorSIndexMap_FA317,ForceActuatorSIndexMap_FA318,ForceActuatorSIndexMap_FA320,ForceActuatorSIndexMap_FA321,ForceActuatorSIndexMap_FA322,ForceActuatorSIndexMap_FA323,ForceActuatorSIndexMap_FA324,ForceActuatorSIndexMap_FA326,ForceActuatorSIndexMap_FA327,ForceActuatorSIndexMap_FA328,ForceActuatorSIndexMap_FA329,ForceActuatorSIndexMap_FA330,ForceActuatorSIndexMap_FA332,ForceActuatorSIndexMap_FA333,ForceActuatorSIndexMap_FA334,ForceActuatorSIndexMap_FA335,ForceActuatorSIndexMap_FA337,ForceActuatorSIndexMap_FA338,ForceActuatorSIndexMap_FA408,ForceActuatorSIndexMap_FA409,ForceActuatorSIndexMap_FA410,ForceActuatorSIndexMap_FA411,ForceActuatorSIndexMap_FA412,ForceActuatorSIndexMap_FA414,ForceActuatorSIndexMap_FA415,ForceActuatorSIndexMap_FA416,ForceActuatorSIndexMap_FA417,ForceActuatorSIndexMap_FA418,ForceActuatorSIndexMap_FA420,ForceActuatorSIndexMap_FA421,ForceActuatorSIndexMap_FA422,ForceActuatorSIndexMap_FA423,ForceActuatorSIndexMap_FA424,ForceActuatorSIndexMap_FA427,ForceActuatorSIndexMap_FA428,ForceActuatorSIndexMap_FA429,ForceActuatorSIndexMap_FA430,ForceActuatorSIndexMap_FA432,ForceActuatorSIndexMap_FA433,ForceActuatorSIndexMap_FA434,ForceActuatorSIndexMap_FA435,ForceActuatorSIndexMap_FA437,ForceActuatorSIndexMap_FA438</Enumeration>
+    <Enumeration>ForceActuatorXIndexMap_FA112,ForceActuatorXIndexMap_FA128,ForceActuatorXIndexMap_FA135,ForceActuatorXIndexMap_FA212,ForceActuatorXIndexMap_FA228,ForceActuatorXIndexMap_FA235,ForceActuatorXIndexMap_FA312,ForceActuatorXIndexMap_FA328,ForceActuatorXIndexMap_FA335,ForceActuatorXIndexMap_FA412,ForceActuatorXIndexMap_FA428,ForceActuatorXIndexMap_FA435</Enumeration>
+    <Enumeration>ForceActuatorYIndexMap_FA102,ForceActuatorYIndexMap_FA103,ForceActuatorYIndexMap_FA104,ForceActuatorYIndexMap_FA105,ForceActuatorYIndexMap_FA108,ForceActuatorYIndexMap_FA109,ForceActuatorYIndexMap_FA110,ForceActuatorYIndexMap_FA111,ForceActuatorYIndexMap_FA113,ForceActuatorYIndexMap_FA114,ForceActuatorYIndexMap_FA115,ForceActuatorYIndexMap_FA116,ForceActuatorYIndexMap_FA117,ForceActuatorYIndexMap_FA118,ForceActuatorYIndexMap_FA120,ForceActuatorYIndexMap_FA121,ForceActuatorYIndexMap_FA122,ForceActuatorYIndexMap_FA123,ForceActuatorYIndexMap_FA124,ForceActuatorYIndexMap_FA126,ForceActuatorYIndexMap_FA127,ForceActuatorYIndexMap_FA129,ForceActuatorYIndexMap_FA130,ForceActuatorYIndexMap_FA132,ForceActuatorYIndexMap_FA133,ForceActuatorYIndexMap_FA134,ForceActuatorYIndexMap_FA137,ForceActuatorYIndexMap_FA138,ForceActuatorYIndexMap_FA208,ForceActuatorYIndexMap_FA209,ForceActuatorYIndexMap_FA210,ForceActuatorYIndexMap_FA211,ForceActuatorYIndexMap_FA214,ForceActuatorYIndexMap_FA215,ForceActuatorYIndexMap_FA216,ForceActuatorYIndexMap_FA217,ForceActuatorYIndexMap_FA218,ForceActuatorYIndexMap_FA220,ForceActuatorYIndexMap_FA221,ForceActuatorYIndexMap_FA222,ForceActuatorYIndexMap_FA223,ForceActuatorYIndexMap_FA224,ForceActuatorYIndexMap_FA227,ForceActuatorYIndexMap_FA229,ForceActuatorYIndexMap_FA230,ForceActuatorYIndexMap_FA232,ForceActuatorYIndexMap_FA233,ForceActuatorYIndexMap_FA234,ForceActuatorYIndexMap_FA237,ForceActuatorYIndexMap_FA238,ForceActuatorYIndexMap_FA302,ForceActuatorYIndexMap_FA303,ForceActuatorYIndexMap_FA304,ForceActuatorYIndexMap_FA305,ForceActuatorYIndexMap_FA308,ForceActuatorYIndexMap_FA309,ForceActuatorYIndexMap_FA310,ForceActuatorYIndexMap_FA311,ForceActuatorYIndexMap_FA313,ForceActuatorYIndexMap_FA314,ForceActuatorYIndexMap_FA315,ForceActuatorYIndexMap_FA316,ForceActuatorYIndexMap_FA317,ForceActuatorYIndexMap_FA318,ForceActuatorYIndexMap_FA320,ForceActuatorYIndexMap_FA321,ForceActuatorYIndexMap_FA322,ForceActuatorYIndexMap_FA323,ForceActuatorYIndexMap_FA324,ForceActuatorYIndexMap_FA326,ForceActuatorYIndexMap_FA327,ForceActuatorYIndexMap_FA329,ForceActuatorYIndexMap_FA330,ForceActuatorYIndexMap_FA332,ForceActuatorYIndexMap_FA333,ForceActuatorYIndexMap_FA334,ForceActuatorYIndexMap_FA337,ForceActuatorYIndexMap_FA338,ForceActuatorYIndexMap_FA408,ForceActuatorYIndexMap_FA409,ForceActuatorYIndexMap_FA410,ForceActuatorYIndexMap_FA411,ForceActuatorYIndexMap_FA414,ForceActuatorYIndexMap_FA415,ForceActuatorYIndexMap_FA416,ForceActuatorYIndexMap_FA417,ForceActuatorYIndexMap_FA418,ForceActuatorYIndexMap_FA420,ForceActuatorYIndexMap_FA421,ForceActuatorYIndexMap_FA422,ForceActuatorYIndexMap_FA423,ForceActuatorYIndexMap_FA424,ForceActuatorYIndexMap_FA427,ForceActuatorYIndexMap_FA429,ForceActuatorYIndexMap_FA430,ForceActuatorYIndexMap_FA432,ForceActuatorYIndexMap_FA433,ForceActuatorYIndexMap_FA434,ForceActuatorYIndexMap_FA437,ForceActuatorYIndexMap_FA438</Enumeration>
+    <Enumeration>ForceActuatorZIndexMap_FA101,ForceActuatorZIndexMap_FA102,ForceActuatorZIndexMap_FA103,ForceActuatorZIndexMap_FA104,ForceActuatorZIndexMap_FA105,ForceActuatorZIndexMap_FA106,ForceActuatorZIndexMap_FA107,ForceActuatorZIndexMap_FA108,ForceActuatorZIndexMap_FA109,ForceActuatorZIndexMap_FA110,ForceActuatorZIndexMap_FA111,ForceActuatorZIndexMap_FA112,ForceActuatorZIndexMap_FA113,ForceActuatorZIndexMap_FA114,ForceActuatorZIndexMap_FA115,ForceActuatorZIndexMap_FA116,ForceActuatorZIndexMap_FA117,ForceActuatorZIndexMap_FA118,ForceActuatorZIndexMap_FA119,ForceActuatorZIndexMap_FA120,ForceActuatorZIndexMap_FA121,ForceActuatorZIndexMap_FA122,ForceActuatorZIndexMap_FA123,ForceActuatorZIndexMap_FA124,ForceActuatorZIndexMap_FA125,ForceActuatorZIndexMap_FA126,ForceActuatorZIndexMap_FA127,ForceActuatorZIndexMap_FA128,ForceActuatorZIndexMap_FA129,ForceActuatorZIndexMap_FA130,ForceActuatorZIndexMap_FA131,ForceActuatorZIndexMap_FA132,ForceActuatorZIndexMap_FA133,ForceActuatorZIndexMap_FA134,ForceActuatorZIndexMap_FA135,ForceActuatorZIndexMap_FA136,ForceActuatorZIndexMap_FA137,ForceActuatorZIndexMap_FA138,ForceActuatorZIndexMap_FA139,ForceActuatorZIndexMap_FA140,ForceActuatorZIndexMap_FA141,ForceActuatorZIndexMap_FA142,ForceActuatorZIndexMap_FA143,ForceActuatorZIndexMap_FA207,ForceActuatorZIndexMap_FA208,ForceActuatorZIndexMap_FA209,ForceActuatorZIndexMap_FA210,ForceActuatorZIndexMap_FA211,ForceActuatorZIndexMap_FA212,ForceActuatorZIndexMap_FA214,ForceActuatorZIndexMap_FA215,ForceActuatorZIndexMap_FA216,ForceActuatorZIndexMap_FA217,ForceActuatorZIndexMap_FA218,ForceActuatorZIndexMap_FA219,ForceActuatorZIndexMap_FA220,ForceActuatorZIndexMap_FA221,ForceActuatorZIndexMap_FA222,ForceActuatorZIndexMap_FA223,ForceActuatorZIndexMap_FA224,ForceActuatorZIndexMap_FA225,ForceActuatorZIndexMap_FA227,ForceActuatorZIndexMap_FA228,ForceActuatorZIndexMap_FA229,ForceActuatorZIndexMap_FA230,ForceActuatorZIndexMap_FA231,ForceActuatorZIndexMap_FA232,ForceActuatorZIndexMap_FA233,ForceActuatorZIndexMap_FA234,ForceActuatorZIndexMap_FA235,ForceActuatorZIndexMap_FA236,ForceActuatorZIndexMap_FA237,ForceActuatorZIndexMap_FA238,ForceActuatorZIndexMap_FA239,ForceActuatorZIndexMap_FA240,ForceActuatorZIndexMap_FA241,ForceActuatorZIndexMap_FA242,ForceActuatorZIndexMap_FA243,ForceActuatorZIndexMap_FA301,ForceActuatorZIndexMap_FA302,ForceActuatorZIndexMap_FA303,ForceActuatorZIndexMap_FA304,ForceActuatorZIndexMap_FA305,ForceActuatorZIndexMap_FA306,ForceActuatorZIndexMap_FA307,ForceActuatorZIndexMap_FA308,ForceActuatorZIndexMap_FA309,ForceActuatorZIndexMap_FA310,ForceActuatorZIndexMap_FA311,ForceActuatorZIndexMap_FA312,ForceActuatorZIndexMap_FA313,ForceActuatorZIndexMap_FA314,ForceActuatorZIndexMap_FA315,ForceActuatorZIndexMap_FA316,ForceActuatorZIndexMap_FA317,ForceActuatorZIndexMap_FA318,ForceActuatorZIndexMap_FA319,ForceActuatorZIndexMap_FA320,ForceActuatorZIndexMap_FA321,ForceActuatorZIndexMap_FA322,ForceActuatorZIndexMap_FA323,ForceActuatorZIndexMap_FA324,ForceActuatorZIndexMap_FA325,ForceActuatorZIndexMap_FA326,ForceActuatorZIndexMap_FA327,ForceActuatorZIndexMap_FA328,ForceActuatorZIndexMap_FA329,ForceActuatorZIndexMap_FA330,ForceActuatorZIndexMap_FA331,ForceActuatorZIndexMap_FA332,ForceActuatorZIndexMap_FA333,ForceActuatorZIndexMap_FA334,ForceActuatorZIndexMap_FA335,ForceActuatorZIndexMap_FA336,ForceActuatorZIndexMap_FA337,ForceActuatorZIndexMap_FA338,ForceActuatorZIndexMap_FA339,ForceActuatorZIndexMap_FA340,ForceActuatorZIndexMap_FA341,ForceActuatorZIndexMap_FA342,ForceActuatorZIndexMap_FA343,ForceActuatorZIndexMap_FA407,ForceActuatorZIndexMap_FA408,ForceActuatorZIndexMap_FA409,ForceActuatorZIndexMap_FA410,ForceActuatorZIndexMap_FA411,ForceActuatorZIndexMap_FA412,ForceActuatorZIndexMap_FA414,ForceActuatorZIndexMap_FA415,ForceActuatorZIndexMap_FA416,ForceActuatorZIndexMap_FA417,ForceActuatorZIndexMap_FA418,ForceActuatorZIndexMap_FA419,ForceActuatorZIndexMap_FA420,ForceActuatorZIndexMap_FA421,ForceActuatorZIndexMap_FA422,ForceActuatorZIndexMap_FA423,ForceActuatorZIndexMap_FA424,ForceActuatorZIndexMap_FA425,ForceActuatorZIndexMap_FA427,ForceActuatorZIndexMap_FA428,ForceActuatorZIndexMap_FA429,ForceActuatorZIndexMap_FA430,ForceActuatorZIndexMap_FA431,ForceActuatorZIndexMap_FA432,ForceActuatorZIndexMap_FA433,ForceActuatorZIndexMap_FA434,ForceActuatorZIndexMap_FA435,ForceActuatorZIndexMap_FA436,ForceActuatorZIndexMap_FA437,ForceActuatorZIndexMap_FA438,ForceActuatorZIndexMap_FA439,ForceActuatorZIndexMap_FA440,ForceActuatorZIndexMap_FA441,ForceActuatorZIndexMap_FA442,ForceActuatorZIndexMap_FA443</Enumeration>
+    <Enumeration>GlobalActuatorFlags_ForceSetpointXMomentWarning,GlobalActuatorFlags_ForceSetpointYMomentWarning,GlobalActuatorFlags_ForceSetpointZMomentWarning,GlobalActuatorFlags_ForceSetpointMagnitudeWarning,GlobalActuatorFlags_ForceSetpointNetActiveOpticForceWarning,GlobalActuatorFlags_ForceSetpointNetAberrationForceWarning</Enumeration>
+    <Enumeration>GyroSensorFlags_GyroXStatusWarning,GyroSensorFlags_GyroYStatusWarning,GyroSensorFlags_GyroZStatusWarning,GyroSensorFlags_SequenceNumberWarning,GyroSensorFlags_CRCMismatchWarning,GyroSensorFlags_InvalidLengthWarning,GyroSensorFlags_InvalidHeaderWarning,GyroSensorFlags_IncompleteFrameWarning,GyroSensorFlags_GyroXSLDWarning,GyroSensorFlags_GyroXMODDACWarning,GyroSensorFlags_GyroXPhaseWarning,GyroSensorFlags_GyroXFlashWarning,GyroSensorFlags_GyroYSLDWarning,GyroSensorFlags_GyroYMODDACWarning,GyroSensorFlags_GyroYPhaseWarning,GyroSensorFlags_GyroYFlashWarning,GyroSensorFlags_GyroZSLDWarning,GyroSensorFlags_GyroZMODDACWarning,GyroSensorFlags_GyroZPhaseWarning,GyroSensorFlags_GyroZFlashWarning,GyroSensorFlags_GyroXSLDTemperatureStatusWarning,GyroSensorFlags_GyroYSLDTemperatureStatusWarning,GyroSensorFlags_GyroZSLDTemperatureStatusWarning,GyroSensorFlags_GCBTemperatureStatusWarning,GyroSensorFlags_TemperatureStatusWarning,GyroSensorFlags_GCBDSPSPIFlashStatusWarning,GyroSensorFlags_GCBFPGASPIFlashStatusWarning,GyroSensorFlags_DSPSPIFlashStatusWarning,GyroSensorFlags_FPGASPIFlashStatusWarning,GyroSensorFlags_GCB1_2VStatusWarning,GyroSensorFlags_GCB3_3VStatusWarning,GyroSensorFlags_GCB5VStatusWarning,GyroSensorFlags_V1_2StatusWarning,GyroSensorFlags_V3_3StatusWarning,GyroSensorFlags_V5StatusWarning,GyroSensorFlags_GCBFPGAStatusWarning,GyroSensorFlags_FPGAStatusWarning,GyroSensorFlags_HiSpeedSPORTStatusWarning,GyroSensorFlags_AuxSPORTStatusWarning,GyroSensorFlags_SufficientSoftwareResourcesWarning,GyroSensorFlags_GyroEOVoltsPositiveWarning,GyroSensorFlags_GyroEOVoltsNegativeWarning,GyroSensorFlags_GyroXVoltsWarning,GyroSensorFlags_GyroYVoltsWarning,GyroSensorFlags_GyroZVoltsWarning,GyroSensorFlags_GCBADCCommsWarning,GyroSensorFlags_MSYNCExternalTimingWarning</Enumeration>
+    <Enumeration>HardpointActuatorFlags_ILCMajorFault,HardpointActuatorFlags_ILCMinorFault,HardpointActuatorFlags_ILCFaultOverride,HardpointActuatorFlags_ILCMainCalibrationError,HardpointActuatorFlags_ILCBackupCalibrationError,HardpointActuatorFlags_ILCLimitSwitch1Operated,HardpointActuatorFlags_ILCLimitSwitch2Operated,HardpointActuatorFlags_ILCUniqueIdCRCError,HardpointActuatorFlags_ILCApplicationTypeMismatch,HardpointActuatorFlags_ILCApplicationMissing,HardpointActuatorFlags_ILCApplicationCRCMismatch,HardpointActuatorFlags_ILCOneWireMissing,HardpointActuatorFlags_ILCOneWire1Mismatch,HardpointActuatorFlags_ILCOneWire2Mismatch,HardpointActuatorFlags_ILCWatchdogReset,HardpointActuatorFlags_ILCBrownOut,HardpointActuatorFlags_ILCEventTrapReset,HardpointActuatorFlags_ILCMotorDriverFault,HardpointActuatorFlags_ILCSSRPowerFault,HardpointActuatorFlags_ILCAuxPowerFault,HardpointActuatorFlags_ILCSMCPowerFault,HardpointActuatorFlags_ILCFault,HardpointActuatorFlags_BroadcastCounterMismatch,HardpointActuatorFlags_ResponseTimeout,HardpointActuatorFlags_ModbusIllegalFunction,HardpointActuatorFlags_ModbusIllegalDataAddress,HardpointActuatorFlags_ModbusIllegalDataValue,HardpointActuatorFlags_ModbusSlaveDeviceFailure,HardpointActuatorFlags_ModbusAcknowledge,HardpointActuatorFlags_ModbusSlaveDeviceBusy,HardpointActuatorFlags_ModbusNegativeAcknowledge,HardpointActuatorFlags_ModbusMemoryParityError,HardpointActuatorFlags_ModbusGatewayPathUnavailable,HardpointActuatorFlags_ModbusGatewayTargetDeviceFailedToRespond,HardpointActuatorFlags_InvalidLength</Enumeration>
+    <Enumeration>HardpointIndexMap_Hardpoint1,HardpointIndexMap_Hardpoint2,HardpointIndexMap_Hardpoint3,HardpointIndexMap_Hardpoint4,HardpointIndexMap_Hardpoint5,HardpointIndexMap_Hardpoint6</Enumeration>
+    <Enumeration>HardpointMonitorFlags_ILCMajorFault,HardpointMonitorFlags_ILCMinorFault,HardpointMonitorFlags_ILCFaultOverride,HardpointMonitorFlags_ILCInstrumentError,HardpointMonitorFlags_ILCMezzanineError,HardpointMonitorFlags_ILCMezzanineBootloaderActive,HardpointMonitorFlags_ILCUniqueIdCRCError,HardpointMonitorFlags_ILCApplicationTypeMismatch,HardpointMonitorFlags_ILCApplicationMissing,HardpointMonitorFlags_ILCApplicationCRCMismatch,HardpointMonitorFlags_ILCOneWireMissing,HardpointMonitorFlags_ILCOneWire1Mismatch,HardpointMonitorFlags_ILCOneWire2Mismatch,HardpointMonitorFlags_ILCWatchdogReset,HardpointMonitorFlags_ILCBrownOut,HardpointMonitorFlags_ILCEvenTrapReset,HardpointMonitorFlags_ILCSSRPowerFault,HardpointMonitorFlags_ILCAuxPowerFault,HardpointMonitorFlags_ILCMezzanineS1AInterface1Fault,HardpointMonitorFlags_ILCMezzanineS1ALVDT1Fault,HardpointMonitorFlags_ILCMezzanineS1AInterface2Fault,HardpointMonitorFlags_ILCMezzanineS1ALVDT2Fault,HardpointMonitorFlags_ILCMezzanineUniqueIdCRCError,HardpointMonitorFlags_ILCMezzanineEvenTrapReset,HardpointMonitorFlags_ILCMezzanineDCPRS422ChipFault,HardpointMonitorFlags_ILCMezzanineApplicationMissing,HardpointMonitorFlags_ILCMezzanineApplicationCRCMismatch,HardpointMonitorFlags_ResponseTimeout,HardpointMonitorFlags_ModbusIllegalFunction,HardpointMonitorFlags_ModbusIllegalDataValue,HardpointMonitorFlags_ModbusIllegalDataAddress,HardpointMonitorFlags_ModbusSlaveDeviceFailure,HardpointMonitorFlags_ModbusAcknowledge,HardpointMonitorFlags_ModbusSlaveDeviceBusy,HardpointMonitorFlags_ModbusNegativeAcknowledge,HardpointMonitorFlags_ModbusMemoryParityError,HardpointMonitorFlags_ModbusGatewayPathUnavailable,HardpointMonitorFlags_ModbusGatewayTargetDeviceFailedToRespond,HardpointMonitorFlags_InvalidLength</Enumeration>
+    <Enumeration>InclinometerSensorFlags_SensorReportsIllegalFunction,InclinometerSensorFlags_SensorReportsIllegalDataAddress,InclinometerSensorFlags_ResponseTimeout,InclinometerSensorFlags_InvalidCRC,InclinometerSensorFlags_InvalidLength,InclinometerSensorFlags_UnknownAddress,InclinometerSensorFlags_UnknownFunction,InclinometerSensorFlags_UnknownProblem</Enumeration>
+    <Enumeration>InterlockSystemFlags_AuxPowerNetworksOff,InterlockSystemFlags_ThermalEquipmentOff,InterlockSystemFlags_AirSupplyOff,InterlockSystemFlags_TMAMotionStop,InterlockSystemFlags_GISHeartbeatLost,InterlockSystemFlags_CabinetDoorOpen</Enumeration>
+    <Enumeration>ModbusSubnetFlags_UnknownAddress,ModbusSubnetFlags_UnknownFunction,ModbusSubnetFlags_UnknownProblem,ModbusSubnetFlags_InvalidCRC</Enumeration>
+    <Enumeration>ModbusSystemFlags_UnknownSubnet</Enumeration>
+    <Enumeration>PIDIndexMap_Fx,PIDIndexMap_Fy,PIDIndexMap_Fz,PIDIndexMap_Mx,PIDIndexMap_My,PIDIndexMap_Mz</Enumeration>
+    <Enumeration>PowerSystemFlags_RCPMirrorCellUtility220VAC1Status,PowerSystemFlags_RCPCabinetUtility220VACStatus,PowerSystemFlags_RCPExternalEquipment220VACStatus,PowerSystemFlags_RCPMirrorCellUtility220VAC2Status,PowerSystemFlags_RCPMirrorCellUtility220VAC3Status,PowerSystemFlags_PowerNetworkARedundancyControlStatus,PowerSystemFlags_PowerNetworkBRedundancyControlStatus,PowerSystemFlags_PowerNetworkCRedundancyControlStatus,PowerSystemFlags_PowerNetworkDRedundancyControlStatus,PowerSystemFlags_ControlsPowerNetworkRedundancyControlStatus,PowerSystemFlags_PowerNetworkAStatus,PowerSystemFlags_PowerNetworkARedundantStatus,PowerSystemFlags_PowerNetworkBStatus,PowerSystemFlags_PowerNetworkBRedundantStatus,PowerSystemFlags_PowerNetworkCStatus,PowerSystemFlags_PowerNetworkCRedundantStatus,PowerSystemFlags_PowerNetworkDStatus,PowerSystemFlags_PowerNetworkDRedundantStatus,PowerSystemFlags_ControlsPowerNetworkStatus,PowerSystemFlags_ControlsPowerNetworkRedundantStatus,PowerSystemFlags_LightPowerNetworkStatus,PowerSystemFlags_ExternalEquipmentPowerNetworkStatus,PowerSystemFlags_LaserTrackerPowerNetworkStatus</Enumeration>
     <Enumeration>SummaryStates_DisabledState,SummaryStates_EnabledState,SummaryStates_FaultState,SummaryStates_OfflineState,SummaryStates_StandbyState</Enumeration>
-    <Enumeration>DetailedStates_DisabledState,DetailedStates_EnabledState,DetailedStates_FaultState,DetailedStates_OfflineState,DetailedStates_StandbyState,DetailedStates_ParkedState,DetailedStates_RaisingState,DetailedStates_ActiveState,DetailedStates_LoweringState,DetailedStates_EngineeringState,DetailedStates_ParkedEngineeringState,DetailedStates_RaisingEngineeringState,DetailedStates_ActiveEngineeringState,DetailedStates_LoweringEngineeringState,DetailedStates_LoweringFaultState,DetailedStates_ProfileHardpointCorrectionState</Enumeration>
+    <Enumeration>HardpointActuatorMotionStates_Standby,HardpointActuatorMotionStates_Chasing,HardpointActuatorMotionStates_Stepping,HardpointActuatorMotionStates_QuickPositioning,HardpointActuatorMotionStates_FinePositioning</Enumeration>
 
     <SALEvent>
         <Subsystem>MTM1M3</Subsystem>
-        <Version>3.7.0</Version>
+        <Version>3.8.35</Version>
         <Author></Author>
         <EFDB_Topic>MTM1M3_logevent_accelerometerWarning</EFDB_Topic>
         <Alias>accelerometerWarning</Alias>
         <Explanation>http://sal.lsst.org</Explanation>
-        <item>
-            <EFDB_Name>timestamp</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>double</IDL_Type>
-            <Units></Units>
-            <Count>1</Count>
-        </item>
         <item>
             <EFDB_Name>anyWarning</EFDB_Name>
             <Description></Description>
@@ -84,36 +41,22 @@
             <Count>1</Count>
         </item>
         <item>
-            <EFDB_Name>responseTimeout</EFDB_Name>
+            <EFDB_Name>accelerometerFlags</EFDB_Name>
             <Description></Description>
-            <IDL_Type>boolean</IDL_Type>
+            <IDL_Type>unsigned long long</IDL_Type>
             <Units></Units>
             <Count>1</Count>
         </item>
     </SALEvent>
     <SALEvent>
         <Subsystem>MTM1M3</Subsystem>
-        <Version>3.7.0</Version>
+        <Version>3.8.35</Version>
         <Author></Author>
         <EFDB_Topic>MTM1M3_logevent_airSupplyStatus</EFDB_Topic>
         <Alias>airSupplyStatus</Alias>
         <Explanation>http://sal.lsst.org</Explanation>
         <item>
-            <EFDB_Name>timestamp</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>double</IDL_Type>
-            <Units></Units>
-            <Count>1</Count>
-        </item>
-        <item>
             <EFDB_Name>airCommandedOn</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units></Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>airCommandOutputOn</EFDB_Name>
             <Description></Description>
             <IDL_Type>boolean</IDL_Type>
             <Units></Units>
@@ -136,18 +79,11 @@
     </SALEvent>
     <SALEvent>
         <Subsystem>MTM1M3</Subsystem>
-        <Version>3.7.0</Version>
+        <Version>3.8.35</Version>
         <Author></Author>
         <EFDB_Topic>MTM1M3_logevent_airSupplyWarning</EFDB_Topic>
         <Alias>airSupplyWarning</Alias>
         <Explanation>http://sal.lsst.org</Explanation>
-        <item>
-            <EFDB_Name>timestamp</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>double</IDL_Type>
-            <Units></Units>
-            <Count>1</Count>
-        </item>
         <item>
             <EFDB_Name>anyWarning</EFDB_Name>
             <Description></Description>
@@ -156,35 +92,21 @@
             <Count>1</Count>
         </item>
         <item>
-            <EFDB_Name>commandOutputMismatch</EFDB_Name>
+            <EFDB_Name>airSupplyFlags</EFDB_Name>
             <Description></Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units></Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>commandSensorMismatch</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>boolean</IDL_Type>
+            <IDL_Type>unsigned long long</IDL_Type>
             <Units></Units>
             <Count>1</Count>
         </item>
     </SALEvent>
     <SALEvent>
         <Subsystem>MTM1M3</Subsystem>
-        <Version>3.7.0</Version>
+        <Version>3.8.35</Version>
         <Author></Author>
         <EFDB_Topic>MTM1M3_logevent_appliedAberrationForces</EFDB_Topic>
         <Alias>appliedAberrationForces</Alias>
         <Explanation>http://sal.lsst.org</Explanation>
         <item>
-            <EFDB_Name>timestamp</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>double</IDL_Type>
-            <Units></Units>
-            <Count>1</Count>
-        </item>
-        <item>
             <EFDB_Name>zForces</EFDB_Name>
             <Description></Description>
             <IDL_Type>float</IDL_Type>
@@ -212,22 +134,22 @@
             <Units></Units>
             <Count>1</Count>
         </item>
+        <item>
+            <EFDB_Name>forceMagnitude</EFDB_Name>
+            <Description></Description>
+            <IDL_Type>float</IDL_Type>
+            <Units></Units>
+            <Count>1</Count>
+        </item>
     </SALEvent>
     <SALEvent>
         <Subsystem>MTM1M3</Subsystem>
-        <Version>3.7.0</Version>
+        <Version>3.8.35</Version>
         <Author></Author>
         <EFDB_Topic>MTM1M3_logevent_appliedAccelerationForces</EFDB_Topic>
         <Alias>appliedAccelerationForces</Alias>
         <Explanation>http://sal.lsst.org</Explanation>
         <item>
-            <EFDB_Name>timestamp</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>double</IDL_Type>
-            <Units></Units>
-            <Count>1</Count>
-        </item>
-        <item>
             <EFDB_Name>xForces</EFDB_Name>
             <Description></Description>
             <IDL_Type>float</IDL_Type>
@@ -249,14 +171,14 @@
             <Count>156</Count>
         </item>
         <item>
-            <EFDB_Name>fX</EFDB_Name>
+            <EFDB_Name>fY</EFDB_Name>
             <Description></Description>
             <IDL_Type>float</IDL_Type>
             <Units></Units>
             <Count>1</Count>
         </item>
         <item>
-            <EFDB_Name>fY</EFDB_Name>
+            <EFDB_Name>fX</EFDB_Name>
             <Description></Description>
             <IDL_Type>float</IDL_Type>
             <Units></Units>
@@ -300,19 +222,12 @@
     </SALEvent>
     <SALEvent>
         <Subsystem>MTM1M3</Subsystem>
-        <Version>3.7.0</Version>
+        <Version>3.8.35</Version>
         <Author></Author>
         <EFDB_Topic>MTM1M3_logevent_appliedActiveOpticForces</EFDB_Topic>
         <Alias>appliedActiveOpticForces</Alias>
         <Explanation>http://sal.lsst.org</Explanation>
         <item>
-            <EFDB_Name>timestamp</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>double</IDL_Type>
-            <Units></Units>
-            <Count>1</Count>
-        </item>
-        <item>
             <EFDB_Name>zForces</EFDB_Name>
             <Description></Description>
             <IDL_Type>float</IDL_Type>
@@ -340,22 +255,22 @@
             <Units></Units>
             <Count>1</Count>
         </item>
+        <item>
+            <EFDB_Name>forceMagnitude</EFDB_Name>
+            <Description></Description>
+            <IDL_Type>float</IDL_Type>
+            <Units></Units>
+            <Count>1</Count>
+        </item>
     </SALEvent>
     <SALEvent>
         <Subsystem>MTM1M3</Subsystem>
-        <Version>3.7.0</Version>
+        <Version>3.8.35</Version>
         <Author></Author>
         <EFDB_Topic>MTM1M3_logevent_appliedAzimuthForces</EFDB_Topic>
         <Alias>appliedAzimuthForces</Alias>
         <Explanation>http://sal.lsst.org</Explanation>
         <item>
-            <EFDB_Name>timestamp</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>double</IDL_Type>
-            <Units></Units>
-            <Count>1</Count>
-        </item>
-        <item>
             <EFDB_Name>xForces</EFDB_Name>
             <Description></Description>
             <IDL_Type>float</IDL_Type>
@@ -428,19 +343,12 @@
     </SALEvent>
     <SALEvent>
         <Subsystem>MTM1M3</Subsystem>
-        <Version>3.7.0</Version>
+        <Version>3.8.35</Version>
         <Author></Author>
         <EFDB_Topic>MTM1M3_logevent_appliedBalanceForces</EFDB_Topic>
         <Alias>appliedBalanceForces</Alias>
         <Explanation>http://sal.lsst.org</Explanation>
         <item>
-            <EFDB_Name>timestamp</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>double</IDL_Type>
-            <Units></Units>
-            <Count>1</Count>
-        </item>
-        <item>
             <EFDB_Name>xForces</EFDB_Name>
             <Description></Description>
             <IDL_Type>float</IDL_Type>
@@ -513,18 +421,11 @@
     </SALEvent>
     <SALEvent>
         <Subsystem>MTM1M3</Subsystem>
-        <Version>3.7.0</Version>
+        <Version>3.8.35</Version>
         <Author></Author>
         <EFDB_Topic>MTM1M3_logevent_appliedCylinderForces</EFDB_Topic>
         <Alias>appliedCylinderForces</Alias>
         <Explanation>http://sal.lsst.org</Explanation>
-        <item>
-            <EFDB_Name>timestamp</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>double</IDL_Type>
-            <Units></Units>
-            <Count>1</Count>
-        </item>
         <item>
             <EFDB_Name>secondaryCylinderForces</EFDB_Name>
             <Description></Description>
@@ -542,19 +443,12 @@
     </SALEvent>
     <SALEvent>
         <Subsystem>MTM1M3</Subsystem>
-        <Version>3.7.0</Version>
+        <Version>3.8.35</Version>
         <Author></Author>
         <EFDB_Topic>MTM1M3_logevent_appliedElevationForces</EFDB_Topic>
         <Alias>appliedElevationForces</Alias>
         <Explanation>http://sal.lsst.org</Explanation>
         <item>
-            <EFDB_Name>timestamp</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>double</IDL_Type>
-            <Units></Units>
-            <Count>1</Count>
-        </item>
-        <item>
             <EFDB_Name>xForces</EFDB_Name>
             <Description></Description>
             <IDL_Type>float</IDL_Type>
@@ -627,19 +521,12 @@
     </SALEvent>
     <SALEvent>
         <Subsystem>MTM1M3</Subsystem>
-        <Version>3.7.0</Version>
+        <Version>3.8.35</Version>
         <Author></Author>
         <EFDB_Topic>MTM1M3_logevent_appliedForces</EFDB_Topic>
         <Alias>appliedForces</Alias>
         <Explanation>http://sal.lsst.org</Explanation>
         <item>
-            <EFDB_Name>timestamp</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>double</IDL_Type>
-            <Units></Units>
-            <Count>1</Count>
-        </item>
-        <item>
             <EFDB_Name>xForces</EFDB_Name>
             <Description></Description>
             <IDL_Type>float</IDL_Type>
@@ -712,19 +599,41 @@
     </SALEvent>
     <SALEvent>
         <Subsystem>MTM1M3</Subsystem>
-        <Version>3.7.0</Version>
+        <Version>3.8.35</Version>
+        <Author></Author>
+        <EFDB_Topic>MTM1M3_logevent_appliedHardpointSteps</EFDB_Topic>
+        <Alias>appliedHardpointSteps</Alias>
+        <Explanation>http://sal.lsst.org</Explanation>
+        <item>
+            <EFDB_Name>targetEncoderValues</EFDB_Name>
+            <Description></Description>
+            <IDL_Type>long</IDL_Type>
+            <Units></Units>
+            <Count>6</Count>
+        </item>
+        <item>
+            <EFDB_Name>queuedSteps</EFDB_Name>
+            <Description></Description>
+            <IDL_Type>long</IDL_Type>
+            <Units></Units>
+            <Count>6</Count>
+        </item>
+        <item>
+            <EFDB_Name>commandedSteps</EFDB_Name>
+            <Description></Description>
+            <IDL_Type>short</IDL_Type>
+            <Units></Units>
+            <Count>6</Count>
+        </item>
+    </SALEvent>
+    <SALEvent>
+        <Subsystem>MTM1M3</Subsystem>
+        <Version>3.8.35</Version>
         <Author></Author>
         <EFDB_Topic>MTM1M3_logevent_appliedOffsetForces</EFDB_Topic>
         <Alias>appliedOffsetForces</Alias>
         <Explanation>http://sal.lsst.org</Explanation>
         <item>
-            <EFDB_Name>timestamp</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>double</IDL_Type>
-            <Units></Units>
-            <Count>1</Count>
-        </item>
-        <item>
             <EFDB_Name>xForces</EFDB_Name>
             <Description></Description>
             <IDL_Type>float</IDL_Type>
@@ -797,19 +706,12 @@
     </SALEvent>
     <SALEvent>
         <Subsystem>MTM1M3</Subsystem>
-        <Version>3.7.0</Version>
+        <Version>3.8.35</Version>
         <Author></Author>
         <EFDB_Topic>MTM1M3_logevent_appliedStaticForces</EFDB_Topic>
         <Alias>appliedStaticForces</Alias>
         <Explanation>http://sal.lsst.org</Explanation>
         <item>
-            <EFDB_Name>timestamp</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>double</IDL_Type>
-            <Units></Units>
-            <Count>1</Count>
-        </item>
-        <item>
             <EFDB_Name>xForces</EFDB_Name>
             <Description></Description>
             <IDL_Type>float</IDL_Type>
@@ -882,19 +784,12 @@
     </SALEvent>
     <SALEvent>
         <Subsystem>MTM1M3</Subsystem>
-        <Version>3.7.0</Version>
+        <Version>3.8.35</Version>
         <Author></Author>
         <EFDB_Topic>MTM1M3_logevent_appliedThermalForces</EFDB_Topic>
         <Alias>appliedThermalForces</Alias>
         <Explanation>http://sal.lsst.org</Explanation>
         <item>
-            <EFDB_Name>timestamp</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>double</IDL_Type>
-            <Units></Units>
-            <Count>1</Count>
-        </item>
-        <item>
             <EFDB_Name>xForces</EFDB_Name>
             <Description></Description>
             <IDL_Type>float</IDL_Type>
@@ -967,19 +862,12 @@
     </SALEvent>
     <SALEvent>
         <Subsystem>MTM1M3</Subsystem>
-        <Version>3.7.0</Version>
+        <Version>3.8.35</Version>
         <Author></Author>
         <EFDB_Topic>MTM1M3_logevent_appliedVelocityForces</EFDB_Topic>
         <Alias>appliedVelocityForces</Alias>
         <Explanation>http://sal.lsst.org</Explanation>
         <item>
-            <EFDB_Name>timestamp</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>double</IDL_Type>
-            <Units></Units>
-            <Count>1</Count>
-        </item>
-        <item>
             <EFDB_Name>xForces</EFDB_Name>
             <Description></Description>
             <IDL_Type>float</IDL_Type>
@@ -1052,27 +940,13 @@
     </SALEvent>
     <SALEvent>
         <Subsystem>MTM1M3</Subsystem>
-        <Version>3.7.0</Version>
+        <Version>3.8.35</Version>
         <Author></Author>
         <EFDB_Topic>MTM1M3_logevent_cellLightStatus</EFDB_Topic>
         <Alias>cellLightStatus</Alias>
         <Explanation>http://sal.lsst.org</Explanation>
         <item>
-            <EFDB_Name>timestamp</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>double</IDL_Type>
-            <Units></Units>
-            <Count>1</Count>
-        </item>
-        <item>
             <EFDB_Name>cellLightsCommandedOn</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units></Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>cellLightsOutputOn</EFDB_Name>
             <Description></Description>
             <IDL_Type>boolean</IDL_Type>
             <Units></Units>
@@ -1088,19 +962,12 @@
     </SALEvent>
     <SALEvent>
         <Subsystem>MTM1M3</Subsystem>
-        <Version>3.7.0</Version>
+        <Version>3.8.35</Version>
         <Author></Author>
         <EFDB_Topic>MTM1M3_logevent_cellLightWarning</EFDB_Topic>
         <Alias>cellLightWarning</Alias>
         <Explanation>http://sal.lsst.org</Explanation>
         <item>
-            <EFDB_Name>timestamp</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>double</IDL_Type>
-            <Units></Units>
-            <Count>1</Count>
-        </item>
-        <item>
             <EFDB_Name>anyWarning</EFDB_Name>
             <Description></Description>
             <IDL_Type>boolean</IDL_Type>
@@ -1108,66 +975,36 @@
             <Count>1</Count>
         </item>
         <item>
-            <EFDB_Name>cellLightsOutputMismatch</EFDB_Name>
+            <EFDB_Name>cellLightFlags</EFDB_Name>
             <Description></Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units></Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>cellLightsSensorMismatch</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>boolean</IDL_Type>
+            <IDL_Type>unsigned long long</IDL_Type>
             <Units></Units>
             <Count>1</Count>
         </item>
     </SALEvent>
     <SALEvent>
         <Subsystem>MTM1M3</Subsystem>
-        <Version>3.7.0</Version>
+        <Version>3.8.35</Version>
         <Author></Author>
-        <EFDB_Topic>MTM1M3_logevent_commandRejectionWarning</EFDB_Topic>
-        <Alias>commandRejectionWarning</Alias>
+        <EFDB_Topic>MTM1M3_logevent_detailedState</EFDB_Topic>
+        <Alias>detailedState</Alias>
         <Explanation>http://sal.lsst.org</Explanation>
         <item>
-            <EFDB_Name>timestamp</EFDB_Name>
+            <EFDB_Name>detailedState</EFDB_Name>
             <Description></Description>
-            <IDL_Type>double</IDL_Type>
-            <Units></Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>command</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>string</IDL_Type>
-            <IDL_Size>64</IDL_Size>
-            <Units></Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>reason</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>string</IDL_Type>
-            <IDL_Size>128</IDL_Size>
+            <IDL_Type>long</IDL_Type>
             <Units></Units>
             <Count>1</Count>
         </item>
     </SALEvent>
     <SALEvent>
         <Subsystem>MTM1M3</Subsystem>
-        <Version>3.7.0</Version>
+        <Version>3.8.35</Version>
         <Author></Author>
         <EFDB_Topic>MTM1M3_logevent_displacementSensorWarning</EFDB_Topic>
         <Alias>displacementSensorWarning</Alias>
         <Explanation>http://sal.lsst.org</Explanation>
         <item>
-            <EFDB_Name>timestamp</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>double</IDL_Type>
-            <Units></Units>
-            <Count>1</Count>
-        </item>
-        <item>
             <EFDB_Name>anyWarning</EFDB_Name>
             <Description></Description>
             <IDL_Type>boolean</IDL_Type>
@@ -1175,203 +1012,106 @@
             <Count>1</Count>
         </item>
         <item>
-            <EFDB_Name>sensorReportsInvalidCommand</EFDB_Name>
+            <EFDB_Name>displacementSensorFlags</EFDB_Name>
             <Description></Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units></Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>sensorReportsCommunicationTimeoutError</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units></Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>sensorReportsDataLengthError</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units></Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>sensorReportsNumberOfParametersError</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units></Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>sensorReportsParameterError</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units></Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>sensorReportsCommunicationError</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units></Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>sensorReportsIDNumberError</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units></Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>sensorReportsExpansionLineError</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units></Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>sensorReportsWriteControlError</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units></Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>responseTimeout</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units></Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>invalidLength</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units></Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>invalidResponse</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units></Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>unknownCommand</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units></Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>unknownProblem</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>boolean</IDL_Type>
+            <IDL_Type>unsigned long long</IDL_Type>
             <Units></Units>
             <Count>1</Count>
         </item>
     </SALEvent>
     <SALEvent>
         <Subsystem>MTM1M3</Subsystem>
-        <Version>3.7.0</Version>
+        <Version>3.8.35</Version>
         <Author></Author>
-        <EFDB_Topic>MTM1M3_logevent_forceActuatorForceWarning</EFDB_Topic>
-        <Alias>forceActuatorForceWarning</Alias>
+        <EFDB_Topic>MTM1M3_logevent_forceActuatorBackupCalibrationInfo</EFDB_Topic>
+        <Alias>forceActuatorBackupCalibrationInfo</Alias>
         <Explanation>http://sal.lsst.org</Explanation>
         <item>
-            <EFDB_Name>timestamp</EFDB_Name>
+            <EFDB_Name>primaryCoefficient</EFDB_Name>
             <Description></Description>
-            <IDL_Type>double</IDL_Type>
-            <Units></Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>anyWarning</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units></Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>anyPrimaryAxisMeasuredForceWarning</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units></Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>primaryAxisMeasuredForceWarning</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>boolean</IDL_Type>
+            <IDL_Type>float</IDL_Type>
             <Units></Units>
             <Count>156</Count>
         </item>
         <item>
-            <EFDB_Name>anySecondaryAxisMeasuredForceWarning</EFDB_Name>
+            <EFDB_Name>primaryOffset</EFDB_Name>
             <Description></Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units></Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>secondaryAxisMeasuredForceWarning</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>boolean</IDL_Type>
+            <IDL_Type>float</IDL_Type>
             <Units></Units>
             <Count>156</Count>
         </item>
         <item>
-            <EFDB_Name>anyPrimaryAxisFollowingErrorWarning</EFDB_Name>
+            <EFDB_Name>primarySensitivity</EFDB_Name>
             <Description></Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units></Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>primaryAxisFollowingErrorWarning</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>boolean</IDL_Type>
+            <IDL_Type>float</IDL_Type>
             <Units></Units>
             <Count>156</Count>
         </item>
         <item>
-            <EFDB_Name>anySecondaryAxisFollowingErrorWarning</EFDB_Name>
+            <EFDB_Name>secondaryCoefficient</EFDB_Name>
             <Description></Description>
-            <IDL_Type>boolean</IDL_Type>
+            <IDL_Type>float</IDL_Type>
             <Units></Units>
-            <Count>1</Count>
+            <Count>112</Count>
         </item>
         <item>
-            <EFDB_Name>secondaryAxisFollowingErrorWarning</EFDB_Name>
+            <EFDB_Name>secondaryOffset</EFDB_Name>
             <Description></Description>
-            <IDL_Type>boolean</IDL_Type>
+            <IDL_Type>float</IDL_Type>
             <Units></Units>
-            <Count>156</Count>
+            <Count>112</Count>
+        </item>
+        <item>
+            <EFDB_Name>secondarySensitivity</EFDB_Name>
+            <Description></Description>
+            <IDL_Type>float</IDL_Type>
+            <Units></Units>
+            <Count>112</Count>
         </item>
     </SALEvent>
     <SALEvent>
         <Subsystem>MTM1M3</Subsystem>
-        <Version>3.7.0</Version>
+        <Version>3.8.35</Version>
         <Author></Author>
-        <EFDB_Topic>MTM1M3_logevent_forceActuatorInfo</EFDB_Topic>
-        <Alias>forceActuatorInfo</Alias>
+        <EFDB_Topic>MTM1M3_logevent_forceActuatorILCInfo</EFDB_Topic>
+        <Alias>forceActuatorILCInfo</Alias>
         <Explanation>http://sal.lsst.org</Explanation>
         <item>
-            <EFDB_Name>timestamp</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>double</IDL_Type>
-            <Units></Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>referenceId</EFDB_Name>
+            <EFDB_Name>modbusSubnet</EFDB_Name>
             <Description></Description>
             <IDL_Type>short</IDL_Type>
             <Units></Units>
             <Count>156</Count>
         </item>
+        <item>
+            <EFDB_Name>modbusAddress</EFDB_Name>
+            <Description></Description>
+            <IDL_Type>short</IDL_Type>
+            <Units></Units>
+            <Count>156</Count>
+        </item>
+        <item>
+            <EFDB_Name>ilcStatus</EFDB_Name>
+            <Description></Description>
+            <IDL_Type>unsigned long long</IDL_Type>
+            <Units></Units>
+            <Count>156</Count>
+        </item>
+        <item>
+            <EFDB_Name>mezzanineStatus</EFDB_Name>
+            <Description></Description>
+            <IDL_Type>unsigned long long</IDL_Type>
+            <Units></Units>
+            <Count>156</Count>
+        </item>
+    </SALEvent>
+    <SALEvent>
+        <Subsystem>MTM1M3</Subsystem>
+        <Version>3.8.35</Version>
+        <Author></Author>
+        <EFDB_Topic>MTM1M3_logevent_forceActuatorIdInfo</EFDB_Topic>
+        <Alias>forceActuatorIdInfo</Alias>
+        <Explanation>http://sal.lsst.org</Explanation>
         <item>
             <EFDB_Name>xDataReferenceId</EFDB_Name>
             <Description></Description>
@@ -1394,6 +1134,107 @@
             <Count>156</Count>
         </item>
         <item>
+            <EFDB_Name>sDataReferenceId</EFDB_Name>
+            <Description></Description>
+            <IDL_Type>short</IDL_Type>
+            <Units></Units>
+            <Count>112</Count>
+        </item>
+        <item>
+            <EFDB_Name>ilcUniqueId</EFDB_Name>
+            <Description></Description>
+            <IDL_Type>long long</IDL_Type>
+            <Units></Units>
+            <Count>156</Count>
+        </item>
+        <item>
+            <EFDB_Name>mezzanineUniqueId</EFDB_Name>
+            <Description></Description>
+            <IDL_Type>long long</IDL_Type>
+            <Units></Units>
+            <Count>156</Count>
+        </item>
+    </SALEvent>
+    <SALEvent>
+        <Subsystem>MTM1M3</Subsystem>
+        <Version>3.8.35</Version>
+        <Author></Author>
+        <EFDB_Topic>MTM1M3_logevent_forceActuatorMainCalibrationInfo</EFDB_Topic>
+        <Alias>forceActuatorMainCalibrationInfo</Alias>
+        <Explanation>http://sal.lsst.org</Explanation>
+        <item>
+            <EFDB_Name>primaryCoefficient</EFDB_Name>
+            <Description></Description>
+            <IDL_Type>float</IDL_Type>
+            <Units></Units>
+            <Count>156</Count>
+        </item>
+        <item>
+            <EFDB_Name>primaryOffset</EFDB_Name>
+            <Description></Description>
+            <IDL_Type>float</IDL_Type>
+            <Units></Units>
+            <Count>156</Count>
+        </item>
+        <item>
+            <EFDB_Name>primarySensitivity</EFDB_Name>
+            <Description></Description>
+            <IDL_Type>float</IDL_Type>
+            <Units></Units>
+            <Count>156</Count>
+        </item>
+        <item>
+            <EFDB_Name>secondaryCoefficient</EFDB_Name>
+            <Description></Description>
+            <IDL_Type>float</IDL_Type>
+            <Units></Units>
+            <Count>112</Count>
+        </item>
+        <item>
+            <EFDB_Name>secondaryOffset</EFDB_Name>
+            <Description></Description>
+            <IDL_Type>float</IDL_Type>
+            <Units></Units>
+            <Count>112</Count>
+        </item>
+        <item>
+            <EFDB_Name>secondarySensitivity</EFDB_Name>
+            <Description></Description>
+            <IDL_Type>float</IDL_Type>
+            <Units></Units>
+            <Count>112</Count>
+        </item>
+    </SALEvent>
+    <SALEvent>
+        <Subsystem>MTM1M3</Subsystem>
+        <Version>3.8.35</Version>
+        <Author></Author>
+        <EFDB_Topic>MTM1M3_logevent_forceActuatorMezzanineCalibrationInfo</EFDB_Topic>
+        <Alias>forceActuatorMezzanineCalibrationInfo</Alias>
+        <Explanation>http://sal.lsst.org</Explanation>
+        <item>
+            <EFDB_Name>primaryCylinderGain</EFDB_Name>
+            <Description></Description>
+            <IDL_Type>float</IDL_Type>
+            <Units></Units>
+            <Count>156</Count>
+        </item>
+        <item>
+            <EFDB_Name>secondaryCylinderGain</EFDB_Name>
+            <Description></Description>
+            <IDL_Type>float</IDL_Type>
+            <Units></Units>
+            <Count>112</Count>
+        </item>
+    </SALEvent>
+    <SALEvent>
+        <Subsystem>MTM1M3</Subsystem>
+        <Version>3.8.35</Version>
+        <Author></Author>
+        <EFDB_Topic>MTM1M3_logevent_forceActuatorPositionInfo</EFDB_Topic>
+        <Alias>forceActuatorPositionInfo</Alias>
+        <Explanation>http://sal.lsst.org</Explanation>
+        <item>
             <EFDB_Name>actuatorType</EFDB_Name>
             <Description></Description>
             <IDL_Type>short</IDL_Type>
@@ -1402,20 +1243,6 @@
         </item>
         <item>
             <EFDB_Name>actuatorOrientation</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>short</IDL_Type>
-            <Units></Units>
-            <Count>156</Count>
-        </item>
-        <item>
-            <EFDB_Name>modbusSubnet</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>short</IDL_Type>
-            <Units></Units>
-            <Count>156</Count>
-        </item>
-        <item>
-            <EFDB_Name>modbusAddress</EFDB_Name>
             <Description></Description>
             <IDL_Type>short</IDL_Type>
             <Units></Units>
@@ -1442,203 +1269,14 @@
             <Units></Units>
             <Count>156</Count>
         </item>
-        <item>
-            <EFDB_Name>ilcUniqueId</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>long long</IDL_Type>
-            <Units></Units>
-            <Count>156</Count>
-        </item>
-        <item>
-            <EFDB_Name>ilcApplicationType</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>short</IDL_Type>
-            <Units></Units>
-            <Count>156</Count>
-        </item>
-        <item>
-            <EFDB_Name>networkNodeType</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>short</IDL_Type>
-            <Units></Units>
-            <Count>156</Count>
-        </item>
-        <item>
-            <EFDB_Name>ilcSelectedOptions</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>short</IDL_Type>
-            <Units></Units>
-            <Count>156</Count>
-        </item>
-        <item>
-            <EFDB_Name>networkNodeOptions</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>short</IDL_Type>
-            <Units></Units>
-            <Count>156</Count>
-        </item>
-        <item>
-            <EFDB_Name>majorRevision</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>short</IDL_Type>
-            <Units></Units>
-            <Count>156</Count>
-        </item>
-        <item>
-            <EFDB_Name>minorRevision</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>short</IDL_Type>
-            <Units></Units>
-            <Count>156</Count>
-        </item>
-        <item>
-            <EFDB_Name>adcScanRate</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>short</IDL_Type>
-            <Units></Units>
-            <Count>156</Count>
-        </item>
-        <item>
-            <EFDB_Name>mainPrimaryCylinderCoefficient</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>float</IDL_Type>
-            <Units></Units>
-            <Count>156</Count>
-        </item>
-        <item>
-            <EFDB_Name>mainSecondaryCylinderCoefficient</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>float</IDL_Type>
-            <Units></Units>
-            <Count>156</Count>
-        </item>
-        <item>
-            <EFDB_Name>mainPrimaryCylinderLoadCellOffset</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>float</IDL_Type>
-            <Units></Units>
-            <Count>156</Count>
-        </item>
-        <item>
-            <EFDB_Name>mainSecondaryCylinderLoadCellOffset</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>float</IDL_Type>
-            <Units></Units>
-            <Count>156</Count>
-        </item>
-        <item>
-            <EFDB_Name>mainPrimaryCylinderLoadCellSensitivity</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>float</IDL_Type>
-            <Units></Units>
-            <Count>156</Count>
-        </item>
-        <item>
-            <EFDB_Name>mainSecondaryCylinderLoadCellSensitivity</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>float</IDL_Type>
-            <Units></Units>
-            <Count>156</Count>
-        </item>
-        <item>
-            <EFDB_Name>backupPrimaryCylinderCoefficient</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>float</IDL_Type>
-            <Units></Units>
-            <Count>156</Count>
-        </item>
-        <item>
-            <EFDB_Name>backupSecondaryCylinderCoefficient</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>float</IDL_Type>
-            <Units></Units>
-            <Count>156</Count>
-        </item>
-        <item>
-            <EFDB_Name>backupPrimaryCylinderLoadCellOffset</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>float</IDL_Type>
-            <Units></Units>
-            <Count>156</Count>
-        </item>
-        <item>
-            <EFDB_Name>backupSecondaryCylinderLoadCellOffset</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>float</IDL_Type>
-            <Units></Units>
-            <Count>156</Count>
-        </item>
-        <item>
-            <EFDB_Name>backupPrimaryCylinderLoadCellSensitivity</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>float</IDL_Type>
-            <Units></Units>
-            <Count>156</Count>
-        </item>
-        <item>
-            <EFDB_Name>backupSecondaryCylinderLoadCellSensitivity</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>float</IDL_Type>
-            <Units></Units>
-            <Count>156</Count>
-        </item>
-        <item>
-            <EFDB_Name>mezzaninePrimaryCylinderGain</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>float</IDL_Type>
-            <Units></Units>
-            <Count>156</Count>
-        </item>
-        <item>
-            <EFDB_Name>mezzanineSecondaryCylinderGain</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>float</IDL_Type>
-            <Units></Units>
-            <Count>156</Count>
-        </item>
-        <item>
-            <EFDB_Name>mezzanineUniqueId</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>long long</IDL_Type>
-            <Units></Units>
-            <Count>156</Count>
-        </item>
-        <item>
-            <EFDB_Name>mezzanineFirmwareType</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>short</IDL_Type>
-            <Units></Units>
-            <Count>156</Count>
-        </item>
-        <item>
-            <EFDB_Name>mezzanineMajorRevision</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>short</IDL_Type>
-            <Units></Units>
-            <Count>156</Count>
-        </item>
-        <item>
-            <EFDB_Name>mezzanineMinorRevision</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>short</IDL_Type>
-            <Units></Units>
-            <Count>156</Count>
-        </item>
     </SALEvent>
     <SALEvent>
         <Subsystem>MTM1M3</Subsystem>
-        <Version>3.7.0</Version>
+        <Version>3.8.35</Version>
         <Author></Author>
         <EFDB_Topic>MTM1M3_logevent_forceActuatorState</EFDB_Topic>
         <Alias>forceActuatorState</Alias>
         <Explanation>http://sal.lsst.org</Explanation>
-        <item>
-            <EFDB_Name>timestamp</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>double</IDL_Type>
-            <Units></Units>
-            <Count>1</Count>
-        </item>
         <item>
             <EFDB_Name>ilcState</EFDB_Name>
             <Description></Description>
@@ -1733,19 +1371,12 @@
     </SALEvent>
     <SALEvent>
         <Subsystem>MTM1M3</Subsystem>
-        <Version>3.7.0</Version>
+        <Version>3.8.35</Version>
         <Author></Author>
         <EFDB_Topic>MTM1M3_logevent_forceActuatorWarning</EFDB_Topic>
         <Alias>forceActuatorWarning</Alias>
         <Explanation>http://sal.lsst.org</Explanation>
         <item>
-            <EFDB_Name>timestamp</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>double</IDL_Type>
-            <Units></Units>
-            <Count>1</Count>
-        </item>
-        <item>
             <EFDB_Name>anyWarning</EFDB_Name>
             <Description></Description>
             <IDL_Type>boolean</IDL_Type>
@@ -1753,701 +1384,35 @@
             <Count>1</Count>
         </item>
         <item>
-            <EFDB_Name>anyMajorFault</EFDB_Name>
+            <EFDB_Name>globalWarningFlags</EFDB_Name>
             <Description></Description>
-            <IDL_Type>boolean</IDL_Type>
+            <IDL_Type>unsigned long long</IDL_Type>
             <Units></Units>
             <Count>1</Count>
         </item>
         <item>
-            <EFDB_Name>majorFault</EFDB_Name>
+            <EFDB_Name>anyForceActuatorFlags</EFDB_Name>
             <Description></Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units></Units>
-            <Count>156</Count>
-        </item>
-        <item>
-            <EFDB_Name>anyMinorFault</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>boolean</IDL_Type>
+            <IDL_Type>unsigned long long</IDL_Type>
             <Units></Units>
             <Count>1</Count>
         </item>
         <item>
-            <EFDB_Name>minorFault</EFDB_Name>
+            <EFDB_Name>forceActuatorFlags</EFDB_Name>
             <Description></Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units></Units>
-            <Count>156</Count>
-        </item>
-        <item>
-            <EFDB_Name>anyFaultOverride</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units></Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>faultOverride</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units></Units>
-            <Count>156</Count>
-        </item>
-        <item>
-            <EFDB_Name>anyMainCalibrationError</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units></Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>mainCalibrationError</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units></Units>
-            <Count>156</Count>
-        </item>
-        <item>
-            <EFDB_Name>anyBackupCalibrationError</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units></Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>backupCalibrationError</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units></Units>
-            <Count>156</Count>
-        </item>
-        <item>
-            <EFDB_Name>anyMezzanineError</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units></Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>mezzanineError</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units></Units>
-            <Count>156</Count>
-        </item>
-        <item>
-            <EFDB_Name>anyMezzanineBootloaderActive</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units></Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>mezzanineBootloaderActive</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units></Units>
-            <Count>156</Count>
-        </item>
-        <item>
-            <EFDB_Name>anyUniqueIdCRCError</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units></Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>uniqueIdCRCError</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units></Units>
-            <Count>156</Count>
-        </item>
-        <item>
-            <EFDB_Name>anyApplicationTypeMismatch</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units></Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>applicationTypeMismatch</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units></Units>
-            <Count>156</Count>
-        </item>
-        <item>
-            <EFDB_Name>anyApplicationMissing</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units></Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>applicationMissing</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units></Units>
-            <Count>156</Count>
-        </item>
-        <item>
-            <EFDB_Name>anyApplicationCRCMismatch</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units></Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>applicationCRCMismatch</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units></Units>
-            <Count>156</Count>
-        </item>
-        <item>
-            <EFDB_Name>anyOneWireMissing</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units></Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>oneWireMissing</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units></Units>
-            <Count>156</Count>
-        </item>
-        <item>
-            <EFDB_Name>anyOneWire1Mismatch</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units></Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>oneWire1Mismatch</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units></Units>
-            <Count>156</Count>
-        </item>
-        <item>
-            <EFDB_Name>anyOneWire2Mismatch</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units></Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>oneWire2Mismatch</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units></Units>
-            <Count>156</Count>
-        </item>
-        <item>
-            <EFDB_Name>anyWatchdogReset</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units></Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>watchdogReset</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units></Units>
-            <Count>156</Count>
-        </item>
-        <item>
-            <EFDB_Name>anyBrownOut</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units></Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>brownOut</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units></Units>
-            <Count>156</Count>
-        </item>
-        <item>
-            <EFDB_Name>anyEventTrapReset</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units></Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>eventTrapReset</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units></Units>
-            <Count>156</Count>
-        </item>
-        <item>
-            <EFDB_Name>anySSRPowerFault</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units></Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>ssrPowerFault</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units></Units>
-            <Count>156</Count>
-        </item>
-        <item>
-            <EFDB_Name>anyAuxPowerFault</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units></Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>auxPowerFault</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units></Units>
-            <Count>156</Count>
-        </item>
-        <item>
-            <EFDB_Name>anyMezzaninePowerFault</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units></Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>mezzaninePowerFault</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units></Units>
-            <Count>156</Count>
-        </item>
-        <item>
-            <EFDB_Name>anyMezzanineCurrentAmp1Fault</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units></Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>mezzanineCurrentAmp1Fault</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units></Units>
-            <Count>156</Count>
-        </item>
-        <item>
-            <EFDB_Name>anyMezzanineCurrentAmp2Fault</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units></Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>mezzanineCurrentAmp2Fault</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units></Units>
-            <Count>156</Count>
-        </item>
-        <item>
-            <EFDB_Name>anyMezzanineUniqueIdCRCError</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units></Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>mezzanineUniqueIdCRCError</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units></Units>
-            <Count>156</Count>
-        </item>
-        <item>
-            <EFDB_Name>anyMezzanineMainCalibrationError</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units></Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>mezzanineMainCalibrationError</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units></Units>
-            <Count>156</Count>
-        </item>
-        <item>
-            <EFDB_Name>anyMezzanineBackupCalibrationError</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units></Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>mezzanineBackupCalibrationError</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units></Units>
-            <Count>156</Count>
-        </item>
-        <item>
-            <EFDB_Name>anyMezzanineEventTrapReset</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units></Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>mezzanineEventTrapReset</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units></Units>
-            <Count>156</Count>
-        </item>
-        <item>
-            <EFDB_Name>anyMezzanineApplicationMissing</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units></Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>mezzanineApplicationMissing</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units></Units>
-            <Count>156</Count>
-        </item>
-        <item>
-            <EFDB_Name>anyMezzanineApplicationCRCMismatch</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units></Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>mezzanineApplicationCRCMismatch</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units></Units>
-            <Count>156</Count>
-        </item>
-        <item>
-            <EFDB_Name>anyILCFault</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units></Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>ilcFault</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units></Units>
-            <Count>156</Count>
-        </item>
-        <item>
-            <EFDB_Name>anyBroadcastCounterWarning</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units></Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>broadcastCounterWarning</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>boolean</IDL_Type>
+            <IDL_Type>unsigned long long</IDL_Type>
             <Units></Units>
             <Count>156</Count>
         </item>
     </SALEvent>
     <SALEvent>
         <Subsystem>MTM1M3</Subsystem>
-        <Version>3.7.0</Version>
-        <Author></Author>
-        <EFDB_Topic>MTM1M3_logevent_forceSetpointWarning</EFDB_Topic>
-        <Alias>forceSetpointWarning</Alias>
-        <Explanation>http://sal.lsst.org</Explanation>
-        <item>
-            <EFDB_Name>timestamp</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>double</IDL_Type>
-            <Units></Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>anyWarning</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units></Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>anySafetyLimitWarning</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units></Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>safetyLimitWarning</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units></Units>
-            <Count>156</Count>
-        </item>
-        <item>
-            <EFDB_Name>xMomentWarning</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units></Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>yMomentWarning</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units></Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>zMomentWarning</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units></Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>anyNearNeighborWarning</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units></Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>nearNeighborWarning</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units></Units>
-            <Count>156</Count>
-        </item>
-        <item>
-            <EFDB_Name>magnitudeWarning</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units></Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>anyFarNeighborWarning</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units></Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>farNeighborWarning</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units></Units>
-            <Count>156</Count>
-        </item>
-        <item>
-            <EFDB_Name>anyElevationForceWarning</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units></Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>elevationForceWarning</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units></Units>
-            <Count>156</Count>
-        </item>
-        <item>
-            <EFDB_Name>anyAzimuthForceWarning</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units></Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>azimuthForceWarning</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units></Units>
-            <Count>156</Count>
-        </item>
-        <item>
-            <EFDB_Name>anyThermalForceWarning</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units></Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>thermalForceWarning</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units></Units>
-            <Count>156</Count>
-        </item>
-        <item>
-            <EFDB_Name>anyBalanceForceWarning</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units></Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>balanceForceWarning</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units></Units>
-            <Count>156</Count>
-        </item>
-        <item>
-            <EFDB_Name>anyAccelerationForceWarning</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units></Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>accelerationForceWarning</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units></Units>
-            <Count>156</Count>
-        </item>
-        <item>
-            <EFDB_Name>activeOpticNetForceWarning</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units></Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>anyActiveOpticForceWarning</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units></Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>activeOpticForceWarning</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units></Units>
-            <Count>156</Count>
-        </item>
-        <item>
-            <EFDB_Name>anyStaticForceWarning</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units></Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>staticForceWarning</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units></Units>
-            <Count>156</Count>
-        </item>
-        <item>
-            <EFDB_Name>aberrationNetForceWarning</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units></Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>anyAberrationForceWarning</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units></Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>aberrationForceWarning</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units></Units>
-            <Count>156</Count>
-        </item>
-        <item>
-            <EFDB_Name>anyOffsetForceWarning</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units></Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>offsetForceWarning</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units></Units>
-            <Count>156</Count>
-        </item>
-        <item>
-            <EFDB_Name>anyVelocityForceWarning</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units></Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>velocityForceWarning</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units></Units>
-            <Count>156</Count>
-        </item>
-        <item>
-            <EFDB_Name>anyForceWarning</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units></Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>forceWarning</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units></Units>
-            <Count>156</Count>
-        </item>
-    </SALEvent>
-    <SALEvent>
-        <Subsystem>MTM1M3</Subsystem>
-        <Version>3.7.0</Version>
+        <Version>3.8.35</Version>
         <Author></Author>
         <EFDB_Topic>MTM1M3_logevent_gyroWarning</EFDB_Topic>
         <Alias>gyroWarning</Alias>
         <Explanation>http://sal.lsst.org</Explanation>
         <item>
-            <EFDB_Name>timestamp</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>double</IDL_Type>
-            <Units></Units>
-            <Count>1</Count>
-        </item>
-        <item>
             <EFDB_Name>anyWarning</EFDB_Name>
             <Description></Description>
             <IDL_Type>boolean</IDL_Type>
@@ -2455,349 +1420,20 @@
             <Count>1</Count>
         </item>
         <item>
-            <EFDB_Name>gyroXStatusWarning</EFDB_Name>
+            <EFDB_Name>gyroSensorFlags</EFDB_Name>
             <Description></Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units></Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>gyroYStatusWarning</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units></Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>gyroZStatusWarning</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units></Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>sequenceNumberWarning</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units></Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>crcMismatchWarning</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units></Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>invalidLengthWarning</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units></Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>invalidHeaderWarning</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units></Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>incompleteFrameWarning</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units></Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>gyroXSLDWarning</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units></Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>gyroXMODDACWarning</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units></Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>gyroXPhaseWarning</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units></Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>gyroXFlashWarning</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units></Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>gyroYSLDWarning</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units></Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>gyroYMODDACWarning</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units></Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>gyroYPhaseWarning</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units></Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>gyroYFlashWarning</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units></Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>gyroZSLDWarning</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units></Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>gyroZMODDACWarning</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units></Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>gyroZPhaseWarning</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units></Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>gyroZFlashWarning</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units></Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>gyroXSLDTemperatureStatusWarning</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units></Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>gyroYSLDTemperatureStatusWarning</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units></Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>gyroZSLDTemperatureStatusWarning</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units></Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>gcbTemperatureStatusWarning</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units></Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>temperatureStatusWarning</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units></Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>gcbDSPSPIFlashStatusWarning</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units></Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>gcbFPGASPIFlashStatusWarning</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units></Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>dspSPIFlashStatusWarning</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units></Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>fpgaSPIFlashStatusWarning</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units></Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>gcb1_2VStatusWarning</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units></Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>gcb3_3VStatusWarning</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units></Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>gcb5VStatusWarning</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units></Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>v1_2StatusWarning</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units></Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>v3_3StatusWarning</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units></Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>v5StatusWarning</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units></Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>gcbFPGAStatusWarning</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units></Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>fpgaStatusWarning</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units></Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>hiSpeedSPORTStatusWarning</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units></Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>auxSPORTStatusWarning</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units></Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>sufficientSoftwareResourcesWarning</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units></Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>gyroEOVoltsPositiveWarning</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units></Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>gyroEOVoltsNegativeWarning</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units></Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>gyroXVoltsWarning</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units></Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>gyroYVoltsWarning</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units></Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>gyroZVoltsWarning</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units></Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>gcbADCCommsWarning</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units></Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>mSyncExternalTimingWarning</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>boolean</IDL_Type>
+            <IDL_Type>unsigned long long</IDL_Type>
             <Units></Units>
             <Count>1</Count>
         </item>
     </SALEvent>
     <SALEvent>
         <Subsystem>MTM1M3</Subsystem>
-        <Version>3.7.0</Version>
+        <Version>3.8.35</Version>
         <Author></Author>
         <EFDB_Topic>MTM1M3_logevent_hardpointActuatorInfo</EFDB_Topic>
         <Alias>hardpointActuatorInfo</Alias>
         <Explanation>http://sal.lsst.org</Explanation>
-        <item>
-            <EFDB_Name>timestamp</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>double</IDL_Type>
-            <Units></Units>
-            <Count>1</Count>
-        </item>
         <item>
             <EFDB_Name>referenceId</EFDB_Name>
             <Description></Description>
@@ -2948,18 +1584,11 @@
     </SALEvent>
     <SALEvent>
         <Subsystem>MTM1M3</Subsystem>
-        <Version>3.7.0</Version>
+        <Version>3.8.35</Version>
         <Author></Author>
         <EFDB_Topic>MTM1M3_logevent_hardpointActuatorState</EFDB_Topic>
         <Alias>hardpointActuatorState</Alias>
         <Explanation>http://sal.lsst.org</Explanation>
-        <item>
-            <EFDB_Name>timestamp</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>double</IDL_Type>
-            <Units></Units>
-            <Count>1</Count>
-        </item>
         <item>
             <EFDB_Name>ilcState</EFDB_Name>
             <Description></Description>
@@ -2977,18 +1606,11 @@
     </SALEvent>
     <SALEvent>
         <Subsystem>MTM1M3</Subsystem>
-        <Version>3.7.0</Version>
+        <Version>3.8.35</Version>
         <Author></Author>
         <EFDB_Topic>MTM1M3_logevent_hardpointActuatorWarning</EFDB_Topic>
         <Alias>hardpointActuatorWarning</Alias>
         <Explanation>http://sal.lsst.org</Explanation>
-        <item>
-            <EFDB_Name>timestamp</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>double</IDL_Type>
-            <Units></Units>
-            <Count>1</Count>
-        </item>
         <item>
             <EFDB_Name>anyWarning</EFDB_Name>
             <Description></Description>
@@ -2997,342 +1619,27 @@
             <Count>1</Count>
         </item>
         <item>
-            <EFDB_Name>anyMajorFault</EFDB_Name>
+            <EFDB_Name>anyHardpointActuatorFlags</EFDB_Name>
             <Description></Description>
-            <IDL_Type>boolean</IDL_Type>
+            <IDL_Type>unsigned long long</IDL_Type>
             <Units></Units>
             <Count>1</Count>
         </item>
         <item>
-            <EFDB_Name>majorFault</EFDB_Name>
+            <EFDB_Name>hardpointActuatorFlags</EFDB_Name>
             <Description></Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units></Units>
-            <Count>6</Count>
-        </item>
-        <item>
-            <EFDB_Name>anyMinorFault</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units></Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>minorFault</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units></Units>
-            <Count>6</Count>
-        </item>
-        <item>
-            <EFDB_Name>anyFaultOverride</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units></Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>faultOverride</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units></Units>
-            <Count>6</Count>
-        </item>
-        <item>
-            <EFDB_Name>anyMainCalibrationError</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units></Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>mainCalibrationError</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units></Units>
-            <Count>6</Count>
-        </item>
-        <item>
-            <EFDB_Name>anyBackupCalibrationError</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units></Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>backupCalibrationError</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units></Units>
-            <Count>6</Count>
-        </item>
-        <item>
-            <EFDB_Name>anyLimitSwitch1Operated</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units></Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>limitSwitch1Operated</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units></Units>
-            <Count>6</Count>
-        </item>
-        <item>
-            <EFDB_Name>anyLimitSwitch2Operated</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units></Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>limitSwitch2Operated</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units></Units>
-            <Count>6</Count>
-        </item>
-        <item>
-            <EFDB_Name>anyUniqueIdCRCError</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units></Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>uniqueIdCRCError</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units></Units>
-            <Count>6</Count>
-        </item>
-        <item>
-            <EFDB_Name>anyApplicationTypeMismatch</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units></Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>applicationTypeMismatch</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units></Units>
-            <Count>6</Count>
-        </item>
-        <item>
-            <EFDB_Name>anyApplicationMissing</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units></Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>applicationMissing</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units></Units>
-            <Count>6</Count>
-        </item>
-        <item>
-            <EFDB_Name>anyApplicationCRCMismatch</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units></Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>applicationCRCMismatch</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units></Units>
-            <Count>6</Count>
-        </item>
-        <item>
-            <EFDB_Name>anyOneWireMissing</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units></Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>oneWireMissing</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units></Units>
-            <Count>6</Count>
-        </item>
-        <item>
-            <EFDB_Name>anyOneWire1Mismatch</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units></Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>oneWire1Mismatch</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units></Units>
-            <Count>6</Count>
-        </item>
-        <item>
-            <EFDB_Name>anyOneWire2Mismatch</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units></Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>oneWire2Mismatch</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units></Units>
-            <Count>6</Count>
-        </item>
-        <item>
-            <EFDB_Name>anyWatchdogReset</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units></Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>watchdogReset</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units></Units>
-            <Count>6</Count>
-        </item>
-        <item>
-            <EFDB_Name>anyBrownOut</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units></Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>brownOut</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units></Units>
-            <Count>6</Count>
-        </item>
-        <item>
-            <EFDB_Name>anyEventTrapReset</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units></Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>eventTrapReset</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units></Units>
-            <Count>6</Count>
-        </item>
-        <item>
-            <EFDB_Name>anyMotorDriverFault</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units></Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>motorDriverFault</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units></Units>
-            <Count>6</Count>
-        </item>
-        <item>
-            <EFDB_Name>anySSRPowerFault</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units></Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>ssrPowerFault</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units></Units>
-            <Count>6</Count>
-        </item>
-        <item>
-            <EFDB_Name>anyAuxPowerFault</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units></Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>auxPowerFault</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units></Units>
-            <Count>6</Count>
-        </item>
-        <item>
-            <EFDB_Name>anySMCPowerFault</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units></Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>smcPowerFault</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units></Units>
-            <Count>6</Count>
-        </item>
-        <item>
-            <EFDB_Name>anyILCFault</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units></Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>ilcFault</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units></Units>
-            <Count>6</Count>
-        </item>
-        <item>
-            <EFDB_Name>anyBroadcastCounterWarning</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units></Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>broadcastCounterWarning</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>boolean</IDL_Type>
+            <IDL_Type>unsigned long long</IDL_Type>
             <Units></Units>
             <Count>6</Count>
         </item>
     </SALEvent>
     <SALEvent>
         <Subsystem>MTM1M3</Subsystem>
-        <Version>3.7.0</Version>
+        <Version>3.8.35</Version>
         <Author></Author>
         <EFDB_Topic>MTM1M3_logevent_hardpointMonitorInfo</EFDB_Topic>
         <Alias>hardpointMonitorInfo</Alias>
         <Explanation>http://sal.lsst.org</Explanation>
-        <item>
-            <EFDB_Name>timestamp</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>double</IDL_Type>
-            <Units></Units>
-            <Count>1</Count>
-        </item>
         <item>
             <EFDB_Name>referenceId</EFDB_Name>
             <Description></Description>
@@ -3420,18 +1727,11 @@
     </SALEvent>
     <SALEvent>
         <Subsystem>MTM1M3</Subsystem>
-        <Version>3.7.0</Version>
+        <Version>3.8.35</Version>
         <Author></Author>
         <EFDB_Topic>MTM1M3_logevent_hardpointMonitorState</EFDB_Topic>
         <Alias>hardpointMonitorState</Alias>
         <Explanation>http://sal.lsst.org</Explanation>
-        <item>
-            <EFDB_Name>timestamp</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>double</IDL_Type>
-            <Units></Units>
-            <Count>1</Count>
-        </item>
         <item>
             <EFDB_Name>ilcState</EFDB_Name>
             <Description></Description>
@@ -3442,19 +1742,12 @@
     </SALEvent>
     <SALEvent>
         <Subsystem>MTM1M3</Subsystem>
-        <Version>3.7.0</Version>
+        <Version>3.8.35</Version>
         <Author></Author>
         <EFDB_Topic>MTM1M3_logevent_hardpointMonitorWarning</EFDB_Topic>
         <Alias>hardpointMonitorWarning</Alias>
         <Explanation>http://sal.lsst.org</Explanation>
         <item>
-            <EFDB_Name>timestamp</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>double</IDL_Type>
-            <Units></Units>
-            <Count>1</Count>
-        </item>
-        <item>
             <EFDB_Name>anyWarning</EFDB_Name>
             <Description></Description>
             <IDL_Type>boolean</IDL_Type>
@@ -3462,491 +1755,28 @@
             <Count>1</Count>
         </item>
         <item>
-            <EFDB_Name>anyMajorFault</EFDB_Name>
+            <EFDB_Name>anyHardpointMonitorFlags</EFDB_Name>
             <Description></Description>
-            <IDL_Type>boolean</IDL_Type>
+            <IDL_Type>unsigned long long</IDL_Type>
             <Units></Units>
             <Count>1</Count>
         </item>
         <item>
-            <EFDB_Name>majorFault</EFDB_Name>
+            <EFDB_Name>hardpointMonitorFlags</EFDB_Name>
             <Description></Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units></Units>
-            <Count>6</Count>
-        </item>
-        <item>
-            <EFDB_Name>anyMinorFault</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units></Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>minorFault</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units></Units>
-            <Count>6</Count>
-        </item>
-        <item>
-            <EFDB_Name>anyFaultOverride</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units></Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>faultOverride</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units></Units>
-            <Count>6</Count>
-        </item>
-        <item>
-            <EFDB_Name>anyInstrumentError</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units></Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>instrumentError</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units></Units>
-            <Count>6</Count>
-        </item>
-        <item>
-            <EFDB_Name>anyMezzanineError</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units></Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>mezzanineError</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units></Units>
-            <Count>6</Count>
-        </item>
-        <item>
-            <EFDB_Name>anyMezzanineBootloaderActive</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units></Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>mezzanineBootloaderActive</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units></Units>
-            <Count>6</Count>
-        </item>
-        <item>
-            <EFDB_Name>anyUniqueIdCRCError</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units></Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>uniqueIdCRCError</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units></Units>
-            <Count>6</Count>
-        </item>
-        <item>
-            <EFDB_Name>anyApplicationTypeMismatch</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units></Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>applicationTypeMismatch</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units></Units>
-            <Count>6</Count>
-        </item>
-        <item>
-            <EFDB_Name>anyApplicationMissing</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units></Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>applicationMissing</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units></Units>
-            <Count>6</Count>
-        </item>
-        <item>
-            <EFDB_Name>anyApplicationCRCMismatch</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units></Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>applicationCRCMismatch</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units></Units>
-            <Count>6</Count>
-        </item>
-        <item>
-            <EFDB_Name>anyOneWireMissing</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units></Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>oneWireMissing</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units></Units>
-            <Count>6</Count>
-        </item>
-        <item>
-            <EFDB_Name>anyOneWire1Mismatch</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units></Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>oneWire1Mismatch</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units></Units>
-            <Count>6</Count>
-        </item>
-        <item>
-            <EFDB_Name>anyOneWire2Mismatch</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units></Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>oneWire2Mismatch</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units></Units>
-            <Count>6</Count>
-        </item>
-        <item>
-            <EFDB_Name>anyWatchdogReset</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units></Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>watchdogReset</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units></Units>
-            <Count>6</Count>
-        </item>
-        <item>
-            <EFDB_Name>anyBrownOut</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units></Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>brownOut</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units></Units>
-            <Count>6</Count>
-        </item>
-        <item>
-            <EFDB_Name>anyEventTrapReset</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units></Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>eventTrapReset</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units></Units>
-            <Count>6</Count>
-        </item>
-        <item>
-            <EFDB_Name>anySSRPowerFault</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units></Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>ssrPowerFault</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units></Units>
-            <Count>6</Count>
-        </item>
-        <item>
-            <EFDB_Name>anyAuxPowerFault</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units></Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>auxPowerFault</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units></Units>
-            <Count>6</Count>
-        </item>
-        <item>
-            <EFDB_Name>anyMezzanineS1AInterface1Fault</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units></Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>mezzanineS1AInterface1Fault</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units></Units>
-            <Count>6</Count>
-        </item>
-        <item>
-            <EFDB_Name>anyMezzanineS1ALVDT1Fault</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units></Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>mezzanineS1ALVDT1Fault</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units></Units>
-            <Count>6</Count>
-        </item>
-        <item>
-            <EFDB_Name>anyMezzanineS1AInterface2Fault</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units></Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>mezzanineS1AInterface2Fault</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units></Units>
-            <Count>6</Count>
-        </item>
-        <item>
-            <EFDB_Name>anyMezzanineS1ALVDT2Fault</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units></Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>mezzanineS1ALVDT2Fault</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units></Units>
-            <Count>6</Count>
-        </item>
-        <item>
-            <EFDB_Name>anyMezzanineUniqueIdCRCError</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units></Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>mezzanineUniqueIdCRCError</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units></Units>
-            <Count>6</Count>
-        </item>
-        <item>
-            <EFDB_Name>anyMezzanineEventTrapReset</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units></Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>mezzanineEventTrapReset</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units></Units>
-            <Count>6</Count>
-        </item>
-        <item>
-            <EFDB_Name>anyMezzanineDCPRS422ChipFault</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units></Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>mezzanineDCPRS422ChipFault</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units></Units>
-            <Count>6</Count>
-        </item>
-        <item>
-            <EFDB_Name>anyMezzanineApplicationMissing</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units></Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>mezzanineApplicationMissing</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units></Units>
-            <Count>6</Count>
-        </item>
-        <item>
-            <EFDB_Name>anyMezzanineApplicationCRCMismatch</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units></Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>mezzanineApplicationCRCMismatch</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>boolean</IDL_Type>
+            <IDL_Type>unsigned long long</IDL_Type>
             <Units></Units>
             <Count>6</Count>
         </item>
     </SALEvent>
     <SALEvent>
         <Subsystem>MTM1M3</Subsystem>
-        <Version>3.7.0</Version>
-        <Author></Author>
-        <EFDB_Topic>MTM1M3_logevent_ilcWarning</EFDB_Topic>
-        <Alias>ilcWarning</Alias>
-        <Explanation>http://sal.lsst.org</Explanation>
-        <item>
-            <EFDB_Name>timestamp</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>double</IDL_Type>
-            <Units></Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>actuatorId</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>long</IDL_Type>
-            <Units></Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>anyWarning</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units></Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>responseTimeout</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units></Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>invalidCRC</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units></Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>illegalFunction</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units></Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>illegalDataValue</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units></Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>invalidLength</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units></Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>unknownSubnet</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units></Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>unknownAddress</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units></Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>unknownFunction</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units></Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>unknownProblem</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units></Units>
-            <Count>1</Count>
-        </item>
-    </SALEvent>
-    <SALEvent>
-        <Subsystem>MTM1M3</Subsystem>
-        <Version>3.7.0</Version>
+        <Version>3.8.35</Version>
         <Author></Author>
         <EFDB_Topic>MTM1M3_logevent_inclinometerSensorWarning</EFDB_Topic>
         <Alias>inclinometerSensorWarning</Alias>
         <Explanation>http://sal.lsst.org</Explanation>
         <item>
-            <EFDB_Name>timestamp</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>double</IDL_Type>
-            <Units></Units>
-            <Count>1</Count>
-        </item>
-        <item>
             <EFDB_Name>anyWarning</EFDB_Name>
             <Description></Description>
             <IDL_Type>boolean</IDL_Type>
@@ -3954,76 +1784,20 @@
             <Count>1</Count>
         </item>
         <item>
-            <EFDB_Name>sensorReportsIllegalFunction</EFDB_Name>
+            <EFDB_Name>inclinometerSensorFlags</EFDB_Name>
             <Description></Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units></Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>sensorReportsIllegalDataAddress</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units></Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>responseTimeout</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units></Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>invalidCRC</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units></Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>invalidLength</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units></Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>unknownAddress</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units></Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>unknownFunction</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units></Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>unknownProblem</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>boolean</IDL_Type>
+            <IDL_Type>unsigned long long</IDL_Type>
             <Units></Units>
             <Count>1</Count>
         </item>
     </SALEvent>
     <SALEvent>
         <Subsystem>MTM1M3</Subsystem>
-        <Version>3.7.0</Version>
+        <Version>3.8.35</Version>
         <Author></Author>
         <EFDB_Topic>MTM1M3_logevent_interlockStatus</EFDB_Topic>
         <Alias>interlockStatus</Alias>
         <Explanation>http://sal.lsst.org</Explanation>
-        <item>
-            <EFDB_Name>timestamp</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>double</IDL_Type>
-            <Units></Units>
-            <Count>1</Count>
-        </item>
         <item>
             <EFDB_Name>heartbeatCommandedState</EFDB_Name>
             <Description></Description>
@@ -4031,28 +1805,14 @@
             <Units></Units>
             <Count>1</Count>
         </item>
-        <item>
-            <EFDB_Name>heartbeatOutputState</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units></Units>
-            <Count>1</Count>
-        </item>
     </SALEvent>
     <SALEvent>
         <Subsystem>MTM1M3</Subsystem>
-        <Version>3.7.0</Version>
+        <Version>3.8.35</Version>
         <Author></Author>
         <EFDB_Topic>MTM1M3_logevent_interlockWarning</EFDB_Topic>
         <Alias>interlockWarning</Alias>
         <Explanation>http://sal.lsst.org</Explanation>
-        <item>
-            <EFDB_Name>timestamp</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>double</IDL_Type>
-            <Units></Units>
-            <Count>1</Count>
-        </item>
         <item>
             <EFDB_Name>anyWarning</EFDB_Name>
             <Description></Description>
@@ -4061,69 +1821,20 @@
             <Count>1</Count>
         </item>
         <item>
-            <EFDB_Name>heartbeatStateOutputMismatch</EFDB_Name>
+            <EFDB_Name>interlockSystemFlags</EFDB_Name>
             <Description></Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units></Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>auxPowerNetworksOff</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units></Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>thermalEquipmentOff</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units></Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>airSupplyOff</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units></Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>tmaMotionStop</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units></Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>gisHeartbeatLost</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units></Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>cabinetDoorOpen</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>boolean</IDL_Type>
+            <IDL_Type>unsigned long long</IDL_Type>
             <Units></Units>
             <Count>1</Count>
         </item>
     </SALEvent>
     <SALEvent>
         <Subsystem>MTM1M3</Subsystem>
-        <Version>3.7.0</Version>
+        <Version>3.8.35</Version>
         <Author></Author>
         <EFDB_Topic>MTM1M3_logevent_modbusResponse</EFDB_Topic>
         <Alias>modbusResponse</Alias>
         <Explanation>http://sal.lsst.org</Explanation>
-        <item>
-            <EFDB_Name>timestamp</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>double</IDL_Type>
-            <Units></Units>
-            <Count>1</Count>
-        </item>
         <item>
             <EFDB_Name>responseValid</EFDB_Name>
             <Description></Description>
@@ -4169,18 +1880,47 @@
     </SALEvent>
     <SALEvent>
         <Subsystem>MTM1M3</Subsystem>
-        <Version>3.7.0</Version>
+        <Version>3.8.35</Version>
+        <Author></Author>
+        <EFDB_Topic>MTM1M3_logevent_modbusWarning</EFDB_Topic>
+        <Alias>modbusWarning</Alias>
+        <Explanation>http://sal.lsst.org</Explanation>
+        <item>
+            <EFDB_Name>anyWarning</EFDB_Name>
+            <Description></Description>
+            <IDL_Type>boolean</IDL_Type>
+            <Units></Units>
+            <Count>1</Count>
+        </item>
+        <item>
+            <EFDB_Name>modbusSystemFlags</EFDB_Name>
+            <Description></Description>
+            <IDL_Type>unsigned long long</IDL_Type>
+            <Units></Units>
+            <Count>1</Count>
+        </item>
+        <item>
+            <EFDB_Name>anySubnetFlags</EFDB_Name>
+            <Description></Description>
+            <IDL_Type>unsigned long long</IDL_Type>
+            <Units></Units>
+            <Count>1</Count>
+        </item>
+        <item>
+            <EFDB_Name>subnetFlags</EFDB_Name>
+            <Description></Description>
+            <IDL_Type>unsigned long long</IDL_Type>
+            <Units></Units>
+            <Count>5</Count>
+        </item>
+    </SALEvent>
+    <SALEvent>
+        <Subsystem>MTM1M3</Subsystem>
+        <Version>3.8.35</Version>
         <Author></Author>
         <EFDB_Topic>MTM1M3_logevent_pidInfo</EFDB_Topic>
         <Alias>pidInfo</Alias>
         <Explanation>http://sal.lsst.org</Explanation>
-        <item>
-            <EFDB_Name>timestamp</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>double</IDL_Type>
-            <Units></Units>
-            <Count>1</Count>
-        </item>
         <item>
             <EFDB_Name>timestep</EFDB_Name>
             <Description></Description>
@@ -4254,27 +1994,13 @@
     </SALEvent>
     <SALEvent>
         <Subsystem>MTM1M3</Subsystem>
-        <Version>3.7.0</Version>
+        <Version>3.8.35</Version>
         <Author></Author>
         <EFDB_Topic>MTM1M3_logevent_powerStatus</EFDB_Topic>
         <Alias>powerStatus</Alias>
         <Explanation>http://sal.lsst.org</Explanation>
         <item>
-            <EFDB_Name>timestamp</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>double</IDL_Type>
-            <Units></Units>
-            <Count>1</Count>
-        </item>
-        <item>
             <EFDB_Name>powerNetworkACommandedOn</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units></Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>powerNetworkAOutputOn</EFDB_Name>
             <Description></Description>
             <IDL_Type>boolean</IDL_Type>
             <Units></Units>
@@ -4288,21 +2014,7 @@
             <Count>1</Count>
         </item>
         <item>
-            <EFDB_Name>powerNetworkBOutputOn</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units></Units>
-            <Count>1</Count>
-        </item>
-        <item>
             <EFDB_Name>powerNetworkCCommandedOn</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units></Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>powerNetworkCOutputOn</EFDB_Name>
             <Description></Description>
             <IDL_Type>boolean</IDL_Type>
             <Units></Units>
@@ -4316,21 +2028,7 @@
             <Count>1</Count>
         </item>
         <item>
-            <EFDB_Name>powerNetworkDOutputOn</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units></Units>
-            <Count>1</Count>
-        </item>
-        <item>
             <EFDB_Name>auxPowerNetworkACommandedOn</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units></Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>auxPowerNetworkAOutputOn</EFDB_Name>
             <Description></Description>
             <IDL_Type>boolean</IDL_Type>
             <Units></Units>
@@ -4344,21 +2042,7 @@
             <Count>1</Count>
         </item>
         <item>
-            <EFDB_Name>auxPowerNetworkBOutputOn</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units></Units>
-            <Count>1</Count>
-        </item>
-        <item>
             <EFDB_Name>auxPowerNetworkCCommandedOn</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units></Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>auxPowerNetworkCOutputOn</EFDB_Name>
             <Description></Description>
             <IDL_Type>boolean</IDL_Type>
             <Units></Units>
@@ -4371,204 +2055,14 @@
             <Units></Units>
             <Count>1</Count>
         </item>
-        <item>
-            <EFDB_Name>auxPowerNetworkDOutputOn</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units></Units>
-            <Count>1</Count>
-        </item>
     </SALEvent>
     <SALEvent>
         <Subsystem>MTM1M3</Subsystem>
-        <Version>3.7.0</Version>
-        <Author></Author>
-        <EFDB_Topic>MTM1M3_logevent_powerSupplyStatus</EFDB_Topic>
-        <Alias>powerSupplyStatus</Alias>
-        <Explanation>http://sal.lsst.org</Explanation>
-        <item>
-            <EFDB_Name>timestamp</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>double</IDL_Type>
-            <Units></Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>rcpMirrorCellUtility220VAC1Status</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units></Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>rcpCabinetUtility220VACStatus</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units></Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>rcpExternalEquipment220VACStatus</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units></Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>rcpMirrorCellUtility220VAC2Status</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units></Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>rcpMirrorCellUtility220VAC3Status</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units></Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>powerNetworkARedundancyControlStatus</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units></Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>powerNetworkBRedundancyControlStatus</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units></Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>powerNetworkCRedundancyControlStatus</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units></Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>powerNetworkDRedundancyControlStatus</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units></Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>controlsPowerNetworkRedundancyControlStatus</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units></Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>powerNetworkAStatus</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units></Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>powerNetworkARedundantStatus</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units></Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>powerNetworkBStatus</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units></Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>powerNetworkBRedundantStatus</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units></Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>powerNetworkCStatus</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units></Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>powerNetworkCRedundantStatus</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units></Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>powerNetworkDStatus</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units></Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>powerNetworkDRedundantStatus</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units></Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>controlsPowerNetworkStatus</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units></Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>controlsPowerNetworkRedundantStatus</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units></Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>lightPowerNetworkStatus</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units></Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>externalEquipmentPowerNetworkStatus</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units></Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>laserTrackerPowerNetworkStatus</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units></Units>
-            <Count>1</Count>
-        </item>
-    </SALEvent>
-    <SALEvent>
-        <Subsystem>MTM1M3</Subsystem>
-        <Version>3.7.0</Version>
+        <Version>3.8.35</Version>
         <Author></Author>
         <EFDB_Topic>MTM1M3_logevent_powerWarning</EFDB_Topic>
         <Alias>powerWarning</Alias>
         <Explanation>http://sal.lsst.org</Explanation>
-        <item>
-            <EFDB_Name>timestamp</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>double</IDL_Type>
-            <Units></Units>
-            <Count>1</Count>
-        </item>
         <item>
             <EFDB_Name>anyWarning</EFDB_Name>
             <Description></Description>
@@ -4577,77 +2071,21 @@
             <Count>1</Count>
         </item>
         <item>
-            <EFDB_Name>powerNetworkAOutputMismatch</EFDB_Name>
+            <EFDB_Name>powerSystemFlags</EFDB_Name>
             <Description></Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units></Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>powerNetworkBOutputMismatch</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units></Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>powerNetworkCOutputMismatch</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units></Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>powerNetworkDOutputMismatch</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units></Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>auxPowerNetworkAOutputMismatch</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units></Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>auxPowerNetworkBOutputMismatch</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units></Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>auxPowerNetworkCOutputMismatch</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units></Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>auxPowerNetworkDOutputMismatch</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>boolean</IDL_Type>
+            <IDL_Type>unsigned long long</IDL_Type>
             <Units></Units>
             <Count>1</Count>
         </item>
     </SALEvent>
     <SALEvent>
         <Subsystem>MTM1M3</Subsystem>
-        <Version>3.7.0</Version>
+        <Version>3.8.35</Version>
         <Author></Author>
         <EFDB_Topic>MTM1M3_logevent_rejectedAberrationForces</EFDB_Topic>
         <Alias>rejectedAberrationForces</Alias>
         <Explanation>http://sal.lsst.org</Explanation>
         <item>
-            <EFDB_Name>timestamp</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>double</IDL_Type>
-            <Units></Units>
-            <Count>1</Count>
-        </item>
-        <item>
             <EFDB_Name>zForces</EFDB_Name>
             <Description></Description>
             <IDL_Type>float</IDL_Type>
@@ -4675,22 +2113,22 @@
             <Units></Units>
             <Count>1</Count>
         </item>
+        <item>
+            <EFDB_Name>forceMagnitude</EFDB_Name>
+            <Description></Description>
+            <IDL_Type>float</IDL_Type>
+            <Units></Units>
+            <Count>1</Count>
+        </item>
     </SALEvent>
     <SALEvent>
         <Subsystem>MTM1M3</Subsystem>
-        <Version>3.7.0</Version>
+        <Version>3.8.35</Version>
         <Author></Author>
         <EFDB_Topic>MTM1M3_logevent_rejectedAccelerationForces</EFDB_Topic>
         <Alias>rejectedAccelerationForces</Alias>
         <Explanation>http://sal.lsst.org</Explanation>
         <item>
-            <EFDB_Name>timestamp</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>double</IDL_Type>
-            <Units></Units>
-            <Count>1</Count>
-        </item>
-        <item>
             <EFDB_Name>xForces</EFDB_Name>
             <Description></Description>
             <IDL_Type>float</IDL_Type>
@@ -4763,19 +2201,12 @@
     </SALEvent>
     <SALEvent>
         <Subsystem>MTM1M3</Subsystem>
-        <Version>3.7.0</Version>
+        <Version>3.8.35</Version>
         <Author></Author>
         <EFDB_Topic>MTM1M3_logevent_rejectedActiveOpticForces</EFDB_Topic>
         <Alias>rejectedActiveOpticForces</Alias>
         <Explanation>http://sal.lsst.org</Explanation>
         <item>
-            <EFDB_Name>timestamp</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>double</IDL_Type>
-            <Units></Units>
-            <Count>1</Count>
-        </item>
-        <item>
             <EFDB_Name>zForces</EFDB_Name>
             <Description></Description>
             <IDL_Type>float</IDL_Type>
@@ -4803,22 +2234,22 @@
             <Units></Units>
             <Count>1</Count>
         </item>
+        <item>
+            <EFDB_Name>forceMagnitude</EFDB_Name>
+            <Description></Description>
+            <IDL_Type>float</IDL_Type>
+            <Units></Units>
+            <Count>1</Count>
+        </item>
     </SALEvent>
     <SALEvent>
         <Subsystem>MTM1M3</Subsystem>
-        <Version>3.7.0</Version>
+        <Version>3.8.35</Version>
         <Author></Author>
         <EFDB_Topic>MTM1M3_logevent_rejectedAzimuthForces</EFDB_Topic>
         <Alias>rejectedAzimuthForces</Alias>
         <Explanation>http://sal.lsst.org</Explanation>
         <item>
-            <EFDB_Name>timestamp</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>double</IDL_Type>
-            <Units></Units>
-            <Count>1</Count>
-        </item>
-        <item>
             <EFDB_Name>xForces</EFDB_Name>
             <Description></Description>
             <IDL_Type>float</IDL_Type>
@@ -4891,19 +2322,12 @@
     </SALEvent>
     <SALEvent>
         <Subsystem>MTM1M3</Subsystem>
-        <Version>3.7.0</Version>
+        <Version>3.8.35</Version>
         <Author></Author>
         <EFDB_Topic>MTM1M3_logevent_rejectedBalanceForces</EFDB_Topic>
         <Alias>rejectedBalanceForces</Alias>
         <Explanation>http://sal.lsst.org</Explanation>
         <item>
-            <EFDB_Name>timestamp</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>double</IDL_Type>
-            <Units></Units>
-            <Count>1</Count>
-        </item>
-        <item>
             <EFDB_Name>xForces</EFDB_Name>
             <Description></Description>
             <IDL_Type>float</IDL_Type>
@@ -4976,18 +2400,11 @@
     </SALEvent>
     <SALEvent>
         <Subsystem>MTM1M3</Subsystem>
-        <Version>3.7.0</Version>
+        <Version>3.8.35</Version>
         <Author></Author>
         <EFDB_Topic>MTM1M3_logevent_rejectedCylinderForces</EFDB_Topic>
         <Alias>rejectedCylinderForces</Alias>
         <Explanation>http://sal.lsst.org</Explanation>
-        <item>
-            <EFDB_Name>timestamp</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>double</IDL_Type>
-            <Units></Units>
-            <Count>1</Count>
-        </item>
         <item>
             <EFDB_Name>secondaryCylinderForces</EFDB_Name>
             <Description></Description>
@@ -5005,19 +2422,12 @@
     </SALEvent>
     <SALEvent>
         <Subsystem>MTM1M3</Subsystem>
-        <Version>3.7.0</Version>
+        <Version>3.8.35</Version>
         <Author></Author>
         <EFDB_Topic>MTM1M3_logevent_rejectedElevationForces</EFDB_Topic>
         <Alias>rejectedElevationForces</Alias>
         <Explanation>http://sal.lsst.org</Explanation>
         <item>
-            <EFDB_Name>timestamp</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>double</IDL_Type>
-            <Units></Units>
-            <Count>1</Count>
-        </item>
-        <item>
             <EFDB_Name>xForces</EFDB_Name>
             <Description></Description>
             <IDL_Type>float</IDL_Type>
@@ -5090,19 +2500,12 @@
     </SALEvent>
     <SALEvent>
         <Subsystem>MTM1M3</Subsystem>
-        <Version>3.7.0</Version>
+        <Version>3.8.35</Version>
         <Author></Author>
         <EFDB_Topic>MTM1M3_logevent_rejectedForces</EFDB_Topic>
         <Alias>rejectedForces</Alias>
         <Explanation>http://sal.lsst.org</Explanation>
         <item>
-            <EFDB_Name>timestamp</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>double</IDL_Type>
-            <Units></Units>
-            <Count>1</Count>
-        </item>
-        <item>
             <EFDB_Name>xForces</EFDB_Name>
             <Description></Description>
             <IDL_Type>float</IDL_Type>
@@ -5175,19 +2578,12 @@
     </SALEvent>
     <SALEvent>
         <Subsystem>MTM1M3</Subsystem>
-        <Version>3.7.0</Version>
+        <Version>3.8.35</Version>
         <Author></Author>
         <EFDB_Topic>MTM1M3_logevent_rejectedOffsetForces</EFDB_Topic>
         <Alias>rejectedOffsetForces</Alias>
         <Explanation>http://sal.lsst.org</Explanation>
         <item>
-            <EFDB_Name>timestamp</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>double</IDL_Type>
-            <Units></Units>
-            <Count>1</Count>
-        </item>
-        <item>
             <EFDB_Name>xForces</EFDB_Name>
             <Description></Description>
             <IDL_Type>float</IDL_Type>
@@ -5260,19 +2656,12 @@
     </SALEvent>
     <SALEvent>
         <Subsystem>MTM1M3</Subsystem>
-        <Version>3.7.0</Version>
+        <Version>3.8.35</Version>
         <Author></Author>
         <EFDB_Topic>MTM1M3_logevent_rejectedStaticForces</EFDB_Topic>
         <Alias>rejectedStaticForces</Alias>
         <Explanation>http://sal.lsst.org</Explanation>
         <item>
-            <EFDB_Name>timestamp</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>double</IDL_Type>
-            <Units></Units>
-            <Count>1</Count>
-        </item>
-        <item>
             <EFDB_Name>xForces</EFDB_Name>
             <Description></Description>
             <IDL_Type>float</IDL_Type>
@@ -5345,19 +2734,12 @@
     </SALEvent>
     <SALEvent>
         <Subsystem>MTM1M3</Subsystem>
-        <Version>3.7.0</Version>
+        <Version>3.8.35</Version>
         <Author></Author>
         <EFDB_Topic>MTM1M3_logevent_rejectedThermalForces</EFDB_Topic>
         <Alias>rejectedThermalForces</Alias>
         <Explanation>http://sal.lsst.org</Explanation>
         <item>
-            <EFDB_Name>timestamp</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>double</IDL_Type>
-            <Units></Units>
-            <Count>1</Count>
-        </item>
-        <item>
             <EFDB_Name>xForces</EFDB_Name>
             <Description></Description>
             <IDL_Type>float</IDL_Type>
@@ -5430,19 +2812,12 @@
     </SALEvent>
     <SALEvent>
         <Subsystem>MTM1M3</Subsystem>
-        <Version>3.7.0</Version>
+        <Version>3.8.35</Version>
         <Author></Author>
         <EFDB_Topic>MTM1M3_logevent_rejectedVelocityForces</EFDB_Topic>
         <Alias>rejectedVelocityForces</Alias>
         <Explanation>http://sal.lsst.org</Explanation>
         <item>
-            <EFDB_Name>timestamp</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>double</IDL_Type>
-            <Units></Units>
-            <Count>1</Count>
-        </item>
-        <item>
             <EFDB_Name>xForces</EFDB_Name>
             <Description></Description>
             <IDL_Type>float</IDL_Type>
@@ -5509,29 +2884,6 @@
             <EFDB_Name>forceMagnitude</EFDB_Name>
             <Description></Description>
             <IDL_Type>float</IDL_Type>
-            <Units></Units>
-            <Count>1</Count>
-        </item>
-    </SALEvent>
-    <SALEvent>
-        <Subsystem>MTM1M3</Subsystem>
-        <Version>3.7.0</Version>
-        <Author></Author>
-        <EFDB_Topic>MTM1M3_logevent_settingsApplied</EFDB_Topic>
-        <Alias>settingsApplied</Alias>
-        <Explanation>http://sal.lsst.org</Explanation>
-        <item>
-            <EFDB_Name>timestamp</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>double</IDL_Type>
-            <Units></Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>settings</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>string</IDL_Type>
-            <IDL_Size>256</IDL_Size>
             <Units></Units>
             <Count>1</Count>
         </item>

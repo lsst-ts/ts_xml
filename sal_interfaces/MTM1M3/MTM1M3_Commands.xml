@@ -1,55 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-stylesheet type="text/xsl" href="http://lsst-sal.tuc.noao.edu/schema/SALCommandSet.xsl"?>
 <SALCommandSet xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://lsst-sal.tuc.noao.edu/schema/SALCommandSet.xsd">
-<!-- abort : Not implemented. Seperate commands exist for aborting specific actions. -->
-<!-- abortRaiseM1M3 : Aborts an active raiseM1M3 command.-->
-<!-- applyAbberationForces : Applies an aberration force to the mirror using individual actuator forces.-->
-<!-- applyAberrationForcesByBendingModes : Applies an aberration force to the mirror using bending modes. -->
-<!-- applyActiveOpticForces : Applies an active optic force to the mirror using individual actuator forces. -->
-<!-- applyActiveOpticForcesByBendingModes : Applies an active optic force to the mirror using bending modes. -->
-<!-- applyOffsetForces : Applies an offset force to the mirror using individual actuator forces. -->
-<!-- applyOffsetForcesByMirrorForce : Applies an offset force to the mirror using a global mirror force. -->
-<!-- clearAberrationForces : Clears an active aberration force. -->
-<!-- clearActiveOpticForces : Clears an active optic force. -->
-<!-- clearOffsetForces : Clears an active offset force. -->
-<!-- disable : Transitions from the EnabledState to the DisabledState. -->
-<!-- disableHardpointChase :Stop chasing zero force for the specified hardpoint actuators. -->
-<!-- disableHardpointCorrections : Stop applying hardpoint force corrections. -->
-<!-- enable : Transitions from the DisabledState to the EnabledState. -->
-<!-- enableHardpointChase : Begin chasing zero force for the specified hardpoint actuators. -->
-<!-- enableHardpointCorrections : Begin applying hardpoint force corrections. -->
-<!-- enterControl : Not implemented. -->
-<!-- enterEngineering : Transitions from the ParkedState to the ParkedEngineeringState or from the ActiveState to the ActiveEngineeringState. -->
-<!-- exitControl : Not implemented. -->
-<!-- exitEngineering : Transitions from the ParkedEngineeringState to the ParkedState or from the ActiveEngineeringState to the ActiveState. -->
-<!-- lowerM1M3 : Transitions from the ActiveState to the LoweringState or from the ActiveEngineeringState to the LoweringEngineeringState. -->
-<!-- modbusTransmit : Transmits the specified modbus message. -->
-<!-- moveHardpointActuators : Command the specified hardpoint actuators a given number of steps. 1 step = 0.0607um -->
-<!-- positionM1M3 : Command the hardpoint actuators to position M1M3 relative to the reference position (0, 0, 0, 0, 0, 0). -->
-<!-- programILC : Reprogram the specified ILC with the specified program file. -->
-<!-- raiseM1M3 : Transitions from the ParkedState to the RaisingState or from the ParkedEngineeringState to the RaisingEngineeringState. -->
-<!-- resetPID : Resets the specified PID coefficients. -->
-<!-- setThermalSetpoint : Specifies the thermal setpoint to target. -->
-<!-- setValue : Not implemented -->
-<!-- shutdown : Transitions from the StandbyState to the OfflineState. -->
-<!-- standby : Transitions from the DisabledState to the StandbyState. -->
-<!-- start : Transitions from the StandbyState to the DisabledState. -->
-<!-- stop : Not implemented. Seperate commands exist for stopping specific actions. -->
-<!-- stopHardpointMotion : Stops the specified hardpoint actuator.-->
-<!-- testAir : Not implemented. -->
-<!-- testForceActuator : Not implemented. -->
-<!-- testHardpoint : Not implemented. -->
-<!-- translateM1M3 : Command the hardpoint actuators to move M1M3 relative to it's current position. -->
-<!-- turnAirOff : Turn the air off. -->
-<!-- turnAirOn : Turn the air on. -->
-<!-- turnLightsOff : Turn the lights off. -->
-<!-- turnLightsOn : Turn the lights on. -->
-<!-- turnPowerOff : Turn the power off. -->
-<!-- turnPowerOn : Turn the power on. -->
-<!-- updatePID : Update the specified PID coefficients. -->
     <SALCommand>
         <Subsystem>MTM1M3</Subsystem>
-        <Version>3.7.0</Version>
+        <Version>3.8.35</Version>
         <Author></Author>
         <EFDB_Topic>MTM1M3_command_abortRaiseM1M3</EFDB_Topic>
         <Alias>abortRaiseM1M3</Alias>
@@ -59,7 +13,7 @@
         <Value></Value>
         <Explanation>http://sal.lsst.org</Explanation>
         <item>
-            <EFDB_Name>abortRaiseM1M3</EFDB_Name>
+            <EFDB_Name>value</EFDB_Name>
             <Description></Description>
             <IDL_Type>boolean</IDL_Type>
             <Units></Units>
@@ -68,7 +22,7 @@
     </SALCommand>
     <SALCommand>
         <Subsystem>MTM1M3</Subsystem>
-        <Version>3.7.0</Version>
+        <Version>3.8.35</Version>
         <Author></Author>
         <EFDB_Topic>MTM1M3_command_applyAberrationForces</EFDB_Topic>
         <Alias>applyAberrationForces</Alias>
@@ -87,7 +41,7 @@
     </SALCommand>
     <SALCommand>
         <Subsystem>MTM1M3</Subsystem>
-        <Version>3.7.0</Version>
+        <Version>3.8.35</Version>
         <Author></Author>
         <EFDB_Topic>MTM1M3_command_applyAberrationForcesByBendingModes</EFDB_Topic>
         <Alias>applyAberrationForcesByBendingModes</Alias>
@@ -106,7 +60,7 @@
     </SALCommand>
     <SALCommand>
         <Subsystem>MTM1M3</Subsystem>
-        <Version>3.7.0</Version>
+        <Version>3.8.35</Version>
         <Author></Author>
         <EFDB_Topic>MTM1M3_command_applyActiveOpticForces</EFDB_Topic>
         <Alias>applyActiveOpticForces</Alias>
@@ -125,7 +79,7 @@
     </SALCommand>
     <SALCommand>
         <Subsystem>MTM1M3</Subsystem>
-        <Version>3.7.0</Version>
+        <Version>3.8.35</Version>
         <Author></Author>
         <EFDB_Topic>MTM1M3_command_applyActiveOpticForcesByBendingModes</EFDB_Topic>
         <Alias>applyActiveOpticForcesByBendingModes</Alias>
@@ -144,7 +98,7 @@
     </SALCommand>
     <SALCommand>
         <Subsystem>MTM1M3</Subsystem>
-        <Version>3.7.0</Version>
+        <Version>3.8.35</Version>
         <Author></Author>
         <EFDB_Topic>MTM1M3_command_applyOffsetForces</EFDB_Topic>
         <Alias>applyOffsetForces</Alias>
@@ -177,7 +131,7 @@
     </SALCommand>
     <SALCommand>
         <Subsystem>MTM1M3</Subsystem>
-        <Version>3.7.0</Version>
+        <Version>3.8.35</Version>
         <Author></Author>
         <EFDB_Topic>MTM1M3_command_applyOffsetForcesByMirrorForce</EFDB_Topic>
         <Alias>applyOffsetForcesByMirrorForce</Alias>
@@ -231,7 +185,7 @@
     </SALCommand>
     <SALCommand>
         <Subsystem>MTM1M3</Subsystem>
-        <Version>3.7.0</Version>
+        <Version>3.8.35</Version>
         <Author></Author>
         <EFDB_Topic>MTM1M3_command_clearAberrationForces</EFDB_Topic>
         <Alias>clearAberrationForces</Alias>
@@ -241,7 +195,7 @@
         <Value></Value>
         <Explanation>http://sal.lsst.org</Explanation>
         <item>
-            <EFDB_Name>clearAberrationForces</EFDB_Name>
+            <EFDB_Name>value</EFDB_Name>
             <Description></Description>
             <IDL_Type>boolean</IDL_Type>
             <Units></Units>
@@ -250,7 +204,7 @@
     </SALCommand>
     <SALCommand>
         <Subsystem>MTM1M3</Subsystem>
-        <Version>3.7.0</Version>
+        <Version>3.8.35</Version>
         <Author></Author>
         <EFDB_Topic>MTM1M3_command_clearActiveOpticForces</EFDB_Topic>
         <Alias>clearActiveOpticForces</Alias>
@@ -260,7 +214,7 @@
         <Value></Value>
         <Explanation>http://sal.lsst.org</Explanation>
         <item>
-            <EFDB_Name>clearActiveOpticForces</EFDB_Name>
+            <EFDB_Name>value</EFDB_Name>
             <Description></Description>
             <IDL_Type>boolean</IDL_Type>
             <Units></Units>
@@ -269,7 +223,7 @@
     </SALCommand>
     <SALCommand>
         <Subsystem>MTM1M3</Subsystem>
-        <Version>3.7.0</Version>
+        <Version>3.8.35</Version>
         <Author></Author>
         <EFDB_Topic>MTM1M3_command_clearOffsetForces</EFDB_Topic>
         <Alias>clearOffsetForces</Alias>
@@ -279,7 +233,7 @@
         <Value></Value>
         <Explanation>http://sal.lsst.org</Explanation>
         <item>
-            <EFDB_Name>clearOffsetForces</EFDB_Name>
+            <EFDB_Name>value</EFDB_Name>
             <Description></Description>
             <IDL_Type>boolean</IDL_Type>
             <Units></Units>
@@ -288,7 +242,7 @@
     </SALCommand>
     <SALCommand>
         <Subsystem>MTM1M3</Subsystem>
-        <Version>3.7.0</Version>
+        <Version>3.8.35</Version>
         <Author></Author>
         <EFDB_Topic>MTM1M3_command_disableHardpointChase</EFDB_Topic>
         <Alias>disableHardpointChase</Alias>
@@ -307,7 +261,7 @@
     </SALCommand>
     <SALCommand>
         <Subsystem>MTM1M3</Subsystem>
-        <Version>3.7.0</Version>
+        <Version>3.8.35</Version>
         <Author></Author>
         <EFDB_Topic>MTM1M3_command_disableHardpointCorrections</EFDB_Topic>
         <Alias>disableHardpointCorrections</Alias>
@@ -317,7 +271,7 @@
         <Value></Value>
         <Explanation>http://sal.lsst.org</Explanation>
         <item>
-            <EFDB_Name>disableHardpointCorrections</EFDB_Name>
+            <EFDB_Name>value</EFDB_Name>
             <Description></Description>
             <IDL_Type>boolean</IDL_Type>
             <Units></Units>
@@ -326,26 +280,7 @@
     </SALCommand>
     <SALCommand>
         <Subsystem>MTM1M3</Subsystem>
-        <Version>3.7.0</Version>
-        <Author></Author>
-        <EFDB_Topic>MTM1M3_command_enableHardpointCorrections</EFDB_Topic>
-        <Alias>enableHardpointCorrections</Alias>
-        <Device></Device>
-        <Property></Property>
-        <Action></Action>
-        <Value></Value>
-        <Explanation>http://sal.lsst.org</Explanation>
-        <item>
-            <EFDB_Name>enableHardpointCorrections</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units></Units>
-            <Count>1</Count>
-        </item>
-    </SALCommand>
-    <SALCommand>
-        <Subsystem>MTM1M3</Subsystem>
-        <Version>3.7.0</Version>
+        <Version>3.8.35</Version>
         <Author></Author>
         <EFDB_Topic>MTM1M3_command_enableHardpointChase</EFDB_Topic>
         <Alias>enableHardpointChase</Alias>
@@ -364,7 +299,26 @@
     </SALCommand>
     <SALCommand>
         <Subsystem>MTM1M3</Subsystem>
-        <Version>3.7.0</Version>
+        <Version>3.8.35</Version>
+        <Author></Author>
+        <EFDB_Topic>MTM1M3_command_enableHardpointCorrections</EFDB_Topic>
+        <Alias>enableHardpointCorrections</Alias>
+        <Device></Device>
+        <Property></Property>
+        <Action></Action>
+        <Value></Value>
+        <Explanation>http://sal.lsst.org</Explanation>
+        <item>
+            <EFDB_Name>value</EFDB_Name>
+            <Description></Description>
+            <IDL_Type>boolean</IDL_Type>
+            <Units></Units>
+            <Count>1</Count>
+        </item>
+    </SALCommand>
+    <SALCommand>
+        <Subsystem>MTM1M3</Subsystem>
+        <Version>3.8.35</Version>
         <Author></Author>
         <EFDB_Topic>MTM1M3_command_enterEngineering</EFDB_Topic>
         <Alias>enterEngineering</Alias>
@@ -374,7 +328,7 @@
         <Value></Value>
         <Explanation>http://sal.lsst.org</Explanation>
         <item>
-            <EFDB_Name>enterEngineering</EFDB_Name>
+            <EFDB_Name>value</EFDB_Name>
             <Description></Description>
             <IDL_Type>boolean</IDL_Type>
             <Units></Units>
@@ -383,7 +337,7 @@
     </SALCommand>
     <SALCommand>
         <Subsystem>MTM1M3</Subsystem>
-        <Version>3.7.0</Version>
+        <Version>3.8.35</Version>
         <Author></Author>
         <EFDB_Topic>MTM1M3_command_exitEngineering</EFDB_Topic>
         <Alias>exitEngineering</Alias>
@@ -393,7 +347,7 @@
         <Value></Value>
         <Explanation>http://sal.lsst.org</Explanation>
         <item>
-            <EFDB_Name>exitEngineering</EFDB_Name>
+            <EFDB_Name>value</EFDB_Name>
             <Description></Description>
             <IDL_Type>boolean</IDL_Type>
             <Units></Units>
@@ -402,7 +356,7 @@
     </SALCommand>
     <SALCommand>
         <Subsystem>MTM1M3</Subsystem>
-        <Version>3.7.0</Version>
+        <Version>3.8.35</Version>
         <Author></Author>
         <EFDB_Topic>MTM1M3_command_lowerM1M3</EFDB_Topic>
         <Alias>lowerM1M3</Alias>
@@ -412,7 +366,7 @@
         <Value></Value>
         <Explanation>http://sal.lsst.org</Explanation>
         <item>
-            <EFDB_Name>lowerM1M3</EFDB_Name>
+            <EFDB_Name>value</EFDB_Name>
             <Description></Description>
             <IDL_Type>boolean</IDL_Type>
             <Units></Units>
@@ -421,7 +375,7 @@
     </SALCommand>
     <SALCommand>
         <Subsystem>MTM1M3</Subsystem>
-        <Version>3.7.0</Version>
+        <Version>3.8.35</Version>
         <Author></Author>
         <EFDB_Topic>MTM1M3_command_modbusTransmit</EFDB_Topic>
         <Alias>modbusTransmit</Alias>
@@ -461,7 +415,7 @@
     </SALCommand>
     <SALCommand>
         <Subsystem>MTM1M3</Subsystem>
-        <Version>3.7.0</Version>
+        <Version>3.8.35</Version>
         <Author></Author>
         <EFDB_Topic>MTM1M3_command_moveHardpointActuators</EFDB_Topic>
         <Alias>moveHardpointActuators</Alias>
@@ -480,7 +434,7 @@
     </SALCommand>
     <SALCommand>
         <Subsystem>MTM1M3</Subsystem>
-        <Version>3.7.0</Version>
+        <Version>3.8.35</Version>
         <Author></Author>
         <EFDB_Topic>MTM1M3_command_positionM1M3</EFDB_Topic>
         <Alias>positionM1M3</Alias>
@@ -534,7 +488,7 @@
     </SALCommand>
     <SALCommand>
         <Subsystem>MTM1M3</Subsystem>
-        <Version>3.7.0</Version>
+        <Version>3.8.35</Version>
         <Author></Author>
         <EFDB_Topic>MTM1M3_command_programILC</EFDB_Topic>
         <Alias>programILC</Alias>
@@ -554,14 +508,14 @@
             <EFDB_Name>filePath</EFDB_Name>
             <Description></Description>
             <IDL_Type>string</IDL_Type>
-            <IDL_Size>256</IDL_Size>
+            <IDL_Size>1</IDL_Size>
             <Units></Units>
             <Count>1</Count>
         </item>
     </SALCommand>
     <SALCommand>
         <Subsystem>MTM1M3</Subsystem>
-        <Version>3.7.0</Version>
+        <Version>3.8.35</Version>
         <Author></Author>
         <EFDB_Topic>MTM1M3_command_raiseM1M3</EFDB_Topic>
         <Alias>raiseM1M3</Alias>
@@ -570,13 +524,6 @@
         <Action></Action>
         <Value></Value>
         <Explanation>http://sal.lsst.org</Explanation>
-        <item>
-            <EFDB_Name>raiseM1M3</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units></Units>
-            <Count>1</Count>
-        </item>
         <item>
             <EFDB_Name>bypassReferencePosition</EFDB_Name>
             <Description></Description>
@@ -587,7 +534,7 @@
     </SALCommand>
     <SALCommand>
         <Subsystem>MTM1M3</Subsystem>
-        <Version>3.7.0</Version>
+        <Version>3.8.35</Version>
         <Author></Author>
         <EFDB_Topic>MTM1M3_command_resetPID</EFDB_Topic>
         <Alias>resetPID</Alias>
@@ -606,26 +553,7 @@
     </SALCommand>
     <SALCommand>
         <Subsystem>MTM1M3</Subsystem>
-        <Version>3.7.0</Version>
-        <Author></Author>
-        <EFDB_Topic>MTM1M3_command_setThermalSetpoint</EFDB_Topic>
-        <Alias>setThermalSetpoint</Alias>
-        <Device></Device>
-        <Property></Property>
-        <Action></Action>
-        <Value></Value>
-        <Explanation>http://sal.lsst.org</Explanation>
-        <item>
-            <EFDB_Name>setpoint</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>float</IDL_Type>
-            <Units></Units>
-            <Count>1</Count>
-        </item>
-    </SALCommand>
-    <SALCommand>
-        <Subsystem>MTM1M3</Subsystem>
-        <Version>3.7.0</Version>
+        <Version>3.8.35</Version>
         <Author></Author>
         <EFDB_Topic>MTM1M3_command_shutdown</EFDB_Topic>
         <Alias>shutdown</Alias>
@@ -635,7 +563,7 @@
         <Value></Value>
         <Explanation>http://sal.lsst.org</Explanation>
         <item>
-            <EFDB_Name>shutdown</EFDB_Name>
+            <EFDB_Name>value</EFDB_Name>
             <Description></Description>
             <IDL_Type>boolean</IDL_Type>
             <Units></Units>
@@ -644,7 +572,7 @@
     </SALCommand>
     <SALCommand>
         <Subsystem>MTM1M3</Subsystem>
-        <Version>3.7.0</Version>
+        <Version>3.8.35</Version>
         <Author></Author>
         <EFDB_Topic>MTM1M3_command_stopHardpointMotion</EFDB_Topic>
         <Alias>stopHardpointMotion</Alias>
@@ -654,7 +582,7 @@
         <Value></Value>
         <Explanation>http://sal.lsst.org</Explanation>
         <item>
-            <EFDB_Name>stopHardpointMotion</EFDB_Name>
+            <EFDB_Name>value</EFDB_Name>
             <Description></Description>
             <IDL_Type>boolean</IDL_Type>
             <Units></Units>
@@ -663,7 +591,7 @@
     </SALCommand>
     <SALCommand>
         <Subsystem>MTM1M3</Subsystem>
-        <Version>3.7.0</Version>
+        <Version>3.8.35</Version>
         <Author></Author>
         <EFDB_Topic>MTM1M3_command_testAir</EFDB_Topic>
         <Alias>testAir</Alias>
@@ -673,7 +601,7 @@
         <Value></Value>
         <Explanation>http://sal.lsst.org</Explanation>
         <item>
-            <EFDB_Name>testAir</EFDB_Name>
+            <EFDB_Name>value</EFDB_Name>
             <Description></Description>
             <IDL_Type>boolean</IDL_Type>
             <Units></Units>
@@ -682,7 +610,7 @@
     </SALCommand>
     <SALCommand>
         <Subsystem>MTM1M3</Subsystem>
-        <Version>3.7.0</Version>
+        <Version>3.8.35</Version>
         <Author></Author>
         <EFDB_Topic>MTM1M3_command_testForceActuator</EFDB_Topic>
         <Alias>testForceActuator</Alias>
@@ -701,7 +629,7 @@
     </SALCommand>
     <SALCommand>
         <Subsystem>MTM1M3</Subsystem>
-        <Version>3.7.0</Version>
+        <Version>3.8.35</Version>
         <Author></Author>
         <EFDB_Topic>MTM1M3_command_testHardpoint</EFDB_Topic>
         <Alias>testHardpoint</Alias>
@@ -720,7 +648,7 @@
     </SALCommand>
     <SALCommand>
         <Subsystem>MTM1M3</Subsystem>
-        <Version>3.7.0</Version>
+        <Version>3.8.35</Version>
         <Author></Author>
         <EFDB_Topic>MTM1M3_command_translateM1M3</EFDB_Topic>
         <Alias>translateM1M3</Alias>
@@ -774,7 +702,7 @@
     </SALCommand>
     <SALCommand>
         <Subsystem>MTM1M3</Subsystem>
-        <Version>3.7.0</Version>
+        <Version>3.8.35</Version>
         <Author></Author>
         <EFDB_Topic>MTM1M3_command_turnAirOff</EFDB_Topic>
         <Alias>turnAirOff</Alias>
@@ -784,7 +712,7 @@
         <Value></Value>
         <Explanation>http://sal.lsst.org</Explanation>
         <item>
-            <EFDB_Name>turnAirOff</EFDB_Name>
+            <EFDB_Name>value</EFDB_Name>
             <Description></Description>
             <IDL_Type>boolean</IDL_Type>
             <Units></Units>
@@ -793,7 +721,7 @@
     </SALCommand>
     <SALCommand>
         <Subsystem>MTM1M3</Subsystem>
-        <Version>3.7.0</Version>
+        <Version>3.8.35</Version>
         <Author></Author>
         <EFDB_Topic>MTM1M3_command_turnAirOn</EFDB_Topic>
         <Alias>turnAirOn</Alias>
@@ -803,7 +731,7 @@
         <Value></Value>
         <Explanation>http://sal.lsst.org</Explanation>
         <item>
-            <EFDB_Name>turnAirOn</EFDB_Name>
+            <EFDB_Name>value</EFDB_Name>
             <Description></Description>
             <IDL_Type>boolean</IDL_Type>
             <Units></Units>
@@ -812,7 +740,7 @@
     </SALCommand>
     <SALCommand>
         <Subsystem>MTM1M3</Subsystem>
-        <Version>3.7.0</Version>
+        <Version>3.8.35</Version>
         <Author></Author>
         <EFDB_Topic>MTM1M3_command_turnLightsOff</EFDB_Topic>
         <Alias>turnLightsOff</Alias>
@@ -822,7 +750,7 @@
         <Value></Value>
         <Explanation>http://sal.lsst.org</Explanation>
         <item>
-            <EFDB_Name>turnLightsOff</EFDB_Name>
+            <EFDB_Name>value</EFDB_Name>
             <Description></Description>
             <IDL_Type>boolean</IDL_Type>
             <Units></Units>
@@ -831,7 +759,7 @@
     </SALCommand>
     <SALCommand>
         <Subsystem>MTM1M3</Subsystem>
-        <Version>3.7.0</Version>
+        <Version>3.8.35</Version>
         <Author></Author>
         <EFDB_Topic>MTM1M3_command_turnLightsOn</EFDB_Topic>
         <Alias>turnLightsOn</Alias>
@@ -841,7 +769,7 @@
         <Value></Value>
         <Explanation>http://sal.lsst.org</Explanation>
         <item>
-            <EFDB_Name>turnLightsOn</EFDB_Name>
+            <EFDB_Name>value</EFDB_Name>
             <Description></Description>
             <IDL_Type>boolean</IDL_Type>
             <Units></Units>
@@ -850,7 +778,7 @@
     </SALCommand>
     <SALCommand>
         <Subsystem>MTM1M3</Subsystem>
-        <Version>3.7.0</Version>
+        <Version>3.8.35</Version>
         <Author></Author>
         <EFDB_Topic>MTM1M3_command_turnPowerOff</EFDB_Topic>
         <Alias>turnPowerOff</Alias>
@@ -918,7 +846,7 @@
     </SALCommand>
     <SALCommand>
         <Subsystem>MTM1M3</Subsystem>
-        <Version>3.7.0</Version>
+        <Version>3.8.35</Version>
         <Author></Author>
         <EFDB_Topic>MTM1M3_command_turnPowerOn</EFDB_Topic>
         <Alias>turnPowerOn</Alias>
@@ -986,7 +914,7 @@
     </SALCommand>
     <SALCommand>
         <Subsystem>MTM1M3</Subsystem>
-        <Version>3.7.0</Version>
+        <Version>3.8.35</Version>
         <Author></Author>
         <EFDB_Topic>MTM1M3_command_updatePID</EFDB_Topic>
         <Alias>updatePID</Alias>
