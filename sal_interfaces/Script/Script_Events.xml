@@ -27,7 +27,7 @@
     <Author></Author>
     <EFDB_Topic>Script_logevent_checkpoints</EFDB_Topic>
     <Alias>checkpoints</Alias>
-    <Description>Pause and stop checkpoints.</Description>
+    <Explanation>Pause and stop checkpoints.</Explanation>
     <item>
         <EFDB_Name>pause</EFDB_Name>
         <Description>Checkpoint(s) at which to pause, as a regular expression. No checkpoints if blank; all checkpoints if ".*".</Description>
@@ -49,9 +49,24 @@
     <Subsystem>Script</Subsystem>
     <Version>1.0.0</Version>
     <Author></Author>
+    <EFDB_Topic>Script_logevent_logLevel</EFDB_Topic>
+    <Alias>logLevel</Alias>
+    <Explanation>The current logging level.</Explanation>
+    <item>
+        <EFDB_Name>level</EFDB_Name>
+        <Description>Current logging level, a Python logging level: error=40, warning=30, info=20, debug=10.</Description>
+        <IDL_Type>int</IDL_Type>
+        <Units/>
+        <Count>1</Count>
+    </item>
+</SALEvent>
+<SALEvent>
+    <Subsystem>Script</Subsystem>
+    <Version>1.0.0</Version>
+    <Author></Author>
     <EFDB_Topic>Script_logevent_logMessage</EFDB_Topic>
     <Alias>logMessage</Alias>
-    <Description></Description>
+    <Explanation>A log message.</Explanation>
     <item>
         <EFDB_Name>level</EFDB_Name>
         <Description>Message level, a Python logging level: error=40, warning=30, info=20, debug=10.</Description>
@@ -67,6 +82,14 @@
         <Units></Units>
         <Count>1</Count>
     </item>
+    <item>
+        <EFDB_Name>traceback</EFDB_Name>
+        <Description>Exception traceback.</Description>
+        <IDL_Type>string</IDL_Type>
+        <IDL_Size>1</IDL_Size>
+        <Units/>
+        <Count>1</Count>
+    </item>
 </SALEvent>
 <SALEvent>
     <Subsystem>Script</Subsystem>
@@ -74,7 +97,7 @@
     <Author></Author>
     <EFDB_Topic>Script_logevent_description</EFDB_Topic>
     <Alias>description</Alias>
-    <Description>Script, class name, description and a list of the remotes it uses -- basically metadata that does not depend on configuration.</Description>
+    <Explanation>Script, class name, description and a list of the remotes it uses -- basically metadata that does not depend on configuration.</Explanation>
     <item>
         <EFDB_Name>classname</EFDB_Name>
         <Description>Name of script class.</Description>
@@ -106,7 +129,7 @@
     <Author></Author>
     <EFDB_Topic>Script_logevent_metadata</EFDB_Topic>
     <Alias>metadata</Alias>
-    <Description>Script metadata that may depend on configuration.</Description>
+    <Explanation>Script metadata that may depend on configuration.</Explanation>
     <item>
         <EFDB_Name>coordinateSystem</EFDB_Name>
         <Description>Coordinate system for position. CSys_Observed is refracted apparent topocentric, e.g. similar to CSys_Mount but the telescope model is applied and the azimuth is wrapped. If CSys_None then position should be ignored.</Description>
@@ -176,7 +199,7 @@
     <Author></Author>
     <EFDB_Topic>Script_logevent_state</EFDB_Topic>
     <Alias>state</Alias>
-    <Description>Script state.</Description>
+    <Explanation>Script state.</Explanation>
     <item>
         <EFDB_Name>state</EFDB_Name>
         <Description>An enumeration indicating the script state.</Description>

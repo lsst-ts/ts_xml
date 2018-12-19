@@ -69,22 +69,13 @@
     <Subsystem>DIMM</Subsystem>
     <Version>3.8.31</Version>
     <Author></Author>
-    <EFDB_Topic>DIMM_logevent_rejectedCommand</EFDB_Topic>
-    <Alias>rejectedCommand</Alias>
+    <EFDB_Topic>DIMM_logevent_dimmMeasurement</EFDB_Topic>
+    <Alias>dimmMeasurement</Alias>
     <Explanation>http://sal.lsst.org</Explanation>
     <item>
-        <EFDB_Name>command</EFDB_Name>
-        <Description></Description>
-        <IDL_Type>string</IDL_Type>
-        <IDL_Size>1</IDL_Size>
-        <Units></Units>
-        <Count>1</Count>
-    </item>
-    <item>
-        <EFDB_Name>state</EFDB_Name>
-        <Description></Description>
-        <IDL_Type>string</IDL_Type>
-        <IDL_Size>1</IDL_Size>
+        <EFDB_Name>hrNum</EFDB_Name>
+        <Description>HR star number</Description>
+        <IDL_Type>unsigned long</IDL_Type>
         <Units></Units>
         <Count>1</Count>
     </item>
@@ -92,7 +83,291 @@
         <EFDB_Name>timestamp</EFDB_Name>
         <Description></Description>
         <IDL_Type>double</IDL_Type>
+        <Units>seconds</Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>utDate</EFDB_Name>
+        <Description>UT date on PC</Description>
+        <IDL_Type>string</IDL_Type>
+        <IDL_Size>16</IDL_Size>
         <Units></Units>
         <Count>1</Count>
     </item>
-</SALEvent></SALEventSet>
+    <item>
+        <EFDB_Name>utTime</EFDB_Name>
+        <Description>UT time on PC</Description>
+        <IDL_Type>string</IDL_Type>
+        <IDL_Size>16</IDL_Size>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+      <item>
+        <EFDB_Name>exposureTime</EFDB_Name>
+        <Description>Exposure time in msec</Description>
+        <IDL_Type>double</IDL_Type>
+        <Units>seconds</Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>airmass</EFDB_Name>
+        <Description>Airmass of the observation</Description>
+        <IDL_Type>double</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>scanLines</EFDB_Name>
+        <Description>Total number of scanned lines</Description>
+        <IDL_Type>unsigned long</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>seeingCorr</EFDB_Name>
+        <Description>Seeing (arcsec), corrected for zenith distance and exposure</Description>
+        <IDL_Type>float</IDL_Type>
+        <Units>arcsec</Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>seeingCorr2</EFDB_Name>
+        <Description>Seeing (arcsec), corrected for zenith, uses 2-point exponential fit</Description>
+        <IDL_Type>float</IDL_Type>
+        <Units>arcsec</Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>seeingCorr6</EFDB_Name>
+        <Description>Seeing (arcsec), corrected for zenith, uses 6-point exponential fit</Description>
+        <IDL_Type>float</IDL_Type>
+        <Units>arcsec</Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>flux</EFDB_Name>
+        <Description>Total average flux this time bin</Description>
+        <IDL_Type>unsigned long</IDL_Type>
+        <Units>arcsec</Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>scintLeft</EFDB_Name>
+        <Description>Scintillation-ratio (left star)</Description>
+        <IDL_Type>float</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>scintRight</EFDB_Name>
+        <Description>Scintillation-ratio (right star)</Description>
+        <IDL_Type>float</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>strehlLeft</EFDB_Name>
+        <Description>Strehl-ratio (left star)</Description>
+        <IDL_Type>float</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>strehlRight</EFDB_Name>
+        <Description>Strehl-ratio (right star)</Description>
+        <IDL_Type>float</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>delta</EFDB_Name>
+        <Description>Star separation in pixels</Description>
+        <IDL_Type>float</IDL_Type>
+        <Units>pixels</Units>
+        <Count>1</Count>
+    </item>
+</SALEvent>
+<SALEvent>
+    <Subsystem>DIMM</Subsystem>
+    <Version>3.8.31</Version>
+    <Author></Author>
+    <EFDB_Topic>DIMM_logevent_dimmData</EFDB_Topic>
+    <Alias>dimmData</Alias>
+    <Explanation>http://sal.lsst.org</Explanation>
+    <item>
+        <EFDB_Name>numFrames</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>long</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>spot1Flux</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>long</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>splot2Flux</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>long</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>spot1RMSFlux</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>long</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>spot2RMSFlux</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>long</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>spot1MaxInten</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>long</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>spot2MaxInten</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>long</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>seperationX</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>long</IDL_Type>
+        <Units>long</Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>seperationY</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>long</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>seperationRMSX</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>double</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>seperationRMSY</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>double</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>covarianceX</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>double</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>covarianceY</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>double</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>noiseRMSX</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>double</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>noiseRMSY</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>double</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>averagePositionX</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>double</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>averagePositionY</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>double</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>averagePositionRMSX</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>double</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>averagePositionRMSY</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>double</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>averageFWHMspot1</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>double</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>averageFWHMspot2</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>double</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>averageEllipticityspot1</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>double</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>averageEllipticityspot2</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>double</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>averageBackground</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>double</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>backgroundRMS</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>double</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+</SALEvent>
+</SALEventSet>

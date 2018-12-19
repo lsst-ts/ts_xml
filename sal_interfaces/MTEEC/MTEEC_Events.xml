@@ -2,17 +2,17 @@
 <?xml-stylesheet type="text/xsl" href="http://lsst-sal.tuc.noao.edu/schema/SALEventSet.xsl"?>
 <SALEventSet xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:noNamespaceSchemaLocation="http://lsst-sal.tuc.noao.edu/schema/SALEventSet.xsd">
-<Enumeration>DetailedState_DisabledState,DetailedState_EnabledState,DetailedState_FaultState,DetailedState_OfflineState,DetailedState_StandbyState</Enumeration>
 
 <SALEvent>
-    <Subsystem>ATDomeTrajectory</Subsystem>
+    <Subsystem>MTEEC</Subsystem>
     <Version>3.8</Version>
     <Author></Author>
-    <EFDB_Topic>ATDomeTrajectory_logevent_detailedState</EFDB_Topic>
+    <EFDB_Topic>MTEEC_logevent_detailedState</EFDB_Topic>
     <Alias>detailedState</Alias>
     <Explanation>http://sal.lsst.org</Explanation>
             <item>
                 <EFDB_Name>detailedState</EFDB_Name>
+    	        <Enumeration>NotSetState,DaySetState,NightSetState</Enumeration>    
                 <Description></Description>
                 <!-- Enumeration: DetailedState -->
                 <IDL_Type>long</IDL_Type>
@@ -21,10 +21,10 @@
             </item>
 </SALEvent>
 <SALEvent>
-    <Subsystem>ATDomeTrajectory</Subsystem>
+    <Subsystem>MTEEC</Subsystem>
     <Version>3.8</Version>
     <Author></Author>
-    <EFDB_Topic>ATDomeTrajectory_logevent_heartbeat</EFDB_Topic>
+    <EFDB_Topic>MTEEC_logevent_heartbeat</EFDB_Topic>
     <Alias>heartbeat</Alias>
     <Explanation>http://sal.lsst.org</Explanation>
     <item>
