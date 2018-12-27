@@ -3,7 +3,7 @@
 <SALEventSet xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:noNamespaceSchemaLocation="http://lsst-sal.tuc.noao.edu/schema/SALEventSet.xsd">
 <Enumeration>SummaryState_DisabledState,SummaryState_EnabledState,SummaryState_FaultState,SummaryState_OfflineState,SummaryState_StandbyState</Enumeration>
-<Enumeration>DetailedState_DisabledState,DetailedState_EnabledState,DetailedState_FaultState,DetailedState_OfflineState,DetailedState_StandbyState</Enumeration>
+<Enumeration>DetailedState_InMotionState, DetailedState_NotInMotionState</Enumeration>
 
 <SALEvent>
     <Subsystem>ATHexapod</Subsystem>
@@ -46,36 +46,6 @@
     <Subsystem>ATHexapod</Subsystem>
     <Version>3.8</Version>
     <Author></Author>
-    <EFDB_Topic>ATHexapod_logevent_loopTimeOutOfRange</EFDB_Topic>
-    <Alias>loopTimeOutOfRange</Alias>
-    <Explanation>http://sal.lsst.org</Explanation>
-    <item>
-        <EFDB_Name>loopTimeOutOfRange</EFDB_Name>
-        <Description></Description>
-        <IDL_Type>boolean</IDL_Type>
-        <Units></Units>
-        <Count>1</Count>
-    </item>
-</SALEvent>
-<SALEvent>
-    <Subsystem>ATHexapod</Subsystem>
-    <Version>3.8</Version>
-    <Author></Author>
-    <EFDB_Topic>ATHexapod_logevent_internalCommand</EFDB_Topic>
-    <Alias>internalCommand</Alias>
-    <Explanation>http://sal.lsst.org</Explanation>
-    <item>
-        <EFDB_Name>commandObject</EFDB_Name>
-        <Description>The error code being published.</Description>
-        <IDL_Type>byte</IDL_Type>
-        <Units></Units>
-        <Count>800</Count>
-    </item>
-</SALEvent>
-<SALEvent>
-    <Subsystem>ATHexapod</Subsystem>
-    <Version>3.8</Version>
-    <Author></Author>
     <EFDB_Topic>ATHexapod_logevent_detailedState</EFDB_Topic>
     <Alias>detailedState</Alias>
     <Explanation>http://sal.lsst.org</Explanation>
@@ -87,36 +57,6 @@
                 <Units></Units>
                 <Count>1</Count>
             </item>
-</SALEvent>
-<SALEvent>
-    <Subsystem>ATHexapod</Subsystem>
-    <Version>3.8</Version>
-    <Author></Author>
-    <EFDB_Topic>ATHexapod_logevent_rejectedCommand</EFDB_Topic>
-    <Alias>rejectedCommand</Alias>
-    <Explanation>http://sal.lsst.org</Explanation>
-    <item>
-        <EFDB_Name>commandValue</EFDB_Name>
-        <Description></Description>
-        <IDL_Type>unsigned short</IDL_Type>
-        <Units></Units>
-        <Count>1</Count>
-    </item>
-            <item>
-                <EFDB_Name>detailedState</EFDB_Name>
-                <Description></Description>
-                <!-- Enumeration: DetailedState -->
-                <IDL_Type>long</IDL_Type>
-                <Units></Units>
-                <Count>1</Count>
-            </item>
-    <item>
-        <EFDB_Name>timestamp</EFDB_Name>
-        <Description></Description>
-        <IDL_Type>double</IDL_Type>
-        <Units></Units>
-        <Count>1</Count>
-    </item>
 </SALEvent>
 <SALEvent>
     <Subsystem>ATHexapod</Subsystem>
@@ -335,50 +275,6 @@
     <item>
         <EFDB_Name>connectionTimeout</EFDB_Name>
         <Description></Description>
-        <IDL_Type>float</IDL_Type>
-        <Units></Units>
-        <Count>1</Count>
-    </item>
-</SALEvent>
-<SALEvent>
-    <Subsystem>ATHexapod</Subsystem>
-    <Version>3.8</Version>
-    <Author></Author>
-    <EFDB_Topic>ATHexapod_logevent_settingsAppliedLoop</EFDB_Topic>
-    <Alias>settingsAppliedLoop</Alias>
-    <Explanation>http://sal.lsst.org</Explanation>
-    <item>
-        <EFDB_Name>period</EFDB_Name>
-        <Description></Description>
-        <IDL_Type>double</IDL_Type>
-        <Units></Units>
-        <Count>1</Count>
-    </item>
-    <item>
-        <EFDB_Name>periodAllowedJitter</EFDB_Name>
-        <Description></Description>
-        <IDL_Type>double</IDL_Type>
-        <Units></Units>
-        <Count>1</Count>
-    </item>
-</SALEvent>
-<SALEvent>
-    <Subsystem>ATHexapod</Subsystem>
-    <Version>3.8</Version>
-    <Author></Author>
-    <EFDB_Topic>ATHexapod_logevent_settingsAppliedHexapodHeartbeat</EFDB_Topic>
-    <Alias>settingsAppliedHexapodHeartbeat</Alias>
-    <Explanation>http://sal.lsst.org</Explanation>
-    <item>
-        <EFDB_Name>period</EFDB_Name>
-        <Description></Description>
-        <IDL_Type>float</IDL_Type>
-        <Units></Units>
-        <Count>1</Count>
-    </item>
-    <item>
-        <EFDB_Name>timeout</EFDB_Name>
-        <Description>Time out for the heartbeat to test communication between linux and windows controller</Description>
         <IDL_Type>float</IDL_Type>
         <Units></Units>
         <Count>1</Count>
