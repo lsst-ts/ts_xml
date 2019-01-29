@@ -2,31 +2,15 @@
 <?xml-stylesheet type="text/xsl" href="http://lsst-sal.tuc.noao.edu/schema/SALEventSet.xsl"?>
 <SALEventSet xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:noNamespaceSchemaLocation="http://lsst-sal.tuc.noao.edu/schema/SALEventSet.xsd">
-<Enumeration>SummaryState_DisabledState,SummaryState_EnabledState,SummaryState_FaultState,SummaryState_OfflineState,SummaryState_StandbyState</Enumeration>
 <Enumeration>AtMountState_DisabledState,AtMountState_EnabledState,AtMountState_FaultState,AtMountState_OfflineState,AtMountState_StandbyState,AtMountState_TrackingDisabledState,AtMountState_TrackingEnabledState,AtMountState_StoppingState</Enumeration>
 <Enumeration>M3ExitPort_Nasmyth1,M3ExitPort_Nasmyth2,M3ExitPort_Port3</Enumeration>
 <Enumeration>M3State_DisabledState,M3State_EnabledState,M3State_FaultState,M3State_OfflineState,M3State_StandbyState,M3State_Nasmyth1State,M3State_Nasmyth2State,M3State_Port3State,M3State_InMotionState,M3State_UnknownPositionState</Enumeration>
 <Enumeration>AzimuthDirection_ClockWise,AzimuthDirection_CounterClockWise</Enumeration>
-<Enumeration>DetailedState_DisabledState,DetailedState_EnabledState,DetailedState_FaultState,DetailedState_OfflineState,DetailedState_StandbyState</Enumeration>
+<Enumeration>DetailedState_DisabledState,DetailedState_EnabledState,DetailedState_FaultState,DetailedState_OfflineState,DetailedState_StandbyState,DetailedState_RemoteControlState,DetailedState_HandPaddleControlState</Enumeration>
 
 <SALEvent>
     <Subsystem>ATMCS</Subsystem>
-    <Version>3.8.2</Version>
-    <Author></Author>
-    <EFDB_Topic>ATMCS_logevent_heartbeat</EFDB_Topic>
-    <Alias>heartbeat</Alias>
-    <Explanation>http://sal.lsst.org</Explanation>
-    <item>
-        <EFDB_Name>heartbeat</EFDB_Name>
-        <Description></Description>
-        <IDL_Type>boolean</IDL_Type>
-        <Units></Units>
-        <Count>1</Count>
-    </item>
-</SALEvent>
-<SALEvent>
-    <Subsystem>ATMCS</Subsystem>
-    <Version>3.7.1</Version>
+    <Version>3.8.41</Version>
     <Author></Author>
     <EFDB_Topic>ATMCS_logevent_m3State</EFDB_Topic>
     <Alias>m3State</Alias>
@@ -42,7 +26,7 @@
 </SALEvent>
 <SALEvent>
     <Subsystem>ATMCS</Subsystem>
-    <Version>3.7.1</Version>
+    <Version>3.8.41</Version>
     <Author></Author>
     <EFDB_Topic>ATMCS_logevent_elevationInPosition</EFDB_Topic>
     <Alias>elevationInPosition</Alias>
@@ -57,7 +41,7 @@
 </SALEvent>
 <SALEvent>
     <Subsystem>ATMCS</Subsystem>
-    <Version>3.7.1</Version>
+    <Version>3.8.41</Version>
     <Author></Author>
     <EFDB_Topic>ATMCS_logevent_azimuthInPosition</EFDB_Topic>
     <Alias>azimuthInPosition</Alias>
@@ -72,7 +56,7 @@
 </SALEvent>
 <SALEvent>
     <Subsystem>ATMCS</Subsystem>
-    <Version>3.7.1</Version>
+    <Version>3.8.41</Version>
     <Author></Author>
     <EFDB_Topic>ATMCS_logevent_allAxesInPosition</EFDB_Topic>
     <Alias>allAxesInPosition</Alias>
@@ -87,7 +71,7 @@
 </SALEvent>
 <SALEvent>
     <Subsystem>ATMCS</Subsystem>
-    <Version>3.7.1</Version>
+    <Version>3.8.41</Version>
     <Author></Author>
     <EFDB_Topic>ATMCS_logevent_nasmyth1RotatorInPosition</EFDB_Topic>
     <Alias>nasmyth1RotatorInPosition</Alias>
@@ -102,7 +86,7 @@
 </SALEvent>
 <SALEvent>
     <Subsystem>ATMCS</Subsystem>
-    <Version>3.7.1</Version>
+    <Version>3.8.41</Version>
     <Author></Author>
     <EFDB_Topic>ATMCS_logevent_azimuthLimitSwitchCCW</EFDB_Topic>
     <Alias>azimuthLimitSwitchCCW</Alias>
@@ -117,7 +101,7 @@
 </SALEvent>
 <SALEvent>
     <Subsystem>ATMCS</Subsystem>
-    <Version>3.7.1</Version>
+    <Version>3.8.41</Version>
     <Author></Author>
     <EFDB_Topic>ATMCS_logevent_elevationLimitSwitchUpper</EFDB_Topic>
     <Alias>elevationLimitSwitchUpper</Alias>
@@ -132,7 +116,7 @@
 </SALEvent>
 <SALEvent>
     <Subsystem>ATMCS</Subsystem>
-    <Version>3.7.1</Version>
+    <Version>3.8.41</Version>
     <Author></Author>
     <EFDB_Topic>ATMCS_logevent_nasmyth1LimitSwitchCW</EFDB_Topic>
     <Alias>nasmyth1LimitSwitchCW</Alias>
@@ -147,7 +131,7 @@
 </SALEvent>
 <SALEvent>
     <Subsystem>ATMCS</Subsystem>
-    <Version>3.7.1</Version>
+    <Version>3.8.41</Version>
     <Author></Author>
     <EFDB_Topic>ATMCS_logevent_nasmyth2LimitSwitchCCW</EFDB_Topic>
     <Alias>nasmyth2LimitSwitchCCW</Alias>
@@ -162,7 +146,7 @@
 </SALEvent>
 <SALEvent>
     <Subsystem>ATMCS</Subsystem>
-    <Version>3.7.1</Version>
+    <Version>3.8.41</Version>
     <Author></Author>
     <EFDB_Topic>ATMCS_logevent_azimuthBrake1</EFDB_Topic>
     <Alias>azimuthBrake1</Alias>
@@ -177,7 +161,7 @@
 </SALEvent>
 <SALEvent>
     <Subsystem>ATMCS</Subsystem>
-    <Version>3.7.1</Version>
+    <Version>3.8.41</Version>
     <Author></Author>
     <EFDB_Topic>ATMCS_logevent_elevationBrake</EFDB_Topic>
     <Alias>elevationBrake</Alias>
@@ -192,7 +176,7 @@
 </SALEvent>
 <SALEvent>
     <Subsystem>ATMCS</Subsystem>
-    <Version>3.7.1</Version>
+    <Version>3.8.41</Version>
     <Author></Author>
     <EFDB_Topic>ATMCS_logevent_nasmyth1Brake</EFDB_Topic>
     <Alias>nasmyth1Brake</Alias>
@@ -207,7 +191,7 @@
 </SALEvent>
 <SALEvent>
     <Subsystem>ATMCS</Subsystem>
-    <Version>3.7.1</Version>
+    <Version>3.8.41</Version>
     <Author></Author>
     <EFDB_Topic>ATMCS_logevent_nasmyth2Brake</EFDB_Topic>
     <Alias>nasmyth2Brake</Alias>
@@ -222,7 +206,7 @@
 </SALEvent>
 <SALEvent>
     <Subsystem>ATMCS</Subsystem>
-    <Version>3.7.1</Version>
+    <Version>3.8.41</Version>
     <Author></Author>
     <EFDB_Topic>ATMCS_logevent_azimuthToppleBlockCCW</EFDB_Topic>
     <Alias>azimuthToppleBlockCCW</Alias>
@@ -237,7 +221,7 @@
 </SALEvent>
 <SALEvent>
     <Subsystem>ATMCS</Subsystem>
-    <Version>3.7.1</Version>
+    <Version>3.8.41</Version>
     <Author></Author>
     <EFDB_Topic>ATMCS_logevent_azimuthBrake2</EFDB_Topic>
     <Alias>azimuthBrake2</Alias>
@@ -252,7 +236,7 @@
 </SALEvent>
 <SALEvent>
     <Subsystem>ATMCS</Subsystem>
-    <Version>3.7.1</Version>
+    <Version>3.8.41</Version>
     <Author></Author>
     <EFDB_Topic>ATMCS_logevent_nasmyth1LimitSwitchCCW</EFDB_Topic>
     <Alias>nasmyth1LimitSwitchCCW</Alias>
@@ -267,7 +251,7 @@
 </SALEvent>
 <SALEvent>
     <Subsystem>ATMCS</Subsystem>
-    <Version>3.7.1</Version>
+    <Version>3.8.41</Version>
     <Author></Author>
     <EFDB_Topic>ATMCS_logevent_azimuthToppleBlockCW</EFDB_Topic>
     <Alias>azimuthToppleBlockCW</Alias>
@@ -282,7 +266,7 @@
 </SALEvent>
 <SALEvent>
     <Subsystem>ATMCS</Subsystem>
-    <Version>3.7.1</Version>
+    <Version>3.8.41</Version>
     <Author></Author>
     <EFDB_Topic>ATMCS_logevent_nasmyth2LimitSwitchCW</EFDB_Topic>
     <Alias>nasmyth2LimitSwitchCW</Alias>
@@ -297,7 +281,7 @@
 </SALEvent>
 <SALEvent>
     <Subsystem>ATMCS</Subsystem>
-    <Version>3.7.1</Version>
+    <Version>3.8.41</Version>
     <Author></Author>
     <EFDB_Topic>ATMCS_logevent_azimuthLimitSwitchCW</EFDB_Topic>
     <Alias>azimuthLimitSwitchCW</Alias>
@@ -312,7 +296,7 @@
 </SALEvent>
 <SALEvent>
     <Subsystem>ATMCS</Subsystem>
-    <Version>3.7.1</Version>
+    <Version>3.8.41</Version>
     <Author></Author>
     <EFDB_Topic>ATMCS_logevent_azimuthDrive1Status</EFDB_Topic>
     <Alias>azimuthDrive1Status</Alias>
@@ -327,7 +311,7 @@
 </SALEvent>
 <SALEvent>
     <Subsystem>ATMCS</Subsystem>
-    <Version>3.7.1</Version>
+    <Version>3.8.41</Version>
     <Author></Author>
     <EFDB_Topic>ATMCS_logevent_azimuthDrive2Status</EFDB_Topic>
     <Alias>azimuthDrive2Status</Alias>
@@ -342,7 +326,7 @@
 </SALEvent>
 <SALEvent>
     <Subsystem>ATMCS</Subsystem>
-    <Version>3.7.1</Version>
+    <Version>3.8.41</Version>
     <Author></Author>
     <EFDB_Topic>ATMCS_logevent_elevationDriveStatus</EFDB_Topic>
     <Alias>elevationDriveStatus</Alias>
@@ -357,7 +341,7 @@
 </SALEvent>
 <SALEvent>
     <Subsystem>ATMCS</Subsystem>
-    <Version>3.7.1</Version>
+    <Version>3.8.41</Version>
     <Author></Author>
     <EFDB_Topic>ATMCS_logevent_nasmyth1DriveStatus</EFDB_Topic>
     <Alias>nasmyth1DriveStatus</Alias>
@@ -372,7 +356,7 @@
 </SALEvent>
 <SALEvent>
     <Subsystem>ATMCS</Subsystem>
-    <Version>3.7.1</Version>
+    <Version>3.8.41</Version>
     <Author></Author>
     <EFDB_Topic>ATMCS_logevent_nasmyth2DriveStatus</EFDB_Topic>
     <Alias>nasmyth2DriveStatus</Alias>
@@ -387,7 +371,7 @@
 </SALEvent>
 <SALEvent>
     <Subsystem>ATMCS</Subsystem>
-    <Version>3.7.1</Version>
+    <Version>3.8.41</Version>
     <Author></Author>
     <EFDB_Topic>ATMCS_logevent_m3DriveStatus</EFDB_Topic>
     <Alias>m3DriveStatus</Alias>
@@ -402,7 +386,7 @@
 </SALEvent>
 <SALEvent>
     <Subsystem>ATMCS</Subsystem>
-    <Version>3.7.1</Version>
+    <Version>3.8.41</Version>
     <Author></Author>
     <EFDB_Topic>ATMCS_logevent_nasmyth2RotatorInPosition</EFDB_Topic>
     <Alias>nasmyth2RotatorInPosition</Alias>
@@ -417,7 +401,7 @@
 </SALEvent>
 <SALEvent>
     <Subsystem>ATMCS</Subsystem>
-    <Version>3.7.1</Version>
+    <Version>3.8.41</Version>
     <Author></Author>
     <EFDB_Topic>ATMCS_logevent_elevationLimitSwitchLower</EFDB_Topic>
     <Alias>elevationLimitSwitchLower</Alias>
@@ -432,7 +416,7 @@
 </SALEvent>
 <SALEvent>
     <Subsystem>ATMCS</Subsystem>
-    <Version>3.7.1</Version>
+    <Version>3.8.41</Version>
     <Author></Author>
     <EFDB_Topic>ATMCS_logevent_atMountState</EFDB_Topic>
     <Alias>atMountState</Alias>
@@ -448,7 +432,7 @@
 </SALEvent>
 <SALEvent>
     <Subsystem>ATMCS</Subsystem>
-    <Version>3.7.1</Version>
+    <Version>3.8.41</Version>
     <Author></Author>
     <EFDB_Topic>ATMCS_logevent_m3RotatorLimitSwitchCW</EFDB_Topic>
     <Alias>m3RotatorLimitSwitchCW</Alias>
@@ -463,7 +447,7 @@
 </SALEvent>
 <SALEvent>
     <Subsystem>ATMCS</Subsystem>
-    <Version>3.7.1</Version>
+    <Version>3.8.41</Version>
     <Author></Author>
     <EFDB_Topic>ATMCS_logevent_m3RotatorLimitSwitchCCW</EFDB_Topic>
     <Alias>m3RotatorLimitSwitchCCW</Alias>
@@ -478,7 +462,7 @@
 </SALEvent>
 <SALEvent>
     <Subsystem>ATMCS</Subsystem>
-    <Version>3.7.1</Version>
+    <Version>3.8.41</Version>
     <Author></Author>
     <EFDB_Topic>ATMCS_logevent_m3RotatorDetentLimitSwitch</EFDB_Topic>
     <Alias>m3RotatorDetentLimitSwitch</Alias>
@@ -507,7 +491,7 @@
 </SALEvent>
 <SALEvent>
     <Subsystem>ATMCS</Subsystem>
-    <Version>3.7.1</Version>
+    <Version>3.8.41</Version>
     <Author></Author>
     <EFDB_Topic>ATMCS_logevent_m3InPosition</EFDB_Topic>
     <Alias>m3InPosition</Alias>
@@ -522,7 +506,7 @@
 </SALEvent>
 <SALEvent>
     <Subsystem>ATMCS</Subsystem>
-    <Version>3.7.1</Version>
+    <Version>3.8.41</Version>
     <Author></Author>
     <EFDB_Topic>ATMCS_logevent_m3PortSelected</EFDB_Topic>
     <Alias>m3PortSelected</Alias>
@@ -538,7 +522,7 @@
 </SALEvent>
 <SALEvent>
     <Subsystem>ATMCS</Subsystem>
-    <Version>3.7.1</Version>
+    <Version>3.8.41</Version>
     <Author></Author>
     <EFDB_Topic>ATMCS_logevent_detailedState</EFDB_Topic>
     <Alias>detailedState</Alias>
@@ -551,4 +535,19 @@
                 <Units></Units>
                 <Count>1</Count>
             </item>
+</SALEvent>
+<SALEvent>
+    <Subsystem>ATMCS</Subsystem>
+    <Version>3.8.41</Version>
+    <Author></Author>
+    <EFDB_Topic>ATMCS_logevent_heartbeat</EFDB_Topic>
+    <Alias>heartbeat</Alias>
+    <Explanation>http://sal.lsst.org</Explanation>
+    <item>
+        <EFDB_Name>heartbeat</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>boolean</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
 </SALEvent></SALEventSet>
