@@ -2,15 +2,28 @@
 <?xml-stylesheet type="text/xsl" href="http://lsst-sal.tuc.noao.edu/schema/SALEventSet.xsl"?>
 <SALEventSet xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:noNamespaceSchemaLocation="http://lsst-sal.tuc.noao.edu/schema/SALEventSet.xsd">
-<Enumeration>M3ExitPort_Nasmyth1,M3ExitPort_Nasmyth2,M3ExitPort_Port3</Enumeration>
 <Enumeration>MirrorCoverState_DisabledState,MirrorCoverState_EnabledState,MirrorCoverState_FaultState,MirrorCoverState_OfflineState,MirrorCoverState_StandbyState,MirrorCoverState_MirrorCoversClosedState,MirrorCoverState_MirrorCoversOpenedState,MirrorCoverState_InMotionState</Enumeration>
-<Enumeration>M3State_DisabledState,M3State_EnabledState,M3State_FaultState,M3State_OfflineState,M3State_StandbyState,M3State_Nasmyth1State,M3State_Nasmyth2State,M3State_Port3State,M3State_InMotionState</Enumeration>
 <Enumeration>CellVentState_DisabledState,CellVentState_EnabledState,CellVentState_FaultState,CellVentState_OfflineState,CellVentState_StandbyState,CellVentState_CellVentsOpenedState,CellVentState_CellVentsClosedState,CellVentState_InMotionState</Enumeration>
 <Enumeration>AirValveState_DisabledState,AirValveState_EnabledState,AirValveState_FaultState,AirValveState_OfflineState,AirValveState_StandbyState,AirValveState_ValveOpenedState,AirValveState_ValveClosedState</Enumeration>
 <Enumeration>CoverPosition_Opened,CoverPosition_Closed,CoverPosition_PartiallyOpened</Enumeration>
 <Enumeration>VentsPosition_Opened,VentsPosition_Closed,VentsPosition_PartiallyOpened</Enumeration>
 <Enumeration>DetailedState_DisabledState,DetailedState_EnabledState,DetailedState_FaultState,DetailedState_OfflineState,DetailedState_StandbyState</Enumeration>
 
+<SALEvent>
+    <Subsystem>ATPneumatics</Subsystem>
+    <Version>3.7.1</Version>
+    <Author></Author>
+    <EFDB_Topic>ATPneumatics_logevent_heartbeat</EFDB_Topic>
+    <Alias>heartbeat</Alias>
+    <Explanation>http://sal.lsst.org</Explanation>
+    <item>
+        <EFDB_Name>heartbeat</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>boolean</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+</SALEvent>
 <SALEvent>
     <Subsystem>ATPneumatics</Subsystem>
     <Version>3.7.1</Version>
