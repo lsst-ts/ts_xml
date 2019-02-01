@@ -13,6 +13,7 @@
     <Action></Action>
     <Value></Value>
     <Explanation>http://sal.lsst.org</Explanation>
+    <!-- Enable tracking. Once you issue this command you must call trackTarget at regular intervals until you are done tracking, at which point call stopTracking. -->
     <item>
         <EFDB_Name>ignored</EFDB_Name>
         <Description></Description>
@@ -32,80 +33,81 @@
     <Action></Action>
     <Value></Value>
     <Explanation>http://sal.lsst.org</Explanation>
+    <!-- Specify position, velocity and time for the all axes except M3. -->
     <item>
         <EFDB_Name>azimuth</EFDB_Name>
-        <Description>Mount azimuth angle in deg. The range are between 0 and 360 degrees.</Description>
+        <Description>Mount azimuth angle at the specified time. The allowed range is 0 to 360.</Description>
         <IDL_Type>double</IDL_Type>
+        <Units>deg</Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>azimuthDirection</EFDB_Name>
+        <Description>Mount azimuth wrap.</Description>
+        <!-- Enumeration: AzimuthDirection -->
+        <IDL_Type>long</IDL_Type>
         <Units></Units>
         <Count>1</Count>
     </item>
-            <item>
-                <EFDB_Name>azimuthDirection</EFDB_Name>
-                <Description>Cablewrap direction</Description>
-                <!-- Enumeration: AzimuthDirection -->
-                <IDL_Type>long</IDL_Type>
-                <Units></Units>
-                <Count>1</Count>
-            </item>
     <item>
         <EFDB_Name>azimuthVelocity</EFDB_Name>
-        <Description>Mount azimuth velocity in deg/sec</Description>
+        <Description>Mount azimuth velocity at the specified time.</Description>
         <IDL_Type>double</IDL_Type>
-        <Units></Units>
+        <Units>deg/sec</Units>
         <Count>1</Count>
     </item>
     <item>
         <EFDB_Name>elevation</EFDB_Name>
-        <Description>Mount elevation angle in deg</Description>
+        <Description>Mount elevation angle at the specified time.</Description>
         <IDL_Type>double</IDL_Type>
-        <Units></Units>
+        <Units>deg</Units>
         <Count>1</Count>
     </item>
     <item>
         <EFDB_Name>elevationVelocity</EFDB_Name>
-        <Description>Mount elevation angle velocity in deg/ec</Description>
+        <Description>Mount elevation angle velocity at the specified time.</Description>
         <IDL_Type>double</IDL_Type>
-        <Units></Units>
+        <Units>deg/sec</Units>
         <Count>1</Count>
     </item>
     <item>
         <EFDB_Name>nasmyth1RotatorAngle</EFDB_Name>
-        <Description>Rotator angle in deg</Description>
+        <Description>Nasmyth 1 rotator angle at the specified time.</Description>
         <IDL_Type>double</IDL_Type>
-        <Units></Units>
+        <Units>deg</Units>
         <Count>1</Count>
     </item>
     <item>
         <EFDB_Name>nasmyth1RotatorAngleVelocity</EFDB_Name>
-        <Description>Rotator angle velocity in deg/sec</Description>
+        <Description>Nasmyth 1 rotator angle velocity at the specified time.</Description>
         <IDL_Type>double</IDL_Type>
-        <Units></Units>
+        <Units>deg/sec</Units>
         <Count>1</Count>
     </item>
     <item>
         <EFDB_Name>nasmyth2RotatorAngle</EFDB_Name>
-        <Description>Rotator angle in deg</Description>
+        <Description>Nasmyth 1 rotator angle at the specified time.</Description>
         <IDL_Type>double</IDL_Type>
-        <Units></Units>
+        <Units>deg</Units>
         <Count>1</Count>
     </item>
     <item>
         <EFDB_Name>nasmyth2RotatorAngleVelocity</EFDB_Name>
-        <Description>Rotator angle velocity in deg/sec</Description>
+        <Description>Nasmyth 1 rotator angle velocity at the specified time.</Description>
         <IDL_Type>double</IDL_Type>
-        <Units></Units>
+        <Units>deg/sec</Units>
         <Count>1</Count>
     </item>
     <item>
         <EFDB_Name>time</EFDB_Name>
-        <Description>tai time in seconds</Description>
+        <Description>TAI date at which the commanded positions and velocities apply, as unix time.</Description>
         <IDL_Type>double</IDL_Type>
-        <Units></Units>
+        <Units>sec</Units>
         <Count>1</Count>
     </item>
     <item>
         <EFDB_Name>trackId</EFDB_Name>
-        <Description></Description>
+        <Description>Target identifier.</Description>
         <IDL_Type>long</IDL_Type>
         <Units></Units>
         <Count>1</Count>
@@ -122,9 +124,10 @@
     <Action></Action>
     <Value></Value>
     <Explanation>http://sal.lsst.org</Explanation>
+    <!-- Rotate M3 to a specified instrument port. This command returns before M3 has finished moving. -->
             <item>
                 <EFDB_Name>port</EFDB_Name>
-                <Description></Description>
+                <Description>Desired instrument port.</Description>
                 <!-- Enumeration: M3ExitPort -->
                 <IDL_Type>long</IDL_Type>
                 <Units></Units>
@@ -142,6 +145,7 @@
     <Action></Action>
     <Value></Value>
     <Explanation>http://sal.lsst.org</Explanation>
+    <!-- Halt all axes except M3 rotation, and disable tracking. -->
     <item>
         <EFDB_Name>ignored</EFDB_Name>
         <Description></Description>
