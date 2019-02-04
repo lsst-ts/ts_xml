@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-stylesheet type="text/xsl" href="http://lsst-sal.tuc.noao.edu/schema/SALCommandSet.xsl"?>
 <SALCommandSet xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://lsst-sal.tuc.noao.edu/schema/SALCommandSet.xsd">
+    <!-- The main commands -->
     <SALCommand>
         <Subsystem>ATDome</Subsystem>
         <Version>3.8.2</Version>
@@ -16,25 +17,6 @@
             <EFDB_Name>azimuth</EFDB_Name>
             <Description/>
             <IDL_Type>float</IDL_Type>
-            <Units/>
-            <Count>1</Count>
-        </item>
-    </SALCommand>
-    <SALCommand>
-        <Subsystem>ATDome</Subsystem>
-        <Version>3.8.2</Version>
-        <Author/>
-        <EFDB_Topic>ATDome_command_moveShutterDropoutDoor</EFDB_Topic>
-        <Alias>moveShutterDropoutDoor</Alias>
-        <Device/>
-        <Property/>
-        <Action/>
-        <Value/>
-        <Explanation>http://sal.lsst.org</Explanation>
-        <item>
-            <EFDB_Name>open</EFDB_Name>
-            <Description>Open the door if true, close it if false.</Description>
-            <IDL_Type>boolean</IDL_Type>
             <Units/>
             <Count>1</Count>
         </item>
@@ -62,6 +44,25 @@
         <Subsystem>ATDome</Subsystem>
         <Version>3.8.2</Version>
         <Author/>
+        <EFDB_Topic>ATDome_command_openShutter</EFDB_Topic>
+        <Alias>openShutter</Alias>
+        <Device/>
+        <Property/>
+        <Action/>
+        <Value/>
+        <Explanation>http://sal.lsst.org</Explanation>
+        <item>
+            <EFDB_Name>open</EFDB_Name>
+            <Description/>
+            <IDL_Type>boolean</IDL_Type>
+            <Units/>
+            <Count>1</Count>
+        </item>
+    </SALCommand>
+    <SALCommand>
+        <Subsystem>ATDome</Subsystem>
+        <Version>3.8.2</Version>
+        <Author/>
         <EFDB_Topic>ATDome_command_stopMotion</EFDB_Topic>
         <Alias>stopMotion</Alias>
         <Device/>
@@ -77,12 +78,13 @@
             <Count>1</Count>
         </item>
     </SALCommand>
+    <!-- Engineering commands -->
     <SALCommand>
         <Subsystem>ATDome</Subsystem>
         <Version>3.8.2</Version>
         <Author/>
-        <EFDB_Topic>ATDome_command_openShutter</EFDB_Topic>
-        <Alias>openShutter</Alias>
+        <EFDB_Topic>ATDome_command_moveShutterDropoutDoor</EFDB_Topic>
+        <Alias>moveShutterDropoutDoor</Alias>
         <Device/>
         <Property/>
         <Action/>
@@ -90,7 +92,7 @@
         <Explanation>http://sal.lsst.org</Explanation>
         <item>
             <EFDB_Name>open</EFDB_Name>
-            <Description/>
+            <Description>Open the door if true, close it if false.</Description>
             <IDL_Type>boolean</IDL_Type>
             <Units/>
             <Count>1</Count>

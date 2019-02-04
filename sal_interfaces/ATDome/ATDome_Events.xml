@@ -3,6 +3,23 @@
 <SALEventSet xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://lsst-sal.tuc.noao.edu/schema/SALEventSet.xsd">
     <Enumeration>AzimuthState_NotInMotionState,AzimuthState_MovingCWState,AzimuthState_MovingCCWState</Enumeration>
     <Enumeration>ShutterDoorState_ClosedState,ShutterDoorState_OpenedState,ShutterDoorState_PartiallyOpenedState,ShutterDoorState_OpeningState,ShutterDoorState_ClosingState</Enumeration>
+    <!-- Standard events -->
+    <SALEvent>
+        <Subsystem>ATDome</Subsystem>
+        <Version>3.8.2</Version>
+        <Author/>
+        <EFDB_Topic>ATDome_logevent_heartbeat</EFDB_Topic>
+        <Alias>heartbeat</Alias>
+        <Explanation>http://sal.lsst.org</Explanation>
+        <item>
+            <EFDB_Name>heartbeat</EFDB_Name>
+            <Description/>
+            <IDL_Type>boolean</IDL_Type>
+            <Units/>
+            <Count>1</Count>
+        </item>
+    </SALEvent>
+    <!-- Actuator states -->
     <SALEvent>
         <Subsystem>ATDome</Subsystem>
         <Version>3.8.2</Version>
@@ -23,11 +40,58 @@
         <Subsystem>ATDome</Subsystem>
         <Version>3.8.2</Version>
         <Author/>
-        <EFDB_Topic>ATDome_logevent_heartbeat</EFDB_Topic>
-        <Alias>heartbeat</Alias>
+        <EFDB_Topic>ATDome_logevent_dropoutDoorState</EFDB_Topic>
+        <Alias>dropoutDoorState</Alias>
         <Explanation>http://sal.lsst.org</Explanation>
         <item>
-            <EFDB_Name>heartbeat</EFDB_Name>
+            <EFDB_Name>state</EFDB_Name>
+            <Description/>
+            <!-- Enumeration: ShutterDoorState -->
+            <IDL_Type>long</IDL_Type>
+            <Units/>
+            <Count>1</Count>
+        </item>
+    </SALEvent>
+    <SALEvent>
+        <Subsystem>ATDome</Subsystem>
+        <Version>3.8.2</Version>
+        <Author/>
+        <EFDB_Topic>ATDome_logevent_mainDoorState</EFDB_Topic>
+        <Alias>mainDoorState</Alias>
+        <Explanation>http://sal.lsst.org</Explanation>
+        <item>
+            <EFDB_Name>state</EFDB_Name>
+            <Description/>
+            <!-- Enumeration: ShutterDoorState -->
+            <IDL_Type>long</IDL_Type>
+            <Units/>
+            <Count>1</Count>
+        </item>
+    </SALEvent>
+    <SALEvent>
+        <Subsystem>ATDome</Subsystem>
+        <Version>3.8.2</Version>
+        <Author/>
+        <EFDB_Topic>ATDome_logevent_azimuthInPosition</EFDB_Topic>
+        <Alias>azimuthInPosition</Alias>
+        <Explanation>http://sal.lsst.org</Explanation>
+        <item>
+            <EFDB_Name>inPosition</EFDB_Name>
+            <Description/>
+            <IDL_Type>boolean</IDL_Type>
+            <Units/>
+            <Count>1</Count>
+        </item>
+    </SALEvent>
+    <SALEvent>
+        <Subsystem>ATDome</Subsystem>
+        <Version>3.8.2</Version>
+        <Author/>
+        <EFDB_Topic>ATDome_logevent_shutterInPosition</EFDB_Topic>
+        <Alias>shutterInPosition</Alias>
+        <Explanation>http://sal.lsst.org</Explanation>
+        <item>
+            <EFDB_Name>inPosition</EFDB_Name>
             <Description/>
             <IDL_Type>boolean</IDL_Type>
             <Units/>
@@ -49,6 +113,7 @@
             <Count>1</Count>
         </item>
     </SALEvent>
+    <!-- Trouble states -->
     <SALEvent>
         <Subsystem>ATDome</Subsystem>
         <Version>3.8.2</Version>
@@ -79,36 +144,7 @@
             <Count>1</Count>
         </item>
     </SALEvent>
-    <SALEvent>
-        <Subsystem>ATDome</Subsystem>
-        <Version>3.8.2</Version>
-        <Author/>
-        <EFDB_Topic>ATDome_logevent_shutterInPosition</EFDB_Topic>
-        <Alias>shutterInPosition</Alias>
-        <Explanation>http://sal.lsst.org</Explanation>
-        <item>
-            <EFDB_Name>inPosition</EFDB_Name>
-            <Description/>
-            <IDL_Type>boolean</IDL_Type>
-            <Units/>
-            <Count>1</Count>
-        </item>
-    </SALEvent>
-    <SALEvent>
-        <Subsystem>ATDome</Subsystem>
-        <Version>3.8.2</Version>
-        <Author/>
-        <EFDB_Topic>ATDome_logevent_azimuthInPosition</EFDB_Topic>
-        <Alias>azimuthInPosition</Alias>
-        <Explanation>http://sal.lsst.org</Explanation>
-        <item>
-            <EFDB_Name>inPosition</EFDB_Name>
-            <Description/>
-            <IDL_Type>boolean</IDL_Type>
-            <Units/>
-            <Count>1</Count>
-        </item>
-    </SALEvent>
+    <!-- Configuration -->
     <SALEvent>
         <Subsystem>ATDome</Subsystem>
         <Version>3.8.2</Version>
@@ -172,38 +208,6 @@ If the SCB loses contact with the MCB or the MCB loses contact with the host com
 
 The AF (Automation oFf) command disables the automatic shutdown of the observatory. Issue this command when performing maintenance on the observatory. However, for normal operations this is an unsafe condition as the dome is not protected from failures and bad weather.</Description>
             <IDL_Type>boolean</IDL_Type>
-            <Units/>
-            <Count>1</Count>
-        </item>
-    </SALEvent>
-    <SALEvent>
-        <Subsystem>ATDome</Subsystem>
-        <Version>3.8.2</Version>
-        <Author/>
-        <EFDB_Topic>ATDome_logevent_dropoutDoorState</EFDB_Topic>
-        <Alias>dropoutDoorState</Alias>
-        <Explanation>http://sal.lsst.org</Explanation>
-        <item>
-            <EFDB_Name>state</EFDB_Name>
-            <Description/>
-            <!-- Enumeration: ShutterDoorState -->
-            <IDL_Type>long</IDL_Type>
-            <Units/>
-            <Count>1</Count>
-        </item>
-    </SALEvent>
-    <SALEvent>
-        <Subsystem>ATDome</Subsystem>
-        <Version>3.8.2</Version>
-        <Author/>
-        <EFDB_Topic>ATDome_logevent_mainDoorState</EFDB_Topic>
-        <Alias>mainDoorState</Alias>
-        <Explanation>http://sal.lsst.org</Explanation>
-        <item>
-            <EFDB_Name>state</EFDB_Name>
-            <Description/>
-            <!-- Enumeration: ShutterDoorState -->
-            <IDL_Type>long</IDL_Type>
             <Units/>
             <Count>1</Count>
         </item>
