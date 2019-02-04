@@ -12,12 +12,12 @@
         <Property/>
         <Action/>
         <Value/>
-        <Explanation>http://sal.lsst.org</Explanation>
+        <Explanation>Rotate the dome to the specified azimuth.</Explanation>
         <item>
             <EFDB_Name>azimuth</EFDB_Name>
-            <Description/>
+            <Description>Desired azimuth; must be in the range 0 to 360. The dome will take the shortest route to the specified position.</Description>
             <IDL_Type>float</IDL_Type>
-            <Units/>
+            <Units>deg</Units>
             <Count>1</Count>
         </item>
     </SALCommand>
@@ -31,7 +31,7 @@
         <Property/>
         <Action/>
         <Value/>
-        <Explanation>http://sal.lsst.org</Explanation>
+        <Explanation>Close both shutter doors. This is the preferred way to close the shutter, because it automatically sequences the doors to prevent the main door from interfering with the dropout door.</Explanation>
         <item>
             <EFDB_Name>ignored</EFDB_Name>
             <Description/>
@@ -50,7 +50,7 @@
         <Property/>
         <Action/>
         <Value/>
-        <Explanation>http://sal.lsst.org</Explanation>
+        <Explanation>Open both shutter doors. This is the preferred way to open the shutter because it automatically sequences the doors to prevent the main door from interfering with the dropout door.</Explanation>
         <item>
             <EFDB_Name>ignored</EFDB_Name>
             <Description/>
@@ -69,7 +69,7 @@
         <Property/>
         <Action/>
         <Value/>
-        <Explanation>http://sal.lsst.org</Explanation>
+        <Explanation>Stop all motion: azimuth, dropout door and main door.</Explanation>
         <item>
             <EFDB_Name>ignored</EFDB_Name>
             <Description/>
@@ -108,7 +108,7 @@
         <Property/>
         <Action/>
         <Value/>
-        <Explanation>http://sal.lsst.org</Explanation>
+        <Explanation>Open or close the shutter dropout door. Intended for engineering; use the openShutter and closeShutter commands for normal operation since they automatically sequence the doors to prevent the main door from interfering with the dropout door.</Explanation>
         <item>
             <EFDB_Name>open</EFDB_Name>
             <Description>Open the door if true, close it if false.</Description>
@@ -127,7 +127,7 @@
         <Property/>
         <Action/>
         <Value/>
-        <Explanation>http://sal.lsst.org</Explanation>
+        <Explanation>Open or close the main shutter door. Intended for engineering; use the openShutter and closeShutter commands for normal operation since they automatically sequence the doors to prevent the main door from interfering with the dropout.</Explanation>
         <item>
             <EFDB_Name>open</EFDB_Name>
             <Description>Open the door if true, close it if false.</Description>
