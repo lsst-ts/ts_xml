@@ -117,14 +117,14 @@
         <Alias>settingsAppliedDomeController</Alias>
         <Explanation>http://sal.lsst.org</Explanation>
         <item>
-            <EFDB_Name>rainSensorActivated</EFDB_Name>
+            <EFDB_Name>rainSensorEnabled</EFDB_Name>
             <Description/>
             <IDL_Type>boolean</IDL_Type>
             <Units/>
             <Count>1</Count>
         </item>
         <item>
-            <EFDB_Name>cloudSensorActivated</EFDB_Name>
+            <EFDB_Name>cloudSensorEnabled</EFDB_Name>
             <Description/>
             <IDL_Type>boolean</IDL_Type>
             <Units/>
@@ -138,16 +138,16 @@
             <Count>1</Count>
         </item>
         <item>
-            <EFDB_Name>highSpeedDistance</EFDB_Name>
-            <Description/>
+            <EFDB_Name>homeAzimuth</EFDB_Name>
+            <Description>Azimuth position of the home switch.</Description>
             <IDL_Type>float</IDL_Type>
-            <Units/>
+            <Units>deg</Units>
             <Count>1</Count>
         </item>
         <item>
-            <EFDB_Name>learnManual</EFDB_Name>
-            <Description>allows for manual entry of the number of encoder counts per 360 degrees.</Description>
-            <IDL_Type>long</IDL_Type>
+            <EFDB_Name>highSpeedDistance</EFDB_Name>
+            <Description/>
+            <IDL_Type>float</IDL_Type>
             <Units/>
             <Count>1</Count>
         </item>
@@ -166,7 +166,7 @@
             <Count>1</Count>
         </item>
         <item>
-            <EFDB_Name>autoShutdownActivated</EFDB_Name>
+            <EFDB_Name>autoShutdownEnabled</EFDB_Name>
             <Description>The AO (Automation On) command enables the automatic shutdown of the observatory.
 If the SCB loses contact with the MCB or the MCB loses contact with the host computer then the watchdog will time out and the dome will close, without warning. This feature should be turned off when performing maintenance on the dome.
 
@@ -216,16 +216,16 @@ The AF (Automation oFf) command disables the automatic shutdown of the observato
         <Alias>settingsAppliedDomeTcp</Alias>
         <Explanation>http://sal.lsst.org</Explanation>
         <item>
-            <EFDB_Name>ip</EFDB_Name>
-            <Description/>
+            <EFDB_Name>host</EFDB_Name>
+            <Description>Host name of TCP/IP controller</Description>
             <IDL_Type>string</IDL_Type>
-            <IDL_Size>15</IDL_Size>
+            <IDL_Size>1</IDL_Size>
             <Units/>
             <Count>1</Count>
         </item>
         <item>
-            <EFDB_Name>portRange</EFDB_Name>
-            <Description>port range, it will try to connect to any of the ports in this range</Description>
+            <EFDB_Name>port</EFDB_Name>
+            <Description>Port of TCP/IP controller</Description>
             <IDL_Type>long</IDL_Type>
             <Units/>
             <Count>1</Count>
