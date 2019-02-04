@@ -3,7 +3,7 @@
 <SALEventSet xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://lsst-sal.tuc.noao.edu/schema/SALEventSet.xsd">
     <Enumeration>AzimuthState_NotInMotionState,AzimuthState_MovingCWState,AzimuthState_MovingCCWState</Enumeration>
     <Enumeration>ShutterDoorState_ClosedState,ShutterDoorState_OpenedState,ShutterDoorState_PartiallyOpenedState,ShutterDoorState_OpeningState,ShutterDoorState_ClosingState</Enumeration>
-    <!-- Standard events -->
+    <!-- Standard events --> 
     <SALEvent>
         <Subsystem>ATDome</Subsystem>
         <Version>3.8.2</Version>
@@ -32,6 +32,13 @@
             <Description/>
             <!-- Enumeration: AzimuthState -->
             <IDL_Type>long</IDL_Type>
+            <Units/>
+            <Count>1</Count>
+        </item>
+        <item>
+            <EFDB_Name>homing</EFDB_Name>
+            <Description>Is azimuth being homed?</Description>
+            <IDL_Type>boolean</IDL_Type>
             <Units/>
             <Count>1</Count>
         </item>
