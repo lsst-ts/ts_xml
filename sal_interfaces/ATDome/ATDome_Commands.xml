@@ -1,156 +1,139 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-stylesheet type="text/xsl" href="http://lsst-sal.tuc.noao.edu/schema/SALCommandSet.xsl"?>
-<SALCommandSet xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:noNamespaceSchemaLocation="http://lsst-sal.tuc.noao.edu/schema/SALCommandSet.xsd">
-<SALCommand>
-    <Subsystem>ATDome</Subsystem>
-    <Version>3.8.2</Version>
-    <Author></Author>
-    <EFDB_Topic>ATDome_command_moveAzimuth</EFDB_Topic>
-    <Alias>moveAzimuth</Alias>
-    <Device></Device>
-    <Property></Property>
-    <Action></Action>
-    <Value></Value>
-    <Explanation>http://sal.lsst.org</Explanation>
-    <item>
-        <EFDB_Name>azimuth</EFDB_Name>
-        <Description></Description>
-        <IDL_Type>float</IDL_Type>
-        <Units></Units>
-        <Count>1</Count>
-    </item>
-</SALCommand>
-<SALCommand>
-    <Subsystem>ATDome</Subsystem>
-    <Version>3.8.2</Version>
-    <Author></Author>
-    <EFDB_Topic>ATDome_command_moveShutterDropoutDoor</EFDB_Topic>
-    <Alias>moveShutterDropoutDoor</Alias>
-    <Device></Device>
-    <Property></Property>
-    <Action></Action>
-    <Value></Value>
-    <Explanation>http://sal.lsst.org</Explanation>
-    <item>
-        <EFDB_Name>dropoutDoorOpening</EFDB_Name>
-        <Description>Aperture percentage.</Description>
-        <IDL_Type>float</IDL_Type>
-        <Units></Units>
-        <Count>1</Count>
-    </item>
-</SALCommand>
-<SALCommand>
-    <Subsystem>ATDome</Subsystem>
-    <Version>3.8.2</Version>
-    <Author></Author>
-    <EFDB_Topic>ATDome_command_closeShutter</EFDB_Topic>
-    <Alias>closeShutter</Alias>
-    <Device></Device>
-    <Property></Property>
-    <Action></Action>
-    <Value></Value>
-    <Explanation>http://sal.lsst.org</Explanation>
-    <item>
-        <EFDB_Name>close</EFDB_Name>
-        <Description>full</Description>
-        <IDL_Type>boolean</IDL_Type>
-        <Units></Units>
-        <Count>1</Count>
-    </item>
-</SALCommand>
-<SALCommand>
-    <Subsystem>ATDome</Subsystem>
-    <Version>3.8.2</Version>
-    <Author></Author>
-    <EFDB_Topic>ATDome_command_stopMotionAllAxis</EFDB_Topic>
-    <Alias>stopMotionAllAxis</Alias>
-    <Device></Device>
-    <Property></Property>
-    <Action></Action>
-    <Value></Value>
-    <Explanation>http://sal.lsst.org</Explanation>
-    <item>
-        <EFDB_Name>value</EFDB_Name>
-        <Description></Description>
-        <IDL_Type>boolean</IDL_Type>
-        <Units></Units>
-        <Count>1</Count>
-    </item>
-</SALCommand>
-<SALCommand>
-    <Subsystem>ATDome</Subsystem>
-    <Version>3.8.2</Version>
-    <Author></Author>
-    <EFDB_Topic>ATDome_command_stopShutter</EFDB_Topic>
-    <Alias>stopShutter</Alias>
-    <Device></Device>
-    <Property></Property>
-    <Action></Action>
-    <Value></Value>
-    <Explanation>http://sal.lsst.org</Explanation>
-    <item>
-        <EFDB_Name>value</EFDB_Name>
-        <Description></Description>
-        <IDL_Type>boolean</IDL_Type>
-        <Units></Units>
-        <Count>1</Count>
-    </item>
-</SALCommand>
-<SALCommand>
-    <Subsystem>ATDome</Subsystem>
-    <Version>3.8.2</Version>
-    <Author></Author>
-    <EFDB_Topic>ATDome_command_openShutter</EFDB_Topic>
-    <Alias>openShutter</Alias>
-    <Device></Device>
-    <Property></Property>
-    <Action></Action>
-    <Value></Value>
-    <Explanation>http://sal.lsst.org</Explanation>
-    <item>
-        <EFDB_Name>open</EFDB_Name>
-        <Description></Description>
-        <IDL_Type>boolean</IDL_Type>
-        <Units></Units>
-        <Count>1</Count>
-    </item>
-</SALCommand>
-<SALCommand>
-    <Subsystem>ATDome</Subsystem>
-    <Version>3.8.2</Version>
-    <Author></Author>
-    <EFDB_Topic>ATDome_command_moveShutterMainDoor</EFDB_Topic>
-    <Alias>moveShutterMainDoor</Alias>
-    <Device></Device>
-    <Property></Property>
-    <Action></Action>
-    <Value></Value>
-    <Explanation>http://sal.lsst.org</Explanation>
-    <item>
-        <EFDB_Name>mainDoorOpening</EFDB_Name>
-        <Description>Aperture percentage.</Description>
-        <IDL_Type>float</IDL_Type>
-        <Units></Units>
-        <Count>1</Count>
-    </item>
-</SALCommand>
-<SALCommand>
-    <Subsystem>ATDome</Subsystem>
-    <Version>3.8.2</Version>
-    <Author></Author>
-    <EFDB_Topic>ATDome_command_stopAzimuth</EFDB_Topic>
-    <Alias>stopAzimuth</Alias>
-    <Device></Device>
-    <Property></Property>
-    <Action></Action>
-    <Value></Value>
-    <Explanation>http://sal.lsst.org</Explanation>
-    <item>
-        <EFDB_Name>value</EFDB_Name>
-        <Description></Description>
-        <IDL_Type>boolean</IDL_Type>
-        <Units></Units>
-        <Count>1</Count>
-    </item>
-</SALCommand></SALCommandSet>
+<SALCommandSet xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://lsst-sal.tuc.noao.edu/schema/SALCommandSet.xsd">
+    <!-- The main commands -->
+    <SALCommand>
+        <Subsystem>ATDome</Subsystem>
+        <Version>3.8.2</Version>
+        <Author/>
+        <EFDB_Topic>ATDome_command_moveAzimuth</EFDB_Topic>
+        <Alias>moveAzimuth</Alias>
+        <Device/>
+        <Property/>
+        <Action/>
+        <Value/>
+        <Explanation>Rotate the dome to the specified azimuth.</Explanation>
+        <item>
+            <EFDB_Name>azimuth</EFDB_Name>
+            <Description>Desired azimuth; must be in the range 0 to 360. The dome will take the shortest route to the specified position.</Description>
+            <IDL_Type>float</IDL_Type>
+            <Units>deg</Units>
+            <Count>1</Count>
+        </item>
+    </SALCommand>
+    <SALCommand>
+        <Subsystem>ATDome</Subsystem>
+        <Version>3.8.2</Version>
+        <Author/>
+        <EFDB_Topic>ATDome_command_closeShutter</EFDB_Topic>
+        <Alias>closeShutter</Alias>
+        <Device/>
+        <Property/>
+        <Action/>
+        <Value/>
+        <Explanation>Close both shutter doors. This is the preferred way to close the shutter, because it automatically sequences the doors to prevent the main door from interfering with the dropout door.</Explanation>
+        <item>
+            <EFDB_Name>ignored</EFDB_Name>
+            <Description/>
+            <IDL_Type>boolean</IDL_Type>
+            <Units/>
+            <Count>1</Count>
+        </item>
+    </SALCommand>
+    <SALCommand>
+        <Subsystem>ATDome</Subsystem>
+        <Version>3.8.2</Version>
+        <Author/>
+        <EFDB_Topic>ATDome_command_openShutter</EFDB_Topic>
+        <Alias>openShutter</Alias>
+        <Device/>
+        <Property/>
+        <Action/>
+        <Value/>
+        <Explanation>Open both shutter doors. This is the preferred way to open the shutter because it automatically sequences the doors to prevent the main door from interfering with the dropout door.</Explanation>
+        <item>
+            <EFDB_Name>ignored</EFDB_Name>
+            <Description/>
+            <IDL_Type>boolean</IDL_Type>
+            <Units/>
+            <Count>1</Count>
+        </item>
+    </SALCommand>
+    <SALCommand>
+        <Subsystem>ATDome</Subsystem>
+        <Version>3.8.2</Version>
+        <Author/>
+        <EFDB_Topic>ATDome_command_stopMotion</EFDB_Topic>
+        <Alias>stopMotion</Alias>
+        <Device/>
+        <Property/>
+        <Action/>
+        <Value/>
+        <Explanation>Stop all motion: azimuth, dropout door and main door.</Explanation>
+        <item>
+            <EFDB_Name>ignored</EFDB_Name>
+            <Description/>
+            <IDL_Type>boolean</IDL_Type>
+            <Units/>
+            <Count>1</Count>
+        </item>
+    </SALCommand>
+    <!-- Engineering commands -->
+    <SALCommand>
+        <Subsystem>ATDome</Subsystem>
+        <Version>3.8.2</Version>
+        <Author/>
+        <EFDB_Topic>ATDome_command_homeAzimuth</EFDB_Topic>
+        <Alias>homeAzimuth</Alias>
+        <Device/>
+        <Property/>
+        <Action/>
+        <Value/>
+        <Explanation>Home the azimuth axis.</Explanation>
+        <item>
+            <EFDB_Name>ignored</EFDB_Name>
+            <Description/>
+            <IDL_Type>boolean</IDL_Type>
+            <Units/>
+            <Count>1</Count>
+        </item>
+    </SALCommand>
+    <SALCommand>
+        <Subsystem>ATDome</Subsystem>
+        <Version>3.8.2</Version>
+        <Author/>
+        <EFDB_Topic>ATDome_command_moveShutterDropoutDoor</EFDB_Topic>
+        <Alias>moveShutterDropoutDoor</Alias>
+        <Device/>
+        <Property/>
+        <Action/>
+        <Value/>
+        <Explanation>Open or close the shutter dropout door. Intended for engineering; use the openShutter and closeShutter commands for normal operation since they automatically sequence the doors to prevent the main door from interfering with the dropout door.</Explanation>
+        <item>
+            <EFDB_Name>open</EFDB_Name>
+            <Description>Open the door if true, close it if false.</Description>
+            <IDL_Type>boolean</IDL_Type>
+            <Units/>
+            <Count>1</Count>
+        </item>
+    </SALCommand>
+    <SALCommand>
+        <Subsystem>ATDome</Subsystem>
+        <Version>3.8.2</Version>
+        <Author/>
+        <EFDB_Topic>ATDome_command_moveShutterMainDoor</EFDB_Topic>
+        <Alias>moveShutterMainDoor</Alias>
+        <Device/>
+        <Property/>
+        <Action/>
+        <Value/>
+        <Explanation>Open or close the main shutter door. Intended for engineering; use the openShutter and closeShutter commands for normal operation since they automatically sequence the doors to prevent the main door from interfering with the dropout.</Explanation>
+        <item>
+            <EFDB_Name>open</EFDB_Name>
+            <Description>Open the door if true, close it if false.</Description>
+            <IDL_Type>boolean</IDL_Type>
+            <Units/>
+            <Count>1</Count>
+        </item>
+    </SALCommand>
+</SALCommandSet>
