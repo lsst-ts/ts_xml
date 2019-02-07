@@ -17,10 +17,10 @@
         <xsd:element name="EFDB_Name"     type="xsd:string"/>
         <xsd:element name="Description"   type="xsd:string"/>
         <xsd:element name="IDL_Type"      type="xsd:string"/>
-        <xsd:element name="IDL_Size"   minOccurs="0"     type="xsd:string"/>
+        <xsd:element name="IDL_Size"      minOccurs="0"     type="xsd:string"/>
         <xsd:element name="Units"         type="xsd:string"/>
-        <xsd:element name="Count" type="xsd:positiveInteger"/>
-        <xsd:element name="Enumeration"    minOccurs="0" maxOccurs="1" type="xsd:string"/>
+        <xsd:element name="Count"         type="xsd:positiveInteger"/>
+        <xsd:element name="Enumeration"   minOccurs="0" maxOccurs="1" type="xsd:string"/>
     </xsd:choice>
  </xsd:complexType>
 
@@ -35,16 +35,17 @@
       <xsd:element   name="Property"      type="xsd:string"/>
       <xsd:element   name="Action"        type="xsd:string"/>
       <xsd:element   name="Value"         type="xsd:string"/>
+      <xsd:element   name="Description"   minOccurs="0" maxOccurs="1"    type="xsd:string"/>
       <xsd:element   name="Explanation"   minOccurs="0" maxOccurs="1"  type="xsd:anyURI"/>
-      <xsd:element   name="item" minOccurs="0" maxOccurs="unbounded" type="commandItemType"/>
+      <xsd:element   name="item"          minOccurs="0" maxOccurs="unbounded" type="commandItemType"/>
    </xsd:choice>
  </xsd:complexType>
 
 
  <xsd:complexType name="commandSetType">
  <xsd:sequence>
-    <xsd:element name="Enumeration" minOccurs="0" maxOccurs="unbounded" type="xsd:string"/>
-    <xsd:element name="SALCommand" minOccurs="1" maxOccurs="unbounded" type="commandType"/>
+    <xsd:element name="Enumeration"  minOccurs="0" maxOccurs="unbounded" type="xsd:string"/>
+    <xsd:element name="SALCommand"   minOccurs="1" maxOccurs="unbounded" type="commandType"/>
  </xsd:sequence>
  </xsd:complexType>
 
