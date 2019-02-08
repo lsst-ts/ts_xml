@@ -1,578 +1,577 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-stylesheet type="text/xsl" href="http://lsst-sal.tuc.noao.edu/schema/SALEventSet.xsl"?>
-<SALEventSet xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:noNamespaceSchemaLocation="http://lsst-sal.tuc.noao.edu/schema/SALEventSet.xsd">
-<Enumeration>AtMountState_TrackingDisabled,AtMountState_TrackingEnabled,AtMountState_Stopping</Enumeration>
-<Enumeration>M3ExitPort_Nasmyth1,M3ExitPort_Nasmyth2,M3ExitPort_Port3</Enumeration>
-<Enumeration>M3State_Nasmyth1,M3State_Nasmyth2,M3State_Port3,M3State_InMotion,M3State_UnknownPosition</Enumeration>
-<Enumeration>AzimuthDirection_ClockWise,AzimuthDirection_CounterClockWise</Enumeration>
-<Enumeration>DetailedState_DisabledState,DetailedState_EnabledState,DetailedState_FaultState,DetailedState_OfflineState,DetailedState_StandbyState,DetailedState_RemoteControlState,DetailedState_HandPaddleControlState</Enumeration>
-<!-- Standard events -->
-<SALEvent>
-    <Subsystem>ATMCS</Subsystem>
-    <Version>3.8.41</Version>
-    <Author/>
-    <EFDB_Topic>ATMCS_logevent_detailedState</EFDB_Topic>
-    <Alias>detailedState</Alias>
-    <Explanation>http://sal.lsst.org</Explanation>
-    <item>
-        <EFDB_Name>detailedState</EFDB_Name>
-        <Description/>
-        <!-- Enumeration: DetailedState -->
-        <IDL_Type>long</IDL_Type>
-        <Units/>
-        <Count>1</Count>
-    </item>
-</SALEvent>
-<SALEvent>
-    <Subsystem>ATMCS</Subsystem>
-    <Version>3.8.41</Version>
-    <Author/>
-    <EFDB_Topic>ATMCS_logevent_heartbeat</EFDB_Topic>
-    <Alias>heartbeat</Alias>
-    <Explanation>http://sal.lsst.org</Explanation>
-    <item>
-        <EFDB_Name>heartbeat</EFDB_Name>
-        <Description/>
-        <IDL_Type>boolean</IDL_Type>
-        <Units/>
-        <Count>1</Count>
-    </item>
-</SALEvent>
-<!-- High-level events -->
-<SALEvent>
-    <Subsystem>ATMCS</Subsystem>
-    <Version>3.8.41</Version>
-    <Author/>
-    <EFDB_Topic>ATMCS_logevent_atMountState</EFDB_Topic>
-    <Alias>atMountState</Alias>
-    <Description>State of tracking.</Description>
-    <Explanation>http://sal.lsst.org</Explanation>
-    <item>
-        <EFDB_Name>state</EFDB_Name>
-        <Description/>
-        <!-- Enumeration: AtMountState -->
-        <IDL_Type>long</IDL_Type>
-        <Units/>
-        <Count>1</Count>
-    </item>
-</SALEvent>
-<SALEvent>
-    <Subsystem>ATMCS</Subsystem>
-    <Version>3.8.41</Version>
-    <Author/>
-    <EFDB_Topic>ATMCS_logevent_m3State</EFDB_Topic>
-    <Alias>m3State</Alias>
-    <Description>State of M3 rotator.</Description>
-    <Explanation>http://sal.lsst.org</Explanation>
-    <item>
-        <EFDB_Name>state</EFDB_Name>
-        <Description/>
-        <!-- Enumeration: M3State -->
-        <IDL_Type>long</IDL_Type>
-        <Units/>
-        <Count>1</Count>
-    </item>
-</SALEvent>
-<SALEvent>
-    <Subsystem>ATMCS</Subsystem>
-    <Version>3.8.41</Version>
-    <Author/>
-    <EFDB_Topic>ATMCS_logevent_m3PortSelected</EFDB_Topic>
-    <Alias>m3PortSelected</Alias>
-    <Description>The port commanded by setInstrumentPort.</Description>
-    <Explanation>http://sal.lsst.org</Explanation>
-    <item>
-        <EFDB_Name>selected</EFDB_Name>
-        <Description/>
-        <!-- Enumeration: M3ExitPort -->
-        <IDL_Type>long</IDL_Type>
-        <Units/>
-        <Count>1</Count>
-    </item>
-</SALEvent>
-<!-- In position -->
-<SALEvent>
-    <Subsystem>ATMCS</Subsystem>
-    <Version>3.8.41</Version>
-    <Author/>
-    <EFDB_Topic>ATMCS_logevent_elevationInPosition</EFDB_Topic>
-    <Alias>elevationInPosition</Alias>
-    <Description>Is the elevation axis tracking? In other words, is tracking enabled and has this axis finished slewing?</Description>
-    <Explanation>http://sal.lsst.org</Explanation>
-    <item>
-        <EFDB_Name>inPosition</EFDB_Name>
-        <Description/>
-        <IDL_Type>boolean</IDL_Type>
-        <Units/>
-        <Count>1</Count>
-    </item>
-</SALEvent>
-<SALEvent>
-    <Subsystem>ATMCS</Subsystem>
-    <Version>3.8.41</Version>
-    <Author/>
-    <EFDB_Topic>ATMCS_logevent_azimuthInPosition</EFDB_Topic>
-    <Alias>azimuthInPosition</Alias>
-    <Description>Is the azimuth axis tracking? In other words, is tracking enabled and has this axis finished slewing?</Description>
-    <Explanation>http://sal.lsst.org</Explanation>
-    <item>
-        <EFDB_Name>inPosition</EFDB_Name>
-        <Description/>
-        <IDL_Type>boolean</IDL_Type>
-        <Units/>
-        <Count>1</Count>
-    </item>
-</SALEvent>
-<SALEvent>
-    <Subsystem>ATMCS</Subsystem>
-    <Version>3.8.41</Version>
-    <Author/>
-    <EFDB_Topic>ATMCS_logevent_nasmyth1RotatorInPosition</EFDB_Topic>
-    <Alias>nasmyth1RotatorInPosition</Alias>
-    <Description>Is the Nasmyth 1 rotator tracking? In other words, is tracking enabled and has this axis finished slewing?</Description>
-    <Explanation>http://sal.lsst.org</Explanation>
-    <item>
-        <EFDB_Name>inPosition</EFDB_Name>
-        <Description/>
-        <IDL_Type>boolean</IDL_Type>
-        <Units/>
-        <Count>1</Count>
-    </item>
-</SALEvent>
-<SALEvent>
-    <Subsystem>ATMCS</Subsystem>
-    <Version>3.8.41</Version>
-    <Author/>
-    <EFDB_Topic>ATMCS_logevent_nasmyth2RotatorInPosition</EFDB_Topic>
-    <Alias>nasmyth2RotatorInPosition</Alias>
-    <Description>Is the Nasmyth 2 rotator tracking? In other words, is tracking enabled and has this axis finished slewing?</Description>
-    <Explanation>http://sal.lsst.org</Explanation>
-    <item>
-        <EFDB_Name>inPosition</EFDB_Name>
-        <Description/>
-        <IDL_Type>boolean</IDL_Type>
-        <Units/>
-        <Count>1</Count>
-    </item>
-</SALEvent>
-<SALEvent>
-    <Subsystem>ATMCS</Subsystem>
-    <Version>3.8.41</Version>
-    <Author/>
-    <EFDB_Topic>ATMCS_logevent_m3InPosition</EFDB_Topic>
-    <Alias>m3InPosition</Alias>
-    <Description>Is the M3 rotator where setInstrumentPort commanded it to go? When the CSC starts up this is false.</Description>
-    <Explanation>http://sal.lsst.org</Explanation>
-    <item>
-        <EFDB_Name>inPosition</EFDB_Name>
-        <Description/>
-        <IDL_Type>boolean</IDL_Type>
-        <Units/>
-        <Count>1</Count>
-    </item>
-</SALEvent>
-<SALEvent>
-    <Subsystem>ATMCS</Subsystem>
-    <Version>3.8.41</Version>
-    <Author/>
-    <EFDB_Topic>ATMCS_logevent_allAxesInPosition</EFDB_Topic>
-    <Alias>allAxesInPosition</Alias>
-    <Description>Are all axes in position?</Description>
-    <Explanation>http://sal.lsst.org</Explanation>
-    <item>
-        <EFDB_Name>inPosition</EFDB_Name>
-        <Description/>
-        <IDL_Type>boolean</IDL_Type>
-        <Units/>
-        <Count>1</Count>
-    </item>
-</SALEvent>
-<!-- Non-limit switches -->
-<SALEvent>
-    <Subsystem>ATMCS</Subsystem>
-    <Version>3.8.41</Version>
-    <Author/>
-    <EFDB_Topic>ATMCS_logevent_azimuthToppleBlockCCW</EFDB_Topic>
-    <Alias>azimuthToppleBlockCCW</Alias>
-    <Description>Is the azimuth topple block counter-clockwise switch depressed?</Description>
-    <Explanation>http://sal.lsst.org</Explanation>
-    <item>
-        <EFDB_Name>active</EFDB_Name>
-        <Description/>
-        <IDL_Type>boolean</IDL_Type>
-        <Units/>
-        <Count>1</Count>
-    </item>
-</SALEvent>
-<SALEvent>
-    <Subsystem>ATMCS</Subsystem>
-    <Version>3.8.41</Version>
-    <Author/>
-    <EFDB_Topic>ATMCS_logevent_azimuthToppleBlockCW</EFDB_Topic>
-    <Alias>azimuthToppleBlockCW</Alias>
-    <Description>Is the azimuth topple block clockwise switch depressed?</Description>
-    <Explanation>http://sal.lsst.org</Explanation>
-    <item>
-        <EFDB_Name>active</EFDB_Name>
-        <Description/>
-        <IDL_Type>boolean</IDL_Type>
-        <Units/>
-        <Count>1</Count>
-    </item>
-</SALEvent>
-<SALEvent>
-    <Subsystem>ATMCS</Subsystem>
-    <Version>3.8.41</Version>
-    <Author/>
-    <EFDB_Topic>ATMCS_logevent_m3RotatorDetentSwitches</EFDB_Topic>
-    <Alias>m3RotatorDetentSwitches</Alias>
-    <Description>M3 rotator detent switches.</Description>
-    <Explanation>http://sal.lsst.org</Explanation>
-    <item>
-        <EFDB_Name>nasmyth1Active</EFDB_Name>
-        <Description/>
-        <IDL_Type>boolean</IDL_Type>
-        <Units/>
-        <Count>1</Count>
-    </item>
-    <item>
-        <EFDB_Name>port3Active</EFDB_Name>
-        <Description/>
-        <IDL_Type>boolean</IDL_Type>
-        <Units/>
-        <Count>1</Count>
-    </item>
-    <item>
-        <EFDB_Name>nasmyth2Active</EFDB_Name>
-        <Description/>
-        <IDL_Type>boolean</IDL_Type>
-        <Units/>
-        <Count>1</Count>
-    </item>
-</SALEvent>
-<!-- Limit switches -->
-<SALEvent>
-    <Subsystem>ATMCS</Subsystem>
-    <Version>3.8.41</Version>
-    <Author/>
-    <EFDB_Topic>ATMCS_logevent_elevationLimitSwitchLower</EFDB_Topic>
-    <Alias>elevationLimitSwitchLower</Alias>
-    <Explanation/>
-    <item>
-        <EFDB_Name>active</EFDB_Name>
-        <Description/>
-        <IDL_Type>boolean</IDL_Type>
-        <Units/>
-        <Count>1</Count>
-    </item>
-</SALEvent>
-<SALEvent>
-    <Subsystem>ATMCS</Subsystem>
-    <Version>3.8.41</Version>
-    <Author/>
-    <EFDB_Topic>ATMCS_logevent_elevationLimitSwitchUpper</EFDB_Topic>
-    <Alias>elevationLimitSwitchUpper</Alias>
-    <Explanation/>
-    <item>
-        <EFDB_Name>active</EFDB_Name>
-        <Description/>
-        <IDL_Type>boolean</IDL_Type>
-        <Units/>
-        <Count>1</Count>
-    </item>
-</SALEvent>
-<SALEvent>
-    <Subsystem>ATMCS</Subsystem>
-    <Version>3.8.41</Version>
-    <Author/>
-    <EFDB_Topic>ATMCS_logevent_azimuthLimitSwitchCCW</EFDB_Topic>
-    <Alias>azimuthLimitSwitchCCW</Alias>
-    <Explanation/>
-    <item>
-        <EFDB_Name>active</EFDB_Name>
-        <Description/>
-        <IDL_Type>boolean</IDL_Type>
-        <Units/>
-        <Count>1</Count>
-    </item>
-</SALEvent>
-<SALEvent>
-    <Subsystem>ATMCS</Subsystem>
-    <Version>3.8.41</Version>
-    <Author/>
-    <EFDB_Topic>ATMCS_logevent_azimuthLimitSwitchCW</EFDB_Topic>
-    <Alias>azimuthLimitSwitchCW</Alias>
-    <Explanation/>
-    <item>
-        <EFDB_Name>active</EFDB_Name>
-        <Description/>
-        <IDL_Type>boolean</IDL_Type>
-        <Units/>
-        <Count>1</Count>
-    </item>
-</SALEvent>
-<SALEvent>
-    <Subsystem>ATMCS</Subsystem>
-    <Version>3.8.41</Version>
-    <Author/>
-    <EFDB_Topic>ATMCS_logevent_nasmyth1LimitSwitchCCW</EFDB_Topic>
-    <Alias>nasmyth1LimitSwitchCCW</Alias>
-    <Explanation/>
-    <item>
-        <EFDB_Name>active</EFDB_Name>
-        <Description/>
-        <IDL_Type>boolean</IDL_Type>
-        <Units/>
-        <Count>1</Count>
-    </item>
-</SALEvent>
-<SALEvent>
-    <Subsystem>ATMCS</Subsystem>
-    <Version>3.8.41</Version>
-    <Author/>
-    <EFDB_Topic>ATMCS_logevent_nasmyth1LimitSwitchCW</EFDB_Topic>
-    <Alias>nasmyth1LimitSwitchCW</Alias>
-    <Explanation/>
-    <item>
-        <EFDB_Name>active</EFDB_Name>
-        <Description/>
-        <IDL_Type>boolean</IDL_Type>
-        <Units/>
-        <Count>1</Count>
-    </item>
-</SALEvent>
-<SALEvent>
-    <Subsystem>ATMCS</Subsystem>
-    <Version>3.8.41</Version>
-    <Author/>
-    <EFDB_Topic>ATMCS_logevent_nasmyth2LimitSwitchCCW</EFDB_Topic>
-    <Alias>nasmyth2LimitSwitchCCW</Alias>
-    <Explanation/>
-    <item>
-        <EFDB_Name>active</EFDB_Name>
-        <Description/>
-        <IDL_Type>boolean</IDL_Type>
-        <Units/>
-        <Count>1</Count>
-    </item>
-</SALEvent>
-<SALEvent>
-    <Subsystem>ATMCS</Subsystem>
-    <Version>3.8.41</Version>
-    <Author/>
-    <EFDB_Topic>ATMCS_logevent_nasmyth2LimitSwitchCW</EFDB_Topic>
-    <Alias>nasmyth2LimitSwitchCW</Alias>
-    <Explanation/>
-    <item>
-        <EFDB_Name>active</EFDB_Name>
-        <Description/>
-        <IDL_Type>boolean</IDL_Type>
-        <Units/>
-        <Count>1</Count>
-    </item>
-</SALEvent>
-<SALEvent>
-    <Subsystem>ATMCS</Subsystem>
-    <Version>3.8.41</Version>
-    <Author/>
-    <EFDB_Topic>ATMCS_logevent_m3RotatorLimitSwitchCCW</EFDB_Topic>
-    <Alias>m3RotatorLimitSwitchCCW</Alias>
-    <Explanation/>
-    <item>
-        <EFDB_Name>active</EFDB_Name>
-        <Description/>
-        <IDL_Type>boolean</IDL_Type>
-        <Units/>
-        <Count>1</Count>
-    </item>
-</SALEvent>
-<SALEvent>
-    <Subsystem>ATMCS</Subsystem>
-    <Version>3.8.41</Version>
-    <Author/>
-    <EFDB_Topic>ATMCS_logevent_m3RotatorLimitSwitchCW</EFDB_Topic>
-    <Alias>m3RotatorLimitSwitchCW</Alias>
-    <Explanation/>
-    <item>
-        <EFDB_Name>active</EFDB_Name>
-        <Description/>
-        <IDL_Type>boolean</IDL_Type>
-        <Units/>
-        <Count>1</Count>
-    </item>
-</SALEvent>
-<!-- Drive status -->
-<SALEvent>
-    <Subsystem>ATMCS</Subsystem>
-    <Version>3.8.41</Version>
-    <Author/>
-    <EFDB_Topic>ATMCS_logevent_elevationDriveStatus</EFDB_Topic>
-    <Alias>elevationDriveStatus</Alias>
-    <Description>Is the elevation drive enabled?</Description>
-    <Explanation>http://sal.lsst.org</Explanation>
-    <item>
-        <EFDB_Name>enable</EFDB_Name>
-        <Description/>
-        <IDL_Type>boolean</IDL_Type>
-        <Units/>
-        <Count>1</Count>
-    </item>
-</SALEvent>
-<SALEvent>
-    <Subsystem>ATMCS</Subsystem>
-    <Version>3.8.41</Version>
-    <Author/>
-    <EFDB_Topic>ATMCS_logevent_azimuthDrive1Status</EFDB_Topic>
-    <Alias>azimuthDrive1Status</Alias>
-    <Description>Is altitude drive 1 enabled?</Description>
-    <Explanation>http://sal.lsst.org</Explanation>
-    <item>
-        <EFDB_Name>enable</EFDB_Name>
-        <Description/>
-        <IDL_Type>boolean</IDL_Type>
-        <Units/>
-        <Count>1</Count>
-    </item>
-</SALEvent>
-<SALEvent>
-    <Subsystem>ATMCS</Subsystem>
-    <Version>3.8.41</Version>
-    <Author/>
-    <EFDB_Topic>ATMCS_logevent_azimuthDrive2Status</EFDB_Topic>
-    <Alias>azimuthDrive2Status</Alias>
-    <Description>Is altitude drive 2 enabled?</Description>
-    <Explanation>http://sal.lsst.org</Explanation>
-    <item>
-        <EFDB_Name>enable</EFDB_Name>
-        <Description/>
-        <IDL_Type>boolean</IDL_Type>
-        <Units/>
-        <Count>1</Count>
-    </item>
-</SALEvent>
-<SALEvent>
-    <Subsystem>ATMCS</Subsystem>
-    <Version>3.8.41</Version>
-    <Author/>
-    <EFDB_Topic>ATMCS_logevent_nasmyth1DriveStatus</EFDB_Topic>
-    <Alias>nasmyth1DriveStatus</Alias>
-    <Description>Is the Nasmyth 1 rotator drive enabled?</Description>
-    <Explanation>http://sal.lsst.org</Explanation>
-    <item>
-        <EFDB_Name>enable</EFDB_Name>
-        <Description/>
-        <IDL_Type>boolean</IDL_Type>
-        <Units/>
-        <Count>1</Count>
-    </item>
-</SALEvent>
-<SALEvent>
-    <Subsystem>ATMCS</Subsystem>
-    <Version>3.8.41</Version>
-    <Author/>
-    <EFDB_Topic>ATMCS_logevent_nasmyth2DriveStatus</EFDB_Topic>
-    <Alias>nasmyth2DriveStatus</Alias>
-    <Description>Is the Nasmyth 2 rotator drive enabled?</Description>
-    <Explanation>http://sal.lsst.org</Explanation>
-    <item>
-        <EFDB_Name>enable</EFDB_Name>
-        <Description/>
-        <IDL_Type>boolean</IDL_Type>
-        <Units/>
-        <Count>1</Count>
-    </item>
-</SALEvent>
-<SALEvent>
-    <Subsystem>ATMCS</Subsystem>
-    <Version>3.8.41</Version>
-    <Author/>
-    <EFDB_Topic>ATMCS_logevent_m3DriveStatus</EFDB_Topic>
-    <Alias>m3DriveStatus</Alias>
-    <Description>Is the M3 rotator drive enabled?</Description>
-    <Explanation>http://sal.lsst.org</Explanation>
-    <item>
-        <EFDB_Name>enable</EFDB_Name>
-        <Description/>
-        <IDL_Type>boolean</IDL_Type>
-        <Units/>
-        <Count>1</Count>
-    </item>
-</SALEvent>
-<!-- Brakes -->
-<SALEvent>
-    <Subsystem>ATMCS</Subsystem>
-    <Version>3.8.41</Version>
-    <Author/>
-    <EFDB_Topic>ATMCS_logevent_elevationBrake</EFDB_Topic>
-    <Alias>elevationBrake</Alias>
-    <Explanation/>
-    <item>
-        <EFDB_Name>engaged</EFDB_Name>
-        <Description/>
-        <IDL_Type>boolean</IDL_Type>
-        <Units/>
-        <Count>1</Count>
-    </item>
-</SALEvent>
-<SALEvent>
-    <Subsystem>ATMCS</Subsystem>
-    <Version>3.8.41</Version>
-    <Author/>
-    <EFDB_Topic>ATMCS_logevent_azimuthBrake1</EFDB_Topic>
-    <Alias>azimuthBrake1</Alias>
-    <Explanation/>
-    <item>
-        <EFDB_Name>engaged</EFDB_Name>
-        <Description/>
-        <IDL_Type>boolean</IDL_Type>
-        <Units/>
-        <Count>1</Count>
-    </item>
-</SALEvent>
-<SALEvent>
-    <Subsystem>ATMCS</Subsystem>
-    <Version>3.8.41</Version>
-    <Author/>
-    <EFDB_Topic>ATMCS_logevent_azimuthBrake2</EFDB_Topic>
-    <Alias>azimuthBrake2</Alias>
-    <Explanation/>
-    <item>
-        <EFDB_Name>engaged</EFDB_Name>
-        <Description/>
-        <IDL_Type>boolean</IDL_Type>
-        <Units/>
-        <Count>1</Count>
-    </item>
-</SALEvent>
-<SALEvent>
-    <Subsystem>ATMCS</Subsystem>
-    <Version>3.8.41</Version>
-    <Author/>
-    <EFDB_Topic>ATMCS_logevent_nasmyth1Brake</EFDB_Topic>
-    <Alias>nasmyth1Brake</Alias>
-    <Explanation/>
-    <item>
-        <EFDB_Name>engaged</EFDB_Name>
-        <Description/>
-        <IDL_Type>boolean</IDL_Type>
-        <Units/>
-        <Count>1</Count>
-    </item>
-</SALEvent>
-<SALEvent>
-    <Subsystem>ATMCS</Subsystem>
-    <Version>3.8.41</Version>
-    <Author/>
-    <EFDB_Topic>ATMCS_logevent_nasmyth2Brake</EFDB_Topic>
-    <Alias>nasmyth2Brake</Alias>
-    <Explanation/>
-    <item>
-        <EFDB_Name>engaged</EFDB_Name>
-        <Description/>
-        <IDL_Type>boolean</IDL_Type>
-        <Units/>
-        <Count>1</Count>
-    </item>
-</SALEvent>
+<SALEventSet xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://lsst-sal.tuc.noao.edu/schema/SALEventSet.xsd">
+    <Enumeration>AtMountState_TrackingDisabled,AtMountState_TrackingEnabled,AtMountState_Stopping</Enumeration>
+    <Enumeration>M3ExitPort_Nasmyth1,M3ExitPort_Nasmyth2,M3ExitPort_Port3</Enumeration>
+    <Enumeration>M3State_Nasmyth1,M3State_Nasmyth2,M3State_Port3,M3State_InMotion,M3State_UnknownPosition</Enumeration>
+    <Enumeration>AzimuthDirection_ClockWise,AzimuthDirection_CounterClockWise</Enumeration>
+    <Enumeration>DetailedState_DisabledState,DetailedState_EnabledState,DetailedState_FaultState,DetailedState_OfflineState,DetailedState_StandbyState,DetailedState_RemoteControlState,DetailedState_HandPaddleControlState</Enumeration>
+    <!-- Standard events -->
+    <SALEvent>
+        <Subsystem>ATMCS</Subsystem>
+        <Version>3.8.41</Version>
+        <Author/>
+        <EFDB_Topic>ATMCS_logevent_detailedState</EFDB_Topic>
+        <Alias>detailedState</Alias>
+        <Explanation>http://sal.lsst.org</Explanation>
+        <item>
+            <EFDB_Name>detailedState</EFDB_Name>
+            <Description/>
+            <!-- Enumeration: DetailedState -->
+            <IDL_Type>long</IDL_Type>
+            <Units/>
+            <Count>1</Count>
+        </item>
+    </SALEvent>
+    <SALEvent>
+        <Subsystem>ATMCS</Subsystem>
+        <Version>3.8.41</Version>
+        <Author/>
+        <EFDB_Topic>ATMCS_logevent_heartbeat</EFDB_Topic>
+        <Alias>heartbeat</Alias>
+        <Explanation>http://sal.lsst.org</Explanation>
+        <item>
+            <EFDB_Name>heartbeat</EFDB_Name>
+            <Description/>
+            <IDL_Type>boolean</IDL_Type>
+            <Units/>
+            <Count>1</Count>
+        </item>
+    </SALEvent>
+    <!-- High-level events -->
+    <SALEvent>
+        <Subsystem>ATMCS</Subsystem>
+        <Version>3.8.41</Version>
+        <Author/>
+        <EFDB_Topic>ATMCS_logevent_atMountState</EFDB_Topic>
+        <Alias>atMountState</Alias>
+        <Description>State of tracking.</Description>
+        <Explanation>http://sal.lsst.org</Explanation>
+        <item>
+            <EFDB_Name>state</EFDB_Name>
+            <Description/>
+            <!-- Enumeration: AtMountState -->
+            <IDL_Type>long</IDL_Type>
+            <Units/>
+            <Count>1</Count>
+        </item>
+    </SALEvent>
+    <SALEvent>
+        <Subsystem>ATMCS</Subsystem>
+        <Version>3.8.41</Version>
+        <Author/>
+        <EFDB_Topic>ATMCS_logevent_m3State</EFDB_Topic>
+        <Alias>m3State</Alias>
+        <Description>State of M3 rotator.</Description>
+        <Explanation>http://sal.lsst.org</Explanation>
+        <item>
+            <EFDB_Name>state</EFDB_Name>
+            <Description/>
+            <!-- Enumeration: M3State -->
+            <IDL_Type>long</IDL_Type>
+            <Units/>
+            <Count>1</Count>
+        </item>
+    </SALEvent>
+    <SALEvent>
+        <Subsystem>ATMCS</Subsystem>
+        <Version>3.8.41</Version>
+        <Author/>
+        <EFDB_Topic>ATMCS_logevent_m3PortSelected</EFDB_Topic>
+        <Alias>m3PortSelected</Alias>
+        <Description>The port commanded by setInstrumentPort.</Description>
+        <Explanation>http://sal.lsst.org</Explanation>
+        <item>
+            <EFDB_Name>selected</EFDB_Name>
+            <Description/>
+            <!-- Enumeration: M3ExitPort -->
+            <IDL_Type>long</IDL_Type>
+            <Units/>
+            <Count>1</Count>
+        </item>
+    </SALEvent>
+    <!-- In position -->
+    <SALEvent>
+        <Subsystem>ATMCS</Subsystem>
+        <Version>3.8.41</Version>
+        <Author/>
+        <EFDB_Topic>ATMCS_logevent_elevationInPosition</EFDB_Topic>
+        <Alias>elevationInPosition</Alias>
+        <Description>Is the elevation axis tracking? In other words, is tracking enabled and has this axis finished slewing?</Description>
+        <Explanation>http://sal.lsst.org</Explanation>
+        <item>
+            <EFDB_Name>inPosition</EFDB_Name>
+            <Description/>
+            <IDL_Type>boolean</IDL_Type>
+            <Units/>
+            <Count>1</Count>
+        </item>
+    </SALEvent>
+    <SALEvent>
+        <Subsystem>ATMCS</Subsystem>
+        <Version>3.8.41</Version>
+        <Author/>
+        <EFDB_Topic>ATMCS_logevent_azimuthInPosition</EFDB_Topic>
+        <Alias>azimuthInPosition</Alias>
+        <Description>Is the azimuth axis tracking? In other words, is tracking enabled and has this axis finished slewing?</Description>
+        <Explanation>http://sal.lsst.org</Explanation>
+        <item>
+            <EFDB_Name>inPosition</EFDB_Name>
+            <Description/>
+            <IDL_Type>boolean</IDL_Type>
+            <Units/>
+            <Count>1</Count>
+        </item>
+    </SALEvent>
+    <SALEvent>
+        <Subsystem>ATMCS</Subsystem>
+        <Version>3.8.41</Version>
+        <Author/>
+        <EFDB_Topic>ATMCS_logevent_nasmyth1RotatorInPosition</EFDB_Topic>
+        <Alias>nasmyth1RotatorInPosition</Alias>
+        <Description>Is the Nasmyth 1 rotator tracking? In other words, is tracking enabled and has this axis finished slewing?</Description>
+        <Explanation>http://sal.lsst.org</Explanation>
+        <item>
+            <EFDB_Name>inPosition</EFDB_Name>
+            <Description/>
+            <IDL_Type>boolean</IDL_Type>
+            <Units/>
+            <Count>1</Count>
+        </item>
+    </SALEvent>
+    <SALEvent>
+        <Subsystem>ATMCS</Subsystem>
+        <Version>3.8.41</Version>
+        <Author/>
+        <EFDB_Topic>ATMCS_logevent_nasmyth2RotatorInPosition</EFDB_Topic>
+        <Alias>nasmyth2RotatorInPosition</Alias>
+        <Description>Is the Nasmyth 2 rotator tracking? In other words, is tracking enabled and has this axis finished slewing?</Description>
+        <Explanation>http://sal.lsst.org</Explanation>
+        <item>
+            <EFDB_Name>inPosition</EFDB_Name>
+            <Description/>
+            <IDL_Type>boolean</IDL_Type>
+            <Units/>
+            <Count>1</Count>
+        </item>
+    </SALEvent>
+    <SALEvent>
+        <Subsystem>ATMCS</Subsystem>
+        <Version>3.8.41</Version>
+        <Author/>
+        <EFDB_Topic>ATMCS_logevent_m3InPosition</EFDB_Topic>
+        <Alias>m3InPosition</Alias>
+        <Description>Is the M3 rotator where setInstrumentPort commanded it to go? When the CSC starts up this is false.</Description>
+        <Explanation>http://sal.lsst.org</Explanation>
+        <item>
+            <EFDB_Name>inPosition</EFDB_Name>
+            <Description/>
+            <IDL_Type>boolean</IDL_Type>
+            <Units/>
+            <Count>1</Count>
+        </item>
+    </SALEvent>
+    <SALEvent>
+        <Subsystem>ATMCS</Subsystem>
+        <Version>3.8.41</Version>
+        <Author/>
+        <EFDB_Topic>ATMCS_logevent_allAxesInPosition</EFDB_Topic>
+        <Alias>allAxesInPosition</Alias>
+        <Description>Are all axes in position?</Description>
+        <Explanation>http://sal.lsst.org</Explanation>
+        <item>
+            <EFDB_Name>inPosition</EFDB_Name>
+            <Description/>
+            <IDL_Type>boolean</IDL_Type>
+            <Units/>
+            <Count>1</Count>
+        </item>
+    </SALEvent>
+    <!-- Non-limit switches -->
+    <SALEvent>
+        <Subsystem>ATMCS</Subsystem>
+        <Version>3.8.41</Version>
+        <Author/>
+        <EFDB_Topic>ATMCS_logevent_azimuthToppleBlockCCW</EFDB_Topic>
+        <Alias>azimuthToppleBlockCCW</Alias>
+        <Description>Is the azimuth topple block counter-clockwise switch depressed?</Description>
+        <Explanation>http://sal.lsst.org</Explanation>
+        <item>
+            <EFDB_Name>active</EFDB_Name>
+            <Description/>
+            <IDL_Type>boolean</IDL_Type>
+            <Units/>
+            <Count>1</Count>
+        </item>
+    </SALEvent>
+    <SALEvent>
+        <Subsystem>ATMCS</Subsystem>
+        <Version>3.8.41</Version>
+        <Author/>
+        <EFDB_Topic>ATMCS_logevent_azimuthToppleBlockCW</EFDB_Topic>
+        <Alias>azimuthToppleBlockCW</Alias>
+        <Description>Is the azimuth topple block clockwise switch depressed?</Description>
+        <Explanation>http://sal.lsst.org</Explanation>
+        <item>
+            <EFDB_Name>active</EFDB_Name>
+            <Description/>
+            <IDL_Type>boolean</IDL_Type>
+            <Units/>
+            <Count>1</Count>
+        </item>
+    </SALEvent>
+    <SALEvent>
+        <Subsystem>ATMCS</Subsystem>
+        <Version>3.8.41</Version>
+        <Author/>
+        <EFDB_Topic>ATMCS_logevent_m3RotatorDetentSwitches</EFDB_Topic>
+        <Alias>m3RotatorDetentSwitches</Alias>
+        <Description>M3 rotator detent switches.</Description>
+        <Explanation>http://sal.lsst.org</Explanation>
+        <item>
+            <EFDB_Name>nasmyth1Active</EFDB_Name>
+            <Description/>
+            <IDL_Type>boolean</IDL_Type>
+            <Units/>
+            <Count>1</Count>
+        </item>
+        <item>
+            <EFDB_Name>port3Active</EFDB_Name>
+            <Description/>
+            <IDL_Type>boolean</IDL_Type>
+            <Units/>
+            <Count>1</Count>
+        </item>
+        <item>
+            <EFDB_Name>nasmyth2Active</EFDB_Name>
+            <Description/>
+            <IDL_Type>boolean</IDL_Type>
+            <Units/>
+            <Count>1</Count>
+        </item>
+    </SALEvent>
+    <!-- Limit switches -->
+    <SALEvent>
+        <Subsystem>ATMCS</Subsystem>
+        <Version>3.8.41</Version>
+        <Author/>
+        <EFDB_Topic>ATMCS_logevent_elevationLimitSwitchLower</EFDB_Topic>
+        <Alias>elevationLimitSwitchLower</Alias>
+        <Explanation/>
+        <item>
+            <EFDB_Name>active</EFDB_Name>
+            <Description/>
+            <IDL_Type>boolean</IDL_Type>
+            <Units/>
+            <Count>1</Count>
+        </item>
+    </SALEvent>
+    <SALEvent>
+        <Subsystem>ATMCS</Subsystem>
+        <Version>3.8.41</Version>
+        <Author/>
+        <EFDB_Topic>ATMCS_logevent_elevationLimitSwitchUpper</EFDB_Topic>
+        <Alias>elevationLimitSwitchUpper</Alias>
+        <Explanation/>
+        <item>
+            <EFDB_Name>active</EFDB_Name>
+            <Description/>
+            <IDL_Type>boolean</IDL_Type>
+            <Units/>
+            <Count>1</Count>
+        </item>
+    </SALEvent>
+    <SALEvent>
+        <Subsystem>ATMCS</Subsystem>
+        <Version>3.8.41</Version>
+        <Author/>
+        <EFDB_Topic>ATMCS_logevent_azimuthLimitSwitchCCW</EFDB_Topic>
+        <Alias>azimuthLimitSwitchCCW</Alias>
+        <Explanation/>
+        <item>
+            <EFDB_Name>active</EFDB_Name>
+            <Description/>
+            <IDL_Type>boolean</IDL_Type>
+            <Units/>
+            <Count>1</Count>
+        </item>
+    </SALEvent>
+    <SALEvent>
+        <Subsystem>ATMCS</Subsystem>
+        <Version>3.8.41</Version>
+        <Author/>
+        <EFDB_Topic>ATMCS_logevent_azimuthLimitSwitchCW</EFDB_Topic>
+        <Alias>azimuthLimitSwitchCW</Alias>
+        <Explanation/>
+        <item>
+            <EFDB_Name>active</EFDB_Name>
+            <Description/>
+            <IDL_Type>boolean</IDL_Type>
+            <Units/>
+            <Count>1</Count>
+        </item>
+    </SALEvent>
+    <SALEvent>
+        <Subsystem>ATMCS</Subsystem>
+        <Version>3.8.41</Version>
+        <Author/>
+        <EFDB_Topic>ATMCS_logevent_nasmyth1LimitSwitchCCW</EFDB_Topic>
+        <Alias>nasmyth1LimitSwitchCCW</Alias>
+        <Explanation/>
+        <item>
+            <EFDB_Name>active</EFDB_Name>
+            <Description/>
+            <IDL_Type>boolean</IDL_Type>
+            <Units/>
+            <Count>1</Count>
+        </item>
+    </SALEvent>
+    <SALEvent>
+        <Subsystem>ATMCS</Subsystem>
+        <Version>3.8.41</Version>
+        <Author/>
+        <EFDB_Topic>ATMCS_logevent_nasmyth1LimitSwitchCW</EFDB_Topic>
+        <Alias>nasmyth1LimitSwitchCW</Alias>
+        <Explanation/>
+        <item>
+            <EFDB_Name>active</EFDB_Name>
+            <Description/>
+            <IDL_Type>boolean</IDL_Type>
+            <Units/>
+            <Count>1</Count>
+        </item>
+    </SALEvent>
+    <SALEvent>
+        <Subsystem>ATMCS</Subsystem>
+        <Version>3.8.41</Version>
+        <Author/>
+        <EFDB_Topic>ATMCS_logevent_nasmyth2LimitSwitchCCW</EFDB_Topic>
+        <Alias>nasmyth2LimitSwitchCCW</Alias>
+        <Explanation/>
+        <item>
+            <EFDB_Name>active</EFDB_Name>
+            <Description/>
+            <IDL_Type>boolean</IDL_Type>
+            <Units/>
+            <Count>1</Count>
+        </item>
+    </SALEvent>
+    <SALEvent>
+        <Subsystem>ATMCS</Subsystem>
+        <Version>3.8.41</Version>
+        <Author/>
+        <EFDB_Topic>ATMCS_logevent_nasmyth2LimitSwitchCW</EFDB_Topic>
+        <Alias>nasmyth2LimitSwitchCW</Alias>
+        <Explanation/>
+        <item>
+            <EFDB_Name>active</EFDB_Name>
+            <Description/>
+            <IDL_Type>boolean</IDL_Type>
+            <Units/>
+            <Count>1</Count>
+        </item>
+    </SALEvent>
+    <SALEvent>
+        <Subsystem>ATMCS</Subsystem>
+        <Version>3.8.41</Version>
+        <Author/>
+        <EFDB_Topic>ATMCS_logevent_m3RotatorLimitSwitchCCW</EFDB_Topic>
+        <Alias>m3RotatorLimitSwitchCCW</Alias>
+        <Explanation/>
+        <item>
+            <EFDB_Name>active</EFDB_Name>
+            <Description/>
+            <IDL_Type>boolean</IDL_Type>
+            <Units/>
+            <Count>1</Count>
+        </item>
+    </SALEvent>
+    <SALEvent>
+        <Subsystem>ATMCS</Subsystem>
+        <Version>3.8.41</Version>
+        <Author/>
+        <EFDB_Topic>ATMCS_logevent_m3RotatorLimitSwitchCW</EFDB_Topic>
+        <Alias>m3RotatorLimitSwitchCW</Alias>
+        <Explanation/>
+        <item>
+            <EFDB_Name>active</EFDB_Name>
+            <Description/>
+            <IDL_Type>boolean</IDL_Type>
+            <Units/>
+            <Count>1</Count>
+        </item>
+    </SALEvent>
+    <!-- Drive status -->
+    <SALEvent>
+        <Subsystem>ATMCS</Subsystem>
+        <Version>3.8.41</Version>
+        <Author/>
+        <EFDB_Topic>ATMCS_logevent_elevationDriveStatus</EFDB_Topic>
+        <Alias>elevationDriveStatus</Alias>
+        <Description>Is the elevation drive enabled?</Description>
+        <Explanation>http://sal.lsst.org</Explanation>
+        <item>
+            <EFDB_Name>enable</EFDB_Name>
+            <Description/>
+            <IDL_Type>boolean</IDL_Type>
+            <Units/>
+            <Count>1</Count>
+        </item>
+    </SALEvent>
+    <SALEvent>
+        <Subsystem>ATMCS</Subsystem>
+        <Version>3.8.41</Version>
+        <Author/>
+        <EFDB_Topic>ATMCS_logevent_azimuthDrive1Status</EFDB_Topic>
+        <Alias>azimuthDrive1Status</Alias>
+        <Description>Is altitude drive 1 enabled?</Description>
+        <Explanation>http://sal.lsst.org</Explanation>
+        <item>
+            <EFDB_Name>enable</EFDB_Name>
+            <Description/>
+            <IDL_Type>boolean</IDL_Type>
+            <Units/>
+            <Count>1</Count>
+        </item>
+    </SALEvent>
+    <SALEvent>
+        <Subsystem>ATMCS</Subsystem>
+        <Version>3.8.41</Version>
+        <Author/>
+        <EFDB_Topic>ATMCS_logevent_azimuthDrive2Status</EFDB_Topic>
+        <Alias>azimuthDrive2Status</Alias>
+        <Description>Is altitude drive 2 enabled?</Description>
+        <Explanation>http://sal.lsst.org</Explanation>
+        <item>
+            <EFDB_Name>enable</EFDB_Name>
+            <Description/>
+            <IDL_Type>boolean</IDL_Type>
+            <Units/>
+            <Count>1</Count>
+        </item>
+    </SALEvent>
+    <SALEvent>
+        <Subsystem>ATMCS</Subsystem>
+        <Version>3.8.41</Version>
+        <Author/>
+        <EFDB_Topic>ATMCS_logevent_nasmyth1DriveStatus</EFDB_Topic>
+        <Alias>nasmyth1DriveStatus</Alias>
+        <Description>Is the Nasmyth 1 rotator drive enabled?</Description>
+        <Explanation>http://sal.lsst.org</Explanation>
+        <item>
+            <EFDB_Name>enable</EFDB_Name>
+            <Description/>
+            <IDL_Type>boolean</IDL_Type>
+            <Units/>
+            <Count>1</Count>
+        </item>
+    </SALEvent>
+    <SALEvent>
+        <Subsystem>ATMCS</Subsystem>
+        <Version>3.8.41</Version>
+        <Author/>
+        <EFDB_Topic>ATMCS_logevent_nasmyth2DriveStatus</EFDB_Topic>
+        <Alias>nasmyth2DriveStatus</Alias>
+        <Description>Is the Nasmyth 2 rotator drive enabled?</Description>
+        <Explanation>http://sal.lsst.org</Explanation>
+        <item>
+            <EFDB_Name>enable</EFDB_Name>
+            <Description/>
+            <IDL_Type>boolean</IDL_Type>
+            <Units/>
+            <Count>1</Count>
+        </item>
+    </SALEvent>
+    <SALEvent>
+        <Subsystem>ATMCS</Subsystem>
+        <Version>3.8.41</Version>
+        <Author/>
+        <EFDB_Topic>ATMCS_logevent_m3DriveStatus</EFDB_Topic>
+        <Alias>m3DriveStatus</Alias>
+        <Description>Is the M3 rotator drive enabled?</Description>
+        <Explanation>http://sal.lsst.org</Explanation>
+        <item>
+            <EFDB_Name>enable</EFDB_Name>
+            <Description/>
+            <IDL_Type>boolean</IDL_Type>
+            <Units/>
+            <Count>1</Count>
+        </item>
+    </SALEvent>
+    <!-- Brakes -->
+    <SALEvent>
+        <Subsystem>ATMCS</Subsystem>
+        <Version>3.8.41</Version>
+        <Author/>
+        <EFDB_Topic>ATMCS_logevent_elevationBrake</EFDB_Topic>
+        <Alias>elevationBrake</Alias>
+        <Explanation/>
+        <item>
+            <EFDB_Name>engaged</EFDB_Name>
+            <Description/>
+            <IDL_Type>boolean</IDL_Type>
+            <Units/>
+            <Count>1</Count>
+        </item>
+    </SALEvent>
+    <SALEvent>
+        <Subsystem>ATMCS</Subsystem>
+        <Version>3.8.41</Version>
+        <Author/>
+        <EFDB_Topic>ATMCS_logevent_azimuthBrake1</EFDB_Topic>
+        <Alias>azimuthBrake1</Alias>
+        <Explanation/>
+        <item>
+            <EFDB_Name>engaged</EFDB_Name>
+            <Description/>
+            <IDL_Type>boolean</IDL_Type>
+            <Units/>
+            <Count>1</Count>
+        </item>
+    </SALEvent>
+    <SALEvent>
+        <Subsystem>ATMCS</Subsystem>
+        <Version>3.8.41</Version>
+        <Author/>
+        <EFDB_Topic>ATMCS_logevent_azimuthBrake2</EFDB_Topic>
+        <Alias>azimuthBrake2</Alias>
+        <Explanation/>
+        <item>
+            <EFDB_Name>engaged</EFDB_Name>
+            <Description/>
+            <IDL_Type>boolean</IDL_Type>
+            <Units/>
+            <Count>1</Count>
+        </item>
+    </SALEvent>
+    <SALEvent>
+        <Subsystem>ATMCS</Subsystem>
+        <Version>3.8.41</Version>
+        <Author/>
+        <EFDB_Topic>ATMCS_logevent_nasmyth1Brake</EFDB_Topic>
+        <Alias>nasmyth1Brake</Alias>
+        <Explanation/>
+        <item>
+            <EFDB_Name>engaged</EFDB_Name>
+            <Description/>
+            <IDL_Type>boolean</IDL_Type>
+            <Units/>
+            <Count>1</Count>
+        </item>
+    </SALEvent>
+    <SALEvent>
+        <Subsystem>ATMCS</Subsystem>
+        <Version>3.8.41</Version>
+        <Author/>
+        <EFDB_Topic>ATMCS_logevent_nasmyth2Brake</EFDB_Topic>
+        <Alias>nasmyth2Brake</Alias>
+        <Explanation/>
+        <item>
+            <EFDB_Name>engaged</EFDB_Name>
+            <Description/>
+            <IDL_Type>boolean</IDL_Type>
+            <Units/>
+            <Count>1</Count>
+        </item>
+    </SALEvent>
 </SALEventSet>
