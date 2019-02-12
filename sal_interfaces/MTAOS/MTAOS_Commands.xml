@@ -24,8 +24,34 @@
         <Subsystem>MTAOS</Subsystem>
         <Version>3.8.41</Version>
         <Author></Author>
-        <EFDB_Topic>MTAOS_command_applyAlignmentCorrection</EFDB_Topic>
-        <Alias>applyAlignmentCorrection</Alias>
+        <EFDB_Topic>MTAOS_command_issueAlignmentCorrection</EFDB_Topic>
+        <Alias>issueAlignmentCorrection</Alias>
+        <Device></Device>
+        <Property></Property>
+        <Action></Action>
+        <Value></Value>
+        <Explanation>http://sal.lsst.org</Explanation>
+        <item>
+            <EFDB_Name>bypassCameraHexapod</EFDB_Name>
+            <Description>If true the MTAOS will not command the Camera Hexapod.</Description>
+            <IDL_Type>boolean</IDL_Type>
+            <Units></Units>
+            <Count>1</Count>
+        </item>
+        <item>
+            <EFDB_Name>bypassM2Hexapod</EFDB_Name>
+            <Description>If true the MTAOS will not command the M2 Hexapod.</Description>
+            <IDL_Type>boolean</IDL_Type>
+            <Units></Units>
+            <Count>1</Count>
+        </item>
+    </SALCommand>
+    <SALCommand>
+        <Subsystem>MTAOS</Subsystem>
+        <Version>3.8.41</Version>
+        <Author></Author>
+        <EFDB_Topic>MTAOS_command_resetWavefrontCorrection</EFDB_Topic>
+        <Alias>resetWavefrontCorrection</Alias>
         <Device></Device>
         <Property></Property>
         <Action></Action>
@@ -43,16 +69,37 @@
         <Subsystem>MTAOS</Subsystem>
         <Version>3.8.41</Version>
         <Author></Author>
-        <EFDB_Topic>MTAOS_command_resetCorrection</EFDB_Topic>
-        <Alias>resetCorrection</Alias>
+        <EFDB_Topic>MTAOS_command_issueWavefrontCorrection</EFDB_Topic>
+        <Alias>issueWavefrontCorrection</Alias>
         <Device></Device>
         <Property></Property>
         <Action></Action>
         <Value></Value>
         <Explanation>http://sal.lsst.org</Explanation>
         <item>
-            <EFDB_Name>value</EFDB_Name>
-            <Description>This value is ignored.</Description>
+            <EFDB_Name>bypassCameraHexapod</EFDB_Name>
+            <Description>If true the MTAOS will not command the Camera Hexapod.</Description>
+            <IDL_Type>boolean</IDL_Type>
+            <Units></Units>
+            <Count>1</Count>
+        </item>
+        <item>
+            <EFDB_Name>bypassM1M3</EFDB_Name>
+            <Description>If true the MTAOS will not command the M1M3.</Description>
+            <IDL_Type>boolean</IDL_Type>
+            <Units></Units>
+            <Count>1</Count>
+        </item>
+        <item>
+            <EFDB_Name>bypassM2</EFDB_Name>
+            <Description>If true the MTAOS will not command the M2.</Description>
+            <IDL_Type>boolean</IDL_Type>
+            <Units></Units>
+            <Count>1</Count>
+        </item>
+        <item>
+            <EFDB_Name>bypassM2Hexapod</EFDB_Name>
+            <Description>If true the MTAOS will not command the M2 Hexapod.</Description>
             <IDL_Type>boolean</IDL_Type>
             <Units></Units>
             <Count>1</Count>
@@ -94,6 +141,20 @@
             <Description></Description>
             <IDL_Type>string</IDL_Type>
             <IDL_Size>1</IDL_Size>
+            <Units></Units>
+            <Count>1</Count>
+        </item>
+        <item>
+            <EFDB_Name>ra</EFDB_Name>
+            <Description></Description>
+            <IDL_Type>double</IDL_Type>
+            <Units></Units>
+            <Count>1</Count>
+        </item>
+        <item>
+            <EFDB_Name>dec</EFDB_Name>
+            <Description></Description>
+            <IDL_Type>double</IDL_Type>
             <Units></Units>
             <Count>1</Count>
         </item>
@@ -147,6 +208,20 @@
             <Count>1</Count>
         </item>
         <item>
+            <EFDB_Name>ra</EFDB_Name>
+            <Description></Description>
+            <IDL_Type>double</IDL_Type>
+            <Units></Units>
+            <Count>1</Count>
+        </item>
+        <item>
+            <EFDB_Name>dec</EFDB_Name>
+            <Description></Description>
+            <IDL_Type>double</IDL_Type>
+            <Units></Units>
+            <Count>1</Count>
+        </item>
+        <item>
             <EFDB_Name>filter</EFDB_Name>
             <Description></Description>
             <IDL_Type>int</IDL_Type>
@@ -188,6 +263,20 @@
             <Count>1</Count>
         </item>
         <item>
+            <EFDB_Name>ra</EFDB_Name>
+            <Description></Description>
+            <IDL_Type>double</IDL_Type>
+            <Units></Units>
+            <Count>1</Count>
+        </item>
+        <item>
+            <EFDB_Name>dec</EFDB_Name>
+            <Description></Description>
+            <IDL_Type>double</IDL_Type>
+            <Units></Units>
+            <Count>1</Count>
+        </item>
+        <item>
             <EFDB_Name>filter</EFDB_Name>
             <Description></Description>
             <IDL_Type>int</IDL_Type>
@@ -209,44 +298,4 @@
             <Count>1</Count>
         </item>
     </SALCommand>
-    <SALCommand>
-        <Subsystem>MTAOS</Subsystem>
-        <Version>3.8.41</Version>
-        <Author></Author>
-        <EFDB_Topic>MTAOS_command_issueSubsystemCorrections</EFDB_Topic>
-        <Alias>issueSubsystemCorrections</Alias>
-        <Device></Device>
-        <Property></Property>
-        <Action></Action>
-        <Value></Value>
-        <Explanation>http://sal.lsst.org</Explanation>
-        <item>
-            <EFDB_Name>issueCameraHexapodCorrections</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units></Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>issueM1M3Corrections</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units></Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>issueM2Corrections</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units></Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>issueM2HexapodCorrections</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units></Units>
-            <Count>1</Count>
-        </item>
-    </SALCommand>    
 </SALCommandSet>
