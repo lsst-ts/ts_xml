@@ -20,46 +20,6 @@
         </item>
     </SALEvent>
 
-
-    <SALEvent>
-        <Subsystem>MTAOS</Subsystem>
-        <Version>3.8.41</Version>
-        <Author></Author>
-        <EFDB_Topic>MTAOS_logevent_noEnoughZernikeTerm</EFDB_Topic>
-        <Alias>noEnoughZernikeTerm</Alias>
-        <Explanation>http://sal.lsst.org</Explanation>
-        <item>
-            <EFDB_Name>timestamp</EFDB_Name>
-            <Description>The time stamp for when the event occurred.</Description>
-            <IDL_Type>double</IDL_Type>
-            <Units></Units>
-            <Count>1</Count>
-        </item>
-    </SALEvent>
-
-    <SALEvent>
-        <Subsystem>MTAOS</Subsystem>
-        <Version>3.8.41</Version>
-        <Author></Author>
-        <EFDB_Topic>MTAOS_logevent_degreeOfFreedom</EFDB_Topic>
-        <Alias>degreeOfFreedom</Alias>
-        <Explanation>http://sal.lsst.org</Explanation>
-        <item>
-            <EFDB_Name>dof</EFDB_Name>
-            <Description>Calculated degree of freedom (DOF) based on the control algorithm.</Description>
-            <IDL_Type>double</IDL_Type>
-            <Units></Units>
-            <Count>50</Count>
-        </item>
-        <item>
-            <EFDB_Name>timestamp</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>double</IDL_Type>
-            <Units></Units>
-            <Count>1</Count>
-        </item>
-    </SALEvent>
-
     <SALEvent>
         <Subsystem>MTAOS</Subsystem>
         <Version>3.8.41</Version>
@@ -67,6 +27,13 @@
         <EFDB_Topic>MTAOS_logevent_wavefrontError</EFDB_Topic>
         <Alias>wavefrontError</Alias>
         <Explanation>http://sal.lsst.org</Explanation>
+        <item>
+            <EFDB_Name>timestamp</EFDB_Name>
+            <Description>The time stamp for when the telemetry was sampled.</Description>
+            <IDL_Type>double</IDL_Type>
+            <Units></Units>
+            <Count>1</Count>
+        </item>
         <item>
             <EFDB_Name>sensorId</EFDB_Name>
             <Description>Wavefront sensor ID.</Description>
@@ -81,9 +48,83 @@
             <Units></Units>
             <Count>19</Count>
         </item>
+    </SALEvent>
+
+    <SALEvent>
+        <Subsystem>MTAOS</Subsystem>
+        <Version>3.8.41</Version>
+        <Author></Author>
+        <EFDB_Topic>MTAOS_logevent_degreeOfFreedom</EFDB_Topic>
+        <Alias>degreeOfFreedom</Alias>
+        <Explanation>http://sal.lsst.org</Explanation>
         <item>
             <EFDB_Name>timestamp</EFDB_Name>
-            <Description>The time stamp for when the telemetry was sampled.</Description>
+            <Description></Description>
+            <IDL_Type>double</IDL_Type>
+            <Units></Units>
+            <Count>1</Count>
+        </item>
+        <item>
+            <EFDB_Name>aggregatedDoF</EFDB_Name>
+            <Description>Calculated degree of freedom (DOF) based on the control algorithm.</Description>
+            <IDL_Type>double</IDL_Type>
+            <Units></Units>
+            <Count>50</Count>
+        </item>
+        <item>
+            <EFDB_Name>visitDoF</EFDB_Name>
+            <Description>Calculated degree of freedom (DOF) based on the control algorithm.</Description>
+            <IDL_Type>double</IDL_Type>
+            <Units></Units>
+            <Count>50</Count>
+        </item>
+    </SALEvent>
+
+    <SALEvent>
+        <Subsystem>MTAOS</Subsystem>
+        <Version>3.8.41</Version>
+        <Author></Author>
+        <EFDB_Topic>MTAOS_logevent_cameraHexapodCorrection</EFDB_Topic>
+        <Alias>cameraHexapodCorrection</Alias>
+        <Explanation>http://sal.lsst.org</Explanation>
+        <item>
+            <EFDB_Name>timestamp</EFDB_Name>
+            <Description></Description>
+            <IDL_Type>double</IDL_Type>
+            <Units></Units>
+            <Count>1</Count>
+        </item>
+        <item>
+            <EFDB_Name>x</EFDB_Name>
+            <Description></Description>
+            <IDL_Type>double</IDL_Type>
+            <Units></Units>
+            <Count>1</Count>
+        </item>
+        <item>
+            <EFDB_Name>y</EFDB_Name>
+            <Description></Description>
+            <IDL_Type>double</IDL_Type>
+            <Units></Units>
+            <Count>1</Count>
+        </item>
+        <item>
+            <EFDB_Name>z</EFDB_Name>
+            <Description></Description>
+            <IDL_Type>double</IDL_Type>
+            <Units></Units>
+            <Count>1</Count>
+        </item>
+        <item>
+            <EFDB_Name>u</EFDB_Name>
+            <Description></Description>
+            <IDL_Type>double</IDL_Type>
+            <Units></Units>
+            <Count>1</Count>
+        </item>
+        <item>
+            <EFDB_Name>v</EFDB_Name>
+            <Description></Description>
             <IDL_Type>double</IDL_Type>
             <Units></Units>
             <Count>1</Count>
@@ -94,22 +135,22 @@
         <Subsystem>MTAOS</Subsystem>
         <Version>3.8.41</Version>
         <Author></Author>
-        <EFDB_Topic>MTAOS_logevent_normalTargetWfsList</EFDB_Topic>
-        <Alias>normalTargetWfsList</Alias>
+        <EFDB_Topic>MTAOS_logevent_m1m3Correction</EFDB_Topic>
+        <Alias>m1m3Correction</Alias>
         <Explanation>http://sal.lsst.org</Explanation>
         <item>
-            <EFDB_Name>sensorIdList</EFDB_Name>
-            <Description>List of target sensor Id list. Put -1 for unused element.</Description>
-            <IDL_Type>short</IDL_Type>
-            <Units></Units>
-            <Count>4</Count>
-        </item>
-        <item>
             <EFDB_Name>timestamp</EFDB_Name>
-            <Description>The time stamp for when the telemetry was sampled.</Description>
+            <Description></Description>
             <IDL_Type>double</IDL_Type>
             <Units></Units>
             <Count>1</Count>
+        </item>
+        <item>
+            <EFDB_Name>zForces</EFDB_Name>
+            <Description></Description>
+            <IDL_Type>float</IDL_Type>
+            <Units></Units>
+            <Count>156</Count>
         </item>
     </SALEvent>
 
@@ -117,22 +158,22 @@
         <Subsystem>MTAOS</Subsystem>
         <Version>3.8.41</Version>
         <Author></Author>
-        <EFDB_Topic>MTAOS_logevent_comcamTargetWfsList</EFDB_Topic>
-        <Alias>comcamTargetWfsList</Alias>
+        <EFDB_Topic>MTAOS_logevent_m2Correction</EFDB_Topic>
+        <Alias>m2Correction</Alias>
         <Explanation>http://sal.lsst.org</Explanation>
         <item>
-            <EFDB_Name>sensorIdList</EFDB_Name>
-            <Description>List of target sensor Id list. Put -1 for unused element.</Description>
-            <IDL_Type>short</IDL_Type>
-            <Units></Units>
-            <Count>9</Count>
-        </item>
-        <item>
             <EFDB_Name>timestamp</EFDB_Name>
-            <Description>The time stamp for when the telemetry was sampled.</Description>
+            <Description></Description>
             <IDL_Type>double</IDL_Type>
             <Units></Units>
             <Count>1</Count>
+        </item>
+        <item>
+            <EFDB_Name>zForces</EFDB_Name>
+            <Description></Description>
+            <IDL_Type>float</IDL_Type>
+            <Units></Units>
+            <Count>72</Count>
         </item>
     </SALEvent>
 
@@ -140,26 +181,54 @@
         <Subsystem>MTAOS</Subsystem>
         <Version>3.8.41</Version>
         <Author></Author>
-        <EFDB_Topic>MTAOS_logevent_famTargetWfsList</EFDB_Topic>
-        <Alias>famTargetWfsList</Alias>
+        <EFDB_Topic>MTAOS_logevent_m2HexapodCorrection</EFDB_Topic>
+        <Alias>m2HexapodCorrection</Alias>
         <Explanation>http://sal.lsst.org</Explanation>
         <item>
-            <EFDB_Name>sensorIdList</EFDB_Name>
-            <Description>List of target sensor Id list. Put -1 for unused element.</Description>
-            <IDL_Type>short</IDL_Type>
+            <EFDB_Name>timestamp</EFDB_Name>
+            <Description></Description>
+            <IDL_Type>double</IDL_Type>
             <Units></Units>
-            <Count>120</Count>
+            <Count>1</Count>
         </item>
         <item>
-            <EFDB_Name>timestamp</EFDB_Name>
-            <Description>The time stamp for when the telemetry was sampled.</Description>
+            <EFDB_Name>x</EFDB_Name>
+            <Description></Description>
+            <IDL_Type>double</IDL_Type>
+            <Units></Units>
+            <Count>1</Count>
+        </item>
+        <item>
+            <EFDB_Name>y</EFDB_Name>
+            <Description></Description>
+            <IDL_Type>double</IDL_Type>
+            <Units></Units>
+            <Count>1</Count>
+        </item>
+        <item>
+            <EFDB_Name>z</EFDB_Name>
+            <Description></Description>
+            <IDL_Type>double</IDL_Type>
+            <Units></Units>
+            <Count>1</Count>
+        </item>
+        <item>
+            <EFDB_Name>u</EFDB_Name>
+            <Description></Description>
+            <IDL_Type>double</IDL_Type>
+            <Units></Units>
+            <Count>1</Count>
+        </item>
+        <item>
+            <EFDB_Name>v</EFDB_Name>
+            <Description></Description>
             <IDL_Type>double</IDL_Type>
             <Units></Units>
             <Count>1</Count>
         </item>
     </SALEvent>
 
-    <SALEvent>
+<!--    <SALEvent>
         <Subsystem>MTAOS</Subsystem>
         <Version>3.8.41</Version>
         <Author></Author>
@@ -187,24 +256,22 @@
             <Units></Units>
             <Count>1</Count>
         </item>
-    </SALEvent>
+    </SALEvent> -->
 
-    <SALEvent>
+<!--    <SALEvent>
         <Subsystem>MTAOS</Subsystem>
         <Version>3.8.41</Version>
         <Author></Author>
         <EFDB_Topic>MTAOS_logevent_simParamList</EFDB_Topic>
         <Alias>simParamList</Alias>
         <Explanation>http://sal.lsst.org</Explanation>
-                <item>
-                    <EFDB_Name>inst</EFDB_Name>
-                    <Description></Description>
-                    <!-- Enumeration: InstType -->
-                    <IDL_Type>long</IDL_Type>
-                    <Units></Units>
-                    <Count>1</Count>
-                    <Enumeration>inst_InstType_ComCam,inst_InstType_Lsst</Enumeration>
-                </item>
+        <item>
+            <EFDB_Name>inst</EFDB_Name>
+            <Description></Description>
+            <IDL_Type>long</IDL_Type>
+            <Units></Units>
+            <Count>1</Count>
+        </item>
         <item>
             <EFDB_Name>ra</EFDB_Name>
             <Description></Description>
@@ -229,54 +296,6 @@
         <item>
             <EFDB_Name>filter</EFDB_Name>
             <Description></Description>
-            <!-- Enumeration: FilterType -->
-            <IDL_Type>long</IDL_Type>
-            <Units></Units>
-            <Count>1</Count>
-            <Enumeration>filter_FilterType_Reference,filter_FilterType_U,filter_FilterType_G,filter_FilterType_R,filter_FilterType_I,filter_FilterType_Z,filter_FilterType_Y</Enumeration>
-        </item>
-        <item>
-            <EFDB_Name>timestamp</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>double</IDL_Type>
-            <Units></Units>
-            <Count>1</Count>
-        </item>
-    </SALEvent>
-
-    <SALEvent>
-        <Subsystem>MTAOS</Subsystem>
-        <Version>3.8.41</Version>
-        <Author></Author>
-        <EFDB_Topic>MTAOS_logevent_imageReady</EFDB_Topic>
-        <Alias>imageReady</Alias>
-        <Explanation>http://sal.lsst.org</Explanation>
-        <item>
-            <EFDB_Name>imageDir</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>string</IDL_Type>
-            <IDL_Size>1</IDL_Size>
-            <Units></Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>opdDir</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>string</IDL_Type>
-            <IDL_Size>1</IDL_Size>
-            <Units></Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>intraFocalVisitId</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>long</IDL_Type>
-            <Units></Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>extraFocalVisitId</EFDB_Name>
-            <Description></Description>
             <IDL_Type>long</IDL_Type>
             <Units></Units>
             <Count>1</Count>
@@ -288,5 +307,5 @@
             <Units></Units>
             <Count>1</Count>
         </item>
-    </SALEvent>
+    </SALEvent> -->
 </SALEventSet>
