@@ -2,7 +2,8 @@
 <?xml-stylesheet type="text/xsl" href="http://lsst-sal.tuc.noao.edu/schema/SALEventSet.xsl"?>
 <SALEventSet xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://lsst-sal.tuc.noao.edu/schema/SALEventSet.xsd">
     <Enumeration>SummaryState_DisabledState,SummaryState_EnabledState,SummaryState_FaultState,SummaryState_OfflineState,SummaryState_StandbyState</Enumeration>
-    <Enumeration>DetailedState_DisabledState,DetailedState_EnabledState,DetailedState_FaultState,DetailedState_OfflineState,DetailedState_StandbyState,DetailedState_GetWfState,DetailedState_CalcDofState</Enumeration>
+    <Enumeration>WEPWarning_NoWarning,WEPWarning_InvalidSensorId,WEPWarning_InvalidAnnularZernikePoly</Enumeration>
+    <Enumeration>OFCWarning_NoWarning</Enumeration>
 
     <SALEvent>
         <Subsystem>MTAOS</Subsystem>
@@ -129,6 +130,13 @@
             <Units></Units>
             <Count>1</Count>
         </item>
+        <item>
+            <EFDB_Name>w</EFDB_Name>
+            <Description></Description>
+            <IDL_Type>double</IDL_Type>
+            <Units></Units>
+            <Count>1</Count>
+        </item>
     </SALEvent>
 
     <SALEvent>
@@ -223,6 +231,59 @@
             <EFDB_Name>v</EFDB_Name>
             <Description></Description>
             <IDL_Type>double</IDL_Type>
+            <Units></Units>
+            <Count>1</Count>
+        </item>
+        <item>
+            <EFDB_Name>w</EFDB_Name>
+            <Description></Description>
+            <IDL_Type>double</IDL_Type>
+            <Units></Units>
+            <Count>1</Count>
+        </item>
+    </SALEvent>
+
+    <SALEvent>
+        <Subsystem>MTAOS</Subsystem>
+        <Version>3.8.41</Version>
+        <Author></Author>
+        <EFDB_Topic>MTAOS_logevent_wepWarning</EFDB_Topic>
+        <Alias>m2Correction</Alias>
+        <Explanation>http://sal.lsst.org</Explanation>
+        <item>
+            <EFDB_Name>timestamp</EFDB_Name>
+            <Description></Description>
+            <IDL_Type>double</IDL_Type>
+            <Units></Units>
+            <Count>1</Count>
+        </item>
+        <item>
+            <EFDB_Name>warning</EFDB_Name>
+            <Description></Description>
+            <IDL_Type>int</IDL_Type>
+            <Units></Units>
+            <Count>1</Count>
+        </item>
+    </SALEvent>
+
+    <SALEvent>
+        <Subsystem>MTAOS</Subsystem>
+        <Version>3.8.41</Version>
+        <Author></Author>
+        <EFDB_Topic>MTAOS_logevent_ofcWarning</EFDB_Topic>
+        <Alias>m2Correction</Alias>
+        <Explanation>http://sal.lsst.org</Explanation>
+        <item>
+            <EFDB_Name>timestamp</EFDB_Name>
+            <Description></Description>
+            <IDL_Type>double</IDL_Type>
+            <Units></Units>
+            <Count>1</Count>
+        </item>
+        <item>
+            <EFDB_Name>warning</EFDB_Name>
+            <Description></Description>
+            <IDL_Type>int</IDL_Type>
             <Units></Units>
             <Count>1</Count>
         </item>
