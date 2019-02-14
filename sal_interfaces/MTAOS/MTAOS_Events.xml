@@ -55,8 +55,68 @@
         <Subsystem>MTAOS</Subsystem>
         <Version>3.8.41</Version>
         <Author></Author>
+        <EFDB_Topic>MTAOS_logevent_rejectedWavefrontError</EFDB_Topic>
+        <Alias>rejectedWavefrontError</Alias>
+        <Explanation>http://sal.lsst.org</Explanation>
+        <item>
+            <EFDB_Name>timestamp</EFDB_Name>
+            <Description>The time stamp for when the telemetry was sampled.</Description>
+            <IDL_Type>double</IDL_Type>
+            <Units></Units>
+            <Count>1</Count>
+        </item>
+        <item>
+            <EFDB_Name>sensorId</EFDB_Name>
+            <Description>Wavefront sensor ID.</Description>
+            <IDL_Type>short</IDL_Type>
+            <Units></Units>
+            <Count>1</Count>
+        </item>
+        <item>
+            <EFDB_Name>annularZernikePoly</EFDB_Name>
+            <Description>z4-z22 terms of annular Zernike polynomials.The unit should be decided in a latter time.</Description>
+            <IDL_Type>double</IDL_Type>
+            <Units></Units>
+            <Count>19</Count>
+        </item>
+    </SALEvent>
+
+    <SALEvent>
+        <Subsystem>MTAOS</Subsystem>
+        <Version>3.8.41</Version>
+        <Author></Author>
         <EFDB_Topic>MTAOS_logevent_degreeOfFreedom</EFDB_Topic>
         <Alias>degreeOfFreedom</Alias>
+        <Explanation>http://sal.lsst.org</Explanation>
+        <item>
+            <EFDB_Name>timestamp</EFDB_Name>
+            <Description></Description>
+            <IDL_Type>double</IDL_Type>
+            <Units></Units>
+            <Count>1</Count>
+        </item>
+        <item>
+            <EFDB_Name>aggregatedDoF</EFDB_Name>
+            <Description>Calculated degree of freedom (DOF) based on the control algorithm.</Description>
+            <IDL_Type>double</IDL_Type>
+            <Units></Units>
+            <Count>50</Count>
+        </item>
+        <item>
+            <EFDB_Name>visitDoF</EFDB_Name>
+            <Description>Calculated degree of freedom (DOF) based on the control algorithm.</Description>
+            <IDL_Type>double</IDL_Type>
+            <Units></Units>
+            <Count>50</Count>
+        </item>
+    </SALEvent>
+
+    <SALEvent>
+        <Subsystem>MTAOS</Subsystem>
+        <Version>3.8.41</Version>
+        <Author></Author>
+        <EFDB_Topic>MTAOS_logevent_rejectedDegreeOfFreedom</EFDB_Topic>
+        <Alias>rejectedDegreeOfFreedom</Alias>
         <Explanation>http://sal.lsst.org</Explanation>
         <item>
             <EFDB_Name>timestamp</EFDB_Name>
@@ -143,8 +203,89 @@
         <Subsystem>MTAOS</Subsystem>
         <Version>3.8.41</Version>
         <Author></Author>
+        <EFDB_Topic>MTAOS_logevent_rejectedCameraHexapodCorrection</EFDB_Topic>
+        <Alias>rejectedCameraHexapodCorrection</Alias>
+        <Explanation>http://sal.lsst.org</Explanation>
+        <item>
+            <EFDB_Name>timestamp</EFDB_Name>
+            <Description></Description>
+            <IDL_Type>double</IDL_Type>
+            <Units></Units>
+            <Count>1</Count>
+        </item>
+        <item>
+            <EFDB_Name>x</EFDB_Name>
+            <Description></Description>
+            <IDL_Type>double</IDL_Type>
+            <Units></Units>
+            <Count>1</Count>
+        </item>
+        <item>
+            <EFDB_Name>y</EFDB_Name>
+            <Description></Description>
+            <IDL_Type>double</IDL_Type>
+            <Units></Units>
+            <Count>1</Count>
+        </item>
+        <item>
+            <EFDB_Name>z</EFDB_Name>
+            <Description></Description>
+            <IDL_Type>double</IDL_Type>
+            <Units></Units>
+            <Count>1</Count>
+        </item>
+        <item>
+            <EFDB_Name>u</EFDB_Name>
+            <Description></Description>
+            <IDL_Type>double</IDL_Type>
+            <Units></Units>
+            <Count>1</Count>
+        </item>
+        <item>
+            <EFDB_Name>v</EFDB_Name>
+            <Description></Description>
+            <IDL_Type>double</IDL_Type>
+            <Units></Units>
+            <Count>1</Count>
+        </item>
+        <item>
+            <EFDB_Name>w</EFDB_Name>
+            <Description></Description>
+            <IDL_Type>double</IDL_Type>
+            <Units></Units>
+            <Count>1</Count>
+        </item>
+    </SALEvent>
+
+    <SALEvent>
+        <Subsystem>MTAOS</Subsystem>
+        <Version>3.8.41</Version>
+        <Author></Author>
         <EFDB_Topic>MTAOS_logevent_m1m3Correction</EFDB_Topic>
         <Alias>m1m3Correction</Alias>
+        <Explanation>http://sal.lsst.org</Explanation>
+        <item>
+            <EFDB_Name>timestamp</EFDB_Name>
+            <Description></Description>
+            <IDL_Type>double</IDL_Type>
+            <Units></Units>
+            <Count>1</Count>
+        </item>
+        <item>
+            <EFDB_Name>zForces</EFDB_Name>
+            <Description></Description>
+            <IDL_Type>float</IDL_Type>
+            <Units></Units>
+            <Count>156</Count>
+        </item>
+    </SALEvent>
+
+    <SALEvent>
+        <Subsystem>MTAOS</Subsystem>
+        <Version>3.8.41</Version>
+        <Author></Author>
+        <EFDB_Topic>MTAOS_logevent_rejectedM1M3Correction</EFDB_Topic>
+        <Alias>rejectedM1M3Correction</Alias>
         <Explanation>http://sal.lsst.org</Explanation>
         <item>
             <EFDB_Name>timestamp</EFDB_Name>
@@ -189,8 +330,89 @@
         <Subsystem>MTAOS</Subsystem>
         <Version>3.8.41</Version>
         <Author></Author>
+        <EFDB_Topic>MTAOS_logevent_rejectedM2Correction</EFDB_Topic>
+        <Alias>rejectedM2Correction</Alias>
+        <Explanation>http://sal.lsst.org</Explanation>
+        <item>
+            <EFDB_Name>timestamp</EFDB_Name>
+            <Description></Description>
+            <IDL_Type>double</IDL_Type>
+            <Units></Units>
+            <Count>1</Count>
+        </item>
+        <item>
+            <EFDB_Name>zForces</EFDB_Name>
+            <Description></Description>
+            <IDL_Type>float</IDL_Type>
+            <Units></Units>
+            <Count>72</Count>
+        </item>
+    </SALEvent>
+
+    <SALEvent>
+        <Subsystem>MTAOS</Subsystem>
+        <Version>3.8.41</Version>
+        <Author></Author>
         <EFDB_Topic>MTAOS_logevent_m2HexapodCorrection</EFDB_Topic>
         <Alias>m2HexapodCorrection</Alias>
+        <Explanation>http://sal.lsst.org</Explanation>
+        <item>
+            <EFDB_Name>timestamp</EFDB_Name>
+            <Description></Description>
+            <IDL_Type>double</IDL_Type>
+            <Units></Units>
+            <Count>1</Count>
+        </item>
+        <item>
+            <EFDB_Name>x</EFDB_Name>
+            <Description></Description>
+            <IDL_Type>double</IDL_Type>
+            <Units></Units>
+            <Count>1</Count>
+        </item>
+        <item>
+            <EFDB_Name>y</EFDB_Name>
+            <Description></Description>
+            <IDL_Type>double</IDL_Type>
+            <Units></Units>
+            <Count>1</Count>
+        </item>
+        <item>
+            <EFDB_Name>z</EFDB_Name>
+            <Description></Description>
+            <IDL_Type>double</IDL_Type>
+            <Units></Units>
+            <Count>1</Count>
+        </item>
+        <item>
+            <EFDB_Name>u</EFDB_Name>
+            <Description></Description>
+            <IDL_Type>double</IDL_Type>
+            <Units></Units>
+            <Count>1</Count>
+        </item>
+        <item>
+            <EFDB_Name>v</EFDB_Name>
+            <Description></Description>
+            <IDL_Type>double</IDL_Type>
+            <Units></Units>
+            <Count>1</Count>
+        </item>
+        <item>
+            <EFDB_Name>w</EFDB_Name>
+            <Description></Description>
+            <IDL_Type>double</IDL_Type>
+            <Units></Units>
+            <Count>1</Count>
+        </item>
+    </SALEvent>
+
+    <SALEvent>
+        <Subsystem>MTAOS</Subsystem>
+        <Version>3.8.41</Version>
+        <Author></Author>
+        <EFDB_Topic>MTAOS_logevent_rejectedM2HexapodCorrection</EFDB_Topic>
+        <Alias>rejectedM2HexapodCorrection</Alias>
         <Explanation>http://sal.lsst.org</Explanation>
         <item>
             <EFDB_Name>timestamp</EFDB_Name>
