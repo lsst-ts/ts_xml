@@ -42,21 +42,53 @@
     </item>
     <item>
         <EFDB_Name>imageName</EFDB_Name>
-        <Description>The imageName for this specific exposure</Description>
+        <Description>The imageName for this specific exposure, assigned by the camera</Description>
         <IDL_Type>string</IDL_Type>
-        <IDL_Size>256</IDL_Size>
+        <IDL_Size>32</IDL_Size>
         <Units></Units>
         <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>imageIndex</EFDB_Name>
-        <Description>The zero based index number for this specific exposure within the sequence</Description>
+        <EFDB_Name>imageSource</EFDB_Name>
+        <Description>The source component of the image name (AT/CC/MC)</Description>
+        <IDL_Type>string</IDL_Type>
+        <IDL_Size>2</IDL_Size>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>imageController</EFDB_Name>
+        <Description>The controller for the image  (O=OCS/C=CCS/...)</Description>
+        <IDL_Type>string</IDL_Type>
+        <IDL_Size>1</IDL_Size>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>imageDate</EFDB_Name>
+        <Description>The date component of the image name (YYYYMMDD)</Description>
+        <IDL_Type>string</IDL_Type>
+        <IDL_Size>8</IDL_Size>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>imageDate</EFDB_Name>
+        <Description>The date component of the image name (YYYYMMDD)</Description>
+        <IDL_Type>string</IDL_Type>
+        <IDL_Size>8</IDL_Size>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>imageNumber</EFDB_Name>
+        <Description>The image number (SEQNO) component of the image name</Description>
         <IDL_Type>long</IDL_Type>
         <Units></Units>
         <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>timeStamp</EFDB_Name>
+        <EFDB_Name>imageAcquisitionStartrtimeStamp</EFDB_Name>
         <Description>The effective time at which the image acquisition started (i.e. the end of the previous clear or readout)</Description>
         <IDL_Type>double</IDL_Type>
         <Units>seconds</Units>
