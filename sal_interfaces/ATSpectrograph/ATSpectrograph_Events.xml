@@ -2,15 +2,10 @@
 <?xml-stylesheet type="text/xsl" href="http://lsst-sal.tuc.noao.edu/schema/SALEventSet.xsl"?>
 <SALEventSet xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:noNamespaceSchemaLocation="http://lsst-sal.tuc.noao.edu/schema/SALEventSet.xsd">
-<Enumeration>Filter_Slot0,Filter_Slot1,Filter_Slot2,Filter_Slot3</Enumeration>
-<Enumeration>Disperser_Slot0,Disperser_Slot1,Disperser_Slot2,Disperser_Slot3</Enumeration>
 <Enumeration>FilterPosition_Filter0,FilterPosition_Filter1,FilterPosition_Filter2,FilterPosition_Filter3,FilterPosition_Inbetween</Enumeration>
 <Enumeration>DisperserPosition_Disperser0,DisperserPosition_Disperser1,DisperserPosition_Disperser2,DisperserPosition_Disperser3,DisperserPosition_Inbetween</Enumeration>
-<Enumeration>FwState_FwStationaryState,FwState_FwMovingState</Enumeration>
-<Enumeration>GwState_GwStationaryState,GwState_GwMovingState</Enumeration>
-<Enumeration>LsState_LsStationaryState,LsState_LsMovingState</Enumeration>
-<Enumeration>detailedState_DetailedState_DisabledState,detailedState_DetailedState_EnabledState,detailedState_DetailedState_FaultState,detailedState_DetailedState_OfflineState,detailedState_DetailedState_StandbyState
-</Enumeration>
+<Enumeration>Status_Homing,Status_Moving,Status_Stationary,Status_NotInPosition</Enumeration>
+<Enumeration>Error_None,Error_Busy,Error_NotInitialized,Error_MoveTimeout</Enumeration>
 
 <SALEvent>
     <Subsystem>ATSpectrograph</Subsystem>
@@ -25,8 +20,6 @@
         <IDL_Type>long</IDL_Type>
         <Units></Units>
         <Count>1</Count>
-<Enumeration>detailedState_DetailedState_DisabledState,detailedState_DetailedState_EnabledState,detailedState_DetailedState_FaultState,detailedState_DetailedState_OfflineState,detailedState_DetailedState_StandbyState
-</Enumeration>
     </item>
 </SALEvent>
 <SALEvent>
@@ -143,7 +136,7 @@
     <Alias>reportedFilterPosition</Alias>
     <Explanation>http://sal.lsst.org</Explanation>
             <item>
-                <EFDB_Name>reportedFilterPosition</EFDB_Name>
+                <EFDB_Name>position</EFDB_Name>
                 <Description></Description>
                 <!-- Enumeration: FilterPosition -->
                 <IDL_Type>long</IDL_Type>
@@ -159,7 +152,7 @@
     <Alias>reportedDisperserPosition</Alias>
     <Explanation>http://sal.lsst.org</Explanation>
             <item>
-                <EFDB_Name>reportedDisperserPosition</EFDB_Name>
+                <EFDB_Name>position</EFDB_Name>
                 <Description></Description>
                 <!-- Enumeration: DisperserPosition -->
                 <IDL_Type>long</IDL_Type>
@@ -205,7 +198,7 @@
     <Alias>reportedLinearStagePosition</Alias>
     <Explanation>http://sal.lsst.org</Explanation>
             <item>
-                <EFDB_Name>reportedLinearStagePosition</EFDB_Name>
+                <EFDB_Name>position</EFDB_Name>
                 <Description></Description>
                 <IDL_Type>float</IDL_Type>
                 <Units></Units>
@@ -220,7 +213,7 @@
     <Alias>lsState</Alias>
     <Explanation>http://sal.lsst.org</Explanation>
             <item>
-                <EFDB_Name>lsState</EFDB_Name>
+                <EFDB_Name>state</EFDB_Name>
                 <Description></Description>
                 <!-- Enumeration: LsState -->
                 <IDL_Type>long</IDL_Type>
@@ -236,7 +229,7 @@
     <Alias>fwState</Alias>
     <Explanation>http://sal.lsst.org</Explanation>
             <item>
-                <EFDB_Name>fwState</EFDB_Name>
+                <EFDB_Name>state</EFDB_Name>
                 <Description></Description>
                 <!-- Enumeration: FwState -->
                 <IDL_Type>long</IDL_Type>
@@ -252,7 +245,7 @@
     <Alias>gwState</Alias>
     <Explanation>http://sal.lsst.org</Explanation>
             <item>
-                <EFDB_Name>gwState</EFDB_Name>
+                <EFDB_Name>state</EFDB_Name>
                 <Description></Description>
                 <!-- Enumeration: GwState -->
                 <IDL_Type>long</IDL_Type>
