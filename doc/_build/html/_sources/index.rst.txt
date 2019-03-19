@@ -13,7 +13,10 @@ The ``ts_xml`` is package is used for defining the data objects for all the Comm
 The following is a table overview of all the CSC's defined so far.
 
 
-
+.. csv-table:: List of defined Commandable SAL Components (CSC)
+   :file: subsystemData.csv
+   :widths: 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7
+   :header-rows: 1
 
 Project info
 ============

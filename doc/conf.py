@@ -2,6 +2,8 @@
 
 This configuration only affects single-package Sphinx documenation builds.
 """
+import sys;
+sys.setrecursionlimit(2000)
 
 from documenteer.sphinxconfig.stackconf import build_package_configs
 # import ts_xml
