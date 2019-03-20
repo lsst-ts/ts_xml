@@ -7,7 +7,7 @@
 <Enumeration>LogLevel_none,LogLevel_fatal,LogLevel_error,LogLevel_warning,LogLevel_info,LogLevel_debug,LogLevel_verbose</Enumeration>
 <Enumeration>OffTypes_simple,OffTypes_tplane</Enumeration>
 <Enumeration>OnOff_on,OnOff_off</Enumeration>
-<Enumeration>Wraps_ccw,Wraps_cw</Enumeration>
+<Enumeration>Wraps_cw,Wraps_ccw</Enumeration>
 <Enumeration>CoordFrame_fk5,CoordFrame_icrs</Enumeration>
 <Enumeration>RotFrame_target,RotFrame_fixed</Enumeration>
 <Enumeration>RotMode_field,RotMode_slit</Enumeration>
@@ -15,7 +15,7 @@
 <Enumeration>Planets_mercury,Planets_venus,Planets_moon,Planets_mars,Planets_jupiter,Planets_saturn,Planets_uranus,Planets_neptune,Planets_pluto</Enumeration>
 <Enumeration>Foci_prime,Foci_nasmyth1,Foci_nasmyth2</Enumeration>
 <Enumeration>WarningLevel_none,WarningLevel_minor,WarningLevel_major</Enumeration>
-<Enumeration>DetailedStates_notTracking,DetailedStates_openLoop,DetailedStates_guiding</Enumeration>
+<Enumeration>DetailedStates_notTracking,DetailedStates_azEl,DetailedStates_openLoop,DetailedStates_guiding</Enumeration>
 <Enumeration>TargetTypes_raDec,TargetTypes_azEl,TargetTypes_planet,TargetTypes_ephem</Enumeration>
 <SALEvent>
     <Subsystem>ATPtg</Subsystem>
@@ -448,6 +448,20 @@
         <Units></Units>
         <Count>1</Count>
     </item>
+    <item>
+        <EFDB_Name>raHours</EFDB_Name>
+        <Description>Target RA in hours</Description>
+        <IDL_Type>double</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>decDegs</EFDB_Name>
+        <Description>Target Dec in degrees</Description>
+        <IDL_Type>double</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
 </SALEvent>
 <SALEvent>
     <Subsystem>ATPtg</Subsystem>
@@ -687,6 +701,20 @@
         <Description>Rotator tracking mode (Field or Slit optimized)</Description>
         <IDL_Type>long</IDL_Type>
         <!-- <Enumeration> RotMode </Enumeration> -->
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>raHours</EFDB_Name>
+        <Description>Target RA in hours</Description>
+        <IDL_Type>double</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>decDegs</EFDB_Name>
+        <Description>Target Dec in degrees</Description>
+        <IDL_Type>double</IDL_Type>
         <Units></Units>
         <Count>1</Count>
     </item>
@@ -1001,6 +1029,20 @@
         <Units></Units>
         <Count>1</Count>
     </item>
+    <item>
+        <EFDB_Name>raHours</EFDB_Name>
+        <Description>Target RA in hours</Description>
+        <IDL_Type>double</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>decDegs</EFDB_Name>
+        <Description>Target Dec in degrees</Description>
+        <IDL_Type>double</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
 </SALEvent>
 <SALEvent>
     <Subsystem>ATPtg</Subsystem>
@@ -1014,6 +1056,53 @@
         <Description></Description>
         <IDL_Type>long</IDL_Type>
         <!-- <Enumeration> WarningLevel </Enumeration> -->
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+</SALEvent>
+<SALEvent>
+    <Subsystem>ATPtg</Subsystem>
+    <Version>3.8.41</Version>
+    <Author>pbt</Author>
+    <EFDB_Topic>ATPtg_logevent_trackPosting</EFDB_Topic>
+    <Alias>trackPosting</Alias>
+    <Explanation>http://sal.lsst.org</Explanation>
+    <item>
+        <EFDB_Name>status</EFDB_Name>
+        <Description>If true, PTG controller is currently posting track commands to Mount components.</Description>
+        <IDL_Type>boolean</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+</SALEvent>
+<SALEvent>
+    <Subsystem>ATPtg</Subsystem>
+    <Version>3.8.41</Version>
+    <Author>pbt</Author>
+    <EFDB_Topic>ATPtg_logevent_ptgAzCurrentWrap</EFDB_Topic>
+    <Alias>ptgAzCurrentWrap</Alias>
+    <Explanation>http://sal.lsst.org</Explanation>
+    <item>
+        <EFDB_Name>currentWrap</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>long</IDL_Type>
+        <!-- <Enumeration> Wraps </Enumeration> -->
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+</SALEvent>
+<SALEvent>
+    <Subsystem>ATPtg</Subsystem>
+    <Version>3.8.41</Version>
+    <Author>pbt</Author>
+    <EFDB_Topic>ATPtg_logevent_ptgRotCurrentWrap</EFDB_Topic>
+    <Alias>ptgRotCurrentWrap</Alias>
+    <Explanation>http://sal.lsst.org</Explanation>
+    <item>
+        <EFDB_Name>currentWrap</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>long</IDL_Type>
+        <!-- <Enumeration> Wraps </Enumeration> -->
         <Units></Units>
         <Count>1</Count>
     </item>
