@@ -1,0 +1,18 @@
+dist: xenial
+language: python
+matrix:
+  include:
+    - python: "3.6.7"
+      env: LTD_SKIP_UPLOAD=false
+      install:
+        - pip install -r doc/requirements.txt
+      script:
+        - cd doc
+        - make html
+        - "ltd upload --product ts-xml --travis --dir _build/html"
+env:
+  global:
+    # LSST the Docs credentials
+    - secure: "kEhJZCFC54zv+d0hWwHJPu3jb/RfNSlUps0QzExWS2sKVmL29zD8LYwjp/Zx2CF01EXpw1iUOpk5jtHCNcr2thEou0/Heioln8jO89ihz/06SvQClkH1QUwsZDJZMluTbu5BN94cvPiJ2ZO+uKAKczqbXAkroZx3EU0BxgSJDzYxWVq3to1vgdtzX7cig9hU5UaG8yDgtxmkbQExYTgAoifB+2DSCoPfVuicF/FGwS1KNBJYdPpP39rm/MHm+O3/KprEEq2THQu4FJqj5zmAlAyYtQxmdFVIUi+Y4OsNBwCDke/Vdb82pDx+gMEI1PicIzXL2e3VIM3hxir5mpIOhVlajj7GicIqQKsLuJXhxeaYzCqvSNLBGkoDgfHXPBfzs2Xiu3RronYNLM8rHstSE+aCeei6ak42w02xGgDVsbZoFMMoTd6UfcbCq8wHp7Kl8y9aqy7bWpclPe/H6ndZBZZ56UzAJllLpbFrw0sfGLqSRol1lKc72JLtjWHrSfnF6s2FDeCDILp6qRdMAPxv16IJ356N5RkrP2Y1ieejaZWw0vcH47nZ/r0WXju1coE+ilE703HdFXp+JjhsyZUNiS853OM5ELUWqHfRyH4KMr9ZO32xs0Rw38Ra3zhpNEm4aMkmIJakH6Xh6fC8ad16X7ya6648YuolWv+exJBu24Q="
+    - secure: "mDR+xOPkgcUUdpJGwPHByBpTkEJfkqXGJaiR4eLvVGmJc9oGLf3lZDjetGHBlo+tYEMcz4Wjad0dxEMpYZKVebwJ5SDah2blph/cqHx0Err6KMHPPTERB8K7bPwhBAl+oVp6qvsrVdraf01p8S2fNjjhdB4j0SEY+jyVUsjq2+w5XiGnUA9c0ZBlp4a0u/Sk0JKpk/Z40iZdtkCNsGOWHSbIhv+IHvh45+4VkiSiFRcbBEyeIczwbkqWeU9O3+SykfvjG853hKxbvHByIUNS3LAdrjYY+K4uuUVU9cKmVXlVDdToHcRyBRKmz6miXSGEtU0T+LAOOS75rz5Wli9/a/JqU7L456bNjTExEbWOe0sLHpR/VGL2ph1+3MSH9TdGSQyYQch6BjX94kbsCY7HSU/7vUJ89QaXAkk+Oh63waoTfVUJv7iQmzd0i7Lg5aIvPGYhLbO1zKKQv82SdpJ+ynF6gVf5jN9b0ytzSXROWvRdxp/QuFtDXWFvO50qkONi36i5PwHSaJoaWKb2niIWvJPZ2B70QqPX3MoE+nFnHTwvqp18T/kAZxaQ7u0R4OppdyP3TBrfb6l2advXFlXNXj32ou11qYdPIbz/v3bdEEmQk06alRvEnFGhWDpJmdyaWMxEQHyot3h7Obvqx18kTQHPlPIPjx+VNOoip/ZpPlQ="
+    - LTD_SKIP_UPLOAD=true
