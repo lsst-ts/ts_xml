@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-stylesheet type="text/xsl" href="http://lsst-sal.tuc.noao.edu/schema/SALEventSet.xsl"?>
 <SALEventSet xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://lsst-sal.tuc.noao.edu/schema/SALEventSet.xsd">
+    <Enumeration>AzimuthCommandedState_Unknown,AzimuthCommandedState_GoToPosition,AzimuthCommandedState_Home,AzimuthCommandedState_Stop</Enumeration>
     <Enumeration>AzimuthState_NotInMotion,AzimuthState_MovingCW,AzimuthState_MovingCCW</Enumeration>
+    <Enumeration>ShutterDoorCommandedState_Unknown,ShutterDoorCommandedState_Closed,ShutterDoorCommandedState_Opened,ShutterDoorCommandedState_Stop</Enumeration>
     <Enumeration>ShutterDoorState_Closed,ShutterDoorState_Opened,ShutterDoorState_PartiallyOpened,ShutterDoorState_Opening,ShutterDoorState_Closing</Enumeration>
     <!-- Standard events --> 
     <SALEvent>
@@ -25,9 +27,33 @@
         <Subsystem>ATDome</Subsystem>
         <Version>3.8.2</Version>
         <Author/>
+        <EFDB_Topic>ATDome_logevent_azimuthCommandedState</EFDB_Topic>
+        <Alias>azimuthCommandedState</Alias>
+        <Description>Commanded state of azimuth drive.</Description>
+        <Explanation>http://sal.lsst.org</Explanation>
+        <item>
+            <EFDB_Name>commandedState</EFDB_Name>
+            <Description/>
+            <!-- Enumeration: AzimuthCommandedState -->
+            <IDL_Type>long</IDL_Type>
+            <Units/>
+            <Count>1</Count>
+        </item>
+        <item>
+            <EFDB_Name>azimuth</EFDB_Name>
+            <Description>Position commanded by the most recent moveAzimuth command; nan when the CSC starts up or when homing.</Description>
+            <IDL_Type>float</IDL_Type>
+            <Units>deg</Units>
+            <Count>1</Count>
+        </item>
+    </SALEvent>
+    <SALEvent>
+        <Subsystem>ATDome</Subsystem>
+        <Version>3.8.2</Version>
+        <Author/>
         <EFDB_Topic>ATDome_logevent_azimuthState</EFDB_Topic>
         <Alias>azimuthState</Alias>
-        <Description>State of azimuth drive.</Description>
+        <Description>Current state of azimuth drive.</Description>
         <Explanation>http://sal.lsst.org</Explanation>
         <item>
             <EFDB_Name>state</EFDB_Name>
@@ -49,9 +75,26 @@
         <Subsystem>ATDome</Subsystem>
         <Version>3.8.2</Version>
         <Author/>
+        <EFDB_Topic>ATDome_logevent_dropoutDoorCommandedState</EFDB_Topic>
+        <Alias>dropoutDoorCommandedState</Alias>
+        <Description>Commanded state of the dropout shutter door.</Description>
+        <Explanation>http://sal.lsst.org</Explanation>
+        <item>
+            <EFDB_Name>commandedState</EFDB_Name>
+            <Description/>
+            <!-- Enumeration: ShutterDoorCommandedState -->
+            <IDL_Type>long</IDL_Type>
+            <Units/>
+            <Count>1</Count>
+        </item>
+    </SALEvent>
+    <SALEvent>
+        <Subsystem>ATDome</Subsystem>
+        <Version>3.8.2</Version>
+        <Author/>
         <EFDB_Topic>ATDome_logevent_dropoutDoorState</EFDB_Topic>
         <Alias>dropoutDoorState</Alias>
-        <Description>State of the dropout shutter door.</Description>
+        <Description>Current state of the dropout shutter door.</Description>
         <Explanation>http://sal.lsst.org</Explanation>
         <item>
             <EFDB_Name>state</EFDB_Name>
@@ -66,9 +109,26 @@
         <Subsystem>ATDome</Subsystem>
         <Version>3.8.2</Version>
         <Author/>
+        <EFDB_Topic>ATDome_logevent_mainDoorCommandedState</EFDB_Topic>
+        <Alias>mainDoorCommandedState</Alias>
+        <Description>Commanded state of the main shutter door.</Description>
+        <Explanation>http://sal.lsst.org</Explanation>
+        <item>
+            <EFDB_Name>commandedState</EFDB_Name>
+            <Description/>
+            <!-- Enumeration: ShutterDoorCommandedState -->
+            <IDL_Type>long</IDL_Type>
+            <Units/>
+            <Count>1</Count>
+        </item>
+    </SALEvent>
+    <SALEvent>
+        <Subsystem>ATDome</Subsystem>
+        <Version>3.8.2</Version>
+        <Author/>
         <EFDB_Topic>ATDome_logevent_mainDoorState</EFDB_Topic>
         <Alias>mainDoorState</Alias>
-        <Description>State of the main shutter door.</Description>
+        <Description>Current state of the main shutter door.</Description>
         <Explanation>http://sal.lsst.org</Explanation>
         <item>
             <EFDB_Name>state</EFDB_Name>
