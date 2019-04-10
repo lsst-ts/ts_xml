@@ -80,17 +80,38 @@
         <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>timestamp</EFDB_Name>
-        <Description>Time at which the script process started.</Description>
+        <EFDB_Name>timestampProcessStart</EFDB_Name>
+        <Description>When the script process started. 0 before the process is started.</Description>
         <IDL_Type>double</IDL_Type>
         <Units></Units>
         <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>duration</EFDB_Name>
-        <Description>Duration of the script process; 0 if still running.</Description>
+        <EFDB_Name>timestampConfigureStart</EFDB_Name>
+        <Description>When script configuration began. 0 before configuration begins.</Description>
         <IDL_Type>double</IDL_Type>
-        <Units>seconds</Units>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>timestampConfigureEnd</EFDB_Name>
+        <Description>When script configuration finished (succeeded or failed). 0 before configuration ends.</Description>
+        <IDL_Type>double</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>timestampRunStart</EFDB_Name>
+        <Description>When the script was told to run. 0 before the script is told to run.</Description>
+        <IDL_Type>double</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>timestampProcessEnd</EFDB_Name>
+        <Description>When the script process ended. This is also approximately the time at which the script stopped running, if it was ever run. 0 before the script process ends.</Description>
+        <IDL_Type>double</IDL_Type>
+        <Units></Units>
         <Count>1</Count>
     </item>
     <item>
@@ -99,7 +120,7 @@
         <IDL_Type>byte</IDL_Type>
         <Units></Units>
         <Count>1</Count>
-        <Enumeration>Loading,Configured,Running,Done,ConfigureFailed,Terminated</Enumeration>
+        <Enumeration>Loading,Configured,Running,Done,LoadFailed,ConfigureFailed,Terminated</Enumeration>
     </item>
     <item>
         <EFDB_Name>scriptState</EFDB_Name>
@@ -164,6 +185,30 @@
         <IDL_Type>int</IDL_Type>
         <Units></Units>
         <Count>400</Count>
+    </item>
+</SALEvent>
+<SALEvent>
+    <Subsystem>ScriptQueue</Subsystem>
+    <Version>1.0.0</Version>
+    <Author></Author>
+    <EFDB_Topic>ScriptQueue_logevent_rootDirectories</EFDB_Topic>
+    <Alias>rootDirectories</Alias>
+    <Explanation>Root directories for scripts.</Explanation>
+    <item>
+        <EFDB_Name>standard</EFDB_Name>
+        <Description>Root directory for standard scripts.</Description>
+        <IDL_Type>string</IDL_Type>
+        <IDL_Size>1</IDL_Size>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>external</EFDB_Name>
+        <Description>Root directory for external scripts.</Description>
+        <IDL_Type>string</IDL_Type>
+        <IDL_Size>1</IDL_Size>
+        <Units></Units>
+        <Count>1</Count>
     </item>
 </SALEvent>
 

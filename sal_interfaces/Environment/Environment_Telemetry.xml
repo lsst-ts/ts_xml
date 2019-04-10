@@ -2,39 +2,477 @@
 <?xml-stylesheet type="text/xsl" href="http://lsst-sal.tuc.noao.edu/schema/SALTelemetrySet.xsl"?>
 <SALTelemetrySet xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:noNamespaceSchemaLocation="http://lsst-sal.tuc.noao.edu/schema/SALTelemetrySet.xsd">
-
 <SALTelemetry>
- <Subsystem>Environment</Subsystem>
- <Version>3.5</Version>
- <Author>salgenerator</Author>
- <EFDB_Topic>Environment_weather</EFDB_Topic>
-      <item>
-          <EFDB_Name>ambient_temp</EFDB_Name>
-          <IDL_Type>double</IDL_Type>
-          <Units>degreesC</Units>
-          <Conversion></Conversion>
-          <Sensor_location></Sensor_location>
-          <Count>1</Count>
-          <Explanation></Explanation>
-      </item>
-      <item>
-          <EFDB_Name>humidity</EFDB_Name>
-          <IDL_Type>double</IDL_Type>
-          <Units>percent</Units>
-          <Conversion></Conversion>
-          <Sensor_location></Sensor_location>
-          <Count>1</Count>
-          <Explanation></Explanation>
-      </item>
-      <item>
-          <EFDB_Name>pressure</EFDB_Name>
-          <IDL_Type>double</IDL_Type>
-          <Units>Hpa</Units>
-          <Conversion></Conversion>
-          <Sensor_location></Sensor_location>
-          <Count>1</Count>
-          <Explanation></Explanation>
-      </item>
+    <Subsystem>Environment</Subsystem>
+    <Version>3.8</Version>
+    <Author></Author>
+    <EFDB_Topic>Environment_weather</EFDB_Topic>
+    <item>
+        <EFDB_Name>ambient_temp</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>double</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>humidity</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>double</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>pressure</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>double</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
 </SALTelemetry>
-</SALTelemetrySet>
-
+<SALTelemetry>
+    <Subsystem>Environment</Subsystem>
+    <Version>3.8</Version>
+    <Author></Author>
+    <EFDB_Topic>Environment_windDirection</EFDB_Topic>
+    <item>
+        <EFDB_Name>value</EFDB_Name>
+        <Description>Instantaneous value</Description>
+        <IDL_Type>double</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>avg2M</EFDB_Name>
+        <Description>2 minutes average value</Description>
+        <IDL_Type>double</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>max2M</EFDB_Name>
+        <Description>Maximum value during the last 2 minutes</Description>
+        <IDL_Type>double</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>min2M</EFDB_Name>
+        <Description>Minimum value during the last 2 minutes</Description>
+        <IDL_Type>double</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>avg10M</EFDB_Name>
+        <Description>10 minutes average value</Description>
+        <IDL_Type>double</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>max10M</EFDB_Name>
+        <Description>Maximum value during the last 10 minutes</Description>
+        <IDL_Type>double</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>sensorName</EFDB_Name>
+        <Description>Sensor model used to measure this parameters
+</Description>
+        <IDL_Type>string</IDL_Type>
+        <IDL_Size>1</IDL_Size>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+</SALTelemetry>
+<SALTelemetry>
+    <Subsystem>Environment</Subsystem>
+    <Version>3.8</Version>
+    <Author></Author>
+    <EFDB_Topic>Environment_windGustDirection</EFDB_Topic>
+    <item>
+        <EFDB_Name>value10M</EFDB_Name>
+        <Description>value for the last 10 minutes </Description>
+        <IDL_Type>double</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>sensorName</EFDB_Name>
+        <Description>Sensor model used to measure this parameters
+</Description>
+        <IDL_Type>string</IDL_Type>
+        <IDL_Size>1</IDL_Size>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+</SALTelemetry>
+<SALTelemetry>
+    <Subsystem>Environment</Subsystem>
+    <Version>3.8</Version>
+    <Author></Author>
+    <EFDB_Topic>Environment_windSpeed</EFDB_Topic>
+    <item>
+        <EFDB_Name>value</EFDB_Name>
+        <Description>Instantaneous value</Description>
+        <IDL_Type>double</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>avg2M</EFDB_Name>
+        <Description>2 minutes average value</Description>
+        <IDL_Type>double</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>max2M</EFDB_Name>
+        <Description>Maximum value during the last 2 minutes</Description>
+        <IDL_Type>double</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>min2M</EFDB_Name>
+        <Description>Minimum value during the last 2 minutes</Description>
+        <IDL_Type>double</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>avg10M</EFDB_Name>
+        <Description>10 minutes average value</Description>
+        <IDL_Type>double</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>max10M</EFDB_Name>
+        <Description>Maximum value during the last 10 minutes</Description>
+        <IDL_Type>double</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>sensorName</EFDB_Name>
+        <Description>Sensor model used to measure this parameters
+</Description>
+        <IDL_Type>string</IDL_Type>
+        <IDL_Size>1</IDL_Size>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+</SALTelemetry>
+<SALTelemetry>
+    <Subsystem>Environment</Subsystem>
+    <Version>3.8</Version>
+    <Author></Author>
+    <EFDB_Topic>Environment_airTemperature</EFDB_Topic>
+    <item>
+        <EFDB_Name>avg24H</EFDB_Name>
+        <Description>24 hours average</Description>
+        <IDL_Type>double</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>avg1M</EFDB_Name>
+        <Description>1 minute average value</Description>
+        <IDL_Type>double</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>max24H</EFDB_Name>
+        <Description>Maximum value during the last 24 hours</Description>
+        <IDL_Type>double</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>min24H</EFDB_Name>
+        <Description>Minimum value during the last 24 hours</Description>
+        <IDL_Type>double</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>sensorName</EFDB_Name>
+        <Description>Sensor model used to measure this parameters
+</Description>
+        <IDL_Type>string</IDL_Type>
+        <IDL_Size>1</IDL_Size>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+</SALTelemetry>
+<SALTelemetry>
+    <Subsystem>Environment</Subsystem>
+    <Version>3.8</Version>
+    <Author></Author>
+    <EFDB_Topic>Environment_relativeHumidity</EFDB_Topic>
+    <item>
+        <EFDB_Name>avg24H</EFDB_Name>
+        <Description>24 hours average</Description>
+        <IDL_Type>double</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>avg1M</EFDB_Name>
+        <Description>1 minute average value</Description>
+        <IDL_Type>double</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>max24H</EFDB_Name>
+        <Description>Maximum value during the last 24 hours</Description>
+        <IDL_Type>double</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>min24H</EFDB_Name>
+        <Description>Minimum value during the last 24 hours</Description>
+        <IDL_Type>double</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>sensorName</EFDB_Name>
+        <Description>Sensor model used to measure this parameters
+</Description>
+        <IDL_Type>string</IDL_Type>
+        <IDL_Size>1</IDL_Size>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+</SALTelemetry>
+<SALTelemetry>
+    <Subsystem>Environment</Subsystem>
+    <Version>3.8</Version>
+    <Author></Author>
+    <EFDB_Topic>Environment_dewPoint</EFDB_Topic>
+    <item>
+        <EFDB_Name>avg1M</EFDB_Name>
+        <Description>1 minute average value</Description>
+        <IDL_Type>double</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>sensorName</EFDB_Name>
+        <Description>Sensor model used to measure this parameters
+</Description>
+        <IDL_Type>string</IDL_Type>
+        <IDL_Size>1</IDL_Size>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+</SALTelemetry>
+<SALTelemetry>
+    <Subsystem>Environment</Subsystem>
+    <Version>3.8</Version>
+    <Author></Author>
+    <EFDB_Topic>Environment_snowDepth</EFDB_Topic>
+    <item>
+        <EFDB_Name>avg1M</EFDB_Name>
+        <Description>1 minute average value</Description>
+        <IDL_Type>double</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>max24H</EFDB_Name>
+        <Description>Maximum value during the last 24 hours</Description>
+        <IDL_Type>double</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>min24H</EFDB_Name>
+        <Description>Minimum value during the last 24 hours</Description>
+        <IDL_Type>double</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>avg24H</EFDB_Name>
+        <Description>24 hours average</Description>
+        <IDL_Type>double</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>sensorName</EFDB_Name>
+        <Description>Sensor model used to measure this parameters
+</Description>
+        <IDL_Type>string</IDL_Type>
+        <IDL_Size>1</IDL_Size>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+</SALTelemetry>
+<SALTelemetry>
+    <Subsystem>Environment</Subsystem>
+    <Version>3.8</Version>
+    <Author></Author>
+    <EFDB_Topic>Environment_solarNetRadiation</EFDB_Topic>
+    <item>
+        <EFDB_Name>avg1M</EFDB_Name>
+        <Description>1 minute average value</Description>
+        <IDL_Type>double</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>max24H</EFDB_Name>
+        <Description>Maximum value during the last 24 hours</Description>
+        <IDL_Type>double</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>min24H</EFDB_Name>
+        <Description>Minimum value during the last 24 hours</Description>
+        <IDL_Type>double</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>avg24H</EFDB_Name>
+        <Description>24 hours average</Description>
+        <IDL_Type>double</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>sensorName</EFDB_Name>
+        <Description>Sensor model used to measure this parameters
+</Description>
+        <IDL_Type>string</IDL_Type>
+        <IDL_Size>1</IDL_Size>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+</SALTelemetry>
+<SALTelemetry>
+    <Subsystem>Environment</Subsystem>
+    <Version>3.8</Version>
+    <Author></Author>
+    <EFDB_Topic>Environment_airPressure</EFDB_Topic>
+    <item>
+        <EFDB_Name>paAvg1M</EFDB_Name>
+        <Description>1 minute average value</Description>
+        <IDL_Type>double</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>patrValue3H</EFDB_Name>
+        <Description>Value for the last 3 hours for Air Pressure trend
+</Description>
+        <IDL_Type>double</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>pateValue3H</EFDB_Name>
+        <Description>Value for the last 3 hours for Air Pressure Tendency</Description>
+        <IDL_Type>double</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>sensorName</EFDB_Name>
+        <Description>Sensor model used to measure this parameters
+</Description>
+        <IDL_Type>string</IDL_Type>
+        <IDL_Size>1</IDL_Size>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+</SALTelemetry>
+<SALTelemetry>
+    <Subsystem>Environment</Subsystem>
+    <Version>3.8</Version>
+    <Author></Author>
+    <EFDB_Topic>Environment_precipitation</EFDB_Topic>
+    <item>
+        <EFDB_Name>prSum1M</EFDB_Name>
+        <Description>1 minute sum value</Description>
+        <IDL_Type>double</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>prSum1H</EFDB_Name>
+        <Description>1 hour sum value
+</Description>
+        <IDL_Type>double</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>prfSum1M</EFDB_Name>
+        <Description>1 minute sum value for precipitation intensity</Description>
+        <IDL_Type>double</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>sensorName</EFDB_Name>
+        <Description>Sensor model used to measure this parameters
+</Description>
+        <IDL_Type>string</IDL_Type>
+        <IDL_Size>1</IDL_Size>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+</SALTelemetry>
+<SALTelemetry>
+    <Subsystem>Environment</Subsystem>
+    <Version>3.8</Version>
+    <Author></Author>
+    <EFDB_Topic>Environment_soilTemperature</EFDB_Topic>
+    <item>
+        <EFDB_Name>avg24H</EFDB_Name>
+        <Description>24 hours average</Description>
+        <IDL_Type>double</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>avg1M</EFDB_Name>
+        <Description>1 minute average value</Description>
+        <IDL_Type>double</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>max24H</EFDB_Name>
+        <Description>Maximum value during the last 24 hours</Description>
+        <IDL_Type>double</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>min24H</EFDB_Name>
+        <Description>Minimum value during the last 24 hours</Description>
+        <IDL_Type>double</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>sensorName</EFDB_Name>
+        <Description>Sensor model used to measure this parameters
+</Description>
+        <IDL_Type>string</IDL_Type>
+        <IDL_Size>1</IDL_Size>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
+</SALTelemetry></SALTelemetrySet>

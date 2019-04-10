@@ -1,79 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-stylesheet type="text/xsl" href="http://lsst-sal.tuc.noao.edu/schema/SALTelemetrySet.xsl"?>
-<SALTelemetrySet xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:noNamespaceSchemaLocation="http://lsst-sal.tuc.noao.edu/schema/SALTelemetrySet.xsd">
-<SALTelemetry>
-    <Subsystem>ATDome</Subsystem>
-    <Version>3.8.2</Version>
-    <Author></Author>
-    <EFDB_Topic>ATDome_timestamp</EFDB_Topic>
-    <item>
-        <EFDB_Name>timestamp</EFDB_Name>
-        <Description>The system time (TAI).</Description>
-        <IDL_Type>double</IDL_Type>
-        <Units></Units>
-        <Count>1</Count>
-    </item>
-</SALTelemetry>
-<SALTelemetry>
-    <Subsystem>ATDome</Subsystem>
-    <Version>3.8.2</Version>
-    <Author></Author>
-    <EFDB_Topic>ATDome_loopTime</EFDB_Topic>
-    <item>
-        <EFDB_Name>loopTime</EFDB_Name>
-        <Description>The actual loop time is ms.
-</Description>
-        <IDL_Type>double</IDL_Type>
-        <Units></Units>
-        <Count>1</Count>
-    </item>
-</SALTelemetry>
-<SALTelemetry>
-    <Subsystem>ATDome</Subsystem>
-    <Version>3.8.2</Version>
-    <Author></Author>
-    <EFDB_Topic>ATDome_position</EFDB_Topic>
-    <item>
-        <EFDB_Name>dropoutOpeningPercentage</EFDB_Name>
-        <Description>Dropout door opening percentage.</Description>
-        <IDL_Type>float</IDL_Type>
-        <Units></Units>
-        <Count>1</Count>
-    </item>
-    <item>
-        <EFDB_Name>mainDoorOpeningPercentage</EFDB_Name>
-        <Description>Main door opening percentage.</Description>
-        <IDL_Type>float</IDL_Type>
-        <Units></Units>
-        <Count>1</Count>
-    </item>
-    <item>
-        <EFDB_Name>azimuthPosition</EFDB_Name>
-        <Description></Description>
-        <IDL_Type>double</IDL_Type>
-        <Units></Units>
-        <Count>1</Count>
-    </item>
-    <item>
-        <EFDB_Name>dropoutOpeningPercentageSet</EFDB_Name>
-        <Description>Dropout door opening percentage.</Description>
-        <IDL_Type>float</IDL_Type>
-        <Units></Units>
-        <Count>1</Count>
-    </item>
-    <item>
-        <EFDB_Name>mainDoorOpeningPercentageSet</EFDB_Name>
-        <Description>Main door opening percentage.</Description>
-        <IDL_Type>float</IDL_Type>
-        <Units></Units>
-        <Count>1</Count>
-    </item>
-    <item>
-        <EFDB_Name>azimuthPositionSet</EFDB_Name>
-        <Description></Description>
-        <IDL_Type>double</IDL_Type>
-        <Units></Units>
-        <Count>1</Count>
-    </item>
-</SALTelemetry></SALTelemetrySet>
+<SALTelemetrySet xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://lsst-sal.tuc.noao.edu/schema/SALTelemetrySet.xsd">
+    <SALTelemetry>
+        <Subsystem>ATDome</Subsystem>
+        <Version>3.8.2</Version>
+        <Author/>
+        <Description>Current position of azimuth and both shutter doors.</Description>
+        <EFDB_Topic>ATDome_position</EFDB_Topic>
+        <item>
+            <EFDB_Name>dropoutDoorOpeningPercentage</EFDB_Name>
+            <Description>Current dropout shutter door opening percentage.</Description>
+            <IDL_Type>float</IDL_Type>
+            <Units/>
+            <Count>1</Count>
+        </item>
+        <item>
+            <EFDB_Name>mainDoorOpeningPercentage</EFDB_Name>
+            <Description>Current main shutter door opening percentage.</Description>
+            <IDL_Type>float</IDL_Type>
+            <Units/>
+            <Count>1</Count>
+        </item>
+        <item>
+            <EFDB_Name>azimuthPosition</EFDB_Name>
+            <Description>Current azimuth position.</Description>
+            <IDL_Type>double</IDL_Type>
+            <Units>deg</Units>
+            <Count>1</Count>
+        </item>
+    </SALTelemetry>
+</SALTelemetrySet>

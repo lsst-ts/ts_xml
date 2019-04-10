@@ -15,9 +15,17 @@
     <Explanation>http://sal.lsst.org</Explanation>
             <item>
                 <EFDB_Name>filter</EFDB_Name>
-                <Description></Description>
+                <Description>Id of the filter to select.</Description>
                 <!-- Enumeration: Filter -->
                 <IDL_Type>long</IDL_Type>
+                <Units></Units>
+                <Count>1</Count>
+            </item>
+            <item>
+                <EFDB_Name>name</EFDB_Name>
+                <Description>Name of the filter to select. Command gets rejected if both are set.</Description>
+                <IDL_Type>string</IDL_Type>
+                <IDL_Size>256</IDL_Size>
                 <Units></Units>
                 <Count>1</Count>
             </item>
@@ -41,6 +49,14 @@
                 <Units></Units>
                 <Count>1</Count>
             </item>
+            <item>
+                <EFDB_Name>name</EFDB_Name>
+                <Description>Name of the grating to select. Command gets rejected if both are set.</Description>
+                <IDL_Type>string</IDL_Type>
+                <IDL_Size>256</IDL_Size>
+                <Units></Units>
+                <Count>1</Count>
+            </item>
 </SALCommand>
 <SALCommand>
     <Subsystem>ATSpectrograph</Subsystem>
@@ -54,10 +70,10 @@
     <Value></Value>
     <Explanation>http://sal.lsst.org</Explanation>
     <item>
-        <EFDB_Name>moveLinearStage</EFDB_Name>
+        <EFDB_Name>distanceFromHome</EFDB_Name>
         <Description></Description>
         <IDL_Type>double</IDL_Type>
-        <Units>m</Units>
+        <Units>mm</Units>
         <Count>1</Count>
     </item>
 </SALCommand>
@@ -79,7 +95,7 @@
         <Units></Units>
         <Count>1</Count>
     </item>
-</SALCommand>
+ </SALCommand>
 <SALCommand>
     <Subsystem>ATSpectrograph</Subsystem>
     <Version>3.7.2</Version>

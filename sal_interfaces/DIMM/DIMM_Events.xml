@@ -73,6 +73,13 @@
     <Alias>dimmMeasurement</Alias>
     <Explanation>http://sal.lsst.org</Explanation>
     <item>
+        <EFDB_Name>timestamp</EFDB_Name>
+        <Description></Description>
+        <IDL_Type>float</IDL_Type>
+        <Units>seconds</Units>
+        <Count>1</Count>
+    </item>
+    <item>
         <EFDB_Name>hrNum</EFDB_Name>
         <Description>HR star number</Description>
         <IDL_Type>unsigned long</IDL_Type>
@@ -80,66 +87,57 @@
         <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>timestamp</EFDB_Name>
-        <Description></Description>
-        <IDL_Type>double</IDL_Type>
-        <Units>seconds</Units>
-        <Count>1</Count>
-    </item>
-    <item>
-        <EFDB_Name>utDate</EFDB_Name>
-        <Description>UT date on PC</Description>
-        <IDL_Type>string</IDL_Type>
-        <IDL_Size>16</IDL_Size>
-        <Units></Units>
-        <Count>1</Count>
-    </item>
-    <item>
-        <EFDB_Name>utTime</EFDB_Name>
-        <Description>UT time on PC</Description>
-        <IDL_Type>string</IDL_Type>
-        <IDL_Size>16</IDL_Size>
-        <Units></Units>
-        <Count>1</Count>
-    </item>
-      <item>
-        <EFDB_Name>exposureTime</EFDB_Name>
-        <Description>Exposure time in msec</Description>
-        <IDL_Type>double</IDL_Type>
-        <Units>seconds</Units>
-        <Count>1</Count>
-    </item>
-    <item>
-        <EFDB_Name>airmass</EFDB_Name>
+        <EFDB_Name>secz</EFDB_Name>
         <Description>Airmass of the observation</Description>
-        <IDL_Type>double</IDL_Type>
+        <IDL_Type>float</IDL_Type>
         <Units></Units>
         <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>scanLines</EFDB_Name>
-        <Description>Total number of scanned lines</Description>
+        <EFDB_Name>fwhm</EFDB_Name>
+        <Description>Combined full width half maximum.</Description>
+        <IDL_Type>float</IDL_Type>
+        <Units>arcsec</Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>fwhmx</EFDB_Name>
+        <Description>Full width half maximum in the x-axis.</Description>
+        <IDL_Type>float</IDL_Type>
+        <Units>arcsec</Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>fwhmy</EFDB_Name>
+        <Description>Full width half maximum in the y-axis.</Description>
+        <IDL_Type>float</IDL_Type>
+        <Units>arcsec</Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>r0</EFDB_Name>
+        <Description>Fried parameter</Description>
+        <IDL_Type>float</IDL_Type>
+        <Units>cm</Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>nimg</EFDB_Name>
+        <Description>Number of images used.</Description>
         <IDL_Type>unsigned long</IDL_Type>
         <Units></Units>
         <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>seeingCorr</EFDB_Name>
-        <Description>Seeing (arcsec), corrected for zenith distance and exposure</Description>
+        <EFDB_Name>dx</EFDB_Name>
+        <Description>Distance between spots in the x-axis</Description>
         <IDL_Type>float</IDL_Type>
         <Units>arcsec</Units>
         <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>seeingCorr2</EFDB_Name>
-        <Description>Seeing (arcsec), corrected for zenith, uses 2-point exponential fit</Description>
-        <IDL_Type>float</IDL_Type>
-        <Units>arcsec</Units>
-        <Count>1</Count>
-    </item>
-    <item>
-        <EFDB_Name>seeingCorr6</EFDB_Name>
-        <Description>Seeing (arcsec), corrected for zenith, uses 6-point exponential fit</Description>
+        <EFDB_Name>dy</EFDB_Name>
+        <Description>Distance between spots in the y-axis</Description>
         <IDL_Type>float</IDL_Type>
         <Units>arcsec</Units>
         <Count>1</Count>
@@ -147,43 +145,50 @@
     <item>
         <EFDB_Name>flux</EFDB_Name>
         <Description>Total average flux this time bin</Description>
-        <IDL_Type>unsigned long</IDL_Type>
-        <Units>arcsec</Units>
+        <IDL_Type>float</IDL_Type>
+        <Units>ADU</Units>
         <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>scintLeft</EFDB_Name>
-        <Description>Scintillation-ratio (left star)</Description>
+        <EFDB_Name>fluxL</EFDB_Name>
+        <Description>Flux (left spot)</Description>
+        <IDL_Type>float</IDL_Type>
+        <Units>ADU</Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>scintL</EFDB_Name>
+        <Description>Scintillation-ratio (left spot)</Description>
         <IDL_Type>float</IDL_Type>
         <Units></Units>
         <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>scintRight</EFDB_Name>
-        <Description>Scintillation-ratio (right star)</Description>
+        <EFDB_Name>strehlL</EFDB_Name>
+        <Description>Strehl-ratio (left spot)</Description>
         <IDL_Type>float</IDL_Type>
         <Units></Units>
         <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>strehlLeft</EFDB_Name>
-        <Description>Strehl-ratio (left star)</Description>
+        <EFDB_Name>fluxR</EFDB_Name>
+        <Description>Flux (right spot)</Description>
+        <IDL_Type>float</IDL_Type>
+        <Units>ADU</Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>scintR</EFDB_Name>
+        <Description>Scintillation-ratio (right spot)</Description>
         <IDL_Type>float</IDL_Type>
         <Units></Units>
         <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>strehlRight</EFDB_Name>
-        <Description>Strehl-ratio (right star)</Description>
+        <EFDB_Name>strehlR</EFDB_Name>
+        <Description>Strehl-ratio (right spot)</Description>
         <IDL_Type>float</IDL_Type>
         <Units></Units>
-        <Count>1</Count>
-    </item>
-    <item>
-        <EFDB_Name>delta</EFDB_Name>
-        <Description>Star separation in pixels</Description>
-        <IDL_Type>float</IDL_Type>
-        <Units>pixels</Units>
         <Count>1</Count>
     </item>
 </SALEvent>
