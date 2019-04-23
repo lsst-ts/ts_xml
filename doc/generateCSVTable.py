@@ -28,8 +28,8 @@ for member in root.findall('Subsystem'):
 		active_developers = member.find('ActiveDevelopers').tag
 		subsystem_head.append("Active Developers")
 
-		CAM = member.find('CAM').tag
-		subsystem_head.append(CAM)
+		principal_csc_owner = member.find('PrincipalCSCOwner').tag
+		subsystem_head.append('Principal CSC Owner')
 
 		github = member.find('Github').tag
 		subsystem_head.append('Github')
@@ -37,11 +37,8 @@ for member in root.findall('Subsystem'):
 		jenkins_test_results = member.find('JenkinsTestResults').tag
 		subsystem_head.append("Jenkins Test Results")
 
-		LSSTPoC = member.find('LSSTPoC').tag
-		subsystem_head.append('LSST PoC')
-
-		LSSTIO = member.find('LSSTIO').tag
-		subsystem_head.append('LSST.io')
+		CSCDocs = member.find('CSCDocs').tag
+		subsystem_head.append('CSC Docs')
 
 		product_owner = member.find('ProductOwner').tag
 		subsystem_head.append('Product Owner')
@@ -55,12 +52,6 @@ for member in root.findall('Subsystem'):
 		vendor_PoC = member.find('VendorPoC').tag
 		subsystem_head.append('Vendor PoC')
 
-		XML = member.find('XML').tag
-		subsystem_head.append('XML')
-
-		principal_system = member.find('PrincipalSystem').tag
-		subsystem_head.append('Principal System')
-
 		csvwriter.writerow(subsystem_head)
 		count = count + 1
 
@@ -70,8 +61,8 @@ for member in root.findall('Subsystem'):
 	active_developers = member.find('ActiveDevelopers').text
 	subsystem.append(active_developers)
 
-	CAM = member.find('CAM').text
-	subsystem.append(CAM)
+	principal_csc_owner = member.find('PrincipalCSCOwner').text
+	subsystem.append(principal_csc_owner)
 
 	github = member.find('Github').text
 	subsystem.append(github)
@@ -82,8 +73,8 @@ for member in root.findall('Subsystem'):
 	LSSTPoC = member.find('LSSTPoC').text
 	subsystem.append(LSSTPoC)
 
-	LSSTIO = member.find('LSSTIO').text
-	subsystem.append(LSSTIO)
+	CSCDocs = member.find('CSCDocs').text
+	subsystem.append(CSCDocs)
 
 	product_owner = member.find('ProductOwner').text
 	subsystem.append(product_owner)
@@ -96,12 +87,6 @@ for member in root.findall('Subsystem'):
 
 	vendor_PoC = member.find('VendorPoC').text
 	subsystem.append(vendor_PoC)
-
-	XML = member.find('XML').text
-	subsystem.append(XML)
-
-	principal_system = member.find('PrincipalSystem').text
-	subsystem.append(principal_system)
 
 	csvwriter.writerow(subsystem)
 
