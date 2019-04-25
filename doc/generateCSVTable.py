@@ -37,6 +37,9 @@ for member in root.findall('Subsystem'):
 		jenkins_test_results = member.find('JenkinsTestResults').tag
 		subsystem_head.append("Jenkins Test Results")
 
+		LSSTPoC = member.find('LSSTPoC').text
+		subsystem_head.append('LSST PoC')
+
 		CSCDocs = member.find('CSCDocs').tag
 		subsystem_head.append('CSC Docs')
 
