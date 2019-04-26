@@ -15,7 +15,7 @@
     <Explanation>http://sal.lsst.org</Explanation>
             <item>
                 <EFDB_Name>detailedState</EFDB_Name>
-                <Description>An enumeration indicating the Monochrometer detailed state. See the DetailedStateValue enumeration defined in the Typedefs package.</Description>
+                <Description>An enumeration indicating the Electrometer detailed state. See the DetailedStateValue enumeration defined on top of this documment.</Description>
                 <!-- Enumeration: DetailedState -->
                 <IDL_Type>long</IDL_Type>
                 <Units></Units>
@@ -28,24 +28,25 @@
     <Author></Author>
     <EFDB_Topic>Electrometer_logevent_digitalFilterChange</EFDB_Topic>
     <Alias>digitalFilterChange</Alias>
+	<Description>Current update in the digital filter setup inside the Electrometer controller</Description>
     <Explanation>http://sal.lsst.org</Explanation>
+	<item>
+        <EFDB_Name>activateFilter</EFDB_Name>
+        <Description>If this is OFF, none of the filters will operate</Description>
+        <IDL_Type>boolean</IDL_Type>
+        <Units></Units>
+        <Count>1</Count>
+    </item>
     <item>
         <EFDB_Name>activateMedianFilter</EFDB_Name>
-        <Description>Average filter, true for set</Description>
+        <Description>The median filter is used to determine the “middle-most” reading from a group of readings that are arranged according to size. Activate the median filter inside the electrometer, true for ON and False for OFF</Description>
         <IDL_Type>boolean</IDL_Type>
         <Units></Units>
         <Count>1</Count>
     </item>
     <item>
         <EFDB_Name>activateAverageFilter</EFDB_Name>
-        <Description>Filter status, if active will execute Average or Median filter when set, true for active. </Description>
-        <IDL_Type>boolean</IDL_Type>
-        <Units></Units>
-        <Count>1</Count>
-    </item>
-    <item>
-        <EFDB_Name>activateFilter</EFDB_Name>
-        <Description>Median filter, true for set</Description>
+        <Description>Activate the average filter inside the electrometer, it uses the Default value inside the device (last 10 readings) to do the average calculation, true for ON and False for OFF </Description>
         <IDL_Type>boolean</IDL_Type>
         <Units></Units>
         <Count>1</Count>
@@ -72,10 +73,11 @@
     <Author></Author>
     <EFDB_Topic>Electrometer_logevent_integrationTime</EFDB_Topic>
     <Alias>integrationTime</Alias>
+	<Description>Set integration rate, this will directly affect reading rates</Description>
     <Explanation>http://sal.lsst.org</Explanation>
     <item>
         <EFDB_Name>intTime</EFDB_Name>
-        <Description>set voltage, will have to be within limits</Description>
+        <Description>Integration rate in seconds (166.67e-6 to 200e-3)</Description>
         <IDL_Type>float</IDL_Type>
         <Units></Units>
         <Count>1</Count>
