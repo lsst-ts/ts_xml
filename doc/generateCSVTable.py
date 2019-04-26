@@ -1,5 +1,7 @@
 import xml.etree.ElementTree as ET
+import operator
 import csv
+import bisect
 
 tree = ET.parse("../sal_interfaces/SALSubsystems.xml")
 root = tree.getroot()
@@ -94,3 +96,53 @@ for member in root.findall('Subsystem'):
 	csvwriter.writerow(subsystem)
 
 subsystem_data.close()
+
+# We have converted an xml table into a csv file with a header, however it is
+# not alphabetized. We do this here.
+with open('subsystemData.csv') as csv_file:
+	csv_reader = csv.reader(csv_file, delimiter=',')
+	line_count = 0
+	i=0
+
+	header = []
+	ordered_data = []
+	
+
+	for row in csv_reader:
+
+		# Add the header
+		if line_count == 0:
+			header = row 
+			line_count += 1
+
+		# Add our first row into the list, iterate onto the next row
+		elif line_count == 1:
+			ordered_data.append(row)
+			line_count+=1
+
+
+
+		# Place the rest of the rows into an ordered list based off the 1st ele
+		else:			
+			index = 0
+			for each_ordered_row in ordered_data:
+				if row[0] < ordered_data[index][0]: #a
+											
+					break
+				index+=1
+			ordered_data.insert(index, row)
+
+	# Write the ordered data into file
+	subsystem_data = open('orderedSubsystemData.csv', 'w')
+	csvwriter = csv.writer(subsystem_data)
+	csvwriter.writerow(header)
+
+	for row in ordered_data:
+		csvwriter.writerow(row)
+
+
+
+
+
+
+
