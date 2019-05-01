@@ -57,6 +57,9 @@ for member in root.findall('Subsystem'):
 		vendor_PoC = member.find('VendorPoC').tag
 		subsystem_head.append('Vendor PoC')
 
+		error_code = member.find('ErrorCode').tag
+		subsystem_head.append('Error Code')
+
 		csvwriter.writerow(subsystem_head)
 		count = count + 1
 
@@ -93,6 +96,9 @@ for member in root.findall('Subsystem'):
 	vendor_PoC = member.find('VendorPoC').text
 	subsystem.append(vendor_PoC)
 
+	error_code = member.find('ErrorCode').text
+	subsystem.append(error_code)
+
 	csvwriter.writerow(subsystem)
 
 subsystem_data.close()
@@ -107,7 +113,6 @@ with open('subsystemData.csv') as csv_file:
 	header = []
 	ordered_data = []
 	
-
 	for row in csv_reader:
 
 		# Add the header
@@ -119,8 +124,6 @@ with open('subsystemData.csv') as csv_file:
 		elif line_count == 1:
 			ordered_data.append(row)
 			line_count+=1
-
-
 
 		# Place the rest of the rows into an ordered list based off the 1st ele
 		else:			
@@ -139,10 +142,3 @@ with open('subsystemData.csv') as csv_file:
 
 	for row in ordered_data:
 		csvwriter.writerow(row)
-
-
-
-
-
-
-
