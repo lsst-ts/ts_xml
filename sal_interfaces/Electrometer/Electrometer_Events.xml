@@ -32,21 +32,21 @@
     <Explanation>http://sal.lsst.org</Explanation>
 	<item>
         <EFDB_Name>activateFilter</EFDB_Name>
-        <Description>If this is OFF, none of the filters will operate</Description>
+        <Description>If this is OFF, none of the filters will operate. 0 for not active and 1 for active</Description>
         <IDL_Type>boolean</IDL_Type>
         <Units></Units>
         <Count>1</Count>
     </item>
     <item>
         <EFDB_Name>activateMedianFilter</EFDB_Name>
-        <Description>The median filter is used to determine the “middle-most” reading from a group of readings that are arranged according to size. Activate the median filter inside the electrometer, true for ON and False for OFF</Description>
+        <Description>The median filter is used to determine the “middle-most” reading from a group of readings that are arranged according to size. Activate the median filter inside the electrometer, 1 for active and 0 for not active</Description>
         <IDL_Type>boolean</IDL_Type>
         <Units></Units>
         <Count>1</Count>
     </item>
     <item>
         <EFDB_Name>activateAverageFilter</EFDB_Name>
-        <Description>Activate the average filter inside the electrometer, it uses the Default value inside the device (last 10 readings) to do the average calculation, true for ON and False for OFF </Description>
+        <Description>Activate the average filter inside the electrometer, it uses the Default value inside the device (last 10 readings) to do the average calculation, 1 for active and 0 for not active </Description>
         <IDL_Type>boolean</IDL_Type>
         <Units></Units>
         <Count>1</Count>
@@ -270,7 +270,7 @@ Protocols are those supported by the cURL library.</Description>
     <Author>aanania</Author>
     <EFDB_Topic>Electrometer_logevent_settingsAppliedSerConf</EFDB_Topic>
     <Alias>settingsAppliedSerConf</Alias>
-	<Description>Serial configuration for the Electrometer port</Description>
+	<Description>Serial configuration for the Electrometer port. This configuration needs to be the same as the one set in the Electrometer device. For proper configuration please read the reference manual 6517B-901-01 Rev. B / June 2009 section Selecting interface parameters</Description>
     <Explanation>http://sal.lsst.org</Explanation>
     <item>
         <EFDB_Name>visaResource</EFDB_Name>
@@ -282,7 +282,7 @@ Protocols are those supported by the cURL library.</Description>
     </item>
     <item>
         <EFDB_Name>baudRate</EFDB_Name>
-        <Description>Baud rate as a number</Description>
+        <Description>Baud rate as a number. allowed values are: 2400, 4800, 9600, 14400, 19200, 38400, 57600, 115200</Description>
         <IDL_Type>long</IDL_Type>
         <Units></Units>
         <Count>1</Count>
