@@ -2,6 +2,7 @@
 <?xml-stylesheet type="text/xsl" href="http://lsst-sal.tuc.noao.edu/schema/SALCommandSet.xsl"?>
 <SALCommandSet xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:noNamespaceSchemaLocation="http://lsst-sal.tuc.noao.edu/schema/SALCommandSet.xsd">
+    <Enumeration>Location_First,Location_Last,Location_Before,Location_After</Enumeration>
 
 <SALCommand>
     <Subsystem>ScriptQueue</Subsystem>
@@ -144,11 +145,10 @@
     </item>
     <item>
       <EFDB_Name>location</EFDB_Name>
-        <Description>Queue location.</Description>
+        <Description>Location in the queue; a Location enum.</Description>
         <IDL_Type>byte</IDL_Type>
         <Units></Units>
         <Count>1</Count>
-        <Enumeration>First,Last,Before,After</Enumeration>
     </item>
     <item>
       <EFDB_Name>locationSalIndex</EFDB_Name>
@@ -178,11 +178,10 @@
     </item>
     <item>
       <EFDB_Name>location</EFDB_Name>
-        <Description>Queue location.</Description>
+        <Description>Location in the queue; a Location enum.</Description>
         <IDL_Type>byte</IDL_Type>
         <Units></Units>
         <Count>1</Count>
-        <Enumeration>First,Last,Before,After</Enumeration>
     </item>
     <item>
       <EFDB_Name>locationSalIndex</EFDB_Name>
@@ -212,15 +211,14 @@
     </item>
     <item>
       <EFDB_Name>location</EFDB_Name>
-        <Description>Queue location.</Description>
+        <Description>Location in the queue; a Location enum.</Description>
         <IDL_Type>byte</IDL_Type>
         <Units></Units>
         <Count>1</Count>
-        <Enumeration>First,Last,Before,After</Enumeration>
     </item>
     <item>
       <EFDB_Name>locationSalIndex</EFDB_Name>
-        <Description>Index of Script SAL component referred to by `location`; ignored unless `location` is `Before` or `After`.</Description>
+        <Description>Index of Script SAL component referred to by the location field; ignored unless the location is Before or After.</Description>
         <IDL_Type>int</IDL_Type>
         <Units></Units>
         <Count>1</Count>
