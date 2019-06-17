@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="http://lsst-sal.tuc.noao.edu/schema/SALCommandSet.xsl"?>
+<SALCommandSet xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="http://lsst-sal.tuc.noao.edu/schema/SALCommandSet.xsd">
+
+<SALCommand>
+    <Subsystem>Watcher</Subsystem>
+    <Version>1.0.0</Version>
+    <Author></Author>
+    <EFDB_Topic>Watcher_command_acknowledge</EFDB_Topic>
+    <Alias>acknowledge</Alias>
+    <Device></Device>
+    <Property></Property>
+    <Action></Action>
+    <Value></Value>
+    <Explanation>Acknowledge an alarm.</Explanation>
+    <item>
+        <EFDB_Name>name</EFDB_Name>
+        <Description>Name of alarm or alarms to acknowledge. Specify a regular expression to acknowledge multiple alarms.</Description>
+        <IDL_Type>string</IDL_Type>
+        <IDL_Size>1</IDL_Size>
+        <Units>unitless</Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>severity</EFDB_Name>
+        <Description>Severity level being acknowledged. An AlarmSeverity enum.</Description>
+        <IDL_Type>int</IDL_Type>
+        <Units>unitless</Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>acknowledgedBy</EFDB_Name>
+        <Description>User who acknowledged the alarm.</Description>
+        <IDL_Type>string</IDL_Type>
+        <IDL_Size>1</IDL_Size>
+        <Units>unitless</Units>
+        <Count>1</Count>
+    </item>
+</SALCommand>
+</SALCommandSet>
