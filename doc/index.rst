@@ -6,6 +6,7 @@ Pages
 =====
 
 .. toctree::
+    :maxdepth: 1
 
     sal_constraints_and_recommendations
 

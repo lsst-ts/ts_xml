@@ -2,14 +2,25 @@
 SAL Constraints and Recommendations
 ***********************************
 
+.. important::
+    When updating(not typos) a policy in this document.
+    Please add a description to the :ref:`sal_constraints_and_recommendations:Changes` section.
+
+Changes
+=======
+
+* New policy added :ref:`sal_constraints_and_recommendations:SAL Topic and Parameter <Description> and <Unit> fields`. *June 19th, 2019*
+
 The XML SAL object definitions have the following constraints:
 
-**Definitions**
+Definitions
+===========
 
 CSC
     Commandable SAL Component
 
-**Naming Convention:**
+Naming Convention
+=================
 
 Types (name of CSC): UpperCamelCase
     Handling abbreviations and acronyms: Capitalize all letters of an abbreviation or acronym: Hence ATAOS, MTM1M3.
@@ -27,13 +38,14 @@ Enumerations:
     Type name: UpperCamelCase (also known as PascalCase).
         Also, recommend use of "Selector" at the end of the type name when creating *new* Enumeration types.
     Literals: Also UpperCamelCase
-    
+
 
 .. note::
     Already established CSCs will NOT need to update their names; they are grandfathered in.
     This naming convention applies to all CSCs created *June 1, 2018* and forward.
 
-**Reserved words:**
+Reserved words
+==============
 
 The following list of words are reserved either by IDL or SQL parsing and may not be used as *<EFDB_Name>*'s in SAL topic definitions.
 
@@ -358,7 +370,8 @@ The *<Subsystem>* and *<Alias>* tags for command's and logevent's must be consis
 
 ALL names must be less than 64 characters in length.
 
-**Timestamps:**
+Timestamps
+==========
 
 If a time-of-data is to be associated with an item it should be named
     * *timestamp* - for a single time applying to all data in a topic
@@ -368,20 +381,23 @@ If a time-of-data is to be associated with an item it should be named
 
 The time(s) should be obtained using the SAL getCurrentTime() method, which returns a double precision value of TAI time with a resolution of at least 0.001 seconds.
 
-**Ignored Attributes in Topics**
+Ignored Attributes in Topics
+============================
 
 Many generic commands have an ignored attribute.
 This is due to a requirement from the API to not have empty topics.
 If you are adding a command to your CSC that does not require an attribute, it still must contain a "dummy" one.
 In order to maintain consistency across this use case, the attribute must be called *value*, be of type *boolean*, be given the following description: "Attribute required by the API, but is unused." and have the following units: *unitless*.
 
-**Generic Commands and Events**
+Generic Commands and Events
+===========================
 
 The standard set of commands and events are included in the `MagicDraw/EA UML SAL Template <https://confluence.lsstcorp.org/display/LTS/Create+SAL+XML+interfaces+from+UML>`_,
 
 Each new CSC should use this template as a starting point.
 
-**State Enumeration**
+State Enumeration
+=================
 
 The following state transition enumerations are globally defined:
 
@@ -403,18 +419,22 @@ After the salgenerator creates the code, you will have the following constants:
         SAL__STATE_DISABLED (C++, Java, and Python)
         SummaryState.ctl & DetailState.ctl (LabVIEW)
 
-**Custom Enumerations**
+Custom Enumerations
+===================
+
 Enumerations may also be declared on a per CSC basis, and will appear in the namespace of that CSC
 
 e.g. for ATTCS in C++:
     ATTCS_shared_SimpleSetA (declared globally)
     ATTCS_someEvent_SpecificSetA (datum specific)
 
-**Current SAL object tables:**
+Current SAL object tables
+=========================
 
 Can be found at http://project.lsst.org/ts/sal_objects
 
-**Generic commands:**
+Generic commands
+================
 
 The following command set is defined for all CSC's (although it is not mandatory to implement them all)
 
@@ -423,7 +443,8 @@ The following command set is defined for all CSC's (although it is not mandatory
     
     *start, stop, enable, disable, standby, enterControl, exitControl, abort, setValue*
 
-**Generic events:**
+Generic events
+==============
 
 The following event set is defined for all CSC's 
 
@@ -432,7 +453,8 @@ The following event set is defined for all CSC's
     
     *appliedSettingsMatchStart, errorCode, settingVersions, summaryState*
 
-**Standard Events:**
+Standard Events
+===============
 
 A LargeFileAnnouncement event consist off the following items:
 
@@ -444,7 +466,8 @@ A LargeFileAnnouncement event consist off the following items:
 * float version - x.y version of file Format
 * string<32> id - Extra identifying information about format/application
 
-**SAL Topic sizes**
+SAL Topic sizes
+===============
 
 In the rare case that absolute maximum performance and minimum latency are required, then the size of the SAL topic payload could be limited to
     1500 (mtu) - 240 (RTPS/DDS overhead) - 52 (SAL overhead) = 1208 bytes
@@ -484,8 +507,16 @@ Alternatively, upload the *testingest.sql* using the TBD webpage.
 
 `Proposed method of recording subsystem "Settings" data <https://confluence.lsstcorp.org/pages/viewpage.action?pageId=58949768>`_
 
-**SAL Topic and Parameter <Description> and <Unit> fields:**
+SAL Topic and Parameter <Description> and <Unit> fields
+=======================================================
 
+Changes
+-------
+
+* Policy added *June 19th, 2019*
+
+Policy
+------
 
 * XML will have the <Units> and <Description> fields defined for each parameter in a topic
 
@@ -520,7 +551,8 @@ An easy way to tell if a particular unit is valid is to try to make an astropy.u
     check_unit("deg") # OK
     check_unit("not_a_unit") # raises ValueError
 
-**SAL Interface Template:**
+SAL Interface Template
+======================
 
 Currently there's a template that includes all generic events and command, current design is in the repository: https://stash.lsstcorp.org/projects/TS/repos/ts_xml/browse/scripts/SAL_Interface_TemplateMD.mdzip
 
