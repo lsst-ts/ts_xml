@@ -14,12 +14,12 @@
     <Author></Author>
     <EFDB_Topic>Script_logevent_heartbeat</EFDB_Topic>
     <Alias>heartbeat</Alias>
-    <Explanation>http://sal.lsst.org</Explanation>
+    <Explanation></Explanation>
     <item>
         <EFDB_Name>heartbeat</EFDB_Name>
         <Description></Description>
         <IDL_Type>boolean</IDL_Type>
-        <Units></Units>
+        <Units>unitless</Units>
         <Count>1</Count>
     </item>
 </SALEvent>
@@ -37,7 +37,7 @@
         <Description>Checkpoint(s) at which to pause, as a regular expression. No checkpoints if blank; all checkpoints if ".*".</Description>
         <IDL_Type>string</IDL_Type>
         <IDL_Size>1</IDL_Size>
-        <Units></Units>
+        <Units>unitless</Units>
         <Count>1</Count>
     </item>
     <item>
@@ -45,7 +45,7 @@
         <Description>Checkpoint(s) at which to stop, as a regular expression. No checkpoints if blank; all checkpoints if ".*".</Description>
         <IDL_Type>string</IDL_Type>
         <IDL_Size>1</IDL_Size>
-        <Units></Units>
+        <Units>unitless</Units>
         <Count>1</Count>
     </item>
 </SALEvent>
@@ -75,7 +75,7 @@
         <EFDB_Name>level</EFDB_Name>
         <Description>Message level, a Python logging level: error=40, warning=30, info=20, debug=10.</Description>
         <IDL_Type>int</IDL_Type>
-        <Units></Units>
+        <Units>unitless</Units>
         <Count>1</Count>
     </item>
     <item>
@@ -83,7 +83,7 @@
         <Description></Description>
         <IDL_Type>string</IDL_Type>
         <IDL_Size>1</IDL_Size>
-        <Units></Units>
+        <Units>unitless</Units>
         <Count>1</Count>
     </item>
     <item>
@@ -107,7 +107,7 @@
         <Description>Name of script class.</Description>
         <IDL_Type>string</IDL_Type>
         <IDL_Size>1</IDL_Size>
-        <Units></Units>
+        <Units>unitless</Units>
         <Count>1</Count>
     </item>
     <item>
@@ -115,7 +115,7 @@
         <Description>Brief description of the script.</Description>
         <IDL_Type>string</IDL_Type>
         <IDL_Size>1</IDL_Size>
-        <Units></Units>
+        <Units>unitless</Units>
         <Count>1</Count>
     </item>
     <item>
@@ -123,7 +123,7 @@
         <Description>Names of remote SAL components used by the script as a comma-separated list. Each name is appended with :&lt;index&gt; if the component is indexed (and possibly with :0 if not indexed).</Description>
         <IDL_Type>string</IDL_Type>
         <IDL_Size>1</IDL_Size>
-        <Units></Units>
+        <Units>unitless</Units>
         <Count>1</Count>
     </item>
 </SALEvent>
@@ -138,7 +138,7 @@
         <EFDB_Name>coordinateSystem</EFDB_Name>
         <Description>Coordinate system for position. A MetadataCoordSys enum. Observed is refracted apparent topocentric, e.g. similar to Mount but the telescope model is applied and the azimuth is wrapped. If None then position should be ignored.</Description>
         <IDL_Type>short</IDL_Type>
-        <Units></Units>
+        <Units>unitless</Units>
         <Count>1</Count>
         <Enumeration>CSys_None, CSys_ICRS, CSys_Observed, CSys_Mount</Enumeration>
     </item>
@@ -162,7 +162,7 @@
         * Mount: The position sent to the instrument rotator; the details depend on the rotator.
         </Description>
         <IDL_Type>short</IDL_Type>
-        <Units></Units>
+        <Units>unitless</Units>
         <Count>1</Count>
     </item>
     <item>
@@ -177,21 +177,21 @@
         <Description>Comma-separated names of acceptable filters, or blank for any filter.</Description>
         <IDL_Type>string</IDL_Type>
         <IDL_Size>1</IDL_Size>
-        <Units>seconds</Units>
+        <Units>second</Units>
         <Count>1</Count>
     </item>
     <item>
         <EFDB_Name>dome</EFDB_Name>
         <Description>Desired dome state; a MetadataDome enum.</Description>
         <IDL_Type>short</IDL_Type>
-        <Units>seconds</Units>
+        <Units>second</Units>
         <Count>1</Count>
     </item>
     <item>
         <EFDB_Name>duration</EFDB_Name>
         <Description>Estimated duration of the script, excluding slewing to the initial position required by the script.</Description>
         <IDL_Type>double</IDL_Type>
-        <Units>seconds</Units>
+        <Units>second</Units>
         <Count>1</Count>
     </item>
 </SALEvent>
@@ -206,7 +206,7 @@
         <EFDB_Name>state</EFDB_Name>
         <Description>A ScriptState enum indicating the script state.</Description>
         <IDL_Type>byte</IDL_Type>
-        <Units></Units>
+        <Units>unitless</Units>
         <Count>1</Count>
         <Enumeration>Unconfigured,Configured,Running,Paused,Ending,Stopping,Failing,Done,Stopped,Failed</Enumeration>
     </item>
@@ -215,7 +215,7 @@
         <Description>More information about the state change; typically a reason for failure if the state is FAILED.</Description>
         <IDL_Type>string</IDL_Type>
         <IDL_Size>1</IDL_Size>
-        <Units></Units>
+        <Units>unitless</Units>
         <Count>1</Count>
     </item>
     <item>
@@ -223,7 +223,7 @@
         <Description>Name of most recently seen checkpoint.</Description>
         <IDL_Type>string</IDL_Type>
         <IDL_Size>1</IDL_Size>
-        <Units></Units>
+        <Units>unitless</Units>
         <Count>1</Count>
     </item>
 </SALEvent>
