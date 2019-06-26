@@ -2,6 +2,7 @@
 <?xml-stylesheet type="text/xsl" href="http://lsst-sal.tuc.noao.edu/schema/SALCommandSet.xsl"?>
 <SALCommandSet xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:noNamespaceSchemaLocation="http://lsst-sal.tuc.noao.edu/schema/SALCommandSet.xsd">
+    <Enumeration>Location_First,Location_Last,Location_Before,Location_After</Enumeration>
 
 <SALCommand>
     <Subsystem>ScriptQueue</Subsystem>
@@ -18,7 +19,34 @@
         <EFDB_Name>ignored</EFDB_Name>
         <Description>Dummy value that is ignored.</Description>
         <IDL_Type>boolean</IDL_Type>
-        <Units></Units>
+        <Units>unitless</Units>
+        <Count>1</Count>
+    </item>
+</SALCommand>
+<SALCommand>
+    <Subsystem>ScriptQueue</Subsystem>
+    <Version>1.0.0</Version>
+    <Author></Author>
+    <EFDB_Topic>ScriptQueue_command_showSchema</EFDB_Topic>
+    <Alias>showSchema</Alias>
+    <Device></Device>
+    <Property></Property>
+    <Action></Action>
+    <Value></Value>
+    <Explanation>Show the configuration schema for a given script.</Explanation>
+    <item>
+        <EFDB_Name>isStandard</EFDB_Name>
+        <Description>Is this a standard script (True) or an external script (False)?</Description>
+        <IDL_Type>boolean</IDL_Type>
+        <Units>unitless</Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>path</EFDB_Name>
+        <Description>Path to script, relative to the root directory for standard or external scripts.</Description>
+        <IDL_Type>string</IDL_Type>
+        <IDL_Size>1</IDL_Size>
+        <Units>unitless</Units>
         <Count>1</Count>
     </item>
 </SALCommand>
@@ -37,7 +65,7 @@
         <EFDB_Name>ignored</EFDB_Name>
         <Description>Dummy value that is ignored.</Description>
         <IDL_Type>boolean</IDL_Type>
-        <Units></Units>
+        <Units>unitless</Units>
         <Count>1</Count>
     </item>
 </SALCommand>
@@ -56,11 +84,10 @@
         <EFDB_Name>salIndex</EFDB_Name>
         <Description>SAL index of Script for which you want information.</Description>
         <IDL_Type>int</IDL_Type>
-        <Units></Units>
+        <Units>unitless</Units>
         <Count>1</Count>
     </item>
 </SALCommand>
-
 <SALCommand>
     <Subsystem>ScriptQueue</Subsystem>
     <Version>1.0.0</Version>
@@ -76,7 +103,7 @@
         <EFDB_Name>ignored</EFDB_Name>
         <Description></Description>
         <IDL_Type>boolean</IDL_Type>
-        <Units></Units>
+        <Units>unitless</Units>
         <Count>1</Count>
     </item>
 </SALCommand>
@@ -95,11 +122,10 @@
         <EFDB_Name>ignored</EFDB_Name>
         <Description></Description>
         <IDL_Type>boolean</IDL_Type>
-        <Units></Units>
+        <Units>unitless</Units>
         <Count>1</Count>
     </item>
 </SALCommand>
-
 <SALCommand>
     <Subsystem>ScriptQueue</Subsystem>
     <Version>1.0.0</Version>
@@ -115,7 +141,7 @@
         <EFDB_Name>isStandard</EFDB_Name>
         <Description>Is this a standard script (True) or an external script (False)?</Description>
         <IDL_Type>boolean</IDL_Type>
-        <Units></Units>
+        <Units>unitless</Units>
         <Count>1</Count>
     </item>
     <item>
@@ -123,7 +149,7 @@
         <Description>Path to script, relative to the root directory for standard or external scripts.</Description>
         <IDL_Type>string</IDL_Type>
         <IDL_Size>1</IDL_Size>
-        <Units></Units>
+        <Units>unitless</Units>
         <Count>1</Count>
     </item>
     <item>
@@ -131,7 +157,7 @@
         <Description>Configuration as yaml text that is parsed to make a keyword argument dict for the script's configure method.</Description>
         <IDL_Type>string</IDL_Type>
         <IDL_Size>1</IDL_Size>
-        <Units></Units>
+        <Units>unitless</Units>
         <Count>1</Count>
     </item>
     <item>
@@ -139,22 +165,21 @@
         <Description>Short description of why you are running this script.</Description>
         <IDL_Type>string</IDL_Type>
         <IDL_Size>1</IDL_Size>
-        <Units></Units>
+        <Units>unitless</Units>
         <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>location</EFDB_Name>
-        <Description>Queue location.</Description>
+        <Description>Location in the queue; a Location enum.</Description>
         <IDL_Type>byte</IDL_Type>
-        <Units></Units>
+        <Units>unitless</Units>
         <Count>1</Count>
-        <Enumeration>First,Last,Before,After</Enumeration>
     </item>
     <item>
       <EFDB_Name>locationSalIndex</EFDB_Name>
         <Description>Index of Script SAL component referred to by `location`; ignored unless `location` is `Before` or `After`.</Description>
         <IDL_Type>int</IDL_Type>
-        <Units></Units>
+        <Units>unitless</Units>
         <Count>1</Count>
     </item>
 </SALCommand>
@@ -173,22 +198,21 @@
       <EFDB_Name>salIndex</EFDB_Name>
         <Description>Index of Script SAL component to move.</Description>
         <IDL_Type>int</IDL_Type>
-        <Units></Units>
+        <Units>unitless</Units>
         <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>location</EFDB_Name>
-        <Description>Queue location.</Description>
+        <Description>Location in the queue; a Location enum.</Description>
         <IDL_Type>byte</IDL_Type>
-        <Units></Units>
+        <Units>unitless</Units>
         <Count>1</Count>
-        <Enumeration>First,Last,Before,After</Enumeration>
     </item>
     <item>
       <EFDB_Name>locationSalIndex</EFDB_Name>
         <Description>Index of Script SAL component referred to by `location`; ignored unless `location` is `Before` or `After`.</Description>
         <IDL_Type>int</IDL_Type>
-        <Units></Units>
+        <Units>unitless</Units>
         <Count>1</Count>
     </item>
 </SALCommand>
@@ -207,22 +231,21 @@
       <EFDB_Name>salIndex</EFDB_Name>
         <Description>Index of Script SAL component to requeue.</Description>
         <IDL_Type>int</IDL_Type>
-        <Units></Units>
+        <Units>unitless</Units>
         <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>location</EFDB_Name>
-        <Description>Queue location.</Description>
+        <Description>Location in the queue; a Location enum.</Description>
         <IDL_Type>byte</IDL_Type>
-        <Units></Units>
+        <Units>unitless</Units>
         <Count>1</Count>
-        <Enumeration>First,Last,Before,After</Enumeration>
     </item>
     <item>
       <EFDB_Name>locationSalIndex</EFDB_Name>
-        <Description>Index of Script SAL component referred to by `location`; ignored unless `location` is `Before` or `After`.</Description>
+        <Description>Index of Script SAL component referred to by the location field; ignored unless the location is Before or After.</Description>
         <IDL_Type>int</IDL_Type>
-        <Units></Units>
+        <Units>unitless</Units>
         <Count>1</Count>
     </item>
 </SALCommand>
@@ -241,21 +264,21 @@
         <EFDB_Name>length</EFDB_Name>
         <Description>Number of valid entries in salIndices.</Description>
         <IDL_Type>int</IDL_Type>
-        <Units></Units>
+        <Units>unitless</Units>
         <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>salIndices</EFDB_Name>
         <Description>Indices of Script SAL component to stop, 0 terminated.</Description>
         <IDL_Type>int</IDL_Type>
-        <Units></Units>
+        <Units>unitless</Units>
         <Count>400</Count>
     </item>
     <item>
       <EFDB_Name>terminate</EFDB_Name>
         <Description>If True, terminate the current script without giving it a chance to clean up. If False, try sending a stop command first, and only terminate if if that doesn't work in a timely fashion.</Description>
         <IDL_Type>boolean</IDL_Type>
-        <Units></Units>
+        <Units>unitless</Units>
         <Count>1</Count>
     </item>
 </SALCommand>

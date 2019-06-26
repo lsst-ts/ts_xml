@@ -1144,13 +1144,13 @@
 
 <Subsystem>
   <Name>Script</Name>
-  <Description></Description>
+  <Description>A "SAL script" that performs some action using SAL and then quits. SAL Scripts are managed by the ScriptQueue.</Description>
   <Enumeration>any</Enumeration>
   <Generics>no</Generics>
   <Version></Version>
   <Author></Author>
   <ActiveDevelopers>Russell Owen</ActiveDevelopers>
-  <PrincipalCSCOwner>Tiago</PrincipalCSCOwner>
+  <PrincipalCSCOwner>Tiago Ribeiro</PrincipalCSCOwner>
   <Github></Github>
   <JenkinsTestResults>NA</JenkinsTestResults>
   <LSSTPoC>Russell Owen</LSSTPoC>
@@ -1164,13 +1164,13 @@
 
 <Subsystem>
   <Name>ScriptQueue</Name>
-  <Description></Description>
+  <Description>A CSC that manges SAL Scripts (see the Script subsystem).</Description>
   <Enumeration>Main,AuxTel</Enumeration>
   <Generics>yes</Generics>
   <Version></Version>
   <Author></Author>
   <ActiveDevelopers>Russell Owen</ActiveDevelopers>
-  <PrincipalCSCOwner>Tiago</PrincipalCSCOwner>
+  <PrincipalCSCOwner>Tiago Ribeiro</PrincipalCSCOwner>
   <Github>https://github.com/lsst-ts/ts_scriptqueue</Github>
   <JenkinsTestResults>NA</JenkinsTestResults>
   <LSSTPoC>Russell Owen</LSSTPoC>
@@ -1229,7 +1229,7 @@
   <Generics>yes</Generics>
   <Version></Version>
   <Author></Author>
-  <ActiveDevelopers>Brian stalder</ActiveDevelopers>
+  <ActiveDevelopers>Brian Stalder</ActiveDevelopers>
   <PrincipalCSCOwner></PrincipalCSCOwner>
   <Github></Github>
   <JenkinsTestResults></JenkinsTestResults>
@@ -1324,7 +1324,7 @@
 
 <Subsystem>
   <Name>Test</Name>
-  <Description></Description>
+  <Description>A SAL component designed to support testing SAL itself.</Description>
   <Enumeration>any</Enumeration>
   <Generics>yes</Generics>
   <Version></Version>
@@ -1341,5 +1341,24 @@
   <VendorPoC>NA</VendorPoC>
   <ErrorCode></ErrorCode>
 </Subsystem>
-</SALSubsystems>
 
+<Subsystem>
+  <Name>Watcher</Name>
+  <Description>A CSC that listens other CSCs and uses that data to produces alarms for the user interface.</Description>
+  <Enumeration>any</Enumeration>
+  <Generics>yes</Generics>
+  <Version></Version>
+  <Author></Author>
+  <ActiveDevelopers>Russell Owen</ActiveDevelopers>
+  <PrincipalCSCOwner>Russell Owen</PrincipalCSCOwner>
+  <Github>https://github.com/lsst-ts/ts_watcher</Github>
+  <JenkinsTestResults></JenkinsTestResults>
+  <LSSTPoC>Russell Owen</LSSTPoC>
+  <CSCDocs>NA</CSCDocs>
+  <ProductOwner>Brian Stalder</ProductOwner>
+  <RelatedDocuments>NA</RelatedDocuments>
+  <SoftwareLanguage>Python</SoftwareLanguage>
+  <VendorPoC>NA</VendorPoC>
+  <ErrorCode></ErrorCode>
+</Subsystem>
+</SALSubsystems>

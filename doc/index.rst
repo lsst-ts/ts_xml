@@ -1,8 +1,17 @@
-######
+******
 ts_xml
-######
+******
 
-The ``ts_xml`` is package is used for defining the data objects for all the Commandable SAL Components (CSC). These data objects are defined in XML. SAL consumes the XML to produce language specific libraries to be able to communicate over the network. 
+Pages
+=====
+
+.. toctree::
+    :maxdepth: 1
+
+    sal_constraints_and_recommendations
+
+The ``ts_xml`` is package is used for defining the data objects for all the Commandable SAL Components (CSC). 
+These data objects are defined in XML. SAL consumes the XML to produce language specific libraries to be able to communicate over the network. 
 
 The following is a table overview of all the CSC's defined so far.
 

@@ -2,8 +2,22 @@
 <?xml-stylesheet type="text/xsl" href="http://lsst-sal.tuc.noao.edu/schema/SALEventSet.xsl"?>
 <SALEventSet xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:noNamespaceSchemaLocation="http://lsst-sal.tuc.noao.edu/schema/SALEventSet.xsd">
-<Enumeration>DetailedState_DisabledState,DetailedState_EnabledState,DetailedState_FaultState,DetailedState_OfflineState,DetailedState_StandbyState</Enumeration>
-
+<SALEvent>
+    <Subsystem>ATHeaderService</Subsystem>
+    <Version>3.8</Version>
+    <Author></Author>
+    <EFDB_Topic>ATHeaderService_logevent_offlineDetailedState</EFDB_Topic>
+    <Alias>offlineDetailedState</Alias>
+    <Explanation>http://project.lsst.org/ts/sal_objects/help/ATHeaderService_logevent_offlineDetailedState.html</Explanation>
+    <item>
+        <EFDB_Name>substate</EFDB_Name>
+        <Description>Enumeration of valid substates</Description>
+        <IDL_Type>long</IDL_Type>
+        <Units>unitless</Units>
+        <Count>1</Count>
+        <Enumeration>OFFLINE_AVAILABLE,OFFLINE_PUBLISH_ONLY</Enumeration>
+    </item>
+</SALEvent>
 <SALEvent>
     <Subsystem>ATHeaderService</Subsystem>
     <Version>3.8</Version>

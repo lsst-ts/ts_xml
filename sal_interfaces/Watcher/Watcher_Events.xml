@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="http://lsst-sal.tuc.noao.edu/schema/SALEventSet.xsl"?>
+<SALEventSet xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="http://lsst-sal.tuc.noao.edu/schema/SALEventSet.xsd">
+    <Enumeration>AlarmSeverity_None,AlarmSeverity_Warning,AlarmSeverity_Serious,AlarmSeverity_Critical</Enumeration>
+
+<SALEvent>
+    <Subsystem>Watcher</Subsystem>
+    <Version>1.0.0</Version>
+    <Author></Author>
+    <EFDB_Topic>Watcher_logevent_heartbeat</EFDB_Topic>
+    <Alias>heartbeat</Alias>
+    <Explanation></Explanation>
+    <item>
+        <EFDB_Name>heartbeat</EFDB_Name>
+        <Description>This field is not set.</Description>
+        <IDL_Type>boolean</IDL_Type>
+        <Units>unitless</Units>
+        <Count>1</Count>
+    </item>
+</SALEvent>
+
+<SALEvent>
+    <Subsystem>Watcher</Subsystem>
+    <Version>1.0.0</Version>
+    <Author></Author>
+    <EFDB_Topic>Watcher_logevent_alarm</EFDB_Topic>
+    <Alias>alarm</Alias>
+    <Explanation>Alarm about a problem.</Explanation>
+    <item>
+        <EFDB_Name>name</EFDB_Name>
+        <Description>Name of alarm. Each alarm has a unique name.</Description>
+        <IDL_Type>string</IDL_Type>
+        <IDL_Size>1</IDL_Size>
+        <Units>unitless</Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>reason</EFDB_Name>
+        <Description>A detailed description of what is wrong. For example if a voltage is out of range, please specify the measured voltage and the range.</Description>
+        <IDL_Type>string</IDL_Type>
+        <IDL_Size>1</IDL_Size>
+        <Units>unitless</Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>severity</EFDB_Name>
+        <Description>The current alarm severity. An AlarmSeverity enum.</Description>
+        <IDL_Type>int</IDL_Type>
+        <Units>unitless</Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>maxSeverity</EFDB_Name>
+        <Description>The maximum severity seen for this alarm. An AlarmSeverity enum.</Description>
+        <IDL_Type>int</IDL_Type>
+        <Units>unitless</Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>acknowledged</EFDB_Name>
+        <Description>Has this alarm been acknowledged? true=yes, false=no.</Description>
+        <IDL_Type>boolean</IDL_Type>
+        <Units>unitless</Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>acknowledgedBy</EFDB_Name>
+        <Description>User who acknowledged the alarm.</Description>
+        <IDL_Type>string</IDL_Type>
+        <IDL_Size>1</IDL_Size>
+        <Units>unitless</Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>enabled</EFDB_Name>
+        <Description>Is this alarm enabled? true=yes, display it normally; false=no, do not display it by default.</Description>
+        <IDL_Type>boolean</IDL_Type>
+        <Units>unitless</Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>escalated</EFDB_Name>
+        <Description>Has this alarm been escalated to backup personnel?</Description>
+        <IDL_Type>boolean</IDL_Type>
+        <Units>unitless</Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>escalateTo</EFDB_Name>
+        <Description>Backup user who was or will be notified if the alarm is escalated.</Description>
+        <IDL_Type>string</IDL_Type>
+        <IDL_Size>1</IDL_Size>
+        <Units>unitless</Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>timestampSeverityOldest</EFDB_Name>
+        <Description>Time at which severity was originally set to its current value.</Description>
+        <IDL_Type>float</IDL_Type>
+        <Units>second</Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>timestampSeverityNewest</EFDB_Name>
+        <Description>Time at which severity was most recently found to still have its current value.</Description>
+        <IDL_Type>float</IDL_Type>
+        <Units>second</Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>timestampMaxSeverity</EFDB_Name>
+        <Description>Time at which maxSeverity was last changed.</Description>
+        <IDL_Type>float</IDL_Type>
+        <Units>second</Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>timestampAcknowledged</EFDB_Name>
+        <Description>Time at which acknowledged was last changed.</Description>
+        <IDL_Type>float</IDL_Type>
+        <Units>second</Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>timestampAutoUnacknowledge</EFDB_Name>
+        <Description>Time at which the alarm will be automatically unacknowledged if still active. 0 if not relevant in this state or the alarm does not support automatic unacknowledgement.</Description>
+        <IDL_Type>float</IDL_Type>
+        <Units>second</Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>timestampAutoAcknowledge</EFDB_Name>
+        <Description>Time at which the alarm will be automatically acknowledged if still stale (not active and not acknowledged). 0 if not relevant in this state or the alarm does not support automatic acknowledgement of stale alarms.</Description>
+        <IDL_Type>float</IDL_Type>
+        <Units>second</Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>timestampEscalate</EFDB_Name>
+        <Description>Time at which the alarm was or will be escalated to backup personnel (if escalate is true or false, respectively). 0 if not relevant in this state or the alarm does not support escalation.</Description>
+        <IDL_Type>float</IDL_Type>
+        <Units>second</Units>
+        <Count>1</Count>
+    </item>
+</SALEvent>
+
+</SALEventSet>
