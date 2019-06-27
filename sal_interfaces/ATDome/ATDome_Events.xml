@@ -16,7 +16,7 @@
         <Explanation>http://sal.lsst.org</Explanation>
         <item>
             <EFDB_Name>heartbeat</EFDB_Name>
-            <Description>Ignore this field.</Description>
+            <Description>This field is ignored.</Description>
             <IDL_Type>boolean</IDL_Type>
             <Units>unitless</Units>
             <Count>1</Count>
@@ -33,7 +33,7 @@
         <Explanation>http://sal.lsst.org</Explanation>
         <item>
             <EFDB_Name>commandedState</EFDB_Name>
-            <Description/>
+            <Description>Commanded state.</Description>
             <!-- Enumeration: AzimuthCommandedState -->
             <IDL_Type>long</IDL_Type>
             <Units>unitless</Units>
@@ -57,7 +57,7 @@
         <Explanation>http://sal.lsst.org</Explanation>
         <item>
             <EFDB_Name>state</EFDB_Name>
-            <Description/>
+            <Description>Current state.</Description>
             <!-- Enumeration: AzimuthState -->
             <IDL_Type>long</IDL_Type>
             <Units>unitless</Units>
@@ -81,7 +81,7 @@
         <Explanation>http://sal.lsst.org</Explanation>
         <item>
             <EFDB_Name>commandedState</EFDB_Name>
-            <Description/>
+            <Description>Commanded state.</Description>
             <!-- Enumeration: ShutterDoorCommandedState -->
             <IDL_Type>long</IDL_Type>
             <Units>unitless</Units>
@@ -98,7 +98,7 @@
         <Explanation>http://sal.lsst.org</Explanation>
         <item>
             <EFDB_Name>state</EFDB_Name>
-            <Description/>
+            <Description>Current state.</Description>
             <!-- Enumeration: ShutterDoorState -->
             <IDL_Type>long</IDL_Type>
             <Units>unitless</Units>
@@ -115,7 +115,7 @@
         <Explanation>http://sal.lsst.org</Explanation>
         <item>
             <EFDB_Name>commandedState</EFDB_Name>
-            <Description/>
+            <Description>Commanded state.</Description>
             <!-- Enumeration: ShutterDoorCommandedState -->
             <IDL_Type>long</IDL_Type>
             <Units>unitless</Units>
@@ -132,7 +132,7 @@
         <Explanation>http://sal.lsst.org</Explanation>
         <item>
             <EFDB_Name>state</EFDB_Name>
-            <Description/>
+            <Description>Current state.</Description>
             <!-- Enumeration: ShutterDoorState -->
             <IDL_Type>long</IDL_Type>
             <Units>unitless</Units>
@@ -149,7 +149,7 @@
         <Explanation>http://sal.lsst.org</Explanation>
         <item>
             <EFDB_Name>inPosition</EFDB_Name>
-            <Description/>
+            <Description>In position?</Description>
             <IDL_Type>boolean</IDL_Type>
             <Units>unitless</Units>
             <Count>1</Count>
@@ -165,7 +165,7 @@
         <Explanation>http://sal.lsst.org</Explanation>
         <item>
             <EFDB_Name>inPosition</EFDB_Name>
-            <Description/>
+            <Description>In position?</Description>
             <IDL_Type>boolean</IDL_Type>
             <Units>unitless</Units>
             <Count>1</Count>
@@ -181,7 +181,7 @@
         <Explanation>http://sal.lsst.org</Explanation>
         <item>
             <EFDB_Name>inPosition</EFDB_Name>
-            <Description/>
+            <Description>In position?</Description>
             <IDL_Type>boolean</IDL_Type>
             <Units>unitless</Units>
             <Count>1</Count>
@@ -198,7 +198,7 @@
         <Explanation>http://sal.lsst.org</Explanation>
         <item>
             <EFDB_Name>active</EFDB_Name>
-            <Description/>
+            <Description>Is the estop active (e.g. estop button pressed)?</Description>
             <IDL_Type>boolean</IDL_Type>
             <Units>unitless</Units>
             <Count>1</Count>
@@ -214,7 +214,7 @@
         <Explanation>http://sal.lsst.org</Explanation>
         <item>
             <EFDB_Name>active</EFDB_Name>
-            <Description/>
+            <Description>Communicating?</Description>
             <IDL_Type>boolean</IDL_Type>
             <Units>unitless</Units>
             <Count>1</Count>
@@ -268,14 +268,14 @@
             <EFDB_Name>watchdogTimer</EFDB_Name>
             <Description>The time interval between loss of communication between the shutter control box (SCB) and main control box (MCB) and the SCB closing the shutter.</Description>
             <IDL_Type>float</IDL_Type>
-            <Units>sec</Units>
+            <Units>second</Units>
             <Count>1</Count>
         </item>
         <item>
             <EFDB_Name>reversalDelay</EFDB_Name>
-            <Description>The delay between reversing motor directions for the shutter doors, where 0 less than t and t is less or equal than 6 seconds. For a 240 VAC system this parameter can be set to 0.0.</Description>
+            <Description>The delay between reversing motor directions for the shutter doors, where 0 &lt; t &lt;= 6. For a 240 VAC system this parameter can be set to 0.</Description>
             <IDL_Type>float</IDL_Type>
-            <Units>unitless</Units>
+            <Units>second</Units>
             <Count>1</Count>
         </item>
         <item>
@@ -311,16 +311,16 @@
         </item>
         <item>
             <EFDB_Name>readTimeout</EFDB_Name>
-            <Description/>
+            <Description>Read timeout before going into a fault state.</Description>
             <IDL_Type>float</IDL_Type>
-            <Units>sec</Units>
+            <Units>second</Units>
             <Count>1</Count>
         </item>
         <item>
             <EFDB_Name>connectionTimeout</EFDB_Name>
-            <Description/>
+            <Description>Connection timeout before going into a fault state.</Description>
             <IDL_Type>float</IDL_Type>
-            <Units>sec</Units>
+            <Units>second</Units>
             <Count>1</Count>
         </item>
     </SALEvent>
