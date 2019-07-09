@@ -513,6 +513,7 @@ SAL Topic and Parameter <Description> and <Unit> fields
 Changes
 -------
 
+* Added error notice about check_unit issue *July 9th, 2019*
 * Policy added *June 19th, 2019*
 
 Policy
@@ -550,6 +551,10 @@ An easy way to tell if a particular unit is valid is to try to make an astropy.u
 
     check_unit("deg") # OK
     check_unit("not_a_unit") # raises ValueError
+
+.. error::
+    There appears to be a problem with unit checking such that one can have a unit "deg22" pass the check without actually being a unit.
+    Please be vigilant about this discrepancy.
 
 SAL Interface Template
 ======================
