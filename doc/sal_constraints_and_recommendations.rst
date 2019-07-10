@@ -513,21 +513,23 @@ SAL Topic and Parameter <Description> and <Unit> fields
 Changes
 -------
 
-* Added error notice about check_unit issue *July 9th, 2019*
+* Added warning notice about check_unit and parsing *July 9th, 2019*
+
+    * Improved clarity of unitless parsing language and structure
 * Policy added *June 19th, 2019*
 
 Policy
 ------
 
-* XML will have the <Units> and <Description> fields defined for each parameter in a topic
+* A. XML will have the <Units> and <Description> fields defined for each parameter in a topic
 
-    * Dimensionless parameters (e.g. IP Address, Humidity, any string-type, etc) will use **unitless** as the <Units> field value.
+    * a. Dimensionless parameters (e.g. IP Address, Humidity, any string-type, etc) will use **unitless** as the <Units> field value.
 
-* Units will be SI
-* We will use astropy names for the names of the units in the topics
-* We will use astropy unit format - when possible, going forward
-* We will use astropy unit format - when possible, going forward
-* For Complex units - they must be able to be parsed by astropy
+* B. Units will be SI
+* C. We will use astropy names for the names of the units in the topics except as noted in subsection a of section A of this policy.
+* D. We will use astropy unit format - when possible, going forward
+* E. We will use astropy unit format - when possible, going forward
+* F. For Complex units - they must be able to be parsed by astropy
 
 There is a table in the EFD where the topic/parameter and units are paired up - this will be generated from the XML (via salgenerator)
 
@@ -552,9 +554,10 @@ An easy way to tell if a particular unit is valid is to try to make an astropy.u
     check_unit("deg") # OK
     check_unit("not_a_unit") # raises ValueError
 
-.. error::
-    There appears to be a problem with unit checking such that one can have a unit "deg22" pass the check without actually being a unit.
-    Please be vigilant about this discrepancy.
+.. warning::
+    Astropy allows for units such as "deg22" which corresponds to degrees to the 22nd power.
+    These units may not make sense but are valid according to the astropy parser.
+    Please note this "feature" of astropy. 
 
 SAL Interface Template
 ======================
