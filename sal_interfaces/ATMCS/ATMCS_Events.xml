@@ -16,10 +16,10 @@
         <Explanation>http://sal.lsst.org</Explanation>
         <item>
             <EFDB_Name>detailedState</EFDB_Name>
-            <Description/>
+	    <Description> The substate or extra states of the CSC </Description>
             <!-- Enumeration: DetailedState -->
             <IDL_Type>long</IDL_Type>
-            <Units/>
+            <Units>unitless</Units>
             <Count>1</Count>
         </item>
     </SALEvent>
@@ -29,12 +29,13 @@
         <Author/>
         <EFDB_Topic>ATMCS_logevent_heartbeat</EFDB_Topic>
         <Alias>heartbeat</Alias>
-        <Explanation>http://sal.lsst.org</Explanation>
+	<Description> The heartbeat event. </Description>
+	<Explanation>http://sal.lsst.org</Explanation>
         <item>
             <EFDB_Name>heartbeat</EFDB_Name>
-            <Description/>
+	    <Description> The heartbeat item of the heartbeat event </Description>
             <IDL_Type>boolean</IDL_Type>
-            <Units/>
+            <Units>unitless</Units>
             <Count>1</Count>
         </item>
     </SALEvent>
@@ -45,14 +46,14 @@
         <Author/>
         <EFDB_Topic>ATMCS_logevent_atMountState</EFDB_Topic>
         <Alias>atMountState</Alias>
-        <Description>State of tracking.</Description>
+        <Description>State of tracking</Description>
         <Explanation>http://sal.lsst.org</Explanation>
         <item>
             <EFDB_Name>state</EFDB_Name>
-            <Description/>
+	    <Description>Describes if tracking is stopped/started or in the process of stopping</Description>
             <!-- Enumeration: AtMountState -->
             <IDL_Type>long</IDL_Type>
-            <Units/>
+            <Units>unitless</Units>
             <Count>1</Count>
         </item>
     </SALEvent>
@@ -66,10 +67,10 @@
         <Explanation>http://sal.lsst.org</Explanation>
         <item>
             <EFDB_Name>state</EFDB_Name>
-            <Description/>
+	    <Description> M3 rotator position/motion state</Description>
             <!-- Enumeration: M3State -->
             <IDL_Type>long</IDL_Type>
-            <Units/>
+            <Units>unitless</Units>
             <Count>1</Count>
         </item>
     </SALEvent>
@@ -83,10 +84,10 @@
         <Explanation>http://sal.lsst.org</Explanation>
         <item>
             <EFDB_Name>selected</EFDB_Name>
-            <Description/>
+            <Description>The port that is to receive light from the system, or if stage is in motion</Description>
             <!-- Enumeration: M3ExitPort -->
             <IDL_Type>long</IDL_Type>
-            <Units/>
+            <Units>unitless</Units>
             <Count>1</Count>
         </item>
     </SALEvent>
@@ -163,7 +164,7 @@
             <EFDB_Name>trackId</EFDB_Name>
             <Description>Target identifier.</Description>
             <IDL_Type>long</IDL_Type>
-            <Units/>
+            <Units>unitless</Units>
             <Count>1</Count>
         </item>
     </SALEvent>
@@ -174,13 +175,13 @@
         <Author/>
         <EFDB_Topic>ATMCS_logevent_elevationInPosition</EFDB_Topic>
         <Alias>elevationInPosition</Alias>
-        <Description>Is the elevation axis tracking? In other words, is tracking enabled and has this axis finished slewing?</Description>
+        <Description>True when the actual and commanded position are within an epsilon defined in the ATMCS configuration files</Description>
         <Explanation>http://sal.lsst.org</Explanation>
         <item>
             <EFDB_Name>inPosition</EFDB_Name>
             <Description/>
             <IDL_Type>boolean</IDL_Type>
-            <Units/>
+            <Units>unitless</Units>
             <Count>1</Count>
         </item>
     </SALEvent>
@@ -190,13 +191,13 @@
         <Author/>
         <EFDB_Topic>ATMCS_logevent_azimuthInPosition</EFDB_Topic>
         <Alias>azimuthInPosition</Alias>
-        <Description>Is the azimuth axis tracking? In other words, is tracking enabled and has this axis finished slewing?</Description>
+        <Description>True when the actual and commanded position are within an epsilon defined in the ATMCS configuration files. </Description>
         <Explanation>http://sal.lsst.org</Explanation>
         <item>
             <EFDB_Name>inPosition</EFDB_Name>
             <Description/>
             <IDL_Type>boolean</IDL_Type>
-            <Units/>
+            <Units>unitless</Units>
             <Count>1</Count>
         </item>
     </SALEvent>
@@ -206,13 +207,13 @@
         <Author/>
         <EFDB_Topic>ATMCS_logevent_nasmyth1RotatorInPosition</EFDB_Topic>
         <Alias>nasmyth1RotatorInPosition</Alias>
-        <Description>Is the Nasmyth 1 rotator tracking? In other words, is tracking enabled and has this axis finished slewing?</Description>
+        <Description>True when the actual and commanded position are within an epsilon defined in the ATMCS configuration files</Description>
         <Explanation>http://sal.lsst.org</Explanation>
         <item>
             <EFDB_Name>inPosition</EFDB_Name>
             <Description/>
             <IDL_Type>boolean</IDL_Type>
-            <Units/>
+            <Units>unitless</Units>
             <Count>1</Count>
         </item>
     </SALEvent>
@@ -222,13 +223,13 @@
         <Author/>
         <EFDB_Topic>ATMCS_logevent_nasmyth2RotatorInPosition</EFDB_Topic>
         <Alias>nasmyth2RotatorInPosition</Alias>
-        <Description>Is the Nasmyth 2 rotator tracking? In other words, is tracking enabled and has this axis finished slewing?</Description>
+        <Description>True when the actual and commanded position are within an epsilon defined in the ATMCS configuration files.</Description>
         <Explanation>http://sal.lsst.org</Explanation>
         <item>
             <EFDB_Name>inPosition</EFDB_Name>
             <Description/>
             <IDL_Type>boolean</IDL_Type>
-            <Units/>
+            <Units>unitless</Units>
             <Count>1</Count>
         </item>
     </SALEvent>
@@ -244,7 +245,7 @@
             <EFDB_Name>inPosition</EFDB_Name>
             <Description/>
             <IDL_Type>boolean</IDL_Type>
-            <Units/>
+            <Units>unitless</Units>
             <Count>1</Count>
         </item>
     </SALEvent>
@@ -277,7 +278,7 @@
             <EFDB_Name>active</EFDB_Name>
             <Description/>
             <IDL_Type>boolean</IDL_Type>
-            <Units/>
+            <Units>unitless</Units>
             <Count>1</Count>
         </item>
     </SALEvent>
@@ -293,7 +294,7 @@
             <EFDB_Name>active</EFDB_Name>
             <Description/>
             <IDL_Type>boolean</IDL_Type>
-            <Units/>
+            <Units>unitless</Units>
             <Count>1</Count>
         </item>
     </SALEvent>
@@ -309,21 +310,21 @@
             <EFDB_Name>nasmyth1Active</EFDB_Name>
             <Description/>
             <IDL_Type>boolean</IDL_Type>
-            <Units/>
+            <Units>unitless</Units>
             <Count>1</Count>
         </item>
         <item>
             <EFDB_Name>port3Active</EFDB_Name>
             <Description/>
             <IDL_Type>boolean</IDL_Type>
-            <Units/>
+            <Units>unitless</Units>
             <Count>1</Count>
         </item>
         <item>
             <EFDB_Name>nasmyth2Active</EFDB_Name>
             <Description/>
             <IDL_Type>boolean</IDL_Type>
-            <Units/>
+            <Units>unitless</Units>
             <Count>1</Count>
         </item>
     </SALEvent>
@@ -339,7 +340,7 @@
             <EFDB_Name>active</EFDB_Name>
             <Description/>
             <IDL_Type>boolean</IDL_Type>
-            <Units/>
+            <Units>unitless</Units>
             <Count>1</Count>
         </item>
     </SALEvent>
@@ -354,7 +355,7 @@
             <EFDB_Name>active</EFDB_Name>
             <Description/>
             <IDL_Type>boolean</IDL_Type>
-            <Units/>
+            <Units>unitless</Units>
             <Count>1</Count>
         </item>
     </SALEvent>
@@ -369,7 +370,7 @@
             <EFDB_Name>active</EFDB_Name>
             <Description/>
             <IDL_Type>boolean</IDL_Type>
-            <Units/>
+            <Units>unitless</Units>
             <Count>1</Count>
         </item>
     </SALEvent>
@@ -384,7 +385,7 @@
             <EFDB_Name>active</EFDB_Name>
             <Description/>
             <IDL_Type>boolean</IDL_Type>
-            <Units/>
+            <Units>unitless</Units>
             <Count>1</Count>
         </item>
     </SALEvent>
@@ -399,7 +400,7 @@
             <EFDB_Name>active</EFDB_Name>
             <Description/>
             <IDL_Type>boolean</IDL_Type>
-            <Units/>
+            <Units>unitless</Units>
             <Count>1</Count>
         </item>
     </SALEvent>
@@ -414,7 +415,7 @@
             <EFDB_Name>active</EFDB_Name>
             <Description/>
             <IDL_Type>boolean</IDL_Type>
-            <Units/>
+            <Units>unitless</Units>
             <Count>1</Count>
         </item>
     </SALEvent>
@@ -429,7 +430,7 @@
             <EFDB_Name>active</EFDB_Name>
             <Description/>
             <IDL_Type>boolean</IDL_Type>
-            <Units/>
+            <Units>unitless</Units>
             <Count>1</Count>
         </item>
     </SALEvent>
@@ -444,7 +445,7 @@
             <EFDB_Name>active</EFDB_Name>
             <Description/>
             <IDL_Type>boolean</IDL_Type>
-            <Units/>
+            <Units>unitless</Units>
             <Count>1</Count>
         </item>
     </SALEvent>
@@ -459,7 +460,7 @@
             <EFDB_Name>active</EFDB_Name>
             <Description/>
             <IDL_Type>boolean</IDL_Type>
-            <Units/>
+            <Units>unitless</Units>
             <Count>1</Count>
         </item>
     </SALEvent>
@@ -474,7 +475,7 @@
             <EFDB_Name>active</EFDB_Name>
             <Description/>
             <IDL_Type>boolean</IDL_Type>
-            <Units/>
+            <Units>unitless</Units>
             <Count>1</Count>
         </item>
     </SALEvent>
@@ -491,7 +492,7 @@
             <EFDB_Name>enable</EFDB_Name>
             <Description/>
             <IDL_Type>boolean</IDL_Type>
-            <Units/>
+            <Units>unitless</Units>
             <Count>1</Count>
         </item>
     </SALEvent>
@@ -507,7 +508,7 @@
             <EFDB_Name>enable</EFDB_Name>
             <Description/>
             <IDL_Type>boolean</IDL_Type>
-            <Units/>
+            <Units>unitless</Units>
             <Count>1</Count>
         </item>
     </SALEvent>
@@ -523,7 +524,7 @@
             <EFDB_Name>enable</EFDB_Name>
             <Description/>
             <IDL_Type>boolean</IDL_Type>
-            <Units/>
+            <Units>unitless</Units>
             <Count>1</Count>
         </item>
     </SALEvent>
@@ -539,7 +540,7 @@
             <EFDB_Name>enable</EFDB_Name>
             <Description/>
             <IDL_Type>boolean</IDL_Type>
-            <Units/>
+            <Units>unitless</Units>
             <Count>1</Count>
         </item>
     </SALEvent>
@@ -555,7 +556,7 @@
             <EFDB_Name>enable</EFDB_Name>
             <Description/>
             <IDL_Type>boolean</IDL_Type>
-            <Units/>
+            <Units>unitless</Units>
             <Count>1</Count>
         </item>
     </SALEvent>
@@ -571,7 +572,7 @@
             <EFDB_Name>enable</EFDB_Name>
             <Description/>
             <IDL_Type>boolean</IDL_Type>
-            <Units/>
+            <Units>unitless</Units>
             <Count>1</Count>
         </item>
     </SALEvent>
@@ -587,7 +588,7 @@
             <EFDB_Name>engaged</EFDB_Name>
             <Description/>
             <IDL_Type>boolean</IDL_Type>
-            <Units/>
+            <Units>unitless</Units>
             <Count>1</Count>
         </item>
     </SALEvent>
@@ -602,7 +603,7 @@
             <EFDB_Name>engaged</EFDB_Name>
             <Description/>
             <IDL_Type>boolean</IDL_Type>
-            <Units/>
+            <Units>unitless</Units>
             <Count>1</Count>
         </item>
     </SALEvent>
@@ -617,7 +618,7 @@
             <EFDB_Name>engaged</EFDB_Name>
             <Description/>
             <IDL_Type>boolean</IDL_Type>
-            <Units/>
+            <Units>unitless</Units>
             <Count>1</Count>
         </item>
     </SALEvent>
@@ -632,7 +633,7 @@
             <EFDB_Name>engaged</EFDB_Name>
             <Description/>
             <IDL_Type>boolean</IDL_Type>
-            <Units/>
+            <Units>unitless</Units>
             <Count>1</Count>
         </item>
     </SALEvent>
@@ -647,7 +648,7 @@
             <EFDB_Name>engaged</EFDB_Name>
             <Description/>
             <IDL_Type>boolean</IDL_Type>
-            <Units/>
+            <Units>unitless</Units>
             <Count>1</Count>
         </item>
     </SALEvent>
