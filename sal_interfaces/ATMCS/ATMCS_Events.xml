@@ -99,56 +99,56 @@
         <Alias>target</Alias>
         <item>
             <EFDB_Name>elevation</EFDB_Name>
-            <Description>Mount elevation angle at the specified time.</Description>
+            <Description>Target mount elevation angle at the specified time.</Description>
             <IDL_Type>double</IDL_Type>
             <Units>deg</Units>
             <Count>1</Count>
         </item>
         <item>
             <EFDB_Name>elevationVelocity</EFDB_Name>
-            <Description>Mount elevation angle velocity at the specified time.</Description>
+            <Description>Target mount elevation angle velocity at the specified time.</Description>
             <IDL_Type>double</IDL_Type>
             <Units>deg / s</Units>
             <Count>1</Count>
         </item>
         <item>
             <EFDB_Name>azimuth</EFDB_Name>
-            <Description>Mount azimuth angle at the specified time. The allowed range is 0 to 360.</Description>
+            <Description>Target mount azimuth angle at the specified time. The allowed range is 0 to 360.</Description>
             <IDL_Type>double</IDL_Type>
             <Units>deg</Units>
             <Count>1</Count>
         </item>
         <item>
             <EFDB_Name>azimuthVelocity</EFDB_Name>
-            <Description>Mount azimuth velocity at the specified time.</Description>
+            <Description>Target mount azimuth velocity at the specified time.</Description>
             <IDL_Type>double</IDL_Type>
             <Units>deg / s</Units>
             <Count>1</Count>
         </item>
         <item>
             <EFDB_Name>nasmyth1RotatorAngle</EFDB_Name>
-            <Description>Nasmyth 1 rotator angle at the specified time.</Description>
+            <Description>Target Nasmyth 1 rotator angle at the specified time.</Description>
             <IDL_Type>double</IDL_Type>
             <Units>deg</Units>
             <Count>1</Count>
         </item>
         <item>
             <EFDB_Name>nasmyth1RotatorAngleVelocity</EFDB_Name>
-            <Description>Nasmyth 1 rotator angle velocity at the specified time.</Description>
+            <Description>Target Nasmyth 1 rotator angle velocity at the specified time.</Description>
             <IDL_Type>double</IDL_Type>
             <Units>deg / s</Units>
             <Count>1</Count>
         </item>
         <item>
             <EFDB_Name>nasmyth2RotatorAngle</EFDB_Name>
-            <Description>Nasmyth 1 rotator angle at the specified time.</Description>
+            <Description>Target Nasmyth 1 rotator angle at the specified time.</Description>
             <IDL_Type>double</IDL_Type>
             <Units>deg</Units>
             <Count>1</Count>
         </item>
         <item>
             <EFDB_Name>nasmyth2RotatorAngleVelocity</EFDB_Name>
-            <Description>Nasmyth 1 rotator angle velocity at the specified time.</Description>
+            <Description>Target Nasmyth 1 rotator angle velocity at the specified time.</Description>
             <IDL_Type>double</IDL_Type>
             <Units>deg / s</Units>
             <Count>1</Count>
@@ -162,7 +162,7 @@
         </item>
         <item>
             <EFDB_Name>trackId</EFDB_Name>
-            <Description>Target identifier.</Description>
+            <Description>Unique target identifier </Description>
             <IDL_Type>long</IDL_Type>
             <Units>dimensionless</Units>
             <Count>1</Count>
@@ -179,7 +179,7 @@
         <Explanation>http://sal.lsst.org</Explanation>
         <item>
             <EFDB_Name>inPosition</EFDB_Name>
-            <Description/>
+	    <Description>True when the actual and commanded position are within an epsilon defined in the ATMCS configuration files</Description>
             <IDL_Type>boolean</IDL_Type>
             <Units>dimensionless</Units>
             <Count>1</Count>
@@ -195,7 +195,7 @@
         <Explanation>http://sal.lsst.org</Explanation>
         <item>
             <EFDB_Name>inPosition</EFDB_Name>
-            <Description/>
+	    <Description>True when the actual and commanded position are within an epsilon defined in the ATMCS configuration files. </Description>
             <IDL_Type>boolean</IDL_Type>
             <Units>dimensionless</Units>
             <Count>1</Count>
@@ -211,7 +211,7 @@
         <Explanation>http://sal.lsst.org</Explanation>
         <item>
             <EFDB_Name>inPosition</EFDB_Name>
-            <Description/>
+            <Description>True when the actual and commanded position are within an epsilon defined in the ATMCS configuration files. </Description>
             <IDL_Type>boolean</IDL_Type>
             <Units>dimensionless</Units>
             <Count>1</Count>
@@ -227,7 +227,7 @@
         <Explanation>http://sal.lsst.org</Explanation>
         <item>
             <EFDB_Name>inPosition</EFDB_Name>
-            <Description/>
+            <Description>True when the actual and commanded position are within an epsilon defined in the ATMCS configuration files. </Description>
             <IDL_Type>boolean</IDL_Type>
             <Units>dimensionless</Units>
             <Count>1</Count>
@@ -243,7 +243,7 @@
         <Explanation>http://sal.lsst.org</Explanation>
         <item>
             <EFDB_Name>inPosition</EFDB_Name>
-            <Description/>
+            <Description>True when the actual and commanded position are within an epsilon defined in the ATMCS configuration files. </Description>
             <IDL_Type>boolean</IDL_Type>
             <Units>dimensionless</Units>
             <Count>1</Count>
@@ -259,9 +259,9 @@
         <Explanation>http://sal.lsst.org</Explanation>
         <item>
             <EFDB_Name>inPosition</EFDB_Name>
-            <Description/>
+	    <Description>True if all axes are in position</Description>
             <IDL_Type>boolean</IDL_Type>
-            <Units/>
+	    <Units>dimensionless</Units>
             <Count>1</Count>
         </item>
     </SALEvent>
@@ -276,7 +276,7 @@
         <Explanation>http://sal.lsst.org</Explanation>
         <item>
             <EFDB_Name>active</EFDB_Name>
-            <Description/>
+	    <Description>True if switch depressed</Description>
             <IDL_Type>boolean</IDL_Type>
             <Units>dimensionless</Units>
             <Count>1</Count>
@@ -490,7 +490,7 @@
         <Explanation>http://sal.lsst.org</Explanation>
         <item>
             <EFDB_Name>enable</EFDB_Name>
-            <Description/>
+	    <Description>True, if state of elevation drive is set to enabled</Description>
             <IDL_Type>boolean</IDL_Type>
             <Units>dimensionless</Units>
             <Count>1</Count>
@@ -506,7 +506,7 @@
         <Explanation>http://sal.lsst.org</Explanation>
         <item>
             <EFDB_Name>enable</EFDB_Name>
-            <Description/>
+	    <Description>True, if state of elevation drive is set to enabled</Description>
             <IDL_Type>boolean</IDL_Type>
             <Units>dimensionless</Units>
             <Count>1</Count>
@@ -522,7 +522,7 @@
         <Explanation>http://sal.lsst.org</Explanation>
         <item>
             <EFDB_Name>enable</EFDB_Name>
-            <Description/>
+	    <Description>True, if the state of the azimuth drive is enabled</Description>
             <IDL_Type>boolean</IDL_Type>
             <Units>dimensionless</Units>
             <Count>1</Count>
@@ -538,7 +538,7 @@
         <Explanation>http://sal.lsst.org</Explanation>
         <item>
             <EFDB_Name>enable</EFDB_Name>
-            <Description/>
+	    <Description>True if the state of the Nasmyth 1 rotator is enabled</Description>
             <IDL_Type>boolean</IDL_Type>
             <Units>dimensionless</Units>
             <Count>1</Count>
@@ -554,7 +554,7 @@
         <Explanation>http://sal.lsst.org</Explanation>
         <item>
             <EFDB_Name>enable</EFDB_Name>
-            <Description/>
+	    <Description>True if the Nasmyth 2 rotator is enabled</Description>
             <IDL_Type>boolean</IDL_Type>
             <Units>dimensionless</Units>
             <Count>1</Count>
@@ -570,7 +570,7 @@
         <Explanation>http://sal.lsst.org</Explanation>
         <item>
             <EFDB_Name>enable</EFDB_Name>
-            <Description/>
+	    <Description>True if the M3 rotator drive is enabled</Description>
             <IDL_Type>boolean</IDL_Type>
             <Units>dimensionless</Units>
             <Count>1</Count>
@@ -626,7 +626,7 @@
         <Subsystem>ATMCS</Subsystem>
         <Version>3.8.41</Version>
         <Author/>
-        <EFDB_Topic>ATMCS_logevent_nasmyth1Brake</EFDB_Topic>
+	<EFDB_Topic>ATMCS_logevent_nasmyth1Brake</EFDB_Topic>
         <Alias>nasmyth1Brake</Alias>
         <Explanation/>
         <item>
