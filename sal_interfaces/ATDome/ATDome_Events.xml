@@ -13,12 +13,12 @@
         <EFDB_Topic>ATDome_logevent_heartbeat</EFDB_Topic>
         <Alias>heartbeat</Alias>
         <Description>Heartbeat event.</Description>
-        <Explanation>http://sal.lsst.org</Explanation>
+        <Explanation/>
         <item>
             <EFDB_Name>heartbeat</EFDB_Name>
-            <Description>Ignore this field.</Description>
+            <Description>This field is ignored.</Description>
             <IDL_Type>boolean</IDL_Type>
-            <Units/>
+            <Units>unitless</Units>
             <Count>1</Count>
         </item>
     </SALEvent>
@@ -30,13 +30,13 @@
         <EFDB_Topic>ATDome_logevent_azimuthCommandedState</EFDB_Topic>
         <Alias>azimuthCommandedState</Alias>
         <Description>Commanded state of azimuth drive.</Description>
-        <Explanation>http://sal.lsst.org</Explanation>
+        <Explanation/>
         <item>
             <EFDB_Name>commandedState</EFDB_Name>
-            <Description/>
+            <Description>Commanded state.</Description>
             <!-- Enumeration: AzimuthCommandedState -->
             <IDL_Type>long</IDL_Type>
-            <Units/>
+            <Units>unitless</Units>
             <Count>1</Count>
         </item>
         <item>
@@ -54,20 +54,20 @@
         <EFDB_Topic>ATDome_logevent_azimuthState</EFDB_Topic>
         <Alias>azimuthState</Alias>
         <Description>Current state of azimuth drive.</Description>
-        <Explanation>http://sal.lsst.org</Explanation>
+        <Explanation/>
         <item>
             <EFDB_Name>state</EFDB_Name>
-            <Description/>
+            <Description>Current state.</Description>
             <!-- Enumeration: AzimuthState -->
             <IDL_Type>long</IDL_Type>
-            <Units/>
+            <Units>unitless</Units>
             <Count>1</Count>
         </item>
         <item>
             <EFDB_Name>homing</EFDB_Name>
             <Description>Is azimuth being homed?</Description>
             <IDL_Type>boolean</IDL_Type>
-            <Units/>
+            <Units>unitless</Units>
             <Count>1</Count>
         </item>
     </SALEvent>
@@ -78,13 +78,13 @@
         <EFDB_Topic>ATDome_logevent_dropoutDoorCommandedState</EFDB_Topic>
         <Alias>dropoutDoorCommandedState</Alias>
         <Description>Commanded state of the dropout shutter door.</Description>
-        <Explanation>http://sal.lsst.org</Explanation>
+        <Explanation/>
         <item>
             <EFDB_Name>commandedState</EFDB_Name>
-            <Description/>
+            <Description>Commanded state.</Description>
             <!-- Enumeration: ShutterDoorCommandedState -->
             <IDL_Type>long</IDL_Type>
-            <Units/>
+            <Units>unitless</Units>
             <Count>1</Count>
         </item>
     </SALEvent>
@@ -95,13 +95,13 @@
         <EFDB_Topic>ATDome_logevent_dropoutDoorState</EFDB_Topic>
         <Alias>dropoutDoorState</Alias>
         <Description>Current state of the dropout shutter door.</Description>
-        <Explanation>http://sal.lsst.org</Explanation>
+        <Explanation/>
         <item>
             <EFDB_Name>state</EFDB_Name>
-            <Description/>
+            <Description>Current state.</Description>
             <!-- Enumeration: ShutterDoorState -->
             <IDL_Type>long</IDL_Type>
-            <Units/>
+            <Units>unitless</Units>
             <Count>1</Count>
         </item>
     </SALEvent>
@@ -112,13 +112,13 @@
         <EFDB_Topic>ATDome_logevent_mainDoorCommandedState</EFDB_Topic>
         <Alias>mainDoorCommandedState</Alias>
         <Description>Commanded state of the main shutter door.</Description>
-        <Explanation>http://sal.lsst.org</Explanation>
+        <Explanation/>
         <item>
             <EFDB_Name>commandedState</EFDB_Name>
-            <Description/>
+            <Description>Commanded state.</Description>
             <!-- Enumeration: ShutterDoorCommandedState -->
             <IDL_Type>long</IDL_Type>
-            <Units/>
+            <Units>unitless</Units>
             <Count>1</Count>
         </item>
     </SALEvent>
@@ -129,13 +129,13 @@
         <EFDB_Topic>ATDome_logevent_mainDoorState</EFDB_Topic>
         <Alias>mainDoorState</Alias>
         <Description>Current state of the main shutter door.</Description>
-        <Explanation>http://sal.lsst.org</Explanation>
+        <Explanation/>
         <item>
             <EFDB_Name>state</EFDB_Name>
-            <Description/>
+            <Description>Current state.</Description>
             <!-- Enumeration: ShutterDoorState -->
             <IDL_Type>long</IDL_Type>
-            <Units/>
+            <Units>unitless</Units>
             <Count>1</Count>
         </item>
     </SALEvent>
@@ -146,12 +146,12 @@
         <EFDB_Topic>ATDome_logevent_azimuthInPosition</EFDB_Topic>
         <Alias>azimuthInPosition</Alias>
         <Description>Is the dome azimuth in the commanded position? Note: this will be false when the CSC starts up until a position is commanded.</Description>
-        <Explanation>http://sal.lsst.org</Explanation>
+        <Explanation/>
         <item>
             <EFDB_Name>inPosition</EFDB_Name>
-            <Description/>
+            <Description>In position?</Description>
             <IDL_Type>boolean</IDL_Type>
-            <Units/>
+            <Units>unitless</Units>
             <Count>1</Count>
         </item>
     </SALEvent>
@@ -162,12 +162,12 @@
         <EFDB_Topic>ATDome_logevent_shutterInPosition</EFDB_Topic>
         <Alias>shutterInPosition</Alias>
         <Description>Are the shutter doors in their commanded positions? Note: this will be false when the CSC starts up until a position is commanded for both doors.</Description>
-        <Explanation>http://sal.lsst.org</Explanation>
+        <Explanation/>
         <item>
             <EFDB_Name>inPosition</EFDB_Name>
-            <Description/>
+            <Description>In position?</Description>
             <IDL_Type>boolean</IDL_Type>
-            <Units/>
+            <Units>unitless</Units>
             <Count>1</Count>
         </item>
     </SALEvent>
@@ -178,12 +178,12 @@
         <EFDB_Topic>ATDome_logevent_allAxesInPosition</EFDB_Topic>
         <Alias>allAxesInPosition</Alias>
         <Description>Are all axes (azimuth and both shutter doors) in position?</Description>
-        <Explanation>http://sal.lsst.org</Explanation>
+        <Explanation/>
         <item>
             <EFDB_Name>inPosition</EFDB_Name>
-            <Description/>
+            <Description>In position?</Description>
             <IDL_Type>boolean</IDL_Type>
-            <Units/>
+            <Units>unitless</Units>
             <Count>1</Count>
         </item>
     </SALEvent>
@@ -195,12 +195,12 @@
         <EFDB_Topic>ATDome_logevent_emergencyStop</EFDB_Topic>
         <Alias>emergencyStop</Alias>
         <Description>Has the emergency stop button been activated?</Description>
-        <Explanation>http://sal.lsst.org</Explanation>
+        <Explanation/>
         <item>
             <EFDB_Name>active</EFDB_Name>
-            <Description/>
+            <Description>Is the estop active (e.g. estop button pressed)?</Description>
             <IDL_Type>boolean</IDL_Type>
-            <Units/>
+            <Units>unitless</Units>
             <Count>1</Count>
         </item>
     </SALEvent>
@@ -211,12 +211,12 @@
         <EFDB_Topic>ATDome_logevent_scbLink</EFDB_Topic>
         <Alias>scbLink</Alias>
         <Description>Can the main controller box (MCB) communicate with the shutter control box (SCB)?</Description>
-        <Explanation>http://sal.lsst.org</Explanation>
+        <Explanation/>
         <item>
             <EFDB_Name>active</EFDB_Name>
-            <Description/>
+            <Description>Communicating?</Description>
             <IDL_Type>boolean</IDL_Type>
-            <Units/>
+            <Units>unitless</Units>
             <Count>1</Count>
         </item>
     </SALEvent>
@@ -228,19 +228,19 @@
         <EFDB_Topic>ATDome_logevent_settingsAppliedDomeController</EFDB_Topic>
         <Alias>settingsAppliedDomeController</Alias>
         <Description>Settings internal to the ATDome TCP/IP controller.</Description>
-        <Explanation>http://sal.lsst.org</Explanation>
+        <Explanation/>
         <item>
             <EFDB_Name>rainSensorEnabled</EFDB_Name>
             <Description>Is the rain/snow sensor enabled?</Description>
             <IDL_Type>boolean</IDL_Type>
-            <Units/>
+            <Units>unitless</Units>
             <Count>1</Count>
         </item>
         <item>
             <EFDB_Name>cloudSensorEnabled</EFDB_Name>
             <Description>Is the cloud sensor enabled?</Description>
             <IDL_Type>boolean</IDL_Type>
-            <Units/>
+            <Units>unitless</Units>
             <Count>1</Count>
         </item>
         <item>
@@ -268,21 +268,21 @@
             <EFDB_Name>watchdogTimer</EFDB_Name>
             <Description>The time interval between loss of communication between the shutter control box (SCB) and main control box (MCB) and the SCB closing the shutter.</Description>
             <IDL_Type>float</IDL_Type>
-            <Units>sec</Units>
+            <Units>second</Units>
             <Count>1</Count>
         </item>
         <item>
             <EFDB_Name>reversalDelay</EFDB_Name>
-            <Description>The delay between reversing motor directions for the shutter doors, where 0 less than t and t is less or equal than 6 seconds. For a 240 VAC system this parameter can be set to 0.0.</Description>
+            <Description>The delay between reversing motor directions for the shutter doors, where 0 &lt; t &lt;= 6. For a 240 VAC system this parameter can be set to 0.</Description>
             <IDL_Type>float</IDL_Type>
-            <Units/>
+            <Units>second</Units>
             <Count>1</Count>
         </item>
         <item>
             <EFDB_Name>autoShutdownEnabled</EFDB_Name>
             <Description>Is automatic closing of the shutter enabled? If enabled then the shutter will be closed if rain, snow or clouds are detected, or if the shutter control box (SCB) loses radio contact with the main control box (MCB).</Description>
             <IDL_Type>boolean</IDL_Type>
-            <Units/>
+            <Units>unitless</Units>
             <Count>1</Count>
         </item>
     </SALEvent>
@@ -293,34 +293,34 @@
         <EFDB_Topic>ATDome_logevent_settingsAppliedDomeTcp</EFDB_Topic>
         <Alias>settingsAppliedDomeTcp</Alias>
         <Description>Settings related to communication between the ATDome CSC and the ATDome TCP/IP controller.</Description>
-        <Explanation>http://sal.lsst.org</Explanation>
+        <Explanation/>
         <item>
             <EFDB_Name>host</EFDB_Name>
             <Description>Host name of the ATDome TCP/IP controller.</Description>
             <IDL_Type>string</IDL_Type>
             <IDL_Size>1</IDL_Size>
-            <Units/>
+            <Units>unitless</Units>
             <Count>1</Count>
         </item>
         <item>
             <EFDB_Name>port</EFDB_Name>
             <Description>Port number of the ATDome TCP/IP controller.</Description>
             <IDL_Type>long</IDL_Type>
-            <Units/>
+            <Units>unitless</Units>
             <Count>1</Count>
         </item>
         <item>
             <EFDB_Name>readTimeout</EFDB_Name>
-            <Description/>
+            <Description>Read timeout before going into a fault state.</Description>
             <IDL_Type>float</IDL_Type>
-            <Units>sec</Units>
+            <Units>second</Units>
             <Count>1</Count>
         </item>
         <item>
             <EFDB_Name>connectionTimeout</EFDB_Name>
-            <Description/>
+            <Description>Connection timeout before going into a fault state.</Description>
             <IDL_Type>float</IDL_Type>
-            <Units>sec</Units>
+            <Units>second</Units>
             <Count>1</Count>
         </item>
     </SALEvent>
