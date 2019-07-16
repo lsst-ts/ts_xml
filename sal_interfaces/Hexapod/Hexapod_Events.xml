@@ -8,20 +8,20 @@
     <Author></Author>
     <EFDB_Topic>Hexapod_logevent_interlock</EFDB_Topic>
     <Alias>interlock</Alias>
-    <Explanation>http://sal.lsst.org</Explanation>
+    <Explanation>This event is generated when safety interlock is engaged or disengaged.</Explanation>
     <item>
         <EFDB_Name>detail</EFDB_Name>
         <Description></Description>
         <IDL_Type>string</IDL_Type>
         <IDL_Size>256</IDL_Size>
-        <Units></Units>
+        <Units>dimensionless</Units>
         <Count>1</Count>
     </item>
     <item>
         <EFDB_Name>timestamp</EFDB_Name>
-        <Description></Description>
+        <Description>timestamp</Description>
         <IDL_Type>double</IDL_Type>
-        <Units></Units>
+        <Units>dimensionless</Units>
         <Count>1</Count>
     </item>
 </SALEvent>
@@ -31,12 +31,12 @@
     <Author></Author>
     <EFDB_Topic>Hexapod_logevent_inPosition</EFDB_Topic>
     <Alias>inPosition</Alias>
-    <Explanation>http://sal.lsst.org</Explanation>
+    <Explanation>This event denotes if the hexapod is inposition or not</Explanation>
     <item>
         <EFDB_Name>timestamp</EFDB_Name>
-        <Description></Description>
+        <Description>timestamp</Description>
         <IDL_Type>double</IDL_Type>
-        <Units></Units>
+        <Units>dimensionless</Units>
         <Count>1</Count>
     </item>
 </SALEvent>
@@ -46,35 +46,35 @@
     <Author></Author>
     <EFDB_Topic>Hexapod_logevent_deviceError</EFDB_Topic>
     <Alias>deviceError</Alias>
-    <Explanation>http://sal.lsst.org</Explanation>
+    <Explanation>This event is generated if any drive faults occur or if there is a following error in any actuator</Explanation>
     <item>
         <EFDB_Name>device</EFDB_Name>
-        <Description></Description>
+        <Description>device name</Description>
         <IDL_Type>string</IDL_Type>
         <IDL_Size>256</IDL_Size>
-        <Units></Units>
+        <Units>dimensionless</Units>
         <Count>1</Count>
     </item>
     <item>
         <EFDB_Name>severity</EFDB_Name>
-        <Description></Description>
+        <Description>severity</Description>
         <IDL_Type>long</IDL_Type>
-        <Units></Units>
+        <Units>dimensionless</Units>
         <Count>1</Count>
     </item>
     <item>
         <EFDB_Name>timestamp</EFDB_Name>
-        <Description></Description>
+        <Description>timestamp</Description>
         <IDL_Type>double</IDL_Type>
-        <Units></Units>
+        <Units>dimensionless</Units>
         <Count>1</Count>
     </item>
     <item>
         <EFDB_Name>code</EFDB_Name>
-        <Description></Description>
+        <Description>errorcode</Description>
         <IDL_Type>string</IDL_Type>
         <IDL_Size>256</IDL_Size>
-        <Units></Units>
+        <Units>dimensionless</Units>
         <Count>1</Count>
     </item>
 </SALEvent>
@@ -84,304 +84,304 @@
     <Author></Author>
     <EFDB_Topic>Hexapod_logevent_settingsApplied</EFDB_Topic>
     <Alias>settingsApplied</Alias>
-    <Explanation>http://sal.lsst.org</Explanation>
+    <Explanation>Settings that were applied at Start are published in settingsApplied event</Explanation>
     <item>
         <EFDB_Name>accelerationAccmax</EFDB_Name>
-        <Description></Description>
+        <Description>Maximum acceleration</Description>
         <IDL_Type>double</IDL_Type>
-        <Units>um/s^2</Units>
+        <Units>um/s2</Units>
         <Count>1</Count>
     </item>
     <item>
         <EFDB_Name>limitXYMax</EFDB_Name>
-        <Description></Description>
+        <Description>Maximum XY (Combined linear motion limit)</Description>
         <IDL_Type>double</IDL_Type>
         <Units>um</Units>
         <Count>1</Count>
     </item>
     <item>
         <EFDB_Name>limitZMin</EFDB_Name>
-        <Description></Description>
+        <Description>Minimum Z</Description>
         <IDL_Type>double</IDL_Type>
         <Units>um</Units>
         <Count>1</Count>
     </item>
     <item>
         <EFDB_Name>limitZMax</EFDB_Name>
-        <Description></Description>
+        <Description>Maximum Z limit</Description>
         <IDL_Type>double</IDL_Type>
         <Units>um</Units>
         <Count>1</Count>
     </item>
     <item>
         <EFDB_Name>limitUVMax</EFDB_Name>
-        <Description></Description>
+        <Description>Maximum UV (Combined angular motion limit)</Description>
         <IDL_Type>double</IDL_Type>
         <Units>deg</Units>
         <Count>1</Count>
     </item>
     <item>
         <EFDB_Name>limitWMin</EFDB_Name>
-        <Description></Description>
+        <Description>Minimum W limit</Description>
         <IDL_Type>double</IDL_Type>
         <Units>deg</Units>
         <Count>1</Count>
     </item>
     <item>
         <EFDB_Name>limitWMax</EFDB_Name>
-        <Description></Description>
+        <Description>Maximum W limit</Description>
         <IDL_Type>double</IDL_Type>
         <Units>deg</Units>
         <Count>1</Count>
     </item>
     <item>
         <EFDB_Name>velocityXYMax</EFDB_Name>
-        <Description></Description>
+        <Description>Maximum XY velocity limit</Description>
         <IDL_Type>double</IDL_Type>
         <Units>um/s</Units>
         <Count>1</Count>
     </item>
     <item>
         <EFDB_Name>velocityRxRyMax</EFDB_Name>
-        <Description></Description>
+        <Description>Maximum RXRY velocity limit</Description>
         <IDL_Type>double</IDL_Type>
         <Units>deg/s</Units>
         <Count>1</Count>
     </item>
     <item>
         <EFDB_Name>velocityZMax</EFDB_Name>
-        <Description></Description>
+        <Description>Maximum Z velocity</Description>
         <IDL_Type>double</IDL_Type>
         <Units>um/s</Units>
         <Count>1</Count>
     </item>
     <item>
         <EFDB_Name>velocityRzMax</EFDB_Name>
-        <Description></Description>
+        <Description>Maximum Rz velocity</Description>
         <IDL_Type>double</IDL_Type>
         <Units>deg/s</Units>
         <Count>1</Count>
     </item>
     <item>
         <EFDB_Name>positionX</EFDB_Name>
-        <Description></Description>
+        <Description>x position</Description>
         <IDL_Type>double</IDL_Type>
         <Units>um</Units>
         <Count>1</Count>
     </item>
     <item>
         <EFDB_Name>positionY</EFDB_Name>
-        <Description></Description>
+        <Description>y position</Description>
         <IDL_Type>double</IDL_Type>
         <Units>um</Units>
         <Count>1</Count>
     </item>
     <item>
         <EFDB_Name>positionZ</EFDB_Name>
-        <Description></Description>
+        <Description>z position</Description>
         <IDL_Type>double</IDL_Type>
         <Units>um</Units>
         <Count>1</Count>
     </item>
     <item>
         <EFDB_Name>positionU</EFDB_Name>
-        <Description></Description>
+        <Description>U position</Description>
         <IDL_Type>double</IDL_Type>
         <Units>deg</Units>
         <Count>1</Count>
     </item>
     <item>
         <EFDB_Name>positionV</EFDB_Name>
-        <Description></Description>
+        <Description>V position</Description>
         <IDL_Type>double</IDL_Type>
         <Units>deg</Units>
         <Count>1</Count>
     </item>
     <item>
         <EFDB_Name>positionW</EFDB_Name>
-        <Description></Description>
+        <Description>W position</Description>
         <IDL_Type>double</IDL_Type>
         <Units>deg</Units>
         <Count>1</Count>
     </item>
     <item>
         <EFDB_Name>pivotX</EFDB_Name>
-        <Description></Description>
+        <Description>Pivot coordinate X</Description>
         <IDL_Type>double</IDL_Type>
         <Units>um</Units>
         <Count>1</Count>
     </item>
     <item>
         <EFDB_Name>pivotY</EFDB_Name>
-        <Description></Description>
+        <Description>Pivot coordinate Y</Description>
         <IDL_Type>double</IDL_Type>
         <Units>um</Units>
         <Count>1</Count>
     </item>
     <item>
         <EFDB_Name>pivotZ</EFDB_Name>
-        <Description></Description>
+        <Description>Pivot coordinate Z</Description>
         <IDL_Type>double</IDL_Type>
         <Units>um</Units>
         <Count>1</Count>
     </item>
     <item>
         <EFDB_Name>elevationRawLUTElevIndex</EFDB_Name>
-        <Description></Description>
+        <Description>elevationRawLUTElevIndex</Description>
         <IDL_Type>short</IDL_Type>
-        <Units></Units>
+        <Units>Dimensionless</Units>
         <Count>19</Count>
     </item>
     <item>
         <EFDB_Name>elevationRawLUTX</EFDB_Name>
-        <Description></Description>
+        <Description>elevationRawLUTX</Description>
         <IDL_Type>double</IDL_Type>
-        <Units></Units>
+        <Units>um</Units>
         <Count>19</Count>
     </item>
     <item>
         <EFDB_Name>elevationRawLUTY</EFDB_Name>
-        <Description></Description>
+        <Description>elevationRawLUTY</Description>
         <IDL_Type>double</IDL_Type>
-        <Units></Units>
+        <Units>um</Units>
         <Count>19</Count>
     </item>
     <item>
         <EFDB_Name>elevationRawLUTZ</EFDB_Name>
-        <Description></Description>
+        <Description>elevationRawLUTZ</Description>
         <IDL_Type>double</IDL_Type>
-        <Units></Units>
+        <Units>um</Units>
         <Count>19</Count>
     </item>
     <item>
         <EFDB_Name>elevationRawLUTRx</EFDB_Name>
-        <Description></Description>
+        <Description>elevationRawLUTRx</Description>
         <IDL_Type>double</IDL_Type>
-        <Units></Units>
+        <Units>deg</Units>
         <Count>19</Count>
     </item>
     <item>
         <EFDB_Name>elevationRawLUTRy</EFDB_Name>
-        <Description></Description>
+        <Description>elevationRawLUTRy</Description>
         <IDL_Type>double</IDL_Type>
-        <Units></Units>
+        <Units>deg</Units>
         <Count>19</Count>
     </item>
     <item>
         <EFDB_Name>elevationRawLUTRz</EFDB_Name>
-        <Description></Description>
+        <Description>elevationRawLUTRz</Description>
         <IDL_Type>double</IDL_Type>
-        <Units></Units>
+        <Units>deg</Units>
         <Count>19</Count>
     </item>
     <item>
         <EFDB_Name>azimuthRawLUTAzIndex</EFDB_Name>
-        <Description></Description>
+        <Description>azimuthRawLUTAzIndex</Description>
         <IDL_Type>short</IDL_Type>
-        <Units></Units>
+        <Units>Dimensionless</Units>
         <Count>37</Count>
     </item>
     <item>
         <EFDB_Name>azimuthRawLUTX</EFDB_Name>
-        <Description></Description>
+        <Description>azimuthRawLUTX</Description>
         <IDL_Type>double</IDL_Type>
-        <Units></Units>
+        <Units>um</Units>
         <Count>37</Count>
     </item>
     <item>
         <EFDB_Name>azimuthRawLUTY</EFDB_Name>
-        <Description></Description>
+        <Description>azimuthRawLUTY</Description>
         <IDL_Type>double</IDL_Type>
-        <Units></Units>
+        <Units>um</Units>
         <Count>37</Count>
     </item>
     <item>
         <EFDB_Name>azimuthRawLUTZ</EFDB_Name>
-        <Description></Description>
+        <Description>azimuthRawLUTZ</Description>
         <IDL_Type>double</IDL_Type>
-        <Units></Units>
+        <Units>um</Units>
         <Count>37</Count>
     </item>
     <item>
         <EFDB_Name>azimuthRawLUTRx</EFDB_Name>
-        <Description></Description>
+        <Description>azimuthRawLUTRx</Description>
         <IDL_Type>double</IDL_Type>
-        <Units></Units>
+        <Units>deg</Units>
         <Count>37</Count>
     </item>
     <item>
         <EFDB_Name>azimuthRawLUTRy</EFDB_Name>
-        <Description></Description>
+        <Description>azimuthRawLUTRy</Description>
         <IDL_Type>double</IDL_Type>
-        <Units></Units>
+        <Units>deg</Units>
         <Count>37</Count>
     </item>
     <item>
         <EFDB_Name>azimuthRawLUTRz</EFDB_Name>
-        <Description></Description>
+        <Description>azimuthRawLUTRz</Description>
         <IDL_Type>double</IDL_Type>
-        <Units></Units>
+        <Units>deg</Units>
         <Count>37</Count>
     </item>
     <item>
         <EFDB_Name>temperatureRawLUTTempIndex</EFDB_Name>
-        <Description></Description>
+        <Description>temperatureRawLUTTempIndex</Description>
         <IDL_Type>short</IDL_Type>
-        <Units></Units>
+        <Units>Dimensionless</Units>
         <Count>9</Count>
     </item>
     <item>
         <EFDB_Name>temperatureRawLUTX</EFDB_Name>
-        <Description></Description>
+        <Description>temperatureRawLUTX</Description>
         <IDL_Type>double</IDL_Type>
-        <Units></Units>
+        <Units>um</Units>
         <Count>9</Count>
     </item>
     <item>
         <EFDB_Name>temperatureRawLUTY</EFDB_Name>
-        <Description></Description>
+        <Description>temperatureRawLUTY</Description>
         <IDL_Type>double</IDL_Type>
-        <Units></Units>
+        <Units>um</Units>
         <Count>9</Count>
     </item>
     <item>
         <EFDB_Name>temperatureRawLUTZ</EFDB_Name>
-        <Description></Description>
+        <Description>temperatureRawLUTZ</Description>
         <IDL_Type>double</IDL_Type>
-        <Units></Units>
+        <Units>um</Units>
         <Count>9</Count>
     </item>
     <item>
         <EFDB_Name>temperatureRawLUTRx</EFDB_Name>
-        <Description></Description>
+        <Description>temperatureRawLUTRx</Description>
         <IDL_Type>double</IDL_Type>
-        <Units></Units>
+        <Units>deg</Units>
         <Count>9</Count>
     </item>
     <item>
         <EFDB_Name>temperatureRawLUTRy</EFDB_Name>
-        <Description></Description>
+        <Description>temperatureRawLUTRy</Description>
         <IDL_Type>double</IDL_Type>
-        <Units></Units>
+        <Units>deg</Units>
         <Count>9</Count>
     </item>
     <item>
         <EFDB_Name>temperatureRawLUTRz</EFDB_Name>
-        <Description></Description>
+        <Description>temperatureRawLUTRz</Description>
         <IDL_Type>double</IDL_Type>
-        <Units></Units>
+        <Units>deg</Units>
         <Count>9</Count>
     </item>
     <item>
         <EFDB_Name>strutDisplacementMax</EFDB_Name>
-        <Description></Description>
+        <Description>strutDisplacementMax</Description>
         <IDL_Type>double</IDL_Type>
         <Units>um</Units>
         <Count>1</Count>
     </item>
     <item>
         <EFDB_Name>strutVelocityMax</EFDB_Name>
-        <Description></Description>
+        <Description>strutVelocityMax</Description>
         <IDL_Type>double</IDL_Type>
         <Units>um/s</Units>
         <Count>1</Count>
@@ -393,28 +393,28 @@
     <Author></Author>
     <EFDB_Topic>Hexapod_logevent_rejectedCommand</EFDB_Topic>
     <Alias>rejectedCommand</Alias>
-    <Explanation>http://sal.lsst.org</Explanation>
+    <Explanation>Issued when a command is rejected</Explanation>
     <item>
         <EFDB_Name>commandValue</EFDB_Name>
-        <Description></Description>
+        <Description>command</Description>
         <IDL_Type>string</IDL_Type>
         <IDL_Size>256</IDL_Size>
-        <Units></Units>
+        <Units>Dimensionless</Units>
         <Count>1</Count>
     </item>
     <item>
         <EFDB_Name>detailedState</EFDB_Name>
-        <Description></Description>
+        <Description>Detailed State</Description>
         <IDL_Type>string</IDL_Type>
         <IDL_Size>256</IDL_Size>
-        <Units></Units>
+        <Units>Dimensionless</Units>
         <Count>1</Count>
     </item>
     <item>
         <EFDB_Name>timestamp</EFDB_Name>
-        <Description></Description>
+        <Description>timestamp</Description>
         <IDL_Type>double</IDL_Type>
-        <Units></Units>
+        <Units>Dimensionless</Units>
         <Count>1</Count>
     </item>
 </SALEvent>
@@ -424,7 +424,7 @@
     <Author></Author>
     <EFDB_Topic>Hexapod_logevent_commandableByDDS</EFDB_Topic>
     <Alias>commandableByDDS</Alias>
-    <Explanation>http://sal.lsst.org</Explanation>
+    <Explanation>States if Hexapod is commandable by DDS commands or if its not set indicates that its running in Engineer mode</Explanation>
     <item>
         <EFDB_Name>state</EFDB_Name>
         <Description></Description>
