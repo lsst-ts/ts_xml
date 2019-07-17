@@ -12,12 +12,12 @@
     <Property></Property>
     <Action></Action>
     <Value></Value>
-    <Explanation>http://sal.lsst.org</Explanation>
+    <Explanation>Limit the minimum and maximum acceleration level of the rotator to be set within the global limit of +/- 1 deg/s2.</Explanation>
     <item>
         <EFDB_Name>alimit</EFDB_Name>
         <Description></Description>
         <IDL_Type>double</IDL_Type>
-        <Units>deg/s^2</Units>
+        <Units>deg/s2</Units>
         <Count>1</Count>
     </item>
 </SALCommand>
@@ -31,10 +31,10 @@
     <Property></Property>
     <Action></Action>
     <Value></Value>
-    <Explanation>http://sal.lsst.org</Explanation>
+    <Explanation>The configureVelocity command shall limit the minimum and maximum velocity level of the rotator to be set within the global limit of +/- 3.5 deg/s.</Explanation>
     <item>
         <EFDB_Name>vlimit</EFDB_Name>
-        <Description></Description>
+        <Description>Velocity limit</Description>
         <IDL_Type>double</IDL_Type>
         <Units>deg/s</Units>
         <Count>1</Count>
@@ -50,12 +50,12 @@
     <Property></Property>
     <Action></Action>
     <Value></Value>
-    <Explanation>http://sal.lsst.org</Explanation>
+    <Explanation>Move command.</Explanation>
     <item>
         <EFDB_Name>state</EFDB_Name>
-        <Description></Description>
+        <Description>State</Description>
         <IDL_Type>boolean</IDL_Type>
-        <Units></Units>
+        <Units>unitless</Units>
         <Count>1</Count>
     </item>
 </SALCommand>
@@ -69,26 +69,26 @@
     <Property></Property>
     <Action></Action>
     <Value></Value>
-    <Explanation>http://sal.lsst.org</Explanation>
+    <Explanation>Rotator updates position and velocity setpoints to the values specified in the track command parameters. Successive track commands will arrive at a 20Hz rate.</Explanation>
     <item>
         <EFDB_Name>angle</EFDB_Name>
-        <Description></Description>
+        <Description>Rotator absolute angle position in degrees (it could be a positive or a negative value)</Description>
         <IDL_Type>double</IDL_Type>
-        <Units></Units>
+        <Units>deg</Units>
         <Count>1</Count>
     </item>
     <item>
         <EFDB_Name>velocity</EFDB_Name>
-        <Description></Description>
+        <Description>Rotator velocity in degrees per second (positive or negative)</Description>
         <IDL_Type>double</IDL_Type>
-        <Units></Units>
+        <Units>deg/s</Units>
         <Count>1</Count>
     </item>
     <item>
         <EFDB_Name>tai</EFDB_Name>
-        <Description></Description>
+        <Description>Time in seconds</Description>
         <IDL_Type>double</IDL_Type>
-        <Units></Units>
+        <Units>s</Units>
         <Count>1</Count>
     </item>
 </SALCommand>
@@ -102,19 +102,19 @@
     <Property></Property>
     <Action></Action>
     <Value></Value>
-    <Explanation>http://sal.lsst.org</Explanation>
+    <Explanation>Engineering command</Explanation>
     <item>
         <EFDB_Name>ivalue1</EFDB_Name>
-        <Description></Description>
+        <Description>ivalue1</Description>
         <IDL_Type>long</IDL_Type>
-        <Units></Units>
+        <Units>unitless</Units>
         <Count>1</Count>
     </item>
     <item>
         <EFDB_Name>ivalue2</EFDB_Name>
-        <Description></Description>
+        <Description>ivalue2</Description>
         <IDL_Type>long</IDL_Type>
-        <Units></Units>
+        <Units>unitless</Units>
         <Count>1</Count>
     </item>
 </SALCommand>
@@ -128,12 +128,12 @@
     <Property></Property>
     <Action></Action>
     <Value></Value>
-    <Explanation>http://sal.lsst.org</Explanation>
+    <Explanation>Start tracking command</Explanation>
     <item>
         <EFDB_Name>state</EFDB_Name>
-        <Description></Description>
+        <Description>state</Description>
         <IDL_Type>boolean</IDL_Type>
-        <Units></Units>
+        <Units>unitless</Units>
         <Count>1</Count>
     </item>
 </SALCommand>
@@ -147,12 +147,12 @@
     <Property></Property>
     <Action></Action>
     <Value></Value>
-    <Explanation>http://sal.lsst.org</Explanation>
+    <Explanation>Clear error</Explanation>
     <item>
         <EFDB_Name>state</EFDB_Name>
-        <Description></Description>
+        <Description>state</Description>
         <IDL_Type>boolean</IDL_Type>
-        <Units></Units>
+        <Units>unitless</Units>
         <Count>1</Count>
     </item>
 </SALCommand>
@@ -166,7 +166,7 @@
     <Property></Property>
     <Action></Action>
     <Value></Value>
-    <Explanation>http://sal.lsst.org</Explanation>
+    <Explanation>Set the setpoint of the rotator to an angle specified in degrees. But the rotator moves to the position when move command is issued.</Explanation>
     <item>
         <EFDB_Name>angle</EFDB_Name>
         <Description></Description>
@@ -204,17 +204,17 @@
     <Property></Property>
     <Action></Action>
     <Value></Value>
-    <Explanation>http://sal.lsst.org</Explanation>
+    <Explanation>SetS the velocity setpoint of the rotator and duration of rotation given by velocity (specified in deg/s) and moveDuration parameter (specified in s).</Explanation>
     <item>
         <EFDB_Name>velocity</EFDB_Name>
-        <Description></Description>
+        <Description>velocity (specified in deg/s)</Description>
         <IDL_Type>double</IDL_Type>
         <Units>deg/s</Units>
         <Count>1</Count>
     </item>
     <item>
         <EFDB_Name>moveDuration</EFDB_Name>
-        <Description></Description>
+        <Description>moveDuration parameter (specified in s)</Description>
         <IDL_Type>double</IDL_Type>
         <Units>s</Units>
         <Count>1</Count>
