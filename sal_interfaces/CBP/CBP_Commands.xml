@@ -1,24 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-stylesheet type="text/xsl" href="http://lsst-sal.tuc.noao.edu/schema/SALCommandSet.xsl?>
+<?xml-stylesheet type="text/xsl" href="http://lsst-sal.tuc.noao.edu/schema/SALCommandSet.xsl"?>
 <SALCommandSet xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://lsst-sal.tuc.noao.edu/schema/SALCommandSet.xsd">
-     <SALCommand>
-        <Subsystem>CBP</Subsystem>
-        <Version>3.8</Version>
-        <Author>ecoughlin</Author>
-        <EFDB_Topic>CBP_command_clearFault</EFDB_Topic>
-        <Alias>clearFault</Alias>
-        <Device></Device>
-        <Property></Property>
-        <Action></Action>
-        <Value></Value>
-        <Explanation>http://sal.lsst.org</Explanation>
-        <item>
-            <EFDB_Name>clearFault</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units></Units>
-            <Count>1</Count>
-        </item>
+    <SALCommand>
+    <Subsystem>CBP</Subsystem>
+    <Version>3.8</Version>
+    <Author>ecoughlin</Author>
+    <EFDB_Topic>CBP_command_clearFault</EFDB_Topic>
+    <Alias>clearFault</Alias>
+    <Device></Device>
+    <Property></Property>
+    <Action></Action>
+    <Value></Value>
+    <Explanation>http://sal.lsst.org</Explanation>
+    <item>
+        <EFDB_Name>value</EFDB_Name>
+        <Description>Attribute required by the API, but is unused.</Description>
+        <IDL_Type>boolean</IDL_Type>
+        <Units>unitless</Units>
+        <Count>1</Count>
+    </item>
     </SALCommand>
     <SALCommand>
         <Subsystem>CBP</Subsystem>
@@ -33,9 +33,9 @@
         <Explanation>http://sal.lsst.org</Explanation>
         <item>
             <EFDB_Name>azimuth</EFDB_Name>
-            <Description>The amount to move the azimuth by.</Description>
+            <Description>The amount to move the azimuth by in absolute.</Description>
             <IDL_Type>float</IDL_Type>
-            <Units>degrees</Units>
+            <Units>degree</Units>
             <Count>1</Count>
         </item>
     </SALCommand>
@@ -52,9 +52,9 @@
         <Explanation>http://sal.lsst.org</Explanation>
         <item>
             <EFDB_Name>altitude</EFDB_Name>
-            <Description>The amount to move the altitude by.</Description>
+            <Description>The amount to move the altitude by in absolute.</Description>
             <IDL_Type>float</IDL_Type>
-            <Units>degrees</Units>
+            <Units>degree</Units>
             <Count>1</Count>
         </item>
     </SALCommand>
@@ -73,7 +73,7 @@
             <EFDB_Name>mask</EFDB_Name>
             <Description>The name of the mask to change to.</Description>
             <IDL_Type>string</IDL_Type>
-            <Units></Units>
+            <Units>unitless</Units>
             <Count>1</Count>
         </item>
     </SALCommand>
@@ -92,7 +92,7 @@
             <EFDB_Name>focus</EFDB_Name>
             <Description>The value to set CBP focus to be.</Description>
             <IDL_Type>float</IDL_Type>
-            <Units></Units>
+            <Units>millimeter</Units>
             <Count>1</Count>
         </item>
     </SALCommand>
@@ -107,5 +107,12 @@
         <Action></Action>
         <Value></Value>
         <Explanation>http://sal.lsst.org</Explanation>
+        <item>
+            <EFDB_Name>value</EFDB_Name>
+            <Description>Attribute required by the SAL API, but is unused.</Description>
+            <IDL_Type>boolean</IDL_Type>
+            <Units>unitless</Units>
+            <Count>1</Count>
+        </item>
     </SALCommand>
 </SALCommandSet>
