@@ -6,32 +6,25 @@
     <Subsystem>Dome</Subsystem>
     <Version>3.7.1</Version>
     <Author></Author>
-    <EFDB_Topic>Dome_command_crawl</EFDB_Topic>
-    <Alias>crawl</Alias>
+    <EFDB_Topic>Dome_command_crawlAz</EFDB_Topic>
+    <Alias>crawlAz</Alias>
     <Device></Device>
     <Property></Property>
     <Action></Action>
     <Value></Value>
     <Explanation>http://sal.lsst.org</Explanation>
     <item>
-        <EFDB_Name>azPosition</EFDB_Name>
-        <Description></Description>
-        <IDL_Type>double</IDL_Type>
-        <Units></Units>
+        <EFDB_Name>dirMotion</EFDB_Name>
+        <Description>Specifies de direction of crawl motion in azimuth: CW or CCW</Description>
+        <IDL_Type>string</IDL_Type>
+        <Units>unitless</Units>
         <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>elPosition</EFDB_Name>
-        <Description></Description>
+        <EFDB_Name>azRate</EFDB_Name>
+        <Description>Specifies the speed of crawl motion in degrees per second</Description>
         <IDL_Type>double</IDL_Type>
-        <Units></Units>
-        <Count>1</Count>
-    </item>
-    <item>
-        <EFDB_Name>demandTime</EFDB_Name>
-        <Description></Description>
-        <IDL_Type>double</IDL_Type>
-        <Units></Units>
+        <Units>deg/second</Units>
         <Count>1</Count>
     </item>
 </SALCommand>
@@ -39,8 +32,34 @@
     <Subsystem>Dome</Subsystem>
     <Version>3.7.1</Version>
     <Author></Author>
-    <EFDB_Topic>Dome_command_move</EFDB_Topic>
-    <Alias>move</Alias>
+    <EFDB_Topic>Dome_command_crawlEl</EFDB_Topic>
+    <Alias>crawlEl</Alias>
+    <Device></Device>
+    <Property></Property>
+    <Action></Action>
+    <Value></Value>
+    <Explanation>http://sal.lsst.org</Explanation>
+    <item>
+        <EFDB_Name>dirMotion</EFDB_Name>
+        <Description>Specifies de direction of crawl motion in elevation: UP or DOWN</Description>
+        <IDL_Type>string</IDL_Type>
+        <Units>unitless</Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>elRate</EFDB_Name>
+        <Description>Specifies the speed of crawl motion in degrees per second</Description>
+        <IDL_Type>double</IDL_Type>
+        <Units>deg/second</Units>
+        <Count>1</Count>
+    </item>
+</SALCommand>
+<SALCommand>
+    <Subsystem>Dome</Subsystem>
+    <Version>3.7.1</Version>
+    <Author></Author>
+    <EFDB_Topic>Dome_command_moveAz</EFDB_Topic>
+    <Alias>moveAz</Alias>
     <Device></Device>
     <Property></Property>
     <Action></Action>
@@ -48,16 +67,28 @@
     <Explanation>http://sal.lsst.org</Explanation>
     <item>
         <EFDB_Name>azimuth</EFDB_Name>
-        <Description></Description>
+        <Description>Absolute positon angle for azimuth rotation in degrees</Description>
         <IDL_Type>double</IDL_Type>
-        <Units></Units>
+        <Units>deg</Units>
         <Count>1</Count>
     </item>
+</SALCommand>
+<SALCommand>
+    <Subsystem>Dome</Subsystem>
+    <Version>3.7.1</Version>
+    <Author></Author>
+    <EFDB_Topic>Dome_command_moveEl</EFDB_Topic>
+    <Alias>moveEl</Alias>
+    <Device></Device>
+    <Property></Property>
+    <Action></Action>
+    <Value></Value>
+    <Explanation>http://sal.lsst.org</Explanation>
     <item>
         <EFDB_Name>elevation</EFDB_Name>
-        <Description></Description>
+        <Description>Absolute position angle for elevation motion in degrees</Description>
         <IDL_Type>double</IDL_Type>
-        <Units></Units>
+        <Units>deg</Units>
         <Count>1</Count>
     </item>
 </SALCommand>
@@ -72,11 +103,30 @@
     <Action></Action>
     <Value></Value>
     <Explanation>http://sal.lsst.org</Explanation>
+</SALCommand>
+<SALCommand>
+    <Subsystem>Dome</Subsystem>
+    <Version>3.7.1</Version>
+    <Author></Author>
+    <EFDB_Topic>Dome_command_setLouver</EFDB_Topic>
+    <Alias>setLouver</Alias>
+    <Device></Device>
+    <Property></Property>
+    <Action></Action>
+    <Value></Value>
+    <Explanation>http://sal.lsst.org</Explanation>
     <item>
-        <EFDB_Name>state</EFDB_Name>
-        <Description></Description>
-        <IDL_Type>boolean</IDL_Type>
-        <Units></Units>
+        <EFDB_Name>id</EFDB_Name>
+        <Description>Identification of louver to move</Description>
+        <IDL_Type>int</IDL_Type>
+        <Units>unitless</Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>position</EFDB_Name>
+        <Description>The position to set the louver</Description>
+        <IDL_Type>int</IDL_Type>
+        <Units>unitless</Units>
         <Count>1</Count>
     </item>
 </SALCommand>
@@ -84,20 +134,25 @@
     <Subsystem>Dome</Subsystem>
     <Version>3.7.1</Version>
     <Author></Author>
-    <EFDB_Topic>Dome_command_setLouvers</EFDB_Topic>
-    <Alias>setLouvers</Alias>
+    <EFDB_Topic>Dome_command_closeLouvers</EFDB_Topic>
+    <Alias>closeLouvers</Alias>
     <Device></Device>
     <Property></Property>
     <Action></Action>
     <Value></Value>
     <Explanation>http://sal.lsst.org</Explanation>
-    <item>
-        <EFDB_Name>position</EFDB_Name>
-        <Description></Description>
-        <IDL_Type>int</IDL_Type>
-        <Units></Units>
-        <Count>34</Count>
-    </item>
+</SALCommand>
+<SALCommand>
+    <Subsystem>Dome</Subsystem>
+    <Version>3.7.1</Version>
+    <Author></Author>
+    <EFDB_Topic>Dome_command_stopLouvers</EFDB_Topic>
+    <Alias>stopLouvers</Alias>
+    <Device></Device>
+    <Property></Property>
+    <Action></Action>
+    <Value></Value>
+    <Explanation>http://sal.lsst.org</Explanation>
 </SALCommand>
 <SALCommand>
     <Subsystem>Dome</Subsystem>
@@ -110,13 +165,6 @@
     <Action></Action>
     <Value></Value>
     <Explanation>http://sal.lsst.org</Explanation>
-    <item>
-        <EFDB_Name>state</EFDB_Name>
-        <Description></Description>
-        <IDL_Type>boolean</IDL_Type>
-        <Units></Units>
-        <Count>1</Count>
-    </item>
 </SALCommand>
 <SALCommand>
     <Subsystem>Dome</Subsystem>
@@ -129,13 +177,6 @@
     <Action></Action>
     <Value></Value>
     <Explanation>http://sal.lsst.org</Explanation>
-    <item>
-        <EFDB_Name>state</EFDB_Name>
-        <Description></Description>
-        <IDL_Type>boolean</IDL_Type>
-        <Units></Units>
-        <Count>1</Count>
-    </item>
 </SALCommand>
 <SALCommand>
     <Subsystem>Dome</Subsystem>
@@ -148,11 +189,60 @@
     <Action></Action>
     <Value></Value>
     <Explanation>http://sal.lsst.org</Explanation>
+</SALCommand>
+<SALCommand>
+    <Subsystem>Dome</Subsystem>
+    <Version>3.7.1</Version>
+    <Author></Author>
+    <EFDB_Topic>Dome_command_stopAz</EFDB_Topic>
+    <Alias>stopAz</Alias>
+    <Device></Device>
+    <Property></Property>
+    <Action></Action>
+    <Value></Value>
+    <Explanation>http://sal.lsst.org</Explanation>
+</SALCommand>
+<SALCommand>
+    <Subsystem>Dome</Subsystem>
+    <Version>3.7.1</Version>
+    <Author></Author>
+    <EFDB_Topic>Dome_command_stopEl</EFDB_Topic>
+    <Alias>stopEl</Alias>
+    <Device></Device>
+    <Property></Property>
+    <Action></Action>
+    <Value></Value>
+    <Explanation>http://sal.lsst.org</Explanation>
+</SALCommand>
+<SALCommand>
+    <Subsystem>Dome</Subsystem>
+    <Version>3.7.1</Version>
+    <Author></Author>
+    <EFDB_Topic>Dome_command_stop</EFDB_Topic>
+    <Alias>stop</Alias>
+    <Device></Device>
+    <Property></Property>
+    <Action></Action>
+    <Value></Value>
+    <Explanation>http://sal.lsst.org</Explanation>
+</SALCommand>
+<SALCommand>
+    <Subsystem>Dome</Subsystem>
+    <Version>3.7.1</Version>
+    <Author></Author>
+    <EFDB_Topic>Dome_command_setTemperature</EFDB_Topic>
+    <Alias>setTemperature</Alias>
+    <Device></Device>
+    <Property></Property>
+    <Action></Action>
+    <Value></Value>
+    <Explanation>http://sal.lsst.org</Explanation>
     <item>
-        <EFDB_Name>state</EFDB_Name>
-        <Description></Description>
-        <IDL_Type>boolean</IDL_Type>
-        <Units></Units>
+        <EFDB_Name>temperature</EFDB_Name>
+        <Description>Set the temperature to maintain in the dome heat sources</Description>
+        <IDL_Type>double</IDL_Type>
+        <Units>Celsius</Units>
         <Count>1</Count>
     </item>
-</SALCommand></SALCommandSet>
+</SALCommand>
+</SALCommandSet>
