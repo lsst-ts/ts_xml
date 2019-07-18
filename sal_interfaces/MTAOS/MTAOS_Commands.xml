@@ -1,51 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-stylesheet type="text/xsl" href="http://lsst-sal.tuc.noao.edu/schema/SALCommandSet.xsl"?>
 <SALCommandSet xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://lsst-sal.tuc.noao.edu/schema/SALCommandSet.xsd">
-    <SALCommand>
-        <Subsystem>MTAOS</Subsystem>
-        <Version>3.8.41</Version>
-        <Author></Author>
-        <EFDB_Topic>MTAOS_command_measureAlignment</EFDB_Topic>
-        <Alias>measureAlignment</Alias>
-        <Device></Device>
-        <Property></Property>
-        <Action></Action>
-        <Value></Value>
-        <Explanation>http://sal.lsst.org</Explanation>
-        <item>
-            <EFDB_Name>value</EFDB_Name>
-            <Description>This value is ignored.</Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units></Units>
-            <Count>1</Count>
-        </item>
-    </SALCommand>
-    <SALCommand>
-        <Subsystem>MTAOS</Subsystem>
-        <Version>3.8.41</Version>
-        <Author></Author>
-        <EFDB_Topic>MTAOS_command_issueAlignmentCorrection</EFDB_Topic>
-        <Alias>issueAlignmentCorrection</Alias>
-        <Device></Device>
-        <Property></Property>
-        <Action></Action>
-        <Value></Value>
-        <Explanation>http://sal.lsst.org</Explanation>
-        <item>
-            <EFDB_Name>bypassCameraHexapod</EFDB_Name>
-            <Description>If true the MTAOS will not command the Camera Hexapod.</Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units></Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>bypassM2Hexapod</EFDB_Name>
-            <Description>If true the MTAOS will not command the M2 Hexapod.</Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units></Units>
-            <Count>1</Count>
-        </item>
-    </SALCommand>
+
     <SALCommand>
         <Subsystem>MTAOS</Subsystem>
         <Version>3.8.41</Version>
@@ -56,15 +12,16 @@
         <Property></Property>
         <Action></Action>
         <Value></Value>
-        <Explanation>http://sal.lsst.org</Explanation>
+        <Description>Reset the current wavefront error correction. The aggregated degree of freedom in optical feedback control will be reset to the initial state.</Description>
         <item>
             <EFDB_Name>value</EFDB_Name>
             <Description>This value is ignored.</Description>
             <IDL_Type>boolean</IDL_Type>
-            <Units></Units>
+            <Units>unitless</Units>
             <Count>1</Count>
         </item>
     </SALCommand>
+
     <SALCommand>
         <Subsystem>MTAOS</Subsystem>
         <Version>3.8.41</Version>
@@ -75,36 +32,16 @@
         <Property></Property>
         <Action></Action>
         <Value></Value>
-        <Explanation>http://sal.lsst.org</Explanation>
+        <Description>Issue the wavefront correction to subsystems based on the most recently measured wavefront error.</Description>
         <item>
-            <EFDB_Name>bypassCameraHexapod</EFDB_Name>
-            <Description>If true the MTAOS will not command the Camera Hexapod.</Description>
+            <EFDB_Name>value</EFDB_Name>
+            <Description>This value is ignored.</Description>
             <IDL_Type>boolean</IDL_Type>
-            <Units></Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>bypassM1M3</EFDB_Name>
-            <Description>If true the MTAOS will not command the M1M3.</Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units></Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>bypassM2</EFDB_Name>
-            <Description>If true the MTAOS will not command the M2.</Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units></Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>bypassM2Hexapod</EFDB_Name>
-            <Description>If true the MTAOS will not command the M2 Hexapod.</Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units></Units>
+            <Units>unitless</Units>
             <Count>1</Count>
         </item>
     </SALCommand>
+
     <SALCommand>
         <Subsystem>MTAOS</Subsystem>
         <Version>3.8.41</Version>
@@ -115,16 +52,17 @@
         <Property></Property>
         <Action></Action>
         <Value></Value>
-        <Explanation>http://sal.lsst.org</Explanation>
+        <Description>Process new calibration products.</Description>
         <item>
             <EFDB_Name>directoryPath</EFDB_Name>
-            <Description></Description>
+            <Description>Absolute directory path to calibration products.</Description>
             <IDL_Type>string</IDL_Type>
             <IDL_Size>1</IDL_Size>
-            <Units></Units>
+            <Units>unitless</Units>
             <Count>1</Count>
         </item>
     </SALCommand>
+
     <SALCommand>
         <Subsystem>MTAOS</Subsystem>
         <Version>3.8.41</Version>
@@ -135,51 +73,59 @@
         <Property></Property>
         <Action></Action>
         <Value></Value>
-        <Explanation>http://sal.lsst.org</Explanation>
+        <Description>Process the wavefront data collection at corner splitted sensors.</Description>
+        <item>
+            <EFDB_Name>visit</EFDB_Name>
+            <Description>Image visit number.</Description>
+            <IDL_Type>int</IDL_Type>
+            <Units>unitless</Units>
+            <Count>1</Count>
+        </item>
         <item>
             <EFDB_Name>directoryPath</EFDB_Name>
-            <Description></Description>
+            <Description>Absolute directory path to wavefront data collection.</Description>
             <IDL_Type>string</IDL_Type>
             <IDL_Size>1</IDL_Size>
-            <Units></Units>
+            <Units>unitless</Units>
             <Count>1</Count>
         </item>
         <item>
             <EFDB_Name>fieldRA</EFDB_Name>
-            <Description></Description>
+            <Description>Right ascension of telescope boresight.</Description>
             <IDL_Type>double</IDL_Type>
-            <Units></Units>
+            <Units>degree</Units>
             <Count>1</Count>
         </item>
         <item>
             <EFDB_Name>fieldDEC</EFDB_Name>
-            <Description></Description>
+            <Description>Declination of telescope boresight.</Description>
             <IDL_Type>double</IDL_Type>
-            <Units></Units>
+            <Units>degree</Units>
             <Count>1</Count>
         </item>
         <item>
             <EFDB_Name>filter</EFDB_Name>
-            <Description></Description>
+            <Description>Active filter type. Use 1-6 for u, g, r, i, z, and y. Use 7 for reference.</Description>
             <IDL_Type>int</IDL_Type>
-            <Units></Units>
+            <Units>unitless</Units>
             <Count>1</Count>
         </item>
         <item>
             <EFDB_Name>cameraRotation</EFDB_Name>
-            <Description></Description>
+            <Description>Camera rotation angle.</Description>
             <IDL_Type>double</IDL_Type>
-            <Units></Units>
+            <Units>degree</Units>
             <Count>1</Count>
         </item>
         <item>
             <EFDB_Name>userGain</EFDB_Name>
-            <Description>Set to -1 to ignore user gain.</Description>
+            <Description>Gain value between 0 and 1. Set to -1 to ignore user gain.</Description>
             <IDL_Type>double</IDL_Type>
-            <Units></Units>
+            <Units>unitless</Units>
             <Count>1</Count>
         </item>
     </SALCommand>
+
     <SALCommand>
         <Subsystem>MTAOS</Subsystem>
         <Version>3.8.41</Version>
@@ -190,75 +136,74 @@
         <Property></Property>
         <Action></Action>
         <Value></Value>
-        <Explanation>http://sal.lsst.org</Explanation>
+        <Description>Process the wavefront data collection by camera piston.</Description>
         <item>
             <EFDB_Name>intraVisit</EFDB_Name>
             <Description>Intra-focal image visit number.</Description>
             <IDL_Type>int</IDL_Type>
-            <IDL_Size>1</IDL_Size>
-            <Units></Units>
+            <Units>unitless</Units>
             <Count>1</Count>
         </item>
         <item>
             <EFDB_Name>extraVisit</EFDB_Name>
             <Description>Extra-focal image visit number.</Description>
             <IDL_Type>int</IDL_Type>
-            <IDL_Size>1</IDL_Size>
-            <Units></Units>
+            <Units>unitless</Units>
             <Count>1</Count>
         </item>
         <item>
             <EFDB_Name>intraDirectoryPath</EFDB_Name>
-            <Description></Description>
+            <Description>Absolute directory path to intra-focal wavefront data collection.</Description>
             <IDL_Type>string</IDL_Type>
             <IDL_Size>1</IDL_Size>
-            <Units></Units>
+            <Units>unitless</Units>
             <Count>1</Count>
         </item>
         <item>
             <EFDB_Name>extraDirectoryPath</EFDB_Name>
-            <Description></Description>
+            <Description>Absolute directory path to extra-focal wavefront data collection.</Description>
             <IDL_Type>string</IDL_Type>
             <IDL_Size>1</IDL_Size>
-            <Units></Units>
+            <Units>unitless</Units>
             <Count>1</Count>
         </item>
         <item>
             <EFDB_Name>fieldRA</EFDB_Name>
-            <Description></Description>
+            <Description>Right ascension of telescope boresight.</Description>
             <IDL_Type>double</IDL_Type>
-            <Units></Units>
+            <Units>degree</Units>
             <Count>1</Count>
         </item>
         <item>
             <EFDB_Name>fieldDEC</EFDB_Name>
-            <Description></Description>
+            <Description>Declination of telescope boresight.</Description>
             <IDL_Type>double</IDL_Type>
-            <Units></Units>
+            <Units>degree</Units>
             <Count>1</Count>
         </item>
         <item>
             <EFDB_Name>filter</EFDB_Name>
-            <Description></Description>
+            <Description>Active filter type. Use 1-6 for u, g, r, i, z, and y. Use 7 for reference.</Description>
             <IDL_Type>int</IDL_Type>
-            <Units></Units>
+            <Units>unitless</Units>
             <Count>1</Count>
         </item>
         <item>
             <EFDB_Name>cameraRotation</EFDB_Name>
-            <Description></Description>
+            <Description>Camera rotation angle.</Description>
             <IDL_Type>double</IDL_Type>
-            <Units></Units>
+            <Units>degree</Units>
             <Count>1</Count>
         </item>
         <item>
             <EFDB_Name>userGain</EFDB_Name>
-            <Description>Set to -1 to ignore user gain.</Description>
+            <Description>Gain value between 0 and 1. Set to -1 to ignore user gain.</Description>
             <IDL_Type>double</IDL_Type>
-            <Units></Units>
+            <Units>unitless</Units>
             <Count>1</Count>
         </item>
     </SALCommand>
+
     <SALCommand>
         <Subsystem>MTAOS</Subsystem>
         <Version>3.8.41</Version>
@@ -269,49 +214,92 @@
         <Property></Property>
         <Action></Action>
         <Value></Value>
-        <Explanation>http://sal.lsst.org</Explanation>
+        <Description>Process the wavefront error by Shack-Hartmann wavefront sensor.</Description>
         <item>
-            <EFDB_Name>fileName</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>string</IDL_Type>
-            <IDL_Size>1</IDL_Size>
-            <Units></Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>fieldRA</EFDB_Name>
-            <Description></Description>
+            <EFDB_Name>annularZernikePoly</EFDB_Name>
+            <Description>z4-z22 terms of annular Zernike polynomials.</Description>
             <IDL_Type>double</IDL_Type>
-            <Units></Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>fieldDEC</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>double</IDL_Type>
-            <Units></Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>filter</EFDB_Name>
-            <Description></Description>
-            <IDL_Type>int</IDL_Type>
-            <Units></Units>
-            <Count>1</Count>
+            <Units>micron</Units>
+            <Count>19</Count>
         </item>
         <item>
             <EFDB_Name>cameraRotation</EFDB_Name>
-            <Description></Description>
+            <Description>Camera rotation angle.</Description>
             <IDL_Type>double</IDL_Type>
-            <Units></Units>
+            <Units>degree</Units>
             <Count>1</Count>
         </item>
         <item>
             <EFDB_Name>userGain</EFDB_Name>
-            <Description>Set to -1 to ignore user gain.</Description>
+            <Description>Gain value between 0 and 1. Set to -1 to ignore user gain.</Description>
             <IDL_Type>double</IDL_Type>
-            <Units></Units>
+            <Units>unitless</Units>
             <Count>1</Count>
         </item>
     </SALCommand>
+
+    <SALCommand>
+        <Subsystem>MTAOS</Subsystem>
+        <Version>3.8.41</Version>
+        <Author></Author>
+        <EFDB_Topic>MTAOS_command_processCmosWavefrontError</EFDB_Topic>
+        <Alias>processCmosWavefrontError</Alias>
+        <Device></Device>
+        <Property></Property>
+        <Action></Action>
+        <Value></Value>
+        <Description>Process the wavefront data collection by CMOS camera.</Description>
+        <item>
+            <EFDB_Name>intraImgPath</EFDB_Name>
+            <Description>Absolute path to intra-focal wavefront image FITS file.</Description>
+            <IDL_Type>string</IDL_Type>
+            <IDL_Size>1</IDL_Size>
+            <Units>unitless</Units>
+            <Count>1</Count>
+        </item>
+        <item>
+            <EFDB_Name>extraImgPath</EFDB_Name>
+            <Description>Absolute path to extra-focal wavefront image FITS file.</Description>
+            <IDL_Type>string</IDL_Type>
+            <IDL_Size>1</IDL_Size>
+            <Units>unitless</Units>
+            <Count>1</Count>
+        </item>
+        <item>
+            <EFDB_Name>sglBrightStarPixelX</EFDB_Name>
+            <Description>Single bright star pixel x position. Put -99999 for the empty star.</Description>
+            <IDL_Type>double</IDL_Type>
+            <Units>unitless</Units>
+            <Count>10</Count>
+        </item>
+        <item>
+            <EFDB_Name>sglBrightStarPixelY</EFDB_Name>
+            <Description>Single bright star pixel y position. Put -99999 for the empty star.</Description>
+            <IDL_Type>double</IDL_Type>
+            <Units>unitless</Units>
+            <Count>10</Count>
+        </item>
+        <item>
+            <EFDB_Name>filter</EFDB_Name>
+            <Description>Active filter type. Use 1-6 for u, g, r, i, z, and y. Use 7 for reference.</Description>
+            <IDL_Type>int</IDL_Type>
+            <Units>unitless</Units>
+            <Count>1</Count>
+        </item>
+        <item>
+            <EFDB_Name>cameraRotation</EFDB_Name>
+            <Description>Camera rotation angle.</Description>
+            <IDL_Type>double</IDL_Type>
+            <Units>degree</Units>
+            <Count>1</Count>
+        </item>
+        <item>
+            <EFDB_Name>userGain</EFDB_Name>
+            <Description>Gain value between 0 and 1. Set to -1 to ignore user gain.</Description>
+            <IDL_Type>double</IDL_Type>
+            <Units>unitless</Units>
+            <Count>1</Count>
+        </item>
+    </SALCommand>
+
 </SALCommandSet>

@@ -8,7 +8,10 @@ pipeline {
     stages {
         stage("Clone robotframework_ts_xml") {
             steps {
-                sh "git clone https://github.com/lsst-ts/robotframework_ts_xml.git rbtxml || echo Robotframework already here."
+                sh """
+                rm -rf ${WORKSPACE}/rbtxml
+                git clone https://github.com/lsst-ts/robotframework_ts_xml.git ${WORKSPACE}/rbtxml || echo Robotframework already here.
+                """
             }
         }
         stage("Run the Robot-Framework tests") {
