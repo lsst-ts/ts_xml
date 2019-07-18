@@ -61,35 +61,35 @@
     <Author></Author>
     <EFDB_Topic>Rotator_logevent_deviceError</EFDB_Topic>
     <Alias>deviceError</Alias>
-    <Explanation>http://sal.lsst.org</Explanation>
+    <Explanation>Rotator deviceError: This event is generated if any drive faults occur or if there is a following error in any actuator</Explanation>
     <item>
         <EFDB_Name>code</EFDB_Name>
-        <Description></Description>
+        <Description>Error code</Description>
         <IDL_Type>string</IDL_Type>
         <IDL_Size>256</IDL_Size>
-        <Units></Units>
+        <Units>unitless</Units>
         <Count>1</Count>
     </item>
     <item>
         <EFDB_Name>device</EFDB_Name>
-        <Description></Description>
+        <Description>device</Description>
         <IDL_Type>string</IDL_Type>
         <IDL_Size>256</IDL_Size>
-        <Units></Units>
+        <Units>unitless</Units>
         <Count>1</Count>
     </item>
     <item>
         <EFDB_Name>severity</EFDB_Name>
-        <Description></Description>
+        <Description>Severity of the error</Description>
         <IDL_Type>long</IDL_Type>
-        <Units></Units>
+        <Units>unitless</Units>
         <Count>1</Count>
     </item>
     <item>
         <EFDB_Name>timestamp</EFDB_Name>
-        <Description></Description>
+        <Description>timestamp</Description>
         <IDL_Type>double</IDL_Type>
-        <Units></Units>
+        <Units>unitless</Units>
         <Count>1</Count>
     </item>
 </SALEvent>
@@ -99,12 +99,12 @@
     <Author></Author>
     <EFDB_Topic>Rotator_logevent_inPosition</EFDB_Topic>
     <Alias>inPosition</Alias>
-    <Explanation>http://sal.lsst.org</Explanation>
+    <Explanation>Event to indicate rotator is in position or not</Explanation>
     <item>
         <EFDB_Name>inPosition</EFDB_Name>
-        <Description></Description>
+        <Description>Rotator in position</Description>
         <IDL_Type>boolean</IDL_Type>
-        <Units></Units>
+        <Units>unitless</Units>
         <Count>1</Count>
     </item>
 </SALEvent>
@@ -117,58 +117,58 @@
     <Explanation>http://sal.lsst.org</Explanation>
     <item>
         <EFDB_Name>positionAngleUpperLimit</EFDB_Name>
-        <Description></Description>
+        <Description>Position difference between the commanded position and the actual position that triggers system to switch between slew mode and track mode. Positive range limit (must be less than +90)</Description>
         <IDL_Type>double</IDL_Type>
         <Units>deg</Units>
         <Count>1</Count>
     </item>
     <item>
         <EFDB_Name>velocityLimit</EFDB_Name>
-        <Description></Description>
+        <Description>Velocity limit</Description>
         <IDL_Type>double</IDL_Type>
         <Units>deg/s</Units>
         <Count>1</Count>
     </item>
     <item>
         <EFDB_Name>accelerationLimit</EFDB_Name>
-        <Description></Description>
+        <Description>Acceleration limit</Description>
         <IDL_Type>double</IDL_Type>
-        <Units>deg/s^2</Units>
+        <Units>deg/s2</Units>
         <Count>1</Count>
     </item>
     <item>
         <EFDB_Name>positionErrorThreshold</EFDB_Name>
-        <Description></Description>
+        <Description>Position error threshold</Description>
         <IDL_Type>double</IDL_Type>
-        <Units></Units>
+        <Units>deg</Units>
         <Count>1</Count>
     </item>
     <item>
         <EFDB_Name>positionAngleLowerLimit</EFDB_Name>
-        <Description></Description>
+        <Description>Position difference between the commanded position and the actual position that triggers system to switch between slew mode and track mode. Negative range limit (must be greater than -90)</Description>
         <IDL_Type>double</IDL_Type>
         <Units>deg</Units>
         <Count>1</Count>
     </item>
     <item>
         <EFDB_Name>followingErrorThreshold</EFDB_Name>
-        <Description></Description>
+        <Description>Deviation between commanded position and actual rotator position that triggers following error event/fault</Description>
         <IDL_Type>double</IDL_Type>
-        <Units></Units>
+        <Units>deg</Units>
         <Count>1</Count>
     </item>
     <item>
         <EFDB_Name>trackingSuccessPositionThreshold</EFDB_Name>
-        <Description></Description>
+        <Description>RMS deviation over 150ms interval between position command and actual rotator position for triggering tracking and tracklost events</Description>
         <IDL_Type>double</IDL_Type>
-        <Units></Units>
+        <Units>deg</Units>
         <Count>1</Count>
     </item>
     <item>
         <EFDB_Name>trackingLostTimeout</EFDB_Name>
-        <Description></Description>
+        <Description>Duration between receiving slewing and tracking commands over DDS before tracklost event/fault is declared</Description>
         <IDL_Type>double</IDL_Type>
-        <Units></Units>
+        <Units>s</Units>
         <Count>1</Count>
     </item>
 </SALEvent>
@@ -178,28 +178,28 @@
     <Author></Author>
     <EFDB_Topic>Rotator_logevent_rejectedCommand</EFDB_Topic>
     <Alias>rejectedCommand</Alias>
-    <Explanation>http://sal.lsst.org</Explanation>
+    <Explanation>Event is issued when a command is rejected</Explanation>
     <item>
         <EFDB_Name>commandValue</EFDB_Name>
-        <Description></Description>
+        <Description>command value</Description>
         <IDL_Type>string</IDL_Type>
         <IDL_Size>256</IDL_Size>
-        <Units></Units>
+        <Units>unitless</Units>
         <Count>1</Count>
     </item>
     <item>
         <EFDB_Name>detailedState</EFDB_Name>
-        <Description></Description>
+        <Description>detailed state</Description>
         <IDL_Type>string</IDL_Type>
         <IDL_Size>256</IDL_Size>
-        <Units></Units>
+        <Units>unitless</Units>
         <Count>1</Count>
     </item>
     <item>
         <EFDB_Name>timestamp</EFDB_Name>
-        <Description></Description>
+        <Description>timestamp</Description>
         <IDL_Type>double</IDL_Type>
-        <Units></Units>
+        <Units>unitless</Units>
         <Count>1</Count>
     </item>
 </SALEvent>
@@ -209,12 +209,12 @@
     <Author></Author>
     <EFDB_Topic>Rotator_logevent_commandableByDDS</EFDB_Topic>
     <Alias>commandableByDDS</Alias>
-    <Explanation>http://sal.lsst.org</Explanation>
+    <Explanation>When true Rotator is commanded by DDS else its commanded via EUI</Explanation>
     <item>
         <EFDB_Name>state</EFDB_Name>
-        <Description></Description>
+        <Description>state</Description>
         <IDL_Type>boolean</IDL_Type>
-        <Units></Units>
+        <Units>unitless</Units>
         <Count>1</Count>
     </item>
 </SALEvent></SALEventSet>
