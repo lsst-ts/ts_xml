@@ -36,6 +36,9 @@ for member in root.findall('Subsystem'):
 		github = member.find('Github').tag
 		subsystem_head.append('Github')
 
+		github = member.find('Simulator').tag
+		subsystem_head.append('Simulator')
+
 		jenkins_test_results = member.find('JenkinsTestResults').tag
 		subsystem_head.append("Jenkins Test Results")
 
@@ -74,6 +77,9 @@ for member in root.findall('Subsystem'):
 
 	github = member.find('Github').text
 	subsystem.append(github)
+
+	simulator = member.find('Simulator').text
+	subsystem.append(simulator)
 
 	jenkins_test_results = member.find('JenkinsTestResults').text
 	subsystem.append(jenkins_test_results)
