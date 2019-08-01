@@ -9,9 +9,10 @@ pipeline {
         stage("Clone robotframework_ts_xml") {
             steps {
                 sh """
-                rm -rf ${WORKSPACE}/rbtxml ${WORKSPACE}/robot
+                rm -rf ${WORKSPACE}/rbtxml
                 rm -rf ${WORKSPACE}/robot
 				mkdir ${WORKSPACE}/robot
+				chmod 777 ${WORKSPACE}/robot
                 git clone https://github.com/lsst-ts/robotframework_ts_xml.git ${WORKSPACE}/rbtxml || echo Robotframework already here.
                 """
             }
