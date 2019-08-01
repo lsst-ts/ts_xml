@@ -9,7 +9,9 @@ pipeline {
         stage("Clone robotframework_ts_xml") {
             steps {
                 sh """
-                rm -rf ${WORKSPACE}/rbtxml
+                rm -rf ${WORKSPACE}/rbtxml ${WORKSPACE}/robot
+                rm -rf ${WORKSPACE}/robot
+				mkdir ${WORKSPACE}/robot
                 git clone https://github.com/lsst-ts/robotframework_ts_xml.git ${WORKSPACE}/rbtxml || echo Robotframework already here.
                 """
             }
@@ -21,6 +23,7 @@ pipeline {
 docker run --name ${container_name} \
 -v ${WORKSPACE}/:/home/appuser/trunk/ts_xml \
 -v ${WORKSPACE}/rbtxml:/home/appuser/trunk/robotframework_ts_xml \
+-v ${WORKSPACE}/robot:/home/appuser/Reports \
 -w /home/appuser/trunk/robotframework_ts_xml \
 --entrypoint "robot" lsstts/robot:latest \
 --outputdir /home/appuser/Reports --variable ContInt:true -e skipped \
@@ -49,7 +52,7 @@ docker run --name ${container_name} \
                 alwaysLinkToLastBuild: false,
                 keepAll: true,
                 reportDir: "${WORKSPACE}/robot",
-                reportFiles: 'index.html',
+                reportFiles: 'report.html',
                 reportName: "Report"
               ])
         }
