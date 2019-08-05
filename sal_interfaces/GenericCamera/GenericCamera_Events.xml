@@ -10,9 +10,9 @@
         <Explanation>http://sal.lsst.org</Explanation>
         <item>
             <EFDB_Name>heartbeat</EFDB_Name>
-            <Description></Description>
+            <Description>Heartbeat</Description>
             <IDL_Type>boolean</IDL_Type>
-            <Units></Units>
+            <Units>unitless</Units>
             <Count>1</Count>
         </item>
     </SALEvent>
@@ -28,7 +28,7 @@
             <Description>This is the make and model of the current camera.</Description>
             <IDL_Type>string</IDL_Type>
             <IDL_Size>1</IDL_Size>
-            <Units></Units>
+            <Units>unitless</Units>
             <Count>1</Count>
         </item>
     </SALEvent>
@@ -44,7 +44,7 @@
             <Description>This is the name of the property specific to this camera.</Description>
             <IDL_Type>string</IDL_Type>
             <IDL_Size>1</IDL_Size>
-            <Units></Units>
+            <Units>unitless</Units>
             <Count>1</Count>
         </item>
         <item>
@@ -52,7 +52,7 @@
             <Description>This is the value of the property specific to this camera.</Description>
             <IDL_Type>string</IDL_Type>
             <IDL_Size>1</IDL_Size>
-            <Units></Units>
+            <Units>unitless</Units>
             <Count>1</Count>
         </item>
     </SALEvent>
@@ -67,28 +67,28 @@
             <EFDB_Name>topPixel</EFDB_Name>
             <Description>This is the regions top most pixel number (base 0).</Description>
             <IDL_Type>int</IDL_Type>
-            <Units>pixels</Units>
+            <Units>pixel</Units>
             <Count>1</Count>
         </item>
         <item>
             <EFDB_Name>leftPixel</EFDB_Name>
             <Description>This is the regions left most pixel number (base 0).</Description>
             <IDL_Type>int</IDL_Type>
-            <Units>pixels</Units>
+            <Units>pixel</Units>
             <Count>1</Count>
         </item>
         <item>
             <EFDB_Name>width</EFDB_Name>
             <Description>This is the regions width in pixels.</Description>
             <IDL_Type>int</IDL_Type>
-            <Units>pixels</Units>
+            <Units>pixel</Units>
             <Count>1</Count>
         </item>
         <item>
             <EFDB_Name>height</EFDB_Name>
             <Description>This is the regions height in pixels.</Description>
             <IDL_Type>int</IDL_Type>
-            <Units>pixels</Units>
+            <Units>pixel</Units>
             <Count>1</Count>
         </item>
     </SALEvent>
@@ -104,14 +104,14 @@
             <Description>This is the ip address for the live view data.</Description>
             <IDL_Type>string</IDL_Type>
             <IDL_Size>1</IDL_Size>
-            <Units></Units>
+            <Units>unitless</Units>
             <Count>1</Count>
         </item>
         <item>
             <EFDB_Name>port</EFDB_Name>
             <Description>This is the TCP port for the live view data.</Description>
             <IDL_Type>int</IDL_Type>
-            <Units></Units>
+            <Units>unitless</Units>
             <Count>1</Count>
         </item>
     </SALEvent>
@@ -122,6 +122,13 @@
         <EFDB_Topic>GenericCamera_logevent_endLiveView</EFDB_Topic>
         <Alias>endLiveView</Alias>
         <Explanation>http://sal.lsst.org</Explanation>
+        <item>
+            <EFDB_Name>ignored</EFDB_Name>
+            <Description>Attribute required by the SAL API, but is unused.</Description>
+            <IDL_Type>boolean</IDL_Type>
+            <Units>unitless</Units>
+            <Count>1</Count>
+        </item>
     </SALEvent>
     <SALEvent>
         <Subsystem>GenericCamera</Subsystem>
@@ -130,6 +137,13 @@
         <EFDB_Topic>GenericCamera_logevent_startTakeImage</EFDB_Topic>
         <Alias>startTakeImage</Alias>
         <Explanation>http://sal.lsst.org</Explanation>
+        <item>
+            <EFDB_Name>ignored</EFDB_Name>
+            <Description>Attribute required by the SAL API, but is unused.</Description>
+            <IDL_Type>boolean</IDL_Type>
+            <Units>unitless</Units>
+            <Count>1</Count>
+        </item>
     </SALEvent>
     <SALEvent>
         <Subsystem>GenericCamera</Subsystem>
@@ -138,6 +152,13 @@
         <EFDB_Topic>GenericCamera_logevent_startShutterOpen</EFDB_Topic>
         <Alias>startShutterOpen</Alias>
         <Explanation>http://sal.lsst.org</Explanation>
+        <item>
+            <EFDB_Name>ignored</EFDB_Name>
+            <Description>Attribute required by the SAL API, but is unused.</Description>
+            <IDL_Type>boolean</IDL_Type>
+            <Units>unitless</Units>
+            <Count>1</Count>
+        </item>
     </SALEvent>
     <SALEvent>
         <Subsystem>GenericCamera</Subsystem>
@@ -146,6 +167,13 @@
         <EFDB_Topic>GenericCamera_logevent_endShutterOpen</EFDB_Topic>
         <Alias>endShutterOpen</Alias>
         <Explanation>http://sal.lsst.org</Explanation>
+        <item>
+            <EFDB_Name>ignored</EFDB_Name>
+            <Description>Attribute required by the SAL API, but is unused.</Description>
+            <IDL_Type>boolean</IDL_Type>
+            <Units>unitless</Units>
+            <Count>1</Count>
+        </item>
     </SALEvent>
     <SALEvent>
         <Subsystem>GenericCamera</Subsystem>
@@ -159,14 +187,14 @@
             <Description>The imageSequenceName as passed to the takeImages command</Description>
             <IDL_Type>string</IDL_Type>
             <IDL_Size>256</IDL_Size>
-            <Units></Units>
+            <Units>unitless</Units>
             <Count>1</Count>
         </item>
         <item>
             <EFDB_Name>imagesInSequence</EFDB_Name>
             <Description>The total number of requested images in sequence</Description>
             <IDL_Type>long</IDL_Type>
-            <Units></Units>
+            <Units>unitless</Units>
             <Count>1</Count>
         </item>
         <item>
@@ -181,21 +209,21 @@
             <EFDB_Name>imageIndex</EFDB_Name>
             <Description>The zero based index number for this specific exposure within the sequence</Description>
             <IDL_Type>long</IDL_Type>
-            <Units></Units>
+            <Units>unitless</Units>
             <Count>1</Count>
         </item>
         <item>
             <EFDB_Name>timeStamp</EFDB_Name>
             <Description>The effective time at which the image acquisition started (i.e. the end of the previous clear or readout)</Description>
             <IDL_Type>double</IDL_Type>
-            <Units>seconds</Units>
+            <Units>second</Units>
             <Count>1</Count>
         </item>
         <item>
             <EFDB_Name>exposureTime</EFDB_Name>
             <Description>The requested exposure time</Description>
             <IDL_Type>double</IDL_Type>
-            <Units>seconds</Units>
+            <Units>second</Units>
             <Count>1</Count>
         </item>
     </SALEvent>
@@ -206,6 +234,13 @@
         <EFDB_Topic>GenericCamera_logevent_endIntegration</EFDB_Topic>
         <Alias>endIntegration</Alias>
         <Explanation>http://sal.lsst.org</Explanation>
+        <item>
+            <EFDB_Name>ignored</EFDB_Name>
+            <Description>Attribute required by the SAL API, but is unused.</Description>
+            <IDL_Type>boolean</IDL_Type>
+            <Units>unitless</Units>
+            <Count>1</Count>
+        </item>
     </SALEvent>
     <SALEvent>
         <Subsystem>GenericCamera</Subsystem>
@@ -214,7 +249,14 @@
         <EFDB_Topic>GenericCamera_logevent_startShutterClose</EFDB_Topic>
         <Alias>startShutterClose</Alias>
         <Explanation>http://sal.lsst.org</Explanation>
-    </SALEvent>
+         <item>
+            <EFDB_Name>ignored</EFDB_Name>
+            <Description>Attribute required by the SAL API, but is unused.</Description>
+            <IDL_Type>boolean</IDL_Type>
+            <Units>unitless</Units>
+            <Count>1</Count>
+        </item>
+   </SALEvent>
     <SALEvent>
         <Subsystem>GenericCamera</Subsystem>
         <Version>3.9.0</Version>
@@ -222,6 +264,13 @@
         <EFDB_Topic>GenericCamera_logevent_endShutterClose</EFDB_Topic>
         <Alias>endShutterClose</Alias>
         <Explanation>http://sal.lsst.org</Explanation>
+        <item>
+            <EFDB_Name>ignored</EFDB_Name>
+            <Description>Attribute required by the SAL API, but is unused.</Description>
+            <IDL_Type>boolean</IDL_Type>
+            <Units>unitless</Units>
+            <Count>1</Count>
+        </item>
     </SALEvent>
     <SALEvent>
         <Subsystem>GenericCamera</Subsystem>
@@ -235,14 +284,14 @@
             <Description>The imageSequenceName as passed to the takeImages command</Description>
             <IDL_Type>string</IDL_Type>
             <IDL_Size>256</IDL_Size>
-            <Units></Units>
+            <Units>unitless</Units>
             <Count>1</Count>
         </item>
         <item>
             <EFDB_Name>imagesInSequence</EFDB_Name>
             <Description>The total number of requested images in sequence</Description>
             <IDL_Type>long</IDL_Type>
-            <Units></Units>
+            <Units>unitless</Units>
             <Count>1</Count>
         </item>
         <item>
@@ -250,28 +299,28 @@
             <Description>The imageName for this specific exposure</Description>
             <IDL_Type>string</IDL_Type>
             <IDL_Size>256</IDL_Size>
-            <Units></Units>
+            <Units>unitless</Units>
             <Count>1</Count>
         </item>
         <item>
             <EFDB_Name>imageIndex</EFDB_Name>
             <Description>The zero based index number for this specific exposure within the sequence</Description>
             <IDL_Type>long</IDL_Type>
-            <Units></Units>
+            <Units>unitless</Units>
             <Count>1</Count>
         </item>
         <item>
             <EFDB_Name>timeStamp</EFDB_Name>
             <Description>The effective time at which the image acquisition started (i.e. the end of the previous clear or readout)</Description>
             <IDL_Type>double</IDL_Type>
-            <Units>seconds</Units>
+            <Units>second</Units>
             <Count>1</Count>
         </item>
         <item>
             <EFDB_Name>exposureTime</EFDB_Name>
             <Description>The requested exposure time</Description>
             <IDL_Type>double</IDL_Type>
-            <Units>seconds</Units>
+            <Units>second</Units>
             <Count>1</Count>
         </item>
     </SALEvent>
@@ -287,14 +336,14 @@
             <Description>The imageSequenceName as passed to the takeImages command</Description>
             <IDL_Type>string</IDL_Type>
             <IDL_Size>256</IDL_Size>
-            <Units></Units>
+            <Units>unitless</Units>
             <Count>1</Count>
         </item>
         <item>
             <EFDB_Name>imagesInSequence</EFDB_Name>
             <Description>The total number of requested images in sequence</Description>
             <IDL_Type>long</IDL_Type>
-            <Units></Units>
+            <Units>unitless</Units>
             <Count>1</Count>
         </item>
         <item>
@@ -302,28 +351,28 @@
             <Description>The imageName for this specific exposure</Description>
             <IDL_Type>string</IDL_Type>
             <IDL_Size>256</IDL_Size>
-            <Units></Units>
+            <Units>unitless</Units>
             <Count>1</Count>
         </item>
         <item>
             <EFDB_Name>imageIndex</EFDB_Name>
             <Description>The zero based index number for this specific exposure within the sequence</Description>
             <IDL_Type>long</IDL_Type>
-            <Units></Units>
+            <Units>unitless</Units>
             <Count>1</Count>
         </item>
         <item>
             <EFDB_Name>timeStamp</EFDB_Name>
             <Description>The effective time at which the image acquisition started (i.e. the end of the previous clear or readout)</Description>
             <IDL_Type>double</IDL_Type>
-            <Units>seconds</Units>
+            <Units>second</Units>
             <Count>1</Count>
         </item>
         <item>
             <EFDB_Name>exposureTime</EFDB_Name>
             <Description>The requested exposure time</Description>
             <IDL_Type>double</IDL_Type>
-            <Units>seconds</Units>
+            <Units>second</Units>
             <Count>1</Count>
         </item>
     </SALEvent>
@@ -334,5 +383,12 @@
         <EFDB_Topic>GenericCamera_logevent_endTakeImage</EFDB_Topic>
         <Alias>endTakeImage</Alias>
         <Explanation>http://sal.lsst.org</Explanation>
+        <item>
+            <EFDB_Name>ignored</EFDB_Name>
+            <Description>Attribute required by the SAL API, but is unused.</Description>
+            <IDL_Type>boolean</IDL_Type>
+            <Units>unitless</Units>
+            <Count>1</Count>
+        </item>
     </SALEvent>
 </SALEventSet>
