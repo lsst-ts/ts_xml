@@ -29,7 +29,7 @@
         <Description>Selected Focus Name</Description>
         <IDL_Type>long</IDL_Type>
         <!-- <Enumeration> Foci </Enumeration> -->
-        <Units></Units>
+        <Units>unitless</Units>
         <Count>1</Count>
     </item>
 </SALEvent>
@@ -42,10 +42,10 @@
     <Explanation>http://sal.lsst.org</Explanation>
     <item>
         <EFDB_Name>settings</EFDB_Name>
-        <Description></Description>
+        <Description>Applied settings</Description>
         <IDL_Type>long</IDL_Type>
         <Enumeration></Enumeration>
-        <Units></Units>
+        <Units>unitless</Units>
         <Count>1</Count>
     </item>
 </SALEvent>
@@ -58,10 +58,10 @@
     <Explanation>http://sal.lsst.org</Explanation>
     <item>
         <EFDB_Name>level</EFDB_Name>
-        <Description></Description>
+        <Description>Telescope is approaching the Sun</Description>
         <IDL_Type>long</IDL_Type>
         <!-- <Enumeration> WarningLevel </Enumeration> -->
-        <Units></Units>
+        <Units>unitless</Units>
         <Count>1</Count>
     </item>
 </SALEvent>
@@ -74,10 +74,10 @@
     <Explanation>http://sal.lsst.org</Explanation>
     <item>
         <EFDB_Name>detailedState</EFDB_Name>
-        <Description></Description>
+        <Description>Current detailed state</Description>
         <IDL_Type>long</IDL_Type>
         <!-- <Enumeration> DetailedStates </Enumeration> -->
-        <Units></Units>
+        <Units>unitless</Units>
         <Count>1</Count>
     </item>
 </SALEvent>
@@ -88,6 +88,14 @@
     <EFDB_Topic>ATPtg_logevent_mountGuideMode</EFDB_Topic>
     <Alias>mountGuideMode</Alias>
     <Explanation>http://sal.lsst.org</Explanation>
+    <item>
+        <EFDB_Name>mode</EFDB_Name>
+        <Description>Mount guide mode.</Description>
+        <IDL_Type>long</IDL_Type>
+        <!-- <Enumeration> WarningLevel </Enumeration> -->
+        <Units>unitless</Units>
+        <Count>1</Count>
+    </item>
 </SALEvent>
 <SALEvent>
     <Subsystem>ATPtg</Subsystem>
@@ -98,10 +106,10 @@
     <Explanation>http://sal.lsst.org</Explanation>
     <item>
         <EFDB_Name>level</EFDB_Name>
-        <Description></Description>
+        <Description>Warning level for azimuth wrap</Description>
         <IDL_Type>long</IDL_Type>
         <!-- <Enumeration> WarningLevel </Enumeration> -->
-        <Units></Units>
+        <Units>unitless</Units>
         <Count>1</Count>
     </item>
 </SALEvent>
@@ -116,7 +124,7 @@
         <EFDB_Name>wavelength</EFDB_Name>
         <Description>Wavelength in microns</Description>
         <IDL_Type>double</IDL_Type>
-        <Units></Units>
+        <Units>micron</Units>
         <Count>1</Count>
     </item>
 </SALEvent>
@@ -129,9 +137,9 @@
     <Explanation>http://sal.lsst.org</Explanation>
     <item>
         <EFDB_Name>eventState</EFDB_Name>
-        <Description></Description>
+        <Description>Elevation axis in position.</Description>
         <IDL_Type>boolean</IDL_Type>
-        <Units></Units>
+        <Units>unitless</Units>
         <Count>1</Count>
     </item>
 </SALEvent>
@@ -144,9 +152,9 @@
     <Explanation>http://sal.lsst.org</Explanation>
     <item>
         <EFDB_Name>eventState</EFDB_Name>
-        <Description></Description>
+        <Description>Telescope pointing in blind spot?</Description>
         <IDL_Type>boolean</IDL_Type>
-        <Units></Units>
+        <Units>unitless</Units>
         <Count>1</Count>
     </item>
 </SALEvent>
@@ -159,10 +167,10 @@
     <Explanation>http://sal.lsst.org</Explanation>
     <item>
         <EFDB_Name>level</EFDB_Name>
-        <Description></Description>
+        <Description>Warning that the telescope is approaching blind spot.</Description>
         <IDL_Type>long</IDL_Type>
         <!-- <Enumeration> WarningLevel </Enumeration> -->
-        <Units></Units>
+        <Units>unitless</Units>
         <Count>1</Count>
     </item>
 </SALEvent>
@@ -173,6 +181,22 @@
     <EFDB_Topic>ATPtg_logevent_axesTrackMode</EFDB_Topic>
     <Alias>axesTrackMode</Alias>
     <Explanation>http://sal.lsst.org</Explanation>
+    <item>
+        <EFDB_Name>elevation</EFDB_Name>
+        <Description>Elevation axis track mode.</Description>
+        <IDL_Type>long</IDL_Type>
+        <!-- <Enumeration> WarningLevel </Enumeration> -->
+        <Units>unitless</Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>azimuth</EFDB_Name>
+        <Description>Azimuth axis track mode.</Description>
+        <IDL_Type>long</IDL_Type>
+        <!-- <Enumeration> WarningLevel </Enumeration> -->
+        <Units>unitless</Units>
+        <Count>1</Count>
+    </item>
 </SALEvent>
 <SALEvent>
     <Subsystem>ATPtg</Subsystem>
@@ -183,10 +207,10 @@
     <Explanation>http://sal.lsst.org</Explanation>
     <item>
         <EFDB_Name>level</EFDB_Name>
-        <Description></Description>
+        <Description>Object is setting warning level.</Description>
         <IDL_Type>long</IDL_Type>
         <!-- <Enumeration> WarningLevel </Enumeration> -->
-        <Units></Units>
+        <Units>unitless</Units>
         <Count>1</Count>
     </item>
 </SALEvent>
@@ -201,7 +225,7 @@
         <EFDB_Name>timestamp</EFDB_Name>
         <Description>Current time as TAI (MJD)</Description>
         <IDL_Type>double</IDL_Type>
-        <Units></Units>
+        <Units>day</Units>
         <Count>1</Count>
     </item>
     <item>
@@ -209,7 +233,7 @@
         <Description>Comma separated list of pointing model term names. </Description>
         <IDL_Type>string</IDL_Type>
         <IDL_Size>1</IDL_Size>
-        <Units></Units>
+        <Units>unitless</Units>
         <Count>1</Count>
     </item>
     <item>
@@ -217,7 +241,7 @@
         <Description>Comma separated term values.</Description>
         <IDL_Type>string</IDL_Type>
         <IDL_Size>1</IDL_Size>
-        <Units></Units>
+        <Units>unitless</Units>
         <Count>1</Count>
     </item>
 </SALEvent>
@@ -230,10 +254,10 @@
     <Explanation>http://sal.lsst.org</Explanation>
     <item>
         <EFDB_Name>level</EFDB_Name>
-        <Description></Description>
+        <Description>Airmass warning level.</Description>
         <IDL_Type>long</IDL_Type>
         <!-- <Enumeration> WarningLevel </Enumeration> -->
-        <Units></Units>
+        <Units>unitless</Units>
         <Count>1</Count>
     </item>
 </SALEvent>
@@ -246,9 +270,9 @@
     <Explanation>http://sal.lsst.org</Explanation>
     <item>
         <EFDB_Name>eventState</EFDB_Name>
-        <Description></Description>
+        <Description>State of the weather data.</Description>
         <IDL_Type>boolean</IDL_Type>
-        <Units></Units>
+        <Units>unitless</Units>
         <Count>1</Count>
     </item>
 </SALEvent>
@@ -261,9 +285,9 @@
     <Explanation>http://sal.lsst.org</Explanation>
     <item>
         <EFDB_Name>eventState</EFDB_Name>
-        <Description></Description>
+        <Description>State of the focus name inconsistency.</Description>
         <IDL_Type>boolean</IDL_Type>
-        <Units></Units>
+        <Units>unitless</Units>
         <Count>1</Count>
     </item>
 </SALEvent>
@@ -276,18 +300,17 @@
     <Explanation>http://sal.lsst.org</Explanation>
     <item>
         <EFDB_Name>timestamp</EFDB_Name>
-        <Description>Current time as TAI (MJD)
-</Description>
+        <Description>Current time as TAI (MJD)</Description>
         <IDL_Type>double</IDL_Type>
-        <Units></Units>
+        <Units>day</Units>
         <Count>1</Count>
     </item>
     <item>
         <EFDB_Name>targetType</EFDB_Name>
-        <Description></Description>
+        <Description>current, next or prospective?</Description>
         <IDL_Type>long</IDL_Type>
         <!-- <Enumeration> TargetTypes </Enumeration> -->
-        <Units></Units>
+        <Units>unitless</Units>
         <Count>1</Count>
     </item>
     <item>
@@ -295,21 +318,21 @@
         <Description>Name of current target</Description>
         <IDL_Type>string</IDL_Type>
         <IDL_Size>1</IDL_Size>
-        <Units></Units>
+        <Units>unitless</Units>
         <Count>1</Count>
     </item>
     <item>
         <EFDB_Name>ra</EFDB_Name>
         <Description>Target RA in radians</Description>
         <IDL_Type>double</IDL_Type>
-        <Units></Units>
+        <Units>hour</Units>
         <Count>1</Count>
     </item>
     <item>
         <EFDB_Name>declination</EFDB_Name>
         <Description>Target Dec in radians</Description>
         <IDL_Type>double</IDL_Type>
-        <Units></Units>
+        <Units>degree</Units>
         <Count>1</Count>
     </item>
     <item>
@@ -317,44 +340,44 @@
         <Description>Target tracking co-ordinate frame (FK5 or ICRS)</Description>
         <IDL_Type>long</IDL_Type>
         <!-- <Enumeration> CoordFrame </Enumeration> -->
-        <Units></Units>
+        <Units>unitless</Units>
         <Count>1</Count>
     </item>
     <item>
         <EFDB_Name>azDegs</EFDB_Name>
-        <Description></Description>
+        <Description>Azimuth.</Description>
         <IDL_Type>double</IDL_Type>
-        <Units></Units>
+        <Units>degree</Units>
         <Count>1</Count>
     </item>
     <item>
         <EFDB_Name>elDegs</EFDB_Name>
-        <Description></Description>
+        <Description>Elevation.</Description>
         <IDL_Type>double</IDL_Type>
-        <Units></Units>
+        <Units>degree</Units>
         <Count>1</Count>
     </item>
     <item>
         <EFDB_Name>planetName</EFDB_Name>
-        <Description></Description>
+        <Description>Id of the planet name; mercury (1), venus (2), moon (3), mars (4), jupiter (5), saturn (6), uranus (7), neptune (8) or pluto (9)</Description>
         <IDL_Type>long</IDL_Type>
         <!-- <Enumeration> Planets </Enumeration> -->
-        <Units></Units>
+        <Units>unitless</Units>
         <Count>1</Count>
     </item>
     <item>
         <EFDB_Name>ephemFile</EFDB_Name>
-        <Description></Description>
+        <Description>Ephemeris file name.</Description>
         <IDL_Type>string</IDL_Type>
         <IDL_Size>1</IDL_Size>
-        <Units></Units>
+        <Units>unitless</Units>
         <Count>1</Count>
     </item>
     <item>
         <EFDB_Name>equinox</EFDB_Name>
         <Description>Target equinox in years</Description>
         <IDL_Type>double</IDL_Type>
-        <Units></Units>
+        <Units>year</Units>
         <Count>1</Count>
     </item>
     <item>
@@ -362,7 +385,7 @@
         <Description>Target RA as a string (HH MM SS.SS).</Description>
         <IDL_Type>string</IDL_Type>
         <IDL_Size>1</IDL_Size>
-        <Units></Units>
+        <Units>hour</Units>
         <Count>1</Count>
     </item>
     <item>
@@ -370,66 +393,63 @@
         <Description>Target Dec as a string (DD MM SS.SS)</Description>
         <IDL_Type>string</IDL_Type>
         <IDL_Size>1</IDL_Size>
-        <Units></Units>
+        <Units>degree</Units>
         <Count>1</Count>
     </item>
     <item>
         <EFDB_Name>epoch</EFDB_Name>
         <Description>Target epoch in years</Description>
         <IDL_Type>double</IDL_Type>
-        <Units></Units>
+        <Units>year</Units>
         <Count>1</Count>
     </item>
     <item>
         <EFDB_Name>difftrackRA</EFDB_Name>
         <Description>Target differential track rate in RA (units RAsecs/second)</Description>
         <IDL_Type>double</IDL_Type>
-        <Units></Units>
+        <Units>arcsec / second</Units>
         <Count>1</Count>
     </item>
     <item>
         <EFDB_Name>difftrackDec</EFDB_Name>
-        <Description>Target differential track rate in Dec (units arcsecs/second)
-</Description>
+        <Description>Target differential track rate in Dec (units arcsecs/second)</Description>
         <IDL_Type>double</IDL_Type>
-        <Units></Units>
+        <Units>arcsec / second</Units>
         <Count>1</Count>
     </item>
     <item>
         <EFDB_Name>properMotionRA</EFDB_Name>
-        <Description>Target proper motion in RA (units RAsecs/year)
-</Description>
+        <Description>Target proper motion in RA (units RAsecs/year)</Description>
         <IDL_Type>double</IDL_Type>
-        <Units></Units>
+        <Units>arcsec / second</Units>
         <Count>1</Count>
     </item>
     <item>
         <EFDB_Name>properMotionDec</EFDB_Name>
-        <Description>Target proper motion in Dec (units arcsecs/year)
-</Description>
+        <Description>Target proper motion in Dec (units arcsecs/year)</Description>
         <IDL_Type>double</IDL_Type>
-        <Units></Units>
+        <Units>arcsec / second</Units>
         <Count>1</Count>
     </item>
     <item>
         <EFDB_Name>parallax</EFDB_Name>
         <Description>Target annual parallax in arcseconds</Description>
         <IDL_Type>double</IDL_Type>
-        <Units></Units>
+        <Units>arcsec</Units>
         <Count>1</Count>
     </item>
     <item>
         <EFDB_Name>radvel</EFDB_Name>
         <Description>Target radial velocity in kms/sec</Description>
         <IDL_Type>double</IDL_Type>
-        <Units></Units>
+        <Units>km / second</Units>
         <Count>1</Count>
     </item>
     <item>
         <EFDB_Name>rotPA</EFDB_Name>
         <Description>Rotator position angle in degrees</Description>
         <IDL_Type>double</IDL_Type>
-        <Units></Units>
+        <Units>degree</Units>
         <Count>1</Count>
     </item>
     <item>
@@ -437,7 +457,7 @@
         <Description>Rotator tracking co-ordinate frame (FK5 or ICRS)</Description>
         <IDL_Type>long</IDL_Type>
         <!-- <Enumeration> RotFrame </Enumeration> -->
-        <Units></Units>
+        <Units>unitless</Units>
         <Count>1</Count>
     </item>
     <item>
@@ -445,21 +465,21 @@
         <Description>Rotator tracking mode (Field or Slit optimized)</Description>
         <IDL_Type>long</IDL_Type>
         <!-- <Enumeration> RotMode </Enumeration> -->
-        <Units></Units>
+        <Units>unitless</Units>
         <Count>1</Count>
     </item>
     <item>
         <EFDB_Name>raHours</EFDB_Name>
         <Description>Target RA in hours</Description>
         <IDL_Type>double</IDL_Type>
-        <Units></Units>
+        <Units>hour</Units>
         <Count>1</Count>
     </item>
     <item>
         <EFDB_Name>decDegs</EFDB_Name>
         <Description>Target Dec in degrees</Description>
         <IDL_Type>double</IDL_Type>
-        <Units></Units>
+        <Units>degree</Units>
         <Count>1</Count>
     </item>
 </SALEvent>
@@ -472,9 +492,9 @@
     <Explanation>http://sal.lsst.org</Explanation>
     <item>
         <EFDB_Name>eventState</EFDB_Name>
-        <Description></Description>
+        <Description>State of the iers</Description>
         <IDL_Type>boolean</IDL_Type>
-        <Units></Units>
+        <Units>unitless</Units>
         <Count>1</Count>
     </item>
 </SALEvent>
@@ -487,23 +507,23 @@
     <Explanation>http://sal.lsst.org</Explanation>
     <item>
         <EFDB_Name>ambient_temp</EFDB_Name>
-        <Description></Description>
+        <Description>Ambient temperature.</Description>
         <IDL_Type>double</IDL_Type>
-        <Units></Units>
+        <Units>deg_C</Units>
         <Count>1</Count>
     </item>
     <item>
         <EFDB_Name>pressure</EFDB_Name>
-        <Description></Description>
+        <Description>Current pressure.</Description>
         <IDL_Type>double</IDL_Type>
-        <Units></Units>
+        <Units>bar</Units>
         <Count>1</Count>
     </item>
     <item>
         <EFDB_Name>humidity</EFDB_Name>
-        <Description></Description>
+        <Description>Air relative humidity</Description>
         <IDL_Type>double</IDL_Type>
-        <Units></Units>
+        <Units>unitless</Units>
         <Count>1</Count>
     </item>
 </SALEvent>
@@ -516,10 +536,10 @@
     <Explanation>http://sal.lsst.org</Explanation>
     <item>
         <EFDB_Name>currentLevel</EFDB_Name>
-        <Description></Description>
+        <Description>Current debug level.</Description>
         <IDL_Type>long</IDL_Type>
         <!-- <Enumeration> LogLevel </Enumeration> -->
-        <Units></Units>
+        <Units>unitless</Units>
         <Count>1</Count>
     </item>
 </SALEvent>
@@ -532,18 +552,17 @@
     <Explanation>http://sal.lsst.org</Explanation>
     <item>
         <EFDB_Name>timestamp</EFDB_Name>
-        <Description>Current time as TAI (MJD)
-</Description>
+        <Description>Current time as TAI (MJD)</Description>
         <IDL_Type>double</IDL_Type>
-        <Units></Units>
+        <Units>day</Units>
         <Count>1</Count>
     </item>
     <item>
         <EFDB_Name>targetType</EFDB_Name>
-        <Description></Description>
+        <Description>Type of target: raDec, azEl, planet or ephem.</Description>
         <IDL_Type>long</IDL_Type>
         <!-- <Enumeration> TargetTypes </Enumeration> -->
-        <Units></Units>
+        <Units>unitless</Units>
         <Count>1</Count>
     </item>
     <item>
@@ -551,21 +570,21 @@
         <Description>Name of current target</Description>
         <IDL_Type>string</IDL_Type>
         <IDL_Size>1</IDL_Size>
-        <Units></Units>
+        <Units>unitless</Units>
         <Count>1</Count>
     </item>
     <item>
         <EFDB_Name>ra</EFDB_Name>
         <Description>Target RA in radians</Description>
         <IDL_Type>double</IDL_Type>
-        <Units></Units>
+        <Units>rad</Units>
         <Count>1</Count>
     </item>
     <item>
         <EFDB_Name>declination</EFDB_Name>
         <Description>Target Dec in radians</Description>
         <IDL_Type>double</IDL_Type>
-        <Units></Units>
+        <Units>rad</Units>
         <Count>1</Count>
     </item>
     <item>
@@ -573,44 +592,44 @@
         <Description>Target tracking co-ordinate frame (FK5 or ICRS)</Description>
         <IDL_Type>long</IDL_Type>
         <!-- <Enumeration> CoordFrame </Enumeration> -->
-        <Units></Units>
+        <Units>unitless</Units>
         <Count>1</Count>
     </item>
     <item>
         <EFDB_Name>azDegs</EFDB_Name>
-        <Description></Description>
+        <Description>Azimuth.</Description>
         <IDL_Type>double</IDL_Type>
-        <Units></Units>
+        <Units>deg</Units>
         <Count>1</Count>
     </item>
     <item>
         <EFDB_Name>elDegs</EFDB_Name>
-        <Description></Description>
+        <Description>Elevation.</Description>
         <IDL_Type>double</IDL_Type>
-        <Units></Units>
+        <Units>deg</Units>
         <Count>1</Count>
     </item>
     <item>
         <EFDB_Name>planetName</EFDB_Name>
-        <Description></Description>
+        <Description>Solar system planet</Description>
         <IDL_Type>long</IDL_Type>
         <!-- <Enumeration> Planets </Enumeration> -->
-        <Units></Units>
+        <Units>unitless</Units>
         <Count>1</Count>
     </item>
     <item>
         <EFDB_Name>ephemFile</EFDB_Name>
-        <Description></Description>
+        <Description>Ephemeris file name.</Description>
         <IDL_Type>string</IDL_Type>
         <IDL_Size>1</IDL_Size>
-        <Units></Units>
+        <Units>unitless</Units>
         <Count>1</Count>
     </item>
     <item>
         <EFDB_Name>equinox</EFDB_Name>
         <Description>Target equinox in years</Description>
         <IDL_Type>double</IDL_Type>
-        <Units></Units>
+        <Units>year</Units>
         <Count>1</Count>
     </item>
     <item>
@@ -618,7 +637,7 @@
         <Description>Target RA as a string (HH MM SS.SS).</Description>
         <IDL_Type>string</IDL_Type>
         <IDL_Size>1</IDL_Size>
-        <Units></Units>
+        <Units>hour</Units>
         <Count>1</Count>
     </item>
     <item>
@@ -626,66 +645,63 @@
         <Description>Target Dec as a string (DD MM SS.SS)</Description>
         <IDL_Type>string</IDL_Type>
         <IDL_Size>1</IDL_Size>
-        <Units></Units>
+        <Units>degree</Units>
         <Count>1</Count>
     </item>
     <item>
         <EFDB_Name>epoch</EFDB_Name>
         <Description>Target epoch in years</Description>
         <IDL_Type>double</IDL_Type>
-        <Units></Units>
+        <Units>year</Units>
         <Count>1</Count>
     </item>
     <item>
         <EFDB_Name>difftrackRA</EFDB_Name>
         <Description>Target differential track rate in RA (units RAsecs/second)</Description>
         <IDL_Type>double</IDL_Type>
-        <Units></Units>
+        <Units>arcsec / second</Units>
         <Count>1</Count>
     </item>
     <item>
         <EFDB_Name>difftrackDec</EFDB_Name>
-        <Description>Target differential track rate in Dec (units arcsecs/second)
-</Description>
+        <Description>Target differential track rate in Dec (units arcsecs/second)</Description>
         <IDL_Type>double</IDL_Type>
-        <Units></Units>
+        <Units>arcsec / second</Units>
         <Count>1</Count>
     </item>
     <item>
         <EFDB_Name>properMotionRA</EFDB_Name>
-        <Description>Target proper motion in RA (units RAsecs/year)
-</Description>
+        <Description>Target proper motion in RA (units RAsecs/year)</Description>
         <IDL_Type>double</IDL_Type>
-        <Units></Units>
+        <Units>arcsec / second</Units>
         <Count>1</Count>
     </item>
     <item>
         <EFDB_Name>properMotionDec</EFDB_Name>
-        <Description>Target proper motion in Dec (units arcsecs/year)
-</Description>
+        <Description>Target proper motion in Dec (units arcsecs/year)</Description>
         <IDL_Type>double</IDL_Type>
-        <Units></Units>
+        <Units>arcsec / year</Units>
         <Count>1</Count>
     </item>
     <item>
         <EFDB_Name>parallax</EFDB_Name>
         <Description>Target annual parallax in arcseconds</Description>
         <IDL_Type>double</IDL_Type>
-        <Units></Units>
+        <Units>year</Units>
         <Count>1</Count>
     </item>
     <item>
         <EFDB_Name>radvel</EFDB_Name>
         <Description>Target radial velocity in kms/sec</Description>
         <IDL_Type>double</IDL_Type>
-        <Units></Units>
+        <Units>km / second</Units>
         <Count>1</Count>
     </item>
     <item>
         <EFDB_Name>rotPA</EFDB_Name>
         <Description>Rotator position angle in degrees</Description>
         <IDL_Type>double</IDL_Type>
-        <Units></Units>
+        <Units>deg</Units>
         <Count>1</Count>
     </item>
     <item>
@@ -693,7 +709,7 @@
         <Description>Rotator tracking co-ordinate frame (FK5 or ICRS)</Description>
         <IDL_Type>long</IDL_Type>
         <!-- <Enumeration> RotFrame </Enumeration> -->
-        <Units></Units>
+        <Units>unitless</Units>
         <Count>1</Count>
     </item>
     <item>
@@ -701,21 +717,21 @@
         <Description>Rotator tracking mode (Field or Slit optimized)</Description>
         <IDL_Type>long</IDL_Type>
         <!-- <Enumeration> RotMode </Enumeration> -->
-        <Units></Units>
+        <Units>unitless</Units>
         <Count>1</Count>
     </item>
     <item>
         <EFDB_Name>raHours</EFDB_Name>
         <Description>Target RA in hours</Description>
         <IDL_Type>double</IDL_Type>
-        <Units></Units>
+        <Units>hour</Units>
         <Count>1</Count>
     </item>
     <item>
         <EFDB_Name>decDegs</EFDB_Name>
         <Description>Target Dec in degrees</Description>
         <IDL_Type>double</IDL_Type>
-        <Units></Units>
+        <Units>deg</Units>
         <Count>1</Count>
     </item>
 </SALEvent>
@@ -728,10 +744,10 @@
     <Explanation>http://sal.lsst.org</Explanation>
     <item>
         <EFDB_Name>level</EFDB_Name>
-        <Description></Description>
+        <Description>Warning level from the mount.</Description>
         <IDL_Type>long</IDL_Type>
         <!-- <Enumeration> WarningLevel </Enumeration> -->
-        <Units></Units>
+        <Units>unitless</Units>
         <Count>1</Count>
     </item>
 </SALEvent>
@@ -744,9 +760,9 @@
     <Explanation>http://sal.lsst.org</Explanation>
     <item>
         <EFDB_Name>eventState</EFDB_Name>
-        <Description></Description>
+        <Description>Access mode level.</Description>
         <IDL_Type>boolean</IDL_Type>
-        <Units></Units>
+        <Units>unitless</Units>
         <Count>1</Count>
     </item>
 </SALEvent>
@@ -759,10 +775,10 @@
     <Explanation>http://sal.lsst.org</Explanation>
     <item>
         <EFDB_Name>level</EFDB_Name>
-        <Description></Description>
+        <Description>Rotator Wrap limit warning level.</Description>
         <IDL_Type>long</IDL_Type>
         <!-- <Enumeration> WarningLevel </Enumeration> -->
-        <Units></Units>
+        <Units>unitless</Units>
         <Count>1</Count>
     </item>
 </SALEvent>
@@ -775,9 +791,9 @@
     <Explanation>http://sal.lsst.org</Explanation>
     <item>
         <EFDB_Name>eventState</EFDB_Name>
-        <Description></Description>
+        <Description>Is telescope in position?</Description>
         <IDL_Type>boolean</IDL_Type>
-        <Units></Units>
+        <Units>unitless</Units>
         <Count>1</Count>
     </item>
 </SALEvent>
@@ -790,9 +806,9 @@
     <Explanation>http://sal.lsst.org</Explanation>
     <item>
         <EFDB_Name>eventState</EFDB_Name>
-        <Description></Description>
+        <Description>Is rotator in position?</Description>
         <IDL_Type>boolean</IDL_Type>
-        <Units></Units>
+        <Units>unitless</Units>
         <Count>1</Count>
     </item>
 </SALEvent>
@@ -805,9 +821,9 @@
     <Explanation>http://sal.lsst.org</Explanation>
     <item>
         <EFDB_Name>eventState</EFDB_Name>
-        <Description></Description>
+        <Description>Is Azimuth in position?</Description>
         <IDL_Type>boolean</IDL_Type>
-        <Units></Units>
+        <Units>unitless</Units>
         <Count>1</Count>
     </item>
 </SALEvent>
@@ -822,29 +838,28 @@
         <EFDB_Name>timestamp</EFDB_Name>
         <Description>Timestamp (as returned by SAL's getCurrentTime) of successful IERS update.</Description>
         <IDL_Type>double</IDL_Type>
-        <Units></Units>
+        <Units>second</Units>
         <Count>1</Count>
     </item>
     <item>
         <EFDB_Name>dut1</EFDB_Name>
         <Description>DUT1 = UT1 - UTC (seconds)</Description>
         <IDL_Type>double</IDL_Type>
-        <Units></Units>
+        <Units>second</Units>
         <Count>1</Count>
     </item>
     <item>
         <EFDB_Name>poleX</EFDB_Name>
         <Description>Polar Motion angle X (arcsecs)</Description>
         <IDL_Type>double</IDL_Type>
-        <Units></Units>
+        <Units>arcsec</Units>
         <Count>1</Count>
     </item>
     <item>
         <EFDB_Name>poleY</EFDB_Name>
-        <Description>Polar Motion angle Y (arcsecs)
-</Description>
+        <Description>Polar Motion angle Y (arcsecs)</Description>
         <IDL_Type>double</IDL_Type>
-        <Units></Units>
+        <Units>arcsec</Units>
         <Count>1</Count>
     </item>
 </SALEvent>
@@ -857,18 +872,17 @@
     <Explanation>http://sal.lsst.org</Explanation>
     <item>
         <EFDB_Name>timestamp</EFDB_Name>
-        <Description>Current time as TAI (MJD)
-</Description>
+        <Description>Current time as TAI (MJD)</Description>
         <IDL_Type>double</IDL_Type>
-        <Units></Units>
+        <Units>day</Units>
         <Count>1</Count>
     </item>
     <item>
         <EFDB_Name>targetType</EFDB_Name>
-        <Description></Description>
+        <Description>current, next or prospective?</Description>
         <IDL_Type>long</IDL_Type>
         <!-- <Enumeration> TargetTypes </Enumeration> -->
-        <Units></Units>
+        <Units>unitless</Units>
         <Count>1</Count>
     </item>
     <item>
@@ -876,21 +890,21 @@
         <Description>Name of current target</Description>
         <IDL_Type>string</IDL_Type>
         <IDL_Size>1</IDL_Size>
-        <Units></Units>
+        <Units>unitless</Units>
         <Count>1</Count>
     </item>
     <item>
         <EFDB_Name>ra</EFDB_Name>
         <Description>Target RA in radians</Description>
         <IDL_Type>double</IDL_Type>
-        <Units></Units>
+        <Units>rad</Units>
         <Count>1</Count>
     </item>
     <item>
         <EFDB_Name>declination</EFDB_Name>
         <Description>Target Dec in radians</Description>
         <IDL_Type>double</IDL_Type>
-        <Units></Units>
+        <Units>rad</Units>
         <Count>1</Count>
     </item>
     <item>
@@ -898,44 +912,44 @@
         <Description>Target tracking co-ordinate frame (FK5 or ICRS)</Description>
         <IDL_Type>long</IDL_Type>
         <!-- <Enumeration> CoordFrame </Enumeration> -->
-        <Units></Units>
+        <Units>unitless</Units>
         <Count>1</Count>
     </item>
     <item>
         <EFDB_Name>azDegs</EFDB_Name>
-        <Description></Description>
+        <Description>Azimuth.</Description>
         <IDL_Type>double</IDL_Type>
-        <Units></Units>
+        <Units>deg</Units>
         <Count>1</Count>
     </item>
     <item>
         <EFDB_Name>elDegs</EFDB_Name>
-        <Description></Description>
+        <Description>Elevation.</Description>
         <IDL_Type>double</IDL_Type>
-        <Units></Units>
+        <Units>deg</Units>
         <Count>1</Count>
     </item>
     <item>
         <EFDB_Name>planetName</EFDB_Name>
-        <Description></Description>
+        <Description>Id of the planet.</Description>
         <IDL_Type>long</IDL_Type>
         <!-- <Enumeration> Planets </Enumeration> -->
-        <Units></Units>
+        <Units>unitless</Units>
         <Count>1</Count>
     </item>
     <item>
         <EFDB_Name>ephemFile</EFDB_Name>
-        <Description></Description>
+        <Description>Name of the ephemeris files.</Description>
         <IDL_Type>string</IDL_Type>
         <IDL_Size>1</IDL_Size>
-        <Units></Units>
+        <Units>unitless</Units>
         <Count>1</Count>
     </item>
     <item>
         <EFDB_Name>equinox</EFDB_Name>
         <Description>Target equinox in years</Description>
         <IDL_Type>double</IDL_Type>
-        <Units></Units>
+        <Units>year</Units>
         <Count>1</Count>
     </item>
     <item>
@@ -943,7 +957,7 @@
         <Description>Target RA as a string (HH MM SS.SS).</Description>
         <IDL_Type>string</IDL_Type>
         <IDL_Size>1</IDL_Size>
-        <Units></Units>
+        <Units>hour</Units>
         <Count>1</Count>
     </item>
     <item>
@@ -951,66 +965,63 @@
         <Description>Target Dec as a string (DD MM SS.SS)</Description>
         <IDL_Type>string</IDL_Type>
         <IDL_Size>1</IDL_Size>
-        <Units></Units>
+        <Units>degree</Units>
         <Count>1</Count>
     </item>
     <item>
         <EFDB_Name>epoch</EFDB_Name>
         <Description>Target epoch in years</Description>
         <IDL_Type>double</IDL_Type>
-        <Units></Units>
+        <Units>year</Units>
         <Count>1</Count>
     </item>
     <item>
         <EFDB_Name>difftrackRA</EFDB_Name>
         <Description>Target differential track rate in RA (units RAsecs/second)</Description>
         <IDL_Type>double</IDL_Type>
-        <Units></Units>
+        <Units>arcsec / second</Units>
         <Count>1</Count>
     </item>
     <item>
         <EFDB_Name>difftrackDec</EFDB_Name>
-        <Description>Target differential track rate in Dec (units arcsecs/second)
-</Description>
+        <Description>Target differential track rate in Dec (units arcsecs/second)</Description>
         <IDL_Type>double</IDL_Type>
-        <Units></Units>
+        <Units>arcsec / second</Units>
         <Count>1</Count>
     </item>
     <item>
         <EFDB_Name>properMotionRA</EFDB_Name>
-        <Description>Target proper motion in RA (units RAsecs/year)
-</Description>
+        <Description>Target proper motion in RA (units RAsecs/year)</Description>
         <IDL_Type>double</IDL_Type>
-        <Units></Units>
+        <Units>arcsec / year</Units>
         <Count>1</Count>
     </item>
     <item>
         <EFDB_Name>properMotionDec</EFDB_Name>
-        <Description>Target proper motion in Dec (units arcsecs/year)
-</Description>
+        <Description>Target proper motion in Dec (units arcsecs/year)</Description>
         <IDL_Type>double</IDL_Type>
-        <Units></Units>
+        <Units>arcsec / year</Units>
         <Count>1</Count>
     </item>
     <item>
         <EFDB_Name>parallax</EFDB_Name>
         <Description>Target annual parallax in arcseconds</Description>
         <IDL_Type>double</IDL_Type>
-        <Units></Units>
+        <Units>arcsec</Units>
         <Count>1</Count>
     </item>
     <item>
         <EFDB_Name>radvel</EFDB_Name>
         <Description>Target radial velocity in kms/sec</Description>
         <IDL_Type>double</IDL_Type>
-        <Units></Units>
+        <Units>km / second</Units>
         <Count>1</Count>
     </item>
     <item>
         <EFDB_Name>rotPA</EFDB_Name>
         <Description>Rotator position angle in degrees</Description>
         <IDL_Type>double</IDL_Type>
-        <Units></Units>
+        <Units>degree</Units>
         <Count>1</Count>
     </item>
     <item>
@@ -1018,7 +1029,7 @@
         <Description>Rotator tracking co-ordinate frame (FK5 or ICRS)</Description>
         <IDL_Type>long</IDL_Type>
         <!-- <Enumeration> RotFrame </Enumeration> -->
-        <Units></Units>
+        <Units>unitless</Units>
         <Count>1</Count>
     </item>
     <item>
@@ -1026,21 +1037,21 @@
         <Description>Rotator tracking mode (Field or Slit optimized)</Description>
         <IDL_Type>long</IDL_Type>
         <!-- <Enumeration> RotMode </Enumeration> -->
-        <Units></Units>
+        <Units>unitless</Units>
         <Count>1</Count>
     </item>
     <item>
         <EFDB_Name>raHours</EFDB_Name>
         <Description>Target RA in hours</Description>
         <IDL_Type>double</IDL_Type>
-        <Units></Units>
+        <Units>hour</Units>
         <Count>1</Count>
     </item>
     <item>
         <EFDB_Name>decDegs</EFDB_Name>
         <Description>Target Dec in degrees</Description>
         <IDL_Type>double</IDL_Type>
-        <Units></Units>
+        <Units>degree</Units>
         <Count>1</Count>
     </item>
 </SALEvent>
@@ -1053,10 +1064,10 @@
     <Explanation>http://sal.lsst.org</Explanation>
     <item>
         <EFDB_Name>level</EFDB_Name>
-        <Description></Description>
+        <Description>Level of the moon proximity warning.</Description>
         <IDL_Type>long</IDL_Type>
         <!-- <Enumeration> WarningLevel </Enumeration> -->
-        <Units></Units>
+        <Units>unitless</Units>
         <Count>1</Count>
     </item>
 </SALEvent>
@@ -1071,7 +1082,7 @@
         <EFDB_Name>status</EFDB_Name>
         <Description>If true, PTG controller is currently posting track commands to Mount components.</Description>
         <IDL_Type>boolean</IDL_Type>
-        <Units></Units>
+        <Units>unitless</Units>
         <Count>1</Count>
     </item>
 </SALEvent>
@@ -1084,10 +1095,10 @@
     <Explanation>http://sal.lsst.org</Explanation>
     <item>
         <EFDB_Name>currentWrap</EFDB_Name>
-        <Description></Description>
+        <Description>Direction of the azimuth wrap: cw (1) or ccw (2).</Description>
         <IDL_Type>long</IDL_Type>
         <!-- <Enumeration> Wraps </Enumeration> -->
-        <Units></Units>
+        <Units>unitless</Units>
         <Count>1</Count>
     </item>
 </SALEvent>
@@ -1100,10 +1111,11 @@
     <Explanation>http://sal.lsst.org</Explanation>
     <item>
         <EFDB_Name>currentWrap</EFDB_Name>
-        <Description></Description>
+        <Description>Direction of the rotator wrap: cw (1) or ccw (2).</Description>
         <IDL_Type>long</IDL_Type>
         <!-- <Enumeration> Wraps </Enumeration> -->
-        <Units></Units>
+        <Units>unitless</Units>
         <Count>1</Count>
     </item>
-</SALEvent></SALEventSet>
+</SALEvent>
+</SALEventSet>
