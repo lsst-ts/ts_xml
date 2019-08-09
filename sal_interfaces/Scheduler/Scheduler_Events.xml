@@ -3,22 +3,6 @@
 <SALEventSet xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:noNamespaceSchemaLocation="http://lsst-sal.tuc.noao.edu/schema/SALEventSet.xsd">
 <Enumeration>DetailedState_DisabledState,DetailedState_EnabledState,DetailedState_FaultState,DetailedState_OfflineState,DetailedState_StandbyState</Enumeration>
-
-<SALEvent>
-    <Subsystem>Scheduler</Subsystem>
-    <Version>3.8.13</Version>
-    <Author></Author>
-    <EFDB_Topic>Scheduler_logevent_internalCommand</EFDB_Topic>
-    <Alias>internalCommand</Alias>
-    <Explanation>http://sal.lsst.org</Explanation>
-    <item>
-        <EFDB_Name>commandObject</EFDB_Name>
-        <Description>The error code being published.</Description>
-        <IDL_Type>byte</IDL_Type>
-        <Units></Units>
-        <Count>800</Count>
-    </item>
-</SALEvent>
 <SALEvent>
     <Subsystem>Scheduler</Subsystem>
     <Version>3.8.13</Version>
@@ -28,54 +12,9 @@
     <Explanation>http://sal.lsst.org</Explanation>
     <item>
         <EFDB_Name>heartbeat</EFDB_Name>
-        <Description></Description>
+        <Description>Heartbeat</Description>
         <IDL_Type>boolean</IDL_Type>
-        <Units></Units>
-        <Count>1</Count>
-    </item>
-</SALEvent>
-<SALEvent>
-    <Subsystem>Scheduler</Subsystem>
-    <Version>3.8.13</Version>
-    <Author></Author>
-    <EFDB_Topic>Scheduler_logevent_loopTimeOutOfRange</EFDB_Topic>
-    <Alias>loopTimeOutOfRange</Alias>
-    <Explanation>http://sal.lsst.org</Explanation>
-    <item>
-        <EFDB_Name>loopTimeOutOfRange</EFDB_Name>
-        <Description></Description>
-        <IDL_Type>boolean</IDL_Type>
-        <Units></Units>
-        <Count>1</Count>
-    </item>
-</SALEvent>
-<SALEvent>
-    <Subsystem>Scheduler</Subsystem>
-    <Version>3.8.13</Version>
-    <Author></Author>
-    <EFDB_Topic>Scheduler_logevent_rejectedCommand</EFDB_Topic>
-    <Alias>rejectedCommand</Alias>
-    <Explanation>http://sal.lsst.org</Explanation>
-    <item>
-        <EFDB_Name>commandValue</EFDB_Name>
-        <Description></Description>
-        <IDL_Type>unsigned short</IDL_Type>
-        <Units></Units>
-        <Count>1</Count>
-    </item>
-            <item>
-                <EFDB_Name>detailedState</EFDB_Name>
-                <Description></Description>
-                <!-- Enumeration: DetailedState -->
-                <IDL_Type>long</IDL_Type>
-                <Units></Units>
-                <Count>1</Count>
-            </item>
-    <item>
-        <EFDB_Name>timestamp</EFDB_Name>
-        <Description></Description>
-        <IDL_Type>double</IDL_Type>
-        <Units></Units>
+        <Units>unitless</Units>
         <Count>1</Count>
     </item>
 </SALEvent>
@@ -88,66 +27,66 @@
     <Explanation>http://sal.lsst.org</Explanation>
     <item>
         <EFDB_Name>version</EFDB_Name>
-        <Description></Description>
+        <Description>Applied settings version.</Description>
         <IDL_Type>string</IDL_Type>
         <IDL_Size>1</IDL_Size>
-        <Units></Units>
+        <Units>unitless</Units>
         <Count>1</Count>
     </item>
     <item>
         <EFDB_Name>scheduler</EFDB_Name>
-        <Description></Description>
+        <Description>Scheduler version</Description>
         <IDL_Type>string</IDL_Type>
         <IDL_Size>1</IDL_Size>
-        <Units></Units>
+        <Units>unitless</Units>
         <Count>1</Count>
     </item>
     <item>
         <EFDB_Name>cloudModel</EFDB_Name>
-        <Description></Description>
+        <Description>Cloud model version</Description>
         <IDL_Type>string</IDL_Type>
         <IDL_Size>1</IDL_Size>
-        <Units></Units>
+        <Units>unitless</Units>
         <Count>1</Count>
     </item>
     <item>
         <EFDB_Name>downtimeModel</EFDB_Name>
-        <Description></Description>
+        <Description>Downtime model version</Description>
         <IDL_Type>string</IDL_Type>
         <IDL_Size>1</IDL_Size>
-        <Units></Units>
+        <Units>unitless</Units>
         <Count>1</Count>
     </item>
     <item>
         <EFDB_Name>seeingModel</EFDB_Name>
-        <Description></Description>
+        <Description>Seeing model version</Description>
         <IDL_Type>string</IDL_Type>
         <IDL_Size>1</IDL_Size>
-        <Units></Units>
+        <Units>unitless</Units>
         <Count>1</Count>
     </item>
     <item>
         <EFDB_Name>skybrightnessModel</EFDB_Name>
-        <Description></Description>
+        <Description>Skybrightness model version</Description>
         <IDL_Type>string</IDL_Type>
         <IDL_Size>1</IDL_Size>
-        <Units></Units>
+        <Units>unitless</Units>
         <Count>1</Count>
     </item>
     <item>
         <EFDB_Name>observatoryModel</EFDB_Name>
-        <Description></Description>
+        <Description>Observatory model version.</Description>
         <IDL_Type>string</IDL_Type>
         <IDL_Size>1</IDL_Size>
-        <Units></Units>
+        <Units>unitless</Units>
         <Count>1</Count>
     </item>
     <item>
         <EFDB_Name>observatoryLocation</EFDB_Name>
-        <Description></Description>
+        <Description>Observatory location version</Description>
         <IDL_Type>string</IDL_Type>
         <IDL_Size>1</IDL_Size>
-        <Units></Units>
+        <Units>unitless</Units>
         <Count>1</Count>
     </item>
 </SALEvent>
@@ -160,242 +99,242 @@
     <Explanation>http://sal.lsst.org</Explanation>
     <item>
         <EFDB_Name>targetId</EFDB_Name>
-        <Description></Description>
+        <Description>Unique target id.</Description>
         <IDL_Type>long</IDL_Type>
-        <Units></Units>
+        <Units>unitless</Units>
         <Count>1</Count>
     </item>
     <item>
         <EFDB_Name>requestTime</EFDB_Name>
-        <Description></Description>
+        <Description>Time on target.</Description>
         <IDL_Type>double</IDL_Type>
-        <Units></Units>
+        <Units>second</Units>
         <Count>1</Count>
     </item>
     <item>
         <EFDB_Name>requestMjd</EFDB_Name>
-        <Description></Description>
+        <Description>MJD of the start of the observation</Description>
         <IDL_Type>double</IDL_Type>
-        <Units></Units>
+        <Units>day</Units>
         <Count>1</Count>
     </item>
     <item>
         <EFDB_Name>ra</EFDB_Name>
-        <Description></Description>
+        <Description>Right Ascention of the target.</Description>
         <IDL_Type>double</IDL_Type>
-        <Units></Units>
+        <Units>deg</Units>
         <Count>1</Count>
     </item>
     <item>
         <EFDB_Name>decl</EFDB_Name>
-        <Description></Description>
+        <Description>Declination of the target.</Description>
         <IDL_Type>double</IDL_Type>
-        <Units></Units>
+        <Units>deg</Units>
         <Count>1</Count>
     </item>
     <item>
         <EFDB_Name>skyAngle</EFDB_Name>
-        <Description></Description>
+        <Description>Sky position angle.</Description>
         <IDL_Type>double</IDL_Type>
-        <Units></Units>
+        <Units>deg</Units>
         <Count>1</Count>
     </item>
     <item>
         <EFDB_Name>filter</EFDB_Name>
-        <Description></Description>
+        <Description>Filter name.</Description>
         <IDL_Type>string</IDL_Type>
         <IDL_Size>1</IDL_Size>
-        <Units></Units>
+        <Units>unitless</Units>
         <Count>1</Count>
     </item>
     <item>
         <EFDB_Name>numExposures</EFDB_Name>
-        <Description></Description>
+        <Description>Number of exposures.</Description>
         <IDL_Type>long</IDL_Type>
-        <Units></Units>
+        <Units>unitless</Units>
         <Count>1</Count>
     </item>
     <item>
         <EFDB_Name>exposureTimes</EFDB_Name>
-        <Description></Description>
+        <Description>Exposure time.</Description>
         <IDL_Type>double</IDL_Type>
-        <Units></Units>
+        <Units>second</Units>
         <Count>10</Count>
     </item>
     <item>
         <EFDB_Name>slewTime</EFDB_Name>
-        <Description></Description>
+        <Description>Expected slew time.</Description>
         <IDL_Type>double</IDL_Type>
-        <Units></Units>
+        <Units>second</Units>
         <Count>1</Count>
     </item>
     <item>
         <EFDB_Name>offsetX</EFDB_Name>
-        <Description></Description>
+        <Description>Offset in X direction (sensor).</Description>
         <IDL_Type>double</IDL_Type>
-        <Units></Units>
+        <Units>arcsec</Units>
         <Count>1</Count>
     </item>
     <item>
         <EFDB_Name>offsetY</EFDB_Name>
-        <Description></Description>
+        <Description>Offset in Y direction (sensor).</Description>
         <IDL_Type>double</IDL_Type>
-        <Units></Units>
+        <Units>arcsec</Units>
         <Count>1</Count>
     </item>
     <item>
         <EFDB_Name>numProposals</EFDB_Name>
-        <Description></Description>
+        <Description>Number of science proposals this target is part of.</Description>
         <IDL_Type>long</IDL_Type>
-        <Units></Units>
+        <Units>unitless</Units>
         <Count>1</Count>
     </item>
     <item>
         <EFDB_Name>proposalId</EFDB_Name>
-        <Description></Description>
+        <Description>Id of the proposals this target is part of.</Description>
         <IDL_Type>long</IDL_Type>
-        <Units></Units>
+        <Units>unitless</Units>
         <Count>5</Count>
     </item>
     <item>
         <EFDB_Name>isSequence</EFDB_Name>
-        <Description></Description>
+        <Description>Is this target part of a sequence of observations for the same target?</Description>
         <IDL_Type>boolean</IDL_Type>
-        <Units></Units>
+        <Units>unitless</Units>
         <Count>1</Count>
     </item>
     <item>
         <EFDB_Name>sequenceNVisits</EFDB_Name>
-        <Description></Description>
+        <Description>If isSequence=True, number of visits in this sequence.</Description>
         <IDL_Type>long</IDL_Type>
-        <Units></Units>
+        <Units>unitless</Units>
         <Count>1</Count>
     </item>
     <item>
         <EFDB_Name>sequenceVisits</EFDB_Name>
-        <Description></Description>
+        <Description>If isSequence=True, which visit is this (1-sequenceNVisits)?</Description>
         <IDL_Type>long</IDL_Type>
-        <Units></Units>
+        <Units>unitless</Units>
         <Count>1</Count>
     </item>
     <item>
         <EFDB_Name>sequenceDuration</EFDB_Name>
-        <Description></Description>
+        <Description>Total duration of the sequence.</Description>
         <IDL_Type>double</IDL_Type>
-        <Units></Units>
+        <Units>unitless</Units>
         <Count>1</Count>
     </item>
     <item>
         <EFDB_Name>airmass</EFDB_Name>
-        <Description></Description>
+        <Description>Expected airmass of the observation</Description>
         <IDL_Type>double</IDL_Type>
-        <Units></Units>
+        <Units>unitless</Units>
         <Count>1</Count>
     </item>
     <item>
         <EFDB_Name>skyBrightness</EFDB_Name>
-        <Description></Description>
+        <Description>Expected sky brightness of the observation.</Description>
         <IDL_Type>double</IDL_Type>
-        <Units></Units>
+        <Units>unitless</Units>
         <Count>1</Count>
     </item>
     <item>
         <EFDB_Name>cloud</EFDB_Name>
-        <Description></Description>
+        <Description>Expected cloud extintion for this observation</Description>
         <IDL_Type>double</IDL_Type>
-        <Units></Units>
+        <Units>unitless</Units>
         <Count>1</Count>
     </item>
     <item>
         <EFDB_Name>seeing</EFDB_Name>
-        <Description></Description>
+        <Description>Expected seeing of this observation.</Description>
         <IDL_Type>double</IDL_Type>
-        <Units></Units>
+        <Units>arcsec</Units>
         <Count>1</Count>
     </item>
     <item>
         <EFDB_Name>moonRa</EFDB_Name>
-        <Description></Description>
+        <Description>Expected RA of the moon.</Description>
         <IDL_Type>double</IDL_Type>
-        <Units></Units>
+        <Units>deg</Units>
         <Count>1</Count>
     </item>
     <item>
         <EFDB_Name>moonDec</EFDB_Name>
-        <Description></Description>
+        <Description>Expected Dec of the moon</Description>
         <IDL_Type>double</IDL_Type>
-        <Units></Units>
+        <Units>deg</Units>
         <Count>1</Count>
     </item>
     <item>
         <EFDB_Name>moonAlt</EFDB_Name>
-        <Description></Description>
+        <Description>Expected altitude of the moon.</Description>
         <IDL_Type>double</IDL_Type>
-        <Units></Units>
+        <Units>deg</Units>
         <Count>1</Count>
     </item>
     <item>
         <EFDB_Name>moonAz</EFDB_Name>
-        <Description></Description>
+        <Description>Expected azimuth of the moon</Description>
         <IDL_Type>double</IDL_Type>
-        <Units></Units>
+        <Units>deg</Units>
         <Count>1</Count>
     </item>
     <item>
         <EFDB_Name>moonDistance</EFDB_Name>
-        <Description></Description>
+        <Description>Expected distance to the moon.</Description>
         <IDL_Type>double</IDL_Type>
-        <Units></Units>
+        <Units>deg</Units>
         <Count>1</Count>
     </item>
     <item>
         <EFDB_Name>moonPhase</EFDB_Name>
-        <Description></Description>
+        <Description>Expected moon phase/illumination (0-1).</Description>
         <IDL_Type>double</IDL_Type>
-        <Units></Units>
+        <Units>unitless</Units>
         <Count>1</Count>
     </item>
     <item>
         <EFDB_Name>sunRa</EFDB_Name>
-        <Description></Description>
+        <Description>Expected sun RA.</Description>
         <IDL_Type>double</IDL_Type>
-        <Units></Units>
+        <Units>deg</Units>
         <Count>1</Count>
     </item>
     <item>
         <EFDB_Name>sunDec</EFDB_Name>
-        <Description></Description>
+        <Description>Expected sun dec.</Description>
         <IDL_Type>double</IDL_Type>
-        <Units></Units>
+        <Units>deg</Units>
         <Count>1</Count>
     </item>
     <item>
         <EFDB_Name>sunAlt</EFDB_Name>
-        <Description></Description>
+        <Description>Expected sun altitude.</Description>
         <IDL_Type>double</IDL_Type>
-        <Units></Units>
+        <Units>deg</Units>
         <Count>1</Count>
     </item>
     <item>
         <EFDB_Name>sunAz</EFDB_Name>
-        <Description></Description>
+        <Description>Expected sun Az.</Description>
         <IDL_Type>double</IDL_Type>
-        <Units></Units>
+        <Units>deg</Units>
         <Count>1</Count>
     </item>
     <item>
         <EFDB_Name>solarElong</EFDB_Name>
-        <Description></Description>
+        <Description>Expected solar elongation.</Description>
         <IDL_Type>double</IDL_Type>
-        <Units></Units>
+        <Units>deg</Units>
         <Count>1</Count>
     </item>
     <item>
         <EFDB_Name>note</EFDB_Name>
-        <Description></Description>
+        <Description>Note about the target.</Description>
         <IDL_Type>string</IDL_Type>
         <IDL_Size>1</IDL_Size>
-        <Units></Units>
+        <Units>unitless</Units>
         <Count>1</Count>
     </item>
 </SALEvent>
@@ -408,23 +347,9 @@
     <Explanation>http://sal.lsst.org</Explanation>
     <item>
         <EFDB_Name>targetId</EFDB_Name>
-        <Description></Description>
+        <Description>Unique target id.</Description>
         <IDL_Type>long</IDL_Type>
-        <Units></Units>
-        <Count>1</Count>
-    </item>
-    <item>
-        <EFDB_Name>invalid</EFDB_Name>
-        <Description></Description>
-        <IDL_Type>boolean</IDL_Type>
-        <Units></Units>
-        <Count>1</Count>
-    </item>
-    <item>
-        <EFDB_Name>timestamp</EFDB_Name>
-        <Description></Description>
-        <IDL_Type>double</IDL_Type>
-        <Units></Units>
+        <Units>unitless</Units>
         <Count>1</Count>
     </item>
 </SALEvent>
@@ -437,17 +362,25 @@
     <Explanation>http://sal.lsst.org</Explanation>
     <item>
         <EFDB_Name>needSwap</EFDB_Name>
-        <Description></Description>
+        <Description>Does the scheduler need a new filter mounted on the camera?</Description>
         <IDL_Type>boolean</IDL_Type>
-        <Units></Units>
+        <Units>unitless</Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>filterToMount</EFDB_Name>
+        <Description>Which filter to add.</Description>
+        <IDL_Type>string</IDL_Type>
+        <IDL_Size>1</IDL_Size>
+        <Units>unitless</Units>
         <Count>1</Count>
     </item>
     <item>
         <EFDB_Name>filterToUnmount</EFDB_Name>
-        <Description></Description>
+        <Description>Which filter to remove.</Description>
         <IDL_Type>string</IDL_Type>
         <IDL_Size>1</IDL_Size>
-        <Units></Units>
+        <Units>unitless</Units>
         <Count>1</Count>
     </item>
 </SALEvent></SALEventSet>
