@@ -34,7 +34,7 @@ pipeline {
 					-w /home/appuser/trunk/robotframework_ts_xml \
 					--entrypoint "robot" lsstts/robot:latest \
 					--outputdir /home/appuser/Reports --variable ContInt:true -e skipped \
-					--noncritical TSS* --noncritical TPC* --noncritical TSEIA* --noncritical DM* \
+					--noncritical TSS* --noncritical TPC* --noncritical TSEIA* --noncritical DM* --noncritical CAP* \
 					--variable version:${env.VERSION} -A XML_Validation.list
 					echo "Test complete"
 					"""
