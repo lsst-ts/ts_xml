@@ -36,14 +36,6 @@
         <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>reason</EFDB_Name>
-        <Description>A detailed description of what is wrong. For example if a voltage is out of range, please specify the measured voltage and the range.</Description>
-        <IDL_Type>string</IDL_Type>
-        <IDL_Size>1</IDL_Size>
-        <Units>unitless</Units>
-        <Count>1</Count>
-    </item>
-    <item>
         <EFDB_Name>severity</EFDB_Name>
         <Description>The current alarm severity. An AlarmSeverity enum.</Description>
         <IDL_Type>int</IDL_Type>
@@ -51,31 +43,37 @@
         <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>maxSeverity</EFDB_Name>
-        <Description>The maximum severity seen for this alarm. An AlarmSeverity enum.</Description>
-        <IDL_Type>int</IDL_Type>
-        <Units>unitless</Units>
-        <Count>1</Count>
-    </item>
-    <item>
-        <EFDB_Name>acknowledged</EFDB_Name>
-        <Description>Has this alarm been acknowledged? true=yes, false=no.</Description>
-        <IDL_Type>boolean</IDL_Type>
-        <Units>unitless</Units>
-        <Count>1</Count>
-    </item>
-    <item>
-        <EFDB_Name>acknowledgedBy</EFDB_Name>
-        <Description>User who acknowledged the alarm.</Description>
+        <EFDB_Name>reason</EFDB_Name>
+        <Description>A detailed description of what is wrong.
+            For example if a voltage is out of range, please specify the measured voltage and the range.</Description>
         <IDL_Type>string</IDL_Type>
         <IDL_Size>1</IDL_Size>
         <Units>unitless</Units>
         <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>enabled</EFDB_Name>
-        <Description>Is this alarm enabled? true=yes, display it normally; false=no, do not display it by default.</Description>
+        <EFDB_Name>maxSeverity</EFDB_Name>
+        <Description>The maximum severity seen for this alarm.
+            Reset to `AlarmSeverity_None` if alarm is aknowledged while the `severity` is `AlarmSeverity_None`.
+            An AlarmSeverity enum.</Description>
+        <IDL_Type>int</IDL_Type>
+        <Units>unitless</Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>acknowledged</EFDB_Name>
+        <Description>Has this alarm been acknowledged? true=yes, false=no.
+            Irrelevant if `severity` and `maxSeverity` are both `AlarmSeverity_None`.</Description>
         <IDL_Type>boolean</IDL_Type>
+        <Units>unitless</Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>acknowledgedBy</EFDB_Name>
+        <Description>User who acknowledged the alarm.
+            Irrelevant if `acknowledged` is false.</Description>
+        <IDL_Type>string</IDL_Type>
+        <IDL_Size>1</IDL_Size>
         <Units>unitless</Units>
         <Count>1</Count>
     </item>
@@ -89,6 +87,24 @@
     <item>
         <EFDB_Name>escalateTo</EFDB_Name>
         <Description>Backup user who was or will be notified if the alarm is escalated.</Description>
+        <IDL_Type>string</IDL_Type>
+        <IDL_Size>1</IDL_Size>
+        <Units>unitless</Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>mutedSeverity</EFDB_Name>
+        <Description>Severity at which this alarm is muted.
+             A value of `AlarmSeverity_None` means not muted.
+             If `severity &lt;= mutedSeverity` then the alarm is considered muted and should not be displayed by default.</Description>
+        <IDL_Type>boolean</IDL_Type>
+        <Units>unitless</Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>mutedBy</EFDB_Name>
+        <Description>User who muted the alarm.
+            Irrelevant if `mutedSeverity` is `AlarmSeverity_None`.</Description>
         <IDL_Type>string</IDL_Type>
         <IDL_Size>1</IDL_Size>
         <Units>unitless</Units>
@@ -123,6 +139,14 @@
         <Count>1</Count>
     </item>
     <item>
+        <EFDB_Name>timestampAutoAcknowledge</EFDB_Name>
+        <Description>Time at which the alarm will be automatically acknowledged if still stale (not active and not acknowledged).
+            0 if not relevant in this state or the alarm does not support automatic acknowledgement of stale alarms.</Description>
+        <IDL_Type>float</IDL_Type>
+        <Units>second</Units>
+        <Count>1</Count>
+    </item>
+    <item>
         <EFDB_Name>timestampAutoUnacknowledge</EFDB_Name>
         <Description>Time at which the alarm will be automatically unacknowledged if still active. 0 if not relevant in this state or the alarm does not support automatic unacknowledgement.</Description>
         <IDL_Type>float</IDL_Type>
@@ -130,15 +154,17 @@
         <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>timestampAutoAcknowledge</EFDB_Name>
-        <Description>Time at which the alarm will be automatically acknowledged if still stale (not active and not acknowledged). 0 if not relevant in this state or the alarm does not support automatic acknowledgement of stale alarms.</Description>
+        <EFDB_Name>timestampEscalate</EFDB_Name>
+        <Description>Time at which the alarm was or will be escalated to backup personnel (if `escalated` is true or false, respectively).
+            0 if not relevant in this state or the alarm does not support escalation.</Description>
         <IDL_Type>float</IDL_Type>
         <Units>second</Units>
         <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>timestampEscalate</EFDB_Name>
-        <Description>Time at which the alarm was or will be escalated to backup personnel (if escalate is true or false, respectively). 0 if not relevant in this state or the alarm does not support escalation.</Description>
+        <EFDB_Name>timestampUnmute</EFDB_Name>
+        <Description>Time at which the alarm will be unmuted.
+            Irrelevant if `mutedSeverity = AlarmSeverity_None`.</Description>
         <IDL_Type>float</IDL_Type>
         <Units>second</Units>
         <Count>1</Count>
