@@ -13,22 +13,23 @@
  <Property>actuators</Property>
  <Action></Action>
  <Value></Value>
- <Explanation>http://sal.lsst.org/SAL/Commands/MTM2_command_applyBendingMode.html</Explanation>
+ <Description>Updates the optical surface based on the 22 bending mode values.</Description>
     <item>
       <EFDB_Name>bendingModeNbr</EFDB_Name>
-      <Description>Number of each bending mode</Description>
+      <Description>Number of each bending mode.</Description>
       <IDL_Type>short</IDL_Type>
-      <Units> </Units>
+      <Units>unitless</Units>
       <Count>32</Count>
     </item>
     <item>
       <EFDB_Name>bendingModeValue</EFDB_Name>
-      <Description>Value for each bending mode</Description>
+      <Description>Value for each bending mode.</Description>
       <IDL_Type>double</IDL_Type>
-      <Units>microns</Units>
+      <Units>micron</Units>
       <Count>32</Count>
     </item>
 </SALCommand>
+
 <SALCommand>
  <Subsystem>MTM2</Subsystem>
  <Version>3.8.0</Version>
@@ -39,15 +40,16 @@
  <Property>actuators</Property>
  <Action></Action>
  <Value></Value>
- <Explanation>http://sal.lsst.org/SAL/Commands/MTM2_command_applyForce.html</Explanation>
+ <Description>Provides the delta force vector used in adjusting the target force settings.</Description>
     <item>
       <EFDB_Name>forceSetPoint</EFDB_Name>
-      <Description>Force in newtons, increasing force corresponds to increasing tension on the load cell</Description>
+      <Description>Force in newtons, increasing force corresponds to increasing tension on the load cell.</Description>
       <IDL_Type>double</IDL_Type>
-      <Units>Newtons</Units>
+      <Units>newton</Units>
       <Count>72</Count>
     </item>
 </SALCommand>
+
 <SALCommand>
  <Subsystem>MTM2</Subsystem>
  <Version>3.8.0</Version>
@@ -58,15 +60,16 @@
  <Property>actuators</Property>
  <Action></Action>
  <Value></Value>
- <Explanation>http://sal.lsst.org/SAL/Commands/MTM2_command_setCorrectionMode.html</Explanation>
+ <Description>Selects between using the delta force updates or the bending modes in adjusting the target force settings.</Description>
     <item>
       <EFDB_Name>mode</EFDB_Name>
-      <Description>An enumeration: 1 = BendingMode, 2 = Force</Description>
+      <Description>An enumeration: 1 = BendingMode, 2 = Force.</Description>
        <IDL_Type>int</IDL_Type>
-      <Units></Units>
+      <Units>unitless</Units>
       <Count>1</Count>
     </item>
 </SALCommand>
+
 <SALCommand>
  <Subsystem>MTM2</Subsystem>
  <Version>3.8.0</Version>
@@ -77,29 +80,30 @@
  <Property>actuators</Property>
  <Action></Action>
  <Value></Value>
- <Explanation>http://sal.lsst.org/SAL/Commands/MTM2_command_positionMirror.html</Explanation>
+ <Description>Adjust the mirror's rigid body positions: tip, tilt, and piston.</Description>
     <item>
       <EFDB_Name>xTilt</EFDB_Name>
-      <Description>Tilt in xy plane</Description>
+      <Description>Tilt x in xy plane.</Description>
       <IDL_Type>double</IDL_Type>
-      <Units>radians</Units>
+      <Units>radian</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>yTilt</EFDB_Name>
-      <Description>Tilt in xy plane</Description>
+      <Description>Tilt y in xy plane.</Description>
       <IDL_Type>double</IDL_Type>
-      <Units>radians</Units>
+      <Units>radian</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>piston</EFDB_Name>
-      <Description>Position in Z (along optical axis)</Description>
+      <Description>Position in z (along optical axis).</Description>
       <IDL_Type>double</IDL_Type>
-      <Units>microns</Units>
+      <Units>micron</Units>
       <Count>1</Count>
     </item>
 </SALCommand>
+
 <SALCommand>
  <Subsystem>MTM2</Subsystem>
  <Version>3.8.0</Version>
@@ -110,20 +114,21 @@
  <Property>actuators</Property>
  <Action></Action>
  <Value></Value>
- <Explanation>http://sal.lsst.org/SAL/Commands/MTM2_command_moveAxialActuator.html</Explanation>
+ <Description>Indicates the number of steps to move on each axial actuator.</Description>
     <item>
       <EFDB_Name>axialActuatorID</EFDB_Name>
-      <Description>ID number of an actuator</Description>
+      <Description>ID number of an actuator.</Description>
       <IDL_Type>short</IDL_Type>
-      <Units></Units>
+      <Units>unitless</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>relativeStepsToMove</EFDB_Name>
-      <Description>Increasing steps correspond to counterclockwise rotation of th motor shaft, looking along the motor shaft in the direction of the motor</Description>
+      <Description>Increasing steps correspond to counterclockwise rotation of th motor shaft, looking along the motor shaft in the direction of the motor.</Description>
       <IDL_Type>long</IDL_Type>
-      <Units></Units>
+      <Units>unitless</Units>
       <Count>1</Count>
     </item>
 </SALCommand>
+
 </SALCommandSet>
