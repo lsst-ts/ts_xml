@@ -11,9 +11,31 @@
     <Explanation>http://sal.lsst.org</Explanation>
     <item>
         <EFDB_Name>heartbeat</EFDB_Name>
-        <Description></Description>
+        <Description>This will be obsolete once topic is provided by generics.</Description>
         <IDL_Type>boolean</IDL_Type>
         <Units>dimensionless</Units>
+        <Count>1</Count>
+    </item>
+</SALEvent>
+<SALEvent>
+    <Subsystem>DSM</Subsystem>
+    <Version>4.0</Version>
+    <Author></Author>
+    <EFDB_Topic>DSM_logevent_settingsApplied</EFDB_Topic>
+    <Alias>settingsApplied</Alias>
+    <Explanation>http://sal.lsst.org</Explanation>
+    <item>
+        <EFDB_Name>telemetryDirectory</EFDB_Name>
+        <Description>The location where the telemetry data from the UI is written. If it starts with /tmp, the CSC was run in simulation mode.</Description>
+        <IDL_Type>string</IDL_Type>
+        <Units>dimensionless</Units>
+        <Count>256</Count>
+    </item>
+    <item>
+        <EFDB_Name>simulationLoopTime</EFDB_Name>
+        <Description>The sleep time between successive writes of telemetry data in simulation mode. If this is -1, the CSC is run in standard mode.</Description>
+        <IDL_Type>long</IDL_Type>
+        <Units>second</Units>
         <Count>1</Count>
     </item>
 </SALEvent>
