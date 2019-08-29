@@ -286,7 +286,7 @@
     <Explanation>http://sal.lsst.org</Explanation>
     <item>
         <EFDB_Name>eventState</EFDB_Name>
-        <Description>State of the weather data.</Description>
+        <Description>State of the focus name inconsistency.</Description>
         <IDL_Type>boolean</IDL_Type>
         <Units>unitless</Units>
         <Count>1</Count>
@@ -308,7 +308,7 @@
     </item>
     <item>
         <EFDB_Name>targetType</EFDB_Name>
-        <Description>current, next or prospective?</Description>
+        <Description>raDec, azEl, planet or ephemeris?</Description>
         <IDL_Type>long</IDL_Type>
         <!-- <Enumeration> TargetTypes </Enumeration> -->
         <Units>unitless</Units>
@@ -326,14 +326,14 @@
         <EFDB_Name>ra</EFDB_Name>
         <Description>Target RA in radians</Description>
         <IDL_Type>double</IDL_Type>
-        <Units>hour</Units>
+        <Units>rad</Units>
         <Count>1</Count>
     </item>
     <item>
         <EFDB_Name>declination</EFDB_Name>
         <Description>Target Dec in radians</Description>
         <IDL_Type>double</IDL_Type>
-        <Units>degree</Units>
+        <Units>rad</Units>
         <Count>1</Count>
     </item>
     <item>
@@ -422,14 +422,14 @@
         <EFDB_Name>properMotionRA</EFDB_Name>
         <Description>Target proper motion in RA (units RAsecs/year)</Description>
         <IDL_Type>double</IDL_Type>
-        <Units>arcsec / second</Units>
+        <Units>arcsec / year</Units>
         <Count>1</Count>
     </item>
     <item>
         <EFDB_Name>properMotionDec</EFDB_Name>
         <Description>Target proper motion in Dec (units arcsecs/year)</Description>
         <IDL_Type>double</IDL_Type>
-        <Units>arcsec / second</Units>
+        <Units>arcsec / year</Units>
         <Count>1</Count>
     </item>
     <item>
@@ -524,7 +524,7 @@
         <EFDB_Name>humidity</EFDB_Name>
         <Description>Air relative humidity</Description>
         <IDL_Type>double</IDL_Type>
-        <Units>unitless</Units>
+        <Units>percent</Units>
         <Count>1</Count>
     </item>
 </SALEvent>
@@ -674,7 +674,7 @@
         <EFDB_Name>properMotionRA</EFDB_Name>
         <Description>Target proper motion in RA (units RAsecs/year)</Description>
         <IDL_Type>double</IDL_Type>
-        <Units>arcsec / second</Units>
+        <Units>arcsec / year</Units>
         <Count>1</Count>
     </item>
     <item>
@@ -688,7 +688,7 @@
         <EFDB_Name>parallax</EFDB_Name>
         <Description>Target annual parallax in arcseconds</Description>
         <IDL_Type>double</IDL_Type>
-        <Units>year</Units>
+        <Units>arcsec</Units>
         <Count>1</Count>
     </item>
     <item>
@@ -880,7 +880,7 @@
     </item>
     <item>
         <EFDB_Name>targetType</EFDB_Name>
-        <Description>current, next or prospective?</Description>
+        <Description>raDec, azEl, planet or ephemeris?</Description>
         <IDL_Type>long</IDL_Type>
         <!-- <Enumeration> TargetTypes </Enumeration> -->
         <Units>unitless</Units>
