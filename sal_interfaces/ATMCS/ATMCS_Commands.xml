@@ -63,7 +63,7 @@
         </item>
         <item>
             <EFDB_Name>nasmyth1RotatorAngle</EFDB_Name>
-            <Description>Nasmyth 1 rotator angle at the specified time. The allowed range is the software limits (L1), approximately -170 to 170. Outside this range the velocity will be severly limited. Software position limits are -175 to 175. Set to nan if not using this axis.</Description>
+	    <Description>Nasmyth 1 rotator angle at the specified time. The allowed range is the software limits (L1), approximately -170 to 170. Outside this range the velocity will be severly limited. Software position limits are -175 to 175. </Description>
             <IDL_Type>double</IDL_Type>
             <Units>deg</Units>
             <Count>1</Count>
@@ -77,7 +77,7 @@
         </item>
         <item>
             <EFDB_Name>nasmyth2RotatorAngle</EFDB_Name>
-            <Description>Nasmyth 1 rotator angle at the specified time. The allowed range is the software limits (L1), approximately -170 to 170. Outside this range the velocity will be severly limited. Software position limits are -175 to 175. Set to nan if not using this axis.</Description>
+            <Description>Nasmyth 1 rotator angle at the specified time. The allowed range is the software limits (L1), approximately -170 to 170. Outside this range the velocity will be severly limited. Software position limits are -175 to 175. </Description>
             <IDL_Type>double</IDL_Type>
             <Units>deg</Units>
             <Count>1</Count>
@@ -103,6 +103,23 @@
             <Units>dimensionless</Units>
             <Count>1</Count>
         </item>
+            <item>
+            <EFDB_Name>tracksys</EFDB_Name>
+            <Description>Defines tracking coordinate system as sidereal, non-sidereal or local.</Description>
+            <IDL_Type>string</IDL_Type>
+            <IDL_Size>256</IDL_Size>
+            <Units>dimensionless</Units>
+            <Count>1</Count>
+        </item>
+        <item>
+            <EFDB_Name>radesys</EFDB_Name>
+	        <Description>Coordinate reference frame of RA/DEC axes. This originates from the pointing component and is used for WCS definition (e.g. FK5 or ICRS).</Description>
+            <IDL_Type>string</IDL_Type>
+            <IDL_Size>256</IDL_Size>
+            <Units>dimensionless</Units>
+            <Count>1</Count>
+        </item>
+
     </SALCommand>
     <SALCommand>
         <Subsystem>ATMCS</Subsystem>
@@ -114,7 +131,7 @@
         <Property/>
         <Action/>
         <Value/>
-        <Description>Rotate M3 to a specified instrument port. This command returns before M3 has finished moving.</Description>
+        <Description>Rotate M3 to a specified instrument port. </Description>
         <Explanation>http://sal.lsst.org</Explanation>
         <item>
             <EFDB_Name>port</EFDB_Name>
@@ -135,7 +152,7 @@
         <Property/>
         <Action/>
         <Value/>
-        <Description>Halt all axes except M3 rotation, and disable tracking. This command returns before the axes finish halting.</Description>
+        <Description>Halt all axes except M3 rotation, and disable tracking.</Description>
         <Explanation>http://sal.lsst.org</Explanation>
         <item>
             <EFDB_Name>value</EFDB_Name>
