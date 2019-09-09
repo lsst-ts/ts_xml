@@ -26,13 +26,21 @@
     <Alias>endReadout</Alias>
     <Explanation>http://project.lsst.org/ts/sal_objects/help/ATCamera_logevent_endReadout.html</Explanation>
     <item>
-        <EFDB_Name>imageSequenceName</EFDB_Name>
-        <Description>The imageSequenceName as passed to the takeImages command</Description>
+        <EFDB_Name>imageType</EFDB_Name>
+        <Description>The imageType as passed to the takeImages command</Description>
         <IDL_Type>string</IDL_Type>
         <IDL_Size>256</IDL_Size>
         <Units>unitless</Units>
         <Count>1</Count>
     </item>
+    <item>
+        <EFDB_Name>groupdId</EFDB_Name>
+        <Description>The groupdId as passed to the takeImages command</Description>
+        <IDL_Type>string</IDL_Type>
+        <IDL_Size>256</IDL_Size>
+        <Units>unitless</Units>
+        <Count>1</Count>
+    </item>    
     <item>
         <EFDB_Name>imagesInSequence</EFDB_Name>
         <Description>The total number of requested images in sequence</Description>
@@ -100,6 +108,14 @@
         <Units>second</Units>
         <Count>1</Count>
     </item>
+    <!-- Extra info add to endReadout as part of CAP-209 -->
+    <item>
+        <EFDB_Name>timeStampEndOfReadout</EFDB_Name>
+        <Description>The time at which the readout was completed</Description>
+        <IDL_Type>double</IDL_Type>
+        <Units>second</Units>
+        <Count>1</Count>
+    </item>  
 </SALEvent>
 <SALEvent>
     <Subsystem>ATCamera</Subsystem>
@@ -157,13 +173,21 @@
     <Alias>endOfImageTelemetry</Alias>
     <Explanation>http://project.lsst.org/ts/sal_objects/help/ATCamera_logevent_endOfImageTelemetry.html</Explanation>
     <item>
-        <EFDB_Name>imageSequenceName</EFDB_Name>
-        <Description>The imageSequenceName as passed to the takeImages command</Description>
+        <EFDB_Name>imageType</EFDB_Name>
+        <Description>The imageType as passed to the takeImages command</Description>
         <IDL_Type>string</IDL_Type>
         <IDL_Size>256</IDL_Size>
         <Units>unitless</Units>
         <Count>1</Count>
     </item>
+    <item>
+        <EFDB_Name>groupdId</EFDB_Name>
+        <Description>The groupdId as passed to the takeImages command</Description>
+        <IDL_Type>string</IDL_Type>
+        <IDL_Size>256</IDL_Size>
+        <Units>unitless</Units>
+        <Count>1</Count>
+    </item>    
     <item>
         <EFDB_Name>imagesInSequence</EFDB_Name>
         <Description>The total number of requested images in sequence</Description>
@@ -229,6 +253,14 @@
         <Description>The requested exposure time</Description>
         <IDL_Type>double</IDL_Type>
         <Units>second</Units>
+        <Count>1</Count>
+    </item>
+    <!-- Additional information added as part of CAP-209 -->
+    <item>
+        <EFDB_Name>imageTag</EFDB_Name>
+        <Description>The DAQ assigned image tag (hex string)</Description>
+        <IDL_Type>String</IDL_Type>
+        <Units>unitless</Units>
         <Count>1</Count>
     </item>
 </SALEvent>
@@ -312,13 +344,21 @@
     <Alias>startIntegration</Alias>
     <Explanation>http://project.lsst.org/ts/sal_objects/help/ATCamera_logevent_startIntegration.html</Explanation>
     <item>
-        <EFDB_Name>imageSequenceName</EFDB_Name>
-        <Description>The imageSequenceName as passed to the takeImages command</Description>
+        <EFDB_Name>imageType</EFDB_Name>
+        <Description>The imageType as passed to the takeImages command</Description>
         <IDL_Type>string</IDL_Type>
         <IDL_Size>256</IDL_Size>
         <Units>unitless</Units>
         <Count>1</Count>
     </item>
+    <item>
+        <EFDB_Name>groupdId</EFDB_Name>
+        <Description>The groupdId as passed to the takeImages command</Description>
+        <IDL_Type>string</IDL_Type>
+        <IDL_Size>256</IDL_Size>
+        <Units>unitless</Units>
+        <Count>1</Count>
+    </item>    
     <item>
         <EFDB_Name>imagesInSequence</EFDB_Name>
         <Description>The total number of requested images in sequence</Description>
@@ -386,6 +426,14 @@
         <Units>second</Units>
         <Count>1</Count>
     </item>
+    <!-- Extra info add to endReadout as part of CAP-209 -->
+    <item>
+        <EFDB_Name>timeStampStartOfReadout</EFDB_Name>
+        <Description>The time at which the readout was triggered</Description>
+        <IDL_Type>double</IDL_Type>
+        <Units>second</Units>
+        <Count>1</Count>
+    </item>    
 </SALEvent>
 <SALEvent>
     <Subsystem>ATCamera</Subsystem>
@@ -419,13 +467,21 @@
     <Alias>startReadout</Alias>
     <Explanation>http://project.lsst.org/ts/sal_objects/help/ATCamera_logevent_startReadout.html</Explanation>
     <item>
-        <EFDB_Name>imageSequenceName</EFDB_Name>
-        <Description>The imageSequenceName as passed to the takeImages command</Description>
+        <EFDB_Name>imageType</EFDB_Name>
+        <Description>The imageType as passed to the takeImages command</Description>
         <IDL_Type>string</IDL_Type>
         <IDL_Size>256</IDL_Size>
         <Units>unitless</Units>
         <Count>1</Count>
     </item>
+    <item>
+        <EFDB_Name>groupdId</EFDB_Name>
+        <Description>The groupdId as passed to the takeImages command</Description>
+        <IDL_Type>string</IDL_Type>
+        <IDL_Size>256</IDL_Size>
+        <Units>unitless</Units>
+        <Count>1</Count>
+    </item>    
     <item>
         <EFDB_Name>imagesInSequence</EFDB_Name>
         <Description>The total number of requested images in sequence</Description>
