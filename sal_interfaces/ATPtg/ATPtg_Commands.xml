@@ -74,14 +74,14 @@
         <EFDB_Name>ca</EFDB_Name>
         <Description>Collimation CA value</Description>
         <IDL_Type>double</IDL_Type>
-        <Units>mm</Units>
+        <Units>arcsec</Units>
         <Count>1</Count>
     </item>
     <item>
         <EFDB_Name>ce</EFDB_Name>
         <Description>Collimation CE value</Description>
         <IDL_Type>double</IDL_Type>
-        <Units>mm</Units>
+        <Units>arcsec</Units>
         <Count>1</Count>
     </item>
     <item>
@@ -196,7 +196,7 @@
     </item>
     <item>
         <EFDB_Name>off1</EFDB_Name>
-        <Description>Offset in RA or X, relative to target position</Description>
+        <Description>Offset in RA or X, relative to target position. (in arcsec if type is TPLANE, second if SIMPLE) </Description>
         <IDL_Type>double</IDL_Type>
         <Units>arcsec</Units>
         <Count>1</Count>
@@ -552,6 +552,21 @@
         <Units>unitless</Units>
         <Count>1</Count>
     </item>
+    <item>
+        <EFDB_Name>azWrapStrategy</EFDB_Name>
+        <Description>Azimuth wrap strategy.(1-noUnWrap, 2-optimize, 3-maxTimeOnTarget)</Description>
+        <IDL_Type>long</IDL_Type>
+        <!-- <Enumeration> WrapStrategy </Enumeration> -->
+        <Units>unitless</Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>timeOnTarget</EFDB_Name>
+        <Description>The total expected time on the target.</Description>
+        <IDL_Type>double</IDL_Type>
+        <Units>second</Units>
+        <Count>1</Count>
+    </item>
 </SALCommand>
 <SALCommand>
     <Subsystem>ATPtg</Subsystem>
@@ -614,14 +629,14 @@
         <EFDB_Name>dx</EFDB_Name>
         <Description>X Pointing origin offset in the focal plane</Description>
         <IDL_Type>double</IDL_Type>
-        <Units>arcsec</Units>
+        <Units>mm</Units>
         <Count>1</Count>
     </item>
     <item>
         <EFDB_Name>dy</EFDB_Name>
         <Description>Y Pointing origin offset in the focal plane.</Description>
         <IDL_Type>double</IDL_Type>
-        <Units>arcsec</Units>
+        <Units>mm</Units>
         <Count>1</Count>
     </item>
     <item>
@@ -956,6 +971,25 @@
         <EFDB_Name>ignored</EFDB_Name>
         <Description>This attribute is ignored and not used.</Description>
         <IDL_Type>boolean</IDL_Type>
+        <Units>unitless</Units>
+        <Count>1</Count>
+    </item>
+</SALCommand>
+<SALCommand>
+    <Subsystem>ATPtg</Subsystem>
+    <Version>3.8.41</Version>
+    <Author>aya</Author>
+    <EFDB_Topic>ATPtg_command_startTracking</EFDB_Topic>
+    <Alias>startTracking</Alias>
+    <Device></Device>
+    <Property></Property>
+    <Action></Action>
+    <Value></Value>
+    <Explanation>http://sal.lsst.org</Explanation>
+    <item>
+        <EFDB_Name>trackId</EFDB_Name>
+        <Description>Target identifier.</Description>
+        <IDL_Type>long</IDL_Type>
         <Units>unitless</Units>
         <Count>1</Count>
     </item>
