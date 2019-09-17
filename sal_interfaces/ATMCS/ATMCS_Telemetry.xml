@@ -1,13 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-stylesheet type="text/xsl" href="http://lsst-sal.tuc.noao.edu/schema/SALTelemetrySet.xsl"?>
 <SALTelemetrySet xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://lsst-sal.tuc.noao.edu/schema/SALTelemetrySet.xsd">
-    
     <SALTelemetry>
         <Subsystem>ATMCS</Subsystem>
         <Version>3.8.41</Version>
         <Author/>
-	<EFDB_Topic>ATMCS_trajectory</EFDB_Topic>
-	<Description>Telescope trajectory Position/Velocity/Time from the ATMCS trajectory generator at 100Hz, starting at the specified time.</Description>
+        <EFDB_Topic>ATMCS_trajectory</EFDB_Topic>
+        <Description>Telescope trajectory Position/Velocity/Time from the ATMCS trajectory generator at 100Hz, starting at the specified time.</Description>
         <item>
             <EFDB_Name>cRIO_timestamp</EFDB_Name>
             <Description>Time for the first sample of each telemetry item in this topic, as measured by the cRIO clock, as unix time.</Description>
@@ -15,7 +14,7 @@
             <Units>s</Units>
             <Count>1</Count>
         </item>
-	<item>
+        <item>
             <EFDB_Name>elevation</EFDB_Name>
             <Description>Target mount elevation angle at 100Hz beginning at the specified time.</Description>
             <IDL_Type>double</IDL_Type>
@@ -85,7 +84,7 @@
             <Units>s</Units>
             <Count>1</Count>
         </item>
-	<item>
+        <item>
             <EFDB_Name>elevationCalculatedAngle</EFDB_Name>
             <Description>Elevation axis position computed from the axis encoders at 100 Hz beginning at the specified time.</Description>
             <IDL_Type>double</IDL_Type>
@@ -143,9 +142,9 @@
         </item>
         <item>
             <EFDB_Name>trackId</EFDB_Name>
-	    <Description>Unique identifier given by the ATPoining Component</Description>
+            <Description>Unique identifier given by the ATPoining Component</Description>
             <IDL_Type>long</IDL_Type>
-	    <Units>dimensionless</Units>
+            <Units>dimensionless</Units>
             <Count>1</Count>
         </item>
     </SALTelemetry>
@@ -153,7 +152,7 @@
         <Subsystem>ATMCS</Subsystem>
         <Version>3.8.41</Version>
         <Author/>
-	<EFDB_Topic>ATMCS_mount_Nasmyth_Encoders</EFDB_Topic>
+        <EFDB_Topic>ATMCS_mount_Nasmyth_Encoders</EFDB_Topic>
         <Description>Telemetry for Nasmyth encoders</Description>
         <item>
             <EFDB_Name>cRIO_timestamp</EFDB_Name>
@@ -220,9 +219,9 @@
         </item>
         <item>
             <EFDB_Name>trackId</EFDB_Name>
-	    <Description>Unique identifier given by the ATPoining Component</Description>
+            <Description>Unique identifier given by the ATPoining Component</Description>
             <IDL_Type>long</IDL_Type>
-	    <Units>dimensionless</Units>
+            <Units>dimensionless</Units>
             <Count>1</Count>
         </item>
     </SALTelemetry>
@@ -239,7 +238,7 @@
             <Units>s</Units>
             <Count>1</Count>
         </item>
-	<item>
+        <item>
             <EFDB_Name>elevationMotorTorque</EFDB_Name>
             <Description>Elevation drive commanded motor torque at 100 Hz beginning at the specified time.</Description>
             <IDL_Type>double</IDL_Type>
@@ -499,4 +498,4 @@
             <Count>100</Count>
         </item>
     </SALTelemetry>
-  </SALTelemetrySet>
+</SALTelemetrySet>
