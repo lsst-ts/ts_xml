@@ -32,6 +32,7 @@
     <Property></Property>
     <Action></Action>
     <Value></Value>
+    <Description>Transition from state Disabled to Enabled.</Description>
     <Explanation>http://project.lsst.org/ts/sal_objects/help</Explanation>
     <item>
         <EFDB_Name>value</EFDB_Name>
@@ -51,6 +52,7 @@
     <Property></Property>
     <Action></Action>
     <Value></Value>
+    <Description>Transition from state Enabled to Disabled.</Description>
     <Explanation>http://project.lsst.org/ts/sal_objects/help</Explanation>
     <item>
         <EFDB_Name>value</EFDB_Name>
@@ -70,6 +72,7 @@
     <Property></Property>
     <Action></Action>
     <Value></Value>
+    <Description>Transition from state Offline, Disabled or Fault to Standby.</Description>
     <Explanation>http://project.lsst.org/ts/sal_objects/help</Explanation>
     <item>
         <EFDB_Name>value</EFDB_Name>
@@ -89,6 +92,7 @@
     <Property></Property>
     <Action></Action>
     <Value></Value>
+    <Description>Transition from state Standby to Offline. For CSCs that are not "externally commandable" this makes the CSC quit.</Description>
     <Explanation>http://project.lsst.org/ts/sal_objects/help</Explanation>
     <item>
         <EFDB_Name>value</EFDB_Name>
@@ -108,6 +112,7 @@
     <Property></Property>
     <Action></Action>
     <Value></Value>
+    <Description>Transition from state Standby to Disable, in a specified configuration.</Description>
     <Explanation>http://project.lsst.org/ts/sal_objects/help</Explanation>
     <item>
         <EFDB_Name>settingsToApply</EFDB_Name>
@@ -128,6 +133,7 @@
     <Property></Property>
     <Action></Action>
     <Value></Value>
+    <Description>Transition from state Offline to Standby. Only "externally commandable" CSCs support this command; other CSCs start in Standby state and quit when they go to Offline.</Description>
     <Explanation>http://project.lsst.org/ts/sal_objects/help</Explanation>
     <item>
         <EFDB_Name>value</EFDB_Name>
@@ -147,7 +153,7 @@
     <Property/>
     <Action/>
     <Value/>
-    <Explanation>Set logging level.</Explanation>
+    <Description>Set the logging level.</Description>
     <item>
         <EFDB_Name>level</EFDB_Name>
         <Description>Logging level, as a Python logging level: error=40, warning=30, info=20, debug=10.</Description>
@@ -166,7 +172,7 @@
     <Property/>
     <Action/>
     <Value/>
-    <Explanation>Set simulation mode.</Explanation>
+    <Description>Set the simulation mode.</Description>
     <item>
         <EFDB_Name>mode</EFDB_Name>
         <Description>Desired simulation mode; 0 for normal operation (no simulation); other supported values are specific to each CSC.</Description>
@@ -205,6 +211,7 @@
     <Author>Dave Mills</Author>
     <EFDB_Topic>SALGeneric_logevent_settingVersions</EFDB_Topic>
     <Alias>settingVersions</Alias>
+    <Description>Information about settings which can be specified in the start command.</Description>
     <Explanation>http://project.lsst.org/ts/sal_objects/help/SALGeneric_logevent_settingVersions.html</Explanation>
     <item>
         <EFDB_Name>recommendedSettingsVersion</EFDB_Name>
@@ -237,6 +244,7 @@
     <Author>Dave Mills</Author>
     <EFDB_Topic>SALGeneric_logevent_errorCode</EFDB_Topic>
     <Alias>errorCode</Alias>
+    <Description>Output when a CSC goes into the Fault state as an explanation of the problem.</Description>
     <Explanation>http://project.lsst.org/ts/sal_objects/help/SALGeneric_logevent_errorCode.html</Explanation>
     <item>
         <EFDB_Name>errorCode</EFDB_Name>
@@ -268,6 +276,7 @@
     <Author>Dave Mills</Author>
     <EFDB_Topic>SALGeneric_logevent_summaryState</EFDB_Topic>
     <Alias>summaryState</Alias>
+    <Description>Current summary state of the CSC</Description>
     <Explanation>http://project.lsst.org/ts/sal_objects/help/SALGeneric_logevent_summaryState.html</Explanation>
     <item>
         <EFDB_Name>summaryState</EFDB_Name>
@@ -298,6 +307,7 @@
     <Author/>
     <EFDB_Topic>SALGeneric_logevent_logLevel</EFDB_Topic>
     <Alias>logLevel</Alias>
+    <Description>Current logging level.</Description>
     <Explanation/>
     <item>
         <EFDB_Name>level</EFDB_Name>
@@ -313,6 +323,7 @@
     <Author/>
     <EFDB_Topic>SALGeneric_logevent_logMessage</EFDB_Topic>
     <Alias>logMessage</Alias>
+    <Description>A log message.</Description>
     <Explanation/>
     <item>
         <EFDB_Name>level</EFDB_Name>
@@ -344,6 +355,7 @@
     <Author/>
     <EFDB_Topic>SALGeneric_logevent_simulationMode</EFDB_Topic>
     <Alias>simulationMode</Alias>
+    <Description>Current simulation mode.</Description>
     <Explanation/>
     <item>
         <EFDB_Name>mode</EFDB_Name>
