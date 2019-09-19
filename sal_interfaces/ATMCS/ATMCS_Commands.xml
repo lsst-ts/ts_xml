@@ -12,12 +12,11 @@
         <Action/>
         <Value/>
         <Description>Enable tracking. Once you issue this command you must call trackTarget at regular intervals until you are done tracking, at which point call stopTracking.</Description>
-        <Explanation>http://sal.lsst.org</Explanation>
         <item>
-            <EFDB_Name>ignored</EFDB_Name>
-            <Description/>
+            <EFDB_Name>value</EFDB_Name>
+            <Description>Attribute required by the SAL API, but is unused.</Description>
             <IDL_Type>boolean</IDL_Type>
-            <Units/>
+            <Units>dimensionless</Units>
             <Count>1</Count>
         </item>
     </SALCommand>
@@ -31,8 +30,7 @@
         <Property/>
         <Action/>
         <Value/>
-        <Description>Specify position, velocity and time for all axes except M3. This command returns immediately.</Description>
-        <Explanation>http://sal.lsst.org</Explanation>
+        <Description>Specify position, velocity and time (PVT) vector for all axes except M3. This command returns immediately.</Description>
         <item>
             <EFDB_Name>azimuth</EFDB_Name>
             <Description>Mount azimuth angle at the specified time. The allowed range is the software limits (L1), approximately -270 to 270.</Description>
@@ -44,7 +42,7 @@
             <EFDB_Name>azimuthVelocity</EFDB_Name>
             <Description>Mount azimuth velocity at the specified time.</Description>
             <IDL_Type>double</IDL_Type>
-            <Units>deg/sec</Units>
+            <Units>deg / s</Units>
             <Count>1</Count>
         </item>
         <item>
@@ -58,12 +56,12 @@
             <EFDB_Name>elevationVelocity</EFDB_Name>
             <Description>Mount elevation angle velocity at the specified time.</Description>
             <IDL_Type>double</IDL_Type>
-            <Units>deg/sec</Units>
+            <Units>deg / s</Units>
             <Count>1</Count>
         </item>
         <item>
             <EFDB_Name>nasmyth1RotatorAngle</EFDB_Name>
-            <Description>Nasmyth 1 rotator angle at the specified time. The allowed range is the software limits (L1), approximately -165 to 165. Set to nan if not using this axis.</Description>
+            <Description>Nasmyth 1 rotator angle at the specified time. The allowed range is the software limits (L1), approximately -170 to 170. Outside this range the velocity will be severly limited. Software position limits are -175 to 175. </Description>
             <IDL_Type>double</IDL_Type>
             <Units>deg</Units>
             <Count>1</Count>
@@ -72,12 +70,12 @@
             <EFDB_Name>nasmyth1RotatorAngleVelocity</EFDB_Name>
             <Description>Nasmyth 1 rotator angle velocity at the specified time.</Description>
             <IDL_Type>double</IDL_Type>
-            <Units>deg/sec</Units>
+            <Units>deg / s</Units>
             <Count>1</Count>
         </item>
         <item>
             <EFDB_Name>nasmyth2RotatorAngle</EFDB_Name>
-            <Description>Nasmyth 1 rotator angle at the specified time. The allowed range is the software limits (L1), approximately -165 to 165. Set to nan if not using this axis.</Description>
+            <Description>Nasmyth 1 rotator angle at the specified time. The allowed range is the software limits (L1), approximately -170 to 170. Outside this range the velocity will be severly limited. Software position limits are -175 to 175. </Description>
             <IDL_Type>double</IDL_Type>
             <Units>deg</Units>
             <Count>1</Count>
@@ -86,21 +84,37 @@
             <EFDB_Name>nasmyth2RotatorAngleVelocity</EFDB_Name>
             <Description>Nasmyth 1 rotator angle velocity at the specified time.</Description>
             <IDL_Type>double</IDL_Type>
-            <Units>deg/sec</Units>
+            <Units>deg / s</Units>
             <Count>1</Count>
         </item>
         <item>
             <EFDB_Name>time</EFDB_Name>
             <Description>TAI date at which the commanded positions and velocities apply, as unix time.</Description>
             <IDL_Type>double</IDL_Type>
-            <Units>sec</Units>
+            <Units>s</Units>
             <Count>1</Count>
         </item>
         <item>
             <EFDB_Name>trackId</EFDB_Name>
-            <Description>Target identifier.</Description>
+            <Description>Target identifier provided by the ATMCS.</Description>
             <IDL_Type>long</IDL_Type>
-            <Units/>
+            <Units>dimensionless</Units>
+            <Count>1</Count>
+        </item>
+        <item>
+            <EFDB_Name>tracksys</EFDB_Name>
+            <Description>Defines tracking coordinate system as sidereal, non-sidereal or local.</Description>
+            <IDL_Type>string</IDL_Type>
+            <IDL_Size>256</IDL_Size>
+            <Units>dimensionless</Units>
+            <Count>1</Count>
+        </item>
+        <item>
+            <EFDB_Name>radesys</EFDB_Name>
+            <Description>Coordinate reference frame of RA/DEC axes. This originates from the pointing component and is used for WCS definition (e.g. FK5 or ICRS).</Description>
+            <IDL_Type>string</IDL_Type>
+            <IDL_Size>256</IDL_Size>
+            <Units>dimensionless</Units>
             <Count>1</Count>
         </item>
     </SALCommand>
@@ -114,14 +128,13 @@
         <Property/>
         <Action/>
         <Value/>
-        <Description>Rotate M3 to a specified instrument port. This command returns before M3 has finished moving.</Description>
-        <Explanation>http://sal.lsst.org</Explanation>
+        <Description>Rotate M3 to a specified instrument port. </Description>
         <item>
             <EFDB_Name>port</EFDB_Name>
             <Description>Desired instrument port.</Description>
             <!-- Enumeration: M3ExitPort -->
             <IDL_Type>long</IDL_Type>
-            <Units/>
+            <Units>dimensionless</Units>
             <Count>1</Count>
         </item>
     </SALCommand>
@@ -135,13 +148,12 @@
         <Property/>
         <Action/>
         <Value/>
-        <Description>Halt all axes except M3 rotation, and disable tracking. This command returns before the axes finish halting.</Description>
-        <Explanation>http://sal.lsst.org</Explanation>
+        <Description>Halt all axes except M3 rotation, and disable tracking.</Description>
         <item>
-            <EFDB_Name>ignored</EFDB_Name>
-            <Description/>
+            <EFDB_Name>value</EFDB_Name>
+            <Description>Attribute required by the SAL API, but is unused.</Description>
             <IDL_Type>boolean</IDL_Type>
-            <Units/>
+            <Units>dimensionless</Units>
             <Count>1</Count>
         </item>
     </SALCommand>

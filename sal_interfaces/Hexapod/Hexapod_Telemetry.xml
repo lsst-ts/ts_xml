@@ -9,16 +9,16 @@
     <EFDB_Topic>Hexapod_Actuators</EFDB_Topic>
     <item>
         <EFDB_Name>Calibrated</EFDB_Name>
-        <Description>http://sal.lsst.org/SAL/Telemetry/Hexapod_Actuators_Calibrated.html</Description>
+        <Description>Linear encoder readings from each hexapod actuator (x1,x2,x3,x4,x5,x6) in microns</Description>
         <IDL_Type>double</IDL_Type>
-        <Units></Units>
+        <Units>um</Units>
         <Count>6</Count>
     </item>
     <item>
         <EFDB_Name>Raw</EFDB_Name>
-        <Description>http://sal.lsst.org/SAL/Telemetry/Hexapod_Actuators_Raw.html</Description>
+        <Description>Linear encoder readings from each hexapod actuator (x1,x2,x3,x4,x5,x6)in counts</Description>
         <IDL_Type>double</IDL_Type>
-        <Units></Units>
+        <Units>dimensionless</Units>
         <Count>6</Count>
     </item>
 </SALTelemetry>
@@ -29,23 +29,23 @@
     <EFDB_Topic>Hexapod_Application</EFDB_Topic>
     <item>
         <EFDB_Name>Demand</EFDB_Name>
-        <Description>http://sal.lsst.org/SAL/Telemetry/Hexapod_Application_Demand.html</Description>
+        <Description>Commanded hexapod position in the following order (X, Y, Z, RX, RY, RZ). Linear positions are in microns, angular positions are in degrees.</Description>
         <IDL_Type>double</IDL_Type>
-        <Units></Units>
+        <Units>dimensionless</Units>
         <Count>6</Count>
     </item>
     <item>
         <EFDB_Name>Error</EFDB_Name>
-        <Description>http://sal.lsst.org/SAL/Telemetry/Hexapod_Application_Error.html</Description>
+        <Description>Indication of an actuator following error (x1,x2,x3,x4,x5,x6) if there is no error shall be 0.</Description>
         <IDL_Type>double</IDL_Type>
-        <Units></Units>
+        <Units>dimensionless</Units>
         <Count>6</Count>
     </item>
     <item>
         <EFDB_Name>Position</EFDB_Name>
-        <Description>http://sal.lsst.org/SAL/Telemetry/Hexapod_Application_Position.html</Description>
+        <Description>Actual hexapod position in the following order (X, Y, Z, RX, RY, RZ). Linear positions are in microns, angular positions are in degrees.</Description>
         <IDL_Type>double</IDL_Type>
-        <Units></Units>
+        <Units>dimensionless</Units>
         <Count>6</Count>
     </item>
 </SALTelemetry>
@@ -56,16 +56,16 @@
     <EFDB_Topic>Hexapod_Electrical</EFDB_Topic>
     <item>
         <EFDB_Name>CopleyStatusWordDrive</EFDB_Name>
-        <Description></Description>
+        <Description>Bus undervoltage fault, bus overvoltage fault, and overcurrent fault are all being monitored for each drive channel</Description>
         <IDL_Type>unsigned short</IDL_Type>
-        <Units></Units>
+        <Units>dimensionless</Units>
         <Count>6</Count>
     </item>
     <item>
         <EFDB_Name>CopleyLatchingFaultStatus</EFDB_Name>
-        <Description></Description>
+        <Description>CopleyLatchingFaultStatus</Description>
         <IDL_Type>unsigned short</IDL_Type>
-        <Units></Units>
+        <Units>dimensionless</Units>
         <Count>6</Count>
     </item>
 </SALTelemetry></SALTelemetrySet>

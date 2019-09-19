@@ -13,10 +13,10 @@
     <Property></Property>
     <Action></Action>
     <Value></Value>
-    <Description>Acknowledge an alarm.</Description>
+    <Description>Acknowledge one or more alarms.</Description>
     <item>
         <EFDB_Name>name</EFDB_Name>
-        <Description>Name of alarm or alarms to acknowledge. Specify a regular expression to acknowledge multiple alarms.</Description>
+        <Description>Name of alarm or alarms to acknowledge. Specify a regular expression for multiple alarms.</Description>
         <IDL_Type>string</IDL_Type>
         <IDL_Size>1</IDL_Size>
         <Units>unitless</Units>
@@ -38,4 +38,69 @@
         <Count>1</Count>
     </item>
 </SALCommand>
+
+<SALCommand>
+    <Subsystem>Watcher</Subsystem>
+    <Version>1.0.0</Version>
+    <Author></Author>
+    <EFDB_Topic>Watcher_command_mute</EFDB_Topic>
+    <Alias>mute</Alias>
+    <Device></Device>
+    <Property></Property>
+    <Action></Action>
+    <Value></Value>
+    <Description>Mute one or more alarms.</Description>
+    <item>
+        <EFDB_Name>name</EFDB_Name>
+        <Description>Name of alarm or alarms to mute. Specify a regular expression for multiple alarms.</Description>
+        <IDL_Type>string</IDL_Type>
+        <IDL_Size>1</IDL_Size>
+        <Units>unitless</Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>duration</EFDB_Name>
+        <Description>Duration of mute.</Description>
+        <IDL_Type>float</IDL_Type>
+        <Units>second</Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>severity</EFDB_Name>
+        <Description>Severity level being muted. An AlarmSeverity enum.</Description>
+        <IDL_Type>int</IDL_Type>
+        <Units>unitless</Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>mutedBy</EFDB_Name>
+        <Description>User who muted the alarm.</Description>
+        <IDL_Type>string</IDL_Type>
+        <IDL_Size>1</IDL_Size>
+        <Units>unitless</Units>
+        <Count>1</Count>
+    </item>
+</SALCommand>
+
+<SALCommand>
+    <Subsystem>Watcher</Subsystem>
+    <Version>1.0.0</Version>
+    <Author></Author>
+    <EFDB_Topic>Watcher_command_unmute</EFDB_Topic>
+    <Alias>unmute</Alias>
+    <Device></Device>
+    <Property></Property>
+    <Action></Action>
+    <Value></Value>
+    <Description>Unmute one or more alarms.</Description>
+    <item>
+        <EFDB_Name>name</EFDB_Name>
+        <Description>Name of alarm or alarms to unmute. Specify a regular expression for multiple alarms; ".*" to unmute all alarms.</Description>
+        <IDL_Type>string</IDL_Type>
+        <IDL_Size>1</IDL_Size>
+        <Units>unitless</Units>
+        <Count>1</Count>
+    </item>
+</SALCommand>
+
 </SALCommandSet>

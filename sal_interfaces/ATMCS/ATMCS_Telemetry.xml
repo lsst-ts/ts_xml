@@ -5,124 +5,223 @@
         <Subsystem>ATMCS</Subsystem>
         <Version>3.8.41</Version>
         <Author/>
-        <EFDB_Topic>ATMCS_mountEncoders</EFDB_Topic>
+        <EFDB_Topic>ATMCS_trajectory</EFDB_Topic>
+        <Description>Telescope trajectory Position/Velocity/Time from the ATMCS trajectory generator at 100Hz, starting at the specified time.</Description>
         <item>
-            <EFDB_Name>elevationCalculatedAngle</EFDB_Name>
-            <Description>Elevation axis position computed from the axis encoders.</Description>
+            <EFDB_Name>cRIO_timestamp</EFDB_Name>
+            <Description>Time for the first sample of each telemetry item in this topic, as measured by the cRIO clock, as unix time.</Description>
             <IDL_Type>double</IDL_Type>
-            <Units>deg</Units>
+            <Units>s</Units>
             <Count>1</Count>
         </item>
         <item>
-            <EFDB_Name>azimuthCalculatedAngle</EFDB_Name>
-            <Description>Azimuth axis position computed from the axis encoders. The range is the hard stop limits (L3), approximately -280 to 280.</Description>
+            <EFDB_Name>elevation</EFDB_Name>
+            <Description>Target mount elevation angle at 100Hz beginning at the specified time.</Description>
             <IDL_Type>double</IDL_Type>
             <Units>deg</Units>
+            <Count>100</Count>
+        </item>
+        <item>
+            <EFDB_Name>elevationVelocity</EFDB_Name>
+            <Description>Target mount elevation angle velocity at 100Hz beginning at the specified time.</Description>
+            <IDL_Type>double</IDL_Type>
+            <Units>deg / s</Units>
+            <Count>100</Count>
+        </item>
+        <item>
+            <EFDB_Name>azimuth</EFDB_Name>
+            <Description>Target mount azimuth angle at 100Hz beginning at the specified time. The allowed range is 0 to 360.</Description>
+            <IDL_Type>double</IDL_Type>
+            <Units>deg</Units>
+            <Count>100</Count>
+        </item>
+        <item>
+            <EFDB_Name>azimuthVelocity</EFDB_Name>
+            <Description>Target mount azimuth velocity at 100Hz beginning at the specified time.</Description>
+            <IDL_Type>double</IDL_Type>
+            <Units>deg / s</Units>
+            <Count>100</Count>
+        </item>
+        <item>
+            <EFDB_Name>nasmyth1RotatorAngle</EFDB_Name>
+            <Description>Target Nasmyth 1 rotator angle at 100Hz beginning at the specified time.</Description>
+            <IDL_Type>double</IDL_Type>
+            <Units>deg</Units>
+            <Count>100</Count>
+        </item>
+        <item>
+            <EFDB_Name>nasmyth1RotatorAngleVelocity</EFDB_Name>
+            <Description>Target Nasmyth 1 rotator angle velocity at 100Hz beginning at the specified time.</Description>
+            <IDL_Type>double</IDL_Type>
+            <Units>deg / s</Units>
+            <Count>100</Count>
+        </item>
+        <item>
+            <EFDB_Name>nasmyth2RotatorAngle</EFDB_Name>
+            <Description>Target Nasmyth 1 rotator angle at 100Hz beginning at the specified time.</Description>
+            <IDL_Type>double</IDL_Type>
+            <Units>deg</Units>
+            <Count>100</Count>
+        </item>
+        <item>
+            <EFDB_Name>nasmyth2RotatorAngleVelocity</EFDB_Name>
+            <Description>Target Nasmyth 1 rotator angle velocity at 100Hz beginning at the specified time.</Description>
+            <IDL_Type>double</IDL_Type>
+            <Units>deg / s</Units>
+            <Count>100</Count>
+        </item>
+    </SALTelemetry>
+    <SALTelemetry>
+        <Subsystem>ATMCS</Subsystem>
+        <Version>3.8.41</Version>
+        <Author/>
+        <EFDB_Topic>ATMCS_mount_AzEl_Encoders</EFDB_Topic>
+        <Description>Telemetry for elevation and azimuth encoders</Description>
+        <item>
+            <EFDB_Name>cRIO_timestamp</EFDB_Name>
+            <Description>Time for the first sample of each telemetry item in this topic, as measured by the cRIO clock, as unix time.</Description>
+            <IDL_Type>double</IDL_Type>
+            <Units>s</Units>
+            <Count>1</Count>
+        </item>
+        <item>
+            <EFDB_Name>elevationCalculatedAngle</EFDB_Name>
+            <Description>Elevation axis position computed from the axis encoders at 100 Hz beginning at the specified time.</Description>
+            <IDL_Type>double</IDL_Type>
+            <Units>deg</Units>
+            <Count>100</Count>
+        </item>
+        <item>
+            <EFDB_Name>azimuthCalculatedAngle</EFDB_Name>
+            <Description>Azimuth axis position computed from the axis encoders at 100 Hz beginning at the specified time. The range is the hard stop limits (L3), approximately -280 to 280.</Description>
+            <IDL_Type>double</IDL_Type>
+            <Units>deg</Units>
+            <Count>100</Count>
+        </item>
+        <item>
+            <EFDB_Name>elevationEncoder1Raw</EFDB_Name>
+            <Description>Position (in encoder counts) reported by elevation axis encoder 1 at 100 Hz beginning at the specified time.</Description>
+            <IDL_Type>long</IDL_Type>
+            <Units>dimensionless</Units>
+            <Count>100</Count>
+        </item>
+        <item>
+            <EFDB_Name>elevationEncoder2Raw</EFDB_Name>
+            <Description>Position (in encoder counts) reported by elevation axis encoder 2 at 100 Hz beginning at the specified time.</Description>
+            <IDL_Type>long</IDL_Type>
+            <Units>dimensionless</Units>
+            <Count>100</Count>
+        </item>
+        <item>
+            <EFDB_Name>elevationEncoder3Raw</EFDB_Name>
+            <Description>Position (in encoder counts) reported by elevation axis encoder 3 at 100 Hz beginning at the specified time.</Description>
+            <IDL_Type>long</IDL_Type>
+            <Units>dimensionless</Units>
+            <Count>100</Count>
+        </item>
+        <item>
+            <EFDB_Name>azimuthEncoder1Raw</EFDB_Name>
+            <Description>Position (in encoder counts) reported by azimuth axis encoder 1 at 100 Hz beginning at the specified time.</Description>
+            <IDL_Type>long</IDL_Type>
+            <Units>dimensionless</Units>
+            <Count>100</Count>
+        </item>
+        <item>
+            <EFDB_Name>azimuthEncoder2Raw</EFDB_Name>
+            <Description>Position (in encoder counts) reported by azimuth axis encoder 2 at 100 Hz beginning at the specified time.</Description>
+            <IDL_Type>long</IDL_Type>
+            <Units>dimensionless</Units>
+            <Count>100</Count>
+        </item>
+        <item>
+            <EFDB_Name>azimuthEncoder3Raw</EFDB_Name>
+            <Description>Position (in encoder counts) reported by azimuth axis encoder 3 at 100 Hz beginning at the specified time.</Description>
+            <IDL_Type>long</IDL_Type>
+            <Units>dimensionless</Units>
+            <Count>100</Count>
+        </item>
+        <item>
+            <EFDB_Name>trackId</EFDB_Name>
+            <Description>Unique identifier given by the ATPoining Component</Description>
+            <IDL_Type>long</IDL_Type>
+            <Units>dimensionless</Units>
+            <Count>1</Count>
+        </item>
+    </SALTelemetry>
+    <SALTelemetry>
+        <Subsystem>ATMCS</Subsystem>
+        <Version>3.8.41</Version>
+        <Author/>
+        <EFDB_Topic>ATMCS_mount_Nasmyth_Encoders</EFDB_Topic>
+        <Description>Telemetry for Nasmyth encoders</Description>
+        <item>
+            <EFDB_Name>cRIO_timestamp</EFDB_Name>
+            <Description>Time for the first sample of each telemetry item in this topic, as measured by the cRIO clock, as unix time.</Description>
+            <IDL_Type>double</IDL_Type>
+            <Units>s</Units>
             <Count>1</Count>
         </item>
         <item>
             <EFDB_Name>nasmyth1CalculatedAngle</EFDB_Name>
-            <Description>Nasmyth 1 axis position computed from the axis encoders, or nan if this axis is not in use. The range is the hard stop limits (L3), approximately -175 to 175.</Description>
+            <Description>Nasmyth 1 axis position computed from the axis encoders, or nan if this axis is not in use. The range is the software limits (L1), approximately -175 to 175. Increasing the range requires installation of an additional switch. </Description>
             <IDL_Type>double</IDL_Type>
             <Units>deg</Units>
-            <Count>1</Count>
+            <Count>100</Count>
         </item>
         <item>
             <EFDB_Name>nasmyth2CalculatedAngle</EFDB_Name>
-            <Description>Nasmyth 2 axis position computed from the axis encoders, or nan if this axis is not in use. The range is the hard stop limits (L3), approximately -175 to 175.</Description>
+            <Description>Nasmyth 2 axis position computed from the axis encoders, or nan if this axis is not in use. The range is the hard stop limits (L3), approximately -175 to 175. Increasing the range requires installation of an additional switch.</Description>
             <IDL_Type>double</IDL_Type>
             <Units>deg</Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>elevationEncoder1Raw</EFDB_Name>
-            <Description>Position reported by elevation axis encoder 1.</Description>
-            <IDL_Type>long</IDL_Type>
-            <Units>counts</Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>elevationEncoder2Raw</EFDB_Name>
-            <Description>Position reported by elevation axis encoder 2.</Description>
-            <IDL_Type>long</IDL_Type>
-            <Units>counts</Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>elevationEncoder3Raw</EFDB_Name>
-            <Description>Position reported by elevation axis encoder 3.</Description>
-            <IDL_Type>long</IDL_Type>
-            <Units>counts</Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>azimuthEncoder1Raw</EFDB_Name>
-            <Description>Position reported by azimuth axis encoder 1.</Description>
-            <IDL_Type>long</IDL_Type>
-            <Units>counts</Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>azimuthEncoder2Raw</EFDB_Name>
-            <Description>Position reported by azimuth axis encoder 2.</Description>
-            <IDL_Type>long</IDL_Type>
-            <Units>counts</Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>azimuthEncoder3Raw</EFDB_Name>
-            <Description>Position reported by azimuth axis encoder 3.</Description>
-            <IDL_Type>long</IDL_Type>
-            <Units>counts</Units>
-            <Count>1</Count>
+            <Count>100</Count>
         </item>
         <item>
             <EFDB_Name>nasmyth1Encoder1Raw</EFDB_Name>
-            <Description>Position reported by Nasmyth 1 rotator axis encoder 1.</Description>
+            <Description>Position (in encoder counts) reported by Nasmyth 1 rotator axis encoder 1.</Description>
             <IDL_Type>long</IDL_Type>
-            <Units>counts</Units>
-            <Count>1</Count>
+            <Units>dimensionless</Units>
+            <Count>100</Count>
         </item>
         <item>
             <EFDB_Name>nasmyth1Encoder2Raw</EFDB_Name>
-            <Description>Position reported by Nasmyth 1 rotator axis encoder 2.</Description>
+            <Description>Position (in encoder counts) reported by Nasmyth 1 rotator axis encoder 2.</Description>
             <IDL_Type>long</IDL_Type>
-            <Units>counts</Units>
-            <Count>1</Count>
+            <Units>dimensionless</Units>
+            <Count>100</Count>
         </item>
         <item>
             <EFDB_Name>nasmyth1Encoder3Raw</EFDB_Name>
-            <Description>Position reported by Nasmyth 1 rotator axis encoder 3.</Description>
+            <Description>Position (in encoder counts) reported by Nasmyth 1 rotator axis encoder 3.</Description>
             <IDL_Type>long</IDL_Type>
-            <Units>counts</Units>
-            <Count>1</Count>
+            <Units>dimensionless</Units>
+            <Count>100</Count>
         </item>
         <item>
             <EFDB_Name>nasmyth2Encoder1Raw</EFDB_Name>
-            <Description>Position reported by Nasmyth 2 rotator axis encoder 1.</Description>
+            <Description>Position (in encoder counts) reported by Nasmyth 2 rotator axis encoder 1.</Description>
             <IDL_Type>long</IDL_Type>
-            <Units>counts</Units>
-            <Count>1</Count>
+            <Units>dimensionless</Units>
+            <Count>100</Count>
         </item>
         <item>
             <EFDB_Name>nasmyth2Encoder2Raw</EFDB_Name>
-            <Description>Position reported by Nasmyth 2 rotator axis encoder 2.</Description>
+            <Description>Position (in encoder counts) reported by Nasmyth 2 rotator axis encoder 2.</Description>
             <IDL_Type>long</IDL_Type>
-            <Units>counts</Units>
-            <Count>1</Count>
+            <Units>dimensionless</Units>
+            <Count>100</Count>
         </item>
         <item>
             <EFDB_Name>nasmyth2Encoder3Raw</EFDB_Name>
-            <Description>Position reported by Nasmyth 2 rotator axis encoder 3.</Description>
+            <Description>Position (in encoder counts) reported by Nasmyth 2 rotator axis encoder 3.</Description>
             <IDL_Type>long</IDL_Type>
-            <Units>counts</Units>
-            <Count>1</Count>
+            <Units>dimensionless</Units>
+            <Count>100</Count>
         </item>
         <item>
             <EFDB_Name>trackId</EFDB_Name>
-            <Description/>
+            <Description>Unique identifier given by the ATPoining Component</Description>
             <IDL_Type>long</IDL_Type>
-            <Units/>
+            <Units>dimensionless</Units>
             <Count>1</Count>
         </item>
     </SALTelemetry>
@@ -131,40 +230,48 @@
         <Version>3.8.41</Version>
         <Author/>
         <EFDB_Topic>ATMCS_torqueDemand</EFDB_Topic>
+        <Description>Commanded torque for all drives except M3</Description>
+        <item>
+            <EFDB_Name>cRIO_timestamp</EFDB_Name>
+            <Description>Time for the first sample of each telemetry item in this topic, as measured by the cRIO clock, as unix time.</Description>
+            <IDL_Type>double</IDL_Type>
+            <Units>s</Units>
+            <Count>1</Count>
+        </item>
         <item>
             <EFDB_Name>elevationMotorTorque</EFDB_Name>
-            <Description>Elevation drive commanded motor torque.</Description>
+            <Description>Elevation drive commanded motor torque at 100 Hz beginning at the specified time.</Description>
             <IDL_Type>double</IDL_Type>
-            <Units>ampere</Units>
-            <Count>1</Count>
+            <Units>A</Units>
+            <Count>100</Count>
         </item>
         <item>
             <EFDB_Name>azimuthMotor1Torque</EFDB_Name>
-            <Description>Azimuth drive 1 commanded motor torque.</Description>
+            <Description>Azimuth drive 1 commanded motor torque at 100 Hz beginning at the specified time.</Description>
             <IDL_Type>double</IDL_Type>
-            <Units>ampere</Units>
-            <Count>1</Count>
+            <Units>A</Units>
+            <Count>100</Count>
         </item>
         <item>
             <EFDB_Name>azimuthMotor2Torque</EFDB_Name>
-            <Description>Azimuth drive 2 commanded motor torque.</Description>
+            <Description>Azimuth drive 2 commanded motor torque at 100 Hz beginning at the specified time.</Description>
             <IDL_Type>double</IDL_Type>
-            <Units>ampere</Units>
-            <Count>1</Count>
+            <Units>A</Units>
+            <Count>100</Count>
         </item>
         <item>
             <EFDB_Name>nasmyth1MotorTorque</EFDB_Name>
-            <Description>Nasmyth 1 rotator drive commanded motor torque.</Description>
+            <Description>Nasmyth 1 rotator drive commanded motor torque at 100 Hz beginning at the specified time.</Description>
             <IDL_Type>double</IDL_Type>
-            <Units>ampere</Units>
-            <Count>1</Count>
+            <Units>A</Units>
+            <Count>100</Count>
         </item>
         <item>
             <EFDB_Name>nasmyth2MotorTorque</EFDB_Name>
-            <Description>Nasmyth 2 rotator drive commanded motor torque.</Description>
+            <Description>Nasmyth 2 rotator drive commanded motor torque at 100 Hz beginning at the specified time.</Description>
             <IDL_Type>double</IDL_Type>
-            <Units>ampere</Units>
-            <Count>1</Count>
+            <Units>A</Units>
+            <Count>100</Count>
         </item>
     </SALTelemetry>
     <SALTelemetry>
@@ -172,47 +279,55 @@
         <Version>3.8.41</Version>
         <Author/>
         <EFDB_Topic>ATMCS_measuredTorque</EFDB_Topic>
+        <Description>Measured torque for all drives</Description>
+        <item>
+            <EFDB_Name>cRIO_timestamp</EFDB_Name>
+            <Description>Time for the first sample of each telemetry item in this topic, as measured by the cRIO clock, as unix time.</Description>
+            <IDL_Type>double</IDL_Type>
+            <Units>s</Units>
+            <Count>1</Count>
+        </item>
         <item>
             <EFDB_Name>elevationMotorTorque</EFDB_Name>
-            <Description>Elevation drive measured motor torque.</Description>
+            <Description>Elevation drive measured motor torque at 100 Hz beginning at the specified time.</Description>
             <IDL_Type>double</IDL_Type>
-            <Units>ampere</Units>
-            <Count>1</Count>
+            <Units>A</Units>
+            <Count>100</Count>
         </item>
         <item>
             <EFDB_Name>azimuthMotor1Torque</EFDB_Name>
-            <Description>Azimuth drive 1 measured motor torque.</Description>
+            <Description>Azimuth drive 1 measured motor torque at 100 Hz beginning at the specified time.</Description>
             <IDL_Type>double</IDL_Type>
-            <Units>ampere</Units>
-            <Count>1</Count>
+            <Units>A</Units>
+            <Count>100</Count>
         </item>
         <item>
             <EFDB_Name>azimuthMotor2Torque</EFDB_Name>
-            <Description>Azimuth drive 2 measured motor torque.</Description>
+            <Description>Azimuth drive 2 measured motor torque at 100 Hz beginning at the specified time.</Description>
             <IDL_Type>double</IDL_Type>
-            <Units>ampere</Units>
-            <Count>1</Count>
+            <Units>A</Units>
+            <Count>100</Count>
         </item>
         <item>
             <EFDB_Name>nasmyth1MotorTorque</EFDB_Name>
-            <Description>Nasmyth 1 rotator drive measured motor torque.</Description>
+            <Description>Nasmyth 1 rotator drive measured motor torque at 100 Hz beginning at the specified time.</Description>
             <IDL_Type>double</IDL_Type>
-            <Units>ampere</Units>
-            <Count>1</Count>
+            <Units>A</Units>
+            <Count>100</Count>
         </item>
         <item>
             <EFDB_Name>nasmyth2MotorTorque</EFDB_Name>
-            <Description>Nasmyth 2 rotator drive measured motor torque.</Description>
+            <Description>Nasmyth 2 rotator drive measured motor torque at 100 Hz beginning at the specified time.</Description>
             <IDL_Type>double</IDL_Type>
-            <Units>ampere</Units>
-            <Count>1</Count>
+            <Units>A</Units>
+            <Count>100</Count>
         </item>
         <item>
             <EFDB_Name>m3Torque</EFDB_Name>
-            <Description>M3 rotator drive measured motor torque.</Description>
+            <Description>M3 rotator drive measured motor torque at 100 Hz beginning at the specified time.</Description>
             <IDL_Type>double</IDL_Type>
-            <Units>ampere</Units>
-            <Count>1</Count>
+            <Units>A</Units>
+            <Count>100</Count>
         </item>
     </SALTelemetry>
     <SALTelemetry>
@@ -220,137 +335,167 @@
         <Version>3.8.41</Version>
         <Author/>
         <EFDB_Topic>ATMCS_measuredMotorVelocity</EFDB_Topic>
+        <Description>Measured motor velocity for all drives</Description>
+        <item>
+            <EFDB_Name>cRIO_timestamp</EFDB_Name>
+            <Description>Time for the first sample of each telemetry item in this topic, as measured by the cRIO clock, as unix time.</Description>
+            <IDL_Type>double</IDL_Type>
+            <Units>s</Units>
+            <Count>1</Count>
+        </item>
         <item>
             <EFDB_Name>elevationMotorVelocity</EFDB_Name>
-            <Description>Measured velocity of elevation drive motor.</Description>
+            <Description>Measured velocity of elevation drive motor at 100 Hz beginning at the specified time.</Description>
             <IDL_Type>double</IDL_Type>
-            <Units>deg/sec</Units>
-            <Count>1</Count>
+            <Units>deg / s</Units>
+            <Count>100</Count>
         </item>
         <item>
             <EFDB_Name>azimuthMotor1Velocity</EFDB_Name>
-            <Description>Measured velocity of azimuth drive 1 motor.</Description>
+            <Description>Measured velocity of azimuth drive 1 motor at 100 Hz beginning at the specified time.</Description>
             <IDL_Type>double</IDL_Type>
-            <Units>deg/sec</Units>
-            <Count>1</Count>
+            <Units>deg / s</Units>
+            <Count>100</Count>
         </item>
         <item>
             <EFDB_Name>azimuthMotor2Velocity</EFDB_Name>
-            <Description>Measured velocity of azimuth drive 2 motor.</Description>
+            <Description>Measured velocity of azimuth drive 2 motor at 100 Hz beginning at the specified time.</Description>
             <IDL_Type>double</IDL_Type>
-            <Units>deg/sec</Units>
-            <Count>1</Count>
+            <Units>deg / s</Units>
+            <Count>100</Count>
         </item>
         <item>
             <EFDB_Name>nasmyth1MotorVelocity</EFDB_Name>
-            <Description>Measured velocity of Nasmyth 1 drive motor.</Description>
+            <Description>Measured velocity of Nasmyth 1 drive motor at 100 Hz beginning at the specified time.</Description>
             <IDL_Type>double</IDL_Type>
-            <Units>deg/sec</Units>
-            <Count>1</Count>
+            <Units>deg / s</Units>
+            <Count>100</Count>
         </item>
         <item>
             <EFDB_Name>nasmyth2MotorVelocity</EFDB_Name>
-            <Description>Measured velocity of Nasmyth 2 drive motor.</Description>
+            <Description>Measured velocity of Nasmyth 2 drive motor at 100 Hz beginning at the specified time.</Description>
             <IDL_Type>double</IDL_Type>
-            <Units>deg/sec</Units>
-            <Count>1</Count>
+            <Units>deg / s</Units>
+            <Count>100</Count>
         </item>
         <item>
             <EFDB_Name>m3Velocity</EFDB_Name>
-            <Description>Measured velocity of M3 rotator drive motor.</Description>
+            <Description>Measured velocity of M3 rotator drive motor at 100 Hz beginning at the specified time.</Description>
             <IDL_Type>double</IDL_Type>
-            <Units>deg/sec</Units>
-            <Count>1</Count>
+            <Units>deg / s</Units>
+            <Count>100</Count>
         </item>
     </SALTelemetry>
     <SALTelemetry>
         <Subsystem>ATMCS</Subsystem>
         <Version>3.8.41</Version>
         <Author/>
-        <EFDB_Topic>ATMCS_mountMotorEncoders</EFDB_Topic>
+        <EFDB_Topic>ATMCS_nasymth_m3_mountMotorEncoders</EFDB_Topic>
+        <Description>Position reported by Nasmyth and M3 mount encoders</Description>
         <item>
-            <EFDB_Name>elevationEncoder</EFDB_Name>
-            <Description>Position reported by elevation drive motor encoder, converted to deg.</Description>
+            <EFDB_Name>cRIO_timestamp</EFDB_Name>
+            <Description>Time for the first sample of each telemetry item in this topic, as measured by the cRIO clock, as unix time.</Description>
             <IDL_Type>double</IDL_Type>
-            <Units>deg</Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>azimuth1Encoder</EFDB_Name>
-            <Description>Position reported by azimuth drive 1 motor encoder, converted to deg.</Description>
-            <IDL_Type>double</IDL_Type>
-            <Units>deg</Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>azimuth2Encoder</EFDB_Name>
-            <Description>Position reported by azimuth drive 2 motor encoder, converted to deg.</Description>
-            <IDL_Type>double</IDL_Type>
-            <Units>deg</Units>
+            <Units>s</Units>
             <Count>1</Count>
         </item>
         <item>
             <EFDB_Name>nasmyth1Encoder</EFDB_Name>
-            <Description>Position reported by Nasmyth rotator 1 drive motor encoder, converted to deg.</Description>
+            <Description>Position reported by Nasmyth rotator 1 drive motor encoder at 100 Hz beginning at the specified time, converted to deg.</Description>
             <IDL_Type>double</IDL_Type>
             <Units>deg</Units>
-            <Count>1</Count>
+            <Count>100</Count>
         </item>
         <item>
             <EFDB_Name>nasmyth2Encoder</EFDB_Name>
-            <Description>Position reported by Nasmyth rotator 2 drive motor encoder, converted to deg.</Description>
+            <Description>Position reported by Nasmyth rotator 2 drive motor encoder at 100 Hz beginning at the specified time, converted to deg.</Description>
             <IDL_Type>double</IDL_Type>
             <Units>deg</Units>
-            <Count>1</Count>
+            <Count>100</Count>
         </item>
         <item>
             <EFDB_Name>m3Encoder</EFDB_Name>
-            <Description>Position reported by M3 rotator drive motor encoder, converted to deg.</Description>
+            <Description>Position reported by M3 rotator drive motor encoder at 100 Hz beginning at the specified time, converted to deg.</Description>
             <IDL_Type>double</IDL_Type>
-            <Units>.</Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>elevationEncoderRaw</EFDB_Name>
-            <Description>Position reported by elevation drive motor encoder.</Description>
-            <IDL_Type>long</IDL_Type>
-            <Units>counts</Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>azimuth1EncoderRaw</EFDB_Name>
-            <Description>Position reported by azimuth drive 1 drive motor encoder.</Description>
-            <IDL_Type>long</IDL_Type>
-            <Units>counts</Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>azimuth2EncoderRaw</EFDB_Name>
-            <Description>Position reported by azimuth drive 2 drive motor encoder.</Description>
-            <IDL_Type>long</IDL_Type>
-            <Units>counts</Units>
-            <Count>1</Count>
+            <Units>deg</Units>
+            <Count>100</Count>
         </item>
         <item>
             <EFDB_Name>nasmyth1EncoderRaw</EFDB_Name>
-            <Description>Position reported by Nasmyth rotator 1 drive motor encoder.</Description>
+            <Description>Position (in encoder counts) reported by Nasmyth rotator 1 drive motor encoder at 100 Hz beginning at the specified time.</Description>
             <IDL_Type>long</IDL_Type>
-            <Units>counts</Units>
-            <Count>1</Count>
+            <Units>dimensionless</Units>
+            <Count>100</Count>
         </item>
         <item>
             <EFDB_Name>nasmyth2EncoderRaw</EFDB_Name>
-            <Description>Position reported by Nasmyth rotator 2 drive motor encoder.</Description>
+            <Description>Position (in encoder counts) reported by Nasmyth rotator 2 drive motor encoder at 100 Hz beginning at the specified time.</Description>
             <IDL_Type>long</IDL_Type>
-            <Units>counts</Units>
-            <Count>1</Count>
+            <Units>dimensionless</Units>
+            <Count>100</Count>
         </item>
         <item>
             <EFDB_Name>m3EncoderRaw</EFDB_Name>
-            <Description>Position reported by M3 rotator drive motor encoder.</Description>
+            <Description>Position (in encoder counts) reported by M3 rotator drive motor encoder at 100 Hz beginning at the specified time.</Description>
             <IDL_Type>long</IDL_Type>
-            <Units>counts</Units>
+            <Units>dimensionless</Units>
+            <Count>100</Count>
+        </item>
+    </SALTelemetry>
+    <SALTelemetry>
+        <Subsystem>ATMCS</Subsystem>
+        <Version>3.8.41</Version>
+        <Author/>
+        <EFDB_Topic>ATMCS_azEl_mountMotorEncoders</EFDB_Topic>
+        <Description>Position reported by elevation and azimuth mount encoders</Description>
+        <item>
+            <EFDB_Name>cRIO_timestamp</EFDB_Name>
+            <Description>Time for the first sample of each telemetry item in this topic, as measured by the cRIO clock, as unix time.</Description>
+            <IDL_Type>double</IDL_Type>
+            <Units>s</Units>
             <Count>1</Count>
+        </item>
+        <item>
+            <EFDB_Name>elevationEncoder</EFDB_Name>
+            <Description>Position reported by elevation drive motor encoder at 100 Hz beginning at the specified time, converted to deg.</Description>
+            <IDL_Type>double</IDL_Type>
+            <Units>deg</Units>
+            <Count>100</Count>
+        </item>
+        <item>
+            <EFDB_Name>azimuth1Encoder</EFDB_Name>
+            <Description>Position reported by azimuth drive 1 motor encoder at 100 Hz beginning at the specified time, converted to deg.</Description>
+            <IDL_Type>double</IDL_Type>
+            <Units>deg</Units>
+            <Count>100</Count>
+        </item>
+        <item>
+            <EFDB_Name>azimuth2Encoder</EFDB_Name>
+            <Description>Position reported by azimuth drive 2 motor encoder at 100 Hz beginning at the specified time, converted to deg.</Description>
+            <IDL_Type>double</IDL_Type>
+            <Units>deg</Units>
+            <Count>100</Count>
+        </item>
+        <item>
+            <EFDB_Name>elevationEncoderRaw</EFDB_Name>
+            <Description>Position (in encoder counts) reported by elevation drive motor encoder at 100 Hz beginning at the specified time.</Description>
+            <IDL_Type>long</IDL_Type>
+            <Units>dimensionless</Units>
+            <Count>100</Count>
+        </item>
+        <item>
+            <EFDB_Name>azimuth1EncoderRaw</EFDB_Name>
+            <Description>Position (in encoder counts) reported by azimuth drive 1 drive motor encoder at 100 Hz beginning at the specified time.</Description>
+            <IDL_Type>long</IDL_Type>
+            <Units>dimensionless</Units>
+            <Count>100</Count>
+        </item>
+        <item>
+            <EFDB_Name>azimuth2EncoderRaw</EFDB_Name>
+            <Description>Position (in encoder counts) reported by azimuth drive 2 drive motor encoder at 100 Hz beginning at the specified time.</Description>
+            <IDL_Type>long</IDL_Type>
+            <Units>dimensionless</Units>
+            <Count>100</Count>
         </item>
     </SALTelemetry>
 </SALTelemetrySet>

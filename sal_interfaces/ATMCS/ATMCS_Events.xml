@@ -13,13 +13,13 @@
         <Author/>
         <EFDB_Topic>ATMCS_logevent_detailedState</EFDB_Topic>
         <Alias>detailedState</Alias>
-        <Explanation>http://sal.lsst.org</Explanation>
+        <Description>The substate or extra states of the CSC.</Description>
         <item>
             <EFDB_Name>detailedState</EFDB_Name>
-            <Description/>
+            <Description>The substate or extra states of the CSC </Description>
             <!-- Enumeration: DetailedState -->
             <IDL_Type>long</IDL_Type>
-            <Units/>
+            <Units>dimensionless</Units>
             <Count>1</Count>
         </item>
     </SALEvent>
@@ -29,12 +29,12 @@
         <Author/>
         <EFDB_Topic>ATMCS_logevent_heartbeat</EFDB_Topic>
         <Alias>heartbeat</Alias>
-        <Explanation>http://sal.lsst.org</Explanation>
+        <Description>The heartbeat event. </Description>
         <item>
             <EFDB_Name>heartbeat</EFDB_Name>
-            <Description/>
+            <Description>Ignore this value.</Description>
             <IDL_Type>boolean</IDL_Type>
-            <Units/>
+            <Units>dimensionless</Units>
             <Count>1</Count>
         </item>
     </SALEvent>
@@ -45,14 +45,13 @@
         <Author/>
         <EFDB_Topic>ATMCS_logevent_atMountState</EFDB_Topic>
         <Alias>atMountState</Alias>
-        <Description>State of tracking.</Description>
-        <Explanation>http://sal.lsst.org</Explanation>
+        <Description>State of tracking</Description>
         <item>
             <EFDB_Name>state</EFDB_Name>
-            <Description/>
+            <Description>Describes if tracking is stopped/started or in the process of stopping</Description>
             <!-- Enumeration: AtMountState -->
             <IDL_Type>long</IDL_Type>
-            <Units/>
+            <Units>dimensionless</Units>
             <Count>1</Count>
         </item>
     </SALEvent>
@@ -63,13 +62,12 @@
         <EFDB_Topic>ATMCS_logevent_m3State</EFDB_Topic>
         <Alias>m3State</Alias>
         <Description>State of M3 rotator.</Description>
-        <Explanation>http://sal.lsst.org</Explanation>
         <item>
             <EFDB_Name>state</EFDB_Name>
-            <Description/>
+            <Description>M3 rotator position/motion state</Description>
             <!-- Enumeration: M3State -->
             <IDL_Type>long</IDL_Type>
-            <Units/>
+            <Units>dimensionless</Units>
             <Count>1</Count>
         </item>
     </SALEvent>
@@ -80,14 +78,35 @@
         <EFDB_Topic>ATMCS_logevent_m3PortSelected</EFDB_Topic>
         <Alias>m3PortSelected</Alias>
         <Description>The port commanded by setInstrumentPort.</Description>
-        <Explanation>http://sal.lsst.org</Explanation>
         <item>
             <EFDB_Name>selected</EFDB_Name>
-            <Description/>
+            <Description>The port that is to receive light from the system, or if stage is in motion</Description>
             <!-- Enumeration: M3ExitPort -->
             <IDL_Type>long</IDL_Type>
-            <Units/>
+            <Units>dimensionless</Units>
             <Count>1</Count>
+        </item>
+    </SALEvent>
+    <SALEvent>
+        <Subsystem>ATMCS</Subsystem>
+        <Version>3.8.41</Version>
+        <Author/>
+        <EFDB_Topic>ATMCS_logevent_positionLimits</EFDB_Topic>
+        <Alias>positionLimits</Alias>
+        <Description>L1 (software) position limits, in order elevation, azimuth, Nasmyth 1, Nasmyth 2 and M3.</Description>
+        <item>
+            <EFDB_Name>minimum</EFDB_Name>
+            <Description>Minimum position limits.</Description>
+            <IDL_Type>float</IDL_Type>
+            <Units>deg</Units>
+            <Count>5</Count>
+        </item>
+        <item>
+            <EFDB_Name>maximum</EFDB_Name>
+            <Description>Maximum position limits.</Description>
+            <IDL_Type>float</IDL_Type>
+            <Units>deg</Units>
+            <Count>5</Count>
         </item>
     </SALEvent>
     <SALEvent>
@@ -96,74 +115,91 @@
         <Author/>
         <EFDB_Topic>ATMCS_logevent_target</EFDB_Topic>
         <Alias>target</Alias>
+        <Description>Commanded position and velocity.</Description>
         <item>
             <EFDB_Name>elevation</EFDB_Name>
-            <Description>Mount elevation angle at the specified time.</Description>
+            <Description>Target mount elevation angle at the specified time.</Description>
             <IDL_Type>double</IDL_Type>
             <Units>deg</Units>
             <Count>1</Count>
         </item>
         <item>
             <EFDB_Name>elevationVelocity</EFDB_Name>
-            <Description>Mount elevation angle velocity at the specified time.</Description>
+            <Description>Target mount elevation angle velocity at the specified time.</Description>
             <IDL_Type>double</IDL_Type>
-            <Units>deg/sec</Units>
+            <Units>deg / s</Units>
             <Count>1</Count>
         </item>
         <item>
             <EFDB_Name>azimuth</EFDB_Name>
-            <Description>Mount azimuth angle at the specified time. The allowed range is 0 to 360.</Description>
+            <Description>Target mount azimuth angle at the specified time. The allowed range is 0 to 360.</Description>
             <IDL_Type>double</IDL_Type>
             <Units>deg</Units>
             <Count>1</Count>
         </item>
         <item>
             <EFDB_Name>azimuthVelocity</EFDB_Name>
-            <Description>Mount azimuth velocity at the specified time.</Description>
+            <Description>Target mount azimuth velocity at the specified time.</Description>
             <IDL_Type>double</IDL_Type>
-            <Units>deg/sec</Units>
+            <Units>deg / s</Units>
             <Count>1</Count>
         </item>
         <item>
             <EFDB_Name>nasmyth1RotatorAngle</EFDB_Name>
-            <Description>Nasmyth 1 rotator angle at the specified time.</Description>
+            <Description>Target Nasmyth 1 rotator angle at the specified time.</Description>
             <IDL_Type>double</IDL_Type>
             <Units>deg</Units>
             <Count>1</Count>
         </item>
         <item>
             <EFDB_Name>nasmyth1RotatorAngleVelocity</EFDB_Name>
-            <Description>Nasmyth 1 rotator angle velocity at the specified time.</Description>
+            <Description>Target Nasmyth 1 rotator angle velocity at the specified time.</Description>
             <IDL_Type>double</IDL_Type>
-            <Units>deg/sec</Units>
+            <Units>deg / s</Units>
             <Count>1</Count>
         </item>
         <item>
             <EFDB_Name>nasmyth2RotatorAngle</EFDB_Name>
-            <Description>Nasmyth 1 rotator angle at the specified time.</Description>
+            <Description>Target Nasmyth 1 rotator angle at the specified time.</Description>
             <IDL_Type>double</IDL_Type>
             <Units>deg</Units>
             <Count>1</Count>
         </item>
         <item>
             <EFDB_Name>nasmyth2RotatorAngleVelocity</EFDB_Name>
-            <Description>Nasmyth 1 rotator angle velocity at the specified time.</Description>
+            <Description>Target Nasmyth 1 rotator angle velocity at the specified time.</Description>
             <IDL_Type>double</IDL_Type>
-            <Units>deg/sec</Units>
+            <Units>deg / s</Units>
             <Count>1</Count>
         </item>
         <item>
             <EFDB_Name>time</EFDB_Name>
             <Description>TAI date at which the commanded positions and velocities apply, as unix time.</Description>
             <IDL_Type>double</IDL_Type>
-            <Units>sec</Units>
+            <Units>s</Units>
             <Count>1</Count>
         </item>
         <item>
             <EFDB_Name>trackId</EFDB_Name>
-            <Description>Target identifier.</Description>
+            <Description>Unique target identifier </Description>
             <IDL_Type>long</IDL_Type>
-            <Units/>
+            <Units>dimensionless</Units>
+            <Count>1</Count>
+        </item>
+        <item>
+            <EFDB_Name>tracksys</EFDB_Name>
+            <Description>Defines tracking coordinate system as sidereal, non-sidereal or local.</Description>
+            <IDL_Type>string</IDL_Type>
+            <IDL_Size>256</IDL_Size>
+            <Units>dimensionless</Units>
+            <Count>1</Count>
+        </item>
+        <item>
+            <EFDB_Name>radesys</EFDB_Name>
+            <Description>Coordinate reference frame of RA/DEC axes. This originates from the pointing component and is used for WCS definition (e.g. FK5 or ICRS).</Description>
+            <IDL_Type>string</IDL_Type>
+            <IDL_Size>256</IDL_Size>
+            <Units>dimensionless</Units>
             <Count>1</Count>
         </item>
     </SALEvent>
@@ -174,13 +210,12 @@
         <Author/>
         <EFDB_Topic>ATMCS_logevent_elevationInPosition</EFDB_Topic>
         <Alias>elevationInPosition</Alias>
-        <Description>Is the elevation axis tracking? In other words, is tracking enabled and has this axis finished slewing?</Description>
-        <Explanation>http://sal.lsst.org</Explanation>
+        <Description>True when the actual and commanded position are within an epsilon defined in the ATMCS configuration files</Description>
         <item>
             <EFDB_Name>inPosition</EFDB_Name>
-            <Description/>
+            <Description>True when the actual and commanded position are within an epsilon defined in the ATMCS configuration files</Description>
             <IDL_Type>boolean</IDL_Type>
-            <Units/>
+            <Units>dimensionless</Units>
             <Count>1</Count>
         </item>
     </SALEvent>
@@ -190,13 +225,12 @@
         <Author/>
         <EFDB_Topic>ATMCS_logevent_azimuthInPosition</EFDB_Topic>
         <Alias>azimuthInPosition</Alias>
-        <Description>Is the azimuth axis tracking? In other words, is tracking enabled and has this axis finished slewing?</Description>
-        <Explanation>http://sal.lsst.org</Explanation>
+        <Description>True when the actual and commanded position are within an epsilon defined in the ATMCS configuration files. </Description>
         <item>
             <EFDB_Name>inPosition</EFDB_Name>
-            <Description/>
+            <Description>True when the actual and commanded position are within an epsilon defined in the ATMCS configuration files. </Description>
             <IDL_Type>boolean</IDL_Type>
-            <Units/>
+            <Units>dimensionless</Units>
             <Count>1</Count>
         </item>
     </SALEvent>
@@ -206,13 +240,12 @@
         <Author/>
         <EFDB_Topic>ATMCS_logevent_nasmyth1RotatorInPosition</EFDB_Topic>
         <Alias>nasmyth1RotatorInPosition</Alias>
-        <Description>Is the Nasmyth 1 rotator tracking? In other words, is tracking enabled and has this axis finished slewing?</Description>
-        <Explanation>http://sal.lsst.org</Explanation>
+        <Description>True when the actual and commanded position are within an epsilon defined in the ATMCS configuration files</Description>
         <item>
             <EFDB_Name>inPosition</EFDB_Name>
-            <Description/>
+            <Description>True when the actual and commanded position are within an epsilon defined in the ATMCS configuration files. </Description>
             <IDL_Type>boolean</IDL_Type>
-            <Units/>
+            <Units>dimensionless</Units>
             <Count>1</Count>
         </item>
     </SALEvent>
@@ -222,13 +255,12 @@
         <Author/>
         <EFDB_Topic>ATMCS_logevent_nasmyth2RotatorInPosition</EFDB_Topic>
         <Alias>nasmyth2RotatorInPosition</Alias>
-        <Description>Is the Nasmyth 2 rotator tracking? In other words, is tracking enabled and has this axis finished slewing?</Description>
-        <Explanation>http://sal.lsst.org</Explanation>
+        <Description>True when the actual and commanded position are within an epsilon defined in the ATMCS configuration files.</Description>
         <item>
             <EFDB_Name>inPosition</EFDB_Name>
-            <Description/>
+            <Description>True when the actual and commanded position are within an epsilon defined in the ATMCS configuration files. </Description>
             <IDL_Type>boolean</IDL_Type>
-            <Units/>
+            <Units>dimensionless</Units>
             <Count>1</Count>
         </item>
     </SALEvent>
@@ -238,13 +270,12 @@
         <Author/>
         <EFDB_Topic>ATMCS_logevent_m3InPosition</EFDB_Topic>
         <Alias>m3InPosition</Alias>
-        <Description>Is the M3 rotator where setInstrumentPort commanded it to go? When the CSC starts up this is false.</Description>
-        <Explanation>http://sal.lsst.org</Explanation>
+        <Description>True if the M3 rotator is where setInstrumentPort commanded it to go. Note that when the CSC starts up this is false.</Description>
         <item>
             <EFDB_Name>inPosition</EFDB_Name>
-            <Description/>
+            <Description>True when the actual and commanded position are within an epsilon defined in the ATMCS configuration files. </Description>
             <IDL_Type>boolean</IDL_Type>
-            <Units/>
+            <Units>dimensionless</Units>
             <Count>1</Count>
         </item>
     </SALEvent>
@@ -254,13 +285,12 @@
         <Author/>
         <EFDB_Topic>ATMCS_logevent_allAxesInPosition</EFDB_Topic>
         <Alias>allAxesInPosition</Alias>
-        <Description>Are all axes in position?</Description>
-        <Explanation>http://sal.lsst.org</Explanation>
+        <Description>True if all axes are in position</Description>
         <item>
             <EFDB_Name>inPosition</EFDB_Name>
-            <Description/>
+            <Description>True if all axes are in position</Description>
             <IDL_Type>boolean</IDL_Type>
-            <Units/>
+            <Units>dimensionless</Units>
             <Count>1</Count>
         </item>
     </SALEvent>
@@ -271,13 +301,12 @@
         <Author/>
         <EFDB_Topic>ATMCS_logevent_azimuthToppleBlockCCW</EFDB_Topic>
         <Alias>azimuthToppleBlockCCW</Alias>
-        <Description>Is the azimuth topple block counter-clockwise switch depressed?</Description>
-        <Explanation>http://sal.lsst.org</Explanation>
+        <Description>True if the azimuth topple block counter-clockwise switch depressed</Description>
         <item>
             <EFDB_Name>active</EFDB_Name>
-            <Description/>
+            <Description>True if switch depressed</Description>
             <IDL_Type>boolean</IDL_Type>
-            <Units/>
+            <Units>dimensionless</Units>
             <Count>1</Count>
         </item>
     </SALEvent>
@@ -287,13 +316,12 @@
         <Author/>
         <EFDB_Topic>ATMCS_logevent_azimuthToppleBlockCW</EFDB_Topic>
         <Alias>azimuthToppleBlockCW</Alias>
-        <Description>Is the azimuth topple block clockwise switch depressed?</Description>
-        <Explanation>http://sal.lsst.org</Explanation>
+        <Description>True if the azimuth topple block clockwise switch depressed</Description>
         <item>
             <EFDB_Name>active</EFDB_Name>
-            <Description/>
+            <Description>True if switch depressed</Description>
             <IDL_Type>boolean</IDL_Type>
-            <Units/>
+            <Units>dimensionless</Units>
             <Count>1</Count>
         </item>
     </SALEvent>
@@ -303,27 +331,26 @@
         <Author/>
         <EFDB_Topic>ATMCS_logevent_m3RotatorDetentSwitches</EFDB_Topic>
         <Alias>m3RotatorDetentSwitches</Alias>
-        <Description>M3 rotator detent switches.</Description>
-        <Explanation>http://sal.lsst.org</Explanation>
+        <Description>M3 rotator detent switches</Description>
         <item>
             <EFDB_Name>nasmyth1Active</EFDB_Name>
-            <Description/>
+            <Description>True if M3 is directing light to Nasmyth 1</Description>
             <IDL_Type>boolean</IDL_Type>
-            <Units/>
+            <Units>dimensionless</Units>
             <Count>1</Count>
         </item>
         <item>
             <EFDB_Name>port3Active</EFDB_Name>
-            <Description/>
+            <Description>True if M3 is directing light to the auxiliary port with no rotator.</Description>
             <IDL_Type>boolean</IDL_Type>
-            <Units/>
+            <Units>dimensionless</Units>
             <Count>1</Count>
         </item>
         <item>
             <EFDB_Name>nasmyth2Active</EFDB_Name>
-            <Description/>
+            <Description>True if M3 is directing light to Nasmyth 2</Description>
             <IDL_Type>boolean</IDL_Type>
-            <Units/>
+            <Units>dimensionless</Units>
             <Count>1</Count>
         </item>
     </SALEvent>
@@ -334,12 +361,12 @@
         <Author/>
         <EFDB_Topic>ATMCS_logevent_elevationLimitSwitchLower</EFDB_Topic>
         <Alias>elevationLimitSwitchLower</Alias>
-        <Explanation/>
+        <Description>State of elevation lower limit switch</Description>
         <item>
             <EFDB_Name>active</EFDB_Name>
-            <Description/>
+            <Description>True if telescope elevation axis is at the lower (horizon) L2 limit</Description>
             <IDL_Type>boolean</IDL_Type>
-            <Units/>
+            <Units>dimensionless</Units>
             <Count>1</Count>
         </item>
     </SALEvent>
@@ -349,12 +376,12 @@
         <Author/>
         <EFDB_Topic>ATMCS_logevent_elevationLimitSwitchUpper</EFDB_Topic>
         <Alias>elevationLimitSwitchUpper</Alias>
-        <Explanation/>
+        <Description>State of elevation upper limit switch</Description>
         <item>
             <EFDB_Name>active</EFDB_Name>
-            <Description/>
+            <Description>True if telescope elevation axis is at the upper (zenith) L2 limit</Description>
             <IDL_Type>boolean</IDL_Type>
-            <Units/>
+            <Units>dimensionless</Units>
             <Count>1</Count>
         </item>
     </SALEvent>
@@ -364,12 +391,12 @@
         <Author/>
         <EFDB_Topic>ATMCS_logevent_azimuthLimitSwitchCCW</EFDB_Topic>
         <Alias>azimuthLimitSwitchCCW</Alias>
-        <Explanation/>
+        <Description>State of azimuth counter-clockwise limit switch</Description>
         <item>
             <EFDB_Name>active</EFDB_Name>
-            <Description/>
+            <Description>True if telescope azimuth axis is at the CCW L2 limit</Description>
             <IDL_Type>boolean</IDL_Type>
-            <Units/>
+            <Units>dimensionless</Units>
             <Count>1</Count>
         </item>
     </SALEvent>
@@ -379,12 +406,12 @@
         <Author/>
         <EFDB_Topic>ATMCS_logevent_azimuthLimitSwitchCW</EFDB_Topic>
         <Alias>azimuthLimitSwitchCW</Alias>
-        <Explanation/>
+        <Description>State of azimuth clockwise limit switch</Description>
         <item>
             <EFDB_Name>active</EFDB_Name>
-            <Description/>
+            <Description>True if telescope azimuth axis is at the CW L2 limit</Description>
             <IDL_Type>boolean</IDL_Type>
-            <Units/>
+            <Units>dimensionless</Units>
             <Count>1</Count>
         </item>
     </SALEvent>
@@ -394,12 +421,12 @@
         <Author/>
         <EFDB_Topic>ATMCS_logevent_nasmyth1LimitSwitchCCW</EFDB_Topic>
         <Alias>nasmyth1LimitSwitchCCW</Alias>
-        <Explanation/>
+        <Description>State of counter-clockwise Nasmyth 1 limit switch</Description>
         <item>
             <EFDB_Name>active</EFDB_Name>
-            <Description/>
+            <Description>True if Nasmyth 1 is at the CCW limit</Description>
             <IDL_Type>boolean</IDL_Type>
-            <Units/>
+            <Units>dimensionless</Units>
             <Count>1</Count>
         </item>
     </SALEvent>
@@ -409,12 +436,12 @@
         <Author/>
         <EFDB_Topic>ATMCS_logevent_nasmyth1LimitSwitchCW</EFDB_Topic>
         <Alias>nasmyth1LimitSwitchCW</Alias>
-        <Explanation/>
+        <Description>State of clockwise Nasmyth 1 limit switch</Description>
         <item>
             <EFDB_Name>active</EFDB_Name>
-            <Description/>
+            <Description>True if Nasmyth 1 is at CW (L2) limit</Description>
             <IDL_Type>boolean</IDL_Type>
-            <Units/>
+            <Units>dimensionless</Units>
             <Count>1</Count>
         </item>
     </SALEvent>
@@ -424,12 +451,12 @@
         <Author/>
         <EFDB_Topic>ATMCS_logevent_nasmyth2LimitSwitchCCW</EFDB_Topic>
         <Alias>nasmyth2LimitSwitchCCW</Alias>
-        <Explanation/>
+        <Description>State of counter-clockwise Nasmyth 2 limit switch</Description>
         <item>
             <EFDB_Name>active</EFDB_Name>
-            <Description/>
+            <Description>True if Nasmyth 2 is at CCW (L2) limit</Description>
             <IDL_Type>boolean</IDL_Type>
-            <Units/>
+            <Units>dimensionless</Units>
             <Count>1</Count>
         </item>
     </SALEvent>
@@ -439,12 +466,12 @@
         <Author/>
         <EFDB_Topic>ATMCS_logevent_nasmyth2LimitSwitchCW</EFDB_Topic>
         <Alias>nasmyth2LimitSwitchCW</Alias>
-        <Explanation/>
+        <Description>State of clockwise Nasmyth 2 limit switch</Description>
         <item>
             <EFDB_Name>active</EFDB_Name>
-            <Description/>
+            <Description>True is Nasmyth 2 is at the CW (L2) limit</Description>
             <IDL_Type>boolean</IDL_Type>
-            <Units/>
+            <Units>dimensionless</Units>
             <Count>1</Count>
         </item>
     </SALEvent>
@@ -454,12 +481,12 @@
         <Author/>
         <EFDB_Topic>ATMCS_logevent_m3RotatorLimitSwitchCCW</EFDB_Topic>
         <Alias>m3RotatorLimitSwitchCCW</Alias>
-        <Explanation/>
+        <Description>State of counter-clockwise M3 limit switch</Description>
         <item>
             <EFDB_Name>active</EFDB_Name>
-            <Description/>
+            <Description>True if M3 rotator is at the CCW (L2) limit</Description>
             <IDL_Type>boolean</IDL_Type>
-            <Units/>
+            <Units>dimensionless</Units>
             <Count>1</Count>
         </item>
     </SALEvent>
@@ -469,12 +496,12 @@
         <Author/>
         <EFDB_Topic>ATMCS_logevent_m3RotatorLimitSwitchCW</EFDB_Topic>
         <Alias>m3RotatorLimitSwitchCW</Alias>
-        <Explanation/>
+        <Description>State of clockwise M3 limit switch</Description>
         <item>
             <EFDB_Name>active</EFDB_Name>
-            <Description/>
+            <Description>True if M3 Rotator is at the CW (L2) limit</Description>
             <IDL_Type>boolean</IDL_Type>
-            <Units/>
+            <Units>dimensionless</Units>
             <Count>1</Count>
         </item>
     </SALEvent>
@@ -485,13 +512,12 @@
         <Author/>
         <EFDB_Topic>ATMCS_logevent_elevationDriveStatus</EFDB_Topic>
         <Alias>elevationDriveStatus</Alias>
-        <Description>Is the elevation drive enabled?</Description>
-        <Explanation>http://sal.lsst.org</Explanation>
+        <Description>True if the elevation drive enabled</Description>
         <item>
             <EFDB_Name>enable</EFDB_Name>
-            <Description/>
+            <Description>True, if state of elevation drive is set to enabled</Description>
             <IDL_Type>boolean</IDL_Type>
-            <Units/>
+            <Units>dimensionless</Units>
             <Count>1</Count>
         </item>
     </SALEvent>
@@ -501,13 +527,12 @@
         <Author/>
         <EFDB_Topic>ATMCS_logevent_azimuthDrive1Status</EFDB_Topic>
         <Alias>azimuthDrive1Status</Alias>
-        <Description>Is altitude drive 1 enabled?</Description>
-        <Explanation>http://sal.lsst.org</Explanation>
+        <Description>True if azimuth drive 1 is enabled</Description>
         <item>
             <EFDB_Name>enable</EFDB_Name>
-            <Description/>
+            <Description>True, if state of elevation drive is set to enabled</Description>
             <IDL_Type>boolean</IDL_Type>
-            <Units/>
+            <Units>dimensionless</Units>
             <Count>1</Count>
         </item>
     </SALEvent>
@@ -517,13 +542,12 @@
         <Author/>
         <EFDB_Topic>ATMCS_logevent_azimuthDrive2Status</EFDB_Topic>
         <Alias>azimuthDrive2Status</Alias>
-        <Description>Is altitude drive 2 enabled?</Description>
-        <Explanation>http://sal.lsst.org</Explanation>
+        <Description>True if azimuth drive 2 enabled</Description>
         <item>
             <EFDB_Name>enable</EFDB_Name>
-            <Description/>
+            <Description>True, if the state of the azimuth drive is enabled</Description>
             <IDL_Type>boolean</IDL_Type>
-            <Units/>
+            <Units>dimensionless</Units>
             <Count>1</Count>
         </item>
     </SALEvent>
@@ -533,13 +557,12 @@
         <Author/>
         <EFDB_Topic>ATMCS_logevent_nasmyth1DriveStatus</EFDB_Topic>
         <Alias>nasmyth1DriveStatus</Alias>
-        <Description>Is the Nasmyth 1 rotator drive enabled?</Description>
-        <Explanation>http://sal.lsst.org</Explanation>
+        <Description>True if the Nasmyth 1 rotator drive is enabled</Description>
         <item>
             <EFDB_Name>enable</EFDB_Name>
-            <Description/>
+            <Description>True if the state of the Nasmyth 1 rotator is enabled</Description>
             <IDL_Type>boolean</IDL_Type>
-            <Units/>
+            <Units>dimensionless</Units>
             <Count>1</Count>
         </item>
     </SALEvent>
@@ -549,13 +572,12 @@
         <Author/>
         <EFDB_Topic>ATMCS_logevent_nasmyth2DriveStatus</EFDB_Topic>
         <Alias>nasmyth2DriveStatus</Alias>
-        <Description>Is the Nasmyth 2 rotator drive enabled?</Description>
-        <Explanation>http://sal.lsst.org</Explanation>
+        <Description>True if the Nasmyth 2 rotator drive is enabled</Description>
         <item>
             <EFDB_Name>enable</EFDB_Name>
-            <Description/>
+            <Description>True if the Nasmyth 2 rotator is enabled</Description>
             <IDL_Type>boolean</IDL_Type>
-            <Units/>
+            <Units>dimensionless</Units>
             <Count>1</Count>
         </item>
     </SALEvent>
@@ -565,13 +587,12 @@
         <Author/>
         <EFDB_Topic>ATMCS_logevent_m3DriveStatus</EFDB_Topic>
         <Alias>m3DriveStatus</Alias>
-        <Description>Is the M3 rotator drive enabled?</Description>
-        <Explanation>http://sal.lsst.org</Explanation>
+        <Description>True if the M3 rotator drive is enabled</Description>
         <item>
             <EFDB_Name>enable</EFDB_Name>
-            <Description/>
+            <Description>True if the M3 rotator drive is enabled</Description>
             <IDL_Type>boolean</IDL_Type>
-            <Units/>
+            <Units>dimensionless</Units>
             <Count>1</Count>
         </item>
     </SALEvent>
@@ -582,12 +603,12 @@
         <Author/>
         <EFDB_Topic>ATMCS_logevent_elevationBrake</EFDB_Topic>
         <Alias>elevationBrake</Alias>
-        <Explanation/>
+        <Description>State of elevation brake</Description>
         <item>
             <EFDB_Name>engaged</EFDB_Name>
-            <Description/>
+            <Description>True if the Elevation Drive Brake is engaged</Description>
             <IDL_Type>boolean</IDL_Type>
-            <Units/>
+            <Units>dimensionless</Units>
             <Count>1</Count>
         </item>
     </SALEvent>
@@ -597,12 +618,12 @@
         <Author/>
         <EFDB_Topic>ATMCS_logevent_azimuthBrake1</EFDB_Topic>
         <Alias>azimuthBrake1</Alias>
-        <Explanation/>
+        <Description>State of azimuth drive 1 brake</Description>
         <item>
             <EFDB_Name>engaged</EFDB_Name>
-            <Description/>
+            <Description>True if the azimuth drive 1 brake is engaged</Description>
             <IDL_Type>boolean</IDL_Type>
-            <Units/>
+            <Units>dimensionless</Units>
             <Count>1</Count>
         </item>
     </SALEvent>
@@ -612,12 +633,12 @@
         <Author/>
         <EFDB_Topic>ATMCS_logevent_azimuthBrake2</EFDB_Topic>
         <Alias>azimuthBrake2</Alias>
-        <Explanation/>
+        <Description>State of azimuth drive 2 brake</Description>
         <item>
             <EFDB_Name>engaged</EFDB_Name>
-            <Description/>
+            <Description>True if the azimuth drive 2 brake is engaged</Description>
             <IDL_Type>boolean</IDL_Type>
-            <Units/>
+            <Units>dimensionless</Units>
             <Count>1</Count>
         </item>
     </SALEvent>
@@ -627,12 +648,12 @@
         <Author/>
         <EFDB_Topic>ATMCS_logevent_nasmyth1Brake</EFDB_Topic>
         <Alias>nasmyth1Brake</Alias>
-        <Explanation/>
+        <Description>State of Nasmyth 1 brake</Description>
         <item>
             <EFDB_Name>engaged</EFDB_Name>
-            <Description/>
+            <Description>True if the Nasmyth1 drive brake is engaged</Description>
             <IDL_Type>boolean</IDL_Type>
-            <Units/>
+            <Units>dimensionless</Units>
             <Count>1</Count>
         </item>
     </SALEvent>
@@ -642,12 +663,12 @@
         <Author/>
         <EFDB_Topic>ATMCS_logevent_nasmyth2Brake</EFDB_Topic>
         <Alias>nasmyth2Brake</Alias>
-        <Explanation/>
+        <Description>State of Nasmyth 2 brake</Description>
         <item>
             <EFDB_Name>engaged</EFDB_Name>
-            <Description/>
+            <Description>True if the Nasmyth drive 2 brake is engaged</Description>
             <IDL_Type>boolean</IDL_Type>
-            <Units/>
+            <Units>dimensionless</Units>
             <Count>1</Count>
         </item>
     </SALEvent>
