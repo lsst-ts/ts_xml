@@ -1,7 +1,8 @@
 pipeline {
     agent any
     environment {
-        container_name = "robot_${BRANCH_NAME}_${BUILD_ID}_${GIT_COMMIT}"
+		branch = BRANCH_NAME.replaceAll('/','-')
+        container_name = "robot_${branch}_${BUILD_ID}_${GIT_COMMIT}"
         VERSION = readFile(env.WORKSPACE+"/VERSION").trim()
     }
 
