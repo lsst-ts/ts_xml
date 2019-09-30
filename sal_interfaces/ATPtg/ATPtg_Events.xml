@@ -17,6 +17,7 @@
 <Enumeration>WarningLevel_none,WarningLevel_minor,WarningLevel_major</Enumeration>
 <Enumeration>DetailedStates_notTracking,DetailedStates_azEl,DetailedStates_openLoop,DetailedStates_guiding</Enumeration>
 <Enumeration>TargetTypes_raDec,TargetTypes_azEl,TargetTypes_planet,TargetTypes_ephem</Enumeration>
+<Enumeration>WrapStrategy_noUnWrap,WrapStrategy_optimize,WrapStrategy_maxTimeOnTarget</Enumeration>
 <SALEvent>
     <Subsystem>ATPtg</Subsystem>
     <Version>3.8.41</Version>
@@ -307,7 +308,7 @@
     </item>
     <item>
         <EFDB_Name>targetType</EFDB_Name>
-        <Description>current, next or prospective?</Description>
+        <Description>raDec, azEl, planet or ephemeris?</Description>
         <IDL_Type>long</IDL_Type>
         <!-- <Enumeration> TargetTypes </Enumeration> -->
         <Units>unitless</Units>
@@ -325,14 +326,14 @@
         <EFDB_Name>ra</EFDB_Name>
         <Description>Target RA in radians</Description>
         <IDL_Type>double</IDL_Type>
-        <Units>hour</Units>
+        <Units>rad</Units>
         <Count>1</Count>
     </item>
     <item>
         <EFDB_Name>declination</EFDB_Name>
         <Description>Target Dec in radians</Description>
         <IDL_Type>double</IDL_Type>
-        <Units>degree</Units>
+        <Units>rad</Units>
         <Count>1</Count>
     </item>
     <item>
@@ -421,14 +422,14 @@
         <EFDB_Name>properMotionRA</EFDB_Name>
         <Description>Target proper motion in RA (units RAsecs/year)</Description>
         <IDL_Type>double</IDL_Type>
-        <Units>arcsec / second</Units>
+        <Units>arcsec / year</Units>
         <Count>1</Count>
     </item>
     <item>
         <EFDB_Name>properMotionDec</EFDB_Name>
         <Description>Target proper motion in Dec (units arcsecs/year)</Description>
         <IDL_Type>double</IDL_Type>
-        <Units>arcsec / second</Units>
+        <Units>arcsec / year</Units>
         <Count>1</Count>
     </item>
     <item>
@@ -523,7 +524,7 @@
         <EFDB_Name>humidity</EFDB_Name>
         <Description>Air relative humidity</Description>
         <IDL_Type>double</IDL_Type>
-        <Units>unitless</Units>
+        <Units>percent</Units>
         <Count>1</Count>
     </item>
 </SALEvent>
@@ -673,7 +674,7 @@
         <EFDB_Name>properMotionRA</EFDB_Name>
         <Description>Target proper motion in RA (units RAsecs/year)</Description>
         <IDL_Type>double</IDL_Type>
-        <Units>arcsec / second</Units>
+        <Units>arcsec / year</Units>
         <Count>1</Count>
     </item>
     <item>
@@ -687,7 +688,7 @@
         <EFDB_Name>parallax</EFDB_Name>
         <Description>Target annual parallax in arcseconds</Description>
         <IDL_Type>double</IDL_Type>
-        <Units>year</Units>
+        <Units>arcsec</Units>
         <Count>1</Count>
     </item>
     <item>
@@ -879,7 +880,7 @@
     </item>
     <item>
         <EFDB_Name>targetType</EFDB_Name>
-        <Description>current, next or prospective?</Description>
+        <Description>raDec, azEl, planet or ephemeris?</Description>
         <IDL_Type>long</IDL_Type>
         <!-- <Enumeration> TargetTypes </Enumeration> -->
         <Units>unitless</Units>
@@ -1114,6 +1115,22 @@
         <Description>Direction of the rotator wrap: cw (1) or ccw (2).</Description>
         <IDL_Type>long</IDL_Type>
         <!-- <Enumeration> Wraps </Enumeration> -->
+        <Units>unitless</Units>
+        <Count>1</Count>
+    </item>
+</SALEvent>
+<SALEvent>
+    <Subsystem>ATPtg</Subsystem>
+    <Version>3.8.41</Version>
+    <Author>aya</Author>
+    <EFDB_Topic>ATPtg_logevent_elLimitWarning</EFDB_Topic>
+    <Alias>elLimitWarning</Alias>
+    <Explanation>http://sal.lsst.org</Explanation>
+    <item>
+        <EFDB_Name>level</EFDB_Name>
+        <Description>Elevation tracking high limit warning</Description>
+        <IDL_Type>long</IDL_Type>
+        <!-- <Enumeration> WarningLevel </Enumeration> -->
         <Units>unitless</Units>
         <Count>1</Count>
     </item>

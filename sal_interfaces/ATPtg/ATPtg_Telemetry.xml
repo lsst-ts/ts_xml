@@ -515,7 +515,7 @@
         <EFDB_Name>jd</EFDB_Name>
         <Description>Julian date in days</Description>
         <IDL_Type>double</IDL_Type>
-        <Units>hour</Units>
+        <Units>day</Units>
         <Count>1</Count>
     </item>
     <item>
@@ -718,6 +718,138 @@
         <Description>Time until current target leaves zenith blind-spot (in minutes)</Description>
         <IDL_Type>double</IDL_Type>
         <Units>min</Units>
+        <Count>1</Count>
+    </item>
+</SALTelemetry>
+<SALTelemetry>
+    <Subsystem>ATPtg</Subsystem>
+    <Version>3.8.41</Version>
+    <Author>pbt</Author>
+    <EFDB_Topic>ATPtg_skyEnvironment</EFDB_Topic>
+    <item>
+        <EFDB_Name>timestamp</EFDB_Name>
+        <Description>Current time as TAI (MJD)</Description>
+        <IDL_Type>double</IDL_Type>
+        <Units>day</Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>sunsetTime</EFDB_Name>
+        <Description>Sunset time (UTC)</Description>
+        <IDL_Type>string</IDL_Type>
+        <Units>hour</Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>timeToSunset</EFDB_Name>
+        <Description>Time to sunset</Description>
+        <IDL_Type>int</IDL_Type>
+        <Units>min</Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>twilightEndTime</EFDB_Name>
+        <Description>Astronomical twilight end time (UTC)</Description>
+        <IDL_Type>string</IDL_Type>
+        <Units>hour</Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>timeToTwilightEnd</EFDB_Name>
+        <Description>Time to Astronomical twilight end</Description>
+        <IDL_Type>int</IDL_Type>
+        <Units>min</Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>twilightBeginTime</EFDB_Name>
+        <Description>Astronomical twilight begin time (UTC)</Description>
+        <IDL_Type>string</IDL_Type>
+        <Units>hour</Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>timeToTwilightBegin</EFDB_Name>
+        <Description>Time to Astronomical twilight begin</Description>
+        <IDL_Type>int</IDL_Type>
+        <Units>min</Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>sunriseTime</EFDB_Name>
+        <Description>Sunrise time (UTC)</Description>
+        <IDL_Type>string</IDL_Type>
+        <Units>hour</Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>timeToSunrise</EFDB_Name>
+        <Description>Time to Sunrise</Description>
+        <IDL_Type>int</IDL_Type>
+        <Units>min</Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>moonriseTime</EFDB_Name>
+        <Description>Moonrise time (UTC)</Description>
+        <IDL_Type>string</IDL_Type>
+        <Units>hour</Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>timeToMoonrise</EFDB_Name>
+        <Description>Time to Moonrise</Description>
+        <IDL_Type>int</IDL_Type>
+        <Units>min</Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>moonsetTime</EFDB_Name>
+        <Description>Moonset time (UTC)</Description>
+        <IDL_Type>string</IDL_Type>
+        <Units>hour</Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>timeToMoonset</EFDB_Name>
+        <Description>Time to Moonset</Description>
+        <IDL_Type>int</IDL_Type>
+        <Units>min</Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>moonPhase</EFDB_Name>
+        <Description>Moon phase (%)</Description>
+        <IDL_Type>double</IDL_Type>
+        <Units>percent</Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>sunAltitude</EFDB_Name>
+        <Description>Altitude of the Sun</Description>
+        <IDL_Type>double</IDL_Type>
+        <Units>deg</Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>moonAltitude</EFDB_Name>
+        <Description>Altitude of the Moon</Description>
+        <IDL_Type>double</IDL_Type>
+        <Units>deg</Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>sunTargetDistance</EFDB_Name>
+        <Description>Distance on the sky between the target and the Sun</Description>
+        <IDL_Type>double</IDL_Type>
+        <Units>deg</Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>moonTargetDistance</EFDB_Name>
+        <Description>Distance on the sky between the target and the Moon</Description>
+        <IDL_Type>double</IDL_Type>
+        <Units>deg</Units>
         <Count>1</Count>
     </item>
 </SALTelemetry>

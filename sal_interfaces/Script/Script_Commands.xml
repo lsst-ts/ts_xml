@@ -22,6 +22,29 @@
         <Units>unitless</Units>
         <Count>1</Count>
     </item>
+    <item>
+        <EFDB_Name>logLevel</EFDB_Name>
+        <Description>Logging level, as a Python logging level: error=40, warning=30, info=20, debug=10, use default=0.</Description>
+        <IDL_Type>int</IDL_Type>
+        <Units>unitless</Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>pauseCheckpoint</EFDB_Name>
+        <Description>Checkpoint(s) at which to pause, as a regular expression. No checkpoints if blank; all checkpoints if ".*".</Description>
+        <IDL_Type>string</IDL_Type>
+        <IDL_Size>1</IDL_Size>
+        <Units>unitless</Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>stopCheckpoint</EFDB_Name>
+        <Description>Checkpoint(s) at which to stop, as a regular expression. No checkpoints if blank; all checkpoints if ".*".</Description>
+        <IDL_Type>string</IDL_Type>
+        <IDL_Size>1</IDL_Size>
+        <Units>unitless</Units>
+        <Count>1</Count>
+    </item>
 </SALCommand>
 <SALCommand>
     <Subsystem>Script</Subsystem>
@@ -74,7 +97,7 @@
     <Description>Set logging level.</Description>
     <item>
         <EFDB_Name>level</EFDB_Name>
-        <Description>Logging level, as a Python logging level: error=40, warning=30, info=20, debug=10.</Description>
+        <Description>Logging level, as a Python logging level: error=40, warning=30, info=20, debug=10. This command is deprecated. Please specify log level as part of the configure command instead.</Description>
         <IDL_Type>int</IDL_Type>
         <Units>unitless</Units>
         <Count>1</Count>
@@ -90,7 +113,7 @@
     <Property></Property>
     <Action></Action>
     <Value></Value>
-    <Description>Set or clear checkpoints at which to pause and stop the script.</Description>
+    <Description>Set or clear checkpoints at which to pause and stop the script. This command is deprecated. Please specify log level as part of the configure command instead.</Description>
     <item>
         <EFDB_Name>pause</EFDB_Name>
         <Description>Checkpoint(s) at which to pause, as a regular expression. No checkpoints if blank; all checkpoints if ".*".</Description>
