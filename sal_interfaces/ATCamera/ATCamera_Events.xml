@@ -60,7 +60,7 @@
         <EFDB_Name>imageIndex</EFDB_Name>
         <Description>The zero based index number for this specific exposure within the sequence</Description>
         <IDL_Type>long</IDL_Type>
-        <Units></Units>
+        <Units>unitless</Units>
         <Count>1</Count>
     </item>
     <item>
@@ -207,7 +207,7 @@
         <EFDB_Name>imageIndex</EFDB_Name>
         <Description>The zero based index number for this specific exposure within the sequence</Description>
         <IDL_Type>long</IDL_Type>
-        <Units></Units>
+        <Units>unitless</Units>
         <Count>1</Count>
     </item>
     <item>
@@ -262,6 +262,34 @@
         <IDL_Type>string</IDL_Type>
         <IDL_Size>64</IDL_Size>
         <Units>unitless</Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>timestampDateObs</EFDB_Name>
+        <Description>The observation date, as computed by CCS (as TAI)</Description>
+        <IDL_Type>double</IDL_Type>
+        <Units>second</Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>timestampDateEnd</EFDB_Name>
+        <Description>The end observation date, as computed by CCS (as TAI)</Description>
+        <IDL_Type>double</IDL_Type>
+        <Units>second</Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>expTime</EFDB_Name>
+        <Description>The exposure time, as computed by CCS</Description>
+        <IDL_Type>double</IDL_Type>
+        <Units>second</Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>darkTime</EFDB_Name>
+        <Description>The dark time, as computed by CCS</Description>
+        <IDL_Type>double</IDL_Type>
+        <Units>second</Units>
         <Count>1</Count>
     </item>
 </SALEvent>
@@ -379,7 +407,7 @@
         <EFDB_Name>imageIndex</EFDB_Name>
         <Description>The zero based index number for this specific exposure within the sequence</Description>
         <IDL_Type>long</IDL_Type>
-        <Units></Units>
+        <Units>unitless</Units>
         <Count>1</Count>
     </item>
     <item>
@@ -494,7 +522,7 @@
         <EFDB_Name>imageIndex</EFDB_Name>
         <Description>The zero based index number for this specific exposure within the sequence</Description>
         <IDL_Type>long</IDL_Type>
-        <Units></Units>
+        <Units>unitless</Units>
         <Count>1</Count>
     </item>
     <item>
@@ -585,7 +613,7 @@
         <EFDB_Name>imageIndex</EFDB_Name>
         <Description>The zero based index number for this specific exposure within the sequence</Description>
         <IDL_Type>long</IDL_Type>
-        <Units></Units>
+        <Units>unitless</Units>
         <Count>1</Count>
     </item>
     <item>
@@ -600,7 +628,7 @@
         <EFDB_Name>ccdType</EFDB_Name>
         <Description>The type of each CCD, this determines segRows, segCols and serCols</Description>
         <IDL_Type>long</IDL_Type>
-        <Units></Units>
+        <Units>unitless</Units>
         <Count>1</Count>
         <Enumeration>E2V,ITL</Enumeration>
     </item>
@@ -803,6 +831,13 @@
         <Count>1</Count>
     </item>
     <item>
+        <EFDB_Name>sequencerChecksum</EFDB_Name>
+        <Description>Sequencer key</Description>
+        <IDL_Type>long</IDL_Type>
+        <Units>unitless</Units>
+        <Count>1</Count>
+    </item>
+    <item>
         <EFDB_Name>daqVersion</EFDB_Name>
         <Description>DAQ version.</Description>
         <IDL_Type>long</IDL_Type>
@@ -820,77 +855,77 @@
         <EFDB_Name>aspic0_af1</EFDB_Name>
         <Description></Description>
         <IDL_Type>long</IDL_Type>
-        <Units></Units>
+        <Units>unitless</Units>
         <Count>1</Count>
     </item>
     <item>
         <EFDB_Name>aspic0_clamp</EFDB_Name>
         <Description>ASPIC0 clamp</Description>
         <IDL_Type>long</IDL_Type>
-        <Units></Units>
+        <Units>unitless</Units>
         <Count>1</Count>
     </item>
     <item>
         <EFDB_Name>aspic0_gain</EFDB_Name>
         <Description></Description>
         <IDL_Type>long</IDL_Type>
-        <Units></Units>
+        <Units>unitless</Units>
         <Count>1</Count>
     </item>
     <item>
         <EFDB_Name>aspic0_rc</EFDB_Name>
         <Description></Description>
         <IDL_Type>long</IDL_Type>
-        <Units></Units>
+        <Units>unitless</Units>
         <Count>1</Count>
     </item>
     <item>
         <EFDB_Name>aspic0_tm</EFDB_Name>
         <Description></Description>
         <IDL_Type>long</IDL_Type>
-        <Units></Units>
+        <Units>unitless</Units>
         <Count>1</Count>
     </item>
     <item>
         <EFDB_Name>aspic1_af1</EFDB_Name>
         <Description></Description>
         <IDL_Type>long</IDL_Type>
-        <Units></Units>
+        <Units>unitless</Units>
         <Count>1</Count>
     </item>
     <item>
         <EFDB_Name>aspic1_clamp</EFDB_Name>
         <Description></Description>
         <IDL_Type>long</IDL_Type>
-        <Units></Units>
+        <Units>unitless</Units>
         <Count>1</Count>
     </item>
     <item>
         <EFDB_Name>aspic1_gain</EFDB_Name>
         <Description></Description>
         <IDL_Type>long</IDL_Type>
-        <Units></Units>
+        <Units>unitless</Units>
         <Count>1</Count>
     </item>
     <item>
         <EFDB_Name>aspic1_rc</EFDB_Name>
         <Description></Description>
         <IDL_Type>long</IDL_Type>
-        <Units></Units>
+        <Units>unitless</Units>
         <Count>1</Count>
     </item>
     <item>
         <EFDB_Name>aspic1_tm</EFDB_Name>
         <Description></Description>
         <IDL_Type>long</IDL_Type>
-        <Units></Units>
+        <Units>unitless</Units>
         <Count>1</Count>
     </item>
     <item>
         <EFDB_Name>bias0_csGate</EFDB_Name>
         <Description></Description>
         <IDL_Type>long</IDL_Type>
-        <Units></Units>
+        <Units>unitless</Units>
         <Count>1</Count>
     </item>
     <item>
@@ -904,7 +939,7 @@
         <EFDB_Name>bias0_gd</EFDB_Name>
         <Description></Description>
         <IDL_Type>long</IDL_Type>
-        <Units></Units>
+        <Units>unitless</Units>
         <Count>1</Count>
     </item>
     <item>
@@ -918,7 +953,7 @@
         <EFDB_Name>bias0_od</EFDB_Name>
         <Description></Description>
         <IDL_Type>long</IDL_Type>
-        <Units></Units>
+        <Units>unitless</Units>
         <Count>1</Count>
     </item>
     <item>
@@ -932,7 +967,7 @@
         <EFDB_Name>bias0_og</EFDB_Name>
         <Description></Description>
         <IDL_Type>long</IDL_Type>
-        <Units></Units>
+        <Units>unitless</Units>
         <Count>1</Count>
     </item>
     <item>
@@ -946,14 +981,14 @@
         <EFDB_Name>bias0_ogSh</EFDB_Name>
         <Description></Description>
         <IDL_Type>long</IDL_Type>
-        <Units></Units>
+        <Units>unitless</Units>
         <Count>1</Count>
     </item>
     <item>
         <EFDB_Name>bias0_rd</EFDB_Name>
         <Description></Description>
         <IDL_Type>long</IDL_Type>
-        <Units></Units>
+        <Units>unitless</Units>
         <Count>1</Count>
     </item>
     <item>
@@ -967,14 +1002,14 @@
         <EFDB_Name>dac_csGate</EFDB_Name>
         <Description></Description>
         <IDL_Type>long</IDL_Type>
-        <Units></Units>
+        <Units>unitless</Units>
         <Count>1</Count>
     </item>
     <item>
         <EFDB_Name>dac_pclkHigh</EFDB_Name>
         <Description></Description>
         <IDL_Type>long</IDL_Type>
-        <Units></Units>
+        <Units>unitless</Units>
         <Count>1</Count>
     </item>
     <item>
@@ -988,14 +1023,14 @@
         <EFDB_Name>dac_pclkHighSh</EFDB_Name>
         <Description></Description>
         <IDL_Type>long</IDL_Type>
-        <Units></Units>
+        <Units>unitless</Units>
         <Count>1</Count>
     </item>
     <item>
         <EFDB_Name>dac_pclkLow</EFDB_Name>
         <Description></Description>
         <IDL_Type>long</IDL_Type>
-        <Units></Units>
+        <Units>unitless</Units>
         <Count>1</Count>
     </item>
     <item>
@@ -1009,14 +1044,14 @@
         <EFDB_Name>dac_pclkLowSh</EFDB_Name>
         <Description></Description>
         <IDL_Type>long</IDL_Type>
-        <Units></Units>
+        <Units>unitless</Units>
         <Count>1</Count>
     </item>
     <item>
         <EFDB_Name>dac_rgHigh</EFDB_Name>
         <Description></Description>
         <IDL_Type>long</IDL_Type>
-        <Units></Units>
+        <Units>unitless</Units>
         <Count>1</Count>
     </item>
     <item>
@@ -1030,14 +1065,14 @@
         <EFDB_Name>dac_rgHighSh</EFDB_Name>
         <Description></Description>
         <IDL_Type>long</IDL_Type>
-        <Units></Units>
+        <Units>unitless</Units>
         <Count>1</Count>
     </item>
     <item>
         <EFDB_Name>dac_rgLow</EFDB_Name>
         <Description></Description>
         <IDL_Type>long</IDL_Type>
-        <Units></Units>
+        <Units>unitless</Units>
         <Count>1</Count>
     </item>
     <item>
@@ -1051,14 +1086,14 @@
         <EFDB_Name>dac_rgLowSh</EFDB_Name>
         <Description></Description>
         <IDL_Type>long</IDL_Type>
-        <Units></Units>
+        <Units>unitless</Units>
         <Count>1</Count>
     </item>
     <item>
         <EFDB_Name>dac_sclkHigh</EFDB_Name>
         <Description></Description>
         <IDL_Type>long</IDL_Type>
-        <Units></Units>
+        <Units>unitless</Units>
         <Count>1</Count>
     </item>
     <item>
@@ -1072,28 +1107,76 @@
         <EFDB_Name>dac_sclkHighSh</EFDB_Name>
         <Description></Description>
         <IDL_Type>long</IDL_Type>
-        <Units></Units>
+        <Units>unitless</Units>
         <Count>1</Count>
     </item>
     <item>
         <EFDB_Name>dac_sclkLow</EFDB_Name>
         <Description></Description>
         <IDL_Type>long</IDL_Type>
-        <Units></Units>
+        <Units>unitless</Units>
         <Count>1</Count>
     </item>
     <item>
         <EFDB_Name>dac_sclkLowP</EFDB_Name>
         <Description></Description>
         <IDL_Type>long</IDL_Type>
-        <Units></Units>
+        <Units>volt</Units>
         <Count>1</Count>
     </item>
     <item>
         <EFDB_Name>dac_sclkLowSh</EFDB_Name>
         <Description></Description>
         <IDL_Type>long</IDL_Type>
-        <Units></Units>
+        <Units>unitless</Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>ccdManufacturer</EFDB_Name>
+        <Description>CCD Manufacturer</Description>
+        <IDL_Type>string</IDL_Type>
+        <IDL_Size>8</IDL_Size>
+        <Units>unitless</Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>ccdType</EFDB_Name>
+        <Description>CCD Type</Description>
+        <IDL_Type>string</IDL_Type>
+        <IDL_Size>16</IDL_Size>
+        <Units>unitless</Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>ccdSerialNumber</EFDB_Name>
+        <Description>CCD Serial Number</Description>
+        <IDL_Type>string</IDL_Type>
+        <IDL_Size>16</IDL_Size>
+        <Units>unitless</Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>ccdName</EFDB_Name>
+        <Description>LSST assigned CCD name</Description>
+        <IDL_Type>string</IDL_Type>
+        <IDL_Size>16</IDL_Size>
+        <Units>unitless</Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>rebName</EFDB_Name>
+        <Description>LSST assigned REB name</Description>
+        <IDL_Type>string</IDL_Type>
+        <IDL_Size>16</IDL_Size>
+        <Units>unitless</Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>rebSerialNumber</EFDB_Name>
+        <Description>REB serial number</Description>
+        <IDL_Type>string</IDL_Type>
+        <IDL_Size>16</IDL_Size>
+        <Units>unitless</Units>
         <Count>1</Count>
     </item>
 </SALEvent>
@@ -1110,7 +1193,7 @@
         <EFDB_Name>mcmVersion</EFDB_Name>
         <Description>The version of the MCM software</Description>
         <IDL_Type>string</IDL_Type>
-        <Units></Units>
+        <Units>unitless</Units>
         <IDL_Size>32</IDL_Size>
         <Count>1</Count>
     </item>
@@ -1118,7 +1201,7 @@
         <EFDB_Name>ocsbridgeVersion</EFDB_Name>
         <Description>The version of the OCS Bridge software</Description>
         <IDL_Type>string</IDL_Type>
-        <Units></Units>
+        <Units>unitless</Units>
         <IDL_Size>32</IDL_Size>
         <Count>1</Count>
     </item>
@@ -1126,7 +1209,7 @@
         <EFDB_Name>rebPowerVersion</EFDB_Name>
         <Description>The version of the REB power software</Description>
         <IDL_Type>string</IDL_Type>
-        <Units></Units>
+        <Units>unitless</Units>
         <IDL_Size>32</IDL_Size>
         <Count>1</Count>
     </item>
@@ -1134,7 +1217,7 @@
         <EFDB_Name>rebVersion</EFDB_Name>
         <Description>The version of the REB software</Description>
         <IDL_Type>string</IDL_Type>
-        <Units></Units>
+        <Units>unitless</Units>
         <IDL_Size>32</IDL_Size>
         <Count>1</Count>
     </item>
@@ -1142,7 +1225,7 @@
         <EFDB_Name>pduVersion</EFDB_Name>
         <Description>The version of the PDU software</Description>
         <IDL_Type>string</IDL_Type>
-        <Units></Units>
+        <Units>unitless</Units>
         <IDL_Size>32</IDL_Size>
         <Count>1</Count>
     </item>
@@ -1150,7 +1233,7 @@
         <EFDB_Name>bonnShutterVersion</EFDB_Name>
         <Description>The version of the Bonn Shutter software</Description>
         <IDL_Type>string</IDL_Type>
-        <Units></Units>
+        <Units>unitless</Units>
         <IDL_Size>32</IDL_Size>
         <Count>1</Count>
     </item>
@@ -1158,7 +1241,7 @@
         <EFDB_Name>vacuumVersion</EFDB_Name>
         <Description>The version of the Vacuum software</Description>
         <IDL_Type>string</IDL_Type>
-        <Units></Units>
+        <Units>unitless</Units>
         <IDL_Size>32</IDL_Size>
         <Count>1</Count>
     </item>
@@ -1166,7 +1249,7 @@
         <EFDB_Name>wrebFirmwareVersion</EFDB_Name>
         <Description>The version of the WREB Firmware</Description>
         <IDL_Type>string</IDL_Type>
-        <Units></Units>
+        <Units>unitless</Units>
         <IDL_Size>32</IDL_Size>
         <Count>1</Count>
     </item>
