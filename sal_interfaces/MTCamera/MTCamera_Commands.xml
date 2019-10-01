@@ -15,9 +15,9 @@
     <Explanation>http://project.lsst.org/ts/sal_objects/help</Explanation>
     <item>
         <EFDB_Name>nRows</EFDB_Name>
-        <Description></Description>
+        <Description>Number of rows to discard</Description>
         <IDL_Type>long</IDL_Type>
-        <Units></Units>
+        <Units>unitless</Units>
         <Count>1</Count>
     </item>
 </SALCommand>
@@ -34,43 +34,43 @@
     <Explanation>http://project.lsst.org/ts/sal_objects/help</Explanation>
     <item>
         <EFDB_Name>imageSequenceName</EFDB_Name>
-        <Description></Description>
+        <Description>Value for the GROUPID image header.</Description>
         <IDL_Type>string</IDL_Type>
         <IDL_Size>256</IDL_Size>
-        <Units></Units>
+        <Units>unitless</Units>
         <Count>1</Count>
     </item>
     <item>
         <EFDB_Name>shutter</EFDB_Name>
-        <Description></Description>
+        <Description>True if the shutter should be opened/closed</Description>
         <IDL_Type>boolean</IDL_Type>
-        <Units></Units>
+        <Units>unitless</Units>
         <Count>1</Count>
     </item>
     <item>
         <EFDB_Name>science</EFDB_Name>
-        <Description></Description>
+        <Description>True if science sensors should be read out</Description>
         <IDL_Type>boolean</IDL_Type>
-        <Units></Units>
+        <Units>unitless</Units>
         <Count>1</Count>
     </item>
     <item>
         <EFDB_Name>guide</EFDB_Name>
-        <Description></Description>
+        <Description>True if guide sensors should be read out</Description>
         <IDL_Type>boolean</IDL_Type>
-        <Units></Units>
+        <Units>unitless</Units>
         <Count>1</Count>
     </item>
     <item>
         <EFDB_Name>wfs</EFDB_Name>
-        <Description></Description>
+        <Description>True if wavefront sensors should be read out</Description>
         <IDL_Type>boolean</IDL_Type>
-        <Units></Units>
+        <Units>unitless</Units>
         <Count>1</Count>
     </item>
     <item>
         <EFDB_Name>timeout</EFDB_Name>
-        <Description></Description>
+        <Description>Timeout after which imaging will be abandoned if no endImage command received</Description>
         <IDL_Type>double</IDL_Type>
         <Units>second</Units>
         <Count>1</Count>
@@ -89,9 +89,9 @@
     <Explanation>http://project.lsst.org/ts/sal_objects/help</Explanation>
     <item>
         <EFDB_Name>value</EFDB_Name>
-        <Description></Description>
+        <Description>Unused</Description>
         <IDL_Type>boolean</IDL_Type>
-        <Units></Units>
+        <Units>unitless</Units>
         <Count>1</Count>
     </item>
 </SALCommand>
@@ -108,10 +108,10 @@
     <Explanation>http://project.lsst.org/ts/sal_objects/help</Explanation>
     <item>
         <EFDB_Name>roiSpec</EFDB_Name>
-        <Description></Description>
+        <Description>TBD specification for region of interest</Description>
         <IDL_Type>string</IDL_Type>
         <IDL_Size>256</IDL_Size>
-        <Units></Units>
+        <Units>unitless</Units>
         <Count>1</Count>
     </item>
 </SALCommand>
@@ -128,9 +128,9 @@
     <Explanation>http://project.lsst.org/ts/sal_objects/help</Explanation>
     <item>
         <EFDB_Name>value</EFDB_Name>
-        <Description></Description>
+        <Description>Unused</Description>
         <IDL_Type>boolean</IDL_Type>
-        <Units></Units>
+        <Units>unitless</Units>
         <Count>1</Count>
     </item>
 </SALCommand>
@@ -147,9 +147,9 @@
     <Explanation>http://project.lsst.org/ts/sal_objects/help</Explanation>
     <item>
         <EFDB_Name>deltaT</EFDB_Name>
-        <Description></Description>
+        <Description>Estimate of time period before takeImages will be issued</Description>
         <IDL_Type>double</IDL_Type>
-        <Units></Units>
+        <Units>second</Units>
         <Count>1</Count>
     </item>
 </SALCommand>
@@ -166,29 +166,9 @@
     <Explanation>http://project.lsst.org/ts/sal_objects/help</Explanation>
     <item>
         <EFDB_Name>value</EFDB_Name>
-        <Description></Description>
+        <Description>Unused</Description>
         <IDL_Type>boolean</IDL_Type>
-        <Units></Units>
-        <Count>1</Count>
-    </item>
-</SALCommand>
-<SALCommand>
-    <Subsystem>MTCamera</Subsystem>
-    <Version>3.7.1</Version>
-    <Author></Author>
-    <EFDB_Topic>MTCamera_command_setFilter</EFDB_Topic>
-    <Alias>setFilter</Alias>
-    <Device></Device>
-    <Property></Property>
-    <Action></Action>
-    <Value></Value>
-    <Explanation>http://project.lsst.org/ts/sal_objects/help</Explanation>
-    <item>
-        <EFDB_Name>name</EFDB_Name>
-        <Description></Description>
-        <IDL_Type>string</IDL_Type>
-        <IDL_Size>256</IDL_Size>
-        <Units></Units>
+        <Units>unitless</Units>
         <Count>1</Count>
     </item>
 </SALCommand>
@@ -205,9 +185,9 @@
     <Explanation>http://project.lsst.org/ts/sal_objects/help</Explanation>
     <item>
         <EFDB_Name>nClears</EFDB_Name>
-        <Description></Description>
+        <Description>Number of consecutive clear operations to perform</Description>
         <IDL_Type>long</IDL_Type>
-        <Units></Units>
+        <Units>unitless</Units>
         <Count>1</Count>
     </item>
 </SALCommand>
@@ -224,52 +204,60 @@
     <Explanation>http://project.lsst.org/ts/sal_objects/help</Explanation>
     <item>
         <EFDB_Name>numImages</EFDB_Name>
-        <Description></Description>
+        <Description>Number of consecutive images to take</Description>
         <IDL_Type>long</IDL_Type>
-        <Units></Units>
+        <Units>unitless</Units>
         <Count>1</Count>
     </item>
     <item>
         <EFDB_Name>expTime</EFDB_Name>
-        <Description></Description>
+        <Description>Exposure time</Description>
         <IDL_Type>double</IDL_Type>
         <Units>second</Units>
         <Count>1</Count>
     </item>
     <item>
         <EFDB_Name>shutter</EFDB_Name>
-        <Description></Description>
+        <Description>True if the shutter should be opened/closed</Description>
         <IDL_Type>boolean</IDL_Type>
-        <Units></Units>
+        <Units>unitless</Units>
         <Count>1</Count>
     </item>
     <item>
         <EFDB_Name>science</EFDB_Name>
-        <Description></Description>
+        <Description>True if science sensors should be read out</Description>
         <IDL_Type>boolean</IDL_Type>
-        <Units></Units>
+        <Units>unitless</Units>
         <Count>1</Count>
     </item>
     <item>
         <EFDB_Name>guide</EFDB_Name>
-        <Description></Description>
+        <Description>True if guide sensors should be read out</Description>
         <IDL_Type>boolean</IDL_Type>
-        <Units></Units>
+        <Units>unitless</Units>
         <Count>1</Count>
     </item>
     <item>
         <EFDB_Name>wfs</EFDB_Name>
-        <Description></Description>
+        <Description>True if wavefront sensors should be read out</Description>
         <IDL_Type>boolean</IDL_Type>
-        <Units></Units>
+        <Units>unitless</Units>
         <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>imageSequenceName</EFDB_Name>
-        <Description></Description>
+        <EFDB_Name>imageType</EFDB_Name>
+        <Description>Image type (a.k.a. IMGTYPE) (e.g. e.g. BIAS, DARK, FLAT, FE55, XTALK, CCOB, SPOT...)</Description>
         <IDL_Type>string</IDL_Type>
         <IDL_Size>256</IDL_Size>
-        <Units></Units>
+        <Units>unitless</Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>groupId</EFDB_Name>
+        <Description>Image groupId. Used to fill in FITS GROUPID header</Description>
+        <IDL_Type>string</IDL_Type>
+        <IDL_Size>256</IDL_Size>
+        <Units>unitless</Units>
         <Count>1</Count>
     </item>
 </SALCommand>
