@@ -1,143 +1,137 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-stylesheet type="text/xsl" href="http://lsst-sal.tuc.noao.edu/schema/SALEventSet.xsl"?>
-<SALEventSet xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:noNamespaceSchemaLocation="http://lsst-sal.tuc.noao.edu/schema/SALEventSet.xsd">
-<Enumeration>DetailedState_DisabledState,DetailedState_EnabledState,DetailedState_FaultState,DetailedState_OfflineState,DetailedState_StandbyState,DetailedState_NotImagingState,DetailedState_ImagingState</Enumeration>
-
-<SALEvent>
-    <Subsystem>FiberSpectrograph</Subsystem>
-    <Version>3.7.1</Version>
-    <Author></Author>
-    <EFDB_Topic>FiberSpectrograph_logevent_largeFileObjectAvailable</EFDB_Topic>
-    <Alias>largeFileObjectAvailable</Alias>
-    <Description>Spectrum fits file is publish as LFOA event</Description>
-    <item>
-        <EFDB_Name>url</EFDB_Name>
-        <Description>A Uniform Resource Locator which links to a Large File Object either for ingest into the EFD Large File Annex, or to announce the successful copy of same to the EFD Large File Annex.Protocols are those supported by the cURL library.</Description>
-        <IDL_Type>string</IDL_Type>
-        <IDL_Size>256</IDL_Size>
-        <Units>unitless</Units>
-        <Count>1</Count>
-    </item>
-    <item>
-        <EFDB_Name>generator</EFDB_Name>
-        <Description>Name of the package which generated the file being announced</Description>
-        <IDL_Type>string</IDL_Type>
-        <IDL_Size>256</IDL_Size>
-        <Units>unitless</Units>
-        <Count>1</Count>
-    </item>
-    <item>
-        <EFDB_Name>version</EFDB_Name>
-        <Description>A dotted x.y version number denoting the file format revision</Description>
-        <IDL_Type>float</IDL_Type>
-        <Units>unitless</Units>
-        <Count>1</Count>
-    </item>
-    <item>
-        <EFDB_Name>byteSize</EFDB_Name>
-        <Description>Size of file in bytes</Description>
-        <IDL_Type>long</IDL_Type>
-        <Units>unitless</Units>
-        <Count>1</Count>
-    </item>
-    <item>
-        <EFDB_Name>checkSum</EFDB_Name>
-        <Description>Hexadecimal character string holding the checksum of the file</Description>
-        <IDL_Type>string</IDL_Type>
-        <IDL_Size>256</IDL_Size>
-        <Units>unitless</Units>
-        <Count>1</Count>
-    </item>
-    <item>
-        <EFDB_Name>mimeType</EFDB_Name>
-        <Description>Mime Type code for the file</Description>
-        <IDL_Type>string</IDL_Type>
-        <IDL_Size>256</IDL_Size>
-        <Units>unitless</Units>
-        <Count>1</Count>
-    </item>
-    <item>
-        <EFDB_Name>id</EFDB_Name>
-        <Description>A generic identifier field</Description>
-        <IDL_Type>string</IDL_Type>
-        <IDL_Size>256</IDL_Size>
-        <Units>unitless</Units>
-        <Count>1</Count>
-    </item>
-</SALEvent>
-<SALEvent>
-    <Subsystem>FiberSpectrograph</Subsystem>
-    <Version>3.7.1</Version>
-    <Author></Author>
-    <EFDB_Topic>FiberSpectrograph_logevent_detailedState</EFDB_Topic>
-    <Alias>detailedState</Alias>
-    <Description>Provides more information on what is being done in Enabled state.</Description>
-            <item>
-                <EFDB_Name>detailedState</EFDB_Name>
-                <Description>An enumeration indicating the FiberSpectrograph detailed state. See the DetailedStateValue enumeration defined in the Typedefs package.</Description>
-                <!-- Enumeration: DetailedState -->
-                <IDL_Type>long</IDL_Type>
-                <Units>unitless</Units>
-                <Count>1</Count>
-            </item>
-</SALEvent>
-<SALEvent>
-    <Subsystem>FiberSpectrograph</Subsystem>
-    <Version>3.7.1</Version>
-    <Author></Author>
-    <EFDB_Topic>FiberSpectrograph_logevent_timeout</EFDB_Topic>
-    <Alias>timeout</Alias>
-    <Description>Timeout event.</Description>
-    <item>
-        <EFDB_Name>timeout</EFDB_Name>
-        <Description>Boolean to indicate if it has timed out.</Description>
-        <IDL_Type>boolean</IDL_Type>
-        <Units>unitless</Units>
-        <Count>1</Count>
-    </item>
-</SALEvent>
-<SALEvent>
-    <Subsystem>FiberSpectrograph</Subsystem>
-    <Version>3.7.1</Version>
-    <Author></Author>
-    <EFDB_Topic>FiberSpectrograph_logevent_rejectedCommand</EFDB_Topic>
-    <Alias>rejectedCommand</Alias>
-    <Description>Command is not accepted at the current state, or parameter specified in the command are invalid or out of range</Description>
-    <item>
-        <EFDB_Name>commandValue</EFDB_Name>
-        <Description>command that was rejected</Description>
-        <IDL_Type>unsigned short</IDL_Type>
-        <Units>unitless</Units>
-        <Count>1</Count>
-    </item>
-    <item>
-        <EFDB_Name>detailedState</EFDB_Name>
-        <Description>The current state that the control system is in</Description>
-        <IDL_Type>unsigned short</IDL_Type>
-        <Units>unitless</Units>
-        <Count>1</Count>
-    </item>
-    <item>
-        <EFDB_Name>timestamp</EFDB_Name>
-        <Description>Timestamp when the command was rejected</Description>
-        <IDL_Type>double</IDL_Type>
-        <Units>unitless</Units>
-        <Count>1</Count>
-    </item>
-</SALEvent>
-<SALEvent>
-    <Subsystem>FiberSpectrograph</Subsystem>
-    <Version>3.7.1</Version>
-    <Author></Author>
-    <EFDB_Topic>FiberSpectrograph_logevent_heartbeat</EFDB_Topic>
-    <Alias>heartbeat</Alias>
-    <Description>Standard event to indicate if the system is up or not</Description>
-    <item>
-        <EFDB_Name>heartbeat</EFDB_Name>
-        <Description>Standard event to indicate if the system is up or not</Description>
-        <IDL_Type>boolean</IDL_Type>
-        <Units>unitless</Units>
-        <Count>1</Count>
-    </item>
-</SALEvent></SALEventSet>
+<SALEventSet xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://lsst-sal.tuc.noao.edu/schema/SALEventSet.xsd">
+    <Enumeration>ExposureState_Integrating,ExposureState_Done,ExposureState_Cancelled,ExposureState_Timedout,ExposureState_Failed</Enumeration>
+    <SALEvent>
+        <Subsystem>FiberSpectrograph</Subsystem>
+        <Version>3.7.1</Version>
+        <Author/>
+        <EFDB_Topic>FiberSpectrograph_logevent_heartbeat</EFDB_Topic>
+        <Alias>heartbeat</Alias>
+        <Explanation>A standard event but missing from SALGenerics.xml.</Explanation>
+        <item>
+            <EFDB_Name>heartbeat</EFDB_Name>
+            <Description>This field is ignored.</Description>
+            <IDL_Type>boolean</IDL_Type>
+            <Units>unitless</Units>
+            <Count>1</Count>
+        </item>
+    </SALEvent>
+    <SALEvent>
+        <Subsystem>FiberSpectrograph</Subsystem>
+        <Version>3.7.1</Version>
+        <Author/>
+        <EFDB_Topic>FiberSpectrograph_logevent_largeFileObjectAvailable</EFDB_Topic>
+        <Alias>largeFileObjectAvailable</Alias>
+        <Description>Spectrum fits file is publish as LFOA event</Description>
+        <item>
+            <EFDB_Name>url</EFDB_Name>
+            <Description>A Uniform Resource Locator which links to a Large File Object either for ingest into the EFD Large File Annex, or to announce the successful copy of same to the EFD Large File Annex.Protocols are those supported by the cURL library.</Description>
+            <IDL_Type>string</IDL_Type>
+            <IDL_Size>256</IDL_Size>
+            <Units>unitless</Units>
+            <Count>1</Count>
+        </item>
+        <item>
+            <EFDB_Name>generator</EFDB_Name>
+            <Description>Name of the package which generated the file being announced</Description>
+            <IDL_Type>string</IDL_Type>
+            <IDL_Size>256</IDL_Size>
+            <Units>unitless</Units>
+            <Count>1</Count>
+        </item>
+        <item>
+            <EFDB_Name>version</EFDB_Name>
+            <Description>A dotted x.y version number denoting the file format revision</Description>
+            <IDL_Type>float</IDL_Type>
+            <Units>unitless</Units>
+            <Count>1</Count>
+        </item>
+        <item>
+            <EFDB_Name>byteSize</EFDB_Name>
+            <Description>Size of file in bytes</Description>
+            <IDL_Type>long</IDL_Type>
+            <Units>unitless</Units>
+            <Count>1</Count>
+        </item>
+        <item>
+            <EFDB_Name>checkSum</EFDB_Name>
+            <Description>Hexadecimal character string holding the checksum of the file</Description>
+            <IDL_Type>string</IDL_Type>
+            <IDL_Size>256</IDL_Size>
+            <Units>unitless</Units>
+            <Count>1</Count>
+        </item>
+        <item>
+            <EFDB_Name>mimeType</EFDB_Name>
+            <Description>Mime Type code for the file</Description>
+            <IDL_Type>string</IDL_Type>
+            <IDL_Size>256</IDL_Size>
+            <Units>unitless</Units>
+            <Count>1</Count>
+        </item>
+        <item>
+            <EFDB_Name>id</EFDB_Name>
+            <Description>A generic identifier field</Description>
+            <IDL_Type>string</IDL_Type>
+            <IDL_Size>256</IDL_Size>
+            <Units>unitless</Units>
+            <Count>1</Count>
+        </item>
+    </SALEvent>
+    <SALEvent>
+        <Subsystem>FiberSpectrograph</Subsystem>
+        <Version>3.7.1</Version>
+        <Author/>
+        <EFDB_Topic>FiberSpectrograph_logevent_exposureState</EFDB_Topic>
+        <Alias>exposureState</Alias>
+        <Description>Current state of the active exposure.</Description>
+        <item>
+            <EFDB_Name>status</EFDB_Name>
+            <Description>The state of the current exposure.</Description>
+            <!-- Enumeration: ExposureState -->
+            <IDL_Type>long</IDL_Type>
+            <Units>unitless</Units>
+            <Count>1</Count>
+        </item>
+    </SALEvent>
+    <SALEvent>
+        <Subsystem>FiberSpectrograph</Subsystem>
+        <Version>3.7.1</Version>
+        <Author/>
+        <EFDB_Topic>FiberSpectrograph_logevent_deviceInfo</EFDB_Topic>
+        <Alias>deviceInfo</Alias>
+        <Description>Information about the spectrograph.</Description>
+        <item>
+            <EFDB_Name>npixels</EFDB_Name>
+            <Description>The number of pixels in the spectrograph.</Description>
+            <IDL_Type>long</IDL_Type>
+            <Units>unitless</Units>
+            <Count>1</Count>
+        </item>
+        <item>
+            <EFDB_Name>fpgaVersion</EFDB_Name>
+            <Description>The FPGA software version.</Description>
+            <IDL_Type>string</IDL_Type>
+            <IDL_Size>16</IDL_Size>
+            <Units>unitless</Units>
+            <Count>1</Count>
+        </item>
+        <item>
+            <EFDB_Name>firmwareVersion</EFDB_Name>
+            <Description>The microcontroller software version.</Description>
+            <IDL_Type>string</IDL_Type>
+            <IDL_Size>16</IDL_Size>
+            <Units>unitless</Units>
+            <Count>1</Count>
+        </item>
+        <item>
+            <EFDB_Name>libraryVersion</EFDB_Name>
+            <Description>The AvaSpec Library software version.</Description>
+            <IDL_Type>string</IDL_Type>
+            <IDL_Size>16</IDL_Size>
+            <Units>unitless</Units>
+            <Count>1</Count>
+        </item>
+    </SALEvent>
+</SALEventSet>

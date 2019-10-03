@@ -12,7 +12,6 @@
         <Action/>
         <Value/>
         <Description>Enable tracking. Once you issue this command you must call trackTarget at regular intervals until you are done tracking, at which point call stopTracking.</Description>
-        <Explanation>http://sal.lsst.org</Explanation>
         <item>
             <EFDB_Name>value</EFDB_Name>
             <Description>Attribute required by the SAL API, but is unused.</Description>
@@ -32,7 +31,6 @@
         <Action/>
         <Value/>
         <Description>Specify position, velocity and time (PVT) vector for all axes except M3. This command returns immediately.</Description>
-        <Explanation>http://sal.lsst.org</Explanation>
         <item>
             <EFDB_Name>azimuth</EFDB_Name>
             <Description>Mount azimuth angle at the specified time. The allowed range is the software limits (L1), approximately -270 to 270.</Description>
@@ -63,7 +61,7 @@
         </item>
         <item>
             <EFDB_Name>nasmyth1RotatorAngle</EFDB_Name>
-	    <Description>Nasmyth 1 rotator angle at the specified time. The allowed range is the software limits (L1), approximately -170 to 170. Outside this range the velocity will be severly limited. Software position limits are -175 to 175. </Description>
+            <Description>Nasmyth 1 rotator angle at the specified time. The allowed range is the software limits (L1), approximately -170 to 170. Outside this range the velocity will be severly limited. Software position limits are -175 to 175. </Description>
             <IDL_Type>double</IDL_Type>
             <Units>deg</Units>
             <Count>1</Count>
@@ -103,7 +101,7 @@
             <Units>dimensionless</Units>
             <Count>1</Count>
         </item>
-            <item>
+        <item>
             <EFDB_Name>tracksys</EFDB_Name>
             <Description>Defines tracking coordinate system as sidereal, non-sidereal or local.</Description>
             <IDL_Type>string</IDL_Type>
@@ -113,13 +111,12 @@
         </item>
         <item>
             <EFDB_Name>radesys</EFDB_Name>
-	        <Description>Coordinate reference frame of RA/DEC axes. This originates from the pointing component and is used for WCS definition (e.g. FK5 or ICRS).</Description>
+            <Description>Coordinate reference frame of RA/DEC axes. This originates from the pointing component and is used for WCS definition (e.g. FK5 or ICRS).</Description>
             <IDL_Type>string</IDL_Type>
             <IDL_Size>256</IDL_Size>
             <Units>dimensionless</Units>
             <Count>1</Count>
         </item>
-
     </SALCommand>
     <SALCommand>
         <Subsystem>ATMCS</Subsystem>
@@ -132,7 +129,6 @@
         <Action/>
         <Value/>
         <Description>Rotate M3 to a specified instrument port. </Description>
-        <Explanation>http://sal.lsst.org</Explanation>
         <item>
             <EFDB_Name>port</EFDB_Name>
             <Description>Desired instrument port.</Description>
@@ -153,7 +149,6 @@
         <Action/>
         <Value/>
         <Description>Halt all axes except M3 rotation, and disable tracking.</Description>
-        <Explanation>http://sal.lsst.org</Explanation>
         <item>
             <EFDB_Name>value</EFDB_Name>
             <Description>Attribute required by the SAL API, but is unused.</Description>
