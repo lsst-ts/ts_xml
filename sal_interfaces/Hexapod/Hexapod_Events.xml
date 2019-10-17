@@ -2,6 +2,101 @@
 <?xml-stylesheet type="text/xsl" href="http://lsst-sal.tuc.noao.edu/schema/SALEventSet.xsl"?>
 <SALEventSet xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:noNamespaceSchemaLocation="http://lsst-sal.tuc.noao.edu/schema/SALEventSet.xsd">
+<!-- Uncomment once SAL supports values in enumerations
+<Enumeration>
+    ControllerState_Standby=0,
+    ControllerState_Disabled=1,
+    ControllerState_Enabled=2,
+    ControllerState_Offline=3,
+    ControllerState_Fault=4
+</Enumeration>
+<Enumeration>
+    OfflineSubstate_PublishOnly=0,
+    OfflineSubstate_Available=1
+</Enumeration>
+<Enumeration>
+    EnabledSubstate_Stationary = 0,
+    EnabledSubstate_MovingPointToPoint=1,
+    EnabledSubstate_SlewingOrTracking=2,
+    EnabledSubstate_ControlledStopping=3,
+    EnabledSubstate_Initializing=4,
+    EnabledSubstate_Relative=5,
+    EnabledSubstate_ConstantVelocity=6
+</Enumeration>
+<Enumeration>
+    ApplicationStatus_HEX_FOLLOWING_ERROR_MASK=0x00000001,
+    ApplicationStatus_HEX_MOVE_COMPLETE_MASK=0x00000002,
+    ApplicationStatus_COMMAND_REJECT_MASK=0x00000020,
+    ApplicationStatus_SAFTEY_INTERLOCK=0x00000040,
+    ApplicationStatus_EXTEND_LIMIT_SWITCH=0x00000080,
+    ApplicationStatus_RETRACT_LIMIT_SWITCH=0x00000100,
+    ApplicationStatus_ETHERCAT_PROBLEM=0x00000200,
+    ApplicationStatus_DDS_COMMAND_SOURCE=0x00000400,
+    ApplicationStatus_MOTION_TIMEOUT=0x00000800,
+    ApplicationStatus_DRIVE_FAULT=0x00002000,
+    ApplicationStatus_SIMULINK_FAULT=0x00004000,
+    ApplicationStatus_ENCODER_FAULT=0x00008000
+</Enumeration>
+-->
+
+<SALEvent>
+    <Subsystem>Hexapod</Subsystem>
+    <Version>3.5.1</Version>
+    <Author></Author>
+    <EFDB_Topic>Hexapod_logevent_controllerState</EFDB_Topic>
+    <Alias>controllerState</Alias>
+    <Description>State reported by the controller.</Description>
+    <item>
+        <EFDB_Name>controllerState</EFDB_Name>
+        <Description>Basic state, a ControllerState enumeration value. The state names and meanings are the same as standard CSC summaryState, but the numeric values differ. We report the controller state in addition to summaryState because we need to report a summaryState even when the controller is not connected, and to aid diagnostics, e.g. in case the controller reports an unrecognized state.</Description>
+        <IDL_Type>long</IDL_Type>
+        <Units>unitless</Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>offlineSubstate</EFDB_Name>
+        <Description>Substate in OFFLINE mode, an OfflineSubstate enumeration value.</Description>
+        <IDL_Type>long</IDL_Type>
+        <Units>unitless</Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>enabledSubstate</EFDB_Name>
+        <Description>Substate in ENABLED mode, an EnabledSubstate enumeration value.</Description>
+        <IDL_Type>long</IDL_Type>
+        <Units>unitless</Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>applicationStatus</EFDB_Name>
+        <Description>Application status for each linear actuator. A bitmask of ApplicationStatus enumeration values.</Description>
+        <IDL_Type>long</IDL_Type>
+        <Units>unitless</Units>
+        <Count>6</Count>
+    </item>
+</SALEvent>
+<SALEvent>
+    <Subsystem>Hexapod</Subsystem>
+    <Version>3.5.1</Version>
+    <Author></Author>
+    <EFDB_Topic>Hexapod_logevent_connected</EFDB_Topic>
+    <Alias>connected</Alias>
+    <Description>State of TCP/IP connection to the low level controller.</Description>
+    <item>
+        <EFDB_Name>command</EFDB_Name>
+        <Description>Is the command socket connected (true=yes, false=no)?</Description>
+        <IDL_Type>boolean</IDL_Type>
+        <Units>unitless</Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>telemetry</EFDB_Name>
+        <Description>Is the telemetry/config socket connected (true=yes, false=no)?</Description>
+        <IDL_Type>boolean</IDL_Type>
+        <Units>unitless</Units>
+        <Count>1</Count>
+    </item>
+</SALEvent>
 <SALEvent>
     <Subsystem>Hexapod</Subsystem>
     <Version>3.5.1</Version>
