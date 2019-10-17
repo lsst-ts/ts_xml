@@ -362,6 +362,78 @@
         <Count>1</Count>
     </item>
 </SALEvent>
+<SALEvent>
+    <Subsystem>SALGeneric</Subsystem>
+    <Version>SALVersion</Version>
+    <Author/>
+    <EFDB_Topic>SALGeneric_logevent_settingsApplied</EFDB_Topic>
+    <Alias>settingsApplied</Alias>
+    <Description>Base settings applied.</Description>
+    <item>
+        <EFDB_Name>settingsVersion</EFDB_Name>
+        <Description>The SHA or name corresponding to the published configuration</Description>
+        <IDL_Type>string</IDL_Type>
+        <IDL_Size>256</IDL_Size>
+        <Units>unitless</Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>otherSettingsEvents</EFDB_Name>
+        <Description>A comma delimited list of other specific CSC configuration events. This may be blank if no other CSC specific events are necessary</Description>
+        <IDL_Type>string</IDL_Type>
+        <IDL_Size>1</IDL_Size>
+        <Units>unitless</Units>
+        <Count>1</Count>
+    </item>
+</SALEvent>
+<SALEvent>
+    <Subsystem>SALGeneric</Subsystem>
+    <Version>SALVersion</Version>
+    <Author/>
+    <EFDB_Topic>SALGeneric_logevent_softwareVersions</EFDB_Topic>
+    <Alias>softwareVersions</Alias>
+    <Description>Current verions of software in use by CSC.</Description>
+    <item>
+        <EFDB_Name>salVersion</EFDB_Name>
+        <Description>This is the current version of SAL generation</Description>
+        <IDL_Type>string</IDL_Type>
+        <IDL_Size>16</IDL_Size>
+        <Units>unitless</Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>xmlVersion</EFDB_Name>
+        <Description>This is the current version of CSC XML</Description>
+        <IDL_Type>string</IDL_Type>
+        <IDL_Size>16</IDL_Size>
+        <Units>unitless</Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>openSpliceVersion</EFDB_Name>
+        <Description>This is the current version of OpenSplice</Description>
+        <IDL_Type>string</IDL_Type>
+        <IDL_Size>16</IDL_Size>
+        <Units>unitless</Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>cscVersion</EFDB_Name>
+        <Description>This is the top-level version of the CSC</Description>
+        <IDL_Type>string</IDL_Type>
+        <IDL_Size>16</IDL_Size>
+        <Units>unitless</Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>subsystemVersions</EFDB_Name>
+        <Description>A comma delimited list of key=value pairs relating subsystem name (key) to its version number (value). This may be left blank if there are no subsystems within a CSC</Description>
+        <IDL_Type>string</IDL_Type>
+        <IDL_Size>1</IDL_Size>
+        <Units>unitless</Units>
+        <Count>1</Count>
+    </item>
+</SALEvent>
 </SALEventSet>
 </SALObjects>
 
