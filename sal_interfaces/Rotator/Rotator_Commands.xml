@@ -53,10 +53,10 @@
     <Property></Property>
     <Action></Action>
     <Value></Value>
-    <Description>Move command.</Description>
+    <Description>Move the rotator to the position specified by the setPosition command. During the move the enabled substate will be MovingPointToPoint, then it will return to Stationary.</Description>
     <item>
         <EFDB_Name>state</EFDB_Name>
-        <Description>State</Description>
+        <Description>Not used.</Description>
         <IDL_Type>boolean</IDL_Type>
         <Units>unitless</Units>
         <Count>1</Count>
@@ -73,7 +73,7 @@
     <Property></Property>
     <Action></Action>
     <Value></Value>
-    <Description>Rotator updates position and velocity setpoints to the values specified in the track command parameters. Successive track commands will arrive at a 20Hz rate.</Description>
+    <Description>Specify target position, velocity and time in "slewing or tracking" mode (which is started with the trackStart command and concluded with the stop command). The maximum allowed time between track commands is a configuration parameter.</Description>
     <item>
         <EFDB_Name>angle</EFDB_Name>
         <Description>Rotator absolute angle position in degrees (it could be a positive or a negative value)</Description>
@@ -134,7 +134,7 @@
     <Property></Property>
     <Action></Action>
     <Value></Value>
-    <Description>Start tracking command</Description>
+    <Description>Enter slewing/tracking mode (enabled substate SlewingOrTracking): follow a path specified by repeated track commands. Issue the stop command when you are done tracking.</Description>
     <item>
         <EFDB_Name>state</EFDB_Name>
         <Description>state</Description>
@@ -154,7 +154,7 @@
     <Property></Property>
     <Action></Action>
     <Value></Value>
-    <Description>Clear error</Description>
+    <Description>Clear the Fault state, sending the controller into Offline substate PublishOnly. You must use the engineering user interface to transition from that to Offline substate Available before the CSC can control the rotator.</Description>
     <item>
         <EFDB_Name>state</EFDB_Name>
         <Description>state</Description>
@@ -174,7 +174,7 @@
     <Property></Property>
     <Action></Action>
     <Value></Value>
-    <Description>Set the setpoint of the rotator to an angle specified in degrees. But the rotator moves to the position when move command is issued.</Description>
+    <Description>Set the desired fixed position of the rotator. Issue the move command to actually move the rotator.</Description>
     <item>
         <EFDB_Name>angle</EFDB_Name>
         <Description>angle</Description>
@@ -194,7 +194,7 @@
     <Property></Property>
     <Action></Action>
     <Value></Value>
-    <Description>Move rotator at constant velocity specified in velocity set command. The maximum velocity that can be commanded using this command is 0.068 deg/s</Description>
+    <Description>Move rotator at the velocity and for the duration specified by the velocitySet command, then halt motion. During the move the enabled substate will be ConstantVelocity, then it will return to Stationary.</Description>
     <item>
         <EFDB_Name>state</EFDB_Name>
         <Description>state</Description>
@@ -214,17 +214,17 @@
     <Property></Property>
     <Action></Action>
     <Value></Value>
-    <Description>SetS the velocity setpoint of the rotator and duration of rotation given by velocity (specified in deg/s) and moveDuration parameter (specified in s).</Description>
+    <Description>Set a desired velocity and duration for move at constant velocity. Initiate the move with the moveConstantVelocity command.</Description>
     <item>
         <EFDB_Name>velocity</EFDB_Name>
-        <Description>velocity (specified in deg/s)</Description>
+        <Description>Desired constant velocity. The maximum allowed velocity is 0.068 deg/sec.</Description>
         <IDL_Type>double</IDL_Type>
         <Units>deg/s</Units>
         <Count>1</Count>
     </item>
     <item>
         <EFDB_Name>moveDuration</EFDB_Name>
-        <Description>moveDuration parameter (specified in s)</Description>
+        <Description>Duration of the move.</Description>
         <IDL_Type>double</IDL_Type>
         <Units>s</Units>
         <Count>1</Count>
@@ -241,10 +241,10 @@
     <Property></Property>
     <Action></Action>
     <Value></Value>
-    <Description>The stop command shall cause the rotator to stop any motion or any other commanded activity and be ready to accept a new command from the enabled state/stationary substate.</Description>
+    <Description>Stop the rotator and go to enabled substate Stationary.</Description>
     <item>
         <EFDB_Name>state</EFDB_Name>
-        <Description>State</Description>
+        <Description>Not used.</Description>
         <IDL_Type>int</IDL_Type>
         <Units>unitless</Units>
         <Count>1</Count>
