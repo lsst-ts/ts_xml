@@ -17,7 +17,7 @@ pipeline {
             steps {
                 script {
                     sh """
-					pytest env.WORKSPACE+"/tests"
+					python env.WORKSPACE+"/tests"
 					echo "Test complete"
 					"""
                 }
