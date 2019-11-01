@@ -1,15 +1,17 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
+import os
 import sys
 import unittest
 import xml.etree.ElementTree as ET
-sys.path.insert(1, '/Users/rbovill/trunk/ts_xml/scripts/unittests')
+cwd = os.getcwd()
+sys.path.insert(1, cwd + '/../scripts/unittests')
 import xml_common
 
 class TestSALSubsystem(unittest.TestCase):
 
 	# Variables #
-	tree = ET.parse('/Users/rbovill/trunk/ts_xml/sal_interfaces/SALSubsystems.xml')
+	tree = ET.parse(cwd + "/../sal_interfaces/SALSubsystems.xml")
 	root = tree.getroot()
 	cscs = xml_common.subsystems
 

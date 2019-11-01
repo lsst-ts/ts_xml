@@ -10,18 +10,17 @@ import platform
 import xml_common
 
 # Create/Open test suite file.
-cwd = os.getcwd()
-home = os.path.abspath(cwd + "/../..")
-file = open(home + "/tests/test_SALSubsystems.py","w+")
-sal_dict_file = "SALSubsystems.xml"
+file = open("../../tests/test_SALSubsystems.py","w+")
 
 # Create Settings header.
 file.write("#!/usr/bin/env python\n")
 file.write("# -*- coding: utf-8 -*-\n")
+file.write("import os\n")
 file.write("import sys\n")
 file.write("import unittest\n")
 file.write("import xml.etree.ElementTree as ET\n")
-file.write("sys.path.insert(1, '" + home + "/scripts/unittests')\n")
+file.write("cwd = os.getcwd()\n")
+file.write("sys.path.insert(1, cwd + '/../scripts/unittests')\n")
 file.write("import xml_common\n")
 file.write("\n")
 
@@ -35,7 +34,7 @@ cscs.sort()
 
 # Create the Variables table.
 file.write("\t# Variables #\n")
-file.write("\ttree = ET.parse('" + home + "/sal_interfaces/SALSubsystems.xml')\n")
+file.write("\ttree = ET.parse(cwd + \"/../sal_interfaces/SALSubsystems.xml\")\n")
 file.write("\troot = tree.getroot()\n")
 file.write("\tcscs = xml_common.subsystems\n")
 file.write("\n")
