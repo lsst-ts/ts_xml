@@ -1,12 +1,8 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 import xml.etree.ElementTree as ET
-import glob
-import re
-import subprocess
 import os
 import os.path
-import platform
 import xml_common
 
 # Create/Open test suite file.
