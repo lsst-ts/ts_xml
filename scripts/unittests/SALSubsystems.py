@@ -52,10 +52,9 @@ file.write("\t\tself.assertTrue(len(self.cscs) == len(set(self.cscs)), msg=\"Sub
 file.write("\n")
 
 # Begin testing each CSC.
-index=0
 for csc in cscs:
-	index += 1
 
+	# Verify each CSC is defined in the SAL Dictionary.
 	file.write("\tdef test_" + csc.lower() + "Exists(self):\n")
 	file.write("\t\tself.assertIn(\"" + csc + "\", self.cscs)\n")
 	file.write("\n")
@@ -68,10 +67,12 @@ for csc in cscs:
 	else:
 		value="yes"
 
+	# Verify the Generics tag is properly defined for each CSC in the SAL Dictionary.
 	file.write("\tdef test_" + csc.lower() + "Generics(self):\n")
 	file.write("\t\tself.assertEqual(self.root.find(\"./Subsystem/[Name='" + csc + "']/Generics\").text, \"" + value +"\")\n")
 	file.write("\n")
 
+	# Verify the Simulator tag is properly defined for each CSC in the SAL Dictionary.
 	file.write("\tdef test_" + csc.lower() + "Simulator(self):\n")
 	file.write("\t\tself.assertIsInstance(self.root.find(\"./Subsystem/[Name='" + csc + "']/Simulator\"), ET.Element, msg=\"" + csc + "Simulator tag is NOT present\")\n")
 	file.write("\n")
