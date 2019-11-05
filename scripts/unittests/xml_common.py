@@ -19,6 +19,14 @@ subsystems = [	'ATAOS', 'ATArchiver', 'ATBuilding', 'ATCamera', 'ATDome', 'ATDom
 				'OCS', 'PointingComponent', 'PromptProcessing', 'Rotator', 'Scheduler',
 				'Script', 'ScriptQueue', 'SummitFacility', 'Test', 'TunableLaser', 'Watcher' ]
 
+"""Define the array of Generic Commands."""
+
+generic_commands = [ 'abort', 'enable', 'disable', 'standby', 'exitControl', 'start', 'enterControl', 'setLogLevel', 'setSimulationMode', 'setValue' ]
+
+"""Define the array of Generic Events."""
+
+generic_events = [ 'appliedSettingsMatchStart', 'errorCode', 'heartbeat', 'logLevel', 'logMessage', 'settingVersions', 'simulationMode', 'softwareVersions', 'summaryState' ]
+
 # =========
 # Functions
 # =========
