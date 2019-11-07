@@ -1005,4 +1005,4 @@ class TestAttributeNaming(unittest.TestCase):
 			self.assertRegex(attribute.text, r'^[a-z]([a-z0-9]*)', msg='Attribute ' + attribute.text + ' does not being with a lowercase letter and/or contains non-alphanumeric characters.')
 
 if __name__ == "__main__":
-	unittest.main()
+	unittest.main(verbosity=2)

@@ -48,7 +48,7 @@ class TestGenerics(unittest.TestCase):
 		for alias in self.csc_tree.findall('./SALEvent/Alias'):
 			self.csc_commands.append(alias.text)
 		for event in self.csc_commands:
-			self.assertTrue(event in self.generic_commands, msg="Generic command " + command + " is incorrectly defined in the ATAOS Commands XML")
+			self.assertTrue(event not in self.generic_commands, msg="Generic command " + command + " is incorrectly defined in the ATAOS Commands XML")
 
 	def test_ValidateATArchiverDoesNotContainGenericEvents(self):
 		self.csc_events = []
@@ -779,4 +779,4 @@ class TestGenerics(unittest.TestCase):
 			self.assertTrue(event not in self.generic_commands, msg="Generic command " + command + " is incorrectly defined in the Watcher Commands XML")
 
 if __name__ == "__main__":
-	unittest.main()
+	unittest.main(verbosity=2)
