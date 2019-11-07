@@ -1220,4 +1220,4 @@ class TestAlias(unittest.TestCase):
 		self.assertEqual(self.csc_aliases, self.csc_topics)
 
 if __name__ == "__main__":
-	unittest.main()
+	unittest.main(verbosity=2)

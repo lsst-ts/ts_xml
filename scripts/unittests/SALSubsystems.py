@@ -79,4 +79,4 @@ for csc in cscs:
 
 
 file.write("if __name__ == \"__main__\":\n")
-file.write("\tunittest.main()\n")
+file.write("\tunittest.main(verbosity=2)\n")
