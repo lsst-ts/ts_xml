@@ -426,6 +426,7 @@ class TestGenerics(unittest.TestCase):
 		for event in self.csc_commands:
 			self.assertTrue(event not in self.generic_commands, msg="Generic command " + command + " is incorrectly defined in the LinearStage Commands XML")
 
+	@unittest.skip("DM-22109")
 	def test_ValidateLOVEDoesNotContainGenericEvents(self):
 		self.csc_events = []
 		self.csc_tree = ET.parse(cwd + "/../sal_interfaces/LOVE/LOVE_Events.xml")
@@ -698,6 +699,7 @@ class TestGenerics(unittest.TestCase):
 		for event in self.csc_events:
 			self.assertTrue(event not in self.generic_events, msg="Generic event " + event + " is incorrectly defined in the Scheduler Events XML")
 
+	@unittest.skip("DM-21745")
 	def test_ValidateScriptDoesNotContainGenericEvents(self):
 		self.csc_events = []
 		self.csc_tree = ET.parse(cwd + "/../sal_interfaces/Script/Script_Events.xml")

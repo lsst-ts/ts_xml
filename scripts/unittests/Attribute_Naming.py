@@ -30,23 +30,24 @@ file.write("class TestAttributeNaming(unittest.TestCase):\n\n")
 # Verify the Attribute Names conform to naming conventions.
 for csc in xml_common.subsystems:
 
-	# Mark test cases with Jira tickets
-	if csc == "Hexapod":
-		skipped="    DM-20971"
-	elif csc == "MTMount":
-		skipped="    DM-17276"
-	elif csc == "Rotator":
-		skipped="    DM-20969"
-	else:
-		skipped=""
-
 	# Get the list of XMLs for each CSC, to include Telemetry, Events and Commands.
 	xmls = glob.glob(cwd + "/../../sal_interfaces/" + csc + "/" + csc + "*")
 	for xml in xmls:
 		# Get the message type, i.e. Telemetry, Events, Commands.
 		homelength = len(home.split('/'))
 		messageType = xml.split('/')[homelength + 8].split('_')[1].split('.')[0]
+		# Mark test cases with Jira tickets
+		if csc == "Hexapod" and (messageType == "Telemetry"):
+			jira="DM-20971"
+		elif csc == "MTMount" and (messageType == "Telemetry"):
+			jira="DM-17276"
+		elif csc == "Rotator" and (messageType == "Telemetry"):
+			jira="DM-20969"
+		else:
+			jira=""
 		# Create the Test Cases.
+		if jira:
+			file.write("\t@unittest.skip(\"" + jira + "\")\n")
 		file.write("\tdef test_" + csc + messageType + "AttributeNaming(self):\n")
 		file.write("\t\tself.attributes = []\n")
 		file.write("\t\tself.tree = ET.parse(\"" + xml + "\")\n")
