@@ -545,4 +545,4 @@ class TestSALSubsystem(unittest.TestCase):
 		self.assertIsInstance(self.root.find("./Subsystem/[Name='Watcher']/Simulator"), ET.Element, msg="WatcherSimulator tag is NOT present")
 
 if __name__ == "__main__":
-	unittest.main()
+	unittest.main(verbosity=2)
