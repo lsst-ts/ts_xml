@@ -61,7 +61,14 @@ file.write("\n")
 for csc in xml_common.subsystems:
 	events_file = glob.glob(cwd + "/../../sal_interfaces/" + csc + "/" + csc + "_Events.xml")
 	if events_file:
-		csc_tree = ET.parse(cwd + "/../../sal_interfaces/" + csc + "/" + csc + "_Events.xml")
+		if csc == "LOVE":
+			jira="DM-22109"
+		elif csc == "Script":
+			jira="DM-21745"
+		else:
+			jira=""
+		if jira:
+			file.write("\t@unittest.skip(\"" + jira + "\")\n")
 		file.write("\tdef test_Validate" + csc + "DoesNotContainGenericEvents(self):\n")
 		file.write("\t\tself.csc_events = []\n")
 		file.write("\t\tself.csc_tree = ET.parse(cwd + \"/../sal_interfaces/" + csc + "/" + csc + "_Events.xml\")\n")
@@ -73,7 +80,6 @@ for csc in xml_common.subsystems:
 
 	commands_file = glob.glob(cwd + "/../../sal_interfaces/" + csc + "/" + csc + "_Commands.xml")
 	if commands_file:
-		csc_tree = ET.parse(cwd + "/../../sal_interfaces/" + csc + "/" + csc + "_Commands.xml")
 		file.write("\tdef test_Validate" + csc + "DoesNotContainGenericCommands(self):\n")
 		file.write("\t\tself.csc_commands = []\n")
 		file.write("\t\tself.csc_tree = ET.parse(cwd + \"/../sal_interfaces/" + csc + "/" + csc + "_Commands.xml\")\n")
