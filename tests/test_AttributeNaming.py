@@ -500,6 +500,7 @@ class TestAttributeNaming(unittest.TestCase):
 		for attribute in self.root.findall('./SALEvent/item/EFDB_Name'):
 			self.assertRegex(attribute.text, r'^[a-z]([a-z0-9]*)', msg='Attribute ' + attribute.text + ' does not being with a lowercase letter and/or contains non-alphanumeric characters.')
 
+	@unittest.skip("DM-20971")
 	def test_HexapodTelemetryAttributeNaming(self):
 		self.attributes = []
 		self.tree = ET.parse("/Users/rbovill/trunk/ts_xml/scripts/unittests/../../sal_interfaces/Hexapod/Hexapod_Telemetry.xml")
@@ -752,6 +753,7 @@ class TestAttributeNaming(unittest.TestCase):
 		for attribute in self.root.findall('./SALEvent/item/EFDB_Name'):
 			self.assertRegex(attribute.text, r'^[a-z]([a-z0-9]*)', msg='Attribute ' + attribute.text + ' does not being with a lowercase letter and/or contains non-alphanumeric characters.')
 
+	@unittest.skip("DM-17276")
 	def test_MTMountTelemetryAttributeNaming(self):
 		self.attributes = []
 		self.tree = ET.parse("/Users/rbovill/trunk/ts_xml/scripts/unittests/../../sal_interfaces/MTMount/MTMount_Telemetry.xml")
@@ -892,6 +894,7 @@ class TestAttributeNaming(unittest.TestCase):
 		for attribute in self.root.findall('./SALEvent/item/EFDB_Name'):
 			self.assertRegex(attribute.text, r'^[a-z]([a-z0-9]*)', msg='Attribute ' + attribute.text + ' does not being with a lowercase letter and/or contains non-alphanumeric characters.')
 
+	@unittest.skip("DM-20969")
 	def test_RotatorTelemetryAttributeNaming(self):
 		self.attributes = []
 		self.tree = ET.parse("/Users/rbovill/trunk/ts_xml/scripts/unittests/../../sal_interfaces/Rotator/Rotator_Telemetry.xml")
