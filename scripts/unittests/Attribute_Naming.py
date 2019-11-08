@@ -31,11 +31,11 @@ file.write("class TestAttributeNaming(unittest.TestCase):\n\n")
 for csc in xml_common.subsystems:
 
 	# Get the list of XMLs for each CSC, to include Telemetry, Events and Commands.
-	xmls = glob.glob(cwd + "/../../sal_interfaces/" + csc + "/" + csc + "*")
+	xmls = glob.glob("../../sal_interfaces/" + csc + "/" + csc + "*")
 	for xml in xmls:
 		# Get the message type, i.e. Telemetry, Events, Commands.
 		homelength = len(home.split('/'))
-		messageType = xml.split('/')[homelength + 8].split('_')[1].split('.')[0]
+		messageType = xml.split('/')[4].split('_')[1].split('.')[0]
 		# Mark test cases with Jira tickets
 		if csc == "Hexapod" and (messageType == "Telemetry"):
 			jira="DM-20971"
@@ -49,8 +49,7 @@ for csc in xml_common.subsystems:
 		if jira:
 			file.write("\t@unittest.skip(\"" + jira + "\")\n")
 		file.write("\tdef test_" + csc + messageType + "AttributeNaming(self):\n")
-		file.write("\t\tself.attributes = []\n")
-		file.write("\t\tself.tree = ET.parse(\"" + xml + "\")\n")
+		file.write("\t\tself.tree = ET.parse(\"" + xml[3:] + "\")\n")
 		file.write("\t\tself.root = self.tree.getroot()\n")
 		file.write("\t\tfor attribute in self.root.findall('./SAL" + messageType.rstrip('s') + "/item/EFDB_Name'):\n")
 		file.write("\t\t\tself.assertRegex(attribute.text, r'^[a-z]([a-z0-9]*)', msg='Attribute ' + attribute.text + ' does not begin with a lowercase letter and/or contains non-alphanumeric characters.')\n")
