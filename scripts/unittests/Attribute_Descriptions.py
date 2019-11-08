@@ -9,7 +9,6 @@ import xml_common
 
 # Create/Open test suite file.
 cwd = os.getcwd()
-home = os.path.expanduser("~")
 file = open(cwd + "/../../tests/test_AttributeDescription.py","w")
 
 # Create Settings header.
@@ -31,11 +30,10 @@ file.write("class TestAttributeDescriptions(unittest.TestCase):\n\n")
 for csc in xml_common.subsystems:
 
 	# Get the list of XMLs for each CSC, to include Telemetry, Events and Commands.
-	xmls = glob.glob(cwd + "/../../sal_interfaces/" + csc + "/" + csc + "*")
+	xmls = glob.glob("../../sal_interfaces/" + csc + "/" + csc + "*")
 	for xml in xmls:
 		# Get the message type, i.e. Telemetry, Events, Commands.
-		homelength = len(home.split('/'))
-		messageType = xml.split('/')[homelength + 8].split('_')[1].split('.')[0]
+		messageType = xml.split('/')[4].split('_')[1].split('.')[0]
 		# Mark test cases with Jira tickets
 		if csc == "Hexapod" and (messageType == "Events" or messageType == "Telemetry"):
 			jira="DM-20971"
@@ -55,7 +53,7 @@ for csc in xml_common.subsystems:
 		if jira:
 			file.write("\t@unittest.skip(\"" + jira + "\")\n")
 		file.write("\tdef test_" + csc + messageType + "AttributeDescriptions(self):\n")
-		file.write("\t\tself.tree = ET.parse(\"" + xml + "\")\n")
+		file.write("\t\tself.tree = ET.parse(\"" + xml[3:] + "\")\n")
 		file.write("\t\tself.root = self.tree.getroot()\n")
 		file.write("\t\tfor description in self.root.findall('./SAL" + messageType.rstrip('s') + "/item/Description'):\n")
 		file.write("\t\t\tself.assertNotEqual(description.text.strip(), '', msg='Description cannot be blank.')\n")

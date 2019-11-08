@@ -8,7 +8,6 @@ import xml_common
 
 # Create/Open test suite file.
 cwd = os.getcwd()
-home = os.path.expanduser("~")
 file = open(cwd + "/../../tests/test_Alias.py","w+")
 
 # Create Settings header.
@@ -30,10 +29,9 @@ file.write("class TestAlias(unittest.TestCase):\n\n")
 # For each CSC, validate the Alias matches the EFDB_Topic.
 for csc in xml_common.subsystems:
 	# Get the list of XMLs for each CSC, to include Telemetry, Events and Commands.
-	xmls = glob.glob(cwd + "/../../sal_interfaces/" + csc + "/" + csc + "*")
+	xmls = glob.glob("../../sal_interfaces/" + csc + "/" + csc + "*")
 	for xml in xmls:
-		homelength = len(home.split('/'))
-		messageType = xml.split('/')[homelength + 8].split('_')[1].split('.')[0]
+		messageType = xml.split('/')[4].split('_')[1].split('.')[0]
 		# Telemetry XML definition files do not define an Alias, therefore these tests are skipped.
 		if messageType == "Telemetry":
 			continue
@@ -42,7 +40,7 @@ for csc in xml_common.subsystems:
 		file.write("\tdef test_" + csc + messageType + "Aliases(self):\n")
 		file.write("\t\tself.csc_aliases = []\n")
 		file.write("\t\tself.csc_topics = []\n")
-		file.write("\t\tself.tree = ET.parse(\"" + xml + "\")\n")
+		file.write("\t\tself.tree = ET.parse(\"" + xml[3:] + "\")\n")
 		file.write("\t\tself.root = self.tree.getroot()\n")
 		file.write("\t\tfor alias in self.root.findall('./SAL" + messageType.rstrip('s') + "/Alias'):\n")
 		file.write("\t\t\tself.csc_aliases.append(alias.text)\n")
