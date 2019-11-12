@@ -1,23 +1,16 @@
 pipeline {
     agent any
     environment {
-	    branch = BRANCH_NAME.replaceAll('/','-')
-        container_name = "robot_${branch}_${BUILD_ID}_${GIT_COMMIT}"
+		branch = BRANCH_NAME.replaceAll('/','-')
         VERSION = readFile(env.WORKSPACE+"/VERSION").trim()
     }
-
     stages {
-		stage("Cleanup before build") {
-			steps {
-				sh """
-				"""
-				}
-			}
         stage("Run the unit tests") {
             steps {
                 script {
                     sh """
-					python env.WORKSPACE+"/tests/*py"
+					mkdir test_results/
+					pytest tests/test*.py --junitxml=test_results/report.xml
 					echo "Test complete"
 					"""
                 }
@@ -26,15 +19,7 @@ pipeline {
 	}
     post {
         always {
-            // Copy tests results
-			script {
-				sh """
-				"""
-			}
+			junit test_results/report.xml
 		}
-        cleanup {
-            sh """
-            """
-        }
-    }
+	}
 }
