@@ -10,7 +10,7 @@ pipeline {
             steps {
                 script {
                     sh """
-					docker run --name xml_unit_tests --rm -di -u appuser -v ~/trunk/ts_xml/:/home/appuser/trunk/ts_xml -w /home/appuser/trunk/ts_xml/tests --entrypoint "pytest" lsstts/robot:latest
+					docker run --name xml_unit_tests --rm -di -u appuser -v ~/trunk/ts_xml/:/home/appuser/trunk/ts_xml -w /home/appuser/trunk/ts_xml/tests --entrypoint "pytest" lsstts/robot:latest -v
 					echo "Test complete"
 					"""
                 }
