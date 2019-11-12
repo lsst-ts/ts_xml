@@ -2,6 +2,7 @@ pipeline {
     agent any
     environment {
 		branch = BRANCH_NAME.replaceAll('/','-')
+		container_name = "xml_unittests_${branch}_${BUILD_ID}_${GIT_COMMIT}"
         VERSION = readFile(env.WORKSPACE+"/VERSION").trim()
     }
     stages {
@@ -9,9 +10,7 @@ pipeline {
             steps {
                 script {
                     sh """
-					pip install -U --user pytest
-					mkdir test_results/
-					pytest tests/test*.py --junitxml=test_results/report.xml
+					docker run --name xml_unit_tests --rm -ti -u appuser -v ~/trunk/ts_xml/:/home/appuser/trunk/ts_xml -w /home/appuser/trunk/ts_xml/tests --entrypoint "pytest" lsstts/robot:latest
 					echo "Test complete"
 					"""
                 }
@@ -20,7 +19,7 @@ pipeline {
 	}
     post {
         always {
-			junit test_results/report.xml
+			// junit test_results/report.xml
 		}
 	}
 }
