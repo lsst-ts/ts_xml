@@ -2,25 +2,22 @@
 # -*- coding: utf-8 -*-
 import xml.etree.ElementTree as ET
 import glob
-import re
+import sys
 import os
 import os.path
+cwd = os.getcwd()
+sys.path.insert(1, cwd + '/../../tests')
 import xml_common
 
 # Create/Open test suite file.
-cwd = os.getcwd()
 home = os.path.expanduser("~")
 file = open(cwd + "/../../tests/test_AttributeNaming.py","w")
 
 # Create Settings header.
 file.write("#!/usr/bin/env python\n")
 file.write("# -*- coding: utf-8 -*-\n")
-file.write("import os\n")
-file.write("import sys\n")
 file.write("import unittest\n")
 file.write("import xml.etree.ElementTree as ET\n")
-file.write("cwd = os.getcwd()\n")
-file.write("sys.path.insert(1, cwd + '/../scripts/unittests')\n")
 file.write("import xml_common\n")
 file.write("\n")
 
