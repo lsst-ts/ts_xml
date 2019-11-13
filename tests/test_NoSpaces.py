@@ -1,11 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-import os
-import sys
 import unittest
 import xml.etree.ElementTree as ET
-cwd = os.getcwd()
-sys.path.insert(1, cwd + '/../scripts/unittests')
 import xml_common
 
 class TestNoSpaces(unittest.TestCase):
