@@ -6,14 +6,21 @@ pipeline {
         VERSION = readFile(env.WORKSPACE+"/VERSION").trim()
     }
     stages {
+		stage("Pre-build cleanup") {
+			steps {
+					sh """
+					rm -r ${WORKSPACE}/results
+					"""
+			}
+		}
 		stage("Create results directory") {
 			steps {
 					sh """
-					mkdir ${WORKSPACE}/results
+					mkdir -p ${WORKSPACE}/results
 					chmod 777 ${WORKSPACE}/results
 					"""
+			}
 		}
-	}
         stage("Run the unit tests") {
             steps {
                 script {
