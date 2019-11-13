@@ -1,13 +1,15 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 import xml.etree.ElementTree as ET
+import sys
 import os
 import os.path
 import glob
+cwd = os.getcwd()
+sys.path.insert(1, cwd + '/../../tests')
 import xml_common
 
 # Create/Open test suite file.
-cwd = os.getcwd()
 file = open(cwd + "/../../tests/test_Generics.py","w+")
 sal_generics_file = "SALGenerics.xml"
 
@@ -15,11 +17,8 @@ sal_generics_file = "SALGenerics.xml"
 file.write("#!/usr/bin/env python\n")
 file.write("# -*- coding: utf-8 -*-\n")
 file.write("import os\n")
-file.write("import sys\n")
 file.write("import unittest\n")
 file.write("import xml.etree.ElementTree as ET\n")
-file.write("cwd = os.getcwd()\n")
-file.write("sys.path.insert(1, cwd + '/../scripts/unittests')\n")
 file.write("import xml_common\n")
 file.write("\n")
 
@@ -28,6 +27,7 @@ file.write("class TestGenerics(unittest.TestCase):\n\n")
 
 # Create the Variables table.
 file.write("\t# Variables #\n")
+file.write("\tcwd = os.getcwd()\n")
 file.write("\ttree = ET.parse(cwd + \"/../sal_interfaces/" + sal_generics_file + "\")\n")
 file.write("\troot = tree.getroot()\n")
 file.write("\tgeneric_commands = xml_common.generic_commands\n")
@@ -71,7 +71,7 @@ for csc in xml_common.subsystems:
 			file.write("\t@unittest.skip(\"" + jira + "\")\n")
 		file.write("\tdef test_Validate" + csc + "DoesNotContainGenericEvents(self):\n")
 		file.write("\t\tself.csc_events = []\n")
-		file.write("\t\tself.csc_tree = ET.parse(cwd + \"/../sal_interfaces/" + csc + "/" + csc + "_Events.xml\")\n")
+		file.write("\t\tself.csc_tree = ET.parse(self.cwd + \"/../sal_interfaces/" + csc + "/" + csc + "_Events.xml\")\n")
 		file.write("\t\tfor alias in self.csc_tree.findall('./SALEvent/Alias'):\n")
 		file.write("\t\t\tself.csc_events.append(alias.text)\n")
 		file.write("\t\tfor event in self.csc_events:\n")
@@ -82,7 +82,7 @@ for csc in xml_common.subsystems:
 	if commands_file:
 		file.write("\tdef test_Validate" + csc + "DoesNotContainGenericCommands(self):\n")
 		file.write("\t\tself.csc_commands = []\n")
-		file.write("\t\tself.csc_tree = ET.parse(cwd + \"/../sal_interfaces/" + csc + "/" + csc + "_Commands.xml\")\n")
+		file.write("\t\tself.csc_tree = ET.parse(self.cwd + \"/../sal_interfaces/" + csc + "/" + csc + "_Commands.xml\")\n")
 		file.write("\t\tfor alias in self.csc_tree.findall('./SALEvent/Alias'):\n")
 		file.write("\t\t\tself.csc_commands.append(alias.text)\n")
 		file.write("\t\tfor event in self.csc_commands:\n")
