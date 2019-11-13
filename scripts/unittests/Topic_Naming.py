@@ -15,6 +15,7 @@ file = open(cwd + "/../../tests/test_TopicNaming.py","w")
 # Create Settings header.
 file.write("#!/usr/bin/env python\n")
 file.write("# -*- coding: utf-8 -*-\n")
+file.write("import os\n")
 file.write("import unittest\n")
 file.write("import xml.etree.ElementTree as ET\n")
 file.write("import xml_common\n")
@@ -62,7 +63,9 @@ for csc in xml_common.subsystems:
 		if jira:
 			file.write("\t@unittest.skip(\"" + jira + "\")\n")
 		file.write("\tdef test_" + csc + messageType + "TopicNaming(self):\n")
-		file.write("\t\tself.tree = ET.parse(\"" + xml[3:] + "\")\n")
+		file.write("\t\tself.dir_path = os.path.dirname(os.path.realpath(__file__))\n")
+		file.write("\t\tself.file = open(self.dir_path + '/" + xml[3:] + "')\n")
+		file.write("\t\tself.tree = ET.parse(self.file)\n")
 		file.write("\t\tself.root = self.tree.getroot()\n")
 		file.write("\t\tfor topic in self.root.findall('./SAL" + messageType.rstrip('s') + "/EFDB_Topic'):\n")
 		file.write("\t\t\tself.assertEqual(topic.text.split('_')[0], '" + csc + "', msg='EFDB_Name ' + topic.text + ' does not properly contain the CSC name.')\n")
@@ -70,6 +73,7 @@ for csc in xml_common.subsystems:
 		if topicType:
 			file.write("\t\t\tself.assertEqual(topic.text.split('_')[1], '" + topicType.strip('_') + "', msg='EFDB_Name ' + topic.text + ' does not properly contain the topicType string.')\n")
 		file.write("\t\t\tself.assertRegex(topic.text.partition('_')[2], r'^[a-z]([a-z0-9]*)', msg='EFDB_Name Topic string ' + topic.text.partition('_')[2] + ' does not begin with a lowercase letter and/or contains non-alphanumeric characters.')\n")
+		file.write("\t\tself.file.close()\n")
 		file.write("\n")
 
 file.write("if __name__ == \"__main__\":\n")
