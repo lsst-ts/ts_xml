@@ -30,8 +30,9 @@ cscs.sort()
 
 # Create the Variables table.
 file.write("\t# Variables #\n")
-file.write("\tcwd = os.getcwd()\n")
-file.write("\ttree = ET.parse(cwd + \"/../sal_interfaces/SALSubsystems.xml\")\n")
+file.write("\tdir_path = os.path.dirname(os.path.realpath(__file__))\n")
+file.write("\tfile = open(dir_path + '/../sal_interfaces/SALSubsystems.xml')\n")
+file.write("\ttree = ET.parse(file)\n")
 file.write("\troot = tree.getroot()\n")
 file.write("\tcscs = xml_common.subsystems\n")
 file.write("\n")

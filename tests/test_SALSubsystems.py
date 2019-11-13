@@ -8,8 +8,9 @@ import xml_common
 class TestSALSubsystem(unittest.TestCase):
 
 	# Variables #
-	cwd = os.getcwd()
-	tree = ET.parse(cwd + "/../sal_interfaces/SALSubsystems.xml")
+	dir_path = os.path.dirname(os.path.realpath(__file__))
+	file = open(dir_path + '/../sal_interfaces/SALSubsystems.xml')
+	tree = ET.parse(file)
 	root = tree.getroot()
 	cscs = xml_common.subsystems
 
