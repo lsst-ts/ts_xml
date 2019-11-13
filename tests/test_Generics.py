@@ -1,16 +1,14 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 import os
-import sys
 import unittest
 import xml.etree.ElementTree as ET
-cwd = os.getcwd()
-sys.path.insert(1, cwd + '/../scripts/unittests')
 import xml_common
 
 class TestGenerics(unittest.TestCase):
 
 	# Variables #
+	cwd = os.getcwd()
 	tree = ET.parse(cwd + "/../sal_interfaces/SALGenerics.xml")
 	root = tree.getroot()
 	generic_commands = xml_common.generic_commands
@@ -36,7 +34,7 @@ class TestGenerics(unittest.TestCase):
 
 	def test_ValidateATAOSDoesNotContainGenericEvents(self):
 		self.csc_events = []
-		self.csc_tree = ET.parse(cwd + "/../sal_interfaces/ATAOS/ATAOS_Events.xml")
+		self.csc_tree = ET.parse(self.cwd + "/../sal_interfaces/ATAOS/ATAOS_Events.xml")
 		for alias in self.csc_tree.findall('./SALEvent/Alias'):
 			self.csc_events.append(alias.text)
 		for event in self.csc_events:
@@ -44,7 +42,7 @@ class TestGenerics(unittest.TestCase):
 
 	def test_ValidateATAOSDoesNotContainGenericCommands(self):
 		self.csc_commands = []
-		self.csc_tree = ET.parse(cwd + "/../sal_interfaces/ATAOS/ATAOS_Commands.xml")
+		self.csc_tree = ET.parse(self.cwd + "/../sal_interfaces/ATAOS/ATAOS_Commands.xml")
 		for alias in self.csc_tree.findall('./SALEvent/Alias'):
 			self.csc_commands.append(alias.text)
 		for event in self.csc_commands:
@@ -52,7 +50,7 @@ class TestGenerics(unittest.TestCase):
 
 	def test_ValidateATArchiverDoesNotContainGenericEvents(self):
 		self.csc_events = []
-		self.csc_tree = ET.parse(cwd + "/../sal_interfaces/ATArchiver/ATArchiver_Events.xml")
+		self.csc_tree = ET.parse(self.cwd + "/../sal_interfaces/ATArchiver/ATArchiver_Events.xml")
 		for alias in self.csc_tree.findall('./SALEvent/Alias'):
 			self.csc_events.append(alias.text)
 		for event in self.csc_events:
@@ -60,7 +58,7 @@ class TestGenerics(unittest.TestCase):
 
 	def test_ValidateATArchiverDoesNotContainGenericCommands(self):
 		self.csc_commands = []
-		self.csc_tree = ET.parse(cwd + "/../sal_interfaces/ATArchiver/ATArchiver_Commands.xml")
+		self.csc_tree = ET.parse(self.cwd + "/../sal_interfaces/ATArchiver/ATArchiver_Commands.xml")
 		for alias in self.csc_tree.findall('./SALEvent/Alias'):
 			self.csc_commands.append(alias.text)
 		for event in self.csc_commands:
@@ -68,7 +66,7 @@ class TestGenerics(unittest.TestCase):
 
 	def test_ValidateATBuildingDoesNotContainGenericEvents(self):
 		self.csc_events = []
-		self.csc_tree = ET.parse(cwd + "/../sal_interfaces/ATBuilding/ATBuilding_Events.xml")
+		self.csc_tree = ET.parse(self.cwd + "/../sal_interfaces/ATBuilding/ATBuilding_Events.xml")
 		for alias in self.csc_tree.findall('./SALEvent/Alias'):
 			self.csc_events.append(alias.text)
 		for event in self.csc_events:
@@ -76,7 +74,7 @@ class TestGenerics(unittest.TestCase):
 
 	def test_ValidateATCameraDoesNotContainGenericEvents(self):
 		self.csc_events = []
-		self.csc_tree = ET.parse(cwd + "/../sal_interfaces/ATCamera/ATCamera_Events.xml")
+		self.csc_tree = ET.parse(self.cwd + "/../sal_interfaces/ATCamera/ATCamera_Events.xml")
 		for alias in self.csc_tree.findall('./SALEvent/Alias'):
 			self.csc_events.append(alias.text)
 		for event in self.csc_events:
@@ -84,7 +82,7 @@ class TestGenerics(unittest.TestCase):
 
 	def test_ValidateATCameraDoesNotContainGenericCommands(self):
 		self.csc_commands = []
-		self.csc_tree = ET.parse(cwd + "/../sal_interfaces/ATCamera/ATCamera_Commands.xml")
+		self.csc_tree = ET.parse(self.cwd + "/../sal_interfaces/ATCamera/ATCamera_Commands.xml")
 		for alias in self.csc_tree.findall('./SALEvent/Alias'):
 			self.csc_commands.append(alias.text)
 		for event in self.csc_commands:
@@ -92,7 +90,7 @@ class TestGenerics(unittest.TestCase):
 
 	def test_ValidateATDomeDoesNotContainGenericEvents(self):
 		self.csc_events = []
-		self.csc_tree = ET.parse(cwd + "/../sal_interfaces/ATDome/ATDome_Events.xml")
+		self.csc_tree = ET.parse(self.cwd + "/../sal_interfaces/ATDome/ATDome_Events.xml")
 		for alias in self.csc_tree.findall('./SALEvent/Alias'):
 			self.csc_events.append(alias.text)
 		for event in self.csc_events:
@@ -100,7 +98,7 @@ class TestGenerics(unittest.TestCase):
 
 	def test_ValidateATDomeDoesNotContainGenericCommands(self):
 		self.csc_commands = []
-		self.csc_tree = ET.parse(cwd + "/../sal_interfaces/ATDome/ATDome_Commands.xml")
+		self.csc_tree = ET.parse(self.cwd + "/../sal_interfaces/ATDome/ATDome_Commands.xml")
 		for alias in self.csc_tree.findall('./SALEvent/Alias'):
 			self.csc_commands.append(alias.text)
 		for event in self.csc_commands:
@@ -108,7 +106,7 @@ class TestGenerics(unittest.TestCase):
 
 	def test_ValidateATDomeTrajectoryDoesNotContainGenericEvents(self):
 		self.csc_events = []
-		self.csc_tree = ET.parse(cwd + "/../sal_interfaces/ATDomeTrajectory/ATDomeTrajectory_Events.xml")
+		self.csc_tree = ET.parse(self.cwd + "/../sal_interfaces/ATDomeTrajectory/ATDomeTrajectory_Events.xml")
 		for alias in self.csc_tree.findall('./SALEvent/Alias'):
 			self.csc_events.append(alias.text)
 		for event in self.csc_events:
@@ -116,7 +114,7 @@ class TestGenerics(unittest.TestCase):
 
 	def test_ValidateATHeaderServiceDoesNotContainGenericEvents(self):
 		self.csc_events = []
-		self.csc_tree = ET.parse(cwd + "/../sal_interfaces/ATHeaderService/ATHeaderService_Events.xml")
+		self.csc_tree = ET.parse(self.cwd + "/../sal_interfaces/ATHeaderService/ATHeaderService_Events.xml")
 		for alias in self.csc_tree.findall('./SALEvent/Alias'):
 			self.csc_events.append(alias.text)
 		for event in self.csc_events:
@@ -124,7 +122,7 @@ class TestGenerics(unittest.TestCase):
 
 	def test_ValidateATHexapodDoesNotContainGenericEvents(self):
 		self.csc_events = []
-		self.csc_tree = ET.parse(cwd + "/../sal_interfaces/ATHexapod/ATHexapod_Events.xml")
+		self.csc_tree = ET.parse(self.cwd + "/../sal_interfaces/ATHexapod/ATHexapod_Events.xml")
 		for alias in self.csc_tree.findall('./SALEvent/Alias'):
 			self.csc_events.append(alias.text)
 		for event in self.csc_events:
@@ -132,7 +130,7 @@ class TestGenerics(unittest.TestCase):
 
 	def test_ValidateATHexapodDoesNotContainGenericCommands(self):
 		self.csc_commands = []
-		self.csc_tree = ET.parse(cwd + "/../sal_interfaces/ATHexapod/ATHexapod_Commands.xml")
+		self.csc_tree = ET.parse(self.cwd + "/../sal_interfaces/ATHexapod/ATHexapod_Commands.xml")
 		for alias in self.csc_tree.findall('./SALEvent/Alias'):
 			self.csc_commands.append(alias.text)
 		for event in self.csc_commands:
@@ -140,7 +138,7 @@ class TestGenerics(unittest.TestCase):
 
 	def test_ValidateATMCSDoesNotContainGenericEvents(self):
 		self.csc_events = []
-		self.csc_tree = ET.parse(cwd + "/../sal_interfaces/ATMCS/ATMCS_Events.xml")
+		self.csc_tree = ET.parse(self.cwd + "/../sal_interfaces/ATMCS/ATMCS_Events.xml")
 		for alias in self.csc_tree.findall('./SALEvent/Alias'):
 			self.csc_events.append(alias.text)
 		for event in self.csc_events:
@@ -148,7 +146,7 @@ class TestGenerics(unittest.TestCase):
 
 	def test_ValidateATMCSDoesNotContainGenericCommands(self):
 		self.csc_commands = []
-		self.csc_tree = ET.parse(cwd + "/../sal_interfaces/ATMCS/ATMCS_Commands.xml")
+		self.csc_tree = ET.parse(self.cwd + "/../sal_interfaces/ATMCS/ATMCS_Commands.xml")
 		for alias in self.csc_tree.findall('./SALEvent/Alias'):
 			self.csc_commands.append(alias.text)
 		for event in self.csc_commands:
@@ -156,7 +154,7 @@ class TestGenerics(unittest.TestCase):
 
 	def test_ValidateATMonochromatorDoesNotContainGenericEvents(self):
 		self.csc_events = []
-		self.csc_tree = ET.parse(cwd + "/../sal_interfaces/ATMonochromator/ATMonochromator_Events.xml")
+		self.csc_tree = ET.parse(self.cwd + "/../sal_interfaces/ATMonochromator/ATMonochromator_Events.xml")
 		for alias in self.csc_tree.findall('./SALEvent/Alias'):
 			self.csc_events.append(alias.text)
 		for event in self.csc_events:
@@ -164,7 +162,7 @@ class TestGenerics(unittest.TestCase):
 
 	def test_ValidateATMonochromatorDoesNotContainGenericCommands(self):
 		self.csc_commands = []
-		self.csc_tree = ET.parse(cwd + "/../sal_interfaces/ATMonochromator/ATMonochromator_Commands.xml")
+		self.csc_tree = ET.parse(self.cwd + "/../sal_interfaces/ATMonochromator/ATMonochromator_Commands.xml")
 		for alias in self.csc_tree.findall('./SALEvent/Alias'):
 			self.csc_commands.append(alias.text)
 		for event in self.csc_commands:
@@ -172,7 +170,7 @@ class TestGenerics(unittest.TestCase):
 
 	def test_ValidateATPneumaticsDoesNotContainGenericEvents(self):
 		self.csc_events = []
-		self.csc_tree = ET.parse(cwd + "/../sal_interfaces/ATPneumatics/ATPneumatics_Events.xml")
+		self.csc_tree = ET.parse(self.cwd + "/../sal_interfaces/ATPneumatics/ATPneumatics_Events.xml")
 		for alias in self.csc_tree.findall('./SALEvent/Alias'):
 			self.csc_events.append(alias.text)
 		for event in self.csc_events:
@@ -180,7 +178,7 @@ class TestGenerics(unittest.TestCase):
 
 	def test_ValidateATPneumaticsDoesNotContainGenericCommands(self):
 		self.csc_commands = []
-		self.csc_tree = ET.parse(cwd + "/../sal_interfaces/ATPneumatics/ATPneumatics_Commands.xml")
+		self.csc_tree = ET.parse(self.cwd + "/../sal_interfaces/ATPneumatics/ATPneumatics_Commands.xml")
 		for alias in self.csc_tree.findall('./SALEvent/Alias'):
 			self.csc_commands.append(alias.text)
 		for event in self.csc_commands:
@@ -188,7 +186,7 @@ class TestGenerics(unittest.TestCase):
 
 	def test_ValidateATPtgDoesNotContainGenericEvents(self):
 		self.csc_events = []
-		self.csc_tree = ET.parse(cwd + "/../sal_interfaces/ATPtg/ATPtg_Events.xml")
+		self.csc_tree = ET.parse(self.cwd + "/../sal_interfaces/ATPtg/ATPtg_Events.xml")
 		for alias in self.csc_tree.findall('./SALEvent/Alias'):
 			self.csc_events.append(alias.text)
 		for event in self.csc_events:
@@ -196,7 +194,7 @@ class TestGenerics(unittest.TestCase):
 
 	def test_ValidateATPtgDoesNotContainGenericCommands(self):
 		self.csc_commands = []
-		self.csc_tree = ET.parse(cwd + "/../sal_interfaces/ATPtg/ATPtg_Commands.xml")
+		self.csc_tree = ET.parse(self.cwd + "/../sal_interfaces/ATPtg/ATPtg_Commands.xml")
 		for alias in self.csc_tree.findall('./SALEvent/Alias'):
 			self.csc_commands.append(alias.text)
 		for event in self.csc_commands:
@@ -204,7 +202,7 @@ class TestGenerics(unittest.TestCase):
 
 	def test_ValidateATSpectrographDoesNotContainGenericEvents(self):
 		self.csc_events = []
-		self.csc_tree = ET.parse(cwd + "/../sal_interfaces/ATSpectrograph/ATSpectrograph_Events.xml")
+		self.csc_tree = ET.parse(self.cwd + "/../sal_interfaces/ATSpectrograph/ATSpectrograph_Events.xml")
 		for alias in self.csc_tree.findall('./SALEvent/Alias'):
 			self.csc_events.append(alias.text)
 		for event in self.csc_events:
@@ -212,7 +210,7 @@ class TestGenerics(unittest.TestCase):
 
 	def test_ValidateATSpectrographDoesNotContainGenericCommands(self):
 		self.csc_commands = []
-		self.csc_tree = ET.parse(cwd + "/../sal_interfaces/ATSpectrograph/ATSpectrograph_Commands.xml")
+		self.csc_tree = ET.parse(self.cwd + "/../sal_interfaces/ATSpectrograph/ATSpectrograph_Commands.xml")
 		for alias in self.csc_tree.findall('./SALEvent/Alias'):
 			self.csc_commands.append(alias.text)
 		for event in self.csc_commands:
@@ -220,7 +218,7 @@ class TestGenerics(unittest.TestCase):
 
 	def test_ValidateATTCSDoesNotContainGenericEvents(self):
 		self.csc_events = []
-		self.csc_tree = ET.parse(cwd + "/../sal_interfaces/ATTCS/ATTCS_Events.xml")
+		self.csc_tree = ET.parse(self.cwd + "/../sal_interfaces/ATTCS/ATTCS_Events.xml")
 		for alias in self.csc_tree.findall('./SALEvent/Alias'):
 			self.csc_events.append(alias.text)
 		for event in self.csc_events:
@@ -228,7 +226,7 @@ class TestGenerics(unittest.TestCase):
 
 	def test_ValidateATTCSDoesNotContainGenericCommands(self):
 		self.csc_commands = []
-		self.csc_tree = ET.parse(cwd + "/../sal_interfaces/ATTCS/ATTCS_Commands.xml")
+		self.csc_tree = ET.parse(self.cwd + "/../sal_interfaces/ATTCS/ATTCS_Commands.xml")
 		for alias in self.csc_tree.findall('./SALEvent/Alias'):
 			self.csc_commands.append(alias.text)
 		for event in self.csc_commands:
@@ -236,7 +234,7 @@ class TestGenerics(unittest.TestCase):
 
 	def test_ValidateATWhiteLightDoesNotContainGenericEvents(self):
 		self.csc_events = []
-		self.csc_tree = ET.parse(cwd + "/../sal_interfaces/ATWhiteLight/ATWhiteLight_Events.xml")
+		self.csc_tree = ET.parse(self.cwd + "/../sal_interfaces/ATWhiteLight/ATWhiteLight_Events.xml")
 		for alias in self.csc_tree.findall('./SALEvent/Alias'):
 			self.csc_events.append(alias.text)
 		for event in self.csc_events:
@@ -244,7 +242,7 @@ class TestGenerics(unittest.TestCase):
 
 	def test_ValidateATWhiteLightDoesNotContainGenericCommands(self):
 		self.csc_commands = []
-		self.csc_tree = ET.parse(cwd + "/../sal_interfaces/ATWhiteLight/ATWhiteLight_Commands.xml")
+		self.csc_tree = ET.parse(self.cwd + "/../sal_interfaces/ATWhiteLight/ATWhiteLight_Commands.xml")
 		for alias in self.csc_tree.findall('./SALEvent/Alias'):
 			self.csc_commands.append(alias.text)
 		for event in self.csc_commands:
@@ -252,7 +250,7 @@ class TestGenerics(unittest.TestCase):
 
 	def test_ValidateCatchupArchiverDoesNotContainGenericEvents(self):
 		self.csc_events = []
-		self.csc_tree = ET.parse(cwd + "/../sal_interfaces/CatchupArchiver/CatchupArchiver_Events.xml")
+		self.csc_tree = ET.parse(self.cwd + "/../sal_interfaces/CatchupArchiver/CatchupArchiver_Events.xml")
 		for alias in self.csc_tree.findall('./SALEvent/Alias'):
 			self.csc_events.append(alias.text)
 		for event in self.csc_events:
@@ -260,7 +258,7 @@ class TestGenerics(unittest.TestCase):
 
 	def test_ValidateCBPDoesNotContainGenericCommands(self):
 		self.csc_commands = []
-		self.csc_tree = ET.parse(cwd + "/../sal_interfaces/CBP/CBP_Commands.xml")
+		self.csc_tree = ET.parse(self.cwd + "/../sal_interfaces/CBP/CBP_Commands.xml")
 		for alias in self.csc_tree.findall('./SALEvent/Alias'):
 			self.csc_commands.append(alias.text)
 		for event in self.csc_commands:
@@ -268,7 +266,7 @@ class TestGenerics(unittest.TestCase):
 
 	def test_ValidateDIMMDoesNotContainGenericEvents(self):
 		self.csc_events = []
-		self.csc_tree = ET.parse(cwd + "/../sal_interfaces/DIMM/DIMM_Events.xml")
+		self.csc_tree = ET.parse(self.cwd + "/../sal_interfaces/DIMM/DIMM_Events.xml")
 		for alias in self.csc_tree.findall('./SALEvent/Alias'):
 			self.csc_events.append(alias.text)
 		for event in self.csc_events:
@@ -276,7 +274,7 @@ class TestGenerics(unittest.TestCase):
 
 	def test_ValidateDomeDoesNotContainGenericEvents(self):
 		self.csc_events = []
-		self.csc_tree = ET.parse(cwd + "/../sal_interfaces/Dome/Dome_Events.xml")
+		self.csc_tree = ET.parse(self.cwd + "/../sal_interfaces/Dome/Dome_Events.xml")
 		for alias in self.csc_tree.findall('./SALEvent/Alias'):
 			self.csc_events.append(alias.text)
 		for event in self.csc_events:
@@ -284,7 +282,7 @@ class TestGenerics(unittest.TestCase):
 
 	def test_ValidateDomeDoesNotContainGenericCommands(self):
 		self.csc_commands = []
-		self.csc_tree = ET.parse(cwd + "/../sal_interfaces/Dome/Dome_Commands.xml")
+		self.csc_tree = ET.parse(self.cwd + "/../sal_interfaces/Dome/Dome_Commands.xml")
 		for alias in self.csc_tree.findall('./SALEvent/Alias'):
 			self.csc_commands.append(alias.text)
 		for event in self.csc_commands:
@@ -292,7 +290,7 @@ class TestGenerics(unittest.TestCase):
 
 	def test_ValidateDSMDoesNotContainGenericEvents(self):
 		self.csc_events = []
-		self.csc_tree = ET.parse(cwd + "/../sal_interfaces/DSM/DSM_Events.xml")
+		self.csc_tree = ET.parse(self.cwd + "/../sal_interfaces/DSM/DSM_Events.xml")
 		for alias in self.csc_tree.findall('./SALEvent/Alias'):
 			self.csc_events.append(alias.text)
 		for event in self.csc_events:
@@ -300,7 +298,7 @@ class TestGenerics(unittest.TestCase):
 
 	def test_ValidateEASDoesNotContainGenericEvents(self):
 		self.csc_events = []
-		self.csc_tree = ET.parse(cwd + "/../sal_interfaces/EAS/EAS_Events.xml")
+		self.csc_tree = ET.parse(self.cwd + "/../sal_interfaces/EAS/EAS_Events.xml")
 		for alias in self.csc_tree.findall('./SALEvent/Alias'):
 			self.csc_events.append(alias.text)
 		for event in self.csc_events:
@@ -308,7 +306,7 @@ class TestGenerics(unittest.TestCase):
 
 	def test_ValidateEFDDoesNotContainGenericEvents(self):
 		self.csc_events = []
-		self.csc_tree = ET.parse(cwd + "/../sal_interfaces/EFD/EFD_Events.xml")
+		self.csc_tree = ET.parse(self.cwd + "/../sal_interfaces/EFD/EFD_Events.xml")
 		for alias in self.csc_tree.findall('./SALEvent/Alias'):
 			self.csc_events.append(alias.text)
 		for event in self.csc_events:
@@ -316,7 +314,7 @@ class TestGenerics(unittest.TestCase):
 
 	def test_ValidateEFDTransformationServerDoesNotContainGenericEvents(self):
 		self.csc_events = []
-		self.csc_tree = ET.parse(cwd + "/../sal_interfaces/EFDTransformationServer/EFDTransformationServer_Events.xml")
+		self.csc_tree = ET.parse(self.cwd + "/../sal_interfaces/EFDTransformationServer/EFDTransformationServer_Events.xml")
 		for alias in self.csc_tree.findall('./SALEvent/Alias'):
 			self.csc_events.append(alias.text)
 		for event in self.csc_events:
@@ -324,7 +322,7 @@ class TestGenerics(unittest.TestCase):
 
 	def test_ValidateElectrometerDoesNotContainGenericEvents(self):
 		self.csc_events = []
-		self.csc_tree = ET.parse(cwd + "/../sal_interfaces/Electrometer/Electrometer_Events.xml")
+		self.csc_tree = ET.parse(self.cwd + "/../sal_interfaces/Electrometer/Electrometer_Events.xml")
 		for alias in self.csc_tree.findall('./SALEvent/Alias'):
 			self.csc_events.append(alias.text)
 		for event in self.csc_events:
@@ -332,7 +330,7 @@ class TestGenerics(unittest.TestCase):
 
 	def test_ValidateElectrometerDoesNotContainGenericCommands(self):
 		self.csc_commands = []
-		self.csc_tree = ET.parse(cwd + "/../sal_interfaces/Electrometer/Electrometer_Commands.xml")
+		self.csc_tree = ET.parse(self.cwd + "/../sal_interfaces/Electrometer/Electrometer_Commands.xml")
 		for alias in self.csc_tree.findall('./SALEvent/Alias'):
 			self.csc_commands.append(alias.text)
 		for event in self.csc_commands:
@@ -340,7 +338,7 @@ class TestGenerics(unittest.TestCase):
 
 	def test_ValidateFiberSpectrographDoesNotContainGenericEvents(self):
 		self.csc_events = []
-		self.csc_tree = ET.parse(cwd + "/../sal_interfaces/FiberSpectrograph/FiberSpectrograph_Events.xml")
+		self.csc_tree = ET.parse(self.cwd + "/../sal_interfaces/FiberSpectrograph/FiberSpectrograph_Events.xml")
 		for alias in self.csc_tree.findall('./SALEvent/Alias'):
 			self.csc_events.append(alias.text)
 		for event in self.csc_events:
@@ -348,7 +346,7 @@ class TestGenerics(unittest.TestCase):
 
 	def test_ValidateFiberSpectrographDoesNotContainGenericCommands(self):
 		self.csc_commands = []
-		self.csc_tree = ET.parse(cwd + "/../sal_interfaces/FiberSpectrograph/FiberSpectrograph_Commands.xml")
+		self.csc_tree = ET.parse(self.cwd + "/../sal_interfaces/FiberSpectrograph/FiberSpectrograph_Commands.xml")
 		for alias in self.csc_tree.findall('./SALEvent/Alias'):
 			self.csc_commands.append(alias.text)
 		for event in self.csc_commands:
@@ -356,7 +354,7 @@ class TestGenerics(unittest.TestCase):
 
 	def test_ValidateGenericCameraDoesNotContainGenericEvents(self):
 		self.csc_events = []
-		self.csc_tree = ET.parse(cwd + "/../sal_interfaces/GenericCamera/GenericCamera_Events.xml")
+		self.csc_tree = ET.parse(self.cwd + "/../sal_interfaces/GenericCamera/GenericCamera_Events.xml")
 		for alias in self.csc_tree.findall('./SALEvent/Alias'):
 			self.csc_events.append(alias.text)
 		for event in self.csc_events:
@@ -364,7 +362,7 @@ class TestGenerics(unittest.TestCase):
 
 	def test_ValidateGenericCameraDoesNotContainGenericCommands(self):
 		self.csc_commands = []
-		self.csc_tree = ET.parse(cwd + "/../sal_interfaces/GenericCamera/GenericCamera_Commands.xml")
+		self.csc_tree = ET.parse(self.cwd + "/../sal_interfaces/GenericCamera/GenericCamera_Commands.xml")
 		for alias in self.csc_tree.findall('./SALEvent/Alias'):
 			self.csc_commands.append(alias.text)
 		for event in self.csc_commands:
@@ -372,7 +370,7 @@ class TestGenerics(unittest.TestCase):
 
 	def test_ValidateIOTADoesNotContainGenericEvents(self):
 		self.csc_events = []
-		self.csc_tree = ET.parse(cwd + "/../sal_interfaces/IOTA/IOTA_Events.xml")
+		self.csc_tree = ET.parse(self.cwd + "/../sal_interfaces/IOTA/IOTA_Events.xml")
 		for alias in self.csc_tree.findall('./SALEvent/Alias'):
 			self.csc_events.append(alias.text)
 		for event in self.csc_events:
@@ -380,7 +378,7 @@ class TestGenerics(unittest.TestCase):
 
 	def test_ValidateHexapodDoesNotContainGenericEvents(self):
 		self.csc_events = []
-		self.csc_tree = ET.parse(cwd + "/../sal_interfaces/Hexapod/Hexapod_Events.xml")
+		self.csc_tree = ET.parse(self.cwd + "/../sal_interfaces/Hexapod/Hexapod_Events.xml")
 		for alias in self.csc_tree.findall('./SALEvent/Alias'):
 			self.csc_events.append(alias.text)
 		for event in self.csc_events:
@@ -388,7 +386,7 @@ class TestGenerics(unittest.TestCase):
 
 	def test_ValidateHexapodDoesNotContainGenericCommands(self):
 		self.csc_commands = []
-		self.csc_tree = ET.parse(cwd + "/../sal_interfaces/Hexapod/Hexapod_Commands.xml")
+		self.csc_tree = ET.parse(self.cwd + "/../sal_interfaces/Hexapod/Hexapod_Commands.xml")
 		for alias in self.csc_tree.findall('./SALEvent/Alias'):
 			self.csc_commands.append(alias.text)
 		for event in self.csc_commands:
@@ -396,7 +394,7 @@ class TestGenerics(unittest.TestCase):
 
 	def test_ValidateHVACDoesNotContainGenericEvents(self):
 		self.csc_events = []
-		self.csc_tree = ET.parse(cwd + "/../sal_interfaces/HVAC/HVAC_Events.xml")
+		self.csc_tree = ET.parse(self.cwd + "/../sal_interfaces/HVAC/HVAC_Events.xml")
 		for alias in self.csc_tree.findall('./SALEvent/Alias'):
 			self.csc_events.append(alias.text)
 		for event in self.csc_events:
@@ -404,7 +402,7 @@ class TestGenerics(unittest.TestCase):
 
 	def test_ValidateHVACDoesNotContainGenericCommands(self):
 		self.csc_commands = []
-		self.csc_tree = ET.parse(cwd + "/../sal_interfaces/HVAC/HVAC_Commands.xml")
+		self.csc_tree = ET.parse(self.cwd + "/../sal_interfaces/HVAC/HVAC_Commands.xml")
 		for alias in self.csc_tree.findall('./SALEvent/Alias'):
 			self.csc_commands.append(alias.text)
 		for event in self.csc_commands:
@@ -412,7 +410,7 @@ class TestGenerics(unittest.TestCase):
 
 	def test_ValidateLinearStageDoesNotContainGenericEvents(self):
 		self.csc_events = []
-		self.csc_tree = ET.parse(cwd + "/../sal_interfaces/LinearStage/LinearStage_Events.xml")
+		self.csc_tree = ET.parse(self.cwd + "/../sal_interfaces/LinearStage/LinearStage_Events.xml")
 		for alias in self.csc_tree.findall('./SALEvent/Alias'):
 			self.csc_events.append(alias.text)
 		for event in self.csc_events:
@@ -420,7 +418,7 @@ class TestGenerics(unittest.TestCase):
 
 	def test_ValidateLinearStageDoesNotContainGenericCommands(self):
 		self.csc_commands = []
-		self.csc_tree = ET.parse(cwd + "/../sal_interfaces/LinearStage/LinearStage_Commands.xml")
+		self.csc_tree = ET.parse(self.cwd + "/../sal_interfaces/LinearStage/LinearStage_Commands.xml")
 		for alias in self.csc_tree.findall('./SALEvent/Alias'):
 			self.csc_commands.append(alias.text)
 		for event in self.csc_commands:
@@ -429,7 +427,7 @@ class TestGenerics(unittest.TestCase):
 	@unittest.skip("DM-22109")
 	def test_ValidateLOVEDoesNotContainGenericEvents(self):
 		self.csc_events = []
-		self.csc_tree = ET.parse(cwd + "/../sal_interfaces/LOVE/LOVE_Events.xml")
+		self.csc_tree = ET.parse(self.cwd + "/../sal_interfaces/LOVE/LOVE_Events.xml")
 		for alias in self.csc_tree.findall('./SALEvent/Alias'):
 			self.csc_events.append(alias.text)
 		for event in self.csc_events:
@@ -437,7 +435,7 @@ class TestGenerics(unittest.TestCase):
 
 	def test_ValidateMTAOSDoesNotContainGenericEvents(self):
 		self.csc_events = []
-		self.csc_tree = ET.parse(cwd + "/../sal_interfaces/MTAOS/MTAOS_Events.xml")
+		self.csc_tree = ET.parse(self.cwd + "/../sal_interfaces/MTAOS/MTAOS_Events.xml")
 		for alias in self.csc_tree.findall('./SALEvent/Alias'):
 			self.csc_events.append(alias.text)
 		for event in self.csc_events:
@@ -445,7 +443,7 @@ class TestGenerics(unittest.TestCase):
 
 	def test_ValidateMTAOSDoesNotContainGenericCommands(self):
 		self.csc_commands = []
-		self.csc_tree = ET.parse(cwd + "/../sal_interfaces/MTAOS/MTAOS_Commands.xml")
+		self.csc_tree = ET.parse(self.cwd + "/../sal_interfaces/MTAOS/MTAOS_Commands.xml")
 		for alias in self.csc_tree.findall('./SALEvent/Alias'):
 			self.csc_commands.append(alias.text)
 		for event in self.csc_commands:
@@ -453,7 +451,7 @@ class TestGenerics(unittest.TestCase):
 
 	def test_ValidateMTArchiverDoesNotContainGenericEvents(self):
 		self.csc_events = []
-		self.csc_tree = ET.parse(cwd + "/../sal_interfaces/MTArchiver/MTArchiver_Events.xml")
+		self.csc_tree = ET.parse(self.cwd + "/../sal_interfaces/MTArchiver/MTArchiver_Events.xml")
 		for alias in self.csc_tree.findall('./SALEvent/Alias'):
 			self.csc_events.append(alias.text)
 		for event in self.csc_events:
@@ -461,7 +459,7 @@ class TestGenerics(unittest.TestCase):
 
 	def test_ValidateMTCameraDoesNotContainGenericEvents(self):
 		self.csc_events = []
-		self.csc_tree = ET.parse(cwd + "/../sal_interfaces/MTCamera/MTCamera_Events.xml")
+		self.csc_tree = ET.parse(self.cwd + "/../sal_interfaces/MTCamera/MTCamera_Events.xml")
 		for alias in self.csc_tree.findall('./SALEvent/Alias'):
 			self.csc_events.append(alias.text)
 		for event in self.csc_events:
@@ -469,7 +467,7 @@ class TestGenerics(unittest.TestCase):
 
 	def test_ValidateMTCameraDoesNotContainGenericCommands(self):
 		self.csc_commands = []
-		self.csc_tree = ET.parse(cwd + "/../sal_interfaces/MTCamera/MTCamera_Commands.xml")
+		self.csc_tree = ET.parse(self.cwd + "/../sal_interfaces/MTCamera/MTCamera_Commands.xml")
 		for alias in self.csc_tree.findall('./SALEvent/Alias'):
 			self.csc_commands.append(alias.text)
 		for event in self.csc_commands:
@@ -477,7 +475,7 @@ class TestGenerics(unittest.TestCase):
 
 	def test_ValidateMTDomeTrajectoryDoesNotContainGenericEvents(self):
 		self.csc_events = []
-		self.csc_tree = ET.parse(cwd + "/../sal_interfaces/MTDomeTrajectory/MTDomeTrajectory_Events.xml")
+		self.csc_tree = ET.parse(self.cwd + "/../sal_interfaces/MTDomeTrajectory/MTDomeTrajectory_Events.xml")
 		for alias in self.csc_tree.findall('./SALEvent/Alias'):
 			self.csc_events.append(alias.text)
 		for event in self.csc_events:
@@ -485,7 +483,7 @@ class TestGenerics(unittest.TestCase):
 
 	def test_ValidateMTEECDoesNotContainGenericEvents(self):
 		self.csc_events = []
-		self.csc_tree = ET.parse(cwd + "/../sal_interfaces/MTEEC/MTEEC_Events.xml")
+		self.csc_tree = ET.parse(self.cwd + "/../sal_interfaces/MTEEC/MTEEC_Events.xml")
 		for alias in self.csc_tree.findall('./SALEvent/Alias'):
 			self.csc_events.append(alias.text)
 		for event in self.csc_events:
@@ -493,7 +491,7 @@ class TestGenerics(unittest.TestCase):
 
 	def test_ValidateMTEECDoesNotContainGenericCommands(self):
 		self.csc_commands = []
-		self.csc_tree = ET.parse(cwd + "/../sal_interfaces/MTEEC/MTEEC_Commands.xml")
+		self.csc_tree = ET.parse(self.cwd + "/../sal_interfaces/MTEEC/MTEEC_Commands.xml")
 		for alias in self.csc_tree.findall('./SALEvent/Alias'):
 			self.csc_commands.append(alias.text)
 		for event in self.csc_commands:
@@ -501,7 +499,7 @@ class TestGenerics(unittest.TestCase):
 
 	def test_ValidateMTGuiderDoesNotContainGenericEvents(self):
 		self.csc_events = []
-		self.csc_tree = ET.parse(cwd + "/../sal_interfaces/MTGuider/MTGuider_Events.xml")
+		self.csc_tree = ET.parse(self.cwd + "/../sal_interfaces/MTGuider/MTGuider_Events.xml")
 		for alias in self.csc_tree.findall('./SALEvent/Alias'):
 			self.csc_events.append(alias.text)
 		for event in self.csc_events:
@@ -509,7 +507,7 @@ class TestGenerics(unittest.TestCase):
 
 	def test_ValidateMTHeaderServiceDoesNotContainGenericEvents(self):
 		self.csc_events = []
-		self.csc_tree = ET.parse(cwd + "/../sal_interfaces/MTHeaderService/MTHeaderService_Events.xml")
+		self.csc_tree = ET.parse(self.cwd + "/../sal_interfaces/MTHeaderService/MTHeaderService_Events.xml")
 		for alias in self.csc_tree.findall('./SALEvent/Alias'):
 			self.csc_events.append(alias.text)
 		for event in self.csc_events:
@@ -517,7 +515,7 @@ class TestGenerics(unittest.TestCase):
 
 	def test_ValidateMTLaserTrackerDoesNotContainGenericEvents(self):
 		self.csc_events = []
-		self.csc_tree = ET.parse(cwd + "/../sal_interfaces/MTLaserTracker/MTLaserTracker_Events.xml")
+		self.csc_tree = ET.parse(self.cwd + "/../sal_interfaces/MTLaserTracker/MTLaserTracker_Events.xml")
 		for alias in self.csc_tree.findall('./SALEvent/Alias'):
 			self.csc_events.append(alias.text)
 		for event in self.csc_events:
@@ -525,7 +523,7 @@ class TestGenerics(unittest.TestCase):
 
 	def test_ValidateMTM1M3DoesNotContainGenericEvents(self):
 		self.csc_events = []
-		self.csc_tree = ET.parse(cwd + "/../sal_interfaces/MTM1M3/MTM1M3_Events.xml")
+		self.csc_tree = ET.parse(self.cwd + "/../sal_interfaces/MTM1M3/MTM1M3_Events.xml")
 		for alias in self.csc_tree.findall('./SALEvent/Alias'):
 			self.csc_events.append(alias.text)
 		for event in self.csc_events:
@@ -533,7 +531,7 @@ class TestGenerics(unittest.TestCase):
 
 	def test_ValidateMTM1M3DoesNotContainGenericCommands(self):
 		self.csc_commands = []
-		self.csc_tree = ET.parse(cwd + "/../sal_interfaces/MTM1M3/MTM1M3_Commands.xml")
+		self.csc_tree = ET.parse(self.cwd + "/../sal_interfaces/MTM1M3/MTM1M3_Commands.xml")
 		for alias in self.csc_tree.findall('./SALEvent/Alias'):
 			self.csc_commands.append(alias.text)
 		for event in self.csc_commands:
@@ -541,7 +539,7 @@ class TestGenerics(unittest.TestCase):
 
 	def test_ValidateMTM1M3TSDoesNotContainGenericEvents(self):
 		self.csc_events = []
-		self.csc_tree = ET.parse(cwd + "/../sal_interfaces/MTM1M3TS/MTM1M3TS_Events.xml")
+		self.csc_tree = ET.parse(self.cwd + "/../sal_interfaces/MTM1M3TS/MTM1M3TS_Events.xml")
 		for alias in self.csc_tree.findall('./SALEvent/Alias'):
 			self.csc_events.append(alias.text)
 		for event in self.csc_events:
@@ -549,7 +547,7 @@ class TestGenerics(unittest.TestCase):
 
 	def test_ValidateMTM1M3TSDoesNotContainGenericCommands(self):
 		self.csc_commands = []
-		self.csc_tree = ET.parse(cwd + "/../sal_interfaces/MTM1M3TS/MTM1M3TS_Commands.xml")
+		self.csc_tree = ET.parse(self.cwd + "/../sal_interfaces/MTM1M3TS/MTM1M3TS_Commands.xml")
 		for alias in self.csc_tree.findall('./SALEvent/Alias'):
 			self.csc_commands.append(alias.text)
 		for event in self.csc_commands:
@@ -557,7 +555,7 @@ class TestGenerics(unittest.TestCase):
 
 	def test_ValidateMTM2DoesNotContainGenericEvents(self):
 		self.csc_events = []
-		self.csc_tree = ET.parse(cwd + "/../sal_interfaces/MTM2/MTM2_Events.xml")
+		self.csc_tree = ET.parse(self.cwd + "/../sal_interfaces/MTM2/MTM2_Events.xml")
 		for alias in self.csc_tree.findall('./SALEvent/Alias'):
 			self.csc_events.append(alias.text)
 		for event in self.csc_events:
@@ -565,7 +563,7 @@ class TestGenerics(unittest.TestCase):
 
 	def test_ValidateMTM2DoesNotContainGenericCommands(self):
 		self.csc_commands = []
-		self.csc_tree = ET.parse(cwd + "/../sal_interfaces/MTM2/MTM2_Commands.xml")
+		self.csc_tree = ET.parse(self.cwd + "/../sal_interfaces/MTM2/MTM2_Commands.xml")
 		for alias in self.csc_tree.findall('./SALEvent/Alias'):
 			self.csc_commands.append(alias.text)
 		for event in self.csc_commands:
@@ -573,7 +571,7 @@ class TestGenerics(unittest.TestCase):
 
 	def test_ValidateMTMountDoesNotContainGenericEvents(self):
 		self.csc_events = []
-		self.csc_tree = ET.parse(cwd + "/../sal_interfaces/MTMount/MTMount_Events.xml")
+		self.csc_tree = ET.parse(self.cwd + "/../sal_interfaces/MTMount/MTMount_Events.xml")
 		for alias in self.csc_tree.findall('./SALEvent/Alias'):
 			self.csc_events.append(alias.text)
 		for event in self.csc_events:
@@ -581,7 +579,7 @@ class TestGenerics(unittest.TestCase):
 
 	def test_ValidateMTMountDoesNotContainGenericCommands(self):
 		self.csc_commands = []
-		self.csc_tree = ET.parse(cwd + "/../sal_interfaces/MTMount/MTMount_Commands.xml")
+		self.csc_tree = ET.parse(self.cwd + "/../sal_interfaces/MTMount/MTMount_Commands.xml")
 		for alias in self.csc_tree.findall('./SALEvent/Alias'):
 			self.csc_commands.append(alias.text)
 		for event in self.csc_commands:
@@ -589,7 +587,7 @@ class TestGenerics(unittest.TestCase):
 
 	def test_ValidateMTPtgDoesNotContainGenericEvents(self):
 		self.csc_events = []
-		self.csc_tree = ET.parse(cwd + "/../sal_interfaces/MTPtg/MTPtg_Events.xml")
+		self.csc_tree = ET.parse(self.cwd + "/../sal_interfaces/MTPtg/MTPtg_Events.xml")
 		for alias in self.csc_tree.findall('./SALEvent/Alias'):
 			self.csc_events.append(alias.text)
 		for event in self.csc_events:
@@ -597,7 +595,7 @@ class TestGenerics(unittest.TestCase):
 
 	def test_ValidateMTPtgDoesNotContainGenericCommands(self):
 		self.csc_commands = []
-		self.csc_tree = ET.parse(cwd + "/../sal_interfaces/MTPtg/MTPtg_Commands.xml")
+		self.csc_tree = ET.parse(self.cwd + "/../sal_interfaces/MTPtg/MTPtg_Commands.xml")
 		for alias in self.csc_tree.findall('./SALEvent/Alias'):
 			self.csc_commands.append(alias.text)
 		for event in self.csc_commands:
@@ -605,7 +603,7 @@ class TestGenerics(unittest.TestCase):
 
 	def test_ValidateMTTCSDoesNotContainGenericEvents(self):
 		self.csc_events = []
-		self.csc_tree = ET.parse(cwd + "/../sal_interfaces/MTTCS/MTTCS_Events.xml")
+		self.csc_tree = ET.parse(self.cwd + "/../sal_interfaces/MTTCS/MTTCS_Events.xml")
 		for alias in self.csc_tree.findall('./SALEvent/Alias'):
 			self.csc_events.append(alias.text)
 		for event in self.csc_events:
@@ -613,7 +611,7 @@ class TestGenerics(unittest.TestCase):
 
 	def test_ValidateMTTCSDoesNotContainGenericCommands(self):
 		self.csc_commands = []
-		self.csc_tree = ET.parse(cwd + "/../sal_interfaces/MTTCS/MTTCS_Commands.xml")
+		self.csc_tree = ET.parse(self.cwd + "/../sal_interfaces/MTTCS/MTTCS_Commands.xml")
 		for alias in self.csc_tree.findall('./SALEvent/Alias'):
 			self.csc_commands.append(alias.text)
 		for event in self.csc_commands:
@@ -621,7 +619,7 @@ class TestGenerics(unittest.TestCase):
 
 	def test_ValidateMTVMSDoesNotContainGenericEvents(self):
 		self.csc_events = []
-		self.csc_tree = ET.parse(cwd + "/../sal_interfaces/MTVMS/MTVMS_Events.xml")
+		self.csc_tree = ET.parse(self.cwd + "/../sal_interfaces/MTVMS/MTVMS_Events.xml")
 		for alias in self.csc_tree.findall('./SALEvent/Alias'):
 			self.csc_events.append(alias.text)
 		for event in self.csc_events:
@@ -629,7 +627,7 @@ class TestGenerics(unittest.TestCase):
 
 	def test_ValidateMTVMSDoesNotContainGenericCommands(self):
 		self.csc_commands = []
-		self.csc_tree = ET.parse(cwd + "/../sal_interfaces/MTVMS/MTVMS_Commands.xml")
+		self.csc_tree = ET.parse(self.cwd + "/../sal_interfaces/MTVMS/MTVMS_Commands.xml")
 		for alias in self.csc_tree.findall('./SALEvent/Alias'):
 			self.csc_commands.append(alias.text)
 		for event in self.csc_commands:
@@ -637,7 +635,7 @@ class TestGenerics(unittest.TestCase):
 
 	def test_ValidateOCSDoesNotContainGenericEvents(self):
 		self.csc_events = []
-		self.csc_tree = ET.parse(cwd + "/../sal_interfaces/OCS/OCS_Events.xml")
+		self.csc_tree = ET.parse(self.cwd + "/../sal_interfaces/OCS/OCS_Events.xml")
 		for alias in self.csc_tree.findall('./SALEvent/Alias'):
 			self.csc_events.append(alias.text)
 		for event in self.csc_events:
@@ -645,7 +643,7 @@ class TestGenerics(unittest.TestCase):
 
 	def test_ValidateOCSDoesNotContainGenericCommands(self):
 		self.csc_commands = []
-		self.csc_tree = ET.parse(cwd + "/../sal_interfaces/OCS/OCS_Commands.xml")
+		self.csc_tree = ET.parse(self.cwd + "/../sal_interfaces/OCS/OCS_Commands.xml")
 		for alias in self.csc_tree.findall('./SALEvent/Alias'):
 			self.csc_commands.append(alias.text)
 		for event in self.csc_commands:
@@ -653,7 +651,7 @@ class TestGenerics(unittest.TestCase):
 
 	def test_ValidatePointingComponentDoesNotContainGenericEvents(self):
 		self.csc_events = []
-		self.csc_tree = ET.parse(cwd + "/../sal_interfaces/PointingComponent/PointingComponent_Events.xml")
+		self.csc_tree = ET.parse(self.cwd + "/../sal_interfaces/PointingComponent/PointingComponent_Events.xml")
 		for alias in self.csc_tree.findall('./SALEvent/Alias'):
 			self.csc_events.append(alias.text)
 		for event in self.csc_events:
@@ -661,7 +659,7 @@ class TestGenerics(unittest.TestCase):
 
 	def test_ValidatePointingComponentDoesNotContainGenericCommands(self):
 		self.csc_commands = []
-		self.csc_tree = ET.parse(cwd + "/../sal_interfaces/PointingComponent/PointingComponent_Commands.xml")
+		self.csc_tree = ET.parse(self.cwd + "/../sal_interfaces/PointingComponent/PointingComponent_Commands.xml")
 		for alias in self.csc_tree.findall('./SALEvent/Alias'):
 			self.csc_commands.append(alias.text)
 		for event in self.csc_commands:
@@ -669,7 +667,7 @@ class TestGenerics(unittest.TestCase):
 
 	def test_ValidatePromptProcessingDoesNotContainGenericEvents(self):
 		self.csc_events = []
-		self.csc_tree = ET.parse(cwd + "/../sal_interfaces/PromptProcessing/PromptProcessing_Events.xml")
+		self.csc_tree = ET.parse(self.cwd + "/../sal_interfaces/PromptProcessing/PromptProcessing_Events.xml")
 		for alias in self.csc_tree.findall('./SALEvent/Alias'):
 			self.csc_events.append(alias.text)
 		for event in self.csc_events:
@@ -677,7 +675,7 @@ class TestGenerics(unittest.TestCase):
 
 	def test_ValidateRotatorDoesNotContainGenericEvents(self):
 		self.csc_events = []
-		self.csc_tree = ET.parse(cwd + "/../sal_interfaces/Rotator/Rotator_Events.xml")
+		self.csc_tree = ET.parse(self.cwd + "/../sal_interfaces/Rotator/Rotator_Events.xml")
 		for alias in self.csc_tree.findall('./SALEvent/Alias'):
 			self.csc_events.append(alias.text)
 		for event in self.csc_events:
@@ -685,7 +683,7 @@ class TestGenerics(unittest.TestCase):
 
 	def test_ValidateRotatorDoesNotContainGenericCommands(self):
 		self.csc_commands = []
-		self.csc_tree = ET.parse(cwd + "/../sal_interfaces/Rotator/Rotator_Commands.xml")
+		self.csc_tree = ET.parse(self.cwd + "/../sal_interfaces/Rotator/Rotator_Commands.xml")
 		for alias in self.csc_tree.findall('./SALEvent/Alias'):
 			self.csc_commands.append(alias.text)
 		for event in self.csc_commands:
@@ -693,7 +691,7 @@ class TestGenerics(unittest.TestCase):
 
 	def test_ValidateSchedulerDoesNotContainGenericEvents(self):
 		self.csc_events = []
-		self.csc_tree = ET.parse(cwd + "/../sal_interfaces/Scheduler/Scheduler_Events.xml")
+		self.csc_tree = ET.parse(self.cwd + "/../sal_interfaces/Scheduler/Scheduler_Events.xml")
 		for alias in self.csc_tree.findall('./SALEvent/Alias'):
 			self.csc_events.append(alias.text)
 		for event in self.csc_events:
@@ -702,7 +700,7 @@ class TestGenerics(unittest.TestCase):
 	@unittest.skip("DM-21745")
 	def test_ValidateScriptDoesNotContainGenericEvents(self):
 		self.csc_events = []
-		self.csc_tree = ET.parse(cwd + "/../sal_interfaces/Script/Script_Events.xml")
+		self.csc_tree = ET.parse(self.cwd + "/../sal_interfaces/Script/Script_Events.xml")
 		for alias in self.csc_tree.findall('./SALEvent/Alias'):
 			self.csc_events.append(alias.text)
 		for event in self.csc_events:
@@ -710,7 +708,7 @@ class TestGenerics(unittest.TestCase):
 
 	def test_ValidateScriptDoesNotContainGenericCommands(self):
 		self.csc_commands = []
-		self.csc_tree = ET.parse(cwd + "/../sal_interfaces/Script/Script_Commands.xml")
+		self.csc_tree = ET.parse(self.cwd + "/../sal_interfaces/Script/Script_Commands.xml")
 		for alias in self.csc_tree.findall('./SALEvent/Alias'):
 			self.csc_commands.append(alias.text)
 		for event in self.csc_commands:
@@ -718,7 +716,7 @@ class TestGenerics(unittest.TestCase):
 
 	def test_ValidateScriptQueueDoesNotContainGenericEvents(self):
 		self.csc_events = []
-		self.csc_tree = ET.parse(cwd + "/../sal_interfaces/ScriptQueue/ScriptQueue_Events.xml")
+		self.csc_tree = ET.parse(self.cwd + "/../sal_interfaces/ScriptQueue/ScriptQueue_Events.xml")
 		for alias in self.csc_tree.findall('./SALEvent/Alias'):
 			self.csc_events.append(alias.text)
 		for event in self.csc_events:
@@ -726,7 +724,7 @@ class TestGenerics(unittest.TestCase):
 
 	def test_ValidateScriptQueueDoesNotContainGenericCommands(self):
 		self.csc_commands = []
-		self.csc_tree = ET.parse(cwd + "/../sal_interfaces/ScriptQueue/ScriptQueue_Commands.xml")
+		self.csc_tree = ET.parse(self.cwd + "/../sal_interfaces/ScriptQueue/ScriptQueue_Commands.xml")
 		for alias in self.csc_tree.findall('./SALEvent/Alias'):
 			self.csc_commands.append(alias.text)
 		for event in self.csc_commands:
@@ -734,7 +732,7 @@ class TestGenerics(unittest.TestCase):
 
 	def test_ValidateTestDoesNotContainGenericEvents(self):
 		self.csc_events = []
-		self.csc_tree = ET.parse(cwd + "/../sal_interfaces/Test/Test_Events.xml")
+		self.csc_tree = ET.parse(self.cwd + "/../sal_interfaces/Test/Test_Events.xml")
 		for alias in self.csc_tree.findall('./SALEvent/Alias'):
 			self.csc_events.append(alias.text)
 		for event in self.csc_events:
@@ -742,7 +740,7 @@ class TestGenerics(unittest.TestCase):
 
 	def test_ValidateTestDoesNotContainGenericCommands(self):
 		self.csc_commands = []
-		self.csc_tree = ET.parse(cwd + "/../sal_interfaces/Test/Test_Commands.xml")
+		self.csc_tree = ET.parse(self.cwd + "/../sal_interfaces/Test/Test_Commands.xml")
 		for alias in self.csc_tree.findall('./SALEvent/Alias'):
 			self.csc_commands.append(alias.text)
 		for event in self.csc_commands:
@@ -750,7 +748,7 @@ class TestGenerics(unittest.TestCase):
 
 	def test_ValidateTunableLaserDoesNotContainGenericEvents(self):
 		self.csc_events = []
-		self.csc_tree = ET.parse(cwd + "/../sal_interfaces/TunableLaser/TunableLaser_Events.xml")
+		self.csc_tree = ET.parse(self.cwd + "/../sal_interfaces/TunableLaser/TunableLaser_Events.xml")
 		for alias in self.csc_tree.findall('./SALEvent/Alias'):
 			self.csc_events.append(alias.text)
 		for event in self.csc_events:
@@ -758,7 +756,7 @@ class TestGenerics(unittest.TestCase):
 
 	def test_ValidateTunableLaserDoesNotContainGenericCommands(self):
 		self.csc_commands = []
-		self.csc_tree = ET.parse(cwd + "/../sal_interfaces/TunableLaser/TunableLaser_Commands.xml")
+		self.csc_tree = ET.parse(self.cwd + "/../sal_interfaces/TunableLaser/TunableLaser_Commands.xml")
 		for alias in self.csc_tree.findall('./SALEvent/Alias'):
 			self.csc_commands.append(alias.text)
 		for event in self.csc_commands:
@@ -766,7 +764,7 @@ class TestGenerics(unittest.TestCase):
 
 	def test_ValidateWatcherDoesNotContainGenericEvents(self):
 		self.csc_events = []
-		self.csc_tree = ET.parse(cwd + "/../sal_interfaces/Watcher/Watcher_Events.xml")
+		self.csc_tree = ET.parse(self.cwd + "/../sal_interfaces/Watcher/Watcher_Events.xml")
 		for alias in self.csc_tree.findall('./SALEvent/Alias'):
 			self.csc_events.append(alias.text)
 		for event in self.csc_events:
@@ -774,7 +772,7 @@ class TestGenerics(unittest.TestCase):
 
 	def test_ValidateWatcherDoesNotContainGenericCommands(self):
 		self.csc_commands = []
-		self.csc_tree = ET.parse(cwd + "/../sal_interfaces/Watcher/Watcher_Commands.xml")
+		self.csc_tree = ET.parse(self.cwd + "/../sal_interfaces/Watcher/Watcher_Commands.xml")
 		for alias in self.csc_tree.findall('./SALEvent/Alias'):
 			self.csc_commands.append(alias.text)
 		for event in self.csc_commands:
