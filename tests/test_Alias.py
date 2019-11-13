@@ -11,7 +11,7 @@ class TestAlias(unittest.TestCase):
 		self.csc_aliases = []
 		self.csc_topics = []
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/ATAOS/ATAOS_Commands.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/ATAOS/ATAOS_Commands.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for alias in self.root.findall('./SALCommand/Alias'):
@@ -27,7 +27,7 @@ class TestAlias(unittest.TestCase):
 		self.csc_aliases = []
 		self.csc_topics = []
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/ATAOS/ATAOS_Events.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/ATAOS/ATAOS_Events.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for alias in self.root.findall('./SALEvent/Alias'):
@@ -43,7 +43,7 @@ class TestAlias(unittest.TestCase):
 		self.csc_aliases = []
 		self.csc_topics = []
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/ATArchiver/ATArchiver_Commands.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/ATArchiver/ATArchiver_Commands.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for alias in self.root.findall('./SALCommand/Alias'):
@@ -59,7 +59,7 @@ class TestAlias(unittest.TestCase):
 		self.csc_aliases = []
 		self.csc_topics = []
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/ATArchiver/ATArchiver_Events.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/ATArchiver/ATArchiver_Events.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for alias in self.root.findall('./SALEvent/Alias'):
@@ -75,7 +75,7 @@ class TestAlias(unittest.TestCase):
 		self.csc_aliases = []
 		self.csc_topics = []
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/ATBuilding/ATBuilding_Events.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/ATBuilding/ATBuilding_Events.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for alias in self.root.findall('./SALEvent/Alias'):
@@ -91,7 +91,7 @@ class TestAlias(unittest.TestCase):
 		self.csc_aliases = []
 		self.csc_topics = []
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/ATCamera/ATCamera_Commands.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/ATCamera/ATCamera_Commands.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for alias in self.root.findall('./SALCommand/Alias'):
@@ -107,7 +107,7 @@ class TestAlias(unittest.TestCase):
 		self.csc_aliases = []
 		self.csc_topics = []
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/ATCamera/ATCamera_Events.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/ATCamera/ATCamera_Events.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for alias in self.root.findall('./SALEvent/Alias'):
@@ -123,7 +123,7 @@ class TestAlias(unittest.TestCase):
 		self.csc_aliases = []
 		self.csc_topics = []
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/ATDome/ATDome_Commands.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/ATDome/ATDome_Commands.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for alias in self.root.findall('./SALCommand/Alias'):
@@ -139,7 +139,7 @@ class TestAlias(unittest.TestCase):
 		self.csc_aliases = []
 		self.csc_topics = []
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/ATDome/ATDome_Events.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/ATDome/ATDome_Events.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for alias in self.root.findall('./SALEvent/Alias'):
@@ -155,7 +155,7 @@ class TestAlias(unittest.TestCase):
 		self.csc_aliases = []
 		self.csc_topics = []
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/ATDomeTrajectory/ATDomeTrajectory_Events.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/ATDomeTrajectory/ATDomeTrajectory_Events.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for alias in self.root.findall('./SALEvent/Alias'):
@@ -171,7 +171,7 @@ class TestAlias(unittest.TestCase):
 		self.csc_aliases = []
 		self.csc_topics = []
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/ATHeaderService/ATHeaderService_Events.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/ATHeaderService/ATHeaderService_Events.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for alias in self.root.findall('./SALEvent/Alias'):
@@ -187,7 +187,7 @@ class TestAlias(unittest.TestCase):
 		self.csc_aliases = []
 		self.csc_topics = []
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/ATHexapod/ATHexapod_Commands.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/ATHexapod/ATHexapod_Commands.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for alias in self.root.findall('./SALCommand/Alias'):
@@ -203,7 +203,7 @@ class TestAlias(unittest.TestCase):
 		self.csc_aliases = []
 		self.csc_topics = []
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/ATHexapod/ATHexapod_Events.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/ATHexapod/ATHexapod_Events.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for alias in self.root.findall('./SALEvent/Alias'):
@@ -219,7 +219,7 @@ class TestAlias(unittest.TestCase):
 		self.csc_aliases = []
 		self.csc_topics = []
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/ATMCS/ATMCS_Commands.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/ATMCS/ATMCS_Commands.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for alias in self.root.findall('./SALCommand/Alias'):
@@ -235,7 +235,7 @@ class TestAlias(unittest.TestCase):
 		self.csc_aliases = []
 		self.csc_topics = []
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/ATMCS/ATMCS_Events.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/ATMCS/ATMCS_Events.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for alias in self.root.findall('./SALEvent/Alias'):
@@ -251,7 +251,7 @@ class TestAlias(unittest.TestCase):
 		self.csc_aliases = []
 		self.csc_topics = []
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/ATMonochromator/ATMonochromator_Commands.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/ATMonochromator/ATMonochromator_Commands.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for alias in self.root.findall('./SALCommand/Alias'):
@@ -267,7 +267,7 @@ class TestAlias(unittest.TestCase):
 		self.csc_aliases = []
 		self.csc_topics = []
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/ATMonochromator/ATMonochromator_Events.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/ATMonochromator/ATMonochromator_Events.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for alias in self.root.findall('./SALEvent/Alias'):
@@ -283,7 +283,7 @@ class TestAlias(unittest.TestCase):
 		self.csc_aliases = []
 		self.csc_topics = []
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/ATPneumatics/ATPneumatics_Commands.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/ATPneumatics/ATPneumatics_Commands.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for alias in self.root.findall('./SALCommand/Alias'):
@@ -299,7 +299,7 @@ class TestAlias(unittest.TestCase):
 		self.csc_aliases = []
 		self.csc_topics = []
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/ATPneumatics/ATPneumatics_Events.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/ATPneumatics/ATPneumatics_Events.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for alias in self.root.findall('./SALEvent/Alias'):
@@ -315,7 +315,7 @@ class TestAlias(unittest.TestCase):
 		self.csc_aliases = []
 		self.csc_topics = []
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/ATPtg/ATPtg_Commands.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/ATPtg/ATPtg_Commands.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for alias in self.root.findall('./SALCommand/Alias'):
@@ -331,7 +331,7 @@ class TestAlias(unittest.TestCase):
 		self.csc_aliases = []
 		self.csc_topics = []
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/ATPtg/ATPtg_Events.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/ATPtg/ATPtg_Events.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for alias in self.root.findall('./SALEvent/Alias'):
@@ -347,7 +347,7 @@ class TestAlias(unittest.TestCase):
 		self.csc_aliases = []
 		self.csc_topics = []
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/ATSpectrograph/ATSpectrograph_Commands.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/ATSpectrograph/ATSpectrograph_Commands.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for alias in self.root.findall('./SALCommand/Alias'):
@@ -363,7 +363,7 @@ class TestAlias(unittest.TestCase):
 		self.csc_aliases = []
 		self.csc_topics = []
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/ATSpectrograph/ATSpectrograph_Events.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/ATSpectrograph/ATSpectrograph_Events.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for alias in self.root.findall('./SALEvent/Alias'):
@@ -379,7 +379,7 @@ class TestAlias(unittest.TestCase):
 		self.csc_aliases = []
 		self.csc_topics = []
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/ATTCS/ATTCS_Commands.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/ATTCS/ATTCS_Commands.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for alias in self.root.findall('./SALCommand/Alias'):
@@ -395,7 +395,7 @@ class TestAlias(unittest.TestCase):
 		self.csc_aliases = []
 		self.csc_topics = []
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/ATTCS/ATTCS_Events.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/ATTCS/ATTCS_Events.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for alias in self.root.findall('./SALEvent/Alias'):
@@ -411,7 +411,7 @@ class TestAlias(unittest.TestCase):
 		self.csc_aliases = []
 		self.csc_topics = []
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/ATWhiteLight/ATWhiteLight_Commands.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/ATWhiteLight/ATWhiteLight_Commands.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for alias in self.root.findall('./SALCommand/Alias'):
@@ -427,7 +427,7 @@ class TestAlias(unittest.TestCase):
 		self.csc_aliases = []
 		self.csc_topics = []
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/ATWhiteLight/ATWhiteLight_Events.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/ATWhiteLight/ATWhiteLight_Events.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for alias in self.root.findall('./SALEvent/Alias'):
@@ -443,7 +443,7 @@ class TestAlias(unittest.TestCase):
 		self.csc_aliases = []
 		self.csc_topics = []
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/CatchupArchiver/CatchupArchiver_Events.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/CatchupArchiver/CatchupArchiver_Events.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for alias in self.root.findall('./SALEvent/Alias'):
@@ -459,7 +459,7 @@ class TestAlias(unittest.TestCase):
 		self.csc_aliases = []
 		self.csc_topics = []
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/CBP/CBP_Commands.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/CBP/CBP_Commands.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for alias in self.root.findall('./SALCommand/Alias'):
@@ -475,7 +475,7 @@ class TestAlias(unittest.TestCase):
 		self.csc_aliases = []
 		self.csc_topics = []
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/DIMM/DIMM_Events.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/DIMM/DIMM_Events.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for alias in self.root.findall('./SALEvent/Alias'):
@@ -491,7 +491,7 @@ class TestAlias(unittest.TestCase):
 		self.csc_aliases = []
 		self.csc_topics = []
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/Dome/Dome_Commands.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/Dome/Dome_Commands.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for alias in self.root.findall('./SALCommand/Alias'):
@@ -507,7 +507,7 @@ class TestAlias(unittest.TestCase):
 		self.csc_aliases = []
 		self.csc_topics = []
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/Dome/Dome_Events.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/Dome/Dome_Events.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for alias in self.root.findall('./SALEvent/Alias'):
@@ -523,7 +523,7 @@ class TestAlias(unittest.TestCase):
 		self.csc_aliases = []
 		self.csc_topics = []
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/DSM/DSM_Events.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/DSM/DSM_Events.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for alias in self.root.findall('./SALEvent/Alias'):
@@ -539,7 +539,7 @@ class TestAlias(unittest.TestCase):
 		self.csc_aliases = []
 		self.csc_topics = []
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/EAS/EAS_Events.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/EAS/EAS_Events.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for alias in self.root.findall('./SALEvent/Alias'):
@@ -555,7 +555,7 @@ class TestAlias(unittest.TestCase):
 		self.csc_aliases = []
 		self.csc_topics = []
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/EFD/EFD_Events.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/EFD/EFD_Events.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for alias in self.root.findall('./SALEvent/Alias'):
@@ -571,7 +571,7 @@ class TestAlias(unittest.TestCase):
 		self.csc_aliases = []
 		self.csc_topics = []
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/EFDTransformationServer/EFDTransformationServer_Events.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/EFDTransformationServer/EFDTransformationServer_Events.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for alias in self.root.findall('./SALEvent/Alias'):
@@ -587,7 +587,7 @@ class TestAlias(unittest.TestCase):
 		self.csc_aliases = []
 		self.csc_topics = []
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/Electrometer/Electrometer_Commands.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/Electrometer/Electrometer_Commands.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for alias in self.root.findall('./SALCommand/Alias'):
@@ -603,7 +603,7 @@ class TestAlias(unittest.TestCase):
 		self.csc_aliases = []
 		self.csc_topics = []
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/Electrometer/Electrometer_Events.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/Electrometer/Electrometer_Events.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for alias in self.root.findall('./SALEvent/Alias'):
@@ -619,7 +619,7 @@ class TestAlias(unittest.TestCase):
 		self.csc_aliases = []
 		self.csc_topics = []
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/FiberSpectrograph/FiberSpectrograph_Commands.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/FiberSpectrograph/FiberSpectrograph_Commands.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for alias in self.root.findall('./SALCommand/Alias'):
@@ -635,7 +635,7 @@ class TestAlias(unittest.TestCase):
 		self.csc_aliases = []
 		self.csc_topics = []
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/FiberSpectrograph/FiberSpectrograph_Events.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/FiberSpectrograph/FiberSpectrograph_Events.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for alias in self.root.findall('./SALEvent/Alias'):
@@ -651,7 +651,7 @@ class TestAlias(unittest.TestCase):
 		self.csc_aliases = []
 		self.csc_topics = []
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/GenericCamera/GenericCamera_Commands.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/GenericCamera/GenericCamera_Commands.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for alias in self.root.findall('./SALCommand/Alias'):
@@ -667,7 +667,7 @@ class TestAlias(unittest.TestCase):
 		self.csc_aliases = []
 		self.csc_topics = []
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/GenericCamera/GenericCamera_Events.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/GenericCamera/GenericCamera_Events.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for alias in self.root.findall('./SALEvent/Alias'):
@@ -683,7 +683,7 @@ class TestAlias(unittest.TestCase):
 		self.csc_aliases = []
 		self.csc_topics = []
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/IOTA/IOTA_Events.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/IOTA/IOTA_Events.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for alias in self.root.findall('./SALEvent/Alias'):
@@ -699,7 +699,7 @@ class TestAlias(unittest.TestCase):
 		self.csc_aliases = []
 		self.csc_topics = []
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/Hexapod/Hexapod_Commands.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/Hexapod/Hexapod_Commands.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for alias in self.root.findall('./SALCommand/Alias'):
@@ -715,7 +715,7 @@ class TestAlias(unittest.TestCase):
 		self.csc_aliases = []
 		self.csc_topics = []
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/Hexapod/Hexapod_Events.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/Hexapod/Hexapod_Events.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for alias in self.root.findall('./SALEvent/Alias'):
@@ -731,7 +731,7 @@ class TestAlias(unittest.TestCase):
 		self.csc_aliases = []
 		self.csc_topics = []
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/HVAC/HVAC_Commands.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/HVAC/HVAC_Commands.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for alias in self.root.findall('./SALCommand/Alias'):
@@ -747,7 +747,7 @@ class TestAlias(unittest.TestCase):
 		self.csc_aliases = []
 		self.csc_topics = []
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/HVAC/HVAC_Events.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/HVAC/HVAC_Events.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for alias in self.root.findall('./SALEvent/Alias'):
@@ -763,7 +763,7 @@ class TestAlias(unittest.TestCase):
 		self.csc_aliases = []
 		self.csc_topics = []
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/LinearStage/LinearStage_Commands.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/LinearStage/LinearStage_Commands.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for alias in self.root.findall('./SALCommand/Alias'):
@@ -779,7 +779,7 @@ class TestAlias(unittest.TestCase):
 		self.csc_aliases = []
 		self.csc_topics = []
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/LinearStage/LinearStage_Events.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/LinearStage/LinearStage_Events.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for alias in self.root.findall('./SALEvent/Alias'):
@@ -795,7 +795,7 @@ class TestAlias(unittest.TestCase):
 		self.csc_aliases = []
 		self.csc_topics = []
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/LOVE/LOVE_Events.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/LOVE/LOVE_Events.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for alias in self.root.findall('./SALEvent/Alias'):
@@ -811,7 +811,7 @@ class TestAlias(unittest.TestCase):
 		self.csc_aliases = []
 		self.csc_topics = []
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/MTAOS/MTAOS_Commands.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/MTAOS/MTAOS_Commands.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for alias in self.root.findall('./SALCommand/Alias'):
@@ -827,7 +827,7 @@ class TestAlias(unittest.TestCase):
 		self.csc_aliases = []
 		self.csc_topics = []
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/MTAOS/MTAOS_Events.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/MTAOS/MTAOS_Events.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for alias in self.root.findall('./SALEvent/Alias'):
@@ -843,7 +843,7 @@ class TestAlias(unittest.TestCase):
 		self.csc_aliases = []
 		self.csc_topics = []
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/MTArchiver/MTArchiver_Events.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/MTArchiver/MTArchiver_Events.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for alias in self.root.findall('./SALEvent/Alias'):
@@ -859,7 +859,7 @@ class TestAlias(unittest.TestCase):
 		self.csc_aliases = []
 		self.csc_topics = []
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/MTCamera/MTCamera_Commands.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/MTCamera/MTCamera_Commands.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for alias in self.root.findall('./SALCommand/Alias'):
@@ -875,7 +875,7 @@ class TestAlias(unittest.TestCase):
 		self.csc_aliases = []
 		self.csc_topics = []
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/MTCamera/MTCamera_Events.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/MTCamera/MTCamera_Events.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for alias in self.root.findall('./SALEvent/Alias'):
@@ -891,7 +891,7 @@ class TestAlias(unittest.TestCase):
 		self.csc_aliases = []
 		self.csc_topics = []
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/MTDomeTrajectory/MTDomeTrajectory_Events.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/MTDomeTrajectory/MTDomeTrajectory_Events.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for alias in self.root.findall('./SALEvent/Alias'):
@@ -907,7 +907,7 @@ class TestAlias(unittest.TestCase):
 		self.csc_aliases = []
 		self.csc_topics = []
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/MTEEC/MTEEC_Commands.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/MTEEC/MTEEC_Commands.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for alias in self.root.findall('./SALCommand/Alias'):
@@ -923,7 +923,7 @@ class TestAlias(unittest.TestCase):
 		self.csc_aliases = []
 		self.csc_topics = []
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/MTEEC/MTEEC_Events.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/MTEEC/MTEEC_Events.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for alias in self.root.findall('./SALEvent/Alias'):
@@ -939,7 +939,7 @@ class TestAlias(unittest.TestCase):
 		self.csc_aliases = []
 		self.csc_topics = []
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/MTGuider/MTGuider_Events.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/MTGuider/MTGuider_Events.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for alias in self.root.findall('./SALEvent/Alias'):
@@ -955,7 +955,7 @@ class TestAlias(unittest.TestCase):
 		self.csc_aliases = []
 		self.csc_topics = []
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/MTHeaderService/MTHeaderService_Events.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/MTHeaderService/MTHeaderService_Events.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for alias in self.root.findall('./SALEvent/Alias'):
@@ -971,7 +971,7 @@ class TestAlias(unittest.TestCase):
 		self.csc_aliases = []
 		self.csc_topics = []
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/MTLaserTracker/MTLaserTracker_Events.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/MTLaserTracker/MTLaserTracker_Events.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for alias in self.root.findall('./SALEvent/Alias'):
@@ -987,7 +987,7 @@ class TestAlias(unittest.TestCase):
 		self.csc_aliases = []
 		self.csc_topics = []
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/MTM1M3/MTM1M3_Commands.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/MTM1M3/MTM1M3_Commands.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for alias in self.root.findall('./SALCommand/Alias'):
@@ -1003,7 +1003,7 @@ class TestAlias(unittest.TestCase):
 		self.csc_aliases = []
 		self.csc_topics = []
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/MTM1M3/MTM1M3_Events.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/MTM1M3/MTM1M3_Events.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for alias in self.root.findall('./SALEvent/Alias'):
@@ -1019,7 +1019,7 @@ class TestAlias(unittest.TestCase):
 		self.csc_aliases = []
 		self.csc_topics = []
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/MTM1M3TS/MTM1M3TS_Commands.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/MTM1M3TS/MTM1M3TS_Commands.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for alias in self.root.findall('./SALCommand/Alias'):
@@ -1035,7 +1035,7 @@ class TestAlias(unittest.TestCase):
 		self.csc_aliases = []
 		self.csc_topics = []
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/MTM1M3TS/MTM1M3TS_Events.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/MTM1M3TS/MTM1M3TS_Events.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for alias in self.root.findall('./SALEvent/Alias'):
@@ -1051,7 +1051,7 @@ class TestAlias(unittest.TestCase):
 		self.csc_aliases = []
 		self.csc_topics = []
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/MTM2/MTM2_Commands.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/MTM2/MTM2_Commands.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for alias in self.root.findall('./SALCommand/Alias'):
@@ -1067,7 +1067,7 @@ class TestAlias(unittest.TestCase):
 		self.csc_aliases = []
 		self.csc_topics = []
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/MTM2/MTM2_Events.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/MTM2/MTM2_Events.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for alias in self.root.findall('./SALEvent/Alias'):
@@ -1083,7 +1083,7 @@ class TestAlias(unittest.TestCase):
 		self.csc_aliases = []
 		self.csc_topics = []
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/MTMount/MTMount_Commands.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/MTMount/MTMount_Commands.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for alias in self.root.findall('./SALCommand/Alias'):
@@ -1099,7 +1099,7 @@ class TestAlias(unittest.TestCase):
 		self.csc_aliases = []
 		self.csc_topics = []
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/MTMount/MTMount_Events.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/MTMount/MTMount_Events.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for alias in self.root.findall('./SALEvent/Alias'):
@@ -1115,7 +1115,7 @@ class TestAlias(unittest.TestCase):
 		self.csc_aliases = []
 		self.csc_topics = []
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/MTPtg/MTPtg_Commands.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/MTPtg/MTPtg_Commands.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for alias in self.root.findall('./SALCommand/Alias'):
@@ -1131,7 +1131,7 @@ class TestAlias(unittest.TestCase):
 		self.csc_aliases = []
 		self.csc_topics = []
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/MTPtg/MTPtg_Events.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/MTPtg/MTPtg_Events.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for alias in self.root.findall('./SALEvent/Alias'):
@@ -1147,7 +1147,7 @@ class TestAlias(unittest.TestCase):
 		self.csc_aliases = []
 		self.csc_topics = []
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/MTTCS/MTTCS_Commands.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/MTTCS/MTTCS_Commands.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for alias in self.root.findall('./SALCommand/Alias'):
@@ -1163,7 +1163,7 @@ class TestAlias(unittest.TestCase):
 		self.csc_aliases = []
 		self.csc_topics = []
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/MTTCS/MTTCS_Events.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/MTTCS/MTTCS_Events.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for alias in self.root.findall('./SALEvent/Alias'):
@@ -1179,7 +1179,7 @@ class TestAlias(unittest.TestCase):
 		self.csc_aliases = []
 		self.csc_topics = []
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/MTVMS/MTVMS_Commands.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/MTVMS/MTVMS_Commands.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for alias in self.root.findall('./SALCommand/Alias'):
@@ -1195,7 +1195,7 @@ class TestAlias(unittest.TestCase):
 		self.csc_aliases = []
 		self.csc_topics = []
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/MTVMS/MTVMS_Events.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/MTVMS/MTVMS_Events.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for alias in self.root.findall('./SALEvent/Alias'):
@@ -1211,7 +1211,7 @@ class TestAlias(unittest.TestCase):
 		self.csc_aliases = []
 		self.csc_topics = []
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/OCS/OCS_Commands.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/OCS/OCS_Commands.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for alias in self.root.findall('./SALCommand/Alias'):
@@ -1227,7 +1227,7 @@ class TestAlias(unittest.TestCase):
 		self.csc_aliases = []
 		self.csc_topics = []
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/OCS/OCS_Events.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/OCS/OCS_Events.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for alias in self.root.findall('./SALEvent/Alias'):
@@ -1243,7 +1243,7 @@ class TestAlias(unittest.TestCase):
 		self.csc_aliases = []
 		self.csc_topics = []
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/PointingComponent/PointingComponent_Commands.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/PointingComponent/PointingComponent_Commands.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for alias in self.root.findall('./SALCommand/Alias'):
@@ -1259,7 +1259,7 @@ class TestAlias(unittest.TestCase):
 		self.csc_aliases = []
 		self.csc_topics = []
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/PointingComponent/PointingComponent_Events.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/PointingComponent/PointingComponent_Events.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for alias in self.root.findall('./SALEvent/Alias'):
@@ -1275,7 +1275,7 @@ class TestAlias(unittest.TestCase):
 		self.csc_aliases = []
 		self.csc_topics = []
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/PromptProcessing/PromptProcessing_Events.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/PromptProcessing/PromptProcessing_Events.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for alias in self.root.findall('./SALEvent/Alias'):
@@ -1291,7 +1291,7 @@ class TestAlias(unittest.TestCase):
 		self.csc_aliases = []
 		self.csc_topics = []
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/Rotator/Rotator_Commands.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/Rotator/Rotator_Commands.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for alias in self.root.findall('./SALCommand/Alias'):
@@ -1307,7 +1307,7 @@ class TestAlias(unittest.TestCase):
 		self.csc_aliases = []
 		self.csc_topics = []
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/Rotator/Rotator_Events.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/Rotator/Rotator_Events.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for alias in self.root.findall('./SALEvent/Alias'):
@@ -1323,7 +1323,7 @@ class TestAlias(unittest.TestCase):
 		self.csc_aliases = []
 		self.csc_topics = []
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/Scheduler/Scheduler_Events.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/Scheduler/Scheduler_Events.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for alias in self.root.findall('./SALEvent/Alias'):
@@ -1339,7 +1339,7 @@ class TestAlias(unittest.TestCase):
 		self.csc_aliases = []
 		self.csc_topics = []
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/Script/Script_Commands.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/Script/Script_Commands.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for alias in self.root.findall('./SALCommand/Alias'):
@@ -1355,7 +1355,7 @@ class TestAlias(unittest.TestCase):
 		self.csc_aliases = []
 		self.csc_topics = []
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/Script/Script_Events.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/Script/Script_Events.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for alias in self.root.findall('./SALEvent/Alias'):
@@ -1371,7 +1371,7 @@ class TestAlias(unittest.TestCase):
 		self.csc_aliases = []
 		self.csc_topics = []
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/ScriptQueue/ScriptQueue_Commands.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/ScriptQueue/ScriptQueue_Commands.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for alias in self.root.findall('./SALCommand/Alias'):
@@ -1387,7 +1387,7 @@ class TestAlias(unittest.TestCase):
 		self.csc_aliases = []
 		self.csc_topics = []
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/ScriptQueue/ScriptQueue_Events.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/ScriptQueue/ScriptQueue_Events.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for alias in self.root.findall('./SALEvent/Alias'):
@@ -1403,7 +1403,7 @@ class TestAlias(unittest.TestCase):
 		self.csc_aliases = []
 		self.csc_topics = []
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/Test/Test_Commands.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/Test/Test_Commands.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for alias in self.root.findall('./SALCommand/Alias'):
@@ -1419,7 +1419,7 @@ class TestAlias(unittest.TestCase):
 		self.csc_aliases = []
 		self.csc_topics = []
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/Test/Test_Events.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/Test/Test_Events.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for alias in self.root.findall('./SALEvent/Alias'):
@@ -1435,7 +1435,7 @@ class TestAlias(unittest.TestCase):
 		self.csc_aliases = []
 		self.csc_topics = []
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/TunableLaser/TunableLaser_Commands.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/TunableLaser/TunableLaser_Commands.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for alias in self.root.findall('./SALCommand/Alias'):
@@ -1451,7 +1451,7 @@ class TestAlias(unittest.TestCase):
 		self.csc_aliases = []
 		self.csc_topics = []
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/TunableLaser/TunableLaser_Events.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/TunableLaser/TunableLaser_Events.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for alias in self.root.findall('./SALEvent/Alias'):
@@ -1467,7 +1467,7 @@ class TestAlias(unittest.TestCase):
 		self.csc_aliases = []
 		self.csc_topics = []
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/Watcher/Watcher_Commands.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/Watcher/Watcher_Commands.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for alias in self.root.findall('./SALCommand/Alias'):
@@ -1483,7 +1483,7 @@ class TestAlias(unittest.TestCase):
 		self.csc_aliases = []
 		self.csc_topics = []
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/Watcher/Watcher_Events.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/Watcher/Watcher_Events.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for alias in self.root.findall('./SALEvent/Alias'):
