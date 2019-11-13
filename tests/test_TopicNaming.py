@@ -1,11 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-import os
-import sys
 import unittest
 import xml.etree.ElementTree as ET
-cwd = os.getcwd()
-sys.path.insert(1, cwd + '/../scripts/unittests')
 import xml_common
 
 class TestTopicNaming(unittest.TestCase):
@@ -317,21 +313,6 @@ class TestTopicNaming(unittest.TestCase):
 			self.assertEqual(topic.text.split('_')[0], 'ATWhiteLight', msg='EFDB_Name ' + topic.text + ' does not properly contain the CSC name.')
 			self.assertRegex(topic.text.partition('_')[2], r'^[a-z]([a-z0-9]*)', msg='EFDB_Name Topic string ' + topic.text.partition('_')[2] + ' does not begin with a lowercase letter and/or contains non-alphanumeric characters.')
 
-	def test_CatchupArchiverEventsTopicNaming(self):
-		self.tree = ET.parse("../sal_interfaces/CatchupArchiver/CatchupArchiver_Events.xml")
-		self.root = self.tree.getroot()
-		for topic in self.root.findall('./SALEvent/EFDB_Topic'):
-			self.assertEqual(topic.text.split('_')[0], 'CatchupArchiver', msg='EFDB_Name ' + topic.text + ' does not properly contain the CSC name.')
-			self.assertEqual(topic.text.split('_')[1], 'logevent', msg='EFDB_Name ' + topic.text + ' does not properly contain the topicType string.')
-			self.assertRegex(topic.text.partition('_')[2], r'^[a-z]([a-z0-9]*)', msg='EFDB_Name Topic string ' + topic.text.partition('_')[2] + ' does not begin with a lowercase letter and/or contains non-alphanumeric characters.')
-
-	def test_CatchupArchiverTelemetryTopicNaming(self):
-		self.tree = ET.parse("../sal_interfaces/CatchupArchiver/CatchupArchiver_Telemetry.xml")
-		self.root = self.tree.getroot()
-		for topic in self.root.findall('./SALTelemetry/EFDB_Topic'):
-			self.assertEqual(topic.text.split('_')[0], 'CatchupArchiver', msg='EFDB_Name ' + topic.text + ' does not properly contain the CSC name.')
-			self.assertRegex(topic.text.partition('_')[2], r'^[a-z]([a-z0-9]*)', msg='EFDB_Name Topic string ' + topic.text.partition('_')[2] + ' does not begin with a lowercase letter and/or contains non-alphanumeric characters.')
-
 	def test_CBPCommandsTopicNaming(self):
 		self.tree = ET.parse("../sal_interfaces/CBP/CBP_Commands.xml")
 		self.root = self.tree.getroot()
@@ -347,6 +328,21 @@ class TestTopicNaming(unittest.TestCase):
 			self.assertEqual(topic.text.split('_')[0], 'CBP', msg='EFDB_Name ' + topic.text + ' does not properly contain the CSC name.')
 			self.assertRegex(topic.text.partition('_')[2], r'^[a-z]([a-z0-9]*)', msg='EFDB_Name Topic string ' + topic.text.partition('_')[2] + ' does not begin with a lowercase letter and/or contains non-alphanumeric characters.')
 
+	def test_CatchupArchiverEventsTopicNaming(self):
+		self.tree = ET.parse("../sal_interfaces/CatchupArchiver/CatchupArchiver_Events.xml")
+		self.root = self.tree.getroot()
+		for topic in self.root.findall('./SALEvent/EFDB_Topic'):
+			self.assertEqual(topic.text.split('_')[0], 'CatchupArchiver', msg='EFDB_Name ' + topic.text + ' does not properly contain the CSC name.')
+			self.assertEqual(topic.text.split('_')[1], 'logevent', msg='EFDB_Name ' + topic.text + ' does not properly contain the topicType string.')
+			self.assertRegex(topic.text.partition('_')[2], r'^[a-z]([a-z0-9]*)', msg='EFDB_Name Topic string ' + topic.text.partition('_')[2] + ' does not begin with a lowercase letter and/or contains non-alphanumeric characters.')
+
+	def test_CatchupArchiverTelemetryTopicNaming(self):
+		self.tree = ET.parse("../sal_interfaces/CatchupArchiver/CatchupArchiver_Telemetry.xml")
+		self.root = self.tree.getroot()
+		for topic in self.root.findall('./SALTelemetry/EFDB_Topic'):
+			self.assertEqual(topic.text.split('_')[0], 'CatchupArchiver', msg='EFDB_Name ' + topic.text + ' does not properly contain the CSC name.')
+			self.assertRegex(topic.text.partition('_')[2], r'^[a-z]([a-z0-9]*)', msg='EFDB_Name Topic string ' + topic.text.partition('_')[2] + ' does not begin with a lowercase letter and/or contains non-alphanumeric characters.')
+
 	def test_DIMMEventsTopicNaming(self):
 		self.tree = ET.parse("../sal_interfaces/DIMM/DIMM_Events.xml")
 		self.root = self.tree.getroot()
@@ -360,6 +356,21 @@ class TestTopicNaming(unittest.TestCase):
 		self.root = self.tree.getroot()
 		for topic in self.root.findall('./SALTelemetry/EFDB_Topic'):
 			self.assertEqual(topic.text.split('_')[0], 'DIMM', msg='EFDB_Name ' + topic.text + ' does not properly contain the CSC name.')
+			self.assertRegex(topic.text.partition('_')[2], r'^[a-z]([a-z0-9]*)', msg='EFDB_Name Topic string ' + topic.text.partition('_')[2] + ' does not begin with a lowercase letter and/or contains non-alphanumeric characters.')
+
+	def test_DSMEventsTopicNaming(self):
+		self.tree = ET.parse("../sal_interfaces/DSM/DSM_Events.xml")
+		self.root = self.tree.getroot()
+		for topic in self.root.findall('./SALEvent/EFDB_Topic'):
+			self.assertEqual(topic.text.split('_')[0], 'DSM', msg='EFDB_Name ' + topic.text + ' does not properly contain the CSC name.')
+			self.assertEqual(topic.text.split('_')[1], 'logevent', msg='EFDB_Name ' + topic.text + ' does not properly contain the topicType string.')
+			self.assertRegex(topic.text.partition('_')[2], r'^[a-z]([a-z0-9]*)', msg='EFDB_Name Topic string ' + topic.text.partition('_')[2] + ' does not begin with a lowercase letter and/or contains non-alphanumeric characters.')
+
+	def test_DSMTelemetryTopicNaming(self):
+		self.tree = ET.parse("../sal_interfaces/DSM/DSM_Telemetry.xml")
+		self.root = self.tree.getroot()
+		for topic in self.root.findall('./SALTelemetry/EFDB_Topic'):
+			self.assertEqual(topic.text.split('_')[0], 'DSM', msg='EFDB_Name ' + topic.text + ' does not properly contain the CSC name.')
 			self.assertRegex(topic.text.partition('_')[2], r'^[a-z]([a-z0-9]*)', msg='EFDB_Name Topic string ' + topic.text.partition('_')[2] + ' does not begin with a lowercase letter and/or contains non-alphanumeric characters.')
 
 	def test_DomeCommandsTopicNaming(self):
@@ -384,21 +395,6 @@ class TestTopicNaming(unittest.TestCase):
 		self.root = self.tree.getroot()
 		for topic in self.root.findall('./SALTelemetry/EFDB_Topic'):
 			self.assertEqual(topic.text.split('_')[0], 'Dome', msg='EFDB_Name ' + topic.text + ' does not properly contain the CSC name.')
-			self.assertRegex(topic.text.partition('_')[2], r'^[a-z]([a-z0-9]*)', msg='EFDB_Name Topic string ' + topic.text.partition('_')[2] + ' does not begin with a lowercase letter and/or contains non-alphanumeric characters.')
-
-	def test_DSMEventsTopicNaming(self):
-		self.tree = ET.parse("../sal_interfaces/DSM/DSM_Events.xml")
-		self.root = self.tree.getroot()
-		for topic in self.root.findall('./SALEvent/EFDB_Topic'):
-			self.assertEqual(topic.text.split('_')[0], 'DSM', msg='EFDB_Name ' + topic.text + ' does not properly contain the CSC name.')
-			self.assertEqual(topic.text.split('_')[1], 'logevent', msg='EFDB_Name ' + topic.text + ' does not properly contain the topicType string.')
-			self.assertRegex(topic.text.partition('_')[2], r'^[a-z]([a-z0-9]*)', msg='EFDB_Name Topic string ' + topic.text.partition('_')[2] + ' does not begin with a lowercase letter and/or contains non-alphanumeric characters.')
-
-	def test_DSMTelemetryTopicNaming(self):
-		self.tree = ET.parse("../sal_interfaces/DSM/DSM_Telemetry.xml")
-		self.root = self.tree.getroot()
-		for topic in self.root.findall('./SALTelemetry/EFDB_Topic'):
-			self.assertEqual(topic.text.split('_')[0], 'DSM', msg='EFDB_Name ' + topic.text + ' does not properly contain the CSC name.')
 			self.assertRegex(topic.text.partition('_')[2], r'^[a-z]([a-z0-9]*)', msg='EFDB_Name Topic string ' + topic.text.partition('_')[2] + ' does not begin with a lowercase letter and/or contains non-alphanumeric characters.')
 
 	def test_EASEventsTopicNaming(self):
@@ -516,19 +512,27 @@ class TestTopicNaming(unittest.TestCase):
 			self.assertEqual(topic.text.split('_')[0], 'GenericCamera', msg='EFDB_Name ' + topic.text + ' does not properly contain the CSC name.')
 			self.assertRegex(topic.text.partition('_')[2], r'^[a-z]([a-z0-9]*)', msg='EFDB_Name Topic string ' + topic.text.partition('_')[2] + ' does not begin with a lowercase letter and/or contains non-alphanumeric characters.')
 
-	def test_IOTAEventsTopicNaming(self):
-		self.tree = ET.parse("../sal_interfaces/IOTA/IOTA_Events.xml")
+	def test_HVACCommandsTopicNaming(self):
+		self.tree = ET.parse("../sal_interfaces/HVAC/HVAC_Commands.xml")
+		self.root = self.tree.getroot()
+		for topic in self.root.findall('./SALCommand/EFDB_Topic'):
+			self.assertEqual(topic.text.split('_')[0], 'HVAC', msg='EFDB_Name ' + topic.text + ' does not properly contain the CSC name.')
+			self.assertEqual(topic.text.split('_')[1], 'command', msg='EFDB_Name ' + topic.text + ' does not properly contain the topicType string.')
+			self.assertRegex(topic.text.partition('_')[2], r'^[a-z]([a-z0-9]*)', msg='EFDB_Name Topic string ' + topic.text.partition('_')[2] + ' does not begin with a lowercase letter and/or contains non-alphanumeric characters.')
+
+	def test_HVACEventsTopicNaming(self):
+		self.tree = ET.parse("../sal_interfaces/HVAC/HVAC_Events.xml")
 		self.root = self.tree.getroot()
 		for topic in self.root.findall('./SALEvent/EFDB_Topic'):
-			self.assertEqual(topic.text.split('_')[0], 'IOTA', msg='EFDB_Name ' + topic.text + ' does not properly contain the CSC name.')
+			self.assertEqual(topic.text.split('_')[0], 'HVAC', msg='EFDB_Name ' + topic.text + ' does not properly contain the CSC name.')
 			self.assertEqual(topic.text.split('_')[1], 'logevent', msg='EFDB_Name ' + topic.text + ' does not properly contain the topicType string.')
 			self.assertRegex(topic.text.partition('_')[2], r'^[a-z]([a-z0-9]*)', msg='EFDB_Name Topic string ' + topic.text.partition('_')[2] + ' does not begin with a lowercase letter and/or contains non-alphanumeric characters.')
 
-	def test_IOTATelemetryTopicNaming(self):
-		self.tree = ET.parse("../sal_interfaces/IOTA/IOTA_Telemetry.xml")
+	def test_HVACTelemetryTopicNaming(self):
+		self.tree = ET.parse("../sal_interfaces/HVAC/HVAC_Telemetry.xml")
 		self.root = self.tree.getroot()
 		for topic in self.root.findall('./SALTelemetry/EFDB_Topic'):
-			self.assertEqual(topic.text.split('_')[0], 'IOTA', msg='EFDB_Name ' + topic.text + ' does not properly contain the CSC name.')
+			self.assertEqual(topic.text.split('_')[0], 'HVAC', msg='EFDB_Name ' + topic.text + ' does not properly contain the CSC name.')
 			self.assertRegex(topic.text.partition('_')[2], r'^[a-z]([a-z0-9]*)', msg='EFDB_Name Topic string ' + topic.text.partition('_')[2] + ' does not begin with a lowercase letter and/or contains non-alphanumeric characters.')
 
 	def test_HexapodCommandsTopicNaming(self):
@@ -555,27 +559,27 @@ class TestTopicNaming(unittest.TestCase):
 			self.assertEqual(topic.text.split('_')[0], 'Hexapod', msg='EFDB_Name ' + topic.text + ' does not properly contain the CSC name.')
 			self.assertRegex(topic.text.partition('_')[2], r'^[a-z]([a-z0-9]*)', msg='EFDB_Name Topic string ' + topic.text.partition('_')[2] + ' does not begin with a lowercase letter and/or contains non-alphanumeric characters.')
 
-	def test_HVACCommandsTopicNaming(self):
-		self.tree = ET.parse("../sal_interfaces/HVAC/HVAC_Commands.xml")
-		self.root = self.tree.getroot()
-		for topic in self.root.findall('./SALCommand/EFDB_Topic'):
-			self.assertEqual(topic.text.split('_')[0], 'HVAC', msg='EFDB_Name ' + topic.text + ' does not properly contain the CSC name.')
-			self.assertEqual(topic.text.split('_')[1], 'command', msg='EFDB_Name ' + topic.text + ' does not properly contain the topicType string.')
-			self.assertRegex(topic.text.partition('_')[2], r'^[a-z]([a-z0-9]*)', msg='EFDB_Name Topic string ' + topic.text.partition('_')[2] + ' does not begin with a lowercase letter and/or contains non-alphanumeric characters.')
-
-	def test_HVACEventsTopicNaming(self):
-		self.tree = ET.parse("../sal_interfaces/HVAC/HVAC_Events.xml")
+	def test_IOTAEventsTopicNaming(self):
+		self.tree = ET.parse("../sal_interfaces/IOTA/IOTA_Events.xml")
 		self.root = self.tree.getroot()
 		for topic in self.root.findall('./SALEvent/EFDB_Topic'):
-			self.assertEqual(topic.text.split('_')[0], 'HVAC', msg='EFDB_Name ' + topic.text + ' does not properly contain the CSC name.')
+			self.assertEqual(topic.text.split('_')[0], 'IOTA', msg='EFDB_Name ' + topic.text + ' does not properly contain the CSC name.')
 			self.assertEqual(topic.text.split('_')[1], 'logevent', msg='EFDB_Name ' + topic.text + ' does not properly contain the topicType string.')
 			self.assertRegex(topic.text.partition('_')[2], r'^[a-z]([a-z0-9]*)', msg='EFDB_Name Topic string ' + topic.text.partition('_')[2] + ' does not begin with a lowercase letter and/or contains non-alphanumeric characters.')
 
-	def test_HVACTelemetryTopicNaming(self):
-		self.tree = ET.parse("../sal_interfaces/HVAC/HVAC_Telemetry.xml")
+	def test_IOTATelemetryTopicNaming(self):
+		self.tree = ET.parse("../sal_interfaces/IOTA/IOTA_Telemetry.xml")
 		self.root = self.tree.getroot()
 		for topic in self.root.findall('./SALTelemetry/EFDB_Topic'):
-			self.assertEqual(topic.text.split('_')[0], 'HVAC', msg='EFDB_Name ' + topic.text + ' does not properly contain the CSC name.')
+			self.assertEqual(topic.text.split('_')[0], 'IOTA', msg='EFDB_Name ' + topic.text + ' does not properly contain the CSC name.')
+			self.assertRegex(topic.text.partition('_')[2], r'^[a-z]([a-z0-9]*)', msg='EFDB_Name Topic string ' + topic.text.partition('_')[2] + ' does not begin with a lowercase letter and/or contains non-alphanumeric characters.')
+
+	def test_LOVEEventsTopicNaming(self):
+		self.tree = ET.parse("../sal_interfaces/LOVE/LOVE_Events.xml")
+		self.root = self.tree.getroot()
+		for topic in self.root.findall('./SALEvent/EFDB_Topic'):
+			self.assertEqual(topic.text.split('_')[0], 'LOVE', msg='EFDB_Name ' + topic.text + ' does not properly contain the CSC name.')
+			self.assertEqual(topic.text.split('_')[1], 'logevent', msg='EFDB_Name ' + topic.text + ' does not properly contain the topicType string.')
 			self.assertRegex(topic.text.partition('_')[2], r'^[a-z]([a-z0-9]*)', msg='EFDB_Name Topic string ' + topic.text.partition('_')[2] + ' does not begin with a lowercase letter and/or contains non-alphanumeric characters.')
 
 	def test_LinearStageCommandsTopicNaming(self):
@@ -599,14 +603,6 @@ class TestTopicNaming(unittest.TestCase):
 		self.root = self.tree.getroot()
 		for topic in self.root.findall('./SALTelemetry/EFDB_Topic'):
 			self.assertEqual(topic.text.split('_')[0], 'LinearStage', msg='EFDB_Name ' + topic.text + ' does not properly contain the CSC name.')
-			self.assertRegex(topic.text.partition('_')[2], r'^[a-z]([a-z0-9]*)', msg='EFDB_Name Topic string ' + topic.text.partition('_')[2] + ' does not begin with a lowercase letter and/or contains non-alphanumeric characters.')
-
-	def test_LOVEEventsTopicNaming(self):
-		self.tree = ET.parse("../sal_interfaces/LOVE/LOVE_Events.xml")
-		self.root = self.tree.getroot()
-		for topic in self.root.findall('./SALEvent/EFDB_Topic'):
-			self.assertEqual(topic.text.split('_')[0], 'LOVE', msg='EFDB_Name ' + topic.text + ' does not properly contain the CSC name.')
-			self.assertEqual(topic.text.split('_')[1], 'logevent', msg='EFDB_Name ' + topic.text + ' does not properly contain the topicType string.')
 			self.assertRegex(topic.text.partition('_')[2], r'^[a-z]([a-z0-9]*)', msg='EFDB_Name Topic string ' + topic.text.partition('_')[2] + ' does not begin with a lowercase letter and/or contains non-alphanumeric characters.')
 
 	def test_MTAOSCommandsTopicNaming(self):

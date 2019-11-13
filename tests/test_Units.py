@@ -1,11 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-import os
-import sys
 import unittest
 import xml.etree.ElementTree as ET
-cwd = os.getcwd()
-sys.path.insert(1, cwd + '/../scripts/unittests')
 import xml_common
 from Unit_Validator import Unit_Validator
 
@@ -457,28 +453,6 @@ class TestUnits(unittest.TestCase):
 			else:
 				self.assertNotIn('Error', self.uv.check_unit(unit.text))
 
-	def test_CatchupArchiverEventsUnitsValid(self):
-		self.tree = ET.parse("../sal_interfaces/CatchupArchiver/CatchupArchiver_Events.xml")
-		self.root = self.tree.getroot()
-		for unit in self.root.findall('./SALEvent/item/Units'):
-			if not unit.text:
-				self.assertTrue(False, msg='Units cannot be blank.')
-			elif unit.text == "unitless" or unit.text == "dimensionless":
-				self.assertTrue(True)
-			else:
-				self.assertNotIn('Error', self.uv.check_unit(unit.text))
-
-	def test_CatchupArchiverTelemetryUnitsValid(self):
-		self.tree = ET.parse("../sal_interfaces/CatchupArchiver/CatchupArchiver_Telemetry.xml")
-		self.root = self.tree.getroot()
-		for unit in self.root.findall('./SALTelemetry/item/Units'):
-			if not unit.text:
-				self.assertTrue(False, msg='Units cannot be blank.')
-			elif unit.text == "unitless" or unit.text == "dimensionless":
-				self.assertTrue(True)
-			else:
-				self.assertNotIn('Error', self.uv.check_unit(unit.text))
-
 	def test_CBPCommandsUnitsValid(self):
 		self.tree = ET.parse("../sal_interfaces/CBP/CBP_Commands.xml")
 		self.root = self.tree.getroot()
@@ -501,6 +475,28 @@ class TestUnits(unittest.TestCase):
 			else:
 				self.assertNotIn('Error', self.uv.check_unit(unit.text))
 
+	def test_CatchupArchiverEventsUnitsValid(self):
+		self.tree = ET.parse("../sal_interfaces/CatchupArchiver/CatchupArchiver_Events.xml")
+		self.root = self.tree.getroot()
+		for unit in self.root.findall('./SALEvent/item/Units'):
+			if not unit.text:
+				self.assertTrue(False, msg='Units cannot be blank.')
+			elif unit.text == "unitless" or unit.text == "dimensionless":
+				self.assertTrue(True)
+			else:
+				self.assertNotIn('Error', self.uv.check_unit(unit.text))
+
+	def test_CatchupArchiverTelemetryUnitsValid(self):
+		self.tree = ET.parse("../sal_interfaces/CatchupArchiver/CatchupArchiver_Telemetry.xml")
+		self.root = self.tree.getroot()
+		for unit in self.root.findall('./SALTelemetry/item/Units'):
+			if not unit.text:
+				self.assertTrue(False, msg='Units cannot be blank.')
+			elif unit.text == "unitless" or unit.text == "dimensionless":
+				self.assertTrue(True)
+			else:
+				self.assertNotIn('Error', self.uv.check_unit(unit.text))
+
 	def test_DIMMEventsUnitsValid(self):
 		self.tree = ET.parse("../sal_interfaces/DIMM/DIMM_Events.xml")
 		self.root = self.tree.getroot()
@@ -514,6 +510,28 @@ class TestUnits(unittest.TestCase):
 
 	def test_DIMMTelemetryUnitsValid(self):
 		self.tree = ET.parse("../sal_interfaces/DIMM/DIMM_Telemetry.xml")
+		self.root = self.tree.getroot()
+		for unit in self.root.findall('./SALTelemetry/item/Units'):
+			if not unit.text:
+				self.assertTrue(False, msg='Units cannot be blank.')
+			elif unit.text == "unitless" or unit.text == "dimensionless":
+				self.assertTrue(True)
+			else:
+				self.assertNotIn('Error', self.uv.check_unit(unit.text))
+
+	def test_DSMEventsUnitsValid(self):
+		self.tree = ET.parse("../sal_interfaces/DSM/DSM_Events.xml")
+		self.root = self.tree.getroot()
+		for unit in self.root.findall('./SALEvent/item/Units'):
+			if not unit.text:
+				self.assertTrue(False, msg='Units cannot be blank.')
+			elif unit.text == "unitless" or unit.text == "dimensionless":
+				self.assertTrue(True)
+			else:
+				self.assertNotIn('Error', self.uv.check_unit(unit.text))
+
+	def test_DSMTelemetryUnitsValid(self):
+		self.tree = ET.parse("../sal_interfaces/DSM/DSM_Telemetry.xml")
 		self.root = self.tree.getroot()
 		for unit in self.root.findall('./SALTelemetry/item/Units'):
 			if not unit.text:
@@ -547,28 +565,6 @@ class TestUnits(unittest.TestCase):
 
 	def test_DomeTelemetryUnitsValid(self):
 		self.tree = ET.parse("../sal_interfaces/Dome/Dome_Telemetry.xml")
-		self.root = self.tree.getroot()
-		for unit in self.root.findall('./SALTelemetry/item/Units'):
-			if not unit.text:
-				self.assertTrue(False, msg='Units cannot be blank.')
-			elif unit.text == "unitless" or unit.text == "dimensionless":
-				self.assertTrue(True)
-			else:
-				self.assertNotIn('Error', self.uv.check_unit(unit.text))
-
-	def test_DSMEventsUnitsValid(self):
-		self.tree = ET.parse("../sal_interfaces/DSM/DSM_Events.xml")
-		self.root = self.tree.getroot()
-		for unit in self.root.findall('./SALEvent/item/Units'):
-			if not unit.text:
-				self.assertTrue(False, msg='Units cannot be blank.')
-			elif unit.text == "unitless" or unit.text == "dimensionless":
-				self.assertTrue(True)
-			else:
-				self.assertNotIn('Error', self.uv.check_unit(unit.text))
-
-	def test_DSMTelemetryUnitsValid(self):
-		self.tree = ET.parse("../sal_interfaces/DSM/DSM_Telemetry.xml")
 		self.root = self.tree.getroot()
 		for unit in self.root.findall('./SALTelemetry/item/Units'):
 			if not unit.text:
@@ -743,8 +739,19 @@ class TestUnits(unittest.TestCase):
 			else:
 				self.assertNotIn('Error', self.uv.check_unit(unit.text))
 
-	def test_IOTAEventsUnitsValid(self):
-		self.tree = ET.parse("../sal_interfaces/IOTA/IOTA_Events.xml")
+	def test_HVACCommandsUnitsValid(self):
+		self.tree = ET.parse("../sal_interfaces/HVAC/HVAC_Commands.xml")
+		self.root = self.tree.getroot()
+		for unit in self.root.findall('./SALCommand/item/Units'):
+			if not unit.text:
+				self.assertTrue(False, msg='Units cannot be blank.')
+			elif unit.text == "unitless" or unit.text == "dimensionless":
+				self.assertTrue(True)
+			else:
+				self.assertNotIn('Error', self.uv.check_unit(unit.text))
+
+	def test_HVACEventsUnitsValid(self):
+		self.tree = ET.parse("../sal_interfaces/HVAC/HVAC_Events.xml")
 		self.root = self.tree.getroot()
 		for unit in self.root.findall('./SALEvent/item/Units'):
 			if not unit.text:
@@ -754,8 +761,8 @@ class TestUnits(unittest.TestCase):
 			else:
 				self.assertNotIn('Error', self.uv.check_unit(unit.text))
 
-	def test_IOTATelemetryUnitsValid(self):
-		self.tree = ET.parse("../sal_interfaces/IOTA/IOTA_Telemetry.xml")
+	def test_HVACTelemetryUnitsValid(self):
+		self.tree = ET.parse("../sal_interfaces/HVAC/HVAC_Telemetry.xml")
 		self.root = self.tree.getroot()
 		for unit in self.root.findall('./SALTelemetry/item/Units'):
 			if not unit.text:
@@ -798,19 +805,8 @@ class TestUnits(unittest.TestCase):
 			else:
 				self.assertNotIn('Error', self.uv.check_unit(unit.text))
 
-	def test_HVACCommandsUnitsValid(self):
-		self.tree = ET.parse("../sal_interfaces/HVAC/HVAC_Commands.xml")
-		self.root = self.tree.getroot()
-		for unit in self.root.findall('./SALCommand/item/Units'):
-			if not unit.text:
-				self.assertTrue(False, msg='Units cannot be blank.')
-			elif unit.text == "unitless" or unit.text == "dimensionless":
-				self.assertTrue(True)
-			else:
-				self.assertNotIn('Error', self.uv.check_unit(unit.text))
-
-	def test_HVACEventsUnitsValid(self):
-		self.tree = ET.parse("../sal_interfaces/HVAC/HVAC_Events.xml")
+	def test_IOTAEventsUnitsValid(self):
+		self.tree = ET.parse("../sal_interfaces/IOTA/IOTA_Events.xml")
 		self.root = self.tree.getroot()
 		for unit in self.root.findall('./SALEvent/item/Units'):
 			if not unit.text:
@@ -820,10 +816,21 @@ class TestUnits(unittest.TestCase):
 			else:
 				self.assertNotIn('Error', self.uv.check_unit(unit.text))
 
-	def test_HVACTelemetryUnitsValid(self):
-		self.tree = ET.parse("../sal_interfaces/HVAC/HVAC_Telemetry.xml")
+	def test_IOTATelemetryUnitsValid(self):
+		self.tree = ET.parse("../sal_interfaces/IOTA/IOTA_Telemetry.xml")
 		self.root = self.tree.getroot()
 		for unit in self.root.findall('./SALTelemetry/item/Units'):
+			if not unit.text:
+				self.assertTrue(False, msg='Units cannot be blank.')
+			elif unit.text == "unitless" or unit.text == "dimensionless":
+				self.assertTrue(True)
+			else:
+				self.assertNotIn('Error', self.uv.check_unit(unit.text))
+
+	def test_LOVEEventsUnitsValid(self):
+		self.tree = ET.parse("../sal_interfaces/LOVE/LOVE_Events.xml")
+		self.root = self.tree.getroot()
+		for unit in self.root.findall('./SALEvent/item/Units'):
 			if not unit.text:
 				self.assertTrue(False, msg='Units cannot be blank.')
 			elif unit.text == "unitless" or unit.text == "dimensionless":
@@ -857,17 +864,6 @@ class TestUnits(unittest.TestCase):
 		self.tree = ET.parse("../sal_interfaces/LinearStage/LinearStage_Telemetry.xml")
 		self.root = self.tree.getroot()
 		for unit in self.root.findall('./SALTelemetry/item/Units'):
-			if not unit.text:
-				self.assertTrue(False, msg='Units cannot be blank.')
-			elif unit.text == "unitless" or unit.text == "dimensionless":
-				self.assertTrue(True)
-			else:
-				self.assertNotIn('Error', self.uv.check_unit(unit.text))
-
-	def test_LOVEEventsUnitsValid(self):
-		self.tree = ET.parse("../sal_interfaces/LOVE/LOVE_Events.xml")
-		self.root = self.tree.getroot()
-		for unit in self.root.findall('./SALEvent/item/Units'):
 			if not unit.text:
 				self.assertTrue(False, msg='Units cannot be blank.')
 			elif unit.text == "unitless" or unit.text == "dimensionless":
