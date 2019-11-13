@@ -15,6 +15,7 @@ file = open(cwd + "/../../tests/test_Count.py","w")
 # Create Settings header.
 file.write("#!/usr/bin/env python\n")
 file.write("# -*- coding: utf-8 -*-\n")
+file.write("import os\n")
 file.write("import unittest\n")
 file.write("import xml.etree.ElementTree as ET\n")
 file.write("import xml_common\n")
@@ -46,10 +47,13 @@ for csc in xml_common.subsystems:
 			file.write("\t@unittest.skip(\"" + jira + "\")\n")
 		## Verify the Count tag is not empty.
 		file.write("\tdef test_" + csc + messageType + "CountValid(self):\n")
-		file.write("\t\tself.tree = ET.parse(\"" + xml[3:] + "\")\n")
+		file.write("\t\tself.dir_path = os.path.dirname(os.path.realpath(__file__))\n")
+		file.write("\t\tself.file = open(self.dir_path + '/" + xml[3:] + "')\n")
+		file.write("\t\tself.tree = ET.parse(self.file)\n")
 		file.write("\t\tself.root = self.tree.getroot()\n")
 		file.write("\t\tfor count in self.root.findall('./SAL" + messageType.rstrip('s') + "/item/Count'):\n")
 		file.write("\t\t\tself.assertNotEqual(count.text, None, msg='Count cannot be blank.')\n")
+		file.write("\t\tself.file.close()\n")
 		file.write("\n")
 
 file.write("if __name__ == \"__main__\":\n")

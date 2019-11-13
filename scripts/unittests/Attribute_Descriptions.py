@@ -15,6 +15,7 @@ file = open(cwd + "/../../tests/test_AttributeDescription.py","w")
 # Create Settings header.
 file.write("#!/usr/bin/env python\n")
 file.write("# -*- coding: utf-8 -*-\n")
+file.write("import os\n")
 file.write("import unittest\n")
 file.write("import xml.etree.ElementTree as ET\n")
 file.write("import xml_common\n")
@@ -50,10 +51,13 @@ for csc in xml_common.subsystems:
 		if jira:
 			file.write("\t@unittest.skip(\"" + jira + "\")\n")
 		file.write("\tdef test_" + csc + messageType + "AttributeDescriptions(self):\n")
-		file.write("\t\tself.tree = ET.parse(\"" + xml[3:] + "\")\n")
+		file.write("\t\tself.dir_path = os.path.dirname(os.path.realpath(__file__))\n")
+		file.write("\t\tself.file = open(self.dir_path + '/" + xml[3:] + "')\n")
+		file.write("\t\tself.tree = ET.parse(self.file)\n")
 		file.write("\t\tself.root = self.tree.getroot()\n")
 		file.write("\t\tfor description in self.root.findall('./SAL" + messageType.rstrip('s') + "/item/Description'):\n")
 		file.write("\t\t\tself.assertNotEqual(description.text.strip(), '', msg='Description cannot be blank.')\n")
+		file.write("\t\tself.file.close()\n")
 		file.write("\n")
 
 file.write("if __name__ == \"__main__\":\n")
