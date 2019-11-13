@@ -18,7 +18,7 @@ pipeline {
             steps {
                 script {
                     sh """
-					docker run --name xml_unit_tests --rm -u appuser -v ~/trunk/ts_xml/:/home/appuser/trunk/ts_xml -w /home/appuser/trunk/ts_xml/tests --entrypoint "pytest" lsstts/robot:latest -o cache_dir=../results -ra --junitxml=${WORKSPACE}/results/results.xml
+					docker run --name xml_unit_tests --rm -u appuser -v ~/trunk/ts_xml/:/home/appuser/trunk/ts_xml -w /home/appuser/trunk/ts_xml/tests --entrypoint "pytest" lsstts/robot:latest -o cache_dir=${WORKSPACE}/results -ra --junitxml=${WORKSPACE}/results/results.xml
 					echo "Test complete"
 					"""
                 }
