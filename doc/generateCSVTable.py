@@ -67,7 +67,7 @@ for member in root.findall('Subsystem'):
 		count = count + 1
 
 	name = member.find('Name').text
-	subsystem.append(name)
+	subsystem.append(f" :ref:`{name.lower()}`")
 
 	active_developers = member.find('ActiveDevelopers').text
 	subsystem.append(active_developers)
