@@ -16,8 +16,8 @@ pipeline {
 		stage("Create results directory") {
 			steps {
 					sh """
-					mkdir -p ${WORKSPACE}/results
-					chmod 777 ${WORKSPACE}/results
+					mkdir -p ${WORKSPACE}/tests/results
+					chmod 777 ${WORKSPACE}/tests/results
 					"""
 			}
 		}
@@ -25,7 +25,7 @@ pipeline {
             steps {
                 script {
                     sh """
-					docker run --name ${container_name} --rm -v ${WORKSPACE}:/home/appuser/trunk/ts_xml -w /home/appuser/trunk/ts_xml --entrypoint "pytest" lsstts/robot:latest -ra --junitxml=results/results.xml
+					docker run --name ${container_name} --rm -v ${WORKSPACE}:/home/appuser/trunk/ts_xml -w /home/appuser/trunk/ts_xml --entrypoint "pytest" lsstts/robot:latest -ra --junitxml=tests/results/results.xml
 					echo "Test complete"
 					"""
                 }
