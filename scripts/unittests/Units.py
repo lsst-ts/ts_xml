@@ -59,7 +59,7 @@ for csc in xml_common.subsystems:
 		## Validate that the units conform to the astropy Units definitions.
 		file.write("\tdef test_" + csc + messageType + "UnitsValid(self):\n")
 		file.write("\t\tself.dir_path = os.path.dirname(os.path.realpath(__file__))\n")
-		file.write("\t\tself.file = open(self.dir_path + '/" + xml[3:] + "')\n")
+		file.write("\t\tself.file = open(self.dir_path + '/" + xml[3:] + "', 'r', encoding='utf-8')\n")
 		file.write("\t\tself.tree = ET.parse(self.file)\n")
 		file.write("\t\tself.root = self.tree.getroot()\n")
 		file.write("\t\tfor unit in self.root.findall('./SAL" + messageType.rstrip('s') + "/item/Units'):\n")
