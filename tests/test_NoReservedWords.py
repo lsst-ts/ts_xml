@@ -9,7 +9,7 @@ class TestNoReservedWords(unittest.TestCase):
 
 	def test_ATAOSCommandsSubsystemNoIDLReservedWords(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/ATAOS/ATAOS_Commands.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/ATAOS/ATAOS_Commands.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for name in self.root.findall('./SALCommand/item/EFDB_Name'):
@@ -27,7 +27,7 @@ class TestNoReservedWords(unittest.TestCase):
 
 	def test_ATAOSEventsSubsystemNoIDLReservedWords(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/ATAOS/ATAOS_Events.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/ATAOS/ATAOS_Events.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for name in self.root.findall('./SALEvent/item/EFDB_Name'):
@@ -45,7 +45,7 @@ class TestNoReservedWords(unittest.TestCase):
 
 	def test_ATAOSTelemetrySubsystemNoIDLReservedWords(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/ATAOS/ATAOS_Telemetry.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/ATAOS/ATAOS_Telemetry.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for name in self.root.findall('./SALTelemetry/item/EFDB_Name'):
@@ -63,7 +63,7 @@ class TestNoReservedWords(unittest.TestCase):
 
 	def test_ATArchiverCommandsSubsystemNoIDLReservedWords(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/ATArchiver/ATArchiver_Commands.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/ATArchiver/ATArchiver_Commands.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for name in self.root.findall('./SALCommand/item/EFDB_Name'):
@@ -81,7 +81,7 @@ class TestNoReservedWords(unittest.TestCase):
 
 	def test_ATArchiverEventsSubsystemNoIDLReservedWords(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/ATArchiver/ATArchiver_Events.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/ATArchiver/ATArchiver_Events.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for name in self.root.findall('./SALEvent/item/EFDB_Name'):
@@ -99,7 +99,7 @@ class TestNoReservedWords(unittest.TestCase):
 
 	def test_ATArchiverTelemetrySubsystemNoIDLReservedWords(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/ATArchiver/ATArchiver_Telemetry.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/ATArchiver/ATArchiver_Telemetry.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for name in self.root.findall('./SALTelemetry/item/EFDB_Name'):
@@ -117,7 +117,7 @@ class TestNoReservedWords(unittest.TestCase):
 
 	def test_ATBuildingEventsSubsystemNoIDLReservedWords(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/ATBuilding/ATBuilding_Events.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/ATBuilding/ATBuilding_Events.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for name in self.root.findall('./SALEvent/item/EFDB_Name'):
@@ -135,7 +135,7 @@ class TestNoReservedWords(unittest.TestCase):
 
 	def test_ATBuildingTelemetrySubsystemNoIDLReservedWords(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/ATBuilding/ATBuilding_Telemetry.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/ATBuilding/ATBuilding_Telemetry.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for name in self.root.findall('./SALTelemetry/item/EFDB_Name'):
@@ -153,7 +153,7 @@ class TestNoReservedWords(unittest.TestCase):
 
 	def test_ATCameraCommandsSubsystemNoIDLReservedWords(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/ATCamera/ATCamera_Commands.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/ATCamera/ATCamera_Commands.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for name in self.root.findall('./SALCommand/item/EFDB_Name'):
@@ -171,7 +171,7 @@ class TestNoReservedWords(unittest.TestCase):
 
 	def test_ATCameraEventsSubsystemNoIDLReservedWords(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/ATCamera/ATCamera_Events.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/ATCamera/ATCamera_Events.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for name in self.root.findall('./SALEvent/item/EFDB_Name'):
@@ -189,7 +189,7 @@ class TestNoReservedWords(unittest.TestCase):
 
 	def test_ATCameraTelemetrySubsystemNoIDLReservedWords(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/ATCamera/ATCamera_Telemetry.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/ATCamera/ATCamera_Telemetry.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for name in self.root.findall('./SALTelemetry/item/EFDB_Name'):
@@ -207,7 +207,7 @@ class TestNoReservedWords(unittest.TestCase):
 
 	def test_ATDomeCommandsSubsystemNoIDLReservedWords(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/ATDome/ATDome_Commands.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/ATDome/ATDome_Commands.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for name in self.root.findall('./SALCommand/item/EFDB_Name'):
@@ -225,7 +225,7 @@ class TestNoReservedWords(unittest.TestCase):
 
 	def test_ATDomeEventsSubsystemNoIDLReservedWords(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/ATDome/ATDome_Events.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/ATDome/ATDome_Events.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for name in self.root.findall('./SALEvent/item/EFDB_Name'):
@@ -243,7 +243,7 @@ class TestNoReservedWords(unittest.TestCase):
 
 	def test_ATDomeTelemetrySubsystemNoIDLReservedWords(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/ATDome/ATDome_Telemetry.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/ATDome/ATDome_Telemetry.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for name in self.root.findall('./SALTelemetry/item/EFDB_Name'):
@@ -261,7 +261,7 @@ class TestNoReservedWords(unittest.TestCase):
 
 	def test_ATDomeTrajectoryEventsSubsystemNoIDLReservedWords(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/ATDomeTrajectory/ATDomeTrajectory_Events.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/ATDomeTrajectory/ATDomeTrajectory_Events.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for name in self.root.findall('./SALEvent/item/EFDB_Name'):
@@ -279,7 +279,7 @@ class TestNoReservedWords(unittest.TestCase):
 
 	def test_ATHeaderServiceEventsSubsystemNoIDLReservedWords(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/ATHeaderService/ATHeaderService_Events.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/ATHeaderService/ATHeaderService_Events.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for name in self.root.findall('./SALEvent/item/EFDB_Name'):
@@ -297,7 +297,7 @@ class TestNoReservedWords(unittest.TestCase):
 
 	def test_ATHexapodCommandsSubsystemNoIDLReservedWords(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/ATHexapod/ATHexapod_Commands.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/ATHexapod/ATHexapod_Commands.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for name in self.root.findall('./SALCommand/item/EFDB_Name'):
@@ -315,7 +315,7 @@ class TestNoReservedWords(unittest.TestCase):
 
 	def test_ATHexapodEventsSubsystemNoIDLReservedWords(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/ATHexapod/ATHexapod_Events.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/ATHexapod/ATHexapod_Events.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for name in self.root.findall('./SALEvent/item/EFDB_Name'):
@@ -333,7 +333,7 @@ class TestNoReservedWords(unittest.TestCase):
 
 	def test_ATHexapodTelemetrySubsystemNoIDLReservedWords(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/ATHexapod/ATHexapod_Telemetry.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/ATHexapod/ATHexapod_Telemetry.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for name in self.root.findall('./SALTelemetry/item/EFDB_Name'):
@@ -351,7 +351,7 @@ class TestNoReservedWords(unittest.TestCase):
 
 	def test_ATMCSCommandsSubsystemNoIDLReservedWords(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/ATMCS/ATMCS_Commands.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/ATMCS/ATMCS_Commands.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for name in self.root.findall('./SALCommand/item/EFDB_Name'):
@@ -369,7 +369,7 @@ class TestNoReservedWords(unittest.TestCase):
 
 	def test_ATMCSEventsSubsystemNoIDLReservedWords(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/ATMCS/ATMCS_Events.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/ATMCS/ATMCS_Events.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for name in self.root.findall('./SALEvent/item/EFDB_Name'):
@@ -387,7 +387,7 @@ class TestNoReservedWords(unittest.TestCase):
 
 	def test_ATMCSTelemetrySubsystemNoIDLReservedWords(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/ATMCS/ATMCS_Telemetry.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/ATMCS/ATMCS_Telemetry.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for name in self.root.findall('./SALTelemetry/item/EFDB_Name'):
@@ -405,7 +405,7 @@ class TestNoReservedWords(unittest.TestCase):
 
 	def test_ATMonochromatorCommandsSubsystemNoIDLReservedWords(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/ATMonochromator/ATMonochromator_Commands.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/ATMonochromator/ATMonochromator_Commands.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for name in self.root.findall('./SALCommand/item/EFDB_Name'):
@@ -423,7 +423,7 @@ class TestNoReservedWords(unittest.TestCase):
 
 	def test_ATMonochromatorEventsSubsystemNoIDLReservedWords(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/ATMonochromator/ATMonochromator_Events.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/ATMonochromator/ATMonochromator_Events.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for name in self.root.findall('./SALEvent/item/EFDB_Name'):
@@ -441,7 +441,7 @@ class TestNoReservedWords(unittest.TestCase):
 
 	def test_ATMonochromatorTelemetrySubsystemNoIDLReservedWords(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/ATMonochromator/ATMonochromator_Telemetry.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/ATMonochromator/ATMonochromator_Telemetry.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for name in self.root.findall('./SALTelemetry/item/EFDB_Name'):
@@ -459,7 +459,7 @@ class TestNoReservedWords(unittest.TestCase):
 
 	def test_ATPneumaticsCommandsSubsystemNoIDLReservedWords(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/ATPneumatics/ATPneumatics_Commands.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/ATPneumatics/ATPneumatics_Commands.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for name in self.root.findall('./SALCommand/item/EFDB_Name'):
@@ -477,7 +477,7 @@ class TestNoReservedWords(unittest.TestCase):
 
 	def test_ATPneumaticsEventsSubsystemNoIDLReservedWords(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/ATPneumatics/ATPneumatics_Events.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/ATPneumatics/ATPneumatics_Events.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for name in self.root.findall('./SALEvent/item/EFDB_Name'):
@@ -495,7 +495,7 @@ class TestNoReservedWords(unittest.TestCase):
 
 	def test_ATPneumaticsTelemetrySubsystemNoIDLReservedWords(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/ATPneumatics/ATPneumatics_Telemetry.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/ATPneumatics/ATPneumatics_Telemetry.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for name in self.root.findall('./SALTelemetry/item/EFDB_Name'):
@@ -513,7 +513,7 @@ class TestNoReservedWords(unittest.TestCase):
 
 	def test_ATPtgCommandsSubsystemNoIDLReservedWords(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/ATPtg/ATPtg_Commands.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/ATPtg/ATPtg_Commands.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for name in self.root.findall('./SALCommand/item/EFDB_Name'):
@@ -531,7 +531,7 @@ class TestNoReservedWords(unittest.TestCase):
 
 	def test_ATPtgEventsSubsystemNoIDLReservedWords(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/ATPtg/ATPtg_Events.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/ATPtg/ATPtg_Events.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for name in self.root.findall('./SALEvent/item/EFDB_Name'):
@@ -549,7 +549,7 @@ class TestNoReservedWords(unittest.TestCase):
 
 	def test_ATPtgTelemetrySubsystemNoIDLReservedWords(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/ATPtg/ATPtg_Telemetry.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/ATPtg/ATPtg_Telemetry.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for name in self.root.findall('./SALTelemetry/item/EFDB_Name'):
@@ -567,7 +567,7 @@ class TestNoReservedWords(unittest.TestCase):
 
 	def test_ATSpectrographCommandsSubsystemNoIDLReservedWords(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/ATSpectrograph/ATSpectrograph_Commands.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/ATSpectrograph/ATSpectrograph_Commands.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for name in self.root.findall('./SALCommand/item/EFDB_Name'):
@@ -585,7 +585,7 @@ class TestNoReservedWords(unittest.TestCase):
 
 	def test_ATSpectrographEventsSubsystemNoIDLReservedWords(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/ATSpectrograph/ATSpectrograph_Events.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/ATSpectrograph/ATSpectrograph_Events.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for name in self.root.findall('./SALEvent/item/EFDB_Name'):
@@ -603,7 +603,7 @@ class TestNoReservedWords(unittest.TestCase):
 
 	def test_ATSpectrographTelemetrySubsystemNoIDLReservedWords(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/ATSpectrograph/ATSpectrograph_Telemetry.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/ATSpectrograph/ATSpectrograph_Telemetry.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for name in self.root.findall('./SALTelemetry/item/EFDB_Name'):
@@ -621,7 +621,7 @@ class TestNoReservedWords(unittest.TestCase):
 
 	def test_ATTCSCommandsSubsystemNoIDLReservedWords(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/ATTCS/ATTCS_Commands.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/ATTCS/ATTCS_Commands.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for name in self.root.findall('./SALCommand/item/EFDB_Name'):
@@ -639,7 +639,7 @@ class TestNoReservedWords(unittest.TestCase):
 
 	def test_ATTCSEventsSubsystemNoIDLReservedWords(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/ATTCS/ATTCS_Events.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/ATTCS/ATTCS_Events.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for name in self.root.findall('./SALEvent/item/EFDB_Name'):
@@ -657,7 +657,7 @@ class TestNoReservedWords(unittest.TestCase):
 
 	def test_ATTCSTelemetrySubsystemNoIDLReservedWords(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/ATTCS/ATTCS_Telemetry.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/ATTCS/ATTCS_Telemetry.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for name in self.root.findall('./SALTelemetry/item/EFDB_Name'):
@@ -675,7 +675,7 @@ class TestNoReservedWords(unittest.TestCase):
 
 	def test_ATWhiteLightCommandsSubsystemNoIDLReservedWords(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/ATWhiteLight/ATWhiteLight_Commands.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/ATWhiteLight/ATWhiteLight_Commands.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for name in self.root.findall('./SALCommand/item/EFDB_Name'):
@@ -693,7 +693,7 @@ class TestNoReservedWords(unittest.TestCase):
 
 	def test_ATWhiteLightEventsSubsystemNoIDLReservedWords(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/ATWhiteLight/ATWhiteLight_Events.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/ATWhiteLight/ATWhiteLight_Events.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for name in self.root.findall('./SALEvent/item/EFDB_Name'):
@@ -711,7 +711,7 @@ class TestNoReservedWords(unittest.TestCase):
 
 	def test_ATWhiteLightTelemetrySubsystemNoIDLReservedWords(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/ATWhiteLight/ATWhiteLight_Telemetry.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/ATWhiteLight/ATWhiteLight_Telemetry.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for name in self.root.findall('./SALTelemetry/item/EFDB_Name'):
@@ -729,7 +729,7 @@ class TestNoReservedWords(unittest.TestCase):
 
 	def test_CatchupArchiverEventsSubsystemNoIDLReservedWords(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/CatchupArchiver/CatchupArchiver_Events.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/CatchupArchiver/CatchupArchiver_Events.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for name in self.root.findall('./SALEvent/item/EFDB_Name'):
@@ -747,7 +747,7 @@ class TestNoReservedWords(unittest.TestCase):
 
 	def test_CatchupArchiverTelemetrySubsystemNoIDLReservedWords(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/CatchupArchiver/CatchupArchiver_Telemetry.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/CatchupArchiver/CatchupArchiver_Telemetry.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for name in self.root.findall('./SALTelemetry/item/EFDB_Name'):
@@ -765,7 +765,7 @@ class TestNoReservedWords(unittest.TestCase):
 
 	def test_CBPCommandsSubsystemNoIDLReservedWords(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/CBP/CBP_Commands.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/CBP/CBP_Commands.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for name in self.root.findall('./SALCommand/item/EFDB_Name'):
@@ -783,7 +783,7 @@ class TestNoReservedWords(unittest.TestCase):
 
 	def test_CBPTelemetrySubsystemNoIDLReservedWords(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/CBP/CBP_Telemetry.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/CBP/CBP_Telemetry.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for name in self.root.findall('./SALTelemetry/item/EFDB_Name'):
@@ -801,7 +801,7 @@ class TestNoReservedWords(unittest.TestCase):
 
 	def test_DIMMEventsSubsystemNoIDLReservedWords(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/DIMM/DIMM_Events.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/DIMM/DIMM_Events.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for name in self.root.findall('./SALEvent/item/EFDB_Name'):
@@ -819,7 +819,7 @@ class TestNoReservedWords(unittest.TestCase):
 
 	def test_DIMMTelemetrySubsystemNoIDLReservedWords(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/DIMM/DIMM_Telemetry.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/DIMM/DIMM_Telemetry.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for name in self.root.findall('./SALTelemetry/item/EFDB_Name'):
@@ -837,7 +837,7 @@ class TestNoReservedWords(unittest.TestCase):
 
 	def test_DomeCommandsSubsystemNoIDLReservedWords(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/Dome/Dome_Commands.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/Dome/Dome_Commands.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for name in self.root.findall('./SALCommand/item/EFDB_Name'):
@@ -855,7 +855,7 @@ class TestNoReservedWords(unittest.TestCase):
 
 	def test_DomeEventsSubsystemNoIDLReservedWords(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/Dome/Dome_Events.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/Dome/Dome_Events.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for name in self.root.findall('./SALEvent/item/EFDB_Name'):
@@ -873,7 +873,7 @@ class TestNoReservedWords(unittest.TestCase):
 
 	def test_DomeTelemetrySubsystemNoIDLReservedWords(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/Dome/Dome_Telemetry.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/Dome/Dome_Telemetry.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for name in self.root.findall('./SALTelemetry/item/EFDB_Name'):
@@ -891,7 +891,7 @@ class TestNoReservedWords(unittest.TestCase):
 
 	def test_DSMEventsSubsystemNoIDLReservedWords(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/DSM/DSM_Events.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/DSM/DSM_Events.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for name in self.root.findall('./SALEvent/item/EFDB_Name'):
@@ -909,7 +909,7 @@ class TestNoReservedWords(unittest.TestCase):
 
 	def test_DSMTelemetrySubsystemNoIDLReservedWords(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/DSM/DSM_Telemetry.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/DSM/DSM_Telemetry.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for name in self.root.findall('./SALTelemetry/item/EFDB_Name'):
@@ -927,7 +927,7 @@ class TestNoReservedWords(unittest.TestCase):
 
 	def test_EASEventsSubsystemNoIDLReservedWords(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/EAS/EAS_Events.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/EAS/EAS_Events.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for name in self.root.findall('./SALEvent/item/EFDB_Name'):
@@ -945,7 +945,7 @@ class TestNoReservedWords(unittest.TestCase):
 
 	def test_EASTelemetrySubsystemNoIDLReservedWords(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/EAS/EAS_Telemetry.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/EAS/EAS_Telemetry.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for name in self.root.findall('./SALTelemetry/item/EFDB_Name'):
@@ -963,7 +963,7 @@ class TestNoReservedWords(unittest.TestCase):
 
 	def test_EFDEventsSubsystemNoIDLReservedWords(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/EFD/EFD_Events.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/EFD/EFD_Events.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for name in self.root.findall('./SALEvent/item/EFDB_Name'):
@@ -981,7 +981,7 @@ class TestNoReservedWords(unittest.TestCase):
 
 	def test_EFDTelemetrySubsystemNoIDLReservedWords(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/EFD/EFD_Telemetry.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/EFD/EFD_Telemetry.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for name in self.root.findall('./SALTelemetry/item/EFDB_Name'):
@@ -999,7 +999,7 @@ class TestNoReservedWords(unittest.TestCase):
 
 	def test_EFDTransformationServerEventsSubsystemNoIDLReservedWords(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/EFDTransformationServer/EFDTransformationServer_Events.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/EFDTransformationServer/EFDTransformationServer_Events.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for name in self.root.findall('./SALEvent/item/EFDB_Name'):
@@ -1017,7 +1017,7 @@ class TestNoReservedWords(unittest.TestCase):
 
 	def test_EFDTransformationServerTelemetrySubsystemNoIDLReservedWords(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/EFDTransformationServer/EFDTransformationServer_Telemetry.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/EFDTransformationServer/EFDTransformationServer_Telemetry.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for name in self.root.findall('./SALTelemetry/item/EFDB_Name'):
@@ -1035,7 +1035,7 @@ class TestNoReservedWords(unittest.TestCase):
 
 	def test_ElectrometerCommandsSubsystemNoIDLReservedWords(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/Electrometer/Electrometer_Commands.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/Electrometer/Electrometer_Commands.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for name in self.root.findall('./SALCommand/item/EFDB_Name'):
@@ -1053,7 +1053,7 @@ class TestNoReservedWords(unittest.TestCase):
 
 	def test_ElectrometerEventsSubsystemNoIDLReservedWords(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/Electrometer/Electrometer_Events.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/Electrometer/Electrometer_Events.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for name in self.root.findall('./SALEvent/item/EFDB_Name'):
@@ -1071,7 +1071,7 @@ class TestNoReservedWords(unittest.TestCase):
 
 	def test_EnvironmentTelemetrySubsystemNoIDLReservedWords(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/Environment/Environment_Telemetry.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/Environment/Environment_Telemetry.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for name in self.root.findall('./SALTelemetry/item/EFDB_Name'):
@@ -1089,7 +1089,7 @@ class TestNoReservedWords(unittest.TestCase):
 
 	def test_FiberSpectrographCommandsSubsystemNoIDLReservedWords(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/FiberSpectrograph/FiberSpectrograph_Commands.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/FiberSpectrograph/FiberSpectrograph_Commands.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for name in self.root.findall('./SALCommand/item/EFDB_Name'):
@@ -1107,7 +1107,7 @@ class TestNoReservedWords(unittest.TestCase):
 
 	def test_FiberSpectrographEventsSubsystemNoIDLReservedWords(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/FiberSpectrograph/FiberSpectrograph_Events.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/FiberSpectrograph/FiberSpectrograph_Events.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for name in self.root.findall('./SALEvent/item/EFDB_Name'):
@@ -1125,7 +1125,7 @@ class TestNoReservedWords(unittest.TestCase):
 
 	def test_FiberSpectrographTelemetrySubsystemNoIDLReservedWords(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/FiberSpectrograph/FiberSpectrograph_Telemetry.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/FiberSpectrograph/FiberSpectrograph_Telemetry.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for name in self.root.findall('./SALTelemetry/item/EFDB_Name'):
@@ -1143,7 +1143,7 @@ class TestNoReservedWords(unittest.TestCase):
 
 	def test_GenericCameraCommandsSubsystemNoIDLReservedWords(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/GenericCamera/GenericCamera_Commands.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/GenericCamera/GenericCamera_Commands.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for name in self.root.findall('./SALCommand/item/EFDB_Name'):
@@ -1161,7 +1161,7 @@ class TestNoReservedWords(unittest.TestCase):
 
 	def test_GenericCameraEventsSubsystemNoIDLReservedWords(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/GenericCamera/GenericCamera_Events.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/GenericCamera/GenericCamera_Events.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for name in self.root.findall('./SALEvent/item/EFDB_Name'):
@@ -1179,7 +1179,7 @@ class TestNoReservedWords(unittest.TestCase):
 
 	def test_GenericCameraTelemetrySubsystemNoIDLReservedWords(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/GenericCamera/GenericCamera_Telemetry.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/GenericCamera/GenericCamera_Telemetry.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for name in self.root.findall('./SALTelemetry/item/EFDB_Name'):
@@ -1197,7 +1197,7 @@ class TestNoReservedWords(unittest.TestCase):
 
 	def test_IOTAEventsSubsystemNoIDLReservedWords(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/IOTA/IOTA_Events.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/IOTA/IOTA_Events.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for name in self.root.findall('./SALEvent/item/EFDB_Name'):
@@ -1215,7 +1215,7 @@ class TestNoReservedWords(unittest.TestCase):
 
 	def test_IOTATelemetrySubsystemNoIDLReservedWords(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/IOTA/IOTA_Telemetry.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/IOTA/IOTA_Telemetry.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for name in self.root.findall('./SALTelemetry/item/EFDB_Name'):
@@ -1233,7 +1233,7 @@ class TestNoReservedWords(unittest.TestCase):
 
 	def test_HexapodCommandsSubsystemNoIDLReservedWords(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/Hexapod/Hexapod_Commands.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/Hexapod/Hexapod_Commands.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for name in self.root.findall('./SALCommand/item/EFDB_Name'):
@@ -1251,7 +1251,7 @@ class TestNoReservedWords(unittest.TestCase):
 
 	def test_HexapodEventsSubsystemNoIDLReservedWords(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/Hexapod/Hexapod_Events.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/Hexapod/Hexapod_Events.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for name in self.root.findall('./SALEvent/item/EFDB_Name'):
@@ -1269,7 +1269,7 @@ class TestNoReservedWords(unittest.TestCase):
 
 	def test_HexapodTelemetrySubsystemNoIDLReservedWords(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/Hexapod/Hexapod_Telemetry.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/Hexapod/Hexapod_Telemetry.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for name in self.root.findall('./SALTelemetry/item/EFDB_Name'):
@@ -1287,7 +1287,7 @@ class TestNoReservedWords(unittest.TestCase):
 
 	def test_HVACCommandsSubsystemNoIDLReservedWords(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/HVAC/HVAC_Commands.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/HVAC/HVAC_Commands.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for name in self.root.findall('./SALCommand/item/EFDB_Name'):
@@ -1305,7 +1305,7 @@ class TestNoReservedWords(unittest.TestCase):
 
 	def test_HVACEventsSubsystemNoIDLReservedWords(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/HVAC/HVAC_Events.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/HVAC/HVAC_Events.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for name in self.root.findall('./SALEvent/item/EFDB_Name'):
@@ -1323,7 +1323,7 @@ class TestNoReservedWords(unittest.TestCase):
 
 	def test_HVACTelemetrySubsystemNoIDLReservedWords(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/HVAC/HVAC_Telemetry.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/HVAC/HVAC_Telemetry.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for name in self.root.findall('./SALTelemetry/item/EFDB_Name'):
@@ -1341,7 +1341,7 @@ class TestNoReservedWords(unittest.TestCase):
 
 	def test_LinearStageCommandsSubsystemNoIDLReservedWords(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/LinearStage/LinearStage_Commands.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/LinearStage/LinearStage_Commands.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for name in self.root.findall('./SALCommand/item/EFDB_Name'):
@@ -1359,7 +1359,7 @@ class TestNoReservedWords(unittest.TestCase):
 
 	def test_LinearStageEventsSubsystemNoIDLReservedWords(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/LinearStage/LinearStage_Events.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/LinearStage/LinearStage_Events.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for name in self.root.findall('./SALEvent/item/EFDB_Name'):
@@ -1377,7 +1377,7 @@ class TestNoReservedWords(unittest.TestCase):
 
 	def test_LinearStageTelemetrySubsystemNoIDLReservedWords(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/LinearStage/LinearStage_Telemetry.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/LinearStage/LinearStage_Telemetry.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for name in self.root.findall('./SALTelemetry/item/EFDB_Name'):
@@ -1395,7 +1395,7 @@ class TestNoReservedWords(unittest.TestCase):
 
 	def test_LOVEEventsSubsystemNoIDLReservedWords(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/LOVE/LOVE_Events.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/LOVE/LOVE_Events.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for name in self.root.findall('./SALEvent/item/EFDB_Name'):
@@ -1413,7 +1413,7 @@ class TestNoReservedWords(unittest.TestCase):
 
 	def test_MTAOSCommandsSubsystemNoIDLReservedWords(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/MTAOS/MTAOS_Commands.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/MTAOS/MTAOS_Commands.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for name in self.root.findall('./SALCommand/item/EFDB_Name'):
@@ -1431,7 +1431,7 @@ class TestNoReservedWords(unittest.TestCase):
 
 	def test_MTAOSEventsSubsystemNoIDLReservedWords(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/MTAOS/MTAOS_Events.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/MTAOS/MTAOS_Events.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for name in self.root.findall('./SALEvent/item/EFDB_Name'):
@@ -1449,7 +1449,7 @@ class TestNoReservedWords(unittest.TestCase):
 
 	def test_MTAOSTelemetrySubsystemNoIDLReservedWords(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/MTAOS/MTAOS_Telemetry.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/MTAOS/MTAOS_Telemetry.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for name in self.root.findall('./SALTelemetry/item/EFDB_Name'):
@@ -1467,7 +1467,7 @@ class TestNoReservedWords(unittest.TestCase):
 
 	def test_MTArchiverEventsSubsystemNoIDLReservedWords(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/MTArchiver/MTArchiver_Events.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/MTArchiver/MTArchiver_Events.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for name in self.root.findall('./SALEvent/item/EFDB_Name'):
@@ -1485,7 +1485,7 @@ class TestNoReservedWords(unittest.TestCase):
 
 	def test_MTArchiverTelemetrySubsystemNoIDLReservedWords(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/MTArchiver/MTArchiver_Telemetry.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/MTArchiver/MTArchiver_Telemetry.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for name in self.root.findall('./SALTelemetry/item/EFDB_Name'):
@@ -1503,7 +1503,7 @@ class TestNoReservedWords(unittest.TestCase):
 
 	def test_MTCameraCommandsSubsystemNoIDLReservedWords(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/MTCamera/MTCamera_Commands.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/MTCamera/MTCamera_Commands.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for name in self.root.findall('./SALCommand/item/EFDB_Name'):
@@ -1521,7 +1521,7 @@ class TestNoReservedWords(unittest.TestCase):
 
 	def test_MTCameraEventsSubsystemNoIDLReservedWords(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/MTCamera/MTCamera_Events.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/MTCamera/MTCamera_Events.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for name in self.root.findall('./SALEvent/item/EFDB_Name'):
@@ -1539,7 +1539,7 @@ class TestNoReservedWords(unittest.TestCase):
 
 	def test_MTCameraTelemetrySubsystemNoIDLReservedWords(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/MTCamera/MTCamera_Telemetry.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/MTCamera/MTCamera_Telemetry.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for name in self.root.findall('./SALTelemetry/item/EFDB_Name'):
@@ -1557,7 +1557,7 @@ class TestNoReservedWords(unittest.TestCase):
 
 	def test_MTDomeTrajectoryEventsSubsystemNoIDLReservedWords(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/MTDomeTrajectory/MTDomeTrajectory_Events.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/MTDomeTrajectory/MTDomeTrajectory_Events.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for name in self.root.findall('./SALEvent/item/EFDB_Name'):
@@ -1575,7 +1575,7 @@ class TestNoReservedWords(unittest.TestCase):
 
 	def test_MTDomeTrajectoryTelemetrySubsystemNoIDLReservedWords(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/MTDomeTrajectory/MTDomeTrajectory_Telemetry.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/MTDomeTrajectory/MTDomeTrajectory_Telemetry.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for name in self.root.findall('./SALTelemetry/item/EFDB_Name'):
@@ -1593,7 +1593,7 @@ class TestNoReservedWords(unittest.TestCase):
 
 	def test_MTEECCommandsSubsystemNoIDLReservedWords(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/MTEEC/MTEEC_Commands.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/MTEEC/MTEEC_Commands.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for name in self.root.findall('./SALCommand/item/EFDB_Name'):
@@ -1611,7 +1611,7 @@ class TestNoReservedWords(unittest.TestCase):
 
 	def test_MTEECEventsSubsystemNoIDLReservedWords(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/MTEEC/MTEEC_Events.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/MTEEC/MTEEC_Events.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for name in self.root.findall('./SALEvent/item/EFDB_Name'):
@@ -1629,7 +1629,7 @@ class TestNoReservedWords(unittest.TestCase):
 
 	def test_MTGuiderEventsSubsystemNoIDLReservedWords(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/MTGuider/MTGuider_Events.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/MTGuider/MTGuider_Events.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for name in self.root.findall('./SALEvent/item/EFDB_Name'):
@@ -1647,7 +1647,7 @@ class TestNoReservedWords(unittest.TestCase):
 
 	def test_MTGuiderTelemetrySubsystemNoIDLReservedWords(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/MTGuider/MTGuider_Telemetry.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/MTGuider/MTGuider_Telemetry.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for name in self.root.findall('./SALTelemetry/item/EFDB_Name'):
@@ -1665,7 +1665,7 @@ class TestNoReservedWords(unittest.TestCase):
 
 	def test_MTHeaderServiceEventsSubsystemNoIDLReservedWords(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/MTHeaderService/MTHeaderService_Events.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/MTHeaderService/MTHeaderService_Events.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for name in self.root.findall('./SALEvent/item/EFDB_Name'):
@@ -1683,7 +1683,7 @@ class TestNoReservedWords(unittest.TestCase):
 
 	def test_MTLaserTrackerEventsSubsystemNoIDLReservedWords(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/MTLaserTracker/MTLaserTracker_Events.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/MTLaserTracker/MTLaserTracker_Events.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for name in self.root.findall('./SALEvent/item/EFDB_Name'):
@@ -1701,7 +1701,7 @@ class TestNoReservedWords(unittest.TestCase):
 
 	def test_MTLaserTrackerTelemetrySubsystemNoIDLReservedWords(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/MTLaserTracker/MTLaserTracker_Telemetry.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/MTLaserTracker/MTLaserTracker_Telemetry.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for name in self.root.findall('./SALTelemetry/item/EFDB_Name'):
@@ -1719,7 +1719,7 @@ class TestNoReservedWords(unittest.TestCase):
 
 	def test_MTM1M3CommandsSubsystemNoIDLReservedWords(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/MTM1M3/MTM1M3_Commands.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/MTM1M3/MTM1M3_Commands.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for name in self.root.findall('./SALCommand/item/EFDB_Name'):
@@ -1737,7 +1737,7 @@ class TestNoReservedWords(unittest.TestCase):
 
 	def test_MTM1M3EventsSubsystemNoIDLReservedWords(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/MTM1M3/MTM1M3_Events.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/MTM1M3/MTM1M3_Events.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for name in self.root.findall('./SALEvent/item/EFDB_Name'):
@@ -1755,7 +1755,7 @@ class TestNoReservedWords(unittest.TestCase):
 
 	def test_MTM1M3TelemetrySubsystemNoIDLReservedWords(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/MTM1M3/MTM1M3_Telemetry.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/MTM1M3/MTM1M3_Telemetry.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for name in self.root.findall('./SALTelemetry/item/EFDB_Name'):
@@ -1773,7 +1773,7 @@ class TestNoReservedWords(unittest.TestCase):
 
 	def test_MTM1M3TSCommandsSubsystemNoIDLReservedWords(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/MTM1M3TS/MTM1M3TS_Commands.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/MTM1M3TS/MTM1M3TS_Commands.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for name in self.root.findall('./SALCommand/item/EFDB_Name'):
@@ -1791,7 +1791,7 @@ class TestNoReservedWords(unittest.TestCase):
 
 	def test_MTM1M3TSEventsSubsystemNoIDLReservedWords(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/MTM1M3TS/MTM1M3TS_Events.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/MTM1M3TS/MTM1M3TS_Events.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for name in self.root.findall('./SALEvent/item/EFDB_Name'):
@@ -1809,7 +1809,7 @@ class TestNoReservedWords(unittest.TestCase):
 
 	def test_MTM1M3TSTelemetrySubsystemNoIDLReservedWords(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/MTM1M3TS/MTM1M3TS_Telemetry.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/MTM1M3TS/MTM1M3TS_Telemetry.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for name in self.root.findall('./SALTelemetry/item/EFDB_Name'):
@@ -1827,7 +1827,7 @@ class TestNoReservedWords(unittest.TestCase):
 
 	def test_MTM2CommandsSubsystemNoIDLReservedWords(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/MTM2/MTM2_Commands.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/MTM2/MTM2_Commands.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for name in self.root.findall('./SALCommand/item/EFDB_Name'):
@@ -1845,7 +1845,7 @@ class TestNoReservedWords(unittest.TestCase):
 
 	def test_MTM2EventsSubsystemNoIDLReservedWords(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/MTM2/MTM2_Events.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/MTM2/MTM2_Events.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for name in self.root.findall('./SALEvent/item/EFDB_Name'):
@@ -1863,7 +1863,7 @@ class TestNoReservedWords(unittest.TestCase):
 
 	def test_MTM2TelemetrySubsystemNoIDLReservedWords(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/MTM2/MTM2_Telemetry.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/MTM2/MTM2_Telemetry.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for name in self.root.findall('./SALTelemetry/item/EFDB_Name'):
@@ -1881,7 +1881,7 @@ class TestNoReservedWords(unittest.TestCase):
 
 	def test_MTMountCommandsSubsystemNoIDLReservedWords(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/MTMount/MTMount_Commands.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/MTMount/MTMount_Commands.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for name in self.root.findall('./SALCommand/item/EFDB_Name'):
@@ -1899,7 +1899,7 @@ class TestNoReservedWords(unittest.TestCase):
 
 	def test_MTMountEventsSubsystemNoIDLReservedWords(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/MTMount/MTMount_Events.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/MTMount/MTMount_Events.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for name in self.root.findall('./SALEvent/item/EFDB_Name'):
@@ -1917,7 +1917,7 @@ class TestNoReservedWords(unittest.TestCase):
 
 	def test_MTMountTelemetrySubsystemNoIDLReservedWords(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/MTMount/MTMount_Telemetry.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/MTMount/MTMount_Telemetry.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for name in self.root.findall('./SALTelemetry/item/EFDB_Name'):
@@ -1935,7 +1935,7 @@ class TestNoReservedWords(unittest.TestCase):
 
 	def test_MTPtgCommandsSubsystemNoIDLReservedWords(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/MTPtg/MTPtg_Commands.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/MTPtg/MTPtg_Commands.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for name in self.root.findall('./SALCommand/item/EFDB_Name'):
@@ -1953,7 +1953,7 @@ class TestNoReservedWords(unittest.TestCase):
 
 	def test_MTPtgEventsSubsystemNoIDLReservedWords(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/MTPtg/MTPtg_Events.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/MTPtg/MTPtg_Events.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for name in self.root.findall('./SALEvent/item/EFDB_Name'):
@@ -1971,7 +1971,7 @@ class TestNoReservedWords(unittest.TestCase):
 
 	def test_MTPtgTelemetrySubsystemNoIDLReservedWords(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/MTPtg/MTPtg_Telemetry.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/MTPtg/MTPtg_Telemetry.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for name in self.root.findall('./SALTelemetry/item/EFDB_Name'):
@@ -1989,7 +1989,7 @@ class TestNoReservedWords(unittest.TestCase):
 
 	def test_MTTCSCommandsSubsystemNoIDLReservedWords(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/MTTCS/MTTCS_Commands.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/MTTCS/MTTCS_Commands.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for name in self.root.findall('./SALCommand/item/EFDB_Name'):
@@ -2007,7 +2007,7 @@ class TestNoReservedWords(unittest.TestCase):
 
 	def test_MTTCSEventsSubsystemNoIDLReservedWords(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/MTTCS/MTTCS_Events.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/MTTCS/MTTCS_Events.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for name in self.root.findall('./SALEvent/item/EFDB_Name'):
@@ -2025,7 +2025,7 @@ class TestNoReservedWords(unittest.TestCase):
 
 	def test_MTTCSTelemetrySubsystemNoIDLReservedWords(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/MTTCS/MTTCS_Telemetry.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/MTTCS/MTTCS_Telemetry.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for name in self.root.findall('./SALTelemetry/item/EFDB_Name'):
@@ -2043,7 +2043,7 @@ class TestNoReservedWords(unittest.TestCase):
 
 	def test_MTVMSCommandsSubsystemNoIDLReservedWords(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/MTVMS/MTVMS_Commands.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/MTVMS/MTVMS_Commands.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for name in self.root.findall('./SALCommand/item/EFDB_Name'):
@@ -2061,7 +2061,7 @@ class TestNoReservedWords(unittest.TestCase):
 
 	def test_MTVMSEventsSubsystemNoIDLReservedWords(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/MTVMS/MTVMS_Events.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/MTVMS/MTVMS_Events.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for name in self.root.findall('./SALEvent/item/EFDB_Name'):
@@ -2079,7 +2079,7 @@ class TestNoReservedWords(unittest.TestCase):
 
 	def test_MTVMSTelemetrySubsystemNoIDLReservedWords(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/MTVMS/MTVMS_Telemetry.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/MTVMS/MTVMS_Telemetry.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for name in self.root.findall('./SALTelemetry/item/EFDB_Name'):
@@ -2097,7 +2097,7 @@ class TestNoReservedWords(unittest.TestCase):
 
 	def test_OCSCommandsSubsystemNoIDLReservedWords(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/OCS/OCS_Commands.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/OCS/OCS_Commands.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for name in self.root.findall('./SALCommand/item/EFDB_Name'):
@@ -2115,7 +2115,7 @@ class TestNoReservedWords(unittest.TestCase):
 
 	def test_OCSEventsSubsystemNoIDLReservedWords(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/OCS/OCS_Events.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/OCS/OCS_Events.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for name in self.root.findall('./SALEvent/item/EFDB_Name'):
@@ -2133,7 +2133,7 @@ class TestNoReservedWords(unittest.TestCase):
 
 	def test_OCSTelemetrySubsystemNoIDLReservedWords(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/OCS/OCS_Telemetry.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/OCS/OCS_Telemetry.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for name in self.root.findall('./SALTelemetry/item/EFDB_Name'):
@@ -2151,7 +2151,7 @@ class TestNoReservedWords(unittest.TestCase):
 
 	def test_PointingComponentCommandsSubsystemNoIDLReservedWords(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/PointingComponent/PointingComponent_Commands.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/PointingComponent/PointingComponent_Commands.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for name in self.root.findall('./SALCommand/item/EFDB_Name'):
@@ -2169,7 +2169,7 @@ class TestNoReservedWords(unittest.TestCase):
 
 	def test_PointingComponentEventsSubsystemNoIDLReservedWords(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/PointingComponent/PointingComponent_Events.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/PointingComponent/PointingComponent_Events.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for name in self.root.findall('./SALEvent/item/EFDB_Name'):
@@ -2187,7 +2187,7 @@ class TestNoReservedWords(unittest.TestCase):
 
 	def test_PointingComponentTelemetrySubsystemNoIDLReservedWords(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/PointingComponent/PointingComponent_Telemetry.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/PointingComponent/PointingComponent_Telemetry.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for name in self.root.findall('./SALTelemetry/item/EFDB_Name'):
@@ -2205,7 +2205,7 @@ class TestNoReservedWords(unittest.TestCase):
 
 	def test_PromptProcessingEventsSubsystemNoIDLReservedWords(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/PromptProcessing/PromptProcessing_Events.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/PromptProcessing/PromptProcessing_Events.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for name in self.root.findall('./SALEvent/item/EFDB_Name'):
@@ -2223,7 +2223,7 @@ class TestNoReservedWords(unittest.TestCase):
 
 	def test_PromptProcessingTelemetrySubsystemNoIDLReservedWords(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/PromptProcessing/PromptProcessing_Telemetry.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/PromptProcessing/PromptProcessing_Telemetry.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for name in self.root.findall('./SALTelemetry/item/EFDB_Name'):
@@ -2241,7 +2241,7 @@ class TestNoReservedWords(unittest.TestCase):
 
 	def test_RotatorCommandsSubsystemNoIDLReservedWords(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/Rotator/Rotator_Commands.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/Rotator/Rotator_Commands.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for name in self.root.findall('./SALCommand/item/EFDB_Name'):
@@ -2259,7 +2259,7 @@ class TestNoReservedWords(unittest.TestCase):
 
 	def test_RotatorEventsSubsystemNoIDLReservedWords(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/Rotator/Rotator_Events.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/Rotator/Rotator_Events.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for name in self.root.findall('./SALEvent/item/EFDB_Name'):
@@ -2277,7 +2277,7 @@ class TestNoReservedWords(unittest.TestCase):
 
 	def test_RotatorTelemetrySubsystemNoIDLReservedWords(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/Rotator/Rotator_Telemetry.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/Rotator/Rotator_Telemetry.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for name in self.root.findall('./SALTelemetry/item/EFDB_Name'):
@@ -2295,7 +2295,7 @@ class TestNoReservedWords(unittest.TestCase):
 
 	def test_SchedulerEventsSubsystemNoIDLReservedWords(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/Scheduler/Scheduler_Events.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/Scheduler/Scheduler_Events.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for name in self.root.findall('./SALEvent/item/EFDB_Name'):
@@ -2313,7 +2313,7 @@ class TestNoReservedWords(unittest.TestCase):
 
 	def test_SchedulerTelemetrySubsystemNoIDLReservedWords(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/Scheduler/Scheduler_Telemetry.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/Scheduler/Scheduler_Telemetry.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for name in self.root.findall('./SALTelemetry/item/EFDB_Name'):
@@ -2331,7 +2331,7 @@ class TestNoReservedWords(unittest.TestCase):
 
 	def test_ScriptCommandsSubsystemNoIDLReservedWords(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/Script/Script_Commands.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/Script/Script_Commands.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for name in self.root.findall('./SALCommand/item/EFDB_Name'):
@@ -2349,7 +2349,7 @@ class TestNoReservedWords(unittest.TestCase):
 
 	def test_ScriptEventsSubsystemNoIDLReservedWords(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/Script/Script_Events.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/Script/Script_Events.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for name in self.root.findall('./SALEvent/item/EFDB_Name'):
@@ -2367,7 +2367,7 @@ class TestNoReservedWords(unittest.TestCase):
 
 	def test_ScriptQueueCommandsSubsystemNoIDLReservedWords(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/ScriptQueue/ScriptQueue_Commands.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/ScriptQueue/ScriptQueue_Commands.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for name in self.root.findall('./SALCommand/item/EFDB_Name'):
@@ -2385,7 +2385,7 @@ class TestNoReservedWords(unittest.TestCase):
 
 	def test_ScriptQueueEventsSubsystemNoIDLReservedWords(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/ScriptQueue/ScriptQueue_Events.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/ScriptQueue/ScriptQueue_Events.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for name in self.root.findall('./SALEvent/item/EFDB_Name'):
@@ -2403,7 +2403,7 @@ class TestNoReservedWords(unittest.TestCase):
 
 	def test_SummitFacilityTelemetrySubsystemNoIDLReservedWords(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/SummitFacility/SummitFacility_Telemetry.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/SummitFacility/SummitFacility_Telemetry.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for name in self.root.findall('./SALTelemetry/item/EFDB_Name'):
@@ -2421,7 +2421,7 @@ class TestNoReservedWords(unittest.TestCase):
 
 	def test_TestCommandsSubsystemNoIDLReservedWords(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/Test/Test_Commands.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/Test/Test_Commands.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for name in self.root.findall('./SALCommand/item/EFDB_Name'):
@@ -2439,7 +2439,7 @@ class TestNoReservedWords(unittest.TestCase):
 
 	def test_TestEventsSubsystemNoIDLReservedWords(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/Test/Test_Events.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/Test/Test_Events.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for name in self.root.findall('./SALEvent/item/EFDB_Name'):
@@ -2457,7 +2457,7 @@ class TestNoReservedWords(unittest.TestCase):
 
 	def test_TestTelemetrySubsystemNoIDLReservedWords(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/Test/Test_Telemetry.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/Test/Test_Telemetry.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for name in self.root.findall('./SALTelemetry/item/EFDB_Name'):
@@ -2475,7 +2475,7 @@ class TestNoReservedWords(unittest.TestCase):
 
 	def test_TunableLaserCommandsSubsystemNoIDLReservedWords(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/TunableLaser/TunableLaser_Commands.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/TunableLaser/TunableLaser_Commands.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for name in self.root.findall('./SALCommand/item/EFDB_Name'):
@@ -2493,7 +2493,7 @@ class TestNoReservedWords(unittest.TestCase):
 
 	def test_TunableLaserEventsSubsystemNoIDLReservedWords(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/TunableLaser/TunableLaser_Events.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/TunableLaser/TunableLaser_Events.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for name in self.root.findall('./SALEvent/item/EFDB_Name'):
@@ -2511,7 +2511,7 @@ class TestNoReservedWords(unittest.TestCase):
 
 	def test_TunableLaserTelemetrySubsystemNoIDLReservedWords(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/TunableLaser/TunableLaser_Telemetry.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/TunableLaser/TunableLaser_Telemetry.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for name in self.root.findall('./SALTelemetry/item/EFDB_Name'):
@@ -2529,7 +2529,7 @@ class TestNoReservedWords(unittest.TestCase):
 
 	def test_WatcherCommandsSubsystemNoIDLReservedWords(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/Watcher/Watcher_Commands.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/Watcher/Watcher_Commands.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for name in self.root.findall('./SALCommand/item/EFDB_Name'):
@@ -2547,7 +2547,7 @@ class TestNoReservedWords(unittest.TestCase):
 
 	def test_WatcherEventsSubsystemNoIDLReservedWords(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/Watcher/Watcher_Events.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/Watcher/Watcher_Events.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for name in self.root.findall('./SALEvent/item/EFDB_Name'):

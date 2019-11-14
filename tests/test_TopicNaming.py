@@ -9,7 +9,7 @@ class TestTopicNaming(unittest.TestCase):
 
 	def test_ATAOSCommandsTopicNaming(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/ATAOS/ATAOS_Commands.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/ATAOS/ATAOS_Commands.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for topic in self.root.findall('./SALCommand/EFDB_Topic'):
@@ -20,7 +20,7 @@ class TestTopicNaming(unittest.TestCase):
 
 	def test_ATAOSEventsTopicNaming(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/ATAOS/ATAOS_Events.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/ATAOS/ATAOS_Events.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for topic in self.root.findall('./SALEvent/EFDB_Topic'):
@@ -31,7 +31,7 @@ class TestTopicNaming(unittest.TestCase):
 
 	def test_ATAOSTelemetryTopicNaming(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/ATAOS/ATAOS_Telemetry.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/ATAOS/ATAOS_Telemetry.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for topic in self.root.findall('./SALTelemetry/EFDB_Topic'):
@@ -41,7 +41,7 @@ class TestTopicNaming(unittest.TestCase):
 
 	def test_ATArchiverCommandsTopicNaming(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/ATArchiver/ATArchiver_Commands.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/ATArchiver/ATArchiver_Commands.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for topic in self.root.findall('./SALCommand/EFDB_Topic'):
@@ -52,7 +52,7 @@ class TestTopicNaming(unittest.TestCase):
 
 	def test_ATArchiverEventsTopicNaming(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/ATArchiver/ATArchiver_Events.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/ATArchiver/ATArchiver_Events.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for topic in self.root.findall('./SALEvent/EFDB_Topic'):
@@ -63,7 +63,7 @@ class TestTopicNaming(unittest.TestCase):
 
 	def test_ATArchiverTelemetryTopicNaming(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/ATArchiver/ATArchiver_Telemetry.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/ATArchiver/ATArchiver_Telemetry.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for topic in self.root.findall('./SALTelemetry/EFDB_Topic'):
@@ -73,7 +73,7 @@ class TestTopicNaming(unittest.TestCase):
 
 	def test_ATBuildingEventsTopicNaming(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/ATBuilding/ATBuilding_Events.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/ATBuilding/ATBuilding_Events.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for topic in self.root.findall('./SALEvent/EFDB_Topic'):
@@ -84,7 +84,7 @@ class TestTopicNaming(unittest.TestCase):
 
 	def test_ATBuildingTelemetryTopicNaming(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/ATBuilding/ATBuilding_Telemetry.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/ATBuilding/ATBuilding_Telemetry.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for topic in self.root.findall('./SALTelemetry/EFDB_Topic'):
@@ -94,7 +94,7 @@ class TestTopicNaming(unittest.TestCase):
 
 	def test_ATCameraCommandsTopicNaming(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/ATCamera/ATCamera_Commands.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/ATCamera/ATCamera_Commands.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for topic in self.root.findall('./SALCommand/EFDB_Topic'):
@@ -105,7 +105,7 @@ class TestTopicNaming(unittest.TestCase):
 
 	def test_ATCameraEventsTopicNaming(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/ATCamera/ATCamera_Events.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/ATCamera/ATCamera_Events.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for topic in self.root.findall('./SALEvent/EFDB_Topic'):
@@ -116,7 +116,7 @@ class TestTopicNaming(unittest.TestCase):
 
 	def test_ATCameraTelemetryTopicNaming(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/ATCamera/ATCamera_Telemetry.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/ATCamera/ATCamera_Telemetry.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for topic in self.root.findall('./SALTelemetry/EFDB_Topic'):
@@ -126,7 +126,7 @@ class TestTopicNaming(unittest.TestCase):
 
 	def test_ATDomeCommandsTopicNaming(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/ATDome/ATDome_Commands.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/ATDome/ATDome_Commands.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for topic in self.root.findall('./SALCommand/EFDB_Topic'):
@@ -137,7 +137,7 @@ class TestTopicNaming(unittest.TestCase):
 
 	def test_ATDomeEventsTopicNaming(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/ATDome/ATDome_Events.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/ATDome/ATDome_Events.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for topic in self.root.findall('./SALEvent/EFDB_Topic'):
@@ -148,7 +148,7 @@ class TestTopicNaming(unittest.TestCase):
 
 	def test_ATDomeTelemetryTopicNaming(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/ATDome/ATDome_Telemetry.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/ATDome/ATDome_Telemetry.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for topic in self.root.findall('./SALTelemetry/EFDB_Topic'):
@@ -158,7 +158,7 @@ class TestTopicNaming(unittest.TestCase):
 
 	def test_ATDomeTrajectoryEventsTopicNaming(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/ATDomeTrajectory/ATDomeTrajectory_Events.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/ATDomeTrajectory/ATDomeTrajectory_Events.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for topic in self.root.findall('./SALEvent/EFDB_Topic'):
@@ -169,7 +169,7 @@ class TestTopicNaming(unittest.TestCase):
 
 	def test_ATHeaderServiceEventsTopicNaming(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/ATHeaderService/ATHeaderService_Events.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/ATHeaderService/ATHeaderService_Events.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for topic in self.root.findall('./SALEvent/EFDB_Topic'):
@@ -180,7 +180,7 @@ class TestTopicNaming(unittest.TestCase):
 
 	def test_ATHexapodCommandsTopicNaming(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/ATHexapod/ATHexapod_Commands.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/ATHexapod/ATHexapod_Commands.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for topic in self.root.findall('./SALCommand/EFDB_Topic'):
@@ -191,7 +191,7 @@ class TestTopicNaming(unittest.TestCase):
 
 	def test_ATHexapodEventsTopicNaming(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/ATHexapod/ATHexapod_Events.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/ATHexapod/ATHexapod_Events.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for topic in self.root.findall('./SALEvent/EFDB_Topic'):
@@ -202,7 +202,7 @@ class TestTopicNaming(unittest.TestCase):
 
 	def test_ATHexapodTelemetryTopicNaming(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/ATHexapod/ATHexapod_Telemetry.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/ATHexapod/ATHexapod_Telemetry.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for topic in self.root.findall('./SALTelemetry/EFDB_Topic'):
@@ -212,7 +212,7 @@ class TestTopicNaming(unittest.TestCase):
 
 	def test_ATMCSCommandsTopicNaming(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/ATMCS/ATMCS_Commands.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/ATMCS/ATMCS_Commands.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for topic in self.root.findall('./SALCommand/EFDB_Topic'):
@@ -223,7 +223,7 @@ class TestTopicNaming(unittest.TestCase):
 
 	def test_ATMCSEventsTopicNaming(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/ATMCS/ATMCS_Events.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/ATMCS/ATMCS_Events.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for topic in self.root.findall('./SALEvent/EFDB_Topic'):
@@ -234,7 +234,7 @@ class TestTopicNaming(unittest.TestCase):
 
 	def test_ATMCSTelemetryTopicNaming(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/ATMCS/ATMCS_Telemetry.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/ATMCS/ATMCS_Telemetry.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for topic in self.root.findall('./SALTelemetry/EFDB_Topic'):
@@ -244,7 +244,7 @@ class TestTopicNaming(unittest.TestCase):
 
 	def test_ATMonochromatorCommandsTopicNaming(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/ATMonochromator/ATMonochromator_Commands.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/ATMonochromator/ATMonochromator_Commands.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for topic in self.root.findall('./SALCommand/EFDB_Topic'):
@@ -255,7 +255,7 @@ class TestTopicNaming(unittest.TestCase):
 
 	def test_ATMonochromatorEventsTopicNaming(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/ATMonochromator/ATMonochromator_Events.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/ATMonochromator/ATMonochromator_Events.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for topic in self.root.findall('./SALEvent/EFDB_Topic'):
@@ -266,7 +266,7 @@ class TestTopicNaming(unittest.TestCase):
 
 	def test_ATMonochromatorTelemetryTopicNaming(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/ATMonochromator/ATMonochromator_Telemetry.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/ATMonochromator/ATMonochromator_Telemetry.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for topic in self.root.findall('./SALTelemetry/EFDB_Topic'):
@@ -276,7 +276,7 @@ class TestTopicNaming(unittest.TestCase):
 
 	def test_ATPneumaticsCommandsTopicNaming(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/ATPneumatics/ATPneumatics_Commands.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/ATPneumatics/ATPneumatics_Commands.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for topic in self.root.findall('./SALCommand/EFDB_Topic'):
@@ -287,7 +287,7 @@ class TestTopicNaming(unittest.TestCase):
 
 	def test_ATPneumaticsEventsTopicNaming(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/ATPneumatics/ATPneumatics_Events.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/ATPneumatics/ATPneumatics_Events.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for topic in self.root.findall('./SALEvent/EFDB_Topic'):
@@ -298,7 +298,7 @@ class TestTopicNaming(unittest.TestCase):
 
 	def test_ATPneumaticsTelemetryTopicNaming(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/ATPneumatics/ATPneumatics_Telemetry.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/ATPneumatics/ATPneumatics_Telemetry.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for topic in self.root.findall('./SALTelemetry/EFDB_Topic'):
@@ -308,7 +308,7 @@ class TestTopicNaming(unittest.TestCase):
 
 	def test_ATPtgCommandsTopicNaming(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/ATPtg/ATPtg_Commands.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/ATPtg/ATPtg_Commands.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for topic in self.root.findall('./SALCommand/EFDB_Topic'):
@@ -319,7 +319,7 @@ class TestTopicNaming(unittest.TestCase):
 
 	def test_ATPtgEventsTopicNaming(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/ATPtg/ATPtg_Events.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/ATPtg/ATPtg_Events.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for topic in self.root.findall('./SALEvent/EFDB_Topic'):
@@ -330,7 +330,7 @@ class TestTopicNaming(unittest.TestCase):
 
 	def test_ATPtgTelemetryTopicNaming(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/ATPtg/ATPtg_Telemetry.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/ATPtg/ATPtg_Telemetry.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for topic in self.root.findall('./SALTelemetry/EFDB_Topic'):
@@ -340,7 +340,7 @@ class TestTopicNaming(unittest.TestCase):
 
 	def test_ATSpectrographCommandsTopicNaming(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/ATSpectrograph/ATSpectrograph_Commands.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/ATSpectrograph/ATSpectrograph_Commands.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for topic in self.root.findall('./SALCommand/EFDB_Topic'):
@@ -351,7 +351,7 @@ class TestTopicNaming(unittest.TestCase):
 
 	def test_ATSpectrographEventsTopicNaming(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/ATSpectrograph/ATSpectrograph_Events.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/ATSpectrograph/ATSpectrograph_Events.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for topic in self.root.findall('./SALEvent/EFDB_Topic'):
@@ -362,7 +362,7 @@ class TestTopicNaming(unittest.TestCase):
 
 	def test_ATSpectrographTelemetryTopicNaming(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/ATSpectrograph/ATSpectrograph_Telemetry.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/ATSpectrograph/ATSpectrograph_Telemetry.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for topic in self.root.findall('./SALTelemetry/EFDB_Topic'):
@@ -372,7 +372,7 @@ class TestTopicNaming(unittest.TestCase):
 
 	def test_ATTCSCommandsTopicNaming(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/ATTCS/ATTCS_Commands.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/ATTCS/ATTCS_Commands.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for topic in self.root.findall('./SALCommand/EFDB_Topic'):
@@ -383,7 +383,7 @@ class TestTopicNaming(unittest.TestCase):
 
 	def test_ATTCSEventsTopicNaming(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/ATTCS/ATTCS_Events.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/ATTCS/ATTCS_Events.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for topic in self.root.findall('./SALEvent/EFDB_Topic'):
@@ -394,7 +394,7 @@ class TestTopicNaming(unittest.TestCase):
 
 	def test_ATTCSTelemetryTopicNaming(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/ATTCS/ATTCS_Telemetry.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/ATTCS/ATTCS_Telemetry.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for topic in self.root.findall('./SALTelemetry/EFDB_Topic'):
@@ -404,7 +404,7 @@ class TestTopicNaming(unittest.TestCase):
 
 	def test_ATWhiteLightCommandsTopicNaming(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/ATWhiteLight/ATWhiteLight_Commands.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/ATWhiteLight/ATWhiteLight_Commands.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for topic in self.root.findall('./SALCommand/EFDB_Topic'):
@@ -415,7 +415,7 @@ class TestTopicNaming(unittest.TestCase):
 
 	def test_ATWhiteLightEventsTopicNaming(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/ATWhiteLight/ATWhiteLight_Events.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/ATWhiteLight/ATWhiteLight_Events.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for topic in self.root.findall('./SALEvent/EFDB_Topic'):
@@ -426,7 +426,7 @@ class TestTopicNaming(unittest.TestCase):
 
 	def test_ATWhiteLightTelemetryTopicNaming(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/ATWhiteLight/ATWhiteLight_Telemetry.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/ATWhiteLight/ATWhiteLight_Telemetry.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for topic in self.root.findall('./SALTelemetry/EFDB_Topic'):
@@ -436,7 +436,7 @@ class TestTopicNaming(unittest.TestCase):
 
 	def test_CBPCommandsTopicNaming(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/CBP/CBP_Commands.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/CBP/CBP_Commands.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for topic in self.root.findall('./SALCommand/EFDB_Topic'):
@@ -447,7 +447,7 @@ class TestTopicNaming(unittest.TestCase):
 
 	def test_CBPTelemetryTopicNaming(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/CBP/CBP_Telemetry.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/CBP/CBP_Telemetry.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for topic in self.root.findall('./SALTelemetry/EFDB_Topic'):
@@ -457,7 +457,7 @@ class TestTopicNaming(unittest.TestCase):
 
 	def test_CatchupArchiverEventsTopicNaming(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/CatchupArchiver/CatchupArchiver_Events.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/CatchupArchiver/CatchupArchiver_Events.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for topic in self.root.findall('./SALEvent/EFDB_Topic'):
@@ -468,7 +468,7 @@ class TestTopicNaming(unittest.TestCase):
 
 	def test_CatchupArchiverTelemetryTopicNaming(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/CatchupArchiver/CatchupArchiver_Telemetry.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/CatchupArchiver/CatchupArchiver_Telemetry.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for topic in self.root.findall('./SALTelemetry/EFDB_Topic'):
@@ -478,7 +478,7 @@ class TestTopicNaming(unittest.TestCase):
 
 	def test_DIMMEventsTopicNaming(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/DIMM/DIMM_Events.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/DIMM/DIMM_Events.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for topic in self.root.findall('./SALEvent/EFDB_Topic'):
@@ -489,7 +489,7 @@ class TestTopicNaming(unittest.TestCase):
 
 	def test_DIMMTelemetryTopicNaming(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/DIMM/DIMM_Telemetry.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/DIMM/DIMM_Telemetry.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for topic in self.root.findall('./SALTelemetry/EFDB_Topic'):
@@ -499,7 +499,7 @@ class TestTopicNaming(unittest.TestCase):
 
 	def test_DSMEventsTopicNaming(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/DSM/DSM_Events.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/DSM/DSM_Events.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for topic in self.root.findall('./SALEvent/EFDB_Topic'):
@@ -510,7 +510,7 @@ class TestTopicNaming(unittest.TestCase):
 
 	def test_DSMTelemetryTopicNaming(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/DSM/DSM_Telemetry.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/DSM/DSM_Telemetry.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for topic in self.root.findall('./SALTelemetry/EFDB_Topic'):
@@ -520,7 +520,7 @@ class TestTopicNaming(unittest.TestCase):
 
 	def test_DomeCommandsTopicNaming(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/Dome/Dome_Commands.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/Dome/Dome_Commands.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for topic in self.root.findall('./SALCommand/EFDB_Topic'):
@@ -531,7 +531,7 @@ class TestTopicNaming(unittest.TestCase):
 
 	def test_DomeEventsTopicNaming(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/Dome/Dome_Events.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/Dome/Dome_Events.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for topic in self.root.findall('./SALEvent/EFDB_Topic'):
@@ -543,7 +543,7 @@ class TestTopicNaming(unittest.TestCase):
 	@unittest.skip("DM-22153")
 	def test_DomeTelemetryTopicNaming(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/Dome/Dome_Telemetry.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/Dome/Dome_Telemetry.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for topic in self.root.findall('./SALTelemetry/EFDB_Topic'):
@@ -553,7 +553,7 @@ class TestTopicNaming(unittest.TestCase):
 
 	def test_EASEventsTopicNaming(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/EAS/EAS_Events.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/EAS/EAS_Events.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for topic in self.root.findall('./SALEvent/EFDB_Topic'):
@@ -564,7 +564,7 @@ class TestTopicNaming(unittest.TestCase):
 
 	def test_EASTelemetryTopicNaming(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/EAS/EAS_Telemetry.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/EAS/EAS_Telemetry.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for topic in self.root.findall('./SALTelemetry/EFDB_Topic'):
@@ -574,7 +574,7 @@ class TestTopicNaming(unittest.TestCase):
 
 	def test_EFDEventsTopicNaming(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/EFD/EFD_Events.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/EFD/EFD_Events.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for topic in self.root.findall('./SALEvent/EFDB_Topic'):
@@ -586,7 +586,7 @@ class TestTopicNaming(unittest.TestCase):
 	@unittest.skip("DM-22154")
 	def test_EFDTelemetryTopicNaming(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/EFD/EFD_Telemetry.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/EFD/EFD_Telemetry.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for topic in self.root.findall('./SALTelemetry/EFDB_Topic'):
@@ -596,7 +596,7 @@ class TestTopicNaming(unittest.TestCase):
 
 	def test_EFDTransformationServerEventsTopicNaming(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/EFDTransformationServer/EFDTransformationServer_Events.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/EFDTransformationServer/EFDTransformationServer_Events.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for topic in self.root.findall('./SALEvent/EFDB_Topic'):
@@ -607,7 +607,7 @@ class TestTopicNaming(unittest.TestCase):
 
 	def test_EFDTransformationServerTelemetryTopicNaming(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/EFDTransformationServer/EFDTransformationServer_Telemetry.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/EFDTransformationServer/EFDTransformationServer_Telemetry.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for topic in self.root.findall('./SALTelemetry/EFDB_Topic'):
@@ -617,7 +617,7 @@ class TestTopicNaming(unittest.TestCase):
 
 	def test_ElectrometerCommandsTopicNaming(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/Electrometer/Electrometer_Commands.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/Electrometer/Electrometer_Commands.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for topic in self.root.findall('./SALCommand/EFDB_Topic'):
@@ -628,7 +628,7 @@ class TestTopicNaming(unittest.TestCase):
 
 	def test_ElectrometerEventsTopicNaming(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/Electrometer/Electrometer_Events.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/Electrometer/Electrometer_Events.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for topic in self.root.findall('./SALEvent/EFDB_Topic'):
@@ -639,7 +639,7 @@ class TestTopicNaming(unittest.TestCase):
 
 	def test_EnvironmentTelemetryTopicNaming(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/Environment/Environment_Telemetry.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/Environment/Environment_Telemetry.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for topic in self.root.findall('./SALTelemetry/EFDB_Topic'):
@@ -649,7 +649,7 @@ class TestTopicNaming(unittest.TestCase):
 
 	def test_FiberSpectrographCommandsTopicNaming(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/FiberSpectrograph/FiberSpectrograph_Commands.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/FiberSpectrograph/FiberSpectrograph_Commands.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for topic in self.root.findall('./SALCommand/EFDB_Topic'):
@@ -660,7 +660,7 @@ class TestTopicNaming(unittest.TestCase):
 
 	def test_FiberSpectrographEventsTopicNaming(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/FiberSpectrograph/FiberSpectrograph_Events.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/FiberSpectrograph/FiberSpectrograph_Events.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for topic in self.root.findall('./SALEvent/EFDB_Topic'):
@@ -671,7 +671,7 @@ class TestTopicNaming(unittest.TestCase):
 
 	def test_FiberSpectrographTelemetryTopicNaming(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/FiberSpectrograph/FiberSpectrograph_Telemetry.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/FiberSpectrograph/FiberSpectrograph_Telemetry.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for topic in self.root.findall('./SALTelemetry/EFDB_Topic'):
@@ -681,7 +681,7 @@ class TestTopicNaming(unittest.TestCase):
 
 	def test_GenericCameraCommandsTopicNaming(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/GenericCamera/GenericCamera_Commands.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/GenericCamera/GenericCamera_Commands.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for topic in self.root.findall('./SALCommand/EFDB_Topic'):
@@ -692,7 +692,7 @@ class TestTopicNaming(unittest.TestCase):
 
 	def test_GenericCameraEventsTopicNaming(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/GenericCamera/GenericCamera_Events.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/GenericCamera/GenericCamera_Events.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for topic in self.root.findall('./SALEvent/EFDB_Topic'):
@@ -703,7 +703,7 @@ class TestTopicNaming(unittest.TestCase):
 
 	def test_GenericCameraTelemetryTopicNaming(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/GenericCamera/GenericCamera_Telemetry.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/GenericCamera/GenericCamera_Telemetry.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for topic in self.root.findall('./SALTelemetry/EFDB_Topic'):
@@ -713,7 +713,7 @@ class TestTopicNaming(unittest.TestCase):
 
 	def test_HVACCommandsTopicNaming(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/HVAC/HVAC_Commands.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/HVAC/HVAC_Commands.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for topic in self.root.findall('./SALCommand/EFDB_Topic'):
@@ -724,7 +724,7 @@ class TestTopicNaming(unittest.TestCase):
 
 	def test_HVACEventsTopicNaming(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/HVAC/HVAC_Events.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/HVAC/HVAC_Events.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for topic in self.root.findall('./SALEvent/EFDB_Topic'):
@@ -735,7 +735,7 @@ class TestTopicNaming(unittest.TestCase):
 
 	def test_HVACTelemetryTopicNaming(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/HVAC/HVAC_Telemetry.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/HVAC/HVAC_Telemetry.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for topic in self.root.findall('./SALTelemetry/EFDB_Topic'):
@@ -745,7 +745,7 @@ class TestTopicNaming(unittest.TestCase):
 
 	def test_HexapodCommandsTopicNaming(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/Hexapod/Hexapod_Commands.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/Hexapod/Hexapod_Commands.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for topic in self.root.findall('./SALCommand/EFDB_Topic'):
@@ -756,7 +756,7 @@ class TestTopicNaming(unittest.TestCase):
 
 	def test_HexapodEventsTopicNaming(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/Hexapod/Hexapod_Events.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/Hexapod/Hexapod_Events.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for topic in self.root.findall('./SALEvent/EFDB_Topic'):
@@ -768,7 +768,7 @@ class TestTopicNaming(unittest.TestCase):
 	@unittest.skip("DM-20971")
 	def test_HexapodTelemetryTopicNaming(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/Hexapod/Hexapod_Telemetry.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/Hexapod/Hexapod_Telemetry.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for topic in self.root.findall('./SALTelemetry/EFDB_Topic'):
@@ -778,7 +778,7 @@ class TestTopicNaming(unittest.TestCase):
 
 	def test_IOTAEventsTopicNaming(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/IOTA/IOTA_Events.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/IOTA/IOTA_Events.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for topic in self.root.findall('./SALEvent/EFDB_Topic'):
@@ -789,7 +789,7 @@ class TestTopicNaming(unittest.TestCase):
 
 	def test_IOTATelemetryTopicNaming(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/IOTA/IOTA_Telemetry.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/IOTA/IOTA_Telemetry.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for topic in self.root.findall('./SALTelemetry/EFDB_Topic'):
@@ -799,7 +799,7 @@ class TestTopicNaming(unittest.TestCase):
 
 	def test_LOVEEventsTopicNaming(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/LOVE/LOVE_Events.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/LOVE/LOVE_Events.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for topic in self.root.findall('./SALEvent/EFDB_Topic'):
@@ -810,7 +810,7 @@ class TestTopicNaming(unittest.TestCase):
 
 	def test_LinearStageCommandsTopicNaming(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/LinearStage/LinearStage_Commands.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/LinearStage/LinearStage_Commands.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for topic in self.root.findall('./SALCommand/EFDB_Topic'):
@@ -821,7 +821,7 @@ class TestTopicNaming(unittest.TestCase):
 
 	def test_LinearStageEventsTopicNaming(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/LinearStage/LinearStage_Events.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/LinearStage/LinearStage_Events.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for topic in self.root.findall('./SALEvent/EFDB_Topic'):
@@ -832,7 +832,7 @@ class TestTopicNaming(unittest.TestCase):
 
 	def test_LinearStageTelemetryTopicNaming(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/LinearStage/LinearStage_Telemetry.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/LinearStage/LinearStage_Telemetry.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for topic in self.root.findall('./SALTelemetry/EFDB_Topic'):
@@ -842,7 +842,7 @@ class TestTopicNaming(unittest.TestCase):
 
 	def test_MTAOSCommandsTopicNaming(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/MTAOS/MTAOS_Commands.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/MTAOS/MTAOS_Commands.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for topic in self.root.findall('./SALCommand/EFDB_Topic'):
@@ -853,7 +853,7 @@ class TestTopicNaming(unittest.TestCase):
 
 	def test_MTAOSEventsTopicNaming(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/MTAOS/MTAOS_Events.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/MTAOS/MTAOS_Events.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for topic in self.root.findall('./SALEvent/EFDB_Topic'):
@@ -864,7 +864,7 @@ class TestTopicNaming(unittest.TestCase):
 
 	def test_MTAOSTelemetryTopicNaming(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/MTAOS/MTAOS_Telemetry.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/MTAOS/MTAOS_Telemetry.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for topic in self.root.findall('./SALTelemetry/EFDB_Topic'):
@@ -874,7 +874,7 @@ class TestTopicNaming(unittest.TestCase):
 
 	def test_MTArchiverEventsTopicNaming(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/MTArchiver/MTArchiver_Events.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/MTArchiver/MTArchiver_Events.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for topic in self.root.findall('./SALEvent/EFDB_Topic'):
@@ -885,7 +885,7 @@ class TestTopicNaming(unittest.TestCase):
 
 	def test_MTArchiverTelemetryTopicNaming(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/MTArchiver/MTArchiver_Telemetry.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/MTArchiver/MTArchiver_Telemetry.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for topic in self.root.findall('./SALTelemetry/EFDB_Topic'):
@@ -895,7 +895,7 @@ class TestTopicNaming(unittest.TestCase):
 
 	def test_MTCameraCommandsTopicNaming(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/MTCamera/MTCamera_Commands.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/MTCamera/MTCamera_Commands.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for topic in self.root.findall('./SALCommand/EFDB_Topic'):
@@ -906,7 +906,7 @@ class TestTopicNaming(unittest.TestCase):
 
 	def test_MTCameraEventsTopicNaming(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/MTCamera/MTCamera_Events.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/MTCamera/MTCamera_Events.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for topic in self.root.findall('./SALEvent/EFDB_Topic'):
@@ -917,7 +917,7 @@ class TestTopicNaming(unittest.TestCase):
 
 	def test_MTCameraTelemetryTopicNaming(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/MTCamera/MTCamera_Telemetry.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/MTCamera/MTCamera_Telemetry.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for topic in self.root.findall('./SALTelemetry/EFDB_Topic'):
@@ -927,7 +927,7 @@ class TestTopicNaming(unittest.TestCase):
 
 	def test_MTDomeTrajectoryEventsTopicNaming(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/MTDomeTrajectory/MTDomeTrajectory_Events.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/MTDomeTrajectory/MTDomeTrajectory_Events.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for topic in self.root.findall('./SALEvent/EFDB_Topic'):
@@ -938,7 +938,7 @@ class TestTopicNaming(unittest.TestCase):
 
 	def test_MTDomeTrajectoryTelemetryTopicNaming(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/MTDomeTrajectory/MTDomeTrajectory_Telemetry.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/MTDomeTrajectory/MTDomeTrajectory_Telemetry.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for topic in self.root.findall('./SALTelemetry/EFDB_Topic'):
@@ -948,7 +948,7 @@ class TestTopicNaming(unittest.TestCase):
 
 	def test_MTEECCommandsTopicNaming(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/MTEEC/MTEEC_Commands.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/MTEEC/MTEEC_Commands.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for topic in self.root.findall('./SALCommand/EFDB_Topic'):
@@ -959,7 +959,7 @@ class TestTopicNaming(unittest.TestCase):
 
 	def test_MTEECEventsTopicNaming(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/MTEEC/MTEEC_Events.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/MTEEC/MTEEC_Events.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for topic in self.root.findall('./SALEvent/EFDB_Topic'):
@@ -970,7 +970,7 @@ class TestTopicNaming(unittest.TestCase):
 
 	def test_MTGuiderEventsTopicNaming(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/MTGuider/MTGuider_Events.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/MTGuider/MTGuider_Events.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for topic in self.root.findall('./SALEvent/EFDB_Topic'):
@@ -981,7 +981,7 @@ class TestTopicNaming(unittest.TestCase):
 
 	def test_MTGuiderTelemetryTopicNaming(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/MTGuider/MTGuider_Telemetry.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/MTGuider/MTGuider_Telemetry.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for topic in self.root.findall('./SALTelemetry/EFDB_Topic'):
@@ -991,7 +991,7 @@ class TestTopicNaming(unittest.TestCase):
 
 	def test_MTHeaderServiceEventsTopicNaming(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/MTHeaderService/MTHeaderService_Events.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/MTHeaderService/MTHeaderService_Events.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for topic in self.root.findall('./SALEvent/EFDB_Topic'):
@@ -1002,7 +1002,7 @@ class TestTopicNaming(unittest.TestCase):
 
 	def test_MTLaserTrackerEventsTopicNaming(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/MTLaserTracker/MTLaserTracker_Events.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/MTLaserTracker/MTLaserTracker_Events.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for topic in self.root.findall('./SALEvent/EFDB_Topic'):
@@ -1013,7 +1013,7 @@ class TestTopicNaming(unittest.TestCase):
 
 	def test_MTLaserTrackerTelemetryTopicNaming(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/MTLaserTracker/MTLaserTracker_Telemetry.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/MTLaserTracker/MTLaserTracker_Telemetry.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for topic in self.root.findall('./SALTelemetry/EFDB_Topic'):
@@ -1023,7 +1023,7 @@ class TestTopicNaming(unittest.TestCase):
 
 	def test_MTM1M3CommandsTopicNaming(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/MTM1M3/MTM1M3_Commands.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/MTM1M3/MTM1M3_Commands.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for topic in self.root.findall('./SALCommand/EFDB_Topic'):
@@ -1034,7 +1034,7 @@ class TestTopicNaming(unittest.TestCase):
 
 	def test_MTM1M3EventsTopicNaming(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/MTM1M3/MTM1M3_Events.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/MTM1M3/MTM1M3_Events.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for topic in self.root.findall('./SALEvent/EFDB_Topic'):
@@ -1045,7 +1045,7 @@ class TestTopicNaming(unittest.TestCase):
 
 	def test_MTM1M3TelemetryTopicNaming(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/MTM1M3/MTM1M3_Telemetry.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/MTM1M3/MTM1M3_Telemetry.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for topic in self.root.findall('./SALTelemetry/EFDB_Topic'):
@@ -1055,7 +1055,7 @@ class TestTopicNaming(unittest.TestCase):
 
 	def test_MTM1M3TSCommandsTopicNaming(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/MTM1M3TS/MTM1M3TS_Commands.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/MTM1M3TS/MTM1M3TS_Commands.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for topic in self.root.findall('./SALCommand/EFDB_Topic'):
@@ -1066,7 +1066,7 @@ class TestTopicNaming(unittest.TestCase):
 
 	def test_MTM1M3TSEventsTopicNaming(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/MTM1M3TS/MTM1M3TS_Events.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/MTM1M3TS/MTM1M3TS_Events.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for topic in self.root.findall('./SALEvent/EFDB_Topic'):
@@ -1077,7 +1077,7 @@ class TestTopicNaming(unittest.TestCase):
 
 	def test_MTM1M3TSTelemetryTopicNaming(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/MTM1M3TS/MTM1M3TS_Telemetry.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/MTM1M3TS/MTM1M3TS_Telemetry.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for topic in self.root.findall('./SALTelemetry/EFDB_Topic'):
@@ -1087,7 +1087,7 @@ class TestTopicNaming(unittest.TestCase):
 
 	def test_MTM2CommandsTopicNaming(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/MTM2/MTM2_Commands.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/MTM2/MTM2_Commands.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for topic in self.root.findall('./SALCommand/EFDB_Topic'):
@@ -1098,7 +1098,7 @@ class TestTopicNaming(unittest.TestCase):
 
 	def test_MTM2EventsTopicNaming(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/MTM2/MTM2_Events.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/MTM2/MTM2_Events.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for topic in self.root.findall('./SALEvent/EFDB_Topic'):
@@ -1109,7 +1109,7 @@ class TestTopicNaming(unittest.TestCase):
 
 	def test_MTM2TelemetryTopicNaming(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/MTM2/MTM2_Telemetry.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/MTM2/MTM2_Telemetry.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for topic in self.root.findall('./SALTelemetry/EFDB_Topic'):
@@ -1119,7 +1119,7 @@ class TestTopicNaming(unittest.TestCase):
 
 	def test_MTMountCommandsTopicNaming(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/MTMount/MTMount_Commands.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/MTMount/MTMount_Commands.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for topic in self.root.findall('./SALCommand/EFDB_Topic'):
@@ -1130,7 +1130,7 @@ class TestTopicNaming(unittest.TestCase):
 
 	def test_MTMountEventsTopicNaming(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/MTMount/MTMount_Events.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/MTMount/MTMount_Events.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for topic in self.root.findall('./SALEvent/EFDB_Topic'):
@@ -1142,7 +1142,7 @@ class TestTopicNaming(unittest.TestCase):
 	@unittest.skip("DM-17276")
 	def test_MTMountTelemetryTopicNaming(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/MTMount/MTMount_Telemetry.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/MTMount/MTMount_Telemetry.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for topic in self.root.findall('./SALTelemetry/EFDB_Topic'):
@@ -1152,7 +1152,7 @@ class TestTopicNaming(unittest.TestCase):
 
 	def test_MTPtgCommandsTopicNaming(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/MTPtg/MTPtg_Commands.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/MTPtg/MTPtg_Commands.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for topic in self.root.findall('./SALCommand/EFDB_Topic'):
@@ -1163,7 +1163,7 @@ class TestTopicNaming(unittest.TestCase):
 
 	def test_MTPtgEventsTopicNaming(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/MTPtg/MTPtg_Events.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/MTPtg/MTPtg_Events.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for topic in self.root.findall('./SALEvent/EFDB_Topic'):
@@ -1174,7 +1174,7 @@ class TestTopicNaming(unittest.TestCase):
 
 	def test_MTPtgTelemetryTopicNaming(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/MTPtg/MTPtg_Telemetry.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/MTPtg/MTPtg_Telemetry.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for topic in self.root.findall('./SALTelemetry/EFDB_Topic'):
@@ -1184,7 +1184,7 @@ class TestTopicNaming(unittest.TestCase):
 
 	def test_MTTCSCommandsTopicNaming(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/MTTCS/MTTCS_Commands.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/MTTCS/MTTCS_Commands.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for topic in self.root.findall('./SALCommand/EFDB_Topic'):
@@ -1195,7 +1195,7 @@ class TestTopicNaming(unittest.TestCase):
 
 	def test_MTTCSEventsTopicNaming(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/MTTCS/MTTCS_Events.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/MTTCS/MTTCS_Events.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for topic in self.root.findall('./SALEvent/EFDB_Topic'):
@@ -1206,7 +1206,7 @@ class TestTopicNaming(unittest.TestCase):
 
 	def test_MTTCSTelemetryTopicNaming(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/MTTCS/MTTCS_Telemetry.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/MTTCS/MTTCS_Telemetry.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for topic in self.root.findall('./SALTelemetry/EFDB_Topic'):
@@ -1216,7 +1216,7 @@ class TestTopicNaming(unittest.TestCase):
 
 	def test_MTVMSCommandsTopicNaming(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/MTVMS/MTVMS_Commands.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/MTVMS/MTVMS_Commands.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for topic in self.root.findall('./SALCommand/EFDB_Topic'):
@@ -1227,7 +1227,7 @@ class TestTopicNaming(unittest.TestCase):
 
 	def test_MTVMSEventsTopicNaming(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/MTVMS/MTVMS_Events.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/MTVMS/MTVMS_Events.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for topic in self.root.findall('./SALEvent/EFDB_Topic'):
@@ -1239,7 +1239,7 @@ class TestTopicNaming(unittest.TestCase):
 	@unittest.skip("DM-22155")
 	def test_MTVMSTelemetryTopicNaming(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/MTVMS/MTVMS_Telemetry.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/MTVMS/MTVMS_Telemetry.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for topic in self.root.findall('./SALTelemetry/EFDB_Topic'):
@@ -1249,7 +1249,7 @@ class TestTopicNaming(unittest.TestCase):
 
 	def test_OCSCommandsTopicNaming(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/OCS/OCS_Commands.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/OCS/OCS_Commands.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for topic in self.root.findall('./SALCommand/EFDB_Topic'):
@@ -1260,7 +1260,7 @@ class TestTopicNaming(unittest.TestCase):
 
 	def test_OCSEventsTopicNaming(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/OCS/OCS_Events.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/OCS/OCS_Events.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for topic in self.root.findall('./SALEvent/EFDB_Topic'):
@@ -1271,7 +1271,7 @@ class TestTopicNaming(unittest.TestCase):
 
 	def test_OCSTelemetryTopicNaming(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/OCS/OCS_Telemetry.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/OCS/OCS_Telemetry.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for topic in self.root.findall('./SALTelemetry/EFDB_Topic'):
@@ -1281,7 +1281,7 @@ class TestTopicNaming(unittest.TestCase):
 
 	def test_PointingComponentCommandsTopicNaming(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/PointingComponent/PointingComponent_Commands.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/PointingComponent/PointingComponent_Commands.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for topic in self.root.findall('./SALCommand/EFDB_Topic'):
@@ -1292,7 +1292,7 @@ class TestTopicNaming(unittest.TestCase):
 
 	def test_PointingComponentEventsTopicNaming(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/PointingComponent/PointingComponent_Events.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/PointingComponent/PointingComponent_Events.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for topic in self.root.findall('./SALEvent/EFDB_Topic'):
@@ -1303,7 +1303,7 @@ class TestTopicNaming(unittest.TestCase):
 
 	def test_PointingComponentTelemetryTopicNaming(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/PointingComponent/PointingComponent_Telemetry.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/PointingComponent/PointingComponent_Telemetry.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for topic in self.root.findall('./SALTelemetry/EFDB_Topic'):
@@ -1313,7 +1313,7 @@ class TestTopicNaming(unittest.TestCase):
 
 	def test_PromptProcessingEventsTopicNaming(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/PromptProcessing/PromptProcessing_Events.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/PromptProcessing/PromptProcessing_Events.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for topic in self.root.findall('./SALEvent/EFDB_Topic'):
@@ -1324,7 +1324,7 @@ class TestTopicNaming(unittest.TestCase):
 
 	def test_PromptProcessingTelemetryTopicNaming(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/PromptProcessing/PromptProcessing_Telemetry.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/PromptProcessing/PromptProcessing_Telemetry.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for topic in self.root.findall('./SALTelemetry/EFDB_Topic'):
@@ -1334,7 +1334,7 @@ class TestTopicNaming(unittest.TestCase):
 
 	def test_RotatorCommandsTopicNaming(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/Rotator/Rotator_Commands.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/Rotator/Rotator_Commands.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for topic in self.root.findall('./SALCommand/EFDB_Topic'):
@@ -1345,7 +1345,7 @@ class TestTopicNaming(unittest.TestCase):
 
 	def test_RotatorEventsTopicNaming(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/Rotator/Rotator_Events.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/Rotator/Rotator_Events.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for topic in self.root.findall('./SALEvent/EFDB_Topic'):
@@ -1357,7 +1357,7 @@ class TestTopicNaming(unittest.TestCase):
 	@unittest.skip("DM-20969")
 	def test_RotatorTelemetryTopicNaming(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/Rotator/Rotator_Telemetry.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/Rotator/Rotator_Telemetry.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for topic in self.root.findall('./SALTelemetry/EFDB_Topic'):
@@ -1367,7 +1367,7 @@ class TestTopicNaming(unittest.TestCase):
 
 	def test_SchedulerEventsTopicNaming(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/Scheduler/Scheduler_Events.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/Scheduler/Scheduler_Events.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for topic in self.root.findall('./SALEvent/EFDB_Topic'):
@@ -1378,7 +1378,7 @@ class TestTopicNaming(unittest.TestCase):
 
 	def test_SchedulerTelemetryTopicNaming(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/Scheduler/Scheduler_Telemetry.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/Scheduler/Scheduler_Telemetry.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for topic in self.root.findall('./SALTelemetry/EFDB_Topic'):
@@ -1388,7 +1388,7 @@ class TestTopicNaming(unittest.TestCase):
 
 	def test_ScriptCommandsTopicNaming(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/Script/Script_Commands.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/Script/Script_Commands.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for topic in self.root.findall('./SALCommand/EFDB_Topic'):
@@ -1399,7 +1399,7 @@ class TestTopicNaming(unittest.TestCase):
 
 	def test_ScriptEventsTopicNaming(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/Script/Script_Events.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/Script/Script_Events.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for topic in self.root.findall('./SALEvent/EFDB_Topic'):
@@ -1410,7 +1410,7 @@ class TestTopicNaming(unittest.TestCase):
 
 	def test_ScriptQueueCommandsTopicNaming(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/ScriptQueue/ScriptQueue_Commands.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/ScriptQueue/ScriptQueue_Commands.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for topic in self.root.findall('./SALCommand/EFDB_Topic'):
@@ -1421,7 +1421,7 @@ class TestTopicNaming(unittest.TestCase):
 
 	def test_ScriptQueueEventsTopicNaming(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/ScriptQueue/ScriptQueue_Events.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/ScriptQueue/ScriptQueue_Events.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for topic in self.root.findall('./SALEvent/EFDB_Topic'):
@@ -1432,7 +1432,7 @@ class TestTopicNaming(unittest.TestCase):
 
 	def test_SummitFacilityTelemetryTopicNaming(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/SummitFacility/SummitFacility_Telemetry.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/SummitFacility/SummitFacility_Telemetry.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for topic in self.root.findall('./SALTelemetry/EFDB_Topic'):
@@ -1442,7 +1442,7 @@ class TestTopicNaming(unittest.TestCase):
 
 	def test_TestCommandsTopicNaming(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/Test/Test_Commands.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/Test/Test_Commands.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for topic in self.root.findall('./SALCommand/EFDB_Topic'):
@@ -1453,7 +1453,7 @@ class TestTopicNaming(unittest.TestCase):
 
 	def test_TestEventsTopicNaming(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/Test/Test_Events.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/Test/Test_Events.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for topic in self.root.findall('./SALEvent/EFDB_Topic'):
@@ -1464,7 +1464,7 @@ class TestTopicNaming(unittest.TestCase):
 
 	def test_TestTelemetryTopicNaming(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/Test/Test_Telemetry.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/Test/Test_Telemetry.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for topic in self.root.findall('./SALTelemetry/EFDB_Topic'):
@@ -1474,7 +1474,7 @@ class TestTopicNaming(unittest.TestCase):
 
 	def test_TunableLaserCommandsTopicNaming(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/TunableLaser/TunableLaser_Commands.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/TunableLaser/TunableLaser_Commands.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for topic in self.root.findall('./SALCommand/EFDB_Topic'):
@@ -1485,7 +1485,7 @@ class TestTopicNaming(unittest.TestCase):
 
 	def test_TunableLaserEventsTopicNaming(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/TunableLaser/TunableLaser_Events.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/TunableLaser/TunableLaser_Events.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for topic in self.root.findall('./SALEvent/EFDB_Topic'):
@@ -1496,7 +1496,7 @@ class TestTopicNaming(unittest.TestCase):
 
 	def test_TunableLaserTelemetryTopicNaming(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/TunableLaser/TunableLaser_Telemetry.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/TunableLaser/TunableLaser_Telemetry.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for topic in self.root.findall('./SALTelemetry/EFDB_Topic'):
@@ -1506,7 +1506,7 @@ class TestTopicNaming(unittest.TestCase):
 
 	def test_WatcherCommandsTopicNaming(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/Watcher/Watcher_Commands.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/Watcher/Watcher_Commands.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for topic in self.root.findall('./SALCommand/EFDB_Topic'):
@@ -1517,7 +1517,7 @@ class TestTopicNaming(unittest.TestCase):
 
 	def test_WatcherEventsTopicNaming(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/Watcher/Watcher_Events.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/Watcher/Watcher_Events.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for topic in self.root.findall('./SALEvent/EFDB_Topic'):

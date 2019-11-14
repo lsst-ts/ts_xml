@@ -48,7 +48,7 @@ for csc in xml_common.subsystems:
 			file.write("\t@unittest.skip(\"" + jira + "\")\n")
 		file.write("\tdef test_" + csc + messageType + "AttributeNaming(self):\n")
 		file.write("\t\tself.dir_path = os.path.dirname(os.path.realpath(__file__))\n")
-		file.write("\t\tself.file = open(self.dir_path + '/" + xml[3:] + "')\n")
+		file.write("\t\tself.file = open(self.dir_path + '/" + xml[3:] + "', 'r', encoding='utf-8')\n")
 		file.write("\t\tself.tree = ET.parse(self.file)\n")
 		file.write("\t\tself.root = self.tree.getroot()\n")
 		file.write("\t\tfor attribute in self.root.findall('./SAL" + messageType.rstrip('s') + "/item/EFDB_Name'):\n")
