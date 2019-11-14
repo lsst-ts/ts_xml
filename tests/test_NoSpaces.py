@@ -9,7 +9,7 @@ class TestNoSpaces(unittest.TestCase):
 
 	def test_ATAOSCommandsSubsystemNoSpace(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/ATAOS/ATAOS_Commands.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/ATAOS/ATAOS_Commands.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for subsystem in self.root.findall('./SALCommand/Subsystem'):
@@ -45,7 +45,7 @@ class TestNoSpaces(unittest.TestCase):
 
 	def test_ATAOSEventsSubsystemNoSpace(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/ATAOS/ATAOS_Events.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/ATAOS/ATAOS_Events.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for subsystem in self.root.findall('./SALEvent/Subsystem'):
@@ -81,7 +81,7 @@ class TestNoSpaces(unittest.TestCase):
 
 	def test_ATAOSTelemetrySubsystemNoSpace(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/ATAOS/ATAOS_Telemetry.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/ATAOS/ATAOS_Telemetry.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for subsystem in self.root.findall('./SALTelemetry/Subsystem'):
@@ -108,7 +108,7 @@ class TestNoSpaces(unittest.TestCase):
 
 	def test_ATArchiverCommandsSubsystemNoSpace(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/ATArchiver/ATArchiver_Commands.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/ATArchiver/ATArchiver_Commands.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for subsystem in self.root.findall('./SALCommand/Subsystem'):
@@ -144,7 +144,7 @@ class TestNoSpaces(unittest.TestCase):
 
 	def test_ATArchiverEventsSubsystemNoSpace(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/ATArchiver/ATArchiver_Events.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/ATArchiver/ATArchiver_Events.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for subsystem in self.root.findall('./SALEvent/Subsystem'):
@@ -180,7 +180,7 @@ class TestNoSpaces(unittest.TestCase):
 
 	def test_ATArchiverTelemetrySubsystemNoSpace(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/ATArchiver/ATArchiver_Telemetry.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/ATArchiver/ATArchiver_Telemetry.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for subsystem in self.root.findall('./SALTelemetry/Subsystem'):
@@ -207,7 +207,7 @@ class TestNoSpaces(unittest.TestCase):
 
 	def test_ATBuildingEventsSubsystemNoSpace(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/ATBuilding/ATBuilding_Events.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/ATBuilding/ATBuilding_Events.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for subsystem in self.root.findall('./SALEvent/Subsystem'):
@@ -243,7 +243,7 @@ class TestNoSpaces(unittest.TestCase):
 
 	def test_ATBuildingTelemetrySubsystemNoSpace(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/ATBuilding/ATBuilding_Telemetry.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/ATBuilding/ATBuilding_Telemetry.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for subsystem in self.root.findall('./SALTelemetry/Subsystem'):
@@ -270,7 +270,7 @@ class TestNoSpaces(unittest.TestCase):
 
 	def test_ATCameraCommandsSubsystemNoSpace(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/ATCamera/ATCamera_Commands.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/ATCamera/ATCamera_Commands.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for subsystem in self.root.findall('./SALCommand/Subsystem'):
@@ -306,7 +306,7 @@ class TestNoSpaces(unittest.TestCase):
 
 	def test_ATCameraEventsSubsystemNoSpace(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/ATCamera/ATCamera_Events.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/ATCamera/ATCamera_Events.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for subsystem in self.root.findall('./SALEvent/Subsystem'):
@@ -342,7 +342,7 @@ class TestNoSpaces(unittest.TestCase):
 
 	def test_ATCameraTelemetrySubsystemNoSpace(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/ATCamera/ATCamera_Telemetry.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/ATCamera/ATCamera_Telemetry.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for subsystem in self.root.findall('./SALTelemetry/Subsystem'):
@@ -369,7 +369,7 @@ class TestNoSpaces(unittest.TestCase):
 
 	def test_ATDomeCommandsSubsystemNoSpace(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/ATDome/ATDome_Commands.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/ATDome/ATDome_Commands.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for subsystem in self.root.findall('./SALCommand/Subsystem'):
@@ -405,7 +405,7 @@ class TestNoSpaces(unittest.TestCase):
 
 	def test_ATDomeEventsSubsystemNoSpace(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/ATDome/ATDome_Events.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/ATDome/ATDome_Events.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for subsystem in self.root.findall('./SALEvent/Subsystem'):
@@ -441,7 +441,7 @@ class TestNoSpaces(unittest.TestCase):
 
 	def test_ATDomeTelemetrySubsystemNoSpace(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/ATDome/ATDome_Telemetry.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/ATDome/ATDome_Telemetry.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for subsystem in self.root.findall('./SALTelemetry/Subsystem'):
@@ -468,7 +468,7 @@ class TestNoSpaces(unittest.TestCase):
 
 	def test_ATDomeTrajectoryEventsSubsystemNoSpace(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/ATDomeTrajectory/ATDomeTrajectory_Events.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/ATDomeTrajectory/ATDomeTrajectory_Events.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for subsystem in self.root.findall('./SALEvent/Subsystem'):
@@ -504,7 +504,7 @@ class TestNoSpaces(unittest.TestCase):
 
 	def test_ATHeaderServiceEventsSubsystemNoSpace(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/ATHeaderService/ATHeaderService_Events.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/ATHeaderService/ATHeaderService_Events.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for subsystem in self.root.findall('./SALEvent/Subsystem'):
@@ -540,7 +540,7 @@ class TestNoSpaces(unittest.TestCase):
 
 	def test_ATHexapodCommandsSubsystemNoSpace(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/ATHexapod/ATHexapod_Commands.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/ATHexapod/ATHexapod_Commands.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for subsystem in self.root.findall('./SALCommand/Subsystem'):
@@ -576,7 +576,7 @@ class TestNoSpaces(unittest.TestCase):
 
 	def test_ATHexapodEventsSubsystemNoSpace(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/ATHexapod/ATHexapod_Events.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/ATHexapod/ATHexapod_Events.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for subsystem in self.root.findall('./SALEvent/Subsystem'):
@@ -612,7 +612,7 @@ class TestNoSpaces(unittest.TestCase):
 
 	def test_ATHexapodTelemetrySubsystemNoSpace(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/ATHexapod/ATHexapod_Telemetry.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/ATHexapod/ATHexapod_Telemetry.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for subsystem in self.root.findall('./SALTelemetry/Subsystem'):
@@ -639,7 +639,7 @@ class TestNoSpaces(unittest.TestCase):
 
 	def test_ATMCSCommandsSubsystemNoSpace(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/ATMCS/ATMCS_Commands.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/ATMCS/ATMCS_Commands.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for subsystem in self.root.findall('./SALCommand/Subsystem'):
@@ -675,7 +675,7 @@ class TestNoSpaces(unittest.TestCase):
 
 	def test_ATMCSEventsSubsystemNoSpace(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/ATMCS/ATMCS_Events.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/ATMCS/ATMCS_Events.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for subsystem in self.root.findall('./SALEvent/Subsystem'):
@@ -711,7 +711,7 @@ class TestNoSpaces(unittest.TestCase):
 
 	def test_ATMCSTelemetrySubsystemNoSpace(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/ATMCS/ATMCS_Telemetry.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/ATMCS/ATMCS_Telemetry.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for subsystem in self.root.findall('./SALTelemetry/Subsystem'):
@@ -738,7 +738,7 @@ class TestNoSpaces(unittest.TestCase):
 
 	def test_ATMonochromatorCommandsSubsystemNoSpace(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/ATMonochromator/ATMonochromator_Commands.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/ATMonochromator/ATMonochromator_Commands.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for subsystem in self.root.findall('./SALCommand/Subsystem'):
@@ -774,7 +774,7 @@ class TestNoSpaces(unittest.TestCase):
 
 	def test_ATMonochromatorEventsSubsystemNoSpace(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/ATMonochromator/ATMonochromator_Events.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/ATMonochromator/ATMonochromator_Events.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for subsystem in self.root.findall('./SALEvent/Subsystem'):
@@ -810,7 +810,7 @@ class TestNoSpaces(unittest.TestCase):
 
 	def test_ATMonochromatorTelemetrySubsystemNoSpace(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/ATMonochromator/ATMonochromator_Telemetry.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/ATMonochromator/ATMonochromator_Telemetry.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for subsystem in self.root.findall('./SALTelemetry/Subsystem'):
@@ -837,7 +837,7 @@ class TestNoSpaces(unittest.TestCase):
 
 	def test_ATPneumaticsCommandsSubsystemNoSpace(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/ATPneumatics/ATPneumatics_Commands.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/ATPneumatics/ATPneumatics_Commands.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for subsystem in self.root.findall('./SALCommand/Subsystem'):
@@ -873,7 +873,7 @@ class TestNoSpaces(unittest.TestCase):
 
 	def test_ATPneumaticsEventsSubsystemNoSpace(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/ATPneumatics/ATPneumatics_Events.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/ATPneumatics/ATPneumatics_Events.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for subsystem in self.root.findall('./SALEvent/Subsystem'):
@@ -909,7 +909,7 @@ class TestNoSpaces(unittest.TestCase):
 
 	def test_ATPneumaticsTelemetrySubsystemNoSpace(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/ATPneumatics/ATPneumatics_Telemetry.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/ATPneumatics/ATPneumatics_Telemetry.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for subsystem in self.root.findall('./SALTelemetry/Subsystem'):
@@ -936,7 +936,7 @@ class TestNoSpaces(unittest.TestCase):
 
 	def test_ATPtgCommandsSubsystemNoSpace(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/ATPtg/ATPtg_Commands.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/ATPtg/ATPtg_Commands.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for subsystem in self.root.findall('./SALCommand/Subsystem'):
@@ -972,7 +972,7 @@ class TestNoSpaces(unittest.TestCase):
 
 	def test_ATPtgEventsSubsystemNoSpace(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/ATPtg/ATPtg_Events.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/ATPtg/ATPtg_Events.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for subsystem in self.root.findall('./SALEvent/Subsystem'):
@@ -1008,7 +1008,7 @@ class TestNoSpaces(unittest.TestCase):
 
 	def test_ATPtgTelemetrySubsystemNoSpace(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/ATPtg/ATPtg_Telemetry.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/ATPtg/ATPtg_Telemetry.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for subsystem in self.root.findall('./SALTelemetry/Subsystem'):
@@ -1035,7 +1035,7 @@ class TestNoSpaces(unittest.TestCase):
 
 	def test_ATSpectrographCommandsSubsystemNoSpace(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/ATSpectrograph/ATSpectrograph_Commands.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/ATSpectrograph/ATSpectrograph_Commands.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for subsystem in self.root.findall('./SALCommand/Subsystem'):
@@ -1071,7 +1071,7 @@ class TestNoSpaces(unittest.TestCase):
 
 	def test_ATSpectrographEventsSubsystemNoSpace(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/ATSpectrograph/ATSpectrograph_Events.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/ATSpectrograph/ATSpectrograph_Events.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for subsystem in self.root.findall('./SALEvent/Subsystem'):
@@ -1107,7 +1107,7 @@ class TestNoSpaces(unittest.TestCase):
 
 	def test_ATSpectrographTelemetrySubsystemNoSpace(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/ATSpectrograph/ATSpectrograph_Telemetry.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/ATSpectrograph/ATSpectrograph_Telemetry.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for subsystem in self.root.findall('./SALTelemetry/Subsystem'):
@@ -1134,7 +1134,7 @@ class TestNoSpaces(unittest.TestCase):
 
 	def test_ATTCSCommandsSubsystemNoSpace(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/ATTCS/ATTCS_Commands.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/ATTCS/ATTCS_Commands.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for subsystem in self.root.findall('./SALCommand/Subsystem'):
@@ -1170,7 +1170,7 @@ class TestNoSpaces(unittest.TestCase):
 
 	def test_ATTCSEventsSubsystemNoSpace(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/ATTCS/ATTCS_Events.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/ATTCS/ATTCS_Events.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for subsystem in self.root.findall('./SALEvent/Subsystem'):
@@ -1206,7 +1206,7 @@ class TestNoSpaces(unittest.TestCase):
 
 	def test_ATTCSTelemetrySubsystemNoSpace(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/ATTCS/ATTCS_Telemetry.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/ATTCS/ATTCS_Telemetry.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for subsystem in self.root.findall('./SALTelemetry/Subsystem'):
@@ -1233,7 +1233,7 @@ class TestNoSpaces(unittest.TestCase):
 
 	def test_ATWhiteLightCommandsSubsystemNoSpace(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/ATWhiteLight/ATWhiteLight_Commands.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/ATWhiteLight/ATWhiteLight_Commands.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for subsystem in self.root.findall('./SALCommand/Subsystem'):
@@ -1269,7 +1269,7 @@ class TestNoSpaces(unittest.TestCase):
 
 	def test_ATWhiteLightEventsSubsystemNoSpace(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/ATWhiteLight/ATWhiteLight_Events.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/ATWhiteLight/ATWhiteLight_Events.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for subsystem in self.root.findall('./SALEvent/Subsystem'):
@@ -1305,7 +1305,7 @@ class TestNoSpaces(unittest.TestCase):
 
 	def test_ATWhiteLightTelemetrySubsystemNoSpace(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/ATWhiteLight/ATWhiteLight_Telemetry.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/ATWhiteLight/ATWhiteLight_Telemetry.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for subsystem in self.root.findall('./SALTelemetry/Subsystem'):
@@ -1332,7 +1332,7 @@ class TestNoSpaces(unittest.TestCase):
 
 	def test_CatchupArchiverEventsSubsystemNoSpace(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/CatchupArchiver/CatchupArchiver_Events.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/CatchupArchiver/CatchupArchiver_Events.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for subsystem in self.root.findall('./SALEvent/Subsystem'):
@@ -1368,7 +1368,7 @@ class TestNoSpaces(unittest.TestCase):
 
 	def test_CatchupArchiverTelemetrySubsystemNoSpace(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/CatchupArchiver/CatchupArchiver_Telemetry.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/CatchupArchiver/CatchupArchiver_Telemetry.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for subsystem in self.root.findall('./SALTelemetry/Subsystem'):
@@ -1395,7 +1395,7 @@ class TestNoSpaces(unittest.TestCase):
 
 	def test_CBPCommandsSubsystemNoSpace(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/CBP/CBP_Commands.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/CBP/CBP_Commands.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for subsystem in self.root.findall('./SALCommand/Subsystem'):
@@ -1431,7 +1431,7 @@ class TestNoSpaces(unittest.TestCase):
 
 	def test_CBPTelemetrySubsystemNoSpace(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/CBP/CBP_Telemetry.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/CBP/CBP_Telemetry.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for subsystem in self.root.findall('./SALTelemetry/Subsystem'):
@@ -1458,7 +1458,7 @@ class TestNoSpaces(unittest.TestCase):
 
 	def test_DIMMEventsSubsystemNoSpace(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/DIMM/DIMM_Events.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/DIMM/DIMM_Events.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for subsystem in self.root.findall('./SALEvent/Subsystem'):
@@ -1494,7 +1494,7 @@ class TestNoSpaces(unittest.TestCase):
 
 	def test_DIMMTelemetrySubsystemNoSpace(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/DIMM/DIMM_Telemetry.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/DIMM/DIMM_Telemetry.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for subsystem in self.root.findall('./SALTelemetry/Subsystem'):
@@ -1521,7 +1521,7 @@ class TestNoSpaces(unittest.TestCase):
 
 	def test_DomeCommandsSubsystemNoSpace(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/Dome/Dome_Commands.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/Dome/Dome_Commands.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for subsystem in self.root.findall('./SALCommand/Subsystem'):
@@ -1557,7 +1557,7 @@ class TestNoSpaces(unittest.TestCase):
 
 	def test_DomeEventsSubsystemNoSpace(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/Dome/Dome_Events.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/Dome/Dome_Events.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for subsystem in self.root.findall('./SALEvent/Subsystem'):
@@ -1593,7 +1593,7 @@ class TestNoSpaces(unittest.TestCase):
 
 	def test_DomeTelemetrySubsystemNoSpace(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/Dome/Dome_Telemetry.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/Dome/Dome_Telemetry.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for subsystem in self.root.findall('./SALTelemetry/Subsystem'):
@@ -1620,7 +1620,7 @@ class TestNoSpaces(unittest.TestCase):
 
 	def test_DSMEventsSubsystemNoSpace(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/DSM/DSM_Events.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/DSM/DSM_Events.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for subsystem in self.root.findall('./SALEvent/Subsystem'):
@@ -1656,7 +1656,7 @@ class TestNoSpaces(unittest.TestCase):
 
 	def test_DSMTelemetrySubsystemNoSpace(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/DSM/DSM_Telemetry.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/DSM/DSM_Telemetry.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for subsystem in self.root.findall('./SALTelemetry/Subsystem'):
@@ -1683,7 +1683,7 @@ class TestNoSpaces(unittest.TestCase):
 
 	def test_EASEventsSubsystemNoSpace(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/EAS/EAS_Events.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/EAS/EAS_Events.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for subsystem in self.root.findall('./SALEvent/Subsystem'):
@@ -1719,7 +1719,7 @@ class TestNoSpaces(unittest.TestCase):
 
 	def test_EASTelemetrySubsystemNoSpace(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/EAS/EAS_Telemetry.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/EAS/EAS_Telemetry.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for subsystem in self.root.findall('./SALTelemetry/Subsystem'):
@@ -1746,7 +1746,7 @@ class TestNoSpaces(unittest.TestCase):
 
 	def test_EFDEventsSubsystemNoSpace(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/EFD/EFD_Events.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/EFD/EFD_Events.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for subsystem in self.root.findall('./SALEvent/Subsystem'):
@@ -1782,7 +1782,7 @@ class TestNoSpaces(unittest.TestCase):
 
 	def test_EFDTelemetrySubsystemNoSpace(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/EFD/EFD_Telemetry.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/EFD/EFD_Telemetry.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for subsystem in self.root.findall('./SALTelemetry/Subsystem'):
@@ -1809,7 +1809,7 @@ class TestNoSpaces(unittest.TestCase):
 
 	def test_EFDTransformationServerEventsSubsystemNoSpace(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/EFDTransformationServer/EFDTransformationServer_Events.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/EFDTransformationServer/EFDTransformationServer_Events.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for subsystem in self.root.findall('./SALEvent/Subsystem'):
@@ -1845,7 +1845,7 @@ class TestNoSpaces(unittest.TestCase):
 
 	def test_EFDTransformationServerTelemetrySubsystemNoSpace(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/EFDTransformationServer/EFDTransformationServer_Telemetry.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/EFDTransformationServer/EFDTransformationServer_Telemetry.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for subsystem in self.root.findall('./SALTelemetry/Subsystem'):
@@ -1872,7 +1872,7 @@ class TestNoSpaces(unittest.TestCase):
 
 	def test_ElectrometerCommandsSubsystemNoSpace(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/Electrometer/Electrometer_Commands.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/Electrometer/Electrometer_Commands.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for subsystem in self.root.findall('./SALCommand/Subsystem'):
@@ -1908,7 +1908,7 @@ class TestNoSpaces(unittest.TestCase):
 
 	def test_ElectrometerEventsSubsystemNoSpace(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/Electrometer/Electrometer_Events.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/Electrometer/Electrometer_Events.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for subsystem in self.root.findall('./SALEvent/Subsystem'):
@@ -1944,7 +1944,7 @@ class TestNoSpaces(unittest.TestCase):
 
 	def test_EnvironmentTelemetrySubsystemNoSpace(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/Environment/Environment_Telemetry.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/Environment/Environment_Telemetry.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for subsystem in self.root.findall('./SALTelemetry/Subsystem'):
@@ -1971,7 +1971,7 @@ class TestNoSpaces(unittest.TestCase):
 
 	def test_FiberSpectrographCommandsSubsystemNoSpace(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/FiberSpectrograph/FiberSpectrograph_Commands.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/FiberSpectrograph/FiberSpectrograph_Commands.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for subsystem in self.root.findall('./SALCommand/Subsystem'):
@@ -2007,7 +2007,7 @@ class TestNoSpaces(unittest.TestCase):
 
 	def test_FiberSpectrographEventsSubsystemNoSpace(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/FiberSpectrograph/FiberSpectrograph_Events.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/FiberSpectrograph/FiberSpectrograph_Events.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for subsystem in self.root.findall('./SALEvent/Subsystem'):
@@ -2043,7 +2043,7 @@ class TestNoSpaces(unittest.TestCase):
 
 	def test_FiberSpectrographTelemetrySubsystemNoSpace(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/FiberSpectrograph/FiberSpectrograph_Telemetry.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/FiberSpectrograph/FiberSpectrograph_Telemetry.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for subsystem in self.root.findall('./SALTelemetry/Subsystem'):
@@ -2070,7 +2070,7 @@ class TestNoSpaces(unittest.TestCase):
 
 	def test_GenericCameraCommandsSubsystemNoSpace(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/GenericCamera/GenericCamera_Commands.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/GenericCamera/GenericCamera_Commands.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for subsystem in self.root.findall('./SALCommand/Subsystem'):
@@ -2106,7 +2106,7 @@ class TestNoSpaces(unittest.TestCase):
 
 	def test_GenericCameraEventsSubsystemNoSpace(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/GenericCamera/GenericCamera_Events.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/GenericCamera/GenericCamera_Events.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for subsystem in self.root.findall('./SALEvent/Subsystem'):
@@ -2142,7 +2142,7 @@ class TestNoSpaces(unittest.TestCase):
 
 	def test_GenericCameraTelemetrySubsystemNoSpace(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/GenericCamera/GenericCamera_Telemetry.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/GenericCamera/GenericCamera_Telemetry.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for subsystem in self.root.findall('./SALTelemetry/Subsystem'):
@@ -2169,7 +2169,7 @@ class TestNoSpaces(unittest.TestCase):
 
 	def test_IOTAEventsSubsystemNoSpace(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/IOTA/IOTA_Events.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/IOTA/IOTA_Events.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for subsystem in self.root.findall('./SALEvent/Subsystem'):
@@ -2205,7 +2205,7 @@ class TestNoSpaces(unittest.TestCase):
 
 	def test_IOTATelemetrySubsystemNoSpace(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/IOTA/IOTA_Telemetry.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/IOTA/IOTA_Telemetry.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for subsystem in self.root.findall('./SALTelemetry/Subsystem'):
@@ -2232,7 +2232,7 @@ class TestNoSpaces(unittest.TestCase):
 
 	def test_HexapodCommandsSubsystemNoSpace(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/Hexapod/Hexapod_Commands.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/Hexapod/Hexapod_Commands.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for subsystem in self.root.findall('./SALCommand/Subsystem'):
@@ -2268,7 +2268,7 @@ class TestNoSpaces(unittest.TestCase):
 
 	def test_HexapodEventsSubsystemNoSpace(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/Hexapod/Hexapod_Events.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/Hexapod/Hexapod_Events.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for subsystem in self.root.findall('./SALEvent/Subsystem'):
@@ -2304,7 +2304,7 @@ class TestNoSpaces(unittest.TestCase):
 
 	def test_HexapodTelemetrySubsystemNoSpace(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/Hexapod/Hexapod_Telemetry.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/Hexapod/Hexapod_Telemetry.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for subsystem in self.root.findall('./SALTelemetry/Subsystem'):
@@ -2331,7 +2331,7 @@ class TestNoSpaces(unittest.TestCase):
 
 	def test_HVACCommandsSubsystemNoSpace(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/HVAC/HVAC_Commands.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/HVAC/HVAC_Commands.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for subsystem in self.root.findall('./SALCommand/Subsystem'):
@@ -2367,7 +2367,7 @@ class TestNoSpaces(unittest.TestCase):
 
 	def test_HVACEventsSubsystemNoSpace(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/HVAC/HVAC_Events.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/HVAC/HVAC_Events.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for subsystem in self.root.findall('./SALEvent/Subsystem'):
@@ -2403,7 +2403,7 @@ class TestNoSpaces(unittest.TestCase):
 
 	def test_HVACTelemetrySubsystemNoSpace(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/HVAC/HVAC_Telemetry.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/HVAC/HVAC_Telemetry.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for subsystem in self.root.findall('./SALTelemetry/Subsystem'):
@@ -2430,7 +2430,7 @@ class TestNoSpaces(unittest.TestCase):
 
 	def test_LinearStageCommandsSubsystemNoSpace(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/LinearStage/LinearStage_Commands.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/LinearStage/LinearStage_Commands.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for subsystem in self.root.findall('./SALCommand/Subsystem'):
@@ -2466,7 +2466,7 @@ class TestNoSpaces(unittest.TestCase):
 
 	def test_LinearStageEventsSubsystemNoSpace(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/LinearStage/LinearStage_Events.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/LinearStage/LinearStage_Events.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for subsystem in self.root.findall('./SALEvent/Subsystem'):
@@ -2502,7 +2502,7 @@ class TestNoSpaces(unittest.TestCase):
 
 	def test_LinearStageTelemetrySubsystemNoSpace(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/LinearStage/LinearStage_Telemetry.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/LinearStage/LinearStage_Telemetry.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for subsystem in self.root.findall('./SALTelemetry/Subsystem'):
@@ -2529,7 +2529,7 @@ class TestNoSpaces(unittest.TestCase):
 
 	def test_LOVEEventsSubsystemNoSpace(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/LOVE/LOVE_Events.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/LOVE/LOVE_Events.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for subsystem in self.root.findall('./SALEvent/Subsystem'):
@@ -2565,7 +2565,7 @@ class TestNoSpaces(unittest.TestCase):
 
 	def test_MTAOSCommandsSubsystemNoSpace(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/MTAOS/MTAOS_Commands.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/MTAOS/MTAOS_Commands.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for subsystem in self.root.findall('./SALCommand/Subsystem'):
@@ -2601,7 +2601,7 @@ class TestNoSpaces(unittest.TestCase):
 
 	def test_MTAOSEventsSubsystemNoSpace(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/MTAOS/MTAOS_Events.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/MTAOS/MTAOS_Events.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for subsystem in self.root.findall('./SALEvent/Subsystem'):
@@ -2637,7 +2637,7 @@ class TestNoSpaces(unittest.TestCase):
 
 	def test_MTAOSTelemetrySubsystemNoSpace(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/MTAOS/MTAOS_Telemetry.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/MTAOS/MTAOS_Telemetry.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for subsystem in self.root.findall('./SALTelemetry/Subsystem'):
@@ -2664,7 +2664,7 @@ class TestNoSpaces(unittest.TestCase):
 
 	def test_MTArchiverEventsSubsystemNoSpace(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/MTArchiver/MTArchiver_Events.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/MTArchiver/MTArchiver_Events.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for subsystem in self.root.findall('./SALEvent/Subsystem'):
@@ -2700,7 +2700,7 @@ class TestNoSpaces(unittest.TestCase):
 
 	def test_MTArchiverTelemetrySubsystemNoSpace(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/MTArchiver/MTArchiver_Telemetry.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/MTArchiver/MTArchiver_Telemetry.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for subsystem in self.root.findall('./SALTelemetry/Subsystem'):
@@ -2727,7 +2727,7 @@ class TestNoSpaces(unittest.TestCase):
 
 	def test_MTCameraCommandsSubsystemNoSpace(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/MTCamera/MTCamera_Commands.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/MTCamera/MTCamera_Commands.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for subsystem in self.root.findall('./SALCommand/Subsystem'):
@@ -2763,7 +2763,7 @@ class TestNoSpaces(unittest.TestCase):
 
 	def test_MTCameraEventsSubsystemNoSpace(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/MTCamera/MTCamera_Events.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/MTCamera/MTCamera_Events.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for subsystem in self.root.findall('./SALEvent/Subsystem'):
@@ -2799,7 +2799,7 @@ class TestNoSpaces(unittest.TestCase):
 
 	def test_MTCameraTelemetrySubsystemNoSpace(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/MTCamera/MTCamera_Telemetry.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/MTCamera/MTCamera_Telemetry.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for subsystem in self.root.findall('./SALTelemetry/Subsystem'):
@@ -2826,7 +2826,7 @@ class TestNoSpaces(unittest.TestCase):
 
 	def test_MTDomeTrajectoryEventsSubsystemNoSpace(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/MTDomeTrajectory/MTDomeTrajectory_Events.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/MTDomeTrajectory/MTDomeTrajectory_Events.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for subsystem in self.root.findall('./SALEvent/Subsystem'):
@@ -2862,7 +2862,7 @@ class TestNoSpaces(unittest.TestCase):
 
 	def test_MTDomeTrajectoryTelemetrySubsystemNoSpace(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/MTDomeTrajectory/MTDomeTrajectory_Telemetry.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/MTDomeTrajectory/MTDomeTrajectory_Telemetry.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for subsystem in self.root.findall('./SALTelemetry/Subsystem'):
@@ -2889,7 +2889,7 @@ class TestNoSpaces(unittest.TestCase):
 
 	def test_MTEECCommandsSubsystemNoSpace(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/MTEEC/MTEEC_Commands.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/MTEEC/MTEEC_Commands.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for subsystem in self.root.findall('./SALCommand/Subsystem'):
@@ -2925,7 +2925,7 @@ class TestNoSpaces(unittest.TestCase):
 
 	def test_MTEECEventsSubsystemNoSpace(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/MTEEC/MTEEC_Events.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/MTEEC/MTEEC_Events.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for subsystem in self.root.findall('./SALEvent/Subsystem'):
@@ -2961,7 +2961,7 @@ class TestNoSpaces(unittest.TestCase):
 
 	def test_MTGuiderEventsSubsystemNoSpace(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/MTGuider/MTGuider_Events.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/MTGuider/MTGuider_Events.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for subsystem in self.root.findall('./SALEvent/Subsystem'):
@@ -2997,7 +2997,7 @@ class TestNoSpaces(unittest.TestCase):
 
 	def test_MTGuiderTelemetrySubsystemNoSpace(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/MTGuider/MTGuider_Telemetry.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/MTGuider/MTGuider_Telemetry.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for subsystem in self.root.findall('./SALTelemetry/Subsystem'):
@@ -3024,7 +3024,7 @@ class TestNoSpaces(unittest.TestCase):
 
 	def test_MTHeaderServiceEventsSubsystemNoSpace(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/MTHeaderService/MTHeaderService_Events.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/MTHeaderService/MTHeaderService_Events.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for subsystem in self.root.findall('./SALEvent/Subsystem'):
@@ -3060,7 +3060,7 @@ class TestNoSpaces(unittest.TestCase):
 
 	def test_MTLaserTrackerEventsSubsystemNoSpace(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/MTLaserTracker/MTLaserTracker_Events.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/MTLaserTracker/MTLaserTracker_Events.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for subsystem in self.root.findall('./SALEvent/Subsystem'):
@@ -3096,7 +3096,7 @@ class TestNoSpaces(unittest.TestCase):
 
 	def test_MTLaserTrackerTelemetrySubsystemNoSpace(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/MTLaserTracker/MTLaserTracker_Telemetry.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/MTLaserTracker/MTLaserTracker_Telemetry.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for subsystem in self.root.findall('./SALTelemetry/Subsystem'):
@@ -3123,7 +3123,7 @@ class TestNoSpaces(unittest.TestCase):
 
 	def test_MTM1M3CommandsSubsystemNoSpace(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/MTM1M3/MTM1M3_Commands.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/MTM1M3/MTM1M3_Commands.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for subsystem in self.root.findall('./SALCommand/Subsystem'):
@@ -3159,7 +3159,7 @@ class TestNoSpaces(unittest.TestCase):
 
 	def test_MTM1M3EventsSubsystemNoSpace(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/MTM1M3/MTM1M3_Events.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/MTM1M3/MTM1M3_Events.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for subsystem in self.root.findall('./SALEvent/Subsystem'):
@@ -3195,7 +3195,7 @@ class TestNoSpaces(unittest.TestCase):
 
 	def test_MTM1M3TelemetrySubsystemNoSpace(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/MTM1M3/MTM1M3_Telemetry.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/MTM1M3/MTM1M3_Telemetry.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for subsystem in self.root.findall('./SALTelemetry/Subsystem'):
@@ -3222,7 +3222,7 @@ class TestNoSpaces(unittest.TestCase):
 
 	def test_MTM1M3TSCommandsSubsystemNoSpace(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/MTM1M3TS/MTM1M3TS_Commands.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/MTM1M3TS/MTM1M3TS_Commands.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for subsystem in self.root.findall('./SALCommand/Subsystem'):
@@ -3258,7 +3258,7 @@ class TestNoSpaces(unittest.TestCase):
 
 	def test_MTM1M3TSEventsSubsystemNoSpace(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/MTM1M3TS/MTM1M3TS_Events.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/MTM1M3TS/MTM1M3TS_Events.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for subsystem in self.root.findall('./SALEvent/Subsystem'):
@@ -3294,7 +3294,7 @@ class TestNoSpaces(unittest.TestCase):
 
 	def test_MTM1M3TSTelemetrySubsystemNoSpace(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/MTM1M3TS/MTM1M3TS_Telemetry.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/MTM1M3TS/MTM1M3TS_Telemetry.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for subsystem in self.root.findall('./SALTelemetry/Subsystem'):
@@ -3321,7 +3321,7 @@ class TestNoSpaces(unittest.TestCase):
 
 	def test_MTM2CommandsSubsystemNoSpace(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/MTM2/MTM2_Commands.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/MTM2/MTM2_Commands.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for subsystem in self.root.findall('./SALCommand/Subsystem'):
@@ -3357,7 +3357,7 @@ class TestNoSpaces(unittest.TestCase):
 
 	def test_MTM2EventsSubsystemNoSpace(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/MTM2/MTM2_Events.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/MTM2/MTM2_Events.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for subsystem in self.root.findall('./SALEvent/Subsystem'):
@@ -3393,7 +3393,7 @@ class TestNoSpaces(unittest.TestCase):
 
 	def test_MTM2TelemetrySubsystemNoSpace(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/MTM2/MTM2_Telemetry.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/MTM2/MTM2_Telemetry.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for subsystem in self.root.findall('./SALTelemetry/Subsystem'):
@@ -3420,7 +3420,7 @@ class TestNoSpaces(unittest.TestCase):
 
 	def test_MTMountCommandsSubsystemNoSpace(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/MTMount/MTMount_Commands.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/MTMount/MTMount_Commands.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for subsystem in self.root.findall('./SALCommand/Subsystem'):
@@ -3456,7 +3456,7 @@ class TestNoSpaces(unittest.TestCase):
 
 	def test_MTMountEventsSubsystemNoSpace(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/MTMount/MTMount_Events.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/MTMount/MTMount_Events.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for subsystem in self.root.findall('./SALEvent/Subsystem'):
@@ -3492,7 +3492,7 @@ class TestNoSpaces(unittest.TestCase):
 
 	def test_MTMountTelemetrySubsystemNoSpace(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/MTMount/MTMount_Telemetry.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/MTMount/MTMount_Telemetry.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for subsystem in self.root.findall('./SALTelemetry/Subsystem'):
@@ -3519,7 +3519,7 @@ class TestNoSpaces(unittest.TestCase):
 
 	def test_MTPtgCommandsSubsystemNoSpace(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/MTPtg/MTPtg_Commands.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/MTPtg/MTPtg_Commands.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for subsystem in self.root.findall('./SALCommand/Subsystem'):
@@ -3555,7 +3555,7 @@ class TestNoSpaces(unittest.TestCase):
 
 	def test_MTPtgEventsSubsystemNoSpace(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/MTPtg/MTPtg_Events.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/MTPtg/MTPtg_Events.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for subsystem in self.root.findall('./SALEvent/Subsystem'):
@@ -3591,7 +3591,7 @@ class TestNoSpaces(unittest.TestCase):
 
 	def test_MTPtgTelemetrySubsystemNoSpace(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/MTPtg/MTPtg_Telemetry.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/MTPtg/MTPtg_Telemetry.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for subsystem in self.root.findall('./SALTelemetry/Subsystem'):
@@ -3618,7 +3618,7 @@ class TestNoSpaces(unittest.TestCase):
 
 	def test_MTTCSCommandsSubsystemNoSpace(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/MTTCS/MTTCS_Commands.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/MTTCS/MTTCS_Commands.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for subsystem in self.root.findall('./SALCommand/Subsystem'):
@@ -3654,7 +3654,7 @@ class TestNoSpaces(unittest.TestCase):
 
 	def test_MTTCSEventsSubsystemNoSpace(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/MTTCS/MTTCS_Events.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/MTTCS/MTTCS_Events.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for subsystem in self.root.findall('./SALEvent/Subsystem'):
@@ -3690,7 +3690,7 @@ class TestNoSpaces(unittest.TestCase):
 
 	def test_MTTCSTelemetrySubsystemNoSpace(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/MTTCS/MTTCS_Telemetry.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/MTTCS/MTTCS_Telemetry.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for subsystem in self.root.findall('./SALTelemetry/Subsystem'):
@@ -3717,7 +3717,7 @@ class TestNoSpaces(unittest.TestCase):
 
 	def test_MTVMSCommandsSubsystemNoSpace(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/MTVMS/MTVMS_Commands.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/MTVMS/MTVMS_Commands.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for subsystem in self.root.findall('./SALCommand/Subsystem'):
@@ -3753,7 +3753,7 @@ class TestNoSpaces(unittest.TestCase):
 
 	def test_MTVMSEventsSubsystemNoSpace(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/MTVMS/MTVMS_Events.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/MTVMS/MTVMS_Events.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for subsystem in self.root.findall('./SALEvent/Subsystem'):
@@ -3789,7 +3789,7 @@ class TestNoSpaces(unittest.TestCase):
 
 	def test_MTVMSTelemetrySubsystemNoSpace(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/MTVMS/MTVMS_Telemetry.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/MTVMS/MTVMS_Telemetry.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for subsystem in self.root.findall('./SALTelemetry/Subsystem'):
@@ -3816,7 +3816,7 @@ class TestNoSpaces(unittest.TestCase):
 
 	def test_OCSCommandsSubsystemNoSpace(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/OCS/OCS_Commands.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/OCS/OCS_Commands.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for subsystem in self.root.findall('./SALCommand/Subsystem'):
@@ -3852,7 +3852,7 @@ class TestNoSpaces(unittest.TestCase):
 
 	def test_OCSEventsSubsystemNoSpace(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/OCS/OCS_Events.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/OCS/OCS_Events.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for subsystem in self.root.findall('./SALEvent/Subsystem'):
@@ -3888,7 +3888,7 @@ class TestNoSpaces(unittest.TestCase):
 
 	def test_OCSTelemetrySubsystemNoSpace(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/OCS/OCS_Telemetry.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/OCS/OCS_Telemetry.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for subsystem in self.root.findall('./SALTelemetry/Subsystem'):
@@ -3915,7 +3915,7 @@ class TestNoSpaces(unittest.TestCase):
 
 	def test_PointingComponentCommandsSubsystemNoSpace(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/PointingComponent/PointingComponent_Commands.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/PointingComponent/PointingComponent_Commands.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for subsystem in self.root.findall('./SALCommand/Subsystem'):
@@ -3951,7 +3951,7 @@ class TestNoSpaces(unittest.TestCase):
 
 	def test_PointingComponentEventsSubsystemNoSpace(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/PointingComponent/PointingComponent_Events.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/PointingComponent/PointingComponent_Events.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for subsystem in self.root.findall('./SALEvent/Subsystem'):
@@ -3987,7 +3987,7 @@ class TestNoSpaces(unittest.TestCase):
 
 	def test_PointingComponentTelemetrySubsystemNoSpace(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/PointingComponent/PointingComponent_Telemetry.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/PointingComponent/PointingComponent_Telemetry.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for subsystem in self.root.findall('./SALTelemetry/Subsystem'):
@@ -4014,7 +4014,7 @@ class TestNoSpaces(unittest.TestCase):
 
 	def test_PromptProcessingEventsSubsystemNoSpace(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/PromptProcessing/PromptProcessing_Events.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/PromptProcessing/PromptProcessing_Events.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for subsystem in self.root.findall('./SALEvent/Subsystem'):
@@ -4050,7 +4050,7 @@ class TestNoSpaces(unittest.TestCase):
 
 	def test_PromptProcessingTelemetrySubsystemNoSpace(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/PromptProcessing/PromptProcessing_Telemetry.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/PromptProcessing/PromptProcessing_Telemetry.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for subsystem in self.root.findall('./SALTelemetry/Subsystem'):
@@ -4077,7 +4077,7 @@ class TestNoSpaces(unittest.TestCase):
 
 	def test_RotatorCommandsSubsystemNoSpace(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/Rotator/Rotator_Commands.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/Rotator/Rotator_Commands.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for subsystem in self.root.findall('./SALCommand/Subsystem'):
@@ -4113,7 +4113,7 @@ class TestNoSpaces(unittest.TestCase):
 
 	def test_RotatorEventsSubsystemNoSpace(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/Rotator/Rotator_Events.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/Rotator/Rotator_Events.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for subsystem in self.root.findall('./SALEvent/Subsystem'):
@@ -4149,7 +4149,7 @@ class TestNoSpaces(unittest.TestCase):
 
 	def test_RotatorTelemetrySubsystemNoSpace(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/Rotator/Rotator_Telemetry.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/Rotator/Rotator_Telemetry.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for subsystem in self.root.findall('./SALTelemetry/Subsystem'):
@@ -4176,7 +4176,7 @@ class TestNoSpaces(unittest.TestCase):
 
 	def test_SchedulerEventsSubsystemNoSpace(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/Scheduler/Scheduler_Events.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/Scheduler/Scheduler_Events.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for subsystem in self.root.findall('./SALEvent/Subsystem'):
@@ -4212,7 +4212,7 @@ class TestNoSpaces(unittest.TestCase):
 
 	def test_SchedulerTelemetrySubsystemNoSpace(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/Scheduler/Scheduler_Telemetry.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/Scheduler/Scheduler_Telemetry.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for subsystem in self.root.findall('./SALTelemetry/Subsystem'):
@@ -4239,7 +4239,7 @@ class TestNoSpaces(unittest.TestCase):
 
 	def test_ScriptCommandsSubsystemNoSpace(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/Script/Script_Commands.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/Script/Script_Commands.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for subsystem in self.root.findall('./SALCommand/Subsystem'):
@@ -4275,7 +4275,7 @@ class TestNoSpaces(unittest.TestCase):
 
 	def test_ScriptEventsSubsystemNoSpace(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/Script/Script_Events.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/Script/Script_Events.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for subsystem in self.root.findall('./SALEvent/Subsystem'):
@@ -4311,7 +4311,7 @@ class TestNoSpaces(unittest.TestCase):
 
 	def test_ScriptQueueCommandsSubsystemNoSpace(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/ScriptQueue/ScriptQueue_Commands.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/ScriptQueue/ScriptQueue_Commands.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for subsystem in self.root.findall('./SALCommand/Subsystem'):
@@ -4347,7 +4347,7 @@ class TestNoSpaces(unittest.TestCase):
 
 	def test_ScriptQueueEventsSubsystemNoSpace(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/ScriptQueue/ScriptQueue_Events.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/ScriptQueue/ScriptQueue_Events.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for subsystem in self.root.findall('./SALEvent/Subsystem'):
@@ -4383,7 +4383,7 @@ class TestNoSpaces(unittest.TestCase):
 
 	def test_SummitFacilityTelemetrySubsystemNoSpace(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/SummitFacility/SummitFacility_Telemetry.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/SummitFacility/SummitFacility_Telemetry.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for subsystem in self.root.findall('./SALTelemetry/Subsystem'):
@@ -4410,7 +4410,7 @@ class TestNoSpaces(unittest.TestCase):
 
 	def test_TestCommandsSubsystemNoSpace(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/Test/Test_Commands.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/Test/Test_Commands.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for subsystem in self.root.findall('./SALCommand/Subsystem'):
@@ -4446,7 +4446,7 @@ class TestNoSpaces(unittest.TestCase):
 
 	def test_TestEventsSubsystemNoSpace(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/Test/Test_Events.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/Test/Test_Events.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for subsystem in self.root.findall('./SALEvent/Subsystem'):
@@ -4482,7 +4482,7 @@ class TestNoSpaces(unittest.TestCase):
 
 	def test_TestTelemetrySubsystemNoSpace(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/Test/Test_Telemetry.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/Test/Test_Telemetry.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for subsystem in self.root.findall('./SALTelemetry/Subsystem'):
@@ -4509,7 +4509,7 @@ class TestNoSpaces(unittest.TestCase):
 
 	def test_TunableLaserCommandsSubsystemNoSpace(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/TunableLaser/TunableLaser_Commands.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/TunableLaser/TunableLaser_Commands.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for subsystem in self.root.findall('./SALCommand/Subsystem'):
@@ -4545,7 +4545,7 @@ class TestNoSpaces(unittest.TestCase):
 
 	def test_TunableLaserEventsSubsystemNoSpace(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/TunableLaser/TunableLaser_Events.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/TunableLaser/TunableLaser_Events.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for subsystem in self.root.findall('./SALEvent/Subsystem'):
@@ -4581,7 +4581,7 @@ class TestNoSpaces(unittest.TestCase):
 
 	def test_TunableLaserTelemetrySubsystemNoSpace(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/TunableLaser/TunableLaser_Telemetry.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/TunableLaser/TunableLaser_Telemetry.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for subsystem in self.root.findall('./SALTelemetry/Subsystem'):
@@ -4608,7 +4608,7 @@ class TestNoSpaces(unittest.TestCase):
 
 	def test_WatcherCommandsSubsystemNoSpace(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/Watcher/Watcher_Commands.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/Watcher/Watcher_Commands.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for subsystem in self.root.findall('./SALCommand/Subsystem'):
@@ -4644,7 +4644,7 @@ class TestNoSpaces(unittest.TestCase):
 
 	def test_WatcherEventsSubsystemNoSpace(self):
 		self.dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.file = open(self.dir_path + '/../sal_interfaces/Watcher/Watcher_Events.xml')
+		self.file = open(self.dir_path + '/../sal_interfaces/Watcher/Watcher_Events.xml', 'r', encoding='utf-8')
 		self.tree = ET.parse(self.file)
 		self.root = self.tree.getroot()
 		for subsystem in self.root.findall('./SALEvent/Subsystem'):
