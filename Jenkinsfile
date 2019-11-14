@@ -9,8 +9,7 @@ pipeline {
 		stage("Pre-build cleanup") {
 			steps {
 					sh """
-					echo ${WORKSPACE}
-					rm -r ${WORKSPACE}/results
+					if [ -d ${WORKSPACE}/tests/results ]; then rm -r ${WORKSPACE}/tests/results; fi
 					"""
 			}
 		}
