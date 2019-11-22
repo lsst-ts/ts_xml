@@ -15,7 +15,7 @@ def check_for_issues(csc, topic):
 	if csc == "LOVE" and topic == "Events":
 		jira = "DM-22109"
 	elif csc == "Script" and (topic == "Commands" or topic == "Events"):
-		jira = "DM-21745"
+		jira = "DM-22329"
 	else:
 		jira=""
 	return jira
