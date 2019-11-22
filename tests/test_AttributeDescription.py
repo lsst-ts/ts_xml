@@ -1,7 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 import glob
-import pathlib
 import pytest
 import xml.etree.ElementTree as ET
 import xml_common
@@ -23,18 +22,8 @@ def check_for_issues(csc, topic):
 		jira=""
 	return jira
 
-def get_csc_xmlfile_topic():
-	pkgroot = pathlib.Path(__file__).resolve().parents[1]
-	arguments = []
-	for csc in xml_common.subsystems:
-		xml_path = pkgroot / "sal_interfaces" / csc
-		for xmlfile in xml_path.glob(f"{csc}_*.xml"):
-			topic = xmlfile.stem.split("_")[1]
-			arguments.append((csc,xmlfile,topic))
-	return arguments
-
-@pytest.mark.parametrize("csc,xmlfile,topic", get_csc_xmlfile_topic())
-def test_attribute_description(csc,topic,xmlfile):
+@pytest.mark.parametrize("xmlfile,csc,topic", xml_common.get_xmlfile_csc_topic())
+def test_attribute_description(xmlfile,csc,topic):
 	"""Test that the <Description> field for topic attributes is properly defined, i.e. it is not blank.
 	
 	Parameters
@@ -54,7 +43,7 @@ def test_attribute_description(csc,topic,xmlfile):
 	# Test the attribute <Description> fields.
 	with open(str(xmlfile), "r", encoding="utf-8") as f:
 		tree = ET.parse(f)
-		root = tree.getroot()
-		for description in root.findall(f"./{saltype}/item/Description"):
-			assert description.text.replace(" ", "") != None
+	root = tree.getroot()
+	for description in root.findall(f"./{saltype}/item/Description"):
+		assert description.text.replace(" ", "") != None
 
