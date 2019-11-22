@@ -2,9 +2,7 @@
 # -*- coding: utf-8 -*-
 import glob
 import re
-import pathlib
 import pytest
-import unittest
 import xml.etree.ElementTree as ET
 import xml_common
 
@@ -19,17 +17,7 @@ def check_for_issues(csc, topic):
 		jira=""
 	return jira
 
-def get_xmlfile_csc_topic():
-	pkgroot = pathlib.Path(__file__).resolve().parents[1]
-	arguments = []
-	for csc in xml_common.subsystems:
-		xml_path = pkgroot / "sal_interfaces" / csc
-		for xmlfile in xml_path.glob(f"{csc}_*.xml"):
-			topic = xmlfile.stem.split("_")[1]
-			arguments.append((xmlfile,csc,topic))
-	return arguments
-
-@pytest.mark.parametrize("xmlfile,csc,topic", get_xmlfile_csc_topic())
+@pytest.mark.parametrize("xmlfile,csc,topic", xml_common.get_xmlfile_csc_topic())
 def test_attribute_naming(xmlfile,csc,topic):
 	"""Test that the <EFDB_Name> field for topic attributes is properly formed, 
 	i.e. it begins with a lowercase letter and contains only alphanumeric 
@@ -52,10 +40,10 @@ def test_attribute_naming(xmlfile,csc,topic):
 	# Test the attribute <Description> fields.
 	with open(str(xmlfile), "r", encoding="utf-8") as f:
 		tree = ET.parse(f)
-		root = tree.getroot()
-		for name in root.findall(f"./{saltype}/item/EFDB_Name"):
-			# re.match() returns None if the string does not match the regex.
-			assert re.match(r"^[a-z]([a-zA-Z0-9_]*$)",name.text) is not None, \
-			name.text + ' in ' + str(xmlfile.name) + ' does not begin with a lowercase '\
-			'letter and/or contains non-alphanumeric characters.'
+	root = tree.getroot()
+	for name in root.findall(f"./{saltype}/item/EFDB_Name"):
+		# re.match() returns None if the string does not match the regex.
+		assert re.match(r"^[a-z]([a-zA-Z0-9_]*$)",name.text) is not None, \
+		name.text + ' in ' + str(xmlfile.name) + ' does not begin with a lowercase '\
+		'letter and/or contains non-alphanumeric characters.'
 
