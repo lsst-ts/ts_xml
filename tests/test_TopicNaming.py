@@ -43,7 +43,7 @@ def test_topic_naming_csc(xmlfile,csc,topic):
 	# Check for known issues.
 	jira = check_for_issues(csc, topic, "csc")
 	if jira:
-		pytest.skip(jira + ": " + str(xmlfile.name) + " <EFDB_Name> is not properly formed.")
+		pytest.skip(jira + ": " + str(xmlfile.name) + " <EFDB_Topic> is not properly formed.")
 	# Test the topic <EFDB_Name> field.
 	with open(str(xmlfile), "r", encoding="utf-8") as f:
 		tree = ET.parse(f)
@@ -77,7 +77,7 @@ def test_topic_naming_type(xmlfile,csc,topic):
 	# Check for known issues.
 	jira = check_for_issues(csc, topic, "type")
 	if jira:
-		pytest.skip(jira + ": " + str(xmlfile.name) + " <EFDB_Name> is not properly formed.")
+		pytest.skip(jira + ": " + str(xmlfile.name) + " <EFDB_Topic> is not properly formed.")
 	# Test the topic <EFDB_Name> field.
 	with open(str(xmlfile), "r", encoding="utf-8") as f:
 		tree = ET.parse(f)
@@ -118,7 +118,7 @@ def test_topic_naming_alias(xmlfile,csc,topic):
 	# Check for known issues.
 	jira = check_for_issues(csc, topic, "alias")
 	if jira:
-		pytest.skip(jira + ": " + str(xmlfile.name) + " <EFDB_Name> is not properly formed.")
+		pytest.skip(jira + ": " + str(xmlfile.name) + " <EFDB_Topic> is not properly formed.")
 	# Test the topic <EFDB_Name> field.
 	with open(str(xmlfile), "r", encoding="utf-8") as f:
 		tree = ET.parse(f)
