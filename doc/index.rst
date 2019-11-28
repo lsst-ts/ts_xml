@@ -14,7 +14,7 @@ Pages
 The ``ts_xml`` package defines the data objects for all Commandable SAL
 Components (CSC). These data objects are defined in XML. SAL consumes the XML to 
 produce language specific libraries that enable communication over the DDS 
-network. Below is a table overview of all the CSC's defined and a legend to help
+network. Below is a table overview of all the CSC's defined and a :ref:`index:Legend` to help
 understand the table.
 
 Master CSC Table
