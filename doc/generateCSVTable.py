@@ -63,6 +63,9 @@ for member in root.findall('SALSubsystem'):
 		error_code = member.find('ErrorCode').tag
 		subsystem_head.append('Error Code')
 
+		configurable = member.find('Configurable').tag
+		subsystem_head.append('Configurable')
+
 		csvwriter.writerow(subsystem_head)
 		count = count + 1
 
@@ -104,6 +107,9 @@ for member in root.findall('SALSubsystem'):
 
 	error_code = member.find('ErrorCode').text
 	subsystem.append(error_code)
+
+	configurable = member.find('Configurable').text
+	subsystem.append(configurable)
 
 	csvwriter.writerow(subsystem)
 
