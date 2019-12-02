@@ -27,15 +27,15 @@
  <xsd:complexType name="commandType">
    <xsd:choice maxOccurs="unbounded">
       <xsd:element   name="Subsystem"     type="xsd:string"/>
-      <xsd:element   name="Version"       type="version"/>
+      <xsd:element   name="Version"       minOccurs="0" maxOccurs="1" type="version"/>
       <xsd:element   name="Author"        type="xsd:string"/>
       <xsd:element   name="EFDB_Topic"    type="xsd:string"/>
-      <xsd:element   name="Alias"         type="xsd:string"/>
-      <xsd:element   name="Device"        type="xsd:string"/>
-      <xsd:element   name="Property"      type="xsd:string"/>
-      <xsd:element   name="Action"        type="xsd:string"/>
-      <xsd:element   name="Value"         type="xsd:string"/>
-      <xsd:element   name="Description"   minOccurs="0" maxOccurs="1"    type="xsd:string"/>
+      <xsd:element   name="Alias"         minOccurs="0" maxOccurs="1" type="xsd:string"/>
+      <xsd:element   name="Device"        minOccurs="0" maxOccurs="1" type="xsd:string"/>
+      <xsd:element   name="Property"      minOccurs="0" maxOccurs="1" type="xsd:string"/>
+      <xsd:element   name="Action"        minOccurs="0" maxOccurs="1" type="xsd:string"/>
+      <xsd:element   name="Value"         minOccurs="0" maxOccurs="1" type="xsd:string"/>
+      <xsd:element   name="Description"   minOccurs="0" maxOccurs="1" type="xsd:string"/>
       <xsd:element   name="Explanation"   minOccurs="0" maxOccurs="1"  type="xsd:anyURI"/>
       <xsd:element   name="item"          minOccurs="0" maxOccurs="unbounded" type="commandItemType"/>
    </xsd:choice>
