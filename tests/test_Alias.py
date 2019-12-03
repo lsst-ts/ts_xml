@@ -4,10 +4,11 @@ import pytest
 import xml.etree.ElementTree as ET
 import lsst.ts.xml as ts_xml
 
-@pytest.mark.parametrize("xmlfile,csc,topic", ts_xml.test_utils.get_xmlfile_csc_topic())
-def test_aliases(xmlfile,csc,topic):
+
+@pytest.mark.parametrize("xmlfile,csc,topic", ts_xml.get_xmlfile_csc_topic())
+def test_aliases(xmlfile, csc, topic):
 	"""Test that the <Alias> conforms to the <EFDB_Topic>.
-	
+
 	Telemetry files are excluded because telemetry topics have no aliases.
 
 	Parameters
@@ -17,7 +18,7 @@ def test_aliases(xmlfile,csc,topic):
 	message_type : `xml_file.stem`
 		One of ['Commands','Events']
 	xml_file : `pathlib.Path`
-		Full filepath to the Commands or Events XML file for the CSC.	
+		Full filepath to the Commands or Events XML file for the CSC.
 	"""
 	if topic == "Telemetry":
 		pass

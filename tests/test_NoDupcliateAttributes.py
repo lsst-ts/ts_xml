@@ -1,19 +1,20 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-import glob
-import re
 import pytest
 import xml.etree.ElementTree as ET
 import lsst.ts.xml as ts_xml
 
+
 def check_for_issues(csc, topic):
-	jira=""
+	jira = ""
 	return jira
 
-@pytest.mark.parametrize("xmlfile,csc,topic", ts_xml.test_utils.get_xmlfile_csc_topic())
-def test_no_spaces(xmlfile,csc,topic):
-	"""Test that, for each <EFDB_Topic>, there are no duplicate <item>/<EFDB_Name> values.
-	
+
+@pytest.mark.parametrize("xmlfile,csc,topic", ts_xml.get_xmlfile_csc_topic())
+def test_no_spaces(xmlfile, csc, topic):
+	"""Test that, for each <EFDB_Topic>, there are no duplicate \
+	<item>/<EFDB_Name> values.
+
 	Parameters
 	----------
 	csc : `test_utils.subsystems`
@@ -21,7 +22,7 @@ def test_no_spaces(xmlfile,csc,topic):
 	topic : `xmlfile.stem`
 		One of ['Commands','Events','Telemetry']
 	xmlfile : `test_utils.pathlib.Path`
-		Full filepath to the Commands or Events XML file for the CSC.	
+		Full filepath to the Commands or Events XML file for the CSC.
 	"""
 	saltype = "SAL" + topic.rstrip('s')
 	# Check for known issues.
