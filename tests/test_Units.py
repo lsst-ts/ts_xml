@@ -1,38 +1,38 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-import glob
 import pytest
 import xml.etree.ElementTree as ET
 import astropy.units
 import lsst.ts.xml as ts_xml
-import Unit_Validator
+
 
 def check_for_issues(csc, topic):
 	if csc == "ATCamera":
-		jira="CAP-318"
+		jira = "CAP-318"
 	elif csc == "ATSpectrograph" and topic == "Commands":
-		jira="DM-22158"
+		jira = "DM-22158"
 	elif csc == "MTCamera":
-		jira="CAP-318"
+		jira = "CAP-318"
 	elif csc == "MTEEC" and topic == "Commands":
-		jira="DM-22159"
+		jira = "DM-22159"
 	elif csc == "MTM1M3":
-		jira="DM-20956"
+		jira = "DM-20956"
 	elif csc == "OCS" and topic == "Commands":
-		jira="DM-22160"
+		jira = "DM-22160"
 	else:
-		jira=""
+		jira = ""
 	return jira
 
-@pytest.mark.parametrize("xmlfile,csc,topic", ts_xml.test_utils.get_xmlfile_csc_topic())
-def test_units(xmlfile,csc,topic):
-	"""Test that the <Units> field for topic attributes is properly formed, 
+
+@pytest.mark.parametrize("xmlfile,csc,topic", ts_xml.get_xmlfile_csc_topic())
+def test_units(xmlfile, csc, topic):
+	"""Test that the <Units> field for topic attributes is properly formed,
 	i.e. it is not blank, conforms to astropy standards or is unitless.
-	
+
 	Parameters
 	----------
 	xmlfile : `pathlib.Path`
-		Full filepath to the Commands or Events XML file for the CSC.	
+		Full filepath to the Commands or Events XML file for the CSC.
 	csc : `test_utils.subsystems`
 		Name of the CSC
 	topic : `xmlfile.stem`
@@ -53,7 +53,7 @@ def test_units(xmlfile,csc,topic):
 		elif unit.text == "unitless" or unit.text == "dimensionless":
 			assert True
 		else:
-			assert type(Unit_Validator.check_unit(unit.text)) is astropy.units.Quantity
+			assert type(ts_xml.check_unit(unit.text)) is astropy.units.Quantity
 			"Unit '" + unit.text + "' in " + str(xmlfile.name) + \
-			" does not meet astropy standards."
+				" does not meet astropy standards."
 
