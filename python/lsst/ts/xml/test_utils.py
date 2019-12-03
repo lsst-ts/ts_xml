@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 import pathlib
+import astropy.units
 
 """This library defines common variables and functions used by the various XML test suite generator scripts.""" 
 
@@ -75,7 +76,7 @@ db_reserved = [ 'ACCESSIBLE', 'ADD', 'ALL', 'ALTER', 'ANALYZE', 'AND', 'AS', 'AS
 # =========
 
 def get_xmlfile_csc_topic():
-	pkgroot = pathlib.Path(__file__).resolve().parents[1]
+	pkgroot = pathlib.Path(__file__).resolve().parents[4]
 	arguments = []
 	for csc in subsystems:
 		xml_path = pkgroot / "sal_interfaces" / csc
@@ -84,3 +85,13 @@ def get_xmlfile_csc_topic():
 			arguments.append((xmlfile,csc,topic))
 	return arguments
 
+def check_unit(unit_str):
+	if not unit_str.isnumeric():
+		try:
+			return astropy.units.Quantity(1, unit_str)
+		except ValueError:
+			raise ValueError(unit_str + " is not a valid unit.")
+		except:
+			raise UnknownError(unit_str)
+	else:
+		raise TypeError("Units cannot be numbers: " + unit_str)
