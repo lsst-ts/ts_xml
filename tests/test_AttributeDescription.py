@@ -3,7 +3,7 @@
 import glob
 import pytest
 import xml.etree.ElementTree as ET
-import xml_common
+import lsst.ts.xml as ts_xml 
 
 def check_for_issues(csc, topic):
 	if csc == "Hexapod" and (topic == "Events" or topic == "Telemetry"):
@@ -22,13 +22,13 @@ def check_for_issues(csc, topic):
 		jira=""
 	return jira
 
-@pytest.mark.parametrize("xmlfile,csc,topic", xml_common.get_xmlfile_csc_topic())
+@pytest.mark.parametrize("xmlfile,csc,topic", ts_xml.test_utils.get_xmlfile_csc_topic())
 def test_attribute_description(xmlfile,csc,topic):
 	"""Test that the <Description> field for topic attributes is properly defined, i.e. it is not blank.
 	
 	Parameters
 	----------
-	csc : `xml_common.subsystems`
+	csc : `test_utils.subsystems`
 		Name of the CSC
 	topic : `xmlfile.stem`
 		One of ['Commands','Events','Telemetry']

@@ -3,13 +3,13 @@
 import glob
 import pytest
 import xml.etree.ElementTree as ET
-import xml_common
+import lsst.ts.xml as ts_xml
 
 def check_for_issues(csc, topic):
 	jira=""
 	return jira
 
-@pytest.mark.parametrize("xmlfile,csc,topic", xml_common.get_xmlfile_csc_topic())
+@pytest.mark.parametrize("xmlfile,csc,topic", ts_xml.test_utils.get_xmlfile_csc_topic())
 def test_no_reserved_words(xmlfile,csc,topic):
 	"""Test that the <EFDB_Name> field does not use any Reserved Words.
 	
@@ -17,7 +17,7 @@ def test_no_reserved_words(xmlfile,csc,topic):
 	----------
 	xmlfile : `pathlib.Path`
 		Full filepath to the Commands or Events XML file for the CSC.	
-	csc : `xml_common.subsystems`
+	csc : `test_utils.subsystems`
 		Name of the CSC
 	topic : `xmlfile.stem`
 		One of ['Commands','Events','Telemetry']
@@ -32,6 +32,6 @@ def test_no_reserved_words(xmlfile,csc,topic):
 		tree = ET.parse(f)
 	root = tree.getroot()
 	for name in root.findall(f"./{saltype}/item/EFDB_Name"):
-		assert name.text.upper() not in set(xml_common.idl_reserved + xml_common.db_reserved), \
+		assert name.text.upper() not in set(ts_xml.test_utils.idl_reserved + ts_xml.test_utils.db_reserved), \
 		'Reserved Word ' + name.text + ' used one or more times.'
 

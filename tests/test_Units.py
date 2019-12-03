@@ -3,8 +3,9 @@
 import glob
 import pytest
 import xml.etree.ElementTree as ET
-import xml_common
-from Unit_Validator import Unit_Validator
+import astropy.units
+import lsst.ts.xml as ts_xml
+import Unit_Validator
 
 def check_for_issues(csc, topic):
 	if csc == "ATCamera":
@@ -23,7 +24,7 @@ def check_for_issues(csc, topic):
 		jira=""
 	return jira
 
-@pytest.mark.parametrize("xmlfile,csc,topic", xml_common.get_xmlfile_csc_topic())
+@pytest.mark.parametrize("xmlfile,csc,topic", ts_xml.test_utils.get_xmlfile_csc_topic())
 def test_units(xmlfile,csc,topic):
 	"""Test that the <Units> field for topic attributes is properly formed, 
 	i.e. it is not blank, conforms to astropy standards or is unitless.
@@ -32,12 +33,11 @@ def test_units(xmlfile,csc,topic):
 	----------
 	xmlfile : `pathlib.Path`
 		Full filepath to the Commands or Events XML file for the CSC.	
-	csc : `xml_common.subsystems`
+	csc : `test_utils.subsystems`
 		Name of the CSC
 	topic : `xmlfile.stem`
 		One of ['Commands','Events','Telemetry']
 	"""
-	uv = Unit_Validator()
 	saltype = "SAL" + topic.rstrip('s')
 	# Check for known issues.
 	jira = check_for_issues(csc, topic)
@@ -53,7 +53,7 @@ def test_units(xmlfile,csc,topic):
 		elif unit.text == "unitless" or unit.text == "dimensionless":
 			assert True
 		else:
-			assert "Error" not in uv.check_unit(unit.text), \
+			assert type(Unit_Validator.check_unit(unit.text)) is astropy.units.Quantity
 			"Unit '" + unit.text + "' in " + str(xmlfile.name) + \
 			" does not meet astropy standards."
 
