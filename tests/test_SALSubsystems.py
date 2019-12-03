@@ -4,7 +4,7 @@ import glob
 import pathlib
 import pytest
 import xml.etree.ElementTree as ET
-import xml_common
+import lsst.ts.xml as ts_xml
 
 def get_salsubsystems_file():
 	pkgroot = pathlib.Path(__file__).resolve().parents[1]
@@ -28,7 +28,7 @@ def get_csc_generics():
 	sal_subsystems_file = get_salsubsystems_file()
 	root = get_file_root_element()
 	arguments = []
-	for csc in xml_common.subsystems:
+	for csc in ts_xml.test_utils.subsystems:
 		generics = root.find("./Subsystem/[Name='" + csc + "']/Generics").text
 		arguments.append((root,csc,generics))
 	return arguments
@@ -37,7 +37,7 @@ def get_csc_simulator():
 	sal_subsystems_file = get_salsubsystems_file()
 	root = get_file_root_element()
 	arguments = []
-	for csc in xml_common.subsystems:
+	for csc in ts_xml.test_utils.subsystems:
 		simulator = root.find("./Subsystem/[Name='" + csc + "']/Simulator").text
 		arguments.append((root,csc,simulator))
 	return arguments
@@ -53,14 +53,14 @@ def test_salsubsystems_count():
 	----------
 	sal_subsystems_file: `pathlib.Path(sal_interfaces/SALSubsystems.xml)`
 		The file being tested
-	subsystems: `xml_common.subsystems`
+	subsystems: `test_utils.subsystems`
 		The list of expected CSCs.
 	"""
 	# Check for known issues.
 	skip_if_known_issue("count", "none")
 	# Test SALGenerics.xml contains the expected commands.
 	root = get_file_root_element()
-	assert len(root.findall("./Subsystem/Name")) == len(xml_common.subsystems), \
+	assert len(root.findall("./Subsystem/Name")) == len(ts_xml.test_utils.subsystems), \
 	"There is an unexpected number of CSCs."
 
 def test_salsubsystems_uniq_cscs():
@@ -70,7 +70,7 @@ def test_salsubsystems_uniq_cscs():
 	----------
 	sal_subsystems_file: `pathlib.Path(sal_interfaces/SALSubsystems.xml)`
 		The file being tested
-	subsystems: `xml_common.subsystems`
+	subsystems: `test_utils.subsystems`
 		The list of expected CSCs.
 	"""
 	# Check for known issues.
@@ -78,8 +78,8 @@ def test_salsubsystems_uniq_cscs():
 	# Test SALGenerics.xml contains unique CSCs.
 	root = get_file_root_element()
 	assert len(root.findall("./Subsystem/Name")) == len(set(root.findall("./Subsystem/Name"))) \
-	and len(xml_common.subsystems) == len(set(xml_common.subsystems)), \
-	"SALSubsystems.xml or xml_common.subsystems contains duplicate entries"
+	and len(ts_xml.test_utils.subsystems) == len(set(ts_xml.test_utils.subsystems)), \
+	"SALSubsystems.xml or test_utils.subsystems contains duplicate entries"
 
 def test_each_csc_defined():
 	"""Test that SALSubsystems.xml defines the expected set of CSCs. 
@@ -88,20 +88,20 @@ def test_each_csc_defined():
 	----------
 	sal_subsystems_file: `pathlib.Path(sal_interfaces/SALSubsystems.xml)`
 		Full filepath to SALSubsystems.xml dictionary file.   
-	csc : `xml_common.subsystems`
+	csc : `test_utils.subsystems`
 		Name of the CSC
 	"""
 	# Check for known issues.
 	skip_if_known_issue("defined", "none")
 	# Verify each CSC is explicitly defined.
 	root = get_file_root_element()
-	subsystems = xml_common.subsystems
+	subsystems = ts_xml.test_utils.subsystems
 	subsystems.sort()
 	cscs = []
 	for csc in root.findall(f"./Subsystem/Name"):
 		cscs.append(csc.text)
 	cscs.sort()
-	assert xml_common.subsystems == cscs, "There is a duplicate CSC."
+	assert ts_xml.test_utils.subsystems == cscs, "There is a duplicate CSC."
 
 @pytest.mark.parametrize("root,csc,generics", get_csc_generics())
 def test_generics_tag(root,csc,generics):
@@ -111,7 +111,7 @@ def test_generics_tag(root,csc,generics):
 	----------
 	sal_subsystems_file: `pathlib.Path(sal_interfaces/SALSubsystems.xml)`
 		Full filepath to SALSubsystems.xml dictionary file.   
-	csc : `xml_common.subsystems`
+	csc : `test_utils.subsystems`
 		Name of the CSC
 	"""
 	# Check for known issues.
@@ -135,7 +135,7 @@ def test_simulator_tag(root,csc,simulator):
 	----------
 	sal_subsystems_file: `pathlib.Path(sal_interfaces/SALSubsystems.xml)`
 		Full filepath to SALSubsystems.xml dictionary file.   
-	csc : `xml_common.subsystems`
+	csc : `test_utils.subsystems`
 		Name of the CSC
 	"""
 	# Check for known issues.

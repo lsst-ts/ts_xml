@@ -4,7 +4,7 @@ import glob
 import pathlib
 import pytest
 import xml.etree.ElementTree as ET
-import xml_common
+import lsst.ts.xml as ts_xml
 
 def get_salgenerics_file():
 	pkgroot = pathlib.Path(__file__).resolve().parents[1]
@@ -27,7 +27,7 @@ def test_salgenerics_commands():
 	----------
 	sal_generics_file: `pathlib.Path(sal_interfaces/SALGenerics.xml)`
 		The file being tested
-	generic_commands : `xml_common.generic_commands`
+	generic_commands : `test_utils.generic_commands`
 		The list of Generic Commands
 	"""
 	sal_generics_file = get_salgenerics_file()
@@ -43,8 +43,8 @@ def test_salgenerics_commands():
 	for command in root.findall(f"./SALCommandSet/SALCommand/Alias"):
 		commands.append(command.text)
 	commands.sort()
-	xml_common.generic_commands.sort()
-	assert commands == xml_common.generic_commands
+	ts_xml.test_utils.generic_commands.sort()
+	assert commands == ts_xml.test_utils.generic_commands
 
 def test_salgenerics_events():
 	"""Test that SALGenerics.xml defines the expected set of generic events. 
@@ -53,7 +53,7 @@ def test_salgenerics_events():
 	----------
 	sal_generics_file: `pathlib.Path(sal_interfaces/SALGenerics.xml)`
 		The file being tested
-	generic_events : `xml_common.generic_events`
+	generic_events : `test_utils.generic_events`
 		The list of Generic Events
 	"""
 	sal_generics_file = get_salgenerics_file()
@@ -69,10 +69,10 @@ def test_salgenerics_events():
 	for event in root.findall(f"./SALEventSet/SALEvent/Alias"):
 		events.append(event.text)
 	events.sort()
-	xml_common.generic_events.sort()
-	assert events == xml_common.generic_events
+	ts_xml.test_utils.generic_events.sort()
+	assert events == ts_xml.test_utils.generic_events
 	
-@pytest.mark.parametrize("xmlfile,csc,topic", xml_common.get_xmlfile_csc_topic())
+@pytest.mark.parametrize("xmlfile,csc,topic", ts_xml.test_utils.get_xmlfile_csc_topic())
 def test_xmlfiles_do_not_define_generic_topics(xmlfile,csc,topic):
 	"""Test that CSC XML files do not define any of the generic topics. 
 	
@@ -80,13 +80,13 @@ def test_xmlfiles_do_not_define_generic_topics(xmlfile,csc,topic):
 
 	Parameters
 	----------
-	generic_commands : `xml_common.generic_commands`
+	generic_commands : `test_utils.generic_commands`
 		The list of Generic Commands
-	generic_events : `xml_common.generic_events`
+	generic_events : `test_utils.generic_events`
 		The list of Generic Events
 	xmlfile : `pathlib.Path`
 		Full filepath to the Commands or Events XML file for the CSC.   
-	csc : `xml_common.subsystems`
+	csc : `test_utils.subsystems`
 		Name of the CSC
 	topic : `xmlfile.stem`
 		One of ['Commands','Events']
@@ -107,4 +107,4 @@ def test_xmlfiles_do_not_define_generic_topics(xmlfile,csc,topic):
 		for alias in root.findall(f"./{saltype}/Alias"):
 			csc_topics.append(alias.text)
 		for topic in csc_topics:
-			assert topic not in set(xml_common.generic_commands + xml_common.generic_events)
+			assert topic not in set(ts_xml.test_utils.generic_commands + ts_xml.test_utils.generic_events)
