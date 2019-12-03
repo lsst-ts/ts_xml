@@ -1,32 +1,33 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-import glob
 import re
 import pytest
 import xml.etree.ElementTree as ET
-import lsst.ts.xml as ts_xml 
+import lsst.ts.xml as ts_xml
+
 
 def check_for_issues(csc, topic):
 	if csc == "Hexapod" and (topic == "Telemetry"):
-		jira="DM-20971"
+		jira = "DM-20971"
 	elif csc == "MTMount" and (topic == "Telemetry"):
-		jira="DM-17276"
+		jira = "DM-17276"
 	elif csc == "Rotator" and (topic == "Telemetry"):
-		jira="DM-20969"
+		jira = "DM-20969"
 	else:
-		jira=""
+		jira = ""
 	return jira
 
-@pytest.mark.parametrize("xmlfile,csc,topic", ts_xml.test_utils.get_xmlfile_csc_topic())
-def test_attribute_naming(xmlfile,csc,topic):
-	"""Test that the <EFDB_Name> field for topic attributes is properly formed, 
-	i.e. it begins with a lowercase letter and contains only alphanumeric 
+
+@pytest.mark.parametrize("xmlfile,csc,topic", ts_xml.get_xmlfile_csc_topic())
+def test_attribute_naming(xmlfile, csc, topic):
+	"""Test that the <EFDB_Name> field for topic attributes is properly formed,
+	i.e. it begins with a lowercase letter and contains only alphanumeric
 	and underscore characters.
-	
+
 	Parameters
 	----------
 	xmlfile : `pathlib.Path`
-		Full filepath to the Commands or Events XML file for the CSC.	
+		Full filepath to the Commands or Events XML file for the CSC.
 	csc : `test_utils.subsystems`
 		Name of the CSC
 	topic : `xmlfile.stem`
@@ -43,7 +44,7 @@ def test_attribute_naming(xmlfile,csc,topic):
 	root = tree.getroot()
 	for name in root.findall(f"./{saltype}/item/EFDB_Name"):
 		# re.match() returns None if the string does not match the regex.
-		assert re.match(r"^[a-z]([a-zA-Z0-9_]*$)",name.text) is not None, \
-		name.text + ' in ' + str(xmlfile.name) + ' does not begin with a lowercase '\
-		'letter and/or contains non-alphanumeric characters.'
+		assert re.match(r"^[a-z]([a-zA-Z0-9_]*$)", name.text) is not None, \
+			name.text + ' in ' + str(xmlfile.name) + ' does not begin with a lowercase '\
+			'letter and/or contains non-alphanumeric characters.'
 

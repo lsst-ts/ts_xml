@@ -1,31 +1,33 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-import glob
 import pytest
 import xml.etree.ElementTree as ET
-import lsst.ts.xml as ts_xml 
+import lsst.ts.xml as ts_xml
+
 
 def check_for_issues(csc, topic):
 	if csc == "Hexapod" and (topic == "Events" or topic == "Telemetry"):
-		jira="DM-20971"
+		jira = "DM-20971"
 	elif csc == "ATCamera" and (topic == "Events" or topic == "Telemetry"):
-		jira="CAP-318"
+		jira = "CAP-318"
 	elif csc == "MTCamera" and (topic == "Events" or topic == "Telemetry"):
-		jira="CAP-318"
+		jira = "CAP-318"
 	elif csc == "MTMount" and (topic == "Commands"):
-		jira="DM-17276"
+		jira = "DM-17276"
 	elif csc == "MTEEC" and (topic == "Commands"):
-		jira="CAP-374"
+		jira = "CAP-374"
 	elif csc == "MTM1M3":
-		jira="DM-20956"
+		jira = "DM-20956"
 	else:
-		jira=""
+		jira = ""
 	return jira
 
-@pytest.mark.parametrize("xmlfile,csc,topic", ts_xml.test_utils.get_xmlfile_csc_topic())
-def test_attribute_description(xmlfile,csc,topic):
-	"""Test that the <Description> field for topic attributes is properly defined, i.e. it is not blank.
-	
+
+@pytest.mark.parametrize("xmlfile,csc,topic", ts_xml.get_xmlfile_csc_topic())
+def test_attribute_description(xmlfile, csc, topic):
+	"""Tests the <Description> field for topic attributes is properly defined, \
+	i.e. it is not blank.
+
 	Parameters
 	----------
 	csc : `test_utils.subsystems`
@@ -33,7 +35,7 @@ def test_attribute_description(xmlfile,csc,topic):
 	topic : `xmlfile.stem`
 		One of ['Commands','Events','Telemetry']
 	xmlfile : `pathlib.Path`
-		Full filepath to the Commands or Events XML file for the CSC.	
+		Full filepath to the Commands or Events XML file for the CSC.
 	"""
 	saltype = "SAL" + topic.rstrip('s')
 	# Check for known issues.
@@ -45,5 +47,5 @@ def test_attribute_description(xmlfile,csc,topic):
 		tree = ET.parse(f)
 	root = tree.getroot()
 	for description in root.findall(f"./{saltype}/item/Description"):
-		assert description.text.replace(" ", "") != None
+		assert description.text.replace(" ", "") is not None
 
