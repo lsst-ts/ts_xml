@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 import pytest
-import xml.etree.ElementTree as ET
+import xml.etree.ElementTree as et
 import lsst.ts.xml as ts_xml
 
 
@@ -25,7 +25,7 @@ def test_aliases(xmlfile, csc, topic):
     else:
         saltype = "SAL" + topic.rstrip('s')
         with open(str(xmlfile), "r", encoding="utf-8") as f:
-            tree = ET.parse(f)
+            tree = et.parse(f)
         root = tree.getroot()
         csc_aliases = set(alias.text for alias in root.findall(f"./{saltype}/Alias"))
         csc_topics = set(topic.text.split('_', 2)[2] for topic in root.findall(f"./{saltype}/EFDB_Topic"))
