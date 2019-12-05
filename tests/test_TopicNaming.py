@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 import re
 import pytest
-import xml.etree.ElementTree as ET
+import xml.etree.ElementTree as et
 import lsst.ts.xml as ts_xml
 
 
@@ -48,7 +48,7 @@ def test_topic_naming_csc(xmlfile, csc, topic):
         pytest.skip(jira + ": " + str(xmlfile.name) + " <EFDB_Topic> is not properly formed.")
     # Test the topic <EFDB_Name> field.
     with open(str(xmlfile), "r", encoding="utf-8") as f:
-        tree = ET.parse(f)
+        tree = et.parse(f)
     root = tree.getroot()
     for name in root.findall(f"./{saltype}/EFDB_Topic"):
         index = 0
@@ -81,7 +81,7 @@ def test_topic_naming_type(xmlfile, csc, topic):
         pytest.skip(jira + ": " + str(xmlfile.name) + " <EFDB_Topic> is not properly formed.")
     # Test the topic <EFDB_Name> field.
     with open(str(xmlfile), "r", encoding="utf-8") as f:
-        tree = ET.parse(f)
+        tree = et.parse(f)
     root = tree.getroot()
     for name in root.findall(f"./{saltype}/EFDB_Topic"):
         if topic == "Telemetry":
@@ -123,7 +123,7 @@ def test_topic_naming_alias(xmlfile, csc, topic):
         pytest.skip(jira + ": " + str(xmlfile.name) + " <EFDB_Topic> is not properly formed.")
     # Test the topic <EFDB_Name> field.
     with open(str(xmlfile), "r", encoding="utf-8") as f:
-        tree = ET.parse(f)
+        tree = et.parse(f)
     root = tree.getroot()
     for name in root.findall(f"./{saltype}/EFDB_Topic"):
         # re.match() returns None if the string does not match the regex.

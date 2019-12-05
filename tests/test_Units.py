@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 import pytest
-import xml.etree.ElementTree as ET
+import xml.etree.ElementTree as et
 import astropy.units
 import lsst.ts.xml as ts_xml
 
@@ -45,7 +45,7 @@ def test_units(xmlfile, csc, topic):
         pytest.skip(jira + ": " + str(xmlfile.name) + " <Unit> fields do not conform to astropy standards.")
     # Test the attribute <Description> fields.
     with open(str(xmlfile), "r", encoding="utf-8") as f:
-        tree = ET.parse(f)
+        tree = et.parse(f)
     root = tree.getroot()
     for unit in root.findall(f"./{saltype}/item/Units"):
         if not unit.text:

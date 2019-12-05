@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 import pathlib
 import pytest
-import xml.etree.ElementTree as ET
+import xml.etree.ElementTree as et
 import lsst.ts.xml as ts_xml
 
 
@@ -32,7 +32,7 @@ def test_salgenerics_commands():
         pytest.skip(jira + ": " + str(sal_generics_file.name))
     # Test SALGenerics.xml contains the expected commands.
     with open(str(sal_generics_file), "r", encoding="utf-8") as f:
-        tree = ET.parse(f)
+        tree = et.parse(f)
     root = tree.getroot()
     commands = []
     for command in root.findall(f"./SALCommandSet/SALCommand/Alias"):
@@ -52,7 +52,7 @@ def test_salgenerics_events():
         pytest.skip(jira + ": " + str(sal_generics_file.name))
     # Test SALGenerics.xml contains the expected commands.
     with open(str(sal_generics_file), "r", encoding="utf-8") as f:
-        tree = ET.parse(f)
+        tree = et.parse(f)
     root = tree.getroot()
     events = []
     for event in root.findall(f"./SALEventSet/SALEvent/Alias"):
@@ -87,7 +87,7 @@ def test_xmlfiles_do_not_define_generic_topics(xmlfile, csc, topic):
             pytest.skip(jira + ": " + str(xmlfile.name))
         # Verify no explicitly defined generic topics.
         with open(str(xmlfile), "r", encoding="utf-8") as f:
-            tree = ET.parse(f)
+            tree = et.parse(f)
         root = tree.getroot()
         csc_topics = []
         for alias in root.findall(f"./{saltype}/Alias"):

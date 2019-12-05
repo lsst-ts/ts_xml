@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 import pytest
-import xml.etree.ElementTree as ET
+import xml.etree.ElementTree as et
 import lsst.ts.xml as ts_xml
 
 
@@ -20,7 +20,7 @@ def test_count(xmlfile, csc, topic):
     """
     saltype = "SAL" + topic.rstrip('s')
     with open(str(xmlfile), "r", encoding="utf-8") as f:
-        tree = ET.parse(f)
+        tree = et.parse(f)
         root = tree.getroot()
         for count in root.findall(f"./{saltype}/item/Count"):
             if count.text:

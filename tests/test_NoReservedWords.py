@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 import pytest
-import xml.etree.ElementTree as ET
+import xml.etree.ElementTree as et
 import lsst.ts.xml as ts_xml
 
 
@@ -30,7 +30,7 @@ def test_no_reserved_words(xmlfile, csc, topic):
         pytest.skip(jira + ": " + str(xmlfile.name) + " <EFDB_Name> is not properly formed.")
     # Test the <EFDB_Name> fields do not use Reserved Words.
     with open(str(xmlfile), "r", encoding="utf-8") as f:
-        tree = ET.parse(f)
+        tree = et.parse(f)
     root = tree.getroot()
     bad_names = []
     for name in root.findall(f"./{saltype}/item/EFDB_Name"):
