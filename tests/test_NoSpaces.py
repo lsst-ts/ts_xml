@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 import re
 import pytest
-import xml.etree.ElementTree as ET
+import xml.etree.ElementTree as et
 import lsst.ts.xml as ts_xml
 
 
@@ -45,7 +45,7 @@ def test_no_spaces(xmlfile, csc, topic):
     if jira:
         pytest.skip(jira + ": " + str(xmlfile.name) + ".xml <Subsystem> field contains whitespace.")
     with open(str(xmlfile), "r", encoding="utf-8") as f:
-        tree = ET.parse(f)
+        tree = et.parse(f)
     root = tree.getroot()
     check_subsystem(xmlfile, saltype, root)
     check_topic(xmlfile, saltype, root)

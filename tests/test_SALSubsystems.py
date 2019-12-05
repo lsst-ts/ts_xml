@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 import pathlib
 import pytest
-import xml.etree.ElementTree as ET
+import xml.etree.ElementTree as et
 import lsst.ts.xml as ts_xml
 
 
@@ -21,7 +21,7 @@ def skip_if_known_issue(test, csc):
 def get_file_root_element():
     sal_subsystems_file = get_salsubsystems_file()
     with open(str(sal_subsystems_file), "r", encoding="utf-8") as f:
-        tree = ET.parse(f)
+        tree = et.parse(f)
     root = tree.getroot()
     return root
 
@@ -130,5 +130,5 @@ def test_simulator_tag(root, csc, simulator):
     # Check for known issues.
     skip_if_known_issue("simulator", csc)
     # Verify each CSC is explicitly defined.
-    assert type(root.find("./Subsystem/[Name='" + csc + "']/Simulator")) is ET.Element, \
+    assert type(root.find("./Subsystem/[Name='" + csc + "']/Simulator")) is et.Element, \
         csc + " <Simulator> tag is NOT defined."
