@@ -32,6 +32,9 @@ def test_no_reserved_words(xmlfile, csc, topic):
     with open(str(xmlfile), "r", encoding="utf-8") as f:
         tree = ET.parse(f)
     root = tree.getroot()
+    bad_names = []
     for name in root.findall(f"./{saltype}/item/EFDB_Name"):
-        assert name.text.upper() not in set(ts_xml.idl_reserved + ts_xml.db_reserved), \
-            'Reserved Word ' + name.text + ' used one or more times.'
+        if name.text.upper() in set(ts_xml.idl_reserved + ts_xml.db_reserved):
+            bad_names.append(name.text.upper())
+    assert bad_names == [], \
+        "Reserved Words used one or more times: " + str(bad_names)
