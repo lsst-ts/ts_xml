@@ -1,84 +1,51 @@
 pipeline {
     agent any
     environment {
-		    branch = BRANCH_NAME.replaceAll('/','-')
-        container_name = "robot_${branch}_${BUILD_ID}_${GIT_COMMIT}"
+        branch = BRANCH_NAME.replaceAll('/','-')
+        container_name = "xml_unittests_${branch}_${BUILD_ID}_${GIT_COMMIT}"
         VERSION = readFile(env.WORKSPACE+"/VERSION").trim()
     }
-
     stages {
-		stage("Cleanup before build") {
-			steps {
-				sh """
-				rm -rf ${WORKSPACE}/robot
-				rm -rf ${WORKSPACE}/rbtxml
-				"""
-				}
-			}
-        stage("Clone robotframework_ts_xml") {
+        stage("Pre-build cleanup") {
+             steps {
+                  sh """
+                  if [ -d ${WORKSPACE}/tests/results ]; then rm -r ${WORKSPACE}/tests/results; fi
+                  """
+             }
+        }
+        stage("Create results directory") {
             steps {
                 sh """
-				mkdir ${WORKSPACE}/robot
-				chmod 777 ${WORKSPACE}/robot
-                git clone https://github.com/lsst-ts/robotframework_ts_xml.git ${WORKSPACE}/rbtxml || echo Robotframework already here.
+                mkdir -p ${WORKSPACE}/tests/results
+                chmod 777 ${WORKSPACE}/tests/results
                 """
             }
         }
-        stage("Run the Robot-Framework tests") {
+        stage("Pull down the docker image") {
             steps {
                 script {
                     sh """
-					docker run --name ${container_name} \
-					-v ${WORKSPACE}/:/home/appuser/trunk/ts_xml \
-					-v ${WORKSPACE}/rbtxml:/home/appuser/trunk/robotframework_ts_xml \
-					-v ${WORKSPACE}/robot:/home/appuser/Reports \
-					-w /home/appuser/trunk/robotframework_ts_xml \
-					--entrypoint "robot" lsstts/robot:latest \
-					--outputdir /home/appuser/Reports --variable ContInt:true -e skipped \
-					--noncritical TSS* --noncritical TPC* --noncritical TSEIA* --noncritical DM* --noncritical CAP* \
-					--variable version:${env.VERSION} -A XML_Validation.list
-					echo "Test complete"
-					"""
+                    docker pull lsstts/robot:latest
+                    """
+            }
+        }
+    }
+        stage("Run the unit tests") {
+            steps {
+                script {
+                    sh """
+		    docker run --name ${container_name} -di --rm -v ${WORKSPACE}:/home/appuser/trunk/ts_xml -w /home/appuser/trunk/ts_xml lsstts/robot:latest 
+                    docker exec -u appuser -w /home/appuser/trunk/ts_xml ${container_name} sh -c "python3 -m pip install --user -e . && pytest -ra --junitxml=tests/results/results.xml"
+                    docker stop ${container_name}
+		    echo "Test complete"
+		    """
                 }
             }
         }
-	}
+    }
     post {
         always {
-            // Copy tests results
-			script {
-				sh """
-				docker cp ${container_name}:/home/appuser/Reports ${WORKSPACE}/robot
-				"""
-			}
-			// Publish the HTML report
-            publishHTML (target: [
-                allowMissing: false,
-                alwaysLinkToLastBuild: false,
-                keepAll: true,
-                reportDir: "${WORKSPACE}/robot",
-                reportFiles: 'report.html',
-                reportName: "Report"
-              ])
-			// Publish RobotFramework report
-			step ([
-				$class: 'RobotPublisher', 
-				disableArchiveOutput: false, 
-				enableCache: true, 
-				logFileName: 'log.html', 
-				onlyCritical: true, 
-				otherFiles: '', 
-				outputFileName: 'output.xml', 
-				outputPath: 'robot', 
-				passThreshold: 100.0, 
-				reportFileName: 'report.html', 
-				unstableThreshold: 95.0
-			])
-		}
-        cleanup {
-            sh """
-            docker rm ${container_name}
-            """
+            junit 'tests/results/results.xml'
         }
     }
 }
