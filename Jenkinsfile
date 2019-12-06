@@ -1,26 +1,35 @@
 pipeline {
     agent any
     environment {
-		branch = BRANCH_NAME.replaceAll('/','-')
-		container_name = "xml_unittests_${branch}_${BUILD_ID}_${GIT_COMMIT}"
+        branch = BRANCH_NAME.replaceAll('/','-')
+        container_name = "xml_unittests_${branch}_${BUILD_ID}_${GIT_COMMIT}"
         VERSION = readFile(env.WORKSPACE+"/VERSION").trim()
     }
     stages {
-		stage("Pre-build cleanup") {
-			steps {
-					sh """
-					if [ -d ${WORKSPACE}/tests/results ]; then rm -r ${WORKSPACE}/tests/results; fi
-					"""
-			}
-		}
-		stage("Create results directory") {
-			steps {
-					sh """
-					mkdir -p ${WORKSPACE}/tests/results
-					chmod 777 ${WORKSPACE}/tests/results
-					"""
-			}
-		}
+        stage("Pre-build cleanup") {
+             steps {
+                  sh """
+                  if [ -d ${WORKSPACE}/tests/results ]; then rm -r ${WORKSPACE}/tests/results; fi
+                  """
+             }
+        }
+        stage("Create results directory") {
+            steps {
+                sh """
+                mkdir -p ${WORKSPACE}/tests/results
+                chmod 777 ${WORKSPACE}/tests/results
+                """
+            }
+        }
+        stage("Pull down the docker image") {
+            steps {
+                script {
+                    sh """
+                    docker pull lsstts/robot:latest
+                    """
+            }
+        }
+    }
         stage("Run the unit tests") {
             steps {
                 script {
@@ -33,10 +42,10 @@ pipeline {
                 }
             }
         }
-	}
-	post {
-		always {
-			junit 'tests/results/results.xml'
-		}
-	}
+    }
+    post {
+        always {
+            junit 'tests/results/results.xml'
+        }
+    }
 }
