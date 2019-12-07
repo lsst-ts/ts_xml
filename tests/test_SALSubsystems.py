@@ -30,7 +30,7 @@ def get_csc_generics():
     root = get_file_root_element()
     arguments = []
     for csc in ts_xml.subsystems:
-        generics = root.find("./Subsystem/[Name='" + csc + "']/Generics").text
+        generics = root.find("./SALSubsystem/[Name='" + csc + "']/Generics").text
         arguments.append((root, csc, generics))
     return arguments
 
@@ -39,7 +39,7 @@ def get_csc_simulator():
     root = get_file_root_element()
     arguments = []
     for csc in ts_xml.subsystems:
-        simulator = root.find("./Subsystem/[Name='" + csc + "']/Simulator").text
+        simulator = root.find("./SALSubsystem/[Name='" + csc + "']/Simulator").text
         arguments.append((root, csc, simulator))
     return arguments
 
@@ -55,7 +55,7 @@ def test_salsubsystems_count():
     skip_if_known_issue("count", "none")
     # Test SALGenerics.xml contains the expected commands.
     root = get_file_root_element()
-    assert len(root.findall("./Subsystem/Name")) == len(ts_xml.subsystems), \
+    assert len(root.findall("./SALSubsystem/Name")) == len(ts_xml.subsystems), \
         "There is an unexpected number of CSCs."
 
 
@@ -66,7 +66,7 @@ def test_salsubsystems_uniq_cscs():
     skip_if_known_issue("uniq", "none")
     # Test SALGenerics.xml contains unique CSCs.
     root = get_file_root_element()
-    assert len(root.findall("./Subsystem/Name")) == len(set(root.findall("./Subsystem/Name"))) \
+    assert len(root.findall("./SALSubsystem/Name")) == len(set(root.findall("./SALSubsystem/Name"))) \
         and len(ts_xml.subsystems) == len(set(ts_xml.subsystems)), \
         "SALSubsystems.xml or testutils.subsystems contains duplicate entries"
 
@@ -81,7 +81,7 @@ def test_each_csc_defined():
     subsystems = ts_xml.subsystems
     subsystems.sort()
     cscs = []
-    for csc in root.findall(f"./Subsystem/Name"):
+    for csc in root.findall(f"./SALSubsystem/Name"):
         cscs.append(csc.text)
     cscs.sort()
     assert ts_xml.subsystems == cscs, "There is a duplicate CSC."
@@ -110,7 +110,7 @@ def test_generics_tag(root, csc, generics):
     else:
         value = "yes"
     # Verify each CSC is explicitly defined.
-    assert root.find("./Subsystem/[Name='" + csc + "']/Generics").text == value, \
+    assert root.find("./SALSubsystem/[Name='" + csc + "']/Generics").text == value, \
         csc + " <Generics> tag is not defined as expected."
 
 
@@ -130,5 +130,5 @@ def test_simulator_tag(root, csc, simulator):
     # Check for known issues.
     skip_if_known_issue("simulator", csc)
     # Verify each CSC is explicitly defined.
-    assert type(root.find("./Subsystem/[Name='" + csc + "']/Simulator")) is et.Element, \
+    assert type(root.find("./SALSubsystem/[Name='" + csc + "']/Simulator")) is et.Element, \
         csc + " <Simulator> tag is NOT defined."
