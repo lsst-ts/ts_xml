@@ -1,0 +1,53 @@
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+        elementFormDefault="unqualified"
+        attributeFormDefault="unqualified">
+
+  <xsd:annotation>
+    <xsd:documentation xml:lang="en">
+     SAL Subsystem data schema for LSST
+    </xsd:documentation>
+  </xsd:annotation>
+
+ <xsd:element name="SALSubsystemSet"      type="SubsystemSetType"/>
+ <xsd:element name="SALSubsystem"         type="SubsystemType"/>
+ 
+ <xsd:complexType name="SubsystemType">
+     <xsd:choice maxOccurs="unbounded">
+		<xsd:element name="Name"		minOccurs="1" maxOccurs="1" type="xsd:string"/>
+		<xsd:element name="Description"		minOccurs="1" maxOccurs="1" type="xsd:string"/>
+		<xsd:element name="Enumeration" 	minOccurs="1" maxOccurs="1" type="xsd:string"/>
+		<xsd:element name="Generics" 		minOccurs="1" maxOccurs="1" type="xsd:string"/>
+		<xsd:element name="Version" 		minOccurs="1" maxOccurs="1" type="version"/>
+		<xsd:element name="Author" 		minOccurs="1" maxOccurs="1" type="xsd:string"/>
+		<xsd:element name="ActiveDevelopers" 	minOccurs="1" maxOccurs="1" type="xsd:string"/>
+		<xsd:element name="PrincipalCSCOwner" 	minOccurs="1" maxOccurs="1" type="xsd:string"/>
+      		<xsd:element name="Github"      	minOccurs="0" maxOccurs="1" type="xsd:anyURI"/>
+      		<xsd:element name="JenkinsTestResults"  minOccurs="0" maxOccurs="1" type="xsd:anyURI"/>
+		<xsd:element name="LSSTPoC" 		minOccurs="1" maxOccurs="1" type="xsd:string"/>
+		<xsd:element name="CSCDocs" 		minOccurs="0" maxOccurs="unbounded" type="xsd:string"/>
+		<xsd:element name="ProductOwner" 	minOccurs="1" maxOccurs="1" type="xsd:string"/>
+		<xsd:element name="RelatedDocuments" 	minOccurs="0" maxOccurs="unbounded" type="xsd:string"/>
+		<xsd:element name="SoftwareLanguage" 	minOccurs="1" maxOccurs="1" type="xsd:string"/>
+		<xsd:element name="RuntimeLanguages" 	minOccurs="1" maxOccurs="1" type="xsd:string"/>
+		<xsd:element name="VendorPoC" 		minOccurs="0" maxOccurs="unbounded" type="xsd:string"/>
+		<xsd:element name="ErrorCode" 		minOccurs="0" maxOccurs="unbounded" type="xsd:string"/>
+		<xsd:element name="Simulator" 		minOccurs="1" maxOccurs="1" type="xsd:boolean"/>
+    </xsd:choice>
+ </xsd:complexType>
+
+ <xsd:complexType name="SubsystemSetType">
+  <xsd:sequence>
+   <xsd:element name="SALSubsystem" minOccurs="1"    maxOccurs="unbounded" type="SubsystemType"/>
+  </xsd:sequence>
+ </xsd:complexType>
+
+ <xsd:simpleType name="version">
+    <xsd:restriction base="xsd:token">
+      <xsd:pattern value="\d+\.\d+(\.\d+)?"/>
+    </xsd:restriction>
+ </xsd:simpleType>
+
+ <xsd:attribute name="updateDate"    type="xsd:date"/>
+
+</xsd:schema>
+
