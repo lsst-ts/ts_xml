@@ -10,7 +10,6 @@ pipeline {
              steps {
                   sh """
                   git clean -dxf
-                  #if [ -d ${WORKSPACE}/tests/results ]; then rm -r ${WORKSPACE}/tests/results; fi
                   """
              }
         }
