@@ -13,8 +13,6 @@ def check_for_issues(csc, topic, test):
         jira = "DM-22153"
     elif csc == "MTMount" and topic == "Telemetry" and test == "alias":
         jira = "DM-17276"
-    elif csc == "MTVMS" and topic == "Telemetry" and test == "alias":
-        jira = "DM-22155"
     elif csc == "Rotator" and topic == "Telemetry" and test == "alias":
         jira = "DM-20969"
     else:
