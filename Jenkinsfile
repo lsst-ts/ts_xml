@@ -9,7 +9,8 @@ pipeline {
         stage("Pre-build cleanup") {
              steps {
                   sh """
-                  if [ -d ${WORKSPACE}/tests/results ]; then rm -r ${WORKSPACE}/tests/results; fi
+                  git clean -dxf
+                  #if [ -d ${WORKSPACE}/tests/results ]; then rm -r ${WORKSPACE}/tests/results; fi
                   """
              }
         }
