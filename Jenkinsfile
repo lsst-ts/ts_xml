@@ -2,14 +2,15 @@ pipeline {
     agent any
     environment {
         branch = BRANCH_NAME.replaceAll('/','-')
-        container_name = "xml_unittests_${branch}_${BUILD_ID}_${GIT_COMMIT}"
+        job_name = JOB_NAME.replaceAll(' ','_').replaceAll('/','-')
+        container_name = "xml_unittests_${job_name}_${branch}_${BUILD_ID}_${GIT_COMMIT}"
         VERSION = readFile(env.WORKSPACE+"/VERSION").trim()
     }
     stages {
         stage("Pre-build cleanup") {
              steps {
                   sh """
-                  if [ -d ${WORKSPACE}/tests/results ]; then rm -r ${WORKSPACE}/tests/results; fi
+                  git clean -dxf
                   """
              }
         }
