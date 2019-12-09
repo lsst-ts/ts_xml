@@ -3,7 +3,7 @@ pipeline {
     environment {
         branch = BRANCH_NAME.replaceAll('/','-')
         job_name = JOB_NAME.replaceAll(' ','_').replaceAll('/','-')
-        container_name = "xml_unittests_${JOB_NAME}_${branch}_${BUILD_ID}_${GIT_COMMIT}"
+        container_name = "xml_unittests_${job_name}_${branch}_${BUILD_ID}_${GIT_COMMIT}"
         VERSION = readFile(env.WORKSPACE+"/VERSION").trim()
     }
     stages {
