@@ -35,6 +35,15 @@ def get_csc_generics():
     return arguments
 
 
+def get_csc_runtimelanguages():
+    root = get_file_root_element()
+    arguments = []
+    for csc in ts_xml.subsystems:
+        languages = root.find("./SALSubsystem/[Name='" + csc + "']/RuntimeLanguages").text
+        arguments.append((root, csc, languages))
+    return arguments
+
+
 def get_csc_simulator():
     root = get_file_root_element()
     arguments = []
@@ -112,6 +121,27 @@ def test_generics_tag(root, csc, generics):
     # Verify each CSC is explicitly defined.
     assert root.find("./SALSubsystem/[Name='" + csc + "']/Generics").text == value, \
         csc + " <Generics> tag is not defined as expected."
+
+
+@pytest.mark.parametrize("root,csc,languages", get_csc_runtimelanguages())
+def test_runtimelanguages_tag(root, csc, languages):
+    """Test that the <RuntimeLangages> tag is correctly defined for each CSC.
+
+    Parameters
+    ----------
+    root: `get_file_root_element()`
+        Root element for the sal_subsystems_file tree.
+    csc : `testutils.subsystems`
+        Name of the CSC.
+    languages : `get_csc_runtimelanguages()`
+        Value of the <RuntimeLanguages> tag in sal_subsystems_file.
+    """
+    # Check for known issues.
+    skip_if_known_issue("languages", csc)
+    # Verify each CSC is explicitly defined.
+    for language in languages.split(','):
+        assert language in ["CPP", "Java", "LabVIEW", "PyDDS", "Python"], \
+            csc + ": " + language + " is not a valid value for <RuntimeLanguages>."
 
 
 @pytest.mark.parametrize("root,csc,simulator", get_csc_simulator())
