@@ -2,12 +2,12 @@
 
 ## Glossary
 
-CSC     Commandable SAL Component
-DDS     Data Distriubtion Services
-LSST    Large Synoptic Survey Telescope
-SAL     Service Abstraction Layer
-TSSW    LSST Telescope & Site Software
-XML     eXtensible Markup Language
+- CSC  -   Commandable SAL Component
+- DDS  -   Data Distriubtion Services
+- LSST -   Large Synoptic Survey Telescope
+- SAL  -   Service Abstraction Layer
+- TSSW -   LSST Telescope & Site Software
+- XML  -   eXtensible Markup Language
 
 ## Description
 
