@@ -22,7 +22,7 @@ Master CSC Table
 
 .. csv-table:: List of defined Commandable SAL Components (CSC)
    :file: orderedSubsystemData.csv
-   :widths: 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7
+   :widths: auto
    :header-rows: 1
 
 Legend
@@ -68,6 +68,11 @@ Legend
 
 **Software Language**
   Software language that the CSC is being written in. 
+
+**Runtime Languages**
+  Comma seperated list of languages for which the CSC needs to produce libraries.
+  With the intention to minimize build time by only producing the necessary 
+  libraries. 
 
 **Vendor PoC**
   Point of contact if the CSC is developed by a vendor.

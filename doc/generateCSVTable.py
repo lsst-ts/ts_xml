@@ -57,6 +57,9 @@ for member in root.findall('SALSubsystem'):
 		software_language = member.find('SoftwareLanguage').tag
 		subsystem_head.append('Software Language')
 
+		runtime_language = member.find('RuntimeLanguages').tag
+		subsystem_head.append('Runtime Language')
+
 		vendor_PoC = member.find('VendorPoC').tag
 		subsystem_head.append('Vendor PoC')
 
@@ -101,6 +104,9 @@ for member in root.findall('SALSubsystem'):
 
 	software_language = member.find('SoftwareLanguage').text
 	subsystem.append(software_language)
+
+	runtime_language = member.find('RuntimeLanguages').text
+	subsystem.append(runtime_language)
 
 	vendor_PoC = member.find('VendorPoC').text
 	subsystem.append(vendor_PoC)
