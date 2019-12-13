@@ -23,7 +23,7 @@ subsystems = [
     'LinearStage', 'LOVE', 'MTAOS', 'MTArchiver', 'MTCamera',
     'MTDomeTrajectory', 'MTEEC', 'MTGuider', 'MTHeaderService',
     'MTLaserTracker', 'MTM1M3', 'MTM1M3TS', 'MTM2', 'MTMount', 'MTPtg', 'MTTCS',
-    'MTVMS', 'OCS', 'PointingComponent', 'PromptProcessing', 'Rotator',
+    'MTVMS', 'PointingComponent', 'PromptProcessing', 'Rotator',
     'Scheduler', 'Script', 'ScriptQueue', 'SummitFacility', 'Test',
     'TunableLaser', 'Watcher'
 ]
