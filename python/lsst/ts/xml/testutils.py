@@ -19,6 +19,8 @@ subsystems = [
     'ATMonochromator', 'ATPneumatics', 'ATPtg', 'ATSpectrograph', 'ATTCS',
     'ATWhiteLight', 'CCArchiver', 'CatchupArchiver', 'CBP', 'DIMM', 'Dome',
     'DSM', 'EAS', 'EFD', 'EFDTransformationServer', 'Electrometer', 'Environment',
+    'ATWhiteLight', 'CatchupArchiver', 'CCCamera', 'CBP', 'DIMM', 'Dome', 'DSM', 'EAS',
+    'EFD', 'EFDTransformationServer', 'Electrometer', 'Environment',
     'FiberSpectrograph', 'GenericCamera', 'IOTA', 'Hexapod', 'HVAC',
     'LinearStage', 'LOVE', 'MTAOS', 'MTArchiver', 'MTCamera',
     'MTDomeTrajectory', 'MTEEC', 'MTGuider', 'MTHeaderService',
