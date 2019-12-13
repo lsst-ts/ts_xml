@@ -41,6 +41,20 @@ from anywhere in the repository.  This will run the tests and print out a short 
 
 to find the specific ticket.
 
+#### Test Utilities
+
+The testutils.py file, located in python/lsst/ts/xml, contains functions and variables used throughout the testing.  The lists of generic Commands and Events, as well as Reserved Words, imposed by third party tools, are all defined in testutils.py.  Most importantly, the independent list of expected CSCs is also defined here.  If these lists change, the corresponding list in testutils.py **must** also be updated, for example, if a CSC is added, removed or renamed, the tests will produce the following error:
+
+```
+AssertionError: There is an unexpected number of CSCs.
+```
+
+In case this error occurs, the subsystems list in testutils.py should be updated accordingly.
+
 ## Versioning
 
 We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/lsst-ts/ts_xml/tags). 
+
+## Contact Information
+
+Please contact <rbovill@lsst.org> with any questions or concerns.
