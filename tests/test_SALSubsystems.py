@@ -58,10 +58,7 @@ def get_csc_configurable():
     arguments = []
     for csc in ts_xml.subsystems:
         configurable = root.find("./SALSubsystem/[Name='" + csc + "']/Configurable").text
-        print(configurable)
         arguments.append((root, csc, configurable))
-
-    print(arguments)
     return arguments
 
 
@@ -191,9 +188,6 @@ def test_configurable_tag(root, csc, configurable):
     """
     # Check for known issues.
     skip_if_known_issue("configurable", csc)
-    # Verify each CSC is explicitly defined.
-    assert type(root.find("./SALSubsystem/[Name='" + csc + "']/Configurable")) is et.Element, \
-        csc + " <Configurable> tag is NOT defined."
-
+    # Verify the <Configurable> tag is properly defined.
     assert configurable == "Yes" or configurable == "No", \
         csc + " <Configurable> text must either be 'yes' or 'no'"
