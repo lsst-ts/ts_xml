@@ -24,8 +24,6 @@ def check_for_issues(csc, topic):
         jira = "CAP398"
     elif csc == "MTCamera" and topic == "Commands":
         jira = "CAP-397"
-    elif csc == "MTM1M3" and topic == "Telemetry":
-        jira = "DM-22621"
     elif csc == "MTMount" and topic == "Commands":
         jira = "DM-22622"
     elif csc == "OCS" and (topic == "Telemetry" or topic == "Events"):
