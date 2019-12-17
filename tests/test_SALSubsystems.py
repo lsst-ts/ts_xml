@@ -191,6 +191,5 @@ def test_configurable_tag():
 
         # Verify that the text of the tag is either "yes" or "no"
         assert root.find("./SALSubsystem/[Name='" + csc + "']/Configurable").text == "Yes" or \
-               root.find("./SALSubsystem/[Name='" + csc + "']/Configurable").text == "No", \
-            csc + " <Simulator> text must either be 'yes' or 'no'" 
-
+            root.find("./SALSubsystem/[Name='" + csc + "']/Configurable").text == "No", \
+            csc + " <Simulator> text must either be 'yes' or 'no'"
