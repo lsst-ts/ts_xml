@@ -16,7 +16,7 @@ csvwriter = csv.writer(subsystem_data)
 subsystem_head = []
 
 count = 0
-for member in root.findall('Subsystem'):
+for member in root.findall('SALSubsystem'):
 	subsystem = []
 
 

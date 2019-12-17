@@ -3,7 +3,7 @@
 ## Glossary
 
 - CSC  -   Commandable SAL Component
-- DDS  -   Data Distriubtion Services
+- DDS  -   Data Distribution Services
 - LSST -   Large Synoptic Survey Telescope
 - SAL  -   Service Abstraction Layer
 - TSSW -   LSST Telescope & Site Software
@@ -11,7 +11,7 @@
 
 ## Description
 
-This repository contains all the interface defintion files for all the CSCs of the LSST.  All of the CSCs communicate using the DDS protocol.  TSSW provides a wrapper utility around DDS, called the Service Abstraction Layer or SAL.
+This repository contains all the interface definition files for all the CSCs of the LSST.  All of the CSCs communicate using the DDS protocol.  TSSW provides a wrapper utility around DDS, called the Service Abstraction Layer or SAL.
 
 * (https://github.com/lsst-ts/ts_sal) 
 
@@ -35,7 +35,7 @@ This will install the pytest, pytest-flake8 and astropy modules used to verify t
 pytest -ra
 ```
 
-from anywhere in the repository.  This will run the tests and print out a short summary of the results, including tests that are skipped for known reasons.  The messages associated with the skiped tests include Jira ticket numbers to track the issues.  Please navigate to 
+from anywhere in the repository.  This will run the tests and print out a short summary of the results, including tests that are skipped for known reasons.  The messages associated with the skipped tests include Jira ticket numbers to track the issues.  Please navigate to 
 
 * [LSST Jira](https://jira.lsstcorp.org/secure/Dashboard.jspa)
 
