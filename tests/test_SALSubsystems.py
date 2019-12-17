@@ -53,6 +53,15 @@ def get_csc_simulator():
     return arguments
 
 
+def get_csc_configurable():
+    root = get_file_root_element()
+    arguments = []
+    for csc in ts_xml.subsystems:
+        configurable = root.find("./SALSubsystem/[Name='" + csc + "']/Configurable").text
+        arguments.append((root, csc, configurable))
+    return arguments
+
+
 # ==================
 # Tests
 # ==================
@@ -162,3 +171,26 @@ def test_simulator_tag(root, csc, simulator):
     # Verify each CSC is explicitly defined.
     assert type(root.find("./SALSubsystem/[Name='" + csc + "']/Simulator")) is et.Element, \
         csc + " <Simulator> tag is NOT defined."
+
+
+def test_configurable_tag():
+    """Test for the <Configurable> tag.
+
+    Attributes
+    ----------
+    root: `get_file_root_element()`
+        Root element for the sal_subsystems_file tree.
+    """
+    root = get_file_root_element()
+
+    for csc in ts_xml.subsystems:
+
+        # Verify that the tag is defined
+        assert root.find("./SALSubsystem/[Name='" + csc + "']/Configurable") is not None, \
+            csc + " <Simulator> tag is NOT defined."
+
+        # Verify that the text of the tag is either "yes" or "no"
+        assert root.find("./SALSubsystem/[Name='" + csc + "']/Configurable").text == "Yes" or \
+               root.find("./SALSubsystem/[Name='" + csc + "']/Configurable").text == "No", \
+            csc + " <Simulator> text must either be 'yes' or 'no'" 
+
