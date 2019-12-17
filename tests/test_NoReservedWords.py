@@ -6,7 +6,42 @@ import lsst.ts.xml as ts_xml
 
 
 def check_for_issues(csc, topic):
-    jira = ""
+    if csc == "ATAOS" and topic == "Commands":
+        jira = "DM-22612"
+    elif csc == "ATMCS" and (topic == "Commands" or topic == "Events"):
+        jira = "DM-22613"
+    elif csc == "ATSpectrograph" and (topic == "Commands" or topic == "Events"):
+        jira = "DM-22614"
+    elif csc == "CatchupArchiver" and (topic == "Telemetry" or topic == "Events"):
+        jira = "CAP-399"
+    elif csc == "FiberSpectrograph" and topic == "Commands":
+        jira = "DM-22616"
+    elif csc == "LOVE" and topic == "Events":
+        jira = "DM-22617"
+    elif csc == "MTAOS" and topic == "Telemetry":
+        jira = "DM-22618"
+    elif csc == "MTArchiver" and topic == "Events":
+        jira = "CAP398"
+    elif csc == "MTCamera" and topic == "Commands":
+        jira = "CAP-397"
+    elif csc == "MTM1M3" and topic == "Telemetry":
+        jira = "DM-22621"
+    elif csc == "MTMount" and topic == "Commands":
+        jira = "DM-22622"
+    elif csc == "OCS" and (topic == "Telemetry" or topic == "Events"):
+        jira = "DM-22623"
+    elif csc == "PromptProcessing" and (topic == "Telemetry" or topic == "Events"):
+        jira = "DM-22624"
+    elif csc == "Scheduler" and topic == "Telemetry":
+        jira = "DM-22625"
+    elif csc == "Script" and topic == "Events":
+        jira = "DM-22626"
+    elif csc == "Test" and topic == "Commands":
+        jira = "DM-22627"
+    elif csc == "Watcher" and (topic == "Commands" or topic == "Events"):
+        jira = "DM-22628"
+    else:
+        jira = ""
     return jira
 
 
