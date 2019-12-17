@@ -125,7 +125,7 @@ def test_generics_tag(root, csc, generics):
 
 @pytest.mark.parametrize("root,csc,languages", get_csc_runtimelanguages())
 def test_runtimelanguages_tag(root, csc, languages):
-    """Test that the <RuntimeLangages> tag is correctly defined for each CSC.
+    """Test that the <RuntimeLanguages> tag is correctly defined for each CSC.
 
     Parameters
     ----------
