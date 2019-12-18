@@ -5,38 +5,53 @@ import xml.etree.ElementTree as et
 import lsst.ts.xml as ts_xml
 
 
-def check_for_issues(csc, topic):
-    if csc == "ATAOS" and topic == "Commands":
+def check_for_issues(csc, topic, language):
+    if csc == "ATAOS" and topic == "Commands" and language == "optional":
         jira = "DM-22612"
-    elif csc == "ATMCS" and (topic == "Commands" or topic == "Events"):
+    elif (csc == "ATMCS" and topic in ("Commands", "Events") and
+            language == "critical"):
         jira = "DM-22613"
-    elif csc == "ATSpectrograph" and (topic == "Commands" or topic == "Events"):
+    elif (csc == "ATSpectrograph" and topic in ("Commands", "Events") and
+            language == "optional"):
         jira = "DM-22614"
-    elif csc == "CatchupArchiver" and (topic == "Telemetry" or topic == "Events"):
+    elif (csc == "CatchupArchiver" and topic in ("Telemetry", "Events") and
+            language == "optional"):
         jira = "CAP-399"
-    elif csc == "FiberSpectrograph" and topic == "Commands":
+    elif (csc == "FiberSpectrograph" and topic == "Commands" and
+            language == "optional"):
         jira = "DM-22616"
-    elif csc == "LOVE" and topic == "Events":
+    elif (csc == "LOVE" and topic == "Events" and
+            language == "optional"):
         jira = "DM-22617"
-    elif csc == "MTAOS" and topic == "Telemetry":
+    elif (csc == "MTAOS" and topic == "Telemetry" and
+            language == "optional"):
         jira = "DM-22618"
-    elif csc == "MTArchiver" and topic == "Events":
+    elif (csc == "MTArchiver" and topic == "Events" and
+            language == "optional"):
         jira = "CAP398"
-    elif csc == "MTCamera" and topic == "Commands":
+    elif (csc == "MTCamera" and topic == "Commands" and
+            language == "optional"):
         jira = "CAP-397"
-    elif csc == "MTMount" and topic == "Commands":
+    elif (csc == "MTMount" and topic == "Commands" and
+            language == "critical"):
         jira = "DM-22622"
-    elif csc == "OCS" and (topic == "Telemetry" or topic == "Events"):
+    elif (csc == "OCS" and topic in ("Telemetry", "Events") and
+            language == "optional"):
         jira = "DM-22623"
-    elif csc == "PromptProcessing" and (topic == "Telemetry" or topic == "Events"):
+    elif (csc == "PromptProcessing" and topic in ("Telemetry", "Events") and
+            language == "optional"):
         jira = "DM-22624"
-    elif csc == "Scheduler" and topic == "Telemetry":
+    elif (csc == "Scheduler" and topic == "Telemetry" and
+            language == "optional"):
         jira = "DM-22625"
-    elif csc == "Script" and topic == "Events":
+    elif (csc == "Script" and topic == "Events" and
+            language == "optional"):
         jira = "DM-22626"
-    elif csc == "Test" and topic == "Commands":
+    elif (csc == "Test" and topic == "Commands" and
+            language == "optional"):
         jira = "DM-22627"
-    elif csc == "Watcher" and (topic == "Commands" or topic == "Events"):
+    elif (csc == "Watcher" and topic in ("Commands", "Events") and
+            language == "optional"):
         jira = "DM-22628"
     else:
         jira = ""
@@ -44,7 +59,15 @@ def check_for_issues(csc, topic):
 
 
 @pytest.mark.parametrize("xmlfile,csc,topic", ts_xml.get_xmlfile_csc_topic())
-def test_no_reserved_words(xmlfile, csc, topic):
+def test_reserved_words(xmlfile, csc, topic):
+    """Control function to execute the IDL, and
+    database reserved words tests.
+    """
+    for restriction in ("idl", "critical", "optional"):
+        reserved_words(xmlfile, csc, topic, restriction)
+
+
+def reserved_words(xmlfile, csc, topic, restriction):
     """Test that the <EFDB_Name> field does not use any Reserved Words.
 
     Parameters
@@ -54,20 +77,31 @@ def test_no_reserved_words(xmlfile, csc, topic):
     csc : `testutils.subsystems`
         Name of the CSC
     topic : `xmlfile.stem`
-        One of ['Commands','Events','Telemetry']
+        One of ['Commands', 'Events', 'Telemetry']
+    restriction : `test_reserved_words.restriction`
+        One of ['idl', 'critical', 'optional']
     """
     saltype = "SAL" + topic.rstrip('s')
     # Check for known issues.
-    jira = check_for_issues(csc, topic)
+    jira = check_for_issues(csc, topic, restriction)
     if jira:
-        pytest.skip(jira + ": " + str(xmlfile.name) + " <EFDB_Name> is not properly formed.")
+        pytest.skip(jira + ": " + str(xmlfile.name) +
+                    " <EFDB_Name> uses " + restriction.upper() + " reserved word.")
     # Test the <EFDB_Name> fields do not use Reserved Words.
     with open(str(xmlfile), "r", encoding="utf-8") as f:
         tree = et.parse(f)
     root = tree.getroot()
     bad_names = []
+    # Set the list based on the restriction type.
+    if restriction == "idl":
+        word_list = ts_xml.idl_reserved
+    elif restriction == "critical":
+        word_list = ts_xml.db_critical_reserved
+    else:
+        word_list = ts_xml.db_optional_reserved
     for name in root.findall(f"./{saltype}/item/EFDB_Name"):
-        if name.text.upper() in set(ts_xml.idl_reserved + ts_xml.db_reserved):
+        if name.text.upper() in word_list:
             bad_names.append(name.text.upper())
     assert bad_names == [], \
-        "Reserved Words used one or more times: " + str(bad_names)
+        restriction.upper() + " Reserved Words used one or more times: " + \
+        str(bad_names)
