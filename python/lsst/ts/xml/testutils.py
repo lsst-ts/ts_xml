@@ -25,7 +25,7 @@ subsystems = [
     'MTLaserTracker', 'MTM1M3', 'MTM1M3TS', 'MTM2', 'MTMount', 'MTPtg', 'MTTCS',
     'MTVMS', 'PointingComponent', 'PromptProcessing', 'Rotator',
     'Scheduler', 'Script', 'ScriptQueue', 'SummitFacility', 'Test',
-    'TunableLaser', 'Watcher'
+    'TunableLaser', 'Watcher', 'CCHeaderService'
 ]
 
 """Define the array of Generic Commands."""
