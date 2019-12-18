@@ -58,7 +58,11 @@ idl_reserved = [
     'VALUETYPE', 'VOID', 'WCHAR', 'WSTRING'
 ]
 
-db_reserved = [
+db_critical_reserved = [
+    "TIME"
+]
+
+db_optional_reserved = [
     "ALL", "ALTER", "ANALYZE", "ANY", "AS", "ASC", "BEGIN", "BY", "CREATE",
     "CONTINUOUS", "DATABASE", "DATABASES", "DEFAULT", "DELETE", "DESC",
     "DESTINATIONS", "DIAGNOSTICS", "DISTINCT", "DROP", "DURATION", "END",
@@ -68,7 +72,7 @@ db_reserved = [
     "PASSWORD", "POLICY", "POLICIES", "PRIVILEGES", "QUERIES", "QUERY", "READ",
     "REPLICATION", "RESAMPLE", "RETENTION", "REVOKE", "SELECT", "SERIES", "SET",
     "SHARD", "SHARDS", "SLIMIT", "SOFFSET", "STATS", "SUBSCRIPTION",
-    "SUBSCRIPTIONS", "TAG", "TIME", "TO", "USER", "USERS", "VALUES", "WHERE",
+    "SUBSCRIPTIONS", "TAG", "TO", "USER", "USERS", "VALUES", "WHERE",
     "WITH", "WRITE"
 ]
 
