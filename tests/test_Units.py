@@ -52,7 +52,7 @@ def test_units(xmlfile, csc, topic):
             assert False, 'Units cannot be blank.'
         elif unit.text in ("unitless", "dimensionless"):
             assert True
-        elif unit.text in ("Torr", "mTorr"): # TODO remove this when astropy adds support for this unit
+        elif unit.text in ("Torr", "mTorr"):  # TODO remove this when astropy adds support for this unit
             assert True
         else:
             assert type(ts_xml.check_unit(unit.text)) is astropy.units.Quantity
