@@ -59,8 +59,16 @@ def check_for_issues(csc, topic, language):
 
 
 @pytest.mark.parametrize("xmlfile,csc,topic", ts_xml.get_xmlfile_csc_topic())
-def test_no_idl_reserved_words(xmlfile, csc, topic):
-    """Test that the <EFDB_Name> field does not use any IDL Reserved Words.
+def test_reserved_words(xmlfile, csc, topic):
+    """Control function to execute the IDL, and
+    database reserved words tests.
+    """
+    for restriction in ("idl", "critical", "optional"):
+        reserved_words(xmlfile, csc, topic, restriction)
+
+
+def reserved_words(xmlfile, csc, topic, restriction):
+    """Test that the <EFDB_Name> field does not use any Reserved Words.
 
     Parameters
     ----------
@@ -69,87 +77,31 @@ def test_no_idl_reserved_words(xmlfile, csc, topic):
     csc : `testutils.subsystems`
         Name of the CSC
     topic : `xmlfile.stem`
-        One of ['Commands','Events','Telemetry']
+        One of ['Commands', 'Events', 'Telemetry']
+    restriction : `test_reserved_words.restriction`
+        One of ['idl', 'critical', 'optional']
     """
     saltype = "SAL" + topic.rstrip('s')
     # Check for known issues.
-    jira = check_for_issues(csc, topic, "idl")
+    jira = check_for_issues(csc, topic, restriction)
     if jira:
         pytest.skip(jira + ": " + str(xmlfile.name) +
-                    " <EFDB_Name> uses IDL reserved word.")
+                    " <EFDB_Name> uses " + restriction.upper() + " reserved word.")
     # Test the <EFDB_Name> fields do not use Reserved Words.
     with open(str(xmlfile), "r", encoding="utf-8") as f:
         tree = et.parse(f)
     root = tree.getroot()
     bad_names = []
+    # Set the list based on the restriction type.
+    if restriction == "idl":
+        word_list = ts_xml.idl_reserved
+    elif restriction == "critical":
+        word_list = ts_xml.db_critical_reserved
+    else:
+        word_list = ts_xml.db_optional_reserved
     for name in root.findall(f"./{saltype}/item/EFDB_Name"):
-        if name.text.upper() in ts_xml.idl_reserved:
+        if name.text.upper() in word_list:
             bad_names.append(name.text.upper())
     assert bad_names == [], \
-        "IDL Reserved Words used one or more times: " + str(bad_names)
-
-
-@pytest.mark.parametrize("xmlfile,csc,topic", ts_xml.get_xmlfile_csc_topic())
-def test_no_db_critical_reserved_words(xmlfile, csc, topic):
-    """Test that the <EFDB_Name> field does not use any critical
-    database Reserved Words.
-
-    Parameters
-    ----------
-    xmlfile : `pathlib.Path`
-        Full filepath to the Commands or Events XML file for the CSC.
-    csc : `testutils.subsystems`
-        Name of the CSC
-    topic : `xmlfile.stem`
-        One of ['Commands','Events','Telemetry']
-    """
-    saltype = "SAL" + topic.rstrip('s')
-    # Check for known issues.
-    jira = check_for_issues(csc, topic, "critical")
-    if jira:
-        pytest.skip(jira + ": " + str(xmlfile.name) +
-                    " <EFDB_Name> uses database CRITICAL reserved word.")
-    # Test the <EFDB_Name> fields do not use Reserved Words.
-    with open(str(xmlfile), "r", encoding="utf-8") as f:
-        tree = et.parse(f)
-    root = tree.getroot()
-    bad_names = []
-    for name in root.findall(f"./{saltype}/item/EFDB_Name"):
-        if name.text.upper() in ts_xml.db_critical_reserved:
-            bad_names.append(name.text.upper())
-    assert bad_names == [], \
-        "Critical database Reserved Words used one or more times: " + \
-        str(bad_names)
-
-
-@pytest.mark.parametrize("xmlfile,csc,topic", ts_xml.get_xmlfile_csc_topic())
-def test_no_db_optional_reserved_words(xmlfile, csc, topic):
-    """Test that the <EFDB_Name> field does not use any optional
-    database Reserved Words.
-
-    Parameters
-    ----------
-    xmlfile : `pathlib.Path`
-        Full filepath to the Commands or Events XML file for the CSC.
-    csc : `testutils.subsystems`
-        Name of the CSC
-    topic : `xmlfile.stem`
-        One of ['Commands','Events','Telemetry']
-    """
-    saltype = "SAL" + topic.rstrip('s')
-    # Check for known issues.
-    jira = check_for_issues(csc, topic, "optional")
-    if jira:
-        pytest.skip(jira + ": " + str(xmlfile.name) +
-                    " <EFDB_Name> uses database optional reserved word.")
-    # Test the <EFDB_Name> fields do not use Reserved Words.
-    with open(str(xmlfile), "r", encoding="utf-8") as f:
-        tree = et.parse(f)
-    root = tree.getroot()
-    bad_names = []
-    for name in root.findall(f"./{saltype}/item/EFDB_Name"):
-        if name.text.upper() in ts_xml.db_optional_reserved:
-            bad_names.append(name.text.upper())
-    assert bad_names == [], \
-        "Optional database Reserved Words used one or more times: " + \
+        restriction.upper() + " Reserved Words used one or more times: " + \
         str(bad_names)
