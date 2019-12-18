@@ -53,6 +53,15 @@ def get_csc_simulator():
     return arguments
 
 
+def get_csc_configurable():
+    root = get_file_root_element()
+    arguments = []
+    for csc in ts_xml.subsystems:
+        configurable = root.find("./SALSubsystem/[Name='" + csc + "']/Configurable").text
+        arguments.append((root, csc, configurable))
+    return arguments
+
+
 # ==================
 # Tests
 # ==================
@@ -162,3 +171,23 @@ def test_simulator_tag(root, csc, simulator):
     # Verify each CSC is explicitly defined.
     assert type(root.find("./SALSubsystem/[Name='" + csc + "']/Simulator")) is et.Element, \
         csc + " <Simulator> tag is NOT defined."
+
+
+@pytest.mark.parametrize("root,csc,configurable", get_csc_configurable())
+def test_configurable_tag(root, csc, configurable):
+    """Test that the <Configurable> tag is correctly defined for each CSC.
+
+    Parameters
+    ----------
+    root: `get_file_root_element()`
+        Root element for the sal_subsystems_file tree.
+    csc : `testutils.subsystems`
+        Name of the CSC.
+    configurable : `get_csc_configurable()`
+        Value of the <Configurable> tag in sal_subsystems_file.
+    """
+    # Check for known issues.
+    skip_if_known_issue("configurable", csc)
+    # Verify the <Configurable> tag is properly defined.
+    assert configurable == "Yes" or configurable == "No", \
+        csc + " <Configurable> text must either be 'yes' or 'no'"
