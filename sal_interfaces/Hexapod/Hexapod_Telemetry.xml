@@ -6,16 +6,16 @@
     <Subsystem>Hexapod</Subsystem>
     <Version>3.5.1</Version>
     <Author></Author>
-    <EFDB_Topic>Hexapod_Actuators</EFDB_Topic>
+    <EFDB_Topic>Hexapod_actuators</EFDB_Topic>
     <item>
-        <EFDB_Name>Calibrated</EFDB_Name>
+        <EFDB_Name>calibrated</EFDB_Name>
         <Description>Linear encoder readings from each hexapod actuator (x1,x2,x3,x4,x5,x6) in microns</Description>
         <IDL_Type>double</IDL_Type>
         <Units>um</Units>
         <Count>6</Count>
     </item>
     <item>
-        <EFDB_Name>Raw</EFDB_Name>
+        <EFDB_Name>raw</EFDB_Name>
         <Description>Linear encoder readings from each hexapod actuator (x1,x2,x3,x4,x5,x6)in counts</Description>
         <IDL_Type>double</IDL_Type>
         <Units>dimensionless</Units>
@@ -26,24 +26,24 @@
     <Subsystem>Hexapod</Subsystem>
     <Version>3.5.1</Version>
     <Author></Author>
-    <EFDB_Topic>Hexapod_Application</EFDB_Topic>
+    <EFDB_Topic>Hexapod_application</EFDB_Topic>
     <item>
-        <EFDB_Name>Demand</EFDB_Name>
+        <EFDB_Name>demand</EFDB_Name>
         <Description>Commanded hexapod position in the following order (X, Y, Z, RX, RY, RZ). Linear positions are in microns, angular positions are in degrees.</Description>
         <IDL_Type>double</IDL_Type>
         <Units>dimensionless</Units>
         <Count>6</Count>
     </item>
     <item>
-        <EFDB_Name>Error</EFDB_Name>
-        <Description>Indication of an actuator following error (x1,x2,x3,x4,x5,x6) if there is no error shall be 0.</Description>
+        <EFDB_Name>position</EFDB_Name>
+        <Description>Actual hexapod position in the following order (X, Y, Z, RX, RY, RZ). Linear positions are in microns, angular positions are in degrees.</Description>
         <IDL_Type>double</IDL_Type>
         <Units>dimensionless</Units>
         <Count>6</Count>
     </item>
     <item>
-        <EFDB_Name>Position</EFDB_Name>
-        <Description>Actual hexapod position in the following order (X, Y, Z, RX, RY, RZ). Linear positions are in microns, angular positions are in degrees.</Description>
+        <EFDB_Name>error</EFDB_Name>
+        <Description>Indication of an actuator following error (x1,x2,x3,x4,x5,x6) if there is no error shall be 0.</Description>
         <IDL_Type>double</IDL_Type>
         <Units>dimensionless</Units>
         <Count>6</Count>
@@ -53,17 +53,17 @@
     <Subsystem>Hexapod</Subsystem>
     <Version>3.5.1</Version>
     <Author></Author>
-    <EFDB_Topic>Hexapod_Electrical</EFDB_Topic>
+    <EFDB_Topic>Hexapod_electrical</EFDB_Topic>
     <item>
-        <EFDB_Name>CopleyStatusWordDrive</EFDB_Name>
+        <EFDB_Name>copleyStatusWordDrive</EFDB_Name>
         <Description>Bus undervoltage fault, bus overvoltage fault, and overcurrent fault are all being monitored for each drive channel</Description>
         <IDL_Type>unsigned short</IDL_Type>
         <Units>dimensionless</Units>
         <Count>6</Count>
     </item>
     <item>
-        <EFDB_Name>CopleyLatchingFaultStatus</EFDB_Name>
-        <Description>CopleyLatchingFaultStatus</Description>
+        <EFDB_Name>copleyLatchingFaultStatus</EFDB_Name>
+        <Description>Copley latching fault status</Description>
         <IDL_Type>unsigned short</IDL_Type>
         <Units>dimensionless</Units>
         <Count>6</Count>
