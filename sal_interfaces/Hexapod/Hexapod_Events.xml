@@ -122,52 +122,29 @@
     <Subsystem>Hexapod</Subsystem>
     <Version>3.5.1</Version>
     <Author></Author>
-    <EFDB_Topic>Hexapod_logevent_inPosition</EFDB_Topic>
-    <Alias>inPosition</Alias>
-    <Explanation>This event denotes if the hexapod is inposition or not</Explanation>
+    <EFDB_Topic>Hexapod_logevent_actuatorInPosition</EFDB_Topic>
+    <Alias>actuatorInPosition</Alias>
+    <Explanation>Indicates whether each actuator has reached its commanded position.</Explanation>
     <item>
         <EFDB_Name>inPosition</EFDB_Name>
-        <Description>Hexapod in position</Description>
+        <Description>Actuator in position.</Description>
         <IDL_Type>boolean</IDL_Type>
         <Units>unitless</Units>
-        <Count>1</Count>
+        <Count>6</Count>
     </item>
 </SALEvent>
 <SALEvent>
     <Subsystem>Hexapod</Subsystem>
     <Version>3.5.1</Version>
     <Author></Author>
-    <EFDB_Topic>Hexapod_logevent_deviceError</EFDB_Topic>
-    <Alias>deviceError</Alias>
-    <Explanation>This event is generated if any drive faults occur or if there is a following error in any actuator</Explanation>
+    <EFDB_Topic>Hexapod_logevent_inPosition</EFDB_Topic>
+    <Alias>inPosition</Alias>
+    <Explanation>Indicates whether or not all actuators have reached their commanded position.</Explanation>
     <item>
-        <EFDB_Name>device</EFDB_Name>
-        <Description>device name</Description>
-        <IDL_Type>string</IDL_Type>
-        <IDL_Size>256</IDL_Size>
-        <Units>dimensionless</Units>
-        <Count>1</Count>
-    </item>
-    <item>
-        <EFDB_Name>severity</EFDB_Name>
-        <Description>severity</Description>
-        <IDL_Type>long</IDL_Type>
-        <Units>dimensionless</Units>
-        <Count>1</Count>
-    </item>
-    <item>
-        <EFDB_Name>timestamp</EFDB_Name>
-        <Description>timestamp</Description>
-        <IDL_Type>double</IDL_Type>
-        <Units>dimensionless</Units>
-        <Count>1</Count>
-    </item>
-    <item>
-        <EFDB_Name>code</EFDB_Name>
-        <Description>errorcode</Description>
-        <IDL_Type>string</IDL_Type>
-        <IDL_Size>256</IDL_Size>
-        <Units>dimensionless</Units>
+        <EFDB_Name>inPosition</EFDB_Name>
+        <Description>All actuators are in position.</Description>
+        <IDL_Type>boolean</IDL_Type>
+        <Units>unitless</Units>
         <Count>1</Count>
     </item>
 </SALEvent>
@@ -477,37 +454,6 @@
         <Description>strutVelocityMax</Description>
         <IDL_Type>double</IDL_Type>
         <Units>um/s</Units>
-        <Count>1</Count>
-    </item>
-</SALEvent>
-<SALEvent>
-    <Subsystem>Hexapod</Subsystem>
-    <Version>3.5.1</Version>
-    <Author></Author>
-    <EFDB_Topic>Hexapod_logevent_rejectedCommand</EFDB_Topic>
-    <Alias>rejectedCommand</Alias>
-    <Explanation>Issued when a command is rejected</Explanation>
-    <item>
-        <EFDB_Name>commandValue</EFDB_Name>
-        <Description>command</Description>
-        <IDL_Type>string</IDL_Type>
-        <IDL_Size>256</IDL_Size>
-        <Units>dimensionless</Units>
-        <Count>1</Count>
-    </item>
-    <item>
-        <EFDB_Name>detailedState</EFDB_Name>
-        <Description>Detailed State</Description>
-        <IDL_Type>string</IDL_Type>
-        <IDL_Size>256</IDL_Size>
-        <Units>dimensionless</Units>
-        <Count>1</Count>
-    </item>
-    <item>
-        <EFDB_Name>timestamp</EFDB_Name>
-        <Description>timestamp</Description>
-        <IDL_Type>double</IDL_Type>
-        <Units>dimensionless</Units>
         <Count>1</Count>
     </item>
 </SALEvent>
