@@ -40,8 +40,8 @@ generic_commands = [
 
 generic_events = [
     'appliedSettingsMatchStart', 'errorCode', 'heartbeat', 'logLevel',
-    'logMessage', 'settingVersions', 'simulationMode', 'softwareVersions',
-    'summaryState'
+    'logMessage', 'settingsApplied', 'settingVersions', 'simulationMode',
+    'softwareVersions', 'summaryState'
 ]
 
 """Define the lists of IDL and MySQL Reserved Words"""
