@@ -2,6 +2,7 @@
 # -*- coding: utf-8 -*-
 import pathlib
 import pytest
+from lxml import etree
 import xml.etree.ElementTree as et
 import lsst.ts.xml as ts_xml
 
@@ -65,6 +66,21 @@ def get_csc_configurable():
 # ==================
 # Tests
 # ==================
+
+
+def test_salsubsystems_xml_valid():
+    """Test that the SALSubsystems.xml conforms to its schema.
+    """
+    pkgroot = pathlib.Path(__file__).resolve().parents[1]
+    xmlschema_doc = etree.parse(f"{pkgroot}/schema/SALSubsystemSet.xsd")
+    xmlschema = etree.XMLSchema(xmlschema_doc)
+    sal_subsystems_file = get_salsubsystems_file()
+    tree = etree.parse(str(sal_subsystems_file))
+    try:
+        xmlschema.assertValid(tree)
+    except etree.DocumentInvalid as err:
+        assert False, sal_subsystems_file.name + ": " + str(err)
+
 
 def test_salsubsystems_count():
     """Test that SALSubsystems.xml defines the expected number of CSCs.
