@@ -17,7 +17,8 @@ subsystems = [
     'ATAOS', 'ATArchiver', 'ATBuilding', 'ATCamera', 'ATDome',
     'ATDomeTrajectory', 'ATHeaderService', 'ATHexapod', 'ATMCS',
     'ATMonochromator', 'ATPneumatics', 'ATPtg', 'ATSpectrograph', 'ATTCS',
-    'ATWhiteLight', 'CCArchiver', 'CatchupArchiver', 'CBP', 'DIMM', 'Dome',
+    'ATWhiteLight', 'CCArchiver', 'CCCamera', 'CCHeaderService', 'CatchupArchiver',
+    'CBP', 'DIMM', 'Dome',
     'DSM', 'EAS', 'EFD', 'EFDTransformationServer', 'Electrometer', 'Environment',
     'FiberSpectrograph', 'GenericCamera', 'IOTA', 'Hexapod', 'HVAC',
     'LinearStage', 'LOVE', 'MTAOS', 'MTArchiver', 'MTCamera',
@@ -25,7 +26,7 @@ subsystems = [
     'MTLaserTracker', 'MTM1M3', 'MTM1M3TS', 'MTM2', 'MTMount', 'MTPtg', 'MTTCS',
     'MTVMS', 'PointingComponent', 'PromptProcessing', 'Rotator',
     'Scheduler', 'Script', 'ScriptQueue', 'SummitFacility', 'Test',
-    'TunableLaser', 'Watcher', 'CCHeaderService'
+    'TunableLaser', 'Watcher',
 ]
 
 """Define the array of Generic Commands."""

@@ -1,0 +1,386 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="http://project.lsst.org/ts/sal_objects/schema/SALTelemetrySet.xsl"?>
+<SALTelemetrySet xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="http://project.lsst.org/ts/sal_objects/schema/SALTelemetrySet.xsd">
+    <SALTelemetry>
+        <Subsystem>CCCamera</Subsystem>
+        <Version>3.10.2</Version>
+        <Author></Author>
+        <EFDB_Topic>CCCamera_filterChanger</EFDB_Topic>
+        <item>
+            <EFDB_Name>motorTemperature</EFDB_Name>
+            <Description>Measured motor temperature provided by motor controller</Description>
+            <IDL_Type>float</IDL_Type>
+            <Units>Celsius</Units>
+            <Count>1</Count>
+        </item>
+        <item>
+            <EFDB_Name>motorEncoder</EFDB_Name>
+            <Description>Relative position based on motor travel since startup</Description>
+            <IDL_Type>float</IDL_Type>
+            <Units>unitless</Units>
+            <Count>1</Count>
+        </item>
+        <item>
+            <EFDB_Name>linearPosition</EFDB_Name>
+            <Description>Filter changer position measured by linear encoder (0.005 mm)</Description>
+            <IDL_Type>float</IDL_Type>
+            <Units>unitless</Units>
+            <Count>1</Count>
+        </item>
+    </SALTelemetry>    
+    <SALTelemetry>
+        <Subsystem>CCCamera</Subsystem>
+        <Version>3.10.2</Version>
+        <EFDB_Topic>CCCamera_vacuumTurboPump</EFDB_Topic>
+        <item>
+            <EFDB_Name>turboContTempAir</EFDB_Name>
+            <Description>Turbo pump controller air temperature</Description>
+            <IDL_Type>double</IDL_Type>
+            <Units>Celsius</Units>
+            <Count>1</Count>
+        </item>
+        <item>
+            <EFDB_Name>turboContTempSink</EFDB_Name>
+            <Description>Turbo pump controller sink temperature</Description>
+            <IDL_Type>double</IDL_Type>
+            <Units>Celsius</Units>
+            <Count>1</Count>
+        </item>
+        <item>
+            <EFDB_Name>turboCurrent</EFDB_Name>
+            <Description>Turbo pump current</Description>
+            <IDL_Type>double</IDL_Type>
+            <Units>ampere</Units>
+            <Count>1</Count>
+        </item>
+        <item>
+            <EFDB_Name>turboDriveFreq</EFDB_Name>
+            <Description>Turbopump drive frequency</Description>
+            <IDL_Type>double</IDL_Type>
+            <Units>hertz</Units>
+            <Count>1</Count>
+        </item>
+        <item>
+            <EFDB_Name>turboPower</EFDB_Name>
+            <Description>Turbo pump power</Description>
+            <IDL_Type>double</IDL_Type>
+            <Units>watt</Units>
+            <Count>1</Count>
+        </item>
+        <item>
+            <EFDB_Name>turboPumpTemp</EFDB_Name>
+            <Description>Turbo pump temperature</Description>
+            <IDL_Type>double</IDL_Type>
+            <Units>Celsius</Units>
+            <Count>1</Count>
+        </item>
+        <item>
+            <EFDB_Name>turboRPM</EFDB_Name>
+            <Description>Turbo pump RPM</Description>
+            <IDL_Type>float</IDL_Type>
+            <Units>unitless</Units>
+            <Count>1</Count>
+        </item>
+        <item>
+            <EFDB_Name>turboSpeed</EFDB_Name>
+            <Description>Turbo pump speed</Description>
+            <IDL_Type>double</IDL_Type>
+            <Units>unitless</Units>
+            <Count>1</Count>
+        </item>
+        <item>
+            <EFDB_Name>turboStatus</EFDB_Name>
+            <Description>TBD</Description>
+            <IDL_Type>double</IDL_Type>
+            <Units>unitless</Units>
+            <Count>1</Count>
+        </item>
+        <item>
+            <EFDB_Name>turboVoltage</EFDB_Name>
+            <Description>Turbo pump voltage</Description>
+            <IDL_Type>double</IDL_Type>
+            <Units>volt</Units>
+            <Count>1</Count>
+        </item>
+    </SALTelemetry>
+    <SALTelemetry>
+        <Subsystem>CCCamera</Subsystem>
+        <Version>3.10.2</Version>
+        <EFDB_Topic>CCCamera_vacuumIonPump</EFDB_Topic>
+        <item>
+            <EFDB_Name>cIP1_V</EFDB_Name>
+            <Description>Cryo Ion pump 1 voltage</Description>
+            <IDL_Type>double</IDL_Type>
+            <Units>volt</Units>
+            <Count>1</Count>
+        </item>
+        <item>
+            <EFDB_Name>cIP1_I</EFDB_Name>
+            <Description>Cryo Ion pump 1 current</Description>
+            <IDL_Type>double</IDL_Type>
+            <Units>mA</Units>
+            <Count>1</Count>
+        </item>
+    </SALTelemetry>
+    <SALTelemetry>
+        <Subsystem>CCCamera</Subsystem>
+        <Version>3.10.2</Version>
+        <EFDB_Topic>CCCamera_vacuumCryoTelColdPlate1</EFDB_Topic>
+       <item>
+            <EFDB_Name>cold1AutoOff</EFDB_Name>
+            <Description>Cooler auto off state</Description>
+            <IDL_Type>double</IDL_Type>
+            <Units>unitless</Units>
+            <Count>1</Count>
+        </item>
+        <item>
+            <EFDB_Name>cold1Pwr</EFDB_Name>
+            <Description>Cooler power</Description>
+            <IDL_Type>double</IDL_Type>
+            <Units>watt</Units>
+            <Count>1</Count>
+        </item>
+        <item>
+            <EFDB_Name>cold1RejectTemp</EFDB_Name>
+            <Description>Cooler reject temperature</Description>
+            <IDL_Type>double</IDL_Type>
+            <Units>Celsius</Units>
+            <Count>1</Count>
+        </item>
+        <item>
+            <EFDB_Name>cold1Temp</EFDB_Name>
+            <Description>Cooler temperature</Description>
+            <IDL_Type>double</IDL_Type>
+            <Units>Celsius</Units>
+            <Count>1</Count>
+        </item>
+        <item>
+            <EFDB_Name>cold1SetPt</EFDB_Name>
+            <Description>cryo set point</Description>
+            <IDL_Type>double</IDL_Type>
+            <Units>Celsius</Units>
+            <Count>1</Count>
+        </item>
+        <item>
+            <EFDB_Name>cold1SetPwr</EFDB_Name>
+            <Description>Cryo set power</Description>
+            <IDL_Type>double</IDL_Type>
+            <Units>watt</Units>
+            <Count>1</Count>
+        </item>
+        <item>
+            <EFDB_Name>cold1AutoOffTemp</EFDB_Name>
+            <Description>cryo auto off temperature</Description>
+            <IDL_Type>double</IDL_Type>
+            <Units>Celsius</Units>
+            <Count>1</Count>
+        </item>
+        <item>
+            <EFDB_Name>cold1AutoOnTemp</EFDB_Name>
+            <Description>cryo auto on temperature</Description>
+            <IDL_Type>double</IDL_Type>
+            <Units>Celsius</Units>
+            <Count>1</Count>
+        </item>
+    </SALTelemetry>
+    <SALTelemetry>
+        <Subsystem>CCCamera</Subsystem>
+        <Version>3.10.2</Version>
+        <EFDB_Topic>CCCamera_vacuumCryoTelColdPlate2</EFDB_Topic>
+       <item>
+            <EFDB_Name>cold2AutoOff</EFDB_Name>
+            <Description>Cooler auto off state</Description>
+            <IDL_Type>double</IDL_Type>
+            <Units>unitless</Units>
+            <Count>1</Count>
+        </item>
+        <item>
+            <EFDB_Name>cold2Pwr</EFDB_Name>
+            <Description>Cooler power</Description>
+            <IDL_Type>double</IDL_Type>
+            <Units>watt</Units>
+            <Count>1</Count>
+        </item>
+        <item>
+            <EFDB_Name>cold2RejectTemp</EFDB_Name>
+            <Description>Cooler reject temperature</Description>
+            <IDL_Type>double</IDL_Type>
+            <Units>Celsius</Units>
+            <Count>1</Count>
+        </item>
+        <item>
+            <EFDB_Name>cold2Temp</EFDB_Name>
+            <Description>Cooler temperature</Description>
+            <IDL_Type>double</IDL_Type>
+            <Units>Celsius</Units>
+            <Count>1</Count>
+        </item>
+        <item>
+            <EFDB_Name>cold2SetPt</EFDB_Name>
+            <Description>cryo set point</Description>
+            <IDL_Type>double</IDL_Type>
+            <Units>Celsius</Units>
+            <Count>1</Count>
+        </item>
+        <item>
+            <EFDB_Name>cold2SetPwr</EFDB_Name>
+            <Description>Cryo set power</Description>
+            <IDL_Type>double</IDL_Type>
+            <Units>watt</Units>
+            <Count>1</Count>
+        </item>
+        <item>
+            <EFDB_Name>cold2AutoOffTemp</EFDB_Name>
+            <Description>cryo auto off temperature</Description>
+            <IDL_Type>double</IDL_Type>
+            <Units>Celsius</Units>
+            <Count>1</Count>
+        </item>
+        <item>
+            <EFDB_Name>cold2AutoOnTemp</EFDB_Name>
+            <Description>cryo auto on temperature</Description>
+            <IDL_Type>double</IDL_Type>
+            <Units>Celsius</Units>
+            <Count>1</Count>
+        </item>
+    </SALTelemetry>
+    <SALTelemetry>
+        <Subsystem>CCCamera</Subsystem>
+        <Version>3.10.2</Version>
+        <EFDB_Topic>CCCamera_vacuumCryoTelCryoPlate</EFDB_Topic>
+        <item>
+            <EFDB_Name>cryoAutoOff</EFDB_Name>
+            <Description>Cooler auto off state</Description>
+            <IDL_Type>double</IDL_Type>
+            <Units>unitless</Units>
+            <Count>1</Count>
+        </item>
+        <item>
+            <EFDB_Name>cryoPwr</EFDB_Name>
+            <Description>Cooler power</Description>
+            <IDL_Type>double</IDL_Type>
+            <Units>watt</Units>
+            <Count>1</Count>
+        </item>
+        <item>
+            <EFDB_Name>cryoRejectTemp</EFDB_Name>
+            <Description>Cooler reject temperature</Description>
+            <IDL_Type>double</IDL_Type>
+            <Units>Celsius</Units>
+            <Count>1</Count>
+        </item>
+        <item>
+            <EFDB_Name>cryoTemp</EFDB_Name>
+            <Description>Cooler temperature</Description>
+            <IDL_Type>double</IDL_Type>
+            <Units>Celsius</Units>
+            <Count>1</Count>
+        </item>
+        <item>
+            <EFDB_Name>cryoSetPt</EFDB_Name>
+            <Description>cryo set point</Description>
+            <IDL_Type>double</IDL_Type>
+            <Units>Celsius</Units>
+            <Count>1</Count>
+        </item>
+        <item>
+            <EFDB_Name>cryoSetPwr</EFDB_Name>
+            <Description>Cryo set power</Description>
+            <IDL_Type>double</IDL_Type>
+            <Units>watt</Units>
+            <Count>1</Count>
+        </item>
+        <item>
+            <EFDB_Name>cryoAutoOffTemp</EFDB_Name>
+            <Description>cryo auto off temperature</Description>
+            <IDL_Type>double</IDL_Type>
+            <Units>Celsius</Units>
+            <Count>1</Count>
+        </item>
+        <item>
+            <EFDB_Name>cryoAutoOnTemp</EFDB_Name>
+            <Description>cryo auto on temperature</Description>
+            <IDL_Type>double</IDL_Type>
+            <Units>Celsius</Units>
+            <Count>1</Count>
+        </item>
+    </SALTelemetry>
+    <SALTelemetry>
+        <Subsystem>CCCamera</Subsystem>
+        <Version>3.10.2</Version>
+        <EFDB_Topic>CCCamera_vacuumPressureGauge</EFDB_Topic>
+        <item>
+            <EFDB_Name>vqmpressure</EFDB_Name>
+            <Description>Pressure as measured by VQM gauge</Description>
+            <IDL_Type>double</IDL_Type>
+            <Units>Torr</Units>
+            <Count>1</Count>
+        </item>
+    </SALTelemetry>
+    <SALTelemetry>
+    <Subsystem>CCCamera</Subsystem>
+    <Version>3.10.2</Version>
+    <Author></Author>
+    <EFDB_Topic>CCCamera_bonnShutter</EFDB_Topic>
+    <item>
+        <EFDB_Name>shutter5V</EFDB_Name>
+        <Description>Measured 5v supply coltage to bonn shutter</Description>
+        <IDL_Type>float</IDL_Type>
+        <Units>volt</Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>shutter36V</EFDB_Name>
+        <Description>Measured 24v supply voltage to bonn shutter</Description>
+        <IDL_Type>float</IDL_Type>
+        <Units>volt</Units>
+        <Count>1</Count>
+    </item>
+</SALTelemetry>
+
+<SALTelemetry>
+ <Version>3.10.2</Version>
+        <EFDB_Topic>CCCamera_vacuumPowerDistributionUnit</EFDB_Topic>
+        <item>
+            <EFDB_Name>pDU20Current</EFDB_Name>
+            <Description>PDU 20 current</Description>
+            <IDL_Type>double</IDL_Type>
+            <Units>ampere</Units>
+            <Count>1</Count>
+        </item>
+        <item>
+            <EFDB_Name>pDU20Power</EFDB_Name>
+            <Description>PDU 20 power</Description>
+            <IDL_Type>double</IDL_Type>
+            <Units>ampere</Units>
+            <Count>1</Count>
+        </item>
+        <item>
+            <EFDB_Name>pDU15Current</EFDB_Name>
+            <Description>PDU 15 current</Description>
+            <IDL_Type>double</IDL_Type>
+            <Units>ampere</Units>
+            <Count>1</Count>
+        </item>
+        <item>
+            <EFDB_Name>pDU15Power</EFDB_Name>
+            <Description>PDU 15 power</Description>
+            <IDL_Type>double</IDL_Type>
+            <Units>watt</Units>
+            <Count>1</Count>
+        </item>
+</SALTelemetry>
+<SALTelemetry>
+ <Version>3.10.2</Version>
+        <EFDB_Topic>CCCamera_vacuumStatus</EFDB_Topic>
+        <item>
+            <EFDB_Name>vQMState</EFDB_Name>
+            <Description>vacuum state</Description>
+            <IDL_Type>double</IDL_Type>
+            <Units>ampere</Units>
+            <Count>1</Count>
+        </item>
+</SALTelemetry>
+
+</SALTelemetrySet>

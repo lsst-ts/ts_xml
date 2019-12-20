@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 import pytest
+from lxml import etree
 import xml.etree.ElementTree as et
 import lsst.ts.xml as ts_xml
 
