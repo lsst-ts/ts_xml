@@ -1,13 +1,12 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-import pathlib
 import pytest
 from lxml import etree
 import lsst.ts.xml as ts_xml
 
 
 def get_xml_schema(saltype):
-    pkgroot = pathlib.Path(__file__).resolve().parents[1]
+    pkgroot = ts_xml.get_pkg_root()
     xmlschema_doc = etree.parse(f"{pkgroot}/schema/{saltype}Set.xsd")
     xmlschema = etree.XMLSchema(xmlschema_doc)
     return xmlschema

@@ -1,6 +1,5 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-import pathlib
 import pytest
 from lxml import etree
 import xml.etree.ElementTree as et
@@ -8,7 +7,7 @@ import lsst.ts.xml as ts_xml
 
 
 def get_salsubsystems_file():
-    pkgroot = pathlib.Path(__file__).resolve().parents[1]
+    pkgroot = ts_xml.get_pkg_root()
     sal_subsystems_file = pkgroot / "sal_interfaces/SALSubsystems.xml"
     return sal_subsystems_file
 
@@ -71,7 +70,7 @@ def get_csc_configurable():
 def test_salsubsystems_xml_valid():
     """Test that the SALSubsystems.xml conforms to its schema.
     """
-    pkgroot = pathlib.Path(__file__).resolve().parents[1]
+    pkgroot = ts_xml.get_pkg_root()
     xmlschema_doc = etree.parse(f"{pkgroot}/schema/SALSubsystemSet.xsd")
     xmlschema = etree.XMLSchema(xmlschema_doc)
     sal_subsystems_file = get_salsubsystems_file()
