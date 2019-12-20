@@ -17,7 +17,7 @@
 		<xsd:element name="Description"		minOccurs="1" maxOccurs="1" type="xsd:string"/>
 		<xsd:element name="Enumeration" 	minOccurs="1" maxOccurs="1" type="xsd:string"/>
 		<xsd:element name="Generics" 		minOccurs="1" maxOccurs="1" type="xsd:string"/>
-		<xsd:element name="Version" 		minOccurs="1" maxOccurs="1" type="version"/>
+		<xsd:element name="Version" 		minOccurs="0" maxOccurs="1" type="xsd:string"/>
 		<xsd:element name="Author" 		minOccurs="1" maxOccurs="1" type="xsd:string"/>
 		<xsd:element name="ActiveDevelopers" 	minOccurs="1" maxOccurs="1" type="xsd:string"/>
 		<xsd:element name="PrincipalCSCOwner" 	minOccurs="1" maxOccurs="1" type="xsd:string"/>
@@ -31,7 +31,8 @@
 		<xsd:element name="RuntimeLanguages" 	minOccurs="1" maxOccurs="1" type="xsd:string"/>
 		<xsd:element name="VendorPoC" 		minOccurs="0" maxOccurs="unbounded" type="xsd:string"/>
 		<xsd:element name="ErrorCode" 		minOccurs="0" maxOccurs="unbounded" type="xsd:string"/>
-		<xsd:element name="Simulator" 		minOccurs="1" maxOccurs="1" type="xsd:boolean"/>
+		<xsd:element name="Simulator" 		minOccurs="1" maxOccurs="1" type="yes-no"/>
+		<xsd:element name="Configurable"	minOccurs="1" maxOccurs="1" type="yes-no"/>
     </xsd:choice>
  </xsd:complexType>
 
@@ -41,11 +42,15 @@
   </xsd:sequence>
  </xsd:complexType>
 
- <xsd:simpleType name="version">
-    <xsd:restriction base="xsd:token">
-      <xsd:pattern value="\d+\.\d+(\.\d+)?"/>
-    </xsd:restriction>
- </xsd:simpleType>
+<xsd:simpleType name="yes-no">
+  <xsd:annotation>
+    <xsd:documentation>The yes-no type is used for boolean-like attributes. We cannot use W3C XML Schema booleans due to their restrictions on expression of boolean values.</xsd:documentation>
+  </xsd:annotation>
+  <xsd:restriction base="xsd:token">
+    <xsd:enumeration value="Yes"/>
+    <xsd:enumeration value="No"/>
+  </xsd:restriction>
+</xsd:simpleType>
 
  <xsd:attribute name="updateDate"    type="xsd:date"/>
 
