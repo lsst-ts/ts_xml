@@ -1,14 +1,12 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-import pathlib
 import pytest
 import xml.etree.ElementTree as et
 import lsst.ts.xml as ts_xml
 
 
 def get_salgenerics_file():
-    pkgroot = pathlib.Path(__file__).resolve().parents[1]
-    sal_generics_file = pkgroot / "sal_interfaces/SALGenerics.xml"
+    sal_generics_file = ts_xml.get_sal_interfaces_dir() / "SALGenerics.xml"
     return sal_generics_file
 
 
