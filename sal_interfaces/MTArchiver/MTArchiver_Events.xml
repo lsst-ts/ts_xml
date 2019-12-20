@@ -4,154 +4,94 @@
 	xsi:noNamespaceSchemaLocation="http://project.lsst.org/ts/sal_objects/schema/SALEventSet.xsd">
 <SALEvent>
     <Subsystem>MTArchiver</Subsystem>
-    <Version>3.8</Version>
+    <Version>3.9</Version>
     <Author></Author>
-    <EFDB_Topic>MTArchiver_logevent_mtArchiverEntityShutdown</EFDB_Topic>
-    <Alias>mtArchiverEntityShutdown</Alias>
-    <Explanation>http://project.lsst.org/ts/sal_objects/help/MTArchiver_logevent_mtArchiverEntityShutdown.html</Explanation>
+    <EFDB_Topic>MTArchiver_logevent_imageRetrievalForArchiving</EFDB_Topic>
+    <Alias>imageRetrievalForArchiving</Alias>
+    <Explanation>http://project.lsst.org/ts/sal_objects/help/MTArchiver_logevent_imageRetrievalForArchiving.html</Explanation>
     <item>
-        <EFDB_Name>name</EFDB_Name>
-        <Description>Entity name.</Description>
-        <IDL_Type>string</IDL_Type>
-        <IDL_Size>128</IDL_Size>
-        <Units>unitless</Units>
-        <Count>1</Count>
-    </item>
-    <item>
-        <EFDB_Name>identifier</EFDB_Name>
-        <Description>Entity identifier</Description>
-        <IDL_Type>double</IDL_Type>
-        <Units>unitless</Units>
-        <Count>1</Count>
-    </item>
-    <item>
-        <EFDB_Name>timestamp</EFDB_Name>
-        <Description>Timestamp the event was generated.</Description>
+        <EFDB_Name>camera</EFDB_Name>
+        <Description>camera name from which the image was retrieved</Description>
         <IDL_Type>string</IDL_Type>
         <IDL_Size>256</IDL_Size>
         <Units>unitless</Units>
         <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>address</EFDB_Name>
-        <Description>Entity address.</Description>
+        <EFDB_Name>obsid</EFDB_Name>
+        <Description>obsid of retrieved image</Description>
+        <IDL_Type>string</IDL_Type>
+        <IDL_Size>256</IDL_Size>
+        <Units>unitless</Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>archiverName</EFDB_Name>
+        <Description>name of archiver service that retrieved the image</Description>
+        <IDL_Type>string</IDL_Type>
+        <IDL_Size>256</IDL_Size>
+        <Units>unitless</Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>statusCode</EFDB_Name>
+        <Description>status code indicating success (0) or error (>0)</Description>
         <IDL_Type>long</IDL_Type>
+        <Units>unitless</Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>description</EFDB_Name>
+        <Description>description of the status code</Description>
+        <IDL_Type>string</IDL_Type>
+        <IDL_Size>256</IDL_Size>
         <Units>unitless</Units>
         <Count>1</Count>
     </item>
 </SALEvent>
 <SALEvent>
     <Subsystem>MTArchiver</Subsystem>
-    <Version>3.8</Version>
+    <Version>3.9</Version>
     <Author></Author>
-    <EFDB_Topic>MTArchiver_logevent_mtArchiverEntityStartup</EFDB_Topic>
-    <Alias>mtArchiverEntityStartup</Alias>
-    <Explanation>http://project.lsst.org/ts/sal_objects/help/MTArchiver_logevent_mtArchiverEntityStartup.html</Explanation>
+    <EFDB_Topic>MTArchiver_logevent_imageInOODS</EFDB_Topic>
+    <Alias>imageInOODS</Alias>
+    <Explanation>http://project.lsst.org/ts/sal_objects/help/MTArchiver_logevent_imageInOODS.html</Explanation>
     <item>
-        <EFDB_Name>name</EFDB_Name>
-        <Description>Entity name.</Description>
-        <IDL_Type>string</IDL_Type>
-        <IDL_Size>128</IDL_Size>
-        <Units>unitless</Units>
-        <Count>1</Count>
-    </item>
-    <item>
-        <EFDB_Name>identifier</EFDB_Name>
-        <Description>Entity identifier</Description>
-        <IDL_Type>double</IDL_Type>
-        <Units>unitless</Units>
-        <Count>1</Count>
-    </item>
-    <item>
-        <EFDB_Name>timestamp</EFDB_Name>
-        <Description>Timestamp the event was generated.</Description>
+        <EFDB_Name>camera</EFDB_Name>
+        <Description>camera name from which the image was retrieved</Description>
         <IDL_Type>string</IDL_Type>
         <IDL_Size>256</IDL_Size>
         <Units>unitless</Units>
         <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>address</EFDB_Name>
-        <Description>Entity address.</Description>
-        <IDL_Type>long</IDL_Type>
-        <Units>unitless</Units>
-        <Count>1</Count>
-    </item>
-</SALEvent>
-<SALEvent>
-    <Subsystem>MTArchiver</Subsystem>
-    <Version>3.8</Version>
-    <Author></Author>
-    <EFDB_Topic>MTArchiver_logevent_mtArchiverEntitySummaryState</EFDB_Topic>
-    <Alias>mtArchiverEntitySummaryState</Alias>
-    <Explanation>http://project.lsst.org/ts/sal_objects/help/MTArchiver_logevent_mtArchiverEntitySummaryState.html</Explanation>
-    <item>
-        <EFDB_Name>name</EFDB_Name>
-        <Description>Entity name.</Description>
-        <IDL_Type>string</IDL_Type>
-        <IDL_Size>128</IDL_Size>
-        <Units>unitless</Units>
-        <Count>1</Count>
-    </item>
-    <item>
-        <EFDB_Name>identifier</EFDB_Name>
-        <Description>Entity Identifies.</Description>
-        <IDL_Type>double</IDL_Type>
-        <Units>unitless</Units>
-        <Count>1</Count>
-    </item>
-    <item>
-        <EFDB_Name>timestamp</EFDB_Name>
-        <Description>Timestamp the envent was generated.</Description>
+        <EFDB_Name>obsid</EFDB_Name>
+        <Description>obsid of image ingested into OODS</Description>
         <IDL_Type>string</IDL_Type>
         <IDL_Size>256</IDL_Size>
         <Units>unitless</Units>
         <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>address</EFDB_Name>
-        <Description>Entity address.</Description>
+        <EFDB_Name>archiverName</EFDB_Name>
+        <Description>name of archiver service that retrieved the image</Description>
+        <IDL_Type>string</IDL_Type>
+        <IDL_Size>256</IDL_Size>
+        <Units>unitless</Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>statusCode</EFDB_Name>
+        <Description>status code indicating success (0) or error (>0)</Description>
         <IDL_Type>long</IDL_Type>
         <Units>unitless</Units>
         <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>currentState</EFDB_Name>
-        <Description>Entity current state.</Description>
+        <EFDB_Name>description</EFDB_Name>
+        <Description>description of the status code</Description>
         <IDL_Type>string</IDL_Type>
-        <IDL_Size>128</IDL_Size>
-        <Units>unitless</Units>
-        <Count>1</Count>
-    </item>
-    <item>
-        <EFDB_Name>previousState</EFDB_Name>
-        <Description>Entity previous state.</Description>
-        <IDL_Type>string</IDL_Type>
-        <IDL_Size>128</IDL_Size>
-        <Units>unitless</Units>
-        <Count>1</Count>
-    </item>
-    <item>
-        <EFDB_Name>executing</EFDB_Name>
-        <Description>Task being executed.</Description>
-        <IDL_Type>string</IDL_Type>
-        <IDL_Size>128</IDL_Size>
-        <Units>unitless</Units>
-        <Count>1</Count>
-    </item>
-    <item>
-        <EFDB_Name>commandsAvailable</EFDB_Name>
-        <Description>List of available commands.</Description>
-        <IDL_Type>string</IDL_Type>
-        <IDL_Size>128</IDL_Size>
-        <Units>unitless</Units>
-        <Count>1</Count>
-    </item>
-    <item>
-        <EFDB_Name>configurationsAvailable</EFDB_Name>
-        <Description>List of available configurations</Description>
-        <IDL_Type>string</IDL_Type>
-        <IDL_Size>128</IDL_Size>
+        <IDL_Size>256</IDL_Size>
         <Units>unitless</Units>
         <Count>1</Count>
     </item>
