@@ -122,28 +122,20 @@
     <Subsystem>Rotator</Subsystem>
     <Version>3.5.1</Version>
     <Author></Author>
-    <EFDB_Topic>Rotator_logevent_trackLost</EFDB_Topic>
-    <Alias>trackLost</Alias>
-    <Description>This event is generated if system stops tracking within limits or if we do not receive a new track command within 150ms (three iterations) following the last track command</Description>
+    <EFDB_Topic>Rotator_logevent_tracking</EFDB_Topic>
+    <Alias>tracking</Alias>
+    <Description>Specify whether the rotator is tracking.</Description>
     <item>
-        <EFDB_Name>timestamp</EFDB_Name>
-        <Description>timestamp</Description>
-        <IDL_Type>double</IDL_Type>
+        <EFDB_Name>tracking</EFDB_Name>
+        <Description>Is the rotator tracking? True whenever 3 consecutive 50 ms track commands have been applied.</Description>
+        <IDL_Type>boolean</IDL_Type>
         <Units>unitless</Units>
         <Count>1</Count>
     </item>
-</SALEvent>
-<SALEvent>
-    <Subsystem>Rotator</Subsystem>
-    <Version>3.5.1</Version>
-    <Author></Author>
-    <EFDB_Topic>Rotator_logevent_tracking</EFDB_Topic>
-    <Alias>tracking</Alias>
-    <Description>Tracking is successful and this event is issued whenever once 3 consecutive 50 ms track commands have been applied</Description>
     <item>
-        <EFDB_Name>timestamp</EFDB_Name>
-        <Description>timestamp</Description>
-        <IDL_Type>double</IDL_Type>
+        <EFDB_Name>lost</EFDB_Name>
+        <Description>Did tracking fail? True if system tracks into a limit or we do not receive a new track command within 150ms (three iterations) following the last track command.</Description>
+        <IDL_Type>boolean</IDL_Type>
         <Units>unitless</Units>
         <Count>1</Count>
     </item>
