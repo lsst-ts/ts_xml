@@ -53,12 +53,12 @@
     <Property></Property>
     <Action></Action>
     <Value></Value>
-    <Description>Move the rotator to the position specified by the setPosition command. During the move the enabled substate will be MovingPointToPoint, then it will return to Stationary.</Description>
+    <Description>Move the rotator to the specified position and stop. During the move the enabled substate will be MovingPointToPoint, then it will return to Stationary.</Description>
     <item>
-        <EFDB_Name>state</EFDB_Name>
-        <Description>Not used.</Description>
-        <IDL_Type>boolean</IDL_Type>
-        <Units>unitless</Units>
+        <EFDB_Name>position</EFDB_Name>
+        <Description>Desired position.</Description>
+        <IDL_Type>double</IDL_Type>
+        <Units>deg</Units>
         <Count>1</Count>
     </item>
 </SALCommand>
@@ -160,26 +160,6 @@
         <Description>state</Description>
         <IDL_Type>boolean</IDL_Type>
         <Units>unitless</Units>
-        <Count>1</Count>
-    </item>
-</SALCommand>
-
-<SALCommand>
-    <Subsystem>Rotator</Subsystem>
-    <Version>3.5.1</Version>
-    <Author></Author>
-    <EFDB_Topic>Rotator_command_positionSet</EFDB_Topic>
-    <Alias>positionSet</Alias>
-    <Device></Device>
-    <Property></Property>
-    <Action></Action>
-    <Value></Value>
-    <Description>Set the desired fixed position of the rotator. Issue the move command to actually move the rotator.</Description>
-    <item>
-        <EFDB_Name>angle</EFDB_Name>
-        <Description>angle</Description>
-        <IDL_Type>double</IDL_Type>
-        <Units>deg</Units>
         <Count>1</Count>
     </item>
 </SALCommand>
