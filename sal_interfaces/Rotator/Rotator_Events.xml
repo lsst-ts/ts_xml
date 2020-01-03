@@ -115,6 +115,35 @@
     <Subsystem>Rotator</Subsystem>
     <Version>3.5.1</Version>
     <Author></Author>
+    <EFDB_Topic>Rotator_logevent_target</EFDB_Topic>
+    <Alias>target</Alias>
+    <Description>Commanded target position, velocity and time.</Description>
+    <item>
+        <EFDB_Name>position</EFDB_Name>
+        <Description>Target position at the time specified by "tai".</Description>
+        <IDL_Type>double</IDL_Type>
+        <Units>deg</Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>velocity</EFDB_Name>
+        <Description>Target velocity at the time specified by "tai".</Description>
+        <IDL_Type>double</IDL_Type>
+        <Units>deg/second</Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>tai</EFDB_Name>
+        <Description>TAI time of the "position" and "velocity" fields.</Description>
+        <IDL_Type>double</IDL_Type>
+        <Units>second</Units>
+        <Count>1</Count>
+    </item>
+</SALEvent>
+<SALEvent>
+    <Subsystem>Rotator</Subsystem>
+    <Version>3.5.1</Version>
+    <Author></Author>
     <EFDB_Topic>Rotator_logevent_tracking</EFDB_Topic>
     <Alias>tracking</Alias>
     <Description>Specify whether the rotator is tracking.</Description>
