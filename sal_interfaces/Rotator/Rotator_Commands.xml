@@ -73,26 +73,26 @@
     <Property></Property>
     <Action></Action>
     <Value></Value>
-    <Description>Specify target position, velocity and time in "slewing or tracking" mode (which is started with the trackStart command and concluded with the stop command). The maximum allowed time between track commands is a configuration parameter.</Description>
+    <Description>Specify desired rotator position and velocity "slewing or tracking" mode, which is started with the trackStart command and concluded with the stop command.</Description>
     <item>
         <EFDB_Name>angle</EFDB_Name>
-        <Description>Rotator absolute angle position in degrees (it could be a positive or a negative value)</Description>
+        <Description>Desired position at the time specified by "tai".</Description>
         <IDL_Type>double</IDL_Type>
         <Units>deg</Units>
         <Count>1</Count>
     </item>
     <item>
         <EFDB_Name>velocity</EFDB_Name>
-        <Description>Rotator velocity in degrees per second (positive or negative)</Description>
+        <Description>Desired velocity at the time specified by "tai".</Description>
         <IDL_Type>double</IDL_Type>
-        <Units>deg/s</Units>
+        <Units>deg/second</Units>
         <Count>1</Count>
     </item>
     <item>
         <EFDB_Name>tai</EFDB_Name>
-        <Description>Time in seconds</Description>
+        <Description>TAI time of the "position" and "velocity" fields.</Description>
         <IDL_Type>double</IDL_Type>
-        <Units>s</Units>
+        <Units>second</Units>
         <Count>1</Count>
     </item>
 </SALCommand>
