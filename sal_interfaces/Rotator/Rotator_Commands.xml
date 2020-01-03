@@ -188,53 +188,6 @@
     <Subsystem>Rotator</Subsystem>
     <Version>3.5.1</Version>
     <Author></Author>
-    <EFDB_Topic>Rotator_command_moveConstantVelocity</EFDB_Topic>
-    <Alias>moveConstantVelocity</Alias>
-    <Device></Device>
-    <Property></Property>
-    <Action></Action>
-    <Value></Value>
-    <Description>Move rotator at the velocity and for the duration specified by the velocitySet command, then halt motion. During the move the enabled substate will be ConstantVelocity, then it will return to Stationary.</Description>
-    <item>
-        <EFDB_Name>state</EFDB_Name>
-        <Description>state</Description>
-        <IDL_Type>boolean</IDL_Type>
-        <Units>dimensionless</Units>
-        <Count>1</Count>
-    </item>
-</SALCommand>
-
-<SALCommand>
-    <Subsystem>Rotator</Subsystem>
-    <Version>3.5.1</Version>
-    <Author></Author>
-    <EFDB_Topic>Rotator_command_velocitySet</EFDB_Topic>
-    <Alias>velocitySet</Alias>
-    <Device></Device>
-    <Property></Property>
-    <Action></Action>
-    <Value></Value>
-    <Description>Set a desired velocity and duration for move at constant velocity. Initiate the move with the moveConstantVelocity command.</Description>
-    <item>
-        <EFDB_Name>velocity</EFDB_Name>
-        <Description>Desired constant velocity. The maximum allowed velocity is 0.068 deg/sec.</Description>
-        <IDL_Type>double</IDL_Type>
-        <Units>deg/s</Units>
-        <Count>1</Count>
-    </item>
-    <item>
-        <EFDB_Name>moveDuration</EFDB_Name>
-        <Description>Duration of the move.</Description>
-        <IDL_Type>double</IDL_Type>
-        <Units>s</Units>
-        <Count>1</Count>
-    </item>
-</SALCommand>
-
-<SALCommand>
-    <Subsystem>Rotator</Subsystem>
-    <Version>3.5.1</Version>
-    <Author></Author>
     <EFDB_Topic>Rotator_command_stop</EFDB_Topic>
     <Alias>stop</Alias>
     <Device></Device>
