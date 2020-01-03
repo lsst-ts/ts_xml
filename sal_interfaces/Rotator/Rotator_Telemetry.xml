@@ -6,44 +6,25 @@
     <Subsystem>Rotator</Subsystem>
     <Version>3.5.1</Version>
     <Author></Author>
-    <EFDB_Topic>Rotator_Electrical</EFDB_Topic>
-    <item>
-        <EFDB_Name>CopleyStatusWordDrive</EFDB_Name>
-        <Description>CopleyStatusWordDrive</Description>
-        <IDL_Type>unsigned short</IDL_Type>
-        <Units>unitless</Units>
-        <Count>2</Count>
-    </item>
-    <item>
-        <EFDB_Name>CopleyLatchingFaultStatus</EFDB_Name>
-        <Description>CopleyLatchingFaultStatus</Description>
-        <IDL_Type>unsigned short</IDL_Type>
-        <Units>unitless</Units>
-        <Count>2</Count>
-    </item>
-</SALTelemetry>
-<SALTelemetry>
-    <Subsystem>Rotator</Subsystem>
-    <Version>3.5.1</Version>
-    <Author></Author>
     <EFDB_Topic>Rotator_Application</EFDB_Topic>
+    <Description>Commanded and actual rotator position. Note: this will be renamed to "application" once we can update the camera cable wrap system.</Description>
     <item>
         <EFDB_Name>Demand</EFDB_Name>
-        <Description>Commanded rotator position in degrees.</Description>
+        <Description>Commanded rotator position.</Description>
         <IDL_Type>double</IDL_Type>
         <Units>deg</Units>
         <Count>1</Count>
     </item>
     <item>
         <EFDB_Name>Position</EFDB_Name>
-        <Description>Actual rotator position in degrees.</Description>
+        <Description>Actual rotator position.</Description>
         <IDL_Type>double</IDL_Type>
         <Units>deg</Units>
         <Count>1</Count>
     </item>
     <item>
         <EFDB_Name>Error</EFDB_Name>
-        <Description>Indication of a rotator following error.</Description>
+        <Description>Rotator following error.</Description>
         <IDL_Type>double</IDL_Type>
         <Units>deg</Units>
         <Count>1</Count>
@@ -53,19 +34,41 @@
     <Subsystem>Rotator</Subsystem>
     <Version>3.5.1</Version>
     <Author></Author>
-    <EFDB_Topic>Rotator_Motors</EFDB_Topic>
+    <EFDB_Topic>Rotator_electrical</EFDB_Topic>
     <item>
-        <EFDB_Name>Calibrated</EFDB_Name>
-        <Description>Encoder readings from each rotator motor scaled to degrees of the rotator</Description>
+        <EFDB_Name>copleyStatusWordDrive</EFDB_Name>
+        <Description>Copley drive status word.</Description>
+        <IDL_Type>unsigned short</IDL_Type>
+        <Units>unitless</Units>
+        <Count>2</Count>
+    </item>
+    <item>
+        <EFDB_Name>copleyLatchingFaultStatus</EFDB_Name>
+        <Description>Copley latching fault status register.</Description>
+        <IDL_Type>unsigned short</IDL_Type>
+        <Units>unitless</Units>
+        <Count>2</Count>
+    </item>
+</SALTelemetry>
+<SALTelemetry>
+    <Subsystem>Rotator</Subsystem>
+    <Version>3.5.1</Version>
+    <Author></Author>
+    <EFDB_Topic>Rotator_motors</EFDB_Topic>
+    <Description>Encoder readings from each rotator motor</Description>
+    <item>
+        <EFDB_Name>calibrated</EFDB_Name>
+        <Description>Encoder readings scaled to degrees of motion of the rotator.</Description>
         <IDL_Type>double</IDL_Type>
         <Units>deg</Units>
         <Count>2</Count>
     </item>
     <item>
-        <EFDB_Name>Raw</EFDB_Name>
-        <Description>Encoder readings from each rotator motor in counts</Description>
+        <EFDB_Name>raw</EFDB_Name>
+        <Description>Encoder readings in raw counts.</Description>
         <IDL_Type>double</IDL_Type>
         <Units>unitless</Units>
         <Count>2</Count>
     </item>
-</SALTelemetry></SALTelemetrySet>
+</SALTelemetry>
+</SALTelemetrySet>
