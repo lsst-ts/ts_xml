@@ -3,9 +3,10 @@
 <SALEventSet xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:noNamespaceSchemaLocation="http://lsst-sal.tuc.noao.edu/schema/SALEventSet.xsd">
 <Enumeration>SummaryState_DisabledState,SummaryState_EnabledState,SummaryState_FaultState,SummaryState_OfflineState,SummaryState_StandbyState</Enumeration>
-<Enumeration>DetailedState_DisabledState,DetailedState_EnabledState,DetailedState_FaultState,DetailedState_OfflineState,DetailedState_StandbyState,DetailedState_MonoSettingUpState,DetailedState_StoppedState,DetailedState_StoppedCoolerOffState,DetailedState_StoppedLightOffState,DetailedState_StoppedLightOnState,DetailedState_MonoManualSetup,DetailedState_MonoAutomaticSetup</Enumeration>
+<Enumeration>DetailedState_NotEnabled,DetailedState_Ready,DetailedState_ChangingWavelength,DetailedState_CalibratingWavelength,DetailedState_Powering,DetailedState_SelectingGrating,DetailedState_ChangingSlitWidth,DetailedState_UpdatingMonochromatorSetup</Enumeration>
+<Enumeration>Status_SettingUp,Status_Ready,Status_Offline,Status_Fault</Enumeration>
 <Enumeration>Grating_Blue,Grating_Red,Grating_Mirror</Enumeration>
-<Enumeration>Slit_FrontEntrance,Slit_FrontExit</Enumeration>
+<Enumeration>Slit_Entry,Slit_Exit</Enumeration>
 <Enumeration>LightStatus_On,LightStatus_Off</Enumeration>
 <Enumeration>Device_Monochromator,Device_LightSource,Device_ThermoelectricCooler</Enumeration>
 
@@ -55,6 +56,22 @@
                 <Count>1</Count>
 <Enumeration>detailedState_DetailedState_DisabledState,detailedState_DetailedState_EnabledState,detailedState_DetailedState_FaultState,detailedState_DetailedState_OfflineState,detailedState_DetailedState_StandbyState,detailedState_DetailedState_MonoSettingUpState,detailedState_DetailedState_StoppedState,detailedState_DetailedState_StoppedCoolerOffState,detailedState_DetailedState_StoppedLightOffState,detailedState_DetailedState_StoppedLightOnState,detailedState_DetailedState_MonoManualSetup,detailedState_DetailedState_MonoAutomaticSetup
 </Enumeration>
+            </item>
+</SALEvent>
+<SALEvent>
+    <Subsystem>ATMonochromator</Subsystem>
+    <Version>3.5.2</Version>
+    <Author></Author>
+    <EFDB_Topic>ATMonochromator_logevent_status</EFDB_Topic>
+    <Alias>status</Alias>
+    <Description>Controller status</Description>
+            <item>
+                <EFDB_Name>status</EFDB_Name>
+                <Description>An enumeration indicating the controller status.</Description>
+                <!-- Enumeration: DetailedState -->
+                <IDL_Type>long</IDL_Type>
+                <Units>dimensionless</Units>
+                <Count>1</Count>
             </item>
 </SALEvent>
 <SALEvent>
@@ -188,12 +205,12 @@
     <Description>Publishes the slitwidth</Description>
     <item>
         <EFDB_Name>slit</EFDB_Name>
-        <Description>Specifies which slit. Front entrance slit or front exit slit</Description>
+        <Description>Specifies which slit. Entry or exit slit</Description>
         <!-- Enumeration: Slit -->
         <IDL_Type>long</IDL_Type>
         <Units>dimensionless</Units>
         <Count>1</Count>
-        <Enumeration>slit_Slit_FrontEntrance,slit_Slit_FrontExit</Enumeration>
+        <Enumeration>slit_Slit_Entry,slit_Slit_Exit</Enumeration>
     </item>
     <item>
         <EFDB_Name>slitPosition</EFDB_Name>
@@ -207,6 +224,36 @@
         <Description>timestamp</Description>
         <IDL_Type>double</IDL_Type>
         <Units>unitless</Units>
+        <Count>1</Count>
+    </item>
+</SALEvent>
+<SALEvent>
+    <Subsystem>ATMonochromator</Subsystem>
+    <Version>3.5.2</Version>
+    <Author></Author>
+    <EFDB_Topic>ATMonochromator_logevent_entrySlitWidth</EFDB_Topic>
+    <Alias>entrySlitWidth</Alias>
+    <Description>Publishes the slitwidth</Description>
+    <item>
+        <EFDB_Name>width</EFDB_Name>
+        <Description>Entry slit width</Description>
+        <IDL_Type>float</IDL_Type>
+        <Units>mm</Units>
+        <Count>1</Count>
+    </item>
+</SALEvent>
+<SALEvent>
+    <Subsystem>ATMonochromator</Subsystem>
+    <Version>3.5.2</Version>
+    <Author></Author>
+    <EFDB_Topic>ATMonochromator_logevent_exitSlitWidth</EFDB_Topic>
+    <Alias>exitSlitWidth</Alias>
+    <Description>Publishes the slitwidth</Description>
+    <item>
+        <EFDB_Name>width</EFDB_Name>
+        <Description>Exit slit width</Description>
+        <IDL_Type>float</IDL_Type>
+        <Units>mm</Units>
         <Count>1</Count>
     </item>
 </SALEvent>
@@ -304,49 +351,49 @@
         <EFDB_Name>wavelengthGR1</EFDB_Name>
         <Description>Minimum wavelength to use with Grating 1</Description>
         <IDL_Type>float</IDL_Type>
-        <Units>meter</Units>
+        <Units>nm</Units>
         <Count>1</Count>
     </item>
     <item>
         <EFDB_Name>wavelengthGR1_GR2</EFDB_Name>
         <Description>Wavelength to use to change to Grating 2</Description>
         <IDL_Type>float</IDL_Type>
-        <Units>meter</Units>
+        <Units>nm</Units>
         <Count>1</Count>
     </item>
     <item>
         <EFDB_Name>wavelengthGR2</EFDB_Name>
         <Description>Maximum wavelength to use with Grating 2</Description>
         <IDL_Type>float</IDL_Type>
-        <Units>meter</Units>
+        <Units>nm</Units>
         <Count>1</Count>
     </item>
     <item>
         <EFDB_Name>minSlitWidth</EFDB_Name>
         <Description>Minimum acceptable Slit width</Description>
         <IDL_Type>float</IDL_Type>
-        <Units>dimensionless</Units>
+        <Units>mm</Units>
         <Count>1</Count>
     </item>
     <item>
         <EFDB_Name>maxSlitWidth</EFDB_Name>
         <Description>Maximum acceptable Slit Width</Description>
         <IDL_Type>float</IDL_Type>
-        <Units>dimensionless</Units>
+        <Units>mm</Units>
         <Count>1</Count>
     </item>
     <item>
         <EFDB_Name>minWavelength</EFDB_Name>
         <Description>Minimum acceptable wavelength</Description>
         <IDL_Type>float</IDL_Type>
-        <Units>meter</Units>
+        <Units>nm</Units>
         <Count>1</Count>
     </item>
     <item>
         <EFDB_Name>maxWavelength</EFDB_Name>
-        <Description>Maximum  acceptable Wavelength</Description>
+        <Description>Maximum acceptable Wavelength</Description>
         <IDL_Type>float</IDL_Type>
-        <Units>meter</Units>
+        <Units>nm</Units>
         <Count>1</Count>
     </item>
 </SALEvent></SALEventSet>
