@@ -7,6 +7,26 @@
     <Subsystem>Hexapod</Subsystem>
     <Version>3.5.1</Version>
     <Author></Author>
+    <EFDB_Topic>Hexapod_command_clearError</EFDB_Topic>
+    <Alias>clearError</Alias>
+    <Device></Device>
+    <Property></Property>
+    <Action></Action>
+    <Value></Value>
+    <Explanation>Clear the fault state</Explanation>
+    <item>
+        <EFDB_Name>state</EFDB_Name>
+        <Description>state</Description>
+        <IDL_Type>boolean</IDL_Type>
+        <Units>dimensionless</Units>
+        <Count>1</Count>
+    </item>
+</SALCommand>
+
+<SALCommand>
+    <Subsystem>Hexapod</Subsystem>
+    <Version>3.5.1</Version>
+    <Author></Author>
     <EFDB_Topic>Hexapod_command_configureAcceleration</EFDB_Topic>
     <Alias>configureAcceleration</Alias>
     <Device></Device>
@@ -82,78 +102,58 @@
     <Subsystem>Hexapod</Subsystem>
     <Version>3.5.1</Version>
     <Author></Author>
-    <EFDB_Topic>Hexapod_command_configureElevationRawLUT</EFDB_Topic>
-    <Alias>configureElevationRawLUT</Alias>
-    <Device></Device>
-    <Property></Property>
-    <Action></Action>
-    <Value></Value>
-    <Description>The LUT data based on elevation include 19 parameters for each of the six degrees of freedom</Description>
-    <item>
-        <EFDB_Name>elevIndex</EFDB_Name>
-        <Description>Index</Description>
-        <IDL_Type>double</IDL_Type>
-        <Units>dimensionless</Units>
-        <Count>19</Count>
-    </item>
-    <item>
-        <EFDB_Name>x</EFDB_Name>
-        <Description>x</Description>
-        <IDL_Type>double</IDL_Type>
-        <Units>degree</Units>
-        <Count>19</Count>
-    </item>
-    <item>
-        <EFDB_Name>y</EFDB_Name>
-        <Description>y</Description>
-        <IDL_Type>double</IDL_Type>
-        <Units>degree</Units>
-        <Count>19</Count>
-    </item>
-    <item>
-        <EFDB_Name>z</EFDB_Name>
-        <Description>z</Description>
-        <IDL_Type>double</IDL_Type>
-        <Units>degree</Units>
-        <Count>19</Count>
-    </item>
-    <item>
-        <EFDB_Name>rx</EFDB_Name>
-        <Description>rx</Description>
-        <IDL_Type>double</IDL_Type>
-        <Units>degree</Units>
-        <Count>19</Count>
-    </item>
-    <item>
-        <EFDB_Name>ry</EFDB_Name>
-        <Description>ry</Description>
-        <IDL_Type>double</IDL_Type>
-        <Units>degree</Units>
-        <Count>19</Count>
-    </item>
-    <item>
-        <EFDB_Name>rz</EFDB_Name>
-        <Description>rz</Description>
-        <IDL_Type>double</IDL_Type>
-        <Units>degree</Units>
-        <Count>19</Count>
-    </item>
-</SALCommand>
-
-<SALCommand>
-    <Subsystem>Hexapod</Subsystem>
-    <Version>3.5.1</Version>
-    <Author></Author>
     <EFDB_Topic>Hexapod_command_move</EFDB_Topic>
     <Alias>move</Alias>
     <Device></Device>
     <Property></Property>
     <Action></Action>
     <Value></Value>
-    <Description>Move command causes Hexapods to execute a previously defined position-setting command (positionSet, offset)</Description>
+    <Description>Move the Hexapod to a specified position and orientation.</Description>
     <item>
-        <EFDB_Name>state</EFDB_Name>
-        <Description>state</Description>
+        <EFDB_Name>x</EFDB_Name>
+        <Description>x position</Description>
+        <IDL_Type>double</IDL_Type>
+        <Units>um</Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>y</EFDB_Name>
+        <Description>y position</Description>
+        <IDL_Type>double</IDL_Type>
+        <Units>um</Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>z</EFDB_Name>
+        <Description>z position</Description>
+        <IDL_Type>double</IDL_Type>
+        <Units>um</Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>u</EFDB_Name>
+        <Description>Rotation about x</Description>
+        <IDL_Type>double</IDL_Type>
+        <Units>deg</Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>v</EFDB_Name>
+        <Description>Rotation about y</Description>
+        <IDL_Type>double</IDL_Type>
+        <Units>deg</Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>w</EFDB_Name>
+        <Description>Rotation about z</Description>
+        <IDL_Type>double</IDL_Type>
+        <Units>deg</Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>sync</EFDB_Name>
+        <Description>Synchronize motion so that all actuators start and stop moving at the same time?</Description>
         <IDL_Type>boolean</IDL_Type>
         <Units>dimensionless</Units>
         <Count>1</Count>
@@ -164,58 +164,79 @@
     <Subsystem>Hexapod</Subsystem>
     <Version>3.5.1</Version>
     <Author></Author>
-    <EFDB_Topic>Hexapod_command_positionSet</EFDB_Topic>
-    <Alias>positionSet</Alias>
+    <EFDB_Topic>Hexapod_command_moveLUT</EFDB_Topic>
+    <Alias>moveLUT</Alias>
     <Device></Device>
     <Property></Property>
     <Action></Action>
     <Value></Value>
-    <Description>positionSet x y z u v w s. x,y,z, u,v,w denote linear and angular position set. s stands for synchronized move.</Description>
+    <Explanation>A variant of the move command that applies a correction for elevation, azimuth and temperature.</Explanation>
+    <item>
+        <EFDB_Name>elevation</EFDB_Name>
+        <Description>Telescope elevation</Description>
+        <IDL_Type>double</IDL_Type>
+        <Units>deg</Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>azimuth</EFDB_Name>
+        <Description>Telescope azimuth</Description>
+        <IDL_Type>double</IDL_Type>
+        <Units>deg</Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>temperature</EFDB_Name>
+        <Description>Ambient temperature</Description>
+        <IDL_Type>double</IDL_Type>
+        <Units>Celsius</Units>
+        <Count>1</Count>
+    </item>
     <item>
         <EFDB_Name>x</EFDB_Name>
-        <Description>x</Description>
+        <Description>x position</Description>
         <IDL_Type>double</IDL_Type>
         <Units>um</Units>
         <Count>1</Count>
     </item>
     <item>
         <EFDB_Name>y</EFDB_Name>
-        <Description>y</Description>
+        <Description>y position</Description>
         <IDL_Type>double</IDL_Type>
         <Units>um</Units>
         <Count>1</Count>
     </item>
     <item>
         <EFDB_Name>z</EFDB_Name>
-        <Description>z</Description>
+        <Description>z position</Description>
         <IDL_Type>double</IDL_Type>
         <Units>um</Units>
         <Count>1</Count>
     </item>
     <item>
         <EFDB_Name>u</EFDB_Name>
-        <Description>u</Description>
+        <Description>Rotation about x</Description>
         <IDL_Type>double</IDL_Type>
         <Units>deg</Units>
         <Count>1</Count>
     </item>
     <item>
         <EFDB_Name>v</EFDB_Name>
-        <Description>v</Description>
+        <Description>Rotation about y</Description>
         <IDL_Type>double</IDL_Type>
         <Units>deg</Units>
         <Count>1</Count>
     </item>
     <item>
         <EFDB_Name>w</EFDB_Name>
-        <Description>w</Description>
+        <Description>Rotation about z</Description>
         <IDL_Type>double</IDL_Type>
         <Units>deg</Units>
         <Count>1</Count>
     </item>
     <item>
         <EFDB_Name>sync</EFDB_Name>
-        <Description>sync</Description>
+        <Description>Synchronize motion so that all actuators start and stop moving at the same time?</Description>
         <IDL_Type>boolean</IDL_Type>
         <Units>dimensionless</Units>
         <Count>1</Count>
@@ -273,52 +294,135 @@
     <Property></Property>
     <Action></Action>
     <Value></Value>
-    <Description>The offset command  prepares the Hexapods to move to a position relative to the present one by the parameters (x,y,z,u,v,w) in microns and degrees, using the pivot point as the reference for the rotations.</Description>
+    <Description>Offset the Hexapod by a specified change in position and orientation.</Description>
     <item>
         <EFDB_Name>x</EFDB_Name>
-        <Description>x</Description>
+        <Description>Offset in x</Description>
         <IDL_Type>double</IDL_Type>
         <Units>um</Units>
         <Count>1</Count>
     </item>
     <item>
         <EFDB_Name>y</EFDB_Name>
-        <Description>y</Description>
+        <Description>Offset in y</Description>
         <IDL_Type>double</IDL_Type>
         <Units>um</Units>
         <Count>1</Count>
     </item>
     <item>
         <EFDB_Name>z</EFDB_Name>
-        <Description>z</Description>
+        <Description>Offset in z</Description>
         <IDL_Type>double</IDL_Type>
         <Units>um</Units>
         <Count>1</Count>
     </item>
     <item>
         <EFDB_Name>u</EFDB_Name>
-        <Description>u</Description>
+        <Description>Offset of rotation about x</Description>
         <IDL_Type>double</IDL_Type>
         <Units>deg</Units>
         <Count>1</Count>
     </item>
     <item>
         <EFDB_Name>v</EFDB_Name>
-        <Description>v</Description>
+        <Description>Offset of rotation about y</Description>
         <IDL_Type>double</IDL_Type>
         <Units>deg</Units>
         <Count>1</Count>
     </item>
     <item>
         <EFDB_Name>w</EFDB_Name>
-        <Description>w</Description>
+        <Description>Offset of rotation about z</Description>
         <IDL_Type>double</IDL_Type>
         <Units>deg</Units>
         <Count>1</Count>
     </item>
     <item>
         <EFDB_Name>sync</EFDB_Name>
-        <Description>sync</Description>
+        <Description>Synchronize motion so that all actuators start and stop moving at the same time?</Description>
+        <IDL_Type>boolean</IDL_Type>
+        <Units>dimensionless</Units>
+        <Count>1</Count>
+    </item>
+</SALCommand>
+
+<SALCommand>
+    <Subsystem>Hexapod</Subsystem>
+    <Version>3.5.1</Version>
+    <Author></Author>
+    <EFDB_Topic>Hexapod_command_offsetLUT</EFDB_Topic>
+    <Alias>offsetLUT</Alias>
+    <Device></Device>
+    <Property></Property>
+    <Action></Action>
+    <Value></Value>
+    <Explanation>A variant of the offset command that applies a correction for elevation, azimuth and temperature.</Explanation>
+    <item>
+        <EFDB_Name>elevation</EFDB_Name>
+        <Description>Telescope elevation</Description>
+        <IDL_Type>double</IDL_Type>
+        <Units>deg</Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>azimuth</EFDB_Name>
+        <Description>Telescope azimuth</Description>
+        <IDL_Type>double</IDL_Type>
+        <Units>deg</Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>temperature</EFDB_Name>
+        <Description>Ambient temperature</Description>
+        <IDL_Type>double</IDL_Type>
+        <Units>Celsius</Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>x</EFDB_Name>
+        <Description>Offset in x</Description>
+        <IDL_Type>double</IDL_Type>
+        <Units>um</Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>y</EFDB_Name>
+        <Description>Offset in y</Description>
+        <IDL_Type>double</IDL_Type>
+        <Units>um</Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>z</EFDB_Name>
+        <Description>Offset in z</Description>
+        <IDL_Type>double</IDL_Type>
+        <Units>um</Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>u</EFDB_Name>
+        <Description>Offset of rotation about x</Description>
+        <IDL_Type>double</IDL_Type>
+        <Units>deg</Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>v</EFDB_Name>
+        <Description>Offset of rotation about y</Description>
+        <IDL_Type>double</IDL_Type>
+        <Units>deg</Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>w</EFDB_Name>
+        <Description>Offset of rotation about z</Description>
+        <IDL_Type>double</IDL_Type>
+        <Units>deg</Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>sync</EFDB_Name>
+        <Description>Synchronize motion so that all actuators start and stop moving at the same time?</Description>
         <IDL_Type>boolean</IDL_Type>
         <Units>dimensionless</Units>
         <Count>1</Count>
@@ -335,7 +439,7 @@
     <Property></Property>
     <Action></Action>
     <Value></Value>
-    <Explanation>Command used to update the pivot point coordinates.</Explanation>
+    <Explanation>Specify the pivot point (the reference point whose position and orientation is set by the move, moveLUT, offset, and offsetLUT commands).</Explanation>
     <item>
         <EFDB_Name>x</EFDB_Name>
         <Description>x</Description>
@@ -355,211 +459,6 @@
         <Description>z</Description>
         <IDL_Type>double</IDL_Type>
         <Units>um</Units>
-        <Count>1</Count>
-    </item>
-</SALCommand>
-
-<SALCommand>
-    <Subsystem>Hexapod</Subsystem>
-    <Version>3.5.1</Version>
-    <Author></Author>
-    <EFDB_Topic>Hexapod_command_clearError</EFDB_Topic>
-    <Alias>clearError</Alias>
-    <Device></Device>
-    <Property></Property>
-    <Action></Action>
-    <Value></Value>
-    <Explanation>Command to clear Error</Explanation>
-    <item>
-        <EFDB_Name>state</EFDB_Name>
-        <Description>state</Description>
-        <IDL_Type>boolean</IDL_Type>
-        <Units>dimensionless</Units>
-        <Count>1</Count>
-    </item>
-</SALCommand>
-
-<SALCommand>
-    <Subsystem>Hexapod</Subsystem>
-    <Version>3.5.1</Version>
-    <Author></Author>
-    <EFDB_Topic>Hexapod_command_test</EFDB_Topic>
-    <Alias>test</Alias>
-    <Device></Device>
-    <Property></Property>
-    <Action></Action>
-    <Value></Value>
-    <Explanation>Command used in Engineering mode</Explanation>
-    <item>
-        <EFDB_Name>ivalue1</EFDB_Name>
-        <Description>ivalue1</Description>
-        <IDL_Type>long</IDL_Type>
-        <Units>dimensionless</Units>
-        <Count>1</Count>
-    </item>
-    <item>
-        <EFDB_Name>ivalue2</EFDB_Name>
-        <Description>ivalue2</Description>
-        <IDL_Type>long</IDL_Type>
-        <Units>dimensionless</Units>
-        <Count>1</Count>
-    </item>
-</SALCommand>
-
-<SALCommand>
-    <Subsystem>Hexapod</Subsystem>
-    <Version>3.5.1</Version>
-    <Author></Author>
-    <EFDB_Topic>Hexapod_command_configureAzimuthRawLUT</EFDB_Topic>
-    <Alias>configureAzimuthRawLUT</Alias>
-    <Device></Device>
-    <Property></Property>
-    <Action></Action>
-    <Value></Value>
-    <Explanation>LUT data will include 37 parameters for each of the six degrees of freedom</Explanation>
-    <item>
-        <EFDB_Name>azIndex</EFDB_Name>
-        <Description>azIndex</Description>
-        <IDL_Type>double</IDL_Type>
-        <Units>unitless</Units>
-        <Count>37</Count>
-    </item>
-    <item>
-        <EFDB_Name>x</EFDB_Name>
-        <Description>x</Description>
-        <IDL_Type>double</IDL_Type>
-        <Units>um</Units>
-        <Count>37</Count>
-    </item>
-    <item>
-        <EFDB_Name>y</EFDB_Name>
-        <Description>y</Description>
-        <IDL_Type>double</IDL_Type>
-        <Units>um</Units>
-        <Count>37</Count>
-    </item>
-    <item>
-        <EFDB_Name>z</EFDB_Name>
-        <Description>z</Description>
-        <IDL_Type>double</IDL_Type>
-        <Units>um</Units>
-        <Count>37</Count>
-    </item>
-    <item>
-        <EFDB_Name>rx</EFDB_Name>
-        <Description>rx</Description>
-        <IDL_Type>double</IDL_Type>
-        <Units>deg/s</Units>
-        <Count>37</Count>
-    </item>
-    <item>
-        <EFDB_Name>ry</EFDB_Name>
-        <Description>ry</Description>
-        <IDL_Type>double</IDL_Type>
-        <Units>deg/s</Units>
-        <Count>37</Count>
-    </item>
-    <item>
-        <EFDB_Name>rz</EFDB_Name>
-        <Description>rz</Description>
-        <IDL_Type>double</IDL_Type>
-        <Units>deg/s</Units>
-        <Count>37</Count>
-    </item>
-</SALCommand>
-
-<SALCommand>
-    <Subsystem>Hexapod</Subsystem>
-    <Version>3.5.1</Version>
-    <Author></Author>
-    <EFDB_Topic>Hexapod_command_configureTemperatureRawLUT</EFDB_Topic>
-    <Alias>configureTemperatureRawLUT</Alias>
-    <Device></Device>
-    <Property></Property>
-    <Action></Action>
-    <Value></Value>
-    <Description>The LUT data will include 9 parameters for each of the six degrees of freedom</Description>
-    <item>
-        <EFDB_Name>tempIndex</EFDB_Name>
-        <Description>tempIndex</Description>
-        <IDL_Type>double</IDL_Type>
-        <Units>dimensionless</Units>
-        <Count>9</Count>
-    </item>
-    <item>
-        <EFDB_Name>x</EFDB_Name>
-        <Description>x</Description>
-        <IDL_Type>double</IDL_Type>
-        <Units>um</Units>
-        <Count>9</Count>
-    </item>
-    <item>
-        <EFDB_Name>y</EFDB_Name>
-        <Description>y</Description>
-        <IDL_Type>double</IDL_Type>
-        <Units>um</Units>
-        <Count>9</Count>
-    </item>
-    <item>
-        <EFDB_Name>z</EFDB_Name>
-        <Description>z</Description>
-        <IDL_Type>double</IDL_Type>
-        <Units>um</Units>
-        <Count>9</Count>
-    </item>
-    <item>
-        <EFDB_Name>rx</EFDB_Name>
-        <Description>rx</Description>
-        <IDL_Type>double</IDL_Type>
-        <Units>deg/s</Units>
-        <Count>9</Count>
-    </item>
-    <item>
-        <EFDB_Name>ry</EFDB_Name>
-        <Description>ry</Description>
-        <IDL_Type>double</IDL_Type>
-        <Units>deg/s</Units>
-        <Count>9</Count>
-    </item>
-    <item>
-        <EFDB_Name>rz</EFDB_Name>
-        <Description>rz</Description>
-        <IDL_Type>double</IDL_Type>
-        <Units>deg/s</Units>
-        <Count>9</Count>
-    </item>
-</SALCommand>
-
-<SALCommand>
-    <Subsystem>Hexapod</Subsystem>
-    <Version>3.5.1</Version>
-    <Author></Author>
-    <EFDB_Topic>Hexapod_command_moveLUT</EFDB_Topic>
-    <Alias>moveLUT</Alias>
-    <Device></Device>
-    <Property></Property>
-    <Action></Action>
-    <Value></Value>
-    <Explanation>The moveLUT command causes the Hexapods to execute a previously defined positionSet command along with adjustments for values calculated from the LookUpTable</Explanation>
-    <item>
-        <EFDB_Name>az</EFDB_Name>
-        <Description>azimuth</Description>
-        <IDL_Type>double</IDL_Type>
-        <Units>deg</Units>
-        <Count>1</Count>
-    </item>
-    <item>
-        <EFDB_Name>elev</EFDB_Name>
-        <Description>elevation angle</Description>
-        <IDL_Type>double</IDL_Type>
-        <Units>deg</Units>
-        <Count>1</Count>
-    </item>
-    <item>
-        <EFDB_Name>temp</EFDB_Name>
-        <Description>temperature</Description>
-        <IDL_Type>double</IDL_Type>
-        <Units>Celsius</Units>
         <Count>1</Count>
     </item>
 </SALCommand>

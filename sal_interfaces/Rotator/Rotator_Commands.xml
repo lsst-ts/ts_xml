@@ -53,12 +53,12 @@
     <Property></Property>
     <Action></Action>
     <Value></Value>
-    <Description>Move the rotator to the position specified by the setPosition command. During the move the enabled substate will be MovingPointToPoint, then it will return to Stationary.</Description>
+    <Description>Move the rotator to the specified position and stop. During the move the enabled substate will be MovingPointToPoint, then it will return to Stationary.</Description>
     <item>
-        <EFDB_Name>state</EFDB_Name>
-        <Description>Not used.</Description>
-        <IDL_Type>boolean</IDL_Type>
-        <Units>unitless</Units>
+        <EFDB_Name>position</EFDB_Name>
+        <Description>Desired position.</Description>
+        <IDL_Type>double</IDL_Type>
+        <Units>deg</Units>
         <Count>1</Count>
     </item>
 </SALCommand>
@@ -73,53 +73,26 @@
     <Property></Property>
     <Action></Action>
     <Value></Value>
-    <Description>Specify target position, velocity and time in "slewing or tracking" mode (which is started with the trackStart command and concluded with the stop command). The maximum allowed time between track commands is a configuration parameter.</Description>
+    <Description>Specify desired rotator position and velocity "slewing or tracking" mode, which is started with the trackStart command and concluded with the stop command.</Description>
     <item>
         <EFDB_Name>angle</EFDB_Name>
-        <Description>Rotator absolute angle position in degrees (it could be a positive or a negative value)</Description>
+        <Description>Desired position at the time specified by "tai".</Description>
         <IDL_Type>double</IDL_Type>
         <Units>deg</Units>
         <Count>1</Count>
     </item>
     <item>
         <EFDB_Name>velocity</EFDB_Name>
-        <Description>Rotator velocity in degrees per second (positive or negative)</Description>
+        <Description>Desired velocity at the time specified by "tai".</Description>
         <IDL_Type>double</IDL_Type>
-        <Units>deg/s</Units>
+        <Units>deg/second</Units>
         <Count>1</Count>
     </item>
     <item>
         <EFDB_Name>tai</EFDB_Name>
-        <Description>Time in seconds</Description>
+        <Description>TAI time of the "position" and "velocity" fields.</Description>
         <IDL_Type>double</IDL_Type>
-        <Units>s</Units>
-        <Count>1</Count>
-    </item>
-</SALCommand>
-
-<SALCommand>
-    <Subsystem>Rotator</Subsystem>
-    <Version>3.5.1</Version>
-    <Author></Author>
-    <EFDB_Topic>Rotator_command_test</EFDB_Topic>
-    <Alias>test</Alias>
-    <Device></Device>
-    <Property></Property>
-    <Action></Action>
-    <Value></Value>
-    <Description>Engineering command</Description>
-    <item>
-        <EFDB_Name>ivalue1</EFDB_Name>
-        <Description>ivalue1</Description>
-        <IDL_Type>long</IDL_Type>
-        <Units>unitless</Units>
-        <Count>1</Count>
-    </item>
-    <item>
-        <EFDB_Name>ivalue2</EFDB_Name>
-        <Description>ivalue2</Description>
-        <IDL_Type>long</IDL_Type>
-        <Units>unitless</Units>
+        <Units>second</Units>
         <Count>1</Count>
     </item>
 </SALCommand>
@@ -160,73 +133,6 @@
         <Description>state</Description>
         <IDL_Type>boolean</IDL_Type>
         <Units>unitless</Units>
-        <Count>1</Count>
-    </item>
-</SALCommand>
-
-<SALCommand>
-    <Subsystem>Rotator</Subsystem>
-    <Version>3.5.1</Version>
-    <Author></Author>
-    <EFDB_Topic>Rotator_command_positionSet</EFDB_Topic>
-    <Alias>positionSet</Alias>
-    <Device></Device>
-    <Property></Property>
-    <Action></Action>
-    <Value></Value>
-    <Description>Set the desired fixed position of the rotator. Issue the move command to actually move the rotator.</Description>
-    <item>
-        <EFDB_Name>angle</EFDB_Name>
-        <Description>angle</Description>
-        <IDL_Type>double</IDL_Type>
-        <Units>deg</Units>
-        <Count>1</Count>
-    </item>
-</SALCommand>
-
-<SALCommand>
-    <Subsystem>Rotator</Subsystem>
-    <Version>3.5.1</Version>
-    <Author></Author>
-    <EFDB_Topic>Rotator_command_moveConstantVelocity</EFDB_Topic>
-    <Alias>moveConstantVelocity</Alias>
-    <Device></Device>
-    <Property></Property>
-    <Action></Action>
-    <Value></Value>
-    <Description>Move rotator at the velocity and for the duration specified by the velocitySet command, then halt motion. During the move the enabled substate will be ConstantVelocity, then it will return to Stationary.</Description>
-    <item>
-        <EFDB_Name>state</EFDB_Name>
-        <Description>state</Description>
-        <IDL_Type>boolean</IDL_Type>
-        <Units>dimensionless</Units>
-        <Count>1</Count>
-    </item>
-</SALCommand>
-
-<SALCommand>
-    <Subsystem>Rotator</Subsystem>
-    <Version>3.5.1</Version>
-    <Author></Author>
-    <EFDB_Topic>Rotator_command_velocitySet</EFDB_Topic>
-    <Alias>velocitySet</Alias>
-    <Device></Device>
-    <Property></Property>
-    <Action></Action>
-    <Value></Value>
-    <Description>Set a desired velocity and duration for move at constant velocity. Initiate the move with the moveConstantVelocity command.</Description>
-    <item>
-        <EFDB_Name>velocity</EFDB_Name>
-        <Description>Desired constant velocity. The maximum allowed velocity is 0.068 deg/sec.</Description>
-        <IDL_Type>double</IDL_Type>
-        <Units>deg/s</Units>
-        <Count>1</Count>
-    </item>
-    <item>
-        <EFDB_Name>moveDuration</EFDB_Name>
-        <Description>Duration of the move.</Description>
-        <IDL_Type>double</IDL_Type>
-        <Units>s</Units>
         <Count>1</Count>
     </item>
 </SALCommand>

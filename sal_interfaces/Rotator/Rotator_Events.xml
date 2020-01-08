@@ -110,26 +110,33 @@
         <Units>unitless</Units>
         <Count>1</Count>
     </item>
-    <item>
-        <EFDB_Name>timestamp</EFDB_Name>
-        <Description>timestamp</Description>
-        <IDL_Type>double</IDL_Type>
-        <Units>unitless</Units>
-        <Count>1</Count>
-    </item>
 </SALEvent>
 <SALEvent>
     <Subsystem>Rotator</Subsystem>
     <Version>3.5.1</Version>
     <Author></Author>
-    <EFDB_Topic>Rotator_logevent_trackLost</EFDB_Topic>
-    <Alias>trackLost</Alias>
-    <Description>This event is generated if system stops tracking within limits or if we do not receive a new track command within 150ms (three iterations) following the last track command</Description>
+    <EFDB_Topic>Rotator_logevent_target</EFDB_Topic>
+    <Alias>target</Alias>
+    <Description>Commanded target position, velocity and time.</Description>
     <item>
-        <EFDB_Name>timestamp</EFDB_Name>
-        <Description>timestamp</Description>
+        <EFDB_Name>position</EFDB_Name>
+        <Description>Target position at the time specified by "tai".</Description>
         <IDL_Type>double</IDL_Type>
-        <Units>unitless</Units>
+        <Units>deg</Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>velocity</EFDB_Name>
+        <Description>Target velocity at the time specified by "tai".</Description>
+        <IDL_Type>double</IDL_Type>
+        <Units>deg/second</Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>tai</EFDB_Name>
+        <Description>TAI time of the "position" and "velocity" fields.</Description>
+        <IDL_Type>double</IDL_Type>
+        <Units>second</Units>
         <Count>1</Count>
     </item>
 </SALEvent>
@@ -139,49 +146,18 @@
     <Author></Author>
     <EFDB_Topic>Rotator_logevent_tracking</EFDB_Topic>
     <Alias>tracking</Alias>
-    <Description>Tracking is successful and this event is issued whenever once 3 consecutive 50 ms track commands have been applied</Description>
+    <Description>Specify whether the rotator is tracking.</Description>
     <item>
-        <EFDB_Name>timestamp</EFDB_Name>
-        <Description>timestamp</Description>
-        <IDL_Type>double</IDL_Type>
-        <Units>unitless</Units>
-        <Count>1</Count>
-    </item>
-</SALEvent>
-<SALEvent>
-    <Subsystem>Rotator</Subsystem>
-    <Version>3.5.1</Version>
-    <Author></Author>
-    <EFDB_Topic>Rotator_logevent_deviceError</EFDB_Topic>
-    <Alias>deviceError</Alias>
-    <Description>deviceError event is generated if any drive faults occur or if there is a following error in any actuator</Description>
-    <item>
-        <EFDB_Name>code</EFDB_Name>
-        <Description>Error code</Description>
-        <IDL_Type>string</IDL_Type>
-        <IDL_Size>256</IDL_Size>
+        <EFDB_Name>tracking</EFDB_Name>
+        <Description>Is the rotator tracking? True whenever 3 consecutive 50 ms track commands have been applied.</Description>
+        <IDL_Type>boolean</IDL_Type>
         <Units>unitless</Units>
         <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>device</EFDB_Name>
-        <Description>device</Description>
-        <IDL_Type>string</IDL_Type>
-        <IDL_Size>256</IDL_Size>
-        <Units>unitless</Units>
-        <Count>1</Count>
-    </item>
-    <item>
-        <EFDB_Name>severity</EFDB_Name>
-        <Description>Severity of the error</Description>
-        <IDL_Type>long</IDL_Type>
-        <Units>unitless</Units>
-        <Count>1</Count>
-    </item>
-    <item>
-        <EFDB_Name>timestamp</EFDB_Name>
-        <Description>timestamp</Description>
-        <IDL_Type>double</IDL_Type>
+        <EFDB_Name>lost</EFDB_Name>
+        <Description>Did tracking fail? True if system tracks into a limit or we do not receive a new track command within 150ms (three iterations) following the last track command.</Description>
+        <IDL_Type>boolean</IDL_Type>
         <Units>unitless</Units>
         <Count>1</Count>
     </item>
@@ -205,9 +181,9 @@
     <Subsystem>Rotator</Subsystem>
     <Version>3.5.1</Version>
     <Author></Author>
-    <EFDB_Topic>Rotator_logevent_settingsApplied</EFDB_Topic>
-    <Alias>settingsApplied</Alias>
-    <Description>settingsApplied</Description>
+    <EFDB_Topic>Rotator_logevent_configuration</EFDB_Topic>
+    <Alias>configuration</Alias>
+    <Description>Rotator configuration.</Description>
     <item>
         <EFDB_Name>positionAngleUpperLimit</EFDB_Name>
         <Description>Position difference between the commanded position and the actual position that triggers system to switch between slew mode and track mode. Positive range limit (must be less than +90)</Description>
@@ -262,37 +238,6 @@
         <Description>Duration between receiving slewing and tracking commands over DDS before tracklost event/fault is declared</Description>
         <IDL_Type>double</IDL_Type>
         <Units>s</Units>
-        <Count>1</Count>
-    </item>
-</SALEvent>
-<SALEvent>
-    <Subsystem>Rotator</Subsystem>
-    <Version>3.5.1</Version>
-    <Author></Author>
-    <EFDB_Topic>Rotator_logevent_rejectedCommand</EFDB_Topic>
-    <Alias>rejectedCommand</Alias>
-    <Description>Event is issued when a command is rejected</Description>
-    <item>
-        <EFDB_Name>commandValue</EFDB_Name>
-        <Description>command value</Description>
-        <IDL_Type>string</IDL_Type>
-        <IDL_Size>256</IDL_Size>
-        <Units>unitless</Units>
-        <Count>1</Count>
-    </item>
-    <item>
-        <EFDB_Name>detailedState</EFDB_Name>
-        <Description>detailed state</Description>
-        <IDL_Type>string</IDL_Type>
-        <IDL_Size>256</IDL_Size>
-        <Units>unitless</Units>
-        <Count>1</Count>
-    </item>
-    <item>
-        <EFDB_Name>timestamp</EFDB_Name>
-        <Description>timestamp</Description>
-        <IDL_Type>double</IDL_Type>
-        <Units>unitless</Units>
         <Count>1</Count>
     </item>
 </SALEvent>
