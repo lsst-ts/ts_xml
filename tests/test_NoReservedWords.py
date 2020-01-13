@@ -47,7 +47,7 @@ def check_for_issues(csc, topic, language):
     elif (csc == "Scheduler" and topic == "Telemetry" and
             language == "optional"):
         jira = "DM-22625"
-    elif (csc == "Script" and topic == "Events" and
+    elif (csc in ("Script", "ScriptQueue") and topic == "Events" and
             language == "optional"):
         jira = "DM-22626"
     elif (csc == "Test" and topic == "Commands" and

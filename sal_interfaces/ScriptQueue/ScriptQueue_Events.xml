@@ -63,6 +63,127 @@
     <Subsystem>ScriptQueue</Subsystem>
     <Version>1.0.0</Version>
     <Author></Author>
+    <EFDB_Topic>ScriptQueue_logevent_nextVisit</EFDB_Topic>
+    <Alias>nextVisit</Alias>
+    <Description>Group ID and other information about the next script to be run.</Description>
+    <item>
+        <EFDB_Name>salIndex</EFDB_Name>
+        <Description>Index of Script SAL component.</Description>
+        <IDL_Type>int</IDL_Type>
+        <Units>unitless</Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>groupId</EFDB_Name>
+        <Description>Group ID for images taken by the script.</Description>
+        <IDL_Type>string</IDL_Type>
+        <IDL_Size>1</IDL_Size>
+        <Units>unitless</Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>coordinateSystem</EFDB_Name>
+        <Description>Coordinate system for position. A Script MetadataCoordSys enum. Observed is refracted apparent topocentric, e.g. similar to Mount but the telescope model is applied and the azimuth is wrapped. If None then position should be ignored.</Description>
+        <IDL_Type>short</IDL_Type>
+        <Units>unitless</Units>
+        <Count>1</Count>
+        <Enumeration>CSys_None, CSys_ICRS, CSys_Observed, CSys_Mount</Enumeration>
+    </item>
+    <item>
+        <EFDB_Name>position</EFDB_Name>
+        <Description>Longitude, latitude axes of position in coordinateSystem</Description>
+        <IDL_Type>double</IDL_Type>
+        <Units>degree</Units>
+        <Count>2</Count>
+    </item>
+    <item>
+        <EFDB_Name>rotationSystem</EFDB_Name>
+        <Description>Rotation system for cameraAngle, a Script MetadataRotSys enum
+        * None: The camera rotator is not used; ignore cameraAngle.
+        * Sky: Position angle of focal plane +Y, measured from N through E.
+          At 0 degrees, +Y is along N and +X is along E/W depending on handedness.
+          At 90 degrees, +Y is along E and +X is along S/N depending on handedness.
+        * Horizon: Position angle of focal plane +Y, measured from +Alt through +Az.
+          At 0 degrees, +Y is along +Alt and +X is along +/-Az, depending on handedness.
+          At 90 degrees, +Y is along +Az and +X is along -/+Alt, depending on handedness.
+        * Mount: The position sent to the instrument rotator; the details depend on the rotator.
+        </Description>
+        <IDL_Type>short</IDL_Type>
+        <Units>unitless</Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>cameraAngle</EFDB_Name>
+        <Description>Camera angle in rotationSystem</Description>
+        <IDL_Type>double</IDL_Type>
+        <Units>degree</Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>filters</EFDB_Name>
+        <Description>Comma-separated names of acceptable filters, or blank for any filter.</Description>
+        <IDL_Type>string</IDL_Type>
+        <IDL_Size>1</IDL_Size>
+        <Units>unitless</Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>dome</EFDB_Name>
+        <Description>Desired dome state; a Script MetadataDome enum.</Description>
+        <IDL_Type>short</IDL_Type>
+        <Units>unitless</Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>duration</EFDB_Name>
+        <Description>Estimated duration of the script, excluding slewing to the initial position required by the script.</Description>
+        <IDL_Type>double</IDL_Type>
+        <Units>second</Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>nimages</EFDB_Name>
+        <Description>Predicted number of images to take; 0 if unknown.</Description>
+        <IDL_Type>int</IDL_Type>
+        <Units>unitless</Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>survey</EFDB_Name>
+        <Description>Survey name.</Description>
+        <IDL_Type>string</IDL_Type>
+        <IDL_Size>1</IDL_Size>
+        <Units>unitless</Units>
+        <Count>1</Count>
+    </item>
+</SALEvent>
+<SALEvent>
+    <Subsystem>ScriptQueue</Subsystem>
+    <Version>1.0.0</Version>
+    <Author></Author>
+    <EFDB_Topic>ScriptQueue_logevent_nextVisitCanceled</EFDB_Topic>
+    <Alias>nextVisitCanceled</Alias>
+    <Description>The group ID reported by a nextVisit event will not be used, because the script that was next to be run has been cancelled or rescheduled.</Description>
+    <item>
+        <EFDB_Name>salIndex</EFDB_Name>
+        <Description>Index of Script SAL component.</Description>
+        <IDL_Type>int</IDL_Type>
+        <Units>unitless</Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>groupId</EFDB_Name>
+        <Description>Group ID for images taken by the script. This ID will not be used.</Description>
+        <IDL_Type>string</IDL_Type>
+        <IDL_Size>1</IDL_Size>
+        <Units>unitless</Units>
+        <Count>1</Count>
+    </item>
+</SALEvent>
+<SALEvent>
+    <Subsystem>ScriptQueue</Subsystem>
+    <Version>1.0.0</Version>
+    <Author></Author>
     <EFDB_Topic>ScriptQueue_logevent_script</EFDB_Topic>
     <Alias>script</Alias>
     <Description>Information about a queued script.</Description>
