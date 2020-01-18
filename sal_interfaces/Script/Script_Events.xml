@@ -10,7 +10,6 @@
 <!--Subset of standard CSC events (Script is not a CSC, but use what might be useful)-->
 <SALEvent>
     <Subsystem>Script</Subsystem>
-    <Version>1.0.0</Version>
     <Author></Author>
     <EFDB_Topic>Script_logevent_heartbeat</EFDB_Topic>
     <Alias>heartbeat</Alias>
@@ -23,35 +22,8 @@
         <Count>1</Count>
     </item>
 </SALEvent>
-<!--End subset of standard CSC events-->
-
 <SALEvent>
     <Subsystem>Script</Subsystem>
-    <Version>1.0.0</Version>
-    <Author></Author>
-    <EFDB_Topic>Script_logevent_checkpoints</EFDB_Topic>
-    <Alias>checkpoints</Alias>
-    <Description>Pause and stop checkpoints.</Description>
-    <item>
-        <EFDB_Name>pause</EFDB_Name>
-        <Description>Checkpoint(s) at which to pause, as a regular expression. No checkpoints if blank; all checkpoints if ".*".</Description>
-        <IDL_Type>string</IDL_Type>
-        <IDL_Size>1</IDL_Size>
-        <Units>unitless</Units>
-        <Count>1</Count>
-    </item>
-    <item>
-        <EFDB_Name>stop</EFDB_Name>
-        <Description>Checkpoint(s) at which to stop, as a regular expression. No checkpoints if blank; all checkpoints if ".*".</Description>
-        <IDL_Type>string</IDL_Type>
-        <IDL_Size>1</IDL_Size>
-        <Units>unitless</Units>
-        <Count>1</Count>
-    </item>
-</SALEvent>
-<SALEvent>
-    <Subsystem>Script</Subsystem>
-    <Version>1.0.0</Version>
     <Author></Author>
     <EFDB_Topic>Script_logevent_logLevel</EFDB_Topic>
     <Alias>logLevel</Alias>
@@ -66,7 +38,6 @@
 </SALEvent>
 <SALEvent>
     <Subsystem>Script</Subsystem>
-    <Version>1.0.0</Version>
     <Author></Author>
     <EFDB_Topic>Script_logevent_logMessage</EFDB_Topic>
     <Alias>logMessage</Alias>
@@ -95,9 +66,33 @@
         <Count>1</Count>
     </item>
 </SALEvent>
+<!--End subset of standard CSC events-->
+
 <SALEvent>
     <Subsystem>Script</Subsystem>
-    <Version>1.0.0</Version>
+    <Author></Author>
+    <EFDB_Topic>Script_logevent_checkpoints</EFDB_Topic>
+    <Alias>checkpoints</Alias>
+    <Description>Pause and stop checkpoints.</Description>
+    <item>
+        <EFDB_Name>pause</EFDB_Name>
+        <Description>Checkpoint(s) at which to pause, as a regular expression. No checkpoints if blank; all checkpoints if ".*".</Description>
+        <IDL_Type>string</IDL_Type>
+        <IDL_Size>1</IDL_Size>
+        <Units>unitless</Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>stop</EFDB_Name>
+        <Description>Checkpoint(s) at which to stop, as a regular expression. No checkpoints if blank; all checkpoints if ".*".</Description>
+        <IDL_Type>string</IDL_Type>
+        <IDL_Size>1</IDL_Size>
+        <Units>unitless</Units>
+        <Count>1</Count>
+    </item>
+</SALEvent>
+<SALEvent>
+    <Subsystem>Script</Subsystem>
     <Author></Author>
     <EFDB_Topic>Script_logevent_description</EFDB_Topic>
     <Alias>description</Alias>
@@ -129,7 +124,6 @@
 </SALEvent>
 <SALEvent>
     <Subsystem>Script</Subsystem>
-    <Version>1.0.0</Version>
     <Author></Author>
     <EFDB_Topic>Script_logevent_metadata</EFDB_Topic>
     <Alias>metadata</Alias>
@@ -177,14 +171,14 @@
         <Description>Comma-separated names of acceptable filters, or blank for any filter.</Description>
         <IDL_Type>string</IDL_Type>
         <IDL_Size>1</IDL_Size>
-        <Units>second</Units>
+        <Units>unitless</Units>
         <Count>1</Count>
     </item>
     <item>
         <EFDB_Name>dome</EFDB_Name>
         <Description>Desired dome state; a MetadataDome enum.</Description>
         <IDL_Type>short</IDL_Type>
-        <Units>second</Units>
+        <Units>unitless</Units>
         <Count>1</Count>
     </item>
     <item>
@@ -194,10 +188,24 @@
         <Units>second</Units>
         <Count>1</Count>
     </item>
+    <item>
+        <EFDB_Name>nimages</EFDB_Name>
+        <Description>Predicted number of images to take; 0 if unknown.</Description>
+        <IDL_Type>int</IDL_Type>
+        <Units>unitless</Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>survey</EFDB_Name>
+        <Description>Survey name.</Description>
+        <IDL_Type>string</IDL_Type>
+        <IDL_Size>1</IDL_Size>
+        <Units>unitless</Units>
+        <Count>1</Count>
+    </item>
 </SALEvent>
 <SALEvent>
     <Subsystem>Script</Subsystem>
-    <Version>1.0.0</Version>
     <Author></Author>
     <EFDB_Topic>Script_logevent_state</EFDB_Topic>
     <Alias>state</Alias>
@@ -213,6 +221,14 @@
     <item>
         <EFDB_Name>reason</EFDB_Name>
         <Description>More information about the state change; typically a reason for failure if the state is FAILED.</Description>
+        <IDL_Type>string</IDL_Type>
+        <IDL_Size>1</IDL_Size>
+        <Units>unitless</Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>groupId</EFDB_Name>
+        <Description>Group ID; none if "".</Description>
         <IDL_Type>string</IDL_Type>
         <IDL_Size>1</IDL_Size>
         <Units>unitless</Units>
