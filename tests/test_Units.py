@@ -17,8 +17,6 @@ def check_for_issues(csc, topic):
         jira = "DM-22159"
     elif csc == "MTM1M3":
         jira = "DM-20956"
-    elif csc == "OCS" and topic == "Commands":
-        jira = "DM-22160"
     else:
         jira = ""
     return jira
