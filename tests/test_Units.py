@@ -9,8 +9,6 @@ import lsst.ts.xml as ts_xml
 def check_for_issues(csc, topic):
     if csc == "ATCamera":
         jira = "CAP-318"
-    elif csc == "ATSpectrograph" and topic == "Commands":
-        jira = "DM-22158"
     elif csc == "MTCamera":
         jira = "CAP-318"
     elif csc == "MTEEC" and topic == "Commands":
