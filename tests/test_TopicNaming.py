@@ -127,6 +127,6 @@ def test_topic_naming_alias(xmlfile, csc, topic):
             index = 1
         else:
             index = 2
-        assert re.match(r"^[a-z]([a-zA-Z0-9_]*$)", name.text.split('_', index)[index]) is not None, \
+        assert re.match(r"^[a-z]([a-zA-Z0-9_]*$)", name.text.split('_', maxsplit=index)[index]) is not None, \
             name.text + ' in ' + str(xmlfile.name) + ' does not begin with a lowercase '\
             'letter and/or contains non-alphanumeric characters.'
