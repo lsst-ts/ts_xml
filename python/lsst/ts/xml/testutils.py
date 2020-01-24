@@ -59,6 +59,11 @@ idl_reserved = [
     'VALUETYPE', 'VOID', 'WCHAR', 'WSTRING'
 ]
 
+"""Define the list of IDL Types"""
+idl_types = ['boolean', 'byte', 'octet', 'short', 'int', 'long', 'long long',
+             'unsigned short', 'unsigned int', 'unsigned long',
+             'unsigned long long', 'float', 'double', 'string', 'char']
+
 db_critical_reserved = [
     "TIME"
 ]
