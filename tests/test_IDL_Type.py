@@ -35,10 +35,6 @@ def test_idl_type(xmlfile, csc, topic):
         tree = et.parse(f)
     root = tree.getroot()
     for idl_type in root.findall(f"./{saltype}/item/IDL_Type"):
-        if not idl_type.text:
-            assert False, 'IDL_Type cannot be blank.'
-        if idl_type.text not in ts_xml.idl_types:
-            assert False, 'IDL_Type "' + idl_type.text + '" needs to be one of ' + \
-                str(ts_xml.idl_types)
-        else:
-            assert True
+        assert idl_type.text is not None, 'IDL_Type cannot be blank.'
+        assert idl_type.text in ts_xml.idl_types, 'IDL_Type "' + idl_type.text + \
+            '" needs to be one of ' + str(ts_xml.idl_types)
