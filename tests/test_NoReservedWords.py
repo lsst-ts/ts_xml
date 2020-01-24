@@ -38,9 +38,6 @@ def check_for_issues(csc, topic, language):
     elif (csc == "MTMount" and topic == "Commands" and
             language == "critical"):
         jira = "DM-22622"
-    elif (csc == "OCS" and topic in ("Telemetry", "Events") and
-            language == "optional"):
-        jira = "DM-22623"
     elif (csc == "PromptProcessing" and topic in ("Telemetry", "Events") and
             language == "optional"):
         jira = "DM-22624"
