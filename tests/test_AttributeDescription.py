@@ -46,4 +46,4 @@ def test_attribute_description(xmlfile, csc, topic):
     root = tree.getroot()
     for description in root.findall(f"./{saltype}/item/Description"):
         assert description.text is not None, "Description cannot be blank."
-        assert description.text.replace(" ", "") is not "", "Description cannot contain only whitespace." 
+        assert description.text.replace(" ", "") != "", "Description cannot contain only whitespace."
