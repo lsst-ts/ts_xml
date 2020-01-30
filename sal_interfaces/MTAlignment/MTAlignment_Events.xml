@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="http://lsst-sal.tuc.noao.edu/schema/SALEventSet.xsl"?>
+<SALEventSet xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="http://lsst-sal.tuc.noao.edu/schema/SALEventSet.xsd">
+<Enumeration>DetailedState_DisabledState,DetailedState_EnabledState,DetailedState_FaultState,DetailedState_OfflineState,DetailedState_StandbyState</Enumeration>
+
+<SALEvent>
+    <Subsystem>MTAlignment</Subsystem>
+    <Version>3.7.1</Version>
+    <Author></Author>
+    <EFDB_Topic>MTAlignment_logevent_loopTimeOutOfRange</EFDB_Topic>
+    <Alias>loopTimeOutOfRange</Alias>
+    <Explanation>http://sal.lsst.org</Explanation>
+    <item>
+        <EFDB_Name>loopTimeOutOfRange</EFDB_Name>
+        <Description>Attribute required by the API, but is unused.</Description>
+        <IDL_Type>boolean</IDL_Type>
+        <Units>dimensionless</Units>
+        <Count>1</Count>
+    </item>
+</SALEvent>
+<SALEvent>
+    <Subsystem>MTAlignment</Subsystem>
+    <Version>3.7.1</Version>
+    <Author></Author>
+    <EFDB_Topic>MTAlignment_logevent_rejectedCommand</EFDB_Topic>
+    <Alias>rejectedCommand</Alias>
+    <Explanation>http://sal.lsst.org</Explanation>
+    <item>
+        <EFDB_Name>commandValue</EFDB_Name>
+        <Description>Attribute required by the API, but is unused.</Description>
+        <IDL_Type>unsigned short</IDL_Type>
+        <Units>dimensionless</Units>
+        <Count>1</Count>
+    </item>
+            <item>
+                <EFDB_Name>detailedState</EFDB_Name>
+                <Description>Attribute required by the API, but is unused.</Description>
+                <!-- Enumeration: detailedState -->
+                <IDL_Type>long</IDL_Type>
+                <Units>dimensionless</Units>
+                <Count>1</Count>
+                <Enumeration>detailedState_detailedState_disabledState,detailedState_detailedState_enabledState,detailedState_detailedState_faultState,detailedState_detailedState_offlineState,detailedState_detailedState_standbyState</Enumeration>
+            </item>
+    <item>
+        <EFDB_Name>timestamp</EFDB_Name>
+        <Description>timestamp</Description>
+        <IDL_Type>double</IDL_Type>
+        <Units>second</Units>
+        <Count>1</Count>
+    </item>
+</SALEvent>
+<SALEvent>
+    <Subsystem>MTAlignment</Subsystem>
+    <Version>3.7.1</Version>
+    <Author></Author>
+    <EFDB_Topic>MTAlignment_logevent_trackerTemperature</EFDB_Topic>
+    <Alias></Alias>
+    <Explanation>http://sal.lsst.org</Explanation>
+    <item>
+        <EFDB_Name>trackerTemperature</EFDB_Name>
+        <Description>Temperature as reported by thermometer in tracker controller</Description>
+        <IDL_Type>float</IDL_Type>
+        <Units>watt</Units>
+        <Count>1</Count>
+    </item>
+</SALEvent>
+</SALEventSet>
