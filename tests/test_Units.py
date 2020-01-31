@@ -44,10 +44,8 @@ def test_units(xmlfile, csc, topic):
         tree = et.parse(f)
     root = tree.getroot()
     for unit in root.findall(f"./{saltype}/item/Units"):
-        if not unit.text:
+        if not unit.text.replace(" ", ""):
             assert False, 'Units cannot be blank.'
-        elif " " in unit.text:
-            assert False, 'Units cannot have blank spaces'
         elif unit.text in ("unitless", "dimensionless"):
             assert True
         elif unit.text in ("Torr", "mTorr"):  # TODO remove this when astropy adds support for this unit
