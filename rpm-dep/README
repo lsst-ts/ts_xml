@@ -1,0 +1,28 @@
+This directory contains the SAL dependency checker. 
+
+To use it copy this directory to a disk with plenty of space, then cd into it and 
+
+	./grepper.sh  [optional token]
+	
+If you wish to include private repositories then you must generate an access token
+at github.com and provide it as an argument.  To generate a token login to github
+and go to https://github.com/settings/tokens, click on "Personal access tokens"
+and then "Generate token", Cut and paste it somewhere before leaving the page.
+
+This will download all the github/ts_sal repositories, and a select few from github/lsst-dm, 
+plus the CCS SAL jar files from the Nexus 3 server.
+
+It then examines all the code to identify uses of XML based SAL CSC code. 
+For each downloaded codebase a file will be created in the ./refs subdirectory with a name 
+formed from the codebase name
+
+e.g. for ts_hexapod, the dependencies would be listed in 
+
+	./refs/ts_hexapod.refs
+
+If you have already downloaded a particular codebase you can check only it's dependencies
+by using 
+
+	./grepcsc.sh  path-to-codebase
+
+
