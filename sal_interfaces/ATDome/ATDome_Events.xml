@@ -153,6 +153,55 @@
             <Count>1</Count>
         </item>
     </SALEvent>
+    <SALEvent>
+        <Subsystem>ATDome</Subsystem>
+        <Version>3.8.2</Version>
+        <EFDB_Topic>ATDome_logevent_doorEncoderExtremes</EFDB_Topic>
+        <Alias>doorEncoderExtremes</Alias>
+        <Description>Encoder values of the doors when fully closed or fully opened. Reported in full status as `Main Door Encoder Closed`, etc.</Description>
+        <item>
+            <EFDB_Name>mainClosed</EFDB_Name>
+            <Description>Encoder position for main door when fully closed.</Description>
+            <IDL_Type>long long</IDL_Type>
+            <Units>unitless</Units>
+            <Count>1</Count>
+        </item>
+        <item>
+            <EFDB_Name>mainOpened</EFDB_Name>
+            <Description>Encoder position for main door when fully opened.</Description>
+            <IDL_Type>long long</IDL_Type>
+            <Units>unitless</Units>
+            <Count>1</Count>
+        </item>
+        <item>
+            <EFDB_Name>dropoutClosed</EFDB_Name>
+            <Description>Encoder position for dropout door when fully closed.</Description>
+            <IDL_Type>long long</IDL_Type>
+            <Units>unitless</Units>
+            <Count>1</Count>
+        </item>
+        <item>
+            <EFDB_Name>dropoutOpened</EFDB_Name>
+            <Description>Encoder position for dropout door when fully opened.</Description>
+            <IDL_Type>long long</IDL_Type>
+            <Units>unitless</Units>
+            <Count>1</Count>
+        </item>
+    </SALEvent>
+    <SALEvent>
+        <Subsystem>ATDome</Subsystem>
+        <Version>3.8.2</Version>
+        <EFDB_Topic>ATDome_logevent_lastAzimuthGoTo</EFDB_Topic>
+        <Alias>lastAzimuthGoTo</Alias>
+        <Description>The most recently commanded azimuth position.</Description>
+        <item>
+            <EFDB_Name>position</EFDB_Name>
+            <Description>Reported position.</Description>
+            <IDL_Type>float</IDL_Type>
+            <Units>deg</Units>
+            <Count>1</Count>
+        </item>
+    </SALEvent>
     <!-- Trouble states -->
     <SALEvent>
         <Subsystem>ATDome</Subsystem>
@@ -232,6 +281,13 @@
             <Count>1</Count>
         </item>
         <item>
+            <EFDB_Name>dropoutTimer</EFDB_Name>
+            <Description>What is this? How does it differ from doorMoveTimeout?</Description>
+            <IDL_Type>float</IDL_Type>
+            <Units>second</Units>
+            <Count>1</Count>
+        </item>
+        <item>
             <EFDB_Name>reversalDelay</EFDB_Name>
             <Description>The delay between reversing motor directions for the shutter doors, where 0 &lt; t &lt;= 6. For a 240 VAC system this parameter can be set to 0.</Description>
             <IDL_Type>float</IDL_Type>
@@ -243,6 +299,34 @@
             <Description>Is automatic closing of the shutter enabled? If enabled then the shutter will be closed if rain, snow or clouds are detected, or if the shutter control box (SCB) loses radio contact with the main control box (MCB).</Description>
             <IDL_Type>boolean</IDL_Type>
             <Units>unitless</Units>
+            <Count>1</Count>
+        </item>
+        <item>
+            <EFDB_Name>coast</EFDB_Name>
+            <Description>Azimuth coasting distance.</Description>
+            <IDL_Type>float</IDL_Type>
+            <Units>deg</Units>
+            <Count>1</Count>
+        </item>
+        <item>
+            <EFDB_Name>encoderCountsPer360</EFDB_Name>
+            <Description>Number of azimuth encoder counts per full rotation.</Description>
+            <IDL_Type>long long</IDL_Type>
+            <Units>unitless</Units>
+            <Count>1</Count>
+        </item>
+        <item>
+            <EFDB_Name>azimuthMoveTimeout</EFDB_Name>
+            <Description>Timeout for azimuth moves.</Description>
+            <IDL_Type>float</IDL_Type>
+            <Units>second</Units>
+            <Count>1</Count>
+        </item>
+        <item>
+            <EFDB_Name>doorMoveTimeout</EFDB_Name>
+            <Description>Timeout for opening or closing (what? either shutter door?).</Description>
+            <IDL_Type>float</IDL_Type>
+            <Units>second</Units>
             <Count>1</Count>
         </item>
     </SALEvent>
