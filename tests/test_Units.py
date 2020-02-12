@@ -42,7 +42,7 @@ def test_units(xmlfile, csc, topic):
         tree = et.parse(f)
     root = tree.getroot()
     for unit in root.findall(f"./{saltype}/item/Units"):
-        if not unit.text:
+        if not unit.text.replace(" ", ""):
             assert False, 'Units cannot be blank.'
         elif unit.text in ("unitless", "dimensionless"):
             assert True
