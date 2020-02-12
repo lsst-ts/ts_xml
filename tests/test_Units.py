@@ -9,16 +9,10 @@ import lsst.ts.xml as ts_xml
 def check_for_issues(csc, topic):
     if csc == "ATCamera":
         jira = "CAP-318"
-    elif csc == "ATSpectrograph" and topic == "Commands":
-        jira = "DM-22158"
     elif csc == "MTCamera":
         jira = "CAP-318"
     elif csc == "MTEEC" and topic == "Commands":
         jira = "DM-22159"
-    elif csc == "MTM1M3":
-        jira = "DM-20956"
-    elif csc == "OCS" and topic == "Commands":
-        jira = "DM-22160"
     else:
         jira = ""
     return jira
@@ -48,7 +42,7 @@ def test_units(xmlfile, csc, topic):
         tree = et.parse(f)
     root = tree.getroot()
     for unit in root.findall(f"./{saltype}/item/Units"):
-        if not unit.text:
+        if not unit.text.replace(" ", ""):
             assert False, 'Units cannot be blank.'
         elif unit.text in ("unitless", "dimensionless"):
             assert True

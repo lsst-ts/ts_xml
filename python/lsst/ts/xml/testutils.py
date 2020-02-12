@@ -21,7 +21,7 @@ subsystems = [
     'CBP', 'DIMM', 'Dome',
     'DSM', 'EAS', 'EFD', 'EFDTransformationServer', 'Electrometer', 'Environment',
     'FiberSpectrograph', 'GenericCamera', 'IOTA', 'Hexapod', 'HVAC',
-    'LinearStage', 'LOVE', 'MTAOS', 'MTArchiver', 'MTCamera',
+    'LinearStage', 'LOVE', 'MTAOS', 'MTAlignment', 'MTArchiver', 'MTCamera',
     'MTDomeTrajectory', 'MTEEC', 'MTGuider', 'MTHeaderService',
     'MTLaserTracker', 'MTM1M3', 'MTM1M3TS', 'MTM2', 'MTMount', 'MTPtg', 'MTTCS',
     'MTVMS', 'PointingComponent', 'PromptProcessing', 'Rotator',
@@ -58,6 +58,11 @@ idl_reserved = [
     'TYPEDEF', 'TYPEID', 'TYPEPREFIX', 'UNION', 'UNSIGNED', 'USES', 'VALUEBASE',
     'VALUETYPE', 'VOID', 'WCHAR', 'WSTRING'
 ]
+
+"""Define the list of IDL Types"""
+idl_types = ['boolean', 'byte', 'octet', 'short', 'int', 'long', 'long long',
+             'unsigned short', 'unsigned int', 'unsigned long',
+             'unsigned long long', 'float', 'double', 'string', 'char']
 
 db_critical_reserved = [
     "TIME"

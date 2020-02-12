@@ -1,74 +1,62 @@
-<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
-        elementFormDefault="unqualified"
-        attributeFormDefault="unqualified">
-
-  <xsd:annotation>
-    <xsd:documentation xml:lang="en">
-     SAL Event data item schema for LSST
+<xsd:schema attributeFormDefault="unqualified" elementFormDefault="unqualified" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <xsd:annotation>
+        <xsd:documentation xml:lang="en">SAL Event data item schema for LSST
     </xsd:documentation>
-  </xsd:annotation>
-
- <xsd:element name="SALEventSet"      type="eventSetType"/>
- <xsd:element name="SALEvent"         type="eventType"/>
- <xsd:element name="SALEventItem"     type="eventItemType"/>
- <xsd:element name="SALEventFileRef"  type="eventFileRefType"/>
-
- <xsd:complexType name="eventItemType">
-     <xsd:choice maxOccurs="unbounded">
-              	<xsd:element name="EFDB_Name"     type="xsd:string"/>
-              	<xsd:element name="Description"   type="xsd:string"/>
-              	<xsd:element name="IDL_Type"      type="xsd:string"/>
-              	<xsd:element name="IDL_Size"      minOccurs="0"     type="xsd:string"/>
-              	<xsd:element name="Units"         type="xsd:string"/>
-              	<xsd:element name="Count"         type="xsd:positiveInteger"/>
-              	<xsd:element name="Explanation"   minOccurs="0" maxOccurs="1"  type="xsd:anyURI"/>
-                <xsd:element name="Enumeration"   minOccurs="0" maxOccurs="1"  type="xsd:string"/>
-      </xsd:choice>
- </xsd:complexType>
-
- <xsd:complexType name="eventType">
-     <xsd:sequence>
-      		<xsd:element   name="Subsystem"      minOccurs="1" maxOccurs="1" type="xsd:string"/>
-      		<xsd:element   name="Version"        minOccurs="0" maxOccurs="1" type="version"/>
-      		<xsd:element   name="Author"         type="xsd:string"/>
-      		<xsd:element   name="EFDB_Topic"     minOccurs="1" maxOccurs="1" type="xsd:string"/>
-      		<xsd:element   name="Alias"          minOccurs="0" maxOccurs="1" type="xsd:string"/>
-		<xsd:element   name="Enumeration"    minOccurs="0" maxOccurs="1" type="xsd:string"/>
-                <xsd:element   name="Description"    minOccurs="0" maxOccurs="1" type="xsd:string"/>
-      		<xsd:element   name="Explanation"    minOccurs="0" maxOccurs="1" type="xsd:anyURI"/>
-      		<xsd:element   name="item"           minOccurs="0" maxOccurs="unbounded" type="eventItemType"/>    
-      		<xsd:element   name="File_Reference" minOccurs="0" maxOccurs="1" type="eventFileRefType"/>    
-    </xsd:sequence>
- </xsd:complexType>
-
- <xsd:complexType name="eventSetType">
-  <xsd:sequence>
-   <xsd:element name="Enumeration" minOccurs="0" maxOccurs="unbounded" type="xsd:string"/>
-   <xsd:element name="SALEvent" minOccurs="1"    maxOccurs="unbounded" type="eventType"/>
-  </xsd:sequence>
- </xsd:complexType>
-
- <xsd:complexType name="eventFileRefType">
-     <xsd:choice maxOccurs="unbounded">
-              	<xsd:element name="EFDB_Name"     minOccurs="1" maxOccurs="1" type="xsd:string"/>
-              	<xsd:element name="Description"   type="xsd:string"/>
-              	<xsd:element name="URL"           minOccurs="1" maxOccurs="1" type="xsd:anyURI"/>
-              	<xsd:element name="Generator"     minOccurs="1" maxOccurs="1" type="xsd:string"/>
-              	<xsd:element name="Version"       minOccurs="1" maxOccurs="1" type="version"/>
-              	<xsd:element name="Checksum"      minOccurs="1" maxOccurs="1" type="xsd:string"/>
-              	<xsd:element name="Mime_Type"     type="xsd:string"/>
-              	<xsd:element name="Byte_Size"     type="xsd:positiveInteger"/>
-              	<xsd:element name="ID"            minOccurs="1" maxOccurs="1" type="xsd:string"/>
-              	<xsd:element name="Explanation"   minOccurs="0" maxOccurs="1" type="xsd:anyURI"/>
-    </xsd:choice>
- </xsd:complexType>
-  <xsd:simpleType name="version">
-    <xsd:restriction base="xsd:token">
-      <xsd:pattern value="\d+\.\d+(\.\d+)?"/>
-    </xsd:restriction>
-  </xsd:simpleType>
-
- <xsd:attribute name="updateDate"    type="xsd:date"/>
-
+    </xsd:annotation>
+    <xsd:element name="SALEventSet" type="eventSetType"/>
+    <xsd:element name="SALEvent" type="eventType"/>
+    <xsd:element name="SALEventItem" type="eventItemType"/>
+    <xsd:element name="SALEventFileRef" type="eventFileRefType"/>
+    <xsd:complexType name="eventItemType">
+        <xsd:choice maxOccurs="unbounded">
+            <xsd:element name="EFDB_Name" type="xsd:string"/>
+            <xsd:element name="Description" type="xsd:string"/>
+            <xsd:element name="IDL_Type" type="xsd:string"/>
+            <xsd:element minOccurs="0" name="IDL_Size" type="xsd:string"/>
+            <xsd:element name="Units" type="xsd:string"/>
+            <xsd:element name="Count" type="xsd:positiveInteger"/>
+            <xsd:element maxOccurs="1" minOccurs="0" name="Explanation" type="xsd:anyURI"/>
+            <xsd:element maxOccurs="1" minOccurs="0" name="Enumeration" type="xsd:string"/>
+        </xsd:choice>
+    </xsd:complexType>
+    <xsd:complexType name="eventType">
+        <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="1" name="Subsystem" type="xsd:string"/>
+            <xsd:element maxOccurs="1" minOccurs="0" name="Version" type="version"/>
+            <xsd:element maxOccurs="1" minOccurs="0" name="Author" type="xsd:string"/>
+            <xsd:element maxOccurs="1" minOccurs="1" name="EFDB_Topic" type="xsd:string"/>
+            <xsd:element maxOccurs="1" minOccurs="0" name="Alias" type="xsd:string"/>
+            <xsd:element maxOccurs="1" minOccurs="0" name="Enumeration" type="xsd:string"/>
+            <xsd:element maxOccurs="1" minOccurs="0" name="Description" type="xsd:string"/>
+            <xsd:element maxOccurs="1" minOccurs="0" name="Explanation" type="xsd:anyURI"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="item" type="eventItemType"/>
+            <xsd:element maxOccurs="1" minOccurs="0" name="File_Reference" type="eventFileRefType"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="eventSetType">
+        <xsd:sequence>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="Enumeration" type="xsd:string"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="1" name="SALEvent" type="eventType"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="eventFileRefType">
+        <xsd:choice maxOccurs="unbounded">
+            <xsd:element maxOccurs="1" minOccurs="1" name="EFDB_Name" type="xsd:string"/>
+            <xsd:element name="Description" type="xsd:string"/>
+            <xsd:element maxOccurs="1" minOccurs="1" name="URL" type="xsd:anyURI"/>
+            <xsd:element maxOccurs="1" minOccurs="1" name="Generator" type="xsd:string"/>
+            <xsd:element maxOccurs="1" minOccurs="1" name="Version" type="version"/>
+            <xsd:element maxOccurs="1" minOccurs="1" name="Checksum" type="xsd:string"/>
+            <xsd:element name="Mime_Type" type="xsd:string"/>
+            <xsd:element name="Byte_Size" type="xsd:positiveInteger"/>
+            <xsd:element maxOccurs="1" minOccurs="1" name="ID" type="xsd:string"/>
+            <xsd:element maxOccurs="1" minOccurs="0" name="Explanation" type="xsd:anyURI"/>
+        </xsd:choice>
+    </xsd:complexType>
+    <xsd:simpleType name="version">
+        <xsd:restriction base="xsd:token">
+            <xsd:pattern value="\d+\.\d+(\.\d+)?"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+    <xsd:attribute name="updateDate" type="xsd:date"/>
 </xsd:schema>
-

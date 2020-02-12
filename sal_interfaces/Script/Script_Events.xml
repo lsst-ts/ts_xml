@@ -10,8 +10,6 @@
 <!--Subset of standard CSC events (Script is not a CSC, but use what might be useful)-->
 <SALEvent>
     <Subsystem>Script</Subsystem>
-    <Version>1.0.0</Version>
-    <Author></Author>
     <EFDB_Topic>Script_logevent_heartbeat</EFDB_Topic>
     <Alias>heartbeat</Alias>
     <Description>Standard heartbeat event.</Description>
@@ -23,12 +21,83 @@
         <Count>1</Count>
     </item>
 </SALEvent>
+<SALEvent>
+    <Subsystem>Script</Subsystem>
+    <EFDB_Topic>Script_logevent_logLevel</EFDB_Topic>
+    <Alias>logLevel</Alias>
+    <Description>The current logging level.</Description>
+    <item>
+        <EFDB_Name>level</EFDB_Name>
+        <Description>Current logging level, a Python logging level: error=40, warning=30, info=20, debug=10.</Description>
+        <IDL_Type>int</IDL_Type>
+        <Units>unitless</Units>
+        <Count>1</Count>
+    </item>
+</SALEvent>
+<SALEvent>
+    <Subsystem>Script</Subsystem>
+    <EFDB_Topic>Script_logevent_logMessage</EFDB_Topic>
+    <Alias>logMessage</Alias>
+    <Description>A log message.</Description>
+    <item>
+        <EFDB_Name>level</EFDB_Name>
+        <Description>Message level, a Python logging level: error=40, warning=30, info=20, debug=10.</Description>
+        <IDL_Type>int</IDL_Type>
+        <Units>unitless</Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>message</EFDB_Name>
+        <Description>Log message.</Description>
+        <IDL_Type>string</IDL_Type>
+        <IDL_Size>1</IDL_Size>
+        <Units>unitless</Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>traceback</EFDB_Name>
+        <Description>Exception traceback; "" if not an exception.</Description>
+        <IDL_Type>string</IDL_Type>
+        <IDL_Size>1</IDL_Size>
+        <Units>unitless</Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>filePath</EFDB_Name>
+        <Description>Path to source file.</Description>
+        <IDL_Type>string</IDL_Type>
+        <IDL_Size>1</IDL_Size>
+        <Units>unitless</Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>functionName</EFDB_Name>
+        <Description>Function or method name.</Description>
+        <IDL_Type>string</IDL_Type>
+        <IDL_Size>1</IDL_Size>
+        <Units>unitless</Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>lineNumber</EFDB_Name>
+        <Description>Line number in the file specified by filePath.</Description>
+        <IDL_Type>long</IDL_Type>
+        <Units>unitless</Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>process</EFDB_Name>
+        <Description>Process ID.</Description>
+        <IDL_Type>long</IDL_Type>
+        <IDL_Size>1</IDL_Size>
+        <Units>unitless</Units>
+        <Count>1</Count>
+    </item>
+</SALEvent>
 <!--End subset of standard CSC events-->
 
 <SALEvent>
     <Subsystem>Script</Subsystem>
-    <Version>1.0.0</Version>
-    <Author></Author>
     <EFDB_Topic>Script_logevent_checkpoints</EFDB_Topic>
     <Alias>checkpoints</Alias>
     <Description>Pause and stop checkpoints.</Description>
@@ -51,54 +120,6 @@
 </SALEvent>
 <SALEvent>
     <Subsystem>Script</Subsystem>
-    <Version>1.0.0</Version>
-    <Author></Author>
-    <EFDB_Topic>Script_logevent_logLevel</EFDB_Topic>
-    <Alias>logLevel</Alias>
-    <Description>The current logging level.</Description>
-    <item>
-        <EFDB_Name>level</EFDB_Name>
-        <Description>Current logging level, a Python logging level: error=40, warning=30, info=20, debug=10.</Description>
-        <IDL_Type>int</IDL_Type>
-        <Units>unitless</Units>
-        <Count>1</Count>
-    </item>
-</SALEvent>
-<SALEvent>
-    <Subsystem>Script</Subsystem>
-    <Version>1.0.0</Version>
-    <Author></Author>
-    <EFDB_Topic>Script_logevent_logMessage</EFDB_Topic>
-    <Alias>logMessage</Alias>
-    <Description>A log message.</Description>
-    <item>
-        <EFDB_Name>level</EFDB_Name>
-        <Description>Message level, a Python logging level: error=40, warning=30, info=20, debug=10.</Description>
-        <IDL_Type>int</IDL_Type>
-        <Units>unitless</Units>
-        <Count>1</Count>
-    </item>
-    <item>
-        <EFDB_Name>message</EFDB_Name>
-        <Description>Log message.</Description>
-        <IDL_Type>string</IDL_Type>
-        <IDL_Size>1</IDL_Size>
-        <Units>unitless</Units>
-        <Count>1</Count>
-    </item>
-    <item>
-        <EFDB_Name>traceback</EFDB_Name>
-        <Description>Exception traceback.</Description>
-        <IDL_Type>string</IDL_Type>
-        <IDL_Size>1</IDL_Size>
-        <Units>unitless</Units>
-        <Count>1</Count>
-    </item>
-</SALEvent>
-<SALEvent>
-    <Subsystem>Script</Subsystem>
-    <Version>1.0.0</Version>
-    <Author></Author>
     <EFDB_Topic>Script_logevent_description</EFDB_Topic>
     <Alias>description</Alias>
     <Description>Script, class name, description and a list of the remotes it uses -- basically metadata that does not usually depend on configuration.</Description>
@@ -129,8 +150,6 @@
 </SALEvent>
 <SALEvent>
     <Subsystem>Script</Subsystem>
-    <Version>1.0.0</Version>
-    <Author></Author>
     <EFDB_Topic>Script_logevent_metadata</EFDB_Topic>
     <Alias>metadata</Alias>
     <Description>Script metadata that may depend on configuration.</Description>
@@ -177,14 +196,14 @@
         <Description>Comma-separated names of acceptable filters, or blank for any filter.</Description>
         <IDL_Type>string</IDL_Type>
         <IDL_Size>1</IDL_Size>
-        <Units>second</Units>
+        <Units>unitless</Units>
         <Count>1</Count>
     </item>
     <item>
         <EFDB_Name>dome</EFDB_Name>
         <Description>Desired dome state; a MetadataDome enum.</Description>
         <IDL_Type>short</IDL_Type>
-        <Units>second</Units>
+        <Units>unitless</Units>
         <Count>1</Count>
     </item>
     <item>
@@ -194,11 +213,24 @@
         <Units>second</Units>
         <Count>1</Count>
     </item>
+    <item>
+        <EFDB_Name>nimages</EFDB_Name>
+        <Description>Predicted number of images to take; 0 if unknown.</Description>
+        <IDL_Type>int</IDL_Type>
+        <Units>unitless</Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>survey</EFDB_Name>
+        <Description>Survey name.</Description>
+        <IDL_Type>string</IDL_Type>
+        <IDL_Size>1</IDL_Size>
+        <Units>unitless</Units>
+        <Count>1</Count>
+    </item>
 </SALEvent>
 <SALEvent>
     <Subsystem>Script</Subsystem>
-    <Version>1.0.0</Version>
-    <Author></Author>
     <EFDB_Topic>Script_logevent_state</EFDB_Topic>
     <Alias>state</Alias>
     <Description>Script state.</Description>
@@ -213,6 +245,14 @@
     <item>
         <EFDB_Name>reason</EFDB_Name>
         <Description>More information about the state change; typically a reason for failure if the state is FAILED.</Description>
+        <IDL_Type>string</IDL_Type>
+        <IDL_Size>1</IDL_Size>
+        <Units>unitless</Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>groupId</EFDB_Name>
+        <Description>Group ID; none if "".</Description>
         <IDL_Type>string</IDL_Type>
         <IDL_Size>1</IDL_Size>
         <Units>unitless</Units>

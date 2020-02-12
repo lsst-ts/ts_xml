@@ -159,6 +159,121 @@
     <Subsystem>ATAOS</Subsystem>
     <Version>3.8</Version>
     <Author>Tiago Ribeiro</Author>
+    <EFDB_Topic>ATAOS_command_applyAxisOffset</EFDB_Topic>
+    <Alias>applyAxisOffset</Alias>
+    <Device></Device>
+    <Property></Property>
+    <Action></Action>
+    <Value></Value>
+    <Explanation>http://project.lsst.org/ts/sal_objects/help</Explanation>
+    <item>
+        <EFDB_Name>axis</EFDB_Name>
+        <Description>Name of the axis to apply offset. Must be one of m1, m2, x, y, z, u, v.</Description>
+        <IDL_Type>string</IDL_Type>
+        <IDL_Size>10</IDL_Size>
+        <Units>unitless</Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>offset</EFDB_Name>
+        <Description>Offset value. Unit depends on the axis.</Description>
+        <IDL_Type>float</IDL_Type>
+        <Units>unitless</Units>
+        <Count>1</Count>
+    </item>
+</SALCommand>
+<SALCommand>
+    <Subsystem>ATAOS</Subsystem>
+    <Version>3.8</Version>
+    <Author>Tiago Ribeiro</Author>
+    <EFDB_Topic>ATAOS_command_offset</EFDB_Topic>
+    <Alias>offset</Alias>
+    <Device></Device>
+    <Property></Property>
+    <Action></Action>
+    <Value></Value>
+    <Explanation>http://project.lsst.org/ts/sal_objects/help</Explanation>
+    <item>
+        <EFDB_Name>x</EFDB_Name>
+        <Description>Add this offset to the hexapod correction in the x-direction.</Description>
+        <IDL_Type>float</IDL_Type>
+        <Units>mm</Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>y</EFDB_Name>
+        <Description>Add this offset to the hexapod correction in the  y-direction.</Description>
+        <IDL_Type>float</IDL_Type>
+        <Units>mm</Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>z</EFDB_Name>
+        <Description>Add this offset to the hexapod correction in the  z-direction.</Description>
+        <IDL_Type>float</IDL_Type>
+        <Units>mm</Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>u</EFDB_Name>
+        <Description>Add this offset to the angle correction applied to the hexapod with respect to the hexapod x-axis.</Description>
+        <IDL_Type>float</IDL_Type>
+        <Units>degree</Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>v</EFDB_Name>
+        <Description>Add this offset to the angle correction applied to the hexapod with respect to the hexapod  y-axis.</Description>
+        <IDL_Type>float</IDL_Type>
+        <Units>degree</Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>w</EFDB_Name>
+        <Description>Add this offset to the angle correction applied to the hexapod with respect to the hexapod z-axis (Ignored).</Description>
+        <IDL_Type>float</IDL_Type>
+        <Units>degree</Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>m1</EFDB_Name>
+        <Description>Add this offset to the m1 correction.</Description>
+        <IDL_Type>float</IDL_Type>
+        <Units>Pa</Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>m2</EFDB_Name>
+        <Description>Add this offset to the  m2 correction.</Description>
+        <IDL_Type>float</IDL_Type>
+        <Units>Pa</Units>
+        <Count>1</Count>
+    </item>
+</SALCommand>
+<SALCommand>
+    <Subsystem>ATAOS</Subsystem>
+    <Version>3.8</Version>
+    <Author>Tiago Ribeiro</Author>
+    <EFDB_Topic>ATAOS_command_resetOffset</EFDB_Topic>
+    <Alias>resetOffset</Alias>
+    <Device></Device>
+    <Property></Property>
+    <Action></Action>
+    <Value></Value>
+    <Explanation>http://project.lsst.org/ts/sal_objects/help</Explanation>
+    <item>
+        <EFDB_Name>axis</EFDB_Name>
+        <Description>Name of the axis to reset offset. Must be one of m1, m2, x, y, z, u, v, all or empty. If empty, reset all.</Description>
+        <IDL_Type>string</IDL_Type>
+        <IDL_Size>10</IDL_Size>
+        <Units>unitless</Units>
+        <Count>1</Count>
+    </item>
+</SALCommand>
+<SALCommand>
+    <Subsystem>ATAOS</Subsystem>
+    <Version>3.8</Version>
+    <Author>Tiago Ribeiro</Author>
     <EFDB_Topic>ATAOS_command_setFocus</EFDB_Topic>
     <Alias>setFocus</Alias>
     <Device></Device>

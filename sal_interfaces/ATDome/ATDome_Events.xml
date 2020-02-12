@@ -10,7 +10,6 @@
     <SALEvent>
         <Subsystem>ATDome</Subsystem>
         <Version>3.8.2</Version>
-        <Author/>
         <EFDB_Topic>ATDome_logevent_azimuthCommandedState</EFDB_Topic>
         <Alias>azimuthCommandedState</Alias>
         <Description>Commanded state of azimuth drive.</Description>
@@ -33,7 +32,6 @@
     <SALEvent>
         <Subsystem>ATDome</Subsystem>
         <Version>3.8.2</Version>
-        <Author/>
         <EFDB_Topic>ATDome_logevent_azimuthState</EFDB_Topic>
         <Alias>azimuthState</Alias>
         <Description>Current state of azimuth drive.</Description>
@@ -56,7 +54,6 @@
     <SALEvent>
         <Subsystem>ATDome</Subsystem>
         <Version>3.8.2</Version>
-        <Author/>
         <EFDB_Topic>ATDome_logevent_dropoutDoorCommandedState</EFDB_Topic>
         <Alias>dropoutDoorCommandedState</Alias>
         <Description>Commanded state of the dropout shutter door.</Description>
@@ -72,7 +69,6 @@
     <SALEvent>
         <Subsystem>ATDome</Subsystem>
         <Version>3.8.2</Version>
-        <Author/>
         <EFDB_Topic>ATDome_logevent_dropoutDoorState</EFDB_Topic>
         <Alias>dropoutDoorState</Alias>
         <Description>Current state of the dropout shutter door.</Description>
@@ -88,7 +84,6 @@
     <SALEvent>
         <Subsystem>ATDome</Subsystem>
         <Version>3.8.2</Version>
-        <Author/>
         <EFDB_Topic>ATDome_logevent_mainDoorCommandedState</EFDB_Topic>
         <Alias>mainDoorCommandedState</Alias>
         <Description>Commanded state of the main shutter door.</Description>
@@ -104,7 +99,6 @@
     <SALEvent>
         <Subsystem>ATDome</Subsystem>
         <Version>3.8.2</Version>
-        <Author/>
         <EFDB_Topic>ATDome_logevent_mainDoorState</EFDB_Topic>
         <Alias>mainDoorState</Alias>
         <Description>Current state of the main shutter door.</Description>
@@ -120,7 +114,6 @@
     <SALEvent>
         <Subsystem>ATDome</Subsystem>
         <Version>3.8.2</Version>
-        <Author/>
         <EFDB_Topic>ATDome_logevent_azimuthInPosition</EFDB_Topic>
         <Alias>azimuthInPosition</Alias>
         <Description>Is the dome azimuth in the commanded position? Note: this will be false when the CSC starts up until a position is commanded.</Description>
@@ -135,7 +128,6 @@
     <SALEvent>
         <Subsystem>ATDome</Subsystem>
         <Version>3.8.2</Version>
-        <Author/>
         <EFDB_Topic>ATDome_logevent_shutterInPosition</EFDB_Topic>
         <Alias>shutterInPosition</Alias>
         <Description>Are the shutter doors in their commanded positions? Note: this will be false when the CSC starts up until a position is commanded for both doors.</Description>
@@ -150,7 +142,6 @@
     <SALEvent>
         <Subsystem>ATDome</Subsystem>
         <Version>3.8.2</Version>
-        <Author/>
         <EFDB_Topic>ATDome_logevent_allAxesInPosition</EFDB_Topic>
         <Alias>allAxesInPosition</Alias>
         <Description>Are all axes (azimuth and both shutter doors) in position?</Description>
@@ -162,11 +153,59 @@
             <Count>1</Count>
         </item>
     </SALEvent>
+    <SALEvent>
+        <Subsystem>ATDome</Subsystem>
+        <Version>3.8.2</Version>
+        <EFDB_Topic>ATDome_logevent_doorEncoderExtremes</EFDB_Topic>
+        <Alias>doorEncoderExtremes</Alias>
+        <Description>Encoder values of the doors when fully closed or fully opened. Reported in full status as `Main Door Encoder Closed`, etc.</Description>
+        <item>
+            <EFDB_Name>mainClosed</EFDB_Name>
+            <Description>Encoder position for main door when fully closed.</Description>
+            <IDL_Type>long long</IDL_Type>
+            <Units>unitless</Units>
+            <Count>1</Count>
+        </item>
+        <item>
+            <EFDB_Name>mainOpened</EFDB_Name>
+            <Description>Encoder position for main door when fully opened.</Description>
+            <IDL_Type>long long</IDL_Type>
+            <Units>unitless</Units>
+            <Count>1</Count>
+        </item>
+        <item>
+            <EFDB_Name>dropoutClosed</EFDB_Name>
+            <Description>Encoder position for dropout door when fully closed.</Description>
+            <IDL_Type>long long</IDL_Type>
+            <Units>unitless</Units>
+            <Count>1</Count>
+        </item>
+        <item>
+            <EFDB_Name>dropoutOpened</EFDB_Name>
+            <Description>Encoder position for dropout door when fully opened.</Description>
+            <IDL_Type>long long</IDL_Type>
+            <Units>unitless</Units>
+            <Count>1</Count>
+        </item>
+    </SALEvent>
+    <SALEvent>
+        <Subsystem>ATDome</Subsystem>
+        <Version>3.8.2</Version>
+        <EFDB_Topic>ATDome_logevent_lastAzimuthGoTo</EFDB_Topic>
+        <Alias>lastAzimuthGoTo</Alias>
+        <Description>The most recently commanded azimuth position.</Description>
+        <item>
+            <EFDB_Name>position</EFDB_Name>
+            <Description>Reported position.</Description>
+            <IDL_Type>float</IDL_Type>
+            <Units>deg</Units>
+            <Count>1</Count>
+        </item>
+    </SALEvent>
     <!-- Trouble states -->
     <SALEvent>
         <Subsystem>ATDome</Subsystem>
         <Version>3.8.2</Version>
-        <Author/>
         <EFDB_Topic>ATDome_logevent_emergencyStop</EFDB_Topic>
         <Alias>emergencyStop</Alias>
         <Description>Has the emergency stop button been activated?</Description>
@@ -181,7 +220,6 @@
     <SALEvent>
         <Subsystem>ATDome</Subsystem>
         <Version>3.8.2</Version>
-        <Author/>
         <EFDB_Topic>ATDome_logevent_scbLink</EFDB_Topic>
         <Alias>scbLink</Alias>
         <Description>Can the main controller box (MCB) communicate with the shutter control box (SCB)?</Description>
@@ -197,7 +235,6 @@
     <SALEvent>
         <Subsystem>ATDome</Subsystem>
         <Version>3.8.2</Version>
-        <Author/>
         <EFDB_Topic>ATDome_logevent_settingsAppliedDomeController</EFDB_Topic>
         <Alias>settingsAppliedDomeController</Alias>
         <Description>Settings internal to the ATDome TCP/IP controller.</Description>
@@ -244,6 +281,13 @@
             <Count>1</Count>
         </item>
         <item>
+            <EFDB_Name>dropoutTimer</EFDB_Name>
+            <Description>What is this? How does it differ from doorMoveTimeout?</Description>
+            <IDL_Type>float</IDL_Type>
+            <Units>second</Units>
+            <Count>1</Count>
+        </item>
+        <item>
             <EFDB_Name>reversalDelay</EFDB_Name>
             <Description>The delay between reversing motor directions for the shutter doors, where 0 &lt; t &lt;= 6. For a 240 VAC system this parameter can be set to 0.</Description>
             <IDL_Type>float</IDL_Type>
@@ -257,11 +301,38 @@
             <Units>unitless</Units>
             <Count>1</Count>
         </item>
+        <item>
+            <EFDB_Name>coast</EFDB_Name>
+            <Description>Azimuth coasting distance.</Description>
+            <IDL_Type>float</IDL_Type>
+            <Units>deg</Units>
+            <Count>1</Count>
+        </item>
+        <item>
+            <EFDB_Name>encoderCountsPer360</EFDB_Name>
+            <Description>Number of azimuth encoder counts per full rotation.</Description>
+            <IDL_Type>long long</IDL_Type>
+            <Units>unitless</Units>
+            <Count>1</Count>
+        </item>
+        <item>
+            <EFDB_Name>azimuthMoveTimeout</EFDB_Name>
+            <Description>Timeout for azimuth moves.</Description>
+            <IDL_Type>float</IDL_Type>
+            <Units>second</Units>
+            <Count>1</Count>
+        </item>
+        <item>
+            <EFDB_Name>doorMoveTimeout</EFDB_Name>
+            <Description>Timeout for opening or closing (what? either shutter door?).</Description>
+            <IDL_Type>float</IDL_Type>
+            <Units>second</Units>
+            <Count>1</Count>
+        </item>
     </SALEvent>
     <SALEvent>
         <Subsystem>ATDome</Subsystem>
         <Version>3.8.2</Version>
-        <Author/>
         <EFDB_Topic>ATDome_logevent_settingsAppliedDomeTcp</EFDB_Topic>
         <Alias>settingsAppliedDomeTcp</Alias>
         <Description>Settings related to communication between the ATDome CSC and the ATDome TCP/IP controller.</Description>

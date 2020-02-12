@@ -1,167 +1,156 @@
-<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
-        elementFormDefault="unqualified"
-        attributeFormDefault="unqualified">
-
-  <xsd:annotation>
-    <xsd:documentation xml:lang="en">
-     SAL telemetry data item schema for LSST
-    </xsd:documentation>
-  </xsd:annotation>
-
-
-
-  <xsd:element name="SALTelemetrySet" type="telemetrySetType"/>
-  <xsd:element name="SALTelemetry" type="telemetryType"/>
-  <xsd:element name="SALTelemetryItem" type="telemetryItemType"/>
-
-  <xsd:complexType name="telemetryItemType">
+<xsd:schema attributeFormDefault="unqualified" elementFormDefault="unqualified" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
     <xsd:annotation>
-      <xsd:documentation>Telemetry items parameters and values</xsd:documentation>
+        <xsd:documentation xml:lang="en">SAL telemetry data item schema for LSST
+    </xsd:documentation>
     </xsd:annotation>
-    <xsd:choice maxOccurs="unbounded">
-      <xsd:element name="EFDB_Name" type="xsd:string">
+    <xsd:element name="SALTelemetrySet" type="telemetrySetType"/>
+    <xsd:element name="SALTelemetry" type="telemetryType"/>
+    <xsd:element name="SALTelemetryItem" type="telemetryItemType"/>
+    <xsd:complexType name="telemetryItemType">
         <xsd:annotation>
-          <xsd:documentation>Engineering and Facility Database name</xsd:documentation>
+            <xsd:documentation>Telemetry items parameters and values</xsd:documentation>
         </xsd:annotation>
-      </xsd:element>
-      <xsd:element name="Description" type="xsd:string">
-        <xsd:annotation>
-          <xsd:documentation>Description of telemetry item</xsd:documentation>
-        </xsd:annotation>
-      </xsd:element>
-      <xsd:element name="Frequency" type="xsd:decimal" minOccurs="0" maxOccurs="1">
-        <xsd:annotation>
-          <xsd:documentation>Frequency of telemetry item</xsd:documentation>
-        </xsd:annotation>
-      </xsd:element>
-      <xsd:element name="Publishers" type="xsd:positiveInteger" minOccurs="0" maxOccurs="1">
-        <xsd:annotation>
-          <xsd:documentation>Number of publishers of telemetry item</xsd:documentation>
-        </xsd:annotation>
-      </xsd:element>
-      <xsd:element name="Values_per_Publisher" type="xsd:positiveInteger" minOccurs="0" maxOccurs="1">
-        <xsd:annotation>
-          <xsd:documentation>Number of values per publisher</xsd:documentation>
-        </xsd:annotation>
-      </xsd:element>
-      <xsd:element name="Size_in_bytes" type="xsd:positiveInteger" minOccurs="0" maxOccurs="1">
-        <xsd:annotation>
-          <xsd:documentation>Size of telemetry item in bytes</xsd:documentation>
-        </xsd:annotation>
-      </xsd:element>
-      <xsd:element name="IDL_Type" type="xsd:string">
-        <xsd:annotation>
-          <xsd:documentation>IDL type of telemetry item</xsd:documentation>
-        </xsd:annotation>
-      </xsd:element>
-      <xsd:element name="IDL_Size" type="xsd:string" minOccurs="0"/>
-      <xsd:element name="Units" type="xsd:string">
-        <xsd:annotation>
-          <xsd:documentation>Units (if known)</xsd:documentation>
-        </xsd:annotation>
-      </xsd:element>
-      <xsd:element name="Conversion" type="xsd:string" minOccurs="0" maxOccurs="1">
-        <xsd:annotation>
-          <xsd:documentation>Conversion factor expressed as a string</xsd:documentation>
-        </xsd:annotation>
-      </xsd:element>
-      <xsd:element name="Sensor_location" type="xsd:string" minOccurs="0" maxOccurs="1">
-        <xsd:annotation>
-          <xsd:documentation>Location of the sensor (if any)</xsd:documentation>
-        </xsd:annotation>
-      </xsd:element>
-      <xsd:element name="Count" type="xsd:positiveInteger">
-        <xsd:annotation>
-          <xsd:documentation>Count</xsd:documentation>
-        </xsd:annotation>
-      </xsd:element>
-      <xsd:element name="Instances_per_night" type="xsd:positiveInteger" minOccurs="0" maxOccurs="1">
-        <xsd:annotation>
-          <xsd:documentation>Number of instances/night of telemetry item</xsd:documentation>
-        </xsd:annotation>
-      </xsd:element>
-      <xsd:element name="Bytes_per_night" type="xsd:positiveInteger" minOccurs="0" maxOccurs="1">
-        <xsd:annotation>
-          <xsd:documentation>Number of bytes/night of telemetry item</xsd:documentation>
-        </xsd:annotation>
-      </xsd:element>
-      <xsd:element name="Explanation" minOccurs="0" maxOccurs="1" type="xsd:anyURI">
-        <xsd:annotation>
-          <xsd:documentation>Explanation of telemetry item</xsd:documentation>
-        </xsd:annotation>
-      </xsd:element>
-      <xsd:element name="Needed_by_DM" minOccurs="0" maxOccurs="1" type="xsd:boolean">
-        <xsd:annotation>
-          <xsd:documentation>Is this required by the DMCS?</xsd:documentation>
-        </xsd:annotation>
-      </xsd:element>
-      <xsd:element name="Needed_by_Camera" minOccurs="0" maxOccurs="1" type="xsd:boolean">
-        <xsd:annotation>
-          <xsd:documentation>Is this required by the CCS?</xsd:documentation>
-        </xsd:annotation>
-      </xsd:element>
-      <xsd:element name="Needed_by_OCS" minOccurs="0" maxOccurs="1" type="xsd:boolean">
-        <xsd:annotation>
-          <xsd:documentation>Is this required by the OCS?</xsd:documentation>
-        </xsd:annotation>
-      </xsd:element>
-      <xsd:element name="Needed_by_TCS" minOccurs="0" maxOccurs="1" type="xsd:boolean">
-        <xsd:annotation>
-          <xsd:documentation>Is this required by the TCS?</xsd:documentation>
-        </xsd:annotation>
-      </xsd:element>
-      <xsd:element name="Needed_by_EPO" minOccurs="0" maxOccurs="1" type="xsd:boolean">
-        <xsd:annotation>
-          <xsd:documentation>Is this required by the EPO?</xsd:documentation>
-        </xsd:annotation>
-      </xsd:element>
-      <xsd:element name="Enumeration"   minOccurs="0" maxOccurs="1" type="xsd:string"/>
-    </xsd:choice>
-  </xsd:complexType>
-  <xsd:complexType name="telemetryType">
-    <xsd:choice maxOccurs="unbounded">
-      <xsd:element name="Subsystem" type="xsd:string">
-        <xsd:annotation>
-          <xsd:documentation>Subsystem identifier</xsd:documentation>
-        </xsd:annotation>
-      </xsd:element>
-      <xsd:element name="Version" minOccurs="0" maxOccurs="1" type="version">
-        <xsd:annotation>
-          <xsd:documentation>ICD version compatability</xsd:documentation>
-        </xsd:annotation>
-      </xsd:element>
-      <xsd:element name="Author" type="xsd:string">
-        <xsd:annotation>
-          <xsd:documentation>Name of responsible person defining telemetry item</xsd:documentation>
-        </xsd:annotation>
-      </xsd:element>
-      <xsd:element name="Description" minOccurs="0" maxOccurs="1" type="xsd:string"/>
-      <xsd:element name="Explanation" minOccurs="0" maxOccurs="1" type="xsd:anyURI">
-        <xsd:annotation>
-          <xsd:documentation>Explanation of telemetry item</xsd:documentation>
-        </xsd:annotation>
-      </xsd:element>
-      <xsd:element name="EFDB_Topic" type="xsd:string">
-        <xsd:annotation>
-          <xsd:documentation>Engineering and Facility Database topic</xsd:documentation>
-        </xsd:annotation>
-      </xsd:element>
-      <xsd:element name="item" minOccurs="1" maxOccurs="unbounded" type="telemetryItemType"/>
-    </xsd:choice>
-  </xsd:complexType>
-
-  <xsd:complexType name="telemetrySetType">
-    <xsd:sequence>
-      <xsd:element name="Enumeration" minOccurs="0" maxOccurs="unbounded" type="xsd:string"/>
-      <xsd:element name="SALTelemetry" minOccurs="1" maxOccurs="unbounded" type="telemetryType"/>
-    </xsd:sequence>
-  </xsd:complexType>
-
-  <xsd:attribute name="updateDate" type="xsd:date"/>
-
-  <xsd:simpleType name="version">
-    <xsd:restriction base="xsd:token">
-      <xsd:pattern value="\d+\.\d+(\.\d+)?"/>
-    </xsd:restriction>
-  </xsd:simpleType>
+        <xsd:choice maxOccurs="unbounded">
+            <xsd:element name="EFDB_Name" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation>Engineering and Facility Database name</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="Description" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation>Description of telemetry item</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element maxOccurs="1" minOccurs="0" name="Frequency" type="xsd:decimal">
+                <xsd:annotation>
+                    <xsd:documentation>Frequency of telemetry item</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element maxOccurs="1" minOccurs="0" name="Publishers" type="xsd:positiveInteger">
+                <xsd:annotation>
+                    <xsd:documentation>Number of publishers of telemetry item</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element maxOccurs="1" minOccurs="0" name="Values_per_Publisher" type="xsd:positiveInteger">
+                <xsd:annotation>
+                    <xsd:documentation>Number of values per publisher</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element maxOccurs="1" minOccurs="0" name="Size_in_bytes" type="xsd:positiveInteger">
+                <xsd:annotation>
+                    <xsd:documentation>Size of telemetry item in bytes</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="IDL_Type" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation>IDL type of telemetry item</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="IDL_Size" type="xsd:string"/>
+            <xsd:element name="Units" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation>Units (if known)</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element maxOccurs="1" minOccurs="0" name="Conversion" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation>Conversion factor expressed as a string</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element maxOccurs="1" minOccurs="0" name="Sensor_location" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation>Location of the sensor (if any)</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="Count" type="xsd:positiveInteger">
+                <xsd:annotation>
+                    <xsd:documentation>Count</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element maxOccurs="1" minOccurs="0" name="Instances_per_night" type="xsd:positiveInteger">
+                <xsd:annotation>
+                    <xsd:documentation>Number of instances/night of telemetry item</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element maxOccurs="1" minOccurs="0" name="Bytes_per_night" type="xsd:positiveInteger">
+                <xsd:annotation>
+                    <xsd:documentation>Number of bytes/night of telemetry item</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element maxOccurs="1" minOccurs="0" name="Explanation" type="xsd:anyURI">
+                <xsd:annotation>
+                    <xsd:documentation>Explanation of telemetry item</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element maxOccurs="1" minOccurs="0" name="Needed_by_DM" type="xsd:boolean">
+                <xsd:annotation>
+                    <xsd:documentation>Is this required by the DMCS?</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element maxOccurs="1" minOccurs="0" name="Needed_by_Camera" type="xsd:boolean">
+                <xsd:annotation>
+                    <xsd:documentation>Is this required by the CCS?</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element maxOccurs="1" minOccurs="0" name="Needed_by_OCS" type="xsd:boolean">
+                <xsd:annotation>
+                    <xsd:documentation>Is this required by the OCS?</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element maxOccurs="1" minOccurs="0" name="Needed_by_TCS" type="xsd:boolean">
+                <xsd:annotation>
+                    <xsd:documentation>Is this required by the TCS?</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element maxOccurs="1" minOccurs="0" name="Needed_by_EPO" type="xsd:boolean">
+                <xsd:annotation>
+                    <xsd:documentation>Is this required by the EPO?</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element maxOccurs="1" minOccurs="0" name="Enumeration" type="xsd:string"/>
+        </xsd:choice>
+    </xsd:complexType>
+    <xsd:complexType name="telemetryType">
+        <xsd:choice maxOccurs="unbounded">
+            <xsd:element name="Subsystem" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation>Subsystem identifier</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element maxOccurs="1" minOccurs="0" name="Version" type="version">
+                <xsd:annotation>
+                    <xsd:documentation>ICD version compatability</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element maxOccurs="1" minOccurs="0" name="Author" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation>Name of responsible person defining telemetry item</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element maxOccurs="1" minOccurs="0" name="Description" type="xsd:string"/>
+            <xsd:element maxOccurs="1" minOccurs="0" name="Explanation" type="xsd:anyURI">
+                <xsd:annotation>
+                    <xsd:documentation>Explanation of telemetry item</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="EFDB_Topic" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation>Engineering and Facility Database topic</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element maxOccurs="unbounded" minOccurs="1" name="item" type="telemetryItemType"/>
+        </xsd:choice>
+    </xsd:complexType>
+    <xsd:complexType name="telemetrySetType">
+        <xsd:sequence>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="Enumeration" type="xsd:string"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="1" name="SALTelemetry" type="telemetryType"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:attribute name="updateDate" type="xsd:date"/>
+    <xsd:simpleType name="version">
+        <xsd:restriction base="xsd:token">
+            <xsd:pattern value="\d+\.\d+(\.\d+)?"/>
+        </xsd:restriction>
+    </xsd:simpleType>
 </xsd:schema>

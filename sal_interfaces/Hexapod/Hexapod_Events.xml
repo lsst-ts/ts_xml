@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-stylesheet type="text/xsl" href="http://lsst-sal.tuc.noao.edu/schema/SALEventSet.xsl"?>
 <SALEventSet xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:noNamespaceSchemaLocation="http://lsst-sal.tuc.noao.edu/schema/SALEventSet.xsd">
+    xsi:noNamespaceSchemaLocation="http://lsst-sal.tuc.noao.edu/schema/SALEventSet.xsd">
 <Enumeration>
     ControllerState_Standby=0,
     ControllerState_Disabled=1,
@@ -39,8 +39,6 @@
 
 <SALEvent>
     <Subsystem>Hexapod</Subsystem>
-    <Version>3.5.1</Version>
-    <Author></Author>
     <EFDB_Topic>Hexapod_logevent_controllerState</EFDB_Topic>
     <Alias>controllerState</Alias>
     <Description>State reported by the controller.</Description>
@@ -75,8 +73,6 @@
 </SALEvent>
 <SALEvent>
     <Subsystem>Hexapod</Subsystem>
-    <Version>3.5.1</Version>
-    <Author></Author>
     <EFDB_Topic>Hexapod_logevent_connected</EFDB_Topic>
     <Alias>connected</Alias>
     <Description>State of TCP/IP connection to the low level controller.</Description>
@@ -97,11 +93,9 @@
 </SALEvent>
 <SALEvent>
     <Subsystem>Hexapod</Subsystem>
-    <Version>3.5.1</Version>
-    <Author></Author>
     <EFDB_Topic>Hexapod_logevent_interlock</EFDB_Topic>
     <Alias>interlock</Alias>
-    <Explanation>This event is generated when safety interlock is engaged or disengaged.</Explanation>
+    <Description>This event is generated when safety interlock is engaged or disengaged.</Description>
     <item>
         <EFDB_Name>detail</EFDB_Name>
         <Description>detail</Description>
@@ -120,11 +114,9 @@
 </SALEvent>
 <SALEvent>
     <Subsystem>Hexapod</Subsystem>
-    <Version>3.5.1</Version>
-    <Author></Author>
     <EFDB_Topic>Hexapod_logevent_actuatorInPosition</EFDB_Topic>
     <Alias>actuatorInPosition</Alias>
-    <Explanation>Indicates whether each linear actuator has reached its commanded position.</Explanation>
+    <Description>Indicates whether each linear actuator has reached its commanded position.</Description>
     <item>
         <EFDB_Name>inPosition</EFDB_Name>
         <Description>Actuator in position.</Description>
@@ -135,11 +127,9 @@
 </SALEvent>
 <SALEvent>
     <Subsystem>Hexapod</Subsystem>
-    <Version>3.5.1</Version>
-    <Author></Author>
     <EFDB_Topic>Hexapod_logevent_inPosition</EFDB_Topic>
     <Alias>inPosition</Alias>
-    <Explanation>Indicates whether or not all actuators have reached their commanded position.</Explanation>
+    <Description>Indicates whether or not all actuators have reached their commanded position.</Description>
     <item>
         <EFDB_Name>inPosition</EFDB_Name>
         <Description>All actuators are in position.</Description>
@@ -150,11 +140,9 @@
 </SALEvent>
 <SALEvent>
     <Subsystem>Hexapod</Subsystem>
-    <Version>3.5.1</Version>
-    <Author></Author>
     <EFDB_Topic>Hexapod_logevent_configuration</EFDB_Topic>
     <Alias>configuration</Alias>
-    <Explanation>Hexapod configuration.</Explanation>
+    <Description>Hexapod configuration.</Description>
     <item>
         <EFDB_Name>accelerationAccmax</EFDB_Name>
         <Description>Maximum acceleration</Description>
@@ -459,14 +447,12 @@
 </SALEvent>
 <SALEvent>
     <Subsystem>Hexapod</Subsystem>
-    <Version>3.5.1</Version>
-    <Author></Author>
     <EFDB_Topic>Hexapod_logevent_commandableByDDS</EFDB_Topic>
     <Alias>commandableByDDS</Alias>
-    <Explanation>States if Hexapod is commandable by DDS commands or if its not set indicates that its running in Engineer mode</Explanation>
+    <Description>Can the CSC can control the hexapod?</Description>
     <item>
         <EFDB_Name>state</EFDB_Name>
-        <Description></Description>
+        <Description>If true the CSC can control the hexapod; else the Engineering User Interface has control.</Description>
         <IDL_Type>boolean</IDL_Type>
         <Units>dimensionless</Units>
         <Count>1</Count>

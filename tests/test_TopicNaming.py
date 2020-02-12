@@ -7,9 +7,7 @@ import lsst.ts.xml as ts_xml
 
 
 def check_for_issues(csc, topic, test):
-    if csc == "Hexapod" and topic == "Telemetry" and test == "alias":
-        jira = "DM-20971"
-    elif csc == "Dome" and topic == "Telemetry" and test == "alias":
+    if csc == "Dome" and topic == "Telemetry" and test == "alias":
         jira = "DM-22153"
     elif csc == "MTMount" and topic == "Telemetry" and test == "alias":
         jira = "DM-17276"
@@ -129,6 +127,6 @@ def test_topic_naming_alias(xmlfile, csc, topic):
             index = 1
         else:
             index = 2
-        assert re.match(r"^[a-z]([a-zA-Z0-9_]*$)", name.text.split('_')[index]) is not None, \
+        assert re.match(r"^[a-z]([a-zA-Z0-9_]*$)", name.text.split('_', maxsplit=index)[index]) is not None, \
             name.text + ' in ' + str(xmlfile.name) + ' does not begin with a lowercase '\
             'letter and/or contains non-alphanumeric characters.'
