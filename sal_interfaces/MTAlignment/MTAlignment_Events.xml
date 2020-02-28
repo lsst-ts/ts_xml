@@ -8,52 +8,6 @@
     <Subsystem>MTAlignment</Subsystem>
     <Version>3.7.1</Version>
     <Author></Author>
-    <EFDB_Topic>MTAlignment_logevent_loopTimeOutOfRange</EFDB_Topic>
-    <Alias>loopTimeOutOfRange</Alias>
-    <Explanation>http://sal.lsst.org</Explanation>
-    <item>
-        <EFDB_Name>loopTimeOutOfRange</EFDB_Name>
-        <Description>Attribute required by the API, but is unused.</Description>
-        <IDL_Type>boolean</IDL_Type>
-        <Units>dimensionless</Units>
-        <Count>1</Count>
-    </item>
-</SALEvent>
-<SALEvent>
-    <Subsystem>MTAlignment</Subsystem>
-    <Version>3.7.1</Version>
-    <Author></Author>
-    <EFDB_Topic>MTAlignment_logevent_rejectedCommand</EFDB_Topic>
-    <Alias>rejectedCommand</Alias>
-    <Explanation>http://sal.lsst.org</Explanation>
-    <item>
-        <EFDB_Name>commandValue</EFDB_Name>
-        <Description>Attribute required by the API, but is unused.</Description>
-        <IDL_Type>unsigned short</IDL_Type>
-        <Units>dimensionless</Units>
-        <Count>1</Count>
-    </item>
-    <item>
-        <EFDB_Name>detailedState</EFDB_Name>
-        <Description>Attribute required by the API, but is unused.</Description>
-        <!-- Enumeration: detailedState -->
-        <IDL_Type>long</IDL_Type>
-        <Units>dimensionless</Units>
-        <Count>1</Count>
-        <Enumeration>detailedState_detailedState_disabledState,detailedState_detailedState_enabledState,detailedState_detailedState_faultState,detailedState_detailedState_offlineState,detailedState_detailedState_standbyState</Enumeration>
-    </item>
-    <item>
-        <EFDB_Name>timestamp</EFDB_Name>
-        <Description>timestamp</Description>
-        <IDL_Type>double</IDL_Type>
-        <Units>second</Units>
-        <Count>1</Count>
-    </item>
-</SALEvent>
-<SALEvent>
-    <Subsystem>MTAlignment</Subsystem>
-    <Version>3.7.1</Version>
-    <Author></Author>
     <EFDB_Topic>MTAlignment_logevent_offsetsPublish</EFDB_Topic>
     <Alias>offsetsPublish</Alias>
     <Explanation>http://sal.lsst.org</Explanation>
@@ -102,6 +56,63 @@
     <item>
         <EFDB_Name>dRZ</EFDB_Name>
         <Description>z rotation offset of the measured object, relative to nominal</Description>
+        <IDL_Type>float</IDL_Type>
+        <Units>degree</Units>
+        <Count>1</Count>
+    </item>
+</SALEvent>
+<SALEvent>
+    <Subsystem>MTAlignment</Subsystem>
+    <Version>3.7.1</Version>
+    <Author></Author>
+    <EFDB_Topic>MTAlignment_logevent_positionPublish</EFDB_Topic>
+    <Alias>positionPublish</Alias>
+    <Explanation>http://sal.lsst.org</Explanation>
+    <item>
+        <EFDB_Name>target</EFDB_Name>
+        <Description>name of the object these positions belong to (M2, Camera, etc)</Description>
+        <IDL_Type>string</IDL_Type>
+        <Units>dimensionless</Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>dX</EFDB_Name>
+        <Description>x positions of the measured object</Description>
+        <IDL_Type>float</IDL_Type>
+        <Units>meter</Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>dY</EFDB_Name>
+        <Description>y positions of the measured object</Description>
+        <IDL_Type>float</IDL_Type>
+        <Units>meter</Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>dZ</EFDB_Name>
+        <Description>z positions of the measured object</Description>
+        <IDL_Type>float</IDL_Type>
+        <Units>meter</Units>
+        <Count>1</Count>
+    </item>
+        <item>
+        <EFDB_Name>dRX</EFDB_Name>
+        <Description>x rotation positions of the measured object</Description>
+        <IDL_Type>float</IDL_Type>
+        <Units>degree</Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>dRY</EFDB_Name>
+        <Description>y rotation positions of the measured object</Description>
+        <IDL_Type>float</IDL_Type>
+        <Units>degree</Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>dRZ</EFDB_Name>
+        <Description>z rotation positions of the measured object</Description>
         <IDL_Type>float</IDL_Type>
         <Units>degree</Units>
         <Count>1</Count>
