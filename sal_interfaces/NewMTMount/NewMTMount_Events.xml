@@ -1,90 +1,137 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-stylesheet type="text/xsl" href="http://lsst-sal.tuc.noao.edu/schema/SALEventSet.xsl"?>
-<SALEventSet xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:noNamespaceSchemaLocation="http://lsst-sal.tuc.noao.edu/schema/SALEventSet.xsd">
-
-<SALEvent>
- <Subsystem>NewMTMount</Subsystem>
-<Version>3.2.0</Version>
- <Author>Ander Ansuategi</Author>
- <EFDB_Topic>NewMTMount_logevent_mountState</EFDB_Topic>
- <Alias>mountState</Alias>
- <Explanation>http://sal.lsst.org/SAL/Events/NewMTMount_mountState.html</Explanation>
-    <item>
-      <EFDB_Name>id</EFDB_Name>
-      <Description>Identifier of the state</Description>
-      <IDL_Type>long</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>text</EFDB_Name>
-      <Description>The state of the state machine</Description>
-       <IDL_Type>string</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-</SALEvent>
-
-<SALEvent>
- <Subsystem>NewMTMount</Subsystem>
-<Version>3.2.0</Version>
- <Author>Ander Ansuategi</Author>
- <EFDB_Topic>NewMTMount_logevent_mountWarning</EFDB_Topic>
- <Alias>mountWarning</Alias>
- <Explanation>http://sal.lsst.org/SAL/Events/NewMTMount_mountWarning.html</Explanation>
-    <item>
-      <EFDB_Name>id</EFDB_Name>
-      <Description>Identifier of the warning</Description>
-      <IDL_Type>long</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>text</EFDB_Name>
-      <Description>The warning info</Description>
-       <IDL_Type>string</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-</SALEvent>
-
-<SALEvent>
- <Subsystem>NewMTMount</Subsystem>
-<Version>3.2.0</Version>
- <Author>Ander Ansuategi</Author>
- <EFDB_Topic>NewMTMount_logevent_mountError</EFDB_Topic>
- <Alias>mountError</Alias>
- <Explanation>http://sal.lsst.org/SAL/Events/NewMTMount_mountError.html</Explanation>
-    <item>
-      <EFDB_Name>id</EFDB_Name>
-      <Description>Identifier of the error</Description>
-      <IDL_Type>long</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>text</EFDB_Name>
-      <Description>The error info</Description>
-       <IDL_Type>string</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-</SALEvent>
-
-<SALEvent>
- <Subsystem>NewMTMount</Subsystem>
-<Version>3.2.0</Version>
- <Author>Ander Ansuategi</Author>
- <EFDB_Topic>NewMTMount_logevent_mountInPosition</EFDB_Topic>
- <Alias>mountInPosition</Alias>
- <Explanation>http://sal.lsst.org/SAL/Events/NewMTMount_mountInPosition.html</Explanation>
-    <item>
-      <EFDB_Name>inposition</EFDB_Name>
-      <Description>Whether the mount is in position or not</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-</SALEvent>
+<SALEventSet xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://lsst-sal.tuc.noao.edu/schema/SALEventSet.xsd">
+    <Enumeration>ActuatorState_Disabled,ActuatorState_Enabled,ActuatorState_Tracking,ActuatorState_Error</Enumeration>
+    <SALEvent>
+        <Subsystem>NewMTMount</Subsystem>
+        <EFDB_Topic>NewMTMount_logevent_axesInPosition</EFDB_Topic>
+        <Alias>axesInPosition</Alias>
+        <Description>Are the elevation and azimuth axes in position? If tracking, in position means the slew is done and the axes are now tracking the target.</Description>
+        <item>
+            <EFDB_Name>elevation</EFDB_Name>
+            <Description>Is the elevation axis in position?</Description>
+            <IDL_Type>boolean</IDL_Type>
+            <Units>unitless</Units>
+            <Count>1</Count>
+        </item>
+        <item>
+            <EFDB_Name>azimuth</EFDB_Name>
+            <Description>Is the azimuth axis in position?</Description>
+            <IDL_Type>boolean</IDL_Type>
+            <Units>unitless</Units>
+            <Count>1</Count>
+        </item>
+    </SALEvent>
+    <SALEvent>
+        <Subsystem>NewMTMount</Subsystem>
+        <EFDB_Topic>NewMTMount_logevent_axesState</EFDB_Topic>
+        <Alias>axesState</Alias>
+        <Description>State of the elevation and azimuth axes.</Description>
+        <item>
+            <EFDB_Name>elevation</EFDB_Name>
+            <Description>Elevation state, as an ActuatorState_Disabled constant enum</Description>
+            <IDL_Type>long</IDL_Type>
+            <Units>unitless</Units>
+            <Count>1</Count>
+        </item>
+        <item>
+            <EFDB_Name>azimuth</EFDB_Name>
+            <Description>Azimuth state, as an ActuatorState_Disabled constant enum</Description>
+            <IDL_Type>long</IDL_Type>
+            <Units>unitless</Units>
+            <Count>1</Count>
+        </item>
+    </SALEvent>
+    <SALEvent>
+        <Subsystem>NewMTMount</Subsystem>
+        <EFDB_Topic>NewMTMount_logevent_cameraCableWrapState</EFDB_Topic>
+        <Alias>cameraCableWrapState</Alias>
+        <Description>State of the camera cable wrap.</Description>
+        <item>
+            <EFDB_Name>state</EFDB_Name>
+            <Description>State, as an ActuatorState_Disabled constant enum</Description>
+            <IDL_Type>long</IDL_Type>
+            <Units>unitless</Units>
+            <Count>1</Count>
+        </item>
+    </SALEvent>
+    <SALEvent>
+        <Subsystem>NewMTMount</Subsystem>
+        <EFDB_Topic>NewMTMount_logevent_connected</EFDB_Topic>
+        <Alias>connected</Alias>
+        <Description>State of TCP/IP connection to the low level controller (the &quot;operations manager&quot;).</Description>
+        <item>
+            <EFDB_Name>command</EFDB_Name>
+            <Description>Is the command (client) socket connected (true=yes, false=no)?</Description>
+            <IDL_Type>boolean</IDL_Type>
+            <Units>unitless</Units>
+            <Count>1</Count>
+        </item>
+        <item>
+            <EFDB_Name>replies</EFDB_Name>
+            <Description>Is the replies (server) socket connected (true=yes, false=no)?</Description>
+            <IDL_Type>boolean</IDL_Type>
+            <Units>unitless</Units>
+            <Count>1</Count>
+        </item>
+    </SALEvent>
+    <SALEvent>
+        <Subsystem>NewMTMount</Subsystem>
+        <EFDB_Topic>NewMTMount_logevent_error</EFDB_Topic>
+        <Alias>error</Alias>
+        <item>
+            <EFDB_Name>latched</EFDB_Name>
+            <Description>Is the error condition latched on (as it been active since it was last reset)?</Description>
+            <IDL_Type>boolean</IDL_Type>
+            <Units>unitless</Units>
+            <Count>1</Count>
+        </item>
+        <item>
+            <EFDB_Name>active</EFDB_Name>
+            <Description>Is the error condition present?</Description>
+            <IDL_Type>boolean</IDL_Type>
+            <Units>unitless</Units>
+            <Count>1</Count>
+        </item>
+        <item>
+            <EFDB_Name>code</EFDB_Name>
+            <Description>Error identifier code.</Description>
+            <IDL_Type>long</IDL_Type>
+            <Units>unitless</Units>
+            <Count>1</Count>
+        </item>
+        <item>
+            <EFDB_Name>text</EFDB_Name>
+            <Description>Text description of error.</Description>
+            <IDL_Type>string</IDL_Type>
+            <Units>unitless</Units>
+            <Count>1</Count>
+        </item>
+    </SALEvent>
+    <SALEvent>
+        <Subsystem>NewMTMount</Subsystem>
+        <EFDB_Topic>NewMTMount_logevent_warning</EFDB_Topic>
+        <Alias>warning</Alias>
+        <item>
+            <EFDB_Name>active</EFDB_Name>
+            <Description>Is the warning condition present?</Description>
+            <IDL_Type>boolean</IDL_Type>
+            <Units>unitless</Units>
+            <Count>1</Count>
+        </item>
+        <item>
+            <EFDB_Name>code</EFDB_Name>
+            <Description>Warning identifier code.</Description>
+            <IDL_Type>long</IDL_Type>
+            <Units>unitless</Units>
+            <Count>1</Count>
+        </item>
+        <item>
+            <EFDB_Name>text</EFDB_Name>
+            <Description>Text description of warning.</Description>
+            <IDL_Type>string</IDL_Type>
+            <Units>unitless</Units>
+            <Count>1</Count>
+        </item>
+    </SALEvent>
 </SALEventSet>
