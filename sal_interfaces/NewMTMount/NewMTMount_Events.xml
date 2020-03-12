@@ -110,6 +110,70 @@
     </SALEvent>
     <SALEvent>
         <Subsystem>NewMTMount</Subsystem>
+        <EFDB_Topic>NewMTMount_logevent_target</EFDB_Topic>
+        <Alias>target</Alias>
+        <Description>Commanded position and velocity.</Description>
+        <item>
+            <EFDB_Name>elevation</EFDB_Name>
+            <Description>Target mount elevation angle at the specified time.</Description>
+            <IDL_Type>double</IDL_Type>
+            <Units>deg</Units>
+            <Count>1</Count>
+        </item>
+        <item>
+            <EFDB_Name>elevationVelocity</EFDB_Name>
+            <Description>Target mount elevation angle velocity at the specified time.</Description>
+            <IDL_Type>double</IDL_Type>
+            <Units>deg/second</Units>
+            <Count>1</Count>
+        </item>
+        <item>
+            <EFDB_Name>azimuth</EFDB_Name>
+            <Description>Target mount azimuth angle at the specified time. The allowed range is 0 to 360.</Description>
+            <IDL_Type>double</IDL_Type>
+            <Units>deg</Units>
+            <Count>1</Count>
+        </item>
+        <item>
+            <EFDB_Name>azimuthVelocity</EFDB_Name>
+            <Description>Target mount azimuth velocity at the specified time.</Description>
+            <IDL_Type>double</IDL_Type>
+            <Units>deg/second</Units>
+            <Count>1</Count>
+        </item>
+        <item>
+            <EFDB_Name>taiTime</EFDB_Name>
+            <Description>TAI date at which the commanded positions and velocities apply, as unix time.</Description>
+            <IDL_Type>double</IDL_Type>
+            <Units>second</Units>
+            <Count>1</Count>
+        </item>
+        <item>
+            <EFDB_Name>trackId</EFDB_Name>
+            <Description>Unique target identifier </Description>
+            <IDL_Type>long</IDL_Type>
+            <Units>dimensionless</Units>
+            <Count>1</Count>
+        </item>
+        <item>
+            <EFDB_Name>tracksys</EFDB_Name>
+            <Description>Defines tracking coordinate system as sidereal, non-sidereal or local.</Description>
+            <IDL_Type>string</IDL_Type>
+            <IDL_Size>256</IDL_Size>
+            <Units>dimensionless</Units>
+            <Count>1</Count>
+        </item>
+        <item>
+            <EFDB_Name>radesys</EFDB_Name>
+            <Description>Coordinate reference frame of RA/DEC axes. This originates from the pointing component and is used for WCS definition (e.g. FK5 or ICRS).</Description>
+            <IDL_Type>string</IDL_Type>
+            <IDL_Size>256</IDL_Size>
+            <Units>dimensionless</Units>
+            <Count>1</Count>
+        </item>
+    </SALEvent>
+    <SALEvent>
+        <Subsystem>NewMTMount</Subsystem>
         <EFDB_Topic>NewMTMount_logevent_warning</EFDB_Topic>
         <Alias>warning</Alias>
         <item>
