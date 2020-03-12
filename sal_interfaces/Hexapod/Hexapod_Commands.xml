@@ -6,10 +6,10 @@
     <Subsystem>Hexapod</Subsystem>
     <EFDB_Topic>Hexapod_command_clearError</EFDB_Topic>
     <Alias>clearError</Alias>
-    <Description>Clear the fault state</Description>
+    <Description>Clear the fault state.</Description>
     <item>
         <EFDB_Name>state</EFDB_Name>
-        <Description>state</Description>
+        <Description>Ignored.</Description>
         <IDL_Type>boolean</IDL_Type>
         <Units>dimensionless</Units>
         <Count>1</Count>
@@ -19,10 +19,10 @@
     <Subsystem>Hexapod</Subsystem>
     <EFDB_Topic>Hexapod_command_configureAcceleration</EFDB_Topic>
     <Alias>configureAcceleration</Alias>
-    <Description>Limit the maximum actuator acceleration</Description>
+    <Description>Set maximum acceleration for all actuators.</Description>
     <item>
         <EFDB_Name>accmax</EFDB_Name>
-        <Description>The parameter accmax will apply to all the six hexapod actuators</Description>
+        <Description>Maximum acceleration.</Description>
         <IDL_Type>double</IDL_Type>
         <Units>um/s2</Units>
         <Count>1</Count>
@@ -32,7 +32,7 @@
     <Subsystem>Hexapod</Subsystem>
     <EFDB_Topic>Hexapod_command_configureLimits</EFDB_Topic>
     <Alias>configureLimits</Alias>
-    <Description>The configureLimits command shall set the linear and angular motion limits for hexapod</Description>
+    <Description>Set position and orientation limits.</Description>
     <item>
         <EFDB_Name>xymax</EFDB_Name>
         <Description>xy max</Description>
@@ -211,7 +211,7 @@
     <Subsystem>Hexapod</Subsystem>
     <EFDB_Topic>Hexapod_command_configureVelocity</EFDB_Topic>
     <Alias>configureVelocity</Alias>
-    <Description>The configureVelocity command shall set velocity limits for hexapod axes</Description>
+    <Description>Set velocity limits for position and orientation.</Description>
     <item>
         <EFDB_Name>xymax</EFDB_Name>
         <Description>xymax</Description>
@@ -403,10 +403,10 @@
     <Subsystem>Hexapod</Subsystem>
     <EFDB_Topic>Hexapod_command_stop</EFDB_Topic>
     <Alias>stop</Alias>
-    <Description>The stop command shall cause the hexapod to stop any motion or any other commanded activity and be ready to accept a new command.</Description>
+    <Description>Stop motion.</Description>
     <item>
         <EFDB_Name>state</EFDB_Name>
-        <Description>Not used.</Description>
+        <Description>Ignored.</Description>
         <IDL_Type>int</IDL_Type>
         <Units>unitless</Units>
         <Count>1</Count>
