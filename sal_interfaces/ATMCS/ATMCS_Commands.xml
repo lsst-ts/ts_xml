@@ -18,7 +18,7 @@
         <Subsystem>ATMCS</Subsystem>
         <EFDB_Topic>ATMCS_command_trackTarget</EFDB_Topic>
         <Alias>trackTarget</Alias>
-        <Description>Specify position, velocity and time (PVT) vector for all axes except M3. This command returns immediately.</Description>
+        <Description>Specify position, velocity and time (PVT) vector for all axes except M3. This command is immediately reported as done.</Description>
         <item>
             <EFDB_Name>azimuth</EFDB_Name>
             <Description>Mount azimuth angle at the specified time. The allowed range is the software limits (L1), approximately -270 to 270.</Description>
@@ -30,7 +30,7 @@
             <EFDB_Name>azimuthVelocity</EFDB_Name>
             <Description>Mount azimuth velocity at the specified time.</Description>
             <IDL_Type>double</IDL_Type>
-            <Units>deg / s</Units>
+            <Units>deg/second</Units>
             <Count>1</Count>
         </item>
         <item>
@@ -44,7 +44,7 @@
             <EFDB_Name>elevationVelocity</EFDB_Name>
             <Description>Mount elevation angle velocity at the specified time.</Description>
             <IDL_Type>double</IDL_Type>
-            <Units>deg / s</Units>
+            <Units>deg/second</Units>
             <Count>1</Count>
         </item>
         <item>
@@ -58,7 +58,7 @@
             <EFDB_Name>nasmyth1RotatorAngleVelocity</EFDB_Name>
             <Description>Nasmyth 1 rotator angle velocity at the specified time.</Description>
             <IDL_Type>double</IDL_Type>
-            <Units>deg / s</Units>
+            <Units>deg/second</Units>
             <Count>1</Count>
         </item>
         <item>
@@ -72,14 +72,14 @@
             <EFDB_Name>nasmyth2RotatorAngleVelocity</EFDB_Name>
             <Description>Nasmyth 1 rotator angle velocity at the specified time.</Description>
             <IDL_Type>double</IDL_Type>
-            <Units>deg / s</Units>
+            <Units>deg/second</Units>
             <Count>1</Count>
         </item>
         <item>
             <EFDB_Name>time</EFDB_Name>
             <Description>TAI date at which the commanded positions and velocities apply, as unix time.</Description>
             <IDL_Type>double</IDL_Type>
-            <Units>s</Units>
+            <Units>second</Units>
             <Count>1</Count>
         </item>
         <item>
