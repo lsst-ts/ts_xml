@@ -3,14 +3,8 @@
 <SALCommandSet xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://lsst-sal.tuc.noao.edu/schema/SALCommandSet.xsd">
     <SALCommand>
         <Subsystem>ATMCS</Subsystem>
-        <Version>3.8.41</Version>
-        <Author/>
         <EFDB_Topic>ATMCS_command_startTracking</EFDB_Topic>
         <Alias>startTracking</Alias>
-        <Device/>
-        <Property/>
-        <Action/>
-        <Value/>
         <Description>Enable tracking. Once you issue this command you must call trackTarget at regular intervals until you are done tracking, at which point call stopTracking.</Description>
         <item>
             <EFDB_Name>value</EFDB_Name>
@@ -22,15 +16,9 @@
     </SALCommand>
     <SALCommand>
         <Subsystem>ATMCS</Subsystem>
-        <Version>3.8.41</Version>
-        <Author/>
         <EFDB_Topic>ATMCS_command_trackTarget</EFDB_Topic>
         <Alias>trackTarget</Alias>
-        <Device/>
-        <Property/>
-        <Action/>
-        <Value/>
-        <Description>Specify position, velocity and time (PVT) vector for all axes except M3. This command returns immediately.</Description>
+        <Description>Specify position, velocity and time (PVT) vector for all axes except M3. This command is immediately reported as done.</Description>
         <item>
             <EFDB_Name>azimuth</EFDB_Name>
             <Description>Mount azimuth angle at the specified time. The allowed range is the software limits (L1), approximately -270 to 270.</Description>
@@ -42,7 +30,7 @@
             <EFDB_Name>azimuthVelocity</EFDB_Name>
             <Description>Mount azimuth velocity at the specified time.</Description>
             <IDL_Type>double</IDL_Type>
-            <Units>deg / s</Units>
+            <Units>deg/second</Units>
             <Count>1</Count>
         </item>
         <item>
@@ -56,7 +44,7 @@
             <EFDB_Name>elevationVelocity</EFDB_Name>
             <Description>Mount elevation angle velocity at the specified time.</Description>
             <IDL_Type>double</IDL_Type>
-            <Units>deg / s</Units>
+            <Units>deg/second</Units>
             <Count>1</Count>
         </item>
         <item>
@@ -70,7 +58,7 @@
             <EFDB_Name>nasmyth1RotatorAngleVelocity</EFDB_Name>
             <Description>Nasmyth 1 rotator angle velocity at the specified time.</Description>
             <IDL_Type>double</IDL_Type>
-            <Units>deg / s</Units>
+            <Units>deg/second</Units>
             <Count>1</Count>
         </item>
         <item>
@@ -84,14 +72,14 @@
             <EFDB_Name>nasmyth2RotatorAngleVelocity</EFDB_Name>
             <Description>Nasmyth 1 rotator angle velocity at the specified time.</Description>
             <IDL_Type>double</IDL_Type>
-            <Units>deg / s</Units>
+            <Units>deg/second</Units>
             <Count>1</Count>
         </item>
         <item>
             <EFDB_Name>time</EFDB_Name>
             <Description>TAI date at which the commanded positions and velocities apply, as unix time.</Description>
             <IDL_Type>double</IDL_Type>
-            <Units>s</Units>
+            <Units>second</Units>
             <Count>1</Count>
         </item>
         <item>
@@ -120,14 +108,8 @@
     </SALCommand>
     <SALCommand>
         <Subsystem>ATMCS</Subsystem>
-        <Version>3.8.41</Version>
-        <Author/>
         <EFDB_Topic>ATMCS_command_setInstrumentPort</EFDB_Topic>
         <Alias>setInstrumentPort</Alias>
-        <Device/>
-        <Property/>
-        <Action/>
-        <Value/>
         <Description>Rotate M3 to a specified instrument port. </Description>
         <item>
             <EFDB_Name>port</EFDB_Name>
@@ -140,14 +122,8 @@
     </SALCommand>
     <SALCommand>
         <Subsystem>ATMCS</Subsystem>
-        <Version>3.8.41</Version>
-        <Author/>
         <EFDB_Topic>ATMCS_command_stopTracking</EFDB_Topic>
         <Alias>stopTracking</Alias>
-        <Device/>
-        <Property/>
-        <Action/>
-        <Value/>
         <Description>Halt all axes except M3 rotation, and disable tracking.</Description>
         <item>
             <EFDB_Name>value</EFDB_Name>
