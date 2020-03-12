@@ -651,4 +651,46 @@
         <Count>1</Count>
     </item>
 </SALTelemetry>
+<SALTelemetry>
+    <Subsystem>MTPtg</Subsystem>
+    <Version>3.8.41</Version>
+    <Author>pbt</Author>
+    <EFDB_Topic>MTPtg_mount_positions</EFDB_Topic>
+    <Description>Telemetry for mount positions in sky coordinate</Description>
+    <item>
+        <EFDB_Name>cRIO_timestamp</EFDB_Name>
+        <Description>Time for the first sample of each telemetry item in this topic, as measured by the cRIO clock, as unix time.</Description>
+        <IDL_Type>double</IDL_Type>
+        <Units>s</Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>azimuthCalculatedAngle</EFDB_Name>
+        <Description>Azimuth axis position reported by mount component.</Description>
+        <IDL_Type>double</IDL_Type>
+        <Units>deg</Units>
+        <Count>100</Count>
+    </item>
+    <item>
+        <EFDB_Name>elevationCalculatedAngle</EFDB_Name>
+        <Description>Elevation axis positions reported by mount component.</Description>
+        <IDL_Type>double</IDL_Type>
+        <Units>deg</Units>
+        <Count>100</Count>
+    </item>
+    <item>
+        <EFDB_Name>ra</EFDB_Name>
+        <Description>RA calculated from the azimuthCalculatedAngle and elevationCalculatedAngle.</Description>
+        <IDL_Type>double</IDL_Type>
+        <Units>deg</Units>
+        <Count>100</Count>
+    </item>
+    <item>
+        <EFDB_Name>declination</EFDB_Name>
+        <Description>Dec calculated from the azimuthCalculatedAngle and elevationCalculatedAngle.</Description>
+        <IDL_Type>double</IDL_Type>
+        <Units>deg</Units>
+        <Count>100</Count>
+    </item>
+</SALTelemetry>
 </SALTelemetrySet>
