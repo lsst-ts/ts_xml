@@ -57,25 +57,19 @@
         <Subsystem>NewMTMount</Subsystem>
         <EFDB_Topic>NewMTMount_command_moveToTarget</EFDB_Topic>
         <Alias>moveToTarget</Alias>
+        <Description>Go to a specified position and stop.</Description>
         <item>
-            <EFDB_Name>az_angle</EFDB_Name>
+            <EFDB_Name>azimuth</EFDB_Name>
             <Description>Azimuth angle</Description>
             <IDL_Type>double</IDL_Type>
             <Units>degree</Units>
             <Count>1</Count>
         </item>
         <item>
-            <EFDB_Name>el_angle</EFDB_Name>
+            <EFDB_Name>elevation</EFDB_Name>
             <Description>Elevation angle</Description>
             <IDL_Type>double</IDL_Type>
             <Units>degree</Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>cablewrap_orientation</EFDB_Name>
-            <Description>Cable Wrap orientation: Clockwise(CW), Counterclockwise(CCW)</Description>
-            <IDL_Type>string</IDL_Type>
-            <Units>unitless</Units>
             <Count>1</Count>
         </item>
     </SALCommand>
@@ -171,12 +165,24 @@
         <Subsystem>NewMTMount</Subsystem>
         <EFDB_Topic>NewMTMount_command_stop</EFDB_Topic>
         <Alias>stop</Alias>
-        <Device/>
-        <Property/>
+        <Description>Stop all motion.</Description>
         <item>
             <EFDB_Name>ignored</EFDB_Name>
             <Description>Ignored</Description>
             <IDL_Type>boolean</IDL_Type>
+            <Units>unitless</Units>
+            <Count>1</Count>
+        </item>
+    </SALCommand>
+    <SALCommand>
+        <Subsystem>NewMTMount</Subsystem>
+        <EFDB_Topic>NewMTMount_command_clearError</EFDB_Topic>
+        <Alias>clearError</Alias>
+        <Description>Clear one or more latched error conditions.</Description>
+        <item>
+            <EFDB_Name>mask</EFDB_Name>
+            <Description>Bitmask of Subsystem enumeration values specifying which errors to clear.</Description>
+            <IDL_Type>long</IDL_Type>
             <Units>unitless</Units>
             <Count>1</Count>
         </item>

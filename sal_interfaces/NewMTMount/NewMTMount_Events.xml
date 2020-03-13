@@ -1,7 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-stylesheet type="text/xsl" href="http://lsst-sal.tuc.noao.edu/schema/SALEventSet.xsl"?>
 <SALEventSet xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://lsst-sal.tuc.noao.edu/schema/SALEventSet.xsd">
-    <Enumeration>ActuatorState_Disabled,ActuatorState_Enabled,ActuatorState_Tracking,ActuatorState_Error</Enumeration>
+    <Enumeration>
+        ActuatorState_Disabled,
+        ActuatorState_MovingPointToPoint,
+        ActuatorState_TrackingOrSlewing,
+        ActuatorState_Stopping,
+        ActuatorState_Stopped
+    </Enumeration>
+    <Enumeration>
+        Subsystem_AZIMUTH_AXIS=0x0001,
+        Subsystem_AZIMUTH_CABLE_WRAP=0x0002,
+        Subsystem_AZIMUTH_THERMAL=0x0004,
+        Subsystem_BALANCE=0x0008,
+        Subsystem_CABINET=0x0010,
+        Subsystem_CAMERA_CABLE_WRAP=0x0020,
+        Subsystem_DEPLOYABLE_PLATFORM=0x0040,
+        Subsystem_ELEVATION_AXIS=0x0080,
+        Subsystem_ELEVATION_THERMAL=0x0100,
+        Subsystem_LOCKING_PINS=0x0200,
+        Subsystem_MIRROR_COVER=0x0400,
+        Subsystem_MIRROR_COVER_LOCK=0x0800,
+        Subsystem_MAIN_POWER_SUPPLY=0x1000,
+        Subsystem_OIL_SUPPLY_SYSTEM=0x2000,
+        Subsystem_TOP_END_CHILLER=0x4000
+    </Enumeration>
     <SALEvent>
         <Subsystem>NewMTMount</Subsystem>
         <EFDB_Topic>NewMTMount_logevent_axesInPosition</EFDB_Topic>
@@ -29,14 +52,14 @@
         <Description>State of the elevation and azimuth axes.</Description>
         <item>
             <EFDB_Name>elevation</EFDB_Name>
-            <Description>Elevation state, as an ActuatorState_Disabled constant enum</Description>
+            <Description>Elevation state, as an ActuatorState constant enum</Description>
             <IDL_Type>long</IDL_Type>
             <Units>unitless</Units>
             <Count>1</Count>
         </item>
         <item>
             <EFDB_Name>azimuth</EFDB_Name>
-            <Description>Azimuth state, as an ActuatorState_Disabled constant enum</Description>
+            <Description>Azimuth state, as an ActuatorState constant enum</Description>
             <IDL_Type>long</IDL_Type>
             <Units>unitless</Units>
             <Count>1</Count>
@@ -49,7 +72,7 @@
         <Description>State of the camera cable wrap.</Description>
         <item>
             <EFDB_Name>state</EFDB_Name>
-            <Description>State, as an ActuatorState_Disabled constant enum</Description>
+            <Description>State, as an ActuatorState constant enum</Description>
             <IDL_Type>long</IDL_Type>
             <Units>unitless</Units>
             <Count>1</Count>
@@ -104,6 +127,13 @@
             <EFDB_Name>text</EFDB_Name>
             <Description>Text description of error.</Description>
             <IDL_Type>string</IDL_Type>
+            <Units>unitless</Units>
+            <Count>1</Count>
+        </item>
+        <item>
+            <EFDB_Name>subsystem</EFDB_Name>
+            <Description>Subsystem that produced the error; a single Subsystem enumeration value.</Description>
+            <IDL_Type>long</IDL_Type>
             <Units>unitless</Units>
             <Count>1</Count>
         </item>
@@ -194,6 +224,13 @@
             <EFDB_Name>text</EFDB_Name>
             <Description>Text description of warning.</Description>
             <IDL_Type>string</IDL_Type>
+            <Units>unitless</Units>
+            <Count>1</Count>
+        </item>
+        <item>
+            <EFDB_Name>subsystem</EFDB_Name>
+            <Description>Subsystem that produced the warning; a single Subsystem enumeration value.</Description>
+            <IDL_Type>long</IDL_Type>
             <Units>unitless</Units>
             <Count>1</Count>
         </item>
