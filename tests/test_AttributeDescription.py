@@ -10,8 +10,6 @@ def check_for_issues(csc, topic):
         jira = "CAP-318"
     elif csc == "MTCamera" and (topic == "Events" or topic == "Telemetry"):
         jira = "CAP-318"
-    elif csc == "MTEEC" and (topic == "Commands"):
-        jira = "CAP-374"
     else:
         jira = ""
     return jira
