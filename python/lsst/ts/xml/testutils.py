@@ -23,7 +23,7 @@ subsystems = [
     'FiberSpectrograph', 'GenericCamera', 'IOTA', 'Hexapod', 'HVAC',
     'LinearStage', 'LOVE', 'MTAOS', 'MTAlignment', 'MTArchiver', 'MTCamera',
     'MTDomeTrajectory', 'MTEEC', 'MTHeaderService',
-    'MTM1M3', 'MTM1M3TS', 'MTM2', 'MTMount', 'MTPtg', 'MTVMS', 
+    'MTM1M3', 'MTM1M3TS', 'MTM2', 'MTMount', 'MTPtg', 'MTVMS',
     'NewMTMount', 'PromptProcessing', 'Rotator',
     'Scheduler', 'Script', 'ScriptQueue', 'SummitFacility', 'Test',
     'TunableLaser', 'Watcher',
