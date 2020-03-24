@@ -5,9 +5,9 @@
 
 <SALCommand>
     <Subsystem>MTM2</Subsystem>
-    <EFDB_Topic>MTM2_command_applyForce</EFDB_Topic>
+    <EFDB_Topic>MTM2_command_applyForces</EFDB_Topic>
     <Alias>applyForce</Alias>
-    <Description>Provide the delta accumulated force vector used in adjusting the target force settings in the closed-loop control. This vector will add to the look-up table (LUT) force directly.</Description>
+    <Description>Provide the delta accumulated force vector used in adjusting the target force settings in the closed-loop control. This vector will add to the look-up table (LUT) force directly. A potential use of this command is the active optics system (AOS) to apply the bending mode.</Description>
     <item>
         <EFDB_Name>axialForceSetPoint</EFDB_Name>
         <Description>Accumulated axial force vector adds to the LUT force. The elements are the actuator Ids from 1 to 72. The related ring Ids are B1-B30, C1-C24, and D1-D18.</Description>
@@ -28,7 +28,7 @@
     <Subsystem>MTM2</Subsystem>
     <EFDB_Topic>MTM2_command_positionMirror</EFDB_Topic>
     <Alias>positionMirror</Alias>
-    <Description>Adjust the mirror's rigid body positions based on LTS-136.</Description>
+    <Description>Adjust the mirror's rigid body positions based on LTS-136 relative from the home position. The home position can be reconfigured.</Description>
     <item>
         <EFDB_Name>x</EFDB_Name>
         <Description>Position x.</Description>
@@ -75,7 +75,7 @@
 
 <SALCommand>
     <Subsystem>MTM2</Subsystem>
-    <EFDB_Topic>MTM2_command_resetOffset</EFDB_Topic>
+    <EFDB_Topic>MTM2_command_resetForceOffset</EFDB_Topic>
     <Alias>resetOffsets</Alias>
     <Description>This shall cause the M2 assembly zero all force offsets in the closed-loop control.</Description>
     <item>
@@ -89,7 +89,7 @@
 
 <SALCommand>
     <Subsystem>MTM2</Subsystem>
-    <EFDB_Topic>MTM2_command_clearError</EFDB_Topic>
+    <EFDB_Topic>MTM2_command_clearErrors</EFDB_Topic>
     <Alias>clearError</Alias>
     <Description>Clear all errors and transit to the Standby state from Fault state.</Description>
     <item>
