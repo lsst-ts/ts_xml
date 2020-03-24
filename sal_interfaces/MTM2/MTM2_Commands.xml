@@ -1,133 +1,103 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-stylesheet type="text/xsl" href="http://lsst-sal.tuc.noao.edu/schema/SALCommandSet.xsl"?>
 <SALCommandSet xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:noNamespaceSchemaLocation="http://lsst-sal.tuc.noao.edu/schema/SALCommandSet.xsd">
+    xsi:noNamespaceSchemaLocation="http://lsst-sal.tuc.noao.edu/schema/SALCommandSet.xsd">
 
 <SALCommand>
- <Subsystem>MTM2</Subsystem>
- <Version>3.8.0</Version>
- <Author>salgenerator</Author>
- <EFDB_Topic>MTM2_command_applyBendingMode</EFDB_Topic>
- <Alias>applyBendingMode</Alias>
- <Device>support</Device>
- <Property>actuators</Property>
- <Action></Action>
- <Value></Value>
- <Description>Updates the optical surface based on the 22 bending mode values.</Description>
+    <Subsystem>MTM2</Subsystem>
+    <EFDB_Topic>MTM2_command_applyForces</EFDB_Topic>
+    <Alias>applyForces</Alias>
+    <Description>Provide the delta accumulated force vector used in adjusting the target force settings in the closed-loop control. This vector will add to the look-up table (LUT) force directly. A potential use of this command is the active optics system (AOS) to apply the bending mode.</Description>
     <item>
-      <EFDB_Name>bendingModeNbr</EFDB_Name>
-      <Description>Number of each bending mode.</Description>
-      <IDL_Type>short</IDL_Type>
-      <Units>unitless</Units>
-      <Count>32</Count>
+        <EFDB_Name>axialForceSetPoints</EFDB_Name>
+        <Description>Accumulated axial force vector adds to the LUT force. The elements are the actuator Ids from 1 to 72. The related ring Ids are B1-B30, C1-C24, and D1-D18.</Description>
+        <IDL_Type>double</IDL_Type>
+        <Units>newton</Units>
+        <Count>72</Count>
     </item>
     <item>
-      <EFDB_Name>bendingModeValue</EFDB_Name>
-      <Description>Value for each bending mode.</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>micron</Units>
-      <Count>32</Count>
+        <EFDB_Name>tangentForceSetPoints</EFDB_Name>
+        <Description>Accumulated tangent force vector adds to the LUT force. The elements are the actuator Ids from 73 to 78. The related ring Ids are A1-A6.</Description>
+        <IDL_Type>double</IDL_Type>
+        <Units>newton</Units>
+        <Count>6</Count>
     </item>
 </SALCommand>
 
 <SALCommand>
- <Subsystem>MTM2</Subsystem>
- <Version>3.8.0</Version>
- <Author>salgenerator</Author>
- <EFDB_Topic>MTM2_command_applyForce</EFDB_Topic>
- <Alias>applyForce</Alias>
- <Device>support</Device>
- <Property>actuators</Property>
- <Action></Action>
- <Value></Value>
- <Description>Provides the delta force vector used in adjusting the target force settings.</Description>
+    <Subsystem>MTM2</Subsystem>
+    <EFDB_Topic>MTM2_command_positionMirror</EFDB_Topic>
+    <Alias>positionMirror</Alias>
+    <Description>Adjust the mirror's rigid body positions based on LTS-136 relative from the home position. The home position can be reconfigured.</Description>
     <item>
-      <EFDB_Name>forceSetPoint</EFDB_Name>
-      <Description>Force in newtons, increasing force corresponds to increasing tension on the load cell.</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>newton</Units>
-      <Count>72</Count>
+        <EFDB_Name>x</EFDB_Name>
+        <Description>Position x.</Description>
+        <IDL_Type>double</IDL_Type>
+        <Units>micron</Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>y</EFDB_Name>
+        <Description>Position y.</Description>
+        <IDL_Type>double</IDL_Type>
+        <Units>micron</Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>z</EFDB_Name>
+        <Description>Position z.</Description>
+        <IDL_Type>double</IDL_Type>
+        <Units>micron</Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>xRot</EFDB_Name>
+        <Description>Rotation about x.</Description>
+        <IDL_Type>double</IDL_Type>
+        <Units>arcsec</Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>yRot</EFDB_Name>
+        <Description>Rotation about y.</Description>
+        <IDL_Type>double</IDL_Type>
+        <Units>arcsec</Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>zRot</EFDB_Name>
+        <Description>Rotation about z.</Description>
+        <IDL_Type>double</IDL_Type>
+        <Units>arcsec</Units>
+        <Count>1</Count>
     </item>
 </SALCommand>
 
 <SALCommand>
- <Subsystem>MTM2</Subsystem>
- <Version>3.8.0</Version>
- <Author>salgenerator</Author>
- <EFDB_Topic>MTM2_command_setCorrectionMode</EFDB_Topic>
- <Alias>setCorrectionMode</Alias>
- <Device>support</Device>
- <Property>actuators</Property>
- <Action></Action>
- <Value></Value>
- <Description>Selects between using the delta force updates or the bending modes in adjusting the target force settings.</Description>
+    <Subsystem>MTM2</Subsystem>
+    <EFDB_Topic>MTM2_command_resetForceOffsets</EFDB_Topic>
+    <Alias>resetOffsets</Alias>
+    <Description>This shall cause the M2 assembly zero all force offsets in the closed-loop control.</Description>
     <item>
-      <EFDB_Name>mode</EFDB_Name>
-      <Description>An enumeration: 1 = BendingMode, 2 = Force.</Description>
-       <IDL_Type>int</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
+        <EFDB_Name>value</EFDB_Name>
+        <Description>This value is ignored.</Description>
+        <IDL_Type>boolean</IDL_Type>
+        <Units>unitless</Units>
+        <Count>1</Count>
     </item>
 </SALCommand>
 
 <SALCommand>
- <Subsystem>MTM2</Subsystem>
- <Version>3.8.0</Version>
- <Author>salgenerator</Author>
- <EFDB_Topic>MTM2_command_positionMirror</EFDB_Topic>
- <Alias>positionMirror</Alias>
- <Device>support</Device>
- <Property>actuators</Property>
- <Action></Action>
- <Value></Value>
- <Description>Adjust the mirror's rigid body positions: tip, tilt, and piston.</Description>
+    <Subsystem>MTM2</Subsystem>
+    <EFDB_Topic>MTM2_command_clearErrors</EFDB_Topic>
+    <Alias>clearError</Alias>
+    <Description>Clear all errors and transit to the Standby state from Fault state.</Description>
     <item>
-      <EFDB_Name>xTilt</EFDB_Name>
-      <Description>Tilt x in xy plane.</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>radian</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>yTilt</EFDB_Name>
-      <Description>Tilt y in xy plane.</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>radian</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>piston</EFDB_Name>
-      <Description>Position in z (along optical axis).</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>micron</Units>
-      <Count>1</Count>
-    </item>
-</SALCommand>
-
-<SALCommand>
- <Subsystem>MTM2</Subsystem>
- <Version>3.8.0</Version>
- <Author>salgenerator</Author>
- <EFDB_Topic>MTM2_command_moveAxialActuator</EFDB_Topic>
- <Alias>moveAxialActuator</Alias>
- <Device>support</Device>
- <Property>actuators</Property>
- <Action></Action>
- <Value></Value>
- <Description>Indicates the number of steps to move on each axial actuator.</Description>
-    <item>
-      <EFDB_Name>axialActuatorID</EFDB_Name>
-      <Description>ID number of an actuator.</Description>
-      <IDL_Type>short</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>relativeStepsToMove</EFDB_Name>
-      <Description>Increasing steps correspond to counterclockwise rotation of th motor shaft, looking along the motor shaft in the direction of the motor.</Description>
-      <IDL_Type>long</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
+        <EFDB_Name>value</EFDB_Name>
+        <Description>This value is ignored.</Description>
+        <IDL_Type>boolean</IDL_Type>
+        <Units>unitless</Units>
+        <Count>1</Count>
     </item>
 </SALCommand>
 
