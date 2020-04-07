@@ -739,6 +739,22 @@
         <Count>1</Count>
     </item>
     <item>
+        <EFDB_Name>raftBay</EFDB_Name>
+        <Description>The raft bay for each CCD listed above, of the form Rnn : delimited</Description>
+        <IDL_Type>string</IDL_Type>
+        <IDL_Size>1</IDL_Size>
+        <Units>unitless</Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>ccdSlot</EFDB_Name>
+        <Description>The CCD slot for each CCD listed above, of the form SXn : delimited</Description>
+        <IDL_Type>string</IDL_Type>
+        <IDL_Size>1</IDL_Size>
+        <Units>unitless</Units>
+        <Count>1</Count>
+    </item>
+    <item>
         <EFDB_Name>ccdType</EFDB_Name>
         <Description>The type of each CCD, this determines segRows, segCols and serCols</Description>
         <IDL_Type>int</IDL_Type>
@@ -810,6 +826,31 @@
         <IDL_Size>1</IDL_Size>
         <Units>unitless</Units>
         <Count>201</Count>
+    </item>
+    <!-- Items added for DAQV4 compatibility -->
+    <item>
+        <EFDB_Name>underCols</EFDB_Name>
+        <Description>See CCD Readout Parameters Diagram</Description>
+        <IDL_Type>int</IDL_Type>
+        <IDL_Size>1</IDL_Size>
+        <Units>unitless</Units>
+        <Count>201</Count>
+    </item>
+    <item>
+        <EFDB_Name>daqFolder</EFDB_Name>
+        <Description>DAQ folder where image will be created</Description>
+        <IDL_Type>string</IDL_Type>
+        <IDL_Size>1</IDL_Size>
+        <Units>unitless</Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>daqAnnotation</EFDB_Name>
+        <Description>Annotation sent to DAQ</Description>
+        <IDL_Type>string</IDL_Type>
+        <IDL_Size>1</IDL_Size>
+        <Units>unitless</Units>
+        <Count>1</Count>
     </item>
 </SALEvent>
 </SALEventSet>
