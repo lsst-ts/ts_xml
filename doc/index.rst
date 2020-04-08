@@ -17,6 +17,10 @@ produce language specific libraries that enable communication over the DDS
 network. Below is a table overview of all the CSC's defined and a :ref:`index:Legend` to help
 understand the table.
 
+Unit Testing
+============
+XML unit tests are contained in the tests/ directory of the `XML <https://github.com/lsst-ts/ts_xml>`_ repo.  Setup and execution instructions are contained in the README in the same repository, and can be viewed with a user-friendly interface from the webpage.  The tests are run regularly as part of the `TSSW Continuous Integration environment <https://tssw-ci.lsst.org/>`_ process, primarily as part of the `LSST Organization <https://tssw-ci.lsst.org/job/LSST_Telescope-and-Site/>`_ project.  
+
 Master CSC Table
 ================
 
