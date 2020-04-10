@@ -9,10 +9,13 @@ import glob
 import os
 import re
 import sys
+import xml.etree.ElementTree as ET 
+
 
 class Component:
     def __init__(self, name, path, lineNo, line=None):
         self.name = name
+        self._name = name               # we may patch self.name later
         self.path = path
         self.lineNo = lineNo
         self.line = line
@@ -22,6 +25,34 @@ class Controller(Component):
 
 class Remote(Component):
     pass
+
+#-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+
+def extractCscs(xmlfile): 
+    """Extract the list of CSCs from an xml file containing <SALSubsystems> entries
+
+    Parameters
+    ----------
+    path : `str`
+        The name of the file
+    extensions : `str`
+        List of desired extension (n.b. no "."; e.g. "py")
+
+    Returns
+    -------
+    csc_list : `list` of `str`
+        A list of all the <SALSubsystems> in the file
+    """
+    
+    tree = ET.parse(xmlfile) 
+    root = tree.getroot() 
+  
+    cscs = []
+    for ss in root.findall("SALSubsystem"):
+        cscs.append(ss.find("Name").text)
+
+    return cscs
+
 
 #-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 #
@@ -51,8 +82,24 @@ def hasExtension(path, extensions):
 
     return False
 
+def isCpp(path):
+    """Does a file contain C++?
+
+    Parameters
+    ----------
+    path : `str`
+        The name of the file
+
+    Returns
+    -------
+    config_dir : `bool`
+        True iff path is java
+    """
+    return hasExtension(path, ["cpp", "h"])
+
+
 def isJava(path):
-    """Does a file contain java
+    """Does a file contain java?
 
     Parameters
     ----------
@@ -84,7 +131,7 @@ def isJavaScript(path):
 
 
 def isJSX(path):
-    """Does a file contain jsx??
+    """Does a file contain jsx?
 
     Parameters
     ----------
@@ -97,6 +144,22 @@ def isJSX(path):
         True iff path is jsx
     """
     return hasExtension(path, ["jsx"])
+
+
+def isLabView(path):
+    """Does a file contain labview code?
+
+    Parameters
+    ----------
+    path : `str`
+        The name of the file
+
+    Returns
+    -------
+    config_dir : `bool`
+        True iff path is labview
+    """
+    return hasExtension(path, ["vi"])
 
 
 def isPython(path, include_notebooks=False):
@@ -120,6 +183,24 @@ def isPython(path, include_notebooks=False):
 
     return hasExtension(path, extensions)
 
+def isSal(path):
+    """Does a file contain sal definitions?
+
+    Apparently only used by the CCS
+
+    Parameters
+    ----------
+    path : `str`
+        The name of the file
+
+    Returns
+    -------
+    config_dir : `bool`
+        True iff path is java
+    """
+    return hasExtension(path, ["sal"])
+
+
 def isYaml(path):
     """Does a file contain yaml?
 
@@ -133,18 +214,67 @@ def isYaml(path):
     config_dir : `bool`
         True iff path is yaml
     """
+    
     return hasExtension(path, ["yaml"])
 
 
 #-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 
-def doJava(path, verbose=True):
+def doCpp(path, verbose=0):
+    """Process a C++ file, looking for Controllers and Remotes
+
+    Parameters
+    ----------
+    path : `str`
+        The name of the file
+    verbose : `int`
+        How verbose should I be?  The larger the chattier
+
+    Returns
+    -------
+    controllers : `list` of `Controller`
+        List of names of all controllers provided by this file
+    remotes : `list` of `Remote`
+        List of names of all remotes used by this file
+
+    """
+    if verbose > 2:
+        print(f"   Processing {path}")
+
+    controllers = []
+    remotes = []
+
+    with open(path) as fd:
+        lineNo = 0
+        while True:
+            line = fd.readline()
+            if line == "":
+                break
+            lineNo += 1
+
+            line = re.sub(r"(^|[^\\])//.*", "", line[:-1])   # remove inline comments (and newline)
+            if line == "":
+                continue
+            #
+            # Look for Remotes
+            #
+            for cptName in re.findall(r"^\s*#\s*include\s+[\"<][^\">]*SAL_(\w+)(?:\.h)[\">]", line):
+                if False and line.startswith(" * ") and cptName in ["camera"]:  # found in a comment
+                    continue
+                remotes.append(Remote(cptName, path, lineNo, line))
+
+    return controllers, remotes
+
+
+def doJava(path, verbose=0):
     """Process a java file, looking for Controllers and Remotes
 
     Parameters
     ----------
     path : `str`
         The name of the file
+    verbose : `int`
+        How verbose should I be?  The larger the chattier
 
     Returns
     -------
@@ -163,33 +293,34 @@ def doJava(path, verbose=True):
     with open(path) as fd:
         lineNo = 0
         while True:
-            break
-
             line = fd.readline()
             if line == "":
                 break
             lineNo += 1
 
-            line = re.sub(r"(^|[^\\])#.*", "", line[:-1])   # remove comments (and newline)
+            line = re.sub(r"(^|[^\\])//.*", "", line[:-1])   # remove inline comments (and newline)
             if line == "":
                 continue
             #
             # Look for Remotes
             #
-            for cptName in re.findall(r"\s*name\s*:\s*['\"](\S+)['\"]\s*,\s*salindex\s*:\s*\d+\s*},?\s*",
-                                      line):
+            for cptName in re.findall(r"org.lsst.sal.SAL_(\w+)", line):
+                if line.startswith(" * ") and cptName in ["camera"]:  # found in a comment
+                    continue
                 remotes.append(Remote(cptName, path, lineNo, line))
 
     return controllers, remotes
 
 
-def doJavaScript(path, verbose=True):
+def doJavaScript(path, verbose=0):
     """Process a JS file, looking for Controllers and Remotes
 
     Parameters
     ----------
     path : `str`
         The name of the file
+    verbose : `int`
+        How verbose should I be?  The larger the chattier
 
     Returns
     -------
@@ -213,7 +344,7 @@ def doJavaScript(path, verbose=True):
                 break
             lineNo += 1
 
-            line = re.sub(r"(^|[^\\])#.*", "", line[:-1])   # remove comments (and newline)
+            line = re.sub(r"(^|[^\\])//.*", "", line[:-1])   # remove inline comments (and newline)
             if line == "":
                 continue
             #
@@ -226,13 +357,15 @@ def doJavaScript(path, verbose=True):
     return controllers, remotes
 
 
-def doJsx(path, verbose=True):
+def doJsx(path, verbose=0):
     """Process a JSX file, looking for Controllers and Remotes
 
     Parameters
     ----------
     path : `str`
         The name of the file
+    verbose : `int`
+        How verbose should I be?  The larger the chattier
 
     Returns
     -------
@@ -256,13 +389,13 @@ def doJsx(path, verbose=True):
                 break
             lineNo += 1
 
-            line = re.sub(r"(^|[^\\])#.*", "", line[:-1])   # remove comments (and newline)
+            line = re.sub(r"(^|[^\\])//.*", "", line[:-1])   # remove inline comments (and newline)
             if line == "":
                 continue
             #
             # Look for Remotes
             #
-            for prefix, cptName,in re.findall(r"['\"]([^-'\"]+)-([a-zA-Z0-9]+)-[^-'\"]+-[^-'\"]+['\"]", line):
+            for prefix, cptName,in re.findall(r"['\"]([^-'\"]+)-(\w+)-[^-'\"]+-[^-'\"]+['\"]", line):
                 if prefix  in ["heartbeat", "time"] or \
                    cptName in ["Heartbeat", "'Test'"]:
                     continue
@@ -276,13 +409,60 @@ def doJsx(path, verbose=True):
     return controllers, remotes
 
 
-def doPython(path, verbose=True):
+def doLabView(path, verbose=0):
+    """Process a labView file, looking for Controllers and Remotes
+
+    Parameters
+    ----------
+    path : `str`
+        The name of the file
+    verbose : `int`
+        How verbose should I be?  The larger the chattier
+
+    Returns
+    -------
+    controllers : `list` of `Controller`
+        List of names of all controllers provided by this file
+    remotes : `list` of `Remote`
+        List of names of all remotes used by this file
+
+    """
+    if verbose:
+        print(f"   Processing {path}")
+
+    controllers = []
+    remotes = []
+
+    with open(path, "rb") as fd:
+        lineNo = 0
+        while True:
+            line = fd.readline().decode(errors='ignore')
+
+            if line == "":
+                break
+            lineNo += 1
+
+            line = line[:-1]            # remove newline
+            if line == "":
+                continue
+            #
+            # Look for Controllers (assume that that's what labView does)
+            #
+            for cptName in re.findall(r"SALLV_(\w+)", line):
+                controllers.append(Remote(cptName, path, lineNo, "(text omitted)"))
+
+    return controllers, remotes
+
+
+def doPython(path, verbose=0):
     """Process a python file, looking for Controllers and Remotes
 
     Parameters
     ----------
     path : `str`
         The name of the file
+    verbose : `int`
+        How verbose should I be?  The larger the chattier
 
     Returns
     -------
@@ -306,7 +486,7 @@ def doPython(path, verbose=True):
                 break
             lineNo += 1
 
-            line = re.sub(r"(^|[^\\])#.*", "", line[:-1])   # remove comments (and newline)
+            line = re.sub(r"(^|[^\\])#.*", "", line[:-1])   # remove inline comments (and newline)
             if line == "":
                 continue
             #
@@ -315,6 +495,7 @@ def doPython(path, verbose=True):
             for regex in [r"super\(\)\.__init__\(\s*['\"]([^'\"]+)['\"]\s*,",
                           r"Controller\(\s*['\"]([^'\"]+)['\"]\s*\)",
                           r"^\s*class\s+([^(\s]+)\s*\((?:salobj.)?(BaseCsc|ConfigurableCsc)\s*\)\s*:\s*$",
+                          r"^\s*import\s+SALPY_(\w+)",
             ]:
                 match = re.search(regex, line)
                 
@@ -337,8 +518,8 @@ def doPython(path, verbose=True):
     return controllers, remotes
 
 
-def doYaml(path, verbose=True):
-    """Process a yaml file, looking for Controllers and Remotes
+def doSal(path, verbose=True):
+    """Process a "sal" interface file, looking for Controllers and Remotes
 
     Parameters
     ----------
@@ -367,7 +548,53 @@ def doYaml(path, verbose=True):
                 break
             lineNo += 1
 
-            line = re.sub(r"(^|[^\\])#.*", "", line[:-1])   # remove comments (and newline)
+            line = re.sub(r"(^|[^\\])//.*", "", line[:-1])   # remove inline comments (and newline)
+            if line == "":
+                continue
+            #
+            # Look for Remotes
+            #
+            for cptName in re.findall(r"org.lsst.sal.SAL_(\w+)", line):
+                if line.startswith(" * ") and cptName in ["camera"]:  # found in a comment
+                    continue
+                remotes.append(Remote(cptName, path, lineNo, line))
+
+    return controllers, remotes
+
+
+def doYaml(path, verbose=0):
+    """Process a yaml file, looking for Controllers and Remotes
+
+    Parameters
+    ----------
+    path : `str`
+        The name of the file
+    verbose : `int`
+        How verbose should I be?  The larger the chattier
+
+    Returns
+    -------
+    controllers : `list` of `Controller`
+        List of names of all controllers provided by this file
+    remotes : `list` of `Remote`
+        List of names of all remotes used by this file
+
+    """
+    if verbose:
+        print(f"   Processing {path}")
+
+    controllers = []
+    remotes = []
+
+    with open(path) as fd:
+        lineNo = 0
+        while True:
+            line = fd.readline()
+            if line == "":
+                break
+            lineNo += 1
+
+            line = re.sub(r"(^|[^\\])#.*", "", line[:-1])   # remove inline comments (and newline)
             if line == "":
                 continue
             #
@@ -397,7 +624,7 @@ def doYaml(path, verbose=True):
 
 def process_tree(root, controllers, remotes, ignoredDirs=[".git"],
                  extensions=None,
-                 include_notebooks=False, verbose=False, name=None):
+                 include_notebooks=False, verbose=0, name=None):
     """process all the files in a directory tree
 
     Parameters
@@ -406,6 +633,8 @@ def process_tree(root, controllers, remotes, ignoredDirs=[".git"],
         The name of the directory tree to process
     name : `str`
         The name of the CSC represented by root; defaults to `root` if `None`
+    verbose : `int`
+        How verbose should I be?  The larger the chattier
     
     """
     if name is None:
@@ -445,20 +674,30 @@ def processFile(filename, controllers, remotes, include_notebooks=False, verbose
     # files to ignore.
     #
     badFiles = {
-        "PySourceColor.py" : "'utf-8' codec can't decode byte 0xfc in position 6306",
+        "DynamicLoadSample.cpp" :    "'utf-8' codec can't decode byte 0x93 in position 306",
+        "FirstSteps.cpp" :           "'utf-8' codec can't decode byte 0x93 in position 306",
+        "PySourceColor.py" :         "'utf-8' codec can't decode byte 0xfc in position 6306",
+        "sg_catalog_generator.cpp" : "'utf-8' codec can't decode byte 0xb1 in position 4973",
+        "StaticLoadSample_DataRecorder.cpp" : "'utf-8' codec can't decode byte 0x93 in position 306",
+        "Wavegenerator.cpp" :        "'utf-8' codec can't decode byte 0x93 in position 306",
+        # "tcsOfc_registerCallback_command_enableackcmd.vi" : "open(, 'rb') and decode(errors='ignore')",
     }
 
     if os.path.basename(filename) in badFiles:
         if verbose:
             print(f"Ignoring {filename} as it is on badFiles list", file=sys.stderr)
         return
-    
-    if isJava(filename):
+
+    if isCpp(filename):
+        doFile = doCpp
+    elif isJava(filename):
         doFile = doJava
-    if isJavaScript(filename):
+    elif isJavaScript(filename):
         doFile = doJavaScript
     elif isJSX(filename):
         doFile = doJsx
+    elif isLabView(filename):
+        doFile = doLabView
     elif isPython(filename, include_notebooks):
         doFile = doPython
     elif isYaml(filename):
@@ -476,22 +715,34 @@ if __name__ == "__main__":
 
     parser.add_argument('directories', type=str, nargs="*",
                         help="Directories to analyse")
+    parser.add_argument('--checkCscList', dest="checkCscList",  action="store_true",
+                        help="Include examples in analysis?", default=True)
+    parser.add_argument('--no-checkCscList', dest="checkCscList",  action="store_false",
+                        help="Include examples in analysis?", default=True)
     parser.add_argument('--examples',  action="store_true",
                         help="Include examples in analysis?", default=False)
     parser.add_argument('--extensions', type=str, nargs="+",
                         help="Only process these extensions")
+    parser.add_argument('--fixCscNames',  action="store_true",
+                        help="Attempt to patch CSC names to match known list", default=False)
+    parser.add_argument('--list-cscs',  action="store_true",
+                        help="List the CSCs that checkCscList would use, and exit", default=False)
+    parser.add_argument('--missing-cscs',  action="store_true",
+                        help="Show missing CSCs?", default=False)
     parser.add_argument('--mocks',  action="store_true",
                         help="Include mocks in analysis?", default=False)
     parser.add_argument('--notebooks',  action="store_true",
                         help="Include notebooks in analysis?", default=False)
-    parser.add_argument('--show_filenames',  action="store_true",
+    parser.add_argument('--SALSubsystems',help="XML file defining known CSCs",
+                        default="ts_xml/sal_interfaces/SALSubsystems.xml")
+    parser.add_argument('--show-filenames',  action="store_true",
                         help="Print filenames where components were found", default=False)
-    parser.add_argument('--show_lines',  action="store_true",
+    parser.add_argument('--show-lines',  action="store_true",
                         help="Print lines where components were found", default=False)
     parser.add_argument('--tests',  action="store_true",
                         help="Include tests in analysis?", default=False)
-    parser.add_argument('--verbose', '-v',  action="store_true",
-                        help="How chatty should I be?", default=False)
+    parser.add_argument('--verbose', '-v',  action="count",
+                        help="How chatty should I be?", default=0)
 
     args = parser.parse_args()
 
@@ -502,7 +753,7 @@ if __name__ == "__main__":
 
     dirs = args.directories
     if len(dirs) == 1 and dirs[0] == ".":  # we want the directory names
-        dirs = glob.glob("*")
+        dirs = sorted(glob.glob("*"))
 
     ignoredDirs = [".git"]
     if not args.examples:
@@ -512,6 +763,13 @@ if __name__ == "__main__":
     if not args.tests:
         ignoredDirs.append("tests")
 
+    if args.list_cscs:
+        print(", ".join(sorted(extractCscs(args.SALSubsystems))))
+        sys.exit(0)
+        
+    #
+    # Traverse all the specified directories looking for components
+    #
     controllers = {}
     remotes = {}        
     for d in dirs:
@@ -519,7 +777,55 @@ if __name__ == "__main__":
 
         process_tree(d, controllers, remotes, ignoredDirs, name=name, extensions=args.extensions,
                      include_notebooks=args.notebooks, verbose=args.verbose)
+    #
+    # Remove potential CSCs that aren't listed in the XML list
+    #
+    renamedCsc = {}
+    if args.checkCscList or args.missing_cscs or args.fixCscNames:
+        cscs = extractCscs(args.SALSubsystems)
 
+        foundControllers = []
+        if args.missing_cscs or args.fixCscNames:
+            missingControllers = set(cscs)
+            for name in controllers:
+                for filename in controllers[name]:
+                    for cpt in controllers[name][filename]:
+                        foundControllers.append(cpt.name)
+                        missingControllers.discard(cpt.name)
+
+                    if args.checkCscList:
+                        controllers[name][filename] = \
+                            [cpt for cpt in controllers[name][filename] if cpt.name in cscs]
+                        remotes[name][filename]     = \
+                            [cpt for cpt in remotes[name][filename]     if cpt.name in cscs]
+
+            if args.fixCscNames:
+                fixedCscNames = {}
+                for missing in missingControllers:
+                    if missing in foundControllers:
+                        continue
+
+                    for fc in foundControllers:
+                        lfc = re.sub(r"csc$", "", fc.lower())
+                        if lfc == missing.lower():
+                            fixedCscNames[fc] = missing
+
+                if args.verbose > 0:
+                    for old, new in fixedCscNames.items():
+                        print(f"{old:20} -> {new}")
+
+                for name in controllers:
+                    for filename in controllers[name]:
+                        for cpt in controllers[name][filename]:
+                            if cpt.name in fixedCscNames:
+                                cpt.name = fixedCscNames[cpt.name]
+                                missingControllers.discard(cpt.name)
+
+            if args.missing_cscs:
+                print(f"Failed to find some CSCs: {', '.join(sorted(list(missingControllers)))}" + "\n")
+    #
+    # Write out our discoveries
+    #
     for name in controllers:
         ctrls = sum(controllers[name].values(), [])
         rems =  sum(remotes[name].values(), [])
