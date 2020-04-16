@@ -15,12 +15,14 @@ import yaml
 
 class Component:
     def __init__(self, name, path, lineNo, line=None):
-        for regex in [r"^(.*)(?<!_)[cC][sS][cC]$",
+        for regex in [r"^(.*)(?<!_)(?i:csc)$",
                       r"^SALPY_(.*)$",
                       ]:
             mat = re.search(regex, name)
             if mat:
-                name = mat.group(1)
+                nname = mat.group(1)
+                if nname not in "CSC":  # just confusing
+                    name == nname
                 break
 
         self.name = name
@@ -539,9 +541,7 @@ def doPythonRe(path, verbose=0, isNotebook=False, **kwargs):
             #
             # Look for controllers
             #
-            for regex in [#r"super\(\)\.__init__\(\s*['\"]([^'\"]+)['\"]\s*,",
-                          #r"super\(\)\.__init__\(\s*(?:name\s*=\s*)?['\"]([^'\"]+)['\"]\s*,",
-                          r"super\(\)\.__init__\(\s*(?:name\s*=\s*)['\"]([^'\"]+)['\"]\s*,",
+            for regex in [r"super\(\)\.__init__\(\s*(?:name\s*=\s*)?['\"]([^'\"]+)['\"]\s*,",
                           r"Controller\(\s*['\"]([^'\"]+)['\"]\s*\)",
                           r"^\s*class\s+(\w+)\s*\((?:salobj\.)?(BaseCsc|ConfigurableCsc)\s*\)\s*:\s*$",
                           r"^\s*import\s+SALPY_(\w+)",
@@ -555,7 +555,6 @@ def doPythonRe(path, verbose=0, isNotebook=False, **kwargs):
             # Look for Remotes
             #
             for regex in [r"Remote\([^,]+,\s*(?:name\s*=\s*)?['\"]([^'\"]+)['\"]",
-                          #r"Remote\([^,]+,\s*['\"]([^'\"]+)['\"]",
                           r"^\s*class\s+([^(\s]+)\s*\((?:salobj.)?Remote\s*\)\s*:\s*$",
                               ]:
                 match = re.search(regex, line)
@@ -643,7 +642,9 @@ class FuncLister(ast.NodeVisitor):
                           "BaseCsc",
                           "dm_csc",
                           "dm_csc_base",
-                          "ConfigurableCsc"]
+                          "ConfigurableCsc",
+                          "Controller",
+        ]
 
         superName = None
         for super in n.bases:
