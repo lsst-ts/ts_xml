@@ -15,6 +15,14 @@ import yaml
 
 class Component:
     def __init__(self, name, path, lineNo, line=None):
+        for regex in [r"^(.*)(?<!_)[cC][sS][cC]$",
+                      r"^SALPY_(.*)$",
+                      ]:
+            mat = re.search(regex, name)
+            if mat:
+                name = mat.group(1)
+                break
+
         self.name = name
         self._name = name               # we may patch self.name later
         self.path = path
@@ -233,7 +241,7 @@ def isYaml(path):
 
 #-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 
-def doCpp(path, verbose=0):
+def doCpp(path, verbose=0, **kwargs):
     """Process a C++ file, looking for Controllers and Remotes
 
     Parameters
@@ -279,7 +287,7 @@ def doCpp(path, verbose=0):
     return controllers, remotes
 
 
-def doJava(path, verbose=0):
+def doJava(path, verbose=0, **kwargs):
     """Process a java file, looking for Controllers and Remotes
 
     Parameters
@@ -325,7 +333,7 @@ def doJava(path, verbose=0):
     return controllers, remotes
 
 
-def doJavaScript(path, verbose=0):
+def doJavaScript(path, verbose=0, **kwargs):
     """Process a JS file, looking for Controllers and Remotes
 
     Parameters
@@ -370,7 +378,7 @@ def doJavaScript(path, verbose=0):
     return controllers, remotes
 
 
-def doJsx(path, verbose=0):
+def doJsx(path, verbose=0, **kwargs):
     """Process a JSX file, looking for Controllers and Remotes
 
     Parameters
@@ -423,7 +431,7 @@ def doJsx(path, verbose=0):
     return controllers, remotes
 
 
-def doLabView(path, verbose=0):
+def doLabView(path, verbose=0, **kwargs):
     """Process a labView file, looking for Controllers and Remotes
 
     Parameters
@@ -470,7 +478,7 @@ def doLabView(path, verbose=0):
     return controllers, remotes
 
 
-def doPythonRe(path, verbose=0):
+def doPythonRe(path, verbose=0, isNotebook=False, **kwargs):
     """Process a python file, looking for Controllers and Remotes
 
     Parameters
@@ -494,30 +502,46 @@ def doPythonRe(path, verbose=0):
     controllers = []
     remotes = []
 
+    def nextLine():
+        line = fd.readline()
+
+        if isNotebook:
+            mat = re.search(r'^\s*"(.*)",\s*$', line)
+            if mat:
+                line = mat.group(1)
+                if line[-2:] == r"\n":
+                    line = line[:-2]
+
+        return line
+
     with open(path) as fd:
         lineNo = 0
         while True:
-            line = fd.readline()
+            line = nextLine()
+            lineNo += 1
+            
             if line == "":
                 break
-            lineNo += 1
 
-            line = line[:-1]            # remove newline
-            #
-            # Look for lines ending [(,] and read the next line.  Hack hack!
-            #
-            if re.search(r"[,\(]\s*(?:#.*)?$", line):
-                line += fd.readline()[:-1]
-                lineNo += 1
+            if line[-1] == '\n':
+                line = line[:-1]
 
             line = re.sub(r"(^|[^\\])#.*", "", line)   # remove inline comments
+            #
+            # Look for lines ending [(,] and append the next line.  Hack hack!
+            #
+            while re.search(r"[,\(]\s*$", line):
+                line += nextLine()
+                lineNo += 1
+
             if line == "":
                 continue
             #
-            #
             # Look for controllers
             #
-            for regex in [r"super\(\)\.__init__\(\s*['\"]([^'\"]+)['\"]\s*,",
+            for regex in [#r"super\(\)\.__init__\(\s*['\"]([^'\"]+)['\"]\s*,",
+                          #r"super\(\)\.__init__\(\s*(?:name\s*=\s*)?['\"]([^'\"]+)['\"]\s*,",
+                          r"super\(\)\.__init__\(\s*(?:name\s*=\s*)['\"]([^'\"]+)['\"]\s*,",
                           r"Controller\(\s*['\"]([^'\"]+)['\"]\s*\)",
                           r"^\s*class\s+(\w+)\s*\((?:salobj\.)?(BaseCsc|ConfigurableCsc)\s*\)\s*:\s*$",
                           r"^\s*import\s+SALPY_(\w+)",
@@ -531,6 +555,7 @@ def doPythonRe(path, verbose=0):
             # Look for Remotes
             #
             for regex in [r"Remote\([^,]+,\s*(?:name\s*=\s*)?['\"]([^'\"]+)['\"]",
+                          #r"Remote\([^,]+,\s*['\"]([^'\"]+)['\"]",
                           r"^\s*class\s+([^(\s]+)\s*\((?:salobj.)?Remote\s*\)\s*:\s*$",
                               ]:
                 match = re.search(regex, line)
@@ -679,7 +704,7 @@ class FuncLister(ast.NodeVisitor):
         self.generic_visit(n)
 
 
-def doPythonAst(path, verbose=0):
+def doPythonAst(path, verbose=0, **kwargs):
     """Process a python file, looking for Controllers and Remotes
 
     This code uses ast to generate a syntax tree which it then analyses.  If you're
@@ -718,7 +743,7 @@ def doPythonAst(path, verbose=0):
     return nv.controllers, nv.remotes
 
 
-def doSal(path, verbose=0):
+def doSal(path, verbose=0, **kwargs):
     """Process a "sal" interface file, looking for Controllers and Remotes
 
     Parameters
@@ -762,7 +787,7 @@ def doSal(path, verbose=0):
     return controllers, remotes
 
 
-def doYaml(path, verbose=0):
+def doYaml(path, verbose=0, **kwargs):
     """Process a yaml file, looking for Controllers and Remotes
 
     Parameters
@@ -887,6 +912,7 @@ def processFile(filename, controllers, remotes, include_notebooks=False, use_ast
             print(f"Ignoring {filename} as it is on badFiles list", file=sys.stderr)
         return
 
+    kwargs = {}
     if isCpp(filename):
         doFile = doCpp
     elif isJava(filename):
@@ -897,16 +923,17 @@ def processFile(filename, controllers, remotes, include_notebooks=False, use_ast
         doFile = doJsx
     elif isLabView(filename):
         doFile = doLabView
-    elif use_ast and isPython(filename):
-        doFile = doPythonAst
+    elif isPython(filename):
+        doFile = doPythonAst if use_ast else doPythonRe
     elif isPython(filename, include_notebooks):
         doFile = doPythonRe
+        kwargs["isNotebook"] = True
     elif isYaml(filename):
         doFile = doYaml
     else:
         return
 
-    ctrls, rems = doFile(filename, verbose=verbose)
+    ctrls, rems = doFile(filename, verbose=verbose, **kwargs)
 
     if ctrls:
         controllers[filename] = ctrls
@@ -1040,6 +1067,7 @@ if __name__ == "__main__":
                         if missing in candidateCscs[fc]:
                             if fixedCscNames.get(fc) != missing:
                                 print(f"Interpreting {fc} to mean {missing}")
+                                import pdb; pdb.set_trace() 
                                 fixedCscNames[fc] = missing
 
                 if args.verbose > 0:
