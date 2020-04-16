@@ -13,17 +13,18 @@ import sys
 import xml.etree.ElementTree as ET 
 import yaml
 
+def patch_csc_name(name):
+    """Patch a component name which we guessed originally
+
+    Controlled by --fixCscNames
+    """
+
+    return name
+
 class Component:
     def __init__(self, name, path, lineNo, line=None):
-        for regex in [r"^(.*)(?<!_)(?i:csc)$",
-                      r"^SALPY_(.*)$",
-                      ]:
-            mat = re.search(regex, name)
-            if mat:
-                nname = mat.group(1)
-                if nname not in "CSC":  # just confusing
-                    name == nname
-                break
+
+        name = patch_csc_name(name)
 
         self.name = name
         self._name = name               # we may patch self.name later
@@ -555,6 +556,7 @@ def doPythonRe(path, verbose=0, isNotebook=False, **kwargs):
             # Look for Remotes
             #
             for regex in [r"Remote\([^,]+,\s*(?:name\s*=\s*)?['\"]([^'\"]+)['\"]",
+                          r"Remote\(\s*SALPY_+([^)\s]+)[\s)]",   # old-style salobj
                           r"^\s*class\s+([^(\s]+)\s*\((?:salobj.)?Remote\s*\)\s*:\s*$",
                               ]:
                 match = re.search(regex, line)
@@ -1015,6 +1017,24 @@ if __name__ == "__main__":
         if not hasExtension(args.output, ["yaml"]):
             print(f"Only yaml output files are currently supported; saw {args.output}", file=sys.stderr)
             sys.exit(1)
+
+    if args.fixCscNames:
+        def patch_csc_name(name):
+            """Patch a component name which we guessed originally
+            E.g.
+               FooCsc    -> Foo
+               SALPY_Goo -> Goo
+            """
+            for regex in [r"^(.*)(?<!_)(?i:csc)$",
+                          r"^SALPY_(.*)$",
+                          ]:
+                mat = re.search(regex, name)
+                if mat:
+                    nname = mat.group(1)
+                    if nname not in "CSC":  # just confusing
+                        return nname
+
+            return name
     #
     # Traverse all the specified directories looking for components
     #
@@ -1030,7 +1050,7 @@ if __name__ == "__main__":
     # look plausible (e.g. if we don't find Foo but do find FooCsc we'll rename the latter)
     #
     renamedCsc = {}
-    if args.checkCscList or args.missing_cscs or args.fixCscNames:
+    if args.checkCscList or args.missing_cscs:
         try:
             cscs = extractCscs(args.SALSubsystems)
         except FileNotFoundError as e:
@@ -1044,43 +1064,7 @@ if __name__ == "__main__":
             for name in controllers:
                 for filename in controllers[name]:
                     for cpt in controllers[name][filename]:
-                        foundControllers.add(cpt.name)
                         missingControllers.discard(cpt.name)
-
-            if args.fixCscNames:
-                candidateCscs = {}
-                for fc in list(foundControllers):
-                    candidateCscs[fc] = []
-                    for cand in [re.sub(r"[cC][sS][cC]$", "", fc),
-                                 re.sub(r"^SALPY_",       "", fc)]:
-                        if cand != fc and cand in missingControllers:
-                            candidateCscs[fc].append(cand)
-
-                            if False:
-                                foundControllers.discard(fc)
-                                foundControllers.add(cand)
-                                
-                                dropController(controllers, fc)
-
-                fixedCscNames = {}
-                for missing in missingControllers:
-                    for fc in candidateCscs:
-                        if missing in candidateCscs[fc]:
-                            if fixedCscNames.get(fc) != missing:
-                                print(f"Interpreting {fc} to mean {missing}")
-                                import pdb; pdb.set_trace() 
-                                fixedCscNames[fc] = missing
-
-                if args.verbose > 0:
-                    for old, new in fixedCscNames.items():
-                        print(f"{old:20} -> {new}")
-
-                for name in controllers:
-                    for filename in controllers[name]:
-                        for cpt in controllers[name][filename]:
-                            if cpt.name in fixedCscNames:
-                                cpt.name = fixedCscNames[cpt.name]
-                                missingControllers.discard(cpt.name)
 
             if args.missing_cscs:
                 print(f"Failed to find some CSCs: {', '.join(sorted(list(missingControllers)))}" + "\n")
