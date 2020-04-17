@@ -731,7 +731,7 @@
         <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>ccdNames</EFDB_Name>
+        <EFDB_Name>ccdLocations</EFDB_Name>
         <Description>A list of all ccds currently configured, of the form RnnSnn, : delimited (empty if entry not used)</Description>
         <IDL_Type>string</IDL_Type>
         <IDL_Size>1</IDL_Size>
@@ -849,6 +849,52 @@
         <Description>Annotation sent to DAQ</Description>
         <IDL_Type>string</IDL_Type>
         <IDL_Size>1</IDL_Size>
+        <Units>unitless</Units>
+        <Count>1</Count>
+    </item>
+</SALEvent>
+<!-- ComCam settingsApplied events for focal-plane subsystem -->
+<SALEvent>
+    <EFDB_Topic>CCCamera_logevent_focalPlaneHardwareIdSettingsApplied</EFDB_Topic>
+    <item>
+        <EFDB_Name>rebLocation</EFDB_Name>
+        <Description>REB location in focal-plane (e.g. R22RebX) (: delimited)</Description>
+        <IDL_Type>string</IDL_Type>
+        <Units>unitless</Units>
+        <Count>1</Count>
+    </item>    
+    <item>
+        <EFDB_Name>rebSerialNumber</EFDB_Name>
+        <Description>REB hardware serial number (: delimited)</Description>
+        <IDL_Type>string</IDL_Type>
+        <Units>unitless</Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>rebLSSTName</EFDB_Name>
+        <Description>REB LSST identifier (: delimited)</Description>
+        <IDL_Type>string</IDL_Type>
+        <Units>unitless</Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>ccdLocation</EFDB_Name>
+        <Description>CCD location in focal-plane (e.g. R22Snn) (: delimited)</Description>
+        <IDL_Type>string</IDL_Type>
+        <Units>unitless</Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>ccdLSSTNum</EFDB_Name>
+        <Description>CCD LSST identifier (: delimited)</Description>
+        <IDL_Type>string</IDL_Type>
+        <Units>unitless</Units>
+        <Count>1</Count>
+    </item>    
+    <item>
+        <EFDB_Name>ccdManSerNum</EFDB_Name>
+        <Description>Sensor manufacturer's serial number (: delimited)</Description>
+        <IDL_Type>string</IDL_Type>
         <Units>unitless</Units>
         <Count>1</Count>
     </item>
