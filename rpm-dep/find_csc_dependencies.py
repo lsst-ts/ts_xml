@@ -30,7 +30,7 @@ class Component:
         self._name = name               # we may patch self.name later
         self.path = path
         self.lineNo = lineNo
-        self.line = line
+        self.line = re.sub(r"\s*$", "", line) # strip any newline
 
 class Controller(Component):
     pass
@@ -584,35 +584,34 @@ class FuncLister(ast.NodeVisitor):
         self.controllers = []
         self.remotes = []
         
-    @staticmethod
-    def getNodeArgs(n):
+    def getNodeArgs(self, n):
         """Return a node n's arguments"""
         args = []
         for arg in n.args:
-            arg = (arg.id   if isinstance(arg, ast.Name) else
-                   arg.s    if isinstance(arg, ast.Str) else
-                   arg.id   if isinstance(arg, ast.Name) else 
-                   arg.attr if isinstance(arg, ast.Attribute) else
-                   arg)
             args.append(arg)
 
         for k in n.keywords:
-            arg = k.value
-            args.append(arg.attr if isinstance(arg, ast.Attribute) else
-                        arg.s    if isinstance(arg, ast.Str) else
-                        arg.id   if isinstance(arg, ast.Name) else 
-                        arg.n    if isinstance(arg, ast.Num) else 
-                        arg)
+            args.append(k.value)
 
         for i, arg in enumerate(args):
-            if isinstance(arg, ast.Call):
-                arg = arg.func
-            if isinstance(arg, ast.Name):
-                arg = arg.id
-            if isinstance(arg, ast.Attribute):
-                arg = arg.attr
+            arg0 = None
+            while arg != arg0:
+                arg0 = arg
+                arg = (arg.attr        if isinstance(arg, ast.Attribute) else
+                       arg.func        if isinstance(arg, ast.Call) else
+                       "ast.JoinedStr" if isinstance(arg, ast.JoinedStr) else                  
+                       "ast.List"      if isinstance(arg, ast.List) else                  
+                       arg.id          if isinstance(arg, ast.Name) else
+                       arg.value       if isinstance(arg, ast.NameConstant) else 
+                       arg.n           if isinstance(arg, ast.Num) else 
+                       arg.s           if isinstance(arg, ast.Str) else                  
+                       arg)
 
             args[i] = arg
+
+            if isinstance(arg, ast.AST):
+                raise RuntimeError(f"Failed to convert {arg} to a value at {self.path}:{n.lineno}:\n"
+                                   f"{self.sourceCode[n.lineno - 1]}")
 
         return args
 
