@@ -547,16 +547,25 @@ def doPythonRe(path, verbose=0, isNotebook=False, **kwargs):
                           r"^\s*class\s+(\w+)\s*\((?:salobj\.)?(BaseCsc|ConfigurableCsc)\s*\)\s*:\s*$",
                           r"^\s*import\s+SALPY_(\w+)",
             ]:
+                if "test" in path:
+                    continue
+
                 match = re.search(regex, line)
                 
                 if match:
                     cptName = match.group(1)
+
+                    if isNotebook and "SALPY_" in regex:
+                        if verbose:
+                            print(f"Ignoring {cptName} based on SALPY_ match in a notebook")
+                        continue
+                    
                     controllers.append(Controller(cptName, path, lineNo, line))
             #
             # Look for Remotes
             #
             for regex in [r"Remote\([^,]+,\s*(?:name\s*=\s*)?['\"]([^'\"]+)['\"]",
-                          r"Remote\(\s*SALPY_+([^)\s]+)[\s)]",   # old-style salobj
+                          r"Remote\(\s*SALPY_+(\w+)[\s)]",   # old-style salobj
                           r"^\s*class\s+([^(\s]+)\s*\((?:salobj.)?Remote\s*\)\s*:\s*$",
                               ]:
                 match = re.search(regex, line)
@@ -701,6 +710,10 @@ class FuncLister(ast.NodeVisitor):
             match = re.search(r"^SALPY_(\w+)", modName)
             if match:
                 cptName = match.group(1)
+
+                if "test" in self.path:
+                    continue
+               
                 self.controllers.append(Controller(cptName, self.path, n.lineno,
                                                    self.sourceCode[n.lineno - 1]))
 
