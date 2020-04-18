@@ -16,13 +16,13 @@ import yaml
 def patch_csc_name(name):
     """Patch a component name which we guessed originally
 
-    Controlled by --fixCscNames
+    Controlled by --patchCscNames
     """
 
     return name
 
 class Component:
-    def __init__(self, name, path, lineNo, line=None):
+    def __init__(self, name, path="unknown", lineNo=-1, line=""):
 
         name = patch_csc_name(name)
 
@@ -547,9 +547,6 @@ def doPythonRe(path, verbose=0, isNotebook=False, **kwargs):
                           r"^\s*class\s+(\w+)\s*\((?:salobj\.)?(BaseCsc|ConfigurableCsc)\s*\)\s*:\s*$",
                           r"^\s*import\s+SALPY_(\w+)",
             ]:
-                if "test" in path:
-                    continue
-
                 match = re.search(regex, line)
                 
                 if match:
@@ -710,9 +707,6 @@ class FuncLister(ast.NodeVisitor):
             if match:
                 cptName = match.group(1)
 
-                if "test" in self.path:
-                    continue
-               
                 self.controllers.append(Controller(cptName, self.path, n.lineno,
                                                    self.sourceCode[n.lineno - 1]))
 
@@ -743,6 +737,7 @@ def doPythonAst(path, verbose=0, **kwargs):
     if verbose:
         print(f"   Processing {path}")
 
+             
     with open(path) as fd:
         source = fd.readlines()
 
@@ -890,6 +885,8 @@ def process_tree(root, controllers, remotes, ignoredDirs=[".git"],
             processFile(root, controllers[name], remotes[name],
                         include_notebooks=include_notebooks, use_ast=use_ast, verbose=verbose)
     else:
+        skipTests = True if ("test" in ignoredDirs) else False
+
         for dirpath, dirnames, filenames in os.walk(root, topdown=True):
             # don't recurse into e.g. .git
             for ignoreDir in ignoredDirs:
@@ -901,6 +898,9 @@ def process_tree(root, controllers, remotes, ignoredDirs=[".git"],
                     del dirnames[i]
 
             for filename in filenames:
+                if skipTests and re.search(r"fake|test", filename):
+                    continue
+
                 if extensions is None or hasExtension(filename, extensions):
                     processFile(os.path.join(dirpath, filename), controllers[name], remotes[name],
                                 include_notebooks=include_notebooks, use_ast=use_ast, verbose=verbose)
@@ -959,20 +959,29 @@ def processFile(filename, controllers, remotes, include_notebooks=False, use_ast
         
 if __name__ == "__main__":
     import argparse
-    parser = argparse.ArgumentParser(description="")
+    parser = argparse.ArgumentParser(description="""\
+    Process source code analysing the SAL components which
+    connect controllers (CSCs) and remotes.
+    """,
+                                     formatter_class=argparse.ArgumentDefaultsHelpFormatter)
 
     parser.add_argument('directories', type=str, nargs="*",
                         help="Directories to analyse")
     parser.add_argument('--checkCscList', dest="checkCscList",  action="store_true",
                         help="Include examples in analysis?", default=True)
+    parser.add_argument('--checkCscList', dest="checkCscList",  action="store_true",
+                        help="Include examples in analysis?", default=True) # no-op
     parser.add_argument('--no-checkCscList', dest="checkCscList",  action="store_false",
                         help="Include examples in analysis?", default=True)
     parser.add_argument('--examples',  action="store_true",
                         help="Include examples in analysis?", default=False)
     parser.add_argument('--extensions', type=str, nargs="+",
                         help="Only process these extensions")
-    parser.add_argument('--fixCscNames',  action="store_true",
-                        help="Attempt to patch CSC names to match known list", default=False)
+    parser.add_argument('--fixCscComponents',  dest="fixCscComponents", action="store_true",
+                        help="Fix some missing/incorrect mappings of components to CSCs",
+                        default=True)   # no-op
+    parser.add_argument('--no-fixCscComponents',  dest="fixCscComponents", action="store_false",
+                        help="Fix some missing/incorrect mappings of components to CSCs", default=True)
     parser.add_argument('--list-cscs',  action="store_true",
                         help="List the CSCs that checkCscList would use, and exit", default=False)
     parser.add_argument('--missing-cscs',  action="store_true",
@@ -982,6 +991,8 @@ if __name__ == "__main__":
     parser.add_argument('--notebooks',  action="store_true",
                         help="Include notebooks in analysis?", default=False)
     parser.add_argument('--output', '-o', type=str, help="Write output to this file")
+    parser.add_argument('--patchCscNames',  action="store_true",
+                        help="Attempt to patch CSC names to match known list", default=False)
     parser.add_argument('--SALSubsystems',help="XML file defining known CSCs",
                         default="ts_xml/sal_interfaces/SALSubsystems.xml")
     parser.add_argument('--show-filenames',  action="store_true",
@@ -989,9 +1000,10 @@ if __name__ == "__main__":
     parser.add_argument('--show-lines',  action="store_true",
                         help="Print lines where components were found", default=False)
     parser.add_argument('--tests',  action="store_true",
-                        help="Include tests in analysis?", default=False)
+                        help="Include tests (and fakes) in analysis?", default=False)
     parser.add_argument('--use-re', dest="use_ast",  action="store_false",
-                        help="Use regexps (not python AST) to analyse .py files?", default=True)    
+                        help="Use regexps (not python AST) to analyse .py files? Debugging only",
+                        default=True)    
     parser.add_argument('--verbose', '-v',  action="count",
                         help="How chatty should I be?", default=0)
 
@@ -1030,7 +1042,10 @@ if __name__ == "__main__":
             print(f"Only yaml output files are currently supported; saw {args.output}", file=sys.stderr)
             sys.exit(1)
 
-    if args.fixCscNames:
+    if args.patchCscNames:
+        #
+        # this is at global scope, and replaces a no-op definition
+        #
         def patch_csc_name(name):
             """Patch a component name which we guessed originally
             E.g.
@@ -1071,7 +1086,7 @@ if __name__ == "__main__":
             args.checkCscList = False
 
         foundControllers = set()
-        if args.missing_cscs or args.fixCscNames:
+        if args.missing_cscs or args.patchCscNames:
             missingControllers = set(cscs)
             for name in controllers:
                 for filename in controllers[name]:
@@ -1091,6 +1106,29 @@ if __name__ == "__main__":
                                 [cpt for cpt in controllers[name][filename] if cpt.name in cscs]
                             remotes[name][filename]     = \
                                 [cpt for cpt in remotes[name][filename]     if cpt.name in cscs]
+
+    #
+    # Patch up some failures to understand some of the more complex CSCs
+    #
+    if args.fixCscComponents:
+        #
+        # Invent the CCS controllers from whole cloth
+        #
+        # Cheat a bit with the HeaderService, because the code base can handle multiple cameras
+        # as it calls all of them `name` in a python loop
+        #
+        dummy = "dummy.file"
+
+        controllers["HeaderService"] = {dummy : []} # was ["filename"][Controller("name")]
+        for cam in ["AT", "CC", "MT"]:
+            controllers[f"{cam}Camera"] = {dummy : [Controller(f"{cam}Camera")]}
+
+            if cam == "AT":
+                controllers["HeaderService"][dummy].append(Controller(f"{cam}HeaderService"))
+        #
+        # Code has another layer of introspection and calls the cptName "cscName"
+        #
+        controllers["ts_MTAOS"] = {dummy : [Controller("MTAOS")]}
     #
     # Write out our discoveries
     #
@@ -1100,7 +1138,7 @@ if __name__ == "__main__":
 
         for name in controllers:
             ctrls = sum(controllers[name].values(), [])
-            rems =  sum(remotes[name].values(), [])
+            rems =  sum(remotes[name].values(), []) if name in remotes else []
 
             if ctrls:
                 yamlData["controllers"][name] = sorted(set([cpt.name for cpt in ctrls]))
@@ -1111,8 +1149,8 @@ if __name__ == "__main__":
             yaml.dump(yamlData, fd, yaml.CDumper)        
     else:
         for name in controllers:
-            ctrls = sum(controllers[name].values(), [])
-            rems =  sum(remotes[name].values(), [])
+            ctrls = sum(controllers[name].values(), [])            
+            rems =  sum(remotes[name].values(), []) if name in remotes else []
 
             if ctrls:
                 print(f"{name:40s} Controllers: {', '.join(sorted(set([cpt.name for cpt in ctrls])))}")
