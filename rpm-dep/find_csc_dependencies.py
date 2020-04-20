@@ -1006,11 +1006,6 @@ if __name__ == "__main__":
 
     parser.add_argument('directories', type=str, nargs="*",
                         help="Directories to analyse")
-    checkCscList_grp = parser.add_mutually_exclusive_group()
-    checkCscList_grp.add_argument('--checkCscList', dest="checkCscList", action="store_true",
-                                  help="Check the list of CSCs against the XML (default)", default=True)
-    checkCscList_grp.add_argument('--no-checkCscList', dest="checkCscList", action="store_false",
-                                  help="Don't check the list of CSCs against the XML")
     parser.add_argument('--examples', action="store_true",
                         help="Include examples in analysis?", default=False)
     parser.add_argument('--extensions', metavar="ext", nargs="+",
@@ -1022,7 +1017,7 @@ if __name__ == "__main__":
     fixCscComponents_grp.add_argument('--no-fixCscComponents', dest="fixCscComponents", action="store_false",
                                       help="Don't fix some missing/incorrect mappings of components to CSCs")
     parser.add_argument('--list-cscs', action="store_true",
-                        help="List the CSCs that checkCscList would use, and exit", default=False)
+                        help="List the CSCs that --missing-cscs would use, and exit", default=False)
     parser.add_argument('--missing-cscs', action="store_true",
                         help="Show missing CSCs?", default=False)
     parser.add_argument('--mocks', action="store_true",
@@ -1116,13 +1111,12 @@ if __name__ == "__main__":
     # we'll rename the latter)
     #
     renamedCsc = {}
-    if args.checkCscList or args.missing_cscs:
+    if args.missing_cscs:
         try:
             cscs = extractCscs(args.SALSubsystems)
         except FileNotFoundError as e:
             print(f"{e}; skipping CSC checks", file=sys.stdout)
             cscs = []
-            args.checkCscList = False
 
         foundControllers = set()
         if args.missing_cscs or args.patchCscNames:
@@ -1134,18 +1128,6 @@ if __name__ == "__main__":
 
             if args.missing_cscs:
                 print(f"Failed to find some CSCs: {', '.join(sorted(list(missingControllers)))}" + "\n")
-            #
-            # See if we recognise the controllers
-            #
-            if args.checkCscList:
-                for name in controllers:
-                    for filename in controllers[name]:
-                        for cpt in controllers[name][filename]:
-                            controllers[name][filename] = \
-                                [cpt for cpt in controllers[name][filename] if cpt.name in cscs]
-                            if filename in remotes[name]:
-                                remotes[name][filename] = \
-                                    [cpt for cpt in remotes[name][filename] if cpt.name in cscs]
     #
     # Patch up some failures to understand some of the more complex CSCs
     #
