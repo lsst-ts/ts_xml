@@ -11,7 +11,18 @@ import yaml
 
 
 def isMT(name):
-    """Does this CSC or SAL component belong to the 8.4m telescope?"""
+    """Does this CSC or SAL component belong to the 8.4m telescope?
+
+    Parameters
+    ----------
+    name : `str`
+        The name of the CSC or SAL component
+
+    Returns
+    -------
+    boolean : `bool`
+        True iff name belongs to the 8.4m
+    """
 
     if (
             re.search(r"^(ts_)?(CC|M1M3|MT)", name, re.IGNORECASE) or
@@ -35,6 +46,19 @@ def isMT(name):
 
 
 def nodeOpts(csc):
+    """Return node options for graphviz
+
+    Parameters
+    ----------
+    csc : `str`
+        The name of a CSC
+
+    Returns
+    -------
+    options : `dict`
+        Options to be passed to `dot.node`
+    """
+
     fillcolors = dict(
     )
     styles = dict(
@@ -55,7 +79,19 @@ def nodeOpts(csc):
     )
 
 
-def edgeOpts(message):
+def edgeOpts(cpt):
+    """Return edge options for graphviz
+
+    Parameters
+    ----------
+    cpt : `str`
+        The name of a SAL component
+
+    Returns
+    -------
+    options : `dict`
+        Options to be passed to `dot.edge`
+    """
     colors = dict(
         ATAOS='violet',
         ATCamera='red',
@@ -72,15 +108,25 @@ def edgeOpts(message):
     )
 
     return dict(
-        color=colors.get(message),
-        style=styles.get(message),
+        color=colors.get(cpt),
+        style=styles.get(cpt),
     )
 
 
 def ignoreCsc(name):
     """Return True if we should ignore a package
 
-    You can add to this list with --ignore
+    You can add to this list from the command line with --ignore
+
+    Parameters
+    ----------
+    package : `str`
+        The name of package (e.g. "ts_watcher")
+
+    Returns
+    -------
+    boolean : `bool`
+        True iff we should ignore the package
     """
     if (
             re.search(r"^LOVE-(commander|producer|simulator|integration-tools)$", name) or
@@ -95,7 +141,18 @@ def ignoreCsc(name):
 
 
 def ignoreSalCpt(name):
-    """Return True for SAL components that we should ignore"""
+    """Return True for SAL components that we should ignore
+
+    Parameters
+    ----------
+    name : `str`
+        The name of sal component (e.g. "ATCamera")
+
+    Returns
+    -------
+    boolean : `bool`
+        True iff we should ignore the component
+    """
     if name in ["name", "Test"]:
         return True
     else:
@@ -107,7 +164,17 @@ def requiredCsc(name):
 
     Return None or "" to draw all otherwise-selected nodes
 
-    N.b. list may be set on the command line as --required
+    N.b. list may be set from the command line using --required
+
+    Parameters
+    ----------
+    name : `str`
+        The name of CSC component (e.g. "HeaderService")
+
+    Returns
+    -------
+    boolean : `bool`
+        True iff we require name
     """
 
     return None
@@ -116,6 +183,21 @@ def requiredCsc(name):
 def makeGraph(yamlData, show_MT=False, show_orphans=True, verbose=0):
     """Make a graphviz file from the yaml produced by find_csc_dependencies
 
+    Parameters
+    ----------
+    yamlData : `dict` of `dict`
+        top level keys are "controllers" and "remotes"
+    show_MT : `bool`
+        Should I show main telescope components in addition to auxTel?
+    show_orphans : `bool`
+        Should I CSCs that have no remotes?
+    verbose : `bool`
+        Should I be chatty?
+
+    Returns
+    -------
+    boolean : `graphviz.Graph`
+        The desired graph
     """
     #
     # Start by finding all the SAL components provided by the controllers

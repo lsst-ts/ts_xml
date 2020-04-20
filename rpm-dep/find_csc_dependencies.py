@@ -18,12 +18,23 @@ def patch_csc_name(name):
     """Patch a component name which we guessed originally
 
     Controlled by --patchCscNames
+
+    Parameters
+    ----------
+    name : `str`
+        The name of the CSC
+
+    Returns
+    -------
+    patchedName : `str`
+        The rewritten CSC name
     """
 
     return name
 
 
 class Component:
+    """A Controller or Remote"""
     def __init__(self, name, path="unknown", lineNo=-1, line=""):
 
         name = patch_csc_name(name)
@@ -41,18 +52,6 @@ class Controller(Component):
 
 class Remote(Component):
     pass
-
-
-def dropController(controllers, ctrlName):
-    """Given a dict of controllers indexed by packages,
-    drop any that have name 'ctrlName' """
-    for package in controllers:
-        for fileName in controllers[package]:
-            new = []
-            for ctrl in controllers[package][fileName]:
-                if ctrl.name != ctrlName:
-                    new.append(ctrl)
-            controllers[package][fileName] = new
 
 
 # -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
@@ -513,6 +512,7 @@ def doPythonRe(path, verbose=0, isNotebook=False, **kwargs):
     remotes = []
 
     def nextLine():
+        r"""Return the nextlogical line, having handled \ continuations"""
         line = fd.readline()
 
         if isNotebook:
@@ -583,7 +583,8 @@ def doPythonRe(path, verbose=0, isNotebook=False, **kwargs):
     return controllers, remotes
 
 
-class FuncLister(ast.NodeVisitor):
+class AnalyseCsc(ast.NodeVisitor):
+    """A class to be analyse a python Abstract Syntax Tree (AST)"""
     def __init__(self, path, sourceCode, verbose=0):
         self.path = path
         self.sourceCode = sourceCode
@@ -755,10 +756,10 @@ def doPythonAst(path, verbose=0, **kwargs):
         print(f"Unable to parse {path}: {e}")
         return [], []
 
-    nv = FuncLister(path, source, verbose)
-    nv.visit(tree)
+    analyseCsc = AnalyseCsc(path, source, verbose)
+    analyseCsc.visit(tree)
 
-    return nv.controllers, nv.remotes
+    return analyseCsc.controllers, analyseCsc.remotes
 
 
 def doSal(path, verbose=0, **kwargs):
@@ -768,6 +769,8 @@ def doSal(path, verbose=0, **kwargs):
     ----------
     path : `str`
         The name of the file
+    verbose : `int`
+        How verbose should I be?  The larger the chattier
 
     Returns
     -------
@@ -874,11 +877,23 @@ def process_tree(root, controllers, remotes, ignoredDirs=[".git"],
     ----------
     root : `str`
         The name of the directory tree to process
-    name : `str`
-        The name of the CSC represented by root; defaults to `root` if `None`
+    controllers : `list` of `Controller`s
+        List of Controllers that we've found
+    remotes : `list` of `Remote`s
+        List of Remotes that we've found
+    ignoredDirs : `list` of `str`
+        List of directories to ignore (default: [".git"])
+    extensions : `list` of `str`
+        List of extensions to process (e.g. "py"); default None => all
+    include_notebooks : `bool`
+        Process jupyter notebooks?
+    use_ast : `bool`
+        Use ast package to process python (always correct except when
+        debugging
     verbose : `int`
         How verbose should I be?  The larger the chattier
-
+    name : `str`
+        The name of the CSC represented by root; defaults to `root` if `None`
     """
     if name is None:
         name = root
@@ -918,6 +933,21 @@ def process_tree(root, controllers, remotes, ignoredDirs=[".git"],
 def processFile(filename, controllers, remotes, include_notebooks=False, use_ast=True, verbose=False):
     """Process a file, looking for signs of being a Controller or Remote
 
+    Parameters
+    ----------
+    filename : `str`
+        The name of the file to process
+    controllers : `list` of `Controller`s
+        List of Controllers that we've found
+    remotes : `list` of `Remote`s
+        List of Remotes that we've found
+    include_notebooks : `bool`
+        Process jupyter notebooks?
+    use_ast : `bool`
+        Use ast package to process python (always correct except when
+        debugging
+    verbose : `int`
+        How verbose should I be?  The larger the chattier
     """
     #
     # files to ignore.
