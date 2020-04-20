@@ -1,6 +1,5 @@
 #!/usr/bin/env python
 
-import glob
 import os
 import re
 import sys
@@ -10,34 +9,37 @@ import yaml
 
 # --------------------------------------------
 
+
 def isMT(name):
     """Does this CSC or SAL component belong to the 8.4m telescope?"""
 
-    if (re.search(r"^(ts_)?(CC|M1M3|MT)", name, re.IGNORECASE) or
-        name == "NewMTMount" or
-        name == "ts_hexrotcomm" or
-        name == "dome_eie" or
-        name == "ts_m1m3supporteui" or
-        name == "dm_ccarchiver" or
-        name == "ts_CBP" or
-        name == "ts_Dome" or
-        name == "ts_dsm" or
-        name == "ts_eas" or
-        name == "ts_hexapod" or
-        name == "ts_m2" or
-        name == "ts_TunableLaser" or
-        False
-       ):
+    if (
+            re.search(r"^(ts_)?(CC|M1M3|MT)", name, re.IGNORECASE) or
+            name == "NewMTMount" or
+            name == "ts_hexrotcomm" or
+            name == "dome_eie" or
+            name == "ts_m1m3supporteui" or
+            name == "dm_ccarchiver" or
+            name == "ts_CBP" or
+            name == "ts_Dome" or
+            name == "ts_dsm" or
+            name == "ts_eas" or
+            name == "ts_hexapod" or
+            name == "ts_m2" or
+            name == "ts_TunableLaser" or
+            False
+    ):
         return True
-    
+
     return False
+
 
 def nodeOpts(csc):
     fillcolors = dict(
     )
     styles = dict(
-        ts_externalscripts = "dashed",
-        ts_notebooks = "dashed",
+        ts_externalscripts="dashed",
+        ts_notebooks="dashed",
     )
 
     if "LOVE" in csc:
@@ -51,6 +53,7 @@ def nodeOpts(csc):
         fillcolor=fillcolors.get(csc),
         style=styles.get(csc),
     )
+
 
 def edgeOpts(message):
     colors = dict(
@@ -67,27 +70,29 @@ def edgeOpts(message):
         EFD='dashed',
         Hexapod='dashed',
     )
-        
+
     return dict(
         color=colors.get(message),
         style=styles.get(message),
     )
+
 
 def ignoreCsc(name):
     """Return True if we should ignore a package
 
     You can add to this list with --ignore
     """
-    if (re.search(r"^LOVE-(commander|producer|simulator|integration-tools)$", name) or
-        name == "dm_csc_base" or
-        name == "ts_labview_salApi" or
-        name == "m2.py" or
-        False
-        ):
+    if (
+            re.search(r"^LOVE-(commander|producer|simulator|integration-tools)$", name) or
+            name == "dm_csc_base" or
+            name == "ts_labview_salApi" or
+            name == "m2.py" or
+            False
+    ):
         return True
     else:
         return False
-    
+
 
 def ignoreSalCpt(name):
     """Return True for SAL components that we should ignore"""
@@ -99,7 +104,7 @@ def ignoreSalCpt(name):
 
 def requiredCsc(name):
     """Only draw nodes connected to nodes for which we return True
-    
+
     Return None or "" to draw all otherwise-selected nodes
 
     N.b. list may be set on the command line as --required
@@ -109,7 +114,7 @@ def requiredCsc(name):
 
 
 def makeGraph(yamlData, show_MT=False, show_orphans=True, verbose=0):
-    """Given a yaml file produced by find_csc_dependencies, make a graphviz .gv file
+    """Make a graphviz file from the yaml produced by find_csc_dependencies
 
     """
     #
@@ -119,11 +124,12 @@ def makeGraph(yamlData, show_MT=False, show_orphans=True, verbose=0):
     # controllers; e.g.
     #     packages['ATMonochromator'] == ['ts_atmonochromator']
     #
-    # Ideally the list would have only one element, but when there are both old and
-    # new versions of CSCs being analysed (which shouldn't happen), or
+    # Ideally the list would have only one element, but when there are both
+    # old and new versions of CSCs being analysed (which shouldn't happen), or
     # the analysis code is confused (e.g. ts_mtm2) you can get things like
     #     packages['MTM2'] == ['ts_m2', 'ts_mtm2']
-    # It is not this package's job to fix these inconsistencies, but we do complain
+    # It is not this package's job to fix these inconsistencies, but we do
+    # complain
     #
     packages = {}
     for package in yamlData["controllers"]:
@@ -151,9 +157,10 @@ def makeGraph(yamlData, show_MT=False, show_orphans=True, verbose=0):
         cscLabel = sources[0]
 
         if (not show_MT and isMT(cscLabel)) or ignoreCsc(cscLabel):
-            continue     
+            continue
         #
-        # go through all the "packages" (e.g. ts_ATDomeTrajectory) looking for their remotes
+        # go through all the "packages" (e.g. ts_ATDomeTrajectory)
+        # looking for their remotes
         #
         for package in yamlData["remotes"]:
             if package == cscLabel:     # some CSC packages talk to themselves (e.g. GUIs)
@@ -170,8 +177,9 @@ def makeGraph(yamlData, show_MT=False, show_orphans=True, verbose=0):
                     if ignoreCsc(cscLabel) or ignoreCsc(package):
                         continue
 
-                    # just show nodes connected to requiredCsc() if it's configures
-                    if requiredCsc(cscLabel) is not None or requiredCsc(package) is not None: 
+                    # If requiredCsc() is configured only show nodes connected
+                    # to the required ones
+                    if requiredCsc(cscLabel) is not None or requiredCsc(package) is not None:
                         if not (requiredCsc(cscLabel) or requiredCsc(package)):
                             continue
 
@@ -194,14 +202,15 @@ def makeGraph(yamlData, show_MT=False, show_orphans=True, verbose=0):
 
             if (not show_MT and isMT(cscLabel)) or ignoreCsc(cscLabel):
                 continue
-            
+
             if cscLabel not in nodes:
                 nodes[cscLabel] = True
                 dot.node(cscLabel, shape='box', **nodeOpts(cscLabel))
 
     return dot
 
-#-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+# -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+
 
 if __name__ == "__main__":
 
@@ -223,7 +232,8 @@ if __name__ == "__main__":
                         help="List mapping of CSCs to SAL components", default=False)
     parser.add_argument('--orphans', dest="show_orphans", action="store_true",
                         help="Show CSCs without remotes", default=False)
-    parser.add_argument('--output', '-o', metavar="dotFile", help="Generated file for graphviz", default="CSCs.gv")
+    parser.add_argument('--output', '-o', metavar="dotFile", help="Generated file for graphviz",
+                        default="CSCs.gv")
     parser.add_argument('--show-MT', action="store_true", help="Show MT components?", default=False)
     parser.add_argument('--required', metavar="CSC", nargs="*",
                         help="Only show CSCs connected to ones on this list", default=[])
@@ -234,16 +244,18 @@ if __name__ == "__main__":
     with open(args.yamlFile) as fd:
         yamlData = yaml.load(fd, yaml.CLoader)
     #
-    # Only show CSCs with one degree of separation from args.required; e.g. HeaderService
+    # Only show CSCs with one degree of separation from args.required;
+    # e.g. HeaderService
     #
     if args.required:
-        def requiredCsc(name):
+        def requiredCsc(name):          # noqa: F811
             return name in args.required
     #
     # Ignore certain packages; e.g. ts_notebooks
     #
     if args.ignore_packages:
         _ignoreCsc = ignoreCsc
+
         def ignoreCsc(name):
             return name in args.ignore_packages or _ignoreCsc(name)
 
@@ -262,11 +274,9 @@ if __name__ == "__main__":
     #
     format = "pdf"
     renderedFile = dot.render(args.output, view=False, format=args.format)
-    
+
     fixedRenderedFile = f"{os.path.splitext(args.output)[0]}.{args.format}"
     os.rename(renderedFile, fixedRenderedFile)  # otherwise it's e.g. foo.gv.pdf
 
     if args.verbose:
         print(f"Wrote {fixedRenderedFile}")
-
-    

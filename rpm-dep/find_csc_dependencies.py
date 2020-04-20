@@ -10,8 +10,9 @@ import glob
 import os
 import re
 import sys
-import xml.etree.ElementTree as ET 
+import xml.etree.ElementTree as ElementTree
 import yaml
+
 
 def patch_csc_name(name):
     """Patch a component name which we guessed originally
@@ -20,6 +21,7 @@ def patch_csc_name(name):
     """
 
     return name
+
 
 class Component:
     def __init__(self, name, path="unknown", lineNo=-1, line=""):
@@ -30,13 +32,16 @@ class Component:
         self._name = name               # we may patch self.name later
         self.path = path
         self.lineNo = lineNo
-        self.line = re.sub(r"\s*$", "", line) # strip any newline
+        self.line = re.sub(r"\s*$", "", line)  # strip any newline
+
 
 class Controller(Component):
     pass
 
+
 class Remote(Component):
     pass
+
 
 def dropController(controllers, ctrlName):
     """Given a dict of controllers indexed by packages,
@@ -50,10 +55,10 @@ def dropController(controllers, ctrlName):
             controllers[package][fileName] = new
 
 
-#-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+# -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 
-def extractCscs(xmlfile): 
-    """Extract the list of CSCs from an xml file containing <SALSubsystems> entries
+def extractCscs(xmlfile):
+    """Extract the list of CSCs from a file containing <SALSubsystems> entries
 
     Parameters
     ----------
@@ -67,10 +72,10 @@ def extractCscs(xmlfile):
     csc_list : `list` of `str`
         A list of all the <SALSubsystems> in the file
     """
-    
-    tree = ET.parse(xmlfile) 
-    root = tree.getroot() 
-  
+
+    tree = ElementTree.parse(xmlfile)
+    root = tree.getroot()
+
     cscs = []
     for ss in root.findall("SALSubsystem"):
         cscs.append(ss.find("Name").text)
@@ -78,7 +83,7 @@ def extractCscs(xmlfile):
     return cscs
 
 
-#-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+# -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 #
 # N.b. we use functions such as `isPython` in case we ever want to be cleverer
 # than just the extension
@@ -105,6 +110,7 @@ def hasExtension(path, extensions):
             return True
 
     return False
+
 
 def isCpp(path):
     """Does a file contain C++?
@@ -207,6 +213,7 @@ def isPython(path, include_notebooks=False):
 
     return hasExtension(path, extensions)
 
+
 def isSal(path):
     """Does a file contain sal definitions?
 
@@ -238,11 +245,11 @@ def isYaml(path):
     config_dir : `bool`
         True iff path is yaml
     """
-    
+
     return hasExtension(path, ["yaml"])
 
 
-#-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+# -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 
 def doCpp(path, verbose=0, **kwargs):
     """Process a C++ file, looking for Controllers and Remotes
@@ -419,8 +426,8 @@ def doJsx(path, verbose=0, **kwargs):
             #
             # Look for Remotes
             #
-            for prefix, cptName,in re.findall(r"['\"]([^-'\"]+)-(\w+)-[^-'\"]+-[^-'\"]+['\"]", line):
-                if prefix  in ["heartbeat", "time"] or \
+            for prefix, cptName in re.findall(r"['\"]([^-'\"]+)-(\w+)-[^-'\"]+-[^-'\"]+['\"]", line):
+                if prefix in ["heartbeat", "time"] or \
                    cptName in ["Heartbeat", "'Test'"]:
                     continue
 
@@ -474,7 +481,7 @@ def doLabView(path, verbose=0, **kwargs):
             # Look for Controllers (assume that that's what labView does)
             #
             for cptName in re.findall(r"SALLV_(\w+)", line):
-                if cptName in ["EXA", "EXA_Messaging",]:
+                if cptName in ["EXA", "EXA_Messaging"]:
                     continue
                 controllers.append(Remote(cptName, path, lineNo, "(text omitted)"))
 
@@ -522,7 +529,7 @@ def doPythonRe(path, verbose=0, isNotebook=False, **kwargs):
         while True:
             line = nextLine()
             lineNo += 1
-            
+
             if line == "":
                 break
 
@@ -542,13 +549,14 @@ def doPythonRe(path, verbose=0, isNotebook=False, **kwargs):
             #
             # Look for controllers
             #
-            for regex in [r"super\(\)\.__init__\(\s*(?:name\s*=\s*)?['\"]([^'\"]+)['\"]\s*,",
-                          r"Controller\(\s*['\"]([^'\"]+)['\"]\s*\)",
-                          r"^\s*class\s+(\w+)\s*\((?:salobj\.)?(BaseCsc|ConfigurableCsc)\s*\)\s*:\s*$",
-                          r"^\s*import\s+SALPY_(\w+)",
+            for regex in [
+                    r"super\(\)\.__init__\(\s*(?:name\s*=\s*)?['\"]([^'\"]+)['\"]\s*,",
+                    r"Controller\(\s*['\"]([^'\"]+)['\"]\s*\)",
+                    r"^\s*class\s+(\w+)\s*\((?:salobj\.)?(BaseCsc|ConfigurableCsc)\s*\)\s*:\s*$",
+                    r"^\s*import\s+SALPY_(\w+)",
             ]:
                 match = re.search(regex, line)
-                
+
                 if match:
                     cptName = match.group(1)
 
@@ -556,22 +564,24 @@ def doPythonRe(path, verbose=0, isNotebook=False, **kwargs):
                         if verbose:
                             print(f"Ignoring {cptName} based on SALPY_ match in a notebook")
                         continue
-                    
+
                     controllers.append(Controller(cptName, path, lineNo, line))
             #
             # Look for Remotes
             #
-            for regex in [r"Remote\([^,]+,\s*(?:name\s*=\s*)?['\"]([^'\"]+)['\"]",
-                          r"Remote\(\s*SALPY_+(\w+)[\s)]",   # old-style salobj
-                          r"^\s*class\s+([^(\s]+)\s*\((?:salobj.)?Remote\s*\)\s*:\s*$",
-                              ]:
+            for regex in [
+                    r"Remote\([^,]+,\s*(?:name\s*=\s*)?['\"]([^'\"]+)['\"]",
+                    r"Remote\(\s*SALPY_+(\w+)[\s)]",   # old-style salobj
+                    r"^\s*class\s+([^(\s]+)\s*\((?:salobj.)?Remote\s*\)\s*:\s*$",
+            ]:
                 match = re.search(regex, line)
-            
+
                 if match:
                     cptName = match.group(1)
                     remotes.append(Remote(cptName, path, lineNo, line))
 
     return controllers, remotes
+
 
 class FuncLister(ast.NodeVisitor):
     def __init__(self, path, sourceCode, verbose=0):
@@ -580,7 +590,7 @@ class FuncLister(ast.NodeVisitor):
         self.verbose = verbose
         self.controllers = []
         self.remotes = []
-        
+
     def getNodeArgs(self, n):
         """Return a node n's arguments"""
         args = []
@@ -594,14 +604,14 @@ class FuncLister(ast.NodeVisitor):
             arg0 = None
             while arg != arg0:
                 arg0 = arg
-                arg = (arg.attr        if isinstance(arg, ast.Attribute) else
-                       arg.func        if isinstance(arg, ast.Call) else
-                       "ast.JoinedStr" if isinstance(arg, ast.JoinedStr) else                  
-                       "ast.List"      if isinstance(arg, ast.List) else                  
-                       arg.id          if isinstance(arg, ast.Name) else
-                       arg.value       if isinstance(arg, ast.NameConstant) else 
-                       arg.n           if isinstance(arg, ast.Num) else 
-                       arg.s           if isinstance(arg, ast.Str) else                  
+                arg = (arg.attr        if isinstance(arg, ast.Attribute) else     # noqa: E272
+                       arg.func        if isinstance(arg, ast.Call) else          # noqa: E272
+                       "ast.JoinedStr" if isinstance(arg, ast.JoinedStr) else
+                       "ast.List"      if isinstance(arg, ast.List) else          # noqa: E272
+                       arg.id          if isinstance(arg, ast.Name) else          # noqa: E272
+                       arg.value       if isinstance(arg, ast.NameConstant) else  # noqa: E272
+                       arg.n           if isinstance(arg, ast.Num) else           # noqa: E272
+                       arg.s           if isinstance(arg, ast.Str) else           # noqa: E272
                        arg)
 
             args[i] = arg
@@ -615,19 +625,19 @@ class FuncLister(ast.NodeVisitor):
     def visit_Call(self, n):
         func = n.func
 
-        if isinstance(func, ast.Subscript): # i.e. Remote_get[name]()
+        if isinstance(func, ast.Subscript):  # i.e. Remote_get[name]()
             func = func.value
 
-        funcName = (func.id      if isinstance(func, ast.Name) else
-                    func.func    if isinstance(func, ast.Call) else
-                    func.attr    if isinstance(func, ast.Attribute) else
+        funcName = (func.id   if isinstance(func, ast.Name) else    # noqa: E272
+                    func.func if isinstance(func, ast.Call) else
+                    func.attr if isinstance(func, ast.Attribute) else
                     func)
 
         if funcName == "Remote":
             args = self.getNodeArgs(n)
 
             if len(args) < 2 or \
-               args[0] and re.search(r"^SALPY_", args[0]): # salpy
+               args[0] and re.search(r"^SALPY_", args[0]):  # salpy
                 self.generic_visit(n)
                 return
 
@@ -635,22 +645,22 @@ class FuncLister(ast.NodeVisitor):
 
             if self.verbose > 0:
                 print(funcName, cptName)
-            
+
             self.remotes.append(Remote(cptName, self.path, n.lineno, self.sourceCode[n.lineno - 1]))
 
         self.generic_visit(n)
 
     def visit_ClassDef(self, n):
-        className = n.name
         #
         # We only detect Controllers derived from these classes
         #
-        cscBaseClasses = ["ArchiverCSC",
-                          "BaseCsc",
-                          "dm_csc",
-                          "dm_csc_base",
-                          "ConfigurableCsc",
-                          "Controller",
+        cscBaseClasses = [
+            "ArchiverCSC",
+            "BaseCsc",
+            "dm_csc",
+            "dm_csc_base",
+            "ConfigurableCsc",
+            "Controller",
         ]
 
         superName = None
@@ -669,35 +679,34 @@ class FuncLister(ast.NodeVisitor):
         for member in n.body:  # includes """descr. strings""" and such like too
             if not isinstance(member, ast.FunctionDef):
                 continue
-                
+
             if member.name != "__init__":
                 continue
-                    
+
             for e in member.body:
                 if isinstance(e, ast.Expr) and isinstance(e.value, ast.Call):  # might be a super() call
                     e = e.value   # unpack the RHS from the expr
                     func = e.func
-                    
-                    value = (func.id    if isinstance(func, ast.Name) else 
+
+                    value = (func.id if isinstance(func, ast.Name) else
                              func.value)
                     value = (value.attr if isinstance(value, ast.Attribute) else
                              value.func if isinstance(value, ast.Call) else
                              value)
-                    funcName0 = (value.id   if isinstance(value, ast.Name) else 
+                    funcName0 = (value.id   if isinstance(value, ast.Name) else  # noqa: E272
                                  value.attr if isinstance(value, ast.Attribute) else value)
 
                     funcName = func.id if isinstance(func, ast.Name) else func.attr
 
                     args = self.getNodeArgs(e)
                     cptName = args[0] if len(args) > 0 else None
-                    
+
                     if funcName0 == "super" and funcName == "__init__":
                         if cptName is not None:
                             self.controllers.append(Controller(cptName, self.path, e.lineno,
                                                                self.sourceCode[e.lineno - 1]))
 
         self.generic_visit(n)
-
 
     def visit_Import(self, n):
         for mod in n.names:
@@ -716,8 +725,8 @@ class FuncLister(ast.NodeVisitor):
 def doPythonAst(path, verbose=0, **kwargs):
     """Process a python file, looking for Controllers and Remotes
 
-    This code uses ast to generate a syntax tree which it then analyses.  If you're
-    processing notebooks use doPythonRe instead; it's less robust
+    This code uses ast to generate a syntax tree which it then analyses.
+    If you're processing notebooks use doPythonRe instead; it's less robust
 
     Parameters
     ----------
@@ -737,7 +746,6 @@ def doPythonAst(path, verbose=0, **kwargs):
     if verbose:
         print(f"   Processing {path}")
 
-             
     with open(path) as fd:
         source = fd.readlines()
 
@@ -745,11 +753,11 @@ def doPythonAst(path, verbose=0, **kwargs):
         tree = ast.parse("".join(source))
     except SyntaxError as e:
         print(f"Unable to parse {path}: {e}")
-        return [], []    
-        
+        return [], []
+
     nv = FuncLister(path, source, verbose)
     nv.visit(tree)
-    
+
     return nv.controllers, nv.remotes
 
 
@@ -837,24 +845,25 @@ def doYaml(path, verbose=0, **kwargs):
             #
             for regex in []:
                 match = re.search(regex, line)
-                
+
                 if match:
                     cptName = match.group(1)
                     controllers.append(Controller(cptName, path, lineNo, line))
             #
             # Look for Remotes
             #
-            for regex in [r"^\s*device\s*:\s*(\S+)",
-                              ]:
+            for regex in [
+                    r"^\s*device\s*:\s*(\S+)",
+            ]:
                 match = re.search(regex, line)
-            
+
                 if match:
                     cptName = match.group(1)
                     remotes.append(Remote(cptName, path, lineNo, line))
 
     return controllers, remotes
 
-#-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+# -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 
 
 def process_tree(root, controllers, remotes, ignoredDirs=[".git"],
@@ -869,7 +878,7 @@ def process_tree(root, controllers, remotes, ignoredDirs=[".git"],
         The name of the CSC represented by root; defaults to `root` if `None`
     verbose : `int`
         How verbose should I be?  The larger the chattier
-    
+
     """
     if name is None:
         name = root
@@ -905,6 +914,7 @@ def process_tree(root, controllers, remotes, ignoredDirs=[".git"],
                     processFile(os.path.join(dirpath, filename), controllers[name], remotes[name],
                                 include_notebooks=include_notebooks, use_ast=use_ast, verbose=verbose)
 
+
 def processFile(filename, controllers, remotes, include_notebooks=False, use_ast=True, verbose=False):
     """Process a file, looking for signs of being a Controller or Remote
 
@@ -913,13 +923,12 @@ def processFile(filename, controllers, remotes, include_notebooks=False, use_ast
     # files to ignore.
     #
     badFiles = {
-        "DynamicLoadSample.cpp" :    "'utf-8' codec can't decode byte 0x93 in position 306",
-        "FirstSteps.cpp" :           "'utf-8' codec can't decode byte 0x93 in position 306",
-        "PySourceColor.py" :         "'utf-8' codec can't decode byte 0xfc in position 6306",
-        "sg_catalog_generator.cpp" : "'utf-8' codec can't decode byte 0xb1 in position 4973",
-        "StaticLoadSample_DataRecorder.cpp" : "'utf-8' codec can't decode byte 0x93 in position 306",
-        "Wavegenerator.cpp" :        "'utf-8' codec can't decode byte 0x93 in position 306",
-        # "tcsOfc_registerCallback_command_enableackcmd.vi" : "open(, 'rb') and decode(errors='ignore')",
+        "DynamicLoadSample.cpp":    "'utf-8' codec can't decode byte 0x93 in position 306",   # noqa: E241
+        "FirstSteps.cpp":           "'utf-8' codec can't decode byte 0x93 in position 306",   # noqa: E241
+        "PySourceColor.py":         "'utf-8' codec can't decode byte 0xfc in position 6306",  # noqa: E241
+        "sg_catalog_generator.cpp": "'utf-8' codec can't decode byte 0xb1 in position 4973",
+        "StaticLoadSample_DataRecorder.cpp": "'utf-8' codec can't decode byte 0x93 in position 306",
+        "Wavegenerator.cpp":        "'utf-8' codec can't decode byte 0x93 in position 306",   # noqa: E241
     }
 
     if os.path.basename(filename) in badFiles:
@@ -955,8 +964,9 @@ def processFile(filename, controllers, remotes, include_notebooks=False, use_ast
     if rems:
         remotes[filename] = rems
 
-#-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
-        
+# -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+
+
 if __name__ == "__main__":
     import argparse
     parser = argparse.ArgumentParser(description="""\
@@ -967,43 +977,43 @@ if __name__ == "__main__":
     parser.add_argument('directories', type=str, nargs="*",
                         help="Directories to analyse")
     checkCscList_grp = parser.add_mutually_exclusive_group()
-    checkCscList_grp.add_argument('--checkCscList', dest="checkCscList",  action="store_true",
+    checkCscList_grp.add_argument('--checkCscList', dest="checkCscList", action="store_true",
                                   help="Check the list of CSCs against the XML (default)", default=True)
-    checkCscList_grp.add_argument('--no-checkCscList', dest="checkCscList",  action="store_false",
+    checkCscList_grp.add_argument('--no-checkCscList', dest="checkCscList", action="store_false",
                                   help="Don't check the list of CSCs against the XML")
-    parser.add_argument('--examples',  action="store_true",
+    parser.add_argument('--examples', action="store_true",
                         help="Include examples in analysis?", default=False)
     parser.add_argument('--extensions', metavar="ext", nargs="+",
                         help="Only process these extensions")
     fixCscComponents_grp = parser.add_mutually_exclusive_group()
-    fixCscComponents_grp.add_argument('--fixCscComponents',  dest="fixCscComponents", action="store_true",
-                        help="Fix some missing/incorrect mappings of components to CSCs (default)",
-                        default=True)
-    fixCscComponents_grp.add_argument('--no-fixCscComponents',  dest="fixCscComponents", action="store_false",
-                        help="Don't fix some missing/incorrect mappings of components to CSCs")
-    parser.add_argument('--list-cscs',  action="store_true",
+    fixCscComponents_grp.add_argument('--fixCscComponents', dest="fixCscComponents", action="store_true",
+                                      help="Fix some missing/incorrect mappings of "
+                                      "components to CSCs (default)", default=True)
+    fixCscComponents_grp.add_argument('--no-fixCscComponents', dest="fixCscComponents", action="store_false",
+                                      help="Don't fix some missing/incorrect mappings of components to CSCs")
+    parser.add_argument('--list-cscs', action="store_true",
                         help="List the CSCs that checkCscList would use, and exit", default=False)
-    parser.add_argument('--missing-cscs',  action="store_true",
+    parser.add_argument('--missing-cscs', action="store_true",
                         help="Show missing CSCs?", default=False)
-    parser.add_argument('--mocks',  action="store_true",
+    parser.add_argument('--mocks', action="store_true",
                         help="Include mocks in analysis?", default=False)
-    parser.add_argument('--notebooks',  action="store_true",
+    parser.add_argument('--notebooks', action="store_true",
                         help="Include notebooks in analysis?", default=False)
     parser.add_argument('--output', '-o', metavar="file.yaml", help="Write output to this file")
-    parser.add_argument('--patchCscNames',  action="store_true",
+    parser.add_argument('--patchCscNames', action="store_true",
                         help="Attempt to patch CSC names to match known list", default=False)
     parser.add_argument('--SALSubsystems', metavar="SALSubsystems.xml", help="XML file defining known CSCs",
                         default="ts_xml/sal_interfaces/SALSubsystems.xml")
-    parser.add_argument('--show-filenames',  action="store_true",
+    parser.add_argument('--show-filenames', action="store_true",
                         help="Print filenames where components were found", default=False)
-    parser.add_argument('--show-lines',  action="store_true",
+    parser.add_argument('--show-lines', action="store_true",
                         help="Print lines where components were found", default=False)
-    parser.add_argument('--tests',  action="store_true",
+    parser.add_argument('--tests', action="store_true",
                         help="Include tests (and fakes) in analysis?", default=False)
-    parser.add_argument('--use-re', dest="use_ast",  action="store_false",
+    parser.add_argument('--use-re', dest="use_ast", action="store_false",
                         help="Use regexps (not python AST) to analyse .py files? Debugging only",
-                        default=True)    
-    parser.add_argument('--verbose', '-v',  action="count", help="How chatty should I be?", default=0)
+                        default=True)
+    parser.add_argument('--verbose', '-v', action="count", help="How chatty should I be?", default=0)
 
     args = parser.parse_args()
 
@@ -1022,7 +1032,7 @@ if __name__ == "__main__":
     ignoredDirs.append("{{cookiecutter.repo_name}}")
     ignoredDirs.append("EUI-Template")
     ignoredDirs.append("Controller-Template")
-    
+
     if not args.examples:
         ignoredDirs.append("examples")
     if not args.mocks:
@@ -1044,7 +1054,7 @@ if __name__ == "__main__":
         #
         # this is at global scope, and replaces a no-op definition
         #
-        def patch_csc_name(name):
+        def patch_csc_name(name):       # noqa: F811
             """Patch a component name which we guessed originally
             E.g.
                FooCsc    -> Foo
@@ -1064,15 +1074,16 @@ if __name__ == "__main__":
     # Traverse all the specified directories looking for components
     #
     controllers = {}
-    remotes = {}        
+    remotes = {}
     for d in dirs:
         name = os.path.basename(d)
 
         process_tree(d, controllers, remotes, ignoredDirs, name=name, extensions=args.extensions,
                      include_notebooks=args.notebooks, use_ast=args.use_ast, verbose=args.verbose)
     #
-    # Remove potential CSCs that aren't listed in the XML list, after fixing names that
-    # look plausible (e.g. if we don't find Foo but do find FooCsc we'll rename the latter)
+    # Remove potential CSCs that aren't listed in the XML list, after fixing
+    # names that look plausible (e.g. if we don't find Foo but do find FooCsc
+    # we'll rename the latter)
     #
     renamedCsc = {}
     if args.checkCscList or args.missing_cscs:
@@ -1094,16 +1105,16 @@ if __name__ == "__main__":
             if args.missing_cscs:
                 print(f"Failed to find some CSCs: {', '.join(sorted(list(missingControllers)))}" + "\n")
             #
-            # Now that we've fixed their names, see if we recognise the controllers
+            # See if we recognise the controllers
             #
             if args.checkCscList:
                 for name in controllers:
                     for filename in controllers[name]:
                         for cpt in controllers[name][filename]:
                             controllers[name][filename] = \
-                                [cpt for cpt in controllers[name][filename] if cpt.name in cscs]
-                            remotes[name][filename]     = \
-                                [cpt for cpt in remotes[name][filename]     if cpt.name in cscs]
+                                [cpt for cpt in controllers[name][filename] if cpt.name in cscs]  # noqa: E221
+                            remotes[name][filename] = \
+                                [cpt for cpt in remotes[name][filename]     if cpt.name in cscs]  # noqa: E272
 
     #
     # Patch up some failures to understand some of the more complex CSCs
@@ -1112,21 +1123,23 @@ if __name__ == "__main__":
         #
         # Invent the CCS controllers from whole cloth
         #
-        # Cheat a bit with the HeaderService, because the code base can handle multiple cameras
-        # as it calls all of them `name` in a python loop
+        # Cheat a bit with the HeaderService, because the code base can
+        # handle multiple cameras as it calls # all of them `name` in a
+        # python loop
         #
         dummy = "dummy.file"
 
-        controllers["HeaderService"] = {dummy : []} # was ["filename"][Controller("name")]
+        controllers["HeaderService"] = {dummy: []}  # was ["filename"][Controller("name")]
         for cam in ["AT", "CC", "MT"]:
-            controllers[f"{cam}Camera"] = {dummy : [Controller(f"{cam}Camera")]}
+            controllers[f"{cam}Camera"] = {dummy: [Controller(f"{cam}Camera")]}
 
             if cam == "AT":
                 controllers["HeaderService"][dummy].append(Controller(f"{cam}HeaderService"))
         #
-        # Code has another layer of introspection and calls the cptName "cscName"
+        # Code has another layer of introspection and calls the
+        # cptName "cscName"
         #
-        controllers["ts_MTAOS"] = {dummy : [Controller("MTAOS")]}
+        controllers["ts_MTAOS"] = {dummy: [Controller("MTAOS")]}
     #
     # Write out our discoveries
     #
@@ -1136,19 +1149,19 @@ if __name__ == "__main__":
 
         for name in controllers:
             ctrls = sum(controllers[name].values(), [])
-            rems =  sum(remotes[name].values(), []) if name in remotes else []
+            rems =  sum(remotes[name].values(), []) if name in remotes else [] # noqa: #222
 
             if ctrls:
                 yamlData["controllers"][name] = sorted(set([cpt.name for cpt in ctrls]))
             if rems:
-                yamlData["remotes"][name] =     sorted(set([cpt.name for cpt in rems]))
+                yamlData["remotes"][name] =     sorted(set([cpt.name for cpt in rems]))  # noqa: #222
 
         with open(args.output, "w") as fd:
-            yaml.dump(yamlData, fd, yaml.CDumper)        
+            yaml.dump(yamlData, fd, yaml.CDumper)
     else:
         for name in controllers:
-            ctrls = sum(controllers[name].values(), [])            
-            rems =  sum(remotes[name].values(), []) if name in remotes else []
+            ctrls = sum(controllers[name].values(), [])
+            rems =  sum(remotes[name].values(), []) if name in remotes else [] # noqa: #222
 
             if ctrls:
                 print(f"{name:40s} Controllers: {', '.join(sorted(set([cpt.name for cpt in ctrls])))}")
