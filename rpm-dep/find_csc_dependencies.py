@@ -1142,10 +1142,10 @@ if __name__ == "__main__":
                     for filename in controllers[name]:
                         for cpt in controllers[name][filename]:
                             controllers[name][filename] = \
-                                [cpt for cpt in controllers[name][filename] if cpt.name in cscs]  # noqa: E221
-                            remotes[name][filename] = \
-                                [cpt for cpt in remotes[name][filename]     if cpt.name in cscs]  # noqa: E272
-
+                                [cpt for cpt in controllers[name][filename] if cpt.name in cscs]
+                            if filename in remotes[name]:
+                                remotes[name][filename] = \
+                                    [cpt for cpt in remotes[name][filename] if cpt.name in cscs]
     #
     # Patch up some failures to understand some of the more complex CSCs
     #
