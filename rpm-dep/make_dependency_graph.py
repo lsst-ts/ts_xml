@@ -12,6 +12,7 @@ import yaml
 
 def isMT(name):
     """Does this CSC or SAL component belong to the 8.4m telescope?"""
+
     if (re.search(r"^(ts_)?(CC|M1M3|MT)", name, re.IGNORECASE) or
         name == "NewMTMount" or
         name == "ts_hexrotcomm" or
@@ -107,7 +108,7 @@ def requiredCsc(name):
     return None
 
 
-def makeGraph(yamlData, show_orphans=True, verbose=0):
+def makeGraph(yamlData, show_MT=False, show_orphans=True, verbose=0):
     """Given a yaml file produced by find_csc_dependencies, make a graphviz .gv file
 
     """
@@ -149,7 +150,7 @@ def makeGraph(yamlData, show_orphans=True, verbose=0):
 
         cscLabel = sources[0]
 
-        if isMT(cscLabel) or ignoreCsc(cscLabel):
+        if (not show_MT and isMT(cscLabel)) or ignoreCsc(cscLabel):
             continue     
         #
         # go through all the "packages" (e.g. ts_ATDomeTrajectory) looking for their remotes
@@ -158,7 +159,7 @@ def makeGraph(yamlData, show_orphans=True, verbose=0):
             if package == cscLabel:     # some CSC packages talk to themselves (e.g. GUIs)
                 continue
 
-            if isMT(package) or ignoreCsc(package):
+            if (not show_MT and isMT(package)) or ignoreCsc(package):
                 continue
 
             for message in yamlData["remotes"][package]:
@@ -191,7 +192,7 @@ def makeGraph(yamlData, show_orphans=True, verbose=0):
         for salCpt in packages:
             cscLabel = packages[salCpt][0]
 
-            if isMT(cscLabel) or ignoreCsc(cscLabel):
+            if (not show_MT and isMT(cscLabel)) or ignoreCsc(cscLabel):
                 continue
             
             if cscLabel not in nodes:
@@ -223,6 +224,7 @@ if __name__ == "__main__":
     parser.add_argument('--orphans', dest="show_orphans", action="store_true",
                         help="Show CSCs without remotes", default=False)
     parser.add_argument('--output', '-o', metavar="dotFile", help="Generated file for graphviz", default="CSCs.gv")
+    parser.add_argument('--show-MT', action="store_true", help="Show MT components?", default=False)
     parser.add_argument('--required', metavar="CSC", nargs="*",
                         help="Only show CSCs connected to ones on this list", default=[])
     parser.add_argument('--verbose', '-v', action="store_true", help="How chatty should I be?", default=False)
@@ -254,7 +256,7 @@ if __name__ == "__main__":
     #
     # Do the work
     #
-    dot = makeGraph(yamlData, show_orphans=args.show_orphans, verbose=args.verbose)
+    dot = makeGraph(yamlData, show_MT=args.show_MT, show_orphans=args.show_orphans, verbose=args.verbose)
     #
     # Write to disk, and render to e.g. pdf
     #
