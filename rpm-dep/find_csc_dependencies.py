@@ -962,26 +962,25 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="""\
     Process source code analysing the SAL components which
     connect controllers (CSCs) and remotes.
-    """,
-                                     formatter_class=argparse.ArgumentDefaultsHelpFormatter)
+    """)
 
     parser.add_argument('directories', type=str, nargs="*",
                         help="Directories to analyse")
-    parser.add_argument('--checkCscList', dest="checkCscList",  action="store_true",
-                        help="Include examples in analysis?", default=True)
-    parser.add_argument('--checkCscList', dest="checkCscList",  action="store_true",
-                        help="Include examples in analysis?", default=True) # no-op
-    parser.add_argument('--no-checkCscList', dest="checkCscList",  action="store_false",
-                        help="Include examples in analysis?", default=True)
+    checkCscList_grp = parser.add_mutually_exclusive_group()
+    checkCscList_grp.add_argument('--checkCscList', dest="checkCscList",  action="store_true",
+                                  help="Check the list of CSCs against the XML (default)", default=True)
+    checkCscList_grp.add_argument('--no-checkCscList', dest="checkCscList",  action="store_false",
+                                  help="Don't check the list of CSCs against the XML")
     parser.add_argument('--examples',  action="store_true",
                         help="Include examples in analysis?", default=False)
-    parser.add_argument('--extensions', type=str, nargs="+",
+    parser.add_argument('--extensions', metavar="ext", nargs="+",
                         help="Only process these extensions")
-    parser.add_argument('--fixCscComponents',  dest="fixCscComponents", action="store_true",
-                        help="Fix some missing/incorrect mappings of components to CSCs",
-                        default=True)   # no-op
-    parser.add_argument('--no-fixCscComponents',  dest="fixCscComponents", action="store_false",
-                        help="Fix some missing/incorrect mappings of components to CSCs", default=True)
+    fixCscComponents_grp = parser.add_mutually_exclusive_group()
+    fixCscComponents_grp.add_argument('--fixCscComponents',  dest="fixCscComponents", action="store_true",
+                        help="Fix some missing/incorrect mappings of components to CSCs (default)",
+                        default=True)
+    fixCscComponents_grp.add_argument('--no-fixCscComponents',  dest="fixCscComponents", action="store_false",
+                        help="Don't fix some missing/incorrect mappings of components to CSCs")
     parser.add_argument('--list-cscs',  action="store_true",
                         help="List the CSCs that checkCscList would use, and exit", default=False)
     parser.add_argument('--missing-cscs',  action="store_true",
@@ -990,10 +989,10 @@ if __name__ == "__main__":
                         help="Include mocks in analysis?", default=False)
     parser.add_argument('--notebooks',  action="store_true",
                         help="Include notebooks in analysis?", default=False)
-    parser.add_argument('--output', '-o', type=str, help="Write output to this file")
+    parser.add_argument('--output', '-o', metavar="file.yaml", help="Write output to this file")
     parser.add_argument('--patchCscNames',  action="store_true",
                         help="Attempt to patch CSC names to match known list", default=False)
-    parser.add_argument('--SALSubsystems',help="XML file defining known CSCs",
+    parser.add_argument('--SALSubsystems', metavar="SALSubsystems.xml", help="XML file defining known CSCs",
                         default="ts_xml/sal_interfaces/SALSubsystems.xml")
     parser.add_argument('--show-filenames',  action="store_true",
                         help="Print filenames where components were found", default=False)
@@ -1004,8 +1003,7 @@ if __name__ == "__main__":
     parser.add_argument('--use-re', dest="use_ast",  action="store_false",
                         help="Use regexps (not python AST) to analyse .py files? Debugging only",
                         default=True)    
-    parser.add_argument('--verbose', '-v',  action="count",
-                        help="How chatty should I be?", default=0)
+    parser.add_argument('--verbose', '-v',  action="count", help="How chatty should I be?", default=0)
 
     args = parser.parse_args()
 
