@@ -1,0 +1,111 @@
+#!/bin/sh
+
+mkdir -p grepper
+echo "Getting list of repositories"
+rm -f grepper/tsrepos
+curl "https://api.github.com/users/lsst-ts/repos?page=1&per_page=100" | grep clone_url >> grepper/tsrepos
+curl "https://api.github.com/users/lsst-ts/repos?page=2&per_page=100" | grep clone_url >> grepper/tsrepos
+curl "https://api.github.com/users/lsst-ts/repos?page=3&per_page=100" | grep clone_url >> grepper/tsrepos
+curl "https://api.github.com/users/lsst-ts/repos?page=4&per_page=100" | grep clone_url >> grepper/tsrepos
+perl -ni -e 'if(!/ts_ocs_executive|ts_ocs_testing_app|ts_visit_simulator/) { print }' grepper/tsrepos
+perl -pi -w -e 's/    \"clone_url\": \"/git clone /g;' -e 's/\",//g;' grepper/tsrepos
+chmod 755 grepper/tsrepos
+
+echo "Cloning lsst-ts and lsst-dm repositories"
+./grepper/tsrepos
+if [ ! -z "$1" ]; then 
+    tsprivate.rpm-dep $1   
+fi
+dmrepos.rpm-dep
+#
+# Make sure all code is on the $branch branch (develop for T&S)
+#
+branch="develop"
+
+for d in *; do
+    echo $d
+    (cd $d; git branch | grep -q $branch && git checkout $branch)
+done
+
+echo "Fetching CCS assets"
+mkdir ccs
+cd ccs
+curl -L -o org-lsst-sal-atcamera-source.jar  "http://repo-nexus.lsst.org/nexus/service/rest/v1/search/assets/download?sort=version&direction=desc&repository=ccs-maven2-public&maven.groupId=org.lsst&maven.artifactId=org-lsst-sal-atcamera&maven.classifier=sources&maven.extension=jar"
+curl -L -o org-lsst-sal-camera-source.jar  "http://repo-nexus.lsst.org/nexus/service/rest/v1/search/assets/download?sort=version&direction=desc&repository=ccs-maven2-public&maven.groupId=org.lsst&maven.artifactId=org-lsst-sal-camera&maven.classifier=sources&maven.extension=jar"
+curl -L -o org-lsst-sal-cccamera-source.jar  "http://repo-nexus.lsst.org/nexus/service/rest/v1/search/assets/download?sort=version&direction=desc&repository=ccs-maven2-public&maven.groupId=org.lsst&maven.artifactId=org-lsst-sal-cccamera&maven.classifier=sources&maven.extension=jar"
+curl -L -o org-lsst-sal-codegen-source.jar  "http://repo-nexus.lsst.org/nexus/service/rest/v1/search/assets/download?sort=version&direction=desc&repository=ccs-maven2-public&maven.groupId=org.lsst&maven.artifactId=org-lsst-sal-codegen&maven.classifier=sources&maven.extension=jar"
+curl -L -o org-lsst-sal-core-source.jar  "http://repo-nexus.lsst.org/nexus/service/rest/v1/search/assets/download?sort=version&direction=desc&repository=ccs-maven2-public&maven.groupId=org.lsst&maven.artifactId=org-lsst-sal-core&maven.classifier=sources&maven.extension=jar"
+
+if true; then
+    jar="yes | unzip"
+else
+    jar="jar xvf"
+fi
+
+eval $jar org-lsst-sal-atcamera-source.jar
+eval $jar org-lsst-sal-camera-source.jar
+eval $jar org-lsst-sal-cccamera-source.jar
+eval $jar org-lsst-sal-codegen-source.jar
+eval $jar org-lsst-sal-core-source.jar
+
+#rm *.jar
+cd ..
+
+#
+# Move packages that [RHL thinks that] we don't want to analyse to IgnoredPackages
+# and read protect it
+#
+IgnoredPackages=IgnoredPackages
+
+mkdir -p $IgnoredPackages
+chmod 755 $IgnoredPackages
+for f in \
+    M2_Hexapod_Rotator \
+    SALLV_AtDome_Messaging \
+    SALLV_MtAtElectrometer_Messaging \
+    create_bright_stars_catalog \
+    ct_tcs \
+    opensplice \
+    phosim_syseng4 \
+    robotframework_salgenerator \
+    ss_electrometer \
+    ts_ATSpectrograph \
+    ts_ATTCS \
+    ts_AtDomeLabVIEW \
+    ts_AtSpectrograph_CT3.4.1 \
+    ts_AtThermoelectricCoolerLabVIEW \
+    ts_Dockerfiles \
+    ts_FiberSpectrograph_LabVIEW \
+    ts_LVTest \
+    ts_MTM2_Harris \
+    ts_SALLabVIEW \
+    ts_atcs \
+    ts_dome_view_test \
+    ts_electrometer \
+    ts_modbus \
+    ts_mtm2_cell \
+    ts_mtm2_lsst \
+    ts_opensplice \
+    ts_proposalScheduler \
+    ts_sal \
+    ts_sallv_ATMonochromator \
+    ts_sallv_ATSpectrograph \
+    ts_sallv_AtDome \
+    ts_sallv_FiberSpectrograph \
+    ts_sallv_MtAtElectrometer \
+    ts_sallv_Spectrograph \
+    ts_sallv_atcs \
+    ts_sallv_calibrationElectrometer \
+    ts_sallv_exa \
+    ts_sallv_examples \
+    ts_sallv_tcs \
+    ts_sallv_tcsOfc \
+    ts_sallv_tcsWEP \
+    ts_salobj \
+    ts_visit_simulator \
+    ts_wep_OLD \
+    ; do
+    mv $f $IgnoredPackages
+done
+chmod 0 $IgnoredPackages
+
