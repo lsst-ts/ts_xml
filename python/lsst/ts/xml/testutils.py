@@ -16,8 +16,8 @@ XML test suite generator scripts.
 subsystems = [
     'ATAOS', 'ATArchiver', 'ATBuilding', 'ATCamera', 'ATDome',
     'ATDomeTrajectory', 'ATHeaderService', 'ATHexapod', 'ATMCS',
-    'ATMonochromator', 'ATPneumatics', 'ATPtg', 'ATSpectrograph',
-    'ATWhiteLight', 'CCArchiver', 'CCCamera', 'CCHeaderService',
+    'ATMonochromator', 'ATOODS', 'ATPneumatics', 'ATPtg', 'ATSpectrograph',
+    'ATWhiteLight', 'CCArchiver', 'CCCamera', 'CCHeaderService', 'CCOODS',
     'CatchupArchiver', 'CBP', 'DIMM', 'Dome', 'DSM',
     'EAS', 'EFDTransformationServer', 'Electrometer', 'Environment', 'ESS',
     'FiberSpectrograph', 'GenericCamera', 'IOTA', 'Hexapod', 'HVAC',
