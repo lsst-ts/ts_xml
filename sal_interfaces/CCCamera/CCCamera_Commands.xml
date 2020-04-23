@@ -40,23 +40,23 @@
         <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>science</EFDB_Name>
-        <Description>True if science sensors should be read out</Description>
-        <IDL_Type>boolean</IDL_Type>
+        <EFDB_Name>sensors</EFDB_Name>
+        <Description>Sensors to be read out, if blank all configured sensors will be read out</Description>
+        <IDL_Type>string</IDL_Type>
         <Units>unitless</Units>
         <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>guide</EFDB_Name>
-        <Description>True if guide sensors should be read out</Description>
-        <IDL_Type>boolean</IDL_Type>
+        <EFDB_Name>keyValueMap</EFDB_Name>
+        <Description>Map of additional key value pairs, e.g. imageType: XYZ, groupId: ABC</Description>
+        <IDL_Type>string</IDL_Type>
         <Units>unitless</Units>
         <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>wfs</EFDB_Name>
-        <Description>True if wavefront sensors should be read out</Description>
-        <IDL_Type>boolean</IDL_Type>
+        <EFDB_Name>obsNote</EFDB_Name>
+        <Description>An arbitrary operator provided string, useful for informally flagging images</Description>
+        <IDL_Type>string</IDL_Type>
         <Units>unitless</Units>
         <Count>1</Count>
     </item>
@@ -65,22 +65,6 @@
         <Description>Timeout after which imaging will be abandoned if no endImage command received</Description>
         <IDL_Type>double</IDL_Type>
         <Units>second</Units>
-        <Count>1</Count>
-    </item>
-    <item>
-        <EFDB_Name>imageType</EFDB_Name>
-        <Description>Image type (a.k.a. IMGTYPE) (e.g. e.g. BIAS, DARK, FLAT, FE55, XTALK, CCOB, SPOT...)</Description>
-        <IDL_Type>string</IDL_Type>
-        <IDL_Size>256</IDL_Size>
-        <Units>unitless</Units>
-        <Count>1</Count>
-    </item>
-    <item>
-        <EFDB_Name>groupId</EFDB_Name>
-        <Description>Image groupId. Used to fill in FITS GROUPID header</Description>
-        <IDL_Type>string</IDL_Type>
-        <IDL_Size>256</IDL_Size>
-        <Units>unitless</Units>
         <Count>1</Count>
     </item>
 </SALCommand>
@@ -252,42 +236,26 @@
         <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>science</EFDB_Name>
-        <Description>True if science sensors should be read out</Description>
-        <IDL_Type>boolean</IDL_Type>
-        <Units>unitless</Units>
-        <Count>1</Count>
-    </item>
-    <item>
-        <EFDB_Name>guide</EFDB_Name>
-        <Description>True if guide sensors should be read out</Description>
-        <IDL_Type>boolean</IDL_Type>
-        <Units>unitless</Units>
-        <Count>1</Count>
-    </item>
-    <item>
-        <EFDB_Name>wfs</EFDB_Name>
-        <Description>True if wavefront sensors should be read out</Description>
-        <IDL_Type>boolean</IDL_Type>
-        <Units>unitless</Units>
-        <Count>1</Count>
-    </item>
-    <item>
-        <EFDB_Name>imageType</EFDB_Name>
-        <Description>Image type (a.k.a. IMGTYPE) (e.g. e.g. BIAS, DARK, FLAT, FE55, XTALK, CCOB, SPOT...)</Description>
+        <EFDB_Name>sensors</EFDB_Name>
+        <Description>Sensors to be read out, if blank all configured sensors will be read out</Description>
         <IDL_Type>string</IDL_Type>
-        <IDL_Size>256</IDL_Size>
         <Units>unitless</Units>
         <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>groupId</EFDB_Name>
-        <Description>Image groupId. Used to fill in FITS GROUPID header</Description>
+        <EFDB_Name>keyValueMap</EFDB_Name>
+        <Description>Map of additional key value pairs, e.g. imageType: XYZ, groupId: ABC</Description>
         <IDL_Type>string</IDL_Type>
-        <IDL_Size>256</IDL_Size>
         <Units>unitless</Units>
         <Count>1</Count>
     </item>
+    <item>
+        <EFDB_Name>obsNote</EFDB_Name>
+        <Description>An arbitrary operator provided string, useful for informally flagging images</Description>
+        <IDL_Type>string</IDL_Type>
+        <Units>unitless</Units>
+        <Count>1</Count>
+    </item>    
 </SALCommand>
 <SALCommand>
     <Subsystem>CCCamera</Subsystem>
