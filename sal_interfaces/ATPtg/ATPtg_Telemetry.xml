@@ -6,47 +6,6 @@
     <Subsystem>ATPtg</Subsystem>
     <Version>3.8.41</Version>
     <Author>pbt</Author>
-    <EFDB_Topic>ATPtg_currentTimesToLimits</EFDB_Topic>
-    <item>
-        <EFDB_Name>timestamp</EFDB_Name>
-        <Description>Current time as TAI (MJD)</Description>
-        <IDL_Type>double</IDL_Type>
-        <Units>day</Units>
-        <Count>1</Count>
-    </item>
-    <item>
-        <EFDB_Name>timeToAzlim</EFDB_Name>
-        <Description>Time to azimuth limit for current target (in minutes)</Description>
-        <IDL_Type>double</IDL_Type>
-        <Units>minute</Units>
-        <Count>1</Count>
-    </item>
-    <item>
-        <EFDB_Name>timeToRotlim</EFDB_Name>
-        <Description>Time to rotator limit for current target (in minutes)</Description>
-        <IDL_Type>double</IDL_Type>
-        <Units>minute</Units>
-        <Count>1</Count>
-    </item>
-    <item>
-        <EFDB_Name>timeToUnobservable</EFDB_Name>
-        <Description>Time for current target to set/become unobservable (in minutes)</Description>
-        <IDL_Type>double</IDL_Type>
-        <Units>minute</Units>
-        <Count>1</Count>
-    </item>
-    <item>
-        <EFDB_Name>timeToElHighLimit</EFDB_Name>
-        <Description>Time until current target reaches elevation high limit (in minutes)</Description>
-        <IDL_Type>double</IDL_Type>
-        <Units>minute</Units>
-        <Count>1</Count>
-    </item>
-</SALTelemetry>
-<SALTelemetry>
-    <Subsystem>ATPtg</Subsystem>
-    <Version>3.8.41</Version>
-    <Author>pbt</Author>
     <EFDB_Topic>ATPtg_currentTargetStatus</EFDB_Topic>
     <item>
         <EFDB_Name>timestamp</EFDB_Name>
@@ -478,93 +437,51 @@
     <EFDB_Topic>ATPtg_skyEnvironment</EFDB_Topic>
     <item>
         <EFDB_Name>timestamp</EFDB_Name>
-        <Description>Current time as TAI (MJD)</Description>
+        <Description>Current time. TAI seconds.</Description>
         <IDL_Type>double</IDL_Type>
-        <Units>day</Units>
+        <Units>second</Units>
         <Count>1</Count>
     </item>
     <item>
         <EFDB_Name>sunsetTime</EFDB_Name>
-        <Description>Sunset time (LOCAL)</Description>
-        <IDL_Type>string</IDL_Type>
-        <Units>hour</Units>
-        <Count>1</Count>
-    </item>
-    <item>
-        <EFDB_Name>timeToSunset</EFDB_Name>
-        <Description>Time to sunset</Description>
-        <IDL_Type>int</IDL_Type>
-        <Units>min</Units>
+        <Description>Sunset time. TAI seconds.</Description>
+        <IDL_Type>double</IDL_Type>
+        <Units>second</Units>
         <Count>1</Count>
     </item>
     <item>
         <EFDB_Name>twilightEndTime</EFDB_Name>
-        <Description>Astronomical twilight end time (LOCAL)</Description>
-        <IDL_Type>string</IDL_Type>
-        <Units>hour</Units>
-        <Count>1</Count>
-    </item>
-    <item>
-        <EFDB_Name>timeToTwilightEnd</EFDB_Name>
-        <Description>Time to Astronomical twilight end</Description>
-        <IDL_Type>int</IDL_Type>
-        <Units>min</Units>
+        <Description>Astronomical twilight end time. TAI seconds.</Description>
+        <IDL_Type>double</IDL_Type>
+        <Units>second</Units>
         <Count>1</Count>
     </item>
     <item>
         <EFDB_Name>twilightBeginTime</EFDB_Name>
-        <Description>Astronomical twilight begin time (LOCAL)</Description>
-        <IDL_Type>string</IDL_Type>
-        <Units>hour</Units>
-        <Count>1</Count>
-    </item>
-    <item>
-        <EFDB_Name>timeToTwilightBegin</EFDB_Name>
-        <Description>Time to Astronomical twilight begin</Description>
-        <IDL_Type>int</IDL_Type>
-        <Units>min</Units>
+        <Description>Astronomical twilight begin time. TAI seconds.</Description>
+        <IDL_Type>double</IDL_Type>
+        <Units>second</Units>
         <Count>1</Count>
     </item>
     <item>
         <EFDB_Name>sunriseTime</EFDB_Name>
-        <Description>Sunrise time (LOCAL)</Description>
-        <IDL_Type>string</IDL_Type>
-        <Units>hour</Units>
-        <Count>1</Count>
-    </item>
-    <item>
-        <EFDB_Name>timeToSunrise</EFDB_Name>
-        <Description>Time to Sunrise</Description>
-        <IDL_Type>int</IDL_Type>
-        <Units>min</Units>
+        <Description>Sunrise time. TAI seconds.</Description>
+        <IDL_Type>double</IDL_Type>
+        <Units>second</Units>
         <Count>1</Count>
     </item>
     <item>
         <EFDB_Name>moonriseTime</EFDB_Name>
-        <Description>Moonrise time (LOCAL)</Description>
-        <IDL_Type>string</IDL_Type>
-        <Units>hour</Units>
-        <Count>1</Count>
-    </item>
-    <item>
-        <EFDB_Name>timeToMoonrise</EFDB_Name>
-        <Description>Time to Moonrise</Description>
-        <IDL_Type>int</IDL_Type>
-        <Units>min</Units>
+        <Description>Moonrise time. TAI seconds.</Description>
+        <IDL_Type>double</IDL_Type>
+        <Units>second</Units>
         <Count>1</Count>
     </item>
     <item>
         <EFDB_Name>moonsetTime</EFDB_Name>
-        <Description>Moonset time (LOCAL)</Description>
-        <IDL_Type>string</IDL_Type>
-        <Units>hour</Units>
-        <Count>1</Count>
-    </item>
-    <item>
-        <EFDB_Name>timeToMoonset</EFDB_Name>
-        <Description>Time to Moonset</Description>
-        <IDL_Type>int</IDL_Type>
-        <Units>min</Units>
+        <Description>Moonset time. TAI seconds.</Description>
+        <IDL_Type>double</IDL_Type>
+        <Units>second</Units>
         <Count>1</Count>
     </item>
     <item>
