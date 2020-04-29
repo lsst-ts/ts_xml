@@ -131,37 +131,6 @@
     <Subsystem>MTPtg</Subsystem>
     <Version>3.8.41</Version>
     <Author>pbt</Author>
-    <EFDB_Topic>MTPtg_logevent_inBlindSpot</EFDB_Topic>
-    <Alias>inBlindSpot</Alias>
-    <Explanation>http://sal.lsst.org</Explanation>
-    <item>
-        <EFDB_Name>eventState</EFDB_Name>
-        <Description>Telescope pointing in blind spot?</Description>
-        <IDL_Type>boolean</IDL_Type>
-        <Units>unitless</Units>
-        <Count>1</Count>
-    </item>
-</SALEvent>
-<SALEvent>
-    <Subsystem>MTPtg</Subsystem>
-    <Version>3.8.41</Version>
-    <Author>pbt</Author>
-    <EFDB_Topic>MTPtg_logevent_blindSpotWarning</EFDB_Topic>
-    <Alias>blindSpotWarning</Alias>
-    <Explanation>http://sal.lsst.org</Explanation>
-    <item>
-        <EFDB_Name>level</EFDB_Name>
-        <Description>Warning that the telescope is approaching blind spot.</Description>
-        <IDL_Type>long</IDL_Type>
-        <!-- <Enumeration> WarningLevel </Enumeration> -->
-        <Units>unitless</Units>
-        <Count>1</Count>
-    </item>
-</SALEvent>
-<SALEvent>
-    <Subsystem>MTPtg</Subsystem>
-    <Version>3.8.41</Version>
-    <Author>pbt</Author>
     <EFDB_Topic>MTPtg_logevent_axesTrackMode</EFDB_Topic>
     <Alias>axesTrackMode</Alias>
     <Explanation>http://sal.lsst.org</Explanation>
@@ -207,9 +176,9 @@
     <Explanation>http://sal.lsst.org</Explanation>
     <item>
         <EFDB_Name>timestamp</EFDB_Name>
-        <Description>Current time as TAI (MJD)</Description>
+        <Description>Current time in TAI seconds</Description>
         <IDL_Type>double</IDL_Type>
-        <Units>day</Units>
+        <Units>second</Units>
         <Count>1</Count>
     </item>
     <item>
@@ -284,9 +253,9 @@
     <Explanation>http://sal.lsst.org</Explanation>
     <item>
         <EFDB_Name>timestamp</EFDB_Name>
-        <Description>Current time as TAI (MJD)</Description>
+        <Description>Current time in TAI seconds</Description>
         <IDL_Type>double</IDL_Type>
-        <Units>day</Units>
+        <Units>second</Units>
         <Count>1</Count>
     </item>
     <item>
@@ -730,6 +699,85 @@
         <Description>Elevation tracking high limit warning</Description>
         <IDL_Type>long</IDL_Type>
         <!-- <Enumeration> WarningLevel </Enumeration> -->
+        <Units>unitless</Units>
+        <Count>1</Count>
+    </item>
+</SALEvent>
+<SALEvent>
+    <Subsystem>MTPtg</Subsystem>
+    <Version>3.8.41</Version>
+    <Author>aya</Author>
+    <EFDB_Topic>MTPtg_logevent_pointing_file</EFDB_Topic>
+    <Alias>pointing_file</Alias>
+    <Explanation>http://sal.lsst.org</Explanation>
+    <item>
+        <EFDB_Name>file_is_open</EFDB_Name>
+        <Description>If true, pointing file is open. If false, pointing file is closed.</Description>
+        <IDL_Type>boolean</IDL_Type>
+        <Units>unitless</Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>file_path</EFDB_Name>
+        <Description>Path of the pointing file.</Description>
+        <IDL_Type>string</IDL_Type>
+        <Units>unitless</Units>
+        <Count>1</Count>
+    </item>
+</SALEvent>
+<SALEvent>
+    <Subsystem>MTPtg</Subsystem>
+    <Version>3.8.41</Version>
+    <Author>aya</Author>
+    <EFDB_Topic>MTPtg_logevent_timesOfLimits</EFDB_Topic>
+    <Alias>timesOfLimits</Alias>
+    <Explanation>http://sal.lsst.org</Explanation>
+    <item>
+        <EFDB_Name>timestamp</EFDB_Name>
+        <Description>Time the limits were calculated. TAI seconds.</Description>
+        <IDL_Type>double</IDL_Type>
+        <Units>second</Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>timeAzLim</EFDB_Name>
+        <Description>Time the target reaches azimuth limit. TAI seconds.</Description>
+        <IDL_Type>double</IDL_Type>
+        <Units>second</Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>timeRotLim</EFDB_Name>
+        <Description>Time the target reaches rotator limit. TAI seconds.</Description>
+        <IDL_Type>double</IDL_Type>
+        <Units>second</Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>timeElHighLimit</EFDB_Name>
+        <Description>Time the target reaches elevation high limit. TAI seconds.</Description>
+        <IDL_Type>double</IDL_Type>
+        <Units>second</Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>timeElLowLimit</EFDB_Name>
+        <Description>Time the target reaches elevation low limit. TAI seconds.</Description>
+        <IDL_Type>double</IDL_Type>
+        <Units>second</Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>timeUnobservable</EFDB_Name>
+        <Description>Time the target becomes unobservable. TAI seconds.</Description>
+        <IDL_Type>double</IDL_Type>
+        <Units>second</Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>trackId</EFDB_Name>
+        <Description>Target identifier.</Description>
+        <IDL_Type>long</IDL_Type>
         <Units>unitless</Units>
         <Count>1</Count>
     </item>
