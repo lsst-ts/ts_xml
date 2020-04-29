@@ -49,6 +49,14 @@
         <Count>1</Count>
     </item>
     <item>
+        <EFDB_Name>atspectrograph</EFDB_Name>
+        <Description>Enable focus correction based on atspectrograph (LATISS) optical configuration (filter/grating)
+            (ignored if all)</Description>
+        <IDL_Type>boolean</IDL_Type>
+        <Units>unitless</Units>
+        <Count>1</Count>
+    </item>
+    <item>
         <EFDB_Name>moveWhileExposing</EFDB_Name>
         <Description>Apply focus and hexapod corrections during exposures? (default is no)</Description>
         <IDL_Type>boolean</IDL_Type>
@@ -98,6 +106,14 @@
     <item>
         <EFDB_Name>focus</EFDB_Name>
         <Description>If true, disable the focus correction.</Description>
+        <IDL_Type>boolean</IDL_Type>
+        <Units>unitless</Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>atspectrograph</EFDB_Name>
+        <Description>If true, Disable focus correction based on atspectrograph (LATISS)
+            optical configuration.</Description>
         <IDL_Type>boolean</IDL_Type>
         <Units>unitless</Units>
         <Count>1</Count>
@@ -159,8 +175,8 @@
     <Subsystem>ATAOS</Subsystem>
     <Version>3.8</Version>
     <Author>Tiago Ribeiro</Author>
-    <EFDB_Topic>ATAOS_command_applyAxisOffset</EFDB_Topic>
-    <Alias>applyAxisOffset</Alias>
+    <EFDB_Topic>ATAOS_command_setCorrectionModelOffsets</EFDB_Topic>
+    <Alias>setCorrectionModelOffsets</Alias>
     <Device></Device>
     <Property></Property>
     <Action></Action>
@@ -168,7 +184,8 @@
     <Explanation>http://project.lsst.org/ts/sal_objects/help</Explanation>
     <item>
         <EFDB_Name>axis</EFDB_Name>
-        <Description>Name of the axis to apply offset. Must be one of m1, m2, x, y, z, u, v.</Description>
+        <Description>Name of the axis to apply offset. Must be one of m1, m2, x, y, z, u, v.
+            This will override/zero out all other offsets that may be applied.</Description>
         <IDL_Type>string</IDL_Type>
         <IDL_Size>10</IDL_Size>
         <Units>unitless</Units>
@@ -202,14 +219,14 @@
     </item>
     <item>
         <EFDB_Name>y</EFDB_Name>
-        <Description>Add this offset to the hexapod correction in the  y-direction.</Description>
+        <Description>Add this offset to the hexapod correction in the y-direction.</Description>
         <IDL_Type>float</IDL_Type>
         <Units>mm</Units>
         <Count>1</Count>
     </item>
     <item>
         <EFDB_Name>z</EFDB_Name>
-        <Description>Add this offset to the hexapod correction in the  z-direction.</Description>
+        <Description>Add this offset to the hexapod correction in the z-direction.</Description>
         <IDL_Type>float</IDL_Type>
         <Units>mm</Units>
         <Count>1</Count>
@@ -273,17 +290,17 @@
 <SALCommand>
     <Subsystem>ATAOS</Subsystem>
     <Version>3.8</Version>
-    <Author>Tiago Ribeiro</Author>
-    <EFDB_Topic>ATAOS_command_setFocus</EFDB_Topic>
-    <Alias>setFocus</Alias>
+    <Author>Patrick Ingraham</Author>
+    <EFDB_Topic>ATAOS_command_setWavelength</EFDB_Topic>
+    <Alias>setWavelength</Alias>
     <Device></Device>
     <Property></Property>
     <Action></Action>
     <Value></Value>
     <Explanation>http://project.lsst.org/ts/sal_objects/help</Explanation>
     <item>
-        <EFDB_Name>focus</EFDB_Name>
-        <Description>The focus to be set.</Description>
+        <EFDB_Name>wavelength</EFDB_Name>
+        <Description>The wavelength for which the focus to be set.</Description>
         <IDL_Type>float</IDL_Type>
         <Units>millimeter</Units>
         <Count>1</Count>
