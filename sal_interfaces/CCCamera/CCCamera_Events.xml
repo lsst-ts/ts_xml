@@ -853,12 +853,13 @@
         <Count>1</Count>
     </item>
 </SALEvent>
-<!-- Special settingsApplied event for use by header service. All of the information in this event is redundant (i,e. also supplied in
-     other settingsApplied events), but the information in this event is formatted for ease-of-use of the header service, specifically
-     information which is REB or Raft specific is repeated for each CCD. -->
 <SALEvent>
     <Subsystem>CCCamera</Subsystem>
-    <EFDB_Topic>CCCamera_logevent_focalPlaneHeaderServiceSettingsAppliedSummary</EFDB_Topic>
+    <EFDB_Topic>CCCamera_logevent_focalPlaneSummaryInfo</EFDB_Topic>
+    <Description>Special event for use by header service. All of the information in this event is redundant (i,e. also supplied in
+     other settingsApplied events), but the information in this event is formatted for ease-of-use of the header service, specifically
+     information which is REB or Raft specific is repeated for each CCD. This event will be sent at the same time as other 
+     settingsApplied events</Description>
     <item>
         <EFDB_Name>ccdLocation</EFDB_Name>
         <Description>CCD location in focal-plane (e.g. R22S01) (: delimited)</Description>
