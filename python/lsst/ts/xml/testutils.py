@@ -33,7 +33,7 @@ subsystems = [
 
 generic_commands = [
     'abort', 'enable', 'disable', 'standby', 'exitControl', 'start',
-    'enterControl', 'setLogLevel', 'setSimulationMode', 'setValue'
+    'enterControl', 'setLogLevel', 'setValue'
 ]
 
 """Define the array of Generic Events."""
