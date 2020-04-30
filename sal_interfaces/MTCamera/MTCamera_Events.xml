@@ -17,6 +17,13 @@
         <Count>1</Count>
         <Enumeration>OFFLINE_AVAILABLE,OFFLINE_PUBLISH_ONLY</Enumeration>
     </item>
+    <item>
+        <EFDB_Name>transitionTimestamp</EFDB_Name>
+        <Description>The time at which the state transition occurred</Description>
+        <IDL_Type>double</IDL_Type>
+        <Units>second</Units>
+        <Count>1</Count>
+    </item>
 </SALEvent>
 <SALEvent>
     <Subsystem>MTCamera</Subsystem>
@@ -27,17 +34,33 @@
     <Explanation>http://project.lsst.org/ts/sal_objects/help/MTCamera_logevent_endReadout.html</Explanation>
     <item>
         <EFDB_Name>imageType</EFDB_Name>
-        <Description>The imageType as passed to the takeImages command</Description>
+        <Description>The imageType as passed to the takeImages command (using keyValueMap)</Description>
         <IDL_Type>string</IDL_Type>
-        <IDL_Size>256</IDL_Size>
+        <IDL_Size>1</IDL_Size>
         <Units>unitless</Units>
         <Count>1</Count>
     </item>
     <item>
         <EFDB_Name>groupId</EFDB_Name>
-        <Description>The groupId as passed to the takeImages command</Description>
+        <Description>The groupId as passed to the takeImages command (using keyValueMap)</Description>
         <IDL_Type>string</IDL_Type>
-        <IDL_Size>256</IDL_Size>
+        <IDL_Size>1</IDL_Size>
+        <Units>unitless</Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>additionalKeys</EFDB_Name>
+        <Description>Additional keys passed to the takeImages command (: delimited)</Description>
+        <IDL_Type>string</IDL_Type>
+        <IDL_Size>1</IDL_Size>
+        <Units>unitless</Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>additionalValues</EFDB_Name>
+        <Description>Additional values passed to the takeImages command (: delimited, in same order as additionalKeys)</Description>
+        <IDL_Type>string</IDL_Type>
+        <IDL_Size>1</IDL_Size>
         <Units>unitless</Units>
         <Count>1</Count>
     </item>
@@ -140,6 +163,13 @@
         <Count>1</Count>
         <Enumeration>READY,NOT_READY,GETTING_READY</Enumeration>
     </item>
+    <item>
+        <EFDB_Name>transitionTimestamp</EFDB_Name>
+        <Description>The time at which the state transition occurred</Description>
+        <IDL_Type>double</IDL_Type>
+        <Units>second</Units>
+        <Count>1</Count>
+    </item>
 </SALEvent>
 <SALEvent>
     <Subsystem>MTCamera</Subsystem>
@@ -206,17 +236,33 @@
     <Explanation>http://project.lsst.org/ts/sal_objects/help/MTCamera_logevent_endOfImageTelemetry.html</Explanation>
     <item>
         <EFDB_Name>imageType</EFDB_Name>
-        <Description>The imageType as passed to the takeImages command</Description>
+        <Description>The imageType as passed to the takeImages command (using keyValueMap)</Description>
         <IDL_Type>string</IDL_Type>
-        <IDL_Size>256</IDL_Size>
+        <IDL_Size>1</IDL_Size>
         <Units>unitless</Units>
         <Count>1</Count>
     </item>
     <item>
         <EFDB_Name>groupId</EFDB_Name>
-        <Description>The groupId as passed to the takeImages command</Description>
+        <Description>The groupId as passed to the takeImages command (using keyValueMap)</Description>
         <IDL_Type>string</IDL_Type>
-        <IDL_Size>256</IDL_Size>
+        <IDL_Size>1</IDL_Size>
+        <Units>unitless</Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>additionalKeys</EFDB_Name>
+        <Description>Additional keys passed to the takeImages command (: delimited)</Description>
+        <IDL_Type>string</IDL_Type>
+        <IDL_Size>1</IDL_Size>
+        <Units>unitless</Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>additionalValues</EFDB_Name>
+        <Description>Additional values passed to the takeImages command (: delimited, in same order as additionalKeys)</Description>
+        <IDL_Type>string</IDL_Type>
+        <IDL_Size>1</IDL_Size>
         <Units>unitless</Units>
         <Count>1</Count>
     </item>
@@ -348,6 +394,13 @@
         <Count>1</Count>
         <Enumeration>DISABLED,ENABLED,INTEGRATING</Enumeration>
     </item>
+    <item>
+        <EFDB_Name>transitionTimestamp</EFDB_Name>
+        <Description>The time at which the state transition occurred</Description>
+        <IDL_Type>double</IDL_Type>
+        <Units>second</Units>
+        <Count>1</Count>
+    </item>
 </SALEvent>
 <SALEvent>
     <Subsystem>MTCamera</Subsystem>
@@ -380,6 +433,13 @@
         <Count>1</Count>
         <Enumeration>UNLOADING,LOADING,LOADED,UNLOADED,ROTATING</Enumeration>
     </item>
+    <item>
+        <EFDB_Name>transitionTimestamp</EFDB_Name>
+        <Description>The time at which the state transition occurred</Description>
+        <IDL_Type>double</IDL_Type>
+        <Units>second</Units>
+        <Count>1</Count>
+    </item>
 </SALEvent>
 <SALEvent>
     <Subsystem>MTCamera</Subsystem>
@@ -395,6 +455,13 @@
         <Units>unitless</Units>
         <Count>1</Count>
         <Enumeration>CLOSED,OPEN,CLOSING,OPENING</Enumeration>
+    </item>
+    <item>
+        <EFDB_Name>transitionTimestamp</EFDB_Name>
+        <Description>The time at which the state transition occurred</Description>
+        <IDL_Type>double</IDL_Type>
+        <Units>second</Units>
+        <Count>1</Count>
     </item>
 </SALEvent>
 <SALEvent>
@@ -462,17 +529,33 @@
     <Explanation>http://project.lsst.org/ts/sal_objects/help/MTCamera_logevent_startIntegration.html</Explanation>
     <item>
         <EFDB_Name>imageType</EFDB_Name>
-        <Description>The imageType as passed to the takeImages command</Description>
+        <Description>The imageType as passed to the takeImages command (using keyValueMap)</Description>
         <IDL_Type>string</IDL_Type>
-        <IDL_Size>256</IDL_Size>
+        <IDL_Size>1</IDL_Size>
         <Units>unitless</Units>
         <Count>1</Count>
     </item>
     <item>
         <EFDB_Name>groupId</EFDB_Name>
-        <Description>The groupId as passed to the takeImages command</Description>
+        <Description>The groupId as passed to the takeImages command (using keyValueMap)</Description>
         <IDL_Type>string</IDL_Type>
-        <IDL_Size>256</IDL_Size>
+        <IDL_Size>1</IDL_Size>
+        <Units>unitless</Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>additionalKeys</EFDB_Name>
+        <Description>Additional keys passed to the takeImages command (: delimited)</Description>
+        <IDL_Type>string</IDL_Type>
+        <IDL_Size>1</IDL_Size>
+        <Units>unitless</Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>additionalValues</EFDB_Name>
+        <Description>Additional values passed to the takeImages command (: delimited, in same order as additionalKeys)</Description>
+        <IDL_Type>string</IDL_Type>
+        <IDL_Size>1</IDL_Size>
         <Units>unitless</Units>
         <Count>1</Count>
     </item>
@@ -591,6 +674,13 @@
         <Count>1</Count>
         <Enumeration>NEEDS_CLEAR,CLEARING,INTEGRATING,READING_OUT,QUIESCENT</Enumeration>
     </item>
+    <item>
+        <EFDB_Name>transitionTimestamp</EFDB_Name>
+        <Description>The time at which the state transition occurred</Description>
+        <IDL_Type>double</IDL_Type>
+        <Units>second</Units>
+        <Count>1</Count>
+    </item>
 </SALEvent>
 <SALEvent>
     <Subsystem>MTCamera</Subsystem>
@@ -617,17 +707,33 @@
     <Explanation>http://project.lsst.org/ts/sal_objects/help/MTCamera_logevent_startReadout.html</Explanation>
     <item>
         <EFDB_Name>imageType</EFDB_Name>
-        <Description>The imageType as passed to the takeImages command</Description>
+        <Description>The imageType as passed to the takeImages command (using keyValueMap)</Description>
         <IDL_Type>string</IDL_Type>
-        <IDL_Size>256</IDL_Size>
+        <IDL_Size>1</IDL_Size>
         <Units>unitless</Units>
         <Count>1</Count>
     </item>
     <item>
         <EFDB_Name>groupId</EFDB_Name>
-        <Description>The groupId as passed to the takeImages command</Description>
+        <Description>The groupId as passed to the takeImages command (using keyValueMap)</Description>
         <IDL_Type>string</IDL_Type>
-        <IDL_Size>256</IDL_Size>
+        <IDL_Size>1</IDL_Size>
+        <Units>unitless</Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>additionalKeys</EFDB_Name>
+        <Description>Additional keys passed to the takeImages command (: delimited)</Description>
+        <IDL_Type>string</IDL_Type>
+        <IDL_Size>1</IDL_Size>
+        <Units>unitless</Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>additionalValues</EFDB_Name>
+        <Description>Additional values passed to the takeImages command (: delimited, in same order as additionalKeys)</Description>
+        <IDL_Type>string</IDL_Type>
+        <IDL_Size>1</IDL_Size>
         <Units>unitless</Units>
         <Count>1</Count>
     </item>

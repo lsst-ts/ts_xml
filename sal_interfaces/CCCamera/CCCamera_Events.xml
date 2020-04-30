@@ -17,6 +17,13 @@
         <Count>1</Count>
         <Enumeration>OFFLINE_AVAILABLE,OFFLINE_PUBLISH_ONLY</Enumeration>
     </item>
+    <item>
+        <EFDB_Name>transitionTimestamp</EFDB_Name>
+        <Description>The time at which the state transition occurred</Description>
+        <IDL_Type>double</IDL_Type>
+        <Units>second</Units>
+        <Count>1</Count>
+    </item>
 </SALEvent>
 <SALEvent>
     <Subsystem>CCCamera</Subsystem>
@@ -27,17 +34,33 @@
     <Explanation>http://project.lsst.org/ts/sal_objects/help/CCCamera_logevent_endReadout.html</Explanation>
     <item>
         <EFDB_Name>imageType</EFDB_Name>
-        <Description>The imageType as passed to the takeImages command</Description>
+        <Description>The imageType as passed to the takeImages command (using keyValueMap)</Description>
         <IDL_Type>string</IDL_Type>
-        <IDL_Size>256</IDL_Size>
+        <IDL_Size>1</IDL_Size>
         <Units>unitless</Units>
         <Count>1</Count>
     </item>
     <item>
         <EFDB_Name>groupId</EFDB_Name>
-        <Description>The groupId as passed to the takeImages command</Description>
+        <Description>The groupId as passed to the takeImages command (using keyValueMap)</Description>
         <IDL_Type>string</IDL_Type>
-        <IDL_Size>256</IDL_Size>
+        <IDL_Size>1</IDL_Size>
+        <Units>unitless</Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>additionalKeys</EFDB_Name>
+        <Description>Additional keys passed to the takeImages command (: delimited)</Description>
+        <IDL_Type>string</IDL_Type>
+        <IDL_Size>1</IDL_Size>
+        <Units>unitless</Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>additionalValues</EFDB_Name>
+        <Description>Additional values passed to the takeImages command (: delimited, in same order as additionalKeys)</Description>
+        <IDL_Type>string</IDL_Type>
+        <IDL_Size>1</IDL_Size>
         <Units>unitless</Units>
         <Count>1</Count>
     </item>
@@ -140,6 +163,13 @@
         <Count>1</Count>
         <Enumeration>READY,NOT_READY,GETTING_READY</Enumeration>
     </item>
+    <item>
+        <EFDB_Name>transitionTimestamp</EFDB_Name>
+        <Description>The time at which the state transition occurred</Description>
+        <IDL_Type>double</IDL_Type>
+        <Units>second</Units>
+        <Count>1</Count>
+    </item>
 </SALEvent>
 <SALEvent>
     <Subsystem>CCCamera</Subsystem>
@@ -152,7 +182,7 @@
         <EFDB_Name>filterName</EFDB_Name>
         <Description>The name of the filter being installed (e.g. U-001)</Description>
         <IDL_Type>string</IDL_Type>
-        <IDL_Size>256</IDL_Size>
+        <IDL_Size>1</IDL_Size>
         <Units>unitless</Units>
         <Count>1</Count>
     </item>
@@ -206,17 +236,33 @@
     <Explanation>http://project.lsst.org/ts/sal_objects/help/CCCamera_logevent_endOfImageTelemetry.html</Explanation>
     <item>
         <EFDB_Name>imageType</EFDB_Name>
-        <Description>The imageType as passed to the takeImages command</Description>
+        <Description>The imageType as passed to the takeImages command (using keyValueMap)</Description>
         <IDL_Type>string</IDL_Type>
-        <IDL_Size>256</IDL_Size>
+        <IDL_Size>1</IDL_Size>
         <Units>unitless</Units>
         <Count>1</Count>
     </item>
     <item>
         <EFDB_Name>groupId</EFDB_Name>
-        <Description>The groupId as passed to the takeImages command</Description>
+        <Description>The groupId as passed to the takeImages command (using keyValueMap)</Description>
         <IDL_Type>string</IDL_Type>
-        <IDL_Size>256</IDL_Size>
+        <IDL_Size>1</IDL_Size>
+        <Units>unitless</Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>additionalKeys</EFDB_Name>
+        <Description>Additional keys passed to the takeImages command (: delimited)</Description>
+        <IDL_Type>string</IDL_Type>
+        <IDL_Size>1</IDL_Size>
+        <Units>unitless</Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>additionalValues</EFDB_Name>
+        <Description>Additional values passed to the takeImages command (: delimited, in same order as additionalKeys)</Description>
+        <IDL_Type>string</IDL_Type>
+        <IDL_Size>1</IDL_Size>
         <Units>unitless</Units>
         <Count>1</Count>
     </item>
@@ -348,6 +394,13 @@
         <Count>1</Count>
         <Enumeration>DISABLED,ENABLED,INTEGRATING</Enumeration>
     </item>
+    <item>
+        <EFDB_Name>transitionTimestamp</EFDB_Name>
+        <Description>The time at which the state transition occurred</Description>
+        <IDL_Type>double</IDL_Type>
+        <Units>second</Units>
+        <Count>1</Count>
+    </item>
 </SALEvent>
 <SALEvent>
     <Subsystem>CCCamera</Subsystem>
@@ -380,6 +433,13 @@
         <Count>1</Count>
         <Enumeration>UNLOADING,LOADING,LOADED,UNLOADED,ROTATING</Enumeration>
     </item>
+    <item>
+        <EFDB_Name>transitionTimestamp</EFDB_Name>
+        <Description>The time at which the state transition occurred</Description>
+        <IDL_Type>double</IDL_Type>
+        <Units>second</Units>
+        <Count>1</Count>
+    </item>
 </SALEvent>
 <SALEvent>
     <Subsystem>CCCamera</Subsystem>
@@ -395,6 +455,13 @@
         <Units>unitless</Units>
         <Count>1</Count>
         <Enumeration>CLOSED,OPEN,CLOSING,OPENING</Enumeration>
+    </item>
+    <item>
+        <EFDB_Name>transitionTimestamp</EFDB_Name>
+        <Description>The time at which the state transition occurred</Description>
+        <IDL_Type>double</IDL_Type>
+        <Units>second</Units>
+        <Count>1</Count>
     </item>
 </SALEvent>
 <SALEvent>
@@ -419,6 +486,13 @@
         <Units>unitless</Units>
         <Count>1</Count>
         <Enumeration>IDLE,BUSY</Enumeration>
+    </item>
+    <item>
+        <EFDB_Name>transitionTimestamp</EFDB_Name>
+        <Description>The time at which the state transition occurred</Description>
+        <IDL_Type>double</IDL_Type>
+        <Units>second</Units>
+        <Count>1</Count>
     </item>
 </SALEvent>
 <SALEvent>
@@ -462,17 +536,33 @@
     <Explanation>http://project.lsst.org/ts/sal_objects/help/CCCamera_logevent_startIntegration.html</Explanation>
     <item>
         <EFDB_Name>imageType</EFDB_Name>
-        <Description>The imageType as passed to the takeImages command</Description>
+        <Description>The imageType as passed to the takeImages command (using keyValueMap)</Description>
         <IDL_Type>string</IDL_Type>
-        <IDL_Size>256</IDL_Size>
+        <IDL_Size>1</IDL_Size>
         <Units>unitless</Units>
         <Count>1</Count>
     </item>
     <item>
         <EFDB_Name>groupId</EFDB_Name>
-        <Description>The groupId as passed to the takeImages command</Description>
+        <Description>The groupId as passed to the takeImages command (using keyValueMap)</Description>
         <IDL_Type>string</IDL_Type>
-        <IDL_Size>256</IDL_Size>
+        <IDL_Size>1</IDL_Size>
+        <Units>unitless</Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>additionalKeys</EFDB_Name>
+        <Description>Additional keys passed to the takeImages command (: delimited)</Description>
+        <IDL_Type>string</IDL_Type>
+        <IDL_Size>1</IDL_Size>
+        <Units>unitless</Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>additionalValues</EFDB_Name>
+        <Description>Additional values passed to the takeImages command (: delimited, in same order as additionalKeys)</Description>
+        <IDL_Type>string</IDL_Type>
+        <IDL_Size>1</IDL_Size>
         <Units>unitless</Units>
         <Count>1</Count>
     </item>
@@ -591,6 +681,13 @@
         <Count>1</Count>
         <Enumeration>NEEDS_CLEAR,CLEARING,INTEGRATING,READING_OUT,QUIESCENT</Enumeration>
     </item>
+    <item>
+        <EFDB_Name>transitionTimestamp</EFDB_Name>
+        <Description>The time at which the state transition occurred</Description>
+        <IDL_Type>double</IDL_Type>
+        <Units>second</Units>
+        <Count>1</Count>
+    </item>
 </SALEvent>
 <SALEvent>
     <Subsystem>CCCamera</Subsystem>
@@ -617,17 +714,33 @@
     <Explanation>http://project.lsst.org/ts/sal_objects/help/CCCamera_logevent_startReadout.html</Explanation>
     <item>
         <EFDB_Name>imageType</EFDB_Name>
-        <Description>The imageType as passed to the takeImages command</Description>
+        <Description>The imageType as passed to the takeImages command (using keyValueMap)</Description>
         <IDL_Type>string</IDL_Type>
-        <IDL_Size>256</IDL_Size>
+        <IDL_Size>1</IDL_Size>
         <Units>unitless</Units>
         <Count>1</Count>
     </item>
     <item>
         <EFDB_Name>groupId</EFDB_Name>
-        <Description>The groupId as passed to the takeImages command</Description>
+        <Description>The groupId as passed to the takeImages command (using keyValueMap)</Description>
         <IDL_Type>string</IDL_Type>
-        <IDL_Size>256</IDL_Size>
+        <IDL_Size>1</IDL_Size>
+        <Units>unitless</Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>additionalKeys</EFDB_Name>
+        <Description>Additional keys passed to the takeImages command (: delimited)</Description>
+        <IDL_Type>string</IDL_Type>
+        <IDL_Size>1</IDL_Size>
+        <Units>unitless</Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>additionalValues</EFDB_Name>
+        <Description>Additional values passed to the takeImages command (: delimited, in same order as additionalKeys)</Description>
+        <IDL_Type>string</IDL_Type>
+        <IDL_Size>1</IDL_Size>
         <Units>unitless</Units>
         <Count>1</Count>
     </item>
@@ -731,7 +844,7 @@
         <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>ccdNames</EFDB_Name>
+        <EFDB_Name>ccdLocation</EFDB_Name>
         <Description>A list of all ccds currently configured, of the form RnnSnn, : delimited (empty if entry not used)</Description>
         <IDL_Type>string</IDL_Type>
         <IDL_Size>1</IDL_Size>
@@ -849,6 +962,165 @@
         <Description>Annotation sent to DAQ</Description>
         <IDL_Type>string</IDL_Type>
         <IDL_Size>1</IDL_Size>
+        <Units>unitless</Units>
+        <Count>1</Count>
+    </item>
+</SALEvent>
+<SALEvent>
+    <Subsystem>CCCamera</Subsystem>
+    <EFDB_Topic>CCCamera_logevent_focalPlaneSummaryInfo</EFDB_Topic>
+    <Description>Special event for use by header service. All of the information in this event is redundant (i,e. also supplied in
+     other settingsApplied events), but the information in this event is formatted for ease-of-use of the header service, specifically
+     information which is REB or Raft specific is repeated for each CCD. This event will be sent at the same time as other 
+     settingsApplied events</Description>
+    <item>
+        <EFDB_Name>ccdLocation</EFDB_Name>
+        <Description>CCD location in focal-plane (e.g. R22S01) (: delimited). 
+        This should be considered the key for all the remaining items, which will be in the same order as the locations,
+	whether they are arrays or : delimited strings.</Description>
+        <IDL_Type>string</IDL_Type>
+        <Units>unitless</Units>
+        <Count>1</Count>
+    </item>  
+    <item>
+        <EFDB_Name>raftBay</EFDB_Name>
+        <Description>The raft bay for each CCD listed above, of the form Rnn : delimited</Description>
+        <IDL_Type>string</IDL_Type>
+        <IDL_Size>1</IDL_Size>
+        <Units>unitless</Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>ccdSlot</EFDB_Name>
+        <Description>The CCD slot for each CCD listed above, of the form SXn : delimited</Description>
+        <IDL_Type>string</IDL_Type>
+        <IDL_Size>1</IDL_Size>
+        <Units>unitless</Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>rebSerialNumber</EFDB_Name>
+        <Description>REB hardware serial number (: delimited)</Description>
+        <IDL_Type>string</IDL_Type>
+        <Units>unitless</Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>rebLSSTName</EFDB_Name>
+        <Description>REB LSST identifier (: delimited)</Description>
+        <IDL_Type>string</IDL_Type>
+        <Units>unitless</Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>ccdLSSTName</EFDB_Name>
+        <Description>CCD LSST identifier (: delimited)</Description>
+        <IDL_Type>string</IDL_Type>
+        <Units>unitless</Units>
+        <Count>1</Count>
+    </item>    
+    <item>
+        <EFDB_Name>raftLSSTName</EFDB_Name>
+        <Description>Raft LSST identifier (: delimited)</Description>
+        <IDL_Type>string</IDL_Type>
+        <Units>unitless</Units>
+        <Count>1</Count>
+    </item>    
+    <item>
+        <EFDB_Name>ccdManSerNum</EFDB_Name>
+        <Description>Sensor manufacturer's serial number (: delimited)</Description>
+        <IDL_Type>string</IDL_Type>
+        <Units>unitless</Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>ccdManufacturer</EFDB_Name>
+        <Description>Sensor manufacturer E2V or ITL (: delimited)</Description>
+        <IDL_Type>string</IDL_Type>
+        <Units>unitless</Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>ccdType</EFDB_Name>
+        <Description>The type of each CCD</Description>
+        <IDL_Type>int</IDL_Type>
+        <IDL_Size>1</IDL_Size>
+        <Units>unitless</Units>
+        <Count>9</Count>
+        <Enumeration>E2V, ITL</Enumeration>
+    </item>
+    <item>
+        <EFDB_Name>ccdTempSetPoint</EFDB_Name>
+        <Description>Sensor temperature set point</Description>
+        <IDL_Type>double</IDL_Type>
+        <Units>unitless</Units>
+        <Count>9</Count>
+    </item>
+    <item>
+        <EFDB_Name>sequencerKey</EFDB_Name>
+        <Description>The name of the CCD sequencer loaded (: delimited)</Description>
+        <IDL_Type>string</IDL_Type>
+        <Units>unitless</Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>sequencerChecksum</EFDB_Name>
+        <Description>The checksum of the CCD sequencer loaded (: delimited)</Description>
+        <IDL_Type>string</IDL_Type>
+        <Units>unitless</Units>
+        <Count>1</Count>
+    </item>
+</SALEvent>
+<!-- ComCam settingsApplied events for focal-plane subsystem -->
+<SALEvent>
+    <Subsystem>CCCamera</Subsystem>
+    <EFDB_Topic>CCCamera_logevent_focalPlaneHardwareIdSettingsApplied</EFDB_Topic>
+    <item>
+        <EFDB_Name>version</EFDB_Name>
+        <Description>Version number of these settings.</Description>
+        <IDL_Type>long</IDL_Type>
+        <Units>unitless</Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>rebLocation</EFDB_Name>
+        <Description>REB location in focal-plane (e.g. R22RebX) (: delimited)</Description>
+        <IDL_Type>string</IDL_Type>
+        <Units>unitless</Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>rebSerialNumber</EFDB_Name>
+        <Description>REB hardware serial number (: delimited)</Description>
+        <IDL_Type>string</IDL_Type>
+        <Units>unitless</Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>rebLSSTName</EFDB_Name>
+        <Description>REB LSST identifier (: delimited)</Description>
+        <IDL_Type>string</IDL_Type>
+        <Units>unitless</Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>ccdLocation</EFDB_Name>
+        <Description>CCD location in focal-plane (e.g. R22Snn) (: delimited)</Description>
+        <IDL_Type>string</IDL_Type>
+        <Units>unitless</Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>ccdLSSTNum</EFDB_Name>
+        <Description>CCD LSST identifier (: delimited)</Description>
+        <IDL_Type>string</IDL_Type>
+        <Units>unitless</Units>
+        <Count>1</Count>
+    </item>    
+    <item>
+        <EFDB_Name>ccdManSerNum</EFDB_Name>
+        <Description>Sensor manufacturer's serial number (: delimited)</Description>
+        <IDL_Type>string</IDL_Type>
         <Units>unitless</Units>
         <Count>1</Count>
     </item>
