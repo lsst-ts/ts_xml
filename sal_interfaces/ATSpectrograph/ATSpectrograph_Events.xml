@@ -144,13 +144,13 @@
                 <Units>nm</Units>
                 <Count>1</Count>
             </item>
-                <item>
+            <item>
                 <EFDB_Name>focusOffset</EFDB_Name>
                 <Description>Focus offset to be applied on the secondary mirror in units of um, relative to no glass
                     being installed. Positive values push the secondary down and increase the back focal distance,
                     therefore adding glass thickness will result in positive focus offsets.</Description>
                 <IDL_Type>float</IDL_Type>
-                <Units>unitless</Units>
+                <Units>um</Units>
                 <Count>1</Count>
             </item>
 </SALEvent>
@@ -163,7 +163,7 @@
     <Explanation>http://sal.lsst.org</Explanation>
             <item>
                 <EFDB_Name>position</EFDB_Name>
-                <Description>The reported disperser position.</Description>
+                <Description>The reported grating/disperser position.</Description>
                 <!-- Enumeration: DisperserPosition -->
                 <IDL_Type>long</IDL_Type>
                 <Units>unitless</Units>
@@ -171,10 +171,19 @@
             </item>
             <item>
                 <EFDB_Name>name</EFDB_Name>
-                <Description>Name of the grating.</Description>
+                <Description>Name of the grating/disperser.</Description>
                 <IDL_Type>string</IDL_Type>
                 <IDL_Size>256</IDL_Size>
                 <Units>unitless</Units>
+                <Count>1</Count>
+            </item>
+            <item>
+                <EFDB_Name>focusOffset</EFDB_Name>
+                <Description>Focus offset to be applied on the secondary mirror in units of um, relative to no glass
+                    being installed. Positive values push the secondary down and increase the back focal distance,
+                    therefore adding glass thickness will result in positive focus offsets.</Description>
+                <IDL_Type>float</IDL_Type>
+                <Units>um</Units>
                 <Count>1</Count>
             </item>
 </SALEvent>
@@ -187,7 +196,7 @@
     <Explanation>http://sal.lsst.org</Explanation>
     <item>
         <EFDB_Name>inPosition</EFDB_Name>
-        <Description>Is the disperser in position?</Description>
+        <Description>Is the grating/disperser in position?</Description>
         <IDL_Type>boolean</IDL_Type>
         <Units>unitless</Units>
         <Count>1</Count>
@@ -341,7 +350,7 @@
             </item>
             <item>
                 <EFDB_Name>gratingNames</EFDB_Name>
-                <Description>Comma separated list of grating names.</Description>
+                <Description>Comma separated list of disperser/grating names.</Description>
                 <IDL_Type>string</IDL_Type>
                 <IDL_Size>256</IDL_Size>
                 <Units>unitless</Units>
@@ -349,7 +358,7 @@
             </item>
             <item>
                 <EFDB_Name>gratingFocusOffsets</EFDB_Name>
-                <Description>Comma separated list of grating focus offsets to be applied to the hexapod [in um].
+                <Description>Comma separated list of disperser/grating focus offsets to be applied to the hexapod [in um].
                 </Description>
                 <IDL_Type>string</IDL_Type>
                 <IDL_Size>256</IDL_Size>
