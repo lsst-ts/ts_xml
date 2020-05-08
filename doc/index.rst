@@ -7,9 +7,10 @@ Pages
 
 .. toctree::
     :maxdepth: 1
-
-    sal_constraints_and_recommendations
-    csc_information
+    :glob:
+    
+    *
+    sal_interfaces/index
 
 The ``ts_xml`` package defines the data objects for all Commandable SAL
 Components (CSC). These data objects are defined in XML. SAL consumes the XML to 
