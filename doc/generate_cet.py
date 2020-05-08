@@ -43,7 +43,7 @@ def main():
                     cf.write(f"{topic.find('EFDB_Topic').text}\n")
                     cf.write(f"{'~'*len(topic.find('EFDB_Topic').text)}\n")
                 if topic.find('Description') is not None:
-                    cf.write("**Description**\n\n")
+                    cf.write("Description\n~~~~~~~~~~~\n")
                     cf.write(f"{topic.find('Description').text}\n")
                     cf.write("\n")
                 for field in topic:
@@ -56,7 +56,7 @@ def main():
                             else:
                                 cf.write(f":{attribute.tag}: {attribute.text}\n")
                         cf.write("\n")
-                        cf.write("**Description**\n\n")
+                        cf.write("Description\n***********\n")
                         cf.write(f"{field.find('Description').text}\n")
                         cf.write("\n")
                     elif field.tag in ["Alias", "Description", "Device", "Property", "Action", "Value"]:
@@ -72,7 +72,7 @@ def main():
             f.write(f"{gen_topic.find('Alias').text}\n")
             f.write(f"{'-'*len(gen_topic.find('Alias').text)}\n")
             if gen_topic.find('Description') is not None:
-                f.write("**Description**\n\n")
+                f.write("Description\n-----------\n")
                 f.write(f"{gen_topic.find('Description').text}\n")
                 f.write("\n")
             for gen_field in gen_topic:
@@ -85,7 +85,7 @@ def main():
                         else:
                             f.write(f":{gen_attribute.tag}: {gen_attribute.text}\n")
                     f.write("\n")
-                    f.write("**Description**\n\n")
+                    f.write("Description\n***********\n")
                     f.write(f"{gen_field.find('Description').text}\n")
                     f.write("\n")
                 elif gen_field.tag in ["Description", "Alias", "Device", "Property", "Action", "Value"]:
