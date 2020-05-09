@@ -54,25 +54,17 @@
         <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>moveWhileExposing</EFDB_Name>
-        <Description>Move hexapod and focus while exposing enabled.</Description>
+        <EFDB_Name>atspectrograph</EFDB_Name>
+        <Description>Focus correction for atspectrograph (LATISS) grating and filter selection enabled.</Description>
         <IDL_Type>boolean</IDL_Type>
         <Units>unitless</Units>
         <Count>1</Count>
     </item>
-</SALEvent>
-<SALEvent>
-    <Subsystem>ATAOS</Subsystem>
-    <Version>3.8</Version>
-    <Author>Tiago Ribeiro</Author>
-    <EFDB_Topic>ATAOS_logevent_newFocusValue</EFDB_Topic>
-    <Alias>newFocusValue</Alias>
-    <Explanation>http://sal.lsst.org</Explanation>
     <item>
-        <EFDB_Name>focus</EFDB_Name>
-        <Description>New focus offset.</Description>
-        <IDL_Type>float</IDL_Type>
-        <Units>millimeter</Units>
+        <EFDB_Name>moveWhileExposing</EFDB_Name>
+        <Description>Move hexapod and focus while exposing enabled.</Description>
+        <IDL_Type>boolean</IDL_Type>
+        <Units>unitless</Units>
         <Count>1</Count>
     </item>
 </SALEvent>
@@ -439,6 +431,49 @@
         <Description>Offset to the  m2 correction.</Description>
         <IDL_Type>float</IDL_Type>
         <Units>Pa</Units>
+        <Count>1</Count>
+    </item>
+</SALEvent>
+<SALEvent>
+    <Subsystem>ATAOS</Subsystem>
+    <Version>3.8</Version>
+    <Author>Tiago Ribeiro</Author>
+    <EFDB_Topic>ATAOS_logevent_focusOffsetSummary</EFDB_Topic>
+    <Alias>focusOffsetSummary</Alias>
+    <Explanation>http://sal.lsst.org</Explanation>
+    <item>
+        <EFDB_Name>total</EFDB_Name>
+        <Description>Sum total of all focus offsets.</Description>
+        <IDL_Type>float</IDL_Type>
+        <Units>mm</Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>userApplied</EFDB_Name>
+        <Description>Cumulative User-provided focus-offset.</Description>
+        <IDL_Type>float</IDL_Type>
+        <Units>mm</Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>filter</EFDB_Name>
+        <Description>Offset due to atspectrograph filter</Description>
+        <IDL_Type>float</IDL_Type>
+        <Units>degree</Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>disperser</EFDB_Name>
+        <Description>Offset due to atspectrograph disperser.</Description>
+        <IDL_Type>float</IDL_Type>
+        <Units>degree</Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>wavelength</EFDB_Name>
+        <Description>Offset due to selected wavelength.</Description>
+        <IDL_Type>float</IDL_Type>
+        <Units>degree</Units>
         <Count>1</Count>
     </item>
 </SALEvent>
