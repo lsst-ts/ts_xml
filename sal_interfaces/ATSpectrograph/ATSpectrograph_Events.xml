@@ -153,6 +153,15 @@
                 <Units>mm</Units>
                 <Count>1</Count>
             </item>
+            <item>
+                <EFDB_Name>pointingOffsets</EFDB_Name>
+                <Description>Pointing offset to be applied to the boresight in units of arcseconds, relative
+                    to no glass being installed. Relative to the center of the detector,positive X-values
+                    result in moving along rows, to higher pixel values </Description>
+                <IDL_Type>float</IDL_Type>
+                <Units>arcsec</Units>
+                <Count>2</Count>
+            </item>
 </SALEvent>
 <SALEvent>
     <Subsystem>ATSpectrograph</Subsystem>
@@ -186,6 +195,25 @@
                 <Units>mm</Units>
                 <Count>1</Count>
             </item>
+            <item>
+                <EFDB_Name>pointingOffsets</EFDB_Name>
+                <Description>Pointing offset to be applied to the boresight in units of arcseconds, relative
+                    to no glass being installed. Relative to the center of the detector,positive X-values
+                    result in moving along rows, to higher pixel values </Description>
+                <IDL_Type>float</IDL_Type>
+                <Units>arcsec</Units>
+                <Count>2</Count>
+            </item>
+<!--            <item>-->
+<!--                <EFDB_Name>PointingYOffset</EFDB_Name>-->
+<!--                <Description>Pointing offset to be applied to the boresight in units of arcseconds, relative-->
+<!--                    to no glass being installed. Relative to the center of the detector,positive Y-values-->
+<!--                    result in the star moving up an amplifier </Description>-->
+<!--                <IDL_Type>float</IDL_Type>-->
+<!--                <Units>mm</Units>-->
+<!--                <Count>1</Count>-->
+<!--            </item>-->
+
 </SALEvent>
 <SALEvent>
     <Subsystem>ATSpectrograph</Subsystem>
@@ -349,6 +377,15 @@
                 <Count>1</Count>
             </item>
             <item>
+                <EFDB_Name>filterPointingOffsets</EFDB_Name>
+                <Description>Comma separated list of [X,Y] filter pointing offsets to be applied to boresight [in arcsec].
+                </Description>
+                <IDL_Type>string</IDL_Type>
+                <IDL_Size>256</IDL_Size>
+                <Units>unitless</Units>
+                <Count>1</Count>
+            </item>
+            <item>
                 <EFDB_Name>gratingNames</EFDB_Name>
                 <Description>Comma separated list of disperser/grating names.</Description>
                 <IDL_Type>string</IDL_Type>
@@ -359,6 +396,15 @@
             <item>
                 <EFDB_Name>gratingFocusOffsets</EFDB_Name>
                 <Description>Comma separated list of disperser/grating focus offsets to be applied to the hexapod [in mm].
+                </Description>
+                <IDL_Type>string</IDL_Type>
+                <IDL_Size>256</IDL_Size>
+                <Units>unitless</Units>
+                <Count>1</Count>
+            </item>
+                <item>
+                <EFDB_Name>gratingPointingOffsets</EFDB_Name>
+                <Description>Comma separated list of [X,Y] grating pointing offsets to be applied to boresight [in arcsec].
                 </Description>
                 <IDL_Type>string</IDL_Type>
                 <IDL_Size>256</IDL_Size>
