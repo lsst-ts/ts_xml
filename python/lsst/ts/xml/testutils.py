@@ -33,7 +33,7 @@ subsystems = [
 
 generic_commands = [
     'abort', 'enable', 'disable', 'standby', 'exitControl', 'start',
-    'enterControl', 'setLogLevel', 'setValue'
+    'enterControl', 'setLogLevel', 'setValue' , 'setAccess'
 ]
 
 """Define the array of Generic Events."""
@@ -41,7 +41,7 @@ generic_commands = [
 generic_events = [
     'appliedSettingsMatchStart', 'errorCode', 'heartbeat', 'logLevel',
     'logMessage', 'settingsApplied', 'settingVersions', 'simulationMode',
-    'softwareVersions', 'summaryState'
+    'softwareVersions', 'summaryState' , 'authList'
 ]
 
 """Define the lists of IDL and MySQL Reserved Words"""
