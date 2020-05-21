@@ -33,13 +33,13 @@ subsystems = [
 
 generic_commands = [
     'abort', 'enable', 'disable', 'standby', 'exitControl', 'start',
-    'enterControl', 'setLogLevel', 'setValue'
+    'enterControl', 'setLogLevel', 'setValue', 'setAuthList'
 ]
 
 """Define the array of Generic Events."""
 
 generic_events = [
-    'appliedSettingsMatchStart', 'errorCode', 'heartbeat', 'logLevel',
+    'appliedSettingsMatchStart', 'authList', 'errorCode', 'heartbeat', 'logLevel',
     'logMessage', 'settingsApplied', 'settingVersions', 'simulationMode',
     'softwareVersions', 'summaryState'
 ]
