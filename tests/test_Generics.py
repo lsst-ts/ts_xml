@@ -11,12 +11,7 @@ def get_salgenerics_file():
 
 
 def check_for_issues(csc, topic):
-    if csc == "LOVE" and topic == "Events":
-        jira = "DM-22109"
-    elif csc == "Script" and (topic == "Commands" or topic == "Events"):
-        jira = "DM-22329"
-    else:
-        jira = ""
+    jira = ""
     return jira
 
 
