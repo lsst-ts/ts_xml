@@ -13,16 +13,14 @@ def check_for_issues(csc, topic):
 
 def check_subsystem(xmlfile, saltype, element_root):
     for subsystem in element_root.findall(f"./{saltype}/Subsystem"):
-        assert re.search(r"\s", subsystem.text) is None, f"<Subsystem> " + \
-            "'" + subsystem.text + "' in " + str(xmlfile.name) + \
-            " contains a whitespace character."
+        assert re.search(r"\s", subsystem.text) is None, \
+            f"<Subsystem> '{subsystem.text}' in {xmlfile.name} contains a whitespace character."
 
 
 def check_topic(xmlfile, saltype, element_root):
     for topic in element_root.findall(f"./{saltype}/EFDB_Topic"):
-        assert re.search(r"\s", topic.text) is None, f"<EFDB_Topic> " + \
-            "'" + topic.text + "' in " + str(xmlfile.name) + \
-            " contains a whitespace character."
+        assert re.search(r"\s", topic.text) is None, \
+            f"<EFDB_Topic> '{topic.text}' in {xmlfile.name} contains a whitespace character."
 
 
 @pytest.mark.parametrize("xmlfile,csc,topic", ts_xml.get_xmlfile_csc_topic())
@@ -50,6 +48,5 @@ def test_no_spaces(xmlfile, csc, topic):
     check_subsystem(xmlfile, saltype, root)
     check_topic(xmlfile, saltype, root)
     for name in root.findall(f"./{saltype}/item/EFDB_Name"):
-        assert re.search(r"\s", name.text) is None, f"<EFDB_Name> " + \
-            "'" + name.text + "' in " + str(xmlfile.name) + \
-            " contains a whitespace character."
+        assert re.search(r"\s", name.text) is None, \
+            f"<EFDB_Name> '{name.text}' in {xmlfile.name} contains a whitespace character."

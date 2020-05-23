@@ -114,7 +114,7 @@ def test_each_csc_defined():
     subsystems = ts_xml.subsystems
     subsystems.sort()
     cscs = []
-    for csc in root.findall(f"./SALSubsystem/Name"):
+    for csc in root.findall("./SALSubsystem/Name"):
         cscs.append(csc.text)
     cscs.sort()
     assert ts_xml.subsystems == cscs, "There is a duplicate CSC."
