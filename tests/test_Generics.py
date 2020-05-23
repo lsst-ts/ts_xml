@@ -20,44 +20,34 @@ def check_for_issues(csc, topic):
     return jira
 
 
-def test_salgenerics_commands():
-    """Test that SALGenerics.xml defines the expected set of generic commands.
+def test_salgenerics_topics():
+    """Test that SALGenerics.xml defines the expected set of generic topics.
     """
     sal_generics_file = get_salgenerics_file()
     # Check for known issues.
-    jira = check_for_issues("none", "generic_commands")
+    jira = check_for_issues("none", "generic_topics")
     if jira:
         pytest.skip(jira + ": " + str(sal_generics_file.name))
     # Test SALGenerics.xml contains the expected commands.
     with open(str(sal_generics_file), "r", encoding="utf-8") as f:
         tree = et.parse(f)
     root = tree.getroot()
-    commands = []
-    for command in root.findall(f"./SALCommandSet/SALCommand/Alias"):
-        commands.append(command.text)
-    commands.sort()
-    ts_xml.generic_commands.sort()
-    assert commands == ts_xml.generic_commands
+    required_prefix = "SALGeneric_"
+    topic_name_start_ind = len(required_prefix)
+    topics = set()
 
+    command_prefix = required_prefix + "command_"
+    for topic in root.findall("./SALCommandSet/SALCommand/EFDB_Topic"):
+        assert topic.text.startswith(command_prefix), \
+            f"Generic command '{topic.text}' does not start with '{command_prefix}'"
+        topics.add(topic.text[topic_name_start_ind:])
 
-def test_salgenerics_events():
-    """Test that SALGenerics.xml defines the expected set of generic events.
-    """
-    sal_generics_file = get_salgenerics_file()
-    # Check for known issues.
-    jira = check_for_issues("none", "generic_events")
-    if jira:
-        pytest.skip(jira + ": " + str(sal_generics_file.name))
-    # Test SALGenerics.xml contains the expected commands.
-    with open(str(sal_generics_file), "r", encoding="utf-8") as f:
-        tree = et.parse(f)
-    root = tree.getroot()
-    events = []
-    for event in root.findall(f"./SALEventSet/SALEvent/Alias"):
-        events.append(event.text)
-    events.sort()
-    ts_xml.generic_events.sort()
-    assert events == ts_xml.generic_events
+    event_prefix = required_prefix + "logevent_"
+    for topic in root.findall("./SALEventSet/SALEvent/EFDB_Topic"):
+        assert topic.text.startswith(event_prefix), \
+            f"Generic event '{topic.text}' does not start with '{event_prefix}'"
+        topics.add(topic.text[topic_name_start_ind:])
+    assert sorted(topics) == sorted(ts_xml.generic_topics)
 
 
 @pytest.mark.parametrize("xmlfile,csc,topic", ts_xml.get_xmlfile_csc_topic())
@@ -87,8 +77,8 @@ def test_xmlfiles_do_not_define_generic_topics(xmlfile, csc, topic):
         with open(str(xmlfile), "r", encoding="utf-8") as f:
             tree = et.parse(f)
         root = tree.getroot()
-        csc_topics = []
-        for alias in root.findall(f"./{saltype}/Alias"):
-            csc_topics.append(alias.text)
-        for topic in csc_topics:
-            assert topic not in set(ts_xml.generic_commands + ts_xml.generic_events)
+        csc_topics = set()
+        topic_name_start_ind = len(csc) + 1
+        for topic in root.findall(f"./{saltype}/EFDB_Topic"):
+            csc_topics.add(topic.text[topic_name_start_ind:])
+        assert ts_xml.generic_topics & csc_topics == set()
