@@ -44,6 +44,10 @@ generic_events = [
     'softwareVersions', 'summaryState'
 ]
 
+generic_topics = set([f"command_{val}" for val in generic_commands] +
+                     [f"logevent_{val}" for val in generic_events])
+
+
 """Define the lists of IDL and MySQL Reserved Words"""
 
 idl_reserved = [

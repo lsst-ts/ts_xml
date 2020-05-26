@@ -114,7 +114,7 @@ def test_each_csc_defined():
     subsystems = ts_xml.subsystems
     subsystems.sort()
     cscs = []
-    for csc in root.findall(f"./SALSubsystem/Name"):
+    for csc in root.findall("./SALSubsystem/Name"):
         cscs.append(csc.text)
     cscs.sort()
     assert ts_xml.subsystems == cscs, "There is a duplicate CSC."
@@ -135,16 +135,16 @@ def test_generics_tag(root, csc, generics):
     """
     # Check for known issues.
     skip_if_known_issue("generics", csc)
-    # Set the condition to no for CSCs that do not utilize Generic topics.
-    if csc == "Script":
-        value = "no"
-    elif csc == "LOVE":
-        value = "no"
-    else:
-        value = "yes"
-    # Verify each CSC is explicitly defined.
-    assert root.find("./SALSubsystem/[Name='" + csc + "']/Generics").text == value, \
-        csc + " <Generics> tag is not defined as expected."
+    if generics in ("yes", "no"):
+        return
+    generics_set = set(val.strip() for val in generics.split(","))
+    for generic_name in generics_set:
+        assert " " not in generic_name, \
+            f"csc {csc} <Generics> tag '{generic_name}' need a comma"
+    invalid_topics = generics_set - ts_xml.generic_topics
+    assert invalid_topics == set(), \
+        f"The <Generics> tag for csc {csc} has one or more non-generic topics: " \
+        f"{sorted(invalid_topics)}"
 
 
 @pytest.mark.parametrize("root,csc,languages", get_csc_runtimelanguages())
