@@ -29,21 +29,17 @@ def main():
             cf.write(f"{'-'*len(dds_type)}\n")
             root = tree.getroot()
             for topic in root:
-                if dds_type in ["Commands", "Events"]:
-                    if topic.tag == "Enumeration":
-                        states = topic.text.split(',')
-                        for state in states:
-                            cf.write(f"* {state}\n")
-                        cf.write("\n")
-                    elif topic.find('Alias') is None:
-                        cf.write("None\n")
-                        cf.write("~~~~\n")
-                    else:
-                        cf.write(f"{topic.find('Alias').text}\n")
-                        cf.write(f"{'~'*len(topic.find('Alias').text)}\n")
-                else:
-                    cf.write(f"{topic.find('EFDB_Topic').text}\n")
-                    cf.write(f"{'~'*len(topic.find('EFDB_Topic').text)}\n")
+                if topic.tag == "Enumeration":
+                    states = topic.text.split(',')
+                    for state in states:
+                        cf.write(f"* {state}\n")
+                    cf.write("\n")
+                    continue
+
+                topic_name = topic.find('EFDB_Topic').text
+                short_name = topic_name.split("_")[-1]
+                cf.write(f"{short_name}\n")
+                cf.write(f"{'~'*len(short_name)}\n")
                 if topic.find('Description') is not None:
                     cf.write("**Description**: ")
                     cf.write(f"{topic.find('Description').text}\n")
@@ -71,8 +67,10 @@ def main():
     f.write("========\n")
     for gen_set in gen_root:
         for gen_topic in gen_set:
-            f.write(f"{gen_topic.find('Alias').text}\n")
-            f.write(f"{'-'*len(gen_topic.find('Alias').text)}\n")
+            topic_name = gen_topic.find('EFDB_Topic').text
+            short_name = topic_name.split("_")[-1]
+            f.write(f"{short_name}\n")
+            f.write(f"{'-'*len(short_name)}\n")
             if gen_topic.find('Description') is not None:
                 f.write("**Description**: ")
                 f.write(f"{gen_topic.find('Description').text}\n")
