@@ -39,7 +39,7 @@ generic_commands = [
 """Define the array of Generic Events."""
 
 generic_events = [
-    'appliedSettingsMatchStart', 'errorCode', 'heartbeat', 'logLevel',
+    'appliedSettingsMatchStart', 'authList', 'errorCode', 'heartbeat', 'logLevel',
     'logMessage', 'settingsApplied', 'settingVersions', 'simulationMode',
     'softwareVersions', 'summaryState', 'authList'
 ]
