@@ -14,15 +14,8 @@
     <Value></Value>
     <Explanation>http://sal.lsst.org</Explanation>
     <item>
-        <EFDB_Name>dirMotion</EFDB_Name>
-        <Description>Specifies de direction of crawl motion in azimuth: CW or CCW</Description>
-        <IDL_Type>string</IDL_Type>
-        <Units>unitless</Units>
-        <Count>1</Count>
-    </item>
-    <item>
         <EFDB_Name>azRate</EFDB_Name>
-        <Description>Specifies the speed of crawl motion in degrees per second</Description>
+        <Description>Specifies the velocity of crawl motion in degrees per second. Positive means in the direction of increasing azimuth, negative in the direction of decreasing azimuth.</Description>
         <IDL_Type>double</IDL_Type>
         <Units>deg/second</Units>
         <Count>1</Count>
@@ -40,15 +33,8 @@
     <Value></Value>
     <Explanation>http://sal.lsst.org</Explanation>
     <item>
-        <EFDB_Name>dirMotion</EFDB_Name>
-        <Description>Specifies de direction of crawl motion in elevation: UP or DOWN</Description>
-        <IDL_Type>string</IDL_Type>
-        <Units>unitless</Units>
-        <Count>1</Count>
-    </item>
-    <item>
         <EFDB_Name>elRate</EFDB_Name>
-        <Description>Specifies the speed of crawl motion in degrees per second</Description>
+        <Description>Specifies the velocity of crawl motion in degrees per second. Positive means in the direction of increasing elevation, negative in the direction of decreasing elevation.</Description>
         <IDL_Type>double</IDL_Type>
         <Units>deg/second</Units>
         <Count>1</Count>
@@ -70,6 +56,13 @@
         <Description>Absolute positon angle for azimuth rotation in degrees</Description>
         <IDL_Type>double</IDL_Type>
         <Units>deg</Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>azRate</EFDB_Name>
+        <Description>Specifies the velocity of crawl motion in degrees per second at which the motion should continue once the commanded azimuth has been reached. Positive means in the direction of increasing azimuth, negative in the direction of decreasing azimuth.</Description>
+        <IDL_Type>double</IDL_Type>
+        <Units>deg/second</Units>
         <Count>1</Count>
     </item>
 </SALCommand>
