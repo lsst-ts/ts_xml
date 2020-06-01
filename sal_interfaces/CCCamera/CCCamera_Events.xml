@@ -1132,10 +1132,37 @@
         <Subsystem>CCCamera</Subsystem>
         <Version>3.7.1</Version>
         <Author></Author>
+        <EFDB_Topic>CCCamera_logevent_focalPlaneRaftTempControlStatusSettingsApplied</EFDB_Topic>
+        <item>
+            <EFDB_Name>version</EFDB_Name>
+            <Description>Version number of these settings</Description>
+            <IDL_Type>long</IDL_Type>
+            <Units>unitless</Units>
+            <Count>1</Count>
+        </item>
+        <item>
+            <EFDB_Name>raftLocation</EFDB_Name>
+            <Description>Raft location in focal-plane (e.g. R22) (: delimited)</Description>
+            <IDL_Type>string</IDL_Type>
+            <Units>unitless</Units>
+            <Count>1</Count>
+        </item>
+        <item>
+            <EFDB_Name>raft_TempControl_active</EFDB_Name>
+            <Description>True if loop is active</Description>
+            <IDL_Type>boolean</IDL_Type>
+            <Units>unitless</Units>
+            <Count>1</Count>
+        </item>
+    </SALEvent>
+    <SALEvent>
+        <Subsystem>CCCamera</Subsystem>
+        <Version>3.7.1</Version>
+        <Author></Author>
         <EFDB_Topic>CCCamera_logevent_focalPlaneRaftTempControlSettingsApplied</EFDB_Topic>
         <item>
             <EFDB_Name>version</EFDB_Name>
-            <Description>Version number of these settings.</Description>
+            <Description>Version number of these settings</Description>
             <IDL_Type>long</IDL_Type>
             <Units>unitless</Units>
             <Count>1</Count>
@@ -1236,6 +1263,179 @@
             <Description>maximum on-target error (%)</Description>
             <IDL_Type>double</IDL_Type>
             <Units>unitless</Units>
+            <Count>1</Count>
+        </item>
+    </SALEvent>
+    <SALEvent>
+        <Subsystem>CCCamera</Subsystem>
+        <Version>3.7.1</Version>
+        <Author></Author>
+        <EFDB_Topic>CCCamera_logevent_focalPlaneFitsHandlingSettingsApplied</EFDB_Topic>
+        <item>
+            <EFDB_Name>version</EFDB_Name>
+            <Description>Version number of these settings</Description>
+            <IDL_Type>long</IDL_Type>
+            <Units>unitless</Units>
+            <Count>1</Count>
+        </item>
+        <item>
+            <EFDB_Name>focalplaneconfig_FITSAutoSave</EFDB_Name>
+            <Description>True if FITS file should be automatically generated</Description>
+            <IDL_Type>boolean</IDL_Type>
+            <Units>unitless</Units>
+            <Count>1</Count>
+        </item>
+        <item>
+            <EFDB_Name>focalplaneconfig_FITSDirectoryPattern</EFDB_Name>
+            <Description>Pattern for FITS directory creation</Description>
+            <IDL_Type>string</IDL_Type>
+            <Units>unitless</Units>
+            <Count>1</Count>
+        </item>
+        <item>
+            <EFDB_Name>focalplaneconfig_FITSFilePattern</EFDB_Name>
+            <Description>Pattern for FITS file creation</Description>
+            <IDL_Type>string</IDL_Type>
+            <Units>unitless</Units>
+            <Count>1</Count>
+        </item>
+        <item>
+            <EFDB_Name>focalplaneconfig_FITSRootDirectory</EFDB_Name>
+            <Description>Root directory for FITS file creation</Description>
+            <IDL_Type>string</IDL_Type>
+            <Units>unitless</Units>
+            <Count>1</Count>
+        </item>
+    </SALEvent>
+    <SALEvent>
+        <Subsystem>CCCamera</Subsystem>
+        <Version>3.7.1</Version>
+        <Author></Author>
+        <EFDB_Topic>CCCamera_logevent_focalPlaneDAQSettingsApplied</EFDB_Topic>
+        <item>
+            <EFDB_Name>version</EFDB_Name>
+            <Description>Version number of these settings</Description>
+            <IDL_Type>long</IDL_Type>
+            <Units>unitless</Units>
+            <Count>1</Count>
+        </item>
+        <item>
+            <EFDB_Name>sequencerconfig_daqFolder</EFDB_Name>
+            <Description>Folder in 2-day store where images will be created</Description>
+            <IDL_Type>string</IDL_Type>
+            <Units>unitless</Units>
+            <Count>1</Count>
+        </item>
+        <item>
+            <EFDB_Name>sequencerconfig_emulatedDAQ</EFDB_Name>
+            <Description>True when using an emulated DAQ</Description>
+            <IDL_Type>boolean</IDL_Type>
+            <Units>unitless</Units>
+            <Count>1</Count>
+        </item>
+    </SALEvent>
+    <SALEvent>
+        <Subsystem>CCCamera</Subsystem>
+        <Version>3.7.1</Version>
+        <Author></Author>
+        <EFDB_Topic>CCCamera_logevent_focalPlaneSequencerSettingsApplied</EFDB_Topic>
+        <item>
+            <EFDB_Name>version</EFDB_Name>
+            <Description>Version number of these settings</Description>
+            <IDL_Type>long</IDL_Type>
+            <Units>unitless</Units>
+            <Count>1</Count>
+        </item>
+        <item>
+            <EFDB_Name>sequencerconfig_metaDataRegisters</EFDB_Name>
+            <Description>Names of meta-data related registers which must be in the sequencer</Description>
+            <IDL_Type>string</IDL_Type>
+            <Units>unitless</Units>
+            <Count>1</Count>
+        </item>
+        <item>
+            <EFDB_Name>sequencerconfig_overCols</EFDB_Name>
+            <Description>overCols</Description>
+            <IDL_Type>int</IDL_Type>
+            <Units>unitless</Units>
+            <Count>1</Count>
+        </item>
+        <item>
+            <EFDB_Name>sequencerconfig_overRows</EFDB_Name>
+            <Description>overRows</Description>
+            <IDL_Type>int</IDL_Type>
+            <Units>unitless</Units>
+            <Count>1</Count>
+        </item>
+        <item>
+            <EFDB_Name>sequencerconfig_postCols</EFDB_Name>
+            <Description>postCols</Description>
+            <IDL_Type>int</IDL_Type>
+            <Units>unitless</Units>
+            <Count>1</Count>
+        </item>
+        <item>
+            <EFDB_Name>sequencerconfig_postRows</EFDB_Name>
+            <Description>postRows</Description>
+            <IDL_Type>int</IDL_Type>
+            <Units>unitless</Units>
+            <Count>1</Count>
+        </item>
+        <item>
+            <EFDB_Name>sequencerconfig_preCols</EFDB_Name>
+            <Description>preCols</Description>
+            <IDL_Type>int</IDL_Type>
+            <Units>unitless</Units>
+            <Count>1</Count>
+        </item>
+        <item>
+            <EFDB_Name>sequencerconfig_preRows</EFDB_Name>
+            <Description>preRows</Description>
+            <IDL_Type>int</IDL_Type>
+            <Units>unitless</Units>
+            <Count>1</Count>
+        </item>
+        <item>
+            <EFDB_Name>sequencerconfig_readCols</EFDB_Name>
+            <Description>readCols</Description>
+            <IDL_Type>int</IDL_Type>
+            <Units>unitless</Units>
+            <Count>1</Count>
+        </item>
+        <item>
+            <EFDB_Name>sequencerconfig_readCols2</EFDB_Name>
+            <Description>readCols2</Description>
+            <IDL_Type>int</IDL_Type>
+            <Units>unitless</Units>
+            <Count>1</Count>
+        </item>
+        <item>
+            <EFDB_Name>sequencerconfig_readRows</EFDB_Name>
+            <Description>readRows</Description>
+            <IDL_Type>int</IDL_Type>
+            <Units>unitless</Units>
+            <Count>1</Count>
+        </item>
+        <item>
+            <EFDB_Name>sequencerconfig_scanMode</EFDB_Name>
+            <Description>True if the sequencer is in scan mode</Description>
+            <IDL_Type>boolean</IDL_Type>
+            <Units>unitless</Units>
+            <Count>1</Count>
+        </item>
+        <item>
+            <EFDB_Name>sequencerconfig_sequencer</EFDB_Name>
+            <Description>sequencer name map</Description>
+            <IDL_Type>string</IDL_Type>
+            <Units>unitless</Units>
+            <Count>1</Count>
+        </item>
+        <item>
+            <EFDB_Name>sequencerconfig_underCols</EFDB_Name>
+            <Description>underCols</Description>
+            <IDL_Type>int</IDL_Type>
+            <Units>unitless</Units>
+            <Count>1</Count>
         </item>
     </SALEvent>
 </SALEventSet>
