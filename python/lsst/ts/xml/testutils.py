@@ -41,7 +41,7 @@ generic_commands = [
 generic_events = [
     'appliedSettingsMatchStart', 'authList', 'errorCode', 'heartbeat', 'logLevel',
     'logMessage', 'settingsApplied', 'settingVersions', 'simulationMode',
-    'softwareVersions', 'summaryState'
+    'softwareVersions', 'summaryState', 'authList'
 ]
 
 generic_topics = set([f"command_{val}" for val in generic_commands] +
