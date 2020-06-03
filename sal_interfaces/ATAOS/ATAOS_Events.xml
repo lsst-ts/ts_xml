@@ -374,6 +374,50 @@
     <Subsystem>ATAOS</Subsystem>
     <Version>3.8</Version>
     <Author>Tiago Ribeiro</Author>
+    <EFDB_Topic>ATAOS_logevent_atspectrographCorrectionStarted</EFDB_Topic>
+    <Alias>atspectrographCorrectionStarted</Alias>
+    <Explanation>http://sal.lsst.org</Explanation>
+    <item>
+        <EFDB_Name>focusOffset</EFDB_Name>
+        <Description>Focus offset applied.</Description>
+        <IDL_Type>float</IDL_Type>
+        <Units>mm</Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>pointingOffsets</EFDB_Name>
+        <Description>Pointing Offsets applied.</Description>
+        <IDL_Type>float</IDL_Type>
+        <Units>arcsec</Units>
+        <Count>2</Count>
+    </item>
+</SALEvent>
+<SALEvent>
+    <Subsystem>ATAOS</Subsystem>
+    <Version>3.8</Version>
+    <Author>Tiago Ribeiro</Author>
+    <EFDB_Topic>ATAOS_logevent_atspectrographCorrectionCompleted</EFDB_Topic>
+    <Alias>atspectrographCorrectionCompleted</Alias>
+    <Explanation>http://sal.lsst.org</Explanation>
+    <item>
+        <EFDB_Name>focusOffset</EFDB_Name>
+        <Description>Focus offset applied.</Description>
+        <IDL_Type>float</IDL_Type>
+        <Units>mm</Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>pointingOffsets</EFDB_Name>
+        <Description>Pointing Offsets applied.</Description>
+        <IDL_Type>float</IDL_Type>
+        <Units>arcsec</Units>
+        <Count>2</Count>
+    </item>
+</SALEvent>
+<SALEvent>
+    <Subsystem>ATAOS</Subsystem>
+    <Version>3.8</Version>
+    <Author>Tiago Ribeiro</Author>
     <EFDB_Topic>ATAOS_logevent_correctionOffsets</EFDB_Topic>
     <Alias>correctionOffsets</Alias>
     <Explanation>http://sal.lsst.org</Explanation>
@@ -475,6 +519,35 @@
         <IDL_Type>float</IDL_Type>
         <Units>degree</Units>
         <Count>1</Count>
+    </item>
+</SALEvent>
+<SALEvent>
+    <Subsystem>ATAOS</Subsystem>
+    <Version>3.8</Version>
+    <Author>Tiago Ribeiro</Author>
+    <EFDB_Topic>ATAOS_logevent_pointingOffsetSummary</EFDB_Topic>
+    <Alias>pointingOffsetSummary</Alias>
+    <Explanation>http://sal.lsst.org</Explanation>
+    <item>
+        <EFDB_Name>total</EFDB_Name>
+        <Description>Sum total of all pointing offsets.</Description>
+        <IDL_Type>float</IDL_Type>
+        <Units>arcsec</Units>
+        <Count>2</Count>
+    </item>
+    <item>
+        <EFDB_Name>filter</EFDB_Name>
+        <Description>Offset due to atspectrograph filter</Description>
+        <IDL_Type>float</IDL_Type>
+        <Units>arcsec</Units>
+        <Count>2</Count>
+    </item>
+    <item>
+        <EFDB_Name>disperser</EFDB_Name>
+        <Description>Offset due to atspectrograph disperser.</Description>
+        <IDL_Type>float</IDL_Type>
+        <Units>arcsec</Units>
+        <Count>2</Count>
     </item>
 </SALEvent>
 </SALEventSet>
