@@ -136,6 +136,32 @@
                 <Units>unitless</Units>
                 <Count>1</Count>
             </item>
+            <item>
+                <EFDB_Name>centralWavelength</EFDB_Name>
+                <Description>Wavelength for which optical system will be optimized in units of nm.
+                    Approximations are sufficient as the focus dependence on wavelength is weak.</Description>
+                <IDL_Type>float</IDL_Type>
+                <Units>nm</Units>
+                <Count>1</Count>
+            </item>
+            <item>
+                <EFDB_Name>focusOffset</EFDB_Name>
+                <Description>Focus offset to be applied on the secondary mirror in units of mm, relative to no glass
+                    being installed. Positive values push the secondary down and increase the back focal distance,
+                    therefore adding glass thickness will result in positive focus offsets.</Description>
+                <IDL_Type>float</IDL_Type>
+                <Units>mm</Units>
+                <Count>1</Count>
+            </item>
+            <item>
+                <EFDB_Name>pointingOffsets</EFDB_Name>
+                <Description>Pointing offset to be applied to the boresight in units of arcseconds, relative
+                    to no glass being installed. Relative to the center of the detector,positive X-values
+                    result in moving along rows, to higher pixel values </Description>
+                <IDL_Type>float</IDL_Type>
+                <Units>arcsec</Units>
+                <Count>2</Count>
+            </item>
 </SALEvent>
 <SALEvent>
     <Subsystem>ATSpectrograph</Subsystem>
@@ -146,7 +172,7 @@
     <Explanation>http://sal.lsst.org</Explanation>
             <item>
                 <EFDB_Name>position</EFDB_Name>
-                <Description>The reported disperser position.</Description>
+                <Description>The reported grating/disperser position.</Description>
                 <!-- Enumeration: DisperserPosition -->
                 <IDL_Type>long</IDL_Type>
                 <Units>unitless</Units>
@@ -154,11 +180,29 @@
             </item>
             <item>
                 <EFDB_Name>name</EFDB_Name>
-                <Description>Name of the grating.</Description>
+                <Description>Name of the grating/disperser.</Description>
                 <IDL_Type>string</IDL_Type>
                 <IDL_Size>256</IDL_Size>
                 <Units>unitless</Units>
                 <Count>1</Count>
+            </item>
+            <item>
+                <EFDB_Name>focusOffset</EFDB_Name>
+                <Description>Focus offset to be applied on the secondary mirror in units of mm, relative to no glass
+                    being installed. Positive values push the secondary down and increase the back focal distance,
+                    therefore adding glass thickness will result in positive focus offsets.</Description>
+                <IDL_Type>float</IDL_Type>
+                <Units>mm</Units>
+                <Count>1</Count>
+            </item>
+            <item>
+                <EFDB_Name>pointingOffsets</EFDB_Name>
+                <Description>Pointing offset to be applied to the boresight in units of arcseconds, relative
+                    to no glass being installed. Relative to the center of the detector,positive X-values
+                    result in moving along rows, to higher pixel values </Description>
+                <IDL_Type>float</IDL_Type>
+                <Units>arcsec</Units>
+                <Count>2</Count>
             </item>
 </SALEvent>
 <SALEvent>
@@ -170,7 +214,7 @@
     <Explanation>http://sal.lsst.org</Explanation>
     <item>
         <EFDB_Name>inPosition</EFDB_Name>
-        <Description>Is the disperser in position?</Description>
+        <Description>Is the grating/disperser in position?</Description>
         <IDL_Type>boolean</IDL_Type>
         <Units>unitless</Units>
         <Count>1</Count>
@@ -306,8 +350,52 @@
                 <Count>1</Count>
             </item>
             <item>
+                <EFDB_Name>filterCentralWavelengths</EFDB_Name>
+                <Description>Comma separated list of filter central wavelengths.</Description>
+                <IDL_Type>string</IDL_Type>
+                <IDL_Size>256</IDL_Size>
+                <Units>unitless</Units>
+                <Count>1</Count>
+            </item>
+            <item>
+                <EFDB_Name>filterFocusOffsets</EFDB_Name>
+                <Description>Comma separated list of filter focus offsets to be applied to the hexapod [in mm].
+                </Description>
+                <IDL_Type>string</IDL_Type>
+                <IDL_Size>256</IDL_Size>
+                <Units>unitless</Units>
+                <Count>1</Count>
+            </item>
+            <item>
+                <EFDB_Name>filterPointingOffsets</EFDB_Name>
+                <Description>Comma separated list of [X,Y] filter pointing offsets to be applied to boresight [in arcsec].
+                </Description>
+                <IDL_Type>string</IDL_Type>
+                <IDL_Size>256</IDL_Size>
+                <Units>unitless</Units>
+                <Count>1</Count>
+            </item>
+            <item>
                 <EFDB_Name>gratingNames</EFDB_Name>
-                <Description>Comma separated list of grating names.</Description>
+                <Description>Comma separated list of disperser/grating names.</Description>
+                <IDL_Type>string</IDL_Type>
+                <IDL_Size>256</IDL_Size>
+                <Units>unitless</Units>
+                <Count>1</Count>
+            </item>
+            <item>
+                <EFDB_Name>gratingFocusOffsets</EFDB_Name>
+                <Description>Comma separated list of disperser/grating focus offsets to be applied to the hexapod [in mm].
+                </Description>
+                <IDL_Type>string</IDL_Type>
+                <IDL_Size>256</IDL_Size>
+                <Units>unitless</Units>
+                <Count>1</Count>
+            </item>
+                <item>
+                <EFDB_Name>gratingPointingOffsets</EFDB_Name>
+                <Description>Comma separated list of [X,Y] grating pointing offsets to be applied to boresight [in arcsec].
+                </Description>
                 <IDL_Type>string</IDL_Type>
                 <IDL_Size>256</IDL_Size>
                 <Units>unitless</Units>

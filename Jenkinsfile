@@ -36,7 +36,8 @@ pipeline {
                 script {
                     sh """
 		    docker run --name ${container_name} -di --rm -v ${WORKSPACE}:/home/appuser/trunk/ts_xml -w /home/appuser/trunk/ts_xml lsstts/robot:latest 
-                    docker exec -u appuser -w /home/appuser/trunk/ts_xml ${container_name} sh -c "python3 -m pip install --user -e . && pytest -ra --junitxml=tests/results/results.xml"
+                    docker exec -u appuser -w /home/appuser/trunk/ts_xml ${container_name} sh -c "python3 -m pip install --user -e . && \
+                        pytest -ra -o junit_family=xunit2 --junitxml=tests/results/results.xml"
                     docker stop ${container_name}
 		    echo "Test complete"
 		    """
