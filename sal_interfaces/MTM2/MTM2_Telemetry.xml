@@ -53,6 +53,54 @@
 
 <SALTelemetry>
     <Subsystem>MTM2</Subsystem>
+    <EFDB_Topic>MTM2_mirrorPositionMeasuredIMS</EFDB_Topic>
+    <Description>M2 mirror's rigid body position measured by the independent measurement system (IMS).</Description>
+    <item>
+        <EFDB_Name>x</EFDB_Name>
+        <Description>Position x.</Description>
+        <IDL_Type>double</IDL_Type>
+        <Units>micron</Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>y</EFDB_Name>
+        <Description>Position y.</Description>
+        <IDL_Type>double</IDL_Type>
+        <Units>micron</Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>z</EFDB_Name>
+        <Description>Position z.</Description>
+        <IDL_Type>double</IDL_Type>
+        <Units>micron</Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>xRot</EFDB_Name>
+        <Description>Rotation about x.</Description>
+        <IDL_Type>double</IDL_Type>
+        <Units>arcsec</Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>yRot</EFDB_Name>
+        <Description>Rotation about y.</Description>
+        <IDL_Type>double</IDL_Type>
+        <Units>arcsec</Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>zRot</EFDB_Name>
+        <Description>Rotation about z.</Description>
+        <IDL_Type>double</IDL_Type>
+        <Units>arcsec</Units>
+        <Count>1</Count>
+    </item>
+</SALTelemetry>
+
+<SALTelemetry>
+    <Subsystem>MTM2</Subsystem>
     <EFDB_Topic>MTM2_axialForceData</EFDB_Topic>
     <Description>Axial actuator forces data. Increasing force corresponds to increasing tension in the load cell. The elements are the actuator Ids from 1 to 72. The related ring Ids are B1-B30, C1-C24, and D1-D18.</Description>
     <item>
@@ -136,26 +184,26 @@
 <SALTelemetry>
     <Subsystem>MTM2</Subsystem>
     <EFDB_Topic>MTM2_temperaturesMeasured</EFDB_Topic>
-    <Description>Mirror and cell temperature sensor readings.</Description>
+    <Description>Mirror and cell temperature sensor readings relative to the origin (offset).</Description>
     <item>
         <EFDB_Name>ringTemperature</EFDB_Name>
         <Description>Ring temperatures: LG2-1, LG2-2, LG2-3, LG2-4, LG3-1, LG3-2, LG3-3, LG3-4, LG4-1, LG4-2, LG4-3, and LG4-4.</Description>
         <IDL_Type>double</IDL_Type>
-        <Units>Celsius</Units>
+        <Units>deg_C</Units>
         <Count>12</Count>
     </item>
     <item>
         <EFDB_Name>intakeTemperature</EFDB_Name>
         <Description>Intake temperatures: #1 and #2.</Description>
         <IDL_Type>double</IDL_Type>
-        <Units>Celsius</Units>
+        <Units>deg_C</Units>
         <Count>2</Count>
     </item>
     <item>
         <EFDB_Name>exhaustTemperature</EFDB_Name>
         <Description>Exhaust temperatures: #1 and #2.</Description>
         <IDL_Type>double</IDL_Type>
-        <Units>Celsius</Units>
+        <Units>deg_C</Units>
         <Count>2</Count>
     </item>
 </SALTelemetry>
@@ -274,6 +322,54 @@
 
 <SALTelemetry>
     <Subsystem>MTM2</Subsystem>
+    <EFDB_Topic>MTM2_balanceForceData</EFDB_Topic>
+    <Description>Net forces and moments as commanded by the force balance system. These are calculated using the 72 axial and 6 tangent balance forces, which are a component of the total forces being commanded.</Description>
+    <item>
+        <EFDB_Name>fx</EFDB_Name>
+        <Description>Total x-force commanded by the force balance system.</Description>
+        <IDL_Type>double</IDL_Type>
+        <Units>newton</Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>fy</EFDB_Name>
+        <Description>Total y-force commanded by the force balance system.</Description>
+        <IDL_Type>double</IDL_Type>
+        <Units>newton</Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>fz</EFDB_Name>
+        <Description>Total z-force commanded by the force balance system.</Description>
+        <IDL_Type>double</IDL_Type>
+        <Units>newton</Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>mx</EFDB_Name>
+        <Description>Total x-moment of force commanded by the force balance system.</Description>
+        <IDL_Type>double</IDL_Type>
+        <Units>newton*meter</Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>my</EFDB_Name>
+        <Description>Total y-moment of force commanded by the force balance system.</Description>
+        <IDL_Type>double</IDL_Type>
+        <Units>newton*meter</Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>mz</EFDB_Name>
+        <Description>Total z-moment of force commanded by the force balance system.</Description>
+        <IDL_Type>double</IDL_Type>
+        <Units>newton*meter</Units>
+        <Count>1</Count>
+    </item>
+</SALTelemetry>
+
+<SALTelemetry>
+    <Subsystem>MTM2</Subsystem>
     <EFDB_Topic>MTM2_netForcesTotal</EFDB_Topic>
     <Description>Totol actuator net forces.</Description>
     <item>
@@ -322,6 +418,40 @@
         <Description>Net moment of force in z direction.</Description>
         <IDL_Type>double</IDL_Type>
         <Units>newton*meter</Units>
+        <Count>1</Count>
+    </item>
+</SALTelemetry>
+
+<SALTelemetry>
+    <Subsystem>MTM2</Subsystem>
+    <EFDB_Topic>MTM2_powerStatus</EFDB_Topic>
+    <Description>Total voltage and current for motors and communication system of M2.</Description>
+    <item>
+        <EFDB_Name>motorVoltage</EFDB_Name>
+        <Description>Total motor voltage.</Description>
+        <IDL_Type>double</IDL_Type>
+        <Units>volt</Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>motorCurrent</EFDB_Name>
+        <Description>Total motor current.</Description>
+        <IDL_Type>double</IDL_Type>
+        <Units>ampere</Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>commVoltage</EFDB_Name>
+        <Description>Total communication voltage.</Description>
+        <IDL_Type>double</IDL_Type>
+        <Units>volt</Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>commCurrent</EFDB_Name>
+        <Description>Total communication current.</Description>
+        <IDL_Type>double</IDL_Type>
+        <Units>ampere</Units>
         <Count>1</Count>
     </item>
 </SALTelemetry>

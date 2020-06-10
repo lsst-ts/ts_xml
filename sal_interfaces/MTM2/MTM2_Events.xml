@@ -101,4 +101,60 @@
     </item>
 </SALEvent>
 
+<SALEvent>
+    <Subsystem>MTM2</Subsystem>
+    <EFDB_Topic>MTM2_logevent_forceBalanceSystemStatus</EFDB_Topic>
+    <Alias>forceBalanceSystemStatus</Alias>
+    <Description>The status of force balance (FB) system (on or off).</Description>
+    <item>
+        <EFDB_Name>status</EFDB_Name>
+        <Description>True if FB is on, False if off.</Description>
+        <IDL_Type>boolean</IDL_Type>
+        <Units>unitless</Units>
+        <Count>1</Count>
+    </item>
+</SALEvent>
+
+<SALEvent>
+    <Subsystem>MTM2</Subsystem>
+    <EFDB_Topic>MTM2_logevent_inclinationTelemetrySource</EFDB_Topic>
+    <Alias>inclinationTelemetrySource</Alias>
+    <Description>The source of inclination telemetry (onboard or from main telescope mount (MTMount) control system).</Description>
+    <item>
+        <EFDB_Name>source</EFDB_Name>
+        <Description>0: onboard. 1: MTMount.</Description>
+        <IDL_Type>int</IDL_Type>
+        <Units>unitless</Units>
+        <Count>1</Count>
+    </item>
+</SALEvent>
+
+<SALEvent>
+    <Subsystem>MTM2</Subsystem>
+    <EFDB_Topic>MTM2_logevent_temperatureOffset</EFDB_Topic>
+    <Alias>temperatureOffset</Alias>
+    <Description>Offset of temperature sensors.</Description>
+    <item>
+        <EFDB_Name>offsetRing</EFDB_Name>
+        <Description>Offset of ring temperatures: LG2-1, LG2-2, LG2-3, LG2-4, LG3-1, LG3-2, LG3-3, LG3-4, LG4-1, LG4-2, LG4-3, and LG4-4.</Description>
+        <IDL_Type>double</IDL_Type>
+        <Units>deg_C</Units>
+        <Count>12</Count>
+    </item>
+    <item>
+        <EFDB_Name>offsetIntake</EFDB_Name>
+        <Description>Offset of intake temperatures: #1 and #2.</Description>
+        <IDL_Type>double</IDL_Type>
+        <Units>deg_C</Units>
+        <Count>2</Count>
+    </item>
+    <item>
+        <EFDB_Name>offsetExhaust</EFDB_Name>
+        <Description>Offset of exhaust temperatures: #1 and #2.</Description>
+        <IDL_Type>double</IDL_Type>
+        <Units>deg_C</Units>
+        <Count>2</Count>
+    </item>
+</SALEvent>
+
 </SALEventSet>
