@@ -1,208 +1,206 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-stylesheet type="text/xsl" href="http://lsst-sal.tuc.noao.edu/schema/SALEventSet.xsl"?>
-<SALEventSet xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:noNamespaceSchemaLocation="http://lsst-sal.tuc.noao.edu/schema/SALEventSet.xsd">
-<Enumeration>SummaryState_DisabledState,SummaryState_EnabledState,SummaryState_FaultState,SummaryState_OfflineState,SummaryState_StandbyState</Enumeration>
-<Enumeration>DetailedState_DisabledState,DetailedState_EnabledState,DetailedState_FaultState,DetailedState_OfflineState,DetailedState_StandbyState</Enumeration>
-
-<SALEvent>
-    <Subsystem>Dome</Subsystem>
-    <EFDB_Topic>Dome_logevent_stateChange</EFDB_Topic>
-    <item>
-        <EFDB_Name>newState</EFDB_Name>
-        <Description>Reached dome state</Description>
-        <IDL_Type>int</IDL_Type>
-        <Units>unitless</Units>
-        <Count>1</Count>
-    </item>
-</SALEvent>
-<SALEvent>
-    <Subsystem>Dome</Subsystem>
-    <EFDB_Topic>Dome_logevent_motionEnabled</EFDB_Topic>
-            <item>
-                <EFDB_Name>motionEnabledId</EFDB_Name>
-                <Description>Identify the dome device that has been enabled for actions</Description>
-                <IDL_Type>int</IDL_Type>
-                <Units>unitless</Units>
-                <Count>1</Count>
-            </item>
-</SALEvent>
-<SALEvent>
-    <Subsystem>Dome</Subsystem>
-    <EFDB_Topic>Dome_logevent_inPosition</EFDB_Topic>
-            <item>
-                <EFDB_Name>deviceId</EFDB_Name>
-                <Description>Identify the dome device that has reached an in position condition</Description>
-                <IDL_Type>int</IDL_Type>
-                <Units>unitless</Units>
-                <Count>1</Count>
-            </item>
-            <item>
-                <EFDB_Name>devicePosition</EFDB_Name>
-                <Description>Return the actual dome device position</Description>
-                <IDL_Type>float</IDL_Type>
-                <Units>unitless</Units>
-                <Count>1</Count>
-            </item>
-</SALEvent>
-<SALEvent>
-    <Subsystem>Dome</Subsystem>
-    <EFDB_Topic>Dome_logevent_driveFault</EFDB_Topic>
-            <item>
-                <EFDB_Name>driveId</EFDB_Name>
-                <Description>Identify the dome drive that has reached a fault condition</Description>
-                <IDL_Type>int</IDL_Type>
-                <Units>unitless</Units>
-                <Count>1</Count>
-            </item>
-            <item>
-                <EFDB_Name>driveFaultCode</EFDB_Name>
-                <Description>Return the actual dome drive fault code</Description>
-                <IDL_Type>string</IDL_Type>
-                <Units>unitless</Units>
-                <Count>1</Count>
-            </item>
-</SALEvent>
-<SALEvent>
-    <Subsystem>Dome</Subsystem>
-    <EFDB_Topic>Dome_logevent_lockingPinEngaged</EFDB_Topic>
-            <item>
-                <EFDB_Name>lockingPinEngagedId</EFDB_Name>
-                <Description>Identify the locking pin that has been engaged</Description>
-                <IDL_Type>int</IDL_Type>
-                <Units>unitless</Units>
-                <Count>1</Count>
-            </item>
-</SALEvent>
-<SALEvent>
-    <Subsystem>Dome</Subsystem>
-    <EFDB_Topic>Dome_logevent_lockingPinDisengaged</EFDB_Topic>
-            <item>
-                <EFDB_Name>lockingPinDisengagedId</EFDB_Name>
-                <Description>Identify the locking pin that has been disengaged</Description>
-                <IDL_Type>int</IDL_Type>
-                <Units>unitless</Units>
-                <Count>1</Count>
-            </item>
-</SALEvent>
-<SALEvent>
-    <Subsystem>Dome</Subsystem>
-    <EFDB_Topic>Dome_logevent_overTemp</EFDB_Topic>
-            <item>
-                <EFDB_Name>overTempId</EFDB_Name>
-                <Description>Identify the dome device in over temperature condition</Description>
-                <IDL_Type>int</IDL_Type>
-                <Units>unitless</Units>
-                <Count>1</Count>
-            </item>
-            <item>
-                <EFDB_Name>overTempValue</EFDB_Name>
-                <Description>Return the actual over temperature value</Description>
-                <IDL_Type>float</IDL_Type>
-                <Units>deg_C</Units>
-                <Count>1</Count>
-            </item>
-</SALEvent>
-<SALEvent>
-    <Subsystem>Dome</Subsystem>
-    <EFDB_Topic>Dome_logevent_speedLimitReached</EFDB_Topic>
-            <item>
-                <EFDB_Name>speedLimitReachedId</EFDB_Name>
-                <Description>Identify the dome drive that has reached speed limit</Description>
-                <IDL_Type>int</IDL_Type>
-                <Units>unitless</Units>
-                <Count>1</Count>
-            </item>
-            <item>
-                <EFDB_Name>speedLimitReachedValue</EFDB_Name>
-                <Description>Return the actual speed value</Description>
-                <IDL_Type>float</IDL_Type>
-                <Units>deg/s</Units>
-                <Count>1</Count>
-            </item>
-</SALEvent>
-<SALEvent>
-    <Subsystem>Dome</Subsystem>
-    <EFDB_Topic>Dome_logevent_accelLimitReached</EFDB_Topic>
-            <item>
-                <EFDB_Name>accelLimitReachedId</EFDB_Name>
-                <Description>Identify the dome drive that has reached acceleration limit</Description>
-                <IDL_Type>int</IDL_Type>
-                <Units>unitless</Units>
-                <Count>1</Count>
-            </item>
-            <item>
-                <EFDB_Name>accelLimitReachedValue</EFDB_Name>
-                <Description>Return the actual acceleration value</Description>
-                <IDL_Type>float</IDL_Type>
-                <Units>deg/s^2</Units>
-                <Count>1</Count>
-            </item>
-</SALEvent>
-<SALEvent>
-    <Subsystem>Dome</Subsystem>
-    <EFDB_Topic>Dome_logevent_brakeEngaged</EFDB_Topic>
-            <item>
-                <EFDB_Name>brakeEngagedId</EFDB_Name>
-                <Description>Identify the device whose brake has been engaged</Description>
-                <IDL_Type>int</IDL_Type>
-                <Units>unitless</Units>
-                <Count>1</Count>
-            </item>
-</SALEvent>
-<SALEvent>
-    <Subsystem>Dome</Subsystem>
-    <EFDB_Topic>Dome_logevent_brakeDisengaged</EFDB_Topic>
-            <item>
-                <EFDB_Name>brakeDisengagedId</EFDB_Name>
-                <Description>Identify the device whose brake has been disengaged</Description>
-                <IDL_Type>int</IDL_Type>
-                <Units>unitless</Units>
-                <Count>1</Count>
-            </item>
-</SALEvent>
-<SALEvent>
-    <Subsystem>Dome</Subsystem>
-    <EFDB_Topic>Dome_logevent_craneStatusChange</EFDB_Topic>
-            <item>
-                <EFDB_Name>craneStatusChangeCode</EFDB_Name>
-                <Description>Return the code of the crane status change</Description>
-                <IDL_Type>int</IDL_Type>
-                <Units>unitless</Units>
-                <Count>1</Count>
-            </item>
-</SALEvent>
-<SALEvent>
-    <Subsystem>Dome</Subsystem>
-    <EFDB_Topic>Dome_logevent_rearDoorStatusChange</EFDB_Topic>
-            <item>
-                <EFDB_Name>rearDoorStatusChangeCode</EFDB_Name>
-                <Description>Return the code of the rear door status change</Description>
-                <IDL_Type>int</IDL_Type>
-                <Units>unitless</Units>
-                <Count>1</Count>
-            </item>
-</SALEvent>
-<SALEvent>
-    <Subsystem>Dome</Subsystem>
-    <EFDB_Topic>Dome_logevent_sealStatusChange</EFDB_Topic>
-            <item>
-                <EFDB_Name>seatStatusChangeCode</EFDB_Name>
-                <Description>Return the code of the seal status change</Description>
-                <IDL_Type>int</IDL_Type>
-                <Units>unitless</Units>
-                <Count>1</Count>
-            </item>
-</SALEvent>
-<SALEvent>
-    <Subsystem>Dome</Subsystem>
-    <EFDB_Topic>Dome_logevent_interlockAlarm</EFDB_Topic>
-            <item>
-                <EFDB_Name>interlockAlarmCode</EFDB_Name>
-                <Description>Return the code of the interlock alarm</Description>
-                <IDL_Type>int</IDL_Type>
-                <Units>unitless</Units>
-                <Count>1</Count>
-            </item>
-</SALEvent>
+<SALEventSet xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://lsst-sal.tuc.noao.edu/schema/SALEventSet.xsd">
+    <Enumeration>SummaryState_DisabledState,SummaryState_EnabledState,SummaryState_FaultState,SummaryState_OfflineState,SummaryState_StandbyState</Enumeration>
+    <Enumeration>DetailedState_DisabledState,DetailedState_EnabledState,DetailedState_FaultState,DetailedState_OfflineState,DetailedState_StandbyState</Enumeration>
+    <SALEvent>
+        <Subsystem>Dome</Subsystem>
+        <EFDB_Topic>Dome_logevent_stateChange</EFDB_Topic>
+        <item>
+            <EFDB_Name>newState</EFDB_Name>
+            <Description>Reached dome state</Description>
+            <IDL_Type>int</IDL_Type>
+            <Units>unitless</Units>
+            <Count>1</Count>
+        </item>
+    </SALEvent>
+    <SALEvent>
+        <Subsystem>Dome</Subsystem>
+        <EFDB_Topic>Dome_logevent_motionEnabled</EFDB_Topic>
+        <item>
+            <EFDB_Name>motionEnabledId</EFDB_Name>
+            <Description>Identify the dome device that has been enabled for actions</Description>
+            <IDL_Type>int</IDL_Type>
+            <Units>unitless</Units>
+            <Count>1</Count>
+        </item>
+    </SALEvent>
+    <SALEvent>
+        <Subsystem>Dome</Subsystem>
+        <EFDB_Topic>Dome_logevent_inPosition</EFDB_Topic>
+        <item>
+            <EFDB_Name>deviceId</EFDB_Name>
+            <Description>Identify the dome device that has reached an in position condition</Description>
+            <IDL_Type>int</IDL_Type>
+            <Units>unitless</Units>
+            <Count>1</Count>
+        </item>
+        <item>
+            <EFDB_Name>devicePosition</EFDB_Name>
+            <Description>Return the actual dome device position</Description>
+            <IDL_Type>float</IDL_Type>
+            <Units>unitless</Units>
+            <Count>1</Count>
+        </item>
+    </SALEvent>
+    <SALEvent>
+        <Subsystem>Dome</Subsystem>
+        <EFDB_Topic>Dome_logevent_driveFault</EFDB_Topic>
+        <item>
+            <EFDB_Name>driveId</EFDB_Name>
+            <Description>Identify the dome drive that has reached a fault condition</Description>
+            <IDL_Type>int</IDL_Type>
+            <Units>unitless</Units>
+            <Count>1</Count>
+        </item>
+        <item>
+            <EFDB_Name>driveFaultCode</EFDB_Name>
+            <Description>Return the actual dome drive fault code</Description>
+            <IDL_Type>string</IDL_Type>
+            <Units>unitless</Units>
+            <Count>1</Count>
+        </item>
+    </SALEvent>
+    <SALEvent>
+        <Subsystem>Dome</Subsystem>
+        <EFDB_Topic>Dome_logevent_lockingPinEngaged</EFDB_Topic>
+        <item>
+            <EFDB_Name>lockingPinEngagedId</EFDB_Name>
+            <Description>Identify the locking pin that has been engaged</Description>
+            <IDL_Type>int</IDL_Type>
+            <Units>unitless</Units>
+            <Count>1</Count>
+        </item>
+    </SALEvent>
+    <SALEvent>
+        <Subsystem>Dome</Subsystem>
+        <EFDB_Topic>Dome_logevent_lockingPinDisengaged</EFDB_Topic>
+        <item>
+            <EFDB_Name>lockingPinDisengagedId</EFDB_Name>
+            <Description>Identify the locking pin that has been disengaged</Description>
+            <IDL_Type>int</IDL_Type>
+            <Units>unitless</Units>
+            <Count>1</Count>
+        </item>
+    </SALEvent>
+    <SALEvent>
+        <Subsystem>Dome</Subsystem>
+        <EFDB_Topic>Dome_logevent_overTemp</EFDB_Topic>
+        <item>
+            <EFDB_Name>overTempId</EFDB_Name>
+            <Description>Identify the dome device in over temperature condition</Description>
+            <IDL_Type>int</IDL_Type>
+            <Units>unitless</Units>
+            <Count>1</Count>
+        </item>
+        <item>
+            <EFDB_Name>overTempValue</EFDB_Name>
+            <Description>Return the actual over temperature value</Description>
+            <IDL_Type>float</IDL_Type>
+            <Units>deg_C</Units>
+            <Count>1</Count>
+        </item>
+    </SALEvent>
+    <SALEvent>
+        <Subsystem>Dome</Subsystem>
+        <EFDB_Topic>Dome_logevent_speedLimitReached</EFDB_Topic>
+        <item>
+            <EFDB_Name>speedLimitReachedId</EFDB_Name>
+            <Description>Identify the dome drive that has reached speed limit</Description>
+            <IDL_Type>int</IDL_Type>
+            <Units>unitless</Units>
+            <Count>1</Count>
+        </item>
+        <item>
+            <EFDB_Name>speedLimitReachedValue</EFDB_Name>
+            <Description>Return the actual speed value</Description>
+            <IDL_Type>float</IDL_Type>
+            <Units>deg/s</Units>
+            <Count>1</Count>
+        </item>
+    </SALEvent>
+    <SALEvent>
+        <Subsystem>Dome</Subsystem>
+        <EFDB_Topic>Dome_logevent_accelLimitReached</EFDB_Topic>
+        <item>
+            <EFDB_Name>accelLimitReachedId</EFDB_Name>
+            <Description>Identify the dome drive that has reached acceleration limit</Description>
+            <IDL_Type>int</IDL_Type>
+            <Units>unitless</Units>
+            <Count>1</Count>
+        </item>
+        <item>
+            <EFDB_Name>accelLimitReachedValue</EFDB_Name>
+            <Description>Return the actual acceleration value</Description>
+            <IDL_Type>float</IDL_Type>
+            <Units>deg/s^2</Units>
+            <Count>1</Count>
+        </item>
+    </SALEvent>
+    <SALEvent>
+        <Subsystem>Dome</Subsystem>
+        <EFDB_Topic>Dome_logevent_brakeEngaged</EFDB_Topic>
+        <item>
+            <EFDB_Name>brakeEngagedId</EFDB_Name>
+            <Description>Identify the device whose brake has been engaged</Description>
+            <IDL_Type>int</IDL_Type>
+            <Units>unitless</Units>
+            <Count>1</Count>
+        </item>
+    </SALEvent>
+    <SALEvent>
+        <Subsystem>Dome</Subsystem>
+        <EFDB_Topic>Dome_logevent_brakeDisengaged</EFDB_Topic>
+        <item>
+            <EFDB_Name>brakeDisengagedId</EFDB_Name>
+            <Description>Identify the device whose brake has been disengaged</Description>
+            <IDL_Type>int</IDL_Type>
+            <Units>unitless</Units>
+            <Count>1</Count>
+        </item>
+    </SALEvent>
+    <SALEvent>
+        <Subsystem>Dome</Subsystem>
+        <EFDB_Topic>Dome_logevent_craneStatusChange</EFDB_Topic>
+        <item>
+            <EFDB_Name>craneStatusChangeCode</EFDB_Name>
+            <Description>Return the code of the crane status change</Description>
+            <IDL_Type>int</IDL_Type>
+            <Units>unitless</Units>
+            <Count>1</Count>
+        </item>
+    </SALEvent>
+    <SALEvent>
+        <Subsystem>Dome</Subsystem>
+        <EFDB_Topic>Dome_logevent_rearDoorStatusChange</EFDB_Topic>
+        <item>
+            <EFDB_Name>rearDoorStatusChangeCode</EFDB_Name>
+            <Description>Return the code of the rear door status change</Description>
+            <IDL_Type>int</IDL_Type>
+            <Units>unitless</Units>
+            <Count>1</Count>
+        </item>
+    </SALEvent>
+    <SALEvent>
+        <Subsystem>Dome</Subsystem>
+        <EFDB_Topic>Dome_logevent_sealStatusChange</EFDB_Topic>
+        <item>
+            <EFDB_Name>seatStatusChangeCode</EFDB_Name>
+            <Description>Return the code of the seal status change</Description>
+            <IDL_Type>int</IDL_Type>
+            <Units>unitless</Units>
+            <Count>1</Count>
+        </item>
+    </SALEvent>
+    <SALEvent>
+        <Subsystem>Dome</Subsystem>
+        <EFDB_Topic>Dome_logevent_interlockAlarm</EFDB_Topic>
+        <item>
+            <EFDB_Name>interlockAlarmCode</EFDB_Name>
+            <Description>Return the code of the interlock alarm</Description>
+            <IDL_Type>int</IDL_Type>
+            <Units>unitless</Units>
+            <Count>1</Count>
+        </item>
+    </SALEvent>
 </SALEventSet>
