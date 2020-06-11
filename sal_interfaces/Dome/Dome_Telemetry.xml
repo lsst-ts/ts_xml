@@ -3,380 +3,387 @@
 <SALTelemetrySet xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://lsst-sal.tuc.noao.edu/schema/SALTelemetrySet.xsd">
     <SALTelemetry>
         <Subsystem>Dome</Subsystem>
-        <EFDB_Topic>Dome_summary</EFDB_Topic>
-        <item>
-            <EFDB_Name>status</EFDB_Name>
-            <Description>Describe the status of each dome subsystem</Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units>unitless</Units>
-            <Count>16</Count>
-        </item>
-    </SALTelemetry>
-    <SALTelemetry>
-        <Subsystem>Dome</Subsystem>
-        <EFDB_Topic>Dome_domeADB_status</EFDB_Topic>
-        <item>
-            <EFDB_Name>positionError</EFDB_Name>
-            <Description>Contain the azimuth rotation position error</Description>
-            <IDL_Type>float</IDL_Type>
-            <Units>deg</Units>
-            <Count>1</Count>
-        </item>
+        <EFDB_Topic>Dome_azimuth</EFDB_Topic>
+        <Description>Status of the azimuth axis and drives.</Description>
         <item>
             <EFDB_Name>positionActual</EFDB_Name>
-            <Description>Contain the present position of the azimuth rotation motion</Description>
+            <Description>Measured azimuth axis position.</Description>
             <IDL_Type>float</IDL_Type>
             <Units>deg</Units>
             <Count>1</Count>
         </item>
         <item>
-            <EFDB_Name>positionCmd</EFDB_Name>
-            <Description>Contain the azimuth rotation commanded position</Description>
+            <EFDB_Name>positionCommanded</EFDB_Name>
+            <Description>Commanded azimuth azimuth position.</Description>
             <IDL_Type>float</IDL_Type>
             <Units>deg</Units>
+            <Count>1</Count>
+        </item>
+        <item>
+            <EFDB_Name>velocityActual</EFDB_Name>
+            <Description>Measured azimuth axis velocity.</Description>
+            <IDL_Type>float</IDL_Type>
+            <Units>deg/second</Units>
+            <Count>1</Count>
+        </item>
+        <item>
+            <EFDB_Name>velocityCommanded</EFDB_Name>
+            <Description>Commanded azimuth axis velocity.</Description>
+            <IDL_Type>float</IDL_Type>
+            <Units>deg/second</Units>
             <Count>1</Count>
         </item>
         <item>
             <EFDB_Name>driveTorqueActual</EFDB_Name>
-            <Description>Contain the actual torque of the azimuth drives</Description>
+            <Description>Measured torque for each azimuth drive.</Description>
             <IDL_Type>float</IDL_Type>
             <Units>J</Units>
             <Count>5</Count>
         </item>
         <item>
-            <EFDB_Name>driveTorqueError</EFDB_Name>
-            <Description>Contain the error in torque of the azimuth drives</Description>
-            <IDL_Type>float</IDL_Type>
-            <Units>J</Units>
-            <Count>5</Count>
-        </item>
-        <item>
-            <EFDB_Name>driveTorqueCmd</EFDB_Name>
-            <Description>Contain the commanded torque to the azimuth drives</Description>
+            <EFDB_Name>driveTorqueCommanded</EFDB_Name>
+            <Description>Commanded torque for each azimuth drive.</Description>
             <IDL_Type>float</IDL_Type>
             <Units>J</Units>
             <Count>5</Count>
         </item>
         <item>
             <EFDB_Name>driveCurrentActual</EFDB_Name>
-            <Description>Contain the actual current applied to the azimuth drives</Description>
+            <Description>Measured current drawn by each azimuth drive.</Description>
             <IDL_Type>float</IDL_Type>
             <Units>A</Units>
             <Count>5</Count>
         </item>
         <item>
-            <EFDB_Name>driveTempActual</EFDB_Name>
-            <Description>Contein the actual temperature of the azimuth drives</Description>
+            <EFDB_Name>driveTemperature</EFDB_Name>
+            <Description>Measured temperature of each azimuth drive.</Description>
             <IDL_Type>float</IDL_Type>
             <Units>deg_C</Units>
             <Count>5</Count>
         </item>
         <item>
             <EFDB_Name>encoderHeadRaw</EFDB_Name>
-            <Description>Contain the raw readout of the azimuth encoders head</Description>
+            <Description>Raw readout of each azimuth encoder head.</Description>
             <IDL_Type>float</IDL_Type>
             <Units>unitless</Units>
             <Count>5</Count>
         </item>
         <item>
             <EFDB_Name>encoderHeadCalibrated</EFDB_Name>
-            <Description>Contain the calibrated readout of the azimuth encoders head</Description>
+            <Description>Calibrated readout of each azimuth encoder head.</Description>
             <IDL_Type>float</IDL_Type>
             <Units>deg</Units>
             <Count>5</Count>
         </item>
         <item>
             <EFDB_Name>resolverRaw</EFDB_Name>
-            <Description>Contain the raw value of the azimuth resolvers</Description>
+            <Description>Raw readout of each azimuth drive resolver.</Description>
             <IDL_Type>float</IDL_Type>
             <Units>unitless</Units>
             <Count>5</Count>
         </item>
         <item>
             <EFDB_Name>resolverCalibrated</EFDB_Name>
-            <Description>Contain the calibrated value of the azimuth resolvers</Description>
+            <Description>Calibrated readout of each azimuth drive resolver.</Description>
             <IDL_Type>float</IDL_Type>
             <Units>deg</Units>
             <Count>5</Count>
         </item>
+        <item>
+            <EFDB_Name>timestamp</EFDB_Name>
+            <Description>Time at which the data was determined (TAI unix seconds).</Description>
+            <IDL_Type>float</IDL_Type>
+            <Units>second</Units>
+            <Count>1</Count>
+        </item>
     </SALTelemetry>
     <SALTelemetry>
         <Subsystem>Dome</Subsystem>
-        <EFDB_Topic>Dome_domeAPS_status</EFDB_Topic>
-        <item>
-            <EFDB_Name>positionError</EFDB_Name>
-            <Description>Contain the position error of the aperture shutter</Description>
-            <IDL_Type>float</IDL_Type>
-            <Units>unitless</Units>
-            <Count>1</Count>
-        </item>
+        <EFDB_Topic>Dome_lightWindScreen</EFDB_Topic>
+        <Description>Status of the light/wind screen (elevation axis).</Description>
         <item>
             <EFDB_Name>positionActual</EFDB_Name>
-            <Description>Contain the present position of the aperture shutter</Description>
+            <Description>Measured position of the light/wind screen.</Description>
+            <IDL_Type>float</IDL_Type>
+            <Units>deg</Units>
+            <Count>1</Count>
+        </item>
+        <item>
+            <EFDB_Name>positionCommanded</EFDB_Name>
+            <Description>Commanded position of the light/wind screen.</Description>
+            <IDL_Type>float</IDL_Type>
+            <Units>deg</Units>
+            <Count>1</Count>
+        </item>
+        <item>
+            <EFDB_Name>velocityActual</EFDB_Name>
+            <Description>Measured velocity of the light/wind screen.</Description>
+            <IDL_Type>float</IDL_Type>
+            <Units>deg/second</Units>
+            <Count>1</Count>
+        </item>
+        <item>
+            <EFDB_Name>velocityCommanded</EFDB_Name>
+            <Description>Commanded velocity of the light/wind screen.</Description>
+            <IDL_Type>float</IDL_Type>
+            <Units>deg/second</Units>
+            <Count>1</Count>
+        </item>
+        <item>
+            <EFDB_Name>driveTorqueActual</EFDB_Name>
+            <Description>Measured torque of each light/wind screen drive.</Description>
+            <IDL_Type>float</IDL_Type>
+            <Units>J</Units>
+            <Count>2</Count>
+        </item>
+        <item>
+            <EFDB_Name>driveTorqueCommanded</EFDB_Name>
+            <Description>Commanded torque of each light/screen drive.</Description>
+            <IDL_Type>float</IDL_Type>
+            <Units>J</Units>
+            <Count>2</Count>
+        </item>
+        <item>
+            <EFDB_Name>driveCurrentActual</EFDB_Name>
+            <Description>Measured current drawn by each light/wind screen drive.</Description>
+            <IDL_Type>float</IDL_Type>
+            <Units>A</Units>
+            <Count>2</Count>
+        </item>
+        <item>
+            <EFDB_Name>driveTemperatureActual</EFDB_Name>
+            <Description>Temperature of each light/wind screen drive.</Description>
+            <IDL_Type>float</IDL_Type>
+            <Units>deg_C</Units>
+            <Count>2</Count>
+        </item>
+        <item>
+            <EFDB_Name>encoderHeadRaw</EFDB_Name>
+            <Description>Raw value of each light/wind screen encoder.</Description>
+            <IDL_Type>float</IDL_Type>
+            <Units>unitless</Units>
+            <Count>2</Count>
+        </item>
+        <item>
+            <EFDB_Name>encoderHeadCalibrated</EFDB_Name>
+            <Description>Calibrated value of each light/wind screen encoder.</Description>
+            <IDL_Type>float</IDL_Type>
+            <Units>deg</Units>
+            <Count>2</Count>
+        </item>
+        <item>
+            <EFDB_Name>resolverRaw</EFDB_Name>
+            <Description>Raw value of each light/wind screen resolver.</Description>
+            <IDL_Type>float</IDL_Type>
+            <Units>unitless</Units>
+            <Count>2</Count>
+        </item>
+        <item>
+            <EFDB_Name>resolverCalibrated</EFDB_Name>
+            <Description>Calibrated value of each light/wind screen resolver.</Description>
+            <IDL_Type>float</IDL_Type>
+            <Units>deg</Units>
+            <Count>2</Count>
+        </item>
+        <item>
+            <EFDB_Name>powerDraw</EFDB_Name>
+            <Description>Total power drawn by all light/wind screen drives.</Description>
+            <IDL_Type>float</IDL_Type>
+            <Units>W</Units>
+            <Count>1</Count>
+        </item>
+        <item>
+            <EFDB_Name>timestamp</EFDB_Name>
+            <Description>Time at which the data was determined (TAI unix seconds).</Description>
+            <IDL_Type>float</IDL_Type>
+            <Units>second</Units>
+            <Count>1</Count>
+        </item>
+    </SALTelemetry>
+    <SALTelemetry>
+        <Subsystem>Dome</Subsystem>
+        <EFDB_Topic>Dome_apertureShutter</EFDB_Topic>
+        <item>
+            <EFDB_Name>positionActual</EFDB_Name>
+            <Description>Measured position of the aperture shutter (percent open).</Description>
             <IDL_Type>float</IDL_Type>
             <Units>unitless</Units>
             <Count>1</Count>
         </item>
         <item>
-            <EFDB_Name>positionCmd</EFDB_Name>
-            <Description>Contain the commanded position for the aperture shutter</Description>
+            <EFDB_Name>positionCommanded</EFDB_Name>
+            <Description>Commanded position of the aperture shutter (percent open).</Description>
             <IDL_Type>float</IDL_Type>
             <Units>unitless</Units>
             <Count>1</Count>
         </item>
         <item>
             <EFDB_Name>driveTorqueActual</EFDB_Name>
-            <Description>Contain the present torque of the aperture shutter drives</Description>
+            <Description>Measured torque for each aperture shutter drive.</Description>
             <IDL_Type>float</IDL_Type>
             <Units>J</Units>
             <Count>4</Count>
         </item>
         <item>
-            <EFDB_Name>driveTorqueError</EFDB_Name>
-            <Description>Contain the torque error of the aperture shutter drives</Description>
-            <IDL_Type>float</IDL_Type>
-            <Units>J</Units>
-            <Count>4</Count>
-        </item>
-        <item>
-            <EFDB_Name>driveTorqueCmd</EFDB_Name>
-            <Description>Contain the commanded torque to the aperture shutter drives</Description>
+            <EFDB_Name>driveTorqueCommanded</EFDB_Name>
+            <Description>Commanded torque for each aperture shutter drive.</Description>
             <IDL_Type>float</IDL_Type>
             <Units>J</Units>
             <Count>4</Count>
         </item>
         <item>
             <EFDB_Name>driveCurrentActual</EFDB_Name>
-            <Description>Contain the present current applied to the aperture shutter drives</Description>
+            <Description>Measured current drawn by each aperture shutter drive.</Description>
             <IDL_Type>float</IDL_Type>
             <Units>A</Units>
             <Count>4</Count>
         </item>
         <item>
-            <EFDB_Name>driveTempActual</EFDB_Name>
-            <Description>Contain the present temperature of the aperture shutter drives/motors</Description>
+            <EFDB_Name>driveTemperature</EFDB_Name>
+            <Description>Measured temperature of each aperture shutter drive/motors.</Description>
             <IDL_Type>float</IDL_Type>
             <Units>deg_C</Units>
             <Count>4</Count>
         </item>
         <item>
             <EFDB_Name>resolverHeadRaw</EFDB_Name>
-            <Description>Contain the raw value of the aperture shutter drives resolver</Description>
+            <Description>Raw value of each aperture shutter drive resolver.</Description>
             <IDL_Type>float</IDL_Type>
             <Units>unitless</Units>
             <Count>4</Count>
         </item>
         <item>
             <EFDB_Name>resolverHeadCalibrated</EFDB_Name>
-            <Description>Contain the calibrated value of the aperture shutter drives resolver</Description>
+            <Description>Calibrated value of each aperture shutter drive resolver.</Description>
             <IDL_Type>float</IDL_Type>
             <Units>deg</Units>
             <Count>4</Count>
         </item>
         <item>
-            <EFDB_Name>powerAbsortion</EFDB_Name>
-            <Description>Current total power absorption</Description>
+            <EFDB_Name>powerDraw</EFDB_Name>
+            <Description>Total power drawn by all shutter drives.</Description>
             <IDL_Type>float</IDL_Type>
             <Units>W</Units>
+            <Count>1</Count>
+        </item>
+        <item>
+            <EFDB_Name>timestamp</EFDB_Name>
+            <Description>Time at which the data was determined (TAI unix seconds).</Description>
+            <IDL_Type>float</IDL_Type>
+            <Units>second</Units>
             <Count>1</Count>
         </item>
     </SALTelemetry>
     <SALTelemetry>
         <Subsystem>Dome</Subsystem>
-        <EFDB_Topic>Dome_domeLouvers_status</EFDB_Topic>
-        <item>
-            <EFDB_Name>positionError</EFDB_Name>
-            <Description>Contain the position error of the louvers</Description>
-            <IDL_Type>float</IDL_Type>
-            <Units>unitless</Units>
-            <Count>34</Count>
-        </item>
+        <EFDB_Topic>Dome_louvers</EFDB_Topic>
+        <Description>Status of the louvers.</Description>
         <item>
             <EFDB_Name>positionActual</EFDB_Name>
-            <Description>Contain the present position of the louvers</Description>
+            <Description>Measured position of each louver (percent open).</Description>
             <IDL_Type>float</IDL_Type>
             <Units>unitless</Units>
             <Count>34</Count>
         </item>
         <item>
-            <EFDB_Name>positionCmd</EFDB_Name>
-            <Description>Contain the commanded position for the louvers</Description>
+            <EFDB_Name>positionCommanded</EFDB_Name>
+            <Description>Commanded position of each louver (percent open).</Description>
             <IDL_Type>float</IDL_Type>
             <Units>unitless</Units>
             <Count>34</Count>
         </item>
         <item>
             <EFDB_Name>driveTorqueActual</EFDB_Name>
-            <Description>Contain the actual torque of the louvers drives</Description>
+            <Description>Actual torque for each louver drive.</Description>
             <IDL_Type>float</IDL_Type>
             <Units>J</Units>
             <Count>68</Count>
         </item>
         <item>
-            <EFDB_Name>driveTorqueError</EFDB_Name>
-            <Description>Contain the torque error of the louvers drives</Description>
-            <IDL_Type>float</IDL_Type>
-            <Units>J</Units>
-            <Count>68</Count>
-        </item>
-        <item>
-            <EFDB_Name>driveTorqueCmd</EFDB_Name>
-            <Description>Contain the commanded torque to the louvers drives</Description>
+            <EFDB_Name>driveTorqueCommanded</EFDB_Name>
+            <Description>Commanded torque for each louver drive.</Description>
             <IDL_Type>float</IDL_Type>
             <Units>J</Units>
             <Count>68</Count>
         </item>
         <item>
             <EFDB_Name>driveCurrentActual</EFDB_Name>
-            <Description>Contain the actual current used by the louvers drives</Description>
+            <Description>Actual current drawn by each louver drive.</Description>
             <IDL_Type>float</IDL_Type>
             <Units>A</Units>
             <Count>68</Count>
         </item>
         <item>
-            <EFDB_Name>driveTempActual</EFDB_Name>
-            <Description>Contain the temperature of the louvers drives/motors </Description>
+            <EFDB_Name>driveTemperature</EFDB_Name>
+            <Description>Measured temperature of each louver drive.</Description>
             <IDL_Type>float</IDL_Type>
             <Units>deg_C</Units>
             <Count>68</Count>
         </item>
         <item>
             <EFDB_Name>encoderHeadRaw</EFDB_Name>
-            <Description>Contain the raw value of the louvers encoders</Description>
+            <Description>Raw value of each louver encoder.</Description>
             <IDL_Type>float</IDL_Type>
             <Units>unitless</Units>
             <Count>68</Count>
         </item>
         <item>
             <EFDB_Name>encoderHeadCalibrated</EFDB_Name>
-            <Description>Contain the calibrated value of the louvers encoders</Description>
+            <Description>Calibrated value of each louver encoder.</Description>
             <IDL_Type>float</IDL_Type>
             <Units>deg</Units>
             <Count>68</Count>
         </item>
         <item>
-            <EFDB_Name>powerAbsortion</EFDB_Name>
-            <Description>Contain the value of total power utilized by the louvers</Description>
+            <EFDB_Name>powerDraw</EFDB_Name>
+            <Description>Total power drawn by all louver drives.</Description>
             <IDL_Type>float</IDL_Type>
             <Units>W</Units>
             <Count>1</Count>
         </item>
-    </SALTelemetry>
-    <SALTelemetry>
-        <Subsystem>Dome</Subsystem>
-        <EFDB_Topic>Dome_domeLWS_status</EFDB_Topic>
         <item>
-            <EFDB_Name>positionError</EFDB_Name>
-            <Description>Position error of light/wind screen</Description>
+            <EFDB_Name>timestamp</EFDB_Name>
+            <Description>Time at which the data was determined (TAI unix seconds).</Description>
             <IDL_Type>float</IDL_Type>
-            <Units>deg</Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>positionActual</EFDB_Name>
-            <Description>Present position of light/wind screen</Description>
-            <IDL_Type>float</IDL_Type>
-            <Units>deg</Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>positionCmd</EFDB_Name>
-            <Description>Commanded position for light/wind screen</Description>
-            <IDL_Type>float</IDL_Type>
-            <Units>deg</Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>driveTorqueActual</EFDB_Name>
-            <Description>Actual torque in light/wind screen drives</Description>
-            <IDL_Type>float</IDL_Type>
-            <Units>J</Units>
-            <Count>2</Count>
-        </item>
-        <item>
-            <EFDB_Name>driveTorqueError</EFDB_Name>
-            <Description>Torque error  in light/wind screen drives</Description>
-            <IDL_Type>float</IDL_Type>
-            <Units>J</Units>
-            <Count>2</Count>
-        </item>
-        <item>
-            <EFDB_Name>driveTorqueCmd</EFDB_Name>
-            <Description>Commanded torque for light/screen drives</Description>
-            <IDL_Type>float</IDL_Type>
-            <Units>J</Units>
-            <Count>2</Count>
-        </item>
-        <item>
-            <EFDB_Name>driveCurrentActual</EFDB_Name>
-            <Description>Present current applied to light/wind screen drives</Description>
-            <IDL_Type>float</IDL_Type>
-            <Units>A</Units>
-            <Count>2</Count>
-        </item>
-        <item>
-            <EFDB_Name>driveTempActual</EFDB_Name>
-            <Description>Temperature of light/wind screen drives/motors</Description>
-            <IDL_Type>float</IDL_Type>
-            <Units>deg_C</Units>
-            <Count>2</Count>
-        </item>
-        <item>
-            <EFDB_Name>encoderHeadRaw</EFDB_Name>
-            <Description>Raw value of light/wind screen encoders</Description>
-            <IDL_Type>float</IDL_Type>
-            <Units>unitless</Units>
-            <Count>2</Count>
-        </item>
-        <item>
-            <EFDB_Name>encoderHeadCalibrated</EFDB_Name>
-            <Description>Calibrated value of light/wind screen encoders</Description>
-            <IDL_Type>float</IDL_Type>
-            <Units>deg</Units>
-            <Count>2</Count>
-        </item>
-        <item>
-            <EFDB_Name>resolverRaw</EFDB_Name>
-            <Description>Raw value of light/wind screen resolvers</Description>
-            <IDL_Type>float</IDL_Type>
-            <Units>unitless</Units>
-            <Count>2</Count>
-        </item>
-        <item>
-            <EFDB_Name>resolverCalibrated</EFDB_Name>
-            <Description>Calibrated value of light/wind screen resolvers</Description>
-            <IDL_Type>float</IDL_Type>
-            <Units>deg</Units>
-            <Count>2</Count>
-        </item>
-        <item>
-            <EFDB_Name>powerAbsortion</EFDB_Name>
-            <Description>Current total power absorption</Description>
-            <IDL_Type>float</IDL_Type>
-            <Units>W</Units>
+            <Units>second</Units>
             <Count>1</Count>
         </item>
     </SALTelemetry>
     <SALTelemetry>
         <Subsystem>Dome</Subsystem>
-        <EFDB_Topic>Dome_domeMONCS_status</EFDB_Topic>
+        <EFDB_Topic>Dome_interlocks</EFDB_Topic>
+        <Description>Status of the global interlock system.</Description>
         <item>
             <EFDB_Name>data</EFDB_Name>
-            <Description>Safety monitoring</Description>
+            <Description>Safety monitoring.</Description>
             <IDL_Type>float</IDL_Type>
             <Units>unitless</Units>
             <Count>16</Count>
         </item>
+        <item>
+            <EFDB_Name>timestamp</EFDB_Name>
+            <Description>Time at which the data was determined (TAI unix seconds).</Description>
+            <IDL_Type>float</IDL_Type>
+            <Units>second</Units>
+            <Count>1</Count>
+        </item>
     </SALTelemetry>
     <SALTelemetry>
         <Subsystem>Dome</Subsystem>
-        <EFDB_Topic>Dome_domeTHCS_status</EFDB_Topic>
+        <EFDB_Topic>Dome_thermal</EFDB_Topic>
         <item>
-            <EFDB_Name>data</EFDB_Name>
-            <Description>Temperature of heat generating units</Description>
+            <EFDB_Name>temperature</EFDB_Name>
+            <Description>Measured temperature of each heat source.</Description>
             <IDL_Type>float</IDL_Type>
             <Units>deg_C</Units>
             <Count>16</Count>
+        </item>
+        <item>
+            <EFDB_Name>timestamp</EFDB_Name>
+            <Description>Time at which the data was determined (TAI unix seconds).</Description>
+            <IDL_Type>float</IDL_Type>
+            <Units>second</Units>
+            <Count>1</Count>
         </item>
     </SALTelemetry>
 </SALTelemetrySet>
