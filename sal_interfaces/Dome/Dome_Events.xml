@@ -3,6 +3,42 @@
 <SALEventSet xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://lsst-sal.tuc.noao.edu/schema/SALEventSet.xsd">
     <Enumeration>EnabledState_Disabled, EnabledState_Enabled, EnabledState_Fault</Enumeration>
     <Enumeration>MotionState_Stopped, MotionState_Stopping, MotionState_Moving, MotionState_Crawling</Enumeration>
+    <Enumeration>
+        Louver_A1=0,
+        Louver_B1=1,
+        Louver_A2=2,
+        Louver_B2=3,
+        Louver_B3=4,
+        Louver_N1=5,
+        Louver_M1=6,
+        Louver_N2=7,
+        Louver_M2=8,
+        Louver_M3=9,
+        Louver_C1=10,
+        Louver_C2=11,
+        Louver_C3=12,
+        Louver_L1=13,
+        Louver_L2=14,
+        Louver_L3=15,
+        Louver_E1=16,
+        Louver_D2=17,
+        Louver_E2=18,
+        Louver_D3=19,
+        Louver_E3=20,
+        Louver_I1=21,
+        Louver_H1=22,
+        Louver_I2=23,
+        Louver_H2=24,
+        Louver_I3=25,
+        Louver_H3=26,
+        Louver_F1=27,
+        Louver_G1=28,
+        Louver_F2=29,
+        Louver_G2=30,
+        Louver_F3=31,
+        Louver_G3=32,
+        Louver_D1=33,
+    </Enumeration>
     <SALEvent>
         <Subsystem>Dome</Subsystem>
         <EFDB_Topic>Dome_logevent_azEnabled</EFDB_Topic>
@@ -85,15 +121,15 @@
         <Description>Azimuth axis target position and velocity.</Description>
         <item>
             <EFDB_Name>position</EFDB_Name>
-            <Description>Target position; nan if crawling.</Description>
-            <IDL_Type>int</IDL_Type>
+            <Description>Target position; nan for the crawlAz command.</Description>
+            <IDL_Type>float</IDL_Type>
             <Units>deg</Units>
             <Count>1</Count>
         </item>
         <item>
             <EFDB_Name>velocity</EFDB_Name>
             <Description>Target velocity.</Description>
-            <IDL_Type>boolean</IDL_Type>
+            <IDL_Type>float</IDL_Type>
             <Units>deg/second</Units>
             <Count>1</Count>
         </item>
@@ -104,20 +140,19 @@
         <Description>Elevation axis (light/wind screen) target position and velocity.</Description>
         <item>
             <EFDB_Name>position</EFDB_Name>
-            <Description>Target position; nan if crawling.</Description>
-            <IDL_Type>int</IDL_Type>
+            <Description>Target position; nan for the crawlEl command.</Description>
+            <IDL_Type>float</IDL_Type>
             <Units>deg</Units>
             <Count>1</Count>
         </item>
         <item>
             <EFDB_Name>velocity</EFDB_Name>
-            <Description>Target velocity.</Description>
-            <IDL_Type>boolean</IDL_Type>
+            <Description>Target velocity; 0 for the moveEl command.</Description>
+            <IDL_Type>float</IDL_Type>
             <Units>deg/second</Units>
             <Count>1</Count>
         </item>
     </SALEvent>
-
     <SALEvent>
         <Subsystem>Dome</Subsystem>
         <EFDB_Topic>Dome_logevent_brakesEngaged</EFDB_Topic>
