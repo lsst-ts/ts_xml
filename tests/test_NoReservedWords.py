@@ -23,9 +23,6 @@ def check_for_issues(csc, topic, language):
     elif (csc == "LOVE" and topic == "Events" and
             language == "optional"):
         jira = "DM-22617"
-    elif (csc == "MTAOS" and topic == "Telemetry" and
-            language == "optional"):
-        jira = "DM-22618"
     elif (csc == "MTArchiver" and topic == "Events" and
             language == "optional"):
         jira = "CAP398"

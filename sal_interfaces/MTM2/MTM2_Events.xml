@@ -2,7 +2,7 @@
 <?xml-stylesheet type="text/xsl" href="http://lsst-sal.tuc.noao.edu/schema/SALEventSet.xsl"?>
 <SALEventSet xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:noNamespaceSchemaLocation="http://lsst-sal.tuc.noao.edu/schema/SALEventSet.xsd">
-
+<Enumeration>InclinationTelemetrySource_OnBoard,InclinationTelemetrySource_MTMount</Enumeration>
 <SALEvent>
     <Subsystem>MTM2</Subsystem>
     <EFDB_Topic>MTM2_logevent_m2AssemblyInPosition</EFDB_Topic>
@@ -98,6 +98,63 @@
         <IDL_Type>unsigned short</IDL_Type>
         <Units>unitless</Units>
         <Count>6</Count>
+    </item>
+</SALEvent>
+
+<SALEvent>
+    <Subsystem>MTM2</Subsystem>
+    <EFDB_Topic>MTM2_logevent_forceBalanceSystemStatus</EFDB_Topic>
+    <Alias>forceBalanceSystemStatus</Alias>
+    <Description>The status of force balance (FB) system (on or off).</Description>
+    <item>
+        <EFDB_Name>status</EFDB_Name>
+        <Description>True if FB is on, False if off.</Description>
+        <IDL_Type>boolean</IDL_Type>
+        <Units>unitless</Units>
+        <Count>1</Count>
+    </item>
+</SALEvent>
+
+<SALEvent>
+    <Subsystem>MTM2</Subsystem>
+    <EFDB_Topic>MTM2_logevent_inclinationTelemetrySource</EFDB_Topic>
+    <Alias>inclinationTelemetrySource</Alias>
+    <Description>The source of inclination telemetry (onboard or from main telescope mount (MTMount) control system).</Description>
+    <item>
+        <EFDB_Name>source</EFDB_Name>
+        <Description>1: onboard. 2: MTMount.</Description>
+        <IDL_Type>short</IDL_Type>
+        <Units>unitless</Units>
+        <Count>1</Count>
+        <Enumeration>OnBoard,MTMount</Enumeration>
+    </item>
+</SALEvent>
+
+<SALEvent>
+    <Subsystem>MTM2</Subsystem>
+    <EFDB_Topic>MTM2_logevent_temperatureOffset</EFDB_Topic>
+    <Alias>temperatureOffset</Alias>
+    <Description>Offset of temperature sensors.</Description>
+    <item>
+        <EFDB_Name>ring</EFDB_Name>
+        <Description>Offset of ring temperatures: LG2-1, LG2-2, LG2-3, LG2-4, LG3-1, LG3-2, LG3-3, LG3-4, LG4-1, LG4-2, LG4-3, and LG4-4.</Description>
+        <IDL_Type>double</IDL_Type>
+        <Units>deg_C</Units>
+        <Count>12</Count>
+    </item>
+    <item>
+        <EFDB_Name>intake</EFDB_Name>
+        <Description>Offset of intake temperatures: #1 and #2.</Description>
+        <IDL_Type>double</IDL_Type>
+        <Units>deg_C</Units>
+        <Count>2</Count>
+    </item>
+    <item>
+        <EFDB_Name>exhaust</EFDB_Name>
+        <Description>Offset of exhaust temperatures: #1 and #2.</Description>
+        <IDL_Type>double</IDL_Type>
+        <Units>deg_C</Units>
+        <Count>2</Count>
     </item>
 </SALEvent>
 
