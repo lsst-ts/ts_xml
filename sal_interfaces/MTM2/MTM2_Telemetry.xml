@@ -5,8 +5,8 @@
 
 <SALTelemetry>
     <Subsystem>MTM2</Subsystem>
-    <EFDB_Topic>MTM2_mirrorPositionMeasured</EFDB_Topic>
-    <Description>M2 mirror's rigid body position.</Description>
+    <EFDB_Topic>MTM2_position</EFDB_Topic>
+    <Description>M2 mirror's rigid body position. Measured from hardpoints.</Description>
     <item>
         <EFDB_Name>x</EFDB_Name>
         <Description>Position x.</Description>
@@ -53,7 +53,7 @@
 
 <SALTelemetry>
     <Subsystem>MTM2</Subsystem>
-    <EFDB_Topic>MTM2_mirrorPositionMeasuredIMS</EFDB_Topic>
+    <EFDB_Topic>MTM2_positionIMS</EFDB_Topic>
     <Description>M2 mirror's rigid body position measured by the independent measurement system (IMS).</Description>
     <item>
         <EFDB_Name>x</EFDB_Name>
@@ -101,38 +101,38 @@
 
 <SALTelemetry>
     <Subsystem>MTM2</Subsystem>
-    <EFDB_Topic>MTM2_axialForceData</EFDB_Topic>
+    <EFDB_Topic>MTM2_axialForce</EFDB_Topic>
     <Description>Axial actuator forces data. Increasing force corresponds to increasing tension in the load cell. The elements are the actuator Ids from 1 to 72. The related ring Ids are B1-B30, C1-C24, and D1-D18.</Description>
     <item>
-        <EFDB_Name>axialForcesLutGravity</EFDB_Name>
+        <EFDB_Name>lutGravity</EFDB_Name>
         <Description>Gravity component (F_e + F_0 + F_a + F_f) of look-up table (LUT) force for each actuator in sequence.</Description>
         <IDL_Type>double</IDL_Type>
         <Units>newton</Units>
         <Count>72</Count>
     </item>
     <item>
-        <EFDB_Name>axialForcesLutTemperature</EFDB_Name>
+        <EFDB_Name>lutTemperature</EFDB_Name>
         <Description>Temperature component (T_u + T_x + T_y + T_r) of look-up table (LUT) force for each actuator in sequence.</Description>
         <IDL_Type>double</IDL_Type>
         <Units>newton</Units>
         <Count>72</Count>
     </item>
     <item>
-        <EFDB_Name>axialForcesApplied</EFDB_Name>
+        <EFDB_Name>applied</EFDB_Name>
         <Description>Force applied by SAL command or script for each actuator in sequence.</Description>
         <IDL_Type>double</IDL_Type>
         <Units>newton</Units>
         <Count>72</Count>
     </item>
     <item>
-        <EFDB_Name>axialForcesMeasured</EFDB_Name>
+        <EFDB_Name>measured</EFDB_Name>
         <Description>Force measurement by load cell for each actuator in sequence.</Description>
         <IDL_Type>double</IDL_Type>
         <Units>newton</Units>
         <Count>72</Count>
     </item>
     <item>
-        <EFDB_Name>axialForcesHardpointCorrection</EFDB_Name>
+        <EFDB_Name>hardpointCorrection</EFDB_Name>
         <Description>Hardpoint compensation force correction for each actuator in sequence.</Description>
         <IDL_Type>double</IDL_Type>
         <Units>newton</Units>
@@ -142,38 +142,38 @@
 
 <SALTelemetry>
     <Subsystem>MTM2</Subsystem>
-    <EFDB_Topic>MTM2_tangentForceData</EFDB_Topic>
+    <EFDB_Topic>MTM2_tangentForce</EFDB_Topic>
     <Description>Tangent actuator forces data. Increasing force corresponds to increasing tension in the load cell. The elements are the actuator Ids from 73 to 78. The related ring Ids are A1-A6. The related degrees are 0, 60, 120, 180, 240, and 300.</Description>
     <item>
-        <EFDB_Name>tangentForcesLutGravity</EFDB_Name>
+        <EFDB_Name>lutGravity</EFDB_Name>
         <Description>Gravity component (F_e + F_0 + F_a + F_f) of look-up table (LUT) force for each actuator in sequence.</Description>
         <IDL_Type>double</IDL_Type>
         <Units>newton</Units>
         <Count>6</Count>
     </item>
     <item>
-        <EFDB_Name>tangentForcesLutTemperature</EFDB_Name>
+        <EFDB_Name>lutTemperature</EFDB_Name>
         <Description>Temperature component (T_u + T_x + T_y + T_r) of look-up table (LUT) force for each actuator in sequence.</Description>
         <IDL_Type>double</IDL_Type>
         <Units>newton</Units>
         <Count>6</Count>
     </item>
     <item>
-        <EFDB_Name>tangentForcesApplied</EFDB_Name>
+        <EFDB_Name>forcesApplied</EFDB_Name>
         <Description>Force applied by SAL command or script for each actuator in sequence.</Description>
         <IDL_Type>double</IDL_Type>
         <Units>newton</Units>
         <Count>6</Count>
     </item>
     <item>
-        <EFDB_Name>tangentForcesMeasured</EFDB_Name>
+        <EFDB_Name>forcesMeasured</EFDB_Name>
         <Description>Force measurement by load cell for each actuator in sequence.</Description>
         <IDL_Type>double</IDL_Type>
         <Units>newton</Units>
         <Count>6</Count>
     </item>
     <item>
-        <EFDB_Name>tangentForcesHardpointCorrection</EFDB_Name>
+        <EFDB_Name>hardpointCorrection</EFDB_Name>
         <Description>Hardpoint compensation force correction for each actuator in sequence.</Description>
         <IDL_Type>double</IDL_Type>
         <Units>newton</Units>
@@ -183,24 +183,24 @@
 
 <SALTelemetry>
     <Subsystem>MTM2</Subsystem>
-    <EFDB_Topic>MTM2_temperaturesMeasured</EFDB_Topic>
+    <EFDB_Topic>MTM2_temperature</EFDB_Topic>
     <Description>Mirror and cell temperature sensor readings relative to the origin (offset).</Description>
     <item>
-        <EFDB_Name>ringTemperature</EFDB_Name>
+        <EFDB_Name>ring</EFDB_Name>
         <Description>Ring temperatures: LG2-1, LG2-2, LG2-3, LG2-4, LG3-1, LG3-2, LG3-3, LG3-4, LG4-1, LG4-2, LG4-3, and LG4-4.</Description>
         <IDL_Type>double</IDL_Type>
         <Units>deg_C</Units>
         <Count>12</Count>
     </item>
     <item>
-        <EFDB_Name>intakeTemperature</EFDB_Name>
+        <EFDB_Name>intake</EFDB_Name>
         <Description>Intake temperatures: #1 and #2.</Description>
         <IDL_Type>double</IDL_Type>
         <Units>deg_C</Units>
         <Count>2</Count>
     </item>
     <item>
-        <EFDB_Name>exhaustTemperature</EFDB_Name>
+        <EFDB_Name>exhaust</EFDB_Name>
         <Description>Exhaust temperatures: #1 and #2.</Description>
         <IDL_Type>double</IDL_Type>
         <Units>deg_C</Units>
@@ -210,24 +210,24 @@
 
 <SALTelemetry>
     <Subsystem>MTM2</Subsystem>
-    <EFDB_Topic>MTM2_zenithAngleData</EFDB_Topic>
+    <EFDB_Topic>MTM2_zenithAngle</EFDB_Topic>
     <Description>M2 internal inclinometer reading transforms to the zenith angle.</Description>
     <item>
-        <EFDB_Name>zenithAngleMeasured</EFDB_Name>
+        <EFDB_Name>measured</EFDB_Name>
         <Description>Zenith angle is 0 degree when the telescope is at zenith.</Description>
         <IDL_Type>double</IDL_Type>
         <Units>degree</Units>
         <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>rawAngleInclinometer</EFDB_Name>
+        <EFDB_Name>inclinometerRaw</EFDB_Name>
         <Description>Reading raw angle of inclinometer (0-360 degree).</Description>
         <IDL_Type>double</IDL_Type>
         <Units>degree</Units>
         <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>procAngleInclinometer</EFDB_Name>
+        <EFDB_Name>inclinometerProcessed</EFDB_Name>
         <Description>Processed angle of inclinometer (0-360 degree).</Description>
         <IDL_Type>double</IDL_Type>
         <Units>degree</Units>
@@ -322,7 +322,7 @@
 
 <SALTelemetry>
     <Subsystem>MTM2</Subsystem>
-    <EFDB_Topic>MTM2_balanceForceData</EFDB_Topic>
+    <EFDB_Topic>MTM2_forceBalance</EFDB_Topic>
     <Description>Net forces and moments as commanded by the force balance system. These are calculated using the 72 axial and 6 tangent balance forces, which are a component of the total forces being commanded.</Description>
     <item>
         <EFDB_Name>fx</EFDB_Name>
