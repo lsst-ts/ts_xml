@@ -27,9 +27,6 @@ for member in root.findall('SALSubsystem'):
         active_developers = member.find('ActiveDevelopers').tag
         subsystem_head.append("Active Developers")
 
-        principal_csc_owner = member.find('PrincipalCSCOwner').tag
-        subsystem_head.append('Principal CSC Owner')
-
         github = member.find('Github').tag
         subsystem_head.append('Github')
 
@@ -39,8 +36,8 @@ for member in root.findall('SALSubsystem'):
         jenkins_test_results = member.find('JenkinsTestResults').tag
         subsystem_head.append("Jenkins Test Results")
 
-        LSSTPoC = member.find('LSSTPoC').text
-        subsystem_head.append('LSST PoC')
+        RubinObsContact = member.find('RubinObsContact').text
+        subsystem_head.append('Rubin Observatory Contact')
 
         CSCDocs = member.find('CSCDocs').tag
         subsystem_head.append('CSC Docs')
@@ -57,14 +54,11 @@ for member in root.findall('SALSubsystem'):
         runtime_language = member.find('RuntimeLanguages').tag
         subsystem_head.append('Runtime Language')
 
-        vendor_PoC = member.find('VendorPoC').tag
-        subsystem_head.append('Vendor PoC')
+        vendor_contact = member.find('VendorContact').tag
+        subsystem_head.append('Vendor Contact')
 
-        error_code = member.find('ErrorCode').tag
-        subsystem_head.append('Error Code')
-
-        configurable = member.find('Configurable').tag
-        subsystem_head.append('Configurable')
+        configuration = member.find('Configuration').tag
+        subsystem_head.append('Configuration')
 
         csvwriter.writerow(subsystem_head)
         count = count + 1
@@ -75,9 +69,6 @@ for member in root.findall('SALSubsystem'):
     active_developers = member.find('ActiveDevelopers').text
     subsystem.append(active_developers)
 
-    principal_csc_owner = member.find('PrincipalCSCOwner').text
-    subsystem.append(principal_csc_owner)
-
     github = member.find('Github').text
     subsystem.append(github)
 
@@ -87,8 +78,8 @@ for member in root.findall('SALSubsystem'):
     jenkins_test_results = member.find('JenkinsTestResults').text
     subsystem.append(jenkins_test_results)
 
-    LSSTPoC = member.find('LSSTPoC').text
-    subsystem.append(LSSTPoC)
+    RubinObsContact = member.find('RubinObsContact').text
+    subsystem.append(RubinObsContact)
 
     CSCDocs = member.find('CSCDocs').text
     subsystem.append(CSCDocs)
@@ -105,14 +96,11 @@ for member in root.findall('SALSubsystem'):
     runtime_language = member.find('RuntimeLanguages').text
     subsystem.append(runtime_language)
 
-    vendor_PoC = member.find('VendorPoC').text
-    subsystem.append(vendor_PoC)
+    vendor_contact = member.find('VendorContact').text
+    subsystem.append(vendor_contact)
 
-    error_code = member.find('ErrorCode').text
-    subsystem.append(error_code)
-
-    configurable = member.find('Configurable').text
-    subsystem.append(configurable)
+    configuration = member.find('Configuration').text
+    subsystem.append(configuration)
 
     csvwriter.writerow(subsystem)
 

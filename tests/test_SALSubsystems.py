@@ -57,7 +57,7 @@ def get_csc_configurable():
     root = get_file_root_element()
     arguments = []
     for csc in ts_xml.subsystems:
-        configurable = root.find("./SALSubsystem/[Name='" + csc + "']/Configurable").text
+        configurable = root.find("./SALSubsystem/[Name='" + csc + "']/Configuration").text
         arguments.append((root, csc, configurable))
     return arguments
 
@@ -164,7 +164,7 @@ def test_runtimelanguages_tag(root, csc, languages):
     skip_if_known_issue("languages", csc)
     # Verify each CSC is explicitly defined.
     for language in languages.split(','):
-        assert language in ["CPP", "Java", "LabVIEW", "PyDDS", "Python"], \
+        assert language in ["CPP", "Java", "LabVIEW", "IDL", "SALPY"], \
             csc + ": " + language + " is not a valid value for <RuntimeLanguages>."
 
 
