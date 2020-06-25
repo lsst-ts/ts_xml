@@ -19,7 +19,7 @@ Description
 
 **Data Type**: string
 
-This must contain a brief description of the CSC.
+This **MUST** contain a brief description of the CSC.
 
 IndexEnumeration
 ================
