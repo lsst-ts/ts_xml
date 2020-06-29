@@ -46,6 +46,7 @@ def main():
                     cf.write("\n")
                 for field in topic:
                     if field.tag == "item":
+                        cf.write("\n")
                         cf.write(f"{field.find('EFDB_Name').text}\n")
                         cf.write(f"{'*'*len(field.find('EFDB_Name').text)}\n")
                         for attribute in field:
@@ -77,6 +78,7 @@ def main():
                 f.write("\n")
             for gen_field in gen_topic:
                 if gen_field.tag == "item":
+                    f.write("\n")
                     f.write(f"{gen_field.find('EFDB_Name').text}\n")
                     f.write(f"{'~'*len(gen_field.find('EFDB_Name').text)}\n")
                     for gen_attribute in gen_field:

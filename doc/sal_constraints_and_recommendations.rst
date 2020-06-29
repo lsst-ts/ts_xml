@@ -25,6 +25,7 @@ Naming Convention
 Types (name of CSC): UpperCamelCase
     Handling abbreviations and acronyms: Capitalize all letters of an abbreviation or acronym: Hence ATAOS, MTM1M3.
         For TCS components, use prefix AT for AuxiliaryTelescope and MT for MainTelescope CSCs.
+
 Methods/Topics: lowerCamelCase (note that these names are constructed of 2/3 parts
 
 
@@ -37,6 +38,7 @@ attributes: lowerCamelCase
 Enumerations:
     Type name: UpperCamelCase (also known as PascalCase).
         Also, recommend use of "Selector" at the end of the type name when creating *new* Enumeration types.
+
     Literals: Also UpperCamelCase
 
 
