@@ -125,7 +125,14 @@
     <Explanation>http://sal.lsst.org</Explanation>
     <item>
         <EFDB_Name>authorizedUsers</EFDB_Name>
-        <Description>Comma seperated list of authorized users currently allowed to command this CSC.</Description>
+        <Description>Comma seperated list of authorized users currently allowed to command this CSC,
+            in the form user@host.
+            If the first character is +/- then the specified users are added/removed.
+            Duplicates are silently ignored.
+            The CSC's own user@host is silently ignored, because it is always authorized.
+            For removal, CSCs that are not in the list are silently ignored.
+            Whitespace is allowed after the optional initial +/- and after each comma.
+        </Description>
         <IDL_Type>string</IDL_Type>
         <IDL_Size>1</IDL_Size>
         <Units>unitless</Units>
@@ -133,7 +140,13 @@
     </item>
     <item>
         <EFDB_Name>nonAuthorizedCSCs</EFDB_Name>
-        <Description>Comma seperated list of CSC's not currently allowed to command this CSC.</Description>
+        <Description>Comma seperated list of CSC's not currently allowed to command this CSC,
+            in the form name[:index]. An index of 0 is stripped (name:0 becomes name).
+            If the first character is +/- then the specified CSCs are added/removed.
+            Duplicates are silently ignored.
+            For removal, CSCs that are not in the list are silently ignored.
+            Whitespace is allowed after the optional initial +/- and after each comma.
+        </Description>
         <IDL_Type>string</IDL_Type>
         <IDL_Size>1</IDL_Size>
         <Units>unitless</Units>
