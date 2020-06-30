@@ -6,7 +6,6 @@
 <SALCommand>
     <Subsystem>Rotator</Subsystem>
     <EFDB_Topic>Rotator_command_configureAcceleration</EFDB_Topic>
-    <Alias>configureAcceleration</Alias>
     <Description>Limit the minimum and maximum acceleration level of the rotator to be set within the global limit of +/- 1 deg/s2.</Description>
     <item>
         <EFDB_Name>alimit</EFDB_Name>
@@ -20,7 +19,6 @@
 <SALCommand>
     <Subsystem>Rotator</Subsystem>
     <EFDB_Topic>Rotator_command_configureVelocity</EFDB_Topic>
-    <Alias>configureVelocity</Alias>
     <Description>The configure Velocity command limits the minimum and maximum velocity level of the rotator to be set within the global limit of +/- 3.5 deg/s.</Description>
     <item>
         <EFDB_Name>vlimit</EFDB_Name>
@@ -34,7 +32,6 @@
 <SALCommand>
     <Subsystem>Rotator</Subsystem>
     <EFDB_Topic>Rotator_command_move</EFDB_Topic>
-    <Alias>move</Alias>
     <Description>Move the rotator to the specified position and stop. During the move the enabled substate will be MovingPointToPoint, then it will return to Stationary.</Description>
     <item>
         <EFDB_Name>position</EFDB_Name>
@@ -48,7 +45,6 @@
 <SALCommand>
     <Subsystem>Rotator</Subsystem>
     <EFDB_Topic>Rotator_command_track</EFDB_Topic>
-    <Alias>track</Alias>
     <Description>Specify desired rotator position and velocity "slewing or tracking" mode, which is started with the trackStart command and concluded with the stop command.</Description>
     <item>
         <EFDB_Name>angle</EFDB_Name>
@@ -76,7 +72,6 @@
 <SALCommand>
     <Subsystem>Rotator</Subsystem>
     <EFDB_Topic>Rotator_command_trackStart</EFDB_Topic>
-    <Alias>trackStart</Alias>
     <Description>Enter slewing/tracking mode (enabled substate SlewingOrTracking): follow a path specified by repeated track commands. Issue the stop command when you are done tracking.</Description>
     <item>
         <EFDB_Name>state</EFDB_Name>
@@ -90,7 +85,6 @@
 <SALCommand>
     <Subsystem>Rotator</Subsystem>
     <EFDB_Topic>Rotator_command_clearError</EFDB_Topic>
-    <Alias>clearError</Alias>
     <Description>Clear the Fault state, sending the controller into Offline substate PublishOnly. You must use the engineering user interface to transition from that to Offline substate Available before the CSC can control the rotator.</Description>
     <item>
         <EFDB_Name>state</EFDB_Name>
@@ -104,7 +98,6 @@
 <SALCommand>
     <Subsystem>Rotator</Subsystem>
     <EFDB_Topic>Rotator_command_stop</EFDB_Topic>
-    <Alias>stop</Alias>
     <Description>Stop the rotator and go to enabled substate Stationary.</Description>
     <item>
         <EFDB_Name>state</EFDB_Name>
