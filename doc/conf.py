@@ -20,5 +20,5 @@ try:
 except KeyError:
     pass
 
-extensions.append('sphinx.ext.autosectionlabel')
-autosectionlabel_prefix_document=True
+# extensions.append('sphinx.ext.autosectionlabel')
+# autosectionlabel_prefix_document=True

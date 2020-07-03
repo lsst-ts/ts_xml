@@ -4,20 +4,26 @@ SAL Constraints and Recommendations
 
 .. important::
     When updating(not typos) a policy in this document.
-    Please add a description to the :ref:`sal_constraints_and_recommendations:Changes` section.
+    Please add a description to the :ref:`sal_constraints_and_recommendations:changes` section.
+
+.. _sal_constraints_and_recommendations:changes:
 
 Changes
 =======
 
-* New policy added :ref:`sal_constraints_and_recommendations:SAL Topic and Parameter <Description> and <Unit> fields`. *June 19th, 2019*
+* New policy added :ref:`sal_constraints_and_recommendations:sal-topic-and-parameter-<description>-and-<unit>-fields`. *June 19th, 2019*
 
 The XML SAL object definitions have the following constraints:
+
+.. _sal_constraints_and_recommendations:definitions:
 
 Definitions
 ===========
 
 CSC
     Commandable SAL Component
+
+.. _sal_constraints_and_recommendations:naming-convention:
 
 Naming Convention
 =================
@@ -45,6 +51,8 @@ Enumerations:
 .. note::
     Already established CSCs will NOT need to update their names; they are grandfathered in.
     This naming convention applies to all CSCs created *June 1, 2018* and forward.
+
+.. _sal_constraints_and_recommendations:reserved-words:
 
 Reserved words
 ==============
@@ -372,6 +380,8 @@ The *<Subsystem>* and *<Alias>* tags for command's and logevent's must be consis
 
 ALL names must be less than 64 characters in length.
 
+.. _sal_constraints_and_recommendations:timestamps:
+
 Timestamps
 ==========
 
@@ -383,6 +393,8 @@ If a time-of-data is to be associated with an item it should be named
 
 The time(s) should be obtained using the SAL getCurrentTime() method, which returns a double precision value of TAI time with a resolution of at least 0.001 seconds.
 
+.. _sal_constraints_and_recommendations:ignored-attributes-in-topics:
+
 Ignored Attributes in Topics
 ============================
 
@@ -391,12 +403,16 @@ This is due to a requirement from the API to not have empty topics.
 If you are adding a command to your CSC that does not require an attribute, it still must contain a "dummy" one.
 In order to maintain consistency across this use case, the attribute must be called *value*, be of type *boolean*, be given the following description: "Attribute required by the API, but is unused." and have the following units: *unitless*.
 
+.. _sal_constraints_and_recommendations:generic-commands-and-events:
+
 Generic Commands and Events
 ===========================
 
 The standard set of commands and events are included in the `MagicDraw/EA UML SAL Template <https://confluence.lsstcorp.org/display/LTS/Create+SAL+XML+interfaces+from+UML>`_,
 
 Each new CSC should use this template as a starting point.
+
+.. _sal_constraints_and_recommendations:state-enumeration:
 
 State Enumeration
 =================
@@ -421,6 +437,8 @@ After the salgenerator creates the code, you will have the following constants:
         SAL__STATE_DISABLED (C++, Java, and Python)
         SummaryState.ctl & DetailState.ctl (LabVIEW)
 
+.. _sal_constraints_and_recommendations:custom-enumerations:
+
 Custom Enumerations
 ===================
 
@@ -430,10 +448,14 @@ e.g. for ATTCS in C++:
     ATTCS_shared_SimpleSetA (declared globally)
     ATTCS_someEvent_SpecificSetA (datum specific)
 
+.. _sal_constraints_and_recommendations:current-sal-object-tables:
+
 Current SAL object tables
 =========================
 
 Can be found at http://project.lsst.org/ts/sal_objects
+
+.. _sal_constraints_and_recommendations:generic-commands:
 
 Generic commands
 ================
@@ -445,6 +467,8 @@ The following command set is defined for all CSC's (although it is not mandatory
     
     *start, stop, enable, disable, standby, enterControl, exitControl, abort, setValue*
 
+.. _sal_constraints_and_recommendations:generic-events:
+
 Generic events
 ==============
 
@@ -454,6 +478,8 @@ The following event set is defined for all CSC's
     The spelling must be exact as it is used for code generation
     
     *appliedSettingsMatchStart, errorCode, settingVersions, summaryState*
+
+.. _sal_constraints_and_recommendations:standard-events:
 
 Standard Events
 ===============
@@ -467,6 +493,8 @@ A LargeFileAnnouncement event consist off the following items:
 * string url - cURL compatible URL used to reference the file
 * float version - x.y version of file Format
 * string<32> id - Extra identifying information about format/application
+
+.. _sal_constraints_and_recommendations:sal-topic-sizes:
 
 SAL Topic sizes
 ===============
@@ -509,8 +537,12 @@ Alternatively, upload the *testingest.sql* using the TBD webpage.
 
 `Proposed method of recording subsystem "Settings" data <https://confluence.lsstcorp.org/pages/viewpage.action?pageId=58949768>`_
 
+.. _sal_constraints_and_recommendations:sal-topic-and-parameter-<description>-and-<unit>-fields:
+
 SAL Topic and Parameter <Description> and <Unit> fields
 =======================================================
+
+.. _sal_constraints_and_recommendations:sal-topic-and-parameter-<description>-and-<unit>-fields:changes:
 
 Changes
 -------
@@ -519,6 +551,8 @@ Changes
 
     * Improved clarity of unitless parsing language and structure
 * Policy added *June 19th, 2019*
+
+.. _sal_constraints_and_recommendations:sal-topic-and-parameter-<description>-and-<unit>-fields:policy:
 
 Policy
 ------
@@ -560,6 +594,8 @@ An easy way to tell if a particular unit is valid is to try to make an astropy.u
     Astropy allows for units such as "deg22" which corresponds to degrees to the 22nd power.
     These units may not make sense but are valid according to the astropy parser.
     Please note this "feature" of astropy. 
+
+.. _sal_constraints_and_recommendations:sal-interface-template:
 
 SAL Interface Template
 ======================
