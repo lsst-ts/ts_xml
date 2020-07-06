@@ -38,8 +38,10 @@ def main():
 
                 
                 topic_name = topic.find('EFDB_Topic').text
-                short_name = topic_name.split("_")[-1]
-                # short_name = '_'.join(split_short_name)
+                if dds_type in ["Commands", "Events"]:
+                    short_name = topic_name.split("_", 2)[-1]
+                else:
+                    short_name = topic_name.split("_", 1)[-1]
                 cf.write(f".. _{subsystem}:{dds_type}:{short_name}:\n\n")
                 cf.write(f"{short_name}\n")
                 cf.write(f"{'~'*len(short_name)}\n")

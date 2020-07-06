@@ -19,6 +19,3 @@ try:
     del intersphinx_mapping['ts_xml']  # noqa
 except KeyError:
     pass
-
-# extensions.append('sphinx.ext.autosectionlabel')
-# autosectionlabel_prefix_document=True
