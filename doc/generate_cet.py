@@ -36,8 +36,13 @@ def main():
                     cf.write("\n")
                     continue
 
+                
                 topic_name = topic.find('EFDB_Topic').text
-                short_name = topic_name.split("_")[-1]
+                if dds_type in ["Commands", "Events"]:
+                    short_name = topic_name.split("_", 2)[-1]
+                else:
+                    short_name = topic_name.split("_", 1)[-1]
+                cf.write(f".. _{subsystem}:{dds_type}:{short_name}:\n\n")
                 cf.write(f"{short_name}\n")
                 cf.write(f"{'~'*len(short_name)}\n")
                 if topic.find('Description') is not None:
@@ -47,6 +52,7 @@ def main():
                 for field in topic:
                     if field.tag == "item":
                         cf.write("\n")
+                        cf.write(f".. _{subsystem}:{dds_type}:{short_name}:{field.find('EFDB_Name').text}:\n\n")
                         cf.write(f"{field.find('EFDB_Name').text}\n")
                         cf.write(f"{'*'*len(field.find('EFDB_Name').text)}\n")
                         for attribute in field:
@@ -62,6 +68,7 @@ def main():
                         pass
                     else:
                         cf.write(f":{field.tag}: {field.text}\n")
+                    cf.write("\n")
     gen_tree = ET.parse("../sal_interfaces/SALGenerics.xml")
     gen_root = gen_tree.getroot()
     f.write("Generics\n")
@@ -79,6 +86,7 @@ def main():
             for gen_field in gen_topic:
                 if gen_field.tag == "item":
                     f.write("\n")
+                    f.write(f".. _{short_name}:{gen_field.find('EFDB_Name').text}:\n\n")
                     f.write(f"{gen_field.find('EFDB_Name').text}\n")
                     f.write(f"{'~'*len(gen_field.find('EFDB_Name').text)}\n")
                     for gen_attribute in gen_field:
@@ -94,6 +102,7 @@ def main():
                     pass
                 else:
                     f.write(f":{gen_field.tag}: {gen_field.text}\n")
+                f.write("\n")
 
 
 if __name__ == "__main__":
