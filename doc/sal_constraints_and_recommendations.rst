@@ -400,7 +400,7 @@ The time(s) should be obtained using the SAL getCurrentTime() method, which retu
 Ignored Attributes in Topics
 ============================
 
-*Deprecated in SAL 4.1*
+*Deprecated in SAL 4.1 - Because topics with no fields are now allowed.*
 
 Many generic commands have an ignored attribute.
 This is due to a requirement from the API to not have empty topics.
