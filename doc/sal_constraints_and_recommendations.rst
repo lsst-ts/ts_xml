@@ -11,7 +11,9 @@ SAL Constraints and Recommendations
 Changes
 =======
 
-* New policy added :ref:`sal_constraints_and_recommendations:sal-topic-and-parameter-<description>-and-<unit>-fields`. *June 19th, 2019*
+
+* Deprecated policy for SAL 4.1 :ref:`sal_constraints_and_recommendations:ignored-attributes-in-topics`. *July 6th, 2020*
+* New policy added :ref:`sal_constraints_and_recommendations:sal-topic-and-parameter-description-and-unit-fields`. *June 19th, 2019*
 
 The XML SAL object definitions have the following constraints:
 
@@ -356,7 +358,7 @@ The following list of words are reserved either by IDL or SQL parsing and may no
 - YEAR_MONTH
 - ZEROFILL
 
-Format of *<EFDB_Name>* names: These should not have any embedded no alphanumeric characters or spaces, use _ as a delimiter if required (do not use +-.,:# etc)
+Format of *<EFDB_Name>* names: These should not have any embedded non alphanumeric characters or spaces, use _ as a delimiter if required (do not use +-.,:# etc)
     e.g. *myImportant_data_x* is allowed
         myImportant-data.x is NOT allowed
 
@@ -391,12 +393,14 @@ If a time-of-data is to be associated with an item it should be named
     * *timestamp[n]* - for an array of times associated with the array item(s) in a topic
     * *timestampName1[n], timestampName2[m]* - for multiple arrays of different times for different array sizes
 
-The time(s) should be obtained using the SAL getCurrentTime() method, which returns a double precision value of TAI time with a resolution of at least 0.001 seconds.
+The time(s) should be obtained using the SAL getCurrentTime() method, which returns a double precision value of TAI time in unix seconds with a resolution of at least 0.001 seconds.
 
 .. _sal_constraints_and_recommendations:ignored-attributes-in-topics:
 
 Ignored Attributes in Topics
 ============================
+
+*Deprecated in SAL 4.1*
 
 Many generic commands have an ignored attribute.
 This is due to a requirement from the API to not have empty topics.
@@ -537,12 +541,12 @@ Alternatively, upload the *testingest.sql* using the TBD webpage.
 
 `Proposed method of recording subsystem "Settings" data <https://confluence.lsstcorp.org/pages/viewpage.action?pageId=58949768>`_
 
-.. _sal_constraints_and_recommendations:sal-topic-and-parameter-<description>-and-<unit>-fields:
+.. _sal_constraints_and_recommendations:sal-topic-and-parameter-description-and-unit-fields:
 
-SAL Topic and Parameter <Description> and <Unit> fields
+SAL Topic and Parameter Description and Unit fields
 =======================================================
 
-.. _sal_constraints_and_recommendations:sal-topic-and-parameter-<description>-and-<unit>-fields:changes:
+.. _sal_constraints_and_recommendations:sal-topic-and-parameter-description-and-unit-fields:changes:
 
 Changes
 -------
@@ -552,7 +556,7 @@ Changes
     * Improved clarity of unitless parsing language and structure
 * Policy added *June 19th, 2019*
 
-.. _sal_constraints_and_recommendations:sal-topic-and-parameter-<description>-and-<unit>-fields:policy:
+.. _sal_constraints_and_recommendations:sal-topic-and-parameter-description-and-unit-fields:policy:
 
 Policy
 ------
@@ -593,7 +597,6 @@ An easy way to tell if a particular unit is valid is to try to make an astropy.u
 .. warning::
     Astropy allows for units such as "deg22" which corresponds to degrees to the 22nd power.
     These units may not make sense but are valid according to the astropy parser.
-    Please note this "feature" of astropy. 
 
 .. _sal_constraints_and_recommendations:sal-interface-template:
 
