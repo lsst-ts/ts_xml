@@ -64,7 +64,7 @@ for member in root.findall('SALSubsystem'):
         count = count + 1
 
     name = member.find('Name').text
-    subsystem.append(f" :ref:`{name.lower()}`")
+    subsystem.append(f".. _index:master-csc-table:{name.lower()}:\n\n:doc:`/sal_interfaces/{name}`")
 
     active_developers = member.find('ActiveDevelopers').text
     subsystem.append(active_developers)
