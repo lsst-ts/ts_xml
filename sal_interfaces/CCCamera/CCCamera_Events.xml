@@ -972,11 +972,11 @@
         <EFDB_Topic>CCCamera_logevent_focalPlaneSummaryInfo</EFDB_Topic>
         <Description>Special event for use by header service. All of the information in this event is redundant (i,e. also supplied in
             other settingsApplied events), but the information in this event is formatted for ease-of-use of the header service, specifically
-            information which is REB or Raft specific is repeated for each CCD. This event will be sent at the same time as other 
+            information which is REB or Raft specific is repeated for each CCD. This event will be sent at the same time as other
             settingsApplied events</Description>
         <item>
             <EFDB_Name>ccdLocation</EFDB_Name>
-            <Description>CCD location in focal-plane (e.g. R22S01) (: delimited). 
+            <Description>CCD location in focal-plane (e.g. R22S01) (: delimited).
                 This should be considered the key for all the remaining items, which will be in the same order as the locations,
                 whether they are arrays or : delimited strings.</Description>
             <IDL_Type>string</IDL_Type>
@@ -1133,7 +1133,7 @@
         <IDL_Type>string</IDL_Type>
         <Units>unitless</Units>
         <Count>1</Count>
-    </item>    
+    </item>
     </SALEvent>
     <SALEvent>
         <Subsystem>CCCamera</Subsystem>
@@ -1402,6 +1402,130 @@
             <IDL_Type>int</IDL_Type>
             <Units>unitless</Units>
             <Count>1</Count>
+        </item>
+    </SALEvent>
+    <!-- Note this is overkill for ComCam, but aims to be the same as for the main camera.
+    For ComCam the encoder and hall effect measurements will be simulated, or empty
+         <Description>Motion profile for a single shutter blade motion</Description>
+    -->
+    <SALEvent>
+        <Subsystem>CCCamera</Subsystem>
+        <Version>3.7.1</Version>
+        <Author></Author>
+        <EFDB_Topic>CCCamera_logevent_shutterBladeMotionProfile</EFDB_Topic>
+        <item>
+            <EFDB_Name>blade</EFDB_Name>
+            <Description>The blade that is moving</Description>
+            <IDL_Type>long</IDL_Type>
+            <Units>unitless</Units>
+            <Count>1</Count>
+            <Enumeration>PLUS_X,MINUS_X</Enumeration>
+        </item>
+        <item>
+            <EFDB_Name>direction</EFDB_Name>
+            <Description>Is the blade opening or closing</Description>
+            <IDL_Type>long</IDL_Type>
+            <Units>unitless</Units>
+            <Count>1</Count>
+            <Enumeration>OPEN,CLOSE</Enumeration>
+        </item>
+        <item>
+            <EFDB_Name>startTimestamp</EFDB_Name>
+            <Description>The time at which the motion started</Description>
+            <IDL_Type>double</IDL_Type>
+            <Units>second</Units>
+            <Count>1</Count>
+        </item>
+        <item>
+            <EFDB_Name>startPosition</EFDB_Name>
+            <Description>The start position of the blade</Description>
+            <IDL_Type>double</IDL_Type>
+            <Units>mm</Units>
+            <Count>1</Count>
+        </item>
+        <item>
+            <EFDB_Name>targetDuration</EFDB_Name>
+            <Description>Requested blade motion time</Description>
+            <IDL_Type>double</IDL_Type>
+            <Units>second</Units>
+            <Count>1</Count>
+        </item>
+        <item>
+            <EFDB_Name>targetPosition</EFDB_Name>
+            <Description>Requested position at end of motion</Description>
+            <IDL_Type>double</IDL_Type>
+            <Units>mm</Units>
+            <Count>1</Count>
+        </item>
+        <item>
+            <EFDB_Name>endPosition</EFDB_Name>
+            <Description>Actual position and end of motion</Description>
+            <IDL_Type>double</IDL_Type>
+            <Units>mm</Units>
+            <Count>1</Count>
+        </item>
+        <item>
+            <EFDB_Name>actualDuration</EFDB_Name>
+            <Description>Actual blade motion time</Description>
+            <IDL_Type>double</IDL_Type>
+            <Units>second</Units>
+            <Count>1</Count>
+        </item>
+        <item>
+            <EFDB_Name>hallSensorCount</EFDB_Name>
+            <Description>Actual number of hall sensor transitions</Description>
+            <IDL_Type>int</IDL_Type>
+            <Units>unitless</Units>
+            <Count>1</Count>
+        </item>
+        <item>
+            <EFDB_Name>hallSensorTimestamp</EFDB_Name>
+            <Description>Hall effect switch trasition times</Description>
+            <IDL_Type>double</IDL_Type>
+            <Units>second</Units>
+            <Count>100</Count>
+        </item>
+        <item>
+            <EFDB_Name>hallSensorID</EFDB_Name>
+            <Description>Which Hall effect switch trasitioned</Description>
+            <IDL_Type>int</IDL_Type>
+            <Units>unitless</Units>
+            <Count>100</Count>
+        </item>
+        <item>
+            <EFDB_Name>hallSensorPosition</EFDB_Name>
+            <Description>Estimated position of the leading edge of the blade at transition time</Description>
+            <IDL_Type>int</IDL_Type>
+            <Units>unitless</Units>
+            <Count>100</Count>
+        </item>
+        <item>
+            <EFDB_Name>hallSensorTransition</EFDB_Name>
+            <Description>true if switch turned on, false if switch turned off</Description>
+            <IDL_Type>boolean</IDL_Type>
+            <Units>unitless</Units>
+            <Count>100</Count>
+        </item>
+        <item>
+            <EFDB_Name>encoderCount</EFDB_Name>
+            <Description>Actual number of encoder measurements</Description>
+            <IDL_Type>int</IDL_Type>
+            <Units>unitless</Units>
+            <Count>1</Count>
+        </item>
+        <item>
+            <EFDB_Name>encoderTimestamp</EFDB_Name>
+            <Description>timestamps for motor encoder position measurements</Description>
+            <IDL_Type>double</IDL_Type>
+            <Units>second</Units>
+            <Count>100</Count>
+        </item>
+        <item>
+            <EFDB_Name>encoderPosition</EFDB_Name>
+            <Description>Positions for motor encoder position measurements</Description>
+            <IDL_Type>double</IDL_Type>
+            <Units>second</Units>
+            <Count>100</Count>
         </item>
     </SALEvent>
 </SALEventSet>
