@@ -176,6 +176,7 @@ def main():
                     cf.write("\n")
                     for state in states:
                         cf.write(f"* {state.split('_')[1]}\n")
+                    cf.write("------\n")
                     cf.write("\n")
                     continue
                 topic_name = topic.find('EFDB_Topic').text
