@@ -1587,4 +1587,147 @@
             <Count>240</Count>
         </item>
     </SALEvent>
+    <!-- Preview events, probably will not be used until xml 6.2 but here for comment/disscussion -->
+    <SALEvent>
+        <Subsystem>CCCamera</Subsystem>
+        <EFDB_Topic>CCCamera_logevent_imageStored</EFDB_Topic>
+        <Description>When this event is received the corresponding image should be complete in the DAQ 2-day store.
+        Once in use this will allow endReadout event to go back to indicating that the readout is complete (sequencers finished).
+        Note: all : delimited strings (aka string arrays) follow the escaping convention defined in CAP-572</Description>
+        <!-- Note, boilder plate items present on all image related events removed. TBC if this is OK -->
+        <item>
+            <EFDB_Name>imageName</EFDB_Name>
+            <Description>The imageName for this specific exposure, assigned by the camera</Description>
+            <IDL_Type>string</IDL_Type>
+            <IDL_Size>32</IDL_Size>
+            <Units>unitless</Units>
+            <Count>1</Count>
+        </item>
+        <item>
+            <EFDB_Name>timeStampImageStored</EFDB_Name>
+            <Description>The time when the DAQ image was store was complete.</Description>
+            <IDL_Type>double</IDL_Type>
+            <Units>second</Units>
+            <Count>1</Count>
+        </item>
+        <!-- Note: what should be generated if file store fails for one or more files?-->
+    </SALEvent>
+    <SALEvent>
+        <Subsystem>CCCamera</Subsystem>
+        <EFDB_Topic>CCCamera_logevent_fitsFilesWritten</EFDB_Topic>
+        <Description>When this event is received, all of the CCS files on the diagnostic cluster have been written
+        Note: all : delimited strings (aka string arrays) follow the escaping convention defined in CAP-572</Description>
+        <!-- Note, boilder plate items present on all image related events removed. TBC if this is OK -->
+        <item>
+            <EFDB_Name>imageName</EFDB_Name>
+            <Description>The imageName for this specific exposure, assigned by the camera</Description>
+            <IDL_Type>string</IDL_Type>
+            <IDL_Size>32</IDL_Size>
+            <Units>unitless</Units>
+            <Count>1</Count>
+        </item>
+        <item>
+            <EFDB_Name>timeStampFilesWritten</EFDB_Name>
+            <Description>The time when the (last) CCS FITS file was written.</Description>
+            <IDL_Type>double</IDL_Type>
+            <Units>second</Units>
+            <Count>1</Count>
+        </item>
+        <!-- Note: what should be generated if file save fails on one or more nodes?-->
+        <item>
+            <EFDB_Name>rootFileName</EFDB_Name>
+            <Description>The common filesystem location of all files below.</Description>
+            <IDL_Type>string</IDL_Type>
+            <Units>unitless</Units>
+            <Count>1</Count>
+        </item>
+        <item>
+            <EFDB_Name>relativeFileNames</EFDB_Name>
+            <Description>The file system location of each file, relative to rootFileName (: delimited).</Description>
+            <IDL_Type>string</IDL_Type>
+            <Units>unitless</Units>
+            <Count>1</Count>
+        </item>
+        <item>
+            <EFDB_Name>fileNode</EFDB_Name>
+            <Description>The node on which each file is written (: delimited, in same order as above).</Description>
+            <IDL_Type>string</IDL_Type>
+            <Units>unitless</Units>
+            <Count>1</Count>
+        </item>
+    </SALEvent>
+    <SALEvent>
+        <Subsystem>CCCamera</Subsystem>
+        <EFDB_Topic>CCCamera_logevent_fileCommandExecution</EFDB_Topic>
+        <Description>Each time a command is executed on a single FITS file this event is generated
+        </Description>
+        <!-- Note, boilder plate items present on all image related events removed. TBC if this is OK -->
+        <item>
+            <EFDB_Name>imageName</EFDB_Name>
+            <Description>The imageName for this specific exposure, assigned by the camera</Description>
+            <IDL_Type>string</IDL_Type>
+            <IDL_Size>32</IDL_Size>
+            <Units>unitless</Units>
+            <Count>1</Count>
+        </item>
+        <item>
+            <EFDB_Name>timestampCommandComplete</EFDB_Name>
+            <Description>The time when the command completed.</Description>
+            <IDL_Type>double</IDL_Type>
+            <Units>second</Units>
+            <Count>1</Count>
+        </item>
+        <item>
+            <EFDB_Name>command</EFDB_Name>
+            <Description>The comamnd executed included arguments.</Description>
+            <IDL_Type>string</IDL_Type>
+            <Units>unitless</Units>
+            <Count>1</Count>
+        </item>
+        <item>
+            <EFDB_Name>rc</EFDB_Name>
+            <Description>The return code from the command execution.</Description>
+            <IDL_Type>int</IDL_Type>
+            <Units>unitless</Units>
+            <Count>1</Count>
+        </item>
+    </SALEvent>
+    <SALEvent>
+        <Subsystem>CCCamera</Subsystem>
+        <EFDB_Topic>CCCamera_logevent_imageVisualization</EFDB_Topic>
+        <Description>Event sent when image visualization is ready
+        </Description>
+        <!-- Note, boilder plate items present on all image related events removed. TBC if this is OK -->
+        <item>
+            <EFDB_Name>imageName</EFDB_Name>
+            <Description>The imageName for this specific exposure, assigned by the camera</Description>
+            <IDL_Type>string</IDL_Type>
+            <IDL_Size>32</IDL_Size>
+            <Units>unitless</Units>
+            <Count>1</Count>
+        </item>
+        <item>
+            <EFDB_Name>timestampVisualizationAvailable</EFDB_Name>
+            <Description>The time when the command completed.</Description>
+            <IDL_Type>double</IDL_Type>
+            <Units>second</Units>
+            <Count>1</Count>
+        </item>
+        <item>
+            <EFDB_Name>url</EFDB_Name>
+            <Description>The URL at which the full image visualization is available.</Description>
+            <IDL_Type>string</IDL_Type>
+            <Units>unitless</Units>
+            <Count>1</Count>
+        </item>
+        <!-- What resolution should the thumbnail be available at (or should we allow multiple resolutions)?
+             Should it be sent to the LFA, or just available on demand via URL -->
+        <item>
+            <EFDB_Name>thumbnail</EFDB_Name>
+            <Description>The URL at which the image thumbnail is available.</Description>
+            <IDL_Type>string</IDL_Type>
+            <Units>unitless</Units>
+            <Count>1</Count>
+        </item>
+    </SALEvent>
 </SALEventSet>
