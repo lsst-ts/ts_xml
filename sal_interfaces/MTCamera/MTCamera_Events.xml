@@ -185,7 +185,16 @@
         <EFDB_Name>filterName</EFDB_Name>
         <Description>The name of the filter being installed (e.g. U-001)</Description>
         <IDL_Type>string</IDL_Type>
-        <IDL_Size>256</IDL_Size>
+        <IDL_Size>1</IDL_Size>
+        <Units>unitless</Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>filterType</EFDB_Name>
+        <Description>The type of the filter being installed (e.g. g,r,i,z,y,u,none,other). If other it can optionally be
+        followed by a : delimited qualifier, e.g. other:pinhole</Description>
+        <IDL_Type>string</IDL_Type>
+        <IDL_Size>1</IDL_Size>
         <Units>unitless</Units>
         <Count>1</Count>
     </item>
@@ -648,13 +657,39 @@
     <Author></Author>
     <EFDB_Topic>MTCamera_logevent_endSetFilter</EFDB_Topic>
     <Alias>endSetFilter</Alias>
+    <Description>Event issued once the new filter is in its final position</Description>
     <Explanation>http://project.lsst.org/ts/sal_objects/help/MTCamera_logevent_endSetFilter.html</Explanation>
     <item>
         <EFDB_Name>filterName</EFDB_Name>
         <Description>The name of the filter being installed (e.g. U-001)</Description>
         <IDL_Type>string</IDL_Type>
-        <IDL_Size>256</IDL_Size>
+        <IDL_Size>1</IDL_Size>
         <Units>unitless</Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>filterType</EFDB_Name>
+        <Description>The type of the filter being installed (e.g. g,r,i,z,y,u,none,other). If other it can optionally be
+        followed by a : delimited qualifier, e.g. other:pinhole</Description>
+        <IDL_Type>string</IDL_Type>
+        <IDL_Size>1</IDL_Size>
+        <Units>unitless</Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>filterSlot</EFDB_Name>
+        <Description>The slot which the filter is in (ComCam) or came from (Main Camera)</Description>
+        <IDL_Type>int</IDL_Type>
+        <IDL_Size>1</IDL_Size>
+        <Units>unitless</Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>filterPosition</EFDB_Name>
+        <Description>For ComCam this is the measured linear encoder position once the filter in in place. For Main Camera it may be unused.</Description>
+        <IDL_Type>double</IDL_Type>
+        <IDL_Size>1</IDL_Size>
+        <Units>mm</Units>
         <Count>1</Count>
     </item>
 </SALEvent>
