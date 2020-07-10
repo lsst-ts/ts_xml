@@ -2,105 +2,26 @@
 <?xml-stylesheet type="text/xsl" href="http://lsst-sal.tuc.noao.edu/schema/SALEventSet.xsl"?>
 <SALEventSet xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:noNamespaceSchemaLocation="http://lsst-sal.tuc.noao.edu/schema/SALEventSet.xsd">
-<Enumeration>DetailedState_DisabledState,DetailedState_EnabledState,DetailedState_FaultState,DetailedState_OfflineState,DetailedState_StandbyState</Enumeration>
 
-<SALEvent>
-    <Subsystem>MTDomeTrajectory</Subsystem>
-    <Version>3.8.31</Version>
-    <Author></Author>
-    <EFDB_Topic>MTDomeTrajectory_logevent_detailedState</EFDB_Topic>
-    <Alias>detailedState</Alias>
-    <Explanation>http://sal.lsst.org</Explanation>
-            <item>
-                <EFDB_Name>detailedState</EFDB_Name>
-                <Description>Detailed state</Description>
-                <!-- Enumeration: DetailedState -->
-                <IDL_Type>long</IDL_Type>
-                <Units>unitless</Units>
-                <Count>1</Count>
-            </item>
-</SALEvent>
-<SALEvent>
-    <Subsystem>MTDomeTrajectory</Subsystem>
-    <Version>3.8.31</Version>
-    <Author></Author>
-    <EFDB_Topic>MTDomeTrajectory_logevent_internalCommand</EFDB_Topic>
-    <Alias>internalCommand</Alias>
-    <Explanation>http://sal.lsst.org</Explanation>
-    <item>
-        <EFDB_Name>commandObject</EFDB_Name>
-        <Description>The error code being published.</Description>
-        <IDL_Type>byte</IDL_Type>
-        <Units>unitless</Units>
-        <Count>800</Count>
-    </item>
-</SALEvent>
-<SALEvent>
-    <Subsystem>MTDomeTrajectory</Subsystem>
-    <Version>3.8.31</Version>
-    <Author></Author>
-    <EFDB_Topic>MTDomeTrajectory_logevent_loopTimeOutOfRange</EFDB_Topic>
-    <Alias>loopTimeOutOfRange</Alias>
-    <Explanation>http://sal.lsst.org</Explanation>
-    <item>
-        <EFDB_Name>loopTimeOutOfRange</EFDB_Name>
-        <Description>Internal loop timedout.</Description>
-        <IDL_Type>boolean</IDL_Type>
-        <Units>unitless</Units>
-        <Count>1</Count>
-    </item>
-</SALEvent>
-<SALEvent>
-    <Subsystem>MTDomeTrajectory</Subsystem>
-    <Version>3.8.31</Version>
-    <Author></Author>
-    <EFDB_Topic>MTDomeTrajectory_logevent_rejectedCommand</EFDB_Topic>
-    <Alias>rejectedCommand</Alias>
-    <Explanation>http://sal.lsst.org</Explanation>
-    <item>
-        <EFDB_Name>command</EFDB_Name>
-        <Description>Name of the rejected command</Description>
-        <IDL_Type>string</IDL_Type>
-        <IDL_Size>1</IDL_Size>
-        <Units>unitless</Units>
-        <Count>1</Count>
-    </item>
-    <item>
-        <EFDB_Name>state</EFDB_Name>
-        <Description>State of the CSC.</Description>
-        <IDL_Type>string</IDL_Type>
-        <IDL_Size>1</IDL_Size>
-        <Units>unitless</Units>
-        <Count>1</Count>
-    </item>
-    <item>
-        <EFDB_Name>timestamp</EFDB_Name>
-        <Description>Timestamp when the command was rejected.</Description>
-        <IDL_Type>double</IDL_Type>
-        <Units>unitless</Units>
-        <Count>1</Count>
-    </item>
-</SALEvent>
-<SALEvent>
-    <Subsystem>MTDomeTrajectory</Subsystem>
-    <Version>3.8.31</Version>
-    <Author></Author>
-    <EFDB_Topic>MTDomeTrajectory_logevent_allClear</EFDB_Topic>
-    <Alias>allClear</Alias>
-    <Explanation>http://sal.lsst.org</Explanation>
-    <item>
-        <EFDB_Name>allClear</EFDB_Name>
-        <Description>Is the telescope clear of the dome?</Description>
-        <IDL_Type>boolean</IDL_Type>
-        <IDL_Size>1</IDL_Size>
-        <Units>unitless</Units>
-        <Count>1</Count>
-    </item>
-    <item>
-        <EFDB_Name>timestamp</EFDB_Name>
-        <Description>Timestamp when the condition changed.</Description>
-        <IDL_Type>double</IDL_Type>
-        <Units>unitless</Units>
-        <Count>1</Count>
-    </item>
-</SALEvent></SALEventSet>
+    <SALEvent>
+        <Subsystem>MTDomeTrajectory</Subsystem>
+        <EFDB_Topic>MTDomeTrajectory_logevent_algorithm</EFDB_Topic>
+        <Description>The selected algorithm and its configuration.</Description>
+        <item>
+            <EFDB_Name>algorithmName</EFDB_Name>
+            <Description>Name of algorithm.</Description>
+            <IDL_Type>string</IDL_Type>
+            <IDL_Size>1</IDL_Size>
+            <Units>unitless</Units>
+            <Count>1</Count>
+        </item>
+        <item>
+            <EFDB_Name>algorithmConfig</EFDB_Name>
+            <Description>Configuration for the algorithm, encoded as yaml.</Description>
+            <IDL_Type>string</IDL_Type>
+            <IDL_Size>1</IDL_Size>
+            <Units>unitless</Units>
+            <Count>1</Count>
+        </item>
+    </SALEvent>
+</SALEventSet>

@@ -9,14 +9,14 @@
     <Alias>applyForces</Alias>
     <Description>Provide the delta accumulated force vector used in adjusting the target force settings in the closed-loop control. This vector will add to the look-up table (LUT) force directly. A potential use of this command is the active optics system (AOS) to apply the bending mode.</Description>
     <item>
-        <EFDB_Name>axialForceSetPoints</EFDB_Name>
+        <EFDB_Name>axial</EFDB_Name>
         <Description>Accumulated axial force vector adds to the LUT force. The elements are the actuator Ids from 1 to 72. The related ring Ids are B1-B30, C1-C24, and D1-D18.</Description>
         <IDL_Type>double</IDL_Type>
         <Units>newton</Units>
         <Count>72</Count>
     </item>
     <item>
-        <EFDB_Name>tangentForceSetPoints</EFDB_Name>
+        <EFDB_Name>tangent</EFDB_Name>
         <Description>Accumulated tangent force vector adds to the LUT force. The elements are the actuator Ids from 73 to 78. The related ring Ids are A1-A6.</Description>
         <IDL_Type>double</IDL_Type>
         <Units>newton</Units>
@@ -98,6 +98,63 @@
         <IDL_Type>boolean</IDL_Type>
         <Units>unitless</Units>
         <Count>1</Count>
+    </item>
+</SALCommand>
+
+<SALCommand>
+    <Subsystem>MTM2</Subsystem>
+    <EFDB_Topic>MTM2_command_switchForceBalanceSystem</EFDB_Topic>
+    <Alias>switchForceBalanceSystem</Alias>
+    <Description>Switch the force balance (FB) system. The default is that FB is on.</Description>
+    <item>
+        <EFDB_Name>status</EFDB_Name>
+        <Description>True: turn on FB. False: turn off FB.</Description>
+        <IDL_Type>boolean</IDL_Type>
+        <Units>unitless</Units>
+        <Count>1</Count>
+    </item>
+</SALCommand>
+
+<SALCommand>
+    <Subsystem>MTM2</Subsystem>
+    <EFDB_Topic>MTM2_command_selectInclinationSource</EFDB_Topic>
+    <Alias>selectInclinationSource</Alias>
+    <Description>Select the inclination source onboard or from main telescope mount (MTMount) control system. The default is onboard.</Description>
+    <item>
+      <EFDB_Name>source</EFDB_Name>
+      <Description>Enumeration: 1: OnBoard. 2: MTMount.</Description>
+      <IDL_Type>short</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+      <Enumeration>OnBoard,MTMount</Enumeration>
+    </item>
+</SALCommand>
+
+<SALCommand>
+    <Subsystem>MTM2</Subsystem>
+    <EFDB_Topic>MTM2_command_setTemperatureOffset</EFDB_Topic>
+    <Alias>setTemperatureOffset</Alias>
+    <Description>Set the offset of temperature sensors.</Description>
+    <item>
+        <EFDB_Name>ring</EFDB_Name>
+        <Description>Offset of ring temperatures: LG2-1, LG2-2, LG2-3, LG2-4, LG3-1, LG3-2, LG3-3, LG3-4, LG4-1, LG4-2, LG4-3, and LG4-4.</Description>
+        <IDL_Type>double</IDL_Type>
+        <Units>deg_C</Units>
+        <Count>12</Count>
+    </item>
+    <item>
+        <EFDB_Name>intake</EFDB_Name>
+        <Description>Offset of intake temperatures: #1 and #2.</Description>
+        <IDL_Type>double</IDL_Type>
+        <Units>deg_C</Units>
+        <Count>2</Count>
+    </item>
+    <item>
+        <EFDB_Name>exhaust</EFDB_Name>
+        <Description>Offset of exhaust temperatures: #1 and #2.</Description>
+        <IDL_Type>double</IDL_Type>
+        <Units>deg_C</Units>
+        <Count>2</Count>
     </item>
 </SALCommand>
 

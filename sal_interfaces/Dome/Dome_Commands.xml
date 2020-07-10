@@ -1,241 +1,127 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-stylesheet type="text/xsl" href="http://lsst-sal.tuc.noao.edu/schema/SALCommandSet.xsl"?>
-<SALCommandSet xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:noNamespaceSchemaLocation="http://lsst-sal.tuc.noao.edu/schema/SALCommandSet.xsd">
-<SALCommand>
-    <Subsystem>Dome</Subsystem>
-    <Version>3.7.1</Version>
-    <Author></Author>
-    <EFDB_Topic>Dome_command_crawlAz</EFDB_Topic>
-    <Alias>crawlAz</Alias>
-    <Device></Device>
-    <Property></Property>
-    <Action></Action>
-    <Value></Value>
-    <Explanation>http://sal.lsst.org</Explanation>
-    <item>
-        <EFDB_Name>azRate</EFDB_Name>
-        <Description>Specifies the velocity of crawl motion in degrees per second. Positive means in the direction of increasing azimuth, negative in the direction of decreasing azimuth.</Description>
-        <IDL_Type>double</IDL_Type>
-        <Units>deg/second</Units>
-        <Count>1</Count>
-    </item>
-</SALCommand>
-<SALCommand>
-    <Subsystem>Dome</Subsystem>
-    <Version>3.7.1</Version>
-    <Author></Author>
-    <EFDB_Topic>Dome_command_crawlEl</EFDB_Topic>
-    <Alias>crawlEl</Alias>
-    <Device></Device>
-    <Property></Property>
-    <Action></Action>
-    <Value></Value>
-    <Explanation>http://sal.lsst.org</Explanation>
-    <item>
-        <EFDB_Name>elRate</EFDB_Name>
-        <Description>Specifies the velocity of crawl motion in degrees per second. Positive means in the direction of increasing elevation, negative in the direction of decreasing elevation.</Description>
-        <IDL_Type>double</IDL_Type>
-        <Units>deg/second</Units>
-        <Count>1</Count>
-    </item>
-</SALCommand>
-<SALCommand>
-    <Subsystem>Dome</Subsystem>
-    <Version>3.7.1</Version>
-    <Author></Author>
-    <EFDB_Topic>Dome_command_moveAz</EFDB_Topic>
-    <Alias>moveAz</Alias>
-    <Device></Device>
-    <Property></Property>
-    <Action></Action>
-    <Value></Value>
-    <Explanation>http://sal.lsst.org</Explanation>
-    <item>
-        <EFDB_Name>azimuth</EFDB_Name>
-        <Description>Absolute positon angle for azimuth rotation in degrees</Description>
-        <IDL_Type>double</IDL_Type>
-        <Units>deg</Units>
-        <Count>1</Count>
-    </item>
-    <item>
-        <EFDB_Name>azRate</EFDB_Name>
-        <Description>Specifies the velocity of crawl motion in degrees per second at which the motion should continue once the commanded azimuth has been reached. Positive means in the direction of increasing azimuth, negative in the direction of decreasing azimuth.</Description>
-        <IDL_Type>double</IDL_Type>
-        <Units>deg/second</Units>
-        <Count>1</Count>
-    </item>
-</SALCommand>
-<SALCommand>
-    <Subsystem>Dome</Subsystem>
-    <Version>3.7.1</Version>
-    <Author></Author>
-    <EFDB_Topic>Dome_command_moveEl</EFDB_Topic>
-    <Alias>moveEl</Alias>
-    <Device></Device>
-    <Property></Property>
-    <Action></Action>
-    <Value></Value>
-    <Explanation>http://sal.lsst.org</Explanation>
-    <item>
-        <EFDB_Name>elevation</EFDB_Name>
-        <Description>Absolute position angle for elevation motion in degrees</Description>
-        <IDL_Type>double</IDL_Type>
-        <Units>deg</Units>
-        <Count>1</Count>
-    </item>
-</SALCommand>
-<SALCommand>
-    <Subsystem>Dome</Subsystem>
-    <Version>3.7.1</Version>
-    <Author></Author>
-    <EFDB_Topic>Dome_command_park</EFDB_Topic>
-    <Alias>park</Alias>
-    <Device></Device>
-    <Property></Property>
-    <Action></Action>
-    <Value></Value>
-    <Explanation>http://sal.lsst.org</Explanation>
-</SALCommand>
-<SALCommand>
-    <Subsystem>Dome</Subsystem>
-    <Version>3.7.1</Version>
-    <Author></Author>
-    <EFDB_Topic>Dome_command_setLouver</EFDB_Topic>
-    <Alias>setLouver</Alias>
-    <Device></Device>
-    <Property></Property>
-    <Action></Action>
-    <Value></Value>
-    <Explanation>http://sal.lsst.org</Explanation>
-    <item>
-        <EFDB_Name>id</EFDB_Name>
-        <Description>Identification of louver to move</Description>
-        <IDL_Type>int</IDL_Type>
-        <Units>unitless</Units>
-        <Count>1</Count>
-    </item>
-    <item>
-        <EFDB_Name>position</EFDB_Name>
-        <Description>The position to set the louver</Description>
-        <IDL_Type>int</IDL_Type>
-        <Units>unitless</Units>
-        <Count>1</Count>
-    </item>
-</SALCommand>
-<SALCommand>
-    <Subsystem>Dome</Subsystem>
-    <Version>3.7.1</Version>
-    <Author></Author>
-    <EFDB_Topic>Dome_command_closeLouvers</EFDB_Topic>
-    <Alias>closeLouvers</Alias>
-    <Device></Device>
-    <Property></Property>
-    <Action></Action>
-    <Value></Value>
-    <Explanation>http://sal.lsst.org</Explanation>
-</SALCommand>
-<SALCommand>
-    <Subsystem>Dome</Subsystem>
-    <Version>3.7.1</Version>
-    <Author></Author>
-    <EFDB_Topic>Dome_command_stopLouvers</EFDB_Topic>
-    <Alias>stopLouvers</Alias>
-    <Device></Device>
-    <Property></Property>
-    <Action></Action>
-    <Value></Value>
-    <Explanation>http://sal.lsst.org</Explanation>
-</SALCommand>
-<SALCommand>
-    <Subsystem>Dome</Subsystem>
-    <Version>3.7.1</Version>
-    <Author></Author>
-    <EFDB_Topic>Dome_command_closeShutter</EFDB_Topic>
-    <Alias>closeShutter</Alias>
-    <Device></Device>
-    <Property></Property>
-    <Action></Action>
-    <Value></Value>
-    <Explanation>http://sal.lsst.org</Explanation>
-</SALCommand>
-<SALCommand>
-    <Subsystem>Dome</Subsystem>
-    <Version>3.7.1</Version>
-    <Author></Author>
-    <EFDB_Topic>Dome_command_openShutter</EFDB_Topic>
-    <Alias>openShutter</Alias>
-    <Device></Device>
-    <Property></Property>
-    <Action></Action>
-    <Value></Value>
-    <Explanation>http://sal.lsst.org</Explanation>
-</SALCommand>
-<SALCommand>
-    <Subsystem>Dome</Subsystem>
-    <Version>3.7.1</Version>
-    <Author></Author>
-    <EFDB_Topic>Dome_command_stopShutter</EFDB_Topic>
-    <Alias>stopShutter</Alias>
-    <Device></Device>
-    <Property></Property>
-    <Action></Action>
-    <Value></Value>
-    <Explanation>http://sal.lsst.org</Explanation>
-</SALCommand>
-<SALCommand>
-    <Subsystem>Dome</Subsystem>
-    <Version>3.7.1</Version>
-    <Author></Author>
-    <EFDB_Topic>Dome_command_stopAz</EFDB_Topic>
-    <Alias>stopAz</Alias>
-    <Device></Device>
-    <Property></Property>
-    <Action></Action>
-    <Value></Value>
-    <Explanation>http://sal.lsst.org</Explanation>
-</SALCommand>
-<SALCommand>
-    <Subsystem>Dome</Subsystem>
-    <Version>3.7.1</Version>
-    <Author></Author>
-    <EFDB_Topic>Dome_command_stopEl</EFDB_Topic>
-    <Alias>stopEl</Alias>
-    <Device></Device>
-    <Property></Property>
-    <Action></Action>
-    <Value></Value>
-    <Explanation>http://sal.lsst.org</Explanation>
-</SALCommand>
-<SALCommand>
-    <Subsystem>Dome</Subsystem>
-    <Version>3.7.1</Version>
-    <Author></Author>
-    <EFDB_Topic>Dome_command_stop</EFDB_Topic>
-    <Alias>stop</Alias>
-    <Device></Device>
-    <Property></Property>
-    <Action></Action>
-    <Value></Value>
-    <Explanation>http://sal.lsst.org</Explanation>
-</SALCommand>
-<SALCommand>
-    <Subsystem>Dome</Subsystem>
-    <Version>3.7.1</Version>
-    <Author></Author>
-    <EFDB_Topic>Dome_command_setTemperature</EFDB_Topic>
-    <Alias>setTemperature</Alias>
-    <Device></Device>
-    <Property></Property>
-    <Action></Action>
-    <Value></Value>
-    <Explanation>http://sal.lsst.org</Explanation>
-    <item>
-        <EFDB_Name>temperature</EFDB_Name>
-        <Description>Set the temperature to maintain in the dome heat sources</Description>
-        <IDL_Type>double</IDL_Type>
-        <Units>Celsius</Units>
-        <Count>1</Count>
-    </item>
-</SALCommand>
+<SALCommandSet xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://lsst-sal.tuc.noao.edu/schema/SALCommandSet.xsd">
+    <SALCommand>
+        <Subsystem>Dome</Subsystem>
+        <EFDB_Topic>Dome_command_crawlAz</EFDB_Topic>
+        <Description>Move the azimuth axis at constant velocity.</Description>
+        <item>
+            <EFDB_Name>velocity</EFDB_Name>
+            <Description>The velocity. Positive is the direction of increasing azimuth.</Description>
+            <IDL_Type>double</IDL_Type>
+            <Units>deg/second</Units>
+            <Count>1</Count>
+        </item>
+    </SALCommand>
+    <SALCommand>
+        <Subsystem>Dome</Subsystem>
+        <EFDB_Topic>Dome_command_crawlEl</EFDB_Topic>
+        <Description>Move the elevation axis (light/wind screen) at constant velocity.</Description>
+        <item>
+            <EFDB_Name>velocity</EFDB_Name>
+            <Description>The velocity. Positive is the direction of increasing azimuth.</Description>
+            <IDL_Type>double</IDL_Type>
+            <Units>deg/second</Units>
+            <Count>1</Count>
+        </item>
+    </SALCommand>
+    <SALCommand>
+        <Subsystem>Dome</Subsystem>
+        <EFDB_Topic>Dome_command_moveAz</EFDB_Topic>
+        <Description>Move the azimuth axis at constant velocity, starting from a specified position.</Description>
+        <item>
+            <EFDB_Name>position</EFDB_Name>
+            <Description>The position.</Description>
+            <IDL_Type>double</IDL_Type>
+            <Units>deg</Units>
+            <Count>1</Count>
+        </item>
+        <item>
+            <EFDB_Name>velocity</EFDB_Name>
+            <Description>The velocity. Positive is the direction of increasing azimuth.</Description>
+            <IDL_Type>double</IDL_Type>
+            <Units>deg/second</Units>
+            <Count>1</Count>
+        </item>
+    </SALCommand>
+    <SALCommand>
+        <Subsystem>Dome</Subsystem>
+        <EFDB_Topic>Dome_command_moveEl</EFDB_Topic>
+        <Description>Move the elevation axis (light/wind screen) to a specified position.</Description>
+        <item>
+            <EFDB_Name>position</EFDB_Name>
+            <Description>The position.</Description>
+            <IDL_Type>double</IDL_Type>
+            <Units>deg</Units>
+            <Count>1</Count>
+        </item>
+    </SALCommand>
+    <SALCommand>
+        <Subsystem>Dome</Subsystem>
+        <EFDB_Topic>Dome_command_park</EFDB_Topic>
+    </SALCommand>
+    <SALCommand>
+        <Subsystem>Dome</Subsystem>
+        <EFDB_Topic>Dome_command_setLouvers</EFDB_Topic>
+        <Description>Move one or more louvers. The Louver enumeration describes the louver indices.</Description>
+        <item>
+            <EFDB_Name>position</EFDB_Name>
+            <Description>Desired percent open of each louver: 0 is fully closed, 100 is fully open, -1 is don't move.</Description>
+            <IDL_Type>float</IDL_Type>
+            <Units>unitless</Units>
+            <Count>34</Count>
+        </item>
+    </SALCommand>
+    <SALCommand>
+        <Subsystem>Dome</Subsystem>
+        <EFDB_Topic>Dome_command_closeLouvers</EFDB_Topic>
+        <Description>Close all louvers.</Description>
+    </SALCommand>
+    <SALCommand>
+        <Subsystem>Dome</Subsystem>
+        <EFDB_Topic>Dome_command_stopLouvers</EFDB_Topic>
+        <Description>Stop all louvers.</Description>
+    </SALCommand>
+    <SALCommand>
+        <Subsystem>Dome</Subsystem>
+        <EFDB_Topic>Dome_command_closeShutter</EFDB_Topic>
+        <Description>Close the shutter.</Description>
+    </SALCommand>
+    <SALCommand>
+        <Subsystem>Dome</Subsystem>
+        <EFDB_Topic>Dome_command_openShutter</EFDB_Topic>
+        <Description>Open the shutter.</Description>
+    </SALCommand>
+    <SALCommand>
+        <Subsystem>Dome</Subsystem>
+        <EFDB_Topic>Dome_command_stopShutter</EFDB_Topic>
+        <Description>Stop the shutter.</Description>
+    </SALCommand>
+    <SALCommand>
+        <Subsystem>Dome</Subsystem>
+        <EFDB_Topic>Dome_command_stopAz</EFDB_Topic>
+        <Description>Stop azimuth motion.</Description>
+    </SALCommand>
+    <SALCommand>
+        <Subsystem>Dome</Subsystem>
+        <EFDB_Topic>Dome_command_stopEl</EFDB_Topic>
+        <Description>Stop elevation (light/wind screen) motion.</Description>
+    </SALCommand>
+    <SALCommand>
+        <Subsystem>Dome</Subsystem>
+        <EFDB_Topic>Dome_command_stop</EFDB_Topic>
+        <Description>Stop all motion.</Description>
+    </SALCommand>
+    <SALCommand>
+        <Subsystem>Dome</Subsystem>
+        <EFDB_Topic>Dome_command_setTemperature</EFDB_Topic>
+        <Description>Set the desired temperature of the dome heat sources (motors and cabinets)</Description>
+        <item>
+            <EFDB_Name>temperature</EFDB_Name>
+            <Description>Desired temperature.</Description>
+            <IDL_Type>double</IDL_Type>
+            <Units>deg_C</Units>
+            <Count>1</Count>
+        </item>
+    </SALCommand>
 </SALCommandSet>

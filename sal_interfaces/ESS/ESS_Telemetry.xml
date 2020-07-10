@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-stylesheet type="text/xsl" href="http://lsst-sal.tuc.noao.edu/schema/SALTelemetrySet.xsl"?>
 <SALTelemetrySet xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:noNamespaceSchemaLocation="http://lsst-sal.tuc.noao.edu/schema/SALTelemetrySet.xsd">
-<Enumeration>x,y,z</Enumeration>
+    xsi:noNamespaceSchemaLocation="http://lsst-sal.tuc.noao.edu/schema/SALTelemetrySet.xsd">
 <SALTelemetry>
  <Subsystem>ESS</Subsystem>
  <Version>3.5.0</Version>
@@ -10,8 +9,17 @@
  <EFDB_Topic>ESS_airTurbulence</EFDB_Topic>
       <Description>Air Turbulence Instrument - CSAT3B (Tri-Axial) Serial to Ethernet Converter</Description>
       <item>
+          <EFDB_Name>timestamp</EFDB_Name>
+          <Description>Time at which the data was determined (TAI unix seconds).</Description>
+          <IDL_Type>double</IDL_Type>
+          <Units>second</Units>
+          <Conversion></Conversion>
+          <Sensor_location></Sensor_location>
+          <Count>1</Count>
+      </item>
+      <item>
           <EFDB_Name>ux</EFDB_Name>
-	  <Description>x-axis wind speed</Description>
+          <Description>x-axis wind speed</Description>
           <IDL_Type>float</IDL_Type>
           <Units>m/s</Units>
           <Conversion></Conversion>
@@ -20,7 +28,7 @@
       </item>
       <item>
           <EFDB_Name>uy</EFDB_Name>
-	  <Description>y-axis wind speed</Description>
+          <Description>y-axis wind speed</Description>
           <IDL_Type>float</IDL_Type>
           <Units>m/s</Units>
           <Conversion></Conversion>
@@ -29,7 +37,7 @@
       </item>
       <item>
           <EFDB_Name>uz</EFDB_Name>
-	  <Description>z-axis wind speed</Description>
+          <Description>z-axis wind speed</Description>
           <IDL_Type>float</IDL_Type>
           <Units>m/s</Units>
           <Conversion></Conversion>
@@ -38,7 +46,7 @@
       </item>
       <item>
           <EFDB_Name>ts</EFDB_Name>
-	  <Description>Sonic temperature</Description>
+          <Description>Sonic temperature</Description>
           <IDL_Type>float</IDL_Type>
           <Units>unitless</Units>
           <Conversion></Conversion>
@@ -47,7 +55,7 @@
       </item>
       <item>
           <EFDB_Name>diagWord</EFDB_Name>
-	  <Description>Diagnostic word</Description>
+          <Description>Diagnostic word</Description>
           <IDL_Type>short</IDL_Type>
           <Units>unitless</Units>
           <Conversion></Conversion>
@@ -56,7 +64,7 @@
       </item>
       <item>
           <EFDB_Name>recordCounter</EFDB_Name>
-	  <Description>Record counter (0-63)</Description>
+          <Description>Record counter (0-63)</Description>
           <IDL_Type>short</IDL_Type>
           <Units>unitless</Units>
           <Conversion></Conversion>
@@ -68,8 +76,17 @@
  <EFDB_Topic>ESS_airFlow</EFDB_Topic>
       <Description>AirFlow Sensor - Windsonic1-L (Bi-axial) Serial to Ethernet Converter</Description>
       <item>
+          <EFDB_Name>timestamp</EFDB_Name>
+          <Description>Time at which the data was determined (TAI unix seconds).</Description>
+          <IDL_Type>double</IDL_Type>
+          <Units>second</Units>
+          <Conversion></Conversion>
+          <Sensor_location></Sensor_location>
+          <Count>1</Count>
+      </item>
+      <item>
           <EFDB_Name>direction</EFDB_Name>
-	  <Description>Wind direction Telemetry</Description>
+          <Description>Wind direction Telemetry</Description>
           <IDL_Type>short</IDL_Type>
           <Units>unitless</Units>
           <Conversion></Conversion>
@@ -78,7 +95,7 @@
       </item>
       <item>
           <EFDB_Name>speed</EFDB_Name>
-	  <Description>Wind speed Telemetry</Description>
+          <Description>Wind speed Telemetry</Description>
           <IDL_Type>float</IDL_Type>
           <Units>m/s</Units>
           <Conversion></Conversion>
@@ -87,7 +104,7 @@
       </item>
       <item>
           <EFDB_Name>status</EFDB_Name>
-	  <Description>Status Code Telemetry</Description>
+          <Description>Status Code Telemetry</Description>
           <IDL_Type>unsigned short</IDL_Type>
           <Units>unitless</Units>
           <Conversion></Conversion>
@@ -99,8 +116,17 @@
  <EFDB_Topic>ESS_temperature1Ch</EFDB_Topic>
       <Description>Temperature Sensors (4-Channel) Serial to Ethernet Converter</Description>
       <item>
+          <EFDB_Name>timestamp</EFDB_Name>
+          <Description>Time at which the data was determined (TAI unix seconds).</Description>
+          <IDL_Type>double</IDL_Type>
+          <Units>second</Units>
+          <Conversion></Conversion>
+          <Sensor_location></Sensor_location>
+          <Count>1</Count>
+      </item>
+      <item>
           <EFDB_Name>temperatureC01</EFDB_Name>
-	  <Description>Temperature Sensor 1 Telemetry</Description>
+          <Description>Temperature Sensor 1 Telemetry</Description>
           <IDL_Type>float</IDL_Type>
           <Units>deg_C</Units>
           <Conversion></Conversion>
@@ -112,8 +138,17 @@
  <EFDB_Topic>ESS_temperature4Ch</EFDB_Topic>
       <Description>Temperature Sensors (4-Channel) Serial to Ethernet Converter</Description>
       <item>
+          <EFDB_Name>timestamp</EFDB_Name>
+          <Description>Time at which the data was determined (TAI unix seconds).</Description>
+          <IDL_Type>double</IDL_Type>
+          <Units>second</Units>
+          <Conversion></Conversion>
+          <Sensor_location></Sensor_location>
+          <Count>1</Count>
+      </item>
+      <item>
           <EFDB_Name>temperatureC01</EFDB_Name>
-	  <Description>Temperature Sensor 1 Telemetry</Description>
+          <Description>Temperature Sensor 1 Telemetry</Description>
           <IDL_Type>float</IDL_Type>
           <Units>deg_C</Units>
           <Conversion></Conversion>
@@ -122,7 +157,7 @@
       </item>
       <item>
           <EFDB_Name>temperatureC02</EFDB_Name>
-	  <Description>Temperature Sensor 2 Telemetry</Description>
+          <Description>Temperature Sensor 2 Telemetry</Description>
           <IDL_Type>float</IDL_Type>
           <Units>deg_C</Units>
           <Conversion></Conversion>
@@ -131,7 +166,7 @@
       </item>
       <item>
           <EFDB_Name>temperatureC03</EFDB_Name>
-	  <Description>Temperature Sensor 3 Telemetry</Description>
+          <Description>Temperature Sensor 3 Telemetry</Description>
           <IDL_Type>float</IDL_Type>
           <Units>deg_C</Units>
           <Conversion></Conversion>
@@ -140,7 +175,7 @@
       </item>
       <item>
           <EFDB_Name>temperatureC04</EFDB_Name>
-	  <Description>Temperature Sensor 4 Telemetry</Description>
+          <Description>Temperature Sensor 4 Telemetry</Description>
           <IDL_Type>float</IDL_Type>
           <Units>deg_C</Units>
           <Conversion></Conversion>
@@ -152,8 +187,17 @@
  <EFDB_Topic>ESS_temperature8Ch</EFDB_Topic>
       <Description>Temperature Sensors (8-Channel) Serial to Ethernet Converter</Description>
       <item>
+          <EFDB_Name>timestamp</EFDB_Name>
+          <Description>Time at which the data was determined (TAI unix seconds).</Description>
+          <IDL_Type>double</IDL_Type>
+          <Units>second</Units>
+          <Conversion></Conversion>
+          <Sensor_location></Sensor_location>
+          <Count>1</Count>
+      </item>
+      <item>
           <EFDB_Name>temperatureC01</EFDB_Name>
-	  <Description>Temperature Sensor 1 Telemetry</Description>
+          <Description>Temperature Sensor 1 Telemetry</Description>
           <IDL_Type>float</IDL_Type>
           <Units>deg_C</Units>
           <Conversion></Conversion>
@@ -162,7 +206,7 @@
       </item>
       <item>
           <EFDB_Name>temperatureC02</EFDB_Name>
-	  <Description>Temperature Sensor 2 Telemetry</Description>
+          <Description>Temperature Sensor 2 Telemetry</Description>
           <IDL_Type>float</IDL_Type>
           <Units>deg_C</Units>
           <Conversion></Conversion>
@@ -171,7 +215,7 @@
       </item>
       <item>
           <EFDB_Name>temperatureC03</EFDB_Name>
-	  <Description>Temperature Sensor 3 Telemetry</Description>
+          <Description>Temperature Sensor 3 Telemetry</Description>
           <IDL_Type>float</IDL_Type>
           <Units>deg_C</Units>
           <Conversion></Conversion>
@@ -180,7 +224,7 @@
       </item>
       <item>
           <EFDB_Name>temperatureC04</EFDB_Name>
-	  <Description>Temperature Sensor 4 Telemetry</Description>
+          <Description>Temperature Sensor 4 Telemetry</Description>
           <IDL_Type>float</IDL_Type>
           <Units>deg_C</Units>
           <Conversion></Conversion>
@@ -189,7 +233,7 @@
       </item>
       <item>
           <EFDB_Name>temperatureC05</EFDB_Name>
-	  <Description>Temperature Sensor 5 Telemetry</Description>
+          <Description>Temperature Sensor 5 Telemetry</Description>
           <IDL_Type>float</IDL_Type>
           <Units>deg_C</Units>
           <Conversion></Conversion>
@@ -198,7 +242,7 @@
       </item>
       <item>
           <EFDB_Name>temperatureC06</EFDB_Name>
-	  <Description>Temperature Sensor 6 Telemetry</Description>
+          <Description>Temperature Sensor 6 Telemetry</Description>
           <IDL_Type>float</IDL_Type>
           <Units>deg_C</Units>
           <Conversion></Conversion>
@@ -207,7 +251,7 @@
       </item>
       <item>
           <EFDB_Name>temperatureC07</EFDB_Name>
-	  <Description>Temperature Sensor 7 Telemetry</Description>
+          <Description>Temperature Sensor 7 Telemetry</Description>
           <IDL_Type>float</IDL_Type>
           <Units>deg_C</Units>
           <Conversion></Conversion>
@@ -216,7 +260,7 @@
       </item>
       <item>
           <EFDB_Name>temperatureC08</EFDB_Name>
-	  <Description>Temperature Sensor 8 Telemetry</Description>
+          <Description>Temperature Sensor 8 Telemetry</Description>
           <IDL_Type>float</IDL_Type>
           <Units>deg_C</Units>
           <Conversion></Conversion>
@@ -228,8 +272,17 @@
  <EFDB_Topic>ESS_cloudRainLight</EFDB_Topic>
       <Description>Cloud Rain Light Sensors Serial to Ethernet Converter</Description>
       <item>
+          <EFDB_Name>timestamp</EFDB_Name>
+          <Description>Time at which the data was determined (TAI unix seconds).</Description>
+          <IDL_Type>double</IDL_Type>
+          <Units>second</Units>
+          <Conversion></Conversion>
+          <Sensor_location></Sensor_location>
+          <Count>1</Count>
+      </item>
+      <item>
           <EFDB_Name>ambientTemperature</EFDB_Name>
-	  <Description>Ambient Temperature Sensor Telemetry</Description>
+          <Description>Ambient Temperature Sensor Telemetry</Description>
           <IDL_Type>float</IDL_Type>
           <Units>deg_C</Units>
           <Conversion></Conversion>
@@ -238,7 +291,7 @@
       </item>
       <item>
           <EFDB_Name>skyTemperature</EFDB_Name>
-	  <Description>Sky Temperature Sensor Telemetry</Description>
+          <Description>Sky Temperature Sensor Telemetry</Description>
           <IDL_Type>float</IDL_Type>
           <Units>deg_C</Units>
           <Conversion></Conversion>
@@ -247,7 +300,7 @@
       </item>
       <item>
           <EFDB_Name>lightLevel</EFDB_Name>
-	  <Description>Light Level Telemetry</Description>
+          <Description>Light Level Telemetry</Description>
           <IDL_Type>float</IDL_Type>
           <Units>unitless</Units>
           <Conversion></Conversion>
@@ -256,7 +309,7 @@
       </item>
       <item>
           <EFDB_Name>rainLevel</EFDB_Name>
-	  <Description>Rain Level Telemetry</Description>
+          <Description>Rain Level Telemetry</Description>
           <IDL_Type>float</IDL_Type>
           <Units>mm</Units>
           <Conversion></Conversion>

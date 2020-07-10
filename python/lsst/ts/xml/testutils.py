@@ -14,12 +14,12 @@ XML test suite generator scripts.
 """Defines the array of Commandable SAL Components, or CSCs."""
 
 subsystems = [
-    'ATAOS', 'ATArchiver', 'ATBuilding', 'ATCamera', 'ATDome',
+    'AdamSensors', 'ATAOS', 'ATArchiver', 'ATBuilding', 'ATCamera', 'ATDome',
     'ATDomeTrajectory', 'ATHeaderService', 'ATHexapod', 'ATMCS',
     'ATMonochromator', 'ATOODS', 'ATPneumatics', 'ATPtg', 'ATSpectrograph',
-    'ATWhiteLight', 'CCArchiver', 'CCCamera', 'CCHeaderService', 'CCOODS',
-    'CatchupArchiver', 'CBP', 'DIMM', 'Dome', 'DSM',
-    'EAS', 'EFDTransformationServer', 'Electrometer', 'Environment', 'ESS',
+    'ATWhiteLight', 'Authorize', 'CCArchiver', 'CCCamera', 'CCHeaderService',
+    'CCOODS', 'CatchupArchiver', 'CBP', 'DIMM', 'Dome', 'DSM',
+    'EAS', 'Electrometer', 'Environment', 'ESS',
     'FiberSpectrograph', 'GenericCamera', 'IOTA', 'Hexapod', 'HVAC',
     'LinearStage', 'LOVE', 'MTAOS', 'MTAlignment', 'MTArchiver', 'MTCamera',
     'MTDomeTrajectory', 'MTEEC', 'MTHeaderService',

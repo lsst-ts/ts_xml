@@ -1,5 +1,4 @@
 csc_info:
-	python generate_csc_information.py
 	python generateCSVTable.py
 	python generate_cet.py
 
@@ -9,5 +8,5 @@ html: csc_info
 
 clean: 
 	package-docs clean
-	rm csc_information.rst subsystemData.csv orderedSubsystemData.csv
+	rm subsystemData.csv orderedSubsystemData.csv
 	rm -rf sal_interfaces

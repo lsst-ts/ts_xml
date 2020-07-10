@@ -9,9 +9,7 @@
     <!-- Actuator states -->
     <SALEvent>
         <Subsystem>ATDome</Subsystem>
-        <Version>3.8.2</Version>
         <EFDB_Topic>ATDome_logevent_azimuthCommandedState</EFDB_Topic>
-        <Alias>azimuthCommandedState</Alias>
         <Description>Commanded state of azimuth drive.</Description>
         <item>
             <EFDB_Name>commandedState</EFDB_Name>
@@ -31,9 +29,7 @@
     </SALEvent>
     <SALEvent>
         <Subsystem>ATDome</Subsystem>
-        <Version>3.8.2</Version>
         <EFDB_Topic>ATDome_logevent_azimuthState</EFDB_Topic>
-        <Alias>azimuthState</Alias>
         <Description>Current state of azimuth drive.</Description>
         <item>
             <EFDB_Name>state</EFDB_Name>
@@ -53,9 +49,7 @@
     </SALEvent>
     <SALEvent>
         <Subsystem>ATDome</Subsystem>
-        <Version>3.8.2</Version>
         <EFDB_Topic>ATDome_logevent_dropoutDoorCommandedState</EFDB_Topic>
-        <Alias>dropoutDoorCommandedState</Alias>
         <Description>Commanded state of the dropout shutter door.</Description>
         <item>
             <EFDB_Name>commandedState</EFDB_Name>
@@ -68,9 +62,7 @@
     </SALEvent>
     <SALEvent>
         <Subsystem>ATDome</Subsystem>
-        <Version>3.8.2</Version>
         <EFDB_Topic>ATDome_logevent_dropoutDoorState</EFDB_Topic>
-        <Alias>dropoutDoorState</Alias>
         <Description>Current state of the dropout shutter door.</Description>
         <item>
             <EFDB_Name>state</EFDB_Name>
@@ -83,9 +75,7 @@
     </SALEvent>
     <SALEvent>
         <Subsystem>ATDome</Subsystem>
-        <Version>3.8.2</Version>
         <EFDB_Topic>ATDome_logevent_mainDoorCommandedState</EFDB_Topic>
-        <Alias>mainDoorCommandedState</Alias>
         <Description>Commanded state of the main shutter door.</Description>
         <item>
             <EFDB_Name>commandedState</EFDB_Name>
@@ -98,9 +88,7 @@
     </SALEvent>
     <SALEvent>
         <Subsystem>ATDome</Subsystem>
-        <Version>3.8.2</Version>
         <EFDB_Topic>ATDome_logevent_mainDoorState</EFDB_Topic>
-        <Alias>mainDoorState</Alias>
         <Description>Current state of the main shutter door.</Description>
         <item>
             <EFDB_Name>state</EFDB_Name>
@@ -113,9 +101,7 @@
     </SALEvent>
     <SALEvent>
         <Subsystem>ATDome</Subsystem>
-        <Version>3.8.2</Version>
         <EFDB_Topic>ATDome_logevent_azimuthInPosition</EFDB_Topic>
-        <Alias>azimuthInPosition</Alias>
         <Description>Is the dome azimuth in the commanded position? Note: this will be false when the CSC starts up until a position is commanded.</Description>
         <item>
             <EFDB_Name>inPosition</EFDB_Name>
@@ -127,9 +113,7 @@
     </SALEvent>
     <SALEvent>
         <Subsystem>ATDome</Subsystem>
-        <Version>3.8.2</Version>
         <EFDB_Topic>ATDome_logevent_shutterInPosition</EFDB_Topic>
-        <Alias>shutterInPosition</Alias>
         <Description>Are the shutter doors in their commanded positions? Note: this will be false when the CSC starts up until a position is commanded for both doors.</Description>
         <item>
             <EFDB_Name>inPosition</EFDB_Name>
@@ -141,9 +125,7 @@
     </SALEvent>
     <SALEvent>
         <Subsystem>ATDome</Subsystem>
-        <Version>3.8.2</Version>
         <EFDB_Topic>ATDome_logevent_allAxesInPosition</EFDB_Topic>
-        <Alias>allAxesInPosition</Alias>
         <Description>Are all axes (azimuth and both shutter doors) in position?</Description>
         <item>
             <EFDB_Name>inPosition</EFDB_Name>
@@ -155,9 +137,7 @@
     </SALEvent>
     <SALEvent>
         <Subsystem>ATDome</Subsystem>
-        <Version>3.8.2</Version>
         <EFDB_Topic>ATDome_logevent_doorEncoderExtremes</EFDB_Topic>
-        <Alias>doorEncoderExtremes</Alias>
         <Description>Encoder values of the doors when fully closed or fully opened. Reported in full status as `Main Door Encoder Closed`, etc.</Description>
         <item>
             <EFDB_Name>mainClosed</EFDB_Name>
@@ -190,9 +170,7 @@
     </SALEvent>
     <SALEvent>
         <Subsystem>ATDome</Subsystem>
-        <Version>3.8.2</Version>
         <EFDB_Topic>ATDome_logevent_lastAzimuthGoTo</EFDB_Topic>
-        <Alias>lastAzimuthGoTo</Alias>
         <Description>The most recently commanded azimuth position.</Description>
         <item>
             <EFDB_Name>position</EFDB_Name>
@@ -205,9 +183,7 @@
     <!-- Trouble states -->
     <SALEvent>
         <Subsystem>ATDome</Subsystem>
-        <Version>3.8.2</Version>
         <EFDB_Topic>ATDome_logevent_emergencyStop</EFDB_Topic>
-        <Alias>emergencyStop</Alias>
         <Description>Has the emergency stop button been activated?</Description>
         <item>
             <EFDB_Name>active</EFDB_Name>
@@ -219,9 +195,7 @@
     </SALEvent>
     <SALEvent>
         <Subsystem>ATDome</Subsystem>
-        <Version>3.8.2</Version>
         <EFDB_Topic>ATDome_logevent_scbLink</EFDB_Topic>
-        <Alias>scbLink</Alias>
         <Description>Can the main controller box (MCB) communicate with the shutter control box (SCB)?</Description>
         <item>
             <EFDB_Name>active</EFDB_Name>
@@ -234,9 +208,7 @@
     <!-- Configuration -->
     <SALEvent>
         <Subsystem>ATDome</Subsystem>
-        <Version>3.8.2</Version>
         <EFDB_Topic>ATDome_logevent_settingsAppliedDomeController</EFDB_Topic>
-        <Alias>settingsAppliedDomeController</Alias>
         <Description>Settings internal to the ATDome TCP/IP controller.</Description>
         <item>
             <EFDB_Name>rainSensorEnabled</EFDB_Name>
@@ -332,9 +304,7 @@
     </SALEvent>
     <SALEvent>
         <Subsystem>ATDome</Subsystem>
-        <Version>3.8.2</Version>
         <EFDB_Topic>ATDome_logevent_settingsAppliedDomeTcp</EFDB_Topic>
-        <Alias>settingsAppliedDomeTcp</Alias>
         <Description>Settings related to communication between the ATDome CSC and the ATDome TCP/IP controller.</Description>
         <item>
             <EFDB_Name>host</EFDB_Name>

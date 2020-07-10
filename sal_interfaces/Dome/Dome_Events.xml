@@ -1,268 +1,192 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-stylesheet type="text/xsl" href="http://lsst-sal.tuc.noao.edu/schema/SALEventSet.xsl"?>
-<SALEventSet xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:noNamespaceSchemaLocation="http://lsst-sal.tuc.noao.edu/schema/SALEventSet.xsd">
-<Enumeration>SummaryState_DisabledState,SummaryState_EnabledState,SummaryState_FaultState,SummaryState_OfflineState,SummaryState_StandbyState</Enumeration>
-<Enumeration>DetailedState_DisabledState,DetailedState_EnabledState,DetailedState_FaultState,DetailedState_OfflineState,DetailedState_StandbyState</Enumeration>
-
-<SALEvent>
-    <Subsystem>Dome</Subsystem>
-    <Version>3.8.42</Version>
-    <Author></Author>
-    <EFDB_Topic>Dome_logevent_stateChange</EFDB_Topic>
-    <Alias>stateChange</Alias>
-    <Explanation>http://sal.lsst.org</Explanation>
-    <item>
-        <EFDB_Name>newState</EFDB_Name>
-        <Description>Reached dome state</Description>
-        <IDL_Type>int</IDL_Type>
-        <Units>unitless</Units>
-        <Count>1</Count>
-    </item>
-</SALEvent>
-<SALEvent>
-    <Subsystem>Dome</Subsystem>
-    <Version>3.8.42</Version>
-    <Author></Author>
-    <EFDB_Topic>Dome_logevent_motionEnabled</EFDB_Topic>
-    <Alias>motionEnabled</Alias>
-    <Explanation>http://sal.lsst.org</Explanation>
-            <item>
-                <EFDB_Name>motionEnabledId</EFDB_Name>
-                <Description>Identify the dome device that has been enabled for actions</Description>
-                <IDL_Type>int</IDL_Type>
-                <Units>unitless</Units>
-                <Count>1</Count>
-            </item>
-</SALEvent>
-<SALEvent>
-    <Subsystem>Dome</Subsystem>
-    <Version>3.8.42</Version>
-    <Author></Author>
-    <EFDB_Topic>Dome_logevent_inPosition</EFDB_Topic>
-    <Alias>inPosition</Alias>
-    <Explanation>http://sal.lsst.org</Explanation>
-            <item>
-                <EFDB_Name>deviceId</EFDB_Name>
-                <Description>Identify the dome device that has reached an in position condition</Description>
-                <IDL_Type>int</IDL_Type>
-                <Units>unitless</Units>
-                <Count>1</Count>
-            </item>
-            <item>
-                <EFDB_Name>devicePosition</EFDB_Name>
-                <Description>Return the actual dome device position</Description>
-                <IDL_Type>float</IDL_Type>
-                <Units>unitless</Units>
-                <Count>1</Count>
-            </item>
-</SALEvent>
-<SALEvent>
-    <Subsystem>Dome</Subsystem>
-    <Version>3.8.42</Version>
-    <Author></Author>
-    <EFDB_Topic>Dome_logevent_driveFault</EFDB_Topic>
-    <Alias>driveFault</Alias>
-    <Explanation>http://sal.lsst.org</Explanation>
-            <item>
-                <EFDB_Name>driveId</EFDB_Name>
-                <Description>Identify the dome drive that has reached a fault condition</Description>
-                <IDL_Type>int</IDL_Type>
-                <Units>unitless</Units>
-                <Count>1</Count>
-            </item>
-            <item>
-                <EFDB_Name>driveFaultCode</EFDB_Name>
-                <Description>Return the actual dome drive fault code</Description>
-                <IDL_Type>string</IDL_Type>
-                <Units>unitless</Units>
-                <Count>1</Count>
-            </item>
-</SALEvent>
-<SALEvent>
-    <Subsystem>Dome</Subsystem>
-    <Version>3.8.42</Version>
-    <Author></Author>
-    <EFDB_Topic>Dome_logevent_lockingPinEngaged</EFDB_Topic>
-    <Alias>lockingPinEngaged</Alias>
-    <Explanation>http://sal.lsst.org</Explanation>
-            <item>
-                <EFDB_Name>lockingPinEngagedId</EFDB_Name>
-                <Description>Identify the locking pin that has been engaged</Description>
-                <IDL_Type>int</IDL_Type>
-                <Units>unitless</Units>
-                <Count>1</Count>
-            </item>
-</SALEvent>
-<SALEvent>
-    <Subsystem>Dome</Subsystem>
-    <Version>3.8.42</Version>
-    <Author></Author>
-    <EFDB_Topic>Dome_logevent_lockingPinDisengaged</EFDB_Topic>
-    <Alias>lockingPinDisengaged</Alias>
-    <Explanation>http://sal.lsst.org</Explanation>
-            <item>
-                <EFDB_Name>lockingPinDisengagedId</EFDB_Name>
-                <Description>Identify the locking pin that has been disengaged</Description>
-                <IDL_Type>int</IDL_Type>
-                <Units>unitless</Units>
-                <Count>1</Count>
-            </item>
-</SALEvent>
-<SALEvent>
-    <Subsystem>Dome</Subsystem>
-    <Version>3.8.42</Version>
-    <Author></Author>
-    <EFDB_Topic>Dome_logevent_overTemp</EFDB_Topic>
-    <Alias>overTemp</Alias>
-    <Explanation>http://sal.lsst.org</Explanation>
-            <item>
-                <EFDB_Name>overTempId</EFDB_Name>
-                <Description>Identify the dome device in over temperature condition</Description>
-                <IDL_Type>int</IDL_Type>
-                <Units>unitless</Units>
-                <Count>1</Count>
-            </item>
-            <item>
-                <EFDB_Name>overTempValue</EFDB_Name>
-                <Description>Return the actual over temperature value</Description>
-                <IDL_Type>float</IDL_Type>
-                <Units>Celsius</Units>
-                <Count>1</Count>
-            </item>
-</SALEvent>
-<SALEvent>
-    <Subsystem>Dome</Subsystem>
-    <Version>3.8.42</Version>
-    <Author></Author>
-    <EFDB_Topic>Dome_logevent_speedLimitReached</EFDB_Topic>
-    <Alias>speedLimitReached</Alias>
-    <Explanation>http://sal.lsst.org</Explanation>
-            <item>
-                <EFDB_Name>speedLimitReachedId</EFDB_Name>
-                <Description>Identify the dome drive that has reached speed limit</Description>
-                <IDL_Type>int</IDL_Type>
-                <Units>unitless</Units>
-                <Count>1</Count>
-            </item>
-            <item>
-                <EFDB_Name>speedLimitReachedValue</EFDB_Name>
-                <Description>Return the actual speed value</Description>
-                <IDL_Type>float</IDL_Type>
-                <Units>degree/second</Units>
-                <Count>1</Count>
-            </item>
-</SALEvent>
-<SALEvent>
-    <Subsystem>Dome</Subsystem>
-    <Version>3.8.42</Version>
-    <Author></Author>
-    <EFDB_Topic>Dome_logevent_accelLimitReached</EFDB_Topic>
-    <Alias>accelLimitReached</Alias>
-    <Explanation>http://sal.lsst.org</Explanation>
-            <item>
-                <EFDB_Name>accelLimitReachedId</EFDB_Name>
-                <Description>Identify the dome drive that has reached acceleration limit</Description>
-                <IDL_Type>int</IDL_Type>
-                <Units>unitless</Units>
-                <Count>1</Count>
-            </item>
-            <item>
-                <EFDB_Name>accelLimitReachedValue</EFDB_Name>
-                <Description>Return the actual acceleration value</Description>
-                <IDL_Type>float</IDL_Type>
-                <Units>degree/second^2</Units>
-                <Count>1</Count>
-            </item>
-</SALEvent>
-<SALEvent>
-    <Subsystem>Dome</Subsystem>
-    <Version>3.8.42</Version>
-    <Author></Author>
-    <EFDB_Topic>Dome_logevent_brakeEngaged</EFDB_Topic>
-    <Alias>brakeEngaged</Alias>
-    <Explanation>http://sal.lsst.org</Explanation>
-            <item>
-                <EFDB_Name>brakeEngagedId</EFDB_Name>
-                <Description>Identify the device whose brake has been engaged</Description>
-                <IDL_Type>int</IDL_Type>
-                <Units>unitless</Units>
-                <Count>1</Count>
-            </item>
-</SALEvent>
-<SALEvent>
-    <Subsystem>Dome</Subsystem>
-    <Version>3.8.42</Version>
-    <Author></Author>
-    <EFDB_Topic>Dome_logevent_brakeDisengaged</EFDB_Topic>
-    <Alias>brakeDisengaged</Alias>
-    <Explanation>http://sal.lsst.org</Explanation>
-            <item>
-                <EFDB_Name>brakeDisengagedId</EFDB_Name>
-                <Description>Identify the device whose brake has been disengaged</Description>
-                <IDL_Type>int</IDL_Type>
-                <Units>unitless</Units>
-                <Count>1</Count>
-            </item>
-</SALEvent>
-<SALEvent>
-    <Subsystem>Dome</Subsystem>
-    <Version>3.8.42</Version>
-    <Author></Author>
-    <EFDB_Topic>Dome_logevent_craneStatusChange</EFDB_Topic>
-    <Alias>craneStatusChange</Alias>
-    <Explanation>http://sal.lsst.org</Explanation>
-            <item>
-                <EFDB_Name>craneStatusChangeCode</EFDB_Name>
-                <Description>Return the code of the crane status change</Description>
-                <IDL_Type>int</IDL_Type>
-                <Units>unitless</Units>
-                <Count>1</Count>
-            </item>
-</SALEvent>
-<SALEvent>
-    <Subsystem>Dome</Subsystem>
-    <Version>3.8.42</Version>
-    <Author></Author>
-    <EFDB_Topic>Dome_logevent_rearDoorStatusChange</EFDB_Topic>
-    <Alias>rearDoorStatusChange</Alias>
-    <Explanation>http://sal.lsst.org</Explanation>
-            <item>
-                <EFDB_Name>rearDoorStatusChangeCode</EFDB_Name>
-                <Description>Return the code of the rear door status change</Description>
-                <IDL_Type>int</IDL_Type>
-                <Units>unitless</Units>
-                <Count>1</Count>
-            </item>
-</SALEvent>
-<SALEvent>
-    <Subsystem>Dome</Subsystem>
-    <Version>3.8.42</Version>
-    <Author></Author>
-    <EFDB_Topic>Dome_logevent_sealStatusChange</EFDB_Topic>
-    <Alias>sealStatusChange</Alias>
-    <Explanation>http://sal.lsst.org</Explanation>
-            <item>
-                <EFDB_Name>seatStatusChangeCode</EFDB_Name>
-                <Description>Return the code of the seal status change</Description>
-                <IDL_Type>int</IDL_Type>
-                <Units>unitless</Units>
-                <Count>1</Count>
-            </item>
-</SALEvent>
-<SALEvent>
-    <Subsystem>Dome</Subsystem>
-    <Version>3.8.42</Version>
-    <Author></Author>
-    <EFDB_Topic>Dome_logevent_interlockAlarm</EFDB_Topic>
-    <Alias>interlockAlarm</Alias>
-    <Explanation>http://sal.lsst.org</Explanation>
-            <item>
-                <EFDB_Name>interlockAlarmCode</EFDB_Name>
-                <Description>Return the code of the interlock alarm</Description>
-                <IDL_Type>int</IDL_Type>
-                <Units>unitless</Units>
-                <Count>1</Count>
-            </item>
-</SALEvent>
+<SALEventSet xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://lsst-sal.tuc.noao.edu/schema/SALEventSet.xsd">
+    <Enumeration>EnabledState_Disabled, EnabledState_Enabled, EnabledState_Fault</Enumeration>
+    <Enumeration>MotionState_Stopped, MotionState_Stopping, MotionState_Moving, MotionState_Crawling</Enumeration>
+    <Enumeration>
+        Louver_A1=0,
+        Louver_B1=1,
+        Louver_A2=2,
+        Louver_B2=3,
+        Louver_B3=4,
+        Louver_N1=5,
+        Louver_M1=6,
+        Louver_N2=7,
+        Louver_M2=8,
+        Louver_M3=9,
+        Louver_C1=10,
+        Louver_C2=11,
+        Louver_C3=12,
+        Louver_L1=13,
+        Louver_L2=14,
+        Louver_L3=15,
+        Louver_E1=16,
+        Louver_D2=17,
+        Louver_E2=18,
+        Louver_D3=19,
+        Louver_E3=20,
+        Louver_I1=21,
+        Louver_H1=22,
+        Louver_I2=23,
+        Louver_H2=24,
+        Louver_I3=25,
+        Louver_H3=26,
+        Louver_F1=27,
+        Louver_G1=28,
+        Louver_F2=29,
+        Louver_G2=30,
+        Louver_F3=31,
+        Louver_G3=32,
+        Louver_D1=33
+    </Enumeration>
+    <SALEvent>
+        <Subsystem>Dome</Subsystem>
+        <EFDB_Topic>Dome_logevent_azEnabled</EFDB_Topic>
+        <Description>Azimuth axis enabled state.</Description>
+        <item>
+            <EFDB_Name>state</EFDB_Name>
+            <Description>Enabled state; an EnabledState enum.</Description>
+            <IDL_Type>int</IDL_Type>
+            <Units>unitless</Units>
+            <Count>1</Count>
+        </item>
+        <item>
+            <EFDB_Name>faultCode</EFDB_Name>
+            <Description>The fault code; ignore if not in Fault state.</Description>
+            <IDL_Type>string</IDL_Type>
+            <Units>unitless</Units>
+            <Count>1</Count>
+        </item>
+    </SALEvent>
+    <SALEvent>
+        <Subsystem>Dome</Subsystem>
+        <EFDB_Topic>Dome_logevent_elEnabled</EFDB_Topic>
+        <Description>Elevation axis (wind baffle/light screen) enabled state.</Description>
+        <item>
+            <EFDB_Name>state</EFDB_Name>
+            <Description>Enabled state; an EnabledState enum.</Description>
+            <IDL_Type>int</IDL_Type>
+            <Units>unitless</Units>
+            <Count>1</Count>
+        </item>
+        <item>
+            <EFDB_Name>faultCode</EFDB_Name>
+            <Description>The fault code; ignore if not in Fault state.</Description>
+            <IDL_Type>string</IDL_Type>
+            <Units>unitless</Units>
+            <Count>1</Count>
+        </item>
+    </SALEvent>
+    <SALEvent>
+        <Subsystem>Dome</Subsystem>
+        <EFDB_Topic>Dome_logevent_azMotion</EFDB_Topic>
+        <Description>Azimuth axis motion state.</Description>
+        <item>
+            <EFDB_Name>state</EFDB_Name>
+            <Description>The motion state; a MotionState enum.</Description>
+            <IDL_Type>int</IDL_Type>
+            <Units>unitless</Units>
+            <Count>1</Count>
+        </item>
+        <item>
+            <EFDB_Name>inPosition</EFDB_Name>
+            <Description>Is the axis in position?</Description>
+            <IDL_Type>boolean</IDL_Type>
+            <Units>unitless</Units>
+            <Count>1</Count>
+        </item>
+    </SALEvent>
+    <SALEvent>
+        <Subsystem>Dome</Subsystem>
+        <EFDB_Topic>Dome_logevent_elMotion</EFDB_Topic>
+        <Description>Elevation axis (light/wind screen) motion state.</Description>
+        <item>
+            <EFDB_Name>state</EFDB_Name>
+            <Description>The motion state; a MotionState enum.</Description>
+            <IDL_Type>int</IDL_Type>
+            <Units>unitless</Units>
+            <Count>1</Count>
+        </item>
+        <item>
+            <EFDB_Name>inPosition</EFDB_Name>
+            <Description>Is the axis in position?</Description>
+            <IDL_Type>boolean</IDL_Type>
+            <Units>unitless</Units>
+            <Count>1</Count>
+        </item>
+    </SALEvent>
+    <SALEvent>
+        <Subsystem>Dome</Subsystem>
+        <EFDB_Topic>Dome_logevent_azTarget</EFDB_Topic>
+        <Description>Azimuth axis target position and velocity.</Description>
+        <item>
+            <EFDB_Name>position</EFDB_Name>
+            <Description>Target position; nan for the crawlAz command.</Description>
+            <IDL_Type>float</IDL_Type>
+            <Units>deg</Units>
+            <Count>1</Count>
+        </item>
+        <item>
+            <EFDB_Name>velocity</EFDB_Name>
+            <Description>Target velocity.</Description>
+            <IDL_Type>float</IDL_Type>
+            <Units>deg/second</Units>
+            <Count>1</Count>
+        </item>
+    </SALEvent>
+    <SALEvent>
+        <Subsystem>Dome</Subsystem>
+        <EFDB_Topic>Dome_logevent_elTarget</EFDB_Topic>
+        <Description>Elevation axis (light/wind screen) target position and velocity.</Description>
+        <item>
+            <EFDB_Name>position</EFDB_Name>
+            <Description>Target position; nan for the crawlEl command.</Description>
+            <IDL_Type>float</IDL_Type>
+            <Units>deg</Units>
+            <Count>1</Count>
+        </item>
+        <item>
+            <EFDB_Name>velocity</EFDB_Name>
+            <Description>Target velocity; 0 for the moveEl command.</Description>
+            <IDL_Type>float</IDL_Type>
+            <Units>deg/second</Units>
+            <Count>1</Count>
+        </item>
+    </SALEvent>
+    <SALEvent>
+        <Subsystem>Dome</Subsystem>
+        <EFDB_Topic>Dome_logevent_brakesEngaged</EFDB_Topic>
+        <item>
+            <EFDB_Name>brakes</EFDB_Name>
+            <Description>Bitmask of brakes that are engaged.
+            The bits are defined by the Brake enum.</Description>
+            <IDL_Type>int</IDL_Type>
+            <Units>unitless</Units>
+            <Count>1</Count>
+        </item>
+    </SALEvent>
+    <SALEvent>
+        <Subsystem>Dome</Subsystem>
+        <EFDB_Topic>Dome_logevent_lockingPinsEngaged</EFDB_Topic>
+        <item>
+            <EFDB_Name>engaged</EFDB_Name>
+            <Description>Bitmask of locking pins that have been engaged.
+            The bits are defined by the LockingPin enum.</Description>
+            <IDL_Type>int</IDL_Type>
+            <Units>unitless</Units>
+            <Count>1</Count>
+        </item>
+    </SALEvent>
+    <SALEvent>
+        <Subsystem>Dome</Subsystem>
+        <EFDB_Topic>Dome_logevent_interlocks</EFDB_Topic>
+        <item>
+            <EFDB_Name>interlocks</EFDB_Name>
+            <Description>Bitmask of safety interlocks that are latched.
+            The bits are defined by the Interlock enum.</Description>
+            <IDL_Type>int</IDL_Type>
+            <Units>unitless</Units>
+            <Count>1</Count>
+        </item>
+    </SALEvent>
 </SALEventSet>

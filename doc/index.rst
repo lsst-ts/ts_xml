@@ -2,6 +2,8 @@
 ts_xml
 ******
 
+.. _index:pages:
+
 Pages
 =====
 
@@ -15,12 +17,18 @@ Pages
 The ``ts_xml`` package defines the data objects for all Commandable SAL
 Components (CSC). These data objects are defined in XML. SAL consumes the XML to 
 produce language specific libraries that enable communication over the DDS 
-network. Below is a table overview of all the CSC's defined and a :ref:`index:Legend` to help
+network. Below is a table overview of all the CSC's defined and a :ref:`index:legend` to help
 understand the table.
+
+.. _index:unit-testing:
 
 Unit Testing
 ============
-XML unit tests are contained in the tests/ directory of the `XML <https://github.com/lsst-ts/ts_xml>`_ repo.  Setup and execution instructions are contained in the README in the same repository, and can be viewed with a user-friendly interface from the webpage.  The tests are run regularly as part of the `TSSW Continuous Integration environment <https://tssw-ci.lsst.org/>`_ process, primarily as part of the `LSST Organization <https://tssw-ci.lsst.org/job/LSST_Telescope-and-Site/>`_ project.  
+XML unit tests are contained in the tests/ directory of the `XML <https://github.com/lsst-ts/ts_xml>`_ repo.
+Setup and execution instructions are contained in the README in the same repository, and can be viewed with a user-friendly interface from the webpage. 
+The tests are run regularly as part of the `TSSW Continuous Integration environment <https://tssw-ci.lsst.org/>`_ process, primarily as part of the `LSST Organization <https://tssw-ci.lsst.org/job/LSST_Telescope-and-Site/>`_ project.  
+
+.. _index:master-csc-table:
 
 Master CSC Table
 ================
@@ -30,13 +38,15 @@ Master CSC Table
    :widths: auto
    :header-rows: 1
 
+.. _index:legend:
+
 Legend
 ======
 
 **Subsystem**
   Also known as the Commandable SAL Component. This is a subsystem that is 
   capable of subscribing or publishing topics over the DDS Domain network. Also,
-  most contain a state machine that follow the requirements listed in :ref:`sal_constraints_and_recommendations:SAL Constraints and Recommendations`
+  most contain a state machine that follow the requirements listed in :doc:`sal_constraints_and_recommendations`
 
 **Active Developers**
   Current list of developers that are actively working on the Subsystem. This can

@@ -30,6 +30,9 @@
         <Author></Author>
         <EFDB_Topic>CCCamera_logevent_endReadout</EFDB_Topic>
         <Alias>endReadout</Alias>
+        <Description>Event sent at end of readout. When this event is received the corresponding image should be complete
+        in the DAQ 2-day store.
+        Note: all : delimited strings (aka string arrays) follow the escaping convention defined in CAP-572</Description>
         <Explanation>http://project.lsst.org/ts/sal_objects/help/CCCamera_logevent_endReadout.html</Explanation>
         <item>
             <EFDB_Name>imageType</EFDB_Name>
@@ -124,8 +127,8 @@
             <Count>1</Count>
         </item>
         <item>
-            <EFDB_Name>exposureTime</EFDB_Name>
-            <Description>The requested exposure time</Description>
+            <EFDB_Name>requestedExposureTime</EFDB_Name>
+            <Description>The requested exposure time (as specified in the takeImages command)</Description>
             <IDL_Type>double</IDL_Type>
             <Units>second</Units>
             <Count>1</Count>
@@ -185,6 +188,15 @@
             <Units>unitless</Units>
             <Count>1</Count>
         </item>
+        <item>
+            <EFDB_Name>filterType</EFDB_Name>
+            <Description>The type of the filter being installed (e.g. g,r,i,z,y,u,none,other). If other it can optionally be
+            followed by a : delimited qualifier, e.g. other:pinhole</Description>
+            <IDL_Type>string</IDL_Type>
+            <IDL_Size>1</IDL_Size>
+            <Units>unitless</Units>
+            <Count>1</Count>
+        </item>
     </SALEvent>
     <SALEvent>
         <Subsystem>CCCamera</Subsystem>
@@ -232,6 +244,8 @@
         <Author></Author>
         <EFDB_Topic>CCCamera_logevent_endOfImageTelemetry</EFDB_Topic>
         <Alias>endOfImageTelemetry</Alias>
+        <Description>Event sent once all telemetry correesponding to the image has been sent. (Typically ~300mS after the end of readout).
+        Note: all : delimited strings (aka string arrays) follow the escaping convention defined in CAP-572</Description>
         <Explanation>http://project.lsst.org/ts/sal_objects/help/CCCamera_logevent_endOfImageTelemetry.html</Explanation>
         <item>
             <EFDB_Name>imageType</EFDB_Name>
@@ -356,8 +370,9 @@
             <Count>1</Count>
         </item>
         <item>
-            <EFDB_Name>expTime</EFDB_Name>
-            <Description>The exposure time, as computed by CCS</Description>
+            <EFDB_Name>measuredShutterOpenTime</EFDB_Name>
+            <Description>The measured shutter open time, as computed by CCS. This is a best estimate based on a summary of the full information provided
+            in the shutterBladeMotionProfile events.</Description>
             <IDL_Type>double</IDL_Type>
             <Units>second</Units>
             <Count>1</Count>
@@ -532,6 +547,8 @@
         <Author></Author>
         <EFDB_Topic>CCCamera_logevent_startIntegration</EFDB_Topic>
         <Alias>startIntegration</Alias>
+        <Description>Event sent at start of image integration.
+        Note: all : delimited strings (aka string arrays) follow the escaping convention defined in CAP-572</Description>
         <Explanation>http://project.lsst.org/ts/sal_objects/help/CCCamera_logevent_startIntegration.html</Explanation>
         <item>
             <EFDB_Name>imageType</EFDB_Name>
@@ -647,13 +664,39 @@
         <Author></Author>
         <EFDB_Topic>CCCamera_logevent_endSetFilter</EFDB_Topic>
         <Alias>endSetFilter</Alias>
+        <Description>Event issued once the new filter is in its final position</Description>
         <Explanation>http://project.lsst.org/ts/sal_objects/help/CCCamera_logevent_endSetFilter.html</Explanation>
         <item>
             <EFDB_Name>filterName</EFDB_Name>
             <Description>The name of the filter being installed (e.g. U-001)</Description>
             <IDL_Type>string</IDL_Type>
-            <IDL_Size>256</IDL_Size>
+            <IDL_Size>1</IDL_Size>
             <Units>unitless</Units>
+            <Count>1</Count>
+        </item>
+        <item>
+            <EFDB_Name>filterType</EFDB_Name>
+            <Description>The type of the filter being installed (e.g. g,r,i,z,y,u,none,other). If other it can optionally be
+            followed by a : delimited qualifier, e.g. other:pinhole</Description>
+            <IDL_Type>string</IDL_Type>
+            <IDL_Size>1</IDL_Size>
+            <Units>unitless</Units>
+            <Count>1</Count>
+        </item>
+        <item>
+            <EFDB_Name>filterSlot</EFDB_Name>
+            <Description>The slot which the filter is in (ComCam) or came from (Main Camera)</Description>
+            <IDL_Type>int</IDL_Type>
+            <IDL_Size>1</IDL_Size>
+            <Units>unitless</Units>
+            <Count>1</Count>
+        </item>
+        <item>
+            <EFDB_Name>filterPosition</EFDB_Name>
+            <Description>For ComCam this is the measured linear encoder position once the filter in in place. For Main Camera it may be unused.</Description>
+            <IDL_Type>double</IDL_Type>
+            <IDL_Size>1</IDL_Size>
+            <Units>mm</Units>
             <Count>1</Count>
         </item>
     </SALEvent>
@@ -710,6 +753,8 @@
         <Author></Author>
         <EFDB_Topic>CCCamera_logevent_startReadout</EFDB_Topic>
         <Alias>startReadout</Alias>
+        <Description>Event sent at start of readout.
+        Note: all : delimited strings (aka string arrays) follow the escaping convention defined in CAP-572</Description>
         <Explanation>http://project.lsst.org/ts/sal_objects/help/CCCamera_logevent_startReadout.html</Explanation>
         <item>
             <EFDB_Name>imageType</EFDB_Name>
@@ -833,6 +878,8 @@
         <Author></Author>
         <EFDB_Topic>CCCamera_logevent_imageReadoutParameters</EFDB_Topic>
         <Alias>imageReadoutParameters</Alias>
+        <Description>Event sent describing image readout parameters.
+        Note: all : delimited strings (aka string arrays) follow the escaping convention defined in CAP-572</Description>
         <Explanation>http://project.lsst.org/ts/sal_objects/help/CCCamera_logevent_imageReadoutParameters.html</Explanation>
         <item>
             <EFDB_Name>imageName</EFDB_Name>
@@ -972,11 +1019,12 @@
         <EFDB_Topic>CCCamera_logevent_focalPlaneSummaryInfo</EFDB_Topic>
         <Description>Special event for use by header service. All of the information in this event is redundant (i,e. also supplied in
             other settingsApplied events), but the information in this event is formatted for ease-of-use of the header service, specifically
-            information which is REB or Raft specific is repeated for each CCD. This event will be sent at the same time as other 
-            settingsApplied events</Description>
+            information which is REB or Raft specific is repeated for each CCD. This event will be sent at the same time as other
+            settingsApplied events
+            Note: all : delimited strings (aka string arrays) follow the escaping convention defined in CAP-572</Description>
         <item>
             <EFDB_Name>ccdLocation</EFDB_Name>
-            <Description>CCD location in focal-plane (e.g. R22S01) (: delimited). 
+            <Description>CCD location in focal-plane (e.g. R22S01) (: delimited).
                 This should be considered the key for all the remaining items, which will be in the same order as the locations,
                 whether they are arrays or : delimited strings.</Description>
             <IDL_Type>string</IDL_Type>
@@ -1078,6 +1126,8 @@
         <Version>3.7.1</Version>
         <Author></Author>
         <EFDB_Topic>CCCamera_logevent_focalPlaneHardwareIdSettingsApplied</EFDB_Topic>
+        <Description>
+        Note: all : delimited strings (aka string arrays) follow the escaping convention defined in CAP-572</Description>
         <item>
             <EFDB_Name>version</EFDB_Name>
             <Description>Version number of these settings.</Description>
@@ -1133,13 +1183,15 @@
         <IDL_Type>string</IDL_Type>
         <Units>unitless</Units>
         <Count>1</Count>
-    </item>    
+    </item>
     </SALEvent>
     <SALEvent>
         <Subsystem>CCCamera</Subsystem>
         <Version>3.7.1</Version>
         <Author></Author>
         <EFDB_Topic>CCCamera_logevent_focalPlaneRaftTempControlStatusSettingsApplied</EFDB_Topic>
+        <Description>
+        Note: all : delimited strings (aka string arrays) follow the escaping convention defined in CAP-572</Description>
         <item>
             <EFDB_Name>version</EFDB_Name>
             <Description>Version number of these settings</Description>
@@ -1167,6 +1219,8 @@
         <Version>3.7.1</Version>
         <Author></Author>
         <EFDB_Topic>CCCamera_logevent_focalPlaneRaftTempControlSettingsApplied</EFDB_Topic>
+        <Description>
+        Note: all : delimited strings (aka string arrays) follow the escaping convention defined in CAP-572</Description>
         <item>
             <EFDB_Name>version</EFDB_Name>
             <Description>Version number of these settings</Description>
@@ -1400,6 +1454,278 @@
             <EFDB_Name>sequencerconfig_underCols</EFDB_Name>
             <Description>underCols</Description>
             <IDL_Type>int</IDL_Type>
+            <Units>unitless</Units>
+            <Count>1</Count>
+        </item>
+    </SALEvent>
+    <SALEvent>
+        <Subsystem>CCCamera</Subsystem>
+        <Version>3.7.1</Version>
+        <Author></Author>
+        <EFDB_Topic>CCCamera_logevent_shutterBladeMotionProfile</EFDB_Topic>
+        <Description>The motion profile for each shutter blade (so normally 2 per image).
+        Note: Note this is overkill for ComCam, but aims to be the same as for the main camera.
+        For ComCam the encoder and hall effect measurements will be simulated, or empty (and probably initially empty).
+        Note 2: The coordinate system in which positions are reported is as yet ill-defined, and the origin (but not direction)
+        may vary between the 2 blades. The data to convert reported position to something more useful will be in the corresponding
+        blade configuration (aka settingsApplied). It is TBD whether we will try to take this out in the positions reported to SAL.
+        Note 3: The maximum number of positions reported by the firmware for both encoder position and hall effect hall sensors
+        is hard-wired to 240. This is used as the array dimension here. The actual number of points reported will be in
+        encoderCount and hallSensorCount. The array element values beyond the count are undefined (but probably 0)</Description>
+        <item>
+            <EFDB_Name>blade</EFDB_Name>
+            <Description>The blade that is moving</Description>
+            <IDL_Type>long</IDL_Type>
+            <Units>unitless</Units>
+            <Count>1</Count>
+            <Enumeration>PLUS_X,MINUS_X</Enumeration>
+        </item>
+        <item>
+            <EFDB_Name>direction</EFDB_Name>
+            <Description>Is the blade opening or closing</Description>
+            <IDL_Type>long</IDL_Type>
+            <Units>unitless</Units>
+            <Count>1</Count>
+            <Enumeration>OPEN,CLOSE</Enumeration>
+        </item>
+        <item>
+            <EFDB_Name>timestampStart</EFDB_Name>
+            <Description>The time at which the motion started (TAI)</Description>
+            <IDL_Type>double</IDL_Type>
+            <Units>second</Units>
+            <Count>1</Count>
+        </item>
+        <item>
+            <EFDB_Name>startPosition</EFDB_Name>
+            <Description>The start position of the blade</Description>
+            <IDL_Type>double</IDL_Type>
+            <Units>mm</Units>
+            <Count>1</Count>
+        </item>
+        <item>
+            <EFDB_Name>targetDuration</EFDB_Name>
+            <Description>Requested blade motion time</Description>
+            <IDL_Type>double</IDL_Type>
+            <Units>second</Units>
+            <Count>1</Count>
+        </item>
+        <item>
+            <EFDB_Name>targetPosition</EFDB_Name>
+            <Description>Requested position at end of motion</Description>
+            <IDL_Type>double</IDL_Type>
+            <Units>mm</Units>
+            <Count>1</Count>
+        </item>
+        <item>
+            <EFDB_Name>endPosition</EFDB_Name>
+            <Description>Actual position and end of motion</Description>
+            <IDL_Type>double</IDL_Type>
+            <Units>mm</Units>
+            <Count>1</Count>
+        </item>
+        <item>
+            <EFDB_Name>actualDuration</EFDB_Name>
+            <Description>Actual blade motion time</Description>
+            <IDL_Type>double</IDL_Type>
+            <Units>second</Units>
+            <Count>1</Count>
+        </item>
+        <item>
+            <EFDB_Name>hallSensorCount</EFDB_Name>
+            <Description>Actual number of hall sensor transitions</Description>
+            <IDL_Type>int</IDL_Type>
+            <Units>unitless</Units>
+            <Count>1</Count>
+        </item>
+        <item>
+            <EFDB_Name>timestampHallSensor</EFDB_Name>
+            <Description>Hall effect switch trasition times</Description>
+            <IDL_Type>double</IDL_Type>
+            <Units>second</Units>
+            <Count>240</Count>
+        </item>
+        <item>
+            <EFDB_Name>hallSensorID</EFDB_Name>
+            <Description>Which Hall effect switch trasitioned</Description>
+            <IDL_Type>int</IDL_Type>
+            <Units>unitless</Units>
+            <Count>240</Count>
+        </item>
+        <item>
+            <EFDB_Name>hallSensorPosition</EFDB_Name>
+            <Description>Estimated position of the leading edge of the blade at transition time</Description>
+            <IDL_Type>double</IDL_Type>
+            <Units>mm</Units>
+            <Count>240</Count>
+        </item>
+        <item>
+            <EFDB_Name>hallSensorTransition</EFDB_Name>
+            <Description>true if switch turned on, false if switch turned off</Description>
+            <IDL_Type>boolean</IDL_Type>
+            <Units>unitless</Units>
+            <Count>240</Count>
+        </item>
+        <item>
+            <EFDB_Name>encoderCount</EFDB_Name>
+            <Description>Actual number of encoder measurements</Description>
+            <IDL_Type>int</IDL_Type>
+            <Units>unitless</Units>
+            <Count>1</Count>
+        </item>
+        <item>
+            <EFDB_Name>timestampEncoder</EFDB_Name>
+            <Description>timestamps for motor encoder position measurements (TAI)</Description>
+            <IDL_Type>double</IDL_Type>
+            <Units>second</Units>
+            <Count>240</Count>
+        </item>
+        <item>
+            <EFDB_Name>encoderPosition</EFDB_Name>
+            <Description>Positions for motor encoder position measurements</Description>
+            <IDL_Type>double</IDL_Type>
+            <Units>mm</Units>
+            <Count>240</Count>
+        </item>
+    </SALEvent>
+    <!-- Preview events, probably will not be used until xml 6.2 but here for comment/disscussion -->
+    <SALEvent>
+        <Subsystem>CCCamera</Subsystem>
+        <EFDB_Topic>CCCamera_logevent_imageStored</EFDB_Topic>
+        <Description>When this event is received the corresponding image should be complete in the DAQ 2-day store.
+        Once in use this will allow endReadout event to go back to indicating that the readout is complete (sequencers finished).
+        Note: all : delimited strings (aka string arrays) follow the escaping convention defined in CAP-572</Description>
+        <!-- Note, boilder plate items present on all image related events removed. TBC if this is OK -->
+        <item>
+            <EFDB_Name>imageName</EFDB_Name>
+            <Description>The imageName for this specific exposure, assigned by the camera</Description>
+            <IDL_Type>string</IDL_Type>
+            <IDL_Size>32</IDL_Size>
+            <Units>unitless</Units>
+            <Count>1</Count>
+        </item>
+        <item>
+            <EFDB_Name>timeStampImageStored</EFDB_Name>
+            <Description>The time when the DAQ image was store was complete.</Description>
+            <IDL_Type>double</IDL_Type>
+            <Units>second</Units>
+            <Count>1</Count>
+        </item>
+        <!-- Note: what should be generated if file store fails for one or more files?-->
+    </SALEvent>
+    <SALEvent>
+        <Subsystem>CCCamera</Subsystem>
+        <EFDB_Topic>CCCamera_logevent_fitsFilesWritten</EFDB_Topic>
+        <Description>When this event is received, all of the CCS files on the diagnostic cluster have been written
+        Note: all : delimited strings (aka string arrays) follow the escaping convention defined in CAP-572</Description>
+        <!-- Note, boilder plate items present on all image related events removed. TBC if this is OK -->
+        <item>
+            <EFDB_Name>imageName</EFDB_Name>
+            <Description>The imageName for this specific exposure, assigned by the camera</Description>
+            <IDL_Type>string</IDL_Type>
+            <IDL_Size>32</IDL_Size>
+            <Units>unitless</Units>
+            <Count>1</Count>
+        </item>
+        <item>
+            <EFDB_Name>timeStampFilesWritten</EFDB_Name>
+            <Description>The time when the (last) CCS FITS file was written.</Description>
+            <IDL_Type>double</IDL_Type>
+            <Units>second</Units>
+            <Count>1</Count>
+        </item>
+        <!-- Note: what should be generated if file save fails on one or more nodes?-->
+        <item>
+            <EFDB_Name>rootFileName</EFDB_Name>
+            <Description>The common filesystem location of all files below.</Description>
+            <IDL_Type>string</IDL_Type>
+            <Units>unitless</Units>
+            <Count>1</Count>
+        </item>
+        <item>
+            <EFDB_Name>relativeFileNames</EFDB_Name>
+            <Description>The file system location of each file, relative to rootFileName (: delimited).</Description>
+            <IDL_Type>string</IDL_Type>
+            <Units>unitless</Units>
+            <Count>1</Count>
+        </item>
+        <item>
+            <EFDB_Name>fileNode</EFDB_Name>
+            <Description>The node on which each file is written (: delimited, in same order as above).</Description>
+            <IDL_Type>string</IDL_Type>
+            <Units>unitless</Units>
+            <Count>1</Count>
+        </item>
+    </SALEvent>
+    <SALEvent>
+        <Subsystem>CCCamera</Subsystem>
+        <EFDB_Topic>CCCamera_logevent_fileCommandExecution</EFDB_Topic>
+        <Description>Each time a command is executed on a single FITS file this event is generated
+        </Description>
+        <!-- Note, boilder plate items present on all image related events removed. TBC if this is OK -->
+        <item>
+            <EFDB_Name>imageName</EFDB_Name>
+            <Description>The imageName for this specific exposure, assigned by the camera</Description>
+            <IDL_Type>string</IDL_Type>
+            <IDL_Size>32</IDL_Size>
+            <Units>unitless</Units>
+            <Count>1</Count>
+        </item>
+        <item>
+            <EFDB_Name>timestampCommandComplete</EFDB_Name>
+            <Description>The time when the command completed.</Description>
+            <IDL_Type>double</IDL_Type>
+            <Units>second</Units>
+            <Count>1</Count>
+        </item>
+        <item>
+            <EFDB_Name>command</EFDB_Name>
+            <Description>The comamnd executed included arguments.</Description>
+            <IDL_Type>string</IDL_Type>
+            <Units>unitless</Units>
+            <Count>1</Count>
+        </item>
+        <item>
+            <EFDB_Name>rc</EFDB_Name>
+            <Description>The return code from the command execution.</Description>
+            <IDL_Type>int</IDL_Type>
+            <Units>unitless</Units>
+            <Count>1</Count>
+        </item>
+    </SALEvent>
+    <SALEvent>
+        <Subsystem>CCCamera</Subsystem>
+        <EFDB_Topic>CCCamera_logevent_imageVisualization</EFDB_Topic>
+        <Description>Event sent when image visualization is ready
+        </Description>
+        <!-- Note, boilder plate items present on all image related events removed. TBC if this is OK -->
+        <item>
+            <EFDB_Name>imageName</EFDB_Name>
+            <Description>The imageName for this specific exposure, assigned by the camera</Description>
+            <IDL_Type>string</IDL_Type>
+            <IDL_Size>32</IDL_Size>
+            <Units>unitless</Units>
+            <Count>1</Count>
+        </item>
+        <item>
+            <EFDB_Name>timestampVisualizationAvailable</EFDB_Name>
+            <Description>The time when the command completed.</Description>
+            <IDL_Type>double</IDL_Type>
+            <Units>second</Units>
+            <Count>1</Count>
+        </item>
+        <item>
+            <EFDB_Name>url</EFDB_Name>
+            <Description>The URL at which the full image visualization is available.</Description>
+            <IDL_Type>string</IDL_Type>
+            <Units>unitless</Units>
+            <Count>1</Count>
+        </item>
+        <!-- What resolution should the thumbnail be available at (or should we allow multiple resolutions)?
+             Should it be sent to the LFA, or just available on demand via URL -->
+        <item>
+            <EFDB_Name>thumbnail</EFDB_Name>
+            <Description>The URL at which the image thumbnail is available.</Description>
+            <IDL_Type>string</IDL_Type>
             <Units>unitless</Units>
             <Count>1</Count>
         </item>

@@ -7,9 +7,7 @@ import lsst.ts.xml as ts_xml
 
 
 def check_for_issues(csc, topic, test):
-    if csc == "Dome" and topic == "Telemetry" and test == "alias":
-        jira = "DM-22153"
-    elif csc == "MTMount" and topic == "Telemetry" and test == "alias":
+    if csc == "MTMount" and topic == "Telemetry" and test == "alias":
         jira = "DM-17276"
     elif csc == "Rotator" and topic == "Telemetry" and test == "alias":
         jira = "DM-20969"

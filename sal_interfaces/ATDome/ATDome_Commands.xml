@@ -4,9 +4,7 @@
     <!-- The main commands -->
     <SALCommand>
         <Subsystem>ATDome</Subsystem>
-        <Version>3.8.2</Version>
         <EFDB_Topic>ATDome_command_moveAzimuth</EFDB_Topic>
-        <Alias>moveAzimuth</Alias>
         <Description>Rotate the dome to the specified azimuth.</Description>
         <item>
             <EFDB_Name>azimuth</EFDB_Name>
@@ -18,66 +16,28 @@
     </SALCommand>
     <SALCommand>
         <Subsystem>ATDome</Subsystem>
-        <Version>3.8.2</Version>
         <EFDB_Topic>ATDome_command_closeShutter</EFDB_Topic>
-        <Alias>closeShutter</Alias>
         <Description>Close both shutter doors. This is the preferred way to close the shutter, because it automatically sequences the doors to prevent the main door from interfering with the dropout door.</Description>
-        <item>
-            <EFDB_Name>ignored</EFDB_Name>
-            <Description>This field is ignored.</Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units>unitless</Units>
-            <Count>1</Count>
-        </item>
     </SALCommand>
     <SALCommand>
         <Subsystem>ATDome</Subsystem>
-        <Version>3.8.2</Version>
         <EFDB_Topic>ATDome_command_openShutter</EFDB_Topic>
-        <Alias>openShutter</Alias>
         <Description>Open both shutter doors. This is the preferred way to open the shutter because it automatically sequences the doors to prevent the main door from interfering with the dropout door.</Description>
-        <item>
-            <EFDB_Name>ignored</EFDB_Name>
-            <Description>This field is ignored.</Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units>unitless</Units>
-            <Count>1</Count>
-        </item>
     </SALCommand>
     <SALCommand>
         <Subsystem>ATDome</Subsystem>
-        <Version>3.8.2</Version>
         <EFDB_Topic>ATDome_command_stopMotion</EFDB_Topic>
-        <Alias>stopMotion</Alias>
         <Description>Stop all motion: azimuth, dropout door and main door.</Description>
-        <item>
-            <EFDB_Name>ignored</EFDB_Name>
-            <Description>This field is ignored.</Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units>unitless</Units>
-            <Count>1</Count>
-        </item>
     </SALCommand>
     <!-- Engineering commands -->
     <SALCommand>
         <Subsystem>ATDome</Subsystem>
-        <Version>3.8.2</Version>
         <EFDB_Topic>ATDome_command_homeAzimuth</EFDB_Topic>
-        <Alias>homeAzimuth</Alias>
         <Description>Home the azimuth axis.</Description>
-        <item>
-            <EFDB_Name>ignored</EFDB_Name>
-            <Description>This field is ignored.</Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units>unitless</Units>
-            <Count>1</Count>
-        </item>
     </SALCommand>
     <SALCommand>
         <Subsystem>ATDome</Subsystem>
-        <Version>3.8.2</Version>
         <EFDB_Topic>ATDome_command_moveShutterDropoutDoor</EFDB_Topic>
-        <Alias>moveShutterDropoutDoor</Alias>
         <Description>Open or close the shutter dropout door. Intended for engineering; use the openShutter and closeShutter commands for normal operation since they automatically sequence the doors to prevent the main door from interfering with the dropout door.</Description>
         <item>
             <EFDB_Name>open</EFDB_Name>
@@ -89,9 +49,7 @@
     </SALCommand>
     <SALCommand>
         <Subsystem>ATDome</Subsystem>
-        <Version>3.8.2</Version>
         <EFDB_Topic>ATDome_command_moveShutterMainDoor</EFDB_Topic>
-        <Alias>moveShutterMainDoor</Alias>
         <Description>Open or close the main shutter door. Intended for engineering; use the openShutter and closeShutter commands for normal operation since they automatically sequence the doors to prevent the main door from interfering with the dropout.</Description>
         <item>
             <EFDB_Name>open</EFDB_Name>

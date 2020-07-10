@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="http://lsst-sal.tuc.noao.edu/schema/SALCommandSet.xsl"?>
+<SALCommandSet xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="http://lsst-sal.tuc.noao.edu/schema/SALCommandSet.xsd">
+
+<SALCommand>
+    <Subsystem>Authorize</Subsystem>
+    <EFDB_Topic>Authorize_command_requestAuthorization</EFDB_Topic>
+    <Description>Request changes to authorization.</Description>
+    <item>
+        <EFDB_Name>cscsToChange</EFDB_Name>
+        <Description>Comma-separated list of csc_name[:index] of CSCs whose authorization is to be changed.</Description>
+        <IDL_Type>string</IDL_Type>
+        <Units>unitless</Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>authorizedUsers</EFDB_Name>
+        <Description>Comma seperated list of authorized users currently allowed to command this CSC,
+            in the form user@host.
+            If the first character is +/- then the specified users are added/removed.
+            Duplicates are silently ignored.
+            The CSC's own user@host is silently ignored, because it is always authorized.
+            For removal, CSCs that are not in the list are silently ignored.
+            Whitespace is allowed after the optional initial +/- and after each comma.
+        </Description>
+        <IDL_Type>string</IDL_Type>
+        <Units>unitless</Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>nonAuthorizedCSCs</EFDB_Name>
+        <Description>Comma seperated list of CSC's not currently allowed to command this CSC,
+            in the form name[:index]. An index of 0 is stripped (name:0 becomes name).
+            If the first character is +/- then the specified CSCs are added/removed.
+            Duplicates are silently ignored.
+            For removal, CSCs that are not in the list are silently ignored.
+            Whitespace is allowed after the optional initial +/- and after each comma.
+        </Description>
+        <IDL_Type>string</IDL_Type>
+        <Units>unitless</Units>
+        <Count>1</Count>
+    </item>
+</SALCommand>
+
+</SALCommandSet>

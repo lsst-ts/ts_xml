@@ -31,6 +31,9 @@
     <Author></Author>
     <EFDB_Topic>ATCamera_logevent_endReadout</EFDB_Topic>
     <Alias>endReadout</Alias>
+    <Description>Event sent at end of readout. When this event is received the corresponding image should be complete
+    in the DAQ 2-day store.
+    Note: all : delimited strings (aka string arrays) follow the escaping convention defined in CAP-572</Description>
     <Explanation>http://project.lsst.org/ts/sal_objects/help/ATCamera_logevent_endReadout.html</Explanation>
     <item>
         <EFDB_Name>imageType</EFDB_Name>
@@ -63,7 +66,7 @@
         <IDL_Size>1</IDL_Size>
         <Units>unitless</Units>
         <Count>1</Count>
-    </item>   
+    </item>
     <item>
         <EFDB_Name>imagesInSequence</EFDB_Name>
         <Description>The total number of requested images in sequence</Description>
@@ -125,8 +128,8 @@
         <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>exposureTime</EFDB_Name>
-        <Description>The requested exposure time</Description>
+        <EFDB_Name>requestedExposureTime</EFDB_Name>
+        <Description>The requested exposure time (as specified in the takeImages command)</Description>
         <IDL_Type>double</IDL_Type>
         <Units>second</Units>
         <Count>1</Count>
@@ -138,7 +141,7 @@
         <IDL_Type>double</IDL_Type>
         <Units>second</Units>
         <Count>1</Count>
-    </item>  
+    </item>
 </SALEvent>
 <SALEvent>
     <Subsystem>ATCamera</Subsystem>
@@ -201,6 +204,8 @@
     <Author></Author>
     <EFDB_Topic>ATCamera_logevent_endOfImageTelemetry</EFDB_Topic>
     <Alias>endOfImageTelemetry</Alias>
+    <Description>Event sent once all telemetry correesponding to the image has been sent. (Typically ~300mS after the end of readout).
+    Note: all : delimited strings (aka string arrays) follow the escaping convention defined in CAP-572</Description>
     <Explanation>http://project.lsst.org/ts/sal_objects/help/ATCamera_logevent_endOfImageTelemetry.html</Explanation>
     <item>
         <EFDB_Name>imageType</EFDB_Name>
@@ -233,7 +238,7 @@
         <IDL_Size>1</IDL_Size>
         <Units>unitless</Units>
         <Count>1</Count>
-    </item>   
+    </item>
     <item>
         <EFDB_Name>imagesInSequence</EFDB_Name>
         <Description>The total number of requested images in sequence</Description>
@@ -325,8 +330,9 @@
         <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>expTime</EFDB_Name>
-        <Description>The exposure time, as computed by CCS</Description>
+        <EFDB_Name>measuredShutterOpenTime</EFDB_Name>
+        <Description>The measured shutter open time, as computed by CCS. This is a best estimate based on a summary of the full information provided
+        in the shutterBladeMotionProfile events.</Description>
         <IDL_Type>double</IDL_Type>
         <Units>second</Units>
         <Count>1</Count>
@@ -431,6 +437,8 @@
     <Author></Author>
     <EFDB_Topic>ATCamera_logevent_startIntegration</EFDB_Topic>
     <Alias>startIntegration</Alias>
+    <Description>Event sent at start of image integration.
+    Note: all : delimited strings (aka string arrays) follow the escaping convention defined in CAP-572</Description>
     <Explanation>http://project.lsst.org/ts/sal_objects/help/ATCamera_logevent_startIntegration.html</Explanation>
     <item>
         <EFDB_Name>imageType</EFDB_Name>
@@ -463,7 +471,7 @@
         <IDL_Size>1</IDL_Size>
         <Units>unitless</Units>
         <Count>1</Count>
-    </item>  
+    </item>
     <item>
         <EFDB_Name>imagesInSequence</EFDB_Name>
         <Description>The total number of requested images in sequence</Description>
@@ -530,7 +538,7 @@
         <IDL_Type>double</IDL_Type>
         <Units>second</Units>
         <Count>1</Count>
-    </item>   
+    </item>
 </SALEvent>
 <SALEvent>
     <Subsystem>ATCamera</Subsystem>
@@ -569,6 +577,8 @@
     <Author></Author>
     <EFDB_Topic>ATCamera_logevent_startReadout</EFDB_Topic>
     <Alias>startReadout</Alias>
+    <Description>Event sent at start of readout.
+    Note: all : delimited strings (aka string arrays) follow the escaping convention defined in CAP-572</Description>
     <Explanation>http://project.lsst.org/ts/sal_objects/help/ATCamera_logevent_startReadout.html</Explanation>
     <item>
         <EFDB_Name>imageType</EFDB_Name>
@@ -601,7 +611,7 @@
         <IDL_Size>1</IDL_Size>
         <Units>unitless</Units>
         <Count>1</Count>
-    </item>   
+    </item>
     <item>
         <EFDB_Name>imagesInSequence</EFDB_Name>
         <Description>The total number of requested images in sequence</Description>
@@ -676,7 +686,7 @@
         <IDL_Type>double</IDL_Type>
         <Units>second</Units>
         <Count>1</Count>
-    </item> 
+    </item>
 </SALEvent>
 <SALEvent>
     <Subsystem>ATCamera</Subsystem>
@@ -699,6 +709,8 @@
     <Author></Author>
     <EFDB_Topic>ATCamera_logevent_imageReadoutParameters</EFDB_Topic>
     <Alias>imageReadoutParameters</Alias>
+    <Description>Event sent describing image readout parameters.
+    Note: all : delimited strings (aka string arrays) follow the escaping convention defined in CAP-572</Description>
     <Explanation>http://project.lsst.org/ts/sal_objects/help/ATCamera_logevent_imageReadoutParameters.html</Explanation>
     <item>
         <EFDB_Name>imageName</EFDB_Name>
