@@ -4,11 +4,28 @@ import pathlib
 
 
 def provide_ignored():
+    """Returns lists of ignored attributes and fields."""
     ignored_attributes = ["EFDB_Name", "Description"]
     ignored_fields = ["Description", "Alias", "Device", "Property", "Action", "Value", "Subsystem", "Version", "Author", "Explanation"]
     return ignored_attributes, ignored_fields
 
 def add_generics(cf, subsystem, set_name, has_generics, has_specific):
+    """Adds generic topics to the rst file in the appropriate section.
+
+    Parameters
+    ----------
+    cf : `IO`
+        A file object for writting to each CSC rst file.
+    subsystem : `str`
+        The name of the CSC.
+    set_name : `str`
+        The name of the topic set.
+    has_generics : `bool` or `List` of `str`
+        It either has generic topics(yes) or not(no) or a list of supported topics.
+    has_specific : `List` of `str`
+        A list for specifying whether a CSC has specific kinds of topics or not(command, event, telemetry)
+
+    """
     ignored_attributes, ignored_fields = provide_ignored()
     if has_generics is True:
         gen_tree = ET.parse("../sal_interfaces/SALGenerics.xml")
@@ -17,7 +34,7 @@ def add_generics(cf, subsystem, set_name, has_generics, has_specific):
             gen_set[:] = sorted(gen_set, key=lambda child: (child.tag, child.find("EFDB_Topic").text.split("_")[-1] if child.find("EFDB_Topic") is not None else child.tag))
             gen_set_name = gen_set.tag
             if gen_set_name == set_name:
-                if gen_set_name[3:-3] not in has_specific:
+                if gen_set_name[3:-3] not in has_specific: # Remove SAL and Set from the string in order to compare topic set name correctly
                     cf.write(f"{gen_set_name[3:-3]}s\n")
                     cf.write(f"{'-'*len(gen_set_name[3:-3]+'s')}\n")
                 for gen_topic in gen_set:
@@ -117,6 +134,12 @@ def add_generics(cf, subsystem, set_name, has_generics, has_specific):
                         pass
 
 def main():
+    """Generates CSC rst documentation from XML.
+
+    Currently goes through each topic file within each CSC folder.
+    Alphabetizing is a little weird because CSC specific topics and generic topics are located in separate
+    xml files and so each file is alphabetized seprately.
+    """
     ignored_attributes, ignored_fields = provide_ignored()
     pathlib.Path("sal_interfaces").mkdir(parents=True, exist_ok=True)
     f = open(pathlib.Path("sal_interfaces/index.rst"), "w")
