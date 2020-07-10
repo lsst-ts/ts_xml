@@ -86,6 +86,16 @@ db_optional_reserved = [
     "WITH", "WRITE"
 ]
 
+"""Define string attributes that are NOT unitless"""
+strings_with_units = [
+    "azPositions", "elPositions", "rotPositions", "mountAzString",
+    "mountDecString", "mountRAString", "mountRotString", "mountElString",
+    "lst", "utc", "ha", "hour", "deg", "localTimeString", 
+    "demandRaString", "demandDecString", "demandAz", "demandEl", "demandRot",
+    "raString", "decString"
+    
+]
+
 # =========
 # Functions
 # =========

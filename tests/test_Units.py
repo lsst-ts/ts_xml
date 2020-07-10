@@ -11,6 +11,10 @@ def check_for_issues(csc, topic):
         jira = "CAP-318"
     elif csc == "MTCamera":
         jira = "CAP-318"
+    elif csc == "Environment":
+        jira = "DM-25902"
+    elif csc == "PromptProcessing":
+        jira = "CAP-592"
     else:
         jira = ""
     return jira
@@ -76,5 +80,12 @@ def test_string_units(xmlfile, csc, topic):
     for attrib in root.findall(f"./{saltype}/item"):
         idltype = attrib.find("IDL_Type")
         if idltype.text == "string":
+            name = attrib.find("EFDB_Name")
             unit = attrib.find("Units")
-            assert unit.text in ("unitless", "dimensionless")
+            # There is a robust skip list, as many strings represent angles or time.
+            if csc in ["ATPtg", "MTPtg"] and name.text in ts_xml.strings_with_units:
+                assert True
+            else:
+                assert unit.text in ("unitless", "dimensionless"), csc + \
+                ": string-type attribute '" + name.text + "' has the unit '" + \
+                    unit.text + "'"
