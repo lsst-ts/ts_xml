@@ -161,14 +161,21 @@ def main():
             except FileNotFoundError:
                 add_generics(cf, subsystem, set_name=f"SAL{dds_type[:-1]}Set", has_generics=has_generics, has_specific=has_specific)
                 continue
-            cf.write(f"{dds_type}\n")
-            cf.write(f"{'-'*len(dds_type)}\n")
+            if dds_type != "Events":
+                cf.write(f"{dds_type}\n")
+                cf.write(f"{'-'*len(dds_type)}\n")
             root = tree.getroot()
             set_name = root.tag
             # root[:] = sorted(root, key=lambda child: child.get("EFDB_Topic").split("_")[-1] if child.get("EFDB_Topic") is not None else child.tag)
             root[:] = sorted(root, key=lambda child: (child.tag, child.find("EFDB_Topic").text.split("_")[-1] if child.find("EFDB_Topic") is not None else child.tag))
+            enumeration_seen = False
+            first_event = True
             for topic in root:
                 if topic.tag == "Enumeration":
+                    if dds_type == "Events" and not enumeration_seen:
+                        cf.write("Enumerations\n")
+                        cf.write("------------\n")
+                        enumeration_seen = True
                     states = topic.text.split(',')
                     state_name = states[0].split("_")[0].lstrip()
                     cf.write(f":{state_name} States:")
@@ -177,6 +184,10 @@ def main():
                         cf.write(f"  * {state.split('_')[1]}\n")
                     cf.write("\n")
                     continue
+                if dds_type == "Events" and first_event:
+                    cf.write("Events\n")
+                    cf.write("------\n")
+                    first_event = False
                 topic_name = topic.find('EFDB_Topic').text
                 if dds_type in ["Commands", "Events"]:
                     short_name = topic_name.split("_", 2)[-1]
