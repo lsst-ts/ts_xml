@@ -178,7 +178,7 @@ def main():
                         enumeration_seen = True
                     states = topic.text.split(',')
                     state_name = states[0].split("_")[0].lstrip()
-                    cf.write(f":{state_name} States:")
+                    cf.write(f":{state_name}:")
                     cf.write("\n")
                     for state in states:
                         cf.write(f"  * {state.split('_')[1]}\n")
