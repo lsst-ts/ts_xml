@@ -55,6 +55,7 @@ def test_units(xmlfile, csc, topic):
             "Unit '" + unit.text + "' in " + str(xmlfile.name) + \
                 " does not meet astropy standards."
 
+
 @pytest.mark.parametrize("xmlfile,csc,topic", ts_xml.get_xmlfile_csc_topic())
 def test_string_units(xmlfile, csc, topic):
     """Test that the <Units> field for STRING-type attributes is 'unitless.'
@@ -82,10 +83,11 @@ def test_string_units(xmlfile, csc, topic):
         if idltype.text == "string":
             name = attrib.find("EFDB_Name")
             unit = attrib.find("Units")
-            # There is a robust skip list, as many strings represent angles or time.
+            # There is a robust skip list, 
+            # as many strings represent angles or time.
             if csc in ["ATPtg", "MTPtg"] and name.text in ts_xml.strings_with_units:
                 assert True
             else:
                 assert unit.text in ("unitless", "dimensionless"), csc + \
-                ": string-type attribute '" + name.text + "' has the unit '" + \
-                    unit.text + "'"
+                    ": string-type attribute '" + name.text + \
+                    "' has the unit '" + unit.text + "'"

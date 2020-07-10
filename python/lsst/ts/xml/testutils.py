@@ -90,10 +90,9 @@ db_optional_reserved = [
 strings_with_units = [
     "azPositions", "elPositions", "rotPositions", "mountAzString",
     "mountDecString", "mountRAString", "mountRotString", "mountElString",
-    "lst", "utc", "ha", "hour", "deg", "localTimeString", 
+    "lst", "utc", "ha", "hour", "deg", "localTimeString",
     "demandRaString", "demandDecString", "demandAz", "demandEl", "demandRot",
     "raString", "decString"
-    
 ]
 
 # =========
