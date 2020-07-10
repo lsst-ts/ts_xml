@@ -171,12 +171,10 @@ def main():
                 if topic.tag == "Enumeration":
                     states = topic.text.split(',')
                     state_name = states[0].split("_")[0].lstrip()
-                    cf.write(f"{state_name}\n")
-                    cf.write(f"{'~'*len(state_name)}\n")
+                    cf.write(f":{state_name} States:")
                     cf.write("\n")
                     for state in states:
-                        cf.write(f"* {state.split('_')[1]}\n")
-                    cf.write("------\n")
+                        cf.write(f"  * {state.split('_')[1]}\n")
                     cf.write("\n")
                     continue
                 topic_name = topic.find('EFDB_Topic').text
