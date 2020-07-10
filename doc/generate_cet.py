@@ -20,7 +20,7 @@ def provide_ignored():
     return ignored_attributes, ignored_fields
 
 
-def add_generics(cf, subsystem, set_name, has_generics, has_specific):
+def add_generics(cf, subsystem, set_name, has_generics, has_specific_topic_type):
     """Adds generic topics to the rst file in the appropriate section.
 
     Parameters
@@ -35,7 +35,7 @@ def add_generics(cf, subsystem, set_name, has_generics, has_specific):
         True if it has all generic topics.
         False if it has no generic topics.
         A list of generic topic names if it has some generic topics.
-    has_specific : `List` of `str`
+    has_specific_topic_type : `List` of `str`
         A list containing the names of a type of topic, name must be
         capitalized.
         For example, ["Command", "Event", "Telemetry"].
@@ -56,7 +56,7 @@ def add_generics(cf, subsystem, set_name, has_generics, has_specific):
             if gen_set_name == set_name:
                 # Remove SAL and Set from the string in order to compare topic
                 # set name correctly.
-                if gen_set_name[3:-3] not in has_specific:
+                if gen_set_name[3:-3] not in has_specific_topic_type:
                     cf.write(f"{gen_set_name[3:-3]}s\n")
                     cf.write(f"{'-'*len(gen_set_name[3:-3]+'s')}\n")
                 for gen_topic in gen_set:
@@ -116,7 +116,7 @@ def add_generics(cf, subsystem, set_name, has_generics, has_specific):
                     if child.find("EFDB_Topic") is not None else child.tag))
             gen_set_name = gen_set.tag
             if gen_set_name == set_name:
-                if gen_set_name[3:-3] not in has_specific:
+                if gen_set_name[3:-3] not in has_specific_topic_type:
                     cf.write(f"{gen_set_name[3:-3]}s\n")
                     cf.write(f"{'-'*len(gen_set_name[3:-3]+'s')}\n")
                 for gen_topic in gen_set:
@@ -183,9 +183,9 @@ def main():
     f.write(".. toctree::\n  :glob:\n  :maxdepth: 1\n\n  *\n\n")
     subsystem_tree = ET.parse("../sal_interfaces/SALSubsystems.xml")
     for subsystem in testutils.subsystems:
-        # has_specific starts empty for each CSC because it is unknown if it
-        # has a topic file.
-        has_specific = []
+        # has_specific_topic_type starts empty for each CSC because it is
+        # unknown if it has a topic file.
+        has_specific_topic_type = []
         has_generics = False
         subsystem_tree_root = subsystem_tree.getroot()
         for sal_subsystem in subsystem_tree_root:
@@ -213,14 +213,14 @@ def main():
         for dds_type in ["Commands", "Events", "Telemetry"]:
             try:
                 tree = ET.parse(f"../sal_interfaces/{subsystem}/{subsystem}_{dds_type}.xml")
-                has_specific.append(dds_type[:-1])
+                has_specific_topic_type.append(dds_type[:-1])
             except FileNotFoundError:
                 add_generics(
                     cf,
                     subsystem,
                     set_name=f"SAL{dds_type[:-1]}Set",
                     has_generics=has_generics,
-                    has_specific=has_specific)
+                    has_specific_topic_type=has_specific_topic_type)
                 continue
             if dds_type != "Events":
                 cf.write(f"{dds_type}\n")
@@ -292,7 +292,7 @@ def main():
                     else:
                         cf.write(f":{field.tag}: {field.text}\n")
                     cf.write("\n")
-            add_generics(cf, subsystem, set_name, has_generics, has_specific)
+            add_generics(cf, subsystem, set_name, has_generics, has_specific_topic_type)
 
 
 if __name__ == "__main__":
