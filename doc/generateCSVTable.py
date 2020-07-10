@@ -17,9 +17,10 @@ count = 0
 for member in root.findall('SALSubsystem'):
     subsystem = []
 
-    # Here we add the table header. It may be redundent to fine the names of the
-    # XML tag however I do it anyways to be sure we arent adding a header for an
-    # XML tag that is non-existent.
+    # Here we add the table header.
+    # It may be redundant to fine the names of the XML tag however I do it
+    # anyways to be sure we aren't adding a header for an XML tag that is
+    # non-existent.
     if count == 0:
         name = member.find('Name').tag
         subsystem_head.append('Subystem')
@@ -107,7 +108,8 @@ for member in root.findall('SALSubsystem'):
 subsystem_data.close()
 
 # We have converted an xml table into a csv file with a header, however it is
-# not alphabetized. We do this here.
+# not alphabetized.
+# We do this here.
 with open('subsystemData.csv') as csv_file:
     csv_reader = csv.reader(csv_file, delimiter=',')
     line_count = 0
@@ -128,7 +130,8 @@ with open('subsystemData.csv') as csv_file:
             ordered_data.append(row)
             line_count += 1
 
-        # Place the rest of the rows into an ordered list based off the 1st ele
+        # Place the rest of the rows into an ordered list based off the 1st
+        # ele
         else:
             index = 0
             for each_ordered_row in ordered_data:

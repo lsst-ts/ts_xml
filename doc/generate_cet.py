@@ -6,24 +6,39 @@ import pathlib
 def provide_ignored():
     """Returns lists of ignored attributes and fields."""
     ignored_attributes = ["EFDB_Name", "Description"]
-    ignored_fields = ["Description", "Alias", "Device", "Property", "Action", "Value", "Subsystem", "Version", "Author", "Explanation"]
+    ignored_fields = [
+        "Description",
+        "Alias",
+        "Device",
+        "Property",
+        "Action",
+        "Value",
+        "Subsystem",
+        "Version",
+        "Author",
+        "Explanation"]
     return ignored_attributes, ignored_fields
+
 
 def add_generics(cf, subsystem, set_name, has_generics, has_specific):
     """Adds generic topics to the rst file in the appropriate section.
 
     Parameters
     ----------
-    cf : `IO`
+    cf : `file object`
         A file object for writting to each CSC rst file.
     subsystem : `str`
         The name of the CSC.
     set_name : `str`
         The name of the topic set.
     has_generics : `bool` or `List` of `str`
-        It either has generic topics(yes) or not(no) or a list of supported topics.
+        True if it has all generic topics.
+        False if it has no generic topics.
+        A list of generic topic names if it has some generic topics.
     has_specific : `List` of `str`
-        A list for specifying whether a CSC has specific kinds of topics or not(command, event, telemetry)
+        A list containing the names of a type of topic, name must be
+        capitalized.
+        For example, ["Command", "Event", "Telemetry"].
 
     """
     ignored_attributes, ignored_fields = provide_ignored()
@@ -31,10 +46,17 @@ def add_generics(cf, subsystem, set_name, has_generics, has_specific):
         gen_tree = ET.parse("../sal_interfaces/SALGenerics.xml")
         gen_root = gen_tree.getroot()
         for gen_set in gen_root:
-            gen_set[:] = sorted(gen_set, key=lambda child: (child.tag, child.find("EFDB_Topic").text.split("_")[-1] if child.find("EFDB_Topic") is not None else child.tag))
+            gen_set[:] = sorted(
+                gen_set,
+                key=lambda child: (
+                    child.tag,
+                    child.find("EFDB_Topic").text.split("_")[-1]
+                    if child.find("EFDB_Topic") is not None else child.tag))
             gen_set_name = gen_set.tag
             if gen_set_name == set_name:
-                if gen_set_name[3:-3] not in has_specific: # Remove SAL and Set from the string in order to compare topic set name correctly
+                # Remove SAL and Set from the string in order to compare topic
+                # set name correctly.
+                if gen_set_name[3:-3] not in has_specific:
                     cf.write(f"{gen_set_name[3:-3]}s\n")
                     cf.write(f"{'-'*len(gen_set_name[3:-3]+'s')}\n")
                 for gen_topic in gen_set:
@@ -83,7 +105,15 @@ def add_generics(cf, subsystem, set_name, has_generics, has_specific):
         gen_tree = ET.parse("../sal_interfaces/SALGenerics.xml")
         gen_root = gen_tree.getroot()
         for gen_set in gen_root:
-            gen_set[:] = sorted(gen_set, key=lambda child: (child.tag, child.find("EFDB_Topic").text.split("_")[-1] if child.find("EFDB_Topic") is not None else child.tag))
+            # Sorts xml file using the topic name(without the subsystem name)
+            # as the key, if the topic name exists otherwise just add the tag
+            # as is.
+            gen_set[:] = sorted(
+                gen_set,
+                key=lambda child: (
+                    child.tag,
+                    child.find("EFDB_Topic").text.split("_")[-1]
+                    if child.find("EFDB_Topic") is not None else child.tag))
             gen_set_name = gen_set.tag
             if gen_set_name == set_name:
                 if gen_set_name[3:-3] not in has_specific:
@@ -133,12 +163,13 @@ def add_generics(cf, subsystem, set_name, has_generics, has_specific):
                     else:
                         pass
 
+
 def main():
     """Generates CSC rst documentation from XML.
 
     Currently goes through each topic file within each CSC folder.
-    Alphabetizing is a little weird because CSC specific topics and generic topics are located in separate
-    xml files and so each file is alphabetized seprately.
+    Component-specific topics are listed first, then generic topics.
+    Topics are alphabetized within each group.
     """
     ignored_attributes, ignored_fields = provide_ignored()
     pathlib.Path("sal_interfaces").mkdir(parents=True, exist_ok=True)
@@ -152,6 +183,8 @@ def main():
     f.write(".. toctree::\n  :glob:\n  :maxdepth: 1\n\n  *\n\n")
     subsystem_tree = ET.parse("../sal_interfaces/SALSubsystems.xml")
     for subsystem in testutils.subsystems:
+        # has_specific starts empty for each CSC because it is unknown if it
+        # has a topic file.
         has_specific = []
         has_generics = False
         subsystem_tree_root = subsystem_tree.getroot()
@@ -182,15 +215,24 @@ def main():
                 tree = ET.parse(f"../sal_interfaces/{subsystem}/{subsystem}_{dds_type}.xml")
                 has_specific.append(dds_type[:-1])
             except FileNotFoundError:
-                add_generics(cf, subsystem, set_name=f"SAL{dds_type[:-1]}Set", has_generics=has_generics, has_specific=has_specific)
+                add_generics(
+                    cf,
+                    subsystem,
+                    set_name=f"SAL{dds_type[:-1]}Set",
+                    has_generics=has_generics,
+                    has_specific=has_specific)
                 continue
             if dds_type != "Events":
                 cf.write(f"{dds_type}\n")
                 cf.write(f"{'-'*len(dds_type)}\n")
             root = tree.getroot()
             set_name = root.tag
-            # root[:] = sorted(root, key=lambda child: child.get("EFDB_Topic").split("_")[-1] if child.get("EFDB_Topic") is not None else child.tag)
-            root[:] = sorted(root, key=lambda child: (child.tag, child.find("EFDB_Topic").text.split("_")[-1] if child.find("EFDB_Topic") is not None else child.tag))
+            root[:] = sorted(
+                root,
+                key=lambda child: (
+                    child.tag,
+                    child.find("EFDB_Topic").text.split("_")[-1]
+                    if child.find("EFDB_Topic") is not None else child.tag))
             enumeration_seen = False
             first_event = True
             for topic in root:
@@ -226,7 +268,9 @@ def main():
                 for field in topic:
                     if field.tag == "item":
                         cf.write("\n")
-                        cf.write(f".. _{subsystem}:{dds_type}:{short_name}:{field.find('EFDB_Name').text}:\n\n")
+                        cf.write((
+                            f".. _{subsystem}:{dds_type}:{short_name}:"
+                            f"{field.find('EFDB_Name').text}:\n\n"))
                         cf.write(f"{field.find('EFDB_Name').text}\n")
                         cf.write(f"{'*'*len(field.find('EFDB_Name').text)}\n")
                         for attribute in field:
