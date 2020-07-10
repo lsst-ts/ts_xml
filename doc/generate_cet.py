@@ -68,7 +68,7 @@ def add_generics(cf, subsystem, set_name, has_generics, has_specific):
                     if gen_topic_description is not None:
                         cf.write("**Description**: ")
                         cf.write(f"{gen_topic_description.text}\n")
-                        cf.write(f"\n")
+                        cf.write("\n")
                     for gen_field in gen_topic:
                         if gen_field.tag == "item":
                             gen_field_name = gen_field.find('EFDB_Name')
@@ -132,7 +132,7 @@ def add_generics(cf, subsystem, set_name, has_generics, has_specific):
                         if gen_topic_description is not None:
                             cf.write("**Description**: ")
                             cf.write(f"{gen_topic_description.text}\n")
-                            cf.write(f"\n")
+                            cf.write("\n")
                         for gen_field in gen_topic:
                             if gen_field.tag == "item":
                                 gen_field_name = gen_field.find('EFDB_Name')
