@@ -83,7 +83,7 @@ def test_string_units(xmlfile, csc, topic):
         if idltype.text == "string":
             name = attrib.find("EFDB_Name")
             unit = attrib.find("Units")
-            # There is a robust skip list, 
+            # There is a robust skip list,
             # as many strings represent angles or time.
             if csc in ["ATPtg", "MTPtg"] and name.text in ts_xml.strings_with_units:
                 assert True
