@@ -11,8 +11,6 @@ def check_for_issues(csc, topic):
         jira = "CAP-318"
     elif csc == "MTCamera":
         jira = "CAP-318"
-    elif csc == "Environment":
-        jira = "DM-25902"
     elif csc == "PromptProcessing":
         jira = "CAP-592"
     else:
