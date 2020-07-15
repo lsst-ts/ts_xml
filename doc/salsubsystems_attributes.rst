@@ -150,7 +150,7 @@ Required Values (for EFD communication):
 Additional Values (as needed):
 
     * CPP
-    * LabView
+    * LabVIEW
     * Java
     * SALPY
 
