@@ -281,8 +281,8 @@ def test_jenkins_test_results_tag(root, csc, jenkins_test_results):
     skip_if_known_issue("jenkins_test_results", csc)
     # Verify the <JenkinsTestResults> tag is properly defined.
     whitespace_checks(jenkins_test_results, "JenkinsTestResults", csc)
-    assert jenkins_test_results == "Not Applicable" or "http" in jenkins_test_results, \
-        f"{csc} <JenkinsTestResults> must have a URL or Not Applicable as content"
+    assert jenkins_test_results == "Not Available" or "http" in jenkins_test_results, \
+        f"{csc} <JenkinsTestResults> must have a URL or Not Available as content"
 
 
 @pytest.mark.parametrize("root,csc,product_owner", get_csc_attr_content("ProductOwner"))
