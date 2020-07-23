@@ -1,7 +1,7 @@
-import xml.etree.ElementTree as ET
 import csv
+from xml.etree import ElementTree
 
-tree = ET.parse("../sal_interfaces/SALSubsystems.xml")
+tree = ElementTree.parse("../sal_interfaces/SALSubsystems.xml")
 root = tree.getroot()
 
 # open file for writing
