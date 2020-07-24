@@ -5,26 +5,34 @@ Non XML SAL Topics
 Private Fields
 ==============
 
-private_sndStamp (TAI, unix seconds)
-    Time at which the sample was sent.
-private_rcvStamp (TAI, unix seconds)
-    Time at which sample was received.
-private_identity
-    For a CSC this has the form <SAL component name>[:index] e.g. "Script:5" or "ATDome".
-    For a user this has the form username@host.
-    This field is used for authorization.
-    New in ts_sal 4.2.
-private_origin
-    The process ID of the writer.
-private_host
-    The host address of the writer.
-    This is deprecated, and due to be removed in ts_sal 5.
-private_seqNum
-    For commands this uniquely identifies the command (within a reasonable timespan, since the value must eventually wrap around).
-    For other kinds of topics this may be incremented for each sample, though that is optional.
-<SAL component name>ID (ATDomeID)
-    Only present for indexed SAL components.
-    The SAL index of the writer.
+.. glossary::
+
+    private_sndStamp (TAI, unix seconds)
+        Time at which the sample was sent.
+
+    private_rcvStamp (TAI, unix seconds)
+        Time at which sample was received.
+
+    private_identity
+        For a CSC this has the form <SAL component name>[:index] e.g. "Script:5" or "ATDome".
+        For a user this has the form username@host.
+        This field is used for authorization.
+        New in ts_sal 4.2.
+
+    private_origin
+        The process ID of the writer.
+
+    private_host
+        The host address of the writer.
+        This is deprecated, and due to be removed in ts_sal 5.
+
+    private_seqNum
+        For commands this uniquely identifies the command (within a reasonable timespan, since the value must eventually wrap around).
+        For other kinds of topics this may be incremented for each sample, though that is optional.
+
+    <SAL component name>ID (i.e. ATDomeID)
+        Only present for indexed SAL components.
+        The SAL index of the writer.
 
 Non XML Topics
 ==============
@@ -33,7 +41,7 @@ ackcmd
 ------
 
 private_seqNum
-    The private_seqNum of the command being acknowledged.
+    The :term:`private_seqNum` of the command being acknowledged.
 ack
     The acknowledgement code, one of CMD\_ constants, such as CMD_COMPLETE = 303 or CMD_FAILED = -302.
 error
@@ -42,12 +50,12 @@ error
 result
     Salobj sets this to an error message if ack=CMD_FAILED.
 identity
-    The private_identity of the command being acknowledged (see below).
+    The :term:`private_identity` of the command being acknowledged.
 host
-    The private_host of the command being acknowledged.
+    The :term:`private_host` of the command being acknowledged.
     private_host is deprecated, so this field is also deprecated, and both should be gone in ts_sal 5.
 origin
-    The private_origin of the command being acknowledged, which is a process ID.
+    The :term:`private_origin` of the command being acknowledged, which is a process ID.
 cmdtype
     An index of all alphabetical topics inside of the component.
 timeout
