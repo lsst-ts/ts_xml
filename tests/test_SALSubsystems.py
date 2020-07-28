@@ -17,14 +17,43 @@ def get_salsubsystems_file():
 
 
 def skip_if_known_issue(test, csc):
-    if test in ["configuration", "simulator", "vendor_contact", "rubin_obs_contact",
-                "jenkins_test_results", "product_owner", "active_developers",
-                "github", "description", "index_enumeration"]:
-        pytest.skip(f"{test}: {csc}")
-    else:
-        jira = ""
-        if jira:
-            pytest.skip(jira + f": {csc}")
+    jira = ""
+    if csc == "AdamSensors" and (test == "configuration" or test == "simulator"):
+        jira = "DM-26126"
+    elif csc == "ATBuilding" and (test == "jenkins_test_results" or
+                                  test == "product_owner" or test == "simulator"):
+        jira = "DM-26123"
+    elif csc == "ATWhiteLight" and (test == "simulator"):
+        jira = "DM-26130"
+    elif csc == "IOTA" and (test == "active_developers" or test == "github" or
+                            test == "jenkins_test_results" or test == "simulator"):
+        jira = "DM-26120"
+    elif csc == "LOVE" and (test == "jenkins_test_results"):
+        jira = "DM-26127"
+    elif csc == "MTAlignment" and (test == "configuration" or test == "simulator"):
+        jira = "DM-26124"
+    elif csc == "MTAOS" and (test == "vendor_contact"):
+        jira = "DM-26129"
+    elif csc == "MTArchiver" and (test == "description" or test == "github"):
+        jira = "CAP-599"
+    elif csc == "MTEEC" and (test == "github" or test == "jenkins_test_results" or
+                             test == "simulator"):
+        jira = "DM-26122"
+    elif csc == "MTM2" and (test == "jenkins_test_results"):
+        jira = "DM-26128"
+    elif csc == "MTVMS" and (test == "jenkins_test_results" or test == "simulator"):
+        jira = "DM-26125"
+    elif csc == "PromptProcessing" and (test == "description" or test == "github" or
+                                        test == "jenkins_test_results" or
+                                        test == "rubin_obs_contact" or test == "simulator"):
+        jira = "CAP-600"
+    elif csc == "SummitFacility" and (test == "active_developers" or test == "github" or
+                                      test == "jenkins_test_results" or
+                                      test == "rubin_obs_contact" or
+                                      test == "simulator" or test == "product_owner"):
+        jira = "DM-26121"
+    if jira:
+        pytest.skip(jira + f": {csc}")
 
 
 def get_file_root_element():
