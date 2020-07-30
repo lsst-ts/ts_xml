@@ -28,8 +28,6 @@ def skip_if_known_issue(test, csc):
     elif csc == "IOTA" and (test == "active_developers" or test == "github" or
                             test == "jenkins_test_results" or test == "simulator"):
         jira = "DM-26120"
-    elif csc == "LOVE" and (test == "jenkins_test_results"):
-        jira = "DM-26127"
     elif csc == "MTAlignment" and (test == "configuration" or test == "simulator"):
         jira = "DM-26124"
     elif csc == "MTAOS" and (test == "vendor_contact"):
