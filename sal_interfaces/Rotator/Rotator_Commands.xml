@@ -73,39 +73,18 @@
     <Subsystem>Rotator</Subsystem>
     <EFDB_Topic>Rotator_command_trackStart</EFDB_Topic>
     <Description>Enter slewing/tracking mode (enabled substate SlewingOrTracking): follow a path specified by repeated track commands. Issue the stop command when you are done tracking.</Description>
-    <item>
-        <EFDB_Name>state</EFDB_Name>
-        <Description>state</Description>
-        <IDL_Type>boolean</IDL_Type>
-        <Units>unitless</Units>
-        <Count>1</Count>
-    </item>
 </SALCommand>
 
 <SALCommand>
     <Subsystem>Rotator</Subsystem>
     <EFDB_Topic>Rotator_command_clearError</EFDB_Topic>
     <Description>Clear the Fault state, sending the controller into Offline substate PublishOnly. You must use the engineering user interface to transition from that to Offline substate Available before the CSC can control the rotator.</Description>
-    <item>
-        <EFDB_Name>state</EFDB_Name>
-        <Description>state</Description>
-        <IDL_Type>boolean</IDL_Type>
-        <Units>unitless</Units>
-        <Count>1</Count>
-    </item>
 </SALCommand>
 
 <SALCommand>
     <Subsystem>Rotator</Subsystem>
     <EFDB_Topic>Rotator_command_stop</EFDB_Topic>
     <Description>Stop the rotator and go to enabled substate Stationary.</Description>
-    <item>
-        <EFDB_Name>state</EFDB_Name>
-        <Description>Not used.</Description>
-        <IDL_Type>int</IDL_Type>
-        <Units>unitless</Units>
-        <Count>1</Count>
-    </item>
 </SALCommand>
 
 </SALCommandSet>
