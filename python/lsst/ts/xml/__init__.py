@@ -20,3 +20,5 @@
 
 from .utils import *
 from .testutils import *
+from .generate_subsystems_doc import *
+from .generate_csv_table import *
