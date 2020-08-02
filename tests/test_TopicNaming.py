@@ -35,19 +35,26 @@ def test_topic_naming_csc(xmlfile, csc, topic):
     topic : `xmlfile.stem`
         One of ['Commands','Events','Telemetry']
     """
-    saltype = "SAL" + topic.rstrip('s')
+    saltype = "SAL" + topic.rstrip("s")
     # Check for known issues.
     jira = check_for_issues(csc, topic, "csc")
     if jira:
-        pytest.skip(jira + ": " + str(xmlfile.name) + " <EFDB_Topic> is not properly formed.")
+        pytest.skip(
+            jira + ": " + str(xmlfile.name) + " <EFDB_Topic> is not properly formed."
+        )
     # Test the topic <EFDB_Name> field.
     with open(str(xmlfile), "r", encoding="utf-8") as f:
         tree = et.parse(f)
     root = tree.getroot()
     for name in root.findall(f"./{saltype}/EFDB_Topic"):
         index = 0
-        assert name.text.split('_')[index] == csc, "<EFDB_Topic> " + name.text + \
-            ' in ' + str(xmlfile.name) + ' does not properly contain the CSC name.'
+        assert name.text.split("_")[index] == csc, (
+            "<EFDB_Topic> "
+            + name.text
+            + " in "
+            + str(xmlfile.name)
+            + " does not properly contain the CSC name."
+        )
 
 
 @pytest.mark.parametrize("xmlfile,csc,topic", ts_xml.get_xmlfile_csc_topic())
@@ -68,11 +75,13 @@ def test_topic_naming_type(xmlfile, csc, topic):
     topic : `xmlfile.stem`
         One of ['Commands','Events','Telemetry']
     """
-    saltype = "SAL" + topic.rstrip('s')
+    saltype = "SAL" + topic.rstrip("s")
     # Check for known issues.
     jira = check_for_issues(csc, topic, "type")
     if jira:
-        pytest.skip(jira + ": " + str(xmlfile.name) + " <EFDB_Topic> is not properly formed.")
+        pytest.skip(
+            jira + ": " + str(xmlfile.name) + " <EFDB_Topic> is not properly formed."
+        )
     # Test the topic <EFDB_Name> field.
     with open(str(xmlfile), "r", encoding="utf-8") as f:
         tree = et.parse(f)
@@ -86,9 +95,13 @@ def test_topic_naming_type(xmlfile, csc, topic):
         else:
             topictype = "command"
         index = 1
-        assert name.text.split('_')[index] == topictype, \
-            "<EFDB_Topic> " + name.text + ' in ' + str(xmlfile.name) + \
-            ' does not properly contain the topicType string.'
+        assert name.text.split("_")[index] == topictype, (
+            "<EFDB_Topic> "
+            + name.text
+            + " in "
+            + str(xmlfile.name)
+            + " does not properly contain the topicType string."
+        )
 
 
 @pytest.mark.parametrize("xmlfile,csc,topic", ts_xml.get_xmlfile_csc_topic())
@@ -110,11 +123,13 @@ def test_topic_naming_alias(xmlfile, csc, topic):
     topic : `xmlfile.stem`
         One of ['Commands','Events','Telemetry']
     """
-    saltype = "SAL" + topic.rstrip('s')
+    saltype = "SAL" + topic.rstrip("s")
     # Check for known issues.
     jira = check_for_issues(csc, topic, "alias")
     if jira:
-        pytest.skip(jira + ": " + str(xmlfile.name) + " <EFDB_Topic> is not properly formed.")
+        pytest.skip(
+            jira + ": " + str(xmlfile.name) + " <EFDB_Topic> is not properly formed."
+        )
     # Test the topic <EFDB_Name> field.
     with open(str(xmlfile), "r", encoding="utf-8") as f:
         tree = et.parse(f)
@@ -125,6 +140,12 @@ def test_topic_naming_alias(xmlfile, csc, topic):
             index = 1
         else:
             index = 2
-        assert re.match(r"^[a-z]([a-zA-Z0-9_]*$)", name.text.split('_', maxsplit=index)[index]) is not None, \
-            name.text + ' in ' + str(xmlfile.name) + ' does not begin with a lowercase '\
-            'letter and/or contains non-alphanumeric characters.'
+        assert (
+            re.match(
+                r"^[a-z]([a-zA-Z0-9_]*$)", name.text.split("_", maxsplit=index)[index]
+            )
+            is not None
+        ), (
+            name.text + " in " + str(xmlfile.name) + " does not begin with a lowercase "
+            "letter and/or contains non-alphanumeric characters."
+        )

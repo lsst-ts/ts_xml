@@ -18,7 +18,7 @@ def test_count(xmlfile, csc, topic):
     xml_file : `pathlib.Path`
         Full filepath to the Commands or Events XML file for the CSC.
     """
-    saltype = "SAL" + topic.rstrip('s')
+    saltype = "SAL" + topic.rstrip("s")
     with open(str(xmlfile), "r", encoding="utf-8") as f:
         tree = et.parse(f)
         root = tree.getroot()

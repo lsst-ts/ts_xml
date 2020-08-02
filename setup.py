@@ -17,5 +17,5 @@ setup(
     scripts=[],
     tests_require=tests_requires,
     extras_require={},
-    license="GPL"
+    license="GPL",
 )

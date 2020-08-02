@@ -27,7 +27,7 @@ def test_csc_xml_valid(xmlfile, csc, topic):
     xmlschema : `pathlib.Path`
         Full filepath to schema XSD file for the xmlfile.
     """
-    saltype = "SAL" + topic.rstrip('s')
+    saltype = "SAL" + topic.rstrip("s")
     xmlschema = get_xml_schema(saltype)
     with open(str(xmlfile), "r", encoding="utf-8") as f:
         tree = etree.parse(f)

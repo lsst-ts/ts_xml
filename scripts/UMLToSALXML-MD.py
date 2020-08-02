@@ -5,8 +5,30 @@ import xml.etree.ElementTree
 ignoreGlobals = True
 isForLabVIEW = False
 globalCommands = ["start", "enable", "disable", "standby", "exitControl"]
-globalEvents = ["errorCode", "summaryState", "settingVersions", "appliedSettingsMatchStart", "settingsApplied"]
-salTypes = ["short", "long", "long long", "unsigned short", "unsigned long", "unsigned long long", "float", "double", "char", "boolean", "octet", "string", "byte", "int"]
+globalEvents = [
+    "errorCode",
+    "summaryState",
+    "settingVersions",
+    "appliedSettingsMatchStart",
+    "settingsApplied",
+]
+salTypes = [
+    "short",
+    "long",
+    "long long",
+    "unsigned short",
+    "unsigned long",
+    "unsigned long long",
+    "float",
+    "double",
+    "char",
+    "boolean",
+    "octet",
+    "string",
+    "byte",
+    "int",
+]
+
 
 class UMLParser:
     def __init__(self):
@@ -19,14 +41,20 @@ class UMLParser:
         with open(tempUMLFile, "w") as tempFile:
             with open(umlFile, "r") as inputFile:
                 for line in inputFile:
-                    tempFile.write(line.replace("<UML:", "<").replace("</UML:", "</").replace("xmi:id","xmiid").replace("xmi:Extension", "xmiExtension").replace("xmi:type", "xmitype"))
+                    tempFile.write(
+                        line.replace("<UML:", "<")
+                        .replace("</UML:", "</")
+                        .replace("xmi:id", "xmiid")
+                        .replace("xmi:Extension", "xmiExtension")
+                        .replace("xmi:type", "xmitype")
+                    )
 
         self.subsystem = subsystem
         self.version = version
         self.uml = xml.etree.ElementTree.parse(tempUMLFile)
-        
+
     def Parse(self, outputDirectory):
-        print("Parsing temporary file")       
+        print("Parsing temporary file")
         self.outputDirectory = outputDirectory
         self.WriteCommands(self.GetCommands())
         self.WriteEvents(self.GetEnumerationList(), self.GetEvents())
@@ -35,7 +63,7 @@ class UMLParser:
             print("ERROR DURING PARSING")
         else:
             print("Completed succesfully")
-        
+
     def WriteCommands(self, commands):
         header = """<?xml version="1.0" encoding="UTF-8"?>
 <?xml-stylesheet type="text/xsl" href="http://lsst-sal.tuc.noao.edu/schema/SALCommandSet.xsl"?>
@@ -43,16 +71,16 @@ class UMLParser:
 	xsi:noNamespaceSchemaLocation="http://lsst-sal.tuc.noao.edu/schema/SALCommandSet.xsd">"""
         footer = """</SALCommandSet>"""
         path = os.path.join(self.outputDirectory, "%s_Commands.xml" % (self.subsystem))
-        with open(path, "w") as commandFile:  
-#        with open("%s\\%s_Commands.xml" % (self.outputDirectory, self.subsystem), "w") as commandFile:  
+        with open(path, "w") as commandFile:
+            #        with open("%s\\%s_Commands.xml" % (self.outputDirectory, self.subsystem), "w") as commandFile:
             commandFile.write(header)
             for item in commands:
                 if item.name != "Command":
                     print("Writing command %s" % item.name)
                     if not (ignoreGlobals and item.name in globalCommands):
                         commandFile.write(item.CreateSALXML())
-            commandFile.write(footer)          
-            
+            commandFile.write(footer)
+
     def WriteEvents(self, enumerations, events):
         header = """<?xml version="1.0" encoding="UTF-8"?>
 <?xml-stylesheet type="text/xsl" href="http://lsst-sal.tuc.noao.edu/schema/SALEventSet.xsl"?>
@@ -60,27 +88,33 @@ class UMLParser:
 	xsi:noNamespaceSchemaLocation="http://lsst-sal.tuc.noao.edu/schema/SALEventSet.xsd">"""
         footer = """</SALEventSet>"""
         path = os.path.join(self.outputDirectory, "%s_Events.xml" % (self.subsystem))
-        with open(path, "w") as eventFile:  
-#        with open("%s\\%s_Events.xml" % (self.outputDirectory, self.subsystem), "w") as eventFile:  
+        with open(path, "w") as eventFile:
+            #        with open("%s\\%s_Events.xml" % (self.outputDirectory, self.subsystem), "w") as eventFile:
             eventFile.write(header)
             eventFile.write("\n")
             print("enumerations: %s " % enumerations)
             for item in enumerations:
                 values = self.GetEnumerationValues("", item)
                 if len(values) > 0:
-                    eventFile.write("<Enumeration>%s</Enumeration>\n" % (self.GetEnumerationValues("", item)))
+                    eventFile.write(
+                        "<Enumeration>%s</Enumeration>\n"
+                        % (self.GetEnumerationValues("", item))
+                    )
             for item in events:
                 if item.name != "Event":
                     print("Writing event %s" % item.name)
                     if not (ignoreGlobals and item.name in globalEvents):
                         try:
                             eventFile.write(item.CreateSALXML())
-                        except Exception as e: 
+                        except Exception as e:
                             print(item.CreateSALXML())
-                            print("Possible error for documentation in model for: %s", item.name)
+                            print(
+                                "Possible error for documentation in model for: %s",
+                                item.name,
+                            )
                             print(e)
                             exit()
-            eventFile.write(footer)     
+            eventFile.write(footer)
 
     def WriteTelemetry(self, telemetry):
         header = """<?xml version="1.0" encoding="UTF-8"?>
@@ -89,114 +123,195 @@ class UMLParser:
 	xsi:noNamespaceSchemaLocation="http://lsst-sal.tuc.noao.edu/schema/SALTelemetrySet.xsd">"""
         footer = """</SALTelemetrySet>"""
         path = os.path.join(self.outputDirectory, "%s_Telemetry.xml" % (self.subsystem))
-        with open(path, "w") as telemetryFile:  
-#        with open("%s\\%s_Telemetry.xml" % (self.outputDirectory, self.subsystem), "w") as telemetryFile:  
+        with open(path, "w") as telemetryFile:
+            #        with open("%s\\%s_Telemetry.xml" % (self.outputDirectory, self.subsystem), "w") as telemetryFile:
             telemetryFile.write(header)
             for item in telemetry:
                 if item.name != "Telemetry":
                     print("Writing telemetry %s" % item.name)
                     telemetryFile.write(item.CreateSALXML())
-            telemetryFile.write(footer)     
+            telemetryFile.write(footer)
 
     def GetCommands(self):
         commands = []
         for item in self.GetCommandList():
             commands.append(self.CreateSALCommand(item))
         return commands
-        
+
     def GetEvents(self):
         events = []
         for item in self.GetEventList():
             events.append(self.CreateSALEvent(item))
         return events
-        
+
     def GetTelemetry(self):
         telemetry = []
         for item in self.GetTelemetryList():
             telemetry.append(self.CreateSALTelemetry(item))
         return telemetry
-        
+
     def CreateSALCommand(self, command):
-        basePath = ".//packagedElement[@name='SAL interface']/packagedElement[@name='Command']/packagedElement[@name='%s']/ownedAttribute" % (command)
-        author = ""#self.GetValue(self.uml.find(basePath % "author"), "UNDEFINED")
+        basePath = (
+            ".//packagedElement[@name='SAL interface']/packagedElement[@name='Command']/packagedElement[@name='%s']/ownedAttribute"
+            % (command)
+        )
+        author = ""  # self.GetValue(self.uml.find(basePath % "author"), "UNDEFINED")
         parameters = []
         for parameter in self.GetCommandParameterList(command):
             parameters.append(self.CreateSALParameter("Command", command, parameter))
         return SALCommand(self.subsystem, self.version, author, command, parameters)
-        
+
     def CreateSALEvent(self, event):
-        basePath = ".//packagedElement[@name='SAL interface']/packagedElement[@name='Event']/packagedElement[@name='%s']/ownedAttribute" % (event)
-        author = ""#self.GetValue(self.uml.find(basePath), "UNDEFINED")
+        basePath = (
+            ".//packagedElement[@name='SAL interface']/packagedElement[@name='Event']/packagedElement[@name='%s']/ownedAttribute"
+            % (event)
+        )
+        author = ""  # self.GetValue(self.uml.find(basePath), "UNDEFINED")
         parameters = []
         for parameter in self.GetEventParameterList(event):
             parameters.append(self.CreateSALParameter("Event", event, parameter))
         return SALEvent(self.subsystem, self.version, author, event, parameters)
-        
+
     def CreateSALTelemetry(self, telemetry):
-        basePath = ".//packagedElement[@name='SAL interface']/packagedElement[@name='Telemetry']/packagedElement[@name='%s']/ownedAttribute" % (telemetry)
-        author = ""#self.GetValue(self.uml.find(basePath % "author"), "UNDEFINED")
+        basePath = (
+            ".//packagedElement[@name='SAL interface']/packagedElement[@name='Telemetry']/packagedElement[@name='%s']/ownedAttribute"
+            % (telemetry)
+        )
+        author = ""  # self.GetValue(self.uml.find(basePath % "author"), "UNDEFINED")
         parameters = []
         for parameter in self.GetTelemetryParameterList(telemetry):
-            parameters.append(self.CreateSALParameter("Telemetry", telemetry, parameter))
+            parameters.append(
+                self.CreateSALParameter("Telemetry", telemetry, parameter)
+            )
         return SALTelemetry(self.subsystem, self.version, author, telemetry, parameters)
 
     def CreateSALParameter(self, type, command, parameter):
-        basePath = ".//packagedElement[@name='SAL interface']/packagedElement[@name='%s']/packagedElement[@name='%s']/ownedAttribute[@name='%s']%s" % (type, command, parameter,'%s')
-        description = self.GetValueByName(self.uml.find(basePath % "/ownedComment"), "body", "")
-        if(description is None): description = ""
-        description = description.replace("<html>", "").replace("<pre>", "").replace("</html>", "").replace("</pre>", "")
+        basePath = (
+            ".//packagedElement[@name='SAL interface']/packagedElement[@name='%s']/packagedElement[@name='%s']/ownedAttribute[@name='%s']%s"
+            % (type, command, parameter, "%s")
+        )
+        description = self.GetValueByName(
+            self.uml.find(basePath % "/ownedComment"), "body", ""
+        )
+        if description is None:
+            description = ""
+        description = (
+            description.replace("<html>", "")
+            .replace("<pre>", "")
+            .replace("</html>", "")
+            .replace("</pre>", "")
+        )
         typePath = basePath % "/type/xmiExtension/referenceExtension"
-		
+
         type = self.GetValueByName(self.uml.find(typePath), "referentPath", "UNDEFINED")
         if type is "UNDEFINED":
-            typeID = self.GetValueByName(self.uml.find(basePath % ""), "type", "UNDEFINED")
+            typeID = self.GetValueByName(
+                self.uml.find(basePath % ""), "type", "UNDEFINED"
+            )
             type = self.TypeIDtoType(typeID)
         else:
             length = len(type)
-            lastIndex = type.rfind(':')
-            type = type[-(length-lastIndex-1):] 
+            lastIndex = type.rfind(":")
+            type = type[-(length - lastIndex - 1) :]
 
         units = self.uml.find(basePath % "/defaultValue/body")
         if units is not None:
             units = units.text
         units = "" if units is None else units
-		
+
         if type == "string":
-            count = self.GetValueByName(self.uml.find(basePath % "/upperValue"),"value", "1")
+            count = self.GetValueByName(
+                self.uml.find(basePath % "/upperValue"), "value", "1"
+            )
             return SALParameterString(parameter, description, type, units, count)
         elif type in salTypes:
-            count = self.GetValueByName(self.uml.find(basePath % "/upperValue"),"value", "1")
+            count = self.GetValueByName(
+                self.uml.find(basePath % "/upperValue"), "value", "1"
+            )
             return SALParameter(parameter, description, type, units, count)
         elif self.TypeIsEnumeration(type):
-            count = self.GetValueByName(self.uml.find(basePath % "/upperValue"),"value", "1")
-            return SALParameterEnumeration(parameter, description, type, units, count, self.GetEnumerationValues(parameter + "_", type))
+            count = self.GetValueByName(
+                self.uml.find(basePath % "/upperValue"), "value", "1"
+            )
+            return SALParameterEnumeration(
+                parameter,
+                description,
+                type,
+                units,
+                count,
+                self.GetEnumerationValues(parameter + "_", type),
+            )
         else:
             self.error = True
             return 0
-                    
+
     def GetCommandList(self):
-        return [command.get("name") for command in self.uml.findall(".//packagedElement[@name='SAL interface']/packagedElement[@name='Command']/packagedElement")]
-  
+        return [
+            command.get("name")
+            for command in self.uml.findall(
+                ".//packagedElement[@name='SAL interface']/packagedElement[@name='Command']/packagedElement"
+            )
+        ]
+
     def GetCommandParameterList(self, command):
-        return [parameter.get("name") for parameter in self.uml.findall(".//packagedElement[@name='SAL interface']/packagedElement[@name='Command']/packagedElement[@name='%s']/ownedAttribute" % command)]
+        return [
+            parameter.get("name")
+            for parameter in self.uml.findall(
+                ".//packagedElement[@name='SAL interface']/packagedElement[@name='Command']/packagedElement[@name='%s']/ownedAttribute"
+                % command
+            )
+        ]
 
     def GetEventList(self):
-        return [event.get("name") for event in self.uml.findall(".//packagedElement[@name='SAL interface']/packagedElement[@name='Event']/packagedElement")]
-        
+        return [
+            event.get("name")
+            for event in self.uml.findall(
+                ".//packagedElement[@name='SAL interface']/packagedElement[@name='Event']/packagedElement"
+            )
+        ]
+
     def GetEventParameterList(self, event):
-        return [parameter.get("name") for parameter in self.uml.findall(".//packagedElement[@name='SAL interface']/packagedElement[@name='Event']/packagedElement[@name='%s']/ownedAttribute" % event)]
-                
+        return [
+            parameter.get("name")
+            for parameter in self.uml.findall(
+                ".//packagedElement[@name='SAL interface']/packagedElement[@name='Event']/packagedElement[@name='%s']/ownedAttribute"
+                % event
+            )
+        ]
+
     def GetTelemetryList(self):
-        return [telemetry.get("name") for telemetry in self.uml.findall(".//packagedElement[@name='SAL interface']/packagedElement[@name='Telemetry']/packagedElement")]
-        
+        return [
+            telemetry.get("name")
+            for telemetry in self.uml.findall(
+                ".//packagedElement[@name='SAL interface']/packagedElement[@name='Telemetry']/packagedElement"
+            )
+        ]
+
     def GetTelemetryParameterList(self, telemetry):
-        return [parameter.get("name") for parameter in self.uml.findall(".//packagedElement[@name='SAL interface']/packagedElement[@name='Telemetry']/packagedElement[@name='%s']/ownedAttribute" % telemetry)]      
-        
+        return [
+            parameter.get("name")
+            for parameter in self.uml.findall(
+                ".//packagedElement[@name='SAL interface']/packagedElement[@name='Telemetry']/packagedElement[@name='%s']/ownedAttribute"
+                % telemetry
+            )
+        ]
+
     def GetEnumerationList(self):
-        return [enum.get("name") for enum in self.uml.findall(".//packagedElement[@name='IDL Datatype']/packagedElement[@xmitype='uml:Enumeration']")]
-        
+        return [
+            enum.get("name")
+            for enum in self.uml.findall(
+                ".//packagedElement[@name='IDL Datatype']/packagedElement[@xmitype='uml:Enumeration']"
+            )
+        ]
+
     def GetEnumerationValues(self, field, enumeration):
-        names = ["%s%s_%s" % (field, enumeration, value.get("name")) for value in self.uml.findall(".//packagedElement[@name='IDL Datatype']/packagedElement[@name='%s']/ownedLiteral" % enumeration)]
+        names = [
+            "%s%s_%s" % (field, enumeration, value.get("name"))
+            for value in self.uml.findall(
+                ".//packagedElement[@name='IDL Datatype']/packagedElement[@name='%s']/ownedLiteral"
+                % enumeration
+            )
+        ]
         return ",".join(names)
 
     def GetValue(self, node, default):
@@ -206,15 +321,22 @@ class UMLParser:
         return node.get(value) if node is not None else default
 
     def TypeIDtoType(self, typeID):
-        path = ".//packagedElement[@name='IDL Datatype']/packagedElement[@xmiid='%s']" % typeID 
+        path = (
+            ".//packagedElement[@name='IDL Datatype']/packagedElement[@xmiid='%s']"
+            % typeID
+        )
         node = self.uml.find(path)
-        return node.get("name") if node is not None else 'Error'
-        
+        return node.get("name") if node is not None else "Error"
+
     def TypeIsEnumeration(self, name):
-        path = ".//packagedElement[@name='IDL Datatype']/packagedElement[@name='%s']" % name
+        path = (
+            ".//packagedElement[@name='IDL Datatype']/packagedElement[@name='%s']"
+            % name
+        )
         node = self.uml.find(path)
         return node.get("xmitype") == "uml:Enumeration"
-        
+
+
 class SALParameter:
     template = """
     <item>
@@ -224,16 +346,23 @@ class SALParameter:
         <Units>%s</Units>
         <Count>%s</Count>
     </item>"""
-    
+
     def __init__(self, name, description, type, units, count):
         self.name = name
         self.description = description
         self.type = type
         self.units = units
         self.count = count
-        
+
     def CreateSALXML(self):
-        return self.template % (self.name, self.description, self.type, self.units, self.count)
+        return self.template % (
+            self.name,
+            self.description,
+            self.type,
+            self.units,
+            self.count,
+        )
+
 
 class SALParameterString:
     template = """
@@ -245,19 +374,26 @@ class SALParameterString:
         <Units>%s</Units>
         <Count>%s</Count>
     </item>"""
-    
+
     def __init__(self, name, description, type, units, count):
         self.name = name
         self.description = description
         self.type = type
         self.units = units
         self.count = count
-        
-    def CreateSALXML(self):
-        return self.template % (self.name, self.description, self.type, self.count, self.units, '1')
-        
-class SALParameterEnumeration:
 
+    def CreateSALXML(self):
+        return self.template % (
+            self.name,
+            self.description,
+            self.type,
+            self.count,
+            self.units,
+            "1",
+        )
+
+
+class SALParameterEnumeration:
     def __init__(self, name, description, enumeration, units, count, enumerations):
         self.name = name
         self.description = description
@@ -266,7 +402,7 @@ class SALParameterEnumeration:
         self.count = count
         self.enumerations = enumerations
 
-        if(isForLabVIEW):
+        if isForLabVIEW:
             self.template = """
             <item>
                 <EFDB_Name>%s</EFDB_Name>
@@ -287,12 +423,26 @@ class SALParameterEnumeration:
                 <Units>%s</Units>
                 <Count>%s</Count>
             </item>"""
-        
+
     def CreateSALXML(self):
-        if(isForLabVIEW):
-            return self.template % (self.name, self.description, self.enumeration, self.units, self.count, self.enumerations)
+        if isForLabVIEW:
+            return self.template % (
+                self.name,
+                self.description,
+                self.enumeration,
+                self.units,
+                self.count,
+                self.enumerations,
+            )
         else:
-            return self.template % (self.name, self.description, self.enumeration, self.units, self.count)
+            return self.template % (
+                self.name,
+                self.description,
+                self.enumeration,
+                self.units,
+                self.count,
+            )
+
 
 class SALCommand:
     template = """
@@ -308,21 +458,29 @@ class SALCommand:
     <Value></Value>
     <Explanation>http://sal.lsst.org</Explanation>%s
 </SALCommand>"""
-    
+
     def __init__(self, subsystem, version, author, name, parameters):
         self.subsystem = subsystem
         self.version = version
         self.author = author
         self.name = name
         self.parameters = parameters
-        
+
     def CreateSALXML(self):
         topic = "%s_command_%s" % (self.subsystem, self.name)
         alias = self.name
         items = ""
         for parameter in self.parameters:
             items = items + parameter.CreateSALXML()
-        return self.template % (self.subsystem, self.version, self.author, topic, alias, items)
+        return self.template % (
+            self.subsystem,
+            self.version,
+            self.author,
+            topic,
+            alias,
+            items,
+        )
+
 
 class SALEvent:
     template = """
@@ -348,7 +506,15 @@ class SALEvent:
         items = ""
         for parameter in self.parameters:
             items = items + parameter.CreateSALXML()
-        return self.template % (self.subsystem, self.version, self.author, topic, alias, items)
+        return self.template % (
+            self.subsystem,
+            self.version,
+            self.author,
+            topic,
+            alias,
+            items,
+        )
+
 
 class SALTelemetry:
     template = """
@@ -365,7 +531,7 @@ class SALTelemetry:
         self.author = author
         self.name = name
         self.parameters = parameters
-        
+
     def CreateSALXML(self):
         topic = "%s_%s" % (self.subsystem, self.name)
         items = ""
@@ -373,9 +539,10 @@ class SALTelemetry:
             items = items + parameter.CreateSALXML()
         return self.template % (self.subsystem, self.version, self.author, topic, items)
 
-        
+
 if len(sys.argv) != 7:
-    print("""
+    print(
+        """
 Version: 1.2
     
 usage: *.py <SubSystem> <SALVersion> <UMLFile> <OutputDirectory> <IgnoreGlobals(T/F)> <isForLabVIEW(T/F)>
@@ -388,7 +555,8 @@ Notes:
     4. Events must not be named Event, otherwise it will be ignored
     5. Telemetry must be a direct child of a package named Telemetry
     6. Telemetry must not be named Telemetry, otherwise it will be ignored
-    7. If you want parameters to have units defined, create a new tag named 'unit'""")
+    7. If you want parameters to have units defined, create a new tag named 'unit'"""
+    )
 else:
     ignoreGlobals = sys.argv[5] == "T"
     isForLabVIEW = sys.argv[6] == "T"

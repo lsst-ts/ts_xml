@@ -33,12 +33,12 @@ def generate_csv_table():
     root = tree.getroot()
 
     outpath = utils.get_pkg_root() / "doc" / "subsystemData.csv"
-    with open(outpath, 'w') as subsystem_data:
+    with open(outpath, "w") as subsystem_data:
         csvwriter = csv.writer(subsystem_data)
         subsystem_head = []
 
         count = 0
-        for member in root.findall('SALSubsystem'):
+        for member in root.findall("SALSubsystem"):
             subsystem = []
 
             # Here we add the table header.
@@ -46,92 +46,94 @@ def generate_csv_table():
             # but it makes sure we aren't adding a header
             # for an XML tag that is non-existent.
             if count == 0:
-                name = member.find('Name').tag
-                subsystem_head.append('Subystem')
+                name = member.find("Name").tag
+                subsystem_head.append("Subystem")
 
-                active_developers = member.find('ActiveDevelopers').tag
+                active_developers = member.find("ActiveDevelopers").tag
                 subsystem_head.append("Active Developers")
 
-                github = member.find('Github').tag
-                subsystem_head.append('Github')
+                github = member.find("Github").tag
+                subsystem_head.append("Github")
 
-                simulator = member.find('Simulator').tag
-                subsystem_head.append('Simulator')
+                simulator = member.find("Simulator").tag
+                subsystem_head.append("Simulator")
 
-                jenkins_test_results = member.find('JenkinsTestResults').tag
+                jenkins_test_results = member.find("JenkinsTestResults").tag
                 subsystem_head.append("Jenkins Test Results")
 
-                RubinObsContact = member.find('RubinObsContact').text
-                subsystem_head.append('Rubin Observatory Contact')
+                RubinObsContact = member.find("RubinObsContact").text
+                subsystem_head.append("Rubin Observatory Contact")
 
-                CSCDocs = member.find('CSCDocs').tag
-                subsystem_head.append('CSC Docs')
+                CSCDocs = member.find("CSCDocs").tag
+                subsystem_head.append("CSC Docs")
 
-                product_owner = member.find('ProductOwner').tag
-                subsystem_head.append('Product Owner')
+                product_owner = member.find("ProductOwner").tag
+                subsystem_head.append("Product Owner")
 
-                related_documents = member.find('RelatedDocuments').tag
-                subsystem_head.append('Related Documents')
+                related_documents = member.find("RelatedDocuments").tag
+                subsystem_head.append("Related Documents")
 
-                software_language = member.find('SoftwareLanguage').tag
-                subsystem_head.append('Software Language')
+                software_language = member.find("SoftwareLanguage").tag
+                subsystem_head.append("Software Language")
 
-                runtime_language = member.find('RuntimeLanguages').tag
-                subsystem_head.append('Runtime Language')
+                runtime_language = member.find("RuntimeLanguages").tag
+                subsystem_head.append("Runtime Language")
 
-                vendor_contact = member.find('VendorContact').tag
-                subsystem_head.append('Vendor Contact')
+                vendor_contact = member.find("VendorContact").tag
+                subsystem_head.append("Vendor Contact")
 
-                configuration = member.find('Configuration').tag
-                subsystem_head.append('Configuration')
+                configuration = member.find("Configuration").tag
+                subsystem_head.append("Configuration")
 
                 csvwriter.writerow(subsystem_head)
                 count = count + 1
 
-            name = member.find('Name').text
-            subsystem.append(f".. _index:master-csc-table:{name.lower()}:\n\n:doc:`/sal_interfaces/{name}`")
+            name = member.find("Name").text
+            subsystem.append(
+                f".. _index:master-csc-table:{name.lower()}:\n\n:doc:`/sal_interfaces/{name}`"
+            )
 
-            active_developers = member.find('ActiveDevelopers').text
+            active_developers = member.find("ActiveDevelopers").text
             subsystem.append(active_developers)
 
-            github = member.find('Github').text
+            github = member.find("Github").text
             subsystem.append(github)
 
-            simulator = member.find('Simulator').text
+            simulator = member.find("Simulator").text
             subsystem.append(simulator)
 
-            jenkins_test_results = member.find('JenkinsTestResults').text
+            jenkins_test_results = member.find("JenkinsTestResults").text
             subsystem.append(jenkins_test_results)
 
-            RubinObsContact = member.find('RubinObsContact').text
+            RubinObsContact = member.find("RubinObsContact").text
             subsystem.append(RubinObsContact)
 
-            CSCDocs = member.find('CSCDocs').text
+            CSCDocs = member.find("CSCDocs").text
             subsystem.append(CSCDocs)
 
-            product_owner = member.find('ProductOwner').text
+            product_owner = member.find("ProductOwner").text
             subsystem.append(product_owner)
 
-            related_documents = member.find('RelatedDocuments').text
+            related_documents = member.find("RelatedDocuments").text
             subsystem.append(related_documents)
 
-            software_language = member.find('SoftwareLanguage').text
+            software_language = member.find("SoftwareLanguage").text
             subsystem.append(software_language)
 
-            runtime_language = member.find('RuntimeLanguages').text
+            runtime_language = member.find("RuntimeLanguages").text
             subsystem.append(runtime_language)
 
-            vendor_contact = member.find('VendorContact').text
+            vendor_contact = member.find("VendorContact").text
             subsystem.append(vendor_contact)
 
-            configuration = member.find('Configuration').text
+            configuration = member.find("Configuration").text
             subsystem.append(configuration)
 
             csvwriter.writerow(subsystem)
 
     # Alphabetize the CSV file.
-    with open('subsystemData.csv') as csv_file:
-        csv_reader = csv.reader(csv_file, delimiter=',')
+    with open("subsystemData.csv") as csv_file:
+        csv_reader = csv.reader(csv_file, delimiter=",")
         line_count = 0
 
         header = []
@@ -160,7 +162,7 @@ def generate_csv_table():
                 ordered_data.insert(index, row)
 
     # Write the ordered data into file
-    with open('orderedSubsystemData.csv', 'w') as subsystem_data:
+    with open("orderedSubsystemData.csv", "w") as subsystem_data:
         csvwriter = csv.writer(subsystem_data)
         csvwriter.writerow(header)
 

@@ -13,14 +13,16 @@ def check_for_issues(csc, topic):
 
 def check_subsystem(xmlfile, saltype, element_root):
     for subsystem in element_root.findall(f"./{saltype}/Subsystem"):
-        assert re.search(r"\s", subsystem.text) is None, \
-            f"<Subsystem> '{subsystem.text}' in {xmlfile.name} contains a whitespace character."
+        assert (
+            re.search(r"\s", subsystem.text) is None
+        ), f"<Subsystem> '{subsystem.text}' in {xmlfile.name} contains a whitespace character."
 
 
 def check_topic(xmlfile, saltype, element_root):
     for topic in element_root.findall(f"./{saltype}/EFDB_Topic"):
-        assert re.search(r"\s", topic.text) is None, \
-            f"<EFDB_Topic> '{topic.text}' in {xmlfile.name} contains a whitespace character."
+        assert (
+            re.search(r"\s", topic.text) is None
+        ), f"<EFDB_Topic> '{topic.text}' in {xmlfile.name} contains a whitespace character."
 
 
 @pytest.mark.parametrize("xmlfile,csc,topic", ts_xml.get_xmlfile_csc_topic())
@@ -37,16 +39,22 @@ def test_no_spaces(xmlfile, csc, topic):
     xmlfile : `testutils.pathlib.Path`
         Full filepath to the Commands or Events XML file for the CSC.
     """
-    saltype = "SAL" + topic.rstrip('s')
+    saltype = "SAL" + topic.rstrip("s")
     # Check for known issues.
     jira = check_for_issues(csc, topic)
     if jira:
-        pytest.skip(jira + ": " + str(xmlfile.name) + ".xml <Subsystem> field contains whitespace.")
+        pytest.skip(
+            jira
+            + ": "
+            + str(xmlfile.name)
+            + ".xml <Subsystem> field contains whitespace."
+        )
     with open(str(xmlfile), "r", encoding="utf-8") as f:
         tree = et.parse(f)
     root = tree.getroot()
     check_subsystem(xmlfile, saltype, root)
     check_topic(xmlfile, saltype, root)
     for name in root.findall(f"./{saltype}/item/EFDB_Name"):
-        assert re.search(r"\s", name.text) is None, \
-            f"<EFDB_Name> '{name.text}' in {xmlfile.name} contains a whitespace character."
+        assert (
+            re.search(r"\s", name.text) is None
+        ), f"<EFDB_Name> '{name.text}' in {xmlfile.name} contains a whitespace character."

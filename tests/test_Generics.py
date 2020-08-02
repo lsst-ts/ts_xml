@@ -33,14 +33,16 @@ def test_salgenerics_topics():
 
     command_prefix = required_prefix + "command_"
     for topic in root.findall("./SALCommandSet/SALCommand/EFDB_Topic"):
-        assert topic.text.startswith(command_prefix), \
-            f"Generic command '{topic.text}' does not start with '{command_prefix}'"
+        assert topic.text.startswith(
+            command_prefix
+        ), f"Generic command '{topic.text}' does not start with '{command_prefix}'"
         topics.add(topic.text[topic_name_start_ind:])
 
     event_prefix = required_prefix + "logevent_"
     for topic in root.findall("./SALEventSet/SALEvent/EFDB_Topic"):
-        assert topic.text.startswith(event_prefix), \
-            f"Generic event '{topic.text}' does not start with '{event_prefix}'"
+        assert topic.text.startswith(
+            event_prefix
+        ), f"Generic event '{topic.text}' does not start with '{event_prefix}'"
         topics.add(topic.text[topic_name_start_ind:])
     assert sorted(topics) == sorted(ts_xml.generic_topics)
 
@@ -63,7 +65,7 @@ def test_xmlfiles_do_not_define_generic_topics(xmlfile, csc, topic):
     if topic == "Telemetry":
         pass
     else:
-        saltype = "SAL" + topic.rstrip('s')
+        saltype = "SAL" + topic.rstrip("s")
         # Check for known issues.
         jira = check_for_issues(csc, topic)
         if jira:
