@@ -18,5 +18,16 @@
 #
 # You should have received a copy of the GNU General Public License
 
-from .utils import *
-from .testutils import *
+__all__ = ["get_pkg_root", "get_sal_interfaces_dir"]
+
+import pathlib
+
+
+def get_pkg_root():
+    """Return the root directory of this package."""
+    return pathlib.Path(__file__).resolve().parents[4]
+
+
+def get_sal_interfaces_dir():
+    """Return the path to the ``sal_interfaces`` dir within this package."""
+    return get_pkg_root() / "sal_interfaces"
