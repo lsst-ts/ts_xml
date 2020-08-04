@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 from setuptools import setup, find_namespace_packages
 
-install_requires = []
+install_requires = ["black"]
 setup_requires = ["setuptools_scm", "pytest-runner"]
 tests_requires = ["pytest", "pytest-flake8", "lxml", "black"]
 dev_requires = install_requires + tests_requires + ["documenteer[pipelines]"]
