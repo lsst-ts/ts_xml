@@ -31,11 +31,8 @@ class BlackTestCase(unittest.TestCase):
         """
 
         pkg_root = xml.get_pkg_root()
-        result = subprocess.run(["which", "black"])
-        if result.returncode != 0:
-            raise unittest.SkipTest("Cannot find black executable: DM-26208")
         result = subprocess.run(
-            ["black", "--check", str(pkg_root), "--exclude", "version.py"],
+            ["black", "--check", str(pkg_root), "--exclude", "(version.py|.eggs|.git)"],
             capture_output=True,
         )
         if result.returncode != 0:
