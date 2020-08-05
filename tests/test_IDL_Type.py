@@ -24,17 +24,25 @@ def test_idl_type(xmlfile, csc, topic):
     topic : `xmlfile.stem`
         One of ['Commands','Events','Telemetry']
     """
-    saltype = "SAL" + topic.rstrip('s')
+    saltype = "SAL" + topic.rstrip("s")
     # Check for known issues.
     jira = check_for_issues(csc, topic)
     if jira:
-        pytest.skip(jira + ": " + str(xmlfile.name) +
-                    " <IDL_Type> fields do not conform to IDL standards.")
+        pytest.skip(
+            jira
+            + ": "
+            + str(xmlfile.name)
+            + " <IDL_Type> fields do not conform to IDL standards."
+        )
     # Test the attribute <Description> fields.
     with open(str(xmlfile), "r", encoding="utf-8") as f:
         tree = et.parse(f)
     root = tree.getroot()
     for idl_type in root.findall(f"./{saltype}/item/IDL_Type"):
-        assert idl_type.text is not None, 'IDL_Type cannot be blank.'
-        assert idl_type.text in ts_xml.idl_types, 'IDL_Type "' + idl_type.text + \
-            '" needs to be one of ' + str(ts_xml.idl_types)
+        assert idl_type.text is not None, "IDL_Type cannot be blank."
+        assert idl_type.text in ts_xml.idl_types, (
+            'IDL_Type "'
+            + idl_type.text
+            + '" needs to be one of '
+            + str(ts_xml.idl_types)
+        )
