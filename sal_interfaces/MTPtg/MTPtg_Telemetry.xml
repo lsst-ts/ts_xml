@@ -17,7 +17,7 @@
     <item>
         <EFDB_Name>demandAz</EFDB_Name>
         <Description>Demanded target Azimuth.</Description>
-        <IDL_Type>string</IDL_Type>
+        <IDL_Type>double</IDL_Type>
         <IDL_Size>1</IDL_Size>
         <Units>deg</Units>
         <Count>1</Count>
@@ -25,7 +25,7 @@
     <item>
         <EFDB_Name>demandEl</EFDB_Name>
         <Description>Demanded target Elevation</Description>
-        <IDL_Type>string</IDL_Type>
+        <IDL_Type>double</IDL_Type>
         <IDL_Size>1</IDL_Size>
         <Units>deg</Units>
         <Count>1</Count>
@@ -33,7 +33,7 @@
     <item>
         <EFDB_Name>demandRot</EFDB_Name>
         <Description>Demanded Rotator Angle</Description>
-        <IDL_Type>string</IDL_Type>
+        <IDL_Type>double</IDL_Type>
         <IDL_Size>1</IDL_Size>
         <Units>deg</Units>
         <Count>1</Count>
@@ -65,7 +65,7 @@
     <item>
         <EFDB_Name>ha</EFDB_Name>
         <Description>Current Hour Angle of target</Description>
-        <IDL_Type>string</IDL_Type>
+        <IDL_Type>double</IDL_Type>
         <IDL_Size>1</IDL_Size>
         <Units>hour</Units>
         <Count>1</Count>
@@ -84,18 +84,18 @@
         <Units>unitless</Units>
         <Count>1</Count>
     </item>
-    <item>
-        <EFDB_Name>demandRaString</EFDB_Name>
-        <Description>Demanded target Right Ascension as a string (HH:MM:SS.SS)</Description>
-        <IDL_Type>string</IDL_Type>
+		<item>
+        <EFDB_Name>demandRa</EFDB_Name>
+        <Description>Demanded target Right Ascension.</Description>
+        <IDL_Type>double</IDL_Type>
         <IDL_Size>1</IDL_Size>
         <Units>hour</Units>
         <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>demandDecString</EFDB_Name>
-        <Description>Demanded target Declination as a string (DD:MM:SS.S)</Description>
-        <IDL_Type>string</IDL_Type>
+        <EFDB_Name>demandDec</EFDB_Name>
+        <Description>Demanded target Declination.</Description>
+        <IDL_Type>double</IDL_Type>
         <IDL_Size>1</IDL_Size>
         <Units>deg</Units>
         <Count>1</Count>
@@ -261,25 +261,18 @@
     </item>
     <item>
         <EFDB_Name>utc</EFDB_Name>
-        <Description>UTC time as a sexagesimal string (HH:MM:SS.SSS)</Description>
-        <IDL_Type>string</IDL_Type>
+        <Description>UTC time</Description>
+        <IDL_Type>double</IDL_Type>
         <IDL_Size>1</IDL_Size>
-        <Units>hour</Units>
+        <Units>day</Units>
         <Count>1</Count>
     </item>
     <item>
         <EFDB_Name>lst</EFDB_Name>
-        <Description>Local Sidereal Tame as a sexagesimal string (HH:MM:SS)</Description>
-        <IDL_Type>string</IDL_Type>
+        <Description>Local Sidereal Time.</Description>
+        <IDL_Type>double</IDL_Type>
         <IDL_Size>1</IDL_Size>
         <Units>hour</Units>
-        <Count>1</Count>
-    </item>
-    <item>
-        <EFDB_Name>jd</EFDB_Name>
-        <Description>Julian date in days</Description>
-        <IDL_Type>double</IDL_Type>
-        <Units>day</Units>
         <Count>1</Count>
     </item>
     <item>
@@ -289,17 +282,25 @@
         <Units>day</Units>
         <Count>1</Count>
     </item>
+		<item>
+        <EFDB_Name>localTime</EFDB_Name>
+        <Description>Local Time (UTC).</Description>
+        <IDL_Type>double</IDL_Type>
+        <IDL_Size>1</IDL_Size>
+        <Units>day</Units>
+        <Count>1</Count>
+    </item>
     <item>
         <EFDB_Name>localTimeString</EFDB_Name>
         <Description>Local Time (UTC) as a sexagesimal string (HH:MM:SS.SSS)</Description>
         <IDL_Type>string</IDL_Type>
         <IDL_Size>1</IDL_Size>
-        <Units>hour</Units>
+        <Units>unitless</Units>
         <Count>1</Count>
     </item>
     <item>
         <EFDB_Name>leapSecs</EFDB_Name>
-        <Description>Number of leap seconds = TAI - UTC</Description>
+        <Description>Number of leap seconds = TAI - UTC.</Description>
         <IDL_Type>int</IDL_Type>
         <Units>second</Units>
         <Count>1</Count>
@@ -328,7 +329,7 @@
         <EFDB_Name>mountRA</EFDB_Name>
         <Description>Current RA of mount (degrees)</Description>
         <IDL_Type>double</IDL_Type>
-        <Units>deg</Units>
+        <Units>hour</Units>
         <Count>1</Count>
     </item>
     <item>
@@ -339,25 +340,9 @@
         <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>mountRAString</EFDB_Name>
-        <Description>Current mount RA as a sexagesimal string (HH:MM:SS).</Description>
-        <IDL_Type>string</IDL_Type>
-        <IDL_Size>1</IDL_Size>
-        <Units>hour</Units>
-        <Count>1</Count>
-    </item>
-    <item>
-        <EFDB_Name>mountDecString</EFDB_Name>
-        <Description>Current mount Dec as a sexagesimal string (DD:MM:SS).</Description>
-        <IDL_Type>string</IDL_Type>
-        <IDL_Size>1</IDL_Size>
-        <Units>deg</Units>
-        <Count>1</Count>
-    </item>
-    <item>
         <EFDB_Name>mountAzCurrentWrap</EFDB_Name>
         <Description>Mount azimuth axis current wrap</Description>
-        <IDL_Type>long</IDL_Type>
+        <IDL_Type>int</IDL_Type>
         <!-- <Enumeration> Wraps </Enumeration> -->
         <Units>unitless</Units>
         <Count>1</Count>
@@ -365,53 +350,50 @@
     <item>
         <EFDB_Name>mountRotCurrentWrap</EFDB_Name>
         <Description>Rotator current wrap</Description>
-        <IDL_Type>long</IDL_Type>
+        <IDL_Type>int</IDL_Type>
         <!-- <Enumeration> Wraps </Enumeration> -->
         <Units>unitless</Units>
         <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>mountAzError</EFDB_Name>
-        <Description>Azimuth axis position error (degrees)</Description>
+        <EFDB_Name>mountAz</EFDB_Name>
+        <Description>Mount azimuth.</Description>
         <IDL_Type>double</IDL_Type>
+        <IDL_Size>1</IDL_Size>
+        <Units>deg</Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>mountEl</EFDB_Name>
+        <Description>Mount elevation.</Description>
+        <IDL_Type>double</IDL_Type>
+        <IDL_Size>1</IDL_Size>
+        <Units>deg</Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>mountRot</EFDB_Name>
+        <Description>Rotator angle.</Description>
+        <IDL_Type>double</IDL_Type>
+        <IDL_Size>1</IDL_Size>
+        <Units>deg</Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>mountAzError</EFDB_Name>
+        <Description>Azimuth axis position error (actual - demand, in degrees)</Description>
         <Units>deg</Units>
         <Count>1</Count>
     </item>
     <item>
         <EFDB_Name>mountElError</EFDB_Name>
-        <Description>Elevation axis position error (degrees)</Description>
-        <IDL_Type>double</IDL_Type>
+        <Description>Elevation axis position error (actual - demand, in degrees)</Description>
         <Units>deg</Units>
         <Count>1</Count>
     </item>
     <item>
         <EFDB_Name>mountRotError</EFDB_Name>
-        <Description>Rotator position error (degrees)</Description>
-        <IDL_Type>double</IDL_Type>
-        <Units>deg</Units>
-        <Count>1</Count>
-    </item>
-    <item>
-        <EFDB_Name>mountAzString</EFDB_Name>
-        <Description>Mount azimuth as a sexagesimal string (DD:MM:SS).</Description>
-        <IDL_Type>string</IDL_Type>
-        <IDL_Size>1</IDL_Size>
-        <Units>deg</Units>
-        <Count>1</Count>
-    </item>
-    <item>
-        <EFDB_Name>mountElString</EFDB_Name>
-        <Description>Mount elevation as a sexagesimal string (DD:MM:SS).</Description>
-        <IDL_Type>string</IDL_Type>
-        <IDL_Size>1</IDL_Size>
-        <Units>deg</Units>
-        <Count>1</Count>
-    </item>
-    <item>
-        <EFDB_Name>mountRotString</EFDB_Name>
-        <Description>Rotator angle as a sexagesimal string (DD:MM:SS).</Description>
-        <IDL_Type>string</IDL_Type>
-        <IDL_Size>1</IDL_Size>
+        <Description>Rotator position error (actual - demand, in degrees)</Description>
         <Units>deg</Units>
         <Count>1</Count>
     </item>
