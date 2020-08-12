@@ -18,23 +18,13 @@ def get_salsubsystems_file():
 
 def skip_if_known_issue(test, csc):
     jira = ""
-    if csc == "AdamSensors" and (test == "configuration" or test == "simulator"):
-        jira = "DM-26126"
-    elif csc == "ATBuilding" and (
-        test == "jenkins_test_results" or test == "product_owner" or test == "simulator"
-    ):
-        jira = "DM-26123"
-    elif csc == "ATWhiteLight" and (test == "simulator"):
-        jira = "DM-26130"
-    elif csc == "IOTA" and (
+    if csc == "IOTA" and (
         test == "active_developers"
         or test == "github"
         or test == "jenkins_test_results"
         or test == "simulator"
     ):
         jira = "DM-26120"
-    elif csc == "MTAlignment" and (test == "configuration" or test == "simulator"):
-        jira = "DM-26124"
     elif csc == "MTAOS" and (test == "vendor_contact"):
         jira = "DM-26129"
     elif csc == "MTArchiver" and (test == "description" or test == "github"):
