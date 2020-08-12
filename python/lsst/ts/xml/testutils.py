@@ -70,7 +70,6 @@ subsystems = [
     "LOVE",
     "MTAOS",
     "MTAlignment",
-    "MTArchiver",
     "MTCamera",
     "MTDomeTrajectory",
     "MTEEC",
