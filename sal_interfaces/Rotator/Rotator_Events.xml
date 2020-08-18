@@ -135,14 +135,21 @@
     <Description>Specify whether the rotator is tracking.</Description>
     <item>
         <EFDB_Name>tracking</EFDB_Name>
-        <Description>Is the rotator tracking? True whenever 3 consecutive 50 ms track commands have been applied.</Description>
+        <Description>Is the rotator tracking? The value of Flags_trackingSuccess from the low-level controller.</Description>
         <IDL_Type>boolean</IDL_Type>
         <Units>unitless</Units>
         <Count>1</Count>
     </item>
     <item>
         <EFDB_Name>lost</EFDB_Name>
-        <Description>Did tracking fail? True if system tracks into a limit or we do not receive a new track command within 150ms (three iterations) following the last track command.</Description>
+        <Description>Did tracking fail? The value of Flags_trackingLost from the low-level controller.</Description>
+        <IDL_Type>boolean</IDL_Type>
+        <Units>unitless</Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>noNewCommand</EFDB_Name>
+        <Description>No new tracking command was received in time. The value of Flags_noNewTrackCmdError from the low-level controller.</Description>
         <IDL_Type>boolean</IDL_Type>
         <Units>unitless</Units>
         <Count>1</Count>
