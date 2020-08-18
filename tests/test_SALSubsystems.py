@@ -18,19 +18,8 @@ def get_salsubsystems_file():
 
 def skip_if_known_issue(test, csc):
     jira = ""
-    if csc == "IOTA" and (
-        test == "active_developers"
-        or test == "github"
-        or test == "jenkins_test_results"
-        or test == "simulator"
-    ):
-        jira = "DM-26120"
-    elif csc == "MTAOS" and (test == "vendor_contact"):
-        jira = "DM-26129"
-    elif csc == "MTArchiver" and (test == "description" or test == "github"):
+    if csc == "MTArchiver" and (test == "description" or test == "github"):
         jira = "CAP-599"
-    elif csc == "MTM2" and (test == "jenkins_test_results"):
-        jira = "DM-26128"
     elif csc == "PromptProcessing" and (
         test == "description"
         or test == "github"
