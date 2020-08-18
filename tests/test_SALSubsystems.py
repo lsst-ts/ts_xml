@@ -18,9 +18,7 @@ def get_salsubsystems_file():
 
 def skip_if_known_issue(test, csc):
     jira = ""
-    if csc == "MTArchiver" and (test == "description" or test == "github"):
-        jira = "CAP-599"
-    elif csc == "PromptProcessing" and (
+    if csc == "PromptProcessing" and (
         test == "description"
         or test == "github"
         or test == "jenkins_test_results"
