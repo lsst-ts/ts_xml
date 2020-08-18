@@ -5,19 +5,12 @@
 <SALTelemetry>
     <Subsystem>Rotator</Subsystem>
     <EFDB_Topic>Rotator_Application</EFDB_Topic>
-    <Description>Commanded and actual rotator position. Note: this will be renamed to "application" once we can update the camera cable wrap system.</Description>
+    <Description>Commanded and actual rotator position. Deprecated: use rotation instead.</Description>
     <item>
         <EFDB_Name>Demand</EFDB_Name>
         <Description>Commanded rotator position.</Description>
         <IDL_Type>double</IDL_Type>
         <Units>deg</Units>
-        <Count>1</Count>
-    </item>
-    <item>
-        <EFDB_Name>demandVelocity</EFDB_Name>
-        <Description>Commanded rotator velocity.</Description>
-        <IDL_Type>double</IDL_Type>
-        <Units>deg/second</Units>
         <Count>1</Count>
     </item>
     <item>
@@ -34,16 +27,56 @@
         <Units>deg</Units>
         <Count>1</Count>
     </item>
+</SALTelemetry>
+<SALTelemetry>
+    <Subsystem>Rotator</Subsystem>
+    <EFDB_Topic>Rotator_rotation</EFDB_Topic>
+    <Description>Demand and actual rotator position and velocity.</Description>
     <item>
-        <EFDB_Name>currentVelocityA</EFDB_Name>
-        <Description>Measured rotator velocity from encoder A. Warning: not yet trustworthy.</Description>
+        <EFDB_Name>demandPosition</EFDB_Name>
+        <Description>Rotator position computed by the path generator.</Description>
+        <IDL_Type>double</IDL_Type>
+        <Units>deg</Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>demandVelocity</EFDB_Name>
+        <Description>Rotator velocity computed by the path generator.</Description>
         <IDL_Type>double</IDL_Type>
         <Units>deg/second</Units>
         <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>currentVelocityB</EFDB_Name>
-        <Description>Measured rotator velocity from encoder B. Warning: not yet trustworthy.</Description>
+        <EFDB_Name>demandAcceleration</EFDB_Name>
+        <Description>Rotator acceleration computed by the path generator.</Description>
+        <IDL_Type>double</IDL_Type>
+        <Units>deg/second</Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>actualPosition</EFDB_Name>
+        <Description>Rotator position computed from the encoders.</Description>
+        <IDL_Type>double</IDL_Type>
+        <Units>deg</Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>actualVelocity</EFDB_Name>
+        <Description>Rotator velocity computed from the two linear encoders. Warning: not yet trustworthy.</Description>
+        <IDL_Type>double</IDL_Type>
+        <Units>deg/second</Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>debugActualVelocityA</EFDB_Name>
+        <Description>Rotator velocity computed from linear encoder A. Warning: this field is purely for debugging the low-level controller. Do not rely on it.</Description>
+        <IDL_Type>double</IDL_Type>
+        <Units>deg/second</Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>debugActualVelocityB</EFDB_Name>
+        <Description>Rotator velocity computed from linear encoder B. Warning: this field is purely for debugging the low-level controller. Do not rely on it.</Description>
         <IDL_Type>double</IDL_Type>
         <Units>deg/second</Units>
         <Count>1</Count>
