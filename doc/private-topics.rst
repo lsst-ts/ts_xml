@@ -62,6 +62,15 @@ timeout
     The approximate expected duration of the command.
     Only set if ack=CMD_INPROGRESS.
 
+Non XML Fields
+==============
+
+Events
+------
+
+priority
+    Contains the value of the priority that the writer specified.
+
 Acknowledgement Sequence
 ========================
 The initial ack code is CMD_ACK when the command is read.
