@@ -2,7 +2,7 @@
 Non XML SAL Topics
 ##################
 
-Private Fields
+Non XML Fields
 ==============
 
 .. glossary::
@@ -34,6 +34,9 @@ Private Fields
         Only present for indexed SAL components.
         The SAL index of the writer.
 
+    priority
+        Contains the value of the priority that the writer specified.
+
 Non XML Topics
 ==============
 
@@ -62,14 +65,7 @@ timeout
     The approximate expected duration of the command.
     Only set if ack=CMD_INPROGRESS.
 
-Non XML Fields
-==============
 
-Events
-------
-
-priority
-    Contains the value of the priority that the writer specified.
 
 Acknowledgement Sequence
 ========================
