@@ -35,6 +35,7 @@ Non XML Fields
         The SAL index of the writer.
 
     priority
+        Only present in event topics.
         Contains the value of the priority that the writer specified.
 
 Non XML Topics
