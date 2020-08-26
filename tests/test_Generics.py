@@ -16,8 +16,7 @@ def check_for_issues(csc, topic):
 
 
 def test_salgenerics_topics():
-    """Test that SALGenerics.xml defines the expected set of generic topics.
-    """
+    """Test that SALGenerics.xml defines the expected set of generic topics."""
     sal_generics_file = get_salgenerics_file()
     # Check for known issues.
     jira = check_for_issues("none", "generic_topics")
