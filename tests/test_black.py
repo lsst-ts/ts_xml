@@ -27,8 +27,7 @@ from lsst.ts import xml
 
 class BlackTestCase(unittest.TestCase):
     def test_black_formatted(self):
-        """Test that all Python code is formatted with black.
-        """
+        """Test that all Python code is formatted with black."""
 
         pkg_root = xml.get_pkg_root()
         result = subprocess.run(
