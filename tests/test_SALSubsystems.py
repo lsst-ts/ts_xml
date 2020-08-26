@@ -26,15 +26,6 @@ def skip_if_known_issue(test, csc):
         or test == "simulator"
     ):
         jira = "CAP-600"
-    elif csc == "SummitFacility" and (
-        test == "active_developers"
-        or test == "github"
-        or test == "jenkins_test_results"
-        or test == "rubin_obs_contact"
-        or test == "simulator"
-        or test == "product_owner"
-    ):
-        jira = "DM-26121"
     if jira:
         pytest.skip(jira + f": {csc}")
 
