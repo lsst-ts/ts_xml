@@ -58,8 +58,7 @@ def whitespace_checks(content, attribute, csc):
 
 
 def test_salsubsystems_xml_valid():
-    """Test that the SALSubsystems.xml conforms to its schema.
-    """
+    """Test that the SALSubsystems.xml conforms to its schema."""
     pkgroot = ts_xml.get_pkg_root()
     xmlschema_doc = etree.parse(f"{pkgroot}/schema/SALSubsystemSet.xsd")
     xmlschema = etree.XMLSchema(xmlschema_doc)
@@ -72,8 +71,7 @@ def test_salsubsystems_xml_valid():
 
 
 def test_salsubsystems_count():
-    """Test that SALSubsystems.xml defines the expected number of CSCs.
-    """
+    """Test that SALSubsystems.xml defines the expected number of CSCs."""
     # Check for known issues.
     skip_if_known_issue("count", "none")
     # Test SALGenerics.xml contains the expected commands.
@@ -84,8 +82,7 @@ def test_salsubsystems_count():
 
 
 def test_salsubsystems_uniq_cscs():
-    """Test that SALSubsystems.xml does not contain duplicate CSCs.
-    """
+    """Test that SALSubsystems.xml does not contain duplicate CSCs."""
     # Check for known issues.
     skip_if_known_issue("uniq", "none")
     # Test SALGenerics.xml contains unique CSCs.
@@ -98,8 +95,7 @@ def test_salsubsystems_uniq_cscs():
 
 
 def test_each_csc_defined():
-    """Test that SALSubsystems.xml defines the expected set of CSCs.
-    """
+    """Test that SALSubsystems.xml defines the expected set of CSCs."""
     # Check for known issues.
     skip_if_known_issue("defined", "none")
     # Verify each CSC is explicitly defined.
