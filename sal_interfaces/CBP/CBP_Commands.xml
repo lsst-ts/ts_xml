@@ -24,8 +24,8 @@
         <Subsystem>CBP</Subsystem>
         <Version>3.8</Version>
         <Author>ecoughlin</Author>
-        <EFDB_Topic>CBP_command_moveAzimuth</EFDB_Topic>
-        <Alias>moveAzimuth</Alias>
+        <EFDB_Topic>CBP_command_move</EFDB_Topic>
+        <Alias>move</Alias>
         <Device></Device>
         <Property></Property>
         <Action></Action>
@@ -33,26 +33,14 @@
         <Explanation>http://sal.lsst.org</Explanation>
         <item>
             <EFDB_Name>azimuth</EFDB_Name>
-            <Description>The amount to move the azimuth by in absolute.</Description>
+            <Description>The amount to move in azimuth axis.</Description>
             <IDL_Type>float</IDL_Type>
             <Units>degree</Units>
             <Count>1</Count>
         </item>
-    </SALCommand>
-    <SALCommand>
-        <Subsystem>CBP</Subsystem>
-        <Version>3.8</Version>
-        <Author>ecoughlin</Author>
-        <EFDB_Topic>CBP_command_moveAltitude</EFDB_Topic>
-        <Alias>moveAltitude</Alias>
-        <Device></Device>
-        <Property></Property>
-        <Action></Action>
-        <Value></Value>
-        <Explanation>http://sal.lsst.org</Explanation>
         <item>
             <EFDB_Name>altitude</EFDB_Name>
-            <Description>The amount to move the altitude by in absolute.</Description>
+            <Description>The amount to move in altitude axis.</Description>
             <IDL_Type>float</IDL_Type>
             <Units>degree</Units>
             <Count>1</Count>
@@ -102,6 +90,25 @@
         <Author>ecoughlin</Author>
         <EFDB_Topic>CBP_command_park</EFDB_Topic>
         <Alias>park</Alias>
+        <Device></Device>
+        <Property></Property>
+        <Action></Action>
+        <Value></Value>
+        <Explanation>http://sal.lsst.org</Explanation>
+        <item>
+            <EFDB_Name>value</EFDB_Name>
+            <Description>Attribute required by the SAL API, but is unused.</Description>
+            <IDL_Type>boolean</IDL_Type>
+            <Units>unitless</Units>
+            <Count>1</Count>
+        </item>
+    </SALCommand>
+    <SALCommand>
+        <Subsystem>CBP</Subsystem>
+        <Version>3.8</Version>
+        <Author>ecoughlin</Author>
+        <EFDB_Topic>CBP_command_unpark</EFDB_Topic>
+        <Alias>unpark</Alias>
         <Device></Device>
         <Property></Property>
         <Action></Action>
