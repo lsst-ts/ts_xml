@@ -2,14 +2,57 @@
 <?xml-stylesheet type="text/xsl" href="http://lsst-sal.tuc.noao.edu/schema/SALEventSet.xsl"?>
 <SALEventSet xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:noNamespaceSchemaLocation="http://lsst-sal.tuc.noao.edu/schema/SALEventSet.xsd">
-<Enumeration>DetailedState_DisabledState,DetailedState_EnabledState,DetailedState_FaultState,DetailedState_OfflineState,DetailedState_StandbyState</Enumeration>
 <SALEvent>
     <Subsystem>Scheduler</Subsystem>
-    <Version>3.8.13</Version>
-    <Author></Author>
+    <EFDB_Topic>Scheduler_logevent_detailedState</EFDB_Topic>
+    <Description>The substate or extra states of the CSC.</Description>
+    <item>
+        <EFDB_Name>substate</EFDB_Name>
+        <Description>The substate or extra states of the CSC </Description>
+        <IDL_Type>long</IDL_Type>
+        <Units>unitless</Units>
+        <Count>1</Count>
+    </item>
+</SALEvent>
+<SALEvent>
+    <Subsystem>Scheduler</Subsystem>
+    <EFDB_Topic>Scheduler_logevent_surveyTopology</EFDB_Topic>
+		<Description>Contains a general description of the configured surveys.</Description>
+    <item>
+        <EFDB_Name>numGeneralProps</EFDB_Name>
+        <Description>Number of general proposals.</Description>
+        <IDL_Type>long</IDL_Type>
+        <Units>unitless</Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>generalPropos</EFDB_Name>
+        <Description>Comma-separated string with the ids of the general proposals.</Description>
+        <IDL_Type>string</IDL_Type>
+        <IDL_Size>1</IDL_Size>
+        <Units>unitless</Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>numSeqProps</EFDB_Name>
+        <Description>Number of time-series proposals.</Description>
+        <IDL_Type>long</IDL_Type>
+        <Units>unitless</Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>sequencePropos</EFDB_Name>
+        <Description>Comma-separated string with the ids of the sequence proposals.</Description>
+        <IDL_Type>string</IDL_Type>
+        <IDL_Size>1</IDL_Size>
+        <Units>unitless</Units>
+        <Count>1</Count>
+    </item>
+</SALEvent>
+<SALEvent>
+    <Subsystem>Scheduler</Subsystem>
     <EFDB_Topic>Scheduler_logevent_dependenciesVersions</EFDB_Topic>
-    <Alias>dependenciesVersions</Alias>
-    <Explanation>http://sal.lsst.org</Explanation>
+		<Description>Specify the versions of various packages used by the scheduler.</Description>
     <item>
         <EFDB_Name>version</EFDB_Name>
         <Description>Applied settings version.</Description>
@@ -77,11 +120,8 @@
 </SALEvent>
 <SALEvent>
     <Subsystem>Scheduler</Subsystem>
-    <Version>3.8.13</Version>
-    <Author></Author>
     <EFDB_Topic>Scheduler_logevent_target</EFDB_Topic>
-    <Alias>target</Alias>
-    <Explanation>http://sal.lsst.org</Explanation>
+		<Description>Scheduler current target information.</Description>
     <item>
         <EFDB_Name>targetId</EFDB_Name>
         <Description>Unique target id.</Description>
@@ -325,11 +365,8 @@
 </SALEvent>
 <SALEvent>
     <Subsystem>Scheduler</Subsystem>
-    <Version>3.8.13</Version>
-    <Author></Author>
     <EFDB_Topic>Scheduler_logevent_invalidateTarget</EFDB_Topic>
-    <Alias>invalidateTarget</Alias>
-    <Explanation>http://sal.lsst.org</Explanation>
+		<Description>Information about a target that was excluded from the queue.</Description>
     <item>
         <EFDB_Name>targetId</EFDB_Name>
         <Description>Unique target id.</Description>
@@ -340,11 +377,8 @@
 </SALEvent>
 <SALEvent>
     <Subsystem>Scheduler</Subsystem>
-    <Version>3.8.13</Version>
-    <Author></Author>
     <EFDB_Topic>Scheduler_logevent_needFilterSwap</EFDB_Topic>
-    <Alias>needFilterSwap</Alias>
-    <Explanation>http://sal.lsst.org</Explanation>
+		<Description>Scheduler request a filter swap.</Description>
     <item>
         <EFDB_Name>needSwap</EFDB_Name>
         <Description>Does the scheduler need a new filter mounted on the camera?</Description>
@@ -368,4 +402,576 @@
         <Units>unitless</Units>
         <Count>1</Count>
     </item>
-</SALEvent></SALEventSet>
+</SALEvent>
+<SALEvent>
+    <Subsystem>Scheduler</Subsystem>
+    <EFDB_Topic>Scheduler_logevent_schedulerConfig</EFDB_Topic>
+		<Description>Base Scheduler configuration.</Description>
+    <item>
+        <EFDB_Name>surveyDuration</EFDB_Name>
+        <Description>Survey duration.</Description>
+        <IDL_Type>double</IDL_Type>
+        <Units>year</Units>
+        <Count>1</Count>
+    </item>
+</SALEvent>
+<SALEvent>
+    <Subsystem>Scheduler</Subsystem>
+    <EFDB_Topic>Scheduler_logevent_driverConfig</EFDB_Topic>
+		<Description>Basic Scheduler driver configuration.</Description>
+    <item>
+        <EFDB_Name>nightBoundary</EFDB_Name>
+        <Description>Sun altitude that marks the beginning/end of the night.</Description>
+        <IDL_Type>double</IDL_Type>
+        <Units>deg</Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>newMoonPhaseThreshold</EFDB_Name>
+        <Description>Moon illumination that marks the beginning/end of dark nights</Description>
+        <IDL_Type>double</IDL_Type>
+        <Units>unitless</Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>startupType</EFDB_Name>
+        <Description>What type of startup should the scheduler do? COLD, WARM or HOT?</Description>
+        <IDL_Type>string</IDL_Type>
+        <IDL_Size>1</IDL_Size>
+        <Units>unitless</Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>startupDatabase</EFDB_Name>
+        <Description>If WARM or HOT start, give the path to the startup database.</Description>
+        <IDL_Type>string</IDL_Type>
+        <IDL_Size>1</IDL_Size>
+        <Units>unitless</Units>
+        <Count>1</Count>
+    </item>
+</SALEvent>
+<SALEvent>
+    <Subsystem>Scheduler</Subsystem>
+    <EFDB_Topic>Scheduler_logevent_obsSiteConfig</EFDB_Topic>
+		<Description>Observatory model: site configuration.</Description>
+    <item>
+        <EFDB_Name>name</EFDB_Name>
+        <Description>Name of the observatory.</Description>
+        <IDL_Type>string</IDL_Type>
+        <IDL_Size>1</IDL_Size>
+        <Units>unitless</Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>latitude</EFDB_Name>
+        <Description>Latitude of the observatory.</Description>
+        <IDL_Type>double</IDL_Type>
+        <Units>deg</Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>longitude</EFDB_Name>
+        <Description>Longitude of the observatory.</Description>
+        <IDL_Type>double</IDL_Type>
+        <Units>deg</Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>height</EFDB_Name>
+        <Description>Height of the observatory.</Description>
+        <IDL_Type>double</IDL_Type>
+        <Units>m</Units>
+        <Count>1</Count>
+    </item>
+</SALEvent>
+<SALEvent>
+    <Subsystem>Scheduler</Subsystem>
+    <EFDB_Topic>Scheduler_logevent_telescopeConfig</EFDB_Topic>
+		<Description>Observatory model: telescope configuration.</Description>
+    <item>
+        <EFDB_Name>altitudeMinpos</EFDB_Name>
+        <Description>Telescope minimum reachable altitude position.</Description>
+        <IDL_Type>double</IDL_Type>
+        <Units>deg</Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>altitudeMaxpos</EFDB_Name>
+        <Description>Telescope maximum reachable altitude position.</Description>
+        <IDL_Type>double</IDL_Type>
+        <Units>deg</Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>azimuthMinpos</EFDB_Name>
+        <Description>Telescope minimum reachable azimuth position.</Description>
+        <IDL_Type>double</IDL_Type>
+        <Units>deg</Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>azimuthMaxpos</EFDB_Name>
+        <Description>Telescope maximum reachable azimuth position.</Description>
+        <IDL_Type>double</IDL_Type>
+        <Units>deg</Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>altitudeMaxspeed</EFDB_Name>
+        <Description>Telescope maximum speed of the altitude axis.</Description>
+        <IDL_Type>double</IDL_Type>
+        <Units>deg/s</Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>altitudeAccel</EFDB_Name>
+        <Description>Telescope altitude acceleration.</Description>
+        <IDL_Type>double</IDL_Type>
+        <Units>deg/s2</Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>altitudeDecel</EFDB_Name>
+        <Description>Telescope altitude deceleration.</Description>
+        <IDL_Type>double</IDL_Type>
+        <Units>deg/s2</Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>azimuthMaxspeed</EFDB_Name>
+        <Description>Telescope maximum speed in azimuth</Description>
+        <IDL_Type>double</IDL_Type>
+        <Units>deg/s</Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>azimuthAccel</EFDB_Name>
+        <Description>Telescope azimuth acceleration.</Description>
+        <IDL_Type>double</IDL_Type>
+        <Units>deg/s2</Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>azimuthDecel</EFDB_Name>
+        <Description>Telescope azimuth deceleration.</Description>
+        <IDL_Type>double</IDL_Type>
+        <Units>deg/s2</Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>settleTime</EFDB_Name>
+        <Description>Telescope settle time.</Description>
+        <IDL_Type>double</IDL_Type>
+        <Units>second</Units>
+        <Count>1</Count>
+    </item>
+</SALEvent>
+<SALEvent>
+    <Subsystem>Scheduler</Subsystem>
+    <EFDB_Topic>Scheduler_logevent_rotatorConfig</EFDB_Topic>
+		<Description>Observatory model: camera rotator configuration.</Description>
+    <item>
+        <EFDB_Name>minpos</EFDB_Name>
+        <Description>Camera rotator minimum position.</Description>
+        <IDL_Type>double</IDL_Type>
+        <Units>deg</Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>maxpos</EFDB_Name>
+        <Description>Camera rotator maximum position.</Description>
+        <IDL_Type>double</IDL_Type>
+        <Units>deg</Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>filterChangePos</EFDB_Name>
+        <Description>Camera rotator position for changing the filter.</Description>
+        <IDL_Type>double</IDL_Type>
+        <Units>deg</Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>maxspeed</EFDB_Name>
+        <Description>Camera rotator maximum speed.</Description>
+        <IDL_Type>double</IDL_Type>
+        <Units>deg/s</Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>accel</EFDB_Name>
+        <Description>Camera rotator acceleration.</Description>
+        <IDL_Type>double</IDL_Type>
+        <Units>deg/s2</Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>decel</EFDB_Name>
+        <Description>Camera rotator deceleration.</Description>
+        <IDL_Type>double</IDL_Type>
+        <Units>deg/s2</Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>manualRotator</EFDB_Name>
+        <Description>Is rotator in manual mode?</Description>
+        <IDL_Type>boolean</IDL_Type>
+        <Units>unitless</Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>followsky</EFDB_Name>
+        <Description>Should rotator aways align north with camera y-axis?</Description>
+        <IDL_Type>boolean</IDL_Type>
+        <Units>unitless</Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>resumeAngle</EFDB_Name>
+        <Description>After a filter change, should rotator move back to original position?</Description>
+        <IDL_Type>boolean</IDL_Type>
+        <Units>unitless</Units>
+        <Count>1</Count>
+    </item>
+</SALEvent>
+<SALEvent>
+    <Subsystem>Scheduler</Subsystem>
+    <EFDB_Topic>Scheduler_logevent_domeConfig</EFDB_Topic>
+		<Description>Observatory model: dome configuration.</Description>
+    <item>
+        <EFDB_Name>altitudeMaxspeed</EFDB_Name>
+        <Description>Dome altitude maximum speed.</Description>
+        <IDL_Type>double</IDL_Type>
+        <Units>deg/s</Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>altitudeAccel</EFDB_Name>
+        <Description>Dome acceleration in altitude.</Description>
+        <IDL_Type>double</IDL_Type>
+        <Units>deg/s2</Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>altitudeDecel</EFDB_Name>
+        <Description>Dome deceleration in altitude</Description>
+        <IDL_Type>double</IDL_Type>
+        <Units>deg/s2</Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>altitudeFreerange</EFDB_Name>
+        <Description>Dome free range in altitude.</Description>
+        <IDL_Type>double</IDL_Type>
+        <Units>deg</Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>azimuthMaxspeed</EFDB_Name>
+        <Description>Dome maximum speed in azimuth.</Description>
+        <IDL_Type>double</IDL_Type>
+        <Units>deg/s</Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>azimuthAccel</EFDB_Name>
+        <Description>Dome acceleration in azimuth.</Description>
+        <IDL_Type>double</IDL_Type>
+        <Units>deg/s2</Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>azimuthDecel</EFDB_Name>
+        <Description>Dome deceleration in azimuth.</Description>
+        <IDL_Type>double</IDL_Type>
+        <Units>deg/s2</Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>azimuthFreerange</EFDB_Name>
+        <Description>Dome free range in azimuth.</Description>
+        <IDL_Type>double</IDL_Type>
+        <Units>deg</Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>settleTime</EFDB_Name>
+        <Description>Dome settle time.</Description>
+        <IDL_Type>double</IDL_Type>
+        <Units>second</Units>
+        <Count>1</Count>
+    </item>
+</SALEvent>
+<SALEvent>
+    <Subsystem>Scheduler</Subsystem>
+    <EFDB_Topic>Scheduler_logevent_cameraConfig</EFDB_Topic>
+		<Description>Observatory model: camera configuration.</Description>
+    <item>
+        <EFDB_Name>readoutTime</EFDB_Name>
+        <Description>Camera readout time</Description>
+        <IDL_Type>double</IDL_Type>
+        <Units>s</Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>shutterTime</EFDB_Name>
+        <Description>Camera open/close shutter time.</Description>
+        <IDL_Type>double</IDL_Type>
+        <Units>s</Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>filterMountTime</EFDB_Name>
+        <Description>How long does it take to replace a filter in the camera?</Description>
+        <IDL_Type>double</IDL_Type>
+        <Units>s</Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>filterChangeTime</EFDB_Name>
+        <Description>How long does it take to change the filter?</Description>
+        <IDL_Type>double</IDL_Type>
+        <Units>s</Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>filterMounted</EFDB_Name>
+        <Description>Comma separated string with the name of the mounted filters</Description>
+        <IDL_Type>string</IDL_Type>
+        <IDL_Size>1</IDL_Size>
+        <Units>unitless</Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>filterPos</EFDB_Name>
+        <Description>Current filter position.</Description>
+        <IDL_Type>string</IDL_Type>
+        <IDL_Size>1</IDL_Size>
+        <Units>unitless</Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>filterRemovable</EFDB_Name>
+        <Description>Which filters can be removed from the camera?</Description>
+        <IDL_Type>string</IDL_Type>
+        <IDL_Size>1</IDL_Size>
+        <Units>unitless</Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>filterUnmounted</EFDB_Name>
+        <Description>Currently unmounted and available filters.</Description>
+        <IDL_Type>string</IDL_Type>
+        <IDL_Size>1</IDL_Size>
+        <Units>unitless</Units>
+        <Count>1</Count>
+    </item>
+</SALEvent>
+<SALEvent>
+    <Subsystem>Scheduler</Subsystem>
+    <EFDB_Topic>Scheduler_logevent_slewConfig</EFDB_Topic>
+		<Description>Observatory model: slew configuration.</Description>
+    <item>
+        <EFDB_Name>prereqDomalt</EFDB_Name>
+        <Description>Comma-separated prerequisites for dome to start moving in altitude. Will wait for these actions before moving.</Description>
+        <IDL_Type>string</IDL_Type>
+        <IDL_Size>1</IDL_Size>
+        <Units>unitless</Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>prereqDomaz</EFDB_Name>
+        <Description>Comma-separated prerequisites for dome to start moving in azimuth. Will wait for these actions before moving.</Description>
+        <IDL_Type>string</IDL_Type>
+        <IDL_Size>1</IDL_Size>
+        <Units>unitless</Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>prereqDomazSettle</EFDB_Name>
+        <Description>Comma-separated prerequisites for dome to settle in azimuth.</Description>
+        <IDL_Type>string</IDL_Type>
+        <IDL_Size>1</IDL_Size>
+        <Units>unitless</Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>prereqTelalt</EFDB_Name>
+        <Description>Comma-separated prerequisites for telescope to start moving in altitude. Will wait for these actions before moving.</Description>
+        <IDL_Type>string</IDL_Type>
+        <IDL_Size>1</IDL_Size>
+        <Units>unitless</Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>prereqTelaz</EFDB_Name>
+        <Description>Comma-separated prerequisites for telescope to start moving in azimuth. Will wait for these actions before moving.</Description>
+        <IDL_Type>string</IDL_Type>
+        <IDL_Size>1</IDL_Size>
+        <Units>unitless</Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>prereqTelOpticsOpenLoop</EFDB_Name>
+        <Description>Comma-separated prerequisites for telescope optics open loop to start adjusting. Will wait for these actions before moving.</Description>
+        <IDL_Type>string</IDL_Type>
+        <IDL_Size>1</IDL_Size>
+        <Units>unitless</Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>prereqTelOpticsClosedLoop</EFDB_Name>
+        <Description>Comma-separated prerequisites for telescope optics closed loop to start adjusting. Will wait for these actions before moving.</Description>
+        <IDL_Type>string</IDL_Type>
+        <IDL_Size>1</IDL_Size>
+        <Units>unitless</Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>prereqTelSettle</EFDB_Name>
+        <Description>Comma-separated prerequisites for telescope to settle. Will wait for these actions before moving.</Description>
+        <IDL_Type>string</IDL_Type>
+        <IDL_Size>1</IDL_Size>
+        <Units>unitless</Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>prereqTelRot</EFDB_Name>
+        <Description>Comma-separated prerequisites for camera rotator to start moving. Will wait for these actions before moving.</Description>
+        <IDL_Type>string</IDL_Type>
+        <IDL_Size>1</IDL_Size>
+        <Units>unitless</Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>prereqFilter</EFDB_Name>
+        <Description>Comma-separated prerequisites for filter change. Will wait for these actions before moving.</Description>
+        <IDL_Type>string</IDL_Type>
+        <IDL_Size>1</IDL_Size>
+        <Units>unitless</Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>prereqExposures</EFDB_Name>
+        <Description>Comma-separated prerequisites for exposure to start. Will wait for these actions before moving.</Description>
+        <IDL_Type>string</IDL_Type>
+        <IDL_Size>1</IDL_Size>
+        <Units>unitless</Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>prereqReadout</EFDB_Name>
+        <Description>Comma-separated prerequisites for exposure readout to start. Will wait for these actions before moving.</Description>
+        <IDL_Type>string</IDL_Type>
+        <IDL_Size>1</IDL_Size>
+        <Units>unitless</Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>prereqAdc</EFDB_Name>
+        <Description>Not sure what this is about.</Description>
+        <IDL_Type>string</IDL_Type>
+        <IDL_Size>1</IDL_Size>
+        <Units>unitless</Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>prereqInsOptics</EFDB_Name>
+        <Description>Comma-separated prerequisites for optics alignment. Will wait for these actions before moving.</Description>
+        <IDL_Type>string</IDL_Type>
+        <IDL_Size>1</IDL_Size>
+        <Units>unitless</Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>prereqGuiderPos</EFDB_Name>
+        <Description>Comma-separated prerequisites for positioning guider. Will wait for these actions before moving.</Description>
+        <IDL_Type>string</IDL_Type>
+        <IDL_Size>1</IDL_Size>
+        <Units>unitless</Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>prereqGuiderAdq</EFDB_Name>
+        <Description>Comma-separated prerequisites guider to start operating. Will wait for these actions before moving.</Description>
+        <IDL_Type>string</IDL_Type>
+        <IDL_Size>1</IDL_Size>
+        <Units>unitless</Units>
+        <Count>1</Count>
+    </item>
+</SALEvent>
+<SALEvent>
+    <Subsystem>Scheduler</Subsystem>
+    <EFDB_Topic>Scheduler_logevent_opticsLoopCorrConfig</EFDB_Topic>
+		<Description>Obbservatory model: Optics loop correction configuration.</Description>
+    <item>
+        <EFDB_Name>telOpticsOlSlope</EFDB_Name>
+        <Description>Multiplication factor to account the time it takes to align the optics given the size of a slew.</Description>
+        <IDL_Type>double</IDL_Type>
+        <Units>second/deg</Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>telOpticsClAltLimit</EFDB_Name>
+        <Description>How much can altitude change without the need to perform closed loop correction?</Description>
+        <IDL_Type>double</IDL_Type>
+        <Units>deg</Units>
+        <Count>3</Count>
+    </item>
+    <item>
+        <EFDB_Name>telOpticsClDelay</EFDB_Name>
+        <Description>How long does it take to perform a closed loop?</Description>
+        <IDL_Type>double</IDL_Type>
+        <Units>second</Units>
+        <Count>2</Count>
+    </item>
+</SALEvent>
+<SALEvent>
+    <Subsystem>Scheduler</Subsystem>
+    <EFDB_Topic>Scheduler_logevent_parkConfig</EFDB_Topic>
+		<Description>Observatory model: park configuration.</Description>
+    <item>
+        <EFDB_Name>telescopeAltitude</EFDB_Name>
+        <Description>Telescope parking altitude.</Description>
+        <IDL_Type>double</IDL_Type>
+        <Units>deg</Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>telescopeAzimuth</EFDB_Name>
+        <Description>Telescope parking azimuth</Description>
+        <IDL_Type>double</IDL_Type>
+        <Units>deg</Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>telescopeRotator</EFDB_Name>
+        <Description>Telescope parking rotator position.</Description>
+        <IDL_Type>double</IDL_Type>
+        <Units>deg</Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>domeAltitude</EFDB_Name>
+        <Description>Dome parking altitude.</Description>
+        <IDL_Type>double</IDL_Type>
+        <Units>deg</Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>domeAzimuth</EFDB_Name>
+        <Description>Dome parking azimuth.</Description>
+        <IDL_Type>double</IDL_Type>
+        <Units>deg</Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>filterPosition</EFDB_Name>
+        <Description>Parking filter.</Description>
+        <IDL_Type>string</IDL_Type>
+        <IDL_Size>1</IDL_Size>
+        <Units>unitless</Units>
+        <Count>1</Count>
+    </item>
+</SALEvent>
+</SALEventSet>
