@@ -4,7 +4,7 @@ from setuptools import setup, find_namespace_packages
 
 install_requires = ["black"]
 setup_requires = ["setuptools_scm", "pytest-runner"]
-tests_requires = ["pytest", "pytest-flake8", "lxml", "black"]
+tests_requires = ["pytest", "pytest-flake8", "lxml", "black", "astropy"]
 dev_requires = install_requires + tests_requires + ["documenteer[pipelines]"]
 
 setup(
@@ -16,6 +16,6 @@ setup(
     packages=find_namespace_packages(where="python"),
     scripts=[],
     tests_require=tests_requires,
-    extras_require={},
+    extras_require={"dev": dev_requires},
     license="GPL",
 )
