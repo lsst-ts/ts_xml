@@ -455,7 +455,7 @@
     <EFDB_Topic>Scheduler_logevent_obsSiteConfig</EFDB_Topic>
 		<Description>Observatory model: site configuration.</Description>
     <item>
-        <EFDB_Name>name</EFDB_Name>
+        <EFDB_Name>observatoryName</EFDB_Name>
         <Description>Name of the observatory.</Description>
         <IDL_Type>string</IDL_Type>
         <IDL_Size>1</IDL_Size>
@@ -571,28 +571,28 @@
     <EFDB_Topic>Scheduler_logevent_rotatorConfig</EFDB_Topic>
 		<Description>Observatory model: camera rotator configuration.</Description>
     <item>
-        <EFDB_Name>minpos</EFDB_Name>
+        <EFDB_Name>positionMin</EFDB_Name>
         <Description>Camera rotator minimum position.</Description>
         <IDL_Type>double</IDL_Type>
         <Units>deg</Units>
         <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>maxpos</EFDB_Name>
+        <EFDB_Name>positionMax</EFDB_Name>
         <Description>Camera rotator maximum position.</Description>
         <IDL_Type>double</IDL_Type>
         <Units>deg</Units>
         <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>filterChangePos</EFDB_Name>
+        <EFDB_Name>positionFilterChange</EFDB_Name>
         <Description>Camera rotator position for changing the filter.</Description>
         <IDL_Type>double</IDL_Type>
         <Units>deg</Units>
         <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>maxspeed</EFDB_Name>
+        <EFDB_Name>speedMax</EFDB_Name>
         <Description>Camera rotator maximum speed.</Description>
         <IDL_Type>double</IDL_Type>
         <Units>deg/s</Units>
@@ -620,7 +620,7 @@
         <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>followsky</EFDB_Name>
+        <EFDB_Name>followSky</EFDB_Name>
         <Description>Should rotator aways align north with camera y-axis?</Description>
         <IDL_Type>boolean</IDL_Type>
         <Units>unitless</Units>
@@ -752,7 +752,7 @@
     </item>
     <item>
         <EFDB_Name>filterRemovable</EFDB_Name>
-        <Description>Which filters can be removed from the camera?</Description>
+        <Description>Comma-separated list of filters to be considered for removal/swapping.</Description>
         <IDL_Type>string</IDL_Type>
         <IDL_Size>1</IDL_Size>
         <Units>unitless</Units>
@@ -760,7 +760,7 @@
     </item>
     <item>
         <EFDB_Name>filterUnmounted</EFDB_Name>
-        <Description>Currently unmounted and available filters.</Description>
+        <Description>Comma-separated list of filters that are not mounted on the camera but are available for the instrument.</Description>
         <IDL_Type>string</IDL_Type>
         <IDL_Size>1</IDL_Size>
         <Units>unitless</Units>
