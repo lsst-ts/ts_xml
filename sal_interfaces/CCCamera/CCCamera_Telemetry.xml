@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-stylesheet type="text/xsl" href="http://project.lsst.org/ts/sal_objects/schema/SALTelemetrySet.xsl"?>
 <SALTelemetrySet xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://project.lsst.org/ts/sal_objects/schema/SALTelemetrySet.xsd">
-<!-- Filter Changer -->
+    <!-- Filter Changer -->
     <SALTelemetry>
         <Subsystem>CCCamera</Subsystem>
         <Version>3.10.2</Version>
@@ -53,7 +53,7 @@
     <!-- rebpower -->
    <SALTelemetry>
       <Subsystem>CCCamera</Subsystem>
-      <EFDB_Topic>CCCamera_rebpowerReb</EFDB_Topic>
+      <EFDB_Topic>CCCamera_rebpower_Reb</EFDB_Topic>
       <item>
          <EFDB_Name>digital_VbefLDO</EFDB_Name>
          <Description>R22/Reb0 digital PS\Voltage before LDO</Description>
@@ -309,7 +309,7 @@
    </SALTelemetry>
    <SALTelemetry>
       <Subsystem>CCCamera</Subsystem>
-      <EFDB_Topic>CCCamera_rebpowerRebps</EFDB_Topic>
+      <EFDB_Topic>CCCamera_rebpower_Rebps</EFDB_Topic>
       <item>
          <EFDB_Name>boardTemp0</EFDB_Name>
          <Description>Board temperature 0</Description>
@@ -365,7 +365,7 @@
          <IDL_Type>string</IDL_Type>
          <Units>unitless</Units>
          <Count>1</Count>
-       </item>
+      </item>
    </SALTelemetry>
     <!-- Vacuum -->
     <SALTelemetry>
@@ -587,7 +587,8 @@
         </item>
     </SALTelemetry>
     <SALTelemetry>
-        <EFDB_Topic>CCCamera_vacuumRtds</EFDB_Topic>
+        <Subsystem>CCCamera</Subsystem>
+        <EFDB_Topic>CCCamera_vacuum_Rtds</EFDB_Topic>
         <item>
             <EFDB_Name>temperatureCold1</EFDB_Name>
             <Description>Cold Plate B Temperature</Description>
