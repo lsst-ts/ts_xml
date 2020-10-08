@@ -9,6 +9,7 @@ def check_for_issues(csc, topic):
     jira = ""
     return jira
 
+
 @pytest.mark.parametrize("xmlfile,csc,topic", ts_xml.get_xmlfile_csc_topic())
 def test_idl_type_exists(xmlfile, csc, topic):
     """Test that the <IDL_Type> field for topic attributes is exists at all.
@@ -43,7 +44,9 @@ def test_idl_type_exists(xmlfile, csc, topic):
         if idltype is None:
             print(name.text)
             untyped_field_names.append(name.text)
-    assert len(untyped_field_names) == 0, "IDL_Type for [" + ", ".join(untyped_field_names) + "] must be defined."
+    assert len(untyped_field_names) == 0, "IDL_Type for [" + 
+        ", ".join(untyped_field_names) + "] must be defined."
+
 
 @pytest.mark.parametrize("xmlfile,csc,topic", ts_xml.get_xmlfile_csc_topic())
 def test_idl_type(xmlfile, csc, topic):
