@@ -298,6 +298,16 @@ db_optional_reserved = [
     "WRITE",
 ]
 
+"""Define string attributes that are NOT unitless"""
+strings_with_units = [
+    "azPositions",
+    "elPositions",
+    "rotPositions",
+    "localTimeString",
+    "raString",
+    "decString",
+]
+
 # =========
 # Functions
 # =========
