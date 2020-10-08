@@ -5,8 +5,13 @@ import xml.etree.ElementTree as et
 import lsst.ts.xml as ts_xml
 
 
-def check_for_issues(csc, topic):
-    jira = ""
+def check_for_issues(test, csc, topic):
+    if test == "exists" and csc == "ATPtg" and topic == "Telemetry":
+        jira = "DM-27120"
+    elif test == "exists" and csc == "MTPtg" and topic == "Telemetry":
+        jira = "DM-27121"
+    else:
+        jira = ""
     return jira
 
 
@@ -25,7 +30,7 @@ def test_idl_type_exists(xmlfile, csc, topic):
     """
     saltype = "SAL" + topic.rstrip("s")
     # Check for known issues.
-    jira = check_for_issues(csc, topic)
+    jira = check_for_issues("exists", csc, topic)
     if jira:
         pytest.skip(
             jira
@@ -42,7 +47,6 @@ def test_idl_type_exists(xmlfile, csc, topic):
         name = attrib.find("EFDB_Name")
         idltype = attrib.find("IDL_Type")
         if idltype is None:
-            print(name.text)
             untyped_field_names.append(name.text)
     assert len(untyped_field_names) == 0, \
         "IDL_Type for [" + ", ".join(untyped_field_names) + "] must be defined."
@@ -64,7 +68,7 @@ def test_idl_type(xmlfile, csc, topic):
     """
     saltype = "SAL" + topic.rstrip("s")
     # Check for known issues.
-    jira = check_for_issues(csc, topic)
+    jira = check_for_issues("type", csc, topic)
     if jira:
         pytest.skip(
             jira
