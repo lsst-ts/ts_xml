@@ -33,10 +33,7 @@ def test_idl_type_exists(xmlfile, csc, topic):
     jira = check_for_issues("exists", csc, topic)
     if jira:
         pytest.skip(
-            jira
-            + ": "
-            + str(xmlfile.name)
-            + " <IDL_Type> fields must be defined."
+            jira + ": " + str(xmlfile.name) + " <IDL_Type> fields must be defined."
         )
     # Test the <IDL_Type> field exists for each attribute.
     with open(str(xmlfile), "r", encoding="utf-8") as f:
@@ -48,8 +45,9 @@ def test_idl_type_exists(xmlfile, csc, topic):
         idltype = attrib.find("IDL_Type")
         if idltype is None:
             untyped_field_names.append(name.text)
-    assert len(untyped_field_names) == 0, \
+    assert len(untyped_field_names) == 0, (
         "IDL_Type for [" + ", ".join(untyped_field_names) + "] must be defined."
+    )
 
 
 @pytest.mark.parametrize("xmlfile,csc,topic", ts_xml.get_xmlfile_csc_topic())
