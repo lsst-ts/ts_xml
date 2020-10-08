@@ -17,7 +17,7 @@ def check_for_issues(test, csc, topic):
 
 @pytest.mark.parametrize("xmlfile,csc,topic", ts_xml.get_xmlfile_csc_topic())
 def test_idl_type_exists(xmlfile, csc, topic):
-    """Test that the <IDL_Type> field for topic attributes is exists at all.
+    """Test that the <IDL_Type> field for topic attributes exists.
 
     Parameters
     ----------

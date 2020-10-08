@@ -100,11 +100,7 @@ def test_string_units(xmlfile, csc, topic):
             if csc in ["ATPtg", "MTPtg"] and name.text in ts_xml.strings_with_units:
                 assert True
             else:
-                assert unit.text in ("unitless", "dimensionless"), (
-                    csc
-                    + ": string-type attribute '"
-                    + name.text
-                    + "' has the unit '"
-                    + unit.text
-                    + "'"
-                )
+                assert unit.text in (
+                    "unitless",
+                    "dimensionless",
+                ), f"{csc}: string-type attribute {name.text!r} has the unit {unit.text!r}"
