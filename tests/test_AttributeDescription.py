@@ -29,15 +29,24 @@ def test_attribute_description(xmlfile, csc, topic):
     xmlfile : `pathlib.Path`
         Full filepath to the Commands or Events XML file for the CSC.
     """
-    saltype = "SAL" + topic.rstrip('s')
+    saltype = "SAL" + topic.rstrip("s")
     # Check for known issues.
     jira = check_for_issues(csc, topic)
     if jira:
-        pytest.skip(jira + ": " + csc + "_" + topic + ".xml contains blank <Description> fields.")
+        pytest.skip(
+            jira
+            + ": "
+            + csc
+            + "_"
+            + topic
+            + ".xml contains blank <Description> fields."
+        )
     # Test the attribute <Description> fields.
     with open(str(xmlfile), "r", encoding="utf-8") as f:
         tree = et.parse(f)
     root = tree.getroot()
     for description in root.findall(f"./{saltype}/item/Description"):
         assert description.text is not None, "Description cannot be blank."
-        assert description.text.replace(" ", "") != "", "Description cannot contain only whitespace."
+        assert (
+            description.text.replace(" ", "") != ""
+        ), "Description cannot contain only whitespace."

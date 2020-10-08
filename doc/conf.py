@@ -9,13 +9,11 @@ from documenteer.sphinxconfig.stackconf import build_package_configs
 sys.setrecursionlimit(2000)
 
 
-globals().update(build_package_configs(
-    project_name="ts_xml",
-    version="develop"))
+globals().update(build_package_configs(project_name="ts_xml", version="develop"))
 
 
 # Remove ts_xml from the default intersphinx configuration
 try:
-    del intersphinx_mapping['ts_xml']  # noqa
+    del intersphinx_mapping["ts_xml"]  # noqa
 except KeyError:
     pass
