@@ -87,7 +87,7 @@ def test_string_units(xmlfile, csc, topic):
     root = tree.getroot()
     for attrib in root.findall(f"./{saltype}/item"):
         idltype = attrib.find("IDL_Type")
-        if idltype.text == "string":
+        if idltype is not None and idltype.text == "string":
             name = attrib.find("EFDB_Name")
             unit = attrib.find("Units")
             # There is a robust skip list,
