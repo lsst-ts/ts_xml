@@ -969,7 +969,7 @@
     <!--- daq-monitor -->
     <SALTelemetry>
         <Subsystem>CCCamera</Subsystem>
-        <EFDB_Topic>CCCamera_daq_Store</EFDB_Topic>
+        <EFDB_Topic>CCCamera_daq_monitor_Store</EFDB_Topic>
         <item>
             <EFDB_Name>capacity</EFDB_Name>
             <Description>total disk space</Description>
@@ -990,6 +990,394 @@
             <IDL_Type>double</IDL_Type>
             <Units>unitless</Units>
             <Count>1</Count>
-      </item>
-   </SALTelemetry>
+        </item>
+    </SALTelemetry>
+    <!-- focal-plane -->
+    <SALTelemetry>
+        <Subsystem>CCCamera</Subsystem>
+        <EFDB_Topic>CCCamera_fp_Reb</EFDB_Topic>
+        <item>
+            <EFDB_Name>anaI</EFDB_Name>
+            <Description>Analog PS current</Description>
+            <IDL_Type>double</IDL_Type>
+            <Units>mA</Units>
+            <Count>3</Count>
+        </item>
+        <item>
+            <EFDB_Name>anaV</EFDB_Name>
+            <Description>Analog PS voltage</Description>
+            <IDL_Type>double</IDL_Type>
+            <Units>Volt</Units>
+            <Count>3</Count>
+        </item>
+        <item>
+            <EFDB_Name>aspicl_Temp0</EFDB_Name>
+            <Description>ASPIC 0 lower temp</Description>
+            <IDL_Type>double</IDL_Type>
+            <Units>Celsius</Units>
+            <Count>3</Count>
+        </item>
+        <item>
+            <EFDB_Name>aspicl_Temp1</EFDB_Name>
+            <Description>ASPIC 1 lower temp</Description>
+            <IDL_Type>double</IDL_Type>
+            <Units>Celsius</Units>
+            <Count>3</Count>
+        </item>
+        <item>
+            <EFDB_Name>aspicl_Temp2</EFDB_Name>
+            <Description>ASPIC 2 lower temp</Description>
+            <IDL_Type>double</IDL_Type>
+            <Units>Celsius</Units>
+            <Count>3</Count>
+        </item>
+        <item>
+            <EFDB_Name>aspicu_Temp0</EFDB_Name>
+            <Description>ASPIC 0 upper temp</Description>
+            <IDL_Type>double</IDL_Type>
+            <Units>Celsius</Units>
+            <Count>3</Count>
+        </item>
+        <item>
+            <EFDB_Name>aspicu_Temp1</EFDB_Name>
+            <Description>ASPIC 1 upper temp</Description>
+            <IDL_Type>double</IDL_Type>
+            <Units>Celsius</Units>
+            <Count>3</Count>
+        </item>
+        <item>
+            <EFDB_Name>aspicu_Temp2</EFDB_Name>
+            <Description>ASPIC 2 upper temp</Description>
+            <IDL_Type>double</IDL_Type>
+            <Units>Celsius</Units>
+            <Count>3</Count>
+        </item>
+        <item>
+            <EFDB_Name>clkHI</EFDB_Name>
+            <Description>Clock High PS current</Description>
+            <IDL_Type>double</IDL_Type>
+            <Units>mA</Units>
+            <Count>3</Count>
+        </item>
+        <item>
+            <EFDB_Name>clkHV</EFDB_Name>
+            <Description>Clock High PS voltage</Description>
+            <IDL_Type>double</IDL_Type>
+            <Units>Volt</Units>
+            <Count>3</Count>
+        </item>
+        <item>
+            <EFDB_Name>clkLI</EFDB_Name>
+            <Description>Clock Low PS current</Description>
+            <IDL_Type>double</IDL_Type>
+            <Units>mA</Units>
+            <Count>3</Count>
+        </item>
+        <item>
+            <EFDB_Name>clkLV</EFDB_Name>
+            <Description>Clock Low PS voltage</Description>
+            <IDL_Type>double</IDL_Type>
+            <Units>Volt</Units>
+            <Count>3</Count>
+        </item>
+        <item>
+            <EFDB_Name>digI</EFDB_Name>
+            <Description>Digital PS current</Description>
+            <IDL_Type>double</IDL_Type>
+            <Units>mA</Units>
+            <Count>3</Count>
+        </item>
+        <item>
+            <EFDB_Name>digV</EFDB_Name>
+            <Description>Digital PS voltage</Description>
+            <IDL_Type>double</IDL_Type>
+            <Units>Volt</Units>
+            <Count>3</Count>
+        </item>
+        <item>
+            <EFDB_Name>htrV</EFDB_Name>
+            <Description>Heater voltage</Description>
+            <IDL_Type>double</IDL_Type>
+            <Units>Volt</Units>
+            <Count>3</Count>
+        </item>
+        <item>
+            <EFDB_Name>htrW</EFDB_Name>
+            <Description>Heater power</Description>
+            <IDL_Type>double</IDL_Type>
+            <Units>Watt</Units>
+            <Count>3</Count>
+        </item>
+        <item>
+            <EFDB_Name>hVBiasSwitch</EFDB_Name>
+            <Description>HV bias switch</Description>
+            <IDL_Type>double</IDL_Type>
+            <Units>unitless</Units>
+            <Count>3</Count>
+        </item>
+        <item>
+            <EFDB_Name>location</EFDB_Name>
+            <Description>Reb Location</Description>
+            <IDL_Type>string</IDL_Type>
+            <Units>unitless</Units>
+            <Count>1</Count>
+        </item>
+        <item>
+            <EFDB_Name>oDI</EFDB_Name>
+            <Description>OD PS current</Description>
+            <IDL_Type>double</IDL_Type>
+            <Units>mA</Units>
+            <Count>3</Count>
+        </item>
+        <item>
+            <EFDB_Name>oDV</EFDB_Name>
+            <Description>OD PS voltage</Description>
+            <IDL_Type>double</IDL_Type>
+            <Units>Volt</Units>
+            <Count>3</Count>
+        </item>
+        <item>
+            <EFDB_Name>pClkL</EFDB_Name>
+            <Description>Parallel lower</Description>
+            <IDL_Type>double</IDL_Type>
+            <Units>Volt</Units>
+            <Count>3</Count>
+        </item>
+        <item>
+            <EFDB_Name>pClkU</EFDB_Name>
+            <Description>Parallel upper</Description>
+            <IDL_Type>double</IDL_Type>
+            <Units>Volt</Units>
+            <Count>3</Count>
+        </item>
+        <item>
+            <EFDB_Name>power</EFDB_Name>
+            <Description>Total power</Description>
+            <IDL_Type>double</IDL_Type>
+            <Units>Watt</Units>
+            <Count>3</Count>
+        </item>
+        <item>
+            <EFDB_Name>ref05V</EFDB_Name>
+            <Description>5V ref 0 voltage</Description>
+            <IDL_Type>double</IDL_Type>
+            <Units>Volt</Units>
+            <Count>3</Count>
+        </item>
+        <item>
+            <EFDB_Name>ref125V</EFDB_Name>
+            <Description>2.5V ref 1 voltage</Description>
+            <IDL_Type>double</IDL_Type>
+            <Units>Volt</Units>
+            <Count>3</Count>
+        </item>
+        <item>
+            <EFDB_Name>ref15V</EFDB_Name>
+            <Description>5V ref 1 voltage</Description>
+            <IDL_Type>double</IDL_Type>
+            <Units>Volt</Units>
+            <Count>3</Count>
+        </item>
+        <item>
+            <EFDB_Name>ref25V</EFDB_Name>
+            <Description>5V ref 2 voltage</Description>
+            <IDL_Type>double</IDL_Type>
+            <Units>Volt</Units>
+            <Count>3</Count>
+        </item>
+        <item>
+            <EFDB_Name>refN12</EFDB_Name>
+            <Description>Negative 12 ref</Description>
+            <IDL_Type>double</IDL_Type>
+            <Units>Volt</Units>
+            <Count>3</Count>
+        </item>
+        <item>
+            <EFDB_Name>refP12</EFDB_Name>
+            <Description>Positive 12 ref</Description>
+            <IDL_Type>double</IDL_Type>
+            <Units>Volt</Units>
+            <Count>3</Count>
+        </item>
+        <item>
+            <EFDB_Name>rGL</EFDB_Name>
+            <Description>Reset gate lower</Description>
+            <IDL_Type>double</IDL_Type>
+            <Units>Volt</Units>
+            <Count>3</Count>
+        </item>
+        <item>
+            <EFDB_Name>rGU</EFDB_Name>
+            <Description>Reset gate upper</Description>
+            <IDL_Type>double</IDL_Type>
+            <Units>Volt</Units>
+            <Count>3</Count>
+        </item>
+        <item>
+            <EFDB_Name>rTDTemp</EFDB_Name>
+            <Description>RTD temperature</Description>
+            <IDL_Type>double</IDL_Type>
+            <Units>Celsius</Units>
+            <Count>3</Count>
+        </item>
+        <item>
+            <EFDB_Name>sClkL</EFDB_Name>
+            <Description>Serial lower</Description>
+            <IDL_Type>double</IDL_Type>
+            <Units>Volt</Units>
+            <Count>3</Count>
+        </item>
+        <item>
+            <EFDB_Name>sClkU</EFDB_Name>
+            <Description>Serial upper</Description>
+            <IDL_Type>double</IDL_Type>
+            <Units>Volt</Units>
+            <Count>3</Count>
+        </item>
+        <item>
+            <EFDB_Name>temp1</EFDB_Name>
+            <Description>Board temperature 1</Description>
+            <IDL_Type>double</IDL_Type>
+            <Units>Celsius</Units>
+            <Count>3</Count>
+        </item>
+        <item>
+            <EFDB_Name>temp10</EFDB_Name>
+            <Description>Board temperature 10</Description>
+            <IDL_Type>double</IDL_Type>
+            <Units>Celsius</Units>
+            <Count>3</Count>
+        </item>
+        <item>
+            <EFDB_Name>temp2</EFDB_Name>
+            <Description>Board temperature 2</Description>
+            <IDL_Type>double</IDL_Type>
+            <Units>Celsius</Units>
+            <Count>3</Count>
+        </item>
+        <item>
+            <EFDB_Name>temp3</EFDB_Name>
+            <Description>Board temperature 3</Description>
+            <IDL_Type>double</IDL_Type>
+            <Units>Celsius</Units>
+            <Count>3</Count>
+        </item>
+        <item>
+            <EFDB_Name>temp4</EFDB_Name>
+            <Description>Board temperature 4</Description>
+            <IDL_Type>double</IDL_Type>
+            <Units>Celsius</Units>
+            <Count>3</Count>
+        </item>
+        <item>
+            <EFDB_Name>temp5</EFDB_Name>
+            <Description>Board temperature 5</Description>
+            <IDL_Type>double</IDL_Type>
+            <Units>Celsius</Units>
+            <Count>3</Count>
+        </item>
+        <item>
+            <EFDB_Name>temp6</EFDB_Name>
+            <Description>Board temperature 6</Description>
+            <IDL_Type>double</IDL_Type>
+            <Units>Celsius</Units>
+            <Count>3</Count>
+        </item>
+        <item>
+            <EFDB_Name>temp7</EFDB_Name>
+            <Description>Board temperature 7</Description>
+            <IDL_Type>double</IDL_Type>
+            <Units>Celsius</Units>
+            <Count>3</Count>
+        </item>
+        <item>
+            <EFDB_Name>temp8</EFDB_Name>
+            <Description>Board temperature 8</Description>
+            <IDL_Type>double</IDL_Type>
+            <Units>Celsius</Units>
+            <Count>3</Count>
+        </item>
+        <item>
+            <EFDB_Name>temp9</EFDB_Name>
+            <Description>Board temperature 9</Description>
+            <IDL_Type>double</IDL_Type>
+            <Units>Celsius</Units>
+            <Count>3</Count>
+        </item>
+    </SALTelemetry>
+    <SALTelemetry>
+        <Subsystem>CCCamera</Subsystem>
+        <EFDB_Topic>CCCamera_fp_Ccd</EFDB_Topic>
+        <item>
+            <EFDB_Name>gDV</EFDB_Name>
+            <Description>GD 0 voltage</Description>
+            <IDL_Type>double</IDL_Type>
+            <Units>Volt</Units>
+            <Count>9</Count>
+        </item>
+        <item>
+            <EFDB_Name>location</EFDB_Name>
+            <Description>Ccd Location</Description>
+            <IDL_Type>string</IDL_Type>
+            <Units>unitless</Units>
+            <Count>1</Count>
+        </item>
+        <item>
+            <EFDB_Name>oDV</EFDB_Name>
+            <Description>OD 0 voltage</Description>
+            <IDL_Type>double</IDL_Type>
+            <Units>Volt</Units>
+            <Count>9</Count>
+        </item>
+        <item>
+            <EFDB_Name>oGV</EFDB_Name>
+            <Description>OG 0 voltage</Description>
+            <IDL_Type>double</IDL_Type>
+            <Units>Volt</Units>
+            <Count>9</Count>
+        </item>
+        <item>
+            <EFDB_Name>rDV</EFDB_Name>
+            <Description>RD 0 voltage</Description>
+            <IDL_Type>double</IDL_Type>
+            <Units>Volt</Units>
+            <Count>9</Count>
+        </item>
+        <item>
+            <EFDB_Name>temp</EFDB_Name>
+            <Description>S00/Temp temperature</Description>
+            <IDL_Type>double</IDL_Type>
+            <Units>Celsius</Units>
+            <Count>9</Count>
+        </item>
+    </SALTelemetry>
+    <SALTelemetry>
+        <Subsystem>CCCamera</Subsystem>
+        <EFDB_Topic>CCCamera_fp_Segment</EFDB_Topic>
+        <item>
+            <EFDB_Name>i</EFDB_Name>
+            <Description>Amplifier current</Description>
+            <IDL_Type>double</IDL_Type>
+            <Units>mA</Units>
+            <Count>144</Count>
+        </item>
+        <item>
+            <EFDB_Name>location</EFDB_Name>
+            <Description>Segment Location</Description>
+            <IDL_Type>string</IDL_Type>
+            <Units>unitless</Units>
+            <Count>1</Count>
+        </item>
+    </SALTelemetry>
+    <SALTelemetry>
+        <Subsystem>CCCamera</Subsystem>
+        <EFDB_Topic>CCCamera_fp_RebTotalPower</EFDB_Topic>
+        <item>
+            <EFDB_Name>rebTotalPower</EFDB_Name>
+            <Description>Reb Total Power</Description>
+            <IDL_Type>double</IDL_Type>
+            <Units>Watt</Units>
+            <Count>1</Count>
+        </item>
+    </SALTelemetry>
 </SALTelemetrySet>
