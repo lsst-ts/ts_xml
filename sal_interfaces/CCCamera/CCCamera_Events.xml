@@ -917,16 +917,14 @@
             <EFDB_Name>ccdType</EFDB_Name>
             <Description>The type of each CCD, this determines segRows, segCols and serCols</Description>
             <IDL_Type>int</IDL_Type>
-            <IDL_Size>1</IDL_Size>
             <Units>unitless</Units>
             <Count>9</Count>
-            <Enumeration>E2V, ITL</Enumeration>
+            <Enumeration>E2V,ITL</Enumeration>
         </item>
         <item>
             <EFDB_Name>overRows</EFDB_Name>
             <Description>See CCD Readout Parameters Diagram</Description>
             <IDL_Type>int</IDL_Type>
-            <IDL_Size>1</IDL_Size>
             <Units>unitless</Units>
             <Count>9</Count>
         </item>
@@ -934,7 +932,6 @@
             <EFDB_Name>overCols</EFDB_Name>
             <Description>See CCD Readout Parameters Diagram</Description>
             <IDL_Type>int</IDL_Type>
-            <IDL_Size>1</IDL_Size>
             <Units>unitless</Units>
             <Count>9</Count>
         </item>
@@ -942,7 +939,6 @@
             <EFDB_Name>readRows</EFDB_Name>
             <Description>See CCD Readout Parameters Diagram</Description>
             <IDL_Type>int</IDL_Type>
-            <IDL_Size>1</IDL_Size>
             <Units>unitless</Units>
             <Count>9</Count>
         </item>
@@ -950,7 +946,6 @@
             <EFDB_Name>readCols</EFDB_Name>
             <Description>See CCD Readout Parameters Diagram</Description>
             <IDL_Type>int</IDL_Type>
-            <IDL_Size>1</IDL_Size>
             <Units>unitless</Units>
             <Count>9</Count>
         </item>
@@ -958,7 +953,6 @@
             <EFDB_Name>readCols2</EFDB_Name>
             <Description>See CCD Readout Parameters Diagram</Description>
             <IDL_Type>int</IDL_Type>
-            <IDL_Size>1</IDL_Size>
             <Units>unitless</Units>
             <Count>9</Count>
         </item>
@@ -966,7 +960,6 @@
             <EFDB_Name>preCols</EFDB_Name>
             <Description>See CCD Readout Parameters Diagram</Description>
             <IDL_Type>int</IDL_Type>
-            <IDL_Size>1</IDL_Size>
             <Units>unitless</Units>
             <Count>9</Count>
         </item>
@@ -974,7 +967,6 @@
             <EFDB_Name>preRows</EFDB_Name>
             <Description>See CCD Readout Parameters Diagram</Description>
             <IDL_Type>int</IDL_Type>
-            <IDL_Size>1</IDL_Size>
             <Units>unitless</Units>
             <Count>9</Count>
         </item>
@@ -982,7 +974,6 @@
             <EFDB_Name>postCols</EFDB_Name>
             <Description>See CCD Readout Parameters Diagram</Description>
             <IDL_Type>int</IDL_Type>
-            <IDL_Size>1</IDL_Size>
             <Units>unitless</Units>
             <Count>9</Count>
         </item>
@@ -1120,6 +1111,7 @@
             <Count>1</Count>
         </item>
     </SALEvent>
+    <!-- SettingsApplied start here -->
     <!-- ComCam settingsApplied events for focal-plane subsystem -->
     <SALEvent>
         <Subsystem>CCCamera</Subsystem>
@@ -1170,20 +1162,20 @@
             <Units>unitless</Units>
             <Count>1</Count>
         </item>
-    <item>
-        <EFDB_Name>raftLocation</EFDB_Name>
-        <Description>Raft location in focal-plane (e.g. R22) (: delimited)</Description>
-        <IDL_Type>string</IDL_Type>
-        <Units>unitless</Units>
-        <Count>1</Count>
-    </item>
-    <item>
-        <EFDB_Name>raftLSSTName</EFDB_Name>
-        <Description>Raft identifier (: delimited)</Description>
-        <IDL_Type>string</IDL_Type>
-        <Units>unitless</Units>
-        <Count>1</Count>
-    </item>
+        <item>
+            <EFDB_Name>raftLocation</EFDB_Name>
+            <Description>Raft location in focal-plane (e.g. R22) (: delimited)</Description>
+            <IDL_Type>string</IDL_Type>
+            <Units>unitless</Units>
+            <Count>1</Count>
+        </item>
+        <item>
+            <EFDB_Name>raftLSSTName</EFDB_Name>
+            <Description>Raft identifier (: delimited)</Description>
+            <IDL_Type>string</IDL_Type>
+            <Units>unitless</Units>
+            <Count>1</Count>
+        </item>
     </SALEvent>
     <SALEvent>
         <Subsystem>CCCamera</Subsystem>
@@ -1356,9 +1348,7 @@
     </SALEvent>
     <SALEvent>
         <Subsystem>CCCamera</Subsystem>
-        <Version>3.7.1</Version>
-        <Author></Author>
-        <EFDB_Topic>CCCamera_logevent_focalPlaneSequencerSettingsApplied</EFDB_Topic>
+        <EFDB_Topic>CCCamera_logevent_focalPlaneSequencerConfigSettingsApplied</EFDB_Topic>
         <item>
             <EFDB_Name>version</EFDB_Name>
             <Description>Version number of these settings</Description>
@@ -1367,93 +1357,260 @@
             <Count>1</Count>
         </item>
         <item>
-            <EFDB_Name>sequencerconfig_metaDataRegisters</EFDB_Name>
+            <EFDB_Name>daqFolder</EFDB_Name>
+            <Description>Folder in 2-day store where images will be created</Description>
+            <IDL_Type>string</IDL_Type>
+            <Units>unitless</Units>
+            <Count>1</Count>
+        </item>
+        <item>
+            <EFDB_Name>emulatedDAQ</EFDB_Name>
+            <Description>True when using an emulated DAQ</Description>
+            <IDL_Type>boolean</IDL_Type>
+            <Units>unitless</Units>
+            <Count>1</Count>
+        </item>
+        <item>
+            <EFDB_Name>metaDataRegisters</EFDB_Name>
             <Description>Names of meta-data related registers which must be in the sequencer</Description>
             <IDL_Type>string</IDL_Type>
             <Units>unitless</Units>
             <Count>1</Count>
         </item>
         <item>
-            <EFDB_Name>sequencerconfig_overCols</EFDB_Name>
+            <EFDB_Name>overCols</EFDB_Name>
             <Description>overCols</Description>
             <IDL_Type>int</IDL_Type>
             <Units>unitless</Units>
             <Count>1</Count>
         </item>
         <item>
-            <EFDB_Name>sequencerconfig_overRows</EFDB_Name>
+            <EFDB_Name>overRows</EFDB_Name>
             <Description>overRows</Description>
             <IDL_Type>int</IDL_Type>
             <Units>unitless</Units>
             <Count>1</Count>
         </item>
         <item>
-            <EFDB_Name>sequencerconfig_postCols</EFDB_Name>
+            <EFDB_Name>postCols</EFDB_Name>
             <Description>postCols</Description>
             <IDL_Type>int</IDL_Type>
             <Units>unitless</Units>
             <Count>1</Count>
         </item>
         <item>
-            <EFDB_Name>sequencerconfig_postRows</EFDB_Name>
+            <EFDB_Name>postRows</EFDB_Name>
             <Description>postRows</Description>
             <IDL_Type>int</IDL_Type>
             <Units>unitless</Units>
             <Count>1</Count>
         </item>
         <item>
-            <EFDB_Name>sequencerconfig_preCols</EFDB_Name>
+            <EFDB_Name>preCols</EFDB_Name>
             <Description>preCols</Description>
             <IDL_Type>int</IDL_Type>
             <Units>unitless</Units>
             <Count>1</Count>
         </item>
         <item>
-            <EFDB_Name>sequencerconfig_preRows</EFDB_Name>
+            <EFDB_Name>preRows</EFDB_Name>
             <Description>preRows</Description>
             <IDL_Type>int</IDL_Type>
             <Units>unitless</Units>
             <Count>1</Count>
         </item>
         <item>
-            <EFDB_Name>sequencerconfig_readCols</EFDB_Name>
+            <EFDB_Name>readCols</EFDB_Name>
             <Description>readCols</Description>
             <IDL_Type>int</IDL_Type>
             <Units>unitless</Units>
             <Count>1</Count>
         </item>
         <item>
-            <EFDB_Name>sequencerconfig_readCols2</EFDB_Name>
-            <Description>readCols2</Description>
+            <EFDB_Name>readCols2</EFDB_Name>
+            <Description>readCol2</Description>
             <IDL_Type>int</IDL_Type>
             <Units>unitless</Units>
             <Count>1</Count>
         </item>
         <item>
-            <EFDB_Name>sequencerconfig_readRows</EFDB_Name>
+            <EFDB_Name>readRows</EFDB_Name>
             <Description>readRows</Description>
             <IDL_Type>int</IDL_Type>
             <Units>unitless</Units>
             <Count>1</Count>
         </item>
         <item>
-            <EFDB_Name>sequencerconfig_scanMode</EFDB_Name>
+            <EFDB_Name>scanMode</EFDB_Name>
             <Description>True if the sequencer is in scan mode</Description>
             <IDL_Type>boolean</IDL_Type>
             <Units>unitless</Units>
             <Count>1</Count>
         </item>
         <item>
-            <EFDB_Name>sequencerconfig_sequencer</EFDB_Name>
-            <Description>sequencer name map</Description>
+            <EFDB_Name>sequencer</EFDB_Name>
+            <Description>sequencer</Description>
             <IDL_Type>string</IDL_Type>
             <Units>unitless</Units>
             <Count>1</Count>
         </item>
         <item>
-            <EFDB_Name>sequencerconfig_underCols</EFDB_Name>
+            <EFDB_Name>sequencerChecksums</EFDB_Name>
+            <Description>sequencerChecksums</Description>
+            <IDL_Type>string</IDL_Type>
+            <Units>unitless</Units>
+            <Count>1</Count>
+        </item>
+        <item>
+            <EFDB_Name>underCols</EFDB_Name>
             <Description>underCols</Description>
             <IDL_Type>int</IDL_Type>
+            <Units>unitless</Units>
+            <Count>1</Count>
+        </item>
+    </SALEvent>
+    <SALEvent>
+        <Subsystem>CCCamera</Subsystem>
+        <EFDB_Topic>CCCamera_logevent_daq_monitorSettingsApplied</EFDB_Topic>
+        <item>
+            <EFDB_Name>version</EFDB_Name>
+            <Description>Version number of these settings</Description>
+            <IDL_Type>long</IDL_Type>
+            <Units>unitless</Units>
+            <Count>1</Count>
+        </item>
+        <item>
+            <EFDB_Name>daqPartition</EFDB_Name>
+            <Description>partition containing DAQ store</Description>
+            <IDL_Type>string</IDL_Type>
+            <Units>unitless</Units>
+            <Count>1</Count>
+        </item>
+    </SALEvent>
+    <SALEvent>
+        <Subsystem>CCCamera</Subsystem>
+        <EFDB_Topic>CCCamera_logevent_daq_monitor_StatsSettingsApplied</EFDB_Topic>
+        <item>
+            <EFDB_Name>version</EFDB_Name>
+            <Description>Version number of these settings</Description>
+            <IDL_Type>long</IDL_Type>
+            <Units>unitless</Units>
+            <Count>1</Count>
+        </item>
+        <item>
+            <EFDB_Name>enablePeriodicPublication</EFDB_Name>
+            <Description>enable periodic publication</Description>
+            <IDL_Type>boolean</IDL_Type>
+            <Units>unitless</Units>
+            <Count>1</Count>
+        </item>
+        <item>
+            <EFDB_Name>minDiffAlertWarning</EFDB_Name>
+            <Description>minimum difference between successive reads to raise Alert at warning level</Description>
+            <IDL_Type>int</IDL_Type>
+            <Units>unitless</Units>
+            <Count>1</Count>
+        </item>
+        <item>
+            <EFDB_Name>minDiffLogWarning</EFDB_Name>
+            <Description>minimum difference between successive reads to put warning in log</Description>
+            <IDL_Type>int</IDL_Type>
+            <Units>unitless</Units>
+            <Count>1</Count>
+        </item>
+        <item>
+            <EFDB_Name>sumDriverChecks</EFDB_Name>
+            <Description>Driver Stats for warnings on sums</Description>
+            <IDL_Type>string</IDL_Type>
+            <Units>unitless</Units>
+            <Count>1</Count>
+        </item>
+        <item>
+            <EFDB_Name>sumDriverStats</EFDB_Name>
+            <Description>Driver Stats for sums over location</Description>
+            <IDL_Type>string</IDL_Type>
+            <Units>unitless</Units>
+            <Count>1</Count>
+        </item>
+        <item>
+            <EFDB_Name>sumFirmwareChecks</EFDB_Name>
+            <Description>Firmware Stats for warnings on sums</Description>
+            <IDL_Type>string</IDL_Type>
+            <Units>unitless</Units>
+            <Count>1</Count>
+        </item>
+        <item>
+            <EFDB_Name>sumFirmwareStats</EFDB_Name>
+            <Description>Firmware Stats for sums over location</Description>
+            <IDL_Type>string</IDL_Type>
+            <Units>unitless</Units>
+            <Count>1</Count>
+        </item>
+        <item>
+            <EFDB_Name>sumRdsChecks</EFDB_Name>
+            <Description>Rds Stats for warnings on sums</Description>
+            <IDL_Type>string</IDL_Type>
+            <Units>unitless</Units>
+            <Count>1</Count>
+        </item>
+        <item>
+            <EFDB_Name>sumRdsStats</EFDB_Name>
+            <Description>Rds Stats for sums over location</Description>
+            <IDL_Type>string</IDL_Type>
+            <Units>unitless</Units>
+            <Count>1</Count>
+        </item>
+        <item>
+            <EFDB_Name>sumRmsChecks</EFDB_Name>
+            <Description>Rms Stats for warnings on sums</Description>
+            <IDL_Type>string</IDL_Type>
+            <Units>unitless</Units>
+            <Count>1</Count>
+        </item>
+        <item>
+            <EFDB_Name>sumRmsStats</EFDB_Name>
+            <Description>Rms Stats for sums over location</Description>
+            <IDL_Type>string</IDL_Type>
+            <Units>unitless</Units>
+            <Count>1</Count>
+        </item>
+    </SALEvent>
+    <!-- daq_monitor settings applied -->
+    <SALEvent>
+        <Subsystem>CCCamera</Subsystem>
+        <EFDB_Topic>CCCamera_logevent_daq_monitor_StoreSettingsApplied</EFDB_Topic>
+        <item>
+            <EFDB_Name>version</EFDB_Name>
+            <Description>Version number of these settings</Description>
+            <IDL_Type>long</IDL_Type>
+            <Units>unitless</Units>
+            <Count>1</Count>
+        </item>
+        <item>
+            <EFDB_Name>daqFolder</EFDB_Name>
+            <Description>top-level folder for DAQ store</Description>
+            <IDL_Type>string</IDL_Type>
+            <Units>unitless</Units>
+            <Count>1</Count>
+        </item>
+        <item>
+            <EFDB_Name>enableAutoPurge</EFDB_Name>
+            <Description>enable automatic purge of DAQ store</Description>
+            <IDL_Type>boolean</IDL_Type>
+            <Units>unitless</Units>
+            <Count>1</Count>
+        </item>
+        <item>
+            <EFDB_Name>purgeTarget</EFDB_Name>
+            <Description>goal of purge for minimum fraction of free disk space</Description>
+            <IDL_Type>double</IDL_Type>
+            <Units>unitless</Units>
+            <Count>1</Count>
+        </item>
+        <item>
+            <EFDB_Name>purgeThreshold</EFDB_Name>
+            <Description>fraction of free disk space to trigger a store purge</Description>
+            <IDL_Type>double</IDL_Type>
             <Units>unitless</Units>
             <Count>1</Count>
         </item>
