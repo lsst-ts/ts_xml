@@ -3,11 +3,7 @@
 <SALEventSet xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://project.lsst.org/ts/sal_objects/schema/SALEventSet.xsd">
     <SALEvent>
         <Subsystem>MTCamera</Subsystem>
-        <Version>3.7.1</Version>
-        <Author></Author>
         <EFDB_Topic>MTCamera_logevent_offlineDetailedState</EFDB_Topic>
-        <Alias>offlineDetailedState</Alias>
-        <Explanation>http://project.lsst.org/ts/sal_objects/help/MTCamera_logevent_offlineDetailedState.html</Explanation>
         <item>
             <EFDB_Name>substate</EFDB_Name>
             <Description>Enumeration of valid substates</Description>
@@ -26,14 +22,10 @@
     </SALEvent>
     <SALEvent>
         <Subsystem>MTCamera</Subsystem>
-        <Version>3.7.1</Version>
-        <Author></Author>
         <EFDB_Topic>MTCamera_logevent_endReadout</EFDB_Topic>
-        <Alias>endReadout</Alias>
         <Description>Event sent at end of readout. When this event is received the corresponding image should be complete
         in the DAQ 2-day store.
         Note: all : delimited strings (aka string arrays) follow the escaping convention defined in CAP-572</Description>
-        <Explanation>http://project.lsst.org/ts/sal_objects/help/MTCamera_logevent_endReadout.html</Explanation>
         <item>
             <EFDB_Name>additionalKeys</EFDB_Name>
             <Description>Additional keys passed to the takeImages command (: delimited)</Description>
@@ -104,7 +96,7 @@
             <Count>1</Count>
         </item>
         <item>
-            <EFDB_Name>timeStampAcquisitionStart</EFDB_Name>
+            <EFDB_Name>timestampAcquisitionStart</EFDB_Name>
             <Description>The effective time at which the image acquisition started (i.e. the end of the previous clear or readout)</Description>
             <IDL_Type>double</IDL_Type>
             <Units>second</Units>
@@ -119,7 +111,7 @@
         </item>
         <!-- Extra info add to endReadout as part of CAP-209 -->
         <item>
-            <EFDB_Name>timeStampEndOfReadout</EFDB_Name>
+            <EFDB_Name>timestampEndOfReadout</EFDB_Name>
             <Description>The time at which the readout was completed</Description>
             <IDL_Type>double</IDL_Type>
             <Units>second</Units>
@@ -128,19 +120,11 @@
     </SALEvent>
     <SALEvent>
         <Subsystem>MTCamera</Subsystem>
-        <Version>3.7.1</Version>
-        <Author></Author>
         <EFDB_Topic>MTCamera_logevent_endTakeImage</EFDB_Topic>
-        <Alias>endTakeImage</Alias>
-        <Explanation>http://project.lsst.org/ts/sal_objects/help/MTCamera_logevent_endTakeImage.html</Explanation>
     </SALEvent>
     <SALEvent>
         <Subsystem>MTCamera</Subsystem>
-        <Version>3.7.1</Version>
-        <Author></Author>
         <EFDB_Topic>MTCamera_logevent_imageReadinessDetailedState</EFDB_Topic>
-        <Alias>imageReadinessDetailedState</Alias>
-        <Explanation>http://project.lsst.org/ts/sal_objects/help/MTCamera_logevent_imageReadinessDetailedState.html</Explanation>
         <item>
             <EFDB_Name>substate</EFDB_Name>
             <Description>Enumeration of valid substates</Description>
@@ -159,11 +143,7 @@
     </SALEvent>
     <SALEvent>
         <Subsystem>MTCamera</Subsystem>
-        <Version>3.7.1</Version>
-        <Author></Author>
         <EFDB_Topic>MTCamera_logevent_startSetFilter</EFDB_Topic>
-        <Alias>startSetFilter</Alias>
-        <Explanation>http://project.lsst.org/ts/sal_objects/help/MTCamera_logevent_startSetFilter.html</Explanation>
         <item>
             <EFDB_Name>filterName</EFDB_Name>
             <Description>The name of the filter being installed (e.g. U-001)</Description>
@@ -184,53 +164,29 @@
     </SALEvent>
     <SALEvent>
         <Subsystem>MTCamera</Subsystem>
-        <Version>3.7.1</Version>
-        <Author></Author>
         <EFDB_Topic>MTCamera_logevent_startUnloadFilter</EFDB_Topic>
-        <Alias>startUnloadFilter</Alias>
-        <Explanation>http://project.lsst.org/ts/sal_objects/help/MTCamera_logevent_startUnloadFilter.html</Explanation>
     </SALEvent>
     <SALEvent>
         <Subsystem>MTCamera</Subsystem>
-        <Version>3.7.1</Version>
-        <Author></Author>
         <EFDB_Topic>MTCamera_logevent_notReadyToTakeImage</EFDB_Topic>
-        <Alias>notReadyToTakeImage</Alias>
-        <Explanation>http://project.lsst.org/ts/sal_objects/help/MTCamera_logevent_notReadyToTakeImage.html</Explanation>
     </SALEvent>
     <SALEvent>
         <Subsystem>MTCamera</Subsystem>
-        <Version>3.7.1</Version>
-        <Author></Author>
         <EFDB_Topic>MTCamera_logevent_startShutterClose</EFDB_Topic>
-        <Alias>startShutterClose</Alias>
-        <Explanation>http://project.lsst.org/ts/sal_objects/help/MTCamera_logevent_startShutterClose.html</Explanation>
     </SALEvent>
     <SALEvent>
         <Subsystem>MTCamera</Subsystem>
-        <Version>3.7.1</Version>
-        <Author></Author>
         <EFDB_Topic>MTCamera_logevent_endInitializeGuider</EFDB_Topic>
-        <Alias>endInitializeGuider</Alias>
-        <Explanation>http://project.lsst.org/ts/sal_objects/help/MTCamera_logevent_endInitializeGuider.html</Explanation>
     </SALEvent>
     <SALEvent>
         <Subsystem>MTCamera</Subsystem>
-        <Version>3.7.1</Version>
-        <Author></Author>
         <EFDB_Topic>MTCamera_logevent_endShutterClose</EFDB_Topic>
-        <Alias>endShutterClose</Alias>
-        <Explanation>http://project.lsst.org/ts/sal_objects/help/MTCamera_logevent_endShutterClose.html</Explanation>
     </SALEvent>
     <SALEvent>
         <Subsystem>MTCamera</Subsystem>
-        <Version>3.7.1</Version>
-        <Author></Author>
         <EFDB_Topic>MTCamera_logevent_endOfImageTelemetry</EFDB_Topic>
-        <Alias>endOfImageTelemetry</Alias>
         <Description>Event sent once all telemetry correesponding to the image has been sent. (Typically ~300mS after the end of readout).
         Note: all : delimited strings (aka string arrays) follow the escaping convention defined in CAP-572</Description>
-        <Explanation>http://project.lsst.org/ts/sal_objects/help/MTCamera_logevent_endOfImageTelemetry.html</Explanation>
         <item>
             <EFDB_Name>additionalKeys</EFDB_Name>
             <Description>Additional keys passed to the takeImages command (: delimited)</Description>
@@ -301,7 +257,7 @@
             <Count>1</Count>
         </item>
         <item>
-            <EFDB_Name>timeStampAcquisitionStart</EFDB_Name>
+            <EFDB_Name>timestampAcquisitionStart</EFDB_Name>
             <Description>The effective time at which the image acquisition started (i.e. the end of the previous clear or readout)</Description>
             <IDL_Type>double</IDL_Type>
             <Units>second</Units>
@@ -355,19 +311,11 @@
     </SALEvent>
     <SALEvent>
         <Subsystem>MTCamera</Subsystem>
-        <Version>3.7.1</Version>
-        <Author></Author>
         <EFDB_Topic>MTCamera_logevent_endUnloadFilter</EFDB_Topic>
-        <Alias>endUnloadFilter</Alias>
-        <Explanation>http://project.lsst.org/ts/sal_objects/help/MTCamera_logevent_endUnloadFilter.html</Explanation>
     </SALEvent>
     <SALEvent>
         <Subsystem>MTCamera</Subsystem>
-        <Version>3.7.1</Version>
-        <Author></Author>
         <EFDB_Topic>MTCamera_logevent_calibrationDetailedState</EFDB_Topic>
-        <Alias>calibrationDetailedState</Alias>
-        <Explanation>http://project.lsst.org/ts/sal_objects/help/MTCamera_logevent_calibrationDetailedState.html</Explanation>
         <item>
             <EFDB_Name>substate</EFDB_Name>
             <Description>Enumeration of valid substates</Description>
@@ -386,27 +334,15 @@
     </SALEvent>
     <SALEvent>
         <Subsystem>MTCamera</Subsystem>
-        <Version>3.7.1</Version>
-        <Author></Author>
         <EFDB_Topic>MTCamera_logevent_endRotateCarousel</EFDB_Topic>
-        <Alias>endRotateCarousel</Alias>
-        <Explanation>http://project.lsst.org/ts/sal_objects/help/MTCamera_logevent_endRotateCarousel.html</Explanation>
     </SALEvent>
     <SALEvent>
         <Subsystem>MTCamera</Subsystem>
-        <Version>3.7.1</Version>
-        <Author></Author>
         <EFDB_Topic>MTCamera_logevent_startLoadFilter</EFDB_Topic>
-        <Alias>startLoadFilter</Alias>
-        <Explanation>http://project.lsst.org/ts/sal_objects/help/MTCamera_logevent_startLoadFilter.html</Explanation>
     </SALEvent>
     <SALEvent>
         <Subsystem>MTCamera</Subsystem>
-        <Version>3.7.1</Version>
-        <Author></Author>
         <EFDB_Topic>MTCamera_logevent_filterChangerDetailedState</EFDB_Topic>
-        <Alias>filterChangerDetailedState</Alias>
-        <Explanation>http://project.lsst.org/ts/sal_objects/help/MTCamera_logevent_filterChangerDetailedState.html</Explanation>
         <item>
             <EFDB_Name>substate</EFDB_Name>
             <Description></Description>
@@ -425,11 +361,7 @@
     </SALEvent>
     <SALEvent>
         <Subsystem>MTCamera</Subsystem>
-        <Version>3.7.1</Version>
-        <Author></Author>
         <EFDB_Topic>MTCamera_logevent_shutterDetailedState</EFDB_Topic>
-        <Alias>shutterDetailedState</Alias>
-        <Explanation>http://project.lsst.org/ts/sal_objects/help/MTCamera_logevent_shutterDetailedState.html</Explanation>
         <item>
             <EFDB_Name>substate</EFDB_Name>
             <Description>Enumeration of valid substates</Description>
@@ -448,19 +380,11 @@
     </SALEvent>
     <SALEvent>
         <Subsystem>MTCamera</Subsystem>
-        <Version>3.7.1</Version>
-        <Author></Author>
         <EFDB_Topic>MTCamera_logevent_readyToTakeImage</EFDB_Topic>
-        <Alias>readyToTakeImage</Alias>
-        <Explanation>http://project.lsst.org/ts/sal_objects/help/MTCamera_logevent_readyToTakeImage.html</Explanation>
     </SALEvent>
     <SALEvent>
         <Subsystem>MTCamera</Subsystem>
-        <Version>3.7.1</Version>
-        <Author></Author>
         <EFDB_Topic>MTCamera_logevent_ccsCommandState</EFDB_Topic>
-        <Alias>ccsCommandState</Alias>
-        <Explanation>http://project.lsst.org/ts/sal_objects/help/MTCamera_logevent_ccsCommandState.html</Explanation>
         <item>
             <EFDB_Name>substate</EFDB_Name>
             <Description>Substate of the CCS command.</Description>
@@ -479,45 +403,25 @@
     </SALEvent>
     <SALEvent>
         <Subsystem>MTCamera</Subsystem>
-        <Version>3.7.1</Version>
-        <Author></Author>
         <EFDB_Topic>MTCamera_logevent_prepareToTakeImage</EFDB_Topic>
-        <Alias>prepareToTakeImage</Alias>
-        <Explanation>http://project.lsst.org/ts/sal_objects/help/MTCamera_logevent_prepareToTakeImage.html</Explanation>
     </SALEvent>
     <SALEvent>
         <Subsystem>MTCamera</Subsystem>
-        <Version>3.7.1</Version>
-        <Author></Author>
         <EFDB_Topic>MTCamera_logevent_ccsConfigured</EFDB_Topic>
-        <Alias>ccsConfigured</Alias>
-        <Explanation>http://project.lsst.org/ts/sal_objects/help/MTCamera_logevent_ccsConfigured.html</Explanation>
     </SALEvent>
     <SALEvent>
         <Subsystem>MTCamera</Subsystem>
-        <Version>3.7.1</Version>
-        <Author></Author>
         <EFDB_Topic>MTCamera_logevent_endLoadFilter</EFDB_Topic>
-        <Alias>endLoadFilter</Alias>
-        <Explanation>http://project.lsst.org/ts/sal_objects/help/MTCamera_logevent_endLoadFilter.html</Explanation>
     </SALEvent>
     <SALEvent>
         <Subsystem>MTCamera</Subsystem>
-        <Version>3.7.1</Version>
-        <Author></Author>
         <EFDB_Topic>MTCamera_logevent_endShutterOpen</EFDB_Topic>
-        <Alias>endShutterOpen</Alias>
-        <Explanation>http://project.lsst.org/ts/sal_objects/help/MTCamera_logevent_endShutterOpen.html</Explanation>
     </SALEvent>
     <SALEvent>
         <Subsystem>MTCamera</Subsystem>
-        <Version>3.7.1</Version>
-        <Author></Author>
         <EFDB_Topic>MTCamera_logevent_startIntegration</EFDB_Topic>
-        <Alias>startIntegration</Alias>
         <Description>Event sent at start of image integration.
         Note: all : delimited strings (aka string arrays) follow the escaping convention defined in CAP-572</Description>
-        <Explanation>http://project.lsst.org/ts/sal_objects/help/MTCamera_logevent_startIntegration.html</Explanation>
         <item>
             <EFDB_Name>additionalKeys</EFDB_Name>
             <Description>Additional keys passed to the takeImages command (: delimited)</Description>
@@ -588,7 +492,7 @@
             <Count>1</Count>
         </item>
         <item>
-            <EFDB_Name>timeStampAcquisitionStart</EFDB_Name>
+            <EFDB_Name>timestampAcquisitionStart</EFDB_Name>
             <Description>The effective time at which the image acquisition started (i.e. the end of the previous clear or readout)</Description>
             <IDL_Type>double</IDL_Type>
             <Units>second</Units>
@@ -604,20 +508,12 @@
     </SALEvent>
     <SALEvent>
         <Subsystem>MTCamera</Subsystem>
-        <Version>3.7.1</Version>
-        <Author></Author>
         <EFDB_Topic>MTCamera_logevent_endInitializeImage</EFDB_Topic>
-        <Alias>endInitializeImage</Alias>
-        <Explanation>http://project.lsst.org/ts/sal_objects/help/MTCamera_logevent_endInitializeImage.html</Explanation>
     </SALEvent>
     <SALEvent>
         <Subsystem>MTCamera</Subsystem>
-        <Version>3.7.1</Version>
-        <Author></Author>
         <EFDB_Topic>MTCamera_logevent_endSetFilter</EFDB_Topic>
-        <Alias>endSetFilter</Alias>
         <Description>Event issued once the new filter is in its final position</Description>
-        <Explanation>http://project.lsst.org/ts/sal_objects/help/MTCamera_logevent_endSetFilter.html</Explanation>
         <item>
             <EFDB_Name>filterName</EFDB_Name>
             <Description>The name of the filter being installed (e.g. U-001)</Description>
@@ -654,19 +550,11 @@
     </SALEvent>
     <SALEvent>
         <Subsystem>MTCamera</Subsystem>
-        <Version>3.7.1</Version>
-        <Author></Author>
         <EFDB_Topic>MTCamera_logevent_startShutterOpen</EFDB_Topic>
-        <Alias>startShutterOpen</Alias>
-        <Explanation>http://project.lsst.org/ts/sal_objects/help/MTCamera_logevent_startShutterOpen.html</Explanation>
     </SALEvent>
     <SALEvent>
         <Subsystem>MTCamera</Subsystem>
-        <Version>3.7.1</Version>
-        <Author></Author>
         <EFDB_Topic>MTCamera_logevent_raftsDetailedState</EFDB_Topic>
-        <Alias>raftsDetailedState</Alias>
-        <Explanation>http://project.lsst.org/ts/sal_objects/help/MTCamera_logevent_raftsDetailedState.html</Explanation>
         <item>
             <EFDB_Name>substate</EFDB_Name>
             <Description>Enumeration of valid substates</Description>
@@ -685,11 +573,7 @@
     </SALEvent>
     <SALEvent>
         <Subsystem>MTCamera</Subsystem>
-        <Version>3.7.1</Version>
-        <Author></Author>
         <EFDB_Topic>MTCamera_logevent_availableFilters</EFDB_Topic>
-        <Alias>availableFilters</Alias>
-        <Explanation>http://project.lsst.org/ts/sal_objects/help/MTCamera_logevent_availableFilters.html</Explanation>
         <item>
             <EFDB_Name>filterNames</EFDB_Name>
             <Description>A list of installed filter names (comma delimimted, U-001,G-004,R-010,Z-012,Y-014), in the same order as the list of filter types.</Description>
@@ -701,13 +585,9 @@
     </SALEvent>
     <SALEvent>
         <Subsystem>MTCamera</Subsystem>
-        <Version>3.7.1</Version>
-        <Author></Author>
         <EFDB_Topic>MTCamera_logevent_startReadout</EFDB_Topic>
-        <Alias>startReadout</Alias>
         <Description>Event sent at start of readout.
         Note: all : delimited strings (aka string arrays) follow the escaping convention defined in CAP-572</Description>
-        <Explanation>http://project.lsst.org/ts/sal_objects/help/MTCamera_logevent_startReadout.html</Explanation>
         <item>
             <EFDB_Name>additionalKeys</EFDB_Name>
             <Description>Additional keys passed to the takeImages command (: delimited)</Description>
@@ -778,7 +658,7 @@
             <Count>1</Count>
         </item>
         <item>
-            <EFDB_Name>timeStampAcquisitionStart</EFDB_Name>
+            <EFDB_Name>timestampAcquisitionStart</EFDB_Name>
             <Description>The effective time at which the image acquisition started (i.e. the end of the previous clear or readout)</Description>
             <IDL_Type>double</IDL_Type>
             <Units>second</Units>
@@ -793,7 +673,7 @@
         </item>
         <!-- Extra info add to startReadout as part of CAP-209 -->
         <item>
-            <EFDB_Name>timeStampStartOfReadout</EFDB_Name>
+            <EFDB_Name>timestampStartOfReadout</EFDB_Name>
             <Description>The time at which the readout was triggered</Description>
             <IDL_Type>double</IDL_Type>
             <Units>second</Units>
@@ -802,21 +682,13 @@
     </SALEvent>
     <SALEvent>
         <Subsystem>MTCamera</Subsystem>
-        <Version>3.7.1</Version>
-        <Author></Author>
         <EFDB_Topic>MTCamera_logevent_startRotateCarousel</EFDB_Topic>
-        <Alias>startRotateCarousel</Alias>
-        <Explanation>http://project.lsst.org/ts/sal_objects/help/MTCamera_logevent_startRotateCarousel.html</Explanation>
     </SALEvent>
     <SALEvent>
         <Subsystem>MTCamera</Subsystem>
-        <Version>3.7.1</Version>
-        <Author></Author>
         <EFDB_Topic>MTCamera_logevent_imageReadoutParameters</EFDB_Topic>
-        <Alias>imageReadoutParameters</Alias>
         <Description>Event sent describing image readout parameters.
         Note: all : delimited strings (aka string arrays) follow the escaping convention defined in CAP-572</Description>
-        <Explanation>http://project.lsst.org/ts/sal_objects/help/MTCamera_logevent_imageReadoutParameters.html</Explanation>
         <item>
             <EFDB_Name>imageName</EFDB_Name>
             <Description>The imageName for this specific exposure</Description>
@@ -950,8 +822,6 @@
     </SALEvent>
     <SALEvent>
         <Subsystem>MTCamera</Subsystem>
-        <Version>3.7.1</Version>
-        <Author></Author>
         <EFDB_Topic>MTCamera_logevent_focalPlaneSummaryInfo</EFDB_Topic>
         <Description>Special event for use by header service. All of the information in this event is redundant (i,e. also supplied in
             other settingsApplied events), but the information in this event is formatted for ease-of-use of the header service, specifically
