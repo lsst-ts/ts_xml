@@ -1332,14 +1332,21 @@
             <Count>1</Count>
         </item>
         <item>
-            <EFDB_Name>sequencerconfig_daqFolder</EFDB_Name>
+            <EFDB_Name>daqFolder</EFDB_Name>
             <Description>Folder in 2-day store where images will be created</Description>
             <IDL_Type>string</IDL_Type>
             <Units>unitless</Units>
             <Count>1</Count>
         </item>
         <item>
-            <EFDB_Name>sequencerconfig_emulatedDAQ</EFDB_Name>
+            <EFDB_Name>daqPartition</EFDB_Name>
+            <Description>DAQ partition</Description>
+            <IDL_Type>string</IDL_Type>
+            <Units>unitless</Units>
+            <Count>1</Count>
+        </item>
+        <item>
+            <EFDB_Name>emulatedDAQ</EFDB_Name>
             <Description>True when using an emulated DAQ</Description>
             <IDL_Type>boolean</IDL_Type>
             <Units>unitless</Units>
@@ -1350,23 +1357,30 @@
         <Subsystem>CCCamera</Subsystem>
         <EFDB_Topic>CCCamera_logevent_focalPlaneSequencerConfigSettingsApplied</EFDB_Topic>
         <item>
-            <EFDB_Name>version</EFDB_Name>
-            <Description>Version number of these settings</Description>
-            <IDL_Type>long</IDL_Type>
-            <Units>unitless</Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>daqFolder</EFDB_Name>
-            <Description>Folder in 2-day store where images will be created</Description>
+            <EFDB_Name>clearCountParameter</EFDB_Name>
+            <Description>Name of the clear count parameter</Description>
             <IDL_Type>string</IDL_Type>
             <Units>unitless</Units>
             <Count>1</Count>
         </item>
         <item>
-            <EFDB_Name>emulatedDAQ</EFDB_Name>
-            <Description>True when using an emulated DAQ</Description>
-            <IDL_Type>boolean</IDL_Type>
+            <EFDB_Name>clearMain</EFDB_Name>
+            <Description>Name of the clear main</Description>
+            <IDL_Type>string</IDL_Type>
+            <Units>unitless</Units>
+            <Count>1</Count>
+        </item>
+        <item>
+            <EFDB_Name>idleFlushMain</EFDB_Name>
+            <Description>Name of the idle flush main</Description>
+            <IDL_Type>string</IDL_Type>
+            <Units>unitless</Units>
+            <Count>1</Count>
+        </item>
+        <item>
+            <EFDB_Name>integrateMain</EFDB_Name>
+            <Description>Name of the integrate main</Description>
+            <IDL_Type>string</IDL_Type>
             <Units>unitless</Units>
             <Count>1</Count>
         </item>
@@ -1420,6 +1434,13 @@
             <Count>1</Count>
         </item>
         <item>
+            <EFDB_Name>pseudoReadMain</EFDB_Name>
+            <Description>Name of the pseudo read main</Description>
+            <IDL_Type>string</IDL_Type>
+            <Units>unitless</Units>
+            <Count>1</Count>
+        </item>
+        <item>
             <EFDB_Name>readCols</EFDB_Name>
             <Description>readCols</Description>
             <IDL_Type>int</IDL_Type>
@@ -1434,9 +1455,30 @@
             <Count>1</Count>
         </item>
         <item>
+            <EFDB_Name>readMain</EFDB_Name>
+            <Description>Name of the read main</Description>
+            <IDL_Type>string</IDL_Type>
+            <Units>unitless</Units>
+            <Count>1</Count>
+        </item>
+        <item>
             <EFDB_Name>readRows</EFDB_Name>
             <Description>readRows</Description>
             <IDL_Type>int</IDL_Type>
+            <Units>unitless</Units>
+            <Count>1</Count>
+        </item>
+        <item>
+            <EFDB_Name>rowShiftForwardMain</EFDB_Name>
+            <Description>Name of the row shift forward main</Description>
+            <IDL_Type>string</IDL_Type>
+            <Units>unitless</Units>
+            <Count>1</Count>
+        </item>
+        <item>
+            <EFDB_Name>rowShiftReverseMain</EFDB_Name>
+            <Description>Name of the row shift reverse main</Description>
+            <IDL_Type>string</IDL_Type>
             <Units>unitless</Units>
             <Count>1</Count>
         </item>
@@ -1458,6 +1500,20 @@
             <EFDB_Name>sequencerChecksums</EFDB_Name>
             <Description>sequencerChecksums</Description>
             <IDL_Type>string</IDL_Type>
+            <Units>unitless</Units>
+            <Count>1</Count>
+        </item>
+        <item>
+            <EFDB_Name>shiftCountParameter</EFDB_Name>
+            <Description>Name of the shift count parameter</Description>
+            <IDL_Type>string</IDL_Type>
+            <Units>unitless</Units>
+            <Count>1</Count>
+        </item>
+        <item>
+            <EFDB_Name>transparentMode</EFDB_Name>
+            <Description>True if the ASPIC is in transparent mode</Description>
+            <IDL_Type>int</IDL_Type>
             <Units>unitless</Units>
             <Count>1</Count>
         </item>
