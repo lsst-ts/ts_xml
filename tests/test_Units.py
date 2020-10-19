@@ -7,11 +7,7 @@ import lsst.ts.xml as ts_xml
 
 
 def check_for_issues(csc, topic):
-    if csc == "ATCamera":
-        jira = "CAP-318"
-    elif csc == "MTCamera":
-        jira = "CAP-318"
-    elif csc == "PromptProcessing":
+    if csc == "PromptProcessing":
         jira = "CAP-592"
     else:
         jira = ""
@@ -54,6 +50,8 @@ def test_units(xmlfile, csc, topic):
         elif unit.text in (
             "Torr",
             "mTorr",
+            "psia",
+            "VA",
         ):  # TODO remove this when astropy adds support for this unit
             assert True
         else:
