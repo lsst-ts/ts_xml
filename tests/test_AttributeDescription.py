@@ -6,13 +6,7 @@ import lsst.ts.xml as ts_xml
 
 
 def check_for_issues(csc, topic):
-    if csc == "ATCamera" and (topic == "Events" or topic == "Telemetry"):
-        jira = "CAP-318"
-    elif csc == "MTCamera" and (topic == "Events" or topic == "Telemetry"):
-        jira = "CAP-318"
-    else:
-        jira = ""
-    return jira
+    return ""
 
 
 @pytest.mark.parametrize("xmlfile,csc,topic", ts_xml.get_xmlfile_csc_topic())

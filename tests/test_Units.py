@@ -7,13 +7,7 @@ import lsst.ts.xml as ts_xml
 
 
 def check_for_issues(csc, topic):
-    if csc == "ATCamera":
-        jira = "CAP-318"
-    elif csc == "MTCamera":
-        jira = "CAP-318"
-    else:
-        jira = ""
-    return jira
+    return ""
 
 
 @pytest.mark.parametrize("xmlfile,csc,topic", ts_xml.get_xmlfile_csc_topic())
@@ -52,6 +46,8 @@ def test_units(xmlfile, csc, topic):
         elif unit.text in (
             "Torr",
             "mTorr",
+            "psia",
+            "VA",
         ):  # TODO remove this when astropy adds support for this unit
             assert True
         else:
