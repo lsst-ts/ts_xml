@@ -7,7 +7,9 @@ import lsst.ts.xml as ts_xml
 
 
 def check_for_issues(csc, topic):
-    return ""
+    if csc == "PromptProcessing":
+        jira = "CAP-592"
+    return jira
 
 
 @pytest.mark.parametrize("xmlfile,csc,topic", ts_xml.get_xmlfile_csc_topic())
