@@ -3,6 +3,7 @@
 <SALEventSet xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://lsst-sal.tuc.noao.edu/schema/SALEventSet.xsd">
   <Enumeration>SummaryStates_DisabledState,SummaryStates_EnabledState,SummaryStates_FaultState,SummaryStates_OfflineState,SummaryStates_StandbyState</Enumeration>
   <Enumeration>DetailedStates_DisabledState,DetailedStates_FaultState,DetailedStates_OfflineState,DetailedStates_StandbyState,DetailedStates_ParkedState,DetailedStates_RaisingState,DetailedStates_ActiveState,DetailedStates_LoweringState,DetailedStates_ParkedEngineeringState,DetailedStates_RaisingEngineeringState,DetailedStates_ActiveEngineeringState,DetailedStates_LoweringEngineeringState,DetailedStates_LoweringFaultState,DetailedStates_ProfileHardpointCorrectionState</Enumeration>
+  <Enumeration>BumpTest_NotTested,BumpTest_TestingPositive,BumpTest_TestingPositiveWait,BumpTest_TestingNegative,BumpTest_TestingNegativeWait,BumpTest_Passed,BumpTest_Failed</Enumeration>
   <SALEvent>
     <Subsystem>MTM1M3</Subsystem>
     <EFDB_Topic>MTM1M3_logevent_detailedState</EFDB_Topic>
@@ -5382,6 +5383,57 @@
       <IDL_Type>unsigned short</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
+    </item>
+  </SALEvent>
+  <SALEvent>
+    <Subsystem>MTM1M3</Subsystem>
+    <EFDB_Topic>MTM1M3_logevent_forceActuatorBumpTestStatus</EFDB_Topic>
+    <Description>Record bump test progress and final status.</Description>
+    <Alias>forceActuatorBumpTestStatus</Alias>
+    <Explanation>http://sal.lsst.org</Explanation>
+    <item>
+      <EFDB_Name>timestamp</EFDB_Name>
+      <Description>Bump Test Result timestamp</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>actuatorId</EFDB_Name>
+      <Description>ID of actuator being tested. -1 if no actuator is being tested.</Description>
+      <IDL_Type>short</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>primaryTestTimestamps</EFDB_Name>
+      <Description>Timestamps of the last bump test</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>unitless</Units>
+      <Count>156</Count>
+    </item>
+    <item>
+      <EFDB_Name>primaryTest</EFDB_Name>
+      <Description>BumpTest enumeration for primary (Z) actuator.</Description>
+      <IDL_Type>short</IDL_Type>
+      <Units>unitless</Units>
+      <Count>156</Count>
+      <Enumeration>BumpTest_NotTested,BumpTest_TestingPositive,BumpTest_TestingPositiveWait,BumpTest_TestingNegative,BumpTest_TestingNegativeWait,BumpTest_Passed,BumpTest_Failed</Enumeration>
+    </item>
+    <item>
+      <EFDB_Name>secondaryTestTimestamps</EFDB_Name>
+      <Description>Timestamps of the last bump test</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>unitless</Units>
+      <Count>112</Count>
+    </item>
+    <item>
+      <EFDB_Name>secondaryTest</EFDB_Name>
+      <Description>BumpTest enumeration for secondary (X/Y) actuator.</Description>
+      <IDL_Type>short</IDL_Type>
+      <Units>unitless</Units>
+      <Count>112</Count>
+      <Enumeration>BumpTest_NotTested,BumpTest_TestingPositive,BumpTest_TestingPositiveWait,BumpTest_TestingNegative,BumpTest_TestingNegativeWait,BumpTest_Passed,BumpTest_Failed</Enumeration>
     </item>
   </SALEvent>
 </SALEventSet>

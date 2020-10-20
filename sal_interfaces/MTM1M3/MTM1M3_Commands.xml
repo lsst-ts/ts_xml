@@ -805,4 +805,46 @@
       <Count>1</Count>
     </item>
   </SALCommand>
+  <SALCommand>
+    <Subsystem>MTM1M3</Subsystem>
+    <EFDB_Topic>MTM1M3_command_forceActuatorBumpTest</EFDB_Topic>
+    <Description>Bump test given force actuator.</Description>
+    <Alias>forceActuatorBumpTest</Alias>
+    <Explanation>http://sal.lsst.org</Explanation>
+    <item>
+      <EFDB_Name>actuatorId</EFDB_Name>
+      <Description>Id of the actuator to test.</Description>
+      <IDL_Type>long</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>testSecondary</EFDB_Name>
+      <Description>True if secondary (X/Y) actuator should be tested.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>testPrimary</EFDB_Name>
+      <Description>True if primary (Z) actuator should be tested.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+  </SALCommand>
+  <SALCommand>
+    <Subsystem>MTM1M3</Subsystem>
+    <EFDB_Topic>MTM1M3_command_killForceActuatorBumpTest</EFDB_Topic>
+    <Description>Stop any running force actuator bump test.</Description>
+    <Alias>killForceActuatorBumpTest</Alias>
+    <Explanation>http://sal.lsst.org</Explanation>
+    <item>
+      <EFDB_Name>killForceActuatorBumpTest</EFDB_Name>
+      <Description>Dummy placeholder.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+  </SALCommand>
 </SALCommandSet>
