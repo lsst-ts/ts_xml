@@ -1,3 +1,9 @@
 #!/bin/sh
 echo "Formatting Python code with black"
 black .
+if xmllint --version 2>/dev/null; then
+  echo "Linting XML files"
+  for f in $(find . -name *.xml); do xmllint --format $f > /tmp/$$lint; cp /tmp/$$lint $f; done && rm /tmp/$$lint
+else
+  echo "XML files were not linted, as xmllint is not installed. Get it with libxml2 package (brew install libxml2, yum install libxml2,..)."
+fi
