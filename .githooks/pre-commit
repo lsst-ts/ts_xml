@@ -1,9 +1,31 @@
 #!/bin/sh
 echo "Formatting Python code with black"
 black .
-if xmllint --version 2>/dev/null; then
-  echo "Linting XML files"
-  for f in $(find . -name *.xml); do xmllint --format $f > /tmp/$$lint; cp /tmp/$$lint $f; done && rm /tmp/$$lint
+
+if git rev-parse --verify HEAD >/dev/null 2>&1
+then
+    against=HEAD
 else
-  echo "XML files were not linted, as xmllint is not installed. Get it with libxml2 package (brew install libxml2, yum install libxml2,..)."
+    # Initial commit: diff against an empty tree object
+    against=$(git hash-object -t tree /dev/null)
 fi
+
+check_xml_wellformed()
+{
+    for FILE in `git diff-index --name-only --cached $against -- | grep -E '\.xml'` ; do
+        if ! xmllint --format $FILE | diff - $FILE; then
+            echo "========================================================="
+            echo "Unstaging $FILE for the commit -- XML but not well-formed"
+            git reset -q HEAD $FILE
+            retval=1
+        else
+            echo "XML check for $FILE: OK"
+        fi
+    done
+
+    if [[ $retval -gt 0 ]]; then
+        exit $retval
+    fi
+}
+
+check_xml_wellformed

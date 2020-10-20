@@ -41,6 +41,22 @@ from anywhere in the repository.  This will run the tests and print out a short 
 
 to find the specific ticket.
 
+### XML formatting, XML linting
+
+xmllint (http://xmlsoft.org) is used in GitHub action to check committed files format. The files can be reformatted running xmllint --format, such as:
+
+```bash
+for f in $(find . -name *.xml); do xmllint --format $f > /tmp/$$lint; cp /tmp/$$lint $f; done && rm /tmp/$$lint
+```
+
+Xmllint is usually part of the libxml2 package, so to install it on Mac, do:
+
+```bash
+brew install libxml2
+```
+
+Linting is enforced on GitHub through github action (.github/workflows/xml-format.yaml). If you have xmllint installed locally, you can copy .githooks/pre-commit to .git/hooks/pre-commit to have XML formating checked before every commit.
+
 #### Test Utilities
 
 The testutils.py file, located in python/lsst/ts/xml, contains functions and variables used throughout the testing.  The lists of generic Commands and Events, as well as Reserved Words, imposed by third party tools, are all defined in testutils.py.  Most importantly, the independent list of expected CSCs is also defined here.  If these lists change, the corresponding list in testutils.py **must** also be updated, for example, if a CSC is added, removed or renamed, the tests will produce the following error:
