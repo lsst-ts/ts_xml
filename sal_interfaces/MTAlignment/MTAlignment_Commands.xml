@@ -2,17 +2,11 @@
 <?xml-stylesheet type="text/xsl" href="http://lsst-sal.tuc.noao.edu/schema/SALCommandSet.xsl"?>
 <SALCommandSet xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:noNamespaceSchemaLocation="http://lsst-sal.tuc.noao.edu/schema/SALCommandSet.xsd">
+    <Enumeration>Target_M2, Target_M1M3, Target_Camera, Target_Dome</Enumeration>
 <SALCommand>
     <Subsystem>MTAlignment</Subsystem>
-    <Version>3.7.1</Version>
-    <Author>Colin Winslow</Author>
     <EFDB_Topic>MTAlignment_command_measureTarget</EFDB_Topic>
-    <Alias>measureTarget</Alias>
-    <Device></Device>
-    <Property></Property>
-    <Action></Action>
-    <Value></Value>
-    <Explanation>http://sal.lsst.org</Explanation>
+    <Description>Measures the specified target</Description>
     <item>
         <EFDB_Name>target</EFDB_Name>
         <Description>target of measurement (M1M3, Camera, etc)</Description>
@@ -23,15 +17,34 @@
 </SALCommand>
 <SALCommand>
     <Subsystem>MTAlignment</Subsystem>
-    <Version>3.7.1</Version>
-    <Author>Colin Winslow</Author>
+    <EFDB_Topic>MTAlignment_command_align</EFDB_Topic>
+    <Description>Measures the specified target</Description>
+    <item>
+        <EFDB_Name>target</EFDB_Name>
+        <Description>name of target, M2 or CAM</Description>
+        <!-- Enumeration: Target -->
+        <IDL_Type>long</IDL_Type>
+        <Units>dimensionless</Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>tolerance</EFDB_Name>
+        <Description>relative tolerance threshold after which we will stop the correction loop</Description>
+        <IDL_Type>float</IDL_Type>
+        <Units>dimensionless</Units>
+        <Count>1</Count>
+    </item>
+    <item>
+        <EFDB_Name>maxIter</EFDB_Name>
+        <Description>Max iterations before we give up</Description>
+        <IDL_Type>int</IDL_Type>
+        <Units>dimensionless</Units>
+        <Count>1</Count>
+    </item>
+</SALCommand>
+<SALCommand>
+    <Subsystem>MTAlignment</Subsystem>
     <EFDB_Topic>MTAlignment_command_measurePoint</EFDB_Topic>
-    <Alias>measurePoint</Alias>
-    <Device></Device>
-    <Property></Property>
-    <Action></Action>
-    <Value></Value>
-    <Explanation>http://sal.lsst.org</Explanation>
     <item>
         <EFDB_Name>pointgroup</EFDB_Name>
         <Description>name of pointgroup containing target point</Description>
@@ -49,15 +62,7 @@
 </SALCommand>
 <SALCommand>
     <Subsystem>MTAlignment</Subsystem>
-    <Version>3.7.1</Version>
-    <Author></Author>
     <EFDB_Topic>MTAlignment_command_laserPower</EFDB_Topic>
-    <Alias>laserPower</Alias>
-    <Device></Device>
-    <Property></Property>
-    <Action></Action>
-    <Value></Value>
-    <Explanation>http://sal.lsst.org</Explanation>
     <item>
         <EFDB_Name>power</EFDB_Name>
         <Description>turns laser on and off</Description>
@@ -68,15 +73,7 @@
 </SALCommand>
 <SALCommand>
     <Subsystem>MTAlignment</Subsystem>
-    <Version>3.7.1</Version>
-    <Author></Author>
     <EFDB_Topic>MTAlignment_command_healthCheck</EFDB_Topic>
-    <Alias>healthCheck</Alias>
-    <Device></Device>
-    <Property></Property>
-    <Action></Action>
-    <Value></Value>
-    <Explanation>http://sal.lsst.org</Explanation>
     <item>
         <EFDB_Name>healthCheck</EFDB_Name>
         <Description>executes the health check script</Description>
