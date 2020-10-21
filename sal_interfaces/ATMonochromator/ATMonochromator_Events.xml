@@ -1,399 +1,397 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-stylesheet type="text/xsl" href="http://lsst-sal.tuc.noao.edu/schema/SALEventSet.xsl"?>
-<SALEventSet xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:noNamespaceSchemaLocation="http://lsst-sal.tuc.noao.edu/schema/SALEventSet.xsd">
-<Enumeration>SummaryState_DisabledState,SummaryState_EnabledState,SummaryState_FaultState,SummaryState_OfflineState,SummaryState_StandbyState</Enumeration>
-<Enumeration>DetailedState_NotEnabled,DetailedState_Ready,DetailedState_ChangingWavelength,DetailedState_CalibratingWavelength,DetailedState_Powering,DetailedState_SelectingGrating,DetailedState_ChangingSlitWidth,DetailedState_UpdatingMonochromatorSetup</Enumeration>
-<Enumeration>Status_SettingUp,Status_Ready,Status_Offline,Status_Fault</Enumeration>
-<Enumeration>Grating_Blue,Grating_Red,Grating_Mirror</Enumeration>
-<Enumeration>Slit_Entry,Slit_Exit</Enumeration>
-<Enumeration>LightStatus_On,LightStatus_Off</Enumeration>
-<Enumeration>Device_Monochromator,Device_LightSource,Device_ThermoelectricCooler</Enumeration>
-
-<SALEvent>
+<SALEventSet xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://lsst-sal.tuc.noao.edu/schema/SALEventSet.xsd">
+  <Enumeration>SummaryState_DisabledState,SummaryState_EnabledState,SummaryState_FaultState,SummaryState_OfflineState,SummaryState_StandbyState</Enumeration>
+  <Enumeration>DetailedState_NotEnabled,DetailedState_Ready,DetailedState_ChangingWavelength,DetailedState_CalibratingWavelength,DetailedState_Powering,DetailedState_SelectingGrating,DetailedState_ChangingSlitWidth,DetailedState_UpdatingMonochromatorSetup</Enumeration>
+  <Enumeration>Status_SettingUp,Status_Ready,Status_Offline,Status_Fault</Enumeration>
+  <Enumeration>Grating_Blue,Grating_Red,Grating_Mirror</Enumeration>
+  <Enumeration>Slit_Entry,Slit_Exit</Enumeration>
+  <Enumeration>LightStatus_On,LightStatus_Off</Enumeration>
+  <Enumeration>Device_Monochromator,Device_LightSource,Device_ThermoelectricCooler</Enumeration>
+  <SALEvent>
     <Subsystem>ATMonochromator</Subsystem>
     <Version>3.5.2</Version>
-    <Author></Author>
+    <Author/>
     <EFDB_Topic>ATMonochromator_logevent_internalCommand</EFDB_Topic>
     <Alias>internalCommand</Alias>
     <Description>internalcommand</Description>
     <item>
-        <EFDB_Name>commandObject</EFDB_Name>
-        <Description>The error code being published.</Description>
-        <IDL_Type>byte</IDL_Type>
-        <Units>dimensionless</Units>
-        <Count>900</Count>
+      <EFDB_Name>commandObject</EFDB_Name>
+      <Description>The error code being published.</Description>
+      <IDL_Type>byte</IDL_Type>
+      <Units>dimensionless</Units>
+      <Count>900</Count>
     </item>
-</SALEvent>
-<SALEvent>
+  </SALEvent>
+  <SALEvent>
     <Subsystem>ATMonochromator</Subsystem>
     <Version>3.5.2</Version>
-    <Author></Author>
+    <Author/>
     <EFDB_Topic>ATMonochromator_logevent_loopTimeOutOfRange</EFDB_Topic>
     <Alias>loopTimeOutOfRange</Alias>
     <Description>Exceeds loop time</Description>
     <item>
-        <EFDB_Name>loopTimeOutOfRange</EFDB_Name>
-        <Description>loop Time is not in range</Description>
-        <IDL_Type>boolean</IDL_Type>
-        <Units>dimensionless</Units>
-        <Count>1</Count>
+      <EFDB_Name>loopTimeOutOfRange</EFDB_Name>
+      <Description>loop Time is not in range</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>dimensionless</Units>
+      <Count>1</Count>
     </item>
-</SALEvent>
-<SALEvent>
+  </SALEvent>
+  <SALEvent>
     <Subsystem>ATMonochromator</Subsystem>
     <Version>3.5.2</Version>
-    <Author></Author>
+    <Author/>
     <EFDB_Topic>ATMonochromator_logevent_detailedState</EFDB_Topic>
     <Alias>detailedState</Alias>
     <Description>Detailed State</Description>
-            <item>
-                <EFDB_Name>detailedState</EFDB_Name>
-                <Description>An enumeration indicating the detailed state. See the DetailedStateValue enumeration defined in the Typedefs package.</Description>
-                <!-- Enumeration: DetailedState -->
-                <IDL_Type>long</IDL_Type>
-                <Units>dimensionless</Units>
-                <Count>1</Count>
-<Enumeration>detailedState_DetailedState_DisabledState,detailedState_DetailedState_EnabledState,detailedState_DetailedState_FaultState,detailedState_DetailedState_OfflineState,detailedState_DetailedState_StandbyState,detailedState_DetailedState_MonoSettingUpState,detailedState_DetailedState_StoppedState,detailedState_DetailedState_StoppedCoolerOffState,detailedState_DetailedState_StoppedLightOffState,detailedState_DetailedState_StoppedLightOnState,detailedState_DetailedState_MonoManualSetup,detailedState_DetailedState_MonoAutomaticSetup
+    <item>
+      <EFDB_Name>detailedState</EFDB_Name>
+      <Description>An enumeration indicating the detailed state. See the DetailedStateValue enumeration defined in the Typedefs package.</Description>
+      <!-- Enumeration: DetailedState -->
+      <IDL_Type>long</IDL_Type>
+      <Units>dimensionless</Units>
+      <Count>1</Count>
+      <Enumeration>detailedState_DetailedState_DisabledState,detailedState_DetailedState_EnabledState,detailedState_DetailedState_FaultState,detailedState_DetailedState_OfflineState,detailedState_DetailedState_StandbyState,detailedState_DetailedState_MonoSettingUpState,detailedState_DetailedState_StoppedState,detailedState_DetailedState_StoppedCoolerOffState,detailedState_DetailedState_StoppedLightOffState,detailedState_DetailedState_StoppedLightOnState,detailedState_DetailedState_MonoManualSetup,detailedState_DetailedState_MonoAutomaticSetup
 </Enumeration>
-            </item>
-</SALEvent>
-<SALEvent>
+    </item>
+  </SALEvent>
+  <SALEvent>
     <Subsystem>ATMonochromator</Subsystem>
     <Version>3.5.2</Version>
-    <Author></Author>
+    <Author/>
     <EFDB_Topic>ATMonochromator_logevent_status</EFDB_Topic>
     <Alias>status</Alias>
     <Description>Controller status</Description>
-            <item>
-                <EFDB_Name>status</EFDB_Name>
-                <Description>An enumeration indicating the controller status.</Description>
-                <!-- Enumeration: DetailedState -->
-                <IDL_Type>long</IDL_Type>
-                <Units>dimensionless</Units>
-                <Count>1</Count>
-            </item>
-</SALEvent>
-<SALEvent>
+    <item>
+      <EFDB_Name>status</EFDB_Name>
+      <Description>An enumeration indicating the controller status.</Description>
+      <!-- Enumeration: DetailedState -->
+      <IDL_Type>long</IDL_Type>
+      <Units>dimensionless</Units>
+      <Count>1</Count>
+    </item>
+  </SALEvent>
+  <SALEvent>
     <Subsystem>ATMonochromator</Subsystem>
     <Version>3.5.2</Version>
-    <Author></Author>
+    <Author/>
     <EFDB_Topic>ATMonochromator_logevent_rejectedCommand</EFDB_Topic>
     <Alias>rejectedCommand</Alias>
     <Description>Event published when a command is rejected either because command is received when in incorrect state or parameters of command are invalid</Description>
     <item>
-        <EFDB_Name>commandValue</EFDB_Name>
-        <Description>command value</Description>
-        <IDL_Type>unsigned short</IDL_Type>
-        <Units>dimensionless</Units>
-        <Count>1</Count>
+      <EFDB_Name>commandValue</EFDB_Name>
+      <Description>command value</Description>
+      <IDL_Type>unsigned short</IDL_Type>
+      <Units>dimensionless</Units>
+      <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>detailedState</EFDB_Name>
-        <Description>detailed state</Description>
-        <!-- Enumeration: DetailedState -->
-        <IDL_Type>long</IDL_Type>
-        <Units>dimensionless</Units>
-        <Count>1</Count>
-        <Enumeration>detailedState_DetailedState_DisabledState,detailedState_DetailedState_EnabledState,detailedState_DetailedState_FaultState,detailedState_DetailedState_OfflineState,detailedState_DetailedState_StandbyState,detailedState_DetailedState_MonoSettingUpState,detailedState_DetailedState_StoppedState,detailedState_DetailedState_StoppedCoolerOffState,detailedState_DetailedState_StoppedLightOffState,detailedState_DetailedState_StoppedLightOnState,detailedState_DetailedState_MonoManualSetup,detailedState_DetailedState_MonoAutomaticSetup</Enumeration>
+      <EFDB_Name>detailedState</EFDB_Name>
+      <Description>detailed state</Description>
+      <!-- Enumeration: DetailedState -->
+      <IDL_Type>long</IDL_Type>
+      <Units>dimensionless</Units>
+      <Count>1</Count>
+      <Enumeration>detailedState_DetailedState_DisabledState,detailedState_DetailedState_EnabledState,detailedState_DetailedState_FaultState,detailedState_DetailedState_OfflineState,detailedState_DetailedState_StandbyState,detailedState_DetailedState_MonoSettingUpState,detailedState_DetailedState_StoppedState,detailedState_DetailedState_StoppedCoolerOffState,detailedState_DetailedState_StoppedLightOffState,detailedState_DetailedState_StoppedLightOnState,detailedState_DetailedState_MonoManualSetup,detailedState_DetailedState_MonoAutomaticSetup</Enumeration>
     </item>
     <item>
-        <EFDB_Name>timestamp</EFDB_Name>
-        <Description>time when the event occurred</Description>
-        <IDL_Type>double</IDL_Type>
-        <Units>dimensionless</Units>
-        <Count>1</Count>
+      <EFDB_Name>timestamp</EFDB_Name>
+      <Description>time when the event occurred</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>dimensionless</Units>
+      <Count>1</Count>
     </item>
-</SALEvent>
-
-<SALEvent>
+  </SALEvent>
+  <SALEvent>
     <Subsystem>ATMonochromator</Subsystem>
     <Version>3.5.2</Version>
-    <Author></Author>
+    <Author/>
     <EFDB_Topic>ATMonochromator_logevent_settingsAppliedMonoCommunication</EFDB_Topic>
     <Alias>settingsAppliedMonoCommunication</Alias>
     <Description>setting of the monochromator</Description>
     <item>
-        <EFDB_Name>ip</EFDB_Name>
-        <Description>IP address of the monochromator</Description>
-        <IDL_Type>string</IDL_Type>
-        <IDL_Size>15</IDL_Size>
-        <Units>dimensionless</Units>
-        <Count>1</Count>
+      <EFDB_Name>ip</EFDB_Name>
+      <Description>IP address of the monochromator</Description>
+      <IDL_Type>string</IDL_Type>
+      <IDL_Size>15</IDL_Size>
+      <Units>dimensionless</Units>
+      <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>portRange</EFDB_Name>
-        <Description>port range, it will try to connect to any of the ports in this range</Description>
-        <IDL_Type>long</IDL_Type>
-        <Units>dimensionless</Units>
-        <Count>1</Count>
+      <EFDB_Name>portRange</EFDB_Name>
+      <Description>port range, it will try to connect to any of the ports in this range</Description>
+      <IDL_Type>long</IDL_Type>
+      <Units>dimensionless</Units>
+      <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>readTimeout</EFDB_Name>
-        <Description>Read timeout value</Description>
-        <IDL_Type>float</IDL_Type>
-        <Units>second</Units>
-        <Count>1</Count>
+      <EFDB_Name>readTimeout</EFDB_Name>
+      <Description>Read timeout value</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>second</Units>
+      <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>writeTimeout</EFDB_Name>
-        <Description>Write timeout value</Description>
-        <IDL_Type>float</IDL_Type>
-        <Units>second</Units>
-        <Count>1</Count>
+      <EFDB_Name>writeTimeout</EFDB_Name>
+      <Description>Write timeout value</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>second</Units>
+      <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>connectionTimeout</EFDB_Name>
-        <Description>connection time out setting</Description>
-        <IDL_Type>float</IDL_Type>
-        <Units>second</Units>
-        <Count>1</Count>
+      <EFDB_Name>connectionTimeout</EFDB_Name>
+      <Description>connection time out setting</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>second</Units>
+      <Count>1</Count>
     </item>
-</SALEvent>
-<SALEvent>
+  </SALEvent>
+  <SALEvent>
     <Subsystem>ATMonochromator</Subsystem>
     <Version>3.5.2</Version>
-    <Author></Author>
+    <Author/>
     <EFDB_Topic>ATMonochromator_logevent_selectedGrating</EFDB_Topic>
     <Alias>selectedGrating</Alias>
     <Description>Event indicating the grating that was selected</Description>
     <item>
-        <EFDB_Name>gratingType</EFDB_Name>
-        <Description>Type of grating</Description>
-        <!-- Enumeration: Grating -->
-        <IDL_Type>long</IDL_Type>
-        <Units>dimensionless</Units>
-        <Count>1</Count>
-        <Enumeration>gratingType_Grating_Blue,gratingType_Grating_Red,gratingType_Grating_Mirror</Enumeration>
+      <EFDB_Name>gratingType</EFDB_Name>
+      <Description>Type of grating</Description>
+      <!-- Enumeration: Grating -->
+      <IDL_Type>long</IDL_Type>
+      <Units>dimensionless</Units>
+      <Count>1</Count>
+      <Enumeration>gratingType_Grating_Blue,gratingType_Grating_Red,gratingType_Grating_Mirror</Enumeration>
     </item>
     <item>
-        <EFDB_Name>timestamp</EFDB_Name>
-        <Description>timestamp when selected grating event occurs</Description>
-        <IDL_Type>double</IDL_Type>
-        <Units>dimensionless</Units>
-        <Count>1</Count>
+      <EFDB_Name>timestamp</EFDB_Name>
+      <Description>timestamp when selected grating event occurs</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>dimensionless</Units>
+      <Count>1</Count>
     </item>
-</SALEvent>
-<SALEvent>
+  </SALEvent>
+  <SALEvent>
     <Subsystem>ATMonochromator</Subsystem>
     <Version>3.5.2</Version>
-    <Author></Author>
+    <Author/>
     <EFDB_Topic>ATMonochromator_logevent_wavelength</EFDB_Topic>
     <Alias>wavelength</Alias>
     <Description>Publishes wavelength</Description>
     <item>
-        <EFDB_Name>wavelength</EFDB_Name>
-        <Description>wavelength</Description>
-        <IDL_Type>float</IDL_Type>
-        <Units>m</Units>
-        <Count>1</Count>
+      <EFDB_Name>wavelength</EFDB_Name>
+      <Description>wavelength</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>m</Units>
+      <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>timestamp</EFDB_Name>
-        <Description>timestamp</Description>
-        <IDL_Type>double</IDL_Type>
-        <Units>dimensionless</Units>
-        <Count>1</Count>
+      <EFDB_Name>timestamp</EFDB_Name>
+      <Description>timestamp</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>dimensionless</Units>
+      <Count>1</Count>
     </item>
-</SALEvent>
-<SALEvent>
+  </SALEvent>
+  <SALEvent>
     <Subsystem>ATMonochromator</Subsystem>
     <Version>3.5.2</Version>
-    <Author></Author>
+    <Author/>
     <EFDB_Topic>ATMonochromator_logevent_slitWidth</EFDB_Topic>
     <Alias>slitWidth</Alias>
     <Description>Publishes the slitwidth</Description>
     <item>
-        <EFDB_Name>slit</EFDB_Name>
-        <Description>Specifies which slit. Entry or exit slit</Description>
-        <!-- Enumeration: Slit -->
-        <IDL_Type>long</IDL_Type>
-        <Units>dimensionless</Units>
-        <Count>1</Count>
-        <Enumeration>slit_Slit_Entry,slit_Slit_Exit</Enumeration>
+      <EFDB_Name>slit</EFDB_Name>
+      <Description>Specifies which slit. Entry or exit slit</Description>
+      <!-- Enumeration: Slit -->
+      <IDL_Type>long</IDL_Type>
+      <Units>dimensionless</Units>
+      <Count>1</Count>
+      <Enumeration>slit_Slit_Entry,slit_Slit_Exit</Enumeration>
     </item>
     <item>
-        <EFDB_Name>slitPosition</EFDB_Name>
-        <Description>slit position</Description>
-        <IDL_Type>float</IDL_Type>
-        <Units>dimensionless</Units>
-        <Count>1</Count>
+      <EFDB_Name>slitPosition</EFDB_Name>
+      <Description>slit position</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>dimensionless</Units>
+      <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>timestamp</EFDB_Name>
-        <Description>timestamp</Description>
-        <IDL_Type>double</IDL_Type>
-        <Units>unitless</Units>
-        <Count>1</Count>
+      <EFDB_Name>timestamp</EFDB_Name>
+      <Description>timestamp</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
     </item>
-</SALEvent>
-<SALEvent>
+  </SALEvent>
+  <SALEvent>
     <Subsystem>ATMonochromator</Subsystem>
     <Version>3.5.2</Version>
-    <Author></Author>
+    <Author/>
     <EFDB_Topic>ATMonochromator_logevent_entrySlitWidth</EFDB_Topic>
     <Alias>entrySlitWidth</Alias>
     <Description>Publishes the slitwidth</Description>
     <item>
-        <EFDB_Name>width</EFDB_Name>
-        <Description>Entry slit width</Description>
-        <IDL_Type>float</IDL_Type>
-        <Units>mm</Units>
-        <Count>1</Count>
+      <EFDB_Name>width</EFDB_Name>
+      <Description>Entry slit width</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>mm</Units>
+      <Count>1</Count>
     </item>
-</SALEvent>
-<SALEvent>
+  </SALEvent>
+  <SALEvent>
     <Subsystem>ATMonochromator</Subsystem>
     <Version>3.5.2</Version>
-    <Author></Author>
+    <Author/>
     <EFDB_Topic>ATMonochromator_logevent_exitSlitWidth</EFDB_Topic>
     <Alias>exitSlitWidth</Alias>
     <Description>Publishes the slitwidth</Description>
     <item>
-        <EFDB_Name>width</EFDB_Name>
-        <Description>Exit slit width</Description>
-        <IDL_Type>float</IDL_Type>
-        <Units>mm</Units>
-        <Count>1</Count>
+      <EFDB_Name>width</EFDB_Name>
+      <Description>Exit slit width</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>mm</Units>
+      <Count>1</Count>
     </item>
-</SALEvent>
-<SALEvent>
+  </SALEvent>
+  <SALEvent>
     <Subsystem>ATMonochromator</Subsystem>
     <Version>3.5.2</Version>
-    <Author></Author>
+    <Author/>
     <EFDB_Topic>ATMonochromator_logevent_inPosition</EFDB_Topic>
     <Alias>inPosition</Alias>
     <Description>Indicates if the monochromator is inposition</Description>
     <item>
-        <EFDB_Name>inPosition</EFDB_Name>
-        <Description>Indicates if the monochromator is inposition</Description>
-        <IDL_Type>boolean</IDL_Type>
-        <Units>dimensionless</Units>
-        <Count>1</Count>
+      <EFDB_Name>inPosition</EFDB_Name>
+      <Description>Indicates if the monochromator is inposition</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>dimensionless</Units>
+      <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>device</EFDB_Name>
-        <Description>device</Description>
-        <!-- Enumeration: Device -->
-        <IDL_Type>long</IDL_Type>
-        <Units>dimensionless</Units>
-        <Count>1</Count>
-        <Enumeration>device_Device_Monochromator,device_Device_LightSource,device_Device_ThermoelectricCooler</Enumeration>
+      <EFDB_Name>device</EFDB_Name>
+      <Description>device</Description>
+      <!-- Enumeration: Device -->
+      <IDL_Type>long</IDL_Type>
+      <Units>dimensionless</Units>
+      <Count>1</Count>
+      <Enumeration>device_Device_Monochromator,device_Device_LightSource,device_Device_ThermoelectricCooler</Enumeration>
     </item>
-</SALEvent>
-<SALEvent>
+  </SALEvent>
+  <SALEvent>
     <Subsystem>ATMonochromator</Subsystem>
     <Version>3.5.2</Version>
-    <Author></Author>
+    <Author/>
     <EFDB_Topic>ATMonochromator_logevent_monochromatorConnected</EFDB_Topic>
     <Alias>monochromatorConnected</Alias>
     <Description>Event to inform if the monochromator is connected or not</Description>
     <item>
-        <EFDB_Name>connected</EFDB_Name>
-        <Description>connected</Description>
-        <IDL_Type>boolean</IDL_Type>
-        <Units>dimensionless</Units>
-        <Count>1</Count>
+      <EFDB_Name>connected</EFDB_Name>
+      <Description>connected</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>dimensionless</Units>
+      <Count>1</Count>
     </item>
-</SALEvent>
-<SALEvent>
+  </SALEvent>
+  <SALEvent>
     <Subsystem>ATMonochromator</Subsystem>
     <Version>3.5.2</Version>
-    <Author></Author>
+    <Author/>
     <EFDB_Topic>ATMonochromator_logevent_settingsAppliedMonoHeartbeat</EFDB_Topic>
     <Alias>settingsAppliedMonoHeartbeat</Alias>
     <Description>Internal heartbeat of the application to indicate if communication between linux and windows controlled is active or not</Description>
     <item>
-        <EFDB_Name>period</EFDB_Name>
-        <Description>period</Description>
-        <IDL_Type>float</IDL_Type>
-        <Units>second</Units>
-        <Count>1</Count>
+      <EFDB_Name>period</EFDB_Name>
+      <Description>period</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>second</Units>
+      <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>timeout</EFDB_Name>
-        <Description>Time out for the heartbeat to test communication between linux and windows controller</Description>
-        <IDL_Type>float</IDL_Type>
-        <Units>second</Units>
-        <Count>1</Count>
+      <EFDB_Name>timeout</EFDB_Name>
+      <Description>Time out for the heartbeat to test communication between linux and windows controller</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>second</Units>
+      <Count>1</Count>
     </item>
-</SALEvent>
-<SALEvent>
+  </SALEvent>
+  <SALEvent>
     <Subsystem>ATMonochromator</Subsystem>
     <Version>3.5.2</Version>
-    <Author></Author>
+    <Author/>
     <EFDB_Topic>ATMonochromator_logevent_settingsAppliedLoop</EFDB_Topic>
     <Alias>settingsAppliedLoop</Alias>
     <Description>Settings applied loop</Description>
     <item>
-        <EFDB_Name>period</EFDB_Name>
-        <Description>period</Description>
-        <IDL_Type>double</IDL_Type>
-        <Units>second</Units>
-        <Count>1</Count>
+      <EFDB_Name>period</EFDB_Name>
+      <Description>period</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>second</Units>
+      <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>periodAllowedJitter</EFDB_Name>
-        <Description>Period when jitter is allowed</Description>
-        <IDL_Type>double</IDL_Type>
-        <Units>second</Units>
-        <Count>1</Count>
+      <EFDB_Name>periodAllowedJitter</EFDB_Name>
+      <Description>Period when jitter is allowed</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>second</Units>
+      <Count>1</Count>
     </item>
-</SALEvent>
-<SALEvent>
+  </SALEvent>
+  <SALEvent>
     <Subsystem>ATMonochromator</Subsystem>
     <Version>3.5.2</Version>
-    <Author></Author>
+    <Author/>
     <EFDB_Topic>ATMonochromator_logevent_settingsAppliedMonochromatorRanges</EFDB_Topic>
     <Alias>settingsAppliedMonochromatorRanges</Alias>
     <Description>Allowed range of different settings</Description>
     <item>
-        <EFDB_Name>wavelengthGR1</EFDB_Name>
-        <Description>Minimum wavelength to use with Grating 1</Description>
-        <IDL_Type>float</IDL_Type>
-        <Units>nm</Units>
-        <Count>1</Count>
+      <EFDB_Name>wavelengthGR1</EFDB_Name>
+      <Description>Minimum wavelength to use with Grating 1</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>nm</Units>
+      <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>wavelengthGR1_GR2</EFDB_Name>
-        <Description>Wavelength to use to change to Grating 2</Description>
-        <IDL_Type>float</IDL_Type>
-        <Units>nm</Units>
-        <Count>1</Count>
+      <EFDB_Name>wavelengthGR1_GR2</EFDB_Name>
+      <Description>Wavelength to use to change to Grating 2</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>nm</Units>
+      <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>wavelengthGR2</EFDB_Name>
-        <Description>Maximum wavelength to use with Grating 2</Description>
-        <IDL_Type>float</IDL_Type>
-        <Units>nm</Units>
-        <Count>1</Count>
+      <EFDB_Name>wavelengthGR2</EFDB_Name>
+      <Description>Maximum wavelength to use with Grating 2</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>nm</Units>
+      <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>minSlitWidth</EFDB_Name>
-        <Description>Minimum acceptable Slit width</Description>
-        <IDL_Type>float</IDL_Type>
-        <Units>mm</Units>
-        <Count>1</Count>
+      <EFDB_Name>minSlitWidth</EFDB_Name>
+      <Description>Minimum acceptable Slit width</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>mm</Units>
+      <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>maxSlitWidth</EFDB_Name>
-        <Description>Maximum acceptable Slit Width</Description>
-        <IDL_Type>float</IDL_Type>
-        <Units>mm</Units>
-        <Count>1</Count>
+      <EFDB_Name>maxSlitWidth</EFDB_Name>
+      <Description>Maximum acceptable Slit Width</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>mm</Units>
+      <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>minWavelength</EFDB_Name>
-        <Description>Minimum acceptable wavelength</Description>
-        <IDL_Type>float</IDL_Type>
-        <Units>nm</Units>
-        <Count>1</Count>
+      <EFDB_Name>minWavelength</EFDB_Name>
+      <Description>Minimum acceptable wavelength</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>nm</Units>
+      <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>maxWavelength</EFDB_Name>
-        <Description>Maximum acceptable Wavelength</Description>
-        <IDL_Type>float</IDL_Type>
-        <Units>nm</Units>
-        <Count>1</Count>
+      <EFDB_Name>maxWavelength</EFDB_Name>
+      <Description>Maximum acceptable Wavelength</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>nm</Units>
+      <Count>1</Count>
     </item>
-</SALEvent></SALEventSet>
+  </SALEvent>
+</SALEventSet>

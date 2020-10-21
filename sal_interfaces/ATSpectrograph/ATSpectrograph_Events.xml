@@ -1,413 +1,412 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-stylesheet type="text/xsl" href="http://lsst-sal.tuc.noao.edu/schema/SALEventSet.xsl"?>
-<SALEventSet xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:noNamespaceSchemaLocation="http://lsst-sal.tuc.noao.edu/schema/SALEventSet.xsd">
-<Enumeration>FilterPosition_Filter0,FilterPosition_Filter1,FilterPosition_Filter2,FilterPosition_Filter3,FilterPosition_Inbetween</Enumeration>
-<Enumeration>DisperserPosition_Disperser0,DisperserPosition_Disperser1,DisperserPosition_Disperser2,DisperserPosition_Disperser3,DisperserPosition_Inbetween</Enumeration>
-<Enumeration>Status_Homing,Status_Moving,Status_Stationary,Status_NotInPosition</Enumeration>
-<Enumeration>Error_None,Error_Busy,Error_NotInitialized,Error_MoveTimeout</Enumeration>
-<Enumeration>Port_Nasmyth1,Port_Nasmyth2</Enumeration>
-<SALEvent>
+<SALEventSet xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://lsst-sal.tuc.noao.edu/schema/SALEventSet.xsd">
+  <Enumeration>FilterPosition_Filter0,FilterPosition_Filter1,FilterPosition_Filter2,FilterPosition_Filter3,FilterPosition_Inbetween</Enumeration>
+  <Enumeration>DisperserPosition_Disperser0,DisperserPosition_Disperser1,DisperserPosition_Disperser2,DisperserPosition_Disperser3,DisperserPosition_Inbetween</Enumeration>
+  <Enumeration>Status_Homing,Status_Moving,Status_Stationary,Status_NotInPosition</Enumeration>
+  <Enumeration>Error_None,Error_Busy,Error_NotInitialized,Error_MoveTimeout</Enumeration>
+  <Enumeration>Port_Nasmyth1,Port_Nasmyth2</Enumeration>
+  <SALEvent>
     <Subsystem>ATSpectrograph</Subsystem>
     <Version>3.7.2</Version>
-    <Author></Author>
+    <Author/>
     <EFDB_Topic>ATSpectrograph_logevent_detailedState</EFDB_Topic>
     <Alias>detailedState</Alias>
     <Explanation>http://sal.lsst.org</Explanation>
     <item>
-        <EFDB_Name>detailedState</EFDB_Name>
-        <Description>The substate of the CSC.</Description>
-        <IDL_Type>long</IDL_Type>
-        <Units>unitless</Units>
-        <Count>1</Count>
+      <EFDB_Name>detailedState</EFDB_Name>
+      <Description>The substate of the CSC.</Description>
+      <IDL_Type>long</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
     </item>
-</SALEvent>
-<SALEvent>
+  </SALEvent>
+  <SALEvent>
     <Subsystem>ATSpectrograph</Subsystem>
     <Version>3.7.2</Version>
-    <Author></Author>
+    <Author/>
     <EFDB_Topic>ATSpectrograph_logevent_internalCommand</EFDB_Topic>
     <Alias>internalCommand</Alias>
     <Explanation>http://sal.lsst.org</Explanation>
     <item>
-        <EFDB_Name>commandObject</EFDB_Name>
-        <Description>The internal command that occurred.</Description>
-        <IDL_Type>byte</IDL_Type>
-        <Units>unitless</Units>
-        <Count>950</Count>
+      <EFDB_Name>commandObject</EFDB_Name>
+      <Description>The internal command that occurred.</Description>
+      <IDL_Type>byte</IDL_Type>
+      <Units>unitless</Units>
+      <Count>950</Count>
     </item>
-</SALEvent>
-<SALEvent>
+  </SALEvent>
+  <SALEvent>
     <Subsystem>ATSpectrograph</Subsystem>
     <Version>3.7.2</Version>
-    <Author></Author>
+    <Author/>
     <EFDB_Topic>ATSpectrograph_logevent_loopTimeOutOfRange</EFDB_Topic>
     <Alias>loopTimeOutOfRange</Alias>
     <Explanation>http://sal.lsst.org</Explanation>
     <item>
-        <EFDB_Name>loopTimeOutOfRange</EFDB_Name>
-        <Description>Loop time is out of range.</Description>
-        <IDL_Type>boolean</IDL_Type>
-        <Units>unitless</Units>
-        <Count>1</Count>
+      <EFDB_Name>loopTimeOutOfRange</EFDB_Name>
+      <Description>Loop time is out of range.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
     </item>
-</SALEvent>
-<SALEvent>
+  </SALEvent>
+  <SALEvent>
     <Subsystem>ATSpectrograph</Subsystem>
     <Version>3.7.2</Version>
-    <Author></Author>
+    <Author/>
     <EFDB_Topic>ATSpectrograph_logevent_rejectedCommand</EFDB_Topic>
     <Alias>rejectedCommand</Alias>
     <Explanation>http://sal.lsst.org</Explanation>
     <item>
-        <EFDB_Name>command</EFDB_Name>
-        <Description>The rejected command</Description>
-        <IDL_Type>string</IDL_Type>
-        <IDL_Size>1</IDL_Size>
-        <Units>unitless</Units>
-        <Count>1</Count>
+      <EFDB_Name>command</EFDB_Name>
+      <Description>The rejected command</Description>
+      <IDL_Type>string</IDL_Type>
+      <IDL_Size>1</IDL_Size>
+      <Units>unitless</Units>
+      <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>state</EFDB_Name>
-        <Description>The bad state.</Description>
-        <IDL_Type>string</IDL_Type>
-        <IDL_Size>1</IDL_Size>
-        <Units>unitless</Units>
-        <Count>1</Count>
+      <EFDB_Name>state</EFDB_Name>
+      <Description>The bad state.</Description>
+      <IDL_Type>string</IDL_Type>
+      <IDL_Size>1</IDL_Size>
+      <Units>unitless</Units>
+      <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>timestamp</EFDB_Name>
-        <Description>The time it was bad.</Description>
-        <IDL_Type>double</IDL_Type>
-        <Units>unitless</Units>
-        <Count>1</Count>
+      <EFDB_Name>timestamp</EFDB_Name>
+      <Description>The time it was bad.</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
     </item>
-</SALEvent>
-<SALEvent>
+  </SALEvent>
+  <SALEvent>
     <Subsystem>ATSpectrograph</Subsystem>
     <Version>3.7.2</Version>
-    <Author></Author>
+    <Author/>
     <EFDB_Topic>ATSpectrograph_logevent_timeout</EFDB_Topic>
     <Alias>timeout</Alias>
     <Explanation>http://sal.lsst.org</Explanation>
     <item>
-        <EFDB_Name>timeout</EFDB_Name>
-        <Description>Does time really exist? Or is it a product of society?</Description>
-        <IDL_Type>boolean</IDL_Type>
-        <Units>unitless</Units>
-        <Count>1</Count>
+      <EFDB_Name>timeout</EFDB_Name>
+      <Description>Does time really exist? Or is it a product of society?</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
     </item>
-</SALEvent>
-<SALEvent>
+  </SALEvent>
+  <SALEvent>
     <Subsystem>ATSpectrograph</Subsystem>
     <Version>3.7.2</Version>
-    <Author></Author>
+    <Author/>
     <EFDB_Topic>ATSpectrograph_logevent_filterInPosition</EFDB_Topic>
     <Alias>filterInPosition</Alias>
     <Explanation>http://sal.lsst.org</Explanation>
     <item>
-        <EFDB_Name>inPosition</EFDB_Name>
-        <Description>Is the filter in position?</Description>
-        <IDL_Type>boolean</IDL_Type>
-        <Units>unitless</Units>
-        <Count>1</Count>
+      <EFDB_Name>inPosition</EFDB_Name>
+      <Description>Is the filter in position?</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
     </item>
-</SALEvent>
-<SALEvent>
+  </SALEvent>
+  <SALEvent>
     <Subsystem>ATSpectrograph</Subsystem>
     <Version>3.7.2</Version>
-    <Author></Author>
+    <Author/>
     <EFDB_Topic>ATSpectrograph_logevent_reportedFilterPosition</EFDB_Topic>
     <Alias>reportedFilterPosition</Alias>
     <Explanation>http://sal.lsst.org</Explanation>
-            <item>
-                <EFDB_Name>position</EFDB_Name>
-                <Description>The reported position.</Description>
-                <!-- Enumeration: FilterPosition -->
-                <IDL_Type>long</IDL_Type>
-                <Units>unitless</Units>
-                <Count>1</Count>
-            </item>
-            <item>
-                <EFDB_Name>name</EFDB_Name>
-                <Description>Name of the filter.</Description>
-                <IDL_Type>string</IDL_Type>
-                <IDL_Size>256</IDL_Size>
-                <Units>unitless</Units>
-                <Count>1</Count>
-            </item>
-            <item>
-                <EFDB_Name>centralWavelength</EFDB_Name>
-                <Description>Wavelength for which optical system will be optimized in units of nm.
+    <item>
+      <EFDB_Name>position</EFDB_Name>
+      <Description>The reported position.</Description>
+      <!-- Enumeration: FilterPosition -->
+      <IDL_Type>long</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>name</EFDB_Name>
+      <Description>Name of the filter.</Description>
+      <IDL_Type>string</IDL_Type>
+      <IDL_Size>256</IDL_Size>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>centralWavelength</EFDB_Name>
+      <Description>Wavelength for which optical system will be optimized in units of nm.
                     Approximations are sufficient as the focus dependence on wavelength is weak.</Description>
-                <IDL_Type>float</IDL_Type>
-                <Units>nm</Units>
-                <Count>1</Count>
-            </item>
-            <item>
-                <EFDB_Name>focusOffset</EFDB_Name>
-                <Description>Focus offset to be applied on the secondary mirror in units of mm, relative to no glass
+      <IDL_Type>float</IDL_Type>
+      <Units>nm</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>focusOffset</EFDB_Name>
+      <Description>Focus offset to be applied on the secondary mirror in units of mm, relative to no glass
                     being installed. Positive values push the secondary down and increase the back focal distance,
                     therefore adding glass thickness will result in positive focus offsets.</Description>
-                <IDL_Type>float</IDL_Type>
-                <Units>mm</Units>
-                <Count>1</Count>
-            </item>
-            <item>
-                <EFDB_Name>pointingOffsets</EFDB_Name>
-                <Description>Pointing offset to be applied to the boresight in units of arcseconds, relative
+      <IDL_Type>float</IDL_Type>
+      <Units>mm</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>pointingOffsets</EFDB_Name>
+      <Description>Pointing offset to be applied to the boresight in units of arcseconds, relative
                     to no glass being installed. Relative to the center of the detector,positive X-values
                     result in moving along rows, to higher pixel values </Description>
-                <IDL_Type>float</IDL_Type>
-                <Units>arcsec</Units>
-                <Count>2</Count>
-            </item>
-</SALEvent>
-<SALEvent>
+      <IDL_Type>float</IDL_Type>
+      <Units>arcsec</Units>
+      <Count>2</Count>
+    </item>
+  </SALEvent>
+  <SALEvent>
     <Subsystem>ATSpectrograph</Subsystem>
     <Version>3.7.2</Version>
-    <Author></Author>
+    <Author/>
     <EFDB_Topic>ATSpectrograph_logevent_reportedDisperserPosition</EFDB_Topic>
     <Alias>reportedDisperserPosition</Alias>
     <Explanation>http://sal.lsst.org</Explanation>
-            <item>
-                <EFDB_Name>position</EFDB_Name>
-                <Description>The reported grating/disperser position.</Description>
-                <!-- Enumeration: DisperserPosition -->
-                <IDL_Type>long</IDL_Type>
-                <Units>unitless</Units>
-                <Count>1</Count>
-            </item>
-            <item>
-                <EFDB_Name>name</EFDB_Name>
-                <Description>Name of the grating/disperser.</Description>
-                <IDL_Type>string</IDL_Type>
-                <IDL_Size>256</IDL_Size>
-                <Units>unitless</Units>
-                <Count>1</Count>
-            </item>
-            <item>
-                <EFDB_Name>focusOffset</EFDB_Name>
-                <Description>Focus offset to be applied on the secondary mirror in units of mm, relative to no glass
+    <item>
+      <EFDB_Name>position</EFDB_Name>
+      <Description>The reported grating/disperser position.</Description>
+      <!-- Enumeration: DisperserPosition -->
+      <IDL_Type>long</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>name</EFDB_Name>
+      <Description>Name of the grating/disperser.</Description>
+      <IDL_Type>string</IDL_Type>
+      <IDL_Size>256</IDL_Size>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>focusOffset</EFDB_Name>
+      <Description>Focus offset to be applied on the secondary mirror in units of mm, relative to no glass
                     being installed. Positive values push the secondary down and increase the back focal distance,
                     therefore adding glass thickness will result in positive focus offsets.</Description>
-                <IDL_Type>float</IDL_Type>
-                <Units>mm</Units>
-                <Count>1</Count>
-            </item>
-            <item>
-                <EFDB_Name>pointingOffsets</EFDB_Name>
-                <Description>Pointing offset to be applied to the boresight in units of arcseconds, relative
+      <IDL_Type>float</IDL_Type>
+      <Units>mm</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>pointingOffsets</EFDB_Name>
+      <Description>Pointing offset to be applied to the boresight in units of arcseconds, relative
                     to no glass being installed. Relative to the center of the detector,positive X-values
                     result in moving along rows, to higher pixel values </Description>
-                <IDL_Type>float</IDL_Type>
-                <Units>arcsec</Units>
-                <Count>2</Count>
-            </item>
-</SALEvent>
-<SALEvent>
+      <IDL_Type>float</IDL_Type>
+      <Units>arcsec</Units>
+      <Count>2</Count>
+    </item>
+  </SALEvent>
+  <SALEvent>
     <Subsystem>ATSpectrograph</Subsystem>
     <Version>3.7.2</Version>
-    <Author></Author>
+    <Author/>
     <EFDB_Topic>ATSpectrograph_logevent_disperserInPosition</EFDB_Topic>
     <Alias>disperserInPosition</Alias>
     <Explanation>http://sal.lsst.org</Explanation>
     <item>
-        <EFDB_Name>inPosition</EFDB_Name>
-        <Description>Is the grating/disperser in position?</Description>
-        <IDL_Type>boolean</IDL_Type>
-        <Units>unitless</Units>
-        <Count>1</Count>
+      <EFDB_Name>inPosition</EFDB_Name>
+      <Description>Is the grating/disperser in position?</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
     </item>
-</SALEvent>
-<SALEvent>
+  </SALEvent>
+  <SALEvent>
     <Subsystem>ATSpectrograph</Subsystem>
     <Version>3.7.2</Version>
-    <Author></Author>
+    <Author/>
     <EFDB_Topic>ATSpectrograph_logevent_linearStageInPosition</EFDB_Topic>
     <Alias>linearStageInPosition</Alias>
     <Explanation>http://sal.lsst.org</Explanation>
     <item>
-        <EFDB_Name>inPosition</EFDB_Name>
-        <Description>Is the linear stage in position?</Description>
-        <IDL_Type>boolean</IDL_Type>
-        <Units>unitless</Units>
-        <Count>1</Count>
+      <EFDB_Name>inPosition</EFDB_Name>
+      <Description>Is the linear stage in position?</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
     </item>
-</SALEvent>
-<SALEvent>
+  </SALEvent>
+  <SALEvent>
     <Subsystem>ATSpectrograph</Subsystem>
     <Version>3.7.2</Version>
-    <Author></Author>
+    <Author/>
     <EFDB_Topic>ATSpectrograph_logevent_reportedLinearStagePosition</EFDB_Topic>
     <Alias>reportedLinearStagePosition</Alias>
     <Explanation>http://sal.lsst.org</Explanation>
-            <item>
-                <EFDB_Name>position</EFDB_Name>
-                <Description>The reported linear stage position.</Description>
-                <IDL_Type>float</IDL_Type>
-                <Units>mm</Units>
-                <Count>1</Count>
-            </item>
-</SALEvent>
-<SALEvent>
+    <item>
+      <EFDB_Name>position</EFDB_Name>
+      <Description>The reported linear stage position.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>mm</Units>
+      <Count>1</Count>
+    </item>
+  </SALEvent>
+  <SALEvent>
     <Subsystem>ATSpectrograph</Subsystem>
     <Version>3.7.2</Version>
-    <Author></Author>
+    <Author/>
     <EFDB_Topic>ATSpectrograph_logevent_lsState</EFDB_Topic>
     <Alias>lsState</Alias>
     <Explanation>http://sal.lsst.org</Explanation>
-            <item>
-                <EFDB_Name>state</EFDB_Name>
-                <Description>The state of the linear stage.</Description>
-                <!-- Enumeration: LsState -->
-                <IDL_Type>long</IDL_Type>
-                <Units>unitless</Units>
-                <Count>1</Count>
-            </item>
-</SALEvent>
-<SALEvent>
+    <item>
+      <EFDB_Name>state</EFDB_Name>
+      <Description>The state of the linear stage.</Description>
+      <!-- Enumeration: LsState -->
+      <IDL_Type>long</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+  </SALEvent>
+  <SALEvent>
     <Subsystem>ATSpectrograph</Subsystem>
     <Version>3.7.2</Version>
-    <Author></Author>
+    <Author/>
     <EFDB_Topic>ATSpectrograph_logevent_fwState</EFDB_Topic>
     <Alias>fwState</Alias>
     <Explanation>http://sal.lsst.org</Explanation>
-            <item>
-                <EFDB_Name>state</EFDB_Name>
-                <Description>The state of the filter wheel.</Description>
-                <!-- Enumeration: FwState -->
-                <IDL_Type>long</IDL_Type>
-                <Units>unitless</Units>
-                <Count>1</Count>
-            </item>
-</SALEvent>
-<SALEvent>
+    <item>
+      <EFDB_Name>state</EFDB_Name>
+      <Description>The state of the filter wheel.</Description>
+      <!-- Enumeration: FwState -->
+      <IDL_Type>long</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+  </SALEvent>
+  <SALEvent>
     <Subsystem>ATSpectrograph</Subsystem>
     <Version>3.7.2</Version>
-    <Author></Author>
+    <Author/>
     <EFDB_Topic>ATSpectrograph_logevent_gwState</EFDB_Topic>
     <Alias>gwState</Alias>
     <Explanation>http://sal.lsst.org</Explanation>
-            <item>
-                <EFDB_Name>state</EFDB_Name>
-                <Description>The state of the disperser.</Description>
-                <!-- Enumeration: GwState -->
-                <IDL_Type>long</IDL_Type>
-                <Units>unitless</Units>
-                <Count>1</Count>
-            </item>
-</SALEvent>
-<SALEvent>
+    <item>
+      <EFDB_Name>state</EFDB_Name>
+      <Description>The state of the disperser.</Description>
+      <!-- Enumeration: GwState -->
+      <IDL_Type>long</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+  </SALEvent>
+  <SALEvent>
     <Subsystem>ATSpectrograph</Subsystem>
     <Version>3.7.2</Version>
-    <Author></Author>
+    <Author/>
     <EFDB_Topic>ATSpectrograph_logevent_settingsAppliedValues</EFDB_Topic>
     <Alias>settingsAppliedValues</Alias>
     <Explanation>http://sal.lsst.org</Explanation>
-            <item>
-                <EFDB_Name>host</EFDB_Name>
-                <Description>IP of the controller in the format XXX.XXX.XXX.XXX</Description>
-                <IDL_Type>string</IDL_Type>
-                <IDL_Size>16</IDL_Size>
-                <Units>unitless</Units>
-                <Count>1</Count>
-            </item>
-            <item>
-                <EFDB_Name>port</EFDB_Name>
-                <Description>Port to connect to controller.</Description>
-                <IDL_Type>long</IDL_Type>
-                <Units>unitless</Units>
-                <Count>1</Count>
-            </item>
-            <item>
-                <EFDB_Name>linearStageMinPos</EFDB_Name>
-                <Description>The minimum linear stage position.</Description>
-                <IDL_Type>float</IDL_Type>
-                <Units>mm</Units>
-                <Count>1</Count>
-            </item>
-            <item>
-                <EFDB_Name>linearStageMaxPos</EFDB_Name>
-                <Description>The maximum linear stage position.</Description>
-                <IDL_Type>float</IDL_Type>
-                <Units>mm</Units>
-                <Count>1</Count>
-            </item>
-            <item>
-                <EFDB_Name>linearStageSpeed</EFDB_Name>
-                <Description>The speed of the linear stage.</Description>
-                <IDL_Type>float</IDL_Type>
-                <Units>mm/s</Units>
-                <Count>1</Count>
-            </item>
-            <item>
-                <EFDB_Name>filterNames</EFDB_Name>
-                <Description>Comma separated list of filter names.</Description>
-                <IDL_Type>string</IDL_Type>
-                <IDL_Size>256</IDL_Size>
-                <Units>unitless</Units>
-                <Count>1</Count>
-            </item>
-            <item>
-                <EFDB_Name>filterCentralWavelengths</EFDB_Name>
-                <Description>Comma separated list of filter central wavelengths.</Description>
-                <IDL_Type>string</IDL_Type>
-                <IDL_Size>256</IDL_Size>
-                <Units>unitless</Units>
-                <Count>1</Count>
-            </item>
-            <item>
-                <EFDB_Name>filterFocusOffsets</EFDB_Name>
-                <Description>Comma separated list of filter focus offsets to be applied to the hexapod [in mm].
+    <item>
+      <EFDB_Name>host</EFDB_Name>
+      <Description>IP of the controller in the format XXX.XXX.XXX.XXX</Description>
+      <IDL_Type>string</IDL_Type>
+      <IDL_Size>16</IDL_Size>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>port</EFDB_Name>
+      <Description>Port to connect to controller.</Description>
+      <IDL_Type>long</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>linearStageMinPos</EFDB_Name>
+      <Description>The minimum linear stage position.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>mm</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>linearStageMaxPos</EFDB_Name>
+      <Description>The maximum linear stage position.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>mm</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>linearStageSpeed</EFDB_Name>
+      <Description>The speed of the linear stage.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>mm/s</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>filterNames</EFDB_Name>
+      <Description>Comma separated list of filter names.</Description>
+      <IDL_Type>string</IDL_Type>
+      <IDL_Size>256</IDL_Size>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>filterCentralWavelengths</EFDB_Name>
+      <Description>Comma separated list of filter central wavelengths.</Description>
+      <IDL_Type>string</IDL_Type>
+      <IDL_Size>256</IDL_Size>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>filterFocusOffsets</EFDB_Name>
+      <Description>Comma separated list of filter focus offsets to be applied to the hexapod [in mm].
                 </Description>
-                <IDL_Type>string</IDL_Type>
-                <IDL_Size>256</IDL_Size>
-                <Units>unitless</Units>
-                <Count>1</Count>
-            </item>
-            <item>
-                <EFDB_Name>filterPointingOffsets</EFDB_Name>
-                <Description>Comma separated list of [X,Y] filter pointing offsets to be applied to boresight [in arcsec].
+      <IDL_Type>string</IDL_Type>
+      <IDL_Size>256</IDL_Size>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>filterPointingOffsets</EFDB_Name>
+      <Description>Comma separated list of [X,Y] filter pointing offsets to be applied to boresight [in arcsec].
                 </Description>
-                <IDL_Type>string</IDL_Type>
-                <IDL_Size>256</IDL_Size>
-                <Units>unitless</Units>
-                <Count>1</Count>
-            </item>
-            <item>
-                <EFDB_Name>gratingNames</EFDB_Name>
-                <Description>Comma separated list of disperser/grating names.</Description>
-                <IDL_Type>string</IDL_Type>
-                <IDL_Size>256</IDL_Size>
-                <Units>unitless</Units>
-                <Count>1</Count>
-            </item>
-            <item>
-                <EFDB_Name>gratingFocusOffsets</EFDB_Name>
-                <Description>Comma separated list of disperser/grating focus offsets to be applied to the hexapod [in mm].
+      <IDL_Type>string</IDL_Type>
+      <IDL_Size>256</IDL_Size>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>gratingNames</EFDB_Name>
+      <Description>Comma separated list of disperser/grating names.</Description>
+      <IDL_Type>string</IDL_Type>
+      <IDL_Size>256</IDL_Size>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>gratingFocusOffsets</EFDB_Name>
+      <Description>Comma separated list of disperser/grating focus offsets to be applied to the hexapod [in mm].
                 </Description>
-                <IDL_Type>string</IDL_Type>
-                <IDL_Size>256</IDL_Size>
-                <Units>unitless</Units>
-                <Count>1</Count>
-            </item>
-                <item>
-                <EFDB_Name>gratingPointingOffsets</EFDB_Name>
-                <Description>Comma separated list of [X,Y] grating pointing offsets to be applied to boresight [in arcsec].
+      <IDL_Type>string</IDL_Type>
+      <IDL_Size>256</IDL_Size>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>gratingPointingOffsets</EFDB_Name>
+      <Description>Comma separated list of [X,Y] grating pointing offsets to be applied to boresight [in arcsec].
                 </Description>
-                <IDL_Type>string</IDL_Type>
-                <IDL_Size>256</IDL_Size>
-                <Units>unitless</Units>
-                <Count>1</Count>
-            </item>
-            <item>
-                <EFDB_Name>instrumentPort</EFDB_Name>
-                <Description>Port the instrument is mounted in.</Description>
-                <!-- Enumeration: InstrumentPort -->
-                <IDL_Type>long</IDL_Type>
-                <Units>unitless</Units>
-                <Count>1</Count>
-            </item>
-</SALEvent>
+      <IDL_Type>string</IDL_Type>
+      <IDL_Size>256</IDL_Size>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>instrumentPort</EFDB_Name>
+      <Description>Port the instrument is mounted in.</Description>
+      <!-- Enumeration: InstrumentPort -->
+      <IDL_Type>long</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+  </SALEvent>
 </SALEventSet>

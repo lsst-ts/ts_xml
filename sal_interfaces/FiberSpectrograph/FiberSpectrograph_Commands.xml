@@ -1,44 +1,44 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-stylesheet type="text/xsl" href="http://lsst-sal.tuc.noao.edu/schema/SALCommandSet.xsl"?>
 <SALCommandSet xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://lsst-sal.tuc.noao.edu/schema/SALCommandSet.xsd">
-    <SALCommand>
-        <Subsystem>FiberSpectrograph</Subsystem>
-        <EFDB_Topic>FiberSpectrograph_command_expose</EFDB_Topic>
-        <Description>Capture an image from the spectrograph.</Description>
-        <item>
-            <EFDB_Name>duration</EFDB_Name>
-            <Description>The duration of the exposure to take.</Description>
-            <IDL_Type>float</IDL_Type>
-            <Units>second</Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>numExposures</EFDB_Name>
-            <Description>Number of consecutive exposures to take.</Description>
-            <IDL_Type>long</IDL_Type>
-            <Units>unitless</Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>type</EFDB_Name>
-            <Description>Type of image; used for the FITS IMG_TYPE header value.</Description>
-            <IDL_Type>string</IDL_Type>
-            <IDL_Size>256</IDL_Size>
-            <Units>unitless</Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>source</EFDB_Name>
-            <Description>Light source being measured.</Description>
-            <IDL_Type>string</IDL_Type>
-            <IDL_Size>256</IDL_Size>
-            <Units>unitless</Units>
-            <Count>1</Count>
-        </item>
-    </SALCommand>
-    <SALCommand>
-        <Subsystem>FiberSpectrograph</Subsystem>
-        <EFDB_Topic>FiberSpectrograph_command_cancelExposure</EFDB_Topic>
-        <Description>Cancel an active exposure from the spectrograph. If there is no active exposure, this command does nothing.</Description>
-    </SALCommand>
+  <SALCommand>
+    <Subsystem>FiberSpectrograph</Subsystem>
+    <EFDB_Topic>FiberSpectrograph_command_expose</EFDB_Topic>
+    <Description>Capture an image from the spectrograph.</Description>
+    <item>
+      <EFDB_Name>duration</EFDB_Name>
+      <Description>The duration of the exposure to take.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>second</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>numExposures</EFDB_Name>
+      <Description>Number of consecutive exposures to take.</Description>
+      <IDL_Type>long</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>type</EFDB_Name>
+      <Description>Type of image; used for the FITS IMG_TYPE header value.</Description>
+      <IDL_Type>string</IDL_Type>
+      <IDL_Size>256</IDL_Size>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>source</EFDB_Name>
+      <Description>Light source being measured.</Description>
+      <IDL_Type>string</IDL_Type>
+      <IDL_Size>256</IDL_Size>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+  </SALCommand>
+  <SALCommand>
+    <Subsystem>FiberSpectrograph</Subsystem>
+    <EFDB_Topic>FiberSpectrograph_command_cancelExposure</EFDB_Topic>
+    <Description>Cancel an active exposure from the spectrograph. If there is no active exposure, this command does nothing.</Description>
+  </SALCommand>
 </SALCommandSet>

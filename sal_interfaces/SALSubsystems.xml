@@ -1,1135 +1,1076 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-stylesheet type="text/xsl" href="http://lsst-sal.tuc.noao.edu/schema/SALSubsystemSet.xsl"?>
-<SALSubsystemSet xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:noNamespaceSchemaLocation="http://lsst-sal.tuc.noao.edu/schema/SALSubsystemSet.xsd">
-<SALSubsystem>
-  <Name>AdamSensors</Name>
-  <Description>CSC ADAM 6024 device connected to up to 6 transducer type sensors</Description>
-  <IndexEnumeration>no</IndexEnumeration>
-  <Generics>yes</Generics>
-  <ActiveDevelopers>Colin Winslow</ActiveDevelopers>
-  <Github>https://github.com/lsst-ts/ts_adamSensors</Github>
-  <JenkinsTestResults>Not Available</JenkinsTestResults>
-  <RubinObsContact>Patrick Ingraham</RubinObsContact>
-  <CSCDocs></CSCDocs>
-  <ProductOwner>Patrick Ingraham</ProductOwner>
-  <RelatedDocuments></RelatedDocuments>
-  <SoftwareLanguage>Python</SoftwareLanguage>
-  <RuntimeLanguages>IDL</RuntimeLanguages>
-  <VendorContact>Advantech</VendorContact>
-  <Simulator>Internal to CSC</Simulator>
-  <Configuration>https://github.com/lsst-ts/ts_config_eas</Configuration>
-</SALSubsystem>
-
-<SALSubsystem>
-  <Name>ATSpectrograph</Name>
-  <Description>CSC for the Auxiliary Telescope Spectrograph.</Description>
-  <IndexEnumeration>no</IndexEnumeration>
-  <Generics>yes</Generics>
-  <ActiveDevelopers>Tiago Ribeiro</ActiveDevelopers>
-  <Github>https://github.com/lsst-ts/ts_atspec</Github>
-  <JenkinsTestResults>https://tssw-ci.lsst.org/job/LSST_Telescope-and-Site/job/ts_atspec/</JenkinsTestResults>
-  <RubinObsContact>Patrick Ingriham</RubinObsContact>
-  <CSCDocs></CSCDocs>
-  <ProductOwner>Patrick Ingraham</ProductOwner>
-  <RelatedDocuments>https://ls.st/Document-30997, https://ls.st/LTS-487, https://ls.st/LTS-488</RelatedDocuments>
-  <SoftwareLanguage>Python</SoftwareLanguage>
-  <RuntimeLanguages>IDL</RuntimeLanguages>
-  <VendorContact>Astronomical Consulting and Equipment</VendorContact>
-  <Simulator>Internal to CSC</Simulator>
-  <Configuration>https://github.com/lsst-ts/ts_config_latiss</Configuration>
-</SALSubsystem>
-
-<SALSubsystem>
-  <Name>Authorize</Name>
-  <Description>Service that supports requests to change the authorization list for a CSC.</Description>
-  <IndexEnumeration>no</IndexEnumeration>
-  <Generics>command_setAuthList, command_setLogLevel, logevent_authList, logevent_heartbeat, logevent_logLevel, logevent_logMessage</Generics>
-  <ActiveDevelopers>Russell Owen</ActiveDevelopers>
-  <Github>https://github.com/lsst-ts/ts_authorize</Github>
-  <JenkinsTestResults>Not Available</JenkinsTestResults>
-  <RubinObsContact>Russell Owen</RubinObsContact>
-  <CSCDocs>https://ts-authorize.lsst.io</CSCDocs>
-  <ProductOwner>Tiago Ribeiro</ProductOwner>
-  <RelatedDocuments></RelatedDocuments>
-  <SoftwareLanguage>Python</SoftwareLanguage>
-  <RuntimeLanguages>IDL</RuntimeLanguages>
-  <VendorContact>Not Applicable</VendorContact>
-  <Simulator>Not Required</Simulator>
-  <Configuration>Not Configurable</Configuration>
-</SALSubsystem>
-
-<SALSubsystem>
-  <Name>LinearStage</Name>
-  <Description>CSC for the Linear Stage</Description>
-  <IndexEnumeration>first,second</IndexEnumeration>
-  <Generics>yes</Generics>
-  <ActiveDevelopers>Eric Coughlin</ActiveDevelopers>
-  <Github>https://github.com/lsst-ts/ts_LinearStage</Github>
-  <JenkinsTestResults>Not Available</JenkinsTestResults>
-  <RubinObsContact>Patrick Ingraham</RubinObsContact>
-  <CSCDocs></CSCDocs>
-  <ProductOwner>Patrick Ingraham</ProductOwner>
-  <RelatedDocuments>https://www.zaber.com/manuals/A-LST</RelatedDocuments>
-  <SoftwareLanguage>Python</SoftwareLanguage>
-  <RuntimeLanguages>IDL</RuntimeLanguages>
-  <VendorContact>Zaber</VendorContact>
-  <Simulator>Not Provided</Simulator>
-  <Configuration>Not Configurable</Configuration>
-</SALSubsystem>
-
-<SALSubsystem>
-  <Name>MTMount</Name>
-  <Description>CSC for the Main Telescope Mount</Description>
-  <IndexEnumeration>no</IndexEnumeration>
-  <Generics>yes</Generics>
-  <ActiveDevelopers>Russell Owen</ActiveDevelopers>
-  <Github>https://github.com/lsst-ts/ts_MTMount</Github>
-  <JenkinsTestResults>Not Available</JenkinsTestResults>
-  <RubinObsContact>Shawn Calahan</RubinObsContact>
-  <CSCDocs>https://ts-mtmount.lsst.io</CSCDocs>
-  <ProductOwner>Sandrine Thomas</ProductOwner>
-  <RelatedDocuments>https://ls.st/LTS-103, https://ls.st/LTS-150, https://ls.st/LTS-159</RelatedDocuments>
-  <SoftwareLanguage>Labview</SoftwareLanguage>
-  <RuntimeLanguages>IDL</RuntimeLanguages>
-  <VendorContact>Tekniker</VendorContact>
-  <Simulator>https://github.com/lsst-ts/ts_tma</Simulator>
-  <Configuration>Not Configurable</Configuration>
-</SALSubsystem>
-
-<SALSubsystem>
-  <Name>NewMTMount</Name>
-  <Description>Temporary version of MTMount for use with salobj. Once the Tekniker code stops trying to handle commands and events we can get rid of this and use the MTMount (after updating the metadata). Note that Tekniker low-level code will probably continue to output telemetry.</Description>
-  <IndexEnumeration>no</IndexEnumeration>
-  <Generics>yes</Generics>
-  <ActiveDevelopers>Russell Owen</ActiveDevelopers>
-  <Github>https://github.com/lsst-ts/ts_mtmount</Github>
-  <JenkinsTestResults>Not Available</JenkinsTestResults>
-  <RubinObsContact>Shawn Calahan</RubinObsContact>
-  <CSCDocs>https://ts-mtmount.lsst.io/</CSCDocs>
-  <ProductOwner>Sandrine Thomas</ProductOwner>
-  <RelatedDocuments>https://ls.st/LTS-103, https://ls.st/LTS-150, https://ls.st/LTS-159</RelatedDocuments>
-  <SoftwareLanguage>Python</SoftwareLanguage>
-  <RuntimeLanguages>IDL</RuntimeLanguages>
-  <VendorContact>Tekniker</VendorContact>
-  <Simulator>Internal to CSC</Simulator>
-  <Configuration>https://github.com/lsst-ts/ts_config_mttcs</Configuration>
-</SALSubsystem>
-
-<SALSubsystem>
-  <Name>CCArchiver</Name>
-  <Description>ComCam Image Archiver</Description>
-  <IndexEnumeration>no</IndexEnumeration>
-  <Generics>yes</Generics>
-  <ActiveDevelopers>Stephen R. Pietrowicz</ActiveDevelopers>
-  <Github>https://github.com/lsst-dm/dm_CCArchiver</Github>
-  <JenkinsTestResults>Not Available</JenkinsTestResults>
-  <RubinObsContact>Michael Reuter</RubinObsContact>
-  <CSCDocs></CSCDocs>
-  <ProductOwner>Michael Reuter</ProductOwner>
-  <RelatedDocuments></RelatedDocuments>
-  <SoftwareLanguage>Python</SoftwareLanguage>
-  <RuntimeLanguages>IDL</RuntimeLanguages>
-  <VendorContact>Not Applicable</VendorContact>
-  <Simulator>Not Required</Simulator>
-  <Configuration>Not Configurable</Configuration>
-</SALSubsystem>
-
-<SALSubsystem>
-  <Name>ATArchiver</Name>
-  <Description>LATISS Image Archiver</Description>
-  <IndexEnumeration>no</IndexEnumeration>
-  <Generics>yes</Generics>
-  <ActiveDevelopers>Stephen R. Pietrowicz</ActiveDevelopers>
-  <Github>https://github.com/lsst-dm/dm_ATArchiver</Github>
-  <JenkinsTestResults>Not Available</JenkinsTestResults>
-  <RubinObsContact>Michael Reuter</RubinObsContact>
-  <CSCDocs></CSCDocs>
-  <ProductOwner>Michael Reuter</ProductOwner>
-  <RelatedDocuments></RelatedDocuments>
-  <SoftwareLanguage>Python</SoftwareLanguage>
-  <RuntimeLanguages>IDL</RuntimeLanguages>
-  <VendorContact>Not Applicable</VendorContact>
-  <Simulator>Not Required</Simulator>
-  <Configuration>Not Configurable</Configuration>
-</SALSubsystem>
-
-<SALSubsystem>
-  <Name>CCOODS</Name>
-  <Description>ComCam Observatory Operations Data Service</Description>
-  <IndexEnumeration>no</IndexEnumeration>
-  <Generics>yes</Generics>
-  <ActiveDevelopers>Stephen R. Pietrowicz</ActiveDevelopers>
-  <Github>https://github.com/lsst-dm/ctrl_oods</Github>
-  <JenkinsTestResults>Not Available</JenkinsTestResults>
-  <RubinObsContact>Michael Reuter</RubinObsContact>
-  <CSCDocs></CSCDocs>
-  <ProductOwner>Michael Reuter</ProductOwner>
-  <RelatedDocuments></RelatedDocuments>
-  <SoftwareLanguage>Python</SoftwareLanguage>
-  <RuntimeLanguages>IDL</RuntimeLanguages>
-  <VendorContact>Not Applicable</VendorContact>
-  <Simulator>Not Required</Simulator>
-  <Configuration>Not Configurable</Configuration>
-</SALSubsystem>
-
-<SALSubsystem>
-  <Name>ATOODS</Name>
-  <Description>LATISS Observatory Operations Data Service</Description>
-  <IndexEnumeration>no</IndexEnumeration>
-  <Generics>yes</Generics>
-  <ActiveDevelopers>Stephen R. Pietrowicz</ActiveDevelopers>
-  <Github>https://github.com/lsst-dm/ctrl_oods</Github>
-  <JenkinsTestResults>Not Available</JenkinsTestResults>
-  <RubinObsContact>Michael Reuter</RubinObsContact>
-  <CSCDocs></CSCDocs>
-  <ProductOwner>Michael Reuter</ProductOwner>
-  <RelatedDocuments></RelatedDocuments>
-  <SoftwareLanguage>Python</SoftwareLanguage>
-  <RuntimeLanguages>IDL</RuntimeLanguages>
-  <VendorContact>Not Applicable</VendorContact>
-  <Simulator>Not Required</Simulator>
-  <Configuration>Not Configurable</Configuration>
-</SALSubsystem>
-
-<SALSubsystem>
-  <Name>ATAOS</Name>
-  <Description>CSC for the Auxiliary Telescope Active Optics System</Description>
-  <IndexEnumeration>no</IndexEnumeration>
-  <Generics>yes</Generics>
-  <ActiveDevelopers>Tiago Ribeiro</ActiveDevelopers>
-  <Github>https://github.com/lsst-ts/ts_ataos</Github>
-  <JenkinsTestResults>https://tssw-ci.lsst.org/job/LSST_Telescope-and-Site/job/ts_ataos/</JenkinsTestResults>
-  <RubinObsContact>Patrick Ingraham</RubinObsContact>
-  <CSCDocs></CSCDocs>
-  <ProductOwner>Patrick Ingraham</ProductOwner>
-  <RelatedDocuments></RelatedDocuments>
-  <SoftwareLanguage>Python</SoftwareLanguage>
-  <RuntimeLanguages>IDL</RuntimeLanguages>
-  <VendorContact>NA</VendorContact>
-  <Simulator>Not Required</Simulator>
-  <Configuration>https://github.com/lsst-ts/ts_config_attcs</Configuration>
-</SALSubsystem>
-
-<SALSubsystem>
-  <Name>ATBuilding</Name>
-  <Description>CSC for the building housing the Auxiliary Telescope on Callibration Hill</Description>
-  <IndexEnumeration>no</IndexEnumeration>
-  <Generics>yes</Generics>
-  <ActiveDevelopers>Colin Winslow</ActiveDevelopers>
-  <Github>none yet</Github>
-  <JenkinsTestResults>Not Available</JenkinsTestResults>
-  <RubinObsContact>Patrick Ingraham</RubinObsContact>
-  <CSCDocs></CSCDocs>
-  <ProductOwner>Patrick Ingraham</ProductOwner>
-  <RelatedDocuments></RelatedDocuments>
-  <SoftwareLanguage></SoftwareLanguage>
-  <RuntimeLanguages>IDL</RuntimeLanguages>
-  <VendorContact>Not Applicable</VendorContact>
-  <Simulator>Not Provided</Simulator>
-  <Configuration>https://github.com/lsst-ts/ts_config_attcs</Configuration>
-</SALSubsystem>
-
-<SALSubsystem>
-  <Name>DIMM</Name>
-  <Description>CSC for the DIMM (Differential Image Motion Monitor) telescope</Description>
-  <IndexEnumeration>any</IndexEnumeration>
-  <Generics>yes</Generics>
-  <ActiveDevelopers>Tiago Ribiero</ActiveDevelopers>
-  <Github>https://github.com/lsst-ts/ts_dimm</Github>
-  <JenkinsTestResults>Not Available</JenkinsTestResults>
-  <RubinObsContact>Brian Stalder</RubinObsContact>
-  <CSCDocs></CSCDocs>
-  <ProductOwner>Brian Stalder</ProductOwner>
-  <RelatedDocuments>https://ls.st/LTS-566, https://ls.st/LTS-567</RelatedDocuments>
-  <SoftwareLanguage>Python for high level, Java for low level</SoftwareLanguage>
-  <RuntimeLanguages>IDL</RuntimeLanguages>
-  <VendorContact>ASTELCO</VendorContact>
-  <Simulator>Internal to CSC</Simulator>
-  <Configuration>https://github.com/lsst-ts/ts_config_ocs</Configuration>
-</SALSubsystem>
-
-<SALSubsystem>
-  <Name>ATDome</Name>
-  <Description>Control the Auxiliary Telelescope dome, including azimuth and shutter doors.</Description>
-  <IndexEnumeration>no</IndexEnumeration>
-  <Generics>yes</Generics>
-  <ActiveDevelopers>Russell Owen</ActiveDevelopers>
-  <Github>https://github.com/lsst-ts/ts_ATDome</Github>
-  <JenkinsTestResults>Not Available</JenkinsTestResults>
-  <RubinObsContact>Patrick Ingraham</RubinObsContact>
-  <CSCDocs>https://ts-atdome.lsst.io/</CSCDocs>
-  <ProductOwner>Patrick Ingraham</ProductOwner>
-  <RelatedDocuments>https://ls.st/Document-27878</RelatedDocuments>
-  <SoftwareLanguage>Python</SoftwareLanguage>
-  <RuntimeLanguages>IDL</RuntimeLanguages>
-  <VendorContact>The control system consists of an in house CSC that talks over TCP/IP to a low-level controller written by Astronomical Consulting Equipment.</VendorContact>
-  <Simulator>Internal to CSC</Simulator>
-  <Configuration>https://github.com/lsst-ts/ts_config_attcs</Configuration>
-</SALSubsystem>
-
-<SALSubsystem>
-  <Name>ATDomeTrajectory</Name>
-  <Description>Command the auxiliary telescope dome (ATDome) to follow the telescope.</Description>
-  <IndexEnumeration>no</IndexEnumeration>
-  <Generics>yes</Generics>
-  <ActiveDevelopers>Russell Owen</ActiveDevelopers>
-  <Github>https://github.com/lsst-ts/ts_ATDomeTrajectory</Github>
-  <JenkinsTestResults>https://tssw-ci.lsst.org/job/ATDomeTrajectory</JenkinsTestResults>
-  <RubinObsContact>Patrick Ingraham</RubinObsContact>
-  <CSCDocs>https://ts-atdometrajectory.lsst.io/</CSCDocs>
-  <ProductOwner>Patrick Ingraham</ProductOwner>
-  <RelatedDocuments></RelatedDocuments>
-  <SoftwareLanguage>Python</SoftwareLanguage>
-  <RuntimeLanguages>IDL</RuntimeLanguages>
-  <VendorContact>NA</VendorContact>
-  <Simulator>Not Required</Simulator>
-  <Configuration>https://github.com/lsst-ts/ts_config_attcs</Configuration>
-</SALSubsystem>
-
-<SALSubsystem>
-  <Name>ATMCS</Name>
-  <Description>The CSC for the Auxiliary Telescope Mount Control System</Description>
-  <IndexEnumeration>no</IndexEnumeration>
-  <Generics>yes</Generics>
-  <ActiveDevelopers>Rolando Cantarutti from CTIO</ActiveDevelopers>
-  <Github>Not yet available publicly</Github>
-  <JenkinsTestResults>Not Available</JenkinsTestResults>
-  <RubinObsContact>Patrick Ingraham</RubinObsContact>
-  <CSCDocs></CSCDocs>
-  <ProductOwner>Patrick Ingraham</ProductOwner>
-  <RelatedDocuments></RelatedDocuments>
-  <SoftwareLanguage>LabVIEW</SoftwareLanguage>
-  <RuntimeLanguages>IDL</RuntimeLanguages>
-  <VendorContact>CTIO</VendorContact>
-  <Simulator>https://github.com/lsst-ts/ts_ATMCSSimulator</Simulator>
-  <Configuration>Not Configurable</Configuration>
-</SALSubsystem>
-
-<SALSubsystem>
-  <Name>ATPneumatics</Name>
-  <Description>Controls the support system for the mirrors on the Auxtel</Description>
-  <IndexEnumeration>no</IndexEnumeration>
-  <Generics>yes</Generics>
-  <ActiveDevelopers>Rolando Cantaruti</ActiveDevelopers>
-  <Github>https://github.com/lsst-ts/ts_ATPneumaticsSimulator just the simulator not the final code</Github>
-  <JenkinsTestResults>Not Available</JenkinsTestResults>
-  <RubinObsContact>Patrick Ingraham</RubinObsContact>
-  <CSCDocs></CSCDocs>
-  <ProductOwner>Patrick Ingraham</ProductOwner>
-  <RelatedDocuments>https://ls.st/LTS-657</RelatedDocuments>
-  <SoftwareLanguage>LabVIEW, or maybe python?</SoftwareLanguage>
-  <RuntimeLanguages>IDL</RuntimeLanguages>
-  <VendorContact>CTIO</VendorContact>
-  <Simulator>https://github.com/lsst-ts/ts_ATPneumaticsSimulator</Simulator>
-  <Configuration>Not Configurable</Configuration>
-</SALSubsystem>
-
-<SALSubsystem>
-  <Name>ATHeaderService</Name>
-  <Description>HeaderService for AT</Description>
-  <IndexEnumeration>no</IndexEnumeration>
-  <Generics>yes</Generics>
-  <ActiveDevelopers>Felipe Menanteau</ActiveDevelopers>
-  <Github>https://github.com/lsst-dm/HeaderService</Github>
-  <JenkinsTestResults>Not Available</JenkinsTestResults>
-  <RubinObsContact>Michael Reuter</RubinObsContact>
-  <CSCDocs></CSCDocs>
-  <ProductOwner>Michael Reuter</ProductOwner>
-  <RelatedDocuments>https://ls.st/LSE-400</RelatedDocuments>
-  <SoftwareLanguage>Python</SoftwareLanguage>
-  <RuntimeLanguages>IDL,Java</RuntimeLanguages>
-  <VendorContact>Not Applicable</VendorContact>
-  <Simulator>Not Required</Simulator>
-  <Configuration>Not Configurable</Configuration>
-</SALSubsystem>
-
-<SALSubsystem>
-  <Name>CCHeaderService</Name>
-  <Description>HeaderService for ComCam</Description>
-  <IndexEnumeration>no</IndexEnumeration>
-  <Generics>yes</Generics>
-  <ActiveDevelopers>Felipe Menanteau</ActiveDevelopers>
-  <Github>https://github.com/lsst-dm/HeaderService</Github>
-  <JenkinsTestResults>Not Available</JenkinsTestResults>
-  <RubinObsContact>Michael Reuter</RubinObsContact>
-  <CSCDocs></CSCDocs>
-  <ProductOwner>Michael Reuter</ProductOwner>
-  <RelatedDocuments>https://ls.st/LSE-400</RelatedDocuments>
-  <SoftwareLanguage>Python</SoftwareLanguage>
-  <RuntimeLanguages>IDL,Java</RuntimeLanguages>
-  <VendorContact>Not Applicable</VendorContact>
-  <Simulator>Not Required</Simulator>
-  <Configuration>Not Configurable</Configuration>
-</SALSubsystem>
-
-<SALSubsystem>
-  <Name>MTHeaderService</Name>
-  <Description>HeaderService for MT</Description>
-  <IndexEnumeration>no</IndexEnumeration>
-  <Generics>yes</Generics>
-  <ActiveDevelopers>Felipe Menanteau</ActiveDevelopers>
-  <Github>https://github.com/lsst-dm/HeaderService</Github>
-  <JenkinsTestResults>Not Available</JenkinsTestResults>
-  <RubinObsContact>Michael Reuter</RubinObsContact>
-  <CSCDocs></CSCDocs>
-  <ProductOwner>Michael Reuter</ProductOwner>
-  <RelatedDocuments>https://ls.st/LSE-400</RelatedDocuments>
-  <SoftwareLanguage>Python</SoftwareLanguage>
-  <RuntimeLanguages>IDL,Java</RuntimeLanguages>
-  <VendorContact>Not Applicable</VendorContact>
-  <Simulator>Not Required</Simulator>
-  <Configuration>Not Configurable</Configuration>
-</SALSubsystem>
-
-<SALSubsystem>
-  <Name>ATHexapod</Name>
-  <Description>Controls the Hexpod that positions the secondary mirror of the Aux tel</Description>
-  <IndexEnumeration>no</IndexEnumeration>
-  <Generics>yes</Generics>
-  <ActiveDevelopers>Eric Coughlin</ActiveDevelopers>
-  <Github>https://github.com/lsst-ts/ts_salobjATHexapod</Github>
-  <JenkinsTestResults>https://tssw-ci.lsst.org/job/LSST_Telescope-and-Site/job/ts_athexapod/</JenkinsTestResults>
-  <RubinObsContact>Patrick Ingraham</RubinObsContact>
-  <CSCDocs></CSCDocs>
-  <ProductOwner>Patrick Ingraham</ProductOwner>
-  <RelatedDocuments></RelatedDocuments>
-  <SoftwareLanguage>Python</SoftwareLanguage>
-  <RuntimeLanguages>IDL</RuntimeLanguages>
-  <VendorContact>Physik Instrumente (PI)</VendorContact>
-  <Simulator>https://repo-nexus.lsst.org/nexus/#browse/browse:ts-dockerhub:v2%2Fhexapod_simulator%2Fmanifests (private)</Simulator>
-  <Configuration>https://github.com/lsst-ts/ts_config_attcs</Configuration>
-</SALSubsystem>
-
-<SALSubsystem>
-  <Name>ATMonochromator</Name>
-  <Description>Controls the monochromator for the AT calibration system</Description>
-  <IndexEnumeration>no</IndexEnumeration>
-  <Generics>yes</Generics>
-  <ActiveDevelopers>Tiago Ribeiro</ActiveDevelopers>
-  <Github>https://github.com/lsst-ts/ts_atmonochromator</Github>
-  <JenkinsTestResults>https://tssw-ci.lsst.org/job/LSST_Telescope-and-Site/job/ts_atmonochromator/</JenkinsTestResults>
-  <RubinObsContact>Patrick Ingraham</RubinObsContact>
-  <CSCDocs></CSCDocs>
-  <ProductOwner>Patrick Ingraham</ProductOwner>
-  <RelatedDocuments></RelatedDocuments>
-  <SoftwareLanguage>Python</SoftwareLanguage>
-  <RuntimeLanguages>IDL,LabVIEW</RuntimeLanguages>
-  <VendorContact>Horiba</VendorContact>
-  <Simulator>Internal to CSC</Simulator>
-  <Configuration>https://github.com/lsst-ts/ts_config_atcalsys</Configuration>
-</SALSubsystem>
-
-<SALSubsystem>
-  <Name>ATWhiteLight</Name>
-  <Description>Controls the white light source for the AT calibration system.</Description>
-  <IndexEnumeration>no</IndexEnumeration>
-  <Generics>yes</Generics>
-  <ActiveDevelopers>Colin Winslow</ActiveDevelopers>
-  <Github>https://github.com/lsst-ts/ts_ATWhiteLightSource</Github>
-  <JenkinsTestResults>Not Available</JenkinsTestResults>
-  <RubinObsContact>Patrick Ingraham</RubinObsContact>
-  <CSCDocs></CSCDocs>
-  <ProductOwner>Patrick Ingraham</ProductOwner>
-  <RelatedDocuments></RelatedDocuments>
-  <SoftwareLanguage>Python</SoftwareLanguage>
-  <RuntimeLanguages>IDL</RuntimeLanguages>
-  <VendorContact>Hardware Vendors Horriba (lamp) Thermaltek (chiller) advantek (interface) </VendorContact>
-  <Simulator>Internal to CSC</Simulator>
-  <Configuration>https://github.com/lsst-ts/ts_config_atcalsys</Configuration>
-</SALSubsystem>
-
-<SALSubsystem>
-  <Name>ATCamera</Name>
-  <Description>Auxilliary telescope camera</Description>
-  <IndexEnumeration>no</IndexEnumeration>
-  <Generics>yes</Generics>
-  <ActiveDevelopers>CCS Team</ActiveDevelopers>
-  <Github>https://github.com/lsst-camera-ccs/</Github>
-  <JenkinsTestResults>https://srs.slac.stanford.edu/releaseManagement/</JenkinsTestResults>
-  <RubinObsContact>Tony Johnson</RubinObsContact>
-  <CSCDocs>https://confluence.slac.stanford.edu/display/LSSTCAM/CCS+Subsystem+Manuals</CSCDocs>
-  <ProductOwner>Brian Stalder</ProductOwner>
-  <RelatedDocuments>https://ls.st/LSE-71</RelatedDocuments>
-  <SoftwareLanguage>Java</SoftwareLanguage>
-  <RuntimeLanguages>IDL,Java</RuntimeLanguages>
-  <VendorContact>Not Applicable</VendorContact>
-  <Simulator>Internal to CSC</Simulator>
-  <Configuration>Database: https://confluence.lsstcorp.org/x/AYFcC</Configuration>
-</SALSubsystem>
-
-<SALSubsystem>
-  <Name>ATPtg</Name>
-  <Description>The CSC for the Auxiliary Telescope Pointing Component</Description>
-  <IndexEnumeration>no</IndexEnumeration>
-  <Generics>yes</Generics>
-  <ActiveDevelopers>Aya Yoshimura from Observatory Sciences</ActiveDevelopers>
-  <Github>https://github.com/lsst-ts/ts_pointing_common</Github>
-  <JenkinsTestResults>https://tssw-ci.lsst.org/job/LSST_Telescope-and-Site/job/ts_pointing_common/</JenkinsTestResults>
-  <RubinObsContact>Tiago Ribeiro</RubinObsContact>
-  <CSCDocs>http://ts-atptg.lsst.io/</CSCDocs>
-  <ProductOwner>Tiago Ribeiro</ProductOwner>
-  <RelatedDocuments>https://ls.st/LTS-583, https://ls.st/LTS-648</RelatedDocuments>
-  <SoftwareLanguage>C++ used for low level and CSC, Python for the UI</SoftwareLanguage>
-  <RuntimeLanguages>IDL,CPP</RuntimeLanguages>
-  <VendorContact>Observatory Sciences http://www.observatorysciences.co.uk/index.php</VendorContact>
-  <Simulator>Not Required</Simulator>
-  <Configuration>Not Configurable</Configuration>
-</SALSubsystem>
-
-<SALSubsystem>
-  <Name>IOTA</Name>
-  <Description>The CSC for the Initial Optical Testing Assembly</Description>
-  <IndexEnumeration>no</IndexEnumeration>
-  <Generics>yes</Generics>
-  <ActiveDevelopers>Not Available</ActiveDevelopers>
-  <Github>Not Available</Github>
-  <JenkinsTestResults>Not Available</JenkinsTestResults>
-  <RubinObsContact>Sandrine Thomas</RubinObsContact>
-  <CSCDocs></CSCDocs>
-  <ProductOwner>Sandrine Thomas</ProductOwner>
-  <RelatedDocuments>https://ls.st/LTS-779</RelatedDocuments>
-  <SoftwareLanguage></SoftwareLanguage>
-  <RuntimeLanguages>IDL</RuntimeLanguages>
-  <VendorContact>Not Applicable</VendorContact>
-  <Simulator>Not Required</Simulator>
-  <Configuration>Not Configurable</Configuration>
-</SALSubsystem>
-
-<SALSubsystem>
-  <Name>MTPtg</Name>
-  <Description>The CSC for the Main Telescope Pointing component</Description>
-  <IndexEnumeration>no</IndexEnumeration>
-  <Generics>yes</Generics>
-  <ActiveDevelopers>Aya Yoshimura from Observatory Sciences</ActiveDevelopers>
-  <Github>https://github.com/lsst-ts/ts_pointing_common</Github>
-  <JenkinsTestResults>https://tssw-ci.lsst.org/job/LSST_Telescope-and-Site/job/ts_pointing_common/</JenkinsTestResults>
-  <RubinObsContact>Tiago Ribeiro</RubinObsContact>
-  <CSCDocs>http://ts-mtptg.lsst.io/</CSCDocs>
-  <ProductOwner>Tiago Ribeiro</ProductOwner>
-  <RelatedDocuments>https://ls.st/LTS-583, https://ls.st/LTS-648</RelatedDocuments>
-  <SoftwareLanguage>C++ used for low level and CSC, Python for the UI</SoftwareLanguage>
-  <RuntimeLanguages>IDL,CPP</RuntimeLanguages>
-  <VendorContact>Observatory Sciences http://www.observatorysciences.co.uk/index.php</VendorContact>
-  <Simulator>Not Required</Simulator>
-  <Configuration>Not Configurable</Configuration>
-</SALSubsystem>
-
-<SALSubsystem>
-  <Name>Electrometer</Name>
-  <Description>The CSC for the Electrometer</Description>
-  <IndexEnumeration>first,second</IndexEnumeration>
-  <Generics>yes</Generics>
-  <ActiveDevelopers>Eric Coughlin</ActiveDevelopers>
-  <Github>https://github.com/lsst-ts/ts_electrometer2</Github>
-  <JenkinsTestResults>https://tssw-ci.lsst.org/job/LSST_Telescope-and-Site/job/ts_electrometer2/</JenkinsTestResults>
-  <RubinObsContact>Patrick Ingraham</RubinObsContact>
-  <CSCDocs></CSCDocs>
-  <ProductOwner>Patrick Ingraham</ProductOwner>
-  <RelatedDocuments></RelatedDocuments>
-  <SoftwareLanguage>Python</SoftwareLanguage>
-  <RuntimeLanguages>IDL</RuntimeLanguages>
-  <VendorContact>Keithley Instruments</VendorContact>
-  <Simulator>Not Provided</Simulator>
-  <Configuration>https://github.com/lsst-ts/ts_config_ocs</Configuration>
-</SALSubsystem>
-
-<SALSubsystem>
-  <Name>EAS</Name>
-  <Description>The CSC for the Environmental Awareness System</Description>
-  <IndexEnumeration>no</IndexEnumeration>
-  <Generics>yes</Generics>
-  <ActiveDevelopers>Wouter van Reeven</ActiveDevelopers>
-  <Github>https://github.com/lsst-ts/ts_eas</Github>
-  <JenkinsTestResults>Not Available</JenkinsTestResults>
-  <RubinObsContact>Wouter van Reeven</RubinObsContact>
-  <CSCDocs></CSCDocs>
-  <ProductOwner>Brian Stalder</ProductOwner>
-  <RelatedDocuments></RelatedDocuments>
-  <SoftwareLanguage>Python</SoftwareLanguage>
-  <RuntimeLanguages>IDL</RuntimeLanguages>
-  <VendorContact>Not Applicable</VendorContact>
-  <Simulator>Not Provided</Simulator>
-  <Configuration>Not Configurable</Configuration>
-</SALSubsystem>
-
-<SALSubsystem>
-  <Name>ESS</Name>
-  <Description>Environmental Sensor System</Description>
-  <IndexEnumeration>any</IndexEnumeration>
-  <Generics>yes</Generics>
-  <ActiveDevelopers>Gary Knight, Wouter van Reeven</ActiveDevelopers>
-  <Github>https://github.com/lsst-ts/ts_ESS</Github>
-  <JenkinsTestResults>Not Available</JenkinsTestResults>
-  <RubinObsContact>Brian Stalder</RubinObsContact>
-  <CSCDocs></CSCDocs>
-  <ProductOwner>Brian Stalder</ProductOwner>
-  <RelatedDocuments></RelatedDocuments>
-  <SoftwareLanguage>Python</SoftwareLanguage>
-  <RuntimeLanguages>IDL</RuntimeLanguages>
-  <VendorContact>Not Available</VendorContact>
-  <Simulator>Internal to CSC</Simulator>
-  <Configuration>Not Configurable</Configuration>
-</SALSubsystem>
-
-<SALSubsystem>
-  <Name>LOVE</Name>
-  <Description>User interface for the LSST control system.</Description>
-  <IndexEnumeration>no</IndexEnumeration>
-  <Generics>logevent_logLevel, logevent_logMessage</Generics>
-  <ActiveDevelopers>INRIA Chile</ActiveDevelopers>
-  <Github>https://github.com/lsst-ts/LOVE-manager
+<SALSubsystemSet xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://lsst-sal.tuc.noao.edu/schema/SALSubsystemSet.xsd">
+  <SALSubsystem>
+    <Name>AdamSensors</Name>
+    <Description>CSC ADAM 6024 device connected to up to 6 transducer type sensors</Description>
+    <IndexEnumeration>no</IndexEnumeration>
+    <Generics>yes</Generics>
+    <ActiveDevelopers>Colin Winslow</ActiveDevelopers>
+    <Github>https://github.com/lsst-ts/ts_adamSensors</Github>
+    <JenkinsTestResults>Not Available</JenkinsTestResults>
+    <RubinObsContact>Patrick Ingraham</RubinObsContact>
+    <CSCDocs/>
+    <ProductOwner>Patrick Ingraham</ProductOwner>
+    <RelatedDocuments/>
+    <SoftwareLanguage>Python</SoftwareLanguage>
+    <RuntimeLanguages>IDL</RuntimeLanguages>
+    <VendorContact>Advantech</VendorContact>
+    <Simulator>Internal to CSC</Simulator>
+    <Configuration>https://github.com/lsst-ts/ts_config_eas</Configuration>
+  </SALSubsystem>
+  <SALSubsystem>
+    <Name>ATSpectrograph</Name>
+    <Description>CSC for the Auxiliary Telescope Spectrograph.</Description>
+    <IndexEnumeration>no</IndexEnumeration>
+    <Generics>yes</Generics>
+    <ActiveDevelopers>Tiago Ribeiro</ActiveDevelopers>
+    <Github>https://github.com/lsst-ts/ts_atspec</Github>
+    <JenkinsTestResults>https://tssw-ci.lsst.org/job/LSST_Telescope-and-Site/job/ts_atspec/</JenkinsTestResults>
+    <RubinObsContact>Patrick Ingriham</RubinObsContact>
+    <CSCDocs/>
+    <ProductOwner>Patrick Ingraham</ProductOwner>
+    <RelatedDocuments>https://ls.st/Document-30997, https://ls.st/LTS-487, https://ls.st/LTS-488</RelatedDocuments>
+    <SoftwareLanguage>Python</SoftwareLanguage>
+    <RuntimeLanguages>IDL</RuntimeLanguages>
+    <VendorContact>Astronomical Consulting and Equipment</VendorContact>
+    <Simulator>Internal to CSC</Simulator>
+    <Configuration>https://github.com/lsst-ts/ts_config_latiss</Configuration>
+  </SALSubsystem>
+  <SALSubsystem>
+    <Name>Authorize</Name>
+    <Description>Service that supports requests to change the authorization list for a CSC.</Description>
+    <IndexEnumeration>no</IndexEnumeration>
+    <Generics>command_setAuthList, command_setLogLevel, logevent_authList, logevent_heartbeat, logevent_logLevel, logevent_logMessage</Generics>
+    <ActiveDevelopers>Russell Owen</ActiveDevelopers>
+    <Github>https://github.com/lsst-ts/ts_authorize</Github>
+    <JenkinsTestResults>Not Available</JenkinsTestResults>
+    <RubinObsContact>Russell Owen</RubinObsContact>
+    <CSCDocs>https://ts-authorize.lsst.io</CSCDocs>
+    <ProductOwner>Tiago Ribeiro</ProductOwner>
+    <RelatedDocuments/>
+    <SoftwareLanguage>Python</SoftwareLanguage>
+    <RuntimeLanguages>IDL</RuntimeLanguages>
+    <VendorContact>Not Applicable</VendorContact>
+    <Simulator>Not Required</Simulator>
+    <Configuration>Not Configurable</Configuration>
+  </SALSubsystem>
+  <SALSubsystem>
+    <Name>LinearStage</Name>
+    <Description>CSC for the Linear Stage</Description>
+    <IndexEnumeration>first,second</IndexEnumeration>
+    <Generics>yes</Generics>
+    <ActiveDevelopers>Eric Coughlin</ActiveDevelopers>
+    <Github>https://github.com/lsst-ts/ts_LinearStage</Github>
+    <JenkinsTestResults>Not Available</JenkinsTestResults>
+    <RubinObsContact>Patrick Ingraham</RubinObsContact>
+    <CSCDocs/>
+    <ProductOwner>Patrick Ingraham</ProductOwner>
+    <RelatedDocuments>https://www.zaber.com/manuals/A-LST</RelatedDocuments>
+    <SoftwareLanguage>Python</SoftwareLanguage>
+    <RuntimeLanguages>IDL</RuntimeLanguages>
+    <VendorContact>Zaber</VendorContact>
+    <Simulator>Not Provided</Simulator>
+    <Configuration>Not Configurable</Configuration>
+  </SALSubsystem>
+  <SALSubsystem>
+    <Name>MTMount</Name>
+    <Description>CSC for the Main Telescope Mount</Description>
+    <IndexEnumeration>no</IndexEnumeration>
+    <Generics>yes</Generics>
+    <ActiveDevelopers>Russell Owen</ActiveDevelopers>
+    <Github>https://github.com/lsst-ts/ts_MTMount</Github>
+    <JenkinsTestResults>Not Available</JenkinsTestResults>
+    <RubinObsContact>Shawn Calahan</RubinObsContact>
+    <CSCDocs>https://ts-mtmount.lsst.io</CSCDocs>
+    <ProductOwner>Sandrine Thomas</ProductOwner>
+    <RelatedDocuments>https://ls.st/LTS-103, https://ls.st/LTS-150, https://ls.st/LTS-159</RelatedDocuments>
+    <SoftwareLanguage>Labview</SoftwareLanguage>
+    <RuntimeLanguages>IDL</RuntimeLanguages>
+    <VendorContact>Tekniker</VendorContact>
+    <Simulator>https://github.com/lsst-ts/ts_tma</Simulator>
+    <Configuration>Not Configurable</Configuration>
+  </SALSubsystem>
+  <SALSubsystem>
+    <Name>NewMTMount</Name>
+    <Description>Temporary version of MTMount for use with salobj. Once the Tekniker code stops trying to handle commands and events we can get rid of this and use the MTMount (after updating the metadata). Note that Tekniker low-level code will probably continue to output telemetry.</Description>
+    <IndexEnumeration>no</IndexEnumeration>
+    <Generics>yes</Generics>
+    <ActiveDevelopers>Russell Owen</ActiveDevelopers>
+    <Github>https://github.com/lsst-ts/ts_mtmount</Github>
+    <JenkinsTestResults>Not Available</JenkinsTestResults>
+    <RubinObsContact>Shawn Calahan</RubinObsContact>
+    <CSCDocs>https://ts-mtmount.lsst.io/</CSCDocs>
+    <ProductOwner>Sandrine Thomas</ProductOwner>
+    <RelatedDocuments>https://ls.st/LTS-103, https://ls.st/LTS-150, https://ls.st/LTS-159</RelatedDocuments>
+    <SoftwareLanguage>Python</SoftwareLanguage>
+    <RuntimeLanguages>IDL</RuntimeLanguages>
+    <VendorContact>Tekniker</VendorContact>
+    <Simulator>Internal to CSC</Simulator>
+    <Configuration>https://github.com/lsst-ts/ts_config_mttcs</Configuration>
+  </SALSubsystem>
+  <SALSubsystem>
+    <Name>CCArchiver</Name>
+    <Description>ComCam Image Archiver</Description>
+    <IndexEnumeration>no</IndexEnumeration>
+    <Generics>yes</Generics>
+    <ActiveDevelopers>Stephen R. Pietrowicz</ActiveDevelopers>
+    <Github>https://github.com/lsst-dm/dm_CCArchiver</Github>
+    <JenkinsTestResults>Not Available</JenkinsTestResults>
+    <RubinObsContact>Michael Reuter</RubinObsContact>
+    <CSCDocs/>
+    <ProductOwner>Michael Reuter</ProductOwner>
+    <RelatedDocuments/>
+    <SoftwareLanguage>Python</SoftwareLanguage>
+    <RuntimeLanguages>IDL</RuntimeLanguages>
+    <VendorContact>Not Applicable</VendorContact>
+    <Simulator>Not Required</Simulator>
+    <Configuration>Not Configurable</Configuration>
+  </SALSubsystem>
+  <SALSubsystem>
+    <Name>ATArchiver</Name>
+    <Description>LATISS Image Archiver</Description>
+    <IndexEnumeration>no</IndexEnumeration>
+    <Generics>yes</Generics>
+    <ActiveDevelopers>Stephen R. Pietrowicz</ActiveDevelopers>
+    <Github>https://github.com/lsst-dm/dm_ATArchiver</Github>
+    <JenkinsTestResults>Not Available</JenkinsTestResults>
+    <RubinObsContact>Michael Reuter</RubinObsContact>
+    <CSCDocs/>
+    <ProductOwner>Michael Reuter</ProductOwner>
+    <RelatedDocuments/>
+    <SoftwareLanguage>Python</SoftwareLanguage>
+    <RuntimeLanguages>IDL</RuntimeLanguages>
+    <VendorContact>Not Applicable</VendorContact>
+    <Simulator>Not Required</Simulator>
+    <Configuration>Not Configurable</Configuration>
+  </SALSubsystem>
+  <SALSubsystem>
+    <Name>CCOODS</Name>
+    <Description>ComCam Observatory Operations Data Service</Description>
+    <IndexEnumeration>no</IndexEnumeration>
+    <Generics>yes</Generics>
+    <ActiveDevelopers>Stephen R. Pietrowicz</ActiveDevelopers>
+    <Github>https://github.com/lsst-dm/ctrl_oods</Github>
+    <JenkinsTestResults>Not Available</JenkinsTestResults>
+    <RubinObsContact>Michael Reuter</RubinObsContact>
+    <CSCDocs/>
+    <ProductOwner>Michael Reuter</ProductOwner>
+    <RelatedDocuments/>
+    <SoftwareLanguage>Python</SoftwareLanguage>
+    <RuntimeLanguages>IDL</RuntimeLanguages>
+    <VendorContact>Not Applicable</VendorContact>
+    <Simulator>Not Required</Simulator>
+    <Configuration>Not Configurable</Configuration>
+  </SALSubsystem>
+  <SALSubsystem>
+    <Name>ATOODS</Name>
+    <Description>LATISS Observatory Operations Data Service</Description>
+    <IndexEnumeration>no</IndexEnumeration>
+    <Generics>yes</Generics>
+    <ActiveDevelopers>Stephen R. Pietrowicz</ActiveDevelopers>
+    <Github>https://github.com/lsst-dm/ctrl_oods</Github>
+    <JenkinsTestResults>Not Available</JenkinsTestResults>
+    <RubinObsContact>Michael Reuter</RubinObsContact>
+    <CSCDocs/>
+    <ProductOwner>Michael Reuter</ProductOwner>
+    <RelatedDocuments/>
+    <SoftwareLanguage>Python</SoftwareLanguage>
+    <RuntimeLanguages>IDL</RuntimeLanguages>
+    <VendorContact>Not Applicable</VendorContact>
+    <Simulator>Not Required</Simulator>
+    <Configuration>Not Configurable</Configuration>
+  </SALSubsystem>
+  <SALSubsystem>
+    <Name>ATAOS</Name>
+    <Description>CSC for the Auxiliary Telescope Active Optics System</Description>
+    <IndexEnumeration>no</IndexEnumeration>
+    <Generics>yes</Generics>
+    <ActiveDevelopers>Tiago Ribeiro</ActiveDevelopers>
+    <Github>https://github.com/lsst-ts/ts_ataos</Github>
+    <JenkinsTestResults>https://tssw-ci.lsst.org/job/LSST_Telescope-and-Site/job/ts_ataos/</JenkinsTestResults>
+    <RubinObsContact>Patrick Ingraham</RubinObsContact>
+    <CSCDocs/>
+    <ProductOwner>Patrick Ingraham</ProductOwner>
+    <RelatedDocuments/>
+    <SoftwareLanguage>Python</SoftwareLanguage>
+    <RuntimeLanguages>IDL</RuntimeLanguages>
+    <VendorContact>NA</VendorContact>
+    <Simulator>Not Required</Simulator>
+    <Configuration>https://github.com/lsst-ts/ts_config_attcs</Configuration>
+  </SALSubsystem>
+  <SALSubsystem>
+    <Name>ATBuilding</Name>
+    <Description>CSC for the building housing the Auxiliary Telescope on Callibration Hill</Description>
+    <IndexEnumeration>no</IndexEnumeration>
+    <Generics>yes</Generics>
+    <ActiveDevelopers>Colin Winslow</ActiveDevelopers>
+    <Github>none yet</Github>
+    <JenkinsTestResults>Not Available</JenkinsTestResults>
+    <RubinObsContact>Patrick Ingraham</RubinObsContact>
+    <CSCDocs/>
+    <ProductOwner>Patrick Ingraham</ProductOwner>
+    <RelatedDocuments/>
+    <SoftwareLanguage/>
+    <RuntimeLanguages>IDL</RuntimeLanguages>
+    <VendorContact>Not Applicable</VendorContact>
+    <Simulator>Not Provided</Simulator>
+    <Configuration>https://github.com/lsst-ts/ts_config_attcs</Configuration>
+  </SALSubsystem>
+  <SALSubsystem>
+    <Name>DIMM</Name>
+    <Description>CSC for the DIMM (Differential Image Motion Monitor) telescope</Description>
+    <IndexEnumeration>any</IndexEnumeration>
+    <Generics>yes</Generics>
+    <ActiveDevelopers>Tiago Ribiero</ActiveDevelopers>
+    <Github>https://github.com/lsst-ts/ts_dimm</Github>
+    <JenkinsTestResults>Not Available</JenkinsTestResults>
+    <RubinObsContact>Brian Stalder</RubinObsContact>
+    <CSCDocs/>
+    <ProductOwner>Brian Stalder</ProductOwner>
+    <RelatedDocuments>https://ls.st/LTS-566, https://ls.st/LTS-567</RelatedDocuments>
+    <SoftwareLanguage>Python for high level, Java for low level</SoftwareLanguage>
+    <RuntimeLanguages>IDL</RuntimeLanguages>
+    <VendorContact>ASTELCO</VendorContact>
+    <Simulator>Internal to CSC</Simulator>
+    <Configuration>https://github.com/lsst-ts/ts_config_ocs</Configuration>
+  </SALSubsystem>
+  <SALSubsystem>
+    <Name>ATDome</Name>
+    <Description>Control the Auxiliary Telelescope dome, including azimuth and shutter doors.</Description>
+    <IndexEnumeration>no</IndexEnumeration>
+    <Generics>yes</Generics>
+    <ActiveDevelopers>Russell Owen</ActiveDevelopers>
+    <Github>https://github.com/lsst-ts/ts_ATDome</Github>
+    <JenkinsTestResults>Not Available</JenkinsTestResults>
+    <RubinObsContact>Patrick Ingraham</RubinObsContact>
+    <CSCDocs>https://ts-atdome.lsst.io/</CSCDocs>
+    <ProductOwner>Patrick Ingraham</ProductOwner>
+    <RelatedDocuments>https://ls.st/Document-27878</RelatedDocuments>
+    <SoftwareLanguage>Python</SoftwareLanguage>
+    <RuntimeLanguages>IDL</RuntimeLanguages>
+    <VendorContact>The control system consists of an in house CSC that talks over TCP/IP to a low-level controller written by Astronomical Consulting Equipment.</VendorContact>
+    <Simulator>Internal to CSC</Simulator>
+    <Configuration>https://github.com/lsst-ts/ts_config_attcs</Configuration>
+  </SALSubsystem>
+  <SALSubsystem>
+    <Name>ATDomeTrajectory</Name>
+    <Description>Command the auxiliary telescope dome (ATDome) to follow the telescope.</Description>
+    <IndexEnumeration>no</IndexEnumeration>
+    <Generics>yes</Generics>
+    <ActiveDevelopers>Russell Owen</ActiveDevelopers>
+    <Github>https://github.com/lsst-ts/ts_ATDomeTrajectory</Github>
+    <JenkinsTestResults>https://tssw-ci.lsst.org/job/ATDomeTrajectory</JenkinsTestResults>
+    <RubinObsContact>Patrick Ingraham</RubinObsContact>
+    <CSCDocs>https://ts-atdometrajectory.lsst.io/</CSCDocs>
+    <ProductOwner>Patrick Ingraham</ProductOwner>
+    <RelatedDocuments/>
+    <SoftwareLanguage>Python</SoftwareLanguage>
+    <RuntimeLanguages>IDL</RuntimeLanguages>
+    <VendorContact>NA</VendorContact>
+    <Simulator>Not Required</Simulator>
+    <Configuration>https://github.com/lsst-ts/ts_config_attcs</Configuration>
+  </SALSubsystem>
+  <SALSubsystem>
+    <Name>ATMCS</Name>
+    <Description>The CSC for the Auxiliary Telescope Mount Control System</Description>
+    <IndexEnumeration>no</IndexEnumeration>
+    <Generics>yes</Generics>
+    <ActiveDevelopers>Rolando Cantarutti from CTIO</ActiveDevelopers>
+    <Github>Not yet available publicly</Github>
+    <JenkinsTestResults>Not Available</JenkinsTestResults>
+    <RubinObsContact>Patrick Ingraham</RubinObsContact>
+    <CSCDocs/>
+    <ProductOwner>Patrick Ingraham</ProductOwner>
+    <RelatedDocuments/>
+    <SoftwareLanguage>LabVIEW</SoftwareLanguage>
+    <RuntimeLanguages>IDL</RuntimeLanguages>
+    <VendorContact>CTIO</VendorContact>
+    <Simulator>https://github.com/lsst-ts/ts_ATMCSSimulator</Simulator>
+    <Configuration>Not Configurable</Configuration>
+  </SALSubsystem>
+  <SALSubsystem>
+    <Name>ATPneumatics</Name>
+    <Description>Controls the support system for the mirrors on the Auxtel</Description>
+    <IndexEnumeration>no</IndexEnumeration>
+    <Generics>yes</Generics>
+    <ActiveDevelopers>Rolando Cantaruti</ActiveDevelopers>
+    <Github>https://github.com/lsst-ts/ts_ATPneumaticsSimulator just the simulator not the final code</Github>
+    <JenkinsTestResults>Not Available</JenkinsTestResults>
+    <RubinObsContact>Patrick Ingraham</RubinObsContact>
+    <CSCDocs/>
+    <ProductOwner>Patrick Ingraham</ProductOwner>
+    <RelatedDocuments>https://ls.st/LTS-657</RelatedDocuments>
+    <SoftwareLanguage>LabVIEW, or maybe python?</SoftwareLanguage>
+    <RuntimeLanguages>IDL</RuntimeLanguages>
+    <VendorContact>CTIO</VendorContact>
+    <Simulator>https://github.com/lsst-ts/ts_ATPneumaticsSimulator</Simulator>
+    <Configuration>Not Configurable</Configuration>
+  </SALSubsystem>
+  <SALSubsystem>
+    <Name>ATHeaderService</Name>
+    <Description>HeaderService for AT</Description>
+    <IndexEnumeration>no</IndexEnumeration>
+    <Generics>yes</Generics>
+    <ActiveDevelopers>Felipe Menanteau</ActiveDevelopers>
+    <Github>https://github.com/lsst-dm/HeaderService</Github>
+    <JenkinsTestResults>Not Available</JenkinsTestResults>
+    <RubinObsContact>Michael Reuter</RubinObsContact>
+    <CSCDocs/>
+    <ProductOwner>Michael Reuter</ProductOwner>
+    <RelatedDocuments>https://ls.st/LSE-400</RelatedDocuments>
+    <SoftwareLanguage>Python</SoftwareLanguage>
+    <RuntimeLanguages>IDL,Java</RuntimeLanguages>
+    <VendorContact>Not Applicable</VendorContact>
+    <Simulator>Not Required</Simulator>
+    <Configuration>Not Configurable</Configuration>
+  </SALSubsystem>
+  <SALSubsystem>
+    <Name>CCHeaderService</Name>
+    <Description>HeaderService for ComCam</Description>
+    <IndexEnumeration>no</IndexEnumeration>
+    <Generics>yes</Generics>
+    <ActiveDevelopers>Felipe Menanteau</ActiveDevelopers>
+    <Github>https://github.com/lsst-dm/HeaderService</Github>
+    <JenkinsTestResults>Not Available</JenkinsTestResults>
+    <RubinObsContact>Michael Reuter</RubinObsContact>
+    <CSCDocs/>
+    <ProductOwner>Michael Reuter</ProductOwner>
+    <RelatedDocuments>https://ls.st/LSE-400</RelatedDocuments>
+    <SoftwareLanguage>Python</SoftwareLanguage>
+    <RuntimeLanguages>IDL,Java</RuntimeLanguages>
+    <VendorContact>Not Applicable</VendorContact>
+    <Simulator>Not Required</Simulator>
+    <Configuration>Not Configurable</Configuration>
+  </SALSubsystem>
+  <SALSubsystem>
+    <Name>MTHeaderService</Name>
+    <Description>HeaderService for MT</Description>
+    <IndexEnumeration>no</IndexEnumeration>
+    <Generics>yes</Generics>
+    <ActiveDevelopers>Felipe Menanteau</ActiveDevelopers>
+    <Github>https://github.com/lsst-dm/HeaderService</Github>
+    <JenkinsTestResults>Not Available</JenkinsTestResults>
+    <RubinObsContact>Michael Reuter</RubinObsContact>
+    <CSCDocs/>
+    <ProductOwner>Michael Reuter</ProductOwner>
+    <RelatedDocuments>https://ls.st/LSE-400</RelatedDocuments>
+    <SoftwareLanguage>Python</SoftwareLanguage>
+    <RuntimeLanguages>IDL,Java</RuntimeLanguages>
+    <VendorContact>Not Applicable</VendorContact>
+    <Simulator>Not Required</Simulator>
+    <Configuration>Not Configurable</Configuration>
+  </SALSubsystem>
+  <SALSubsystem>
+    <Name>ATHexapod</Name>
+    <Description>Controls the Hexpod that positions the secondary mirror of the Aux tel</Description>
+    <IndexEnumeration>no</IndexEnumeration>
+    <Generics>yes</Generics>
+    <ActiveDevelopers>Eric Coughlin</ActiveDevelopers>
+    <Github>https://github.com/lsst-ts/ts_salobjATHexapod</Github>
+    <JenkinsTestResults>https://tssw-ci.lsst.org/job/LSST_Telescope-and-Site/job/ts_athexapod/</JenkinsTestResults>
+    <RubinObsContact>Patrick Ingraham</RubinObsContact>
+    <CSCDocs/>
+    <ProductOwner>Patrick Ingraham</ProductOwner>
+    <RelatedDocuments/>
+    <SoftwareLanguage>Python</SoftwareLanguage>
+    <RuntimeLanguages>IDL</RuntimeLanguages>
+    <VendorContact>Physik Instrumente (PI)</VendorContact>
+    <Simulator>https://repo-nexus.lsst.org/nexus/#browse/browse:ts-dockerhub:v2%2Fhexapod_simulator%2Fmanifests (private)</Simulator>
+    <Configuration>https://github.com/lsst-ts/ts_config_attcs</Configuration>
+  </SALSubsystem>
+  <SALSubsystem>
+    <Name>ATMonochromator</Name>
+    <Description>Controls the monochromator for the AT calibration system</Description>
+    <IndexEnumeration>no</IndexEnumeration>
+    <Generics>yes</Generics>
+    <ActiveDevelopers>Tiago Ribeiro</ActiveDevelopers>
+    <Github>https://github.com/lsst-ts/ts_atmonochromator</Github>
+    <JenkinsTestResults>https://tssw-ci.lsst.org/job/LSST_Telescope-and-Site/job/ts_atmonochromator/</JenkinsTestResults>
+    <RubinObsContact>Patrick Ingraham</RubinObsContact>
+    <CSCDocs/>
+    <ProductOwner>Patrick Ingraham</ProductOwner>
+    <RelatedDocuments/>
+    <SoftwareLanguage>Python</SoftwareLanguage>
+    <RuntimeLanguages>IDL,LabVIEW</RuntimeLanguages>
+    <VendorContact>Horiba</VendorContact>
+    <Simulator>Internal to CSC</Simulator>
+    <Configuration>https://github.com/lsst-ts/ts_config_atcalsys</Configuration>
+  </SALSubsystem>
+  <SALSubsystem>
+    <Name>ATWhiteLight</Name>
+    <Description>Controls the white light source for the AT calibration system.</Description>
+    <IndexEnumeration>no</IndexEnumeration>
+    <Generics>yes</Generics>
+    <ActiveDevelopers>Colin Winslow</ActiveDevelopers>
+    <Github>https://github.com/lsst-ts/ts_ATWhiteLightSource</Github>
+    <JenkinsTestResults>Not Available</JenkinsTestResults>
+    <RubinObsContact>Patrick Ingraham</RubinObsContact>
+    <CSCDocs/>
+    <ProductOwner>Patrick Ingraham</ProductOwner>
+    <RelatedDocuments/>
+    <SoftwareLanguage>Python</SoftwareLanguage>
+    <RuntimeLanguages>IDL</RuntimeLanguages>
+    <VendorContact>Hardware Vendors Horriba (lamp) Thermaltek (chiller) advantek (interface) </VendorContact>
+    <Simulator>Internal to CSC</Simulator>
+    <Configuration>https://github.com/lsst-ts/ts_config_atcalsys</Configuration>
+  </SALSubsystem>
+  <SALSubsystem>
+    <Name>ATCamera</Name>
+    <Description>Auxilliary telescope camera</Description>
+    <IndexEnumeration>no</IndexEnumeration>
+    <Generics>yes</Generics>
+    <ActiveDevelopers>CCS Team</ActiveDevelopers>
+    <Github>https://github.com/lsst-camera-ccs/</Github>
+    <JenkinsTestResults>https://srs.slac.stanford.edu/releaseManagement/</JenkinsTestResults>
+    <RubinObsContact>Tony Johnson</RubinObsContact>
+    <CSCDocs>https://confluence.slac.stanford.edu/display/LSSTCAM/CCS+Subsystem+Manuals</CSCDocs>
+    <ProductOwner>Brian Stalder</ProductOwner>
+    <RelatedDocuments>https://ls.st/LSE-71</RelatedDocuments>
+    <SoftwareLanguage>Java</SoftwareLanguage>
+    <RuntimeLanguages>IDL,Java</RuntimeLanguages>
+    <VendorContact>Not Applicable</VendorContact>
+    <Simulator>Internal to CSC</Simulator>
+    <Configuration>Database: https://confluence.lsstcorp.org/x/AYFcC</Configuration>
+  </SALSubsystem>
+  <SALSubsystem>
+    <Name>ATPtg</Name>
+    <Description>The CSC for the Auxiliary Telescope Pointing Component</Description>
+    <IndexEnumeration>no</IndexEnumeration>
+    <Generics>yes</Generics>
+    <ActiveDevelopers>Aya Yoshimura from Observatory Sciences</ActiveDevelopers>
+    <Github>https://github.com/lsst-ts/ts_pointing_common</Github>
+    <JenkinsTestResults>https://tssw-ci.lsst.org/job/LSST_Telescope-and-Site/job/ts_pointing_common/</JenkinsTestResults>
+    <RubinObsContact>Tiago Ribeiro</RubinObsContact>
+    <CSCDocs>http://ts-atptg.lsst.io/</CSCDocs>
+    <ProductOwner>Tiago Ribeiro</ProductOwner>
+    <RelatedDocuments>https://ls.st/LTS-583, https://ls.st/LTS-648</RelatedDocuments>
+    <SoftwareLanguage>C++ used for low level and CSC, Python for the UI</SoftwareLanguage>
+    <RuntimeLanguages>IDL,CPP</RuntimeLanguages>
+    <VendorContact>Observatory Sciences http://www.observatorysciences.co.uk/index.php</VendorContact>
+    <Simulator>Not Required</Simulator>
+    <Configuration>Not Configurable</Configuration>
+  </SALSubsystem>
+  <SALSubsystem>
+    <Name>IOTA</Name>
+    <Description>The CSC for the Initial Optical Testing Assembly</Description>
+    <IndexEnumeration>no</IndexEnumeration>
+    <Generics>yes</Generics>
+    <ActiveDevelopers>Not Available</ActiveDevelopers>
+    <Github>Not Available</Github>
+    <JenkinsTestResults>Not Available</JenkinsTestResults>
+    <RubinObsContact>Sandrine Thomas</RubinObsContact>
+    <CSCDocs/>
+    <ProductOwner>Sandrine Thomas</ProductOwner>
+    <RelatedDocuments>https://ls.st/LTS-779</RelatedDocuments>
+    <SoftwareLanguage/>
+    <RuntimeLanguages>IDL</RuntimeLanguages>
+    <VendorContact>Not Applicable</VendorContact>
+    <Simulator>Not Required</Simulator>
+    <Configuration>Not Configurable</Configuration>
+  </SALSubsystem>
+  <SALSubsystem>
+    <Name>MTPtg</Name>
+    <Description>The CSC for the Main Telescope Pointing component</Description>
+    <IndexEnumeration>no</IndexEnumeration>
+    <Generics>yes</Generics>
+    <ActiveDevelopers>Aya Yoshimura from Observatory Sciences</ActiveDevelopers>
+    <Github>https://github.com/lsst-ts/ts_pointing_common</Github>
+    <JenkinsTestResults>https://tssw-ci.lsst.org/job/LSST_Telescope-and-Site/job/ts_pointing_common/</JenkinsTestResults>
+    <RubinObsContact>Tiago Ribeiro</RubinObsContact>
+    <CSCDocs>http://ts-mtptg.lsst.io/</CSCDocs>
+    <ProductOwner>Tiago Ribeiro</ProductOwner>
+    <RelatedDocuments>https://ls.st/LTS-583, https://ls.st/LTS-648</RelatedDocuments>
+    <SoftwareLanguage>C++ used for low level and CSC, Python for the UI</SoftwareLanguage>
+    <RuntimeLanguages>IDL,CPP</RuntimeLanguages>
+    <VendorContact>Observatory Sciences http://www.observatorysciences.co.uk/index.php</VendorContact>
+    <Simulator>Not Required</Simulator>
+    <Configuration>Not Configurable</Configuration>
+  </SALSubsystem>
+  <SALSubsystem>
+    <Name>Electrometer</Name>
+    <Description>The CSC for the Electrometer</Description>
+    <IndexEnumeration>first,second</IndexEnumeration>
+    <Generics>yes</Generics>
+    <ActiveDevelopers>Eric Coughlin</ActiveDevelopers>
+    <Github>https://github.com/lsst-ts/ts_electrometer2</Github>
+    <JenkinsTestResults>https://tssw-ci.lsst.org/job/LSST_Telescope-and-Site/job/ts_electrometer2/</JenkinsTestResults>
+    <RubinObsContact>Patrick Ingraham</RubinObsContact>
+    <CSCDocs/>
+    <ProductOwner>Patrick Ingraham</ProductOwner>
+    <RelatedDocuments/>
+    <SoftwareLanguage>Python</SoftwareLanguage>
+    <RuntimeLanguages>IDL</RuntimeLanguages>
+    <VendorContact>Keithley Instruments</VendorContact>
+    <Simulator>Not Provided</Simulator>
+    <Configuration>https://github.com/lsst-ts/ts_config_ocs</Configuration>
+  </SALSubsystem>
+  <SALSubsystem>
+    <Name>EAS</Name>
+    <Description>The CSC for the Environmental Awareness System</Description>
+    <IndexEnumeration>no</IndexEnumeration>
+    <Generics>yes</Generics>
+    <ActiveDevelopers>Wouter van Reeven</ActiveDevelopers>
+    <Github>https://github.com/lsst-ts/ts_eas</Github>
+    <JenkinsTestResults>Not Available</JenkinsTestResults>
+    <RubinObsContact>Wouter van Reeven</RubinObsContact>
+    <CSCDocs/>
+    <ProductOwner>Brian Stalder</ProductOwner>
+    <RelatedDocuments/>
+    <SoftwareLanguage>Python</SoftwareLanguage>
+    <RuntimeLanguages>IDL</RuntimeLanguages>
+    <VendorContact>Not Applicable</VendorContact>
+    <Simulator>Not Provided</Simulator>
+    <Configuration>Not Configurable</Configuration>
+  </SALSubsystem>
+  <SALSubsystem>
+    <Name>ESS</Name>
+    <Description>Environmental Sensor System</Description>
+    <IndexEnumeration>any</IndexEnumeration>
+    <Generics>yes</Generics>
+    <ActiveDevelopers>Gary Knight, Wouter van Reeven</ActiveDevelopers>
+    <Github>https://github.com/lsst-ts/ts_ESS</Github>
+    <JenkinsTestResults>Not Available</JenkinsTestResults>
+    <RubinObsContact>Brian Stalder</RubinObsContact>
+    <CSCDocs/>
+    <ProductOwner>Brian Stalder</ProductOwner>
+    <RelatedDocuments/>
+    <SoftwareLanguage>Python</SoftwareLanguage>
+    <RuntimeLanguages>IDL</RuntimeLanguages>
+    <VendorContact>Not Available</VendorContact>
+    <Simulator>Internal to CSC</Simulator>
+    <Configuration>Not Configurable</Configuration>
+  </SALSubsystem>
+  <SALSubsystem>
+    <Name>LOVE</Name>
+    <Description>User interface for the LSST control system.</Description>
+    <IndexEnumeration>no</IndexEnumeration>
+    <Generics>logevent_logLevel, logevent_logMessage</Generics>
+    <ActiveDevelopers>INRIA Chile</ActiveDevelopers>
+    <Github>https://github.com/lsst-ts/LOVE-manager
   https://github.com/lsst-ts/LOVE-frontend
   https://github.com/lsst-ts/LOVE-producer
   https://github.com/lsst-ts/LOVE-simulator
   https://github.com/lsst-ts/LOVE-integration-tools</Github>
-  <JenkinsTestResults>https://tssw-ci.lsst.org/job/LSST_Telescope-and-Site/job/LOVE-manager
+    <JenkinsTestResults>https://tssw-ci.lsst.org/job/LSST_Telescope-and-Site/job/LOVE-manager
   https://tssw-ci.lsst.org/job/LSST_Telescope-and-Site/job/LOVE-frontend
   https://tssw-ci.lsst.org/job/LSST_Telescope-and-Site/job/LOVE-producer
   https://tssw-ci.lsst.org/job/LSST_Telescope-and-Site/job/LOVE-simulator
   https://tssw-ci.lsst.org/job/LSST_Telescope-and-Site/job/LOVE-integration-tools
   </JenkinsTestResults>
-  <RubinObsContact>Andy Clements</RubinObsContact>
-  <CSCDocs>https://confluence.lsstcorp.org/display/LTS/EAS+Requirements+Derivation</CSCDocs>
-  <ProductOwner>Brian Stalder</ProductOwner>
-  <RelatedDocuments></RelatedDocuments>
-  <SoftwareLanguage>JavaScript(React), Python(Django)</SoftwareLanguage>
-  <RuntimeLanguages>IDL</RuntimeLanguages>
-  <VendorContact>Sebastian Fehlandt - sebastian.fehlandt@inria.cl</VendorContact>
-  <Simulator>Not Required</Simulator>
-  <Configuration>Not Configurable</Configuration>
-</SALSubsystem>
-
-<SALSubsystem>
-  <Name>CCCamera</Name>
-  <Description>ComCam camera</Description>
-  <IndexEnumeration>no</IndexEnumeration>
-  <Generics>yes</Generics>
-  <ActiveDevelopers>CCS Team</ActiveDevelopers>
-  <Github>http://github.com/lsst-camera-ccs/</Github>
-  <JenkinsTestResults>https://srs.slac.stanford.edu/releaseManagement/</JenkinsTestResults>
-  <RubinObsContact>Tony Johnson</RubinObsContact>
-  <CSCDocs>https://confluence.slac.stanford.edu/display/LSSTCAM/CCS+Subsystem+Manuals</CSCDocs>
-  <ProductOwner>Michael Reuter</ProductOwner>
-  <RelatedDocuments>https://ls.st/LSE-71</RelatedDocuments>
-  <SoftwareLanguage>Java</SoftwareLanguage>
-  <RuntimeLanguages>IDL,Java</RuntimeLanguages>
-  <VendorContact>Not Applicable</VendorContact>
-  <Simulator>Internal to CSC</Simulator>
-  <Configuration>Database: https://confluence.lsstcorp.org/x/AYFcC</Configuration>
-</SALSubsystem>
-
-<SALSubsystem>
-  <Name>MTCamera</Name>
-  <Description>LSST Main Camera</Description>
-  <IndexEnumeration>no</IndexEnumeration>
-  <Generics>yes</Generics>
-  <ActiveDevelopers>CCS Team</ActiveDevelopers>
-  <Github>http://github.com/lsst-camera-ccs/</Github>
-  <JenkinsTestResults>https://srs.slac.stanford.edu/releaseManagement/</JenkinsTestResults>
-  <RubinObsContact>Tony Johnson</RubinObsContact>
-  <CSCDocs>https://confluence.slac.stanford.edu/display/LSSTCAM/CCS+Subsystem+Manuals</CSCDocs>
-  <ProductOwner>Michael Reuter</ProductOwner>
-  <RelatedDocuments>https://ls.st/LSE-71</RelatedDocuments>
-  <SoftwareLanguage>Java</SoftwareLanguage>
-  <RuntimeLanguages>IDL,Java</RuntimeLanguages>
-  <VendorContact>Not Applicable</VendorContact>
-  <Simulator>Internal to CSC</Simulator>
-  <Configuration>Database: https://confluence.lsstcorp.org/x/AYFcC</Configuration>
-</SALSubsystem>
-
-<SALSubsystem>
-  <Name>CatchupArchiver</Name>
-  <Description>Catchup Archiver</Description>
-  <IndexEnumeration>no</IndexEnumeration>
-  <Generics>yes</Generics>
-  <ActiveDevelopers>Htut Khine Win</ActiveDevelopers>
-  <Github>https://github.com/lsst-dm/dm_CatchupArchiver</Github>
-  <JenkinsTestResults>Not Available</JenkinsTestResults>
-  <RubinObsContact>Michael Reuter</RubinObsContact>
-  <CSCDocs></CSCDocs>
-  <ProductOwner>Michael Reuter</ProductOwner>
-  <RelatedDocuments></RelatedDocuments>
-  <SoftwareLanguage>Python</SoftwareLanguage>
-  <RuntimeLanguages>IDL</RuntimeLanguages>
-  <VendorContact>Not Applicableb</VendorContact>
-  <Simulator>Not Required</Simulator>
-  <Configuration>Not Configurable</Configuration>
-</SALSubsystem>
-
-<SALSubsystem>
-  <Name>CBP</Name>
-  <Description>The CSC for the Collimated Beam Projector</Description>
-  <IndexEnumeration>no</IndexEnumeration>
-  <Generics>yes</Generics>
-  <ActiveDevelopers>Eric Coughlin</ActiveDevelopers>
-  <Github>https://github.com/lsst-ts/ts_CBP</Github>
-  <JenkinsTestResults>https://tssw-ci.lsst.org/job/LSST_Telescope-and-Site/job/ts_CBP/</JenkinsTestResults>
-  <RubinObsContact>Patrick Ingraham</RubinObsContact>
-  <CSCDocs>https://ts-cbp.lsst.io</CSCDocs>
-  <ProductOwner>Patrick Ingraham</ProductOwner>
-  <RelatedDocuments>https://ls.st/LTS-439, https://ls.st/LTS-440, https://ls.st/Document-28290</RelatedDocuments>
-  <SoftwareLanguage>Python</SoftwareLanguage>
-  <RuntimeLanguages>IDL</RuntimeLanguages>
-  <VendorContact>DFM Engineering</VendorContact>
-  <Simulator>Internal to CSC</Simulator>
-  <Configuration>Not Configurable</Configuration>
-</SALSubsystem>
-
-<SALSubsystem>
-  <Name>Dome</Name>
-  <Description>The CSC for the Dome Control System</Description>
-  <IndexEnumeration>no</IndexEnumeration>
-  <Generics>yes</Generics>
-  <ActiveDevelopers>Wouter van Reeven</ActiveDevelopers>
-  <Github>https://github.com/lsst-ts/ts_Dome,https://github.com/lsst-ts/dome_eie</Github>
-  <JenkinsTestResults>https://tssw-ci.lsst.org/job/LSST_Telescope-and-Site/job/ts_Dome/</JenkinsTestResults>
-  <RubinObsContact>German Schumacher</RubinObsContact>
-  <CSCDocs>https://ts-dome.lsst.io/</CSCDocs>
-  <ProductOwner>Sandrine Thomas</ProductOwner>
-  <RelatedDocuments>https://ls.st/LTS-97, https://ls.st/LTS-158, https://ls.st/LTS-166</RelatedDocuments>
-  <SoftwareLanguage>Python (high) LabVIEW (low)</SoftwareLanguage>
-  <RuntimeLanguages>IDL</RuntimeLanguages>
-  <VendorContact>EIE</VendorContact>
-  <Simulator>Internal to CSC</Simulator>
-  <Configuration>https://github.com/lsst-ts/ts_config_mttcs</Configuration>
-</SALSubsystem>
-
-<SALSubsystem>
-  <Name>Environment</Name>
-  <Description>The CSC for getting data from the Weather Station</Description>
-  <IndexEnumeration>any</IndexEnumeration>
-  <Generics>yes</Generics>
-  <ActiveDevelopers>Wouter van Reeven</ActiveDevelopers>
-  <Github>https://github.com/lsst-ts/ts_environment</Github>
-  <JenkinsTestResults>Not Available</JenkinsTestResults>
-  <RubinObsContact>Brian Stalder</RubinObsContact>
-  <CSCDocs></CSCDocs>
-  <ProductOwner>Brian Stalder</ProductOwner>
-  <RelatedDocuments></RelatedDocuments>
-  <SoftwareLanguage>Python</SoftwareLanguage>
-  <RuntimeLanguages>IDL</RuntimeLanguages>
-  <VendorContact>Not Applicable</VendorContact>
-  <Simulator>Internal to CSC</Simulator>
-  <Configuration>https://github.com/lsst-ts/ts_config_ocs</Configuration>
-</SALSubsystem>
-
-<SALSubsystem>
-  <Name>Hexapod</Name>
-  <Description>The CSC for both the Camera and M2 Hexapod</Description>
-  <IndexEnumeration>CameraHexapod,m2msHexapod</IndexEnumeration>
-  <Generics>yes</Generics>
-  <ActiveDevelopers>Te-Wei Tsai, Russell Owen</ActiveDevelopers>
-  <Github>https://github.com/lsst-ts/ts_hexapod</Github>
-  <JenkinsTestResults>https://tssw-ci.lsst.org/job/ts_mt_hexRot_middleware</JenkinsTestResults>
-  <RubinObsContact>Te-Wei Tsai</RubinObsContact>
-  <CSCDocs></CSCDocs>
-  <ProductOwner>Bo Xin</ProductOwner>
-  <RelatedDocuments>https://ls.st/LTS-160, https://ls.st/LTS-206</RelatedDocuments>
-  <SoftwareLanguage>C/C++, MATLAB, Python</SoftwareLanguage>
-  <RuntimeLanguages>IDL</RuntimeLanguages>
-  <VendorContact>Moog</VendorContact>
-  <Simulator>Internal to CSC</Simulator>
-  <Configuration>Not Configurable</Configuration>
-</SALSubsystem>
-
-<SALSubsystem>
-  <Name>HVAC</Name>
-  <Description>The CSC for the HVAC control in the Main Telescope</Description>
-  <IndexEnumeration>no</IndexEnumeration>
-  <Generics>yes</Generics>
-  <ActiveDevelopers>Wouter van Reeven</ActiveDevelopers>
-  <Github>https://github.com/lsst-ts/ts_hvac</Github>
-  <JenkinsTestResults>Not Available</JenkinsTestResults>
-  <RubinObsContact>German Schumacher</RubinObsContact>
-  <CSCDocs></CSCDocs>
-  <ProductOwner>Brian Stalder</ProductOwner>
-  <RelatedDocuments></RelatedDocuments>
-  <SoftwareLanguage>Python</SoftwareLanguage>
-  <RuntimeLanguages>IDL</RuntimeLanguages>
-  <VendorContact>DATControl</VendorContact>
-  <Simulator>Internal to CSC</Simulator>
-  <Configuration>Not Configurable</Configuration>
-</SALSubsystem>
-
-<SALSubsystem>
-  <Name>TunableLaser</Name>
-  <Description>The CSC for the Tunable Laser</Description>
-  <IndexEnumeration>no</IndexEnumeration>
-  <Generics>yes</Generics>
-  <ActiveDevelopers>Eric Coughlin</ActiveDevelopers>
-  <Github>https://github.com/lsst-ts/ts_TunableLaser</Github>
-  <JenkinsTestResults>https://tssw-ci.lsst.org/job/LSST_Telescope-and-Site/job/ts_TunableLaser/</JenkinsTestResults>
-  <RubinObsContact>Patrick Ingraham</RubinObsContact>
-  <CSCDocs></CSCDocs>
-  <ProductOwner>Patrick Ingraham</ProductOwner>
-  <RelatedDocuments>https://ls.st/Document-29133</RelatedDocuments>
-  <SoftwareLanguage>Python</SoftwareLanguage>
-  <RuntimeLanguages>IDL</RuntimeLanguages>
-  <VendorContact>Ekspla</VendorContact>
-  <Simulator>Not Provided</Simulator>
-  <Configuration>Not Configurable</Configuration>
-</SALSubsystem>
-
-<SALSubsystem>
-  <Name>MTM1M3</Name>
-  <Description>The CSC for the M1M3 Mirror Support System</Description>
-  <IndexEnumeration>no</IndexEnumeration>
-  <Generics>yes</Generics>
-  <ActiveDevelopers>Petr Kubánek</ActiveDevelopers>
-  <Github>https://github.com/lsst-ts/ts_m1m3support</Github>
-  <JenkinsTestResults>Not Available</JenkinsTestResults>
-  <RubinObsContact>Bo Xin</RubinObsContact>
-  <CSCDocs></CSCDocs>
-  <ProductOwner>Bo Xin</ProductOwner>
-  <RelatedDocuments>https://ls.st/LTS-88, https://ls.st/LTS-161</RelatedDocuments>
-  <SoftwareLanguage>C++, Labview(FPGA)</SoftwareLanguage>
-  <RuntimeLanguages>IDL,CPP</RuntimeLanguages>
-  <VendorContact>NA</VendorContact>
-  <Simulator>Internal to CSC</Simulator>
-  <Configuration>Not Configurable</Configuration>
-</SALSubsystem>
-
-<SALSubsystem>
-  <Name>MTM1M3TS</Name>
-  <Description>The CSC for the M1M3 Mirror Thermal Control System</Description>
-  <IndexEnumeration>no</IndexEnumeration>
-  <Generics>yes</Generics>
-  <ActiveDevelopers>Petr Kubánek</ActiveDevelopers>
-  <Github>https://github.com/lsst-ts/ts_m1m3thermal</Github>
-  <JenkinsTestResults>Not Available</JenkinsTestResults>
-  <RubinObsContact>Bo Xin</RubinObsContact>
-  <CSCDocs></CSCDocs>
-  <ProductOwner>Bo Xin</ProductOwner>
-  <RelatedDocuments>https://ls.st/LTS-89</RelatedDocuments>
-  <SoftwareLanguage>C++</SoftwareLanguage>
-  <RuntimeLanguages>IDL</RuntimeLanguages>
-  <VendorContact>NA</VendorContact>
-  <Simulator>Not Provided</Simulator>
-  <Configuration>Not Configurable</Configuration>
-</SALSubsystem>
-
-<SALSubsystem>
-  <Name>MTAlignment</Name>
-  <Description>The CSC for the Alignment System Control (ASC)</Description>
-  <IndexEnumeration>no</IndexEnumeration>
-  <Generics>yes</Generics>
-  <ActiveDevelopers>Colin Winslow</ActiveDevelopers>
-  <Github>https://github.com/lsst-ts/ts_MTAlignment</Github>
-  <JenkinsTestResults>https://tssw-ci.lsst.org/job/ts_MTAlignment/</JenkinsTestResults>
-  <RubinObsContact>Sandrine Thomas</RubinObsContact>
-  <CSCDocs></CSCDocs>
-  <ProductOwner>Colin Winslow</ProductOwner>
-  <RelatedDocuments>https://ls.st/LTS-786</RelatedDocuments>
-  <SoftwareLanguage>Python</SoftwareLanguage>
-  <RuntimeLanguages>IDL</RuntimeLanguages>
-  <VendorContact>Scott Sandwith</VendorContact>
-  <Simulator>Internal to CSC</Simulator>
-  <Configuration>https://github.com/lsst-ts/ts_config_mttcs</Configuration>
-</SALSubsystem>
-
-<SALSubsystem>
-  <Name>MTAOS</Name>
-  <Description>The CSC for the Main Telescope Active Optics System</Description>
-  <IndexEnumeration>no</IndexEnumeration>
-  <Generics>yes</Generics>
-  <ActiveDevelopers>Te-Wei-Tsai</ActiveDevelopers>
-  <Github>https://github.com/lsst-ts/ts_MTAOS</Github>
-  <JenkinsTestResults>https://tssw-ci.lsst.org/job/LSST_Telescope-and-Site/job/ts_MTAOS/</JenkinsTestResults>
-  <RubinObsContact>Bo Xin</RubinObsContact>
-  <CSCDocs>https://ts-mtaos.lsst.io</CSCDocs>
-  <ProductOwner>Bo Xin</ProductOwner>
-  <RelatedDocuments>https://ls.st/LTS-186</RelatedDocuments>
-  <SoftwareLanguage>Python</SoftwareLanguage>
-  <RuntimeLanguages>IDL</RuntimeLanguages>
-  <VendorContact>Not Applicable</VendorContact>
-  <Simulator>Internal to CSC</Simulator>
-  <Configuration>https://github.com/lsst-ts/ts_config_mttcs</Configuration>
-</SALSubsystem>
-
-<SALSubsystem>
-  <Name>MTM2</Name>
-  <Description>The CSC for the M2 Mirror Support System</Description>
-  <IndexEnumeration>no</IndexEnumeration>
-  <Generics>yes</Generics>
-  <ActiveDevelopers>Te-Wei Tsai</ActiveDevelopers>
-  <Github>https://github.com/lsst-ts/ts_mtm2
+    <RubinObsContact>Andy Clements</RubinObsContact>
+    <CSCDocs>https://confluence.lsstcorp.org/display/LTS/EAS+Requirements+Derivation</CSCDocs>
+    <ProductOwner>Brian Stalder</ProductOwner>
+    <RelatedDocuments/>
+    <SoftwareLanguage>JavaScript(React), Python(Django)</SoftwareLanguage>
+    <RuntimeLanguages>IDL</RuntimeLanguages>
+    <VendorContact>Sebastian Fehlandt - sebastian.fehlandt@inria.cl</VendorContact>
+    <Simulator>Not Required</Simulator>
+    <Configuration>Not Configurable</Configuration>
+  </SALSubsystem>
+  <SALSubsystem>
+    <Name>CCCamera</Name>
+    <Description>ComCam camera</Description>
+    <IndexEnumeration>no</IndexEnumeration>
+    <Generics>yes</Generics>
+    <ActiveDevelopers>CCS Team</ActiveDevelopers>
+    <Github>http://github.com/lsst-camera-ccs/</Github>
+    <JenkinsTestResults>https://srs.slac.stanford.edu/releaseManagement/</JenkinsTestResults>
+    <RubinObsContact>Tony Johnson</RubinObsContact>
+    <CSCDocs>https://confluence.slac.stanford.edu/display/LSSTCAM/CCS+Subsystem+Manuals</CSCDocs>
+    <ProductOwner>Michael Reuter</ProductOwner>
+    <RelatedDocuments>https://ls.st/LSE-71</RelatedDocuments>
+    <SoftwareLanguage>Java</SoftwareLanguage>
+    <RuntimeLanguages>IDL,Java</RuntimeLanguages>
+    <VendorContact>Not Applicable</VendorContact>
+    <Simulator>Internal to CSC</Simulator>
+    <Configuration>Database: https://confluence.lsstcorp.org/x/AYFcC</Configuration>
+  </SALSubsystem>
+  <SALSubsystem>
+    <Name>MTCamera</Name>
+    <Description>LSST Main Camera</Description>
+    <IndexEnumeration>no</IndexEnumeration>
+    <Generics>yes</Generics>
+    <ActiveDevelopers>CCS Team</ActiveDevelopers>
+    <Github>http://github.com/lsst-camera-ccs/</Github>
+    <JenkinsTestResults>https://srs.slac.stanford.edu/releaseManagement/</JenkinsTestResults>
+    <RubinObsContact>Tony Johnson</RubinObsContact>
+    <CSCDocs>https://confluence.slac.stanford.edu/display/LSSTCAM/CCS+Subsystem+Manuals</CSCDocs>
+    <ProductOwner>Michael Reuter</ProductOwner>
+    <RelatedDocuments>https://ls.st/LSE-71</RelatedDocuments>
+    <SoftwareLanguage>Java</SoftwareLanguage>
+    <RuntimeLanguages>IDL,Java</RuntimeLanguages>
+    <VendorContact>Not Applicable</VendorContact>
+    <Simulator>Internal to CSC</Simulator>
+    <Configuration>Database: https://confluence.lsstcorp.org/x/AYFcC</Configuration>
+  </SALSubsystem>
+  <SALSubsystem>
+    <Name>CatchupArchiver</Name>
+    <Description>Catchup Archiver</Description>
+    <IndexEnumeration>no</IndexEnumeration>
+    <Generics>yes</Generics>
+    <ActiveDevelopers>Htut Khine Win</ActiveDevelopers>
+    <Github>https://github.com/lsst-dm/dm_CatchupArchiver</Github>
+    <JenkinsTestResults>Not Available</JenkinsTestResults>
+    <RubinObsContact>Michael Reuter</RubinObsContact>
+    <CSCDocs/>
+    <ProductOwner>Michael Reuter</ProductOwner>
+    <RelatedDocuments/>
+    <SoftwareLanguage>Python</SoftwareLanguage>
+    <RuntimeLanguages>IDL</RuntimeLanguages>
+    <VendorContact>Not Applicableb</VendorContact>
+    <Simulator>Not Required</Simulator>
+    <Configuration>Not Configurable</Configuration>
+  </SALSubsystem>
+  <SALSubsystem>
+    <Name>CBP</Name>
+    <Description>The CSC for the Collimated Beam Projector</Description>
+    <IndexEnumeration>no</IndexEnumeration>
+    <Generics>yes</Generics>
+    <ActiveDevelopers>Eric Coughlin</ActiveDevelopers>
+    <Github>https://github.com/lsst-ts/ts_CBP</Github>
+    <JenkinsTestResults>https://tssw-ci.lsst.org/job/LSST_Telescope-and-Site/job/ts_CBP/</JenkinsTestResults>
+    <RubinObsContact>Patrick Ingraham</RubinObsContact>
+    <CSCDocs>https://ts-cbp.lsst.io</CSCDocs>
+    <ProductOwner>Patrick Ingraham</ProductOwner>
+    <RelatedDocuments>https://ls.st/LTS-439, https://ls.st/LTS-440, https://ls.st/Document-28290</RelatedDocuments>
+    <SoftwareLanguage>Python</SoftwareLanguage>
+    <RuntimeLanguages>IDL</RuntimeLanguages>
+    <VendorContact>DFM Engineering</VendorContact>
+    <Simulator>Internal to CSC</Simulator>
+    <Configuration>Not Configurable</Configuration>
+  </SALSubsystem>
+  <SALSubsystem>
+    <Name>Dome</Name>
+    <Description>The CSC for the Dome Control System</Description>
+    <IndexEnumeration>no</IndexEnumeration>
+    <Generics>yes</Generics>
+    <ActiveDevelopers>Wouter van Reeven</ActiveDevelopers>
+    <Github>https://github.com/lsst-ts/ts_Dome,https://github.com/lsst-ts/dome_eie</Github>
+    <JenkinsTestResults>https://tssw-ci.lsst.org/job/LSST_Telescope-and-Site/job/ts_Dome/</JenkinsTestResults>
+    <RubinObsContact>German Schumacher</RubinObsContact>
+    <CSCDocs>https://ts-dome.lsst.io/</CSCDocs>
+    <ProductOwner>Sandrine Thomas</ProductOwner>
+    <RelatedDocuments>https://ls.st/LTS-97, https://ls.st/LTS-158, https://ls.st/LTS-166</RelatedDocuments>
+    <SoftwareLanguage>Python (high) LabVIEW (low)</SoftwareLanguage>
+    <RuntimeLanguages>IDL</RuntimeLanguages>
+    <VendorContact>EIE</VendorContact>
+    <Simulator>Internal to CSC</Simulator>
+    <Configuration>https://github.com/lsst-ts/ts_config_mttcs</Configuration>
+  </SALSubsystem>
+  <SALSubsystem>
+    <Name>Environment</Name>
+    <Description>The CSC for getting data from the Weather Station</Description>
+    <IndexEnumeration>any</IndexEnumeration>
+    <Generics>yes</Generics>
+    <ActiveDevelopers>Wouter van Reeven</ActiveDevelopers>
+    <Github>https://github.com/lsst-ts/ts_environment</Github>
+    <JenkinsTestResults>Not Available</JenkinsTestResults>
+    <RubinObsContact>Brian Stalder</RubinObsContact>
+    <CSCDocs/>
+    <ProductOwner>Brian Stalder</ProductOwner>
+    <RelatedDocuments/>
+    <SoftwareLanguage>Python</SoftwareLanguage>
+    <RuntimeLanguages>IDL</RuntimeLanguages>
+    <VendorContact>Not Applicable</VendorContact>
+    <Simulator>Internal to CSC</Simulator>
+    <Configuration>https://github.com/lsst-ts/ts_config_ocs</Configuration>
+  </SALSubsystem>
+  <SALSubsystem>
+    <Name>Hexapod</Name>
+    <Description>The CSC for both the Camera and M2 Hexapod</Description>
+    <IndexEnumeration>CameraHexapod,m2msHexapod</IndexEnumeration>
+    <Generics>yes</Generics>
+    <ActiveDevelopers>Te-Wei Tsai, Russell Owen</ActiveDevelopers>
+    <Github>https://github.com/lsst-ts/ts_hexapod</Github>
+    <JenkinsTestResults>https://tssw-ci.lsst.org/job/ts_mt_hexRot_middleware</JenkinsTestResults>
+    <RubinObsContact>Te-Wei Tsai</RubinObsContact>
+    <CSCDocs/>
+    <ProductOwner>Bo Xin</ProductOwner>
+    <RelatedDocuments>https://ls.st/LTS-160, https://ls.st/LTS-206</RelatedDocuments>
+    <SoftwareLanguage>C/C++, MATLAB, Python</SoftwareLanguage>
+    <RuntimeLanguages>IDL</RuntimeLanguages>
+    <VendorContact>Moog</VendorContact>
+    <Simulator>Internal to CSC</Simulator>
+    <Configuration>Not Configurable</Configuration>
+  </SALSubsystem>
+  <SALSubsystem>
+    <Name>HVAC</Name>
+    <Description>The CSC for the HVAC control in the Main Telescope</Description>
+    <IndexEnumeration>no</IndexEnumeration>
+    <Generics>yes</Generics>
+    <ActiveDevelopers>Wouter van Reeven</ActiveDevelopers>
+    <Github>https://github.com/lsst-ts/ts_hvac</Github>
+    <JenkinsTestResults>Not Available</JenkinsTestResults>
+    <RubinObsContact>German Schumacher</RubinObsContact>
+    <CSCDocs/>
+    <ProductOwner>Brian Stalder</ProductOwner>
+    <RelatedDocuments/>
+    <SoftwareLanguage>Python</SoftwareLanguage>
+    <RuntimeLanguages>IDL</RuntimeLanguages>
+    <VendorContact>DATControl</VendorContact>
+    <Simulator>Internal to CSC</Simulator>
+    <Configuration>Not Configurable</Configuration>
+  </SALSubsystem>
+  <SALSubsystem>
+    <Name>TunableLaser</Name>
+    <Description>The CSC for the Tunable Laser</Description>
+    <IndexEnumeration>no</IndexEnumeration>
+    <Generics>yes</Generics>
+    <ActiveDevelopers>Eric Coughlin</ActiveDevelopers>
+    <Github>https://github.com/lsst-ts/ts_TunableLaser</Github>
+    <JenkinsTestResults>https://tssw-ci.lsst.org/job/LSST_Telescope-and-Site/job/ts_TunableLaser/</JenkinsTestResults>
+    <RubinObsContact>Patrick Ingraham</RubinObsContact>
+    <CSCDocs/>
+    <ProductOwner>Patrick Ingraham</ProductOwner>
+    <RelatedDocuments>https://ls.st/Document-29133</RelatedDocuments>
+    <SoftwareLanguage>Python</SoftwareLanguage>
+    <RuntimeLanguages>IDL</RuntimeLanguages>
+    <VendorContact>Ekspla</VendorContact>
+    <Simulator>Not Provided</Simulator>
+    <Configuration>Not Configurable</Configuration>
+  </SALSubsystem>
+  <SALSubsystem>
+    <Name>MTM1M3</Name>
+    <Description>The CSC for the M1M3 Mirror Support System</Description>
+    <IndexEnumeration>no</IndexEnumeration>
+    <Generics>yes</Generics>
+    <ActiveDevelopers>Petr Kubánek</ActiveDevelopers>
+    <Github>https://github.com/lsst-ts/ts_m1m3support</Github>
+    <JenkinsTestResults>Not Available</JenkinsTestResults>
+    <RubinObsContact>Bo Xin</RubinObsContact>
+    <CSCDocs/>
+    <ProductOwner>Bo Xin</ProductOwner>
+    <RelatedDocuments>https://ls.st/LTS-88, https://ls.st/LTS-161</RelatedDocuments>
+    <SoftwareLanguage>C++, Labview(FPGA)</SoftwareLanguage>
+    <RuntimeLanguages>IDL,CPP</RuntimeLanguages>
+    <VendorContact>NA</VendorContact>
+    <Simulator>Internal to CSC</Simulator>
+    <Configuration>Not Configurable</Configuration>
+  </SALSubsystem>
+  <SALSubsystem>
+    <Name>MTM1M3TS</Name>
+    <Description>The CSC for the M1M3 Mirror Thermal Control System</Description>
+    <IndexEnumeration>no</IndexEnumeration>
+    <Generics>yes</Generics>
+    <ActiveDevelopers>Petr Kubánek</ActiveDevelopers>
+    <Github>https://github.com/lsst-ts/ts_m1m3thermal</Github>
+    <JenkinsTestResults>Not Available</JenkinsTestResults>
+    <RubinObsContact>Bo Xin</RubinObsContact>
+    <CSCDocs/>
+    <ProductOwner>Bo Xin</ProductOwner>
+    <RelatedDocuments>https://ls.st/LTS-89</RelatedDocuments>
+    <SoftwareLanguage>C++</SoftwareLanguage>
+    <RuntimeLanguages>IDL</RuntimeLanguages>
+    <VendorContact>NA</VendorContact>
+    <Simulator>Not Provided</Simulator>
+    <Configuration>Not Configurable</Configuration>
+  </SALSubsystem>
+  <SALSubsystem>
+    <Name>MTAlignment</Name>
+    <Description>The CSC for the Alignment System Control (ASC)</Description>
+    <IndexEnumeration>no</IndexEnumeration>
+    <Generics>yes</Generics>
+    <ActiveDevelopers>Colin Winslow</ActiveDevelopers>
+    <Github>https://github.com/lsst-ts/ts_MTAlignment</Github>
+    <JenkinsTestResults>https://tssw-ci.lsst.org/job/ts_MTAlignment/</JenkinsTestResults>
+    <RubinObsContact>Sandrine Thomas</RubinObsContact>
+    <CSCDocs/>
+    <ProductOwner>Colin Winslow</ProductOwner>
+    <RelatedDocuments>https://ls.st/LTS-786</RelatedDocuments>
+    <SoftwareLanguage>Python</SoftwareLanguage>
+    <RuntimeLanguages>IDL</RuntimeLanguages>
+    <VendorContact>Scott Sandwith</VendorContact>
+    <Simulator>Internal to CSC</Simulator>
+    <Configuration>https://github.com/lsst-ts/ts_config_mttcs</Configuration>
+  </SALSubsystem>
+  <SALSubsystem>
+    <Name>MTAOS</Name>
+    <Description>The CSC for the Main Telescope Active Optics System</Description>
+    <IndexEnumeration>no</IndexEnumeration>
+    <Generics>yes</Generics>
+    <ActiveDevelopers>Te-Wei-Tsai</ActiveDevelopers>
+    <Github>https://github.com/lsst-ts/ts_MTAOS</Github>
+    <JenkinsTestResults>https://tssw-ci.lsst.org/job/LSST_Telescope-and-Site/job/ts_MTAOS/</JenkinsTestResults>
+    <RubinObsContact>Bo Xin</RubinObsContact>
+    <CSCDocs>https://ts-mtaos.lsst.io</CSCDocs>
+    <ProductOwner>Bo Xin</ProductOwner>
+    <RelatedDocuments>https://ls.st/LTS-186</RelatedDocuments>
+    <SoftwareLanguage>Python</SoftwareLanguage>
+    <RuntimeLanguages>IDL</RuntimeLanguages>
+    <VendorContact>Not Applicable</VendorContact>
+    <Simulator>Internal to CSC</Simulator>
+    <Configuration>https://github.com/lsst-ts/ts_config_mttcs</Configuration>
+  </SALSubsystem>
+  <SALSubsystem>
+    <Name>MTM2</Name>
+    <Description>The CSC for the M2 Mirror Support System</Description>
+    <IndexEnumeration>no</IndexEnumeration>
+    <Generics>yes</Generics>
+    <ActiveDevelopers>Te-Wei Tsai</ActiveDevelopers>
+    <Github>https://github.com/lsst-ts/ts_mtm2
     https://github.com/lsst-ts/ts_mtm2_cell</Github>
-  <JenkinsTestResults>Not Available</JenkinsTestResults>
-  <RubinObsContact>Te-Wei Tsai</RubinObsContact>
-  <CSCDocs></CSCDocs>
-  <ProductOwner>Bo Xin</ProductOwner>
-  <RelatedDocuments>https://ls.st/LTS-162, https://ls.st/LTS-196</RelatedDocuments>
-  <SoftwareLanguage>LabVIEW, MATLAB</SoftwareLanguage>
-  <RuntimeLanguages>IDL,LabVIEW</RuntimeLanguages>
-  <VendorContact>Harris</VendorContact>
-  <Simulator>https://github.com/lsst-ts/ts_m2</Simulator>
-  <Configuration>Not Configurable</Configuration>
-</SALSubsystem>
-
-<SALSubsystem>
-  <Name>MTVMS</Name>
-  <Description>the CSC for the Vibration Monitoring System</Description>
-  <IndexEnumeration>no</IndexEnumeration>
-  <Generics>yes</Generics>
-  <ActiveDevelopers>Petr Kubánek</ActiveDevelopers>
-  <Github>https://github.com/lsst-ts/ts_vms</Github>
-  <JenkinsTestResults>Not Available</JenkinsTestResults>
-  <RubinObsContact>Bo Xin</RubinObsContact>
-  <CSCDocs></CSCDocs>
-  <ProductOwner>Bo Xin</ProductOwner>
-  <RelatedDocuments>https://ls.st/LTS-88</RelatedDocuments>
-  <SoftwareLanguage>LabVIEW</SoftwareLanguage>
-  <RuntimeLanguages>IDL</RuntimeLanguages>
-  <VendorContact>Not Applicable</VendorContact>
-  <Simulator>Not Provided</Simulator>
-  <Configuration>Not Configurable</Configuration>
-</SALSubsystem>
-
-<SALSubsystem>
-  <Name>PromptProcessing</Name>
-  <Description></Description>
-  <IndexEnumeration>no</IndexEnumeration>
-  <Generics>yes</Generics>
-  <ActiveDevelopers>Tony Johnson</ActiveDevelopers>
-  <Github></Github>
-  <JenkinsTestResults></JenkinsTestResults>
-  <RubinObsContact></RubinObsContact>
-  <CSCDocs></CSCDocs>
-  <ProductOwner>Michael Reuter</ProductOwner>
-  <RelatedDocuments></RelatedDocuments>
-  <SoftwareLanguage></SoftwareLanguage>
-  <RuntimeLanguages>IDL</RuntimeLanguages>
-  <VendorContact>Camera</VendorContact>
-  <Simulator>No</Simulator>
-  <Configuration>Not Configurable</Configuration>
-</SALSubsystem>
-
-<SALSubsystem>
-  <Name>Rotator</Name>
-  <Description>The CSC for the Camera Rotator</Description>
-  <IndexEnumeration>no</IndexEnumeration>
-  <Generics>yes</Generics>
-  <ActiveDevelopers>Tei-Wei Tsai, Russell Owen</ActiveDevelopers>
-  <Github>https://github.com/lsst-ts/ts_rotator</Github>
-  <JenkinsTestResults>https://tssw-ci.lsst.org/job/ts_mt_hexRot_middleware/</JenkinsTestResults>
-  <RubinObsContact>Te-Wei Tsai</RubinObsContact>
-  <CSCDocs>https://ts-rotator.lsst.io/</CSCDocs>
-  <ProductOwner>Bo Xin</ProductOwner>
-  <RelatedDocuments>https://ls.st/LTS-160, https://ls.st/LTS-206</RelatedDocuments>
-  <SoftwareLanguage>C/C++, MATLAB, Python</SoftwareLanguage>
-  <RuntimeLanguages>IDL</RuntimeLanguages>
-  <VendorContact>Moog</VendorContact>
-  <Simulator>Internal to CSC</Simulator>
-  <Configuration>Not Configurable</Configuration>
-</SALSubsystem>
-
-<SALSubsystem>
-  <Name>Scheduler</Name>
-  <Description>The CSC for the Scheduler of both the Main and Auxiliary Telescope</Description>
-  <IndexEnumeration>Main,AuxTel</IndexEnumeration>
-  <Generics>yes</Generics>
-  <ActiveDevelopers>Tiago Ribeiro</ActiveDevelopers>
-  <Github>https://github.com/lsst-ts/ts_scheduler</Github>
-  <JenkinsTestResults>Not Available</JenkinsTestResults>
-  <RubinObsContact>Tiago Ribeiro</RubinObsContact>
-  <CSCDocs></CSCDocs>
-  <ProductOwner>Tiago Ribeiro</ProductOwner>
-  <RelatedDocuments>https://ls.st/LTS-347</RelatedDocuments>
-  <SoftwareLanguage>Python</SoftwareLanguage>
-  <RuntimeLanguages>IDL</RuntimeLanguages>
-  <VendorContact>Not Applicable</VendorContact>
-  <Simulator>Not Required</Simulator>
-  <Configuration>https://github.com/lsst-ts/ts_config_ocs</Configuration>
-</SALSubsystem>
-
-<SALSubsystem>
-  <Name>Script</Name>
-  <Description>A "SAL script" that performs some action using SAL and then quits. SAL Scripts are managed by the ScriptQueue.</Description>
-  <IndexEnumeration>any</IndexEnumeration>
-  <Generics>command_setAuthList, command_setLogLevel, logevent_authList, logevent_heartbeat, logevent_logLevel, logevent_logMessage</Generics>
-  <ActiveDevelopers>Russell Owen</ActiveDevelopers>
-  <Github>https://github.com/lsst-ts/ts_salobj, https://github.com/lsst-ts/ts_standardscripts, https://github.com/lsst-ts/ts_externalscripts, </Github>
-  <JenkinsTestResults>Not Available</JenkinsTestResults>
-  <RubinObsContact>Russell Owen</RubinObsContact>
-  <CSCDocs>https://ts-salobj.lsst.io/</CSCDocs>
-  <ProductOwner>Russell Owen</ProductOwner>
-  <RelatedDocuments></RelatedDocuments>
-  <SoftwareLanguage>Python</SoftwareLanguage>
-  <RuntimeLanguages>IDL,CPP,SALPY</RuntimeLanguages>
-  <VendorContact>Not Applicable</VendorContact>
-  <Simulator>Not Required</Simulator>
-  <Configuration>Not Configurable</Configuration>
-</SALSubsystem>
-
-<SALSubsystem>
-  <Name>ScriptQueue</Name>
-  <Description>A CSC that manages SAL Scripts (see the Script subsystem).</Description>
-  <IndexEnumeration>Main,AuxTel</IndexEnumeration>
-  <Generics>yes</Generics>
-  <ActiveDevelopers>Russell Owen</ActiveDevelopers>
-  <Github>https://github.com/lsst-ts/ts_scriptqueue</Github>
-  <JenkinsTestResults>Not Available</JenkinsTestResults>
-  <RubinObsContact>Russell Owen</RubinObsContact>
-  <CSCDocs>https://ts-scriptqueue.lsst.io/</CSCDocs>
-  <ProductOwner>Russell Owen</ProductOwner>
-  <RelatedDocuments></RelatedDocuments>
-  <SoftwareLanguage>Python</SoftwareLanguage>
-  <RuntimeLanguages>IDL</RuntimeLanguages>
-  <VendorContact>NA</VendorContact>
-  <Simulator>Not Required</Simulator>
-  <Configuration>Not Configurable</Configuration>
-</SALSubsystem>
-
-<SALSubsystem>
-  <Name>FiberSpectrograph</Name>
-  <Description>A CSC that manages the Fiber Spectrographs that are used to measure the calibration light sources.</Description>
-  <IndexEnumeration>Blue,Red,Broad</IndexEnumeration>
-  <Generics>yes</Generics>
-  <ActiveDevelopers>Russell Owen</ActiveDevelopers>
-  <Github>https://github.com/lsst-ts/ts_FiberSpectrograph</Github>
-  <JenkinsTestResults>Not Available</JenkinsTestResults>
-  <RubinObsContact>Patrick Ingraham</RubinObsContact>
-  <CSCDocs>https://ts-fiberspectrograph.lsst.io/</CSCDocs>
-  <ProductOwner>Patrick Ingraham</ProductOwner>
-  <RelatedDocuments></RelatedDocuments>
-  <SoftwareLanguage>Python</SoftwareLanguage>
-  <RuntimeLanguages>IDL</RuntimeLanguages>
-  <VendorContact>Not Applicable</VendorContact>
-  <Simulator>Internal to CSC</Simulator>
-  <Configuration>https://github.com/lsst-ts/ts_config_ocs</Configuration>
-</SALSubsystem>
-
-<SALSubsystem>
-  <Name>MTDomeTrajectory</Name>
-  <Description>The CSC for the Main Telescope Dome Trajectory</Description>
-  <IndexEnumeration>no</IndexEnumeration>
-  <Generics>yes</Generics>
-  <ActiveDevelopers>Russell Owen</ActiveDevelopers>
-  <Github>https://github.com/lsst-ts/ts_MTDomeTrajectory</Github>
-  <JenkinsTestResults>Not Available</JenkinsTestResults>
-  <RubinObsContact>Russell Owen</RubinObsContact>
-  <CSCDocs></CSCDocs>
-  <ProductOwner>Russell Owen</ProductOwner>
-  <RelatedDocuments></RelatedDocuments>
-  <SoftwareLanguage>Python</SoftwareLanguage>
-  <RuntimeLanguages>IDL</RuntimeLanguages>
-  <VendorContact>Not Applicable</VendorContact>
-  <Simulator>Not Required</Simulator>
-  <Configuration>https://github.com/lsst-ts/ts_config_mttcs</Configuration>
-</SALSubsystem>
-
-<SALSubsystem>
-  <Name>MTEEC</Name>
-  <Description>The CSC for the Environmental Enclosure Component</Description>
-  <IndexEnumeration>no</IndexEnumeration>
-  <Generics>yes</Generics>
-  <ActiveDevelopers>Wouter van Reeven</ActiveDevelopers>
-  <Github>https://github.com/lsst-ts/ts_mteec</Github>
-  <JenkinsTestResults>Not Available</JenkinsTestResults>
-  <RubinObsContact>German Schumacher</RubinObsContact>
-  <CSCDocs></CSCDocs>
-  <ProductOwner>Brian Stalder</ProductOwner>
-  <RelatedDocuments></RelatedDocuments>
-  <SoftwareLanguage>Python</SoftwareLanguage>
-  <RuntimeLanguages>IDL</RuntimeLanguages>
-  <VendorContact>Not Applicable</VendorContact>
-  <Simulator>Not Provided</Simulator>
-  <Configuration>Not Configurable</Configuration>
-</SALSubsystem>
-
-<SALSubsystem>
-  <Name>GenericCamera</Name>
-  <Description>The CSC for the Generic Camera</Description>
-  <IndexEnumeration>SIMULATOR,AT_ZWO_ASI1600</IndexEnumeration>
-  <Generics>yes</Generics>
-  <ActiveDevelopers>Tiago Ribeiro, Wouter van Reeven</ActiveDevelopers>
-  <Github>https://github.com/lsst-ts/ts_GenericCamera</Github>
-  <JenkinsTestResults>https://tssw-ci.lsst.org/job/LSST_Telescope-and-Site/job/ts_GenericCamera/</JenkinsTestResults>
-  <RubinObsContact>Tiago Ribeiro</RubinObsContact>
-  <CSCDocs></CSCDocs>
-  <ProductOwner>Brian Stalder</ProductOwner>
-  <RelatedDocuments></RelatedDocuments>
-  <SoftwareLanguage>Python</SoftwareLanguage>
-  <RuntimeLanguages>IDL</RuntimeLanguages>
-  <VendorContact>Not Applicable</VendorContact>
-  <Simulator>Internal to CSC</Simulator>
-  <Configuration>https://github.com/lsst-ts/ts_config_ocs</Configuration>
-</SALSubsystem>
-
-<SALSubsystem>
-  <Name>Test</Name>
-  <Description>A SAL component designed to support testing SAL itself.</Description>
-  <IndexEnumeration>any</IndexEnumeration>
-  <Generics>yes</Generics>
-  <ActiveDevelopers>Russell Owen</ActiveDevelopers>
-  <Github>https://github.com/lsst-ts/ts_salobj</Github>
-  <JenkinsTestResults>Not Available</JenkinsTestResults>
-  <RubinObsContact>Russell Owen</RubinObsContact>
-  <CSCDocs></CSCDocs>
-  <ProductOwner>Russell Owen</ProductOwner>
-  <RelatedDocuments></RelatedDocuments>
-  <SoftwareLanguage>Python</SoftwareLanguage>
-  <RuntimeLanguages>IDL,CPP,SALPY,Java,LabVIEW</RuntimeLanguages>
-  <VendorContact>Not Applicable</VendorContact>
-  <Simulator>Not Required</Simulator>
-  <Configuration>https://github.com/lsst-ts/ts_config_ocs</Configuration>
-</SALSubsystem>
-
-<SALSubsystem>
-  <Name>Watcher</Name>
-  <Description>A CSC that listens other CSCs and uses that data to produces alarms for the user interface.</Description>
-  <IndexEnumeration>no</IndexEnumeration>
-  <Generics>yes</Generics>
-  <ActiveDevelopers>Russell Owen</ActiveDevelopers>
-  <Github>https://github.com/lsst-ts/ts_watcher</Github>
-  <JenkinsTestResults>Not Available</JenkinsTestResults>
-  <RubinObsContact>Russell Owen</RubinObsContact>
-  <CSCDocs>https://ts-watcher.lsst.io/</CSCDocs>
-  <ProductOwner>Brian Stalder</ProductOwner>
-  <RelatedDocuments></RelatedDocuments>
-  <SoftwareLanguage>Python</SoftwareLanguage>
-  <RuntimeLanguages>IDL</RuntimeLanguages>
-  <VendorContact>Not Applicable</VendorContact>
-  <Simulator>Not Required</Simulator>
-  <Configuration>https://github.com/lsst-ts/ts_config_ocs</Configuration>
-</SALSubsystem>
-
-<SALSubsystem>
-  <Name>SummitFacility</Name>
-  <Description>The CSC for controlling the summit facility of the main telescope</Description>
-  <IndexEnumeration>no</IndexEnumeration>
-  <Generics>yes</Generics>
-  <ActiveDevelopers>Colin Winslow</ActiveDevelopers>
-  <Github>Not Available</Github>
-  <JenkinsTestResults>Not Available</JenkinsTestResults>
-  <RubinObsContact>Sandrine Thomas</RubinObsContact>
-  <CSCDocs></CSCDocs>
-  <ProductOwner>Sandrine Thomas</ProductOwner>
-  <RelatedDocuments></RelatedDocuments>
-  <SoftwareLanguage></SoftwareLanguage>
-  <RuntimeLanguages>IDL</RuntimeLanguages>
-  <VendorContact>Not Applicable</VendorContact>
-  <Simulator>Internal to CSC</Simulator>
-  <Configuration>Not Configurable</Configuration>
-</SALSubsystem>
-
-<SALSubsystem>
-  <Name>DSM</Name>
-  <Description>CSC for transmitting information from the Dome Seeing Monitor</Description>
-  <IndexEnumeration>DSM1=1,DSM2=2</IndexEnumeration>
-  <Generics>yes</Generics>
-  <ActiveDevelopers>Michael Reuter</ActiveDevelopers>
-  <Github>https://github.com/lsst-ts/ts_dsm</Github>
-  <JenkinsTestResults>https://tssw-ci.lsst.org/job/DSM%20conda%20package/</JenkinsTestResults>
-  <RubinObsContact>Michael Reuter</RubinObsContact>
-  <CSCDocs>https://ts-dsm.lsst.io</CSCDocs>
-  <ProductOwner>Brian Stalder</ProductOwner>
-  <RelatedDocuments>https://sitcomtn-001.lsst.io/</RelatedDocuments>
-  <SoftwareLanguage>Python</SoftwareLanguage>
-  <RuntimeLanguages>IDL</RuntimeLanguages>
-  <VendorContact>Not Applicable</VendorContact>
-  <Simulator>Internal to CSC</Simulator>
-  <Configuration>Not Configurable</Configuration>
-</SALSubsystem>
+    <JenkinsTestResults>Not Available</JenkinsTestResults>
+    <RubinObsContact>Te-Wei Tsai</RubinObsContact>
+    <CSCDocs/>
+    <ProductOwner>Bo Xin</ProductOwner>
+    <RelatedDocuments>https://ls.st/LTS-162, https://ls.st/LTS-196</RelatedDocuments>
+    <SoftwareLanguage>LabVIEW, MATLAB</SoftwareLanguage>
+    <RuntimeLanguages>IDL,LabVIEW</RuntimeLanguages>
+    <VendorContact>Harris</VendorContact>
+    <Simulator>https://github.com/lsst-ts/ts_m2</Simulator>
+    <Configuration>Not Configurable</Configuration>
+  </SALSubsystem>
+  <SALSubsystem>
+    <Name>MTVMS</Name>
+    <Description>the CSC for the Vibration Monitoring System</Description>
+    <IndexEnumeration>no</IndexEnumeration>
+    <Generics>yes</Generics>
+    <ActiveDevelopers>Petr Kubánek</ActiveDevelopers>
+    <Github>https://github.com/lsst-ts/ts_vms</Github>
+    <JenkinsTestResults>Not Available</JenkinsTestResults>
+    <RubinObsContact>Bo Xin</RubinObsContact>
+    <CSCDocs/>
+    <ProductOwner>Bo Xin</ProductOwner>
+    <RelatedDocuments>https://ls.st/LTS-88</RelatedDocuments>
+    <SoftwareLanguage>LabVIEW</SoftwareLanguage>
+    <RuntimeLanguages>IDL</RuntimeLanguages>
+    <VendorContact>Not Applicable</VendorContact>
+    <Simulator>Not Provided</Simulator>
+    <Configuration>Not Configurable</Configuration>
+  </SALSubsystem>
+  <SALSubsystem>
+    <Name>PromptProcessing</Name>
+    <Description/>
+    <IndexEnumeration>no</IndexEnumeration>
+    <Generics>yes</Generics>
+    <ActiveDevelopers>Tony Johnson</ActiveDevelopers>
+    <Github/>
+    <JenkinsTestResults/>
+    <RubinObsContact/>
+    <CSCDocs/>
+    <ProductOwner>Michael Reuter</ProductOwner>
+    <RelatedDocuments/>
+    <SoftwareLanguage/>
+    <RuntimeLanguages>IDL</RuntimeLanguages>
+    <VendorContact>Camera</VendorContact>
+    <Simulator>No</Simulator>
+    <Configuration>Not Configurable</Configuration>
+  </SALSubsystem>
+  <SALSubsystem>
+    <Name>Rotator</Name>
+    <Description>The CSC for the Camera Rotator</Description>
+    <IndexEnumeration>no</IndexEnumeration>
+    <Generics>yes</Generics>
+    <ActiveDevelopers>Tei-Wei Tsai, Russell Owen</ActiveDevelopers>
+    <Github>https://github.com/lsst-ts/ts_rotator</Github>
+    <JenkinsTestResults>https://tssw-ci.lsst.org/job/ts_mt_hexRot_middleware/</JenkinsTestResults>
+    <RubinObsContact>Te-Wei Tsai</RubinObsContact>
+    <CSCDocs>https://ts-rotator.lsst.io/</CSCDocs>
+    <ProductOwner>Bo Xin</ProductOwner>
+    <RelatedDocuments>https://ls.st/LTS-160, https://ls.st/LTS-206</RelatedDocuments>
+    <SoftwareLanguage>C/C++, MATLAB, Python</SoftwareLanguage>
+    <RuntimeLanguages>IDL</RuntimeLanguages>
+    <VendorContact>Moog</VendorContact>
+    <Simulator>Internal to CSC</Simulator>
+    <Configuration>Not Configurable</Configuration>
+  </SALSubsystem>
+  <SALSubsystem>
+    <Name>Scheduler</Name>
+    <Description>The CSC for the Scheduler of both the Main and Auxiliary Telescope</Description>
+    <IndexEnumeration>Main,AuxTel</IndexEnumeration>
+    <Generics>yes</Generics>
+    <ActiveDevelopers>Tiago Ribeiro</ActiveDevelopers>
+    <Github>https://github.com/lsst-ts/ts_scheduler</Github>
+    <JenkinsTestResults>Not Available</JenkinsTestResults>
+    <RubinObsContact>Tiago Ribeiro</RubinObsContact>
+    <CSCDocs/>
+    <ProductOwner>Tiago Ribeiro</ProductOwner>
+    <RelatedDocuments>https://ls.st/LTS-347</RelatedDocuments>
+    <SoftwareLanguage>Python</SoftwareLanguage>
+    <RuntimeLanguages>IDL</RuntimeLanguages>
+    <VendorContact>Not Applicable</VendorContact>
+    <Simulator>Not Required</Simulator>
+    <Configuration>https://github.com/lsst-ts/ts_config_ocs</Configuration>
+  </SALSubsystem>
+  <SALSubsystem>
+    <Name>Script</Name>
+    <Description>A "SAL script" that performs some action using SAL and then quits. SAL Scripts are managed by the ScriptQueue.</Description>
+    <IndexEnumeration>any</IndexEnumeration>
+    <Generics>command_setAuthList, command_setLogLevel, logevent_authList, logevent_heartbeat, logevent_logLevel, logevent_logMessage</Generics>
+    <ActiveDevelopers>Russell Owen</ActiveDevelopers>
+    <Github>https://github.com/lsst-ts/ts_salobj, https://github.com/lsst-ts/ts_standardscripts, https://github.com/lsst-ts/ts_externalscripts, </Github>
+    <JenkinsTestResults>Not Available</JenkinsTestResults>
+    <RubinObsContact>Russell Owen</RubinObsContact>
+    <CSCDocs>https://ts-salobj.lsst.io/</CSCDocs>
+    <ProductOwner>Russell Owen</ProductOwner>
+    <RelatedDocuments/>
+    <SoftwareLanguage>Python</SoftwareLanguage>
+    <RuntimeLanguages>IDL,CPP,SALPY</RuntimeLanguages>
+    <VendorContact>Not Applicable</VendorContact>
+    <Simulator>Not Required</Simulator>
+    <Configuration>Not Configurable</Configuration>
+  </SALSubsystem>
+  <SALSubsystem>
+    <Name>ScriptQueue</Name>
+    <Description>A CSC that manages SAL Scripts (see the Script subsystem).</Description>
+    <IndexEnumeration>Main,AuxTel</IndexEnumeration>
+    <Generics>yes</Generics>
+    <ActiveDevelopers>Russell Owen</ActiveDevelopers>
+    <Github>https://github.com/lsst-ts/ts_scriptqueue</Github>
+    <JenkinsTestResults>Not Available</JenkinsTestResults>
+    <RubinObsContact>Russell Owen</RubinObsContact>
+    <CSCDocs>https://ts-scriptqueue.lsst.io/</CSCDocs>
+    <ProductOwner>Russell Owen</ProductOwner>
+    <RelatedDocuments/>
+    <SoftwareLanguage>Python</SoftwareLanguage>
+    <RuntimeLanguages>IDL</RuntimeLanguages>
+    <VendorContact>NA</VendorContact>
+    <Simulator>Not Required</Simulator>
+    <Configuration>Not Configurable</Configuration>
+  </SALSubsystem>
+  <SALSubsystem>
+    <Name>FiberSpectrograph</Name>
+    <Description>A CSC that manages the Fiber Spectrographs that are used to measure the calibration light sources.</Description>
+    <IndexEnumeration>Blue,Red,Broad</IndexEnumeration>
+    <Generics>yes</Generics>
+    <ActiveDevelopers>Russell Owen</ActiveDevelopers>
+    <Github>https://github.com/lsst-ts/ts_FiberSpectrograph</Github>
+    <JenkinsTestResults>Not Available</JenkinsTestResults>
+    <RubinObsContact>Patrick Ingraham</RubinObsContact>
+    <CSCDocs>https://ts-fiberspectrograph.lsst.io/</CSCDocs>
+    <ProductOwner>Patrick Ingraham</ProductOwner>
+    <RelatedDocuments/>
+    <SoftwareLanguage>Python</SoftwareLanguage>
+    <RuntimeLanguages>IDL</RuntimeLanguages>
+    <VendorContact>Not Applicable</VendorContact>
+    <Simulator>Internal to CSC</Simulator>
+    <Configuration>https://github.com/lsst-ts/ts_config_ocs</Configuration>
+  </SALSubsystem>
+  <SALSubsystem>
+    <Name>MTDomeTrajectory</Name>
+    <Description>The CSC for the Main Telescope Dome Trajectory</Description>
+    <IndexEnumeration>no</IndexEnumeration>
+    <Generics>yes</Generics>
+    <ActiveDevelopers>Russell Owen</ActiveDevelopers>
+    <Github>https://github.com/lsst-ts/ts_MTDomeTrajectory</Github>
+    <JenkinsTestResults>Not Available</JenkinsTestResults>
+    <RubinObsContact>Russell Owen</RubinObsContact>
+    <CSCDocs/>
+    <ProductOwner>Russell Owen</ProductOwner>
+    <RelatedDocuments/>
+    <SoftwareLanguage>Python</SoftwareLanguage>
+    <RuntimeLanguages>IDL</RuntimeLanguages>
+    <VendorContact>Not Applicable</VendorContact>
+    <Simulator>Not Required</Simulator>
+    <Configuration>https://github.com/lsst-ts/ts_config_mttcs</Configuration>
+  </SALSubsystem>
+  <SALSubsystem>
+    <Name>MTEEC</Name>
+    <Description>The CSC for the Environmental Enclosure Component</Description>
+    <IndexEnumeration>no</IndexEnumeration>
+    <Generics>yes</Generics>
+    <ActiveDevelopers>Wouter van Reeven</ActiveDevelopers>
+    <Github>https://github.com/lsst-ts/ts_mteec</Github>
+    <JenkinsTestResults>Not Available</JenkinsTestResults>
+    <RubinObsContact>German Schumacher</RubinObsContact>
+    <CSCDocs/>
+    <ProductOwner>Brian Stalder</ProductOwner>
+    <RelatedDocuments/>
+    <SoftwareLanguage>Python</SoftwareLanguage>
+    <RuntimeLanguages>IDL</RuntimeLanguages>
+    <VendorContact>Not Applicable</VendorContact>
+    <Simulator>Not Provided</Simulator>
+    <Configuration>Not Configurable</Configuration>
+  </SALSubsystem>
+  <SALSubsystem>
+    <Name>GenericCamera</Name>
+    <Description>The CSC for the Generic Camera</Description>
+    <IndexEnumeration>SIMULATOR,AT_ZWO_ASI1600</IndexEnumeration>
+    <Generics>yes</Generics>
+    <ActiveDevelopers>Tiago Ribeiro, Wouter van Reeven</ActiveDevelopers>
+    <Github>https://github.com/lsst-ts/ts_GenericCamera</Github>
+    <JenkinsTestResults>https://tssw-ci.lsst.org/job/LSST_Telescope-and-Site/job/ts_GenericCamera/</JenkinsTestResults>
+    <RubinObsContact>Tiago Ribeiro</RubinObsContact>
+    <CSCDocs/>
+    <ProductOwner>Brian Stalder</ProductOwner>
+    <RelatedDocuments/>
+    <SoftwareLanguage>Python</SoftwareLanguage>
+    <RuntimeLanguages>IDL</RuntimeLanguages>
+    <VendorContact>Not Applicable</VendorContact>
+    <Simulator>Internal to CSC</Simulator>
+    <Configuration>https://github.com/lsst-ts/ts_config_ocs</Configuration>
+  </SALSubsystem>
+  <SALSubsystem>
+    <Name>Test</Name>
+    <Description>A SAL component designed to support testing SAL itself.</Description>
+    <IndexEnumeration>any</IndexEnumeration>
+    <Generics>yes</Generics>
+    <ActiveDevelopers>Russell Owen</ActiveDevelopers>
+    <Github>https://github.com/lsst-ts/ts_salobj</Github>
+    <JenkinsTestResults>Not Available</JenkinsTestResults>
+    <RubinObsContact>Russell Owen</RubinObsContact>
+    <CSCDocs/>
+    <ProductOwner>Russell Owen</ProductOwner>
+    <RelatedDocuments/>
+    <SoftwareLanguage>Python</SoftwareLanguage>
+    <RuntimeLanguages>IDL,CPP,SALPY,Java,LabVIEW</RuntimeLanguages>
+    <VendorContact>Not Applicable</VendorContact>
+    <Simulator>Not Required</Simulator>
+    <Configuration>https://github.com/lsst-ts/ts_config_ocs</Configuration>
+  </SALSubsystem>
+  <SALSubsystem>
+    <Name>Watcher</Name>
+    <Description>A CSC that listens other CSCs and uses that data to produces alarms for the user interface.</Description>
+    <IndexEnumeration>no</IndexEnumeration>
+    <Generics>yes</Generics>
+    <ActiveDevelopers>Russell Owen</ActiveDevelopers>
+    <Github>https://github.com/lsst-ts/ts_watcher</Github>
+    <JenkinsTestResults>Not Available</JenkinsTestResults>
+    <RubinObsContact>Russell Owen</RubinObsContact>
+    <CSCDocs>https://ts-watcher.lsst.io/</CSCDocs>
+    <ProductOwner>Brian Stalder</ProductOwner>
+    <RelatedDocuments/>
+    <SoftwareLanguage>Python</SoftwareLanguage>
+    <RuntimeLanguages>IDL</RuntimeLanguages>
+    <VendorContact>Not Applicable</VendorContact>
+    <Simulator>Not Required</Simulator>
+    <Configuration>https://github.com/lsst-ts/ts_config_ocs</Configuration>
+  </SALSubsystem>
+  <SALSubsystem>
+    <Name>SummitFacility</Name>
+    <Description>The CSC for controlling the summit facility of the main telescope</Description>
+    <IndexEnumeration>no</IndexEnumeration>
+    <Generics>yes</Generics>
+    <ActiveDevelopers>Colin Winslow</ActiveDevelopers>
+    <Github>Not Available</Github>
+    <JenkinsTestResults>Not Available</JenkinsTestResults>
+    <RubinObsContact>Sandrine Thomas</RubinObsContact>
+    <CSCDocs/>
+    <ProductOwner>Sandrine Thomas</ProductOwner>
+    <RelatedDocuments/>
+    <SoftwareLanguage/>
+    <RuntimeLanguages>IDL</RuntimeLanguages>
+    <VendorContact>Not Applicable</VendorContact>
+    <Simulator>Internal to CSC</Simulator>
+    <Configuration>Not Configurable</Configuration>
+  </SALSubsystem>
+  <SALSubsystem>
+    <Name>DSM</Name>
+    <Description>CSC for transmitting information from the Dome Seeing Monitor</Description>
+    <IndexEnumeration>DSM1=1,DSM2=2</IndexEnumeration>
+    <Generics>yes</Generics>
+    <ActiveDevelopers>Michael Reuter</ActiveDevelopers>
+    <Github>https://github.com/lsst-ts/ts_dsm</Github>
+    <JenkinsTestResults>https://tssw-ci.lsst.org/job/DSM%20conda%20package/</JenkinsTestResults>
+    <RubinObsContact>Michael Reuter</RubinObsContact>
+    <CSCDocs>https://ts-dsm.lsst.io</CSCDocs>
+    <ProductOwner>Brian Stalder</ProductOwner>
+    <RelatedDocuments>https://sitcomtn-001.lsst.io/</RelatedDocuments>
+    <SoftwareLanguage>Python</SoftwareLanguage>
+    <RuntimeLanguages>IDL</RuntimeLanguages>
+    <VendorContact>Not Applicable</VendorContact>
+    <Simulator>Internal to CSC</Simulator>
+    <Configuration>Not Configurable</Configuration>
+  </SALSubsystem>
 </SALSubsystemSet>

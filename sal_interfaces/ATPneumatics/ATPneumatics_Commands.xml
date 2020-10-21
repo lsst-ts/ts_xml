@@ -1,283 +1,283 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-stylesheet type="text/xsl" href="http://lsst-sal.tuc.noao.edu/schema/SALCommandSet.xsl"?>
 <SALCommandSet xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://lsst-sal.tuc.noao.edu/schema/SALCommandSet.xsd">
-    <SALCommand>
-        <Subsystem>ATPneumatics</Subsystem>
-        <Version>3.7.1</Version>
-        <Author/>
-        <EFDB_Topic>ATPneumatics_command_openMasterAirSupply</EFDB_Topic>
-        <Alias>openMasterAirSupply</Alias>
-        <Device/>
-        <Property/>
-        <Action/>
-        <Value/>
-	<Description>Opens master air supply valve that receives air from the compressor</Description>
-	<Explanation>http://sal.lsst.org</Explanation>
-        <item>
-            <EFDB_Name>value</EFDB_Name>
-	    <Description>Attribute required by the SAL API, but is unused.</Description>
-            <IDL_Type>boolean</IDL_Type>
-	    <Units>dimensionless</Units>
-            <Count>1</Count>
-        </item>
-    </SALCommand>
-    <SALCommand>
-        <Subsystem>ATPneumatics</Subsystem>
-        <Version>3.7.1</Version>
-        <Author/>
-        <EFDB_Topic>ATPneumatics_command_m1SetPressure</EFDB_Topic>
-        <Alias>m1SetPressure</Alias>
-        <Device/>
-        <Property/>
-        <Action/>
-        <Value/>
-        <Description>Set the desired air pressure for the M1 support system.</Description>
-        <Explanation>http://sal.lsst.org</Explanation>
-        <item>
-            <EFDB_Name>pressure</EFDB_Name>
-	    <Description>Commanded M1 air pressure</Description>
-            <IDL_Type>double</IDL_Type>
-            <Units>Pa</Units>
-            <Count>1</Count>
-        </item>
-    </SALCommand>
-    <SALCommand>
-        <Subsystem>ATPneumatics</Subsystem>
-        <Version>3.7.1</Version>
-        <Author/>
-        <Description>Set the desired air pressure for the M2 support system (Hardware not functional, see DM-20577)</Description>
-        <EFDB_Topic>ATPneumatics_command_m2SetPressure</EFDB_Topic>
-        <Alias>m2SetPressure</Alias>
-        <Device/>
-        <Property/>
-        <Action/>
-        <Value/>
-        <Explanation>http://sal.lsst.org</Explanation>
-        <item>
-            <EFDB_Name>pressure</EFDB_Name>
-	    <Description>Commanded pressure for M2 support system (Hardware not functional, see DM-20577)</Description>
-            <IDL_Type>double</IDL_Type>
-            <Units>Pa</Units>
-            <Count>1</Count>
-        </item>
-    </SALCommand>
-    <SALCommand>
-        <Subsystem>ATPneumatics</Subsystem>
-        <Version>3.7.1</Version>
-        <Author/>
-        <EFDB_Topic>ATPneumatics_command_openM1CellVents</EFDB_Topic>
-        <Alias>openM1CellVents</Alias>
-        <Device/>
-        <Property/>
-        <Action/>
-        <Value/>
-        <Explanation>http://sal.lsst.org</Explanation>
-        <item>
-            <EFDB_Name>value</EFDB_Name>
-            <Description>Attribute required by the SAL API, but is unused.</Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units>dimensionless</Units>
-            <Count>1</Count>
-        </item>
-    </SALCommand>
-    <SALCommand>
-        <Subsystem>ATPneumatics</Subsystem>
-        <Version>3.7.1</Version>
-        <Author/>
-        <EFDB_Topic>ATPneumatics_command_openM1Cover</EFDB_Topic>
-        <Alias>openM1Cover</Alias>
-        <Device/>
-        <Property/>
-        <Action/>
-        <Value/>
-	<Description>Open the M1 mirror covers. </Description>
-        <Explanation>http://sal.lsst.org</Explanation>
-        <item>
-            <EFDB_Name>value</EFDB_Name>
-            <Description>Attribute required by the SAL API, but is unused.</Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units>dimensionless</Units>
-            <Count>1</Count>
-        </item>
-    </SALCommand>
-    <SALCommand>
-        <Subsystem>ATPneumatics</Subsystem>
-        <Version>3.7.1</Version>
-        <Author/>
-        <EFDB_Topic>ATPneumatics_command_openInstrumentAirValve</EFDB_Topic>
-        <Alias>openInstrumentAirValve</Alias>
-        <Device/>
-        <Property/>
-        <Action/>
-	<Value/>
-	<Description>Opens air valve that provides positive pressure to instrument(s)</Description>
-        <Explanation>http://sal.lsst.org</Explanation>
-        <item>
-            <EFDB_Name>value</EFDB_Name>
-            <Description>Attribute required by the SAL API, but is unused.</Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units>dimensionless</Units>
-            <Count>1</Count>
-        </item>
-    </SALCommand>
-    <SALCommand>
-        <Subsystem>ATPneumatics</Subsystem>
-        <Version>3.7.1</Version>
-        <Author/>
-        <EFDB_Topic>ATPneumatics_command_closeInstrumentAirValve</EFDB_Topic>
-        <Alias>closeInstrumentAirValve</Alias>
-        <Device/>
-        <Property/>
-        <Action/>
-	<Value/>
-	<Description>Closes air valve that provides positive pressure to instrument(s)</Description>
-        <Explanation>http://sal.lsst.org</Explanation>
-        <item>
-            <EFDB_Name>value</EFDB_Name>
-            <Description>Attribute required by the SAL API, but is unused.</Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units>dimensionless</Units>
-            <Count>1</Count>    
-	</item>
-    </SALCommand>
-    <SALCommand>
-        <Subsystem>ATPneumatics</Subsystem>
-        <Version>3.7.1</Version>
-        <Author/>
-        <EFDB_Topic>ATPneumatics_command_closeMasterAirSupply</EFDB_Topic>
-        <Alias>closeMasterAirSupply</Alias>
-        <Device/>
-        <Property/>
-        <Action/>
-	<Value/>
-	<Description>Closes air valve from compressor and all air supply to telescope/instrument(s)</Description>
-        <Explanation>http://sal.lsst.org</Explanation>
-	<item>
-            <EFDB_Name>value</EFDB_Name>
-            <Description>Attribute required by the SAL API, but is unused.</Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units>dimensionless</Units>
-            <Count>1</Count>
-        </item>
-    </SALCommand>
-    <SALCommand>
-        <Subsystem>ATPneumatics</Subsystem>
-        <Version>3.7.1</Version>
-        <Author/>
-        <EFDB_Topic>ATPneumatics_command_closeM1Cover</EFDB_Topic>
-        <Alias>closeM1Cover</Alias>
-        <Device/>
-        <Property/>
-        <Action/>
-        <Value/>
-        <Description>Close the 4 petals of the M1 mirror cover</Description>
-        <Explanation>http://sal.lsst.org</Explanation>
-        <item>
-            <EFDB_Name>value</EFDB_Name>
-            <Description>Attribute required by the SAL API, but is unused.</Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units>dimensionless</Units>
-            <Count>1</Count>
-        </item>
-    </SALCommand>
-    <SALCommand>
-        <Subsystem>ATPneumatics</Subsystem>
-        <Version>3.7.1</Version>
-        <Author/>
-        <EFDB_Topic>ATPneumatics_command_m2OpenAirValve</EFDB_Topic>
-        <Alias>m2OpenAirValve</Alias>
-        <Device/>
-        <Property/>
-        <Action/>
-	<Value/>
-	<Description>Opens air valve to M2 mirror pneumatic (Hardware not functional, see DM-20577)</Description>
-        <Explanation>http://sal.lsst.org</Explanation>
-        <item>
-            <EFDB_Name>value</EFDB_Name>
-            <Description>Attribute required by the SAL API, but is unused.</Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units>dimensionless</Units>
-            <Count>1</Count>
-        </item>
-    </SALCommand>
-    <SALCommand>
-        <Subsystem>ATPneumatics</Subsystem>
-        <Version>3.7.1</Version>
-        <Author/>
-        <EFDB_Topic>ATPneumatics_command_m2CloseAirValve</EFDB_Topic>
-        <Alias>m2CloseAirValve</Alias>
-        <Device/>
-        <Property/>
-        <Action/>
-	<Value/>
-	<Description>Closes air valve to M2 mirror pneumatic. (Hardware not functional, see DM-20577)</Description>
-        <Explanation>http://sal.lsst.org</Explanation>
-        <item>
-            <EFDB_Name>value</EFDB_Name>
-            <Description>Attribute required by the SAL API, but is unused.</Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units>dimensionless</Units>
-            <Count>1</Count>
-        </item>
-    </SALCommand>
-    <SALCommand>
-        <Subsystem>ATPneumatics</Subsystem>
-        <Version>3.7.1</Version>
-        <Author/>
-        <EFDB_Topic>ATPneumatics_command_m1CloseAirValve</EFDB_Topic>
-        <Alias>m1CloseAirValve</Alias>
-        <Device/>
-        <Property/>
-        <Action/>
-	<Value/>
-	<Description>Closes the air valve to M1 mirror pneumatics. Pneumatics will slowly lose pressure.</Description>
-        <Explanation>http://sal.lsst.org</Explanation>
-        <item>
-            <EFDB_Name>value</EFDB_Name>
-            <Description>Attribute required by the SAL API, but is unused.</Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units>dimensionless</Units>
-            <Count>1</Count>
-        </item>
-    </SALCommand>
-    <SALCommand>
-        <Subsystem>ATPneumatics</Subsystem>
-        <Version>3.7.1</Version>
-        <Author/>
-        <EFDB_Topic>ATPneumatics_command_m1OpenAirValve</EFDB_Topic>
-        <Alias>m1OpenAirValve</Alias>
-        <Device/>
-        <Property/>
-        <Action/>
-	<Value/>
-	<Description>Opens air valve to M1 mirror pneumatics. Pneumatics will receive pressure given by m1SetPressure command</Description>
-        <Explanation>http://sal.lsst.org</Explanation>
-        <item>
-            <EFDB_Name>value</EFDB_Name>
-            <Description>Attribute required by the SAL API, but is unused.</Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units>dimensionless</Units>
-            <Count>1</Count>
-        </item>
-    </SALCommand>
-    <SALCommand>
-        <Subsystem>ATPneumatics</Subsystem>
-        <Version>3.7.1</Version>
-        <Author/>
-        <EFDB_Topic>ATPneumatics_command_closeM1CellVents</EFDB_Topic>
-        <Alias>closeM1CellVents</Alias>
-        <Device/>
-        <Property/>
-        <Action/>
-	<Value/>
-	<Description>Closes M1 cell vents</Description>
-        <Explanation>http://sal.lsst.org</Explanation>
-        <item>
-            <EFDB_Name>value</EFDB_Name>
-            <Description>Attribute required by the SAL API, but is unused.</Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units>dimensionless</Units>
-            <Count>1</Count>
-        </item>
-    </SALCommand>
+  <SALCommand>
+    <Subsystem>ATPneumatics</Subsystem>
+    <Version>3.7.1</Version>
+    <Author/>
+    <EFDB_Topic>ATPneumatics_command_openMasterAirSupply</EFDB_Topic>
+    <Alias>openMasterAirSupply</Alias>
+    <Device/>
+    <Property/>
+    <Action/>
+    <Value/>
+    <Description>Opens master air supply valve that receives air from the compressor</Description>
+    <Explanation>http://sal.lsst.org</Explanation>
+    <item>
+      <EFDB_Name>value</EFDB_Name>
+      <Description>Attribute required by the SAL API, but is unused.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>dimensionless</Units>
+      <Count>1</Count>
+    </item>
+  </SALCommand>
+  <SALCommand>
+    <Subsystem>ATPneumatics</Subsystem>
+    <Version>3.7.1</Version>
+    <Author/>
+    <EFDB_Topic>ATPneumatics_command_m1SetPressure</EFDB_Topic>
+    <Alias>m1SetPressure</Alias>
+    <Device/>
+    <Property/>
+    <Action/>
+    <Value/>
+    <Description>Set the desired air pressure for the M1 support system.</Description>
+    <Explanation>http://sal.lsst.org</Explanation>
+    <item>
+      <EFDB_Name>pressure</EFDB_Name>
+      <Description>Commanded M1 air pressure</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>Pa</Units>
+      <Count>1</Count>
+    </item>
+  </SALCommand>
+  <SALCommand>
+    <Subsystem>ATPneumatics</Subsystem>
+    <Version>3.7.1</Version>
+    <Author/>
+    <Description>Set the desired air pressure for the M2 support system (Hardware not functional, see DM-20577)</Description>
+    <EFDB_Topic>ATPneumatics_command_m2SetPressure</EFDB_Topic>
+    <Alias>m2SetPressure</Alias>
+    <Device/>
+    <Property/>
+    <Action/>
+    <Value/>
+    <Explanation>http://sal.lsst.org</Explanation>
+    <item>
+      <EFDB_Name>pressure</EFDB_Name>
+      <Description>Commanded pressure for M2 support system (Hardware not functional, see DM-20577)</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>Pa</Units>
+      <Count>1</Count>
+    </item>
+  </SALCommand>
+  <SALCommand>
+    <Subsystem>ATPneumatics</Subsystem>
+    <Version>3.7.1</Version>
+    <Author/>
+    <EFDB_Topic>ATPneumatics_command_openM1CellVents</EFDB_Topic>
+    <Alias>openM1CellVents</Alias>
+    <Device/>
+    <Property/>
+    <Action/>
+    <Value/>
+    <Explanation>http://sal.lsst.org</Explanation>
+    <item>
+      <EFDB_Name>value</EFDB_Name>
+      <Description>Attribute required by the SAL API, but is unused.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>dimensionless</Units>
+      <Count>1</Count>
+    </item>
+  </SALCommand>
+  <SALCommand>
+    <Subsystem>ATPneumatics</Subsystem>
+    <Version>3.7.1</Version>
+    <Author/>
+    <EFDB_Topic>ATPneumatics_command_openM1Cover</EFDB_Topic>
+    <Alias>openM1Cover</Alias>
+    <Device/>
+    <Property/>
+    <Action/>
+    <Value/>
+    <Description>Open the M1 mirror covers. </Description>
+    <Explanation>http://sal.lsst.org</Explanation>
+    <item>
+      <EFDB_Name>value</EFDB_Name>
+      <Description>Attribute required by the SAL API, but is unused.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>dimensionless</Units>
+      <Count>1</Count>
+    </item>
+  </SALCommand>
+  <SALCommand>
+    <Subsystem>ATPneumatics</Subsystem>
+    <Version>3.7.1</Version>
+    <Author/>
+    <EFDB_Topic>ATPneumatics_command_openInstrumentAirValve</EFDB_Topic>
+    <Alias>openInstrumentAirValve</Alias>
+    <Device/>
+    <Property/>
+    <Action/>
+    <Value/>
+    <Description>Opens air valve that provides positive pressure to instrument(s)</Description>
+    <Explanation>http://sal.lsst.org</Explanation>
+    <item>
+      <EFDB_Name>value</EFDB_Name>
+      <Description>Attribute required by the SAL API, but is unused.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>dimensionless</Units>
+      <Count>1</Count>
+    </item>
+  </SALCommand>
+  <SALCommand>
+    <Subsystem>ATPneumatics</Subsystem>
+    <Version>3.7.1</Version>
+    <Author/>
+    <EFDB_Topic>ATPneumatics_command_closeInstrumentAirValve</EFDB_Topic>
+    <Alias>closeInstrumentAirValve</Alias>
+    <Device/>
+    <Property/>
+    <Action/>
+    <Value/>
+    <Description>Closes air valve that provides positive pressure to instrument(s)</Description>
+    <Explanation>http://sal.lsst.org</Explanation>
+    <item>
+      <EFDB_Name>value</EFDB_Name>
+      <Description>Attribute required by the SAL API, but is unused.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>dimensionless</Units>
+      <Count>1</Count>
+    </item>
+  </SALCommand>
+  <SALCommand>
+    <Subsystem>ATPneumatics</Subsystem>
+    <Version>3.7.1</Version>
+    <Author/>
+    <EFDB_Topic>ATPneumatics_command_closeMasterAirSupply</EFDB_Topic>
+    <Alias>closeMasterAirSupply</Alias>
+    <Device/>
+    <Property/>
+    <Action/>
+    <Value/>
+    <Description>Closes air valve from compressor and all air supply to telescope/instrument(s)</Description>
+    <Explanation>http://sal.lsst.org</Explanation>
+    <item>
+      <EFDB_Name>value</EFDB_Name>
+      <Description>Attribute required by the SAL API, but is unused.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>dimensionless</Units>
+      <Count>1</Count>
+    </item>
+  </SALCommand>
+  <SALCommand>
+    <Subsystem>ATPneumatics</Subsystem>
+    <Version>3.7.1</Version>
+    <Author/>
+    <EFDB_Topic>ATPneumatics_command_closeM1Cover</EFDB_Topic>
+    <Alias>closeM1Cover</Alias>
+    <Device/>
+    <Property/>
+    <Action/>
+    <Value/>
+    <Description>Close the 4 petals of the M1 mirror cover</Description>
+    <Explanation>http://sal.lsst.org</Explanation>
+    <item>
+      <EFDB_Name>value</EFDB_Name>
+      <Description>Attribute required by the SAL API, but is unused.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>dimensionless</Units>
+      <Count>1</Count>
+    </item>
+  </SALCommand>
+  <SALCommand>
+    <Subsystem>ATPneumatics</Subsystem>
+    <Version>3.7.1</Version>
+    <Author/>
+    <EFDB_Topic>ATPneumatics_command_m2OpenAirValve</EFDB_Topic>
+    <Alias>m2OpenAirValve</Alias>
+    <Device/>
+    <Property/>
+    <Action/>
+    <Value/>
+    <Description>Opens air valve to M2 mirror pneumatic (Hardware not functional, see DM-20577)</Description>
+    <Explanation>http://sal.lsst.org</Explanation>
+    <item>
+      <EFDB_Name>value</EFDB_Name>
+      <Description>Attribute required by the SAL API, but is unused.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>dimensionless</Units>
+      <Count>1</Count>
+    </item>
+  </SALCommand>
+  <SALCommand>
+    <Subsystem>ATPneumatics</Subsystem>
+    <Version>3.7.1</Version>
+    <Author/>
+    <EFDB_Topic>ATPneumatics_command_m2CloseAirValve</EFDB_Topic>
+    <Alias>m2CloseAirValve</Alias>
+    <Device/>
+    <Property/>
+    <Action/>
+    <Value/>
+    <Description>Closes air valve to M2 mirror pneumatic. (Hardware not functional, see DM-20577)</Description>
+    <Explanation>http://sal.lsst.org</Explanation>
+    <item>
+      <EFDB_Name>value</EFDB_Name>
+      <Description>Attribute required by the SAL API, but is unused.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>dimensionless</Units>
+      <Count>1</Count>
+    </item>
+  </SALCommand>
+  <SALCommand>
+    <Subsystem>ATPneumatics</Subsystem>
+    <Version>3.7.1</Version>
+    <Author/>
+    <EFDB_Topic>ATPneumatics_command_m1CloseAirValve</EFDB_Topic>
+    <Alias>m1CloseAirValve</Alias>
+    <Device/>
+    <Property/>
+    <Action/>
+    <Value/>
+    <Description>Closes the air valve to M1 mirror pneumatics. Pneumatics will slowly lose pressure.</Description>
+    <Explanation>http://sal.lsst.org</Explanation>
+    <item>
+      <EFDB_Name>value</EFDB_Name>
+      <Description>Attribute required by the SAL API, but is unused.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>dimensionless</Units>
+      <Count>1</Count>
+    </item>
+  </SALCommand>
+  <SALCommand>
+    <Subsystem>ATPneumatics</Subsystem>
+    <Version>3.7.1</Version>
+    <Author/>
+    <EFDB_Topic>ATPneumatics_command_m1OpenAirValve</EFDB_Topic>
+    <Alias>m1OpenAirValve</Alias>
+    <Device/>
+    <Property/>
+    <Action/>
+    <Value/>
+    <Description>Opens air valve to M1 mirror pneumatics. Pneumatics will receive pressure given by m1SetPressure command</Description>
+    <Explanation>http://sal.lsst.org</Explanation>
+    <item>
+      <EFDB_Name>value</EFDB_Name>
+      <Description>Attribute required by the SAL API, but is unused.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>dimensionless</Units>
+      <Count>1</Count>
+    </item>
+  </SALCommand>
+  <SALCommand>
+    <Subsystem>ATPneumatics</Subsystem>
+    <Version>3.7.1</Version>
+    <Author/>
+    <EFDB_Topic>ATPneumatics_command_closeM1CellVents</EFDB_Topic>
+    <Alias>closeM1CellVents</Alias>
+    <Device/>
+    <Property/>
+    <Action/>
+    <Value/>
+    <Description>Closes M1 cell vents</Description>
+    <Explanation>http://sal.lsst.org</Explanation>
+    <item>
+      <EFDB_Name>value</EFDB_Name>
+      <Description>Attribute required by the SAL API, but is unused.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>dimensionless</Units>
+      <Count>1</Count>
+    </item>
+  </SALCommand>
 </SALCommandSet>

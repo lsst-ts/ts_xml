@@ -1,293 +1,293 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-stylesheet type="text/xsl" href="http://lsst-sal.tuc.noao.edu/schema/SALEventSet.xsl"?>
 <SALEventSet xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://lsst-sal.tuc.noao.edu/schema/SALEventSet.xsd">
-    <Enumeration>MirrorCoverState_Closed,MirrorCoverState_Opened,MirrorCoverState_InMotion,MirrorCoverState_Invalid</Enumeration>
-    <Enumeration>CellVentState_CellVentsOpened,CellVentState_CellVentsClosed,CellVentState_InMotion</Enumeration>
-    <Enumeration>AirValveState_ValveOpened,AirValveState_ValveClosed</Enumeration>
-    <Enumeration>VentsPosition_Opened,VentsPosition_Closed,VentsPosition_PartiallyOpened</Enumeration>
-    <SALEvent>
-        <Subsystem>ATPneumatics</Subsystem>
-        <Version>3.7.1</Version>
-        <Author/>
-        <EFDB_Topic>ATPneumatics_logevent_m1CoverLimitSwitches</EFDB_Topic>
-	<Alias>m1CoverLimitSwitches</Alias>
-	<Description>The state of each of the 4 M1 mirror cover petals</Description>
-        <Explanation>http://sal.lsst.org</Explanation>
-        <item>
-            <EFDB_Name>cover1ClosedActive</EFDB_Name>
-	    <Description>True if cover/petal 1 closed</Description>
-            <IDL_Type>boolean</IDL_Type>
-	    <Units>dimensionless</Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>cover2ClosedActive</EFDB_Name>
-	    <Description>True if cover/petal 2 closed</Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units>dimensionless</Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>cover3ClosedActive</EFDB_Name>
-            <Description>True if cover/petal 3 closed</Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units>dimensionless</Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>cover4ClosedActive</EFDB_Name>
-            <Description>True if cover/petal 4 closed</Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units>dimensionless</Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>cover1OpenedActive</EFDB_Name>
-            <Description>True if cover/petal 1 open</Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units>dimensionless</Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>cover2OpenedActive</EFDB_Name>
-            <Description>True if cover/petal 2 open</Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units>dimensionless</Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>cover3OpenedActive</EFDB_Name>
-            <Description>True if cover/petal 3 open</Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units>dimensionless</Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>cover4OpenedActive</EFDB_Name>
-            <Description>True if cover/petal 4 open</Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units>dimensionless</Units>
-            <Count>1</Count>
-        </item>
-    </SALEvent>
-    <SALEvent>
-        <Subsystem>ATPneumatics</Subsystem>
-        <Version>3.7.1</Version>
-        <Author/>
-        <EFDB_Topic>ATPneumatics_logevent_m1VentsLimitSwitches</EFDB_Topic>
-	<Alias>m1VentsLimitSwitches</Alias>
-	<Description>Indicates if M1 vents are open/closed. Note that only one of the ~8 vents has switches</Description>
-        <Explanation>http://sal.lsst.org</Explanation>
-        <item>
-            <EFDB_Name>ventsClosedActive</EFDB_Name>
-            <Description>True if M1 vents closed</Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units>dimensionless</Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>ventsOpenedActive</EFDB_Name>
-            <Description>True if M1 vents open</Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units>dimensionless</Units>
-            <Count>1</Count>
-        </item>
-    </SALEvent>
-    <SALEvent>
-        <Subsystem>ATPneumatics</Subsystem>
-        <Version>3.7.1</Version>
-        <Author/>
-        <EFDB_Topic>ATPneumatics_logevent_powerStatus</EFDB_Topic>
-        <Alias>powerStatus</Alias>
-        <Description>State of circuit breakers for ATMCS drives.</Description>
-        <Explanation>http://sal.lsst.org</Explanation>
-        <item>
-            <EFDB_Name>powerOnL1</EFDB_Name>
-            <Description>Status Power line 1, Azimuth motors 1 and 2</Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units>dimensionless</Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>powerOnL2</EFDB_Name>
-            <Description>Status Power line 2, Elevation and M3 rotator</Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units>dimensionless</Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>powerOnL3</EFDB_Name>
-            <Description>Status Power line 3, Nasmyth ports 1 and 2</Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units>dimensionless</Units>
-            <Count>1</Count>
-        </item>
-    </SALEvent>
-    <SALEvent>
-        <Subsystem>ATPneumatics</Subsystem>
-        <Version>3.7.1</Version>
-        <Author/>
-        <EFDB_Topic>ATPneumatics_logevent_eStop</EFDB_Topic>
-	<Alias>eStop</Alias>
-	<Description>Event is published if the Emergency Stop</Description>
-        <Explanation>http://sal.lsst.org</Explanation>
-        <item>
-            <EFDB_Name>triggered</EFDB_Name>
-	    <Description>True if Emergency Stop</Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units>dimensionless</Units>
-            <Count>1</Count>
-        </item>
-    </SALEvent>
-    <SALEvent>
-        <Subsystem>ATPneumatics</Subsystem>
-        <Version>3.7.1</Version>
-        <Author/>
-        <EFDB_Topic>ATPneumatics_logevent_m1CoverState</EFDB_Topic>
-	<Alias>m1CoverState</Alias>
-	<Description>Substate of the M1 Mirror Covers. 1:MirrorCoverState_Closed, 2:MirrorCoverState_Opened, 3:MirrorCoverState_InMotion, 4:MirrorCoverState_Invalid</Description>
-        <Explanation>http://sal.lsst.org</Explanation>
-        <item>
-            <EFDB_Name>state</EFDB_Name>
-	    <Description>Current substate of the M1 Mirror Cover</Description>
-            <!-- Enumeration: MirrorCoverState -->
-            <IDL_Type>long</IDL_Type>
-            <Units>dimensionless</Units>
-            <Count>1</Count>
-        </item>
-    </SALEvent>
-    <SALEvent>
-        <Subsystem>ATPneumatics</Subsystem>
-        <Version>3.7.1</Version>
-        <Author/>
-        <EFDB_Topic>ATPneumatics_logevent_m1State</EFDB_Topic>
-	<Alias>m1State</Alias>
-	<Description>States of the M1 pneumatics value: 1:AirValveState_ValveOpened, 2:AirValveState_ValveClosed</Description>
-        <Explanation>http://sal.lsst.org</Explanation>
-        <item>
-            <EFDB_Name>state</EFDB_Name>
-	    <Description>The substate of the M1 pneumatics valve</Description>
-            <!-- Enumeration: AirValveState -->
-            <IDL_Type>long</IDL_Type>
-            <Units>dimensionless</Units>
-            <Count>1</Count>
-        </item>
-    </SALEvent>
-    <SALEvent>
-        <Subsystem>ATPneumatics</Subsystem>
-        <Version>3.7.1</Version>
-        <Author/>
-        <EFDB_Topic>ATPneumatics_logevent_m2State</EFDB_Topic>
-	<Alias>m2State</Alias>
-	<Description>The substates (enumeration) of the M2 valve: 1:AirValveState_ValveOpened, 2:AirValveState_ValveClosed</Description>
-        <Explanation>http://sal.lsst.org</Explanation>
-        <item>
-            <EFDB_Name>state</EFDB_Name>
-	    <Description>Enumerations (substates): 1:AirValveState_ValveOpened, 2:AirValveState_ValveClosed</Description>
-            <!-- Enumeration: AirValveState -->
-            <IDL_Type>long</IDL_Type>
-            <Units>dimensionless</Units>
-            <Count>1</Count>
-        </item>
-    </SALEvent>
-    <SALEvent>
-        <Subsystem>ATPneumatics</Subsystem>
-        <Version>3.7.1</Version>
-        <Author/>
-        <EFDB_Topic>ATPneumatics_logevent_instrumentState</EFDB_Topic>
-	<Alias>instrumentState</Alias>
-	<Description>The substates of the instrument valve: 1:AirValveState_ValveOpened, 2:AirValveState_ValveClosed</Description>
-        <Explanation>http://sal.lsst.org</Explanation>
-        <item>
-            <EFDB_Name>state</EFDB_Name>
-	    <Description>Substate of instrument valve</Description>
-            <!-- Enumeration: AirValveState -->
-            <IDL_Type>long</IDL_Type>
-	    <Units>dimensionless</Units>
-            <Count>1</Count>
-        </item>
-    </SALEvent>
-    <SALEvent>
-        <Subsystem>ATPneumatics</Subsystem>
-        <Version>3.7.1</Version>
-        <Author/>
-        <EFDB_Topic>ATPneumatics_logevent_cellVentsState</EFDB_Topic>
-	<Alias>cellVentsState</Alias>
-	<Description>The substates of the cell vents: 1:CellVentState_CellVentsOpened, 2:CellVentState_CellVentsClosed, 3:CellVentState_InMotion</Description>
-        <Explanation>http://sal.lsst.org</Explanation>
-        <item>
-            <EFDB_Name>state</EFDB_Name>
-	    <Description>Substate of cell vents</Description>
-            <!-- Enumeration: CellVentState -->
-            <IDL_Type>long</IDL_Type>
-            <Units>dimensionless</Units>
-            <Count>1</Count>
-        </item>
-    </SALEvent>
-    <SALEvent>
-        <Subsystem>ATPneumatics</Subsystem>
-        <Version>3.7.1</Version>
-        <Author/>
-        <EFDB_Topic>ATPneumatics_logevent_mainValveState</EFDB_Topic>
-	<Alias>mainValveState</Alias>
-	<Description>The substates of the main air valve: 1:AirValveState_ValveOpened, 2:AirValveState_ValveClosed</Description>
-        <Explanation>http://sal.lsst.org</Explanation>
-        <item>
-            <EFDB_Name>state</EFDB_Name>
-	    <Description>Substate of main air valve</Description>
-            <!-- Enumeration: AirValveState -->
-            <IDL_Type>long</IDL_Type>
-	    <Units>dimensionless</Units>
-            <Count>1</Count>
-        </item>
-    </SALEvent>
-    <SALEvent>
-        <Subsystem>ATPneumatics</Subsystem>
-        <Version>3.7.1</Version>
-        <Author/>
-        <EFDB_Topic>ATPneumatics_logevent_m1VentsPosition</EFDB_Topic>
-        <Alias>m1VentsPosition</Alias>
-	<Description> State of M1 vents: 1:VentsPosition_Opened, 2:VentsPosition_Closed, 3:VentsPosition_PartiallyOpened</Description>
-	<Explanation>http://sal.lsst.org</Explanation>
-        <item>
-            <EFDB_Name>position</EFDB_Name>
-	    <Description>Substate of M1 vents</Description>
-            <!-- Enumeration: VentsPosition -->
-            <IDL_Type>long</IDL_Type>
-	    <Units>dimensionless</Units>
-            <Count>1</Count>
-        </item>
-    </SALEvent>
-    <SALEvent>
-        <Subsystem>ATPneumatics</Subsystem>
-        <Version>3.7.1</Version>
-        <Author/>
-        <EFDB_Topic>ATPneumatics_logevent_m1SetPressure</EFDB_Topic>
-        <Alias>m1SetPressure</Alias>
-        <Description>Commanded air pressure for the M1 support system, as specified by the m1SetPressure command. Note that the measured pressure is reported in a telemetry topic.</Description>
-        <Explanation>http://sal.lsst.org</Explanation>
-        <item>
-            <EFDB_Name>pressure</EFDB_Name>
-	    <Description>Pressure to M1 pneumatic actuators</Description>
-            <IDL_Type>double</IDL_Type>
-            <Units>Pa</Units>
-            <Count>1</Count>
-        </item>
-    </SALEvent>
-    <SALEvent>
-        <Subsystem>ATPneumatics</Subsystem>
-        <Version>3.7.1</Version>
-        <Author/>
-        <EFDB_Topic>ATPneumatics_logevent_m2SetPressure</EFDB_Topic>
-        <Alias>m2SetPressure</Alias>
-        <Description>Commanded air pressure for the M2 support system, as specified by the m1SetPressure command (Hardware not functional, see DM-20577). Note that the measured pressure is reported in a telemetry topic.</Description>
-        <Explanation>http://sal.lsst.org</Explanation>
-        <item>
-            <EFDB_Name>pressure</EFDB_Name>
-	    <Description>Pressure to M2 mirror (Hardware not functional, see DM-20577).</Description>
-            <IDL_Type>double</IDL_Type>
-            <Units>Pa</Units>
-            <Count>1</Count>
-        </item>
-    </SALEvent>
+  <Enumeration>MirrorCoverState_Closed,MirrorCoverState_Opened,MirrorCoverState_InMotion,MirrorCoverState_Invalid</Enumeration>
+  <Enumeration>CellVentState_CellVentsOpened,CellVentState_CellVentsClosed,CellVentState_InMotion</Enumeration>
+  <Enumeration>AirValveState_ValveOpened,AirValveState_ValveClosed</Enumeration>
+  <Enumeration>VentsPosition_Opened,VentsPosition_Closed,VentsPosition_PartiallyOpened</Enumeration>
+  <SALEvent>
+    <Subsystem>ATPneumatics</Subsystem>
+    <Version>3.7.1</Version>
+    <Author/>
+    <EFDB_Topic>ATPneumatics_logevent_m1CoverLimitSwitches</EFDB_Topic>
+    <Alias>m1CoverLimitSwitches</Alias>
+    <Description>The state of each of the 4 M1 mirror cover petals</Description>
+    <Explanation>http://sal.lsst.org</Explanation>
+    <item>
+      <EFDB_Name>cover1ClosedActive</EFDB_Name>
+      <Description>True if cover/petal 1 closed</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>dimensionless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>cover2ClosedActive</EFDB_Name>
+      <Description>True if cover/petal 2 closed</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>dimensionless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>cover3ClosedActive</EFDB_Name>
+      <Description>True if cover/petal 3 closed</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>dimensionless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>cover4ClosedActive</EFDB_Name>
+      <Description>True if cover/petal 4 closed</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>dimensionless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>cover1OpenedActive</EFDB_Name>
+      <Description>True if cover/petal 1 open</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>dimensionless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>cover2OpenedActive</EFDB_Name>
+      <Description>True if cover/petal 2 open</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>dimensionless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>cover3OpenedActive</EFDB_Name>
+      <Description>True if cover/petal 3 open</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>dimensionless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>cover4OpenedActive</EFDB_Name>
+      <Description>True if cover/petal 4 open</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>dimensionless</Units>
+      <Count>1</Count>
+    </item>
+  </SALEvent>
+  <SALEvent>
+    <Subsystem>ATPneumatics</Subsystem>
+    <Version>3.7.1</Version>
+    <Author/>
+    <EFDB_Topic>ATPneumatics_logevent_m1VentsLimitSwitches</EFDB_Topic>
+    <Alias>m1VentsLimitSwitches</Alias>
+    <Description>Indicates if M1 vents are open/closed. Note that only one of the ~8 vents has switches</Description>
+    <Explanation>http://sal.lsst.org</Explanation>
+    <item>
+      <EFDB_Name>ventsClosedActive</EFDB_Name>
+      <Description>True if M1 vents closed</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>dimensionless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>ventsOpenedActive</EFDB_Name>
+      <Description>True if M1 vents open</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>dimensionless</Units>
+      <Count>1</Count>
+    </item>
+  </SALEvent>
+  <SALEvent>
+    <Subsystem>ATPneumatics</Subsystem>
+    <Version>3.7.1</Version>
+    <Author/>
+    <EFDB_Topic>ATPneumatics_logevent_powerStatus</EFDB_Topic>
+    <Alias>powerStatus</Alias>
+    <Description>State of circuit breakers for ATMCS drives.</Description>
+    <Explanation>http://sal.lsst.org</Explanation>
+    <item>
+      <EFDB_Name>powerOnL1</EFDB_Name>
+      <Description>Status Power line 1, Azimuth motors 1 and 2</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>dimensionless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>powerOnL2</EFDB_Name>
+      <Description>Status Power line 2, Elevation and M3 rotator</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>dimensionless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>powerOnL3</EFDB_Name>
+      <Description>Status Power line 3, Nasmyth ports 1 and 2</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>dimensionless</Units>
+      <Count>1</Count>
+    </item>
+  </SALEvent>
+  <SALEvent>
+    <Subsystem>ATPneumatics</Subsystem>
+    <Version>3.7.1</Version>
+    <Author/>
+    <EFDB_Topic>ATPneumatics_logevent_eStop</EFDB_Topic>
+    <Alias>eStop</Alias>
+    <Description>Event is published if the Emergency Stop</Description>
+    <Explanation>http://sal.lsst.org</Explanation>
+    <item>
+      <EFDB_Name>triggered</EFDB_Name>
+      <Description>True if Emergency Stop</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>dimensionless</Units>
+      <Count>1</Count>
+    </item>
+  </SALEvent>
+  <SALEvent>
+    <Subsystem>ATPneumatics</Subsystem>
+    <Version>3.7.1</Version>
+    <Author/>
+    <EFDB_Topic>ATPneumatics_logevent_m1CoverState</EFDB_Topic>
+    <Alias>m1CoverState</Alias>
+    <Description>Substate of the M1 Mirror Covers. 1:MirrorCoverState_Closed, 2:MirrorCoverState_Opened, 3:MirrorCoverState_InMotion, 4:MirrorCoverState_Invalid</Description>
+    <Explanation>http://sal.lsst.org</Explanation>
+    <item>
+      <EFDB_Name>state</EFDB_Name>
+      <Description>Current substate of the M1 Mirror Cover</Description>
+      <!-- Enumeration: MirrorCoverState -->
+      <IDL_Type>long</IDL_Type>
+      <Units>dimensionless</Units>
+      <Count>1</Count>
+    </item>
+  </SALEvent>
+  <SALEvent>
+    <Subsystem>ATPneumatics</Subsystem>
+    <Version>3.7.1</Version>
+    <Author/>
+    <EFDB_Topic>ATPneumatics_logevent_m1State</EFDB_Topic>
+    <Alias>m1State</Alias>
+    <Description>States of the M1 pneumatics value: 1:AirValveState_ValveOpened, 2:AirValveState_ValveClosed</Description>
+    <Explanation>http://sal.lsst.org</Explanation>
+    <item>
+      <EFDB_Name>state</EFDB_Name>
+      <Description>The substate of the M1 pneumatics valve</Description>
+      <!-- Enumeration: AirValveState -->
+      <IDL_Type>long</IDL_Type>
+      <Units>dimensionless</Units>
+      <Count>1</Count>
+    </item>
+  </SALEvent>
+  <SALEvent>
+    <Subsystem>ATPneumatics</Subsystem>
+    <Version>3.7.1</Version>
+    <Author/>
+    <EFDB_Topic>ATPneumatics_logevent_m2State</EFDB_Topic>
+    <Alias>m2State</Alias>
+    <Description>The substates (enumeration) of the M2 valve: 1:AirValveState_ValveOpened, 2:AirValveState_ValveClosed</Description>
+    <Explanation>http://sal.lsst.org</Explanation>
+    <item>
+      <EFDB_Name>state</EFDB_Name>
+      <Description>Enumerations (substates): 1:AirValveState_ValveOpened, 2:AirValveState_ValveClosed</Description>
+      <!-- Enumeration: AirValveState -->
+      <IDL_Type>long</IDL_Type>
+      <Units>dimensionless</Units>
+      <Count>1</Count>
+    </item>
+  </SALEvent>
+  <SALEvent>
+    <Subsystem>ATPneumatics</Subsystem>
+    <Version>3.7.1</Version>
+    <Author/>
+    <EFDB_Topic>ATPneumatics_logevent_instrumentState</EFDB_Topic>
+    <Alias>instrumentState</Alias>
+    <Description>The substates of the instrument valve: 1:AirValveState_ValveOpened, 2:AirValveState_ValveClosed</Description>
+    <Explanation>http://sal.lsst.org</Explanation>
+    <item>
+      <EFDB_Name>state</EFDB_Name>
+      <Description>Substate of instrument valve</Description>
+      <!-- Enumeration: AirValveState -->
+      <IDL_Type>long</IDL_Type>
+      <Units>dimensionless</Units>
+      <Count>1</Count>
+    </item>
+  </SALEvent>
+  <SALEvent>
+    <Subsystem>ATPneumatics</Subsystem>
+    <Version>3.7.1</Version>
+    <Author/>
+    <EFDB_Topic>ATPneumatics_logevent_cellVentsState</EFDB_Topic>
+    <Alias>cellVentsState</Alias>
+    <Description>The substates of the cell vents: 1:CellVentState_CellVentsOpened, 2:CellVentState_CellVentsClosed, 3:CellVentState_InMotion</Description>
+    <Explanation>http://sal.lsst.org</Explanation>
+    <item>
+      <EFDB_Name>state</EFDB_Name>
+      <Description>Substate of cell vents</Description>
+      <!-- Enumeration: CellVentState -->
+      <IDL_Type>long</IDL_Type>
+      <Units>dimensionless</Units>
+      <Count>1</Count>
+    </item>
+  </SALEvent>
+  <SALEvent>
+    <Subsystem>ATPneumatics</Subsystem>
+    <Version>3.7.1</Version>
+    <Author/>
+    <EFDB_Topic>ATPneumatics_logevent_mainValveState</EFDB_Topic>
+    <Alias>mainValveState</Alias>
+    <Description>The substates of the main air valve: 1:AirValveState_ValveOpened, 2:AirValveState_ValveClosed</Description>
+    <Explanation>http://sal.lsst.org</Explanation>
+    <item>
+      <EFDB_Name>state</EFDB_Name>
+      <Description>Substate of main air valve</Description>
+      <!-- Enumeration: AirValveState -->
+      <IDL_Type>long</IDL_Type>
+      <Units>dimensionless</Units>
+      <Count>1</Count>
+    </item>
+  </SALEvent>
+  <SALEvent>
+    <Subsystem>ATPneumatics</Subsystem>
+    <Version>3.7.1</Version>
+    <Author/>
+    <EFDB_Topic>ATPneumatics_logevent_m1VentsPosition</EFDB_Topic>
+    <Alias>m1VentsPosition</Alias>
+    <Description> State of M1 vents: 1:VentsPosition_Opened, 2:VentsPosition_Closed, 3:VentsPosition_PartiallyOpened</Description>
+    <Explanation>http://sal.lsst.org</Explanation>
+    <item>
+      <EFDB_Name>position</EFDB_Name>
+      <Description>Substate of M1 vents</Description>
+      <!-- Enumeration: VentsPosition -->
+      <IDL_Type>long</IDL_Type>
+      <Units>dimensionless</Units>
+      <Count>1</Count>
+    </item>
+  </SALEvent>
+  <SALEvent>
+    <Subsystem>ATPneumatics</Subsystem>
+    <Version>3.7.1</Version>
+    <Author/>
+    <EFDB_Topic>ATPneumatics_logevent_m1SetPressure</EFDB_Topic>
+    <Alias>m1SetPressure</Alias>
+    <Description>Commanded air pressure for the M1 support system, as specified by the m1SetPressure command. Note that the measured pressure is reported in a telemetry topic.</Description>
+    <Explanation>http://sal.lsst.org</Explanation>
+    <item>
+      <EFDB_Name>pressure</EFDB_Name>
+      <Description>Pressure to M1 pneumatic actuators</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>Pa</Units>
+      <Count>1</Count>
+    </item>
+  </SALEvent>
+  <SALEvent>
+    <Subsystem>ATPneumatics</Subsystem>
+    <Version>3.7.1</Version>
+    <Author/>
+    <EFDB_Topic>ATPneumatics_logevent_m2SetPressure</EFDB_Topic>
+    <Alias>m2SetPressure</Alias>
+    <Description>Commanded air pressure for the M2 support system, as specified by the m1SetPressure command (Hardware not functional, see DM-20577). Note that the measured pressure is reported in a telemetry topic.</Description>
+    <Explanation>http://sal.lsst.org</Explanation>
+    <item>
+      <EFDB_Name>pressure</EFDB_Name>
+      <Description>Pressure to M2 mirror (Hardware not functional, see DM-20577).</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>Pa</Units>
+      <Count>1</Count>
+    </item>
+  </SALEvent>
 </SALEventSet>

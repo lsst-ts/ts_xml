@@ -1,23 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-stylesheet type="text/xsl" href="http://lsst-sal.tuc.noao.edu/schema/SALEventSet.xsl"?>
-<SALEventSet xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:noNamespaceSchemaLocation="http://lsst-sal.tuc.noao.edu/schema/SALEventSet.xsd">
-<Enumeration>SummaryState_DisabledState,SummaryState_EnabledState,SummaryState_FaultState,SummaryState_OfflineState,SummaryState_StandbyState</Enumeration>
-<Enumeration>LogLevel_none,LogLevel_fatal,LogLevel_error,LogLevel_warning,LogLevel_info,LogLevel_debug,LogLevel_verbose</Enumeration>
-<Enumeration>OffTypes_simple,OffTypes_tplane</Enumeration>
-<Enumeration>OnOff_on,OnOff_off</Enumeration>
-<Enumeration>Wraps_cw,Wraps_ccw</Enumeration>
-<Enumeration>CoordFrame_fk5,CoordFrame_icrs</Enumeration>
-<Enumeration>RotFrame_target,RotFrame_fixed</Enumeration>
-<Enumeration>RotMode_field,RotMode_slit</Enumeration>
-<Enumeration>AccessModes_operator,AccessModes_engineer</Enumeration>
-<Enumeration>Planets_mercury,Planets_venus,Planets_moon,Planets_mars,Planets_jupiter,Planets_saturn,Planets_uranus,Planets_neptune,Planets_pluto</Enumeration>
-<Enumeration>Foci_prime,Foci_nasmyth1,Foci_nasmyth2</Enumeration>
-<Enumeration>WarningLevel_none,WarningLevel_minor,WarningLevel_major</Enumeration>
-<Enumeration>DetailedStates_notTracking,DetailedStates_azEl,DetailedStates_openLoop,DetailedStates_guiding</Enumeration>
-<Enumeration>TargetTypes_raDec,TargetTypes_azEl,TargetTypes_planet,TargetTypes_ephem</Enumeration>
-<Enumeration>WrapStrategy_noUnWrap,WrapStrategy_optimize,WrapStrategy_maxTimeOnTarget</Enumeration>
-<SALEvent>
+<SALEventSet xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://lsst-sal.tuc.noao.edu/schema/SALEventSet.xsd">
+  <Enumeration>SummaryState_DisabledState,SummaryState_EnabledState,SummaryState_FaultState,SummaryState_OfflineState,SummaryState_StandbyState</Enumeration>
+  <Enumeration>LogLevel_none,LogLevel_fatal,LogLevel_error,LogLevel_warning,LogLevel_info,LogLevel_debug,LogLevel_verbose</Enumeration>
+  <Enumeration>OffTypes_simple,OffTypes_tplane</Enumeration>
+  <Enumeration>OnOff_on,OnOff_off</Enumeration>
+  <Enumeration>Wraps_cw,Wraps_ccw</Enumeration>
+  <Enumeration>CoordFrame_fk5,CoordFrame_icrs</Enumeration>
+  <Enumeration>RotFrame_target,RotFrame_fixed</Enumeration>
+  <Enumeration>RotMode_field,RotMode_slit</Enumeration>
+  <Enumeration>AccessModes_operator,AccessModes_engineer</Enumeration>
+  <Enumeration>Planets_mercury,Planets_venus,Planets_moon,Planets_mars,Planets_jupiter,Planets_saturn,Planets_uranus,Planets_neptune,Planets_pluto</Enumeration>
+  <Enumeration>Foci_prime,Foci_nasmyth1,Foci_nasmyth2</Enumeration>
+  <Enumeration>WarningLevel_none,WarningLevel_minor,WarningLevel_major</Enumeration>
+  <Enumeration>DetailedStates_notTracking,DetailedStates_azEl,DetailedStates_openLoop,DetailedStates_guiding</Enumeration>
+  <Enumeration>TargetTypes_raDec,TargetTypes_azEl,TargetTypes_planet,TargetTypes_ephem</Enumeration>
+  <Enumeration>WrapStrategy_noUnWrap,WrapStrategy_optimize,WrapStrategy_maxTimeOnTarget</Enumeration>
+  <SALEvent>
     <Subsystem>ATPtg</Subsystem>
     <Version>3.8.41</Version>
     <Author>pbt</Author>
@@ -25,15 +24,15 @@
     <Alias>focusNameSelected</Alias>
     <Explanation>http://sal.lsst.org</Explanation>
     <item>
-        <EFDB_Name>focus</EFDB_Name>
-        <Description>Selected Focus Name</Description>
-        <IDL_Type>long</IDL_Type>
-        <!-- <Enumeration> Foci </Enumeration> -->
-        <Units>unitless</Units>
-        <Count>1</Count>
+      <EFDB_Name>focus</EFDB_Name>
+      <Description>Selected Focus Name</Description>
+      <IDL_Type>long</IDL_Type>
+      <!-- <Enumeration> Foci </Enumeration> -->
+      <Units>unitless</Units>
+      <Count>1</Count>
     </item>
-</SALEvent>
-<SALEvent>
+  </SALEvent>
+  <SALEvent>
     <Subsystem>ATPtg</Subsystem>
     <Version>3.8.41</Version>
     <Author>pbt</Author>
@@ -41,15 +40,15 @@
     <Alias>sunProximityWarning</Alias>
     <Explanation>http://sal.lsst.org</Explanation>
     <item>
-        <EFDB_Name>level</EFDB_Name>
-        <Description>Telescope is approaching the Sun</Description>
-        <IDL_Type>long</IDL_Type>
-        <!-- <Enumeration> WarningLevel </Enumeration> -->
-        <Units>unitless</Units>
-        <Count>1</Count>
+      <EFDB_Name>level</EFDB_Name>
+      <Description>Telescope is approaching the Sun</Description>
+      <IDL_Type>long</IDL_Type>
+      <!-- <Enumeration> WarningLevel </Enumeration> -->
+      <Units>unitless</Units>
+      <Count>1</Count>
     </item>
-</SALEvent>
-<SALEvent>
+  </SALEvent>
+  <SALEvent>
     <Subsystem>ATPtg</Subsystem>
     <Version>3.8.41</Version>
     <Author>plotz</Author>
@@ -57,15 +56,15 @@
     <Alias>detailedState</Alias>
     <Explanation>http://sal.lsst.org</Explanation>
     <item>
-        <EFDB_Name>detailedState</EFDB_Name>
-        <Description>Current detailed state</Description>
-        <IDL_Type>long</IDL_Type>
-        <!-- <Enumeration> DetailedStates </Enumeration> -->
-        <Units>unitless</Units>
-        <Count>1</Count>
+      <EFDB_Name>detailedState</EFDB_Name>
+      <Description>Current detailed state</Description>
+      <IDL_Type>long</IDL_Type>
+      <!-- <Enumeration> DetailedStates </Enumeration> -->
+      <Units>unitless</Units>
+      <Count>1</Count>
     </item>
-</SALEvent>
-<SALEvent>
+  </SALEvent>
+  <SALEvent>
     <Subsystem>ATPtg</Subsystem>
     <Version>3.8.41</Version>
     <Author>pbt</Author>
@@ -73,15 +72,15 @@
     <Alias>mountGuideMode</Alias>
     <Explanation>http://sal.lsst.org</Explanation>
     <item>
-        <EFDB_Name>mode</EFDB_Name>
-        <Description>Mount guide mode.</Description>
-        <IDL_Type>long</IDL_Type>
-        <!-- <Enumeration> WarningLevel </Enumeration> -->
-        <Units>unitless</Units>
-        <Count>1</Count>
+      <EFDB_Name>mode</EFDB_Name>
+      <Description>Mount guide mode.</Description>
+      <IDL_Type>long</IDL_Type>
+      <!-- <Enumeration> WarningLevel </Enumeration> -->
+      <Units>unitless</Units>
+      <Count>1</Count>
     </item>
-</SALEvent>
-<SALEvent>
+  </SALEvent>
+  <SALEvent>
     <Subsystem>ATPtg</Subsystem>
     <Version>3.8.41</Version>
     <Author>pbt</Author>
@@ -89,15 +88,15 @@
     <Alias>azWrapWarning</Alias>
     <Explanation>http://sal.lsst.org</Explanation>
     <item>
-        <EFDB_Name>level</EFDB_Name>
-        <Description>Warning level for azimuth wrap</Description>
-        <IDL_Type>long</IDL_Type>
-        <!-- <Enumeration> WarningLevel </Enumeration> -->
-        <Units>unitless</Units>
-        <Count>1</Count>
+      <EFDB_Name>level</EFDB_Name>
+      <Description>Warning level for azimuth wrap</Description>
+      <IDL_Type>long</IDL_Type>
+      <!-- <Enumeration> WarningLevel </Enumeration> -->
+      <Units>unitless</Units>
+      <Count>1</Count>
     </item>
-</SALEvent>
-<SALEvent>
+  </SALEvent>
+  <SALEvent>
     <Subsystem>ATPtg</Subsystem>
     <Version>3.8.41</Version>
     <Author>pbt</Author>
@@ -105,14 +104,14 @@
     <Alias>wavelength</Alias>
     <Explanation>http://sal.lsst.org</Explanation>
     <item>
-        <EFDB_Name>wavelength</EFDB_Name>
-        <Description>Wavelength in microns</Description>
-        <IDL_Type>double</IDL_Type>
-        <Units>micron</Units>
-        <Count>1</Count>
+      <EFDB_Name>wavelength</EFDB_Name>
+      <Description>Wavelength in microns</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>micron</Units>
+      <Count>1</Count>
     </item>
-</SALEvent>
-<SALEvent>
+  </SALEvent>
+  <SALEvent>
     <Subsystem>ATPtg</Subsystem>
     <Version>3.8.41</Version>
     <Author>pbt</Author>
@@ -120,14 +119,14 @@
     <Alias>inPositionEl</Alias>
     <Explanation>http://sal.lsst.org</Explanation>
     <item>
-        <EFDB_Name>eventState</EFDB_Name>
-        <Description>Elevation axis in position.</Description>
-        <IDL_Type>boolean</IDL_Type>
-        <Units>unitless</Units>
-        <Count>1</Count>
+      <EFDB_Name>eventState</EFDB_Name>
+      <Description>Elevation axis in position.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
     </item>
-</SALEvent>
-<SALEvent>
+  </SALEvent>
+  <SALEvent>
     <Subsystem>ATPtg</Subsystem>
     <Version>3.8.41</Version>
     <Author>pbt</Author>
@@ -135,23 +134,23 @@
     <Alias>axesTrackMode</Alias>
     <Explanation>http://sal.lsst.org</Explanation>
     <item>
-        <EFDB_Name>elevation</EFDB_Name>
-        <Description>Elevation axis track mode.</Description>
-        <IDL_Type>long</IDL_Type>
-        <!-- <Enumeration> WarningLevel </Enumeration> -->
-        <Units>unitless</Units>
-        <Count>1</Count>
+      <EFDB_Name>elevation</EFDB_Name>
+      <Description>Elevation axis track mode.</Description>
+      <IDL_Type>long</IDL_Type>
+      <!-- <Enumeration> WarningLevel </Enumeration> -->
+      <Units>unitless</Units>
+      <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>azimuth</EFDB_Name>
-        <Description>Azimuth axis track mode.</Description>
-        <IDL_Type>long</IDL_Type>
-        <!-- <Enumeration> WarningLevel </Enumeration> -->
-        <Units>unitless</Units>
-        <Count>1</Count>
+      <EFDB_Name>azimuth</EFDB_Name>
+      <Description>Azimuth axis track mode.</Description>
+      <IDL_Type>long</IDL_Type>
+      <!-- <Enumeration> WarningLevel </Enumeration> -->
+      <Units>unitless</Units>
+      <Count>1</Count>
     </item>
-</SALEvent>
-<SALEvent>
+  </SALEvent>
+  <SALEvent>
     <Subsystem>ATPtg</Subsystem>
     <Version>3.8.41</Version>
     <Author>pbt</Author>
@@ -159,15 +158,15 @@
     <Alias>objectSetWarning</Alias>
     <Explanation>http://sal.lsst.org</Explanation>
     <item>
-        <EFDB_Name>level</EFDB_Name>
-        <Description>Object is setting warning level.</Description>
-        <IDL_Type>long</IDL_Type>
-        <!-- <Enumeration> WarningLevel </Enumeration> -->
-        <Units>unitless</Units>
-        <Count>1</Count>
+      <EFDB_Name>level</EFDB_Name>
+      <Description>Object is setting warning level.</Description>
+      <IDL_Type>long</IDL_Type>
+      <!-- <Enumeration> WarningLevel </Enumeration> -->
+      <Units>unitless</Units>
+      <Count>1</Count>
     </item>
-</SALEvent>
-<SALEvent>
+  </SALEvent>
+  <SALEvent>
     <Subsystem>ATPtg</Subsystem>
     <Version>3.8.41</Version>
     <Author>pbt</Author>
@@ -175,30 +174,30 @@
     <Alias>pointingModel</Alias>
     <Explanation>http://sal.lsst.org</Explanation>
     <item>
-        <EFDB_Name>timestamp</EFDB_Name>
-        <Description>Current time as TAI second</Description>
-        <IDL_Type>double</IDL_Type>
-        <Units>second</Units>
-        <Count>1</Count>
+      <EFDB_Name>timestamp</EFDB_Name>
+      <Description>Current time as TAI second</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>second</Units>
+      <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>pointingModelTermNames</EFDB_Name>
-        <Description>Comma separated list of pointing model term names. </Description>
-        <IDL_Type>string</IDL_Type>
-        <IDL_Size>1</IDL_Size>
-        <Units>unitless</Units>
-        <Count>1</Count>
+      <EFDB_Name>pointingModelTermNames</EFDB_Name>
+      <Description>Comma separated list of pointing model term names. </Description>
+      <IDL_Type>string</IDL_Type>
+      <IDL_Size>1</IDL_Size>
+      <Units>unitless</Units>
+      <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>pointingModelTermValues</EFDB_Name>
-        <Description>Comma separated term values.</Description>
-        <IDL_Type>string</IDL_Type>
-        <IDL_Size>1</IDL_Size>
-        <Units>unitless</Units>
-        <Count>1</Count>
+      <EFDB_Name>pointingModelTermValues</EFDB_Name>
+      <Description>Comma separated term values.</Description>
+      <IDL_Type>string</IDL_Type>
+      <IDL_Size>1</IDL_Size>
+      <Units>unitless</Units>
+      <Count>1</Count>
     </item>
-</SALEvent>
-<SALEvent>
+  </SALEvent>
+  <SALEvent>
     <Subsystem>ATPtg</Subsystem>
     <Version>3.8.41</Version>
     <Author>pbt</Author>
@@ -206,15 +205,15 @@
     <Alias>airmassWarning</Alias>
     <Explanation>http://sal.lsst.org</Explanation>
     <item>
-        <EFDB_Name>level</EFDB_Name>
-        <Description>Airmass warning level.</Description>
-        <IDL_Type>long</IDL_Type>
-        <!-- <Enumeration> WarningLevel </Enumeration> -->
-        <Units>unitless</Units>
-        <Count>1</Count>
+      <EFDB_Name>level</EFDB_Name>
+      <Description>Airmass warning level.</Description>
+      <IDL_Type>long</IDL_Type>
+      <!-- <Enumeration> WarningLevel </Enumeration> -->
+      <Units>unitless</Units>
+      <Count>1</Count>
     </item>
-</SALEvent>
-<SALEvent>
+  </SALEvent>
+  <SALEvent>
     <Subsystem>ATPtg</Subsystem>
     <Version>3.8.41</Version>
     <Author>pbt</Author>
@@ -222,14 +221,14 @@
     <Alias>weatherDataInvalid</Alias>
     <Explanation>http://sal.lsst.org</Explanation>
     <item>
-        <EFDB_Name>eventState</EFDB_Name>
-        <Description>State of the weather data.</Description>
-        <IDL_Type>boolean</IDL_Type>
-        <Units>unitless</Units>
-        <Count>1</Count>
+      <EFDB_Name>eventState</EFDB_Name>
+      <Description>State of the weather data.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
     </item>
-</SALEvent>
-<SALEvent>
+  </SALEvent>
+  <SALEvent>
     <Subsystem>ATPtg</Subsystem>
     <Version>3.8.41</Version>
     <Author>pbt</Author>
@@ -237,14 +236,14 @@
     <Alias>focusNameInconsistentWarning</Alias>
     <Explanation>http://sal.lsst.org</Explanation>
     <item>
-        <EFDB_Name>eventState</EFDB_Name>
-        <Description>State of the focus name inconsistency.</Description>
-        <IDL_Type>boolean</IDL_Type>
-        <Units>unitless</Units>
-        <Count>1</Count>
+      <EFDB_Name>eventState</EFDB_Name>
+      <Description>State of the focus name inconsistency.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
     </item>
-</SALEvent>
-<SALEvent>
+  </SALEvent>
+  <SALEvent>
     <Subsystem>ATPtg</Subsystem>
     <Version>3.8.41</Version>
     <Author>pbt</Author>
@@ -252,191 +251,191 @@
     <Alias>currentTarget</Alias>
     <Explanation>http://sal.lsst.org</Explanation>
     <item>
-        <EFDB_Name>timestamp</EFDB_Name>
-        <Description>Current time in TAI second</Description>
-        <IDL_Type>double</IDL_Type>
-        <Units>second</Units>
-        <Count>1</Count>
+      <EFDB_Name>timestamp</EFDB_Name>
+      <Description>Current time in TAI second</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>second</Units>
+      <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>targetType</EFDB_Name>
-        <Description>raDec, azEl, planet or ephemeris?</Description>
-        <IDL_Type>long</IDL_Type>
-        <!-- <Enumeration> TargetTypes </Enumeration> -->
-        <Units>unitless</Units>
-        <Count>1</Count>
+      <EFDB_Name>targetType</EFDB_Name>
+      <Description>raDec, azEl, planet or ephemeris?</Description>
+      <IDL_Type>long</IDL_Type>
+      <!-- <Enumeration> TargetTypes </Enumeration> -->
+      <Units>unitless</Units>
+      <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>targetName</EFDB_Name>
-        <Description>Name of current target</Description>
-        <IDL_Type>string</IDL_Type>
-        <IDL_Size>1</IDL_Size>
-        <Units>unitless</Units>
-        <Count>1</Count>
+      <EFDB_Name>targetName</EFDB_Name>
+      <Description>Name of current target</Description>
+      <IDL_Type>string</IDL_Type>
+      <IDL_Size>1</IDL_Size>
+      <Units>unitless</Units>
+      <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>ra</EFDB_Name>
-        <Description>Target RA in radians</Description>
-        <IDL_Type>double</IDL_Type>
-        <Units>rad</Units>
-        <Count>1</Count>
+      <EFDB_Name>ra</EFDB_Name>
+      <Description>Target RA in radians</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>rad</Units>
+      <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>declination</EFDB_Name>
-        <Description>Target Dec in radians</Description>
-        <IDL_Type>double</IDL_Type>
-        <Units>rad</Units>
-        <Count>1</Count>
+      <EFDB_Name>declination</EFDB_Name>
+      <Description>Target Dec in radians</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>rad</Units>
+      <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>frame</EFDB_Name>
-        <Description>Target tracking co-ordinate frame (FK5 or ICRS)</Description>
-        <IDL_Type>long</IDL_Type>
-        <!-- <Enumeration> CoordFrame </Enumeration> -->
-        <Units>unitless</Units>
-        <Count>1</Count>
+      <EFDB_Name>frame</EFDB_Name>
+      <Description>Target tracking co-ordinate frame (FK5 or ICRS)</Description>
+      <IDL_Type>long</IDL_Type>
+      <!-- <Enumeration> CoordFrame </Enumeration> -->
+      <Units>unitless</Units>
+      <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>azDegs</EFDB_Name>
-        <Description>Azimuth.</Description>
-        <IDL_Type>double</IDL_Type>
-        <Units>degree</Units>
-        <Count>1</Count>
+      <EFDB_Name>azDegs</EFDB_Name>
+      <Description>Azimuth.</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>degree</Units>
+      <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>elDegs</EFDB_Name>
-        <Description>Elevation.</Description>
-        <IDL_Type>double</IDL_Type>
-        <Units>degree</Units>
-        <Count>1</Count>
+      <EFDB_Name>elDegs</EFDB_Name>
+      <Description>Elevation.</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>degree</Units>
+      <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>planetName</EFDB_Name>
-        <Description>Id of the planet name; mercury (1), venus (2), moon (3), mars (4), jupiter (5), saturn (6), uranus (7), neptune (8) or pluto (9)</Description>
-        <IDL_Type>long</IDL_Type>
-        <!-- <Enumeration> Planets </Enumeration> -->
-        <Units>unitless</Units>
-        <Count>1</Count>
+      <EFDB_Name>planetName</EFDB_Name>
+      <Description>Id of the planet name; mercury (1), venus (2), moon (3), mars (4), jupiter (5), saturn (6), uranus (7), neptune (8) or pluto (9)</Description>
+      <IDL_Type>long</IDL_Type>
+      <!-- <Enumeration> Planets </Enumeration> -->
+      <Units>unitless</Units>
+      <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>ephemFile</EFDB_Name>
-        <Description>Ephemeris file name.</Description>
-        <IDL_Type>string</IDL_Type>
-        <IDL_Size>1</IDL_Size>
-        <Units>unitless</Units>
-        <Count>1</Count>
+      <EFDB_Name>ephemFile</EFDB_Name>
+      <Description>Ephemeris file name.</Description>
+      <IDL_Type>string</IDL_Type>
+      <IDL_Size>1</IDL_Size>
+      <Units>unitless</Units>
+      <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>equinox</EFDB_Name>
-        <Description>Target equinox in years</Description>
-        <IDL_Type>double</IDL_Type>
-        <Units>year</Units>
-        <Count>1</Count>
+      <EFDB_Name>equinox</EFDB_Name>
+      <Description>Target equinox in years</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>year</Units>
+      <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>raString</EFDB_Name>
-        <Description>Target RA as a string (HH MM SS.SS).</Description>
-        <IDL_Type>string</IDL_Type>
-        <IDL_Size>1</IDL_Size>
-        <Units>hour</Units>
-        <Count>1</Count>
+      <EFDB_Name>raString</EFDB_Name>
+      <Description>Target RA as a string (HH MM SS.SS).</Description>
+      <IDL_Type>string</IDL_Type>
+      <IDL_Size>1</IDL_Size>
+      <Units>hour</Units>
+      <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>decString</EFDB_Name>
-        <Description>Target Dec as a string (DD MM SS.SS)</Description>
-        <IDL_Type>string</IDL_Type>
-        <IDL_Size>1</IDL_Size>
-        <Units>degree</Units>
-        <Count>1</Count>
+      <EFDB_Name>decString</EFDB_Name>
+      <Description>Target Dec as a string (DD MM SS.SS)</Description>
+      <IDL_Type>string</IDL_Type>
+      <IDL_Size>1</IDL_Size>
+      <Units>degree</Units>
+      <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>epoch</EFDB_Name>
-        <Description>Target epoch in years</Description>
-        <IDL_Type>double</IDL_Type>
-        <Units>year</Units>
-        <Count>1</Count>
+      <EFDB_Name>epoch</EFDB_Name>
+      <Description>Target epoch in years</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>year</Units>
+      <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>difftrackRA</EFDB_Name>
-        <Description>Target differential track rate in RA (units RAsecs/second)</Description>
-        <IDL_Type>double</IDL_Type>
-        <Units>arcsec / second</Units>
-        <Count>1</Count>
+      <EFDB_Name>difftrackRA</EFDB_Name>
+      <Description>Target differential track rate in RA (units RAsecs/second)</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>arcsec / second</Units>
+      <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>difftrackDec</EFDB_Name>
-        <Description>Target differential track rate in Dec (units arcsecs/second)</Description>
-        <IDL_Type>double</IDL_Type>
-        <Units>arcsec / second</Units>
-        <Count>1</Count>
+      <EFDB_Name>difftrackDec</EFDB_Name>
+      <Description>Target differential track rate in Dec (units arcsecs/second)</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>arcsec / second</Units>
+      <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>properMotionRA</EFDB_Name>
-        <Description>Target proper motion in RA (units RAsecs/year)</Description>
-        <IDL_Type>double</IDL_Type>
-        <Units>arcsec / year</Units>
-        <Count>1</Count>
+      <EFDB_Name>properMotionRA</EFDB_Name>
+      <Description>Target proper motion in RA (units RAsecs/year)</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>arcsec / year</Units>
+      <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>properMotionDec</EFDB_Name>
-        <Description>Target proper motion in Dec (units arcsecs/year)</Description>
-        <IDL_Type>double</IDL_Type>
-        <Units>arcsec / year</Units>
-        <Count>1</Count>
+      <EFDB_Name>properMotionDec</EFDB_Name>
+      <Description>Target proper motion in Dec (units arcsecs/year)</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>arcsec / year</Units>
+      <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>parallax</EFDB_Name>
-        <Description>Target annual parallax in arcseconds</Description>
-        <IDL_Type>double</IDL_Type>
-        <Units>arcsec</Units>
-        <Count>1</Count>
+      <EFDB_Name>parallax</EFDB_Name>
+      <Description>Target annual parallax in arcseconds</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>arcsec</Units>
+      <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>radvel</EFDB_Name>
-        <Description>Target radial velocity in kms/sec</Description>
-        <IDL_Type>double</IDL_Type>
-        <Units>km / second</Units>
-        <Count>1</Count>
+      <EFDB_Name>radvel</EFDB_Name>
+      <Description>Target radial velocity in kms/sec</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>km / second</Units>
+      <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>rotPA</EFDB_Name>
-        <Description>Rotator position angle in degrees</Description>
-        <IDL_Type>double</IDL_Type>
-        <Units>degree</Units>
-        <Count>1</Count>
+      <EFDB_Name>rotPA</EFDB_Name>
+      <Description>Rotator position angle in degrees</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>degree</Units>
+      <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>rotFrame</EFDB_Name>
-        <Description>Rotator tracking co-ordinate frame (FK5 or ICRS)</Description>
-        <IDL_Type>long</IDL_Type>
-        <!-- <Enumeration> RotFrame </Enumeration> -->
-        <Units>unitless</Units>
-        <Count>1</Count>
+      <EFDB_Name>rotFrame</EFDB_Name>
+      <Description>Rotator tracking co-ordinate frame (FK5 or ICRS)</Description>
+      <IDL_Type>long</IDL_Type>
+      <!-- <Enumeration> RotFrame </Enumeration> -->
+      <Units>unitless</Units>
+      <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>rotMode</EFDB_Name>
-        <Description>Rotator tracking mode (Field or Slit optimized)</Description>
-        <IDL_Type>long</IDL_Type>
-        <!-- <Enumeration> RotMode </Enumeration> -->
-        <Units>unitless</Units>
-        <Count>1</Count>
+      <EFDB_Name>rotMode</EFDB_Name>
+      <Description>Rotator tracking mode (Field or Slit optimized)</Description>
+      <IDL_Type>long</IDL_Type>
+      <!-- <Enumeration> RotMode </Enumeration> -->
+      <Units>unitless</Units>
+      <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>raHours</EFDB_Name>
-        <Description>Target RA in hours</Description>
-        <IDL_Type>double</IDL_Type>
-        <Units>hour</Units>
-        <Count>1</Count>
+      <EFDB_Name>raHours</EFDB_Name>
+      <Description>Target RA in hours</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>hour</Units>
+      <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>decDegs</EFDB_Name>
-        <Description>Target Dec in degrees</Description>
-        <IDL_Type>double</IDL_Type>
-        <Units>degree</Units>
-        <Count>1</Count>
+      <EFDB_Name>decDegs</EFDB_Name>
+      <Description>Target Dec in degrees</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>degree</Units>
+      <Count>1</Count>
     </item>
-</SALEvent>
-<SALEvent>
+  </SALEvent>
+  <SALEvent>
     <Subsystem>ATPtg</Subsystem>
     <Version>3.8.41</Version>
     <Author>pbt</Author>
@@ -444,14 +443,14 @@
     <Alias>iersOutOfDate</Alias>
     <Explanation>http://sal.lsst.org</Explanation>
     <item>
-        <EFDB_Name>eventState</EFDB_Name>
-        <Description>State of the iers</Description>
-        <IDL_Type>boolean</IDL_Type>
-        <Units>unitless</Units>
-        <Count>1</Count>
+      <EFDB_Name>eventState</EFDB_Name>
+      <Description>State of the iers</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
     </item>
-</SALEvent>
-<SALEvent>
+  </SALEvent>
+  <SALEvent>
     <Subsystem>ATPtg</Subsystem>
     <Version>3.8.41</Version>
     <Author>aya</Author>
@@ -459,28 +458,28 @@
     <Alias>weatherDataApplied</Alias>
     <Explanation>http://sal.lsst.org</Explanation>
     <item>
-        <EFDB_Name>ambient_temp</EFDB_Name>
-        <Description>Ambient temperature.</Description>
-        <IDL_Type>double</IDL_Type>
-        <Units>deg_C</Units>
-        <Count>1</Count>
+      <EFDB_Name>ambient_temp</EFDB_Name>
+      <Description>Ambient temperature.</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>deg_C</Units>
+      <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>pressure</EFDB_Name>
-        <Description>Current pressure. (mbar)</Description>
-        <IDL_Type>double</IDL_Type>
-        <Units>unitless</Units>
-        <Count>1</Count>
+      <EFDB_Name>pressure</EFDB_Name>
+      <Description>Current pressure. (mbar)</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>humidity</EFDB_Name>
-        <Description>Air relative humidity</Description>
-        <IDL_Type>double</IDL_Type>
-        <Units>percent</Units>
-        <Count>1</Count>
+      <EFDB_Name>humidity</EFDB_Name>
+      <Description>Air relative humidity</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>percent</Units>
+      <Count>1</Count>
     </item>
-</SALEvent>
-<SALEvent>
+  </SALEvent>
+  <SALEvent>
     <Subsystem>ATPtg</Subsystem>
     <Version>3.8.41</Version>
     <Author>pbt</Author>
@@ -488,15 +487,15 @@
     <Alias>currentDebugLevel</Alias>
     <Explanation>http://sal.lsst.org</Explanation>
     <item>
-        <EFDB_Name>currentLevel</EFDB_Name>
-        <Description>Current debug level.</Description>
-        <IDL_Type>long</IDL_Type>
-        <!-- <Enumeration> LogLevel </Enumeration> -->
-        <Units>unitless</Units>
-        <Count>1</Count>
+      <EFDB_Name>currentLevel</EFDB_Name>
+      <Description>Current debug level.</Description>
+      <IDL_Type>long</IDL_Type>
+      <!-- <Enumeration> LogLevel </Enumeration> -->
+      <Units>unitless</Units>
+      <Count>1</Count>
     </item>
-</SALEvent>
-<SALEvent>
+  </SALEvent>
+  <SALEvent>
     <Subsystem>ATPtg</Subsystem>
     <Version>3.8.41</Version>
     <Author>pbt</Author>
@@ -504,15 +503,15 @@
     <Alias>mountDataWarning</Alias>
     <Explanation>http://sal.lsst.org</Explanation>
     <item>
-        <EFDB_Name>level</EFDB_Name>
-        <Description>Warning level from the mount.</Description>
-        <IDL_Type>long</IDL_Type>
-        <!-- <Enumeration> WarningLevel </Enumeration> -->
-        <Units>unitless</Units>
-        <Count>1</Count>
+      <EFDB_Name>level</EFDB_Name>
+      <Description>Warning level from the mount.</Description>
+      <IDL_Type>long</IDL_Type>
+      <!-- <Enumeration> WarningLevel </Enumeration> -->
+      <Units>unitless</Units>
+      <Count>1</Count>
     </item>
-</SALEvent>
-<SALEvent>
+  </SALEvent>
+  <SALEvent>
     <Subsystem>ATPtg</Subsystem>
     <Version>3.8.41</Version>
     <Author>pbt</Author>
@@ -520,14 +519,14 @@
     <Alias>accessMode</Alias>
     <Explanation>http://sal.lsst.org</Explanation>
     <item>
-        <EFDB_Name>eventState</EFDB_Name>
-        <Description>Access mode level.</Description>
-        <IDL_Type>boolean</IDL_Type>
-        <Units>unitless</Units>
-        <Count>1</Count>
+      <EFDB_Name>eventState</EFDB_Name>
+      <Description>Access mode level.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
     </item>
-</SALEvent>
-<SALEvent>
+  </SALEvent>
+  <SALEvent>
     <Subsystem>ATPtg</Subsystem>
     <Version>3.8.41</Version>
     <Author>pbt</Author>
@@ -535,15 +534,15 @@
     <Alias>rotWrapWarning</Alias>
     <Explanation>http://sal.lsst.org</Explanation>
     <item>
-        <EFDB_Name>level</EFDB_Name>
-        <Description>Rotator Wrap limit warning level.</Description>
-        <IDL_Type>long</IDL_Type>
-        <!-- <Enumeration> WarningLevel </Enumeration> -->
-        <Units>unitless</Units>
-        <Count>1</Count>
+      <EFDB_Name>level</EFDB_Name>
+      <Description>Rotator Wrap limit warning level.</Description>
+      <IDL_Type>long</IDL_Type>
+      <!-- <Enumeration> WarningLevel </Enumeration> -->
+      <Units>unitless</Units>
+      <Count>1</Count>
     </item>
-</SALEvent>
-<SALEvent>
+  </SALEvent>
+  <SALEvent>
     <Subsystem>ATPtg</Subsystem>
     <Version>3.8.41</Version>
     <Author>pbt</Author>
@@ -551,14 +550,14 @@
     <Alias>inPosition</Alias>
     <Explanation>http://sal.lsst.org</Explanation>
     <item>
-        <EFDB_Name>eventState</EFDB_Name>
-        <Description>Is telescope in position?</Description>
-        <IDL_Type>boolean</IDL_Type>
-        <Units>unitless</Units>
-        <Count>1</Count>
+      <EFDB_Name>eventState</EFDB_Name>
+      <Description>Is telescope in position?</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
     </item>
-</SALEvent>
-<SALEvent>
+  </SALEvent>
+  <SALEvent>
     <Subsystem>ATPtg</Subsystem>
     <Version>3.8.41</Version>
     <Author>pbt</Author>
@@ -566,14 +565,14 @@
     <Alias>inPositionRot</Alias>
     <Explanation>http://sal.lsst.org</Explanation>
     <item>
-        <EFDB_Name>eventState</EFDB_Name>
-        <Description>Is rotator in position?</Description>
-        <IDL_Type>boolean</IDL_Type>
-        <Units>unitless</Units>
-        <Count>1</Count>
+      <EFDB_Name>eventState</EFDB_Name>
+      <Description>Is rotator in position?</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
     </item>
-</SALEvent>
-<SALEvent>
+  </SALEvent>
+  <SALEvent>
     <Subsystem>ATPtg</Subsystem>
     <Version>3.8.41</Version>
     <Author>pbt</Author>
@@ -581,14 +580,14 @@
     <Alias>inPositionAz</Alias>
     <Explanation>http://sal.lsst.org</Explanation>
     <item>
-        <EFDB_Name>eventState</EFDB_Name>
-        <Description>Is Azimuth in position?</Description>
-        <IDL_Type>boolean</IDL_Type>
-        <Units>unitless</Units>
-        <Count>1</Count>
+      <EFDB_Name>eventState</EFDB_Name>
+      <Description>Is Azimuth in position?</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
     </item>
-</SALEvent>
-<SALEvent>
+  </SALEvent>
+  <SALEvent>
     <Subsystem>ATPtg</Subsystem>
     <Version>3.8.41</Version>
     <Author>pbt</Author>
@@ -596,35 +595,35 @@
     <Alias>iers</Alias>
     <Explanation>http://sal.lsst.org</Explanation>
     <item>
-        <EFDB_Name>timestamp</EFDB_Name>
-        <Description>Timestamp (as returned by SAL's getCurrentTime) of successful IERS update.</Description>
-        <IDL_Type>double</IDL_Type>
-        <Units>second</Units>
-        <Count>1</Count>
+      <EFDB_Name>timestamp</EFDB_Name>
+      <Description>Timestamp (as returned by SAL's getCurrentTime) of successful IERS update.</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>second</Units>
+      <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>dut1</EFDB_Name>
-        <Description>DUT1 = UT1 - UTC (seconds)</Description>
-        <IDL_Type>double</IDL_Type>
-        <Units>second</Units>
-        <Count>1</Count>
+      <EFDB_Name>dut1</EFDB_Name>
+      <Description>DUT1 = UT1 - UTC (seconds)</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>second</Units>
+      <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>poleX</EFDB_Name>
-        <Description>Polar Motion X</Description>
-        <IDL_Type>double</IDL_Type>
-        <Units>arcsec</Units>
-        <Count>1</Count>
+      <EFDB_Name>poleX</EFDB_Name>
+      <Description>Polar Motion X</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>arcsec</Units>
+      <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>poleY</EFDB_Name>
-        <Description>Polar Motion Y</Description>
-        <IDL_Type>double</IDL_Type>
-        <Units>arcsec</Units>
-        <Count>1</Count>
+      <EFDB_Name>poleY</EFDB_Name>
+      <Description>Polar Motion Y</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>arcsec</Units>
+      <Count>1</Count>
     </item>
-</SALEvent>
-<SALEvent>
+  </SALEvent>
+  <SALEvent>
     <Subsystem>ATPtg</Subsystem>
     <Version>3.8.41</Version>
     <Author>pbt</Author>
@@ -632,15 +631,15 @@
     <Alias>moonProximityWarning</Alias>
     <Explanation>http://sal.lsst.org</Explanation>
     <item>
-        <EFDB_Name>level</EFDB_Name>
-        <Description>Level of the moon proximity warning.</Description>
-        <IDL_Type>long</IDL_Type>
-        <!-- <Enumeration> WarningLevel </Enumeration> -->
-        <Units>unitless</Units>
-        <Count>1</Count>
+      <EFDB_Name>level</EFDB_Name>
+      <Description>Level of the moon proximity warning.</Description>
+      <IDL_Type>long</IDL_Type>
+      <!-- <Enumeration> WarningLevel </Enumeration> -->
+      <Units>unitless</Units>
+      <Count>1</Count>
     </item>
-</SALEvent>
-<SALEvent>
+  </SALEvent>
+  <SALEvent>
     <Subsystem>ATPtg</Subsystem>
     <Version>3.8.41</Version>
     <Author>pbt</Author>
@@ -648,14 +647,14 @@
     <Alias>trackPosting</Alias>
     <Explanation>http://sal.lsst.org</Explanation>
     <item>
-        <EFDB_Name>status</EFDB_Name>
-        <Description>If true, PTG controller is currently posting track commands to Mount components.</Description>
-        <IDL_Type>boolean</IDL_Type>
-        <Units>unitless</Units>
-        <Count>1</Count>
+      <EFDB_Name>status</EFDB_Name>
+      <Description>If true, PTG controller is currently posting track commands to Mount components.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
     </item>
-</SALEvent>
-<SALEvent>
+  </SALEvent>
+  <SALEvent>
     <Subsystem>ATPtg</Subsystem>
     <Version>3.8.41</Version>
     <Author>pbt</Author>
@@ -663,15 +662,15 @@
     <Alias>ptgAzCurrentWrap</Alias>
     <Explanation>http://sal.lsst.org</Explanation>
     <item>
-        <EFDB_Name>currentWrap</EFDB_Name>
-        <Description>Direction of the azimuth wrap: cw (1) or ccw (2).</Description>
-        <IDL_Type>long</IDL_Type>
-        <!-- <Enumeration> Wraps </Enumeration> -->
-        <Units>unitless</Units>
-        <Count>1</Count>
+      <EFDB_Name>currentWrap</EFDB_Name>
+      <Description>Direction of the azimuth wrap: cw (1) or ccw (2).</Description>
+      <IDL_Type>long</IDL_Type>
+      <!-- <Enumeration> Wraps </Enumeration> -->
+      <Units>unitless</Units>
+      <Count>1</Count>
     </item>
-</SALEvent>
-<SALEvent>
+  </SALEvent>
+  <SALEvent>
     <Subsystem>ATPtg</Subsystem>
     <Version>3.8.41</Version>
     <Author>pbt</Author>
@@ -679,15 +678,15 @@
     <Alias>ptgRotCurrentWrap</Alias>
     <Explanation>http://sal.lsst.org</Explanation>
     <item>
-        <EFDB_Name>currentWrap</EFDB_Name>
-        <Description>Direction of the rotator wrap: cw (1) or ccw (2).</Description>
-        <IDL_Type>long</IDL_Type>
-        <!-- <Enumeration> Wraps </Enumeration> -->
-        <Units>unitless</Units>
-        <Count>1</Count>
+      <EFDB_Name>currentWrap</EFDB_Name>
+      <Description>Direction of the rotator wrap: cw (1) or ccw (2).</Description>
+      <IDL_Type>long</IDL_Type>
+      <!-- <Enumeration> Wraps </Enumeration> -->
+      <Units>unitless</Units>
+      <Count>1</Count>
     </item>
-</SALEvent>
-<SALEvent>
+  </SALEvent>
+  <SALEvent>
     <Subsystem>ATPtg</Subsystem>
     <Version>3.8.41</Version>
     <Author>aya</Author>
@@ -695,15 +694,15 @@
     <Alias>elLimitWarning</Alias>
     <Explanation>http://sal.lsst.org</Explanation>
     <item>
-        <EFDB_Name>level</EFDB_Name>
-        <Description>Elevation tracking high limit warning</Description>
-        <IDL_Type>long</IDL_Type>
-        <!-- <Enumeration> WarningLevel </Enumeration> -->
-        <Units>unitless</Units>
-        <Count>1</Count>
+      <EFDB_Name>level</EFDB_Name>
+      <Description>Elevation tracking high limit warning</Description>
+      <IDL_Type>long</IDL_Type>
+      <!-- <Enumeration> WarningLevel </Enumeration> -->
+      <Units>unitless</Units>
+      <Count>1</Count>
     </item>
-</SALEvent>
-<SALEvent>
+  </SALEvent>
+  <SALEvent>
     <Subsystem>ATPtg</Subsystem>
     <Version>3.8.41</Version>
     <Author>aya</Author>
@@ -711,21 +710,21 @@
     <Alias>pointing_file</Alias>
     <Explanation>http://sal.lsst.org</Explanation>
     <item>
-        <EFDB_Name>file_is_open</EFDB_Name>
-        <Description>If true, pointing file is open. If false, pointing file is closed.</Description>
-        <IDL_Type>boolean</IDL_Type>
-        <Units>unitless</Units>
-        <Count>1</Count>
+      <EFDB_Name>file_is_open</EFDB_Name>
+      <Description>If true, pointing file is open. If false, pointing file is closed.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>file_path</EFDB_Name>
-        <Description>Path of the pointing file.</Description>
-        <IDL_Type>string</IDL_Type>
-        <Units>unitless</Units>
-        <Count>1</Count>
+      <EFDB_Name>file_path</EFDB_Name>
+      <Description>Path of the pointing file.</Description>
+      <IDL_Type>string</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
     </item>
-</SALEvent>
-<SALEvent>
+  </SALEvent>
+  <SALEvent>
     <Subsystem>ATPtg</Subsystem>
     <Version>3.8.41</Version>
     <Author>aya</Author>
@@ -733,56 +732,56 @@
     <Alias>timesOfLimits</Alias>
     <Explanation>http://sal.lsst.org</Explanation>
     <item>
-        <EFDB_Name>timestamp</EFDB_Name>
-        <Description>Time the limits were calculated. TAI seconds.</Description>
-        <IDL_Type>double</IDL_Type>
-        <Units>second</Units>
-        <Count>1</Count>
+      <EFDB_Name>timestamp</EFDB_Name>
+      <Description>Time the limits were calculated. TAI seconds.</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>second</Units>
+      <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>timeAzLim</EFDB_Name>
-        <Description>Time the target reaches azimuth limit. TAI seconds.</Description>
-        <IDL_Type>double</IDL_Type>
-        <Units>second</Units>
-        <Count>1</Count>
+      <EFDB_Name>timeAzLim</EFDB_Name>
+      <Description>Time the target reaches azimuth limit. TAI seconds.</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>second</Units>
+      <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>timeRotLim</EFDB_Name>
-        <Description>Time the target reaches rotator limit. TAI seconds.</Description>
-        <IDL_Type>double</IDL_Type>
-        <Units>second</Units>
-        <Count>1</Count>
+      <EFDB_Name>timeRotLim</EFDB_Name>
+      <Description>Time the target reaches rotator limit. TAI seconds.</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>second</Units>
+      <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>timeElHighLimit</EFDB_Name>
-        <Description>Time the target reaches elevation high limit. TAI seconds.</Description>
-        <IDL_Type>double</IDL_Type>
-        <Units>second</Units>
-        <Count>1</Count>
+      <EFDB_Name>timeElHighLimit</EFDB_Name>
+      <Description>Time the target reaches elevation high limit. TAI seconds.</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>second</Units>
+      <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>timeElLowLimit</EFDB_Name>
-        <Description>Time the target reaches elevation low limit. TAI seconds.</Description>
-        <IDL_Type>double</IDL_Type>
-        <Units>second</Units>
-        <Count>1</Count>
+      <EFDB_Name>timeElLowLimit</EFDB_Name>
+      <Description>Time the target reaches elevation low limit. TAI seconds.</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>second</Units>
+      <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>timeUnobservable</EFDB_Name>
-        <Description>Time the target becomes unobservable. TAI seconds.</Description>
-        <IDL_Type>double</IDL_Type>
-        <Units>second</Units>
-        <Count>1</Count>
+      <EFDB_Name>timeUnobservable</EFDB_Name>
+      <Description>Time the target becomes unobservable. TAI seconds.</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>second</Units>
+      <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>trackId</EFDB_Name>
-        <Description>Target identifier.</Description>
-        <IDL_Type>long</IDL_Type>
-        <Units>unitless</Units>
-        <Count>1</Count>
+      <EFDB_Name>trackId</EFDB_Name>
+      <Description>Target identifier.</Description>
+      <IDL_Type>long</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
     </item>
-</SALEvent>
-<SALEvent>
+  </SALEvent>
+  <SALEvent>
     <Subsystem>ATPtg</Subsystem>
     <Version>3.8.41</Version>
     <Author>aya</Author>
@@ -790,39 +789,39 @@
     <Alias>validatedTarget</Alias>
     <Explanation>http://sal.lsst.org</Explanation>
     <item>
-        <EFDB_Name>isValid</EFDB_Name>
-        <Description>If true, the target is observable.</Description>
-        <IDL_Type>boolean</IDL_Type>
-        <Units>unitless</Units>
-        <Count>1</Count>
+      <EFDB_Name>isValid</EFDB_Name>
+      <Description>If true, the target is observable.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>az</EFDB_Name>
-        <Description>Azimuth</Description>
-        <IDL_Type>double</IDL_Type>
-        <Units>degree</Units>
-        <Count>1</Count>
+      <EFDB_Name>az</EFDB_Name>
+      <Description>Azimuth</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>degree</Units>
+      <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>el</EFDB_Name>
-        <Description>Elevation</Description>
-        <IDL_Type>double</IDL_Type>
-        <Units>degree</Units>
-        <Count>1</Count>
+      <EFDB_Name>el</EFDB_Name>
+      <Description>Elevation</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>degree</Units>
+      <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>rot</EFDB_Name>
-        <Description>Rotator</Description>
-        <IDL_Type>double</IDL_Type>
-        <Units>degree</Units>
-        <Count>1</Count>
+      <EFDB_Name>rot</EFDB_Name>
+      <Description>Rotator</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>degree</Units>
+      <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>trackId</EFDB_Name>
-        <Description>Target identifier.</Description>
-        <IDL_Type>long</IDL_Type>
-        <Units>unitless</Units>
-        <Count>1</Count>
+      <EFDB_Name>trackId</EFDB_Name>
+      <Description>Target identifier.</Description>
+      <IDL_Type>long</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
     </item>
-</SALEvent>
+  </SALEvent>
 </SALEventSet>

@@ -1,105 +1,103 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-stylesheet type="text/xsl" href="http://lsst-sal.tuc.noao.edu/schema/SALEventSet.xsl"?>
-<SALEventSet xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:noNamespaceSchemaLocation="http://lsst-sal.tuc.noao.edu/schema/SALEventSet.xsd">
-<Enumeration>DetailedState_DisabledState,DetailedState_EnabledState,DetailedState_FaultState,DetailedState_OfflineState,DetailedState_StandbyState,DetailedState_NotReadingState,DetailedState_ConfiguringState,DetailedState_ManualReadingState,DetailedState_ReadingBufferState,DetailedState_SetDurationReadingState</Enumeration>
-<Enumeration>SummaryState_DisabledState,SummaryState_EnabledState,SummaryState_FaultState,SummaryState_OfflineState,SummaryState_StandbyState</Enumeration>
-<Enumeration>UnitToRead_Current,UnitToRead_Charge</Enumeration>
-
-<SALEvent>
+<SALEventSet xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://lsst-sal.tuc.noao.edu/schema/SALEventSet.xsd">
+  <Enumeration>DetailedState_DisabledState,DetailedState_EnabledState,DetailedState_FaultState,DetailedState_OfflineState,DetailedState_StandbyState,DetailedState_NotReadingState,DetailedState_ConfiguringState,DetailedState_ManualReadingState,DetailedState_ReadingBufferState,DetailedState_SetDurationReadingState</Enumeration>
+  <Enumeration>SummaryState_DisabledState,SummaryState_EnabledState,SummaryState_FaultState,SummaryState_OfflineState,SummaryState_StandbyState</Enumeration>
+  <Enumeration>UnitToRead_Current,UnitToRead_Charge</Enumeration>
+  <SALEvent>
     <Subsystem>Electrometer</Subsystem>
     <Version>3.8</Version>
     <Author>aanania</Author>
     <EFDB_Topic>Electrometer_logevent_detailedState</EFDB_Topic>
     <Alias>detailedState</Alias>
     <Explanation>http://sal.lsst.org</Explanation>
-            <item>
-                <EFDB_Name>detailedState</EFDB_Name>
-                <Description>An enumeration indicating the Electrometer detailed state. See the DetailedStateValue enumeration defined on top of this document.</Description>
-                <!-- Enumeration: DetailedState -->
-                <IDL_Type>long</IDL_Type>
-                <Units>unitless</Units>
-                <Count>1</Count>
-            </item>
-</SALEvent>
-<SALEvent>
+    <item>
+      <EFDB_Name>detailedState</EFDB_Name>
+      <Description>An enumeration indicating the Electrometer detailed state. See the DetailedStateValue enumeration defined on top of this document.</Description>
+      <!-- Enumeration: DetailedState -->
+      <IDL_Type>long</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+  </SALEvent>
+  <SALEvent>
     <Subsystem>Electrometer</Subsystem>
     <Version>3.8</Version>
     <Author>aanania</Author>
     <EFDB_Topic>Electrometer_logevent_digitalFilterChange</EFDB_Topic>
     <Alias>digitalFilterChange</Alias>
-	<Description>Current update in the digital filter setup inside the Electrometer controller</Description>
+    <Description>Current update in the digital filter setup inside the Electrometer controller</Description>
     <Explanation>http://sal.lsst.org</Explanation>
-	<item>
-        <EFDB_Name>activateFilter</EFDB_Name>
-        <Description>If this is OFF, none of the filters will operate. 0 for not active and 1 for active</Description>
-        <IDL_Type>boolean</IDL_Type>
-        <Units>unitless</Units>
-        <Count>1</Count>
+    <item>
+      <EFDB_Name>activateFilter</EFDB_Name>
+      <Description>If this is OFF, none of the filters will operate. 0 for not active and 1 for active</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>activateMedianFilter</EFDB_Name>
-        <Description>The median filter is used to determine the middle-most reading from a group of readings that are arranged according to size. Activate the median filter inside the electrometer, 1 for active and 0 for not active</Description>
-        <IDL_Type>boolean</IDL_Type>
-        <Units>unitless</Units>
-        <Count>1</Count>
+      <EFDB_Name>activateMedianFilter</EFDB_Name>
+      <Description>The median filter is used to determine the middle-most reading from a group of readings that are arranged according to size. Activate the median filter inside the electrometer, 1 for active and 0 for not active</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>activateAverageFilter</EFDB_Name>
-        <Description>Activate the average filter inside the electrometer, it uses the Default value inside the device (last 10 readings) to do the average calculation, 1 for active and 0 for not active </Description>
-        <IDL_Type>boolean</IDL_Type>
-        <Units>unitless</Units>
-        <Count>1</Count>
+      <EFDB_Name>activateAverageFilter</EFDB_Name>
+      <Description>Activate the average filter inside the electrometer, it uses the Default value inside the device (last 10 readings) to do the average calculation, 1 for active and 0 for not active </Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
     </item>
-</SALEvent>
-<SALEvent>
+  </SALEvent>
+  <SALEvent>
     <Subsystem>Electrometer</Subsystem>
     <Version>3.8</Version>
     <Author>aanania</Author>
     <EFDB_Topic>Electrometer_logevent_integrationTime</EFDB_Topic>
     <Alias>integrationTime</Alias>
-	<Description>Integration rate, this will directly affect reading rates</Description>
+    <Description>Integration rate, this will directly affect reading rates</Description>
     <Explanation>http://sal.lsst.org</Explanation>
     <item>
-        <EFDB_Name>intTime</EFDB_Name>
-        <Description>Integration rate in seconds (166.67e-6 to 200e-3)</Description>
-        <IDL_Type>float</IDL_Type>
-        <Units>second</Units>
-        <Count>1</Count>
+      <EFDB_Name>intTime</EFDB_Name>
+      <Description>Integration rate in seconds (166.67e-6 to 200e-3)</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>second</Units>
+      <Count>1</Count>
     </item>
-</SALEvent>
-<SALEvent>
+  </SALEvent>
+  <SALEvent>
     <Subsystem>Electrometer</Subsystem>
     <Version>3.8</Version>
     <Author>aanania</Author>
     <EFDB_Topic>Electrometer_logevent_intensity</EFDB_Topic>
     <Alias>intensity</Alias>
-	<Description>Intensity of light measured with the photo-diode in the unit previously configured</Description>
+    <Description>Intensity of light measured with the photo-diode in the unit previously configured</Description>
     <Explanation>http://sal.lsst.org</Explanation>
     <item>
-        <EFDB_Name>intensity</EFDB_Name>
-        <Description>Measure read by the device</Description>
-        <IDL_Type>double</IDL_Type>
-        <Units>unitless</Units>
-        <Count>1</Count>
+      <EFDB_Name>intensity</EFDB_Name>
+      <Description>Measure read by the device</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>unit</EFDB_Name>
-        <Description>Unit used </Description>
-        <IDL_Type>string</IDL_Type>
-        <IDL_Size>1</IDL_Size>
-        <Units>unitless</Units>
-        <Count>1</Count>
+      <EFDB_Name>unit</EFDB_Name>
+      <Description>Unit used </Description>
+      <IDL_Type>string</IDL_Type>
+      <IDL_Size>1</IDL_Size>
+      <Units>unitless</Units>
+      <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>timestamp</EFDB_Name>
-        <Description>Timestamp when the measurement was taken</Description>
-        <IDL_Type>double</IDL_Type>
-        <Units>second</Units>
-        <Count>1</Count>
+      <EFDB_Name>timestamp</EFDB_Name>
+      <Description>Timestamp when the measurement was taken</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>second</Units>
+      <Count>1</Count>
     </item>
-</SALEvent>
-<SALEvent>
+  </SALEvent>
+  <SALEvent>
     <Subsystem>Electrometer</Subsystem>
     <Version>3.8</Version>
     <Author>aanania</Author>
@@ -107,249 +105,250 @@
     <Alias>largeFileObjectAvailable</Alias>
     <Explanation>http://sal.lsst.org</Explanation>
     <item>
-        <EFDB_Name>url</EFDB_Name>
-        <Description>A Uniform Resource Locator which links to a Large File Object
+      <EFDB_Name>url</EFDB_Name>
+      <Description>A Uniform Resource Locator which links to a Large File Object
 either for ingest into the EFD Large File Annex, or to announce
 the successful copy of same to the EFD Large File Annex.
 Protocols are those supported by the cURL library.</Description>
-        <IDL_Type>string</IDL_Type>
-        <IDL_Size>256</IDL_Size>
-        <Units>unitless</Units>
-        <Count>1</Count>
+      <IDL_Type>string</IDL_Type>
+      <IDL_Size>256</IDL_Size>
+      <Units>unitless</Units>
+      <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>generator</EFDB_Name>
-        <Description>Name of the package which generated the file being announced</Description>
-        <IDL_Type>string</IDL_Type>
-        <IDL_Size>32</IDL_Size>
-        <Units>unitless</Units>
-        <Count>1</Count>
+      <EFDB_Name>generator</EFDB_Name>
+      <Description>Name of the package which generated the file being announced</Description>
+      <IDL_Type>string</IDL_Type>
+      <IDL_Size>32</IDL_Size>
+      <Units>unitless</Units>
+      <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>version</EFDB_Name>
-        <Description>A dotted x.y version number denoting the file format revision</Description>
-        <IDL_Type>float</IDL_Type>
-        <Units>unitless</Units>
-        <Count>1</Count>
+      <EFDB_Name>version</EFDB_Name>
+      <Description>A dotted x.y version number denoting the file format revision</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>checkSum</EFDB_Name>
-        <Description>Hexadecimal character string holding the checksum of the file</Description>
-        <IDL_Type>string</IDL_Type>
-        <IDL_Size>32</IDL_Size>
-        <Units>unitless</Units>
-        <Count>1</Count>
+      <EFDB_Name>checkSum</EFDB_Name>
+      <Description>Hexadecimal character string holding the checksum of the file</Description>
+      <IDL_Type>string</IDL_Type>
+      <IDL_Size>32</IDL_Size>
+      <Units>unitless</Units>
+      <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>mimeType</EFDB_Name>
-        <Description>Mime Type code for the file</Description>
-        <IDL_Type>string</IDL_Type>
-        <IDL_Size>32</IDL_Size>
-        <Units>unitless</Units>
-        <Count>1</Count>
+      <EFDB_Name>mimeType</EFDB_Name>
+      <Description>Mime Type code for the file</Description>
+      <IDL_Type>string</IDL_Type>
+      <IDL_Size>32</IDL_Size>
+      <Units>unitless</Units>
+      <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>byteSize</EFDB_Name>
-        <Description>Size of file in bytes</Description>
-        <IDL_Type>long</IDL_Type>
-        <Units>unitless</Units>
-        <Count>1</Count>
+      <EFDB_Name>byteSize</EFDB_Name>
+      <Description>Size of file in bytes</Description>
+      <IDL_Type>long</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>id</EFDB_Name>
-        <Description>A generic identifier field</Description>
-        <IDL_Type>string</IDL_Type>
-        <IDL_Size>32</IDL_Size>
-        <Units>unitless</Units>
-        <Count>1</Count>
+      <EFDB_Name>id</EFDB_Name>
+      <Description>A generic identifier field</Description>
+      <IDL_Type>string</IDL_Type>
+      <IDL_Size>32</IDL_Size>
+      <Units>unitless</Units>
+      <Count>1</Count>
     </item>
-</SALEvent>
-<SALEvent>
+  </SALEvent>
+  <SALEvent>
     <Subsystem>Electrometer</Subsystem>
     <Version>3.8</Version>
     <Author>aanania</Author>
     <EFDB_Topic>Electrometer_logevent_measureRange</EFDB_Topic>
     <Alias>measureRange</Alias>
-	<Description>Current range, -1 for automatic range. Volts range from 0 to 210V, Current range from 0 to 21e-3Amps, Resistance from 0 to 100e18, Charge from 0 to +2.1e-6</Description>
+    <Description>Current range, -1 for automatic range. Volts range from 0 to 210V, Current range from 0 to 21e-3Amps, Resistance from 0 to 100e18, Charge from 0 to +2.1e-6</Description>
     <Explanation>http://sal.lsst.org</Explanation>
     <item>
-        <EFDB_Name>rangeValue</EFDB_Name>
-        <Description>The range for the intensity for measure selected.</Description>
-        <IDL_Type>double</IDL_Type>
-        <Units>unitless</Units>
-        <Count>1</Count>
+      <EFDB_Name>rangeValue</EFDB_Name>
+      <Description>The range for the intensity for measure selected.</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
     </item>
-</SALEvent>
-<SALEvent>
+  </SALEvent>
+  <SALEvent>
     <Subsystem>Electrometer</Subsystem>
     <Version>3.8</Version>
     <Author>aanania</Author>
     <EFDB_Topic>Electrometer_logevent_measureType</EFDB_Topic>
     <Alias>measureType</Alias>
-	<Description>Current mode selected to read from the photodiode</Description>
+    <Description>Current mode selected to read from the photodiode</Description>
     <Explanation>http://sal.lsst.org</Explanation>
-            <item>
-                <EFDB_Name>mode</EFDB_Name>
-                <Description>mode: 1- Current, 2- Charge, 3- Voltage, 4- Resistance</Description>
-                <!-- Enumeration: UnitToRead -->
-                <IDL_Type>long</IDL_Type>
-                <Units>unitless</Units>
-                <Count>1</Count>
-            </item>
-</SALEvent>
-<SALEvent>
+    <item>
+      <EFDB_Name>mode</EFDB_Name>
+      <Description>mode: 1- Current, 2- Charge, 3- Voltage, 4- Resistance</Description>
+      <!-- Enumeration: UnitToRead -->
+      <IDL_Type>long</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+  </SALEvent>
+  <SALEvent>
     <Subsystem>Electrometer</Subsystem>
     <Version>3.8</Version>
     <Author>aanania</Author>
     <EFDB_Topic>Electrometer_logevent_settingsAppliedReadSets</EFDB_Topic>
     <Alias>settingsAppliedReadSets</Alias>
-	<Description>Initial configuration of the electrometer, this has been set in the current configuration file in use</Description>
+    <Description>Initial configuration of the electrometer, this has been set in the current configuration file in use</Description>
     <Explanation>http://sal.lsst.org</Explanation>
     <item>
-        <EFDB_Name>filterActive</EFDB_Name>
-        <Description>Digital Filter configuration. If this is OFF, none of the filters will operate</Description>
-        <IDL_Type>boolean</IDL_Type>
-        <Units>unitless</Units>
-        <Count>1</Count>
+      <EFDB_Name>filterActive</EFDB_Name>
+      <Description>Digital Filter configuration. If this is OFF, none of the filters will operate</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>avgFilterActive</EFDB_Name>
-        <Description>Average digital filter status inside the electrometer, it uses the Default value inside the device (last 10 readings) to do the average calculation, true for ON and False for OFF </Description>
-        <IDL_Type>boolean</IDL_Type>
-        <Units>unitless</Units>
-        <Count>1</Count>
+      <EFDB_Name>avgFilterActive</EFDB_Name>
+      <Description>Average digital filter status inside the electrometer, it uses the Default value inside the device (last 10 readings) to do the average calculation, true for ON and False for OFF </Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>inputRange</EFDB_Name>
-        <Description>Ranges use to read values from the photodiode using the current Mode. -1 for automatic range. Volts range from 0 to 210V, Current range from 0 to 21e-3Amps, Resistance from 0 to 100e18, Charge from 0 to +2.1e-6</Description>
-        <IDL_Type>double</IDL_Type>
-        <Units>unitless</Units>
-        <Count>1</Count>
+      <EFDB_Name>inputRange</EFDB_Name>
+      <Description>Ranges use to read values from the photodiode using the current Mode. -1 for automatic range. Volts range from 0 to 210V, Current range from 0 to 21e-3Amps, Resistance from 0 to 100e18, Charge from 0 to +2.1e-6</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>integrationTime</EFDB_Name>
-        <Description>Integration rate, this will directly affect reading rates but reading rates are not going to be the same as reading rates</Description>
-        <IDL_Type>double</IDL_Type>
-        <Units>second</Units>
-        <Count>1</Count>
+      <EFDB_Name>integrationTime</EFDB_Name>
+      <Description>Integration rate, this will directly affect reading rates but reading rates are not going to be the same as reading rates</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>second</Units>
+      <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>medianFilterActive</EFDB_Name>
-        <Description>The median filter is used to determine the middle-most reading from a group of readings that are arranged according to size. Activate the median filter inside the electrometer, true for ON and False for OFF</Description>
-        <IDL_Type>boolean</IDL_Type>
-        <Units>unitless</Units>
-        <Count>1</Count>
+      <EFDB_Name>medianFilterActive</EFDB_Name>
+      <Description>The median filter is used to determine the middle-most reading from a group of readings that are arranged according to size. Activate the median filter inside the electrometer, true for ON and False for OFF</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
     </item>
-	<item>
-		<EFDB_Name>mode</EFDB_Name>
-		<Description>Mode used in the configuration file, 0-Current, 1-Charge, 2-Voltage, 3-Resistance</Description>
-		<!-- Enumeration: UnitToRead -->
-		<IDL_Type>long</IDL_Type>
-		<Units>unitless</Units>
-		<Count>1</Count>
-	</item>
-</SALEvent>
-<SALEvent>
+    <item>
+      <EFDB_Name>mode</EFDB_Name>
+      <Description>Mode used in the configuration file, 0-Current, 1-Charge, 2-Voltage, 3-Resistance</Description>
+      <!-- Enumeration: UnitToRead -->
+      <IDL_Type>long</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+  </SALEvent>
+  <SALEvent>
     <Subsystem>Electrometer</Subsystem>
     <Version>3.8</Version>
     <Author>aanania</Author>
     <EFDB_Topic>Electrometer_logevent_settingsAppliedSerConf</EFDB_Topic>
     <Alias>settingsAppliedSerConf</Alias>
-	<Description>Serial configuration for the Electrometer port. This configuration needs to be the same as the one set in the Electrometer device. For proper configuration please read the reference manual 6517B-901-01 Rev. B / June 2009 section Selecting interface parameters</Description>
+    <Description>Serial configuration for the Electrometer port. This configuration needs to be the same as the one set in the Electrometer device. For proper configuration please read the reference manual 6517B-901-01 Rev. B / June 2009 section Selecting interface parameters</Description>
     <Explanation>http://sal.lsst.org</Explanation>
     <item>
-        <EFDB_Name>visaResource</EFDB_Name>
-        <Description>Visa resource or port</Description>
-        <IDL_Type>string</IDL_Type>
-        <IDL_Size>1</IDL_Size>
-        <Units>unitless</Units>
-        <Count>1</Count>
+      <EFDB_Name>visaResource</EFDB_Name>
+      <Description>Visa resource or port</Description>
+      <IDL_Type>string</IDL_Type>
+      <IDL_Size>1</IDL_Size>
+      <Units>unitless</Units>
+      <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>baudRate</EFDB_Name>
-        <Description>Baud rate as a number. Allowed values are: 2400, 4800, 9600, 14400, 19200, 38400, 57600, 115200</Description>
-        <IDL_Type>long</IDL_Type>
-        <Units>unitless</Units>
-        <Count>1</Count>
+      <EFDB_Name>baudRate</EFDB_Name>
+      <Description>Baud rate as a number. Allowed values are: 2400, 4800, 9600, 14400, 19200, 38400, 57600, 115200</Description>
+      <IDL_Type>long</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>parity</EFDB_Name>
-        <Description>Parity checking. PARITY_NONE=0, PARITY_EVEN=1, PARITY_ODD=2, PARITY_MARK=3, PARITY_SPACE=4</Description>
-        <IDL_Type>long</IDL_Type>
-        <Units>unitless</Units>
-        <Count>1</Count>
+      <EFDB_Name>parity</EFDB_Name>
+      <Description>Parity checking. PARITY_NONE=0, PARITY_EVEN=1, PARITY_ODD=2, PARITY_MARK=3, PARITY_SPACE=4</Description>
+      <IDL_Type>long</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>dataBits</EFDB_Name>
-        <Description>Number of data bits. Possible values: 5, 6, 7, 8</Description>
-        <IDL_Type>long</IDL_Type>
-        <Units>unitless</Units>
-        <Count>1</Count>
+      <EFDB_Name>dataBits</EFDB_Name>
+      <Description>Number of data bits. Possible values: 5, 6, 7, 8</Description>
+      <IDL_Type>long</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>stopBits</EFDB_Name>
-        <Description>Number of stop bits. Possible values: 1, 2 </Description>
-        <IDL_Type>long</IDL_Type>
-        <Units>unitless</Units>
-        <Count>1</Count>
+      <EFDB_Name>stopBits</EFDB_Name>
+      <Description>Number of stop bits. Possible values: 1, 2 </Description>
+      <IDL_Type>long</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>timeout</EFDB_Name>
-        <Description>time out in seconds</Description>
-        <IDL_Type>float</IDL_Type>
-        <Units>unitless</Units>
-        <Count>1</Count>
+      <EFDB_Name>timeout</EFDB_Name>
+      <Description>time out in seconds</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>termChar</EFDB_Name>
-        <Description>termination char, endl for end line</Description>
-        <IDL_Type>string</IDL_Type>
-        <Units>unitless</Units>
-        <Count>1</Count>
+      <EFDB_Name>termChar</EFDB_Name>
+      <Description>termination char, endl for end line</Description>
+      <IDL_Type>string</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>xonxoff</EFDB_Name>
-        <Description>Software flow control.</Description>
-        <IDL_Type>boolean</IDL_Type>
-        <Units>unitless</Units>
-        <Count>1</Count>
+      <EFDB_Name>xonxoff</EFDB_Name>
+      <Description>Software flow control.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>dsrdtr</EFDB_Name>
-        <Description>hardware (DSR/DTR) flow control</Description>
-        <IDL_Type>boolean</IDL_Type>
-        <Units>unitless</Units>
-        <Count>1</Count>
+      <EFDB_Name>dsrdtr</EFDB_Name>
+      <Description>hardware (DSR/DTR) flow control</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>bytesToRead</EFDB_Name>
-        <Description>The maximum amount of bytes to read</Description>
-        <IDL_Type>long</IDL_Type>
-        <Units>unitless</Units>
-        <Count>1</Count>
+      <EFDB_Name>bytesToRead</EFDB_Name>
+      <Description>The maximum amount of bytes to read</Description>
+      <IDL_Type>long</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
     </item>
-</SALEvent>
-<SALEvent>
+  </SALEvent>
+  <SALEvent>
     <Subsystem>Electrometer</Subsystem>
     <Version>3.8</Version>
     <Author>aanania</Author>
     <EFDB_Topic>Electrometer_logevent_deviceErrorCode</EFDB_Topic>
     <Alias>deviceErrorCode</Alias>
-	<Description></Description>
+    <Description/>
     <Explanation>http://sal.lsst.org</Explanation>
     <item>
-        <EFDB_Name>errorCode</EFDB_Name>
-        <Description>The error code being published. This code is the same as the one that the Electrometer publishes</Description>
-        <IDL_Type>long</IDL_Type>
-        <Units>unitless</Units>
-        <Count>1</Count>
+      <EFDB_Name>errorCode</EFDB_Name>
+      <Description>The error code being published. This code is the same as the one that the Electrometer publishes</Description>
+      <IDL_Type>long</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>errorReport</EFDB_Name>
-        <Description>Handle a few sentences of higher-level information describing the error.</Description>
-        <IDL_Type>string</IDL_Type>
-        <IDL_Size>1</IDL_Size>
-        <Units>unitless</Units>
-        <Count>1</Count>
+      <EFDB_Name>errorReport</EFDB_Name>
+      <Description>Handle a few sentences of higher-level information describing the error.</Description>
+      <IDL_Type>string</IDL_Type>
+      <IDL_Size>1</IDL_Size>
+      <Units>unitless</Units>
+      <Count>1</Count>
     </item>
-</SALEvent></SALEventSet>
+  </SALEvent>
+</SALEventSet>
