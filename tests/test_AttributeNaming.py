@@ -31,17 +31,20 @@ def test_attribute_naming(xmlfile, csc, topic):
     topic : `xmlfile.stem`
         One of ['Commands','Events','Telemetry']
     """
-    saltype = "SAL" + topic.rstrip('s')
+    saltype = "SAL" + topic.rstrip("s")
     # Check for known issues.
     jira = check_for_issues(csc, topic)
     if jira:
-        pytest.skip(jira + ": " + str(xmlfile.name) + " <EFDB_Name> is not properly formed.")
+        pytest.skip(
+            jira + ": " + str(xmlfile.name) + " <EFDB_Name> is not properly formed."
+        )
     # Test the attribute <Description> fields.
     with open(str(xmlfile), "r", encoding="utf-8") as f:
         tree = et.parse(f)
     root = tree.getroot()
     for name in root.findall(f"./{saltype}/item/EFDB_Name"):
         # re.match() returns None if the string does not match the regex.
-        assert re.match(r"^[a-z]([a-zA-Z0-9_]*$)", name.text) is not None, \
-            name.text + ' in ' + str(xmlfile.name) + ' does not begin with a lowercase '\
-            'letter and/or contains non-alphanumeric characters.'
+        assert re.match(r"^[a-z]([a-zA-Z0-9_]*$)", name.text) is not None, (
+            name.text + " in " + str(xmlfile.name) + " does not begin with a lowercase "
+            "letter and/or contains non-alphanumeric characters."
+        )

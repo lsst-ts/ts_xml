@@ -8,47 +8,53 @@ import lsst.ts.xml as ts_xml
 def check_for_issues(csc, topic, language):
     if csc == "ATAOS" and topic == "Commands" and language == "optional":
         jira = "DM-22612"
-    elif (csc == "ATMCS" and topic in ("Commands", "Events") and
-            language == "critical"):
+    elif csc == "ATMCS" and topic in ("Commands", "Events") and language == "critical":
         jira = "DM-22613"
-    elif (csc == "ATSpectrograph" and topic in ("Commands", "Events") and
-            language == "optional"):
+    elif (
+        csc == "ATSpectrograph"
+        and topic in ("Commands", "Events")
+        and language == "optional"
+    ):
         jira = "DM-22614"
-    elif (csc == "CatchupArchiver" and topic in ("Telemetry", "Events") and
-            language == "optional"):
+    elif (
+        csc == "CatchupArchiver"
+        and topic in ("Telemetry", "Events")
+        and language == "optional"
+    ):
         jira = "CAP-399"
-    elif (csc == "FiberSpectrograph" and topic == "Commands" and
-            language == "optional"):
+    elif csc == "FiberSpectrograph" and topic == "Commands" and language == "optional":
         jira = "DM-22616"
-    elif (csc == "LOVE" and topic == "Events" and
-            language == "optional"):
+    elif csc == "LOVE" and topic == "Events" and language == "optional":
         jira = "DM-22617"
-    elif (csc == "MTArchiver" and topic == "Events" and
-            language == "optional"):
-        jira = "CAP398"
-    elif (csc == "MTCamera" and topic == "Commands" and
-            language == "optional"):
+    elif csc == "MTCamera" and topic == "Commands" and language == "optional":
         jira = "CAP-397"
-    elif (csc == "CCCamera" and topic == "Commands" and
-            language == "optional"):
+    elif csc == "CCCamera" and topic == "Commands" and language == "optional":
         jira = "CAP-402"
-    elif (csc in ("MTMount", "NewMTMount") and topic == "Commands" and
-            language == "critical"):
+    elif (
+        csc in ("MTMount", "NewMTMount")
+        and topic == "Commands"
+        and language == "critical"
+    ):
         jira = "DM-22622"
-    elif (csc == "PromptProcessing" and topic in ("Telemetry", "Events") and
-            language == "optional"):
+    elif (
+        csc == "PromptProcessing"
+        and topic in ("Telemetry", "Events")
+        and language == "optional"
+    ):
         jira = "DM-22624"
-    elif (csc == "Scheduler" and topic == "Telemetry" and
-            language == "optional"):
+    elif csc == "Scheduler" and topic == "Telemetry" and language == "optional":
         jira = "DM-22625"
-    elif (csc in ("Script", "ScriptQueue") and topic == "Events" and
-            language == "optional"):
+    elif (
+        csc in ("Script", "ScriptQueue")
+        and topic == "Events"
+        and language == "optional"
+    ):
         jira = "DM-22626"
-    elif (csc == "Test" and topic == "Commands" and
-            language == "optional"):
+    elif csc == "Test" and topic == "Commands" and language == "optional":
         jira = "DM-22627"
-    elif (csc == "Watcher" and topic in ("Commands", "Events") and
-            language == "optional"):
+    elif (
+        csc == "Watcher" and topic in ("Commands", "Events") and language == "optional"
+    ):
         jira = "DM-22628"
     else:
         jira = ""
@@ -78,12 +84,18 @@ def reserved_words(xmlfile, csc, topic, restriction):
     restriction : `test_reserved_words.restriction`
         One of ['idl', 'critical', 'optional']
     """
-    saltype = "SAL" + topic.rstrip('s')
+    saltype = "SAL" + topic.rstrip("s")
     # Check for known issues.
     jira = check_for_issues(csc, topic, restriction)
     if jira:
-        pytest.skip(jira + ": " + str(xmlfile.name) +
-                    " <EFDB_Name> uses " + restriction.upper() + " reserved word.")
+        pytest.skip(
+            jira
+            + ": "
+            + str(xmlfile.name)
+            + " <EFDB_Name> uses "
+            + restriction.upper()
+            + " reserved word."
+        )
     # Test the <EFDB_Name> fields do not use Reserved Words.
     with open(str(xmlfile), "r", encoding="utf-8") as f:
         tree = et.parse(f)
@@ -99,6 +111,8 @@ def reserved_words(xmlfile, csc, topic, restriction):
     for name in root.findall(f"./{saltype}/item/EFDB_Name"):
         if name.text.upper() in word_list:
             bad_names.append(name.text.upper())
-    assert bad_names == [], \
-        restriction.upper() + " Reserved Words used one or more times: " + \
-        str(bad_names)
+    assert bad_names == [], (
+        restriction.upper()
+        + " Reserved Words used one or more times: "
+        + str(bad_names)
+    )

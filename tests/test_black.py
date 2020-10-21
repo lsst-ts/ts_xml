@@ -1,6 +1,6 @@
-# This file is part of ts_xml
+# This file is part of ts_xml.
 #
-# Developed for the LSST Data Management System.
+# Developed for the LSST Telescope and Site Systems.
 # This product includes software developed by the LSST Project
 # (https://www.lsst.org).
 # See the COPYRIGHT file at the top-level directory of this distribution
@@ -17,8 +17,26 @@
 # GNU General Public License for more details.
 #
 # You should have received a copy of the GNU General Public License
+# along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-from .utils import *
-from .testutils import *
-from .generate_subsystems_doc import *
-from .generate_csv_table import *
+import unittest
+import subprocess
+
+from lsst.ts import xml
+
+
+class BlackTestCase(unittest.TestCase):
+    def test_black_formatted(self):
+        """Test that all Python code is formatted with black."""
+
+        pkg_root = xml.get_pkg_root()
+        result = subprocess.run(
+            ["black", "--check", str(pkg_root), "--exclude", "(version.py|.eggs|.git)"],
+            capture_output=True,
+        )
+        if result.returncode != 0:
+            raise AssertionError(result.stderr)
+
+
+if __name__ == "__main__":
+    unittest.main()

@@ -3,56 +3,52 @@
 <SALTelemetrySet xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://lsst-sal.tuc.noao.edu/schema/SALTelemetrySet.xsd">
     <SALTelemetry>
         <Subsystem>CBP</Subsystem>
-        <Version>3.8</Version>
-        <Author>ecoughlin</Author>
         <EFDB_Topic>CBP_status</EFDB_Topic>
         <item>
             <EFDB_Name>panic</EFDB_Name>
-            <Description>The status of the CBP.</Description>
-            <IDL_Type>float</IDL_Type>
+            <Description>Is the CBP panicking?</Description>
+            <IDL_Type>boolean</IDL_Type>
             <Units>unitless</Units>
             <Count>1</Count>
         </item>
         <item>
             <EFDB_Name>azimuth</EFDB_Name>
-            <Description>The status of the azimuth motor.</Description>
-            <IDL_Type>float</IDL_Type>
+            <Description>Does the azimuth encoder have a problem?</Description>
+            <IDL_Type>boolean</IDL_Type>
             <Units>unitless</Units>
             <Count>1</Count>
         </item>
         <item>
-            <EFDB_Name>altitude</EFDB_Name>
-            <Description>The status of the altitude motor</Description>
-            <IDL_Type>float</IDL_Type>
+            <EFDB_Name>elevation</EFDB_Name>
+            <Description>Does the elevation encoder have a problem?</Description>
+            <IDL_Type>boolean</IDL_Type>
             <Units>unitless</Units>
             <Count>1</Count>
         </item>
         <item>
             <EFDB_Name>mask</EFDB_Name>
-            <Description>The status of the mask encoder</Description>
-            <IDL_Type>float</IDL_Type>
+            <Description>Does the mask encoder have a problem?</Description>
+            <IDL_Type>boolean</IDL_Type>
             <Units>unitless</Units>
             <Count>1</Count>
         </item>
         <item>
             <EFDB_Name>mask_rotation</EFDB_Name>
-            <Description>The status of the mask rotation motor</Description>
-            <IDL_Type>float</IDL_Type>
+            <Description>Does the mask rotation encoder have a problem?</Description>
+            <IDL_Type>boolean</IDL_Type>
             <Units>unitless</Units>
             <Count>1</Count>
         </item>
         <item>
             <EFDB_Name>focus</EFDB_Name>
-            <Description>The status of the focus encoder</Description>
-            <IDL_Type>float</IDL_Type>
+            <Description>Does the focus encoder have a problem?</Description>
+            <IDL_Type>boolean</IDL_Type>
             <Units>unitless</Units>
             <Count>1</Count>
         </item>
     </SALTelemetry>
     <SALTelemetry>
         <Subsystem>CBP</Subsystem>
-        <Version>3.8</Version>
-        <Author>ecoughlin</Author>
         <EFDB_Topic>CBP_mask</EFDB_Topic>
         <item>
             <EFDB_Name>mask</EFDB_Name>
@@ -71,8 +67,6 @@
     </SALTelemetry>
     <SALTelemetry>
         <Subsystem>CBP</Subsystem>
-        <Version>3.8</Version>
-        <Author>ecoughlin</Author>
         <EFDB_Topic>CBP_azimuth</EFDB_Topic>
         <item>
             <EFDB_Name>azimuth</EFDB_Name>
@@ -84,12 +78,10 @@
     </SALTelemetry>
     <SALTelemetry>
         <Subsystem>CBP</Subsystem>
-        <Version>3.8</Version>
-        <Author>ecoughlin</Author>
-        <EFDB_Topic>CBP_altitude</EFDB_Topic>
+        <EFDB_Topic>CBP_elevation</EFDB_Topic>
         <item>
-            <EFDB_Name>altitude</EFDB_Name>
-            <Description>The altitude of the CBP</Description>
+            <EFDB_Name>elevation</EFDB_Name>
+            <Description>The elevation of the CBP</Description>
             <IDL_Type>float</IDL_Type>
             <Units>degree</Units>
             <Count>1</Count>
@@ -97,8 +89,6 @@
     </SALTelemetry>
     <SALTelemetry>
         <Subsystem>CBP</Subsystem>
-        <Version>3.8</Version>
-        <Author>ecoughlin</Author>
         <EFDB_Topic>CBP_focus</EFDB_Topic>
         <item>
             <EFDB_Name>focus</EFDB_Name>
@@ -110,20 +100,18 @@
     </SALTelemetry>
     <SALTelemetry>
         <Subsystem>CBP</Subsystem>
-        <Version>3.8</Version>
-        <Author>ecoughlin</Author>
         <EFDB_Topic>CBP_parked</EFDB_Topic>
         <item>
             <EFDB_Name>autoparked</EFDB_Name>
             <Description>Whether the CBP has been autoparked or not.</Description>
-            <IDL_Type>float</IDL_Type>
+            <IDL_Type>boolean</IDL_Type>
             <Units>unitless</Units>
             <Count>1</Count>
         </item>
         <item>
             <EFDB_Name>parked</EFDB_Name>
             <Description>Whether the CBP is parked or not.</Description>
-            <IDL_Type>float</IDL_Type>
+            <IDL_Type>boolean</IDL_Type>
             <Units>unitless</Units>
             <Count>1</Count>
         </item>
