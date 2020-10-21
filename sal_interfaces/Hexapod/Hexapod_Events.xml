@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-stylesheet type="text/xsl" href="http://lsst-sal.tuc.noao.edu/schema/SALEventSet.xsl"?>
 <SALEventSet xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://lsst-sal.tuc.noao.edu/schema/SALEventSet.xsd">
-    <Enumeration>ControllerState_Standby=0,
+  <Enumeration>ControllerState_Standby=0,
     ControllerState_Disabled=1,
     ControllerState_Enabled=2,
     ControllerState_Offline=3,
     ControllerState_Fault=4
 </Enumeration>
-    <Enumeration>OfflineSubstate_PublishOnly=0,
+  <Enumeration>OfflineSubstate_PublishOnly=0,
     OfflineSubstate_Available=1
 </Enumeration>
-    <Enumeration>EnabledSubstate_Stationary=0,
+  <Enumeration>EnabledSubstate_Stationary=0,
     EnabledSubstate_MovingPointToPoint=1,
     EnabledSubstate_SlewingOrTracking=2,
     EnabledSubstate_ControlledStopping=3,
@@ -18,7 +18,7 @@
     EnabledSubstate_Relative=5,
     EnabledSubstate_ConstantVelocity=6
 </Enumeration>
-    <Enumeration>ApplicationStatus_HEX_FOLLOWING_ERROR_MASK=0x00000001,
+  <Enumeration>ApplicationStatus_HEX_FOLLOWING_ERROR_MASK=0x00000001,
     ApplicationStatus_HEX_MOVE_COMPLETE_MASK=0x00000002,
     ApplicationStatus_COMMAND_REJECT_MASK=0x00000020,
     ApplicationStatus_SAFTEY_INTERLOCK=0x00000040,
@@ -32,381 +32,381 @@
     ApplicationStatus_SIMULINK_FAULT=0x00004000,
     ApplicationStatus_ENCODER_FAULT=0x00008000
 </Enumeration>
-    <SALEvent>
-        <Subsystem>Hexapod</Subsystem>
-        <EFDB_Topic>Hexapod_logevent_actuatorInPosition</EFDB_Topic>
-        <Description>Indicates whether each linear actuator has reached its commanded position.</Description>
-        <item>
-            <EFDB_Name>inPosition</EFDB_Name>
-            <Description>Actuator in position.</Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units>unitless</Units>
-            <Count>6</Count>
-        </item>
-    </SALEvent>
-    <SALEvent>
-        <Subsystem>Hexapod</Subsystem>
-        <EFDB_Topic>Hexapod_logevent_commandableByDDS</EFDB_Topic>
-        <Description>Can the CSC control the hexapod?</Description>
-        <item>
-            <EFDB_Name>state</EFDB_Name>
-            <Description>If true the CSC can control the hexapod; else the Engineering User Interface has control.</Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units>dimensionless</Units>
-            <Count>1</Count>
-        </item>
-    </SALEvent>
-    <SALEvent>
-        <Subsystem>Hexapod</Subsystem>
-        <EFDB_Topic>Hexapod_logevent_configuration</EFDB_Topic>
-        <Description>Hexapod configuration.</Description>
-        <item>
-            <EFDB_Name>maxXY</EFDB_Name>
-            <Description>Maximum |X| and |Y|</Description>
-            <IDL_Type>double</IDL_Type>
-            <Units>um</Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>minZ</EFDB_Name>
-            <Description>Minimum allowed Z</Description>
-            <IDL_Type>double</IDL_Type>
-            <Units>um</Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>maxZ</EFDB_Name>
-            <Description>Maximum allowed Z</Description>
-            <IDL_Type>double</IDL_Type>
-            <Units>um</Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>maxUV</EFDB_Name>
-            <Description>Maximum |U| and |V|</Description>
-            <IDL_Type>double</IDL_Type>
-            <Units>deg</Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>minW</EFDB_Name>
-            <Description>Minimum allowed W</Description>
-            <IDL_Type>double</IDL_Type>
-            <Units>deg</Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>maxW</EFDB_Name>
-            <Description>Maximum allowed W</Description>
-            <IDL_Type>double</IDL_Type>
-            <Units>deg</Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>maxVelocityXY</EFDB_Name>
-            <Description>Maximum velocity for X and Y</Description>
-            <IDL_Type>double</IDL_Type>
-            <Units>um/s</Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>maxVelocityZ</EFDB_Name>
-            <Description>Maximum velocity for Z</Description>
-            <IDL_Type>double</IDL_Type>
-            <Units>um/s</Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>maxVelocityUV</EFDB_Name>
-            <Description>Maximum velocity for U and V</Description>
-            <IDL_Type>double</IDL_Type>
-            <Units>deg/s</Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>maxVelocityW</EFDB_Name>
-            <Description>Maximum velocity for W</Description>
-            <IDL_Type>double</IDL_Type>
-            <Units>deg/s</Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>initialX</EFDB_Name>
-            <Description>Initial X</Description>
-            <IDL_Type>double</IDL_Type>
-            <Units>um</Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>initialY</EFDB_Name>
-            <Description>Initial Y</Description>
-            <IDL_Type>double</IDL_Type>
-            <Units>um</Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>initialZ</EFDB_Name>
-            <Description>Initial Z</Description>
-            <IDL_Type>double</IDL_Type>
-            <Units>um</Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>initialU</EFDB_Name>
-            <Description>Initial U</Description>
-            <IDL_Type>double</IDL_Type>
-            <Units>deg</Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>initialV</EFDB_Name>
-            <Description>Initial V</Description>
-            <IDL_Type>double</IDL_Type>
-            <Units>deg</Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>initialW</EFDB_Name>
-            <Description>Initial W</Description>
-            <IDL_Type>double</IDL_Type>
-            <Units>deg</Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>pivotX</EFDB_Name>
-            <Description>Pivot point X</Description>
-            <IDL_Type>double</IDL_Type>
-            <Units>um</Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>pivotY</EFDB_Name>
-            <Description>Pivot point Y</Description>
-            <IDL_Type>double</IDL_Type>
-            <Units>um</Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>pivotZ</EFDB_Name>
-            <Description>Pivot point Z</Description>
-            <IDL_Type>double</IDL_Type>
-            <Units>um</Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>maxDisplacementStrut</EFDB_Name>
-            <Description>Maximum strut displacement from 0</Description>
-            <IDL_Type>double</IDL_Type>
-            <Units>um</Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>maxVelocityStrut</EFDB_Name>
-            <Description>Maximum strut velocity</Description>
-            <IDL_Type>double</IDL_Type>
-            <Units>um/s</Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>accelerationStrut</EFDB_Name>
-            <Description>Strut acceleration</Description>
-            <IDL_Type>double</IDL_Type>
-            <Units>um/s2</Units>
-            <Count>1</Count>
-        </item>
-    </SALEvent>
-    <SALEvent>
-        <Subsystem>Hexapod</Subsystem>
-        <EFDB_Topic>Hexapod_logevent_connected</EFDB_Topic>
-        <Description>State of TCP/IP connection to the low level controller.</Description>
-        <item>
-            <EFDB_Name>command</EFDB_Name>
-            <Description>Is the command socket connected (true=yes, false=no)?</Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units>unitless</Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>telemetry</EFDB_Name>
-            <Description>Is the telemetv/config socket connected (true=yes, false=no)?</Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units>unitless</Units>
-            <Count>1</Count>
-        </item>
-    </SALEvent>
-    <SALEvent>
-        <Subsystem>Hexapod</Subsystem>
-        <EFDB_Topic>Hexapod_logevent_controllerState</EFDB_Topic>
-        <Description>State reported by the controller.</Description>
-        <item>
-            <EFDB_Name>controllerState</EFDB_Name>
-            <Description>Basic state, a ControllerState enumeration value. The state names and meanings are the same as standard CSC summavState, but the numeric values differ. We report the controller state in addition to summavState because we need to report a summavState even when the controller is not connected, and to aid diagnostics, e.g. in case the controller reports an unrecognized state.</Description>
-            <IDL_Type>long</IDL_Type>
-            <Units>unitless</Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>offlineSubstate</EFDB_Name>
-            <Description>Substate in OFFLINE mode, an OfflineSubstate enumeration value.</Description>
-            <IDL_Type>long</IDL_Type>
-            <Units>unitless</Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>enabledSubstate</EFDB_Name>
-            <Description>Substate in ENABLED mode, an EnabledSubstate enumeration value.</Description>
-            <IDL_Type>long</IDL_Type>
-            <Units>unitless</Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>applicationStatus</EFDB_Name>
-            <Description>Application status; one value for each linear actuator. A bitmask of ApplicationStatus enumeration values.</Description>
-            <IDL_Type>long</IDL_Type>
-            <Units>unitless</Units>
-            <Count>6</Count>
-        </item>
-    </SALEvent>
-    <SALEvent>
-        <Subsystem>Hexapod</Subsystem>
-        <EFDB_Topic>Hexapod_logevent_inPosition</EFDB_Topic>
-        <Description>Indicates whether or not all actuators have reached their commanded position.</Description>
-        <item>
-            <EFDB_Name>inPosition</EFDB_Name>
-            <Description>All actuators are in position.</Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units>unitless</Units>
-            <Count>1</Count>
-        </item>
-    </SALEvent>
-    <SALEvent>
-        <Subsystem>Hexapod</Subsystem>
-        <EFDB_Topic>Hexapod_logevent_interlock</EFDB_Topic>
-        <Description>Safety interlock engaged or disengaged.</Description>
-        <item>
-            <EFDB_Name>detail</EFDB_Name>
-            <Description>One of two values: Engaged or Disengaged</Description>
-            <IDL_Type>string</IDL_Type>
-            <IDL_Size>256</IDL_Size>
-            <Units>dimensionless</Units>
-            <Count>1</Count>
-        </item>
-    </SALEvent>
-    <SALEvent>
-        <Subsystem>Hexapod</Subsystem>
-        <EFDB_Topic>Hexapod_logevent_target</EFDB_Topic>
-        <Description>Target position and orientation of pivot point. This is output in response to SAL move commands (move, moveWithCompensation, and offset), but is not output when motion is commanded by the engineering user interface.</Description>
-        <item>
-            <EFDB_Name>compensated</EFDB_Name>
-            <Description>Was compensation applied for elevation, azimuth and temperature? If false then ignore elevation, azimuth and temperature, and x,y,z,u,v,w will match the uncompensated values.</Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units>unitless</Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>elevation</EFDB_Name>
-            <Description>Elevation on which the compensation was based.</Description>
-            <IDL_Type>double</IDL_Type>
-            <Units>deg</Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>azimuth</EFDB_Name>
-            <Description>Azimuth on which the compensation was based.</Description>
-            <IDL_Type>double</IDL_Type>
-            <Units>deg</Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>temperature</EFDB_Name>
-            <Description>Temperature on which the compensation was based.</Description>
-            <IDL_Type>double</IDL_Type>
-            <Units>C</Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>uncompensatedX</EFDB_Name>
-            <Description>Uncompensated x (specified by user)</Description>
-            <IDL_Type>double</IDL_Type>
-            <Units>um</Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>uncompensatedY</EFDB_Name>
-            <Description>Uncompensated y (specified by user)</Description>
-            <IDL_Type>double</IDL_Type>
-            <Units>um</Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>uncompensatedZ</EFDB_Name>
-            <Description>Uncompensated z (specified by user)</Description>
-            <IDL_Type>double</IDL_Type>
-            <Units>um</Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>uncompensatedU</EFDB_Name>
-            <Description>Uncompensated u (specified by user)</Description>
-            <IDL_Type>double</IDL_Type>
-            <Units>deg</Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>uncompensatedV</EFDB_Name>
-            <Description>Uncompensated v (specified by user)</Description>
-            <IDL_Type>double</IDL_Type>
-            <Units>deg</Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>uncompensatedW</EFDB_Name>
-            <Description>Uncompensated w (specified by user)</Description>
-            <IDL_Type>double</IDL_Type>
-            <Units>deg</Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>x</EFDB_Name>
-            <Description>X position, with compensation applied if "compensated" true.</Description>
-            <IDL_Type>double</IDL_Type>
-            <Units>um</Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>y</EFDB_Name>
-            <Description>Y position, with compensation applied if "compensated" true.</Description>
-            <IDL_Type>double</IDL_Type>
-            <Units>um</Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>z</EFDB_Name>
-            <Description>Z position, with compensation applied if "compensated" true.</Description>
-            <IDL_Type>double</IDL_Type>
-            <Units>um</Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>u</EFDB_Name>
-            <Description>U angle, with compensation applied if "compensated" true.</Description>
-            <IDL_Type>double</IDL_Type>
-            <Units>deg</Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>v</EFDB_Name>
-            <Description>V angle, with compensation applied if "compensated" true.</Description>
-            <IDL_Type>double</IDL_Type>
-            <Units>deg</Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>w</EFDB_Name>
-            <Description>W angle, with compensation applied if "compensated" true.</Description>
-            <IDL_Type>double</IDL_Type>
-            <Units>deg</Units>
-            <Count>1</Count>
-        </item>
-    </SALEvent>
+  <SALEvent>
+    <Subsystem>Hexapod</Subsystem>
+    <EFDB_Topic>Hexapod_logevent_actuatorInPosition</EFDB_Topic>
+    <Description>Indicates whether each linear actuator has reached its commanded position.</Description>
+    <item>
+      <EFDB_Name>inPosition</EFDB_Name>
+      <Description>Actuator in position.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>6</Count>
+    </item>
+  </SALEvent>
+  <SALEvent>
+    <Subsystem>Hexapod</Subsystem>
+    <EFDB_Topic>Hexapod_logevent_commandableByDDS</EFDB_Topic>
+    <Description>Can the CSC control the hexapod?</Description>
+    <item>
+      <EFDB_Name>state</EFDB_Name>
+      <Description>If true the CSC can control the hexapod; else the Engineering User Interface has control.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>dimensionless</Units>
+      <Count>1</Count>
+    </item>
+  </SALEvent>
+  <SALEvent>
+    <Subsystem>Hexapod</Subsystem>
+    <EFDB_Topic>Hexapod_logevent_configuration</EFDB_Topic>
+    <Description>Hexapod configuration.</Description>
+    <item>
+      <EFDB_Name>maxXY</EFDB_Name>
+      <Description>Maximum |X| and |Y|</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>um</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>minZ</EFDB_Name>
+      <Description>Minimum allowed Z</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>um</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>maxZ</EFDB_Name>
+      <Description>Maximum allowed Z</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>um</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>maxUV</EFDB_Name>
+      <Description>Maximum |U| and |V|</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>deg</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>minW</EFDB_Name>
+      <Description>Minimum allowed W</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>deg</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>maxW</EFDB_Name>
+      <Description>Maximum allowed W</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>deg</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>maxVelocityXY</EFDB_Name>
+      <Description>Maximum velocity for X and Y</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>um/s</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>maxVelocityZ</EFDB_Name>
+      <Description>Maximum velocity for Z</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>um/s</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>maxVelocityUV</EFDB_Name>
+      <Description>Maximum velocity for U and V</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>deg/s</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>maxVelocityW</EFDB_Name>
+      <Description>Maximum velocity for W</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>deg/s</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>initialX</EFDB_Name>
+      <Description>Initial X</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>um</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>initialY</EFDB_Name>
+      <Description>Initial Y</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>um</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>initialZ</EFDB_Name>
+      <Description>Initial Z</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>um</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>initialU</EFDB_Name>
+      <Description>Initial U</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>deg</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>initialV</EFDB_Name>
+      <Description>Initial V</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>deg</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>initialW</EFDB_Name>
+      <Description>Initial W</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>deg</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>pivotX</EFDB_Name>
+      <Description>Pivot point X</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>um</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>pivotY</EFDB_Name>
+      <Description>Pivot point Y</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>um</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>pivotZ</EFDB_Name>
+      <Description>Pivot point Z</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>um</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>maxDisplacementStrut</EFDB_Name>
+      <Description>Maximum strut displacement from 0</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>um</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>maxVelocityStrut</EFDB_Name>
+      <Description>Maximum strut velocity</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>um/s</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>accelerationStrut</EFDB_Name>
+      <Description>Strut acceleration</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>um/s2</Units>
+      <Count>1</Count>
+    </item>
+  </SALEvent>
+  <SALEvent>
+    <Subsystem>Hexapod</Subsystem>
+    <EFDB_Topic>Hexapod_logevent_connected</EFDB_Topic>
+    <Description>State of TCP/IP connection to the low level controller.</Description>
+    <item>
+      <EFDB_Name>command</EFDB_Name>
+      <Description>Is the command socket connected (true=yes, false=no)?</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>telemetry</EFDB_Name>
+      <Description>Is the telemetv/config socket connected (true=yes, false=no)?</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+  </SALEvent>
+  <SALEvent>
+    <Subsystem>Hexapod</Subsystem>
+    <EFDB_Topic>Hexapod_logevent_controllerState</EFDB_Topic>
+    <Description>State reported by the controller.</Description>
+    <item>
+      <EFDB_Name>controllerState</EFDB_Name>
+      <Description>Basic state, a ControllerState enumeration value. The state names and meanings are the same as standard CSC summavState, but the numeric values differ. We report the controller state in addition to summavState because we need to report a summavState even when the controller is not connected, and to aid diagnostics, e.g. in case the controller reports an unrecognized state.</Description>
+      <IDL_Type>long</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>offlineSubstate</EFDB_Name>
+      <Description>Substate in OFFLINE mode, an OfflineSubstate enumeration value.</Description>
+      <IDL_Type>long</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>enabledSubstate</EFDB_Name>
+      <Description>Substate in ENABLED mode, an EnabledSubstate enumeration value.</Description>
+      <IDL_Type>long</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>applicationStatus</EFDB_Name>
+      <Description>Application status; one value for each linear actuator. A bitmask of ApplicationStatus enumeration values.</Description>
+      <IDL_Type>long</IDL_Type>
+      <Units>unitless</Units>
+      <Count>6</Count>
+    </item>
+  </SALEvent>
+  <SALEvent>
+    <Subsystem>Hexapod</Subsystem>
+    <EFDB_Topic>Hexapod_logevent_inPosition</EFDB_Topic>
+    <Description>Indicates whether or not all actuators have reached their commanded position.</Description>
+    <item>
+      <EFDB_Name>inPosition</EFDB_Name>
+      <Description>All actuators are in position.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+  </SALEvent>
+  <SALEvent>
+    <Subsystem>Hexapod</Subsystem>
+    <EFDB_Topic>Hexapod_logevent_interlock</EFDB_Topic>
+    <Description>Safety interlock engaged or disengaged.</Description>
+    <item>
+      <EFDB_Name>detail</EFDB_Name>
+      <Description>One of two values: Engaged or Disengaged</Description>
+      <IDL_Type>string</IDL_Type>
+      <IDL_Size>256</IDL_Size>
+      <Units>dimensionless</Units>
+      <Count>1</Count>
+    </item>
+  </SALEvent>
+  <SALEvent>
+    <Subsystem>Hexapod</Subsystem>
+    <EFDB_Topic>Hexapod_logevent_target</EFDB_Topic>
+    <Description>Target position and orientation of pivot point. This is output in response to SAL move commands (move, moveWithCompensation, and offset), but is not output when motion is commanded by the engineering user interface.</Description>
+    <item>
+      <EFDB_Name>compensated</EFDB_Name>
+      <Description>Was compensation applied for elevation, azimuth and temperature? If false then ignore elevation, azimuth and temperature, and x,y,z,u,v,w will match the uncompensated values.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>elevation</EFDB_Name>
+      <Description>Elevation on which the compensation was based.</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>deg</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>azimuth</EFDB_Name>
+      <Description>Azimuth on which the compensation was based.</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>deg</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>temperature</EFDB_Name>
+      <Description>Temperature on which the compensation was based.</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>C</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>uncompensatedX</EFDB_Name>
+      <Description>Uncompensated x (specified by user)</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>um</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>uncompensatedY</EFDB_Name>
+      <Description>Uncompensated y (specified by user)</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>um</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>uncompensatedZ</EFDB_Name>
+      <Description>Uncompensated z (specified by user)</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>um</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>uncompensatedU</EFDB_Name>
+      <Description>Uncompensated u (specified by user)</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>deg</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>uncompensatedV</EFDB_Name>
+      <Description>Uncompensated v (specified by user)</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>deg</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>uncompensatedW</EFDB_Name>
+      <Description>Uncompensated w (specified by user)</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>deg</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>x</EFDB_Name>
+      <Description>X position, with compensation applied if "compensated" true.</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>um</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>y</EFDB_Name>
+      <Description>Y position, with compensation applied if "compensated" true.</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>um</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>z</EFDB_Name>
+      <Description>Z position, with compensation applied if "compensated" true.</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>um</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>u</EFDB_Name>
+      <Description>U angle, with compensation applied if "compensated" true.</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>deg</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>v</EFDB_Name>
+      <Description>V angle, with compensation applied if "compensated" true.</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>deg</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>w</EFDB_Name>
+      <Description>W angle, with compensation applied if "compensated" true.</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>deg</Units>
+      <Count>1</Count>
+    </item>
+  </SALEvent>
 </SALEventSet>

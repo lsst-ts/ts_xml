@@ -1,46 +1,41 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-stylesheet type="text/xsl" href="http://lsst-sal.tuc.noao.edu/schema/SALCommandSet.xsl"?>
-<SALCommandSet xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:noNamespaceSchemaLocation="http://lsst-sal.tuc.noao.edu/schema/SALCommandSet.xsd">
-
-<SALCommand>
+<SALCommandSet xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://lsst-sal.tuc.noao.edu/schema/SALCommandSet.xsd">
+  <SALCommand>
     <Subsystem>Scheduler</Subsystem>
     <EFDB_Topic>Scheduler_command_resume</EFDB_Topic>
     <Description>Resume operations. This will cause the Scheduler to start computing an observing queue and feeding it to the ScriptQueue.</Description>
     <item>
-        <EFDB_Name>value</EFDB_Name>
-        <Description>Not used</Description>
-        <IDL_Type>boolean</IDL_Type>
-        <Units>unitless</Units>
-        <Count>1</Count>
+      <EFDB_Name>value</EFDB_Name>
+      <Description>Not used</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
     </item>
-</SALCommand>
-
-<SALCommand>
+  </SALCommand>
+  <SALCommand>
     <Subsystem>Scheduler</Subsystem>
     <EFDB_Topic>Scheduler_command_stop</EFDB_Topic>
     <Description>Stop Scheduler operation and clear all pending observations. By default leave current observation in the queue. If abort is set to True, the current observation will be interrupted.</Description>
     <item>
-        <EFDB_Name>abort</EFDB_Name>
-        <Description>Abort current observation.</Description>
-        <IDL_Type>boolean</IDL_Type>
-        <Units>unitless</Units>
-        <Count>1</Count>
+      <EFDB_Name>abort</EFDB_Name>
+      <Description>Abort current observation.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
     </item>
-</SALCommand>
-
-<SALCommand>
+  </SALCommand>
+  <SALCommand>
     <Subsystem>Scheduler</Subsystem>
     <EFDB_Topic>Scheduler_command_load</EFDB_Topic>
     <Description>Load Scheduler driver configuration from URI. File must be compatible with current scheduler configuratiton (as specified in the Driver), or the operation will fail.</Description>
     <item>
-        <EFDB_Name>uri</EFDB_Name>
-        <Description>URI of the configuration.</Description>
-        <IDL_Type>string</IDL_Type>
-        <IDL_Size>1</IDL_Size>
-        <Units>unitless</Units>
-        <Count>1</Count>
+      <EFDB_Name>uri</EFDB_Name>
+      <Description>URI of the configuration.</Description>
+      <IDL_Type>string</IDL_Type>
+      <IDL_Size>1</IDL_Size>
+      <Units>unitless</Units>
+      <Count>1</Count>
     </item>
-</SALCommand>
-
+  </SALCommand>
 </SALCommandSet>

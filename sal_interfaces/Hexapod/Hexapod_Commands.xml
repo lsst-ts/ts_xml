@@ -1,315 +1,315 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-stylesheet type="text/xsl" href="http://lsst-sal.tuc.noao.edu/schema/SALCommandSet.xsl"?>
 <SALCommandSet xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://lsst-sal.tuc.noao.edu/schema/SALCommandSet.xsd">
-    <SALCommand>
-        <Subsystem>Hexapod</Subsystem>
-        <EFDB_Topic>Hexapod_command_clearError</EFDB_Topic>
-        <Description>Clear the fault state.</Description>
-    </SALCommand>
-    <SALCommand>
-        <Subsystem>Hexapod</Subsystem>
-        <EFDB_Topic>Hexapod_command_configureAcceleration</EFDB_Topic>
-        <Description>Set the acceleration for all struts.</Description>
-        <item>
-            <EFDB_Name>acceleration</EFDB_Name>
-            <Description>Strut acceleration.</Description>
-            <IDL_Type>double</IDL_Type>
-            <Units>um/s2</Units>
-            <Count>1</Count>
-        </item>
-    </SALCommand>
-    <SALCommand>
-        <Subsystem>Hexapod</Subsystem>
-        <EFDB_Topic>Hexapod_command_configureLimits</EFDB_Topic>
-        <Description>Set position and orientation limits.</Description>
-        <item>
-            <EFDB_Name>maxXY</EFDB_Name>
-            <Description>Maximum |X| and |Y|</Description>
-            <IDL_Type>double</IDL_Type>
-            <Units>um</Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>minZ</EFDB_Name>
-            <Description>Minimum Z</Description>
-            <IDL_Type>double</IDL_Type>
-            <Units>um</Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>maxZ</EFDB_Name>
-            <Description>Maximum Z</Description>
-            <IDL_Type>double</IDL_Type>
-            <Units>um</Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>maxUV</EFDB_Name>
-            <Description>Maximum |U| and |V|</Description>
-            <IDL_Type>double</IDL_Type>
-            <Units>deg</Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>minW</EFDB_Name>
-            <Description>Minimum W</Description>
-            <IDL_Type>double</IDL_Type>
-            <Units>deg</Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>maxW</EFDB_Name>
-            <Description>Maximum W</Description>
-            <IDL_Type>double</IDL_Type>
-            <Units>deg</Units>
-            <Count>1</Count>
-        </item>
-    </SALCommand>
-    <SALCommand>
-        <Subsystem>Hexapod</Subsystem>
-        <EFDB_Topic>Hexapod_command_configureVelocity</EFDB_Topic>
-        <Description>Set velocity limits for position and orientation.</Description>
-        <item>
-            <EFDB_Name>xy</EFDB_Name>
-            <Description>Maximum velocity for X and Y</Description>
-            <IDL_Type>double</IDL_Type>
-            <Units>um/s</Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>z</EFDB_Name>
-            <Description>Maximum velocity for Z</Description>
-            <IDL_Type>double</IDL_Type>
-            <Units>um/s</Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>uv</EFDB_Name>
-            <Description>Maximum velocity for U and V</Description>
-            <IDL_Type>double</IDL_Type>
-            <Units>deg/s</Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>w</EFDB_Name>
-            <Description>Maximum velocity for W</Description>
-            <IDL_Type>double</IDL_Type>
-            <Units>deg/s</Units>
-            <Count>1</Count>
-        </item>
-    </SALCommand>
-    <SALCommand>
-        <Subsystem>Hexapod</Subsystem>
-        <EFDB_Topic>Hexapod_command_move</EFDB_Topic>
-        <Description>Move the Hexapod to a specified position and orientation.</Description>
-        <item>
-            <EFDB_Name>x</EFDB_Name>
-            <Description>x position</Description>
-            <IDL_Type>double</IDL_Type>
-            <Units>um</Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>y</EFDB_Name>
-            <Description>y position</Description>
-            <IDL_Type>double</IDL_Type>
-            <Units>um</Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>z</EFDB_Name>
-            <Description>z position</Description>
-            <IDL_Type>double</IDL_Type>
-            <Units>um</Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>u</EFDB_Name>
-            <Description>Rotation about x</Description>
-            <IDL_Type>double</IDL_Type>
-            <Units>deg</Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>v</EFDB_Name>
-            <Description>Rotation about y</Description>
-            <IDL_Type>double</IDL_Type>
-            <Units>deg</Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>w</EFDB_Name>
-            <Description>Rotation about z</Description>
-            <IDL_Type>double</IDL_Type>
-            <Units>deg</Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>sync</EFDB_Name>
-            <Description>Synchronize motion so that all actuators start and stop moving at the same time? Synchronize motion is our normal operating mode.</Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units>dimensionless</Units>
-            <Count>1</Count>
-        </item>
-    </SALCommand>
-    <SALCommand>
-        <Subsystem>Hexapod</Subsystem>
-        <EFDB_Topic>Hexapod_command_moveWithCompensation</EFDB_Topic>
-        <Description>A variant of the move command that compensates for elevation, azimuth and temperature.</Description>
-        <item>
-            <EFDB_Name>elevation</EFDB_Name>
-            <Description>Telescope elevation. Must be in the range [0, 90].</Description>
-            <IDL_Type>double</IDL_Type>
-            <Units>deg</Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>azimuth</EFDB_Name>
-            <Description>Telescope azimuth. There is no range limit.</Description>
-            <IDL_Type>double</IDL_Type>
-            <Units>deg</Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>temperature</EFDB_Name>
-            <Description>Ambient temperature. There is no range limit.</Description>
-            <IDL_Type>double</IDL_Type>
-            <Units>Celsius</Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>x</EFDB_Name>
-            <Description>x position</Description>
-            <IDL_Type>double</IDL_Type>
-            <Units>um</Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>y</EFDB_Name>
-            <Description>y position</Description>
-            <IDL_Type>double</IDL_Type>
-            <Units>um</Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>z</EFDB_Name>
-            <Description>z position</Description>
-            <IDL_Type>double</IDL_Type>
-            <Units>um</Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>u</EFDB_Name>
-            <Description>Rotation about x</Description>
-            <IDL_Type>double</IDL_Type>
-            <Units>deg</Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>v</EFDB_Name>
-            <Description>Rotation about y</Description>
-            <IDL_Type>double</IDL_Type>
-            <Units>deg</Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>w</EFDB_Name>
-            <Description>Rotation about z</Description>
-            <IDL_Type>double</IDL_Type>
-            <Units>deg</Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>sync</EFDB_Name>
-            <Description>Synchronize motion so that all actuators start and stop moving at the same time? Synchronize motion is our normal operating mode.</Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units>dimensionless</Units>
-            <Count>1</Count>
-        </item>
-    </SALCommand>
-    <SALCommand>
-        <Subsystem>Hexapod</Subsystem>
-        <EFDB_Topic>Hexapod_command_offset</EFDB_Topic>
-        <Description>Offset the Hexapod by a specified change in position and orientation.</Description>
-        <item>
-            <EFDB_Name>x</EFDB_Name>
-            <Description>Offset in x</Description>
-            <IDL_Type>double</IDL_Type>
-            <Units>um</Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>y</EFDB_Name>
-            <Description>Offset in y</Description>
-            <IDL_Type>double</IDL_Type>
-            <Units>um</Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>z</EFDB_Name>
-            <Description>Offset in z</Description>
-            <IDL_Type>double</IDL_Type>
-            <Units>um</Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>u</EFDB_Name>
-            <Description>Offset of rotation about x</Description>
-            <IDL_Type>double</IDL_Type>
-            <Units>deg</Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>v</EFDB_Name>
-            <Description>Offset of rotation about y</Description>
-            <IDL_Type>double</IDL_Type>
-            <Units>deg</Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>w</EFDB_Name>
-            <Description>Offset of rotation about z</Description>
-            <IDL_Type>double</IDL_Type>
-            <Units>deg</Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>sync</EFDB_Name>
-            <Description>Synchronize motion so that all actuators start and stop moving at the same time? Synchronize motion is our normal operating mode.</Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units>dimensionless</Units>
-            <Count>1</Count>
-        </item>
-    </SALCommand>
-    <SALCommand>
-        <Subsystem>Hexapod</Subsystem>
-        <EFDB_Topic>Hexapod_command_pivot</EFDB_Topic>
-        <Description>Specify the pivot point (the reference point whose position and orientation is set by the move, moveLUT, offset, and offsetLUT commands).</Description>
-        <item>
-            <EFDB_Name>x</EFDB_Name>
-            <Description>x</Description>
-            <IDL_Type>double</IDL_Type>
-            <Units>um</Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>y</EFDB_Name>
-            <Description>y</Description>
-            <IDL_Type>double</IDL_Type>
-            <Units>um</Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>z</EFDB_Name>
-            <Description>z</Description>
-            <IDL_Type>double</IDL_Type>
-            <Units>um</Units>
-            <Count>1</Count>
-        </item>
-    </SALCommand>
-    <SALCommand>
-        <Subsystem>Hexapod</Subsystem>
-        <EFDB_Topic>Hexapod_command_stop</EFDB_Topic>
-        <Description>Stop motion.</Description>
-    </SALCommand>
+  <SALCommand>
+    <Subsystem>Hexapod</Subsystem>
+    <EFDB_Topic>Hexapod_command_clearError</EFDB_Topic>
+    <Description>Clear the fault state.</Description>
+  </SALCommand>
+  <SALCommand>
+    <Subsystem>Hexapod</Subsystem>
+    <EFDB_Topic>Hexapod_command_configureAcceleration</EFDB_Topic>
+    <Description>Set the acceleration for all struts.</Description>
+    <item>
+      <EFDB_Name>acceleration</EFDB_Name>
+      <Description>Strut acceleration.</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>um/s2</Units>
+      <Count>1</Count>
+    </item>
+  </SALCommand>
+  <SALCommand>
+    <Subsystem>Hexapod</Subsystem>
+    <EFDB_Topic>Hexapod_command_configureLimits</EFDB_Topic>
+    <Description>Set position and orientation limits.</Description>
+    <item>
+      <EFDB_Name>maxXY</EFDB_Name>
+      <Description>Maximum |X| and |Y|</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>um</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>minZ</EFDB_Name>
+      <Description>Minimum Z</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>um</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>maxZ</EFDB_Name>
+      <Description>Maximum Z</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>um</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>maxUV</EFDB_Name>
+      <Description>Maximum |U| and |V|</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>deg</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>minW</EFDB_Name>
+      <Description>Minimum W</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>deg</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>maxW</EFDB_Name>
+      <Description>Maximum W</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>deg</Units>
+      <Count>1</Count>
+    </item>
+  </SALCommand>
+  <SALCommand>
+    <Subsystem>Hexapod</Subsystem>
+    <EFDB_Topic>Hexapod_command_configureVelocity</EFDB_Topic>
+    <Description>Set velocity limits for position and orientation.</Description>
+    <item>
+      <EFDB_Name>xy</EFDB_Name>
+      <Description>Maximum velocity for X and Y</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>um/s</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>z</EFDB_Name>
+      <Description>Maximum velocity for Z</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>um/s</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>uv</EFDB_Name>
+      <Description>Maximum velocity for U and V</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>deg/s</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>w</EFDB_Name>
+      <Description>Maximum velocity for W</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>deg/s</Units>
+      <Count>1</Count>
+    </item>
+  </SALCommand>
+  <SALCommand>
+    <Subsystem>Hexapod</Subsystem>
+    <EFDB_Topic>Hexapod_command_move</EFDB_Topic>
+    <Description>Move the Hexapod to a specified position and orientation.</Description>
+    <item>
+      <EFDB_Name>x</EFDB_Name>
+      <Description>x position</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>um</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>y</EFDB_Name>
+      <Description>y position</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>um</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>z</EFDB_Name>
+      <Description>z position</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>um</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>u</EFDB_Name>
+      <Description>Rotation about x</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>deg</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>v</EFDB_Name>
+      <Description>Rotation about y</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>deg</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>w</EFDB_Name>
+      <Description>Rotation about z</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>deg</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>sync</EFDB_Name>
+      <Description>Synchronize motion so that all actuators start and stop moving at the same time? Synchronize motion is our normal operating mode.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>dimensionless</Units>
+      <Count>1</Count>
+    </item>
+  </SALCommand>
+  <SALCommand>
+    <Subsystem>Hexapod</Subsystem>
+    <EFDB_Topic>Hexapod_command_moveWithCompensation</EFDB_Topic>
+    <Description>A variant of the move command that compensates for elevation, azimuth and temperature.</Description>
+    <item>
+      <EFDB_Name>elevation</EFDB_Name>
+      <Description>Telescope elevation. Must be in the range [0, 90].</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>deg</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>azimuth</EFDB_Name>
+      <Description>Telescope azimuth. There is no range limit.</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>deg</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>temperature</EFDB_Name>
+      <Description>Ambient temperature. There is no range limit.</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>Celsius</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>x</EFDB_Name>
+      <Description>x position</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>um</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>y</EFDB_Name>
+      <Description>y position</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>um</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>z</EFDB_Name>
+      <Description>z position</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>um</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>u</EFDB_Name>
+      <Description>Rotation about x</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>deg</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>v</EFDB_Name>
+      <Description>Rotation about y</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>deg</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>w</EFDB_Name>
+      <Description>Rotation about z</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>deg</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>sync</EFDB_Name>
+      <Description>Synchronize motion so that all actuators start and stop moving at the same time? Synchronize motion is our normal operating mode.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>dimensionless</Units>
+      <Count>1</Count>
+    </item>
+  </SALCommand>
+  <SALCommand>
+    <Subsystem>Hexapod</Subsystem>
+    <EFDB_Topic>Hexapod_command_offset</EFDB_Topic>
+    <Description>Offset the Hexapod by a specified change in position and orientation.</Description>
+    <item>
+      <EFDB_Name>x</EFDB_Name>
+      <Description>Offset in x</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>um</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>y</EFDB_Name>
+      <Description>Offset in y</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>um</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>z</EFDB_Name>
+      <Description>Offset in z</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>um</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>u</EFDB_Name>
+      <Description>Offset of rotation about x</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>deg</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>v</EFDB_Name>
+      <Description>Offset of rotation about y</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>deg</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>w</EFDB_Name>
+      <Description>Offset of rotation about z</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>deg</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>sync</EFDB_Name>
+      <Description>Synchronize motion so that all actuators start and stop moving at the same time? Synchronize motion is our normal operating mode.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>dimensionless</Units>
+      <Count>1</Count>
+    </item>
+  </SALCommand>
+  <SALCommand>
+    <Subsystem>Hexapod</Subsystem>
+    <EFDB_Topic>Hexapod_command_pivot</EFDB_Topic>
+    <Description>Specify the pivot point (the reference point whose position and orientation is set by the move, moveLUT, offset, and offsetLUT commands).</Description>
+    <item>
+      <EFDB_Name>x</EFDB_Name>
+      <Description>x</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>um</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>y</EFDB_Name>
+      <Description>y</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>um</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>z</EFDB_Name>
+      <Description>z</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>um</Units>
+      <Count>1</Count>
+    </item>
+  </SALCommand>
+  <SALCommand>
+    <Subsystem>Hexapod</Subsystem>
+    <EFDB_Topic>Hexapod_command_stop</EFDB_Topic>
+    <Description>Stop motion.</Description>
+  </SALCommand>
 </SALCommandSet>

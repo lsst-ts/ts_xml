@@ -1,136 +1,136 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-stylesheet type="text/xsl" href="http://lsst-sal.tuc.noao.edu/schema/SALCommandSet.xsl"?>
 <SALCommandSet xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://lsst-sal.tuc.noao.edu/schema/SALCommandSet.xsd">
-    <SALCommand>
-        <Subsystem>ATMCS</Subsystem>
-        <EFDB_Topic>ATMCS_command_startTracking</EFDB_Topic>
-        <Alias>startTracking</Alias>
-        <Description>Enable tracking. Once you issue this command you must call trackTarget at regular intervals until you are done tracking, at which point call stopTracking.</Description>
-        <item>
-            <EFDB_Name>value</EFDB_Name>
-            <Description>Attribute required by the SAL API, but is unused.</Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units>dimensionless</Units>
-            <Count>1</Count>
-        </item>
-    </SALCommand>
-    <SALCommand>
-        <Subsystem>ATMCS</Subsystem>
-        <EFDB_Topic>ATMCS_command_trackTarget</EFDB_Topic>
-        <Alias>trackTarget</Alias>
-        <Description>Specify position, velocity and time (PVT) vector for all axes except M3. This command is immediately reported as done.</Description>
-        <item>
-            <EFDB_Name>azimuth</EFDB_Name>
-            <Description>Mount azimuth angle at the specified time. The allowed range is the software limits (L1), approximately -270 to 270.</Description>
-            <IDL_Type>double</IDL_Type>
-            <Units>deg</Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>azimuthVelocity</EFDB_Name>
-            <Description>Mount azimuth velocity at the specified time.</Description>
-            <IDL_Type>double</IDL_Type>
-            <Units>deg/second</Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>elevation</EFDB_Name>
-            <Description>Mount elevation angle at the specified time.</Description>
-            <IDL_Type>double</IDL_Type>
-            <Units>deg</Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>elevationVelocity</EFDB_Name>
-            <Description>Mount elevation angle velocity at the specified time.</Description>
-            <IDL_Type>double</IDL_Type>
-            <Units>deg/second</Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>nasmyth1RotatorAngle</EFDB_Name>
-            <Description>Nasmyth 1 rotator angle at the specified time. The allowed range is the software limits (L1), approximately -170 to 170. Outside this range the velocity will be severly limited. Software position limits are -175 to 175. </Description>
-            <IDL_Type>double</IDL_Type>
-            <Units>deg</Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>nasmyth1RotatorAngleVelocity</EFDB_Name>
-            <Description>Nasmyth 1 rotator angle velocity at the specified time.</Description>
-            <IDL_Type>double</IDL_Type>
-            <Units>deg/second</Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>nasmyth2RotatorAngle</EFDB_Name>
-            <Description>Nasmyth 1 rotator angle at the specified time. The allowed range is the software limits (L1), approximately -170 to 170. Outside this range the velocity will be severly limited. Software position limits are -175 to 175. </Description>
-            <IDL_Type>double</IDL_Type>
-            <Units>deg</Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>nasmyth2RotatorAngleVelocity</EFDB_Name>
-            <Description>Nasmyth 1 rotator angle velocity at the specified time.</Description>
-            <IDL_Type>double</IDL_Type>
-            <Units>deg/second</Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>taiTime</EFDB_Name>
-            <Description>TAI date at which the commanded positions and velocities apply, as unix time.</Description>
-            <IDL_Type>double</IDL_Type>
-            <Units>second</Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>trackId</EFDB_Name>
-            <Description>Target identifier provided by the ATMCS.</Description>
-            <IDL_Type>long</IDL_Type>
-            <Units>dimensionless</Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>tracksys</EFDB_Name>
-            <Description>Defines tracking coordinate system as sidereal, non-sidereal or local.</Description>
-            <IDL_Type>string</IDL_Type>
-            <IDL_Size>256</IDL_Size>
-            <Units>dimensionless</Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>radesys</EFDB_Name>
-            <Description>Coordinate reference frame of RA/DEC axes. This originates from the pointing component and is used for WCS definition (e.g. FK5 or ICRS).</Description>
-            <IDL_Type>string</IDL_Type>
-            <IDL_Size>256</IDL_Size>
-            <Units>dimensionless</Units>
-            <Count>1</Count>
-        </item>
-    </SALCommand>
-    <SALCommand>
-        <Subsystem>ATMCS</Subsystem>
-        <EFDB_Topic>ATMCS_command_setInstrumentPort</EFDB_Topic>
-        <Alias>setInstrumentPort</Alias>
-        <Description>Rotate M3 to a specified instrument port. </Description>
-        <item>
-            <EFDB_Name>port</EFDB_Name>
-            <Description>Desired instrument port.</Description>
-            <!-- Enumeration: M3ExitPort -->
-            <IDL_Type>long</IDL_Type>
-            <Units>dimensionless</Units>
-            <Count>1</Count>
-        </item>
-    </SALCommand>
-    <SALCommand>
-        <Subsystem>ATMCS</Subsystem>
-        <EFDB_Topic>ATMCS_command_stopTracking</EFDB_Topic>
-        <Alias>stopTracking</Alias>
-        <Description>Halt all axes except M3 rotation, and disable tracking.</Description>
-        <item>
-            <EFDB_Name>value</EFDB_Name>
-            <Description>Attribute required by the SAL API, but is unused.</Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units>dimensionless</Units>
-            <Count>1</Count>
-        </item>
-    </SALCommand>
+  <SALCommand>
+    <Subsystem>ATMCS</Subsystem>
+    <EFDB_Topic>ATMCS_command_startTracking</EFDB_Topic>
+    <Alias>startTracking</Alias>
+    <Description>Enable tracking. Once you issue this command you must call trackTarget at regular intervals until you are done tracking, at which point call stopTracking.</Description>
+    <item>
+      <EFDB_Name>value</EFDB_Name>
+      <Description>Attribute required by the SAL API, but is unused.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>dimensionless</Units>
+      <Count>1</Count>
+    </item>
+  </SALCommand>
+  <SALCommand>
+    <Subsystem>ATMCS</Subsystem>
+    <EFDB_Topic>ATMCS_command_trackTarget</EFDB_Topic>
+    <Alias>trackTarget</Alias>
+    <Description>Specify position, velocity and time (PVT) vector for all axes except M3. This command is immediately reported as done.</Description>
+    <item>
+      <EFDB_Name>azimuth</EFDB_Name>
+      <Description>Mount azimuth angle at the specified time. The allowed range is the software limits (L1), approximately -270 to 270.</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>deg</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>azimuthVelocity</EFDB_Name>
+      <Description>Mount azimuth velocity at the specified time.</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>deg/second</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>elevation</EFDB_Name>
+      <Description>Mount elevation angle at the specified time.</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>deg</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>elevationVelocity</EFDB_Name>
+      <Description>Mount elevation angle velocity at the specified time.</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>deg/second</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>nasmyth1RotatorAngle</EFDB_Name>
+      <Description>Nasmyth 1 rotator angle at the specified time. The allowed range is the software limits (L1), approximately -170 to 170. Outside this range the velocity will be severly limited. Software position limits are -175 to 175. </Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>deg</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>nasmyth1RotatorAngleVelocity</EFDB_Name>
+      <Description>Nasmyth 1 rotator angle velocity at the specified time.</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>deg/second</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>nasmyth2RotatorAngle</EFDB_Name>
+      <Description>Nasmyth 1 rotator angle at the specified time. The allowed range is the software limits (L1), approximately -170 to 170. Outside this range the velocity will be severly limited. Software position limits are -175 to 175. </Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>deg</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>nasmyth2RotatorAngleVelocity</EFDB_Name>
+      <Description>Nasmyth 1 rotator angle velocity at the specified time.</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>deg/second</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>taiTime</EFDB_Name>
+      <Description>TAI date at which the commanded positions and velocities apply, as unix time.</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>second</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>trackId</EFDB_Name>
+      <Description>Target identifier provided by the ATMCS.</Description>
+      <IDL_Type>long</IDL_Type>
+      <Units>dimensionless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>tracksys</EFDB_Name>
+      <Description>Defines tracking coordinate system as sidereal, non-sidereal or local.</Description>
+      <IDL_Type>string</IDL_Type>
+      <IDL_Size>256</IDL_Size>
+      <Units>dimensionless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>radesys</EFDB_Name>
+      <Description>Coordinate reference frame of RA/DEC axes. This originates from the pointing component and is used for WCS definition (e.g. FK5 or ICRS).</Description>
+      <IDL_Type>string</IDL_Type>
+      <IDL_Size>256</IDL_Size>
+      <Units>dimensionless</Units>
+      <Count>1</Count>
+    </item>
+  </SALCommand>
+  <SALCommand>
+    <Subsystem>ATMCS</Subsystem>
+    <EFDB_Topic>ATMCS_command_setInstrumentPort</EFDB_Topic>
+    <Alias>setInstrumentPort</Alias>
+    <Description>Rotate M3 to a specified instrument port. </Description>
+    <item>
+      <EFDB_Name>port</EFDB_Name>
+      <Description>Desired instrument port.</Description>
+      <!-- Enumeration: M3ExitPort -->
+      <IDL_Type>long</IDL_Type>
+      <Units>dimensionless</Units>
+      <Count>1</Count>
+    </item>
+  </SALCommand>
+  <SALCommand>
+    <Subsystem>ATMCS</Subsystem>
+    <EFDB_Topic>ATMCS_command_stopTracking</EFDB_Topic>
+    <Alias>stopTracking</Alias>
+    <Description>Halt all axes except M3 rotation, and disable tracking.</Description>
+    <item>
+      <EFDB_Name>value</EFDB_Name>
+      <Description>Attribute required by the SAL API, but is unused.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>dimensionless</Units>
+      <Count>1</Count>
+    </item>
+  </SALCommand>
 </SALCommandSet>

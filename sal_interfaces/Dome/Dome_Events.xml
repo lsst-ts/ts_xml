@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-stylesheet type="text/xsl" href="http://lsst-sal.tuc.noao.edu/schema/SALEventSet.xsl"?>
 <SALEventSet xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://lsst-sal.tuc.noao.edu/schema/SALEventSet.xsd">
-    <Enumeration>EnabledState_Disabled, EnabledState_Enabled, EnabledState_Fault</Enumeration>
-    <Enumeration>MotionState_Closed, MotionState_Crawling, MotionState_Moving, MotionState_Open, MotionState_Parked, MotionState_Parking, MotionState_Stopped, MotionState_Stopping</Enumeration>
-    <Enumeration>
+  <Enumeration>EnabledState_Disabled, EnabledState_Enabled, EnabledState_Fault</Enumeration>
+  <Enumeration>MotionState_Closed, MotionState_Crawling, MotionState_Moving, MotionState_Open, MotionState_Parked, MotionState_Parking, MotionState_Stopped, MotionState_Stopping</Enumeration>
+  <Enumeration>
         Louver_A1=0,
         Louver_B1=1,
         Louver_A2=2,
@@ -39,154 +39,154 @@
         Louver_G3=32,
         Louver_D1=33
     </Enumeration>
-    <SALEvent>
-        <Subsystem>Dome</Subsystem>
-        <EFDB_Topic>Dome_logevent_azEnabled</EFDB_Topic>
-        <Description>Azimuth axis enabled state.</Description>
-        <item>
-            <EFDB_Name>state</EFDB_Name>
-            <Description>Enabled state; an EnabledState enum.</Description>
-            <IDL_Type>int</IDL_Type>
-            <Units>unitless</Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>faultCode</EFDB_Name>
-            <Description>The fault code; ignore if not in Fault state.</Description>
-            <IDL_Type>string</IDL_Type>
-            <Units>unitless</Units>
-            <Count>1</Count>
-        </item>
-    </SALEvent>
-    <SALEvent>
-        <Subsystem>Dome</Subsystem>
-        <EFDB_Topic>Dome_logevent_elEnabled</EFDB_Topic>
-        <Description>Elevation axis (wind baffle/light screen) enabled state.</Description>
-        <item>
-            <EFDB_Name>state</EFDB_Name>
-            <Description>Enabled state; an EnabledState enum.</Description>
-            <IDL_Type>int</IDL_Type>
-            <Units>unitless</Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>faultCode</EFDB_Name>
-            <Description>The fault code; ignore if not in Fault state.</Description>
-            <IDL_Type>string</IDL_Type>
-            <Units>unitless</Units>
-            <Count>1</Count>
-        </item>
-    </SALEvent>
-    <SALEvent>
-        <Subsystem>Dome</Subsystem>
-        <EFDB_Topic>Dome_logevent_azMotion</EFDB_Topic>
-        <Description>Azimuth axis motion state.</Description>
-        <item>
-            <EFDB_Name>state</EFDB_Name>
-            <Description>The motion state; a MotionState enum.</Description>
-            <IDL_Type>int</IDL_Type>
-            <Units>unitless</Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>inPosition</EFDB_Name>
-            <Description>Is the axis in position?</Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units>unitless</Units>
-            <Count>1</Count>
-        </item>
-    </SALEvent>
-    <SALEvent>
-        <Subsystem>Dome</Subsystem>
-        <EFDB_Topic>Dome_logevent_elMotion</EFDB_Topic>
-        <Description>Elevation axis (light/wind screen) motion state.</Description>
-        <item>
-            <EFDB_Name>state</EFDB_Name>
-            <Description>The motion state; a MotionState enum.</Description>
-            <IDL_Type>int</IDL_Type>
-            <Units>unitless</Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>inPosition</EFDB_Name>
-            <Description>Is the axis in position?</Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units>unitless</Units>
-            <Count>1</Count>
-        </item>
-    </SALEvent>
-    <SALEvent>
-        <Subsystem>Dome</Subsystem>
-        <EFDB_Topic>Dome_logevent_azTarget</EFDB_Topic>
-        <Description>Azimuth axis target position and velocity.</Description>
-        <item>
-            <EFDB_Name>position</EFDB_Name>
-            <Description>Target position; nan for the crawlAz command.</Description>
-            <IDL_Type>float</IDL_Type>
-            <Units>deg</Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>velocity</EFDB_Name>
-            <Description>Target velocity.</Description>
-            <IDL_Type>float</IDL_Type>
-            <Units>deg/second</Units>
-            <Count>1</Count>
-        </item>
-    </SALEvent>
-    <SALEvent>
-        <Subsystem>Dome</Subsystem>
-        <EFDB_Topic>Dome_logevent_elTarget</EFDB_Topic>
-        <Description>Elevation axis (light/wind screen) target position and velocity.</Description>
-        <item>
-            <EFDB_Name>position</EFDB_Name>
-            <Description>Target position; nan for the crawlEl command.</Description>
-            <IDL_Type>float</IDL_Type>
-            <Units>deg</Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>velocity</EFDB_Name>
-            <Description>Target velocity; 0 for the moveEl command.</Description>
-            <IDL_Type>float</IDL_Type>
-            <Units>deg/second</Units>
-            <Count>1</Count>
-        </item>
-    </SALEvent>
-    <SALEvent>
-        <Subsystem>Dome</Subsystem>
-        <EFDB_Topic>Dome_logevent_brakesEngaged</EFDB_Topic>
-        <item>
-            <EFDB_Name>brakes</EFDB_Name>
-            <Description>Bitmask of brakes that are engaged.
+  <SALEvent>
+    <Subsystem>Dome</Subsystem>
+    <EFDB_Topic>Dome_logevent_azEnabled</EFDB_Topic>
+    <Description>Azimuth axis enabled state.</Description>
+    <item>
+      <EFDB_Name>state</EFDB_Name>
+      <Description>Enabled state; an EnabledState enum.</Description>
+      <IDL_Type>int</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>faultCode</EFDB_Name>
+      <Description>The fault code; ignore if not in Fault state.</Description>
+      <IDL_Type>string</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+  </SALEvent>
+  <SALEvent>
+    <Subsystem>Dome</Subsystem>
+    <EFDB_Topic>Dome_logevent_elEnabled</EFDB_Topic>
+    <Description>Elevation axis (wind baffle/light screen) enabled state.</Description>
+    <item>
+      <EFDB_Name>state</EFDB_Name>
+      <Description>Enabled state; an EnabledState enum.</Description>
+      <IDL_Type>int</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>faultCode</EFDB_Name>
+      <Description>The fault code; ignore if not in Fault state.</Description>
+      <IDL_Type>string</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+  </SALEvent>
+  <SALEvent>
+    <Subsystem>Dome</Subsystem>
+    <EFDB_Topic>Dome_logevent_azMotion</EFDB_Topic>
+    <Description>Azimuth axis motion state.</Description>
+    <item>
+      <EFDB_Name>state</EFDB_Name>
+      <Description>The motion state; a MotionState enum.</Description>
+      <IDL_Type>int</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>inPosition</EFDB_Name>
+      <Description>Is the axis in position?</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+  </SALEvent>
+  <SALEvent>
+    <Subsystem>Dome</Subsystem>
+    <EFDB_Topic>Dome_logevent_elMotion</EFDB_Topic>
+    <Description>Elevation axis (light/wind screen) motion state.</Description>
+    <item>
+      <EFDB_Name>state</EFDB_Name>
+      <Description>The motion state; a MotionState enum.</Description>
+      <IDL_Type>int</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>inPosition</EFDB_Name>
+      <Description>Is the axis in position?</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+  </SALEvent>
+  <SALEvent>
+    <Subsystem>Dome</Subsystem>
+    <EFDB_Topic>Dome_logevent_azTarget</EFDB_Topic>
+    <Description>Azimuth axis target position and velocity.</Description>
+    <item>
+      <EFDB_Name>position</EFDB_Name>
+      <Description>Target position; nan for the crawlAz command.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>deg</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>velocity</EFDB_Name>
+      <Description>Target velocity.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>deg/second</Units>
+      <Count>1</Count>
+    </item>
+  </SALEvent>
+  <SALEvent>
+    <Subsystem>Dome</Subsystem>
+    <EFDB_Topic>Dome_logevent_elTarget</EFDB_Topic>
+    <Description>Elevation axis (light/wind screen) target position and velocity.</Description>
+    <item>
+      <EFDB_Name>position</EFDB_Name>
+      <Description>Target position; nan for the crawlEl command.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>deg</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>velocity</EFDB_Name>
+      <Description>Target velocity; 0 for the moveEl command.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>deg/second</Units>
+      <Count>1</Count>
+    </item>
+  </SALEvent>
+  <SALEvent>
+    <Subsystem>Dome</Subsystem>
+    <EFDB_Topic>Dome_logevent_brakesEngaged</EFDB_Topic>
+    <item>
+      <EFDB_Name>brakes</EFDB_Name>
+      <Description>Bitmask of brakes that are engaged.
             The bits are defined by the Brake enum.</Description>
-            <IDL_Type>int</IDL_Type>
-            <Units>unitless</Units>
-            <Count>1</Count>
-        </item>
-    </SALEvent>
-    <SALEvent>
-        <Subsystem>Dome</Subsystem>
-        <EFDB_Topic>Dome_logevent_lockingPinsEngaged</EFDB_Topic>
-        <item>
-            <EFDB_Name>engaged</EFDB_Name>
-            <Description>Bitmask of locking pins that have been engaged.
+      <IDL_Type>int</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+  </SALEvent>
+  <SALEvent>
+    <Subsystem>Dome</Subsystem>
+    <EFDB_Topic>Dome_logevent_lockingPinsEngaged</EFDB_Topic>
+    <item>
+      <EFDB_Name>engaged</EFDB_Name>
+      <Description>Bitmask of locking pins that have been engaged.
             The bits are defined by the LockingPin enum.</Description>
-            <IDL_Type>int</IDL_Type>
-            <Units>unitless</Units>
-            <Count>1</Count>
-        </item>
-    </SALEvent>
-    <SALEvent>
-        <Subsystem>Dome</Subsystem>
-        <EFDB_Topic>Dome_logevent_interlocks</EFDB_Topic>
-        <item>
-            <EFDB_Name>interlocks</EFDB_Name>
-            <Description>Bitmask of safety interlocks that are latched.
+      <IDL_Type>int</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+  </SALEvent>
+  <SALEvent>
+    <Subsystem>Dome</Subsystem>
+    <EFDB_Topic>Dome_logevent_interlocks</EFDB_Topic>
+    <item>
+      <EFDB_Name>interlocks</EFDB_Name>
+      <Description>Bitmask of safety interlocks that are latched.
             The bits are defined by the Interlock enum.</Description>
-            <IDL_Type>int</IDL_Type>
-            <Units>unitless</Units>
-            <Count>1</Count>
-        </item>
-    </SALEvent>
+      <IDL_Type>int</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+  </SALEvent>
 </SALEventSet>

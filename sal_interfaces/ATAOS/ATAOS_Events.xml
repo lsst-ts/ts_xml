@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-stylesheet type="text/xsl" href="http://lsst-sal.tuc.noao.edu/schema/SALEventSet.xsl"?>
-<SALEventSet xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:noNamespaceSchemaLocation="http://lsst-sal.tuc.noao.edu/schema/SALEventSet.xsd">
-<SALEvent>
+<SALEventSet xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://lsst-sal.tuc.noao.edu/schema/SALEventSet.xsd">
+  <SALEvent>
     <Subsystem>ATAOS</Subsystem>
     <Version>3.8</Version>
     <Author>Tiago Ribeiro</Author>
@@ -10,65 +9,65 @@
     <Alias>detailedState</Alias>
     <Explanation>http://sal.lsst.org</Explanation>
     <item>
-        <EFDB_Name>substate</EFDB_Name>
-        <Description>Integer state of the ATAOS activity. This is not an enumeration but a bitwise state.</Description>
-        <IDL_Type>byte</IDL_Type>
-        <Units>unitless</Units>
-        <Count>1</Count>
+      <EFDB_Name>substate</EFDB_Name>
+      <Description>Integer state of the ATAOS activity. This is not an enumeration but a bitwise state.</Description>
+      <IDL_Type>byte</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
     </item>
-</SALEvent>
-<SALEvent>
+  </SALEvent>
+  <SALEvent>
     <Subsystem>ATAOS</Subsystem>
     <Version>3.8</Version>
     <Author>Tiago Ribeiro</Author>
     <EFDB_Topic>ATAOS_logevent_correctionEnabled</EFDB_Topic>
     <Alias>correctionEnabled</Alias>
-<!-- Published after enableCorrection or disableCorrection command -->
+    <!-- Published after enableCorrection or disableCorrection command -->
     <Explanation>http://sal.lsst.org</Explanation>
     <item>
-        <EFDB_Name>m1</EFDB_Name>
-        <Description>M1 correction enabled.</Description>
-        <IDL_Type>boolean</IDL_Type>
-        <Units>unitless</Units>
-        <Count>1</Count>
+      <EFDB_Name>m1</EFDB_Name>
+      <Description>M1 correction enabled.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>m2</EFDB_Name>
-        <Description>M2 correction enabled.</Description>
-        <IDL_Type>boolean</IDL_Type>
-        <Units>unitless</Units>
-        <Count>1</Count>
+      <EFDB_Name>m2</EFDB_Name>
+      <Description>M2 correction enabled.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>hexapod</EFDB_Name>
-        <Description>Hexapod correction enabled.</Description>
-        <IDL_Type>boolean</IDL_Type>
-        <Units>unitless</Units>
-        <Count>1</Count>
+      <EFDB_Name>hexapod</EFDB_Name>
+      <Description>Hexapod correction enabled.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>focus</EFDB_Name>
-        <Description>Focus correction enabled.</Description>
-        <IDL_Type>boolean</IDL_Type>
-        <Units>unitless</Units>
-        <Count>1</Count>
+      <EFDB_Name>focus</EFDB_Name>
+      <Description>Focus correction enabled.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>atspectrograph</EFDB_Name>
-        <Description>Focus correction for atspectrograph (LATISS) grating and filter selection enabled.</Description>
-        <IDL_Type>boolean</IDL_Type>
-        <Units>unitless</Units>
-        <Count>1</Count>
+      <EFDB_Name>atspectrograph</EFDB_Name>
+      <Description>Focus correction for atspectrograph (LATISS) grating and filter selection enabled.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>moveWhileExposing</EFDB_Name>
-        <Description>Move hexapod and focus while exposing enabled.</Description>
-        <IDL_Type>boolean</IDL_Type>
-        <Units>unitless</Units>
-        <Count>1</Count>
+      <EFDB_Name>moveWhileExposing</EFDB_Name>
+      <Description>Move hexapod and focus while exposing enabled.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
     </item>
-</SALEvent>
-<SALEvent>
+  </SALEvent>
+  <SALEvent>
     <Subsystem>ATAOS</Subsystem>
     <Version>3.8</Version>
     <Author>Tiago Ribeiro</Author>
@@ -76,28 +75,28 @@
     <Alias>m1CorrectionStarted</Alias>
     <Explanation>http://sal.lsst.org</Explanation>
     <item>
-        <EFDB_Name>azimuth</EFDB_Name>
-        <Description>Azimuth position for the correction.</Description>
-        <IDL_Type>double</IDL_Type>
-        <Units>degree</Units>
-        <Count>1</Count>
+      <EFDB_Name>azimuth</EFDB_Name>
+      <Description>Azimuth position for the correction.</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>degree</Units>
+      <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>elevation</EFDB_Name>
-        <Description>Elevation position for the correction.</Description>
-        <IDL_Type>double</IDL_Type>
-        <Units>degree</Units>
-        <Count>1</Count>
+      <EFDB_Name>elevation</EFDB_Name>
+      <Description>Elevation position for the correction.</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>degree</Units>
+      <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>pressure</EFDB_Name>
-        <Description>Pressure correction applied to M1.</Description>
-        <IDL_Type>float</IDL_Type>
-        <Units>Pa</Units>
-        <Count>1</Count>
+      <EFDB_Name>pressure</EFDB_Name>
+      <Description>Pressure correction applied to M1.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>Pa</Units>
+      <Count>1</Count>
     </item>
-</SALEvent>
-<SALEvent>
+  </SALEvent>
+  <SALEvent>
     <Subsystem>ATAOS</Subsystem>
     <Version>3.8</Version>
     <Author>Tiago Ribeiro</Author>
@@ -105,28 +104,28 @@
     <Alias>m1CorrectionCompleted</Alias>
     <Explanation>http://sal.lsst.org</Explanation>
     <item>
-        <EFDB_Name>azimuth</EFDB_Name>
-        <Description>Azimuth position for the correction.</Description>
-        <IDL_Type>double</IDL_Type>
-        <Units>degree</Units>
-        <Count>1</Count>
+      <EFDB_Name>azimuth</EFDB_Name>
+      <Description>Azimuth position for the correction.</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>degree</Units>
+      <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>elevation</EFDB_Name>
-        <Description>Elevation position for the correction.</Description>
-        <IDL_Type>double</IDL_Type>
-        <Units>degree</Units>
-        <Count>1</Count>
+      <EFDB_Name>elevation</EFDB_Name>
+      <Description>Elevation position for the correction.</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>degree</Units>
+      <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>pressure</EFDB_Name>
-        <Description>Pressure correction applied to M1.</Description>
-        <IDL_Type>float</IDL_Type>
-        <Units>Pa</Units>
-        <Count>1</Count>
+      <EFDB_Name>pressure</EFDB_Name>
+      <Description>Pressure correction applied to M1.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>Pa</Units>
+      <Count>1</Count>
     </item>
-</SALEvent>
-<SALEvent>
+  </SALEvent>
+  <SALEvent>
     <Subsystem>ATAOS</Subsystem>
     <Version>3.8</Version>
     <Author>Tiago Ribeiro</Author>
@@ -134,28 +133,28 @@
     <Alias>m2CorrectionStarted</Alias>
     <Explanation>http://sal.lsst.org</Explanation>
     <item>
-        <EFDB_Name>azimuth</EFDB_Name>
-        <Description>Azimuth position for the correction.</Description>
-        <IDL_Type>double</IDL_Type>
-        <Units>degree</Units>
-        <Count>1</Count>
+      <EFDB_Name>azimuth</EFDB_Name>
+      <Description>Azimuth position for the correction.</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>degree</Units>
+      <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>elevation</EFDB_Name>
-        <Description>Elevation position for the correction.</Description>
-        <IDL_Type>double</IDL_Type>
-        <Units>degree</Units>
-        <Count>1</Count>
+      <EFDB_Name>elevation</EFDB_Name>
+      <Description>Elevation position for the correction.</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>degree</Units>
+      <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>pressure</EFDB_Name>
-        <Description>Pressure correction applied to M2.</Description>
-        <IDL_Type>float</IDL_Type>
-        <Units>Pa</Units>
-        <Count>1</Count>
+      <EFDB_Name>pressure</EFDB_Name>
+      <Description>Pressure correction applied to M2.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>Pa</Units>
+      <Count>1</Count>
     </item>
-</SALEvent>
-<SALEvent>
+  </SALEvent>
+  <SALEvent>
     <Subsystem>ATAOS</Subsystem>
     <Version>3.8</Version>
     <Author>Tiago Ribeiro</Author>
@@ -163,28 +162,28 @@
     <Alias>m2CorrectionCompleted</Alias>
     <Explanation>http://sal.lsst.org</Explanation>
     <item>
-        <EFDB_Name>azimuth</EFDB_Name>
-        <Description>Azimuth position for the correction.</Description>
-        <IDL_Type>double</IDL_Type>
-        <Units>degree</Units>
-        <Count>1</Count>
+      <EFDB_Name>azimuth</EFDB_Name>
+      <Description>Azimuth position for the correction.</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>degree</Units>
+      <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>elevation</EFDB_Name>
-        <Description>Elevation position for the correction.</Description>
-        <IDL_Type>double</IDL_Type>
-        <Units>degree</Units>
-        <Count>1</Count>
+      <EFDB_Name>elevation</EFDB_Name>
+      <Description>Elevation position for the correction.</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>degree</Units>
+      <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>pressure</EFDB_Name>
-        <Description>Pressure correction applied to M2.</Description>
-        <IDL_Type>float</IDL_Type>
-        <Units>Pa</Units>
-        <Count>1</Count>
+      <EFDB_Name>pressure</EFDB_Name>
+      <Description>Pressure correction applied to M2.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>Pa</Units>
+      <Count>1</Count>
     </item>
-</SALEvent>
-<SALEvent>
+  </SALEvent>
+  <SALEvent>
     <Subsystem>ATAOS</Subsystem>
     <Version>3.8</Version>
     <Author>Tiago Ribeiro</Author>
@@ -192,63 +191,63 @@
     <Alias>hexapodCorrectionStarted</Alias>
     <Explanation>http://sal.lsst.org</Explanation>
     <item>
-        <EFDB_Name>azimuth</EFDB_Name>
-        <Description>Azimuth position for the correction.</Description>
-        <IDL_Type>double</IDL_Type>
-        <Units>degree</Units>
-        <Count>1</Count>
+      <EFDB_Name>azimuth</EFDB_Name>
+      <Description>Azimuth position for the correction.</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>degree</Units>
+      <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>elevation</EFDB_Name>
-        <Description>Elevation position for the correction.</Description>
-        <IDL_Type>double</IDL_Type>
-        <Units>degree</Units>
-        <Count>1</Count>
+      <EFDB_Name>elevation</EFDB_Name>
+      <Description>Elevation position for the correction.</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>degree</Units>
+      <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>hexapod_x</EFDB_Name>
-        <Description>Position correction applied to the hexapod in the optical x-direction.</Description>
-        <IDL_Type>float</IDL_Type>
-        <Units>mm</Units>
-        <Count>1</Count>
+      <EFDB_Name>hexapod_x</EFDB_Name>
+      <Description>Position correction applied to the hexapod in the optical x-direction.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>mm</Units>
+      <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>hexapod_y</EFDB_Name>
-        <Description>Position correction applied to the hexapod in the optical y-direction.</Description>
-        <IDL_Type>float</IDL_Type>
-        <Units>mm</Units>
-        <Count>1</Count>
+      <EFDB_Name>hexapod_y</EFDB_Name>
+      <Description>Position correction applied to the hexapod in the optical y-direction.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>mm</Units>
+      <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>hexapod_z</EFDB_Name>
-        <Description>Position correction applied to the hexapod in the optical z-direction.</Description>
-        <IDL_Type>float</IDL_Type>
-        <Units>mm</Units>
-        <Count>1</Count>
+      <EFDB_Name>hexapod_z</EFDB_Name>
+      <Description>Position correction applied to the hexapod in the optical z-direction.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>mm</Units>
+      <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>hexapod_u</EFDB_Name>
-        <Description>Angle correction applied to the hexapod with respect to the optical x-axis.</Description>
-        <IDL_Type>float</IDL_Type>
-        <Units>degree</Units>
-        <Count>1</Count>
+      <EFDB_Name>hexapod_u</EFDB_Name>
+      <Description>Angle correction applied to the hexapod with respect to the optical x-axis.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>degree</Units>
+      <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>hexapod_v</EFDB_Name>
-        <Description>Angle correction applied to the hexapod with respect to the optical y-axis.</Description>
-        <IDL_Type>float</IDL_Type>
-        <Units>degree</Units>
-        <Count>1</Count>
+      <EFDB_Name>hexapod_v</EFDB_Name>
+      <Description>Angle correction applied to the hexapod with respect to the optical y-axis.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>degree</Units>
+      <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>hexapod_w</EFDB_Name>
-        <Description>Angle correction applied to the hexapod with respect to the optical w-axis.</Description>
-        <IDL_Type>float</IDL_Type>
-        <Units>degree</Units>
-        <Count>1</Count>
+      <EFDB_Name>hexapod_w</EFDB_Name>
+      <Description>Angle correction applied to the hexapod with respect to the optical w-axis.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>degree</Units>
+      <Count>1</Count>
     </item>
-</SALEvent>
-<SALEvent>
+  </SALEvent>
+  <SALEvent>
     <Subsystem>ATAOS</Subsystem>
     <Version>3.8</Version>
     <Author>Tiago Ribeiro</Author>
@@ -256,63 +255,63 @@
     <Alias>hexapodCorrectionCompleted</Alias>
     <Explanation>http://sal.lsst.org</Explanation>
     <item>
-        <EFDB_Name>azimuth</EFDB_Name>
-        <Description>Azimuth position for the correction.</Description>
-        <IDL_Type>double</IDL_Type>
-        <Units>degree</Units>
-        <Count>1</Count>
+      <EFDB_Name>azimuth</EFDB_Name>
+      <Description>Azimuth position for the correction.</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>degree</Units>
+      <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>elevation</EFDB_Name>
-        <Description>Elevation position for the correction.</Description>
-        <IDL_Type>double</IDL_Type>
-        <Units>degree</Units>
-        <Count>1</Count>
+      <EFDB_Name>elevation</EFDB_Name>
+      <Description>Elevation position for the correction.</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>degree</Units>
+      <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>hexapod_x</EFDB_Name>
-        <Description>Position correction applied to the hexapod in the optical x-direction.</Description>
-        <IDL_Type>float</IDL_Type>
-        <Units>mm</Units>
-        <Count>1</Count>
+      <EFDB_Name>hexapod_x</EFDB_Name>
+      <Description>Position correction applied to the hexapod in the optical x-direction.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>mm</Units>
+      <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>hexapod_y</EFDB_Name>
-        <Description>Position correction applied to the hexapod in the optical y-direction.</Description>
-        <IDL_Type>float</IDL_Type>
-        <Units>mm</Units>
-        <Count>1</Count>
+      <EFDB_Name>hexapod_y</EFDB_Name>
+      <Description>Position correction applied to the hexapod in the optical y-direction.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>mm</Units>
+      <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>hexapod_z</EFDB_Name>
-        <Description>Position correction applied to the hexapod in the optical z-direction.</Description>
-        <IDL_Type>float</IDL_Type>
-        <Units>mm</Units>
-        <Count>1</Count>
+      <EFDB_Name>hexapod_z</EFDB_Name>
+      <Description>Position correction applied to the hexapod in the optical z-direction.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>mm</Units>
+      <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>hexapod_u</EFDB_Name>
-        <Description>Angle correction applied to the hexapod with respect to the optical x-axis.</Description>
-        <IDL_Type>float</IDL_Type>
-        <Units>degree</Units>
-        <Count>1</Count>
+      <EFDB_Name>hexapod_u</EFDB_Name>
+      <Description>Angle correction applied to the hexapod with respect to the optical x-axis.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>degree</Units>
+      <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>hexapod_v</EFDB_Name>
-        <Description>Angle correction applied to the hexapod with respect to the optical y-axis.</Description>
-        <IDL_Type>float</IDL_Type>
-        <Units>degree</Units>
-        <Count>1</Count>
+      <EFDB_Name>hexapod_v</EFDB_Name>
+      <Description>Angle correction applied to the hexapod with respect to the optical y-axis.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>degree</Units>
+      <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>hexapod_w</EFDB_Name>
-        <Description>Angle correction applied to the hexapod with respect to the optical w-axis.</Description>
-        <IDL_Type>float</IDL_Type>
-        <Units>degree</Units>
-        <Count>1</Count>
+      <EFDB_Name>hexapod_w</EFDB_Name>
+      <Description>Angle correction applied to the hexapod with respect to the optical w-axis.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>degree</Units>
+      <Count>1</Count>
     </item>
-</SALEvent>
-<SALEvent>
+  </SALEvent>
+  <SALEvent>
     <Subsystem>ATAOS</Subsystem>
     <Version>3.8</Version>
     <Author>Tiago Ribeiro</Author>
@@ -320,28 +319,28 @@
     <Alias>focusCorrectionStarted</Alias>
     <Explanation>http://sal.lsst.org</Explanation>
     <item>
-        <EFDB_Name>azimuth</EFDB_Name>
-        <Description>Azimuth position for the correction.</Description>
-        <IDL_Type>double</IDL_Type>
-        <Units>degree</Units>
-        <Count>1</Count>
+      <EFDB_Name>azimuth</EFDB_Name>
+      <Description>Azimuth position for the correction.</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>degree</Units>
+      <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>elevation</EFDB_Name>
-        <Description>Elevation position for the correction.</Description>
-        <IDL_Type>double</IDL_Type>
-        <Units>degree</Units>
-        <Count>1</Count>
+      <EFDB_Name>elevation</EFDB_Name>
+      <Description>Elevation position for the correction.</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>degree</Units>
+      <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>focus</EFDB_Name>
-        <Description>Focus correction.</Description>
-        <IDL_Type>float</IDL_Type>
-        <Units>mm</Units>
-        <Count>1</Count>
+      <EFDB_Name>focus</EFDB_Name>
+      <Description>Focus correction.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>mm</Units>
+      <Count>1</Count>
     </item>
-</SALEvent>
-<SALEvent>
+  </SALEvent>
+  <SALEvent>
     <Subsystem>ATAOS</Subsystem>
     <Version>3.8</Version>
     <Author>Tiago Ribeiro</Author>
@@ -349,28 +348,28 @@
     <Alias>focusCorrectionCompleted</Alias>
     <Explanation>http://sal.lsst.org</Explanation>
     <item>
-        <EFDB_Name>azimuth</EFDB_Name>
-        <Description>Azimuth position for the correction.</Description>
-        <IDL_Type>double</IDL_Type>
-        <Units>degree</Units>
-        <Count>1</Count>
+      <EFDB_Name>azimuth</EFDB_Name>
+      <Description>Azimuth position for the correction.</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>degree</Units>
+      <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>elevation</EFDB_Name>
-        <Description>Elevation position for the correction.</Description>
-        <IDL_Type>double</IDL_Type>
-        <Units>degree</Units>
-        <Count>1</Count>
+      <EFDB_Name>elevation</EFDB_Name>
+      <Description>Elevation position for the correction.</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>degree</Units>
+      <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>focus</EFDB_Name>
-        <Description>Focus correction.</Description>
-        <IDL_Type>float</IDL_Type>
-        <Units>mm</Units>
-        <Count>1</Count>
+      <EFDB_Name>focus</EFDB_Name>
+      <Description>Focus correction.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>mm</Units>
+      <Count>1</Count>
     </item>
-</SALEvent>
-<SALEvent>
+  </SALEvent>
+  <SALEvent>
     <Subsystem>ATAOS</Subsystem>
     <Version>3.8</Version>
     <Author>Tiago Ribeiro</Author>
@@ -378,21 +377,21 @@
     <Alias>atspectrographCorrectionStarted</Alias>
     <Explanation>http://sal.lsst.org</Explanation>
     <item>
-        <EFDB_Name>focusOffset</EFDB_Name>
-        <Description>Focus offset applied.</Description>
-        <IDL_Type>float</IDL_Type>
-        <Units>mm</Units>
-        <Count>1</Count>
+      <EFDB_Name>focusOffset</EFDB_Name>
+      <Description>Focus offset applied.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>mm</Units>
+      <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>pointingOffsets</EFDB_Name>
-        <Description>Pointing Offsets applied.</Description>
-        <IDL_Type>float</IDL_Type>
-        <Units>arcsec</Units>
-        <Count>2</Count>
+      <EFDB_Name>pointingOffsets</EFDB_Name>
+      <Description>Pointing Offsets applied.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>arcsec</Units>
+      <Count>2</Count>
     </item>
-</SALEvent>
-<SALEvent>
+  </SALEvent>
+  <SALEvent>
     <Subsystem>ATAOS</Subsystem>
     <Version>3.8</Version>
     <Author>Tiago Ribeiro</Author>
@@ -400,21 +399,21 @@
     <Alias>atspectrographCorrectionCompleted</Alias>
     <Explanation>http://sal.lsst.org</Explanation>
     <item>
-        <EFDB_Name>focusOffset</EFDB_Name>
-        <Description>Focus offset applied.</Description>
-        <IDL_Type>float</IDL_Type>
-        <Units>mm</Units>
-        <Count>1</Count>
+      <EFDB_Name>focusOffset</EFDB_Name>
+      <Description>Focus offset applied.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>mm</Units>
+      <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>pointingOffsets</EFDB_Name>
-        <Description>Pointing Offsets applied.</Description>
-        <IDL_Type>float</IDL_Type>
-        <Units>arcsec</Units>
-        <Count>2</Count>
+      <EFDB_Name>pointingOffsets</EFDB_Name>
+      <Description>Pointing Offsets applied.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>arcsec</Units>
+      <Count>2</Count>
     </item>
-</SALEvent>
-<SALEvent>
+  </SALEvent>
+  <SALEvent>
     <Subsystem>ATAOS</Subsystem>
     <Version>3.8</Version>
     <Author>Tiago Ribeiro</Author>
@@ -422,63 +421,63 @@
     <Alias>correctionOffsets</Alias>
     <Explanation>http://sal.lsst.org</Explanation>
     <item>
-        <EFDB_Name>x</EFDB_Name>
-        <Description>Offset to the hexapod correction in the x-direction.</Description>
-        <IDL_Type>float</IDL_Type>
-        <Units>mm</Units>
-        <Count>1</Count>
+      <EFDB_Name>x</EFDB_Name>
+      <Description>Offset to the hexapod correction in the x-direction.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>mm</Units>
+      <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>y</EFDB_Name>
-        <Description>Offset to the hexapod correction in the  y-direction.</Description>
-        <IDL_Type>float</IDL_Type>
-        <Units>mm</Units>
-        <Count>1</Count>
+      <EFDB_Name>y</EFDB_Name>
+      <Description>Offset to the hexapod correction in the  y-direction.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>mm</Units>
+      <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>z</EFDB_Name>
-        <Description>Offset to the hexapod correction in the  z-direction.</Description>
-        <IDL_Type>float</IDL_Type>
-        <Units>mm</Units>
-        <Count>1</Count>
+      <EFDB_Name>z</EFDB_Name>
+      <Description>Offset to the hexapod correction in the  z-direction.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>mm</Units>
+      <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>u</EFDB_Name>
-        <Description>Offset to the angle correction applied to the hexapod with respect to the hexapod x-axis.</Description>
-        <IDL_Type>float</IDL_Type>
-        <Units>degree</Units>
-        <Count>1</Count>
+      <EFDB_Name>u</EFDB_Name>
+      <Description>Offset to the angle correction applied to the hexapod with respect to the hexapod x-axis.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>degree</Units>
+      <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>v</EFDB_Name>
-        <Description>Offset to the angle correction applied to the hexapod with respect to the hexapod  y-axis.</Description>
-        <IDL_Type>float</IDL_Type>
-        <Units>degree</Units>
-        <Count>1</Count>
+      <EFDB_Name>v</EFDB_Name>
+      <Description>Offset to the angle correction applied to the hexapod with respect to the hexapod  y-axis.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>degree</Units>
+      <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>w</EFDB_Name>
-        <Description>Offset to the angle correction applied to the hexapod with respect to the hexapod z-axis (Ignored).</Description>
-        <IDL_Type>float</IDL_Type>
-        <Units>degree</Units>
-        <Count>1</Count>
+      <EFDB_Name>w</EFDB_Name>
+      <Description>Offset to the angle correction applied to the hexapod with respect to the hexapod z-axis (Ignored).</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>degree</Units>
+      <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>m1</EFDB_Name>
-        <Description>Offset to the m1 correction.</Description>
-        <IDL_Type>float</IDL_Type>
-        <Units>Pa</Units>
-        <Count>1</Count>
+      <EFDB_Name>m1</EFDB_Name>
+      <Description>Offset to the m1 correction.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>Pa</Units>
+      <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>m2</EFDB_Name>
-        <Description>Offset to the  m2 correction.</Description>
-        <IDL_Type>float</IDL_Type>
-        <Units>Pa</Units>
-        <Count>1</Count>
+      <EFDB_Name>m2</EFDB_Name>
+      <Description>Offset to the  m2 correction.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>Pa</Units>
+      <Count>1</Count>
     </item>
-</SALEvent>
-<SALEvent>
+  </SALEvent>
+  <SALEvent>
     <Subsystem>ATAOS</Subsystem>
     <Version>3.8</Version>
     <Author>Tiago Ribeiro</Author>
@@ -486,42 +485,42 @@
     <Alias>focusOffsetSummary</Alias>
     <Explanation>http://sal.lsst.org</Explanation>
     <item>
-        <EFDB_Name>total</EFDB_Name>
-        <Description>Sum total of all focus offsets.</Description>
-        <IDL_Type>float</IDL_Type>
-        <Units>mm</Units>
-        <Count>1</Count>
+      <EFDB_Name>total</EFDB_Name>
+      <Description>Sum total of all focus offsets.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>mm</Units>
+      <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>userApplied</EFDB_Name>
-        <Description>Cumulative User-provided focus-offset.</Description>
-        <IDL_Type>float</IDL_Type>
-        <Units>mm</Units>
-        <Count>1</Count>
+      <EFDB_Name>userApplied</EFDB_Name>
+      <Description>Cumulative User-provided focus-offset.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>mm</Units>
+      <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>filter</EFDB_Name>
-        <Description>Offset due to atspectrograph filter</Description>
-        <IDL_Type>float</IDL_Type>
-        <Units>degree</Units>
-        <Count>1</Count>
+      <EFDB_Name>filter</EFDB_Name>
+      <Description>Offset due to atspectrograph filter</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>degree</Units>
+      <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>disperser</EFDB_Name>
-        <Description>Offset due to atspectrograph disperser.</Description>
-        <IDL_Type>float</IDL_Type>
-        <Units>degree</Units>
-        <Count>1</Count>
+      <EFDB_Name>disperser</EFDB_Name>
+      <Description>Offset due to atspectrograph disperser.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>degree</Units>
+      <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>wavelength</EFDB_Name>
-        <Description>Offset due to selected wavelength.</Description>
-        <IDL_Type>float</IDL_Type>
-        <Units>degree</Units>
-        <Count>1</Count>
+      <EFDB_Name>wavelength</EFDB_Name>
+      <Description>Offset due to selected wavelength.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>degree</Units>
+      <Count>1</Count>
     </item>
-</SALEvent>
-<SALEvent>
+  </SALEvent>
+  <SALEvent>
     <Subsystem>ATAOS</Subsystem>
     <Version>3.8</Version>
     <Author>Tiago Ribeiro</Author>
@@ -529,25 +528,25 @@
     <Alias>pointingOffsetSummary</Alias>
     <Explanation>http://sal.lsst.org</Explanation>
     <item>
-        <EFDB_Name>total</EFDB_Name>
-        <Description>Sum total of all pointing offsets.</Description>
-        <IDL_Type>float</IDL_Type>
-        <Units>arcsec</Units>
-        <Count>2</Count>
+      <EFDB_Name>total</EFDB_Name>
+      <Description>Sum total of all pointing offsets.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>arcsec</Units>
+      <Count>2</Count>
     </item>
     <item>
-        <EFDB_Name>filter</EFDB_Name>
-        <Description>Offset due to atspectrograph filter</Description>
-        <IDL_Type>float</IDL_Type>
-        <Units>arcsec</Units>
-        <Count>2</Count>
+      <EFDB_Name>filter</EFDB_Name>
+      <Description>Offset due to atspectrograph filter</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>arcsec</Units>
+      <Count>2</Count>
     </item>
     <item>
-        <EFDB_Name>disperser</EFDB_Name>
-        <Description>Offset due to atspectrograph disperser.</Description>
-        <IDL_Type>float</IDL_Type>
-        <Units>arcsec</Units>
-        <Count>2</Count>
+      <EFDB_Name>disperser</EFDB_Name>
+      <Description>Offset due to atspectrograph disperser.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>arcsec</Units>
+      <Count>2</Count>
     </item>
-</SALEvent>
+  </SALEvent>
 </SALEventSet>

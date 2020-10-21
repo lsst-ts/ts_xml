@@ -1,129 +1,128 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-stylesheet type="text/xsl" href="http://lsst-sal.tuc.noao.edu/schema/SALTelemetrySet.xsl"?>
-<SALTelemetrySet xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:noNamespaceSchemaLocation="http://lsst-sal.tuc.noao.edu/schema/SALTelemetrySet.xsd">
-<SALTelemetry>
+<SALTelemetrySet xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://lsst-sal.tuc.noao.edu/schema/SALTelemetrySet.xsd">
+  <SALTelemetry>
     <Subsystem>Rotator</Subsystem>
     <EFDB_Topic>Rotator_Application</EFDB_Topic>
     <Description>Commanded and actual rotator position. Deprecated: use rotation instead.</Description>
     <item>
-        <EFDB_Name>Demand</EFDB_Name>
-        <Description>Commanded rotator position.</Description>
-        <IDL_Type>double</IDL_Type>
-        <Units>deg</Units>
-        <Count>1</Count>
+      <EFDB_Name>Demand</EFDB_Name>
+      <Description>Commanded rotator position.</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>deg</Units>
+      <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>Position</EFDB_Name>
-        <Description>Actual rotator position.</Description>
-        <IDL_Type>double</IDL_Type>
-        <Units>deg</Units>
-        <Count>1</Count>
+      <EFDB_Name>Position</EFDB_Name>
+      <Description>Actual rotator position.</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>deg</Units>
+      <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>Error</EFDB_Name>
-        <Description>Rotator following error.</Description>
-        <IDL_Type>double</IDL_Type>
-        <Units>deg</Units>
-        <Count>1</Count>
+      <EFDB_Name>Error</EFDB_Name>
+      <Description>Rotator following error.</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>deg</Units>
+      <Count>1</Count>
     </item>
-</SALTelemetry>
-<SALTelemetry>
+  </SALTelemetry>
+  <SALTelemetry>
     <Subsystem>Rotator</Subsystem>
     <EFDB_Topic>Rotator_rotation</EFDB_Topic>
     <Description>Demand and actual rotator position and velocity.</Description>
     <item>
-        <EFDB_Name>demandPosition</EFDB_Name>
-        <Description>Rotator position computed by the path generator.</Description>
-        <IDL_Type>double</IDL_Type>
-        <Units>deg</Units>
-        <Count>1</Count>
+      <EFDB_Name>demandPosition</EFDB_Name>
+      <Description>Rotator position computed by the path generator.</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>deg</Units>
+      <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>demandVelocity</EFDB_Name>
-        <Description>Rotator velocity computed by the path generator.</Description>
-        <IDL_Type>double</IDL_Type>
-        <Units>deg/second</Units>
-        <Count>1</Count>
+      <EFDB_Name>demandVelocity</EFDB_Name>
+      <Description>Rotator velocity computed by the path generator.</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>deg/second</Units>
+      <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>demandAcceleration</EFDB_Name>
-        <Description>Rotator acceleration computed by the path generator.</Description>
-        <IDL_Type>double</IDL_Type>
-        <Units>deg/second</Units>
-        <Count>1</Count>
+      <EFDB_Name>demandAcceleration</EFDB_Name>
+      <Description>Rotator acceleration computed by the path generator.</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>deg/second</Units>
+      <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>actualPosition</EFDB_Name>
-        <Description>Rotator position computed from the encoders.</Description>
-        <IDL_Type>double</IDL_Type>
-        <Units>deg</Units>
-        <Count>1</Count>
+      <EFDB_Name>actualPosition</EFDB_Name>
+      <Description>Rotator position computed from the encoders.</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>deg</Units>
+      <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>actualVelocity</EFDB_Name>
-        <Description>Rotator velocity computed from the two linear encoders. Warning: not yet trustworthy.</Description>
-        <IDL_Type>double</IDL_Type>
-        <Units>deg/second</Units>
-        <Count>1</Count>
+      <EFDB_Name>actualVelocity</EFDB_Name>
+      <Description>Rotator velocity computed from the two linear encoders. Warning: not yet trustworthy.</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>deg/second</Units>
+      <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>debugActualVelocityA</EFDB_Name>
-        <Description>Rotator velocity computed from linear encoder A. Warning: this field is purely for debugging the low-level controller. Do not rely on it.</Description>
-        <IDL_Type>double</IDL_Type>
-        <Units>deg/second</Units>
-        <Count>1</Count>
+      <EFDB_Name>debugActualVelocityA</EFDB_Name>
+      <Description>Rotator velocity computed from linear encoder A. Warning: this field is purely for debugging the low-level controller. Do not rely on it.</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>deg/second</Units>
+      <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>debugActualVelocityB</EFDB_Name>
-        <Description>Rotator velocity computed from linear encoder B. Warning: this field is purely for debugging the low-level controller. Do not rely on it.</Description>
-        <IDL_Type>double</IDL_Type>
-        <Units>deg/second</Units>
-        <Count>1</Count>
+      <EFDB_Name>debugActualVelocityB</EFDB_Name>
+      <Description>Rotator velocity computed from linear encoder B. Warning: this field is purely for debugging the low-level controller. Do not rely on it.</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>deg/second</Units>
+      <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>timestamp</EFDB_Name>
-        <Description>Time at which telemetry was obtained. Will not be fully accurate until DM-26382 is implemented and the CSC updated to use it.</Description>
-        <IDL_Type>double</IDL_Type>
-        <Units>second</Units>
-        <Count>1</Count>
+      <EFDB_Name>timestamp</EFDB_Name>
+      <Description>Time at which telemetry was obtained. Will not be fully accurate until DM-26382 is implemented and the CSC updated to use it.</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>second</Units>
+      <Count>1</Count>
     </item>
-</SALTelemetry>
-<SALTelemetry>
+  </SALTelemetry>
+  <SALTelemetry>
     <Subsystem>Rotator</Subsystem>
     <EFDB_Topic>Rotator_electrical</EFDB_Topic>
     <item>
-        <EFDB_Name>copleyStatusWordDrive</EFDB_Name>
-        <Description>Copley drive status word.</Description>
-        <IDL_Type>unsigned short</IDL_Type>
-        <Units>unitless</Units>
-        <Count>2</Count>
+      <EFDB_Name>copleyStatusWordDrive</EFDB_Name>
+      <Description>Copley drive status word.</Description>
+      <IDL_Type>unsigned short</IDL_Type>
+      <Units>unitless</Units>
+      <Count>2</Count>
     </item>
     <item>
-        <EFDB_Name>copleyLatchingFaultStatus</EFDB_Name>
-        <Description>Copley latching fault status register.</Description>
-        <IDL_Type>unsigned short</IDL_Type>
-        <Units>unitless</Units>
-        <Count>2</Count>
+      <EFDB_Name>copleyLatchingFaultStatus</EFDB_Name>
+      <Description>Copley latching fault status register.</Description>
+      <IDL_Type>unsigned short</IDL_Type>
+      <Units>unitless</Units>
+      <Count>2</Count>
     </item>
-</SALTelemetry>
-<SALTelemetry>
+  </SALTelemetry>
+  <SALTelemetry>
     <Subsystem>Rotator</Subsystem>
     <EFDB_Topic>Rotator_motors</EFDB_Topic>
     <Description>Encoder readings from each rotator motor</Description>
     <item>
-        <EFDB_Name>calibrated</EFDB_Name>
-        <Description>Encoder readings scaled to degrees of motion of the rotator.</Description>
-        <IDL_Type>double</IDL_Type>
-        <Units>deg</Units>
-        <Count>2</Count>
+      <EFDB_Name>calibrated</EFDB_Name>
+      <Description>Encoder readings scaled to degrees of motion of the rotator.</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>deg</Units>
+      <Count>2</Count>
     </item>
     <item>
-        <EFDB_Name>raw</EFDB_Name>
-        <Description>Encoder readings in raw counts.</Description>
-        <IDL_Type>double</IDL_Type>
-        <Units>unitless</Units>
-        <Count>2</Count>
+      <EFDB_Name>raw</EFDB_Name>
+      <Description>Encoder readings in raw counts.</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>unitless</Units>
+      <Count>2</Count>
     </item>
-</SALTelemetry>
+  </SALTelemetry>
 </SALTelemetrySet>
