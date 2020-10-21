@@ -43,7 +43,7 @@ to find the specific ticket.
 
 ### XML formatting, XML linting
 
-xmllint (http://xmlsoft.org) is used in GitHub action to check committed files format. The files can be reformatted running xmllint --format, such as:
+xmllint (http://xmlsoft.org) is used in GitHub action to check committed files format. Two spaces ("  ") are used for indentation (xmllint default). The files can be reformatted running xmllint --format, such as:
 
 ```bash
 for f in $(find . -name *.xml); do xmllint --format $f > /tmp/$$lint; cp /tmp/$$lint $f; done && rm /tmp/$$lint
