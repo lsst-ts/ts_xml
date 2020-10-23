@@ -1,129 +1,128 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-stylesheet type="text/xsl" href="http://project.lsst.org/ts/sal_objects/schema/SALCommandSet.xsl"?>
 <SALObjects>
-<SALCommandSet xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:noNamespaceSchemaLocation="http://project.lsst.org/ts/sal_objects/schema/SALCommandSet.xsd">
-<SALCommand>
-    <Subsystem>SALGeneric</Subsystem>
-    <EFDB_Topic>SALGeneric_command_abort</EFDB_Topic>
-    <Explanation>http://project.lsst.org/ts/sal_objects/help</Explanation>
-    <item>
+  <SALCommandSet xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://project.lsst.org/ts/sal_objects/schema/SALCommandSet.xsd">
+    <SALCommand>
+      <Subsystem>SALGeneric</Subsystem>
+      <EFDB_Topic>SALGeneric_command_abort</EFDB_Topic>
+      <Explanation>http://project.lsst.org/ts/sal_objects/help</Explanation>
+      <item>
         <EFDB_Name>value</EFDB_Name>
         <Description>Not used</Description>
         <IDL_Type>boolean</IDL_Type>
         <Units>unitless</Units>
         <Count>1</Count>
-    </item>
-</SALCommand>
-<SALCommand>
-    <Subsystem>SALGeneric</Subsystem>
-    <EFDB_Topic>SALGeneric_command_enable</EFDB_Topic>
-    <Description>Transition from state Disabled to Enabled.</Description>
-    <Explanation>http://project.lsst.org/ts/sal_objects/help</Explanation>
-    <item>
+      </item>
+    </SALCommand>
+    <SALCommand>
+      <Subsystem>SALGeneric</Subsystem>
+      <EFDB_Topic>SALGeneric_command_enable</EFDB_Topic>
+      <Description>Transition from state Disabled to Enabled.</Description>
+      <Explanation>http://project.lsst.org/ts/sal_objects/help</Explanation>
+      <item>
         <EFDB_Name>value</EFDB_Name>
         <Description>Not used</Description>
         <IDL_Type>boolean</IDL_Type>
         <Units>unitless</Units>
         <Count>1</Count>
-    </item>
-</SALCommand>
-<SALCommand>
-    <Subsystem>SALGeneric</Subsystem>
-    <EFDB_Topic>SALGeneric_command_disable</EFDB_Topic>
-    <Description>Transition from state Enabled to Disabled.</Description>
-    <Explanation>http://project.lsst.org/ts/sal_objects/help</Explanation>
-    <item>
+      </item>
+    </SALCommand>
+    <SALCommand>
+      <Subsystem>SALGeneric</Subsystem>
+      <EFDB_Topic>SALGeneric_command_disable</EFDB_Topic>
+      <Description>Transition from state Enabled to Disabled.</Description>
+      <Explanation>http://project.lsst.org/ts/sal_objects/help</Explanation>
+      <item>
         <EFDB_Name>value</EFDB_Name>
         <Description>Not used</Description>
         <IDL_Type>boolean</IDL_Type>
         <Units>unitless</Units>
         <Count>1</Count>
-    </item>
-</SALCommand>
-<SALCommand>
-    <Subsystem>SALGeneric</Subsystem>
-    <EFDB_Topic>SALGeneric_command_standby</EFDB_Topic>
-    <Description>Transition from state Offline, Disabled or Fault to Standby.</Description>
-    <Explanation>http://project.lsst.org/ts/sal_objects/help</Explanation>
-    <item>
+      </item>
+    </SALCommand>
+    <SALCommand>
+      <Subsystem>SALGeneric</Subsystem>
+      <EFDB_Topic>SALGeneric_command_standby</EFDB_Topic>
+      <Description>Transition from state Offline, Disabled or Fault to Standby.</Description>
+      <Explanation>http://project.lsst.org/ts/sal_objects/help</Explanation>
+      <item>
         <EFDB_Name>value</EFDB_Name>
         <Description>Not used</Description>
         <IDL_Type>boolean</IDL_Type>
         <Units>unitless</Units>
         <Count>1</Count>
-    </item>
-</SALCommand>
-<SALCommand>
-    <Subsystem>SALGeneric</Subsystem>
-    <EFDB_Topic>SALGeneric_command_exitControl</EFDB_Topic>
-    <Description>Transition from state Standby to Offline. For CSCs that are not "externally commandable" this makes the CSC quit.</Description>
-    <Explanation>http://project.lsst.org/ts/sal_objects/help</Explanation>
-    <item>
+      </item>
+    </SALCommand>
+    <SALCommand>
+      <Subsystem>SALGeneric</Subsystem>
+      <EFDB_Topic>SALGeneric_command_exitControl</EFDB_Topic>
+      <Description>Transition from state Standby to Offline. For CSCs that are not "externally commandable" this makes the CSC quit.</Description>
+      <Explanation>http://project.lsst.org/ts/sal_objects/help</Explanation>
+      <item>
         <EFDB_Name>value</EFDB_Name>
         <Description>Not used</Description>
         <IDL_Type>boolean</IDL_Type>
         <Units>unitless</Units>
         <Count>1</Count>
-    </item>
-</SALCommand>
-<SALCommand>
-    <Subsystem>SALGeneric</Subsystem>
-    <EFDB_Topic>SALGeneric_command_start</EFDB_Topic>
-    <Description>Transition from state Standby to Disable, in a specified configuration.</Description>
-    <Explanation>http://project.lsst.org/ts/sal_objects/help</Explanation>
-    <item>
+      </item>
+    </SALCommand>
+    <SALCommand>
+      <Subsystem>SALGeneric</Subsystem>
+      <EFDB_Topic>SALGeneric_command_start</EFDB_Topic>
+      <Description>Transition from state Standby to Disable, in a specified configuration.</Description>
+      <Explanation>http://project.lsst.org/ts/sal_objects/help</Explanation>
+      <item>
         <EFDB_Name>settingsToApply</EFDB_Name>
         <Description>Name of the selected settings set</Description>
         <IDL_Type>string</IDL_Type>
         <IDL_Size>256</IDL_Size>
         <Units>unitless</Units>
         <Count>1</Count>
-    </item>
-</SALCommand>
-<SALCommand>
-    <Subsystem>SALGeneric</Subsystem>
-    <EFDB_Topic>SALGeneric_command_enterControl</EFDB_Topic>
-    <Description>Transition from state Offline to Standby. Only "externally commandable" CSCs support this command; other CSCs start in Standby state and quit when they go to Offline.</Description>
-    <Explanation>http://project.lsst.org/ts/sal_objects/help</Explanation>
-    <item>
+      </item>
+    </SALCommand>
+    <SALCommand>
+      <Subsystem>SALGeneric</Subsystem>
+      <EFDB_Topic>SALGeneric_command_enterControl</EFDB_Topic>
+      <Description>Transition from state Offline to Standby. Only "externally commandable" CSCs support this command; other CSCs start in Standby state and quit when they go to Offline.</Description>
+      <Explanation>http://project.lsst.org/ts/sal_objects/help</Explanation>
+      <item>
         <EFDB_Name>value</EFDB_Name>
         <Description>Not used</Description>
         <IDL_Type>boolean</IDL_Type>
         <Units>unitless</Units>
         <Count>1</Count>
-    </item>
-</SALCommand>
-<SALCommand>
-    <Subsystem>SALGeneric</Subsystem>
-    <EFDB_Topic>SALGeneric_command_setLogLevel</EFDB_Topic>
-    <Description>Set the logging level.</Description>
-    <item>
+      </item>
+    </SALCommand>
+    <SALCommand>
+      <Subsystem>SALGeneric</Subsystem>
+      <EFDB_Topic>SALGeneric_command_setLogLevel</EFDB_Topic>
+      <Description>Set the logging level.</Description>
+      <item>
         <EFDB_Name>level</EFDB_Name>
         <Description>Logging level, as a Python logging level: error=40, warning=30, info=20, debug=10.</Description>
         <IDL_Type>int</IDL_Type>
         <Units>unitless</Units>
         <Count>1</Count>
-    </item>
-</SALCommand>
-<SALCommand>
-    <Subsystem>SALGeneric</Subsystem>
-    <EFDB_Topic>SALGeneric_command_setValue</EFDB_Topic>
-    <Explanation>http://project.lsst.org/ts/sal_objects/help</Explanation>
-    <item>
+      </item>
+    </SALCommand>
+    <SALCommand>
+      <Subsystem>SALGeneric</Subsystem>
+      <EFDB_Topic>SALGeneric_command_setValue</EFDB_Topic>
+      <Explanation>http://project.lsst.org/ts/sal_objects/help</Explanation>
+      <item>
         <EFDB_Name>parametersAndValues</EFDB_Name>
         <Description>List of parameters and their values as a Json string</Description>
         <IDL_Type>string</IDL_Type>
         <IDL_Size>256</IDL_Size>
         <Units>unitless</Units>
         <Count>1</Count>
-    </item>
-</SALCommand>
-<SALCommand>
-    <Subsystem>SALGeneric</Subsystem>
-    <EFDB_Topic>SALGeneric_command_setAuthList</EFDB_Topic>
-    <Explanation>http://sal.lsst.org</Explanation>
-    <item>
+      </item>
+    </SALCommand>
+    <SALCommand>
+      <Subsystem>SALGeneric</Subsystem>
+      <EFDB_Topic>SALGeneric_command_setAuthList</EFDB_Topic>
+      <Explanation>http://sal.lsst.org</Explanation>
+      <item>
         <EFDB_Name>authorizedUsers</EFDB_Name>
         <Description>Comma seperated list of authorized users currently allowed to command this CSC,
             in the form user@host.
@@ -137,8 +136,8 @@
         <IDL_Size>1</IDL_Size>
         <Units>unitless</Units>
         <Count>1</Count>
-    </item>
-    <item>
+      </item>
+      <item>
         <EFDB_Name>nonAuthorizedCSCs</EFDB_Name>
         <Description>Comma seperated list of CSC's not currently allowed to command this CSC,
             in the form name[:index]. An index of 0 is stripped (name:0 becomes name).
@@ -151,286 +150,283 @@
         <IDL_Size>1</IDL_Size>
         <Units>unitless</Units>
         <Count>1</Count>
-    </item>
-</SALCommand>
-</SALCommandSet>
-
-<SALEventSet xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:noNamespaceSchemaLocation="http://project.lsst.org/ts/sal_objects/schema/SALEventSet.xsd">
-<SALEvent>
-    <Subsystem>SALGeneric</Subsystem>
-    <EFDB_Topic>SALGeneric_logevent_settingVersions</EFDB_Topic>
-    <Description>Information about settings which can be specified in the start command.</Description>
-    <Explanation>http://project.lsst.org/ts/sal_objects/help/SALGeneric_logevent_settingVersions.html</Explanation>
-    <item>
+      </item>
+    </SALCommand>
+  </SALCommandSet>
+  <SALEventSet xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://project.lsst.org/ts/sal_objects/schema/SALEventSet.xsd">
+    <SALEvent>
+      <Subsystem>SALGeneric</Subsystem>
+      <EFDB_Topic>SALGeneric_logevent_settingVersions</EFDB_Topic>
+      <Description>Information about settings which can be specified in the start command.</Description>
+      <Explanation>http://project.lsst.org/ts/sal_objects/help/SALGeneric_logevent_settingVersions.html</Explanation>
+      <item>
         <EFDB_Name>recommendedSettingsVersion</EFDB_Name>
         <Description>List of comma seperated recomended versions of settings sets</Description>
         <IDL_Type>string</IDL_Type>
         <IDL_Size>1</IDL_Size>
         <Units>unitless</Units>
         <Count>1</Count>
-    </item>
-    <item>
+      </item>
+      <item>
         <EFDB_Name>recommendedSettingsLabels</EFDB_Name>
         <Description>List of comma seperated names of settings sets</Description>
         <IDL_Type>string</IDL_Type>
         <IDL_Size>1</IDL_Size>
         <Units>unitless</Units>
         <Count>1</Count>
-    </item>
-    <item>
+      </item>
+      <item>
         <EFDB_Name>settingsUrl</EFDB_Name>
         <Description>The URL where the settings sets definitions can be found</Description>
         <IDL_Type>string</IDL_Type>
         <IDL_Size>1</IDL_Size>
         <Units>unitless</Units>
         <Count>1</Count>
-    </item>
-</SALEvent>
-<SALEvent>
-    <Subsystem>SALGeneric</Subsystem>
-    <EFDB_Topic>SALGeneric_logevent_errorCode</EFDB_Topic>
-    <Description>Output when a CSC goes into the Fault state as an explanation of the problem.</Description>
-    <Explanation>http://project.lsst.org/ts/sal_objects/help/SALGeneric_logevent_errorCode.html</Explanation>
-    <item>
+      </item>
+    </SALEvent>
+    <SALEvent>
+      <Subsystem>SALGeneric</Subsystem>
+      <EFDB_Topic>SALGeneric_logevent_errorCode</EFDB_Topic>
+      <Description>Output when a CSC goes into the Fault state as an explanation of the problem.</Description>
+      <Explanation>http://project.lsst.org/ts/sal_objects/help/SALGeneric_logevent_errorCode.html</Explanation>
+      <item>
         <EFDB_Name>errorCode</EFDB_Name>
         <Description>A numeric error code</Description>
         <IDL_Type>long</IDL_Type>
         <Units>unitless</Units>
         <Count>1</Count>
-    </item>
-    <item>
+      </item>
+      <item>
         <EFDB_Name>errorReport</EFDB_Name>
         <Description>An string providing detailed information about the error</Description>
         <IDL_Type>string</IDL_Type>
         <IDL_Size>1</IDL_Size>
         <Units>unitless</Units>
         <Count>1</Count>
-    </item>
-    <item>
+      </item>
+      <item>
         <EFDB_Name>traceback</EFDB_Name>
         <Description>An optional stack trace of the error condition</Description>
         <IDL_Type>string</IDL_Type>
         <IDL_Size>1</IDL_Size>
         <Units>unitless</Units>
         <Count>1</Count>
-    </item>
-</SALEvent>
-<SALEvent>
-    <Subsystem>SALGeneric</Subsystem>
-    <EFDB_Topic>SALGeneric_logevent_summaryState</EFDB_Topic>
-    <Description>Current summary state of the CSC</Description>
-    <Explanation>http://project.lsst.org/ts/sal_objects/help/SALGeneric_logevent_summaryState.html</Explanation>
-    <item>
+      </item>
+    </SALEvent>
+    <SALEvent>
+      <Subsystem>SALGeneric</Subsystem>
+      <EFDB_Topic>SALGeneric_logevent_summaryState</EFDB_Topic>
+      <Description>Current summary state of the CSC</Description>
+      <Explanation>http://project.lsst.org/ts/sal_objects/help/SALGeneric_logevent_summaryState.html</Explanation>
+      <item>
         <EFDB_Name>summaryState</EFDB_Name>
         <Description>High level state machine state identifier</Description>
         <IDL_Type>long</IDL_Type>
         <Units>unitless</Units>
         <Count>1</Count>
-    </item>
-</SALEvent>
-<SALEvent>
-    <Subsystem>SALGeneric</Subsystem>
-    <EFDB_Topic>SALGeneric_logevent_appliedSettingsMatchStart</EFDB_Topic>
-    <Explanation>http://project.lsst.org/ts/sal_objects/help/SALGeneric_logevent_appliedSettingsMatchStart.html</Explanation>
-    <item>
+      </item>
+    </SALEvent>
+    <SALEvent>
+      <Subsystem>SALGeneric</Subsystem>
+      <EFDB_Topic>SALGeneric_logevent_appliedSettingsMatchStart</EFDB_Topic>
+      <Explanation>http://project.lsst.org/ts/sal_objects/help/SALGeneric_logevent_appliedSettingsMatchStart.html</Explanation>
+      <item>
         <EFDB_Name>appliedSettingsMatchStartIsTrue</EFDB_Name>
         <Description>True when the configuration matches the start conditions</Description>
         <IDL_Type>boolean</IDL_Type>
         <Units>unitless</Units>
         <Count>1</Count>
-    </item>
-</SALEvent>
-<SALEvent>
-    <Subsystem>SALGeneric</Subsystem>
-    <EFDB_Topic>SALGeneric_logevent_logLevel</EFDB_Topic>
-    <Description>Current logging level.</Description>
-    <item>
+      </item>
+    </SALEvent>
+    <SALEvent>
+      <Subsystem>SALGeneric</Subsystem>
+      <EFDB_Topic>SALGeneric_logevent_logLevel</EFDB_Topic>
+      <Description>Current logging level.</Description>
+      <item>
         <EFDB_Name>level</EFDB_Name>
         <Description>Current logging level, a Python logging level: error=40, warning=30, info=20, debug=10.</Description>
         <IDL_Type>int</IDL_Type>
         <Units>unitless</Units>
         <Count>1</Count>
-    </item>
-</SALEvent>
-<SALEvent>
-    <Subsystem>SALGeneric</Subsystem>
-    <EFDB_Topic>SALGeneric_logevent_logMessage</EFDB_Topic>
-    <Description>A log message.</Description>
-    <item>
+      </item>
+    </SALEvent>
+    <SALEvent>
+      <Subsystem>SALGeneric</Subsystem>
+      <EFDB_Topic>SALGeneric_logevent_logMessage</EFDB_Topic>
+      <Description>A log message.</Description>
+      <item>
         <EFDB_Name>name</EFDB_Name>
         <Description>Log name.</Description>
         <IDL_Type>string</IDL_Type>
         <IDL_Size>1</IDL_Size>
         <Units>unitless</Units>
         <Count>1</Count>
-    </item>
-    <item>
+      </item>
+      <item>
         <EFDB_Name>level</EFDB_Name>
         <Description>Message level, a Python logging level: error=40, warning=30, info=20, debug=10.</Description>
         <IDL_Type>int</IDL_Type>
         <Units>unitless</Units>
         <Count>1</Count>
-    </item>
-    <item>
+      </item>
+      <item>
         <EFDB_Name>message</EFDB_Name>
         <Description>Log message.</Description>
         <IDL_Type>string</IDL_Type>
         <IDL_Size>1</IDL_Size>
         <Units>unitless</Units>
         <Count>1</Count>
-    </item>
-    <item>
+      </item>
+      <item>
         <EFDB_Name>traceback</EFDB_Name>
         <Description>Exception traceback; "" if not an exception.</Description>
         <IDL_Type>string</IDL_Type>
         <IDL_Size>1</IDL_Size>
         <Units>unitless</Units>
         <Count>1</Count>
-    </item>
-    <item>
+      </item>
+      <item>
         <EFDB_Name>filePath</EFDB_Name>
         <Description>Path to source file.</Description>
         <IDL_Type>string</IDL_Type>
         <IDL_Size>1</IDL_Size>
         <Units>unitless</Units>
         <Count>1</Count>
-    </item>
-    <item>
+      </item>
+      <item>
         <EFDB_Name>functionName</EFDB_Name>
         <Description>Function or method name.</Description>
         <IDL_Type>string</IDL_Type>
         <IDL_Size>1</IDL_Size>
         <Units>unitless</Units>
         <Count>1</Count>
-    </item>
-    <item>
+      </item>
+      <item>
         <EFDB_Name>lineNumber</EFDB_Name>
         <Description>Line number in the file specified by filePath.</Description>
         <IDL_Type>long</IDL_Type>
         <Units>unitless</Units>
         <Count>1</Count>
-    </item>
-    <item>
+      </item>
+      <item>
         <EFDB_Name>process</EFDB_Name>
         <Description>Process ID.</Description>
         <IDL_Type>long</IDL_Type>
         <IDL_Size>1</IDL_Size>
         <Units>unitless</Units>
         <Count>1</Count>
-    </item>
-</SALEvent>
-<SALEvent>
-    <Subsystem>SALGeneric</Subsystem>
-    <EFDB_Topic>SALGeneric_logevent_settingsApplied</EFDB_Topic>
-    <Description>Base settings applied.</Description>
-    <item>
+      </item>
+    </SALEvent>
+    <SALEvent>
+      <Subsystem>SALGeneric</Subsystem>
+      <EFDB_Topic>SALGeneric_logevent_settingsApplied</EFDB_Topic>
+      <Description>Base settings applied.</Description>
+      <item>
         <EFDB_Name>settingsVersion</EFDB_Name>
         <Description>The SHA or name corresponding to the published configuration</Description>
         <IDL_Type>string</IDL_Type>
         <IDL_Size>256</IDL_Size>
         <Units>unitless</Units>
         <Count>1</Count>
-    </item>
-    <item>
+      </item>
+      <item>
         <EFDB_Name>otherSettingsEvents</EFDB_Name>
         <Description>A comma delimited list of other specific CSC configuration events. This may be blank if no other CSC specific events are necessary</Description>
         <IDL_Type>string</IDL_Type>
         <IDL_Size>1</IDL_Size>
         <Units>unitless</Units>
         <Count>1</Count>
-    </item>
-</SALEvent>
-<SALEvent>
-    <Subsystem>SALGeneric</Subsystem>
-    <EFDB_Topic>SALGeneric_logevent_simulationMode</EFDB_Topic>
-    <Description>Current simulation mode.</Description>
-    <item>
+      </item>
+    </SALEvent>
+    <SALEvent>
+      <Subsystem>SALGeneric</Subsystem>
+      <EFDB_Topic>SALGeneric_logevent_simulationMode</EFDB_Topic>
+      <Description>Current simulation mode.</Description>
+      <item>
         <EFDB_Name>mode</EFDB_Name>
         <Description>Current simulation mode; 0 for normal operation (no simulation); other supported values are specific to each CSC.</Description>
         <IDL_Type>int</IDL_Type>
         <Units>unitless</Units>
         <Count>1</Count>
-    </item>
-</SALEvent>
-<SALEvent>
-    <Subsystem>SALGeneric</Subsystem>
-    <EFDB_Topic>SALGeneric_logevent_softwareVersions</EFDB_Topic>
-    <Description>Current versions of software in use by CSC.</Description>
-    <item>
+      </item>
+    </SALEvent>
+    <SALEvent>
+      <Subsystem>SALGeneric</Subsystem>
+      <EFDB_Topic>SALGeneric_logevent_softwareVersions</EFDB_Topic>
+      <Description>Current versions of software in use by CSC.</Description>
+      <item>
         <EFDB_Name>salVersion</EFDB_Name>
         <Description>This is the current version of SAL generation</Description>
         <IDL_Type>string</IDL_Type>
         <IDL_Size>256</IDL_Size>
         <Units>unitless</Units>
         <Count>1</Count>
-    </item>
-    <item>
+      </item>
+      <item>
         <EFDB_Name>xmlVersion</EFDB_Name>
         <Description>This is the current version of CSC XML</Description>
         <IDL_Type>string</IDL_Type>
         <IDL_Size>256</IDL_Size>
         <Units>unitless</Units>
         <Count>1</Count>
-    </item>
-    <item>
+      </item>
+      <item>
         <EFDB_Name>openSpliceVersion</EFDB_Name>
         <Description>This is the current version of OpenSplice</Description>
         <IDL_Type>string</IDL_Type>
         <IDL_Size>256</IDL_Size>
         <Units>unitless</Units>
         <Count>1</Count>
-    </item>
-    <item>
+      </item>
+      <item>
         <EFDB_Name>cscVersion</EFDB_Name>
         <Description>This is the top-level version of the CSC</Description>
         <IDL_Type>string</IDL_Type>
         <IDL_Size>256</IDL_Size>
         <Units>unitless</Units>
         <Count>1</Count>
-    </item>
-    <item>
+      </item>
+      <item>
         <EFDB_Name>subsystemVersions</EFDB_Name>
         <Description>A comma delimited list of key=value pairs relating subsystem name (key) to its version number (value). This may be left blank if there are no subsystems within a CSC</Description>
         <IDL_Type>string</IDL_Type>
         <IDL_Size>1</IDL_Size>
         <Units>unitless</Units>
         <Count>1</Count>
-    </item>
-</SALEvent>
-<SALEvent>
-    <Subsystem>SALGeneric</Subsystem>
-    <EFDB_Topic>SALGeneric_logevent_heartbeat</EFDB_Topic>
-    <Explanation>http://sal.lsst.org</Explanation>
-    <item>
+      </item>
+    </SALEvent>
+    <SALEvent>
+      <Subsystem>SALGeneric</Subsystem>
+      <EFDB_Topic>SALGeneric_logevent_heartbeat</EFDB_Topic>
+      <Explanation>http://sal.lsst.org</Explanation>
+      <item>
         <EFDB_Name>heartbeat</EFDB_Name>
         <Description>Beats the drum.</Description>
         <IDL_Type>boolean</IDL_Type>
         <Units>unitless</Units>
         <Count>1</Count>
-    </item>
-</SALEvent>
-<SALEvent>
-    <Subsystem>SALGeneric</Subsystem>
-    <EFDB_Topic>SALGeneric_logevent_authList</EFDB_Topic>
-    <Explanation>http://sal.lsst.org</Explanation>
-    <item>
+      </item>
+    </SALEvent>
+    <SALEvent>
+      <Subsystem>SALGeneric</Subsystem>
+      <EFDB_Topic>SALGeneric_logevent_authList</EFDB_Topic>
+      <Explanation>http://sal.lsst.org</Explanation>
+      <item>
         <EFDB_Name>authorizedUsers</EFDB_Name>
         <Description>Comma seperated list of authorized users currently allowed to command this CSC.</Description>
         <IDL_Type>string</IDL_Type>
         <IDL_Size>1</IDL_Size>
         <Units>unitless</Units>
         <Count>1</Count>
-    </item>
-    <item>
+      </item>
+      <item>
         <EFDB_Name>nonAuthorizedCSCs</EFDB_Name>
         <Description>Comma seperated list of CSC's not currently allowed to command this CSC.</Description>
         <IDL_Type>string</IDL_Type>
         <IDL_Size>1</IDL_Size>
         <Units>unitless</Units>
         <Count>1</Count>
-    </item>
-</SALEvent>
-</SALEventSet>
+      </item>
+    </SALEvent>
+  </SALEventSet>
 </SALObjects>
-

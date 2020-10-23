@@ -1,105 +1,98 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-stylesheet type="text/xsl" href="http://lsst-sal.tuc.noao.edu/schema/SALCommandSet.xsl"?>
-<SALCommandSet xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:noNamespaceSchemaLocation="http://lsst-sal.tuc.noao.edu/schema/SALCommandSet.xsd">
-
-<SALCommand>
+<SALCommandSet xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://lsst-sal.tuc.noao.edu/schema/SALCommandSet.xsd">
+  <SALCommand>
     <Subsystem>Watcher</Subsystem>
     <EFDB_Topic>Watcher_command_acknowledge</EFDB_Topic>
     <Description>Acknowledge one or more alarms.</Description>
     <item>
-        <EFDB_Name>name</EFDB_Name>
-        <Description>Name of alarm or alarms to acknowledge. Specify a regular expression for multiple alarms.</Description>
-        <IDL_Type>string</IDL_Type>
-        <IDL_Size>1</IDL_Size>
-        <Units>unitless</Units>
-        <Count>1</Count>
+      <EFDB_Name>name</EFDB_Name>
+      <Description>Name of alarm or alarms to acknowledge. Specify a regular expression for multiple alarms.</Description>
+      <IDL_Type>string</IDL_Type>
+      <IDL_Size>1</IDL_Size>
+      <Units>unitless</Units>
+      <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>severity</EFDB_Name>
-        <Description>Severity level being acknowledged. An AlarmSeverity enum.</Description>
-        <IDL_Type>int</IDL_Type>
-        <Units>unitless</Units>
-        <Count>1</Count>
+      <EFDB_Name>severity</EFDB_Name>
+      <Description>Severity level being acknowledged. An AlarmSeverity enum.</Description>
+      <IDL_Type>int</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>acknowledgedBy</EFDB_Name>
-        <Description>User who acknowledged the alarm.</Description>
-        <IDL_Type>string</IDL_Type>
-        <IDL_Size>1</IDL_Size>
-        <Units>unitless</Units>
-        <Count>1</Count>
+      <EFDB_Name>acknowledgedBy</EFDB_Name>
+      <Description>User who acknowledged the alarm.</Description>
+      <IDL_Type>string</IDL_Type>
+      <IDL_Size>1</IDL_Size>
+      <Units>unitless</Units>
+      <Count>1</Count>
     </item>
-</SALCommand>
-
-<SALCommand>
+  </SALCommand>
+  <SALCommand>
     <Subsystem>Watcher</Subsystem>
     <EFDB_Topic>Watcher_command_mute</EFDB_Topic>
     <Description>Mute one or more alarms.</Description>
     <item>
-        <EFDB_Name>name</EFDB_Name>
-        <Description>Name of alarm or alarms to mute. Specify a regular expression for multiple alarms.</Description>
-        <IDL_Type>string</IDL_Type>
-        <IDL_Size>1</IDL_Size>
-        <Units>unitless</Units>
-        <Count>1</Count>
+      <EFDB_Name>name</EFDB_Name>
+      <Description>Name of alarm or alarms to mute. Specify a regular expression for multiple alarms.</Description>
+      <IDL_Type>string</IDL_Type>
+      <IDL_Size>1</IDL_Size>
+      <Units>unitless</Units>
+      <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>duration</EFDB_Name>
-        <Description>Duration of mute.</Description>
-        <IDL_Type>float</IDL_Type>
-        <Units>second</Units>
-        <Count>1</Count>
+      <EFDB_Name>duration</EFDB_Name>
+      <Description>Duration of mute.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>second</Units>
+      <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>severity</EFDB_Name>
-        <Description>Severity level being muted. An AlarmSeverity enum.</Description>
-        <IDL_Type>int</IDL_Type>
-        <Units>unitless</Units>
-        <Count>1</Count>
+      <EFDB_Name>severity</EFDB_Name>
+      <Description>Severity level being muted. An AlarmSeverity enum.</Description>
+      <IDL_Type>int</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>mutedBy</EFDB_Name>
-        <Description>User who muted the alarm.</Description>
-        <IDL_Type>string</IDL_Type>
-        <IDL_Size>1</IDL_Size>
-        <Units>unitless</Units>
-        <Count>1</Count>
+      <EFDB_Name>mutedBy</EFDB_Name>
+      <Description>User who muted the alarm.</Description>
+      <IDL_Type>string</IDL_Type>
+      <IDL_Size>1</IDL_Size>
+      <Units>unitless</Units>
+      <Count>1</Count>
     </item>
-</SALCommand>
-
-<SALCommand>
+  </SALCommand>
+  <SALCommand>
     <Subsystem>Watcher</Subsystem>
     <EFDB_Topic>Watcher_command_showAlarms</EFDB_Topic>
-    <Description>Output an alarm event for each active alarm (those with maxSeverity > None). The Watcher GUI should issue this command when it starts up.</Description>
-</SALCommand>
-
-<SALCommand>
+    <Description>Output an alarm event for each active alarm (those with maxSeverity &gt; None). The Watcher GUI should issue this command when it starts up.</Description>
+  </SALCommand>
+  <SALCommand>
     <Subsystem>Watcher</Subsystem>
     <EFDB_Topic>Watcher_command_unacknowledge</EFDB_Topic>
     <Description>Unacknowledge one or more alarms. A no-op for alarms that have not been acknowledged or are in the nominal state. Note: when an alarm with severity=None is acknowledged the alarm is reset to nominal state, so unacknowledge will have no effect.</Description>
     <item>
-        <EFDB_Name>name</EFDB_Name>
-        <Description>Name of alarm or alarms to unacknowledge. Specify a regular expression for multiple alarms.</Description>
-        <IDL_Type>string</IDL_Type>
-        <IDL_Size>1</IDL_Size>
-        <Units>unitless</Units>
-        <Count>1</Count>
+      <EFDB_Name>name</EFDB_Name>
+      <Description>Name of alarm or alarms to unacknowledge. Specify a regular expression for multiple alarms.</Description>
+      <IDL_Type>string</IDL_Type>
+      <IDL_Size>1</IDL_Size>
+      <Units>unitless</Units>
+      <Count>1</Count>
     </item>
-</SALCommand>
-
-<SALCommand>
+  </SALCommand>
+  <SALCommand>
     <Subsystem>Watcher</Subsystem>
     <EFDB_Topic>Watcher_command_unmute</EFDB_Topic>
     <Description>Unmute one or more alarms.</Description>
     <item>
-        <EFDB_Name>name</EFDB_Name>
-        <Description>Name of alarm or alarms to unmute. Specify a regular expression for multiple alarms; ".*" to unmute all alarms.</Description>
-        <IDL_Type>string</IDL_Type>
-        <IDL_Size>1</IDL_Size>
-        <Units>unitless</Units>
-        <Count>1</Count>
+      <EFDB_Name>name</EFDB_Name>
+      <Description>Name of alarm or alarms to unmute. Specify a regular expression for multiple alarms; ".*" to unmute all alarms.</Description>
+      <IDL_Type>string</IDL_Type>
+      <IDL_Size>1</IDL_Size>
+      <Units>unitless</Units>
+      <Count>1</Count>
     </item>
-</SALCommand>
-
+  </SALCommand>
 </SALCommandSet>

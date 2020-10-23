@@ -1,2370 +1,2370 @@
-<?xml version="1.0" encoding="UTF-8" ?>
+<?xml version="1.0" encoding="UTF-8"?>
 <?xml-stylesheet type="text/xsl" href="http://project.lsst.org/ts/sal_objects/schema/SALEventSet.xsl" ?>
 <SALEventSet xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://project.lsst.org/ts/sal_objects/schema/SALEventSet.xsd">
-    <SALEvent>
-        <Subsystem>CCCamera</Subsystem>
-        <EFDB_Topic>CCCamera_logevent_offlineDetailedState</EFDB_Topic>
-        <item>
-            <EFDB_Name>substate</EFDB_Name>
-            <Description>Enumeration of valid substates</Description>
-            <IDL_Type>long</IDL_Type>
-            <Units>unitless</Units>
-            <Count>1</Count>
-            <Enumeration>OFFLINE_AVAILABLE,OFFLINE_PUBLISH_ONLY</Enumeration>
-        </item>
-        <item>
-            <EFDB_Name>timestampTransition</EFDB_Name>
-            <Description>The time at which the state transition occurred</Description>
-            <IDL_Type>double</IDL_Type>
-            <Units>second</Units>
-            <Count>1</Count>
-        </item>
-    </SALEvent>
-    <SALEvent>
-        <Subsystem>CCCamera</Subsystem>
-        <EFDB_Topic>CCCamera_logevent_endReadout</EFDB_Topic>
-        <Description>Event sent at end of readout. When this event is received the corresponding image should be complete
+  <SALEvent>
+    <Subsystem>CCCamera</Subsystem>
+    <EFDB_Topic>CCCamera_logevent_offlineDetailedState</EFDB_Topic>
+    <item>
+      <EFDB_Name>substate</EFDB_Name>
+      <Description>Enumeration of valid substates</Description>
+      <IDL_Type>long</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+      <Enumeration>OFFLINE_AVAILABLE,OFFLINE_PUBLISH_ONLY</Enumeration>
+    </item>
+    <item>
+      <EFDB_Name>timestampTransition</EFDB_Name>
+      <Description>The time at which the state transition occurred</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>second</Units>
+      <Count>1</Count>
+    </item>
+  </SALEvent>
+  <SALEvent>
+    <Subsystem>CCCamera</Subsystem>
+    <EFDB_Topic>CCCamera_logevent_endReadout</EFDB_Topic>
+    <Description>Event sent at end of readout. When this event is received the corresponding image should be complete
         in the DAQ 2-day store.
         Note: all : delimited strings (aka string arrays) follow the escaping convention defined in CAP-572</Description>
-        <item>
-            <EFDB_Name>additionalKeys</EFDB_Name>
-            <Description>Additional keys passed to the takeImages command (: delimited)</Description>
-            <IDL_Type>string</IDL_Type>
-            <IDL_Size>1</IDL_Size>
-            <Units>unitless</Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>additionalValues</EFDB_Name>
-            <Description>Additional values passed to the takeImages command (: delimited, in same order as additionalKeys)</Description>
-            <IDL_Type>string</IDL_Type>
-            <IDL_Size>1</IDL_Size>
-            <Units>unitless</Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>imagesInSequence</EFDB_Name>
-            <Description>The total number of requested images in sequence</Description>
-            <IDL_Type>long</IDL_Type>
-            <Units>unitless</Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>imageName</EFDB_Name>
-            <Description>The imageName for this specific exposure, assigned by the camera</Description>
-            <IDL_Type>string</IDL_Type>
-            <IDL_Size>32</IDL_Size>
-            <Units>unitless</Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>imageIndex</EFDB_Name>
-            <Description>The zero based index number for this specific exposure within the sequence</Description>
-            <IDL_Type>long</IDL_Type>
-            <Units>unitless</Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>imageSource</EFDB_Name>
-            <Description>The source component of the image name (AT/CC/MC)</Description>
-            <IDL_Type>string</IDL_Type>
-            <IDL_Size>2</IDL_Size>
-            <Units>unitless</Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>imageController</EFDB_Name>
-            <Description>The controller for the image  (O=OCS/C=CCS/...)</Description>
-            <IDL_Type>string</IDL_Type>
-            <IDL_Size>1</IDL_Size>
-            <Units>unitless</Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>imageDate</EFDB_Name>
-            <Description>The date component of the image name (YYYYMMDD)</Description>
-            <IDL_Type>string</IDL_Type>
-            <IDL_Size>8</IDL_Size>
-            <Units>unitless</Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>imageNumber</EFDB_Name>
-            <Description>The image number (SEQNO) component of the image name</Description>
-            <IDL_Type>long</IDL_Type>
-            <Units>unitless</Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>timestampAcquisitionStart</EFDB_Name>
-            <Description>The effective time at which the image acquisition started (i.e. the end of the previous clear or readout)</Description>
-            <IDL_Type>double</IDL_Type>
-            <Units>second</Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>requestedExposureTime</EFDB_Name>
-            <Description>The requested exposure time (as specified in the takeImages command)</Description>
-            <IDL_Type>double</IDL_Type>
-            <Units>second</Units>
-            <Count>1</Count>
-        </item>
-        <!-- Extra info add to endReadout as part of CAP-209 -->
-        <item>
-            <EFDB_Name>timestampEndOfReadout</EFDB_Name>
-            <Description>The time at which the readout was completed</Description>
-            <IDL_Type>double</IDL_Type>
-            <Units>second</Units>
-            <Count>1</Count>
-        </item>
-    </SALEvent>
-    <SALEvent>
-        <Subsystem>CCCamera</Subsystem>
-        <EFDB_Topic>CCCamera_logevent_endTakeImage</EFDB_Topic>
-    </SALEvent>
-    <SALEvent>
-        <Subsystem>CCCamera</Subsystem>
-        <EFDB_Topic>CCCamera_logevent_imageReadinessDetailedState</EFDB_Topic>
-        <item>
-            <EFDB_Name>substate</EFDB_Name>
-            <Description>Enumeration of valid substates</Description>
-            <IDL_Type>long</IDL_Type>
-            <Units>unitless</Units>
-            <Count>1</Count>
-            <Enumeration>READY,NOT_READY,GETTING_READY</Enumeration>
-        </item>
-        <item>
-            <EFDB_Name>timestampTransition</EFDB_Name>
-            <Description>The time at which the state transition occurred</Description>
-            <IDL_Type>double</IDL_Type>
-            <Units>second</Units>
-            <Count>1</Count>
-        </item>
-    </SALEvent>
-    <SALEvent>
-        <Subsystem>CCCamera</Subsystem>
-        <EFDB_Topic>CCCamera_logevent_startSetFilter</EFDB_Topic>
-        <item>
-            <EFDB_Name>filterName</EFDB_Name>
-            <Description>The name of the filter being installed (e.g. U-001)</Description>
-            <IDL_Type>string</IDL_Type>
-            <IDL_Size>1</IDL_Size>
-            <Units>unitless</Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>filterType</EFDB_Name>
-            <Description>The type of the filter being installed (e.g. g,r,i,z,y,u,none,other). If other it can optionally be
+    <item>
+      <EFDB_Name>additionalKeys</EFDB_Name>
+      <Description>Additional keys passed to the takeImages command (: delimited)</Description>
+      <IDL_Type>string</IDL_Type>
+      <IDL_Size>1</IDL_Size>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>additionalValues</EFDB_Name>
+      <Description>Additional values passed to the takeImages command (: delimited, in same order as additionalKeys)</Description>
+      <IDL_Type>string</IDL_Type>
+      <IDL_Size>1</IDL_Size>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>imagesInSequence</EFDB_Name>
+      <Description>The total number of requested images in sequence</Description>
+      <IDL_Type>long</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>imageName</EFDB_Name>
+      <Description>The imageName for this specific exposure, assigned by the camera</Description>
+      <IDL_Type>string</IDL_Type>
+      <IDL_Size>32</IDL_Size>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>imageIndex</EFDB_Name>
+      <Description>The zero based index number for this specific exposure within the sequence</Description>
+      <IDL_Type>long</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>imageSource</EFDB_Name>
+      <Description>The source component of the image name (AT/CC/MC)</Description>
+      <IDL_Type>string</IDL_Type>
+      <IDL_Size>2</IDL_Size>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>imageController</EFDB_Name>
+      <Description>The controller for the image  (O=OCS/C=CCS/...)</Description>
+      <IDL_Type>string</IDL_Type>
+      <IDL_Size>1</IDL_Size>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>imageDate</EFDB_Name>
+      <Description>The date component of the image name (YYYYMMDD)</Description>
+      <IDL_Type>string</IDL_Type>
+      <IDL_Size>8</IDL_Size>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>imageNumber</EFDB_Name>
+      <Description>The image number (SEQNO) component of the image name</Description>
+      <IDL_Type>long</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>timestampAcquisitionStart</EFDB_Name>
+      <Description>The effective time at which the image acquisition started (i.e. the end of the previous clear or readout)</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>second</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>requestedExposureTime</EFDB_Name>
+      <Description>The requested exposure time (as specified in the takeImages command)</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>second</Units>
+      <Count>1</Count>
+    </item>
+    <!-- Extra info add to endReadout as part of CAP-209 -->
+    <item>
+      <EFDB_Name>timestampEndOfReadout</EFDB_Name>
+      <Description>The time at which the readout was completed</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>second</Units>
+      <Count>1</Count>
+    </item>
+  </SALEvent>
+  <SALEvent>
+    <Subsystem>CCCamera</Subsystem>
+    <EFDB_Topic>CCCamera_logevent_endTakeImage</EFDB_Topic>
+  </SALEvent>
+  <SALEvent>
+    <Subsystem>CCCamera</Subsystem>
+    <EFDB_Topic>CCCamera_logevent_imageReadinessDetailedState</EFDB_Topic>
+    <item>
+      <EFDB_Name>substate</EFDB_Name>
+      <Description>Enumeration of valid substates</Description>
+      <IDL_Type>long</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+      <Enumeration>READY,NOT_READY,GETTING_READY</Enumeration>
+    </item>
+    <item>
+      <EFDB_Name>timestampTransition</EFDB_Name>
+      <Description>The time at which the state transition occurred</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>second</Units>
+      <Count>1</Count>
+    </item>
+  </SALEvent>
+  <SALEvent>
+    <Subsystem>CCCamera</Subsystem>
+    <EFDB_Topic>CCCamera_logevent_startSetFilter</EFDB_Topic>
+    <item>
+      <EFDB_Name>filterName</EFDB_Name>
+      <Description>The name of the filter being installed (e.g. U-001)</Description>
+      <IDL_Type>string</IDL_Type>
+      <IDL_Size>1</IDL_Size>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>filterType</EFDB_Name>
+      <Description>The type of the filter being installed (e.g. g,r,i,z,y,u,none,other). If other it can optionally be
             followed by a : delimited qualifier, e.g. other:pinhole</Description>
-            <IDL_Type>string</IDL_Type>
-            <IDL_Size>1</IDL_Size>
-            <Units>unitless</Units>
-            <Count>1</Count>
-        </item>
-    </SALEvent>
-    <SALEvent>
-        <Subsystem>CCCamera</Subsystem>
-        <EFDB_Topic>CCCamera_logevent_startUnloadFilter</EFDB_Topic>
-    </SALEvent>
-    <SALEvent>
-        <Subsystem>CCCamera</Subsystem>
-        <EFDB_Topic>CCCamera_logevent_notReadyToTakeImage</EFDB_Topic>
-    </SALEvent>
-    <SALEvent>
-        <Subsystem>CCCamera</Subsystem>
-        <EFDB_Topic>CCCamera_logevent_startShutterClose</EFDB_Topic>
-    </SALEvent>
-    <SALEvent>
-        <Subsystem>CCCamera</Subsystem>
-        <EFDB_Topic>CCCamera_logevent_endInitializeGuider</EFDB_Topic>
-    </SALEvent>
-    <SALEvent>
-        <Subsystem>CCCamera</Subsystem>
-        <EFDB_Topic>CCCamera_logevent_endShutterClose</EFDB_Topic>
-    </SALEvent>
-    <SALEvent>
-        <Subsystem>CCCamera</Subsystem>
-        <EFDB_Topic>CCCamera_logevent_endOfImageTelemetry</EFDB_Topic>
-        <Description>Event sent once all telemetry correesponding to the image has been sent. (Typically ~300mS after the end of readout).
+      <IDL_Type>string</IDL_Type>
+      <IDL_Size>1</IDL_Size>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+  </SALEvent>
+  <SALEvent>
+    <Subsystem>CCCamera</Subsystem>
+    <EFDB_Topic>CCCamera_logevent_startUnloadFilter</EFDB_Topic>
+  </SALEvent>
+  <SALEvent>
+    <Subsystem>CCCamera</Subsystem>
+    <EFDB_Topic>CCCamera_logevent_notReadyToTakeImage</EFDB_Topic>
+  </SALEvent>
+  <SALEvent>
+    <Subsystem>CCCamera</Subsystem>
+    <EFDB_Topic>CCCamera_logevent_startShutterClose</EFDB_Topic>
+  </SALEvent>
+  <SALEvent>
+    <Subsystem>CCCamera</Subsystem>
+    <EFDB_Topic>CCCamera_logevent_endInitializeGuider</EFDB_Topic>
+  </SALEvent>
+  <SALEvent>
+    <Subsystem>CCCamera</Subsystem>
+    <EFDB_Topic>CCCamera_logevent_endShutterClose</EFDB_Topic>
+  </SALEvent>
+  <SALEvent>
+    <Subsystem>CCCamera</Subsystem>
+    <EFDB_Topic>CCCamera_logevent_endOfImageTelemetry</EFDB_Topic>
+    <Description>Event sent once all telemetry correesponding to the image has been sent. (Typically ~300mS after the end of readout).
         Note: all : delimited strings (aka string arrays) follow the escaping convention defined in CAP-572</Description>
-        <item>
-            <EFDB_Name>additionalKeys</EFDB_Name>
-            <Description>Additional keys passed to the takeImages command (: delimited)</Description>
-            <IDL_Type>string</IDL_Type>
-            <IDL_Size>1</IDL_Size>
-            <Units>unitless</Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>additionalValues</EFDB_Name>
-            <Description>Additional values passed to the takeImages command (: delimited, in same order as additionalKeys)</Description>
-            <IDL_Type>string</IDL_Type>
-            <IDL_Size>1</IDL_Size>
-            <Units>unitless</Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>imagesInSequence</EFDB_Name>
-            <Description>The total number of requested images in sequence</Description>
-            <IDL_Type>long</IDL_Type>
-            <Units>unitless</Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>imageName</EFDB_Name>
-            <Description>The imageName for this specific exposure, assigned by the camera</Description>
-            <IDL_Type>string</IDL_Type>
-            <IDL_Size>32</IDL_Size>
-            <Units>unitless</Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>imageIndex</EFDB_Name>
-            <Description>The zero based index number for this specific exposure within the sequence</Description>
-            <IDL_Type>long</IDL_Type>
-            <Units>unitless</Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>imageSource</EFDB_Name>
-            <Description>The source component of the image name (AT/CC/MC)</Description>
-            <IDL_Type>string</IDL_Type>
-            <IDL_Size>2</IDL_Size>
-            <Units>unitless</Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>imageController</EFDB_Name>
-            <Description>The controller for the image  (O=OCS/C=CCS/...)</Description>
-            <IDL_Type>string</IDL_Type>
-            <IDL_Size>1</IDL_Size>
-            <Units>unitless</Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>imageDate</EFDB_Name>
-            <Description>The date component of the image name (YYYYMMDD)</Description>
-            <IDL_Type>string</IDL_Type>
-            <IDL_Size>8</IDL_Size>
-            <Units>unitless</Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>imageNumber</EFDB_Name>
-            <Description>The image number (SEQNO) component of the image name</Description>
-            <IDL_Type>long</IDL_Type>
-            <Units>unitless</Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>timestampAcquisitionStart</EFDB_Name>
-            <Description>The effective time at which the image acquisition started (i.e. the end of the previous clear or readout)</Description>
-            <IDL_Type>double</IDL_Type>
-            <Units>second</Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>exposureTime</EFDB_Name>
-            <Description>The requested exposure time</Description>
-            <IDL_Type>double</IDL_Type>
-            <Units>second</Units>
-            <Count>1</Count>
-        </item>
-        <!-- Additional information added as part of CAP-209. -->
-        <item>
-            <EFDB_Name>imageTag</EFDB_Name>
-            <Description>The DAQ assigned image tag (hex string)</Description>
-            <IDL_Type>string</IDL_Type>
-            <IDL_Size>64</IDL_Size>
-            <Units>unitless</Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>timestampDateObs</EFDB_Name>
-            <Description>The observation date, as computed by CCS (as TAI)</Description>
-            <IDL_Type>double</IDL_Type>
-            <Units>second</Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>timestampDateEnd</EFDB_Name>
-            <Description>The end observation date, as computed by CCS (as TAI)</Description>
-            <IDL_Type>double</IDL_Type>
-            <Units>second</Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>measuredShutterOpenTime</EFDB_Name>
-            <Description>The measured shutter open time, as computed by CCS. This is a best estimate based on a summary of the full information provided
+    <item>
+      <EFDB_Name>additionalKeys</EFDB_Name>
+      <Description>Additional keys passed to the takeImages command (: delimited)</Description>
+      <IDL_Type>string</IDL_Type>
+      <IDL_Size>1</IDL_Size>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>additionalValues</EFDB_Name>
+      <Description>Additional values passed to the takeImages command (: delimited, in same order as additionalKeys)</Description>
+      <IDL_Type>string</IDL_Type>
+      <IDL_Size>1</IDL_Size>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>imagesInSequence</EFDB_Name>
+      <Description>The total number of requested images in sequence</Description>
+      <IDL_Type>long</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>imageName</EFDB_Name>
+      <Description>The imageName for this specific exposure, assigned by the camera</Description>
+      <IDL_Type>string</IDL_Type>
+      <IDL_Size>32</IDL_Size>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>imageIndex</EFDB_Name>
+      <Description>The zero based index number for this specific exposure within the sequence</Description>
+      <IDL_Type>long</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>imageSource</EFDB_Name>
+      <Description>The source component of the image name (AT/CC/MC)</Description>
+      <IDL_Type>string</IDL_Type>
+      <IDL_Size>2</IDL_Size>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>imageController</EFDB_Name>
+      <Description>The controller for the image  (O=OCS/C=CCS/...)</Description>
+      <IDL_Type>string</IDL_Type>
+      <IDL_Size>1</IDL_Size>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>imageDate</EFDB_Name>
+      <Description>The date component of the image name (YYYYMMDD)</Description>
+      <IDL_Type>string</IDL_Type>
+      <IDL_Size>8</IDL_Size>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>imageNumber</EFDB_Name>
+      <Description>The image number (SEQNO) component of the image name</Description>
+      <IDL_Type>long</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>timestampAcquisitionStart</EFDB_Name>
+      <Description>The effective time at which the image acquisition started (i.e. the end of the previous clear or readout)</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>second</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>exposureTime</EFDB_Name>
+      <Description>The requested exposure time</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>second</Units>
+      <Count>1</Count>
+    </item>
+    <!-- Additional information added as part of CAP-209. -->
+    <item>
+      <EFDB_Name>imageTag</EFDB_Name>
+      <Description>The DAQ assigned image tag (hex string)</Description>
+      <IDL_Type>string</IDL_Type>
+      <IDL_Size>64</IDL_Size>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>timestampDateObs</EFDB_Name>
+      <Description>The observation date, as computed by CCS (as TAI)</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>second</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>timestampDateEnd</EFDB_Name>
+      <Description>The end observation date, as computed by CCS (as TAI)</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>second</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>measuredShutterOpenTime</EFDB_Name>
+      <Description>The measured shutter open time, as computed by CCS. This is a best estimate based on a summary of the full information provided
             in the shutterBladeMotionProfile events.</Description>
-            <IDL_Type>double</IDL_Type>
-            <Units>second</Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>darkTime</EFDB_Name>
-            <Description>The dark time, as computed by CCS</Description>
-            <IDL_Type>double</IDL_Type>
-            <Units>second</Units>
-            <Count>1</Count>
-        </item>
-    </SALEvent>
-    <SALEvent>
-        <Subsystem>CCCamera</Subsystem>
-        <EFDB_Topic>CCCamera_logevent_endUnloadFilter</EFDB_Topic>
-    </SALEvent>
-    <SALEvent>
-        <Subsystem>CCCamera</Subsystem>
-        <EFDB_Topic>CCCamera_logevent_calibrationDetailedState</EFDB_Topic>
-        <item>
-            <EFDB_Name>substate</EFDB_Name>
-            <Description>Enumeration of valid substates</Description>
-            <IDL_Type>long</IDL_Type>
-            <Units>unitless</Units>
-            <Count>1</Count>
-            <Enumeration>DISABLED,ENABLED,INTEGRATING</Enumeration>
-        </item>
-        <item>
-            <EFDB_Name>timestampTransition</EFDB_Name>
-            <Description>The time at which the state transition occurred</Description>
-            <IDL_Type>double</IDL_Type>
-            <Units>second</Units>
-            <Count>1</Count>
-        </item>
-    </SALEvent>
-    <SALEvent>
-        <Subsystem>CCCamera</Subsystem>
-        <EFDB_Topic>CCCamera_logevent_endRotateCarousel</EFDB_Topic>
-    </SALEvent>
-    <SALEvent>
-        <Subsystem>CCCamera</Subsystem>
-        <EFDB_Topic>CCCamera_logevent_startLoadFilter</EFDB_Topic>
-    </SALEvent>
-    <SALEvent>
-        <Subsystem>CCCamera</Subsystem>
-        <EFDB_Topic>CCCamera_logevent_filterChangerDetailedState</EFDB_Topic>
-        <item>
-            <EFDB_Name>substate</EFDB_Name>
-            <Description>The filter changer state</Description>
-            <IDL_Type>long</IDL_Type>
-            <Units>unitless</Units>
-            <Count>1</Count>
-            <Enumeration>UNLOADING,LOADING,LOADED,UNLOADED,ROTATING</Enumeration>
-        </item>
-        <item>
-            <EFDB_Name>timestampTransition</EFDB_Name>
-            <Description>The time at which the state transition occurred</Description>
-            <IDL_Type>double</IDL_Type>
-            <Units>second</Units>
-            <Count>1</Count>
-        </item>
-    </SALEvent>
-    <SALEvent>
-        <Subsystem>CCCamera</Subsystem>
-        <EFDB_Topic>CCCamera_logevent_shutterDetailedState</EFDB_Topic>
-        <item>
-            <EFDB_Name>substate</EFDB_Name>
-            <Description>Enumeration of valid substates</Description>
-            <IDL_Type>long</IDL_Type>
-            <Units>unitless</Units>
-            <Count>1</Count>
-            <Enumeration>CLOSED,OPEN,CLOSING,OPENING</Enumeration>
-        </item>
-        <item>
-            <EFDB_Name>timestampTransition</EFDB_Name>
-            <Description>The time at which the state transition occurred</Description>
-            <IDL_Type>double</IDL_Type>
-            <Units>second</Units>
-            <Count>1</Count>
-        </item>
-    </SALEvent>
-    <SALEvent>
-        <Subsystem>CCCamera</Subsystem>
-        <EFDB_Topic>CCCamera_logevent_readyToTakeImage</EFDB_Topic>
-    </SALEvent>
-    <SALEvent>
-        <Subsystem>CCCamera</Subsystem>
-        <EFDB_Topic>CCCamera_logevent_ccsCommandState</EFDB_Topic>
-        <item>
-            <EFDB_Name>substate</EFDB_Name>
-            <Description>Substate of the CCS command.</Description>
-            <IDL_Type>long</IDL_Type>
-            <Units>unitless</Units>
-            <Count>1</Count>
-            <Enumeration>IDLE,BUSY</Enumeration>
-        </item>
-        <item>
-            <EFDB_Name>timestampTransition</EFDB_Name>
-            <Description>The time at which the state transition occurred</Description>
-            <IDL_Type>double</IDL_Type>
-            <Units>second</Units>
-            <Count>1</Count>
-        </item>
-    </SALEvent>
-    <SALEvent>
-        <Subsystem>CCCamera</Subsystem>
-        <EFDB_Topic>CCCamera_logevent_prepareToTakeImage</EFDB_Topic>
-    </SALEvent>
-    <SALEvent>
-        <Subsystem>CCCamera</Subsystem>
-        <EFDB_Topic>CCCamera_logevent_ccsConfigured</EFDB_Topic>
-    </SALEvent>
-    <SALEvent>
-        <Subsystem>CCCamera</Subsystem>
-        <EFDB_Topic>CCCamera_logevent_endLoadFilter</EFDB_Topic>
-    </SALEvent>
-    <SALEvent>
-        <Subsystem>CCCamera</Subsystem>
-        <EFDB_Topic>CCCamera_logevent_endShutterOpen</EFDB_Topic>
-    </SALEvent>
-    <SALEvent>
-        <Subsystem>CCCamera</Subsystem>
-        <EFDB_Topic>CCCamera_logevent_startIntegration</EFDB_Topic>
-        <Description>Event sent at start of image integration.
+      <IDL_Type>double</IDL_Type>
+      <Units>second</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>darkTime</EFDB_Name>
+      <Description>The dark time, as computed by CCS</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>second</Units>
+      <Count>1</Count>
+    </item>
+  </SALEvent>
+  <SALEvent>
+    <Subsystem>CCCamera</Subsystem>
+    <EFDB_Topic>CCCamera_logevent_endUnloadFilter</EFDB_Topic>
+  </SALEvent>
+  <SALEvent>
+    <Subsystem>CCCamera</Subsystem>
+    <EFDB_Topic>CCCamera_logevent_calibrationDetailedState</EFDB_Topic>
+    <item>
+      <EFDB_Name>substate</EFDB_Name>
+      <Description>Enumeration of valid substates</Description>
+      <IDL_Type>long</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+      <Enumeration>DISABLED,ENABLED,INTEGRATING</Enumeration>
+    </item>
+    <item>
+      <EFDB_Name>timestampTransition</EFDB_Name>
+      <Description>The time at which the state transition occurred</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>second</Units>
+      <Count>1</Count>
+    </item>
+  </SALEvent>
+  <SALEvent>
+    <Subsystem>CCCamera</Subsystem>
+    <EFDB_Topic>CCCamera_logevent_endRotateCarousel</EFDB_Topic>
+  </SALEvent>
+  <SALEvent>
+    <Subsystem>CCCamera</Subsystem>
+    <EFDB_Topic>CCCamera_logevent_startLoadFilter</EFDB_Topic>
+  </SALEvent>
+  <SALEvent>
+    <Subsystem>CCCamera</Subsystem>
+    <EFDB_Topic>CCCamera_logevent_filterChangerDetailedState</EFDB_Topic>
+    <item>
+      <EFDB_Name>substate</EFDB_Name>
+      <Description>The filter changer state</Description>
+      <IDL_Type>long</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+      <Enumeration>UNLOADING,LOADING,LOADED,UNLOADED,ROTATING</Enumeration>
+    </item>
+    <item>
+      <EFDB_Name>timestampTransition</EFDB_Name>
+      <Description>The time at which the state transition occurred</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>second</Units>
+      <Count>1</Count>
+    </item>
+  </SALEvent>
+  <SALEvent>
+    <Subsystem>CCCamera</Subsystem>
+    <EFDB_Topic>CCCamera_logevent_shutterDetailedState</EFDB_Topic>
+    <item>
+      <EFDB_Name>substate</EFDB_Name>
+      <Description>Enumeration of valid substates</Description>
+      <IDL_Type>long</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+      <Enumeration>CLOSED,OPEN,CLOSING,OPENING</Enumeration>
+    </item>
+    <item>
+      <EFDB_Name>timestampTransition</EFDB_Name>
+      <Description>The time at which the state transition occurred</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>second</Units>
+      <Count>1</Count>
+    </item>
+  </SALEvent>
+  <SALEvent>
+    <Subsystem>CCCamera</Subsystem>
+    <EFDB_Topic>CCCamera_logevent_readyToTakeImage</EFDB_Topic>
+  </SALEvent>
+  <SALEvent>
+    <Subsystem>CCCamera</Subsystem>
+    <EFDB_Topic>CCCamera_logevent_ccsCommandState</EFDB_Topic>
+    <item>
+      <EFDB_Name>substate</EFDB_Name>
+      <Description>Substate of the CCS command.</Description>
+      <IDL_Type>long</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+      <Enumeration>IDLE,BUSY</Enumeration>
+    </item>
+    <item>
+      <EFDB_Name>timestampTransition</EFDB_Name>
+      <Description>The time at which the state transition occurred</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>second</Units>
+      <Count>1</Count>
+    </item>
+  </SALEvent>
+  <SALEvent>
+    <Subsystem>CCCamera</Subsystem>
+    <EFDB_Topic>CCCamera_logevent_prepareToTakeImage</EFDB_Topic>
+  </SALEvent>
+  <SALEvent>
+    <Subsystem>CCCamera</Subsystem>
+    <EFDB_Topic>CCCamera_logevent_ccsConfigured</EFDB_Topic>
+  </SALEvent>
+  <SALEvent>
+    <Subsystem>CCCamera</Subsystem>
+    <EFDB_Topic>CCCamera_logevent_endLoadFilter</EFDB_Topic>
+  </SALEvent>
+  <SALEvent>
+    <Subsystem>CCCamera</Subsystem>
+    <EFDB_Topic>CCCamera_logevent_endShutterOpen</EFDB_Topic>
+  </SALEvent>
+  <SALEvent>
+    <Subsystem>CCCamera</Subsystem>
+    <EFDB_Topic>CCCamera_logevent_startIntegration</EFDB_Topic>
+    <Description>Event sent at start of image integration.
         Note: all : delimited strings (aka string arrays) follow the escaping convention defined in CAP-572</Description>
-        <item>
-            <EFDB_Name>additionalKeys</EFDB_Name>
-            <Description>Additional keys passed to the takeImages command (: delimited)</Description>
-            <IDL_Type>string</IDL_Type>
-            <IDL_Size>1</IDL_Size>
-            <Units>unitless</Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>additionalValues</EFDB_Name>
-            <Description>Additional values passed to the takeImages command (: delimited, in same order as additionalKeys)</Description>
-            <IDL_Type>string</IDL_Type>
-            <IDL_Size>1</IDL_Size>
-            <Units>unitless</Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>imagesInSequence</EFDB_Name>
-            <Description>The total number of requested images in sequence</Description>
-            <IDL_Type>long</IDL_Type>
-            <Units>unitless</Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>imageName</EFDB_Name>
-            <Description>The imageName for this specific exposure, assigned by the camera</Description>
-            <IDL_Type>string</IDL_Type>
-            <IDL_Size>32</IDL_Size>
-            <Units>unitless</Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>imageIndex</EFDB_Name>
-            <Description>The zero based index number for this specific exposure within the sequence</Description>
-            <IDL_Type>long</IDL_Type>
-            <Units>unitless</Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>imageSource</EFDB_Name>
-            <Description>The source component of the image name (AT/CC/MC)</Description>
-            <IDL_Type>string</IDL_Type>
-            <IDL_Size>2</IDL_Size>
-            <Units>unitless</Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>imageController</EFDB_Name>
-            <Description>The controller for the image  (O=OCS/C=CCS/...)</Description>
-            <IDL_Type>string</IDL_Type>
-            <IDL_Size>1</IDL_Size>
-            <Units>unitless</Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>imageDate</EFDB_Name>
-            <Description>The date component of the image name (YYYYMMDD)</Description>
-            <IDL_Type>string</IDL_Type>
-            <IDL_Size>8</IDL_Size>
-            <Units>unitless</Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>imageNumber</EFDB_Name>
-            <Description>The image number (SEQNO) component of the image name</Description>
-            <IDL_Type>long</IDL_Type>
-            <Units>unitless</Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>timestampAcquisitionStart</EFDB_Name>
-            <Description>The effective time at which the image acquisition started (i.e. the end of the previous clear or readout)</Description>
-            <IDL_Type>double</IDL_Type>
-            <Units>second</Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>exposureTime</EFDB_Name>
-            <Description>The requested exposure time</Description>
-            <IDL_Type>double</IDL_Type>
-            <Units>second</Units>
-            <Count>1</Count>
-        </item>
-    </SALEvent>
-    <SALEvent>
-        <Subsystem>CCCamera</Subsystem>
-        <EFDB_Topic>CCCamera_logevent_endInitializeImage</EFDB_Topic>
-    </SALEvent>
-    <SALEvent>
-        <Subsystem>CCCamera</Subsystem>
-        <EFDB_Topic>CCCamera_logevent_endSetFilter</EFDB_Topic>
-        <Description>Event issued once the new filter is in its final position</Description>
-        <item>
-            <EFDB_Name>filterName</EFDB_Name>
-            <Description>The name of the filter being installed (e.g. U-001)</Description>
-            <IDL_Type>string</IDL_Type>
-            <IDL_Size>1</IDL_Size>
-            <Units>unitless</Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>filterType</EFDB_Name>
-            <Description>The type of the filter being installed (e.g. g,r,i,z,y,u,none,other). If other it can optionally be
+    <item>
+      <EFDB_Name>additionalKeys</EFDB_Name>
+      <Description>Additional keys passed to the takeImages command (: delimited)</Description>
+      <IDL_Type>string</IDL_Type>
+      <IDL_Size>1</IDL_Size>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>additionalValues</EFDB_Name>
+      <Description>Additional values passed to the takeImages command (: delimited, in same order as additionalKeys)</Description>
+      <IDL_Type>string</IDL_Type>
+      <IDL_Size>1</IDL_Size>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>imagesInSequence</EFDB_Name>
+      <Description>The total number of requested images in sequence</Description>
+      <IDL_Type>long</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>imageName</EFDB_Name>
+      <Description>The imageName for this specific exposure, assigned by the camera</Description>
+      <IDL_Type>string</IDL_Type>
+      <IDL_Size>32</IDL_Size>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>imageIndex</EFDB_Name>
+      <Description>The zero based index number for this specific exposure within the sequence</Description>
+      <IDL_Type>long</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>imageSource</EFDB_Name>
+      <Description>The source component of the image name (AT/CC/MC)</Description>
+      <IDL_Type>string</IDL_Type>
+      <IDL_Size>2</IDL_Size>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>imageController</EFDB_Name>
+      <Description>The controller for the image  (O=OCS/C=CCS/...)</Description>
+      <IDL_Type>string</IDL_Type>
+      <IDL_Size>1</IDL_Size>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>imageDate</EFDB_Name>
+      <Description>The date component of the image name (YYYYMMDD)</Description>
+      <IDL_Type>string</IDL_Type>
+      <IDL_Size>8</IDL_Size>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>imageNumber</EFDB_Name>
+      <Description>The image number (SEQNO) component of the image name</Description>
+      <IDL_Type>long</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>timestampAcquisitionStart</EFDB_Name>
+      <Description>The effective time at which the image acquisition started (i.e. the end of the previous clear or readout)</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>second</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>exposureTime</EFDB_Name>
+      <Description>The requested exposure time</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>second</Units>
+      <Count>1</Count>
+    </item>
+  </SALEvent>
+  <SALEvent>
+    <Subsystem>CCCamera</Subsystem>
+    <EFDB_Topic>CCCamera_logevent_endInitializeImage</EFDB_Topic>
+  </SALEvent>
+  <SALEvent>
+    <Subsystem>CCCamera</Subsystem>
+    <EFDB_Topic>CCCamera_logevent_endSetFilter</EFDB_Topic>
+    <Description>Event issued once the new filter is in its final position</Description>
+    <item>
+      <EFDB_Name>filterName</EFDB_Name>
+      <Description>The name of the filter being installed (e.g. U-001)</Description>
+      <IDL_Type>string</IDL_Type>
+      <IDL_Size>1</IDL_Size>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>filterType</EFDB_Name>
+      <Description>The type of the filter being installed (e.g. g,r,i,z,y,u,none,other). If other it can optionally be
             followed by a : delimited qualifier, e.g. other:pinhole</Description>
-            <IDL_Type>string</IDL_Type>
-            <IDL_Size>1</IDL_Size>
-            <Units>unitless</Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>filterSlot</EFDB_Name>
-            <Description>The slot which the filter is in (ComCam) or came from (Main Camera)</Description>
-            <IDL_Type>int</IDL_Type>
-            <IDL_Size>1</IDL_Size>
-            <Units>unitless</Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>filterPosition</EFDB_Name>
-            <Description>For ComCam this is the measured linear encoder position once the filter in in place. For Main Camera it may be unused.</Description>
-            <IDL_Type>double</IDL_Type>
-            <IDL_Size>1</IDL_Size>
-            <Units>mm</Units>
-            <Count>1</Count>
-        </item>
-    </SALEvent>
-    <SALEvent>
-        <Subsystem>CCCamera</Subsystem>
-        <EFDB_Topic>CCCamera_logevent_startShutterOpen</EFDB_Topic>
-    </SALEvent>
-    <SALEvent>
-        <Subsystem>CCCamera</Subsystem>
-        <EFDB_Topic>CCCamera_logevent_raftsDetailedState</EFDB_Topic>
-        <item>
-            <EFDB_Name>substate</EFDB_Name>
-            <Description>Enumeration of valid substates</Description>
-            <IDL_Type>long</IDL_Type>
-            <Units>unitless</Units>
-            <Count>1</Count>
-            <Enumeration>NEEDS_CLEAR,CLEARING,INTEGRATING,READING_OUT,QUIESCENT</Enumeration>
-        </item>
-        <item>
-            <EFDB_Name>timestampTransition</EFDB_Name>
-            <Description>The time at which the state transition occurred</Description>
-            <IDL_Type>double</IDL_Type>
-            <Units>second</Units>
-            <Count>1</Count>
-        </item>
-    </SALEvent>
-    <SALEvent>
-        <Subsystem>CCCamera</Subsystem>
-        <EFDB_Topic>CCCamera_logevent_availableFilters</EFDB_Topic>
-        <item>
-            <EFDB_Name>filterNames</EFDB_Name>
-            <Description>A list of installed filter names (comma delimimted, U-001,G-004,R-010,Z-012,Y-014), in the same order as the list of filter types.</Description>
-            <IDL_Type>string</IDL_Type>
-            <IDL_Size>256</IDL_Size>
-            <Units>unitless</Units>
-            <Count>1</Count>
-        </item>
-    </SALEvent>
-    <SALEvent>
-        <Subsystem>CCCamera</Subsystem>
-        <EFDB_Topic>CCCamera_logevent_startReadout</EFDB_Topic>
-        <Description>Event sent at start of readout.
+      <IDL_Type>string</IDL_Type>
+      <IDL_Size>1</IDL_Size>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>filterSlot</EFDB_Name>
+      <Description>The slot which the filter is in (ComCam) or came from (Main Camera)</Description>
+      <IDL_Type>int</IDL_Type>
+      <IDL_Size>1</IDL_Size>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>filterPosition</EFDB_Name>
+      <Description>For ComCam this is the measured linear encoder position once the filter in in place. For Main Camera it may be unused.</Description>
+      <IDL_Type>double</IDL_Type>
+      <IDL_Size>1</IDL_Size>
+      <Units>mm</Units>
+      <Count>1</Count>
+    </item>
+  </SALEvent>
+  <SALEvent>
+    <Subsystem>CCCamera</Subsystem>
+    <EFDB_Topic>CCCamera_logevent_startShutterOpen</EFDB_Topic>
+  </SALEvent>
+  <SALEvent>
+    <Subsystem>CCCamera</Subsystem>
+    <EFDB_Topic>CCCamera_logevent_raftsDetailedState</EFDB_Topic>
+    <item>
+      <EFDB_Name>substate</EFDB_Name>
+      <Description>Enumeration of valid substates</Description>
+      <IDL_Type>long</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+      <Enumeration>NEEDS_CLEAR,CLEARING,INTEGRATING,READING_OUT,QUIESCENT</Enumeration>
+    </item>
+    <item>
+      <EFDB_Name>timestampTransition</EFDB_Name>
+      <Description>The time at which the state transition occurred</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>second</Units>
+      <Count>1</Count>
+    </item>
+  </SALEvent>
+  <SALEvent>
+    <Subsystem>CCCamera</Subsystem>
+    <EFDB_Topic>CCCamera_logevent_availableFilters</EFDB_Topic>
+    <item>
+      <EFDB_Name>filterNames</EFDB_Name>
+      <Description>A list of installed filter names (comma delimimted, U-001,G-004,R-010,Z-012,Y-014), in the same order as the list of filter types.</Description>
+      <IDL_Type>string</IDL_Type>
+      <IDL_Size>256</IDL_Size>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+  </SALEvent>
+  <SALEvent>
+    <Subsystem>CCCamera</Subsystem>
+    <EFDB_Topic>CCCamera_logevent_startReadout</EFDB_Topic>
+    <Description>Event sent at start of readout.
         Note: all : delimited strings (aka string arrays) follow the escaping convention defined in CAP-572</Description>
-        <item>
-            <EFDB_Name>additionalKeys</EFDB_Name>
-            <Description>Additional keys passed to the takeImages command (: delimited)</Description>
-            <IDL_Type>string</IDL_Type>
-            <IDL_Size>1</IDL_Size>
-            <Units>unitless</Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>additionalValues</EFDB_Name>
-            <Description>Additional values passed to the takeImages command (: delimited, in same order as additionalKeys)</Description>
-            <IDL_Type>string</IDL_Type>
-            <IDL_Size>1</IDL_Size>
-            <Units>unitless</Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>imagesInSequence</EFDB_Name>
-            <Description>The total number of requested images in sequence</Description>
-            <IDL_Type>long</IDL_Type>
-            <Units>unitless</Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>imageName</EFDB_Name>
-            <Description>The imageName for this specific exposure, assigned by the camera</Description>
-            <IDL_Type>string</IDL_Type>
-            <IDL_Size>32</IDL_Size>
-            <Units>unitless</Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>imageIndex</EFDB_Name>
-            <Description>The zero based index number for this specific exposure within the sequence</Description>
-            <IDL_Type>long</IDL_Type>
-            <Units>unitless</Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>imageSource</EFDB_Name>
-            <Description>The source component of the image name (AT/CC/MC)</Description>
-            <IDL_Type>string</IDL_Type>
-            <IDL_Size>2</IDL_Size>
-            <Units>unitless</Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>imageController</EFDB_Name>
-            <Description>The controller for the image  (O=OCS/C=CCS/...)</Description>
-            <IDL_Type>string</IDL_Type>
-            <IDL_Size>1</IDL_Size>
-            <Units>unitless</Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>imageDate</EFDB_Name>
-            <Description>The date component of the image name (YYYYMMDD)</Description>
-            <IDL_Type>string</IDL_Type>
-            <IDL_Size>8</IDL_Size>
-            <Units>unitless</Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>imageNumber</EFDB_Name>
-            <Description>The image number (SEQNO) component of the image name</Description>
-            <IDL_Type>long</IDL_Type>
-            <Units>unitless</Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>timestampAcquisitionStart</EFDB_Name>
-            <Description>The effective time at which the image acquisition started (i.e. the end of the previous clear or readout)</Description>
-            <IDL_Type>double</IDL_Type>
-            <Units>second</Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>exposureTime</EFDB_Name>
-            <Description>The requested exposure time</Description>
-            <IDL_Type>double</IDL_Type>
-            <Units>second</Units>
-            <Count>1</Count>
-        </item>
-        <!-- Extra info add to startReadout as part of CAP-209 -->
-        <item>
-            <EFDB_Name>timestampStartOfReadout</EFDB_Name>
-            <Description>The time at which the readout was triggered</Description>
-            <IDL_Type>double</IDL_Type>
-            <Units>second</Units>
-            <Count>1</Count>
-        </item>
-    </SALEvent>
-    <SALEvent>
-        <Subsystem>CCCamera</Subsystem>
-        <EFDB_Topic>CCCamera_logevent_startRotateCarousel</EFDB_Topic>
-    </SALEvent>
-    <SALEvent>
-        <Subsystem>CCCamera</Subsystem>
-        <EFDB_Topic>CCCamera_logevent_imageReadoutParameters</EFDB_Topic>
-        <Description>Event sent describing image readout parameters.
+    <item>
+      <EFDB_Name>additionalKeys</EFDB_Name>
+      <Description>Additional keys passed to the takeImages command (: delimited)</Description>
+      <IDL_Type>string</IDL_Type>
+      <IDL_Size>1</IDL_Size>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>additionalValues</EFDB_Name>
+      <Description>Additional values passed to the takeImages command (: delimited, in same order as additionalKeys)</Description>
+      <IDL_Type>string</IDL_Type>
+      <IDL_Size>1</IDL_Size>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>imagesInSequence</EFDB_Name>
+      <Description>The total number of requested images in sequence</Description>
+      <IDL_Type>long</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>imageName</EFDB_Name>
+      <Description>The imageName for this specific exposure, assigned by the camera</Description>
+      <IDL_Type>string</IDL_Type>
+      <IDL_Size>32</IDL_Size>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>imageIndex</EFDB_Name>
+      <Description>The zero based index number for this specific exposure within the sequence</Description>
+      <IDL_Type>long</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>imageSource</EFDB_Name>
+      <Description>The source component of the image name (AT/CC/MC)</Description>
+      <IDL_Type>string</IDL_Type>
+      <IDL_Size>2</IDL_Size>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>imageController</EFDB_Name>
+      <Description>The controller for the image  (O=OCS/C=CCS/...)</Description>
+      <IDL_Type>string</IDL_Type>
+      <IDL_Size>1</IDL_Size>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>imageDate</EFDB_Name>
+      <Description>The date component of the image name (YYYYMMDD)</Description>
+      <IDL_Type>string</IDL_Type>
+      <IDL_Size>8</IDL_Size>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>imageNumber</EFDB_Name>
+      <Description>The image number (SEQNO) component of the image name</Description>
+      <IDL_Type>long</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>timestampAcquisitionStart</EFDB_Name>
+      <Description>The effective time at which the image acquisition started (i.e. the end of the previous clear or readout)</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>second</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>exposureTime</EFDB_Name>
+      <Description>The requested exposure time</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>second</Units>
+      <Count>1</Count>
+    </item>
+    <!-- Extra info add to startReadout as part of CAP-209 -->
+    <item>
+      <EFDB_Name>timestampStartOfReadout</EFDB_Name>
+      <Description>The time at which the readout was triggered</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>second</Units>
+      <Count>1</Count>
+    </item>
+  </SALEvent>
+  <SALEvent>
+    <Subsystem>CCCamera</Subsystem>
+    <EFDB_Topic>CCCamera_logevent_startRotateCarousel</EFDB_Topic>
+  </SALEvent>
+  <SALEvent>
+    <Subsystem>CCCamera</Subsystem>
+    <EFDB_Topic>CCCamera_logevent_imageReadoutParameters</EFDB_Topic>
+    <Description>Event sent describing image readout parameters.
         Note: all : delimited strings (aka string arrays) follow the escaping convention defined in CAP-572</Description>
-        <item>
-            <EFDB_Name>imageName</EFDB_Name>
-            <Description>The imageName for this specific exposure</Description>
-            <IDL_Type>string</IDL_Type>
-            <IDL_Size>1</IDL_Size>
-            <Units>unitless</Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>ccdLocation</EFDB_Name>
-            <Description>A list of all ccds currently configured, of the form RnnSnn, : delimited (empty if entry not used)</Description>
-            <IDL_Type>string</IDL_Type>
-            <IDL_Size>1</IDL_Size>
-            <Units>unitless</Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>raftBay</EFDB_Name>
-            <Description>The raft bay for each CCD listed above, of the form Rnn : delimited</Description>
-            <IDL_Type>string</IDL_Type>
-            <IDL_Size>1</IDL_Size>
-            <Units>unitless</Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>ccdSlot</EFDB_Name>
-            <Description>The CCD slot for each CCD listed above, of the form SXn : delimited</Description>
-            <IDL_Type>string</IDL_Type>
-            <IDL_Size>1</IDL_Size>
-            <Units>unitless</Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>ccdType</EFDB_Name>
-            <Description>The type of each CCD, this determines segRows, segCols and serCols</Description>
-            <IDL_Type>int</IDL_Type>
-            <Units>unitless</Units>
-            <Count>9</Count>
-            <Enumeration>E2V,ITL</Enumeration>
-        </item>
-        <item>
-            <EFDB_Name>overRows</EFDB_Name>
-            <Description>See CCD Readout Parameters Diagram</Description>
-            <IDL_Type>int</IDL_Type>
-            <Units>unitless</Units>
-            <Count>9</Count>
-        </item>
-        <item>
-            <EFDB_Name>overCols</EFDB_Name>
-            <Description>See CCD Readout Parameters Diagram</Description>
-            <IDL_Type>int</IDL_Type>
-            <Units>unitless</Units>
-            <Count>9</Count>
-        </item>
-        <item>
-            <EFDB_Name>readRows</EFDB_Name>
-            <Description>See CCD Readout Parameters Diagram</Description>
-            <IDL_Type>int</IDL_Type>
-            <Units>unitless</Units>
-            <Count>9</Count>
-        </item>
-        <item>
-            <EFDB_Name>readCols</EFDB_Name>
-            <Description>See CCD Readout Parameters Diagram</Description>
-            <IDL_Type>int</IDL_Type>
-            <Units>unitless</Units>
-            <Count>9</Count>
-        </item>
-        <item>
-            <EFDB_Name>readCols2</EFDB_Name>
-            <Description>See CCD Readout Parameters Diagram</Description>
-            <IDL_Type>int</IDL_Type>
-            <Units>unitless</Units>
-            <Count>9</Count>
-        </item>
-        <item>
-            <EFDB_Name>preCols</EFDB_Name>
-            <Description>See CCD Readout Parameters Diagram</Description>
-            <IDL_Type>int</IDL_Type>
-            <Units>unitless</Units>
-            <Count>9</Count>
-        </item>
-        <item>
-            <EFDB_Name>preRows</EFDB_Name>
-            <Description>See CCD Readout Parameters Diagram</Description>
-            <IDL_Type>int</IDL_Type>
-            <Units>unitless</Units>
-            <Count>9</Count>
-        </item>
-        <item>
-            <EFDB_Name>postCols</EFDB_Name>
-            <Description>See CCD Readout Parameters Diagram</Description>
-            <IDL_Type>int</IDL_Type>
-            <Units>unitless</Units>
-            <Count>9</Count>
-        </item>
-        <!-- Items added for DAQV4 compatibility -->
-        <item>
-            <EFDB_Name>underCols</EFDB_Name>
-            <Description>See CCD Readout Parameters Diagram</Description>
-            <IDL_Type>int</IDL_Type>
-            <IDL_Size>1</IDL_Size>
-            <Units>unitless</Units>
-            <Count>9</Count>
-        </item>
-        <item>
-            <EFDB_Name>daqFolder</EFDB_Name>
-            <Description>DAQ folder where image will be created</Description>
-            <IDL_Type>string</IDL_Type>
-            <IDL_Size>1</IDL_Size>
-            <Units>unitless</Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>daqAnnotation</EFDB_Name>
-            <Description>Annotation sent to DAQ</Description>
-            <IDL_Type>string</IDL_Type>
-            <IDL_Size>1</IDL_Size>
-            <Units>unitless</Units>
-            <Count>1</Count>
-        </item>
-    </SALEvent>
-    <SALEvent>
-        <Subsystem>CCCamera</Subsystem>
-        <EFDB_Topic>CCCamera_logevent_focalPlaneSummaryInfo</EFDB_Topic>
-        <Description>Special event for use by header service. All of the information in this event is redundant (i,e. also supplied in
+    <item>
+      <EFDB_Name>imageName</EFDB_Name>
+      <Description>The imageName for this specific exposure</Description>
+      <IDL_Type>string</IDL_Type>
+      <IDL_Size>1</IDL_Size>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>ccdLocation</EFDB_Name>
+      <Description>A list of all ccds currently configured, of the form RnnSnn, : delimited (empty if entry not used)</Description>
+      <IDL_Type>string</IDL_Type>
+      <IDL_Size>1</IDL_Size>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>raftBay</EFDB_Name>
+      <Description>The raft bay for each CCD listed above, of the form Rnn : delimited</Description>
+      <IDL_Type>string</IDL_Type>
+      <IDL_Size>1</IDL_Size>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>ccdSlot</EFDB_Name>
+      <Description>The CCD slot for each CCD listed above, of the form SXn : delimited</Description>
+      <IDL_Type>string</IDL_Type>
+      <IDL_Size>1</IDL_Size>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>ccdType</EFDB_Name>
+      <Description>The type of each CCD, this determines segRows, segCols and serCols</Description>
+      <IDL_Type>int</IDL_Type>
+      <Units>unitless</Units>
+      <Count>9</Count>
+      <Enumeration>E2V,ITL</Enumeration>
+    </item>
+    <item>
+      <EFDB_Name>overRows</EFDB_Name>
+      <Description>See CCD Readout Parameters Diagram</Description>
+      <IDL_Type>int</IDL_Type>
+      <Units>unitless</Units>
+      <Count>9</Count>
+    </item>
+    <item>
+      <EFDB_Name>overCols</EFDB_Name>
+      <Description>See CCD Readout Parameters Diagram</Description>
+      <IDL_Type>int</IDL_Type>
+      <Units>unitless</Units>
+      <Count>9</Count>
+    </item>
+    <item>
+      <EFDB_Name>readRows</EFDB_Name>
+      <Description>See CCD Readout Parameters Diagram</Description>
+      <IDL_Type>int</IDL_Type>
+      <Units>unitless</Units>
+      <Count>9</Count>
+    </item>
+    <item>
+      <EFDB_Name>readCols</EFDB_Name>
+      <Description>See CCD Readout Parameters Diagram</Description>
+      <IDL_Type>int</IDL_Type>
+      <Units>unitless</Units>
+      <Count>9</Count>
+    </item>
+    <item>
+      <EFDB_Name>readCols2</EFDB_Name>
+      <Description>See CCD Readout Parameters Diagram</Description>
+      <IDL_Type>int</IDL_Type>
+      <Units>unitless</Units>
+      <Count>9</Count>
+    </item>
+    <item>
+      <EFDB_Name>preCols</EFDB_Name>
+      <Description>See CCD Readout Parameters Diagram</Description>
+      <IDL_Type>int</IDL_Type>
+      <Units>unitless</Units>
+      <Count>9</Count>
+    </item>
+    <item>
+      <EFDB_Name>preRows</EFDB_Name>
+      <Description>See CCD Readout Parameters Diagram</Description>
+      <IDL_Type>int</IDL_Type>
+      <Units>unitless</Units>
+      <Count>9</Count>
+    </item>
+    <item>
+      <EFDB_Name>postCols</EFDB_Name>
+      <Description>See CCD Readout Parameters Diagram</Description>
+      <IDL_Type>int</IDL_Type>
+      <Units>unitless</Units>
+      <Count>9</Count>
+    </item>
+    <!-- Items added for DAQV4 compatibility -->
+    <item>
+      <EFDB_Name>underCols</EFDB_Name>
+      <Description>See CCD Readout Parameters Diagram</Description>
+      <IDL_Type>int</IDL_Type>
+      <IDL_Size>1</IDL_Size>
+      <Units>unitless</Units>
+      <Count>9</Count>
+    </item>
+    <item>
+      <EFDB_Name>daqFolder</EFDB_Name>
+      <Description>DAQ folder where image will be created</Description>
+      <IDL_Type>string</IDL_Type>
+      <IDL_Size>1</IDL_Size>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>daqAnnotation</EFDB_Name>
+      <Description>Annotation sent to DAQ</Description>
+      <IDL_Type>string</IDL_Type>
+      <IDL_Size>1</IDL_Size>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+  </SALEvent>
+  <SALEvent>
+    <Subsystem>CCCamera</Subsystem>
+    <EFDB_Topic>CCCamera_logevent_focalPlaneSummaryInfo</EFDB_Topic>
+    <Description>Special event for use by header service. All of the information in this event is redundant (i,e. also supplied in
             other settingsApplied events), but the information in this event is formatted for ease-of-use of the header service, specifically
             information which is REB or Raft specific is repeated for each CCD. This event will be sent at the same time as other
             settingsApplied events
             Note: all : delimited strings (aka string arrays) follow the escaping convention defined in CAP-572</Description>
-        <item>
-            <EFDB_Name>ccdLocation</EFDB_Name>
-            <Description>CCD location in focal-plane (e.g. R22S01) (: delimited).
+    <item>
+      <EFDB_Name>ccdLocation</EFDB_Name>
+      <Description>CCD location in focal-plane (e.g. R22S01) (: delimited).
                 This should be considered the key for all the remaining items, which will be in the same order as the locations,
                 whether they are arrays or : delimited strings.</Description>
-            <IDL_Type>string</IDL_Type>
-            <Units>unitless</Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>raftBay</EFDB_Name>
-            <Description>The raft bay for each CCD listed above, of the form Rnn : delimited</Description>
-            <IDL_Type>string</IDL_Type>
-            <IDL_Size>1</IDL_Size>
-            <Units>unitless</Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>ccdSlot</EFDB_Name>
-            <Description>The CCD slot for each CCD listed above, of the form SXn : delimited</Description>
-            <IDL_Type>string</IDL_Type>
-            <IDL_Size>1</IDL_Size>
-            <Units>unitless</Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>rebSerialNumber</EFDB_Name>
-            <Description>REB hardware serial number (: delimited)</Description>
-            <IDL_Type>string</IDL_Type>
-            <Units>unitless</Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>rebLSSTName</EFDB_Name>
-            <Description>REB LSST identifier (: delimited)</Description>
-            <IDL_Type>string</IDL_Type>
-            <Units>unitless</Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>ccdLSSTName</EFDB_Name>
-            <Description>CCD LSST identifier (: delimited)</Description>
-            <IDL_Type>string</IDL_Type>
-            <Units>unitless</Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>raftLSSTName</EFDB_Name>
-            <Description>Raft LSST identifier (: delimited)</Description>
-            <IDL_Type>string</IDL_Type>
-            <Units>unitless</Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>ccdManSerNum</EFDB_Name>
-            <Description>Sensor manufacturer's serial number (: delimited)</Description>
-            <IDL_Type>string</IDL_Type>
-            <Units>unitless</Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>ccdManufacturer</EFDB_Name>
-            <Description>Sensor manufacturer E2V or ITL (: delimited)</Description>
-            <IDL_Type>string</IDL_Type>
-            <Units>unitless</Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>ccdType</EFDB_Name>
-            <Description>The type of each CCD</Description>
-            <IDL_Type>int</IDL_Type>
-            <IDL_Size>1</IDL_Size>
-            <Units>unitless</Units>
-            <Count>9</Count>
-            <Enumeration>E2V,ITL</Enumeration>
-        </item>
-        <item>
-            <EFDB_Name>ccdTempSetPoint</EFDB_Name>
-            <Description>Sensor temperature set point</Description>
-            <IDL_Type>double</IDL_Type>
-            <Units>unitless</Units>
-            <Count>9</Count>
-        </item>
-        <item>
-            <EFDB_Name>sequencerKey</EFDB_Name>
-            <Description>The name of the CCD sequencer loaded (: delimited)</Description>
-            <IDL_Type>string</IDL_Type>
-            <Units>unitless</Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>sequencerChecksum</EFDB_Name>
-            <Description>The checksum of the CCD sequencer loaded (: delimited)</Description>
-            <IDL_Type>string</IDL_Type>
-            <Units>unitless</Units>
-            <Count>1</Count>
-        </item>
-    </SALEvent>
-    <!-- SettingsApplied start here -->
-    <!-- ComCam settingsApplied events for focal-plane subsystem -->
-    <SALEvent>
-        <Subsystem>CCCamera</Subsystem>
-        <EFDB_Topic>CCCamera_logevent_focalPlaneHardwareIdSettingsApplied</EFDB_Topic>
-        <Description>
+      <IDL_Type>string</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>raftBay</EFDB_Name>
+      <Description>The raft bay for each CCD listed above, of the form Rnn : delimited</Description>
+      <IDL_Type>string</IDL_Type>
+      <IDL_Size>1</IDL_Size>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>ccdSlot</EFDB_Name>
+      <Description>The CCD slot for each CCD listed above, of the form SXn : delimited</Description>
+      <IDL_Type>string</IDL_Type>
+      <IDL_Size>1</IDL_Size>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>rebSerialNumber</EFDB_Name>
+      <Description>REB hardware serial number (: delimited)</Description>
+      <IDL_Type>string</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>rebLSSTName</EFDB_Name>
+      <Description>REB LSST identifier (: delimited)</Description>
+      <IDL_Type>string</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>ccdLSSTName</EFDB_Name>
+      <Description>CCD LSST identifier (: delimited)</Description>
+      <IDL_Type>string</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>raftLSSTName</EFDB_Name>
+      <Description>Raft LSST identifier (: delimited)</Description>
+      <IDL_Type>string</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>ccdManSerNum</EFDB_Name>
+      <Description>Sensor manufacturer's serial number (: delimited)</Description>
+      <IDL_Type>string</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>ccdManufacturer</EFDB_Name>
+      <Description>Sensor manufacturer E2V or ITL (: delimited)</Description>
+      <IDL_Type>string</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>ccdType</EFDB_Name>
+      <Description>The type of each CCD</Description>
+      <IDL_Type>int</IDL_Type>
+      <IDL_Size>1</IDL_Size>
+      <Units>unitless</Units>
+      <Count>9</Count>
+      <Enumeration>E2V,ITL</Enumeration>
+    </item>
+    <item>
+      <EFDB_Name>ccdTempSetPoint</EFDB_Name>
+      <Description>Sensor temperature set point</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>unitless</Units>
+      <Count>9</Count>
+    </item>
+    <item>
+      <EFDB_Name>sequencerKey</EFDB_Name>
+      <Description>The name of the CCD sequencer loaded (: delimited)</Description>
+      <IDL_Type>string</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>sequencerChecksum</EFDB_Name>
+      <Description>The checksum of the CCD sequencer loaded (: delimited)</Description>
+      <IDL_Type>string</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+  </SALEvent>
+  <!-- SettingsApplied start here -->
+  <!-- ComCam settingsApplied events for focal-plane subsystem -->
+  <SALEvent>
+    <Subsystem>CCCamera</Subsystem>
+    <EFDB_Topic>CCCamera_logevent_focalPlaneHardwareIdSettingsApplied</EFDB_Topic>
+    <Description>
         Note: all : delimited strings (aka string arrays) follow the escaping convention defined in CAP-572</Description>
-        <item>
-            <EFDB_Name>version</EFDB_Name>
-            <Description>Version number of these settings.</Description>
-            <IDL_Type>long</IDL_Type>
-            <Units>unitless</Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>rebLocation</EFDB_Name>
-            <Description>REB location in focal-plane (e.g. R22RebX) (: delimited)</Description>
-            <IDL_Type>string</IDL_Type>
-            <Units>unitless</Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>rebLSSTName</EFDB_Name>
-            <Description>REB LSST identifier (: delimited)</Description>
-            <IDL_Type>string</IDL_Type>
-            <Units>unitless</Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>ccdLocation</EFDB_Name>
-            <Description>CCD location in focal-plane (e.g. R22Snn) (: delimited)</Description>
-            <IDL_Type>string</IDL_Type>
-            <Units>unitless</Units>
-            <Count>1</Count>
-        </item>
-        <item>
-        <EFDB_Name>ccdLSSTName</EFDB_Name>
-            <Description>CCD LSST identifier (: delimited)</Description>
-            <IDL_Type>string</IDL_Type>
-            <Units>unitless</Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>ccdManSerNum</EFDB_Name>
-            <Description>Sensor manufacturer's serial number (: delimited)</Description>
-            <IDL_Type>string</IDL_Type>
-            <Units>unitless</Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>raftLocation</EFDB_Name>
-            <Description>Raft location in focal-plane (e.g. R22) (: delimited)</Description>
-            <IDL_Type>string</IDL_Type>
-            <Units>unitless</Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>raftLSSTName</EFDB_Name>
-            <Description>Raft identifier (: delimited)</Description>
-            <IDL_Type>string</IDL_Type>
-            <Units>unitless</Units>
-            <Count>1</Count>
-        </item>
-    </SALEvent>
-    <SALEvent>
-        <Subsystem>CCCamera</Subsystem>
-        <EFDB_Topic>CCCamera_logevent_focalPlaneRaftTempControlStatusSettingsApplied</EFDB_Topic>
-        <Description>
+    <item>
+      <EFDB_Name>version</EFDB_Name>
+      <Description>Version number of these settings.</Description>
+      <IDL_Type>long</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>rebLocation</EFDB_Name>
+      <Description>REB location in focal-plane (e.g. R22RebX) (: delimited)</Description>
+      <IDL_Type>string</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>rebLSSTName</EFDB_Name>
+      <Description>REB LSST identifier (: delimited)</Description>
+      <IDL_Type>string</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>ccdLocation</EFDB_Name>
+      <Description>CCD location in focal-plane (e.g. R22Snn) (: delimited)</Description>
+      <IDL_Type>string</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>ccdLSSTName</EFDB_Name>
+      <Description>CCD LSST identifier (: delimited)</Description>
+      <IDL_Type>string</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>ccdManSerNum</EFDB_Name>
+      <Description>Sensor manufacturer's serial number (: delimited)</Description>
+      <IDL_Type>string</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>raftLocation</EFDB_Name>
+      <Description>Raft location in focal-plane (e.g. R22) (: delimited)</Description>
+      <IDL_Type>string</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>raftLSSTName</EFDB_Name>
+      <Description>Raft identifier (: delimited)</Description>
+      <IDL_Type>string</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+  </SALEvent>
+  <SALEvent>
+    <Subsystem>CCCamera</Subsystem>
+    <EFDB_Topic>CCCamera_logevent_focalPlaneRaftTempControlStatusSettingsApplied</EFDB_Topic>
+    <Description>
         Note: all : delimited strings (aka string arrays) follow the escaping convention defined in CAP-572</Description>
-        <item>
-            <EFDB_Name>version</EFDB_Name>
-            <Description>Version number of these settings</Description>
-            <IDL_Type>long</IDL_Type>
-            <Units>unitless</Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>raftLocation</EFDB_Name>
-            <Description>Raft location in focal-plane (e.g. R22) (: delimited)</Description>
-            <IDL_Type>string</IDL_Type>
-            <Units>unitless</Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>raft_TempControl_active</EFDB_Name>
-            <Description>True if loop is active</Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units>unitless</Units>
-            <Count>1</Count>
-        </item>
-    </SALEvent>
-    <SALEvent>
-        <Subsystem>CCCamera</Subsystem>
-        <EFDB_Topic>CCCamera_logevent_focalPlaneRaftTempControlSettingsApplied</EFDB_Topic>
-        <Description>
+    <item>
+      <EFDB_Name>version</EFDB_Name>
+      <Description>Version number of these settings</Description>
+      <IDL_Type>long</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>raftLocation</EFDB_Name>
+      <Description>Raft location in focal-plane (e.g. R22) (: delimited)</Description>
+      <IDL_Type>string</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>raft_TempControl_active</EFDB_Name>
+      <Description>True if loop is active</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+  </SALEvent>
+  <SALEvent>
+    <Subsystem>CCCamera</Subsystem>
+    <EFDB_Topic>CCCamera_logevent_focalPlaneRaftTempControlSettingsApplied</EFDB_Topic>
+    <Description>
         Note: all : delimited strings (aka string arrays) follow the escaping convention defined in CAP-572</Description>
-        <item>
-            <EFDB_Name>version</EFDB_Name>
-            <Description>Version number of these settings</Description>
-            <IDL_Type>long</IDL_Type>
-            <Units>unitless</Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>raftLocation</EFDB_Name>
-            <Description>Raft location in focal-plane (e.g. R22) (: delimited)</Description>
-            <IDL_Type>string</IDL_Type>
-            <Units>unitless</Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>raft_TempControl_awGain</EFDB_Name>
-            <Description>anti-windup gain</Description>
-            <IDL_Type>double</IDL_Type>
-            <Units>unitless</Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>raft_TempControl_basePower</EFDB_Name>
-            <Description>base power input</Description>
-            <IDL_Type>double</IDL_Type>
-            <Units>Watt</Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>raft_TempControl_gain</EFDB_Name>
-            <Description>loop gain</Description>
-            <IDL_Type>double</IDL_Type>
-            <Units>unitless</Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>raft_TempControl_maxInput</EFDB_Name>
-            <Description>maximum input</Description>
-            <IDL_Type>double</IDL_Type>
-            <Units>unitless</Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>raft_TempControl_maxOutput</EFDB_Name>
-            <Description>maximum PID output</Description>
-            <IDL_Type>double</IDL_Type>
-            <Units>Watt</Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>raft_TempControl_minInput</EFDB_Name>
-            <Description>minimum input</Description>
-            <IDL_Type>double</IDL_Type>
-            <Units>unitless</Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>raft_TempControl_minOutput</EFDB_Name>
-            <Description>minimum PID output</Description>
-            <IDL_Type>double</IDL_Type>
-            <Units>Watt</Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>raft_TempControl_rebs</EFDB_Name>
-            <Description>The REBs with heaters to use</Description>
-            <IDL_Type>string</IDL_Type>
-            <Units>unitless</Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>raft_TempControl_setTemp</EFDB_Name>
-            <Description>Temperature set point</Description>
-            <IDL_Type>double</IDL_Type>
-            <Units>C</Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>raft_TempControl_smoothTime</EFDB_Name>
-            <Description>input smoothing time</Description>
-            <IDL_Type>double</IDL_Type>
-            <Units>second</Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>raft_TempControl_tempChans</EFDB_Name>
-            <Description>Temperature channels to use</Description>
-            <IDL_Type>string</IDL_Type>
-            <Units>unitless</Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>raft_TempControl_timeConst</EFDB_Name>
-            <Description>integration time constant</Description>
-            <IDL_Type>double</IDL_Type>
-            <Units>second</Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>raft_TempControl_tolerance</EFDB_Name>
-            <Description>maximum on-target error (%)</Description>
-            <IDL_Type>double</IDL_Type>
-            <Units>unitless</Units>
-            <Count>1</Count>
-        </item>
-    </SALEvent>
-    <SALEvent>
-        <Subsystem>CCCamera</Subsystem>
-        <EFDB_Topic>CCCamera_logevent_focalPlaneDAQSettingsApplied</EFDB_Topic>
-        <item>
-            <EFDB_Name>version</EFDB_Name>
-            <Description>Version number of these settings</Description>
-            <IDL_Type>long</IDL_Type>
-            <Units>unitless</Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>daqFolder</EFDB_Name>
-            <Description>Folder in 2-day store where images will be created</Description>
-            <IDL_Type>string</IDL_Type>
-            <Units>unitless</Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>daqPartition</EFDB_Name>
-            <Description>DAQ partition</Description>
-            <IDL_Type>string</IDL_Type>
-            <Units>unitless</Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>emulatedDAQ</EFDB_Name>
-            <Description>True when using an emulated DAQ</Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units>unitless</Units>
-            <Count>1</Count>
-        </item>
-    </SALEvent>
-    <SALEvent>
-        <Subsystem>CCCamera</Subsystem>
-        <EFDB_Topic>CCCamera_logevent_focalPlaneSequencerConfigSettingsApplied</EFDB_Topic>
-        <item>
-            <EFDB_Name>clearCountParameter</EFDB_Name>
-            <Description>Name of the clear count parameter</Description>
-            <IDL_Type>string</IDL_Type>
-            <Units>unitless</Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>clearMain</EFDB_Name>
-            <Description>Name of the clear main</Description>
-            <IDL_Type>string</IDL_Type>
-            <Units>unitless</Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>idleFlushMain</EFDB_Name>
-            <Description>Name of the idle flush main</Description>
-            <IDL_Type>string</IDL_Type>
-            <Units>unitless</Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>integrateMain</EFDB_Name>
-            <Description>Name of the integrate main</Description>
-            <IDL_Type>string</IDL_Type>
-            <Units>unitless</Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>metaDataRegisters</EFDB_Name>
-            <Description>Names of meta-data related registers which must be in the sequencer</Description>
-            <IDL_Type>string</IDL_Type>
-            <Units>unitless</Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>overCols</EFDB_Name>
-            <Description>overCols</Description>
-            <IDL_Type>int</IDL_Type>
-            <Units>unitless</Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>overRows</EFDB_Name>
-            <Description>overRows</Description>
-            <IDL_Type>int</IDL_Type>
-            <Units>unitless</Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>postCols</EFDB_Name>
-            <Description>postCols</Description>
-            <IDL_Type>int</IDL_Type>
-            <Units>unitless</Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>postRows</EFDB_Name>
-            <Description>postRows</Description>
-            <IDL_Type>int</IDL_Type>
-            <Units>unitless</Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>preCols</EFDB_Name>
-            <Description>preCols</Description>
-            <IDL_Type>int</IDL_Type>
-            <Units>unitless</Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>preRows</EFDB_Name>
-            <Description>preRows</Description>
-            <IDL_Type>int</IDL_Type>
-            <Units>unitless</Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>pseudoReadMain</EFDB_Name>
-            <Description>Name of the pseudo read main</Description>
-            <IDL_Type>string</IDL_Type>
-            <Units>unitless</Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>readCols</EFDB_Name>
-            <Description>readCols</Description>
-            <IDL_Type>int</IDL_Type>
-            <Units>unitless</Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>readCols2</EFDB_Name>
-            <Description>readCol2</Description>
-            <IDL_Type>int</IDL_Type>
-            <Units>unitless</Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>readMain</EFDB_Name>
-            <Description>Name of the read main</Description>
-            <IDL_Type>string</IDL_Type>
-            <Units>unitless</Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>readRows</EFDB_Name>
-            <Description>readRows</Description>
-            <IDL_Type>int</IDL_Type>
-            <Units>unitless</Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>rowShiftForwardMain</EFDB_Name>
-            <Description>Name of the row shift forward main</Description>
-            <IDL_Type>string</IDL_Type>
-            <Units>unitless</Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>rowShiftReverseMain</EFDB_Name>
-            <Description>Name of the row shift reverse main</Description>
-            <IDL_Type>string</IDL_Type>
-            <Units>unitless</Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>scanMode</EFDB_Name>
-            <Description>True if the sequencer is in scan mode</Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units>unitless</Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>sequencer</EFDB_Name>
-            <Description>sequencer</Description>
-            <IDL_Type>string</IDL_Type>
-            <Units>unitless</Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>sequencerChecksums</EFDB_Name>
-            <Description>sequencerChecksums</Description>
-            <IDL_Type>string</IDL_Type>
-            <Units>unitless</Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>shiftCountParameter</EFDB_Name>
-            <Description>Name of the shift count parameter</Description>
-            <IDL_Type>string</IDL_Type>
-            <Units>unitless</Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>transparentMode</EFDB_Name>
-            <Description>True if the ASPIC is in transparent mode</Description>
-            <IDL_Type>int</IDL_Type>
-            <Units>unitless</Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>underCols</EFDB_Name>
-            <Description>underCols</Description>
-            <IDL_Type>int</IDL_Type>
-            <Units>unitless</Units>
-            <Count>1</Count>
-        </item>
-    </SALEvent>
-    <SALEvent>
-        <Subsystem>CCCamera</Subsystem>
-        <EFDB_Topic>CCCamera_logevent_focalPlaneRebRaftsSettingsApplied</EFDB_Topic>
-        <item>
-            <EFDB_Name>version</EFDB_Name>
-            <Description>Version number of these settings</Description>
-            <IDL_Type>long</IDL_Type>
-            <Units>unitless</Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>bias0_csGateP</EFDB_Name>
-            <Description>Current source</Description>
-            <IDL_Type>double</IDL_Type>
-            <Units>mA</Units>
-            <Count>9</Count>
-        </item>
-        <item>
-            <EFDB_Name>bias0_gdP</EFDB_Name>
-            <Description>Guard diode</Description>
-            <IDL_Type>double</IDL_Type>
-            <Units>volt</Units>
-            <Count>9</Count>
-        </item>
-        <item>
-            <EFDB_Name>bias0_odP</EFDB_Name>
-            <Description>Output drain</Description>
-            <IDL_Type>double</IDL_Type>
-            <Units>volt</Units>
-            <Count>9</Count>
-        </item>
-        <item>
-            <EFDB_Name>bias0_ogP</EFDB_Name>
-            <Description>Output gate</Description>
-            <IDL_Type>double</IDL_Type>
-            <Units>volt</Units>
-            <Count>9</Count>
-        </item>
-        <item>
-            <EFDB_Name>bias0_rdP</EFDB_Name>
-            <Description>Reset drain</Description>
-            <IDL_Type>double</IDL_Type>
-            <Units>volt</Units>
-            <Count>9</Count>
-        </item>
-        <item>
-            <EFDB_Name>bias1_csGateP</EFDB_Name>
-            <Description>Current source</Description>
-            <IDL_Type>double</IDL_Type>
-            <Units>mA</Units>
-            <Count>9</Count>
-        </item>
-        <item>
-            <EFDB_Name>bias1_gdP</EFDB_Name>
-            <Description>Guard diode</Description>
-            <IDL_Type>double</IDL_Type>
-            <Units>volt</Units>
-            <Count>9</Count>
-        </item>
-        <item>
-            <EFDB_Name>bias1_odP</EFDB_Name>
-            <Description>Output drain</Description>
-            <IDL_Type>double</IDL_Type>
-            <Units>volt</Units>
-            <Count>9</Count>
-        </item>
-        <item>
-            <EFDB_Name>bias1_ogP</EFDB_Name>
-            <Description>Output gate</Description>
-            <IDL_Type>double</IDL_Type>
-            <Units>volt</Units>
-            <Count>9</Count>
-        </item>
-        <item>
-            <EFDB_Name>bias1_rdP</EFDB_Name>
-            <Description>Reset drain</Description>
-            <IDL_Type>double</IDL_Type>
-            <Units>volt</Units>
-            <Count>9</Count>
-        </item>
-        <item>
-            <EFDB_Name>bias2_csGateP</EFDB_Name>
-            <Description>Current source</Description>
-            <IDL_Type>double</IDL_Type>
-            <Units>mA</Units>
-            <Count>9</Count>
-        </item>
-        <item>
-            <EFDB_Name>bias2_gdP</EFDB_Name>
-            <Description>Guard diode</Description>
-            <IDL_Type>double</IDL_Type>
-            <Units>volt</Units>
-            <Count>9</Count>
-        </item>
-        <item>
-            <EFDB_Name>bias2_odP</EFDB_Name>
-            <Description>Output drain</Description>
-            <IDL_Type>double</IDL_Type>
-            <Units>volt</Units>
-            <Count>9</Count>
-        </item>
-        <item>
-            <EFDB_Name>bias2_ogP</EFDB_Name>
-            <Description>Output gate</Description>
-            <IDL_Type>double</IDL_Type>
-            <Units>volt</Units>
-            <Count>9</Count>
-        </item>
-        <item>
-            <EFDB_Name>bias2_rdP</EFDB_Name>
-            <Description>Reset drain</Description>
-            <IDL_Type>double</IDL_Type>
-            <Units>volt</Units>
-            <Count>9</Count>
-        </item>
-        <item>
-            <EFDB_Name>dac_pclkHighP</EFDB_Name>
-            <Description>Parallel clock high</Description>
-            <IDL_Type>double</IDL_Type>
-            <Units>volt</Units>
-            <Count>9</Count>
-        </item>
-        <item>
-            <EFDB_Name>dac_pclkLowP</EFDB_Name>
-            <Description>Parallel clock low</Description>
-            <IDL_Type>double</IDL_Type>
-            <Units>volt</Units>
-            <Count>9</Count>
-        </item>
-        <item>
-            <EFDB_Name>dac_rgHighP</EFDB_Name>
-            <Description>Reset gate high</Description>
-            <IDL_Type>double</IDL_Type>
-            <Units>volt</Units>
-            <Count>9</Count>
-        </item>
-        <item>
-            <EFDB_Name>dac_rgLowP</EFDB_Name>
-            <Description>Reset gate low</Description>
-            <IDL_Type>double</IDL_Type>
-            <Units>volt</Units>
-            <Count>9</Count>
-        </item>
-        <item>
-            <EFDB_Name>dac_sclkHighP</EFDB_Name>
-            <Description>Serial clock high</Description>
-            <IDL_Type>double</IDL_Type>
-            <Units>volt</Units>
-            <Count>9</Count>
-        </item>
-        <item>
-            <EFDB_Name>dac_sclkLowP</EFDB_Name>
-            <Description>Serial clock low</Description>
-            <IDL_Type>double</IDL_Type>
-            <Units>volt</Units>
-            <Count>9</Count>
-        </item>
-        <item>
-            <EFDB_Name>disableRTDHardwareCheck</EFDB_Name>
-            <Description>Disables the RTD derived CCD type check.</Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units>unitless</Units>
-            <Count>9</Count>
-        </item>
-        <item>
-            <EFDB_Name>location</EFDB_Name>
-            <Description>Reb Location</Description>
-            <IDL_Type>string</IDL_Type>
-            <Units>unitless</Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>serialNum</EFDB_Name>
-            <Description>Serial number</Description>
-            <IDL_Type>long</IDL_Type>
-            <Units>unitless</Units>
-            <Count>9</Count>
-        </item>
-    </SALEvent>
-    <SALEvent>
-        <Subsystem>CCCamera</Subsystem>
-        <EFDB_Topic>CCCamera_logevent_focalPlaneRebRaftsPowerSettingsApplied</EFDB_Topic>
-        <item>
-            <EFDB_Name>version</EFDB_Name>
-            <Description>Version number of these settings</Description>
-            <IDL_Type>long</IDL_Type>
-            <Units>unitless</Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>bias0_gdCal</EFDB_Name>
-            <Description>GD convert factor</Description>
-            <IDL_Type>double</IDL_Type>
-            <Units>unitless</Units>
-            <Count>9</Count>
-        </item>
-        <item>
-            <EFDB_Name>bias0_gdTestVolts</EFDB_Name>
-            <Description>Shorts Test Voltage for GD</Description>
-            <IDL_Type>double</IDL_Type>
-            <Units>volt</Units>
-            <Count>9</Count>
-        </item>
-        <item>
-            <EFDB_Name>bias0_gdTol</EFDB_Name>
-            <Description>Guard diode tolerance</Description>
-            <IDL_Type>double</IDL_Type>
-            <Units>volt</Units>
-            <Count>9</Count>
-        </item>
-        <item>
-            <EFDB_Name>bias0_gdValueErr</EFDB_Name>
-            <Description>Tolerance for GD at TestVolts</Description>
-            <IDL_Type>double</IDL_Type>
-            <Units>volt</Units>
-            <Count>9</Count>
-        </item>
-        <item>
-            <EFDB_Name>bias0_gdZeroErr</EFDB_Name>
-            <Description>Tolerance for GD at 0V</Description>
-            <IDL_Type>double</IDL_Type>
-            <Units>volt</Units>
-            <Count>9</Count>
-        </item>
-        <item>
-            <EFDB_Name>bias0_odCal</EFDB_Name>
-            <Description>OD convert factor</Description>
-            <IDL_Type>double</IDL_Type>
-            <Units>unitless</Units>
-            <Count>9</Count>
-        </item>
-        <item>
-            <EFDB_Name>bias0_odIMax</EFDB_Name>
-            <Description>Max ODI value</Description>
-            <IDL_Type>double</IDL_Type>
-            <Units>A</Units>
-            <Count>9</Count>
-        </item>
-        <item>
-            <EFDB_Name>bias0_odTol</EFDB_Name>
-            <Description>Output drain tolerance</Description>
-            <IDL_Type>double</IDL_Type>
-            <Units>volt</Units>
-            <Count>9</Count>
-        </item>
-        <item>
-            <EFDB_Name>bias0_odZeroErr</EFDB_Name>
-            <Description>Tolerance for OD at 0V</Description>
-            <IDL_Type>double</IDL_Type>
-            <Units>Volt</Units>
-            <Count>9</Count>
-        </item>
-        <item>
-            <EFDB_Name>bias0_ogCal</EFDB_Name>
-            <Description>OG convert factor</Description>
-            <IDL_Type>double</IDL_Type>
-            <Units>unitless</Units>
-            <Count>9</Count>
-        </item>
-        <item>
-            <EFDB_Name>bias0_ogTestVolts</EFDB_Name>
-            <Description>Shorts Test Voltage for OG</Description>
-            <IDL_Type>double</IDL_Type>
-            <Units>volt</Units>
-            <Count>9</Count>
-        </item>
-        <item>
-            <EFDB_Name>bias0_ogTol</EFDB_Name>
-            <Description>Output gate tolerance</Description>
-            <IDL_Type>double</IDL_Type>
-            <Units>volt</Units>
-            <Count>9</Count>
-        </item>
-        <item>
-            <EFDB_Name>bias0_ogValueErr</EFDB_Name>
-            <Description>Tolerance for OG at TestVolts</Description>
-            <IDL_Type>double</IDL_Type>
-            <Units>volt</Units>
-            <Count>9</Count>
-        </item>
-        <item>
-            <EFDB_Name>bias0_ogZeroErr</EFDB_Name>
-            <Description>Tolerance for OG at 0V</Description>
-            <IDL_Type>double</IDL_Type>
-            <Units>volt</Units>
-            <Count>9</Count>
-        </item>
-        <item>
-            <EFDB_Name>bias0_rdCal</EFDB_Name>
-            <Description>RD convert factor</Description>
-            <IDL_Type>double</IDL_Type>
-            <Units>unitless</Units>
-            <Count>9</Count>
-        </item>
-        <item>
-            <EFDB_Name>bias0_rdTestVolts</EFDB_Name>
-            <Description>Shorts Test Voltage for RD</Description>
-            <IDL_Type>double</IDL_Type>
-            <Units>volt</Units>
-            <Count>9</Count>
-        </item>
-        <item>
-            <EFDB_Name>bias0_rdTol</EFDB_Name>
-            <Description>Reset drain tolerance</Description>
-            <IDL_Type>double</IDL_Type>
-            <Units>volt</Units>
-            <Count>9</Count>
-        </item>
-        <item>
-            <EFDB_Name>bias0_rdValueErr</EFDB_Name>
-            <Description>Tolerance for RD at TestVolts</Description>
-            <IDL_Type>double</IDL_Type>
-            <Units>volt</Units>
-            <Count>9</Count>
-        </item>
-        <item>
-            <EFDB_Name>bias0_rdZeroErr</EFDB_Name>
-            <Description>Tolerance for RD at 0V</Description>
-            <IDL_Type>double</IDL_Type>
-            <Units>volt</Units>
-            <Count>9</Count>
-        </item>
-        <item>
-            <EFDB_Name>bias1_gdCal</EFDB_Name>
-            <Description>GD convert factor</Description>
-            <IDL_Type>double</IDL_Type>
-            <Units>unitless</Units>
-            <Count>9</Count>
-        </item>
-        <item>
-            <EFDB_Name>bias1_gdTestVolts</EFDB_Name>
-            <Description>Shorts Test Voltage for GD</Description>
-            <IDL_Type>double</IDL_Type>
-            <Units>volt</Units>
-            <Count>9</Count>
-        </item>
-        <item>
-            <EFDB_Name>bias1_gdTol</EFDB_Name>
-            <Description>Guard diode tolerance</Description>
-            <IDL_Type>double</IDL_Type>
-            <Units>volt</Units>
-            <Count>9</Count>
-        </item>
-        <item>
-            <EFDB_Name>bias1_gdValueErr</EFDB_Name>
-            <Description>Tolerance for GD at TestVolts</Description>
-            <IDL_Type>double</IDL_Type>
-            <Units>Volt</Units>
-            <Count>9</Count>
-        </item>
-        <item>
-            <EFDB_Name>bias1_gdZeroErr</EFDB_Name>
-            <Description>Tolerance for GD at 0V</Description>
-            <IDL_Type>double</IDL_Type>
-            <Units>Volt</Units>
-            <Count>9</Count>
-        </item>
-        <item>
-            <EFDB_Name>bias1_odCal</EFDB_Name>
-            <Description>OD convert factor</Description>
-            <IDL_Type>double</IDL_Type>
-            <Units>unitless</Units>
-            <Count>9</Count>
-        </item>
-        <item>
-            <EFDB_Name>bias1_odIMax</EFDB_Name>
-            <Description>Max ODI value</Description>
-            <IDL_Type>double</IDL_Type>
-            <Units>A</Units>
-            <Count>9</Count>
-        </item>
-        <item>
-            <EFDB_Name>bias1_odTol</EFDB_Name>
-            <Description>Output drain tolerance</Description>
-            <IDL_Type>double</IDL_Type>
-            <Units>volt</Units>
-            <Count>9</Count>
-        </item>
-        <item>
-            <EFDB_Name>bias1_odZeroErr</EFDB_Name>
-            <Description>Tolerance for OD at 0V</Description>
-            <IDL_Type>double</IDL_Type>
-            <Units>Volt</Units>
-            <Count>9</Count>
-        </item>
-        <item>
-            <EFDB_Name>bias1_ogCal</EFDB_Name>
-            <Description>OG convert factor</Description>
-            <IDL_Type>double</IDL_Type>
-            <Units>unitless</Units>
-            <Count>9</Count>
-        </item>
-        <item>
-            <EFDB_Name>bias1_ogTestVolts</EFDB_Name>
-            <Description>Shorts Test Voltage for OG</Description>
-            <IDL_Type>double</IDL_Type>
-            <Units>volt</Units>
-            <Count>9</Count>
-        </item>
-        <item>
-            <EFDB_Name>bias1_ogTol</EFDB_Name>
-            <Description>Output gate tolerance</Description>
-            <IDL_Type>double</IDL_Type>
-            <Units>volt</Units>
-            <Count>9</Count>
-        </item>
-        <item>
-            <EFDB_Name>bias1_ogValueErr</EFDB_Name>
-            <Description>Tolerance for OG at TestVolts</Description>
-            <IDL_Type>double</IDL_Type>
-            <Units>Volt</Units>
-            <Count>9</Count>
-        </item>
-        <item>
-            <EFDB_Name>bias1_ogZeroErr</EFDB_Name>
-            <Description>Tolerance for OG at 0V</Description>
-            <IDL_Type>double</IDL_Type>
-            <Units>Volt</Units>
-            <Count>9</Count>
-        </item>
-        <item>
-            <EFDB_Name>bias1_rdCal</EFDB_Name>
-            <Description>RD convert factor</Description>
-            <IDL_Type>double</IDL_Type>
-            <Units>unitless</Units>
-            <Count>9</Count>
-        </item>
-        <item>
-            <EFDB_Name>bias1_rdTestVolts</EFDB_Name>
-            <Description>Shorts Test Voltage for RD</Description>
-            <IDL_Type>double</IDL_Type>
-            <Units>volt</Units>
-            <Count>9</Count>
-        </item>
-        <item>
-            <EFDB_Name>bias1_rdTol</EFDB_Name>
-            <Description>Reset drain tolerance</Description>
-            <IDL_Type>double</IDL_Type>
-            <Units>volt</Units>
-            <Count>9</Count>
-        </item>
-        <item>
-            <EFDB_Name>bias1_rdValueErr</EFDB_Name>
-            <Description>Tolerance for RD at TestVolts</Description>
-            <IDL_Type>double</IDL_Type>
-            <Units>volt</Units>
-            <Count>9</Count>
-        </item>
-        <item>
-            <EFDB_Name>bias1_rdZeroErr</EFDB_Name>
-            <Description>Tolerance for RD at 0V</Description>
-            <IDL_Type>double</IDL_Type>
-            <Units>volt</Units>
-            <Count>9</Count>
-        </item>
-        <item>
-            <EFDB_Name>bias2_gdCal</EFDB_Name>
-            <Description>GD convert factor</Description>
-            <IDL_Type>double</IDL_Type>
-            <Units>unitless</Units>
-            <Count>9</Count>
-        </item>
-        <item>
-            <EFDB_Name>bias2_gdTestVolts</EFDB_Name>
-            <Description>Shorts Test Voltage for GD</Description>
-            <IDL_Type>double</IDL_Type>
-            <Units>volt</Units>
-            <Count>9</Count>
-        </item>
-        <item>
-            <EFDB_Name>bias2_gdTol</EFDB_Name>
-            <Description>Guard diode tolerance</Description>
-            <IDL_Type>double</IDL_Type>
-            <Units>volt</Units>
-            <Count>9</Count>
-        </item>
-        <item>
-            <EFDB_Name>bias2_gdValueErr</EFDB_Name>
-            <Description>Tolerance for GD at TestVolts</Description>
-            <IDL_Type>double</IDL_Type>
-            <Units>volt</Units>
-            <Count>9</Count>
-        </item>
-        <item>
-            <EFDB_Name>bias2_gdZeroErr</EFDB_Name>
-            <Description>Tolerance for GD at 0V</Description>
-            <IDL_Type>double</IDL_Type>
-            <Units>volt</Units>
-            <Count>9</Count>
-        </item>
-        <item>
-            <EFDB_Name>bias2_odCal</EFDB_Name>
-            <Description>OD convert factor</Description>
-            <IDL_Type>double</IDL_Type>
-            <Units>unitless</Units>
-            <Count>9</Count>
-        </item>
-        <item>
-            <EFDB_Name>bias2_odIMax</EFDB_Name>
-            <Description>Max ODI value</Description>
-            <IDL_Type>double</IDL_Type>
-            <Units>A</Units>
-            <Count>9</Count>
-        </item>
-        <item>
-            <EFDB_Name>bias2_odTol</EFDB_Name>
-            <Description>Output drain tolerance</Description>
-            <IDL_Type>double</IDL_Type>
-            <Units>volt</Units>
-            <Count>9</Count>
-        </item>
-        <item>
-            <EFDB_Name>bias2_odZeroErr</EFDB_Name>
-            <Description>Tolerance for OD at 0V</Description>
-            <IDL_Type>double</IDL_Type>
-            <Units>volt</Units>
-            <Count>9</Count>
-        </item>
-        <item>
-            <EFDB_Name>bias2_ogCal</EFDB_Name>
-            <Description>OG convert factor</Description>
-            <IDL_Type>double</IDL_Type>
-            <Units>unitless</Units>
-            <Count>9</Count>
-        </item>
-        <item>
-            <EFDB_Name>bias2_ogTestVolts</EFDB_Name>
-            <Description>Shorts Test Voltage for OG</Description>
-            <IDL_Type>double</IDL_Type>
-            <Units>volt</Units>
-            <Count>9</Count>
-        </item>
-        <item>
-            <EFDB_Name>bias2_ogTol</EFDB_Name>
-            <Description>Output gate tolerance</Description>
-            <IDL_Type>double</IDL_Type>
-            <Units>volt</Units>
-            <Count>9</Count>
-        </item>
-        <item>
-            <EFDB_Name>bias2_ogValueErr</EFDB_Name>
-            <Description>Tolerance for OG at TestVolts</Description>
-            <IDL_Type>double</IDL_Type>
-            <Units>volt</Units>
-            <Count>9</Count>
-        </item>
-        <item>
-            <EFDB_Name>bias2_ogZeroErr</EFDB_Name>
-            <Description>Tolerance for OG at 0V</Description>
-            <IDL_Type>double</IDL_Type>
-            <Units>volt</Units>
-            <Count>9</Count>
-        </item>
-        <item>
-            <EFDB_Name>bias2_rdCal</EFDB_Name>
-            <Description>RD convert factor</Description>
-            <IDL_Type>double</IDL_Type>
-            <Units>unitless</Units>
-            <Count>9</Count>
-        </item>
-        <item>
-            <EFDB_Name>bias2_rdTestVolts</EFDB_Name>
-            <Description>Shorts Test Voltage for RD</Description>
-            <IDL_Type>double</IDL_Type>
-            <Units>volt</Units>
-            <Count>9</Count>
-        </item>
-        <item>
-            <EFDB_Name>bias2_rdTol</EFDB_Name>
-            <Description>Reset drain tolerance</Description>
-            <IDL_Type>double</IDL_Type>
-            <Units>volt</Units>
-            <Count>9</Count>
-        </item>
-        <item>
-            <EFDB_Name>bias2_rdValueErr</EFDB_Name>
-            <Description>Tolerance for RD at TestVolts</Description>
-            <IDL_Type>double</IDL_Type>
-            <Units>volt</Units>
-            <Count>9</Count>
-        </item>
-        <item>
-            <EFDB_Name>bias2_rdZeroErr</EFDB_Name>
-            <Description>Tolerance for RD at 0V</Description>
-            <IDL_Type>double</IDL_Type>
-            <Units>Volt</Units>
-            <Count>9</Count>
-        </item>
-        <item>
-            <EFDB_Name>clkhiAmin</EFDB_Name>
-            <Description>Minimum ON_State CLKHI (A) per REB</Description>
-            <IDL_Type>double</IDL_Type>
-            <Units>A</Units>
-            <Count>9</Count>
-        </item>
-        <item>
-            <EFDB_Name>clkhiQmax</EFDB_Name>
-            <Description>Max OFF_State CLKHI (A) per REB</Description>
-            <IDL_Type>double</IDL_Type>
-            <Units>A</Units>
-            <Count>9</Count>
-        </item>
-        <item>
-            <EFDB_Name>clkliAmin</EFDB_Name>
-            <Description>Minimum ON_State CLKLI (A) per REB</Description>
-            <IDL_Type>double</IDL_Type>
-            <Units>A</Units>
-            <Count>9</Count>
-        </item>
-        <item>
-            <EFDB_Name>clkliQmax</EFDB_Name>
-            <Description>Max OFF_State CLKLI (A) per REB</Description>
-            <IDL_Type>double</IDL_Type>
-            <Units>A</Units>
-            <Count>9</Count>
-        </item>
-        <item>
-            <EFDB_Name>dac_clkhIMax</EFDB_Name>
-            <Description>Max ClkHI value</Description>
-            <IDL_Type>double</IDL_Type>
-            <Units>A</Units>
-            <Count>9</Count>
-        </item>
-        <item>
-            <EFDB_Name>dac_clklIMax</EFDB_Name>
-            <Description>Max ClkLI value</Description>
-            <IDL_Type>double</IDL_Type>
-            <Units>A</Units>
-            <Count>9</Count>
-        </item>
-        <item>
-            <EFDB_Name>dac_pclkHighCal</EFDB_Name>
-            <Description>Parallel high calib</Description>
-            <IDL_Type>double</IDL_Type>
-            <Units>unitless</Units>
-            <Count>9</Count>
-        </item>
-        <item>
-            <EFDB_Name>dac_pclkHighTestV</EFDB_Name>
-            <Description>Shorts Test Voltage for PClkU</Description>
-            <IDL_Type>double</IDL_Type>
-            <Units>Volt</Units>
-            <Count>9</Count>
-        </item>
-        <item>
-            <EFDB_Name>dac_pclkHighTol</EFDB_Name>
-            <Description>Parallel high tolerance</Description>
-            <IDL_Type>double</IDL_Type>
-            <Units>volt</Units>
-            <Count>9</Count>
-        </item>
-        <item>
-            <EFDB_Name>dac_pclkHighValueErr</EFDB_Name>
-            <Description>Tolerance for PClkU TestV</Description>
-            <IDL_Type>double</IDL_Type>
-            <Units>Volt</Units>
-            <Count>9</Count>
-        </item>
-        <item>
-            <EFDB_Name>dac_pclkHighZeroErr</EFDB_Name>
-            <Description>Tolerance for 0V w/PClkU test</Description>
-            <IDL_Type>double</IDL_Type>
-            <Units>Volt</Units>
-            <Count>9</Count>
-        </item>
-        <item>
-            <EFDB_Name>dac_pclkLowCal</EFDB_Name>
-            <Description>Parallel low calib</Description>
-            <IDL_Type>double</IDL_Type>
-            <Units>unitless</Units>
-            <Count>9</Count>
-        </item>
-        <item>
-            <EFDB_Name>dac_pclkLowTestV</EFDB_Name>
-            <Description>Shorts Test Voltage for PClkL</Description>
-            <IDL_Type>double</IDL_Type>
-            <Units>Volt</Units>
-            <Count>9</Count>
-        </item>
-        <item>
-            <EFDB_Name>dac_pclkLowTol</EFDB_Name>
-            <Description>Parallel low tolerance</Description>
-            <IDL_Type>double</IDL_Type>
-            <Units>volt</Units>
-            <Count>9</Count>
-        </item>
-        <item>
-            <EFDB_Name>dac_pclkLowValueErr</EFDB_Name>
-            <Description>Tolerance for PClkL TestV</Description>
-            <IDL_Type>double</IDL_Type>
-            <Units>Volt</Units>
-            <Count>9</Count>
-        </item>
-        <item>
-            <EFDB_Name>dac_pclkLowZeroErr</EFDB_Name>
-            <Description>Tolerance for 0V w/PClkL test</Description>
-            <IDL_Type>double</IDL_Type>
-            <Units>Volt</Units>
-            <Count>9</Count>
-        </item>
-        <item>
-            <EFDB_Name>dac_rgHighCal</EFDB_Name>
-            <Description>Reset high calib</Description>
-            <IDL_Type>double</IDL_Type>
-            <Units>unitless</Units>
-            <Count>9</Count>
-        </item>
-        <item>
-            <EFDB_Name>dac_rgHighTestV</EFDB_Name>
-            <Description>Shorts Test Voltage for RGU</Description>
-            <IDL_Type>double</IDL_Type>
-            <Units>Volt</Units>
-            <Count>9</Count>
-        </item>
-        <item>
-            <EFDB_Name>dac_rgHighTol</EFDB_Name>
-            <Description>Reset high tolerance</Description>
-            <IDL_Type>double</IDL_Type>
-            <Units>volt</Units>
-            <Count>9</Count>
-        </item>
-        <item>
-            <EFDB_Name>dac_rgHighValueErr</EFDB_Name>
-            <Description>Tolerance for RGU TestV</Description>
-            <IDL_Type>double</IDL_Type>
-            <Units>Volt</Units>
-            <Count>9</Count>
-        </item>
-        <item>
-            <EFDB_Name>dac_rgHighZeroErr</EFDB_Name>
-            <Description>Tolerance for 0V w/RGU test</Description>
-            <IDL_Type>double</IDL_Type>
-            <Units>Volt</Units>
-            <Count>9</Count>
-        </item>
-        <item>
-            <EFDB_Name>dac_rgLowCal</EFDB_Name>
-            <Description>Reset low calib</Description>
-            <IDL_Type>double</IDL_Type>
-            <Units>unitless</Units>
-            <Count>9</Count>
-        </item>
-        <item>
-            <EFDB_Name>dac_rgLowTestV</EFDB_Name>
-            <Description>Shorts Test Voltage for RGL</Description>
-            <IDL_Type>double</IDL_Type>
-            <Units>Volt</Units>
-            <Count>9</Count>
-        </item>
-        <item>
-            <EFDB_Name>dac_rgLowTol</EFDB_Name>
-            <Description>Reset low tolerance</Description>
-            <IDL_Type>double</IDL_Type>
-            <Units>volt</Units>
-            <Count>9</Count>
-        </item>
-        <item>
-            <EFDB_Name>dac_rgLowValueErr</EFDB_Name>
-            <Description>Tolerance for RGL TestV</Description>
-            <IDL_Type>double</IDL_Type>
-            <Units>Volt</Units>
-            <Count>9</Count>
-        </item>
-        <item>
-            <EFDB_Name>dac_rgLowZeroErr</EFDB_Name>
-            <Description>Tolerance for 0V w/RGL test</Description>
-            <IDL_Type>double</IDL_Type>
-            <Units>Volt</Units>
-            <Count>9</Count>
-        </item>
-        <item>
-            <EFDB_Name>dac_sclkHighCal</EFDB_Name>
-            <Description>Serial high calib</Description>
-            <IDL_Type>double</IDL_Type>
-            <Units>unitless</Units>
-            <Count>9</Count>
-        </item>
-        <item>
-            <EFDB_Name>dac_sclkHighTestV</EFDB_Name>
-            <Description>Shorts Test Voltage for SClkU</Description>
-            <IDL_Type>double</IDL_Type>
-            <Units>Volt</Units>
-            <Count>9</Count>
-        </item>
-        <item>
-            <EFDB_Name>dac_sclkHighTol</EFDB_Name>
-            <Description>Serial high tolerance</Description>
-            <IDL_Type>double</IDL_Type>
-            <Units>volt</Units>
-            <Count>9</Count>
-        </item>
-        <item>
-            <EFDB_Name>dac_sclkHighValueErr</EFDB_Name>
-            <Description>Tolerance for SClkU TestV</Description>
-            <IDL_Type>double</IDL_Type>
-            <Units>Volt</Units>
-            <Count>9</Count>
-        </item>
-        <item>
-            <EFDB_Name>dac_sclkHighZeroErr</EFDB_Name>
-            <Description>Tolerance for 0V w/SClkU test</Description>
-            <IDL_Type>double</IDL_Type>
-            <Units>Volt</Units>
-            <Count>9</Count>
-        </item>
-        <item>
-            <EFDB_Name>dac_sclkLowCal</EFDB_Name>
-            <Description>Serial low calib</Description>
-            <IDL_Type>double</IDL_Type>
-            <Units>unitless</Units>
-            <Count>9</Count>
-        </item>
-        <item>
-            <EFDB_Name>dac_sclkLowTestV</EFDB_Name>
-            <Description>Shorts Test Voltage for SClkL</Description>
-            <IDL_Type>double</IDL_Type>
-            <Units>Volt</Units>
-            <Count>9</Count>
-        </item>
-        <item>
-            <EFDB_Name>dac_sclkLowTol</EFDB_Name>
-            <Description>Serial low tolerance</Description>
-            <IDL_Type>double</IDL_Type>
-            <Units>volt</Units>
-            <Count>9</Count>
-        </item>
-        <item>
-            <EFDB_Name>dac_sclkLowValueErr</EFDB_Name>
-            <Description>Tolerance for SClkL TestV</Description>
-            <IDL_Type>double</IDL_Type>
-            <Units>Volt</Units>
-            <Count>9</Count>
-        </item>
-        <item>
-            <EFDB_Name>dac_sclkLowZeroErr</EFDB_Name>
-            <Description>Tolerance for 0V w/SClkL test</Description>
-            <IDL_Type>double</IDL_Type>
-            <Units>Volt</Units>
-            <Count>9</Count>
-        </item>
-        <item>
-            <EFDB_Name>location</EFDB_Name>
-            <Description>Reb Location</Description>
-            <IDL_Type>string</IDL_Type>
-            <Units>unitless</Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>maxDelta</EFDB_Name>
-            <Description>Max allowed SlowAdcs delta</Description>
-            <IDL_Type>double</IDL_Type>
-            <Units>Volt</Units>
-            <Count>9</Count>
-        </item>
-        <item>
-            <EFDB_Name>maxStep</EFDB_Name>
-            <Description>Max allowed SlowAdcs step</Description>
-            <IDL_Type>double</IDL_Type>
-            <Units>Volt</Units>
-            <Count>9</Count>
-        </item>
-        <item>
-            <EFDB_Name>minTol</EFDB_Name>
-            <Description>Min allowed SlowAdcs tolerance</Description>
-            <IDL_Type>double</IDL_Type>
-            <Units>Volt</Units>
-            <Count>9</Count>
-        </item>
-        <item>
-            <EFDB_Name>nPowerOnPub</EFDB_Name>
-            <Description>Number of consequtive monitor-update pubs after trigger</Description>
-            <IDL_Type>int</IDL_Type>
-            <Units>unitless</Units>
-            <Count>9</Count>
-        </item>
-        <item>
-            <EFDB_Name>odiAmin</EFDB_Name>
-            <Description>Minimum ON_State ODI (A) per CCD</Description>
-            <IDL_Type>double</IDL_Type>
-            <Units>A</Units>
-            <Count>9</Count>
-        </item>
-        <item>
-            <EFDB_Name>odiQmax</EFDB_Name>
-            <Description>Max OFF_State ODI (A) per CCD</Description>
-            <IDL_Type>double</IDL_Type>
-            <Units>A</Units>
-            <Count>9</Count>
-        </item>
-    </SALEvent>
-    <!-- daq_monitor settings applied -->
-    <SALEvent>
-        <Subsystem>CCCamera</Subsystem>
-        <EFDB_Topic>CCCamera_logevent_daq_monitorSettingsApplied</EFDB_Topic>
-        <item>
-            <EFDB_Name>version</EFDB_Name>
-            <Description>Version number of these settings</Description>
-            <IDL_Type>long</IDL_Type>
-            <Units>unitless</Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>daqPartition</EFDB_Name>
-            <Description>partition containing DAQ store</Description>
-            <IDL_Type>string</IDL_Type>
-            <Units>unitless</Units>
-            <Count>1</Count>
-        </item>
-    </SALEvent>
-    <SALEvent>
-        <Subsystem>CCCamera</Subsystem>
-        <EFDB_Topic>CCCamera_logevent_daq_monitor_StatsSettingsApplied</EFDB_Topic>
-        <item>
-            <EFDB_Name>version</EFDB_Name>
-            <Description>Version number of these settings</Description>
-            <IDL_Type>long</IDL_Type>
-            <Units>unitless</Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>enablePeriodicPublication</EFDB_Name>
-            <Description>enable periodic publication</Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units>unitless</Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>minDiffAlertWarning</EFDB_Name>
-            <Description>minimum difference between successive reads to raise Alert at warning level</Description>
-            <IDL_Type>int</IDL_Type>
-            <Units>unitless</Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>minDiffLogWarning</EFDB_Name>
-            <Description>minimum difference between successive reads to put warning in log</Description>
-            <IDL_Type>int</IDL_Type>
-            <Units>unitless</Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>sumDriverChecks</EFDB_Name>
-            <Description>Driver Stats for warnings on sums</Description>
-            <IDL_Type>string</IDL_Type>
-            <Units>unitless</Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>sumDriverStats</EFDB_Name>
-            <Description>Driver Stats for sums over location</Description>
-            <IDL_Type>string</IDL_Type>
-            <Units>unitless</Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>sumFirmwareChecks</EFDB_Name>
-            <Description>Firmware Stats for warnings on sums</Description>
-            <IDL_Type>string</IDL_Type>
-            <Units>unitless</Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>sumFirmwareStats</EFDB_Name>
-            <Description>Firmware Stats for sums over location</Description>
-            <IDL_Type>string</IDL_Type>
-            <Units>unitless</Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>sumRdsChecks</EFDB_Name>
-            <Description>Rds Stats for warnings on sums</Description>
-            <IDL_Type>string</IDL_Type>
-            <Units>unitless</Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>sumRdsStats</EFDB_Name>
-            <Description>Rds Stats for sums over location</Description>
-            <IDL_Type>string</IDL_Type>
-            <Units>unitless</Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>sumRmsChecks</EFDB_Name>
-            <Description>Rms Stats for warnings on sums</Description>
-            <IDL_Type>string</IDL_Type>
-            <Units>unitless</Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>sumRmsStats</EFDB_Name>
-            <Description>Rms Stats for sums over location</Description>
-            <IDL_Type>string</IDL_Type>
-            <Units>unitless</Units>
-            <Count>1</Count>
-        </item>
-    </SALEvent>
-    <SALEvent>
-        <Subsystem>CCCamera</Subsystem>
-        <EFDB_Topic>CCCamera_logevent_daq_monitor_StoreSettingsApplied</EFDB_Topic>
-        <item>
-            <EFDB_Name>version</EFDB_Name>
-            <Description>Version number of these settings</Description>
-            <IDL_Type>long</IDL_Type>
-            <Units>unitless</Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>daqFolder</EFDB_Name>
-            <Description>top-level folder for DAQ store</Description>
-            <IDL_Type>string</IDL_Type>
-            <Units>unitless</Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>enableAutoPurge</EFDB_Name>
-            <Description>enable automatic purge of DAQ store</Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units>unitless</Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>purgeTarget</EFDB_Name>
-            <Description>goal of purge for minimum fraction of free disk space</Description>
-            <IDL_Type>double</IDL_Type>
-            <Units>unitless</Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>purgeThreshold</EFDB_Name>
-            <Description>fraction of free disk space to trigger a store purge</Description>
-            <IDL_Type>double</IDL_Type>
-            <Units>unitless</Units>
-            <Count>1</Count>
-        </item>
-    </SALEvent>
-    <SALEvent>
-        <Subsystem>CCCamera</Subsystem>
-        <Version>3.7.1</Version>
-        <Author></Author>
-        <EFDB_Topic>CCCamera_logevent_shutterBladeMotionProfile</EFDB_Topic>
-        <Description>The motion profile for each shutter blade (so normally 2 per image).
+    <item>
+      <EFDB_Name>version</EFDB_Name>
+      <Description>Version number of these settings</Description>
+      <IDL_Type>long</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>raftLocation</EFDB_Name>
+      <Description>Raft location in focal-plane (e.g. R22) (: delimited)</Description>
+      <IDL_Type>string</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>raft_TempControl_awGain</EFDB_Name>
+      <Description>anti-windup gain</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>raft_TempControl_basePower</EFDB_Name>
+      <Description>base power input</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>Watt</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>raft_TempControl_gain</EFDB_Name>
+      <Description>loop gain</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>raft_TempControl_maxInput</EFDB_Name>
+      <Description>maximum input</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>raft_TempControl_maxOutput</EFDB_Name>
+      <Description>maximum PID output</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>Watt</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>raft_TempControl_minInput</EFDB_Name>
+      <Description>minimum input</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>raft_TempControl_minOutput</EFDB_Name>
+      <Description>minimum PID output</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>Watt</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>raft_TempControl_rebs</EFDB_Name>
+      <Description>The REBs with heaters to use</Description>
+      <IDL_Type>string</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>raft_TempControl_setTemp</EFDB_Name>
+      <Description>Temperature set point</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>C</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>raft_TempControl_smoothTime</EFDB_Name>
+      <Description>input smoothing time</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>second</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>raft_TempControl_tempChans</EFDB_Name>
+      <Description>Temperature channels to use</Description>
+      <IDL_Type>string</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>raft_TempControl_timeConst</EFDB_Name>
+      <Description>integration time constant</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>second</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>raft_TempControl_tolerance</EFDB_Name>
+      <Description>maximum on-target error (%)</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+  </SALEvent>
+  <SALEvent>
+    <Subsystem>CCCamera</Subsystem>
+    <EFDB_Topic>CCCamera_logevent_focalPlaneDAQSettingsApplied</EFDB_Topic>
+    <item>
+      <EFDB_Name>version</EFDB_Name>
+      <Description>Version number of these settings</Description>
+      <IDL_Type>long</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>daqFolder</EFDB_Name>
+      <Description>Folder in 2-day store where images will be created</Description>
+      <IDL_Type>string</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>daqPartition</EFDB_Name>
+      <Description>DAQ partition</Description>
+      <IDL_Type>string</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>emulatedDAQ</EFDB_Name>
+      <Description>True when using an emulated DAQ</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+  </SALEvent>
+  <SALEvent>
+    <Subsystem>CCCamera</Subsystem>
+    <EFDB_Topic>CCCamera_logevent_focalPlaneSequencerConfigSettingsApplied</EFDB_Topic>
+    <item>
+      <EFDB_Name>clearCountParameter</EFDB_Name>
+      <Description>Name of the clear count parameter</Description>
+      <IDL_Type>string</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>clearMain</EFDB_Name>
+      <Description>Name of the clear main</Description>
+      <IDL_Type>string</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>idleFlushMain</EFDB_Name>
+      <Description>Name of the idle flush main</Description>
+      <IDL_Type>string</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>integrateMain</EFDB_Name>
+      <Description>Name of the integrate main</Description>
+      <IDL_Type>string</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>metaDataRegisters</EFDB_Name>
+      <Description>Names of meta-data related registers which must be in the sequencer</Description>
+      <IDL_Type>string</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>overCols</EFDB_Name>
+      <Description>overCols</Description>
+      <IDL_Type>int</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>overRows</EFDB_Name>
+      <Description>overRows</Description>
+      <IDL_Type>int</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>postCols</EFDB_Name>
+      <Description>postCols</Description>
+      <IDL_Type>int</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>postRows</EFDB_Name>
+      <Description>postRows</Description>
+      <IDL_Type>int</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>preCols</EFDB_Name>
+      <Description>preCols</Description>
+      <IDL_Type>int</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>preRows</EFDB_Name>
+      <Description>preRows</Description>
+      <IDL_Type>int</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>pseudoReadMain</EFDB_Name>
+      <Description>Name of the pseudo read main</Description>
+      <IDL_Type>string</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>readCols</EFDB_Name>
+      <Description>readCols</Description>
+      <IDL_Type>int</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>readCols2</EFDB_Name>
+      <Description>readCol2</Description>
+      <IDL_Type>int</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>readMain</EFDB_Name>
+      <Description>Name of the read main</Description>
+      <IDL_Type>string</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>readRows</EFDB_Name>
+      <Description>readRows</Description>
+      <IDL_Type>int</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>rowShiftForwardMain</EFDB_Name>
+      <Description>Name of the row shift forward main</Description>
+      <IDL_Type>string</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>rowShiftReverseMain</EFDB_Name>
+      <Description>Name of the row shift reverse main</Description>
+      <IDL_Type>string</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>scanMode</EFDB_Name>
+      <Description>True if the sequencer is in scan mode</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>sequencer</EFDB_Name>
+      <Description>sequencer</Description>
+      <IDL_Type>string</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>sequencerChecksums</EFDB_Name>
+      <Description>sequencerChecksums</Description>
+      <IDL_Type>string</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>shiftCountParameter</EFDB_Name>
+      <Description>Name of the shift count parameter</Description>
+      <IDL_Type>string</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>transparentMode</EFDB_Name>
+      <Description>True if the ASPIC is in transparent mode</Description>
+      <IDL_Type>int</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>underCols</EFDB_Name>
+      <Description>underCols</Description>
+      <IDL_Type>int</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+  </SALEvent>
+  <SALEvent>
+    <Subsystem>CCCamera</Subsystem>
+    <EFDB_Topic>CCCamera_logevent_focalPlaneRebRaftsSettingsApplied</EFDB_Topic>
+    <item>
+      <EFDB_Name>version</EFDB_Name>
+      <Description>Version number of these settings</Description>
+      <IDL_Type>long</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>bias0_csGateP</EFDB_Name>
+      <Description>Current source</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>mA</Units>
+      <Count>9</Count>
+    </item>
+    <item>
+      <EFDB_Name>bias0_gdP</EFDB_Name>
+      <Description>Guard diode</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>volt</Units>
+      <Count>9</Count>
+    </item>
+    <item>
+      <EFDB_Name>bias0_odP</EFDB_Name>
+      <Description>Output drain</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>volt</Units>
+      <Count>9</Count>
+    </item>
+    <item>
+      <EFDB_Name>bias0_ogP</EFDB_Name>
+      <Description>Output gate</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>volt</Units>
+      <Count>9</Count>
+    </item>
+    <item>
+      <EFDB_Name>bias0_rdP</EFDB_Name>
+      <Description>Reset drain</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>volt</Units>
+      <Count>9</Count>
+    </item>
+    <item>
+      <EFDB_Name>bias1_csGateP</EFDB_Name>
+      <Description>Current source</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>mA</Units>
+      <Count>9</Count>
+    </item>
+    <item>
+      <EFDB_Name>bias1_gdP</EFDB_Name>
+      <Description>Guard diode</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>volt</Units>
+      <Count>9</Count>
+    </item>
+    <item>
+      <EFDB_Name>bias1_odP</EFDB_Name>
+      <Description>Output drain</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>volt</Units>
+      <Count>9</Count>
+    </item>
+    <item>
+      <EFDB_Name>bias1_ogP</EFDB_Name>
+      <Description>Output gate</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>volt</Units>
+      <Count>9</Count>
+    </item>
+    <item>
+      <EFDB_Name>bias1_rdP</EFDB_Name>
+      <Description>Reset drain</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>volt</Units>
+      <Count>9</Count>
+    </item>
+    <item>
+      <EFDB_Name>bias2_csGateP</EFDB_Name>
+      <Description>Current source</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>mA</Units>
+      <Count>9</Count>
+    </item>
+    <item>
+      <EFDB_Name>bias2_gdP</EFDB_Name>
+      <Description>Guard diode</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>volt</Units>
+      <Count>9</Count>
+    </item>
+    <item>
+      <EFDB_Name>bias2_odP</EFDB_Name>
+      <Description>Output drain</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>volt</Units>
+      <Count>9</Count>
+    </item>
+    <item>
+      <EFDB_Name>bias2_ogP</EFDB_Name>
+      <Description>Output gate</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>volt</Units>
+      <Count>9</Count>
+    </item>
+    <item>
+      <EFDB_Name>bias2_rdP</EFDB_Name>
+      <Description>Reset drain</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>volt</Units>
+      <Count>9</Count>
+    </item>
+    <item>
+      <EFDB_Name>dac_pclkHighP</EFDB_Name>
+      <Description>Parallel clock high</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>volt</Units>
+      <Count>9</Count>
+    </item>
+    <item>
+      <EFDB_Name>dac_pclkLowP</EFDB_Name>
+      <Description>Parallel clock low</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>volt</Units>
+      <Count>9</Count>
+    </item>
+    <item>
+      <EFDB_Name>dac_rgHighP</EFDB_Name>
+      <Description>Reset gate high</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>volt</Units>
+      <Count>9</Count>
+    </item>
+    <item>
+      <EFDB_Name>dac_rgLowP</EFDB_Name>
+      <Description>Reset gate low</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>volt</Units>
+      <Count>9</Count>
+    </item>
+    <item>
+      <EFDB_Name>dac_sclkHighP</EFDB_Name>
+      <Description>Serial clock high</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>volt</Units>
+      <Count>9</Count>
+    </item>
+    <item>
+      <EFDB_Name>dac_sclkLowP</EFDB_Name>
+      <Description>Serial clock low</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>volt</Units>
+      <Count>9</Count>
+    </item>
+    <item>
+      <EFDB_Name>disableRTDHardwareCheck</EFDB_Name>
+      <Description>Disables the RTD derived CCD type check.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>9</Count>
+    </item>
+    <item>
+      <EFDB_Name>location</EFDB_Name>
+      <Description>Reb Location</Description>
+      <IDL_Type>string</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>serialNum</EFDB_Name>
+      <Description>Serial number</Description>
+      <IDL_Type>long</IDL_Type>
+      <Units>unitless</Units>
+      <Count>9</Count>
+    </item>
+  </SALEvent>
+  <SALEvent>
+    <Subsystem>CCCamera</Subsystem>
+    <EFDB_Topic>CCCamera_logevent_focalPlaneRebRaftsPowerSettingsApplied</EFDB_Topic>
+    <item>
+      <EFDB_Name>version</EFDB_Name>
+      <Description>Version number of these settings</Description>
+      <IDL_Type>long</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>bias0_gdCal</EFDB_Name>
+      <Description>GD convert factor</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>unitless</Units>
+      <Count>9</Count>
+    </item>
+    <item>
+      <EFDB_Name>bias0_gdTestVolts</EFDB_Name>
+      <Description>Shorts Test Voltage for GD</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>volt</Units>
+      <Count>9</Count>
+    </item>
+    <item>
+      <EFDB_Name>bias0_gdTol</EFDB_Name>
+      <Description>Guard diode tolerance</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>volt</Units>
+      <Count>9</Count>
+    </item>
+    <item>
+      <EFDB_Name>bias0_gdValueErr</EFDB_Name>
+      <Description>Tolerance for GD at TestVolts</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>volt</Units>
+      <Count>9</Count>
+    </item>
+    <item>
+      <EFDB_Name>bias0_gdZeroErr</EFDB_Name>
+      <Description>Tolerance for GD at 0V</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>volt</Units>
+      <Count>9</Count>
+    </item>
+    <item>
+      <EFDB_Name>bias0_odCal</EFDB_Name>
+      <Description>OD convert factor</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>unitless</Units>
+      <Count>9</Count>
+    </item>
+    <item>
+      <EFDB_Name>bias0_odIMax</EFDB_Name>
+      <Description>Max ODI value</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>A</Units>
+      <Count>9</Count>
+    </item>
+    <item>
+      <EFDB_Name>bias0_odTol</EFDB_Name>
+      <Description>Output drain tolerance</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>volt</Units>
+      <Count>9</Count>
+    </item>
+    <item>
+      <EFDB_Name>bias0_odZeroErr</EFDB_Name>
+      <Description>Tolerance for OD at 0V</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>Volt</Units>
+      <Count>9</Count>
+    </item>
+    <item>
+      <EFDB_Name>bias0_ogCal</EFDB_Name>
+      <Description>OG convert factor</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>unitless</Units>
+      <Count>9</Count>
+    </item>
+    <item>
+      <EFDB_Name>bias0_ogTestVolts</EFDB_Name>
+      <Description>Shorts Test Voltage for OG</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>volt</Units>
+      <Count>9</Count>
+    </item>
+    <item>
+      <EFDB_Name>bias0_ogTol</EFDB_Name>
+      <Description>Output gate tolerance</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>volt</Units>
+      <Count>9</Count>
+    </item>
+    <item>
+      <EFDB_Name>bias0_ogValueErr</EFDB_Name>
+      <Description>Tolerance for OG at TestVolts</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>volt</Units>
+      <Count>9</Count>
+    </item>
+    <item>
+      <EFDB_Name>bias0_ogZeroErr</EFDB_Name>
+      <Description>Tolerance for OG at 0V</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>volt</Units>
+      <Count>9</Count>
+    </item>
+    <item>
+      <EFDB_Name>bias0_rdCal</EFDB_Name>
+      <Description>RD convert factor</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>unitless</Units>
+      <Count>9</Count>
+    </item>
+    <item>
+      <EFDB_Name>bias0_rdTestVolts</EFDB_Name>
+      <Description>Shorts Test Voltage for RD</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>volt</Units>
+      <Count>9</Count>
+    </item>
+    <item>
+      <EFDB_Name>bias0_rdTol</EFDB_Name>
+      <Description>Reset drain tolerance</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>volt</Units>
+      <Count>9</Count>
+    </item>
+    <item>
+      <EFDB_Name>bias0_rdValueErr</EFDB_Name>
+      <Description>Tolerance for RD at TestVolts</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>volt</Units>
+      <Count>9</Count>
+    </item>
+    <item>
+      <EFDB_Name>bias0_rdZeroErr</EFDB_Name>
+      <Description>Tolerance for RD at 0V</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>volt</Units>
+      <Count>9</Count>
+    </item>
+    <item>
+      <EFDB_Name>bias1_gdCal</EFDB_Name>
+      <Description>GD convert factor</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>unitless</Units>
+      <Count>9</Count>
+    </item>
+    <item>
+      <EFDB_Name>bias1_gdTestVolts</EFDB_Name>
+      <Description>Shorts Test Voltage for GD</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>volt</Units>
+      <Count>9</Count>
+    </item>
+    <item>
+      <EFDB_Name>bias1_gdTol</EFDB_Name>
+      <Description>Guard diode tolerance</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>volt</Units>
+      <Count>9</Count>
+    </item>
+    <item>
+      <EFDB_Name>bias1_gdValueErr</EFDB_Name>
+      <Description>Tolerance for GD at TestVolts</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>Volt</Units>
+      <Count>9</Count>
+    </item>
+    <item>
+      <EFDB_Name>bias1_gdZeroErr</EFDB_Name>
+      <Description>Tolerance for GD at 0V</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>Volt</Units>
+      <Count>9</Count>
+    </item>
+    <item>
+      <EFDB_Name>bias1_odCal</EFDB_Name>
+      <Description>OD convert factor</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>unitless</Units>
+      <Count>9</Count>
+    </item>
+    <item>
+      <EFDB_Name>bias1_odIMax</EFDB_Name>
+      <Description>Max ODI value</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>A</Units>
+      <Count>9</Count>
+    </item>
+    <item>
+      <EFDB_Name>bias1_odTol</EFDB_Name>
+      <Description>Output drain tolerance</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>volt</Units>
+      <Count>9</Count>
+    </item>
+    <item>
+      <EFDB_Name>bias1_odZeroErr</EFDB_Name>
+      <Description>Tolerance for OD at 0V</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>Volt</Units>
+      <Count>9</Count>
+    </item>
+    <item>
+      <EFDB_Name>bias1_ogCal</EFDB_Name>
+      <Description>OG convert factor</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>unitless</Units>
+      <Count>9</Count>
+    </item>
+    <item>
+      <EFDB_Name>bias1_ogTestVolts</EFDB_Name>
+      <Description>Shorts Test Voltage for OG</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>volt</Units>
+      <Count>9</Count>
+    </item>
+    <item>
+      <EFDB_Name>bias1_ogTol</EFDB_Name>
+      <Description>Output gate tolerance</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>volt</Units>
+      <Count>9</Count>
+    </item>
+    <item>
+      <EFDB_Name>bias1_ogValueErr</EFDB_Name>
+      <Description>Tolerance for OG at TestVolts</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>Volt</Units>
+      <Count>9</Count>
+    </item>
+    <item>
+      <EFDB_Name>bias1_ogZeroErr</EFDB_Name>
+      <Description>Tolerance for OG at 0V</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>Volt</Units>
+      <Count>9</Count>
+    </item>
+    <item>
+      <EFDB_Name>bias1_rdCal</EFDB_Name>
+      <Description>RD convert factor</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>unitless</Units>
+      <Count>9</Count>
+    </item>
+    <item>
+      <EFDB_Name>bias1_rdTestVolts</EFDB_Name>
+      <Description>Shorts Test Voltage for RD</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>volt</Units>
+      <Count>9</Count>
+    </item>
+    <item>
+      <EFDB_Name>bias1_rdTol</EFDB_Name>
+      <Description>Reset drain tolerance</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>volt</Units>
+      <Count>9</Count>
+    </item>
+    <item>
+      <EFDB_Name>bias1_rdValueErr</EFDB_Name>
+      <Description>Tolerance for RD at TestVolts</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>volt</Units>
+      <Count>9</Count>
+    </item>
+    <item>
+      <EFDB_Name>bias1_rdZeroErr</EFDB_Name>
+      <Description>Tolerance for RD at 0V</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>volt</Units>
+      <Count>9</Count>
+    </item>
+    <item>
+      <EFDB_Name>bias2_gdCal</EFDB_Name>
+      <Description>GD convert factor</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>unitless</Units>
+      <Count>9</Count>
+    </item>
+    <item>
+      <EFDB_Name>bias2_gdTestVolts</EFDB_Name>
+      <Description>Shorts Test Voltage for GD</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>volt</Units>
+      <Count>9</Count>
+    </item>
+    <item>
+      <EFDB_Name>bias2_gdTol</EFDB_Name>
+      <Description>Guard diode tolerance</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>volt</Units>
+      <Count>9</Count>
+    </item>
+    <item>
+      <EFDB_Name>bias2_gdValueErr</EFDB_Name>
+      <Description>Tolerance for GD at TestVolts</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>volt</Units>
+      <Count>9</Count>
+    </item>
+    <item>
+      <EFDB_Name>bias2_gdZeroErr</EFDB_Name>
+      <Description>Tolerance for GD at 0V</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>volt</Units>
+      <Count>9</Count>
+    </item>
+    <item>
+      <EFDB_Name>bias2_odCal</EFDB_Name>
+      <Description>OD convert factor</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>unitless</Units>
+      <Count>9</Count>
+    </item>
+    <item>
+      <EFDB_Name>bias2_odIMax</EFDB_Name>
+      <Description>Max ODI value</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>A</Units>
+      <Count>9</Count>
+    </item>
+    <item>
+      <EFDB_Name>bias2_odTol</EFDB_Name>
+      <Description>Output drain tolerance</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>volt</Units>
+      <Count>9</Count>
+    </item>
+    <item>
+      <EFDB_Name>bias2_odZeroErr</EFDB_Name>
+      <Description>Tolerance for OD at 0V</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>volt</Units>
+      <Count>9</Count>
+    </item>
+    <item>
+      <EFDB_Name>bias2_ogCal</EFDB_Name>
+      <Description>OG convert factor</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>unitless</Units>
+      <Count>9</Count>
+    </item>
+    <item>
+      <EFDB_Name>bias2_ogTestVolts</EFDB_Name>
+      <Description>Shorts Test Voltage for OG</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>volt</Units>
+      <Count>9</Count>
+    </item>
+    <item>
+      <EFDB_Name>bias2_ogTol</EFDB_Name>
+      <Description>Output gate tolerance</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>volt</Units>
+      <Count>9</Count>
+    </item>
+    <item>
+      <EFDB_Name>bias2_ogValueErr</EFDB_Name>
+      <Description>Tolerance for OG at TestVolts</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>volt</Units>
+      <Count>9</Count>
+    </item>
+    <item>
+      <EFDB_Name>bias2_ogZeroErr</EFDB_Name>
+      <Description>Tolerance for OG at 0V</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>volt</Units>
+      <Count>9</Count>
+    </item>
+    <item>
+      <EFDB_Name>bias2_rdCal</EFDB_Name>
+      <Description>RD convert factor</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>unitless</Units>
+      <Count>9</Count>
+    </item>
+    <item>
+      <EFDB_Name>bias2_rdTestVolts</EFDB_Name>
+      <Description>Shorts Test Voltage for RD</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>volt</Units>
+      <Count>9</Count>
+    </item>
+    <item>
+      <EFDB_Name>bias2_rdTol</EFDB_Name>
+      <Description>Reset drain tolerance</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>volt</Units>
+      <Count>9</Count>
+    </item>
+    <item>
+      <EFDB_Name>bias2_rdValueErr</EFDB_Name>
+      <Description>Tolerance for RD at TestVolts</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>volt</Units>
+      <Count>9</Count>
+    </item>
+    <item>
+      <EFDB_Name>bias2_rdZeroErr</EFDB_Name>
+      <Description>Tolerance for RD at 0V</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>Volt</Units>
+      <Count>9</Count>
+    </item>
+    <item>
+      <EFDB_Name>clkhiAmin</EFDB_Name>
+      <Description>Minimum ON_State CLKHI (A) per REB</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>A</Units>
+      <Count>9</Count>
+    </item>
+    <item>
+      <EFDB_Name>clkhiQmax</EFDB_Name>
+      <Description>Max OFF_State CLKHI (A) per REB</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>A</Units>
+      <Count>9</Count>
+    </item>
+    <item>
+      <EFDB_Name>clkliAmin</EFDB_Name>
+      <Description>Minimum ON_State CLKLI (A) per REB</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>A</Units>
+      <Count>9</Count>
+    </item>
+    <item>
+      <EFDB_Name>clkliQmax</EFDB_Name>
+      <Description>Max OFF_State CLKLI (A) per REB</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>A</Units>
+      <Count>9</Count>
+    </item>
+    <item>
+      <EFDB_Name>dac_clkhIMax</EFDB_Name>
+      <Description>Max ClkHI value</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>A</Units>
+      <Count>9</Count>
+    </item>
+    <item>
+      <EFDB_Name>dac_clklIMax</EFDB_Name>
+      <Description>Max ClkLI value</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>A</Units>
+      <Count>9</Count>
+    </item>
+    <item>
+      <EFDB_Name>dac_pclkHighCal</EFDB_Name>
+      <Description>Parallel high calib</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>unitless</Units>
+      <Count>9</Count>
+    </item>
+    <item>
+      <EFDB_Name>dac_pclkHighTestV</EFDB_Name>
+      <Description>Shorts Test Voltage for PClkU</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>Volt</Units>
+      <Count>9</Count>
+    </item>
+    <item>
+      <EFDB_Name>dac_pclkHighTol</EFDB_Name>
+      <Description>Parallel high tolerance</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>volt</Units>
+      <Count>9</Count>
+    </item>
+    <item>
+      <EFDB_Name>dac_pclkHighValueErr</EFDB_Name>
+      <Description>Tolerance for PClkU TestV</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>Volt</Units>
+      <Count>9</Count>
+    </item>
+    <item>
+      <EFDB_Name>dac_pclkHighZeroErr</EFDB_Name>
+      <Description>Tolerance for 0V w/PClkU test</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>Volt</Units>
+      <Count>9</Count>
+    </item>
+    <item>
+      <EFDB_Name>dac_pclkLowCal</EFDB_Name>
+      <Description>Parallel low calib</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>unitless</Units>
+      <Count>9</Count>
+    </item>
+    <item>
+      <EFDB_Name>dac_pclkLowTestV</EFDB_Name>
+      <Description>Shorts Test Voltage for PClkL</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>Volt</Units>
+      <Count>9</Count>
+    </item>
+    <item>
+      <EFDB_Name>dac_pclkLowTol</EFDB_Name>
+      <Description>Parallel low tolerance</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>volt</Units>
+      <Count>9</Count>
+    </item>
+    <item>
+      <EFDB_Name>dac_pclkLowValueErr</EFDB_Name>
+      <Description>Tolerance for PClkL TestV</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>Volt</Units>
+      <Count>9</Count>
+    </item>
+    <item>
+      <EFDB_Name>dac_pclkLowZeroErr</EFDB_Name>
+      <Description>Tolerance for 0V w/PClkL test</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>Volt</Units>
+      <Count>9</Count>
+    </item>
+    <item>
+      <EFDB_Name>dac_rgHighCal</EFDB_Name>
+      <Description>Reset high calib</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>unitless</Units>
+      <Count>9</Count>
+    </item>
+    <item>
+      <EFDB_Name>dac_rgHighTestV</EFDB_Name>
+      <Description>Shorts Test Voltage for RGU</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>Volt</Units>
+      <Count>9</Count>
+    </item>
+    <item>
+      <EFDB_Name>dac_rgHighTol</EFDB_Name>
+      <Description>Reset high tolerance</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>volt</Units>
+      <Count>9</Count>
+    </item>
+    <item>
+      <EFDB_Name>dac_rgHighValueErr</EFDB_Name>
+      <Description>Tolerance for RGU TestV</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>Volt</Units>
+      <Count>9</Count>
+    </item>
+    <item>
+      <EFDB_Name>dac_rgHighZeroErr</EFDB_Name>
+      <Description>Tolerance for 0V w/RGU test</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>Volt</Units>
+      <Count>9</Count>
+    </item>
+    <item>
+      <EFDB_Name>dac_rgLowCal</EFDB_Name>
+      <Description>Reset low calib</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>unitless</Units>
+      <Count>9</Count>
+    </item>
+    <item>
+      <EFDB_Name>dac_rgLowTestV</EFDB_Name>
+      <Description>Shorts Test Voltage for RGL</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>Volt</Units>
+      <Count>9</Count>
+    </item>
+    <item>
+      <EFDB_Name>dac_rgLowTol</EFDB_Name>
+      <Description>Reset low tolerance</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>volt</Units>
+      <Count>9</Count>
+    </item>
+    <item>
+      <EFDB_Name>dac_rgLowValueErr</EFDB_Name>
+      <Description>Tolerance for RGL TestV</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>Volt</Units>
+      <Count>9</Count>
+    </item>
+    <item>
+      <EFDB_Name>dac_rgLowZeroErr</EFDB_Name>
+      <Description>Tolerance for 0V w/RGL test</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>Volt</Units>
+      <Count>9</Count>
+    </item>
+    <item>
+      <EFDB_Name>dac_sclkHighCal</EFDB_Name>
+      <Description>Serial high calib</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>unitless</Units>
+      <Count>9</Count>
+    </item>
+    <item>
+      <EFDB_Name>dac_sclkHighTestV</EFDB_Name>
+      <Description>Shorts Test Voltage for SClkU</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>Volt</Units>
+      <Count>9</Count>
+    </item>
+    <item>
+      <EFDB_Name>dac_sclkHighTol</EFDB_Name>
+      <Description>Serial high tolerance</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>volt</Units>
+      <Count>9</Count>
+    </item>
+    <item>
+      <EFDB_Name>dac_sclkHighValueErr</EFDB_Name>
+      <Description>Tolerance for SClkU TestV</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>Volt</Units>
+      <Count>9</Count>
+    </item>
+    <item>
+      <EFDB_Name>dac_sclkHighZeroErr</EFDB_Name>
+      <Description>Tolerance for 0V w/SClkU test</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>Volt</Units>
+      <Count>9</Count>
+    </item>
+    <item>
+      <EFDB_Name>dac_sclkLowCal</EFDB_Name>
+      <Description>Serial low calib</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>unitless</Units>
+      <Count>9</Count>
+    </item>
+    <item>
+      <EFDB_Name>dac_sclkLowTestV</EFDB_Name>
+      <Description>Shorts Test Voltage for SClkL</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>Volt</Units>
+      <Count>9</Count>
+    </item>
+    <item>
+      <EFDB_Name>dac_sclkLowTol</EFDB_Name>
+      <Description>Serial low tolerance</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>volt</Units>
+      <Count>9</Count>
+    </item>
+    <item>
+      <EFDB_Name>dac_sclkLowValueErr</EFDB_Name>
+      <Description>Tolerance for SClkL TestV</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>Volt</Units>
+      <Count>9</Count>
+    </item>
+    <item>
+      <EFDB_Name>dac_sclkLowZeroErr</EFDB_Name>
+      <Description>Tolerance for 0V w/SClkL test</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>Volt</Units>
+      <Count>9</Count>
+    </item>
+    <item>
+      <EFDB_Name>location</EFDB_Name>
+      <Description>Reb Location</Description>
+      <IDL_Type>string</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>maxDelta</EFDB_Name>
+      <Description>Max allowed SlowAdcs delta</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>Volt</Units>
+      <Count>9</Count>
+    </item>
+    <item>
+      <EFDB_Name>maxStep</EFDB_Name>
+      <Description>Max allowed SlowAdcs step</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>Volt</Units>
+      <Count>9</Count>
+    </item>
+    <item>
+      <EFDB_Name>minTol</EFDB_Name>
+      <Description>Min allowed SlowAdcs tolerance</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>Volt</Units>
+      <Count>9</Count>
+    </item>
+    <item>
+      <EFDB_Name>nPowerOnPub</EFDB_Name>
+      <Description>Number of consequtive monitor-update pubs after trigger</Description>
+      <IDL_Type>int</IDL_Type>
+      <Units>unitless</Units>
+      <Count>9</Count>
+    </item>
+    <item>
+      <EFDB_Name>odiAmin</EFDB_Name>
+      <Description>Minimum ON_State ODI (A) per CCD</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>A</Units>
+      <Count>9</Count>
+    </item>
+    <item>
+      <EFDB_Name>odiQmax</EFDB_Name>
+      <Description>Max OFF_State ODI (A) per CCD</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>A</Units>
+      <Count>9</Count>
+    </item>
+  </SALEvent>
+  <!-- daq_monitor settings applied -->
+  <SALEvent>
+    <Subsystem>CCCamera</Subsystem>
+    <EFDB_Topic>CCCamera_logevent_daq_monitorSettingsApplied</EFDB_Topic>
+    <item>
+      <EFDB_Name>version</EFDB_Name>
+      <Description>Version number of these settings</Description>
+      <IDL_Type>long</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>daqPartition</EFDB_Name>
+      <Description>partition containing DAQ store</Description>
+      <IDL_Type>string</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+  </SALEvent>
+  <SALEvent>
+    <Subsystem>CCCamera</Subsystem>
+    <EFDB_Topic>CCCamera_logevent_daq_monitor_StatsSettingsApplied</EFDB_Topic>
+    <item>
+      <EFDB_Name>version</EFDB_Name>
+      <Description>Version number of these settings</Description>
+      <IDL_Type>long</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>enablePeriodicPublication</EFDB_Name>
+      <Description>enable periodic publication</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>minDiffAlertWarning</EFDB_Name>
+      <Description>minimum difference between successive reads to raise Alert at warning level</Description>
+      <IDL_Type>int</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>minDiffLogWarning</EFDB_Name>
+      <Description>minimum difference between successive reads to put warning in log</Description>
+      <IDL_Type>int</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>sumDriverChecks</EFDB_Name>
+      <Description>Driver Stats for warnings on sums</Description>
+      <IDL_Type>string</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>sumDriverStats</EFDB_Name>
+      <Description>Driver Stats for sums over location</Description>
+      <IDL_Type>string</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>sumFirmwareChecks</EFDB_Name>
+      <Description>Firmware Stats for warnings on sums</Description>
+      <IDL_Type>string</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>sumFirmwareStats</EFDB_Name>
+      <Description>Firmware Stats for sums over location</Description>
+      <IDL_Type>string</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>sumRdsChecks</EFDB_Name>
+      <Description>Rds Stats for warnings on sums</Description>
+      <IDL_Type>string</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>sumRdsStats</EFDB_Name>
+      <Description>Rds Stats for sums over location</Description>
+      <IDL_Type>string</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>sumRmsChecks</EFDB_Name>
+      <Description>Rms Stats for warnings on sums</Description>
+      <IDL_Type>string</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>sumRmsStats</EFDB_Name>
+      <Description>Rms Stats for sums over location</Description>
+      <IDL_Type>string</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+  </SALEvent>
+  <SALEvent>
+    <Subsystem>CCCamera</Subsystem>
+    <EFDB_Topic>CCCamera_logevent_daq_monitor_StoreSettingsApplied</EFDB_Topic>
+    <item>
+      <EFDB_Name>version</EFDB_Name>
+      <Description>Version number of these settings</Description>
+      <IDL_Type>long</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>daqFolder</EFDB_Name>
+      <Description>top-level folder for DAQ store</Description>
+      <IDL_Type>string</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>enableAutoPurge</EFDB_Name>
+      <Description>enable automatic purge of DAQ store</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>purgeTarget</EFDB_Name>
+      <Description>goal of purge for minimum fraction of free disk space</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>purgeThreshold</EFDB_Name>
+      <Description>fraction of free disk space to trigger a store purge</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+  </SALEvent>
+  <SALEvent>
+    <Subsystem>CCCamera</Subsystem>
+    <Version>3.7.1</Version>
+    <Author/>
+    <EFDB_Topic>CCCamera_logevent_shutterBladeMotionProfile</EFDB_Topic>
+    <Description>The motion profile for each shutter blade (so normally 2 per image).
         Note: Note this is overkill for ComCam, but aims to be the same as for the main camera.
         For ComCam the encoder and hall effect measurements will be simulated, or empty (and probably initially empty).
         Note 2: The coordinate system in which positions are reported is as yet ill-defined, and the origin (but not direction)
@@ -2373,262 +2373,262 @@
         Note 3: The maximum number of positions reported by the firmware for both encoder position and hall effect hall sensors
         is hard-wired to 240. This is used as the array dimension here. The actual number of points reported will be in
         encoderCount and hallSensorCount. The array element values beyond the count are undefined (but probably 0)</Description>
-        <item>
-            <EFDB_Name>blade</EFDB_Name>
-            <Description>The blade that is moving</Description>
-            <IDL_Type>long</IDL_Type>
-            <Units>unitless</Units>
-            <Count>1</Count>
-            <Enumeration>PLUS_X,MINUS_X</Enumeration>
-        </item>
-        <item>
-            <EFDB_Name>direction</EFDB_Name>
-            <Description>Is the blade opening or closing</Description>
-            <IDL_Type>long</IDL_Type>
-            <Units>unitless</Units>
-            <Count>1</Count>
-            <Enumeration>OPEN,CLOSE</Enumeration>
-        </item>
-        <item>
-            <EFDB_Name>timestampStart</EFDB_Name>
-            <Description>The time at which the motion started (TAI)</Description>
-            <IDL_Type>double</IDL_Type>
-            <Units>second</Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>startPosition</EFDB_Name>
-            <Description>The start position of the blade</Description>
-            <IDL_Type>double</IDL_Type>
-            <Units>mm</Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>targetDuration</EFDB_Name>
-            <Description>Requested blade motion time</Description>
-            <IDL_Type>double</IDL_Type>
-            <Units>second</Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>targetPosition</EFDB_Name>
-            <Description>Requested position at end of motion</Description>
-            <IDL_Type>double</IDL_Type>
-            <Units>mm</Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>endPosition</EFDB_Name>
-            <Description>Actual position and end of motion</Description>
-            <IDL_Type>double</IDL_Type>
-            <Units>mm</Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>actualDuration</EFDB_Name>
-            <Description>Actual blade motion time</Description>
-            <IDL_Type>double</IDL_Type>
-            <Units>second</Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>hallSensorCount</EFDB_Name>
-            <Description>Actual number of hall sensor transitions</Description>
-            <IDL_Type>int</IDL_Type>
-            <Units>unitless</Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>timestampHallSensor</EFDB_Name>
-            <Description>Hall effect switch trasition times</Description>
-            <IDL_Type>double</IDL_Type>
-            <Units>second</Units>
-            <Count>240</Count>
-        </item>
-        <item>
-            <EFDB_Name>hallSensorID</EFDB_Name>
-            <Description>Which Hall effect switch trasitioned</Description>
-            <IDL_Type>int</IDL_Type>
-            <Units>unitless</Units>
-            <Count>240</Count>
-        </item>
-        <item>
-            <EFDB_Name>hallSensorPosition</EFDB_Name>
-            <Description>Estimated position of the leading edge of the blade at transition time</Description>
-            <IDL_Type>double</IDL_Type>
-            <Units>mm</Units>
-            <Count>240</Count>
-        </item>
-        <item>
-            <EFDB_Name>hallSensorTransition</EFDB_Name>
-            <Description>true if switch turned on, false if switch turned off</Description>
-            <IDL_Type>boolean</IDL_Type>
-            <Units>unitless</Units>
-            <Count>240</Count>
-        </item>
-        <item>
-            <EFDB_Name>encoderCount</EFDB_Name>
-            <Description>Actual number of encoder measurements</Description>
-            <IDL_Type>int</IDL_Type>
-            <Units>unitless</Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>timestampEncoder</EFDB_Name>
-            <Description>timestamps for motor encoder position measurements (TAI)</Description>
-            <IDL_Type>double</IDL_Type>
-            <Units>second</Units>
-            <Count>240</Count>
-        </item>
-        <item>
-            <EFDB_Name>encoderPosition</EFDB_Name>
-            <Description>Positions for motor encoder position measurements</Description>
-            <IDL_Type>double</IDL_Type>
-            <Units>mm</Units>
-            <Count>240</Count>
-        </item>
-    </SALEvent>
-    <!-- Preview events, probably will not be used until xml 6.2 but here for comment/disscussion -->
-    <SALEvent>
-        <Subsystem>CCCamera</Subsystem>
-        <EFDB_Topic>CCCamera_logevent_imageStored</EFDB_Topic>
-        <Description>When this event is received the corresponding image should be complete in the DAQ 2-day store.
+    <item>
+      <EFDB_Name>blade</EFDB_Name>
+      <Description>The blade that is moving</Description>
+      <IDL_Type>long</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+      <Enumeration>PLUS_X,MINUS_X</Enumeration>
+    </item>
+    <item>
+      <EFDB_Name>direction</EFDB_Name>
+      <Description>Is the blade opening or closing</Description>
+      <IDL_Type>long</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+      <Enumeration>OPEN,CLOSE</Enumeration>
+    </item>
+    <item>
+      <EFDB_Name>timestampStart</EFDB_Name>
+      <Description>The time at which the motion started (TAI)</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>second</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>startPosition</EFDB_Name>
+      <Description>The start position of the blade</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>mm</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>targetDuration</EFDB_Name>
+      <Description>Requested blade motion time</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>second</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>targetPosition</EFDB_Name>
+      <Description>Requested position at end of motion</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>mm</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>endPosition</EFDB_Name>
+      <Description>Actual position and end of motion</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>mm</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>actualDuration</EFDB_Name>
+      <Description>Actual blade motion time</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>second</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>hallSensorCount</EFDB_Name>
+      <Description>Actual number of hall sensor transitions</Description>
+      <IDL_Type>int</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>timestampHallSensor</EFDB_Name>
+      <Description>Hall effect switch trasition times</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>second</Units>
+      <Count>240</Count>
+    </item>
+    <item>
+      <EFDB_Name>hallSensorID</EFDB_Name>
+      <Description>Which Hall effect switch trasitioned</Description>
+      <IDL_Type>int</IDL_Type>
+      <Units>unitless</Units>
+      <Count>240</Count>
+    </item>
+    <item>
+      <EFDB_Name>hallSensorPosition</EFDB_Name>
+      <Description>Estimated position of the leading edge of the blade at transition time</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>mm</Units>
+      <Count>240</Count>
+    </item>
+    <item>
+      <EFDB_Name>hallSensorTransition</EFDB_Name>
+      <Description>true if switch turned on, false if switch turned off</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>240</Count>
+    </item>
+    <item>
+      <EFDB_Name>encoderCount</EFDB_Name>
+      <Description>Actual number of encoder measurements</Description>
+      <IDL_Type>int</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>timestampEncoder</EFDB_Name>
+      <Description>timestamps for motor encoder position measurements (TAI)</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>second</Units>
+      <Count>240</Count>
+    </item>
+    <item>
+      <EFDB_Name>encoderPosition</EFDB_Name>
+      <Description>Positions for motor encoder position measurements</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>mm</Units>
+      <Count>240</Count>
+    </item>
+  </SALEvent>
+  <!-- Preview events, probably will not be used until xml 6.2 but here for comment/disscussion -->
+  <SALEvent>
+    <Subsystem>CCCamera</Subsystem>
+    <EFDB_Topic>CCCamera_logevent_imageStored</EFDB_Topic>
+    <Description>When this event is received the corresponding image should be complete in the DAQ 2-day store.
         Once in use this will allow endReadout event to go back to indicating that the readout is complete (sequencers finished).
         Note: all : delimited strings (aka string arrays) follow the escaping convention defined in CAP-572</Description>
-        <!-- Note, boilder plate items present on all image related events removed. TBC if this is OK -->
-        <item>
-            <EFDB_Name>imageName</EFDB_Name>
-            <Description>The imageName for this specific exposure, assigned by the camera</Description>
-            <IDL_Type>string</IDL_Type>
-            <IDL_Size>32</IDL_Size>
-            <Units>unitless</Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>timestampImageStored</EFDB_Name>
-            <Description>The time when the DAQ image was store was complete.</Description>
-            <IDL_Type>double</IDL_Type>
-            <Units>second</Units>
-            <Count>1</Count>
-        </item>
-        <!-- Note: what should be generated if file store fails for one or more files?-->
-    </SALEvent>
-    <SALEvent>
-        <Subsystem>CCCamera</Subsystem>
-        <EFDB_Topic>CCCamera_logevent_fitsFilesWritten</EFDB_Topic>
-        <Description>When this event is received, all of the CCS files on the diagnostic cluster have been written
+    <!-- Note, boilder plate items present on all image related events removed. TBC if this is OK -->
+    <item>
+      <EFDB_Name>imageName</EFDB_Name>
+      <Description>The imageName for this specific exposure, assigned by the camera</Description>
+      <IDL_Type>string</IDL_Type>
+      <IDL_Size>32</IDL_Size>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>timestampImageStored</EFDB_Name>
+      <Description>The time when the DAQ image was store was complete.</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>second</Units>
+      <Count>1</Count>
+    </item>
+    <!-- Note: what should be generated if file store fails for one or more files?-->
+  </SALEvent>
+  <SALEvent>
+    <Subsystem>CCCamera</Subsystem>
+    <EFDB_Topic>CCCamera_logevent_fitsFilesWritten</EFDB_Topic>
+    <Description>When this event is received, all of the CCS files on the diagnostic cluster have been written
         Note: all : delimited strings (aka string arrays) follow the escaping convention defined in CAP-572</Description>
-        <!-- Note, boilder plate items present on all image related events removed. TBC if this is OK -->
-        <item>
-            <EFDB_Name>imageName</EFDB_Name>
-            <Description>The imageName for this specific exposure, assigned by the camera</Description>
-            <IDL_Type>string</IDL_Type>
-            <IDL_Size>32</IDL_Size>
-            <Units>unitless</Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>timestampFilesWritten</EFDB_Name>
-            <Description>The time when the (last) CCS FITS file was written.</Description>
-            <IDL_Type>double</IDL_Type>
-            <Units>second</Units>
-            <Count>1</Count>
-        </item>
-        <!-- Note: what should be generated if file save fails on one or more nodes?-->
-        <item>
-            <EFDB_Name>rootFileName</EFDB_Name>
-            <Description>The common filesystem location of all files below.</Description>
-            <IDL_Type>string</IDL_Type>
-            <Units>unitless</Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>relativeFileNames</EFDB_Name>
-            <Description>The file system location of each file, relative to rootFileName (: delimited).</Description>
-            <IDL_Type>string</IDL_Type>
-            <Units>unitless</Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>fileNode</EFDB_Name>
-            <Description>The node on which each file is written (: delimited, in same order as above).</Description>
-            <IDL_Type>string</IDL_Type>
-            <Units>unitless</Units>
-            <Count>1</Count>
-        </item>
-    </SALEvent>
-    <SALEvent>
-        <Subsystem>CCCamera</Subsystem>
-        <EFDB_Topic>CCCamera_logevent_fileCommandExecution</EFDB_Topic>
-        <Description>Each time a command is executed on a single FITS file this event is generated
+    <!-- Note, boilder plate items present on all image related events removed. TBC if this is OK -->
+    <item>
+      <EFDB_Name>imageName</EFDB_Name>
+      <Description>The imageName for this specific exposure, assigned by the camera</Description>
+      <IDL_Type>string</IDL_Type>
+      <IDL_Size>32</IDL_Size>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>timestampFilesWritten</EFDB_Name>
+      <Description>The time when the (last) CCS FITS file was written.</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>second</Units>
+      <Count>1</Count>
+    </item>
+    <!-- Note: what should be generated if file save fails on one or more nodes?-->
+    <item>
+      <EFDB_Name>rootFileName</EFDB_Name>
+      <Description>The common filesystem location of all files below.</Description>
+      <IDL_Type>string</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>relativeFileNames</EFDB_Name>
+      <Description>The file system location of each file, relative to rootFileName (: delimited).</Description>
+      <IDL_Type>string</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>fileNode</EFDB_Name>
+      <Description>The node on which each file is written (: delimited, in same order as above).</Description>
+      <IDL_Type>string</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+  </SALEvent>
+  <SALEvent>
+    <Subsystem>CCCamera</Subsystem>
+    <EFDB_Topic>CCCamera_logevent_fileCommandExecution</EFDB_Topic>
+    <Description>Each time a command is executed on a single FITS file this event is generated
         </Description>
-        <!-- Note, boilder plate items present on all image related events removed. TBC if this is OK -->
-        <item>
-            <EFDB_Name>imageName</EFDB_Name>
-            <Description>The imageName for this specific exposure, assigned by the camera</Description>
-            <IDL_Type>string</IDL_Type>
-            <IDL_Size>32</IDL_Size>
-            <Units>unitless</Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>timestampCommandComplete</EFDB_Name>
-            <Description>The time when the command completed.</Description>
-            <IDL_Type>double</IDL_Type>
-            <Units>second</Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>command</EFDB_Name>
-            <Description>The comamnd executed included arguments.</Description>
-            <IDL_Type>string</IDL_Type>
-            <Units>unitless</Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>rc</EFDB_Name>
-            <Description>The return code from the command execution.</Description>
-            <IDL_Type>int</IDL_Type>
-            <Units>unitless</Units>
-            <Count>1</Count>
-        </item>
-    </SALEvent>
-    <SALEvent>
-        <Subsystem>CCCamera</Subsystem>
-        <EFDB_Topic>CCCamera_logevent_imageVisualization</EFDB_Topic>
-        <Description>Event sent when image visualization is ready
+    <!-- Note, boilder plate items present on all image related events removed. TBC if this is OK -->
+    <item>
+      <EFDB_Name>imageName</EFDB_Name>
+      <Description>The imageName for this specific exposure, assigned by the camera</Description>
+      <IDL_Type>string</IDL_Type>
+      <IDL_Size>32</IDL_Size>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>timestampCommandComplete</EFDB_Name>
+      <Description>The time when the command completed.</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>second</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>command</EFDB_Name>
+      <Description>The comamnd executed included arguments.</Description>
+      <IDL_Type>string</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>rc</EFDB_Name>
+      <Description>The return code from the command execution.</Description>
+      <IDL_Type>int</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+  </SALEvent>
+  <SALEvent>
+    <Subsystem>CCCamera</Subsystem>
+    <EFDB_Topic>CCCamera_logevent_imageVisualization</EFDB_Topic>
+    <Description>Event sent when image visualization is ready
         </Description>
-        <!-- Note, boilder plate items present on all image related events removed. TBC if this is OK -->
-        <item>
-            <EFDB_Name>imageName</EFDB_Name>
-            <Description>The imageName for this specific exposure, assigned by the camera</Description>
-            <IDL_Type>string</IDL_Type>
-            <IDL_Size>32</IDL_Size>
-            <Units>unitless</Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>timestampVisualizationAvailable</EFDB_Name>
-            <Description>The time when the command completed.</Description>
-            <IDL_Type>double</IDL_Type>
-            <Units>second</Units>
-            <Count>1</Count>
-        </item>
-        <item>
-            <EFDB_Name>url</EFDB_Name>
-            <Description>The URL at which the full image visualization is available.</Description>
-            <IDL_Type>string</IDL_Type>
-            <Units>unitless</Units>
-            <Count>1</Count>
-        </item>
-        <!-- What resolution should the thumbnail be available at (or should we allow multiple resolutions)?
+    <!-- Note, boilder plate items present on all image related events removed. TBC if this is OK -->
+    <item>
+      <EFDB_Name>imageName</EFDB_Name>
+      <Description>The imageName for this specific exposure, assigned by the camera</Description>
+      <IDL_Type>string</IDL_Type>
+      <IDL_Size>32</IDL_Size>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>timestampVisualizationAvailable</EFDB_Name>
+      <Description>The time when the command completed.</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>second</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>url</EFDB_Name>
+      <Description>The URL at which the full image visualization is available.</Description>
+      <IDL_Type>string</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <!-- What resolution should the thumbnail be available at (or should we allow multiple resolutions)?
              Should it be sent to the LFA, or just available on demand via URL -->
-        <item>
-            <EFDB_Name>thumbnail</EFDB_Name>
-            <Description>The URL at which the image thumbnail is available.</Description>
-            <IDL_Type>string</IDL_Type>
-            <Units>unitless</Units>
-            <Count>1</Count>
-        </item>
-    </SALEvent>
+    <item>
+      <EFDB_Name>thumbnail</EFDB_Name>
+      <Description>The URL at which the image thumbnail is available.</Description>
+      <IDL_Type>string</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+  </SALEvent>
 </SALEventSet>

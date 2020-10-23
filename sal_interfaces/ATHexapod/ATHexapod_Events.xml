@@ -1,249 +1,247 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-stylesheet type="text/xsl" href="http://lsst-sal.tuc.noao.edu/schema/SALEventSet.xsl"?>
-<SALEventSet xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:noNamespaceSchemaLocation="http://lsst-sal.tuc.noao.edu/schema/SALEventSet.xsd">
-<Enumeration>SummaryState_DisabledState,SummaryState_EnabledState,SummaryState_FaultState,SummaryState_OfflineState,SummaryState_StandbyState</Enumeration>
-<Enumeration>DetailedState_InMotionState, DetailedState_NotInMotionState</Enumeration>
-
-<SALEvent>
+<SALEventSet xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://lsst-sal.tuc.noao.edu/schema/SALEventSet.xsd">
+  <Enumeration>SummaryState_DisabledState,SummaryState_EnabledState,SummaryState_FaultState,SummaryState_OfflineState,SummaryState_StandbyState</Enumeration>
+  <Enumeration>DetailedState_InMotionState, DetailedState_NotInMotionState</Enumeration>
+  <SALEvent>
     <Subsystem>ATHexapod</Subsystem>
     <Version>3.8</Version>
-    <Author></Author>
+    <Author/>
     <EFDB_Topic>ATHexapod_logevent_inPosition</EFDB_Topic>
     <Alias>inPosition</Alias>
     <Explanation>http://sal.lsst.org</Explanation>
     <item>
-        <EFDB_Name>inPosition</EFDB_Name>
-        <Description>AT Hexapod in position.</Description>
-        <IDL_Type>boolean</IDL_Type>
-        <Units>unitless</Units>
-        <Count>1</Count>
+      <EFDB_Name>inPosition</EFDB_Name>
+      <Description>AT Hexapod in position.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>timestamp</EFDB_Name>
-        <Description>Timestamp of telescope in position.</Description>
-        <IDL_Type>double</IDL_Type>
-        <Units>unitless</Units>
-        <Count>1</Count>
+      <EFDB_Name>timestamp</EFDB_Name>
+      <Description>Timestamp of telescope in position.</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
     </item>
-</SALEvent>
-<SALEvent>
+  </SALEvent>
+  <SALEvent>
     <Subsystem>ATHexapod</Subsystem>
     <Version>3.8</Version>
-    <Author></Author>
+    <Author/>
     <EFDB_Topic>ATHexapod_logevent_detailedState</EFDB_Topic>
     <Alias>detailedState</Alias>
     <Explanation>http://sal.lsst.org</Explanation>
-            <item>
-                <EFDB_Name>detailedState</EFDB_Name>
-                <Description>Detailed state.</Description>
-                <!-- Enumeration: DetailedState -->
-                <IDL_Type>long</IDL_Type>
-                <Units>unitless</Units>
-                <Count>1</Count>
-            </item>
-</SALEvent>
-<SALEvent>
+    <item>
+      <EFDB_Name>detailedState</EFDB_Name>
+      <Description>Detailed state.</Description>
+      <!-- Enumeration: DetailedState -->
+      <IDL_Type>long</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+  </SALEvent>
+  <SALEvent>
     <Subsystem>ATHexapod</Subsystem>
     <Version>3.8</Version>
-    <Author></Author>
+    <Author/>
     <EFDB_Topic>ATHexapod_logevent_settingsAppliedPositionLimits</EFDB_Topic>
     <Alias>settingsAppliedPositionLimits</Alias>
     <Explanation>http://sal.lsst.org</Explanation>
     <item>
-        <EFDB_Name>limitXYMax</EFDB_Name>
-        <Description>X and Y maximum limit.</Description>
-        <IDL_Type>double</IDL_Type>
-        <Units>mm</Units>
-        <Count>1</Count>
+      <EFDB_Name>limitXYMax</EFDB_Name>
+      <Description>X and Y maximum limit.</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>mm</Units>
+      <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>limitZMin</EFDB_Name>
-        <Description>Z minimum limit.</Description>
-        <IDL_Type>double</IDL_Type>
-        <Units>mm</Units>
-        <Count>1</Count>
+      <EFDB_Name>limitZMin</EFDB_Name>
+      <Description>Z minimum limit.</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>mm</Units>
+      <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>limitZMax</EFDB_Name>
-        <Description>Z maximum limit.</Description>
-        <IDL_Type>double</IDL_Type>
-        <Units>mm</Units>
-        <Count>1</Count>
+      <EFDB_Name>limitZMax</EFDB_Name>
+      <Description>Z maximum limit.</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>mm</Units>
+      <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>limitUVMax</EFDB_Name>
-        <Description>U and V maximum limit.</Description>
-        <IDL_Type>double</IDL_Type>
-        <Units>deg</Units>
-        <Count>1</Count>
+      <EFDB_Name>limitUVMax</EFDB_Name>
+      <Description>U and V maximum limit.</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>deg</Units>
+      <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>limitWMin</EFDB_Name>
-        <Description>W minimum limit.</Description>
-        <IDL_Type>double</IDL_Type>
-        <Units>deg</Units>
-        <Count>1</Count>
+      <EFDB_Name>limitWMin</EFDB_Name>
+      <Description>W minimum limit.</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>deg</Units>
+      <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>limitWMax</EFDB_Name>
-        <Description>W maximum limit.</Description>
-        <IDL_Type>double</IDL_Type>
-        <Units>deg</Units>
-        <Count>1</Count>
+      <EFDB_Name>limitWMax</EFDB_Name>
+      <Description>W maximum limit.</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>deg</Units>
+      <Count>1</Count>
     </item>
-</SALEvent>
-<SALEvent>
+  </SALEvent>
+  <SALEvent>
     <Subsystem>ATHexapod</Subsystem>
     <Version>3.8</Version>
-    <Author></Author>
+    <Author/>
     <EFDB_Topic>ATHexapod_logevent_settingsAppliedVelocities</EFDB_Topic>
     <Alias>settingsAppliedVelocities</Alias>
     <Explanation>http://sal.lsst.org</Explanation>
     <item>
-        <EFDB_Name>systemSpeed</EFDB_Name>
-        <Description>System speed.</Description>
-        <IDL_Type>double</IDL_Type>
-        <Units>mm/s</Units>
-        <Count>1</Count>
+      <EFDB_Name>systemSpeed</EFDB_Name>
+      <Description>System speed.</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>mm/s</Units>
+      <Count>1</Count>
     </item>
-</SALEvent>
-<SALEvent>
+  </SALEvent>
+  <SALEvent>
     <Subsystem>ATHexapod</Subsystem>
     <Version>3.8</Version>
-    <Author></Author>
+    <Author/>
     <EFDB_Topic>ATHexapod_logevent_settingsAppliedPivot</EFDB_Topic>
     <Alias>settingsAppliedPivot</Alias>
     <Explanation>http://sal.lsst.org</Explanation>
     <item>
-        <EFDB_Name>pivotX</EFDB_Name>
-        <Description>Pivot X position.</Description>
-        <IDL_Type>double</IDL_Type>
-        <Units>mm</Units>
-        <Count>1</Count>
+      <EFDB_Name>pivotX</EFDB_Name>
+      <Description>Pivot X position.</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>mm</Units>
+      <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>pivotY</EFDB_Name>
-        <Description>Pivot Y position.</Description>
-        <IDL_Type>double</IDL_Type>
-        <Units>mm</Units>
-        <Count>1</Count>
+      <EFDB_Name>pivotY</EFDB_Name>
+      <Description>Pivot Y position.</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>mm</Units>
+      <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>pivotZ</EFDB_Name>
-        <Description>Pivot Z position.</Description>
-        <IDL_Type>double</IDL_Type>
-        <Units>mm</Units>
-        <Count>1</Count>
+      <EFDB_Name>pivotZ</EFDB_Name>
+      <Description>Pivot Z position.</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>mm</Units>
+      <Count>1</Count>
     </item>
-</SALEvent>
-<SALEvent>
+  </SALEvent>
+  <SALEvent>
     <Subsystem>ATHexapod</Subsystem>
     <Version>3.8</Version>
-    <Author></Author>
+    <Author/>
     <EFDB_Topic>ATHexapod_logevent_positionUpdate</EFDB_Topic>
     <Alias>positionUpdate</Alias>
     <Explanation>http://sal.lsst.org</Explanation>
     <item>
-        <EFDB_Name>positionX</EFDB_Name>
-        <Description>New X position.</Description>
-        <IDL_Type>double</IDL_Type>
-        <Units>mm</Units>
-        <Count>1</Count>
+      <EFDB_Name>positionX</EFDB_Name>
+      <Description>New X position.</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>mm</Units>
+      <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>positionY</EFDB_Name>
-        <Description>New Y position.</Description>
-        <IDL_Type>double</IDL_Type>
-        <Units>mm</Units>
-        <Count>1</Count>
+      <EFDB_Name>positionY</EFDB_Name>
+      <Description>New Y position.</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>mm</Units>
+      <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>positionZ</EFDB_Name>
-        <Description>New Z position.</Description>
-        <IDL_Type>double</IDL_Type>
-        <Units>mm</Units>
-        <Count>1</Count>
+      <EFDB_Name>positionZ</EFDB_Name>
+      <Description>New Z position.</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>mm</Units>
+      <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>positionU</EFDB_Name>
-        <Description>New U position.</Description>
-        <IDL_Type>double</IDL_Type>
-        <Units>deg</Units>
-        <Count>1</Count>
+      <EFDB_Name>positionU</EFDB_Name>
+      <Description>New U position.</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>deg</Units>
+      <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>positionV</EFDB_Name>
-        <Description>New V position.</Description>
-        <IDL_Type>double</IDL_Type>
-        <Units>deg</Units>
-        <Count>1</Count>
+      <EFDB_Name>positionV</EFDB_Name>
+      <Description>New V position.</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>deg</Units>
+      <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>positionW</EFDB_Name>
-        <Description>New W position.</Description>
-        <IDL_Type>double</IDL_Type>
-        <Units>deg</Units>
-        <Count>1</Count>
+      <EFDB_Name>positionW</EFDB_Name>
+      <Description>New W position.</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>deg</Units>
+      <Count>1</Count>
     </item>
-</SALEvent>
-<SALEvent>
+  </SALEvent>
+  <SALEvent>
     <Subsystem>ATHexapod</Subsystem>
     <Version>3.8</Version>
-    <Author></Author>
+    <Author/>
     <EFDB_Topic>ATHexapod_logevent_settingsAppliedTcp</EFDB_Topic>
     <Alias>settingsAppliedTcp</Alias>
     <Explanation>http://sal.lsst.org</Explanation>
     <item>
-        <EFDB_Name>ip</EFDB_Name>
-        <Description>IP address of the hexapod controller (XXX.XXX.XXX.XXX).</Description>
-        <IDL_Type>string</IDL_Type>
-        <IDL_Size>15</IDL_Size>
-        <Units>unitless</Units>
-        <Count>1</Count>
+      <EFDB_Name>ip</EFDB_Name>
+      <Description>IP address of the hexapod controller (XXX.XXX.XXX.XXX).</Description>
+      <IDL_Type>string</IDL_Type>
+      <IDL_Size>15</IDL_Size>
+      <Units>unitless</Units>
+      <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>port</EFDB_Name>
-        <Description>port range, it will try to connect to any of the ports in this range</Description>
-        <IDL_Type>long</IDL_Type>
-        <Units>unitless</Units>
-        <Count>1</Count>
+      <EFDB_Name>port</EFDB_Name>
+      <Description>port range, it will try to connect to any of the ports in this range</Description>
+      <IDL_Type>long</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>readTimeout</EFDB_Name>
-        <Description>TCP/IP read timeout</Description>
-        <IDL_Type>float</IDL_Type>
-        <Units>second</Units>
-        <Count>1</Count>
+      <EFDB_Name>readTimeout</EFDB_Name>
+      <Description>TCP/IP read timeout</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>second</Units>
+      <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>writeTimeout</EFDB_Name>
-        <Description>TCP/IP write timeout</Description>
-        <IDL_Type>float</IDL_Type>
-        <Units>second</Units>
-        <Count>1</Count>
+      <EFDB_Name>writeTimeout</EFDB_Name>
+      <Description>TCP/IP write timeout</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>second</Units>
+      <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>connectionTimeout</EFDB_Name>
-        <Description>TCP/IP open/close connection timeout</Description>
-        <IDL_Type>float</IDL_Type>
-        <Units>second</Units>
-        <Count>1</Count>
+      <EFDB_Name>connectionTimeout</EFDB_Name>
+      <Description>TCP/IP open/close connection timeout</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>second</Units>
+      <Count>1</Count>
     </item>
-</SALEvent>
-<SALEvent>
+  </SALEvent>
+  <SALEvent>
     <Subsystem>ATHexapod</Subsystem>
     <Version>3.8</Version>
-    <Author></Author>
+    <Author/>
     <EFDB_Topic>ATHexapod_logevent_readyForCommand</EFDB_Topic>
     <Alias>readyForCommand</Alias>
     <Explanation>http://sal.lsst.org</Explanation>
     <item>
-        <EFDB_Name>ready</EFDB_Name>
-        <Description>Hexapod ready to be commanded</Description>
-        <IDL_Type>boolean</IDL_Type>
-        <Units>unitless</Units>
-        <Count>1</Count>
+      <EFDB_Name>ready</EFDB_Name>
+      <Description>Hexapod ready to be commanded</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
     </item>
-</SALEvent>
+  </SALEvent>
 </SALEventSet>

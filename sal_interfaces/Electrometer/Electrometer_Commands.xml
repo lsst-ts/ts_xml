@@ -1,179 +1,179 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-stylesheet type="text/xsl" href="http://lsst-sal.tuc.noao.edu/schema/SALCommandSet.xsl"?>
-<SALCommandSet xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:noNamespaceSchemaLocation="http://lsst-sal.tuc.noao.edu/schema/SALCommandSet.xsd">
-<SALCommand>
+<SALCommandSet xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://lsst-sal.tuc.noao.edu/schema/SALCommandSet.xsd">
+  <SALCommand>
     <Subsystem>Electrometer</Subsystem>
     <Version>3.8</Version>
     <Author>aanania</Author>
     <EFDB_Topic>Electrometer_command_performZeroCalib</EFDB_Topic>
     <Alias>performZeroCalib</Alias>
-    <Device></Device>
-    <Property></Property>
-    <Action></Action>
-    <Value></Value>
-	<Description>Performs a zero correction in the device. It's recommended to perform this zero correction every time the range changes. The steps taken to perform this comes from the datasheet 6517B-901-01 Rev. B / June 2009 under Zero correct. It is as following. 1- Enable Zero check, 2- Set unit to read, 3- Set range to measure 4- Enable Zero Correction 5- Disable Zero check. For unit and range, it uses the last values selected, either via command or from the configuration file</Description>
+    <Device/>
+    <Property/>
+    <Action/>
+    <Value/>
+    <Description>Performs a zero correction in the device. It's recommended to perform this zero correction every time the range changes. The steps taken to perform this comes from the datasheet 6517B-901-01 Rev. B / June 2009 under Zero correct. It is as following. 1- Enable Zero check, 2- Set unit to read, 3- Set range to measure 4- Enable Zero Correction 5- Disable Zero check. For unit and range, it uses the last values selected, either via command or from the configuration file</Description>
     <Explanation>http://sal.lsst.org</Explanation>
     <item>
-        <EFDB_Name>value</EFDB_Name>
-        <Description>Attribute required by the API, but is unused</Description>
-        <IDL_Type>boolean</IDL_Type>
-        <Units>unitless</Units>
-        <Count>1</Count>
+      <EFDB_Name>value</EFDB_Name>
+      <Description>Attribute required by the API, but is unused</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
     </item>
-</SALCommand>
-<SALCommand>
+  </SALCommand>
+  <SALCommand>
     <Subsystem>Electrometer</Subsystem>
     <Version>3.8</Version>
     <Author>aanania</Author>
     <EFDB_Topic>Electrometer_command_setDigitalFilter</EFDB_Topic>
     <Alias>setDigitalFilter</Alias>
-    <Device></Device>
-    <Property></Property>
-    <Action></Action>
-    <Value></Value>
-	<Description>Configure the digital filter inside the Electrometer controller. Be aware that activating any filters will reduce the number of readings per second the device will be able to handle</Description>
+    <Device/>
+    <Property/>
+    <Action/>
+    <Value/>
+    <Description>Configure the digital filter inside the Electrometer controller. Be aware that activating any filters will reduce the number of readings per second the device will be able to handle</Description>
     <Explanation>http://sal.lsst.org</Explanation>
     <item>
-        <EFDB_Name>activateFilter</EFDB_Name>
-        <Description>Activate the filter. If this is OFF (set to 0), none of the filters will operate regardless of their settings below</Description>
-        <IDL_Type>boolean</IDL_Type>
-        <Units>unitless</Units>
-        <Count>1</Count>
+      <EFDB_Name>activateFilter</EFDB_Name>
+      <Description>Activate the filter. If this is OFF (set to 0), none of the filters will operate regardless of their settings below</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>activateAvgFilter</EFDB_Name>
-        <Description>Activate the average filter inside the electrometer, it uses the Default value inside the device (last 10 readings) to do the average calculation, 1 for ON and 0 for OFF </Description>
-        <IDL_Type>boolean</IDL_Type>
-        <Units>unitless</Units>
-        <Count>1</Count>
+      <EFDB_Name>activateAvgFilter</EFDB_Name>
+      <Description>Activate the average filter inside the electrometer, it uses the Default value inside the device (last 10 readings) to do the average calculation, 1 for ON and 0 for OFF </Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>activateMedFilter</EFDB_Name>
-        <Description>The median filter is used to determine the middle-most reading from a group of readings that are arranged according to size. Activate the median filter inside the electrometer, 1 for ON and 0 for OFF</Description>
-        <IDL_Type>boolean</IDL_Type>
-        <Units>unitless</Units>
-        <Count>1</Count>
+      <EFDB_Name>activateMedFilter</EFDB_Name>
+      <Description>The median filter is used to determine the middle-most reading from a group of readings that are arranged according to size. Activate the median filter inside the electrometer, 1 for ON and 0 for OFF</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
     </item>
-</SALCommand>
-<SALCommand>
+  </SALCommand>
+  <SALCommand>
     <Subsystem>Electrometer</Subsystem>
     <Version>3.8</Version>
     <Author>aanania</Author>
     <EFDB_Topic>Electrometer_command_setIntegrationTime</EFDB_Topic>
     <Alias>setIntegrationTime</Alias>
-    <Device></Device>
-    <Property></Property>
-    <Action></Action>
-    <Value></Value>
-	<Description>This is the length of time for a given sample from the electrometer, however, due to the time it takes to read the buffer and process the data, this is not the rate at which samples are taken</Description>
+    <Device/>
+    <Property/>
+    <Action/>
+    <Value/>
+    <Description>This is the length of time for a given sample from the electrometer, however, due to the time it takes to read the buffer and process the data, this is not the rate at which samples are taken</Description>
     <Explanation>http://sal.lsst.org</Explanation>
     <item>
-        <EFDB_Name>intTime</EFDB_Name>
-        <Description>Integration rate in seconds (166.67e-6 to 200e-3) for each sample</Description>
-        <IDL_Type>float</IDL_Type>
-        <Units>second</Units>
-        <Count>1</Count>
+      <EFDB_Name>intTime</EFDB_Name>
+      <Description>Integration rate in seconds (166.67e-6 to 200e-3) for each sample</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>second</Units>
+      <Count>1</Count>
     </item>
-</SALCommand>
-<SALCommand>
+  </SALCommand>
+  <SALCommand>
     <Subsystem>Electrometer</Subsystem>
     <Version>3.8</Version>
     <Author>aanania</Author>
     <EFDB_Topic>Electrometer_command_setMode</EFDB_Topic>
     <Alias>setMode</Alias>
-    <Device></Device>
-    <Property></Property>
-    <Action></Action>
-    <Value></Value>
-	<Description>Set unit to measure, the possibilities are: Current, Voltage, Charge or Resistance</Description>
+    <Device/>
+    <Property/>
+    <Action/>
+    <Value/>
+    <Description>Set unit to measure, the possibilities are: Current, Voltage, Charge or Resistance</Description>
     <Explanation>http://sal.lsst.org</Explanation>
-            <item>
-                <EFDB_Name>mode</EFDB_Name>
-                <Description>Set electrometer to use different modes: 1.- Current  2.- Volt  3.- Charge  4.- Resistance. The units will depend on the current settings</Description>
-                <!-- Enumeration: UnitToRead -->
-                <IDL_Type>long</IDL_Type>
-                <Units>unitless</Units>
-                <Count>1</Count>
-            </item>
-</SALCommand>
-<SALCommand>
+    <item>
+      <EFDB_Name>mode</EFDB_Name>
+      <Description>Set electrometer to use different modes: 1.- Current  2.- Volt  3.- Charge  4.- Resistance. The units will depend on the current settings</Description>
+      <!-- Enumeration: UnitToRead -->
+      <IDL_Type>long</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+  </SALCommand>
+  <SALCommand>
     <Subsystem>Electrometer</Subsystem>
     <Version>3.8</Version>
     <Author>aanania</Author>
     <EFDB_Topic>Electrometer_command_setRange</EFDB_Topic>
     <Alias>setRange</Alias>
-    <Device></Device>
-    <Property></Property>
-    <Action></Action>
-    <Value></Value>
-	<Description>Set measurement range, it will use the current unit selected</Description>
+    <Device/>
+    <Property/>
+    <Action/>
+    <Value/>
+    <Description>Set measurement range, it will use the current unit selected</Description>
     <Explanation>http://sal.lsst.org</Explanation>
     <item>
-        <EFDB_Name>setRange</EFDB_Name>
-        <Description>-1 for automatic range. Volts range from 0 to 210 Volts, Current range from 0 to 21e-3 Amps, Resistance from 0 to 100e18 Ohms, Charge from 0 to +2.1e-6 Coulombs</Description>
-        <IDL_Type>float</IDL_Type>
-        <Units>unitless</Units>
-        <Count>1</Count>
+      <EFDB_Name>setRange</EFDB_Name>
+      <Description>-1 for automatic range. Volts range from 0 to 210 Volts, Current range from 0 to 21e-3 Amps, Resistance from 0 to 100e18 Ohms, Charge from 0 to +2.1e-6 Coulombs</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
     </item>
-</SALCommand>
-<SALCommand>
+  </SALCommand>
+  <SALCommand>
     <Subsystem>Electrometer</Subsystem>
     <Version>3.8</Version>
     <Author>aanania</Author>
     <EFDB_Topic>Electrometer_command_startScan</EFDB_Topic>
     <Alias>startScan</Alias>
-    <Device></Device>
-    <Property></Property>
-    <Action></Action>
-    <Value></Value>
-	<Description>Start storing readings inside the electrometer buffer, this command will change detailedState from NotReadingState to ManualReadingState and continues storing data into the buffer. The data will be published to the LFO when stopScan command is received or a timeout occurs (300 seconds)</Description>
+    <Device/>
+    <Property/>
+    <Action/>
+    <Value/>
+    <Description>Start storing readings inside the electrometer buffer, this command will change detailedState from NotReadingState to ManualReadingState and continues storing data into the buffer. The data will be published to the LFO when stopScan command is received or a timeout occurs (300 seconds)</Description>
     <Explanation>http://sal.lsst.org</Explanation>
     <item>
-        <EFDB_Name>value</EFDB_Name>
-        <Description>Attribute required by the API, but is unused</Description>
-        <IDL_Type>boolean</IDL_Type>
-        <Units>unitless</Units>
-        <Count>1</Count>
+      <EFDB_Name>value</EFDB_Name>
+      <Description>Attribute required by the API, but is unused</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
     </item>
-</SALCommand>
-<SALCommand>
+  </SALCommand>
+  <SALCommand>
     <Subsystem>Electrometer</Subsystem>
     <Version>3.8</Version>
     <Author>aanania</Author>
     <EFDB_Topic>Electrometer_command_startScanDt</EFDB_Topic>
     <Alias>startScanDt</Alias>
-    <Device></Device>
-    <Property></Property>
-    <Action></Action>
-    <Value></Value>
-	<Description>Start storing readings inside the electrometer buffer for a fixed time, this command will change detailedState from NotReadingState to SetDurationReadingState and to stop storing data into the buffer and publish the LFO there are 2 possibilities. Reading during scanDuration time input in the command or sending a stopScan command</Description>
+    <Device/>
+    <Property/>
+    <Action/>
+    <Value/>
+    <Description>Start storing readings inside the electrometer buffer for a fixed time, this command will change detailedState from NotReadingState to SetDurationReadingState and to stop storing data into the buffer and publish the LFO there are 2 possibilities. Reading during scanDuration time input in the command or sending a stopScan command</Description>
     <Explanation>http://sal.lsst.org</Explanation>
     <item>
-        <EFDB_Name>scanDuration</EFDB_Name>
-        <Description>Time in seconds from the start of the reading until the stop and then store into the FITS file. The start of the scan will take about 0.2seconds which is what the device takes to start the reading process</Description>
-        <IDL_Type>float</IDL_Type>
-        <Units>second</Units>
-        <Count>1</Count>
+      <EFDB_Name>scanDuration</EFDB_Name>
+      <Description>Time in seconds from the start of the reading until the stop and then store into the FITS file. The start of the scan will take about 0.2seconds which is what the device takes to start the reading process</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>second</Units>
+      <Count>1</Count>
     </item>
-</SALCommand>
-<SALCommand>
+  </SALCommand>
+  <SALCommand>
     <Subsystem>Electrometer</Subsystem>
     <Version>3.8</Version>
     <Author>aanania</Author>
     <EFDB_Topic>Electrometer_command_stopScan</EFDB_Topic>
     <Alias>stopScan</Alias>
-    <Device></Device>
-    <Property></Property>
-    <Action></Action>
-    <Value></Value>
-	<Description>Command to stop a current reading process, when it finishes stopping the process it will read the data from the buffer and will publish the LFO event</Description>
+    <Device/>
+    <Property/>
+    <Action/>
+    <Value/>
+    <Description>Command to stop a current reading process, when it finishes stopping the process it will read the data from the buffer and will publish the LFO event</Description>
     <Explanation>http://sal.lsst.org</Explanation>
     <item>
-        <EFDB_Name>value</EFDB_Name>
-        <Description>Attribute required by the API, but is unused</Description>
-        <IDL_Type>boolean</IDL_Type>
-        <Units>unitless</Units>
-        <Count>1</Count>
+      <EFDB_Name>value</EFDB_Name>
+      <Description>Attribute required by the API, but is unused</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
     </item>
-</SALCommand></SALCommandSet>
+  </SALCommand>
+</SALCommandSet>

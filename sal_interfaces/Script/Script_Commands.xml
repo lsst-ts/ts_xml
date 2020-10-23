@@ -1,92 +1,89 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-stylesheet type="text/xsl" href="http://lsst-sal.tuc.noao.edu/schema/SALCommandSet.xsl"?>
-<SALCommandSet xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:noNamespaceSchemaLocation="http://lsst-sal.tuc.noao.edu/schema/SALCommandSet.xsd">
-
-<SALCommand>
+<SALCommandSet xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://lsst-sal.tuc.noao.edu/schema/SALCommandSet.xsd">
+  <SALCommand>
     <Subsystem>Script</Subsystem>
     <EFDB_Topic>Script_command_configure</EFDB_Topic>
     <Description>Configure a script.</Description>
     <item>
-        <EFDB_Name>config</EFDB_Name>
-        <Description>Configuration as yaml text that is parsed to make a keyword argument dict for the script's configure method.</Description>
-        <IDL_Type>string</IDL_Type>
-        <IDL_Size>1</IDL_Size>
-        <Units>unitless</Units>
-        <Count>1</Count>
+      <EFDB_Name>config</EFDB_Name>
+      <Description>Configuration as yaml text that is parsed to make a keyword argument dict for the script's configure method.</Description>
+      <IDL_Type>string</IDL_Type>
+      <IDL_Size>1</IDL_Size>
+      <Units>unitless</Units>
+      <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>logLevel</EFDB_Name>
-        <Description>Logging level, as a Python logging level: error=40, warning=30, info=20, debug=10, use default=0.</Description>
-        <IDL_Type>int</IDL_Type>
-        <Units>unitless</Units>
-        <Count>1</Count>
+      <EFDB_Name>logLevel</EFDB_Name>
+      <Description>Logging level, as a Python logging level: error=40, warning=30, info=20, debug=10, use default=0.</Description>
+      <IDL_Type>int</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>pauseCheckpoint</EFDB_Name>
-        <Description>Checkpoint(s) at which to pause, as a regular expression. No checkpoints if blank; all checkpoints if ".*".</Description>
-        <IDL_Type>string</IDL_Type>
-        <IDL_Size>1</IDL_Size>
-        <Units>unitless</Units>
-        <Count>1</Count>
+      <EFDB_Name>pauseCheckpoint</EFDB_Name>
+      <Description>Checkpoint(s) at which to pause, as a regular expression. No checkpoints if blank; all checkpoints if ".*".</Description>
+      <IDL_Type>string</IDL_Type>
+      <IDL_Size>1</IDL_Size>
+      <Units>unitless</Units>
+      <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>stopCheckpoint</EFDB_Name>
-        <Description>Checkpoint(s) at which to stop, as a regular expression. No checkpoints if blank; all checkpoints if ".*".</Description>
-        <IDL_Type>string</IDL_Type>
-        <IDL_Size>1</IDL_Size>
-        <Units>unitless</Units>
-        <Count>1</Count>
+      <EFDB_Name>stopCheckpoint</EFDB_Name>
+      <Description>Checkpoint(s) at which to stop, as a regular expression. No checkpoints if blank; all checkpoints if ".*".</Description>
+      <IDL_Type>string</IDL_Type>
+      <IDL_Size>1</IDL_Size>
+      <Units>unitless</Units>
+      <Count>1</Count>
     </item>
-</SALCommand>
-<SALCommand>
+  </SALCommand>
+  <SALCommand>
     <Subsystem>Script</Subsystem>
     <EFDB_Topic>Script_command_run</EFDB_Topic>
     <Description>Run a script.</Description>
-</SALCommand>
-<SALCommand>
+  </SALCommand>
+  <SALCommand>
     <Subsystem>Script</Subsystem>
     <EFDB_Topic>Script_command_resume</EFDB_Topic>
     <Description>Resume a paused script.</Description>
-</SALCommand>
-<SALCommand>
+  </SALCommand>
+  <SALCommand>
     <Subsystem>Script</Subsystem>
     <EFDB_Topic>Script_command_setGroupId</EFDB_Topic>
     <Description>Set the group ID for this script.</Description>
     <item>
-        <EFDB_Name>groupId</EFDB_Name>
-        <Description>Group ID for images taken by the script.</Description>
-        <IDL_Type>string</IDL_Type>
-        <IDL_Size>1</IDL_Size>
-        <Units>unitless</Units>
-        <Count>1</Count>
+      <EFDB_Name>groupId</EFDB_Name>
+      <Description>Group ID for images taken by the script.</Description>
+      <IDL_Type>string</IDL_Type>
+      <IDL_Size>1</IDL_Size>
+      <Units>unitless</Units>
+      <Count>1</Count>
     </item>
-</SALCommand>
-<SALCommand>
+  </SALCommand>
+  <SALCommand>
     <Subsystem>Script</Subsystem>
     <EFDB_Topic>Script_command_setCheckpoints</EFDB_Topic>
     <Description>Set or clear checkpoints at which to pause and stop the script. This command is deprecated. Please specify log level as part of the configure command instead.</Description>
     <item>
-        <EFDB_Name>pause</EFDB_Name>
-        <Description>Checkpoint(s) at which to pause, as a regular expression. No checkpoints if blank; all checkpoints if ".*".</Description>
-        <IDL_Type>string</IDL_Type>
-        <IDL_Size>1</IDL_Size>
-        <Units>unitless</Units>
-        <Count>1</Count>
+      <EFDB_Name>pause</EFDB_Name>
+      <Description>Checkpoint(s) at which to pause, as a regular expression. No checkpoints if blank; all checkpoints if ".*".</Description>
+      <IDL_Type>string</IDL_Type>
+      <IDL_Size>1</IDL_Size>
+      <Units>unitless</Units>
+      <Count>1</Count>
     </item>
     <item>
-        <EFDB_Name>stop</EFDB_Name>
-        <Description>Checkpoint(s) at which to stop, as a regular expression. No checkpoints if blank; all checkpoints if ".*".</Description>
-        <IDL_Type>string</IDL_Type>
-        <IDL_Size>1</IDL_Size>
-        <Units>unitless</Units>
-        <Count>1</Count>
+      <EFDB_Name>stop</EFDB_Name>
+      <Description>Checkpoint(s) at which to stop, as a regular expression. No checkpoints if blank; all checkpoints if ".*".</Description>
+      <IDL_Type>string</IDL_Type>
+      <IDL_Size>1</IDL_Size>
+      <Units>unitless</Units>
+      <Count>1</Count>
     </item>
-</SALCommand>
-<SALCommand>
+  </SALCommand>
+  <SALCommand>
     <Subsystem>Script</Subsystem>
     <EFDB_Topic>Script_command_stop</EFDB_Topic>
     <Description>Stop the script immediately.</Description>
-</SALCommand>
-
+  </SALCommand>
 </SALCommandSet>
