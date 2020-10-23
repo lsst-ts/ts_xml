@@ -6,13 +6,7 @@ import lsst.ts.xml as ts_xml
 
 
 def check_for_issues(test, csc, topic):
-    if test == "exists" and csc == "ATPtg" and topic == "Telemetry":
-        jira = "DM-27120"
-    elif test == "exists" and csc == "MTPtg" and topic == "Telemetry":
-        jira = "DM-27121"
-    else:
-        jira = ""
-    return jira
+    return ""
 
 
 @pytest.mark.parametrize("xmlfile,csc,topic", ts_xml.get_xmlfile_csc_topic())
