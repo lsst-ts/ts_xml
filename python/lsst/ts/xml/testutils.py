@@ -58,7 +58,6 @@ subsystems = [
     "DSM",
     "EAS",
     "Electrometer",
-    "Environment",
     "ESS",
     "FiberSpectrograph",
     "GenericCamera",
@@ -91,6 +90,7 @@ subsystems = [
     "Test",
     "TunableLaser",
     "Watcher",
+    "WeatherStation",
 ]
 
 """Define the array of Generic Commands."""
