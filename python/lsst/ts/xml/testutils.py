@@ -81,6 +81,7 @@ subsystems = [
     "MTPtg",
     "MTVMS",
     "NewMTMount",
+    "OCPS",
     "PromptProcessing",
     "Rotator",
     "Scheduler",

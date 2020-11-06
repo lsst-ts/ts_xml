@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="http://project.lsst.org/ts/sal_objects/schema/SALCommandSet.xsl"?>
+<SALCommandSet xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://project.lsst.org/ts/sal_objects/schema/SALCommandSet.xsd">
+  <SALCommand>
+    <Subsystem>OCPS</Subsystem>
+    <Version>1.0.0</Version>
+    <Author>Kian-Tat Lim (ktl@slac.stanford.edu)</Author>
+    <EFDB_Topic>OCPS_command_execute</EFDB_Topic>
+    <Alias>execute</Alias>
+    <Device/>
+    <Property/>
+    <Action/>
+    <Value/>
+    <Explanation>https://dmtn-133.lsst.io/</Explanation>
+    <item>
+      <EFDB_Name>pipeline</EFDB_Name>
+      <Description>YAML filename for pipeline to execute.</Description>
+      <IDL_Type>string</IDL_Type>
+      <IDL_Size>1</IDL_Size>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>version</EFDB_Name>
+      <Description>Git ref (default master) for version of pipeline to execute.</Description>
+      <IDL_Type>string</IDL_Type>
+      <IDL_Size>1</IDL_Size>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>config</EFDB_Name>
+      <Description>List of config key=value pairs or config filenames, in order, space-separated.</Description>
+      <IDL_Type>string</IDL_Type>
+      <IDL_Size>1</IDL_Size>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>async</EFDB_Name>
+      <Description>If true, do not wait for pipeline completion.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+  </SALCommand>
+  <SALCommand>
+    <Subsystem>OCPS</Subsystem>
+    <Version>1.0.0</Version>
+    <Author>Kian-Tat Lim(ktl@slac.stanford.edu)</Author>
+    <EFDB_Topic>OCPS_command_abort_job</EFDB_Topic>
+    <Alias>abort_job</Alias>
+    <Device/>
+    <Property/>
+    <Action/>
+    <Value/>
+    <Explanation>https://dmtn-133.lsst.io/</Explanation>
+    <item>
+      <EFDB_Name>job_id</EFDB_Name>
+      <Description>Job identifier returned from async execute.</Description>
+      <IDL_Type>string</IDL_Type>
+      <IDL_Size>1</IDL_Size>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+  </SALCommand>
+</SALCommandSet>
