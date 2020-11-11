@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-stylesheet type="text/xsl" href="http://lsst-sal.tuc.noao.edu/schema/SALEventSet.xsl"?>
 <SALEventSet xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://lsst-sal.tuc.noao.edu/schema/SALEventSet.xsd">
-  <Enumeration>FilterPosition_Filter0,FilterPosition_Filter1,FilterPosition_Filter2,FilterPosition_Filter3,FilterPosition_Inbetween</Enumeration>
-  <Enumeration>DisperserPosition_Disperser0,DisperserPosition_Disperser1,DisperserPosition_Disperser2,DisperserPosition_Disperser3,DisperserPosition_Inbetween</Enumeration>
   <Enumeration>Status_Homing,Status_Moving,Status_Stationary,Status_NotInPosition</Enumeration>
   <Enumeration>Error_None,Error_Busy,Error_NotInitialized,Error_MoveTimeout</Enumeration>
   <Enumeration>Port_Nasmyth1,Port_Nasmyth2</Enumeration>
@@ -120,16 +118,23 @@
     <Alias>reportedFilterPosition</Alias>
     <Explanation>http://sal.lsst.org</Explanation>
     <item>
-      <EFDB_Name>position</EFDB_Name>
-      <Description>The reported position.</Description>
-      <!-- Enumeration: FilterPosition -->
+      <EFDB_Name>slot</EFDB_Name>
+      <Description>The numbered slot indicated on the filter wheel (0 through 3). </Description>
       <IDL_Type>long</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>name</EFDB_Name>
-      <Description>Name of the filter.</Description>
+      <Description>Name of the physical filter in the beam. Should be a unique identifier for the specific filter. </Description>
+      <IDL_Type>string</IDL_Type>
+      <IDL_Size>256</IDL_Size>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>band</EFDB_Name>
+      <Description>Descriptive bandpass associated with the filter in the beam (e.g. u,g,r,i,z,y).</Description>
       <IDL_Type>string</IDL_Type>
       <IDL_Size>256</IDL_Size>
       <Units>unitless</Units>
@@ -170,16 +175,23 @@
     <Alias>reportedDisperserPosition</Alias>
     <Explanation>http://sal.lsst.org</Explanation>
     <item>
-      <EFDB_Name>position</EFDB_Name>
-      <Description>The reported grating/disperser position.</Description>
-      <!-- Enumeration: DisperserPosition -->
+      <EFDB_Name>slot</EFDB_Name>
+      <Description>The numbered slot indicated on the grating/disperser wheel (0 through 3).</Description>
       <IDL_Type>long</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>name</EFDB_Name>
-      <Description>Name of the grating/disperser.</Description>
+      <Description>Name of the physical grating/disperser in the beam. Should be a unique identifier for the specific disperser.</Description>
+      <IDL_Type>string</IDL_Type>
+      <IDL_Size>256</IDL_Size>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>band</EFDB_Name>
+      <Description>Descriptive name associated with the grating/disperser in the beam (e.g. R100).</Description>
       <IDL_Type>string</IDL_Type>
       <IDL_Size>256</IDL_Size>
       <Units>unitless</Units>
