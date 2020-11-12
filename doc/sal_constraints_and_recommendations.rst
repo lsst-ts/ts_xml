@@ -39,7 +39,7 @@ Methods/Topics: lowerCamelCase (note that these names are constructed of 2/3 par
 
 1. CSC
 2. Optional
-3. Topic separated by underscores e.g Hexapod_command_someInterestingThing)
+3. Topic separated by underscores e.g MTHexapod_command_someInterestingThing)
 
 attributes: lowerCamelCase
 

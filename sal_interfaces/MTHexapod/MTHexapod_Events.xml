@@ -32,8 +32,8 @@
     ApplicationStatus_ENCODER_FAULT=0x00008000
 </Enumeration>
   <SALEvent>
-    <Subsystem>Hexapod</Subsystem>
-    <EFDB_Topic>Hexapod_logevent_actuatorInPosition</EFDB_Topic>
+    <Subsystem>MTHexapod</Subsystem>
+    <EFDB_Topic>MTHexapod_logevent_actuatorInPosition</EFDB_Topic>
     <Description>Indicates whether each linear actuator has reached its commanded position.</Description>
     <item>
       <EFDB_Name>inPosition</EFDB_Name>
@@ -44,21 +44,21 @@
     </item>
   </SALEvent>
   <SALEvent>
-    <Subsystem>Hexapod</Subsystem>
-    <EFDB_Topic>Hexapod_logevent_commandableByDDS</EFDB_Topic>
-    <Description>Can the CSC control the hexapod?</Description>
+    <Subsystem>MTHexapod</Subsystem>
+    <EFDB_Topic>MTHexapod_logevent_commandableByDDS</EFDB_Topic>
+    <Description>Can the CSC control the MTHexapod?</Description>
     <item>
       <EFDB_Name>state</EFDB_Name>
-      <Description>If true the CSC can control the hexapod; else the Engineering User Interface has control.</Description>
+      <Description>If true the CSC can control the MTHexapod; else the Engineering User Interface has control.</Description>
       <IDL_Type>boolean</IDL_Type>
       <Units>dimensionless</Units>
       <Count>1</Count>
     </item>
   </SALEvent>
   <SALEvent>
-    <Subsystem>Hexapod</Subsystem>
-    <EFDB_Topic>Hexapod_logevent_configuration</EFDB_Topic>
-    <Description>Hexapod configuration.</Description>
+    <Subsystem>MTHexapod</Subsystem>
+    <EFDB_Topic>MTHexapod_logevent_configuration</EFDB_Topic>
+    <Description>MTHexapod configuration.</Description>
     <item>
       <EFDB_Name>maxXY</EFDB_Name>
       <Description>Maximum |X| and |Y|</Description>
@@ -215,8 +215,8 @@
     </item>
   </SALEvent>
   <SALEvent>
-    <Subsystem>Hexapod</Subsystem>
-    <EFDB_Topic>Hexapod_logevent_connected</EFDB_Topic>
+    <Subsystem>MTHexapod</Subsystem>
+    <EFDB_Topic>MTHexapod_logevent_connected</EFDB_Topic>
     <Description>State of TCP/IP connection to the low level controller.</Description>
     <item>
       <EFDB_Name>command</EFDB_Name>
@@ -234,8 +234,8 @@
     </item>
   </SALEvent>
   <SALEvent>
-    <Subsystem>Hexapod</Subsystem>
-    <EFDB_Topic>Hexapod_logevent_controllerState</EFDB_Topic>
+    <Subsystem>MTHexapod</Subsystem>
+    <EFDB_Topic>MTHexapod_logevent_controllerState</EFDB_Topic>
     <Description>State reported by the controller.</Description>
     <item>
       <EFDB_Name>controllerState</EFDB_Name>
@@ -267,8 +267,8 @@
     </item>
   </SALEvent>
   <SALEvent>
-    <Subsystem>Hexapod</Subsystem>
-    <EFDB_Topic>Hexapod_logevent_inPosition</EFDB_Topic>
+    <Subsystem>MTHexapod</Subsystem>
+    <EFDB_Topic>MTHexapod_logevent_inPosition</EFDB_Topic>
     <Description>Indicates whether or not all actuators have reached their commanded position.</Description>
     <item>
       <EFDB_Name>inPosition</EFDB_Name>
@@ -279,8 +279,8 @@
     </item>
   </SALEvent>
   <SALEvent>
-    <Subsystem>Hexapod</Subsystem>
-    <EFDB_Topic>Hexapod_logevent_interlock</EFDB_Topic>
+    <Subsystem>MTHexapod</Subsystem>
+    <EFDB_Topic>MTHexapod_logevent_interlock</EFDB_Topic>
     <Description>Safety interlock engaged or disengaged.</Description>
     <item>
       <EFDB_Name>detail</EFDB_Name>
@@ -292,8 +292,8 @@
     </item>
   </SALEvent>
   <SALEvent>
-    <Subsystem>Hexapod</Subsystem>
-    <EFDB_Topic>Hexapod_logevent_target</EFDB_Topic>
+    <Subsystem>MTHexapod</Subsystem>
+    <EFDB_Topic>MTHexapod_logevent_target</EFDB_Topic>
     <Description>Target position and orientation of pivot point. This is output in response to SAL move commands (move, moveWithCompensation, and offset), but is not output when motion is commanded by the engineering user interface.</Description>
     <item>
       <EFDB_Name>compensated</EFDB_Name>

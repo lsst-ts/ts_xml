@@ -2,36 +2,36 @@
 <?xml-stylesheet type="text/xsl" href="http://lsst-sal.tuc.noao.edu/schema/SALTelemetrySet.xsl"?>
 <SALTelemetrySet xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://lsst-sal.tuc.noao.edu/schema/SALTelemetrySet.xsd">
   <SALTelemetry>
-    <Subsystem>Hexapod</Subsystem>
-    <EFDB_Topic>Hexapod_actuators</EFDB_Topic>
+    <Subsystem>MTHexapod</Subsystem>
+    <EFDB_Topic>MTHexapod_actuators</EFDB_Topic>
     <item>
       <EFDB_Name>calibrated</EFDB_Name>
-      <Description>Linear encoder readings from each hexapod actuator (x1,x2,x3,x4,x5,x6) in microns</Description>
+      <Description>Linear encoder readings from each MTHexapod actuator (x1,x2,x3,x4,x5,x6) in microns</Description>
       <IDL_Type>double</IDL_Type>
       <Units>um</Units>
       <Count>6</Count>
     </item>
     <item>
       <EFDB_Name>raw</EFDB_Name>
-      <Description>Linear encoder readings from each hexapod actuator (x1,x2,x3,x4,x5,x6)in counts</Description>
+      <Description>Linear encoder readings from each MTHexapod actuator (x1,x2,x3,x4,x5,x6)in counts</Description>
       <IDL_Type>double</IDL_Type>
       <Units>dimensionless</Units>
       <Count>6</Count>
     </item>
   </SALTelemetry>
   <SALTelemetry>
-    <Subsystem>Hexapod</Subsystem>
-    <EFDB_Topic>Hexapod_application</EFDB_Topic>
+    <Subsystem>MTHexapod</Subsystem>
+    <EFDB_Topic>MTHexapod_application</EFDB_Topic>
     <item>
       <EFDB_Name>demand</EFDB_Name>
-      <Description>Commanded hexapod position in order (X, Y, Z, U, V, W). Linear positions are in microns, angular positions are in degrees.</Description>
+      <Description>Commanded MTHexapod position in order (X, Y, Z, U, V, W). Linear positions are in microns, angular positions are in degrees.</Description>
       <IDL_Type>double</IDL_Type>
       <Units>dimensionless</Units>
       <Count>6</Count>
     </item>
     <item>
       <EFDB_Name>position</EFDB_Name>
-      <Description>Actual hexapod position, in order (X, Y, Z, U, V, W). Linear positions are in microns, angular positions are in degrees.</Description>
+      <Description>Actual MTHexapod position, in order (X, Y, Z, U, V, W). Linear positions are in microns, angular positions are in degrees.</Description>
       <IDL_Type>double</IDL_Type>
       <Units>dimensionless</Units>
       <Count>6</Count>
@@ -45,8 +45,8 @@
     </item>
   </SALTelemetry>
   <SALTelemetry>
-    <Subsystem>Hexapod</Subsystem>
-    <EFDB_Topic>Hexapod_electrical</EFDB_Topic>
+    <Subsystem>MTHexapod</Subsystem>
+    <EFDB_Topic>MTHexapod_electrical</EFDB_Topic>
     <item>
       <EFDB_Name>copleyStatusWordDrive</EFDB_Name>
       <Description>Bus undervoltage fault, bus overvoltage fault, and overcurrent fault are all being monitored for each drive channel</Description>
