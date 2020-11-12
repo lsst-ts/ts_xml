@@ -1,6 +1,6 @@
 #!/bin/sh
 
-pkgs="aoclcSim astrosky ataos ATHexapod atspectrograph ATTCS ATWhiteLightSource cbp dateloc dimm dsm electrometer environment externalscripts FiberSpectrograph GenericCamera idl laser linearstage monochromator mtdome mteec observatory ofc phosim proposalScheduler pythonCommunicator pythonFileReader pythonFitsfile rotator salobj salpytools schedulerConfig scheduler scriptqueue standardscripts statemachine tunablelaser watcher wep"
+pkgs="aoclcSim astrosky ataos ATHexapod atspectrograph ATTCS ATWhiteLightSource cbp dateloc dimm dsm electrometer externalscripts FiberSpectrograph GenericCamera idl laser linearstage monochromator mtdome mteec observatory ofc phosim proposalScheduler pythonCommunicator pythonFileReader pythonFitsfile rotator salobj salpytools schedulerConfig scheduler scriptqueue standardscripts statemachine tunablelaser watcher wep WeatherStation"
 for pkg in $pkgs
 do
   echo "Grepping for $pkg"
