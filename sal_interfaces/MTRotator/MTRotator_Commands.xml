@@ -2,9 +2,9 @@
 <?xml-stylesheet type="text/xsl" href="http://lsst-sal.tuc.noao.edu/schema/SALCommandSet.xsl"?>
 <SALCommandSet xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://lsst-sal.tuc.noao.edu/schema/SALCommandSet.xsd">
   <SALCommand>
-    <Subsystem>Rotator</Subsystem>
-    <EFDB_Topic>Rotator_command_configureAcceleration</EFDB_Topic>
-    <Description>Limit the minimum and maximum acceleration level of the rotator to be set within the global limit of +/- 1 deg/s2.</Description>
+    <Subsystem>MTRotator</Subsystem>
+    <EFDB_Topic>MTRotator_command_configureAcceleration</EFDB_Topic>
+    <Description>Limit the minimum and maximum acceleration level of the mtrotator to be set within the global limit of +/- 1 deg/s2.</Description>
     <item>
       <EFDB_Name>alimit</EFDB_Name>
       <Description>acceleration limit</Description>
@@ -14,9 +14,9 @@
     </item>
   </SALCommand>
   <SALCommand>
-    <Subsystem>Rotator</Subsystem>
-    <EFDB_Topic>Rotator_command_configureVelocity</EFDB_Topic>
-    <Description>The configure Velocity command limits the minimum and maximum velocity level of the rotator to be set within the global limit of +/- 3.5 deg/s.</Description>
+    <Subsystem>MTRotator</Subsystem>
+    <EFDB_Topic>MTRotator_command_configureVelocity</EFDB_Topic>
+    <Description>The configure Velocity command limits the minimum and maximum velocity level of the mtrotator to be set within the global limit of +/- 3.5 deg/s.</Description>
     <item>
       <EFDB_Name>vlimit</EFDB_Name>
       <Description>Velocity limit</Description>
@@ -26,9 +26,9 @@
     </item>
   </SALCommand>
   <SALCommand>
-    <Subsystem>Rotator</Subsystem>
-    <EFDB_Topic>Rotator_command_move</EFDB_Topic>
-    <Description>Move the rotator to the specified position and stop. During the move the enabled substate will be MovingPointToPoint, then it will return to Stationary.</Description>
+    <Subsystem>MTRotator</Subsystem>
+    <EFDB_Topic>MTRotator_command_move</EFDB_Topic>
+    <Description>Move the mtrotator to the specified position and stop. During the move the enabled substate will be MovingPointToPoint, then it will return to Stationary.</Description>
     <item>
       <EFDB_Name>position</EFDB_Name>
       <Description>Desired position.</Description>
@@ -38,9 +38,9 @@
     </item>
   </SALCommand>
   <SALCommand>
-    <Subsystem>Rotator</Subsystem>
-    <EFDB_Topic>Rotator_command_track</EFDB_Topic>
-    <Description>Specify desired rotator position and velocity "slewing or tracking" mode, which is started with the trackStart command and concluded with the stop command.</Description>
+    <Subsystem>MTRotator</Subsystem>
+    <EFDB_Topic>MTRotator_command_track</EFDB_Topic>
+    <Description>Specify desired mtrotator position and velocity "slewing or tracking" mode, which is started with the trackStart command and concluded with the stop command.</Description>
     <item>
       <EFDB_Name>angle</EFDB_Name>
       <Description>Desired position at the time specified by "tai".</Description>
@@ -64,18 +64,18 @@
     </item>
   </SALCommand>
   <SALCommand>
-    <Subsystem>Rotator</Subsystem>
-    <EFDB_Topic>Rotator_command_trackStart</EFDB_Topic>
+    <Subsystem>MTRotator</Subsystem>
+    <EFDB_Topic>MTRotator_command_trackStart</EFDB_Topic>
     <Description>Enter slewing/tracking mode (enabled substate SlewingOrTracking): follow a path specified by repeated track commands. Issue the stop command when you are done tracking.</Description>
   </SALCommand>
   <SALCommand>
-    <Subsystem>Rotator</Subsystem>
-    <EFDB_Topic>Rotator_command_clearError</EFDB_Topic>
-    <Description>Clear the Fault state, sending the controller into Offline substate PublishOnly. You must use the engineering user interface to transition from that to Offline substate Available before the CSC can control the rotator.</Description>
+    <Subsystem>MTRotator</Subsystem>
+    <EFDB_Topic>MTRotator_command_clearError</EFDB_Topic>
+    <Description>Clear the Fault state, sending the controller into Offline substate PublishOnly. You must use the engineering user interface to transition from that to Offline substate Available before the CSC can control the mtrotator.</Description>
   </SALCommand>
   <SALCommand>
-    <Subsystem>Rotator</Subsystem>
-    <EFDB_Topic>Rotator_command_stop</EFDB_Topic>
-    <Description>Stop the rotator and go to enabled substate Stationary.</Description>
+    <Subsystem>MTRotator</Subsystem>
+    <EFDB_Topic>MTRotator_command_stop</EFDB_Topic>
+    <Description>Stop the mtrotator and go to enabled substate Stationary.</Description>
   </SALCommand>
 </SALCommandSet>
