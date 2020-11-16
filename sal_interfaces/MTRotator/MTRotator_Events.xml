@@ -25,7 +25,6 @@
     ApplicationStatus_HEX_FOLLOWING_ERROR_MASK=0x00000001,
     ApplicationStatus_HEX_MOVE_COMPLETE_MASK=0x00000002,
     ApplicationStatus_COMMAND_REJECT_MASK=0x00000020,
-    ApplicationStatus_SAFTEY_INTERLOCK=0x00000040,
     ApplicationStatus_SAFETY_INTERLOCK=0x00000040,
     ApplicationStatus_EXTEND_LIMIT_SWITCH=0x00000080,
     ApplicationStatus_RETRACT_LIMIT_SWITCH=0x00000100,
@@ -37,8 +36,8 @@
     ApplicationStatus_ENCODER_FAULT=0x00008000
 </Enumeration>
   <SALEvent>
-    <Subsystem>Rotator</Subsystem>
-    <EFDB_Topic>Rotator_logevent_controllerState</EFDB_Topic>
+    <Subsystem>MTRotator</Subsystem>
+    <EFDB_Topic>MTRotator_logevent_controllerState</EFDB_Topic>
     <Description>State reported by the low level controller. All values except applicationStatus are 1 greater than those reported by the controller for temporary and historical reasons.</Description>
     <item>
       <EFDB_Name>controllerState</EFDB_Name>
@@ -70,8 +69,8 @@
     </item>
   </SALEvent>
   <SALEvent>
-    <Subsystem>Rotator</Subsystem>
-    <EFDB_Topic>Rotator_logevent_connected</EFDB_Topic>
+    <Subsystem>MTRotator</Subsystem>
+    <EFDB_Topic>MTRotator_logevent_connected</EFDB_Topic>
     <Description>State of TCP/IP connection to the low level controller.</Description>
     <item>
       <EFDB_Name>command</EFDB_Name>
@@ -89,9 +88,9 @@
     </item>
   </SALEvent>
   <SALEvent>
-    <Subsystem>Rotator</Subsystem>
-    <EFDB_Topic>Rotator_logevent_interlock</EFDB_Topic>
-    <Description>Rotator interlock: This event is generated when safety interlock is engaged or disengaged</Description>
+    <Subsystem>MTRotator</Subsystem>
+    <EFDB_Topic>MTRotator_logevent_interlock</EFDB_Topic>
+    <Description>MTRotator interlock: This event is generated when safety interlock is engaged or disengaged</Description>
     <item>
       <EFDB_Name>detail</EFDB_Name>
       <Description>detail</Description>
@@ -102,8 +101,8 @@
     </item>
   </SALEvent>
   <SALEvent>
-    <Subsystem>Rotator</Subsystem>
-    <EFDB_Topic>Rotator_logevent_target</EFDB_Topic>
+    <Subsystem>MTRotator</Subsystem>
+    <EFDB_Topic>MTRotator_logevent_target</EFDB_Topic>
     <Description>Commanded target position, velocity and time.</Description>
     <item>
       <EFDB_Name>position</EFDB_Name>
@@ -128,19 +127,19 @@
     </item>
   </SALEvent>
   <SALEvent>
-    <Subsystem>Rotator</Subsystem>
-    <EFDB_Topic>Rotator_logevent_tracking</EFDB_Topic>
-    <Description>Specify whether the rotator is tracking.</Description>
+    <Subsystem>MTRotator</Subsystem>
+    <EFDB_Topic>MTRotator_logevent_tracking</EFDB_Topic>
+    <Description>Specify whether the MTRotator is tracking.</Description>
     <item>
       <EFDB_Name>tracking</EFDB_Name>
-      <Description>Is the rotator tracking accurately? The value of Flags_trackingSuccess from the low-level controller. </Description>
+      <Description>Is the MTRotator tracking accurately? The value of Flags_trackingSuccess from the low-level controller. </Description>
       <IDL_Type>boolean</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>lost</EFDB_Name>
-      <Description>Is the rotator doing badly at tracking? This uses a different algorithm than "tracking". The value of Flags_trackingLost from the low-level controller.</Description>
+      <Description>Is the MTRotator doing badly at tracking? This uses a different algorithm than "tracking". The value of Flags_trackingLost from the low-level controller.</Description>
       <IDL_Type>boolean</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
@@ -154,21 +153,21 @@
     </item>
   </SALEvent>
   <SALEvent>
-    <Subsystem>Rotator</Subsystem>
-    <EFDB_Topic>Rotator_logevent_inPosition</EFDB_Topic>
-    <Description>Event to indicate rotator is in position or not</Description>
+    <Subsystem>MTRotator</Subsystem>
+    <EFDB_Topic>MTRotator_logevent_inPosition</EFDB_Topic>
+    <Description>Event to indicate MTRotator is in position or not</Description>
     <item>
       <EFDB_Name>inPosition</EFDB_Name>
-      <Description>Rotator in position</Description>
+      <Description>MTRotator in position</Description>
       <IDL_Type>boolean</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
     </item>
   </SALEvent>
   <SALEvent>
-    <Subsystem>Rotator</Subsystem>
-    <EFDB_Topic>Rotator_logevent_configuration</EFDB_Topic>
-    <Description>Rotator configuration.</Description>
+    <Subsystem>MTRotator</Subsystem>
+    <EFDB_Topic>MTRotator_logevent_configuration</EFDB_Topic>
+    <Description>MTRotator configuration.</Description>
     <item>
       <EFDB_Name>positionAngleUpperLimit</EFDB_Name>
       <Description>Position difference between the commanded position and the actual position that triggers system to switch between slew mode and track mode. Positive range limit (must be less than +90)</Description>
@@ -206,14 +205,14 @@
     </item>
     <item>
       <EFDB_Name>followingErrorThreshold</EFDB_Name>
-      <Description>Deviation between commanded position and actual rotator position that triggers following error event/fault</Description>
+      <Description>Deviation between commanded position and actual MTRotator position that triggers following error event/fault</Description>
       <IDL_Type>double</IDL_Type>
       <Units>deg</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>trackingSuccessPositionThreshold</EFDB_Name>
-      <Description>RMS deviation over 150ms interval between position command and actual rotator position for triggering tracking and tracklost events</Description>
+      <Description>RMS deviation over 150ms interval between position command and actual MTRotator position for triggering tracking and tracklost events</Description>
       <IDL_Type>double</IDL_Type>
       <Units>deg</Units>
       <Count>1</Count>
@@ -227,12 +226,12 @@
     </item>
   </SALEvent>
   <SALEvent>
-    <Subsystem>Rotator</Subsystem>
-    <EFDB_Topic>Rotator_logevent_commandableByDDS</EFDB_Topic>
-    <Description>Can the CSC can control the rotator?</Description>
+    <Subsystem>MTRotator</Subsystem>
+    <EFDB_Topic>MTRotator_logevent_commandableByDDS</EFDB_Topic>
+    <Description>Can the CSC can control the MTRotator?</Description>
     <item>
       <EFDB_Name>state</EFDB_Name>
-      <Description>If true the CSC can control the rotator; else the Engineering User Interface has control.</Description>
+      <Description>If true the CSC can control the MTRotator; else the Engineering User Interface has control.</Description>
       <IDL_Type>boolean</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>

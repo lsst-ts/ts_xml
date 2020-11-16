@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="http://project.lsst.org/ts/sal_objects/schema/SALCommandSet.xsl"?>
+<SALCommandSet xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://project.lsst.org/ts/sal_objects/schema/SALCommandSet.xsd">
+  <SALCommand>
+    <Subsystem>OCPS</Subsystem>
+    <EFDB_Topic>OCPS_command_execute</EFDB_Topic>
+    <Description>Execute a pipeline on selected data with optional config overrides.</Description>
+    <item>
+      <EFDB_Name>pipeline</EFDB_Name>
+      <Description>YAML filename for pipeline to execute.</Description>
+      <IDL_Type>string</IDL_Type>
+      <IDL_Size>1</IDL_Size>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>version</EFDB_Name>
+      <Description>Git ref (default master) for version of pipeline to execute.</Description>
+      <IDL_Type>string</IDL_Type>
+      <IDL_Size>1</IDL_Size>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>config</EFDB_Name>
+      <Description>List of config key=value pairs or config filenames, in order, space-separated.</Description>
+      <IDL_Type>string</IDL_Type>
+      <IDL_Size>1</IDL_Size>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>data_query</EFDB_Name>
+      <Description>Data selection expression</Description>
+      <IDL_Type>string</IDL_Type>
+      <IDL_Size>1</IDL_Size>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>sync</EFDB_Name>
+      <Description>If true, wait for pipeline completion.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+  </SALCommand>
+  <SALCommand>
+    <Subsystem>OCPS</Subsystem>
+    <EFDB_Topic>OCPS_command_abort_job</EFDB_Topic>
+    <Description>Abort a pipeline execution job.</Description>
+    <item>
+      <EFDB_Name>job_id</EFDB_Name>
+      <Description>Job identifier returned from async execute.</Description>
+      <IDL_Type>string</IDL_Type>
+      <IDL_Size>1</IDL_Size>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+  </SALCommand>
+</SALCommandSet>
