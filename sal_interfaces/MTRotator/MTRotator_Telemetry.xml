@@ -4,24 +4,24 @@
   <SALTelemetry>
     <Subsystem>MTRotator</Subsystem>
     <EFDB_Topic>MTRotator_application</EFDB_Topic>
-    <Description>Commanded and actual MTRotator position. Deprecated: use rotation instead.</Description>
+    <Description>Commanded and actual rotator position. Deprecated: use rotation instead.</Description>
     <item>
       <EFDB_Name>demand</EFDB_Name>
-      <Description>Commanded MTRotator position.</Description>
+      <Description>Rotator position computed by the path generator.</Description>
       <IDL_Type>double</IDL_Type>
       <Units>deg</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>position</EFDB_Name>
-      <Description>Actual MTRotator position.</Description>
+      <Description>Actual rotator position.</Description>
       <IDL_Type>double</IDL_Type>
       <Units>deg</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>error</EFDB_Name>
-      <Description>MTRotator following error.</Description>
+      <Description>rotator following error.</Description>
       <IDL_Type>double</IDL_Type>
       <Units>deg</Units>
       <Count>1</Count>
@@ -30,52 +30,52 @@
   <SALTelemetry>
     <Subsystem>MTRotator</Subsystem>
     <EFDB_Topic>MTRotator_rotation</EFDB_Topic>
-    <Description>Demand and actual MTRotator position and velocity.</Description>
+    <Description>Demand and actual rotator position and velocity.</Description>
     <item>
       <EFDB_Name>demandPosition</EFDB_Name>
-      <Description>MTRotator position computed by the path generator.</Description>
+      <Description>Rotator position computed by the path generator.</Description>
       <IDL_Type>double</IDL_Type>
       <Units>deg</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>demandVelocity</EFDB_Name>
-      <Description>MTRotator velocity computed by the path generator.</Description>
+      <Description>Rotator velocity computed by the path generator.</Description>
       <IDL_Type>double</IDL_Type>
       <Units>deg/second</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>demandAcceleration</EFDB_Name>
-      <Description>MTRotator acceleration computed by the path generator.</Description>
+      <Description>Rotator acceleration computed by the path generator.</Description>
       <IDL_Type>double</IDL_Type>
       <Units>deg/second</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>actualPosition</EFDB_Name>
-      <Description>MTRotator position computed from the encoders.</Description>
+      <Description>Rotator position computed from the encoders.</Description>
       <IDL_Type>double</IDL_Type>
       <Units>deg</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>actualVelocity</EFDB_Name>
-      <Description>MTRotator velocity computed from the two linear encoders. Warning: not yet trustworthy.</Description>
+      <Description>Rotator velocity computed from the two linear encoders. Warning: not yet trustworthy.</Description>
       <IDL_Type>double</IDL_Type>
       <Units>deg/second</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>debugActualVelocityA</EFDB_Name>
-      <Description>MTRotator velocity computed from linear encoder A. Warning: this field is purely for debugging the low-level controller. Do not rely on it.</Description>
+      <Description>Rotator velocity computed from linear encoder A. Warning: this field is purely for debugging the low-level controller. Do not rely on it.</Description>
       <IDL_Type>double</IDL_Type>
       <Units>deg/second</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>debugActualVelocityB</EFDB_Name>
-      <Description>MTRotator velocity computed from linear encoder B. Warning: this field is purely for debugging the low-level controller. Do not rely on it.</Description>
+      <Description>Rotator velocity computed from linear encoder B. Warning: this field is purely for debugging the low-level controller. Do not rely on it.</Description>
       <IDL_Type>double</IDL_Type>
       <Units>deg/second</Units>
       <Count>1</Count>
@@ -109,10 +109,10 @@
   <SALTelemetry>
     <Subsystem>MTRotator</Subsystem>
     <EFDB_Topic>MTRotator_motors</EFDB_Topic>
-    <Description>Encoder readings from each MTRotator motor</Description>
+    <Description>Encoder readings from each rotator motor</Description>
     <item>
       <EFDB_Name>calibrated</EFDB_Name>
-      <Description>Encoder readings scaled to degrees of motion of the MTRotator.</Description>
+      <Description>Encoder readings scaled to degrees of motion of the rotator.</Description>
       <IDL_Type>double</IDL_Type>
       <Units>deg</Units>
       <Count>2</Count>
