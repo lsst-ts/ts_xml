@@ -101,7 +101,7 @@
   <SALCommand>
     <Subsystem>MTHexapod</Subsystem>
     <EFDB_Topic>MTHexapod_command_move</EFDB_Topic>
-    <Description>Move the Hexapod to a specified position and orientation.</Description>
+    <Description>Move the Hexapod to a specified position and orientation. This sets the uncompensated position; if compensation is enabled, the actual position will be slightly different.</Description>
     <item>
       <EFDB_Name>x</EFDB_Name>
       <Description>x position</Description>
@@ -154,71 +154,8 @@
   </SALCommand>
   <SALCommand>
     <Subsystem>MTHexapod</Subsystem>
-    <EFDB_Topic>MTHexapod_command_moveWithCompensation</EFDB_Topic>
-    <Description>A variant of the move command that compensates for elevation, azimuth and temperature.</Description>
-    <item>
-      <EFDB_Name>elevation</EFDB_Name>
-      <Description>Telescope elevation. Must be in the range [0, 90].</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>deg</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>azimuth</EFDB_Name>
-      <Description>Telescope azimuth. There is no range limit.</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>deg</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>temperature</EFDB_Name>
-      <Description>Ambient temperature. There is no range limit.</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>Celsius</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>x</EFDB_Name>
-      <Description>x position</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>um</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>y</EFDB_Name>
-      <Description>y position</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>um</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>z</EFDB_Name>
-      <Description>z position</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>um</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>u</EFDB_Name>
-      <Description>Rotation about x</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>deg</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>v</EFDB_Name>
-      <Description>Rotation about y</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>deg</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>w</EFDB_Name>
-      <Description>Rotation about z</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>deg</Units>
-      <Count>1</Count>
-    </item>
+    <EFDB_Topic>MTHexapod_command_moveToReference</EFDB_Topic>
+    <Description>A variant of the move command that moves the hexapod to the reference position specified in the CSC's configuration. One way to operate the hexapods is to enable compensation with setCompensationMode, moveToReference, and then call offset as needed to improve and maintain collimation.</Description>
     <item>
       <EFDB_Name>sync</EFDB_Name>
       <Description>Synchronize motion so that all actuators start and stop moving at the same time? Synchronize motion is our normal operating mode.</Description>
@@ -283,8 +220,20 @@
   </SALCommand>
   <SALCommand>
     <Subsystem>MTHexapod</Subsystem>
-    <EFDB_Topic>MTHexapod_command_pivot</EFDB_Topic>
-    <Description>Specify the pivot point (the reference point whose position and orientation is set by the move, moveLUT, offset, and offsetLUT commands).</Description>
+    <EFDB_Topic>MTHexapod_command_setCompensationMode</EFDB_Topic>
+    <Description>Enable or disable automatic compensation for telescope elevation, etc.</Description>
+    <item>
+      <EFDB_Name>enable</EFDB_Name>
+      <Description>Enable or disable automatic compensation?</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>dimensionless</Units>
+      <Count>1</Count>
+    </item>
+  </SALCommand>
+  <SALCommand>
+    <Subsystem>MTHexapod</Subsystem>
+    <EFDB_Topic>MTHexapod_command_setPivot</EFDB_Topic>
+    <Description>Specify the pivot point (the reference point whose position and orientation are set by the move, moveToReference, and offset commands).</Description>
     <item>
       <EFDB_Name>x</EFDB_Name>
       <Description>x</Description>
