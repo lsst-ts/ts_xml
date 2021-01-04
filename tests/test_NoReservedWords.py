@@ -31,12 +31,6 @@ def check_for_issues(csc, topic, language):
     elif csc == "CCCamera" and topic == "Commands" and language == "optional":
         jira = "CAP-402"
     elif (
-        csc in ("MTMount", "NewMTMount")
-        and topic == "Commands"
-        and language == "critical"
-    ):
-        jira = "DM-22622"
-    elif (
         csc == "PromptProcessing"
         and topic in ("Telemetry", "Events")
         and language == "optional"

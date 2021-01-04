@@ -1,83 +1,243 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-stylesheet type="text/xsl" href="http://lsst-sal.tuc.noao.edu/schema/SALEventSet.xsl"?>
 <SALEventSet xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://lsst-sal.tuc.noao.edu/schema/SALEventSet.xsd">
+  <Enumeration>
+        ActuatorState_Disabled,
+        ActuatorState_MovingPointToPoint,
+        ActuatorState_TrackingOrSlewing,
+        ActuatorState_Stopping,
+        ActuatorState_Stopped
+    </Enumeration>
+  <Enumeration>
+        Subsystem_AZIMUTH_AXIS=0x0001,
+        Subsystem_AZIMUTH_CABLE_WRAP=0x0002,
+        Subsystem_AZIMUTH_THERMAL=0x0004,
+        Subsystem_BALANCE=0x0008,
+        Subsystem_CABINET=0x0010,
+        Subsystem_CAMERA_CABLE_WRAP=0x0020,
+        Subsystem_DEPLOYABLE_PLATFORM=0x0040,
+        Subsystem_ELEVATION_AXIS=0x0080,
+        Subsystem_ELEVATION_THERMAL=0x0100,
+        Subsystem_LOCKING_PINS=0x0200,
+        Subsystem_MIRROR_COVER=0x0400,
+        Subsystem_MIRROR_COVER_LOCK=0x0800,
+        Subsystem_MAIN_POWER_SUPPLY=0x1000,
+        Subsystem_OIL_SUPPLY_SYSTEM=0x2000,
+        Subsystem_TOP_END_CHILLER=0x4000
+    </Enumeration>
+  <Enumeration>
+        AxisState_Unknown=0,
+        AxisState_Off=1,
+        AxisState_Enabled=2,
+        AxisState_Fault=3
+    </Enumeration>
+  <Enumeration>
+        DriveState_Unknown=0,
+        DriveState_Off=1,
+        DriveState_Moving=2,
+        DriveState_Stopping=3,
+        DriveState_Stopped=4,
+        DriveState_Fault=5
+    </Enumeration>
   <SALEvent>
     <Subsystem>MTMount</Subsystem>
-    <Version>3.2.0</Version>
-    <Author>Ander Ansuategi</Author>
-    <EFDB_Topic>MTMount_logevent_mountState</EFDB_Topic>
-    <Alias>mountState</Alias>
-    <Explanation>http://sal.lsst.org/SAL/Events/MTMount_mountState.html</Explanation>
+    <EFDB_Topic>MTMount_logevent_axesInPosition</EFDB_Topic>
+    <Description>Are the elevation and azimuth axes in position? If tracking, in position means the slew is done and the axes are now tracking the target.</Description>
     <item>
-      <EFDB_Name>id</EFDB_Name>
-      <Description>Identifier of the state</Description>
-      <IDL_Type>long</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>text</EFDB_Name>
-      <Description>The state of the state machine</Description>
-      <IDL_Type>string</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-  </SALEvent>
-  <SALEvent>
-    <Subsystem>MTMount</Subsystem>
-    <Version>3.2.0</Version>
-    <Author>Ander Ansuategi</Author>
-    <EFDB_Topic>MTMount_logevent_mountWarning</EFDB_Topic>
-    <Alias>mountWarning</Alias>
-    <Explanation>http://sal.lsst.org/SAL/Events/MTMount_mountWarning.html</Explanation>
-    <item>
-      <EFDB_Name>id</EFDB_Name>
-      <Description>Identifier of the warning</Description>
-      <IDL_Type>long</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>text</EFDB_Name>
-      <Description>The warning info</Description>
-      <IDL_Type>string</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-  </SALEvent>
-  <SALEvent>
-    <Subsystem>MTMount</Subsystem>
-    <Version>3.2.0</Version>
-    <Author>Ander Ansuategi</Author>
-    <EFDB_Topic>MTMount_logevent_mountError</EFDB_Topic>
-    <Alias>mountError</Alias>
-    <Explanation>http://sal.lsst.org/SAL/Events/MTMount_mountError.html</Explanation>
-    <item>
-      <EFDB_Name>id</EFDB_Name>
-      <Description>Identifier of the error</Description>
-      <IDL_Type>long</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>text</EFDB_Name>
-      <Description>The error info</Description>
-      <IDL_Type>string</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-  </SALEvent>
-  <SALEvent>
-    <Subsystem>MTMount</Subsystem>
-    <Version>3.2.0</Version>
-    <Author>Ander Ansuategi</Author>
-    <EFDB_Topic>MTMount_logevent_mountInPosition</EFDB_Topic>
-    <Alias>mountInPosition</Alias>
-    <Explanation>http://sal.lsst.org/SAL/Events/MTMount_mountInPosition.html</Explanation>
-    <item>
-      <EFDB_Name>inposition</EFDB_Name>
-      <Description>Whether the mount is in position or not</Description>
+      <EFDB_Name>elevation</EFDB_Name>
+      <Description>Is the elevation axis in position?</Description>
       <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>azimuth</EFDB_Name>
+      <Description>Is the azimuth axis in position?</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+  </SALEvent>
+  <SALEvent>
+    <Subsystem>MTMount</Subsystem>
+    <EFDB_Topic>MTMount_logevent_axesState</EFDB_Topic>
+    <Description>State of the elevation and azimuth axes.</Description>
+    <item>
+      <EFDB_Name>elevation</EFDB_Name>
+      <Description>Elevation state, as an ActuatorState constant enum</Description>
+      <IDL_Type>long</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>azimuth</EFDB_Name>
+      <Description>Azimuth state, as an ActuatorState constant enum</Description>
+      <IDL_Type>long</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+  </SALEvent>
+  <SALEvent>
+    <Subsystem>MTMount</Subsystem>
+    <EFDB_Topic>MTMount_logevent_cameraCableWrapState</EFDB_Topic>
+    <Description>State of the camera cable wrap.</Description>
+    <item>
+      <EFDB_Name>state</EFDB_Name>
+      <Description>State, as an ActuatorState constant enum</Description>
+      <IDL_Type>long</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+  </SALEvent>
+  <SALEvent>
+    <Subsystem>MTMount</Subsystem>
+    <EFDB_Topic>MTMount_logevent_connected</EFDB_Topic>
+    <Description>State of TCP/IP connection to the low level controller (the "operations manager").</Description>
+    <item>
+      <EFDB_Name>command</EFDB_Name>
+      <Description>Is the command (client) socket connected (true=yes, false=no)?</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>replies</EFDB_Name>
+      <Description>Is the replies (server) socket connected (true=yes, false=no)?</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+  </SALEvent>
+  <SALEvent>
+    <Subsystem>MTMount</Subsystem>
+    <EFDB_Topic>MTMount_logevent_error</EFDB_Topic>
+    <item>
+      <EFDB_Name>latched</EFDB_Name>
+      <Description>Is the error condition latched on (as it been active since it was last reset)?</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>active</EFDB_Name>
+      <Description>Is the error condition present?</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>code</EFDB_Name>
+      <Description>Error identifier code.</Description>
+      <IDL_Type>long</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>text</EFDB_Name>
+      <Description>Text description of error.</Description>
+      <IDL_Type>string</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>subsystem</EFDB_Name>
+      <Description>Subsystem that produced the error; a single Subsystem enumeration value.</Description>
+      <IDL_Type>long</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+  </SALEvent>
+  <SALEvent>
+    <Subsystem>MTMount</Subsystem>
+    <EFDB_Topic>MTMount_logevent_target</EFDB_Topic>
+    <Description>Commanded position and velocity.</Description>
+    <item>
+      <EFDB_Name>elevation</EFDB_Name>
+      <Description>Target mount elevation angle at the specified time.</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>deg</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>elevationVelocity</EFDB_Name>
+      <Description>Target mount elevation angle velocity at the specified time.</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>deg/second</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>azimuth</EFDB_Name>
+      <Description>Target mount azimuth angle at the specified time. The allowed range is 0 to 360.</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>deg</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>azimuthVelocity</EFDB_Name>
+      <Description>Target mount azimuth velocity at the specified time.</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>deg/second</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>taiTime</EFDB_Name>
+      <Description>TAI date at which the commanded positions and velocities apply, as unix time.</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>second</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>trackId</EFDB_Name>
+      <Description>Unique target identifier </Description>
+      <IDL_Type>long</IDL_Type>
+      <Units>dimensionless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>tracksys</EFDB_Name>
+      <Description>Defines tracking coordinate system as sidereal, non-sidereal or local.</Description>
+      <IDL_Type>string</IDL_Type>
+      <IDL_Size>256</IDL_Size>
+      <Units>dimensionless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>radesys</EFDB_Name>
+      <Description>Coordinate reference frame of RA/DEC axes. This originates from the pointing component and is used for WCS definition (e.g. FK5 or ICRS).</Description>
+      <IDL_Type>string</IDL_Type>
+      <IDL_Size>256</IDL_Size>
+      <Units>dimensionless</Units>
+      <Count>1</Count>
+    </item>
+  </SALEvent>
+  <SALEvent>
+    <Subsystem>MTMount</Subsystem>
+    <EFDB_Topic>MTMount_logevent_warning</EFDB_Topic>
+    <item>
+      <EFDB_Name>active</EFDB_Name>
+      <Description>Is the warning condition present?</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>code</EFDB_Name>
+      <Description>Warning identifier code.</Description>
+      <IDL_Type>long</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>text</EFDB_Name>
+      <Description>Text description of warning.</Description>
+      <IDL_Type>string</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>subsystem</EFDB_Name>
+      <Description>Subsystem that produced the warning; a single Subsystem enumeration value.</Description>
+      <IDL_Type>long</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
     </item>
