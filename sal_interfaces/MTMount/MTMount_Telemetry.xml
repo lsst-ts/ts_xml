@@ -59,116 +59,11 @@
     <Subsystem>MTMount</Subsystem>
     <EFDB_Topic>MTMount_azimuthDrives</EFDB_Topic>
     <item>
-      <EFDB_Name>current1</EFDB_Name>
-      <Description>Current of drive 1 (percent).</Description>
+      <EFDB_Name>current</EFDB_Name>
+      <Description>Current of drives 1-16 (percent).</Description>
       <IDL_Type>double</IDL_Type>
       <Units>%</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>current2</EFDB_Name>
-      <Description>Current of drive 2 (percent).</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>%</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>current3</EFDB_Name>
-      <Description>Current of drive 3 (percent).</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>%</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>current4</EFDB_Name>
-      <Description>Current of drive 4 (percent).</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>%</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>current5</EFDB_Name>
-      <Description>Current of drive 5 (percent).</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>%</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>current6</EFDB_Name>
-      <Description>Current of drive 6 (percent).</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>%</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>current7</EFDB_Name>
-      <Description>Current of drive 7 (percent).</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>%</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>current8</EFDB_Name>
-      <Description>Current of drive 8 (percent).</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>%</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>current9</EFDB_Name>
-      <Description>Current of drive 9 (percent).</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>%</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>current10</EFDB_Name>
-      <Description>Current of drive 10 (percent).</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>%</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>current11</EFDB_Name>
-      <Description>Current of drive 11 (percent).</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>%</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>current12</EFDB_Name>
-      <Description>Current of drive 12 (percent).</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>%</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>current13</EFDB_Name>
-      <Description>Current of drive 13 (percent).</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>%</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>current14</EFDB_Name>
-      <Description>Current of drive 14 (percent).</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>%</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>current15</EFDB_Name>
-      <Description>Current of drive 15 (percent).</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>%</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>current16</EFDB_Name>
-      <Description>Current of drive 16 (percent).</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>%</Units>
-      <Count>1</Count>
+      <Count>16</Count>
     </item>
     <item>
       <EFDB_Name>timestamp</EFDB_Name>
@@ -183,60 +78,32 @@
     <Subsystem>MTMount</Subsystem>
     <EFDB_Topic>MTMount_cameraCableWrap</EFDB_Topic>
     <item>
-      <EFDB_Name>driveState1</EFDB_Name>
-      <Description>State of drive 1; a DriveState enumeration value.</Description>
+      <EFDB_Name>driveState</EFDB_Name>
+      <Description>State of drive 1, 2; a DriveState enumeration value. Note that only one drive can be enabled and used at a given time.</Description>
       <IDL_Type>int</IDL_Type>
       <Units>unitless</Units>
-      <Count>1</Count>
+      <Count>2</Count>
     </item>
     <item>
-      <EFDB_Name>driveState2</EFDB_Name>
-      <Description>State of drive 2; a DriveState enumeration value.</Description>
-      <IDL_Type>int</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>angle1</EFDB_Name>
-      <Description>Position measured by encoder 1. Warning: only accurate if drive 1 is being used.</Description>
+      <EFDB_Name>angle</EFDB_Name>
+      <Description>Position measured by encoder 1 and 2. Warning: the only accurate value is for the drive in use.</Description>
       <IDL_Type>double</IDL_Type>
       <Units>deg</Units>
-      <Count>1</Count>
+      <Count>2</Count>
     </item>
     <item>
-      <EFDB_Name>angle2</EFDB_Name>
-      <Description>Position measured by encoder 2. Warning: only accurate if drive 2 is being used.</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>deg</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>speed1</EFDB_Name>
-      <Description>Speed measured by encoder 1. Warning: only accurate if drive 1 is being used.</Description>
+      <EFDB_Name>speed</EFDB_Name>
+      <Description>Speed measured by encoders 1 and 2. Warning: the only accurate value is for the drive in use.</Description>
       <IDL_Type>double</IDL_Type>
       <Units>deg/second</Units>
-      <Count>1</Count>
+      <Count>2</Count>
     </item>
     <item>
-      <EFDB_Name>speed2</EFDB_Name>
-      <Description>Speed measured by encoder 2. Warning: only accurate if drive 2 is being used.</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>deg/second</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>current1</EFDB_Name>
-      <Description>Drive 1 current (percent).</Description>
+      <EFDB_Name>current</EFDB_Name>
+      <Description>Current of drives 1-2 (percent).</Description>
       <IDL_Type>double</IDL_Type>
       <Units>%</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>current2</EFDB_Name>
-      <Description>Drive 2 current (percent).</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>%</Units>
-      <Count>1</Count>
+      <Count>2</Count>
     </item>
     <item>
       <EFDB_Name>timestamp</EFDB_Name>
@@ -305,88 +172,11 @@
     <Subsystem>MTMount</Subsystem>
     <EFDB_Topic>MTMount_elevationDrives</EFDB_Topic>
     <item>
-      <EFDB_Name>current1</EFDB_Name>
-      <Description>Current of drive 1 (percent).</Description>
+      <EFDB_Name>current</EFDB_Name>
+      <Description>Current of drives 1-12 (percent).</Description>
       <IDL_Type>double</IDL_Type>
       <Units>%</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>current2</EFDB_Name>
-      <Description>Current of drive 2 (percent).</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>%</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>current3</EFDB_Name>
-      <Description>Current of drive 3 (percent).</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>%</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>current4</EFDB_Name>
-      <Description>Current of drive 4 (percent).</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>%</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>current5</EFDB_Name>
-      <Description>Current of drive 5 (percent).</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>%</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>current6</EFDB_Name>
-      <Description>Current of drive 6 (percent).</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>%</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>current7</EFDB_Name>
-      <Description>Current of drive 7 (percent).</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>%</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>current8</EFDB_Name>
-      <Description>Current of drive 8 (percent).</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>%</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>current9</EFDB_Name>
-      <Description>Current of drive 9 (percent).</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>%</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>current10</EFDB_Name>
-      <Description>Current of drive 10 (percent).</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>%</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>current11</EFDB_Name>
-      <Description>Current of drive 11 (percent).</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>%</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>current12</EFDB_Name>
-      <Description>Current of drive 12 (percent).</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>%</Units>
-      <Count>1</Count>
+      <Count>12</Count>
     </item>
     <item>
       <EFDB_Name>timestamp</EFDB_Name>
