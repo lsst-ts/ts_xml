@@ -78,32 +78,39 @@
     <Subsystem>MTMount</Subsystem>
     <EFDB_Topic>MTMount_cameraCableWrap</EFDB_Topic>
     <item>
-      <EFDB_Name>driveState</EFDB_Name>
-      <Description>State of drive 1, 2; a DriveState enumeration value. Note that only one drive can be enabled and used at a given time.</Description>
-      <IDL_Type>int</IDL_Type>
-      <Units>unitless</Units>
-      <Count>2</Count>
-    </item>
-    <item>
-      <EFDB_Name>angle</EFDB_Name>
-      <Description>Position measured by encoder 1 and 2. Warning: the only accurate value is for the drive in use.</Description>
+      <EFDB_Name>angleActual</EFDB_Name>
+      <Description>Actual angle.</Description>
       <IDL_Type>double</IDL_Type>
       <Units>deg</Units>
-      <Count>2</Count>
+      <Count>1</Count>
     </item>
     <item>
-      <EFDB_Name>speed</EFDB_Name>
-      <Description>Speed measured by encoders 1 and 2. Warning: the only accurate value is for the drive in use.</Description>
+      <EFDB_Name>angleSet</EFDB_Name>
+      <Description>Demand angle.</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>deg</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>velocityActual</EFDB_Name>
+      <Description>Actual velocity.</Description>
       <IDL_Type>double</IDL_Type>
       <Units>deg/second</Units>
-      <Count>2</Count>
+      <Count>1</Count>
     </item>
     <item>
-      <EFDB_Name>current</EFDB_Name>
-      <Description>Current of drives 1-2 (percent).</Description>
+      <EFDB_Name>velocitySet</EFDB_Name>
+      <Description>Demand velocity.</Description>
       <IDL_Type>double</IDL_Type>
-      <Units>%</Units>
-      <Count>2</Count>
+      <Units>deg/second</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>accelerationActual</EFDB_Name>
+      <Description>Actual acceleration.</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>deg/second/second</Units>
+      <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>timestamp</EFDB_Name>
