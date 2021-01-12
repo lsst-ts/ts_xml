@@ -391,6 +391,47 @@
   </SALTelemetry>
   <SALTelemetry>
     <Subsystem>MTM1M3</Subsystem>
+    <Version>3.8.35</Version>
+    <EFDB_Topic>MTM1M3_forceActuatorPressure</EFDB_Topic>
+    <Description>Reports mezzanine board pressure in push and pull cylinders. Pressure is read with ILC command 119.</Description>
+    <item>
+      <EFDB_Name>timestamps</EFDB_Name>
+      <Description>Timestamp when the last data were readout.</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>unitless</Units>
+      <Count>156</Count>
+    </item>
+    <item>
+      <EFDB_Name>primaryCylinderPushPressures</EFDB_Name>
+      <Description>Pressure in primary cylinders for push operation. Indexed by Z index.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>kPa</Units>
+      <Count>156</Count>
+    </item>
+    <item>
+      <EFDB_Name>primaryCylinderPullPressures</EFDB_Name>
+      <Description>Pressure in primary cylinders for pull operation. Indexed by Z index.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>kPa</Units>
+      <Count>156</Count>
+    </item>
+    <item>
+      <EFDB_Name>secondaryCylinderPushPressures</EFDB_Name>
+      <Description>Pressure in secondary cylinders for push operation. Indexed by secondary cylinder index.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>kPa</Units>
+      <Count>112</Count>
+    </item>
+    <item>
+      <EFDB_Name>secondaryCylinderPullPressures</EFDB_Name>
+      <Description>Pressure in secondary cylinders for pull operation. Indexed by secondary cylinder index.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>kPa</Units>
+      <Count>112</Count>
+    </item>
+  </SALTelemetry>
+  <SALTelemetry>
+    <Subsystem>MTM1M3</Subsystem>
     <EFDB_Topic>MTM1M3_gyroData</EFDB_Topic>
     <item>
       <EFDB_Name>timestamp</EFDB_Name>

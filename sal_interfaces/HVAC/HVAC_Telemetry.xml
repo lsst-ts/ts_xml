@@ -1,9 +1,2361 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<?xml-stylesheet type='text/xsl' href='http://lsst-sal.tuc.noao.edu/schema/SALTelemetrySet.xsl'?>
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="http://lsst-sal.tuc.noao.edu/schema/SALTelemetrySet.xsl"?>
 <SALTelemetrySet xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://lsst-sal.tuc.noao.edu/schema/SALTelemetrySet.xsd">
   <SALTelemetry>
     <Subsystem>HVAC</Subsystem>
+    <EFDB_Topic>HVAC_chiller01P01</EFDB_Topic>
+    <Description>Telemetry for the chiller01P01 device.</Description>
+    <item>
+      <EFDB_Name>setpointActivo</EFDB_Name>
+      <Description>Setpoint Active</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>deg_C</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>temperaturaAguaRetornoEvaporador</EFDB_Name>
+      <Description>Temperature Water Return Evaparator</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>deg_C</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>temperaturaAguaImpulsionEvaporador</EFDB_Name>
+      <Description>Temperature Water Impulse Evaparator</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>deg_C</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>presionBajaCto1</EFDB_Name>
+      <Description>Pressure Low CTO1</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>bar</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>presionBajaCto2</EFDB_Name>
+      <Description>Pressure Low CTO2</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>bar</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>potenciaDisponibleChiller</EFDB_Name>
+      <Description>Power Available Chiller</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>%</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>potenciaTrabajo</EFDB_Name>
+      <Description>Power Work</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>%</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>modoOperacion</EFDB_Name>
+      <Description>Mode Operation</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>estadoUnidad</EFDB_Name>
+      <Description>State Unit</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>horasCompresorPromedio</EFDB_Name>
+      <Description>Hours Compressor Mean</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>deg_C</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>horasCompresor01</EFDB_Name>
+      <Description>Hours Compressor01</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>deg_C</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>horasCompresor02</EFDB_Name>
+      <Description>Hours Compressor02</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>deg_C</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>horasCompresor03</EFDB_Name>
+      <Description>Hours Compressor03</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>deg_C</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>horasCompresor04</EFDB_Name>
+      <Description>Hours Compressor04</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>deg_C</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>compresor01Funcionando</EFDB_Name>
+      <Description>Compressor01 Functioning</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>compresor02Funcionando</EFDB_Name>
+      <Description>Compressor02 Functioning</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>compresor03Funcionando</EFDB_Name>
+      <Description>Compressor03 Functioning</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>compresor04Funcionando</EFDB_Name>
+      <Description>Compressor04 Functioning</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>compresor01Alarmado</EFDB_Name>
+      <Description>Compressor01 AlarmDO</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>compresor02Alarmado</EFDB_Name>
+      <Description>Compressor02 AlarmDO</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>compresor03Alarmado</EFDB_Name>
+      <Description>Compressor03 AlarmDO</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>compresor04Alarmado</EFDB_Name>
+      <Description>Compressor04 AlarmDO</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>comandoEncendido</EFDB_Name>
+      <Description>Command Started</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>alarmaGeneral</EFDB_Name>
+      <Description>Alarm General</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+  </SALTelemetry>
+  <SALTelemetry>
+    <Subsystem>HVAC</Subsystem>
+    <EFDB_Topic>HVAC_chiller02P01</EFDB_Topic>
+    <Description>Telemetry for the chiller02P01 device.</Description>
+    <item>
+      <EFDB_Name>setpointActivo</EFDB_Name>
+      <Description>Setpoint Active</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>deg_C</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>temperaturaAguaRetornoEvaporador</EFDB_Name>
+      <Description>Temperature Water Return Evaparator</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>deg_C</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>temperaturaAguaImpulsionEvaporador</EFDB_Name>
+      <Description>Temperature Water Impulse Evaparator</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>deg_C</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>presionBajaCto1</EFDB_Name>
+      <Description>Pressure Low CTO1</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>bar</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>presionBajaCto2</EFDB_Name>
+      <Description>Pressure Low CTO2</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>bar</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>potenciaDisponibleChiller</EFDB_Name>
+      <Description>Power Available Chiller</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>%</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>potenciaTrabajo</EFDB_Name>
+      <Description>Power Work</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>%</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>modoOperacion</EFDB_Name>
+      <Description>Mode Operation</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>estadoUnidad</EFDB_Name>
+      <Description>State Unit</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>horasCompresorPromedio</EFDB_Name>
+      <Description>Hours Compressor Mean</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>deg_C</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>horasCompresor01</EFDB_Name>
+      <Description>Hours Compressor01</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>deg_C</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>horasCompresor02</EFDB_Name>
+      <Description>Hours Compressor02</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>deg_C</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>horasCompresor03</EFDB_Name>
+      <Description>Hours Compressor03</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>deg_C</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>horasCompresor04</EFDB_Name>
+      <Description>Hours Compressor04</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>deg_C</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>compresor01Funcionando</EFDB_Name>
+      <Description>Compressor01 Functioning</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>compresor02Funcionando</EFDB_Name>
+      <Description>Compressor02 Functioning</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>compresor03Funcionando</EFDB_Name>
+      <Description>Compressor03 Functioning</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>compresor04Funcionando</EFDB_Name>
+      <Description>Compressor04 Functioning</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>compresor01Alarmado</EFDB_Name>
+      <Description>Compressor01 AlarmDO</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>compresor02Alarmado</EFDB_Name>
+      <Description>Compressor02 AlarmDO</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>compresor03Alarmado</EFDB_Name>
+      <Description>Compressor03 AlarmDO</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>compresor04Alarmado</EFDB_Name>
+      <Description>Compressor04 AlarmDO</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>comandoEncendido</EFDB_Name>
+      <Description>Command Started</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>alarmaGeneral</EFDB_Name>
+      <Description>Alarm General</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+  </SALTelemetry>
+  <SALTelemetry>
+    <Subsystem>HVAC</Subsystem>
+    <EFDB_Topic>HVAC_chiller03P01</EFDB_Topic>
+    <Description>Telemetry for the chiller03P01 device.</Description>
+    <item>
+      <EFDB_Name>setpointActivo</EFDB_Name>
+      <Description>Setpoint Active</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>deg_C</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>temperaturaAguaRetornoEvaporador</EFDB_Name>
+      <Description>Temperature Water Return Evaparator</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>deg_C</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>temperaturaAguaImpulsionEvaporador</EFDB_Name>
+      <Description>Temperature Water Impulse Evaparator</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>deg_C</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>presionBajaCto1</EFDB_Name>
+      <Description>Pressure Low CTO1</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>bar</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>presionBajaCto2</EFDB_Name>
+      <Description>Pressure Low CTO2</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>bar</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>potenciaDisponibleChiller</EFDB_Name>
+      <Description>Power Available Chiller</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>%</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>potenciaTrabajo</EFDB_Name>
+      <Description>Power Work</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>%</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>modoOperacion</EFDB_Name>
+      <Description>Mode Operation</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>estadoUnidad</EFDB_Name>
+      <Description>State Unit</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>horasCompresorPromedio</EFDB_Name>
+      <Description>Hours Compressor Mean</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>deg_C</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>horasCompresor01</EFDB_Name>
+      <Description>Hours Compressor01</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>deg_C</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>horasCompresor02</EFDB_Name>
+      <Description>Hours Compressor02</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>deg_C</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>horasCompresor03</EFDB_Name>
+      <Description>Hours Compressor03</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>deg_C</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>horasCompresor04</EFDB_Name>
+      <Description>Hours Compressor04</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>deg_C</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>compresor01Funcionando</EFDB_Name>
+      <Description>Compressor01 Functioning</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>compresor02Funcionando</EFDB_Name>
+      <Description>Compressor02 Functioning</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>compresor03Funcionando</EFDB_Name>
+      <Description>Compressor03 Functioning</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>compresor04Funcionando</EFDB_Name>
+      <Description>Compressor04 Functioning</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>comandoEncendido</EFDB_Name>
+      <Description>Command Started</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>compresor01Alarmado</EFDB_Name>
+      <Description>Compressor01 AlarmDO</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>compresor02Alarmado</EFDB_Name>
+      <Description>Compressor02 AlarmDO</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>compresor03Alarmado</EFDB_Name>
+      <Description>Compressor03 AlarmDO</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>compresor04Alarmado</EFDB_Name>
+      <Description>Compressor04 AlarmDO</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>alarmaGeneral</EFDB_Name>
+      <Description>Alarm General</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+  </SALTelemetry>
+  <SALTelemetry>
+    <Subsystem>HVAC</Subsystem>
+    <EFDB_Topic>HVAC_fancoil01P02</EFDB_Topic>
+    <Description>Telemetry for the fancoil01P02 device.</Description>
+    <item>
+      <EFDB_Name>estadoOperacion</EFDB_Name>
+      <Description>State Operation</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>estadoCalefactor</EFDB_Name>
+      <Description>State Heater</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>estadoVentilador</EFDB_Name>
+      <Description>State VentILADOR</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>temperaturaSala</EFDB_Name>
+      <Description>Temperature Room</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>deg_C</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>aperturaValvulaFrio</EFDB_Name>
+      <Description>Opening Valve Cold</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>%</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>setpointCoolingDay</EFDB_Name>
+      <Description>Setpoint Cooling Day</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>deg_C</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>setpointHeatingDay</EFDB_Name>
+      <Description>Setpoint Heating Day</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>deg_C</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>setpointCoolingNight</EFDB_Name>
+      <Description>Setpoint Cooling Night</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>deg_C</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>setpointHeatingNight</EFDB_Name>
+      <Description>Setpoint Heating Night</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>deg_C</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>setpointTrabajo</EFDB_Name>
+      <Description>Setpoint Work</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>deg_C</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>comandoEncendido</EFDB_Name>
+      <Description>Command Started</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+  </SALTelemetry>
+  <SALTelemetry>
+    <Subsystem>HVAC</Subsystem>
+    <EFDB_Topic>HVAC_fancoil02P02</EFDB_Topic>
+    <Description>Telemetry for the fancoil02P02 device.</Description>
+    <item>
+      <EFDB_Name>estadoOperacion</EFDB_Name>
+      <Description>State Operation</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>estadoCalefactor</EFDB_Name>
+      <Description>State Heater</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>estadoVentilador</EFDB_Name>
+      <Description>State VentILADOR</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>temperaturaSala</EFDB_Name>
+      <Description>Temperature Room</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>deg_C</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>aperturaValvulaFrio</EFDB_Name>
+      <Description>Opening Valve Cold</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>%</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>setpointCoolingDay</EFDB_Name>
+      <Description>Setpoint Cooling Day</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>deg_C</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>setpointHeatingDay</EFDB_Name>
+      <Description>Setpoint Heating Day</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>deg_C</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>setpointCoolingNight</EFDB_Name>
+      <Description>Setpoint Cooling Night</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>deg_C</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>setpointHeatingNight</EFDB_Name>
+      <Description>Setpoint Heating Night</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>deg_C</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>setpointTrabajo</EFDB_Name>
+      <Description>Setpoint Work</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>deg_C</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>comandoEncendido</EFDB_Name>
+      <Description>Command Started</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+  </SALTelemetry>
+  <SALTelemetry>
+    <Subsystem>HVAC</Subsystem>
+    <EFDB_Topic>HVAC_fancoil03P02</EFDB_Topic>
+    <Description>Telemetry for the fancoil03P02 device.</Description>
+    <item>
+      <EFDB_Name>estadoOperacion</EFDB_Name>
+      <Description>State Operation</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>estadoCalefactor</EFDB_Name>
+      <Description>State Heater</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>estadoVentilador</EFDB_Name>
+      <Description>State VentILADOR</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>temperaturaSala</EFDB_Name>
+      <Description>Temperature Room</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>deg_C</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>aperturaValvulaFrio</EFDB_Name>
+      <Description>Opening Valve Cold</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>%</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>setpointCoolingDay</EFDB_Name>
+      <Description>Setpoint Cooling Day</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>deg_C</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>setpointHeatingDay</EFDB_Name>
+      <Description>Setpoint Heating Day</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>deg_C</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>setpointCoolingNight</EFDB_Name>
+      <Description>Setpoint Cooling Night</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>deg_C</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>setpointHeatingNight</EFDB_Name>
+      <Description>Setpoint Heating Night</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>deg_C</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>setpointTrabajo</EFDB_Name>
+      <Description>Setpoint Work</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>deg_C</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>comandoEncendido</EFDB_Name>
+      <Description>Command Started</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+  </SALTelemetry>
+  <SALTelemetry>
+    <Subsystem>HVAC</Subsystem>
+    <EFDB_Topic>HVAC_fancoil04P02</EFDB_Topic>
+    <Description>Telemetry for the fancoil04P02 device.</Description>
+    <item>
+      <EFDB_Name>estadoOperacion</EFDB_Name>
+      <Description>State Operation</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>estadoCalefactor</EFDB_Name>
+      <Description>State Heater</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>estadoVentilador</EFDB_Name>
+      <Description>State VentILADOR</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>temperaturaSala</EFDB_Name>
+      <Description>Temperature Room</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>deg_C</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>aperturaValvulaFrio</EFDB_Name>
+      <Description>Opening Valve Cold</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>%</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>setpointCoolingDay</EFDB_Name>
+      <Description>Setpoint Cooling Day</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>deg_C</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>setpointHeatingDay</EFDB_Name>
+      <Description>Setpoint Heating Day</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>deg_C</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>setpointCoolingNight</EFDB_Name>
+      <Description>Setpoint Cooling Night</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>deg_C</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>setpointHeatingNight</EFDB_Name>
+      <Description>Setpoint Heating Night</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>deg_C</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>setpointTrabajo</EFDB_Name>
+      <Description>Setpoint Work</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>deg_C</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>comandoEncendido</EFDB_Name>
+      <Description>Command Started</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+  </SALTelemetry>
+  <SALTelemetry>
+    <Subsystem>HVAC</Subsystem>
+    <EFDB_Topic>HVAC_fancoil05P02</EFDB_Topic>
+    <Description>Telemetry for the fancoil05P02 device.</Description>
+    <item>
+      <EFDB_Name>estadoOperacion</EFDB_Name>
+      <Description>State Operation</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>estadoCalefactor</EFDB_Name>
+      <Description>State Heater</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>estadoVentilador</EFDB_Name>
+      <Description>State VentILADOR</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>temperaturaSala</EFDB_Name>
+      <Description>Temperature Room</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>deg_C</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>aperturaValvulaFrio</EFDB_Name>
+      <Description>Opening Valve Cold</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>%</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>setpointCoolingDay</EFDB_Name>
+      <Description>Setpoint Cooling Day</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>deg_C</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>setpointHeatingDay</EFDB_Name>
+      <Description>Setpoint Heating Day</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>deg_C</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>setpointCoolingNight</EFDB_Name>
+      <Description>Setpoint Cooling Night</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>deg_C</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>setpointHeatingNight</EFDB_Name>
+      <Description>Setpoint Heating Night</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>deg_C</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>setpointTrabajo</EFDB_Name>
+      <Description>Setpoint Work</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>deg_C</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>comandoEncendido</EFDB_Name>
+      <Description>Command Started</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+  </SALTelemetry>
+  <SALTelemetry>
+    <Subsystem>HVAC</Subsystem>
+    <EFDB_Topic>HVAC_fancoil06P02</EFDB_Topic>
+    <Description>Telemetry for the fancoil06P02 device.</Description>
+    <item>
+      <EFDB_Name>estadoOperacion</EFDB_Name>
+      <Description>State Operation</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>estadoCalefactor</EFDB_Name>
+      <Description>State Heater</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>estadoVentilador</EFDB_Name>
+      <Description>State VentILADOR</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>temperaturaSala</EFDB_Name>
+      <Description>Temperature Room</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>deg_C</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>aperturaValvulaFrio</EFDB_Name>
+      <Description>Opening Valve Cold</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>%</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>setpointCoolingDay</EFDB_Name>
+      <Description>Setpoint Cooling Day</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>deg_C</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>setpointHeatingDay</EFDB_Name>
+      <Description>Setpoint Heating Day</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>deg_C</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>setpointCoolingNight</EFDB_Name>
+      <Description>Setpoint Cooling Night</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>deg_C</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>setpointHeatingNight</EFDB_Name>
+      <Description>Setpoint Heating Night</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>deg_C</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>setpointTrabajo</EFDB_Name>
+      <Description>Setpoint Work</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>deg_C</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>comandoEncendido</EFDB_Name>
+      <Description>Command Started</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+  </SALTelemetry>
+  <SALTelemetry>
+    <Subsystem>HVAC</Subsystem>
+    <EFDB_Topic>HVAC_fancoil07P02</EFDB_Topic>
+    <Description>Telemetry for the fancoil07P02 device.</Description>
+    <item>
+      <EFDB_Name>estadoOperacion</EFDB_Name>
+      <Description>State Operation</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>estadoCalefactor</EFDB_Name>
+      <Description>State Heater</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>estadoVentilador</EFDB_Name>
+      <Description>State VentILADOR</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>temperaturaSala</EFDB_Name>
+      <Description>Temperature Room</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>deg_C</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>aperturaValvulaFrio</EFDB_Name>
+      <Description>Opening Valve Cold</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>%</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>setpointCoolingDay</EFDB_Name>
+      <Description>Setpoint Cooling Day</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>deg_C</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>setpointHeatingDay</EFDB_Name>
+      <Description>Setpoint Heating Day</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>deg_C</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>setpointCoolingNight</EFDB_Name>
+      <Description>Setpoint Cooling Night</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>deg_C</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>setpointHeatingNight</EFDB_Name>
+      <Description>Setpoint Heating Night</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>deg_C</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>setpointTrabajo</EFDB_Name>
+      <Description>Setpoint Work</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>deg_C</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>comandoEncendido</EFDB_Name>
+      <Description>Command Started</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+  </SALTelemetry>
+  <SALTelemetry>
+    <Subsystem>HVAC</Subsystem>
+    <EFDB_Topic>HVAC_fancoil08P02</EFDB_Topic>
+    <Description>Telemetry for the fancoil08P02 device.</Description>
+    <item>
+      <EFDB_Name>estadoOperacion</EFDB_Name>
+      <Description>State Operation</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>estadoCalefactor</EFDB_Name>
+      <Description>State Heater</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>estadoVentilador</EFDB_Name>
+      <Description>State VentILADOR</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>temperaturaSala</EFDB_Name>
+      <Description>Temperature Room</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>deg_C</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>aperturaValvulaFrio</EFDB_Name>
+      <Description>Opening Valve Cold</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>%</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>setpointCoolingDay</EFDB_Name>
+      <Description>Setpoint Cooling Day</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>deg_C</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>setpointHeatingDay</EFDB_Name>
+      <Description>Setpoint Heating Day</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>deg_C</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>setpointCoolingNight</EFDB_Name>
+      <Description>Setpoint Cooling Night</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>deg_C</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>setpointHeatingNight</EFDB_Name>
+      <Description>Setpoint Heating Night</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>deg_C</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>setpointTrabajo</EFDB_Name>
+      <Description>Setpoint Work</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>deg_C</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>comandoEncendido</EFDB_Name>
+      <Description>Command Started</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+  </SALTelemetry>
+  <SALTelemetry>
+    <Subsystem>HVAC</Subsystem>
+    <EFDB_Topic>HVAC_fancoil09P02</EFDB_Topic>
+    <Description>Telemetry for the fancoil09P02 device.</Description>
+    <item>
+      <EFDB_Name>estadoOperacion</EFDB_Name>
+      <Description>State Operation</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>estadoCalefactor</EFDB_Name>
+      <Description>State Heater</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>estadoVentilador</EFDB_Name>
+      <Description>State VentILADOR</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>temperaturaSala</EFDB_Name>
+      <Description>Temperature Room</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>deg_C</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>aperturaValvulaFrio</EFDB_Name>
+      <Description>Opening Valve Cold</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>%</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>setpointCoolingDay</EFDB_Name>
+      <Description>Setpoint Cooling Day</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>deg_C</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>setpointHeatingDay</EFDB_Name>
+      <Description>Setpoint Heating Day</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>deg_C</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>setpointCoolingNight</EFDB_Name>
+      <Description>Setpoint Cooling Night</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>deg_C</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>setpointHeatingNight</EFDB_Name>
+      <Description>Setpoint Heating Night</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>deg_C</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>setpointTrabajo</EFDB_Name>
+      <Description>Setpoint Work</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>deg_C</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>comandoEncendido</EFDB_Name>
+      <Description>Command Started</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+  </SALTelemetry>
+  <SALTelemetry>
+    <Subsystem>HVAC</Subsystem>
+    <EFDB_Topic>HVAC_fancoil10P02</EFDB_Topic>
+    <Description>Telemetry for the fancoil10P02 device.</Description>
+    <item>
+      <EFDB_Name>estadoOperacion</EFDB_Name>
+      <Description>State Operation</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>estadoCalefactor</EFDB_Name>
+      <Description>State Heater</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>estadoVentilador</EFDB_Name>
+      <Description>State VentILADOR</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>temperaturaSala</EFDB_Name>
+      <Description>Temperature Room</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>deg_C</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>aperturaValvulaFrio</EFDB_Name>
+      <Description>Opening Valve Cold</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>%</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>setpointCoolingDay</EFDB_Name>
+      <Description>Setpoint Cooling Day</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>deg_C</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>setpointHeatingDay</EFDB_Name>
+      <Description>Setpoint Heating Day</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>deg_C</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>setpointCoolingNight</EFDB_Name>
+      <Description>Setpoint Cooling Night</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>deg_C</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>setpointHeatingNight</EFDB_Name>
+      <Description>Setpoint Heating Night</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>deg_C</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>setpointTrabajo</EFDB_Name>
+      <Description>Setpoint Work</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>deg_C</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>comandoEncendido</EFDB_Name>
+      <Description>Command Started</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+  </SALTelemetry>
+  <SALTelemetry>
+    <Subsystem>HVAC</Subsystem>
+    <EFDB_Topic>HVAC_fancoil11P02</EFDB_Topic>
+    <Description>Telemetry for the fancoil11P02 device.</Description>
+    <item>
+      <EFDB_Name>estadoOperacion</EFDB_Name>
+      <Description>State Operation</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>estadoCalefactor</EFDB_Name>
+      <Description>State Heater</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>estadoVentilador</EFDB_Name>
+      <Description>State VentILADOR</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>temperaturaSala</EFDB_Name>
+      <Description>Temperature Room</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>deg_C</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>aperturaValvulaFrio</EFDB_Name>
+      <Description>Opening Valve Cold</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>%</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>setpointCoolingDay</EFDB_Name>
+      <Description>Setpoint Cooling Day</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>deg_C</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>setpointHeatingDay</EFDB_Name>
+      <Description>Setpoint Heating Day</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>deg_C</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>setpointCoolingNight</EFDB_Name>
+      <Description>Setpoint Cooling Night</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>deg_C</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>setpointHeatingNight</EFDB_Name>
+      <Description>Setpoint Heating Night</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>deg_C</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>setpointTrabajo</EFDB_Name>
+      <Description>Setpoint Work</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>deg_C</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>comandoEncendido</EFDB_Name>
+      <Description>Command Started</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+  </SALTelemetry>
+  <SALTelemetry>
+    <Subsystem>HVAC</Subsystem>
+    <EFDB_Topic>HVAC_fancoil12P02</EFDB_Topic>
+    <Description>Telemetry for the fancoil12P02 device.</Description>
+    <item>
+      <EFDB_Name>estadoOperacion</EFDB_Name>
+      <Description>State Operation</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>estadoCalefactor</EFDB_Name>
+      <Description>State Heater</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>estadoVentilador</EFDB_Name>
+      <Description>State VentILADOR</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>temperaturaSala</EFDB_Name>
+      <Description>Temperature Room</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>deg_C</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>aperturaValvulaFrio</EFDB_Name>
+      <Description>Opening Valve Cold</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>%</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>setpointCoolingDay</EFDB_Name>
+      <Description>Setpoint Cooling Day</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>deg_C</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>setpointHeatingDay</EFDB_Name>
+      <Description>Setpoint Heating Day</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>deg_C</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>setpointCoolingNight</EFDB_Name>
+      <Description>Setpoint Cooling Night</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>deg_C</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>setpointHeatingNight</EFDB_Name>
+      <Description>Setpoint Heating Night</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>deg_C</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>setpointTrabajo</EFDB_Name>
+      <Description>Setpoint Work</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>deg_C</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>comandoEncendido</EFDB_Name>
+      <Description>Command Started</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+  </SALTelemetry>
+  <SALTelemetry>
+    <Subsystem>HVAC</Subsystem>
+    <EFDB_Topic>HVAC_manejadoraSblancaP04</EFDB_Topic>
+    <Description>Telemetry for the manejadoraSblancaP04 device.</Description>
+    <item>
+      <EFDB_Name>valorConsigna</EFDB_Name>
+      <Description>Value Setpoint</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>deg_C</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>estadoTemperaturaAmbiente</EFDB_Name>
+      <Description>State Temperature Ambient</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>deg_C</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>estadoTemperaturaExterior</EFDB_Name>
+      <Description>State Temperature Exterior</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>deg_C</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>estadoTemperaturaAnticongelante</EFDB_Name>
+      <Description>State Temperature Anti-freeze</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>deg_C</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>setpointTrabajo</EFDB_Name>
+      <Description>Setpoint Work</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>deg_C</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>temperaturaInyeccion</EFDB_Name>
+      <Description>Temperature Injection</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>deg_C</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>temperaturaRetorno</EFDB_Name>
+      <Description>Temperature Return</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>deg_C</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>caudalVentiladorImpulsion</EFDB_Name>
+      <Description>Yield VentILADOR Impulse</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>%</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>setpointVentiladorMin</EFDB_Name>
+      <Description>Setpoint VentILADOR Min</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>%</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>setpointVentiladorMax</EFDB_Name>
+      <Description>Setpoint VentILADOR Max</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>%</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>estadoValvula</EFDB_Name>
+      <Description>State Valve</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>%</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>estadoFuncionamiento</EFDB_Name>
+      <Description>State Working</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>alarmaGeneral</EFDB_Name>
+      <Description>Alarm General</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>alarmaFiltro</EFDB_Name>
+      <Description>Alarm Filter</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>resetAlarma</EFDB_Name>
+      <Description>Reset Alarm</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>calefaccionEtapa01</EFDB_Name>
+      <Description>Heating Stage01</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>calefaccionEtapa02</EFDB_Name>
+      <Description>Heating Stage02</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>estadoDamper</EFDB_Name>
+      <Description>State Damper</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>comandoEncendido</EFDB_Name>
+      <Description>Command Started</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+  </SALTelemetry>
+  <SALTelemetry>
+    <Subsystem>HVAC</Subsystem>
+    <EFDB_Topic>HVAC_manejadoraSlimpiaP04</EFDB_Topic>
+    <Description>Telemetry for the manejadoraSlimpiaP04 device.</Description>
+    <item>
+      <EFDB_Name>valorConsigna</EFDB_Name>
+      <Description>Value Setpoint</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>deg_C</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>estadoTemperaturaAmbiente</EFDB_Name>
+      <Description>State Temperature Ambient</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>deg_C</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>estadoTemperaturaExterior</EFDB_Name>
+      <Description>State Temperature Exterior</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>deg_C</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>estadoTemperaturaAnticongelante</EFDB_Name>
+      <Description>State Temperature Anti-freeze</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>deg_C</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>setpointTrabajo</EFDB_Name>
+      <Description>Setpoint Work</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>deg_C</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>temperaturaInyeccion</EFDB_Name>
+      <Description>Temperature Injection</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>deg_C</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>temperaturaRetorno</EFDB_Name>
+      <Description>Temperature Return</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>deg_C</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>caudalVentiladorImpulsion</EFDB_Name>
+      <Description>Yield VentILADOR Impulse</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>%</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>setpointVentiladorMin</EFDB_Name>
+      <Description>Setpoint VentILADOR Min</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>%</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>setpointVentiladorMax</EFDB_Name>
+      <Description>Setpoint VentILADOR Max</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>%</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>estadoValvula</EFDB_Name>
+      <Description>State Valve</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>%</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>estadoFuncionamiento</EFDB_Name>
+      <Description>State Working</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>alarmaGeneral</EFDB_Name>
+      <Description>Alarm General</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>alarmaFiltro</EFDB_Name>
+      <Description>Alarm Filter</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>resetAlarma</EFDB_Name>
+      <Description>Reset Alarm</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>calefaccionEtapa01</EFDB_Name>
+      <Description>Heating Stage01</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>calefaccionEtapa02</EFDB_Name>
+      <Description>Heating Stage02</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>estadoDamper</EFDB_Name>
+      <Description>State Damper</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>comandoEncendido</EFDB_Name>
+      <Description>Command Started</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+  </SALTelemetry>
+  <SALTelemetry>
+    <Subsystem>HVAC</Subsystem>
+    <EFDB_Topic>HVAC_crack01P02</EFDB_Topic>
+    <Description>Telemetry for the crack01P02 device.</Description>
+    <item>
+      <EFDB_Name>estadoFuncionamiento</EFDB_Name>
+      <Description>State Working</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>estadoPresenciaAlarma</EFDB_Name>
+      <Description>State Presense Alarm</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>temperaturaInyeccion</EFDB_Name>
+      <Description>Temperature Injection</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>deg_C</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>temperaturaRetorno</EFDB_Name>
+      <Description>Temperature Return</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>deg_C</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>humedadSala</EFDB_Name>
+      <Description>Humidity Room</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>%</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>aperturaValvula</EFDB_Name>
+      <Description>Opening Valve</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>%</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>setpointHumidificador</EFDB_Name>
+      <Description>Setpoint Humidifier</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>%</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>setpointDeshumidificador</EFDB_Name>
+      <Description>Setpoint Dehumidifier</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>%</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>setPointCooling</EFDB_Name>
+      <Description>Setpoint Cooling</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>deg_C</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>setPointHeating</EFDB_Name>
+      <Description>Setpoint Heating</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>deg_C</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>requerimientoHumidificador</EFDB_Name>
+      <Description>Requirement Humidifier</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>%</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>modoOperacionUnidad</EFDB_Name>
+      <Description>Mode Operation Unit</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>estadoDeUnidad</EFDB_Name>
+      <Description>State OfUnit</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>numeroCircuitos</EFDB_Name>
+      <Description>Number Circuits</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>comandoEncendido</EFDB_Name>
+      <Description>Command Started</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+  </SALTelemetry>
+  <SALTelemetry>
+    <Subsystem>HVAC</Subsystem>
+    <EFDB_Topic>HVAC_crack02P02</EFDB_Topic>
+    <Description>Telemetry for the crack02P02 device.</Description>
+    <item>
+      <EFDB_Name>estadoFuncionamiento</EFDB_Name>
+      <Description>State Working</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>estadoPresenciaAlarma</EFDB_Name>
+      <Description>State Presense Alarm</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>temperaturaInyeccion</EFDB_Name>
+      <Description>Temperature Injection</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>deg_C</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>temperaturaRetorno</EFDB_Name>
+      <Description>Temperature Return</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>deg_C</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>humedadSala</EFDB_Name>
+      <Description>Humidity Room</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>%</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>aperturaValvula</EFDB_Name>
+      <Description>Opening Valve</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>%</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>setpointHumidificador</EFDB_Name>
+      <Description>Setpoint Humidifier</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>%</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>setpointDeshumidificador</EFDB_Name>
+      <Description>Setpoint Dehumidifier</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>%</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>setPointCooling</EFDB_Name>
+      <Description>Setpoint Cooling</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>deg_C</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>setPointHeating</EFDB_Name>
+      <Description>Setpoint Heating</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>deg_C</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>requerimientoHumidificador</EFDB_Name>
+      <Description>Requirement Humidifier</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>%</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>modoOperacionUnidad</EFDB_Name>
+      <Description>Mode Operation Unit</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>estadoDeUnidad</EFDB_Name>
+      <Description>State OfUnit</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>numeroCircuitos</EFDB_Name>
+      <Description>Number Circuits</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>comandoEncendido</EFDB_Name>
+      <Description>Command Started</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+  </SALTelemetry>
+  <SALTelemetry>
+    <Subsystem>HVAC</Subsystem>
+    <EFDB_Topic>HVAC_vex03LowerP04</EFDB_Topic>
+    <Description>Telemetry for the vex03LowerP04 device.</Description>
+    <item>
+      <EFDB_Name>estadoFuncionamiento</EFDB_Name>
+      <Description>State Working</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>fallaTermica</EFDB_Name>
+      <Description>Error Thermal</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>comando</EFDB_Name>
+      <Description>Command</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>comandoEncendido</EFDB_Name>
+      <Description>Command Started</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+  </SALTelemetry>
+  <SALTelemetry>
+    <Subsystem>HVAC</Subsystem>
+    <EFDB_Topic>HVAC_vex04CargaP04</EFDB_Topic>
+    <Description>Telemetry for the vex04CargaP04 device.</Description>
+    <item>
+      <EFDB_Name>estadoFuncionamiento</EFDB_Name>
+      <Description>State Working</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>fallaTermica</EFDB_Name>
+      <Description>Error Thermal</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>comando</EFDB_Name>
+      <Description>Command</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>comandoEncendido</EFDB_Name>
+      <Description>Command Started</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+  </SALTelemetry>
+  <SALTelemetry>
+    <Subsystem>HVAC</Subsystem>
+    <EFDB_Topic>HVAC_vea01P05</EFDB_Topic>
+    <Description>Telemetry for the vea01P05 device.</Description>
+    <item>
+      <EFDB_Name>estadoFuncionamiento</EFDB_Name>
+      <Description>State Working</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>fallaTermica</EFDB_Name>
+      <Description>Error Thermal</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>comandoEncendido</EFDB_Name>
+      <Description>Command Started</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+  </SALTelemetry>
+  <SALTelemetry>
+    <Subsystem>HVAC</Subsystem>
+    <EFDB_Topic>HVAC_vea08P05</EFDB_Topic>
+    <Description>Telemetry for the vea08P05 device.</Description>
+    <item>
+      <EFDB_Name>estadoFuncionamiento</EFDB_Name>
+      <Description>State Working</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>fallaTermica</EFDB_Name>
+      <Description>Error Thermal</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>comandoEncendido</EFDB_Name>
+      <Description>Command Started</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+  </SALTelemetry>
+  <SALTelemetry>
+    <Subsystem>HVAC</Subsystem>
+    <EFDB_Topic>HVAC_vea09P05</EFDB_Topic>
+    <Description>Telemetry for the vea09P05 device.</Description>
+    <item>
+      <EFDB_Name>estadoFuncionamiento</EFDB_Name>
+      <Description>State Working</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>fallaTermica</EFDB_Name>
+      <Description>Error Thermal</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>comandoEncendido</EFDB_Name>
+      <Description>Command Started</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+  </SALTelemetry>
+  <SALTelemetry>
+    <Subsystem>HVAC</Subsystem>
+    <EFDB_Topic>HVAC_vea10P05</EFDB_Topic>
+    <Description>Telemetry for the vea10P05 device.</Description>
+    <item>
+      <EFDB_Name>estadoFuncionamiento</EFDB_Name>
+      <Description>State Working</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>fallaTermica</EFDB_Name>
+      <Description>Error Thermal</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>comandoEncendido</EFDB_Name>
+      <Description>Command Started</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+  </SALTelemetry>
+  <SALTelemetry>
+    <Subsystem>HVAC</Subsystem>
+    <EFDB_Topic>HVAC_vea11P05</EFDB_Topic>
+    <Description>Telemetry for the vea11P05 device.</Description>
+    <item>
+      <EFDB_Name>estadoFuncionamiento</EFDB_Name>
+      <Description>State Working</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>fallaTermica</EFDB_Name>
+      <Description>Error Thermal</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>comandoEncendido</EFDB_Name>
+      <Description>Command Started</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+  </SALTelemetry>
+  <SALTelemetry>
+    <Subsystem>HVAC</Subsystem>
+    <EFDB_Topic>HVAC_vea12P05</EFDB_Topic>
+    <Description>Telemetry for the vea12P05 device.</Description>
+    <item>
+      <EFDB_Name>estadoFuncionamiento</EFDB_Name>
+      <Description>State Working</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>fallaTermica</EFDB_Name>
+      <Description>Error Thermal</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>comandoEncendido</EFDB_Name>
+      <Description>Command Started</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+  </SALTelemetry>
+  <SALTelemetry>
+    <Subsystem>HVAC</Subsystem>
+    <EFDB_Topic>HVAC_vea13P05</EFDB_Topic>
+    <Description>Telemetry for the vea13P05 device.</Description>
+    <item>
+      <EFDB_Name>estadoFuncionamiento</EFDB_Name>
+      <Description>State Working</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>fallaTermica</EFDB_Name>
+      <Description>Error Thermal</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>comandoEncendido</EFDB_Name>
+      <Description>Command Started</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+  </SALTelemetry>
+  <SALTelemetry>
+    <Subsystem>HVAC</Subsystem>
+    <EFDB_Topic>HVAC_vea14P05</EFDB_Topic>
+    <Description>Telemetry for the vea14P05 device.</Description>
+    <item>
+      <EFDB_Name>estadoFuncionamiento</EFDB_Name>
+      <Description>State Working</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>fallaTermica</EFDB_Name>
+      <Description>Error Thermal</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>comandoEncendido</EFDB_Name>
+      <Description>Command Started</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+  </SALTelemetry>
+  <SALTelemetry>
+    <Subsystem>HVAC</Subsystem>
+    <EFDB_Topic>HVAC_vea15P05</EFDB_Topic>
+    <Description>Telemetry for the vea15P05 device.</Description>
+    <item>
+      <EFDB_Name>estadoFuncionamiento</EFDB_Name>
+      <Description>State Working</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>fallaTermica</EFDB_Name>
+      <Description>Error Thermal</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>comandoEncendido</EFDB_Name>
+      <Description>Command Started</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+  </SALTelemetry>
+  <SALTelemetry>
+    <Subsystem>HVAC</Subsystem>
+    <EFDB_Topic>HVAC_vea16P05</EFDB_Topic>
+    <Description>Telemetry for the vea16P05 device.</Description>
+    <item>
+      <EFDB_Name>estadoFuncionamiento</EFDB_Name>
+      <Description>State Working</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>fallaTermica</EFDB_Name>
+      <Description>Error Thermal</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>comandoEncendido</EFDB_Name>
+      <Description>Command Started</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+  </SALTelemetry>
+  <SALTelemetry>
+    <Subsystem>HVAC</Subsystem>
+    <EFDB_Topic>HVAC_vea17P05</EFDB_Topic>
+    <Description>Telemetry for the vea17P05 device.</Description>
+    <item>
+      <EFDB_Name>estadoFuncionamiento</EFDB_Name>
+      <Description>State Working</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>fallaTermica</EFDB_Name>
+      <Description>Error Thermal</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>comandoEncendido</EFDB_Name>
+      <Description>Command Started</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+  </SALTelemetry>
+  <SALTelemetry>
+    <Subsystem>HVAC</Subsystem>
     <EFDB_Topic>HVAC_vea01P01</EFDB_Topic>
+    <Description>Telemetry for the vea01P01 device.</Description>
     <item>
       <EFDB_Name>estadoFuncionamiento</EFDB_Name>
       <Description>State Working</Description>
@@ -29,6 +2381,7 @@
   <SALTelemetry>
     <Subsystem>HVAC</Subsystem>
     <EFDB_Topic>HVAC_vin01P01</EFDB_Topic>
+    <Description>Telemetry for the vin01P01 device.</Description>
     <item>
       <EFDB_Name>estadoFuncionamiento</EFDB_Name>
       <Description>State Working</Description>
@@ -54,6 +2407,7 @@
   <SALTelemetry>
     <Subsystem>HVAC</Subsystem>
     <EFDB_Topic>HVAC_vec01P01</EFDB_Topic>
+    <Description>Telemetry for the vec01P01 device.</Description>
     <item>
       <EFDB_Name>estadoFuncionamiento</EFDB_Name>
       <Description>State Working</Description>
@@ -79,6 +2433,7 @@
   <SALTelemetry>
     <Subsystem>HVAC</Subsystem>
     <EFDB_Topic>HVAC_bombaAguaFriaP01</EFDB_Topic>
+    <Description>Telemetry for the bombaAguaFriaP01 device.</Description>
     <item>
       <EFDB_Name>estadoFuncionamiento</EFDB_Name>
       <Description>State Working</Description>
@@ -96,7 +2451,20 @@
   </SALTelemetry>
   <SALTelemetry>
     <Subsystem>HVAC</Subsystem>
+    <EFDB_Topic>HVAC_generalP01</EFDB_Topic>
+    <Description>Telemetry for the generalP01 device.</Description>
+    <item>
+      <EFDB_Name>temperaturaAmbiente</EFDB_Name>
+      <Description>Temperature Ambient</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>deg_C</Units>
+      <Count>1</Count>
+    </item>
+  </SALTelemetry>
+  <SALTelemetry>
+    <Subsystem>HVAC</Subsystem>
     <EFDB_Topic>HVAC_valvulaP01</EFDB_Topic>
+    <Description>Telemetry for the valvulaP01 device.</Description>
     <item>
       <EFDB_Name>estadoValvula12</EFDB_Name>
       <Description>State Valve12</Description>
@@ -135,796 +2503,55 @@
   </SALTelemetry>
   <SALTelemetry>
     <Subsystem>HVAC</Subsystem>
-    <EFDB_Topic>HVAC_temperatuaAmbienteP01</EFDB_Topic>
-    <item>
-      <EFDB_Name>temperaturaAmbiente</EFDB_Name>
-      <Description>Temperature Ambient</Description>
-      <IDL_Type>float</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-  </SALTelemetry>
-  <SALTelemetry>
-    <Subsystem>HVAC</Subsystem>
-    <EFDB_Topic>HVAC_vea01P05</EFDB_Topic>
-    <item>
-      <EFDB_Name>estadoFuncionamiento</EFDB_Name>
-      <Description>State Working</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>fallaTermica</EFDB_Name>
-      <Description>Error Thermal</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>comandoEncendido</EFDB_Name>
-      <Description>Command Started</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-  </SALTelemetry>
-  <SALTelemetry>
-    <Subsystem>HVAC</Subsystem>
-    <EFDB_Topic>HVAC_vea08P05</EFDB_Topic>
-    <item>
-      <EFDB_Name>estadoFuncionamiento</EFDB_Name>
-      <Description>State Working</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>fallaTermica</EFDB_Name>
-      <Description>Error Thermal</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>comandoEncendido</EFDB_Name>
-      <Description>Command Started</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-  </SALTelemetry>
-  <SALTelemetry>
-    <Subsystem>HVAC</Subsystem>
-    <EFDB_Topic>HVAC_vea09P05</EFDB_Topic>
-    <item>
-      <EFDB_Name>estadoFuncionamiento</EFDB_Name>
-      <Description>State Working</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>fallaTermica</EFDB_Name>
-      <Description>Error Thermal</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>comandoEncendido</EFDB_Name>
-      <Description>Command Started</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-  </SALTelemetry>
-  <SALTelemetry>
-    <Subsystem>HVAC</Subsystem>
-    <EFDB_Topic>HVAC_vea10P05</EFDB_Topic>
-    <item>
-      <EFDB_Name>estadoFuncionamiento</EFDB_Name>
-      <Description>State Working</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>fallaTermica</EFDB_Name>
-      <Description>Error Thermal</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>comandoEncendido</EFDB_Name>
-      <Description>Command Started</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-  </SALTelemetry>
-  <SALTelemetry>
-    <Subsystem>HVAC</Subsystem>
-    <EFDB_Topic>HVAC_vea11P05</EFDB_Topic>
-    <item>
-      <EFDB_Name>estadoFuncionamiento</EFDB_Name>
-      <Description>State Working</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>fallaTermica</EFDB_Name>
-      <Description>Error Thermal</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>comandoEncendido</EFDB_Name>
-      <Description>Command Started</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-  </SALTelemetry>
-  <SALTelemetry>
-    <Subsystem>HVAC</Subsystem>
-    <EFDB_Topic>HVAC_vea12P05</EFDB_Topic>
-    <item>
-      <EFDB_Name>estadoFuncionamiento</EFDB_Name>
-      <Description>State Working</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>fallaTermica</EFDB_Name>
-      <Description>Error Thermal</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>comandoEncendido</EFDB_Name>
-      <Description>Command Started</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-  </SALTelemetry>
-  <SALTelemetry>
-    <Subsystem>HVAC</Subsystem>
-    <EFDB_Topic>HVAC_vea13P05</EFDB_Topic>
-    <item>
-      <EFDB_Name>estadoFuncionamiento</EFDB_Name>
-      <Description>State Working</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>fallaTermica</EFDB_Name>
-      <Description>Error Thermal</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>comandoEncendido</EFDB_Name>
-      <Description>Command Started</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-  </SALTelemetry>
-  <SALTelemetry>
-    <Subsystem>HVAC</Subsystem>
-    <EFDB_Topic>HVAC_vea14P05</EFDB_Topic>
-    <item>
-      <EFDB_Name>estadoFuncionamiento</EFDB_Name>
-      <Description>State Working</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>fallaTermica</EFDB_Name>
-      <Description>Error Thermal</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>comandoEncendido</EFDB_Name>
-      <Description>Command Started</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-  </SALTelemetry>
-  <SALTelemetry>
-    <Subsystem>HVAC</Subsystem>
-    <EFDB_Topic>HVAC_vea15P05</EFDB_Topic>
-    <item>
-      <EFDB_Name>estadoFuncionamiento</EFDB_Name>
-      <Description>State Working</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>fallaTermica</EFDB_Name>
-      <Description>Error Thermal</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>comandoEncendido</EFDB_Name>
-      <Description>Command Started</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-  </SALTelemetry>
-  <SALTelemetry>
-    <Subsystem>HVAC</Subsystem>
-    <EFDB_Topic>HVAC_vea16P05</EFDB_Topic>
-    <item>
-      <EFDB_Name>estadoFuncionamiento</EFDB_Name>
-      <Description>State Working</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>fallaTermica</EFDB_Name>
-      <Description>Error Thermal</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>comandoEncendido</EFDB_Name>
-      <Description>Command Started</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-  </SALTelemetry>
-  <SALTelemetry>
-    <Subsystem>HVAC</Subsystem>
-    <EFDB_Topic>HVAC_vea17P05</EFDB_Topic>
-    <item>
-      <EFDB_Name>estadoFuncionamiento</EFDB_Name>
-      <Description>State Working</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>fallaTermica</EFDB_Name>
-      <Description>Error Thermal</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>comandoEncendido</EFDB_Name>
-      <Description>Command Started</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-  </SALTelemetry>
-  <SALTelemetry>
-    <Subsystem>HVAC</Subsystem>
-    <EFDB_Topic>HVAC_vea03P04</EFDB_Topic>
-    <item>
-      <EFDB_Name>estadoFuncionamiento</EFDB_Name>
-      <Description>State Working</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-  </SALTelemetry>
-  <SALTelemetry>
-    <Subsystem>HVAC</Subsystem>
-    <EFDB_Topic>HVAC_vea04P04</EFDB_Topic>
-    <item>
-      <EFDB_Name>estadoFuncionamiento</EFDB_Name>
-      <Description>State Working</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-  </SALTelemetry>
-  <SALTelemetry>
-    <Subsystem>HVAC</Subsystem>
-    <EFDB_Topic>HVAC_vex03P04</EFDB_Topic>
-    <item>
-      <EFDB_Name>fallaTermica</EFDB_Name>
-      <Description>Error Thermal</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>comandoEncendido</EFDB_Name>
-      <Description>Command Started</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-  </SALTelemetry>
-  <SALTelemetry>
-    <Subsystem>HVAC</Subsystem>
-    <EFDB_Topic>HVAC_vex04P04</EFDB_Topic>
-    <item>
-      <EFDB_Name>fallaTermica</EFDB_Name>
-      <Description>Error Thermal</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>comandoEncendido</EFDB_Name>
-      <Description>Command Started</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-  </SALTelemetry>
-  <SALTelemetry>
-    <Subsystem>HVAC</Subsystem>
-    <EFDB_Topic>HVAC_damperLowerP04</EFDB_Topic>
-    <item>
-      <EFDB_Name>comando</EFDB_Name>
-      <Description>Command</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-  </SALTelemetry>
-  <SALTelemetry>
-    <Subsystem>HVAC</Subsystem>
-    <EFDB_Topic>HVAC_zonaCargaP04</EFDB_Topic>
-    <item>
-      <EFDB_Name>comandoEncendido</EFDB_Name>
-      <Description>Command Started</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-  </SALTelemetry>
-  <SALTelemetry>
-    <Subsystem>HVAC</Subsystem>
-    <EFDB_Topic>HVAC_chiller01P01</EFDB_Topic>
-    <item>
-      <EFDB_Name>setpointActivo</EFDB_Name>
-      <Description>Setpoint Active</Description>
-      <IDL_Type>float</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>temperaturaAguaRetornoEvaporador</EFDB_Name>
-      <Description>Temperature Water Return Evaparator</Description>
-      <IDL_Type>float</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>temperaturaAguaImpulsionEvaporador</EFDB_Name>
-      <Description>Temperature Water Impulse Evaparator</Description>
-      <IDL_Type>float</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>presionBajaCto1</EFDB_Name>
-      <Description>Pressure Low CTO1</Description>
-      <IDL_Type>float</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>presionBajaCto2</EFDB_Name>
-      <Description>Pressure Low CTO2</Description>
-      <IDL_Type>float</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>comandoEncendido</EFDB_Name>
-      <Description>Command Started</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>potenciaDisponibleChiller</EFDB_Name>
-      <Description>Power Available Chiller</Description>
-      <IDL_Type>float</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>potenciaTrabajo</EFDB_Name>
-      <Description>Power Work</Description>
-      <IDL_Type>float</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>estadoFuncionamiento</EFDB_Name>
-      <Description>State Working</Description>
-      <IDL_Type>float</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>modoOperacion</EFDB_Name>
-      <Description>Mode Operation</Description>
-      <IDL_Type>float</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>estadoUnidad</EFDB_Name>
-      <Description>State Unit</Description>
-      <IDL_Type>float</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>horasCompresorPromedio</EFDB_Name>
-      <Description>Hours Compressor Mean</Description>
-      <IDL_Type>float</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>horasCompresor01</EFDB_Name>
-      <Description>Hours Compressor01</Description>
-      <IDL_Type>float</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>horasCompresor02</EFDB_Name>
-      <Description>Hours Compressor02</Description>
-      <IDL_Type>float</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>horasCompresor03</EFDB_Name>
-      <Description>Hours Compressor03</Description>
-      <IDL_Type>float</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>horasCompresor04</EFDB_Name>
-      <Description>Hours Compressor04</Description>
-      <IDL_Type>float</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>compresor01Funcionando</EFDB_Name>
-      <Description>Compressor01 Functioning</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>compresor02Funcionando</EFDB_Name>
-      <Description>Compressor02 Functioning</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>compresor03Funcionando</EFDB_Name>
-      <Description>Compressor03 Functioning</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>compresor04Funcionando</EFDB_Name>
-      <Description>Compressor04 Functioning</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>compresor01Alarmado</EFDB_Name>
-      <Description>Compressor01 AlarmDO</Description>
-      <IDL_Type>float</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>compresor02Alarmado</EFDB_Name>
-      <Description>Compressor02 AlarmDO</Description>
-      <IDL_Type>float</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>compresor03Alarmado</EFDB_Name>
-      <Description>Compressor03 AlarmDO</Description>
-      <IDL_Type>float</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>compresor04Alarmado</EFDB_Name>
-      <Description>Compressor04 AlarmDO</Description>
-      <IDL_Type>float</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>alarmaGeneral</EFDB_Name>
-      <Description>Alarm General</Description>
-      <IDL_Type>float</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-  </SALTelemetry>
-  <SALTelemetry>
-    <Subsystem>HVAC</Subsystem>
-    <EFDB_Topic>HVAC_crack01P02</EFDB_Topic>
-    <item>
-      <EFDB_Name>temperaturaInyeccion</EFDB_Name>
-      <Description>Temperature Injection</Description>
-      <IDL_Type>float</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>temperaturaRetorno</EFDB_Name>
-      <Description>Temperature Return</Description>
-      <IDL_Type>float</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>humedadSala</EFDB_Name>
-      <Description>Humidity Room</Description>
-      <IDL_Type>float</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>setpointHumidificador</EFDB_Name>
-      <Description>Setpoint Humidifier</Description>
-      <IDL_Type>float</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>setpointDeshumidificador</EFDB_Name>
-      <Description>Setpoint Dehumidifier</Description>
-      <IDL_Type>float</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>setPointCooling</EFDB_Name>
-      <Description>Setpoint Cooling</Description>
-      <IDL_Type>float</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>setPointHeating</EFDB_Name>
-      <Description>Setpoint Heating</Description>
-      <IDL_Type>float</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>aperturaValvula</EFDB_Name>
-      <Description>Opening Valve</Description>
-      <IDL_Type>float</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>requerimientoHumificador</EFDB_Name>
-      <Description>Requirement Humidifier</Description>
-      <IDL_Type>float</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>estadoFuncionamiento</EFDB_Name>
-      <Description>State Working</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>estadoDeUnidad</EFDB_Name>
-      <Description>State OfUnit</Description>
-      <IDL_Type>float</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>modoOperacionUnidad</EFDB_Name>
-      <Description>Mode Operation Unit</Description>
-      <IDL_Type>float</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>estadoPresenciaAlarma</EFDB_Name>
-      <Description>State Presense Alarm</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>numeroCircuitos</EFDB_Name>
-      <Description>Number Circuits</Description>
-      <IDL_Type>float</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>comandoEncendido</EFDB_Name>
-      <Description>Command Started</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-  </SALTelemetry>
-  <SALTelemetry>
-    <Subsystem>HVAC</Subsystem>
-    <EFDB_Topic>HVAC_fancoil01P02</EFDB_Topic>
-    <item>
-      <EFDB_Name>temperaturaSala</EFDB_Name>
-      <Description>Temperature Room</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>estadoOperacion</EFDB_Name>
-      <Description>State Operation</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>estadoCalefactor</EFDB_Name>
-      <Description>State Heater</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>estadoVentilador</EFDB_Name>
-      <Description>State VentILADOR</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>aperturaValvulaFrio</EFDB_Name>
-      <Description>Opening Valve Cold</Description>
-      <IDL_Type>float</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>setpointCoolingDay</EFDB_Name>
-      <Description>Setpoint Cooling Day</Description>
-      <IDL_Type>float</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>setpointHeatingDay</EFDB_Name>
-      <Description>Setpoint Heating Day</Description>
-      <IDL_Type>float</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>setpointCoolingNight</EFDB_Name>
-      <Description>Setpoint Cooling Night</Description>
-      <IDL_Type>float</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>setpointHeatingNight</EFDB_Name>
-      <Description>Setpoint Heating Night</Description>
-      <IDL_Type>float</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>setpointTrabajo</EFDB_Name>
-      <Description>Setpoint Work</Description>
-      <IDL_Type>float</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>comandoEncendido</EFDB_Name>
-      <Description>Command Started</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-  </SALTelemetry>
-  <SALTelemetry>
-    <Subsystem>HVAC</Subsystem>
     <EFDB_Topic>HVAC_manejadoraLower01P05</EFDB_Topic>
+    <Description>Telemetry for the manejadoraLower01P05 device.</Description>
     <item>
       <EFDB_Name>valorConsigna</EFDB_Name>
       <Description>Value Setpoint</Description>
       <IDL_Type>float</IDL_Type>
-      <Units>unitless</Units>
+      <Units>deg_C</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>setpointTrabajo</EFDB_Name>
       <Description>Setpoint Work</Description>
       <IDL_Type>float</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>setpointVentiladorMin</EFDB_Name>
-      <Description>Setpoint VentILADOR Min</Description>
-      <IDL_Type>float</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>setpointVentiladorMax</EFDB_Name>
-      <Description>Setpoint VentILADOR Max</Description>
-      <IDL_Type>float</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>setPointVentImpulsion</EFDB_Name>
-      <Description>Setpoint Vent Impulse</Description>
-      <IDL_Type>float</IDL_Type>
-      <Units>unitless</Units>
+      <Units>deg_C</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>temperaturaAnticongelante</EFDB_Name>
       <Description>Temperature Anti-freeze</Description>
       <IDL_Type>float</IDL_Type>
-      <Units>unitless</Units>
+      <Units>deg_C</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>temperaturaInyeccion</EFDB_Name>
       <Description>Temperature Injection</Description>
       <IDL_Type>float</IDL_Type>
-      <Units>unitless</Units>
+      <Units>deg_C</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>temperaturaRetorno</EFDB_Name>
       <Description>Temperature Return</Description>
       <IDL_Type>float</IDL_Type>
-      <Units>unitless</Units>
+      <Units>deg_C</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>estadoValvula</EFDB_Name>
+      <Description>State Valve</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>%</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>temperaturaAmbienteExterior</EFDB_Name>
+      <Description>Temperature Ambient Exterior</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>deg_C</Units>
       <Count>1</Count>
     </item>
     <item>
@@ -962,85 +2589,58 @@
       <Units>unitless</Units>
       <Count>1</Count>
     </item>
-    <item>
-      <EFDB_Name>temperaturaAmbienteExterior</EFDB_Name>
-      <Description>Temperature Ambient Exterior</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>estadoValvula</EFDB_Name>
-      <Description>State Valve</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>caudalVentiladorImpulsion</EFDB_Name>
-      <Description>Yield VentILADOR Impulse</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>comandoEncendido</EFDB_Name>
-      <Description>Command Started</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
   </SALTelemetry>
   <SALTelemetry>
     <Subsystem>HVAC</Subsystem>
-    <EFDB_Topic>HVAC_manejadoraSblancaP04</EFDB_Topic>
+    <EFDB_Topic>HVAC_manejadoraLower02P05</EFDB_Topic>
+    <Description>Telemetry for the manejadoraLower02P05 device.</Description>
     <item>
       <EFDB_Name>valorConsigna</EFDB_Name>
       <Description>Value Setpoint</Description>
       <IDL_Type>float</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>estadoFuncionamiento</EFDB_Name>
-      <Description>State Working</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>estadoTemperaturaExterior</EFDB_Name>
-      <Description>State Temperature Exterior</Description>
-      <IDL_Type>float</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>estadoTemperaturaAnticongelante</EFDB_Name>
-      <Description>State Temperature Anti-freeze</Description>
-      <IDL_Type>float</IDL_Type>
-      <Units>unitless</Units>
+      <Units>deg_C</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>setpointTrabajo</EFDB_Name>
       <Description>Setpoint Work</Description>
       <IDL_Type>float</IDL_Type>
-      <Units>unitless</Units>
+      <Units>deg_C</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>temperaturaAnticongelante</EFDB_Name>
+      <Description>Temperature Anti-freeze</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>deg_C</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>temperaturaInyeccion</EFDB_Name>
       <Description>Temperature Injection</Description>
       <IDL_Type>float</IDL_Type>
-      <Units>unitless</Units>
+      <Units>deg_C</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>temperaturaRetorno</EFDB_Name>
       <Description>Temperature Return</Description>
       <IDL_Type>float</IDL_Type>
-      <Units>unitless</Units>
+      <Units>deg_C</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>estadoValvula</EFDB_Name>
+      <Description>State Valve</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>%</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>temperaturaAmbienteExterior</EFDB_Name>
+      <Description>Temperature Ambient Exterior</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>deg_C</Units>
       <Count>1</Count>
     </item>
     <item>
@@ -1058,105 +2658,201 @@
       <Count>1</Count>
     </item>
     <item>
+      <EFDB_Name>estadoFuncionamiento</EFDB_Name>
+      <Description>State Working</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>estadoDamper</EFDB_Name>
+      <Description>State Damper</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
       <EFDB_Name>resetAlarma</EFDB_Name>
       <Description>Reset Alarm</Description>
       <IDL_Type>boolean</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
     </item>
+  </SALTelemetry>
+  <SALTelemetry>
+    <Subsystem>HVAC</Subsystem>
+    <EFDB_Topic>HVAC_manejadoraLower03P05</EFDB_Topic>
+    <Description>Telemetry for the manejadoraLower03P05 device.</Description>
+    <item>
+      <EFDB_Name>valorConsigna</EFDB_Name>
+      <Description>Value Setpoint</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>deg_C</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>setpointTrabajo</EFDB_Name>
+      <Description>Setpoint Work</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>deg_C</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>temperaturaAnticongelante</EFDB_Name>
+      <Description>Temperature Anti-freeze</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>deg_C</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>temperaturaInyeccion</EFDB_Name>
+      <Description>Temperature Injection</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>deg_C</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>temperaturaRetorno</EFDB_Name>
+      <Description>Temperature Return</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>deg_C</Units>
+      <Count>1</Count>
+    </item>
     <item>
       <EFDB_Name>estadoValvula</EFDB_Name>
       <Description>State Valve</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>calefaccionEtapa01</EFDB_Name>
-      <Description>Heating Stage01</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>calefaccionEtapa02</EFDB_Name>
-      <Description>Heating Stage02</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>caudalVentiladorImpulsion</EFDB_Name>
-      <Description>Yield VentILADOR Impulse</Description>
       <IDL_Type>float</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
     </item>
     <item>
-      <EFDB_Name>setpointVentiladorMin</EFDB_Name>
-      <Description>Setpoint VentILADOR Min</Description>
+      <EFDB_Name>temperaturaAmbienteExterior</EFDB_Name>
+      <Description>Temperature Ambient Exterior</Description>
       <IDL_Type>float</IDL_Type>
-      <Units>unitless</Units>
+      <Units>deg_C</Units>
       <Count>1</Count>
     </item>
     <item>
-      <EFDB_Name>setpointVentiladorMax</EFDB_Name>
-      <Description>Setpoint VentILADOR Max</Description>
-      <IDL_Type>float</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>comandoEncendido</EFDB_Name>
-      <Description>Command Started</Description>
+      <EFDB_Name>alarmaGeneral</EFDB_Name>
+      <Description>Alarm General</Description>
       <IDL_Type>boolean</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
     </item>
     <item>
-      <EFDB_Name>temperaturaSala</EFDB_Name>
-      <Description>Temperature Room</Description>
-      <IDL_Type>float</IDL_Type>
+      <EFDB_Name>alarmaFiltro</EFDB_Name>
+      <Description>Alarm Filter</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>estadoFuncionamiento</EFDB_Name>
+      <Description>State Working</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>estadoDamper</EFDB_Name>
+      <Description>State Damper</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>resetAlarma</EFDB_Name>
+      <Description>Reset Alarm</Description>
+      <IDL_Type>boolean</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
     </item>
   </SALTelemetry>
   <SALTelemetry>
     <Subsystem>HVAC</Subsystem>
-    <EFDB_Topic>HVAC_manejadraSblancaP04</EFDB_Topic>
+    <EFDB_Topic>HVAC_manejadoraLower04P05</EFDB_Topic>
+    <Description>Telemetry for the manejadoraLower04P05 device.</Description>
     <item>
-      <EFDB_Name>estadoTemperaturaAmbiente</EFDB_Name>
-      <Description>State Temperature Ambient</Description>
+      <EFDB_Name>valorConsigna</EFDB_Name>
+      <Description>Value Setpoint</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>deg_C</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>setpointTrabajo</EFDB_Name>
+      <Description>Setpoint Work</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>deg_C</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>temperaturaAnticongelante</EFDB_Name>
+      <Description>Temperature Anti-freeze</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>deg_C</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>temperaturaInyeccion</EFDB_Name>
+      <Description>Temperature Injection</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>deg_C</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>temperaturaRetorno</EFDB_Name>
+      <Description>Temperature Return</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>deg_C</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>estadoValvula</EFDB_Name>
+      <Description>State Valve</Description>
       <IDL_Type>float</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
     </item>
-  </SALTelemetry>
-  <SALTelemetry>
-    <Subsystem>HVAC</Subsystem>
-    <EFDB_Topic>HVAC_manejadoraSlimpiaP04</EFDB_Topic>
     <item>
-      <EFDB_Name>temperaturaSala</EFDB_Name>
-      <Description>Temperature Room</Description>
+      <EFDB_Name>temperaturaAmbienteExterior</EFDB_Name>
+      <Description>Temperature Ambient Exterior</Description>
       <IDL_Type>float</IDL_Type>
-      <Units>unitless</Units>
+      <Units>deg_C</Units>
       <Count>1</Count>
     </item>
-  </SALTelemetry>
-  <SALTelemetry>
-    <Subsystem>HVAC</Subsystem>
-    <EFDB_Topic>HVAC_manejadoraZzzP04</EFDB_Topic>
     <item>
-      <EFDB_Name>ai4</EFDB_Name>
-      <Description>AI4</Description>
-      <IDL_Type>float</IDL_Type>
+      <EFDB_Name>alarmaGeneral</EFDB_Name>
+      <Description>Alarm General</Description>
+      <IDL_Type>boolean</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
     </item>
     <item>
-      <EFDB_Name>ai5</EFDB_Name>
-      <Description>AI5</Description>
-      <IDL_Type>float</IDL_Type>
+      <EFDB_Name>alarmaFiltro</EFDB_Name>
+      <Description>Alarm Filter</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>estadoFuncionamiento</EFDB_Name>
+      <Description>State Working</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>estadoDamper</EFDB_Name>
+      <Description>State Damper</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>resetAlarma</EFDB_Name>
+      <Description>Reset Alarm</Description>
+      <IDL_Type>boolean</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
     </item>
