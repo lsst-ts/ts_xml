@@ -91,6 +91,32 @@
   </SALEvent>
   <SALEvent>
     <Subsystem>MTMount</Subsystem>
+    <EFDB_Topic>MTMount_logevent_cameraCableWrapTarget</EFDB_Topic>
+    <Description>Commanded position and velocity.</Description>
+    <item>
+      <EFDB_Name>position</EFDB_Name>
+      <Description>Target camera cable wrap position.</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>deg</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>velocity</EFDB_Name>
+      <Description>Target camera cable wrap velocity.</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>deg/second</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>taiTime</EFDB_Name>
+      <Description>TAI date at which the commanded positions and velocities apply, as unix time.</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>second</Units>
+      <Count>1</Count>
+    </item>
+  </SALEvent>
+  <SALEvent>
+    <Subsystem>MTMount</Subsystem>
     <EFDB_Topic>MTMount_logevent_connected</EFDB_Topic>
     <Description>State of TCP/IP connection to the low level controller (the "operations manager").</Description>
     <item>
