@@ -15,20 +15,15 @@
             <xsd:element minOccurs="0" name="IDL_Size" type="xsd:string"/>
             <xsd:element name="Units" type="xsd:string"/>
             <xsd:element name="Count" type="xsd:positiveInteger"/>
-            <xsd:element maxOccurs="1" minOccurs="0" name="Explanation" type="xsd:anyURI"/>
             <xsd:element maxOccurs="1" minOccurs="0" name="Enumeration" type="xsd:string"/>
         </xsd:choice>
     </xsd:complexType>
     <xsd:complexType name="eventType">
         <xsd:sequence>
             <xsd:element maxOccurs="1" minOccurs="1" name="Subsystem" type="xsd:string"/>
-            <xsd:element maxOccurs="1" minOccurs="0" name="Version" type="version"/>
-            <xsd:element maxOccurs="1" minOccurs="0" name="Author" type="xsd:string"/>
             <xsd:element maxOccurs="1" minOccurs="1" name="EFDB_Topic" type="xsd:string"/>
-            <xsd:element maxOccurs="1" minOccurs="0" name="Alias" type="xsd:string"/>
             <xsd:element maxOccurs="1" minOccurs="0" name="Enumeration" type="xsd:string"/>
             <xsd:element maxOccurs="1" minOccurs="0" name="Description" type="xsd:string"/>
-            <xsd:element maxOccurs="1" minOccurs="0" name="Explanation" type="xsd:anyURI"/>
             <xsd:element maxOccurs="unbounded" minOccurs="0" name="item" type="eventItemType"/>
             <xsd:element maxOccurs="1" minOccurs="0" name="File_Reference" type="eventFileRefType"/>
         </xsd:sequence>
@@ -50,7 +45,6 @@
             <xsd:element name="Mime_Type" type="xsd:string"/>
             <xsd:element name="Byte_Size" type="xsd:positiveInteger"/>
             <xsd:element maxOccurs="1" minOccurs="1" name="ID" type="xsd:string"/>
-            <xsd:element maxOccurs="1" minOccurs="0" name="Explanation" type="xsd:anyURI"/>
         </xsd:choice>
     </xsd:complexType>
     <xsd:simpleType name="version">

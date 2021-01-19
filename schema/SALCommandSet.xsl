@@ -9,7 +9,7 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
   <body>
   <h2>SAL Commands</h2>
   <xsl:for-each select="SALCommandSet/SALCommand">
-  <h3><xsl:value-of select="Alias"/> : 
+  <h3><xsl:value-of select="EFDB_Name"/> : 
 <xsl:value-of select="Device"/>-<xsl:value-of select="Property"/>-<xsl:value-of select="Action"/>
   </h3>
   <table border="1">
