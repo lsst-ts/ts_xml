@@ -4,40 +4,62 @@
   <SALTelemetry>
     <Subsystem>MTM1M3TS</Subsystem>
     <EFDB_Topic>MTM1M3TS_thermalData</EFDB_Topic>
+    <Description>Thermal status response data. Return of ILC command 89 (0x59).</Description>
     <item>
       <EFDB_Name>timestamp</EFDB_Name>
-      <Description>Timestamp the data was generated.</Description>
+      <Description>Timestamp the data was generated (TAI unix seconds).</Description>
       <IDL_Type>double</IDL_Type>
       <Units>second</Units>
       <Count>1</Count>
     </item>
     <item>
-      <EFDB_Name>thermocoupleScanner1</EFDB_Name>
-      <Description>Thermocouple scanners 1 read values.</Description>
-      <IDL_Type>float</IDL_Type>
-      <Units>deg_C</Units>
-      <Count>95</Count>
+      <EFDB_Name>ilcFault</EFDB_Name>
+      <Description>ILC Fault.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>96</Count>
     </item>
     <item>
-      <EFDB_Name>thermocoupleScanner2</EFDB_Name>
-      <Description>Thermocouple scanners 2 read values.</Description>
-      <IDL_Type>float</IDL_Type>
-      <Units>deg_C</Units>
-      <Count>95</Count>
+      <EFDB_Name>heaterDisabled</EFDB_Name>
+      <Description>Heater disabled.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>96</Count>
     </item>
     <item>
-      <EFDB_Name>thermocoupleScanner3</EFDB_Name>
-      <Description>Thermocouple scanners 3 read values.</Description>
-      <IDL_Type>float</IDL_Type>
-      <Units>deg_C</Units>
-      <Count>95</Count>
+      <EFDB_Name>heaterBreaker</EFDB_Name>
+      <Description>Heater circuit breaker (false=closed/OK, true=open/tripped).</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>96</Count>
     </item>
     <item>
-      <EFDB_Name>thermocoupleScanner4</EFDB_Name>
-      <Description>Thermocouple scanners 4 read values.</Description>
+      <EFDB_Name>fanBreaker</EFDB_Name>
+      <Description>Fan circuit breaker (false=closed/OK, true=open/tripped).</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>96</Count>
+    </item>
+    <item>
+      <EFDB_Name>differentialTemperature</EFDB_Name>
+      <Description>Differential temperature.</Description>
       <IDL_Type>float</IDL_Type>
       <Units>deg_C</Units>
-      <Count>95</Count>
+      <Count>96</Count>
+    </item>
+    <item>
+      <EFDB_Name>fanRPM</EFDB_Name>
+      <Description>Measured fan RPM-0 to 2550 RPM.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>unitless</Units>
+      <Count>96</Count>
+    </item>
+    <item>
+      <EFDB_Name>absoluteTemperature</EFDB_Name>
+      <Description>Absolute temperature.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>deg_C</Units>
+      <Count>96</Count>
     </item>
   </SALTelemetry>
 </SALTelemetrySet>

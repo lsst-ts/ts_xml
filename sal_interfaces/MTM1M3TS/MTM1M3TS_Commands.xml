@@ -14,10 +14,68 @@
   </SALCommand>
   <SALCommand>
     <Subsystem>MTM1M3TS</Subsystem>
-    <EFDB_Topic>MTM1M3TS_command_shutdown</EFDB_Topic>
+    <EFDB_Topic>MTM1M3TS_command_heaterFanDemand</EFDB_Topic>
+    <Description>Sets thermal unit heater PWM and fan RPM demand values. Command code 88 (0x58).</Description>
     <item>
-      <EFDB_Name>value</EFDB_Name>
-      <Description>Unused.</Description>
+      <EFDB_Name>heaterPWM</EFDB_Name>
+      <Description>Heater PWM demand. 0-255, where 255 equals 100%.</Description>
+      <IDL_Type>byte</IDL_Type>
+      <Units>unitless</Units>
+      <Count>96</Count>
+    </item>
+    <item>
+      <EFDB_Name>fanRPM</EFDB_Name>
+      <Description>Fan RPM demand value. 0-255, where 255 equals 2550 RPM.</Description>
+      <IDL_Type>byte</IDL_Type>
+      <Units>unitless</Units>
+      <Count>96</Count>
+    </item>
+  </SALCommand>
+  <SALCommand>
+    <Subsystem>MTM1M3TS</Subsystem>
+    <EFDB_Topic>MTM1M3TS_command_setReHeaterGains</EFDB_Topic>
+    <Description>Thermal ILC Re-Heater PI (Proportional and Integral gain) values. Command code 92 (0x5C).</Description>
+    <item>
+      <EFDB_Name>proportionalGain</EFDB_Name>
+      <Description>Re-Heater proportional gain.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>unitless</Units>
+      <Count>96</Count>
+    </item>
+    <item>
+      <EFDB_Name>integralGain</EFDB_Name>
+      <Description>Re-Heater integral gain.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>unitless</Units>
+      <Count>96</Count>
+    </item>
+  </SALCommand>
+  <SALCommand>
+    <Subsystem>MTM1M3TS</Subsystem>
+    <EFDB_Topic>MTM1M3TS_command_reset</EFDB_Topic>
+    <Description>Reset given ILC. Needed to apply new Re-Heater Gains. Command code 107 (0x6B).</Description>
+    <item>
+      <EFDB_Name>units</EFDB_Name>
+      <Description>Array of ILCs to reset.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>96</Count>
+    </item>
+  </SALCommand>
+  <SALCommand>
+    <Subsystem>MTM1M3TS</Subsystem>
+    <EFDB_Topic>MTM1M3TS_command_power</EFDB_Topic>
+    <Description>Turn power on for fail/heaters coils and coolant pump. Controls cRIO slot 5 SSR.</Description>
+    <item>
+      <EFDB_Name>fanCoilsHeaters</EFDB_Name>
+      <Description>Apply power to Dan Coils/Heaters. true=on, false=off.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>coolantPump</EFDB_Name>
+      <Description>Apply power to coolant pump, true=on, false=off.</Description>
       <IDL_Type>boolean</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
