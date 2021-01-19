@@ -11,48 +11,20 @@
             <xsd:documentation>Telemetry items parameters and values</xsd:documentation>
         </xsd:annotation>
         <xsd:choice maxOccurs="unbounded">
-            <xsd:element name="EFDB_Name" type="xsd:string">
-                <xsd:annotation>
-                    <xsd:documentation>Engineering and Facility Database name</xsd:documentation>
-                </xsd:annotation>
-            </xsd:element>
-            <xsd:element name="Description" type="xsd:string">
-                <xsd:annotation>
-                    <xsd:documentation>Description of telemetry item</xsd:documentation>
-                </xsd:annotation>
-            </xsd:element>
-            <xsd:element name="IDL_Type" type="xsd:string">
-                <xsd:annotation>
-                    <xsd:documentation>IDL type of telemetry item</xsd:documentation>
-                </xsd:annotation>
-            </xsd:element>
+            <xsd:element name="EFDB_Name" type="xsd:string"/>
+            <xsd:element name="Description" type="xsd:string"/>
+            <xsd:element name="IDL_Type" type="xsd:string"/>
             <xsd:element minOccurs="0" name="IDL_Size" type="xsd:string"/>
-            <xsd:element name="Units" type="xsd:string">
-                <xsd:annotation>
-                    <xsd:documentation>Units (if known)</xsd:documentation>
-                </xsd:annotation>
-            </xsd:element>
-            <xsd:element name="Count" type="xsd:positiveInteger">
-                <xsd:annotation>
-                    <xsd:documentation>Count</xsd:documentation>
-                </xsd:annotation>
-            </xsd:element>
+            <xsd:element name="Units" type="xsd:string"/>
+            <xsd:element name="Count" type="xsd:positiveInteger"/>
             <xsd:element maxOccurs="1" minOccurs="0" name="Enumeration" type="xsd:string"/>
         </xsd:choice>
     </xsd:complexType>
     <xsd:complexType name="telemetryType">
         <xsd:choice maxOccurs="unbounded">
-            <xsd:element name="Subsystem" type="xsd:string">
-                <xsd:annotation>
-                    <xsd:documentation>Subsystem identifier</xsd:documentation>
-                </xsd:annotation>
-            </xsd:element>
+            <xsd:element name="Subsystem" type="xsd:string"/>
             <xsd:element maxOccurs="1" minOccurs="0" name="Description" type="xsd:string"/>
-            <xsd:element name="EFDB_Topic" type="xsd:string">
-                <xsd:annotation>
-                    <xsd:documentation>Engineering and Facility Database topic</xsd:documentation>
-                </xsd:annotation>
-            </xsd:element>
+            <xsd:element name="EFDB_Topic" type="xsd:string"/>
             <xsd:element maxOccurs="unbounded" minOccurs="1" name="item" type="telemetryItemType"/>
         </xsd:choice>
     </xsd:complexType>
