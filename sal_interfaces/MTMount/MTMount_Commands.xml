@@ -13,13 +13,16 @@
   </SALCommand>
   <SALCommand>
     <Subsystem>MTMount</Subsystem>
-    <EFDB_Topic>MTMount_command_disableCameraCableWrapTracking</EFDB_Topic>
-    <Description>Stop the camera wrap from tracking the camera rotator.</Description>
+    <EFDB_Topic>MTMount_command_disableCameraCableWrapFollowing</EFDB_Topic>
+    <Description>Stop the camera wrap from following the camera rotator (if it is doing so).
+        This endangers the cables in the camera cable wrap;
+        please only issue this command if you know what you are doing.</Description>
   </SALCommand>
   <SALCommand>
     <Subsystem>MTMount</Subsystem>
-    <EFDB_Topic>MTMount_command_enableCameraCableWrapTracking</EFDB_Topic>
-    <Description>Start the camera cable wrap tracking the camera rotator. The cable wrap drive must be enabled.</Description>
+    <EFDB_Topic>MTMount_command_enableCameraCableWrapFollowing</EFDB_Topic>
+    <Description>Start the camera cable wrap following the camera rotator (if it is not already doing so).
+        The cable wrap drive must be on in order for this to succeed.</Description>
   </SALCommand>
   <SALCommand>
     <Subsystem>MTMount</Subsystem>
