@@ -17,66 +17,6 @@
   </SALEvent>
   <SALEvent>
     <Subsystem>ATSpectrograph</Subsystem>
-    <EFDB_Topic>ATSpectrograph_logevent_internalCommand</EFDB_Topic>
-    <item>
-      <EFDB_Name>commandObject</EFDB_Name>
-      <Description>The internal command that occurred.</Description>
-      <IDL_Type>byte</IDL_Type>
-      <Units>unitless</Units>
-      <Count>950</Count>
-    </item>
-  </SALEvent>
-  <SALEvent>
-    <Subsystem>ATSpectrograph</Subsystem>
-    <EFDB_Topic>ATSpectrograph_logevent_loopTimeOutOfRange</EFDB_Topic>
-    <item>
-      <EFDB_Name>loopTimeOutOfRange</EFDB_Name>
-      <Description>Loop time is out of range.</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-  </SALEvent>
-  <SALEvent>
-    <Subsystem>ATSpectrograph</Subsystem>
-    <EFDB_Topic>ATSpectrograph_logevent_rejectedCommand</EFDB_Topic>
-    <item>
-      <EFDB_Name>command</EFDB_Name>
-      <Description>The rejected command</Description>
-      <IDL_Type>string</IDL_Type>
-      <IDL_Size>1</IDL_Size>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>state</EFDB_Name>
-      <Description>The bad state.</Description>
-      <IDL_Type>string</IDL_Type>
-      <IDL_Size>1</IDL_Size>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>timestamp</EFDB_Name>
-      <Description>The time it was bad.</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-  </SALEvent>
-  <SALEvent>
-    <Subsystem>ATSpectrograph</Subsystem>
-    <EFDB_Topic>ATSpectrograph_logevent_timeout</EFDB_Topic>
-    <item>
-      <EFDB_Name>timeout</EFDB_Name>
-      <Description>Does time really exist? Or is it a product of society?</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-  </SALEvent>
-  <SALEvent>
-    <Subsystem>ATSpectrograph</Subsystem>
     <EFDB_Topic>ATSpectrograph_logevent_filterInPosition</EFDB_Topic>
     <item>
       <EFDB_Name>inPosition</EFDB_Name>
@@ -269,6 +209,28 @@
       <Description>Port to connect to controller.</Description>
       <IDL_Type>long</IDL_Type>
       <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>connectionTimeout</EFDB_Name>
+      <Description>How long to wait for a response from the low level controller when establishing the connection.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>second</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>responseTimeout</EFDB_Name>
+      <Description>How long to wait for a response from low level controller when a command
+      or request is sent.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>second</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>moveTimeout</EFDB_Name>
+      <Description>How long to wait for a move command to complete, for filter/grating wheels and linear stage.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>second</Units>
       <Count>1</Count>
     </item>
     <item>
