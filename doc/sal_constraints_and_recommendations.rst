@@ -11,7 +11,7 @@ SAL Constraints and Recommendations
 Changes
 =======
 
-
+* Removed topic size limit section as it was no longer necessary. *January 26, 2021*
 * Deprecated policy for SAL 4.1 :ref:`sal_constraints_and_recommendations:ignored-attributes-in-topics`. *July 6th, 2020*
 * New policy added :ref:`sal_constraints_and_recommendations:sal-topic-and-parameter-description-and-unit-fields`. *June 19th, 2019*
 
@@ -497,49 +497,6 @@ A LargeFileAnnouncement event consist off the following items:
 * string url - cURL compatible URL used to reference the file
 * float version - x.y version of file Format
 * string<32> id - Extra identifying information about format/application
-
-.. _sal_constraints_and_recommendations:sal-topic-sizes:
-
-SAL Topic sizes
-===============
-
-In the rare case that absolute maximum performance and minimum latency are required, then the size of the SAL topic payload could be limited to
-    1500 (mtu) - 240 (RTPS/DDS overhead) - 52 (SAL overhead) = 1208 bytes
-
-This would ensure that every DDS message for that topic would fit in a single layer 3 ethernet package.
-
-THIS IS NOT CURRENTLY NECESSARY FOR ANY OF LSST'S APPLICATIONS
-
-The maximum SAL topic size is limited by the fact that each topic instance is also stored in an SQL database which limits both the size-in-bytes and column-count overhead used per row.
-
-In practice both the length of the field name and the data format (int, double etc) affect this.
-    e.g. Using 32 character names and double floating data items there would be an ~800 item limit
-        Using 16 character names and double floating data items the limit is ~950.
-
-.. note::
-    Arrays in topics are stored as one element per column in the database for efficiency of data access over the network.
-    
-    e.g. *myDataArrayWithVeryLongName[800]* would be close to the limit.
-
-To check if the XML for a CSC is compliant, use the following commands
-
-.. code::
-    
-    salgenerator MySubsystem validate
-    salgenerator MySubsystem html
-    cat sql/MySubsystem*.sqldef > testingest.sql
-
-if you have access to a local EFD instance, then
-
-.. code::
-    
-    mysql EFD < testingests.sql
-
-will report any errors.
-
-Alternatively, upload the *testingest.sql* using the TBD webpage.
-
-`Proposed method of recording subsystem "Settings" data <https://confluence.lsstcorp.org/pages/viewpage.action?pageId=58949768>`_
 
 .. _sal_constraints_and_recommendations:sal-topic-and-parameter-description-and-unit-fields:
 
