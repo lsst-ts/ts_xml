@@ -7,7 +7,7 @@
   <Enumeration>OnOff_on,OnOff_off</Enumeration>
   <Enumeration>Wraps_cw,Wraps_ccw</Enumeration>
   <Enumeration>CoordFrame_fk5,CoordFrame_icrs</Enumeration>
-  <Enumeration>RotFrame_target,RotFrame_fixed</Enumeration>
+  <Enumeration>RotFrame_target,RotFrame_azel,RotFrame_fixed</Enumeration>
   <Enumeration>RotMode_field,RotMode_slit</Enumeration>
   <Enumeration>AccessModes_operator,AccessModes_engineer</Enumeration>
   <Enumeration>Planets_mercury,Planets_venus,Planets_moon,Planets_mars,Planets_jupiter,Planets_saturn,Planets_uranus,Planets_neptune,Planets_pluto</Enumeration>
@@ -349,8 +349,23 @@
       <Count>1</Count>
     </item>
     <item>
-      <EFDB_Name>rotFrame</EFDB_Name>
-      <Description>Rotator tracking co-ordinate frame (FK5 or ICRS)</Description>
+      <EFDB_Name>rotAngle</EFDB_Name>
+      <Description>Desired instrument position angle, Eastwards from North if rotStartFrame is target or azel. Rotator physical angle if rotStartFrame is fixed.</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>degree</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>rotStartFrame</EFDB_Name>
+      <Description>Rotator co-ordinate frame for rotator start position. target = same frame as target. azel = maintain sky orientation. fixed = rotator physical angle.</Description>
+      <IDL_Type>long</IDL_Type>
+      <!-- <Enumeration> RotFrame </Enumeration> -->
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>rotTrackFrame</EFDB_Name>
+      <Description>Rotator co-ordinate frame for rotator tracking. target = same frame as target. azel = maintain sky orientation. fixed = rotator physical angle. </Description>
       <IDL_Type>long</IDL_Type>
       <!-- <Enumeration> RotFrame </Enumeration> -->
       <Units>unitless</Units>
@@ -394,7 +409,7 @@
     <Subsystem>ATPtg</Subsystem>
     <EFDB_Topic>ATPtg_logevent_weatherDataApplied</EFDB_Topic>
     <item>
-      <EFDB_Name>ambient_temp</EFDB_Name>
+      <EFDB_Name>ambientTemp</EFDB_Name>
       <Description>Ambient temperature.</Description>
       <IDL_Type>double</IDL_Type>
       <Units>deg_C</Units>
@@ -588,16 +603,16 @@
   </SALEvent>
   <SALEvent>
     <Subsystem>ATPtg</Subsystem>
-    <EFDB_Topic>ATPtg_logevent_pointing_file</EFDB_Topic>
+    <EFDB_Topic>ATPtg_logevent_pointingFile</EFDB_Topic>
     <item>
-      <EFDB_Name>file_is_open</EFDB_Name>
+      <EFDB_Name>fileIsOpen</EFDB_Name>
       <Description>If true, pointing file is open. If false, pointing file is closed.</Description>
       <IDL_Type>boolean</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
     </item>
     <item>
-      <EFDB_Name>file_path</EFDB_Name>
+      <EFDB_Name>filePath</EFDB_Name>
       <Description>Path of the pointing file.</Description>
       <IDL_Type>string</IDL_Type>
       <Units>unitless</Units>

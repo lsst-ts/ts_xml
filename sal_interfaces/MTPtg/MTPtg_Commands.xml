@@ -376,15 +376,23 @@
       <Count>1</Count>
     </item>
     <item>
-      <EFDB_Name>rotPA</EFDB_Name>
-      <Description>Desired instrument position angle, Eastwards from North</Description>
+      <EFDB_Name>rotAngle</EFDB_Name>
+      <Description>Desired instrument position angle, Eastwards from North if rotStartFrame is target or azel. Rotator physical angle if rotStartFrame is fixed.</Description>
       <IDL_Type>double</IDL_Type>
       <Units>deg</Units>
       <Count>1</Count>
     </item>
     <item>
-      <EFDB_Name>rotFrame</EFDB_Name>
-      <Description>Rotator co-ordinate frame. target = same frame as target. fixed   = maintain sky orientation ( = AZEL)</Description>
+      <EFDB_Name>rotStartFrame</EFDB_Name>
+      <Description>Rotator co-ordinate frame for rotator start position. target = same frame as target. azel = maintain sky orientation. fixed = rotator physical angle.</Description>
+      <IDL_Type>long</IDL_Type>
+      <!-- <Enumeration> RotFrame </Enumeration> -->
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>rotTrackFrame</EFDB_Name>
+      <Description>Rotator co-ordinate frame for rotator tracking. target = same frame as target. azel = maintain sky orientation. fixed = rotator physical angle. </Description>
       <IDL_Type>long</IDL_Type>
       <!-- <Enumeration> RotFrame </Enumeration> -->
       <Units>unitless</Units>
