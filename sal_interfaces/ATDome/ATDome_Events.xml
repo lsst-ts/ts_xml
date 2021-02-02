@@ -94,6 +94,18 @@
   </SALEvent>
   <SALEvent>
     <Subsystem>ATDome</Subsystem>
+    <EFDB_Topic>ATDome_logevent_moveCode</EFDB_Topic>
+    <Description>Move code bitmask reported by the low-level controller. This is an internal detail that is published primarily for diagnosing problems; please do not rely on it. The component values are: 1 moving azimuth +, 2 moving azimuth -, 4 closing main door, 8 opening main door, 16 closing dropout door, 32 opening dropout, 64 homing, 128 emergency stop.</Description>
+    <item>
+      <EFDB_Name>code</EFDB_Name>
+      <Description>The move code.</Description>
+      <IDL_Type>long</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+  </SALEvent>
+  <SALEvent>
+    <Subsystem>ATDome</Subsystem>
     <EFDB_Topic>ATDome_logevent_azimuthInPosition</EFDB_Topic>
     <Description>Is the dome azimuth in the commanded position? Note: this will be false when the CSC starts up until a position is commanded.</Description>
     <item>
