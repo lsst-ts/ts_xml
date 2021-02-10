@@ -98,44 +98,33 @@
   <SALEvent>
     <Subsystem>GenericCamera</Subsystem>
     <EFDB_Topic>GenericCamera_logevent_startTakeImage</EFDB_Topic>
-    <item>
-      <EFDB_Name>ignored</EFDB_Name>
-      <Description>Attribute required by the SAL API, but is unused.</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
   </SALEvent>
   <SALEvent>
     <Subsystem>GenericCamera</Subsystem>
     <EFDB_Topic>GenericCamera_logevent_startShutterOpen</EFDB_Topic>
-    <item>
-      <EFDB_Name>ignored</EFDB_Name>
-      <Description>Attribute required by the SAL API, but is unused.</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
   </SALEvent>
   <SALEvent>
     <Subsystem>GenericCamera</Subsystem>
     <EFDB_Topic>GenericCamera_logevent_endShutterOpen</EFDB_Topic>
-    <item>
-      <EFDB_Name>ignored</EFDB_Name>
-      <Description>Attribute required by the SAL API, but is unused.</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
   </SALEvent>
   <SALEvent>
     <Subsystem>GenericCamera</Subsystem>
     <EFDB_Topic>GenericCamera_logevent_startIntegration</EFDB_Topic>
+    <Description>Event sent at start of image integration.
+        Note: all : delimited strings (aka string arrays) follow the escaping convention defined in CAP-572</Description>
     <item>
-      <EFDB_Name>imageSequenceName</EFDB_Name>
-      <Description>The imageSequenceName as passed to the takeImages command</Description>
+      <EFDB_Name>additionalKeys</EFDB_Name>
+      <Description>Additional keys passed to the takeImages command (: delimited)</Description>
       <IDL_Type>string</IDL_Type>
-      <IDL_Size>256</IDL_Size>
+      <IDL_Size>1</IDL_Size>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>additionalValues</EFDB_Name>
+      <Description>Additional values passed to the takeImages command (: delimited, in same order as additionalKeys)</Description>
+      <IDL_Type>string</IDL_Type>
+      <IDL_Size>1</IDL_Size>
       <Units>unitless</Units>
       <Count>1</Count>
     </item>
@@ -148,9 +137,9 @@
     </item>
     <item>
       <EFDB_Name>imageName</EFDB_Name>
-      <Description>The imageName for this specific exposure</Description>
+      <Description>The imageName for this specific exposure, assigned by the camera</Description>
       <IDL_Type>string</IDL_Type>
-      <IDL_Size>256</IDL_Size>
+      <IDL_Size>32</IDL_Size>
       <Units>unitless</Units>
       <Count>1</Count>
     </item>
@@ -162,7 +151,38 @@
       <Count>1</Count>
     </item>
     <item>
-      <EFDB_Name>timeStamp</EFDB_Name>
+      <EFDB_Name>imageSource</EFDB_Name>
+      <Description>The source component of the image name (AT/CC/MC)</Description>
+      <IDL_Type>string</IDL_Type>
+      <IDL_Size>2</IDL_Size>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>imageController</EFDB_Name>
+      <Description>The controller for the image  (O=OCS/C=CCS/...)</Description>
+      <IDL_Type>string</IDL_Type>
+      <IDL_Size>1</IDL_Size>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>imageDate</EFDB_Name>
+      <Description>The date component of the image name (YYYYMMDD)</Description>
+      <IDL_Type>string</IDL_Type>
+      <IDL_Size>8</IDL_Size>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>imageNumber</EFDB_Name>
+      <Description>The image number (SEQNO) component of the image name</Description>
+      <IDL_Type>long</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>timestampAcquisitionStart</EFDB_Name>
       <Description>The effective time at which the image acquisition started (i.e. the end of the previous clear or readout)</Description>
       <IDL_Type>double</IDL_Type>
       <Units>second</Units>
@@ -190,33 +210,29 @@
   <SALEvent>
     <Subsystem>GenericCamera</Subsystem>
     <EFDB_Topic>GenericCamera_logevent_startShutterClose</EFDB_Topic>
-    <item>
-      <EFDB_Name>ignored</EFDB_Name>
-      <Description>Attribute required by the SAL API, but is unused.</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
   </SALEvent>
   <SALEvent>
     <Subsystem>GenericCamera</Subsystem>
     <EFDB_Topic>GenericCamera_logevent_endShutterClose</EFDB_Topic>
-    <item>
-      <EFDB_Name>ignored</EFDB_Name>
-      <Description>Attribute required by the SAL API, but is unused.</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
   </SALEvent>
   <SALEvent>
     <Subsystem>GenericCamera</Subsystem>
     <EFDB_Topic>GenericCamera_logevent_startReadout</EFDB_Topic>
+    <Description>Event sent at start of readout.
+        Note: all : delimited strings (aka string arrays) follow the escaping convention defined in CAP-572</Description>
     <item>
-      <EFDB_Name>imageSequenceName</EFDB_Name>
-      <Description>The imageSequenceName as passed to the takeImages command</Description>
+      <EFDB_Name>additionalKeys</EFDB_Name>
+      <Description>Additional keys passed to the takeImages command (: delimited)</Description>
       <IDL_Type>string</IDL_Type>
-      <IDL_Size>256</IDL_Size>
+      <IDL_Size>1</IDL_Size>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>additionalValues</EFDB_Name>
+      <Description>Additional values passed to the takeImages command (: delimited, in same order as additionalKeys)</Description>
+      <IDL_Type>string</IDL_Type>
+      <IDL_Size>1</IDL_Size>
       <Units>unitless</Units>
       <Count>1</Count>
     </item>
@@ -229,9 +245,9 @@
     </item>
     <item>
       <EFDB_Name>imageName</EFDB_Name>
-      <Description>The imageName for this specific exposure</Description>
+      <Description>The imageName for this specific exposure, assigned by the camera</Description>
       <IDL_Type>string</IDL_Type>
-      <IDL_Size>256</IDL_Size>
+      <IDL_Size>32</IDL_Size>
       <Units>unitless</Units>
       <Count>1</Count>
     </item>
@@ -243,7 +259,38 @@
       <Count>1</Count>
     </item>
     <item>
-      <EFDB_Name>timeStamp</EFDB_Name>
+      <EFDB_Name>imageSource</EFDB_Name>
+      <Description>The source component of the image name (AT/CC/MC)</Description>
+      <IDL_Type>string</IDL_Type>
+      <IDL_Size>2</IDL_Size>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>imageController</EFDB_Name>
+      <Description>The controller for the image  (O=OCS/C=CCS/...)</Description>
+      <IDL_Type>string</IDL_Type>
+      <IDL_Size>1</IDL_Size>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>imageDate</EFDB_Name>
+      <Description>The date component of the image name (YYYYMMDD)</Description>
+      <IDL_Type>string</IDL_Type>
+      <IDL_Size>8</IDL_Size>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>imageNumber</EFDB_Name>
+      <Description>The image number (SEQNO) component of the image name</Description>
+      <IDL_Type>long</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>timestampAcquisitionStart</EFDB_Name>
       <Description>The effective time at which the image acquisition started (i.e. the end of the previous clear or readout)</Description>
       <IDL_Type>double</IDL_Type>
       <Units>second</Units>
@@ -252,6 +299,14 @@
     <item>
       <EFDB_Name>exposureTime</EFDB_Name>
       <Description>The requested exposure time</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>second</Units>
+      <Count>1</Count>
+    </item>
+    <!-- Extra info add to startReadout as part of CAP-209 -->
+    <item>
+      <EFDB_Name>timestampStartOfReadout</EFDB_Name>
+      <Description>The time at which the readout was triggered</Description>
       <IDL_Type>double</IDL_Type>
       <Units>second</Units>
       <Count>1</Count>
@@ -260,11 +315,22 @@
   <SALEvent>
     <Subsystem>GenericCamera</Subsystem>
     <EFDB_Topic>GenericCamera_logevent_endReadout</EFDB_Topic>
+    <Description>Event sent at end of readout. When this event is received the corresponding image should be complete
+        in the DAQ 2-day store.
+        Note: all : delimited strings (aka string arrays) follow the escaping convention defined in CAP-572</Description>
     <item>
-      <EFDB_Name>imageSequenceName</EFDB_Name>
-      <Description>The imageSequenceName as passed to the takeImages command</Description>
+      <EFDB_Name>additionalKeys</EFDB_Name>
+      <Description>Additional keys passed to the takeImages command (: delimited)</Description>
       <IDL_Type>string</IDL_Type>
-      <IDL_Size>256</IDL_Size>
+      <IDL_Size>1</IDL_Size>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>additionalValues</EFDB_Name>
+      <Description>Additional values passed to the takeImages command (: delimited, in same order as additionalKeys)</Description>
+      <IDL_Type>string</IDL_Type>
+      <IDL_Size>1</IDL_Size>
       <Units>unitless</Units>
       <Count>1</Count>
     </item>
@@ -277,9 +343,9 @@
     </item>
     <item>
       <EFDB_Name>imageName</EFDB_Name>
-      <Description>The imageName for this specific exposure</Description>
+      <Description>The imageName for this specific exposure, assigned by the camera</Description>
       <IDL_Type>string</IDL_Type>
-      <IDL_Size>256</IDL_Size>
+      <IDL_Size>32</IDL_Size>
       <Units>unitless</Units>
       <Count>1</Count>
     </item>
@@ -291,7 +357,139 @@
       <Count>1</Count>
     </item>
     <item>
-      <EFDB_Name>timeStamp</EFDB_Name>
+      <EFDB_Name>imageSource</EFDB_Name>
+      <Description>The source component of the image name (AT/CC/MC)</Description>
+      <IDL_Type>string</IDL_Type>
+      <IDL_Size>2</IDL_Size>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>imageController</EFDB_Name>
+      <Description>The controller for the image  (O=OCS/C=CCS/...)</Description>
+      <IDL_Type>string</IDL_Type>
+      <IDL_Size>1</IDL_Size>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>imageDate</EFDB_Name>
+      <Description>The date component of the image name (YYYYMMDD)</Description>
+      <IDL_Type>string</IDL_Type>
+      <IDL_Size>8</IDL_Size>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>imageNumber</EFDB_Name>
+      <Description>The image number (SEQNO) component of the image name</Description>
+      <IDL_Type>long</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>timestampAcquisitionStart</EFDB_Name>
+      <Description>The effective time at which the image acquisition started (i.e. the end of the previous clear or readout)</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>second</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>requestedExposureTime</EFDB_Name>
+      <Description>The requested exposure time (as specified in the takeImages command)</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>second</Units>
+      <Count>1</Count>
+    </item>
+    <!-- Extra info add to endReadout as part of CAP-209 -->
+    <item>
+      <EFDB_Name>timestampEndOfReadout</EFDB_Name>
+      <Description>The time at which the readout was completed</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>second</Units>
+      <Count>1</Count>
+    </item>
+  </SALEvent>
+  <SALEvent>
+    <Subsystem>GenericCamera</Subsystem>
+    <EFDB_Topic>GenericCamera_logevent_endTakeImage</EFDB_Topic>
+  </SALEvent>
+  <SALEvent>
+    <Subsystem>GenericCamera</Subsystem>
+    <EFDB_Topic>GenericCamera_logevent_endOfImageTelemetry</EFDB_Topic>
+    <Description>Event sent once all telemetry correesponding to the image has been sent. (Typically ~300mS after the end of readout).
+        Note: all : delimited strings (aka string arrays) follow the escaping convention defined in CAP-572</Description>
+    <item>
+      <EFDB_Name>additionalKeys</EFDB_Name>
+      <Description>Additional keys passed to the takeImages command (: delimited)</Description>
+      <IDL_Type>string</IDL_Type>
+      <IDL_Size>1</IDL_Size>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>additionalValues</EFDB_Name>
+      <Description>Additional values passed to the takeImages command (: delimited, in same order as additionalKeys)</Description>
+      <IDL_Type>string</IDL_Type>
+      <IDL_Size>1</IDL_Size>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>imagesInSequence</EFDB_Name>
+      <Description>The total number of requested images in sequence</Description>
+      <IDL_Type>long</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>imageName</EFDB_Name>
+      <Description>The imageName for this specific exposure, assigned by the camera</Description>
+      <IDL_Type>string</IDL_Type>
+      <IDL_Size>32</IDL_Size>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>imageIndex</EFDB_Name>
+      <Description>The zero based index number for this specific exposure within the sequence</Description>
+      <IDL_Type>long</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>imageSource</EFDB_Name>
+      <Description>The source component of the image name (AT/CC/MC)</Description>
+      <IDL_Type>string</IDL_Type>
+      <IDL_Size>2</IDL_Size>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>imageController</EFDB_Name>
+      <Description>The controller for the image  (O=OCS/C=CCS/...)</Description>
+      <IDL_Type>string</IDL_Type>
+      <IDL_Size>1</IDL_Size>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>imageDate</EFDB_Name>
+      <Description>The date component of the image name (YYYYMMDD)</Description>
+      <IDL_Type>string</IDL_Type>
+      <IDL_Size>8</IDL_Size>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>imageNumber</EFDB_Name>
+      <Description>The image number (SEQNO) component of the image name</Description>
+      <IDL_Type>long</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>timestampAcquisitionStart</EFDB_Name>
       <Description>The effective time at which the image acquisition started (i.e. the end of the previous clear or readout)</Description>
       <IDL_Type>double</IDL_Type>
       <Units>second</Units>
@@ -304,16 +502,296 @@
       <Units>second</Units>
       <Count>1</Count>
     </item>
-  </SALEvent>
-  <SALEvent>
-    <Subsystem>GenericCamera</Subsystem>
-    <EFDB_Topic>GenericCamera_logevent_endTakeImage</EFDB_Topic>
+    <!-- Additional information added as part of CAP-209. -->
     <item>
-      <EFDB_Name>ignored</EFDB_Name>
-      <Description>Attribute required by the SAL API, but is unused.</Description>
-      <IDL_Type>boolean</IDL_Type>
+      <EFDB_Name>imageTag</EFDB_Name>
+      <Description>The DAQ assigned image tag (hex string)</Description>
+      <IDL_Type>string</IDL_Type>
+      <IDL_Size>64</IDL_Size>
       <Units>unitless</Units>
       <Count>1</Count>
     </item>
+    <item>
+      <EFDB_Name>timestampDateObs</EFDB_Name>
+      <Description>The observation date, as computed by CCS (as TAI)</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>second</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>timestampDateEnd</EFDB_Name>
+      <Description>The end observation date, as computed by CCS (as TAI)</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>second</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>measuredShutterOpenTime</EFDB_Name>
+      <Description>The measured shutter open time, as computed by CCS. This is a best estimate based on a summary of the full information provided
+            in the shutterBladeMotionProfile events.</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>second</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>darkTime</EFDB_Name>
+      <Description>The dark time, as computed by CCS</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>second</Units>
+      <Count>1</Count>
+    </item>
+  </SALEvent>
+  <SALEvent>
+    <Subsystem>GenericCamera</Subsystem>
+    <EFDB_Topic>GenericCamera_logevent_imageStored</EFDB_Topic>
+    <Description>When this event is received the corresponding image should be complete in the DAQ 2-day store.
+        Once in use this will allow endReadout event to go back to indicating that the readout is complete (sequencers finished).
+        Note: all : delimited strings (aka string arrays) follow the escaping convention defined in CAP-572</Description>
+    <!-- Note, boilder plate items present on all image related events removed. TBC if this is OK -->
+    <item>
+      <EFDB_Name>imageName</EFDB_Name>
+      <Description>The imageName for this specific exposure, assigned by the camera</Description>
+      <IDL_Type>string</IDL_Type>
+      <IDL_Size>32</IDL_Size>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>timestampImageStored</EFDB_Name>
+      <Description>The time when the DAQ image was store was complete.</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>second</Units>
+      <Count>1</Count>
+    </item>
+    <!-- Note: what should be generated if file store fails for one or more files?-->
+  </SALEvent>
+  <SALEvent>
+    <Subsystem>GenericCamera</Subsystem>
+    <EFDB_Topic>GenericCamera_logevent_fitsFilesWritten</EFDB_Topic>
+    <Description>When this event is received, all of the CCS files on the diagnostic cluster have been written
+        Note: all : delimited strings (aka string arrays) follow the escaping convention defined in CAP-572</Description>
+    <!-- Note, boilder plate items present on all image related events removed. TBC if this is OK -->
+    <item>
+      <EFDB_Name>imageName</EFDB_Name>
+      <Description>The imageName for this specific exposure, assigned by the camera</Description>
+      <IDL_Type>string</IDL_Type>
+      <IDL_Size>32</IDL_Size>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>timestampFilesWritten</EFDB_Name>
+      <Description>The time when the (last) CCS FITS file was written.</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>second</Units>
+      <Count>1</Count>
+    </item>
+    <!-- Note: what should be generated if file save fails on one or more nodes?-->
+    <item>
+      <EFDB_Name>rootFileName</EFDB_Name>
+      <Description>The common filesystem location of all files below.</Description>
+      <IDL_Type>string</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>relativeFileNames</EFDB_Name>
+      <Description>The file system location of each file, relative to rootFileName (: delimited).</Description>
+      <IDL_Type>string</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>fileNode</EFDB_Name>
+      <Description>The node on which each file is written (: delimited, in same order as above).</Description>
+      <IDL_Type>string</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+  </SALEvent>
+  <SALEvent>
+    <Subsystem>GenericCamera</Subsystem>
+    <EFDB_Topic>GenericCamera_logevent_fileCommandExecution</EFDB_Topic>
+    <Description>Each time a command is executed on a single FITS file this event is generated
+        </Description>
+    <!-- Note, boilder plate items present on all image related events removed. TBC if this is OK -->
+    <item>
+      <EFDB_Name>imageName</EFDB_Name>
+      <Description>The imageName for this specific exposure, assigned by the camera</Description>
+      <IDL_Type>string</IDL_Type>
+      <IDL_Size>32</IDL_Size>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>timestampCommandComplete</EFDB_Name>
+      <Description>The time when the command completed.</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>second</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>command</EFDB_Name>
+      <Description>The comamnd executed included arguments.</Description>
+      <IDL_Type>string</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>rc</EFDB_Name>
+      <Description>The return code from the command execution.</Description>
+      <IDL_Type>int</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+  </SALEvent>
+  <SALEvent>
+    <Subsystem>GenericCamera</Subsystem>
+    <EFDB_Topic>GenericCamera_logevent_imageVisualization</EFDB_Topic>
+    <Description>Event sent when image visualization is ready
+        </Description>
+    <!-- Note, boilder plate items present on all image related events removed. TBC if this is OK -->
+    <item>
+      <EFDB_Name>imageName</EFDB_Name>
+      <Description>The imageName for this specific exposure, assigned by the camera</Description>
+      <IDL_Type>string</IDL_Type>
+      <IDL_Size>32</IDL_Size>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>timestampVisualizationAvailable</EFDB_Name>
+      <Description>The time when the command completed.</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>second</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>url</EFDB_Name>
+      <Description>The URL at which the full image visualization is available.</Description>
+      <IDL_Type>string</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <!-- What resolution should the thumbnail be available at (or should we allow multiple resolutions)?
+             Should it be sent to the LFA, or just available on demand via URL -->
+    <item>
+      <EFDB_Name>thumbnail</EFDB_Name>
+      <Description>The URL at which the image thumbnail is available.</Description>
+      <IDL_Type>string</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+  </SALEvent>
+  <SALEvent>
+    <Subsystem>GenericCamera</Subsystem>
+    <EFDB_Topic>GenericCamera_logevent_offlineDetailedState</EFDB_Topic>
+    <item>
+      <EFDB_Name>substate</EFDB_Name>
+      <Description>Enumeration of valid substates</Description>
+      <IDL_Type>long</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+      <Enumeration>OFFLINE_AVAILABLE,OFFLINE_PUBLISH_ONLY</Enumeration>
+    </item>
+    <item>
+      <EFDB_Name>timestampTransition</EFDB_Name>
+      <Description>The time at which the state transition occurred</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>second</Units>
+      <Count>1</Count>
+    </item>
+  </SALEvent>
+  <SALEvent>
+    <Subsystem>GenericCamera</Subsystem>
+    <EFDB_Topic>GenericCamera_logevent_imageReadinessDetailedState</EFDB_Topic>
+    <item>
+      <EFDB_Name>substate</EFDB_Name>
+      <Description>Enumeration of valid substates</Description>
+      <IDL_Type>long</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+      <Enumeration>READY,NOT_READY,GETTING_READY</Enumeration>
+    </item>
+    <item>
+      <EFDB_Name>timestampTransition</EFDB_Name>
+      <Description>The time at which the state transition occurred</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>second</Units>
+      <Count>1</Count>
+    </item>
+  </SALEvent>
+  <SALEvent>
+    <Subsystem>GenericCamera</Subsystem>
+    <EFDB_Topic>GenericCamera_logevent_notReadyToTakeImage</EFDB_Topic>
+  </SALEvent>
+  <SALEvent>
+    <Subsystem>GenericCamera</Subsystem>
+    <EFDB_Topic>GenericCamera_logevent_calibrationDetailedState</EFDB_Topic>
+    <item>
+      <EFDB_Name>substate</EFDB_Name>
+      <Description>Enumeration of valid substates</Description>
+      <IDL_Type>long</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+      <Enumeration>DISABLED,ENABLED,INTEGRATING</Enumeration>
+    </item>
+    <item>
+      <EFDB_Name>timestampTransition</EFDB_Name>
+      <Description>The time at which the state transition occurred</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>second</Units>
+      <Count>1</Count>
+    </item>
+  </SALEvent>
+  <SALEvent>
+    <Subsystem>GenericCamera</Subsystem>
+    <EFDB_Topic>GenericCamera_logevent_shutterDetailedState</EFDB_Topic>
+    <item>
+      <EFDB_Name>substate</EFDB_Name>
+      <Description>Enumeration of valid substates</Description>
+      <IDL_Type>long</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+      <Enumeration>CLOSED,OPEN,CLOSING,OPENING</Enumeration>
+    </item>
+    <item>
+      <EFDB_Name>timestampTransition</EFDB_Name>
+      <Description>The time at which the state transition occurred</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>second</Units>
+      <Count>1</Count>
+    </item>
+  </SALEvent>
+  <SALEvent>
+    <Subsystem>GenericCamera</Subsystem>
+    <EFDB_Topic>GenericCamera_logevent_readyToTakeImage</EFDB_Topic>
+  </SALEvent>
+  <SALEvent>
+    <Subsystem>GenericCamera</Subsystem>
+    <EFDB_Topic>GenericCamera_logevent_ccsCommandState</EFDB_Topic>
+    <item>
+      <EFDB_Name>substate</EFDB_Name>
+      <Description>Substate of the CCS command.</Description>
+      <IDL_Type>long</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+      <Enumeration>IDLE,BUSY</Enumeration>
+    </item>
+    <item>
+      <EFDB_Name>timestampTransition</EFDB_Name>
+      <Description>The time at which the state transition occurred</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>second</Units>
+      <Count>1</Count>
+    </item>
+  </SALEvent>
+  <SALEvent>
+    <Subsystem>GenericCamera</Subsystem>
+    <EFDB_Topic>GenericCamera_logevent_prepareToTakeImage</EFDB_Topic>
+  </SALEvent>
+  <SALEvent>
+    <Subsystem>GenericCamera</Subsystem>
+    <EFDB_Topic>GenericCamera_logevent_ccsConfigured</EFDB_Topic>
   </SALEvent>
 </SALEventSet>
