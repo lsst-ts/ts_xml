@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="http://lsst-sal.tuc.noao.edu/schema/SALCommandSet.xsl"?>
+<SALCommandSet xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://lsst-sal.tuc.noao.edu/schema/SALCommandSet.xsd">
+  <SALCommand>
+    <Subsystem>LOVE</Subsystem>
+    <EFDB_Topic>LOVE_command_requestAccess</EFDB_Topic>
+    <Description>Request permission to command the named CSC(s).</Description>
+    <item>
+      <EFDB_Name>csc</EFDB_Name>
+      <Description>A comma delimited set of CSC names.</Description>
+      <IDL_Type>string</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+  </SALCommand>
+  <SALCommand>
+    <Subsystem>LOVE</Subsystem>
+    <EFDB_Topic>LOVE_command_releaseAccess</EFDB_Topic>
+    <Description>Release permission to command the named CSC(s).</Description>
+    <item>
+      <EFDB_Name>csc</EFDB_Name>
+      <Description>A comma delimited set of CSC names.</Description>
+      <IDL_Type>string</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+  </SALCommand>
+  <SALCommand>
+    <Subsystem>LOVE</Subsystem>
+    <EFDB_Topic>LOVE_command_denyAccess</EFDB_Topic>
+    <Description>Deny permission to command the named CSC(s) for identified agent.</Description>
+    <item>
+      <EFDB_Name>csc</EFDB_Name>
+      <Description>A comma delimited set of CSC names.</Description>
+      <IDL_Type>string</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>identity</EFDB_Name>
+      <Description>Identity of agent (CSC/user@host) to deny access to.</Description>
+      <IDL_Type>string</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>denyDuration</EFDB_Name>
+      <Description>How long to deny access for (in seconds).</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>second</Units>
+      <Count>1</Count>
+    </item>
+  </SALCommand>
+</SALCommandSet>
