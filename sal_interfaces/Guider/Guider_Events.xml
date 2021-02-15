@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="http://lsst-sal.tuc.noao.edu/schema/SALEventSet.xsl"?>
+<SALEventSet xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://lsst-sal.tuc.noao.edu/schema/SALEventSet.xsd">
+  <Enumeration>GuiderStatus_Stopped,GuiderStatus_Starting,GuiderStatus_Guiding,GuiderStatus_Error</Enumeration>
+  <SALEvent>
+    <Subsystem>Guider</Subsystem>
+    <EFDB_Topic>Guider_logevent_guidingStatus</EFDB_Topic>
+    <Description>Event published when a guiding operatation starts, stops or resumes. It contains the parameters used to configure the guider (see startGuiding command) and the current status.</Description>
+    <item>
+      <EFDB_Name>roiX</EFDB_Name>
+      <Description>Vector with 8 elements specifying the center of the guider ROI window in the x-axis (in pixels) for each guider sensor. If an element of the array is zero, that guider will be ignored.</Description>
+      <IDL_Type>long</IDL_Type>
+      <Units>unitless</Units>
+      <Count>8</Count>
+    </item>
+    <item>
+      <EFDB_Name>roiY</EFDB_Name>
+      <Description>Vector with 8 elements specifying the center of the guider ROI window in the x-axis (in pixels) for each guider sensor. If an element of the array is zero, that guider will be ignored.</Description>
+      <IDL_Type>long</IDL_Type>
+      <Units>unitless</Units>
+      <Count>8</Count>
+    </item>
+    <item>
+      <EFDB_Name>roiWidth</EFDB_Name>
+      <Description>Vector with 8 elements specifying the width (window size in the x-axis) of the guider ROI for each guider sensor (in pixels). For each valid entry in roiX/roiY (roiX,roiY &gt; 0) width must respect the ROI constrains (see requirement CA-TS-GDR-ICD-0006 in LSE-66).</Description>
+      <IDL_Type>long</IDL_Type>
+      <Units>unitless</Units>
+      <Count>8</Count>
+    </item>
+    <item>
+      <EFDB_Name>roiHeight</EFDB_Name>
+      <Description>Vector with 8 elements specifying the height (window size in the y-axis) of the guider ROI for each guider sensor (in pixels). For each valid entry in roiX/roiY (roiX,roiY &gt; 0) height must respect the ROI constrains (see requirement CA-TS-GDR-ICD-0006 in LSE-66).</Description>
+      <IDL_Type>long</IDL_Type>
+      <Units>unitless</Units>
+      <Count>8</Count>
+    </item>
+    <item>
+      <EFDB_Name>expTime</EFDB_Name>
+      <Description>Exposure time in milliseconds. All guider sensors will use the same exposure time (CA-TS-GDR-ICD-0034 LSE-66). Limits must respect detector integration time constrains (see requirement CA-TS-GDR-ICD-0034 in LSE-66).</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>milliseconds</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>binning</EFDB_Name>
+      <Description>Binnig factor. All guider sensors will use the same binning factor. Limits must respect detector bining constrains (see requirement CA-TS-GDR-ICD-0042 in LSE-66).</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>milliseconds</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>status</EFDB_Name>
+      <Description>Enumeration with the current guiding status. When guider is not running status will be GuiderStatus_Stopped, this could either be when the guider is first enabled or after a stopGuiding command. When guider is initializing a guider sequence but has not achieved stable guiding operation status will be GuiderStatus_Starting. When stable guiding operation is stabilished, status will be GuiderStatus_Guiding. If an error occurred, and the guider is going to FAULT state, status is GuiderStatus_Error. Information about errors will be available in errorCode topic.</Description>
+      <!-- Enumeration: GuiderStatus -->
+      <IDL_Type>long</IDL_Type>
+      <Units>unitless</Units>
+      <Count>8</Count>
+    </item>
+  </SALEvent>
+</SALEventSet>
