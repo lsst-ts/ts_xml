@@ -11,6 +11,7 @@ SAL Constraints and Recommendations
 Changes
 =======
 
+* Added instructions on how to properly define XML SAL enumerations. *February 15, 2021*
 * Removed topic size limit section as it was no longer necessary. *January 26, 2021*
 * Deprecated policy for SAL 4.1 :ref:`sal_constraints_and_recommendations:ignored-attributes-in-topics`. *July 6th, 2020*
 * New policy added :ref:`sal_constraints_and_recommendations:sal-topic-and-parameter-description-and-unit-fields`. *June 19th, 2019*
@@ -451,6 +452,15 @@ Enumerations may also be declared on a per CSC basis, and will appear in the nam
 e.g. for ATTCS in C++:
     ATTCS_shared_SimpleSetA (declared globally)
     ATTCS_someEvent_SpecificSetA (datum specific)
+
+Define it using the following format.
+
+1. In ``CSCName_Events.xml`` create an ``Enumeration`` tag just before the first ``SAlEvent`` tag in the file.
+2. Fill out the Enumeration with comma delimited values using the following naming format ``itemName_value``.
+3. Repeat for as many enumerations as you require.
+4. Add the enumerations to ``ts_idl`` by creating a ``lsst.ts.idl.enums.{csc_name}`` module.
+
+.. warning:: Some enumerations are defined inside of the topic themselves. This is a legacy method and no longer recommended or necessary.
 
 .. _sal_constraints_and_recommendations:current-sal-object-tables:
 
