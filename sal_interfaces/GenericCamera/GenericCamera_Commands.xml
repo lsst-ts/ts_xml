@@ -71,51 +71,46 @@
     <EFDB_Topic>GenericCamera_command_takeImages</EFDB_Topic>
     <item>
       <EFDB_Name>numImages</EFDB_Name>
-      <Description>Number of images to be taken.</Description>
+      <Description>Number of consecutive images to take</Description>
       <IDL_Type>long</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>expTime</EFDB_Name>
-      <Description>Exposure time.</Description>
+      <Description>Exposure time</Description>
       <IDL_Type>double</IDL_Type>
       <Units>second</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>shutter</EFDB_Name>
-      <Description>Activate shutter?</Description>
+      <Description>True if the shutter should be opened/closed</Description>
       <IDL_Type>boolean</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
     </item>
     <item>
-      <EFDB_Name>science</EFDB_Name>
-      <Description>Activate science detectors?</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>guide</EFDB_Name>
-      <Description>Activate guider detectors?</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>wfs</EFDB_Name>
-      <Description>Activate wave front sensing detectors?</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>imageSequenceName</EFDB_Name>
-      <Description>Image sequence name (obsolete)</Description>
+      <EFDB_Name>sensors</EFDB_Name>
+      <Description>Sensors to be read out, if blank all configured sensors will be read out</Description>
       <IDL_Type>string</IDL_Type>
-      <IDL_Size>256</IDL_Size>
+      <IDL_Size>1</IDL_Size>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>keyValueMap</EFDB_Name>
+      <Description>Map of additional key value pairs to associate extra data with the image(s), e.g. imageType: XYZ, groupId: ABC</Description>
+      <IDL_Type>string</IDL_Type>
+      <IDL_Size>1</IDL_Size>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>obsNote</EFDB_Name>
+      <Description>An arbitrary operator provided string, useful for informally flagging images</Description>
+      <IDL_Type>string</IDL_Type>
+      <IDL_Size>1</IDL_Size>
       <Units>unitless</Units>
       <Count>1</Count>
     </item>
