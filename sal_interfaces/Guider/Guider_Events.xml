@@ -7,29 +7,29 @@
     <EFDB_Topic>Guider_logevent_guidingStatus</EFDB_Topic>
     <Description>Event published when a guiding operatation starts, stops or resumes. It contains the parameters used to configure the guider (see startGuiding command) and the current status.</Description>
     <item>
-      <EFDB_Name>roiX</EFDB_Name>
-      <Description>Vector with 8 elements specifying the center of the guider ROI window in the x-axis for each guider sensor. If an element of the array is zero, that guider will be ignored.</Description>
+      <EFDB_Name>roiXLeft</EFDB_Name>
+      <Description>Vector with 8 elements specifying the origin of the guider ROI window in the x-axis for each guider sensor.</Description>
       <IDL_Type>long</IDL_Type>
       <Units>pixel</Units>
       <Count>8</Count>
     </item>
     <item>
-      <EFDB_Name>roiY</EFDB_Name>
-      <Description>Vector with 8 elements specifying the center of the guider ROI window in the y-axis for each guider sensor. If an element of the array is zero, that guider will be ignored.</Description>
+      <EFDB_Name>roiXRight</EFDB_Name>
+      <Description>Vector with 8 elements specifying the end of the guider ROI window in the x-axis for each guider sensor. If roiXLeft=roiXRight=0, for a particular element of both arrays, it assumes no guider region for the equivalent guider sensor. For each valid entry in roiXRight/roiXLeft the width must respect the ROI constrains (see requirement CA-TS-GDR-ICD-0006 in LSE-66).</Description>
       <IDL_Type>long</IDL_Type>
       <Units>pixel</Units>
       <Count>8</Count>
     </item>
     <item>
-      <EFDB_Name>roiWidth</EFDB_Name>
-      <Description>Vector with 8 elements specifying the width (window size in the x-axis) of the guider ROI for each guider sensor. For each valid entry in roiX/roiY (roiX,roiY &gt; 0) width must respect the ROI constrains (see requirement CA-TS-GDR-ICD-0006 in LSE-66).</Description>
+      <EFDB_Name>roiYBottom</EFDB_Name>
+      <Description>Vector with 8 elements specifying the origin of the guider ROI window in the y-axis for each guider sensor.</Description>
       <IDL_Type>long</IDL_Type>
       <Units>pixel</Units>
       <Count>8</Count>
     </item>
     <item>
-      <EFDB_Name>roiHeight</EFDB_Name>
-      <Description>Vector with 8 elements specifying the height (window size in the y-axis) of the guider ROI for each guider sensor. For each valid entry in roiX/roiY (roiX,roiY &gt; 0) height must respect the ROI constrains (see requirement CA-TS-GDR-ICD-0006 in LSE-66).</Description>
+      <EFDB_Name>roiYTop</EFDB_Name>
+      <Description>Vector with 8 elements specifying the end of the guider ROI window in the y-axis for each guider sensor. If roiXBottom=roiXTop=0, for a particular element of both arrays, it assumes no guider region for the equivalent guider sensor. For each valid entry in roiXBottom/roiXTop the width must respect the ROI constrains (see requirement CA-TS-GDR-ICD-0006 in LSE-66).</Description>
       <IDL_Type>long</IDL_Type>
       <Units>pixel</Units>
       <Count>8</Count>
@@ -44,8 +44,8 @@
     <item>
       <EFDB_Name>binning</EFDB_Name>
       <Description>Binnig factor. All guider sensors will use the same binning factor. Limits must respect detector bining constrains (see requirement CA-TS-GDR-ICD-0042 in LSE-66).</Description>
-      <IDL_Type>float</IDL_Type>
-      <Units>ms</Units>
+      <IDL_Type>long</IDL_Type>
+      <Units>pixel</Units>
       <Count>1</Count>
     </item>
     <item>
