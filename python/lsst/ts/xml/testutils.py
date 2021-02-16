@@ -81,6 +81,7 @@ subsystems = [
     "MTRotator",
     "MTVMS",
     "OCPS",
+    "PMD",
     "PromptProcessing",
     "Scheduler",
     "Script",
