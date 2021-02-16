@@ -528,42 +528,42 @@
   </SALTelemetry>
   <SALTelemetry>
     <Subsystem>MTPtg</Subsystem>
-    <EFDB_Topic>MTPtg_mount_positions</EFDB_Topic>
-    <Description>Telemetry for mount positions in sky coordinate</Description>
+    <EFDB_Topic>MTPtg_mountPosition</EFDB_Topic>
+    <Description>Telemetry for mount position in sky coordinate</Description>
     <item>
-      <EFDB_Name>cRIO_timestamp</EFDB_Name>
-      <Description>Time for the first sample of each telemetry item in this topic, as measured by the cRIO clock, as unix time.</Description>
+      <EFDB_Name>timestamp</EFDB_Name>
+      <Description>RA and Dec calculation timestamp, in TAI seconds</Description>
       <IDL_Type>double</IDL_Type>
       <Units>s</Units>
       <Count>1</Count>
     </item>
     <item>
-      <EFDB_Name>azimuthCalculatedAngle</EFDB_Name>
+      <EFDB_Name>azimuthActualPosition</EFDB_Name>
       <Description>Azimuth axis position reported by mount component.</Description>
       <IDL_Type>double</IDL_Type>
       <Units>deg</Units>
-      <Count>100</Count>
+      <Count>1</Count>
     </item>
     <item>
-      <EFDB_Name>elevationCalculatedAngle</EFDB_Name>
-      <Description>Elevation axis positions reported by mount component.</Description>
+      <EFDB_Name>elevationActualPosition</EFDB_Name>
+      <Description>Elevation axis position reported by mount component.</Description>
       <IDL_Type>double</IDL_Type>
       <Units>deg</Units>
-      <Count>100</Count>
+      <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>ra</EFDB_Name>
-      <Description>RA calculated from the azimuthCalculatedAngle and elevationCalculatedAngle.</Description>
+      <Description>RA calculated from the azimuthActualPosition and elevationActualPosition.</Description>
       <IDL_Type>double</IDL_Type>
       <Units>deg</Units>
-      <Count>100</Count>
+      <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>declination</EFDB_Name>
-      <Description>Dec calculated from the azimuthCalculatedAngle and elevationCalculatedAngle.</Description>
+      <Description>Dec calculated from the azimuthActualPosition and elevationActualPosition.</Description>
       <IDL_Type>double</IDL_Type>
       <Units>deg</Units>
-      <Count>100</Count>
+      <Count>1</Count>
     </item>
   </SALTelemetry>
 </SALTelemetrySet>
