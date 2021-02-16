@@ -4,6 +4,13 @@
   <Enumeration>SummaryStates_DisabledState,SummaryStates_EnabledState,SummaryStates_FaultState,SummaryStates_OfflineState,SummaryStates_StandbyState</Enumeration>
   <Enumeration>DetailedStates_DisabledState,DetailedStates_FaultState,DetailedStates_OfflineState,DetailedStates_StandbyState,DetailedStates_ParkedState,DetailedStates_RaisingState,DetailedStates_ActiveState,DetailedStates_LoweringState,DetailedStates_ParkedEngineeringState,DetailedStates_RaisingEngineeringState,DetailedStates_ActiveEngineeringState,DetailedStates_LoweringEngineeringState,DetailedStates_LoweringFaultState,DetailedStates_ProfileHardpointCorrectionState</Enumeration>
   <Enumeration>BumpTest_NotTested,BumpTest_TestingPositive,BumpTest_TestingPositiveWait,BumpTest_TestingNegative,BumpTest_TestingNegativeWait,BumpTest_Passed,BumpTest_Failed</Enumeration>
+  <Enumeration>
+    HardpointActuatorMotionState_Standby=0,
+    HardpointActuatorMotionState_Chasing=1,
+    HardpointActuatorMotionState_Stepping=2,
+    HardpointActuatorMotionState_QuickPositioning=3,
+    HardpointActuatorMotionState_FinePositiong=4
+  </Enumeration>
   <SALEvent>
     <Subsystem>MTM1M3</Subsystem>
     <EFDB_Topic>MTM1M3_logevent_detailedState</EFDB_Topic>
@@ -11,17 +18,15 @@
       <EFDB_Name>timestamp</EFDB_Name>
       <Description>Detailed State timestamp</Description>
       <IDL_Type>double</IDL_Type>
-      <Units>unitless</Units>
+      <Units>s</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>detailedState</EFDB_Name>
       <Description>Detailed state</Description>
-      <!-- Enumeration: DetailedStates -->
       <IDL_Type>long</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
-      <Enumeration>DetailedState_DetailedStates_DisabledState,DetailedState_DetailedStates_FaultState,DetailedState_DetailedStates_OfflineState,DetailedState_DetailedStates_StandbyState,DetailedState_DetailedStates_ParkedState,DetailedState_DetailedStates_RaisingState,DetailedState_DetailedStates_ActiveState,DetailedState_DetailedStates_LoweringState,DetailedState_DetailedStates_ParkedEngineeringState,DetailedState_DetailedStates_RaisingEngineeringState,DetailedState_DetailedStates_ActiveEngineeringState,DetailedState_DetailedStates_LoweringEngineeringState,DetailedState_DetailedStates_LoweringFaultState,DetailedState_DetailedStates_ProfileHardpointCorrectionState</Enumeration>
     </item>
   </SALEvent>
   <SALEvent>
@@ -31,7 +36,7 @@
       <EFDB_Name>timestamp</EFDB_Name>
       <Description>Hardpoint Actuator timestamp</Description>
       <IDL_Type>double</IDL_Type>
-      <Units>unitless</Units>
+      <Units>s</Units>
       <Count>1</Count>
     </item>
     <item>
@@ -66,21 +71,21 @@
       <EFDB_Name>xPosition</EFDB_Name>
       <Description>Hardpoint actuator x Position</Description>
       <IDL_Type>float</IDL_Type>
-      <Units>unitless</Units>
+      <Units>m</Units>
       <Count>6</Count>
     </item>
     <item>
       <EFDB_Name>yPosition</EFDB_Name>
       <Description>Hardpoint actuator y Position</Description>
       <IDL_Type>float</IDL_Type>
-      <Units>unitless</Units>
+      <Units>m</Units>
       <Count>6</Count>
     </item>
     <item>
       <EFDB_Name>zPosition</EFDB_Name>
       <Description>Hardpoint actuator z Position</Description>
       <IDL_Type>float</IDL_Type>
-      <Units>unitless</Units>
+      <Units>m</Units>
       <Count>6</Count>
     </item>
     <item>
@@ -189,7 +194,7 @@
       <EFDB_Name>timestamp</EFDB_Name>
       <Description>Force Actuator timestamp</Description>
       <IDL_Type>double</IDL_Type>
-      <Units>unitless</Units>
+      <Units>s</Units>
       <Count>1</Count>
     </item>
     <item>
@@ -252,21 +257,21 @@
       <EFDB_Name>xPosition</EFDB_Name>
       <Description>Force Actuator x position</Description>
       <IDL_Type>float</IDL_Type>
-      <Units>unitless</Units>
+      <Units>m</Units>
       <Count>156</Count>
     </item>
     <item>
       <EFDB_Name>yPosition</EFDB_Name>
       <Description>Force Actuator y position</Description>
       <IDL_Type>float</IDL_Type>
-      <Units>unitless</Units>
+      <Units>m</Units>
       <Count>156</Count>
     </item>
     <item>
       <EFDB_Name>zPosition</EFDB_Name>
       <Description>Force Actuator z position</Description>
       <IDL_Type>float</IDL_Type>
-      <Units>unitless</Units>
+      <Units>m</Units>
       <Count>156</Count>
     </item>
     <item>
@@ -459,7 +464,7 @@
       <EFDB_Name>timestamp</EFDB_Name>
       <Description>ilcWarning timestamp</Description>
       <IDL_Type>double</IDL_Type>
-      <Units>unitless</Units>
+      <Units>s</Units>
       <Count>1</Count>
     </item>
     <item>
@@ -547,7 +552,7 @@
       <EFDB_Name>timestamp</EFDB_Name>
       <Description>InterlockWarning timestamp</Description>
       <IDL_Type>double</IDL_Type>
-      <Units>unitless</Units>
+      <Units>s</Units>
       <Count>1</Count>
     </item>
     <item>
@@ -614,7 +619,7 @@
       <EFDB_Name>timestamp</EFDB_Name>
       <Description>Air Supply Status timestamp</Description>
       <IDL_Type>double</IDL_Type>
-      <Units>unitless</Units>
+      <Units>s</Units>
       <Count>1</Count>
     </item>
     <item>
@@ -653,7 +658,7 @@
       <EFDB_Name>timestamp</EFDB_Name>
       <Description>Air Supply Warning timestamp</Description>
       <IDL_Type>double</IDL_Type>
-      <Units>unitless</Units>
+      <Units>s</Units>
       <Count>1</Count>
     </item>
     <item>
@@ -685,7 +690,7 @@
       <EFDB_Name>timestamp</EFDB_Name>
       <Description>Interlock Status timestamp</Description>
       <IDL_Type>double</IDL_Type>
-      <Units>unitless</Units>
+      <Units>s</Units>
       <Count>1</Count>
     </item>
     <item>
@@ -710,7 +715,7 @@
       <EFDB_Name>timestamp</EFDB_Name>
       <Description>Displacement Sensor Warning timestamp</Description>
       <IDL_Type>double</IDL_Type>
-      <Units>unitless</Units>
+      <Units>s</Units>
       <Count>1</Count>
     </item>
     <item>
@@ -826,7 +831,7 @@
       <EFDB_Name>timestamp</EFDB_Name>
       <Description>Inclinometer sensor warning timestamp</Description>
       <IDL_Type>double</IDL_Type>
-      <Units>unitless</Units>
+      <Units>s</Units>
       <Count>1</Count>
     </item>
     <item>
@@ -925,7 +930,7 @@
       <EFDB_Name>timestamp</EFDB_Name>
       <Description>Force setpoint warning timestamp</Description>
       <IDL_Type>double</IDL_Type>
-      <Units>unitless</Units>
+      <Units>s</Units>
       <Count>1</Count>
     </item>
     <item>
@@ -1181,7 +1186,7 @@
       <EFDB_Name>timestamp</EFDB_Name>
       <Description>ForceActuatorState timestamp</Description>
       <IDL_Type>double</IDL_Type>
-      <Units>unitless</Units>
+      <Units>s</Units>
       <Count>1</Count>
     </item>
     <item>
@@ -1272,7 +1277,7 @@
       <EFDB_Name>supportPercentage</EFDB_Name>
       <Description>Specify how much of the mirror weight is supported.</Description>
       <IDL_Type>float</IDL_Type>
-      <Units>unitless</Units>
+      <Units>%</Units>
       <Count>1</Count>
     </item>
   </SALEvent>
@@ -1283,7 +1288,7 @@
       <EFDB_Name>timestamp</EFDB_Name>
       <Description>Hardpoint Monitor timestamp</Description>
       <IDL_Type>double</IDL_Type>
-      <Units>unitless</Units>
+      <Units>s</Units>
       <Count>1</Count>
     </item>
     <item>
@@ -1378,7 +1383,7 @@
       <EFDB_Name>timestamp</EFDB_Name>
       <Description>Cell Light Status timestamp</Description>
       <IDL_Type>double</IDL_Type>
-      <Units>unitless</Units>
+      <Units>s</Units>
       <Count>1</Count>
     </item>
     <item>
@@ -1410,7 +1415,7 @@
       <EFDB_Name>timestamp</EFDB_Name>
       <Description>Cell Light Warning timestamp</Description>
       <IDL_Type>double</IDL_Type>
-      <Units>unitless</Units>
+      <Units>s</Units>
       <Count>1</Count>
     </item>
     <item>
@@ -1565,7 +1570,7 @@
       <EFDB_Name>timestamp</EFDB_Name>
       <Description>Power Warning timestamp</Description>
       <IDL_Type>double</IDL_Type>
-      <Units>unitless</Units>
+      <Units>s</Units>
       <Count>1</Count>
     </item>
     <item>
@@ -1639,7 +1644,7 @@
       <EFDB_Name>timestamp</EFDB_Name>
       <Description>Force Actuator Force Warning timestamp</Description>
       <IDL_Type>double</IDL_Type>
-      <Units>unitless</Units>
+      <Units>s</Units>
       <Count>1</Count>
     </item>
     <item>
@@ -1713,7 +1718,7 @@
       <EFDB_Name>timestamp</EFDB_Name>
       <Description>Gyro warning timestamp</Description>
       <IDL_Type>double</IDL_Type>
-      <Units>unitless</Units>
+      <Units>s</Units>
       <Count>1</Count>
     </item>
     <item>
@@ -2232,7 +2237,7 @@
       <EFDB_Name>timestamp</EFDB_Name>
       <Description>Applied offset forces timestamp</Description>
       <IDL_Type>double</IDL_Type>
-      <Units>unitless</Units>
+      <Units>s</Units>
       <Count>1</Count>
     </item>
     <item>
@@ -2260,42 +2265,42 @@
       <EFDB_Name>fx</EFDB_Name>
       <Description>Applied offset forces fx</Description>
       <IDL_Type>float</IDL_Type>
-      <Units>unitless</Units>
+      <Units>N</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>fy</EFDB_Name>
       <Description>Applied offset forces fy</Description>
       <IDL_Type>float</IDL_Type>
-      <Units>unitless</Units>
+      <Units>N</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>fz</EFDB_Name>
       <Description>Applied offset forces fz</Description>
       <IDL_Type>float</IDL_Type>
-      <Units>unitless</Units>
+      <Units>N</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>mx</EFDB_Name>
       <Description>Applied offset forces mx</Description>
       <IDL_Type>float</IDL_Type>
-      <Units>unitless</Units>
+      <Units>N m</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>my</EFDB_Name>
       <Description>Applied offset forces my</Description>
       <IDL_Type>float</IDL_Type>
-      <Units>unitless</Units>
+      <Units>N m</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>mz</EFDB_Name>
       <Description>Applied offset forces mz</Description>
       <IDL_Type>float</IDL_Type>
-      <Units>unitless</Units>
+      <Units>N m</Units>
       <Count>1</Count>
     </item>
     <item>
@@ -2313,7 +2318,7 @@
       <EFDB_Name>timestamp</EFDB_Name>
       <Description>Applied static forces timestamp</Description>
       <IDL_Type>double</IDL_Type>
-      <Units>unitless</Units>
+      <Units>s</Units>
       <Count>1</Count>
     </item>
     <item>
@@ -2341,42 +2346,42 @@
       <EFDB_Name>fx</EFDB_Name>
       <Description>Applied static forces fx</Description>
       <IDL_Type>float</IDL_Type>
-      <Units>unitless</Units>
+      <Units>N</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>fy</EFDB_Name>
       <Description>Applied static forces fy</Description>
       <IDL_Type>float</IDL_Type>
-      <Units>unitless</Units>
+      <Units>N</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>fz</EFDB_Name>
       <Description>Applied static forces fz</Description>
       <IDL_Type>float</IDL_Type>
-      <Units>unitless</Units>
+      <Units>N</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>mx</EFDB_Name>
       <Description>Applied static forces mx</Description>
       <IDL_Type>float</IDL_Type>
-      <Units>unitless</Units>
+      <Units>N m</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>my</EFDB_Name>
       <Description>Applied static forces my</Description>
       <IDL_Type>float</IDL_Type>
-      <Units>unitless</Units>
+      <Units>N m</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>mz</EFDB_Name>
       <Description>Applied static forces mz</Description>
       <IDL_Type>float</IDL_Type>
-      <Units>unitless</Units>
+      <Units>N m</Units>
       <Count>1</Count>
     </item>
     <item>
@@ -2394,7 +2399,7 @@
       <EFDB_Name>timestamp</EFDB_Name>
       <Description>Applied active optic forces timestamp</Description>
       <IDL_Type>double</IDL_Type>
-      <Units>unitless</Units>
+      <Units>s</Units>
       <Count>1</Count>
     </item>
     <item>
@@ -2408,21 +2413,21 @@
       <EFDB_Name>fz</EFDB_Name>
       <Description>Applied active optic forces fz</Description>
       <IDL_Type>float</IDL_Type>
-      <Units>unitless</Units>
+      <Units>N</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>mx</EFDB_Name>
       <Description>Applied active optic forces mx</Description>
       <IDL_Type>float</IDL_Type>
-      <Units>unitless</Units>
+      <Units>N m</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>my</EFDB_Name>
       <Description>Applied active optic forces my</Description>
       <IDL_Type>float</IDL_Type>
-      <Units>unitless</Units>
+      <Units>N m</Units>
       <Count>1</Count>
     </item>
   </SALEvent>
@@ -2433,7 +2438,7 @@
       <EFDB_Name>timestamp</EFDB_Name>
       <Description>Applied abberation forces timestamp</Description>
       <IDL_Type>double</IDL_Type>
-      <Units>unitless</Units>
+      <Units>s</Units>
       <Count>1</Count>
     </item>
     <item>
@@ -2447,21 +2452,21 @@
       <EFDB_Name>fz</EFDB_Name>
       <Description>Applied abberation forces fz</Description>
       <IDL_Type>float</IDL_Type>
-      <Units>unitless</Units>
+      <Units>N</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>mx</EFDB_Name>
       <Description>Applied abberation forces mx</Description>
       <IDL_Type>float</IDL_Type>
-      <Units>unitless</Units>
+      <Units>N m</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>my</EFDB_Name>
       <Description>Applied abberation forces my</Description>
       <IDL_Type>float</IDL_Type>
-      <Units>unitless</Units>
+      <Units>N m</Units>
       <Count>1</Count>
     </item>
   </SALEvent>
@@ -2472,7 +2477,7 @@
       <EFDB_Name>timestamp</EFDB_Name>
       <Description>Applied azimuth forces timestamp</Description>
       <IDL_Type>double</IDL_Type>
-      <Units>unitless</Units>
+      <Units>s</Units>
       <Count>1</Count>
     </item>
     <item>
@@ -2500,42 +2505,42 @@
       <EFDB_Name>fx</EFDB_Name>
       <Description>Applied azimuth forces fx</Description>
       <IDL_Type>float</IDL_Type>
-      <Units>unitless</Units>
+      <Units>N</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>fy</EFDB_Name>
       <Description>Applied azimuth forces fy</Description>
       <IDL_Type>float</IDL_Type>
-      <Units>unitless</Units>
+      <Units>N</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>fz</EFDB_Name>
       <Description>Applied azimuth forces fz</Description>
       <IDL_Type>float</IDL_Type>
-      <Units>unitless</Units>
+      <Units>N</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>mx</EFDB_Name>
       <Description>Applied azimuth forces mx</Description>
       <IDL_Type>float</IDL_Type>
-      <Units>unitless</Units>
+      <Units>N m</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>my</EFDB_Name>
       <Description>Applied azimuth forces my</Description>
       <IDL_Type>float</IDL_Type>
-      <Units>unitless</Units>
+      <Units>N m</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>mz</EFDB_Name>
       <Description>Applied azimuth forces mz</Description>
       <IDL_Type>float</IDL_Type>
-      <Units>unitless</Units>
+      <Units>N m</Units>
       <Count>1</Count>
     </item>
     <item>
@@ -2553,7 +2558,7 @@
       <EFDB_Name>timestamp</EFDB_Name>
       <Description>Command Rejection Warning timestamp</Description>
       <IDL_Type>double</IDL_Type>
-      <Units>unitless</Units>
+      <Units>s</Units>
       <Count>1</Count>
     </item>
     <item>
@@ -2580,14 +2585,14 @@
       <EFDB_Name>timestamp</EFDB_Name>
       <Description>PIDInfo timestamp</Description>
       <IDL_Type>double</IDL_Type>
-      <Units>unitless</Units>
+      <Units>s</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>timestep</EFDB_Name>
       <Description>PIDInfo timestep</Description>
       <IDL_Type>double</IDL_Type>
-      <Units>unitless</Units>
+      <Units>s</Units>
       <Count>6</Count>
     </item>
     <item>
@@ -2661,7 +2666,7 @@
       <EFDB_Name>timestamp</EFDB_Name>
       <Description>Hardpoint actuator warning timestamp</Description>
       <IDL_Type>double</IDL_Type>
-      <Units>unitless</Units>
+      <Units>s</Units>
       <Count>1</Count>
     </item>
     <item>
@@ -3001,7 +3006,7 @@
       <EFDB_Name>timestamp</EFDB_Name>
       <Description>Hardpoint monitor warning timestamp</Description>
       <IDL_Type>double</IDL_Type>
-      <Units>unitless</Units>
+      <Units>s</Units>
       <Count>1</Count>
     </item>
     <item>
@@ -3397,7 +3402,7 @@
       <EFDB_Name>timestamp</EFDB_Name>
       <Description>HardpointActuatorState timestamp</Description>
       <IDL_Type>double</IDL_Type>
-      <Units>unitless</Units>
+      <Units>s</Units>
       <Count>1</Count>
     </item>
     <item>
@@ -3409,14 +3414,7 @@
     </item>
     <item>
       <EFDB_Name>motionState</EFDB_Name>
-      <Description>Hardpoint Actuator State motion State</Description>
-      <Enumeration>
-          Standby=0,
-          Chasing=1,
-          Stepping=2,
-          QuickPositioning=3,
-          FinePositiong=4
-      </Enumeration>
+      <Description>Hardpoint Actuator State motion State enumeration</Description>
       <IDL_Type>short</IDL_Type>
       <Units>unitless</Units>
       <Count>6</Count>
@@ -3429,7 +3427,7 @@
       <EFDB_Name>timestamp</EFDB_Name>
       <Description>HardpointMonitorState timestamp</Description>
       <IDL_Type>double</IDL_Type>
-      <Units>unitless</Units>
+      <Units>s</Units>
       <Count>1</Count>
     </item>
     <item>
@@ -3886,77 +3884,77 @@
       <EFDB_Name>timestamp</EFDB_Name>
       <Description>Pre-clipped static forces timestamp</Description>
       <IDL_Type>double</IDL_Type>
-      <Units>unitless</Units>
+      <Units>s</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>xForces</EFDB_Name>
       <Description>Pre-clipped Static Forces x Forces</Description>
       <IDL_Type>float</IDL_Type>
-      <Units>unitless</Units>
+      <Units>N</Units>
       <Count>12</Count>
     </item>
     <item>
       <EFDB_Name>yForces</EFDB_Name>
       <Description>Pre-clipped Static Forces y Forces</Description>
       <IDL_Type>float</IDL_Type>
-      <Units>unitless</Units>
+      <Units>N</Units>
       <Count>100</Count>
     </item>
     <item>
       <EFDB_Name>zForces</EFDB_Name>
       <Description>Pre-clipped Static Forces z Forces</Description>
       <IDL_Type>float</IDL_Type>
-      <Units>unitless</Units>
+      <Units>N</Units>
       <Count>156</Count>
     </item>
     <item>
       <EFDB_Name>fx</EFDB_Name>
       <Description>Pre-clipped static forces fx</Description>
       <IDL_Type>float</IDL_Type>
-      <Units>unitless</Units>
+      <Units>N</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>fy</EFDB_Name>
       <Description>Pre-clipped static forces fy</Description>
       <IDL_Type>float</IDL_Type>
-      <Units>unitless</Units>
+      <Units>N</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>fz</EFDB_Name>
       <Description>Pre-clipped static forces fz</Description>
       <IDL_Type>float</IDL_Type>
-      <Units>unitless</Units>
+      <Units>N</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>mx</EFDB_Name>
       <Description>Pre-clipped static forces mx</Description>
       <IDL_Type>float</IDL_Type>
-      <Units>unitless</Units>
+      <Units>N m</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>my</EFDB_Name>
       <Description>Pre-clipped static forces my</Description>
       <IDL_Type>float</IDL_Type>
-      <Units>unitless</Units>
+      <Units>N m</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>mz</EFDB_Name>
       <Description>Pre-clipped static forces mz</Description>
       <IDL_Type>float</IDL_Type>
-      <Units>unitless</Units>
+      <Units>N m</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>forceMagnitude</EFDB_Name>
       <Description>Pre-clipped Static Forces force Magnitude</Description>
       <IDL_Type>float</IDL_Type>
-      <Units>unitless</Units>
+      <Units>N</Units>
       <Count>1</Count>
     </item>
   </SALEvent>
@@ -3968,77 +3966,77 @@
       <EFDB_Name>timestamp</EFDB_Name>
       <Description>Pre-clipped elevation forces timestamp</Description>
       <IDL_Type>double</IDL_Type>
-      <Units>unitless</Units>
+      <Units>s</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>xForces</EFDB_Name>
       <Description>Pre-clipped Elevation Forces x Forces</Description>
       <IDL_Type>float</IDL_Type>
-      <Units>unitless</Units>
+      <Units>N</Units>
       <Count>12</Count>
     </item>
     <item>
       <EFDB_Name>yForces</EFDB_Name>
       <Description>Pre-clipped Elevation Forces y Forces</Description>
       <IDL_Type>float</IDL_Type>
-      <Units>unitless</Units>
+      <Units>N</Units>
       <Count>100</Count>
     </item>
     <item>
       <EFDB_Name>zForces</EFDB_Name>
       <Description>Pre-clipped Elevation Forces z Forces</Description>
       <IDL_Type>float</IDL_Type>
-      <Units>unitless</Units>
+      <Units>N</Units>
       <Count>156</Count>
     </item>
     <item>
       <EFDB_Name>fx</EFDB_Name>
       <Description>Pre-clipped elevation forces fx</Description>
       <IDL_Type>float</IDL_Type>
-      <Units>unitless</Units>
+      <Units>N</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>fy</EFDB_Name>
       <Description>Pre-clipped elevation forces fy</Description>
       <IDL_Type>float</IDL_Type>
-      <Units>unitless</Units>
+      <Units>N</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>fz</EFDB_Name>
       <Description>Pre-clipped elevation forces fz</Description>
       <IDL_Type>float</IDL_Type>
-      <Units>unitless</Units>
+      <Units>N</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>mx</EFDB_Name>
       <Description>Pre-clipped elevation forces mx</Description>
       <IDL_Type>float</IDL_Type>
-      <Units>unitless</Units>
+      <Units>N m</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>my</EFDB_Name>
       <Description>Pre-clipped elevation forces my</Description>
       <IDL_Type>float</IDL_Type>
-      <Units>unitless</Units>
+      <Units>N m</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>mz</EFDB_Name>
       <Description>Pre-clipped elevation forces mz</Description>
       <IDL_Type>float</IDL_Type>
-      <Units>unitless</Units>
+      <Units>N m</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>forceMagnitude</EFDB_Name>
       <Description>Pre-clipped Elevation Forces force Magnitude</Description>
       <IDL_Type>float</IDL_Type>
-      <Units>unitless</Units>
+      <Units>N</Units>
       <Count>1</Count>
     </item>
   </SALEvent>
@@ -4050,77 +4048,77 @@
       <EFDB_Name>timestamp</EFDB_Name>
       <Description>Pre-clipped azimuth forces timestamp</Description>
       <IDL_Type>double</IDL_Type>
-      <Units>unitless</Units>
+      <Units>s</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>xForces</EFDB_Name>
       <Description>Pre-clipped Azimuth Forces x Forces</Description>
       <IDL_Type>float</IDL_Type>
-      <Units>unitless</Units>
+      <Units>N</Units>
       <Count>12</Count>
     </item>
     <item>
       <EFDB_Name>yForces</EFDB_Name>
       <Description>Pre-clipped Azimuth Forces y Forces</Description>
       <IDL_Type>float</IDL_Type>
-      <Units>unitless</Units>
+      <Units>N</Units>
       <Count>100</Count>
     </item>
     <item>
       <EFDB_Name>zForces</EFDB_Name>
       <Description>Pre-clipped Azimuth Forces z Forces</Description>
       <IDL_Type>float</IDL_Type>
-      <Units>unitless</Units>
+      <Units>N</Units>
       <Count>156</Count>
     </item>
     <item>
       <EFDB_Name>fx</EFDB_Name>
       <Description>Pre-clipped azimuth forces fx</Description>
       <IDL_Type>float</IDL_Type>
-      <Units>unitless</Units>
+      <Units>N</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>fy</EFDB_Name>
       <Description>Pre-clipped azimuth forces fy</Description>
       <IDL_Type>float</IDL_Type>
-      <Units>unitless</Units>
+      <Units>N</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>fz</EFDB_Name>
       <Description>Pre-clipped azimuth forces fz</Description>
       <IDL_Type>float</IDL_Type>
-      <Units>unitless</Units>
+      <Units>N</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>mx</EFDB_Name>
       <Description>Pre-clipped azimuth forces mx</Description>
       <IDL_Type>float</IDL_Type>
-      <Units>unitless</Units>
+      <Units>N m</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>my</EFDB_Name>
       <Description>Pre-clipped azimuth forces my</Description>
       <IDL_Type>float</IDL_Type>
-      <Units>unitless</Units>
+      <Units>N m</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>mz</EFDB_Name>
       <Description>Pre-clipped azimuth forces mz</Description>
       <IDL_Type>float</IDL_Type>
-      <Units>unitless</Units>
+      <Units>N m</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>forceMagnitude</EFDB_Name>
       <Description>Pre-clipped Azimuth Forces force Magnitude</Description>
       <IDL_Type>float</IDL_Type>
-      <Units>unitless</Units>
+      <Units>N</Units>
       <Count>1</Count>
     </item>
   </SALEvent>
@@ -4132,77 +4130,77 @@
       <EFDB_Name>timestamp</EFDB_Name>
       <Description>Pre-clipped thermal forces timestamp</Description>
       <IDL_Type>double</IDL_Type>
-      <Units>unitless</Units>
+      <Units>s</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>xForces</EFDB_Name>
       <Description>Pre-clipped Thermal Forces x Forces</Description>
       <IDL_Type>float</IDL_Type>
-      <Units>unitless</Units>
+      <Units>N</Units>
       <Count>12</Count>
     </item>
     <item>
       <EFDB_Name>yForces</EFDB_Name>
       <Description>Pre-clipped Thermal Forces y Forces</Description>
       <IDL_Type>float</IDL_Type>
-      <Units>unitless</Units>
+      <Units>N</Units>
       <Count>100</Count>
     </item>
     <item>
       <EFDB_Name>zForces</EFDB_Name>
       <Description>Pre-clipped Thermal Forces z Forces</Description>
       <IDL_Type>float</IDL_Type>
-      <Units>unitless</Units>
+      <Units>N</Units>
       <Count>156</Count>
     </item>
     <item>
       <EFDB_Name>fx</EFDB_Name>
       <Description>Pre-clipped thermal forces fx</Description>
       <IDL_Type>float</IDL_Type>
-      <Units>unitless</Units>
+      <Units>N</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>fy</EFDB_Name>
       <Description>Pre-clipped thermal forces fy</Description>
       <IDL_Type>float</IDL_Type>
-      <Units>unitless</Units>
+      <Units>N</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>fz</EFDB_Name>
       <Description>Pre-clipped thermal forces fz</Description>
       <IDL_Type>float</IDL_Type>
-      <Units>unitless</Units>
+      <Units>N</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>mx</EFDB_Name>
       <Description>Pre-clipped thermal forces mx</Description>
       <IDL_Type>float</IDL_Type>
-      <Units>unitless</Units>
+      <Units>N m</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>my</EFDB_Name>
       <Description>Pre-clipped thermal forces my</Description>
       <IDL_Type>float</IDL_Type>
-      <Units>unitless</Units>
+      <Units>N m</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>mz</EFDB_Name>
       <Description>Pre-clipped thermal forces mz</Description>
       <IDL_Type>float</IDL_Type>
-      <Units>unitless</Units>
+      <Units>N m</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>forceMagnitude</EFDB_Name>
       <Description>Pre-clipped Thermal Forces force Magnitude</Description>
       <IDL_Type>float</IDL_Type>
-      <Units>unitless</Units>
+      <Units>N</Units>
       <Count>1</Count>
     </item>
   </SALEvent>
@@ -4214,35 +4212,35 @@
       <EFDB_Name>timestamp</EFDB_Name>
       <Description>Pre-clipped active optic forces timestamp</Description>
       <IDL_Type>double</IDL_Type>
-      <Units>unitless</Units>
+      <Units>s</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>zForces</EFDB_Name>
       <Description>Pre-clipped Active Optic Forces z Forces</Description>
       <IDL_Type>float</IDL_Type>
-      <Units>unitless</Units>
+      <Units>N</Units>
       <Count>156</Count>
     </item>
     <item>
       <EFDB_Name>fz</EFDB_Name>
       <Description>Pre-clipped active optic forces fz</Description>
       <IDL_Type>float</IDL_Type>
-      <Units>unitless</Units>
+      <Units>N</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>mx</EFDB_Name>
       <Description>Pre-clipped active optic forces mx</Description>
       <IDL_Type>float</IDL_Type>
-      <Units>unitless</Units>
+      <Units>N m</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>my</EFDB_Name>
       <Description>Pre-clipped active optic forces my</Description>
       <IDL_Type>float</IDL_Type>
-      <Units>unitless</Units>
+      <Units>N m</Units>
       <Count>1</Count>
     </item>
   </SALEvent>
@@ -4254,35 +4252,35 @@
       <EFDB_Name>timestamp</EFDB_Name>
       <Description>Pre-clipped aberration forces timestamp</Description>
       <IDL_Type>double</IDL_Type>
-      <Units>unitless</Units>
+      <Units>s</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>zForces</EFDB_Name>
       <Description>Pre-clipped Aberration Forces z Forces</Description>
       <IDL_Type>float</IDL_Type>
-      <Units>unitless</Units>
+      <Units>N</Units>
       <Count>156</Count>
     </item>
     <item>
       <EFDB_Name>fz</EFDB_Name>
       <Description>Pre-clipped aberration forces fz</Description>
       <IDL_Type>float</IDL_Type>
-      <Units>unitless</Units>
+      <Units>N</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>mx</EFDB_Name>
       <Description>Pre-clipped aberration forces mx</Description>
       <IDL_Type>float</IDL_Type>
-      <Units>unitless</Units>
+      <Units>N m</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>my</EFDB_Name>
       <Description>Pre-clipped aberration forces my</Description>
       <IDL_Type>float</IDL_Type>
-      <Units>unitless</Units>
+      <Units>N m</Units>
       <Count>1</Count>
     </item>
   </SALEvent>
@@ -4294,77 +4292,77 @@
       <EFDB_Name>timestamp</EFDB_Name>
       <Description>Pre-clipped balance forces timestamp</Description>
       <IDL_Type>double</IDL_Type>
-      <Units>unitless</Units>
+      <Units>s</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>xForces</EFDB_Name>
       <Description>Pre-clipped Balance Forces x Forces</Description>
       <IDL_Type>float</IDL_Type>
-      <Units>unitless</Units>
+      <Units>N</Units>
       <Count>12</Count>
     </item>
     <item>
       <EFDB_Name>yForces</EFDB_Name>
       <Description>Pre-clipped Balance Forces y Forces</Description>
       <IDL_Type>float</IDL_Type>
-      <Units>unitless</Units>
+      <Units>N</Units>
       <Count>100</Count>
     </item>
     <item>
       <EFDB_Name>zForces</EFDB_Name>
       <Description>Pre-clipped Balance forces z Forces</Description>
       <IDL_Type>float</IDL_Type>
-      <Units>unitless</Units>
+      <Units>N</Units>
       <Count>156</Count>
     </item>
     <item>
       <EFDB_Name>fx</EFDB_Name>
       <Description>Pre-clipped balance forces fx</Description>
       <IDL_Type>float</IDL_Type>
-      <Units>unitless</Units>
+      <Units>N</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>fy</EFDB_Name>
       <Description>Pre-clipped balance forces fy</Description>
       <IDL_Type>float</IDL_Type>
-      <Units>unitless</Units>
+      <Units>N</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>fz</EFDB_Name>
       <Description>Pre-clipped balance forces fz</Description>
       <IDL_Type>float</IDL_Type>
-      <Units>unitless</Units>
+      <Units>N</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>mx</EFDB_Name>
       <Description>Pre-clipped balance forces mx</Description>
       <IDL_Type>float</IDL_Type>
-      <Units>unitless</Units>
+      <Units>N m</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>my</EFDB_Name>
       <Description>Pre-clipped balance forces my</Description>
       <IDL_Type>float</IDL_Type>
-      <Units>unitless</Units>
+      <Units>N m</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>mz</EFDB_Name>
       <Description>Pre-clipped balance forces mz</Description>
       <IDL_Type>float</IDL_Type>
-      <Units>unitless</Units>
+      <Units>N m</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>forceMagnitude</EFDB_Name>
       <Description>Pre-clipped Balance Forces force Magnitude</Description>
       <IDL_Type>float</IDL_Type>
-      <Units>unitless</Units>
+      <Units>N</Units>
       <Count>1</Count>
     </item>
   </SALEvent>
@@ -4376,77 +4374,77 @@
       <EFDB_Name>timestamp</EFDB_Name>
       <Description>Pre-clipped velocity forces timestamp</Description>
       <IDL_Type>double</IDL_Type>
-      <Units>unitless</Units>
+      <Units>s</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>xForces</EFDB_Name>
       <Description>Pre-clipped Velocity Forces x Forces</Description>
       <IDL_Type>float</IDL_Type>
-      <Units>unitless</Units>
+      <Units>N</Units>
       <Count>12</Count>
     </item>
     <item>
       <EFDB_Name>yForces</EFDB_Name>
       <Description>Pre-clipped Velocity Forces y Forces</Description>
       <IDL_Type>float</IDL_Type>
-      <Units>unitless</Units>
+      <Units>N</Units>
       <Count>100</Count>
     </item>
     <item>
       <EFDB_Name>zForces</EFDB_Name>
       <Description>Pre-clipped Velocity Forces z Forces</Description>
       <IDL_Type>float</IDL_Type>
-      <Units>unitless</Units>
+      <Units>N</Units>
       <Count>156</Count>
     </item>
     <item>
       <EFDB_Name>fx</EFDB_Name>
       <Description>Pre-clipped velocity forces fx</Description>
       <IDL_Type>float</IDL_Type>
-      <Units>unitless</Units>
+      <Units>N</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>fy</EFDB_Name>
       <Description>Pre-clipped velocity forces fy</Description>
       <IDL_Type>float</IDL_Type>
-      <Units>unitless</Units>
+      <Units>N</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>fz</EFDB_Name>
       <Description>Pre-clipped velocity forces fz</Description>
       <IDL_Type>float</IDL_Type>
-      <Units>unitless</Units>
+      <Units>N</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>mx</EFDB_Name>
       <Description>Pre-clipped velocity forces mx</Description>
       <IDL_Type>float</IDL_Type>
-      <Units>unitless</Units>
+      <Units>N m</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>my</EFDB_Name>
       <Description>Pre-clipped velocity forces my</Description>
       <IDL_Type>float</IDL_Type>
-      <Units>unitless</Units>
+      <Units>N m</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>mz</EFDB_Name>
       <Description>Pre-clipped velocity forces mz</Description>
       <IDL_Type>float</IDL_Type>
-      <Units>unitless</Units>
+      <Units>N m</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>forceMagnitude</EFDB_Name>
       <Description>Pre-clipped Velocity Forces force Magnitude</Description>
       <IDL_Type>float</IDL_Type>
-      <Units>unitless</Units>
+      <Units>N</Units>
       <Count>1</Count>
     </item>
   </SALEvent>
@@ -4458,77 +4456,77 @@
       <EFDB_Name>timestamp</EFDB_Name>
       <Description>Pre-clipped acceleration forces timestamp</Description>
       <IDL_Type>double</IDL_Type>
-      <Units>unitless</Units>
+      <Units>s</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>xForces</EFDB_Name>
       <Description>Pre-clipped Acceleration Forces x Forces</Description>
       <IDL_Type>float</IDL_Type>
-      <Units>unitless</Units>
+      <Units>N</Units>
       <Count>12</Count>
     </item>
     <item>
       <EFDB_Name>yForces</EFDB_Name>
       <Description>Pre-clipped AccelerationForces y Forces</Description>
       <IDL_Type>float</IDL_Type>
-      <Units>unitless</Units>
+      <Units>N</Units>
       <Count>100</Count>
     </item>
     <item>
       <EFDB_Name>zForces</EFDB_Name>
       <Description>Pre-clipped AccelerationForces z Forces</Description>
       <IDL_Type>float</IDL_Type>
-      <Units>unitless</Units>
+      <Units>N</Units>
       <Count>156</Count>
     </item>
     <item>
       <EFDB_Name>fx</EFDB_Name>
       <Description>Pre-clipped acceleration forces fx</Description>
       <IDL_Type>float</IDL_Type>
-      <Units>unitless</Units>
+      <Units>N</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>fy</EFDB_Name>
       <Description>Pre-clipped acceleration forces fy</Description>
       <IDL_Type>float</IDL_Type>
-      <Units>unitless</Units>
+      <Units>N</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>fz</EFDB_Name>
       <Description>Pre-clipped acceleration forces fz</Description>
       <IDL_Type>float</IDL_Type>
-      <Units>unitless</Units>
+      <Units>N</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>mx</EFDB_Name>
       <Description>Pre-clipped acceleration forces mx</Description>
       <IDL_Type>float</IDL_Type>
-      <Units>unitless</Units>
+      <Units>N m</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>my</EFDB_Name>
       <Description>Pre-clipped acceleration forces my</Description>
       <IDL_Type>float</IDL_Type>
-      <Units>unitless</Units>
+      <Units>N m</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>mz</EFDB_Name>
       <Description>Pre-clipped acceleration forces mz</Description>
       <IDL_Type>float</IDL_Type>
-      <Units>unitless</Units>
+      <Units>N m</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>forceMagnitude</EFDB_Name>
       <Description>Pre-clipped Acceleration Forces force Magnitude</Description>
       <IDL_Type>float</IDL_Type>
-      <Units>unitless</Units>
+      <Units>N</Units>
       <Count>1</Count>
     </item>
   </SALEvent>
@@ -4540,77 +4538,77 @@
       <EFDB_Name>timestamp</EFDB_Name>
       <Description>Pre-clipped offset forces timestamp</Description>
       <IDL_Type>double</IDL_Type>
-      <Units>unitless</Units>
+      <Units>s</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>xForces</EFDB_Name>
       <Description>Pre-clipped Offset Forces x Forces</Description>
       <IDL_Type>float</IDL_Type>
-      <Units>unitless</Units>
+      <Units>N</Units>
       <Count>12</Count>
     </item>
     <item>
       <EFDB_Name>yForces</EFDB_Name>
       <Description>Pre-clipped Offset Forces y Forces</Description>
       <IDL_Type>float</IDL_Type>
-      <Units>unitless</Units>
+      <Units>N</Units>
       <Count>100</Count>
     </item>
     <item>
       <EFDB_Name>zForces</EFDB_Name>
       <Description>Pre-clipped Offset Forces z Forces</Description>
       <IDL_Type>float</IDL_Type>
-      <Units>unitless</Units>
+      <Units>N</Units>
       <Count>156</Count>
     </item>
     <item>
       <EFDB_Name>fx</EFDB_Name>
       <Description>Pre-clipped offset forces fx</Description>
       <IDL_Type>float</IDL_Type>
-      <Units>unitless</Units>
+      <Units>N</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>fy</EFDB_Name>
       <Description>Pre-clipped offset forces fy</Description>
       <IDL_Type>float</IDL_Type>
-      <Units>unitless</Units>
+      <Units>N</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>fz</EFDB_Name>
       <Description>Pre-clipped offset forces fz</Description>
       <IDL_Type>float</IDL_Type>
-      <Units>unitless</Units>
+      <Units>N</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>mx</EFDB_Name>
       <Description>Pre-clipped offset forces mx</Description>
       <IDL_Type>float</IDL_Type>
-      <Units>unitless</Units>
+      <Units>N m</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>my</EFDB_Name>
       <Description>Pre-clipped offset forces my</Description>
       <IDL_Type>float</IDL_Type>
-      <Units>unitless</Units>
+      <Units>N m</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>mz</EFDB_Name>
       <Description>Pre-clipped offset forces mz</Description>
       <IDL_Type>float</IDL_Type>
-      <Units>unitless</Units>
+      <Units>N m</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>forceMagnitude</EFDB_Name>
       <Description>Pre-clipped Offset Forces force Magnitude</Description>
       <IDL_Type>float</IDL_Type>
-      <Units>unitless</Units>
+      <Units>N</Units>
       <Count>1</Count>
     </item>
   </SALEvent>
@@ -4622,77 +4620,77 @@
       <EFDB_Name>timestamp</EFDB_Name>
       <Description>Pre-clipped forces timestamp</Description>
       <IDL_Type>double</IDL_Type>
-      <Units>unitless</Units>
+      <Units>s</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>xForces</EFDB_Name>
       <Description>Pre-clipped Forces x Forces</Description>
       <IDL_Type>float</IDL_Type>
-      <Units>unitless</Units>
+      <Units>N</Units>
       <Count>12</Count>
     </item>
     <item>
       <EFDB_Name>yForces</EFDB_Name>
       <Description>Pre-clipped Forces y Forces</Description>
       <IDL_Type>float</IDL_Type>
-      <Units>unitless</Units>
+      <Units>N</Units>
       <Count>100</Count>
     </item>
     <item>
       <EFDB_Name>zForces</EFDB_Name>
       <Description>Pre-clipped Forces z Forces</Description>
       <IDL_Type>float</IDL_Type>
-      <Units>unitless</Units>
+      <Units>N</Units>
       <Count>156</Count>
     </item>
     <item>
       <EFDB_Name>fx</EFDB_Name>
       <Description>Pre-clipped forces fx</Description>
       <IDL_Type>float</IDL_Type>
-      <Units>unitless</Units>
+      <Units>N</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>fy</EFDB_Name>
       <Description>Pre-clipped forces fy</Description>
       <IDL_Type>float</IDL_Type>
-      <Units>unitless</Units>
+      <Units>N</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>fz</EFDB_Name>
       <Description>Pre-clipped forces fz</Description>
       <IDL_Type>float</IDL_Type>
-      <Units>unitless</Units>
+      <Units>N</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>mx</EFDB_Name>
       <Description>Pre-clipped forces mx</Description>
       <IDL_Type>float</IDL_Type>
-      <Units>unitless</Units>
+      <Units>N m</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>my</EFDB_Name>
       <Description>Pre-clipped forces my</Description>
       <IDL_Type>float</IDL_Type>
-      <Units>unitless</Units>
+      <Units>N m</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>mz</EFDB_Name>
       <Description>Pre-clipped forces mz</Description>
       <IDL_Type>float</IDL_Type>
-      <Units>unitless</Units>
+      <Units>N m</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>forceMagnitude</EFDB_Name>
       <Description>Pre-clipped Forces force Magnitude</Description>
       <IDL_Type>float</IDL_Type>
-      <Units>unitless</Units>
+      <Units>N</Units>
       <Count>1</Count>
     </item>
   </SALEvent>
@@ -4703,7 +4701,7 @@
       <EFDB_Name>timestamp</EFDB_Name>
       <Description>Applied elevation forces timestamp</Description>
       <IDL_Type>double</IDL_Type>
-      <Units>unitless</Units>
+      <Units>s</Units>
       <Count>1</Count>
     </item>
     <item>
@@ -4731,42 +4729,42 @@
       <EFDB_Name>fx</EFDB_Name>
       <Description>Applied elevation forces fx</Description>
       <IDL_Type>float</IDL_Type>
-      <Units>unitless</Units>
+      <Units>N</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>fy</EFDB_Name>
       <Description>Applied elevation forces fy</Description>
       <IDL_Type>float</IDL_Type>
-      <Units>unitless</Units>
+      <Units>N</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>fz</EFDB_Name>
       <Description>Applied elevation forces fz</Description>
       <IDL_Type>float</IDL_Type>
-      <Units>unitless</Units>
+      <Units>N</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>mx</EFDB_Name>
       <Description>Applied elevation forces mx</Description>
       <IDL_Type>float</IDL_Type>
-      <Units>unitless</Units>
+      <Units>N m</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>my</EFDB_Name>
       <Description>Applied elevation forces my</Description>
       <IDL_Type>float</IDL_Type>
-      <Units>unitless</Units>
+      <Units>N m</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>mz</EFDB_Name>
       <Description>Applied elevation forces mz</Description>
       <IDL_Type>float</IDL_Type>
-      <Units>unitless</Units>
+      <Units>N m</Units>
       <Count>1</Count>
     </item>
     <item>
@@ -4784,7 +4782,7 @@
       <EFDB_Name>timestamp</EFDB_Name>
       <Description>Applied acceleration forces timestamp</Description>
       <IDL_Type>double</IDL_Type>
-      <Units>unitless</Units>
+      <Units>s</Units>
       <Count>1</Count>
     </item>
     <item>
@@ -4812,42 +4810,42 @@
       <EFDB_Name>fx</EFDB_Name>
       <Description>Applied acceleration forces fx</Description>
       <IDL_Type>float</IDL_Type>
-      <Units>unitless</Units>
+      <Units>N</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>fy</EFDB_Name>
       <Description>Applied acceleration forces fy</Description>
       <IDL_Type>float</IDL_Type>
-      <Units>unitless</Units>
+      <Units>N</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>fz</EFDB_Name>
       <Description>Applied acceleration forces fz</Description>
       <IDL_Type>float</IDL_Type>
-      <Units>unitless</Units>
+      <Units>N</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>mx</EFDB_Name>
       <Description>Applied acceleration forces mx</Description>
       <IDL_Type>float</IDL_Type>
-      <Units>unitless</Units>
+      <Units>N m</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>my</EFDB_Name>
       <Description>Applied acceleration forces my</Description>
       <IDL_Type>float</IDL_Type>
-      <Units>unitless</Units>
+      <Units>N m</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>mz</EFDB_Name>
       <Description>Applied acceleration forces mz</Description>
       <IDL_Type>float</IDL_Type>
-      <Units>unitless</Units>
+      <Units>N m</Units>
       <Count>1</Count>
     </item>
     <item>
@@ -4865,70 +4863,70 @@
       <EFDB_Name>timestamp</EFDB_Name>
       <Description>Applied thermal forces timestamp</Description>
       <IDL_Type>double</IDL_Type>
-      <Units>unitless</Units>
+      <Units>s</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>xForces</EFDB_Name>
       <Description>Forces in x axis.</Description>
       <IDL_Type>float</IDL_Type>
-      <Units>unitless</Units>
+      <Units>N</Units>
       <Count>12</Count>
     </item>
     <item>
       <EFDB_Name>yForces</EFDB_Name>
       <Description>Forces in y axis.</Description>
       <IDL_Type>float</IDL_Type>
-      <Units>unitless</Units>
+      <Units>N</Units>
       <Count>100</Count>
     </item>
     <item>
       <EFDB_Name>zForces</EFDB_Name>
       <Description>Forces in z axis.</Description>
       <IDL_Type>float</IDL_Type>
-      <Units>unitless</Units>
+      <Units>N</Units>
       <Count>156</Count>
     </item>
     <item>
       <EFDB_Name>fx</EFDB_Name>
       <Description>Applied thermal forces fx</Description>
       <IDL_Type>float</IDL_Type>
-      <Units>unitless</Units>
+      <Units>N</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>fy</EFDB_Name>
       <Description>Applied thermal forces fy</Description>
       <IDL_Type>float</IDL_Type>
-      <Units>unitless</Units>
+      <Units>N</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>fz</EFDB_Name>
       <Description>Applied thermal forces fz</Description>
       <IDL_Type>float</IDL_Type>
-      <Units>unitless</Units>
+      <Units>N</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>mx</EFDB_Name>
       <Description>Applied thermal forces mx</Description>
       <IDL_Type>float</IDL_Type>
-      <Units>unitless</Units>
+      <Units>N m</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>my</EFDB_Name>
       <Description>Applied thermal forces my</Description>
       <IDL_Type>float</IDL_Type>
-      <Units>unitless</Units>
+      <Units>N m</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>mz</EFDB_Name>
       <Description>Applied thermal forces mz</Description>
       <IDL_Type>float</IDL_Type>
-      <Units>unitless</Units>
+      <Units>N m</Units>
       <Count>1</Count>
     </item>
     <item>
@@ -4946,7 +4944,7 @@
       <EFDB_Name>timestamp</EFDB_Name>
       <Description>Applied velocity forces timestamp</Description>
       <IDL_Type>double</IDL_Type>
-      <Units>unitless</Units>
+      <Units>s</Units>
       <Count>1</Count>
     </item>
     <item>
@@ -4974,42 +4972,42 @@
       <EFDB_Name>fx</EFDB_Name>
       <Description>Applied velocity forces fx</Description>
       <IDL_Type>float</IDL_Type>
-      <Units>unitless</Units>
+      <Units>N</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>fy</EFDB_Name>
       <Description>Applied velocity forces fy</Description>
       <IDL_Type>float</IDL_Type>
-      <Units>unitless</Units>
+      <Units>N</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>fz</EFDB_Name>
       <Description>Applied velocity forces fz</Description>
       <IDL_Type>float</IDL_Type>
-      <Units>unitless</Units>
+      <Units>N</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>mx</EFDB_Name>
       <Description>Applied velocity forces mx</Description>
       <IDL_Type>float</IDL_Type>
-      <Units>unitless</Units>
+      <Units>N m</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>my</EFDB_Name>
       <Description>Applied velocity forces my</Description>
       <IDL_Type>float</IDL_Type>
-      <Units>unitless</Units>
+      <Units>N m</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>mz</EFDB_Name>
       <Description>Applied velocity forces mz</Description>
       <IDL_Type>float</IDL_Type>
-      <Units>unitless</Units>
+      <Units>N m</Units>
       <Count>1</Count>
     </item>
     <item>
@@ -5027,7 +5025,7 @@
       <EFDB_Name>timestamp</EFDB_Name>
       <Description>Applied balance forces timestamp</Description>
       <IDL_Type>double</IDL_Type>
-      <Units>unitless</Units>
+      <Units>s</Units>
       <Count>1</Count>
     </item>
     <item>
@@ -5055,42 +5053,42 @@
       <EFDB_Name>fx</EFDB_Name>
       <Description>Applied balance forces fx</Description>
       <IDL_Type>float</IDL_Type>
-      <Units>unitless</Units>
+      <Units>N</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>fy</EFDB_Name>
       <Description>Applied balance forces fy</Description>
       <IDL_Type>float</IDL_Type>
-      <Units>unitless</Units>
+      <Units>N</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>fz</EFDB_Name>
       <Description>Applied balance forces fz</Description>
       <IDL_Type>float</IDL_Type>
-      <Units>unitless</Units>
+      <Units>N</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>mx</EFDB_Name>
       <Description>Applied balance forces mx</Description>
       <IDL_Type>float</IDL_Type>
-      <Units>unitless</Units>
+      <Units>N m</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>my</EFDB_Name>
       <Description>Applied balance forces my</Description>
       <IDL_Type>float</IDL_Type>
-      <Units>unitless</Units>
+      <Units>N m</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>mz</EFDB_Name>
       <Description>Applied balance forces mz</Description>
       <IDL_Type>float</IDL_Type>
-      <Units>unitless</Units>
+      <Units>N m</Units>
       <Count>1</Count>
     </item>
     <item>
@@ -5108,7 +5106,7 @@
       <EFDB_Name>timestamp</EFDB_Name>
       <Description>Applied forces timestamp</Description>
       <IDL_Type>double</IDL_Type>
-      <Units>unitless</Units>
+      <Units>s</Units>
       <Count>1</Count>
     </item>
     <item>
@@ -5136,42 +5134,42 @@
       <EFDB_Name>fx</EFDB_Name>
       <Description>Applied forces fx</Description>
       <IDL_Type>float</IDL_Type>
-      <Units>unitless</Units>
+      <Units>N</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>fy</EFDB_Name>
       <Description>Applied forces fy</Description>
       <IDL_Type>float</IDL_Type>
-      <Units>unitless</Units>
+      <Units>N</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>fz</EFDB_Name>
       <Description>Applied forces fz</Description>
       <IDL_Type>float</IDL_Type>
-      <Units>unitless</Units>
+      <Units>N</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>mx</EFDB_Name>
       <Description>Applied forces mx</Description>
       <IDL_Type>float</IDL_Type>
-      <Units>unitless</Units>
+      <Units>N m</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>my</EFDB_Name>
       <Description>Applied forces my</Description>
       <IDL_Type>float</IDL_Type>
-      <Units>unitless</Units>
+      <Units>N m</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>mz</EFDB_Name>
       <Description>Applied forces mz</Description>
       <IDL_Type>float</IDL_Type>
-      <Units>unitless</Units>
+      <Units>N m</Units>
       <Count>1</Count>
     </item>
     <item>
@@ -5190,21 +5188,21 @@
       <EFDB_Name>timestamp</EFDB_Name>
       <Description>Pre-clipped Cylinder Forces timestamp</Description>
       <IDL_Type>double</IDL_Type>
-      <Units>unitless</Units>
+      <Units>s</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>secondaryCylinderForces</EFDB_Name>
       <Description>Pre-clipped secondary Cylinder Forces</Description>
       <IDL_Type>long</IDL_Type>
-      <Units>unitless</Units>
+      <Units>N</Units>
       <Count>112</Count>
     </item>
     <item>
       <EFDB_Name>primaryCylinderForces</EFDB_Name>
       <Description>Pre-clipped primary Cylinder Forces</Description>
       <IDL_Type>long</IDL_Type>
-      <Units>unitless</Units>
+      <Units>N</Units>
       <Count>156</Count>
     </item>
   </SALEvent>
@@ -5215,7 +5213,7 @@
       <EFDB_Name>timestamp</EFDB_Name>
       <Description>Applied Cylinder Forces timestamp</Description>
       <IDL_Type>double</IDL_Type>
-      <Units>unitless</Units>
+      <Units>s</Units>
       <Count>1</Count>
     </item>
     <item>
@@ -5240,7 +5238,7 @@
       <EFDB_Name>timestamp</EFDB_Name>
       <Description>Modbus Response timestamp</Description>
       <IDL_Type>double</IDL_Type>
-      <Units>unitless</Units>
+      <Units>s</Units>
       <Count>1</Count>
     </item>
     <item>
@@ -5294,7 +5292,7 @@
       <EFDB_Name>timestamp</EFDB_Name>
       <Description>Bump Test Result timestamp</Description>
       <IDL_Type>double</IDL_Type>
-      <Units>unitless</Units>
+      <Units>s</Units>
       <Count>1</Count>
     </item>
     <item>
@@ -5308,7 +5306,7 @@
       <EFDB_Name>primaryTestTimestamps</EFDB_Name>
       <Description>Timestamps of the last bump test</Description>
       <IDL_Type>double</IDL_Type>
-      <Units>unitless</Units>
+      <Units>s</Units>
       <Count>156</Count>
     </item>
     <item>
@@ -5322,7 +5320,7 @@
       <EFDB_Name>secondaryTestTimestamps</EFDB_Name>
       <Description>Timestamps of the last bump test</Description>
       <IDL_Type>double</IDL_Type>
-      <Units>unitless</Units>
+      <Units>s</Units>
       <Count>112</Count>
     </item>
     <item>
