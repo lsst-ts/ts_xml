@@ -3,51 +3,42 @@
 <SALCommandSet xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://lsst-sal.tuc.noao.edu/schema/SALCommandSet.xsd">
   <SALCommand>
     <Subsystem>LOVE</Subsystem>
-    <EFDB_Topic>LOVE_command_requestAccess</EFDB_Topic>
-    <Description>Request permission to command the named CSC(s).</Description>
+    <EFDB_Topic>LOVE_command_requestAuthorization</EFDB_Topic>
+    <Description>Request changes to authorization.</Description>
     <item>
-      <EFDB_Name>csc</EFDB_Name>
-      <Description>A comma delimited set of CSC names.</Description>
-      <IDL_Type>string</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-  </SALCommand>
-  <SALCommand>
-    <Subsystem>LOVE</Subsystem>
-    <EFDB_Topic>LOVE_command_releaseAccess</EFDB_Topic>
-    <Description>Release permission to command the named CSC(s).</Description>
-    <item>
-      <EFDB_Name>csc</EFDB_Name>
-      <Description>A comma delimited set of CSC names.</Description>
-      <IDL_Type>string</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-  </SALCommand>
-  <SALCommand>
-    <Subsystem>LOVE</Subsystem>
-    <EFDB_Topic>LOVE_command_denyAccess</EFDB_Topic>
-    <Description>Deny permission to command the named CSC(s) for identified agent.</Description>
-    <item>
-      <EFDB_Name>csc</EFDB_Name>
-      <Description>A comma delimited set of CSC names.</Description>
+      <EFDB_Name>cscsToChange</EFDB_Name>
+      <Description>Comma-separated list of csc_name[:index] of CSCs whose authorization is to be changed.
+            Whitespace is allowed after each comma.
+        </Description>
       <IDL_Type>string</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
     </item>
     <item>
-      <EFDB_Name>identity</EFDB_Name>
-      <Description>Identity of agent (CSC/user@host) to deny access to.</Description>
+      <EFDB_Name>authorizedUsers</EFDB_Name>
+      <Description>Comma seperated list of authorized users currently allowed to command this CSC,
+            in the form user@host.
+            If the first character is +/- then the specified users are added/removed.
+            Duplicates are silently ignored.
+            The CSC's own user@host is silently ignored, because it is always authorized.
+            For removal, CSCs that are not in the list are silently ignored.
+            Whitespace is allowed after the optional initial +/- and after each comma.
+        </Description>
       <IDL_Type>string</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
     </item>
     <item>
-      <EFDB_Name>denyDuration</EFDB_Name>
-      <Description>How long to deny access for (in seconds).</Description>
-      <IDL_Type>float</IDL_Type>
-      <Units>second</Units>
+      <EFDB_Name>nonAuthorizedCSCs</EFDB_Name>
+      <Description>Comma seperated list of CSC's not currently allowed to command this CSC,
+            in the form name[:index]. An index of 0 is stripped (name:0 becomes name).
+            If the first character is +/- then the specified CSCs are added/removed.
+            Duplicates are silently ignored.
+            For removal, CSCs that are not in the list are silently ignored.
+            Whitespace is allowed after the optional initial +/- and after each comma.
+        </Description>
+      <IDL_Type>string</IDL_Type>
+      <Units>unitless</Units>
       <Count>1</Count>
     </item>
   </SALCommand>
