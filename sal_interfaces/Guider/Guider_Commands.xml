@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="http://lsst-sal.tuc.noao.edu/schema/SALCommandSet.xsl"?>
+<SALCommandSet xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://lsst-sal.tuc.noao.edu/schema/SALCommandSet.xsd">
+  <SALCommand>
+    <Subsystem>Guider</Subsystem>
+    <EFDB_Topic>Guider_command_startGuiding</EFDB_Topic>
+    <Description>Start guiding using the input information. The command returns as soon as guiding starts, before the first interation is completed. If it fails to find a guide star in the provided guider region, the CSC will go to fault state.</Description>
+    <item>
+      <EFDB_Name>roiXLeft</EFDB_Name>
+      <Description>Vector with 8 elements specifying the origin of the guider ROI window in the x-axis for each guider sensor.</Description>
+      <IDL_Type>long</IDL_Type>
+      <Units>pixel</Units>
+      <Count>8</Count>
+    </item>
+    <item>
+      <EFDB_Name>roiXRight</EFDB_Name>
+      <Description>Vector with 8 elements specifying the end of the guider ROI window in the x-axis for each guider sensor. If roiXLeft=roiXRight=0, for a particular element of both arrays, it assumes no guider region for the equivalent guider sensor. For each valid entry in roiXRight/roiXLeft the width must respect the ROI constrains (see requirement CA-TS-GDR-ICD-0006 in LSE-66).</Description>
+      <IDL_Type>long</IDL_Type>
+      <Units>pixel</Units>
+      <Count>8</Count>
+    </item>
+    <item>
+      <EFDB_Name>roiYBottom</EFDB_Name>
+      <Description>Vector with 8 elements specifying the origin of the guider ROI window in the y-axis for each guider sensor.</Description>
+      <IDL_Type>long</IDL_Type>
+      <Units>pixel</Units>
+      <Count>8</Count>
+    </item>
+    <item>
+      <EFDB_Name>roiYTop</EFDB_Name>
+      <Description>Vector with 8 elements specifying the end of the guider ROI window in the y-axis for each guider sensor. If roiXBottom=roiXTop=0, for a particular element of both arrays, it assumes no guider region for the equivalent guider sensor. For each valid entry in roiXBottom/roiXTop the width must respect the ROI constrains (see requirement CA-TS-GDR-ICD-0006 in LSE-66).</Description>
+      <IDL_Type>long</IDL_Type>
+      <Units>pixel</Units>
+      <Count>8</Count>
+    </item>
+    <item>
+      <EFDB_Name>expTime</EFDB_Name>
+      <Description>Exposure time in milliseconds. All guider sensors will use the same exposure time (CA-TS-GDR-ICD-0034 LSE-66). Limits must respect detector integration time constrains (see requirement CA-TS-GDR-ICD-0034 in LSE-66).</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>ms</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>binning</EFDB_Name>
+      <Description>Binnig factor. All guider sensors will use the same binning factor. Limits must respect detector binning constrains (see requirement CA-TS-GDR-ICD-0042 in LSE-66).</Description>
+      <IDL_Type>long</IDL_Type>
+      <Units>pixel</Units>
+      <Count>1</Count>
+    </item>
+  </SALCommand>
+  <SALCommand>
+    <Subsystem>Guider</Subsystem>
+    <EFDB_Topic>Guider_command_stopGuiding</EFDB_Topic>
+    <Description>Stop current guider operation.</Description>
+  </SALCommand>
+  <SALCommand>
+    <Subsystem>Guider</Subsystem>
+    <EFDB_Topic>Guider_command_resumeGuiding</EFDB_Topic>
+    <Description>Resume current guider operation. This command will restart a guider operation with the last values used in startGuiding. If no previous startGuiding command was issued, since the last time the CSC was enabled, the command will be rejected.</Description>
+  </SALCommand>
+</SALCommandSet>

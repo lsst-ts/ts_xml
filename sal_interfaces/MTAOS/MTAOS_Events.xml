@@ -1,24 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-stylesheet type="text/xsl" href="http://lsst-sal.tuc.noao.edu/schema/SALEventSet.xsl"?>
 <SALEventSet xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://lsst-sal.tuc.noao.edu/schema/SALEventSet.xsd">
-  <Enumeration>SummaryState_DisabledState,SummaryState_EnabledState,SummaryState_FaultState,SummaryState_OfflineState,SummaryState_StandbyState</Enumeration>
-  <Enumeration>WEPWarning_NoWarning,WEPWarning_InvalidSensorId,WEPWarning_InvalidAnnularZernikePoly</Enumeration>
-  <Enumeration>OFCWarning_NoWarning,OFCWarning_NoEnoughAnnularZernikePoly</Enumeration>
+  <Enumeration>FilterType_u,FilterType_g,FilterType_r,FilterType_i,FilterType_z,FilterType_y,FilterType_ref</Enumeration>
+  <Enumeration>Mode_LsstCamFAM,Mode_LsstCamCWS,Mode_ComCam</Enumeration>
   <SALEvent>
     <Subsystem>MTAOS</Subsystem>
-    <Version>3.8.41</Version>
-    <Author/>
     <EFDB_Topic>MTAOS_logevent_wavefrontError</EFDB_Topic>
-    <Alias>wavefrontError</Alias>
     <Description>Calculated wavefront error.</Description>
     <item>
-      <EFDB_Name>timestamp</EFDB_Name>
-      <Description>Time at which an event is recorded.</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>second</Units>
-      <Count>1</Count>
-    </item>
-    <item>
       <EFDB_Name>sensorId</EFDB_Name>
       <Description>Wavefront sensor ID.</Description>
       <IDL_Type>short</IDL_Type>
@@ -26,7 +15,7 @@
       <Count>1</Count>
     </item>
     <item>
-      <EFDB_Name>annularZernikePoly</EFDB_Name>
+      <EFDB_Name>annularZernikeCoeff</EFDB_Name>
       <Description>z4-z22 terms of annular Zernike polynomials.</Description>
       <IDL_Type>double</IDL_Type>
       <Units>micron</Units>
@@ -35,19 +24,9 @@
   </SALEvent>
   <SALEvent>
     <Subsystem>MTAOS</Subsystem>
-    <Version>3.8.41</Version>
-    <Author/>
     <EFDB_Topic>MTAOS_logevent_rejectedWavefrontError</EFDB_Topic>
-    <Alias>rejectedWavefrontError</Alias>
     <Description>Rejected wavefront error.</Description>
     <item>
-      <EFDB_Name>timestamp</EFDB_Name>
-      <Description>Time at which an event is recorded.</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>second</Units>
-      <Count>1</Count>
-    </item>
-    <item>
       <EFDB_Name>sensorId</EFDB_Name>
       <Description>Wavefront sensor ID.</Description>
       <IDL_Type>short</IDL_Type>
@@ -55,7 +34,7 @@
       <Count>1</Count>
     </item>
     <item>
-      <EFDB_Name>annularZernikePoly</EFDB_Name>
+      <EFDB_Name>annularZernikeCoeff</EFDB_Name>
       <Description>z4-z22 terms of annular Zernike polynomials.</Description>
       <IDL_Type>double</IDL_Type>
       <Units>micron</Units>
@@ -64,19 +43,9 @@
   </SALEvent>
   <SALEvent>
     <Subsystem>MTAOS</Subsystem>
-    <Version>3.8.41</Version>
-    <Author/>
     <EFDB_Topic>MTAOS_logevent_degreeOfFreedom</EFDB_Topic>
-    <Alias>degreeOfFreedom</Alias>
     <Description>Calculated degree of freedom.</Description>
     <item>
-      <EFDB_Name>timestamp</EFDB_Name>
-      <Description>Time at which an event is recorded.</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>second</Units>
-      <Count>1</Count>
-    </item>
-    <item>
       <EFDB_Name>aggregatedDoF</EFDB_Name>
       <Description>Aggregated degree of freedom in the control algorithm. The unit of angle-related elements is arcsec instead of micron.</Description>
       <IDL_Type>double</IDL_Type>
@@ -93,19 +62,9 @@
   </SALEvent>
   <SALEvent>
     <Subsystem>MTAOS</Subsystem>
-    <Version>3.8.41</Version>
-    <Author/>
     <EFDB_Topic>MTAOS_logevent_rejectedDegreeOfFreedom</EFDB_Topic>
-    <Alias>rejectedDegreeOfFreedom</Alias>
     <Description>Rejected degree of freedom.</Description>
     <item>
-      <EFDB_Name>timestamp</EFDB_Name>
-      <Description>Time at which an event is recorded.</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>second</Units>
-      <Count>1</Count>
-    </item>
-    <item>
       <EFDB_Name>aggregatedDoF</EFDB_Name>
       <Description>Aggregated degree of freedom in the control algorithm. The unit of angle-related elements is arcsec instead of micron.</Description>
       <IDL_Type>double</IDL_Type>
@@ -122,19 +81,9 @@
   </SALEvent>
   <SALEvent>
     <Subsystem>MTAOS</Subsystem>
-    <Version>3.8.41</Version>
-    <Author/>
     <EFDB_Topic>MTAOS_logevent_m2HexapodCorrection</EFDB_Topic>
-    <Alias>m2HexapodCorrection</Alias>
     <Description>Correction to the M2 hexapod.</Description>
     <item>
-      <EFDB_Name>timestamp</EFDB_Name>
-      <Description>Time at which an event is recorded.</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>second</Units>
-      <Count>1</Count>
-    </item>
-    <item>
       <EFDB_Name>x</EFDB_Name>
       <Description>X position offset.</Description>
       <IDL_Type>double</IDL_Type>
@@ -179,19 +128,9 @@
   </SALEvent>
   <SALEvent>
     <Subsystem>MTAOS</Subsystem>
-    <Version>3.8.41</Version>
-    <Author/>
     <EFDB_Topic>MTAOS_logevent_rejectedM2HexapodCorrection</EFDB_Topic>
-    <Alias>rejectedM2HexapodCorrection</Alias>
     <Description>Rejected correction to the M2 hexapod.</Description>
     <item>
-      <EFDB_Name>timestamp</EFDB_Name>
-      <Description>Time at which an event is recorded.</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>second</Units>
-      <Count>1</Count>
-    </item>
-    <item>
       <EFDB_Name>x</EFDB_Name>
       <Description>X position offset.</Description>
       <IDL_Type>double</IDL_Type>
@@ -236,19 +175,9 @@
   </SALEvent>
   <SALEvent>
     <Subsystem>MTAOS</Subsystem>
-    <Version>3.8.41</Version>
-    <Author/>
     <EFDB_Topic>MTAOS_logevent_cameraHexapodCorrection</EFDB_Topic>
-    <Alias>cameraHexapodCorrection</Alias>
     <Description>Correction to the camera hexapod.</Description>
     <item>
-      <EFDB_Name>timestamp</EFDB_Name>
-      <Description>Time at which an event is recorded.</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>second</Units>
-      <Count>1</Count>
-    </item>
-    <item>
       <EFDB_Name>x</EFDB_Name>
       <Description>X position offset.</Description>
       <IDL_Type>double</IDL_Type>
@@ -293,19 +222,9 @@
   </SALEvent>
   <SALEvent>
     <Subsystem>MTAOS</Subsystem>
-    <Version>3.8.41</Version>
-    <Author/>
     <EFDB_Topic>MTAOS_logevent_rejectedCameraHexapodCorrection</EFDB_Topic>
-    <Alias>rejectedCameraHexapodCorrection</Alias>
     <Description>Rejected correction to the camera hexapod.</Description>
     <item>
-      <EFDB_Name>timestamp</EFDB_Name>
-      <Description>Time at which an event is recorded.</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>second</Units>
-      <Count>1</Count>
-    </item>
-    <item>
       <EFDB_Name>x</EFDB_Name>
       <Description>X position offset.</Description>
       <IDL_Type>double</IDL_Type>
@@ -350,19 +269,9 @@
   </SALEvent>
   <SALEvent>
     <Subsystem>MTAOS</Subsystem>
-    <Version>3.8.41</Version>
-    <Author/>
     <EFDB_Topic>MTAOS_logevent_m1m3Correction</EFDB_Topic>
-    <Alias>m1m3Correction</Alias>
     <Description>Correction to M1M3.</Description>
     <item>
-      <EFDB_Name>timestamp</EFDB_Name>
-      <Description>Time at which an event is recorded.</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>second</Units>
-      <Count>1</Count>
-    </item>
-    <item>
       <EFDB_Name>zForces</EFDB_Name>
       <Description>Actuator force in z direction.</Description>
       <IDL_Type>float</IDL_Type>
@@ -372,19 +281,9 @@
   </SALEvent>
   <SALEvent>
     <Subsystem>MTAOS</Subsystem>
-    <Version>3.8.41</Version>
-    <Author/>
     <EFDB_Topic>MTAOS_logevent_rejectedM1M3Correction</EFDB_Topic>
-    <Alias>rejectedM1M3Correction</Alias>
     <Description>Rejected correction to M1M3.</Description>
     <item>
-      <EFDB_Name>timestamp</EFDB_Name>
-      <Description>Time at which an event is recorded.</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>second</Units>
-      <Count>1</Count>
-    </item>
-    <item>
       <EFDB_Name>zForces</EFDB_Name>
       <Description>Actuator force in z direction.</Description>
       <IDL_Type>float</IDL_Type>
@@ -394,19 +293,9 @@
   </SALEvent>
   <SALEvent>
     <Subsystem>MTAOS</Subsystem>
-    <Version>3.8.41</Version>
-    <Author/>
     <EFDB_Topic>MTAOS_logevent_m2Correction</EFDB_Topic>
-    <Alias>m2Correction</Alias>
     <Description>Correction to M2.</Description>
     <item>
-      <EFDB_Name>timestamp</EFDB_Name>
-      <Description>Time at which an event is recorded.</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>second</Units>
-      <Count>1</Count>
-    </item>
-    <item>
       <EFDB_Name>zForces</EFDB_Name>
       <Description>Actuator force in z direction.</Description>
       <IDL_Type>float</IDL_Type>
@@ -416,19 +305,9 @@
   </SALEvent>
   <SALEvent>
     <Subsystem>MTAOS</Subsystem>
-    <Version>3.8.41</Version>
-    <Author/>
     <EFDB_Topic>MTAOS_logevent_rejectedM2Correction</EFDB_Topic>
-    <Alias>rejectedM2Correction</Alias>
     <Description>Rejected correction to M2.</Description>
     <item>
-      <EFDB_Name>timestamp</EFDB_Name>
-      <Description>Time at which an event is recorded.</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>second</Units>
-      <Count>1</Count>
-    </item>
-    <item>
       <EFDB_Name>zForces</EFDB_Name>
       <Description>Actuator force in z direction.</Description>
       <IDL_Type>float</IDL_Type>
@@ -438,45 +317,25 @@
   </SALEvent>
   <SALEvent>
     <Subsystem>MTAOS</Subsystem>
-    <Version>3.8.41</Version>
-    <Author/>
-    <EFDB_Topic>MTAOS_logevent_wepWarning</EFDB_Topic>
-    <Alias>wepWarning</Alias>
-    <Description>Warning of wavefront estimation pipeline.</Description>
+    <EFDB_Topic>MTAOS_logevent_wepDuration</EFDB_Topic>
+    <Description>Duration of time to process the wavefront image data.</Description>
     <item>
-      <EFDB_Name>timestamp</EFDB_Name>
-      <Description>Time at which an event is recorded.</Description>
-      <IDL_Type>double</IDL_Type>
+      <EFDB_Name>calcTime</EFDB_Name>
+      <Description>Latest execution time.</Description>
+      <IDL_Type>float</IDL_Type>
       <Units>second</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>warning</EFDB_Name>
-      <Description>Specific warning type.</Description>
-      <IDL_Type>int</IDL_Type>
-      <Units>unitless</Units>
       <Count>1</Count>
     </item>
   </SALEvent>
   <SALEvent>
     <Subsystem>MTAOS</Subsystem>
-    <Version>3.8.41</Version>
-    <Author/>
-    <EFDB_Topic>MTAOS_logevent_ofcWarning</EFDB_Topic>
-    <Alias>ofcWarning</Alias>
-    <Description>Warning of optical feedback control.</Description>
+    <EFDB_Topic>MTAOS_logevent_ofcDuration</EFDB_Topic>
+    <Description>Duration of time to calculate the degree of freedom.</Description>
     <item>
-      <EFDB_Name>timestamp</EFDB_Name>
-      <Description>Time at which an event is recorded.</Description>
-      <IDL_Type>double</IDL_Type>
+      <EFDB_Name>calcTime</EFDB_Name>
+      <Description>Latest execution time.</Description>
+      <IDL_Type>float</IDL_Type>
       <Units>second</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>warning</EFDB_Name>
-      <Description>Specific warning type.</Description>
-      <IDL_Type>int</IDL_Type>
-      <Units>unitless</Units>
       <Count>1</Count>
     </item>
   </SALEvent>

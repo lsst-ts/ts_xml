@@ -1,14 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-stylesheet type="text/xsl" href="http://lsst-sal.tuc.noao.edu/schema/SALEventSet.xsl"?>
 <SALEventSet xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://lsst-sal.tuc.noao.edu/schema/SALEventSet.xsd">
-  <Enumeration>DetailedStates_DisabledState,DetailedStates_EnabledState,DetailedStates_FaultState,DetailedStates_OfflineState,DetailedStates_StandbyState</Enumeration>
+  <Enumeration>
+    ILCType_ElectromechanicalActuator=1,
+    ILCType_PneumaticActuator=2,
+    ILCType_Thermal=3,
+    ILCType_HardpointMonitoring=7,
+    ILCType_Bootloader=10
+  </Enumeration>
   <SALEvent>
     <Subsystem>MTM1M3TS</Subsystem>
-    <Version>3.8.35</Version>
-    <Author/>
     <EFDB_Topic>MTM1M3TS_logevent_appliedSetpoint</EFDB_Topic>
-    <Alias>appliedSetpoint</Alias>
-    <Explanation>http://sal.lsst.org</Explanation>
     <item>
       <EFDB_Name>setpoint</EFDB_Name>
       <Description>Applied setpoint.</Description>
@@ -19,15 +21,429 @@
   </SALEvent>
   <SALEvent>
     <Subsystem>MTM1M3TS</Subsystem>
-    <Version>3.8.35</Version>
-    <Author/>
-    <EFDB_Topic>MTM1M3TS_logevent_detailedState</EFDB_Topic>
-    <Alias>detailedState</Alias>
-    <Explanation>http://sal.lsst.org</Explanation>
+    <EFDB_Topic>MTM1M3TS_logevent_reHeaterGains</EFDB_Topic>
     <item>
-      <EFDB_Name>detailedState</EFDB_Name>
-      <Description>Detailed state of the CSC</Description>
-      <IDL_Type>long</IDL_Type>
+      <EFDB_Name>proportionalGain</EFDB_Name>
+      <Description>Re-Heater proportional gain.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>unitless</Units>
+      <Count>96</Count>
+    </item>
+    <item>
+      <EFDB_Name>integralGain</EFDB_Name>
+      <Description>Re-Heater integral gain.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>unitless</Units>
+      <Count>96</Count>
+    </item>
+  </SALEvent>
+  <SALEvent>
+    <Subsystem>MTM1M3TS</Subsystem>
+    <EFDB_Topic>MTM1M3TS_logevent_thermalInfo</EFDB_Topic>
+    <item>
+      <EFDB_Name>referenceId</EFDB_Name>
+      <Description>Thermal ILC reference id.</Description>
+      <IDL_Type>short</IDL_Type>
+      <Units>unitless</Units>
+      <Count>96</Count>
+    </item>
+    <item>
+      <EFDB_Name>modbusAddress</EFDB_Name>
+      <Description>Thermal ILC modbus address.</Description>
+      <IDL_Type>short</IDL_Type>
+      <Units>unitless</Units>
+      <Count>96</Count>
+    </item>
+    <item>
+      <EFDB_Name>xPosition</EFDB_Name>
+      <Description>Fan x position.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>unitless</Units>
+      <Count>96</Count>
+    </item>
+    <item>
+      <EFDB_Name>yPosition</EFDB_Name>
+      <Description>Fan y position.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>unitless</Units>
+      <Count>96</Count>
+    </item>
+    <item>
+      <EFDB_Name>zPosition</EFDB_Name>
+      <Description>Fan z position.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>unitless</Units>
+      <Count>96</Count>
+    </item>
+    <item>
+      <EFDB_Name>ilcUniqueId</EFDB_Name>
+      <Description>Thermal ILC unique id.</Description>
+      <IDL_Type>long long</IDL_Type>
+      <Units>unitless</Units>
+      <Count>96</Count>
+    </item>
+    <item>
+      <EFDB_Name>ilcApplicationType</EFDB_Name>
+      <Description>Thermal ILC application type. ILCType enumeration.</Description>
+      <IDL_Type>short</IDL_Type>
+      <Units>unitless</Units>
+      <Count>96</Count>
+    </item>
+    <item>
+      <EFDB_Name>networkNodeType</EFDB_Name>
+      <Description>Thermal ILC network node type. ILCType enumeration. Mismatch with ilcApplicationType indicates ILC programming/seting problem.</Description>
+      <IDL_Type>short</IDL_Type>
+      <Units>unitless</Units>
+      <Count>96</Count>
+    </item>
+    <item>
+      <EFDB_Name>majorRevision</EFDB_Name>
+      <Description>Thermal ILC major revision.</Description>
+      <IDL_Type>short</IDL_Type>
+      <Units>unitless</Units>
+      <Count>96</Count>
+    </item>
+    <item>
+      <EFDB_Name>minorRevision</EFDB_Name>
+      <Description>Thermal ILC minor revision.</Description>
+      <IDL_Type>short</IDL_Type>
+      <Units>unitless</Units>
+      <Count>96</Count>
+    </item>
+  </SALEvent>
+  <SALEvent>
+    <Subsystem>MTM1M3TS</Subsystem>
+    <EFDB_Topic>MTM1M3TS_logevent_thermalWarning</EFDB_Topic>
+    <item>
+      <EFDB_Name>anyWarning</EFDB_Name>
+      <Description>Does at least a single thermal fan unit indicates any warning?</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>anyMajorFault</EFDB_Name>
+      <Description>Thermal fan unit warning any Major Fault.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>majorFault</EFDB_Name>
+      <Description>Thermal fan unit warning major Fault.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>96</Count>
+    </item>
+    <item>
+      <EFDB_Name>anyMinorFault</EFDB_Name>
+      <Description>Thermal fan unit warning any Minor Fault.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>minorFault</EFDB_Name>
+      <Description>Thermal fan unit warning minor Fault.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>96</Count>
+    </item>
+    <item>
+      <EFDB_Name>anyFaultOverride</EFDB_Name>
+      <Description>Thermal fan unit warning any Fault Override.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>faultOverride</EFDB_Name>
+      <Description>Thermal fan unit warning fault Override.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>96</Count>
+    </item>
+    <item>
+      <EFDB_Name>anyRefResistorError</EFDB_Name>
+      <Description>Thermal fan unit any Ref Resistor Error.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>refResistorError</EFDB_Name>
+      <Description>Thermal fan unit Ref Resistor Error.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>96</Count>
+    </item>
+    <item>
+      <EFDB_Name>anyRTDError</EFDB_Name>
+      <Description>Thermal fan unit any RTD Error.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>rtdError</EFDB_Name>
+      <Description>Thermal fan unit RTD Error.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>96</Count>
+    </item>
+    <item>
+      <EFDB_Name>anyBreakerHeater1Error</EFDB_Name>
+      <Description>Thermal fan unit any Breaker Heater 1 Error.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>breakerHeater1Error</EFDB_Name>
+      <Description>Thermal fan unit Breaker Heater 1 Error.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>96</Count>
+    </item>
+    <item>
+      <EFDB_Name>anyBreakerFan2Error</EFDB_Name>
+      <Description>Thermal fan unit any Breaker Fan 2 Error.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>breakerFan2Error</EFDB_Name>
+      <Description>Thermal fan unit Breaker Fan 2 Error.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>96</Count>
+    </item>
+    <item>
+      <EFDB_Name>anyUniqueIdCRCError</EFDB_Name>
+      <Description>Thermal fan unit warning any Unique Id CRC Error.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>uniqueIdCRCError</EFDB_Name>
+      <Description>Thermal fan unit warning unique Id CRC Error.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>96</Count>
+    </item>
+    <item>
+      <EFDB_Name>anyApplicationTypeMismatch</EFDB_Name>
+      <Description>Thermal fan unit warning any Application Type Mismatch.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>applicationTypeMismatch</EFDB_Name>
+      <Description>Thermal fan unit warning application Type Mismatch.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>96</Count>
+    </item>
+    <item>
+      <EFDB_Name>anyApplicationMissing</EFDB_Name>
+      <Description>Thermal fan unit warning any Application Missing.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>applicationMissing</EFDB_Name>
+      <Description>Thermal fan unit warning application Missing.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>96</Count>
+    </item>
+    <item>
+      <EFDB_Name>anyApplicationCRCMismatch</EFDB_Name>
+      <Description>Thermal fan unit warning any Application CRC Mismatch.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>applicationCRCMismatch</EFDB_Name>
+      <Description>Thermal fan unit warning application CRC Mismatch.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>96</Count>
+    </item>
+    <item>
+      <EFDB_Name>anyOneWireMissing</EFDB_Name>
+      <Description>Thermal fan unit warning any OneWire Missing.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>oneWireMissing</EFDB_Name>
+      <Description>Thermal fan unit warning oneWire Missing.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>96</Count>
+    </item>
+    <item>
+      <EFDB_Name>anyOneWire1Mismatch</EFDB_Name>
+      <Description>Thermal fan unit warning any OneWire1 Mismatch.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>oneWire1Mismatch</EFDB_Name>
+      <Description>Thermal fan unit warning oneWire1 Mismatch.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>96</Count>
+    </item>
+    <item>
+      <EFDB_Name>anyOneWire2Mismatch</EFDB_Name>
+      <Description>Thermal fan unit warning any OneWire2 Mismatch.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>oneWire2Mismatch</EFDB_Name>
+      <Description>Thermal fan unit warning oneWire2 Mismatch.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>96</Count>
+    </item>
+    <item>
+      <EFDB_Name>anyWatchdogReset</EFDB_Name>
+      <Description>Thermal fan unit warning any Watchdog Rese.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>watchdogReset</EFDB_Name>
+      <Description>Thermal fan unit warning watchdog Reset.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>96</Count>
+    </item>
+    <item>
+      <EFDB_Name>anyBrownOut</EFDB_Name>
+      <Description>Thermal fan unit warning any Brownout.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>brownOut</EFDB_Name>
+      <Description>Thermal fan unit warning brownout.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>96</Count>
+    </item>
+    <item>
+      <EFDB_Name>anyEventTrapReset</EFDB_Name>
+      <Description>Thermal fan unit warning any Event Trap Reset.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>eventTrapReset</EFDB_Name>
+      <Description>Thermal fan unit warning event Trap Reset.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>96</Count>
+    </item>
+    <item>
+      <EFDB_Name>anySSRPowerFault</EFDB_Name>
+      <Description>Thermal fan unit  warning any SSR Power Fault.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>ssrPowerFault</EFDB_Name>
+      <Description>Thermal fan unit warning SSR Power Fault.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>96</Count>
+    </item>
+    <item>
+      <EFDB_Name>anyAuxPowerFault</EFDB_Name>
+      <Description>Thermal fan unit warning any Aux Power Fault.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>auxPowerFault</EFDB_Name>
+      <Description>Thermal fan unit warning aux Power Fault.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>96</Count>
+    </item>
+    <item>
+      <EFDB_Name>anyILCFault</EFDB_Name>
+      <Description>Thermal fan unit warning any ILC Fault.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>ilcFault</EFDB_Name>
+      <Description>Force actuator warning ILC Fault.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>96</Count>
+    </item>
+    <item>
+      <EFDB_Name>anyBroadcastCounterWarning</EFDB_Name>
+      <Description>Thermal fan unit warning any Broadcast Counter Warning.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>broadcastCounterWarning</EFDB_Name>
+      <Description>Thermal fan unit warning broadcast Counter Warning.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>96</Count>
+    </item>
+  </SALEvent>
+  <SALEvent>
+    <Subsystem>MTM1M3TS</Subsystem>
+    <EFDB_Topic>MTM1M3TS_logevent_powerStatus</EFDB_Topic>
+    <item>
+      <EFDB_Name>fanCoilsHeatersCommandedOn</EFDB_Name>
+      <Description>True if Fan Coils/Heaters power bus commanded on.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>fanCoilsHeatersOn</EFDB_Name>
+      <Description>True if Fan Coils/Heaters are on.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>coolantPumpCommandedOn</EFDB_Name>
+      <Description>True if Coolant Pump commanded on.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>coolantPumpOn</EFDB_Name>
+      <Description>True if Coolant Pump is on.</Description>
+      <IDL_Type>boolean</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
     </item>

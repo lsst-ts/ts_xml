@@ -24,7 +24,7 @@
     <Description>Set position and orientation limits.</Description>
     <item>
       <EFDB_Name>maxXY</EFDB_Name>
-      <Description>Maximum |X| and |Y|</Description>
+      <Description>Maximum \|X\| and \|Y\|</Description>
       <IDL_Type>double</IDL_Type>
       <Units>um</Units>
       <Count>1</Count>
@@ -45,7 +45,7 @@
     </item>
     <item>
       <EFDB_Name>maxUV</EFDB_Name>
-      <Description>Maximum |U| and |V|</Description>
+      <Description>Maximum \|U\| and \|V\|</Description>
       <IDL_Type>double</IDL_Type>
       <Units>deg</Units>
       <Count>1</Count>
@@ -154,18 +154,6 @@
   </SALCommand>
   <SALCommand>
     <Subsystem>MTHexapod</Subsystem>
-    <EFDB_Topic>MTHexapod_command_moveToReference</EFDB_Topic>
-    <Description>A variant of the move command that moves the hexapod to the reference position specified in the CSC's configuration. One way to operate the hexapods is to enable compensation with setCompensationMode, moveToReference, and then call offset as needed to improve and maintain collimation.</Description>
-    <item>
-      <EFDB_Name>sync</EFDB_Name>
-      <Description>Synchronize motion so that all actuators start and stop moving at the same time? Synchronize motion is our normal operating mode.</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>dimensionless</Units>
-      <Count>1</Count>
-    </item>
-  </SALCommand>
-  <SALCommand>
-    <Subsystem>MTHexapod</Subsystem>
     <EFDB_Topic>MTHexapod_command_offset</EFDB_Topic>
     <Description>Offset the Hexapod by a specified change in position and orientation.</Description>
     <item>
@@ -233,7 +221,7 @@
   <SALCommand>
     <Subsystem>MTHexapod</Subsystem>
     <EFDB_Topic>MTHexapod_command_setPivot</EFDB_Topic>
-    <Description>Specify the pivot point (the reference point whose position and orientation are set by the move, moveToReference, and offset commands).</Description>
+    <Description>Specify the location of pivot point (the reference point whose position and orientation are specified by the move and offset commands). The origin is the center of the base plate interface plane and +Z points away from the motion plate (see LTS-206 section 2.2).</Description>
     <item>
       <EFDB_Name>x</EFDB_Name>
       <Description>x</Description>

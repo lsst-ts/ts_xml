@@ -3,293 +3,154 @@
 <SALCommandSet xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://lsst-sal.tuc.noao.edu/schema/SALCommandSet.xsd">
   <SALCommand>
     <Subsystem>MTAOS</Subsystem>
-    <Version>3.8.41</Version>
-    <Author/>
-    <EFDB_Topic>MTAOS_command_resetWavefrontCorrection</EFDB_Topic>
-    <Alias>resetWavefrontCorrection</Alias>
-    <Device/>
-    <Property/>
-    <Action/>
-    <Value/>
+    <EFDB_Topic>MTAOS_command_resetCorrection</EFDB_Topic>
     <Description>Reset the current wavefront error correction. The aggregated degree of freedom in optical feedback control will be reset to the initial state.</Description>
-    <item>
-      <EFDB_Name>value</EFDB_Name>
-      <Description>This value is ignored.</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
   </SALCommand>
   <SALCommand>
     <Subsystem>MTAOS</Subsystem>
-    <Version>3.8.41</Version>
-    <Author/>
-    <EFDB_Topic>MTAOS_command_issueWavefrontCorrection</EFDB_Topic>
-    <Alias>issueWavefrontCorrection</Alias>
-    <Device/>
-    <Property/>
-    <Action/>
-    <Value/>
-    <Description>Issue the wavefront correction to subsystems based on the most recently measured wavefront error.</Description>
-    <item>
-      <EFDB_Name>value</EFDB_Name>
-      <Description>This value is ignored.</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
+    <EFDB_Topic>MTAOS_command_issueCorrection</EFDB_Topic>
+    <Description>Issue the wavefront correction to subsystems based on the most recent OFC outputs.</Description>
   </SALCommand>
   <SALCommand>
     <Subsystem>MTAOS</Subsystem>
-    <Version>3.8.41</Version>
-    <Author/>
-    <EFDB_Topic>MTAOS_command_processCalibrationProducts</EFDB_Topic>
-    <Alias>processCalibrationProducts</Alias>
-    <Device/>
-    <Property/>
-    <Action/>
-    <Value/>
-    <Description>Process new calibration products.</Description>
-    <item>
-      <EFDB_Name>directoryPath</EFDB_Name>
-      <Description>Absolute directory path to calibration products.</Description>
-      <IDL_Type>string</IDL_Type>
-      <IDL_Size>1</IDL_Size>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
+    <EFDB_Topic>MTAOS_command_rejectCorrection</EFDB_Topic>
+    <Description>Reject the most recent wavefront correction.</Description>
   </SALCommand>
   <SALCommand>
     <Subsystem>MTAOS</Subsystem>
-    <Version>3.8.41</Version>
-    <Author/>
-    <EFDB_Topic>MTAOS_command_processWavefrontError</EFDB_Topic>
-    <Alias>processWavefrontError</Alias>
-    <Device/>
-    <Property/>
-    <Action/>
-    <Value/>
-    <Description>Process the wavefront data collection at corner splitted sensors.</Description>
+    <EFDB_Topic>MTAOS_command_selectSources</EFDB_Topic>
+    <Description>Run source selection algorithm for a specific field and visit configuration.</Description>
     <item>
-      <EFDB_Name>visit</EFDB_Name>
-      <Description>Image visit number.</Description>
-      <IDL_Type>int</IDL_Type>
-      <Units>unitless</Units>
+      <EFDB_Name>ra</EFDB_Name>
+      <Description>Right Ascension of the field in ICRS coordinates.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>hourangle</Units>
       <Count>1</Count>
     </item>
     <item>
-      <EFDB_Name>directoryPath</EFDB_Name>
-      <Description>Absolute directory path to wavefront data collection.</Description>
-      <IDL_Type>string</IDL_Type>
-      <IDL_Size>1</IDL_Size>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>fieldRA</EFDB_Name>
-      <Description>Right ascension of telescope boresight.</Description>
-      <IDL_Type>double</IDL_Type>
+      <EFDB_Name>decl</EFDB_Name>
+      <Description>Declination of the field in ICRS coordinates.</Description>
+      <IDL_Type>float</IDL_Type>
       <Units>degree</Units>
       <Count>1</Count>
     </item>
     <item>
-      <EFDB_Name>fieldDEC</EFDB_Name>
-      <Description>Declination of telescope boresight.</Description>
-      <IDL_Type>double</IDL_Type>
+      <EFDB_Name>pa</EFDB_Name>
+      <Description>Sky position angle of the observation. As defined by the IAU, this the angle measured relative to the north celestial pole (NCP), turning positive into the direction of the right ascension.</Description>
+      <IDL_Type>float</IDL_Type>
       <Units>degree</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>filter</EFDB_Name>
-      <Description>Active filter type. Use 1-6 for u, g, r, i, z, and y. Use 7 for reference.</Description>
-      <IDL_Type>int</IDL_Type>
+      <Description>Enumeration with the filter used in the observation.</Description>
+      <!-- Enumeration: FilterType -->
+      <IDL_Type>long</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
     </item>
     <item>
-      <EFDB_Name>cameraRotation</EFDB_Name>
-      <Description>Camera rotation angle.</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>degree</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>userGain</EFDB_Name>
-      <Description>Gain value between 0 and 1. Set to -1 to ignore user gain.</Description>
-      <IDL_Type>double</IDL_Type>
+      <EFDB_Name>mode</EFDB_Name>
+      <Description>Enumeration specifying the wfs mode.</Description>
+      <!-- Enumeration: Mode -->
+      <IDL_Type>long</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
     </item>
   </SALCommand>
   <SALCommand>
     <Subsystem>MTAOS</Subsystem>
-    <Version>3.8.41</Version>
-    <Author/>
-    <EFDB_Topic>MTAOS_command_processIntraExtraWavefrontError</EFDB_Topic>
-    <Alias>processIntraExtraWavefrontError</Alias>
-    <Device/>
-    <Property/>
-    <Action/>
-    <Value/>
-    <Description>Process the wavefront data collection by camera piston.</Description>
+    <EFDB_Topic>MTAOS_command_preProcess</EFDB_Topic>
+    <Description>Pre-process image for WEP. The outputs of this command are donut images that are ready for curvature wavefront sensing.</Description>
     <item>
-      <EFDB_Name>intraVisit</EFDB_Name>
-      <Description>Intra-focal image visit number.</Description>
-      <IDL_Type>int</IDL_Type>
+      <EFDB_Name>visitId</EFDB_Name>
+      <Description>Image visit id number. This is a unique identifier for each image and consists of the date of the observation plus an integer iterator, e.g. 2020103000040 for the 40th image taken in October, 30, 2020.</Description>
+      <IDL_Type>long</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
     </item>
     <item>
-      <EFDB_Name>extraVisit</EFDB_Name>
-      <Description>Extra-focal image visit number.</Description>
-      <IDL_Type>int</IDL_Type>
+      <EFDB_Name>useOCPS</EFDB_Name>
+      <Description>Use the OCS-Controlled Pipeline System (OCPS) to process data remotely?</Description>
+      <IDL_Type>boolean</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
     </item>
     <item>
-      <EFDB_Name>intraDirectoryPath</EFDB_Name>
-      <Description>Absolute directory path to intra-focal wavefront data collection.</Description>
+      <EFDB_Name>config</EFDB_Name>
+      <Description>Yaml configuration string with additional parameters to be passed to ISR and other pre-process tasks. If options are invalid command will be rejected. If not given, use the standard configuration.</Description>
       <IDL_Type>string</IDL_Type>
-      <IDL_Size>1</IDL_Size>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>extraDirectoryPath</EFDB_Name>
-      <Description>Absolute directory path to extra-focal wavefront data collection.</Description>
-      <IDL_Type>string</IDL_Type>
-      <IDL_Size>1</IDL_Size>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>fieldRA</EFDB_Name>
-      <Description>Right ascension of telescope boresight.</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>degree</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>fieldDEC</EFDB_Name>
-      <Description>Declination of telescope boresight.</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>degree</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>filter</EFDB_Name>
-      <Description>Active filter type. Use 1-6 for u, g, r, i, z, and y. Use 7 for reference.</Description>
-      <IDL_Type>int</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>cameraRotation</EFDB_Name>
-      <Description>Camera rotation angle.</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>degree</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>userGain</EFDB_Name>
-      <Description>Gain value between 0 and 1. Set to -1 to ignore user gain.</Description>
-      <IDL_Type>double</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
     </item>
   </SALCommand>
   <SALCommand>
     <Subsystem>MTAOS</Subsystem>
-    <Version>3.8.41</Version>
-    <Author/>
-    <EFDB_Topic>MTAOS_command_processShWavefrontError</EFDB_Topic>
-    <Alias>processShWavefrontError</Alias>
-    <Device/>
-    <Property/>
-    <Action/>
-    <Value/>
-    <Description>Process the wavefront error by Shack-Hartmann wavefront sensor.</Description>
+    <EFDB_Topic>MTAOS_command_runWEP</EFDB_Topic>
+    <Description>Process wavefront data, either full focal plane mode (Comcam and LSSTCam) or wavefront sensors. If only visitId is provided it assumes wavefront sensor mode. If visitId and extraId is provided it assumes full focal plane mode. MTAOS will determine if it is ComCam or LSSTCam based on the input images. If useOCPS=True, processing is done remotely using the OCPS CSC. For LSSTCam full array mode only OCPS processing is supported. Before running this command it is advisable to run selectSources and preProcess commands on the input image(s), otherwise MTAOS will have to run those processes before running wep.</Description>
     <item>
-      <EFDB_Name>annularZernikePoly</EFDB_Name>
-      <Description>z4-z22 terms of annular Zernike polynomials.</Description>
+      <EFDB_Name>visitId</EFDB_Name>
+      <Description>Image visit id number. This is a unique identifier for each image and consists of the date of the observation plus an integer iterator, e.g. 2020103000040 for the 40th image taken in October, 30, 2020.</Description>
+      <IDL_Type>long</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>extraId</EFDB_Name>
+      <Description>Extra focal image visit id number (optional). Same as visitId, if different than zero, the command assumes this is an Intra/Focal sequence, otherwise it assumes Corner Wavefront Sensor.</Description>
+      <IDL_Type>long</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>useOCPS</EFDB_Name>
+      <Description>Use OCS-Controlled Pipeline System (OCPS) to process data remotely? Ideally this should match the value of a previous preProcess command. If runWEP and preProcess run with different useOCPS setups, runWEP will run normally but will take longer as it will have to repeat the steps of preProcess. A warning message will inform the users of these conditions.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>config</EFDB_Name>
+      <Description>Yaml configuration string with additional parameters to be passed to WEP process. If options are invalid command will be rejected. If not given, use the standard configuration.</Description>
+      <IDL_Type>string</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+  </SALCommand>
+  <SALCommand>
+    <Subsystem>MTAOS</Subsystem>
+    <EFDB_Topic>MTAOS_command_runOFC</EFDB_Topic>
+    <Description>Run OFC on the latest wavefront errors data. Before running this command, you must have ran runWEP at least once. This command will run ofc to compute correction but won't apply them. Use issueCorrection to apply the corrections. This allow users to evaluate whether the corrections are sensible before applying them.</Description>
+    <item>
+      <EFDB_Name>userGain</EFDB_Name>
+      <Description>Gain value between 0 and 1. Set to -1 to ignore user gain.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>config</EFDB_Name>
+      <Description>Yaml configuration string with additional parameters to be passed to OFC. If options are invalid command will be rejected. If not given, use the standard configuration.</Description>
+      <IDL_Type>string</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+  </SALCommand>
+  <SALCommand>
+    <Subsystem>MTAOS</Subsystem>
+    <EFDB_Topic>MTAOS_command_addAberration</EFDB_Topic>
+    <Description>Utility command to add aberration to the system based on user provided wavefront errors. The command assume uniform aberration on all sensors.</Description>
+    <item>
+      <EFDB_Name>wf</EFDB_Name>
+      <Description>Array with z4-z22 terms of wavefront errors. Indexes are considered to be ANSI (https://en.wikipedia.org/wiki/Zernike_polynomials#OSA/ANSI_standard_indices).</Description>
       <IDL_Type>double</IDL_Type>
       <Units>micron</Units>
       <Count>19</Count>
     </item>
     <item>
-      <EFDB_Name>cameraRotation</EFDB_Name>
-      <Description>Camera rotation angle.</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>degree</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>userGain</EFDB_Name>
-      <Description>Gain value between 0 and 1. Set to -1 to ignore user gain.</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-  </SALCommand>
-  <SALCommand>
-    <Subsystem>MTAOS</Subsystem>
-    <Version>3.8.41</Version>
-    <Author/>
-    <EFDB_Topic>MTAOS_command_processCmosWavefrontError</EFDB_Topic>
-    <Alias>processCmosWavefrontError</Alias>
-    <Device/>
-    <Property/>
-    <Action/>
-    <Value/>
-    <Description>Process the wavefront data collection by CMOS camera.</Description>
-    <item>
-      <EFDB_Name>intraImgPath</EFDB_Name>
-      <Description>Absolute path to intra-focal wavefront image FITS file.</Description>
+      <EFDB_Name>config</EFDB_Name>
+      <Description>Yaml configuration string with additional parameters to be passed to OFC. If options are invalid command will be rejected. If not given, use the standard configuration.</Description>
       <IDL_Type>string</IDL_Type>
-      <IDL_Size>1</IDL_Size>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>extraImgPath</EFDB_Name>
-      <Description>Absolute path to extra-focal wavefront image FITS file.</Description>
-      <IDL_Type>string</IDL_Type>
-      <IDL_Size>1</IDL_Size>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>sglBrightStarPixelX</EFDB_Name>
-      <Description>Single bright star pixel x position. Put -99999 for the empty star.</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>unitless</Units>
-      <Count>10</Count>
-    </item>
-    <item>
-      <EFDB_Name>sglBrightStarPixelY</EFDB_Name>
-      <Description>Single bright star pixel y position. Put -99999 for the empty star.</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>unitless</Units>
-      <Count>10</Count>
-    </item>
-    <item>
-      <EFDB_Name>filter</EFDB_Name>
-      <Description>Active filter type. Use 1-6 for u, g, r, i, z, and y. Use 7 for reference.</Description>
-      <IDL_Type>int</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>cameraRotation</EFDB_Name>
-      <Description>Camera rotation angle.</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>degree</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>userGain</EFDB_Name>
-      <Description>Gain value between 0 and 1. Set to -1 to ignore user gain.</Description>
-      <IDL_Type>double</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
     </item>

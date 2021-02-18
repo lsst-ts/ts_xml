@@ -13,13 +13,16 @@
   </SALCommand>
   <SALCommand>
     <Subsystem>MTMount</Subsystem>
-    <EFDB_Topic>MTMount_command_disableCameraCableWrapTracking</EFDB_Topic>
-    <Description>Stop the camera wrap from tracking the camera rotator.</Description>
+    <EFDB_Topic>MTMount_command_disableCameraCableWrapFollowing</EFDB_Topic>
+    <Description>Stop the camera wrap from following the camera rotator (if it is doing so).
+        This endangers the cables in the camera cable wrap;
+        please only issue this command if you know what you are doing.</Description>
   </SALCommand>
   <SALCommand>
     <Subsystem>MTMount</Subsystem>
-    <EFDB_Topic>MTMount_command_enableCameraCableWrapTracking</EFDB_Topic>
-    <Description>Start the camera cable wrap tracking the camera rotator. The cable wrap drive must be enabled.</Description>
+    <EFDB_Topic>MTMount_command_enableCameraCableWrapFollowing</EFDB_Topic>
+    <Description>Start the camera cable wrap following the camera rotator (if it is not already doing so).
+        The cable wrap drive must be on in order for this to succeed.</Description>
   </SALCommand>
   <SALCommand>
     <Subsystem>MTMount</Subsystem>
@@ -51,7 +54,7 @@
     <Description>Specify position, velocity and time (PVT) vector for all axes. This command is immediately reported as done.</Description>
     <item>
       <EFDB_Name>azimuth</EFDB_Name>
-      <Description>Mount azimuth angle at the specified time. The allowed range is the software limits (L1), approximately -270 to 270.</Description>
+      <Description>Mount azimuth at the specified time. The allowed range is the software limits (L1), approximately -270 to 270.</Description>
       <IDL_Type>double</IDL_Type>
       <Units>deg</Units>
       <Count>1</Count>
@@ -65,14 +68,14 @@
     </item>
     <item>
       <EFDB_Name>elevation</EFDB_Name>
-      <Description>Mount elevation angle at the specified time.</Description>
+      <Description>Mount elevation at the specified time.</Description>
       <IDL_Type>double</IDL_Type>
       <Units>deg</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>elevationVelocity</EFDB_Name>
-      <Description>Mount elevation angle velocity at the specified time.</Description>
+      <Description>Mount elevation velocity at the specified time.</Description>
       <IDL_Type>double</IDL_Type>
       <Units>deg/second</Units>
       <Count>1</Count>

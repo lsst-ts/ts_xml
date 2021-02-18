@@ -5,7 +5,6 @@
   <Enumeration>AzimuthState_NotInMotion,AzimuthState_MovingCW,AzimuthState_MovingCCW</Enumeration>
   <Enumeration>ShutterDoorCommandedState_Unknown,ShutterDoorCommandedState_Closed,ShutterDoorCommandedState_Opened,ShutterDoorCommandedState_Stop</Enumeration>
   <Enumeration>ShutterDoorState_Closed,ShutterDoorState_Opened,ShutterDoorState_PartiallyOpened,ShutterDoorState_Opening,ShutterDoorState_Closing</Enumeration>
-  <!-- Standard events -->
   <!-- Actuator states -->
   <SALEvent>
     <Subsystem>ATDome</Subsystem>
@@ -13,8 +12,7 @@
     <Description>Commanded state of azimuth drive.</Description>
     <item>
       <EFDB_Name>commandedState</EFDB_Name>
-      <Description>Commanded state.</Description>
-      <!-- Enumeration: AzimuthCommandedState -->
+      <Description>Commanded state. An AzimuthCommandedState enumeration.</Description>
       <IDL_Type>long</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
@@ -33,8 +31,7 @@
     <Description>Current state of azimuth drive.</Description>
     <item>
       <EFDB_Name>state</EFDB_Name>
-      <Description>Current state.</Description>
-      <!-- Enumeration: AzimuthState -->
+      <Description>Current state. An AzimuthState enumeration.</Description>
       <IDL_Type>long</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
@@ -53,8 +50,7 @@
     <Description>Commanded state of the dropout shutter door.</Description>
     <item>
       <EFDB_Name>commandedState</EFDB_Name>
-      <Description>Commanded state.</Description>
-      <!-- Enumeration: ShutterDoorCommandedState -->
+      <Description>Commanded state. A ShutterDoorCommandedState enumeration.</Description>
       <IDL_Type>long</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
@@ -66,8 +62,7 @@
     <Description>Current state of the dropout shutter door.</Description>
     <item>
       <EFDB_Name>state</EFDB_Name>
-      <Description>Current state.</Description>
-      <!-- Enumeration: ShutterDoorState -->
+      <Description>Current state. A ShutterDoorState enumeration.</Description>
       <IDL_Type>long</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
@@ -79,8 +74,7 @@
     <Description>Commanded state of the main shutter door.</Description>
     <item>
       <EFDB_Name>commandedState</EFDB_Name>
-      <Description>Commanded state.</Description>
-      <!-- Enumeration: ShutterDoorCommandedState -->
+      <Description>Commanded state. A ShutterDoorCommandedState enumeration.</Description>
       <IDL_Type>long</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
@@ -92,8 +86,19 @@
     <Description>Current state of the main shutter door.</Description>
     <item>
       <EFDB_Name>state</EFDB_Name>
-      <Description>Current state.</Description>
-      <!-- Enumeration: ShutterDoorState -->
+      <Description>Current state. A ShutterDoorState enumeration.</Description>
+      <IDL_Type>long</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+  </SALEvent>
+  <SALEvent>
+    <Subsystem>ATDome</Subsystem>
+    <EFDB_Topic>ATDome_logevent_moveCode</EFDB_Topic>
+    <Description>Move code bitmask reported by the low-level controller. This is an internal detail that is published primarily for diagnosing problems; please do not rely on it. The component values are: 1 moving azimuth +, 2 moving azimuth -, 4 closing main door, 8 opening main door, 16 closing dropout door, 32 opening dropout, 64 homing, 128 emergency stop.</Description>
+    <item>
+      <EFDB_Name>code</EFDB_Name>
+      <Description>The move code.</Description>
       <IDL_Type>long</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>

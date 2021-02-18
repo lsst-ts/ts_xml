@@ -5,7 +5,6 @@
     <SALCommand>
       <Subsystem>SALGeneric</Subsystem>
       <EFDB_Topic>SALGeneric_command_abort</EFDB_Topic>
-      <Explanation>http://project.lsst.org/ts/sal_objects/help</Explanation>
       <item>
         <EFDB_Name>value</EFDB_Name>
         <Description>Not used</Description>
@@ -18,7 +17,6 @@
       <Subsystem>SALGeneric</Subsystem>
       <EFDB_Topic>SALGeneric_command_enable</EFDB_Topic>
       <Description>Transition from state Disabled to Enabled.</Description>
-      <Explanation>http://project.lsst.org/ts/sal_objects/help</Explanation>
       <item>
         <EFDB_Name>value</EFDB_Name>
         <Description>Not used</Description>
@@ -31,7 +29,6 @@
       <Subsystem>SALGeneric</Subsystem>
       <EFDB_Topic>SALGeneric_command_disable</EFDB_Topic>
       <Description>Transition from state Enabled to Disabled.</Description>
-      <Explanation>http://project.lsst.org/ts/sal_objects/help</Explanation>
       <item>
         <EFDB_Name>value</EFDB_Name>
         <Description>Not used</Description>
@@ -44,7 +41,6 @@
       <Subsystem>SALGeneric</Subsystem>
       <EFDB_Topic>SALGeneric_command_standby</EFDB_Topic>
       <Description>Transition from state Offline, Disabled or Fault to Standby.</Description>
-      <Explanation>http://project.lsst.org/ts/sal_objects/help</Explanation>
       <item>
         <EFDB_Name>value</EFDB_Name>
         <Description>Not used</Description>
@@ -57,7 +53,6 @@
       <Subsystem>SALGeneric</Subsystem>
       <EFDB_Topic>SALGeneric_command_exitControl</EFDB_Topic>
       <Description>Transition from state Standby to Offline. For CSCs that are not "externally commandable" this makes the CSC quit.</Description>
-      <Explanation>http://project.lsst.org/ts/sal_objects/help</Explanation>
       <item>
         <EFDB_Name>value</EFDB_Name>
         <Description>Not used</Description>
@@ -70,7 +65,6 @@
       <Subsystem>SALGeneric</Subsystem>
       <EFDB_Topic>SALGeneric_command_start</EFDB_Topic>
       <Description>Transition from state Standby to Disable, in a specified configuration.</Description>
-      <Explanation>http://project.lsst.org/ts/sal_objects/help</Explanation>
       <item>
         <EFDB_Name>settingsToApply</EFDB_Name>
         <Description>Name of the selected settings set</Description>
@@ -84,7 +78,6 @@
       <Subsystem>SALGeneric</Subsystem>
       <EFDB_Topic>SALGeneric_command_enterControl</EFDB_Topic>
       <Description>Transition from state Offline to Standby. Only "externally commandable" CSCs support this command; other CSCs start in Standby state and quit when they go to Offline.</Description>
-      <Explanation>http://project.lsst.org/ts/sal_objects/help</Explanation>
       <item>
         <EFDB_Name>value</EFDB_Name>
         <Description>Not used</Description>
@@ -108,7 +101,6 @@
     <SALCommand>
       <Subsystem>SALGeneric</Subsystem>
       <EFDB_Topic>SALGeneric_command_setValue</EFDB_Topic>
-      <Explanation>http://project.lsst.org/ts/sal_objects/help</Explanation>
       <item>
         <EFDB_Name>parametersAndValues</EFDB_Name>
         <Description>List of parameters and their values as a Json string</Description>
@@ -121,7 +113,6 @@
     <SALCommand>
       <Subsystem>SALGeneric</Subsystem>
       <EFDB_Topic>SALGeneric_command_setAuthList</EFDB_Topic>
-      <Explanation>http://sal.lsst.org</Explanation>
       <item>
         <EFDB_Name>authorizedUsers</EFDB_Name>
         <Description>Comma seperated list of authorized users currently allowed to command this CSC,
@@ -158,7 +149,6 @@
       <Subsystem>SALGeneric</Subsystem>
       <EFDB_Topic>SALGeneric_logevent_settingVersions</EFDB_Topic>
       <Description>Information about settings which can be specified in the start command.</Description>
-      <Explanation>http://project.lsst.org/ts/sal_objects/help/SALGeneric_logevent_settingVersions.html</Explanation>
       <item>
         <EFDB_Name>recommendedSettingsVersion</EFDB_Name>
         <Description>List of comma seperated recomended versions of settings sets</Description>
@@ -188,7 +178,6 @@
       <Subsystem>SALGeneric</Subsystem>
       <EFDB_Topic>SALGeneric_logevent_errorCode</EFDB_Topic>
       <Description>Output when a CSC goes into the Fault state as an explanation of the problem.</Description>
-      <Explanation>http://project.lsst.org/ts/sal_objects/help/SALGeneric_logevent_errorCode.html</Explanation>
       <item>
         <EFDB_Name>errorCode</EFDB_Name>
         <Description>A numeric error code</Description>
@@ -217,7 +206,6 @@
       <Subsystem>SALGeneric</Subsystem>
       <EFDB_Topic>SALGeneric_logevent_summaryState</EFDB_Topic>
       <Description>Current summary state of the CSC</Description>
-      <Explanation>http://project.lsst.org/ts/sal_objects/help/SALGeneric_logevent_summaryState.html</Explanation>
       <item>
         <EFDB_Name>summaryState</EFDB_Name>
         <Description>High level state machine state identifier</Description>
@@ -229,7 +217,6 @@
     <SALEvent>
       <Subsystem>SALGeneric</Subsystem>
       <EFDB_Topic>SALGeneric_logevent_appliedSettingsMatchStart</EFDB_Topic>
-      <Explanation>http://project.lsst.org/ts/sal_objects/help/SALGeneric_logevent_appliedSettingsMatchStart.html</Explanation>
       <item>
         <EFDB_Name>appliedSettingsMatchStartIsTrue</EFDB_Name>
         <Description>True when the configuration matches the start conditions</Description>
@@ -398,7 +385,6 @@
     <SALEvent>
       <Subsystem>SALGeneric</Subsystem>
       <EFDB_Topic>SALGeneric_logevent_heartbeat</EFDB_Topic>
-      <Explanation>http://sal.lsst.org</Explanation>
       <item>
         <EFDB_Name>heartbeat</EFDB_Name>
         <Description>Beats the drum.</Description>
@@ -410,7 +396,6 @@
     <SALEvent>
       <Subsystem>SALGeneric</Subsystem>
       <EFDB_Topic>SALGeneric_logevent_authList</EFDB_Topic>
-      <Explanation>http://sal.lsst.org</Explanation>
       <item>
         <EFDB_Name>authorizedUsers</EFDB_Name>
         <Description>Comma seperated list of authorized users currently allowed to command this CSC.</Description>

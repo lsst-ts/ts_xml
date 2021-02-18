@@ -27,6 +27,11 @@
   </SALCommand>
   <SALCommand>
     <Subsystem>MTRotator</Subsystem>
+    <EFDB_Topic>MTRotator_command_fault</EFDB_Topic>
+    <Description>Stop the rotator and send the system to the FAULT state. This is primarily for testing the low-level controller's fault command.</Description>
+  </SALCommand>
+  <SALCommand>
+    <Subsystem>MTRotator</Subsystem>
     <EFDB_Topic>MTRotator_command_move</EFDB_Topic>
     <Description>Move the MTRotator to the specified position and stop. During the move the enabled substate will be MovingPointToPoint, then it will return to Stationary.</Description>
     <item>
