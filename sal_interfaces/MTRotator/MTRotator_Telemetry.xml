@@ -32,10 +32,25 @@
     <EFDB_Topic>MTRotator_ccwFollowingError</EFDB_Topic>
     <Description>Camera cable wrap following error.</Description>
     <item>
-      <EFDB_Name>error</EFDB_Name>
+      <EFDB_Name>positionError</EFDB_Name>
       <Description>Rotator actual position - camera cable wrap actual position.</Description>
       <IDL_Type>double</IDL_Type>
       <Units>deg</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>velocityError</EFDB_Name>
+      <Description>Rotator actual velocity - camera cable wrap actual velocity.</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>deg/second</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>timestamp</EFDB_Name>
+      <Description>The time at which the rotation telemetry was measured (TAI, unix seconds).
+        The CCW position is extrapolated to this time.</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>second</Units>
       <Count>1</Count>
     </item>
   </SALTelemetry>
