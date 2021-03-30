@@ -3,7 +3,8 @@
 <SALTelemetrySet xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://lsst-sal.tuc.noao.edu/schema/SALTelemetrySet.xsd">
   <SALTelemetry>
     <Subsystem>MTVMS</Subsystem>
-    <EFDB_Topic>MTVMS_m1m3</EFDB_Topic>
+    <EFDB_Topic>MTVMS_data</EFDB_Topic>
+    <Description>VMS (1 sensor, 3 channels) accelerometer data.</Description>
     <item>
       <EFDB_Name>timestamp</EFDB_Name>
       <Description>Timestamp when data was measured.</Description>
@@ -12,163 +13,32 @@
       <Count>1</Count>
     </item>
     <item>
-      <EFDB_Name>sensor1XAcceleration</EFDB_Name>
-      <Description>Acceleration from sensor 1 in x direction.</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>m/s2</Units>
-      <Count>50</Count>
-    </item>
-    <item>
-      <EFDB_Name>sensor1YAcceleration</EFDB_Name>
-      <Description>Acceleration from sensor 1 in y direction.</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>m/s2</Units>
-      <Count>50</Count>
-    </item>
-    <item>
-      <EFDB_Name>sensor1ZAcceleration</EFDB_Name>
-      <Description>Acceleration from sensor 1 in z direction.</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>m/s2</Units>
-      <Count>50</Count>
-    </item>
-    <item>
-      <EFDB_Name>sensor2XAcceleration</EFDB_Name>
-      <Description>Acceleration from sensor 2 in x direction.</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>m/s2</Units>
-      <Count>50</Count>
-    </item>
-    <item>
-      <EFDB_Name>sensor2YAcceleration</EFDB_Name>
-      <Description>Acceleration from sensor 2 in y direction.</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>m/s2</Units>
-      <Count>50</Count>
-    </item>
-    <item>
-      <EFDB_Name>sensor2ZAcceleration</EFDB_Name>
-      <Description>Acceleration from sensor 2 in z direction.</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>m/s2</Units>
-      <Count>50</Count>
-    </item>
-    <item>
-      <EFDB_Name>sensor3XAcceleration</EFDB_Name>
-      <Description>Acceleration from sensor 3 in x direction.</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>m/s2</Units>
-      <Count>50</Count>
-    </item>
-    <item>
-      <EFDB_Name>sensor3YAcceleration</EFDB_Name>
-      <Description>Acceleration from sensor 3 in y direction.</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>m/s2</Units>
-      <Count>50</Count>
-    </item>
-    <item>
-      <EFDB_Name>sensor3ZAcceleration</EFDB_Name>
-      <Description>Acceleration from sensor 3 in z direction.</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>m/s2</Units>
-      <Count>50</Count>
-    </item>
-    <item>
-      <EFDB_Name>sensor4XAcceleration</EFDB_Name>
-      <Description>Acceleration from sensor 4 in x direction.</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>m/s2</Units>
-      <Count>50</Count>
-    </item>
-    <item>
-      <EFDB_Name>sensor4YAcceleration</EFDB_Name>
-      <Description>Acceleration from sensor 4 in y direction.</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>m/s2</Units>
-      <Count>50</Count>
-    </item>
-    <item>
-      <EFDB_Name>sensor4ZAcceleration</EFDB_Name>
-      <Description>Acceleration from sensor 4 in z direction.</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>m/s2</Units>
-      <Count>50</Count>
-    </item>
-    <item>
-      <EFDB_Name>sensor5XAcceleration</EFDB_Name>
-      <Description>Acceleration from sensor 5 in x direction.</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>m/s2</Units>
-      <Count>50</Count>
-    </item>
-    <item>
-      <EFDB_Name>sensor5YAcceleration</EFDB_Name>
-      <Description>Acceleration from sensor 5 in y direction.</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>m/s2</Units>
-      <Count>50</Count>
-    </item>
-    <item>
-      <EFDB_Name>sensor5ZAcceleration</EFDB_Name>
-      <Description>Acceleration from sensor 5 in z direction.</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>m/s2</Units>
-      <Count>50</Count>
-    </item>
-    <item>
-      <EFDB_Name>sensor6XAcceleration</EFDB_Name>
-      <Description>Acceleration from sensor 6 in x direction.</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>m/s2</Units>
-      <Count>50</Count>
-    </item>
-    <item>
-      <EFDB_Name>sensor6YAcceleration</EFDB_Name>
-      <Description>Acceleration from sensor 6 in y direction.</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>m/s2</Units>
-      <Count>50</Count>
-    </item>
-    <item>
-      <EFDB_Name>sensor6ZAcceleration</EFDB_Name>
-      <Description>Acceleration from sensor 6 in z direction.</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>m/s2</Units>
-      <Count>50</Count>
-    </item>
-  </SALTelemetry>
-  <SALTelemetry>
-    <Subsystem>MTVMS</Subsystem>
-    <EFDB_Topic>MTVMS_tma</EFDB_Topic>
-    <item>
-      <EFDB_Name>timestamp</EFDB_Name>
-      <Description>Current computer timestamp.</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>second</Units>
+      <EFDB_Name>sensor</EFDB_Name>
+      <Description>Sensor index.</Description>
+      <IDL_Type>short</IDL_Type>
+      <Units>unitless</Units>
       <Count>1</Count>
     </item>
-  </SALTelemetry>
-  <SALTelemetry>
-    <Subsystem>MTVMS</Subsystem>
-    <EFDB_Topic>MTVMS_m2</EFDB_Topic>
     <item>
-      <EFDB_Name>timestamp</EFDB_Name>
-      <Description>Current computer timestamp.</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>second</Units>
-      <Count>1</Count>
+      <EFDB_Name>accelerationX</EFDB_Name>
+      <Description>Acceleration in x direction.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>m/s2</Units>
+      <Count>50</Count>
     </item>
-  </SALTelemetry>
-  <SALTelemetry>
-    <Subsystem>MTVMS</Subsystem>
-    <EFDB_Topic>MTVMS_cameraRotator</EFDB_Topic>
     <item>
-      <EFDB_Name>timestamp</EFDB_Name>
-      <Description>Current computer timestamp</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>second</Units>
-      <Count>1</Count>
+      <EFDB_Name>accelerationY</EFDB_Name>
+      <Description>Acceleration in y direction.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>m/s2</Units>
+      <Count>50</Count>
+    </item>
+    <item>
+      <EFDB_Name>accelerationZ</EFDB_Name>
+      <Description>Acceleration in z direction.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>m/s2</Units>
+      <Count>50</Count>
     </item>
   </SALTelemetry>
 </SALTelemetrySet>
