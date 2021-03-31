@@ -48,8 +48,6 @@ def test_units(xmlfile, csc, topic):
         elif unit.text in ("unitless", "dimensionless"):
             assert True
         elif unit.text in (
-            "Torr",
-            "mTorr",
             "psia",
             "VA",
         ):  # TODO remove this when astropy adds support for this unit
