@@ -55,6 +55,7 @@ subsystems = [
     "CatchupArchiver",
     "CBP",
     "DIMM",
+    "DREAM",
     "DSM",
     "EAS",
     "Electrometer",
