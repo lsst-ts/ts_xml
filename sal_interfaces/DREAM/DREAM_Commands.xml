@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="http://lsst-sal.tuc.noao.edu/schema/SALCommandSet.xsl"?>
+<SALCommandSet xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://lsst-sal.tuc.noao.edu/schema/SALCommandSet.xsd">
+  <SALCommand>
+    <Subsystem>DREAM</Subsystem>
+    <EFDB_Topic>DREAM_command_setEnabled</EFDB_Topic>
+    <Description>Enable or disable DREAM.</Description>
+    <item>
+      <EFDB_Name>enabled</EFDB_Name>
+      <Description>DREAM enabled or disabled.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+  </SALCommand>
+  <SALCommand>
+    <Subsystem>DREAM</Subsystem>
+    <EFDB_Topic>DREAM_command_operate</EFDB_Topic>
+    <Description>Operate DREAM, meaning taking images, or not.</Description>
+    <item>
+      <EFDB_Name>operating</EFDB_Name>
+      <Description>DREAM operating, meaning taking images, or not.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+  </SALCommand>
+  <SALCommand>
+    <Subsystem>DREAM</Subsystem>
+    <EFDB_Topic>DREAM_command_status</EFDB_Topic>
+    <Description>Request a full DREAM system status.</Description>
+  </SALCommand>
+  <SALCommand>
+    <Subsystem>DREAM</Subsystem>
+    <EFDB_Topic>DREAM_command_setWeatherInfo</EFDB_Topic>
+    <Description>Send the weather information to DREAM.</Description>
+    <item>
+      <EFDB_Name>weatherInfo</EFDB_Name>
+      <Description>The weather info for DREAM in JSON format.</Description>
+      <IDL_Type>string</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+  </SALCommand>
+  <SALCommand>
+    <Subsystem>DREAM</Subsystem>
+    <EFDB_Topic>DREAM_command_getDataProduct</EFDB_Topic>
+    <Description>Request a data product from DREAM.</Description>
+    <item>
+      <EFDB_Name>name</EFDB_Name>
+      <Description>The name of the DREAM data product.</Description>
+      <!-- DM-29091 TODO: Replace with an enum as soon as the data products have been defined.  -->
+      <IDL_Type>string</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>timestamp</EFDB_Name>
+      <Description>The TAI timestamp of observation producing the DREAM data product.</Description>
+      <IDL_Type>string</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+  </SALCommand>
+</SALCommandSet>
