@@ -165,4 +165,48 @@
     <Subsystem>CCCamera</Subsystem>
     <EFDB_Topic>CCCamera_command_stop</EFDB_Topic>
   </SALCommand>
+  <!-- Playlist related commands, only valid when using emulated DAQ -->
+  <SALCommand>
+    <Subsystem>CCCamera</Subsystem>
+    <EFDB_Topic>CCCamera_command_play</EFDB_Topic>
+    <item>
+      <EFDB_Name>playlist</EFDB_Name>
+      <Description>Name of an existing DAQ playlist to play</Description>
+      <IDL_Type>string</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>repeat</EFDB_Name>
+      <Description>True if the playlist should run in repeat mode</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+  </SALCommand>
+  <SALCommand>
+    <Subsystem>CCCamera</Subsystem>
+    <EFDB_Topic>CCCamera_command_playlist</EFDB_Topic>
+    <item>
+      <EFDB_Name>playlist</EFDB_Name>
+      <Description>Name of a DAQ playlist to be defined (replaced if exists)</Description>
+      <IDL_Type>string</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>folder</EFDB_Name>
+      <Description>Folder where images exist in DAQ 2-day store (typically emu)</Description>
+      <IDL_Type>string</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>images</EFDB_Name>
+      <Description>: delimited list of images to add to the playlist</Description>
+      <IDL_Type>string</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+  </SALCommand>
 </SALCommandSet>
