@@ -5,61 +5,26 @@
     <SALCommand>
       <Subsystem>SALGeneric</Subsystem>
       <EFDB_Topic>SALGeneric_command_abort</EFDB_Topic>
-      <item>
-        <EFDB_Name>value</EFDB_Name>
-        <Description>Not used</Description>
-        <IDL_Type>boolean</IDL_Type>
-        <Units>unitless</Units>
-        <Count>1</Count>
-      </item>
     </SALCommand>
     <SALCommand>
       <Subsystem>SALGeneric</Subsystem>
       <EFDB_Topic>SALGeneric_command_enable</EFDB_Topic>
       <Description>Transition from state Disabled to Enabled.</Description>
-      <item>
-        <EFDB_Name>value</EFDB_Name>
-        <Description>Not used</Description>
-        <IDL_Type>boolean</IDL_Type>
-        <Units>unitless</Units>
-        <Count>1</Count>
-      </item>
     </SALCommand>
     <SALCommand>
       <Subsystem>SALGeneric</Subsystem>
       <EFDB_Topic>SALGeneric_command_disable</EFDB_Topic>
       <Description>Transition from state Enabled to Disabled.</Description>
-      <item>
-        <EFDB_Name>value</EFDB_Name>
-        <Description>Not used</Description>
-        <IDL_Type>boolean</IDL_Type>
-        <Units>unitless</Units>
-        <Count>1</Count>
-      </item>
     </SALCommand>
     <SALCommand>
       <Subsystem>SALGeneric</Subsystem>
       <EFDB_Topic>SALGeneric_command_standby</EFDB_Topic>
       <Description>Transition from state Offline, Disabled or Fault to Standby.</Description>
-      <item>
-        <EFDB_Name>value</EFDB_Name>
-        <Description>Not used</Description>
-        <IDL_Type>boolean</IDL_Type>
-        <Units>unitless</Units>
-        <Count>1</Count>
-      </item>
     </SALCommand>
     <SALCommand>
       <Subsystem>SALGeneric</Subsystem>
       <EFDB_Topic>SALGeneric_command_exitControl</EFDB_Topic>
-      <Description>Transition from state Standby to Offline. For CSCs that are not "externally commandable" this makes the CSC quit.</Description>
-      <item>
-        <EFDB_Name>value</EFDB_Name>
-        <Description>Not used</Description>
-        <IDL_Type>boolean</IDL_Type>
-        <Units>unitless</Units>
-        <Count>1</Count>
-      </item>
+      <Description>Transition from state Standby to Offline. For CSCs that start in Standby state this makes the CSC quit. CSCs that start in Offline state, they remain active.</Description>
     </SALCommand>
     <SALCommand>
       <Subsystem>SALGeneric</Subsystem>
@@ -77,14 +42,7 @@
     <SALCommand>
       <Subsystem>SALGeneric</Subsystem>
       <EFDB_Topic>SALGeneric_command_enterControl</EFDB_Topic>
-      <Description>Transition from state Offline to Standby. Only "externally commandable" CSCs support this command; other CSCs start in Standby state and quit when they go to Offline.</Description>
-      <item>
-        <EFDB_Name>value</EFDB_Name>
-        <Description>Not used</Description>
-        <IDL_Type>boolean</IDL_Type>
-        <Units>unitless</Units>
-        <Count>1</Count>
-      </item>
+      <Description>Transition from state Offline to Standby. Only that start in Offline state CSCs support this command; other CSCs start in Standby state and quit when they go to Offline.</Description>
     </SALCommand>
     <SALCommand>
       <Subsystem>SALGeneric</Subsystem>
