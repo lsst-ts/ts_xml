@@ -85,6 +85,9 @@ def generate_csv_table():
                 configuration = member.find("Configuration").tag
                 subsystem_head.append("Configuration")
 
+                index_enumeration = member.find("IndexEnumeration").tag
+                subsystem_head.append("IndexEnumeration")
+
                 csvwriter.writerow(subsystem_head)
                 count = count + 1
 
@@ -128,6 +131,9 @@ def generate_csv_table():
 
             configuration = member.find("Configuration").text
             subsystem.append(configuration)
+
+            index_enumeration = member.find("IndexEnumeration").text
+            subsystem.append(index_enumeration)
 
             csvwriter.writerow(subsystem)
 
