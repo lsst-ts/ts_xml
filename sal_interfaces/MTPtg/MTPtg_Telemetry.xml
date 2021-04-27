@@ -4,6 +4,7 @@
   <SALTelemetry>
     <Subsystem>MTPtg</Subsystem>
     <EFDB_Topic>MTPtg_currentTargetStatus</EFDB_Topic>
+    <Description>Calculated demands for current target</Description>
     <item>
       <EFDB_Name>timestamp</EFDB_Name>
       <Description>Current time in TAI seconds</Description>
@@ -101,6 +102,7 @@
   <SALTelemetry>
     <Subsystem>MTPtg</Subsystem>
     <EFDB_Topic>MTPtg_guiding</EFDB_Topic>
+    <Description>Guiding data</Description>
     <item>
       <EFDB_Name>timestamp</EFDB_Name>
       <Description>Current time in TAI second</Description>
@@ -147,6 +149,7 @@
   <SALTelemetry>
     <Subsystem>MTPtg</Subsystem>
     <EFDB_Topic>MTPtg_timeAndDate</EFDB_Topic>
+    <Description>Time related data</Description>
     <item>
       <EFDB_Name>timestamp</EFDB_Name>
       <Description>Current time in TAI seconds</Description>
@@ -211,6 +214,7 @@
   <SALTelemetry>
     <Subsystem>MTPtg</Subsystem>
     <EFDB_Topic>MTPtg_mountStatus</EFDB_Topic>
+    <Description>Current telescope mount status</Description>
     <item>
       <EFDB_Name>timestamp</EFDB_Name>
       <Description>Current time in TAI seconds</Description>
@@ -234,7 +238,7 @@
     </item>
     <item>
       <EFDB_Name>mountAzCurrentWrap</EFDB_Name>
-      <Description>Mount azimuth axis current wrap</Description>
+      <Description>Not implemented (23 Apr 2021) - Mount azimuth axis current wrap</Description>
       <IDL_Type>int</IDL_Type>
       <!-- <Enumeration> Wraps </Enumeration> -->
       <Units>unitless</Units>
@@ -242,7 +246,7 @@
     </item>
     <item>
       <EFDB_Name>mountRotCurrentWrap</EFDB_Name>
-      <Description>Rotator current wrap</Description>
+      <Description>Not implemented (23 Apr 2021) - Rotator current wrap</Description>
       <IDL_Type>int</IDL_Type>
       <!-- <Enumeration> Wraps </Enumeration> -->
       <Units>unitless</Units>
@@ -274,35 +278,35 @@
     </item>
     <item>
       <EFDB_Name>mountAzError</EFDB_Name>
-      <Description>Azimuth axis position error (actual - demand, in degrees)</Description>
+      <Description>Not implemented (23 Apr 2021) - Azimuth axis position error (actual - demand, in degrees)</Description>
       <IDL_Type>double</IDL_Type>
       <Units>deg</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>mountElError</EFDB_Name>
-      <Description>Elevation axis position error (actual - demand, in degrees)</Description>
+      <Description>Not implemented (23 Apr 2021) - Elevation axis position error (actual - demand, in degrees)</Description>
       <IDL_Type>double</IDL_Type>
       <Units>deg</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>mountRotError</EFDB_Name>
-      <Description>Rotator position error (actual - demand, in degrees)</Description>
+      <Description>Not implemented (23 Apr 2021) - Rotator position error (actual - demand, in degrees)</Description>
       <IDL_Type>double</IDL_Type>
       <Units>deg</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>mountRotIAA</EFDB_Name>
-      <Description>Rotator IAA (degrees)</Description>
+      <Description>Not implemented (23 Apr 2021) - Rotator IAA (degrees)</Description>
       <IDL_Type>double</IDL_Type>
       <Units>deg</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>mountRotIPA</EFDB_Name>
-      <Description>Rotator IPA (degrees)</Description>
+      <Description>Not implemented (23 Apr 2021) - Rotator IPA (degrees)</Description>
       <IDL_Type>double</IDL_Type>
       <Units>deg</Units>
       <Count>1</Count>
@@ -311,6 +315,7 @@
   <SALTelemetry>
     <Subsystem>MTPtg</Subsystem>
     <EFDB_Topic>MTPtg_skyEnvironment</EFDB_Topic>
+    <Description>Information related to the Sun and the Moon</Description>
     <item>
       <EFDB_Name>timestamp</EFDB_Name>
       <Description>Current time. TAI seconds.</Description>
@@ -399,6 +404,7 @@
   <SALTelemetry>
     <Subsystem>MTPtg</Subsystem>
     <EFDB_Topic>MTPtg_namedAzEl</EFDB_Topic>
+    <Description>Named telescope positions specified in the configuration file</Description>
     <item>
       <EFDB_Name>names</EFDB_Name>
       <Description>Names of the Named AzEl positions (Comma separated)</Description>
@@ -431,7 +437,7 @@
   <SALTelemetry>
     <Subsystem>MTPtg</Subsystem>
     <EFDB_Topic>MTPtg_mountPosition</EFDB_Topic>
-    <Description>Telemetry for mount position in sky coordinate</Description>
+    <Description>Telemetry for mount positions in sky coordinates</Description>
     <item>
       <EFDB_Name>timestamp</EFDB_Name>
       <Description>RA and Dec calculation timestamp, in TAI seconds</Description>
