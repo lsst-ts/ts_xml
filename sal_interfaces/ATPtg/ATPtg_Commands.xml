@@ -4,6 +4,7 @@
   <SALCommand>
     <Subsystem>ATPtg</Subsystem>
     <EFDB_Topic>ATPtg_command_pointCloseFile</EFDB_Topic>
+    <Description>Close the pointing data file.</Description>
     <item>
       <EFDB_Name>ignored</EFDB_Name>
       <Description>Attribute required by the SAL API, but is unused.</Description>
@@ -15,6 +16,7 @@
   <SALCommand>
     <Subsystem>ATPtg</Subsystem>
     <EFDB_Topic>ATPtg_command_poriginAbsorb</EFDB_Topic>
+    <Description>Apply the current pointing origin offset(s) to the defined pointing origin</Description>
     <item>
       <EFDB_Name>num</EFDB_Name>
       <Description>Which offset to absorb: 0 = user  1= handset 2 = both</Description>
@@ -26,6 +28,7 @@
   <SALCommand>
     <Subsystem>ATPtg</Subsystem>
     <EFDB_Topic>ATPtg_command_guideClear</EFDB_Topic>
+    <Description>Set current guiding offsets to zero</Description>
     <item>
       <EFDB_Name>ignored</EFDB_Name>
       <Description>This item is ignored and not used.</Description>
@@ -37,6 +40,7 @@
   <SALCommand>
     <Subsystem>ATPtg</Subsystem>
     <EFDB_Topic>ATPtg_command_collOffset</EFDB_Topic>
+    <Description>Set collimation CE, CA values in the pointing model</Description>
     <item>
       <EFDB_Name>ca</EFDB_Name>
       <Description>Collimation CA value</Description>
@@ -62,6 +66,7 @@
   <SALCommand>
     <Subsystem>ATPtg</Subsystem>
     <EFDB_Topic>ATPtg_command_rotOffset</EFDB_Topic>
+    <Description>Define the instrument alignment angle (IAA)</Description>
     <item>
       <EFDB_Name>iaa</EFDB_Name>
       <Description>Instrument Alignment Angle (IAA)</Description>
@@ -73,6 +78,7 @@
   <SALCommand>
     <Subsystem>ATPtg</Subsystem>
     <EFDB_Topic>ATPtg_command_clearCollOffset</EFDB_Topic>
+    <Description>Clear (set to zero) collimation CA and CE values</Description>
     <item>
       <EFDB_Name>num</EFDB_Name>
       <Description>Which offset to clear:  0 = user 1= handset 2=both</Description>
@@ -84,6 +90,7 @@
   <SALCommand>
     <Subsystem>ATPtg</Subsystem>
     <EFDB_Topic>ATPtg_command_poriginXY</EFDB_Topic>
+    <Description>Define the absolute [X,Y] position of the pointing origin on the focal plane. The pointing origin is the position on the focal plane at which the current target is positioned.</Description>
     <item>
       <EFDB_Name>x</EFDB_Name>
       <Description>X Pointing origin in the focal plane. Origin is the axis of the rotator</Description>
@@ -102,6 +109,7 @@
   <SALCommand>
     <Subsystem>ATPtg</Subsystem>
     <EFDB_Topic>ATPtg_command_iersUpdate</EFDB_Topic>
+    <Description>Download IERS (earth rotation) data from remote server.</Description>
     <item>
       <EFDB_Name>ignored</EFDB_Name>
       <Description>This item is ignored and not used.</Description>
@@ -113,6 +121,7 @@
   <SALCommand>
     <Subsystem>ATPtg</Subsystem>
     <EFDB_Topic>ATPtg_command_offsetRADec</EFDB_Topic>
+    <Description>Apply an offset in RA and Dec to the current target position.</Description>
     <item>
       <EFDB_Name>type</EFDB_Name>
       <Description>Type of offset: RA/Dec or Tangent Plane</Description>
@@ -146,6 +155,7 @@
   <SALCommand>
     <Subsystem>ATPtg</Subsystem>
     <EFDB_Topic>ATPtg_command_pointAddData</EFDB_Topic>
+    <Description>Add telescope axis position data to the pointing data file. </Description>
     <item>
       <EFDB_Name>ignored</EFDB_Name>
       <Description>This item is ignored and not used.</Description>
@@ -157,9 +167,10 @@
   <SALCommand>
     <Subsystem>ATPtg</Subsystem>
     <EFDB_Topic>ATPtg_command_guideControl</EFDB_Topic>
+    <Description>Switch guiding on or off</Description>
     <item>
       <EFDB_Name>state</EFDB_Name>
-      <Description>Current state of guider control.</Description>
+      <Description>Guide controls state.</Description>
       <IDL_Type>long</IDL_Type>
       <!-- <Enumeration> OnOff </Enumeration> -->
       <Units>unitless</Units>
@@ -169,6 +180,7 @@
   <SALCommand>
     <Subsystem>ATPtg</Subsystem>
     <EFDB_Topic>ATPtg_command_offsetAbsorb</EFDB_Topic>
+    <Description>Apply the current target offset(s) to the defined target position</Description>
     <item>
       <EFDB_Name>num</EFDB_Name>
       <Description>Which offset to absorb: 0 = user 1= handset 2 = both</Description>
@@ -180,6 +192,7 @@
   <SALCommand>
     <Subsystem>ATPtg</Subsystem>
     <EFDB_Topic>ATPtg_command_ephemTarget</EFDB_Topic>
+    <Description>Define a telescope target using ephemeris data defined in a file.</Description>
     <item>
       <EFDB_Name>ephemFile</EFDB_Name>
       <Description>Name of file containing ephemeris data</Description>
@@ -235,6 +248,7 @@
   <SALCommand>
     <Subsystem>ATPtg</Subsystem>
     <EFDB_Topic>ATPtg_command_wavelength</EFDB_Topic>
+    <Description>Set the target effective wavelength</Description>
     <item>
       <EFDB_Name>wavelength</EFDB_Name>
       <Description>Effective target wavelength</Description>
@@ -246,6 +260,7 @@
   <SALCommand>
     <Subsystem>ATPtg</Subsystem>
     <EFDB_Topic>ATPtg_command_pointLoadModel</EFDB_Topic>
+    <Description>Load a telescope pointing model defined in an existing data file</Description>
     <item>
       <EFDB_Name>pointingFile</EFDB_Name>
       <Description>Name of existing pointing model data file</Description>
@@ -258,6 +273,7 @@
   <SALCommand>
     <Subsystem>ATPtg</Subsystem>
     <EFDB_Topic>ATPtg_command_azCurrentWrap</EFDB_Topic>
+    <Description>Move the azimuth axis by 360 or -360 degrees if possible.</Description>
     <item>
       <EFDB_Name>wrap</EFDB_Name>
       <Description>Wrap direction (cw=1 or ccw=2)? </Description>
@@ -270,6 +286,7 @@
   <SALCommand>
     <Subsystem>ATPtg</Subsystem>
     <EFDB_Topic>ATPtg_command_debugLevel</EFDB_Topic>
+    <Description>Set the internal debug level. Increasing the debug level increases the number of log messages produced.</Description>
     <item>
       <EFDB_Name>level</EFDB_Name>
       <Description>Log level.</Description>
@@ -282,6 +299,7 @@
   <SALCommand>
     <Subsystem>ATPtg</Subsystem>
     <EFDB_Topic>ATPtg_command_raDecTarget</EFDB_Topic>
+    <Description>Define a telescope target, with a position defined as RA and Dec.</Description>
     <item>
       <EFDB_Name>targetName</EFDB_Name>
       <Description>Name of target</Description>
@@ -432,6 +450,7 @@
   <SALCommand>
     <Subsystem>ATPtg</Subsystem>
     <EFDB_Topic>ATPtg_command_offsetPA</EFDB_Topic>
+    <Description>Apply an offset, defined by a position angle and radius, to the current target position</Description>
     <item>
       <EFDB_Name>angle</EFDB_Name>
       <Description>Offset position angle in degrees, clockwise from North</Description>
@@ -450,6 +469,7 @@
   <SALCommand>
     <Subsystem>ATPtg</Subsystem>
     <EFDB_Topic>ATPtg_command_rotCurrentWrap</EFDB_Topic>
+    <Description>Move the rotator axis by 360 or -360 degrees if possible.</Description>
     <item>
       <EFDB_Name>wrap</EFDB_Name>
       <Description>Wrap direction (cw = 1 or ccw=2)?</Description>
@@ -462,6 +482,7 @@
   <SALCommand>
     <Subsystem>ATPtg</Subsystem>
     <EFDB_Topic>ATPtg_command_poriginOffset</EFDB_Topic>
+    <Description>Define an [X,Y] position offset for the current pointing origin on the focal plane</Description>
     <item>
       <EFDB_Name>dx</EFDB_Name>
       <Description>X Pointing origin offset in the focal plane</Description>
@@ -487,6 +508,7 @@
   <SALCommand>
     <Subsystem>ATPtg</Subsystem>
     <EFDB_Topic>ATPtg_command_offsetClear</EFDB_Topic>
+    <Description>Clear (set to zero) the currently defined target offset(s)</Description>
     <item>
       <EFDB_Name>num</EFDB_Name>
       <Description>Which offset to clear: 0 = user 1= handset 2 = both</Description>
@@ -498,6 +520,7 @@
   <SALCommand>
     <Subsystem>ATPtg</Subsystem>
     <EFDB_Topic>ATPtg_command_offsetAzEl</EFDB_Topic>
+    <Description>Apply an offset, specified as Azimuth and Elevation offsets.</Description>
     <item>
       <EFDB_Name>az</EFDB_Name>
       <Description>Az offset position in arcseconds</Description>
@@ -523,6 +546,7 @@
   <SALCommand>
     <Subsystem>ATPtg</Subsystem>
     <EFDB_Topic>ATPtg_command_setAccessMode</EFDB_Topic>
+    <Description>Not currently implemented (23 Apr 2021)</Description>
     <item>
       <EFDB_Name>mode</EFDB_Name>
       <Description>Set the access mode: Operator (1) or Engineer (2). </Description>
@@ -535,6 +559,7 @@
   <SALCommand>
     <Subsystem>ATPtg</Subsystem>
     <EFDB_Topic>ATPtg_command_azElTarget</EFDB_Topic>
+    <Description>Define a telescope target, with a position defined as Azimuth and Elevation.</Description>
     <item>
       <EFDB_Name>targetName</EFDB_Name>
       <Description>Name of AzEl target</Description>
@@ -575,6 +600,7 @@
   <SALCommand>
     <Subsystem>ATPtg</Subsystem>
     <EFDB_Topic>ATPtg_command_planetTarget</EFDB_Topic>
+    <Description>Select a named major planet as the telescope target.</Description>
     <item>
       <EFDB_Name>planetName</EFDB_Name>
       <Description>Id of the planet name; mercury (1), venus (2), moon (3), mars (4), jupiter (5), saturn (6), uranus (7), neptune (8) or pluto (9)</Description>
@@ -622,6 +648,7 @@
   <SALCommand>
     <Subsystem>ATPtg</Subsystem>
     <EFDB_Topic>ATPtg_command_pointNewFile</EFDB_Topic>
+    <Description>Create and open a new pointing data file. A unique name for the file will be defined internally.</Description>
     <item>
       <EFDB_Name>ignored</EFDB_Name>
       <Description>This item is ignored and not used.</Description>
@@ -633,6 +660,7 @@
   <SALCommand>
     <Subsystem>ATPtg</Subsystem>
     <EFDB_Topic>ATPtg_command_poriginClear</EFDB_Topic>
+    <Description>Clear (set to zero) any currently defined pointing origin offsets</Description>
     <item>
       <EFDB_Name>num</EFDB_Name>
       <Description>Which offset to absorb: 0 = user  1= handset 2 = both</Description>
@@ -644,6 +672,7 @@
   <SALCommand>
     <Subsystem>ATPtg</Subsystem>
     <EFDB_Topic>ATPtg_command_focusName</EFDB_Topic>
+    <Description>Select the operational focus of the telescope.</Description>
     <item>
       <EFDB_Name>focus</EFDB_Name>
       <Description>Select M3 focus position: prime, nasmyth1 or nasmyth2.</Description>
@@ -656,6 +685,7 @@
   <SALCommand>
     <Subsystem>ATPtg</Subsystem>
     <EFDB_Topic>ATPtg_command_amLimitSet</EFDB_Topic>
+    <Description>Define the limit value for the airmass</Description>
     <item>
       <EFDB_Name>amlimit</EFDB_Name>
       <Description>Airmass limit value</Description>
@@ -667,6 +697,7 @@
   <SALCommand>
     <Subsystem>ATPtg</Subsystem>
     <EFDB_Topic>ATPtg_command_guideAutoclear</EFDB_Topic>
+    <Description>Not currently implemented (23 Apr 2021)- clearguide setting in the Config file is used to define whether to automatically set the guiding offsets to zero when a new target is selected.</Description>
     <item>
       <EFDB_Name>state</EFDB_Name>
       <Description>Set state of the guider auto clear. </Description>
@@ -679,6 +710,7 @@
   <SALCommand>
     <Subsystem>ATPtg</Subsystem>
     <EFDB_Topic>ATPtg_command_stopTracking</EFDB_Topic>
+    <Description>Stop tracking. Axes positions will not be sent to the mount.</Description>
     <item>
       <EFDB_Name>ignored</EFDB_Name>
       <Description>This attribute is ignored and not used.</Description>
@@ -690,6 +722,7 @@
   <SALCommand>
     <Subsystem>ATPtg</Subsystem>
     <EFDB_Topic>ATPtg_command_startTracking</EFDB_Topic>
+    <Description>Calculate the RA and Dec co-ordinates that correspond to the current mount position and start tracking on this target</Description>
     <item>
       <EFDB_Name>trackId</EFDB_Name>
       <Description>Target identifier.</Description>
