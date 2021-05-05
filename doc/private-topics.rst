@@ -61,7 +61,7 @@ host
 origin
     The :term:`private_origin` of the command being acknowledged, which is a process ID.
 cmdtype
-    An index of all alphabetical topics inside of the component.
+    The name of the command being acknowledged, as the index of the name in an alphabetized list of all commands supported by the CSC.
 timeout
     The approximate expected duration of the command.
     Only set if ack=CMD_INPROGRESS.
