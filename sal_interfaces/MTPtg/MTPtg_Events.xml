@@ -9,7 +9,6 @@
   <Enumeration>CoordFrame_fk5,CoordFrame_icrs</Enumeration>
   <Enumeration>RotFrame_target,RotFrame_azel,RotFrame_fixed</Enumeration>
   <Enumeration>RotMode_field,RotMode_slit</Enumeration>
-  <Enumeration>AccessModes_operator,AccessModes_engineer</Enumeration>
   <Enumeration>Planets_mercury,Planets_venus,Planets_moon,Planets_mars,Planets_jupiter,Planets_saturn,Planets_uranus,Planets_neptune,Planets_pluto</Enumeration>
   <Enumeration>Foci_prime,Foci_nasmyth1,Foci_nasmyth2</Enumeration>
   <Enumeration>WarningLevel_none,WarningLevel_minor,WarningLevel_major</Enumeration>
@@ -57,19 +56,6 @@
   </SALEvent>
   <SALEvent>
     <Subsystem>MTPtg</Subsystem>
-    <EFDB_Topic>MTPtg_logevent_mountGuideMode</EFDB_Topic>
-    <Description>Not implemented (23 Apr 2021) - Set if the guiding mode is set true i.e. closed loop tracking.</Description>
-    <item>
-      <EFDB_Name>mode</EFDB_Name>
-      <Description>Mount guide mode.</Description>
-      <IDL_Type>long</IDL_Type>
-      <!-- <Enumeration> WarningLevel </Enumeration> -->
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-  </SALEvent>
-  <SALEvent>
-    <Subsystem>MTPtg</Subsystem>
     <EFDB_Topic>MTPtg_logevent_azWrapWarning</EFDB_Topic>
     <Description>The time to the current azimuth wrap limit for the target is less than the azimuth wrap warning value.</Description>
     <item>
@@ -90,39 +76,6 @@
       <Description>Wavelength in microns</Description>
       <IDL_Type>double</IDL_Type>
       <Units>micron</Units>
-      <Count>1</Count>
-    </item>
-  </SALEvent>
-  <SALEvent>
-    <Subsystem>MTPtg</Subsystem>
-    <EFDB_Topic>MTPtg_logevent_inPositionEl</EFDB_Topic>
-    <Description>Not implemented (23 Apr 2021) - Telescope elevation axis is 'in position'</Description>
-    <item>
-      <EFDB_Name>eventState</EFDB_Name>
-      <Description>Elevation axis in position.</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-  </SALEvent>
-  <SALEvent>
-    <Subsystem>MTPtg</Subsystem>
-    <EFDB_Topic>MTPtg_logevent_axesTrackMode</EFDB_Topic>
-    <Description>Not implemented (23 Apr 2021) - Set if the tracking mode is on for azimuth and elevation axes.</Description>
-    <item>
-      <EFDB_Name>elevation</EFDB_Name>
-      <Description>Elevation axis track mode.</Description>
-      <IDL_Type>long</IDL_Type>
-      <!-- <Enumeration> WarningLevel </Enumeration> -->
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>azimuth</EFDB_Name>
-      <Description>Azimuth axis track mode.</Description>
-      <IDL_Type>long</IDL_Type>
-      <!-- <Enumeration> WarningLevel </Enumeration> -->
-      <Units>unitless</Units>
       <Count>1</Count>
     </item>
   </SALEvent>
@@ -474,18 +427,6 @@
   </SALEvent>
   <SALEvent>
     <Subsystem>MTPtg</Subsystem>
-    <EFDB_Topic>MTPtg_logevent_accessMode</EFDB_Topic>
-    <Description>Not implemented (23 Apr 2021) - Set if the system access mode is Engineering</Description>
-    <item>
-      <EFDB_Name>eventState</EFDB_Name>
-      <Description>Access mode level.</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-  </SALEvent>
-  <SALEvent>
-    <Subsystem>MTPtg</Subsystem>
     <EFDB_Topic>MTPtg_logevent_rotWrapWarning</EFDB_Topic>
     <Description>The time to the current rotator wrap limit for the target is less than the rotator wrap warning value.</Description>
     <item>
@@ -493,42 +434,6 @@
       <Description>Rotator Wrap limit warning level.</Description>
       <IDL_Type>long</IDL_Type>
       <!-- <Enumeration> WarningLevel </Enumeration> -->
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-  </SALEvent>
-  <SALEvent>
-    <Subsystem>MTPtg</Subsystem>
-    <EFDB_Topic>MTPtg_logevent_inPosition</EFDB_Topic>
-    <Description>Not implemented (23 Apr 2021) - All telescope axes are 'in position'</Description>
-    <item>
-      <EFDB_Name>eventState</EFDB_Name>
-      <Description>Is telescope in position?</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-  </SALEvent>
-  <SALEvent>
-    <Subsystem>MTPtg</Subsystem>
-    <EFDB_Topic>MTPtg_logevent_inPositionRot</EFDB_Topic>
-    <Description>Not implemented (23 Apr 2021) - Telescope rotator axis is 'in position'</Description>
-    <item>
-      <EFDB_Name>eventState</EFDB_Name>
-      <Description>Is rotator in position?</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-  </SALEvent>
-  <SALEvent>
-    <Subsystem>MTPtg</Subsystem>
-    <EFDB_Topic>MTPtg_logevent_inPositionAz</EFDB_Topic>
-    <Description>Not implemented (23 Apr 2021) - Telescope azimuth axis is 'in position'</Description>
-    <item>
-      <EFDB_Name>eventState</EFDB_Name>
-      <Description>Is Azimuth in position?</Description>
-      <IDL_Type>boolean</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
     </item>
