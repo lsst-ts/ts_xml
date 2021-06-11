@@ -16,7 +16,7 @@
       <EFDB_Name>commandObject</EFDB_Name>
       <Description>The error code being published.</Description>
       <IDL_Type>byte</IDL_Type>
-      <Units>dimensionless</Units>
+      <Units>unitless</Units>
       <Count>900</Count>
     </item>
   </SALEvent>
@@ -28,7 +28,7 @@
       <EFDB_Name>loopTimeOutOfRange</EFDB_Name>
       <Description>loop Time is not in range</Description>
       <IDL_Type>boolean</IDL_Type>
-      <Units>dimensionless</Units>
+      <Units>unitless</Units>
       <Count>1</Count>
     </item>
   </SALEvent>
@@ -41,7 +41,7 @@
       <Description>An enumeration indicating the detailed state. See the DetailedStateValue enumeration defined in the Typedefs package.</Description>
       <!-- Enumeration: DetailedState -->
       <IDL_Type>long</IDL_Type>
-      <Units>dimensionless</Units>
+      <Units>unitless</Units>
       <Count>1</Count>
       <Enumeration>detailedState_DetailedState_DisabledState,detailedState_DetailedState_EnabledState,detailedState_DetailedState_FaultState,detailedState_DetailedState_OfflineState,detailedState_DetailedState_StandbyState,detailedState_DetailedState_MonoSettingUpState,detailedState_DetailedState_StoppedState,detailedState_DetailedState_StoppedCoolerOffState,detailedState_DetailedState_StoppedLightOffState,detailedState_DetailedState_StoppedLightOnState,detailedState_DetailedState_MonoManualSetup,detailedState_DetailedState_MonoAutomaticSetup
 </Enumeration>
@@ -56,7 +56,7 @@
       <Description>An enumeration indicating the controller status.</Description>
       <!-- Enumeration: DetailedState -->
       <IDL_Type>long</IDL_Type>
-      <Units>dimensionless</Units>
+      <Units>unitless</Units>
       <Count>1</Count>
     </item>
   </SALEvent>
@@ -68,7 +68,7 @@
       <EFDB_Name>commandValue</EFDB_Name>
       <Description>command value</Description>
       <IDL_Type>unsigned short</IDL_Type>
-      <Units>dimensionless</Units>
+      <Units>unitless</Units>
       <Count>1</Count>
     </item>
     <item>
@@ -76,15 +76,15 @@
       <Description>detailed state</Description>
       <!-- Enumeration: DetailedState -->
       <IDL_Type>long</IDL_Type>
-      <Units>dimensionless</Units>
+      <Units>unitless</Units>
       <Count>1</Count>
       <Enumeration>detailedState_DetailedState_DisabledState,detailedState_DetailedState_EnabledState,detailedState_DetailedState_FaultState,detailedState_DetailedState_OfflineState,detailedState_DetailedState_StandbyState,detailedState_DetailedState_MonoSettingUpState,detailedState_DetailedState_StoppedState,detailedState_DetailedState_StoppedCoolerOffState,detailedState_DetailedState_StoppedLightOffState,detailedState_DetailedState_StoppedLightOnState,detailedState_DetailedState_MonoManualSetup,detailedState_DetailedState_MonoAutomaticSetup</Enumeration>
     </item>
     <item>
       <EFDB_Name>timestamp</EFDB_Name>
-      <Description>time when the event occurred</Description>
+      <Description>Time at which event was detected (TAI unix seconds)</Description>
       <IDL_Type>double</IDL_Type>
-      <Units>dimensionless</Units>
+      <Units>second</Units>
       <Count>1</Count>
     </item>
   </SALEvent>
@@ -97,14 +97,14 @@
       <Description>IP address of the monochromator</Description>
       <IDL_Type>string</IDL_Type>
       <IDL_Size>15</IDL_Size>
-      <Units>dimensionless</Units>
+      <Units>unitless</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>portRange</EFDB_Name>
       <Description>port range, it will try to connect to any of the ports in this range</Description>
       <IDL_Type>long</IDL_Type>
-      <Units>dimensionless</Units>
+      <Units>unitless</Units>
       <Count>1</Count>
     </item>
     <item>
@@ -138,15 +138,15 @@
       <Description>Type of grating</Description>
       <!-- Enumeration: Grating -->
       <IDL_Type>long</IDL_Type>
-      <Units>dimensionless</Units>
+      <Units>unitless</Units>
       <Count>1</Count>
       <Enumeration>gratingType_Grating_Blue,gratingType_Grating_Red,gratingType_Grating_Mirror</Enumeration>
     </item>
     <item>
       <EFDB_Name>timestamp</EFDB_Name>
-      <Description>timestamp when selected grating event occurs</Description>
+      <Description>Time at which event was detected (TAI unix seconds)</Description>
       <IDL_Type>double</IDL_Type>
-      <Units>dimensionless</Units>
+      <Units>second</Units>
       <Count>1</Count>
     </item>
   </SALEvent>
@@ -163,9 +163,9 @@
     </item>
     <item>
       <EFDB_Name>timestamp</EFDB_Name>
-      <Description>timestamp</Description>
+      <Description>Time at which event was detected (TAI unix seconds)</Description>
       <IDL_Type>double</IDL_Type>
-      <Units>dimensionless</Units>
+      <Units>second</Units>
       <Count>1</Count>
     </item>
   </SALEvent>
@@ -178,7 +178,7 @@
       <Description>Specifies which slit. Entry or exit slit</Description>
       <!-- Enumeration: Slit -->
       <IDL_Type>long</IDL_Type>
-      <Units>dimensionless</Units>
+      <Units>unitless</Units>
       <Count>1</Count>
       <Enumeration>slit_Slit_Entry,slit_Slit_Exit</Enumeration>
     </item>
@@ -186,14 +186,14 @@
       <EFDB_Name>slitPosition</EFDB_Name>
       <Description>slit position</Description>
       <IDL_Type>float</IDL_Type>
-      <Units>dimensionless</Units>
+      <Units>mm</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>timestamp</EFDB_Name>
-      <Description>timestamp</Description>
+      <Description>Time at which event was detected (TAI unix seconds)</Description>
       <IDL_Type>double</IDL_Type>
-      <Units>unitless</Units>
+      <Units>second</Units>
       <Count>1</Count>
     </item>
   </SALEvent>
@@ -229,7 +229,7 @@
       <EFDB_Name>inPosition</EFDB_Name>
       <Description>Indicates if the monochromator is inposition</Description>
       <IDL_Type>boolean</IDL_Type>
-      <Units>dimensionless</Units>
+      <Units>unitless</Units>
       <Count>1</Count>
     </item>
     <item>
@@ -237,7 +237,7 @@
       <Description>device</Description>
       <!-- Enumeration: Device -->
       <IDL_Type>long</IDL_Type>
-      <Units>dimensionless</Units>
+      <Units>unitless</Units>
       <Count>1</Count>
       <Enumeration>device_Device_Monochromator,device_Device_LightSource,device_Device_ThermoelectricCooler</Enumeration>
     </item>
@@ -250,7 +250,7 @@
       <EFDB_Name>connected</EFDB_Name>
       <Description>connected</Description>
       <IDL_Type>boolean</IDL_Type>
-      <Units>dimensionless</Units>
+      <Units>unitless</Units>
       <Count>1</Count>
     </item>
   </SALEvent>
