@@ -59,6 +59,7 @@
   <SALCommand>
     <Subsystem>MTDome</Subsystem>
     <EFDB_Topic>MTDome_command_park</EFDB_Topic>
+    <Description>Move all components to park position and engage the brakes and locking pins.</Description>
   </SALCommand>
   <SALCommand>
     <Subsystem>MTDome</Subsystem>
@@ -80,7 +81,14 @@
   <SALCommand>
     <Subsystem>MTDome</Subsystem>
     <EFDB_Topic>MTDome_command_stopLouvers</EFDB_Topic>
-    <Description>Stop all louvers.</Description>
+    <Description>Stop all louvers. Also disengage locking pins and brakes (if engaged).</Description>
+    <item>
+      <EFDB_Name>engageBrakes</EFDB_Name>
+      <Description>Engage the brakes (true) or not (false).</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
   </SALCommand>
   <SALCommand>
     <Subsystem>MTDome</Subsystem>
@@ -95,27 +103,55 @@
   <SALCommand>
     <Subsystem>MTDome</Subsystem>
     <EFDB_Topic>MTDome_command_stopShutter</EFDB_Topic>
-    <Description>Stop the shutter.</Description>
+    <Description>Stop the shutter. Also disengage locking pins and brakes (if engaged).</Description>
+    <item>
+      <EFDB_Name>engageBrakes</EFDB_Name>
+      <Description>Engage the brakes (true) or not (false).</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
   </SALCommand>
   <SALCommand>
     <Subsystem>MTDome</Subsystem>
     <EFDB_Topic>MTDome_command_stopAz</EFDB_Topic>
-    <Description>Stop azimuth motion.</Description>
+    <Description>Stop azimuth motion. Also disengage locking pins and brakes (if engaged).</Description>
+    <item>
+      <EFDB_Name>engageBrakes</EFDB_Name>
+      <Description>Engage the brakes (true) or not (false).</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
   </SALCommand>
   <SALCommand>
     <Subsystem>MTDome</Subsystem>
     <EFDB_Topic>MTDome_command_stopEl</EFDB_Topic>
-    <Description>Stop elevation (light/wind screen) motion.</Description>
+    <Description>Stop elevation (light/wind screen) motion. Also disengage locking pins and brakes (if engaged).</Description>
+    <item>
+      <EFDB_Name>engageBrakes</EFDB_Name>
+      <Description>Engage the brakes (true) or not (false).</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
   </SALCommand>
   <SALCommand>
     <Subsystem>MTDome</Subsystem>
     <EFDB_Topic>MTDome_command_stop</EFDB_Topic>
-    <Description>Stop all motion.</Description>
+    <Description>For all subsystems that are moving: stop the motion and then optionally apply the brakes. For all subsystems that are not moving: disengage the locking pins (unparking the dome) and engage or disengage the brakes.</Description>
+    <item>
+      <EFDB_Name>engageBrakes</EFDB_Name>
+      <Description>Engage the brakes (true) or not (false).</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
   </SALCommand>
   <SALCommand>
     <Subsystem>MTDome</Subsystem>
     <EFDB_Topic>MTDome_command_setTemperature</EFDB_Topic>
-    <Description>Set the desired temperature of the MTDome heat sources (motors and cabinets)</Description>
+    <Description>Set the desired temperature of the MTDome heat sources (motors and cabinets).</Description>
     <item>
       <EFDB_Name>temperature</EFDB_Name>
       <Description>Desired temperature.</Description>
@@ -123,5 +159,10 @@
       <Units>deg_C</Units>
       <Count>1</Count>
     </item>
+  </SALCommand>
+  <SALCommand>
+    <Subsystem>MTDome</Subsystem>
+    <EFDB_Topic>MTDome_command_exitFault</EFDB_Topic>
+    <Description>Indicate that all hardware errors, leading to fault state, have been resolved.</Description>
   </SALCommand>
 </SALCommandSet>
