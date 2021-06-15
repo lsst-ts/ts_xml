@@ -1,40 +1,41 @@
-<xsd:schema attributeFormDefault="unqualified" elementFormDefault="unqualified" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-    <xsd:annotation>
-        <xsd:documentation xml:lang="en">SAL Command data item schema for LSST
+<?xml version="1.0"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="unqualified">
+  <xsd:annotation>
+    <xsd:documentation xml:lang="en">SAL Command data item schema for LSST
     </xsd:documentation>
-    </xsd:annotation>
-    <xsd:element name="SALCommandSet" type="commandSetType"/>
-    <xsd:element name="SALCommand" type="commandType"/>
-    <xsd:element name="SALCommandItem" type="commandItemType"/>
-    <xsd:complexType name="commandItemType">
-        <xsd:choice maxOccurs="unbounded">
-            <xsd:element name="EFDB_Name" type="xsd:string"/>
-            <xsd:element name="Description" type="xsd:string"/>
-            <xsd:element name="IDL_Type" type="xsd:string"/>
-            <xsd:element minOccurs="0" name="IDL_Size" type="xsd:string"/>
-            <xsd:element name="Units" type="xsd:string"/>
-            <xsd:element name="Count" type="xsd:positiveInteger"/>
-            <xsd:element maxOccurs="1" minOccurs="0" name="Enumeration" type="xsd:string"/>
-        </xsd:choice>
-    </xsd:complexType>
-    <xsd:complexType name="commandType">
-        <xsd:choice maxOccurs="unbounded">
-            <xsd:element name="Subsystem" type="xsd:string"/>
-            <xsd:element name="EFDB_Topic" type="xsd:string"/>
-            <xsd:element maxOccurs="1" minOccurs="0" name="Description" type="xsd:string"/>
-            <xsd:element maxOccurs="unbounded" minOccurs="0" name="item" type="commandItemType"/>
-        </xsd:choice>
-    </xsd:complexType>
-    <xsd:complexType name="commandSetType">
-        <xsd:sequence>
-            <xsd:element maxOccurs="unbounded" minOccurs="0" name="Enumeration" type="xsd:string"/>
-            <xsd:element maxOccurs="unbounded" minOccurs="1" name="SALCommand" type="commandType"/>
-        </xsd:sequence>
-    </xsd:complexType>
-    <xsd:attribute name="updateDate" type="xsd:date"/>
-    <xsd:simpleType name="version">
-        <xsd:restriction base="xsd:token">
-            <xsd:pattern value="\d+\.\d+(\.\d+)?"/>
-        </xsd:restriction>
-    </xsd:simpleType>
+  </xsd:annotation>
+  <xsd:element name="SALCommandSet" type="commandSetType"/>
+  <xsd:element name="SALCommand" type="commandType"/>
+  <xsd:element name="SALCommandItem" type="commandItemType"/>
+  <xsd:complexType name="commandItemType">
+    <xsd:choice maxOccurs="unbounded">
+      <xsd:element name="EFDB_Name" type="xsd:string"/>
+      <xsd:element name="Description" type="xsd:string"/>
+      <xsd:element name="IDL_Type" type="xsd:string"/>
+      <xsd:element minOccurs="0" name="IDL_Size" type="xsd:string"/>
+      <xsd:element name="Units" type="xsd:string"/>
+      <xsd:element name="Count" type="xsd:positiveInteger"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="Enumeration" type="xsd:string"/>
+    </xsd:choice>
+  </xsd:complexType>
+  <xsd:complexType name="commandType">
+    <xsd:choice maxOccurs="unbounded">
+      <xsd:element name="Subsystem" type="xsd:string"/>
+      <xsd:element name="EFDB_Topic" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="Description" type="xsd:string"/>
+      <xsd:element maxOccurs="unbounded" minOccurs="0" name="item" type="commandItemType"/>
+    </xsd:choice>
+  </xsd:complexType>
+  <xsd:complexType name="commandSetType">
+    <xsd:sequence>
+      <xsd:element maxOccurs="unbounded" minOccurs="0" name="Enumeration" type="xsd:string"/>
+      <xsd:element maxOccurs="unbounded" minOccurs="1" name="SALCommand" type="commandType"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:attribute name="updateDate" type="xsd:date"/>
+  <xsd:simpleType name="version">
+    <xsd:restriction base="xsd:token">
+      <xsd:pattern value="\d+\.\d+(\.\d+)?"/>
+    </xsd:restriction>
+  </xsd:simpleType>
 </xsd:schema>
