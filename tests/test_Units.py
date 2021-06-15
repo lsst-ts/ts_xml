@@ -45,7 +45,7 @@ def test_units(xmlfile, csc, topic):
     for unit in root.findall(f"./{saltype}/item/Units"):
         if not unit.text.replace(" ", ""):
             assert False, "Units cannot be blank."
-        elif unit.text in ("unitless", "dimensionless"):
+        elif unit.text == "unitless":
             assert True
         elif unit.text in (
             "psia",
@@ -93,7 +93,6 @@ def test_string_units(xmlfile, csc, topic):
             if csc in ["ATPtg", "MTPtg"] and name.text in ts_xml.strings_with_units:
                 assert True
             else:
-                assert unit.text in (
-                    "unitless",
-                    "dimensionless",
+                assert (
+                    unit.text == "unitless"
                 ), f"{csc}: string-type attribute {name.text!r} has the unit {unit.text!r}"
