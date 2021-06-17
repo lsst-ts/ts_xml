@@ -20,7 +20,7 @@
     <Description>Measures the specified target</Description>
     <item>
       <EFDB_Name>target</EFDB_Name>
-      <Description>name of target, M2 or CAM</Description>
+      <Description>Name of target: M2, CAM, or DOME</Description>
       <!-- Enumeration: Target -->
       <IDL_Type>long</IDL_Type>
       <Units>unitless</Units>
@@ -28,7 +28,7 @@
     </item>
     <item>
       <EFDB_Name>tolerance</EFDB_Name>
-      <Description>relative tolerance threshold after which we will stop the correction loop</Description>
+      <Description>Relative tolerance threshold after which we will stop the correction loop</Description>
       <IDL_Type>float</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
@@ -45,15 +45,68 @@
     <Subsystem>MTAlignment</Subsystem>
     <EFDB_Topic>MTAlignment_command_measurePoint</EFDB_Topic>
     <item>
+      <EFDB_Name>collection</EFDB_Name>
+      <Description>Name of collection containing target point</Description>
+      <IDL_Type>string</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
       <EFDB_Name>pointgroup</EFDB_Name>
-      <Description>name of pointgroup containing target point</Description>
+      <Description>Name of pointgroup containing target point</Description>
       <IDL_Type>string</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>target</EFDB_Name>
-      <Description>name of point to target</Description>
+      <Description>Name of point to target</Description>
+      <IDL_Type>string</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+  </SALCommand>
+  <SALCommand>
+    <Subsystem>MTAlignment</Subsystem>
+    <EFDB_Topic>MTAlignment_command_pointDelta</EFDB_Topic>
+    <item>
+      <EFDB_Name>collection_A</EFDB_Name>
+      <Description>Name of collection containing target point A</Description>
+      <IDL_Type>string</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>pointgroup_A</EFDB_Name>
+      <Description>Name of pointgroup containing target point A</Description>
+      <IDL_Type>string</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>target_A</EFDB_Name>
+      <Description>Name of point to target A</Description>
+      <IDL_Type>string</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>collection_B</EFDB_Name>
+      <Description>Name of collection containing target point B</Description>
+      <IDL_Type>string</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>pointgroup_B</EFDB_Name>
+      <Description>Name of pointgroup containing target point B</Description>
+      <IDL_Type>string</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>target_B</EFDB_Name>
+      <Description>Name of point to target B</Description>
       <IDL_Type>string</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
@@ -64,7 +117,18 @@
     <EFDB_Topic>MTAlignment_command_laserPower</EFDB_Topic>
     <item>
       <EFDB_Name>power</EFDB_Name>
-      <Description>turns laser on and off</Description>
+      <Description>Turn laser on and off</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+  </SALCommand>
+  <SALCommand>
+    <Subsystem>MTAlignment</Subsystem>
+    <EFDB_Topic>MTAlignment_command_powerOff</EFDB_Topic>
+    <item>
+      <EFDB_Name>powerOff</EFDB_Name>
+      <Description>Power off the tracker and controller, and close the interface</Description>
       <IDL_Type>boolean</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
@@ -75,8 +139,96 @@
     <EFDB_Topic>MTAlignment_command_healthCheck</EFDB_Topic>
     <item>
       <EFDB_Name>healthCheck</EFDB_Name>
-      <Description>executes the health check script</Description>
+      <Description>Execute the health check script</Description>
       <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+  </SALCommand>
+  <SALCommand>
+    <Subsystem>MTAlignment</Subsystem>
+    <EFDB_Topic>MTAlignment_command_setReferenceGroup</EFDB_Topic>
+    <item>
+      <EFDB_Name>referenceGroup</EFDB_Name>
+      <Description>Nominal point group to locate tracker station to and provide data relative to</Description>
+      <IDL_Type>string</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+  </SALCommand>
+  <SALCommand>
+    <Subsystem>MTAlignment</Subsystem>
+    <EFDB_Topic>MTAlignment_command_halt</EFDB_Topic>
+    <item>
+      <EFDB_Name>halt</EFDB_Name>
+      <Description>Halt any executing measurement plan and return to ready state</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+  </SALCommand>
+  <SALCommand>
+    <Subsystem>MTAlignment</Subsystem>
+    <EFDB_Topic>MTAlignment_command_setWorkingFrame</EFDB_Topic>
+    <item>
+      <EFDB_Name>workingFrame</EFDB_Name>
+      <Description>Attempt to set the passed string as the SpatialAnalyzer working frame</Description>
+      <IDL_Type>string</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+  </SALCommand>
+  <SALCommand>
+    <Subsystem>MTAlignment</Subsystem>
+    <EFDB_Topic>MTAlignment_command_loadSATemplateFile</EFDB_Topic>
+    <item>
+      <EFDB_Name>file</EFDB_Name>
+      <Description>SA Template file path and name. This is in the filesystem on the T2SA host.</Description>
+      <IDL_Type>string</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+  </SALCommand>
+  <SALCommand>
+    <Subsystem>MTAlignment</Subsystem>
+    <EFDB_Topic>MTAlignment_command_measureDrift</EFDB_Topic>
+    <item>
+      <EFDB_Name>pointgroup</EFDB_Name>
+      <Description>Nominal point group name in the default A collection to measure drift against.</Description>
+      <IDL_Type>string</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+  </SALCommand>
+  <SALCommand>
+    <Subsystem>MTAlignment</Subsystem>
+    <EFDB_Topic>MTAlignment_command_resetT2SA</EFDB_Topic>
+    <item>
+      <EFDB_Name>resetT2SA</EFDB_Name>
+      <Description>Reboot T2SA and SA components</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+  </SALCommand>
+  <SALCommand>
+    <Subsystem>MTAlignment</Subsystem>
+    <EFDB_Topic>MTAlignment_command_newStation</EFDB_Topic>
+    <item>
+      <EFDB_Name>newStation</EFDB_Name>
+      <Description>Add a new station and make it the active instrument</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+  </SALCommand>
+  <SALCommand>
+    <Subsystem>MTAlignment</Subsystem>
+    <EFDB_Topic>MTAlignment_command_saveJobfile</EFDB_Topic>
+    <item>
+      <EFDB_Name>file</EFDB_Name>
+      <Description>SA Job file name and path</Description>
+      <IDL_Type>string</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
     </item>
