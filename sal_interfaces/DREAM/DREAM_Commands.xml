@@ -3,11 +3,31 @@
 <SALCommandSet xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://lsst-sal.tuc.noao.edu/schema/SALCommandSet.xsd">
   <SALCommand>
     <Subsystem>DREAM</Subsystem>
-    <EFDB_Topic>DREAM_command_setEnabled</EFDB_Topic>
-    <Description>Enable or disable DREAM.</Description>
+    <EFDB_Topic>DREAM_command_resume</EFDB_Topic>
+    <Description>Indicate that DREAM is permitted to resume automated operations.</Description>
+  </SALCommand>
+  <SALCommand>
+    <Subsystem>DREAM</Subsystem>
+    <EFDB_Topic>DREAM_command_openHatch</EFDB_Topic>
+    <Description>Open the hatch if DREAM has evaluated that it is safe to do so.</Description>
+  </SALCommand>
+  <SALCommand>
+    <Subsystem>DREAM</Subsystem>
+    <EFDB_Topic>DREAM_command_closeHatch</EFDB_Topic>
+    <Description>Close the hatch.</Description>
+  </SALCommand>
+  <SALCommand>
+    <Subsystem>DREAM</Subsystem>
+    <EFDB_Topic>DREAM_command_stop</EFDB_Topic>
+    <Description>Immediately stop operations and close the hatch.</Description>
+  </SALCommand>
+  <SALCommand>
+    <Subsystem>DREAM</Subsystem>
+    <EFDB_Topic>DREAM_command_readyForData</EFDB_Topic>
+    <Description>Inform DREAM that Rubin Observatory is ready to receive data or not.</Description>
     <item>
-      <EFDB_Name>enabled</EFDB_Name>
-      <Description>DREAM enabled or disabled.</Description>
+      <EFDB_Name>ready</EFDB_Name>
+      <Description>Ready to receive data or not.</Description>
       <IDL_Type>boolean</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
@@ -15,49 +35,66 @@
   </SALCommand>
   <SALCommand>
     <Subsystem>DREAM</Subsystem>
-    <EFDB_Topic>DREAM_command_operate</EFDB_Topic>
-    <Description>Operate DREAM, meaning taking images, or not.</Description>
-    <item>
-      <EFDB_Name>operating</EFDB_Name>
-      <Description>DREAM operating, meaning taking images, or not.</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-  </SALCommand>
-  <SALCommand>
-    <Subsystem>DREAM</Subsystem>
-    <EFDB_Topic>DREAM_command_status</EFDB_Topic>
-    <Description>Request a full DREAM system status.</Description>
+    <EFDB_Topic>DREAM_command_dataArchived</EFDB_Topic>
+    <Description>Inform DREAM that Rubin Observatory has received and archived a data product. It is still under discussion if one or more parameters are needed or not.</Description>
   </SALCommand>
   <SALCommand>
     <Subsystem>DREAM</Subsystem>
     <EFDB_Topic>DREAM_command_setWeatherInfo</EFDB_Topic>
     <Description>Send the weather information to DREAM.</Description>
     <item>
-      <EFDB_Name>weatherInfo</EFDB_Name>
-      <Description>The weather info for DREAM in JSON format.</Description>
-      <IDL_Type>string</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-  </SALCommand>
-  <SALCommand>
-    <Subsystem>DREAM</Subsystem>
-    <EFDB_Topic>DREAM_command_getDataProduct</EFDB_Topic>
-    <Description>Request a data product from DREAM.</Description>
-    <item>
-      <EFDB_Name>product_name</EFDB_Name>
-      <Description>The name of the DREAM data product.</Description>
-      <!-- DM-29091 TODO: Replace with an enum as soon as the data products have been defined.  -->
-      <IDL_Type>string</IDL_Type>
-      <Units>unitless</Units>
+      <EFDB_Name>temperature</EFDB_Name>
+      <Description>The current temperature.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>deg_C</Units>
       <Count>1</Count>
     </item>
     <item>
-      <EFDB_Name>timestamp</EFDB_Name>
-      <Description>The TAI timestamp of observation producing the DREAM data product.</Description>
-      <IDL_Type>string</IDL_Type>
+      <EFDB_Name>humidity</EFDB_Name>
+      <Description>The current humidity.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>%</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>wind_speed</EFDB_Name>
+      <Description>The current wind speed.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>m/s</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>wind_direction</EFDB_Name>
+      <Description>The current wind direction (azimuth).</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>deg</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>pressure</EFDB_Name>
+      <Description>The current air pressure.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>Pa</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>rain</EFDB_Name>
+      <Description>The current rain.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>mm</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>cloudcover</EFDB_Name>
+      <Description>The current cloudcover.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>%</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>safe_observing_conditions</EFDB_Name>
+      <Description>Are the conditions safe for observing or not.</Description>
+      <IDL_Type>boolean</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
     </item>
