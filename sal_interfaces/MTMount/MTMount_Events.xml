@@ -2,58 +2,83 @@
 <?xml-stylesheet type="text/xsl" href="http://lsst-sal.tuc.noao.edu/schema/SALEventSet.xsl"?>
 <SALEventSet xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://lsst-sal.tuc.noao.edu/schema/SALEventSet.xsd">
   <Enumeration>
-        AxisState_Unknown=0,
-        AxisState_Idle=1,
-        AxisState_Enabled=2,
-        AxisState_DiscreteMove=3,
-        AxisState_JogMove=4,
-        AxisState_Tracking=5,
-        AxisState_Stopping=6,
-        AxisState_Fault=7
+        AxisMotionState_Stopping=0,
+        AxisMotionState_Stopped=1,
+        AxisMotionState_MovingPointToPoint=2,
+        AxisMotionState_Jogging=3,
+        AxisMotionState_Tracking=4,
+        AxisMotionState_TrackingPaused=5
     </Enumeration>
   <Enumeration>
-        DriveState_Unknown=0,
-        DriveState_Off=1,
-        DriveState_Moving=2,
-        DriveState_Stopping=3,
-        DriveState_Stopped=4,
-        DriveState_Fault=5
+        BasicPowerState_Off=0,
+        BasicPowerState_On=1,
+        BasicPowerState_Fault=2
     </Enumeration>
   <Enumeration>
-        SubsystemId_AzimuthAxis=100,
-        SubsystemId_AzimuthDrive=200,
-        SubsystemId_AzimuthCableWrap=300,
-        SubsystemId_ElevationAxis=400,
-        SubsystemId_ElevationDrive=500,
-        SubsystemId_MainPowerSupply=600,
-        SubsystemId_EncoderInterfaceBox=700,
-        SubsystemId_OilSupplySystem=800,
-        SubsystemId_MirrorCovers=900,
-        SubsystemId_CameraCableWrap=1000,
-        SubsystemId_Balance=1100,
-        SubsystemId_DeployablePlatform=1200,
-        SubsystemId_Cabinet=1300,
-        SubsystemId_LockingPins=1400,
-        SubsystemId_MirrorCoverLocks=1500,
-        SubsystemId_AzimuthThermal=1600,
-        SubsystemId_ElevationThermal=1700,
-        SubsystemId_Interlock=1800,
-        SubsystemId_TopEndChiller=2200
+        Commander_None=0,
+        Commander_TCS=1,
+        Commander_EUI=2,
+        Commander_HHD=3
+    </Enumeration>
+  <Enumeration>
+        DeployableMotionState_Retracted=0,
+        DeployableMotionState_Deployed=1,
+        DeployableMotionState_Retracting=2,
+        DeployableMotionState_Deploying=3,
+        DeployableMotionState_Lost=4
+    </Enumeration>
+  <Enumeration>
+        FancyPowerState_Off=0,
+        FancyPowerState_On=1,
+        FancyPowerState_TurningOn=2,
+        FancyPowerState_TurningOff=3,
+        FancyPowerState_Fault=4
+    </Enumeration>
+  <Enumeration>
+        LimitsMask_L1Min=0x01,
+        LimitsMask_L1Max=0x02,
+        LimitsMask_L2Min=0x03,
+        LimitsMask_L2Max=0x04,
+        LimitsMask_L3Min=0x05,
+        LimitsMask_L3Max=0x06,
+        LimitsMask_AdjustableL1Min=0x07,
+        LimitsMask_AdjustableL1Max=0x08,
+        LimitsMask_OperationalL1Min=0x09,
+        LimitsMask_OperationalL1Max=0x10
+    </Enumeration>
+  <Enumeration>
+        ElevationLockingPinMotionState_Locked=0,
+        ElevationLockingPinMotionState_Test=1,
+        ElevationLockingPinMotionState_Unlocked=2,
+        ElevationLockingPinMotionState_Moving=3,
+        ElevationLockingPinMotionState_Mismatch=4
+    </Enumeration>
+  <Enumeration>
+        System_Azimuth=0,
+        System_Elevation=1,
+        System_CameraCableWrap=2,
+        System_Balance=3,
+        System_MirrorCovers=4,
+        System_MirrorCoverLocks=5,
+        System_AzimuthCableWrap=6,
+        System_LockingPins=7,
+        System_DeployablePlatform=8,
+        System_OilSupplySystem=9,
+        System_AzimuthDrivesThermal=10,
+        System_ElevationDrivesThermal=11,
+        System_AZ0101CabinetThermal=12,
+        System_ModbusTemperatureController=13,
+        System_MainCabinet=14,
+        System_MainAxesPowerSupply=15,
+        System_TopEndChiller=16
     </Enumeration>
   <SALEvent>
     <Subsystem>MTMount</Subsystem>
-    <EFDB_Topic>MTMount_logevent_axesInPosition</EFDB_Topic>
-    <Description>Are the elevation and azimuth axes in position? If tracking, in position means the slew is done and the axes are now tracking the target.</Description>
+    <EFDB_Topic>MTMount_logevent_elevationInPosition</EFDB_Topic>
+    <Description>Is the elevation axis in position? If tracking, in position means the slew is done and the axes are now tracking the target.</Description>
     <item>
-      <EFDB_Name>elevation</EFDB_Name>
-      <Description>Is the elevation axis in position?</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>azimuth</EFDB_Name>
-      <Description>Is the azimuth axis in position?</Description>
+      <EFDB_Name>inPosition</EFDB_Name>
+      <Description>Is the axis in position?</Description>
       <IDL_Type>boolean</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
@@ -61,31 +86,172 @@
   </SALEvent>
   <SALEvent>
     <Subsystem>MTMount</Subsystem>
-    <EFDB_Topic>MTMount_logevent_axesState</EFDB_Topic>
-    <Description>State of the elevation and azimuth axes.</Description>
+    <EFDB_Topic>MTMount_logevent_azimuthInPosition</EFDB_Topic>
+    <Description>Is the azimuth axis in position? If tracking, in position means the slew is done and the axes are now tracking the target.</Description>
     <item>
-      <EFDB_Name>elevation</EFDB_Name>
-      <Description>Elevation state, as an AxisState constant enum.</Description>
-      <IDL_Type>long</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>azimuth</EFDB_Name>
-      <Description>Azimuth state, as an AxisState constant enum.</Description>
-      <IDL_Type>long</IDL_Type>
+      <EFDB_Name>inPosition</EFDB_Name>
+      <Description>Is the axis in position?</Description>
+      <IDL_Type>boolean</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
     </item>
   </SALEvent>
   <SALEvent>
     <Subsystem>MTMount</Subsystem>
-    <EFDB_Topic>MTMount_logevent_cameraCableWrapState</EFDB_Topic>
-    <Description>State of the camera cable wrap.</Description>
+    <EFDB_Topic>MTMount_logevent_cameraCableWrapInPosition</EFDB_Topic>
+    <Description>Is the camera cable wrap in position? If tracking, in position means the slew is done and the axis is now tracking the target.</Description>
+    <item>
+      <EFDB_Name>inPosition</EFDB_Name>
+      <Description>In position?</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+  </SALEvent>
+  <SALEvent>
+    <Subsystem>MTMount</Subsystem>
+    <EFDB_Topic>MTMount_logevent_elevationMotionState</EFDB_Topic>
+    <Description>Motion state of the elevation axis.</Description>
     <item>
       <EFDB_Name>state</EFDB_Name>
-      <Description>State, as an AxisState constant enum.</Description>
+      <Description>Motion state, as an AxisMotionState enum.</Description>
       <IDL_Type>long</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+  </SALEvent>
+  <SALEvent>
+    <Subsystem>MTMount</Subsystem>
+    <EFDB_Topic>MTMount_logevent_azimuthMotionState</EFDB_Topic>
+    <Description>Motion state of the azimuth axis.</Description>
+    <item>
+      <EFDB_Name>state</EFDB_Name>
+      <Description>Motion state, as an AxisMotionState enum.</Description>
+      <IDL_Type>long</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+  </SALEvent>
+  <SALEvent>
+    <Subsystem>MTMount</Subsystem>
+    <EFDB_Topic>MTMount_logevent_cameraCableWrapMotionState</EFDB_Topic>
+    <Description>Motion state of the camera cable wrap.</Description>
+    <item>
+      <EFDB_Name>state</EFDB_Name>
+      <Description>Motion state, as an AxisMotionState enum.</Description>
+      <IDL_Type>long</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+  </SALEvent>
+  <SALEvent>
+    <Subsystem>MTMount</Subsystem>
+    <EFDB_Topic>MTMount_logevent_elevationLimits</EFDB_Topic>
+    <Description>State of the limits for the elevation axis.</Description>
+    <item>
+      <EFDB_Name>limits</EFDB_Name>
+      <Description>Limits, as a LimitsMask enum mask.</Description>
+      <IDL_Type>unsigned int</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+  </SALEvent>
+  <SALEvent>
+    <Subsystem>MTMount</Subsystem>
+    <EFDB_Topic>MTMount_logevent_azimuthLimits</EFDB_Topic>
+    <Description>State of the limits for the azimuth axis.</Description>
+    <item>
+      <EFDB_Name>limits</EFDB_Name>
+      <Description>Limits, as a LimitsMask enum mask.</Description>
+      <IDL_Type>unsigned int</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+  </SALEvent>
+  <SALEvent>
+    <Subsystem>MTMount</Subsystem>
+    <EFDB_Topic>MTMount_logevent_cameraCableWrapLimits</EFDB_Topic>
+    <Description>State of the limits for the camera cable wrap.</Description>
+    <item>
+      <EFDB_Name>limits</EFDB_Name>
+      <Description>Camera cable wrap limits, as a LimitsMask enum mask.</Description>
+      <IDL_Type>unsigned int</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+  </SALEvent>
+  <SALEvent>
+    <Subsystem>MTMount</Subsystem>
+    <EFDB_Topic>MTMount_logevent_elevationLimitPositions</EFDB_Topic>
+    <Description>Positions of the elevation L1 (software) limits.</Description>
+    <item>
+      <EFDB_Name>min</EFDB_Name>
+      <Description>Position of the minimum limit.</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>deg</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>max</EFDB_Name>
+      <Description>Position of the maximum limit.</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>deg</Units>
+      <Count>1</Count>
+    </item>
+  </SALEvent>
+  <SALEvent>
+    <Subsystem>MTMount</Subsystem>
+    <EFDB_Topic>MTMount_logevent_azimuthLimitPositions</EFDB_Topic>
+    <Description>Positions of the azimuth L1 (software) limits.</Description>
+    <item>
+      <EFDB_Name>min</EFDB_Name>
+      <Description>Position of the minimum limit.</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>deg</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>max</EFDB_Name>
+      <Description>Position of the maximum limit.</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>deg</Units>
+      <Count>1</Count>
+    </item>
+  </SALEvent>
+  <SALEvent>
+    <Subsystem>MTMount</Subsystem>
+    <EFDB_Topic>MTMount_logevent_cameraCableWrapLimitPositions</EFDB_Topic>
+    <Description>Positions of the camera cable wrap L1 (software) limits.</Description>
+    <item>
+      <EFDB_Name>min</EFDB_Name>
+      <Description>Position of the minimum limit.</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>deg</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>max</EFDB_Name>
+      <Description>Position of the maximum limit.</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>deg</Units>
+      <Count>1</Count>
+    </item>
+  </SALEvent>
+  <SALEvent>
+    <Subsystem>MTMount</Subsystem>
+    <EFDB_Topic>MTMount_logevent_azimuthToppleBlock</EFDB_Topic>
+    <Description>State of the topple block for the azimuth axis.</Description>
+    <item>
+      <EFDB_Name>reverse</EFDB_Name>
+      <Description>Is the reverse topple block switch active?</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>forward</EFDB_Name>
+      <Description>Is the forward topple block switch active?</Description>
+      <IDL_Type>boolean</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
     </item>
@@ -96,8 +262,10 @@
     <Description>Is camera cable wrap following enabled?</Description>
     <item>
       <EFDB_Name>enabled</EFDB_Name>
-      <Description>If true the camera cable wrap is trying to follow the rotator.
-        If false that code is not running.</Description>
+      <Description>If true (1) the camera cable wrap is trying to follow the rotator.
+        If false (0) that code is not running. The field type should be "boolean",
+        and we may change someday if we figure out how to migrate old data.
+        </Description>
       <IDL_Type>long</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
@@ -131,6 +299,18 @@
   </SALEvent>
   <SALEvent>
     <Subsystem>MTMount</Subsystem>
+    <EFDB_Topic>MTMount_logevent_commander</EFDB_Topic>
+    <Description>Who controls the low-level controller.</Description>
+    <item>
+      <EFDB_Name>commander</EFDB_Name>
+      <Description>Who controls the low-level controller.</Description>
+      <IDL_Type>int</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+  </SALEvent>
+  <SALEvent>
+    <Subsystem>MTMount</Subsystem>
     <EFDB_Topic>MTMount_logevent_connected</EFDB_Topic>
     <Description>State of TCP/IP connection to the low level controller (the "operations manager").</Description>
     <item>
@@ -150,7 +330,46 @@
   </SALEvent>
   <SALEvent>
     <Subsystem>MTMount</Subsystem>
+    <EFDB_Topic>MTMount_logevent_deployablePlatformMotionState</EFDB_Topic>
+    <Description>Motion state of deployable platform.</Description>
+    <item>
+      <EFDB_Name>state</EFDB_Name>
+      <Description>Aggregate motion state, a DeployableMotionState enum.</Description>
+      <IDL_Type>unsigned short</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>elementState</EFDB_Name>
+      <Description>Motion state of each actuator, a DeployableMotionState enum.</Description>
+      <IDL_Type>unsigned short</IDL_Type>
+      <Units>unitless</Units>
+      <Count>2</Count>
+    </item>
+  </SALEvent>
+  <SALEvent>
+    <Subsystem>MTMount</Subsystem>
+    <EFDB_Topic>MTMount_logevent_elevationLockingPinMotionState</EFDB_Topic>
+    <Description>Motion state of elevation locking pin.</Description>
+    <item>
+      <EFDB_Name>state</EFDB_Name>
+      <Description>Aggregate motion state, an ElevationLockingPinMotionState enum.</Description>
+      <IDL_Type>unsigned short</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>elementState</EFDB_Name>
+      <Description>Motion state of each actuator, an ElevationLockingPinMotionState enum.</Description>
+      <IDL_Type>unsigned short</IDL_Type>
+      <Units>unitless</Units>
+      <Count>2</Count>
+    </item>
+  </SALEvent>
+  <SALEvent>
+    <Subsystem>MTMount</Subsystem>
     <EFDB_Topic>MTMount_logevent_error</EFDB_Topic>
+    <Description>State of an error (identified by the code field).</Description>
     <item>
       <EFDB_Name>latched</EFDB_Name>
       <Description>Is the error condition latched on (as it been active since it was last reset)?</Description>
@@ -183,6 +402,118 @@
       <EFDB_Name>subsystem</EFDB_Name>
       <Description>Subsystem that produced the error; a single SubsystemId enumeration value.</Description>
       <IDL_Type>long</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+  </SALEvent>
+  <SALEvent>
+    <Subsystem>MTMount</Subsystem>
+    <EFDB_Topic>MTMount_logevent_mirrorCoverLocksMotionState</EFDB_Topic>
+    <Description>Motion state of the mirror cover locks.</Description>
+    <item>
+      <EFDB_Name>state</EFDB_Name>
+      <Description>Aggregate motion state, a DeployableMotionState enum.</Description>
+      <IDL_Type>unsigned short</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>elementState</EFDB_Name>
+      <Description>Motion state of each mirror cover, a DeployableMotionState enum.</Description>
+      <IDL_Type>unsigned short</IDL_Type>
+      <Units>unitless</Units>
+      <Count>4</Count>
+    </item>
+  </SALEvent>
+  <SALEvent>
+    <Subsystem>MTMount</Subsystem>
+    <EFDB_Topic>MTMount_logevent_mirrorCoversMotionState</EFDB_Topic>
+    <Description>Motion state of the mirror covers.</Description>
+    <item>
+      <EFDB_Name>state</EFDB_Name>
+      <Description>Aggregate motion state, a DeployableMotionState enum.</Description>
+      <IDL_Type>unsigned short</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>elementState</EFDB_Name>
+      <Description>Motion state of each mirror cover lock, a DeployableMotionState enum.</Description>
+      <IDL_Type>unsigned short</IDL_Type>
+      <Units>unitless</Units>
+      <Count>4</Count>
+    </item>
+  </SALEvent>
+  <SALEvent>
+    <Subsystem>MTMount</Subsystem>
+    <EFDB_Topic>MTMount_logevent_safetyInterlocks</EFDB_Topic>
+    <item>
+      <EFDB_Name>causes</EFDB_Name>
+      <Description>A bit map for safety causes.</Description>
+      <IDL_Type>unsigned int</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>subcausesEmergencyStop</EFDB_Name>
+      <Description>A bit map emergency stop buttons.</Description>
+      <IDL_Type>unsigned int</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>subcausesLimitSwitch</EFDB_Name>
+      <Description>A bit map for limit switches.</Description>
+      <IDL_Type>unsigned int</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>subcausesDeployablePlatform</EFDB_Name>
+      <Description>A bit map for deployable platform switches.</Description>
+      <IDL_Type>unsigned int</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>subcausesDoorHatchLadder</EFDB_Name>
+      <Description>A bit map for door, hatch and ladder status.</Description>
+      <IDL_Type>unsigned int</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>subcausesMirrorCover</EFDB_Name>
+      <Description>A bit map for mirror cover power off switches.</Description>
+      <IDL_Type>unsigned int</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>subcausesLockingPin</EFDB_Name>
+      <Description>A bit map for locking pin positions.</Description>
+      <IDL_Type>unsigned int</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>subcausesCapacitorDoor</EFDB_Name>
+      <Description>A bit map for phase capacitor bank doors.</Description>
+      <IDL_Type>unsigned int</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>subcausesBrakesFailed</EFDB_Name>
+      <Description>A bit map for brakes that failed.</Description>
+      <IDL_Type>unsigned int</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>effects</EFDB_Name>
+      <Description>A bit map for safety effects.</Description>
+      <IDL_Type>unsigned int</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
     </item>
@@ -228,14 +559,14 @@
     </item>
     <item>
       <EFDB_Name>trackId</EFDB_Name>
-      <Description>Unique target identifier.</Description>
+      <Description>Unique target identifier. Echoed from the trackTarget command.</Description>
       <IDL_Type>long</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>tracksys</EFDB_Name>
-      <Description>Defines tracking coordinate system as sidereal, non-sidereal or local.</Description>
+      <Description>Coordinate system of target: one of sidereal, non-sidereal or local. Echoed from the trackTarget command.</Description>
       <IDL_Type>string</IDL_Type>
       <IDL_Size>256</IDL_Size>
       <Units>unitless</Units>
@@ -243,7 +574,7 @@
     </item>
     <item>
       <EFDB_Name>radesys</EFDB_Name>
-      <Description>Coordinate reference frame of RA/DEC axes. This originates from the pointing component and is used for WCS definition (e.g. FK5 or ICRS).</Description>
+      <Description>Coordinate reference frame of RA/DEC axes (e.g. ICRS or FK5). Echoed from the trackTarget command.</Description>
       <IDL_Type>string</IDL_Type>
       <IDL_Size>256</IDL_Size>
       <Units>unitless</Units>
@@ -253,6 +584,7 @@
   <SALEvent>
     <Subsystem>MTMount</Subsystem>
     <EFDB_Topic>MTMount_logevent_warning</EFDB_Topic>
+    <Description>State of a warning (dentified by the code field).</Description>
     <item>
       <EFDB_Name>active</EFDB_Name>
       <Description>Is the warning condition present?</Description>
