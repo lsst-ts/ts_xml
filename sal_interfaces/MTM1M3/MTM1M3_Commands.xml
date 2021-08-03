@@ -768,7 +768,7 @@
     </Description>
     <item>
       <EFDB_Name>actuatorId</EFDB_Name>
-      <Description>Id of the actuator to test.</Description>
+      <Description>ID of the actuator to test.</Description>
       <IDL_Type>long</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
@@ -793,6 +793,41 @@
     <EFDB_Topic>MTM1M3_command_killForceActuatorBumpTest</EFDB_Topic>
     <Description>
         Stop any running force actuator bump test.
+    </Description>
+  </SALCommand>
+  <SALCommand>
+    <Subsystem>MTM1M3</Subsystem>
+    <EFDB_Topic>MTM1M3_command_disableForceActuator</EFDB_Topic>
+    <Description>
+        Disable given force actuator.
+    </Description>
+    <item>
+      <EFDB_Name>actuatorId</EFDB_Name>
+      <Description>ID of the actuator to disable.</Description>
+      <IDL_Type>long</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+  </SALCommand>
+  <SALCommand>
+    <Subsystem>MTM1M3</Subsystem>
+    <EFDB_Topic>MTM1M3_command_enableForceActuator</EFDB_Topic>
+    <Description>
+        Enable given force actuator.
+    </Description>
+    <item>
+      <EFDB_Name>actuatorId</EFDB_Name>
+      <Description>ID of the actuator to enable.</Description>
+      <IDL_Type>long</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+  </SALCommand>
+  <SALCommand>
+    <Subsystem>MTM1M3</Subsystem>
+    <EFDB_Topic>MTM1M3_command_enableAllForceActuators</EFDB_Topic>
+    <Description>
+        Enable all M1M3 force actuators.
     </Description>
   </SALCommand>
 </SALCommandSet>
