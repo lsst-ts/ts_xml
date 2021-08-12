@@ -10,13 +10,8 @@
         AxisMotionState_TrackingPaused=5
     </Enumeration>
   <Enumeration>
-        BasicPowerState_Off=0,
-        BasicPowerState_On=1,
-        BasicPowerState_Fault=2
-    </Enumeration>
-  <Enumeration>
         Commander_None=0,
-        Commander_TCS=1,
+        Commander_CSC=1,
         Commander_EUI=2,
         Commander_HHD=3
     </Enumeration>
@@ -26,13 +21,6 @@
         DeployableMotionState_Retracting=2,
         DeployableMotionState_Deploying=3,
         DeployableMotionState_Lost=4
-    </Enumeration>
-  <Enumeration>
-        FancyPowerState_Off=0,
-        FancyPowerState_On=1,
-        FancyPowerState_TurningOn=2,
-        FancyPowerState_TurningOff=3,
-        FancyPowerState_Fault=4
     </Enumeration>
   <Enumeration>
         LimitsMask_L1Min=0x01,
@@ -54,6 +42,14 @@
         ElevationLockingPinMotionState_Mismatch=4
     </Enumeration>
   <Enumeration>
+        PowerState_Off=0,
+        PowerState_On=1,
+        PowerState_Fault=2,
+        PowerState_TurningOn=3,
+        PowerState_TurningOff=4,
+        PowerState_Unknown=15
+    </Enumeration>
+  <Enumeration>
         System_Azimuth=0,
         System_Elevation=1,
         System_CameraCableWrap=2,
@@ -62,16 +58,477 @@
         System_MirrorCoverLocks=5,
         System_AzimuthCableWrap=6,
         System_LockingPins=7,
-        System_DeployablePlatform=8,
+        System_DeployablePlatforms=8,
         System_OilSupplySystem=9,
         System_AzimuthDrivesThermal=10,
         System_ElevationDrivesThermal=11,
         System_AZ0101CabinetThermal=12,
-        System_ModbusTemperatureController=13,
+        System_ModbusTemperatureControllers=13,
         System_MainCabinet=14,
         System_MainAxesPowerSupply=15,
         System_TopEndChiller=16
     </Enumeration>
+  <SALEvent>
+    <Subsystem>MTMount</Subsystem>
+    <EFDB_Topic>MTMount_logevent_availableSettings</EFDB_Topic>
+    <Description>Available low-level controller settings.</Description>
+    <item>
+      <EFDB_Name>names</EFDB_Name>
+      <Description>Comma-separated names.</Description>
+      <IDL_Type>string</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>descriptions</EFDB_Name>
+      <Description>Comma-separated descriptions.</Description>
+      <IDL_Type>string</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>createdDates</EFDB_Name>
+      <Description>Comma-separated created dates (ISO format).</Description>
+      <IDL_Type>string</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>modifiedDates</EFDB_Name>
+      <Description>Comma-separated modified dates (ISO format).</Description>
+      <IDL_Type>string</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+  </SALEvent>
+  <SALEvent>
+    <Subsystem>MTMount</Subsystem>
+    <EFDB_Topic>MTMount_logevent_azimuthSystemState</EFDB_Topic>
+    <Description>State of the azimuth system.</Description>
+    <item>
+      <EFDB_Name>powerState</EFDB_Name>
+      <Description>Power state; a PowerState enum.</Description>
+      <IDL_Type>int</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>motionControllerState</EFDB_Name>
+      <Description>Power state of each motion controller; a PowerState enum.</Description>
+      <IDL_Type>int</IDL_Type>
+      <Units>unitless</Units>
+      <Count>16</Count>
+    </item>
+  </SALEvent>
+  <SALEvent>
+    <Subsystem>MTMount</Subsystem>
+    <EFDB_Topic>MTMount_logevent_elevationSystemState</EFDB_Topic>
+    <Description>State of the elevation system.</Description>
+    <item>
+      <EFDB_Name>powerState</EFDB_Name>
+      <Description>Power state; a PowerState enum.</Description>
+      <IDL_Type>int</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>motionControllerState</EFDB_Name>
+      <Description>Power state of each motion controller; a PowerState enum.</Description>
+      <IDL_Type>int</IDL_Type>
+      <Units>unitless</Units>
+      <Count>12</Count>
+    </item>
+  </SALEvent>
+  <SALEvent>
+    <Subsystem>MTMount</Subsystem>
+    <EFDB_Topic>MTMount_logevent_cameraCableWrapSystemState</EFDB_Topic>
+    <Description>State of the cameraCableWrap system.</Description>
+    <item>
+      <EFDB_Name>powerState</EFDB_Name>
+      <Description>Power state; a PowerState enum.</Description>
+      <IDL_Type>int</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>motionControllerState</EFDB_Name>
+      <Description>Power state of each motion controller; a PowerState enum.</Description>
+      <IDL_Type>int</IDL_Type>
+      <Units>unitless</Units>
+      <Count>2</Count>
+    </item>
+  </SALEvent>
+  <SALEvent>
+    <Subsystem>MTMount</Subsystem>
+    <EFDB_Topic>MTMount_logevent_balanceSystemState</EFDB_Topic>
+    <Description>State of the balance system.</Description>
+    <item>
+      <EFDB_Name>powerState</EFDB_Name>
+      <Description>Overall power state of the balancing system; a PowerState enum.</Description>
+      <IDL_Type>int</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>elementPowerState</EFDB_Name>
+      <Description>Power state of each drive system; a PowerState enum.</Description>
+      <IDL_Type>int</IDL_Type>
+      <Units>unitless</Units>
+      <Count>4</Count>
+    </item>
+    <item>
+      <EFDB_Name>motionControllerState</EFDB_Name>
+      <Description>Power state of each motion controller; a PowerState enum.</Description>
+      <IDL_Type>int</IDL_Type>
+      <Units>unitless</Units>
+      <Count>4</Count>
+    </item>
+  </SALEvent>
+  <SALEvent>
+    <Subsystem>MTMount</Subsystem>
+    <EFDB_Topic>MTMount_logevent_mirrorCoversSystemState</EFDB_Topic>
+    <Description>State of the mirror covers system. This has 4 independent elements, each controlled by one motion controller.</Description>
+    <item>
+      <EFDB_Name>powerState</EFDB_Name>
+      <Description>Power state; a PowerState enum.</Description>
+      <IDL_Type>int</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>elementPowerState</EFDB_Name>
+      <Description>Power state of each element; a PowerState enum.</Description>
+      <IDL_Type>int</IDL_Type>
+      <Units>unitless</Units>
+      <Count>4</Count>
+    </item>
+    <item>
+      <EFDB_Name>motionControllerState</EFDB_Name>
+      <Description>Power state of each motion controller; a PowerState enum.</Description>
+      <IDL_Type>int</IDL_Type>
+      <Units>unitless</Units>
+      <Count>4</Count>
+    </item>
+  </SALEvent>
+  <SALEvent>
+    <Subsystem>MTMount</Subsystem>
+    <EFDB_Topic>MTMount_logevent_mirrorCoverLocksSystemState</EFDB_Topic>
+    <Description>State of the mirror cover locks system. This has 4 independent elements, each controlled by one motion controller.</Description>
+    <item>
+      <EFDB_Name>powerState</EFDB_Name>
+      <Description>Power state; a PowerState enum.</Description>
+      <IDL_Type>int</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>elementPowerState</EFDB_Name>
+      <Description>Power state of each element; a PowerState enum.</Description>
+      <IDL_Type>int</IDL_Type>
+      <Units>unitless</Units>
+      <Count>4</Count>
+    </item>
+    <item>
+      <EFDB_Name>motionControllerState</EFDB_Name>
+      <Description>Power state of each motion controller; a PowerState enum.</Description>
+      <IDL_Type>int</IDL_Type>
+      <Units>unitless</Units>
+      <Count>4</Count>
+    </item>
+  </SALEvent>
+  <SALEvent>
+    <Subsystem>MTMount</Subsystem>
+    <EFDB_Topic>MTMount_logevent_azimuthCableWrapSystemState</EFDB_Topic>
+    <Description>State of the azimuth cable wrap system.</Description>
+    <item>
+      <EFDB_Name>powerState</EFDB_Name>
+      <Description>Power state; a PowerState enum.</Description>
+      <IDL_Type>int</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>motionControllerState</EFDB_Name>
+      <Description>Power state of each motion controller; a PowerState enum.</Description>
+      <IDL_Type>int</IDL_Type>
+      <Units>unitless</Units>
+      <Count>2</Count>
+    </item>
+  </SALEvent>
+  <SALEvent>
+    <Subsystem>MTMount</Subsystem>
+    <EFDB_Topic>MTMount_logevent_lockingPinsSystemState</EFDB_Topic>
+    <Description>State of the locking pins system. This has 2 independent elements, each controlled by one motion controller.</Description>
+    <item>
+      <EFDB_Name>powerState</EFDB_Name>
+      <Description>Power state; a PowerState enum.</Description>
+      <IDL_Type>int</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>elementPowerState</EFDB_Name>
+      <Description>Power state of each element; a PowerState enum.</Description>
+      <IDL_Type>int</IDL_Type>
+      <Units>unitless</Units>
+      <Count>2</Count>
+    </item>
+    <item>
+      <EFDB_Name>motionControllerState</EFDB_Name>
+      <Description>Power state of each motion controller; a PowerState enum.</Description>
+      <IDL_Type>int</IDL_Type>
+      <Units>unitless</Units>
+      <Count>2</Count>
+    </item>
+  </SALEvent>
+  <SALEvent>
+    <Subsystem>MTMount</Subsystem>
+    <EFDB_Topic>MTMount_logevent_deployablePlatformsSystemState</EFDB_Topic>
+    <Description>State of the deployable platforms system. This has 2 independent elements, each controlled by 2 motion controller.</Description>
+    <item>
+      <EFDB_Name>powerState</EFDB_Name>
+      <Description>Power state; a PowerState enum.</Description>
+      <IDL_Type>int</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>elementPowerState</EFDB_Name>
+      <Description>Power state of each element; a PowerState enum.</Description>
+      <IDL_Type>int</IDL_Type>
+      <Units>unitless</Units>
+      <Count>2</Count>
+    </item>
+    <item>
+      <EFDB_Name>motionControllerState</EFDB_Name>
+      <Description>Power state of each motion controller; a PowerState enum.</Description>
+      <IDL_Type>int</IDL_Type>
+      <Units>unitless</Units>
+      <Count>4</Count>
+    </item>
+  </SALEvent>
+  <SALEvent>
+    <Subsystem>MTMount</Subsystem>
+    <EFDB_Topic>MTMount_logevent_oilSupplySystemState</EFDB_Topic>
+    <Description>State of the deployable platform system.</Description>
+    <item>
+      <EFDB_Name>powerState</EFDB_Name>
+      <Description>Overall power state; a PowerState enum.</Description>
+      <IDL_Type>int</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>coolingPowerState</EFDB_Name>
+      <Description>Power state of the oil cooling system; a PowerState enum.</Description>
+      <IDL_Type>int</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>oilPowerState</EFDB_Name>
+      <Description>Power state of each oil system (?); a PowerState enum.</Description>
+      <IDL_Type>int</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>mainPumpPowerState</EFDB_Name>
+      <Description>Power state of the main oil pump system; a PowerState enum.</Description>
+      <IDL_Type>int</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>trackAmbient</EFDB_Name>
+      <Description>Is setTemperature the ambient temperature (true=yes), per element.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>setTemperature</EFDB_Name>
+      <Description>Temperature set point.</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>deg_C</Units>
+      <Count>1</Count>
+    </item>
+  </SALEvent>
+  <SALEvent>
+    <Subsystem>MTMount</Subsystem>
+    <EFDB_Topic>MTMount_logevent_azimuthDrivesThermalSystemState</EFDB_Topic>
+    <Description>State of the azimuth drive thermal control system.</Description>
+    <item>
+      <EFDB_Name>powerState</EFDB_Name>
+      <Description>Power state; a PowerState enum.</Description>
+      <IDL_Type>int</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>elementPowerState</EFDB_Name>
+      <Description>Power state of each element; a PowerState enum.</Description>
+      <IDL_Type>int</IDL_Type>
+      <Units>unitless</Units>
+      <Count>4</Count>
+    </item>
+    <item>
+      <EFDB_Name>trackAmbient</EFDB_Name>
+      <Description>Is setTemperature the ambient temperature (true=yes), per element.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>4</Count>
+    </item>
+    <item>
+      <EFDB_Name>setTemperature</EFDB_Name>
+      <Description>Temperature set point per element.</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>deg_C</Units>
+      <Count>4</Count>
+    </item>
+  </SALEvent>
+  <SALEvent>
+    <Subsystem>MTMount</Subsystem>
+    <EFDB_Topic>MTMount_logevent_elevationDrivesThermalSystemState</EFDB_Topic>
+    <Description>State of the elevation drive thermal control system.</Description>
+    <item>
+      <EFDB_Name>powerState</EFDB_Name>
+      <Description>Power state; a PowerState enum.</Description>
+      <IDL_Type>int</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>elementPowerState</EFDB_Name>
+      <Description>Power state of each element; a PowerState enum.</Description>
+      <IDL_Type>int</IDL_Type>
+      <Units>unitless</Units>
+      <Count>2</Count>
+    </item>
+    <item>
+      <EFDB_Name>trackAmbient</EFDB_Name>
+      <Description>Is setTemperature the ambient temperature (true=yes), per element.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>2</Count>
+    </item>
+    <item>
+      <EFDB_Name>setTemperature</EFDB_Name>
+      <Description>Temperature set point per element.</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>deg_C</Units>
+      <Count>2</Count>
+    </item>
+  </SALEvent>
+  <SALEvent>
+    <Subsystem>MTMount</Subsystem>
+    <EFDB_Topic>MTMount_logevent_az0101CabinetThermalSystemState</EFDB_Topic>
+    <Description>State of the AZ0101 cabinet thermal control system.</Description>
+    <item>
+      <EFDB_Name>powerState</EFDB_Name>
+      <Description>Power state; a PowerState enum.</Description>
+      <IDL_Type>int</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>trackAmbient</EFDB_Name>
+      <Description>Is setTemperature the ambient temperature (true=yes).</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>setTemperature</EFDB_Name>
+      <Description>Temperature set point.</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>deg_C</Units>
+      <Count>1</Count>
+    </item>
+  </SALEvent>
+  <SALEvent>
+    <Subsystem>MTMount</Subsystem>
+    <EFDB_Topic>MTMount_logevent_modbusTemperatureControllersSystemState</EFDB_Topic>
+    <Description>State of the Modbus (cabinet) temperature controller system.</Description>
+    <item>
+      <EFDB_Name>powerState</EFDB_Name>
+      <Description>Power state; a PowerState enum.</Description>
+      <IDL_Type>int</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>elementPowerState</EFDB_Name>
+      <Description>Power state of each element; a PowerState enum.</Description>
+      <IDL_Type>int</IDL_Type>
+      <Units>unitless</Units>
+      <Count>5</Count>
+    </item>
+    <item>
+      <EFDB_Name>trackAmbient</EFDB_Name>
+      <Description>Is setTemperature the ambient temperature (true=yes).</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>5</Count>
+    </item>
+    <item>
+      <EFDB_Name>setTemperature</EFDB_Name>
+      <Description>Temperature set point.</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>deg_C</Units>
+      <Count>5</Count>
+    </item>
+  </SALEvent>
+  <SALEvent>
+    <Subsystem>MTMount</Subsystem>
+    <EFDB_Topic>MTMount_logevent_mainCabinetSystemState</EFDB_Topic>
+    <Description>State of the main cabinet system.</Description>
+    <item>
+      <EFDB_Name>powerState</EFDB_Name>
+      <Description>Power state; a PowerState enum.</Description>
+      <IDL_Type>int</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+  </SALEvent>
+  <SALEvent>
+    <Subsystem>MTMount</Subsystem>
+    <EFDB_Topic>MTMount_logevent_mainAxesPowerSupplySystemState</EFDB_Topic>
+    <Description>State of the main axes power supply system.</Description>
+    <item>
+      <EFDB_Name>powerState</EFDB_Name>
+      <Description>Power state; a PowerState enum.</Description>
+      <IDL_Type>int</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+  </SALEvent>
+  <SALEvent>
+    <Subsystem>MTMount</Subsystem>
+    <EFDB_Topic>MTMount_logevent_topEndChillerSystemState</EFDB_Topic>
+    <Description>State of the top end chiller system.</Description>
+    <item>
+      <EFDB_Name>powerState</EFDB_Name>
+      <Description>Power state; a PowerState enum.</Description>
+      <IDL_Type>int</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>trackAmbient</EFDB_Name>
+      <Description>Is setTemperature the ambient temperature (true=yes).</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>setTemperature</EFDB_Name>
+      <Description>Temperature set point.</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>deg_C</Units>
+      <Count>1</Count>
+    </item>
+  </SALEvent>
   <SALEvent>
     <Subsystem>MTMount</Subsystem>
     <EFDB_Topic>MTMount_logevent_elevationInPosition</EFDB_Topic>
@@ -182,63 +639,6 @@
   </SALEvent>
   <SALEvent>
     <Subsystem>MTMount</Subsystem>
-    <EFDB_Topic>MTMount_logevent_elevationLimitPositions</EFDB_Topic>
-    <Description>Positions of the elevation L1 (software) limits.</Description>
-    <item>
-      <EFDB_Name>min</EFDB_Name>
-      <Description>Position of the minimum limit.</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>deg</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>max</EFDB_Name>
-      <Description>Position of the maximum limit.</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>deg</Units>
-      <Count>1</Count>
-    </item>
-  </SALEvent>
-  <SALEvent>
-    <Subsystem>MTMount</Subsystem>
-    <EFDB_Topic>MTMount_logevent_azimuthLimitPositions</EFDB_Topic>
-    <Description>Positions of the azimuth L1 (software) limits.</Description>
-    <item>
-      <EFDB_Name>min</EFDB_Name>
-      <Description>Position of the minimum limit.</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>deg</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>max</EFDB_Name>
-      <Description>Position of the maximum limit.</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>deg</Units>
-      <Count>1</Count>
-    </item>
-  </SALEvent>
-  <SALEvent>
-    <Subsystem>MTMount</Subsystem>
-    <EFDB_Topic>MTMount_logevent_cameraCableWrapLimitPositions</EFDB_Topic>
-    <Description>Positions of the camera cable wrap L1 (software) limits.</Description>
-    <item>
-      <EFDB_Name>min</EFDB_Name>
-      <Description>Position of the minimum limit.</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>deg</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>max</EFDB_Name>
-      <Description>Position of the maximum limit.</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>deg</Units>
-      <Count>1</Count>
-    </item>
-  </SALEvent>
-  <SALEvent>
-    <Subsystem>MTMount</Subsystem>
     <EFDB_Topic>MTMount_logevent_azimuthToppleBlock</EFDB_Topic>
     <Description>State of the topple block for the azimuth axis.</Description>
     <item>
@@ -303,7 +703,7 @@
     <Description>Who controls the low-level controller.</Description>
     <item>
       <EFDB_Name>commander</EFDB_Name>
-      <Description>Who controls the low-level controller.</Description>
+      <Description>Who controls the low-level controller; a Commander enum.</Description>
       <IDL_Type>int</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
@@ -330,8 +730,8 @@
   </SALEvent>
   <SALEvent>
     <Subsystem>MTMount</Subsystem>
-    <EFDB_Topic>MTMount_logevent_deployablePlatformMotionState</EFDB_Topic>
-    <Description>Motion state of deployable platform.</Description>
+    <EFDB_Topic>MTMount_logevent_deployablePlatformsMotionState</EFDB_Topic>
+    <Description>Motion state of deployable platforms.</Description>
     <item>
       <EFDB_Name>state</EFDB_Name>
       <Description>Aggregate motion state, a DeployableMotionState enum.</Description>
