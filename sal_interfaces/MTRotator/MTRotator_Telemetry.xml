@@ -82,6 +82,13 @@
       <Count>1</Count>
     </item>
     <item>
+      <EFDB_Name>odometer</EFDB_Name>
+      <Description>Cumulative distance the rotator has traveled.</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>deg</Units>
+      <Count>1</Count>
+    </item>
+    <item>
       <EFDB_Name>timestamp</EFDB_Name>
       <Description>Time at which telemetry was obtained. Will not be fully accurate until DM-26382 is implemented and the CSC updated to use it.</Description>
       <IDL_Type>double</IDL_Type>
@@ -110,19 +117,35 @@
   <SALTelemetry>
     <Subsystem>MTRotator</Subsystem>
     <EFDB_Topic>MTRotator_motors</EFDB_Topic>
-    <Description>Encoder readings from each rotator motor</Description>
+    <Description>Data about the two rotator motors, in order A, B</Description>
     <item>
       <EFDB_Name>calibrated</EFDB_Name>
-      <Description>Encoder readings scaled to degrees of motion of the rotator.</Description>
+      <Description>Motor encoder readings, scaled to degrees of motion of the rotator.</Description>
       <IDL_Type>double</IDL_Type>
       <Units>deg</Units>
       <Count>2</Count>
     </item>
     <item>
       <EFDB_Name>raw</EFDB_Name>
-      <Description>Encoder readings in raw counts.</Description>
+      <Description>Motor encoder readings in raw counts.</Description>
       <IDL_Type>double</IDL_Type>
       <Units>unitless</Units>
+      <Count>2</Count>
+    </item>
+    <!-- DM-31447 Uncomment to add current when the data is available from the low-level controller
+    <item>
+      <EFDB_Name>current</EFDB_Name>
+      <Description>Motor current.</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>A</Units>
+      <Count>2</Count>
+    </item>
+    -->
+    <item>
+      <EFDB_Name>torque</EFDB_Name>
+      <Description>Motor torque.</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>N m</Units>
       <Count>2</Count>
     </item>
   </SALTelemetry>
