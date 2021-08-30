@@ -5350,4 +5350,466 @@
       <Count>156</Count>
     </item>
   </SALEvent>
+  <SALEvent>
+    <Subsystem>MTM1M3</Subsystem>
+    <EFDB_Topic>MTM1M3_logevent_forceActuatorSettings</EFDB_Topic>
+    <Description>Force actuator settings.</Description>
+    <item>
+      <EFDB_Name>netAberrationForceTolerance</EFDB_Name>
+      <Description>Aberration forces and moments shall fall inside this tolerance range (+- the value). Prevents excessive aberration forces to reach M1M3.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>netActiveOpticForceTolerance</EFDB_Name>
+      <Description>Active optic forces and moments shall fall inside this tolerance range (+- the value). Prevents active optics CSC to send excessive offorces.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>enabledActuators</EFDB_Name>
+      <Description>Actuators enabled/disabled in settings.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>156</Count>
+    </item>
+    <item>
+      <EFDB_Name>useInclinometer</EFDB_Name>
+      <Description>If true, internal inclinometer is used. False otherwise (Mount inclinometer is then used).</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>mirrorXMoment</EFDB_Name>
+      <Description>Expected mirror X moment. Used for moment checks (momement percentage deviation shall be close enough to the expected value).</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>N m</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>mirrorYMoment</EFDB_Name>
+      <Description>Expected mirror Y moment. Used for moment checks (momement percentage deviation shall be close enough to the expected value).</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>N m</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>mirrorZMoment</EFDB_Name>
+      <Description>Expected mirror Z moment. Used for moment checks (momement percentage deviation shall be close enough to the expected value).</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>N m</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>setpointXMomentLowLimitFactor</EFDB_Name>
+      <Description>Minimum factor for X moment range check. X moment shall be &gt; mirrorXMoment * factor to pass.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>setpointXMomentHighLimitFactor</EFDB_Name>
+      <Description>Maximum factor for X moment range check. X moment shall be &lt; mirrorXMoment * factor to pass.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>setpointYMomentLowLimitFactor</EFDB_Name>
+      <Description>Minimum factor for Y moment range check. Y moment shall be &gt; mirrorYMoment * factor to pass.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>setpointYMomentHighLimitFactor</EFDB_Name>
+      <Description>Maximum factor for Y moment range check. Y moment shall be &lt; mirrorYMoment * factor to pass.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>setpointZMomentLowLimitFactor</EFDB_Name>
+      <Description>Minimum factor for Z moment range check. Z moment shall be &gt; mirrorZMoment * factor to pass.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>setpointZMomentHighLimitFactor</EFDB_Name>
+      <Description>Maximum factor for Z moment range check. Z moment shall be &lt; mirrorZMoment * factor to pass.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>setpointNearNeighborLimitFactor</EFDB_Name>
+      <Description>Factor for near neighbor check. Difference between nominal (mirrorWeight / FA_COUNT) and measured average of near neighbors should be less than nominal force * factor for check to pass.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>setpointMirrorWeightLimitFactor</EFDB_Name>
+      <Description>Sum of forced applied to mirror shall be below mirrorWeight * factor. magnitudeWarning is set on violation, and mirror is fauled if FaultOnMagnitudeLimit is true.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>setpointFarNeighborLimitFactor</EFDB_Name>
+      <Description>Factor for far neighbor check. Maximal tolerance factor of global average forces of difference between global average force magnitude and far neighbor vector average magnitude. </Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>mirrorCenterOfGravityX</EFDB_Name>
+      <Description>X coordinate of the mirror center of gravity. Used in moments calculation.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>m</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>mirrorCenterOfGravityY</EFDB_Name>
+      <Description>Y coordinate of the mirror center of gravity. Used in moments calculation.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>m</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>mirrorCenterOfGravityZ</EFDB_Name>
+      <Description>Z coordinate of the mirror center of gravity. Used in moments calculation.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>m</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>raiseIncrementPercentage</EFDB_Name>
+      <Description>During mirror raise target support percentage is incremented by this value every loop (@50Hz) actuator's forces and following errors are within limits.</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>%</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>lowerDecrementPercentage</EFDB_Name>
+      <Description>During lower operation, target support percentage is decrement by this value every loop (@50Hz) actuator's forces are within limits.</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>%</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>raiseLowerFollowingErrorLimit</EFDB_Name>
+      <Description>Force actuator following error limit applied during mirror raising and lowering.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>%</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>bumpTestSettleTime</EFDB_Name>
+      <Description>Time FA bump testing will wait after changing target force to readout measured force.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>s</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>bumpTestMeasurements</EFDB_Name>
+      <Description>Number of measurements performed after bump test force was applied to confirm measured values matches target values.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+  </SALEvent>
+  <SALEvent>
+    <Subsystem>MTM1M3</Subsystem>
+    <EFDB_Topic>MTM1M3_logevent_hardpointActuatorSettings</EFDB_Topic>
+    <Description>Hardpoint actuator settings.</Description>
+    <item>
+      <EFDB_Name>micrometersPerStep</EFDB_Name>
+      <Description>Hardpoint actuator micrometers per stepper motor step.</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>micrometersPerEncoder</EFDB_Name>
+      <Description>Hardpoint actuator encoder micrometers per encoder tick.</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>hardpointMeasuredForceFaultHigh</EFDB_Name>
+      <Description>Maximal force allowed on hardpoint. When crossed, mirror shall be faulted. HP Breakaway mechanism provides extra layer of protection for excessive forces.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>N</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>hardpointMeasuredForceFaultLow</EFDB_Name>
+      <Description>Mnimimal force allowed on hardpoint. When crossed, mirror shall be faulted. HP Breakaway mechanism provides extra layer of protection for excessive forces.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>N</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>hardpointMeasuredForceFSBWarningHigh</EFDB_Name>
+      <Description>Used instead of hardpointMeasuredForceWarningHigh when force system balancing is enabled.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>N</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>hardpointMeasuredForceFSBWarningLow</EFDB_Name>
+      <Description>Used instead of hardpointMeasuredForceWarningLow when force system balancing is enabled.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>N</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>hardpointMeasuredForceWarningHigh</EFDB_Name>
+      <Description>Used for trigger fault when high percentage consecutive HP forces measurements are above this value.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>N</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>hardpointMeasuredForceWarningLow</EFDB_Name>
+      <Description>Used for trigger fault when high percentage of consecutive HP forces measurements are below this value.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>airPressureWarningHigh</EFDB_Name>
+      <Description>Minimal air pressure. HP will breakway and mirror will fail sooner if this value is lower.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>kPa</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>airPressureWarningLow</EFDB_Name>
+      <Description>Maximal allowed HP breakway air pressure. When higher, HP will fail.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>kPa</Units>
+      <Count>1</Count>
+    </item>
+  </SALEvent>
+  <SALEvent>
+    <Subsystem>MTM1M3</Subsystem>
+    <EFDB_Topic>MTM1M3_logevent_displacementSensorSettings</EFDB_Topic>
+    <Description>Displacement sensor settings.</Description>
+    <item>
+      <EFDB_Name>xPositionOffset</EFDB_Name>
+      <Description>Offset (difference between true and IMS position) in X axis. Added to IMS position.</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>m</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>yPositionOffset</EFDB_Name>
+      <Description>Offset (difference between true and IMS position) in Y axis. Added to IMS raw position.</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>m</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>zPositionOffset</EFDB_Name>
+      <Description>Offset (difference between true and IMS position) in Z axis. Added to IMS raw position.</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>m</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>xRotationOffset</EFDB_Name>
+      <Description>Offset (difference between true and IMS rotation) along X axis. Added to IMS raw rotation.</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>m</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>yRotationOffset</EFDB_Name>
+      <Description>Offset (difference between true and IMS rotation) along Y axis. Added to IMS raw rotation.</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>m</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>zRotationOffset</EFDB_Name>
+      <Description>Offset (difference between true and IMS rotation) along Z axis. Added to IMS raw rotation.</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>m</Units>
+      <Count>1</Count>
+    </item>
+  </SALEvent>
+  <SALEvent>
+    <Subsystem>MTM1M3</Subsystem>
+    <EFDB_Topic>MTM1M3_logevent_pidSettings</EFDB_Topic>
+    <Description>PID settings. Used by force balancing algorithm to react on HP detected force excess and correct that towards 0. Parameters are transmitted as 6 member array, representing Fx, Fy, Fz, Mx, My and Mz.</Description>
+    <item>
+      <EFDB_Name>timestep</EFDB_Name>
+      <Description>PID's step length.</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>s</Units>
+      <Count>6</Count>
+    </item>
+    <item>
+      <EFDB_Name>p</EFDB_Name>
+      <Description>Proportional gain.</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>unitless</Units>
+      <Count>6</Count>
+    </item>
+    <item>
+      <EFDB_Name>i</EFDB_Name>
+      <Description>Integral gain.</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>unitless</Units>
+      <Count>6</Count>
+    </item>
+    <item>
+      <EFDB_Name>d</EFDB_Name>
+      <Description>Derivative gain.</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>unitless</Units>
+      <Count>6</Count>
+    </item>
+    <item>
+      <EFDB_Name>n</EFDB_Name>
+      <Description>The N term.</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>unitless</Units>
+      <Count>6</Count>
+    </item>
+  </SALEvent>
+  <SALEvent>
+    <Subsystem>MTM1M3</Subsystem>
+    <EFDB_Topic>MTM1M3_logevent_accelerometerSettings</EFDB_Topic>
+    <Description>Accelerometer settings.</Description>
+    <item>
+      <EFDB_Name>angularAccelerationDistance</EFDB_Name>
+      <Description>X, Y and Z Angular Acceleration Distance.</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>m</Units>
+      <Count>3</Count>
+    </item>
+    <item>
+      <EFDB_Name>bias</EFDB_Name>
+      <Description>Accelerometers bias.</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>unitless</Units>
+      <Count>8</Count>
+    </item>
+    <item>
+      <EFDB_Name>sensitivity</EFDB_Name>
+      <Description>Accelerometers sensitivity.</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>unitless</Units>
+      <Count>8</Count>
+    </item>
+    <item>
+      <EFDB_Name>accelerometerOffset</EFDB_Name>
+      <Description>Accelerometers offset.</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>unitless</Units>
+      <Count>8</Count>
+    </item>
+    <item>
+      <EFDB_Name>scalar</EFDB_Name>
+      <Description>Accelerometers multiplier.</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>unitless</Units>
+      <Count>8</Count>
+    </item>
+    <item>
+      <EFDB_Name>limitsFaultLow</EFDB_Name>
+      <Description>X, Y and Z acceleration low fault limits.</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>unitless</Units>
+      <Count>3</Count>
+    </item>
+    <item>
+      <EFDB_Name>limitsWarningLow</EFDB_Name>
+      <Description>X, Y and Z acceleration low warning limits.</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>unitless</Units>
+      <Count>3</Count>
+    </item>
+    <item>
+      <EFDB_Name>limitsWarningHigh</EFDB_Name>
+      <Description>X, Y and Z acceleration high warning limits.</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>unitless</Units>
+      <Count>3</Count>
+    </item>
+    <item>
+      <EFDB_Name>limitsFaultHigh</EFDB_Name>
+      <Description>X, Y and Z acceleration high fault limits.</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>unitless</Units>
+      <Count>3</Count>
+    </item>
+  </SALEvent>
+  <SALEvent>
+    <Subsystem>MTM1M3</Subsystem>
+    <EFDB_Topic>MTM1M3_logevent_gyroSettings</EFDB_Topic>
+    <Description>Gyroscope settings.</Description>
+    <item>
+      <EFDB_Name>dataRate</EFDB_Name>
+      <Description>Data rate</Description>
+      <IDL_Type>int</IDL_Type>
+      <Units>Hz</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>angularVelocityOffset</EFDB_Name>
+      <Description>X, Y and Z angular velocities offsets.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>m / s</Units>
+      <Count>3</Count>
+    </item>
+  </SALEvent>
+  <SALEvent>
+    <Subsystem>MTM1M3</Subsystem>
+    <EFDB_Topic>MTM1M3_logevent_inclinometerSettings</EFDB_Topic>
+    <Description>Inclinometer settings.</Description>
+    <item>
+      <EFDB_Name>inclinometerOffset</EFDB_Name>
+      <Description>Inclinometer offset.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>deg</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>faultLow</EFDB_Name>
+      <Description>Inclinometer fault low value.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>deg</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>warningLow</EFDB_Name>
+      <Description>Inclinometer warning low value.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>deg</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>warningHigh</EFDB_Name>
+      <Description>Inclinometer warning high value.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>deg</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>faultHigh</EFDB_Name>
+      <Description>Inclinometer fault high value.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>deg</Units>
+      <Count>1</Count>
+    </item>
+  </SALEvent>
 </SALEventSet>
