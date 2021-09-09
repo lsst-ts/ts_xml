@@ -63,6 +63,7 @@ subsystems = [
     "ESS",
     "FiberSpectrograph",
     "GenericCamera",
+    "GIS",
     "Guider",
     "IOTA",
     "HVAC",

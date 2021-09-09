@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="http://lsst-sal.tuc.noao.edu/schema/SALEventSet.xsl"?>
+<SALEventSet xmlns:xsi="http://lsst-sal.tuc.noao.edu/schema/SALEventSet.xsd">
+  <Enumeration>Subsystem_GISCPUInputs,Subsystem_GISCPUOutputs,Subsystem_GISCPUReserve,Subsystem_AccessFireEarthquakeInputs,Subsystem_AccessFireEarthquakeOutputs,Subsystem_AccessFireEarthquakeFree,Subsystem_LaserInputs,Subsystem_LaserOutputs,Subsystem_LaserFree,Subsystem_M2Inputs, Subsystem_M2Outputs, Subsystem_M2Free, Subsystem_PflowInputs,Subsystem_PflowOutputs,Subsystem_PflowFree,Subsystem_AUXCPUInputs,Subsystem_AUXCPUOutputs,Subsystem_DomeInputs,Subsystem_DomeOutputs,Subsystem_M1M3CPUInputs,Subsystem_M1M3CPUOutputs,Subsystem_TMACPUInputs,Subsystem_TMACPUOutputs,Subsystem_SafetyCausesOne,Subsystem_SafetyCausesTwo,Subsystem_SafetyCausesOneOverride,Subsystem_SafetyCausesTwoOverride,Subsystem_SafetyEffectsOne,Subsystem_SafetyEffectsTwo</Enumeration>
+  <SALEvent>
+    <Subsystem>GIS</Subsystem>
+    <EFDB_Topic>GIS_logevent_rawStatus</EFDB_Topic>
+    <item>
+      <EFDB_Name>status</EFDB_Name>
+      <Description>The raw status of the interlock.</Description>
+      <IDL_Type>string</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+  </SALEvent>
+  <SALEvent>
+    <Subsystem>GIS</Subsystem>
+    <EFDB_Topic>GIS_logevent_systemStatus</EFDB_Topic>
+    <item>
+      <EFDB_Name>index</EFDB_Name>
+      <Description>The index of the subsystem.</Description>
+      <IDL_Type>long</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>status</EFDB_Name>
+      <Description>The status of the subsystem.</Description>
+      <IDL_Type>long</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+  </SALEvent>
+</SALEventSet>
