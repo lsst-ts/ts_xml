@@ -115,4 +115,35 @@
       <Count>1</Count>
     </item>
   </SALCommand>
+  <SALCommand>
+    <Subsystem>GenericCamera</Subsystem>
+    <EFDB_Topic>GenericCamera_command_startAutoExposure</EFDB_Topic>
+    <Description>Start automatic exposure taking</Description>
+    <item>
+      <EFDB_Name>minExpTime</EFDB_Name>
+      <Description>Minimum exposure time</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>second</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>maxExpTime</EFDB_Name>
+      <Description>Maximum exposure time</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>second</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>configuration</EFDB_Name>
+      <Description>Additional parameters in YAML format</Description>
+      <IDL_Type>string</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+  </SALCommand>
+  <SALCommand>
+    <Subsystem>GenericCamera</Subsystem>
+    <EFDB_Topic>GenericCamera_command_stopAutoExposure</EFDB_Topic>
+    <Description>Stop automatic exposure taking</Description>
+  </SALCommand>
 </SALCommandSet>

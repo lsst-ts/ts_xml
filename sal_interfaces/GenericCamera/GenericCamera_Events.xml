@@ -794,4 +794,33 @@
     <Subsystem>GenericCamera</Subsystem>
     <EFDB_Topic>GenericCamera_logevent_ccsConfigured</EFDB_Topic>
   </SALEvent>
+  <SALEvent>
+    <Subsystem>GenericCamera</Subsystem>
+    <EFDB_Topic>GenericCamera_logevent_autoExposureStarted</EFDB_Topic>
+    <item>
+      <EFDB_Name>minExpTime</EFDB_Name>
+      <Description>Minimum exposure time</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>second</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>maxExpTime</EFDB_Name>
+      <Description>Maximum exposure time</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>second</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>configuration</EFDB_Name>
+      <Description>Additional parameters in YAML format</Description>
+      <IDL_Type>string</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+  </SALEvent>
+  <SALEvent>
+    <Subsystem>GenericCamera</Subsystem>
+    <EFDB_Topic>GenericCamera_logevent_autoExposureStopped</EFDB_Topic>
+  </SALEvent>
 </SALEventSet>
