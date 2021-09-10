@@ -127,6 +127,7 @@ generic_events = [
     "softwareVersions",
     "summaryState",
     "authList",
+    "largeFileObjectAvailable",
 ]
 
 generic_topics = set(
