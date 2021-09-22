@@ -24,15 +24,15 @@
     <SALCommand>
       <Subsystem>SALGeneric</Subsystem>
       <EFDB_Topic>SALGeneric_command_exitControl</EFDB_Topic>
-      <Description>Transition from state Standby to Offline. For CSCs that start in Standby state this makes the CSC quit. CSCs that start in Offline state, they remain active.</Description>
+      <Description>Transition from state Standby to Offline. For CSCs that use the Standby Entry State Machine this makes the CSC quit. CSCs that use the Offline Entry State Machine remain active.</Description>
     </SALCommand>
     <SALCommand>
       <Subsystem>SALGeneric</Subsystem>
       <EFDB_Topic>SALGeneric_command_start</EFDB_Topic>
-      <Description>Transition from state Standby to Disable, in a specified configuration.</Description>
+      <Description>Transition from state Standby to Disable, with the ability to specify an override configuration to the defaults.</Description>
       <item>
-        <EFDB_Name>settingsToApply</EFDB_Name>
-        <Description>Name of the selected settings set</Description>
+        <EFDB_Name>configurationOverride</EFDB_Name>
+        <Description>Name of the file with the configuration parameter overrides.</Description>
         <IDL_Type>string</IDL_Type>
         <IDL_Size>256</IDL_Size>
         <Units>unitless</Units>
@@ -42,7 +42,7 @@
     <SALCommand>
       <Subsystem>SALGeneric</Subsystem>
       <EFDB_Topic>SALGeneric_command_enterControl</EFDB_Topic>
-      <Description>Transition from state Offline to Standby. Only that start in Offline state CSCs support this command; other CSCs start in Standby state and quit when they go to Offline.</Description>
+      <Description>Transition from state Offline to Standby. Only CSC's using the Offline Entry-State Machine support this command; CSCs using the Standby Entry State Machine quit when they go to Offline.</Description>
     </SALCommand>
     <SALCommand>
       <Subsystem>SALGeneric</Subsystem>
@@ -58,12 +58,12 @@
     </SALCommand>
     <SALCommand>
       <Subsystem>SALGeneric</Subsystem>
-      <EFDB_Topic>SALGeneric_command_setValue</EFDB_Topic>
+      <EFDB_Topic>SALGeneric_command_setConfigurationParameter</EFDB_Topic>
       <item>
         <EFDB_Name>parametersAndValues</EFDB_Name>
-        <Description>List of parameters and their values as a Json string</Description>
+        <Description>List of parameters and their values as a JSON string</Description>
         <IDL_Type>string</IDL_Type>
-        <IDL_Size>256</IDL_Size>
+        <IDL_Size>1</IDL_Size>
         <Units>unitless</Units>
         <Count>1</Count>
       </item>
@@ -105,27 +105,35 @@
   <SALEventSet xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://project.lsst.org/ts/sal_objects/schema/SALEventSet.xsd">
     <SALEvent>
       <Subsystem>SALGeneric</Subsystem>
-      <EFDB_Topic>SALGeneric_logevent_settingVersions</EFDB_Topic>
-      <Description>Information about settings which can be specified in the start command.</Description>
+      <EFDB_Topic>SALGeneric_logevent_configurationsAvailable</EFDB_Topic>
+      <Description>Information about configurations which can be specified in the start command.</Description>
       <item>
-        <EFDB_Name>recommendedSettingsVersion</EFDB_Name>
-        <Description>List of comma seperated recomended versions of settings sets</Description>
+        <EFDB_Name>overrides</EFDB_Name>
+        <Description>List of comma separated configuration override files available in the configuration storage location.</Description>
         <IDL_Type>string</IDL_Type>
         <IDL_Size>1</IDL_Size>
         <Units>unitless</Units>
         <Count>1</Count>
       </item>
       <item>
-        <EFDB_Name>recommendedSettingsLabels</EFDB_Name>
-        <Description>List of comma seperated names of settings sets</Description>
+        <EFDB_Name>url</EFDB_Name>
+        <Description>The URL of the configuration storage location.</Description>
         <IDL_Type>string</IDL_Type>
         <IDL_Size>1</IDL_Size>
         <Units>unitless</Units>
         <Count>1</Count>
       </item>
       <item>
-        <EFDB_Name>settingsUrl</EFDB_Name>
-        <Description>The URL where the settings sets definitions can be found</Description>
+        <EFDB_Name>schemaVersion</EFDB_Name>
+        <Description>The version of the configuration schema currently in use.</Description>
+        <IDL_Type>string</IDL_Type>
+        <IDL_Size>1</IDL_Size>
+        <Units>unitless</Units>
+        <Count>1</Count>
+      </item>
+      <item>
+        <EFDB_Name>version</EFDB_Name>
+        <Description>The SHA associated with the commit of the available configuration storage location.</Description>
         <IDL_Type>string</IDL_Type>
         <IDL_Size>1</IDL_Size>
         <Units>unitless</Units>
@@ -162,23 +170,24 @@
     </SALEvent>
     <SALEvent>
       <Subsystem>SALGeneric</Subsystem>
-      <EFDB_Topic>SALGeneric_logevent_summaryState</EFDB_Topic>
-      <Description>Current summary state of the CSC</Description>
+      <EFDB_Topic>SALGeneric_logevent_statusCode</EFDB_Topic>
+      <Description>Output when a CSC experiences a non-optimal condition that is important to a user but sufficient to raise an error condition.</Description>
       <item>
-        <EFDB_Name>summaryState</EFDB_Name>
-        <Description>High level state machine state identifier</Description>
-        <IDL_Type>long</IDL_Type>
+        <EFDB_Name>mask</EFDB_Name>
+        <Description>An integer representing a bitmask defined in LSE-209</Description>
+        <IDL_Type>int</IDL_Type>
         <Units>unitless</Units>
         <Count>1</Count>
       </item>
     </SALEvent>
     <SALEvent>
       <Subsystem>SALGeneric</Subsystem>
-      <EFDB_Topic>SALGeneric_logevent_appliedSettingsMatchStart</EFDB_Topic>
+      <EFDB_Topic>SALGeneric_logevent_summaryState</EFDB_Topic>
+      <Description>Current summary state of the CSC</Description>
       <item>
-        <EFDB_Name>appliedSettingsMatchStartIsTrue</EFDB_Name>
-        <Description>True when the configuration matches the start conditions</Description>
-        <IDL_Type>boolean</IDL_Type>
+        <EFDB_Name>summaryState</EFDB_Name>
+        <Description>High level state machine state identifier</Description>
+        <IDL_Type>long</IDL_Type>
         <Units>unitless</Units>
         <Count>1</Count>
       </item>
@@ -264,18 +273,42 @@
     </SALEvent>
     <SALEvent>
       <Subsystem>SALGeneric</Subsystem>
-      <EFDB_Topic>SALGeneric_logevent_settingsApplied</EFDB_Topic>
-      <Description>Base settings applied.</Description>
+      <EFDB_Topic>SALGeneric_logevent_configurationApplied</EFDB_Topic>
+      <Description>Summary of loaded configuration(s).</Description>
       <item>
-        <EFDB_Name>settingsVersion</EFDB_Name>
-        <Description>The SHA or name corresponding to the published configuration</Description>
+        <EFDB_Name>configurations</EFDB_Name>
+        <Description>A comma separated list of configurations loaded from the configuration storage location when the CSC transitioned to DISABLED state.</Description>
         <IDL_Type>string</IDL_Type>
-        <IDL_Size>256</IDL_Size>
+        <IDL_Size>1</IDL_Size>
         <Units>unitless</Units>
         <Count>1</Count>
       </item>
       <item>
-        <EFDB_Name>otherSettingsEvents</EFDB_Name>
+        <EFDB_Name>url</EFDB_Name>
+        <Description>The URL of the configuration storage location.</Description>
+        <IDL_Type>string</IDL_Type>
+        <IDL_Size>1</IDL_Size>
+        <Units>unitless</Units>
+        <Count>1</Count>
+      </item>
+      <item>
+        <EFDB_Name>schemaVersion</EFDB_Name>
+        <Description>The version of the configuration schema currently in use.</Description>
+        <IDL_Type>string</IDL_Type>
+        <IDL_Size>1</IDL_Size>
+        <Units>unitless</Units>
+        <Count>1</Count>
+      </item>
+      <item>
+        <EFDB_Name>version</EFDB_Name>
+        <Description>The SHA associated with the commit of the loaded configuration storage location.</Description>
+        <IDL_Type>string</IDL_Type>
+        <IDL_Size>1</IDL_Size>
+        <Units>unitless</Units>
+        <Count>1</Count>
+      </item>
+      <item>
+        <EFDB_Name>otherInfo</EFDB_Name>
         <Description>A comma delimited list of other specific CSC configuration events. This may be blank if no other CSC specific events are necessary</Description>
         <IDL_Type>string</IDL_Type>
         <IDL_Size>1</IDL_Size>

@@ -108,21 +108,21 @@ generic_commands = [
     "start",
     "enterControl",
     "setLogLevel",
-    "setValue",
+    "setConfigurationParameter",
     "setAuthList",
 ]
 
 """Define the array of Generic Events."""
 
 generic_events = [
-    "appliedSettingsMatchStart",
+    "statusCode",
     "authList",
     "errorCode",
     "heartbeat",
     "logLevel",
     "logMessage",
-    "settingsApplied",
-    "settingVersions",
+    "configurationApplied",
+    "configurationsAvailable",
     "simulationMode",
     "softwareVersions",
     "summaryState",
