@@ -108,7 +108,6 @@ generic_commands = [
     "start",
     "enterControl",
     "setLogLevel",
-    "setConfigurationParameter",
     "setAuthList",
 ]
 
