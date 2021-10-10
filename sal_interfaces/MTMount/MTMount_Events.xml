@@ -103,6 +103,362 @@
   </SALEvent>
   <SALEvent>
     <Subsystem>MTMount</Subsystem>
+    <EFDB_Topic>MTMount_logevent_controllerSettingsName</EFDB_Topic>
+    <Description>Settings file used in the low-level controller.</Description>
+    <item>
+      <EFDB_Name>settingsName</EFDB_Name>
+      <Description>Settings file name.</Description>
+      <IDL_Type>string</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+  </SALEvent>
+  <SALEvent>
+    <Subsystem>MTMount</Subsystem>
+    <EFDB_Topic>MTMount_logevent_azimuthControllerSettings</EFDB_Topic>
+    <Description>A selection of low-level controller settings for the azimuth axis.</Description>
+    <item>
+      <EFDB_Name>minCmdPositionEnabled</EFDB_Name>
+      <Description>Min command position software limit enabled.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>maxCmdPositionEnabled</EFDB_Name>
+      <Description>Max command position limit enabled.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>minL1LimitEnabled</EFDB_Name>
+      <Description>Min L1 software limit enabled.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>maxL1LimitEnabled</EFDB_Name>
+      <Description>Max L1 software limit enabled.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>minOperationalL1LimitEnabled</EFDB_Name>
+      <Description>Min operational L1 software limit enabled. If true then minL1Limit is the operational limit, else it is the wider limit. Note that the TMA calls these "Adjustable" limits.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>maxOperationalL1LimitEnabled</EFDB_Name>
+      <Description>Max operational L1 software limit enabled. If true then maxL1Limit is the operational limit, else it is the wider limit. Note that the TMA calls these "Adjustable" limits.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>minL2LimitEnabled</EFDB_Name>
+      <Description>Min L2 direction inhibit limit switch enabled.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>maxL2LimitEnabled</EFDB_Name>
+      <Description>Max L2 direction inhibit limit switch enabled.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>minCmdPosition</EFDB_Name>
+      <Description>Minimum commanded position. Ignored if minCmdPositionLimitEnabled is false.</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>deg</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>maxCmdPosition</EFDB_Name>
+      <Description>Maximum commanded position. Ignored if maxCmdPositionLimitEnabled is false.</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>deg</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>minL1Limit</EFDB_Name>
+      <Description>Minimum position (L1 software limit). The value depends on minOperationalL1LimitEnabled. Ignored if minOperationalL1LimitEnabled and minL1LimitEnabled are both false.</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>deg</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>maxL1Limit</EFDB_Name>
+      <Description>Maximum position (L1 software limit). The value depends on maxOperationalL1LimitEnabled. Ignored if maxOperationalL1LimitEnabled and maxL1LimitEnabled are both false.</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>deg</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>maxVelocity</EFDB_Name>
+      <Description>Maximum abs(velocity).</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>deg/s</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>maxAcceleration</EFDB_Name>
+      <Description>Maximum abs(acceleration).</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>deg/s2</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>maxJerk</EFDB_Name>
+      <Description>Maximum abs(jerk).</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>deg/s3</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>defaultVelocity</EFDB_Name>
+      <Description>Default abs(velocity) for point to point moves.</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>deg/s</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>defaultAcceleration</EFDB_Name>
+      <Description>Default abs(acceleration) for point to point moves.</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>deg/s2</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>defaultJerk</EFDB_Name>
+      <Description>Default abs(jerk) for point to point moves.</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>deg/s3</Units>
+      <Count>1</Count>
+    </item>
+  </SALEvent>
+  <SALEvent>
+    <Subsystem>MTMount</Subsystem>
+    <EFDB_Topic>MTMount_logevent_elevationControllerSettings</EFDB_Topic>
+    <Description>A selection of low-level controller settings for the elevation axis.</Description>
+    <item>
+      <EFDB_Name>minCmdPositionEnabled</EFDB_Name>
+      <Description>Min command position software limit enabled.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>maxCmdPositionEnabled</EFDB_Name>
+      <Description>Max command position limit enabled.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>minL1LimitEnabled</EFDB_Name>
+      <Description>Min L1 software limit enabled.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>maxL1LimitEnabled</EFDB_Name>
+      <Description>Max L1 software limit enabled.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>minOperationalL1LimitEnabled</EFDB_Name>
+      <Description>Min operational L1 software limit enabled. If true then minL1Limit is the operational limit, else it is the wider limit. Note that the TMA calls these "Adjustable" limits.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>maxOperationalL1LimitEnabled</EFDB_Name>
+      <Description>Max operational L1 software limit enabled. If true then maxL1Limit is the operational limit, else it is the wider limit. Note that the TMA calls these "Adjustable" limits.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>minOperationalL2LimitEnabled</EFDB_Name>
+      <Description>Min operational L2 direction inhibit limit switch enabled.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>maxOperationalL2LimitEnabled</EFDB_Name>
+      <Description>Max operational L2 direction inhibit limit switch enabled.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>minL2LimitEnabled</EFDB_Name>
+      <Description>Min L2 direction inhibit limit switch enabled.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>maxL2LimitEnabled</EFDB_Name>
+      <Description>Max L2 direction inhibit limit switch enabled.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>minCmdPosition</EFDB_Name>
+      <Description>Minimum commanded position. Ignored if minCmdPositionLimitEnabled is false.</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>deg</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>maxCmdPosition</EFDB_Name>
+      <Description>Maximum commanded position. Ignored if maxCmdPositionLimitEnabled is false.</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>deg</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>minL1Limit</EFDB_Name>
+      <Description>Minimum position (L1 software limit). The value depends on minOperationalL1LimitEnabled. Ignored if minOperationalL1LimitEnabled and minL1LimitEnabled are both false.</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>deg</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>maxL1Limit</EFDB_Name>
+      <Description>Maximum position (L1 software limit). The value depends on maxOperationalL1LimitEnabled. Ignored if maxOperationalL1LimitEnabled and maxL1LimitEnabled are both false.</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>deg</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>maxVelocity</EFDB_Name>
+      <Description>Maximum abs(velocity).</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>deg/s</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>maxAcceleration</EFDB_Name>
+      <Description>Maximum abs(acceleration).</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>deg/s2</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>maxJerk</EFDB_Name>
+      <Description>Maximum abs(jerk).</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>deg/s3</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>defaultVelocity</EFDB_Name>
+      <Description>Default abs(velocity) for point to point moves.</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>deg/s</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>defaultAcceleration</EFDB_Name>
+      <Description>Default abs(acceleration) for point to point moves.</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>deg/s2</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>defaultJerk</EFDB_Name>
+      <Description>Default abs(jerk) for point to point moves.</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>deg/s3</Units>
+      <Count>1</Count>
+    </item>
+  </SALEvent>
+  <SALEvent>
+    <Subsystem>MTMount</Subsystem>
+    <EFDB_Topic>MTMount_logevent_cameraCableWrapControllerSettings</EFDB_Topic>
+    <Description>A selection of low-level controller settings for the camera cable wrap.</Description>
+    <item>
+      <EFDB_Name>l1LimitsEnabled</EFDB_Name>
+      <Description>If false the L1 software position limits are ignored.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>l2LimitsEnabled</EFDB_Name>
+      <Description>If false the L2 direction inhibit limit switches are ignored.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>minCmdPosition</EFDB_Name>
+      <Description>Minimum commanded position. Ignored if minCmdPositionLimitEnabled is false.</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>deg</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>maxCmdPosition</EFDB_Name>
+      <Description>Maximum commanded position. Ignored if maxCmdPositionLimitEnabled is false.</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>deg</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>minL1Limit</EFDB_Name>
+      <Description>Minimum position (L1 software limit). The value depends on minOperationalL1LimitEnabled. Ignored if minOperationalL1LimitEnabled and minL1LimitEnabled are both false.</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>deg</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>maxL1Limit</EFDB_Name>
+      <Description>Maximum position (L1 software limit). The value depends on maxOperationalL1LimitEnabled. Ignored if maxOperationalL1LimitEnabled and maxL1LimitEnabled are both false.</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>deg</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>maxVelocity</EFDB_Name>
+      <Description>Maximum abs(velocity).</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>deg/s</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>maxAcceleration</EFDB_Name>
+      <Description>Maximum abs(acceleration).</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>deg/s2</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>maxJerk</EFDB_Name>
+      <Description>Maximum abs(jerk).</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>deg/s3</Units>
+      <Count>1</Count>
+    </item>
+  </SALEvent>
+  <SALEvent>
+    <Subsystem>MTMount</Subsystem>
     <EFDB_Topic>MTMount_logevent_azimuthSystemState</EFDB_Topic>
     <Description>State of the azimuth system.</Description>
     <item>
