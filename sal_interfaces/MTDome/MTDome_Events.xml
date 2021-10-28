@@ -2,7 +2,16 @@
 <?xml-stylesheet type="text/xsl" href="http://lsst-sal.tuc.noao.edu/schema/SALEventSet.xsl"?>
 <SALEventSet xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://lsst-sal.tuc.noao.edu/schema/SALEventSet.xsd">
   <Enumeration>EnabledState_Disabled, EnabledState_Enabled, EnabledState_Fault</Enumeration>
-  <Enumeration>MotionState_Closed, MotionState_Crawling, MotionState_Moving, MotionState_Open, MotionState_Parked, MotionState_Parking, MotionState_Stopped, MotionState_Stopping</Enumeration>
+  <Enumeration>
+    MotionState_Closed,
+    MotionState_Crawling,
+    MotionState_Moving,
+    MotionState_Open,
+    MotionState_Parked,
+    MotionState_Parking,
+    MotionState_Stopped,
+    MotionState_Stopping
+  </Enumeration>
   <Enumeration>
         Louver_A1=0,
         Louver_A2=1,
@@ -39,7 +48,14 @@
         Louver_N1=32,
         Louver_N2=33
     </Enumeration>
-  <Enumeration>SubSystemId_AMCS=0x1, SubSystemId_LWSCS=0x2, SubSystemId_APSCS=0x4, SubSystemId_LCS=0x8, SubSystemId_THCS=0x10, SubSystemId_MONCS=0x20</Enumeration>
+  <Enumeration>
+    SubSystemId_AMCS=0x1,
+    SubSystemId_LWSCS=0x2,
+    SubSystemId_APSCS=0x4,
+    SubSystemId_LCS=0x8,
+    SubSystemId_THCS=0x10,
+    SubSystemId_MONCS=0x20
+  </Enumeration>
   <Enumeration>OperationalMode_Normal, OperationalMode_Degraded</Enumeration>
   <SALEvent>
     <Subsystem>MTDome</Subsystem>
@@ -168,7 +184,7 @@
     </item>
     <item>
       <EFDB_Name>subSystemId</EFDB_Name>
-      <Description>The SubSystemId. Due to how the statuses are retrieved, one event per subsystem needs to be sent.</Description>
+      <Description>The subsystem, as a single SubSystemID value.</Description>
       <IDL_Type>int</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
