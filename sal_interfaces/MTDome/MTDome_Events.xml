@@ -5,40 +5,42 @@
   <Enumeration>MotionState_Closed, MotionState_Crawling, MotionState_Moving, MotionState_Open, MotionState_Parked, MotionState_Parking, MotionState_Stopped, MotionState_Stopping</Enumeration>
   <Enumeration>
         Louver_A1=0,
-        Louver_B1=1,
-        Louver_A2=2,
+        Louver_A2=1,
+        Louver_B1=2,
         Louver_B2=3,
         Louver_B3=4,
-        Louver_N1=5,
-        Louver_M1=6,
-        Louver_N2=7,
-        Louver_M2=8,
-        Louver_M3=9,
-        Louver_C1=10,
-        Louver_C2=11,
-        Louver_C3=12,
-        Louver_L1=13,
-        Louver_L2=14,
-        Louver_L3=15,
-        Louver_E1=16,
-        Louver_D2=17,
-        Louver_E2=18,
-        Louver_D3=19,
-        Louver_E3=20,
-        Louver_I1=21,
-        Louver_H1=22,
-        Louver_I2=23,
-        Louver_H2=24,
+        Louver_C1=5,
+        Louver_C2=6,
+        Louver_C3=7,
+        Louver_D1=8,
+        Louver_D2=9,
+        Louver_D3=10,
+        Louver_E1=11,
+        Louver_E2=12,
+        Louver_E3=13,
+        Louver_F1=14,
+        Louver_F2=15,
+        Louver_F3=16,
+        Louver_G1=17,
+        Louver_G2=18,
+        Louver_G3=19,
+        Louver_H1=20,
+        Louver_H2=21,
+        Louver_H3=22,
+        Louver_I1=23,
+        Louver_I2=24,
         Louver_I3=25,
-        Louver_H3=26,
-        Louver_F1=27,
-        Louver_G1=28,
-        Louver_F2=29,
-        Louver_G2=30,
-        Louver_F3=31,
-        Louver_G3=32,
-        Louver_D1=33
+        Louver_L1=26,
+        Louver_L2=27,
+        Louver_L3=28,
+        Louver_M1=29,
+        Louver_M2=30,
+        Louver_M3=31,
+        Louver_N1=32,
+        Louver_N2=33
     </Enumeration>
+  <Enumeration>SubSystemId_AMCS=0x1, SubSystemId_LWSCS=0x2, SubSystemId_APSCS=0x4, SubSystemId_LCS=0x8, SubSystemId_THCS=0x10, SubSystemId_MONCS=0x20</Enumeration>
+  <Enumeration>OperationalMode_Normal, OperationalMode_Degraded</Enumeration>
   <SALEvent>
     <Subsystem>MTDome</Subsystem>
     <EFDB_Topic>MTDome_logevent_azEnabled</EFDB_Topic>
@@ -150,6 +152,25 @@
       <Description>Target velocity; 0 for the moveEl command.</Description>
       <IDL_Type>float</IDL_Type>
       <Units>deg/second</Units>
+      <Count>1</Count>
+    </item>
+  </SALEvent>
+  <SALEvent>
+    <Subsystem>MTDome</Subsystem>
+    <EFDB_Topic>MTDome_logevent_operationalMode</EFDB_Topic>
+    <Description>OperationalMode change.</Description>
+    <item>
+      <EFDB_Name>operationalMode</EFDB_Name>
+      <Description>Operational mode; an OperationalMode enum.</Description>
+      <IDL_Type>int</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>subSystemId</EFDB_Name>
+      <Description>The SubSystemId. Due to how the statuses are retrieved, one event per subsystem needs to be sent.</Description>
+      <IDL_Type>int</IDL_Type>
+      <Units>unitless</Units>
       <Count>1</Count>
     </item>
   </SALEvent>
