@@ -135,6 +135,79 @@ generic_topics = set(
     + [f"logevent_{val}" for val in generic_events]
 )
 
+"""Define the array of AddedGenerics categories."""
+
+added_generics_categories = ["configurable", "csc", "log"]
+
+"""Define the array of AddedGenerics commands that are not mandatory."""
+
+added_generics_commands = ["abort", "enterControl", "setValue"]
+
+"""Define the array of AddedGenerics events that are not mandatory."""
+
+added_generics_events = ["largeFileObjectAvailable"]
+
+"""Define the full set of approved AddedGenerics items."""
+
+added_generics_items = set(
+    added_generics_categories
+    + [f"command_{val}" for val in added_generics_commands]
+    + [f"logevent_{val}" for val in added_generics_events]
+)
+
+"""Define the array of AddedGenerics mandatory commands."""
+
+added_generics_mandatory_commands = ["setAuthList"]
+
+"""Define the array of AddedGenerics mandatory events."""
+
+added_generics_mandatory_events = ["authList", "heartbeat", "softwareVersions"]
+
+"""Define the full set of mandatory topics not needed in AddedGenerics."""
+
+added_generics_mandatory_topics = set(
+    [f"command_{val}" for val in added_generics_mandatory_commands]
+    + [f"logevent_{val}" for val in added_generics_mandatory_events]
+)
+
+"""Define set of commands for csc category."""
+
+added_generics_csc_commands = [
+    "disable",
+    "enable",
+    "exitControl",
+    "setLogLevel",
+    "standby",
+    "start",
+]
+
+"""Define set of events for csc category."""
+
+added_generics_csc_events = [
+    "errorCode",
+    "simulationMode",
+    "summaryState",
+]
+
+"""Define set of commands for log category."""
+
+added_generics_log_commands = []
+
+"""Define set of events for log category."""
+
+added_generics_log_events = ["logLevel", "logMessage"]
+
+"""Define set of commands for configurable category."""
+
+added_generics_configurable_commands = []
+
+"""Define set of events for configurable category."""
+
+added_generics_configurable_events = [
+    "appliedSettingsMatchStart",
+    "settingsApplied",
+    "settingVersions",
+]
 
 """Define the lists of IDL and MySQL Reserved Words"""
 
