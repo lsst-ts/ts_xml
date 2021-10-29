@@ -29,7 +29,7 @@
   <SALEvent>
     <Subsystem>Script</Subsystem>
     <EFDB_Topic>Script_logevent_description</EFDB_Topic>
-    <Description>Script, class name, description and a list of the remotes it uses -- basically metadata that does not usually depend on configuration.</Description>
+    <Description>Script, class name, description, help, and a list of the remotes it uses -- basically metadata that does not usually depend on configuration.</Description>
     <item>
       <EFDB_Name>classname</EFDB_Name>
       <Description>Name of script class.</Description>
@@ -41,6 +41,14 @@
     <item>
       <EFDB_Name>description</EFDB_Name>
       <Description>Brief description of the script.</Description>
+      <IDL_Type>string</IDL_Type>
+      <IDL_Size>1</IDL_Size>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>help</EFDB_Name>
+      <Description>Detailed help for the script. Markdown formatting is encouraged. Describe what the script does, and the configuration options.</Description>
       <IDL_Type>string</IDL_Type>
       <IDL_Size>1</IDL_Size>
       <Units>unitless</Units>
@@ -134,6 +142,13 @@
       <Units>unitless</Units>
       <Count>1</Count>
     </item>
+    <item>
+      <EFDB_Name>totalCheckpoints</EFDB_Name>
+      <Description>Predicted total number of checkpoints that will be seen (counting all repetitions of a repeated checkpoint); 0 if unknown.</Description>
+      <IDL_Type>int</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
   </SALEvent>
   <SALEvent>
     <Subsystem>Script</Subsystem>
@@ -168,6 +183,13 @@
       <Description>Name of most recently seen checkpoint.</Description>
       <IDL_Type>string</IDL_Type>
       <IDL_Size>1</IDL_Size>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>numCheckpoints</EFDB_Name>
+      <Description>The number of checkpoints seen (including repetitions of repeated checkpoints).</Description>
+      <IDL_Type>int</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
     </item>
