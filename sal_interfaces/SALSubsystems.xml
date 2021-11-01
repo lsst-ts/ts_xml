@@ -401,7 +401,7 @@
     <Name>ATMonochromator</Name>
     <Description>Controls the monochromator for the AT calibration system</Description>
     <IndexEnumeration>no</IndexEnumeration>
-    <AddedGenerics>csc, log, configurable</AddedGenerics>
+    <AddedGenerics>csc, log, configurable, logevent_largeFileObjectAvailable</AddedGenerics>
     <ActiveDevelopers>Tiago Ribeiro</ActiveDevelopers>
     <Github>https://github.com/lsst-ts/ts_atmonochromator</Github>
     <JenkinsTestResults>https://tssw-ci.lsst.org/job/LSST_Telescope-and-Site/job/ts_atmonochromator/</JenkinsTestResults>
@@ -509,7 +509,7 @@
     <Name>Electrometer</Name>
     <Description>The CSC for the Electrometer</Description>
     <IndexEnumeration>first,second</IndexEnumeration>
-    <AddedGenerics>csc, log, configurable</AddedGenerics>
+    <AddedGenerics>csc, log, configurable, logevent_largeFileObjectAvailable</AddedGenerics>
     <ActiveDevelopers>Eric Coughlin</ActiveDevelopers>
     <Github>https://github.com/lsst-ts/ts_electrometer2</Github>
     <JenkinsTestResults>https://tssw-ci.lsst.org/job/LSST_Telescope-and-Site/job/ts_electrometer2/</JenkinsTestResults>
@@ -697,7 +697,7 @@
   <SALSubsystem>
     <Name>MTHexapod</Name>
     <Description>The CSC for both the Camera and M2 Hexapod</Description>
-    <IndexEnumeration>CameraHexapod,m2msHexapod</IndexEnumeration>
+    <IndexEnumeration>CameraHexapod,M2Hexapod</IndexEnumeration>
     <AddedGenerics>csc, log, configurable, command_enterControl</AddedGenerics>
     <ActiveDevelopers>Te-Wei Tsai, Russell Owen</ActiveDevelopers>
     <Github>https://github.com/lsst-ts/ts_mthexapod</Github>
@@ -896,7 +896,7 @@
   <SALSubsystem>
     <Name>Scheduler</Name>
     <Description>The CSC for the Scheduler of both the Main and Auxiliary Telescope</Description>
-    <IndexEnumeration>Main,AuxTel</IndexEnumeration>
+    <IndexEnumeration>MainTel,AuxTel</IndexEnumeration>
     <AddedGenerics>csc, log, configurable, logevent_largeFileObjectAvailable</AddedGenerics>
     <ActiveDevelopers>Tiago Ribeiro</ActiveDevelopers>
     <Github>https://github.com/lsst-ts/ts_scheduler</Github>
@@ -915,7 +915,7 @@
     <Name>Script</Name>
     <Description>A "SAL script" that performs some action using SAL and then quits. SAL Scripts are managed by the ScriptQueue.</Description>
     <IndexEnumeration>any</IndexEnumeration>
-    <AddedGenerics>log</AddedGenerics>
+    <AddedGenerics>log, logevent_largeFileObjectAvailable</AddedGenerics>
     <ActiveDevelopers>Russell Owen</ActiveDevelopers>
     <Github>https://github.com/lsst-ts/ts_salobj, https://github.com/lsst-ts/ts_standardscripts, https://github.com/lsst-ts/ts_externalscripts, </Github>
     <JenkinsTestResults>Not Available</JenkinsTestResults>
@@ -932,7 +932,7 @@
   <SALSubsystem>
     <Name>ScriptQueue</Name>
     <Description>A CSC that manages SAL Scripts (see the Script subsystem).</Description>
-    <IndexEnumeration>Main,AuxTel</IndexEnumeration>
+    <IndexEnumeration>MainTel,AuxTel</IndexEnumeration>
     <AddedGenerics>csc, log, configurable</AddedGenerics>
     <ActiveDevelopers>Russell Owen</ActiveDevelopers>
     <Github>https://github.com/lsst-ts/ts_scriptqueue</Github>
@@ -1005,7 +1005,7 @@
     <Name>GenericCamera</Name>
     <Description>The CSC for the Generic Camera</Description>
     <IndexEnumeration>SIMULATOR,AT_ZWO_ASI1600</IndexEnumeration>
-    <AddedGenerics>csc, log, configurable, command_setValue</AddedGenerics>
+    <AddedGenerics>csc, log, configurable, command_setValue, logevent_largeFileObjectAvailable</AddedGenerics>
     <ActiveDevelopers>Tiago Ribeiro, Wouter van Reeven</ActiveDevelopers>
     <Github>https://github.com/lsst-ts/ts_GenericCamera</Github>
     <JenkinsTestResults>https://tssw-ci.lsst.org/job/LSST_Telescope-and-Site/job/ts_GenericCamera/</JenkinsTestResults>
@@ -1022,7 +1022,7 @@
   <SALSubsystem>
     <Name>Guider</Name>
     <Description>Guider CSC.</Description>
-    <IndexEnumeration>Main,AuxTel</IndexEnumeration>
+    <IndexEnumeration>MainTel,AuxTel</IndexEnumeration>
     <AddedGenerics>csc, log, configurable</AddedGenerics>
     <ActiveDevelopers>Dave Mills, Tiago Ribeiro</ActiveDevelopers>
     <Github>https://github.com/lsst-ts/ts_guider</Github>
