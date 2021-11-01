@@ -34,24 +34,60 @@ names only: MT, AT or by key=value pairs (preferred): MT=1, AT=2. Spaces are
 permitted after the comma. The value 0 must not be specified and SAL will
 reject it because 0 has special meaning to SAL.
 
-Generics
-========
+AddedGenerics
+=============
 
 **Data Type**: string or comma-delimited list of strings
 
-This contains the listing of the supported generic events. Acceptable entries
-are:
+This contains the listing of the supported generic commands/events beyond the mandatory ones.
+The mandatory topics are:
 
-    * yes (this means ALL generics will be supported)
-    * no (this mean NO generics will be supported)
-    * comma delimited list of strings of generics supported by the CSC
+  * command_setAuthList
+  * logevent_authList
+  * logevent_heartbeat
+  * logevent_softwareVersions
 
-The last variant names all of the generics explicitly that will be supported.
-The example below is merely a demonstration of what needs to be done and is not
-exhaustive. Whitespace is permitted after a comma.
+These topics *DO NOT* need to be listed in this attribute and are automatically provided to each CSC.
 
-*Example*: command_start, command_enable, command_disable,
-logevent_summaryState, logevent_appliedSettingsMatchStart
+There are three main categories supported by this attribute.
+Each category has specific commands and events associated with it.
+The categories are:
+
+csc
+
+  * command_disable
+  * command_enable
+  * command_exitControl
+  * command_setLogLevel
+  * command_standby
+  * command_start
+  * logevent_errorCode
+  * logevent_simulationMode
+  * logevent_summaryState
+
+log
+
+  * logevent_logLevel
+  * logevent_logMessage
+
+configurable
+
+  * logevent_appliedSettingsMatchStart
+  * logevent_settingsApplied
+  * logevent_settingVersions
+
+The topics listed below must be defined separately.
+
+  * command_abort
+  * command_enterControl
+  * command_setValue
+  * logevent_largeFileObjectAvailable
+
+For a configurable CSC:
+*Example*: csc, log, configurable
+
+For an OFFLINE-entry CSC:
+*Example*: csc, command_enterControl
 
 ActiveDevelopers
 ================

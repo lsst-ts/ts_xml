@@ -178,9 +178,11 @@ def test_index_enumeration_tag(root, csc, index_enumeration):
     ), " ".join(message)
 
 
-@pytest.mark.parametrize("root,csc,generics", get_csc_attr_content("Generics"))
-def test_generics_tag(root, csc, generics):
-    """Test that the <Generics> tag is correctly defined for each CSC.
+@pytest.mark.parametrize(
+    "root,csc,added_generics", get_csc_attr_content("AddedGenerics")
+)
+def test_generics_tag(root, csc, added_generics):
+    """Test that the <AddedGenerics> tag is correctly defined for each CSC.
 
     Parameters
     ----------
@@ -188,21 +190,26 @@ def test_generics_tag(root, csc, generics):
         Root element for the sal_subsystems_file tree.
     csc : `testutils.subsystems`
         Name of the CSC.
-    generics : `get_csc_attr_content("Generics")`
-        Value of the <Generics> tag in sal_subsystems_file.
+    added_generics : `get_csc_attr_content("AddedGenerics")`
+        Value of the <AddedGenerics> tag in sal_subsystems_file.
     """
     # Check for known issues.
-    skip_if_known_issue("generics", csc)
-    if generics in ("yes", "no"):
-        return
-    generics_set = set(val.strip() for val in generics.split(","))
+    skip_if_known_issue("added_generics", csc)
+    generics_set = set(val.strip() for val in added_generics.split(","))
     for generic_name in generics_set:
         assert (
             " " not in generic_name
-        ), f"csc {csc} <Generics> tag '{generic_name}' need a comma"
-    invalid_topics = generics_set - ts_xml.generic_topics
+        ), f"csc {csc} <AddedGenerics> tag '{generic_name}' need a comma"
+    no_mandatory_topics = generics_set.intersection(
+        ts_xml.added_generics_mandatory_topics
+    )
+    assert no_mandatory_topics == set(), (
+        f"The <AddedGenerics> tag for csc {csc} contains mandatory topics: "
+        f"{no_mandatory_topics}. It is not necessary to specify these."
+    )
+    invalid_topics = generics_set - ts_xml.added_generics_items
     assert invalid_topics == set(), (
-        f"The <Generics> tag for csc {csc} has one or more non-generic topics: "
+        f"The <AddedGenerics> tag for csc {csc} has one or more non-generic topics: "
         f"{sorted(invalid_topics)}"
     )
 
