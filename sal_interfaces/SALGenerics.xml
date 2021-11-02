@@ -10,26 +10,31 @@
       <Subsystem>SALGeneric</Subsystem>
       <EFDB_Topic>SALGeneric_command_enable</EFDB_Topic>
       <Description>Transition from state Disabled to Enabled.</Description>
+      <Category>csc</Category>
     </SALCommand>
     <SALCommand>
       <Subsystem>SALGeneric</Subsystem>
       <EFDB_Topic>SALGeneric_command_disable</EFDB_Topic>
       <Description>Transition from state Enabled to Disabled.</Description>
+      <Category>csc</Category>
     </SALCommand>
     <SALCommand>
       <Subsystem>SALGeneric</Subsystem>
       <EFDB_Topic>SALGeneric_command_standby</EFDB_Topic>
       <Description>Transition from state Offline, Disabled or Fault to Standby.</Description>
+      <Category>csc</Category>
     </SALCommand>
     <SALCommand>
       <Subsystem>SALGeneric</Subsystem>
       <EFDB_Topic>SALGeneric_command_exitControl</EFDB_Topic>
       <Description>Transition from state Standby to Offline. For CSCs that start in Standby state this makes the CSC quit. CSCs that start in Offline state, they remain active.</Description>
+      <Category>csc</Category>
     </SALCommand>
     <SALCommand>
       <Subsystem>SALGeneric</Subsystem>
       <EFDB_Topic>SALGeneric_command_start</EFDB_Topic>
       <Description>Transition from state Standby to Disable, in a specified configuration.</Description>
+      <Category>csc</Category>
       <item>
         <EFDB_Name>settingsToApply</EFDB_Name>
         <Description>Name of the selected settings set</Description>
@@ -48,6 +53,7 @@
       <Subsystem>SALGeneric</Subsystem>
       <EFDB_Topic>SALGeneric_command_setLogLevel</EFDB_Topic>
       <Description>Set the logging level.</Description>
+      <Category>csc</Category>
       <item>
         <EFDB_Name>level</EFDB_Name>
         <Description>Logging level, as a Python logging level: error=40, warning=30, info=20, debug=10.</Description>
@@ -71,6 +77,7 @@
     <SALCommand>
       <Subsystem>SALGeneric</Subsystem>
       <EFDB_Topic>SALGeneric_command_setAuthList</EFDB_Topic>
+      <Category>mandatory</Category>
       <item>
         <EFDB_Name>authorizedUsers</EFDB_Name>
         <Description>Comma seperated list of authorized users currently allowed to command this CSC,
@@ -107,6 +114,7 @@
       <Subsystem>SALGeneric</Subsystem>
       <EFDB_Topic>SALGeneric_logevent_settingVersions</EFDB_Topic>
       <Description>Information about settings which can be specified in the start command.</Description>
+      <Category>configurable</Category>
       <item>
         <EFDB_Name>recommendedSettingsVersion</EFDB_Name>
         <Description>List of comma seperated recomended versions of settings sets</Description>
@@ -136,6 +144,7 @@
       <Subsystem>SALGeneric</Subsystem>
       <EFDB_Topic>SALGeneric_logevent_errorCode</EFDB_Topic>
       <Description>Output when a CSC goes into the Fault state as an explanation of the problem.</Description>
+      <Category>csc</Category>
       <item>
         <EFDB_Name>errorCode</EFDB_Name>
         <Description>A numeric error code</Description>
@@ -164,6 +173,7 @@
       <Subsystem>SALGeneric</Subsystem>
       <EFDB_Topic>SALGeneric_logevent_summaryState</EFDB_Topic>
       <Description>Current summary state of the CSC</Description>
+      <Category>csc</Category>
       <item>
         <EFDB_Name>summaryState</EFDB_Name>
         <Description>High level state machine state identifier</Description>
@@ -175,6 +185,7 @@
     <SALEvent>
       <Subsystem>SALGeneric</Subsystem>
       <EFDB_Topic>SALGeneric_logevent_appliedSettingsMatchStart</EFDB_Topic>
+      <Category>configurable</Category>
       <item>
         <EFDB_Name>appliedSettingsMatchStartIsTrue</EFDB_Name>
         <Description>True when the configuration matches the start conditions</Description>
@@ -187,6 +198,7 @@
       <Subsystem>SALGeneric</Subsystem>
       <EFDB_Topic>SALGeneric_logevent_logLevel</EFDB_Topic>
       <Description>Current logging level.</Description>
+      <Category>log</Category>
       <item>
         <EFDB_Name>level</EFDB_Name>
         <Description>Current logging level, a Python logging level: error=40, warning=30, info=20, debug=10.</Description>
@@ -199,6 +211,7 @@
       <Subsystem>SALGeneric</Subsystem>
       <EFDB_Topic>SALGeneric_logevent_logMessage</EFDB_Topic>
       <Description>A log message.</Description>
+      <Category>log</Category>
       <item>
         <EFDB_Name>name</EFDB_Name>
         <Description>Log name.</Description>
@@ -266,6 +279,7 @@
       <Subsystem>SALGeneric</Subsystem>
       <EFDB_Topic>SALGeneric_logevent_settingsApplied</EFDB_Topic>
       <Description>Base settings applied.</Description>
+      <Category>configurable</Category>
       <item>
         <EFDB_Name>settingsVersion</EFDB_Name>
         <Description>The SHA or name corresponding to the published configuration</Description>
@@ -287,6 +301,7 @@
       <Subsystem>SALGeneric</Subsystem>
       <EFDB_Topic>SALGeneric_logevent_simulationMode</EFDB_Topic>
       <Description>Current simulation mode.</Description>
+      <Category>csc</Category>
       <item>
         <EFDB_Name>mode</EFDB_Name>
         <Description>Current simulation mode; 0 for normal operation (no simulation); other supported values are specific to each CSC.</Description>
@@ -299,6 +314,7 @@
       <Subsystem>SALGeneric</Subsystem>
       <EFDB_Topic>SALGeneric_logevent_softwareVersions</EFDB_Topic>
       <Description>Current versions of software in use by CSC.</Description>
+      <Category>mandatory</Category>
       <item>
         <EFDB_Name>salVersion</EFDB_Name>
         <Description>This is the current version of SAL generation</Description>
@@ -343,6 +359,7 @@
     <SALEvent>
       <Subsystem>SALGeneric</Subsystem>
       <EFDB_Topic>SALGeneric_logevent_heartbeat</EFDB_Topic>
+      <Category>mandatory</Category>
       <item>
         <EFDB_Name>heartbeat</EFDB_Name>
         <Description>Beats the drum.</Description>
@@ -354,6 +371,7 @@
     <SALEvent>
       <Subsystem>SALGeneric</Subsystem>
       <EFDB_Topic>SALGeneric_logevent_authList</EFDB_Topic>
+      <Category>mandatory</Category>
       <item>
         <EFDB_Name>authorizedUsers</EFDB_Name>
         <Description>Comma seperated list of authorized users currently allowed to command this CSC.</Description>
