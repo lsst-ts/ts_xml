@@ -28,7 +28,7 @@ XML test suite generator scripts.
 # Variables
 # =========
 
-"""Defines the array of Commandable SAL Components, or CSCs."""
+"""Defines the list of Commandable SAL Components, or CSCs."""
 
 subsystems = [
     "AdamSensors",
@@ -97,7 +97,7 @@ subsystems = [
     "WeatherStation",
 ]
 
-"""Define the array of Generic Commands."""
+"""Define the list of Generic Commands."""
 
 generic_commands = [
     "abort",
@@ -112,7 +112,7 @@ generic_commands = [
     "setAuthList",
 ]
 
-"""Define the array of Generic Events."""
+"""Define the list of Generic Events."""
 
 generic_events = [
     "appliedSettingsMatchStart",
@@ -135,15 +135,15 @@ generic_topics = set(
     + [f"logevent_{val}" for val in generic_events]
 )
 
-"""Define the array of AddedGenerics categories."""
+"""Define the list of AddedGenerics categories."""
 
-added_generics_categories = ["configurable", "csc", "log"]
+added_generics_categories = ["configurable", "csc"]
 
-"""Define the array of AddedGenerics commands that are not mandatory."""
+"""Define the list of AddedGenerics commands that are not mandatory."""
 
 added_generics_commands = ["abort", "enterControl", "setValue"]
 
-"""Define the array of AddedGenerics events that are not mandatory."""
+"""Define the list of AddedGenerics events that are not mandatory."""
 
 added_generics_events = ["largeFileObjectAvailable"]
 
@@ -155,13 +155,19 @@ added_generics_items = set(
     + [f"logevent_{val}" for val in added_generics_events]
 )
 
-"""Define the array of AddedGenerics mandatory commands."""
+"""Define the list of AddedGenerics mandatory commands."""
 
 added_generics_mandatory_commands = ["setAuthList"]
 
-"""Define the array of AddedGenerics mandatory events."""
+"""Define the list of AddedGenerics mandatory events."""
 
-added_generics_mandatory_events = ["authList", "heartbeat", "softwareVersions"]
+added_generics_mandatory_events = [
+    "authList",
+    "heartbeat",
+    "logLevel",
+    "logMessage",
+    "softwareVersions",
+]
 
 """Define the full set of mandatory topics not needed in AddedGenerics."""
 
@@ -170,7 +176,7 @@ added_generics_mandatory_topics = set(
     + [f"logevent_{val}" for val in added_generics_mandatory_events]
 )
 
-"""Define set of commands for csc category."""
+"""Define list of commands for csc category."""
 
 added_generics_csc_commands = [
     "disable",
@@ -181,7 +187,7 @@ added_generics_csc_commands = [
     "start",
 ]
 
-"""Define set of events for csc category."""
+"""Define list of events for csc category."""
 
 added_generics_csc_events = [
     "errorCode",
@@ -189,19 +195,11 @@ added_generics_csc_events = [
     "summaryState",
 ]
 
-"""Define set of commands for log category."""
-
-added_generics_log_commands = []
-
-"""Define set of events for log category."""
-
-added_generics_log_events = ["logLevel", "logMessage"]
-
-"""Define set of commands for configurable category."""
+"""Define list of commands for configurable category."""
 
 added_generics_configurable_commands = []
 
-"""Define set of events for configurable category."""
+"""Define list of events for configurable category."""
 
 added_generics_configurable_events = [
     "appliedSettingsMatchStart",

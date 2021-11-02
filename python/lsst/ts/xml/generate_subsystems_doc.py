@@ -105,9 +105,9 @@ def create_generics_dict(generics):
 
     Parameters
     ----------
-    generics : `str`
-        The list of added generics from SALSubsystems.xml AddedGenerics.
-        Can be blank.
+    generics : `str` or `None`
+        Comma-separated list of added generics, from SalSubsystems.xml
+        AddedGenerics. Ignored if blank or None.
 
     Returns
     -------
@@ -120,18 +120,21 @@ def create_generics_dict(generics):
     commands.extend(testutils.added_generics_mandatory_commands)
     events.extend(testutils.added_generics_mandatory_events)
 
-    for generic in generics.split(","):
-        generic = generic.strip()
-        try:
-            commands.extend(getattr(testutils, f"added_generics_{generic}_commands"))
-            events.extend(getattr(testutils, f"added_generics_{generic}_events"))
-        except AttributeError:
-            if generic.startswith("command"):
-                commands.append(generic.split("_")[-1])
-            elif generic.startswith("logevent"):
-                events.append(generic.split("_")[-1])
-            else:
-                pass
+    if generics:
+        for generic in generics.split(","):
+            generic = generic.strip()
+            try:
+                commands.extend(
+                    getattr(testutils, f"added_generics_{generic}_commands")
+                )
+                events.extend(getattr(testutils, f"added_generics_{generic}_events"))
+            except AttributeError:
+                if generic.startswith("command"):
+                    commands.append(generic.split("_")[-1])
+                elif generic.startswith("logevent"):
+                    events.append(generic.split("_")[-1])
+                else:
+                    pass
 
     generic_dict = {"Command": sorted(commands), "Event": sorted(events)}
     return generic_dict
