@@ -39,17 +39,21 @@ AddedGenerics
 
 **Data Type**: string or comma-delimited list of strings
 
-This contains the listing of the supported generic commands/events beyond the mandatory ones.
+This contains a list of generic topics or categories, excluding mandatory topics.
+If a SAL component only uses mandatory topics then the AddedGenerics field should be empty.
+
 The mandatory topics are:
 
   * command_setAuthList
   * logevent_authList
   * logevent_heartbeat
+  * logevent_logLevel
+  * logevent_logMessage
   * logevent_softwareVersions
 
 These topics *DO NOT* need to be listed in this attribute and are automatically provided to each CSC.
 
-There are three main categories supported by this attribute.
+There are two categories supported by this attribute.
 Each category has specific commands and events associated with it.
 The categories are:
 
@@ -65,11 +69,6 @@ csc
   * logevent_simulationMode
   * logevent_summaryState
 
-log
-
-  * logevent_logLevel
-  * logevent_logMessage
-
 configurable
 
   * logevent_appliedSettingsMatchStart
@@ -78,9 +77,9 @@ configurable
 
 The topics listed below must be defined separately.
 
-  * command_abort
+  * command_abort (deprecated)
   * command_enterControl
-  * command_setValue
+  * command_setValue (deprecated)
   * logevent_largeFileObjectAvailable
 
 For a configurable CSC:

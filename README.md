@@ -21,6 +21,15 @@ The SAL produces libraries in C++, LabVIEW, Java, PyDDS, and Python, for each CS
 
 This repo is primarily a single location for all the definition files.  This repo in conjuction with the SAL are used to produce the code libraries.  Please refer to the documentation in the ts_sal project for instructions on manually producing those libraries.
 
+### Build Documentation
+
+To build the documentation::
+
+    cd doc
+    make
+    package-docs clean
+    package-docs build
+
 ### Testing
 
 To ensure the successful build of your libraries, there are unit tests contained in the tests/ directory.  To run them, first setup the test environment
