@@ -195,6 +195,8 @@ def test_generics_tag(root, csc, added_generics):
     """
     # Check for known issues.
     skip_if_known_issue("added_generics", csc)
+    if added_generics is None:
+        return
     generics_set = set(val.strip() for val in added_generics.split(","))
     for generic_name in generics_set:
         assert (
