@@ -61,6 +61,13 @@
         <Units>unitless</Units>
         <Count>1</Count>
       </item>
+      <item>
+        <EFDB_Name>subsystem</EFDB_Name>
+        <Description>Subsystem this applies to. If empty, the change applies to all subsystems. Beyond that, the meaning depends on the CSC.</Description>
+        <IDL_Type>string</IDL_Type>
+        <Units>unitless</Units>
+        <Count>1</Count>
+      </item>
     </SALCommand>
     <SALCommand>
       <Subsystem>SALGeneric</Subsystem>
@@ -206,6 +213,13 @@
         <Units>unitless</Units>
         <Count>1</Count>
       </item>
+      <item>
+        <EFDB_Name>subsystem</EFDB_Name>
+        <Description>Subsystem this applies to. The empty string if all subsystems. Beyond that, the meaning depends on the CSC.</Description>
+        <IDL_Type>string</IDL_Type>
+        <Units>unitless</Units>
+        <Count>1</Count>
+      </item>
     </SALEvent>
     <SALEvent>
       <Subsystem>SALGeneric</Subsystem>
@@ -272,6 +286,13 @@
         <IDL_Type>long</IDL_Type>
         <IDL_Size>1</IDL_Size>
         <Units>unitless</Units>
+        <Count>1</Count>
+      </item>
+      <item>
+        <EFDB_Name>timestamp</EFDB_Name>
+        <Description>The time at which the condition being reported was observed (TAI unix seconds). 0 if unspecified.</Description>
+        <IDL_Type>double</IDL_Type>
+        <Units>second</Units>
         <Count>1</Count>
       </item>
     </SALEvent>
