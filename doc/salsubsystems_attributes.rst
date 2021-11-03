@@ -44,8 +44,6 @@ If a SAL component only uses mandatory topics then the AddedGenerics field shoul
 
 The mandatory topics are:
 
-  * command_setAuthList
-  * logevent_authList
   * logevent_heartbeat
   * logevent_logLevel
   * logevent_logMessage
@@ -59,12 +57,14 @@ The categories are:
 
 csc
 
+  * command_setAuthList
   * command_disable
   * command_enable
   * command_exitControl
   * command_setLogLevel
   * command_standby
   * command_start
+  * logevent_authList
   * logevent_errorCode
   * logevent_simulationMode
   * logevent_summaryState

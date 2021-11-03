@@ -147,22 +147,13 @@ added_generics_commands = ["abort", "enterControl", "setValue"]
 
 added_generics_events = ["largeFileObjectAvailable"]
 
-"""Define the full set of approved AddedGenerics items."""
-
-added_generics_items = set(
-    added_generics_categories
-    + [f"command_{val}" for val in added_generics_commands]
-    + [f"logevent_{val}" for val in added_generics_events]
-)
-
 """Define the list of AddedGenerics mandatory commands."""
 
-added_generics_mandatory_commands = ["setAuthList"]
+added_generics_mandatory_commands = []
 
 """Define the list of AddedGenerics mandatory events."""
 
 added_generics_mandatory_events = [
-    "authList",
     "heartbeat",
     "logLevel",
     "logMessage",
@@ -182,6 +173,7 @@ added_generics_csc_commands = [
     "disable",
     "enable",
     "exitControl",
+    "setAuthList",
     "setLogLevel",
     "standby",
     "start",
@@ -190,6 +182,7 @@ added_generics_csc_commands = [
 """Define list of events for csc category."""
 
 added_generics_csc_events = [
+    "authList",
     "errorCode",
     "simulationMode",
     "summaryState",
@@ -206,6 +199,18 @@ added_generics_configurable_events = [
     "settingsApplied",
     "settingVersions",
 ]
+
+"""Define the full set of approved AddedGenerics items."""
+
+added_generics_items = set(
+    added_generics_categories
+    + [f"command_{val}" for val in added_generics_commands]
+    + [f"logevent_{val}" for val in added_generics_events]
+    + [f"command_{val}" for val in added_generics_csc_commands]
+    + [f"logevent_{val}" for val in added_generics_csc_events]
+    + [f"command_{val}" for val in added_generics_configurable_commands]
+    + [f"logevent_{val}" for val in added_generics_configurable_events]
+)
 
 """Define the lists of IDL and MySQL Reserved Words"""
 
