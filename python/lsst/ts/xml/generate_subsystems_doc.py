@@ -23,7 +23,6 @@ __all__ = ["generate_subsystems_doc"]
 from xml.etree import ElementTree
 
 from . import utils
-from . import testutils
 
 
 # XML attributes to ignore.
@@ -100,44 +99,27 @@ def write_heading(f, name, char="-", overline=False):
     f.write(marker)
 
 
-def create_generics_dict(generics):
-    """Create a dictionary of needed generic commands and events.
+def create_generics_list(generics):
+    """Create a list of needed generic categories/topics.
 
     Parameters
     ----------
     generics : `str` or `None`
         Comma-separated list of added generics, from SalSubsystems.xml
-        AddedGenerics. Ignored if blank or None.
+        AddedGenerics. None still must comply with mandatory topics.
 
     Returns
     -------
-    `dict`
-        The needed set of generic commands and events.
+    `list`
+        The needed set of generic categories/topics.
     """
-    commands = []
-    events = []
+    items = ["mandatory"]
+    try:
+        items.extend([x.strip() for x in generics.split(",")])
+    except AttributeError:
+        pass
 
-    commands.extend(testutils.added_generics_mandatory_commands)
-    events.extend(testutils.added_generics_mandatory_events)
-
-    if generics:
-        for generic in generics.split(","):
-            generic = generic.strip()
-            try:
-                commands.extend(
-                    getattr(testutils, f"added_generics_{generic}_commands")
-                )
-                events.extend(getattr(testutils, f"added_generics_{generic}_events"))
-            except AttributeError:
-                if generic.startswith("command"):
-                    commands.append(generic.split("_")[-1])
-                elif generic.startswith("logevent"):
-                    events.append(generic.split("_")[-1])
-                else:
-                    pass
-
-    generic_dict = {"Command": sorted(commands), "Event": sorted(events)}
-    return generic_dict
+    return items
 
 
 def add_generics(cf, subsystem, set_name, has_generics, has_specific_topic_type):
@@ -151,8 +133,8 @@ def add_generics(cf, subsystem, set_name, has_generics, has_specific_topic_type)
         The name of the SAL subsystem.
     set_name : `str`
         The name of the topic set.
-    has_generics : `dict`
-        The set of generic topics.
+    has_generics : `list`
+        The set of generic categories/topics.
     has_specific_topic_type : `List` of `str`
         A list containing the names of a type of topic, name must be
         capitalized.
@@ -173,10 +155,18 @@ def add_generics(cf, subsystem, set_name, has_generics, has_specific_topic_type)
             if topic_type not in has_specific_topic_type:
                 write_heading(cf, name=f"{topic_type}s")
             for gen_topic in gen_set:
+                try:
+                    category_name = gen_topic.find("Category").text
+                except AttributeError:
+                    category_name = None
                 topic_name = gen_topic.find("EFDB_Topic").text
-                short_name = topic_name.split("_")[-1]
-                if short_name not in has_generics[topic_type]:
+                type_topic_name = "_".join(topic_name.split("_")[1:])
+                if (
+                    category_name not in has_generics
+                    and type_topic_name not in has_generics
+                ):
                     continue
+                short_name = topic_name.split("_")[-1]
                 write_heading(cf, name=short_name, char="~")
                 gen_topic_description = gen_topic.find("Description")
                 if gen_topic_description is not None:
@@ -250,7 +240,7 @@ SAL Interfaces for all CSCs and other SAL components.
         # unknown if it has a topic file.
         has_specific_topic_type = []
         generics = subsystem_elt.find("AddedGenerics").text
-        has_generics = create_generics_dict(generics)
+        has_generics = create_generics_list(generics)
 
         with open(rst_dir / f"{subsystem}.rst", "w") as cf:
             cf.write(":tocdepth: 3\n\n")
