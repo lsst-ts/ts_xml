@@ -4,9 +4,9 @@
   <SALTelemetry>
     <Subsystem>ESS</Subsystem>
     <EFDB_Topic>ESS_airTurbulence</EFDB_Topic>
-    <Description>Air Turbulence Instrument - CSAT3B (Tri-Axial) Serial to Ethernet Converter</Description>
+    <Description>Air Turbulence Instrument - CSAT3B (Tri-Axial).</Description>
     <item>
-      <EFDB_Name>sensor_name</EFDB_Name>
+      <EFDB_Name>sensorName</EFDB_Name>
       <Description>The name of the sensor.</Description>
       <IDL_Type>string</IDL_Type>
       <Units>unitless</Units>
@@ -21,52 +21,59 @@
     </item>
     <item>
       <EFDB_Name>ux</EFDB_Name>
-      <Description>x-axis wind speed</Description>
+      <Description>x-axis wind speed.</Description>
       <IDL_Type>float</IDL_Type>
       <Units>m/s</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>uy</EFDB_Name>
-      <Description>y-axis wind speed</Description>
+      <Description>y-axis wind speed.</Description>
       <IDL_Type>float</IDL_Type>
       <Units>m/s</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>uz</EFDB_Name>
-      <Description>z-axis wind speed</Description>
+      <Description>z-axis wind speed.</Description>
       <IDL_Type>float</IDL_Type>
       <Units>m/s</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>ts</EFDB_Name>
-      <Description>Sonic temperature</Description>
+      <Description>Sonic temperature.</Description>
       <IDL_Type>float</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>diagWord</EFDB_Name>
-      <Description>Diagnostic word</Description>
+      <Description>Diagnostic word.</Description>
       <IDL_Type>short</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>recordCounter</EFDB_Name>
-      <Description>Record counter (0-63)</Description>
+      <Description>Record counter (0-63).</Description>
       <IDL_Type>short</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>location</EFDB_Name>
+      <Description>The location of the sensor.</Description>
+      <IDL_Type>string</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
     </item>
   </SALTelemetry>
   <SALTelemetry>
     <EFDB_Topic>ESS_airFlow</EFDB_Topic>
-    <Description>AirFlow Sensor - Windsonic1-L (Bi-axial) Serial to Ethernet Converter</Description>
+    <Description>AirFlow Sensor - Windsonic1-L (Bi-axial).</Description>
     <item>
-      <EFDB_Name>sensor_name</EFDB_Name>
+      <EFDB_Name>sensorName</EFDB_Name>
       <Description>The name of the sensor.</Description>
       <IDL_Type>string</IDL_Type>
       <Units>unitless</Units>
@@ -81,31 +88,38 @@
     </item>
     <item>
       <EFDB_Name>direction</EFDB_Name>
-      <Description>Wind direction Telemetry</Description>
+      <Description>Wind direction.</Description>
       <IDL_Type>short</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>speed</EFDB_Name>
-      <Description>Wind speed Telemetry</Description>
+      <Description>Wind speed.</Description>
       <IDL_Type>float</IDL_Type>
       <Units>m/s</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>status</EFDB_Name>
-      <Description>Status Code Telemetry</Description>
+      <Description>Status Code.</Description>
       <IDL_Type>unsigned short</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
     </item>
+    <item>
+      <EFDB_Name>location</EFDB_Name>
+      <Description>The location of the sensor.</Description>
+      <IDL_Type>string</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
   </SALTelemetry>
   <SALTelemetry>
-    <EFDB_Topic>ESS_temperature1Ch</EFDB_Topic>
-    <Description>Temperature Sensors (4-Channel) Serial to Ethernet Converter</Description>
+    <EFDB_Topic>ESS_temperature</EFDB_Topic>
+    <Description>Temperature Sensors with up to 16 channels.</Description>
     <item>
-      <EFDB_Name>sensor_name</EFDB_Name>
+      <EFDB_Name>sensorName</EFDB_Name>
       <Description>The name of the sensor.</Description>
       <IDL_Type>string</IDL_Type>
       <Units>unitless</Units>
@@ -119,138 +133,32 @@
       <Count>1</Count>
     </item>
     <item>
-      <EFDB_Name>temperatureC01</EFDB_Name>
-      <Description>Temperature Sensor 1 Telemetry</Description>
-      <IDL_Type>float</IDL_Type>
-      <Units>deg_C</Units>
-      <Count>1</Count>
-    </item>
-  </SALTelemetry>
-  <SALTelemetry>
-    <EFDB_Topic>ESS_temperature4Ch</EFDB_Topic>
-    <Description>Temperature Sensors (4-Channel) Serial to Ethernet Converter</Description>
-    <item>
-      <EFDB_Name>sensor_name</EFDB_Name>
-      <Description>The name of the sensor.</Description>
-      <IDL_Type>string</IDL_Type>
+      <EFDB_Name>numChannels</EFDB_Name>
+      <Description>The number of channels (minimum 1 and maximum 16).</Description>
+      <IDL_Type>short</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
     </item>
     <item>
-      <EFDB_Name>timestamp</EFDB_Name>
-      <Description>Time at which the data was determined (TAI unix seconds).</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>second</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>temperatureC01</EFDB_Name>
-      <Description>Temperature Sensor 1 Telemetry</Description>
+      <EFDB_Name>temperature</EFDB_Name>
+      <Description>The temperatures.</Description>
       <IDL_Type>float</IDL_Type>
       <Units>deg_C</Units>
-      <Count>1</Count>
+      <Count>16</Count>
     </item>
     <item>
-      <EFDB_Name>temperatureC02</EFDB_Name>
-      <Description>Temperature Sensor 2 Telemetry</Description>
-      <IDL_Type>float</IDL_Type>
-      <Units>deg_C</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>temperatureC03</EFDB_Name>
-      <Description>Temperature Sensor 3 Telemetry</Description>
-      <IDL_Type>float</IDL_Type>
-      <Units>deg_C</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>temperatureC04</EFDB_Name>
-      <Description>Temperature Sensor 4 Telemetry</Description>
-      <IDL_Type>float</IDL_Type>
-      <Units>deg_C</Units>
-      <Count>1</Count>
-    </item>
-  </SALTelemetry>
-  <SALTelemetry>
-    <EFDB_Topic>ESS_temperature8Ch</EFDB_Topic>
-    <Description>Temperature Sensors (8-Channel) Serial to Ethernet Converter</Description>
-    <item>
-      <EFDB_Name>sensor_name</EFDB_Name>
-      <Description>The name of the sensor.</Description>
+      <EFDB_Name>location</EFDB_Name>
+      <Description>Comma-separated string with the locations of the sensors for each channel.</Description>
       <IDL_Type>string</IDL_Type>
       <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>timestamp</EFDB_Name>
-      <Description>Time at which the data was determined (TAI unix seconds).</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>second</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>temperatureC01</EFDB_Name>
-      <Description>Temperature Sensor 1 Telemetry</Description>
-      <IDL_Type>float</IDL_Type>
-      <Units>deg_C</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>temperatureC02</EFDB_Name>
-      <Description>Temperature Sensor 2 Telemetry</Description>
-      <IDL_Type>float</IDL_Type>
-      <Units>deg_C</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>temperatureC03</EFDB_Name>
-      <Description>Temperature Sensor 3 Telemetry</Description>
-      <IDL_Type>float</IDL_Type>
-      <Units>deg_C</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>temperatureC04</EFDB_Name>
-      <Description>Temperature Sensor 4 Telemetry</Description>
-      <IDL_Type>float</IDL_Type>
-      <Units>deg_C</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>temperatureC05</EFDB_Name>
-      <Description>Temperature Sensor 5 Telemetry</Description>
-      <IDL_Type>float</IDL_Type>
-      <Units>deg_C</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>temperatureC06</EFDB_Name>
-      <Description>Temperature Sensor 6 Telemetry</Description>
-      <IDL_Type>float</IDL_Type>
-      <Units>deg_C</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>temperatureC07</EFDB_Name>
-      <Description>Temperature Sensor 7 Telemetry</Description>
-      <IDL_Type>float</IDL_Type>
-      <Units>deg_C</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>temperatureC08</EFDB_Name>
-      <Description>Temperature Sensor 8 Telemetry</Description>
-      <IDL_Type>float</IDL_Type>
-      <Units>deg_C</Units>
       <Count>1</Count>
     </item>
   </SALTelemetry>
   <SALTelemetry>
     <EFDB_Topic>ESS_cloudRainLight</EFDB_Topic>
-    <Description>Cloud Rain Light Sensors Serial to Ethernet Converter</Description>
+    <Description>Cloud Rain Light Sensors.</Description>
     <item>
-      <EFDB_Name>sensor_name</EFDB_Name>
+      <EFDB_Name>sensorName</EFDB_Name>
       <Description>The name of the sensor.</Description>
       <IDL_Type>string</IDL_Type>
       <Units>unitless</Units>
@@ -265,30 +173,136 @@
     </item>
     <item>
       <EFDB_Name>ambientTemperature</EFDB_Name>
-      <Description>Ambient Temperature Sensor Telemetry</Description>
+      <Description>Ambient Temperature Sensor.</Description>
       <IDL_Type>float</IDL_Type>
       <Units>deg_C</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>skyTemperature</EFDB_Name>
-      <Description>Sky Temperature Sensor Telemetry</Description>
+      <Description>Sky Temperature Sensor.</Description>
       <IDL_Type>float</IDL_Type>
       <Units>deg_C</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>lightLevel</EFDB_Name>
-      <Description>Light Level Telemetry</Description>
+      <Description>Light Level.</Description>
       <IDL_Type>float</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>rainLevel</EFDB_Name>
-      <Description>Rain Level Telemetry</Description>
+      <Description>Rain Level.</Description>
       <IDL_Type>float</IDL_Type>
       <Units>mm</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>location</EFDB_Name>
+      <Description>The location of the sensor.</Description>
+      <IDL_Type>string</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+  </SALTelemetry>
+  <SALTelemetry>
+    <EFDB_Topic>ESS_hx85a</EFDB_Topic>
+    <Description>Omega HX85A Humidity, Temperature and Dew Point Sensor.</Description>
+    <item>
+      <EFDB_Name>sensorName</EFDB_Name>
+      <Description>The name of the sensor.</Description>
+      <IDL_Type>string</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>timestamp</EFDB_Name>
+      <Description>Time at which the data was determined (TAI unix seconds).</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>second</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>relativeHumidity</EFDB_Name>
+      <Description>Relative Humidity.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>%</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>temperature</EFDB_Name>
+      <Description>Air Temperature.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>deg_C</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>dewPoint</EFDB_Name>
+      <Description>Dew Point.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>deg_C</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>location</EFDB_Name>
+      <Description>The location of the sensor.</Description>
+      <IDL_Type>string</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+  </SALTelemetry>
+  <SALTelemetry>
+    <EFDB_Topic>ESS_hx85ba</EFDB_Topic>
+    <Description>Omega HX85BA Humidity, Temperature and Pressure Sensor.</Description>
+    <item>
+      <EFDB_Name>sensorName</EFDB_Name>
+      <Description>The name of the sensor.</Description>
+      <IDL_Type>string</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>timestamp</EFDB_Name>
+      <Description>Time at which the data was determined (TAI unix seconds).</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>second</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>relativeHumidity</EFDB_Name>
+      <Description>Relative Humidity.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>%</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>temperature</EFDB_Name>
+      <Description>Air Temperature.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>deg_C</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>barometricPressure</EFDB_Name>
+      <Description>Barometric Pressure.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>mbar</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>dewPoint</EFDB_Name>
+      <Description>Dew Point.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>deg_C</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>location</EFDB_Name>
+      <Description>The location of the sensor.</Description>
+      <IDL_Type>string</IDL_Type>
+      <Units>unitless</Units>
       <Count>1</Count>
     </item>
   </SALTelemetry>

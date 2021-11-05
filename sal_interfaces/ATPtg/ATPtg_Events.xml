@@ -9,7 +9,6 @@
   <Enumeration>CoordFrame_fk5,CoordFrame_icrs</Enumeration>
   <Enumeration>RotFrame_target,RotFrame_azel,RotFrame_fixed</Enumeration>
   <Enumeration>RotMode_field,RotMode_slit</Enumeration>
-  <Enumeration>AccessModes_operator,AccessModes_engineer</Enumeration>
   <Enumeration>Planets_mercury,Planets_venus,Planets_moon,Planets_mars,Planets_jupiter,Planets_saturn,Planets_uranus,Planets_neptune,Planets_pluto</Enumeration>
   <Enumeration>Foci_prime,Foci_nasmyth1,Foci_nasmyth2</Enumeration>
   <Enumeration>WarningLevel_none,WarningLevel_minor,WarningLevel_major</Enumeration>
@@ -19,6 +18,7 @@
   <SALEvent>
     <Subsystem>ATPtg</Subsystem>
     <EFDB_Topic>ATPtg_logevent_focusNameSelected</EFDB_Topic>
+    <Description>Name of the current operational focus</Description>
     <item>
       <EFDB_Name>focus</EFDB_Name>
       <Description>Selected Focus Name</Description>
@@ -31,6 +31,7 @@
   <SALEvent>
     <Subsystem>ATPtg</Subsystem>
     <EFDB_Topic>ATPtg_logevent_sunProximityWarning</EFDB_Topic>
+    <Description>The distance between the current target position and the Sun's position is less than the Sun proximity warning value.</Description>
     <item>
       <EFDB_Name>level</EFDB_Name>
       <Description>Telescope is approaching the Sun</Description>
@@ -43,6 +44,7 @@
   <SALEvent>
     <Subsystem>ATPtg</Subsystem>
     <EFDB_Topic>ATPtg_logevent_detailedState</EFDB_Topic>
+    <Description>The substate of the component.</Description>
     <item>
       <EFDB_Name>detailedState</EFDB_Name>
       <Description>Current detailed state</Description>
@@ -54,19 +56,8 @@
   </SALEvent>
   <SALEvent>
     <Subsystem>ATPtg</Subsystem>
-    <EFDB_Topic>ATPtg_logevent_mountGuideMode</EFDB_Topic>
-    <item>
-      <EFDB_Name>mode</EFDB_Name>
-      <Description>Mount guide mode.</Description>
-      <IDL_Type>long</IDL_Type>
-      <!-- <Enumeration> WarningLevel </Enumeration> -->
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-  </SALEvent>
-  <SALEvent>
-    <Subsystem>ATPtg</Subsystem>
     <EFDB_Topic>ATPtg_logevent_azWrapWarning</EFDB_Topic>
+    <Description>The time to the current azimuth wrap limit for the target is less than the azimuth wrap warning value.</Description>
     <item>
       <EFDB_Name>level</EFDB_Name>
       <Description>Warning level for azimuth wrap</Description>
@@ -79,6 +70,7 @@
   <SALEvent>
     <Subsystem>ATPtg</Subsystem>
     <EFDB_Topic>ATPtg_logevent_wavelength</EFDB_Topic>
+    <Description>Currently defined target wavelength</Description>
     <item>
       <EFDB_Name>wavelength</EFDB_Name>
       <Description>Wavelength in microns</Description>
@@ -89,38 +81,8 @@
   </SALEvent>
   <SALEvent>
     <Subsystem>ATPtg</Subsystem>
-    <EFDB_Topic>ATPtg_logevent_inPositionEl</EFDB_Topic>
-    <item>
-      <EFDB_Name>eventState</EFDB_Name>
-      <Description>Elevation axis in position.</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-  </SALEvent>
-  <SALEvent>
-    <Subsystem>ATPtg</Subsystem>
-    <EFDB_Topic>ATPtg_logevent_axesTrackMode</EFDB_Topic>
-    <item>
-      <EFDB_Name>elevation</EFDB_Name>
-      <Description>Elevation axis track mode.</Description>
-      <IDL_Type>long</IDL_Type>
-      <!-- <Enumeration> WarningLevel </Enumeration> -->
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>azimuth</EFDB_Name>
-      <Description>Azimuth axis track mode.</Description>
-      <IDL_Type>long</IDL_Type>
-      <!-- <Enumeration> WarningLevel </Enumeration> -->
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-  </SALEvent>
-  <SALEvent>
-    <Subsystem>ATPtg</Subsystem>
     <EFDB_Topic>ATPtg_logevent_objectSetWarning</EFDB_Topic>
+    <Description>The time before the current target sets below the elevation lower limit is less than the object set warning value.</Description>
     <item>
       <EFDB_Name>level</EFDB_Name>
       <Description>Object is setting warning level.</Description>
@@ -133,6 +95,7 @@
   <SALEvent>
     <Subsystem>ATPtg</Subsystem>
     <EFDB_Topic>ATPtg_logevent_pointingModel</EFDB_Topic>
+    <Description>Pointing model data currently loaded</Description>
     <item>
       <EFDB_Name>timestamp</EFDB_Name>
       <Description>Current time as TAI second</Description>
@@ -160,6 +123,7 @@
   <SALEvent>
     <Subsystem>ATPtg</Subsystem>
     <EFDB_Topic>ATPtg_logevent_airmassWarning</EFDB_Topic>
+    <Description>Airmass at the current target elevation exceeds the Airmass warning value.</Description>
     <item>
       <EFDB_Name>level</EFDB_Name>
       <Description>Airmass warning level.</Description>
@@ -172,6 +136,7 @@
   <SALEvent>
     <Subsystem>ATPtg</Subsystem>
     <EFDB_Topic>ATPtg_logevent_weatherDataInvalid</EFDB_Topic>
+    <Description>The weather data has not been updated or invalid data received.</Description>
     <item>
       <EFDB_Name>eventState</EFDB_Name>
       <Description>State of the weather data.</Description>
@@ -183,6 +148,7 @@
   <SALEvent>
     <Subsystem>ATPtg</Subsystem>
     <EFDB_Topic>ATPtg_logevent_focusNameInconsistentWarning</EFDB_Topic>
+    <Description>The focus name selected on PTG component is different from the one selected in the mount component.</Description>
     <item>
       <EFDB_Name>eventState</EFDB_Name>
       <Description>State of the focus name inconsistency.</Description>
@@ -194,6 +160,7 @@
   <SALEvent>
     <Subsystem>ATPtg</Subsystem>
     <EFDB_Topic>ATPtg_logevent_currentTarget</EFDB_Topic>
+    <Description>This event is posted when a new target command (raDecTarget, azElTarget, planetTarget or ephemTarget) is accepted by the component. The target command's parameter values will be copied to the same parameters in this event.</Description>
     <item>
       <EFDB_Name>timestamp</EFDB_Name>
       <Description>Current time in TAI second</Description>
@@ -397,6 +364,7 @@
   <SALEvent>
     <Subsystem>ATPtg</Subsystem>
     <EFDB_Topic>ATPtg_logevent_iersOutOfDate</EFDB_Topic>
+    <Description>The IERS data has not been updated recently</Description>
     <item>
       <EFDB_Name>eventState</EFDB_Name>
       <Description>State of the iers</Description>
@@ -408,6 +376,7 @@
   <SALEvent>
     <Subsystem>ATPtg</Subsystem>
     <EFDB_Topic>ATPtg_logevent_weatherDataApplied</EFDB_Topic>
+    <Description>Latest weather data applied to kernel.</Description>
     <item>
       <EFDB_Name>ambientTemp</EFDB_Name>
       <Description>Ambient temperature.</Description>
@@ -433,6 +402,7 @@
   <SALEvent>
     <Subsystem>ATPtg</Subsystem>
     <EFDB_Topic>ATPtg_logevent_currentDebugLevel</EFDB_Topic>
+    <Description>Current debug level</Description>
     <item>
       <EFDB_Name>currentLevel</EFDB_Name>
       <Description>Current debug level.</Description>
@@ -445,6 +415,7 @@
   <SALEvent>
     <Subsystem>ATPtg</Subsystem>
     <EFDB_Topic>ATPtg_logevent_mountDataWarning</EFDB_Topic>
+    <Description>The mount status data hasn't been received for more than the duration specified in the configuration file.</Description>
     <item>
       <EFDB_Name>level</EFDB_Name>
       <Description>Warning level from the mount.</Description>
@@ -456,18 +427,8 @@
   </SALEvent>
   <SALEvent>
     <Subsystem>ATPtg</Subsystem>
-    <EFDB_Topic>ATPtg_logevent_accessMode</EFDB_Topic>
-    <item>
-      <EFDB_Name>eventState</EFDB_Name>
-      <Description>Access mode level.</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-  </SALEvent>
-  <SALEvent>
-    <Subsystem>ATPtg</Subsystem>
     <EFDB_Topic>ATPtg_logevent_rotWrapWarning</EFDB_Topic>
+    <Description>The time to the current rotator wrap limit for the target is less than the rotator wrap warning value.</Description>
     <item>
       <EFDB_Name>level</EFDB_Name>
       <Description>Rotator Wrap limit warning level.</Description>
@@ -479,40 +440,8 @@
   </SALEvent>
   <SALEvent>
     <Subsystem>ATPtg</Subsystem>
-    <EFDB_Topic>ATPtg_logevent_inPosition</EFDB_Topic>
-    <item>
-      <EFDB_Name>eventState</EFDB_Name>
-      <Description>Is telescope in position?</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-  </SALEvent>
-  <SALEvent>
-    <Subsystem>ATPtg</Subsystem>
-    <EFDB_Topic>ATPtg_logevent_inPositionRot</EFDB_Topic>
-    <item>
-      <EFDB_Name>eventState</EFDB_Name>
-      <Description>Is rotator in position?</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-  </SALEvent>
-  <SALEvent>
-    <Subsystem>ATPtg</Subsystem>
-    <EFDB_Topic>ATPtg_logevent_inPositionAz</EFDB_Topic>
-    <item>
-      <EFDB_Name>eventState</EFDB_Name>
-      <Description>Is Azimuth in position?</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-  </SALEvent>
-  <SALEvent>
-    <Subsystem>ATPtg</Subsystem>
     <EFDB_Topic>ATPtg_logevent_iers</EFDB_Topic>
+    <Description>Current IERS data used by the component</Description>
     <item>
       <EFDB_Name>timestamp</EFDB_Name>
       <Description>Timestamp (as returned by SAL's getCurrentTime) of successful IERS update.</Description>
@@ -545,6 +474,7 @@
   <SALEvent>
     <Subsystem>ATPtg</Subsystem>
     <EFDB_Topic>ATPtg_logevent_moonProximityWarning</EFDB_Topic>
+    <Description>The distance between the current target position and the Moon's position is less than the Moon proximity warning value.</Description>
     <item>
       <EFDB_Name>level</EFDB_Name>
       <Description>Level of the moon proximity warning.</Description>
@@ -557,6 +487,7 @@
   <SALEvent>
     <Subsystem>ATPtg</Subsystem>
     <EFDB_Topic>ATPtg_logevent_trackPosting</EFDB_Topic>
+    <Description>Indicates whether mount and rotator tracking commands are being posted</Description>
     <item>
       <EFDB_Name>status</EFDB_Name>
       <Description>If true, PTG controller is currently posting track commands to Mount components.</Description>
@@ -568,6 +499,7 @@
   <SALEvent>
     <Subsystem>ATPtg</Subsystem>
     <EFDB_Topic>ATPtg_logevent_ptgAzCurrentWrap</EFDB_Topic>
+    <Description>Current internally selected azimuth wrap (azimuth travel range).</Description>
     <item>
       <EFDB_Name>currentWrap</EFDB_Name>
       <Description>Direction of the azimuth wrap: cw (1) or ccw (2).</Description>
@@ -580,6 +512,7 @@
   <SALEvent>
     <Subsystem>ATPtg</Subsystem>
     <EFDB_Topic>ATPtg_logevent_ptgRotCurrentWrap</EFDB_Topic>
+    <Description>Current internally selected rotator wrap (rotator travel range).</Description>
     <item>
       <EFDB_Name>currentWrap</EFDB_Name>
       <Description>Direction of the rotator wrap: cw (1) or ccw (2).</Description>
@@ -592,6 +525,7 @@
   <SALEvent>
     <Subsystem>ATPtg</Subsystem>
     <EFDB_Topic>ATPtg_logevent_elLimitWarning</EFDB_Topic>
+    <Description>The time before the current target reaches elevation high limit is less than the object set warning value.</Description>
     <item>
       <EFDB_Name>level</EFDB_Name>
       <Description>Elevation tracking high limit warning</Description>
@@ -604,6 +538,7 @@
   <SALEvent>
     <Subsystem>ATPtg</Subsystem>
     <EFDB_Topic>ATPtg_logevent_pointingFile</EFDB_Topic>
+    <Description>Pointing file is created or closed.</Description>
     <item>
       <EFDB_Name>fileIsOpen</EFDB_Name>
       <Description>If true, pointing file is open. If false, pointing file is closed.</Description>
@@ -622,6 +557,7 @@
   <SALEvent>
     <Subsystem>ATPtg</Subsystem>
     <EFDB_Topic>ATPtg_logevent_timesOfLimits</EFDB_Topic>
+    <Description>Times of the current target reaching limits</Description>
     <item>
       <EFDB_Name>timestamp</EFDB_Name>
       <Description>Time the limits were calculated. TAI seconds.</Description>
@@ -675,6 +611,7 @@
   <SALEvent>
     <Subsystem>ATPtg</Subsystem>
     <EFDB_Topic>ATPtg_logevent_validatedTarget</EFDB_Topic>
+    <Description>Target validation result and expected axis positions. The event is posted when the received target command's validateOnly is true.</Description>
     <item>
       <EFDB_Name>isValid</EFDB_Name>
       <Description>If true, the target is observable.</Description>
@@ -714,6 +651,7 @@
   <SALEvent>
     <Subsystem>ATPtg</Subsystem>
     <EFDB_Topic>ATPtg_logevent_offsetSummary</EFDB_Topic>
+    <Description>Target offset data.</Description>
     <item>
       <EFDB_Name>timestamp</EFDB_Name>
       <Description>Current time as TAI seconds</Description>
@@ -730,7 +668,7 @@
     </item>
     <item>
       <EFDB_Name>userOffsetRA</EFDB_Name>
-      <Description>User Offset in RA (secs)</Description>
+      <Description>User Offset in RA (arcsecs)</Description>
       <IDL_Type>double</IDL_Type>
       <Units>arcsec</Units>
       <Count>1</Count>
@@ -744,7 +682,7 @@
     </item>
     <item>
       <EFDB_Name>handsetOffsetRA</EFDB_Name>
-      <Description>Handset offset in RA (secs)</Description>
+      <Description>Handset offset in RA (arcsecs)</Description>
       <IDL_Type>double</IDL_Type>
       <Units>arcsec</Units>
       <Count>1</Count>
@@ -830,6 +768,7 @@
   <SALEvent>
     <Subsystem>ATPtg</Subsystem>
     <EFDB_Topic>ATPtg_logevent_pointData</EFDB_Topic>
+    <Description>Data added to pointing file by pointAddData command.</Description>
     <item>
       <EFDB_Name>expectedAzimuth</EFDB_Name>
       <Description>Expected target Azimuth</Description>

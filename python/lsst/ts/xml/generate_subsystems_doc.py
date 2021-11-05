@@ -23,6 +23,7 @@ __all__ = ["generate_subsystems_doc"]
 from xml.etree import ElementTree
 
 from . import utils
+from . import testutils
 
 
 # XML attributes to ignore.
@@ -99,6 +100,46 @@ def write_heading(f, name, char="-", overline=False):
     f.write(marker)
 
 
+def create_generics_dict(generics):
+    """Create a dictionary of needed generic commands and events.
+
+    Parameters
+    ----------
+    generics : `str` or `None`
+        Comma-separated list of added generics, from SalSubsystems.xml
+        AddedGenerics. Ignored if blank or None.
+
+    Returns
+    -------
+    `dict`
+        The needed set of generic commands and events.
+    """
+    commands = []
+    events = []
+
+    commands.extend(testutils.added_generics_mandatory_commands)
+    events.extend(testutils.added_generics_mandatory_events)
+
+    if generics:
+        for generic in generics.split(","):
+            generic = generic.strip()
+            try:
+                commands.extend(
+                    getattr(testutils, f"added_generics_{generic}_commands")
+                )
+                events.extend(getattr(testutils, f"added_generics_{generic}_events"))
+            except AttributeError:
+                if generic.startswith("command"):
+                    commands.append(generic.split("_")[-1])
+                elif generic.startswith("logevent"):
+                    events.append(generic.split("_")[-1])
+                else:
+                    pass
+
+    generic_dict = {"Command": sorted(commands), "Event": sorted(events)}
+    return generic_dict
+
+
 def add_generics(cf, subsystem, set_name, has_generics, has_specific_topic_type):
     """Adds generic topics to the rst file in the appropriate section.
 
@@ -110,10 +151,8 @@ def add_generics(cf, subsystem, set_name, has_generics, has_specific_topic_type)
         The name of the SAL subsystem.
     set_name : `str`
         The name of the topic set.
-    has_generics : `bool` or `List` of `str`
-        True if it has all generic topics.
-        False if it has no generic topics.
-        A list of generic topic names if it has some generic topics.
+    has_generics : `dict`
+        The set of generic topics.
     has_specific_topic_type : `List` of `str`
         A list containing the names of a type of topic, name must be
         capitalized.
@@ -121,116 +160,57 @@ def add_generics(cf, subsystem, set_name, has_generics, has_specific_topic_type)
 
     """
     xml_dir = utils.get_sal_interfaces_dir()
-    if has_generics is True:
-        gen_tree = ElementTree.parse(xml_dir / "SALGenerics.xml")
-        gen_root = gen_tree.getroot()
-        for gen_set in gen_root:
-            gen_set[:] = sorted(gen_set, key=topic_sort_key)
-            gen_set_name = gen_set.tag
-            if gen_set_name == set_name:
-                # Remove SAL and Set from the string in order to compare topic
-                # set name correctly.
-                if gen_set_name[3:-3] not in has_specific_topic_type:
-                    write_heading(cf, name=f"{gen_set_name[3:-3]}s")
-                for gen_topic in gen_set:
-                    topic_name = gen_topic.find("EFDB_Topic").text
-                    short_name = topic_name.split("_")[-1]
-                    write_heading(cf, name=short_name, char="~")
-                    gen_topic_description = gen_topic.find("Description")
-                    if gen_topic_description is not None:
-                        cf.write(f"**Description**: {gen_topic_description.text}\n\n")
-                    for gen_field in gen_topic:
-                        if gen_field.tag == "item":
-                            gen_field_name = gen_field.find("EFDB_Name")
-                            gen_field_description = gen_field.find("Description")
-                            cf.write(
-                                f"\n.. _{subsystem}:{short_name}:{gen_field_name.text}:\n\n"
-                            )
-                            write_heading(cf, gen_field_name.text, char="*")
-                            for gen_attribute in gen_field:
-                                if gen_attribute.tag in ["Count", "IDL_Size"]:
-                                    if gen_attribute.text == "1":
-                                        pass
-                                    else:
-                                        cf.write(
-                                            f":{gen_attribute.tag}: {gen_attribute.text}\n"
-                                        )
-                                elif gen_attribute.tag in IGNORED_ATTRIBUTES:
+
+    gen_tree = ElementTree.parse(xml_dir / "SALGenerics.xml")
+    gen_root = gen_tree.getroot()
+    for gen_set in gen_root:
+        gen_set[:] = sorted(gen_set, key=topic_sort_key)
+        gen_set_name = gen_set.tag
+        if gen_set_name == set_name:
+            # Remove SAL and Set from the string in order to compare topic
+            # set name correctly.
+            topic_type = gen_set_name[3:-3]
+            if topic_type not in has_specific_topic_type:
+                write_heading(cf, name=f"{topic_type}s")
+            for gen_topic in gen_set:
+                topic_name = gen_topic.find("EFDB_Topic").text
+                short_name = topic_name.split("_")[-1]
+                if short_name not in has_generics[topic_type]:
+                    continue
+                write_heading(cf, name=short_name, char="~")
+                gen_topic_description = gen_topic.find("Description")
+                if gen_topic_description is not None:
+                    cf.write(f"**Description**: {gen_topic_description.text}\n\n")
+                for gen_field in gen_topic:
+                    if gen_field.tag == "item":
+                        gen_field_name = gen_field.find("EFDB_Name")
+                        gen_field_description = gen_field.find("Description")
+                        cf.write(
+                            f"\n.. _{subsystem}:{short_name}:{gen_field_name.text}:\n\n"
+                        )
+                        write_heading(cf, gen_field_name.text, char="*")
+                        for gen_attribute in gen_field:
+                            if gen_attribute.tag in ["Count", "IDL_Size"]:
+                                if gen_attribute.text == "1":
                                     pass
                                 else:
                                     cf.write(
                                         f":{gen_attribute.tag}: {gen_attribute.text}\n"
                                     )
-                            cf.write(
-                                f"\n**Description**: {gen_field_description.text}\n\n"
-                            )
-                        elif gen_field.tag in IGNORED_FIELDS:
-                            pass
-                        else:
-                            cf.write(f":{gen_field.tag}: {gen_field.text}\n")
-                        cf.write("\n")
-            else:
-                pass
-
-    elif has_generics is False:
-        pass
-    else:
-        gen_tree = ElementTree.parse(xml_dir / "SALGenerics.xml")
-        gen_root = gen_tree.getroot()
-        for gen_set in gen_root:
-            # Sorts xml file using the topic name(without the subsystem name)
-            # as the key, if the topic name exists otherwise just add the tag
-            # as is.
-            gen_set[:] = sorted(gen_set, key=topic_sort_key)
-            gen_set_name = gen_set.tag
-            if gen_set_name == set_name:
-                if gen_set_name[3:-3] not in has_specific_topic_type:
-                    write_heading(cf, f"{gen_set_name[3:-3]}s")
-                for gen_topic in gen_set:
-                    gen_topic_name = gen_topic.find("EFDB_Topic")
-                    gen_topic_short_name_array = gen_topic_name.text.split("_")[1:]
-                    gen_topic_short_name = "_".join(gen_topic_short_name_array)
-                    if gen_topic_short_name in has_generics:
-                        topic_name = gen_topic.find("EFDB_Topic").text
-                        short_name = topic_name.split("_")[-1]
-                        write_heading(cf, name=short_name, char="~")
-                        gen_topic_description = gen_topic.find("Description")
-                        if gen_topic_description is not None:
-                            cf.write(
-                                f"**Description**: {gen_topic_description.text}\n\n"
-                            )
-                        for gen_field in gen_topic:
-                            if gen_field.tag == "item":
-                                gen_field_name = gen_field.find("EFDB_Name")
-                                gen_field_description = gen_field.find("Description")
-                                cf.write(
-                                    f"\n.. _{subsystem}:{short_name}:{gen_field_name.text}:\n\n"
-                                )
-                                write_heading(cf, gen_field_name.text, char="*")
-                                for gen_attribute in gen_field:
-                                    if gen_attribute.tag in ["Count", "IDL_Size"]:
-                                        if gen_attribute.text == "1":
-                                            pass
-                                        else:
-                                            cf.write(
-                                                f":{gen_attribute.tag}: {gen_attribute.text}\n"
-                                            )
-                                    elif gen_attribute.tag in IGNORED_ATTRIBUTES:
-                                        pass
-                                    else:
-                                        cf.write(
-                                            f":{gen_attribute.tag}: {gen_attribute.text}\n"
-                                        )
-                                cf.write(
-                                    f"\n**Description**: {gen_field_description.text}\n\n"
-                                )
-                            elif gen_field.tag in IGNORED_FIELDS:
+                            elif gen_attribute.tag in IGNORED_ATTRIBUTES:
                                 pass
                             else:
-                                cf.write(f":{gen_field.tag}: {gen_field.text}\n")
-                            cf.write("\n")
-                    else:
+                                cf.write(
+                                    f":{gen_attribute.tag}: {gen_attribute.text}\n"
+                                )
+                        cf.write(f"\n**Description**: {gen_field_description.text}\n\n")
+                    elif gen_field.tag in IGNORED_FIELDS:
                         pass
+                    else:
+                        cf.write(f":{gen_field.tag}: {gen_field.text}\n")
+                    cf.write("\n")
+        else:
+            pass
 
 
 def generate_subsystems_doc():
@@ -269,14 +249,8 @@ SAL Interfaces for all CSCs and other SAL components.
         # has_specific_topic_type starts empty for each CSC because it is
         # unknown if it has a topic file.
         has_specific_topic_type = []
-        has_generics = False
-        generics_text = subsystem_elt.find("Generics").text
-        if generics_text == "yes":
-            has_generics = True
-        elif generics_text == "no":
-            has_generics = False
-        else:
-            has_generics = generics_text
+        generics = subsystem_elt.find("AddedGenerics").text
+        has_generics = create_generics_dict(generics)
 
         with open(rst_dir / f"{subsystem}.rst", "w") as cf:
             cf.write(":tocdepth: 3\n\n")
@@ -320,7 +294,9 @@ SAL Interfaces for all CSCs and other SAL components.
                         state_name = states[0].split("_")[0].lstrip()
                         cf.write(f":{state_name}:\n")
                         for state in states:
-                            cf.write(f"  * {state.split('_')[1]}\n")
+                            cf.write(
+                                f"  * :any:`{state.split('_')[1]} <lsst.ts.idl.enums.{subsystem}.{state_name}.{state.split('_')[1].upper()}>`\n"  # noqa
+                            )
                         cf.write("\n")
                         continue
                     if dds_type == "Events" and first_event:

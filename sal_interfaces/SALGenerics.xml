@@ -10,26 +10,31 @@
       <Subsystem>SALGeneric</Subsystem>
       <EFDB_Topic>SALGeneric_command_enable</EFDB_Topic>
       <Description>Transition from state Disabled to Enabled.</Description>
+      <Category>csc</Category>
     </SALCommand>
     <SALCommand>
       <Subsystem>SALGeneric</Subsystem>
       <EFDB_Topic>SALGeneric_command_disable</EFDB_Topic>
       <Description>Transition from state Enabled to Disabled.</Description>
+      <Category>csc</Category>
     </SALCommand>
     <SALCommand>
       <Subsystem>SALGeneric</Subsystem>
       <EFDB_Topic>SALGeneric_command_standby</EFDB_Topic>
       <Description>Transition from state Offline, Disabled or Fault to Standby.</Description>
+      <Category>csc</Category>
     </SALCommand>
     <SALCommand>
       <Subsystem>SALGeneric</Subsystem>
       <EFDB_Topic>SALGeneric_command_exitControl</EFDB_Topic>
       <Description>Transition from state Standby to Offline. For CSCs that start in Standby state this makes the CSC quit. CSCs that start in Offline state, they remain active.</Description>
+      <Category>csc</Category>
     </SALCommand>
     <SALCommand>
       <Subsystem>SALGeneric</Subsystem>
       <EFDB_Topic>SALGeneric_command_start</EFDB_Topic>
       <Description>Transition from state Standby to Disable, in a specified configuration.</Description>
+      <Category>csc</Category>
       <item>
         <EFDB_Name>settingsToApply</EFDB_Name>
         <Description>Name of the selected settings set</Description>
@@ -48,10 +53,18 @@
       <Subsystem>SALGeneric</Subsystem>
       <EFDB_Topic>SALGeneric_command_setLogLevel</EFDB_Topic>
       <Description>Set the logging level.</Description>
+      <Category>csc</Category>
       <item>
         <EFDB_Name>level</EFDB_Name>
         <Description>Logging level, as a Python logging level: error=40, warning=30, info=20, debug=10.</Description>
         <IDL_Type>int</IDL_Type>
+        <Units>unitless</Units>
+        <Count>1</Count>
+      </item>
+      <item>
+        <EFDB_Name>subsystem</EFDB_Name>
+        <Description>Subsystem this applies to. If empty, the change applies to all subsystems. Beyond that, the meaning depends on the CSC.</Description>
+        <IDL_Type>string</IDL_Type>
         <Units>unitless</Units>
         <Count>1</Count>
       </item>
@@ -71,6 +84,7 @@
     <SALCommand>
       <Subsystem>SALGeneric</Subsystem>
       <EFDB_Topic>SALGeneric_command_setAuthList</EFDB_Topic>
+      <Category>csc</Category>
       <item>
         <EFDB_Name>authorizedUsers</EFDB_Name>
         <Description>Comma seperated list of authorized users currently allowed to command this CSC,
@@ -107,6 +121,7 @@
       <Subsystem>SALGeneric</Subsystem>
       <EFDB_Topic>SALGeneric_logevent_settingVersions</EFDB_Topic>
       <Description>Information about settings which can be specified in the start command.</Description>
+      <Category>configurable</Category>
       <item>
         <EFDB_Name>recommendedSettingsVersion</EFDB_Name>
         <Description>List of comma seperated recomended versions of settings sets</Description>
@@ -136,6 +151,7 @@
       <Subsystem>SALGeneric</Subsystem>
       <EFDB_Topic>SALGeneric_logevent_errorCode</EFDB_Topic>
       <Description>Output when a CSC goes into the Fault state as an explanation of the problem.</Description>
+      <Category>csc</Category>
       <item>
         <EFDB_Name>errorCode</EFDB_Name>
         <Description>A numeric error code</Description>
@@ -164,6 +180,7 @@
       <Subsystem>SALGeneric</Subsystem>
       <EFDB_Topic>SALGeneric_logevent_summaryState</EFDB_Topic>
       <Description>Current summary state of the CSC</Description>
+      <Category>csc</Category>
       <item>
         <EFDB_Name>summaryState</EFDB_Name>
         <Description>High level state machine state identifier</Description>
@@ -175,6 +192,7 @@
     <SALEvent>
       <Subsystem>SALGeneric</Subsystem>
       <EFDB_Topic>SALGeneric_logevent_appliedSettingsMatchStart</EFDB_Topic>
+      <Category>configurable</Category>
       <item>
         <EFDB_Name>appliedSettingsMatchStartIsTrue</EFDB_Name>
         <Description>True when the configuration matches the start conditions</Description>
@@ -187,10 +205,18 @@
       <Subsystem>SALGeneric</Subsystem>
       <EFDB_Topic>SALGeneric_logevent_logLevel</EFDB_Topic>
       <Description>Current logging level.</Description>
+      <Category>mandatory</Category>
       <item>
         <EFDB_Name>level</EFDB_Name>
         <Description>Current logging level, a Python logging level: error=40, warning=30, info=20, debug=10.</Description>
         <IDL_Type>int</IDL_Type>
+        <Units>unitless</Units>
+        <Count>1</Count>
+      </item>
+      <item>
+        <EFDB_Name>subsystem</EFDB_Name>
+        <Description>Subsystem this applies to. The empty string if all subsystems. Beyond that, the meaning depends on the CSC.</Description>
+        <IDL_Type>string</IDL_Type>
         <Units>unitless</Units>
         <Count>1</Count>
       </item>
@@ -199,6 +225,7 @@
       <Subsystem>SALGeneric</Subsystem>
       <EFDB_Topic>SALGeneric_logevent_logMessage</EFDB_Topic>
       <Description>A log message.</Description>
+      <Category>mandatory</Category>
       <item>
         <EFDB_Name>name</EFDB_Name>
         <Description>Log name.</Description>
@@ -261,11 +288,19 @@
         <Units>unitless</Units>
         <Count>1</Count>
       </item>
+      <item>
+        <EFDB_Name>timestamp</EFDB_Name>
+        <Description>The time at which the condition being reported was observed (TAI unix seconds). 0 if unspecified.</Description>
+        <IDL_Type>double</IDL_Type>
+        <Units>second</Units>
+        <Count>1</Count>
+      </item>
     </SALEvent>
     <SALEvent>
       <Subsystem>SALGeneric</Subsystem>
       <EFDB_Topic>SALGeneric_logevent_settingsApplied</EFDB_Topic>
       <Description>Base settings applied.</Description>
+      <Category>configurable</Category>
       <item>
         <EFDB_Name>settingsVersion</EFDB_Name>
         <Description>The SHA or name corresponding to the published configuration</Description>
@@ -287,6 +322,7 @@
       <Subsystem>SALGeneric</Subsystem>
       <EFDB_Topic>SALGeneric_logevent_simulationMode</EFDB_Topic>
       <Description>Current simulation mode.</Description>
+      <Category>csc</Category>
       <item>
         <EFDB_Name>mode</EFDB_Name>
         <Description>Current simulation mode; 0 for normal operation (no simulation); other supported values are specific to each CSC.</Description>
@@ -299,6 +335,7 @@
       <Subsystem>SALGeneric</Subsystem>
       <EFDB_Topic>SALGeneric_logevent_softwareVersions</EFDB_Topic>
       <Description>Current versions of software in use by CSC.</Description>
+      <Category>mandatory</Category>
       <item>
         <EFDB_Name>salVersion</EFDB_Name>
         <Description>This is the current version of SAL generation</Description>
@@ -343,6 +380,7 @@
     <SALEvent>
       <Subsystem>SALGeneric</Subsystem>
       <EFDB_Topic>SALGeneric_logevent_heartbeat</EFDB_Topic>
+      <Category>mandatory</Category>
       <item>
         <EFDB_Name>heartbeat</EFDB_Name>
         <Description>Beats the drum.</Description>
@@ -354,6 +392,7 @@
     <SALEvent>
       <Subsystem>SALGeneric</Subsystem>
       <EFDB_Topic>SALGeneric_logevent_authList</EFDB_Topic>
+      <Category>csc</Category>
       <item>
         <EFDB_Name>authorizedUsers</EFDB_Name>
         <Description>Comma seperated list of authorized users currently allowed to command this CSC.</Description>
@@ -367,6 +406,65 @@
         <Description>Comma seperated list of CSC's not currently allowed to command this CSC.</Description>
         <IDL_Type>string</IDL_Type>
         <IDL_Size>1</IDL_Size>
+        <Units>unitless</Units>
+        <Count>1</Count>
+      </item>
+    </SALEvent>
+    <SALEvent>
+      <Subsystem>SALGeneric</Subsystem>
+      <EFDB_Topic>SALGeneric_logevent_largeFileObjectAvailable</EFDB_Topic>
+      <Description>Large file object available event.</Description>
+      <item>
+        <EFDB_Name>url</EFDB_Name>
+        <Description>A Uniform Resource Locator which links to a Large File Object either for ingest into the EFD Large File Annex, or to announce the successful copy of same to the EFD Large File Annex.Protocols are those supported by the cURL library.</Description>
+        <IDL_Type>string</IDL_Type>
+        <IDL_Size>256</IDL_Size>
+        <Units>unitless</Units>
+        <Count>1</Count>
+      </item>
+      <item>
+        <EFDB_Name>generator</EFDB_Name>
+        <Description>Name of the package which generated the file being announced</Description>
+        <IDL_Type>string</IDL_Type>
+        <IDL_Size>256</IDL_Size>
+        <Units>unitless</Units>
+        <Count>1</Count>
+      </item>
+      <item>
+        <EFDB_Name>version</EFDB_Name>
+        <Description>A dotted x.y version number denoting the file format revision</Description>
+        <IDL_Type>float</IDL_Type>
+        <Units>unitless</Units>
+        <Count>1</Count>
+      </item>
+      <item>
+        <EFDB_Name>byteSize</EFDB_Name>
+        <Description>Size of file in bytes</Description>
+        <IDL_Type>long</IDL_Type>
+        <Units>unitless</Units>
+        <Count>1</Count>
+      </item>
+      <item>
+        <EFDB_Name>checkSum</EFDB_Name>
+        <Description>Hexadecimal character string holding the checksum of the file</Description>
+        <IDL_Type>string</IDL_Type>
+        <IDL_Size>256</IDL_Size>
+        <Units>unitless</Units>
+        <Count>1</Count>
+      </item>
+      <item>
+        <EFDB_Name>mimeType</EFDB_Name>
+        <Description>Mime Type code for the file</Description>
+        <IDL_Type>string</IDL_Type>
+        <IDL_Size>256</IDL_Size>
+        <Units>unitless</Units>
+        <Count>1</Count>
+      </item>
+      <item>
+        <EFDB_Name>id</EFDB_Name>
+        <Description>A generic identifier field</Description>
+        <IDL_Type>string</IDL_Type>
+        <IDL_Size>256</IDL_Size>
         <Units>unitless</Units>
         <Count>1</Count>
       </item>

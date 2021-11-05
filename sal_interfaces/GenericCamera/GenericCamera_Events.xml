@@ -199,11 +199,29 @@
   <SALEvent>
     <Subsystem>GenericCamera</Subsystem>
     <EFDB_Topic>GenericCamera_logevent_endIntegration</EFDB_Topic>
+    <Description>Event sent at end of image integration.
+        Note: all : delimited strings (aka string arrays) follow the escaping convention defined in CAP-572</Description>
     <item>
-      <EFDB_Name>ignored</EFDB_Name>
-      <Description>Attribute required by the SAL API, but is unused.</Description>
-      <IDL_Type>boolean</IDL_Type>
+      <EFDB_Name>additionalKeys</EFDB_Name>
+      <Description>Additional keys passed to the takeImages command (: delimited)</Description>
+      <IDL_Type>string</IDL_Type>
+      <IDL_Size>1</IDL_Size>
       <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>additionalValues</EFDB_Name>
+      <Description>Additional values passed to the takeImages command (: delimited, in same order as additionalKeys)</Description>
+      <IDL_Type>string</IDL_Type>
+      <IDL_Size>1</IDL_Size>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>timestampAcquisitionEnd</EFDB_Name>
+      <Description>The effective time at which the image acquisition ended.</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>second</Units>
       <Count>1</Count>
     </item>
   </SALEvent>
@@ -793,5 +811,34 @@
   <SALEvent>
     <Subsystem>GenericCamera</Subsystem>
     <EFDB_Topic>GenericCamera_logevent_ccsConfigured</EFDB_Topic>
+  </SALEvent>
+  <SALEvent>
+    <Subsystem>GenericCamera</Subsystem>
+    <EFDB_Topic>GenericCamera_logevent_autoExposureStarted</EFDB_Topic>
+    <item>
+      <EFDB_Name>minExpTime</EFDB_Name>
+      <Description>Minimum exposure time</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>second</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>maxExpTime</EFDB_Name>
+      <Description>Maximum exposure time</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>second</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>configuration</EFDB_Name>
+      <Description>Additional parameters in YAML format</Description>
+      <IDL_Type>string</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+  </SALEvent>
+  <SALEvent>
+    <Subsystem>GenericCamera</Subsystem>
+    <EFDB_Topic>GenericCamera_logevent_autoExposureStopped</EFDB_Topic>
   </SALEvent>
 </SALEventSet>

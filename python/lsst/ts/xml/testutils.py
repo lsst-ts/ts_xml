@@ -28,7 +28,7 @@ XML test suite generator scripts.
 # Variables
 # =========
 
-"""Defines the array of Commandable SAL Components, or CSCs."""
+"""Defines the list of Commandable SAL Components, or CSCs."""
 
 subsystems = [
     "AdamSensors",
@@ -48,6 +48,7 @@ subsystems = [
     "ATSpectrograph",
     "ATWhiteLight",
     "Authorize",
+    "GCHeaderService",
     "CCArchiver",
     "CCCamera",
     "CCHeaderService",
@@ -62,6 +63,7 @@ subsystems = [
     "ESS",
     "FiberSpectrograph",
     "GenericCamera",
+    "GIS",
     "Guider",
     "IOTA",
     "HVAC",
@@ -95,7 +97,7 @@ subsystems = [
     "WeatherStation",
 ]
 
-"""Define the array of Generic Commands."""
+"""Define the list of Generic Commands."""
 
 generic_commands = [
     "abort",
@@ -110,7 +112,7 @@ generic_commands = [
     "setAuthList",
 ]
 
-"""Define the array of Generic Events."""
+"""Define the list of Generic Events."""
 
 generic_events = [
     "appliedSettingsMatchStart",
@@ -125,6 +127,7 @@ generic_events = [
     "softwareVersions",
     "summaryState",
     "authList",
+    "largeFileObjectAvailable",
 ]
 
 generic_topics = set(
@@ -132,6 +135,82 @@ generic_topics = set(
     + [f"logevent_{val}" for val in generic_events]
 )
 
+"""Define the list of AddedGenerics categories."""
+
+added_generics_categories = ["configurable", "csc"]
+
+"""Define the list of AddedGenerics commands that are not mandatory."""
+
+added_generics_commands = ["abort", "enterControl", "setValue"]
+
+"""Define the list of AddedGenerics events that are not mandatory."""
+
+added_generics_events = ["largeFileObjectAvailable"]
+
+"""Define the list of AddedGenerics mandatory commands."""
+
+added_generics_mandatory_commands = []
+
+"""Define the list of AddedGenerics mandatory events."""
+
+added_generics_mandatory_events = [
+    "heartbeat",
+    "logLevel",
+    "logMessage",
+    "softwareVersions",
+]
+
+"""Define the full set of mandatory topics not needed in AddedGenerics."""
+
+added_generics_mandatory_topics = set(
+    [f"command_{val}" for val in added_generics_mandatory_commands]
+    + [f"logevent_{val}" for val in added_generics_mandatory_events]
+)
+
+"""Define list of commands for csc category."""
+
+added_generics_csc_commands = [
+    "disable",
+    "enable",
+    "exitControl",
+    "setAuthList",
+    "setLogLevel",
+    "standby",
+    "start",
+]
+
+"""Define list of events for csc category."""
+
+added_generics_csc_events = [
+    "authList",
+    "errorCode",
+    "simulationMode",
+    "summaryState",
+]
+
+"""Define list of commands for configurable category."""
+
+added_generics_configurable_commands = []
+
+"""Define list of events for configurable category."""
+
+added_generics_configurable_events = [
+    "appliedSettingsMatchStart",
+    "settingsApplied",
+    "settingVersions",
+]
+
+"""Define the full set of approved AddedGenerics items."""
+
+added_generics_items = set(
+    added_generics_categories
+    + [f"command_{val}" for val in added_generics_commands]
+    + [f"logevent_{val}" for val in added_generics_events]
+    + [f"command_{val}" for val in added_generics_csc_commands]
+    + [f"logevent_{val}" for val in added_generics_csc_events]
+    + [f"command_{val}" for val in added_generics_configurable_commands]
+    + [f"logevent_{val}" for val in added_generics_configurable_events]
+)
 
 """Define the lists of IDL and MySQL Reserved Words"""
 
