@@ -1,17 +1,10 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<?xml-stylesheet type="text/xsl" href="http://project.lsst.org/ts/sal_objects/schema/SALTelemetrySet.xsl"?>
-<SALTelemetrySet xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://project.lsst.org/ts/sal_objects/schema/SALTelemetrySet.xsd">
-  <!-- quadbox -->
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<SALTelemetrySet xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/lsst-ts/ts_xml/develop/schema/SALTelemetrySet.xsd">
+  <!--Created by xmlmaker2 for subsystem MTCamera class MTCamera_quadbox_BFR using level 1-->
+  <!--====================================================================================-->
   <SALTelemetry>
     <Subsystem>MTCamera</Subsystem>
     <EFDB_Topic>MTCamera_quadbox_BFR</EFDB_Topic>
-    <item>
-      <EFDB_Name>protection_I</EFDB_Name>
-      <Description>Protection system current</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>mA</Units>
-      <Count>1</Count>
-    </item>
     <item>
       <EFDB_Name>clean_5_24V_I</EFDB_Name>
       <Description>Clean 5 and 24V current</Description>
@@ -27,8 +20,29 @@
       <Count>1</Count>
     </item>
     <item>
+      <EFDB_Name>dirty_28V_I</EFDB_Name>
+      <Description>Dirty 28V current</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>mA</Units>
+      <Count>1</Count>
+    </item>
+    <item>
       <EFDB_Name>dirty_48V_I</EFDB_Name>
       <Description>Dirty 48V current</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>mA</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>heater_I</EFDB_Name>
+      <Description>Heater current</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>mA</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>protection_I</EFDB_Name>
+      <Description>Protection system current</Description>
       <IDL_Type>double</IDL_Type>
       <Units>mA</Units>
       <Count>1</Count>
@@ -62,20 +76,6 @@
       <Count>1</Count>
     </item>
     <item>
-      <EFDB_Name>dirty_28V_I</EFDB_Name>
-      <Description>Dirty 28V current</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>mA</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>heater_I</EFDB_Name>
-      <Description>Heater current</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>mA</Units>
-      <Count>1</Count>
-    </item>
-    <item>
       <EFDB_Name>rebps_Spr_I</EFDB_Name>
       <Description>REB PS spare current</Description>
       <IDL_Type>double</IDL_Type>
@@ -83,261 +83,42 @@
       <Count>1</Count>
     </item>
   </SALTelemetry>
-  <SALTelemetry>
-    <Subsystem>MTCamera</Subsystem>
-    <EFDB_Topic>MTCamera_quadbox_PDU_5V</EFDB_Topic>
-    <item>
-      <EFDB_Name>otm_0_A_V</EFDB_Name>
-      <Description>OTM 0-A voltage</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>Volt</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>otm_0_A_I</EFDB_Name>
-      <Description>OTM 0-A current</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>mA</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>otm_0_B_V</EFDB_Name>
-      <Description>OTM 0-B voltage</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>Volt</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>otm_0_B_I</EFDB_Name>
-      <Description>OTM 0-B current</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>mA</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>otm_1_A_V</EFDB_Name>
-      <Description>OTM 1-A voltage</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>Volt</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>otm_1_A_I</EFDB_Name>
-      <Description>OTM 1-A current</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>mA</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>otm_1_B_V</EFDB_Name>
-      <Description>OTM 1-B voltage</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>Volt</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>otm_1_B_I</EFDB_Name>
-      <Description>OTM 1-B current</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>mA</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>otm_2_A_V</EFDB_Name>
-      <Description>OTM 2-A voltage</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>Volt</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>otm_2_A_I</EFDB_Name>
-      <Description>OTM 2-A current</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>mA</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>otm_2_B_V</EFDB_Name>
-      <Description>OTM 2-B voltage</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>Volt</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>otm_2_B_I</EFDB_Name>
-      <Description>OTM 2-B current</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>mA</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>otm_3_A_V</EFDB_Name>
-      <Description>OTM 3-A voltage</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>Volt</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>otm_3_A_I</EFDB_Name>
-      <Description>OTM 3-A current</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>mA</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>otm_3_B_V</EFDB_Name>
-      <Description>OTM 3-B voltage</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>Volt</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>otm_3_B_I</EFDB_Name>
-      <Description>OTM 3-B current</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>mA</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>otm_4_A_V</EFDB_Name>
-      <Description>OTM 4-A voltage</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>Volt</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>otm_4_A_I</EFDB_Name>
-      <Description>OTM 4-A current</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>mA</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>otm_4_B_V</EFDB_Name>
-      <Description>OTM 4-B voltage</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>Volt</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>otm_4_B_I</EFDB_Name>
-      <Description>OTM 4-B current</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>mA</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>otm_5_A_V</EFDB_Name>
-      <Description>OTM 5-A voltage</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>Volt</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>otm_5_A_I</EFDB_Name>
-      <Description>OTM 5-A current</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>mA</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>otm_5_B_V</EFDB_Name>
-      <Description>OTM 5-B voltage</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>Volt</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>otm_5_B_I</EFDB_Name>
-      <Description>OTM 5-B current</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>mA</Units>
-      <Count>1</Count>
-    </item>
-  </SALTelemetry>
+  <!--Created by xmlmaker2 for subsystem MTCamera class MTCamera_quadbox_PDU_24VC using level 1-->
+  <!--=========================================================================================-->
   <SALTelemetry>
     <Subsystem>MTCamera</Subsystem>
     <EFDB_Topic>MTCamera_quadbox_PDU_24VC</EFDB_Topic>
     <item>
-      <EFDB_Name>main_V</EFDB_Name>
-      <Description>24V Clean PDU main voltage</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>Volt</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>main_I</EFDB_Name>
-      <Description>24V Clean PDU main current</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>mA</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>main_T</EFDB_Name>
-      <Description>24V Clean PDU main temperature</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>Celsius</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>board_T</EFDB_Name>
+      <EFDB_Name>n_24vc_Board_T</EFDB_Name>
       <Description>24V Clean PDU board temperature</Description>
       <IDL_Type>double</IDL_Type>
       <Units>Celsius</Units>
       <Count>1</Count>
     </item>
     <item>
-      <EFDB_Name>fPGA_T</EFDB_Name>
+      <EFDB_Name>n_24vc_FPGA_T</EFDB_Name>
       <Description>24V Clean PDU FPGA temperature</Description>
       <IDL_Type>double</IDL_Type>
       <Units>Celsius</Units>
       <Count>1</Count>
     </item>
     <item>
-      <EFDB_Name>pwr_Cry_HCU_V</EFDB_Name>
-      <Description>Power/cryo HCU voltage</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>Volt</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>pwr_Cry_HCU_I</EFDB_Name>
-      <Description>Power/cryo HCU current</Description>
+      <EFDB_Name>n_24vc_Main_I</EFDB_Name>
+      <Description>24V Clean PDU main current</Description>
       <IDL_Type>double</IDL_Type>
       <Units>mA</Units>
       <Count>1</Count>
     </item>
     <item>
-      <EFDB_Name>fes_Shu_HCU_V</EFDB_Name>
-      <Description>FES/shutter HCU voltage</Description>
+      <EFDB_Name>n_24vc_Main_T</EFDB_Name>
+      <Description>24V Clean PDU main temperature</Description>
       <IDL_Type>double</IDL_Type>
-      <Units>Volt</Units>
+      <Units>Celsius</Units>
       <Count>1</Count>
     </item>
     <item>
-      <EFDB_Name>fes_Shu_HCU_I</EFDB_Name>
-      <Description>FES/shutter HCU current</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>mA</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>ion_Pumps_V</EFDB_Name>
-      <Description>Ion pumps voltage</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>Volt</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>ion_Pumps_I</EFDB_Name>
-      <Description>Ion pumps current</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>mA</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>body_Purge_V</EFDB_Name>
-      <Description>Body purge voltage</Description>
+      <EFDB_Name>n_24vc_Main_V</EFDB_Name>
+      <Description>24V Clean PDU main voltage</Description>
       <IDL_Type>double</IDL_Type>
       <Units>Volt</Units>
       <Count>1</Count>
@@ -350,8 +131,8 @@
       <Count>1</Count>
     </item>
     <item>
-      <EFDB_Name>bpu_Maq20_V</EFDB_Name>
-      <Description>Body purge MAQ20 voltage</Description>
+      <EFDB_Name>body_Purge_V</EFDB_Name>
+      <Description>Body purge voltage</Description>
       <IDL_Type>double</IDL_Type>
       <Units>Volt</Units>
       <Count>1</Count>
@@ -364,8 +145,22 @@
       <Count>1</Count>
     </item>
     <item>
-      <EFDB_Name>gauges_V</EFDB_Name>
-      <Description>Gauges voltage</Description>
+      <EFDB_Name>bpu_Maq20_V</EFDB_Name>
+      <Description>Body purge MAQ20 voltage</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>Volt</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>fes_Shu_HCU_I</EFDB_Name>
+      <Description>FES/shutter HCU current</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>mA</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>fes_Shu_HCU_V</EFDB_Name>
+      <Description>FES/shutter HCU voltage</Description>
       <IDL_Type>double</IDL_Type>
       <Units>Volt</Units>
       <Count>1</Count>
@@ -377,48 +172,78 @@
       <Units>mA</Units>
       <Count>1</Count>
     </item>
-  </SALTelemetry>
-  <SALTelemetry>
-    <Subsystem>MTCamera</Subsystem>
-    <EFDB_Topic>MTCamera_quadbox_PDU_24VD</EFDB_Topic>
     <item>
-      <EFDB_Name>main_V</EFDB_Name>
-      <Description>24V Dirty PDU main voltage</Description>
+      <EFDB_Name>gauges_V</EFDB_Name>
+      <Description>Gauges voltage</Description>
       <IDL_Type>double</IDL_Type>
       <Units>Volt</Units>
       <Count>1</Count>
     </item>
     <item>
-      <EFDB_Name>main_I</EFDB_Name>
-      <Description>24V Dirty PDU main current</Description>
+      <EFDB_Name>ion_Pumps_I</EFDB_Name>
+      <Description>Ion pumps current</Description>
       <IDL_Type>double</IDL_Type>
       <Units>mA</Units>
       <Count>1</Count>
     </item>
     <item>
-      <EFDB_Name>main_T</EFDB_Name>
-      <Description>24V Dirty PDU main temperature</Description>
+      <EFDB_Name>ion_Pumps_V</EFDB_Name>
+      <Description>Ion pumps voltage</Description>
       <IDL_Type>double</IDL_Type>
-      <Units>Celsius</Units>
+      <Units>Volt</Units>
       <Count>1</Count>
     </item>
     <item>
-      <EFDB_Name>board_T</EFDB_Name>
+      <EFDB_Name>pwr_Cry_HCU_I</EFDB_Name>
+      <Description>Power/cryo HCU current</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>mA</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>pwr_Cry_HCU_V</EFDB_Name>
+      <Description>Power/cryo HCU voltage</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>Volt</Units>
+      <Count>1</Count>
+    </item>
+  </SALTelemetry>
+  <!--Created by xmlmaker2 for subsystem MTCamera class MTCamera_quadbox_PDU_24VD using level 1-->
+  <!--=========================================================================================-->
+  <SALTelemetry>
+    <Subsystem>MTCamera</Subsystem>
+    <EFDB_Topic>MTCamera_quadbox_PDU_24VD</EFDB_Topic>
+    <item>
+      <EFDB_Name>n_24vd_Board_T</EFDB_Name>
       <Description>24V Dirty PDU board temperature</Description>
       <IDL_Type>double</IDL_Type>
       <Units>Celsius</Units>
       <Count>1</Count>
     </item>
     <item>
-      <EFDB_Name>fPGA_T</EFDB_Name>
+      <EFDB_Name>n_24vd_FPGA_T</EFDB_Name>
       <Description>24V Dirty PDU FPGA temperature</Description>
       <IDL_Type>double</IDL_Type>
       <Units>Celsius</Units>
       <Count>1</Count>
     </item>
     <item>
-      <EFDB_Name>cryo_Turbo_V</EFDB_Name>
-      <Description>Cryo turbo pump voltage</Description>
+      <EFDB_Name>n_24vd_Main_I</EFDB_Name>
+      <Description>24V Dirty PDU main current</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>mA</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>n_24vd_Main_T</EFDB_Name>
+      <Description>24V Dirty PDU main temperature</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>Celsius</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>n_24vd_Main_V</EFDB_Name>
+      <Description>24V Dirty PDU main voltage</Description>
       <IDL_Type>double</IDL_Type>
       <Units>Volt</Units>
       <Count>1</Count>
@@ -431,8 +256,8 @@
       <Count>1</Count>
     </item>
     <item>
-      <EFDB_Name>hex_Turbo_V</EFDB_Name>
-      <Description>Hex turbo pump voltage</Description>
+      <EFDB_Name>cryo_Turbo_V</EFDB_Name>
+      <Description>Cryo turbo pump voltage</Description>
       <IDL_Type>double</IDL_Type>
       <Units>Volt</Units>
       <Count>1</Count>
@@ -444,48 +269,50 @@
       <Units>mA</Units>
       <Count>1</Count>
     </item>
-  </SALTelemetry>
-  <SALTelemetry>
-    <Subsystem>MTCamera</Subsystem>
-    <EFDB_Topic>MTCamera_quadbox_PDU_48V</EFDB_Topic>
     <item>
-      <EFDB_Name>main_V</EFDB_Name>
-      <Description>48V PDU main voltage</Description>
+      <EFDB_Name>hex_Turbo_V</EFDB_Name>
+      <Description>Hex turbo pump voltage</Description>
       <IDL_Type>double</IDL_Type>
       <Units>Volt</Units>
       <Count>1</Count>
     </item>
+  </SALTelemetry>
+  <!--Created by xmlmaker2 for subsystem MTCamera class MTCamera_quadbox_PDU_48V using level 1-->
+  <!--========================================================================================-->
+  <SALTelemetry>
+    <Subsystem>MTCamera</Subsystem>
+    <EFDB_Topic>MTCamera_quadbox_PDU_48V</EFDB_Topic>
     <item>
-      <EFDB_Name>main_I</EFDB_Name>
-      <Description>48V PDU main current</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>mA</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>main_T</EFDB_Name>
-      <Description>48V PDU main temperature</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>Celsius</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>board_T</EFDB_Name>
+      <EFDB_Name>n_48v_Board_T</EFDB_Name>
       <Description>48V PDU board temperature</Description>
       <IDL_Type>double</IDL_Type>
       <Units>Celsius</Units>
       <Count>1</Count>
     </item>
     <item>
-      <EFDB_Name>fPGA_T</EFDB_Name>
+      <EFDB_Name>n_48v_FPGA_T</EFDB_Name>
       <Description>48V PDU FPGA temperature</Description>
       <IDL_Type>double</IDL_Type>
       <Units>Celsius</Units>
       <Count>1</Count>
     </item>
     <item>
-      <EFDB_Name>purge_Fan_V</EFDB_Name>
-      <Description>Purge fan voltage</Description>
+      <EFDB_Name>n_48v_Main_I</EFDB_Name>
+      <Description>48V PDU main current</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>mA</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>n_48v_Main_T</EFDB_Name>
+      <Description>48V PDU main temperature</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>Celsius</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>n_48v_Main_V</EFDB_Name>
+      <Description>48V PDU main voltage</Description>
       <IDL_Type>double</IDL_Type>
       <Units>Volt</Units>
       <Count>1</Count>
@@ -497,24 +324,193 @@
       <Units>mA</Units>
       <Count>1</Count>
     </item>
-  </SALTelemetry>
-  <SALTelemetry>
-    <Subsystem>MTCamera</Subsystem>
-    <EFDB_Topic>MTCamera_quadbox_REB_Bulk_PS</EFDB_Topic>
     <item>
-      <EFDB_Name>rebbulkps_Brd_T</EFDB_Name>
-      <Description>REB Bulk PS board temperature</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>Celsius</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>rebbulkps_0_2_V</EFDB_Name>
-      <Description>REB Bulk PS 0-2 voltage</Description>
+      <EFDB_Name>purge_Fan_V</EFDB_Name>
+      <Description>Purge fan voltage</Description>
       <IDL_Type>double</IDL_Type>
       <Units>Volt</Units>
       <Count>1</Count>
     </item>
+  </SALTelemetry>
+  <!--Created by xmlmaker2 for subsystem MTCamera class MTCamera_quadbox_PDU_5V using level 1-->
+  <!--=======================================================================================-->
+  <SALTelemetry>
+    <Subsystem>MTCamera</Subsystem>
+    <EFDB_Topic>MTCamera_quadbox_PDU_5V</EFDB_Topic>
+    <item>
+      <EFDB_Name>otm_0_A_I</EFDB_Name>
+      <Description>OTM 0-A current</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>mA</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>otm_0_A_V</EFDB_Name>
+      <Description>OTM 0-A voltage</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>Volt</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>otm_0_B_I</EFDB_Name>
+      <Description>OTM 0-B current</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>mA</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>otm_0_B_V</EFDB_Name>
+      <Description>OTM 0-B voltage</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>Volt</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>otm_1_A_I</EFDB_Name>
+      <Description>OTM 1-A current</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>mA</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>otm_1_A_V</EFDB_Name>
+      <Description>OTM 1-A voltage</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>Volt</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>otm_1_B_I</EFDB_Name>
+      <Description>OTM 1-B current</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>mA</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>otm_1_B_V</EFDB_Name>
+      <Description>OTM 1-B voltage</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>Volt</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>otm_2_A_I</EFDB_Name>
+      <Description>OTM 2-A current</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>mA</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>otm_2_A_V</EFDB_Name>
+      <Description>OTM 2-A voltage</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>Volt</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>otm_2_B_I</EFDB_Name>
+      <Description>OTM 2-B current</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>mA</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>otm_2_B_V</EFDB_Name>
+      <Description>OTM 2-B voltage</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>Volt</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>otm_3_A_I</EFDB_Name>
+      <Description>OTM 3-A current</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>mA</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>otm_3_A_V</EFDB_Name>
+      <Description>OTM 3-A voltage</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>Volt</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>otm_3_B_I</EFDB_Name>
+      <Description>OTM 3-B current</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>mA</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>otm_3_B_V</EFDB_Name>
+      <Description>OTM 3-B voltage</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>Volt</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>otm_4_A_I</EFDB_Name>
+      <Description>OTM 4-A current</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>mA</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>otm_4_A_V</EFDB_Name>
+      <Description>OTM 4-A voltage</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>Volt</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>otm_4_B_I</EFDB_Name>
+      <Description>OTM 4-B current</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>mA</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>otm_4_B_V</EFDB_Name>
+      <Description>OTM 4-B voltage</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>Volt</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>otm_5_A_I</EFDB_Name>
+      <Description>OTM 5-A current</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>mA</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>otm_5_A_V</EFDB_Name>
+      <Description>OTM 5-A voltage</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>Volt</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>otm_5_B_I</EFDB_Name>
+      <Description>OTM 5-B current</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>mA</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>otm_5_B_V</EFDB_Name>
+      <Description>OTM 5-B voltage</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>Volt</Units>
+      <Count>1</Count>
+    </item>
+  </SALTelemetry>
+  <!--Created by xmlmaker2 for subsystem MTCamera class MTCamera_quadbox_REB_Bulk_PS using level 1-->
+  <!--============================================================================================-->
+  <SALTelemetry>
+    <Subsystem>MTCamera</Subsystem>
+    <EFDB_Topic>MTCamera_quadbox_REB_Bulk_PS</EFDB_Topic>
     <item>
       <EFDB_Name>rebbulkps_0_2_I</EFDB_Name>
       <Description>REB Bulk PS 0-2 current</Description>
@@ -530,8 +526,8 @@
       <Count>1</Count>
     </item>
     <item>
-      <EFDB_Name>rebbulkps_3_5_V</EFDB_Name>
-      <Description>REB Bulk PS 3-5 voltage</Description>
+      <EFDB_Name>rebbulkps_0_2_V</EFDB_Name>
+      <Description>REB Bulk PS 0-2 voltage</Description>
       <IDL_Type>double</IDL_Type>
       <Units>Volt</Units>
       <Count>1</Count>
@@ -551,8 +547,8 @@
       <Count>1</Count>
     </item>
     <item>
-      <EFDB_Name>rebbulkps_6_8_V</EFDB_Name>
-      <Description>REB Bulk PS 6-8 voltage</Description>
+      <EFDB_Name>rebbulkps_3_5_V</EFDB_Name>
+      <Description>REB Bulk PS 3-5 voltage</Description>
       <IDL_Type>double</IDL_Type>
       <Units>Volt</Units>
       <Count>1</Count>
@@ -572,8 +568,8 @@
       <Count>1</Count>
     </item>
     <item>
-      <EFDB_Name>rebbulkps_9_12_V</EFDB_Name>
-      <Description>REB Bulk PS 9-12 voltage</Description>
+      <EFDB_Name>rebbulkps_6_8_V</EFDB_Name>
+      <Description>REB Bulk PS 6-8 voltage</Description>
       <IDL_Type>double</IDL_Type>
       <Units>Volt</Units>
       <Count>1</Count>
@@ -592,134 +588,27 @@
       <Units>Celsius</Units>
       <Count>1</Count>
     </item>
-  </SALTelemetry>
-  <!-- rebower -->
-  <SALTelemetry>
-    <Subsystem>MTCamera</Subsystem>
-    <EFDB_Topic>MTCamera_rebpower_Rebps</EFDB_Topic>
     <item>
-      <EFDB_Name>boardTemp0</EFDB_Name>
-      <Description>Board temperature 0</Description>
+      <EFDB_Name>rebbulkps_9_12_V</EFDB_Name>
+      <Description>REB Bulk PS 9-12 voltage</Description>
       <IDL_Type>double</IDL_Type>
-      <Units>Celsius</Units>
-      <Count>13</Count>
-    </item>
-    <item>
-      <EFDB_Name>location</EFDB_Name>
-      <Description>Rebps Location</Description>
-      <IDL_Type>string</IDL_Type>
-      <Units>unitless</Units>
+      <Units>Volt</Units>
       <Count>1</Count>
     </item>
     <item>
-      <EFDB_Name>boardTemp1</EFDB_Name>
-      <Description>Board temperature 1</Description>
+      <EFDB_Name>rebbulkps_Brd_T</EFDB_Name>
+      <Description>REB Bulk PS board temperature</Description>
       <IDL_Type>double</IDL_Type>
       <Units>Celsius</Units>
-      <Count>13</Count>
-    </item>
-    <item>
-      <EFDB_Name>boardTemp2</EFDB_Name>
-      <Description>Board temperature 2</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>Celsius</Units>
-      <Count>13</Count>
-    </item>
-    <item>
-      <EFDB_Name>boardTemp3</EFDB_Name>
-      <Description>Board temperature 3</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>Celsius</Units>
-      <Count>13</Count>
-    </item>
-    <item>
-      <EFDB_Name>boardTemp4</EFDB_Name>
-      <Description>Board temperature 4</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>Celsius</Units>
-      <Count>13</Count>
-    </item>
-    <item>
-      <EFDB_Name>boardTemp5</EFDB_Name>
-      <Description>Board temperature 5</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>Celsius</Units>
-      <Count>13</Count>
-    </item>
-    <item>
-      <EFDB_Name>boardTemp6</EFDB_Name>
-      <Description>Board temperature 6</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>Celsius</Units>
-      <Count>13</Count>
+      <Count>1</Count>
     </item>
   </SALTelemetry>
+  <!--Created by xmlmaker2 for subsystem MTCamera class MTCamera_rebpower_Reb using level 1-->
+  <!--=====================================================================================-->
   <SALTelemetry>
     <Subsystem>MTCamera</Subsystem>
     <EFDB_Topic>MTCamera_rebpower_Reb</EFDB_Topic>
-    <item>
-      <EFDB_Name>digital_VbefLDO</EFDB_Name>
-      <Description>R00/RebG digital PS\Voltage before LDO</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>Volt</Units>
-      <Count>71</Count>
-    </item>
-    <item>
-      <EFDB_Name>location</EFDB_Name>
-      <Description>Reb Location</Description>
-      <IDL_Type>string</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>digital_IbefLDO</EFDB_Name>
-      <Description>Current before LDO</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>mA</Units>
-      <Count>71</Count>
-    </item>
-    <item>
-      <EFDB_Name>digital_VaftLDO</EFDB_Name>
-      <Description>Voltage after LDO</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>Volt</Units>
-      <Count>71</Count>
-    </item>
-    <item>
-      <EFDB_Name>digital_IaftLDO</EFDB_Name>
-      <Description>Current after LDO</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>mA</Units>
-      <Count>71</Count>
-    </item>
-    <item>
-      <EFDB_Name>digital_VaftSwch</EFDB_Name>
-      <Description>Voltage after switch</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>Volt</Units>
-      <Count>71</Count>
-    </item>
-    <item>
-      <EFDB_Name>analog_VbefLDO</EFDB_Name>
-      <Description>R00/RebG analog PS\Voltage before LDO</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>Volt</Units>
-      <Count>71</Count>
-    </item>
-    <item>
-      <EFDB_Name>analog_IbefLDO</EFDB_Name>
-      <Description>Current before LDO</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>mA</Units>
-      <Count>71</Count>
-    </item>
-    <item>
-      <EFDB_Name>analog_VaftLDO</EFDB_Name>
-      <Description>Voltage after LDO</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>Volt</Units>
-      <Count>71</Count>
-    </item>
+    <!--CCSMETA: Array analog_IaftLDO indexed by location-->
     <item>
       <EFDB_Name>analog_IaftLDO</EFDB_Name>
       <Description>Current after LDO</Description>
@@ -727,6 +616,23 @@
       <Units>mA</Units>
       <Count>71</Count>
     </item>
+    <!--CCSMETA: Array analog_IbefLDO indexed by location-->
+    <item>
+      <EFDB_Name>analog_IbefLDO</EFDB_Name>
+      <Description>Current before LDO</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>mA</Units>
+      <Count>71</Count>
+    </item>
+    <!--CCSMETA: Array analog_VaftLDO indexed by location-->
+    <item>
+      <EFDB_Name>analog_VaftLDO</EFDB_Name>
+      <Description>Voltage after LDO</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>Volt</Units>
+      <Count>71</Count>
+    </item>
+    <!--CCSMETA: Array analog_VaftSwch indexed by location-->
     <item>
       <EFDB_Name>analog_VaftSwch</EFDB_Name>
       <Description>Voltage after switch</Description>
@@ -734,69 +640,15 @@
       <Units>Volt</Units>
       <Count>71</Count>
     </item>
+    <!--CCSMETA: Array analog_VbefLDO indexed by location-->
     <item>
-      <EFDB_Name>od_VbefLDO</EFDB_Name>
-      <Description>R00/RebG OD PS\Voltage before LDO</Description>
+      <EFDB_Name>analog_VbefLDO</EFDB_Name>
+      <Description>Voltage before LDO</Description>
       <IDL_Type>double</IDL_Type>
       <Units>Volt</Units>
       <Count>71</Count>
     </item>
-    <item>
-      <EFDB_Name>od_IbefLDO</EFDB_Name>
-      <Description>Current before LDO</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>mA</Units>
-      <Count>71</Count>
-    </item>
-    <item>
-      <EFDB_Name>od_VaftLDO</EFDB_Name>
-      <Description>Voltage after LDO</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>Volt</Units>
-      <Count>71</Count>
-    </item>
-    <item>
-      <EFDB_Name>od_VaftLDO2</EFDB_Name>
-      <Description>Voltage after LDO2</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>Volt</Units>
-      <Count>71</Count>
-    </item>
-    <item>
-      <EFDB_Name>od_IaftLDO</EFDB_Name>
-      <Description>Current after LDO</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>mA</Units>
-      <Count>71</Count>
-    </item>
-    <item>
-      <EFDB_Name>od_VaftSwch</EFDB_Name>
-      <Description>Voltage after switch</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>Volt</Units>
-      <Count>71</Count>
-    </item>
-    <item>
-      <EFDB_Name>clockhi_VbefLDO</EFDB_Name>
-      <Description>R00/RebG clockhi PS\Voltage before LDO</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>Volt</Units>
-      <Count>71</Count>
-    </item>
-    <item>
-      <EFDB_Name>clockhi_IbefLDO</EFDB_Name>
-      <Description>Current before LDO</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>mA</Units>
-      <Count>71</Count>
-    </item>
-    <item>
-      <EFDB_Name>clockhi_VaftLDO</EFDB_Name>
-      <Description>Voltage after LDO</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>Volt</Units>
-      <Count>71</Count>
-    </item>
+    <!--CCSMETA: Array clockhi_IaftLDO indexed by location-->
     <item>
       <EFDB_Name>clockhi_IaftLDO</EFDB_Name>
       <Description>Current after LDO</Description>
@@ -804,6 +656,23 @@
       <Units>mA</Units>
       <Count>71</Count>
     </item>
+    <!--CCSMETA: Array clockhi_IbefLDO indexed by location-->
+    <item>
+      <EFDB_Name>clockhi_IbefLDO</EFDB_Name>
+      <Description>Current before LDO</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>mA</Units>
+      <Count>71</Count>
+    </item>
+    <!--CCSMETA: Array clockhi_VaftLDO indexed by location-->
+    <item>
+      <EFDB_Name>clockhi_VaftLDO</EFDB_Name>
+      <Description>Voltage after LDO</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>Volt</Units>
+      <Count>71</Count>
+    </item>
+    <!--CCSMETA: Array clockhi_VaftSwch indexed by location-->
     <item>
       <EFDB_Name>clockhi_VaftSwch</EFDB_Name>
       <Description>Voltage after switch</Description>
@@ -811,34 +680,15 @@
       <Units>Volt</Units>
       <Count>71</Count>
     </item>
+    <!--CCSMETA: Array clockhi_VbefLDO indexed by location-->
     <item>
-      <EFDB_Name>clocklo_VbefLDO</EFDB_Name>
-      <Description>R00/RebG clocklo PS\Voltage before LDO</Description>
+      <EFDB_Name>clockhi_VbefLDO</EFDB_Name>
+      <Description>Voltage before LDO</Description>
       <IDL_Type>double</IDL_Type>
       <Units>Volt</Units>
       <Count>71</Count>
     </item>
-    <item>
-      <EFDB_Name>clocklo_IbefLDO</EFDB_Name>
-      <Description>Current before LDO</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>mA</Units>
-      <Count>71</Count>
-    </item>
-    <item>
-      <EFDB_Name>clocklo_VaftLDO</EFDB_Name>
-      <Description>Voltage after LDO</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>Volt</Units>
-      <Count>71</Count>
-    </item>
-    <item>
-      <EFDB_Name>clocklo_VaftLDO2</EFDB_Name>
-      <Description>Voltage after LDO2</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>Volt</Units>
-      <Count>71</Count>
-    </item>
+    <!--CCSMETA: Array clocklo_IaftLDO indexed by location-->
     <item>
       <EFDB_Name>clocklo_IaftLDO</EFDB_Name>
       <Description>Current after LDO</Description>
@@ -846,6 +696,31 @@
       <Units>mA</Units>
       <Count>71</Count>
     </item>
+    <!--CCSMETA: Array clocklo_IbefLDO indexed by location-->
+    <item>
+      <EFDB_Name>clocklo_IbefLDO</EFDB_Name>
+      <Description>Current before LDO</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>mA</Units>
+      <Count>71</Count>
+    </item>
+    <!--CCSMETA: Array clocklo_VaftLDO indexed by location-->
+    <item>
+      <EFDB_Name>clocklo_VaftLDO</EFDB_Name>
+      <Description>Voltage after LDO</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>Volt</Units>
+      <Count>71</Count>
+    </item>
+    <!--CCSMETA: Array clocklo_VaftLDO2 indexed by location-->
+    <item>
+      <EFDB_Name>clocklo_VaftLDO2</EFDB_Name>
+      <Description>Voltage after LDO2</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>Volt</Units>
+      <Count>71</Count>
+    </item>
+    <!--CCSMETA: Array clocklo_VaftSwch indexed by location-->
     <item>
       <EFDB_Name>clocklo_VaftSwch</EFDB_Name>
       <Description>Voltage after switch</Description>
@@ -853,48 +728,135 @@
       <Units>Volt</Units>
       <Count>71</Count>
     </item>
+    <!--CCSMETA: Array clocklo_VbefLDO indexed by location-->
     <item>
-      <EFDB_Name>dphi_VbefLDO</EFDB_Name>
-      <Description>R00/RebG dphi PS\Voltage before LDO</Description>
+      <EFDB_Name>clocklo_VbefLDO</EFDB_Name>
+      <Description>Voltage before LDO</Description>
       <IDL_Type>double</IDL_Type>
       <Units>Volt</Units>
-      <Count>8</Count>
+      <Count>71</Count>
     </item>
+    <!--CCSMETA: Array digital_IaftLDO indexed by location-->
     <item>
-      <EFDB_Name>dphi_IbefLDO</EFDB_Name>
+      <EFDB_Name>digital_IaftLDO</EFDB_Name>
+      <Description>Current after LDO</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>mA</Units>
+      <Count>71</Count>
+    </item>
+    <!--CCSMETA: Array digital_IbefLDO indexed by location-->
+    <item>
+      <EFDB_Name>digital_IbefLDO</EFDB_Name>
       <Description>Current before LDO</Description>
       <IDL_Type>double</IDL_Type>
       <Units>mA</Units>
-      <Count>8</Count>
+      <Count>71</Count>
     </item>
+    <!--CCSMETA: Array digital_VaftLDO indexed by location-->
     <item>
-      <EFDB_Name>dphi_VaftLDO</EFDB_Name>
+      <EFDB_Name>digital_VaftLDO</EFDB_Name>
       <Description>Voltage after LDO</Description>
       <IDL_Type>double</IDL_Type>
       <Units>Volt</Units>
-      <Count>8</Count>
+      <Count>71</Count>
     </item>
+    <!--CCSMETA: Array digital_VaftSwch indexed by location-->
+    <item>
+      <EFDB_Name>digital_VaftSwch</EFDB_Name>
+      <Description>Voltage after switch</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>Volt</Units>
+      <Count>71</Count>
+    </item>
+    <!--CCSMETA: Array digital_VbefLDO indexed by location-->
+    <item>
+      <EFDB_Name>digital_VbefLDO</EFDB_Name>
+      <Description>Voltage before LDO</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>Volt</Units>
+      <Count>71</Count>
+    </item>
+    <!--CCSMETA: Array dphi_IaftLDO indexed by location-->
     <item>
       <EFDB_Name>dphi_IaftLDO</EFDB_Name>
       <Description>Current after LDO</Description>
       <IDL_Type>double</IDL_Type>
       <Units>mA</Units>
-      <Count>8</Count>
+      <Count>71</Count>
     </item>
+    <!--CCSMETA: Array dphi_IbefLDO indexed by location-->
+    <item>
+      <EFDB_Name>dphi_IbefLDO</EFDB_Name>
+      <Description>Current before LDO</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>mA</Units>
+      <Count>71</Count>
+    </item>
+    <!--CCSMETA: Array dphi_VaftLDO indexed by location-->
+    <item>
+      <EFDB_Name>dphi_VaftLDO</EFDB_Name>
+      <Description>Voltage after LDO</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>Volt</Units>
+      <Count>71</Count>
+    </item>
+    <!--CCSMETA: Array dphi_VaftSwch indexed by location-->
     <item>
       <EFDB_Name>dphi_VaftSwch</EFDB_Name>
       <Description>Voltage after switch</Description>
       <IDL_Type>double</IDL_Type>
       <Units>Volt</Units>
-      <Count>8</Count>
+      <Count>71</Count>
     </item>
+    <!--CCSMETA: Array dphi_VbefLDO indexed by location-->
     <item>
-      <EFDB_Name>hvbias_VbefSwch</EFDB_Name>
-      <Description>R00/RebG hvbias PS\Voltage before switch</Description>
+      <EFDB_Name>dphi_VbefLDO</EFDB_Name>
+      <Description>Voltage before LDO</Description>
       <IDL_Type>double</IDL_Type>
       <Units>Volt</Units>
       <Count>71</Count>
     </item>
+    <!--CCSMETA: Array heater_IaftLDO indexed by location-->
+    <item>
+      <EFDB_Name>heater_IaftLDO</EFDB_Name>
+      <Description>Current after LDO</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>mA</Units>
+      <Count>71</Count>
+    </item>
+    <!--CCSMETA: Array heater_IbefLDO indexed by location-->
+    <item>
+      <EFDB_Name>heater_IbefLDO</EFDB_Name>
+      <Description>Current before LDO</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>mA</Units>
+      <Count>71</Count>
+    </item>
+    <!--CCSMETA: Array heater_VaftLDO indexed by location-->
+    <item>
+      <EFDB_Name>heater_VaftLDO</EFDB_Name>
+      <Description>Voltage after LDO</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>Volt</Units>
+      <Count>71</Count>
+    </item>
+    <!--CCSMETA: Array heater_VaftSwch indexed by location-->
+    <item>
+      <EFDB_Name>heater_VaftSwch</EFDB_Name>
+      <Description>Voltage after switch</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>Volt</Units>
+      <Count>71</Count>
+    </item>
+    <!--CCSMETA: Array heater_VbefLDO indexed by location-->
+    <item>
+      <EFDB_Name>heater_VbefLDO</EFDB_Name>
+      <Description>Voltage before LDO</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>Volt</Units>
+      <Count>71</Count>
+    </item>
+    <!--CCSMETA: Array hvbias_IbefSwch indexed by location-->
     <item>
       <EFDB_Name>hvbias_IbefSwch</EFDB_Name>
       <Description>Current before switch</Description>
@@ -902,67 +864,152 @@
       <Units>mA</Units>
       <Count>71</Count>
     </item>
+    <!--CCSMETA: Array hvbias_VbefSwch indexed by location-->
+    <item>
+      <EFDB_Name>hvbias_VbefSwch</EFDB_Name>
+      <Description>Voltage before switch</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>Volt</Units>
+      <Count>71</Count>
+    </item>
+    <item>
+      <EFDB_Name>location</EFDB_Name>
+      <Description>reb location</Description>
+      <IDL_Type>string</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <!--CCSMETA: Array od_IaftLDO indexed by location-->
+    <item>
+      <EFDB_Name>od_IaftLDO</EFDB_Name>
+      <Description>Current after LDO</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>mA</Units>
+      <Count>71</Count>
+    </item>
+    <!--CCSMETA: Array od_IbefLDO indexed by location-->
+    <item>
+      <EFDB_Name>od_IbefLDO</EFDB_Name>
+      <Description>Current before LDO</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>mA</Units>
+      <Count>71</Count>
+    </item>
+    <!--CCSMETA: Array od_VaftLDO indexed by location-->
+    <item>
+      <EFDB_Name>od_VaftLDO</EFDB_Name>
+      <Description>Voltage after LDO</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>Volt</Units>
+      <Count>71</Count>
+    </item>
+    <!--CCSMETA: Array od_VaftLDO2 indexed by location-->
+    <item>
+      <EFDB_Name>od_VaftLDO2</EFDB_Name>
+      <Description>Voltage after LDO2</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>Volt</Units>
+      <Count>71</Count>
+    </item>
+    <!--CCSMETA: Array od_VaftSwch indexed by location-->
+    <item>
+      <EFDB_Name>od_VaftSwch</EFDB_Name>
+      <Description>Voltage after switch</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>Volt</Units>
+      <Count>71</Count>
+    </item>
+    <!--CCSMETA: Array od_VbefLDO indexed by location-->
+    <item>
+      <EFDB_Name>od_VbefLDO</EFDB_Name>
+      <Description>Voltage before LDO</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>Volt</Units>
+      <Count>71</Count>
+    </item>
+    <!--CCSMETA: Array power indexed by location-->
     <item>
       <EFDB_Name>power</EFDB_Name>
-      <Description>R00/RebG all PSs\Total power</Description>
+      <Description>Total power</Description>
       <IDL_Type>double</IDL_Type>
       <Units>Watt</Units>
       <Count>71</Count>
     </item>
+  </SALTelemetry>
+  <!--Created by xmlmaker2 for subsystem MTCamera class MTCamera_rebpower_Rebps using level 1-->
+  <!--=======================================================================================-->
+  <SALTelemetry>
+    <Subsystem>MTCamera</Subsystem>
+    <EFDB_Topic>MTCamera_rebpower_Rebps</EFDB_Topic>
+    <!--CCSMETA: Array boardTemp0 indexed by location-->
     <item>
-      <EFDB_Name>heater_VbefLDO</EFDB_Name>
-      <Description>R00/RebW heater PS\Voltage before LDO</Description>
+      <EFDB_Name>boardTemp0</EFDB_Name>
+      <Description>Board temperature 0</Description>
       <IDL_Type>double</IDL_Type>
-      <Units>Volt</Units>
-      <Count>67</Count>
+      <Units>Celsius</Units>
+      <Count>13</Count>
+    </item>
+    <!--CCSMETA: Array boardTemp1 indexed by location-->
+    <item>
+      <EFDB_Name>boardTemp1</EFDB_Name>
+      <Description>Board temperature 1</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>Celsius</Units>
+      <Count>13</Count>
+    </item>
+    <!--CCSMETA: Array boardTemp2 indexed by location-->
+    <item>
+      <EFDB_Name>boardTemp2</EFDB_Name>
+      <Description>Board temperature 2</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>Celsius</Units>
+      <Count>13</Count>
+    </item>
+    <!--CCSMETA: Array boardTemp3 indexed by location-->
+    <item>
+      <EFDB_Name>boardTemp3</EFDB_Name>
+      <Description>Board temperature 3</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>Celsius</Units>
+      <Count>13</Count>
+    </item>
+    <!--CCSMETA: Array boardTemp4 indexed by location-->
+    <item>
+      <EFDB_Name>boardTemp4</EFDB_Name>
+      <Description>Board temperature 4</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>Celsius</Units>
+      <Count>13</Count>
+    </item>
+    <!--CCSMETA: Array boardTemp5 indexed by location-->
+    <item>
+      <EFDB_Name>boardTemp5</EFDB_Name>
+      <Description>Board temperature 5</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>Celsius</Units>
+      <Count>13</Count>
+    </item>
+    <!--CCSMETA: Array boardTemp6 indexed by location-->
+    <item>
+      <EFDB_Name>boardTemp6</EFDB_Name>
+      <Description>Board temperature 6</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>Celsius</Units>
+      <Count>13</Count>
     </item>
     <item>
-      <EFDB_Name>heater_IbefLDO</EFDB_Name>
-      <Description>Current before LDO</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>mA</Units>
-      <Count>67</Count>
-    </item>
-    <item>
-      <EFDB_Name>heater_VaftLDO</EFDB_Name>
-      <Description>Voltage after LDO</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>Volt</Units>
-      <Count>67</Count>
-    </item>
-    <item>
-      <EFDB_Name>heater_IaftLDO</EFDB_Name>
-      <Description>Current after LDO</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>mA</Units>
-      <Count>67</Count>
-    </item>
-    <item>
-      <EFDB_Name>heater_VaftSwch</EFDB_Name>
-      <Description>Voltage after switch</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>Volt</Units>
-      <Count>67</Count>
+      <EFDB_Name>location</EFDB_Name>
+      <Description>rebps location</Description>
+      <IDL_Type>string</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
     </item>
   </SALTelemetry>
-  <!-- hex -->
+  <!--Created by xmlmaker2 for subsystem MTCamera class MTCamera_hex_Cold1 using level 1-->
+  <!--==================================================================================-->
   <SALTelemetry>
     <Subsystem>MTCamera</Subsystem>
     <EFDB_Topic>MTCamera_hex_Cold1</EFDB_Topic>
-    <item>
-      <EFDB_Name>supplyTmp</EFDB_Name>
-      <Description>Supply Temperature</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>Celsius</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>preExpnTmp</EFDB_Name>
-      <Description>Pre Expn Temperature</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>Celsius</Units>
-      <Count>1</Count>
-    </item>
     <item>
       <EFDB_Name>evapExitTmp</EFDB_Name>
       <Description>Evap Exit Temperature</Description>
@@ -978,10 +1025,10 @@
       <Count>1</Count>
     </item>
     <item>
-      <EFDB_Name>supplyPrs</EFDB_Name>
-      <Description>Supply Pressure</Description>
+      <EFDB_Name>preExpnTmp</EFDB_Name>
+      <Description>Pre Expn Temperature</Description>
       <IDL_Type>double</IDL_Type>
-      <Units>psia</Units>
+      <Units>Celsius</Units>
       <Count>1</Count>
     </item>
     <item>
@@ -999,16 +1046,19 @@
       <Count>1</Count>
     </item>
     <item>
+      <EFDB_Name>supplyPrs</EFDB_Name>
+      <Description>Supply Pressure</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>psia</Units>
+      <Count>1</Count>
+    </item>
+    <item>
       <EFDB_Name>supplySubCooling</EFDB_Name>
       <Description>Cold1 Supply SubCooling</Description>
       <IDL_Type>double</IDL_Type>
       <Units>Celsius</Units>
       <Count>1</Count>
     </item>
-  </SALTelemetry>
-  <SALTelemetry>
-    <Subsystem>MTCamera</Subsystem>
-    <EFDB_Topic>MTCamera_hex_Cold2</EFDB_Topic>
     <item>
       <EFDB_Name>supplyTmp</EFDB_Name>
       <Description>Supply Temperature</Description>
@@ -1016,13 +1066,12 @@
       <Units>Celsius</Units>
       <Count>1</Count>
     </item>
-    <item>
-      <EFDB_Name>preExpnTmp</EFDB_Name>
-      <Description>Pre Expn Temperature</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>Celsius</Units>
-      <Count>1</Count>
-    </item>
+  </SALTelemetry>
+  <!--Created by xmlmaker2 for subsystem MTCamera class MTCamera_hex_Cold2 using level 1-->
+  <!--==================================================================================-->
+  <SALTelemetry>
+    <Subsystem>MTCamera</Subsystem>
+    <EFDB_Topic>MTCamera_hex_Cold2</EFDB_Topic>
     <item>
       <EFDB_Name>evapExitTmp</EFDB_Name>
       <Description>Evap Exit Temperature</Description>
@@ -1038,10 +1087,10 @@
       <Count>1</Count>
     </item>
     <item>
-      <EFDB_Name>supplyPrs</EFDB_Name>
-      <Description>Supply Pressure</Description>
+      <EFDB_Name>preExpnTmp</EFDB_Name>
+      <Description>Pre Expn Temperature</Description>
       <IDL_Type>double</IDL_Type>
-      <Units>psia</Units>
+      <Units>Celsius</Units>
       <Count>1</Count>
     </item>
     <item>
@@ -1059,348 +1108,29 @@
       <Count>1</Count>
     </item>
     <item>
+      <EFDB_Name>supplyPrs</EFDB_Name>
+      <Description>Supply Pressure</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>psia</Units>
+      <Count>1</Count>
+    </item>
+    <item>
       <EFDB_Name>supplySubCooling</EFDB_Name>
       <Description>Cold2 Supply SubCooling</Description>
       <IDL_Type>double</IDL_Type>
       <Units>Celsius</Units>
       <Count>1</Count>
     </item>
-  </SALTelemetry>
-  <SALTelemetry>
-    <Subsystem>MTCamera</Subsystem>
-    <EFDB_Topic>MTCamera_hex_Cryo5</EFDB_Topic>
     <item>
-      <EFDB_Name>c3ExitTmp</EFDB_Name>
-      <Description>C3 Exit Temperature</Description>
+      <EFDB_Name>supplyTmp</EFDB_Name>
+      <Description>Supply Temperature</Description>
       <IDL_Type>double</IDL_Type>
       <Units>Celsius</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>preC3Tmp</EFDB_Name>
-      <Description>Pre C3 Temperature</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>Celsius</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>preC4Tmp</EFDB_Name>
-      <Description>Pre C4 Temperature</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>Celsius</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>c4ExitTmp</EFDB_Name>
-      <Description>C4 Exit Temperature</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>Celsius</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>evapExitTmp</EFDB_Name>
-      <Description>Evap Exit Temperature</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>Celsius</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>hexRtrnTmp</EFDB_Name>
-      <Description>HX Return Temperature</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>Celsius</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>vaporPrs</EFDB_Name>
-      <Description>Vapor Pressure</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>psia</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>liquidPrs</EFDB_Name>
-      <Description>Liquid Pressure</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>psia</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>returnPrs</EFDB_Name>
-      <Description>Return Pressure</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>psia</Units>
       <Count>1</Count>
     </item>
   </SALTelemetry>
-  <SALTelemetry>
-    <Subsystem>MTCamera</Subsystem>
-    <EFDB_Topic>MTCamera_hex_Cryo6</EFDB_Topic>
-    <item>
-      <EFDB_Name>c3ExitTmp</EFDB_Name>
-      <Description>C3 Exit Temperature</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>Celsius</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>preC3Tmp</EFDB_Name>
-      <Description>Pre C3 Temperature</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>Celsius</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>preC4Tmp</EFDB_Name>
-      <Description>Pre C4 Temperature</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>Celsius</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>c4ExitTmp</EFDB_Name>
-      <Description>C4 Exit Temperature</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>Celsius</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>evapExitTmp</EFDB_Name>
-      <Description>Evap Exit Temperature</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>Celsius</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>hexRtrnTmp</EFDB_Name>
-      <Description>HX Return Temperature</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>Celsius</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>vaporPrs</EFDB_Name>
-      <Description>Vapor Pressure</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>psia</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>liquidPrs</EFDB_Name>
-      <Description>Liquid Pressure</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>psia</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>returnPrs</EFDB_Name>
-      <Description>Return Pressure</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>psia</Units>
-      <Count>1</Count>
-    </item>
-  </SALTelemetry>
-  <SALTelemetry>
-    <Subsystem>MTCamera</Subsystem>
-    <EFDB_Topic>MTCamera_hex_Cryo4</EFDB_Topic>
-    <item>
-      <EFDB_Name>c3ExitTmp</EFDB_Name>
-      <Description>C3 Exit Temperature</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>Celsius</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>preC3Tmp</EFDB_Name>
-      <Description>Pre C3 Temperature</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>Celsius</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>preC4Tmp</EFDB_Name>
-      <Description>Pre C4 Temperature</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>Celsius</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>c4ExitTmp</EFDB_Name>
-      <Description>C4 Exit Temperature</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>Celsius</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>evapExitTmp</EFDB_Name>
-      <Description>Evap Exit Temperature</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>Celsius</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>hexRtrnTmp</EFDB_Name>
-      <Description>HX Return Temperature</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>Celsius</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>vaporPrs</EFDB_Name>
-      <Description>Vapor Pressure</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>psia</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>liquidPrs</EFDB_Name>
-      <Description>Liquid Pressure</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>psia</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>returnPrs</EFDB_Name>
-      <Description>Return Pressure</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>psia</Units>
-      <Count>1</Count>
-    </item>
-  </SALTelemetry>
-  <SALTelemetry>
-    <Subsystem>MTCamera</Subsystem>
-    <EFDB_Topic>MTCamera_hex_Cryo3</EFDB_Topic>
-    <item>
-      <EFDB_Name>c3ExitTmp</EFDB_Name>
-      <Description>C3 Exit Temperature</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>Celsius</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>preC3Tmp</EFDB_Name>
-      <Description>Pre C3 Temperature</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>Celsius</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>preC4Tmp</EFDB_Name>
-      <Description>Pre C4 Temperature</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>Celsius</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>c4ExitTmp</EFDB_Name>
-      <Description>C4 Exit Temperature</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>Celsius</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>evapExitTmp</EFDB_Name>
-      <Description>Evap Exit Temperature</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>Celsius</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>hexRtrnTmp</EFDB_Name>
-      <Description>HX Return Temperature</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>Celsius</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>vaporPrs</EFDB_Name>
-      <Description>Vapor Pressure</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>psia</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>liquidPrs</EFDB_Name>
-      <Description>Liquid Pressure</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>psia</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>returnPrs</EFDB_Name>
-      <Description>Return Pressure</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>psia</Units>
-      <Count>1</Count>
-    </item>
-  </SALTelemetry>
-  <SALTelemetry>
-    <Subsystem>MTCamera</Subsystem>
-    <EFDB_Topic>MTCamera_hex_Cryo2</EFDB_Topic>
-    <item>
-      <EFDB_Name>c3ExitTmp</EFDB_Name>
-      <Description>C3 Exit Temperature</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>Celsius</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>preC3Tmp</EFDB_Name>
-      <Description>Pre C3 Temperature</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>Celsius</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>preC4Tmp</EFDB_Name>
-      <Description>Pre C4 Temperature</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>Celsius</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>c4ExitTmp</EFDB_Name>
-      <Description>C4 Exit Temperature</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>Celsius</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>evapExitTmp</EFDB_Name>
-      <Description>Evap Exit Temperature</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>Celsius</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>hexRtrnTmp</EFDB_Name>
-      <Description>HX Return Temperature</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>Celsius</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>vaporPrs</EFDB_Name>
-      <Description>Vapor Pressure</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>psia</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>liquidPrs</EFDB_Name>
-      <Description>Liquid Pressure</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>psia</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>returnPrs</EFDB_Name>
-      <Description>Return Pressure</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>psia</Units>
-      <Count>1</Count>
-    </item>
-  </SALTelemetry>
+  <!--Created by xmlmaker2 for subsystem MTCamera class MTCamera_hex_Cryo1 using level 1-->
+  <!--==================================================================================-->
   <SALTelemetry>
     <Subsystem>MTCamera</Subsystem>
     <EFDB_Topic>MTCamera_hex_Cryo1</EFDB_Topic>
@@ -1412,6 +1142,34 @@
       <Count>1</Count>
     </item>
     <item>
+      <EFDB_Name>c4ExitTmp</EFDB_Name>
+      <Description>C4 Exit Temperature</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>Celsius</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>evapExitTmp</EFDB_Name>
+      <Description>Evap Exit Temperature</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>Celsius</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>hexRtrnTmp</EFDB_Name>
+      <Description>HX Return Temperature</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>Celsius</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>liquidPrs</EFDB_Name>
+      <Description>Liquid Pressure</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>psia</Units>
+      <Count>1</Count>
+    </item>
+    <item>
       <EFDB_Name>preC3Tmp</EFDB_Name>
       <Description>Pre C3 Temperature</Description>
       <IDL_Type>double</IDL_Type>
@@ -1421,6 +1179,33 @@
     <item>
       <EFDB_Name>preC4Tmp</EFDB_Name>
       <Description>Pre C4 Temperature</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>Celsius</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>returnPrs</EFDB_Name>
+      <Description>Return Pressure</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>psia</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>vaporPrs</EFDB_Name>
+      <Description>Vapor Pressure</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>psia</Units>
+      <Count>1</Count>
+    </item>
+  </SALTelemetry>
+  <!--Created by xmlmaker2 for subsystem MTCamera class MTCamera_hex_Cryo2 using level 1-->
+  <!--==================================================================================-->
+  <SALTelemetry>
+    <Subsystem>MTCamera</Subsystem>
+    <EFDB_Topic>MTCamera_hex_Cryo2</EFDB_Topic>
+    <item>
+      <EFDB_Name>c3ExitTmp</EFDB_Name>
+      <Description>C3 Exit Temperature</Description>
       <IDL_Type>double</IDL_Type>
       <Units>Celsius</Units>
       <Count>1</Count>
@@ -1447,10 +1232,72 @@
       <Count>1</Count>
     </item>
     <item>
+      <EFDB_Name>liquidPrs</EFDB_Name>
+      <Description>Liquid Pressure</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>psia</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>preC3Tmp</EFDB_Name>
+      <Description>Pre C3 Temperature</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>Celsius</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>preC4Tmp</EFDB_Name>
+      <Description>Pre C4 Temperature</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>Celsius</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>returnPrs</EFDB_Name>
+      <Description>Return Pressure</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>psia</Units>
+      <Count>1</Count>
+    </item>
+    <item>
       <EFDB_Name>vaporPrs</EFDB_Name>
       <Description>Vapor Pressure</Description>
       <IDL_Type>double</IDL_Type>
       <Units>psia</Units>
+      <Count>1</Count>
+    </item>
+  </SALTelemetry>
+  <!--Created by xmlmaker2 for subsystem MTCamera class MTCamera_hex_Cryo3 using level 1-->
+  <!--==================================================================================-->
+  <SALTelemetry>
+    <Subsystem>MTCamera</Subsystem>
+    <EFDB_Topic>MTCamera_hex_Cryo3</EFDB_Topic>
+    <item>
+      <EFDB_Name>c3ExitTmp</EFDB_Name>
+      <Description>C3 Exit Temperature</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>Celsius</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>c4ExitTmp</EFDB_Name>
+      <Description>C4 Exit Temperature</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>Celsius</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>evapExitTmp</EFDB_Name>
+      <Description>Evap Exit Temperature</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>Celsius</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>hexRtrnTmp</EFDB_Name>
+      <Description>HX Return Temperature</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>Celsius</Units>
       <Count>1</Count>
     </item>
     <item>
@@ -1461,78 +1308,258 @@
       <Count>1</Count>
     </item>
     <item>
+      <EFDB_Name>preC3Tmp</EFDB_Name>
+      <Description>Pre C3 Temperature</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>Celsius</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>preC4Tmp</EFDB_Name>
+      <Description>Pre C4 Temperature</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>Celsius</Units>
+      <Count>1</Count>
+    </item>
+    <item>
       <EFDB_Name>returnPrs</EFDB_Name>
       <Description>Return Pressure</Description>
       <IDL_Type>double</IDL_Type>
       <Units>psia</Units>
       <Count>1</Count>
     </item>
+    <item>
+      <EFDB_Name>vaporPrs</EFDB_Name>
+      <Description>Vapor Pressure</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>psia</Units>
+      <Count>1</Count>
+    </item>
   </SALTelemetry>
-  <!-- refrig -->
+  <!--Created by xmlmaker2 for subsystem MTCamera class MTCamera_hex_Cryo4 using level 1-->
+  <!--==================================================================================-->
+  <SALTelemetry>
+    <Subsystem>MTCamera</Subsystem>
+    <EFDB_Topic>MTCamera_hex_Cryo4</EFDB_Topic>
+    <item>
+      <EFDB_Name>c3ExitTmp</EFDB_Name>
+      <Description>C3 Exit Temperature</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>Celsius</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>c4ExitTmp</EFDB_Name>
+      <Description>C4 Exit Temperature</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>Celsius</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>evapExitTmp</EFDB_Name>
+      <Description>Evap Exit Temperature</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>Celsius</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>hexRtrnTmp</EFDB_Name>
+      <Description>HX Return Temperature</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>Celsius</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>liquidPrs</EFDB_Name>
+      <Description>Liquid Pressure</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>psia</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>preC3Tmp</EFDB_Name>
+      <Description>Pre C3 Temperature</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>Celsius</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>preC4Tmp</EFDB_Name>
+      <Description>Pre C4 Temperature</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>Celsius</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>returnPrs</EFDB_Name>
+      <Description>Return Pressure</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>psia</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>vaporPrs</EFDB_Name>
+      <Description>Vapor Pressure</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>psia</Units>
+      <Count>1</Count>
+    </item>
+  </SALTelemetry>
+  <!--Created by xmlmaker2 for subsystem MTCamera class MTCamera_hex_Cryo5 using level 1-->
+  <!--==================================================================================-->
+  <SALTelemetry>
+    <Subsystem>MTCamera</Subsystem>
+    <EFDB_Topic>MTCamera_hex_Cryo5</EFDB_Topic>
+    <item>
+      <EFDB_Name>c3ExitTmp</EFDB_Name>
+      <Description>C3 Exit Temperature</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>Celsius</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>c4ExitTmp</EFDB_Name>
+      <Description>C4 Exit Temperature</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>Celsius</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>evapExitTmp</EFDB_Name>
+      <Description>Evap Exit Temperature</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>Celsius</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>hexRtrnTmp</EFDB_Name>
+      <Description>HX Return Temperature</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>Celsius</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>liquidPrs</EFDB_Name>
+      <Description>Liquid Pressure</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>psia</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>preC3Tmp</EFDB_Name>
+      <Description>Pre C3 Temperature</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>Celsius</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>preC4Tmp</EFDB_Name>
+      <Description>Pre C4 Temperature</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>Celsius</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>returnPrs</EFDB_Name>
+      <Description>Return Pressure</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>psia</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>vaporPrs</EFDB_Name>
+      <Description>Vapor Pressure</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>psia</Units>
+      <Count>1</Count>
+    </item>
+  </SALTelemetry>
+  <!--Created by xmlmaker2 for subsystem MTCamera class MTCamera_hex_Cryo6 using level 1-->
+  <!--==================================================================================-->
+  <SALTelemetry>
+    <Subsystem>MTCamera</Subsystem>
+    <EFDB_Topic>MTCamera_hex_Cryo6</EFDB_Topic>
+    <item>
+      <EFDB_Name>c3ExitTmp</EFDB_Name>
+      <Description>C3 Exit Temperature</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>Celsius</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>c4ExitTmp</EFDB_Name>
+      <Description>C4 Exit Temperature</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>Celsius</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>evapExitTmp</EFDB_Name>
+      <Description>Evap Exit Temperature</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>Celsius</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>hexRtrnTmp</EFDB_Name>
+      <Description>HX Return Temperature</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>Celsius</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>liquidPrs</EFDB_Name>
+      <Description>Liquid Pressure</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>psia</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>preC3Tmp</EFDB_Name>
+      <Description>Pre C3 Temperature</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>Celsius</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>preC4Tmp</EFDB_Name>
+      <Description>Pre C4 Temperature</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>Celsius</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>returnPrs</EFDB_Name>
+      <Description>Return Pressure</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>psia</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>vaporPrs</EFDB_Name>
+      <Description>Vapor Pressure</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>psia</Units>
+      <Count>1</Count>
+    </item>
+  </SALTelemetry>
+  <!--Created by xmlmaker2 for subsystem MTCamera class MTCamera_refrig_Cold1 using level 1-->
+  <!--=====================================================================================-->
   <SALTelemetry>
     <Subsystem>MTCamera</Subsystem>
     <EFDB_Topic>MTCamera_refrig_Cold1</EFDB_Topic>
     <item>
-      <EFDB_Name>dischrgtmp_P</EFDB_Name>
-      <Description>Discharge Temperature (PLC)</Description>
+      <EFDB_Name>ambientTmp</EFDB_Name>
+      <Description>Ambient Temperature</Description>
       <IDL_Type>double</IDL_Type>
       <Units>Celsius</Units>
       <Count>1</Count>
     </item>
     <item>
-      <EFDB_Name>dischrgtmp_M</EFDB_Name>
-      <Description>Discharge Temperature (Maq20)</Description>
+      <EFDB_Name>cabinetTmp</EFDB_Name>
+      <Description>Cabinet Temperature</Description>
       <IDL_Type>double</IDL_Type>
       <Units>Celsius</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>dischrgPrs</EFDB_Name>
-      <Description>Discharge Pressure</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>psia</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>suctiontmp_P</EFDB_Name>
-      <Description>Suction Temperature (PLC)</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>Celsius</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>suctiontmp_M</EFDB_Name>
-      <Description>Suction Temperature (Maq20)</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>Celsius</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>suctionPrs</EFDB_Name>
-      <Description>Suction Pressure</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>psia</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>liquidtmp_P</EFDB_Name>
-      <Description>Liquid Temperature (PLC)</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>Celsius</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>liquidtmp_M</EFDB_Name>
-      <Description>Liquid Temperature (Maq20)</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>Celsius</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>compVoltage</EFDB_Name>
-      <Description>Compressor Voltage</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>Volt</Units>
       <Count>1</Count>
     </item>
     <item>
@@ -1550,13 +1577,6 @@
       <Count>1</Count>
     </item>
     <item>
-      <EFDB_Name>compVfdVolt</EFDB_Name>
-      <Description>Compressor VFD Voltage</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>Volt</Units>
-      <Count>1</Count>
-    </item>
-    <item>
       <EFDB_Name>compVfdCurr</EFDB_Name>
       <Description>Compressor VFD Current</Description>
       <IDL_Type>double</IDL_Type>
@@ -1571,17 +1591,17 @@
       <Count>1</Count>
     </item>
     <item>
-      <EFDB_Name>hGBValvePosn</EFDB_Name>
-      <Description>HGB Valve Position</Description>
+      <EFDB_Name>compVfdVolt</EFDB_Name>
+      <Description>Compressor VFD Voltage</Description>
       <IDL_Type>double</IDL_Type>
-      <Units>%</Units>
+      <Units>Volt</Units>
       <Count>1</Count>
     </item>
     <item>
-      <EFDB_Name>coolValvePosn</EFDB_Name>
-      <Description>Coolant Valve Position</Description>
+      <EFDB_Name>compVoltage</EFDB_Name>
+      <Description>Compressor Voltage</Description>
       <IDL_Type>double</IDL_Type>
-      <Units>%</Units>
+      <Units>Volt</Units>
       <Count>1</Count>
     </item>
     <item>
@@ -1592,29 +1612,29 @@
       <Count>1</Count>
     </item>
     <item>
-      <EFDB_Name>waterInTmp</EFDB_Name>
-      <Description>Water Inlet Temperature</Description>
+      <EFDB_Name>coolValvePosn</EFDB_Name>
+      <Description>Coolant Valve Position</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>%</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>dischrgPrs</EFDB_Name>
+      <Description>Discharge Pressure</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>psia</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>dischrgtmp_M</EFDB_Name>
+      <Description>Discharge Temperature (Maq20)</Description>
       <IDL_Type>double</IDL_Type>
       <Units>Celsius</Units>
       <Count>1</Count>
     </item>
     <item>
-      <EFDB_Name>waterOutTmp</EFDB_Name>
-      <Description>Water Outlet Temperature</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>Celsius</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>cabinetTmp</EFDB_Name>
-      <Description>Cabinet Temperature</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>Celsius</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>ambientTmp</EFDB_Name>
-      <Description>Ambient Temperature</Description>
+      <EFDB_Name>dischrgtmp_P</EFDB_Name>
+      <Description>Discharge Temperature (PLC)</Description>
       <IDL_Type>double</IDL_Type>
       <Units>Celsius</Units>
       <Count>1</Count>
@@ -1638,6 +1658,13 @@
       <Description>Fan 3 Speed (RPM)</Description>
       <IDL_Type>double</IDL_Type>
       <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>hGBValvePosn</EFDB_Name>
+      <Description>HGB Valve Position</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>%</Units>
       <Count>1</Count>
     </item>
     <item>
@@ -1647,41 +1674,16 @@
       <Units>Celsius</Units>
       <Count>1</Count>
     </item>
-  </SALTelemetry>
-  <SALTelemetry>
-    <Subsystem>MTCamera</Subsystem>
-    <EFDB_Topic>MTCamera_refrig_Cold2</EFDB_Topic>
     <item>
-      <EFDB_Name>dischrgtmp_P</EFDB_Name>
-      <Description>Discharge Temperature (PLC)</Description>
+      <EFDB_Name>liquidtmp_M</EFDB_Name>
+      <Description>Liquid Temperature (Maq20)</Description>
       <IDL_Type>double</IDL_Type>
       <Units>Celsius</Units>
       <Count>1</Count>
     </item>
     <item>
-      <EFDB_Name>dischrgtmp_M</EFDB_Name>
-      <Description>Discharge Temperature (Maq20)</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>Celsius</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>dischrgPrs</EFDB_Name>
-      <Description>Discharge Pressure</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>psia</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>suctiontmp_P</EFDB_Name>
-      <Description>Suction Temperature (PLC)</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>Celsius</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>suctiontmp_M</EFDB_Name>
-      <Description>Suction Temperature (Maq20)</Description>
+      <EFDB_Name>liquidtmp_P</EFDB_Name>
+      <Description>Liquid Temperature (PLC)</Description>
       <IDL_Type>double</IDL_Type>
       <Units>Celsius</Units>
       <Count>1</Count>
@@ -1694,24 +1696,51 @@
       <Count>1</Count>
     </item>
     <item>
-      <EFDB_Name>liquidtmp_P</EFDB_Name>
-      <Description>Liquid Temperature (PLC)</Description>
+      <EFDB_Name>suctiontmp_M</EFDB_Name>
+      <Description>Suction Temperature (Maq20)</Description>
       <IDL_Type>double</IDL_Type>
       <Units>Celsius</Units>
       <Count>1</Count>
     </item>
     <item>
-      <EFDB_Name>liquidtmp_M</EFDB_Name>
-      <Description>Liquid Temperature (Maq20)</Description>
+      <EFDB_Name>suctiontmp_P</EFDB_Name>
+      <Description>Suction Temperature (PLC)</Description>
       <IDL_Type>double</IDL_Type>
       <Units>Celsius</Units>
       <Count>1</Count>
     </item>
     <item>
-      <EFDB_Name>compVoltage</EFDB_Name>
-      <Description>Compressor Voltage</Description>
+      <EFDB_Name>waterInTmp</EFDB_Name>
+      <Description>Water Inlet Temperature</Description>
       <IDL_Type>double</IDL_Type>
-      <Units>Volt</Units>
+      <Units>Celsius</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>waterOutTmp</EFDB_Name>
+      <Description>Water Outlet Temperature</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>Celsius</Units>
+      <Count>1</Count>
+    </item>
+  </SALTelemetry>
+  <!--Created by xmlmaker2 for subsystem MTCamera class MTCamera_refrig_Cold2 using level 1-->
+  <!--=====================================================================================-->
+  <SALTelemetry>
+    <Subsystem>MTCamera</Subsystem>
+    <EFDB_Topic>MTCamera_refrig_Cold2</EFDB_Topic>
+    <item>
+      <EFDB_Name>ambientTmp</EFDB_Name>
+      <Description>Ambient Temperature</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>Celsius</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>cabinetTmp</EFDB_Name>
+      <Description>Cabinet Temperature</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>Celsius</Units>
       <Count>1</Count>
     </item>
     <item>
@@ -1729,13 +1758,6 @@
       <Count>1</Count>
     </item>
     <item>
-      <EFDB_Name>compVfdVolt</EFDB_Name>
-      <Description>Compressor VFD Voltage</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>Volt</Units>
-      <Count>1</Count>
-    </item>
-    <item>
       <EFDB_Name>compVfdCurr</EFDB_Name>
       <Description>Compressor VFD Current</Description>
       <IDL_Type>double</IDL_Type>
@@ -1750,17 +1772,17 @@
       <Count>1</Count>
     </item>
     <item>
-      <EFDB_Name>hGBValvePosn</EFDB_Name>
-      <Description>HGB Valve Position</Description>
+      <EFDB_Name>compVfdVolt</EFDB_Name>
+      <Description>Compressor VFD Voltage</Description>
       <IDL_Type>double</IDL_Type>
-      <Units>%</Units>
+      <Units>Volt</Units>
       <Count>1</Count>
     </item>
     <item>
-      <EFDB_Name>coolValvePosn</EFDB_Name>
-      <Description>Coolant Valve Position</Description>
+      <EFDB_Name>compVoltage</EFDB_Name>
+      <Description>Compressor Voltage</Description>
       <IDL_Type>double</IDL_Type>
-      <Units>%</Units>
+      <Units>Volt</Units>
       <Count>1</Count>
     </item>
     <item>
@@ -1771,29 +1793,29 @@
       <Count>1</Count>
     </item>
     <item>
-      <EFDB_Name>waterInTmp</EFDB_Name>
-      <Description>Water Inlet Temperature</Description>
+      <EFDB_Name>coolValvePosn</EFDB_Name>
+      <Description>Coolant Valve Position</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>%</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>dischrgPrs</EFDB_Name>
+      <Description>Discharge Pressure</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>psia</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>dischrgtmp_M</EFDB_Name>
+      <Description>Discharge Temperature (Maq20)</Description>
       <IDL_Type>double</IDL_Type>
       <Units>Celsius</Units>
       <Count>1</Count>
     </item>
     <item>
-      <EFDB_Name>waterOutTmp</EFDB_Name>
-      <Description>Water Outlet Temperature</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>Celsius</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>cabinetTmp</EFDB_Name>
-      <Description>Cabinet Temperature</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>Celsius</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>ambientTmp</EFDB_Name>
-      <Description>Ambient Temperature</Description>
+      <EFDB_Name>dischrgtmp_P</EFDB_Name>
+      <Description>Discharge Temperature (PLC)</Description>
       <IDL_Type>double</IDL_Type>
       <Units>Celsius</Units>
       <Count>1</Count>
@@ -1820,47 +1842,29 @@
       <Count>1</Count>
     </item>
     <item>
+      <EFDB_Name>hGBValvePosn</EFDB_Name>
+      <Description>HGB Valve Position</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>%</Units>
+      <Count>1</Count>
+    </item>
+    <item>
       <EFDB_Name>liquidSubCooling</EFDB_Name>
       <Description>Cold2 SubCooling</Description>
       <IDL_Type>double</IDL_Type>
       <Units>Celsius</Units>
       <Count>1</Count>
     </item>
-  </SALTelemetry>
-  <SALTelemetry>
-    <Subsystem>MTCamera</Subsystem>
-    <EFDB_Topic>MTCamera_refrig_Cryo5</EFDB_Topic>
     <item>
-      <EFDB_Name>dischrgtmp_P</EFDB_Name>
-      <Description>Discharge Temperature (PLC)</Description>
+      <EFDB_Name>liquidtmp_M</EFDB_Name>
+      <Description>Liquid Temperature (Maq20)</Description>
       <IDL_Type>double</IDL_Type>
       <Units>Celsius</Units>
       <Count>1</Count>
     </item>
     <item>
-      <EFDB_Name>dischrgtmp_M</EFDB_Name>
-      <Description>Discharge Temperature (MAQ20)</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>Celsius</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>dischrgPrs</EFDB_Name>
-      <Description>Discharge Pressure</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>psia</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>suctiontmp_P</EFDB_Name>
-      <Description>Suction Temperature (PLC)</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>Celsius</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>suctiontmp_M</EFDB_Name>
-      <Description>Suction Temperature (MAQ20)</Description>
+      <EFDB_Name>liquidtmp_P</EFDB_Name>
+      <Description>Liquid Temperature (PLC)</Description>
       <IDL_Type>double</IDL_Type>
       <Units>Celsius</Units>
       <Count>1</Count>
@@ -1873,31 +1877,17 @@
       <Count>1</Count>
     </item>
     <item>
-      <EFDB_Name>oilLevel</EFDB_Name>
-      <Description>Oil Level</Description>
+      <EFDB_Name>suctiontmp_M</EFDB_Name>
+      <Description>Suction Temperature (Maq20)</Description>
       <IDL_Type>double</IDL_Type>
-      <Units>mm</Units>
+      <Units>Celsius</Units>
       <Count>1</Count>
     </item>
     <item>
-      <EFDB_Name>compVoltage</EFDB_Name>
-      <Description>Compressor Voltage</Description>
+      <EFDB_Name>suctiontmp_P</EFDB_Name>
+      <Description>Suction Temperature (PLC)</Description>
       <IDL_Type>double</IDL_Type>
-      <Units>Volt</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>compCurrent</EFDB_Name>
-      <Description>Compressor Current</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>A</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>compPower</EFDB_Name>
-      <Description>Compressor Power</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>VA</Units>
+      <Units>Celsius</Units>
       <Count>1</Count>
     </item>
     <item>
@@ -1914,619 +1904,17 @@
       <Units>Celsius</Units>
       <Count>1</Count>
     </item>
-    <item>
-      <EFDB_Name>afterCoolTmp</EFDB_Name>
-      <Description>After Cooler Temperature</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>Celsius</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>phaseSepTmp</EFDB_Name>
-      <Description>Phase Separator Temperature</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>Celsius</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>oilSepTmp</EFDB_Name>
-      <Description>Oil Separator Temperature</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>Celsius</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>surgeTankTmp</EFDB_Name>
-      <Description>Surge Tank Temperature</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>Celsius</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>cabinetTmp</EFDB_Name>
-      <Description>Cabinet Temperature</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>Celsius</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>ambientTmp</EFDB_Name>
-      <Description>Ambient Temperature</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>Celsius</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>fanSpeed</EFDB_Name>
-      <Description>Fan Speed (RPM)</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
   </SALTelemetry>
-  <SALTelemetry>
-    <Subsystem>MTCamera</Subsystem>
-    <EFDB_Topic>MTCamera_refrig_Cryo6</EFDB_Topic>
-    <item>
-      <EFDB_Name>dischrgtmp_P</EFDB_Name>
-      <Description>Discharge Temperature (PLC)</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>Celsius</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>dischrgtmp_M</EFDB_Name>
-      <Description>Discharge Temperature (MAQ20)</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>Celsius</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>dischrgPrs</EFDB_Name>
-      <Description>Discharge Pressure</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>psia</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>suctiontmp_P</EFDB_Name>
-      <Description>Suction Temperature (PLC)</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>Celsius</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>suctiontmp_M</EFDB_Name>
-      <Description>Suction Temperature (MAQ20)</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>Celsius</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>suctionPrs</EFDB_Name>
-      <Description>Suction Pressure</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>psia</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>oilLevel</EFDB_Name>
-      <Description>Oil Level</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>mm</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>compVoltage</EFDB_Name>
-      <Description>Compressor Voltage</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>Volt</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>compCurrent</EFDB_Name>
-      <Description>Compressor Current</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>A</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>compPower</EFDB_Name>
-      <Description>Compressor Power</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>VA</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>waterInTmp</EFDB_Name>
-      <Description>Water Inlet Temperature</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>Celsius</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>waterOutTmp</EFDB_Name>
-      <Description>Water Outlet Temperature</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>Celsius</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>afterCoolTmp</EFDB_Name>
-      <Description>After Cooler Temperature</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>Celsius</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>phaseSepTmp</EFDB_Name>
-      <Description>Phase Separator Temperature</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>Celsius</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>oilSepTmp</EFDB_Name>
-      <Description>Oil Separator Temperature</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>Celsius</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>surgeTankTmp</EFDB_Name>
-      <Description>Surge Tank Temperature</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>Celsius</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>fanSpeed</EFDB_Name>
-      <Description>Fan Speed (RPM)</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-  </SALTelemetry>
-  <SALTelemetry>
-    <Subsystem>MTCamera</Subsystem>
-    <EFDB_Topic>MTCamera_refrig_Cryo4</EFDB_Topic>
-    <item>
-      <EFDB_Name>dischrgtmp_P</EFDB_Name>
-      <Description>Discharge Temperature (PLC)</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>Celsius</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>dischrgtmp_M</EFDB_Name>
-      <Description>Discharge Temperature (MAQ20)</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>Celsius</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>dischrgPrs</EFDB_Name>
-      <Description>Discharge Pressure</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>psia</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>suctiontmp_P</EFDB_Name>
-      <Description>Suction Temperature (PLC)</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>Celsius</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>suctiontmp_M</EFDB_Name>
-      <Description>Suction Temperature (MAQ20)</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>Celsius</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>suctionPrs</EFDB_Name>
-      <Description>Suction Pressure</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>psia</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>oilLevel</EFDB_Name>
-      <Description>Oil Level</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>mm</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>compVoltage</EFDB_Name>
-      <Description>Compressor Voltage</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>Volt</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>compCurrent</EFDB_Name>
-      <Description>Compressor Current</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>A</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>compPower</EFDB_Name>
-      <Description>Compressor Power</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>VA</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>waterInTmp</EFDB_Name>
-      <Description>Water Inlet Temperature</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>Celsius</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>waterOutTmp</EFDB_Name>
-      <Description>Water Outlet Temperature</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>Celsius</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>afterCoolTmp</EFDB_Name>
-      <Description>After Cooler Temperature</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>Celsius</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>phaseSepTmp</EFDB_Name>
-      <Description>Phase Separator Temperature</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>Celsius</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>oilSepTmp</EFDB_Name>
-      <Description>Oil Separator Temperature</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>Celsius</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>surgeTankTmp</EFDB_Name>
-      <Description>Surge Tank Temperature</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>Celsius</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>fanSpeed</EFDB_Name>
-      <Description>Fan Speed (RPM)</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-  </SALTelemetry>
-  <SALTelemetry>
-    <Subsystem>MTCamera</Subsystem>
-    <EFDB_Topic>MTCamera_refrig_Cryo3</EFDB_Topic>
-    <item>
-      <EFDB_Name>dischrgtmp_P</EFDB_Name>
-      <Description>Discharge Temperature (PLC)</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>Celsius</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>dischrgtmp_M</EFDB_Name>
-      <Description>Discharge Temperature (MAQ20)</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>Celsius</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>dischrgPrs</EFDB_Name>
-      <Description>Discharge Pressure</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>psia</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>suctiontmp_P</EFDB_Name>
-      <Description>Suction Temperature (PLC)</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>Celsius</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>suctiontmp_M</EFDB_Name>
-      <Description>Suction Temperature (MAQ20)</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>Celsius</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>suctionPrs</EFDB_Name>
-      <Description>Suction Pressure</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>psia</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>oilLevel</EFDB_Name>
-      <Description>Oil Level</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>mm</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>compVoltage</EFDB_Name>
-      <Description>Compressor Voltage</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>Volt</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>compCurrent</EFDB_Name>
-      <Description>Compressor Current</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>A</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>compPower</EFDB_Name>
-      <Description>Compressor Power</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>VA</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>waterInTmp</EFDB_Name>
-      <Description>Water Inlet Temperature</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>Celsius</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>waterOutTmp</EFDB_Name>
-      <Description>Water Outlet Temperature</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>Celsius</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>afterCoolTmp</EFDB_Name>
-      <Description>After Cooler Temperature</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>Celsius</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>phaseSepTmp</EFDB_Name>
-      <Description>Phase Separator Temperature</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>Celsius</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>oilSepTmp</EFDB_Name>
-      <Description>Oil Separator Temperature</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>Celsius</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>surgeTankTmp</EFDB_Name>
-      <Description>Surge Tank Temperature</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>Celsius</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>cabinetTmp</EFDB_Name>
-      <Description>Cabinet Temperature</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>Celsius</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>ambientTmp</EFDB_Name>
-      <Description>Ambient Temperature</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>Celsius</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>fanSpeed</EFDB_Name>
-      <Description>Fan Speed (RPM)</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-  </SALTelemetry>
-  <SALTelemetry>
-    <Subsystem>MTCamera</Subsystem>
-    <EFDB_Topic>MTCamera_refrig_Cryo2</EFDB_Topic>
-    <item>
-      <EFDB_Name>dischrgtmp_P</EFDB_Name>
-      <Description>Discharge Temperature (PLC)</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>Celsius</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>dischrgtmp_M</EFDB_Name>
-      <Description>Discharge Temperature (MAQ20)</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>Celsius</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>dischrgPrs</EFDB_Name>
-      <Description>Discharge Pressure</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>psia</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>suctiontmp_P</EFDB_Name>
-      <Description>Suction Temperature (PLC)</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>Celsius</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>suctiontmp_M</EFDB_Name>
-      <Description>Suction Temperature (MAQ20)</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>Celsius</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>suctionPrs</EFDB_Name>
-      <Description>Suction Pressure</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>psia</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>oilLevel</EFDB_Name>
-      <Description>Oil Level</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>mm</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>compVoltage</EFDB_Name>
-      <Description>Compressor Voltage</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>Volt</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>compCurrent</EFDB_Name>
-      <Description>Compressor Current</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>A</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>compPower</EFDB_Name>
-      <Description>Compressor Power</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>VA</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>waterInTmp</EFDB_Name>
-      <Description>Water Inlet Temperature</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>Celsius</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>waterOutTmp</EFDB_Name>
-      <Description>Water Outlet Temperature</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>Celsius</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>afterCoolTmp</EFDB_Name>
-      <Description>After Cooler Temperature</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>Celsius</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>phaseSepTmp</EFDB_Name>
-      <Description>Phase Separator Temperature</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>Celsius</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>oilSepTmp</EFDB_Name>
-      <Description>Oil Separator Temperature</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>Celsius</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>surgeTankTmp</EFDB_Name>
-      <Description>Surge Tank Temperature</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>Celsius</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>fanSpeed</EFDB_Name>
-      <Description>Fan Speed (RPM)</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-  </SALTelemetry>
+  <!--Created by xmlmaker2 for subsystem MTCamera class MTCamera_refrig_Cryo1 using level 1-->
+  <!--=====================================================================================-->
   <SALTelemetry>
     <Subsystem>MTCamera</Subsystem>
     <EFDB_Topic>MTCamera_refrig_Cryo1</EFDB_Topic>
     <item>
-      <EFDB_Name>dischrgtmp_P</EFDB_Name>
-      <Description>Discharge Temperature (PLC)</Description>
+      <EFDB_Name>afterCoolTmp</EFDB_Name>
+      <Description>After Cooler Temperature</Description>
       <IDL_Type>double</IDL_Type>
       <Units>Celsius</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>dischrgtmp_M</EFDB_Name>
-      <Description>Discharge Temperature (MAQ20)</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>Celsius</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>dischrgPrs</EFDB_Name>
-      <Description>Discharge Pressure</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>psia</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>suctiontmp_P</EFDB_Name>
-      <Description>Suction Temperature (PLC)</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>Celsius</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>suctiontmp_M</EFDB_Name>
-      <Description>Suction Temperature (MAQ20)</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>Celsius</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>suctionPrs</EFDB_Name>
-      <Description>Suction Pressure</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>psia</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>oilLevel</EFDB_Name>
-      <Description>Oil Level</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>mm</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>compVoltage</EFDB_Name>
-      <Description>Compressor Voltage</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>Volt</Units>
       <Count>1</Count>
     </item>
     <item>
@@ -2544,6 +1932,90 @@
       <Count>1</Count>
     </item>
     <item>
+      <EFDB_Name>compVoltage</EFDB_Name>
+      <Description>Compressor Voltage</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>Volt</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>dischrgPrs</EFDB_Name>
+      <Description>Discharge Pressure</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>psia</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>dischrgtmp_M</EFDB_Name>
+      <Description>Discharge Temperature (MAQ20)</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>Celsius</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>dischrgtmp_P</EFDB_Name>
+      <Description>Discharge Temperature (PLC)</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>Celsius</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>fanSpeed</EFDB_Name>
+      <Description>Fan Speed (RPM)</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>oilLevel</EFDB_Name>
+      <Description>Oil Level</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>mm</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>oilSepTmp</EFDB_Name>
+      <Description>Oil Separator Temperature</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>Celsius</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>phaseSepTmp</EFDB_Name>
+      <Description>Phase Separator Temperature</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>Celsius</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>suctionPrs</EFDB_Name>
+      <Description>Suction Pressure</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>psia</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>suctiontmp_M</EFDB_Name>
+      <Description>Suction Temperature (MAQ20)</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>Celsius</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>suctiontmp_P</EFDB_Name>
+      <Description>Suction Temperature (PLC)</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>Celsius</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>surgeTankTmp</EFDB_Name>
+      <Description>Surge Tank Temperature</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>Celsius</Units>
+      <Count>1</Count>
+    </item>
+    <item>
       <EFDB_Name>waterInTmp</EFDB_Name>
       <Description>Water Inlet Temperature</Description>
       <IDL_Type>double</IDL_Type>
@@ -2557,9 +2029,78 @@
       <Units>Celsius</Units>
       <Count>1</Count>
     </item>
+  </SALTelemetry>
+  <!--Created by xmlmaker2 for subsystem MTCamera class MTCamera_refrig_Cryo2 using level 1-->
+  <!--=====================================================================================-->
+  <SALTelemetry>
+    <Subsystem>MTCamera</Subsystem>
+    <EFDB_Topic>MTCamera_refrig_Cryo2</EFDB_Topic>
     <item>
       <EFDB_Name>afterCoolTmp</EFDB_Name>
       <Description>After Cooler Temperature</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>Celsius</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>compCurrent</EFDB_Name>
+      <Description>Compressor Current</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>A</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>compPower</EFDB_Name>
+      <Description>Compressor Power</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>VA</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>compVoltage</EFDB_Name>
+      <Description>Compressor Voltage</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>Volt</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>dischrgPrs</EFDB_Name>
+      <Description>Discharge Pressure</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>psia</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>dischrgtmp_M</EFDB_Name>
+      <Description>Discharge Temperature (MAQ20)</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>Celsius</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>dischrgtmp_P</EFDB_Name>
+      <Description>Discharge Temperature (PLC)</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>Celsius</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>fanSpeed</EFDB_Name>
+      <Description>Fan Speed (RPM)</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>oilLevel</EFDB_Name>
+      <Description>Oil Level</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>mm</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>oilSepTmp</EFDB_Name>
+      <Description>Oil Separator Temperature</Description>
       <IDL_Type>double</IDL_Type>
       <Units>Celsius</Units>
       <Count>1</Count>
@@ -2572,8 +2113,22 @@
       <Count>1</Count>
     </item>
     <item>
-      <EFDB_Name>oilSepTmp</EFDB_Name>
-      <Description>Oil Separator Temperature</Description>
+      <EFDB_Name>suctionPrs</EFDB_Name>
+      <Description>Suction Pressure</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>psia</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>suctiontmp_M</EFDB_Name>
+      <Description>Suction Temperature (MAQ20)</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>Celsius</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>suctiontmp_P</EFDB_Name>
+      <Description>Suction Temperature (PLC)</Description>
       <IDL_Type>double</IDL_Type>
       <Units>Celsius</Units>
       <Count>1</Count>
@@ -2586,17 +2141,553 @@
       <Count>1</Count>
     </item>
     <item>
+      <EFDB_Name>waterInTmp</EFDB_Name>
+      <Description>Water Inlet Temperature</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>Celsius</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>waterOutTmp</EFDB_Name>
+      <Description>Water Outlet Temperature</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>Celsius</Units>
+      <Count>1</Count>
+    </item>
+  </SALTelemetry>
+  <!--Created by xmlmaker2 for subsystem MTCamera class MTCamera_refrig_Cryo3 using level 1-->
+  <!--=====================================================================================-->
+  <SALTelemetry>
+    <Subsystem>MTCamera</Subsystem>
+    <EFDB_Topic>MTCamera_refrig_Cryo3</EFDB_Topic>
+    <item>
+      <EFDB_Name>afterCoolTmp</EFDB_Name>
+      <Description>After Cooler Temperature</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>Celsius</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>ambientTmp</EFDB_Name>
+      <Description>Ambient Temperature</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>Celsius</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>cabinetTmp</EFDB_Name>
+      <Description>Cabinet Temperature</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>Celsius</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>compCurrent</EFDB_Name>
+      <Description>Compressor Current</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>A</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>compPower</EFDB_Name>
+      <Description>Compressor Power</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>VA</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>compVoltage</EFDB_Name>
+      <Description>Compressor Voltage</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>Volt</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>dischrgPrs</EFDB_Name>
+      <Description>Discharge Pressure</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>psia</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>dischrgtmp_M</EFDB_Name>
+      <Description>Discharge Temperature (MAQ20)</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>Celsius</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>dischrgtmp_P</EFDB_Name>
+      <Description>Discharge Temperature (PLC)</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>Celsius</Units>
+      <Count>1</Count>
+    </item>
+    <item>
       <EFDB_Name>fanSpeed</EFDB_Name>
       <Description>Fan Speed (RPM)</Description>
       <IDL_Type>double</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
     </item>
+    <item>
+      <EFDB_Name>oilLevel</EFDB_Name>
+      <Description>Oil Level</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>mm</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>oilSepTmp</EFDB_Name>
+      <Description>Oil Separator Temperature</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>Celsius</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>phaseSepTmp</EFDB_Name>
+      <Description>Phase Separator Temperature</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>Celsius</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>suctionPrs</EFDB_Name>
+      <Description>Suction Pressure</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>psia</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>suctiontmp_M</EFDB_Name>
+      <Description>Suction Temperature (MAQ20)</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>Celsius</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>suctiontmp_P</EFDB_Name>
+      <Description>Suction Temperature (PLC)</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>Celsius</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>surgeTankTmp</EFDB_Name>
+      <Description>Surge Tank Temperature</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>Celsius</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>waterInTmp</EFDB_Name>
+      <Description>Water Inlet Temperature</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>Celsius</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>waterOutTmp</EFDB_Name>
+      <Description>Water Outlet Temperature</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>Celsius</Units>
+      <Count>1</Count>
+    </item>
   </SALTelemetry>
-  <!-- vacuum -->
+  <!--Created by xmlmaker2 for subsystem MTCamera class MTCamera_refrig_Cryo4 using level 1-->
+  <!--=====================================================================================-->
   <SALTelemetry>
     <Subsystem>MTCamera</Subsystem>
-    <EFDB_Topic>MTCamera_vacuum_IonPumps</EFDB_Topic>
+    <EFDB_Topic>MTCamera_refrig_Cryo4</EFDB_Topic>
+    <item>
+      <EFDB_Name>afterCoolTmp</EFDB_Name>
+      <Description>After Cooler Temperature</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>Celsius</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>compCurrent</EFDB_Name>
+      <Description>Compressor Current</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>A</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>compPower</EFDB_Name>
+      <Description>Compressor Power</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>VA</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>compVoltage</EFDB_Name>
+      <Description>Compressor Voltage</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>Volt</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>dischrgPrs</EFDB_Name>
+      <Description>Discharge Pressure</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>psia</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>dischrgtmp_M</EFDB_Name>
+      <Description>Discharge Temperature (MAQ20)</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>Celsius</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>dischrgtmp_P</EFDB_Name>
+      <Description>Discharge Temperature (PLC)</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>Celsius</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>fanSpeed</EFDB_Name>
+      <Description>Fan Speed (RPM)</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>oilLevel</EFDB_Name>
+      <Description>Oil Level</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>mm</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>oilSepTmp</EFDB_Name>
+      <Description>Oil Separator Temperature</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>Celsius</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>phaseSepTmp</EFDB_Name>
+      <Description>Phase Separator Temperature</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>Celsius</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>suctionPrs</EFDB_Name>
+      <Description>Suction Pressure</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>psia</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>suctiontmp_M</EFDB_Name>
+      <Description>Suction Temperature (MAQ20)</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>Celsius</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>suctiontmp_P</EFDB_Name>
+      <Description>Suction Temperature (PLC)</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>Celsius</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>surgeTankTmp</EFDB_Name>
+      <Description>Surge Tank Temperature</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>Celsius</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>waterInTmp</EFDB_Name>
+      <Description>Water Inlet Temperature</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>Celsius</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>waterOutTmp</EFDB_Name>
+      <Description>Water Outlet Temperature</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>Celsius</Units>
+      <Count>1</Count>
+    </item>
+  </SALTelemetry>
+  <!--Created by xmlmaker2 for subsystem MTCamera class MTCamera_refrig_Cryo5 using level 1-->
+  <!--=====================================================================================-->
+  <SALTelemetry>
+    <Subsystem>MTCamera</Subsystem>
+    <EFDB_Topic>MTCamera_refrig_Cryo5</EFDB_Topic>
+    <item>
+      <EFDB_Name>afterCoolTmp</EFDB_Name>
+      <Description>After Cooler Temperature</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>Celsius</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>ambientTmp</EFDB_Name>
+      <Description>Ambient Temperature</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>Celsius</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>cabinetTmp</EFDB_Name>
+      <Description>Cabinet Temperature</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>Celsius</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>compCurrent</EFDB_Name>
+      <Description>Compressor Current</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>A</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>compPower</EFDB_Name>
+      <Description>Compressor Power</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>VA</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>compVoltage</EFDB_Name>
+      <Description>Compressor Voltage</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>Volt</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>dischrgPrs</EFDB_Name>
+      <Description>Discharge Pressure</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>psia</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>dischrgtmp_M</EFDB_Name>
+      <Description>Discharge Temperature (MAQ20)</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>Celsius</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>dischrgtmp_P</EFDB_Name>
+      <Description>Discharge Temperature (PLC)</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>Celsius</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>fanSpeed</EFDB_Name>
+      <Description>Fan Speed (RPM)</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>oilLevel</EFDB_Name>
+      <Description>Oil Level</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>mm</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>oilSepTmp</EFDB_Name>
+      <Description>Oil Separator Temperature</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>Celsius</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>phaseSepTmp</EFDB_Name>
+      <Description>Phase Separator Temperature</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>Celsius</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>suctionPrs</EFDB_Name>
+      <Description>Suction Pressure</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>psia</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>suctiontmp_M</EFDB_Name>
+      <Description>Suction Temperature (MAQ20)</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>Celsius</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>suctiontmp_P</EFDB_Name>
+      <Description>Suction Temperature (PLC)</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>Celsius</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>surgeTankTmp</EFDB_Name>
+      <Description>Surge Tank Temperature</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>Celsius</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>waterInTmp</EFDB_Name>
+      <Description>Water Inlet Temperature</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>Celsius</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>waterOutTmp</EFDB_Name>
+      <Description>Water Outlet Temperature</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>Celsius</Units>
+      <Count>1</Count>
+    </item>
+  </SALTelemetry>
+  <!--Created by xmlmaker2 for subsystem MTCamera class MTCamera_refrig_Cryo6 using level 1-->
+  <!--=====================================================================================-->
+  <SALTelemetry>
+    <Subsystem>MTCamera</Subsystem>
+    <EFDB_Topic>MTCamera_refrig_Cryo6</EFDB_Topic>
+    <item>
+      <EFDB_Name>afterCoolTmp</EFDB_Name>
+      <Description>After Cooler Temperature</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>Celsius</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>compCurrent</EFDB_Name>
+      <Description>Compressor Current</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>A</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>compPower</EFDB_Name>
+      <Description>Compressor Power</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>VA</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>compVoltage</EFDB_Name>
+      <Description>Compressor Voltage</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>Volt</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>dischrgPrs</EFDB_Name>
+      <Description>Discharge Pressure</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>psia</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>dischrgtmp_M</EFDB_Name>
+      <Description>Discharge Temperature (MAQ20)</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>Celsius</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>dischrgtmp_P</EFDB_Name>
+      <Description>Discharge Temperature (PLC)</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>Celsius</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>fanSpeed</EFDB_Name>
+      <Description>Fan Speed (RPM)</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>oilLevel</EFDB_Name>
+      <Description>Oil Level</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>mm</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>oilSepTmp</EFDB_Name>
+      <Description>Oil Separator Temperature</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>Celsius</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>phaseSepTmp</EFDB_Name>
+      <Description>Phase Separator Temperature</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>Celsius</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>suctionPrs</EFDB_Name>
+      <Description>Suction Pressure</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>psia</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>suctiontmp_M</EFDB_Name>
+      <Description>Suction Temperature (MAQ20)</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>Celsius</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>suctiontmp_P</EFDB_Name>
+      <Description>Suction Temperature (PLC)</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>Celsius</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>surgeTankTmp</EFDB_Name>
+      <Description>Surge Tank Temperature</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>Celsius</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>waterInTmp</EFDB_Name>
+      <Description>Water Inlet Temperature</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>Celsius</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>waterOutTmp</EFDB_Name>
+      <Description>Water Outlet Temperature</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>Celsius</Units>
+      <Count>1</Count>
+    </item>
+  </SALTelemetry>
+  <!--Created by xmlmaker2 for subsystem MTCamera class MTCamera_vacuum_CIP1_I using level 1-->
+  <!--======================================================================================-->
+  <SALTelemetry>
+    <Subsystem>MTCamera</Subsystem>
+    <EFDB_Topic>MTCamera_vacuum_CIP1_I</EFDB_Topic>
     <item>
       <EFDB_Name>cip1_I</EFDB_Name>
       <Description>Cryo ion pump 1 current</Description>
@@ -2604,41 +2695,12 @@
       <Units>mA</Units>
       <Count>1</Count>
     </item>
-    <item>
-      <EFDB_Name>cip2_I</EFDB_Name>
-      <Description>Cryo ion pump 2 current</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>mA</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>cip3_I</EFDB_Name>
-      <Description>Cryo ion pump 3 current</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>mA</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>cip4_I</EFDB_Name>
-      <Description>Cryo ion pump 4 current</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>mA</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>cip5_I</EFDB_Name>
-      <Description>Cryo ion pump 5 current</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>mA</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>cip6_I</EFDB_Name>
-      <Description>Cryo ion pump 6 current</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>mA</Units>
-      <Count>1</Count>
-    </item>
+  </SALTelemetry>
+  <!--Created by xmlmaker2 for subsystem MTCamera class MTCamera_vacuum_CIP1_V using level 1-->
+  <!--======================================================================================-->
+  <SALTelemetry>
+    <Subsystem>MTCamera</Subsystem>
+    <EFDB_Topic>MTCamera_vacuum_CIP1_V</EFDB_Topic>
     <item>
       <EFDB_Name>cip1_V</EFDB_Name>
       <Description>Cryo ion pump 1 voltage</Description>
@@ -2646,6 +2708,25 @@
       <Units>Volt</Units>
       <Count>1</Count>
     </item>
+  </SALTelemetry>
+  <!--Created by xmlmaker2 for subsystem MTCamera class MTCamera_vacuum_CIP2_I using level 1-->
+  <!--======================================================================================-->
+  <SALTelemetry>
+    <Subsystem>MTCamera</Subsystem>
+    <EFDB_Topic>MTCamera_vacuum_CIP2_I</EFDB_Topic>
+    <item>
+      <EFDB_Name>cip2_I</EFDB_Name>
+      <Description>Cryo ion pump 2 current</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>mA</Units>
+      <Count>1</Count>
+    </item>
+  </SALTelemetry>
+  <!--Created by xmlmaker2 for subsystem MTCamera class MTCamera_vacuum_CIP2_V using level 1-->
+  <!--======================================================================================-->
+  <SALTelemetry>
+    <Subsystem>MTCamera</Subsystem>
+    <EFDB_Topic>MTCamera_vacuum_CIP2_V</EFDB_Topic>
     <item>
       <EFDB_Name>cip2_V</EFDB_Name>
       <Description>Cryo ion pump 2 voltage</Description>
@@ -2653,6 +2734,25 @@
       <Units>Volt</Units>
       <Count>1</Count>
     </item>
+  </SALTelemetry>
+  <!--Created by xmlmaker2 for subsystem MTCamera class MTCamera_vacuum_CIP3_I using level 1-->
+  <!--======================================================================================-->
+  <SALTelemetry>
+    <Subsystem>MTCamera</Subsystem>
+    <EFDB_Topic>MTCamera_vacuum_CIP3_I</EFDB_Topic>
+    <item>
+      <EFDB_Name>cip3_I</EFDB_Name>
+      <Description>Cryo ion pump 3 current</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>mA</Units>
+      <Count>1</Count>
+    </item>
+  </SALTelemetry>
+  <!--Created by xmlmaker2 for subsystem MTCamera class MTCamera_vacuum_CIP3_V using level 1-->
+  <!--======================================================================================-->
+  <SALTelemetry>
+    <Subsystem>MTCamera</Subsystem>
+    <EFDB_Topic>MTCamera_vacuum_CIP3_V</EFDB_Topic>
     <item>
       <EFDB_Name>cip3_V</EFDB_Name>
       <Description>Cryo ion pump 3 voltage</Description>
@@ -2660,6 +2760,25 @@
       <Units>Volt</Units>
       <Count>1</Count>
     </item>
+  </SALTelemetry>
+  <!--Created by xmlmaker2 for subsystem MTCamera class MTCamera_vacuum_CIP4_I using level 1-->
+  <!--======================================================================================-->
+  <SALTelemetry>
+    <Subsystem>MTCamera</Subsystem>
+    <EFDB_Topic>MTCamera_vacuum_CIP4_I</EFDB_Topic>
+    <item>
+      <EFDB_Name>cip4_I</EFDB_Name>
+      <Description>Cryo ion pump 4 current</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>mA</Units>
+      <Count>1</Count>
+    </item>
+  </SALTelemetry>
+  <!--Created by xmlmaker2 for subsystem MTCamera class MTCamera_vacuum_CIP4_V using level 1-->
+  <!--======================================================================================-->
+  <SALTelemetry>
+    <Subsystem>MTCamera</Subsystem>
+    <EFDB_Topic>MTCamera_vacuum_CIP4_V</EFDB_Topic>
     <item>
       <EFDB_Name>cip4_V</EFDB_Name>
       <Description>Cryo ion pump 4 voltage</Description>
@@ -2667,6 +2786,25 @@
       <Units>Volt</Units>
       <Count>1</Count>
     </item>
+  </SALTelemetry>
+  <!--Created by xmlmaker2 for subsystem MTCamera class MTCamera_vacuum_CIP5_I using level 1-->
+  <!--======================================================================================-->
+  <SALTelemetry>
+    <Subsystem>MTCamera</Subsystem>
+    <EFDB_Topic>MTCamera_vacuum_CIP5_I</EFDB_Topic>
+    <item>
+      <EFDB_Name>cip5_I</EFDB_Name>
+      <Description>Cryo ion pump 5 current</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>mA</Units>
+      <Count>1</Count>
+    </item>
+  </SALTelemetry>
+  <!--Created by xmlmaker2 for subsystem MTCamera class MTCamera_vacuum_CIP5_V using level 1-->
+  <!--======================================================================================-->
+  <SALTelemetry>
+    <Subsystem>MTCamera</Subsystem>
+    <EFDB_Topic>MTCamera_vacuum_CIP5_V</EFDB_Topic>
     <item>
       <EFDB_Name>cip5_V</EFDB_Name>
       <Description>Cryo ion pump 5 voltage</Description>
@@ -2674,6 +2812,25 @@
       <Units>Volt</Units>
       <Count>1</Count>
     </item>
+  </SALTelemetry>
+  <!--Created by xmlmaker2 for subsystem MTCamera class MTCamera_vacuum_CIP6_I using level 1-->
+  <!--======================================================================================-->
+  <SALTelemetry>
+    <Subsystem>MTCamera</Subsystem>
+    <EFDB_Topic>MTCamera_vacuum_CIP6_I</EFDB_Topic>
+    <item>
+      <EFDB_Name>cip6_I</EFDB_Name>
+      <Description>Cryo ion pump 6 current</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>mA</Units>
+      <Count>1</Count>
+    </item>
+  </SALTelemetry>
+  <!--Created by xmlmaker2 for subsystem MTCamera class MTCamera_vacuum_CIP6_V using level 1-->
+  <!--======================================================================================-->
+  <SALTelemetry>
+    <Subsystem>MTCamera</Subsystem>
+    <EFDB_Topic>MTCamera_vacuum_CIP6_V</EFDB_Topic>
     <item>
       <EFDB_Name>cip6_V</EFDB_Name>
       <Description>Cryo ion pump 6 voltage</Description>
@@ -2682,48 +2839,11 @@
       <Count>1</Count>
     </item>
   </SALTelemetry>
+  <!--Created by xmlmaker2 for subsystem MTCamera class MTCamera_vacuum_CryoVac using level 1-->
+  <!--=======================================================================================-->
   <SALTelemetry>
     <Subsystem>MTCamera</Subsystem>
-    <EFDB_Topic>MTCamera_vacuum_TurboPump</EFDB_Topic>
-    <item>
-      <EFDB_Name>turboSpeed</EFDB_Name>
-      <Description>Turbo pump speed (RPM)</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>turboCurrent</EFDB_Name>
-      <Description>TurboPump current</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>mA</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>turboVoltage</EFDB_Name>
-      <Description>TurboPump voltage</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>Volt</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>turboPower</EFDB_Name>
-      <Description>TurboPump power</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>W</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>turboPumpTemp</EFDB_Name>
-      <Description>TurboPump pump temperature</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>deg C</Units>
-      <Count>1</Count>
-    </item>
-  </SALTelemetry>
-  <SALTelemetry>
-    <Subsystem>MTCamera</Subsystem>
-    <EFDB_Topic>MTCamera_vacuum_CryoVacGauge</EFDB_Topic>
+    <EFDB_Topic>MTCamera_vacuum_CryoVac</EFDB_Topic>
     <item>
       <EFDB_Name>cryoVac</EFDB_Name>
       <Description>Cryostat vacuum</Description>
@@ -2732,20 +2852,11 @@
       <Count>1</Count>
     </item>
   </SALTelemetry>
+  <!--Created by xmlmaker2 for subsystem MTCamera class MTCamera_vacuum_ForelineVac using level 1-->
+  <!--===========================================================================================-->
   <SALTelemetry>
     <Subsystem>MTCamera</Subsystem>
-    <EFDB_Topic>MTCamera_vacuum_TurboVacGauge</EFDB_Topic>
-    <item>
-      <EFDB_Name>turboVac</EFDB_Name>
-      <Description>Turbo pump vacuum</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>Torr</Units>
-      <Count>1</Count>
-    </item>
-  </SALTelemetry>
-  <SALTelemetry>
-    <Subsystem>MTCamera</Subsystem>
-    <EFDB_Topic>MTCamera_vacuum_ForelineVacGauge</EFDB_Topic>
+    <EFDB_Topic>MTCamera_vacuum_ForelineVac</EFDB_Topic>
     <item>
       <EFDB_Name>forelineVac</EFDB_Name>
       <Description>Foreline pump vacuum</Description>
@@ -2754,9 +2865,11 @@
       <Count>1</Count>
     </item>
   </SALTelemetry>
+  <!--Created by xmlmaker2 for subsystem MTCamera class MTCamera_vacuum_Hex1Vac using level 1-->
+  <!--=======================================================================================-->
   <SALTelemetry>
     <Subsystem>MTCamera</Subsystem>
-    <EFDB_Topic>MTCamera_vacuum_Hex1VacGauge</EFDB_Topic>
+    <EFDB_Topic>MTCamera_vacuum_Hex1Vac</EFDB_Topic>
     <item>
       <EFDB_Name>hex1Vac</EFDB_Name>
       <Description>Heat exchanger 1 vacuum</Description>
@@ -2765,9 +2878,11 @@
       <Count>1</Count>
     </item>
   </SALTelemetry>
+  <!--Created by xmlmaker2 for subsystem MTCamera class MTCamera_vacuum_Hex2Vac using level 1-->
+  <!--=======================================================================================-->
   <SALTelemetry>
     <Subsystem>MTCamera</Subsystem>
-    <EFDB_Topic>MTCamera_vacuum_Hex2VacGauge</EFDB_Topic>
+    <EFDB_Topic>MTCamera_vacuum_Hex2Vac</EFDB_Topic>
     <item>
       <EFDB_Name>hex2Vac</EFDB_Name>
       <Description>Heat exchanger 2 vacuum</Description>
@@ -2776,7 +2891,86 @@
       <Count>1</Count>
     </item>
   </SALTelemetry>
-  <!-- daq-monitor -->
+  <!--Created by xmlmaker2 for subsystem MTCamera class MTCamera_vacuum_TurboCurrent using level 1-->
+  <!--============================================================================================-->
+  <SALTelemetry>
+    <Subsystem>MTCamera</Subsystem>
+    <EFDB_Topic>MTCamera_vacuum_TurboCurrent</EFDB_Topic>
+    <item>
+      <EFDB_Name>turboCurrent</EFDB_Name>
+      <Description>TurboPump current</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>mA</Units>
+      <Count>1</Count>
+    </item>
+  </SALTelemetry>
+  <!--Created by xmlmaker2 for subsystem MTCamera class MTCamera_vacuum_TurboPower using level 1-->
+  <!--==========================================================================================-->
+  <SALTelemetry>
+    <Subsystem>MTCamera</Subsystem>
+    <EFDB_Topic>MTCamera_vacuum_TurboPower</EFDB_Topic>
+    <item>
+      <EFDB_Name>turboPower</EFDB_Name>
+      <Description>TurboPump power</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>W</Units>
+      <Count>1</Count>
+    </item>
+  </SALTelemetry>
+  <!--Created by xmlmaker2 for subsystem MTCamera class MTCamera_vacuum_TurboPumpTemp using level 1-->
+  <!--=============================================================================================-->
+  <SALTelemetry>
+    <Subsystem>MTCamera</Subsystem>
+    <EFDB_Topic>MTCamera_vacuum_TurboPumpTemp</EFDB_Topic>
+    <item>
+      <EFDB_Name>turboPumpTemp</EFDB_Name>
+      <Description>TurboPump pump temperature</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>deg C</Units>
+      <Count>1</Count>
+    </item>
+  </SALTelemetry>
+  <!--Created by xmlmaker2 for subsystem MTCamera class MTCamera_vacuum_TurboSpeed using level 1-->
+  <!--==========================================================================================-->
+  <SALTelemetry>
+    <Subsystem>MTCamera</Subsystem>
+    <EFDB_Topic>MTCamera_vacuum_TurboSpeed</EFDB_Topic>
+    <item>
+      <EFDB_Name>turboSpeed</EFDB_Name>
+      <Description>Turbo pump speed (RPM)</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+  </SALTelemetry>
+  <!--Created by xmlmaker2 for subsystem MTCamera class MTCamera_vacuum_TurboVac using level 1-->
+  <!--========================================================================================-->
+  <SALTelemetry>
+    <Subsystem>MTCamera</Subsystem>
+    <EFDB_Topic>MTCamera_vacuum_TurboVac</EFDB_Topic>
+    <item>
+      <EFDB_Name>turboVac</EFDB_Name>
+      <Description>Turbo pump vacuum</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>Torr</Units>
+      <Count>1</Count>
+    </item>
+  </SALTelemetry>
+  <!--Created by xmlmaker2 for subsystem MTCamera class MTCamera_vacuum_TurboVoltage using level 1-->
+  <!--============================================================================================-->
+  <SALTelemetry>
+    <Subsystem>MTCamera</Subsystem>
+    <EFDB_Topic>MTCamera_vacuum_TurboVoltage</EFDB_Topic>
+    <item>
+      <EFDB_Name>turboVoltage</EFDB_Name>
+      <Description>TurboPump voltage</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>Volt</Units>
+      <Count>1</Count>
+    </item>
+  </SALTelemetry>
+  <!--Created by xmlmaker2 for subsystem MTCamera class MTCamera_daq_monitor_Store using level 1-->
+  <!--==========================================================================================-->
   <SALTelemetry>
     <Subsystem>MTCamera</Subsystem>
     <EFDB_Topic>MTCamera_daq_monitor_Store</EFDB_Topic>
@@ -2788,24 +2982,87 @@
       <Count>1</Count>
     </item>
     <item>
-      <EFDB_Name>freeSpace</EFDB_Name>
-      <Description>available disk space</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>Gbyte</Units>
-      <Count>1</Count>
-    </item>
-    <item>
       <EFDB_Name>freeFraction</EFDB_Name>
       <Description>available-space fraction</Description>
       <IDL_Type>double</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
     </item>
+    <item>
+      <EFDB_Name>freeSpace</EFDB_Name>
+      <Description>available disk space</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>Gbyte</Units>
+      <Count>1</Count>
+    </item>
   </SALTelemetry>
-  <!-- focal-plane -->
+  <!--Created by xmlmaker2 for subsystem MTCamera class MTCamera_focal_plane_Ccd using level 1-->
+  <!--========================================================================================-->
+  <SALTelemetry>
+    <Subsystem>MTCamera</Subsystem>
+    <EFDB_Topic>MTCamera_focal_plane_Ccd</EFDB_Topic>
+    <!--CCSMETA: Array gDV indexed by location-->
+    <item>
+      <EFDB_Name>gDV</EFDB_Name>
+      <Description>GD 0 voltage</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>Volt</Units>
+      <Count>201</Count>
+    </item>
+    <item>
+      <EFDB_Name>location</EFDB_Name>
+      <Description>ccd location</Description>
+      <IDL_Type>string</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <!--CCSMETA: Array oDI indexed by location-->
+    <item>
+      <EFDB_Name>oDI</EFDB_Name>
+      <Description>OD 0 current</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>mA</Units>
+      <Count>201</Count>
+    </item>
+    <!--CCSMETA: Array oDV indexed by location-->
+    <item>
+      <EFDB_Name>oDV</EFDB_Name>
+      <Description>OD 0 voltage</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>Volt</Units>
+      <Count>201</Count>
+    </item>
+    <!--CCSMETA: Array oGV indexed by location-->
+    <item>
+      <EFDB_Name>oGV</EFDB_Name>
+      <Description>OG 0 voltage</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>Volt</Units>
+      <Count>201</Count>
+    </item>
+    <!--CCSMETA: Array rDV indexed by location-->
+    <item>
+      <EFDB_Name>rDV</EFDB_Name>
+      <Description>RD 0 voltage</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>Volt</Units>
+      <Count>201</Count>
+    </item>
+    <!--CCSMETA: Array temp indexed by location-->
+    <item>
+      <EFDB_Name>temp</EFDB_Name>
+      <Description>SW temperature</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>Celsius</Units>
+      <Count>201</Count>
+    </item>
+  </SALTelemetry>
+  <!--Created by xmlmaker2 for subsystem MTCamera class MTCamera_focal_plane_Reb using level 1-->
+  <!--========================================================================================-->
   <SALTelemetry>
     <Subsystem>MTCamera</Subsystem>
     <EFDB_Topic>MTCamera_focal_plane_Reb</EFDB_Topic>
+    <!--CCSMETA: Array anaI indexed by location-->
     <item>
       <EFDB_Name>anaI</EFDB_Name>
       <Description>Analog PS current</Description>
@@ -2813,6 +3070,7 @@
       <Units>mA</Units>
       <Count>71</Count>
     </item>
+    <!--CCSMETA: Array anaV indexed by location-->
     <item>
       <EFDB_Name>anaV</EFDB_Name>
       <Description>Analog PS voltage</Description>
@@ -2820,6 +3078,7 @@
       <Units>Volt</Units>
       <Count>71</Count>
     </item>
+    <!--CCSMETA: Array aspicl_Temp0 indexed by location-->
     <item>
       <EFDB_Name>aspicl_Temp0</EFDB_Name>
       <Description>ASPIC 0 lower temp</Description>
@@ -2827,6 +3086,7 @@
       <Units>Celsius</Units>
       <Count>71</Count>
     </item>
+    <!--CCSMETA: Array aspicl_Temp1 indexed by location-->
     <item>
       <EFDB_Name>aspicl_Temp1</EFDB_Name>
       <Description>ASPIC 1 lower temp</Description>
@@ -2834,6 +3094,7 @@
       <Units>Celsius</Units>
       <Count>71</Count>
     </item>
+    <!--CCSMETA: Array aspicl_Temp2 indexed by location-->
     <item>
       <EFDB_Name>aspicl_Temp2</EFDB_Name>
       <Description>ASPIC 2 lower temp</Description>
@@ -2841,6 +3102,7 @@
       <Units>Celsius</Units>
       <Count>71</Count>
     </item>
+    <!--CCSMETA: Array aspicu_Temp0 indexed by location-->
     <item>
       <EFDB_Name>aspicu_Temp0</EFDB_Name>
       <Description>ASPIC 0 upper temp</Description>
@@ -2848,6 +3110,7 @@
       <Units>Celsius</Units>
       <Count>71</Count>
     </item>
+    <!--CCSMETA: Array aspicu_Temp1 indexed by location-->
     <item>
       <EFDB_Name>aspicu_Temp1</EFDB_Name>
       <Description>ASPIC 1 upper temp</Description>
@@ -2855,6 +3118,7 @@
       <Units>Celsius</Units>
       <Count>71</Count>
     </item>
+    <!--CCSMETA: Array aspicu_Temp2 indexed by location-->
     <item>
       <EFDB_Name>aspicu_Temp2</EFDB_Name>
       <Description>ASPIC 2 upper temp</Description>
@@ -2862,6 +3126,7 @@
       <Units>Celsius</Units>
       <Count>71</Count>
     </item>
+    <!--CCSMETA: Array clkHI indexed by location-->
     <item>
       <EFDB_Name>clkHI</EFDB_Name>
       <Description>Clock High PS current</Description>
@@ -2869,6 +3134,7 @@
       <Units>mA</Units>
       <Count>71</Count>
     </item>
+    <!--CCSMETA: Array clkHV indexed by location-->
     <item>
       <EFDB_Name>clkHV</EFDB_Name>
       <Description>Clock High PS voltage</Description>
@@ -2876,6 +3142,7 @@
       <Units>Volt</Units>
       <Count>71</Count>
     </item>
+    <!--CCSMETA: Array clkLI indexed by location-->
     <item>
       <EFDB_Name>clkLI</EFDB_Name>
       <Description>Clock Low PS current</Description>
@@ -2883,6 +3150,7 @@
       <Units>mA</Units>
       <Count>71</Count>
     </item>
+    <!--CCSMETA: Array clkLV indexed by location-->
     <item>
       <EFDB_Name>clkLV</EFDB_Name>
       <Description>Clock Low PS voltage</Description>
@@ -2890,6 +3158,7 @@
       <Units>Volt</Units>
       <Count>71</Count>
     </item>
+    <!--CCSMETA: Array digI indexed by location-->
     <item>
       <EFDB_Name>digI</EFDB_Name>
       <Description>Digital PS current</Description>
@@ -2897,6 +3166,7 @@
       <Units>mA</Units>
       <Count>71</Count>
     </item>
+    <!--CCSMETA: Array digV indexed by location-->
     <item>
       <EFDB_Name>digV</EFDB_Name>
       <Description>Digital PS voltage</Description>
@@ -2904,20 +3174,31 @@
       <Units>Volt</Units>
       <Count>71</Count>
     </item>
+    <!--CCSMETA: Array hVBiasSwitch indexed by location-->
+    <item>
+      <EFDB_Name>hVBiasSwitch</EFDB_Name>
+      <Description>HV bias switch</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>unitless</Units>
+      <Count>71</Count>
+    </item>
+    <!--CCSMETA: Array htrPI indexed by location-->
     <item>
       <EFDB_Name>htrPI</EFDB_Name>
       <Description>Heater PS current</Description>
       <IDL_Type>double</IDL_Type>
       <Units>mA</Units>
-      <Count>8</Count>
+      <Count>71</Count>
     </item>
+    <!--CCSMETA: Array htrPV indexed by location-->
     <item>
       <EFDB_Name>htrPV</EFDB_Name>
       <Description>Heater PS voltage</Description>
       <IDL_Type>double</IDL_Type>
       <Units>Volt</Units>
-      <Count>8</Count>
+      <Count>71</Count>
     </item>
+    <!--CCSMETA: Array htrV indexed by location-->
     <item>
       <EFDB_Name>htrV</EFDB_Name>
       <Description>Heater voltage</Description>
@@ -2925,6 +3206,7 @@
       <Units>Volt</Units>
       <Count>71</Count>
     </item>
+    <!--CCSMETA: Array htrW indexed by location-->
     <item>
       <EFDB_Name>htrW</EFDB_Name>
       <Description>Heater power</Description>
@@ -2933,19 +3215,13 @@
       <Count>71</Count>
     </item>
     <item>
-      <EFDB_Name>hVBiasSwitch</EFDB_Name>
-      <Description>HV bias switch</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>unitless</Units>
-      <Count>71</Count>
-    </item>
-    <item>
       <EFDB_Name>location</EFDB_Name>
-      <Description>Reb Location</Description>
+      <Description>reb location</Description>
       <IDL_Type>string</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
     </item>
+    <!--CCSMETA: Array oDI indexed by location-->
     <item>
       <EFDB_Name>oDI</EFDB_Name>
       <Description>OD PS current</Description>
@@ -2953,6 +3229,7 @@
       <Units>mA</Units>
       <Count>71</Count>
     </item>
+    <!--CCSMETA: Array oDV indexed by location-->
     <item>
       <EFDB_Name>oDV</EFDB_Name>
       <Description>OD PS voltage</Description>
@@ -2960,6 +3237,7 @@
       <Units>Volt</Units>
       <Count>71</Count>
     </item>
+    <!--CCSMETA: Array pClk0 indexed by location-->
     <item>
       <EFDB_Name>pClk0</EFDB_Name>
       <Description>Parallel 0</Description>
@@ -2967,6 +3245,7 @@
       <Units>Volt</Units>
       <Count>71</Count>
     </item>
+    <!--CCSMETA: Array pClk1 indexed by location-->
     <item>
       <EFDB_Name>pClk1</EFDB_Name>
       <Description>Parallel 1</Description>
@@ -2974,6 +3253,7 @@
       <Units>Volt</Units>
       <Count>71</Count>
     </item>
+    <!--CCSMETA: Array pClkL indexed by location-->
     <item>
       <EFDB_Name>pClkL</EFDB_Name>
       <Description>Parallel lower</Description>
@@ -2981,6 +3261,7 @@
       <Units>Volt</Units>
       <Count>71</Count>
     </item>
+    <!--CCSMETA: Array pClkU indexed by location-->
     <item>
       <EFDB_Name>pClkU</EFDB_Name>
       <Description>Parallel upper</Description>
@@ -2988,6 +3269,7 @@
       <Units>Volt</Units>
       <Count>71</Count>
     </item>
+    <!--CCSMETA: Array power indexed by location-->
     <item>
       <EFDB_Name>power</EFDB_Name>
       <Description>Total power</Description>
@@ -2995,48 +3277,7 @@
       <Units>Watt</Units>
       <Count>71</Count>
     </item>
-    <item>
-      <EFDB_Name>ref05V</EFDB_Name>
-      <Description>5V ref 0 voltage</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>Volt</Units>
-      <Count>71</Count>
-    </item>
-    <item>
-      <EFDB_Name>ref125V</EFDB_Name>
-      <Description>2.5V ref 1 voltage</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>Volt</Units>
-      <Count>71</Count>
-    </item>
-    <item>
-      <EFDB_Name>ref15V</EFDB_Name>
-      <Description>5V ref 1 voltage</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>Volt</Units>
-      <Count>71</Count>
-    </item>
-    <item>
-      <EFDB_Name>ref25V</EFDB_Name>
-      <Description>5V ref 2 voltage</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>Volt</Units>
-      <Count>71</Count>
-    </item>
-    <item>
-      <EFDB_Name>refN12</EFDB_Name>
-      <Description>Negative 12 ref</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>Volt</Units>
-      <Count>71</Count>
-    </item>
-    <item>
-      <EFDB_Name>refP12</EFDB_Name>
-      <Description>Positive 12 ref</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>Volt</Units>
-      <Count>71</Count>
-    </item>
+    <!--CCSMETA: Array rG0 indexed by location-->
     <item>
       <EFDB_Name>rG0</EFDB_Name>
       <Description>RG 0</Description>
@@ -3044,6 +3285,7 @@
       <Units>Volt</Units>
       <Count>71</Count>
     </item>
+    <!--CCSMETA: Array rG1 indexed by location-->
     <item>
       <EFDB_Name>rG1</EFDB_Name>
       <Description>RG 1</Description>
@@ -3051,6 +3293,7 @@
       <Units>Volt</Units>
       <Count>71</Count>
     </item>
+    <!--CCSMETA: Array rGL indexed by location-->
     <item>
       <EFDB_Name>rGL</EFDB_Name>
       <Description>Reset gate lower</Description>
@@ -3058,6 +3301,7 @@
       <Units>Volt</Units>
       <Count>71</Count>
     </item>
+    <!--CCSMETA: Array rGU indexed by location-->
     <item>
       <EFDB_Name>rGU</EFDB_Name>
       <Description>Reset gate upper</Description>
@@ -3065,6 +3309,7 @@
       <Units>Volt</Units>
       <Count>71</Count>
     </item>
+    <!--CCSMETA: Array rTDTemp indexed by location-->
     <item>
       <EFDB_Name>rTDTemp</EFDB_Name>
       <Description>RTD temperature</Description>
@@ -3072,6 +3317,55 @@
       <Units>Celsius</Units>
       <Count>71</Count>
     </item>
+    <!--CCSMETA: Array ref05V indexed by location-->
+    <item>
+      <EFDB_Name>ref05V</EFDB_Name>
+      <Description>5V ref 0 voltage</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>Volt</Units>
+      <Count>71</Count>
+    </item>
+    <!--CCSMETA: Array ref125V indexed by location-->
+    <item>
+      <EFDB_Name>ref125V</EFDB_Name>
+      <Description>2.5V ref 1 voltage</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>Volt</Units>
+      <Count>71</Count>
+    </item>
+    <!--CCSMETA: Array ref15V indexed by location-->
+    <item>
+      <EFDB_Name>ref15V</EFDB_Name>
+      <Description>5V ref 1 voltage</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>Volt</Units>
+      <Count>71</Count>
+    </item>
+    <!--CCSMETA: Array ref25V indexed by location-->
+    <item>
+      <EFDB_Name>ref25V</EFDB_Name>
+      <Description>5V ref 2 voltage</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>Volt</Units>
+      <Count>71</Count>
+    </item>
+    <!--CCSMETA: Array refN12 indexed by location-->
+    <item>
+      <EFDB_Name>refN12</EFDB_Name>
+      <Description>Negative 12 ref</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>Volt</Units>
+      <Count>71</Count>
+    </item>
+    <!--CCSMETA: Array refP12 indexed by location-->
+    <item>
+      <EFDB_Name>refP12</EFDB_Name>
+      <Description>Positive 12 ref</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>Volt</Units>
+      <Count>71</Count>
+    </item>
+    <!--CCSMETA: Array sClk0 indexed by location-->
     <item>
       <EFDB_Name>sClk0</EFDB_Name>
       <Description>Serial 0</Description>
@@ -3079,6 +3373,7 @@
       <Units>Volt</Units>
       <Count>71</Count>
     </item>
+    <!--CCSMETA: Array sClk1 indexed by location-->
     <item>
       <EFDB_Name>sClk1</EFDB_Name>
       <Description>Serial 1</Description>
@@ -3086,6 +3381,7 @@
       <Units>Volt</Units>
       <Count>71</Count>
     </item>
+    <!--CCSMETA: Array sClkL indexed by location-->
     <item>
       <EFDB_Name>sClkL</EFDB_Name>
       <Description>Serial lower</Description>
@@ -3093,6 +3389,7 @@
       <Units>Volt</Units>
       <Count>71</Count>
     </item>
+    <!--CCSMETA: Array sClkU indexed by location-->
     <item>
       <EFDB_Name>sClkU</EFDB_Name>
       <Description>Serial upper</Description>
@@ -3100,48 +3397,7 @@
       <Units>Volt</Units>
       <Count>71</Count>
     </item>
-    <item>
-      <EFDB_Name>sw_GDV</EFDB_Name>
-      <Description>GD 0 voltage</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>Volt</Units>
-      <Count>71</Count>
-    </item>
-    <item>
-      <EFDB_Name>sw_ODI</EFDB_Name>
-      <Description>OD 0 current</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>mA</Units>
-      <Count>71</Count>
-    </item>
-    <item>
-      <EFDB_Name>sw_ODV</EFDB_Name>
-      <Description>OD 0 voltage</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>Volt</Units>
-      <Count>71</Count>
-    </item>
-    <item>
-      <EFDB_Name>sw_OGV</EFDB_Name>
-      <Description>OG 0 voltage</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>Volt</Units>
-      <Count>71</Count>
-    </item>
-    <item>
-      <EFDB_Name>sw_RDV</EFDB_Name>
-      <Description>RD 0 voltage</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>Volt</Units>
-      <Count>71</Count>
-    </item>
-    <item>
-      <EFDB_Name>sw_Temp</EFDB_Name>
-      <Description>SW temperature</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>Celsius</Units>
-      <Count>71</Count>
-    </item>
+    <!--CCSMETA: Array temp1 indexed by location-->
     <item>
       <EFDB_Name>temp1</EFDB_Name>
       <Description>Board temperature 1</Description>
@@ -3149,6 +3405,7 @@
       <Units>Celsius</Units>
       <Count>71</Count>
     </item>
+    <!--CCSMETA: Array temp10 indexed by location-->
     <item>
       <EFDB_Name>temp10</EFDB_Name>
       <Description>Board temperature 10</Description>
@@ -3156,6 +3413,7 @@
       <Units>Celsius</Units>
       <Count>71</Count>
     </item>
+    <!--CCSMETA: Array temp2 indexed by location-->
     <item>
       <EFDB_Name>temp2</EFDB_Name>
       <Description>Board temperature 2</Description>
@@ -3163,6 +3421,7 @@
       <Units>Celsius</Units>
       <Count>71</Count>
     </item>
+    <!--CCSMETA: Array temp3 indexed by location-->
     <item>
       <EFDB_Name>temp3</EFDB_Name>
       <Description>Board temperature 3</Description>
@@ -3170,6 +3429,7 @@
       <Units>Celsius</Units>
       <Count>71</Count>
     </item>
+    <!--CCSMETA: Array temp4 indexed by location-->
     <item>
       <EFDB_Name>temp4</EFDB_Name>
       <Description>Board temperature 4</Description>
@@ -3177,6 +3437,7 @@
       <Units>Celsius</Units>
       <Count>71</Count>
     </item>
+    <!--CCSMETA: Array temp5 indexed by location-->
     <item>
       <EFDB_Name>temp5</EFDB_Name>
       <Description>Board temperature 5</Description>
@@ -3184,6 +3445,7 @@
       <Units>Celsius</Units>
       <Count>71</Count>
     </item>
+    <!--CCSMETA: Array temp6 indexed by location-->
     <item>
       <EFDB_Name>temp6</EFDB_Name>
       <Description>Board temperature 6</Description>
@@ -3191,6 +3453,7 @@
       <Units>Celsius</Units>
       <Count>71</Count>
     </item>
+    <!--CCSMETA: Array temp7 indexed by location-->
     <item>
       <EFDB_Name>temp7</EFDB_Name>
       <Description>Board temperature 7</Description>
@@ -3198,6 +3461,7 @@
       <Units>Celsius</Units>
       <Count>71</Count>
     </item>
+    <!--CCSMETA: Array temp8 indexed by location-->
     <item>
       <EFDB_Name>temp8</EFDB_Name>
       <Description>Board temperature 8</Description>
@@ -3205,6 +3469,7 @@
       <Units>Celsius</Units>
       <Count>71</Count>
     </item>
+    <!--CCSMETA: Array temp9 indexed by location-->
     <item>
       <EFDB_Name>temp9</EFDB_Name>
       <Description>Board temperature 9</Description>
@@ -3213,77 +3478,8 @@
       <Count>71</Count>
     </item>
   </SALTelemetry>
-  <SALTelemetry>
-    <Subsystem>MTCamera</Subsystem>
-    <EFDB_Topic>MTCamera_focal_plane_Ccd</EFDB_Topic>
-    <item>
-      <EFDB_Name>gDV</EFDB_Name>
-      <Description>GD 0 voltage</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>Volt</Units>
-      <Count>197</Count>
-    </item>
-    <item>
-      <EFDB_Name>location</EFDB_Name>
-      <Description>Ccd Location</Description>
-      <IDL_Type>string</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>oDI</EFDB_Name>
-      <Description>OD 0 current</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>mA</Units>
-      <Count>197</Count>
-    </item>
-    <item>
-      <EFDB_Name>oDV</EFDB_Name>
-      <Description>OD 0 voltage</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>Volt</Units>
-      <Count>197</Count>
-    </item>
-    <item>
-      <EFDB_Name>oGV</EFDB_Name>
-      <Description>OG 0 voltage</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>Volt</Units>
-      <Count>197</Count>
-    </item>
-    <item>
-      <EFDB_Name>rDV</EFDB_Name>
-      <Description>RD 0 voltage</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>Volt</Units>
-      <Count>197</Count>
-    </item>
-    <item>
-      <EFDB_Name>temp</EFDB_Name>
-      <Description>CCD temperature</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>Celsius</Units>
-      <Count>197</Count>
-    </item>
-  </SALTelemetry>
-  <SALTelemetry>
-    <Subsystem>MTCamera</Subsystem>
-    <EFDB_Topic>MTCamera_focal_plane_Segment</EFDB_Topic>
-    <item>
-      <EFDB_Name>i</EFDB_Name>
-      <Description>Amplifier current</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>mA</Units>
-      <Count>3024</Count>
-    </item>
-    <item>
-      <EFDB_Name>location</EFDB_Name>
-      <Description>Segment Location</Description>
-      <IDL_Type>string</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-  </SALTelemetry>
+  <!--Created by xmlmaker2 for subsystem MTCamera class MTCamera_focal_plane_RebTotalPower using level 1-->
+  <!--==================================================================================================-->
   <SALTelemetry>
     <Subsystem>MTCamera</Subsystem>
     <EFDB_Topic>MTCamera_focal_plane_RebTotalPower</EFDB_Topic>
@@ -3292,6 +3488,27 @@
       <Description>Reb Total Power</Description>
       <IDL_Type>double</IDL_Type>
       <Units>Watt</Units>
+      <Count>1</Count>
+    </item>
+  </SALTelemetry>
+  <!--Created by xmlmaker2 for subsystem MTCamera class MTCamera_focal_plane_Segment using level 1-->
+  <!--============================================================================================-->
+  <SALTelemetry>
+    <Subsystem>MTCamera</Subsystem>
+    <EFDB_Topic>MTCamera_focal_plane_Segment</EFDB_Topic>
+    <!--CCSMETA: Array i indexed by location-->
+    <item>
+      <EFDB_Name>i</EFDB_Name>
+      <Description>S00 upper current 0</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>mA</Units>
+      <Count>3024</Count>
+    </item>
+    <item>
+      <EFDB_Name>location</EFDB_Name>
+      <Description>segment location</Description>
+      <IDL_Type>string</IDL_Type>
+      <Units>unitless</Units>
       <Count>1</Count>
     </item>
   </SALTelemetry>
