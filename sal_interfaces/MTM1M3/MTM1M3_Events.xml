@@ -5547,6 +5547,102 @@
   </SALEvent>
   <SALEvent>
     <Subsystem>MTM1M3</Subsystem>
+    <EFDB_Topic>MTM1M3_logevent_positionControllerSettings</EFDB_Topic>
+    <Description>Position controller settings.</Description>
+    <item>
+      <EFDB_Name>forceToStepsCoefficient</EFDB_Name>
+      <Description>Multiplier for force to steps transformation.</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>1 / N</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>encoderToStepsCoefficient</EFDB_Name>
+      <Description>Multiplier for force to steps transformation.</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>maxStepsPerLoop</EFDB_Name>
+      <Description>Maximum number of steps queued per loop.</Description>
+      <IDL_Type>int</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>raiseHPForceLimitLow</EFDB_Name>
+      <Description>Minimal force for which mirror raising will continue. Above that (and below LimitHigh), HP will be stepped to remove excessive force.</Description>
+      <IDL_Type>int</IDL_Type>
+      <Units>N</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>raiseHPForceLimitHigh</EFDB_Name>
+      <Description>Maximal force for which mirror raising will continue. Below that (and above LimitLow), HP will be stepped to remove excessive force.</Description>
+      <IDL_Type>int</IDL_Type>
+      <Units>N</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>raiseHPForceMargin</EFDB_Name>
+      <Description>Force margin to continue raise operation. HP force must stay inside limit subtracted with this margin for raise to continue.</Description>
+      <IDL_Type>int</IDL_Type>
+      <Units>N</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>raiseTimeout</EFDB_Name>
+      <Description>Timeout (in seconds) for mirror raising.</Description>
+      <IDL_Type>int</IDL_Type>
+      <Units>s</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>lowerHPForceLimitLow</EFDB_Name>
+      <Description>Minimal force for which mirror lowering will continue. Above that (and below LimitHigh), HP will be stepped to remove excessive force.</Description>
+      <IDL_Type>int</IDL_Type>
+      <Units>N</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>lowerHPForceLimitHigh</EFDB_Name>
+      <Description>Maximal force for which mirror lowering will continue. Below that (and above LimitLow), HP will be stepped to remove excessive force.</Description>
+      <IDL_Type>int</IDL_Type>
+      <Units>N</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>lowerHPForceMargin</EFDB_Name>
+      <Description>Force margin for continue lower operation. HP force must stay inside limit subtracted with this margin for lower to continue.</Description>
+      <IDL_Type>int</IDL_Type>
+      <Units>N</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>lowerTimeout</EFDB_Name>
+      <Description>Timeout (in seconds) for mirror lowering.</Description>
+      <IDL_Type>int</IDL_Type>
+      <Units>s</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>lowerPositionOffset</EFDB_Name>
+      <Description>Position offset for lowering. Mirror will be placed in this position (distributed proportionally on Z and Y axis) before real lowering starts.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>mm</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>referencePosition</EFDB_Name>
+      <Description>HP reference position. Mirror is assumed to be in 0 XYZ and rotation on those encoder counts.</Description>
+      <IDL_Type>int</IDL_Type>
+      <Units>unitless</Units>
+      <Count>6</Count>
+    </item>
+  </SALEvent>
+  <SALEvent>
+    <Subsystem>MTM1M3</Subsystem>
     <EFDB_Topic>MTM1M3_logevent_displacementSensorSettings</EFDB_Topic>
     <Description>Displacement sensor settings.</Description>
     <item>
