@@ -89,12 +89,11 @@
   <SALEvent>
     <Subsystem>MTRotator</Subsystem>
     <EFDB_Topic>MTRotator_logevent_interlock</EFDB_Topic>
-    <Description>MTRotator interlock: This event is generated when safety interlock is engaged or disengaged</Description>
+    <Description>Safety interlock engaged (preventing motion) or disengaged.</Description>
     <item>
-      <EFDB_Name>detail</EFDB_Name>
-      <Description>detail</Description>
-      <IDL_Type>string</IDL_Type>
-      <IDL_Size>256</IDL_Size>
+      <EFDB_Name>engaged</EFDB_Name>
+      <Description>Is the interlock engaged (true) or not (false)?</Description>
+      <IDL_Type>boolean</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
     </item>
