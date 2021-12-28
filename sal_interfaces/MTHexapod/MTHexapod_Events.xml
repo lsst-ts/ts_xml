@@ -304,7 +304,7 @@
       <Description>Application status; one value for each linear actuator. A bitmask of ApplicationStatus enumeration values.</Description>
       <IDL_Type>long</IDL_Type>
       <Units>unitless</Units>
-      <Count>6</Count>
+      <Count>1</Count>
     </item>
   </SALEvent>
   <SALEvent>
@@ -322,12 +322,11 @@
   <SALEvent>
     <Subsystem>MTHexapod</Subsystem>
     <EFDB_Topic>MTHexapod_logevent_interlock</EFDB_Topic>
-    <Description>Safety interlock engaged or disengaged.</Description>
+    <Description>Safety interlock engaged (preventing motion) or disengaged.</Description>
     <item>
-      <EFDB_Name>detail</EFDB_Name>
-      <Description>One of two values: Engaged or Disengaged</Description>
-      <IDL_Type>string</IDL_Type>
-      <IDL_Size>256</IDL_Size>
+      <EFDB_Name>engaged</EFDB_Name>
+      <Description>Is the interlock engaged (true) or not (false)?</Description>
+      <IDL_Type>boolean</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
     </item>
