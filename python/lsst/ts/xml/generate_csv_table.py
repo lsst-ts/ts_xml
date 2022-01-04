@@ -93,7 +93,7 @@ def generate_csv_table():
 
             name = member.find("Name").text
             subsystem.append(
-                f".. _index:master-csc-table:{name.lower()}:\n\n:doc:`/sal_interfaces/{name}`"
+                f".. _index:csc-table:{name.lower()}:\n\n:doc:`/sal_interfaces/{name}`"
             )
 
             active_developers = member.find("ActiveDevelopers").text
