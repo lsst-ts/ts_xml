@@ -30,8 +30,8 @@ The tests are run regularly as part of the `TSSW Continuous Integration environm
 
 .. _index:master-csc-table:
 
-Master CSC Table
-================
+CSC Table
+=========
 
 .. csv-table:: List of defined Commandable SAL Components (CSC)
    :file: orderedSubsystemData.csv
@@ -74,8 +74,7 @@ Legend
   Link to where there is documentation for this CSC.
 
 **Product Owner**
-  place holder, Michael I have a question for you. How is the product owner
-  different than the principal CSC owner
+  Determines the overall direction and work on the given CSC.
 
 **Related Documents**
   Documents that are related to this CSC. These can be design documents,
