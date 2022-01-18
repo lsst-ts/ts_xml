@@ -3,6 +3,16 @@
 <SALCommandSet xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://lsst-sal.tuc.noao.edu/schema/SALCommandSet.xsd">
   <SALCommand>
     <Subsystem>MTM1M3</Subsystem>
+    <EFDB_Topic>MTM1M3_command_panic</EFDB_Topic>
+    <Description>
+        Panic the mirror. Triggers emergency mechanism, activated automatically
+        on faults. Shall cause mirror to safely land on static support. Lands
+        mirror safely by interrupting power to all ILCs - Force Actuators and
+        Hardpoints.
+    </Description>
+  </SALCommand>
+  <SALCommand>
+    <Subsystem>MTM1M3</Subsystem>
     <EFDB_Topic>MTM1M3_command_raiseM1M3</EFDB_Topic>
     <Description>
         The raiseM1M3 command shall cause the M1M3 to raise the mirror
