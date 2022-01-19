@@ -294,9 +294,15 @@ SAL Interfaces for all CSCs and other SAL components.
                         state_name = states[0].split("_")[0].lstrip()
                         cf.write(f":{state_name}:\n")
                         for state in states:
-                            cf.write(
-                                f"  * :any:`{state.split('_')[1]} <lsst.ts.idl.enums.{subsystem}.{state_name}.{state.split('_')[1].upper()}>`\n"  # noqa
-                            )
+                            # enum item format `\n enumClassName_itemName
+                            # [=value]`
+                            # where itemName may include underscores,
+                            # and all whitespace is optional and of
+                            # arbitrary length.
+                            state = state.split("_", 1)[
+                                1
+                            ]  # strip the beginning through the first underscore.
+                            cf.write(f"  * {state}\n")  # noqa
                         cf.write("\n")
                         continue
                     if dds_type == "Events" and first_event:
