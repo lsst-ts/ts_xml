@@ -10,3 +10,4 @@ clean:
 	package-docs clean
 	rm subsystemData.csv orderedSubsystemData.csv
 	rm -rf sal_interfaces
+	rm sal_generics.rst
