@@ -36,8 +36,26 @@
       <Description>Transition from state Standby to Disable, in a specified configuration.</Description>
       <Category>csc</Category>
       <item>
+        <EFDB_Name>configurationOverride</EFDB_Name>
+        <Description>
+            Configuration override in the form [{name}][:{version}].
+            For salobj-based CSCs: name is a filename with ".yaml" suffix and version is a git hash; for example:
+
+            * "foo.yaml" specifies just a file.
+              Two or three config files are loaded: "_init.yaml", "_{site}.yaml" (if present), and "foo.yaml".
+            * ":37bf936" specifies just a git hash.
+              One or two config files are loaded from the specified git commit: "_init.yaml" and "_{site}.yaml" (if present.
+            * "bar.yaml:HEAD~2" specifies both a file and a git hash.
+              Two or three config files are read from the specified git commit: "_init.yaml", "_{site}.yaml" (if present), and "bar.yaml".
+        </Description>
+        <IDL_Type>string</IDL_Type>
+        <IDL_Size>1</IDL_Size>
+        <Units>unitless</Units>
+        <Count>1</Count>
+      </item>
+      <item>
         <EFDB_Name>settingsToApply</EFDB_Name>
-        <Description>Name of the selected settings set</Description>
+        <Description>DEPRECATED: uae override instead. Name of the selected settings set</Description>
         <IDL_Type>string</IDL_Type>
         <IDL_Size>256</IDL_Size>
         <Units>unitless</Units>
@@ -119,8 +137,92 @@
   <SALEventSet xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://project.lsst.org/ts/sal_objects/schema/SALEventSet.xsd">
     <SALEvent>
       <Subsystem>SALGeneric</Subsystem>
+      <EFDB_Topic>SALGeneric_logevent_configurationApplied</EFDB_Topic>
+      <Description>Information about CSC's configuration.</Description>
+      <Category>configurable</Category>
+      <item>
+        <EFDB_Name>configurations</EFDB_Name>
+        <Description>A comma-separated list of configurations applied. If configuration comes from a clone of a git repo, or similar directory, then it will be a list of file names, without the file extension. Ignore whitespace after commas.</Description>
+        <IDL_Type>string</IDL_Type>
+        <IDL_Size>1</IDL_Size>
+        <Units>unitless</Units>
+        <Count>1</Count>
+      </item>
+      <item>
+        <EFDB_Name>version</EFDB_Name>
+        <Description>Version of the configuration source. For a clone of a git repo it will be a git hash.</Description>
+        <IDL_Type>string</IDL_Type>
+        <IDL_Size>1</IDL_Size>
+        <Units>unitless</Units>
+        <Count>1</Count>
+      </item>
+      <item>
+        <EFDB_Name>url</EFDB_Name>
+        <Description>URL of the configuration source. For a clone of a git repo this will be a file URL. For a database it will be a standard database URL. This should always match the same-named field in configurationsAvailable.</Description>
+        <IDL_Type>string</IDL_Type>
+        <IDL_Size>1</IDL_Size>
+        <Units>unitless</Units>
+        <Count>1</Count>
+      </item>
+      <item>
+        <EFDB_Name>schemaVersion</EFDB_Name>
+        <Description>Version of config schema used by the CSC. For a configuration git repo, this is the name of a folder in the config package, and is typically something like "v1". This should always match the same-named field in configurationsAvailable.</Description>
+        <IDL_Type>string</IDL_Type>
+        <IDL_Size>1</IDL_Size>
+        <Units>unitless</Units>
+        <Count>1</Count>
+      </item>
+      <item>
+        <EFDB_Name>otherInfo</EFDB_Name>
+        <Description>A comma-separated list of event topics (without the logevent prefix) used to publish the entire set of configuration parameters loaded by the CSC, and any other pertinent information. Ignore whitespace after commas.</Description>
+        <IDL_Type>string</IDL_Type>
+        <IDL_Size>1</IDL_Size>
+        <Units>unitless</Units>
+        <Count>1</Count>
+      </item>
+    </SALEvent>
+    <SALEvent>
+      <Subsystem>SALGeneric</Subsystem>
+      <EFDB_Topic>SALGeneric_logevent_configurationsAvailable</EFDB_Topic>
+      <Description>Information about the source of configuration information for the CSC.</Description>
+      <Category>configurable</Category>
+      <item>
+        <EFDB_Name>overrides</EFDB_Name>
+        <Description>Available overrides as a comma-separated list. Each entry is a possible value of the `configurationOverride` field of the `start` command. Ignore whitespace after commas.</Description>
+        <IDL_Type>string</IDL_Type>
+        <IDL_Size>1</IDL_Size>
+        <Units>unitless</Units>
+        <Count>1</Count>
+      </item>
+      <item>
+        <EFDB_Name>version</EFDB_Name>
+        <Description>Version of the configuration source. For a clone of a git repo it will be a git hash.</Description>
+        <IDL_Type>string</IDL_Type>
+        <IDL_Size>1</IDL_Size>
+        <Units>unitless</Units>
+        <Count>1</Count>
+      </item>
+      <item>
+        <EFDB_Name>url</EFDB_Name>
+        <Description>URL of the configuration source. For a clone of a git repo this will be a file URL. For a database it will be a standard database URL.</Description>
+        <IDL_Type>string</IDL_Type>
+        <IDL_Size>1</IDL_Size>
+        <Units>unitless</Units>
+        <Count>1</Count>
+      </item>
+      <item>
+        <EFDB_Name>schemaVersion</EFDB_Name>
+        <Description>Version of config schema used by the CSC. For a configuration git repo, this is the name of a folder in the config package, and is typically something like "v1".</Description>
+        <IDL_Type>string</IDL_Type>
+        <IDL_Size>1</IDL_Size>
+        <Units>unitless</Units>
+        <Count>1</Count>
+      </item>
+    </SALEvent>
+    <SALEvent>
+      <Subsystem>SALGeneric</Subsystem>
       <EFDB_Topic>SALGeneric_logevent_settingVersions</EFDB_Topic>
-      <Description>Information about settings which can be specified in the start command.</Description>
+      <Description>DEPRECATED: use configurationsAvailable instead. Information about settings which can be specified in the start command.</Description>
       <Category>configurable</Category>
       <item>
         <EFDB_Name>recommendedSettingsVersion</EFDB_Name>
@@ -195,7 +297,7 @@
       <Category>configurable</Category>
       <item>
         <EFDB_Name>appliedSettingsMatchStartIsTrue</EFDB_Name>
-        <Description>True when the configuration matches the start conditions</Description>
+        <Description>DEPRECATED as a generic event. Few CSCs need something like this, and those that do should provide their own event. True when the configuration matches the start conditions</Description>
         <IDL_Type>boolean</IDL_Type>
         <Units>unitless</Units>
         <Count>1</Count>
@@ -299,7 +401,7 @@
     <SALEvent>
       <Subsystem>SALGeneric</Subsystem>
       <EFDB_Topic>SALGeneric_logevent_settingsApplied</EFDB_Topic>
-      <Description>Base settings applied.</Description>
+      <Description>DEPRECATED: use configurationApplied instead. Base settings applied.</Description>
       <Category>configurable</Category>
       <item>
         <EFDB_Name>settingsVersion</EFDB_Name>
