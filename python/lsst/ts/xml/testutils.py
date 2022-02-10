@@ -117,6 +117,8 @@ generic_commands = [
 generic_events = [
     "appliedSettingsMatchStart",
     "authList",
+    "configurationApplied",
+    "configurationsAvailable",
     "errorCode",
     "heartbeat",
     "logLevel",
@@ -196,6 +198,8 @@ added_generics_configurable_commands = []
 
 added_generics_configurable_events = [
     "appliedSettingsMatchStart",
+    "configurationApplied",
+    "configurationsAvailable",
     "settingsApplied",
     "settingVersions",
 ]
