@@ -1,6 +1,6 @@
 # This file is part of ts_xml
 #
-# Developed for the LSST Data Management System.
+# Developed for the Vera Rubin Observatory Telescope and Site Systems.
 # This product includes software developed by the LSST Project
 # (https://www.lsst.org).
 # See the COPYRIGHT file at the top-level directory of this distribution
@@ -17,7 +17,7 @@
 # GNU General Public License for more details.
 #
 # You should have received a copy of the GNU General Public License
-
+# along with this program. If not, see <https://www.gnu.org/licenses/>.
 __all__ = ["write_generic_page"]
 
 from xml.etree import ElementTree
@@ -47,6 +47,13 @@ IGNORED_FIELDS = [
 def write_generic_page():
     cf = open(utils.get_pkg_root() / "doc/sal_generics.rst", "w")
     write_heading(cf, "SAL Generics", char="*", overline=True)
+    cf.write("Generic topics can be included with any CSC.\n")
+    cf.write("Generic topics can be categorized or not.\n")
+    cf.write(
+        "A CSC can declare which categories or individual generics are supported.\n"
+    )
+    cf.write("More information can be found in the document LSE-209.\n")
+    cf.write("\n")
     xml_dir = utils.get_sal_interfaces_dir()
 
     gen_tree = ElementTree.parse(xml_dir / "SALGenerics.xml")
