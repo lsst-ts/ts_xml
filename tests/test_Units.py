@@ -7,10 +7,7 @@ import lsst.ts.xml as ts_xml
 
 
 def check_for_issues(csc, topic):
-    if csc == "PromptProcessing":
-        jira = "CAP-592"
-    else:
-        jira = ""
+    jira = ""
     return jira
 
 

@@ -86,7 +86,6 @@ subsystems = [
     "MTVMS",
     "OCPS",
     "PMD",
-    "PromptProcessing",
     "Scheduler",
     "Script",
     "ScriptQueue",
