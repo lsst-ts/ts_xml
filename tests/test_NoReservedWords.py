@@ -32,12 +32,6 @@ def check_for_issues(csc, topic, language):
         jira = "CAP-397"
     elif csc == "CCCamera" and language == "optional":
         jira = "CAP-402"
-    elif (
-        csc == "PromptProcessing"
-        and topic in ("Telemetry", "Events")
-        and language == "optional"
-    ):
-        jira = "DM-22624"
     elif csc == "Scheduler" and topic == "Telemetry" and language == "optional":
         jira = "DM-22625"
     elif (
