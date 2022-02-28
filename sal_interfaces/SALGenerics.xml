@@ -53,14 +53,6 @@
         <Units>unitless</Units>
         <Count>1</Count>
       </item>
-      <item>
-        <EFDB_Name>settingsToApply</EFDB_Name>
-        <Description>DEPRECATED: uae override instead. Name of the selected settings set</Description>
-        <IDL_Type>string</IDL_Type>
-        <IDL_Size>256</IDL_Size>
-        <Units>unitless</Units>
-        <Count>1</Count>
-      </item>
     </SALCommand>
     <SALCommand>
       <Subsystem>SALGeneric</Subsystem>
@@ -221,36 +213,6 @@
     </SALEvent>
     <SALEvent>
       <Subsystem>SALGeneric</Subsystem>
-      <EFDB_Topic>SALGeneric_logevent_settingVersions</EFDB_Topic>
-      <Description>DEPRECATED: use configurationsAvailable instead. Information about settings which can be specified in the start command.</Description>
-      <Category>configurable</Category>
-      <item>
-        <EFDB_Name>recommendedSettingsVersion</EFDB_Name>
-        <Description>List of comma seperated recomended versions of settings sets</Description>
-        <IDL_Type>string</IDL_Type>
-        <IDL_Size>1</IDL_Size>
-        <Units>unitless</Units>
-        <Count>1</Count>
-      </item>
-      <item>
-        <EFDB_Name>recommendedSettingsLabels</EFDB_Name>
-        <Description>List of comma seperated names of settings sets</Description>
-        <IDL_Type>string</IDL_Type>
-        <IDL_Size>1</IDL_Size>
-        <Units>unitless</Units>
-        <Count>1</Count>
-      </item>
-      <item>
-        <EFDB_Name>settingsUrl</EFDB_Name>
-        <Description>The URL where the settings sets definitions can be found</Description>
-        <IDL_Type>string</IDL_Type>
-        <IDL_Size>1</IDL_Size>
-        <Units>unitless</Units>
-        <Count>1</Count>
-      </item>
-    </SALEvent>
-    <SALEvent>
-      <Subsystem>SALGeneric</Subsystem>
       <EFDB_Topic>SALGeneric_logevent_errorCode</EFDB_Topic>
       <Description>Output when a CSC goes into the Fault state as an explanation of the problem.</Description>
       <Category>csc</Category>
@@ -287,18 +249,6 @@
         <EFDB_Name>summaryState</EFDB_Name>
         <Description>High level state machine state identifier</Description>
         <IDL_Type>long</IDL_Type>
-        <Units>unitless</Units>
-        <Count>1</Count>
-      </item>
-    </SALEvent>
-    <SALEvent>
-      <Subsystem>SALGeneric</Subsystem>
-      <EFDB_Topic>SALGeneric_logevent_appliedSettingsMatchStart</EFDB_Topic>
-      <Category>configurable</Category>
-      <item>
-        <EFDB_Name>appliedSettingsMatchStartIsTrue</EFDB_Name>
-        <Description>DEPRECATED as a generic event. Few CSCs need something like this, and those that do should provide their own event. True when the configuration matches the start conditions</Description>
-        <IDL_Type>boolean</IDL_Type>
         <Units>unitless</Units>
         <Count>1</Count>
       </item>
@@ -395,28 +345,6 @@
         <Description>The time at which the condition being reported was observed (TAI unix seconds). 0 if unspecified.</Description>
         <IDL_Type>double</IDL_Type>
         <Units>second</Units>
-        <Count>1</Count>
-      </item>
-    </SALEvent>
-    <SALEvent>
-      <Subsystem>SALGeneric</Subsystem>
-      <EFDB_Topic>SALGeneric_logevent_settingsApplied</EFDB_Topic>
-      <Description>DEPRECATED: use configurationApplied instead. Base settings applied.</Description>
-      <Category>configurable</Category>
-      <item>
-        <EFDB_Name>settingsVersion</EFDB_Name>
-        <Description>The SHA or name corresponding to the published configuration</Description>
-        <IDL_Type>string</IDL_Type>
-        <IDL_Size>256</IDL_Size>
-        <Units>unitless</Units>
-        <Count>1</Count>
-      </item>
-      <item>
-        <EFDB_Name>otherSettingsEvents</EFDB_Name>
-        <Description>A comma delimited list of other specific CSC configuration events. This may be blank if no other CSC specific events are necessary</Description>
-        <IDL_Type>string</IDL_Type>
-        <IDL_Size>1</IDL_Size>
-        <Units>unitless</Units>
         <Count>1</Count>
       </item>
     </SALEvent>
