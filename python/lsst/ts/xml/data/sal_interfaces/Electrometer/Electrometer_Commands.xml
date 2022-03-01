@@ -4,7 +4,7 @@
   <SALCommand>
     <Subsystem>Electrometer</Subsystem>
     <EFDB_Topic>Electrometer_command_performZeroCalib</EFDB_Topic>
-    <Description>Performs a zero correction in the device. It's recommended to perform this zero correction every time the range changes. The steps taken to perform this comes from the datasheet 6517B-901-01 Rev. B / June 2009 under Zero correct. It is as following. 1- Enable Zero check, 2- Set unit to read, 3- Set range to measure 4- Enable Zero Correction 5- Disable Zero check. For unit and range, it uses the last values selected, either via command or from the configuration file</Description>
+    <Description>Performs a zero correction in the device. This will correct any internal offsets that might upset accuracy for voltage and current measurements. It's recommended to perform this zero correction every time the range changes. The steps taken to perform this comes from the datasheet 6517B-901-01 Rev. B / June 2009 under Zero correct. It is as following. 1- Enable Zero check, 2- Set unit to read, 3- Set range to measure 4- Enable Zero Correction 5- Disable Zero check. For unit and range, it uses the last values selected, either via command or from the configuration file</Description>
     <item>
       <EFDB_Name>value</EFDB_Name>
       <Description>Attribute required by the API, but is unused</Description>
@@ -16,24 +16,24 @@
   <SALCommand>
     <Subsystem>Electrometer</Subsystem>
     <EFDB_Topic>Electrometer_command_setDigitalFilter</EFDB_Topic>
-    <Description>Configure the digital filter inside the Electrometer controller. Be aware that activating any filters will reduce the number of readings per second the device will be able to handle</Description>
+    <Description>Configures the digital filter in the device. Filtering stabilizes noisy measurements caused by noisy input signals. Be aware that activating any filters will reduce the number of readings per second the device will be able to handle. The Electrometer has two types of filters: Averaging and Median. Note that both filters can be enabled at the same time. If so, each reading will reflect the median for the average readings. In order to enable either of these filters, one must set the activateFilter to ON (1). Any reading taken when a filter is enabled will be the result of the filtering process. </Description>
     <item>
       <EFDB_Name>activateFilter</EFDB_Name>
-      <Description>Activate the filter. If this is OFF (set to 0), none of the filters will operate regardless of their settings below</Description>
+      <Description>Enables ability to the activate either filter. If this is OFF (set to 0), neither of the filters will operate regardless of their settings below</Description>
       <IDL_Type>boolean</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>activateAvgFilter</EFDB_Name>
-      <Description>Activate the average filter inside the electrometer, it uses the Default value inside the device (last 10 readings) to do the average calculation, 1 for ON and 0 for OFF </Description>
+      <Description>Activate the average filter (scalar type) inside the electrometer, 1 for ON and 0 for OFF. This filter takes the average of the last 10 readings (default) in the moving mode (first-in, first-out stack).  </Description>
       <IDL_Type>boolean</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>activateMedFilter</EFDB_Name>
-      <Description>The median filter is used to determine the middle-most reading from a group of readings that are arranged according to size. Activate the median filter inside the electrometer, 1 for ON and 0 for OFF</Description>
+      <Description>The median filter is used to determine the middle-most reading from a group of readings that are arranged according to size. Activate the median filter inside the electrometer, 1 for ON and 0 for OFF. The rank (R) of this filter is set at 1, such that the number of samples that it will determine the median of is (2xR) + 1. If there is a sudden change in signal, 2R readings will be needed before establishing the true median value. </Description>
       <IDL_Type>boolean</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
@@ -42,10 +42,10 @@
   <SALCommand>
     <Subsystem>Electrometer</Subsystem>
     <EFDB_Topic>Electrometer_command_setIntegrationTime</EFDB_Topic>
-    <Description>This is the length of time for a given sample from the electrometer, however, due to the time it takes to read the buffer and process the data, this is not the rate at which samples are taken</Description>
+    <Description>The integration time (measurement speed) of the analog to digital (A/D) converter, the period of time the input signal is measured (also known as aperture). Due to the time it takes to read the buffer and process the data, this is not the rate at which samples are taken. This is generally specified by the Power Line Cycle (PLC), where 1 PLC for 60Hz is 16.67msec. Fast integration=0.01PLC; Medium integration=0.1PLC; Normal (default) integration = 1PLC; Hi Accuracy integration=10PLC. Here the integration is set in seconds. </Description>
     <item>
       <EFDB_Name>intTime</EFDB_Name>
-      <Description>Integration rate in seconds (166.67e-6 to 200e-3) for each sample</Description>
+      <Description>Integration rate in seconds (166.67e-6 to 200e-3) for each sample. Default is 16.67e-3sec (1PLC).</Description>
       <IDL_Type>float</IDL_Type>
       <Units>second</Units>
       <Count>1</Count>
@@ -54,7 +54,7 @@
   <SALCommand>
     <Subsystem>Electrometer</Subsystem>
     <EFDB_Topic>Electrometer_command_setMode</EFDB_Topic>
-    <Description>Set unit to measure, the possibilities are: Current, Voltage, Charge or Resistance</Description>
+    <Description>Set unit to measure. The modes are: Current, Voltage, Charge or Resistance</Description>
     <item>
       <EFDB_Name>mode</EFDB_Name>
       <Description>Set electrometer to use different modes: 1.- Current  2.- Volt  3.- Charge  4.- Resistance. The units will depend on the current settings</Description>
@@ -67,7 +67,7 @@
   <SALCommand>
     <Subsystem>Electrometer</Subsystem>
     <EFDB_Topic>Electrometer_command_setRange</EFDB_Topic>
-    <Description>Set measurement range, it will use the current unit selected</Description>
+    <Description>Set measurement range, which effects the accuracy of measurements and the max singal that can be measured. The maximum input signal is 105% of the measurement range. It will set the value for the current mode selected. Auto-range will autmoatically go to teh most sensitive (optimized) range to make measurements. This is recommended.</Description>
     <item>
       <EFDB_Name>setRange</EFDB_Name>
       <Description>-1 for automatic range. Volts range from 0 to 210 Volts, Current range from 0 to 21e-3 Amps, Resistance from 0 to 100e18 Ohms, Charge from 0 to +2.1e-6 Coulombs</Description>

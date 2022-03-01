@@ -19,7 +19,7 @@
   <SALEvent>
     <Subsystem>Electrometer</Subsystem>
     <EFDB_Topic>Electrometer_logevent_digitalFilterChange</EFDB_Topic>
-    <Description>Current update in the digital filter setup inside the Electrometer controller</Description>
+    <Description>Current state of the digital filter setup. The Electrometer has two types of filters: Averaging and Median. Note that both filters can be enabled at the same time. In order to enable either of these filters, one must set the activateFilter to ON (1).</Description>
     <item>
       <EFDB_Name>activateFilter</EFDB_Name>
       <Description>If this is OFF, none of the filters will operate. 0 for not active and 1 for active</Description>
@@ -29,14 +29,14 @@
     </item>
     <item>
       <EFDB_Name>activateMedianFilter</EFDB_Name>
-      <Description>The median filter is used to determine the middle-most reading from a group of readings that are arranged according to size. Activate the median filter inside the electrometer, 1 for active and 0 for not active</Description>
+      <Description>Activate the median filter inside the electrometer: 1 for active and 0 for not active. Will use the Default value of Rank (R) = 1, such that the number of samples that it will determine the median of  is (2xR) + 1.</Description>
       <IDL_Type>boolean</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>activateAverageFilter</EFDB_Name>
-      <Description>Activate the average filter inside the electrometer, it uses the Default value inside the device (last 10 readings) to do the average calculation, 1 for active and 0 for not active </Description>
+      <Description>Activate the average filter inside the electrometer: 1 for active and 0 for not active. Will use the Default value inside the device (last 10 readings) to do the average calculation.  </Description>
       <IDL_Type>boolean</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
@@ -45,7 +45,7 @@
   <SALEvent>
     <Subsystem>Electrometer</Subsystem>
     <EFDB_Topic>Electrometer_logevent_integrationTime</EFDB_Topic>
-    <Description>Integration rate, this will directly affect reading rates</Description>
+    <Description>The integration time (measurement speed) of the analog to digital (A/D) converter, the period of time the input signal is measured (also known as aperture). This will directly affect reading rates. Default is 16.67ms.</Description>
     <item>
       <EFDB_Name>intTime</EFDB_Name>
       <Description>Integration rate in seconds (166.67e-6 to 200e-3)</Description>
@@ -57,7 +57,7 @@
   <SALEvent>
     <Subsystem>Electrometer</Subsystem>
     <EFDB_Topic>Electrometer_logevent_intensity</EFDB_Topic>
-    <Description>Intensity of light measured with the photo-diode in the unit previously configured</Description>
+    <Description>Intensity of light measured with the photo-diode in the unit previously configured. NOT IMPLEMENTED </Description>
     <item>
       <EFDB_Name>intensity</EFDB_Name>
       <Description>Measure read by the device</Description>
@@ -84,7 +84,7 @@
   <SALEvent>
     <Subsystem>Electrometer</Subsystem>
     <EFDB_Topic>Electrometer_logevent_measureRange</EFDB_Topic>
-    <Description>Current range, -1 for automatic range. Volts range from 0 to 210V, Current range from 0 to 21e-3Amps, Resistance from 0 to 100e18, Charge from 0 to +2.1e-6</Description>
+    <Description>Measurement range for the mode selected. This impacts the accuracy and max signal that can be measured (105% of the range). Auto-range is set at -1, will automatically go to the most sensitive range. Volts range from 0 to 210V, Current range from 0 to 21e-3Amps, Resistance from 0 to 100e18, Charge from 0 to +2.1e-6</Description>
     <item>
       <EFDB_Name>rangeValue</EFDB_Name>
       <Description>The range for the intensity for measure selected.</Description>
@@ -96,7 +96,7 @@
   <SALEvent>
     <Subsystem>Electrometer</Subsystem>
     <EFDB_Topic>Electrometer_logevent_measureType</EFDB_Topic>
-    <Description>Current mode selected to read from the photodiode</Description>
+    <Description>Current mode selected to read from the photodiode. Options are Current, Charge, Voltage and Resistance. </Description>
     <item>
       <EFDB_Name>mode</EFDB_Name>
       <Description>mode: 1- Current, 2- Charge, 3- Voltage, 4- Resistance</Description>
