@@ -18,14 +18,6 @@ def get_salsubsystems_file():
 
 def skip_if_known_issue(test, csc):
     jira = ""
-    if csc == "PromptProcessing" and (
-        test == "description"
-        or test == "github"
-        or test == "jenkins_test_results"
-        or test == "rubin_obs_contact"
-        or test == "simulator"
-    ):
-        jira = "CAP-600"
     if jira:
         pytest.skip(jira + f": {csc}")
 

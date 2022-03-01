@@ -86,7 +86,6 @@ subsystems = [
     "MTVMS",
     "OCPS",
     "PMD",
-    "PromptProcessing",
     "Scheduler",
     "Script",
     "ScriptQueue",
@@ -115,14 +114,13 @@ generic_commands = [
 """Define the list of Generic Events."""
 
 generic_events = [
-    "appliedSettingsMatchStart",
     "authList",
+    "configurationApplied",
+    "configurationsAvailable",
     "errorCode",
     "heartbeat",
     "logLevel",
     "logMessage",
-    "settingsApplied",
-    "settingVersions",
     "simulationMode",
     "softwareVersions",
     "summaryState",
@@ -195,9 +193,8 @@ added_generics_configurable_commands = []
 """Define list of events for configurable category."""
 
 added_generics_configurable_events = [
-    "appliedSettingsMatchStart",
-    "settingsApplied",
-    "settingVersions",
+    "configurationApplied",
+    "configurationsAvailable",
 ]
 
 """Define the full set of approved AddedGenerics items."""
