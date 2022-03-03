@@ -479,7 +479,7 @@ The following command set is defined for all CSC's (although it is not mandatory
 .. note::
     The spelling must be exact as it is used for code generation
     
-    *start, stop, enable, disable, standby, enterControl, exitControl, abort, setValue*
+    *start, stop, enable, disable, standby, enterControl, exitControl, abort*
 
 .. _sal_constraints_and_recommendations:generic-events:
 
