@@ -22,7 +22,7 @@ def test_enumeration(xmlfile, csc, topic):
         tree = et.parse(f)
     root = tree.getroot()
 
-    reg_exp = re.compile(r"^[A-Z][a-zA-Z0-9_]*(\s*=\s*((0[xX][0-9a-fA-F]+)|(\d+)))?$")
+    reg_exp = re.compile(r"^[A-Z][a-zA-Z0-9_]*(\s*=\s*((0[xX][0-9a-fA-F]+)|(-?\d+)))?$")
 
     for sal_enum in root.findall("Enumeration"):
         for enum_value in sal_enum.text.split(","):
