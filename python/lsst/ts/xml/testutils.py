@@ -107,7 +107,6 @@ generic_commands = [
     "start",
     "enterControl",
     "setLogLevel",
-    "setValue",
     "setAuthList",
 ]
 
@@ -123,6 +122,7 @@ generic_events = [
     "logMessage",
     "simulationMode",
     "softwareVersions",
+    "statusCode",
     "summaryState",
     "authList",
     "largeFileObjectAvailable",
@@ -139,11 +139,11 @@ added_generics_categories = ["configurable", "csc"]
 
 """Define the list of AddedGenerics commands that are not mandatory."""
 
-added_generics_commands = ["abort", "enterControl", "setValue"]
+added_generics_commands = ["abort", "enterControl"]
 
 """Define the list of AddedGenerics events that are not mandatory."""
 
-added_generics_events = ["largeFileObjectAvailable"]
+added_generics_events = ["largeFileObjectAvailable", "statusCode"]
 
 """Define the list of AddedGenerics mandatory commands."""
 

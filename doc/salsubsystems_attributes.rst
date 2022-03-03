@@ -79,7 +79,6 @@ The topics listed below must be defined separately.
 
   * command_abort (deprecated)
   * command_enterControl
-  * command_setValue (deprecated)
   * logevent_largeFileObjectAvailable
 
 For a configurable CSC:
