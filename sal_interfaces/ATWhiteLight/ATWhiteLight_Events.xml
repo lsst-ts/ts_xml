@@ -1,13 +1,143 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-stylesheet type="text/xsl" href="http://lsst-sal.tuc.noao.edu/schema/SALEventSet.xsl"?>
 <SALEventSet xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://lsst-sal.tuc.noao.edu/schema/SALEventSet.xsd">
-  <Enumeration>DetailedState_DisabledState,DetailedState_EnabledState,DetailedState_FaultState,DetailedState_OfflineState,DetailedState_StandbyState</Enumeration>
+  <Enumeration>
+    ChillerL1Alarms_AMBIENT_TEMP_SENSOR = 0x01,
+    ChillerL1Alarms_HIGH_CONTROL_TEMP = 0x02,
+    ChillerL1Alarms_PT7_HIGH_TEMP = 0x04,
+    ChillerL1Alarms_LOW_CONTROL_TEMP = 0x08,
+    ChillerL1Alarms_SUPPLY_TEMP_SENSOR = 0x10,
+    ChillerL1Alarms_EXTERNAL_RTD_SENSOR = 0x20,
+    ChillerL1Alarms_RETURN_TEMP_SENSOR = 0x40,
+    ChillerL1Alarms_EXTERNAL_THERMISTOR_SENSOR = 0x80,
+    ChillerL1Alarms_LOW_COOLANT_LEVEL = 0x100,
+    ChillerL1Alarms_LOW_COOLANT_FLOW = 0x200,
+    ChillerL1Alarms_LOW_PLANT_FLOW = 0x400,
+    ChillerL1Alarms_CURRENT_SENSOR_1 = 0x800,
+    ChillerL1Alarms_PT7_LOW_TEMP = 0x1000,
+    ChillerL1Alarms_HIGH_AMBIENT_TEMP = 0x2000,
+    ChillerL1Alarms_LOW_AMBIENT_TEMP = 0x4000,
+    ChillerL1Alarms_EXTERNAL_CONNECTOR_NOT_INSTALLED = 0x8000,
+    ChillerL1Alarms_DEFAULT_HIGH_TEMP = 0x10000,
+    ChillerL1Alarms_DEFAULT_LOW_TEMP = 0x20000,
+    ChillerL1Alarms_NO_COOLANT_FLOW = 0x40000,
+    ChillerL1Alarms_FAN_FAILURE = 0x80000,
+    ChillerL1Alarms_CURRENT_SENSOR_2 = 0x100000,
+    ChillerL1Alarms_INTERNAL_2_5V_REFERENCE = 0x200000,
+    ChillerL1Alarms_INTERNAL_5V_REFERENCE = 0x400000,
+    ChillerL1Alarms_SYSTEM_ERROR = 0x800000
+  </Enumeration>
+  <Enumeration>
+    ChillerL21Alarms_ADC_SYSTEM_ERROR = 0x10,
+    ChillerL21Alarms_I2C_SYSTEM_ERROR = 0x20,
+    ChillerL21Alarms_EEPROM_SYSTEM_ERROR = 0x40,
+    ChillerL21Alarms_WATCHDOG_SYSTEM_ERROR = 0x80,
+    ChillerL21Alarms_ADC_RESET_ERROR = 0x1000,
+    ChillerL21Alarms_ADC_CALIBRATION_ERROR = 0x2000,
+    ChillerL21Alarms_ADC_CONVERSION_ERROR = 0x4000,
+
+    ChillerL21Alarms_IO_EXPENDER_ACKNOWLEDGE_ERROR = 0x10000,
+    ChillerL21Alarms_PSA_EXPENDER_ACKNOWLEDGE_ERROR = 0x20000,
+    ChillerL21Alarms_RTC_ACKNOWLEDGE_ERROR = 40000,
+
+    ChillerL21Alarms_I2C_SCL_LOW_ERROR = 0x100000,
+    ChillerL21Alarms_I2C_SDA_LOW_ERROR = 0x200000,
+    ChillerL21Alarms_EEPROM_1_ACKNOWLEDGE = 0x400000,
+    ChillerL21Alarms_EEPROM_2_ACKNOWLEDGE = 0x800000,
+    ChillerL21Alarms_EEPROM_1_READ_ERROR = 0x1000000,
+    ChillerL21Alarms_EEPROM_1_WRITE_ERROR = 0x2000000,
+    ChillerL21Alarms_EEPROM_2_READ_ERROR = 0x4000000,
+    ChillerL21Alarms_EEPROM_2_WRITE_ERROR = 0x8000000
+  </Enumeration>
+  <Enumeration>
+    ChillerL22Alarms_EXTERNAL_RTD_SENSOR_OPEN = 0x1,
+    ChillerL22Alarms_EXTERNAL_RTD_SENSOR_SHORT = 0x2,
+    ChillerL22Alarms_RETURN_TEMP_SENSOR_OPEN = 0x4,
+    ChillerL22Alarms_RETURN_TEMP_SENSOR_SHORT = 0x8,
+    ChillerL22Alarms_GLOBAL_TEMP_SENSOR = 0x10,
+    ChillerL22Alarms_SUPPLY_TEMP_SENSOR_LOCKED = 0x20,
+    ChillerL22Alarms_SUPPLY_TEMP_SENSOR_OPEN = 0x40,
+    ChillerL22Alarms_SUPPLY_TEMEPRATURE_SENSOR_SHORT = 0x80,
+    ChillerL22Alarms_INTERNAL_2_5V_REFERENCE_HIGH = 0x100,
+    ChillerL22Alarms_INTERNAL_2_5V_REFERENCE_LOW = 0x200,
+    ChillerL22Alarms_INTERNAL_5V_REFERENCE_HIGH = 0x400,
+    ChillerL22Alarms_INTERNAL_5V_REFERENCE_LOW = 0x800,
+    ChillerL22Alarms_EXTERNAL_THERMAL_SENSOR_OPEN = 0x1000,
+    ChillerL22Alarms_EXTERNAL_THERMAL_SENSOR_SHORT = 0x2000,
+    ChillerL22Alarms_AMBIENT_THERMAL_SENSOR_OPEN = 0x4000,
+    ChillerL22Alarms_AMBIENT_THERMAL_SENSOR_SHORT = 0x8000,
+    ChillerL22Alarms_CURRENT_SENSOR_1_OPEN = 0x100000,
+    ChillerL22Alarms_CURRENT_SENSOR_1_SHORT = 0x200000,
+    ChillerL22Alarms_CURRENT_SENSOR_2_OPEN = 0x400000,
+    ChillerL22Alarms_CURRENT_SENSOR_2_SHORT = 0x800000,
+    ChillerL22Alarms_REAR_LEFT_FAN_NOISE = 0x1000000,
+    ChillerL22Alarms_REAR_RIGHT_FAN_NOISE = 0x2000000,
+    ChillerL22Alarms_FRONT_LEFT_FAN_NOISE = 0x4000000,
+    ChillerL22Alarms_FRONT_RIGHT_FAN_NOISE = 0x8000000,
+    ChillerL22Alarms_REAR_LEFT_FAN_OPEN = 0x10000000,
+    ChillerL22Alarms_REAR_RIGHT_FAN_OPEN = 0x20000000,
+    ChillerL22Alarms_FRONT_LEFT_FAN_OPEN = 0x40000000,
+    ChillerL22Alarms_FRONT_RIGHT_FAN_OPEN = 0x80000000
+  </Enumeration>
+  <Enumeration>
+    ChillerControllerState_Unknown = -1,
+    ChillerControllerState_Autostart = 0,
+    ChillerControllerState_Standby = 1,
+    ChillerControllerState_Run = 2,
+    ChillerControllerState_Safety = 3,
+    ChillerControllerState_Test = 4
+  </Enumeration>
+  <Enumeration>
+    ChillerWarnings_LOW_COOLANT_FLOW = 0x01,
+    ChillerWarnings_COOLANT_FLUID_LEVEL = 0x02,
+    ChillerWarnings_SWITCH_TO_SUPPLY_TEMP_AS_CONTROL_TEMP = 0x04,
+
+    ChillerWarnings_HIGH_CONTROL_TEMP = 0x10,
+    ChillerWarnings_LOW_CONTROL_TEMP = 0x20,
+    ChillerWarnings_HIGH_AMBIENT_TEMP = 0x40,
+    ChillerWarnings_LOW_AMBIENT_TEMP = 0x80
+  </Enumeration>
+  <Enumeration>
+    LampBasicState_Unknown=0,
+    LampBasicState_Off=1,
+    LampBasicState_On=2,
+    LampBasicState_Cooldown=4,
+    LampBasicState_Warmup=5
+  </Enumeration>
+  <Enumeration>
+    LampControllerError_NoError=-1,
+    LampControllerError_Unknown=0,
+    LampControllerError_KillSwitch=1,
+    LampControllerError_ChassisOverheating=2,
+    LampControllerError_AccessDoor=3,
+    LampControllerError_BallastOverheating=4,
+    LampControllerError_USBDisconnected=5,
+    LampControllerError_AirflowInadequate=6,
+    LampControllerError_LampStuckOn=7,
+    LampControllerError_AirflowMalfunction=8,
+    LampControllerError_GenericError=9
+  </Enumeration>
+  <Enumeration>
+    LampControllerState_Unknown=0,
+    LampControllerState_Off=1,
+    LampControllerState_Standby=2,
+    LampControllerState_Operating=4,
+    LampControllerState_Cooldown=5,
+    LampControllerState_Error=6
+  </Enumeration>
+  <Enumeration>
+    ShutterState_Unknown=0,
+    ShutterState_Closed=1,
+    ShutterState_Open=2,
+    ShutterState_Invalid=3
+  </Enumeration>
   <SALEvent>
     <Subsystem>ATWhiteLight</Subsystem>
-    <EFDB_Topic>ATWhiteLight_logevent_loopTimeOutOfRange</EFDB_Topic>
+    <EFDB_Topic>ATWhiteLight_logevent_lampConnected</EFDB_Topic>
+    <Description>Is the CSC connected to the lamp controller (actually to the LabJack that interfaces to the lamp controller)?</Description>
     <item>
-      <EFDB_Name>loopTimeOutOfRange</EFDB_Name>
-      <Description>Attribute required by the API, but is unused.</Description>
+      <EFDB_Name>connected</EFDB_Name>
+      <Description>Connected if true, else disconnected</Description>
       <IDL_Type>boolean</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
@@ -15,58 +145,70 @@
   </SALEvent>
   <SALEvent>
     <Subsystem>ATWhiteLight</Subsystem>
-    <EFDB_Topic>ATWhiteLight_logevent_rejectedCommand</EFDB_Topic>
+    <EFDB_Topic>ATWhiteLight_logevent_lampState</EFDB_Topic>
+    <Description>Lamp status</Description>
     <item>
-      <EFDB_Name>commandValue</EFDB_Name>
-      <Description>Attribute required by the API, but is unused.</Description>
-      <IDL_Type>unsigned short</IDL_Type>
+      <EFDB_Name>basicState</EFDB_Name>
+      <Description>Basic lamp state; a LampBasicState enum.</Description>
+      <IDL_Type>int</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
     </item>
     <item>
-      <EFDB_Name>detailedState</EFDB_Name>
-      <Description>Attribute required by the API, but is unused.</Description>
-      <!-- Enumeration: detailedState -->
-      <IDL_Type>long</IDL_Type>
+      <EFDB_Name>controllerError</EFDB_Name>
+      <Description>Error code reported by the lamp controller. A LampControllerError enum. Warning: if the reported value is anything except None, it may be stale by up to 10 seconds. The reason is that the controller reports errors using a slowly blinking error signal (and LED) that can take up to 10 seconds to decode. If the signal starts blinking while there is no error then the value reported in this field will be GENERIC_ERROR, with a delay of less than a second. Once the error signal is decoded the reported value will change to the decoded value, and remain that value until a different error signal is decoded or the error goes away.</Description>
+      <IDL_Type>int</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
-      <Enumeration>detailedState_detailedState_disabledState,detailedState_detailedState_enabledState,detailedState_detailedState_faultState,detailedState_detailedState_offlineState,detailedState_detailedState_standbyState</Enumeration>
     </item>
     <item>
-      <EFDB_Name>timestamp</EFDB_Name>
-      <Description>Time at which event was detected (TAI unix seconds)</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>second</Units>
+      <EFDB_Name>controllerState</EFDB_Name>
+      <Description>Lamp controller state; a LampControllerState enum.</Description>
+      <IDL_Type>int</IDL_Type>
+      <Units>unitless</Units>
       <Count>1</Count>
     </item>
-  </SALEvent>
-  <SALEvent>
-    <Subsystem>ATWhiteLight</Subsystem>
-    <EFDB_Topic>ATWhiteLight_logevent_whiteLightStatus</EFDB_Topic>
     <item>
-      <EFDB_Name>wattageChange</EFDB_Name>
-      <Description>Current Wattage reporting from the CSC.</Description>
+      <EFDB_Name>setPower</EFDB_Name>
+      <Description>Commanded lamp power.</Description>
       <IDL_Type>float</IDL_Type>
-      <Units>watt</Units>
+      <Units>W</Units>
       <Count>1</Count>
     </item>
     <item>
-      <EFDB_Name>coolingDown</EFDB_Name>
-      <Description>Blue LED status from the digital output</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
+      <EFDB_Name>cooldownEndTime</EFDB_Name>
+      <Description>Time when lamp will be fully cooled down (TAI unix seconds; 0 if unknown). Until the lamp is fully cooled down you cannot turn it back on or turn off the chiller.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>second</Units>
       <Count>1</Count>
     </item>
     <item>
-      <EFDB_Name>error</EFDB_Name>
-      <Description>Red LED status from the digital output. The kiloarc has some safe switches. The lamp system immediately extinguishes the bulb, the status indicator turns red, and the error indicator flashes the error code cycle (see above) continuously.</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
+      <EFDB_Name>warmupEndTime</EFDB_Name>
+      <Description>Time when lamp will be fully warmed up (TAI unix seconds; 0 if unknown). Until then you cannot turn off the lamp (unless you specify force=True).</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>second</Units>
       <Count>1</Count>
     </item>
+  </SALEvent>
+  <SALEvent>
+    <Subsystem>ATWhiteLight</Subsystem>
+    <EFDB_Topic>ATWhiteLight_logevent_lampOnHours</EFDB_Topic>
+    <Description>Estimated time the lamp was on</Description>
     <item>
-      <EFDB_Name>acceptingCommands</EFDB_Name>
-      <Description>Greed LED status from the digital output. It could be in Standby or operation.</Description>
+      <EFDB_Name>hours</EFDB_Name>
+      <Description>Estimated lamp on time</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>hour</Units>
+      <Count>1</Count>
+    </item>
+  </SALEvent>
+  <SALEvent>
+    <Subsystem>ATWhiteLight</Subsystem>
+    <EFDB_Topic>ATWhiteLight_logevent_chillerConnected</EFDB_Topic>
+    <Description>Is the CSC connected to the chiller?</Description>
+    <item>
+      <EFDB_Name>connected</EFDB_Name>
+      <Description>Connected if true, else disconnected</Description>
       <IDL_Type>boolean</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
@@ -74,145 +216,98 @@
   </SALEvent>
   <SALEvent>
     <Subsystem>ATWhiteLight</Subsystem>
-    <EFDB_Topic>ATWhiteLight_logevent_chillerLowFlowWarning</EFDB_Topic>
+    <EFDB_Topic>ATWhiteLight_logevent_chillerAlarms</EFDB_Topic>
+    <Description>Chiller alarms, as a set of bit masks.</Description>
     <item>
-      <EFDB_Name>warning</EFDB_Name>
-      <Description>Chiller coolant flow rate is below the minimum.</Description>
-      <IDL_Type>boolean</IDL_Type>
+      <EFDB_Name>level1</EFDB_Name>
+      <Description>Level 1 alarms as a bit mask of ChillerL1Alarms enum values.</Description>
+      <IDL_Type>unsigned int</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
     </item>
     <item>
-      <EFDB_Name>timestamp</EFDB_Name>
-      <Description>Time at which event was detected (TAI unix seconds)</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>second</Units>
+      <EFDB_Name>level21</EFDB_Name>
+      <Description>Level 2 set 1 alarms, as a bit mask of ChillerL21Alarms enum values.</Description>
+      <IDL_Type>unsigned int</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>level22</EFDB_Name>
+      <Description>Level 2 set 2 alarms, as a bit mask of ChillerL22Alarms enum values.</Description>
+      <IDL_Type>unsigned int</IDL_Type>
+      <Units>unitless</Units>
       <Count>1</Count>
     </item>
   </SALEvent>
   <SALEvent>
     <Subsystem>ATWhiteLight</Subsystem>
-    <EFDB_Topic>ATWhiteLight_logevent_chillerFluidLevelWarning</EFDB_Topic>
+    <EFDB_Topic>ATWhiteLight_logevent_chillerWarnings</EFDB_Topic>
+    <Description>Chiller warnings, as a bit mask.</Description>
     <item>
-      <EFDB_Name>warning</EFDB_Name>
-      <Description>Chiller reporting low fluid level.</Description>
-      <IDL_Type>boolean</IDL_Type>
+      <EFDB_Name>warnings</EFDB_Name>
+      <Description>Warnings, as a bit mask of ChillerWarnings enum values.</Description>
+      <IDL_Type>unsigned int</IDL_Type>
       <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>timestamp</EFDB_Name>
-      <Description>Time at which event was detected (TAI unix seconds)</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>second</Units>
       <Count>1</Count>
     </item>
   </SALEvent>
   <SALEvent>
     <Subsystem>ATWhiteLight</Subsystem>
-    <EFDB_Topic>ATWhiteLight_logevent_chillerSwitchToSupplyTempWarning</EFDB_Topic>
+    <EFDB_Topic>ATWhiteLight_logevent_chillerWatchdog</EFDB_Topic>
+    <Description>Chiller state reported by the watchdog command.</Description>
     <item>
-      <EFDB_Name>warning</EFDB_Name>
-      <Description>Switch to Supply Temp as Control Temp Warning.</Description>
+      <EFDB_Name>controllerState</EFDB_Name>
+      <Description>Chiller state, as a ChillerControllerState enum value.</Description>
+      <IDL_Type>int</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>pumpRunning</EFDB_Name>
+      <Description>Is the pump running?</Description>
       <IDL_Type>boolean</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
     </item>
     <item>
-      <EFDB_Name>timestamp</EFDB_Name>
-      <Description>Time at which event was detected (TAI unix seconds)</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>second</Units>
+      <EFDB_Name>alarmsPresent</EFDB_Name>
+      <Description>Are any alarm conditions present? Note that this is read separately than the data used for the chillerAlarms topic.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>warningsPresent</EFDB_Name>
+      <Description>Are any warning conditions present? Note that this is read separately than the data used for the chillerWarnings topic.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
       <Count>1</Count>
     </item>
   </SALEvent>
   <SALEvent>
     <Subsystem>ATWhiteLight</Subsystem>
-    <EFDB_Topic>ATWhiteLight_logevent_chillerHighControlTempWarning</EFDB_Topic>
+    <EFDB_Topic>ATWhiteLight_logevent_shutterState</EFDB_Topic>
+    <Description>Shutter state</Description>
     <item>
-      <EFDB_Name>warning</EFDB_Name>
-      <Description>Chiller High Control Temp Warning.</Description>
-      <IDL_Type>boolean</IDL_Type>
+      <EFDB_Name>commandedState</EFDB_Name>
+      <Description>Commanded state. A ShutterState enum. It will be UNKNOWN when the CSC begins running. Once the CSC receives a shutter command this state should always be OPEN or CLOSED.</Description>
+      <IDL_Type>int</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
     </item>
     <item>
-      <EFDB_Name>timestamp</EFDB_Name>
-      <Description>Time at which event was detected (TAI unix seconds)</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>second</Units>
-      <Count>1</Count>
-    </item>
-  </SALEvent>
-  <SALEvent>
-    <Subsystem>ATWhiteLight</Subsystem>
-    <EFDB_Topic>ATWhiteLight_logevent_chillerLowControlTempWarning</EFDB_Topic>
-    <item>
-      <EFDB_Name>warning</EFDB_Name>
-      <Description>Chiller Low Control Temp Warning.</Description>
-      <IDL_Type>boolean</IDL_Type>
+      <EFDB_Name>actualState</EFDB_Name>
+      <Description>Actual state based on open and closed sensing switches. A ShutterState enum. INVALID indicates that both switches are active at the same time, which probably indicates a broken connection. UNKNOWN indicates that neither switch is active; this is the expected value while the shutter is moving.</Description>
+      <IDL_Type>int</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
     </item>
     <item>
-      <EFDB_Name>timestamp</EFDB_Name>
-      <Description>Time at which event was detected (TAI unix seconds)</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>second</Units>
-      <Count>1</Count>
-    </item>
-  </SALEvent>
-  <SALEvent>
-    <Subsystem>ATWhiteLight</Subsystem>
-    <EFDB_Topic>ATWhiteLight_logevent_chillerHighAmbientTempWarning</EFDB_Topic>
-    <item>
-      <EFDB_Name>warning</EFDB_Name>
-      <Description>Chiller High Ambient Temp Warning</Description>
+      <EFDB_Name>enabled</EFDB_Name>
+      <Description>Is the shutter motor enabled? True for yes.</Description>
       <IDL_Type>boolean</IDL_Type>
       <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>timestamp</EFDB_Name>
-      <Description>Time at which event was detected (TAI unix seconds)</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>second</Units>
-      <Count>1</Count>
-    </item>
-  </SALEvent>
-  <SALEvent>
-    <Subsystem>ATWhiteLight</Subsystem>
-    <EFDB_Topic>ATWhiteLight_logevent_chillerLowAmbientTempWarning</EFDB_Topic>
-    <item>
-      <EFDB_Name>warning</EFDB_Name>
-      <Description>Chiller Low Ambient Temp Warning</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>timestamp</EFDB_Name>
-      <Description>Time at which event was detected (TAI unix seconds)</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>second</Units>
-      <Count>1</Count>
-    </item>
-  </SALEvent>
-  <SALEvent>
-    <Subsystem>ATWhiteLight</Subsystem>
-    <EFDB_Topic>ATWhiteLight_logevent_chillerTempReached</EFDB_Topic>
-    <item>
-      <EFDB_Name>inTemperature</EFDB_Name>
-      <Description>Has the measured temperature reached the target temperature (true=yes)?</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>timestamp</EFDB_Name>
-      <Description>Time at which event was detected (TAI unix seconds)</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>second</Units>
       <Count>1</Count>
     </item>
   </SALEvent>
