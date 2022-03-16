@@ -26,9 +26,7 @@ def test_idl_type_exists(xmlfile, csc, topic):
     # Check for known issues.
     jira = check_for_issues("exists", csc, topic)
     if jira:
-        pytest.skip(
-            jira + ": " + str(xmlfile.name) + " <IDL_Type> fields must be defined."
-        )
+        pytest.skip(f"{jira}: {xmlfile.name} <IDL_Type> fields must be defined.")
     # Test the <IDL_Type> field exists for each attribute.
     with open(str(xmlfile), "r", encoding="utf-8") as f:
         tree = et.parse(f)
@@ -39,9 +37,9 @@ def test_idl_type_exists(xmlfile, csc, topic):
         idltype = attrib.find("IDL_Type")
         if idltype is None:
             untyped_field_names.append(name.text)
-    assert len(untyped_field_names) == 0, (
-        "IDL_Type for [" + ", ".join(untyped_field_names) + "] must be defined."
-    )
+    assert (
+        len(untyped_field_names) == 0
+    ), f"IDL_Type for {untyped_field_names} must be defined."
 
 
 @pytest.mark.parametrize("xmlfile,csc,topic", ts_xml.get_xmlfile_csc_topic())
@@ -63,10 +61,7 @@ def test_idl_type(xmlfile, csc, topic):
     jira = check_for_issues("type", csc, topic)
     if jira:
         pytest.skip(
-            jira
-            + ": "
-            + str(xmlfile.name)
-            + " <IDL_Type> fields do not conform to IDL standards."
+            f"{jira}: {xmlfile.name} <IDL_Type> fields do not conform to IDL standards."
         )
     # Test the attribute <Description> fields.
     with open(str(xmlfile), "r", encoding="utf-8") as f:
@@ -74,9 +69,6 @@ def test_idl_type(xmlfile, csc, topic):
     root = tree.getroot()
     for idl_type in root.findall(f"./{saltype}/item/IDL_Type"):
         assert idl_type.text is not None, "IDL_Type cannot be blank."
-        assert idl_type.text in ts_xml.idl_types, (
-            'IDL_Type "'
-            + idl_type.text
-            + '" needs to be one of '
-            + str(ts_xml.idl_types)
-        )
+        assert (
+            idl_type.text in ts_xml.idl_types
+        ), f"IDL_Type {idl_type.text} needs to be one of {ts_xml.idl_types}"

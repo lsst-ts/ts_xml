@@ -79,12 +79,7 @@ def reserved_words(xmlfile, csc, topic, restriction):
     jira = check_for_issues(csc, topic, restriction)
     if jira:
         pytest.skip(
-            jira
-            + ": "
-            + str(xmlfile.name)
-            + " <EFDB_Name> uses "
-            + restriction.upper()
-            + " reserved word."
+            f"{jira}: {xmlfile.name} <EFDB_Name> uses {restriction.upper()} reserved word."
         )
     # Test the <EFDB_Name> fields do not use Reserved Words.
     with open(str(xmlfile), "r", encoding="utf-8") as f:
@@ -101,8 +96,6 @@ def reserved_words(xmlfile, csc, topic, restriction):
     for name in root.findall(f"./{saltype}/item/EFDB_Name"):
         if name.text.upper() in word_list:
             bad_names.append(name.text.upper())
-    assert bad_names == [], (
-        restriction.upper()
-        + " Reserved Words used one or more times: "
-        + str(bad_names)
-    )
+    assert (
+        bad_names == []
+    ), f"{restriction.upper()} Reserved Words used one or more times: {(bad_names)}"

@@ -34,9 +34,7 @@ def test_topic_naming_csc(xmlfile, csc, topic):
     # Check for known issues.
     jira = check_for_issues(csc, topic, "csc")
     if jira:
-        pytest.skip(
-            jira + ": " + str(xmlfile.name) + " <EFDB_Topic> is not properly formed."
-        )
+        pytest.skip(f"{jira}: {xmlfile.name} <EFDB_Topic> is not properly formed.")
     # Test the topic <EFDB_Name> field.
     with open(str(xmlfile), "r", encoding="utf-8") as f:
         tree = et.parse(f)
@@ -44,11 +42,8 @@ def test_topic_naming_csc(xmlfile, csc, topic):
     for name in root.findall(f"./{saltype}/EFDB_Topic"):
         index = 0
         assert name.text.split("_")[index] == csc, (
-            "<EFDB_Topic> "
-            + name.text
-            + " in "
-            + str(xmlfile.name)
-            + " does not properly contain the CSC name."
+            f"<EFDB_Topic> {name.text} in {xmlfile.name} "
+            "does not properly contain the CSC name."
         )
 
 
@@ -74,9 +69,7 @@ def test_topic_naming_type(xmlfile, csc, topic):
     # Check for known issues.
     jira = check_for_issues(csc, topic, "type")
     if jira:
-        pytest.skip(
-            jira + ": " + str(xmlfile.name) + " <EFDB_Topic> is not properly formed."
-        )
+        pytest.skip(f"{jira}: {xmlfile.name} <EFDB_Topic> is not properly formed.")
     # Test the topic <EFDB_Name> field.
     with open(str(xmlfile), "r", encoding="utf-8") as f:
         tree = et.parse(f)
@@ -91,11 +84,8 @@ def test_topic_naming_type(xmlfile, csc, topic):
             topictype = "command"
         index = 1
         assert name.text.split("_")[index] == topictype, (
-            "<EFDB_Topic> "
-            + name.text
-            + " in "
-            + str(xmlfile.name)
-            + " does not properly contain the topicType string."
+            f"<EFDB_Topic> {name.text} in {xmlfile.name} "
+            "does not properly contain the topicType string."
         )
 
 
@@ -122,9 +112,7 @@ def test_topic_naming_alias(xmlfile, csc, topic):
     # Check for known issues.
     jira = check_for_issues(csc, topic, "alias")
     if jira:
-        pytest.skip(
-            jira + ": " + str(xmlfile.name) + " <EFDB_Topic> is not properly formed."
-        )
+        pytest.skip(f"{jira}: {xmlfile.name} <EFDB_Topic> is not properly formed.")
     # Test the topic <EFDB_Name> field.
     with open(str(xmlfile), "r", encoding="utf-8") as f:
         tree = et.parse(f)
@@ -141,6 +129,6 @@ def test_topic_naming_alias(xmlfile, csc, topic):
             )
             is not None
         ), (
-            name.text + " in " + str(xmlfile.name) + " does not begin with a lowercase "
-            "letter and/or contains non-alphanumeric characters."
+            f"{name.text} in {xmlfile.name} does not begin with a lowercase letter "
+            "and/or contains non-alphanumeric characters."
         )

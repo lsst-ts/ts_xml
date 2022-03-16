@@ -30,10 +30,7 @@ def test_units(xmlfile, csc, topic):
     jira = check_for_issues(csc, topic)
     if jira:
         pytest.skip(
-            jira
-            + ": "
-            + str(xmlfile.name)
-            + " <Unit> fields do not conform to astropy standards."
+            f"{jira}: {xmlfile.name} <Unit> fields do not conform to astropy standards."
         )
     # Test the attribute <Description> fields.
     with open(str(xmlfile), "r", encoding="utf-8") as f:
@@ -51,9 +48,7 @@ def test_units(xmlfile, csc, topic):
             assert True
         else:
             assert type(ts_xml.check_unit(unit.text)) is astropy.units.Quantity
-            "Unit '" + unit.text + "' in " + str(
-                xmlfile.name
-            ) + " does not meet astropy standards."
+            (f"Unit {unit.text!r} in {xmlfile.name} does not meet astropy standards.")
 
 
 @pytest.mark.parametrize("xmlfile,csc,topic", ts_xml.get_xmlfile_csc_topic())
