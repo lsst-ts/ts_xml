@@ -417,12 +417,12 @@ def get_xmlfile_csc_topic():
 
 
 def check_unit(unit_str):
-    if not unit_str.isnumeric():
-        try:
-            return astropy.units.Quantity(1, unit_str)
-        except ValueError:
-            raise ValueError(unit_str + " is not a valid unit.")
-        except Exception:
-            raise Exception("UnknownError: " + unit_str)
-    else:
-        raise TypeError("Units cannot be numbers: " + unit_str)
+    if unit_str.isnumeric():
+        raise TypeError(f"Units={unit_str!r} cannot be a number")
+
+    try:
+        return astropy.units.Quantity(1, unit_str)
+    except ValueError:
+        raise ValueError(f"Units={unit_str!r} is not a valid unit.")
+    except Exception as e:
+        raise Exception(f"Units={unit_str!r} error: {e!r}.")
