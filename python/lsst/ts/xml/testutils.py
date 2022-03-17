@@ -33,6 +33,7 @@ XML test suite generator scripts.
 subsystems = [
     "AdamSensors",
     "ATAOS",
+    "MTAirCompressor",
     "ATArchiver",
     "ATBuilding",
     "ATCamera",
