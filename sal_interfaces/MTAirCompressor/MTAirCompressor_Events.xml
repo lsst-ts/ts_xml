@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="http://lsst-sal.tuc.noao.edu/schema/SALEventSet.xsl"?>
+<SALEventSet xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://lsst-sal.tuc.noao.edu/schema/SALEventSet.xsd">
+  <Enumeration>
+    SummaryStates_DisabledState=1,
+    SummaryStates_EnabledState=2,
+    SummaryStates_FaultState=3,
+    SummaryStates_OfflineState=4,
+    SummaryStates_StandbyState=5
+  </Enumeration>
+  <SALEvent>
+    <Subsystem>MTAirCompressor</Subsystem>
+    <EFDB_Topic>MTAirCompressor_logevent_status</EFDB_Topic>
+    <item>
+      <EFDB_Name>readyToStart</EFDB_Name>
+      <Description>Compressor can be started.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>operating</EFDB_Name>
+      <Description>Compressor is operating.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>startInhibit</EFDB_Name>
+      <Description>Start is inhibited.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>motorStartPhase</EFDB_Name>
+      <Description>Motor is being started.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>offLoad</EFDB_Name>
+      <Description>??</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>onLoad</EFDB_Name>
+      <Description>??</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>softStop</EFDB_Name>
+      <Description>Soft stop was initiated.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>runOnTimer</EFDB_Name>
+      <Description>Compressor power on/off is being managed by timer.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>fault</EFDB_Name>
+      <Description>Fault detected</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>warning</EFDB_Name>
+      <Description>Warning detected.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>serviceRequired</EFDB_Name>
+      <Description>Compressor service is required.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>minAllowedSpeedAchieved</EFDB_Name>
+      <Description>Minimal allowed speed achieved.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>maxAllowedSpeedAchieved</EFDB_Name>
+      <Description>Maximal allowed speed achieved.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>startByRemote</EFDB_Name>
+      <Description>Started by remote operation.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>startWithTimerControl</EFDB_Name>
+      <Description>Started with timer control.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>startWithPressureRequirement</EFDB_Name>
+      <Description>Started with pressure requirement.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>startAfterDePressurise</EFDB_Name>
+      <Description>Started after de-pressurise.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>startAfterPowerLoss</EFDB_Name>
+      <Description>Started after power loss.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>startAfterDryerPreRun</EFDB_Name>
+      <Description>Started after dryer per-run.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+  </SALEvent>
+  <SALEvent>
+    <Subsystem>MTAirCompressor</Subsystem>
+    <EFDB_Topic>MTAirCompressor_logevent_compressorInfo</EFDB_Topic>
+    <item>
+      <EFDB_Name>softwareVersion</EFDB_Name>
+      <Description>Compressor's software version.</Description>
+      <IDL_Type>string</IDL_Type>
+      <IDL_Size>14</IDL_Size>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>serialNumber</EFDB_Name>
+      <Description>Compressor's serial number.</Description>
+      <IDL_Type>string</IDL_Type>
+      <IDL_Size>9</IDL_Size>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+  </SALEvent>
+  <SALEvent>
+    <Subsystem>MTAirCompressor</Subsystem>
+    <EFDB_Topic>MTAirCompressor_logevent_timerInfo</EFDB_Topic>
+    <item>
+      <EFDB_Name>runningHours</EFDB_Name>
+      <Description>How many hours compressor was run.</Description>
+      <IDL_Type>int</IDL_Type>
+      <Units>hour</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>loadedHours</EFDB_Name>
+      <Description>How many hours compressor was loaded.</Description>
+      <IDL_Type>int</IDL_Type>
+      <Units>hour</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>lowestServiceCounter</EFDB_Name>
+      <Description>Lowest service counter.</Description>
+      <IDL_Type>int</IDL_Type>
+      <Units>hour</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>runOnTimer</EFDB_Name>
+      <Description>Run-on timer.</Description>
+      <IDL_Type>int</IDL_Type>
+      <Units>hour</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>loadedHours50Percent</EFDB_Name>
+      <Description>Loaded hours 50%.</Description>
+      <IDL_Type>int</IDL_Type>
+      <Units>hour</Units>
+      <Count>1</Count>
+    </item>
+  </SALEvent>
+</SALEventSet>
