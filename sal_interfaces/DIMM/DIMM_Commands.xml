@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="http://lsst-sal.tuc.noao.edu/schema/SALCommandSet.xsl"?>
+<SALCommandSet xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://lsst-sal.tuc.noao.edu/schema/SALCommandSet.xsd">
+  <SALCommand>
+    <Subsystem>DIMM</Subsystem>
+    <EFDB_Topic>DIMM_command_changeDwellRate</EFDB_Topic>
+    <Description>Change dwell rate. Sample rate in ms for low level.</Description>
+    <item>
+      <EFDB_Name>sampleRate</EFDB_Name>
+      <Description>New sample rate.</Description>
+      <IDL_Type>int</IDL_Type>
+      <Units>ms</Units>
+      <Count>1</Count>
+    </item>
+  </SALCommand>
+  <SALCommand>
+    <Subsystem>DIMM</Subsystem>
+    <EFDB_Topic>DIMM_command_changeMeasurementRate</EFDB_Topic>
+    <Description>Change measurement rate in Hz.</Description>
+    <item>
+      <EFDB_Name>measurementRate</EFDB_Name>
+      <Description>New measurement rate.</Description>
+      <IDL_Type>int</IDL_Type>
+      <Units>Hz</Units>
+      <Count>1</Count>
+    </item>
+  </SALCommand>
+  <SALCommand>
+    <Subsystem>DIMM</Subsystem>
+    <EFDB_Topic>DIMM_command_gotoAltAz</EFDB_Topic>
+    <Description>Slew telescope to target Alt/Az.</Description>
+    <item>
+      <EFDB_Name>alt</EFDB_Name>
+      <Description>Altitude of target.</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>radians</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>az</EFDB_Name>
+      <Description>Azimuth of target.</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>radians</Units>
+      <Count>1</Count>
+    </item>
+  </SALCommand>
+  <SALCommand>
+    <Subsystem>DIMM</Subsystem>
+    <EFDB_Topic>DIMM_command_gotoRaDec</EFDB_Topic>
+    <Description>Slew telescope to target RA/DEC.</Description>
+    <item>
+      <EFDB_Name>ra</EFDB_Name>
+      <Description>RA of target.</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>radians</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>decl</EFDB_Name>
+      <Description>Declination of target.</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>radians</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>track</EFDB_Name>
+      <Description>Track target.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+  </SALCommand>
+</SALCommandSet>
