@@ -493,6 +493,24 @@
       <Units>second</Units>
       <Count>1</Count>
     </item>
+    <!-- Items added for CAP-870 -->
+    <item>
+      <EFDB_Name>mode</EFDB_Name>
+      <Description>The camera data taking mode (normal/calibration/(TBD in future))</Description>
+      <IDL_Type>string</IDL_Type>
+      <IDL_Size>1</IDL_Size>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>timeout</EFDB_Name>
+      <Description>The timeout (in seconds) after which the header service should assume something has gone wrong. For
+          calibration mode the timeout will be set to the argument passed to startImage,
+          for normal mode the timeout will be set to expTime.</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>second</Units>
+      <Count>1</Count>
+    </item>
   </SALEvent>
   <SALEvent>
     <Subsystem>ATCamera</Subsystem>
@@ -514,7 +532,7 @@
       <IDL_Type>long</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
-      <Enumeration>NEEDS_CLEAR,CLEARING,INTEGRATING,READING_OUT,QUIESCENT</Enumeration>
+      <Enumeration>NEEDS_CLEAR,CLEARING,INTEGRATING,READING_OUT,QUIESCENT,DISCARDING</Enumeration>
     </item>
     <item>
       <EFDB_Name>timestampTransition</EFDB_Name>
