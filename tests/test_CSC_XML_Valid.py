@@ -34,4 +34,4 @@ def test_csc_xml_valid(xmlfile, csc, topic):
     try:
         xmlschema.assertValid(tree)
     except etree.DocumentInvalid as err:
-        assert False, xmlfile.name + ": " + str(err)
+        assert False, f"{xmlfile.name}: {err}"

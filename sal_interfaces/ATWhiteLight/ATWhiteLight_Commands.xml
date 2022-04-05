@@ -3,43 +3,11 @@
 <SALCommandSet xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://lsst-sal.tuc.noao.edu/schema/SALCommandSet.xsd">
   <SALCommand>
     <Subsystem>ATWhiteLight</Subsystem>
-    <EFDB_Topic>ATWhiteLight_command_powerLightOn</EFDB_Topic>
+    <EFDB_Topic>ATWhiteLight_command_turnLampOn</EFDB_Topic>
+    <Description>Turn the lamp on, or change the lamp power if the lamp is already on. Rejected if the chiller is off or the lamp is cooling down.</Description>
     <item>
       <EFDB_Name>power</EFDB_Name>
-      <Description>turns light on</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-  </SALCommand>
-  <SALCommand>
-    <Subsystem>ATWhiteLight</Subsystem>
-    <EFDB_Topic>ATWhiteLight_command_powerLightOff</EFDB_Topic>
-    <item>
-      <EFDB_Name>power</EFDB_Name>
-      <Description>turns light off</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-  </SALCommand>
-  <SALCommand>
-    <Subsystem>ATWhiteLight</Subsystem>
-    <EFDB_Topic>ATWhiteLight_command_emergencyPowerLightOff</EFDB_Topic>
-    <item>
-      <EFDB_Name>power</EFDB_Name>
-      <Description>immediately turns light off without regard for minimum warmup time constraint</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-  </SALCommand>
-  <SALCommand>
-    <Subsystem>ATWhiteLight</Subsystem>
-    <EFDB_Topic>ATWhiteLight_command_setLightPower</EFDB_Topic>
-    <item>
-      <EFDB_Name>power</EFDB_Name>
-      <Description>Power intensity, it could a value between 800 to 1200W. Any value under this range will power the light off safely.</Description>
+      <Description>Desired power. Specify 0 to use the CSC's configured default power. If not zero then must be between 800 and 1200 Watts (inclusive).</Description>
       <IDL_Type>float</IDL_Type>
       <Units>W</Units>
       <Count>1</Count>
@@ -47,35 +15,46 @@
   </SALCommand>
   <SALCommand>
     <Subsystem>ATWhiteLight</Subsystem>
+    <EFDB_Topic>ATWhiteLight_command_turnLampOff</EFDB_Topic>
+    <Description>Turn off the lamp. Unless you specify force=True this will be rejected if the lamp is warming up.</Description>
+    <item>
+      <EFDB_Name>force</EFDB_Name>
+      <Description>If True then turn it off even if the lamp is warming up. This may shorten the bulb life.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+  </SALCommand>
+  <SALCommand>
+    <Subsystem>ATWhiteLight</Subsystem>
+    <EFDB_Topic>ATWhiteLight_command_openShutter</EFDB_Topic>
+    <Description>Open the shutter.</Description>
+  </SALCommand>
+  <SALCommand>
+    <Subsystem>ATWhiteLight</Subsystem>
+    <EFDB_Topic>ATWhiteLight_command_closeShutter</EFDB_Topic>
+    <Description>Close the shutter.</Description>
+  </SALCommand>
+  <SALCommand>
+    <Subsystem>ATWhiteLight</Subsystem>
     <EFDB_Topic>ATWhiteLight_command_setChillerTemperature</EFDB_Topic>
+    <Description>Set the chiller control temperature.</Description>
     <item>
       <EFDB_Name>temperature</EFDB_Name>
-      <Description>sets the target temp for the chiller system (celsius)</Description>
+      <Description>Desired temperature.</Description>
       <IDL_Type>float</IDL_Type>
-      <Units>degree</Units>
+      <Units>deg_C</Units>
       <Count>1</Count>
     </item>
   </SALCommand>
   <SALCommand>
     <Subsystem>ATWhiteLight</Subsystem>
-    <EFDB_Topic>ATWhiteLight_command_startCooling</EFDB_Topic>
-    <item>
-      <EFDB_Name>powerOn</EFDB_Name>
-      <Description>activates the chiller</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>second</Units>
-      <Count>1</Count>
-    </item>
+    <EFDB_Topic>ATWhiteLight_command_startChiller</EFDB_Topic>
+    <Description>Command the chiller to start cooling at the current set temperature.</Description>
   </SALCommand>
   <SALCommand>
     <Subsystem>ATWhiteLight</Subsystem>
-    <EFDB_Topic>ATWhiteLight_command_stopCooling</EFDB_Topic>
-    <item>
-      <EFDB_Name>powerOffTime</EFDB_Name>
-      <Description>disables the chiller</Description>
-      <IDL_Type>float</IDL_Type>
-      <Units>second</Units>
-      <Count>1</Count>
-    </item>
+    <EFDB_Topic>ATWhiteLight_command_stopChiller</EFDB_Topic>
+    <Description>Command the chiller to stop cooling. Rejected if the lamp is on.</Description>
   </SALCommand>
 </SALCommandSet>

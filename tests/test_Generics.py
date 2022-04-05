@@ -21,7 +21,7 @@ def test_salgenerics_topics():
     # Check for known issues.
     jira = check_for_issues("none", "generic_topics")
     if jira:
-        pytest.skip(jira + ": " + str(sal_generics_file.name))
+        pytest.skip(f"{jira}: {sal_generics_file.name}")
     # Test SALGenerics.xml contains the expected commands.
     with open(str(sal_generics_file), "r", encoding="utf-8") as f:
         tree = et.parse(f)
@@ -32,6 +32,7 @@ def test_salgenerics_topics():
 
     command_prefix = required_prefix + "command_"
     for topic in root.findall("./SALCommandSet/SALCommand/EFDB_Topic"):
+        assert topic.text is not None
         assert topic.text.startswith(
             command_prefix
         ), f"Generic command '{topic.text}' does not start with '{command_prefix}'"
@@ -39,6 +40,7 @@ def test_salgenerics_topics():
 
     event_prefix = required_prefix + "logevent_"
     for topic in root.findall("./SALEventSet/SALEvent/EFDB_Topic"):
+        assert topic.text is not None
         assert topic.text.startswith(
             event_prefix
         ), f"Generic event '{topic.text}' does not start with '{event_prefix}'"
@@ -68,7 +70,7 @@ def test_xmlfiles_do_not_define_generic_topics(xmlfile, csc, topic):
         # Check for known issues.
         jira = check_for_issues(csc, topic)
         if jira:
-            pytest.skip(jira + ": " + str(xmlfile.name))
+            pytest.skip(f"{jira}: {xmlfile.name}")
         # Verify no explicitly defined generic topics.
         with open(str(xmlfile), "r", encoding="utf-8") as f:
             tree = et.parse(f)
@@ -76,5 +78,6 @@ def test_xmlfiles_do_not_define_generic_topics(xmlfile, csc, topic):
         csc_topics = set()
         topic_name_start_ind = len(csc) + 1
         for topic in root.findall(f"./{saltype}/EFDB_Topic"):
+            assert topic.text is not None
             csc_topics.add(topic.text[topic_name_start_ind:])
         assert ts_xml.generic_topics & csc_topics == set()

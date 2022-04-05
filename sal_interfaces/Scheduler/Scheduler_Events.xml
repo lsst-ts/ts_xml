@@ -973,4 +973,74 @@
       <Count>1</Count>
     </item>
   </SALEvent>
+  <SALEvent>
+    <Subsystem>Scheduler</Subsystem>
+    <EFDB_Topic>Scheduler_logevent_observation</EFDB_Topic>
+    <Description>Observation executed by the scheduler. This event is published soon after the observation is registered as successfully executed, usually when the Script sent by the CSC to the ScriptQueue finishes executing successfully.</Description>
+    <item>
+      <EFDB_Name>targetId</EFDB_Name>
+      <Description>Unique target id.</Description>
+      <IDL_Type>long</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>ra</EFDB_Name>
+      <Description>Right Ascension of the target.</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>deg</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>decl</EFDB_Name>
+      <Description>Declination of the target.</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>deg</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>rotSkyPos</EFDB_Name>
+      <Description>The rotation angle of the camera relative to the sky E of N (Degrees).</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>deg</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>mjd</EFDB_Name>
+      <Description>Modified Julian Date at the start of the observation.</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>day</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>exptime</EFDB_Name>
+      <Description>Total exposure time of the visit.</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>second</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>filter</EFDB_Name>
+      <Description>The filter used. Should be one of u, g, r, i, z, y.</Description>
+      <IDL_Type>string</IDL_Type>
+      <IDL_Size>1</IDL_Size>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>nexp</EFDB_Name>
+      <Description>Number of exposures.</Description>
+      <IDL_Type>long</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>additionalInformation</EFDB_Name>
+      <Description>Any additional information produced by the Scheduler or scheduling algorithm in a yaml format.</Description>
+      <IDL_Type>string</IDL_Type>
+      <IDL_Size>1</IDL_Size>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+  </SALEvent>
 </SALEventSet>

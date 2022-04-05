@@ -27,14 +27,7 @@ def test_attribute_description(xmlfile, csc, topic):
     # Check for known issues.
     jira = check_for_issues(csc, topic)
     if jira:
-        pytest.skip(
-            jira
-            + ": "
-            + csc
-            + "_"
-            + topic
-            + ".xml contains blank <Description> fields."
-        )
+        pytest.skip(f"{jira}: {csc}_{topic}.xml contains blank <Description> fields.")
     # Test the attribute <Description> fields.
     with open(str(xmlfile), "r", encoding="utf-8") as f:
         tree = et.parse(f)

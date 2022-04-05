@@ -9,6 +9,8 @@ import lsst.ts.xml as ts_xml
 
 INDEX_ENUM_CHECK = re.compile(r"[^,= \w]+")
 
+VALID_LANGUAGES = {"CPP", "Java", "LabVIEW", "IDL", "SALPY"}
+
 
 def get_salsubsystems_file():
     pkgroot = ts_xml.get_pkg_root()
@@ -59,7 +61,7 @@ def test_salsubsystems_xml_valid():
     try:
         xmlschema.assertValid(tree)
     except etree.DocumentInvalid as err:
-        assert False, sal_subsystems_file.name + ": " + str(err)
+        assert False, f"{sal_subsystems_file.name}: {err}"
 
 
 def test_salsubsystems_count():
@@ -273,9 +275,9 @@ def test_runtimelanguages_tag(root, csc, languages):
     skip_if_known_issue("languages", csc)
     # Verify each CSC is explicitly defined.
     for language in languages.split(","):
-        assert language in ["CPP", "Java", "LabVIEW", "IDL", "SALPY"], (
-            csc + ": " + language + " is not a valid value for <RuntimeLanguages>."
-        )
+        assert (
+            language in VALID_LANGUAGES
+        ), f"{csc}: {language} is not a valid value for <RuntimeLanguages>."
 
 
 @pytest.mark.parametrize(
@@ -391,8 +393,8 @@ def test_simulator_tag(root, csc, simulator):
     skip_if_known_issue("simulator", csc)
     # Verify each CSC is explicitly defined.
     assert (
-        type(root.find("./SALSubsystem/[Name='" + csc + "']/Simulator")) is et.Element
-    ), (csc + " <Simulator> tag is NOT defined.")
+        type(root.find(f"./SALSubsystem/[Name='{csc}']/Simulator")) is et.Element
+    ), f"{csc} <Simulator> tag is NOT defined."
     whitespace_checks(simulator, "Simulator", csc)
     content_checks = ["Internal to CSC", "Not Required", "Not Provided"]
     assert (

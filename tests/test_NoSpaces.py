@@ -44,10 +44,7 @@ def test_no_spaces(xmlfile, csc, topic):
     jira = check_for_issues(csc, topic)
     if jira:
         pytest.skip(
-            jira
-            + ": "
-            + str(xmlfile.name)
-            + ".xml <Subsystem> field contains whitespace."
+            f"{jira}: {xmlfile.name}.xml <Subsystem> field contains whitespace."
         )
     with open(str(xmlfile), "r", encoding="utf-8") as f:
         tree = et.parse(f)
@@ -57,4 +54,4 @@ def test_no_spaces(xmlfile, csc, topic):
     for name in root.findall(f"./{saltype}/item/EFDB_Name"):
         assert (
             re.search(r"\s", name.text) is None
-        ), f"<EFDB_Name> '{name.text}' in {xmlfile.name} contains a whitespace character."
+        ), f"<EFDB_Name> {name.text!r} in {xmlfile.name} contains a whitespace character."
