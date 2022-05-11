@@ -379,6 +379,11 @@ db_optional_reserved = [
     "WRITE",
 ]
 
+# Field names used by SAL, and so forbidden in ts_xml
+sal_reserved = [
+    "SALINDEX",
+]
+
 """Define string attributes that are NOT unitless"""
 strings_with_units = [
     "azPositions",
