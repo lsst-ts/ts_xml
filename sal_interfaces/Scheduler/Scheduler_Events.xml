@@ -1000,7 +1000,7 @@
     </item>
     <item>
       <EFDB_Name>rotSkyPos</EFDB_Name>
-      <Description>The rotation angle of the camera relative to the sky E of N (Degrees).</Description>
+      <Description>The rotation angle of the camera relative to the sky E of N (degrees).</Description>
       <IDL_Type>double</IDL_Type>
       <Units>deg</Units>
       <Count>1</Count>
@@ -1041,6 +1041,140 @@
       <IDL_Size>1</IDL_Size>
       <Units>unitless</Units>
       <Count>1</Count>
+    </item>
+  </SALEvent>
+  <SALEvent>
+    <Subsystem>Scheduler</Subsystem>
+    <EFDB_Topic>Scheduler_logevent_generalInfo</EFDB_Topic>
+    <Description>Event with general information about the Scheduler.</Description>
+    <item>
+      <EFDB_Name>isNight</EFDB_Name>
+      <Description>Track if the scheduler conditions determine if it is night time or not.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>night</EFDB_Name>
+      <Description>How many nights since the start of the survey.</Description>
+      <IDL_Type>long</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>sunset</EFDB_Name>
+      <Description>Sunset UTC timestamp (seconds).</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>second</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>sunrise</EFDB_Name>
+      <Description>Sunrise UTC timestamp (seconds).</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>second</Units>
+      <Count>1</Count>
+    </item>
+  </SALEvent>
+  <SALEvent>
+    <Subsystem>Scheduler</Subsystem>
+    <EFDB_Topic>Scheduler_logevent_timeToNextTarget</EFDB_Topic>
+    <Description>Publish estimated time until the next target.</Description>
+    <item>
+      <EFDB_Name>currentTime</EFDB_Name>
+      <Description>UTC timestamp when the estimation was done (seconds).</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>second</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>waitTime</EFDB_Name>
+      <Description>How long until the next target.</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>second</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>ra</EFDB_Name>
+      <Description>Estimated Right Ascension of the target.</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>deg</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>decl</EFDB_Name>
+      <Description>Estimated Declination of the target.</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>deg</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>rotSkyPos</EFDB_Name>
+      <Description>Estimated rotation angle of the camera relative to the sky E of N (degrees).</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>deg</Units>
+      <Count>1</Count>
+    </item>
+  </SALEvent>
+  <SALEvent>
+    <Subsystem>Scheduler</Subsystem>
+    <EFDB_Topic>Scheduler_logevent_predictedSchedule</EFDB_Topic>
+    <Description>Predicted schedule. This topic contains information about the future targets the scheduler will likely observe.</Description>
+    <item>
+      <EFDB_Name>numberOfTargets</EFDB_Name>
+      <Description>Number of targets in the predicted scheduler. Maximum is 1000.</Description>
+      <IDL_Type>long</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>ra</EFDB_Name>
+      <Description>List of Right Ascension for the targets.</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>deg</Units>
+      <Count>1000</Count>
+    </item>
+    <item>
+      <EFDB_Name>decl</EFDB_Name>
+      <Description>List of Declination for the targets.</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>deg</Units>
+      <Count>1000</Count>
+    </item>
+    <item>
+      <EFDB_Name>rotSkyPos</EFDB_Name>
+      <Description>List of rotation angle of the camera relative to the sky E of N (degrees).</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>deg</Units>
+      <Count>1000</Count>
+    </item>
+    <item>
+      <EFDB_Name>mjd</EFDB_Name>
+      <Description>List of Modified Julian Date at the start of the observations.</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>day</Units>
+      <Count>1000</Count>
+    </item>
+    <item>
+      <EFDB_Name>exptime</EFDB_Name>
+      <Description>List of total exposure time for each visit.</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>second</Units>
+      <Count>1000</Count>
+    </item>
+    <item>
+      <EFDB_Name>instrumentConfiguration</EFDB_Name>
+      <Description>Comma-separated List of filters/instrument configuration used for each observation.</Description>
+      <IDL_Type>string</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>nexp</EFDB_Name>
+      <Description>List of number of exposures for each visit.</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1000</Count>
     </item>
   </SALEvent>
 </SALEventSet>

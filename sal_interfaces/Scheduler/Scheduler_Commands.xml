@@ -5,13 +5,6 @@
     <Subsystem>Scheduler</Subsystem>
     <EFDB_Topic>Scheduler_command_resume</EFDB_Topic>
     <Description>Resume operations. This will cause the Scheduler to start computing an observing queue and feeding it to the ScriptQueue.</Description>
-    <item>
-      <EFDB_Name>value</EFDB_Name>
-      <Description>Not used</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
   </SALCommand>
   <SALCommand>
     <Subsystem>Scheduler</Subsystem>
@@ -37,5 +30,10 @@
       <Units>unitless</Units>
       <Count>1</Count>
     </item>
+  </SALCommand>
+  <SALCommand>
+    <Subsystem>Scheduler</Subsystem>
+    <EFDB_Topic>Scheduler_command_computePredictedSchedule</EFDB_Topic>
+    <Description>This command causes the scheduler to compute and publish the predicted schedule. It can only run if the scheduler is idle (resume command not sent). This runs automatically as part of the advance operation mode so this command is only useful when users want to estimate what is ahead when the scheduler is not running.</Description>
   </SALCommand>
 </SALCommandSet>
