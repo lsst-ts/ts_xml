@@ -21,9 +21,9 @@
     </item>
     <item>
       <EFDB_Name>steppermotor_MotorTemperature</EFDB_Name>
-      <Description>motor temperature, degrees C</Description>
+      <Description>motor temperature</Description>
       <IDL_Type>double</IDL_Type>
-      <Units>unitless</Units>
+      <Units>Celsius</Units>
       <Count>1</Count>
     </item>
   </SALTelemetry>
@@ -366,6 +366,14 @@
       <Units>Watt</Units>
       <Count>3</Count>
     </item>
+    <!--CCSMETA: Array rebState indexed by location-->
+    <item>
+      <EFDB_Name>rebState</EFDB_Name>
+      <Description>R22/Reb0 Power State</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>unitless</Units>
+      <Count>3</Count>
+    </item>
   </SALTelemetry>
   <!--Created by xmlmaker2 for subsystem CCCamera class CCCamera_rebpower_Rebps using level 1-->
   <!--=======================================================================================-->
@@ -435,11 +443,29 @@
       <IsJavaArray>yes</IsJavaArray>
       <Count>1</Count>
     </item>
+    <!--CCSMETA: Array fPGATemp indexed by location-->
+    <item>
+      <EFDB_Name>fPGATemp</EFDB_Name>
+      <Description>FPGA temperature</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>Celsius</Units>
+      <IsJavaArray>yes</IsJavaArray>
+      <Count>1</Count>
+    </item>
     <item>
       <EFDB_Name>location</EFDB_Name>
       <Description>rebps location</Description>
       <IDL_Type>string</IDL_Type>
       <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <!--CCSMETA: Array tripState indexed by location-->
+    <item>
+      <EFDB_Name>tripState</EFDB_Name>
+      <Description>Trip Status</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>unitless</Units>
+      <IsJavaArray>yes</IsJavaArray>
       <Count>1</Count>
     </item>
   </SALTelemetry>
@@ -910,20 +936,6 @@
       <Count>1</Count>
     </item>
     <item>
-      <EFDB_Name>j10_I</EFDB_Name>
-      <Description>J10 current</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>mA</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>j10_V</EFDB_Name>
-      <Description>J10 voltage</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>Volt</Units>
-      <Count>1</Count>
-    </item>
-    <item>
       <EFDB_Name>j11_I</EFDB_Name>
       <Description>J11 current</Description>
       <IDL_Type>double</IDL_Type>
@@ -975,6 +987,20 @@
     <item>
       <EFDB_Name>j7_V</EFDB_Name>
       <Description>J7 voltage</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>Volt</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>j8_I</EFDB_Name>
+      <Description>J8 current</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>mA</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>j8_V</EFDB_Name>
+      <Description>J8 voltage</Description>
       <IDL_Type>double</IDL_Type>
       <Units>Volt</Units>
       <Count>1</Count>
