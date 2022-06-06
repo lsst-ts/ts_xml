@@ -66,7 +66,7 @@
         System_ElevationDrivesThermal=11,
         System_AZ0101CabinetThermal=12,
         System_ModbusTemperatureControllers=13,
-        System_MainCabinet=14,
+        System_MainCabinetThermal=14,
         System_MainAxesPowerSupply=15,
         System_TopEndChiller=16
     </Enumeration>
@@ -881,13 +881,27 @@
   </SALEvent>
   <SALEvent>
     <Subsystem>MTMount</Subsystem>
-    <EFDB_Topic>MTMount_logevent_mainCabinetSystemState</EFDB_Topic>
+    <EFDB_Topic>MTMount_logevent_mainCabinetThermalSystemState</EFDB_Topic>
     <Description>State of the main cabinet system.</Description>
     <item>
       <EFDB_Name>powerState</EFDB_Name>
       <Description>Power state; a PowerState enum.</Description>
       <IDL_Type>int</IDL_Type>
       <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>trackAmbient</EFDB_Name>
+      <Description>Is setTemperature the ambient temperature (true=yes).</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>setTemperature</EFDB_Name>
+      <Description>Temperature set point.</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>deg_C</Units>
       <Count>1</Count>
     </item>
   </SALEvent>
@@ -1140,7 +1154,7 @@
       <Count>1</Count>
     </item>
     <item>
-      <EFDB_Name>elementState</EFDB_Name>
+      <EFDB_Name>elementsState</EFDB_Name>
       <Description>Motion state of each actuator, a DeployableMotionState enum.</Description>
       <IDL_Type>unsigned short</IDL_Type>
       <Units>unitless</Units>
@@ -1159,7 +1173,7 @@
       <Count>1</Count>
     </item>
     <item>
-      <EFDB_Name>elementState</EFDB_Name>
+      <EFDB_Name>elementsState</EFDB_Name>
       <Description>Motion state of each actuator, an ElevationLockingPinMotionState enum.</Description>
       <IDL_Type>unsigned short</IDL_Type>
       <Units>unitless</Units>
@@ -1218,7 +1232,7 @@
       <Count>1</Count>
     </item>
     <item>
-      <EFDB_Name>elementState</EFDB_Name>
+      <EFDB_Name>elementsState</EFDB_Name>
       <Description>Motion state of each mirror cover, a DeployableMotionState enum.</Description>
       <IDL_Type>unsigned short</IDL_Type>
       <Units>unitless</Units>
@@ -1237,7 +1251,7 @@
       <Count>1</Count>
     </item>
     <item>
-      <EFDB_Name>elementState</EFDB_Name>
+      <EFDB_Name>elementsState</EFDB_Name>
       <Description>Motion state of each mirror cover lock, a DeployableMotionState enum.</Description>
       <IDL_Type>unsigned short</IDL_Type>
       <Units>unitless</Units>
