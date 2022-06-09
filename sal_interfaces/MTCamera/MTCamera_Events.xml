@@ -20616,4 +20616,53 @@
     </item>
   </SALEvent>
   <!-- ENDCONFIGURATION Do not remove this line -->
+  <SALEvent>
+    <Subsystem>MTCamera</Subsystem>
+    <EFDB_Topic>MTCamera_logevent_summaryStatus</EFDB_Topic>
+    <Description>Event sent when camera summary status changes. Primarily intended to be used by LOVE
+    </Description>
+    <item>
+      <EFDB_Name>timestampStatusChanged</EFDB_Name>
+      <Description>The time when the last status changed.</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>second</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>subsystems</EFDB_Name>
+      <Description>The list of subsystems for which summary state is published (: delimited)</Description>
+      <IDL_Type>string</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>subsystemState</EFDB_Name>
+      <Description>The list of states corresponding to subsystems (: delimited).</Description>
+      <IDL_Type>string</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>subsystemColor</EFDB_Name>
+      <Description>The list of colors corresponding to subsystems (: delimited). E.g. Red, Green, Yellow, (TBD)
+      </Description>
+      <IDL_Type>string</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>additionalInfo</EFDB_Name>
+      <Description>Additional info to be displayed beside state (: delimited).</Description>
+      <IDL_Type>string</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>drillDownLinks</EFDB_Name>
+      <Description>URL to link to more info for drill-down (: delimited).</Description>
+      <IDL_Type>string</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+  </SALEvent>
 </SALEventSet>
