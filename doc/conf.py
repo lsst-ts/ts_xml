@@ -1,4 +1,4 @@
-from documenteer.conf.pipelinespkg import *  # noqa
+from documenteer.conf.pipelinespkg import *  # type: ignore # noqa
 
 from lsst.ts.xml import *  # noqa
 

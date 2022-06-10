@@ -41,4 +41,72 @@
       <Count>50</Count>
     </item>
   </SALTelemetry>
+  <SALTelemetry>
+    <Subsystem>MTVMS</Subsystem>
+    <EFDB_Topic>MTVMS_psd</EFDB_Topic>
+    <Description>Acceleration power spectral density (PSD), measured by a 3 axis accelerometer.</Description>
+    <item>
+      <EFDB_Name>timestamp</EFDB_Name>
+      <Description>Starting time of data acqusition (TAI Unix seconds) used to compute PSDs.</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>second</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>interval</EFDB_Name>
+      <Description>Time interval over which PSDs were calculated beginning from the starting time.</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>second</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>minPSDFrequency</EFDB_Name>
+      <Description>PSD minimum frequency.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>Hz</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>maxPSDFrequency</EFDB_Name>
+      <Description>PSD maximum frequency.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>Hz</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>numDataPoints</EFDB_Name>
+      <Description>Number of valid frequencies. PSD array elements with index greater than or equal to numDataPoints are invalid and can contain any value (0 preferred).</Description>
+      <IDL_Type>int</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>sensor</EFDB_Name>
+      <Description>Sensor index.</Description>
+      <IDL_Type>short</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>accelerationPSDX</EFDB_Name>
+      <Description>Acceleration PSD in x direction.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>m2 / (Hz s4)</Units>
+      <Count>200</Count>
+    </item>
+    <item>
+      <EFDB_Name>accelerationPSDY</EFDB_Name>
+      <Description>Acceleration PSD in y direction.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>m2 / (Hz s4)</Units>
+      <Count>200</Count>
+    </item>
+    <item>
+      <EFDB_Name>accelerationPSDZ</EFDB_Name>
+      <Description>Acceleration PSD in z direction.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>m2 / (Hz s4)</Units>
+      <Count>200</Count>
+    </item>
+  </SALTelemetry>
 </SALTelemetrySet>

@@ -31,7 +31,6 @@ XML test suite generator scripts.
 """Defines the list of Commandable SAL Components, or CSCs."""
 
 subsystems = [
-    "AdamSensors",
     "ATAOS",
     "MTAirCompressor",
     "ATArchiver",
@@ -378,6 +377,11 @@ db_optional_reserved = [
     "WHERE",
     "WITH",
     "WRITE",
+]
+
+# Field names used by SAL, and so forbidden in ts_xml
+sal_reserved = [
+    "SALINDEX",
 ]
 
 """Define string attributes that are NOT unitless"""

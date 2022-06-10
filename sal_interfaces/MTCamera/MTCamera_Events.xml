@@ -5637,10 +5637,10 @@
     <!--CCSMETA: Array ipAddr indexed by location-->
     <item>
       <EFDB_Name>ipAddr</EFDB_Name>
-      <Description>MISSING</Description>
+      <Description>MISSING (colon delimited array)</Description>
       <IDL_Type>string</IDL_Type>
       <Units>unitless</Units>
-      <Count>13</Count>
+      <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>location</EFDB_Name>
@@ -16047,18 +16047,18 @@
     <!--CCSMETA: Array manSerNum indexed by location-->
     <item>
       <EFDB_Name>manSerNum</EFDB_Name>
-      <Description>MISSING</Description>
+      <Description>MISSING (colon delimited array)</Description>
       <IDL_Type>string</IDL_Type>
       <Units>unitless</Units>
-      <Count>205</Count>
+      <Count>1</Count>
     </item>
     <!--CCSMETA: Array name indexed by location-->
     <item>
       <EFDB_Name>name</EFDB_Name>
-      <Description>MISSING</Description>
+      <Description>MISSING (colon delimited array)</Description>
       <IDL_Type>string</IDL_Type>
       <Units>unitless</Units>
-      <Count>205</Count>
+      <Count>1</Count>
     </item>
   </SALEvent>
   <!--Created by xmlmaker2 for subsystem MTCamera class MTCamera_logevent_focal_plane_Ccd_LimitsConfiguration using level 1 for category Limits-->
@@ -16702,10 +16702,10 @@
     <!--CCSMETA: Array name indexed by location-->
     <item>
       <EFDB_Name>name</EFDB_Name>
-      <Description>MISSING</Description>
+      <Description>MISSING (colon delimited array)</Description>
       <IDL_Type>string</IDL_Type>
       <Units>unitless</Units>
-      <Count>25</Count>
+      <Count>1</Count>
     </item>
   </SALEvent>
   <!--Created by xmlmaker2 for subsystem MTCamera class MTCamera_logevent_focal_plane_Raft_RaftTempControlConfiguration using level 1 for category RaftTempControl-->
@@ -16794,10 +16794,10 @@
     <!--CCSMETA: Array tempcontrol_rebs indexed by location-->
     <item>
       <EFDB_Name>tempcontrol_rebs</EFDB_Name>
-      <Description>The REBs with heaters to use</Description>
+      <Description>The REBs with heaters to use (colon delimited array)</Description>
       <IDL_Type>string</IDL_Type>
       <Units>unitless</Units>
-      <Count>25</Count>
+      <Count>1</Count>
     </item>
     <!--CCSMETA: Array tempcontrol_setTemp indexed by location-->
     <item>
@@ -16818,10 +16818,10 @@
     <!--CCSMETA: Array tempcontrol_tempChans indexed by location-->
     <item>
       <EFDB_Name>tempcontrol_tempChans</EFDB_Name>
-      <Description>Temperature channels to use</Description>
+      <Description>Temperature channels to use (colon delimited array)</Description>
       <IDL_Type>string</IDL_Type>
       <Units>unitless</Units>
-      <Count>25</Count>
+      <Count>1</Count>
     </item>
     <!--CCSMETA: Array tempcontrol_timeConst indexed by location-->
     <item>
@@ -16923,10 +16923,10 @@
     <!--CCSMETA: Array name indexed by location-->
     <item>
       <EFDB_Name>name</EFDB_Name>
-      <Description>MISSING</Description>
+      <Description>MISSING (colon delimited array)</Description>
       <IDL_Type>string</IDL_Type>
       <Units>unitless</Units>
-      <Count>71</Count>
+      <Count>1</Count>
     </item>
   </SALEvent>
   <!--Created by xmlmaker2 for subsystem MTCamera class MTCamera_logevent_focal_plane_Reb_LimitsConfiguration using level 1 for category Limits-->
@@ -20602,10 +20602,10 @@
     <!--CCSMETA: Array fitsservice_headerFilesList indexed by location-->
     <item>
       <EFDB_Name>fitsservice_headerFilesList</EFDB_Name>
-      <Description>MISSING</Description>
+      <Description>MISSING (colon delimited array)</Description>
       <IDL_Type>string</IDL_Type>
       <Units>unitless</Units>
-      <Count>8</Count>
+      <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>location</EFDB_Name>
@@ -20616,4 +20616,53 @@
     </item>
   </SALEvent>
   <!-- ENDCONFIGURATION Do not remove this line -->
+  <SALEvent>
+    <Subsystem>MTCamera</Subsystem>
+    <EFDB_Topic>MTCamera_logevent_summaryStatus</EFDB_Topic>
+    <Description>Event sent when camera summary status changes. Primarily intended to be used by LOVE
+    </Description>
+    <item>
+      <EFDB_Name>timestampStatusChanged</EFDB_Name>
+      <Description>The time when the last status changed.</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>second</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>subsystems</EFDB_Name>
+      <Description>The list of subsystems for which summary state is published (: delimited)</Description>
+      <IDL_Type>string</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>subsystemState</EFDB_Name>
+      <Description>The list of states corresponding to subsystems (: delimited).</Description>
+      <IDL_Type>string</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>subsystemColor</EFDB_Name>
+      <Description>The list of colors corresponding to subsystems (: delimited). E.g. Red, Green, Yellow, (TBD)
+      </Description>
+      <IDL_Type>string</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>additionalInfo</EFDB_Name>
+      <Description>Additional info to be displayed beside state (: delimited).</Description>
+      <IDL_Type>string</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>drillDownLinks</EFDB_Name>
+      <Description>URL to link to more info for drill-down (: delimited).</Description>
+      <IDL_Type>string</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+  </SALEvent>
 </SALEventSet>
