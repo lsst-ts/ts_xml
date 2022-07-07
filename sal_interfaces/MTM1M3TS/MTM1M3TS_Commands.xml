@@ -77,7 +77,7 @@
   <SALCommand>
     <Subsystem>MTM1M3TS</Subsystem>
     <EFDB_Topic>MTM1M3TS_command_power</EFDB_Topic>
-    <Description>Turn power on for fail/heaters coils and coolant pump. Controls cRIO slot 5 SSR.</Description>
+    <Description>Turn power on for fans/heaters coils and coolant pump. Controls cRIO slot 5 SSR.</Description>
     <item>
       <EFDB_Name>fanCoilsHeaters</EFDB_Name>
       <Description>Apply power to Dan Coils/Heaters. true=on, false=off.</Description>
@@ -104,5 +104,25 @@
       <Units>%</Units>
       <Count>1</Count>
     </item>
+  </SALCommand>
+  <SALCommand>
+    <Subsystem>MTM1M3TS</Subsystem>
+    <EFDB_Topic>MTM1M3TS_command_pumpFrequency</EFDB_Topic>
+    <Description>
+      Sets pump target frequency. 0 or negative values stops the pump. Pump is
+      started if positive value is provided and it's not running
+    </Description>
+    <item>
+      <EFDB_Name>targetFrequency</EFDB_Name>
+      <Description>Pump target frequency.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>Hz</Units>
+      <Count>1</Count>
+    </item>
+  </SALCommand>
+  <SALCommand>
+    <Subsystem>MTM1M3TS</Subsystem>
+    <EFDB_Topic>MTM1M3TS_command_pumpReset</EFDB_Topic>
+    <Description>Resets pump motor controller errors.</Description>
   </SALCommand>
 </SALCommandSet>
