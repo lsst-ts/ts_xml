@@ -1116,27 +1116,6 @@
       <Count>156</Count>
     </item>
     <item>
-      <EFDB_Name>aberrationNetForceWarning</EFDB_Name>
-      <Description>Force setpoint warning aberration Net force warning</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>anyAberrationForceWarning</EFDB_Name>
-      <Description>Force setpoint warning any Aberration force warning</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>aberrationForceWarning</EFDB_Name>
-      <Description>Force setpoint warning aberration force warning</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>156</Count>
-    </item>
-    <item>
       <EFDB_Name>anyOffsetForceWarning</EFDB_Name>
       <Description>Force setpoint warning any Offset force warning</Description>
       <IDL_Type>boolean</IDL_Type>
@@ -1255,13 +1234,6 @@
     <item>
       <EFDB_Name>activeOpticForcesApplied</EFDB_Name>
       <Description>Are the forces due to active optics applied?</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>aberrationForcesApplied</EFDB_Name>
-      <Description>Are the forces due to aberration applied?</Description>
       <IDL_Type>boolean</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
@@ -2497,45 +2469,6 @@
     <item>
       <EFDB_Name>my</EFDB_Name>
       <Description>Applied active optic forces my</Description>
-      <IDL_Type>float</IDL_Type>
-      <Units>N m</Units>
-      <Count>1</Count>
-    </item>
-  </SALEvent>
-  <SALEvent>
-    <Subsystem>MTM1M3</Subsystem>
-    <EFDB_Topic>MTM1M3_logevent_appliedAberrationForces</EFDB_Topic>
-    <item>
-      <EFDB_Name>timestamp</EFDB_Name>
-      <Description>Applied abberation forces timestamp</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>s</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>zForces</EFDB_Name>
-      <Description>Forces in Z axis.</Description>
-      <IDL_Type>float</IDL_Type>
-      <Units>N</Units>
-      <Count>156</Count>
-    </item>
-    <item>
-      <EFDB_Name>fz</EFDB_Name>
-      <Description>Applied abberation forces fz</Description>
-      <IDL_Type>float</IDL_Type>
-      <Units>N</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>mx</EFDB_Name>
-      <Description>Applied abberation forces mx</Description>
-      <IDL_Type>float</IDL_Type>
-      <Units>N m</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>my</EFDB_Name>
-      <Description>Applied abberation forces my</Description>
       <IDL_Type>float</IDL_Type>
       <Units>N m</Units>
       <Count>1</Count>
@@ -4317,46 +4250,6 @@
   </SALEvent>
   <SALEvent>
     <Subsystem>MTM1M3</Subsystem>
-    <EFDB_Topic>MTM1M3_logevent_preclippedAberrationForces</EFDB_Topic>
-    <Description>Send when abberation forces needs to be clipped. Contains pre-clipped (calculated) value.</Description>
-    <item>
-      <EFDB_Name>timestamp</EFDB_Name>
-      <Description>Pre-clipped aberration forces timestamp</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>s</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>zForces</EFDB_Name>
-      <Description>Pre-clipped Aberration Forces z Forces</Description>
-      <IDL_Type>float</IDL_Type>
-      <Units>N</Units>
-      <Count>156</Count>
-    </item>
-    <item>
-      <EFDB_Name>fz</EFDB_Name>
-      <Description>Pre-clipped aberration forces fz</Description>
-      <IDL_Type>float</IDL_Type>
-      <Units>N</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>mx</EFDB_Name>
-      <Description>Pre-clipped aberration forces mx</Description>
-      <IDL_Type>float</IDL_Type>
-      <Units>N m</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>my</EFDB_Name>
-      <Description>Pre-clipped aberration forces my</Description>
-      <IDL_Type>float</IDL_Type>
-      <Units>N m</Units>
-      <Count>1</Count>
-    </item>
-  </SALEvent>
-  <SALEvent>
-    <Subsystem>MTM1M3</Subsystem>
     <EFDB_Topic>MTM1M3_logevent_preclippedBalanceForces</EFDB_Topic>
     <Description>Send when balance forces needs to be clipped. Contains pre-clipped (calculated) value.</Description>
     <item>
@@ -5372,13 +5265,6 @@
     <Subsystem>MTM1M3</Subsystem>
     <EFDB_Topic>MTM1M3_logevent_forceActuatorSettings</EFDB_Topic>
     <Description>Force actuator settings.</Description>
-    <item>
-      <EFDB_Name>netAberrationForceTolerance</EFDB_Name>
-      <Description>Aberration forces and moments shall fall inside this tolerance range (+- the value). Prevents excessive aberration forces to reach M1M3.</Description>
-      <IDL_Type>float</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
     <item>
       <EFDB_Name>netActiveOpticForceTolerance</EFDB_Name>
       <Description>Active optic forces and moments shall fall inside this tolerance range (+- the value). Prevents active optics CSC to send excessive offorces.</Description>
