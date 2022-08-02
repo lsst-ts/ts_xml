@@ -4,7 +4,7 @@ from setuptools import setup, find_namespace_packages
 
 install_requires = ["black"]
 setup_requires = ["setuptools_scm", "pytest-runner"]
-tests_requires = ["pytest", "pytest-flake8", "lxml", "black", "astropy"]
+tests_requires = ["pytest", "pytest-flake8", "lxml", "black", "astropy", "flake8<5"]
 dev_requires = install_requires + tests_requires + ["documenteer[pipelines]"]
 
 setup(
