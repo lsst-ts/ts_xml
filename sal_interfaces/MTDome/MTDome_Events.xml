@@ -122,6 +122,25 @@
   </SALEvent>
   <SALEvent>
     <Subsystem>MTDome</Subsystem>
+    <EFDB_Topic>MTDome_logevent_shutterEnabled</EFDB_Topic>
+    <Description>Aperture Shutter enabled state.</Description>
+    <item>
+      <EFDB_Name>state</EFDB_Name>
+      <Description>Enabled state; an EnabledState enum.</Description>
+      <IDL_Type>int</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>faultCode</EFDB_Name>
+      <Description>The fault code; ignore if not in Fault state.</Description>
+      <IDL_Type>string</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+  </SALEvent>
+  <SALEvent>
+    <Subsystem>MTDome</Subsystem>
     <EFDB_Topic>MTDome_logevent_azMotion</EFDB_Topic>
     <Description>Azimuth axis motion state.</Description>
     <item>
@@ -156,6 +175,25 @@
       <IDL_Type>boolean</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
+    </item>
+  </SALEvent>
+  <SALEvent>
+    <Subsystem>MTDome</Subsystem>
+    <EFDB_Topic>MTDome_logevent_shutterMotion</EFDB_Topic>
+    <Description>Aperture Shutter motion state.</Description>
+    <item>
+      <EFDB_Name>state</EFDB_Name>
+      <Description>The motion state; a MotionState enum.</Description>
+      <IDL_Type>int</IDL_Type>
+      <Units>unitless</Units>
+      <Count>2</Count>
+    </item>
+    <item>
+      <EFDB_Name>inPosition</EFDB_Name>
+      <Description>Is the axis in position?</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>2</Count>
     </item>
   </SALEvent>
   <SALEvent>
