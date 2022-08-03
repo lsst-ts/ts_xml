@@ -1,30 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-stylesheet type="text/xsl" href="http://lsst-sal.tuc.noao.edu/schema/SALEventSet.xsl"?>
 <SALEventSet xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://lsst-sal.tuc.noao.edu/schema/SALEventSet.xsd">
-  <Enumeration>DetailedState_DisabledState,DetailedState_EnabledState,DetailedState_FaultState,DetailedState_OfflineState,DetailedState_StandbyState</Enumeration>
-  <SALEvent>
-    <Subsystem>DIMM</Subsystem>
-    <EFDB_Topic>DIMM_logevent_detailedState</EFDB_Topic>
-    <item>
-      <EFDB_Name>detailedState</EFDB_Name>
-      <Description>The substate of the CSC.</Description>
-      <!-- Enumeration: DetailedState -->
-      <IDL_Type>long</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-  </SALEvent>
-  <SALEvent>
-    <Subsystem>DIMM</Subsystem>
-    <EFDB_Topic>DIMM_logevent_internalCommand</EFDB_Topic>
-    <item>
-      <EFDB_Name>commandObject</EFDB_Name>
-      <Description>The error code being published.</Description>
-      <IDL_Type>byte</IDL_Type>
-      <Units>unitless</Units>
-      <Count>800</Count>
-    </item>
-  </SALEvent>
   <SALEvent>
     <Subsystem>DIMM</Subsystem>
     <EFDB_Topic>DIMM_logevent_moduleStatus</EFDB_Topic>
@@ -59,17 +35,6 @@
     <item>
       <EFDB_Name>dimmStatus</EFDB_Name>
       <Description>Subsystem status for DIMM processing module.</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-  </SALEvent>
-  <SALEvent>
-    <Subsystem>DIMM</Subsystem>
-    <EFDB_Topic>DIMM_logevent_loopTimeOutOfRange</EFDB_Topic>
-    <item>
-      <EFDB_Name>loopTimeOutOfRange</EFDB_Name>
-      <Description>Whether the loop time is out of range.</Description>
       <IDL_Type>boolean</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
