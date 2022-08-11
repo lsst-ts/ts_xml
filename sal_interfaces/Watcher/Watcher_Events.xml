@@ -57,15 +57,18 @@
       <Count>1</Count>
     </item>
     <item>
-      <EFDB_Name>escalated</EFDB_Name>
-      <Description>Has this alarm been escalated to backup personnel?</Description>
-      <IDL_Type>boolean</IDL_Type>
+      <EFDB_Name>escalatedId</EFDB_Name>
+      <Description>Blank if escalation not attempted.
+            The ID of the OpsGenie alert, if successfully escalated.
+            "Failed: (...reason...)" if escalation was attempted and failed.</Description>
+      <IDL_Type>string</IDL_Type>
+      <IDL_Size>1</IDL_Size>
       <Units>unitless</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>escalateTo</EFDB_Name>
-      <Description>Backup user who was or will be notified if the alarm is escalated.</Description>
+      <Description>Designated responders, should this alarm be escalated, as a json-encoded list of dicts, each with two keys: "name" and "type". That list is the form OpsGenie uses for the "responders" field of alerts. Json-enconded empty list (e.g. "[]") if this alarm will never be escalated.</Description>
       <IDL_Type>string</IDL_Type>
       <IDL_Size>1</IDL_Size>
       <Units>unitless</Units>
@@ -75,7 +78,7 @@
       <EFDB_Name>mutedSeverity</EFDB_Name>
       <Description>Severity at which this alarm is muted.
              A value of `AlarmSeverity_None` means not muted.
-             If `severity &lt;= mutedSeverity` then the alarm is considered muted and should not be displayed by default.</Description>
+             If `severity ≤ mutedSeverity` then the alarm is considered muted and should not be displayed by default.</Description>
       <IDL_Type>long</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
