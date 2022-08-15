@@ -4,6 +4,7 @@
   <Enumeration>SummaryStates_DisabledState,SummaryStates_EnabledState,SummaryStates_FaultState,SummaryStates_OfflineState,SummaryStates_StandbyState</Enumeration>
   <Enumeration>DetailedStates_DisabledState,DetailedStates_FaultState,DetailedStates_OfflineState,DetailedStates_StandbyState,DetailedStates_ParkedState,DetailedStates_RaisingState,DetailedStates_ActiveState,DetailedStates_LoweringState,DetailedStates_ParkedEngineeringState,DetailedStates_RaisingEngineeringState,DetailedStates_ActiveEngineeringState,DetailedStates_LoweringEngineeringState,DetailedStates_LoweringFaultState,DetailedStates_ProfileHardpointCorrectionState</Enumeration>
   <Enumeration>BumpTest_NotTested,BumpTest_TestingPositive,BumpTest_TestingPositiveWait,BumpTest_TestingNegative,BumpTest_TestingNegativeWait,BumpTest_Passed,BumpTest_Failed</Enumeration>
+  <Enumeration>HardpointTest_NotTested,HardpointTest_MovingNegative,HardpointTest_TestingPositive,HardpointTest_TestingNegative,HardpointTest_MovingReference,HardpointTest_Passed,HardpointTest_Failed</Enumeration>
   <Enumeration>
     HardpointActuatorMotionState_Standby=0,
     HardpointActuatorMotionState_Chasing=1,
@@ -4648,6 +4649,18 @@
       <IDL_Type>short</IDL_Type>
       <Units>unitless</Units>
       <Count>112</Count>
+    </item>
+  </SALEvent>
+  <SALEvent>
+    <Subsystem>MTM1M3</Subsystem>
+    <EFDB_Topic>MTM1M3_logevent_hardpointTestStatus</EFDB_Topic>
+    <Description>Progress of hardpoint tests.</Description>
+    <item>
+      <EFDB_Name>testState</EFDB_Name>
+      <Description>Testing status. Enumerated in HardpointTest_*.</Description>
+      <IDL_Type>short</IDL_Type>
+      <Units>unitless</Units>
+      <Count>6</Count>
     </item>
   </SALEvent>
   <SALEvent>
