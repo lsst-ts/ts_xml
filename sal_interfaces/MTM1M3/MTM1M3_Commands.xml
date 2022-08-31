@@ -133,6 +133,30 @@
   <SALCommand>
     <Subsystem>MTM1M3</Subsystem>
     <EFDB_Topic>MTM1M3_command_testHardpoint</EFDB_Topic>
+    <Description>
+        The testHardpoint command shall move given hardpoint to test its
+        actuator. It issues hardpoint step command, makes sure the hardpoint is
+        moving. It continues issuing step command till limit switch is hit.
+        After hitting limit, stepping in reverse direction is commanded. Checks
+        confirming measured force follows "Z" shape are executied as hardpoint is
+        moving. In CSC implementation of test M13T004. This test shall be
+        performed in parked engineering mode. The test can be stopped by
+        killHardpointTest command.
+    </Description>
+    <item>
+      <EFDB_Name>hardpointActuator</EFDB_Name>
+      <Description>Id of the hardpoint actuator to test.</Description>
+      <IDL_Type>short</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+  </SALCommand>
+  <SALCommand>
+    <Subsystem>MTM1M3</Subsystem>
+    <EFDB_Topic>MTM1M3_command_killHardpointTest</EFDB_Topic>
+    <Description>
+        The killHardpointTest command stops given hardpoint test.
+    </Description>
     <item>
       <EFDB_Name>hardpointActuator</EFDB_Name>
       <Description>Id of the hardpoint actuator to test.</Description>
