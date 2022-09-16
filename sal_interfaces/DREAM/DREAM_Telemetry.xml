@@ -3,13 +3,63 @@
 <SALTelemetrySet xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://lsst-sal.tuc.noao.edu/schema/SALTelemetrySet.xsd">
   <SALTelemetry>
     <Subsystem>DREAM</Subsystem>
-    <EFDB_Topic>DREAM_status</EFDB_Topic>
-    <Description>The full DREAM system status.</Description>
+    <EFDB_Topic>DREAM_environment</EFDB_Topic>
+    <Description>Ambient environment measured in various locations within DREAM. Indexed by location - 0 Dome, 1 Electronics Box, 2 Enclosure.</Description>
     <item>
-      <EFDB_Name>status</EFDB_Name>
-      <Description>The full DREAM system status in JSON format.</Description>
-      <IDL_Type>string</IDL_Type>
+      <EFDB_Name>temperature</EFDB_Name>
+      <Description>Measured temperature.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>deg_C</Units>
+      <Count>3</Count>
+    </item>
+    <item>
+      <EFDB_Name>humidity</EFDB_Name>
+      <Description>Measured humidity.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>%</Units>
+      <Count>3</Count>
+    </item>
+  </SALTelemetry>
+  <SALTelemetry>
+    <Subsystem>DREAM</Subsystem>
+    <EFDB_Topic>DREAM_powerSupply</EFDB_Topic>
+    <Description>DREAM power supply status.</Description>
+    <item>
+      <EFDB_Name>voltage</EFDB_Name>
+      <Description>Power supply output voltage.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>V</Units>
+      <Count>2</Count>
+    </item>
+    <item>
+      <EFDB_Name>current</EFDB_Name>
+      <Description>Power supply output current.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>A</Units>
+      <Count>2</Count>
+    </item>
+  </SALTelemetry>
+  <SALTelemetry>
+    <Subsystem>DREAM</Subsystem>
+    <EFDB_Topic>DREAM_dome</EFDB_Topic>
+    <Description>DREAM dome telemetry.</Description>
+    <item>
+      <EFDB_Name>encoder</EFDB_Name>
+      <Description>Dome encoder readout.</Description>
+      <IDL_Type>int</IDL_Type>
       <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+  </SALTelemetry>
+  <SALTelemetry>
+    <Subsystem>DREAM</Subsystem>
+    <EFDB_Topic>DREAM_ups</EFDB_Topic>
+    <Description>DREAM UPS telemetry.</Description>
+    <item>
+      <EFDB_Name>batteryCharge</EFDB_Name>
+      <Description>Battery charge percentage. Reported by the UPS, 100 means the battery is fully charged.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>%</Units>
       <Count>1</Count>
     </item>
   </SALTelemetry>

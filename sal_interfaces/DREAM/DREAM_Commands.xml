@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="http://lsst-sal.tuc.noao.edu/schema/SALCommandSet.xsl"?>
+<SALCommandSet xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://lsst-sal.tuc.noao.edu/schema/SALCommandSet.xsd">
+  <SALCommand>
+    <Subsystem>DREAM</Subsystem>
+    <EFDB_Topic>DREAM_command_pause</EFDB_Topic>
+    <Description>
+        Operator triggered pause in the operations. If issued while the DREAM
+        dome is opened, the dome shall close and observation either stopped or
+        switched to acquire calibration data.
+    </Description>
+  </SALCommand>
+  <SALCommand>
+    <Subsystem>DREAM</Subsystem>
+    <EFDB_Topic>DREAM_command_resume</EFDB_Topic>
+    <Description>
+        Operator triggered resume of the operations. If issued while dome is
+        closed and weather is within limits for operations, dome shall open.
+    </Description>
+  </SALCommand>
+</SALCommandSet>
