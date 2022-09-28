@@ -4,7 +4,7 @@
   <SALTelemetry>
     <Subsystem>ESS</Subsystem>
     <EFDB_Topic>ESS_airTurbulence</EFDB_Topic>
-    <Description>Air Turbulence Instrument - CSAT3B (Tri-Axial).</Description>
+    <Description>Air turbulence measured by a 3-dimensional anemometer.</Description>
     <item>
       <EFDB_Name>sensorName</EFDB_Name>
       <Description>The name of the sensor.</Description>
@@ -42,21 +42,14 @@
     </item>
     <item>
       <EFDB_Name>ts</EFDB_Name>
-      <Description>Sonic temperature.</Description>
+      <Description>Sonic temperature (air temperature measured sonically). This has poor absolute accuracy (it can be off by several degrees) but good time resolution.</Description>
       <IDL_Type>float</IDL_Type>
-      <Units>unitless</Units>
+      <Units>deg_C</Units>
       <Count>1</Count>
     </item>
     <item>
-      <EFDB_Name>diagWord</EFDB_Name>
-      <Description>Diagnostic word.</Description>
-      <IDL_Type>short</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>recordCounter</EFDB_Name>
-      <Description>Record counter (0-63).</Description>
+      <EFDB_Name>status</EFDB_Name>
+      <Description>Device status. The details depend on the device, but 0 always means that no problems have been detected.</Description>
       <IDL_Type>short</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
@@ -71,7 +64,7 @@
   </SALTelemetry>
   <SALTelemetry>
     <EFDB_Topic>ESS_airFlow</EFDB_Topic>
-    <Description>AirFlow Sensor - Windsonic1-L (Bi-axial).</Description>
+    <Description>Wind speed and direction.</Description>
     <item>
       <EFDB_Name>sensorName</EFDB_Name>
       <Description>The name of the sensor.</Description>
@@ -88,9 +81,9 @@
     </item>
     <item>
       <EFDB_Name>direction</EFDB_Name>
-      <Description>Wind direction.</Description>
+      <Description>Wind direction: 0 = north, 90 = east.</Description>
       <IDL_Type>short</IDL_Type>
-      <Units>unitless</Units>
+      <Units>degree</Units>
       <Count>1</Count>
     </item>
     <item>
@@ -102,8 +95,8 @@
     </item>
     <item>
       <EFDB_Name>status</EFDB_Name>
-      <Description>Status Code.</Description>
-      <IDL_Type>unsigned short</IDL_Type>
+      <Description>Device status. The details depend on the device, but 0 always means that no problems have been detected.</Description>
+      <IDL_Type>short</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
     </item>
