@@ -181,7 +181,14 @@
   </SALCommand>
   <SALCommand>
     <Subsystem>MTDome</Subsystem>
-    <EFDB_Topic>MTDome_command_searchZeroShutter</EFDB_Topic>
-    <Description>Search the zero position of the Aperture Shutter, which is the closed position. This is necessary when the system boots and it is not completely open or completely closed.</Description>
+    <EFDB_Topic>MTDome_command_home</EFDB_Topic>
+    <Description>Make the indicated subsystems go to the home position.</Description>
+    <item>
+      <EFDB_Name>subSystemIds</EFDB_Name>
+      <Description>Bitmask of SubSystemId.</Description>
+      <IDL_Type>int</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
   </SALCommand>
 </SALCommandSet>
