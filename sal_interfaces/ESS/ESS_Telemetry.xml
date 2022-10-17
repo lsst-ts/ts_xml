@@ -130,6 +130,45 @@
     </item>
   </SALTelemetry>
   <SALTelemetry>
+    <EFDB_Topic>ESS_dewPoint</EFDB_Topic>
+    <Description>Dew point.</Description>
+    <item>
+      <EFDB_Name>sensorName</EFDB_Name>
+      <Description>The name of the sensor.</Description>
+      <IDL_Type>string</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>timestamp</EFDB_Name>
+      <Description>Time at which the data was determined (TAI unix seconds).</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>second</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>dewPoint</EFDB_Name>
+      <Description>Dew point.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>deg_C</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>status</EFDB_Name>
+      <Description>Device status. The details depend on the device, but 0 always means that no problems have been detected.</Description>
+      <IDL_Type>short</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>location</EFDB_Name>
+      <Description>The location of the sensor.</Description>
+      <IDL_Type>string</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+  </SALTelemetry>
+  <SALTelemetry>
     <EFDB_Topic>ESS_pressure</EFDB_Topic>
     <Description>Pressure sensors with up to 8 channels.</Description>
     <item>
@@ -161,8 +200,93 @@
       <Count>8</Count>
     </item>
     <item>
+      <EFDB_Name>status</EFDB_Name>
+      <Description>Device status. The details depend on the device, but 0 always means that no problems have been detected.</Description>
+      <IDL_Type>short</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
       <EFDB_Name>location</EFDB_Name>
       <Description>Comma-separated string with the locations of the sensors for each channel.</Description>
+      <IDL_Type>string</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+  </SALTelemetry>
+  <SALTelemetry>
+    <EFDB_Topic>ESS_relativeHumidity</EFDB_Topic>
+    <Description>Relative humidity.</Description>
+    <item>
+      <EFDB_Name>sensorName</EFDB_Name>
+      <Description>The name of the sensor.</Description>
+      <IDL_Type>string</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>timestamp</EFDB_Name>
+      <Description>Time at which the data was determined (TAI unix seconds).</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>second</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>relativeHumidity</EFDB_Name>
+      <Description>Relative Humidity.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>%</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>status</EFDB_Name>
+      <Description>Device status. The details depend on the device, but 0 always means that no problems have been detected.</Description>
+      <IDL_Type>short</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>location</EFDB_Name>
+      <Description>The location of the sensor.</Description>
+      <IDL_Type>string</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+  </SALTelemetry>
+  <SALTelemetry>
+    <EFDB_Topic>ESS_solarRadiation</EFDB_Topic>
+    <Description>Solar radiation.</Description>
+    <item>
+      <EFDB_Name>sensorName</EFDB_Name>
+      <Description>The name of the sensor.</Description>
+      <IDL_Type>string</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>timestamp</EFDB_Name>
+      <Description>Time at which the data was determined (TAI unix seconds).</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>second</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>solarRadiation</EFDB_Name>
+      <Description>Median solar radiation measured over a period on the order of a minute.</Description>
+      <IDL_Type>short</IDL_Type>
+      <Units>W/m2</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>status</EFDB_Name>
+      <Description>Device status. The details depend on the device, but 0 always means that no problems have been detected.</Description>
+      <IDL_Type>short</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>location</EFDB_Name>
+      <Description>The location of the sensor.</Description>
       <IDL_Type>string</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
@@ -198,6 +322,13 @@
       <IDL_Type>float</IDL_Type>
       <Units>deg_C</Units>
       <Count>16</Count>
+    </item>
+    <item>
+      <EFDB_Name>status</EFDB_Name>
+      <Description>Device status. The details depend on the device, but 0 always means that no problems have been detected.</Description>
+      <IDL_Type>short</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>location</EFDB_Name>
@@ -261,105 +392,6 @@
     </item>
   </SALTelemetry>
   <SALTelemetry>
-    <EFDB_Topic>ESS_hx85a</EFDB_Topic>
-    <Description>Omega HX85A Humidity, Temperature and Dew Point Sensor.</Description>
-    <item>
-      <EFDB_Name>sensorName</EFDB_Name>
-      <Description>The name of the sensor.</Description>
-      <IDL_Type>string</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>timestamp</EFDB_Name>
-      <Description>Time at which the data was determined (TAI unix seconds).</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>second</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>relativeHumidity</EFDB_Name>
-      <Description>Relative Humidity.</Description>
-      <IDL_Type>float</IDL_Type>
-      <Units>%</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>temperature</EFDB_Name>
-      <Description>Air Temperature.</Description>
-      <IDL_Type>float</IDL_Type>
-      <Units>deg_C</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>dewPoint</EFDB_Name>
-      <Description>Dew Point.</Description>
-      <IDL_Type>float</IDL_Type>
-      <Units>deg_C</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>location</EFDB_Name>
-      <Description>The location of the sensor.</Description>
-      <IDL_Type>string</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-  </SALTelemetry>
-  <SALTelemetry>
-    <EFDB_Topic>ESS_hx85ba</EFDB_Topic>
-    <Description>Omega HX85BA Humidity, Temperature and Pressure Sensor.</Description>
-    <item>
-      <EFDB_Name>sensorName</EFDB_Name>
-      <Description>The name of the sensor.</Description>
-      <IDL_Type>string</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>timestamp</EFDB_Name>
-      <Description>Time at which the data was determined (TAI unix seconds).</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>second</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>relativeHumidity</EFDB_Name>
-      <Description>Relative Humidity.</Description>
-      <IDL_Type>float</IDL_Type>
-      <Units>%</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>temperature</EFDB_Name>
-      <Description>Air Temperature.</Description>
-      <IDL_Type>float</IDL_Type>
-      <Units>deg_C</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>barometricPressure</EFDB_Name>
-      <Description>Barometric Pressure.</Description>
-      <IDL_Type>float</IDL_Type>
-      <Units>mbar</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>dewPoint</EFDB_Name>
-      <Description>Dew Point.</Description>
-      <IDL_Type>float</IDL_Type>
-      <Units>deg_C</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>location</EFDB_Name>
-      <Description>The location of the sensor.</Description>
-      <IDL_Type>string</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-  </SALTelemetry>
-  <SALTelemetry>
     <EFDB_Topic>ESS_accelerometer</EFDB_Topic>
     <Description>Raw data from a 3-axis accelerometer.</Description>
     <item>
@@ -403,6 +435,13 @@
       <IDL_Type>float</IDL_Type>
       <Units>m/s2</Units>
       <Count>200</Count>
+    </item>
+    <item>
+      <EFDB_Name>status</EFDB_Name>
+      <Description>Device status. The details depend on the device, but 0 always means that no problems have been detected.</Description>
+      <IDL_Type>short</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>location</EFDB_Name>
@@ -477,6 +516,13 @@
       <IDL_Type>float</IDL_Type>
       <Units>m2 / (Hz2 s4)</Units>
       <Count>200</Count>
+    </item>
+    <item>
+      <EFDB_Name>status</EFDB_Name>
+      <Description>Device status. The details depend on the device, but 0 always means that no problems have been detected.</Description>
+      <IDL_Type>short</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>location</EFDB_Name>
