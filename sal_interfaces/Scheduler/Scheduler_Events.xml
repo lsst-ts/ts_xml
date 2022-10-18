@@ -1177,4 +1177,110 @@
       <Count>1000</Count>
     </item>
   </SALEvent>
+  <SALEvent>
+    <Subsystem>Scheduler</Subsystem>
+    <EFDB_Topic>Scheduler_logevent_observingMode</EFDB_Topic>
+    <Description>Information about the current observing mode.</Description>
+    <item>
+      <EFDB_Name>modeId</EFDB_Name>
+      <Description>Current observing mode id.</Description>
+      <IDL_Type>long</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>mode</EFDB_Name>
+      <Description>Current observing mode as a human-readable string.</Description>
+      <IDL_Type>string</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>typeValue</EFDB_Name>
+      <Description>Id of the type of observation.</Description>
+      <IDL_Type>long</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>type</EFDB_Name>
+      <Description>Type of observation as a human-readable string.</Description>
+      <IDL_Type>string</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+  </SALEvent>
+  <SALEvent>
+    <Subsystem>Scheduler</Subsystem>
+    <EFDB_Topic>Scheduler_logevent_blockStatus</EFDB_Topic>
+    <Description>Status of an individual block.</Description>
+    <item>
+      <EFDB_Name>id</EFDB_Name>
+      <Description>Id of the block (e.g. OBS-123).</Description>
+      <IDL_Type>string</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>statusId</EFDB_Name>
+      <Description>Id of the status as an enumeration.</Description>
+      <IDL_Type>long</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>status</EFDB_Name>
+      <Description>Status of the block, as a human readable string.</Description>
+      <IDL_Type>string</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>executionsCompleted</EFDB_Name>
+      <Description>Number of successful executions.</Description>
+      <IDL_Type>long</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>executionsTotal</EFDB_Name>
+      <Description>Total number of executions to be completed.</Description>
+      <IDL_Type>long</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>hash</EFDB_Name>
+      <Description>A unique identifier for this block.</Description>
+      <IDL_Type>string</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>definition</EFDB_Name>
+      <Description>The full block definition.</Description>
+      <IDL_Type>string</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+  </SALEvent>
+  <SALEvent>
+    <Subsystem>Scheduler</Subsystem>
+    <EFDB_Topic>Scheduler_logevent_blockInventory</EFDB_Topic>
+    <Description>Inventory of all the available blocks.</Description>
+    <item>
+      <EFDB_Name>ids</EFDB_Name>
+      <Description>Comma-separated list of block ids.</Description>
+      <IDL_Type>string</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>status</EFDB_Name>
+      <Description>Comma-separated list of status for each individual block.</Description>
+      <IDL_Type>string</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+  </SALEvent>
 </SALEventSet>
