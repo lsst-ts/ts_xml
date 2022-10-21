@@ -1,21 +1,59 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-stylesheet type="text/xsl" href="http://lsst-sal.tuc.noao.edu/schema/SALEventSet.xsl"?>
 <SALEventSet xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://lsst-sal.tuc.noao.edu/schema/SALEventSet.xsd">
+  <Enumeration>
+    SummaryStates_DisabledState=1,
+    SummaryStates_EnabledState=2,
+    SummaryStates_FaultState=3,
+    SummaryStates_OfflineState=4,
+    SummaryStates_StandbyState=5
+  </Enumeration>
+  <Enumeration>
+     TimeSynchronization_NotStarted=0,
+     TimeSynchronization_ResponderWaiting=1,
+     TimeSynchronization_ResponderSynced=2,
+     TimeSynchronization_ControllerReady=3,
+     TimeSynchronization_ControllerRunning=4,
+     TimeSynchronization_SynchronizationFailed=5
+  </Enumeration>
   <SALEvent>
     <Subsystem>MTVMS</Subsystem>
     <EFDB_Topic>MTVMS_logevent_acquisitionRate</EFDB_Topic>
+    <Description>Current acquistion rate.</Description>
     <item>
-      <EFDB_Name>timestamp</EFDB_Name>
-      <Description>Timestamp for when topic was generated.</Description>
-      <IDL_Type>double</IDL_Type>
+      <EFDB_Name>rateInHz</EFDB_Name>
+      <Description>Rate of acquisition.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>Hz</Units>
+      <Count>1</Count>
+    </item>
+  </SALEvent>
+  <SALEvent>
+    <Subsystem>MTVMS</Subsystem>
+    <EFDB_Topic>MTVMS_logevent_timeSynchronization</EFDB_Topic>
+    <Description>Time synchronization status and base offset value.</Description>
+    <item>
+      <EFDB_Name>state</EFDB_Name>
+      <Description>
+          Time synchronization state. Different strategies are employed for
+          controller (the CSC running on cRIO sending time synchronization
+          pulses) and receivers (the CSC running on cRIOs receiving time
+          synchronization pulses). Please consult ts_vmsfpga README for state
+          transitions.
+      </Description>
+      <IDL_Type>short</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
     </item>
     <item>
-      <EFDB_Name>rateInHz</EFDB_Name>
-      <Description>Rate of acquisition.</Description>
+      <EFDB_Name>baseClockOffset</EFDB_Name>
+      <Description>
+          Current offset between base clocks and TAI clocks. Published first by
+          the controller, receivers just sends out what was received from the
+          controller.
+      </Description>
       <IDL_Type>double</IDL_Type>
-      <Units>Hz</Units>
+      <Units>second</Units>
       <Count>1</Count>
     </item>
   </SALEvent>
