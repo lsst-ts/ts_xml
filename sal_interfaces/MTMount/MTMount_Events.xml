@@ -1126,17 +1126,22 @@
   <SALEvent>
     <Subsystem>MTMount</Subsystem>
     <EFDB_Topic>MTMount_logevent_connected</EFDB_Topic>
-    <Description>State of TCP/IP connection to the low level controller (the "operations manager").</Description>
+    <Description>State of CSC's TCP/IP connection to the low level controller (the "operations manager").</Description>
     <item>
-      <EFDB_Name>command</EFDB_Name>
-      <Description>Is the command (client) socket connected (true=yes, false=no)?</Description>
+      <EFDB_Name>connected</EFDB_Name>
+      <Description>Is the socket connected (true=yes, false=no)?</Description>
       <IDL_Type>boolean</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
     </item>
+  </SALEvent>
+  <SALEvent>
+    <Subsystem>MTMount</Subsystem>
+    <EFDB_Topic>MTMount_logevent_telemetryConnected</EFDB_Topic>
+    <Description>State of telemetry client's TCP/IP connection to the low level telemetry server.</Description>
     <item>
-      <EFDB_Name>replies</EFDB_Name>
-      <Description>Is the replies (server) socket connected (true=yes, false=no)?</Description>
+      <EFDB_Name>connected</EFDB_Name>
+      <Description>Is the socket connected (true=yes, false=no)?</Description>
       <IDL_Type>boolean</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>

@@ -4,6 +4,7 @@
   <Enumeration>SummaryStates_DisabledState,SummaryStates_EnabledState,SummaryStates_FaultState,SummaryStates_OfflineState,SummaryStates_StandbyState</Enumeration>
   <Enumeration>DetailedStates_DisabledState,DetailedStates_FaultState,DetailedStates_OfflineState,DetailedStates_StandbyState,DetailedStates_ParkedState,DetailedStates_RaisingState,DetailedStates_ActiveState,DetailedStates_LoweringState,DetailedStates_ParkedEngineeringState,DetailedStates_RaisingEngineeringState,DetailedStates_ActiveEngineeringState,DetailedStates_LoweringEngineeringState,DetailedStates_LoweringFaultState,DetailedStates_ProfileHardpointCorrectionState</Enumeration>
   <Enumeration>BumpTest_NotTested,BumpTest_TestingPositive,BumpTest_TestingPositiveWait,BumpTest_TestingNegative,BumpTest_TestingNegativeWait,BumpTest_Passed,BumpTest_Failed</Enumeration>
+  <Enumeration>HardpointTest_NotTested,HardpointTest_MovingNegative,HardpointTest_TestingPositive,HardpointTest_TestingNegative,HardpointTest_MovingReference,HardpointTest_Passed,HardpointTest_Failed</Enumeration>
   <Enumeration>
     HardpointActuatorMotionState_Standby=0,
     HardpointActuatorMotionState_Chasing=1,
@@ -1116,27 +1117,6 @@
       <Count>156</Count>
     </item>
     <item>
-      <EFDB_Name>aberrationNetForceWarning</EFDB_Name>
-      <Description>Force setpoint warning aberration Net force warning</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>anyAberrationForceWarning</EFDB_Name>
-      <Description>Force setpoint warning any Aberration force warning</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>aberrationForceWarning</EFDB_Name>
-      <Description>Force setpoint warning aberration force warning</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>156</Count>
-    </item>
-    <item>
       <EFDB_Name>anyOffsetForceWarning</EFDB_Name>
       <Description>Force setpoint warning any Offset force warning</Description>
       <IDL_Type>boolean</IDL_Type>
@@ -1255,13 +1235,6 @@
     <item>
       <EFDB_Name>activeOpticForcesApplied</EFDB_Name>
       <Description>Are the forces due to active optics applied?</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>aberrationForcesApplied</EFDB_Name>
-      <Description>Are the forces due to aberration applied?</Description>
       <IDL_Type>boolean</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
@@ -2499,126 +2472,6 @@
       <Description>Applied active optic forces my</Description>
       <IDL_Type>float</IDL_Type>
       <Units>N m</Units>
-      <Count>1</Count>
-    </item>
-  </SALEvent>
-  <SALEvent>
-    <Subsystem>MTM1M3</Subsystem>
-    <EFDB_Topic>MTM1M3_logevent_appliedAberrationForces</EFDB_Topic>
-    <item>
-      <EFDB_Name>timestamp</EFDB_Name>
-      <Description>Applied abberation forces timestamp</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>s</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>zForces</EFDB_Name>
-      <Description>Forces in Z axis.</Description>
-      <IDL_Type>float</IDL_Type>
-      <Units>N</Units>
-      <Count>156</Count>
-    </item>
-    <item>
-      <EFDB_Name>fz</EFDB_Name>
-      <Description>Applied abberation forces fz</Description>
-      <IDL_Type>float</IDL_Type>
-      <Units>N</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>mx</EFDB_Name>
-      <Description>Applied abberation forces mx</Description>
-      <IDL_Type>float</IDL_Type>
-      <Units>N m</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>my</EFDB_Name>
-      <Description>Applied abberation forces my</Description>
-      <IDL_Type>float</IDL_Type>
-      <Units>N m</Units>
-      <Count>1</Count>
-    </item>
-  </SALEvent>
-  <SALEvent>
-    <Subsystem>MTM1M3</Subsystem>
-    <EFDB_Topic>MTM1M3_logevent_appliedAzimuthForces</EFDB_Topic>
-    <item>
-      <EFDB_Name>timestamp</EFDB_Name>
-      <Description>Applied azimuth forces timestamp</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>s</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>xForces</EFDB_Name>
-      <Description>Forces in x-axis.</Description>
-      <IDL_Type>float</IDL_Type>
-      <Units>N</Units>
-      <Count>12</Count>
-    </item>
-    <item>
-      <EFDB_Name>yForces</EFDB_Name>
-      <Description>Forces in y-axis.</Description>
-      <IDL_Type>float</IDL_Type>
-      <Units>N</Units>
-      <Count>100</Count>
-    </item>
-    <item>
-      <EFDB_Name>zForces</EFDB_Name>
-      <Description>Forces in z-axis.</Description>
-      <IDL_Type>float</IDL_Type>
-      <Units>N</Units>
-      <Count>156</Count>
-    </item>
-    <item>
-      <EFDB_Name>fx</EFDB_Name>
-      <Description>Applied azimuth forces fx</Description>
-      <IDL_Type>float</IDL_Type>
-      <Units>N</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>fy</EFDB_Name>
-      <Description>Applied azimuth forces fy</Description>
-      <IDL_Type>float</IDL_Type>
-      <Units>N</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>fz</EFDB_Name>
-      <Description>Applied azimuth forces fz</Description>
-      <IDL_Type>float</IDL_Type>
-      <Units>N</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>mx</EFDB_Name>
-      <Description>Applied azimuth forces mx</Description>
-      <IDL_Type>float</IDL_Type>
-      <Units>N m</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>my</EFDB_Name>
-      <Description>Applied azimuth forces my</Description>
-      <IDL_Type>float</IDL_Type>
-      <Units>N m</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>mz</EFDB_Name>
-      <Description>Applied azimuth forces mz</Description>
-      <IDL_Type>float</IDL_Type>
-      <Units>N m</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>forceMagnitude</EFDB_Name>
-      <Description>Total force magnitude.</Description>
-      <IDL_Type>float</IDL_Type>
-      <Units>N</Units>
       <Count>1</Count>
     </item>
   </SALEvent>
@@ -4317,128 +4170,6 @@
   </SALEvent>
   <SALEvent>
     <Subsystem>MTM1M3</Subsystem>
-    <EFDB_Topic>MTM1M3_logevent_preclippedAberrationForces</EFDB_Topic>
-    <Description>Send when abberation forces needs to be clipped. Contains pre-clipped (calculated) value.</Description>
-    <item>
-      <EFDB_Name>timestamp</EFDB_Name>
-      <Description>Pre-clipped aberration forces timestamp</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>s</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>zForces</EFDB_Name>
-      <Description>Pre-clipped Aberration Forces z Forces</Description>
-      <IDL_Type>float</IDL_Type>
-      <Units>N</Units>
-      <Count>156</Count>
-    </item>
-    <item>
-      <EFDB_Name>fz</EFDB_Name>
-      <Description>Pre-clipped aberration forces fz</Description>
-      <IDL_Type>float</IDL_Type>
-      <Units>N</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>mx</EFDB_Name>
-      <Description>Pre-clipped aberration forces mx</Description>
-      <IDL_Type>float</IDL_Type>
-      <Units>N m</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>my</EFDB_Name>
-      <Description>Pre-clipped aberration forces my</Description>
-      <IDL_Type>float</IDL_Type>
-      <Units>N m</Units>
-      <Count>1</Count>
-    </item>
-  </SALEvent>
-  <SALEvent>
-    <Subsystem>MTM1M3</Subsystem>
-    <EFDB_Topic>MTM1M3_logevent_preclippedBalanceForces</EFDB_Topic>
-    <Description>Send when balance forces needs to be clipped. Contains pre-clipped (calculated) value.</Description>
-    <item>
-      <EFDB_Name>timestamp</EFDB_Name>
-      <Description>Pre-clipped balance forces timestamp</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>s</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>xForces</EFDB_Name>
-      <Description>Pre-clipped Balance Forces x Forces</Description>
-      <IDL_Type>float</IDL_Type>
-      <Units>N</Units>
-      <Count>12</Count>
-    </item>
-    <item>
-      <EFDB_Name>yForces</EFDB_Name>
-      <Description>Pre-clipped Balance Forces y Forces</Description>
-      <IDL_Type>float</IDL_Type>
-      <Units>N</Units>
-      <Count>100</Count>
-    </item>
-    <item>
-      <EFDB_Name>zForces</EFDB_Name>
-      <Description>Pre-clipped Balance forces z Forces</Description>
-      <IDL_Type>float</IDL_Type>
-      <Units>N</Units>
-      <Count>156</Count>
-    </item>
-    <item>
-      <EFDB_Name>fx</EFDB_Name>
-      <Description>Pre-clipped balance forces fx</Description>
-      <IDL_Type>float</IDL_Type>
-      <Units>N</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>fy</EFDB_Name>
-      <Description>Pre-clipped balance forces fy</Description>
-      <IDL_Type>float</IDL_Type>
-      <Units>N</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>fz</EFDB_Name>
-      <Description>Pre-clipped balance forces fz</Description>
-      <IDL_Type>float</IDL_Type>
-      <Units>N</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>mx</EFDB_Name>
-      <Description>Pre-clipped balance forces mx</Description>
-      <IDL_Type>float</IDL_Type>
-      <Units>N m</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>my</EFDB_Name>
-      <Description>Pre-clipped balance forces my</Description>
-      <IDL_Type>float</IDL_Type>
-      <Units>N m</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>mz</EFDB_Name>
-      <Description>Pre-clipped balance forces mz</Description>
-      <IDL_Type>float</IDL_Type>
-      <Units>N m</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>forceMagnitude</EFDB_Name>
-      <Description>Pre-clipped Balance Forces force Magnitude</Description>
-      <IDL_Type>float</IDL_Type>
-      <Units>N</Units>
-      <Count>1</Count>
-    </item>
-  </SALEvent>
-  <SALEvent>
-    <Subsystem>MTM1M3</Subsystem>
     <EFDB_Topic>MTM1M3_logevent_preclippedVelocityForces</EFDB_Topic>
     <Description>Send when velocity forces needs to be clipped. Contains pre-clipped (calculated) value.</Description>
     <item>
@@ -4596,6 +4327,88 @@
     <item>
       <EFDB_Name>forceMagnitude</EFDB_Name>
       <Description>Pre-clipped Acceleration Forces force Magnitude</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>N</Units>
+      <Count>1</Count>
+    </item>
+  </SALEvent>
+  <SALEvent>
+    <Subsystem>MTM1M3</Subsystem>
+    <EFDB_Topic>MTM1M3_logevent_preclippedBalanceForces</EFDB_Topic>
+    <Description>Send when balance forces needs to be clipped. Contains pre-clipped (calculated) value.</Description>
+    <item>
+      <EFDB_Name>timestamp</EFDB_Name>
+      <Description>Pre-clipped balance forces timestamp</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>s</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>xForces</EFDB_Name>
+      <Description>Pre-clipped Balance Forces x Forces</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>N</Units>
+      <Count>12</Count>
+    </item>
+    <item>
+      <EFDB_Name>yForces</EFDB_Name>
+      <Description>Pre-clipped Balance Forces y Forces</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>N</Units>
+      <Count>100</Count>
+    </item>
+    <item>
+      <EFDB_Name>zForces</EFDB_Name>
+      <Description>Pre-clipped Balance forces z Forces</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>N</Units>
+      <Count>156</Count>
+    </item>
+    <item>
+      <EFDB_Name>fx</EFDB_Name>
+      <Description>Pre-clipped balance forces fx</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>N</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>fy</EFDB_Name>
+      <Description>Pre-clipped balance forces fy</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>N</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>fz</EFDB_Name>
+      <Description>Pre-clipped balance forces fz</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>N</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>mx</EFDB_Name>
+      <Description>Pre-clipped balance forces mx</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>N m</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>my</EFDB_Name>
+      <Description>Pre-clipped balance forces my</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>N m</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>mz</EFDB_Name>
+      <Description>Pre-clipped balance forces mz</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>N m</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>forceMagnitude</EFDB_Name>
+      <Description>Pre-clipped Balance Forces force Magnitude</Description>
       <IDL_Type>float</IDL_Type>
       <Units>N</Units>
       <Count>1</Count>
@@ -4767,492 +4580,6 @@
   </SALEvent>
   <SALEvent>
     <Subsystem>MTM1M3</Subsystem>
-    <EFDB_Topic>MTM1M3_logevent_appliedElevationForces</EFDB_Topic>
-    <item>
-      <EFDB_Name>timestamp</EFDB_Name>
-      <Description>Applied elevation forces timestamp</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>s</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>xForces</EFDB_Name>
-      <Description>Forces in x axis.</Description>
-      <IDL_Type>float</IDL_Type>
-      <Units>N</Units>
-      <Count>12</Count>
-    </item>
-    <item>
-      <EFDB_Name>yForces</EFDB_Name>
-      <Description>Forces in Y axis.</Description>
-      <IDL_Type>float</IDL_Type>
-      <Units>N</Units>
-      <Count>100</Count>
-    </item>
-    <item>
-      <EFDB_Name>zForces</EFDB_Name>
-      <Description>Forces in Z axis.</Description>
-      <IDL_Type>float</IDL_Type>
-      <Units>N</Units>
-      <Count>156</Count>
-    </item>
-    <item>
-      <EFDB_Name>fx</EFDB_Name>
-      <Description>Applied elevation forces fx</Description>
-      <IDL_Type>float</IDL_Type>
-      <Units>N</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>fy</EFDB_Name>
-      <Description>Applied elevation forces fy</Description>
-      <IDL_Type>float</IDL_Type>
-      <Units>N</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>fz</EFDB_Name>
-      <Description>Applied elevation forces fz</Description>
-      <IDL_Type>float</IDL_Type>
-      <Units>N</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>mx</EFDB_Name>
-      <Description>Applied elevation forces mx</Description>
-      <IDL_Type>float</IDL_Type>
-      <Units>N m</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>my</EFDB_Name>
-      <Description>Applied elevation forces my</Description>
-      <IDL_Type>float</IDL_Type>
-      <Units>N m</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>mz</EFDB_Name>
-      <Description>Applied elevation forces mz</Description>
-      <IDL_Type>float</IDL_Type>
-      <Units>N m</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>forceMagnitude</EFDB_Name>
-      <Description>Total force magnitude.</Description>
-      <IDL_Type>float</IDL_Type>
-      <Units>N</Units>
-      <Count>1</Count>
-    </item>
-  </SALEvent>
-  <SALEvent>
-    <Subsystem>MTM1M3</Subsystem>
-    <EFDB_Topic>MTM1M3_logevent_appliedAccelerationForces</EFDB_Topic>
-    <item>
-      <EFDB_Name>timestamp</EFDB_Name>
-      <Description>Applied acceleration forces timestamp</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>s</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>xForces</EFDB_Name>
-      <Description>Forces in x axis.</Description>
-      <IDL_Type>float</IDL_Type>
-      <Units>N</Units>
-      <Count>12</Count>
-    </item>
-    <item>
-      <EFDB_Name>yForces</EFDB_Name>
-      <Description>Forces in Y axis.</Description>
-      <IDL_Type>float</IDL_Type>
-      <Units>N</Units>
-      <Count>100</Count>
-    </item>
-    <item>
-      <EFDB_Name>zForces</EFDB_Name>
-      <Description>Forces in Z axis.</Description>
-      <IDL_Type>float</IDL_Type>
-      <Units>N</Units>
-      <Count>156</Count>
-    </item>
-    <item>
-      <EFDB_Name>fx</EFDB_Name>
-      <Description>Applied acceleration forces fx</Description>
-      <IDL_Type>float</IDL_Type>
-      <Units>N</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>fy</EFDB_Name>
-      <Description>Applied acceleration forces fy</Description>
-      <IDL_Type>float</IDL_Type>
-      <Units>N</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>fz</EFDB_Name>
-      <Description>Applied acceleration forces fz</Description>
-      <IDL_Type>float</IDL_Type>
-      <Units>N</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>mx</EFDB_Name>
-      <Description>Applied acceleration forces mx</Description>
-      <IDL_Type>float</IDL_Type>
-      <Units>N m</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>my</EFDB_Name>
-      <Description>Applied acceleration forces my</Description>
-      <IDL_Type>float</IDL_Type>
-      <Units>N m</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>mz</EFDB_Name>
-      <Description>Applied acceleration forces mz</Description>
-      <IDL_Type>float</IDL_Type>
-      <Units>N m</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>forceMagnitude</EFDB_Name>
-      <Description>Total force magnitude.</Description>
-      <IDL_Type>float</IDL_Type>
-      <Units>N</Units>
-      <Count>1</Count>
-    </item>
-  </SALEvent>
-  <SALEvent>
-    <Subsystem>MTM1M3</Subsystem>
-    <EFDB_Topic>MTM1M3_logevent_appliedThermalForces</EFDB_Topic>
-    <item>
-      <EFDB_Name>timestamp</EFDB_Name>
-      <Description>Applied thermal forces timestamp</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>s</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>xForces</EFDB_Name>
-      <Description>Forces in x axis.</Description>
-      <IDL_Type>float</IDL_Type>
-      <Units>N</Units>
-      <Count>12</Count>
-    </item>
-    <item>
-      <EFDB_Name>yForces</EFDB_Name>
-      <Description>Forces in y axis.</Description>
-      <IDL_Type>float</IDL_Type>
-      <Units>N</Units>
-      <Count>100</Count>
-    </item>
-    <item>
-      <EFDB_Name>zForces</EFDB_Name>
-      <Description>Forces in z axis.</Description>
-      <IDL_Type>float</IDL_Type>
-      <Units>N</Units>
-      <Count>156</Count>
-    </item>
-    <item>
-      <EFDB_Name>fx</EFDB_Name>
-      <Description>Applied thermal forces fx</Description>
-      <IDL_Type>float</IDL_Type>
-      <Units>N</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>fy</EFDB_Name>
-      <Description>Applied thermal forces fy</Description>
-      <IDL_Type>float</IDL_Type>
-      <Units>N</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>fz</EFDB_Name>
-      <Description>Applied thermal forces fz</Description>
-      <IDL_Type>float</IDL_Type>
-      <Units>N</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>mx</EFDB_Name>
-      <Description>Applied thermal forces mx</Description>
-      <IDL_Type>float</IDL_Type>
-      <Units>N m</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>my</EFDB_Name>
-      <Description>Applied thermal forces my</Description>
-      <IDL_Type>float</IDL_Type>
-      <Units>N m</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>mz</EFDB_Name>
-      <Description>Applied thermal forces mz</Description>
-      <IDL_Type>float</IDL_Type>
-      <Units>N m</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>forceMagnitude</EFDB_Name>
-      <Description>Total force magnitude.</Description>
-      <IDL_Type>float</IDL_Type>
-      <Units>N</Units>
-      <Count>1</Count>
-    </item>
-  </SALEvent>
-  <SALEvent>
-    <Subsystem>MTM1M3</Subsystem>
-    <EFDB_Topic>MTM1M3_logevent_appliedVelocityForces</EFDB_Topic>
-    <item>
-      <EFDB_Name>timestamp</EFDB_Name>
-      <Description>Applied velocity forces timestamp</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>s</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>xForces</EFDB_Name>
-      <Description>Forces in x axis.</Description>
-      <IDL_Type>float</IDL_Type>
-      <Units>N</Units>
-      <Count>12</Count>
-    </item>
-    <item>
-      <EFDB_Name>yForces</EFDB_Name>
-      <Description>Forces in y axis.</Description>
-      <IDL_Type>float</IDL_Type>
-      <Units>N</Units>
-      <Count>100</Count>
-    </item>
-    <item>
-      <EFDB_Name>zForces</EFDB_Name>
-      <Description>Forces in z axis.</Description>
-      <IDL_Type>float</IDL_Type>
-      <Units>N</Units>
-      <Count>156</Count>
-    </item>
-    <item>
-      <EFDB_Name>fx</EFDB_Name>
-      <Description>Applied velocity forces fx</Description>
-      <IDL_Type>float</IDL_Type>
-      <Units>N</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>fy</EFDB_Name>
-      <Description>Applied velocity forces fy</Description>
-      <IDL_Type>float</IDL_Type>
-      <Units>N</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>fz</EFDB_Name>
-      <Description>Applied velocity forces fz</Description>
-      <IDL_Type>float</IDL_Type>
-      <Units>N</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>mx</EFDB_Name>
-      <Description>Applied velocity forces mx</Description>
-      <IDL_Type>float</IDL_Type>
-      <Units>N m</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>my</EFDB_Name>
-      <Description>Applied velocity forces my</Description>
-      <IDL_Type>float</IDL_Type>
-      <Units>N m</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>mz</EFDB_Name>
-      <Description>Applied velocity forces mz</Description>
-      <IDL_Type>float</IDL_Type>
-      <Units>N m</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>forceMagnitude</EFDB_Name>
-      <Description>Total force magnitude.</Description>
-      <IDL_Type>float</IDL_Type>
-      <Units>N</Units>
-      <Count>1</Count>
-    </item>
-  </SALEvent>
-  <SALEvent>
-    <Subsystem>MTM1M3</Subsystem>
-    <EFDB_Topic>MTM1M3_logevent_appliedBalanceForces</EFDB_Topic>
-    <item>
-      <EFDB_Name>timestamp</EFDB_Name>
-      <Description>Applied balance forces timestamp</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>s</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>xForces</EFDB_Name>
-      <Description>Force in x axis.</Description>
-      <IDL_Type>float</IDL_Type>
-      <Units>N</Units>
-      <Count>12</Count>
-    </item>
-    <item>
-      <EFDB_Name>yForces</EFDB_Name>
-      <Description>Force in y axis.</Description>
-      <IDL_Type>float</IDL_Type>
-      <Units>N</Units>
-      <Count>100</Count>
-    </item>
-    <item>
-      <EFDB_Name>zForces</EFDB_Name>
-      <Description>Force in z axis.</Description>
-      <IDL_Type>float</IDL_Type>
-      <Units>N</Units>
-      <Count>156</Count>
-    </item>
-    <item>
-      <EFDB_Name>fx</EFDB_Name>
-      <Description>Applied balance forces fx</Description>
-      <IDL_Type>float</IDL_Type>
-      <Units>N</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>fy</EFDB_Name>
-      <Description>Applied balance forces fy</Description>
-      <IDL_Type>float</IDL_Type>
-      <Units>N</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>fz</EFDB_Name>
-      <Description>Applied balance forces fz</Description>
-      <IDL_Type>float</IDL_Type>
-      <Units>N</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>mx</EFDB_Name>
-      <Description>Applied balance forces mx</Description>
-      <IDL_Type>float</IDL_Type>
-      <Units>N m</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>my</EFDB_Name>
-      <Description>Applied balance forces my</Description>
-      <IDL_Type>float</IDL_Type>
-      <Units>N m</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>mz</EFDB_Name>
-      <Description>Applied balance forces mz</Description>
-      <IDL_Type>float</IDL_Type>
-      <Units>N m</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>forceMagnitude</EFDB_Name>
-      <Description>Total force magnitude.</Description>
-      <IDL_Type>float</IDL_Type>
-      <Units>N</Units>
-      <Count>1</Count>
-    </item>
-  </SALEvent>
-  <SALEvent>
-    <Subsystem>MTM1M3</Subsystem>
-    <EFDB_Topic>MTM1M3_logevent_appliedForces</EFDB_Topic>
-    <item>
-      <EFDB_Name>timestamp</EFDB_Name>
-      <Description>Applied forces timestamp</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>s</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>xForces</EFDB_Name>
-      <Description>Forces in x axis.</Description>
-      <IDL_Type>float</IDL_Type>
-      <Units>N</Units>
-      <Count>12</Count>
-    </item>
-    <item>
-      <EFDB_Name>yForces</EFDB_Name>
-      <Description>Forces in y axis.</Description>
-      <IDL_Type>float</IDL_Type>
-      <Units>N</Units>
-      <Count>100</Count>
-    </item>
-    <item>
-      <EFDB_Name>zForces</EFDB_Name>
-      <Description>Forces in z axis.</Description>
-      <IDL_Type>float</IDL_Type>
-      <Units>N</Units>
-      <Count>156</Count>
-    </item>
-    <item>
-      <EFDB_Name>fx</EFDB_Name>
-      <Description>Applied forces fx</Description>
-      <IDL_Type>float</IDL_Type>
-      <Units>N</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>fy</EFDB_Name>
-      <Description>Applied forces fy</Description>
-      <IDL_Type>float</IDL_Type>
-      <Units>N</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>fz</EFDB_Name>
-      <Description>Applied forces fz</Description>
-      <IDL_Type>float</IDL_Type>
-      <Units>N</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>mx</EFDB_Name>
-      <Description>Applied forces mx</Description>
-      <IDL_Type>float</IDL_Type>
-      <Units>N m</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>my</EFDB_Name>
-      <Description>Applied forces my</Description>
-      <IDL_Type>float</IDL_Type>
-      <Units>N m</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>mz</EFDB_Name>
-      <Description>Applied forces mz</Description>
-      <IDL_Type>float</IDL_Type>
-      <Units>N m</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>forceMagnitude</EFDB_Name>
-      <Description>Total force magnitude.</Description>
-      <IDL_Type>float</IDL_Type>
-      <Units>N</Units>
-      <Count>1</Count>
-    </item>
-  </SALEvent>
-  <SALEvent>
-    <Subsystem>MTM1M3</Subsystem>
     <EFDB_Topic>MTM1M3_logevent_preclippedCylinderForces</EFDB_Topic>
     <Description>Send when cylinder forces needs to be clipped. Contains pre-clipped (calculated) value.</Description>
     <item>
@@ -5272,31 +4599,6 @@
     <item>
       <EFDB_Name>primaryCylinderForces</EFDB_Name>
       <Description>Pre-clipped primary Cylinder Forces</Description>
-      <IDL_Type>long</IDL_Type>
-      <Units>N</Units>
-      <Count>156</Count>
-    </item>
-  </SALEvent>
-  <SALEvent>
-    <Subsystem>MTM1M3</Subsystem>
-    <EFDB_Topic>MTM1M3_logevent_appliedCylinderForces</EFDB_Topic>
-    <item>
-      <EFDB_Name>timestamp</EFDB_Name>
-      <Description>Applied Cylinder Forces timestamp</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>s</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>secondaryCylinderForces</EFDB_Name>
-      <Description>Secondary cylinder forces.</Description>
-      <IDL_Type>long</IDL_Type>
-      <Units>N</Units>
-      <Count>112</Count>
-    </item>
-    <item>
-      <EFDB_Name>primaryCylinderForces</EFDB_Name>
-      <Description>Primary cylinder forces.</Description>
       <IDL_Type>long</IDL_Type>
       <Units>N</Units>
       <Count>156</Count>
@@ -5351,6 +4653,18 @@
   </SALEvent>
   <SALEvent>
     <Subsystem>MTM1M3</Subsystem>
+    <EFDB_Topic>MTM1M3_logevent_hardpointTestStatus</EFDB_Topic>
+    <Description>Progress of hardpoint tests.</Description>
+    <item>
+      <EFDB_Name>testState</EFDB_Name>
+      <Description>Testing status. Enumerated in HardpointTest_*.</Description>
+      <IDL_Type>short</IDL_Type>
+      <Units>unitless</Units>
+      <Count>6</Count>
+    </item>
+  </SALEvent>
+  <SALEvent>
+    <Subsystem>MTM1M3</Subsystem>
     <EFDB_Topic>MTM1M3_logevent_enabledForceActuators</EFDB_Topic>
     <Description>Enabled Force Actuators.</Description>
     <item>
@@ -5372,13 +4686,6 @@
     <Subsystem>MTM1M3</Subsystem>
     <EFDB_Topic>MTM1M3_logevent_forceActuatorSettings</EFDB_Topic>
     <Description>Force actuator settings.</Description>
-    <item>
-      <EFDB_Name>netAberrationForceTolerance</EFDB_Name>
-      <Description>Aberration forces and moments shall fall inside this tolerance range (+- the value). Prevents excessive aberration forces to reach M1M3.</Description>
-      <IDL_Type>float</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
     <item>
       <EFDB_Name>netActiveOpticForceTolerance</EFDB_Name>
       <Description>Active optic forces and moments shall fall inside this tolerance range (+- the value). Prevents active optics CSC to send excessive offorces.</Description>

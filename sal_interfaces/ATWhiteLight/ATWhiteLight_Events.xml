@@ -2,10 +2,10 @@
 <?xml-stylesheet type="text/xsl" href="http://lsst-sal.tuc.noao.edu/schema/SALEventSet.xsl"?>
 <SALEventSet xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://lsst-sal.tuc.noao.edu/schema/SALEventSet.xsd">
   <Enumeration>
-    ChillerL1Alarms_AMBIENT_TEMP_SENSOR = 0x01,
-    ChillerL1Alarms_HIGH_CONTROL_TEMP = 0x02,
-    ChillerL1Alarms_PT7_HIGH_TEMP = 0x04,
-    ChillerL1Alarms_LOW_CONTROL_TEMP = 0x08,
+    ChillerL1Alarms_AMBIENT_TEMP_SENSOR = 0x1,
+    ChillerL1Alarms_HIGH_CONTROL_TEMP = 0x2,
+    ChillerL1Alarms_PT7_HIGH_TEMP = 0x4,
+    ChillerL1Alarms_LOW_CONTROL_TEMP = 0x8,
     ChillerL1Alarms_SUPPLY_TEMP_SENSOR = 0x10,
     ChillerL1Alarms_EXTERNAL_RTD_SENSOR = 0x20,
     ChillerL1Alarms_RETURN_TEMP_SENSOR = 0x40,
@@ -35,19 +35,17 @@
     ChillerL21Alarms_ADC_RESET_ERROR = 0x1000,
     ChillerL21Alarms_ADC_CALIBRATION_ERROR = 0x2000,
     ChillerL21Alarms_ADC_CONVERSION_ERROR = 0x4000,
-
     ChillerL21Alarms_IO_EXPENDER_ACKNOWLEDGE_ERROR = 0x10000,
     ChillerL21Alarms_PSA_EXPENDER_ACKNOWLEDGE_ERROR = 0x20000,
-    ChillerL21Alarms_RTC_ACKNOWLEDGE_ERROR = 40000,
-
+    ChillerL21Alarms_RTC_ACKNOWLEDGE_ERROR = 0x40000,
     ChillerL21Alarms_I2C_SCL_LOW_ERROR = 0x100000,
     ChillerL21Alarms_I2C_SDA_LOW_ERROR = 0x200000,
     ChillerL21Alarms_EEPROM_1_ACKNOWLEDGE = 0x400000,
     ChillerL21Alarms_EEPROM_2_ACKNOWLEDGE = 0x800000,
-    ChillerL21Alarms_EEPROM_1_READ_ERROR = 0x1000000,
-    ChillerL21Alarms_EEPROM_1_WRITE_ERROR = 0x2000000,
-    ChillerL21Alarms_EEPROM_2_READ_ERROR = 0x4000000,
-    ChillerL21Alarms_EEPROM_2_WRITE_ERROR = 0x8000000
+    ChillerL21Alarms_EEPROM_1_READ_ERROR = 0x100000000,
+    ChillerL21Alarms_EEPROM_1_WRITE_ERROR = 0x200000000,
+    ChillerL21Alarms_EEPROM_2_READ_ERROR = 0x400000000,
+    ChillerL21Alarms_EEPROM_2_WRITE_ERROR = 0x800000000
   </Enumeration>
   <Enumeration>
     ChillerL22Alarms_EXTERNAL_RTD_SENSOR_OPEN = 0x1,
@@ -88,10 +86,9 @@
     ChillerControllerState_Test = 4
   </Enumeration>
   <Enumeration>
-    ChillerWarnings_LOW_COOLANT_FLOW = 0x01,
-    ChillerWarnings_COOLANT_FLUID_LEVEL = 0x02,
-    ChillerWarnings_SWITCH_TO_SUPPLY_TEMP_AS_CONTROL_TEMP = 0x04,
-
+    ChillerWarnings_LOW_COOLANT_FLOW = 0x1,
+    ChillerWarnings_COOLANT_FLUID_LEVEL = 0x2,
+    ChillerWarnings_SWITCH_TO_SUPPLY_TEMP_AS_CONTROL_TEMP = 0x4,
     ChillerWarnings_HIGH_CONTROL_TEMP = 0x10,
     ChillerWarnings_LOW_CONTROL_TEMP = 0x20,
     ChillerWarnings_HIGH_AMBIENT_TEMP = 0x40,

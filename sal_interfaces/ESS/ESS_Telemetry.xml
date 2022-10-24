@@ -4,7 +4,7 @@
   <SALTelemetry>
     <Subsystem>ESS</Subsystem>
     <EFDB_Topic>ESS_airTurbulence</EFDB_Topic>
-    <Description>Air Turbulence Instrument - CSAT3B (Tri-Axial).</Description>
+    <Description>Air turbulence measured by a 3-dimensional anemometer. The reported values are computed from data that is accumulated over a configurable period that is typically on the order of a minute.</Description>
     <item>
       <EFDB_Name>sensorName</EFDB_Name>
       <Description>The name of the sensor.</Description>
@@ -14,51 +14,51 @@
     </item>
     <item>
       <EFDB_Name>timestamp</EFDB_Name>
-      <Description>Time at which the data was determined (TAI unix seconds).</Description>
+      <Description>Time at which the most recent data was read (TAI unix seconds).</Description>
       <IDL_Type>double</IDL_Type>
       <Units>second</Units>
       <Count>1</Count>
     </item>
     <item>
-      <EFDB_Name>ux</EFDB_Name>
-      <Description>x-axis wind speed.</Description>
+      <EFDB_Name>speed</EFDB_Name>
+      <Description>Median wind speed (x, y, z).</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>m/s</Units>
+      <Count>3</Count>
+    </item>
+    <item>
+      <EFDB_Name>speedStdDev</EFDB_Name>
+      <Description>Standard deviation of wind speed (x, y, z).</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>m/s</Units>
+      <Count>3</Count>
+    </item>
+    <item>
+      <EFDB_Name>speedMagnitude</EFDB_Name>
+      <Description>Median wind speed magnitude.</Description>
       <IDL_Type>float</IDL_Type>
       <Units>m/s</Units>
       <Count>1</Count>
     </item>
     <item>
-      <EFDB_Name>uy</EFDB_Name>
-      <Description>y-axis wind speed.</Description>
+      <EFDB_Name>speedMaxMagnitude</EFDB_Name>
+      <Description>Maximum wind speed magnitude.</Description>
       <IDL_Type>float</IDL_Type>
       <Units>m/s</Units>
       <Count>1</Count>
     </item>
     <item>
-      <EFDB_Name>uz</EFDB_Name>
-      <Description>z-axis wind speed.</Description>
+      <EFDB_Name>sonicTemperature</EFDB_Name>
+      <Description>Median sonic temperature (air temperature measured sonically). Sonic temperature has poor absolute accuracy (it can be off by several degrees) but good time resolution.</Description>
       <IDL_Type>float</IDL_Type>
-      <Units>m/s</Units>
+      <Units>deg_C</Units>
       <Count>1</Count>
     </item>
     <item>
-      <EFDB_Name>ts</EFDB_Name>
-      <Description>Sonic temperature.</Description>
+      <EFDB_Name>sonicTemperatureStdDev</EFDB_Name>
+      <Description>Standard devation of sonic temperature (air temperature measured sonically).</Description>
       <IDL_Type>float</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>diagWord</EFDB_Name>
-      <Description>Diagnostic word.</Description>
-      <IDL_Type>short</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>recordCounter</EFDB_Name>
-      <Description>Record counter (0-63).</Description>
-      <IDL_Type>short</IDL_Type>
-      <Units>unitless</Units>
+      <Units>deg_C</Units>
       <Count>1</Count>
     </item>
     <item>
@@ -71,7 +71,7 @@
   </SALTelemetry>
   <SALTelemetry>
     <EFDB_Topic>ESS_airFlow</EFDB_Topic>
-    <Description>AirFlow Sensor - Windsonic1-L (Bi-axial).</Description>
+    <Description>Wind speed and direction. The reported values are computed from data that is accumulated over a configurable period that is typically on the order of a minute.</Description>
     <item>
       <EFDB_Name>sensorName</EFDB_Name>
       <Description>The name of the sensor.</Description>
@@ -81,30 +81,76 @@
     </item>
     <item>
       <EFDB_Name>timestamp</EFDB_Name>
-      <Description>Time at which the data was determined (TAI unix seconds).</Description>
+      <Description>Time at which the most recent data was read (TAI unix seconds).</Description>
       <IDL_Type>double</IDL_Type>
       <Units>second</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>direction</EFDB_Name>
-      <Description>Wind direction.</Description>
+      <Description>Median (or mean, for some sensor types) wind direction: 0 = north, 90 = east.</Description>
       <IDL_Type>short</IDL_Type>
-      <Units>unitless</Units>
+      <Units>degree</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>directionStdDev</EFDB_Name>
+      <Description>Standard deviation of wind direction. Not available for all sensor types.</Description>
+      <IDL_Type>short</IDL_Type>
+      <Units>degree</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>speed</EFDB_Name>
-      <Description>Wind speed.</Description>
+      <Description>Median (mean for some sensors) wind speed.</Description>
       <IDL_Type>float</IDL_Type>
       <Units>m/s</Units>
       <Count>1</Count>
     </item>
     <item>
-      <EFDB_Name>status</EFDB_Name>
-      <Description>Status Code.</Description>
-      <IDL_Type>unsigned short</IDL_Type>
+      <EFDB_Name>speedStdDev</EFDB_Name>
+      <Description>Standard deviation of wind speed. Not available for all sensor types.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>m/s</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>maxSpeed</EFDB_Name>
+      <Description>Maximum wind speed.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>m/s</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>location</EFDB_Name>
+      <Description>The location of the sensor.</Description>
+      <IDL_Type>string</IDL_Type>
       <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+  </SALTelemetry>
+  <SALTelemetry>
+    <EFDB_Topic>ESS_dewPoint</EFDB_Topic>
+    <Description>Dew point.</Description>
+    <item>
+      <EFDB_Name>sensorName</EFDB_Name>
+      <Description>The name of the sensor.</Description>
+      <IDL_Type>string</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>timestamp</EFDB_Name>
+      <Description>Time at which the data was read (TAI unix seconds).</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>second</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>dewPoint</EFDB_Name>
+      <Description>Dew point.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>deg_C</Units>
       <Count>1</Count>
     </item>
     <item>
@@ -127,7 +173,7 @@
     </item>
     <item>
       <EFDB_Name>timestamp</EFDB_Name>
-      <Description>Time at which the data was determined (TAI unix seconds).</Description>
+      <Description>Time at which the data was read (TAI unix seconds).</Description>
       <IDL_Type>double</IDL_Type>
       <Units>second</Units>
       <Count>1</Count>
@@ -155,6 +201,134 @@
     </item>
   </SALTelemetry>
   <SALTelemetry>
+    <EFDB_Topic>ESS_rainRate</EFDB_Topic>
+    <Description>Rate of rainfall.</Description>
+    <item>
+      <EFDB_Name>sensorName</EFDB_Name>
+      <Description>The name of the sensor.</Description>
+      <IDL_Type>string</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>timestamp</EFDB_Name>
+      <Description>Time at which the data was read (TAI unix seconds).</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>second</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>rainRate</EFDB_Name>
+      <Description>Rainfall rate measured over a configurable period on the order of a minute.</Description>
+      <IDL_Type>short</IDL_Type>
+      <Units>mm/h</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>location</EFDB_Name>
+      <Description>The location of the sensor.</Description>
+      <IDL_Type>string</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+  </SALTelemetry>
+  <SALTelemetry>
+    <EFDB_Topic>ESS_relativeHumidity</EFDB_Topic>
+    <Description>Relative humidity.</Description>
+    <item>
+      <EFDB_Name>sensorName</EFDB_Name>
+      <Description>The name of the sensor.</Description>
+      <IDL_Type>string</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>timestamp</EFDB_Name>
+      <Description>Time at which the data was read (TAI unix seconds).</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>second</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>relativeHumidity</EFDB_Name>
+      <Description>Relative Humidity.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>%</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>location</EFDB_Name>
+      <Description>The location of the sensor.</Description>
+      <IDL_Type>string</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+  </SALTelemetry>
+  <SALTelemetry>
+    <EFDB_Topic>ESS_snowRate</EFDB_Topic>
+    <Description>Rate of snowfall.</Description>
+    <item>
+      <EFDB_Name>sensorName</EFDB_Name>
+      <Description>The name of the sensor.</Description>
+      <IDL_Type>string</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>timestamp</EFDB_Name>
+      <Description>Time at which the data was read (TAI unix seconds).</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>second</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>snowRate</EFDB_Name>
+      <Description>Snowfall rate measured over a configurable period on the order of a minute.</Description>
+      <IDL_Type>short</IDL_Type>
+      <Units>mm/h</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>location</EFDB_Name>
+      <Description>The location of the sensor.</Description>
+      <IDL_Type>string</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+  </SALTelemetry>
+  <SALTelemetry>
+    <EFDB_Topic>ESS_solarRadiation</EFDB_Topic>
+    <Description>Solar radiation.</Description>
+    <item>
+      <EFDB_Name>sensorName</EFDB_Name>
+      <Description>The name of the sensor.</Description>
+      <IDL_Type>string</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>timestamp</EFDB_Name>
+      <Description>Time at which the data was read (TAI unix seconds).</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>second</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>solarRadiation</EFDB_Name>
+      <Description>Median (mean for some sensors) solar radiation measured over a configurable period on the order of a minute.</Description>
+      <IDL_Type>short</IDL_Type>
+      <Units>W/m2</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>location</EFDB_Name>
+      <Description>The location of the sensor.</Description>
+      <IDL_Type>string</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+  </SALTelemetry>
+  <SALTelemetry>
     <EFDB_Topic>ESS_temperature</EFDB_Topic>
     <Description>Temperature Sensors with up to 16 channels.</Description>
     <item>
@@ -166,7 +340,7 @@
     </item>
     <item>
       <EFDB_Name>timestamp</EFDB_Name>
-      <Description>Time at which the data was determined (TAI unix seconds).</Description>
+      <Description>Time at which the data was read (TAI unix seconds).</Description>
       <IDL_Type>double</IDL_Type>
       <Units>second</Units>
       <Count>1</Count>
@@ -188,158 +362,6 @@
     <item>
       <EFDB_Name>location</EFDB_Name>
       <Description>Comma-separated string with the locations of the sensors for each channel.</Description>
-      <IDL_Type>string</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-  </SALTelemetry>
-  <SALTelemetry>
-    <EFDB_Topic>ESS_cloudRainLight</EFDB_Topic>
-    <Description>Cloud Rain Light Sensors.</Description>
-    <item>
-      <EFDB_Name>sensorName</EFDB_Name>
-      <Description>The name of the sensor.</Description>
-      <IDL_Type>string</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>timestamp</EFDB_Name>
-      <Description>Time at which the data was determined (TAI unix seconds).</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>second</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>ambientTemperature</EFDB_Name>
-      <Description>Ambient Temperature Sensor.</Description>
-      <IDL_Type>float</IDL_Type>
-      <Units>deg_C</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>skyTemperature</EFDB_Name>
-      <Description>Sky Temperature Sensor.</Description>
-      <IDL_Type>float</IDL_Type>
-      <Units>deg_C</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>lightLevel</EFDB_Name>
-      <Description>Light Level.</Description>
-      <IDL_Type>float</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>rainLevel</EFDB_Name>
-      <Description>Rain Level.</Description>
-      <IDL_Type>float</IDL_Type>
-      <Units>mm</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>location</EFDB_Name>
-      <Description>The location of the sensor.</Description>
-      <IDL_Type>string</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-  </SALTelemetry>
-  <SALTelemetry>
-    <EFDB_Topic>ESS_hx85a</EFDB_Topic>
-    <Description>Omega HX85A Humidity, Temperature and Dew Point Sensor.</Description>
-    <item>
-      <EFDB_Name>sensorName</EFDB_Name>
-      <Description>The name of the sensor.</Description>
-      <IDL_Type>string</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>timestamp</EFDB_Name>
-      <Description>Time at which the data was determined (TAI unix seconds).</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>second</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>relativeHumidity</EFDB_Name>
-      <Description>Relative Humidity.</Description>
-      <IDL_Type>float</IDL_Type>
-      <Units>%</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>temperature</EFDB_Name>
-      <Description>Air Temperature.</Description>
-      <IDL_Type>float</IDL_Type>
-      <Units>deg_C</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>dewPoint</EFDB_Name>
-      <Description>Dew Point.</Description>
-      <IDL_Type>float</IDL_Type>
-      <Units>deg_C</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>location</EFDB_Name>
-      <Description>The location of the sensor.</Description>
-      <IDL_Type>string</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-  </SALTelemetry>
-  <SALTelemetry>
-    <EFDB_Topic>ESS_hx85ba</EFDB_Topic>
-    <Description>Omega HX85BA Humidity, Temperature and Pressure Sensor.</Description>
-    <item>
-      <EFDB_Name>sensorName</EFDB_Name>
-      <Description>The name of the sensor.</Description>
-      <IDL_Type>string</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>timestamp</EFDB_Name>
-      <Description>Time at which the data was determined (TAI unix seconds).</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>second</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>relativeHumidity</EFDB_Name>
-      <Description>Relative Humidity.</Description>
-      <IDL_Type>float</IDL_Type>
-      <Units>%</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>temperature</EFDB_Name>
-      <Description>Air Temperature.</Description>
-      <IDL_Type>float</IDL_Type>
-      <Units>deg_C</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>barometricPressure</EFDB_Name>
-      <Description>Barometric Pressure.</Description>
-      <IDL_Type>float</IDL_Type>
-      <Units>mbar</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>dewPoint</EFDB_Name>
-      <Description>Dew Point.</Description>
-      <IDL_Type>float</IDL_Type>
-      <Units>deg_C</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>location</EFDB_Name>
-      <Description>The location of the sensor.</Description>
       <IDL_Type>string</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
@@ -447,21 +469,21 @@
       <EFDB_Name>accelerationPSDX</EFDB_Name>
       <Description>Acceleration PSD in x direction.</Description>
       <IDL_Type>float</IDL_Type>
-      <Units>m2 / (Hz s4)</Units>
+      <Units>m2 / (Hz2 s4)</Units>
       <Count>200</Count>
     </item>
     <item>
       <EFDB_Name>accelerationPSDY</EFDB_Name>
       <Description>Acceleration PSD in y direction.</Description>
       <IDL_Type>float</IDL_Type>
-      <Units>m2 / (Hz s4)</Units>
+      <Units>m2 / (Hz2 s4)</Units>
       <Count>200</Count>
     </item>
     <item>
       <EFDB_Name>accelerationPSDZ</EFDB_Name>
       <Description>Acceleration PSD in z direction.</Description>
       <IDL_Type>float</IDL_Type>
-      <Units>m2 / (Hz s4)</Units>
+      <Units>m2 / (Hz2 s4)</Units>
       <Count>200</Count>
     </item>
     <item>

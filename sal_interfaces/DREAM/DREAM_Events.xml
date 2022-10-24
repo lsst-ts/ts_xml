@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="http://lsst-sal.tuc.noao.edu/schema/SALEventSet.xsl"?>
+<SALEventSet xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://lsst-sal.tuc.noao.edu/schema/SALEventSet.xsd">
+  <Enumeration>
+    DREAMDome_Closed=0,
+    DREAMDome_Opening=1,
+    DREAMDome_Opened=2,
+    DREAMDome_Closing=3
+  </Enumeration>
+  <SALEvent>
+    <Subsystem>DREAM</Subsystem>
+    <EFDB_Topic>DREAM_logevent_status</EFDB_Topic>
+    <Description>DREAM subsystrem status.</Description>
+    <item>
+      <EFDB_Name>paused</EFDB_Name>
+      <Description>If true, DREAM observations are paused by operator, using pause command.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>environmentOK</EFDB_Name>
+      <Description>DREAM environmental OK flag. Indexed by location - 0 Dome, 1 Electronics Box, 2 Enclosure. True means OK.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>3</Count>
+    </item>
+    <item>
+      <EFDB_Name>powerDistributionUnitOnline</EFDB_Name>
+      <Description>Power distribution unit online flag. True is online.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>2</Count>
+    </item>
+    <item>
+      <EFDB_Name>domeStatus</EFDB_Name>
+      <Description>DREAM dome status. Closed/Opening/Opened/Closing.</Description>
+      <IDL_Type>int</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>domeOpenLimitSwitch</EFDB_Name>
+      <Description>Opened dome limit switch state. True for triggered, dome is opened.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>domeCloseLimitSwitch</EFDB_Name>
+      <Description>Closed dome limit switch state. True for triggered, dome is closed.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>frontDoorOpen</EFDB_Name>
+      <Description>Front door opened switch. True for triggered, front door is opened.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>backDoorOpen</EFDB_Name>
+      <Description>Back door opened switch. True for triggered, back door is opened.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>daq</EFDB_Name>
+      <Description>Digital Acquisition (DAQ) status. True if DAQ is working as expected.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>cameraLEDStatus</EFDB_Name>
+      <Description>Camera LED status. True when LED is on.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>5</Count>
+    </item>
+  </SALEvent>
+  <SALEvent>
+    <Subsystem>DREAM</Subsystem>
+    <EFDB_Topic>DREAM_logevent_temperatureControl</EFDB_Topic>
+    <Description>DREAM temperature control status.</Description>
+    <item>
+      <EFDB_Name>heatingOn</EFDB_Name>
+      <Description>Heating on/off. True for on.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>coolingOn</EFDB_Name>
+      <Description>Cooling on/off. True for on.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+  </SALEvent>
+  <SALEvent>
+    <Subsystem>DREAM</Subsystem>
+    <EFDB_Topic>DREAM_logevent_ups</EFDB_Topic>
+    <Description>DREAM ups status.</Description>
+    <item>
+      <EFDB_Name>online</EFDB_Name>
+      <Description>True when UPS is online. False when UPS is offline.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>batteryLow</EFDB_Name>
+      <Description>True when UPS battery charge is low.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>notOnMains</EFDB_Name>
+      <Description>True when UPS commercial power isn't running, the UPS is providing power from its battery..</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>communicationError</EFDB_Name>
+      <Description>True for communication error.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+  </SALEvent>
+  <SALEvent>
+    <Subsystem>DREAM</Subsystem>
+    <EFDB_Topic>DREAM_logevent_alerts</EFDB_Topic>
+    <Description>DREAM alerts.</Description>
+    <item>
+      <EFDB_Name>outsideHumidity</EFDB_Name>
+      <Description>True if outside humidity, reported by the observatory, is outside safe limits.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>outsideTemperature</EFDB_Name>
+      <Description>True if outside temperature, reported by the observatory, is outside safe limits.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+  </SALEvent>
+  <SALEvent>
+    <Subsystem>DREAM</Subsystem>
+    <EFDB_Topic>DREAM_logevent_errors</EFDB_Topic>
+    <Description>DREAM alerts.</Description>
+    <item>
+      <EFDB_Name>domeHumidity</EFDB_Name>
+      <Description>True if dome humidity is outside safe range.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>enclosureTemperature</EFDB_Name>
+      <Description>True if enclosure temperature is outside safe range.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>enclosureHumidity</EFDB_Name>
+      <Description>True if enclosure humidity is outside safe range.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>electronicsBoxCommunication</EFDB_Name>
+      <Description>True if electronics box cannot be reached.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>temperatureSensorCommunication</EFDB_Name>
+      <Description>True if given temperature sensor doesn't provide temperature updates.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>3</Count>
+    </item>
+    <item>
+      <EFDB_Name>domePositionUnknown</EFDB_Name>
+      <Description>True if dome position as reported by the absolute encoder is unknown, and therefore system cannot operate the dome.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>daqCommunication</EFDB_Name>
+      <Description>True if communication with DAQ (Data Acquisition) is lost.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>pduCommunication</EFDB_Name>
+      <Description>True if communication with the Power Distribution Unit (PDU) is lost.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+  </SALEvent>
+</SALEventSet>

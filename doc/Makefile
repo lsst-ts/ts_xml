@@ -4,7 +4,7 @@ csc_info:
 
 .PHONY: html
 html: csc_info
-	package-docs -d . build
+	sphinx-build -b html . _build/html -j auto
 
 clean: 
 	package-docs clean

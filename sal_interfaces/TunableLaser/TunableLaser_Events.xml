@@ -1,17 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-stylesheet type="text/xsl" href="http://lsst-sal.tuc.noao.edu/schema/SALEventSet.xsl"?>
-<SALEventSet xmlns:xsi="http://lsst-sal.tuc.noao.edu/schema/SALEventSet.xsd">
+<SALEventSet xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://github.com/lsst-ts/ts_xml/blob/develop/schema/SALEventSet.xsd">
   <Enumeration>DetailedState_NonPropagatingState,DetailedState_PropagatingState</Enumeration>
   <SALEvent>
     <Subsystem>TunableLaser</Subsystem>
     <EFDB_Topic>TunableLaser_logevent_laserInstabilityFlag</EFDB_Topic>
-    <item>
-      <EFDB_Name>timestamp</EFDB_Name>
-      <Description>Time in seconds of the event</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>second</Units>
-      <Count>1</Count>
-    </item>
   </SALEvent>
   <SALEvent>
     <Subsystem>TunableLaser</Subsystem>
@@ -32,6 +25,25 @@
       <Description>The new wavelength.</Description>
       <IDL_Type>double</IDL_Type>
       <Units>nanometer</Units>
+      <Count>1</Count>
+    </item>
+  </SALEvent>
+  <SALEvent>
+    <Subsystem>TunableLaser</Subsystem>
+    <EFDB_Topic>TunableLaser_logevent_burstModeSet</EFDB_Topic>
+  </SALEvent>
+  <SALEvent>
+    <Subsystem>TunableLaser</Subsystem>
+    <EFDB_Topic>TunableLaser_logevent_continuousModeSet</EFDB_Topic>
+  </SALEvent>
+  <SALEvent>
+    <Subsystem>TunableLaser</Subsystem>
+    <EFDB_Topic>TunableLaser_logevent_burstCountSet</EFDB_Topic>
+    <item>
+      <EFDB_Name>count</EFDB_Name>
+      <Description>The new burst count.</Description>
+      <IDL_Type>long</IDL_Type>
+      <Units>second</Units>
       <Count>1</Count>
     </item>
   </SALEvent>
