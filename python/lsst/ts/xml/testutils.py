@@ -94,6 +94,7 @@ subsystems = [
     "TunableLaser",
     "Watcher",
     "WeatherStation",
+    "WeatherForecast",
 ]
 
 """Define the list of Generic Commands."""

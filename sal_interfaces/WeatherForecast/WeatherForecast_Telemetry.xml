@@ -1,0 +1,674 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="http://lsst-sal.tuc.noao.edu/schema/SALTelemetrySet.xsl"?>
+<SALTelemetrySet xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://lsst-sal.tuc.noao.edu/schema/SALTelemetrySet.xsd">
+  <SALTelemetry>
+    <Subsystem>WeatherForecast</Subsystem>
+    <EFDB_Topic>WeatherForecast_metadata</EFDB_Topic>
+    <item>
+      <EFDB_Name>latitude</EFDB_Name>
+      <Description>The latitude of the forecast data.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>deg</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>longitude</EFDB_Name>
+      <Description>The longitude of the forecast data.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>deg</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>height</EFDB_Name>
+      <Description>The height of the forecast.</Description>
+      <IDL_Type>long</IDL_Type>
+      <Units>meter</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>timezoneAbbrevation</EFDB_Name>
+      <Description>The abbrevation of the timezone.</Description>
+      <IDL_Type>string</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>timeOffset</EFDB_Name>
+      <Description>Hour offset from UTC.</Description>
+      <IDL_Type>long</IDL_Type>
+      <Units>hour</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>modelrun</EFDB_Name>
+      <Description>The time that the forecast was run in UTC.</Description>
+      <IDL_Type>string</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>modelrunUpdatetime</EFDB_Name>
+      <Description>The time that the model was last updated (UTC).</Description>
+      <IDL_Type>string</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+  </SALTelemetry>
+  <SALTelemetry>
+    <Subsystem>WeatherForecast</Subsystem>
+    <EFDB_Topic>WeatherForecast_hourlyTrend</EFDB_Topic>
+    <item>
+      <IDL_Type>double</IDL_Type>
+      <Count>360</Count>
+      <Description>Time (UTC).</Description>
+      <Units>unitless</Units>
+      <EFDB_Name>timestamp</EFDB_Name>
+    </item>
+    <item>
+      <IDL_Type>float</IDL_Type>
+      <Count>360</Count>
+      <Description>Temperature.</Description>
+      <Units>deg_C</Units>
+      <EFDB_Name>temperature</EFDB_Name>
+    </item>
+    <item>
+      <IDL_Type>float</IDL_Type>
+      <Count>360</Count>
+      <Description>Temperature spread.</Description>
+      <Units>deg_C</Units>
+      <EFDB_Name>temperatureSpread</EFDB_Name>
+    </item>
+    <item>
+      <IDL_Type>float</IDL_Type>
+      <Count>360</Count>
+      <Description>Precipitation.</Description>
+      <Units>millimeter</Units>
+      <EFDB_Name>precipitation</EFDB_Name>
+    </item>
+    <item>
+      <IDL_Type>float</IDL_Type>
+      <Count>360</Count>
+      <Description>Precipitation spread.</Description>
+      <Units>millimeter</Units>
+      <EFDB_Name>precipitationSpread</EFDB_Name>
+    </item>
+    <item>
+      <IDL_Type>float</IDL_Type>
+      <Count>360</Count>
+      <Description>Windspeed.</Description>
+      <Units>meter/second</Units>
+      <EFDB_Name>windspeed</EFDB_Name>
+    </item>
+    <item>
+      <IDL_Type>float</IDL_Type>
+      <Count>360</Count>
+      <Description>Windspeed spread.</Description>
+      <Units>meter/second</Units>
+      <EFDB_Name>windspeedSpread</EFDB_Name>
+    </item>
+    <item>
+      <IDL_Type>long</IDL_Type>
+      <Count>360</Count>
+      <Description>Wind direction.</Description>
+      <Units>deg</Units>
+      <EFDB_Name>windDirection</EFDB_Name>
+    </item>
+    <item>
+      <IDL_Type>long</IDL_Type>
+      <Count>360</Count>
+      <Description>Sea level pressure.</Description>
+      <Units>Pascal</Units>
+      <EFDB_Name>seaLevelPressure</EFDB_Name>
+    </item>
+    <item>
+      <IDL_Type>long</IDL_Type>
+      <Count>360</Count>
+      <Description>Relative humidity.</Description>
+      <Units>pct</Units>
+      <EFDB_Name>relativeHumidity</EFDB_Name>
+    </item>
+    <item>
+      <IDL_Type>float</IDL_Type>
+      <Count>360</Count>
+      <Description>GHI backwards.</Description>
+      <Units>watt*hour/meter**2</Units>
+      <EFDB_Name>ghiBackwards</EFDB_Name>
+    </item>
+    <item>
+      <IDL_Type>float</IDL_Type>
+      <Count>360</Count>
+      <Description>Extra terrestrial radiation backwards.</Description>
+      <Units>watt*hour/meter**2</Units>
+      <EFDB_Name>extraTerrestrialRadiationBackwards</EFDB_Name>
+    </item>
+    <item>
+      <IDL_Type>long</IDL_Type>
+      <Count>360</Count>
+      <Description>Total cloud cover.</Description>
+      <Units>pct</Units>
+      <EFDB_Name>totalCloudCover</EFDB_Name>
+    </item>
+    <item>
+      <IDL_Type>long</IDL_Type>
+      <Count>360</Count>
+      <Description>Total cloud cover spread.</Description>
+      <Units>pct</Units>
+      <EFDB_Name>totalCloudCoverSpread</EFDB_Name>
+    </item>
+    <item>
+      <IDL_Type>float</IDL_Type>
+      <Count>360</Count>
+      <Description>Snow fraction.</Description>
+      <Units>pct</Units>
+      <EFDB_Name>snowFraction</EFDB_Name>
+    </item>
+    <item>
+      <IDL_Type>long</IDL_Type>
+      <Count>360</Count>
+      <Description>Pictocode (forecast symbol).</Description>
+      <Units>unitless</Units>
+      <EFDB_Name>pictocode</EFDB_Name>
+    </item>
+    <item>
+      <IDL_Type>float</IDL_Type>
+      <Count>360</Count>
+      <Description>Gust.</Description>
+      <Units>meter/second</Units>
+      <EFDB_Name>gust</EFDB_Name>
+    </item>
+    <item>
+      <IDL_Type>long</IDL_Type>
+      <Count>360</Count>
+      <Description>Low clouds.</Description>
+      <Units>pct</Units>
+      <EFDB_Name>lowClouds</EFDB_Name>
+    </item>
+    <item>
+      <IDL_Type>long</IDL_Type>
+      <Count>360</Count>
+      <Description>Mid clouds.</Description>
+      <Units>pct</Units>
+      <EFDB_Name>midClouds</EFDB_Name>
+    </item>
+    <item>
+      <IDL_Type>long</IDL_Type>
+      <Count>360</Count>
+      <Description>High clouds.</Description>
+      <Units>pct</Units>
+      <EFDB_Name>highClouds</EFDB_Name>
+    </item>
+    <item>
+      <IDL_Type>long</IDL_Type>
+      <Count>360</Count>
+      <Description>Sunshine time (UTC).</Description>
+      <Units>minute</Units>
+      <EFDB_Name>sunshineTime</EFDB_Name>
+    </item>
+    <item>
+      <IDL_Type>long</IDL_Type>
+      <Count>360</Count>
+      <Description>Visibility.</Description>
+      <Units>meter</Units>
+      <EFDB_Name>visibility</EFDB_Name>
+    </item>
+    <item>
+      <IDL_Type>float</IDL_Type>
+      <Count>360</Count>
+      <Description>Skin temperature.</Description>
+      <Units>deg</Units>
+      <EFDB_Name>skinTemperature</EFDB_Name>
+    </item>
+    <item>
+      <IDL_Type>float</IDL_Type>
+      <Count>360</Count>
+      <Description>Dew point temperature.</Description>
+      <Units>deg</Units>
+      <EFDB_Name>dewPointTemperature</EFDB_Name>
+    </item>
+    <item>
+      <IDL_Type>long</IDL_Type>
+      <Count>360</Count>
+      <Description>Precipitation probability.</Description>
+      <Units>pct</Units>
+      <EFDB_Name>precipitationProbability</EFDB_Name>
+    </item>
+    <item>
+      <IDL_Type>long</IDL_Type>
+      <Count>360</Count>
+      <Description>CAPE.</Description>
+      <Units>Joule/kilogram</Units>
+      <EFDB_Name>cape</EFDB_Name>
+    </item>
+    <item>
+      <IDL_Type>float</IDL_Type>
+      <Count>360</Count>
+      <Description>Lifted index.</Description>
+      <Units>unitless</Units>
+      <EFDB_Name>liftedIndex</EFDB_Name>
+    </item>
+    <item>
+      <IDL_Type>float</IDL_Type>
+      <Count>360</Count>
+      <Description>Evaporation transpiration.</Description>
+      <Units>unitless</Units>
+      <EFDB_Name>evapoTranspiration</EFDB_Name>
+    </item>
+    <item>
+      <IDL_Type>float</IDL_Type>
+      <Count>360</Count>
+      <Description>Reference evapotranspiration as defined by FAO (Food and agriculture UN organization) using Penman-Monteith equation..</Description>
+      <Units>unitless</Units>
+      <EFDB_Name>referenceEvapoTransipirationFao</EFDB_Name>
+    </item>
+  </SALTelemetry>
+  <SALTelemetry>
+    <Subsystem>WeatherForecast</Subsystem>
+    <EFDB_Topic>WeatherForecast_dailyTrend</EFDB_Topic>
+    <item>
+      <IDL_Type>double</IDL_Type>
+      <Count>14</Count>
+      <Description>Time. (UTC)</Description>
+      <Units>unitless</Units>
+      <EFDB_Name>timestamp</EFDB_Name>
+    </item>
+    <item>
+      <IDL_Type>long</IDL_Type>
+      <Count>14</Count>
+      <Description>Pictocode (forecast symbol).</Description>
+      <Units>unitless</Units>
+      <EFDB_Name>pictocode</EFDB_Name>
+    </item>
+    <item>
+      <IDL_Type>float</IDL_Type>
+      <Count>14</Count>
+      <Description>Max temperature.</Description>
+      <Units>deg_C</Units>
+      <EFDB_Name>temperatureMax</EFDB_Name>
+    </item>
+    <item>
+      <IDL_Type>float</IDL_Type>
+      <Count>14</Count>
+      <Description>Min temperature.</Description>
+      <Units>deg_C</Units>
+      <EFDB_Name>temperatureMin</EFDB_Name>
+    </item>
+    <item>
+      <IDL_Type>float</IDL_Type>
+      <Count>14</Count>
+      <Description>Mean temperature.</Description>
+      <Units>deg_C</Units>
+      <EFDB_Name>temperatureMean</EFDB_Name>
+    </item>
+    <item>
+      <IDL_Type>float</IDL_Type>
+      <Count>14</Count>
+      <Description>Temperature spread.</Description>
+      <Units>deg_C</Units>
+      <EFDB_Name>temperatureSpread</EFDB_Name>
+    </item>
+    <item>
+      <IDL_Type>float</IDL_Type>
+      <Count>14</Count>
+      <Description>Precipitation.</Description>
+      <Units>millimeter</Units>
+      <EFDB_Name>precipitation</EFDB_Name>
+    </item>
+    <item>
+      <IDL_Type>long</IDL_Type>
+      <Count>14</Count>
+      <Description>Precipitation probability.</Description>
+      <Units>millimeter</Units>
+      <EFDB_Name>precipitationProbability</EFDB_Name>
+    </item>
+    <item>
+      <IDL_Type>float</IDL_Type>
+      <Count>14</Count>
+      <Description>Precipitation spread.</Description>
+      <Units>millimeter</Units>
+      <EFDB_Name>precipitationSpread</EFDB_Name>
+    </item>
+    <item>
+      <IDL_Type>float</IDL_Type>
+      <Count>14</Count>
+      <Description>Maximum windspeed.</Description>
+      <Units>meter/second</Units>
+      <EFDB_Name>windspeedMax</EFDB_Name>
+    </item>
+    <item>
+      <IDL_Type>float</IDL_Type>
+      <Count>14</Count>
+      <Description>Minimum wind speed.</Description>
+      <Units>meter/second</Units>
+      <EFDB_Name>windspeedMin</EFDB_Name>
+    </item>
+    <item>
+      <IDL_Type>float</IDL_Type>
+      <Count>14</Count>
+      <Description>Mean windspeed.</Description>
+      <Units>meter/second</Units>
+      <EFDB_Name>windspeedMean</EFDB_Name>
+    </item>
+    <item>
+      <IDL_Type>float</IDL_Type>
+      <Count>14</Count>
+      <Description>Windspeed spread.</Description>
+      <Units>meter/second</Units>
+      <EFDB_Name>windspeedSpread</EFDB_Name>
+    </item>
+    <item>
+      <IDL_Type>long</IDL_Type>
+      <Count>14</Count>
+      <Description>Wind direction.</Description>
+      <Units>deg</Units>
+      <EFDB_Name>windDirection</EFDB_Name>
+    </item>
+    <item>
+      <IDL_Type>long</IDL_Type>
+      <Count>14</Count>
+      <Description>Maximum sea level pressure.</Description>
+      <Units>Pascal</Units>
+      <EFDB_Name>seaLevelPressureMax</EFDB_Name>
+    </item>
+    <item>
+      <IDL_Type>long</IDL_Type>
+      <Count>14</Count>
+      <Description>Minimum sea level pressure.</Description>
+      <Units>Pascal</Units>
+      <EFDB_Name>seaLevelPressureMin</EFDB_Name>
+    </item>
+    <item>
+      <IDL_Type>long</IDL_Type>
+      <Count>14</Count>
+      <Description>Mean sea level pressure.</Description>
+      <Units>Pascal</Units>
+      <EFDB_Name>seaLevelPressureMean</EFDB_Name>
+    </item>
+    <item>
+      <IDL_Type>long</IDL_Type>
+      <Count>14</Count>
+      <Description>Maximum relative humidity.</Description>
+      <Units>pct</Units>
+      <EFDB_Name>relativeHumidityMax</EFDB_Name>
+    </item>
+    <item>
+      <IDL_Type>long</IDL_Type>
+      <Count>14</Count>
+      <Description>Minimum relative humidity.</Description>
+      <Units>pct</Units>
+      <EFDB_Name>relativeHumidityMin</EFDB_Name>
+    </item>
+    <item>
+      <IDL_Type>long</IDL_Type>
+      <Count>14</Count>
+      <Description>Mean relative humidity.</Description>
+      <Units>pct</Units>
+      <EFDB_Name>relativeHumidityMean</EFDB_Name>
+    </item>
+    <item>
+      <IDL_Type>long</IDL_Type>
+      <Count>14</Count>
+      <Description>Predictability.</Description>
+      <Units>unitless</Units>
+      <EFDB_Name>predictability</EFDB_Name>
+    </item>
+    <item>
+      <IDL_Type>long</IDL_Type>
+      <Count>14</Count>
+      <Description>Predictability class.</Description>
+      <Units>unitless</Units>
+      <EFDB_Name>predictabilityClass</EFDB_Name>
+    </item>
+    <item>
+      <IDL_Type>long</IDL_Type>
+      <Count>14</Count>
+      <Description>Maximum total cloud cover.</Description>
+      <Units>pct</Units>
+      <EFDB_Name>totalCloudCoverMax</EFDB_Name>
+    </item>
+    <item>
+      <IDL_Type>long</IDL_Type>
+      <Count>14</Count>
+      <Description>Minimum total cloud cover.</Description>
+      <Units>pct</Units>
+      <EFDB_Name>totalCloudCoverMin</EFDB_Name>
+    </item>
+    <item>
+      <IDL_Type>long</IDL_Type>
+      <Count>14</Count>
+      <Description>Mean total cloud cover.</Description>
+      <Units>pct</Units>
+      <EFDB_Name>totalCloudCoverMean</EFDB_Name>
+    </item>
+    <item>
+      <IDL_Type>long</IDL_Type>
+      <Count>14</Count>
+      <Description>Spread total cloud cover.</Description>
+      <Units>pct</Units>
+      <EFDB_Name>totalCloudCoverSpread</EFDB_Name>
+    </item>
+    <item>
+      <IDL_Type>long</IDL_Type>
+      <Count>14</Count>
+      <Description>GHI total.</Description>
+      <Units>watt*hour/meter**2</Units>
+      <EFDB_Name>ghiTotal</EFDB_Name>
+    </item>
+    <item>
+      <IDL_Type>long</IDL_Type>
+      <Count>14</Count>
+      <Description>Total extra terrestrial radiation.</Description>
+      <Units>watt*hour/meter**2</Units>
+      <EFDB_Name>extraTerrestrialRadiationTotal</EFDB_Name>
+    </item>
+    <item>
+      <IDL_Type>float</IDL_Type>
+      <Count>14</Count>
+      <Description>Maximum gust.</Description>
+      <Units>meter/second</Units>
+      <EFDB_Name>gustMax</EFDB_Name>
+    </item>
+    <item>
+      <IDL_Type>float</IDL_Type>
+      <Count>14</Count>
+      <Description>Minimum gust.</Description>
+      <Units>meter/second</Units>
+      <EFDB_Name>gustMin</EFDB_Name>
+    </item>
+    <item>
+      <IDL_Type>float</IDL_Type>
+      <Count>14</Count>
+      <Description>Mean gust.</Description>
+      <Units>meter/second</Units>
+      <EFDB_Name>gustMean</EFDB_Name>
+    </item>
+    <item>
+      <IDL_Type>long</IDL_Type>
+      <Count>14</Count>
+      <Description>Maximum low clouds.</Description>
+      <Units>pct</Units>
+      <EFDB_Name>lowCloudsMax</EFDB_Name>
+    </item>
+    <item>
+      <IDL_Type>long</IDL_Type>
+      <Count>14</Count>
+      <Description>Minimum low clouds.</Description>
+      <Units>pct</Units>
+      <EFDB_Name>lowCloudsMin</EFDB_Name>
+    </item>
+    <item>
+      <IDL_Type>long</IDL_Type>
+      <Count>14</Count>
+      <Description>Mean low clouds.</Description>
+      <Units>pct</Units>
+      <EFDB_Name>lowCloudsMean</EFDB_Name>
+    </item>
+    <item>
+      <IDL_Type>long</IDL_Type>
+      <Count>14</Count>
+      <Description>Maximum mid clouds.</Description>
+      <Units>pct</Units>
+      <EFDB_Name>midCloudsMax</EFDB_Name>
+    </item>
+    <item>
+      <IDL_Type>long</IDL_Type>
+      <Count>14</Count>
+      <Description>Minimum mid clouds.</Description>
+      <Units>pct</Units>
+      <EFDB_Name>midCloudsMin</EFDB_Name>
+    </item>
+    <item>
+      <IDL_Type>long</IDL_Type>
+      <Count>14</Count>
+      <Description>Mean mid clouds.</Description>
+      <Units>pct</Units>
+      <EFDB_Name>midCloudsMean</EFDB_Name>
+    </item>
+    <item>
+      <IDL_Type>long</IDL_Type>
+      <Count>14</Count>
+      <Description>Maximum high clouds.</Description>
+      <Units>pct</Units>
+      <EFDB_Name>hiCloudsMax</EFDB_Name>
+    </item>
+    <item>
+      <IDL_Type>long</IDL_Type>
+      <Count>14</Count>
+      <Description>Minimum high clouds.</Description>
+      <Units>pct</Units>
+      <EFDB_Name>hiCloudsMin</EFDB_Name>
+    </item>
+    <item>
+      <IDL_Type>long</IDL_Type>
+      <Count>14</Count>
+      <Description>Mean high clouds.</Description>
+      <Units>pct</Units>
+      <EFDB_Name>hiCloudsMean</EFDB_Name>
+    </item>
+    <item>
+      <IDL_Type>long</IDL_Type>
+      <Count>14</Count>
+      <Description>Sunshine time (UTC).</Description>
+      <Units>unitless</Units>
+      <EFDB_Name>sunshineTime</EFDB_Name>
+    </item>
+    <item>
+      <IDL_Type>long</IDL_Type>
+      <Count>14</Count>
+      <Description>Maximum visibility.</Description>
+      <Units>meter</Units>
+      <EFDB_Name>visibilityMax</EFDB_Name>
+    </item>
+    <item>
+      <IDL_Type>long</IDL_Type>
+      <Count>14</Count>
+      <Description>Minimum visibility.</Description>
+      <Units>meter</Units>
+      <EFDB_Name>visibilityMin</EFDB_Name>
+    </item>
+    <item>
+      <IDL_Type>long</IDL_Type>
+      <Count>14</Count>
+      <Description>Mean visiblity.</Description>
+      <Units>meter</Units>
+      <EFDB_Name>visbilityMean</EFDB_Name>
+    </item>
+    <item>
+      <IDL_Type>float</IDL_Type>
+      <Count>14</Count>
+      <Description>Maximum skin temperature.</Description>
+      <Units>deg_C</Units>
+      <EFDB_Name>skinTemperatureMax</EFDB_Name>
+    </item>
+    <item>
+      <IDL_Type>float</IDL_Type>
+      <Count>14</Count>
+      <Description>Minimum skin temperature.</Description>
+      <Units>deg_C</Units>
+      <EFDB_Name>skinTemperatureMin</EFDB_Name>
+    </item>
+    <item>
+      <IDL_Type>float</IDL_Type>
+      <Count>14</Count>
+      <Description>Mean skin temperature.</Description>
+      <Units>deg_C</Units>
+      <EFDB_Name>skinTemperatureMean</EFDB_Name>
+    </item>
+    <item>
+      <IDL_Type>float</IDL_Type>
+      <Count>14</Count>
+      <Description>Maximum dew point temperature.</Description>
+      <Units>deg_C</Units>
+      <EFDB_Name>dewPointTemperatureMax</EFDB_Name>
+    </item>
+    <item>
+      <IDL_Type>float</IDL_Type>
+      <Count>14</Count>
+      <Description>Dew point temperature.</Description>
+      <Units>deg_C</Units>
+      <EFDB_Name>dewPointTemperatureMin</EFDB_Name>
+    </item>
+    <item>
+      <IDL_Type>float</IDL_Type>
+      <Count>14</Count>
+      <Description>Mean dew point temperature.</Description>
+      <Units>deg_C</Units>
+      <EFDB_Name>dewPointTemperatureMean</EFDB_Name>
+    </item>
+    <item>
+      <IDL_Type>long</IDL_Type>
+      <Count>14</Count>
+      <Description>Maximum CAPE.</Description>
+      <Units>unitless</Units>
+      <EFDB_Name>capeMax</EFDB_Name>
+    </item>
+    <item>
+      <IDL_Type>long</IDL_Type>
+      <Count>14</Count>
+      <Description>Minimum CAPE.</Description>
+      <Units>unitless</Units>
+      <EFDB_Name>capeMin</EFDB_Name>
+    </item>
+    <item>
+      <IDL_Type>long</IDL_Type>
+      <Count>14</Count>
+      <Description>Mean CAPE.</Description>
+      <Units>unitless</Units>
+      <EFDB_Name>capeMean</EFDB_Name>
+    </item>
+    <item>
+      <IDL_Type>float</IDL_Type>
+      <Count>14</Count>
+      <Description>Maximum lifted index.</Description>
+      <Units>unitless</Units>
+      <EFDB_Name>liftedIndexMax</EFDB_Name>
+    </item>
+    <item>
+      <IDL_Type>float</IDL_Type>
+      <Count>14</Count>
+      <Description>Minimum lifted index.</Description>
+      <Units>unitless</Units>
+      <EFDB_Name>liftedIndexMin</EFDB_Name>
+    </item>
+    <item>
+      <IDL_Type>float</IDL_Type>
+      <Count>14</Count>
+      <Description>Mean lifted index.</Description>
+      <Units>unitless</Units>
+      <EFDB_Name>liftedIndexMean</EFDB_Name>
+    </item>
+    <item>
+      <IDL_Type>float</IDL_Type>
+      <Count>14</Count>
+      <Description>Evaporation transpiration.</Description>
+      <Units>millimeter</Units>
+      <EFDB_Name>evapoTranspiration</EFDB_Name>
+    </item>
+    <item>
+      <IDL_Type>float</IDL_Type>
+      <Count>14</Count>
+      <Description>Reference evapotranspiration as defined by FAO (Food and agriculture UN organization) using Penman-Monteith equation.</Description>
+      <Units>millimeter</Units>
+      <EFDB_Name>referenceEvapoTranspirationFao</EFDB_Name>
+    </item>
+  </SALTelemetry>
+</SALTelemetrySet>
