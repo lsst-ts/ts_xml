@@ -1,0 +1,35 @@
+{% set data= load_setup_py_data() %}
+package: 
+  name: ts-integrationtests
+  version: {{ data.get('version') }}
+
+source:
+  path: ..
+
+build:
+  noarch: generic
+  script: python -m pip install --ignore-installed -e .
+
+test:
+  source_files:
+    - python
+    - tests
+    - setup.cfg
+    - pyproject.toml
+  commands:
+    - pytest
+
+requirements:
+  host:
+    - python
+    - pip
+    - setuptools_scm
+    - setuptools
+  run:
+    - python
+    - xmlstarlet
+    - lxml
+
+about:
+  home: https://github.com/lsst-ts/ts_xml
+
