@@ -9,7 +9,6 @@ license = { text = "GPL" }
 classifiers = [ "Programming Language :: Python :: 3" ]
 urls = { documentation = "https://jira.lsstcorp.org/secure/Dashboard.jspa", repository = "https://github.com/lsst-ts/ts_xml" }
 dynamic = [ "version" ]
-dependencies = [ "lxml", "xmlstarlet" ]
  
 [tools.setuptools]
 package-data = { "" = "*.xml, *.xsd" }
@@ -20,6 +19,9 @@ version = { attr = "setuptools_scm.get_version" }
 [tool.setuptools.packages.find]
 where = [ "python" ]
  
+[tool.setuptools.package-data]
+sal_interfaces = ["*.xml"]
+
 [tool.setuptools_scm]
 write_to = "python/lsst/ts/xml/version.py"
 write_to_template = """
