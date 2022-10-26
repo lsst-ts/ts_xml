@@ -25,9 +25,10 @@ import pathlib
 
 def get_pkg_root():
     """Return the root directory of this package."""
-    return pathlib.Path(__file__).resolve().parents[4]
+    print(__file__)
+    return pathlib.Path(__file__).resolve().parents[7]
 
 
 def get_sal_interfaces_dir():
     """Return the path to the ``sal_interfaces`` dir within this package."""
-    return get_pkg_root() / "sal_interfaces"
+    return get_pkg_root() / "trunk" / "ts_xml" / "sal_interfaces"

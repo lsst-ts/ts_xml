@@ -11,6 +11,9 @@ build:
   script: python -m pip install --ignore-installed -e .
 
 test:
+  requires:
+    - astropy
+    - lxml
   source_files:
     - python
     - tests
@@ -27,8 +30,6 @@ requirements:
     - setuptools
   run:
     - python
-    - xmlstarlet
-    - lxml
 
 about:
   home: https://github.com/lsst-ts/ts_xml
