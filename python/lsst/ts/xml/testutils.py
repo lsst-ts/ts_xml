@@ -402,7 +402,7 @@ strings_with_units = [
 
 def get_pkg_root():
     """Return the root directory of this package."""
-    return pathlib.Path(__file__).resolve().parents[4]
+    return pathlib.Path(__file__).resolve().parent / "data"
 
 
 def get_sal_interfaces_dir():

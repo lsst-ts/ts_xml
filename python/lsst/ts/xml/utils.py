@@ -25,8 +25,7 @@ import pathlib
 
 def get_pkg_root():
     """Return the root directory of this package."""
-    print(__file__)
-    return pathlib.Path(__file__).resolve().parents[7]
+    return pathlib.Path(__file__).resolve().parent / "data"
 
 
 def get_sal_interfaces_dir():
