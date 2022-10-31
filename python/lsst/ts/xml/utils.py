@@ -30,4 +30,4 @@ def get_pkg_root():
 
 def get_sal_interfaces_dir():
     """Return the path to the ``sal_interfaces`` dir within this package."""
-    return get_pkg_root() / "trunk" / "ts_xml" / "sal_interfaces"
+    return get_pkg_root() / "sal_interfaces"
