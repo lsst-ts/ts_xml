@@ -25,7 +25,7 @@ import pathlib
 
 def get_pkg_root():
     """Return the root directory of this package."""
-    return pathlib.Path(__file__).resolve().parent[4]
+    return pathlib.Path(__file__).resolve().parents[4]
 
 
 def get_data_dir():
