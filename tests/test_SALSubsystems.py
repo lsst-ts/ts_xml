@@ -13,8 +13,8 @@ VALID_LANGUAGES = {"CPP", "Java", "LabVIEW", "IDL", "SALPY"}
 
 
 def get_salsubsystems_file():
-    pkgroot = ts_xml.get_pkg_root()
-    sal_subsystems_file = pkgroot / "sal_interfaces/SALSubsystems.xml"
+    datadir = ts_xml.get_data_dir()
+    sal_subsystems_file = datadir / "sal_interfaces/SALSubsystems.xml"
     return sal_subsystems_file
 
 
@@ -53,8 +53,8 @@ def whitespace_checks(content, attribute, csc):
 
 def test_salsubsystems_xml_valid():
     """Test that the SALSubsystems.xml conforms to its schema."""
-    pkgroot = ts_xml.get_pkg_root()
-    xmlschema_doc = etree.parse(f"{pkgroot}/schema/SALSubsystemSet.xsd")
+    datadir = ts_xml.get_data_dir()
+    xmlschema_doc = etree.parse(f"{datadir}/schema/SALSubsystemSet.xsd")
     xmlschema = etree.XMLSchema(xmlschema_doc)
     sal_subsystems_file = get_salsubsystems_file()
     tree = etree.parse(str(sal_subsystems_file))

@@ -403,7 +403,7 @@ strings_with_units = [
 
 def get_xmlfile_csc_topic():
     """Return the XML file for each CSC and each topic"""
-    pkgroot = utils.get_pkg_root()
+    pkgroot = utils.get_data_dir()
     arguments = []
     for csc in subsystems:
         xml_path = pkgroot / "sal_interfaces" / csc

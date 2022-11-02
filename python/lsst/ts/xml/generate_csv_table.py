@@ -138,8 +138,7 @@ def generate_csv_table():
             csvwriter.writerow(subsystem)
 
     # Alphabetize the CSV file.
-    outpath = utils.get_pkg_root() / "subsystemData.csv"
-    with open(outpath) as csv_file:
+    with open("subsystemData.csv") as csv_file:
         csv_reader = csv.reader(csv_file, delimiter=",")
         line_count = 0
 
