@@ -1,6 +1,6 @@
 {% set data= load_setup_py_data() %}
 package: 
-  name: ts-integrationtests
+  name: ts-xml
   version: {{ data.get('version') }}
 
 source:
@@ -8,7 +8,7 @@ source:
 
 build:
   noarch: generic
-  script: python -m pip install --ignore-installed -e .
+  script: {{ PYTHON }} -m pip install --no-deps --ignore-installed .
 
 test:
   requires:
@@ -24,13 +24,16 @@ test:
 
 requirements:
   host:
-    - python
+    - python {{ python }}
     - pip
     - setuptools_scm
     - setuptools
+  build:
+    - python {{ python }}
+    - setuptools_scm
+    - setuptools
   run:
-    - python
+    - python {{ python }}
 
 about:
   home: https://github.com/lsst-ts/ts_xml
-
