@@ -32,7 +32,7 @@ def generate_csv_table():
     tree = ElementTree.parse(sal_interfaces_dir / "SALSubsystems.xml")
     root = tree.getroot()
 
-    outpath = utils.get_pkg_root() / "doc" / "subsystemData.csv"
+    outpath = utils.get_pkg_root() / "subsystemData.csv"
     with open(outpath, "w") as subsystem_data:
         csvwriter = csv.writer(subsystem_data)
         subsystem_head = []
@@ -138,7 +138,7 @@ def generate_csv_table():
             csvwriter.writerow(subsystem)
 
     # Alphabetize the CSV file.
-    with open("subsystemData.csv") as csv_file:
+    with open(outpath) as csv_file:
         csv_reader = csv.reader(csv_file, delimiter=",")
         line_count = 0
 
