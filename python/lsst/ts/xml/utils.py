@@ -18,16 +18,21 @@
 #
 # You should have received a copy of the GNU General Public License
 
-__all__ = ["get_pkg_root", "get_sal_interfaces_dir"]
+__all__ = ["get_pkg_root", "get_data_dir", "get_sal_interfaces_dir"]
 
 import pathlib
 
 
 def get_pkg_root():
     """Return the root directory of this package."""
+    return pathlib.Path(__file__).resolve().parent[4]
+
+
+def get_data_dir():
+    """Return the data directory of this package."""
     return pathlib.Path(__file__).resolve().parent / "data"
 
 
 def get_sal_interfaces_dir():
     """Return the path to the ``sal_interfaces`` dir within this package."""
-    return get_pkg_root() / "sal_interfaces"
+    return get_data_dir() / "sal_interfaces"
