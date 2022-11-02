@@ -6,7 +6,7 @@ import lsst.ts.xml as ts_xml
 
 
 def get_salgenerics_file():
-    sal_generics_file = ts_xml.utils.get_sal_interfaces_dir() / "SALGenerics.xml"
+    sal_generics_file = ts_xml.get_sal_interfaces_dir() / "SALGenerics.xml"
     return sal_generics_file
 
 
