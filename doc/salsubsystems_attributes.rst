@@ -11,7 +11,7 @@ Name
 **Data Type**: string
 
 This contains the name of the CSC as specified in the directory in 
-`ts_xml/sal_interfaces`, in `ts_xml/python/lsst/ts/xml/testutils.py` and also in
+`ts_xml/python/lsst/ts/xml/data/sal_interfaces`, in `ts_xml/python/lsst/ts/xml/testutils.py` and also in
 the subsequently defined commands, events and telemetry.
 
 Description

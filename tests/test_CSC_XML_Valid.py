@@ -18,8 +18,8 @@ def check_for_issues(csc, topic):
 
 
 def get_xml_schema(saltype):
-    pkgroot = ts_xml.get_pkg_root()
-    xmlschema_doc = etree.parse(f"{pkgroot}/schema/{saltype}Set.xsd")
+    datadir = ts_xml.get_data_dir()
+    xmlschema_doc = etree.parse(f"{datadir}/schema/{saltype}Set.xsd")
     xmlschema = etree.XMLSchema(xmlschema_doc)
     return xmlschema
 

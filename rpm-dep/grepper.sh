@@ -41,7 +41,7 @@ find . -type f -name '*.fits' -exec rm {} \;
 
 rm -fr refs
 mkdir refs
-grep "<Name>" ts_xml/sal_interfaces/SALSubsystems.xml > csclist
+grep "<Name>" ts_xml/python/lsst/ts/xml/data/sal_interfaces/SALSubsystems.xml > csclist
 perl -pi -w -e 's/  <Name>//g;' csclist
 perl -pi -w -e 's/<\/Name>//g;' csclist
 cscs=`cat csclist`
