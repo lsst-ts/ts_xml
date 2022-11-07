@@ -117,6 +117,18 @@
   <SALEventSet xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://project.lsst.org/ts/sal_objects/schema/SALEventSet.xsd">
     <SALEvent>
       <Subsystem>SALGeneric</Subsystem>
+      <EFDB_Topic>SALGeneric_logevent_clockOffset</EFDB_Topic>
+      <Description>Clock error between a low-level controller and its CSC. Only relevant to CSCs that control a single low-level controller.</Description>
+      <item>
+        <EFDB_Name>offset</EFDB_Name>
+        <Description>Low-level controller time - CSC time. For most CSCs this is only accurate to 0.01 seconds or so, and thus is only intended to detect gross error.</Description>
+        <IDL_Type>double</IDL_Type>
+        <Units>second</Units>
+        <Count>1</Count>
+      </item>
+    </SALEvent>
+    <SALEvent>
+      <Subsystem>SALGeneric</Subsystem>
       <EFDB_Topic>SALGeneric_logevent_configurationApplied</EFDB_Topic>
       <Description>Information about CSC's configuration.</Description>
       <Category>configurable</Category>

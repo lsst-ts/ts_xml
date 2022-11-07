@@ -116,6 +116,7 @@ generic_commands = [
 
 generic_events = [
     "authList",
+    "clockOffset",
     "configurationApplied",
     "configurationsAvailable",
     "errorCode",
