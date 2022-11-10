@@ -28,7 +28,7 @@
     </item>
     <item>
       <EFDB_Name>speedStdDev</EFDB_Name>
-      <Description>Standard deviation of wind speed (x, y, z).</Description>
+      <Description>Standard deviation of wind speed (x, y, z) estimated from quartiles.</Description>
       <IDL_Type>float</IDL_Type>
       <Units>m/s</Units>
       <Count>3</Count>
@@ -56,7 +56,7 @@
     </item>
     <item>
       <EFDB_Name>sonicTemperatureStdDev</EFDB_Name>
-      <Description>Standard devation of sonic temperature (air temperature measured sonically).</Description>
+      <Description>Standard devation of sonic temperature (air temperature measured sonically) estimated from quartiles.</Description>
       <IDL_Type>float</IDL_Type>
       <Units>deg_C</Units>
       <Count>1</Count>
@@ -95,7 +95,7 @@
     </item>
     <item>
       <EFDB_Name>directionStdDev</EFDB_Name>
-      <Description>Standard deviation of wind direction. Not available for all sensor types.</Description>
+      <Description>Standard deviation of wind direction estimated from quartiles. Not available for all sensor types.</Description>
       <IDL_Type>short</IDL_Type>
       <Units>degree</Units>
       <Count>1</Count>
@@ -109,7 +109,7 @@
     </item>
     <item>
       <EFDB_Name>speedStdDev</EFDB_Name>
-      <Description>Standard deviation of wind speed. Not available for all sensor types.</Description>
+      <Description>Standard deviation of wind speed estimated from quartiles. Not available for all sensor types.</Description>
       <IDL_Type>float</IDL_Type>
       <Units>m/s</Units>
       <Count>1</Count>
@@ -491,6 +491,98 @@
       <Description>Physical location of the sensor (e.g. AuxTel Truss).</Description>
       <IDL_Type>string</IDL_Type>
       <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+  </SALTelemetry>
+  <SALTelemetry>
+    <EFDB_Topic>ESS_electricFieldStrength</EFDB_Topic>
+    <Description>Electric field strength. The reported values are computed from data that is accumulated over a configurable period that is typically on the order of a second.</Description>
+    <item>
+      <EFDB_Name>sensorName</EFDB_Name>
+      <Description>The user-defined name of the sensor (e.g. AuxTel EFM-100C).</Description>
+      <IDL_Type>string</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>timestamp</EFDB_Name>
+      <Description>Time at which the most recent data was read (TAI unix seconds).</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>second</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>strength</EFDB_Name>
+      <Description>Median electric field strength (range -20.00 to 20.00).</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>kV / m</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>strengthStdDev</EFDB_Name>
+      <Description>Standard deviation of electric field strength (range -20.00 to 20.00) estimated from quartiles.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>kV / m</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>strengthMax</EFDB_Name>
+      <Description>Maximum electric field strength (range -20.00 to 20.00).</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>kV / m</Units>
+      <Count>1</Count>
+    </item>
+  </SALTelemetry>
+  <SALTelemetry>
+    <EFDB_Topic>ESS_lightningStrikeStatus</EFDB_Topic>
+    <Description>Lightning strike status (once per second). This is a summary of the lightning strikes detected.</Description>
+    <item>
+      <EFDB_Name>sensorName</EFDB_Name>
+      <Description>The user-defined name of the sensor (e.g. AuxTel LD-250).</Description>
+      <IDL_Type>string</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>timestamp</EFDB_Name>
+      <Description>Time of data acqusition (TAI Unix seconds).</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>second</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>closeStrikeRate</EFDB_Name>
+      <Description>Rate of close strikes (0 - 999 strikes/minute). The range, for which a strike is considered close, can be configured in ts_config_ocs.</Description>
+      <IDL_Type>short</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>totalStrikeRate</EFDB_Name>
+      <Description>Rate of total strikes (0 - 999 strikes/minute).</Description>
+      <IDL_Type>short</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>closeAlarmStatus</EFDB_Name>
+      <Description>Status of the close alarm (false: not active, true: active). The range, for which a close alarm is emitted, can be configured in the hardware sensor itself.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>severeAlarmStatus</EFDB_Name>
+      <Description>Status of the close alarm (false: not active, true: active). The range, for which a severa alarm is emitted, can be configured in the hardware sensor itself.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>heading</EFDB_Name>
+      <Description>Current heading from GPS or compass. The sensor is at a fixed place so this is not likely to change.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>degree</Units>
       <Count>1</Count>
     </item>
   </SALTelemetry>
