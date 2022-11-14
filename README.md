@@ -55,7 +55,7 @@ to find the specific ticket.
 xmllint (http://xmlsoft.org) is used in GitHub action to check committed files format. Two spaces ("  ") are used for indentation (xmllint default). The files can be reformatted running xmllint --format, such as:
 
 ```bash
-for f in $(find . -name *.xml); do xmllint --format $f > /tmp/$$lint; cp /tmp/$$lint $f; done && rm /tmp/$$lint
+for f in $(find python/lsst/ts/xml/data -name "*.xml"); do xmllint --format $f > /tmp/$$lint; cp /tmp/$$lint $f; done && rm /tmp/$$lint
 ```
 
 Xmllint is usually part of the libxml2 package, so to install it on Mac, do:
