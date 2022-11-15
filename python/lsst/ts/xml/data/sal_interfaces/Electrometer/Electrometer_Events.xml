@@ -250,4 +250,37 @@
       <Count>1</Count>
     </item>
   </SALEvent>
+  <SALEvent>
+    <Subsystem>Electrometer</Subsystem>
+    <EFDB_Topic>Electrometer_logevent_voltageSourceChanged</EFDB_Topic>
+    <Description>The voltage source sends an output to the electrometer which can be written to the buffer.</Description>
+    <item>
+      <EFDB_Name>status</EFDB_Name>
+      <Description>Is the voltage source enabled (true) or not (false)?</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>level</EFDB_Name>
+      <Description>The voltage amplititude.</Description>
+      <IDL_Type>long</IDL_Type>
+      <Units>V</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>range</EFDB_Name>
+      <Description>The voltage value to use along the range set by the voltage limit.</Description>
+      <IDL_Type>long</IDL_Type>
+      <Units>V</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>voltage_limit</EFDB_Name>
+      <Description>Set the voltage limit that can be used.</Description>
+      <IDL_Type>long</IDL_Type>
+      <Units>V</Units>
+      <Count>1</Count>
+    </item>
+  </SALEvent>
 </SALEventSet>
