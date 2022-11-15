@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SALCommandSet xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/lsst-ts/ts_xml/develop/python/lsst/ts/xml/data/schema/SALCommandSet.xsd">
+  <SALCommand>
+    <Subsystem>ATCamera</Subsystem>
+    <EFDB_Topic>ATCamera_command_discardRows</EFDB_Topic>
+    <item>
+      <EFDB_Name>nRows</EFDB_Name>
+      <Description>Number of rows to discard</Description>
+      <IDL_Type>long</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+  </SALCommand>
+  <SALCommand>
+    <Subsystem>ATCamera</Subsystem>
+    <EFDB_Topic>ATCamera_command_startImage</EFDB_Topic>
+    <item>
+      <EFDB_Name>shutter</EFDB_Name>
+      <Description>True if the shutter should be opened/closed</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>sensors</EFDB_Name>
+      <Description>Sensors to be read out, if blank all configured sensors will be read out</Description>
+      <IDL_Type>string</IDL_Type>
+      <IDL_Size>1</IDL_Size>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>keyValueMap</EFDB_Name>
+      <Description>Map of additional key value pairs, e.g. imageType: XYZ, groupId: ABC</Description>
+      <IDL_Type>string</IDL_Type>
+      <IDL_Size>1</IDL_Size>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>obsNote</EFDB_Name>
+      <Description>An arbitrary operator provided string, useful for informally flagging images</Description>
+      <IDL_Type>string</IDL_Type>
+      <IDL_Size>1</IDL_Size>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>timeout</EFDB_Name>
+      <Description>Timeout after which imaging will be abandoned if no endImage command received</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>second</Units>
+      <Count>1</Count>
+    </item>
+  </SALCommand>
+  <SALCommand>
+    <Subsystem>ATCamera</Subsystem>
+    <EFDB_Topic>ATCamera_command_disableCalibration</EFDB_Topic>
+  </SALCommand>
+  <SALCommand>
+    <Subsystem>ATCamera</Subsystem>
+    <EFDB_Topic>ATCamera_command_initGuiders</EFDB_Topic>
+    <item>
+      <EFDB_Name>roiSpec</EFDB_Name>
+      <Description>TBD specification for region of interest</Description>
+      <IDL_Type>string</IDL_Type>
+      <IDL_Size>256</IDL_Size>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+  </SALCommand>
+  <SALCommand>
+    <Subsystem>ATCamera</Subsystem>
+    <EFDB_Topic>ATCamera_command_enableCalibration</EFDB_Topic>
+  </SALCommand>
+  <SALCommand>
+    <Subsystem>ATCamera</Subsystem>
+    <EFDB_Topic>ATCamera_command_initImage</EFDB_Topic>
+    <item>
+      <EFDB_Name>deltaT</EFDB_Name>
+      <Description>Estimate of time period before takeImages will be issued</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>second</Units>
+      <Count>1</Count>
+    </item>
+  </SALCommand>
+  <SALCommand>
+    <Subsystem>ATCamera</Subsystem>
+    <EFDB_Topic>ATCamera_command_endImage</EFDB_Topic>
+  </SALCommand>
+  <SALCommand>
+    <Subsystem>ATCamera</Subsystem>
+    <EFDB_Topic>ATCamera_command_clear</EFDB_Topic>
+    <item>
+      <EFDB_Name>nClears</EFDB_Name>
+      <Description>Number of consecutive clear operations to perform</Description>
+      <IDL_Type>long</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+  </SALCommand>
+  <SALCommand>
+    <Subsystem>ATCamera</Subsystem>
+    <EFDB_Topic>ATCamera_command_takeImages</EFDB_Topic>
+    <item>
+      <EFDB_Name>numImages</EFDB_Name>
+      <Description>Number of consecutive images to take</Description>
+      <IDL_Type>long</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>expTime</EFDB_Name>
+      <Description>Exposure time</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>second</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>shutter</EFDB_Name>
+      <Description>True if the shutter should be opened/closed</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>sensors</EFDB_Name>
+      <Description>Sensors to be read out, if blank all configured sensors will be read out</Description>
+      <IDL_Type>string</IDL_Type>
+      <IDL_Size>1</IDL_Size>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>keyValueMap</EFDB_Name>
+      <Description>Map of additional key value pairs to associate extra data with the image(s), e.g. imageType: XYZ, groupId: ABC</Description>
+      <IDL_Type>string</IDL_Type>
+      <IDL_Size>1</IDL_Size>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>obsNote</EFDB_Name>
+      <Description>An arbitrary operator provided string, useful for informally flagging images</Description>
+      <IDL_Type>string</IDL_Type>
+      <IDL_Size>1</IDL_Size>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+  </SALCommand>
+  <SALCommand>
+    <Subsystem>ATCamera</Subsystem>
+    <EFDB_Topic>ATCamera_command_stop</EFDB_Topic>
+  </SALCommand>
+  <!-- Playlist related commands, only valid when using emulated DAQ -->
+  <SALCommand>
+    <Subsystem>ATCamera</Subsystem>
+    <EFDB_Topic>ATCamera_command_play</EFDB_Topic>
+    <item>
+      <EFDB_Name>playlist</EFDB_Name>
+      <Description>Name of an existing DAQ playlist to play</Description>
+      <IDL_Type>string</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>repeat</EFDB_Name>
+      <Description>True if the playlist should run in repeat mode</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+  </SALCommand>
+  <SALCommand>
+    <Subsystem>ATCamera</Subsystem>
+    <EFDB_Topic>ATCamera_command_playlist</EFDB_Topic>
+    <item>
+      <EFDB_Name>playlist</EFDB_Name>
+      <Description>Name of a DAQ playlist to be defined (replaced if exists)</Description>
+      <IDL_Type>string</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>folder</EFDB_Name>
+      <Description>Folder where images exist in DAQ 2-day store (typically emu)</Description>
+      <IDL_Type>string</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>images</EFDB_Name>
+      <Description>Colon (:) delimited list of images to add to the playlist</Description>
+      <IDL_Type>string</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+  </SALCommand>
+  <!-- Experimental alert related command -->
+  <SALCommand>
+    <Subsystem>ATCamera</Subsystem>
+    <EFDB_Topic>ATCamera_command_alert</EFDB_Topic>
+    <item>
+      <EFDB_Name>alertId</EFDB_Name>
+      <Description>The alertId for which this command applies (or *)</Description>
+      <IDL_Type>string</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>action</EFDB_Name>
+      <Description>The action to take on the specified alert (TBD)</Description>
+      <IDL_Type>string</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+  </SALCommand>
+</SALCommandSet>

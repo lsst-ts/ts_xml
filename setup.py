@@ -1,21 +1,28 @@
 #!/usr/bin/env python
-# -*- coding: utf-8 -*-
-from setuptools import setup, find_namespace_packages
+#
+# This file is part of ts_xml.
+#
+# Developed for the Vera Rubin Observatory Telescope and Site Systems.
+# This product includes software developed by the LSST Project
+# (https://www.lsst.org).
+# See the COPYRIGHT file at the top-level directory of this distribution
+# for details of code ownership.
+#
+# This program is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or
+# (at your option) any later version.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-install_requires = ["black"]
-setup_requires = ["setuptools_scm", "pytest-runner"]
-tests_requires = ["pytest", "pytest-flake8", "lxml", "black", "astropy", "flake8<5"]
-dev_requires = install_requires + tests_requires + ["documenteer[pipelines]"]
+from setuptools import setup
+import setuptools_scm
 
-setup(
-    name="ts_xml",
-    description="Installs python code for ts_xml.",
-    install_requires=install_requires,
-    setup_requires=setup_requires,
-    package_dir={"": "python"},
-    packages=find_namespace_packages(where="python"),
-    scripts=[],
-    tests_require=tests_requires,
-    extras_require={"dev": dev_requires},
-    license="GPL",
-)
+
+setup(version=setuptools_scm.get_version())

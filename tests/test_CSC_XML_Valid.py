@@ -5,9 +5,14 @@ from lxml import etree
 import lsst.ts.xml as ts_xml
 
 
+def check_for_issues(csc, topic):
+    jira = ""
+    return jira
+
+
 def get_xml_schema(saltype):
-    pkgroot = ts_xml.get_pkg_root()
-    xmlschema_doc = etree.parse(f"{pkgroot}/schema/{saltype}Set.xsd")
+    datadir = ts_xml.get_data_dir()
+    xmlschema_doc = etree.parse(f"{datadir}/schema/{saltype}Set.xsd")
     xmlschema = etree.XMLSchema(xmlschema_doc)
     return xmlschema
 
@@ -29,6 +34,9 @@ def test_csc_xml_valid(xmlfile, csc, topic):
     """
     saltype = "SAL" + topic.rstrip("s")
     xmlschema = get_xml_schema(saltype)
+    jira = check_for_issues(csc, topic)
+    if jira:
+        pytest.skip(f"{jira}: {xmlfile.name} Does not conform to XML schema.")
     with open(str(xmlfile), "r", encoding="utf-8") as f:
         tree = etree.parse(f)
     try:

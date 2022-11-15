@@ -1,0 +1,589 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="http://lsst-sal.tuc.noao.edu/schema/SALTelemetrySet.xsl"?>
+<SALTelemetrySet xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://lsst-sal.tuc.noao.edu/schema/SALTelemetrySet.xsd">
+  <SALTelemetry>
+    <Subsystem>ESS</Subsystem>
+    <EFDB_Topic>ESS_airTurbulence</EFDB_Topic>
+    <Description>Air turbulence measured by a 3-dimensional anemometer. The reported values are computed from data that is accumulated over a configurable period that is typically on the order of a minute.</Description>
+    <item>
+      <EFDB_Name>sensorName</EFDB_Name>
+      <Description>The name of the sensor.</Description>
+      <IDL_Type>string</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>timestamp</EFDB_Name>
+      <Description>Time at which the most recent data was read (TAI unix seconds).</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>second</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>speed</EFDB_Name>
+      <Description>Median wind speed (x, y, z).</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>m/s</Units>
+      <Count>3</Count>
+    </item>
+    <item>
+      <EFDB_Name>speedStdDev</EFDB_Name>
+      <Description>Standard deviation of wind speed (x, y, z) estimated from quartiles.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>m/s</Units>
+      <Count>3</Count>
+    </item>
+    <item>
+      <EFDB_Name>speedMagnitude</EFDB_Name>
+      <Description>Median wind speed magnitude.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>m/s</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>speedMaxMagnitude</EFDB_Name>
+      <Description>Maximum wind speed magnitude.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>m/s</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>sonicTemperature</EFDB_Name>
+      <Description>Median sonic temperature (air temperature measured sonically). Sonic temperature has poor absolute accuracy (it can be off by several degrees) but good time resolution.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>deg_C</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>sonicTemperatureStdDev</EFDB_Name>
+      <Description>Standard devation of sonic temperature (air temperature measured sonically) estimated from quartiles.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>deg_C</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>location</EFDB_Name>
+      <Description>The location of the sensor.</Description>
+      <IDL_Type>string</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+  </SALTelemetry>
+  <SALTelemetry>
+    <EFDB_Topic>ESS_airFlow</EFDB_Topic>
+    <Description>Wind speed and direction. The reported values are computed from data that is accumulated over a configurable period that is typically on the order of a minute.</Description>
+    <item>
+      <EFDB_Name>sensorName</EFDB_Name>
+      <Description>The name of the sensor.</Description>
+      <IDL_Type>string</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>timestamp</EFDB_Name>
+      <Description>Time at which the most recent data was read (TAI unix seconds).</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>second</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>direction</EFDB_Name>
+      <Description>Median (or mean, for some sensor types) wind direction: 0 = north, 90 = east.</Description>
+      <IDL_Type>short</IDL_Type>
+      <Units>degree</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>directionStdDev</EFDB_Name>
+      <Description>Standard deviation of wind direction estimated from quartiles. Not available for all sensor types.</Description>
+      <IDL_Type>short</IDL_Type>
+      <Units>degree</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>speed</EFDB_Name>
+      <Description>Median (mean for some sensors) wind speed.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>m/s</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>speedStdDev</EFDB_Name>
+      <Description>Standard deviation of wind speed estimated from quartiles. Not available for all sensor types.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>m/s</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>maxSpeed</EFDB_Name>
+      <Description>Maximum wind speed.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>m/s</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>location</EFDB_Name>
+      <Description>The location of the sensor.</Description>
+      <IDL_Type>string</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+  </SALTelemetry>
+  <SALTelemetry>
+    <EFDB_Topic>ESS_dewPoint</EFDB_Topic>
+    <Description>Dew point.</Description>
+    <item>
+      <EFDB_Name>sensorName</EFDB_Name>
+      <Description>The name of the sensor.</Description>
+      <IDL_Type>string</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>timestamp</EFDB_Name>
+      <Description>Time at which the data was read (TAI unix seconds).</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>second</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>dewPoint</EFDB_Name>
+      <Description>Dew point.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>deg_C</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>location</EFDB_Name>
+      <Description>The location of the sensor.</Description>
+      <IDL_Type>string</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+  </SALTelemetry>
+  <SALTelemetry>
+    <EFDB_Topic>ESS_pressure</EFDB_Topic>
+    <Description>Pressure sensors with up to 8 channels.</Description>
+    <item>
+      <EFDB_Name>sensorName</EFDB_Name>
+      <Description>The name of the sensor.</Description>
+      <IDL_Type>string</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>timestamp</EFDB_Name>
+      <Description>Time at which the data was read (TAI unix seconds).</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>second</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>numChannels</EFDB_Name>
+      <Description>The number of channels (minimum 1 and maximum 8).</Description>
+      <IDL_Type>short</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>pressure</EFDB_Name>
+      <Description>The pressures.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>Pa</Units>
+      <Count>8</Count>
+    </item>
+    <item>
+      <EFDB_Name>location</EFDB_Name>
+      <Description>Comma-separated string with the locations of the sensors for each channel.</Description>
+      <IDL_Type>string</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+  </SALTelemetry>
+  <SALTelemetry>
+    <EFDB_Topic>ESS_rainRate</EFDB_Topic>
+    <Description>Rate of rainfall.</Description>
+    <item>
+      <EFDB_Name>sensorName</EFDB_Name>
+      <Description>The name of the sensor.</Description>
+      <IDL_Type>string</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>timestamp</EFDB_Name>
+      <Description>Time at which the data was read (TAI unix seconds).</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>second</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>rainRate</EFDB_Name>
+      <Description>Rainfall rate measured over a configurable period on the order of a minute.</Description>
+      <IDL_Type>short</IDL_Type>
+      <Units>mm/h</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>location</EFDB_Name>
+      <Description>The location of the sensor.</Description>
+      <IDL_Type>string</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+  </SALTelemetry>
+  <SALTelemetry>
+    <EFDB_Topic>ESS_relativeHumidity</EFDB_Topic>
+    <Description>Relative humidity.</Description>
+    <item>
+      <EFDB_Name>sensorName</EFDB_Name>
+      <Description>The name of the sensor.</Description>
+      <IDL_Type>string</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>timestamp</EFDB_Name>
+      <Description>Time at which the data was read (TAI unix seconds).</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>second</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>relativeHumidity</EFDB_Name>
+      <Description>Relative Humidity.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>%</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>location</EFDB_Name>
+      <Description>The location of the sensor.</Description>
+      <IDL_Type>string</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+  </SALTelemetry>
+  <SALTelemetry>
+    <EFDB_Topic>ESS_snowRate</EFDB_Topic>
+    <Description>Rate of snowfall.</Description>
+    <item>
+      <EFDB_Name>sensorName</EFDB_Name>
+      <Description>The name of the sensor.</Description>
+      <IDL_Type>string</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>timestamp</EFDB_Name>
+      <Description>Time at which the data was read (TAI unix seconds).</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>second</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>snowRate</EFDB_Name>
+      <Description>Snowfall rate measured over a configurable period on the order of a minute.</Description>
+      <IDL_Type>short</IDL_Type>
+      <Units>mm/h</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>location</EFDB_Name>
+      <Description>The location of the sensor.</Description>
+      <IDL_Type>string</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+  </SALTelemetry>
+  <SALTelemetry>
+    <EFDB_Topic>ESS_solarRadiation</EFDB_Topic>
+    <Description>Solar radiation.</Description>
+    <item>
+      <EFDB_Name>sensorName</EFDB_Name>
+      <Description>The name of the sensor.</Description>
+      <IDL_Type>string</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>timestamp</EFDB_Name>
+      <Description>Time at which the data was read (TAI unix seconds).</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>second</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>solarRadiation</EFDB_Name>
+      <Description>Median (mean for some sensors) solar radiation measured over a configurable period on the order of a minute.</Description>
+      <IDL_Type>short</IDL_Type>
+      <Units>W/m2</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>location</EFDB_Name>
+      <Description>The location of the sensor.</Description>
+      <IDL_Type>string</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+  </SALTelemetry>
+  <SALTelemetry>
+    <EFDB_Topic>ESS_temperature</EFDB_Topic>
+    <Description>Temperature Sensors with up to 16 channels.</Description>
+    <item>
+      <EFDB_Name>sensorName</EFDB_Name>
+      <Description>The name of the sensor.</Description>
+      <IDL_Type>string</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>timestamp</EFDB_Name>
+      <Description>Time at which the data was read (TAI unix seconds).</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>second</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>numChannels</EFDB_Name>
+      <Description>The number of channels (minimum 1 and maximum 16).</Description>
+      <IDL_Type>short</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>temperature</EFDB_Name>
+      <Description>The temperatures.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>deg_C</Units>
+      <Count>16</Count>
+    </item>
+    <item>
+      <EFDB_Name>location</EFDB_Name>
+      <Description>Comma-separated string with the locations of the sensors for each channel.</Description>
+      <IDL_Type>string</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+  </SALTelemetry>
+  <SALTelemetry>
+    <EFDB_Topic>ESS_accelerometer</EFDB_Topic>
+    <Description>Raw data from a 3-axis accelerometer.</Description>
+    <item>
+      <EFDB_Name>sensorName</EFDB_Name>
+      <Description>The user-defined name of the accelerometer (e.g. AuxTel_accel1).</Description>
+      <IDL_Type>string</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>timestamp</EFDB_Name>
+      <Description>Starting time of data acquisition (TAI unix seconds).</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>second</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>interval</EFDB_Name>
+      <Description>Data collection time interval. N-th (starting from 0) sample is assumed to be taken at "timestamp" + ("interval"/200) * N.</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>second</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>accelerationX</EFDB_Name>
+      <Description>Acceleration in x direction.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>m/s2</Units>
+      <Count>200</Count>
+    </item>
+    <item>
+      <EFDB_Name>accelerationY</EFDB_Name>
+      <Description>Acceleration in y direction.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>m/s2</Units>
+      <Count>200</Count>
+    </item>
+    <item>
+      <EFDB_Name>accelerationZ</EFDB_Name>
+      <Description>Acceleration in Z direction.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>m/s2</Units>
+      <Count>200</Count>
+    </item>
+    <item>
+      <EFDB_Name>location</EFDB_Name>
+      <Description>Physical location of the sensor (e.g. AuxTel Truss).</Description>
+      <IDL_Type>string</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+  </SALTelemetry>
+  <SALTelemetry>
+    <EFDB_Topic>ESS_accelerometerPSD</EFDB_Topic>
+    <Description>PSD data from a 3-axis accelerometer.</Description>
+    <item>
+      <EFDB_Name>sensorName</EFDB_Name>
+      <Description>The user-defined name of the accelerometer (e.g. AuxTel_accel1).</Description>
+      <IDL_Type>string</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>timestamp</EFDB_Name>
+      <Description>Starting time of data acqusition (TAI Unix seconds) used to compute PSDs.</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>second</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>interval</EFDB_Name>
+      <Description>Time interval over which PSDs were calculated beginning from the starting time.</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>second</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>minPSDFrequency</EFDB_Name>
+      <Description>PSD minimum frequency.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>Hz</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>maxPSDFrequency</EFDB_Name>
+      <Description>PSD maximum frequency.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>Hz</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>numDataPoints</EFDB_Name>
+      <Description>Number of valid frequencies. PSD array elements with index greater than or equal to numDataPoints are invalid and can contain any value (0 preferred).</Description>
+      <IDL_Type>int</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>accelerationPSDX</EFDB_Name>
+      <Description>Acceleration PSD in x direction.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>m2 / (Hz2 s4)</Units>
+      <Count>200</Count>
+    </item>
+    <item>
+      <EFDB_Name>accelerationPSDY</EFDB_Name>
+      <Description>Acceleration PSD in y direction.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>m2 / (Hz2 s4)</Units>
+      <Count>200</Count>
+    </item>
+    <item>
+      <EFDB_Name>accelerationPSDZ</EFDB_Name>
+      <Description>Acceleration PSD in z direction.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>m2 / (Hz2 s4)</Units>
+      <Count>200</Count>
+    </item>
+    <item>
+      <EFDB_Name>location</EFDB_Name>
+      <Description>Physical location of the sensor (e.g. AuxTel Truss).</Description>
+      <IDL_Type>string</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+  </SALTelemetry>
+  <SALTelemetry>
+    <EFDB_Topic>ESS_electricFieldStrength</EFDB_Topic>
+    <Description>Electric field strength. The reported values are computed from data that is accumulated over a configurable period that is typically on the order of a second.</Description>
+    <item>
+      <EFDB_Name>sensorName</EFDB_Name>
+      <Description>The user-defined name of the sensor (e.g. AuxTel EFM-100C).</Description>
+      <IDL_Type>string</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>timestamp</EFDB_Name>
+      <Description>Time at which the most recent data was read (TAI unix seconds).</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>second</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>strength</EFDB_Name>
+      <Description>Median electric field strength (range -20.00 to 20.00).</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>kV / m</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>strengthStdDev</EFDB_Name>
+      <Description>Standard deviation of electric field strength (range -20.00 to 20.00) estimated from quartiles.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>kV / m</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>strengthMax</EFDB_Name>
+      <Description>Maximum electric field strength (range -20.00 to 20.00).</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>kV / m</Units>
+      <Count>1</Count>
+    </item>
+  </SALTelemetry>
+  <SALTelemetry>
+    <EFDB_Topic>ESS_lightningStrikeStatus</EFDB_Topic>
+    <Description>Lightning strike status (once per second). This is a summary of the lightning strikes detected.</Description>
+    <item>
+      <EFDB_Name>sensorName</EFDB_Name>
+      <Description>The user-defined name of the sensor (e.g. AuxTel LD-250).</Description>
+      <IDL_Type>string</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>timestamp</EFDB_Name>
+      <Description>Time of data acqusition (TAI Unix seconds).</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>second</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>closeStrikeRate</EFDB_Name>
+      <Description>Rate of close strikes (0 - 999 strikes/minute). The range, for which a strike is considered close, can be configured in ts_config_ocs.</Description>
+      <IDL_Type>short</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>totalStrikeRate</EFDB_Name>
+      <Description>Rate of total strikes (0 - 999 strikes/minute).</Description>
+      <IDL_Type>short</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>closeAlarmStatus</EFDB_Name>
+      <Description>Status of the close alarm (false: not active, true: active). The range, for which a close alarm is emitted, can be configured in the hardware sensor itself.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>severeAlarmStatus</EFDB_Name>
+      <Description>Status of the close alarm (false: not active, true: active). The range, for which a severa alarm is emitted, can be configured in the hardware sensor itself.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>heading</EFDB_Name>
+      <Description>Current heading from GPS or compass. The sensor is at a fixed place so this is not likely to change.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>degree</Units>
+      <Count>1</Count>
+    </item>
+  </SALTelemetry>
+</SALTelemetrySet>

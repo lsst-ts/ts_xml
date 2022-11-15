@@ -1,0 +1,519 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="http://project.lsst.org/ts/sal_objects/schema/SALCommandSet.xsl"?>
+<SALObjects>
+  <SALCommandSet xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://project.lsst.org/ts/sal_objects/schema/SALCommandSet.xsd">
+    <SALCommand>
+      <Subsystem>SALGeneric</Subsystem>
+      <EFDB_Topic>SALGeneric_command_abort</EFDB_Topic>
+      <Description>Abort the current operation; deprecated.</Description>
+    </SALCommand>
+    <SALCommand>
+      <Subsystem>SALGeneric</Subsystem>
+      <EFDB_Topic>SALGeneric_command_enable</EFDB_Topic>
+      <Description>Transition from state Disabled to Enabled.</Description>
+      <Category>csc</Category>
+    </SALCommand>
+    <SALCommand>
+      <Subsystem>SALGeneric</Subsystem>
+      <EFDB_Topic>SALGeneric_command_disable</EFDB_Topic>
+      <Description>Transition from state Enabled to Disabled.</Description>
+      <Category>csc</Category>
+    </SALCommand>
+    <SALCommand>
+      <Subsystem>SALGeneric</Subsystem>
+      <EFDB_Topic>SALGeneric_command_standby</EFDB_Topic>
+      <Description>Transition from state Offline/Available, Disabled or Fault to Standby.</Description>
+      <Category>csc</Category>
+    </SALCommand>
+    <SALCommand>
+      <Subsystem>SALGeneric</Subsystem>
+      <EFDB_Topic>SALGeneric_command_exitControl</EFDB_Topic>
+      <Description>Transition from state Standby to Offline. Most CSCs will quit, but CSCs that support the enterControl command will keep running.</Description>
+      <Category>csc</Category>
+    </SALCommand>
+    <SALCommand>
+      <Subsystem>SALGeneric</Subsystem>
+      <EFDB_Topic>SALGeneric_command_start</EFDB_Topic>
+      <Description>Transition from state Standby to Disable, in a specified configuration.</Description>
+      <Category>csc</Category>
+      <item>
+        <EFDB_Name>configurationOverride</EFDB_Name>
+        <Description>
+            Configuration override in the form [{name}][:{version}].
+            For salobj-based CSCs: name is a filename with ".yaml" suffix and version is a git hash; for example:
+
+            * "foo.yaml" specifies just a file.
+              Two or three config files are loaded: "_init.yaml", "_{site}.yaml" (if present), and "foo.yaml".
+            * ":37bf936" specifies just a git hash.
+              One or two config files are loaded from the specified git commit: "_init.yaml" and "_{site}.yaml" (if present.
+            * "bar.yaml:HEAD~2" specifies both a file and a git hash.
+              Two or three config files are read from the specified git commit: "_init.yaml", "_{site}.yaml" (if present), and "bar.yaml".
+        </Description>
+        <IDL_Type>string</IDL_Type>
+        <IDL_Size>1</IDL_Size>
+        <Units>unitless</Units>
+        <Count>1</Count>
+      </item>
+    </SALCommand>
+    <SALCommand>
+      <Subsystem>SALGeneric</Subsystem>
+      <EFDB_Topic>SALGeneric_command_enterControl</EFDB_Topic>
+      <Description>Transition from state Offline to Standby. Only a few CSCs support this command; all other CSCs start in Standby state and quit when they go to Offline.</Description>
+    </SALCommand>
+    <SALCommand>
+      <Subsystem>SALGeneric</Subsystem>
+      <EFDB_Topic>SALGeneric_command_setLogLevel</EFDB_Topic>
+      <Description>Set the logging level.</Description>
+      <Category>csc</Category>
+      <item>
+        <EFDB_Name>level</EFDB_Name>
+        <Description>Logging level, as a Python logging level: error=40, warning=30, info=20, debug=10.</Description>
+        <IDL_Type>int</IDL_Type>
+        <Units>unitless</Units>
+        <Count>1</Count>
+      </item>
+      <item>
+        <EFDB_Name>subsystem</EFDB_Name>
+        <Description>If this CSC itself has sub-ordinate components, they may be listed here. An empty string means the setting applies to all such sub-ordinate components, or just to this CSC itself.</Description>
+        <IDL_Type>string</IDL_Type>
+        <Units>unitless</Units>
+        <Count>1</Count>
+      </item>
+    </SALCommand>
+    <SALCommand>
+      <Subsystem>SALGeneric</Subsystem>
+      <EFDB_Topic>SALGeneric_command_setAuthList</EFDB_Topic>
+      <Description>Specify who can command this CSC.</Description>
+      <Category>csc</Category>
+      <item>
+        <EFDB_Name>authorizedUsers</EFDB_Name>
+        <Description>Comma seperated list of authorized users currently allowed to command this CSC,
+            in the form user@host.
+            If the first character is +/- then the specified users are added/removed.
+            Duplicates are silently ignored.
+            The CSC's own user@host is silently ignored, because it is always authorized.
+            For removal, CSCs that are not in the list are silently ignored.
+            Whitespace is allowed after the optional initial +/- and after each comma.
+        </Description>
+        <IDL_Type>string</IDL_Type>
+        <IDL_Size>1</IDL_Size>
+        <Units>unitless</Units>
+        <Count>1</Count>
+      </item>
+      <item>
+        <EFDB_Name>nonAuthorizedCSCs</EFDB_Name>
+        <Description>Comma seperated list of CSC's not currently allowed to command this CSC,
+            in the form name[:index]. An index of 0 is stripped (name:0 becomes name).
+            If the first character is +/- then the specified CSCs are added/removed.
+            Duplicates are silently ignored.
+            For removal, CSCs that are not in the list are silently ignored.
+            Whitespace is allowed after the optional initial +/- and after each comma.
+        </Description>
+        <IDL_Type>string</IDL_Type>
+        <IDL_Size>1</IDL_Size>
+        <Units>unitless</Units>
+        <Count>1</Count>
+      </item>
+    </SALCommand>
+  </SALCommandSet>
+  <SALEventSet xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://project.lsst.org/ts/sal_objects/schema/SALEventSet.xsd">
+    <SALEvent>
+      <Subsystem>SALGeneric</Subsystem>
+      <EFDB_Topic>SALGeneric_logevent_clockOffset</EFDB_Topic>
+      <Description>Clock error between a low-level controller and its CSC. Only relevant to CSCs that control a single low-level controller.</Description>
+      <item>
+        <EFDB_Name>offset</EFDB_Name>
+        <Description>Low-level controller time - CSC time. For most CSCs this is only accurate to 0.01 seconds or so, and thus is only intended to detect gross error.</Description>
+        <IDL_Type>double</IDL_Type>
+        <Units>second</Units>
+        <Count>1</Count>
+      </item>
+    </SALEvent>
+    <SALEvent>
+      <Subsystem>SALGeneric</Subsystem>
+      <EFDB_Topic>SALGeneric_logevent_configurationApplied</EFDB_Topic>
+      <Description>Information about this CSC's current configuration overrides.</Description>
+      <Category>configurable</Category>
+      <item>
+        <EFDB_Name>configurations</EFDB_Name>
+        <Description>A comma-separated list of configurations applied. If configuration comes from a clone of a git repo, or similar directory, then it will be a list of file names, without the file extension. Ignore whitespace after commas.</Description>
+        <IDL_Type>string</IDL_Type>
+        <IDL_Size>1</IDL_Size>
+        <Units>unitless</Units>
+        <Count>1</Count>
+      </item>
+      <item>
+        <EFDB_Name>version</EFDB_Name>
+        <Description>Version of the configuration source. For a clone of a git repo it will be a git hash.</Description>
+        <IDL_Type>string</IDL_Type>
+        <IDL_Size>1</IDL_Size>
+        <Units>unitless</Units>
+        <Count>1</Count>
+      </item>
+      <item>
+        <EFDB_Name>url</EFDB_Name>
+        <Description>URL of the configuration source. For a clone of a git repo this will be a file URL. For a database it will be a standard database URL. This should always match the same-named field in configurationsAvailable.</Description>
+        <IDL_Type>string</IDL_Type>
+        <IDL_Size>1</IDL_Size>
+        <Units>unitless</Units>
+        <Count>1</Count>
+      </item>
+      <item>
+        <EFDB_Name>schemaVersion</EFDB_Name>
+        <Description>Version of config schema used by this CSC. For a configuration git repo, this is the name of a folder in the config package, and is typically something like "v1". This should always match the same-named field in configurationsAvailable.</Description>
+        <IDL_Type>string</IDL_Type>
+        <IDL_Size>1</IDL_Size>
+        <Units>unitless</Units>
+        <Count>1</Count>
+      </item>
+      <item>
+        <EFDB_Name>otherInfo</EFDB_Name>
+        <Description>A comma-separated list of event topics (without the logevent prefix) used to publish the entire set of configuration parameters loaded by this CSC, and any other pertinent information. Ignore whitespace after commas.</Description>
+        <IDL_Type>string</IDL_Type>
+        <IDL_Size>1</IDL_Size>
+        <Units>unitless</Units>
+        <Count>1</Count>
+      </item>
+    </SALEvent>
+    <SALEvent>
+      <Subsystem>SALGeneric</Subsystem>
+      <EFDB_Topic>SALGeneric_logevent_configurationsAvailable</EFDB_Topic>
+      <Description>Available configuration overrides for this CSC.</Description>
+      <Category>configurable</Category>
+      <item>
+        <EFDB_Name>overrides</EFDB_Name>
+        <Description>Available overrides as a comma-separated list. Each entry is a possible value of the `configurationOverride` field of the `start` command. Ignore whitespace after commas.</Description>
+        <IDL_Type>string</IDL_Type>
+        <IDL_Size>1</IDL_Size>
+        <Units>unitless</Units>
+        <Count>1</Count>
+      </item>
+      <item>
+        <EFDB_Name>version</EFDB_Name>
+        <Description>Version of the configuration source. For a clone of a git repo it will be a git hash.</Description>
+        <IDL_Type>string</IDL_Type>
+        <IDL_Size>1</IDL_Size>
+        <Units>unitless</Units>
+        <Count>1</Count>
+      </item>
+      <item>
+        <EFDB_Name>url</EFDB_Name>
+        <Description>URL of the configuration source. For a clone of a git repo this will be a file URL. For a database it will be a standard database URL.</Description>
+        <IDL_Type>string</IDL_Type>
+        <IDL_Size>1</IDL_Size>
+        <Units>unitless</Units>
+        <Count>1</Count>
+      </item>
+      <item>
+        <EFDB_Name>schemaVersion</EFDB_Name>
+        <Description>Version of config schema used by this CSC. For a configuration git repo, this is the name of a folder in the config package, and is typically something like "v1".</Description>
+        <IDL_Type>string</IDL_Type>
+        <IDL_Size>1</IDL_Size>
+        <Units>unitless</Units>
+        <Count>1</Count>
+      </item>
+    </SALEvent>
+    <SALEvent>
+      <Subsystem>SALGeneric</Subsystem>
+      <EFDB_Topic>SALGeneric_logevent_errorCode</EFDB_Topic>
+      <Description>Output when this CSC goes into the Fault state as an explanation of the problem.</Description>
+      <Category>csc</Category>
+      <item>
+        <EFDB_Name>errorCode</EFDB_Name>
+        <Description>A numeric error code.</Description>
+        <IDL_Type>long</IDL_Type>
+        <Units>unitless</Units>
+        <Count>1</Count>
+      </item>
+      <item>
+        <EFDB_Name>errorReport</EFDB_Name>
+        <Description>An string providing detailed information about the error.</Description>
+        <IDL_Type>string</IDL_Type>
+        <IDL_Size>1</IDL_Size>
+        <Units>unitless</Units>
+        <Count>1</Count>
+      </item>
+      <item>
+        <EFDB_Name>traceback</EFDB_Name>
+        <Description>An optional stack trace of the error condition.</Description>
+        <IDL_Type>string</IDL_Type>
+        <IDL_Size>1</IDL_Size>
+        <Units>unitless</Units>
+        <Count>1</Count>
+      </item>
+    </SALEvent>
+    <SALEvent>
+      <Subsystem>SALGeneric</Subsystem>
+      <EFDB_Topic>SALGeneric_logevent_summaryState</EFDB_Topic>
+      <Description>Current summary state of this CSC.</Description>
+      <Category>csc</Category>
+      <item>
+        <EFDB_Name>summaryState</EFDB_Name>
+        <Description>High level state machine state identifier.</Description>
+        <IDL_Type>long</IDL_Type>
+        <Units>unitless</Units>
+        <Count>1</Count>
+      </item>
+    </SALEvent>
+    <SALEvent>
+      <Subsystem>SALGeneric</Subsystem>
+      <EFDB_Topic>SALGeneric_logevent_logLevel</EFDB_Topic>
+      <Description>Current logging level.</Description>
+      <Category>mandatory</Category>
+      <item>
+        <EFDB_Name>level</EFDB_Name>
+        <Description>Current logging level, a Python logging level: error=40, warning=30, info=20, debug=10.</Description>
+        <IDL_Type>int</IDL_Type>
+        <Units>unitless</Units>
+        <Count>1</Count>
+      </item>
+      <item>
+        <EFDB_Name>subsystem</EFDB_Name>
+        <Description>If this CSC itself has sub-ordinate components, they may be listed here. An empty string means the setting applies to all such sub-ordinate components, or just to this CSC itself.</Description>
+        <IDL_Type>string</IDL_Type>
+        <Units>unitless</Units>
+        <Count>1</Count>
+      </item>
+    </SALEvent>
+    <SALEvent>
+      <Subsystem>SALGeneric</Subsystem>
+      <EFDB_Topic>SALGeneric_logevent_logMessage</EFDB_Topic>
+      <Description>A log message.</Description>
+      <Category>mandatory</Category>
+      <item>
+        <EFDB_Name>name</EFDB_Name>
+        <Description>Log name.</Description>
+        <IDL_Type>string</IDL_Type>
+        <IDL_Size>1</IDL_Size>
+        <Units>unitless</Units>
+        <Count>1</Count>
+      </item>
+      <item>
+        <EFDB_Name>level</EFDB_Name>
+        <Description>Message level, a Python logging level: error=40, warning=30, info=20, debug=10.</Description>
+        <IDL_Type>int</IDL_Type>
+        <Units>unitless</Units>
+        <Count>1</Count>
+      </item>
+      <item>
+        <EFDB_Name>message</EFDB_Name>
+        <Description>Log message.</Description>
+        <IDL_Type>string</IDL_Type>
+        <IDL_Size>1</IDL_Size>
+        <Units>unitless</Units>
+        <Count>1</Count>
+      </item>
+      <item>
+        <EFDB_Name>traceback</EFDB_Name>
+        <Description>Exception traceback; "" if not an exception.</Description>
+        <IDL_Type>string</IDL_Type>
+        <IDL_Size>1</IDL_Size>
+        <Units>unitless</Units>
+        <Count>1</Count>
+      </item>
+      <item>
+        <EFDB_Name>filePath</EFDB_Name>
+        <Description>Path to source file.</Description>
+        <IDL_Type>string</IDL_Type>
+        <IDL_Size>1</IDL_Size>
+        <Units>unitless</Units>
+        <Count>1</Count>
+      </item>
+      <item>
+        <EFDB_Name>functionName</EFDB_Name>
+        <Description>Function or method name.</Description>
+        <IDL_Type>string</IDL_Type>
+        <IDL_Size>1</IDL_Size>
+        <Units>unitless</Units>
+        <Count>1</Count>
+      </item>
+      <item>
+        <EFDB_Name>lineNumber</EFDB_Name>
+        <Description>Line number in the file specified by filePath.</Description>
+        <IDL_Type>long</IDL_Type>
+        <Units>unitless</Units>
+        <Count>1</Count>
+      </item>
+      <item>
+        <EFDB_Name>process</EFDB_Name>
+        <Description>Process ID.</Description>
+        <IDL_Type>long</IDL_Type>
+        <IDL_Size>1</IDL_Size>
+        <Units>unitless</Units>
+        <Count>1</Count>
+      </item>
+      <item>
+        <EFDB_Name>timestamp</EFDB_Name>
+        <Description>The time at which the condition being reported was observed (TAI unix seconds). 0 if unspecified.</Description>
+        <IDL_Type>double</IDL_Type>
+        <Units>second</Units>
+        <Count>1</Count>
+      </item>
+    </SALEvent>
+    <SALEvent>
+      <Subsystem>SALGeneric</Subsystem>
+      <EFDB_Topic>SALGeneric_logevent_simulationMode</EFDB_Topic>
+      <Description>Current simulation mode.</Description>
+      <Category>csc</Category>
+      <item>
+        <EFDB_Name>mode</EFDB_Name>
+        <Description>Current simulation mode; 0 for normal operation (no simulation); other supported values are specific to each CSC.</Description>
+        <IDL_Type>int</IDL_Type>
+        <Units>unitless</Units>
+        <Count>1</Count>
+      </item>
+    </SALEvent>
+    <SALEvent>
+      <Subsystem>SALGeneric</Subsystem>
+      <EFDB_Topic>SALGeneric_logevent_softwareVersions</EFDB_Topic>
+      <Description>Current versions of software in use by CSC.</Description>
+      <Category>mandatory</Category>
+      <item>
+        <EFDB_Name>salVersion</EFDB_Name>
+        <Description>This is the current version of SAL generation.</Description>
+        <IDL_Type>string</IDL_Type>
+        <IDL_Size>256</IDL_Size>
+        <Units>unitless</Units>
+        <Count>1</Count>
+      </item>
+      <item>
+        <EFDB_Name>xmlVersion</EFDB_Name>
+        <Description>This is the current version of CSC XML.</Description>
+        <IDL_Type>string</IDL_Type>
+        <IDL_Size>256</IDL_Size>
+        <Units>unitless</Units>
+        <Count>1</Count>
+      </item>
+      <item>
+        <EFDB_Name>openSpliceVersion</EFDB_Name>
+        <Description>This is the current version of OpenSplice.</Description>
+        <IDL_Type>string</IDL_Type>
+        <IDL_Size>256</IDL_Size>
+        <Units>unitless</Units>
+        <Count>1</Count>
+      </item>
+      <item>
+        <EFDB_Name>cscVersion</EFDB_Name>
+        <Description>The software version of this CSC.</Description>
+        <IDL_Type>string</IDL_Type>
+        <IDL_Size>256</IDL_Size>
+        <Units>unitless</Units>
+        <Count>1</Count>
+      </item>
+      <item>
+        <EFDB_Name>subsystemVersions</EFDB_Name>
+        <Description>A comma delimited list of key=value pairs relating subsystem name (key) to its version number (value). This may be left blank if there are no subsystems within this CSC.</Description>
+        <IDL_Type>string</IDL_Type>
+        <IDL_Size>1</IDL_Size>
+        <Units>unitless</Units>
+        <Count>1</Count>
+      </item>
+    </SALEvent>
+    <SALEvent>
+      <Subsystem>SALGeneric</Subsystem>
+      <EFDB_Topic>SALGeneric_logevent_heartbeat</EFDB_Topic>
+      <Description>Event output at regular intervals (typcally once per second) to show that the SAL component is alive.</Description>
+      <Category>mandatory</Category>
+      <item>
+        <EFDB_Name>heartbeat</EFDB_Name>
+        <Description>Deprecated field that you should ignore.</Description>
+        <IDL_Type>boolean</IDL_Type>
+        <Units>unitless</Units>
+        <Count>1</Count>
+      </item>
+    </SALEvent>
+    <SALEvent>
+      <Subsystem>SALGeneric</Subsystem>
+      <EFDB_Topic>SALGeneric_logevent_authList</EFDB_Topic>
+      <Description>Who can command this CSC.</Description>
+      <Category>csc</Category>
+      <item>
+        <EFDB_Name>authorizedUsers</EFDB_Name>
+        <Description>Comma seperated list of authorized users currently allowed to command this CSC.</Description>
+        <IDL_Type>string</IDL_Type>
+        <IDL_Size>1</IDL_Size>
+        <Units>unitless</Units>
+        <Count>1</Count>
+      </item>
+      <item>
+        <EFDB_Name>nonAuthorizedCSCs</EFDB_Name>
+        <Description>Comma seperated list of CSC's not currently allowed to command this CSC.</Description>
+        <IDL_Type>string</IDL_Type>
+        <IDL_Size>1</IDL_Size>
+        <Units>unitless</Units>
+        <Count>1</Count>
+      </item>
+    </SALEvent>
+    <SALEvent>
+      <Subsystem>SALGeneric</Subsystem>
+      <EFDB_Topic>SALGeneric_logevent_largeFileObjectAvailable</EFDB_Topic>
+      <Description>A new large file object is available.</Description>
+      <item>
+        <EFDB_Name>url</EFDB_Name>
+        <Description>A Uniform Resource Locator which links to a Large File Object either for ingest into the EFD Large File Annex, or to announce the successful copy of same to the EFD Large File Annex.Protocols are those supported by the cURL library.</Description>
+        <IDL_Type>string</IDL_Type>
+        <IDL_Size>256</IDL_Size>
+        <Units>unitless</Units>
+        <Count>1</Count>
+      </item>
+      <item>
+        <EFDB_Name>generator</EFDB_Name>
+        <Description>Name of the package which generated the file being announced.</Description>
+        <IDL_Type>string</IDL_Type>
+        <IDL_Size>256</IDL_Size>
+        <Units>unitless</Units>
+        <Count>1</Count>
+      </item>
+      <item>
+        <EFDB_Name>version</EFDB_Name>
+        <Description>A dotted x.y version number denoting the file format revision.</Description>
+        <IDL_Type>float</IDL_Type>
+        <Units>unitless</Units>
+        <Count>1</Count>
+      </item>
+      <item>
+        <EFDB_Name>byteSize</EFDB_Name>
+        <Description>Size of file in bytes.</Description>
+        <IDL_Type>long</IDL_Type>
+        <Units>unitless</Units>
+        <Count>1</Count>
+      </item>
+      <item>
+        <EFDB_Name>checkSum</EFDB_Name>
+        <Description>Hexadecimal character string holding the checksum of the file.</Description>
+        <IDL_Type>string</IDL_Type>
+        <IDL_Size>256</IDL_Size>
+        <Units>unitless</Units>
+        <Count>1</Count>
+      </item>
+      <item>
+        <EFDB_Name>mimeType</EFDB_Name>
+        <Description>Mime Type code for the file.</Description>
+        <IDL_Type>string</IDL_Type>
+        <IDL_Size>256</IDL_Size>
+        <Units>unitless</Units>
+        <Count>1</Count>
+      </item>
+      <item>
+        <EFDB_Name>id</EFDB_Name>
+        <Description>A generic identifier field.</Description>
+        <IDL_Type>string</IDL_Type>
+        <IDL_Size>256</IDL_Size>
+        <Units>unitless</Units>
+        <Count>1</Count>
+      </item>
+    </SALEvent>
+    <SALEvent>
+      <Subsystem>SALGeneric</Subsystem>
+      <EFDB_Topic>SALGeneric_logevent_statusCode</EFDB_Topic>
+      <Description>Output when this CSC experiences a non-optimal condition that is important to a user but insufficient to raise an error condition.</Description>
+      <item>
+        <EFDB_Name>mask</EFDB_Name>
+        <Description>An integer representing a bitmask defined in LSE-209.</Description>
+        <IDL_Type>int</IDL_Type>
+        <Units>unitless</Units>
+        <Count>1</Count>
+      </item>
+    </SALEvent>
+  </SALEventSet>
+</SALObjects>

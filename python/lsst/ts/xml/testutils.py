@@ -17,8 +17,9 @@
 # GNU General Public License for more details.
 #
 # You should have received a copy of the GNU General Public License
-import pathlib
 import astropy.units
+
+from lsst.ts.xml import utils
 
 """This library defines common variables and functions used by the various
 XML test suite generator scripts.
@@ -94,6 +95,7 @@ subsystems = [
     "TunableLaser",
     "Watcher",
     "WeatherStation",
+    "WeatherForecast",
 ]
 
 """Define the list of Generic Commands."""
@@ -114,6 +116,7 @@ generic_commands = [
 
 generic_events = [
     "authList",
+    "clockOffset",
     "configurationApplied",
     "configurationsAvailable",
     "errorCode",
@@ -399,19 +402,9 @@ strings_with_units = [
 # =========
 
 
-def get_pkg_root():
-    """Return the root directory of this package."""
-    return pathlib.Path(__file__).resolve().parents[4]
-
-
-def get_sal_interfaces_dir():
-    """Return the path to the ``sal_interfaces`` dir within this package."""
-    return get_pkg_root() / "sal_interfaces"
-
-
 def get_xmlfile_csc_topic():
     """Return the XML file for each CSC and each topic"""
-    pkgroot = get_pkg_root()
+    pkgroot = utils.get_data_dir()
     arguments = []
     for csc in subsystems:
         xml_path = pkgroot / "sal_interfaces" / csc
