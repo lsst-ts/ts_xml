@@ -12668,4 +12668,74 @@
       <Count>1</Count>
     </item>
   </SALEvent>
+  <SALEvent>
+    <Subsystem>CCCamera</Subsystem>
+    <EFDB_Topic>CCCamera_logevent_alertRaised</EFDB_Topic>
+    <Description>Event sent when camera alert status changes</Description>
+    <item>
+      <EFDB_Name>timestampAlertStatusChanged</EFDB_Name>
+      <Description>The time when the status change occurred</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>second</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>alertId</EFDB_Name>
+      <Description>The alertId corresponding to this alert</Description>
+      <IDL_Type>string</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>description</EFDB_Name>
+      <Description>The description corresponding to this alertId</Description>
+      <IDL_Type>string</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>currentSeverity</EFDB_Name>
+      <Description>The current severity level for this alert</Description>
+      <IDL_Type>long</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+      <Enumeration>NOMINAL,WARNING, ALARM</Enumeration>
+    </item>
+    <item>
+      <EFDB_Name>highestSeverity</EFDB_Name>
+      <Description>The highest severity level for this alert since last clear</Description>
+      <IDL_Type>long</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+      <!-- <Enumeration>NOMINAL,WARNING, ALARM</Enumeration> -->
+    </item>
+    <item>
+      <EFDB_Name>isCleared</EFDB_Name>
+      <Description>Whether the alert has been cleared</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>cause</EFDB_Name>
+      <Description>The cause corresponding to this alert</Description>
+      <IDL_Type>string</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>origin</EFDB_Name>
+      <Description>The CCS subsystem which raised this alert</Description>
+      <IDL_Type>string</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>additionalInfo</EFDB_Name>
+      <Description>Any additional info associated with this raised alert. To allow for future flexibility, usage TBD.</Description>
+      <IDL_Type>string</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+  </SALEvent>
 </SALEventSet>
