@@ -5,6 +5,10 @@ import xml.etree.ElementTree as et
 import astropy.units
 import lsst.ts.xml as ts_xml
 
+# These nonstandard units are explicitly allowed.
+# Remove entries if and when astropy adds support for them.
+NONSTANDARD_UNITS = {"unitless", "mmH2O", "psia", "VA"}
+
 
 def check_for_issues(csc, topic):
     jira = ""
@@ -39,12 +43,7 @@ def test_units(xmlfile, csc, topic):
     for unit in root.findall(f"./{saltype}/item/Units"):
         if not unit.text.replace(" ", ""):
             assert False, "Units cannot be blank."
-        elif unit.text == "unitless":
-            assert True
-        elif unit.text in (
-            "psia",
-            "VA",
-        ):  # TODO remove this when astropy adds support for this unit
+        elif unit.text in NONSTANDARD_UNITS:
             assert True
         else:
             assert type(ts_xml.check_unit(unit.text)) is astropy.units.Quantity
