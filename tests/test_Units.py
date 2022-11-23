@@ -7,7 +7,7 @@ import lsst.ts.xml as ts_xml
 
 # These nonstandard units are explicitly allowed.
 # Remove entries if and when astropy adds support for them.
-NONSTANDARD_UNITS = {"unitless", "mmH2O", "psia", "VA"}
+NONSTANDARD_UNITS = {"unitless", "psia", "VA"}
 
 
 def check_for_issues(csc, topic):
