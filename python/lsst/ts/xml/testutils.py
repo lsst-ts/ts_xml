@@ -146,7 +146,7 @@ added_generics_commands = ["abort", "enterControl"]
 
 """Define the list of AddedGenerics events that are not mandatory."""
 
-added_generics_events = ["largeFileObjectAvailable", "statusCode"]
+added_generics_events = ["clockOffset", "largeFileObjectAvailable", "statusCode"]
 
 """Define the list of AddedGenerics mandatory commands."""
 
