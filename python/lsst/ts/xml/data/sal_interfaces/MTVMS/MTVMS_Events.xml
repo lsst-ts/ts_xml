@@ -18,13 +18,48 @@
   </Enumeration>
   <SALEvent>
     <Subsystem>MTVMS</Subsystem>
-    <EFDB_Topic>MTVMS_logevent_acquisitionRate</EFDB_Topic>
-    <Description>Current acquistion rate.</Description>
+    <EFDB_Topic>MTVMS_logevent_fpgaState</EFDB_Topic>
+    <Description>Current FPGA configuration and state.</Description>
     <item>
-      <EFDB_Name>rateInHz</EFDB_Name>
-      <Description>Rate of acquisition.</Description>
-      <IDL_Type>float</IDL_Type>
-      <Units>Hz</Units>
+      <EFDB_Name>period</EFDB_Name>
+      <Description>Configured acquisition period.</Description>
+      <IDL_Type>int</IDL_Type>
+      <Units>ms</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>outputType</EFDB_Name>
+      <Description>Configured output type (min/max/average/statistics).</Description>
+      <IDL_Type>int</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>ready</EFDB_Name>
+      <Description>True if VMS device FPGA is ready to start acqusition.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>timeouted</EFDB_Name>
+      <Description>True if VMS FPGA loop timeouted during execution.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>stopped</EFDB_Name>
+      <Description>True if VMS FPGA was stopped.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>fifoFull</EFDB_Name>
+      <Description>True if VMS FPGA FIFO is full, signalling data was stopped.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
       <Count>1</Count>
     </item>
   </SALEvent>

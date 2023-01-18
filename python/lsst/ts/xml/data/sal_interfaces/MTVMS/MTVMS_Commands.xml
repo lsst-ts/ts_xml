@@ -3,20 +3,13 @@
 <SALCommandSet xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://lsst-sal.tuc.noao.edu/schema/SALCommandSet.xsd">
   <SALCommand>
     <Subsystem>MTVMS</Subsystem>
-    <EFDB_Topic>MTVMS_command_changeSampleRate</EFDB_Topic>
-    <Description>Change sampling rate. Both external, and internal (on cRIO modules) sampling rate can be changed.</Description>
+    <EFDB_Topic>MTVMS_command_changeSamplePeriod</EFDB_Topic>
+    <Description>Change sampling period.</Description>
     <item>
-      <EFDB_Name>sampleRate</EFDB_Name>
-      <Description>New sample rate.</Description>
+      <EFDB_Name>period</EFDB_Name>
+      <Description>New sample period in milliseconds.</Description>
       <IDL_Type>int</IDL_Type>
-      <Units>Hz</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>dataRate</EFDB_Name>
-      <Description>New DIO modules Data Rate.</Description>
-      <IDL_Type>int</IDL_Type>
-      <Units>Hz</Units>
+      <Units>ms</Units>
       <Count>1</Count>
     </item>
   </SALCommand>

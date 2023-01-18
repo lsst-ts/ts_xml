@@ -410,15 +410,29 @@
     <EFDB_Topic>MTMount_logevent_cameraCableWrapControllerSettings</EFDB_Topic>
     <Description>A selection of low-level controller settings for the camera cable wrap.</Description>
     <item>
-      <EFDB_Name>l1LimitsEnabled</EFDB_Name>
-      <Description>L1 (software) position limits enabled?</Description>
+      <EFDB_Name>minl1LimitEnabled</EFDB_Name>
+      <Description>Is the minimum L1 (software) position limit enabled?</Description>
       <IDL_Type>boolean</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
     </item>
     <item>
-      <EFDB_Name>l2LimitsEnabled</EFDB_Name>
-      <Description>L2 (direction inhibit) limit switches enabled?</Description>
+      <EFDB_Name>maxl1LimitEnabled</EFDB_Name>
+      <Description>Is the maximum L1 (software) position limit enabled?</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>minl2LimitEnabled</EFDB_Name>
+      <Description>Is the minimum L2 (direction inhibit) limit switch enabled?</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>maxl2LimitEnabled</EFDB_Name>
+      <Description>Is the maximum` L2 (direction inhibit) limit switch enabled?</Description>
       <IDL_Type>boolean</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
@@ -750,15 +764,15 @@
       <Count>1</Count>
     </item>
     <item>
-      <EFDB_Name>oilPowerState</EFDB_Name>
-      <Description>Power state of each oil system (?); a PowerState enum.</Description>
+      <EFDB_Name>circulationPumpPowerState</EFDB_Name>
+      <Description>Power state of the oil circulation pump system; a PowerState enum.</Description>
       <IDL_Type>int</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>mainPumpPowerState</EFDB_Name>
-      <Description>Power state of the main oil pump system; a PowerState enum.</Description>
+      <Description>Power state of the oil main pump system; a PowerState enum.</Description>
       <IDL_Type>int</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
