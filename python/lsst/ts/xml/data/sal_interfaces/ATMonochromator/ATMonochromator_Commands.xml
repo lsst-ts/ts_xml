@@ -4,31 +4,31 @@
   <SALCommand>
     <Subsystem>ATMonochromator</Subsystem>
     <EFDB_Topic>ATMonochromator_command_changeWavelength</EFDB_Topic>
-    <Description>Command to change the wavelength of the monochromator</Description>
+    <Description>Command to change the wavelength of the monochromator.</Description>
     <item>
       <EFDB_Name>wavelength</EFDB_Name>
-      <Description>wavelength</Description>
+      <Description>Central wavelength of output.</Description>
       <IDL_Type>float</IDL_Type>
-      <Units>meter</Units>
+      <Units>nm</Units>
       <Count>1</Count>
     </item>
   </SALCommand>
   <SALCommand>
     <Subsystem>ATMonochromator</Subsystem>
     <EFDB_Topic>ATMonochromator_command_calibrateWavelength</EFDB_Topic>
-    <Description>Command to calibrate the wavelength</Description>
+    <Description>Command to calibrate the wavelength.</Description>
     <item>
       <EFDB_Name>wavelength</EFDB_Name>
-      <Description>wavelength</Description>
+      <Description>Wavelength to be set from 0 to 1400 nm (inclusive).</Description>
       <IDL_Type>float</IDL_Type>
-      <Units>meter</Units>
+      <Units>nm</Units>
       <Count>1</Count>
     </item>
   </SALCommand>
   <SALCommand>
     <Subsystem>ATMonochromator</Subsystem>
     <EFDB_Topic>ATMonochromator_command_power</EFDB_Topic>
-    <Description>Command to turn the power ON and OFF</Description>
+    <Description>Command to turn the power ON and OFF.</Description>
     <item>
       <EFDB_Name>power</EFDB_Name>
       <Description>power</Description>
@@ -40,7 +40,7 @@
   <SALCommand>
     <Subsystem>ATMonochromator</Subsystem>
     <EFDB_Topic>ATMonochromator_command_selectGrating</EFDB_Topic>
-    <Description>Select the grating (Blue,Red, Mirror) that will be in the path of light</Description>
+    <Description>Select the grating (Blue, Red, Mirror) that will be in the path of light.</Description>
     <item>
       <EFDB_Name>gratingType</EFDB_Name>
       <Description>grating type</Description>
@@ -48,34 +48,34 @@
       <IDL_Type>long</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
-      <Enumeration>gratingType_Grating_Blue,gratingType_Grating_Red,gratingType_Grating_Mirror</Enumeration>
+      <Enumeration>gratingType_Grating_Blue, gratingType_Grating_Red, gratingType_Grating_Mirror</Enumeration>
     </item>
   </SALCommand>
   <SALCommand>
     <Subsystem>ATMonochromator</Subsystem>
     <EFDB_Topic>ATMonochromator_command_changeSlitWidth</EFDB_Topic>
-    <Description>Command to change Front enterance or Front exit slit width to width specified</Description>
+    <Description>Command to change Entrance (light enters monochromator) or Exit (light exits monochromator) slit width to width specified.</Description>
     <item>
       <EFDB_Name>slit</EFDB_Name>
-      <Description>slit</Description>
+      <Description>slit that will be changed, either Entrance or Exit</Description>
       <!-- Enumeration: Slit -->
       <IDL_Type>long</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
-      <Enumeration>slit_Slit_FrontEntrance,slit_Slit_FrontExit</Enumeration>
+      <Enumeration>slit_Slit_FrontEntrance, slit_Slit_FrontExit</Enumeration>
     </item>
     <item>
       <EFDB_Name>slitWidth</EFDB_Name>
-      <Description>slitWidth</Description>
+      <Description>Slit width for specified slit (entrance or exit) from 0 to 7mm (inclusive).</Description>
       <IDL_Type>float</IDL_Type>
-      <Units>unitless</Units>
+      <Units>mm</Units>
       <Count>1</Count>
     </item>
   </SALCommand>
   <SALCommand>
     <Subsystem>ATMonochromator</Subsystem>
     <EFDB_Topic>ATMonochromator_command_updateMonochromatorSetup</EFDB_Topic>
-    <Description>Command used to setup monochromator with a single command</Description>
+    <Description>Command used to setup monochromator with a single command.</Description>
     <item>
       <EFDB_Name>gratingType</EFDB_Name>
       <Description>Grating type</Description>
@@ -83,27 +83,27 @@
       <IDL_Type>long</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
-      <Enumeration>gratingType_Grating_Blue,gratingType_Grating_Red,gratingType_Grating_Mirror</Enumeration>
+      <Enumeration>gratingType_Grating_Blue, gratingType_Grating_Red, gratingType_Grating_Mirror</Enumeration>
     </item>
     <item>
       <EFDB_Name>fontExitSlitWidth</EFDB_Name>
-      <Description>slitwidth for front exit</Description>
+      <Description>Width of exit slit from 0 to 7mm (inclusive).</Description>
       <IDL_Type>double</IDL_Type>
-      <Units>unitless</Units>
+      <Units>mm</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>fontEntranceSlitWidth</EFDB_Name>
-      <Description>slitwidth for front entrance</Description>
+      <Description>Width of entrance slit from 0 to 7mm (inclusive).</Description>
       <IDL_Type>double</IDL_Type>
-      <Units>unitless</Units>
+      <Units>mm</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>wavelength</EFDB_Name>
-      <Description>wavelength</Description>
+      <Description>Wavelength to be set from 0 to 1400 nm (inclusive).</Description>
       <IDL_Type>double</IDL_Type>
-      <Units>meter</Units>
+      <Units>nm</Units>
       <Count>1</Count>
     </item>
   </SALCommand>

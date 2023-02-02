@@ -4,7 +4,7 @@
   <SALCommand>
     <Subsystem>Electrometer</Subsystem>
     <EFDB_Topic>Electrometer_command_performZeroCalib</EFDB_Topic>
-    <Description>Performs a zero correction in the device. This will correct any internal offsets that might upset accuracy for voltage and current measurements. It's recommended to perform this zero correction every time the range changes. The steps taken to perform this comes from the datasheet 6517B-901-01 Rev. B / June 2009 under Zero correct. It is as following. 1- Enable Zero check, 2- Set unit to read, 3- Set range to measure 4- Enable Zero Correction 5- Disable Zero check. For unit and range, it uses the last values selected, either via command or from the configuration file</Description>
+    <Description>Performs a zero correction in the device. This will correct any internal offsets that might upset accuracy for voltage and current measurements. It's recommended to perform this zero correction every time the range changes. The steps taken to perform this comes from the datasheet 6517B-901-01 Rev. B / June 2009 under Zero correct. It is as following. 1- Enable Zero check, 2- Set mode, 3- Set range, 4- Enable Zero Correction, 5- Disable Zero check. For unit and range, it uses the last values selected, either via command or from the configuration file. A zero calibration is performed any time the mode or range is set.</Description>
     <item>
       <EFDB_Name>value</EFDB_Name>
       <Description>Attribute required by the API, but is unused</Description>
@@ -16,24 +16,24 @@
   <SALCommand>
     <Subsystem>Electrometer</Subsystem>
     <EFDB_Topic>Electrometer_command_setDigitalFilter</EFDB_Topic>
-    <Description>Configures the digital filter in the device. Filtering stabilizes noisy measurements caused by noisy input signals. Be aware that activating any filters will reduce the number of readings per second the device will be able to handle. The Electrometer has two types of filters: Averaging and Median. Note that both filters can be enabled at the same time. If so, each reading will reflect the median for the average readings. In order to enable either of these filters, one must set the activateFilter to ON (1). Any reading taken when a filter is enabled will be the result of the filtering process. </Description>
+    <Description>Configures the digital filter in the device. Filtering stabilizes noisy measurements caused by noisy input signals. Be aware that activating any filters will reduce the number of readings per second the device will be able to handle. The Electrometer has two types of filters: Averaging and Median. Note that both filters can be enabled at the same time. If so, each reading will reflect the median for the average readings. In order to enable either of these filters, one must set the activateFilter to ON (1). Any reading taken when a filter is enabled will be the result of the filtering process.</Description>
     <item>
       <EFDB_Name>activateFilter</EFDB_Name>
-      <Description>Enables ability to the activate either filter. If this is OFF (set to 0), neither of the filters will operate regardless of their settings below</Description>
+      <Description>Enables ability to the activate either filter. If this is OFF (set to False), neither of the filters will operate regardless of their settings below.</Description>
       <IDL_Type>boolean</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>activateAvgFilter</EFDB_Name>
-      <Description>Activate the average filter (scalar type) inside the electrometer, 1 for ON and 0 for OFF. This filter takes the average of the last 10 readings (default) in the moving mode (first-in, first-out stack).  </Description>
+      <Description>Activate the average filter inside the electrometer, True for ON and False for OFF. This filter takes the average of the last 10 readings (default) in the moving mode (first-in, first-out stack).</Description>
       <IDL_Type>boolean</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>activateMedFilter</EFDB_Name>
-      <Description>The median filter is used to determine the middle-most reading from a group of readings that are arranged according to size. Activate the median filter inside the electrometer, 1 for ON and 0 for OFF. The rank (R) of this filter is set at 1, such that the number of samples that it will determine the median of is (2xR) + 1. If there is a sudden change in signal, 2R readings will be needed before establishing the true median value. </Description>
+      <Description>The median filter is used to determine the middle-most reading from a group of readings that are arranged according to size. Activate the median filter inside the electrometer, True for ON and False for OFF. The rank (R) of this filter is set at 1, such that the number of samples that it will determine the median of is (2xR) + 1. If there is a sudden change in signal, 2R readings will be needed before establishing the true median value. </Description>
       <IDL_Type>boolean</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
@@ -42,10 +42,10 @@
   <SALCommand>
     <Subsystem>Electrometer</Subsystem>
     <EFDB_Topic>Electrometer_command_setIntegrationTime</EFDB_Topic>
-    <Description>The integration time (measurement speed) of the analog to digital (A/D) converter, the period of time the input signal is measured (also known as aperture). Due to the time it takes to read the buffer and process the data, this is not the rate at which samples are taken. This is generally specified by the Power Line Cycle (PLC), where 1 PLC for 60Hz is 16.67msec. Fast integration=0.01PLC; Medium integration=0.1PLC; Normal (default) integration = 1PLC; Hi Accuracy integration=10PLC. Here the integration is set in seconds. </Description>
+    <Description>The integration time (measurement speed) of the analog to digital (A/D) converter, the period of time the input signal is measured (also known as aperture). Due to the time it takes to read the buffer and process the data, this is not the rate at which samples are taken. This is generally specified by the Power Line Cycle (PLC), where 1 PLC for 60Hz is 16.67msec. Fast integration=0.01PLC; Medium integration=0.1PLC; Normal (default) integration = 1PLC; High Accuracy integration=10PLC. Here the integration is set in seconds. </Description>
     <item>
       <EFDB_Name>intTime</EFDB_Name>
-      <Description>Integration rate in seconds (166.67e-6 to 200e-3) for each sample. Default is 16.67e-3sec (1PLC).</Description>
+      <Description>Integration time in seconds (166.67e-6 to 200e-3) for each sample. Default is 16.67e-3sec (1PLC).</Description>
       <IDL_Type>float</IDL_Type>
       <Units>second</Units>
       <Count>1</Count>
@@ -54,10 +54,10 @@
   <SALCommand>
     <Subsystem>Electrometer</Subsystem>
     <EFDB_Topic>Electrometer_command_setMode</EFDB_Topic>
-    <Description>Set unit to measure. The modes are: Current, Voltage, Charge or Resistance</Description>
+    <Description>Set unit to measure. The modes are: Current, Voltage, Charge or Resistance. When the mode is changed to Current or Voltage, a zero correction will be performed. When the mode is set to Charge, a zero check will be performed. </Description>
     <item>
       <EFDB_Name>mode</EFDB_Name>
-      <Description>Set electrometer to use different modes: 1.- Current  2.- Volt  3.- Charge  4.- Resistance. The units will depend on the current settings</Description>
+      <Description>Set electrometer to use different modes: Current (0), Voltage (1), Charge (2), Resistance (3). The units recorded will be Amps, Volts, Coulombs, and Ohms respectively.</Description>
       <!-- Enumeration: UnitToRead -->
       <IDL_Type>long</IDL_Type>
       <Units>unitless</Units>
@@ -67,10 +67,10 @@
   <SALCommand>
     <Subsystem>Electrometer</Subsystem>
     <EFDB_Topic>Electrometer_command_setRange</EFDB_Topic>
-    <Description>Set measurement range, which effects the accuracy of measurements and the max singal that can be measured. The maximum input signal is 105% of the measurement range. It will set the value for the current mode selected. Auto-range will autmoatically go to teh most sensitive (optimized) range to make measurements. This is recommended.</Description>
+    <Description>Set measurement range, which effects the accuracy of measurements and the max signal that can be measured. The maximum input signal is 105% of the measurement range. It will set the value for the current mode selected. Auto-range will automatically go to the most sensitive (optimized) range to make measurements. It is recommended to use autorange. When the measurement range is changed, a zero correction will be performed.</Description>
     <item>
       <EFDB_Name>setRange</EFDB_Name>
-      <Description>-1 for automatic range. Volts range from 0 to 210 Volts, Current range from 0 to 21e-3 Amps, Resistance from 0 to 100e18 Ohms, Charge from 0 to +2.1e-6 Coulombs</Description>
+      <Description>-1 for automatic range. Volts range from 0 to 210 Volts, Current range from 0 to 21e-3 Amps, Resistance from 0 to 100e18 Ohms, Charge from 0 to +2.1e-6 Coulombs.</Description>
       <IDL_Type>float</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
@@ -79,7 +79,7 @@
   <SALCommand>
     <Subsystem>Electrometer</Subsystem>
     <EFDB_Topic>Electrometer_command_startScan</EFDB_Topic>
-    <Description>Start storing readings inside the electrometer buffer, this command will change detailedState from NotReadingState to ManualReadingState and continues storing data into the buffer. The data will be published to the LFO when stopScan command is received or a timeout occurs (300 seconds)</Description>
+    <Description>Start storing readings inside the electrometer buffer. This command will change detailedState from NotReadingState to ManualReadingState and continues storing data into the buffer. The data will be published to the LFA when stopScan command is received or a timeout occurs (300 seconds).</Description>
     <item>
       <EFDB_Name>value</EFDB_Name>
       <Description>Attribute required by the API, but is unused</Description>
@@ -91,10 +91,10 @@
   <SALCommand>
     <Subsystem>Electrometer</Subsystem>
     <EFDB_Topic>Electrometer_command_startScanDt</EFDB_Topic>
-    <Description>Start storing readings inside the electrometer buffer for a fixed time, this command will change detailedState from NotReadingState to SetDurationReadingState and to stop storing data into the buffer and publish the LFO there are 2 possibilities. Reading during scanDuration time input in the command or sending a stopScan command</Description>
+    <Description>Start storing readings inside the electrometer buffer for a fixed time given by scanDuration. This command will change detailedState from NotReadingState to SetDurationReadingState. It will stop storing data into the buffer and publish the LFA event when the duration has completed. If no scanDuration is given, the command will fault.</Description>
     <item>
       <EFDB_Name>scanDuration</EFDB_Name>
-      <Description>Time in seconds from the start of the reading until the stop and then store into the FITS file. The start of the scan will take about 0.2seconds which is what the device takes to start the reading process</Description>
+      <Description>Time in seconds from the start of the reading until the reading stops.</Description>
       <IDL_Type>float</IDL_Type>
       <Units>second</Units>
       <Count>1</Count>
@@ -103,10 +103,10 @@
   <SALCommand>
     <Subsystem>Electrometer</Subsystem>
     <EFDB_Topic>Electrometer_command_stopScan</EFDB_Topic>
-    <Description>Command to stop a current reading process, when it finishes stopping the process it will read the data from the buffer and will publish the LFO event</Description>
+    <Description>Command to stop a current reading process. When it finishes stopping the process, it will read the data from the buffer and will publish the LFA event.</Description>
     <item>
       <EFDB_Name>value</EFDB_Name>
-      <Description>Attribute required by the API, but is unused</Description>
+      <Description>Attribute required by the API, but is unused.</Description>
       <IDL_Type>boolean</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>

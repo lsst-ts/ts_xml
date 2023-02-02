@@ -19,24 +19,24 @@
   <SALEvent>
     <Subsystem>Electrometer</Subsystem>
     <EFDB_Topic>Electrometer_logevent_digitalFilterChange</EFDB_Topic>
-    <Description>Current state of the digital filter setup. The Electrometer has two types of filters: Averaging and Median. Note that both filters can be enabled at the same time. In order to enable either of these filters, one must set the activateFilter to ON (1).</Description>
+    <Description>Current state of the digital filter setup. The Electrometer has two types of filters: Averaging and Median. Note that both filters can be enabled at the same time. In order to enable either of these filters, one must set the activateFilter to ON (True).</Description>
     <item>
       <EFDB_Name>activateFilter</EFDB_Name>
-      <Description>If this is OFF, none of the filters will operate. 0 for not active and 1 for active</Description>
+      <Description>If this is OFF, none of the filters will operate. False for not active and True for active</Description>
       <IDL_Type>boolean</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>activateMedianFilter</EFDB_Name>
-      <Description>Activate the median filter inside the electrometer: 1 for active and 0 for not active. Will use the Default value of Rank (R) = 1, such that the number of samples that it will determine the median of  is (2xR) + 1.</Description>
+      <Description>Activate the median filter inside the electrometer: True for active and False for not active. Will use the Default value of Rank (R) = 1, such that the number of samples that it will determine the median of  is (2xR) + 1.</Description>
       <IDL_Type>boolean</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>activateAverageFilter</EFDB_Name>
-      <Description>Activate the average filter inside the electrometer: 1 for active and 0 for not active. Will use the Default value inside the device (last 10 readings) to do the average calculation.  </Description>
+      <Description>Activate the average filter inside the electrometer: True for active and False for not active. Will use the Default value inside the device (last 10 readings) to do the average calculation.  </Description>
       <IDL_Type>boolean</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
@@ -57,7 +57,7 @@
   <SALEvent>
     <Subsystem>Electrometer</Subsystem>
     <EFDB_Topic>Electrometer_logevent_intensity</EFDB_Topic>
-    <Description>Intensity of light measured with the photo-diode in the unit previously configured. NOT IMPLEMENTED </Description>
+    <Description>Intensity of light measured with the photo-diode in the unit previously configured. </Description>
     <item>
       <EFDB_Name>intensity</EFDB_Name>
       <Description>Measure read by the device</Description>
@@ -84,7 +84,7 @@
   <SALEvent>
     <Subsystem>Electrometer</Subsystem>
     <EFDB_Topic>Electrometer_logevent_measureRange</EFDB_Topic>
-    <Description>Measurement range for the mode selected. This impacts the accuracy and max signal that can be measured (105% of the range). Auto-range is set at -1, will automatically go to the most sensitive range. Volts range from 0 to 210V, Current range from 0 to 21e-3Amps, Resistance from 0 to 100e18, Charge from 0 to +2.1e-6</Description>
+    <Description>Measurement range for the mode selected. This impacts the accuracy and max signal that can be measured (105% of the range). Auto-range is set at -1, will automatically go to the most sensitive range. Note that when in auto-range the true range used is not always published. Volts range from 0 to 210V, Current range from 0 to 21e-3Amps, Resistance from 0 to 100e18, Charge from 0 to +2.1e-6</Description>
     <item>
       <EFDB_Name>rangeValue</EFDB_Name>
       <Description>The range for the intensity for measure selected.</Description>
@@ -99,7 +99,7 @@
     <Description>Current mode selected to read from the photodiode. Options are Current, Charge, Voltage and Resistance. </Description>
     <item>
       <EFDB_Name>mode</EFDB_Name>
-      <Description>mode: 1- Current, 2- Charge, 3- Voltage, 4- Resistance</Description>
+      <Description>mode: 0- Current, 1- Charge, 2- Voltage, 3- Resistance</Description>
       <!-- Enumeration: UnitToRead -->
       <IDL_Type>long</IDL_Type>
       <Units>unitless</Units>
@@ -119,7 +119,7 @@
     </item>
     <item>
       <EFDB_Name>avgFilterActive</EFDB_Name>
-      <Description>Average digital filter status inside the electrometer, it uses the Default value inside the device (last 10 readings) to do the average calculation, true for ON and False for OFF </Description>
+      <Description>Average digital filter status inside the electrometer, it uses the Default value inside the device (last 10 readings) to do the average calculation, True for ON and False for OFF </Description>
       <IDL_Type>boolean</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
@@ -133,7 +133,7 @@
     </item>
     <item>
       <EFDB_Name>integrationTime</EFDB_Name>
-      <Description>Integration rate, this will directly affect reading rates but reading rates are not going to be the same as reading rates</Description>
+      <Description>Integration rate, this will directly affect reading rates but reading rates are not going to be the same as integration rates</Description>
       <IDL_Type>double</IDL_Type>
       <Units>second</Units>
       <Count>1</Count>
