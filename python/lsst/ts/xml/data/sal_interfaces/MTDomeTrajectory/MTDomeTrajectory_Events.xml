@@ -1,6 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-stylesheet type="text/xsl" href="http://lsst-sal.tuc.noao.edu/schema/SALEventSet.xsl"?>
 <SALEventSet xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://lsst-sal.tuc.noao.edu/schema/SALEventSet.xsd">
+  <Enumeration>
+    TelescopeVignetted_Unknown = 0,
+    TelescopeVignetted_No = 1,
+    TelescopeVignetted_Partially = 2,
+    TelescopeVignetted_Fully = 3
+  </Enumeration>
   <SALEvent>
     <Subsystem>MTDomeTrajectory</Subsystem>
     <EFDB_Topic>MTDomeTrajectory_logevent_algorithm</EFDB_Topic>
@@ -31,6 +37,39 @@
       <Description>True if following, false if not.</Description>
       <IDL_Type>boolean</IDL_Type>
       <IDL_Size>1</IDL_Size>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+  </SALEvent>
+  <SALEvent>
+    <Subsystem>MTDomeTrajectory</Subsystem>
+    <EFDB_Topic>MTDomeTrajectory_logevent_telescopeVignetted</EFDB_Topic>
+    <Description>Is the telescope vignetted?</Description>
+    <item>
+      <EFDB_Name>vignetted</EFDB_Name>
+      <Description>Is the telescope vignetted for any of the reasons below? A TelescopeVignetted enum.</Description>
+      <IDL_Type>int</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>azimuth</EFDB_Name>
+      <Description>Is the telescope vignetted in azimuth? A TelescopeVignetted enum.</Description>
+      <IDL_Type>int</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>elevation</EFDB_Name>
+      <Description>Is the telescope vignetted in elevation? A TelescopeVignetted enum.</Description>
+      <IDL_Type>int</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>shutter</EFDB_Name>
+      <Description>Is the telescope vignetted due to the shutter? A TelescopeVignetted enum.</Description>
+      <IDL_Type>int</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
     </item>
