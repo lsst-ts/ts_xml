@@ -52,7 +52,6 @@ subsystems = [
     "CCCamera",
     "CCHeaderService",
     "CCOODS",
-    "CatchupArchiver",
     "CBP",
     "DIMM",
     "DREAM",
