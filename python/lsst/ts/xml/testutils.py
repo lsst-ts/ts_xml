@@ -34,7 +34,6 @@ XML test suite generator scripts.
 subsystems = [
     "ATAOS",
     "MTAirCompressor",
-    "ATArchiver",
     "ATBuilding",
     "ATCamera",
     "ATDome",
@@ -50,7 +49,6 @@ subsystems = [
     "ATWhiteLight",
     "Authorize",
     "GCHeaderService",
-    "CCArchiver",
     "CCCamera",
     "CCHeaderService",
     "CCOODS",
