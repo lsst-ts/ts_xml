@@ -37,12 +37,6 @@ def check_for_issues(csc, topic, restriction):
     ):
         jira = "DM-22614"
     elif (
-        csc == "CatchupArchiver"
-        and topic in ("Telemetry", "Events")
-        and restriction is Restriction.DB_OPTIONAL
-    ):
-        jira = "CAP-399"
-    elif (
         csc == "FiberSpectrograph"
         and topic == "Commands"
         and restriction is Restriction.DB_OPTIONAL
