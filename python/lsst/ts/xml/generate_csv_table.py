@@ -27,7 +27,6 @@ from . import utils
 
 
 def generate_csv_table():
-
     sal_interfaces_dir = utils.get_sal_interfaces_dir()
     tree = ElementTree.parse(sal_interfaces_dir / "SALSubsystems.xml")
     root = tree.getroot()
@@ -146,7 +145,6 @@ def generate_csv_table():
         ordered_data = []
 
         for row in csv_reader:
-
             # Add the header
             if line_count == 0:
                 header = row
