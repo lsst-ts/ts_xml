@@ -1,5 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
+import pathlib
 import re
 import xml.etree.ElementTree as et
 
@@ -7,13 +8,13 @@ import lsst.ts.xml as ts_xml
 import pytest
 
 
-def check_for_issues(csc, topic, test):
+def check_for_issues(csc: str, topic: str, test: str) -> str:
     jira = ""
     return jira
 
 
 @pytest.mark.parametrize("xmlfile,csc,topic", ts_xml.get_xmlfile_csc_topic())
-def test_topic_naming_csc(xmlfile, csc, topic):
+def test_topic_naming_csc(xmlfile: pathlib.Path, csc: str, topic: str) -> None:
     """Test that the <EFDB_Topic> field for topics is properly formed.
     The <EFDB_Topic> is a compound word comprising the CSC Name,
     the topic type, if applicable, and the topic name.
@@ -26,9 +27,9 @@ def test_topic_naming_csc(xmlfile, csc, topic):
     ----------
     xmlfile : `pathlib.Path`
         Full filepath to the Commands or Events XML file for the CSC.
-    csc : `testutils.subsystems`
+    csc : `str`
         Name of the CSC
-    topic : `xmlfile.stem`
+    topic : `str`
         One of ['Commands','Events','Telemetry']
     """
     saltype = "SAL" + topic.rstrip("s")
@@ -41,6 +42,7 @@ def test_topic_naming_csc(xmlfile, csc, topic):
         tree = et.parse(f)
     root = tree.getroot()
     for name in root.findall(f"./{saltype}/EFDB_Topic"):
+        assert name.text is not None
         index = 0
         assert name.text.split("_")[index] == csc, (
             f"<EFDB_Topic> {name.text} in {xmlfile.name} "
@@ -49,7 +51,7 @@ def test_topic_naming_csc(xmlfile, csc, topic):
 
 
 @pytest.mark.parametrize("xmlfile,csc,topic", ts_xml.get_xmlfile_csc_topic())
-def test_topic_naming_type(xmlfile, csc, topic):
+def test_topic_naming_type(xmlfile: pathlib.Path, csc: str, topic: str) -> None:
     """Test that the <EFDB_Topic> field for topics is properly formed.
     The <EFDB_Topic> is a compound word comprising the CSC Name,
     the topic type, if applicable, and the topic name.
@@ -61,9 +63,9 @@ def test_topic_naming_type(xmlfile, csc, topic):
     ----------
     xmlfile : `pathlib.Path`
         Full filepath to the Commands or Events XML file for the CSC.
-    csc : `testutils.subsystems`
+    csc : `str`
         Name of the CSC
-    topic : `xmlfile.stem`
+    topic : `str`
         One of ['Commands','Events','Telemetry']
     """
     saltype = "SAL" + topic.rstrip("s")
@@ -76,6 +78,7 @@ def test_topic_naming_type(xmlfile, csc, topic):
         tree = et.parse(f)
     root = tree.getroot()
     for name in root.findall(f"./{saltype}/EFDB_Topic"):
+        assert name.text is not None
         if topic == "Telemetry":
             # Telemetry topics do not explicitly define the topic type.
             continue
@@ -91,7 +94,7 @@ def test_topic_naming_type(xmlfile, csc, topic):
 
 
 @pytest.mark.parametrize("xmlfile,csc,topic", ts_xml.get_xmlfile_csc_topic())
-def test_topic_naming_alias(xmlfile, csc, topic):
+def test_topic_naming_alias(xmlfile: pathlib.Path, csc: str, topic: str) -> None:
     """Test that the <EFDB_Topic> field for topics is properly formed.
     The <EFDB_Topic> is a compound word comprising the CSC Name,
     the topic type, if applicable, and the topic name.
@@ -104,9 +107,9 @@ def test_topic_naming_alias(xmlfile, csc, topic):
     ----------
     xmlfile : `pathlib.Path`
         Full filepath to the Commands or Events XML file for the CSC.
-    csc : `testutils.subsystems`
+    csc : `str`
         Name of the CSC
-    topic : `xmlfile.stem`
+    topic : `str`
         One of ['Commands','Events','Telemetry']
     """
     saltype = "SAL" + topic.rstrip("s")
@@ -119,6 +122,7 @@ def test_topic_naming_alias(xmlfile, csc, topic):
         tree = et.parse(f)
     root = tree.getroot()
     for name in root.findall(f"./{saltype}/EFDB_Topic"):
+        assert name.text is not None
         # re.match() returns None if the string does not match the regex.
         if topic == "Telemetry":
             index = 1

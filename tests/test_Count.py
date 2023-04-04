@@ -1,5 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
+import pathlib
 import xml.etree.ElementTree as et
 
 import lsst.ts.xml as ts_xml
@@ -7,7 +8,7 @@ import pytest
 
 
 @pytest.mark.parametrize("xmlfile,csc,topic", ts_xml.get_xmlfile_csc_topic())
-def test_count(xmlfile, csc, topic):
+def test_count(xmlfile: pathlib.Path, csc: str, topic: str) -> None:
     """Test that the <Count> is properly defined.
 
     Count must be present, must be a positive integer,
@@ -15,7 +16,7 @@ def test_count(xmlfile, csc, topic):
 
     Parameters
     ----------
-    csc : `testutils.subsystems`
+    csc : `csc`
         Name of the CSC
     topic : `xml_file.stem`
         One of ['Commands','Events','Telemetry']
@@ -28,6 +29,7 @@ def test_count(xmlfile, csc, topic):
         root = tree.getroot()
         for attrib in root.findall(f"./{saltype}/item"):
             count = attrib.find("Count")
+            assert count is not None
             assert (
                 count.text is not None
             ), f"The <Count> tag cannot be blank: {xmlfile.name}"

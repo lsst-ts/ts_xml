@@ -1,26 +1,27 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
+import pathlib
 import xml.etree.ElementTree as et
 
 import lsst.ts.xml as ts_xml
 import pytest
 
 
-def check_for_issues(test, csc, topic):
+def check_for_issues(test: str, csc: str, topic: str) -> str:
     return ""
 
 
 @pytest.mark.parametrize("xmlfile,csc,topic", ts_xml.get_xmlfile_csc_topic())
-def test_idl_type_exists(xmlfile, csc, topic):
+def test_idl_type_exists(xmlfile: pathlib.Path, csc: str, topic: str) -> None:
     """Test that the <IDL_Type> field for topic attributes exists.
 
     Parameters
     ----------
     xmlfile : `pathlib.Path`
         Full filepath to the Commands or Events XML file for the CSC.
-    csc : `testutils.subsystems`
+    csc : `str`
         Name of the CSC
-    topic : `xmlfile.stem`
+    topic : `str`
         One of ['Commands','Events','Telemetry']
     """
     saltype = "SAL" + topic.rstrip("s")
@@ -35,7 +36,10 @@ def test_idl_type_exists(xmlfile, csc, topic):
     untyped_field_names = []
     for attrib in root.findall(f"./{saltype}/item"):
         name = attrib.find("EFDB_Name")
+        assert name is not None
         idltype = attrib.find("IDL_Type")
+        assert idltype is not None
+        assert idltype.text is not None
         if idltype is None:
             untyped_field_names.append(name.text)
     assert (
@@ -44,7 +48,7 @@ def test_idl_type_exists(xmlfile, csc, topic):
 
 
 @pytest.mark.parametrize("xmlfile,csc,topic", ts_xml.get_xmlfile_csc_topic())
-def test_idl_type(xmlfile, csc, topic):
+def test_idl_type(xmlfile: pathlib.Path, csc: str, topic: str) -> None:
     """Test that the <IDL_Type> field for topic attributes is properly formed,
     i.e. it is not blank and it is one of a set of predefined IDL Types.
 
@@ -52,9 +56,9 @@ def test_idl_type(xmlfile, csc, topic):
     ----------
     xmlfile : `pathlib.Path`
         Full filepath to the Commands or Events XML file for the CSC.
-    csc : `testutils.subsystems`
+    csc : `str`
         Name of the CSC
-    topic : `xmlfile.stem`
+    topic : `str`
         One of ['Commands','Events','Telemetry']
     """
     saltype = "SAL" + topic.rstrip("s")

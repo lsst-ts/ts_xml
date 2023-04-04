@@ -24,6 +24,7 @@ from xml.etree import ElementTree
 
 from . import utils
 from .generate_subsystems_doc import write_heading
+from .utils import find_text_in_xml
 
 # XML attributes to ignore.
 IGNORED_ATTRIBUTES = ["EFDB_Name", "Description"]
@@ -43,7 +44,7 @@ IGNORED_FIELDS = [
 ]
 
 
-def write_generic_page():
+def write_generic_page() -> None:
     cf = open(utils.get_pkg_root() / "doc/sal_generics.rst", "w")
     write_heading(cf, "SAL Generics", char="*", overline=True)
     cf.write("Generic topics can be included with any CSC.\n")
@@ -63,18 +64,19 @@ def write_generic_page():
         write_heading(cf, name=f"{topic_type}s")
         cf.write("\n")
         for gen_topic in gen_set:
-            topic_name = gen_topic.find("EFDB_Topic").text
+            topic_name = find_text_in_xml(gen_topic, "EFDB_Topic")
             short_name = topic_name.split("_")[-1]
             write_heading(cf, name=short_name, char="~")
             gen_topic_description = gen_topic.find("Description")
             if gen_topic_description is not None:
+                assert gen_topic_description is not None
                 cf.write(f"**Description**: {gen_topic_description.text}\n\n")
             for gen_field in gen_topic:
                 if gen_field.tag == "item":
-                    gen_field_name = gen_field.find("EFDB_Name")
-                    gen_field_description = gen_field.find("Description")
-                    cf.write(f"\n.. _{short_name}:{gen_field_name.text}:\n\n")
-                    write_heading(cf, gen_field_name.text, char="*")
+                    gen_field_name = find_text_in_xml(gen_field, "EFDB_Name")
+                    gen_field_description = find_text_in_xml(gen_field, "Description")
+                    cf.write(f"\n.. _{short_name}:{gen_field_name}:\n\n")
+                    write_heading(cf, gen_field_name, char="*")
                     for gen_attribute in gen_field:
                         if gen_attribute.tag in ["Count", "IDL_Size"]:
                             if gen_attribute.text == "1":
@@ -87,7 +89,7 @@ def write_generic_page():
                             pass
                         else:
                             cf.write(f":{gen_attribute.tag}: {gen_attribute.text}\n")
-                    cf.write(f"\n**Description**: {gen_field_description.text}\n\n")
+                    cf.write(f"\n**Description**: {gen_field_description}\n\n")
                 elif gen_field.tag in IGNORED_FIELDS:
                     pass
                 else:
