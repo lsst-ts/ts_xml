@@ -25,7 +25,6 @@ from xml.etree import ElementTree
 from . import utils
 from .generate_subsystems_doc import write_heading
 
-
 # XML attributes to ignore.
 IGNORED_ATTRIBUTES = ["EFDB_Name", "Description"]
 

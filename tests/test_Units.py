@@ -1,9 +1,10 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-import pytest
 import xml.etree.ElementTree as et
+
 import astropy.units
 import lsst.ts.xml as ts_xml
+import pytest
 
 # These nonstandard units are explicitly allowed.
 # Remove entries if and when astropy adds support for them.

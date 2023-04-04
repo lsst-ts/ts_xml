@@ -1,8 +1,8 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
+import lsst.ts.xml as ts_xml
 import pytest
 from lxml import etree
-import lsst.ts.xml as ts_xml
 
 
 def check_for_issues(csc, topic):
