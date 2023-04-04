@@ -21,8 +21,7 @@
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-from setuptools import setup
 import setuptools_scm
-
+from setuptools import setup
 
 setup(version=setuptools_scm.get_version())

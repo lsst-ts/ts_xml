@@ -1,11 +1,11 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 import re
+import xml.etree.ElementTree as et
 
+import lsst.ts.xml as ts_xml
 import pytest
 from lxml import etree
-import xml.etree.ElementTree as et
-import lsst.ts.xml as ts_xml
 
 INDEX_ENUM_CHECK = re.compile(r"[^,= \w]+")
 

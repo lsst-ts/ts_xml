@@ -1,9 +1,10 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 import re
-import pytest
 import xml.etree.ElementTree as et
+
 import lsst.ts.xml as ts_xml
+import pytest
 
 
 def check_for_issues(csc, topic, test):

@@ -22,9 +22,7 @@ __all__ = ["generate_subsystems_doc"]
 
 from xml.etree import ElementTree
 
-from . import utils
-from . import testutils
-
+from . import testutils, utils
 
 # XML attributes to ignore.
 IGNORED_ATTRIBUTES = ["EFDB_Name", "Description"]

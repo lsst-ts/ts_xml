@@ -18,7 +18,6 @@
 #
 # You should have received a copy of the GNU General Public License
 import astropy.units
-
 from lsst.ts.xml import utils
 
 """This library defines common variables and functions used by the various

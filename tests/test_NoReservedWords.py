@@ -1,10 +1,10 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 import enum
-
-import pytest
 import xml.etree.ElementTree as et
+
 import lsst.ts.xml as ts_xml
+import pytest
 
 
 class Restriction(enum.Enum):

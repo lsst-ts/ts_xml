@@ -1,5 +1,4 @@
 from documenteer.conf.pipelinespkg import *  # type: ignore # noqa
-
 from lsst.ts.xml import *  # noqa
 
 project = "ts_xml"
