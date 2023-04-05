@@ -1,5 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
+import pathlib
 import xml.etree.ElementTree as et
 
 import astropy.units
@@ -11,13 +12,13 @@ import pytest
 NONSTANDARD_UNITS = {"unitless", "psia", "VA"}
 
 
-def check_for_issues(csc, topic):
+def check_for_issues(csc: str, topic: str) -> str:
     jira = ""
     return jira
 
 
 @pytest.mark.parametrize("xmlfile,csc,topic", ts_xml.get_xmlfile_csc_topic())
-def test_units(xmlfile, csc, topic):
+def test_units(xmlfile: pathlib.Path, csc: str, topic: str) -> None:
     """Test that the <Units> field for topic attributes is properly formed,
     i.e. it is not blank, conforms to astropy standards or is unitless.
 
@@ -25,9 +26,9 @@ def test_units(xmlfile, csc, topic):
     ----------
     xmlfile : `pathlib.Path`
         Full filepath to the Commands or Events XML file for the CSC.
-    csc : `testutils.subsystems`
+    csc : `str`
         Name of the CSC
-    topic : `xmlfile.stem`
+    topic : `str`
         One of ['Commands','Events','Telemetry']
     """
     saltype = "SAL" + topic.rstrip("s")
@@ -42,6 +43,7 @@ def test_units(xmlfile, csc, topic):
         tree = et.parse(f)
     root = tree.getroot()
     for unit in root.findall(f"./{saltype}/item/Units"):
+        assert unit.text is not None
         if not unit.text.replace(" ", ""):
             assert False, "Units cannot be blank."
         elif unit.text in NONSTANDARD_UNITS:
@@ -52,16 +54,16 @@ def test_units(xmlfile, csc, topic):
 
 
 @pytest.mark.parametrize("xmlfile,csc,topic", ts_xml.get_xmlfile_csc_topic())
-def test_string_units(xmlfile, csc, topic):
+def test_string_units(xmlfile: pathlib.Path, csc: str, topic: str) -> None:
     """Test that the <Units> field for STRING-type attributes is 'unitless.'
 
     Parameters
     ----------
     xmlfile : `pathlib.Path`
         Full filepath to the Commands or Events XML file for the CSC.
-    csc : `testutils.subsystems`
+    csc : `str`
         Name of the CSC
-    topic : `xmlfile.stem`
+    topic : `str`
         One of ['Commands','Events','Telemetry']
     """
     saltype = "SAL" + topic.rstrip("s")
@@ -78,13 +80,13 @@ def test_string_units(xmlfile, csc, topic):
     for attrib in root.findall(f"./{saltype}/item"):
         idltype = attrib.find("IDL_Type")
         if idltype is not None and idltype.text == "string":
-            name = attrib.find("EFDB_Name")
-            unit = attrib.find("Units")
+            name = ts_xml.find_text_in_xml(attrib, "EFDB_Name")
+            unit = ts_xml.find_text_in_xml(attrib, "Units")
             # There is a robust skip list,
             # as many strings represent angles or time.
-            if csc in ["ATPtg", "MTPtg"] and name.text in ts_xml.strings_with_units:
+            if csc in ["ATPtg", "MTPtg"] and name in ts_xml.strings_with_units:
                 assert True
             else:
                 assert (
-                    unit.text == "unitless"
-                ), f"{csc}: string-type attribute {name.text!r} has the unit {unit.text!r}"
+                    unit == "unitless"
+                ), f"{csc}: string-type attribute {name!r} has the unit {unit!r}"

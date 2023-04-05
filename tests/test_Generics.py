@@ -1,22 +1,23 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
+import pathlib
 import xml.etree.ElementTree as et
 
 import lsst.ts.xml as ts_xml
 import pytest
 
 
-def get_salgenerics_file():
+def get_salgenerics_file() -> pathlib.Path:
     sal_generics_file = ts_xml.get_sal_interfaces_dir() / "SALGenerics.xml"
     return sal_generics_file
 
 
-def check_for_issues(csc, topic):
+def check_for_issues(csc: str, topic: str) -> str:
     jira = ""
     return jira
 
 
-def test_salgenerics_topics():
+def test_salgenerics_topics() -> None:
     """Test that SALGenerics.xml defines the expected set of generic topics."""
     sal_generics_file = get_salgenerics_file()
     # Check for known issues.
@@ -50,7 +51,9 @@ def test_salgenerics_topics():
 
 
 @pytest.mark.parametrize("xmlfile,csc,topic", ts_xml.get_xmlfile_csc_topic())
-def test_xmlfiles_do_not_define_generic_topics(xmlfile, csc, topic):
+def test_xmlfiles_do_not_define_generic_topics(
+    xmlfile: pathlib.Path, csc: str, topic: str
+) -> None:
     """Test that CSC XML files do not define any of the generic topics.
 
     NOTE: Telemetry is skipped because there is no generic telemetry.
@@ -59,9 +62,9 @@ def test_xmlfiles_do_not_define_generic_topics(xmlfile, csc, topic):
     ----------
     xmlfile : `pathlib.Path`
         Full filepath to the Commands or Events XML file for the CSC.
-    csc : `testutils.subsystems`
+    csc : `csc`
         Name of the CSC
-    topic : `xmlfile.stem`
+    topic : `str`
         One of ['Commands','Events']
     """
     if topic == "Telemetry":
@@ -78,7 +81,7 @@ def test_xmlfiles_do_not_define_generic_topics(xmlfile, csc, topic):
         root = tree.getroot()
         csc_topics = set()
         topic_name_start_ind = len(csc) + 1
-        for topic in root.findall(f"./{saltype}/EFDB_Topic"):
-            assert topic.text is not None
-            csc_topics.add(topic.text[topic_name_start_ind:])
+        for topic_elt in root.findall(f"./{saltype}/EFDB_Topic"):
+            assert topic_elt.text is not None
+            csc_topics.add(topic_elt.text[topic_name_start_ind:])
         assert ts_xml.generic_topics & csc_topics == set()

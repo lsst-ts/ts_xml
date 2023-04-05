@@ -1,5 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
+import pathlib
 import re
 import xml.etree.ElementTree as et
 
@@ -7,13 +8,13 @@ import lsst.ts.xml as ts_xml
 import pytest
 
 
-def check_for_issues(csc, topic):
+def check_for_issues(csc: str, topic: str) -> str:
     jira = ""
     return jira
 
 
 @pytest.mark.parametrize("xmlfile,csc,topic", ts_xml.get_xmlfile_csc_topic())
-def test_attribute_naming(xmlfile, csc, topic):
+def test_attribute_naming(xmlfile: pathlib.Path, csc: str, topic: str) -> None:
     """Test that the <EFDB_Name> field for topic attributes is properly formed,
     i.e. it begins with a lowercase letter and contains only alphanumeric
     and underscore characters.
@@ -22,9 +23,9 @@ def test_attribute_naming(xmlfile, csc, topic):
     ----------
     xmlfile : `pathlib.Path`
         Full filepath to the Commands or Events XML file for the CSC.
-    csc : `testutils.subsystems`
+    csc : `csc`
         Name of the CSC
-    topic : `xmlfile.stem`
+    topic : `str`
         One of ['Commands','Events','Telemetry']
     """
     saltype = "SAL" + topic.rstrip("s")

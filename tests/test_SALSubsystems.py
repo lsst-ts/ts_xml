@@ -1,5 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
+import pathlib
 import re
 import xml.etree.ElementTree as et
 
@@ -12,19 +13,19 @@ INDEX_ENUM_CHECK = re.compile(r"[^,= \w]+")
 VALID_LANGUAGES = {"CPP", "Java", "LabVIEW", "IDL", "SALPY"}
 
 
-def get_salsubsystems_file():
+def get_salsubsystems_file() -> pathlib.Path:
     datadir = ts_xml.get_data_dir()
     sal_subsystems_file = datadir / "sal_interfaces/SALSubsystems.xml"
     return sal_subsystems_file
 
 
-def skip_if_known_issue(test, csc):
+def skip_if_known_issue(test: str, csc: str) -> None:
     jira = ""
     if jira:
         pytest.skip(jira + f": {csc}")
 
 
-def get_file_root_element():
+def get_file_root_element() -> et.Element:
     sal_subsystems_file = get_salsubsystems_file()
     with open(str(sal_subsystems_file), "r", encoding="utf-8") as f:
         tree = et.parse(f)
@@ -32,16 +33,19 @@ def get_file_root_element():
     return root
 
 
-def get_csc_attr_content(attribute):
+def get_csc_attr_content(attribute: str) -> list[tuple[et.Element, str, str]]:
     root = get_file_root_element()
-    arguments = []
+    arguments: list[tuple[et.Element, str, str]] = []
     for csc in ts_xml.subsystems:
-        content = root.find(f"./SALSubsystem/[Name='{csc}']/{attribute}").text
+        found = root.find(f"./SALSubsystem/[Name='{csc}']/{attribute}")
+        assert found is not None
+        content = found.text
+        assert content is not None
         arguments.append((root, csc, content))
     return arguments
 
 
-def whitespace_checks(content, attribute, csc):
+def whitespace_checks(content: str | None, attribute: str, csc: str) -> None:
     assert content is not None, f"{csc} <{attribute}> text must not be empty"
     assert not content.isspace(), f"{csc} <{attribute}> text must not be all whitespace"
 
@@ -51,7 +55,7 @@ def whitespace_checks(content, attribute, csc):
 # ==================
 
 
-def test_salsubsystems_xml_valid():
+def test_salsubsystems_xml_valid() -> None:
     """Test that the SALSubsystems.xml conforms to its schema."""
     datadir = ts_xml.get_data_dir()
     xmlschema_doc = etree.parse(f"{datadir}/schema/SALSubsystemSet.xsd")
@@ -64,7 +68,7 @@ def test_salsubsystems_xml_valid():
         assert False, f"{sal_subsystems_file.name}: {err}"
 
 
-def test_salsubsystems_count():
+def test_salsubsystems_count() -> None:
     """Test that SALSubsystems.xml defines the expected number of CSCs."""
     # Check for known issues.
     skip_if_known_issue("count", "none")
@@ -75,7 +79,7 @@ def test_salsubsystems_count():
     ), "There is an unexpected number of CSCs."
 
 
-def test_salsubsystems_uniq_cscs():
+def test_salsubsystems_uniq_cscs() -> None:
     """Test that SALSubsystems.xml does not contain duplicate CSCs."""
     # Check for known issues.
     skip_if_known_issue("uniq", "none")
@@ -88,7 +92,7 @@ def test_salsubsystems_uniq_cscs():
     ), "SALSubsystems.xml or testutils.subsystems contains duplicate entries"
 
 
-def test_each_csc_defined():
+def test_each_csc_defined() -> None:
     """Test that SALSubsystems.xml defines the expected set of CSCs."""
     # Check for known issues.
     skip_if_known_issue("defined", "none")
@@ -96,25 +100,26 @@ def test_each_csc_defined():
     root = get_file_root_element()
     subsystems = ts_xml.subsystems
     subsystems.sort()
-    cscs = []
+    cscs: list[str] = []
     for csc in root.findall("./SALSubsystem/Name"):
+        assert csc.text is not None
         cscs.append(csc.text)
     cscs.sort()
     assert ts_xml.subsystems == cscs, "There is a duplicate CSC."
 
 
 @pytest.mark.parametrize("root,csc,description", get_csc_attr_content("Description"))
-def test_description_tag(root, csc, description):
+def test_description_tag(root: et.Element, csc: str, description: str) -> None:
     """Test that the <Description> tag is correctly defined for each
        CSC.
 
     Parameters
     ----------
-    root: `get_file_root_element()`
+    root: `et.Element`
         Root element for the sal_subsystems_file tree.
-    csc : `testutils.subsystems`
+    csc : `csc`
         Name of the CSC.
-    description : `get_csc_attr_content("Description")`
+    description : `str`
         Value of the <Description> tag in sal_subsystems_file.
     """
     # Check for known issues.
@@ -129,17 +134,19 @@ def test_description_tag(root, csc, description):
 @pytest.mark.parametrize(
     "root,csc,index_enumeration", get_csc_attr_content("IndexEnumeration")
 )
-def test_index_enumeration_tag(root, csc, index_enumeration):
+def test_index_enumeration_tag(
+    root: et.Element, csc: str, index_enumeration: str
+) -> None:
     """Test that the <IndexEnumeration> tag is correctly defined for each
        CSC.
 
     Parameters
     ----------
-    root: `get_file_root_element()`
+    root: `et.Element`
         Root element for the sal_subsystems_file tree.
-    csc : `testutils.subsystems`
+    csc : `csc`
         Name of the CSC.
-    index_enumeration : `get_csc_attr_content("IndexEnumeration")`
+    index_enumeration : `str`
         Value of the <IndexEnumeration> tag in sal_subsystems_file.
     """
     # Check for known issues.
@@ -175,16 +182,16 @@ def test_index_enumeration_tag(root, csc, index_enumeration):
 @pytest.mark.parametrize(
     "root,csc,added_generics", get_csc_attr_content("AddedGenerics")
 )
-def test_generics_tag(root, csc, added_generics):
+def test_generics_tag(root: et.Element, csc: str, added_generics: str) -> None:
     """Test that the <AddedGenerics> tag is correctly defined for each CSC.
 
     Parameters
     ----------
-    root: `get_file_root_element()`
+    root: `et.Element`
         Root element for the sal_subsystems_file tree.
-    csc : `testutils.subsystems`
+    csc : `csc`
         Name of the CSC.
-    added_generics : `get_csc_attr_content("AddedGenerics")`
+    added_generics : `str`
         Value of the <AddedGenerics> tag in sal_subsystems_file.
     """
     # Check for known issues.
@@ -213,17 +220,19 @@ def test_generics_tag(root, csc, added_generics):
 @pytest.mark.parametrize(
     "root,csc,active_developers", get_csc_attr_content("ActiveDevelopers")
 )
-def test_active_developers_tag(root, csc, active_developers):
+def test_active_developers_tag(
+    root: et.Element, csc: str, active_developers: str
+) -> None:
     """Test that the <ActiveDevelopers> tag is correctly defined for each
        CSC.
 
     Parameters
     ----------
-    root: `get_file_root_element()`
+    root: `et.Element`
         Root element for the sal_subsystems_file tree.
-    csc : `testutils.subsystems`
+    csc : `csc`
         Name of the CSC.
-    active_developers : `get_csc_attr_content("ActiveDevelopers")`
+    active_developers : `str`
         Value of the <ActiveDevelopers> tag in sal_subsystems_file.
     """
     # Check for known issues.
@@ -236,17 +245,17 @@ def test_active_developers_tag(root, csc, active_developers):
 
 
 @pytest.mark.parametrize("root,csc,github", get_csc_attr_content("Github"))
-def test_github_tag(root, csc, github):
+def test_github_tag(root: et.Element, csc: str, github: str) -> None:
     """Test that the <Github> tag is correctly defined for each
        CSC.
 
     Parameters
     ----------
-    root: `get_file_root_element()`
+    root: `et.Element`
         Root element for the sal_subsystems_file tree.
-    csc : `testutils.subsystems`
+    csc : `csc`
         Name of the CSC.
-    github : `get_csc_attr_content("Github")`
+    github : `str`
         Value of the <Github> tag in sal_subsystems_file.
     """
     # Check for known issues.
@@ -259,16 +268,16 @@ def test_github_tag(root, csc, github):
 
 
 @pytest.mark.parametrize("root,csc,languages", get_csc_attr_content("RuntimeLanguages"))
-def test_runtimelanguages_tag(root, csc, languages):
+def test_runtimelanguages_tag(root: et.Element, csc: str, languages: str) -> None:
     """Test that the <RuntimeLanguages> tag is correctly defined for each CSC.
 
     Parameters
     ----------
-    root: `get_file_root_element()`
+    root: `et.Element`
         Root element for the sal_subsystems_file tree.
-    csc : `testutils.subsystems`
+    csc : `csc`
         Name of the CSC.
-    languages : `get_csc_attr_content("RuntimeLanguages")`
+    languages : `str`
         Value of the <RuntimeLanguages> tag in sal_subsystems_file.
     """
     # Check for known issues.
@@ -283,17 +292,19 @@ def test_runtimelanguages_tag(root, csc, languages):
 @pytest.mark.parametrize(
     "root,csc,jenkins_test_results", get_csc_attr_content("JenkinsTestResults")
 )
-def test_jenkins_test_results_tag(root, csc, jenkins_test_results):
+def test_jenkins_test_results_tag(
+    root: et.Element, csc: str, jenkins_test_results: str
+) -> None:
     """Test that the <JenkinsTestResults> tag is correctly defined for each
        CSC.
 
     Parameters
     ----------
-    root: `get_file_root_element()`
+    root: `et.Element`
         Root element for the sal_subsystems_file tree.
-    csc : `testutils.subsystems`
+    csc : `csc`
         Name of the CSC.
-    jenkins_test_results : `get_csc_attr_content("JenkinsTestResults")`
+    jenkins_test_results : `str`
         Value of the <JenkinsTestResults> tag in sal_subsystems_file.
     """
     # Check for known issues.
@@ -306,17 +317,17 @@ def test_jenkins_test_results_tag(root, csc, jenkins_test_results):
 
 
 @pytest.mark.parametrize("root,csc,product_owner", get_csc_attr_content("ProductOwner"))
-def test_product_owner_tag(root, csc, product_owner):
+def test_product_owner_tag(root: et.Element, csc: str, product_owner: str) -> None:
     """Test that the <ProductOwner> tag is correctly defined for each
        CSC.
 
     Parameters
     ----------
-    root: `get_file_root_element()`
+    root: `et.Element`
         Root element for the sal_subsystems_file tree.
-    csc : `testutils.subsystems`
+    csc : `csc`
         Name of the CSC.
-    product_owner : `get_csc_attr_content("ProductOwner")`
+    product_owner : `str`
         Value of the <ProductOwner> tag in sal_subsystems_file.
     """
     # Check for known issues.
@@ -331,16 +342,18 @@ def test_product_owner_tag(root, csc, product_owner):
 @pytest.mark.parametrize(
     "root,csc,rubin_obs_contact", get_csc_attr_content("RubinObsContact")
 )
-def test_rubin_obs_contact_tag(root, csc, rubin_obs_contact):
+def test_rubin_obs_contact_tag(
+    root: et.Element, csc: str, rubin_obs_contact: str
+) -> None:
     """Test that the <RubinObsContact> tag is correctly defined for each CSC.
 
     Parameters
     ----------
-    root: `get_file_root_element()`
+    root: `et.Element`
         Root element for the sal_subsystems_file tree.
-    csc : `testutils.subsystems`
+    csc : `csc`
         Name of the CSC.
-    rubin_obs_contact : `get_csc_attr_content("RubinObsContact")`
+    rubin_obs_contact : `str`
         Value of the <RubinObsContact> tag in sal_subsystems_file.
     """
     # Check for known issues.
@@ -355,16 +368,16 @@ def test_rubin_obs_contact_tag(root, csc, rubin_obs_contact):
 @pytest.mark.parametrize(
     "root,csc,vendor_contact", get_csc_attr_content("VendorContact")
 )
-def test_vendor_contact_tag(root, csc, vendor_contact):
+def test_vendor_contact_tag(root: et.Element, csc: str, vendor_contact: str) -> None:
     """Test that the <VendorContact> tag is correctly defined for each CSC.
 
     Parameters
     ----------
-    root: `get_file_root_element()`
+    root: `et.Element`
         Root element for the sal_subsystems_file tree.
-    csc : `testutils.subsystems`
+    csc : `csc`
         Name of the CSC.
-    vendor_contact : `get_csc_attr_content("VendorContact")`
+    vendor_contact : `str`
         Value of the <VendorContact> tag in sal_subsystems_file.
     """
     # Check for known issues.
@@ -377,16 +390,16 @@ def test_vendor_contact_tag(root, csc, vendor_contact):
 
 
 @pytest.mark.parametrize("root,csc,simulator", get_csc_attr_content("Simulator"))
-def test_simulator_tag(root, csc, simulator):
+def test_simulator_tag(root: et.Element, csc: str, simulator: str) -> None:
     """Test that the <Simulator> tag is correctly defined for each CSC.
 
     Parameters
     ----------
-    root: `get_file_root_element()`
+    root: `et.Element`
         Root element for the sal_subsystems_file tree.
-    csc : `testutils.subsystems`
+    csc : `csc`
         Name of the CSC.
-    simulator : `get_csc_attr_content("Simulator")`
+    simulator : `str`
         Value of the <Simulator> tag in sal_subsystems_file.
     """
     # Check for known issues.
@@ -405,16 +418,16 @@ def test_simulator_tag(root, csc, simulator):
 @pytest.mark.parametrize(
     "root,csc,configuration", get_csc_attr_content("Configuration")
 )
-def test_configuration_tag(root, csc, configuration):
+def test_configuration_tag(root: et.Element, csc: str, configuration: str) -> None:
     """Test that the <Configuration> tag is correctly defined for each CSC.
 
     Parameters
     ----------
-    root: `get_file_root_element()`
+    root: `et.Element`
         Root element for the sal_subsystems_file tree.
-    csc : `testutils.subsystems`
+    csc : `csc`
         Name of the CSC.
-    configuration : `get_csc_attr_content("Configuration")`
+    configuration : `str`
         Value of the <Configuration> tag in sal_subsystems_file.
     """
     # Check for known issues.
