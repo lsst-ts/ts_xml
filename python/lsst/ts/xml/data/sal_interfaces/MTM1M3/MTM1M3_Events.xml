@@ -1161,6 +1161,53 @@
   </SALEvent>
   <SALEvent>
     <Subsystem>MTM1M3</Subsystem>
+    <EFDB_Topic>MTM1M3_logevent_raisingLoweringInfo</EFDB_Topic>
+    <Description>Values send as mirror is raised/lowered.</Description>
+    <item>
+      <EFDB_Name>weightSupportedPercent</EFDB_Name>
+      <Description>Specify how much of the mirror weight is supported.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>%</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>waitAirPressure</EFDB_Name>
+      <Description>Waiting for air pressure to stabilize in hardpoint breakway so mirror raise can start.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>waitHardpoint</EFDB_Name>
+      <Description>Waiting for hardpoint to move to target position so raising/lowering can continue.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>6</Count>
+    </item>
+    <item>
+      <EFDB_Name>waitZForceActuator</EFDB_Name>
+      <Description>Waiting for Z force actuator following error to drop into prescribed range.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>156</Count>
+    </item>
+    <item>
+      <EFDB_Name>waitYForceActuator</EFDB_Name>
+      <Description>Waiting for Y force actuator following error to drop into prescribed range.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>100</Count>
+    </item>
+    <item>
+      <EFDB_Name>waitXForceActuator</EFDB_Name>
+      <Description>Waiting for X force actuator following error to drop into prescribed range.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>12</Count>
+    </item>
+  </SALEvent>
+  <SALEvent>
+    <Subsystem>MTM1M3</Subsystem>
     <EFDB_Topic>MTM1M3_logevent_forceActuatorState</EFDB_Topic>
     <item>
       <EFDB_Name>timestamp</EFDB_Name>
@@ -1244,13 +1291,6 @@
       <Description>Are the balance forces applied?</Description>
       <IDL_Type>boolean</IDL_Type>
       <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>supportPercentage</EFDB_Name>
-      <Description>Specify how much of the mirror weight is supported.</Description>
-      <IDL_Type>float</IDL_Type>
-      <Units>%</Units>
       <Count>1</Count>
     </item>
   </SALEvent>
@@ -2826,6 +2866,34 @@
     <item>
       <EFDB_Name>highProximityWarning</EFDB_Name>
       <Description>Hardpoint is close to high limit switch.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>6</Count>
+    </item>
+    <item>
+      <EFDB_Name>anyLowAirPressureFault</EFDB_Name>
+      <Description>Low air pressure measured in any hardpoint.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>lowAirPressureFault</EFDB_Name>
+      <Description>Low air pressure measured in hardpoint breakway mechanism.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>6</Count>
+    </item>
+    <item>
+      <EFDB_Name>anyHighAirPressureFault</EFDB_Name>
+      <Description>High air pressure measured in any hardpoint.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>highAirPressureFault</EFDB_Name>
+      <Description>High air presure measured in hardpoint breakway mechanism.</Description>
       <IDL_Type>boolean</IDL_Type>
       <Units>unitless</Units>
       <Count>6</Count>
