@@ -877,4 +877,42 @@
     <Subsystem>GenericCamera</Subsystem>
     <EFDB_Topic>GenericCamera_logevent_autoExposureStopped</EFDB_Topic>
   </SALEvent>
+  <SALEvent>
+    <Subsystem>GenericCamera</Subsystem>
+    <EFDB_Topic>GenericCamera_logevent_streamingModeStarted</EFDB_Topic>
+    <Description>Notification event that streaming mode started</Description>
+    <item>
+      <EFDB_Name>expTime</EFDB_Name>
+      <Description>The exposure time requested for streaming</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>second</Units>
+      <Count>1</Count>
+    </item>
+  </SALEvent>
+  <SALEvent>
+    <Subsystem>GenericCamera</Subsystem>
+    <EFDB_Topic>GenericCamera_logevent_streamingModeStopped</EFDB_Topic>
+    <Description>Notification event that streaming mode stopped</Description>
+    <item>
+      <EFDB_Name>expTime</EFDB_Name>
+      <Description>The exposure time requested for streaming</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>second</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>numFrames</EFDB_Name>
+      <Description>The number of frames captured during streaming mode</Description>
+      <IDL_Type>long</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>avgFrameRate</EFDB_Name>
+      <Description>The average frame rate during streaming mode acquisition</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>Hz</Units>
+      <Count>1</Count>
+    </item>
+  </SALEvent>
 </SALEventSet>
