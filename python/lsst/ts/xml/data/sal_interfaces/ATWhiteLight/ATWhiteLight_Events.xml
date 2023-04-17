@@ -119,10 +119,9 @@
   </Enumeration>
   <Enumeration>
     LampControllerState_Unknown=0,
-    LampControllerState_Standby=1,
-    LampControllerState_On=2,
-    LampControllerState_Cooldown=3,
-    LampControllerState_Error=4
+    LampControllerState_StandbyOrOn=1,
+    LampControllerState_Cooldown=2,
+    LampControllerState_Error=3
   </Enumeration>
   <Enumeration>
     ShutterState_Unknown=0,
@@ -155,7 +154,7 @@
     </item>
     <item>
       <EFDB_Name>controllerError</EFDB_Name>
-      <Description>Error code reported by the lamp controller. A LampControllerError enum. Warning: if the reported value is anything except None, it may be stale by up to 10 seconds. The reason is that the controller reports errors using a slowly blinking error signal (and LED) that can take up to 10 seconds to decode. If the signal starts blinking while there is no error then the value reported in this field will be GENERIC_ERROR, with a delay of less than a second. Once the error signal is decoded the reported value will change to the decoded value, and remain that value until a different error signal is decoded or the error goes away.</Description>
+      <Description>Error code reported by the lamp controller. A LampControllerError enum. Warning: if the reported value is anything except None, it may be stale by up to 10 seconds, because the controller reports errors using a slowly blinking error signal (and LED). If the signal starts blinking while there is no error, then the value reported in this field will be GENERIC_ERROR, with a delay of less than a second. Once the error signal is decoded, the reported value will change to the decoded value, and remain that value until a different error signal is decoded or the error goes away.</Description>
       <IDL_Type>int</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
@@ -164,6 +163,13 @@
       <EFDB_Name>controllerState</EFDB_Name>
       <Description>Lamp controller state; a LampControllerState enum.</Description>
       <IDL_Type>int</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>lightDetected</EFDB_Name>
+      <Description>True if the photo sensor has detected that the lamp is on. False if the photo sensor has detected that the lamp is off, or if the CSC is not connected to the lamp controller (and so does not know the state of the photo sensor).</Description>
+      <IDL_Type>boolean</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
     </item>
