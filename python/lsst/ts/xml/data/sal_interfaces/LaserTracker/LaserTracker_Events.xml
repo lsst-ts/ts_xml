@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-stylesheet type="text/xsl" href="http://lsst-sal.tuc.noao.edu/schema/SALEventSet.xsl"?>
 <SALEventSet xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://lsst-sal.tuc.noao.edu/schema/SALEventSet.xsd">
-  <Enumeration>DetailedState_DisabledState,DetailedState_EnabledState,DetailedState_FaultState,DetailedState_OfflineState,DetailedState_StandbyState</Enumeration>
+  <Enumeration>T2SAStatus_READY,T2SAStatus_2FACE,T2SAStatus_DRIFT,T2SAStatus_BUSY</Enumeration>
+  <Enumeration>LaserStatus_NOTCONNECTED,LaserStatus_OFF,LaserStatus_WARMING,LaserStatus_ON</Enumeration>
   <SALEvent>
     <Subsystem>LaserTracker</Subsystem>
     <EFDB_Topic>LaserTracker_logevent_offsetsPublish</EFDB_Topic>
@@ -114,6 +115,30 @@
     <item>
       <EFDB_Name>t2saError</EFDB_Name>
       <Description>Error code received from T2SA</Description>
+      <IDL_Type>int</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+  </SALEvent>
+  <SALEvent>
+    <Subsystem>LaserTracker</Subsystem>
+    <EFDB_Topic>LaserTracker_logevent_t2saStatus</EFDB_Topic>
+    <Description>Status of the T2SA system.</Description>
+    <item>
+      <EFDB_Name>status</EFDB_Name>
+      <Description>T2SAStatus enumeration.</Description>
+      <IDL_Type>int</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+  </SALEvent>
+  <SALEvent>
+    <Subsystem>LaserTracker</Subsystem>
+    <EFDB_Topic>LaserTracker_logevent_laserStatus</EFDB_Topic>
+    <Description>Status of the laser.</Description>
+    <item>
+      <EFDB_Name>status</EFDB_Name>
+      <Description>LaserStatus enumeration.</Description>
       <IDL_Type>int</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>

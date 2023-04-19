@@ -64,11 +64,16 @@
         System_OilSupplySystem=9,
         System_AzimuthDrivesThermal=10,
         System_ElevationDrivesThermal=11,
-        System_AZ0101CabinetThermal=12,
-        System_ModbusTemperatureControllers=13,
+        System_Cabinet0101Thermal=12,
+        System_AuxiliaryCabinetsThermal=13,
         System_MainCabinetThermal=14,
         System_MainAxesPowerSupply=15,
         System_TopEndChiller=16
+    </Enumeration>
+  <Enumeration>
+      ThermalCommandState_NoChange = 0,
+      ThermalCommandState_Off = 1,
+      ThermalCommandState_On = 2
     </Enumeration>
   <SALEvent>
     <Subsystem>MTMount</Subsystem>
@@ -410,28 +415,28 @@
     <EFDB_Topic>MTMount_logevent_cameraCableWrapControllerSettings</EFDB_Topic>
     <Description>A selection of low-level controller settings for the camera cable wrap.</Description>
     <item>
-      <EFDB_Name>minl1LimitEnabled</EFDB_Name>
+      <EFDB_Name>minL1LimitEnabled</EFDB_Name>
       <Description>Is the minimum L1 (software) position limit enabled?</Description>
       <IDL_Type>boolean</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
     </item>
     <item>
-      <EFDB_Name>maxl1LimitEnabled</EFDB_Name>
+      <EFDB_Name>maxL1LimitEnabled</EFDB_Name>
       <Description>Is the maximum L1 (software) position limit enabled?</Description>
       <IDL_Type>boolean</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
     </item>
     <item>
-      <EFDB_Name>minl2LimitEnabled</EFDB_Name>
+      <EFDB_Name>minL2LimitEnabled</EFDB_Name>
       <Description>Is the minimum L2 (direction inhibit) limit switch enabled?</Description>
       <IDL_Type>boolean</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
     </item>
     <item>
-      <EFDB_Name>maxl2LimitEnabled</EFDB_Name>
+      <EFDB_Name>maxL2LimitEnabled</EFDB_Name>
       <Description>Is the maximum` L2 (direction inhibit) limit switch enabled?</Description>
       <IDL_Type>boolean</IDL_Type>
       <Units>unitless</Units>
@@ -860,8 +865,8 @@
   </SALEvent>
   <SALEvent>
     <Subsystem>MTMount</Subsystem>
-    <EFDB_Topic>MTMount_logevent_az0101CabinetThermalSystemState</EFDB_Topic>
-    <Description>State of the AZ0101 cabinet thermal control system.</Description>
+    <EFDB_Topic>MTMount_logevent_cabinet0101ThermalSystemState</EFDB_Topic>
+    <Description>State of azimuth cabinet 0101 thermal control system.</Description>
     <item>
       <EFDB_Name>powerState</EFDB_Name>
       <Description>Power state; a PowerState enum.</Description>
@@ -886,8 +891,8 @@
   </SALEvent>
   <SALEvent>
     <Subsystem>MTMount</Subsystem>
-    <EFDB_Topic>MTMount_logevent_modbusTemperatureControllersSystemState</EFDB_Topic>
-    <Description>State of the Modbus (cabinet) temperature controller system.</Description>
+    <EFDB_Topic>MTMount_logevent_auxiliaryCabinetsThermalSystemState</EFDB_Topic>
+    <Description>State of the auxiliary cabinets thermal control system.</Description>
     <item>
       <EFDB_Name>powerState</EFDB_Name>
       <Description>Power state; a PowerState enum.</Description>
@@ -1257,7 +1262,7 @@
     </item>
     <item>
       <EFDB_Name>subsystem</EFDB_Name>
-      <Description>Subsystem that produced the error; a single SubsystemId enumeration value.</Description>
+      <Description>Subsystem that produced the error; a single System enumeration value.</Description>
       <IDL_Type>long</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
@@ -1465,7 +1470,7 @@
     </item>
     <item>
       <EFDB_Name>subsystem</EFDB_Name>
-      <Description>Subsystem that produced the warning; a single SubsystemId enumeration value.</Description>
+      <Description>Subsystem that produced the warning; a single System enumeration value.</Description>
       <IDL_Type>long</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>

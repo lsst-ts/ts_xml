@@ -17,8 +17,9 @@
 # GNU General Public License for more details.
 #
 # You should have received a copy of the GNU General Public License
-import astropy.units
+import pathlib
 
+import astropy.units
 from lsst.ts.xml import utils
 
 """This library defines common variables and functions used by the various
@@ -34,7 +35,6 @@ XML test suite generator scripts.
 subsystems = [
     "ATAOS",
     "MTAirCompressor",
-    "ATArchiver",
     "ATBuilding",
     "ATCamera",
     "ATDome",
@@ -50,11 +50,9 @@ subsystems = [
     "ATWhiteLight",
     "Authorize",
     "GCHeaderService",
-    "CCArchiver",
     "CCCamera",
     "CCHeaderService",
     "CCOODS",
-    "CatchupArchiver",
     "CBP",
     "DIMM",
     "DREAM",
@@ -150,7 +148,7 @@ added_generics_events = ["clockOffset", "largeFileObjectAvailable", "statusCode"
 
 """Define the list of AddedGenerics mandatory commands."""
 
-added_generics_mandatory_commands = []
+added_generics_mandatory_commands: list[str] = []
 
 """Define the list of AddedGenerics mandatory events."""
 
@@ -191,7 +189,7 @@ added_generics_csc_events = [
 
 """Define list of commands for configurable category."""
 
-added_generics_configurable_commands = []
+added_generics_configurable_commands: list[str] = []
 
 """Define list of events for configurable category."""
 
@@ -402,10 +400,10 @@ strings_with_units = [
 # =========
 
 
-def get_xmlfile_csc_topic():
+def get_xmlfile_csc_topic() -> list[tuple[pathlib.Path, str, str]]:
     """Return the XML file for each CSC and each topic"""
     pkgroot = utils.get_data_dir()
-    arguments = []
+    arguments: list[tuple[pathlib.Path, str, str]] = []
     for csc in subsystems:
         xml_path = pkgroot / "sal_interfaces" / csc
         for xmlfile in xml_path.glob(f"{csc}_*.xml"):
@@ -414,7 +412,7 @@ def get_xmlfile_csc_topic():
     return arguments
 
 
-def check_unit(unit_str):
+def check_unit(unit_str: str) -> None:
     if unit_str.isnumeric():
         raise TypeError(f"Units={unit_str!r} cannot be a number")
 

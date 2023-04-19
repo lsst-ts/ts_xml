@@ -152,4 +152,40 @@
       <Count>1</Count>
     </item>
   </SALEvent>
+  <SALEvent>
+    <Subsystem>Watcher</Subsystem>
+    <EFDB_Topic>Watcher_logevent_notification</EFDB_Topic>
+    <Description>Notification about a concern. Intended for stateless information; basically a rule-specific log message.</Description>
+    <item>
+      <EFDB_Name>name</EFDB_Name>
+      <Description>Name of rule. Each Watcher rule has a unique name.</Description>
+      <IDL_Type>string</IDL_Type>
+      <IDL_Size>1</IDL_Size>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>level</EFDB_Name>
+      <Description>Notification level, a Python logging level: error=40, warning=30, info=20, debug=10.</Description>
+      <IDL_Type>int</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>summary</EFDB_Name>
+      <Description>A brief explanation of what is wrong.</Description>
+      <IDL_Type>string</IDL_Type>
+      <IDL_Size>1</IDL_Size>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>details</EFDB_Name>
+      <Description>A detailed explanation of what is wrong.</Description>
+      <IDL_Type>string</IDL_Type>
+      <IDL_Size>1</IDL_Size>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+  </SALEvent>
 </SALEventSet>

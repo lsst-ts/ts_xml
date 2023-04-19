@@ -50,6 +50,109 @@
   </SALCommand>
   <SALCommand>
     <Subsystem>MTMount</Subsystem>
+    <EFDB_Topic>MTMount_command_setThermal</EFDB_Topic>
+    <Description>Control one or more thermal systems.</Description>
+    <item>
+      <EFDB_Name>azimuthDrivesState</EFDB_Name>
+      <Description>Desired thermal state; a ThermalCommandState enum.</Description>
+      <IDL_Type>short</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>elevationDrivesState</EFDB_Name>
+      <Description>Desired thermal state; a ThermalCommandState enum.</Description>
+      <IDL_Type>short</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>cabinet0101State</EFDB_Name>
+      <Description>Desired thermal state; a ThermalCommandState enum.</Description>
+      <IDL_Type>short</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>mainCabinetState</EFDB_Name>
+      <Description>Desired thermal state; a ThermalCommandState enum.</Description>
+      <IDL_Type>short</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>auxiliaryCabinetsState</EFDB_Name>
+      <Description>Desired thermal state; a ThermalCommandState enum. Note that the MobBus thermal controller is always on or in fault, so mode=Off is ignored.</Description>
+      <IDL_Type>short</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>oilSupplySystemCabinetState</EFDB_Name>
+      <Description>Desired thermal state; a ThermalCommandState enum. Note that the MobBus thermal controller is always on or in fault, so mode=Off is ignored.</Description>
+      <IDL_Type>short</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>topEndChillerState</EFDB_Name>
+      <Description>Desired thermal state; a ThermalCommandState enum.</Description>
+      <IDL_Type>short</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>azimuthDrivesSetpoint</EFDB_Name>
+      <Description>Desired temperature; only used if the corresponding state is On.</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>deg_C</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>elevationDrivesSetpoint</EFDB_Name>
+      <Description>Desired temperature; only used if the corresponding state is On.</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>deg_C</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>cabinet0101Setpoint</EFDB_Name>
+      <Description>Desired temperature; only used if the corresponding state is On.</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>deg_C</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>mainCabinetSetpoint</EFDB_Name>
+      <Description>Desired temperature; only used if the corresponding state is On.</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>deg_C</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>auxiliaryCabinetsSetpoint</EFDB_Name>
+      <Description>Desired temperature; only used if the corresponding state is On.</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>deg_C</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>oilSupplySystemCabinetSetpoint</EFDB_Name>
+      <Description>Desired temperature; only used if the corresponding state is On.</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>deg_C</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>topEndChillerSetpoint</EFDB_Name>
+      <Description>Desired temperature; only used if the corresponding state is On.</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>deg_C</Units>
+      <Count>1</Count>
+    </item>
+  </SALCommand>
+  <SALCommand>
+    <Subsystem>MTMount</Subsystem>
     <EFDB_Topic>MTMount_command_startTracking</EFDB_Topic>
     <Description>Enable tracking. Once you issue this command you must call trackTarget at regular intervals until you are done tracking, at which point call stopTracking.</Description>
   </SALCommand>

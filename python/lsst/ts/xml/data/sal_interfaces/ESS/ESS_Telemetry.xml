@@ -88,15 +88,15 @@
     </item>
     <item>
       <EFDB_Name>direction</EFDB_Name>
-      <Description>Median (or mean, for some sensor types) wind direction: 0 = north, 90 = east.</Description>
-      <IDL_Type>short</IDL_Type>
+      <Description>Circular mean wind direction: 0 = north, 90 = east.</Description>
+      <IDL_Type>float</IDL_Type>
       <Units>degree</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>directionStdDev</EFDB_Name>
-      <Description>Standard deviation of wind direction estimated from quartiles. Not available for all sensor types.</Description>
-      <IDL_Type>short</IDL_Type>
+      <Description>Circular standard deviation of wind direction. Not available for all sensor types.</Description>
+      <IDL_Type>float</IDL_Type>
       <Units>degree</Units>
       <Count>1</Count>
     </item>
@@ -219,8 +219,8 @@
     </item>
     <item>
       <EFDB_Name>rainRate</EFDB_Name>
-      <Description>Rainfall rate measured over a configurable period on the order of a minute.</Description>
-      <IDL_Type>short</IDL_Type>
+      <Description>Rainfall rate.</Description>
+      <IDL_Type>float</IDL_Type>
       <Units>mm/h</Units>
       <Count>1</Count>
     </item>
@@ -284,7 +284,7 @@
     <item>
       <EFDB_Name>snowRate</EFDB_Name>
       <Description>Snowfall rate measured over a configurable period on the order of a minute.</Description>
-      <IDL_Type>short</IDL_Type>
+      <IDL_Type>float</IDL_Type>
       <Units>mm/h</Units>
       <Count>1</Count>
     </item>
@@ -316,7 +316,7 @@
     <item>
       <EFDB_Name>solarRadiation</EFDB_Name>
       <Description>Median (mean for some sensors) solar radiation measured over a configurable period on the order of a minute.</Description>
-      <IDL_Type>short</IDL_Type>
+      <IDL_Type>float</IDL_Type>
       <Units>W/m2</Units>
       <Count>1</Count>
     </item>
@@ -386,7 +386,7 @@
     </item>
     <item>
       <EFDB_Name>interval</EFDB_Name>
-      <Description>Data collection time interval. N-th (starting from 0) sample is assumed to be taken at "timestamp" + ("interval"/200) * N.</Description>
+      <Description>Data collection time interval. N-th (starting from 0) sample is assumed to be taken at "timestamp" + "interval" * N.</Description>
       <IDL_Type>double</IDL_Type>
       <Units>second</Units>
       <Count>1</Count>
@@ -396,21 +396,21 @@
       <Description>Acceleration in x direction.</Description>
       <IDL_Type>float</IDL_Type>
       <Units>m/s2</Units>
-      <Count>200</Count>
+      <Count>400</Count>
     </item>
     <item>
       <EFDB_Name>accelerationY</EFDB_Name>
       <Description>Acceleration in y direction.</Description>
       <IDL_Type>float</IDL_Type>
       <Units>m/s2</Units>
-      <Count>200</Count>
+      <Count>400</Count>
     </item>
     <item>
       <EFDB_Name>accelerationZ</EFDB_Name>
       <Description>Acceleration in Z direction.</Description>
       <IDL_Type>float</IDL_Type>
       <Units>m/s2</Units>
-      <Count>200</Count>
+      <Count>400</Count>
     </item>
     <item>
       <EFDB_Name>location</EFDB_Name>
@@ -438,20 +438,6 @@
       <Count>1</Count>
     </item>
     <item>
-      <EFDB_Name>interval</EFDB_Name>
-      <Description>Time interval over which PSDs were calculated beginning from the starting time.</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>second</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>minPSDFrequency</EFDB_Name>
-      <Description>PSD minimum frequency.</Description>
-      <IDL_Type>float</IDL_Type>
-      <Units>Hz</Units>
-      <Count>1</Count>
-    </item>
-    <item>
       <EFDB_Name>maxPSDFrequency</EFDB_Name>
       <Description>PSD maximum frequency.</Description>
       <IDL_Type>float</IDL_Type>
@@ -459,32 +445,25 @@
       <Count>1</Count>
     </item>
     <item>
-      <EFDB_Name>numDataPoints</EFDB_Name>
-      <Description>Number of valid frequencies. PSD array elements with index greater than or equal to numDataPoints are invalid and can contain any value (0 preferred).</Description>
-      <IDL_Type>int</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
       <EFDB_Name>accelerationPSDX</EFDB_Name>
       <Description>Acceleration PSD in x direction.</Description>
       <IDL_Type>float</IDL_Type>
       <Units>m2 / (Hz2 s4)</Units>
-      <Count>200</Count>
+      <Count>201</Count>
     </item>
     <item>
       <EFDB_Name>accelerationPSDY</EFDB_Name>
       <Description>Acceleration PSD in y direction.</Description>
       <IDL_Type>float</IDL_Type>
       <Units>m2 / (Hz2 s4)</Units>
-      <Count>200</Count>
+      <Count>201</Count>
     </item>
     <item>
       <EFDB_Name>accelerationPSDZ</EFDB_Name>
       <Description>Acceleration PSD in z direction.</Description>
       <IDL_Type>float</IDL_Type>
       <Units>m2 / (Hz2 s4)</Units>
-      <Count>200</Count>
+      <Count>201</Count>
     </item>
     <item>
       <EFDB_Name>location</EFDB_Name>
@@ -532,6 +511,13 @@
       <Units>kV / m</Units>
       <Count>1</Count>
     </item>
+    <item>
+      <EFDB_Name>location</EFDB_Name>
+      <Description>Physical location of the sensor (e.g. AuxTel Truss).</Description>
+      <IDL_Type>string</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
   </SALTelemetry>
   <SALTelemetry>
     <EFDB_Topic>ESS_lightningStrikeStatus</EFDB_Topic>
@@ -553,14 +539,14 @@
     <item>
       <EFDB_Name>closeStrikeRate</EFDB_Name>
       <Description>Rate of close strikes (0 - 999 strikes/minute). The range, for which a strike is considered close, can be configured in ts_config_ocs.</Description>
-      <IDL_Type>short</IDL_Type>
+      <IDL_Type>float</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>totalStrikeRate</EFDB_Name>
       <Description>Rate of total strikes (0 - 999 strikes/minute).</Description>
-      <IDL_Type>short</IDL_Type>
+      <IDL_Type>float</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
     </item>
@@ -583,6 +569,59 @@
       <Description>Current heading from GPS or compass. The sensor is at a fixed place so this is not likely to change.</Description>
       <IDL_Type>float</IDL_Type>
       <Units>degree</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>location</EFDB_Name>
+      <Description>Physical location of the sensor (e.g. AuxTel Truss).</Description>
+      <IDL_Type>string</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+  </SALTelemetry>
+  <SALTelemetry>
+    <EFDB_Topic>ESS_spectrumAnalyzer</EFDB_Topic>
+    <Description>Spectrum analyzer trace (once per second).</Description>
+    <item>
+      <EFDB_Name>sensorName</EFDB_Name>
+      <Description>The user-defined name of the sensor (e.g. AuxTel SSA3000X).</Description>
+      <IDL_Type>string</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>timestamp</EFDB_Name>
+      <Description>Time of data acqusition (TAI Unix seconds).</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>second</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>startFrequency</EFDB_Name>
+      <Description>The start frequency of the spectrum trace.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>Hz</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>stopFrequency</EFDB_Name>
+      <Description>The stop frequency of the spectrum trace.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>Hz</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>spectrum</EFDB_Name>
+      <Description>The spectrum trace.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>dB</Units>
+      <Count>751</Count>
+    </item>
+    <item>
+      <EFDB_Name>location</EFDB_Name>
+      <Description>Physical location of the sensor (e.g. AuxTel Truss).</Description>
+      <IDL_Type>string</IDL_Type>
+      <Units>unitless</Units>
       <Count>1</Count>
     </item>
   </SALTelemetry>

@@ -18,8 +18,8 @@
 #
 # You should have received a copy of the GNU General Public License
 
-from .utils import *
-from .testutils import *
-from .generate_subsystems_doc import *
 from .generate_csv_table import *
 from .generate_sal_generics_doc import *
+from .generate_subsystems_doc import *
+from .testutils import *
+from .utils import *

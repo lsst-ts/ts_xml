@@ -6,7 +6,7 @@
   <Enumeration>OffTypes_simple,OffTypes_tplane</Enumeration>
   <Enumeration>OnOff_on,OnOff_off</Enumeration>
   <Enumeration>Wraps_cw,Wraps_ccw</Enumeration>
-  <Enumeration>CoordFrame_fk5,CoordFrame_icrs</Enumeration>
+  <Enumeration>CoordFrame_fk5,CoordFrame_icrs,CoordFrame_azel,CoordFrame_planet,CoordFrame_ephem</Enumeration>
   <Enumeration>RotFrame_target,RotFrame_azel,RotFrame_fixed</Enumeration>
   <Enumeration>RotMode_field,RotMode_slit</Enumeration>
   <Enumeration>Planets_mercury,Planets_venus,Planets_moon,Planets_mars,Planets_jupiter,Planets_saturn,Planets_uranus,Planets_neptune,Planets_pluto</Enumeration>
@@ -809,6 +809,39 @@
       <Description>Path of the pointing file.</Description>
       <IDL_Type>string</IDL_Type>
       <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+  </SALEvent>
+  <SALEvent>
+    <Subsystem>ATPtg</Subsystem>
+    <EFDB_Topic>ATPtg_logevent_observatoryLocation</EFDB_Topic>
+    <Description>Location of the observatory.</Description>
+    <item>
+      <EFDB_Name>longitude</EFDB_Name>
+      <Description>Site longitude.</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>degree</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>latitude</EFDB_Name>
+      <Description>Site latitude.</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>degree</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>height</EFDB_Name>
+      <Description>Site height above see level.</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>meter</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>timeZone</EFDB_Name>
+      <Description>Time zone offset.</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>hour</Units>
       <Count>1</Count>
     </item>
   </SALEvent>

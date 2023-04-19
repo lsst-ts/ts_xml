@@ -20,11 +20,11 @@
 
 __all__ = ["generate_subsystems_doc"]
 
+from typing import TextIO
 from xml.etree import ElementTree
 
-from . import utils
 from . import testutils
-
+from .utils import find_text_in_xml, get_pkg_root, get_sal_interfaces_dir
 
 # XML attributes to ignore.
 IGNORED_ATTRIBUTES = ["EFDB_Name", "Description"]
@@ -44,7 +44,7 @@ IGNORED_FIELDS = [
 ]
 
 
-def topic_sort_key(child):
+def topic_sort_key(child: ElementTree.Element) -> tuple[str, str]:
     """Sort key for generics.
 
     Parameters
@@ -56,11 +56,14 @@ def topic_sort_key(child):
     if topic is None:
         second_value = child.tag
     else:
+        assert topic.text is not None
         second_value = topic.text.split("_")[-1]
     return (child.tag, second_value)
 
 
-def write_heading(f, name, char="-", overline=False):
+def write_heading(
+    f: TextIO, name: str, char: str = "-", overline: bool = False
+) -> None:
     """Write a heading with specified underline and optional overline.
 
     Parameters
@@ -100,7 +103,7 @@ def write_heading(f, name, char="-", overline=False):
     f.write(marker)
 
 
-def create_generics_dict(generics):
+def create_generics_dict(generics: str | None) -> dict[str, list[str]]:
     """Create a dictionary of needed generic commands and events.
 
     Parameters
@@ -140,7 +143,13 @@ def create_generics_dict(generics):
     return generic_dict
 
 
-def add_generics(cf, subsystem, set_name, has_generics, has_specific_topic_type):
+def add_generics(
+    cf: TextIO,
+    subsystem: str,
+    set_name: str,
+    has_generics: dict[str, list[str]],
+    has_specific_topic_type: list[str],
+) -> None:
     """Adds generic topics to the rst file in the appropriate section.
 
     Parameters
@@ -159,7 +168,7 @@ def add_generics(cf, subsystem, set_name, has_generics, has_specific_topic_type)
         For example, ["Command", "Event", "Telemetry"].
 
     """
-    xml_dir = utils.get_sal_interfaces_dir()
+    xml_dir = get_sal_interfaces_dir()
 
     gen_tree = ElementTree.parse(xml_dir / "SALGenerics.xml")
     gen_root = gen_tree.getroot()
@@ -173,22 +182,25 @@ def add_generics(cf, subsystem, set_name, has_generics, has_specific_topic_type)
             if topic_type not in has_specific_topic_type:
                 write_heading(cf, name=f"{topic_type}s")
             for gen_topic in gen_set:
-                topic_name = gen_topic.find("EFDB_Topic").text
-                short_name = topic_name.split("_")[-1]
+                topic_text = find_text_in_xml(gen_topic, "EFDB_Topic")
+                short_name = topic_text.split("_")[-1]
                 if short_name not in has_generics[topic_type]:
                     continue
                 write_heading(cf, name=short_name, char="~")
                 gen_topic_description = gen_topic.find("Description")
                 if gen_topic_description is not None:
+                    assert gen_topic_description.text is not None
                     cf.write(f"**Description**: {gen_topic_description.text}\n\n")
                 for gen_field in gen_topic:
                     if gen_field.tag == "item":
-                        gen_field_name = gen_field.find("EFDB_Name")
-                        gen_field_description = gen_field.find("Description")
-                        cf.write(
-                            f"\n.. _{subsystem}:{short_name}:{gen_field_name.text}:\n\n"
+                        gen_field_name_text = find_text_in_xml(gen_field, "EFDB_Name")
+                        gen_field_description_text = find_text_in_xml(
+                            gen_field, "Description"
                         )
-                        write_heading(cf, gen_field_name.text, char="*")
+                        cf.write(
+                            f"\n.. _{subsystem}:{short_name}:{gen_field_name_text}:\n\n"
+                        )
+                        write_heading(cf, gen_field_name_text, char="*")
                         for gen_attribute in gen_field:
                             if gen_attribute.tag in ["Count", "IDL_Size"]:
                                 if gen_attribute.text == "1":
@@ -203,7 +215,7 @@ def add_generics(cf, subsystem, set_name, has_generics, has_specific_topic_type)
                                 cf.write(
                                     f":{gen_attribute.tag}: {gen_attribute.text}\n"
                                 )
-                        cf.write(f"\n**Description**: {gen_field_description.text}\n\n")
+                        cf.write(f"\n**Description**: {gen_field_description_text}\n\n")
                     elif gen_field.tag in IGNORED_FIELDS:
                         pass
                     else:
@@ -213,13 +225,13 @@ def add_generics(cf, subsystem, set_name, has_generics, has_specific_topic_type)
             pass
 
 
-def generate_subsystems_doc():
+def generate_subsystems_doc() -> None:
     """Generates SAL subsystem rst documentation from XML.
 
     Subsystem-specific topics are listed first, then generic topics.
     Topics are alphabetized within each group.
     """
-    rst_dir = utils.get_pkg_root() / "doc" / "sal_interfaces"
+    rst_dir = get_pkg_root() / "doc" / "sal_interfaces"
     rst_dir.mkdir(parents=True, exist_ok=True)
 
     # Write the rst table of contents.
@@ -241,15 +253,15 @@ SAL Interfaces for all CSCs and other SAL components.
         )
 
     # Write one rst file for each SAL component.
-    xml_dir = utils.get_sal_interfaces_dir()
+    xml_dir = get_sal_interfaces_dir()
     subsystem_tree = ElementTree.parse(xml_dir / "SALSubsystems.xml")
     subsystem_tree_root = subsystem_tree.getroot()
     for subsystem_elt in subsystem_tree_root:
-        subsystem = subsystem_elt.find("Name").text
+        subsystem = find_text_in_xml(subsystem_elt, "Name")
         # has_specific_topic_type starts empty for each CSC because it is
         # unknown if it has a topic file.
         has_specific_topic_type = []
-        generics = subsystem_elt.find("AddedGenerics").text
+        generics = find_text_in_xml(subsystem_elt, "AddedGenerics")
         has_generics = create_generics_dict(generics)
 
         with open(rst_dir / f"{subsystem}.rst", "w") as cf:
@@ -290,6 +302,7 @@ SAL Interfaces for all CSCs and other SAL components.
                         if dds_type == "Events" and not enumeration_seen:
                             write_heading(cf, name="Enumerations")
                             enumeration_seen = True
+                        assert topic.text is not None
                         states = topic.text.split(",")
                         state_name = states[0].split("_")[0].lstrip()
                         cf.write(f":{state_name}:\n")
@@ -308,20 +321,19 @@ SAL Interfaces for all CSCs and other SAL components.
                     if dds_type == "Events" and first_event:
                         write_heading(cf, name="Events")
                         first_event = False
-                    topic_name = topic.find("EFDB_Topic").text
+                    topic_name = find_text_in_xml(topic, "EFDB_Topic")
                     if dds_type in ["Commands", "Events"]:
                         short_name = topic_name.split("_", 2)[-1]
                     else:
                         short_name = topic_name.split("_", 1)[-1]
                     cf.write(f".. _{subsystem}:{dds_type}:{short_name}:\n\n")
                     write_heading(cf, name=short_name, char="~")
-                    if topic.find("Description") is not None:
-                        cf.write(
-                            f"**Description**: {topic.find('Description').text}\n\n"
-                        )
+                    topic_description = topic.find("Description")
+                    if topic_description is not None:
+                        cf.write(f"**Description**: {topic_description.text}\n\n")
                     for field in topic:
                         if field.tag == "item":
-                            efdb_name = field.find("EFDB_Name").text
+                            efdb_name = find_text_in_xml(field, "EFDB_Name")
                             cf.write(
                                 f"\n.. _{subsystem}:{dds_type}:{short_name}:{efdb_name}:\n\n"
                             )
@@ -338,9 +350,8 @@ SAL Interfaces for all CSCs and other SAL components.
                                         )
                                 else:
                                     cf.write(f":{attribute.tag}: {attribute.text}\n")
-                            cf.write(
-                                f"\n**Description**: {field.find('Description').text}\n\n"
-                            )
+                            description = find_text_in_xml(field, "Description")
+                            cf.write(f"\n**Description**: {description}\n\n")
                         elif field.tag in IGNORED_FIELDS:
                             pass
                         else:

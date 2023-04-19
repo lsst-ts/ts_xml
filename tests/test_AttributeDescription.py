@@ -1,24 +1,26 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-import pytest
+import pathlib
 import xml.etree.ElementTree as et
+
 import lsst.ts.xml as ts_xml
+import pytest
 
 
-def check_for_issues(csc, topic):
+def check_for_issues(csc: str, topic: str) -> str:
     return ""
 
 
 @pytest.mark.parametrize("xmlfile,csc,topic", ts_xml.get_xmlfile_csc_topic())
-def test_attribute_description(xmlfile, csc, topic):
+def test_attribute_description(xmlfile: pathlib.Path, csc: str, topic: str) -> None:
     """Tests the <Description> field for topic attributes \
     is properly defined, i.e. it is not blank.
 
     Parameters
     ----------
-    csc : `testutils.subsystems`
+    csc : `csc`
         Name of the CSC
-    topic : `xmlfile.stem`
+    topic : `str`
         One of ['Commands','Events','Telemetry']
     xmlfile : `pathlib.Path`
         Full filepath to the Commands or Events XML file for the CSC.

@@ -1,10 +1,11 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 import enum
-
-import pytest
+import pathlib
 import xml.etree.ElementTree as et
+
 import lsst.ts.xml as ts_xml
+import pytest
 
 
 class Restriction(enum.Enum):
@@ -16,7 +17,7 @@ class Restriction(enum.Enum):
     DB_OPTIONAL = enum.auto()
 
 
-def check_for_issues(csc, topic, restriction):
+def check_for_issues(csc: str, topic: str, restriction: Restriction) -> str:
     restriction = Restriction(restriction)  # check the argument
     if (
         csc == "ATAOS"
@@ -36,12 +37,6 @@ def check_for_issues(csc, topic, restriction):
         and restriction is Restriction.DB_OPTIONAL
     ):
         jira = "DM-22614"
-    elif (
-        csc == "CatchupArchiver"
-        and topic in ("Telemetry", "Events")
-        and restriction is Restriction.DB_OPTIONAL
-    ):
-        jira = "CAP-399"
     elif (
         csc == "FiberSpectrograph"
         and topic == "Commands"
@@ -84,7 +79,7 @@ def check_for_issues(csc, topic, restriction):
 
 
 @pytest.mark.parametrize("xmlfile,csc,topic", ts_xml.get_xmlfile_csc_topic())
-def test_reserved_words(xmlfile, csc, topic):
+def test_reserved_words(xmlfile: pathlib.Path, csc: str, topic: str) -> None:
     """Control function to execute the IDL, and
     database reserved words tests.
     """
@@ -92,16 +87,18 @@ def test_reserved_words(xmlfile, csc, topic):
         reserved_words(xmlfile=xmlfile, csc=csc, topic=topic, restriction=restriction)
 
 
-def reserved_words(xmlfile, csc, topic, restriction):
+def reserved_words(
+    xmlfile: pathlib.Path, csc: str, topic: str, restriction: Restriction
+) -> None:
     """Test that the <EFDB_Name> field does not use any Reserved Words.
 
     Parameters
     ----------
     xmlfile : `pathlib.Path`
         Full filepath to the Commands or Events XML file for the CSC.
-    csc : `testutils.subsystems`
+    csc : `str`
         Name of the CSC
-    topic : `xmlfile.stem`
+    topic : `str`
         One of ['Commands', 'Events', 'Telemetry']
     restriction : `Restriction`
         Category of prohibited field names.
@@ -120,7 +117,7 @@ def reserved_words(xmlfile, csc, topic, restriction):
     with open(str(xmlfile), "r", encoding="utf-8") as f:
         tree = et.parse(f)
     root = tree.getroot()
-    bad_names = []
+    bad_names: list[str] = []
     # Set the list based on the restriction type.
     word_list = {
         Restriction.IDL: ts_xml.idl_reserved,
@@ -129,6 +126,7 @@ def reserved_words(xmlfile, csc, topic, restriction):
         Restriction.DB_OPTIONAL: ts_xml.db_optional_reserved,
     }[restriction]
     for name in root.findall(f"./{saltype}/item/EFDB_Name"):
+        assert name.text is not None
         if name.text.upper() in word_list:
             bad_names.append(name.text.upper())
     assert (
