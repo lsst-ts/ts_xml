@@ -97,20 +97,20 @@
   </SALCommand>
   <SALCommand>
     <Subsystem>MTM1M3</Subsystem>
-    <EFDB_Topic>MTM1M3_command_setAirSlewFlag</EFDB_Topic>
+    <EFDB_Topic>MTM1M3_command_boosterValveOpen</EFDB_Topic>
     <Description>
-        Sets air slew flag, which operates booster valves. Should be used
-        while parked in engineering mode for testing of the booster valves.
+        Instruct CSC to open booster valves. Valid only in active engineering mode.
     </Description>
-    <item>
-      <EFDB_Name>slewFlag</EFDB_Name>
-      <Description>
-        If true, slew flag will be set - booster valve will be activated.
-      </Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
+  </SALCommand>
+  <SALCommand>
+    <Subsystem>MTM1M3</Subsystem>
+    <EFDB_Topic>MTM1M3_command_boosterValveClose</EFDB_Topic>
+    <Description>
+        Instruct CSC to close booster valves. Valid only in active engineering
+        mode. Booster valve will be really closed only if others automatic
+        triggers are disabled, or signal booster valves aren't needed for M1M3
+        operation.
+    </Description>
   </SALCommand>
   <SALCommand>
     <Subsystem>MTM1M3</Subsystem>

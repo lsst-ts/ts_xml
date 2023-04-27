@@ -1208,6 +1208,114 @@
   </SALEvent>
   <SALEvent>
     <Subsystem>MTM1M3</Subsystem>
+    <EFDB_Topic>MTM1M3_logevent_boosterValveSettings</EFDB_Topic>
+    <Description>Booster valve settings - limits for autonomous operations.</Description>
+    <item>
+      <EFDB_Name>followingErrorTriggerEnabled</EFDB_Name>
+      <Description>If true, M1M3 booster valves should engage when FA following error is too large.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>followingErrorTriggerOpen</EFDB_Name>
+      <Description>Open the booster valves when a force actuator absolute following error is above the value.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>N</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>followingErrorTriggerClose</EFDB_Name>
+      <Description>Close the booster valves when all force actuators absolute following error is below the value.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>N</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>accelerometerTriggerEnabled</EFDB_Name>
+      <Description>If true, M1M3 booster valves should engage when accelerations measured by the accelerometer are inside range for booster valve operations.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>accelerometerXTriggerOpen</EFDB_Name>
+      <Description>Open booster valves when X angular acceleration as measured by the accelerometer is above the value.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>deg/s2</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>accelerometerXTriggerClose</EFDB_Name>
+      <Description>Close booster valves when X angular acceleration as measured by the accelerometer is below the value.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>deg/s2</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>accelerometerYTriggerOpen</EFDB_Name>
+      <Description>Open booster valves when Y angular acceleration as measured by the accelerometer is above the value.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>deg/s2</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>accelerometerYTriggerClose</EFDB_Name>
+      <Description>Close booster valves when Y angular acceleration as measured by the accelerometer is below the value.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>deg/s2</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>accelerometerZTriggerOpen</EFDB_Name>
+      <Description>Open booster valves when Z angular acceleration as measured by the accelerometer is above the value.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>deg/s2</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>accelerometerZTriggerClose</EFDB_Name>
+      <Description>Close booster valves when Z angular acceleration as measured by the accelerometer is below the value.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>deg/s2</Units>
+      <Count>1</Count>
+    </item>
+  </SALEvent>
+  <SALEvent>
+    <Subsystem>MTM1M3</Subsystem>
+    <EFDB_Topic>MTM1M3_logevent_boosterValveStatus</EFDB_Topic>
+    <Description>Various flags related to booster valve operation, both manual and autonomous.</Description>
+    <item>
+      <EFDB_Name>slewFlag</EFDB_Name>
+      <Description>Slew flag status.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>userTriggered</EFDB_Name>
+      <Description>Booster valve opening triggered by user/observer.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>followingErrorTriggered</EFDB_Name>
+      <Description>Booster valve turned on by excessive following error.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>accelerometerTriggered</EFDB_Name>
+      <Description>Booster valve turned on by excessive acceleration as measured by accelerometers.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+  </SALEvent>
+  <SALEvent>
+    <Subsystem>MTM1M3</Subsystem>
     <EFDB_Topic>MTM1M3_logevent_forceActuatorState</EFDB_Topic>
     <item>
       <EFDB_Name>timestamp</EFDB_Name>
@@ -1222,13 +1330,6 @@
       <IDL_Type>short</IDL_Type>
       <Units>unitless</Units>
       <Count>156</Count>
-    </item>
-    <item>
-      <EFDB_Name>slewFlag</EFDB_Name>
-      <Description>Slew flag set.</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>staticForcesApplied</EFDB_Name>
