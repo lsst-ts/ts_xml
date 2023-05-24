@@ -4,6 +4,11 @@
 Version History
 ===============
 
+v17.0.0
+-------
+
+* MTMount: add 3 cabinet temperature fields to oilSupplySystem telemetry
+
 v16.0.0
 -------
 * Removed CatchupArchiver, ATArchiver and MTArchiver CSCs.
