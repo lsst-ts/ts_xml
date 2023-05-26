@@ -57,6 +57,11 @@
     DynaleneState_Alarm=7,
     DynaleneState_ShutOff=8
   </Enumeration>
+  <Enumeration>
+    DynaleneTankLevel_OK=0,
+    DynaleneTankLevel_Warning=1,
+    DynaleneTankLevel_Alarm=2
+  </Enumeration>
   <SALEvent>
     <Subsystem>HVAC</Subsystem>
     <EFDB_Topic>HVAC_logevent_deviceEnabled</EFDB_Topic>
@@ -269,6 +274,18 @@
   </SALEvent>
   <SALEvent>
     <Subsystem>HVAC</Subsystem>
+    <EFDB_Topic>HVAC_logevent_dynaleneTankLevel</EFDB_Topic>
+    <Description>Dynalene Tank Level Alarm State.</Description>
+    <item>
+      <EFDB_Name>state</EFDB_Name>
+      <Description>Dynalene Tank Level Alarm state; a DynaleneTankLevel enum.</Description>
+      <IDL_Type>int</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+  </SALEvent>
+  <SALEvent>
+    <Subsystem>HVAC</Subsystem>
     <EFDB_Topic>HVAC_logevent_dynTMAalarm</EFDB_Topic>
     <Description>Dynalene TMA Alarm State.</Description>
     <item>
@@ -282,10 +299,10 @@
   <SALEvent>
     <Subsystem>HVAC</Subsystem>
     <EFDB_Topic>HVAC_logevent_dynTMAalarmCMD</EFDB_Topic>
-    <Description>Dynalene TMA Alarm CMD State.</Description>
+    <Description>Dynalene TMA Alarm Command State.</Description>
     <item>
       <EFDB_Name>state</EFDB_Name>
-      <Description>Dynalene TMA Alarm CMD state; On (true) or Off (false).</Description>
+      <Description>Dynalene TMA Alarm Command state; On (true) or Off (false).</Description>
       <IDL_Type>boolean</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
@@ -293,23 +310,11 @@
   </SALEvent>
   <SALEvent>
     <Subsystem>HVAC</Subsystem>
-    <EFDB_Topic>HVAC_logevent_dynTMAalarmMonitorON</EFDB_Topic>
-    <Description>Dynalene TMA Alarm Monitor ON State.</Description>
+    <EFDB_Topic>HVAC_logevent_dynTMAalarmMonitor</EFDB_Topic>
+    <Description>Dynalene TMA Alarm Monitor State.</Description>
     <item>
       <EFDB_Name>state</EFDB_Name>
-      <Description>Dynalene TMA Alarm Monitor ON state; On (true) or Off (false).</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-  </SALEvent>
-  <SALEvent>
-    <Subsystem>HVAC</Subsystem>
-    <EFDB_Topic>HVAC_logevent_dynTMAalarmMonitorOFF</EFDB_Topic>
-    <Description>Dynalene TMA Alarm Monitor OFF State.</Description>
-    <item>
-      <EFDB_Name>state</EFDB_Name>
-      <Description>Dynalene TMA Alarm Monitor OFF state; On (true) or Off (false).</Description>
+      <Description>Dynalene TMA Alarm Monitor state; On (true) or Off (false).</Description>
       <IDL_Type>boolean</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
@@ -330,10 +335,10 @@
   <SALEvent>
     <Subsystem>HVAC</Subsystem>
     <EFDB_Topic>HVAC_logevent_dynTAalarmCMD</EFDB_Topic>
-    <Description>Dynalene TA Alarm CMD State.</Description>
+    <Description>Dynalene TA Alarm Command State.</Description>
     <item>
       <EFDB_Name>state</EFDB_Name>
-      <Description>Dynalene TA Alarm CMD state; On (true) or Off (false).</Description>
+      <Description>Dynalene TA Alarm Command state; On (true) or Off (false).</Description>
       <IDL_Type>boolean</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
@@ -341,23 +346,11 @@
   </SALEvent>
   <SALEvent>
     <Subsystem>HVAC</Subsystem>
-    <EFDB_Topic>HVAC_logevent_dynTAalarmMonitorON</EFDB_Topic>
-    <Description>Dynalene TA Alarm Monitor ON State.</Description>
+    <EFDB_Topic>HVAC_logevent_dynTAalarmMonitor</EFDB_Topic>
+    <Description>Dynalene TA Alarm Monitor State.</Description>
     <item>
       <EFDB_Name>state</EFDB_Name>
-      <Description>Dynalene TA Alarm Monitor ON state; On (true) or Off (false).</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-  </SALEvent>
-  <SALEvent>
-    <Subsystem>HVAC</Subsystem>
-    <EFDB_Topic>HVAC_logevent_dynTAalarmMonitorOFF</EFDB_Topic>
-    <Description>Dynalene TA Alarm Monitor OFF State.</Description>
-    <item>
-      <EFDB_Name>state</EFDB_Name>
-      <Description>Dynalene TA Alarm Monitor OFF state; On (true) or Off (false).</Description>
+      <Description>Dynalene TA Alarm Monitor state; On (true) or Off (false).</Description>
       <IDL_Type>boolean</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
@@ -378,10 +371,10 @@
   <SALEvent>
     <Subsystem>HVAC</Subsystem>
     <EFDB_Topic>HVAC_logevent_dynMainGridAlarmCMD</EFDB_Topic>
-    <Description>Dynalene Main Grid Alarm CMD State.</Description>
+    <Description>Dynalene Main Grid Alarm Command State.</Description>
     <item>
       <EFDB_Name>state</EFDB_Name>
-      <Description>Dynalene Main Grid Alarm CMD state; On (true) or Off (false).</Description>
+      <Description>Dynalene Main Grid Alarm Command state; On (true) or Off (false).</Description>
       <IDL_Type>boolean</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
@@ -401,47 +394,11 @@
   </SALEvent>
   <SALEvent>
     <Subsystem>HVAC</Subsystem>
-    <EFDB_Topic>HVAC_logevent_dynTankLevelAlarm</EFDB_Topic>
-    <Description>Dynalene Tank Level Alarm State.</Description>
-    <item>
-      <EFDB_Name>state</EFDB_Name>
-      <Description>Dynalene Tank Level Alarm state; On (true) or Off (false).</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-  </SALEvent>
-  <SALEvent>
-    <Subsystem>HVAC</Subsystem>
-    <EFDB_Topic>HVAC_logevent_dynTankLevelWarning</EFDB_Topic>
-    <Description>Dynalene Tank Level Warning State.</Description>
-    <item>
-      <EFDB_Name>state</EFDB_Name>
-      <Description>Dynalene Tank Level Warning state; On (true) or Off (false).</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-  </SALEvent>
-  <SALEvent>
-    <Subsystem>HVAC</Subsystem>
-    <EFDB_Topic>HVAC_logevent_dynTankLevelOK</EFDB_Topic>
-    <Description>Dynalene Tank Level OK State.</Description>
-    <item>
-      <EFDB_Name>state</EFDB_Name>
-      <Description>Dynalene Tank Level OK state; On (true) or Off (false).</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-  </SALEvent>
-  <SALEvent>
-    <Subsystem>HVAC</Subsystem>
     <EFDB_Topic>HVAC_logevent_dynTankLevelAlarmCMD</EFDB_Topic>
-    <Description>Dynalene Tank Level Alarm CMD State.</Description>
+    <Description>Dynalene Tank Level Alarm Command State.</Description>
     <item>
       <EFDB_Name>state</EFDB_Name>
-      <Description>Dynalene Tank Level Alarm CMD state; On (true) or Off (false).</Description>
+      <Description>Dynalene Tank Level Alarm Command state; On (true) or Off (false).</Description>
       <IDL_Type>boolean</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
