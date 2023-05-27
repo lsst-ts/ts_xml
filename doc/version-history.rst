@@ -9,6 +9,14 @@ v17.0.0
 
 * MTMount: add 3 cabinet temperature fields to oilSupplySystem telemetry
 
+* MTM1M3
+
+    * MTM1M3_command_setAirSlewFlag replaced with MTM1M3_command_boosterValveClose and MTM1M3_command_boosterValveOpen
+    * MTM1M3_logevent_boosterValveSettings, MTM1M3_logevent_boosterValveStatus events
+    * MTM1M3_logevent_forceActuatorState.slewFlag moved to MTM1M3_logevent_boosterValveStatus
+    * MTM1M3_logevent_[primary|secondary]AxisMeasuredForceWarning renamed to in-mirror MTM1M3_measured[X|Y|Z]ForceWarning
+    * MTM1M3_logevent_forceActuatorSettings ammended with measured and applied force warning settings
+
 v16.0.0
 -------
 * Removed CatchupArchiver, ATArchiver and MTArchiver CSCs.
@@ -83,9 +91,16 @@ v16.0.0
 
   * MTM1M3
 
-    * added Telemetry and Event topics.
-    * removed supportPercentage field from MTM1M3_logevent_forceActuatorState.
+    * added MTM1M3_logevent_raisingLoweringInfo
+    * redesign FA following error handling - MTM1M3_logevent_forceActuatorFollowingErrorCounter, MTM1M3_logevent_forceActuatorSettings
+    * publish FA followinng errors in MTM1M3_forceActuatorData
+    * moved MTM1M3_logevent_forceActuatorState.supportPercentage field to MTM1M3_logevent_raisingLoweringInfo
     * added fields to MTM1M3_logevent_hardpointActuatorWarning and MTM1M3_logevent_forceActuatorSettings topics.
+
+  * MTM1M3TS
+
+    * removed setReheaterGain and reset commands
+    * removed reHeaterGains Event topics 
 
   * WeatherForecast
 
@@ -95,7 +110,6 @@ v16.0.0
 
     * removed loadedHours50Percent Event and compressorPowerConsumption Telemetry topics.
     * removed compressorPowerConsumption field from MTAirCompressor_analogData.
-    * removed loadedHours50Percent from MTAirCompressor_logevent_compressorInfo.
 
 v15.0.0
 -------
@@ -158,8 +172,24 @@ v13.0.0
   * TunableLaser
   * MTDome
   * ATWhiteLight
-  * MTM1M3TS
   * MTM1M3
+
+    * added hardpointActuator to MTM1M3_command_testHardpoint
+    * removed MTM1M3_command_applyAberrationForces
+    * removed abberation related Event topics
+    * changed most of the forces from Event to Telemetry topic
+
+  * MTM1M3TS
+
+    * added pumpStart, pumpStop, pumpFrequency and pumpReset commands
+    * added flowMeter Telemetry topic
+    * added flowMeterMPUStatus, glycolPumpStatus and glycolPumpMPUStatus Event topics
+
+  * MTVMS
+
+    * added timeSynchronization Event topic
+    * modify some units
+
   * Watcher
   * DIMM
   * LOVE
@@ -169,7 +199,6 @@ v13.0.0
   * Script
   * Scheduler
   * OCPS
-  * MTVMS
 
 v12.0.0
 -------
@@ -184,6 +213,9 @@ v12.0.0
   * ATWhiteLight
   * MTDome
   * MTM1M3
+
+    * renamed airPressureWarningHigh, airPressureWarningLow to \*Fault\* Event topics.
+
   * ScriptQueue
   * CCCamera/MTCamera
   * Scheduler
