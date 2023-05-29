@@ -8,6 +8,7 @@ v17.0.0
 -------
 
 * MTMount: add 3 cabinet temperature fields to oilSupplySystem telemetry
+* HVAC: split dynaleneSafeties bitmask event into individual events.
 
 * MTM1M3
 
@@ -62,7 +63,7 @@ v16.0.0
 
   * MTPtg
 
-    * MTPtg_logevent_observatoryLocation topics. 
+    * MTPtg_logevent_observatoryLocation topics.
 
   * Watcher
 
@@ -204,7 +205,7 @@ v12.0.0
 -------
 * Removed the AdamSensors CSC.
 * test_NoReservedWords.py: check for field name salIndex.
-* test_Count.py: test for Count > 1 for strings 
+* test_Count.py: test for Count > 1 for strings
 * Interface updates.
 
   * MTMount
