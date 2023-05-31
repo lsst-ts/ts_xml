@@ -92,7 +92,6 @@ subsystems = [
     "Test",
     "TunableLaser",
     "Watcher",
-    "WeatherStation",
     "WeatherForecast",
 ]
 
