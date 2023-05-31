@@ -7,6 +7,7 @@ Version History
 v17.0.0
 -------
 
+* WeatherStation: Remove Weather Station interface.
 * MTMount: add 3 cabinet temperature fields to oilSupplySystem telemetry
 * HVAC: split dynaleneSafeties bitmask event into individual events.
 
