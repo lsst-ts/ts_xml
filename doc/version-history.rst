@@ -6,15 +6,15 @@ Version History
 
 v17.0.0
 -------
+* Removed WeatherStation CSC.
+* Interface updates:
 
-* WeatherStation: Remove Weather Station interface.
-* MTMount: add 3 cabinet temperature fields to oilSupplySystem telemetry
-* HVAC: split dynaleneSafeties bitmask event into individual events.
-
-* MTM1M3
+  * MTMount: add 3 cabinet temperature fields to oilSupplySystem telemetry.
+  * HVAC: split dynaleneSafeties bitmask event into individual events.
+  * MTM1M3
 
     * MTM1M3_command_setAirSlewFlag replaced with MTM1M3_command_boosterValveClose and MTM1M3_command_boosterValveOpen
-    * MTM1M3_logevent_boosterValveSettings, MTM1M3_logevent_boosterValveStatus events
+    * added MTM1M3_logevent_boosterValveSettings, MTM1M3_logevent_boosterValveStatus events
     * MTM1M3_logevent_forceActuatorState.slewFlag moved to MTM1M3_logevent_boosterValveStatus
     * MTM1M3_logevent_[primary|secondary]AxisMeasuredForceWarning renamed to in-mirror MTM1M3_measured[X|Y|Z]ForceWarning
     * MTM1M3_logevent_forceActuatorSettings ammended with measured and applied force warning settings
