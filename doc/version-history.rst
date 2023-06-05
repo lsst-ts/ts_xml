@@ -4,6 +4,10 @@
 Version History
 ===============
 
+v17.1.0
+-------
+* MTMount: add telemetryClientHeartbeat telemetry topic.
+
 v17.0.0
 -------
 * Removed WeatherStation CSC.
