@@ -7,6 +7,7 @@ Version History
 v17.1.0
 -------
 * MTMount: add telemetryClientHeartbeat telemetry topic.
+* ESS: Add requirement of CPP runtime language.
 
 v17.0.0
 -------
