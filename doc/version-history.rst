@@ -6,12 +6,19 @@ Version History
 
 v17.1.0
 -------
-* MTMount: add telemetryClientHeartbeat telemetry topic.
+
 * ESS:
 
   * Add requirement of CPP runtime language.
   * Fix the units of accelerometerPSD.accelerationPSDX/Y/Z: /Hz instead of /Hz^2.
     Also document that the minimum frequency is always 0 for this topic.
+
+* MTMount: add telemetryClientHeartbeat telemetry topic.
+* MTRotator:
+
+    * Add a few new fields to the config event.
+    * Rewrite the config event field descriptions.
+      Refine a few other event and command descriptions as well.
 
 v17.0.0
 -------
