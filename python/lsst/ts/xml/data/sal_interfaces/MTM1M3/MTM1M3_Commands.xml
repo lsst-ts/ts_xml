@@ -787,4 +787,37 @@
         Enable all M1M3 force actuators.
     </Description>
   </SALCommand>
+  <SALCommand>
+    <Subsystem>MTM1M3</Subsystem>
+    <EFDB_Topic>MTM1M3_command_enableDisableForceComponent</EFDB_Topic>
+    <Description>
+        Enable and disable various forces components. Can be called only in
+        active engineering mode. Switching from the "active engineering mode"
+        will revert applied flags back to their default values.
+    </Description>
+    <item>
+      <EFDB_Name>forceComponent</EFDB_Name>
+      <Description>Force component to Enable or Disable. One of the EnableDisable_ enumeration member.</Description>
+      <IDL_Type>short</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+      <Enumeration>
+        AccelerationForce=1,
+        ActiveOpticForce=2,
+        AzimuthForce=3,
+        BalanceForce=4,
+        OffsetForce=5,
+        StaticForce=6,
+        ThermalForce=7,
+        VelocityForce=8
+      </Enumeration>
+    </item>
+    <item>
+      <EFDB_Name>enable</EFDB_Name>
+      <Description>True if force component shall be enabled.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+  </SALCommand>
 </SALCommandSet>
