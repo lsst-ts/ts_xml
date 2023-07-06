@@ -4,6 +4,28 @@
 Version History
 ===============
 
+v17.1.0
+-------
+* Updated names after personnel departures.
+* Interface updates:
+  * M1M3:
+
+    * useGyroscope added to ForceActuatorSettings.
+    * add EnableDisableForceComponent command
+
+  * ESS:
+
+    * Add requirement of CPP runtime language.
+    * Fix the units of accelerometerPSD.accelerationPSDX/Y/Z: /Hz instead of /Hz^2.
+    * Also document that the minimum frequency is always 0 for this topic.
+
+  * MTMount: add telemetryClientHeartbeat telemetry topic.
+  * MTRotator:
+
+    * Add a few new fields to the config event.
+    * Rewrite the config event field descriptions.
+    * Refine a few other event and command descriptions as well.
+
 v17.0.1
 -------
 * ESS: Add requirement of CPP runtime language.
