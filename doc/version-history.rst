@@ -6,6 +6,10 @@ Version History
 
 v17.1.0
 -------
+* M1M3
+
+  * useGyroscope added to ForceActuatorSettings.
+
 * ESS:
 
   * Add requirement of CPP runtime language.
