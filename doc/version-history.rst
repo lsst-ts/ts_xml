@@ -26,6 +26,10 @@ v17.1.0
     * Rewrite the config event field descriptions.
     * Refine a few other event and command descriptions as well.
 
+v17.0.1
+-------
+* ESS: Add requirement of CPP runtime language.
+
 v17.0.0
 -------
 * Removed WeatherStation CSC.
