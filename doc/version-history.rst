@@ -4,6 +4,13 @@
 Version History
 ===============
 
+v18.0.0
+-------
+* Interface updates:
+  * M1M3:
+
+    * useAccelerometers added to ForceActuatorSettings.
+
 v17.1.0
 -------
 * Updated names after personnel departures.
