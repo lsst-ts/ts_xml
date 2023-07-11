@@ -6,6 +6,7 @@ Version History
 
 v18.0.0
 -------
+* Removed the IOTA CSC.
 * Interface updates:
   * M1M3:
 
