@@ -64,7 +64,6 @@ subsystems = [
     "GenericCamera",
     "GIS",
     "Guider",
-    "IOTA",
     "HVAC",
     "LaserTracker",
     "LinearStage",
