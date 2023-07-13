@@ -12,6 +12,10 @@ v18.0.0
 
     * useAccelerometers added to ForceActuatorSettings.
 
+  * HVAC:
+
+    * Add more Dynalene events and telemetry.
+
 v17.1.0
 -------
 * Updated names after personnel departures.
@@ -136,7 +140,7 @@ v16.0.0
   * MTM1M3TS
 
     * removed setReheaterGain and reset commands
-    * removed reHeaterGains Event topics 
+    * removed reHeaterGains Event topics
 
   * WeatherForecast
 
