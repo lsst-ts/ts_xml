@@ -1331,6 +1331,20 @@
       <Units>unitless</Units>
       <Count>156</Count>
     </item>
+  </SALEvent>
+  <SALEvent>
+    <Subsystem>MTM1M3</Subsystem>
+    <EFDB_Topic>MTM1M3_logevent_forceControllerState</EFDB_Topic>
+    <Description>
+        Reports ForceController state. Shows which forces are disabled/enabled.
+    </Description>
+    <item>
+      <EFDB_Name>slewFlag</EFDB_Name>
+      <Description>Slew flag is set?</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
     <item>
       <EFDB_Name>staticForcesApplied</EFDB_Name>
       <Description>Static Forces Applied?</Description>
@@ -5158,6 +5172,13 @@
     <item>
       <EFDB_Name>useGyroscope</EFDB_Name>
       <Description>If true, internal gyroscope is used. False otherwise (Mount provided angular velocity is then transformed into mirror forces and used).</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>useAccelerometers</EFDB_Name>
+      <Description>If true, internal accelerometers are used. False otherwise (Mount provided angular acceleration is then transformed into mirror forces and used).</Description>
       <IDL_Type>boolean</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
