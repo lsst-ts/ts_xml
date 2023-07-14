@@ -10,6 +10,7 @@ v18.0.0
 * Interface updates:
   * M1M3:
 
+    * set/clear slewFlag commands, forceControllerState event
     * useAccelerometers added to ForceActuatorSettings.
 
   * HVAC:
