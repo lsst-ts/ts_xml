@@ -4,10 +4,25 @@
 Version History
 ===============
 
+v19.0.0
+-------
+* Interface updates:
+
+  * GIS:
+
+    * Add gisCPUInputs, gisCpuOutputs, gisCpuReserve, afeDecentralizedIOInputs, afeDecentralizedIOOutputs, afeDecentralizedIOFree, laserDecentralizedIOInput, laserDecentralizedIOOutputs, laserDecentralizedIOFree, m2cDecentralizedIOInputs, m2cDecentralizedIOOutput, m2cDecentralizedIOFree, pfDecentralizedIoInputs, pfDecentralizedIoOutput, pfDecentralizedIoFree, auxCpuInputs, auxCpuOutputs, domeCpuInputs, domeCpuOutputs, m1m3CpuInputs, m1m3CpuOutputs, tmaCpuInputs, tmaCpuOutputs, causes, causes2, causesOverride, causes2Override, effects, effects2 events.
+
+  * HVAC:
+
+    * Add Dynalene commands and related events.
+
+* Add MTOODS CSC
+
 v18.0.0
 -------
 * Removed the IOTA CSC.
 * Interface updates:
+
   * M1M3:
 
     * set/clear slewFlag commands, forceControllerState event
@@ -21,6 +36,7 @@ v17.1.0
 -------
 * Updated names after personnel departures.
 * Interface updates:
+
   * M1M3:
 
     * useGyroscope added to ForceActuatorSettings.
