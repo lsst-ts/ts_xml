@@ -4,6 +4,10 @@
 Version History
 ===============
 
+v18.1.0
+-------
+* Add MTOODS
+
 v18.0.0
 -------
 * Removed the IOTA CSC.
