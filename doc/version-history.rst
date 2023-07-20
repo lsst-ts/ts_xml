@@ -6,7 +6,7 @@ Version History
 
 v19.0.0
 -------
-* Add MTOODS
+* Add MTOODS CSC
 
 v18.0.0
 -------
