@@ -19,6 +19,7 @@ v18.0.0
 -------
 * Removed the IOTA CSC.
 * Interface updates:
+
   * M1M3:
 
     * set/clear slewFlag commands, forceControllerState event
@@ -32,6 +33,7 @@ v17.1.0
 -------
 * Updated names after personnel departures.
 * Interface updates:
+
   * M1M3:
 
     * useGyroscope added to ForceActuatorSettings.
