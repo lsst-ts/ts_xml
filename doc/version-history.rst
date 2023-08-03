@@ -6,7 +6,6 @@ Version History
 
 v19.0.0
 -------
-
 * Interface updates:
 
   * GIS:
@@ -16,7 +15,6 @@ v19.0.0
   * HVAC:
 
     * Add Dynalene commands and related events.
-
 
 * Add MTOODS CSC
 
