@@ -6,6 +6,7 @@ Version History
 
 v19.0.0
 -------
+* Remove the unrecognized pytest flags in **pyproject.toml**.
 * Interface updates:
 
   * GIS:
@@ -17,6 +18,10 @@ v19.0.0
     * Add Dynalene commands and related events.
 
 * Add MTOODS CSC
+
+  * MTM2:
+
+    * Update the MTM2 interface to have the similar functionality as EUI.
 
 v18.0.0
 -------

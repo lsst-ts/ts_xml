@@ -207,7 +207,7 @@
     <Description>M2 internal inclinometer reading transforms to the zenith angle.</Description>
     <item>
       <EFDB_Name>measured</EFDB_Name>
-      <Description>Zenith angle is 0 degree when the telescope is at zenith.</Description>
+      <Description>Zenith angle is 0 degree when the telescope is at zenith. This equals to 90 degree minus inclinometerProcessed.</Description>
       <IDL_Type>double</IDL_Type>
       <Units>degree</Units>
       <Count>1</Count>
@@ -221,7 +221,19 @@
     </item>
     <item>
       <EFDB_Name>inclinometerProcessed</EFDB_Name>
-      <Description>Processed angle of inclinometer (0-360 degree).</Description>
+      <Description>Processed angle of inclinometer (0-360 degree). This is the angle used in the look-up table (LUT) calculation, which should have the same coordination system as the received angle from telescope mount assembly (TMA).</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>degree</Units>
+      <Count>1</Count>
+    </item>
+  </SALTelemetry>
+  <SALTelemetry>
+    <Subsystem>MTM2</Subsystem>
+    <EFDB_Topic>MTM2_inclinometerAngleTma</EFDB_Topic>
+    <Description>Received inclinometer angle from the telescope mount assembly (TMA). This topic is used to debug the look-up table (LUT) calculation if needed.</Description>
+    <item>
+      <EFDB_Name>inclinometer</EFDB_Name>
+      <Description>Inclinometer angle from TMA.</Description>
       <IDL_Type>double</IDL_Type>
       <Units>degree</Units>
       <Count>1</Count>
@@ -435,6 +447,65 @@
       <Description>Total communication current.</Description>
       <IDL_Type>double</IDL_Type>
       <Units>ampere</Units>
+      <Count>1</Count>
+    </item>
+  </SALTelemetry>
+  <SALTelemetry>
+    <Subsystem>MTM2</Subsystem>
+    <EFDB_Topic>MTM2_powerStatusRaw</EFDB_Topic>
+    <Description>Raw total voltage and current for motors and communication system of M2.</Description>
+    <item>
+      <EFDB_Name>motorVoltage</EFDB_Name>
+      <Description>Total motor voltage.</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>volt</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>motorCurrent</EFDB_Name>
+      <Description>Total motor current.</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>ampere</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>commVoltage</EFDB_Name>
+      <Description>Total communication voltage.</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>volt</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>commCurrent</EFDB_Name>
+      <Description>Total communication current.</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>ampere</Units>
+      <Count>1</Count>
+    </item>
+  </SALTelemetry>
+  <SALTelemetry>
+    <Subsystem>MTM2</Subsystem>
+    <EFDB_Topic>MTM2_forceErrorTangent</EFDB_Topic>
+    <Description>Tangential force error used to compare with the thresholds to avoid the breaking of mirror. A1 and A4 do not support the mirror. Only A2, A3, A5, and A6 do.</Description>
+    <item>
+      <EFDB_Name>force</EFDB_Name>
+      <Description>Force error to support the mirror's weight for individual tangential links.</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>newton</Units>
+      <Count>6</Count>
+    </item>
+    <item>
+      <EFDB_Name>weight</EFDB_Name>
+      <Description>Total force error to support the mirror's weight based on the force projection.</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>newton</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>sum</EFDB_Name>
+      <Description>Summation of the total current forces of tangential links.</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>newton</Units>
       <Count>1</Count>
     </item>
   </SALTelemetry>
