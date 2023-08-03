@@ -16,6 +16,8 @@ v19.0.0
 
     * Add Dynalene commands and related events.
 
+* Add MTOODS CSC
+
 v18.0.0
 -------
 * Removed the IOTA CSC.
