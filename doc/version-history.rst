@@ -17,7 +17,7 @@ v19.0.0
 
     * Add Dynalene commands and related events.
 
-* Add MTOODS CSC
+  * Add MTOODS CSC
 
   * MTM2:
 
