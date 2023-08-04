@@ -2,6 +2,10 @@
 <?xml-stylesheet type="text/xsl" href="http://lsst-sal.tuc.noao.edu/schema/SALEventSet.xsl"?>
 <SALEventSet xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://lsst-sal.tuc.noao.edu/schema/SALEventSet.xsd">
   <Enumeration>InclinationTelemetrySource_OnBoard,InclinationTelemetrySource_MTMount</Enumeration>
+  <Enumeration>PowerType_Motor,PowerType_Communication</Enumeration>
+  <Enumeration>PowerSystemState_Init,PowerSystemState_PoweredOff,PowerSystemState_PoweringOn,PowerSystemState_ResettingBreakers,PowerSystemState_PoweredOn,PowerSystemState_PoweringOff</Enumeration>
+  <Enumeration>ClosedLoopControlMode_Idle,ClosedLoopControlMode_TelemetryOnly,ClosedLoopControlMode_OpenLoop,ClosedLoopControlMode_ClosedLoop</Enumeration>
+  <Enumeration>InnerLoopControlMode_Standby,InnerLoopControlMode_Disabled,InnerLoopControlMode_Enabled,InnerLoopControlMode_FirmwareUpdate,InnerLoopControlMode_Fault,InnerLoopControlMode_ClearFaults,InnerLoopControlMode_NoChange,InnerLoopControlMode_Unknown</Enumeration>
   <SALEvent>
     <Subsystem>MTM2</Subsystem>
     <EFDB_Topic>MTM2_logevent_m2AssemblyInPosition</EFDB_Topic>
@@ -120,7 +124,6 @@
       <IDL_Type>short</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
-      <Enumeration>OnBoard,MTMount</Enumeration>
     </item>
   </SALEvent>
   <SALEvent>
@@ -147,6 +150,274 @@
       <IDL_Type>double</IDL_Type>
       <Units>deg_C</Units>
       <Count>2</Count>
+    </item>
+  </SALEvent>
+  <SALEvent>
+    <Subsystem>MTM2</Subsystem>
+    <EFDB_Topic>MTM2_logevent_scriptExecutionStatus</EFDB_Topic>
+    <Description>Execution status of the binary script performed by engineering user interface (EUI).</Description>
+    <item>
+      <EFDB_Name>percentage</EFDB_Name>
+      <Description>Percentage of the execution status (0% - 100%).</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+  </SALEvent>
+  <SALEvent>
+    <Subsystem>MTM2</Subsystem>
+    <EFDB_Topic>MTM2_logevent_digitalOutput</EFDB_Topic>
+    <Description>Digital output as a 8-bit value. See the enum.py in ts_m2com for the details.</Description>
+    <item>
+      <EFDB_Name>value</EFDB_Name>
+      <Description>Digital output.</Description>
+      <IDL_Type>byte</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+  </SALEvent>
+  <SALEvent>
+    <Subsystem>MTM2</Subsystem>
+    <EFDB_Topic>MTM2_logevent_digitalInput</EFDB_Topic>
+    <Description>Processed digital input as a 32-bit value. The power-breaker related values will be adjusted based on the comparision between the measured voltage and nominal voltage to see the reading input is real or not. See the enum.py in ts_m2com for the details.</Description>
+    <item>
+      <EFDB_Name>value</EFDB_Name>
+      <Description>Digital input.</Description>
+      <IDL_Type>unsigned long</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+  </SALEvent>
+  <SALEvent>
+    <Subsystem>MTM2</Subsystem>
+    <EFDB_Topic>MTM2_logevent_config</EFDB_Topic>
+    <Description>System configuration.</Description>
+    <item>
+      <EFDB_Name>configuration</EFDB_Name>
+      <Description>Configuration file name.</Description>
+      <IDL_Type>string</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>version</EFDB_Name>
+      <Description>Configuration version.</Description>
+      <IDL_Type>string</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>controlParameters</EFDB_Name>
+      <Description>Directory name of the control parameters.</Description>
+      <IDL_Type>string</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>lutParameters</EFDB_Name>
+      <Description>Directory name of the look-up table (LUT) parameters.</Description>
+      <IDL_Type>string</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>powerWarningMotor</EFDB_Name>
+      <Description>Percentage of the 24V actuator motor power accuracy warning (0% - 100%).</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>powerFaultMotor</EFDB_Name>
+      <Description>Percentage of the 24V actuator motor power accuracy fault (0% - 100%).</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>powerThresholdMotor</EFDB_Name>
+      <Description>Power threshold of the actuator motor.</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>ampere</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>powerWarningComm</EFDB_Name>
+      <Description>Percentage of the 24V inner-loop controller (ILC) communication power accuracy warning (0% - 100%).</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>powerFaultComm</EFDB_Name>
+      <Description>Percentage of the 24V ILC communication power accuracy fault (0% - 100%).</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>powerThresholdComm</EFDB_Name>
+      <Description>Power threshold of the ILC communication.</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>ampere</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>inPositionAxial</EFDB_Name>
+      <Description>Threshold to judge the axial actuator is in position or not.</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>newton</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>inPositionTangent</EFDB_Name>
+      <Description>Threshold to judge the tangent actuator is in position or not.</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>newton</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>inPositionSample</EFDB_Name>
+      <Description>Sampling window size of in-position flag.</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>second</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>cellTemperatureDelta</EFDB_Name>
+      <Description>Temperature delta between the cell intake and exhaust temperature sensors to judge the mirror's temperature is high or not.</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>deg_C</Units>
+      <Count>1</Count>
+    </item>
+  </SALEvent>
+  <SALEvent>
+    <Subsystem>MTM2</Subsystem>
+    <EFDB_Topic>MTM2_logevent_openLoopMaxLimit</EFDB_Topic>
+    <Description>Open-loop maximum force limit is enabled or not.</Description>
+    <item>
+      <EFDB_Name>status</EFDB_Name>
+      <Description>Status of the open-loop maximum force limit. True if it is enabled. Otherwise, False.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+  </SALEvent>
+  <SALEvent>
+    <Subsystem>MTM2</Subsystem>
+    <EFDB_Topic>MTM2_logevent_limitSwitchRetract</EFDB_Topic>
+    <Description>Triggered retract limit switch.</Description>
+    <item>
+      <EFDB_Name>actuatorId</EFDB_Name>
+      <Description>0-based actuator ID.</Description>
+      <IDL_Type>int</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+  </SALEvent>
+  <SALEvent>
+    <Subsystem>MTM2</Subsystem>
+    <EFDB_Topic>MTM2_logevent_limitSwitchExtend</EFDB_Topic>
+    <Description>Triggered extend limit switch.</Description>
+    <item>
+      <EFDB_Name>actuatorId</EFDB_Name>
+      <Description>0-based actuator ID.</Description>
+      <IDL_Type>int</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+  </SALEvent>
+  <SALEvent>
+    <Subsystem>MTM2</Subsystem>
+    <EFDB_Topic>MTM2_logevent_powerSystemState</EFDB_Topic>
+    <Description>Power system status.</Description>
+    <item>
+      <EFDB_Name>powerType</EFDB_Name>
+      <Description>1: Actuator motor. 2: Inner-loop controller (ILC) communication.</Description>
+      <IDL_Type>short</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>status</EFDB_Name>
+      <Description>Power status is on or not.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>state</EFDB_Name>
+      <Description>1: Initialization. 2: Powered off. 3: Powering on. 4: Resetting breakers. 5: Powered on. 6: Powering off.</Description>
+      <IDL_Type>short</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+  </SALEvent>
+  <SALEvent>
+    <Subsystem>MTM2</Subsystem>
+    <EFDB_Topic>MTM2_logevent_closedLoopControlMode</EFDB_Topic>
+    <Description>Closed-loop control mode.</Description>
+    <item>
+      <EFDB_Name>mode</EFDB_Name>
+      <Description>1: Idle. 2: Telemetry only. 3: Open-loop. 4: Closed-loop.</Description>
+      <IDL_Type>short</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+  </SALEvent>
+  <SALEvent>
+    <Subsystem>MTM2</Subsystem>
+    <EFDB_Topic>MTM2_logevent_innerLoopControlMode</EFDB_Topic>
+    <Description>Inner-loop control mode.</Description>
+    <item>
+      <EFDB_Name>address</EFDB_Name>
+      <Description>0-based inner-loop controller (ILC) address.</Description>
+      <IDL_Type>int</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>mode</EFDB_Name>
+      <Description>1: Standby. 2: Disabled. 3: Enabled. 4: Updating firmware. 5: Fault. 6: Clearing faults. 7: No change. 8: Unknown.</Description>
+      <IDL_Type>short</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+  </SALEvent>
+  <SALEvent>
+    <Subsystem>MTM2</Subsystem>
+    <EFDB_Topic>MTM2_logevent_summaryFaultsStatus</EFDB_Topic>
+    <Description>Summary faults status of the controller as a 64-bit value.</Description>
+    <item>
+      <EFDB_Name>status</EFDB_Name>
+      <Description>Summary faults status. Each bit means different error/warning. See the error_code.tsv in ts_config_mttcs/MTM2 for the details.</Description>
+      <IDL_Type>unsigned long long</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+  </SALEvent>
+  <SALEvent>
+    <Subsystem>MTM2</Subsystem>
+    <EFDB_Topic>MTM2_logevent_enabledFaultsMask</EFDB_Topic>
+    <Description>Enabled faults mask of the controller as a 64-bit value.</Description>
+    <item>
+      <EFDB_Name>mask</EFDB_Name>
+      <Description>Enabled faults mask. Each bit means different error/warning. See the error_code.tsv in ts_config_mttcs/MTM2 for the details.</Description>
+      <IDL_Type>unsigned long long</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+  </SALEvent>
+  <SALEvent>
+    <Subsystem>MTM2</Subsystem>
+    <EFDB_Topic>MTM2_logevent_configurationFiles</EFDB_Topic>
+    <Description>Available configuration files in the controller.</Description>
+    <item>
+      <EFDB_Name>files</EFDB_Name>
+      <Description>Available configuration files.</Description>
+      <IDL_Type>string</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
     </item>
   </SALEvent>
 </SALEventSet>
