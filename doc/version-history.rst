@@ -23,6 +23,10 @@ v19.0.0
 
     * Update the MTM2 interface to have the similar functionality as EUI.
 
+  * DIMM:
+
+    * Update timestamp and expiresAt types in dimmMeasurement event to double.
+
 v18.0.0
 -------
 * Removed the IOTA CSC.
