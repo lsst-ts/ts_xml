@@ -160,4 +160,21 @@
       <Count>1</Count>
     </item>
   </SALCommand>
+  <SALCommand>
+    <Subsystem>MTAOS</Subsystem>
+    <EFDB_Topic>MTAOS_command_offsetDOF</EFDB_Topic>
+    <Description>Utility command to apply offsets to the degrees of freedom (DOF). Units will match that of the policy file in ts_ofc (https://github.com/lsst-ts/ts_ofc/blob/develop/policy/lsstfam/state0inDof.yaml).</Description>
+    <item>
+      <EFDB_Name>value</EFDB_Name>
+      <Description>Array with the offsets to be applied to the DOF.</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>unitless</Units>
+      <Count>50</Count>
+    </item>
+  </SALCommand>
+  <SALCommand>
+    <Subsystem>MTAOS</Subsystem>
+    <EFDB_Topic>MTAOS_command_resetOffsetDOF</EFDB_Topic>
+    <Description>Reset user applied offsets to the degrees of freedom (DOF).</Description>
+  </SALCommand>
 </SALCommandSet>
