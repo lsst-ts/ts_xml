@@ -27,6 +27,13 @@ v19.0.0
 
     * Update timestamp and expiresAt types in dimmMeasurement event to double.
 
+  * MTAOS:
+
+    * Add ``MTAOS_command_offsetDOF`` to allow users to apply offsets to the degrees of freedom.
+    * Add ``MTAOS_command_resetOffsetDOF`` to allow users to reset offsets.
+    * Update ``MTAOS_logevent_degreeOfFreedom`` to include user offsets.
+    * Add telemetry files for MTAOS to publish measured bending modes for M1M3 and M2.
+    
 v18.0.0
 -------
 * Removed the IOTA CSC.
