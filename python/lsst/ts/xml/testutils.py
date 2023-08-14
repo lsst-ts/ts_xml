@@ -79,6 +79,7 @@ subsystems = [
     "MTM1M3TS",
     "MTM2",
     "MTMount",
+    "MTOODS",
     "MTPtg",
     "MTRotator",
     "MTVMS",
