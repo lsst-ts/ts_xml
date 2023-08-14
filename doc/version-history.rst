@@ -7,6 +7,7 @@ Version History
 v19.0.0
 -------
 * Remove the unrecognized pytest flags in **pyproject.toml**.
+* Add documentation to README for adding, renaming or deleting a CSC from the interface.
 * Interface updates:
 
   * GIS:

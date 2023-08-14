@@ -76,6 +76,30 @@ AssertionError: There is an unexpected number of CSCs.
 
 In case this error occurs, the subsystems list in testutils.py should be updated accordingly.
 
+### Add, Rename or Delete a CSC
+
+Adding, renaming or deleting a CSC, involve operations on files and directories within python/lsst/ts/xml. To add a CSC:
+
+* Add an entry in data/sal_interfaces/SALSubsystems.xml
+* Add directory in data/sal_interfaces for the CSC
+* Add necessary topic type XML files in the new CSC directory
+* Add entry in CSC list in testutils.py
+
+To rename a CSC:
+
+* Rename the entry in data/sal_interfaces/SALSubsystems.xml
+* Rename CSC in dependency entries if applicable
+* Rename directory in data/sal_interfaces
+* Rename files in CSC directory making sure to update the contents too
+* Rename CSC entry in testutils.py list
+
+To delete a CSC:
+
+* Delete entry in data/sal_interfaces/SALSubsystems.xml
+* Delete CSC in dependency entries if applicable 
+* Delete directory and files in data/sal_interfaces corresponding to CSC
+* Delete CSC entry from testutils.py list
+
 ## Versioning
 
 We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/lsst-ts/ts_xml/tags). 
