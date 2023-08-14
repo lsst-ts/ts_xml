@@ -17,7 +17,9 @@ v19.0.0
 
     * Add Dynalene commands and related events.
 
-  * Add MTOODS CSC
+  * MTOODC:
+    Add CSC
+    Add CSC to testutils.py and to SALSubsystems.xml
 
   * MTM2:
 
@@ -33,6 +35,7 @@ v19.0.0
     * Add ``MTAOS_command_resetOffsetDOF`` to allow users to reset offsets.
     * Update ``MTAOS_logevent_degreeOfFreedom`` to include user offsets.
     * Add telemetry files for MTAOS to publish measured bending modes for M1M3 and M2.
+
     
 v18.0.0
 -------
