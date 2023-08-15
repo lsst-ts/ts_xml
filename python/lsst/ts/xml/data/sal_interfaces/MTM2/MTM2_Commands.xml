@@ -71,30 +71,21 @@
     <Subsystem>MTM2</Subsystem>
     <EFDB_Topic>MTM2_command_resetForceOffsets</EFDB_Topic>
     <Description>This shall cause the M2 assembly zero all force offsets in the closed-loop control.</Description>
-    <item>
-      <EFDB_Name>value</EFDB_Name>
-      <Description>This value is ignored.</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
+  </SALCommand>
+  <SALCommand>
+    <Subsystem>MTM2</Subsystem>
+    <EFDB_Topic>MTM2_command_resetActuatorSteps</EFDB_Topic>
+    <Description>This shall cause the M2 assembly zero all user-defined steps in the open-loop control.</Description>
   </SALCommand>
   <SALCommand>
     <Subsystem>MTM2</Subsystem>
     <EFDB_Topic>MTM2_command_clearErrors</EFDB_Topic>
     <Description>Clear all errors and transit to the Standby state from Fault state.</Description>
-    <item>
-      <EFDB_Name>value</EFDB_Name>
-      <Description>This value is ignored.</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
   </SALCommand>
   <SALCommand>
     <Subsystem>MTM2</Subsystem>
     <EFDB_Topic>MTM2_command_switchForceBalanceSystem</EFDB_Topic>
-    <Description>Switch the force balance (FB) system. The default is that FB is on.</Description>
+    <Description>Switch the force balance (FB) system. The default is that FB is on (closed-loop control). If FB is off, the system is under the open-loop control.</Description>
     <item>
       <EFDB_Name>status</EFDB_Name>
       <Description>True: turn on FB. False: turn off FB.</Description>
@@ -109,11 +100,24 @@
     <Description>Select the inclination source onboard or from main telescope mount (MTMount) control system. The default is onboard.</Description>
     <item>
       <EFDB_Name>source</EFDB_Name>
-      <Description>Enumeration: 1: OnBoard. 2: MTMount.</Description>
+      <Description>1: OnBoard. 2: MTMount. If the MTMount is used, the angles between the onboard and MTMount will always be compared.</Description>
       <IDL_Type>short</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
-      <Enumeration>OnBoard,MTMount</Enumeration>
+    </item>
+    <item>
+      <EFDB_Name>enableComparison</EFDB_Name>
+      <Description>True if enable the comparison between the onboard and MTMount angles. Otherwise, False. Under the comparison, if the difference is greater than the maxDifference or default threshold, the system will fault itself to protect the mirror if you do not bypass the related error code. If the source is MTMount, this value will always be True.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>maxDifference</EFDB_Name>
+      <Description>Maximum difference between the onboard and MTMount angles. This value should be greater than 0. If 0 is used, the default value will be applied.</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>degree</Units>
+      <Count>1</Count>
     </item>
   </SALCommand>
   <SALCommand>
@@ -140,6 +144,99 @@
       <IDL_Type>double</IDL_Type>
       <Units>deg_C</Units>
       <Count>2</Count>
+    </item>
+  </SALCommand>
+  <SALCommand>
+    <Subsystem>MTM2</Subsystem>
+    <EFDB_Topic>MTM2_command_bypassErrorCode</EFDB_Topic>
+    <Description>Bypass the error code in control loop. This command might break the system.</Description>
+    <item>
+      <EFDB_Name>code</EFDB_Name>
+      <Description>Error code defined in the error_code.tsv of ts_config_mttcs/MTM2.</Description>
+      <IDL_Type>int</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+  </SALCommand>
+  <SALCommand>
+    <Subsystem>MTM2</Subsystem>
+    <EFDB_Topic>MTM2_command_resetEnabledFaultsMask</EFDB_Topic>
+    <Description>Reset the enabled faults mask to default. This will remove all the bypassed error codes in control loop.</Description>
+  </SALCommand>
+  <SALCommand>
+    <Subsystem>MTM2</Subsystem>
+    <EFDB_Topic>MTM2_command_setConfigurationFile</EFDB_Topic>
+    <Description>Set the system configuration file.</Description>
+    <item>
+      <EFDB_Name>file</EFDB_Name>
+      <Description>Configuration file listed in the received event: MTM2_logevent_configurationFiles.</Description>
+      <IDL_Type>string</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+  </SALCommand>
+  <SALCommand>
+    <Subsystem>MTM2</Subsystem>
+    <EFDB_Topic>MTM2_command_enableOpenLoopMaxLimit</EFDB_Topic>
+    <Description>Enable the maximum force limit in open-loop control.</Description>
+    <item>
+      <EFDB_Name>status</EFDB_Name>
+      <Description>True if enable the maximum force limit. Otherwise, False.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+  </SALCommand>
+  <SALCommand>
+    <Subsystem>MTM2</Subsystem>
+    <EFDB_Topic>MTM2_command_moveActuator</EFDB_Topic>
+    <Description>Move the actuator in open-loop control.</Description>
+    <item>
+      <EFDB_Name>actuator</EFDB_Name>
+      <Description>0-based actuator ID.</Description>
+      <IDL_Type>int</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>displacement</EFDB_Name>
+      <Description>Displacement to move. When this is used, the step should be 0.</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>micron</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>step</EFDB_Name>
+      <Description>Step to move. When this is used, the displacement should be 0.</Description>
+      <IDL_Type>int</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+  </SALCommand>
+  <SALCommand>
+    <Subsystem>MTM2</Subsystem>
+    <EFDB_Topic>MTM2_command_actuatorBumpTest</EFDB_Topic>
+    <Description>Exercise the actuator bump test in the closed-loop control, which is performed at +/push and -/pull directions.</Description>
+    <item>
+      <EFDB_Name>actuator</EFDB_Name>
+      <Description>0-based actuator ID.</Description>
+      <IDL_Type>int</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>force</EFDB_Name>
+      <Description>Force to apply.</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>newton</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>period</EFDB_Name>
+      <Description>Time period to hold when the actuator reaches the +/- applied force.</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>second</Units>
+      <Count>1</Count>
     </item>
   </SALCommand>
 </SALCommandSet>

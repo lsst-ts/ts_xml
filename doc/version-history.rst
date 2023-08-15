@@ -4,10 +4,49 @@
 Version History
 ===============
 
+v19.0.0
+-------
+* Remove the unrecognized pytest flags in **pyproject.toml**.
+* Add documentation to README for adding, renaming or deleting a CSC from the interface.
+* Interface updates:
+
+  * GIS:
+
+    * Add gisCPUInputs, gisCpuOutputs, gisCpuReserve, afeDecentralizedIOInputs, afeDecentralizedIOOutputs, afeDecentralizedIOFree, laserDecentralizedIOInput, laserDecentralizedIOOutputs, laserDecentralizedIOFree, m2cDecentralizedIOInputs, m2cDecentralizedIOOutput, m2cDecentralizedIOFree, pfDecentralizedIoInputs, pfDecentralizedIoOutput, pfDecentralizedIoFree, auxCpuInputs, auxCpuOutputs, domeCpuInputs, domeCpuOutputs, m1m3CpuInputs, m1m3CpuOutputs, tmaCpuInputs, tmaCpuOutputs, causes, causes2, causesOverride, causes2Override, effects, effects2 events.
+
+  * HVAC:
+
+    * Add Dynalene commands and related events.
+
+  * MTOODC:
+
+    * Add CSC
+    * Add CSC to testutils.py and to SALSubsystems.xml
+
+  * MTM2:
+
+    * Update the MTM2 interface to have the similar functionality as EUI.
+
+  * DIMM:
+
+    * Update timestamp and expiresAt types in dimmMeasurement event to double.
+
+  * MTAOS:
+
+    * Add ``MTAOS_command_offsetDOF`` to allow users to apply offsets to the degrees of freedom.
+    * Add ``MTAOS_command_resetOffsetDOF`` to allow users to reset offsets.
+    * Update ``MTAOS_logevent_degreeOfFreedom`` to include user offsets.
+    * Add telemetry files for MTAOS to publish measured bending modes for M1M3 and M2.
+
+  * LaserTracker:
+
+    * Fixing units of offsetsPublish and positionPublish events.
+
 v18.0.0
 -------
 * Removed the IOTA CSC.
 * Interface updates:
+
   * M1M3:
 
     * set/clear slewFlag commands, forceControllerState event
@@ -21,6 +60,7 @@ v17.1.0
 -------
 * Updated names after personnel departures.
 * Interface updates:
+
   * M1M3:
 
     * useGyroscope added to ForceActuatorSettings.
