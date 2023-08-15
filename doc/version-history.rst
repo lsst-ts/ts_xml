@@ -7,6 +7,7 @@ Version History
 v19.0.0
 -------
 * Remove the unrecognized pytest flags in **pyproject.toml**.
+* Add documentation to README for adding, renaming or deleting a CSC from the interface.
 * Interface updates:
 
   * GIS:
@@ -18,8 +19,9 @@ v19.0.0
     * Add Dynalene commands and related events.
 
   * MTOODC:
-    Add CSC
-    Add CSC to testutils.py and to SALSubsystems.xml
+
+    * Add CSC
+    * Add CSC to testutils.py and to SALSubsystems.xml
 
   * MTM2:
 
@@ -37,6 +39,7 @@ v19.0.0
     * Add telemetry files for MTAOS to publish measured bending modes for M1M3 and M2.
 
   * LaserTracker:
+
     * Fixing units of offsetsPublish and positionPublish events.
 
 v18.0.0
