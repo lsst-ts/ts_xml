@@ -36,7 +36,9 @@ v19.0.0
     * Update ``MTAOS_logevent_degreeOfFreedom`` to include user offsets.
     * Add telemetry files for MTAOS to publish measured bending modes for M1M3 and M2.
 
-    
+  * LaserTracker:
+    * Fixing units of offsetsPublish and positionPublish events.
+
 v18.0.0
 -------
 * Removed the IOTA CSC.
