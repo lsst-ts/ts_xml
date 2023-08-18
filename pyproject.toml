@@ -10,6 +10,17 @@ classifiers = [ "Programming Language :: Python :: 3" ]
 urls = { documentation = "https://jira.lsstcorp.org/secure/Dashboard.jspa", repository = "https://github.com/lsst-ts/ts_xml" }
 dynamic = [ "version" ]
  
+[project.scripts]
+get_component_info = "lsst.ts.xml.get_component_info:get_component_info"
+
+[project.optional-dependencies]
+dev = [
+  "documenteer[pipelines]",
+]
+test = [
+  "astropy", "lxml"
+]
+
 [tools.setuptools]
 package-data = { "" = "*.xml, *.xsd" }
  
@@ -29,11 +40,3 @@ __version__ = "{version}"
  
 [tool.pytest.ini_options]
 asyncio_mode = "auto"
- 
-[project.optional-dependencies]
-dev = [
-  "documenteer[pipelines]",
-]
-test = [
-  "astropy", "lxml", "black<23", "pytest-flake8", "pytest-black", "flake8<5"
-]
