@@ -1,13 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-stylesheet type="text/xsl" href="http://lsst-sal.tuc.noao.edu/schema/SALEventSet.xsl"?>
 <SALEventSet xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://lsst-sal.tuc.noao.edu/schema/SALEventSet.xsd">
-  <Enumeration>SummaryState_DisabledState,SummaryState_EnabledState,SummaryState_FaultState,SummaryState_OfflineState,SummaryState_StandbyState</Enumeration>
   <Enumeration>DetailedState_NotEnabled,DetailedState_Ready,DetailedState_ChangingWavelength,DetailedState_CalibratingWavelength,DetailedState_Powering,DetailedState_SelectingGrating,DetailedState_ChangingSlitWidth,DetailedState_UpdatingMonochromatorSetup</Enumeration>
   <Enumeration>Status_SettingUp,Status_Ready,Status_Offline,Status_Fault</Enumeration>
   <Enumeration>Grating_Blue,Grating_Red,Grating_Mirror</Enumeration>
   <Enumeration>Slit_Entry,Slit_Exit</Enumeration>
   <Enumeration>LightStatus_On,LightStatus_Off</Enumeration>
   <Enumeration>Device_Monochromator,Device_LightSource,Device_ThermoelectricCooler</Enumeration>
+  <Enumeration>
+    ErrorCode_CONNECTION_FAILED=1,
+    ErrorCode_HARDWARE_NOT_READY=2,
+    ErrorCode_HARDWARE_ERROR=3,
+    ErrorCode_MISC=10
+  </Enumeration>
   <SALEvent>
     <Subsystem>ATMonochromator</Subsystem>
     <EFDB_Topic>ATMonochromator_logevent_internalCommand</EFDB_Topic>
