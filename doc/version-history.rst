@@ -59,6 +59,7 @@ v20.0.0
 
     * Remove unnecessary summaryState enumeration.
     * Add ILCState enumeration.
+    * Settings fields for raising M1M3 at low elevation
 
   * MTM1M3TS
 
