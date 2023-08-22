@@ -4,11 +4,12 @@ import pathlib
 import re
 import xml.etree.ElementTree as et
 
-import lsst.ts.xml as ts_xml
 import pytest
+from lsst.ts.xml import enums, get_xmlfile_csc_topic, subsystems
+from lsst.ts.xml.get_enums_from_xml import get_field_and_global_enums
 
 
-@pytest.mark.parametrize("xmlfile,csc,topic", ts_xml.get_xmlfile_csc_topic())
+@pytest.mark.parametrize("xmlfile,csc,topic", get_xmlfile_csc_topic())
 def test_enumeration(xmlfile: pathlib.Path, csc: str, topic: str) -> None:
     """Test that enumerations have the correct format.
 
@@ -32,3 +33,34 @@ def test_enumeration(xmlfile: pathlib.Path, csc: str, topic: str) -> None:
             assert (
                 reg_exp.match(enum_value.strip()) is not None
             ), f"Invalid enumeration in {csc}/{topic}: {enum_value.strip()} :: {sal_enum.text}."
+
+
+@pytest.mark.parametrize("csc", subsystems)
+def test_enum_classes(csc: str) -> None:
+    _, global_enums = get_field_and_global_enums(csc)
+
+    if not global_enums:
+        return
+    global_enums_set = set(global_enum.class_name for global_enum in global_enums)
+
+    assert hasattr(
+        enums, csc
+    ), f"{csc} does not define enumeration. Expected {global_enums_set} enums."
+    assert hasattr(
+        getattr(enums, csc), "__all__"
+    ), f"{csc} enumeration does not define __all__."
+
+    try:
+        enums_set = set(getattr(enums, csc).__all__)
+    except AttributeError:
+        raise RuntimeError(f"{csc} does not define a valid enumeration.")
+
+    missing_enums = global_enums_set.difference(enums_set)
+    undefined_enums = enums_set.difference(global_enums_set) - {"SalIndex"}
+
+    assert (
+        not missing_enums
+    ), f"[{csc}] The following enums are missing: {missing_enums}."
+    assert (
+        not undefined_enums
+    ), f"[{csc}] The following enums are not defined in the xml file: {undefined_enums}"

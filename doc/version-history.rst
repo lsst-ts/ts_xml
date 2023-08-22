@@ -4,6 +4,82 @@
 Version History
 ===============
 
+v20.0.0
+-------
+
+* Copy enumerations for ts-idl into a new enums submodule.
+* Move the code that defines SAL topics structure and generate avro-schema files from the kafka version of salobj.
+* Update enumerations to match the definitions from the enums submodule (see interface updates).
+
+* Interface updates:
+
+  * ATBuilding
+
+    * Remove unused detailedState event and enumeration.
+
+  * ATHexapod
+
+    * Remove unnecessary summaryState enumeration.
+
+  * ATMonochromator
+
+    * Remove unnecessary summaryState enumeration.
+    * Add ErrorCode enumeration.
+
+  * ATPtg
+    
+    * Remove unnecessary summaryState enumeration.
+
+  * ATSpectrograph
+
+    * Add DisperserPosition and FilterPosition enumerations.
+
+  * EAS
+
+    * Remove unused detailedState event and enumeration.
+
+  * Electrometer
+
+    * Remove unnecessary summaryState enumeration.
+
+  * LaserTracker
+
+    * Add AlignComponent enumeration.
+
+  * MTAirCompressor
+
+    * Remove unnecessary summaryState enumeration.
+
+  * MTHexapod
+
+    * Add ErrorCode enumeration.
+
+  * MTM1M3
+
+    * Remove unnecessary summaryState enumeration.
+    * Add ILCState enumeration.
+
+  * MTM1M3TS
+
+    * Remove unnecessary summaryState enumeration.
+
+  * MTPtg
+
+    * Remove unnecessary summaryState enumeration.
+
+  * MTRotator
+
+    * Add ErrorCode enumeration.
+
+  * MTVMS
+    
+    * Remove unnecessary summaryState enumeration.
+
+  * TunableLaser
+
+    * Replace detailedState enumeration with LaserDetailedState.
+    * Add new LaserErrorCode enumeration.
+
 v19.0.0
 -------
 * Remove the unrecognized pytest flags in **pyproject.toml**.
