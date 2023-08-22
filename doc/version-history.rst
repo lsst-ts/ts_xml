@@ -9,6 +9,7 @@ v20.0.0
 
 * Copy enumerations for ts-idl into a new enums submodule.
 * Move the code that defines SAL topics structure and generate avro-schema files from the kafka version of salobj.
+  * Add private_revCode back to the generic fields.
 * Update enumerations to match the definitions from the enums submodule (see interface updates).
 
 * Interface updates:
