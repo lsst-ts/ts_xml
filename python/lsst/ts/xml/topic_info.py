@@ -77,6 +77,13 @@ _PRIVATE_FIELD_LIST = [
         units="unitless",
     ),
     FieldInfo(
+        name="private_revCode",
+        description="Revision hashcode",
+        count=1,
+        sal_type="string",
+        units="unitless",
+    ),
+    FieldInfo(
         name="private_identity",
         description="Identity of publisher: "
         "SAL component name for a CSC or user@host for a user",
