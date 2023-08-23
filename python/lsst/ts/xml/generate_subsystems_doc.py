@@ -182,6 +182,8 @@ def add_generics(
             if topic_type not in has_specific_topic_type:
                 write_heading(cf, name=f"{topic_type}s")
             for gen_topic in gen_set:
+                if gen_topic.tag == "Enumeration":
+                    continue
                 topic_text = find_text_in_xml(gen_topic, "EFDB_Topic")
                 short_name = topic_text.split("_")[-1]
                 if short_name not in has_generics[topic_type]:
