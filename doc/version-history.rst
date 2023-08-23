@@ -8,11 +8,16 @@ v20.0.0
 -------
 
 * Copy enumerations for ts-idl into a new enums submodule.
+* Allow components to still define SummaryState enumerations in their xml files while generic enumerations are not supported by C/C++ SAL.
 * Move the code that defines SAL topics structure and generate avro-schema files from the kafka version of salobj.
   * Add private_revCode back to the generic fields.
 * Update enumerations to match the definitions from the enums submodule (see interface updates).
 
 * Interface updates:
+
+  * Generics
+
+    * Add SummaryState enumeration.
 
   * ATBuilding
 
@@ -26,10 +31,6 @@ v20.0.0
 
     * Remove unnecessary summaryState enumeration.
     * Add ErrorCode enumeration.
-
-  * ATPtg
-    
-    * Remove unnecessary summaryState enumeration.
 
   * ATSpectrograph
 
@@ -57,25 +58,12 @@ v20.0.0
 
   * MTM1M3
 
-    * Remove unnecessary summaryState enumeration.
     * Add ILCState enumeration.
     * Settings fields for raising M1M3 at low elevation
-
-  * MTM1M3TS
-
-    * Remove unnecessary summaryState enumeration.
-
-  * MTPtg
-
-    * Remove unnecessary summaryState enumeration.
 
   * MTRotator
 
     * Add ErrorCode enumeration.
-
-  * MTVMS
-    
-    * Remove unnecessary summaryState enumeration.
 
   * TunableLaser
 
