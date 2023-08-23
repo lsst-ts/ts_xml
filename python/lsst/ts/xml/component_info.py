@@ -201,6 +201,8 @@ def parse_sal_generics() -> (
     topic_element_dict: dict[str, ElementTree.Element] = dict()
     category_dict: dict[str, list[ElementTree.Element]] = dict()
     for gen in generics.findall("*/"):
+        if gen.tag == "Enumeration":
+            continue
         topic_name = find_required_text(gen, "EFDB_Topic")
         brief_name = topic_name[len("SALGeneric_") :]
         topic_element_dict[brief_name] = gen
