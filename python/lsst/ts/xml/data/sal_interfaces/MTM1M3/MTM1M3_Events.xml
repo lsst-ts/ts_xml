@@ -9,7 +9,8 @@
     HardpointActuatorMotionState_Chasing=1,
     HardpointActuatorMotionState_Stepping=2,
     HardpointActuatorMotionState_QuickPositioning=3,
-    HardpointActuatorMotionState_FinePositiong=4
+    HardpointActuatorMotionState_FinePositioning=4,
+    HardpointActuatorMotionState_WaitingTension=5
   </Enumeration>
   <Enumeration>ILCState_STANDBY,ILCState_DISABLED,ILCState_ENABLED,ILCState_FIRMWAREUPDATE,ILCState_FAULT</Enumeration>
   <SALEvent>
@@ -5425,6 +5426,34 @@
       <IDL_Type>int</IDL_Type>
       <Units>unitless</Units>
       <Count>6</Count>
+    </item>
+    <item>
+      <EFDB_Name>hardpointBreakawayFaultLow</EFDB_Name>
+      <Description>Always fault the mirror when HP load is below that value. Protect mirror from breakaway mechanism failure.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>N</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>hardpointBreakawayFaultHigh</EFDB_Name>
+      <Description>Always fault the mirror when HP load is above that value. Protect mirror from breakaway mechanism failure.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>N</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>ignoreTensionRaisingLowering</EFDB_Name>
+      <Description>Excessive tension below that elevation will be ignored when raising/lowering the mirror.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>deg</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>inRangeReadoutsToChaseFromWaitingTension</EFDB_Name>
+      <Description>Number of correct (in-range) HP force readouts before Hp can transiton from WaitingTension to Chase.</Description>
+      <IDL_Type>int</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
     </item>
   </SALEvent>
   <SALEvent>
