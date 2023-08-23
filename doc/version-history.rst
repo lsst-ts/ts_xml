@@ -61,6 +61,7 @@ v20.0.0
 
     * Add ILCState enumeration.
     * Settings fields for raising M1M3 at low elevation
+    * Improved slew control and reporting - SlewControllerState, name for PID settings
 
   * MTRotator
 
