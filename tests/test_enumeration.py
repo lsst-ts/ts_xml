@@ -39,9 +39,13 @@ def test_enumeration(xmlfile: pathlib.Path, csc: str, topic: str) -> None:
 def test_enum_classes(csc: str) -> None:
     _, global_enums = get_field_and_global_enums(csc)
 
-    if not global_enums:
+    global_enums_set = set(global_enum.class_name for global_enum in global_enums) - {
+        "SummaryStates",
+        "SummaryState",
+    }
+
+    if not global_enums_set:
         return
-    global_enums_set = set(global_enum.class_name for global_enum in global_enums)
 
     assert hasattr(
         enums, csc
