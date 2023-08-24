@@ -64,6 +64,8 @@ def write_generic_page() -> None:
         write_heading(cf, name=f"{topic_type}s")
         cf.write("\n")
         for gen_topic in gen_set:
+            if gen_topic.tag == "Enumeration":
+                continue
             topic_name = find_text_in_xml(gen_topic, "EFDB_Topic")
             short_name = topic_name.split("_")[-1]
             write_heading(cf, name=short_name, char="~")
