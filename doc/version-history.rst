@@ -11,6 +11,7 @@ v20.0.0
 * Allow components to still define SummaryState enumerations in their xml files while generic enumerations are not supported by C/C++ SAL.
 * Move the code that defines SAL topics structure and generate avro-schema files from the kafka version of salobj.
   * Add private_revCode back to the generic fields.
+* Make ATMCS and ATPneumatics configurable in preparation for switching to Python CSCs.
 * Update enumerations to match the definitions from the enums submodule (see interface updates).
 
 * Interface updates:
