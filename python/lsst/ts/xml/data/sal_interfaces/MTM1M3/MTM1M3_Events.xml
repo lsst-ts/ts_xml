@@ -1288,8 +1288,15 @@
     <EFDB_Topic>MTM1M3_logevent_boosterValveStatus</EFDB_Topic>
     <Description>Various flags related to booster valve operation, both manual and autonomous.</Description>
     <item>
-      <EFDB_Name>slewFlag</EFDB_Name>
-      <Description>Slew flag status.</Description>
+      <EFDB_Name>opened</EFDB_Name>
+      <Description>Booster valves are opened.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>slewTriggered</EFDB_Name>
+      <Description>Opens booster valve as TMA is slewing (slewFlag is set).</Description>
       <IDL_Type>boolean</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
@@ -1406,6 +1413,41 @@
     <item>
       <EFDB_Name>balanceForcesApplied</EFDB_Name>
       <Description>Are the balance forces applied?</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+  </SALEvent>
+  <SALEvent>
+    <Subsystem>MTM1M3</Subsystem>
+    <EFDB_Topic>MTM1M3_logevent_slewControllerSettings</EFDB_Topic>
+    <Description>
+        Reports SlewController state. Shows which forces are managed by the slew controller.
+    </Description>
+    <item>
+      <EFDB_Name>triggerBoosterValves</EFDB_Name>
+      <Description>Trigger opening/closing of the booster valves.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>useAccelerationForces</EFDB_Name>
+      <Description>Are acceleration forces enabled during slews?</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>useBalanceForces</EFDB_Name>
+      <Description>Are balance forces (with modified, Slewing PID settings) enabled during slews?</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>useVelocityForces</EFDB_Name>
+      <Description>Are velocity forces enabled during slews?</Description>
       <IDL_Type>boolean</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
@@ -5604,6 +5646,13 @@
     <Subsystem>MTM1M3</Subsystem>
     <EFDB_Topic>MTM1M3_logevent_pidSettings</EFDB_Topic>
     <Description>PID settings. Used by force balancing algorithm to react on HP detected force excess and correct that towards 0. Parameters are transmitted as 6 member array, representing Fx, Fy, Fz, Mx, My and Mz.</Description>
+    <item>
+      <EFDB_Name>settingName</EFDB_Name>
+      <Description>Setting name. Either Slewing or Tracking.</Description>
+      <IDL_Type>string</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
     <item>
       <EFDB_Name>timestep</EFDB_Name>
       <Description>PID's step length.</Description>

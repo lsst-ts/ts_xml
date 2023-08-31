@@ -813,7 +813,7 @@
     </Description>
     <item>
       <EFDB_Name>forceComponent</EFDB_Name>
-      <Description>Force component to Enable or Disable. One of the EnableDisable_ enumeration member.</Description>
+      <Description>Force component to Enable or Disable. One of the enumeration member.</Description>
       <IDL_Type>short</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
@@ -831,6 +831,34 @@
     <item>
       <EFDB_Name>enable</EFDB_Name>
       <Description>True if force component shall be enabled.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+  </SALCommand>
+  <SALCommand>
+    <Subsystem>MTM1M3</Subsystem>
+    <EFDB_Topic>MTM1M3_command_setSlewControllerSettings</EFDB_Topic>
+    <Description>
+        Enable and disable forces managed by the slew controller. Those settings
+        manage which forces are activated or disabled by the slew controller during slews.
+    </Description>
+    <item>
+      <EFDB_Name>slewSettings</EFDB_Name>
+      <Description>Which force component slew settings will be changed. One of the enumeration member.</Description>
+      <IDL_Type>short</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+      <Enumeration>
+        AccelerationForces=1,
+        BalanceForces=2,
+        BoosterValves=3,
+        VelocityForces=4
+      </Enumeration>
+    </item>
+    <item>
+      <EFDB_Name>enableSlewManagement</EFDB_Name>
+      <Description>True if force component shall be controlled by the slew controller.</Description>
       <IDL_Type>boolean</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>

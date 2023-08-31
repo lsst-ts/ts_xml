@@ -278,11 +278,12 @@ SAL Interfaces for all CSCs and other SAL components.
 """
             )
             for dds_type in ["Commands", "Events", "Telemetry"]:
+                xml_filename = xml_dir / subsystem / f"{subsystem}_{dds_type}.xml"
                 try:
-                    tree = ElementTree.parse(
-                        xml_dir / subsystem / f"{subsystem}_{dds_type}.xml"
-                    )
+                    tree = ElementTree.parse(xml_filename)
                     has_specific_topic_type.append(dds_type[:-1])
+                except ElementTree.ParseError as err:
+                    raise RuntimeError(f"Cannot parse {xml_filename}: {err}")
                 except FileNotFoundError:
                     add_generics(
                         cf,

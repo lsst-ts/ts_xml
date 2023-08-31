@@ -92,3 +92,10 @@ class EnableDisableForceComponent(enum.IntEnum):
     STATICFORCE = 6
     THERMALFORCE = 7
     VELOCITYFORCE = 8
+
+
+class SetSlewControllerSettings(enum.IntEnum):
+    ACCELERATIONFORCES = 1
+    BALANCEFORCES = 2
+    BOOSTERVALVES = 3
+    VELOCITYFORCES = 4
