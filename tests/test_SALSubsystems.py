@@ -10,7 +10,7 @@ from lxml import etree
 
 INDEX_ENUM_CHECK = re.compile(r"[^,= \w]+")
 
-VALID_LANGUAGES = {"CPP", "Java", "LabVIEW", "IDL", "SALPY"}
+VALID_LANGUAGES = {"CPP", "Java", "LabVIEW", "IDL", "Python"}
 
 
 def get_salsubsystems_file() -> pathlib.Path:
