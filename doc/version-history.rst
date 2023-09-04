@@ -46,6 +46,10 @@ v20.0.0
 
     * Remove unnecessary summaryState enumeration.
 
+  * HVAC
+
+    * Move DeviceIndex, DEVICE_GROUPS and DEVICE_GROUP_IDS to ts_hvac.
+
   * LaserTracker
 
     * Add AlignComponent enumeration.
