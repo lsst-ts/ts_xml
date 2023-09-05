@@ -42,9 +42,12 @@ class BaseMsgType:
     """
     private_sndStamp: float = 0
     private_rcvStamp: float = 0
+    private_efdStamp: float = 0
+    private_kafkaStamp: float = 0
     private_seqNum: int = 0
     private_identity: str = ""
     private_origin: int = 0
+    private_revCode: str = ""
     salIndex: int = 0
 
 

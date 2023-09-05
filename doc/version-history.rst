@@ -13,7 +13,10 @@ v20.0.0
   * Add private_revCode back to the generic fields.
 * Make ATMCS and ATPneumatics configurable in preparation for switching to Python CSCs.
 * Update enumerations to match the definitions from the enums submodule (see interface updates).
-* Replace SALPY with Python as a valid runtime language.
+* Remove SALPY from the list of valid runtime language.
+* Remove support for octet and char types.
+* Reinstate support to unsigned long long.
+* Add missing private fields to ``BaseMsgType``.
 
 * Interface updates:
 
