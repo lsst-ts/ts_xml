@@ -285,7 +285,6 @@ idl_reserved = [
 idl_types = [
     "boolean",
     "byte",
-    "octet",
     "short",
     "int",
     "long",
@@ -297,7 +296,6 @@ idl_types = [
     "float",
     "double",
     "string",
-    "char",
 ]
 
 db_critical_reserved = ["TIME"]
