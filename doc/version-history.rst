@@ -7,6 +7,7 @@ Version History
 v20.0.0
 -------
 
+* Update the package ``__init__.py`` file to properly export the package version.
 * Copy enumerations for ts-idl into a new enums submodule.
 * Allow components to still define SummaryState enumerations in their xml files while generic enumerations are not supported by C/C++ SAL.
 * Move the code that defines SAL topics structure and generate avro-schema files from the kafka version of salobj.
