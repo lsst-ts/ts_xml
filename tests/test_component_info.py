@@ -219,7 +219,7 @@ class ComponentInfoTestCase(unittest.TestCase):
             }
             assert avro_schema["type"] == "record"
             assert avro_schema["name"] == topic_sal_from_attr_name(attr_name)
-            assert avro_schema["namespace"] == "lsst.sal.kafka_Test"
+            assert avro_schema["namespace"] == "lsst.sal.Test"
             assert isinstance(avro_schema["description"], str)
             assert avro_schema["description"] != ""
             fields = avro_schema["fields"]

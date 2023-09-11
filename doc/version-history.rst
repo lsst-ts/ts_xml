@@ -17,6 +17,7 @@ v20.0.0
 * Remove SALPY from the list of valid runtime language.
 * Remove support for octet and char types.
 * Reinstate support to unsigned long long.
+* Remove "kafka" from the topic namespace.
 * Add missing private fields to ``BaseMsgType``.
 
 * Interface updates:
