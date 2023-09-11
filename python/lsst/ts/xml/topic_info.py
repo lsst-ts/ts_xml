@@ -383,10 +383,7 @@ class TopicInfo:
             avro_schema = dict(
                 type="record",
                 name=self.sal_name,
-                # TODO DM-36101: remove "kafka_" from the namespace.
-                # It is present to avoid collisions with data generated
-                # by ts_salkafka for DDS-based SAL topics.
-                namespace=f"lsst.sal.kafka_{self.component_name}",
+                namespace=f"lsst.sal.{self.component_name}",
                 fields=[
                     field_info.make_avro_schema() for field_info in self.fields.values()
                 ],
