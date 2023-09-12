@@ -19,6 +19,7 @@ v20.0.0
 * Reinstate support to unsigned long long.
 * Remove "kafka" from the topic namespace.
 * Add missing private fields to ``BaseMsgType``.
+* Add version field to documentation conf.py.
 
 * Interface updates:
 
