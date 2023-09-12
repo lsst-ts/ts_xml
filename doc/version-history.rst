@@ -55,6 +55,7 @@ v20.0.0
   * HVAC
 
     * Move DeviceIndex, DEVICE_GROUPS and DEVICE_GROUP_IDS to ts_hvac.
+    * Add alarm and status events for all systems but Dynalene.
 
   * LaserTracker
 
