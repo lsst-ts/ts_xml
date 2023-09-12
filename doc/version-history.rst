@@ -52,6 +52,10 @@ v20.0.0
 
     * Remove unnecessary summaryState enumeration.
 
+  * ESS
+
+    * Add "Item" to telemetry item names to avoid clashes with topic names.
+
   * HVAC
 
     * Move DeviceIndex, DEVICE_GROUPS and DEVICE_GROUP_IDS to ts_hvac.
