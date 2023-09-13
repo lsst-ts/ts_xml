@@ -79,7 +79,8 @@ class EnabledSubstate(enum.IntEnum):
 class ApplicationStatus(enum.IntFlag):
     """Bit masks for the value reported in ``telemetry.application_status``.
 
-    These are from https://github.com/lsst-ts/ts_rotator_controller/blob/main/include/actuatorTlm.h  # noqa
+    These are from https://github.com/lsst-ts/ts_rotator_controller/blob/\
+main/include/actuatorTlm.h
     """
 
     EUI_CONNECTED = 0x4
