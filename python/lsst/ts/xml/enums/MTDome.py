@@ -18,7 +18,14 @@
 #
 # You should have received a copy of the GNU General Public License
 
-__all__ = ["EnabledState", "Louver", "MotionState", "OperationalMode", "SubSystemId"]
+__all__ = [
+    "EnabledState",
+    "Louver",
+    "MotionState",
+    "OperationalMode",
+    "RadLockingPinState",
+    "SubSystemId",
+]
 
 import enum
 
@@ -134,6 +141,14 @@ class OperationalMode(enum.IntEnum):
     DEGRADED = 2
 
 
+class RadLockingPinState(enum.IntEnum):
+    """Rear Access Door locking pin state."""
+
+    ENGAGED = 0
+    FLOATING = 1
+    DISENGAGED = 2
+
+
 class SubSystemId(enum.IntEnum):
     """SubSystem ID bitmask."""
 
@@ -149,3 +164,5 @@ class SubSystemId(enum.IntEnum):
     THCS = 0x10
     # MONitoring Control System
     MONCS = 0x20
+    # Rear Access Door
+    RAD = 0x40

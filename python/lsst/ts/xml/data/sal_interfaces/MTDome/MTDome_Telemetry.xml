@@ -222,7 +222,7 @@
       <Description>Commanded position of the aperture shutter (percent open).</Description>
       <IDL_Type>float</IDL_Type>
       <Units>unitless</Units>
-      <Count>1</Count>
+      <Count>2</Count>
     </item>
     <item>
       <EFDB_Name>driveTorqueActual</EFDB_Name>
@@ -384,6 +384,122 @@
       <IDL_Type>float</IDL_Type>
       <Units>deg_C</Units>
       <Count>13</Count>
+    </item>
+    <item>
+      <EFDB_Name>timestamp</EFDB_Name>
+      <Description>Time at which the data was determined (TAI unix seconds).</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>second</Units>
+      <Count>1</Count>
+    </item>
+  </SALTelemetry>
+  <SALTelemetry>
+    <Subsystem>MTDome</Subsystem>
+    <EFDB_Topic>MTDome_rearAccessDoor</EFDB_Topic>
+    <item>
+      <EFDB_Name>positionActual</EFDB_Name>
+      <Description>Measured position of the rear access door (percent open).</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>unitless</Units>
+      <Count>2</Count>
+    </item>
+    <item>
+      <EFDB_Name>positionCommanded</EFDB_Name>
+      <Description>Commanded position of the rear access door (percent open).</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>unitless</Units>
+      <Count>2</Count>
+    </item>
+    <item>
+      <EFDB_Name>driveTorqueActual</EFDB_Name>
+      <Description>Measured torque for each rear access door drive.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>J</Units>
+      <Count>2</Count>
+    </item>
+    <item>
+      <EFDB_Name>driveTorqueCommanded</EFDB_Name>
+      <Description>Commanded torque for each rear access door drive.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>J</Units>
+      <Count>2</Count>
+    </item>
+    <item>
+      <EFDB_Name>driveCurrentActual</EFDB_Name>
+      <Description>Measured current drawn by each rear access door drive.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>A</Units>
+      <Count>2</Count>
+    </item>
+    <item>
+      <EFDB_Name>driveTemperature</EFDB_Name>
+      <Description>Measured temperature of each rear access door drive.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>deg_C</Units>
+      <Count>2</Count>
+    </item>
+    <item>
+      <EFDB_Name>resolverHeadRaw</EFDB_Name>
+      <Description>Raw value of each rear access door drive resolver.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>unitless</Units>
+      <Count>2</Count>
+    </item>
+    <item>
+      <EFDB_Name>resolverHeadCalibrated</EFDB_Name>
+      <Description>Calibrated value of each rear access door drive resolver.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>deg</Units>
+      <Count>2</Count>
+    </item>
+    <item>
+      <EFDB_Name>powerDraw</EFDB_Name>
+      <Description>Total power drawn by all rear access door drives.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>W</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>openLimitSwitchEngaged</EFDB_Name>
+      <Description>Are the rear access door open limit switches engaged?</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>4</Count>
+    </item>
+    <item>
+      <EFDB_Name>closeLimitSwitchEngaged</EFDB_Name>
+      <Description>Are the rear access door close limit switches engaged?</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>4</Count>
+    </item>
+    <item>
+      <EFDB_Name>lockingPins</EFDB_Name>
+      <Description>Are the rear access door locking pins engaged?</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>2</Count>
+    </item>
+    <item>
+      <EFDB_Name>brakesEngaged</EFDB_Name>
+      <Description>Are the rear access door close brakes engaged?</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>2</Count>
+    </item>
+    <item>
+      <EFDB_Name>photoelectricSensorClear</EFDB_Name>
+      <Description>Is the rear access door photoelectric sensor clear?</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>lightCurtainClear</EFDB_Name>
+      <Description>Is the rear access door light curtain clear?</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>timestamp</EFDB_Name>

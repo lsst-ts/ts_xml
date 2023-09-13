@@ -70,6 +70,11 @@ v20.0.0
 
     * Remove unnecessary summaryState enumeration.
 
+  * MTDome
+
+    * Set aperture shutter positionCommanded to two values.
+    * Add rear access door status telemetry and enum.
+
   * MTHexapod
 
     * Add ErrorCode enumeration.
