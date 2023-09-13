@@ -24,6 +24,8 @@ from __future__ import annotations
 __all__ = ["make_ackcmd_topic_info", "TopicInfo"]
 
 import dataclasses
+import hashlib
+import json
 import typing
 from xml.etree import ElementTree
 
@@ -393,6 +395,28 @@ class TopicInfo:
             self._avro_schema_cache[self._cache_key] = avro_schema
 
         return avro_schema
+
+    def make_avro_schema_as_json(self) -> str:
+        """Convert the avro schema to a json string.
+
+        Returns
+        -------
+        `str`
+            Avro schema as a json formatted string.
+        """
+        return json.dumps(self.make_avro_schema(), indent=4)
+
+    def get_revcode(self) -> str:
+        """Compute the revcode for this topic.
+
+        Returns
+        -------
+        `str`
+            Topic revcode.
+        """
+        avro_schema = self.make_avro_schema_as_json()
+        rev_code = hashlib.md5(avro_schema.encode("utf-8")).hexdigest()[:8]
+        return rev_code
 
     def __repr__(self) -> str:
         return f"TopicInfo({self.kafka_name})"
