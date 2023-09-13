@@ -103,7 +103,7 @@ def generate_component_info(name: str, output_dir: pathlib.PosixPath) -> None:
     result = {
         "topics": {
             topic_info.sal_name: dict(
-                avro_schema=topic_info.make_avro_schema(),
+                avro_schema=topic_info.make_avro_schema_as_json(),
                 array_fields=topic_info.array_fields,
             )
             for topic_info in component_info.topics.values()
@@ -116,10 +116,9 @@ def generate_component_info(name: str, output_dir: pathlib.PosixPath) -> None:
         schema_path = output_dir / f"{name}_{topic}.json"
         print(f"Writing {schema_path} ...")
         with open(schema_path, "w") as fp:
-            assert type(result["topics"]) is dict
-            avro_schema = result["topics"].get(topic, dict()).get("avro_schema", dict())
-            assert type(avro_schema) is dict
-            fp.write(json.dumps(avro_schema, indent=4))
+            assert isinstance(result["topics"], dict)
+            avro_schema = result["topics"].get(topic, dict()).get("avro_schema", "")
+            fp.write(avro_schema)
 
     field_enums_dict: dict[str, dict[str, list[str]]] = dict()
     for field_enum in result["field_enums"]:
