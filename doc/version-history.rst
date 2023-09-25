@@ -94,6 +94,10 @@ v20.0.0
     * Replace detailedState enumeration with LaserDetailedState.
     * Add new LaserErrorCode enumeration.
 
+  * ATCamera/CCCamera/MTCamera
+
+    * Add DAQ monitoring statistics (CAP-703)
+
 v19.0.0
 -------
 * Remove the unrecognized pytest flags in **pyproject.toml**.

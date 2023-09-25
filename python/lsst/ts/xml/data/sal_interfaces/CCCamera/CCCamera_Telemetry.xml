@@ -49,6 +49,428 @@
       <Count>1</Count>
     </item>
   </SALTelemetry>
+  <!--Created by xmlmaker2 for subsystem CCCamera class CCCamera_daq_monitor_Reb_Trending using level 1 for category Trending-->
+  <!--=======================================================================================================================-->
+  <SALTelemetry>
+    <Subsystem>CCCamera</Subsystem>
+    <EFDB_Topic>CCCamera_daq_monitor_Reb_Trending</EFDB_Topic>
+    <!--CCS: Dictionary_Checksum: 3684271513L -->
+    <!--CCSMETA: Array driver_errors indexed by location-->
+    <item>
+      <EFDB_Name>driver_errors</EFDB_Name>
+      <Description>PGP Frame Errors. The total number of PGP frames received in error. This should equal the rx_errors from the Firmware statistics.</Description>
+      <IDL_Type>long long</IDL_Type>
+      <Units>unitless</Units>
+      <Count>3</Count>
+    </item>
+    <!--CCSMETA: Array driver_received indexed by location-->
+    <item>
+      <EFDB_Name>driver_received</EFDB_Name>
+      <Description>PGP Frames Received. The total number of PGP frames received. This should equal with the rx_frames from the Firmware statistics.</Description>
+      <IDL_Type>long long</IDL_Type>
+      <Units>unitless</Units>
+      <Count>3</Count>
+    </item>
+    <!--CCSMETA: Array driver_rx0 indexed by location-->
+    <item>
+      <EFDB_Name>driver_rx0</EFDB_Name>
+      <Description>PGP Frames Received (channel 0). Counts the number of PGP frames received on each virtual channel.</Description>
+      <IDL_Type>long long</IDL_Type>
+      <Units>unitless</Units>
+      <Count>3</Count>
+    </item>
+    <!--CCSMETA: Array driver_rx1 indexed by location-->
+    <item>
+      <EFDB_Name>driver_rx1</EFDB_Name>
+      <Description>PGP Frames Received (channel 1). Counts the number of PGP frames received on each virtual channel.</Description>
+      <IDL_Type>long long</IDL_Type>
+      <Units>unitless</Units>
+      <Count>3</Count>
+    </item>
+    <!--CCSMETA: Array driver_rx2 indexed by location-->
+    <item>
+      <EFDB_Name>driver_rx2</EFDB_Name>
+      <Description>PGP Frames Received (channel 2). Counts the number of PGP frames received on each virtual channel.</Description>
+      <IDL_Type>long long</IDL_Type>
+      <Units>unitless</Units>
+      <Count>3</Count>
+    </item>
+    <!--CCSMETA: Array driver_rx3 indexed by location-->
+    <item>
+      <EFDB_Name>driver_rx3</EFDB_Name>
+      <Description>PGP Frames Received (channel 3). Counts the number of PGP frames received on each virtual channel.</Description>
+      <IDL_Type>long long</IDL_Type>
+      <Units>unitless</Units>
+      <Count>3</Count>
+    </item>
+    <!--CCSMETA: Array firmware_cell_errors indexed by location-->
+    <item>
+      <EFDB_Name>firmware_cell_errors</EFDB_Name>
+      <Description>PGP Cell Error Counter. This error counter increments when the lowest level PGP protocol quantum is in error. Examples of errors that would cause this counter to increment are, framing violations, incompatible protocol versions, CRC error, incorrect Cell size.</Description>
+      <IDL_Type>long long</IDL_Type>
+      <Units>unitless</Units>
+      <Count>3</Count>
+    </item>
+    <!--CCSMETA: Array firmware_last_rx indexed by location-->
+    <item>
+      <EFDB_Name>firmware_last_rx</EFDB_Name>
+      <Description>Last Received Opcode. The value of the most recently received Opcode.</Description>
+      <IDL_Type>long long</IDL_Type>
+      <Units>unitless</Units>
+      <Count>3</Count>
+    </item>
+    <!--CCSMETA: Array firmware_last_tx indexed by location-->
+    <item>
+      <EFDB_Name>firmware_last_tx</EFDB_Name>
+      <Description>Last transmitted Opcode. The value of the most recent command sent from the REB.</Description>
+      <IDL_Type>long long</IDL_Type>
+      <Units>unitless</Units>
+      <Count>3</Count>
+    </item>
+    <!--CCSMETA: Array firmware_link_down indexed by location-->
+    <item>
+      <EFDB_Name>firmware_link_down</EFDB_Name>
+      <Description>Link Down Counter. This should increment by 1 every time the PGP link transitions from UP to DOWN. Unfortunately, it does not use the LSST DAQ definition of UP, but rather only bits 1..0 of the state. Though normal initialization of the link causes only a single increment, on occasion a REB power cycle can cause the counter to increment more than once.</Description>
+      <IDL_Type>long long</IDL_Type>
+      <Units>unitless</Units>
+      <Count>3</Count>
+    </item>
+    <!--CCSMETA: Array firmware_link_errors indexed by location-->
+    <item>
+      <EFDB_Name>firmware_link_errors</EFDB_Name>
+      <Description> Link Error Counter. This counter represents a lower level error than the Cell Error. This error is caused by 8B10B errors on the high speed serial line such as disparity errors or symbol decode errors. Sometimes this counter can increment during the link establishment process, though I have tried to change the firmware to eliminate this.</Description>
+      <IDL_Type>long long</IDL_Type>
+      <Units>unitless</Units>
+      <Count>3</Count>
+    </item>
+    <!--CCSMETA: Array firmware_link_status indexed by location-->
+    <item>
+      <EFDB_Name>firmware_link_status</EFDB_Name>
+      <Description>State of the PGP link (bitfield)</Description>
+      <IDL_Type>long long</IDL_Type>
+      <Units>unitless</Units>
+      <Count>3</Count>
+    </item>
+    <!--CCSMETA: Array firmware_overflow_local0 indexed by location-->
+    <item>
+      <EFDB_Name>firmware_overflow_local0</EFDB_Name>
+      <Description>Local Overflow Counters (channel 0). These four counters measure the number of times the firmware on the local side of the link has overflowed its buffers for each virtual channel.</Description>
+      <IDL_Type>long long</IDL_Type>
+      <Units>unitless</Units>
+      <Count>3</Count>
+    </item>
+    <!--CCSMETA: Array firmware_overflow_local1 indexed by location-->
+    <item>
+      <EFDB_Name>firmware_overflow_local1</EFDB_Name>
+      <Description>Local Overflow Counters (channel 1). These four counters measure the number of times the firmware on the local side of the link has overflowed its buffers for each virtual channel.</Description>
+      <IDL_Type>long long</IDL_Type>
+      <Units>unitless</Units>
+      <Count>3</Count>
+    </item>
+    <!--CCSMETA: Array firmware_overflow_local2 indexed by location-->
+    <item>
+      <EFDB_Name>firmware_overflow_local2</EFDB_Name>
+      <Description>Local Overflow Counters (channel 2). These four counters measure the number of times the firmware on the local side of the link has overflowed its buffers for each virtual channel.</Description>
+      <IDL_Type>long long</IDL_Type>
+      <Units>unitless</Units>
+      <Count>3</Count>
+    </item>
+    <!--CCSMETA: Array firmware_overflow_local3 indexed by location-->
+    <item>
+      <EFDB_Name>firmware_overflow_local3</EFDB_Name>
+      <Description>Local Overflow Counters (channel 3). These four counters measure the number of times the firmware on the local side of the link has overflowed its buffers for each virtual channel.</Description>
+      <IDL_Type>long long</IDL_Type>
+      <Units>unitless</Units>
+      <Count>3</Count>
+    </item>
+    <!--CCSMETA: Array firmware_overflow_remote0 indexed by location-->
+    <item>
+      <EFDB_Name>firmware_overflow_remote0</EFDB_Name>
+      <Description>Remote Overflow Counters (channel 0). These four counters measure the number of times the firmware on the remote side of the link has overflowed its buffers for each virtual channel.</Description>
+      <IDL_Type>long long</IDL_Type>
+      <Units>unitless</Units>
+      <Count>3</Count>
+    </item>
+    <!--CCSMETA: Array firmware_overflow_remote1 indexed by location-->
+    <item>
+      <EFDB_Name>firmware_overflow_remote1</EFDB_Name>
+      <Description>Remote Overflow Counters (channel 1). These four counters measure the number of times the firmware on the remote side of the link has overflowed its buffers for each virtual channel.</Description>
+      <IDL_Type>long long</IDL_Type>
+      <Units>unitless</Units>
+      <Count>3</Count>
+    </item>
+    <!--CCSMETA: Array firmware_overflow_remote2 indexed by location-->
+    <item>
+      <EFDB_Name>firmware_overflow_remote2</EFDB_Name>
+      <Description>Remote Overflow Counters (channel 2). These four counters measure the number of times the firmware on the remote side of the link has overflowed its buffers for each virtual channel.</Description>
+      <IDL_Type>long long</IDL_Type>
+      <Units>unitless</Units>
+      <Count>3</Count>
+    </item>
+    <!--CCSMETA: Array firmware_overflow_remote3 indexed by location-->
+    <item>
+      <EFDB_Name>firmware_overflow_remote3</EFDB_Name>
+      <Description>Remote Overflow Counters (channel 3). These four counters measure the number of times the firmware on the remote side of the link has overflowed its buffers for each virtual channel.</Description>
+      <IDL_Type>long long</IDL_Type>
+      <Units>unitless</Units>
+      <Count>3</Count>
+    </item>
+    <!--CCSMETA: Array firmware_rlink_data indexed by location-->
+    <item>
+      <EFDB_Name>firmware_rlink_data</EFDB_Name>
+      <Description>Remote Link Data</Description>
+      <IDL_Type>long long</IDL_Type>
+      <Units>unitless</Units>
+      <Count>3</Count>
+    </item>
+    <!--CCSMETA: Array firmware_rx_clock indexed by location-->
+    <item>
+      <EFDB_Name>firmware_rx_clock</EFDB_Name>
+      <Description>Receive Clock Frequency. These quantities reflect the frequency of the clocks used by the Receive and Transmit sides of the transceivers. (Should be around 156.25 MHz)</Description>
+      <IDL_Type>long long</IDL_Type>
+      <Units>Hz</Units>
+      <Count>3</Count>
+    </item>
+    <!--CCSMETA: Array firmware_rx_errors indexed by location-->
+    <item>
+      <EFDB_Name>firmware_rx_errors</EFDB_Name>
+      <Description>Receive Errors. This is the highest level PGP protocol error. This counter increments when a PGP frame has been successfully received, but was marked with an error when it was sent by the REB.</Description>
+      <IDL_Type>long long</IDL_Type>
+      <Units>unitless</Units>
+      <Count>3</Count>
+    </item>
+    <!--CCSMETA: Array firmware_rx_frames indexed by location-->
+    <item>
+      <EFDB_Name>firmware_rx_frames</EFDB_Name>
+      <Description>Received Frames. This is the number of PGP Frames received from the REB. (I don't recall if it is mutually exclusive with rx_errors)</Description>
+      <IDL_Type>long long</IDL_Type>
+      <Units>unitless</Units>
+      <Count>3</Count>
+    </item>
+    <!--CCSMETA: Array firmware_rx_op indexed by location-->
+    <item>
+      <EFDB_Name>firmware_rx_op</EFDB_Name>
+      <Description> Description: Received Opcode Count. The number of synchronous commands sent to the REB.</Description>
+      <IDL_Type>long long</IDL_Type>
+      <Units>unitless</Units>
+      <Count>3</Count>
+    </item>
+    <!--CCSMETA: Array firmware_tx_clock indexed by location-->
+    <item>
+      <EFDB_Name>firmware_tx_clock</EFDB_Name>
+      <Description>Transmit Clock Frequency. These quantities reflect the frequency of the clocks used by the Receive and Transmit sides of the transceivers. (Should be around 156.25 MHz)</Description>
+      <IDL_Type>long long</IDL_Type>
+      <Units>Hz</Units>
+      <Count>3</Count>
+    </item>
+    <!--CCSMETA: Array firmware_tx_errors indexed by location-->
+    <item>
+      <EFDB_Name>firmware_tx_errors</EFDB_Name>
+      <Description>Transmit Errors. This counter increments when a frame is transmitted with the error bit set. (Analog to rx_errors.)</Description>
+      <IDL_Type>long long</IDL_Type>
+      <Units>unitless</Units>
+      <Count>3</Count>
+    </item>
+    <!--CCSMETA: Array firmware_tx_frames indexed by location-->
+    <item>
+      <EFDB_Name>firmware_tx_frames</EFDB_Name>
+      <Description>Transmitted Frames: This is the number of PGP Frame transmitted to the REB.</Description>
+      <IDL_Type>long long</IDL_Type>
+      <Units>unitless</Units>
+      <Count>3</Count>
+    </item>
+    <!--CCSMETA: Array firmware_tx_op indexed by location-->
+    <item>
+      <EFDB_Name>firmware_tx_op</EFDB_Name>
+      <Description>Transmit Opcode Count. These count the number of "synchronous commands" sent from the REB to the RCE. We do not use this functionality. </Description>
+      <IDL_Type>long long</IDL_Type>
+      <Units>unitless</Units>
+      <Count>3</Count>
+    </item>
+    <item>
+      <EFDB_Name>location</EFDB_Name>
+      <Description>reb location</Description>
+      <IDL_Type>string</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <!--CCSMETA: Array rds_bdi_firsts indexed by location-->
+    <item>
+      <EFDB_Name>rds_bdi_firsts</EFDB_Name>
+      <Description>BDI Firsts count. The number of BDI pages marked as First (Start of Image flag is set.)</Description>
+      <IDL_Type>long long</IDL_Type>
+      <Units>unitless</Units>
+      <Count>3</Count>
+    </item>
+    <!--CCSMETA: Array rds_bdi_frees indexed by location-->
+    <item>
+      <EFDB_Name>rds_bdi_frees</EFDB_Name>
+      <Description>BDI Frees count. The number of BDI pages processed.</Description>
+      <IDL_Type>long long</IDL_Type>
+      <Units>unitless</Units>
+      <Count>3</Count>
+    </item>
+    <!--CCSMETA: Array rds_bdi_lasts indexed by location-->
+    <item>
+      <EFDB_Name>rds_bdi_lasts</EFDB_Name>
+      <Description>BDI Lasts count. The number of BDI pages marked as last (End of Image flag is set.)</Description>
+      <IDL_Type>long long</IDL_Type>
+      <Units>unitless</Units>
+      <Count>3</Count>
+    </item>
+    <!--CCSMETA: Array rds_bdi_nulls indexed by location-->
+    <item>
+      <EFDB_Name>rds_bdi_nulls</EFDB_Name>
+      <Description>BDI Null Pages count. The BDI woke up but no data was present.</Description>
+      <IDL_Type>long long</IDL_Type>
+      <Units>unitless</Units>
+      <Count>3</Count>
+    </item>
+    <!--CCSMETA: Array rds_bdi_overflows indexed by location-->
+    <item>
+      <EFDB_Name>rds_bdi_overflows</EFDB_Name>
+      <Description>BDI Overflows count. The BDI can report that its data buffers have overflowed.</Description>
+      <IDL_Type>long long</IDL_Type>
+      <Units>unitless</Units>
+      <Count>3</Count>
+    </item>
+    <!--CCSMETA: Array rds_bdi_seq_errors indexed by location-->
+    <item>
+      <EFDB_Name>rds_bdi_seq_errors</EFDB_Name>
+      <Description>BDI Sequence Errors count. The BDI can mark pages as coming out of sequence. </Description>
+      <IDL_Type>long long</IDL_Type>
+      <Units>unitless</Units>
+      <Count>3</Count>
+    </item>
+    <!--CCSMETA: Array rds_bdi_waits indexed by location-->
+    <item>
+      <EFDB_Name>rds_bdi_waits</EFDB_Name>
+      <Description>Bulk Data Interface Waits count. The number of times we have waited for a page of pixel data from the Bulk Data Interface.</Description>
+      <IDL_Type>long long</IDL_Type>
+      <Units>unitless</Units>
+      <Count>3</Count>
+    </item>
+    <!--CCSMETA: Array rds_discards indexed by location-->
+    <item>
+      <EFDB_Name>rds_discards</EFDB_Name>
+      <Description>Discards count. The number of times the Server tried to insert Image Metadata into the processing queue but failed to do so. (Presumably because the queue was full.)</Description>
+      <IDL_Type>long long</IDL_Type>
+      <Units>unitless</Units>
+      <Count>3</Count>
+    </item>
+    <!--CCSMETA: Array rds_no_event indexed by location-->
+    <item>
+      <EFDB_Name>rds_no_event</EFDB_Name>
+      <Description>No Event count. Upon the arrival of pixel data, there was no Image Metadata available to associate with it. The pixel data is discarded.</Description>
+      <IDL_Type>long long</IDL_Type>
+      <Units>unitless</Units>
+      <Count>3</Count>
+    </item>
+    <!--CCSMETA: Array rds_wakes indexed by location-->
+    <item>
+      <EFDB_Name>rds_wakes</EFDB_Name>
+      <Description>Wakes count. This counts the number of times the RDS server was awakened to put Image Metadata into it's processing queue.</Description>
+      <IDL_Type>long long</IDL_Type>
+      <Units>unitless</Units>
+      <Count>3</Count>
+    </item>
+    <!--CCSMETA: Array rms_in_reset indexed by location-->
+    <item>
+      <EFDB_Name>rms_in_reset</EFDB_Name>
+      <Description>Link In Reset error count. When a request cannot be fulfilled because the link is being reset.</Description>
+      <IDL_Type>long long</IDL_Type>
+      <Units>unitless</Units>
+      <Count>3</Count>
+    </item>
+    <!--CCSMETA: Array rms_inv_tids indexed by location-->
+    <item>
+      <EFDB_Name>rms_inv_tids</EFDB_Name>
+      <Description>Invalid Task ID count. A Response was received that does not have a valid identifier to use to pair it with a Request.</Description>
+      <IDL_Type>long long</IDL_Type>
+      <Units>unitless</Units>
+      <Count>3</Count>
+    </item>
+    <!--CCSMETA: Array rms_link_down indexed by location-->
+    <item>
+      <EFDB_Name>rms_link_down</EFDB_Name>
+      <Description>Link is Down error count. When a request cannot be fulfilled because the PGP Link is down.</Description>
+      <IDL_Type>long long</IDL_Type>
+      <Units>unitless</Units>
+      <Count>3</Count>
+    </item>
+    <!--CCSMETA: Array rms_lists_posted indexed by location-->
+    <item>
+      <EFDB_Name>rms_lists_posted</EFDB_Name>
+      <Description>Lists Posted count. The number of requests (Lists of register operations) posted the Server.</Description>
+      <IDL_Type>long long</IDL_Type>
+      <Units>unitless</Units>
+      <Count>3</Count>
+    </item>
+    <!--CCSMETA: Array rms_ops_posted indexed by location-->
+    <item>
+      <EFDB_Name>rms_ops_posted</EFDB_Name>
+      <Description>Register Operation Requests count. The number of register operation requests sent to the REB.</Description>
+      <IDL_Type>long long</IDL_Type>
+      <Units>unitless</Units>
+      <Count>3</Count>
+    </item>
+    <!--CCSMETA: Array rms_orphans indexed by location-->
+    <item>
+      <EFDB_Name>rms_orphans</EFDB_Name>
+      <Description>Invalid Task ID count. A Response was received that does not have a valid identifier to use to pair it with a Request.</Description>
+      <IDL_Type>long long</IDL_Type>
+      <Units>unitless</Units>
+      <Count>3</Count>
+    </item>
+    <!--CCSMETA: Array rms_probes indexed by location-->
+    <item>
+      <EFDB_Name>rms_probes</EFDB_Name>
+      <Description>Probe Counter. The number of times the RMS server has been probed by Clients. Normally this is once per posted list, but can also be done to detect the presence of RMS servers.</Description>
+      <IDL_Type>long long</IDL_Type>
+      <Units>unitless</Units>
+      <Count>3</Count>
+    </item>
+    <!--CCSMETA: Array rms_responses indexed by location-->
+    <item>
+      <EFDB_Name>rms_responses</EFDB_Name>
+      <Description>Register Operation Responses count. The number of register operation responses from the REB. Should be equal to the number of Waits and Operation Requests.</Description>
+      <IDL_Type>long long</IDL_Type>
+      <Units>unitless</Units>
+      <Count>3</Count>
+    </item>
+    <!--CCSMETA: Array rms_rundowns indexed by location-->
+    <item>
+      <EFDB_Name>rms_rundowns</EFDB_Name>
+      <Description>Orphaned Response count. A Response was received for which there was no corresponding request.</Description>
+      <IDL_Type>long long</IDL_Type>
+      <Units>unitless</Units>
+      <Count>3</Count>
+    </item>
+    <!--CCSMETA: Array rms_tid_hwm indexed by location-->
+    <item>
+      <EFDB_Name>rms_tid_hwm</EFDB_Name>
+      <Description>Task ID High Water Mark. There is a fixed number of buffers available to store outstanding requests while waiting for responses. If the REB does not respond to a request, then a buffer resource is lost. This counter reflects the largest number of outstanding requests. Currently, in a properly functioning system there should never be more than one outstanding request at a time, and the High Water Mark should never be more than 1.</Description>
+      <IDL_Type>long long</IDL_Type>
+      <Units>unitless</Units>
+      <Count>3</Count>
+    </item>
+    <!--CCSMETA: Array rms_unopened indexed by location-->
+    <item>
+      <EFDB_Name>rms_unopened</EFDB_Name>
+      <Description>Plugin Unopened error count. The window for this error to be encountered is very small. When a request cannot be fulfilled because the Plugin is not yet initialized.</Description>
+      <IDL_Type>long long</IDL_Type>
+      <Units>unitless</Units>
+      <Count>3</Count>
+    </item>
+    <!--CCSMETA: Array rms_waits indexed by location-->
+    <item>
+      <EFDB_Name>rms_waits</EFDB_Name>
+      <Description>Waits count. The number of times RMS has been presented with a PGP frame from the firmware.</Description>
+      <IDL_Type>long long</IDL_Type>
+      <Units>unitless</Units>
+      <Count>3</Count>
+    </item>
+  </SALTelemetry>
   <!--Created by xmlmaker2 for subsystem CCCamera class CCCamera_daq_monitor_Store using level 1-->
   <!--==========================================================================================-->
   <SALTelemetry>
@@ -74,6 +496,167 @@
       <Description>available disk space</Description>
       <IDL_Type>double</IDL_Type>
       <Units>Gbyte</Units>
+      <Count>1</Count>
+    </item>
+  </SALTelemetry>
+  <!--Created by xmlmaker2 for subsystem CCCamera class CCCamera_daq_monitor_Sum_Trending using level 1 for category Trending-->
+  <!--=======================================================================================================================-->
+  <SALTelemetry>
+    <Subsystem>CCCamera</Subsystem>
+    <EFDB_Topic>CCCamera_daq_monitor_Sum_Trending</EFDB_Topic>
+    <!--CCS: Dictionary_Checksum: 4053115936L -->
+    <item>
+      <EFDB_Name>driver_errors</EFDB_Name>
+      <Description>Sum over locations: PGP Frame Errors. The total number of PGP frames received in error. This should equal the rx_errors from the Firmware statistics.</Description>
+      <IDL_Type>long long</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>firmware_cell_errors</EFDB_Name>
+      <Description>Sum over locations: PGP Cell Error Counter. This error counter increments when the lowest level PGP protocol quantum is in error. Examples of errors that would cause this counter to increment are, framing violations, incompatible protocol versions, CRC error, incorrect Cell size.</Description>
+      <IDL_Type>long long</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>firmware_link_down</EFDB_Name>
+      <Description>Sum over locations: Link Down Counter. This should increment by 1 every time the PGP link transitions from UP to DOWN. Unfortunately, it does not use the LSST DAQ definition of UP, but rather only bits 1..0 of the state. Though normal initialization of the link causes only a single increment, on occasion a REB power cycle can cause the counter to increment more than once.</Description>
+      <IDL_Type>long long</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>firmware_link_errors</EFDB_Name>
+      <Description>Sum over locations:  Link Error Counter. This counter represents a lower level error than the Cell Error. This error is caused by 8B10B errors on the high speed serial line such as disparity errors or symbol decode errors. Sometimes this counter can increment during the link establishment process, though I have tried to change the firmware to eliminate this.</Description>
+      <IDL_Type>long long</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>firmware_overflow_local0</EFDB_Name>
+      <Description>Sum over locations: Local Overflow Counters (channel 0). These four counters measure the number of times the firmware on the local side of the link has overflowed its buffers for each virtual channel.</Description>
+      <IDL_Type>long long</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>firmware_overflow_local1</EFDB_Name>
+      <Description>Sum over locations: Local Overflow Counters (channel 1). These four counters measure the number of times the firmware on the local side of the link has overflowed its buffers for each virtual channel.</Description>
+      <IDL_Type>long long</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>firmware_overflow_local2</EFDB_Name>
+      <Description>Sum over locations: Local Overflow Counters (channel 2). These four counters measure the number of times the firmware on the local side of the link has overflowed its buffers for each virtual channel.</Description>
+      <IDL_Type>long long</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>firmware_overflow_remote0</EFDB_Name>
+      <Description>Sum over locations: Remote Overflow Counters (channel 0). These four counters measure the number of times the firmware on the remote side of the link has overflowed its buffers for each virtual channel.</Description>
+      <IDL_Type>long long</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>firmware_overflow_remote1</EFDB_Name>
+      <Description>Sum over locations: Remote Overflow Counters (channel 1). These four counters measure the number of times the firmware on the remote side of the link has overflowed its buffers for each virtual channel.</Description>
+      <IDL_Type>long long</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>firmware_overflow_remote2</EFDB_Name>
+      <Description>Sum over locations: Remote Overflow Counters (channel 2). These four counters measure the number of times the firmware on the remote side of the link has overflowed its buffers for each virtual channel.</Description>
+      <IDL_Type>long long</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>firmware_rx_errors</EFDB_Name>
+      <Description>Sum over locations: Receive Errors. This is the highest level PGP protocol error. This counter increments when a PGP frame has been successfully received, but was marked with an error when it was sent by the REB.</Description>
+      <IDL_Type>long long</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>firmware_tx_errors</EFDB_Name>
+      <Description>Sum over locations: Transmit Errors. This counter increments when a frame is transmitted with the error bit set. (Analog to rx_errors.)</Description>
+      <IDL_Type>long long</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>rds_bdi_nulls</EFDB_Name>
+      <Description>Sum over locations: BDI Null Pages count. The BDI woke up but no data was present.</Description>
+      <IDL_Type>long long</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>rds_bdi_overflows</EFDB_Name>
+      <Description>Sum over locations: BDI Overflows count. The BDI can report that its data buffers have overflowed.</Description>
+      <IDL_Type>long long</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>rds_bdi_seq_errors</EFDB_Name>
+      <Description>Sum over locations: BDI Sequence Errors count. The BDI can mark pages as coming out of sequence. </Description>
+      <IDL_Type>long long</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>rds_discards</EFDB_Name>
+      <Description>Sum over locations: Discards count. The number of times the Server tried to insert Image Metadata into the processing queue but failed to do so. (Presumably because the queue was full.)</Description>
+      <IDL_Type>long long</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>rds_no_event</EFDB_Name>
+      <Description>Sum over locations: No Event count. Upon the arrival of pixel data, there was no Image Metadata available to associate with it. The pixel data is discarded.</Description>
+      <IDL_Type>long long</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>rms_in_reset</EFDB_Name>
+      <Description>Sum over locations: Link In Reset error count. When a request cannot be fulfilled because the link is being reset.</Description>
+      <IDL_Type>long long</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>rms_inv_tids</EFDB_Name>
+      <Description>Sum over locations: Invalid Task ID count. A Response was received that does not have a valid identifier to use to pair it with a Request.</Description>
+      <IDL_Type>long long</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>rms_link_down</EFDB_Name>
+      <Description>Sum over locations: Link is Down error count. When a request cannot be fulfilled because the PGP Link is down.</Description>
+      <IDL_Type>long long</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>rms_orphans</EFDB_Name>
+      <Description>Sum over locations: Invalid Task ID count. A Response was received that does not have a valid identifier to use to pair it with a Request.</Description>
+      <IDL_Type>long long</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>rms_unopened</EFDB_Name>
+      <Description>Sum over locations: Plugin Unopened error count. The window for this error to be encountered is very small. When a request cannot be fulfilled because the Plugin is not yet initialized.</Description>
+      <IDL_Type>long long</IDL_Type>
+      <Units>unitless</Units>
       <Count>1</Count>
     </item>
   </SALTelemetry>
