@@ -81,6 +81,7 @@ v20.0.0
 
   * MTM1M3
 
+    * Commands to pause and resume mirror raising or lowering
     * Add ILCState enumeration.
     * Settings fields for raising M1M3 at low elevation
     * Improved slew control and reporting - SlewControllerState, name for PID settings

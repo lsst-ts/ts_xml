@@ -74,6 +74,25 @@
   </SALCommand>
   <SALCommand>
     <Subsystem>MTM1M3</Subsystem>
+    <EFDB_Topic>MTM1M3_command_pauseM1M3RaisingLowering</EFDB_Topic>
+    <Description>
+        The pauseM1M3RaisingLowering command shall cause M1M3 to stop
+        changing M1M3 supported percentage, which drives M1M3 raising or
+	lowering. Mirror state shall transition to PausedRaising/PausedLowering.
+        Timeout for raising/lowering shall be stopped. Mirror raising/lowering
+        should resume with resumeM1M3RaisingLowering command.
+    </Description>
+  </SALCommand>
+  <SALCommand>
+    <Subsystem>MTM1M3</Subsystem>
+    <EFDB_Topic>MTM1M3_command_resumeM1M3RaisingLowering</EFDB_Topic>
+    <Description>
+        The resumeM1M3RaisingLowering command shall cause M1M3 to resume paused
+        M1M3 raising/lowering.
+    </Description>
+  </SALCommand>
+  <SALCommand>
+    <Subsystem>MTM1M3</Subsystem>
     <EFDB_Topic>MTM1M3_command_enterEngineering</EFDB_Topic>
     <Description>
         The enterEngineering command shall cause the M1M3 support system to go
