@@ -97,6 +97,7 @@ v20.0.0
   * ATCamera/CCCamera/MTCamera
 
     * Add DAQ monitoring statistics (CAP-703)
+    * Fix for image_handling configuration (CAP-1006)
 
 v19.0.0
 -------
