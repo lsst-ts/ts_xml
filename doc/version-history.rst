@@ -100,6 +100,10 @@ v20.0.0
     * Add DAQ monitoring statistics (CAP-703)
     * Fix for image_handling configuration (CAP-1006)
 
+  * MTM2
+
+    * Use the ``string`` data type to replace the ``unsigned long`` and ``unsigned long long`` data types.
+
 v19.0.0
 -------
 * Remove the unrecognized pytest flags in **pyproject.toml**.
