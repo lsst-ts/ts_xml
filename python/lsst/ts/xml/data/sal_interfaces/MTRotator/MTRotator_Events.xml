@@ -22,6 +22,11 @@
     EnabledSubstate_ConstantVelocity=6
 </Enumeration>
   <Enumeration>
+    FaultSubstate_EmergencyStopping=0,
+    FaultSubstate_WaitClearError=1,
+    FaultSubstate_NoError=2
+</Enumeration>
+  <Enumeration>
     ApplicationStatus_EUI_CONNECTED = 0x4,
     ApplicationStatus_COMMAND_REJECTED = 0x20,
     ApplicationStatus_SAFETY_INTERLOCK = 0x40,
@@ -47,8 +52,8 @@
       <Count>1</Count>
     </item>
     <item>
-      <EFDB_Name>offlineSubstate</EFDB_Name>
-      <Description>Substate in OFFLINE mode. An OfflineSubstate enumeration value.</Description>
+      <EFDB_Name>faultSubstate</EFDB_Name>
+      <Description>Substate in FAULT mode. A FaultSubstate enumeration value.</Description>
       <IDL_Type>long</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
@@ -242,6 +247,13 @@
       <Description>Maximum value that can be specified for velocityLimit, using the "configureVelocity" command or the EUI.</Description>
       <IDL_Type>double</IDL_Type>
       <Units>deg/s</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>drivesEnabled</EFDB_Name>
+      <Description>Drives are enabled or not.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
       <Count>1</Count>
     </item>
   </SALEvent>
