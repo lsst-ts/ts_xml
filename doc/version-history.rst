@@ -17,10 +17,10 @@ v20.0.0
 * Update enumerations to match the definitions from the enums submodule (see interface updates).
 * Remove SALPY from the list of valid runtime language.
 * Remove support for octet and char types.
-* Reinstate support to unsigned long long.
 * Remove "kafka" from the topic namespace.
 * Add missing private fields to ``BaseMsgType``.
 * Add version field to documentation conf.py.
+* Removed support for the ``unsigned long`` and ``unsigned long long`` data types.
 
 * Interface updates:
 
@@ -105,6 +105,10 @@ v20.0.0
   * MTM2
 
     * Use the ``string`` data type to replace the ``unsigned long`` and ``unsigned long long`` data types.
+
+  * Test
+
+    * Removed ``unsigned long`` and ``unsigned long long`` attributes from all topics.
 
 v19.0.0
 -------
