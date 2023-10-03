@@ -291,8 +291,6 @@ idl_types = [
     "long long",
     "unsigned short",
     "unsigned int",
-    "unsigned long",
-    "unsigned long long",
     "float",
     "double",
     "string",
