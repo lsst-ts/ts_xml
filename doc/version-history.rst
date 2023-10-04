@@ -3,19 +3,6 @@
 ===============
 Version History
 ===============
-v21.0.0
--------
-
-* Interface updates:
-
-  * LEDProjector
-
-    * Add turnAllLEDsOn, turnAllLEDsOff, turnOnLED, turnOffLED.
-    * Add LEDStates telemetry.
-    * Add labjackConnect, labjackState, ledStates, and ledOnMinutes events.
-
-
-
 v20.0.0
 -------
 
@@ -77,6 +64,11 @@ v20.0.0
   * LaserTracker
 
     * Add AlignComponent enumeration.
+
+  * LEDProjector
+
+    * Add turnAllLEDsOn, turnAllLEDsOff, turnOnLED, turnOffLED.
+    * Add labjackConnect, labjackState, ledStates, and ledOnMinutes events.
 
   * MTAirCompressor
 
