@@ -1,9 +1,9 @@
 .. _Version_History:
 
-
 ===============
 Version History
 ===============
+
 v20.0.0
 -------
 
