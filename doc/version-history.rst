@@ -1,5 +1,6 @@
 .. _Version_History:
 
+
 ===============
 Version History
 ===============
@@ -67,8 +68,9 @@ v20.0.0
 
   * LEDProjector
 
+    * Add LEDBasicState enumeration.
     * Add turnAllLEDsOn, turnAllLEDsOff, turnOnLED, turnOffLED.
-    * Add labjackConnect, labjackState, ledStates, and ledOnMinutes events.
+    * Add LEDProjector_logevent_ledState event.
 
   * MTAirCompressor
 
