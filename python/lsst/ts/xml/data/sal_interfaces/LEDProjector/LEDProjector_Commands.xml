@@ -3,28 +3,28 @@
 <SALCommandSet xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://lsst-sal.tuc.noao.edu/schema/SALCommandSet.xsd">
   <SALCommand>
     <Subsystem>LEDProjector</Subsystem>
-    <EFDB_Topic>LEDProjector_command_turnAllLEDsOn</EFDB_Topic>
-    <Description>Turn on all LEDs connected to the labjack.</Description>
+    <EFDB_Topic>LEDProjector_command_switchAllOn</EFDB_Topic>
+    <Description>Switch on all LEDs connected to the labjack.</Description>
   </SALCommand>
   <SALCommand>
     <Subsystem>LEDProjector</Subsystem>
-    <EFDB_Topic>LEDProjector_command_turnAllLEDsOff</EFDB_Topic>
-    <Description>Turn off all LEDs connected to the labjack.</Description>
+    <EFDB_Topic>LEDProjector_command_switchAllOff</EFDB_Topic>
+    <Description>Switch off all LEDs connected to the labjack.</Description>
   </SALCommand>
   <SALCommand>
     <Subsystem>LEDProjector</Subsystem>
-    <EFDB_Topic>LEDProjector_command_turnOnLED</EFDB_Topic>
-    <Description>Turn on specific LED, named by serial number or numerical ID.</Description>
+    <EFDB_Topic>LEDProjector_command_switchOn</EFDB_Topic>
+    <Description>Switch on specific LED, named by serial number or numerical ID.</Description>
     <item>
-      <EFDB_Name>LED_By_SerialNumber</EFDB_Name>
-      <Description>Serial number of LED to turn on.</Description>
+      <EFDB_Name>serialNumber</EFDB_Name>
+      <Description>Serial number of LED to switch on.</Description>
       <IDL_Type>string</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
     </item>
     <item>
-      <EFDB_Name>LED_By_Index</EFDB_Name>
-      <Description>Index number of LED to turn on.</Description>
+      <EFDB_Name>index</EFDB_Name>
+      <Description>Index number of LED to switch on.</Description>
       <IDL_Type>int</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
@@ -32,20 +32,46 @@
   </SALCommand>
   <SALCommand>
     <Subsystem>LEDProjector</Subsystem>
-    <EFDB_Topic>LEDProjector_command_turnOffLED</EFDB_Topic>
-    <Description>Turn off specific LED, named by serial number or numerical ID.</Description>
+    <EFDB_Topic>LEDProjector_command_switchOff</EFDB_Topic>
+    <Description>Switch off specific LED, named by serial number or numerical ID.</Description>
     <item>
-      <EFDB_Name>LED_By_SerialNumber</EFDB_Name>
-      <Description>Serial number of LED to turn off.</Description>
+      <EFDB_Name>serialNumber</EFDB_Name>
+      <Description>Serial number of LED to switch off.</Description>
       <IDL_Type>string</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
     </item>
     <item>
-      <EFDB_Name>LED_By_Index</EFDB_Name>
-      <Description>Index number of LED to turn off.</Description>
+      <EFDB_Name>index</EFDB_Name>
+      <Description>Index number of LED to switch off.</Description>
       <IDL_Type>int</IDL_Type>
       <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+  </SALCommand>
+  <SALCommand>
+    <Subsystem>LEDProjector</Subsystem>
+    <EFDB_Topic>LEDProjector_logevent_ledOnMinutes</EFDB_Topic>
+    <Description>Time elapsed in minutes that an LED has been on, 0 if off.</Description>
+    <item>
+      <EFDB_Name>index</EFDB_Name>
+      <Description>LED numerical index.</Description>
+      <IDL_Type>int</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>serialNumber</EFDB_Name>
+      <Description>LED serial-number.</Description>
+      <IDL_Type>string</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>elapsedTime</EFDB_Name>
+      <Description>Estimated lamp on time</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>minute</Units>
       <Count>1</Count>
     </item>
   </SALCommand>
