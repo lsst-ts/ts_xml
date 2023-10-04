@@ -7,24 +7,15 @@
     LEDBasicState_On=2,
     LEDBasicState_UnexpectedlyOn=3,
     LEDBasicState_UnexpectedlyOff=4,
-    LEDBasicState_Error=5
+    LEDBasicState_Error=5,
+    LEDBasicState_LabjackError=6,
+    LEDBasicState_LabjackConnected=7,
+    LEDBasicState_LabjackDisconnected=8
   </Enumeration>
   <SALEvent>
     <Subsystem>LEDProjector</Subsystem>
-    <EFDB_Topic>LEDProjector_logevent_labjackConnected</EFDB_Topic>
-    <Description>Is the CSC connected to the labjack controller interfacing with the LEDs?</Description>
-    <item>
-      <EFDB_Name>connected</EFDB_Name>
-      <Description>True if connected, false otherwise.</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-  </SALEvent>
-  <SALEvent>
-    <Subsystem>LEDProjector</Subsystem>
     <EFDB_Topic>LEDProjector_logevent_ledState</EFDB_Topic>
-    <Description>LED status list for all LEDs connected</Description>
+    <Description>LED status for connected LED, can also report labjack connection status</Description>
     <item>
       <EFDB_Name>index</EFDB_Name>
       <Description>LED numerical index.</Description>
@@ -36,13 +27,6 @@
       <EFDB_Name>serialNumber</EFDB_Name>
       <Description>LED serial-number.</Description>
       <IDL_Type>string</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>controllerState</EFDB_Name>
-      <Description>Labjack controller state; a LabjackControllerState enum.</Description>
-      <IDL_Type>int</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
     </item>
