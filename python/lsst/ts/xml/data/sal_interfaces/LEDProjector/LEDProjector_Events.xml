@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="http://lsst-sal.tuc.noao.edu/schema/SALEventSet.xsl"?>
+<SALEventSet xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://lsst-sal.tuc.noao.edu/schema/SALEventSet.xsd">
+  <Enumeration>
+    LEDBasicState_Unknown=0,
+    LEDBasicState_Off=1,
+    LEDBasicState_On=2,
+    LEDBasicState_UnexpectedlyOn=7,
+    LEDBasicState_UnexpectedlyOff=8
+  </Enumeration>
+  <Enumeration>
+    LabjackControllerState_Unknown=0,
+    LabjackControllerState_StandbyOrOn=1,
+    LabjackControllerState_Cooldown=2,
+    LabjackControllerState_Error=3
+  </Enumeration>
+  <SALEvent>
+    <Subsystem>LEDProjector</Subsystem>
+    <EFDB_Topic>LEDProjector_logevent_labjackConnected</EFDB_Topic>
+    <Description>Is the CSC connected to the labjack controller interfacing with the LEDs?</Description>
+    <item>
+      <EFDB_Name>connected</EFDB_Name>
+      <Description>Connected if true, else disconnected</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+  </SALEvent>
+  <SALEvent>
+    <Subsystem>LEDProjector</Subsystem>
+    <EFDB_Topic>LEDProjector_logevent_labjackState</EFDB_Topic>
+    <Description>Labjack interface state</Description>
+    <item>
+      <EFDB_Name>controllerState</EFDB_Name>
+      <Description>Labjack controller state; a LabjackControllerState enum.</Description>
+      <IDL_Type>int</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+  </SALEvent>
+  <SALEvent>
+    <Subsystem>LEDProjector</Subsystem>
+    <EFDB_Topic>LEDProjector_logevent_ledState</EFDB_Topic>
+    <Description>LED status list for all LEDs connected</Description>
+    <item>
+      <EFDB_Name>numericalID</EFDB_Name>
+      <Description>List of LED numerical index correlating with list data</Description>
+      <IDL_Type>int</IDL_Type>
+      <Units>unitless</Units>
+      <Count>10</Count>
+    </item>
+    <item>
+      <EFDB_Name>serialNumber</EFDB_Name>
+      <Description>List of LED serial-numbers correlating with list data</Description>
+      <IDL_Type>string</IDL_Type>
+      <Units>unitless</Units>
+      <Count>10</Count>
+    </item>
+    <item>
+      <EFDB_Name>ledState</EFDB_Name>
+      <Description>LED state; a LEDBasicState enum.</Description>
+      <IDL_Type>int</IDL_Type>
+      <Units>unitless</Units>
+      <Count>10</Count>
+    </item>
+  </SALEvent>
+  <SALEvent>
+    <Subsystem>LEDProjector</Subsystem>
+    <EFDB_Topic>LEDProjector_logevent_ledOnMinutes</EFDB_Topic>
+    <Description>List of estimated times the leds were on in minutes</Description>
+    <item>
+      <EFDB_Name>numericalID</EFDB_Name>
+      <Description>List of LED numerical index correlating with list data</Description>
+      <IDL_Type>int</IDL_Type>
+      <Units>unitless</Units>
+      <Count>10</Count>
+    </item>
+    <item>
+      <EFDB_Name>serialNumber</EFDB_Name>
+      <Description>List of LED serial-numbers correlating with list data</Description>
+      <IDL_Type>string</IDL_Type>
+      <Units>unitless</Units>
+      <Count>10</Count>
+    </item>
+    <item>
+      <EFDB_Name>minutes</EFDB_Name>
+      <Description>Estimated lamp on time</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>minute</Units>
+      <Count>10</Count>
+    </item>
+  </SALEvent>
+</SALEventSet>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="http://lsst-sal.tuc.noao.edu/schema/SALTelemetrySet.xsl"?>
+<SALTelemetrySet xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://lsst-sal.tuc.noao.edu/schema/SALTelemetrySet.xsd">
+  <SALTelemetry>
+    <Subsystem>LEDProjector</Subsystem>
+    <EFDB_Topic>LEDProjector_LEDStates</EFDB_Topic>
+    <Description>List of boolean led on/off with serial number string states of numerical indexed LEDs</Description>
+    <item>
+      <EFDB_Name>numericalID</EFDB_Name>
+      <Description>List of LED numerical index correlating with list data</Description>
+      <IDL_Type>int</IDL_Type>
+      <Units>unitless</Units>
+      <Count>10</Count>
+    </item>
+    <item>
+      <EFDB_Name>serialNumber</EFDB_Name>
+      <Description>List of LED serial-numbers correlating with list data</Description>
+      <IDL_Type>string</IDL_Type>
+      <Units>unitless</Units>
+      <Count>10</Count>
+    </item>
+    <item>
+      <EFDB_Name>ledStates</EFDB_Name>
+      <Description>List of boolean LED States, true if LED is on</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>10</Count>
+    </item>
+  </SALTelemetry>
+</SALTelemetrySet>
