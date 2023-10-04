@@ -102,7 +102,6 @@ ARRAYS_AND_SCALARS_SAL_FIELD_TYPES = dict(
     string0="string",
     unsignedShort0="unsigned short",
     unsignedInt0="unsigned int",
-    unsignedLong0="unsigned long",
     float0="float",
     double0="double",
 )
