@@ -66,6 +66,7 @@ subsystems = [
     "Guider",
     "HVAC",
     "LaserTracker",
+    "LEDProjector",
     "LinearStage",
     "LOVE",
     "MTAOS",

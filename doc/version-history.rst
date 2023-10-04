@@ -66,6 +66,12 @@ v20.0.0
 
     * Add AlignComponent enumeration.
 
+  * LEDProjector
+
+    * Add LEDBasicState enumeration.
+    * Add turnAllLEDsOn, turnAllLEDsOff, turnOnLED, turnOffLED.
+    * Add LEDProjector_logevent_ledState event.
+
   * MTAirCompressor
 
     * Remove unnecessary summaryState enumeration.
