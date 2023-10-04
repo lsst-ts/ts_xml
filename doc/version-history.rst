@@ -101,6 +101,7 @@ v20.0.0
     * Add DAQ monitoring statistics (CAP-703)
     * Fix for image_handling configuration (CAP-1006)
     * Update focal-plane configuration and telemetry (CAP-1011)
+    * Bug fixes (CAP-1013)
 
   * MTM2
 
