@@ -18,42 +18,28 @@
 #
 # You should have received a copy of the GNU General Public License
 
-from . import (
-    ATMCS,
-    DREAM,
-    GIS,
-    HVAC,
-    MTAOS,
-    MTM1M3,
-    MTM2,
-    MTVMS,
-    PMD,
-    ATCamera,
-    ATDome,
-    ATDomeTrajectory,
-    ATHexapod,
-    ATMonochromator,
-    ATPneumatics,
-    ATPtg,
-    ATSpectrograph,
-    ATThermoelectricCooler,
-    ATWhiteLight,
-    Electrometer,
-    FiberSpectrograph,
-    Guider,
-    LaserTracker,
-    LEDProjector,
-    LinearStage,
-    MTDome,
-    MTDomeTrajectory,
-    MTHexapod,
-    MTMount,
-    MTPtg,
-    MTRotator,
-    Scheduler,
-    Script,
-    ScriptQueue,
-    Test,
-    TunableLaser,
-    Watcher,
-)
+__all__ = [
+    "LEDBasicState",
+]
+
+import enum
+
+
+class LEDBasicState(enum.IntEnum):
+    """LED basic state.
+
+    Meanings:
+
+    * UNKNOWN: no connection to the labjack controller.
+    * OFF: LED is off.
+    * ON: LED is on.
+    * ERROR: Any kind of error happening with either switching the LEDs or Labjack communication.
+    * LABJACK_CONNECTED: Connection established with Labjack.
+    * LABJACK_DISCONNECTED: Connection terminated with Labjack.
+    """
+    UNKNOWN = 0
+    OFF = 1
+    ON = 2
+    ERROR = 3
+    LABJACK_CONNECTED = 4
+    LABJACK_DISCONNECTED = 5

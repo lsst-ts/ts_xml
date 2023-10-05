@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="http://lsst-sal.tuc.noao.edu/schema/SALCommandSet.xsl"?>
+<SALCommandSet xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://lsst-sal.tuc.noao.edu/schema/SALCommandSet.xsd">
+  <SALCommand>
+    <Subsystem>LEDProjector</Subsystem>
+    <EFDB_Topic>LEDProjector_command_switchAllOn</EFDB_Topic>
+    <Description>Switch on all LEDs connected to the labjack.</Description>
+  </SALCommand>
+  <SALCommand>
+    <Subsystem>LEDProjector</Subsystem>
+    <EFDB_Topic>LEDProjector_command_switchAllOff</EFDB_Topic>
+    <Description>Switch off all LEDs connected to the labjack.</Description>
+  </SALCommand>
+  <SALCommand>
+    <Subsystem>LEDProjector</Subsystem>
+    <EFDB_Topic>LEDProjector_command_switchOn</EFDB_Topic>
+    <Description>Switch on specific LED, named by serial number or numerical ID.</Description>
+    <item>
+      <EFDB_Name>serialNumber</EFDB_Name>
+      <Description>Serial number of LED to switch on.</Description>
+      <IDL_Type>string</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>index</EFDB_Name>
+      <Description>Index number of LED to switch on.</Description>
+      <IDL_Type>int</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+  </SALCommand>
+  <SALCommand>
+    <Subsystem>LEDProjector</Subsystem>
+    <EFDB_Topic>LEDProjector_command_switchOff</EFDB_Topic>
+    <Description>Switch off specific LED, named by serial number or numerical ID.</Description>
+    <item>
+      <EFDB_Name>serialNumber</EFDB_Name>
+      <Description>Serial number of LED to switch off.</Description>
+      <IDL_Type>string</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>index</EFDB_Name>
+      <Description>Index number of LED to switch off.</Description>
+      <IDL_Type>int</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+  </SALCommand>
+</SALCommandSet>
