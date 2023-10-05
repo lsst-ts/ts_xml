@@ -9,7 +9,7 @@ import pytest
 
 # These nonstandard units are explicitly allowed.
 # Remove entries if and when astropy adds support for them.
-NONSTANDARD_UNITS = {"unitless", "psia", "psig", "VA", "gallon"}
+NONSTANDARD_UNITS = {"unitless", "psia", "psig", "VA"}
 
 
 def check_for_issues(csc: str, topic: str) -> str:
