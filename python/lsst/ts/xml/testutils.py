@@ -66,6 +66,7 @@ subsystems = [
     "Guider",
     "HVAC",
     "LaserTracker",
+    "LEDProjector",
     "LinearStage",
     "LOVE",
     "MTAOS",
@@ -285,19 +286,15 @@ idl_reserved = [
 idl_types = [
     "boolean",
     "byte",
-    "octet",
     "short",
     "int",
     "long",
     "long long",
     "unsigned short",
     "unsigned int",
-    "unsigned long",
-    "unsigned long long",
     "float",
     "double",
     "string",
-    "char",
 ]
 
 db_critical_reserved = ["TIME"]

@@ -1,16 +1,63 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-stylesheet type="text/xsl" href="http://lsst-sal.tuc.noao.edu/schema/SALEventSet.xsl"?>
 <SALEventSet xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://lsst-sal.tuc.noao.edu/schema/SALEventSet.xsd">
-  <Enumeration>SummaryStates_DisabledState,SummaryStates_EnabledState,SummaryStates_FaultState,SummaryStates_OfflineState,SummaryStates_StandbyState</Enumeration>
-  <Enumeration>DetailedStates_DisabledState,DetailedStates_FaultState,DetailedStates_OfflineState,DetailedStates_StandbyState,DetailedStates_ParkedState,DetailedStates_RaisingState,DetailedStates_ActiveState,DetailedStates_LoweringState,DetailedStates_ParkedEngineeringState,DetailedStates_RaisingEngineeringState,DetailedStates_ActiveEngineeringState,DetailedStates_LoweringEngineeringState,DetailedStates_LoweringFaultState,DetailedStates_ProfileHardpointCorrectionState</Enumeration>
-  <Enumeration>BumpTest_NotTested,BumpTest_TestingPositive,BumpTest_TestingPositiveWait,BumpTest_TestingNegative,BumpTest_TestingNegativeWait,BumpTest_Passed,BumpTest_Failed</Enumeration>
-  <Enumeration>HardpointTest_NotTested,HardpointTest_MovingNegative,HardpointTest_TestingPositive,HardpointTest_TestingNegative,HardpointTest_MovingReference,HardpointTest_Passed,HardpointTest_Failed</Enumeration>
+  <Enumeration>
+    SummaryStates_DisabledState,
+    SummaryStates_EnabledState,
+    SummaryStates_FaultState,
+    SummaryStates_OfflineState,
+    SummaryStates_StandbyState
+  </Enumeration>
+  <Enumeration>
+    DetailedStates_DisabledState,
+    DetailedStates_FaultState,
+    DetailedStates_OfflineState,
+    DetailedStates_StandbyState,
+    DetailedStates_ParkedState,
+    DetailedStates_RaisingState,
+    DetailedStates_ActiveState,
+    DetailedStates_LoweringState,
+    DetailedStates_ParkedEngineeringState,
+    DetailedStates_RaisingEngineeringState,
+    DetailedStates_ActiveEngineeringState,
+    DetailedStates_LoweringEngineeringState,
+    DetailedStates_LoweringFaultState,
+    DetailedStates_ProfileHardpointCorrectionState,
+    DetailedStates_PausedRaisingState,
+    DetailedStates_PausedRaisingEngineeringState,
+    DetailedStates_PausedLoweringState,
+    DetailedStates_PausedLoweringEngineeringState
+  </Enumeration>
+  <Enumeration>
+    BumpTest_NotTested,
+    BumpTest_TestingPositive,
+    BumpTest_TestingPositiveWait,
+    BumpTest_TestingNegative,
+    BumpTest_TestingNegativeWait,
+    BumpTest_Passed,BumpTest_Failed
+  </Enumeration>
+  <Enumeration>
+    HardpointTest_NotTested,
+    HardpointTest_MovingNegative,
+    HardpointTest_TestingPositive,
+    HardpointTest_TestingNegative,
+    HardpointTest_MovingReference,
+    HardpointTest_Passed,HardpointTest_Failed
+  </Enumeration>
   <Enumeration>
     HardpointActuatorMotionState_Standby=0,
     HardpointActuatorMotionState_Chasing=1,
     HardpointActuatorMotionState_Stepping=2,
     HardpointActuatorMotionState_QuickPositioning=3,
-    HardpointActuatorMotionState_FinePositiong=4
+    HardpointActuatorMotionState_FinePositioning=4,
+    HardpointActuatorMotionState_WaitingTension=5
+  </Enumeration>
+  <Enumeration>
+    ILCState_STANDBY,
+    ILCState_DISABLED,
+    ILCState_ENABLED,
+    ILCState_FIRMWAREUPDATE,
+    ILCState_FAULT
   </Enumeration>
   <SALEvent>
     <Subsystem>MTM1M3</Subsystem>
@@ -1171,6 +1218,13 @@
       <Count>1</Count>
     </item>
     <item>
+      <EFDB_Name>timeTimeout</EFDB_Name>
+      <Description>Timestamp when raising or lowering operation will timeout.</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>s</Units>
+      <Count>1</Count>
+    </item>
+    <item>
       <EFDB_Name>waitAirPressure</EFDB_Name>
       <Description>Waiting for air pressure to stabilize in hardpoint breakway so mirror raise can start.</Description>
       <IDL_Type>boolean</IDL_Type>
@@ -1286,8 +1340,15 @@
     <EFDB_Topic>MTM1M3_logevent_boosterValveStatus</EFDB_Topic>
     <Description>Various flags related to booster valve operation, both manual and autonomous.</Description>
     <item>
-      <EFDB_Name>slewFlag</EFDB_Name>
-      <Description>Slew flag status.</Description>
+      <EFDB_Name>opened</EFDB_Name>
+      <Description>Booster valves are opened.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>slewTriggered</EFDB_Name>
+      <Description>Opens booster valve as TMA is slewing (slewFlag is set).</Description>
       <IDL_Type>boolean</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
@@ -1404,6 +1465,41 @@
     <item>
       <EFDB_Name>balanceForcesApplied</EFDB_Name>
       <Description>Are the balance forces applied?</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+  </SALEvent>
+  <SALEvent>
+    <Subsystem>MTM1M3</Subsystem>
+    <EFDB_Topic>MTM1M3_logevent_slewControllerSettings</EFDB_Topic>
+    <Description>
+        Reports SlewController state. Shows which forces are managed by the slew controller.
+    </Description>
+    <item>
+      <EFDB_Name>triggerBoosterValves</EFDB_Name>
+      <Description>Trigger opening/closing of the booster valves.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>useAccelerationForces</EFDB_Name>
+      <Description>Are acceleration forces enabled during slews?</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>useBalanceForces</EFDB_Name>
+      <Description>Are balance forces (with modified, Slewing PID settings) enabled during slews?</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>useVelocityForces</EFDB_Name>
+      <Description>Are velocity forces enabled during slews?</Description>
       <IDL_Type>boolean</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
@@ -5426,6 +5522,34 @@
       <Units>unitless</Units>
       <Count>6</Count>
     </item>
+    <item>
+      <EFDB_Name>hardpointBreakawayFaultLow</EFDB_Name>
+      <Description>Always fault the mirror when HP load is below that value. Protect mirror from breakaway mechanism failure.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>N</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>hardpointBreakawayFaultHigh</EFDB_Name>
+      <Description>Always fault the mirror when HP load is above that value. Protect mirror from breakaway mechanism failure.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>N</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>ignoreTensionRaisingLowering</EFDB_Name>
+      <Description>Excessive tension below that elevation will be ignored when raising/lowering the mirror.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>deg</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>inRangeReadoutsToChaseFromWaitingTension</EFDB_Name>
+      <Description>Number of correct (in-range) HP force readouts before Hp can transiton from WaitingTension to Chase.</Description>
+      <IDL_Type>int</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
   </SALEvent>
   <SALEvent>
     <Subsystem>MTM1M3</Subsystem>
@@ -5574,6 +5698,13 @@
     <Subsystem>MTM1M3</Subsystem>
     <EFDB_Topic>MTM1M3_logevent_pidSettings</EFDB_Topic>
     <Description>PID settings. Used by force balancing algorithm to react on HP detected force excess and correct that towards 0. Parameters are transmitted as 6 member array, representing Fx, Fy, Fz, Mx, My and Mz.</Description>
+    <item>
+      <EFDB_Name>settingName</EFDB_Name>
+      <Description>Setting name. Either Slewing or Tracking.</Description>
+      <IDL_Type>string</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
     <item>
       <EFDB_Name>timestep</EFDB_Name>
       <Description>PID's step length.</Description>

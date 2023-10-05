@@ -74,6 +74,25 @@
   </SALCommand>
   <SALCommand>
     <Subsystem>MTM1M3</Subsystem>
+    <EFDB_Topic>MTM1M3_command_pauseM1M3RaisingLowering</EFDB_Topic>
+    <Description>
+        The pauseM1M3RaisingLowering command shall cause M1M3 to stop
+        changing M1M3 supported percentage, which drives M1M3 raising or
+	lowering. Mirror state shall transition to PausedRaising/PausedLowering.
+        Timeout for raising/lowering shall be stopped. Mirror raising/lowering
+        should resume with resumeM1M3RaisingLowering command.
+    </Description>
+  </SALCommand>
+  <SALCommand>
+    <Subsystem>MTM1M3</Subsystem>
+    <EFDB_Topic>MTM1M3_command_resumeM1M3RaisingLowering</EFDB_Topic>
+    <Description>
+        The resumeM1M3RaisingLowering command shall cause M1M3 to resume paused
+        M1M3 raising/lowering.
+    </Description>
+  </SALCommand>
+  <SALCommand>
+    <Subsystem>MTM1M3</Subsystem>
     <EFDB_Topic>MTM1M3_command_enterEngineering</EFDB_Topic>
     <Description>
         The enterEngineering command shall cause the M1M3 support system to go
@@ -813,7 +832,7 @@
     </Description>
     <item>
       <EFDB_Name>forceComponent</EFDB_Name>
-      <Description>Force component to Enable or Disable. One of the EnableDisable_ enumeration member.</Description>
+      <Description>Force component to Enable or Disable. One of the enumeration member.</Description>
       <IDL_Type>short</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
@@ -831,6 +850,34 @@
     <item>
       <EFDB_Name>enable</EFDB_Name>
       <Description>True if force component shall be enabled.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+  </SALCommand>
+  <SALCommand>
+    <Subsystem>MTM1M3</Subsystem>
+    <EFDB_Topic>MTM1M3_command_setSlewControllerSettings</EFDB_Topic>
+    <Description>
+        Enable and disable forces managed by the slew controller. Those settings
+        manage which forces are activated or disabled by the slew controller during slews.
+    </Description>
+    <item>
+      <EFDB_Name>slewSettings</EFDB_Name>
+      <Description>Which force component slew settings will be changed. One of the enumeration member.</Description>
+      <IDL_Type>short</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+      <Enumeration>
+        AccelerationForces=1,
+        BalanceForces=2,
+        BoosterValves=3,
+        VelocityForces=4
+      </Enumeration>
+    </item>
+    <item>
+      <EFDB_Name>enableSlewManagement</EFDB_Name>
+      <Description>True if force component shall be controlled by the slew controller.</Description>
       <IDL_Type>boolean</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>

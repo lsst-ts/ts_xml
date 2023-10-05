@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="http://lsst-sal.tuc.noao.edu/schema/SALEventSet.xsl"?>
+<SALEventSet xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://lsst-sal.tuc.noao.edu/schema/SALEventSet.xsd">
+  <Enumeration>
+    LEDBasicState_Unknown=0,
+    LEDBasicState_Off=1,
+    LEDBasicState_On=2,
+    LEDBasicState_Error=3,
+    LEDBasicState_LabjackConnected=4,
+    LEDBasicState_LabjackDisconnected=5
+  </Enumeration>
+  <SALEvent>
+    <Subsystem>LEDProjector</Subsystem>
+    <EFDB_Topic>LEDProjector_logevent_ledState</EFDB_Topic>
+    <Description>LED status for connected LED, can also report labjack connection status</Description>
+    <item>
+      <EFDB_Name>index</EFDB_Name>
+      <Description>LED numerical index.</Description>
+      <IDL_Type>int</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>serialNumber</EFDB_Name>
+      <Description>LED serial-number.</Description>
+      <IDL_Type>string</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>ledBasicState</EFDB_Name>
+      <Description>LED state; a LEDBasicState enum.</Description>
+      <IDL_Type>int</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+  </SALEvent>
+</SALEventSet>

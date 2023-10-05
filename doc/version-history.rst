@@ -4,6 +4,120 @@
 Version History
 ===============
 
+v20.0.0
+-------
+
+* Update the package ``__init__.py`` file to properly export the package version.
+* Copy enumerations for ts-idl into a new enums submodule.
+* Allow components to still define SummaryState enumerations in their xml files while generic enumerations are not supported by C/C++ SAL.
+* Move the code that defines SAL topics structure and generate avro-schema files from the kafka version of salobj.
+  * Add private_revCode back to the generic fields.
+  * Add support for computing rev_code.
+* Make ATMCS and ATPneumatics configurable in preparation for switching to Python CSCs.
+* Update enumerations to match the definitions from the enums submodule (see interface updates).
+* Remove SALPY from the list of valid runtime language.
+* Remove support for octet and char types.
+* Remove "kafka" from the topic namespace.
+* Add missing private fields to ``BaseMsgType``.
+* Add version field to documentation conf.py.
+* Removed support for the ``unsigned long`` and ``unsigned long long`` data types.
+
+* Interface updates:
+
+  * Generics
+
+    * Add SummaryState enumeration.
+
+  * ATBuilding
+
+    * Remove unused detailedState event and enumeration.
+
+  * ATHexapod
+
+    * Remove unnecessary summaryState enumeration.
+
+  * ATMonochromator
+
+    * Remove unnecessary summaryState enumeration.
+    * Add ErrorCode enumeration.
+
+  * ATSpectrograph
+
+    * Add DisperserPosition and FilterPosition enumerations.
+
+  * EAS
+
+    * Remove unused detailedState event and enumeration.
+
+  * Electrometer
+
+    * Remove unnecessary summaryState enumeration.
+
+  * ESS
+
+    * Add "Item" to telemetry item names to avoid clashes with topic names.
+
+  * HVAC
+
+    * Move DeviceIndex, DEVICE_GROUPS and DEVICE_GROUP_IDS to ts_hvac.
+    * Add alarm and status events for all systems but Dynalene.
+
+  * LaserTracker
+
+    * Add AlignComponent enumeration.
+
+  * LEDProjector
+
+    * Add LEDBasicState enumeration.
+    * Add turnAllLEDsOn, turnAllLEDsOff, turnOnLED, turnOffLED.
+    * Add LEDProjector_logevent_ledState event.
+
+  * MTAirCompressor
+
+    * Remove unnecessary summaryState enumeration.
+
+  * MTDome
+
+    * Set aperture shutter positionCommanded to two values.
+    * Add rear access door status telemetry and enum.
+
+  * MTHexapod
+
+    * Add ErrorCode enumeration.
+
+  * MTM1M3
+
+    * Commands to pause and resume mirror raising or lowering
+    * Add ILCState enumeration.
+    * Settings fields for raising M1M3 at low elevation
+    * Improved slew control and reporting - SlewControllerState, name for PID settings
+    * Added various M1M3 support and thermal systems constants - lsst.ts.xml.tables
+
+  * MTRotator
+
+    * Add ErrorCode enumeration.
+
+  * TunableLaser
+
+    * Replace detailedState enumeration with LaserDetailedState.
+    * Add new LaserErrorCode enumeration.
+
+  * ATCamera/CCCamera/MTCamera
+
+    * Add DAQ monitoring statistics (CAP-703)
+    * Fix for image_handling configuration (CAP-1006)
+    * Update focal-plane configuration and telemetry (CAP-1011)
+    * Update MTCamera for new cold/chiller/hex systems (CAP-1008)
+    * Bug fixes (CAP-1013)
+
+  * MTM2
+
+    * Use the ``string`` data type to replace the ``unsigned long`` and ``unsigned long long`` data types.
+
+  * Test
+
+    * Removed ``unsigned long`` and ``unsigned long long`` attributes from all topics.
+
 v19.0.0
 -------
 * Remove the unrecognized pytest flags in **pyproject.toml**.
