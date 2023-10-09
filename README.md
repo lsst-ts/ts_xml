@@ -15,7 +15,7 @@ This repository contains all the interface definition files for all the CSCs of 
 
 * (https://github.com/lsst-ts/ts_sal) 
 
-The SAL produces libraries in C++, LabVIEW, Java, PyDDS, and Python, for each CSC.  These libraries are then used by all the CSCs that need to publish or subscribe to any message topic.
+The SAL produces libraries in C++, LabVIEW, and Java for each CSC.  These libraries are then used by all the CSCs that need to publish or subscribe to any message topic.
 
 ### Installation and Usage
 
@@ -35,10 +35,10 @@ To build the documentation::
 To ensure the successful build of your libraries, there are unit tests contained in the tests/ directory.  To run them, first setup the test environment
 
 ```
-pip install -r test_requirements.txt -e .
+pip install .[test]
 ```
 
-This will install the pytest, pytest-flake8 and astropy modules used to verify the XML files are correct.  Then execute:
+This will install the pytest, astropy, lxml and numpy dependency modules used to verify the XML files are correct.  Then execute:
 
 ```
 pytest -ra
@@ -52,23 +52,15 @@ to find the specific ticket.
 
 ### XML formatting, XML linting
 
-xmllint (http://xmlsoft.org) is used in GitHub action to check committed files format. Two spaces ("  ") are used for indentation (xmllint default). The files can be reformatted running xmllint --format, such as:
+Linting is enforced on GitHub through GitHub Actions (.github/workflows/xml-format.yaml). 
 
-```bash
-for f in $(find python/lsst/ts/xml/data -name "*.xml"); do xmllint --format $f > /tmp/$$lint; cp /tmp/$$lint $f; done && rm /tmp/$$lint
-```
+lxml (https://lxml.de/) is used in unit tests to verify files conform to the XML format standards.  Additionally, pre-commit has been setup on this repo, so various linting checks are done with each push to GitHub.  If you wish to have these checks run locally with each commit, please follow the instructions in the TSSW Developer Guide
 
-Xmllint is usually part of the libxml2 package, so to install it on Mac, do:
-
-```bash
-brew install libxml2
-```
-
-Linting is enforced on GitHub through github action (.github/workflows/xml-format.yaml). If you have xmllint installed locally, you can copy .githooks/pre-commit to .git/hooks/pre-commit to have XML formating checked before every commit.
+* [Pre-Commit](https://tssw-developer.lsst.io/procedures/pre_commit.html)
 
 #### Test Utilities
 
-The testutils.py file, located in python/lsst/ts/xml, contains functions and variables used throughout the testing.  The lists of generic Commands and Events, as well as Reserved Words, imposed by third party tools, are all defined in testutils.py.  Most importantly, the independent list of expected CSCs is also defined here.  If these lists change, the corresponding list in testutils.py **must** also be updated, for example, if a CSC is added, removed or renamed, the tests will produce the following error:
+The testutils.py file, located in python/lsst/ts/xml, contains functions and variables used throughout the testing.  The lists of generic Commands and Events, as well as Reserved Words, imposed by third party tools, are all defined in testutils.py.  **Most importantly, the independent list of expected CSCs is also defined here**.  If these lists change, the corresponding list in testutils.py **must** also be updated.  For example, if a CSC is added, removed or renamed, the tests will produce the following error:
 
 ```
 AssertionError: There is an unexpected number of CSCs.
@@ -77,6 +69,10 @@ AssertionError: There is an unexpected number of CSCs.
 In case this error occurs, the subsystems list in testutils.py should be updated accordingly.
 
 ### Add, Rename or Delete a CSC
+
+**NOTE:** Any changes to the list of CSCs must be approved at the CAP meeting **BEFORE** the changes are made.  Please add an agenda item to the appropriate weekly meeting.
+
+* [Weekly Meeting](https://confluence.lsstcorp.org/display/LSSTCOM/Weekly+Meetings)
 
 Adding, renaming or deleting a CSC, involve operations on files and directories within python/lsst/ts/xml. To add a CSC:
 

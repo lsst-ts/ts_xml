@@ -4,6 +4,11 @@
 Version History
 ===============
 
+v20.1.0
+-------
+
+* Updated the contents of the README.
+
 v20.0.0
 -------
 
