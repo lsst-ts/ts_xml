@@ -17,6 +17,11 @@ v20.1.0
     * Rename the item ``offlineSubstate`` to ``faultSubstate`` in ``MTRotator_logevent_controllerState`` topic.
     * Add the new item ``drivesEnabled`` to ``MTRotator_logevent_configuration`` topic.
 
+  * MTHexapod
+
+    * Fix and improve the description in ``MTHexapod_actuators`` topic.
+    * Add the new item ``copleyFaultStatus`` and improve the description in ``MTHexapod_electrical`` topic.
+
 v20.0.0
 -------
 
