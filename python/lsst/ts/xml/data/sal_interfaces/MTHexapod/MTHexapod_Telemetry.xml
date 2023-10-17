@@ -6,21 +6,21 @@
     <EFDB_Topic>MTHexapod_actuators</EFDB_Topic>
     <item>
       <EFDB_Name>calibrated</EFDB_Name>
-      <Description>Linear encoder readings from each MTHexapod actuator (x1,x2,x3,x4,x5,x6) in microns</Description>
+      <Description>Estimated strut length from each MTHexapod actuator (x1,x2,x3,x4,x5,x6) in microns</Description>
       <IDL_Type>double</IDL_Type>
       <Units>um</Units>
       <Count>6</Count>
     </item>
     <item>
       <EFDB_Name>raw</EFDB_Name>
-      <Description>Linear encoder readings from each MTHexapod actuator (x1,x2,x3,x4,x5,x6) in counts</Description>
+      <Description>Linear encoder readings from each MTHexapod actuator (x1,x2,x3,x4,x5,x6) in counts/nanometer (raw linear load encoder, 0x6064)</Description>
       <IDL_Type>double</IDL_Type>
       <Units>unitless</Units>
       <Count>6</Count>
     </item>
     <item>
       <EFDB_Name>positionError</EFDB_Name>
-      <Description>Position error of each MTHexapod actuator (x1,x2,x3,x4,x5,x6) in microns</Description>
+      <Description>Position error of each MTHexapod actuator (x1,x2,x3,x4,x5,x6) in microns (following error actual value, 0x60F4)</Description>
       <IDL_Type>double</IDL_Type>
       <Units>micron</Units>
       <Count>6</Count>
@@ -63,28 +63,35 @@
     <EFDB_Topic>MTHexapod_electrical</EFDB_Topic>
     <item>
       <EFDB_Name>copleyStatusWordDrive</EFDB_Name>
-      <Description>Bus undervoltage fault, bus overvoltage fault, and overcurrent fault are all being monitored for each drive channel</Description>
+      <Description>Bus undervoltage fault, bus overvoltage fault, and overcurrent fault are all being monitored for each drive channel (drive status word, 0x6041).</Description>
       <IDL_Type>unsigned short</IDL_Type>
       <Units>unitless</Units>
       <Count>6</Count>
     </item>
     <item>
       <EFDB_Name>copleyLatchingFaultStatus</EFDB_Name>
-      <Description>Copley latching fault status</Description>
+      <Description>Copley latching fault status (0x2183).</Description>
       <IDL_Type>unsigned short</IDL_Type>
       <Units>unitless</Units>
       <Count>6</Count>
     </item>
     <item>
+      <EFDB_Name>copleyFaultStatus</EFDB_Name>
+      <Description>Copley sticky amplifier event status register (0x2180).</Description>
+      <IDL_Type>unsigned int</IDL_Type>
+      <Units>unitless</Units>
+      <Count>6</Count>
+    </item>
+    <item>
       <EFDB_Name>motorCurrent</EFDB_Name>
-      <Description>Actual current for each strut motor</Description>
+      <Description>Actual current for each strut motor.</Description>
       <IDL_Type>double</IDL_Type>
       <Units>A</Units>
       <Count>6</Count>
     </item>
     <item>
       <EFDB_Name>busVoltage</EFDB_Name>
-      <Description>Actual bus voltage for each pair of strut motors</Description>
+      <Description>Actual bus voltage for each pair of strut motors.</Description>
       <IDL_Type>double</IDL_Type>
       <Units>V</Units>
       <Count>3</Count>

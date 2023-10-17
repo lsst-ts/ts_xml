@@ -8,6 +8,19 @@ v20.1.0
 -------
 
 * Updated the contents of the README.
+* Interface updates:
+
+  * MTRotator
+
+    * Add FaultSubstate enumeration.
+    * Add the new item ``copleyFaultStatus`` in ``MTRotator_electrical`` topic.
+    * Rename the item ``offlineSubstate`` to ``faultSubstate`` in ``MTRotator_logevent_controllerState`` topic.
+    * Add the new item ``drivesEnabled`` to ``MTRotator_logevent_configuration`` topic.
+
+  * MTHexapod
+
+    * Fix and improve the description in ``MTHexapod_actuators`` topic.
+    * Add the new item ``copleyFaultStatus`` and improve the description in ``MTHexapod_electrical`` topic.
 
 v20.0.0
 -------
