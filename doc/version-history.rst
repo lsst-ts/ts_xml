@@ -7,6 +7,8 @@ Version History
 v20.1.0
 -------
 
+* Added GPLv3 license file.
+* Added .gitattributes and .gitarchive to support getting version information from setuptools_scm for a git tarball.
 * Updated the contents of the README.
 * Interface updates:
 
