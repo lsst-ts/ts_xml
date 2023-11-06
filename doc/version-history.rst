@@ -24,6 +24,11 @@ v20.1.0
     * Fix and improve the description in ``MTHexapod_actuators`` topic.
     * Add the new item ``copleyFaultStatus`` and improve the description in ``MTHexapod_electrical`` topic.
 
+  * MTM2
+
+    * Reuse the enum **BumpTest** in MTM1M3.
+    * Add the topics: ``MTM2_logevent_actuatorBumpTestStatus`` and ``MTM2_command_killActuatorBumpTest``.
+
 v20.0.0
 -------
 
