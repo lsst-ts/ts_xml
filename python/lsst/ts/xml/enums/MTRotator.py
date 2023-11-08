@@ -89,9 +89,9 @@ class FaultSubstate(enum.IntEnum):
     This is enum ``FaultSubStates`` in Simulink model.
     """
 
-    EMERGENCY_STOPPING = 0
+    NO_ERROR = 0
+    EMERGENCY_STOPPING = enum.auto()
     WAIT_CLEAR_ERROR = enum.auto()
-    NO_ERROR = enum.auto()
 
 
 class ApplicationStatus(enum.IntFlag):
