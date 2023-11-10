@@ -4,12 +4,31 @@
 Version History
 ===============
 
-v20.1.0
+v21.0.0
 -------
 
 * Added GPLv3 license file.
+
 * Added .gitattributes and .gitarchive to support getting version information from setuptools_scm for a git tarball.
+
 * Updated the contents of the README.
+
+* In ``get_component_info.py``:
+
+  * Copy the component xml files alongside the avro schema files and also generate the generics xml file.
+  * Write a file with the list of revcodes.
+  * Update path to where avro schema is written to add the component name to the path.
+
+* In ``tests/test_component_info.py``, small patch to support running the tests now that float/double can also be "null".
+
+* In ``field_info.py``:
+
+  * Add support for floating point values to be set as ``None``.
+  * Fix SAL to AVRO type conversion for SAL-long type.
+    According to AVRO documentation SAL-long is actually AVRO-int.
+
+* Fix style violation in ``enums/LEDProjector.py``.
+
 * Interface updates:
 
   * MTRotator
