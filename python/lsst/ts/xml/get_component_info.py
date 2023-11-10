@@ -24,10 +24,13 @@ __all__ = ["get_component_info"]
 import argparse
 import json
 import pathlib
+import shutil
+from xml.etree import ElementTree
 
 from . import subsystems
 from .component_info import ComponentInfo
 from .get_enums_from_xml import get_field_and_global_enums
+from .utils import get_sal_interfaces_dir
 
 VALID_COMPONENT_NAMES = set(subsystems)
 
@@ -161,3 +164,62 @@ def generate_component_info(name: str, output_dir: pathlib.PosixPath) -> None:
 
     with open(hash_table_path, "w") as fp:
         fp.write(json.dumps(result["hash_table"], indent=4))
+
+    # Copy the xml files
+    print("Generating xml.")
+
+    sal_interfaces_dir = get_sal_interfaces_dir()
+
+    component_interface_dir = sal_interfaces_dir / name
+
+    for xml_file in component_interface_dir.glob("*.xml"):
+        print(f"{xml_file} -> {component_output_dir}")
+        shutil.copy(xml_file, component_output_dir)
+
+    # Generate the generics.
+    generics = ElementTree.parse(sal_interfaces_dir / "SALGenerics.xml")
+    generics_root = generics.getroot()
+
+    for set_index in range(len(generics_root)):
+        elements_to_delete = []
+        for element in generics_root[set_index]:
+            if element.tag == "Enumeration":
+                continue
+            topic_name_sub_element = element.find("EFDB_Topic")
+            assert isinstance(topic_name_sub_element, ElementTree.Element)
+            topic_name_str = topic_name_sub_element.text
+
+            category_element = element.find("Category")
+            category = (
+                category_element.text
+                if category_element is not None
+                else topic_name_str
+            )
+
+            if (
+                category not in component_info.added_generics
+                and category != "mandatory"
+            ):
+                elements_to_delete.append(element)
+
+        for element in elements_to_delete:
+            generics_root[set_index].remove(element)
+
+        for topic_index in range(len(generics_root[set_index])):
+            for attr_index in range(len(generics_root[set_index][topic_index])):
+                if generics_root[set_index][topic_index][attr_index].tag in {
+                    "Subsystem",
+                    "EFDB_Topic",
+                }:
+                    new_text = generics_root[set_index][topic_index][attr_index].text
+                    if new_text is not None:
+                        new_text = new_text.replace("SALGeneric", f"{name}")
+                        generics_root[set_index][topic_index][
+                            attr_index
+                        ].text = new_text
+
+    generics.write(
+        component_output_dir / f"{name}_Generics.xml",
+        encoding="utf-8",
+        xml_declaration=True,
+    )
