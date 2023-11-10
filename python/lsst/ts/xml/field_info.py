@@ -45,17 +45,21 @@ PYTHON_TYPES = {
 }
 
 # Dict of SAL type: Avro type
+# SAL-long (this is 4 byte integer) -> AVRO-int: 32-bit signed integer
+# SAL-long long (8 byte integer) -> AVRO-long: 64-bit signed integer
+# AVRO has no unsigned types so all unsigned values are converted to the
+# signed equivalent.
 AVRO_TYPES = {
     "boolean": "boolean",
     "byte": "int",
     "short": "int",
     "int": "int",
-    "long": "long",
+    "long": "int",
     "long long": "long",
     "unsigned short": "int",
     "unsigned int": "long",
-    "float": "float",
-    "double": "double",
+    "float": ["float", "null"],
+    "double": ["double", "null"],
     "string": "string",
 }
 

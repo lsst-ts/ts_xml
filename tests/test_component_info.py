@@ -243,7 +243,7 @@ class ComponentInfoTestCase(unittest.TestCase):
                 expected_item_default = dict(
                     string="",
                     boolean=False,
-                ).get(expected_avro_item_type, 0)
+                ).get(field_info.sal_type, 0)
                 if isarray and field_name.endswith("0"):
                     expected_type = dict(type="array", items=expected_avro_item_type)
                     expected_default: typing.Any = [expected_item_default] * 5

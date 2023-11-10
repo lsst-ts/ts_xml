@@ -33,10 +33,12 @@ class LEDBasicState(enum.IntEnum):
     * UNKNOWN: no connection to the labjack controller.
     * OFF: LED is off.
     * ON: LED is on.
-    * ERROR: Any kind of error happening with either switching the LEDs or Labjack communication.
+    * ERROR: Any kind of error happening with either switching the LEDs or
+        Labjack communication.
     * LABJACK_CONNECTED: Connection established with Labjack.
     * LABJACK_DISCONNECTED: Connection terminated with Labjack.
     """
+
     UNKNOWN = 0
     OFF = 1
     ON = 2
