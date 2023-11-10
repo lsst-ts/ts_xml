@@ -112,8 +112,12 @@ def generate_component_info(name: str, output_dir: pathlib.PosixPath) -> None:
         "global_enums": [info.as_tuple() for info in global_enums],
     }
 
+    component_output_dir = output_dir / name
+    if not component_output_dir.exists():
+        component_output_dir.mkdir(parents=True)
+
     for topic in result["topics"]:
-        schema_path = output_dir / f"{name}_{topic}.json"
+        schema_path = component_output_dir / f"{name}_{topic}.json"
         print(f"Writing {schema_path} ...")
         with open(schema_path, "w") as fp:
             assert isinstance(result["topics"], dict)
@@ -130,7 +134,7 @@ def generate_component_info(name: str, output_dir: pathlib.PosixPath) -> None:
             field_enums_dict[topic_name] = field_enum_value
 
     if field_enums_dict:
-        field_enums_path = output_dir / f"{name}_field_enums.json"
+        field_enums_path = component_output_dir / f"{name}_field_enums.json"
         print(f"Writing {field_enums_path} ...")
         with open(field_enums_path, "w") as fp:
             fp.write(json.dumps(field_enums_dict, indent=4))
@@ -139,7 +143,7 @@ def generate_component_info(name: str, output_dir: pathlib.PosixPath) -> None:
 
     global_enums_dict: dict[str, str] = dict(result["global_enums"])  # type: ignore
     if global_enums_dict:
-        global_enums_path = output_dir / f"{name}_global_enums.json"
+        global_enums_path = component_output_dir / f"{name}_global_enums.json"
 
         print(f"Writing {global_enums_path} ...")
         with open(global_enums_path, "w") as fp:
