@@ -110,6 +110,10 @@ def generate_component_info(name: str, output_dir: pathlib.PosixPath) -> None:
         },
         "field_enums": [info.as_tuple() for info in field_enums],
         "global_enums": [info.as_tuple() for info in global_enums],
+        "hash_table": {
+            topic_info.sal_name: topic_info.get_revcode()
+            for topic_info in component_info.topics.values()
+        },
     }
 
     component_output_dir = output_dir / name
@@ -150,3 +154,10 @@ def generate_component_info(name: str, output_dir: pathlib.PosixPath) -> None:
             fp.write(json.dumps(global_enums_dict, indent=4))
     else:
         print(f"No global enumerations for {name}.")
+
+    # Generate the hash table (table with the rev_code for all topics).
+    hash_table_path = component_output_dir / f"{name}_hash_table.json"
+    print(f"Writing {hash_table_path} ...")
+
+    with open(hash_table_path, "w") as fp:
+        fp.write(json.dumps(result["hash_table"], indent=4))
