@@ -216,7 +216,7 @@
   <SALCommand>
     <Subsystem>MTM2</Subsystem>
     <EFDB_Topic>MTM2_command_actuatorBumpTest</EFDB_Topic>
-    <Description>Exercise the actuator bump test in the closed-loop control, which is performed at +/push and -/pull directions.</Description>
+    <Description>Exercise the asynchronous task of actuator bump test in the closed-loop control, which is performed at +/push and -/pull directions. The time will be a little more than (4 * period) with the consideration of function overhead. While bumping the actuator, you can not do other actions such as moving the rigid body or others before the end of test. You can base on the MTM2_logevent_actuatorBumpTestStatus topic to know the current bumping status.</Description>
     <item>
       <EFDB_Name>actuator</EFDB_Name>
       <Description>0-based actuator ID.</Description>
@@ -238,5 +238,10 @@
       <Units>second</Units>
       <Count>1</Count>
     </item>
+  </SALCommand>
+  <SALCommand>
+    <Subsystem>MTM2</Subsystem>
+    <EFDB_Topic>MTM2_command_killActuatorBumpTest</EFDB_Topic>
+    <Description>Kill the running actuator bump test in the closed-loop control.</Description>
   </SALCommand>
 </SALCommandSet>
