@@ -14,7 +14,7 @@ v20.1.0
 
   * MTRotator
 
-    * Add FaultSubstate enumeration.
+    * Add FaultSubstate enumeration (updated).
     * Add the new item ``copleyFaultStatus`` in ``MTRotator_electrical`` topic.
     * Rename the item ``offlineSubstate`` to ``faultSubstate`` in ``MTRotator_logevent_controllerState`` topic.
     * Add the new item ``drivesEnabled`` to ``MTRotator_logevent_configuration`` topic.
