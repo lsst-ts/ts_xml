@@ -50,7 +50,7 @@ v21.0.0
   * MTM2
 
     * Reuse the enum **BumpTest** in MTM1M3.
-    * Add the topics: ``MTM2_logevent_actuatorBumpTestStatus`` and ``MTM2_command_killActuatorBumpTest``.
+    * Add the topics: ``MTM2_logevent_actuatorBumpTestStatus``, ``MTM2_command_killActuatorBumpTest``, and ``MTM2_command_setHardpointList``.
 
 v20.0.0
 -------
