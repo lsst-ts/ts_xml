@@ -31,6 +31,10 @@ v21.0.0
 
 * Interface updates:
 
+  * ATMCS
+
+    * Fix typo in the ``ATMCS_nasmyth_m3_mountMotorEncoders`` telemetry topic name.
+
   * MTRotator
 
     * Add FaultSubstate enumeration (updated).
