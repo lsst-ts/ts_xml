@@ -247,7 +247,7 @@
   <SALCommand>
     <Subsystem>MTM2</Subsystem>
     <EFDB_Topic>MTM2_command_setHardpointList</EFDB_Topic>
-    <Description>Set the hardpoint list. The bad selection of hardpoints will be rejected immediately by the internal evaluation. See the check_hardpoints() in ts_m2com for more details.</Description>
+    <Description>Set the hardpoint list. When there is a failed actuator, it should be selected to be hardpoint to let the telescope continue the survey in the night. The failed actuator will be fixed/inspected in a latter time. There is some geometry requirement for the selection of hardpoints. The bad selection of hardpoints will be rejected immediately by the internal evaluation. See the check_hardpoints() in ts_m2com for more details.</Description>
     <item>
       <EFDB_Name>actuators</EFDB_Name>
       <Description>Ordered 0-based actuator Ids to be the hardpoints. The first three are the axial actuators and the latters are the tangent links.</Description>
