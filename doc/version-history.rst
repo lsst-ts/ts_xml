@@ -52,6 +52,12 @@ v21.0.0
     * Reuse the enum **BumpTest** in MTM1M3.
     * Add the topics: ``MTM2_logevent_actuatorBumpTestStatus``, ``MTM2_command_killActuatorBumpTest``, and ``MTM2_command_setHardpointList``.
 
+  * ATCamera/CCCamera/MTCamera
+    * Full refresh of camera Events/Telemetry XML based on currently installed CCS subsystems
+    * XML now based derived from https://github.com/lsst-camera-ccs/org-lsst-ccs-camera-sal-xml
+    * Current release: https://github.com/lsst-camera-ccs/org-lsst-ccs-camera-sal-xml/releases/tag/org-lsst-ccs-camera-sal-xml-parent-1.0.1
+    * Reviewing changes for individual CCS subsystem is possible by comparing to previous XML release., e.g. https://github.com/lsst-camera-ccs/org-lsst-ccs-camera-sal-xml/compare/refactor_XML_20...org-lsst-ccs-camera-sal-xml-parent-1.0.1#diff
+
 v20.0.0
 -------
 
