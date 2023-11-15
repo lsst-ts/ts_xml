@@ -22,6 +22,7 @@ __all__ = [
     "ControllerState",
     "OfflineSubstate",
     "EnabledSubstate",
+    "FaultSubstate",
     "ApplicationStatus",
     "ErrorCode",
 ]
@@ -41,9 +42,9 @@ class ControllerState(enum.IntEnum):
     """
 
     STANDBY = 0
-    DISABLED = enum.auto()
+    DISABLED = enum.auto()  # Deprecated in rotator
     ENABLED = enum.auto()
-    OFFLINE = enum.auto()
+    OFFLINE = enum.auto()  # Deprecated in rotator
     FAULT = enum.auto()
 
 
@@ -53,6 +54,10 @@ class OfflineSubstate(enum.IntEnum):
     Value reported in ``telemetry.offline_substate``.
 
     This is enum ``OfflineSubStates`` in Moog code.
+
+    Deprecated in the rotator.
+
+    TODO: Remove this after simplifying the state machine in hexapod, DM-39787.
     """
 
     PUBLISH_ONLY = 0
@@ -71,9 +76,22 @@ class EnabledSubstate(enum.IntEnum):
     MOVING_POINT_TO_POINT = enum.auto()
     SLEWING_OR_TRACKING = enum.auto()
     CONTROLLED_STOPPING = enum.auto()
-    INITIALIZING = enum.auto()
-    RELATIVE = enum.auto()
+    INITIALIZING = enum.auto()  # Deprecated in rotator
+    RELATIVE = enum.auto()  # Deprecated in rotator
     CONSTANT_VELOCITY = enum.auto()
+
+
+class FaultSubstate(enum.IntEnum):
+    """Controller substate for the FAULT state.
+
+    Value reported in ``telemetry.fault_substate``.
+
+    This is enum ``FaultSubStates`` in Simulink model.
+    """
+
+    NO_ERROR = 0
+    EMERGENCY_STOPPING = enum.auto()
+    WAIT_CLEAR_ERROR = enum.auto()
 
 
 class ApplicationStatus(enum.IntFlag):

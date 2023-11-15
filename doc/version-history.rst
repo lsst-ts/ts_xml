@@ -4,6 +4,62 @@
 Version History
 ===============
 
+v20.1.0
+-------
+
+* Added GPLv3 license file.
+
+* Added .gitattributes and .gitarchive to support getting version information from setuptools_scm for a git tarball.
+
+* Updated the contents of the README.
+
+* In ``get_component_info.py``:
+
+  * Copy the component xml files alongside the avro schema files and also generate the generics xml file.
+  * Write a file with the list of revcodes.
+  * Update path to where avro schema is written to add the component name to the path.
+
+* In ``tests/test_component_info.py``, small patch to support running the tests now that float/double can also be "null".
+
+* In ``field_info.py``:
+
+  * Add support for floating point values to be set as ``None``.
+  * Fix SAL to AVRO type conversion for SAL-long type.
+    According to AVRO documentation SAL-long is actually AVRO-int.
+
+* Fix style violation in ``enums/LEDProjector.py``.
+
+* Use Astropy infrastructure to formally add new units. Enabled Imperial units to support use of the gallon unit.
+
+* Interface updates:
+
+  * ATMCS
+
+    * Fix typo in the ``ATMCS_nasmyth_m3_mountMotorEncoders`` telemetry topic name.
+
+  * MTRotator
+
+    * Add FaultSubstate enumeration (updated).
+    * Add the new item ``copleyFaultStatus`` in ``MTRotator_electrical`` topic.
+    * Rename the item ``offlineSubstate`` to ``faultSubstate`` in ``MTRotator_logevent_controllerState`` topic.
+    * Add the new item ``drivesEnabled`` to ``MTRotator_logevent_configuration`` topic.
+
+  * MTHexapod
+
+    * Fix and improve the description in ``MTHexapod_actuators`` topic.
+    * Add the new item ``copleyFaultStatus`` and improve the description in ``MTHexapod_electrical`` topic.
+
+  * MTM2
+
+    * Reuse the enum **BumpTest** in MTM1M3.
+    * Add the topics: ``MTM2_logevent_actuatorBumpTestStatus``, ``MTM2_command_killActuatorBumpTest``, and ``MTM2_command_setHardpointList``.
+
+  * ATCamera/CCCamera/MTCamera
+    * Full refresh of camera Events/Telemetry XML based on currently installed CCS subsystems
+    * XML now based derived from https://github.com/lsst-camera-ccs/org-lsst-ccs-camera-sal-xml
+    * Current release: https://github.com/lsst-camera-ccs/org-lsst-ccs-camera-sal-xml/releases/tag/org-lsst-ccs-camera-sal-xml-parent-1.0.1
+    * Reviewing changes for individual CCS subsystem is possible by comparing to previous XML release., e.g. https://github.com/lsst-camera-ccs/org-lsst-ccs-camera-sal-xml/compare/refactor_XML_20...org-lsst-ccs-camera-sal-xml-parent-1.0.1#diff
+
 v20.0.0
 -------
 

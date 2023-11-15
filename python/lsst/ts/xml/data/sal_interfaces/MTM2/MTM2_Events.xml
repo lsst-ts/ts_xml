@@ -1,11 +1,47 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-stylesheet type="text/xsl" href="http://lsst-sal.tuc.noao.edu/schema/SALEventSet.xsl"?>
 <SALEventSet xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://lsst-sal.tuc.noao.edu/schema/SALEventSet.xsd">
-  <Enumeration>InclinationTelemetrySource_OnBoard,InclinationTelemetrySource_MTMount</Enumeration>
-  <Enumeration>PowerType_Motor,PowerType_Communication</Enumeration>
-  <Enumeration>PowerSystemState_Init,PowerSystemState_PoweredOff,PowerSystemState_PoweringOn,PowerSystemState_ResettingBreakers,PowerSystemState_PoweredOn,PowerSystemState_PoweringOff</Enumeration>
-  <Enumeration>ClosedLoopControlMode_Idle,ClosedLoopControlMode_TelemetryOnly,ClosedLoopControlMode_OpenLoop,ClosedLoopControlMode_ClosedLoop</Enumeration>
-  <Enumeration>InnerLoopControlMode_Standby,InnerLoopControlMode_Disabled,InnerLoopControlMode_Enabled,InnerLoopControlMode_FirmwareUpdate,InnerLoopControlMode_Fault,InnerLoopControlMode_ClearFaults,InnerLoopControlMode_NoChange,InnerLoopControlMode_Unknown</Enumeration>
+  <Enumeration>
+    InclinationTelemetrySource_OnBoard,
+    InclinationTelemetrySource_MTMount
+  </Enumeration>
+  <Enumeration>
+    PowerType_Motor,
+    PowerType_Communication
+  </Enumeration>
+  <Enumeration>
+    PowerSystemState_Init,
+    PowerSystemState_PoweredOff,
+    PowerSystemState_PoweringOn,
+    PowerSystemState_ResettingBreakers,
+    PowerSystemState_PoweredOn,
+    PowerSystemState_PoweringOff
+  </Enumeration>
+  <Enumeration>
+    ClosedLoopControlMode_Idle,
+    ClosedLoopControlMode_TelemetryOnly,
+    ClosedLoopControlMode_OpenLoop,
+    ClosedLoopControlMode_ClosedLoop
+  </Enumeration>
+  <Enumeration>
+    InnerLoopControlMode_Standby,
+    InnerLoopControlMode_Disabled,
+    InnerLoopControlMode_Enabled,
+    InnerLoopControlMode_FirmwareUpdate,
+    InnerLoopControlMode_Fault,
+    InnerLoopControlMode_ClearFaults,
+    InnerLoopControlMode_NoChange,
+    InnerLoopControlMode_Unknown
+  </Enumeration>
+  <Enumeration>
+    BumpTest_NotTested,
+    BumpTest_TestingPositive,
+    BumpTest_TestingPositiveWait,
+    BumpTest_TestingNegative,
+    BumpTest_TestingNegativeWait,
+    BumpTest_Passed,
+    BumpTest_Failed
+  </Enumeration>
   <SALEvent>
     <Subsystem>MTM2</Subsystem>
     <EFDB_Topic>MTM2_logevent_m2AssemblyInPosition</EFDB_Topic>
@@ -416,6 +452,25 @@
       <EFDB_Name>files</EFDB_Name>
       <Description>Available configuration files.</Description>
       <IDL_Type>string</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+  </SALEvent>
+  <SALEvent>
+    <Subsystem>MTM2</Subsystem>
+    <EFDB_Topic>MTM2_logevent_actuatorBumpTestStatus</EFDB_Topic>
+    <Description>Status of the actuator bump test in the MTM2_command_actuatorBumpTest topic.</Description>
+    <item>
+      <EFDB_Name>actuator</EFDB_Name>
+      <Description>0-based actuator ID.</Description>
+      <IDL_Type>int</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>status</EFDB_Name>
+      <Description>1: NotTested. 2: TestingPositive. 3: TestingPositiveWait. 4: TestingNegative. 5: TestingNegativeWait. 6: Passed. 7: Failed.</Description>
+      <IDL_Type>short</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
     </item>

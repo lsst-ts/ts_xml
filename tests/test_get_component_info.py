@@ -32,8 +32,14 @@ from lsst.ts.xml.component_info import ComponentInfo
 class GetComponentInfoTestCase(unittest.TestCase):
     def check_result(self, result_path: pathlib.Path, name: str) -> None:
         result: dict[str, dict[str, typing.Any]] = dict(topics=dict())
+        component_result_path = result_path / name
 
-        for schema_file in result_path.glob("*.json"):
+        hash_table_created = False
+        for schema_file in component_result_path.glob("*.json"):
+            if "hash_table" in schema_file.name:
+                hash_table_created = True
+                continue
+
             if f"{name}_field_enums.json" in schema_file.name:
                 with open(schema_file, "r") as fp:
                     result["field_enums"] = json.loads(fp.read())
@@ -44,6 +50,14 @@ class GetComponentInfoTestCase(unittest.TestCase):
                 with open(schema_file, "r") as fp:
                     avro_schema = json.loads(fp.read())
                     result["topics"][avro_schema["name"]] = avro_schema
+
+        assert hash_table_created
+
+        xml_type_expected = {"Commands", "Events", "Generics"}
+
+        for xml_type in xml_type_expected:
+            xml_file = component_result_path / f"{name}_{xml_type}.xml"
+            assert xml_file.exists()
 
         topics = result["topics"]
         component_info = ComponentInfo(name=name, topic_subname="")
