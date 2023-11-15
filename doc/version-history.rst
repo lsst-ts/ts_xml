@@ -29,6 +29,8 @@ v21.0.0
 
 * Fix style violation in ``enums/LEDProjector.py``.
 
+* Use Astropy infrastructure to formally add new units. Enabled Imperial units to support use of the gallon unit.
+
 * Interface updates:
 
   * ATMCS
