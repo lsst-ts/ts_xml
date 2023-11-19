@@ -4,6 +4,11 @@
 Version History
 ===============
 
+v21.0.0
+-------
+
+* Added qudrant property to M1M3 FATable.
+
 v20.1.0
 -------
 
