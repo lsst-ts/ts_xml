@@ -368,7 +368,7 @@
   <SALTelemetry>
     <Subsystem>MTM2</Subsystem>
     <EFDB_Topic>MTM2_netForcesTotal</EFDB_Topic>
-    <Description>Totol actuator net forces.</Description>
+    <Description>Total actuator net forces.</Description>
     <item>
       <EFDB_Name>fx</EFDB_Name>
       <Description>Net force in x direction.</Description>
@@ -394,7 +394,7 @@
   <SALTelemetry>
     <Subsystem>MTM2</Subsystem>
     <EFDB_Topic>MTM2_netMomentsTotal</EFDB_Topic>
-    <Description>Totol actuator net moments of force.</Description>
+    <Description>Total actuator net moments of force.</Description>
     <item>
       <EFDB_Name>mx</EFDB_Name>
       <Description>Net moment of force in x direction.</Description>
@@ -489,14 +489,14 @@
     <Description>Tangential force error used to compare with the thresholds to avoid the breaking of mirror. A1 and A4 do not support the mirror. Only A2, A3, A5, and A6 do.</Description>
     <item>
       <EFDB_Name>force</EFDB_Name>
-      <Description>Force error to support the mirror's weight for individual tangential links.</Description>
+      <Description>Individual tangential link force excess. Calculated as the difference between expected (calculated from mirror weight) force acting on the link, and force measured on the link's load cell.</Description>
       <IDL_Type>double</IDL_Type>
       <Units>newton</Units>
       <Count>6</Count>
     </item>
     <item>
       <EFDB_Name>weight</EFDB_Name>
-      <Description>Total excess mass to support the dynamic load and mirror's weight that bases on the force projection.</Description>
+      <Description>Total mirror tangential force excess. Calculated from individual force excess (difference between calculated and measured force of the link) projected into common frame. In addition, this constains the dynamic load as well.</Description>
       <IDL_Type>double</IDL_Type>
       <Units>newton</Units>
       <Count>1</Count>
