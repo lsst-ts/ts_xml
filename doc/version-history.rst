@@ -9,6 +9,12 @@ v21.0.0
 
 * Added qudrant property to M1M3 FATable.
 
+* Interface updates:
+
+  * MTM2
+
+    * Improve the description of ``MTM2_forceErrorTangent`` topic.
+
 v20.1.0
 -------
 
