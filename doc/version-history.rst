@@ -20,8 +20,7 @@ v21.0.0
 
   * MTM2
 
-    * Improve the description of ``MTM2_forceErrorTangent`` topic.
-
+    * Improve the description of ``MTM2_forceErrorTangent`` topic.     
 
   * Added command for mask rotation for ts_CBP
 
@@ -41,6 +40,10 @@ v21.0.0
 
     * Improve support for publishing block id.
 
+  * TunableLaser
+
+    * Adding 3 commands to TunableLaser: ``changeTempCtrlSetpoint``, ``turnOnTempCtrl``, and ``turnOffTempCtrl``.
+    * Adding 3 events to TunableLaser: ``setPointChanged``, ``tempCtrlOn``, and ``tempCtrlOff``.
 
 v20.1.0
 -------
