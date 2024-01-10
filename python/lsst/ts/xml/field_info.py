@@ -58,8 +58,8 @@ AVRO_TYPES = {
     "long long": "long",
     "unsigned short": "int",
     "unsigned int": "long",
-    "float": ["float", "null"],
-    "double": ["double", "null"],
+    "float": "float",
+    "double": "double",
     "string": "string",
 }
 
