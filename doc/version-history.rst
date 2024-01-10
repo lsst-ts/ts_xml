@@ -7,8 +7,10 @@ Version History
 v21.0.0
 -------
 
-* Added qudrant property to M1M3 FATable.
+* Added quadrant property to M1M3 FATable.
 
+* In ``fiend_info.py``, remove support for missing values (e.g. null) to the avro schema.
+  This is a temporary change to facilitate rolling out the C++ kafka SAL library and will be included again later.
 * Interface updates:
 
   * MTM2
