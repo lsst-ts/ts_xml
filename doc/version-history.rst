@@ -21,6 +21,8 @@ v21.0.0
 
     * Improve the description of ``MTM2_forceErrorTangent`` topic.
 
+* Added command for mask rotation for ts_CBP
+
 v20.1.0
 -------
 
