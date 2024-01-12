@@ -11,6 +11,10 @@ v21.0.0
 
 * Interface updates:
 
+  * MTDome
+
+    * Add fans and inflate commands, calibration screen status telemetry and thermal control statuses.
+
   * MTM2
 
     * Improve the description of ``MTM2_forceErrorTangent`` topic.
