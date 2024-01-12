@@ -21,6 +21,10 @@ v21.0.0
 
     * Improve the description of ``MTM2_forceErrorTangent`` topic.
 
+  * MTRotator
+
+    * Add the new commands: ``MTRotator_command_configureEmergencyAcceleration`` and ``MTRotator_command_configureEmergencyJerk``.
+
 v20.1.0
 -------
 

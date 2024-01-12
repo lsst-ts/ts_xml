@@ -27,6 +27,30 @@
   </SALCommand>
   <SALCommand>
     <Subsystem>MTRotator</Subsystem>
+    <EFDB_Topic>MTRotator_command_configureEmergencyAcceleration</EFDB_Topic>
+    <Description>Specify a new emergency maximum acceleration. This is for the test/tuning purpose only.</Description>
+    <item>
+      <EFDB_Name>alimit</EFDB_Name>
+      <Description>acceleration limit</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>deg/s2</Units>
+      <Count>1</Count>
+    </item>
+  </SALCommand>
+  <SALCommand>
+    <Subsystem>MTRotator</Subsystem>
+    <EFDB_Topic>MTRotator_command_configureEmergencyJerk</EFDB_Topic>
+    <Description>Specify a new emergency maximum jerk. This is for the test/tuning purpose only.</Description>
+    <item>
+      <EFDB_Name>jlimit</EFDB_Name>
+      <Description>jerk limit</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>deg/s3</Units>
+      <Count>1</Count>
+    </item>
+  </SALCommand>
+  <SALCommand>
+    <Subsystem>MTRotator</Subsystem>
     <EFDB_Topic>MTRotator_command_fault</EFDB_Topic>
     <Description>Stop the rotator and send the system to the FAULT state. This is primarily for testing the low-level controller's fault command.</Description>
   </SALCommand>
