@@ -26,6 +26,18 @@ v21.0.0
 
     * Add the new commands: ``MTRotator_command_configureEmergencyAcceleration`` and ``MTRotator_command_configureEmergencyJerk``.
 
+  * ScriptQueue
+
+    * Improve support for executing blocks of scripts.
+
+    * Update ``nextVisit`` event to add ``startTime``.
+
+      This attribute will contain the estimated start time for the script.
+
+  * Script
+
+    * Improve support for publishing block id.
+
 v20.1.0
 -------
 
