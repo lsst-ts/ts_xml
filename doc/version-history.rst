@@ -22,6 +22,9 @@ v21.0.0
 
     * Improve the description of ``MTM2_forceErrorTangent`` topic.
 
+
+  * Added command for mask rotation for ts_CBP
+
   * MTRotator
 
     * Add the new commands: ``MTRotator_command_configureEmergencyAcceleration`` and ``MTRotator_command_configureEmergencyJerk``.
@@ -37,6 +40,7 @@ v21.0.0
   * Script
 
     * Improve support for publishing block id.
+
 
 v20.1.0
 -------
