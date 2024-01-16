@@ -22,6 +22,7 @@ __all__ = [
     "EnabledState",
     "Louver",
     "MotionState",
+    "OnOff",
     "OperationalMode",
     "RadLockingPinState",
     "SubSystemId",
