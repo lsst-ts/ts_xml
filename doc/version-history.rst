@@ -16,6 +16,7 @@ v21.0.0
   * MTDome
 
     * Add fans and inflate commands, calibration screen status telemetry and thermal control statuses.
+    * Fix SubSystemId enum values.
 
   * MTM2
 

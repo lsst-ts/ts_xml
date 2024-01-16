@@ -176,7 +176,7 @@ class SubSystemId(enum.IntEnum):
     MONCS = 0x20
     # Rear Access Door
     RAD = 0x40
-    # Calibration Screen
-    CalibrationScreen = 0x80
+    # Calibration Screen Control System
+    CSCS = 0x80
     # Overhead Bridge Crane
     OBC = 0x100
