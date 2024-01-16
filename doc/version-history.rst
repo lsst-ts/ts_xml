@@ -16,12 +16,31 @@ v21.0.0
   * MTDome
 
     * Add fans and inflate commands, calibration screen status telemetry and thermal control statuses.
+    * Fix SubSystemId enum values.
 
   * MTM2
 
     * Improve the description of ``MTM2_forceErrorTangent`` topic.
 
-* Added command for mask rotation for ts_CBP
+
+  * Added command for mask rotation for ts_CBP
+
+  * MTRotator
+
+    * Add the new commands: ``MTRotator_command_configureEmergencyAcceleration`` and ``MTRotator_command_configureEmergencyJerk``.
+
+  * ScriptQueue
+
+    * Improve support for executing blocks of scripts.
+
+    * Update ``nextVisit`` event to add ``startTime``.
+
+      This attribute will contain the estimated start time for the script.
+
+  * Script
+
+    * Improve support for publishing block id.
+
 
 v20.1.0
 -------
