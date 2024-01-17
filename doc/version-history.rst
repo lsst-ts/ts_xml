@@ -41,6 +41,10 @@ v21.0.0
 
     * Improve support for publishing block id.
 
+  * ATCamera/CCCamera/MTCamera
+    * Update to https://github.com/lsst-camera-ccs/org-lsst-ccs-camera-sal-xml version 1.0.3
+    * Release notes: https://jira.slac.stanford.edu/issues/?jql=project%20%3D%20LCOBM%20AND%20fixVersion%20%3D%20XML-1.0.3
+
 
 v20.1.0
 -------
