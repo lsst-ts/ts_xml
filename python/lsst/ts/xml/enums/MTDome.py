@@ -135,6 +135,9 @@ class MotionState(enum.IntEnum):
     UNDETERMINED = enum.auto()
     WAITING_AMCS_STATIONARY = enum.auto()
     DISABLED = enum.auto()
+    DISABLING = enum.auto()
+    ENABLED = enum.auto()
+    ENABLING = enum.auto()
 
 
 class OnOff(enum.Enum):
