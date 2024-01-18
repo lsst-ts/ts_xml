@@ -13,9 +13,9 @@ NONSTANDARD_UNITS = {"unitless", "psia", "psig", "VA", "carousel steps", "in. Hâ
 # Enable colloquial Imperial units.
 astropy.units.imperial.enable()
 # Add rpm and gpm (gallon/min).
-rpm = astropy.units.def_unit("rpm", astropy.units.cycle * 60 / astropy.units.s)
+rpm = astropy.units.def_unit("rpm", astropy.units.cycle / (60 * astropy.units.s))
 gpm = astropy.units.def_unit(
-    "gallon/min", astropy.units.imperial.gallon * 60 / astropy.units.s
+    "gallon/min", astropy.units.imperial.gallon / (60 *astropy.units.s)
 )
 astropy.units.add_enabled_units([rpm, gpm])
 
