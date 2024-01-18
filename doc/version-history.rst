@@ -20,8 +20,7 @@ v21.0.0
 
   * MTM2
 
-    * Improve the description of ``MTM2_forceErrorTangent`` topic.
-
+    * Improve the description of ``MTM2_forceErrorTangent`` topic.     
 
   * Added command for mask rotation for ts_CBP
 
@@ -45,6 +44,10 @@ v21.0.0
     * Update to https://github.com/lsst-camera-ccs/org-lsst-ccs-camera-sal-xml version 1.0.3
     * Release notes: https://jira.slac.stanford.edu/issues/?jql=project%20%3D%20LCOBM%20AND%20fixVersion%20%3D%20XML-1.0.3
 
+  * TunableLaser
+
+    * Adding 3 commands to TunableLaser: ``changeTempCtrlSetpoint``, ``turnOnTempCtrl``, and ``turnOffTempCtrl``.
+    * Adding 3 events to TunableLaser: ``setPointChanged``, ``tempCtrlOn``, and ``tempCtrlOff``.
 
 v20.1.0
 -------
