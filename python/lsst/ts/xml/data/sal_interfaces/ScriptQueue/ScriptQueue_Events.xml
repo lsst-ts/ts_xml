@@ -86,6 +86,13 @@
       <Count>2</Count>
     </item>
     <item>
+      <EFDB_Name>startTime</EFDB_Name>
+      <Description>The expected start time for this visit (TAI).</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>second</Units>
+      <Count>1</Count>
+    </item>
+    <item>
       <EFDB_Name>rotationSystem</EFDB_Name>
       <Description>Rotation system for cameraAngle, a Script MetadataRotSys enum
         * None: The camera rotator is not used; ignore cameraAngle.
@@ -260,6 +267,28 @@
       <EFDB_Name>scriptState</EFDB_Name>
       <Description>State of the script; a ScriptState enum from Script_Events.xml; 0 if the script is not yet loaded.</Description>
       <IDL_Type>byte</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>blockId</EFDB_Name>
+      <Description>Id of the block this script is part of (optional).</Description>
+      <IDL_Type>string</IDL_Type>
+      <IDL_Size>1</IDL_Size>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>scriptBlockIndex</EFDB_Name>
+      <Description>The position of this script the block (0-based).</Description>
+      <IDL_Type>int</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>blockSize</EFDB_Name>
+      <Description>The number of scripts in the block.</Description>
+      <IDL_Type>int</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
     </item>

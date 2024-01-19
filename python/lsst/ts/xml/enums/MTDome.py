@@ -22,6 +22,7 @@ __all__ = [
     "EnabledState",
     "Louver",
     "MotionState",
+    "OnOff",
     "OperationalMode",
     "RadLockingPinState",
     "SubSystemId",
@@ -113,6 +114,7 @@ class MotionState(enum.IntEnum):
     FINAL_DOWN_OPEN_LS_ENGAGED = enum.auto()
     FINAL_UP_CLOSE_LS_ENGAGED = enum.auto()
     FINAL_UP_OPEN_LS_ENGAGED = enum.auto()
+    GLYCOL_FLOWING = enum.auto()
     GO_DEGRADED = enum.auto()
     GO_NORMAL = enum.auto()
     GO_STATIONARY = enum.auto()
@@ -131,7 +133,18 @@ class MotionState(enum.IntEnum):
     STARTING_MOTOR_COOLING = enum.auto()
     STOPPING_MOTOR_COOLING = enum.auto()
     UNDETERMINED = enum.auto()
+    WAITING_AMCS_STATIONARY = enum.auto()
     DISABLED = enum.auto()
+    DISABLING = enum.auto()
+    ENABLED = enum.auto()
+    ENABLING = enum.auto()
+
+
+class OnOff(enum.Enum):
+    """ON or OFF."""
+
+    ON = True
+    OFF = False
 
 
 class OperationalMode(enum.IntEnum):
@@ -166,3 +179,7 @@ class SubSystemId(enum.IntEnum):
     MONCS = 0x20
     # Rear Access Door
     RAD = 0x40
+    # Calibration Screen Control System
+    CSCS = 0x80
+    # Overhead Bridge Crane
+    OBC = 0x100

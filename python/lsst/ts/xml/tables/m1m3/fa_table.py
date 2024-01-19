@@ -157,6 +157,16 @@ class ForceActuatorData:
     near_neighbors: list[int]
     far_neighbors: list[int]
 
+    @property
+    def quadrant(self) -> int:
+        """Returns actuator quadrant.
+        Returns
+        -------
+        quadrant : `int`
+            Actuator quadrant (1-4).
+        """
+        return self.actuator_id // 100
+
     def get_index(self, index_type: FAIndex) -> int | None:
         """Returns given index.
 

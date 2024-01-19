@@ -4,6 +4,51 @@
 Version History
 ===============
 
+v21.0.0
+-------
+
+* Added qudrant property to M1M3 FATable.
+
+* Fix documentation build.
+
+* Interface updates:
+
+  * MTDome
+
+    * Add fans and inflate commands, calibration screen status telemetry and thermal control statuses.
+    * Fix SubSystemId enum values.
+
+  * MTM2
+
+    * Improve the description of ``MTM2_forceErrorTangent`` topic.     
+
+  * Added command for mask rotation for ts_CBP
+
+  * MTRotator
+
+    * Add the new commands: ``MTRotator_command_configureEmergencyAcceleration`` and ``MTRotator_command_configureEmergencyJerk``.
+
+  * ScriptQueue
+
+    * Improve support for executing blocks of scripts.
+
+    * Update ``nextVisit`` event to add ``startTime``.
+
+      This attribute will contain the estimated start time for the script.
+
+  * Script
+
+    * Improve support for publishing block id.
+
+  * ATCamera/CCCamera/MTCamera
+    * Update to https://github.com/lsst-camera-ccs/org-lsst-ccs-camera-sal-xml version 1.0.3
+    * Release notes: https://jira.slac.stanford.edu/issues/?jql=project%20%3D%20LCOBM%20AND%20fixVersion%20%3D%20XML-1.0.3
+
+  * TunableLaser
+
+    * Adding 3 commands to TunableLaser: ``changeTempCtrlSetpoint``, ``turnOnTempCtrl``, and ``turnOffTempCtrl``.
+    * Adding 3 events to TunableLaser: ``setPointChanged``, ``tempCtrlOn``, and ``tempCtrlOff``.
+
 v20.1.0
 -------
 

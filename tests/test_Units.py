@@ -9,13 +9,16 @@ import pytest
 
 # These nonstandard units are explicitly allowed.
 # Remove entries if and when astropy adds support for them.
-NONSTANDARD_UNITS = {"unitless", "psia", "psig", "VA", "carousel steps"}
+NONSTANDARD_UNITS = {"unitless", "psia", "psig", "VA", "carousel steps", "in. H₂O"}
 # Enable colloquial Imperial units.
 astropy.units.imperial.enable()
 # Add rpm and gpm (gallon/min).
-rpm = astropy.units.def_unit('rpm', astropy.units.cycle / astropy.units.s)
-gpm = astropy.units.def_unit('gallon/min', astropy.units.imperial.gallon * 60 / astropy.units.s)
+rpm = astropy.units.def_unit("rpm", (astropy.units.cycle * 60) / astropy.units.s)
+gpm = astropy.units.def_unit(
+    "gallon/min", (astropy.units.imperial.gallon * 60) / astropy.units.s
+)
 astropy.units.add_enabled_units([rpm, gpm])
+
 
 def check_for_issues(csc: str, topic: str) -> str:
     jira = ""

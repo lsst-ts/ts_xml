@@ -28,6 +28,7 @@
     MotionState_Final_Down_Open_Ls_Engaged,
     MotionState_Final_Up_Close_Ls_Engaged,
     MotionState_Final_Up_Open_Ls_Engaged,
+    MotionState_Glycol_Flowing,
     MotionState_Go_Degraded,
     MotionState_Go_Normal,
     MotionState_Go_Stationary,
@@ -46,7 +47,11 @@
     MotionState_Starting_Motor_Cooling,
     MotionState_Stopping_Motor_Cooling,
     MotionState_Undetermined,
-    MotionState_Disabled
+    MotionState_Waiting_Amcs_Stationary,
+    MotionState_Disabled,
+    MotionState_Disabling,
+    MotionState_Enabled,
+    MotionState_Enabling
   </Enumeration>
   <Enumeration>
         Louver_A1=0,
@@ -90,8 +95,12 @@
     SubSystemId_APSCS=0x4,
     SubSystemId_LCS=0x8,
     SubSystemId_THCS=0x10,
-    SubSystemId_MONCS=0x20
+    SubSystemId_MONCS=0x20,
+    SubSystemId_RAD=0x40,
+    SubSystemId_CSCS=0x80,
+    SubSystemId_OBC=0x100
   </Enumeration>
+  <Enumeration>OnOff_On, OnOff_Off</Enumeration>
   <Enumeration>OperationalMode_Normal, OperationalMode_Degraded</Enumeration>
   <Enumeration>
     RadLockingPinState_ENGAGED,

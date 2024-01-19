@@ -50,6 +50,11 @@ class M1M3FATableTestCase(unittest.TestCase):
         self.assert_sorted(item2.near_neighbors_indices(FAIndex.X), [])
         self.assert_sorted(item2.only_far_neighbors_indices(FAIndex.X), [9])
 
+    def test_quadrant(self) -> None:
+        self.assertEqual(FATable[1].quadrant, 1)
+        self.assertEqual(FATable[45].quadrant, 2)
+        self.assertEqual(FATable[155].quadrant, 4)
+
 
 if __name__ == "__main__":
     unittest.main()
