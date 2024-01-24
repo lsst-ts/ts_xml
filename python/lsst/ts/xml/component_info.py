@@ -45,6 +45,8 @@ class ComponentInfo:
         SAL component name.
     topic_subname : `str`
         Sub-namespace for Kafka topic names.
+    use_simple_schema : `bool`, optional
+        Use simple schema, without null support for float and double?
 
     Attributes
     ----------
@@ -63,11 +65,16 @@ class ComponentInfo:
         This comes from the AddedGenerics field of SALSubsystems.xml
     topics : `dict` [`str`, `TopicInfo`]
         Dict of attr_name: TopicInfo.
+    use_simple_schema : `bool`
+        Use simple schema, without null support for float and double?
     """
 
-    def __init__(self, name: str, topic_subname: str) -> None:
+    def __init__(
+        self, name: str, topic_subname: str, use_simple_schema: bool = False
+    ) -> None:
         self.name = name
         self.topic_subname = topic_subname
+        self.use_simple_schema = use_simple_schema
         self._set_basics()
         self.topics = self._make_topics()
 
@@ -141,6 +148,7 @@ class ComponentInfo:
                 component_name=self.name,
                 topic_subname=self.topic_subname,
                 indexed=self.indexed,
+                use_simple_schema=self.use_simple_schema,
             )
             for topic_element in topic_element_dict.values()
         ]
@@ -149,6 +157,7 @@ class ComponentInfo:
                 component_name=self.name,
                 topic_subname=self.topic_subname,
                 indexed=self.indexed,
+                use_simple_schema=self.use_simple_schema,
             )
         )
         return {info.attr_name: info for info in topics_list}

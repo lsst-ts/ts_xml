@@ -73,6 +73,12 @@ def get_component_info() -> None:
         help="Make all components except those listed in --exclude.",
     )
     parser.add_argument(
+        "--use-simple-schema",
+        action="store_true",
+        help="Use simple schema, without support for null values for float and double.",
+        default=False,
+    )
+    parser.add_argument(
         "-o",
         "--output",
         help="Name of the directory to write the schema files (default=avro-templates).",
@@ -88,10 +94,14 @@ def get_component_info() -> None:
         if name not in VALID_COMPONENT_NAMES:
             parser.error(f"Unknown {name=}")
 
-        generate_component_info(name=name, output_dir=output_dir)
+        generate_component_info(
+            name=name, output_dir=output_dir, use_simple_schema=args.use_simple_schema
+        )
 
 
-def generate_component_info(name: str, output_dir: pathlib.PosixPath) -> None:
+def generate_component_info(
+    name: str, output_dir: pathlib.PosixPath, use_simple_schema: bool = False
+) -> None:
     """Generate component info.
 
     Parameters
@@ -100,8 +110,12 @@ def generate_component_info(name: str, output_dir: pathlib.PosixPath) -> None:
         Name of the component.
     output_dir : `pathlib.PosixPath`
         Directory to store component info.
+    use_simple_schema : `bool`, optional
+        Use simple schema, without null support for float and double?
     """
-    component_info = ComponentInfo(name=name, topic_subname="")
+    component_info = ComponentInfo(
+        name=name, topic_subname="", use_simple_schema=use_simple_schema
+    )
     field_enums, global_enums = get_field_and_global_enums(name=name)
     result = {
         "topics": {
