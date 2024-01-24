@@ -4,6 +4,11 @@
 Version History
 ===============
 
+vX.Y.Z
+------
+
+* Update schema generation code to support generating the schema without support for null values for float and double types.
+
 v20.2.0
 -------
 
