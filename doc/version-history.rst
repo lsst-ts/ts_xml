@@ -9,6 +9,12 @@ vX.Y.Z
 
 * Update schema generation code to support generating the schema without support for null values for float and double types.
 
+* Interface updates:
+
+  * MTDome
+
+    * Add new and correct existing MotionState enum values.
+
 v20.2.0
 -------
 
@@ -25,7 +31,7 @@ v20.2.0
 
   * MTM2
 
-    * Improve the description of ``MTM2_forceErrorTangent`` topic.     
+    * Improve the description of ``MTM2_forceErrorTangent`` topic.
 
   * CBP
 
