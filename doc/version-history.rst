@@ -15,17 +15,6 @@ Version History
 
 .. towncrier release notes start
 
-vX.Y.Z
-------
-
-* Update schema generation code to support generating the schema without support for null values for float and double types.
-
-* Interface updates:
-
-  * MTDome
-
-    * Add new and correct existing MotionState enum values.
-
 v20.2.0
 -------
 
