@@ -6,14 +6,23 @@ on:
       - develop
 jobs:
   build:
-    name: Check Actions
+    name: Check for new news fragments
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v1
-      - name: Changelog check
-        uses: Zomzog/changelog-checker@v1.2.0
+      - uses: actions/checkout@v2
         with:
-          fileName: doc/version-history.rst
-          checkNotification: Simple
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          fetch-depth: 0
+
+      - name: Set up python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.11'
+
+      - name: Install towncrier
+        run: |
+          $CONDA/bin/conda install -c conda-forge towncrier -y
+  
+      - name: Run towncrier check command
+        run: |
+          $CONDA/bin/towncrier check --compare-with origin/develop
+
