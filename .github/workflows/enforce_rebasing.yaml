@@ -1,0 +1,23 @@
+name: Enforce Rebasing
+
+on:
+  pull_request:
+    types: [assigned, opened, synchronize, reopened, labeled, unlabeled]
+    branches-ignore:
+      - main
+
+jobs:
+  rebase_job:
+    runs-on: ubuntu-latest
+    name: Enforce rebasing
+
+    steps:
+    - name: Check out code
+      uses: actions/checkout@v2
+      with:
+        fetch-depth: 0
+    - name: Is Rebased on develop?
+      uses: cyberark/enforce-rebase@v2
+      with:
+        default-branch: develop
+
