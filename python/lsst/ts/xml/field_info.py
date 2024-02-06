@@ -58,23 +58,6 @@ AVRO_TYPES = {
     "long long": "long",
     "unsigned short": "int",
     "unsigned int": "long",
-    "float": ["float", "null"],
-    "double": ["double", "null"],
-    "string": "string",
-}
-
-# This is a simplified version of the SAL type: Avro type dictionary.
-# It removes support for null float and double values. It is mostly
-# desined to suppor the SAL C++ build.
-AVRO_TYPES_SIMPLE = {
-    "boolean": "boolean",
-    "byte": "int",
-    "short": "int",
-    "int": "int",
-    "long": "int",
-    "long long": "long",
-    "unsigned short": "int",
-    "unsigned int": "long",
     "float": "float",
     "double": "double",
     "string": "string",
