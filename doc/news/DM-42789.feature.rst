@@ -1,0 +1,2 @@
+Remove support for null values for float and double.
+After investigating the issue, we realized that AVRO supports setting the values to NaN (as well as +/-Infinity), which covers the conditions we were trying to support with the null values.

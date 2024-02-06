@@ -164,7 +164,6 @@ def make_ackcmd_topic_info(
     component_name: str,
     topic_subname: str,
     indexed: bool,
-    use_simple_schema: bool = False,
 ) -> TopicInfo:
     """Make an ackcmd topic for a given component.
 
@@ -192,7 +191,6 @@ def make_ackcmd_topic_info(
         sal_name="ackcmd",
         fields=fields,
         description="Command acknowledgement",
-        use_simple_schema=use_simple_schema,
     )
 
 
@@ -215,8 +213,6 @@ class TopicInfo:
         Number of Kafka partitions.
         Must be 1 for events, since that makes it easier to get
         reliable historical data.
-    use_simple_schema : `bool`, optional
-        Use simple schema, without null support for float and double?
 
     Attributes
     ----------
@@ -230,8 +226,6 @@ class TopicInfo:
         Dict of field name: field info
     array_fields : `dict` [`str`, `int`]
         Dict of field name: array length for array fields
-    use_simple_schema : `bool`
-        Use simple schema, without null support for float and double?
 
     Raises
     ------
@@ -256,7 +250,6 @@ class TopicInfo:
         fields: dict[str, FieldInfo],
         description: str = "",
         partitions: int = 1,
-        use_simple_schema: bool = False,
     ) -> None:
         if partitions != 1 and sal_name.startswith("logevent_"):
             raise ValueError(
@@ -275,7 +268,6 @@ class TopicInfo:
         self.fields = fields
         self.description = description
         self.partitions = partitions
-        self.use_simple_schema = use_simple_schema
 
         if sal_name == "ackcmd":
             attr_name = "ack_ackcmd"
@@ -304,7 +296,6 @@ class TopicInfo:
         component_name: str,
         topic_subname: str,
         indexed: bool,
-        use_simple_schema: bool = False,
     ) -> TopicInfo:
         """Construct a TopicInfo from a topic XML element.
 
@@ -320,8 +311,6 @@ class TopicInfo:
             Sub-namespace for topic names and schema subject and namespace.
         indexed : `str`
             Is this component indexed?
-        use_simple_schema : `bool`, optional
-            Use simple schema, without null support for float and double?
         """
         full_name = find_required_text(element, "EFDB_Topic")
         sal_name = full_name.split("_", 1)[1]
@@ -341,7 +330,6 @@ class TopicInfo:
             sal_name=sal_name,
             description=description,
             fields=fields,
-            use_simple_schema=use_simple_schema,
         )
 
     def make_dataclass(self) -> typing.Type[BaseMsgType]:
@@ -400,8 +388,7 @@ class TopicInfo:
                 name=self.sal_name,
                 namespace=f"lsst.sal.{self.component_name}",
                 fields=[
-                    field_info.make_avro_schema(self.use_simple_schema)
-                    for field_info in self.fields.values()
+                    field_info.make_avro_schema() for field_info in self.fields.values()
                 ],
                 description=self.description,
             )
