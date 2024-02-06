@@ -152,13 +152,10 @@ class FieldInfo:
             field = dataclasses.field(default=self.default_scalar_value)
         return (self.name, dtype, field)
 
-    def make_avro_schema(self, simple: bool = False) -> dict[str, typing.Any]:
+    def make_avro_schema(self) -> dict[str, typing.Any]:
         """Return an Avro schema for this field."""
-        scalar_type = (
-            AVRO_TYPES[self.sal_type]
-            if not simple
-            else AVRO_TYPES_SIMPLE[self.sal_type]
-        )
+        scalar_type = AVRO_TYPES[self.sal_type]
+
         if self.count > 1:
             avro_type: typing.Any = {"type": "array", "items": scalar_type}
             default: typing.Any = [self.default_scalar_value] * self.count

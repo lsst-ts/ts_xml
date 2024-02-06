@@ -30,9 +30,7 @@ from lsst.ts.xml.component_info import ComponentInfo
 
 
 class GetComponentInfoTestCase(unittest.TestCase):
-    def check_result(
-        self, result_path: pathlib.Path, name: str, use_simple_schema: bool = False
-    ) -> None:
+    def check_result(self, result_path: pathlib.Path, name: str) -> None:
         result: dict[str, dict[str, typing.Any]] = dict(topics=dict())
         component_result_path = result_path / name
 
@@ -62,9 +60,7 @@ class GetComponentInfoTestCase(unittest.TestCase):
             assert xml_file.exists()
 
         topics = result["topics"]
-        component_info = ComponentInfo(
-            name=name, topic_subname="", use_simple_schema=use_simple_schema
-        )
+        component_info = ComponentInfo(name=name, topic_subname="")
         all_sal_topic_names = {
             topic_info.sal_name for topic_info in component_info.topics.values()
         }
@@ -100,19 +96,6 @@ class GetComponentInfoTestCase(unittest.TestCase):
                 proc = self.run_get_component_info(args=[name, "-o", tmp_dirname])
                 assert proc.returncode == 0
                 self.check_result(result_path=pathlib.Path(tmp_dirname), name=name)
-
-    def test_operation_with_simple_schema(self) -> None:
-        for name in ["MTPtg", "ATPtg"]:
-            with self.subTest(name=name), tempfile.TemporaryDirectory() as tmp_dirname:
-                proc = self.run_get_component_info(
-                    args=[name, "--use-simple-schema", "-o", tmp_dirname]
-                )
-                assert proc.returncode == 0
-                self.check_result(
-                    result_path=pathlib.Path(tmp_dirname),
-                    name=name,
-                    use_simple_schema=True,
-                )
 
     def test_errors(self) -> None:
         bad_option = "--badoption"
