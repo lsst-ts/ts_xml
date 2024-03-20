@@ -2461,7 +2461,7 @@
   <SALTelemetry>
     <Subsystem>MTCamera</Subsystem>
     <EFDB_Topic>MTCamera_vacuum_Cip</EFDB_Topic>
-    <!--CCS: Dictionary_Checksum: 628322291L -->
+    <!--CCS: Dictionary_Checksum: 402968257L -->
     <!--CCSMETA: Array cryo_I indexed by location-->
     <item>
       <EFDB_Name>cryo_I</EFDB_Name>
@@ -2490,38 +2490,6 @@
     <item>
       <EFDB_Name>cryo_V</EFDB_Name>
       <Description>Cryo ion pump 1 voltage</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>Volt</Units>
-      <Count>6</Count>
-    </item>
-    <!--CCSMETA: Array hx_I indexed by location-->
-    <item>
-      <EFDB_Name>hx_I</EFDB_Name>
-      <Description>HX ion pump 1 current</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>mA</Units>
-      <Count>6</Count>
-    </item>
-    <!--CCSMETA: Array hx_Life indexed by location-->
-    <item>
-      <EFDB_Name>hx_Life</EFDB_Name>
-      <Description>HX ion pump 1 lifetime</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>hour</Units>
-      <Count>6</Count>
-    </item>
-    <!--CCSMETA: Array hx_Usage indexed by location-->
-    <item>
-      <EFDB_Name>hx_Usage</EFDB_Name>
-      <Description>HX ion pump 1 usage</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>Torr.hour</Units>
-      <Count>6</Count>
-    </item>
-    <!--CCSMETA: Array hx_V indexed by location-->
-    <item>
-      <EFDB_Name>hx_V</EFDB_Name>
-      <Description>HX ion pump 1 voltage</Description>
       <IDL_Type>double</IDL_Type>
       <Units>Volt</Units>
       <Count>6</Count>
@@ -2811,6 +2779,52 @@
       <Description>HX turbo pump voltage</Description>
       <IDL_Type>double</IDL_Type>
       <Units>Volt</Units>
+      <Count>1</Count>
+    </item>
+  </SALTelemetry>
+  <!--Created by xmlmaker2 for subsystem MTCamera class MTCamera_vacuum_Hip using level 1-->
+  <!--===================================================================================-->
+  <SALTelemetry>
+    <Subsystem>MTCamera</Subsystem>
+    <EFDB_Topic>MTCamera_vacuum_Hip</EFDB_Topic>
+    <!--CCS: Dictionary_Checksum: 2046798497L -->
+    <!--CCSMETA: Array hx_I indexed by location-->
+    <item>
+      <EFDB_Name>hx_I</EFDB_Name>
+      <Description>HX ion pump 1 current</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>mA</Units>
+      <Count>2</Count>
+    </item>
+    <!--CCSMETA: Array hx_Life indexed by location-->
+    <item>
+      <EFDB_Name>hx_Life</EFDB_Name>
+      <Description>HX ion pump 1 lifetime</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>hour</Units>
+      <Count>2</Count>
+    </item>
+    <!--CCSMETA: Array hx_Usage indexed by location-->
+    <item>
+      <EFDB_Name>hx_Usage</EFDB_Name>
+      <Description>HX ion pump 1 usage</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>Torr.hour</Units>
+      <Count>2</Count>
+    </item>
+    <!--CCSMETA: Array hx_V indexed by location-->
+    <item>
+      <EFDB_Name>hx_V</EFDB_Name>
+      <Description>HX ion pump 1 voltage</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>Volt</Units>
+      <Count>2</Count>
+    </item>
+    <item>
+      <EFDB_Name>location</EFDB_Name>
+      <Description>hip location</Description>
+      <IDL_Type>string</IDL_Type>
+      <Units>unitless</Units>
       <Count>1</Count>
     </item>
   </SALTelemetry>
@@ -11769,30 +11783,46 @@
   <SALTelemetry>
     <Subsystem>MTCamera</Subsystem>
     <EFDB_Topic>MTCamera_thermal_Rtd</EFDB_Topic>
-    <!--CCS: Dictionary_Checksum: 2669752829L -->
-    <!--CCSMETA: Array cold_Temp indexed by location-->
+    <!--CCS: Dictionary_Checksum: 3847031717L -->
+    <!--CCSMETA: Array cold_TempCLP indexed by location-->
     <item>
-      <EFDB_Name>cold_Temp</EFDB_Name>
+      <EFDB_Name>cold_TempCLP</EFDB_Name>
       <Description>Cold Plate RTD 00</Description>
       <IDL_Type>double</IDL_Type>
       <Units>Celsius</Units>
-      <Count>20</Count>
+      <Count>25</Count>
     </item>
-    <!--CCSMETA: Array cryo_Temp indexed by location-->
+    <!--CCSMETA: Array cryo_TempCYP indexed by location-->
     <item>
-      <EFDB_Name>cryo_Temp</EFDB_Name>
+      <EFDB_Name>cryo_TempCYP</EFDB_Name>
       <Description>Cryo Plate RTD 02</Description>
       <IDL_Type>double</IDL_Type>
       <Units>Celsius</Units>
-      <Count>20</Count>
+      <Count>25</Count>
     </item>
-    <!--CCSMETA: Array grid_Temp indexed by location-->
+    <!--CCSMETA: Array grid_TempCFX indexed by location-->
     <item>
-      <EFDB_Name>grid_Temp</EFDB_Name>
+      <EFDB_Name>grid_TempCFX</EFDB_Name>
+      <Description>Cryo Flexure RTD 01</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>Celsius</Units>
+      <Count>25</Count>
+    </item>
+    <!--CCSMETA: Array grid_TempGFX indexed by location-->
+    <item>
+      <EFDB_Name>grid_TempGFX</EFDB_Name>
+      <Description>Grid Flexure RTD 01</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>Celsius</Units>
+      <Count>25</Count>
+    </item>
+    <!--CCSMETA: Array grid_TempGRD indexed by location-->
+    <item>
+      <EFDB_Name>grid_TempGRD</EFDB_Name>
       <Description>Grid RTD 01</Description>
       <IDL_Type>double</IDL_Type>
       <Units>Celsius</Units>
-      <Count>20</Count>
+      <Count>25</Count>
     </item>
     <item>
       <EFDB_Name>location</EFDB_Name>
@@ -11807,7 +11837,7 @@
   <SALTelemetry>
     <Subsystem>MTCamera</Subsystem>
     <EFDB_Topic>MTCamera_thermal_Trim</EFDB_Topic>
-    <!--CCS: Dictionary_Checksum: 2480012650L -->
+    <!--CCS: Dictionary_Checksum: 2641718204L -->
     <item>
       <EFDB_Name>location</EFDB_Name>
       <Description>trim location</Description>
@@ -11815,29 +11845,53 @@
       <Units>unitless</Units>
       <Count>1</Count>
     </item>
-    <!--CCSMETA: Array trim_Htrs_I indexed by location-->
+    <!--CCSMETA: Array trim_Htrs_ColdI indexed by location-->
     <item>
-      <EFDB_Name>trim_Htrs_I</EFDB_Name>
+      <EFDB_Name>trim_Htrs_ColdI</EFDB_Name>
       <Description>Cold Heater 0 Current</Description>
       <IDL_Type>double</IDL_Type>
       <Units>A</Units>
-      <Count>12</Count>
+      <Count>6</Count>
     </item>
-    <!--CCSMETA: Array trim_Htrs_P indexed by location-->
+    <!--CCSMETA: Array trim_Htrs_ColdP indexed by location-->
     <item>
-      <EFDB_Name>trim_Htrs_P</EFDB_Name>
+      <EFDB_Name>trim_Htrs_ColdP</EFDB_Name>
       <Description>Cold Heater 0 Power</Description>
       <IDL_Type>double</IDL_Type>
       <Units>Watt</Units>
-      <Count>12</Count>
+      <Count>6</Count>
     </item>
-    <!--CCSMETA: Array trim_Htrs_V indexed by location-->
+    <!--CCSMETA: Array trim_Htrs_ColdV indexed by location-->
     <item>
-      <EFDB_Name>trim_Htrs_V</EFDB_Name>
+      <EFDB_Name>trim_Htrs_ColdV</EFDB_Name>
       <Description>Cold Heater 0 Voltage</Description>
       <IDL_Type>double</IDL_Type>
       <Units>Volt</Units>
-      <Count>12</Count>
+      <Count>6</Count>
+    </item>
+    <!--CCSMETA: Array trim_Htrs_CryoI indexed by location-->
+    <item>
+      <EFDB_Name>trim_Htrs_CryoI</EFDB_Name>
+      <Description>Cryo Heater 0 Current</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>A</Units>
+      <Count>6</Count>
+    </item>
+    <!--CCSMETA: Array trim_Htrs_CryoP indexed by location-->
+    <item>
+      <EFDB_Name>trim_Htrs_CryoP</EFDB_Name>
+      <Description>Cryo Heater 0 Power</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>Watt</Units>
+      <Count>6</Count>
+    </item>
+    <!--CCSMETA: Array trim_Htrs_CryoV indexed by location-->
+    <item>
+      <EFDB_Name>trim_Htrs_CryoV</EFDB_Name>
+      <Description>Cryo Heater 0 Voltage</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>Volt</Units>
+      <Count>6</Count>
     </item>
   </SALTelemetry>
   <!--Created by xmlmaker2 for subsystem MTCamera class MTCamera_thermal_Trim_Htrs using level 1-->
