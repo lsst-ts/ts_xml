@@ -713,11 +713,47 @@
     <EFDB_Topic>MTCamera_logevent_availableFilters</EFDB_Topic>
     <item>
       <EFDB_Name>filterNames</EFDB_Name>
-      <Description>A list of installed filter names (comma delimimted, U-001,G-004,R-010,Z-012,Y-014), in the same order as the list of filter types.</Description>
+      <Description>A list of names of available filters (: delimited, U-001,G-004,R-010,Z-012,Y-014, NONE), in the same order as the list of filter types.</Description>
       <IDL_Type>string</IDL_Type>
       <IDL_Size>256</IDL_Size>
       <Units>unitless</Units>
       <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>filterTypes</EFDB_Name>
+      <Description>A list of types of available filters in the same order as the list of available filters  (: delimited)</Description>
+      <IDL_Type>string</IDL_Type>
+      <IDL_Size>256</IDL_Size>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>maxChangeAngle</EFDB_Name>
+      <Description>The maximum camera angle (in degrees) away from vertical that a filter change can be requested.</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>degree</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>maxFastChangeAngle</EFDB_Name>
+      <Description>The maximum camera angle (in degrees) away from vertical that a fast filter change can be performed.</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>degree</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>maxSlowChangeTime</EFDB_Name>
+      <Description>The maximum estimated time (in seconds) for a setFilter command, when in degraded (slow) mode (per filter).</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>second</Units>
+      <Count>6</Count>
+    </item>
+    <item>
+      <EFDB_Name>maxFastChangeTime</EFDB_Name>
+      <Description>The maximum estimated time (in seconds) for a setFilter command, when in fast mode (per filter).</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>second</Units>
+      <Count>6</Count>
     </item>
   </SALEvent>
   <SALEvent>
@@ -33455,6 +33491,27 @@
       <IDL_Type>string</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
+    </item>
+  </SALEvent>
+  <SALEvent>
+    <Subsystem>MTCamera</Subsystem>
+    <EFDB_Topic>MTCamera_logevent_filterChangerPowerStatus</EFDB_Topic>
+    <Description>Event sent when the filter changer power state changes
+    </Description>
+    <item>
+      <EFDB_Name>timestampStatusChanged</EFDB_Name>
+      <Description>The time when the last status changed.</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>second</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>powerState</EFDB_Name>
+      <Description>The current filter changer power state.</Description>
+      <IDL_Type>long</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+      <Enumeration>LOW_POWER,HIGH_POWER</Enumeration>
     </item>
   </SALEvent>
 </SALEventSet>
