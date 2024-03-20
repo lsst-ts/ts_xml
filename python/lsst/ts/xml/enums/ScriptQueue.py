@@ -42,6 +42,7 @@ class SalIndex(enum.IntEnum):
 
     MAIN_TEL = 1
     AUX_TEL = 2
+    OCS = 3
 
 
 class ScriptProcessState(enum.IntEnum):
