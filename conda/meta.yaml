@@ -1,5 +1,5 @@
 {% set data= load_setup_py_data() %}
-package: 
+package:
   name: ts-xml
   version: {{ data.get('version') }}
 
@@ -14,7 +14,7 @@ test:
   requires:
     - astropy
     - lxml
-    - ts-conda-build =0.3
+    - ts-conda-build =0.4
   source_files:
     - python
     - tests
