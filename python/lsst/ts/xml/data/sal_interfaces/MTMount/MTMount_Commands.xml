@@ -31,6 +31,47 @@
   </SALCommand>
   <SALCommand>
     <Subsystem>MTMount</Subsystem>
+    <EFDB_Topic>MTMount_command_park</EFDB_Topic>
+    <Description>Park the telescope. This command will cause the CSC to switch settings to be able to park the telescope.</Description>
+    <item>
+      <EFDB_Name>position</EFDB_Name>
+      <Description>Desired park position; a ParkPosition enum.</Description>
+      <IDL_Type>short</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+  </SALCommand>
+  <SALCommand>
+    <Subsystem>MTMount</Subsystem>
+    <EFDB_Topic>MTMount_command_unpark</EFDB_Topic>
+    <Description>Unpark the telescope.</Description>
+  </SALCommand>
+  <SALCommand>
+    <Subsystem>MTMount</Subsystem>
+    <EFDB_Topic>MTMount_command_restoreDefaultSettings</EFDB_Topic>
+    <Description>Restore the default TMA settings. This will also reset the drives to make sure the settings are applied.</Description>
+  </SALCommand>
+  <SALCommand>
+    <Subsystem>MTMount</Subsystem>
+    <EFDB_Topic>MTMount_command_applySettingsSet</EFDB_Topic>
+    <Description>Apply a list of settings set. This will also reset the drives to make sure the settings are applied. Note that the settings are cummulative. If you want to make sure there are no pre-applied settings, use option restoreDefaults.</Description>
+    <item>
+      <EFDB_Name>restoreDefaults</EFDB_Name>
+      <Description>Restore default values before applying current selection?</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>settings</EFDB_Name>
+      <Description>Comma-separated list of settings to apply.</Description>
+      <IDL_Type>string</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+  </SALCommand>
+  <SALCommand>
+    <Subsystem>MTMount</Subsystem>
     <EFDB_Topic>MTMount_command_moveToTarget</EFDB_Topic>
     <Description>Go to a specified position and stop.</Description>
     <item>
