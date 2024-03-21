@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="http://lsst-sal.tuc.noao.edu/schema/SALCommandSet.xsl"?>
+<SALCommandSet xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://lsst-sal.tuc.noao.edu/schema/SALCommandSet.xsd">
+  <!-- The main commands -->
+  <SALCommand>
+    <Subsystem>ATBuilding</Subsystem>
+    <EFDB_Topic>ATBuilding_command_openVentGate</EFDB_Topic>
+    <Description>Open the specified vent gate.</Description>
+    <item>
+      <EFDB_Name>gate</EFDB_Name>
+      <Description>Which gate to open (0-3, counter-clockwise from door).</Description>
+      <IDL_Type>int</IDL_Type>
+      <Units>unitless</Units>
+      <Count>4</Count>
+    </item>
+  </SALCommand>
+  <SALCommand>
+    <Subsystem>ATBuilding</Subsystem>
+    <EFDB_Topic>ATBuilding_command_closeVentGate</EFDB_Topic>
+    <Description>Close the specified vent gate.</Description>
+    <item>
+      <EFDB_Name>gate</EFDB_Name>
+      <Description>Which gate to close (0-3, counter-clockwise from door).</Description>
+      <IDL_Type>int</IDL_Type>
+      <Units>unitless</Units>
+      <Count>4</Count>
+    </item>
+  </SALCommand>
+  <SALCommand>
+    <Subsystem>ATBuilding</Subsystem>
+    <EFDB_Topic>ATBuilding_command_startExtractionFan</EFDB_Topic>
+    <Description>Start (run) the extraction fan.</Description>
+  </SALCommand>
+  <SALCommand>
+    <Subsystem>ATBuilding</Subsystem>
+    <EFDB_Topic>ATBuilding_command_stopExtractionFan</EFDB_Topic>
+    <Description>Stops the extraction fan.</Description>
+  </SALCommand>
+  <SALCommand>
+    <Subsystem>ATBuilding</Subsystem>
+    <EFDB_Topic>ATBuilding_command_setExtractionFanDriveFreq</EFDB_Topic>
+    <Description>
+      Sets extraction fan target drive frequency (Hz). 0 or negative values stops the fan.
+      Fan is started if positive value is provided and it's not running.
+    </Description>
+    <item>
+      <EFDB_Name>targetFrequency</EFDB_Name>
+      <Description>Fan drive target frequency.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>Hz</Units>
+      <Count>1</Count>
+    </item>
+  </SALCommand>
+  <SALCommand>
+    <Subsystem>ATBuilding</Subsystem>
+    <EFDB_Topic>ATBuilding_command_resetExtractionFanDrive</EFDB_Topic>
+    <Description>Reset extraction fan VFD faults.</Description>
+  </SALCommand>
+  <!-- Engineering commands -->
+  <SALCommand>
+    <Subsystem>ATBuilding</Subsystem>
+    <EFDB_Topic>ATBuilding_command_setExtractionFanManualControlMode</EFDB_Topic>
+    <Description>
+        Enters and leaves extraction fan manual (control box) control mode.
+        Fan will be stopped if running.
+    </Description>
+    <item>
+      <EFDB_Name>enableManualControlMode</EFDB_Name>
+      <Description>Enable manual control mode.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+  </SALCommand>
+</SALCommandSet>

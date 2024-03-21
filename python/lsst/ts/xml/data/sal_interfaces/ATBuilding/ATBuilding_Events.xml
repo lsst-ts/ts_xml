@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-stylesheet type="text/xsl" href="http://lsst-sal.tuc.noao.edu/schema/SALEventSet.xsl"?>
 <SALEventSet xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://lsst-sal.tuc.noao.edu/schema/SALEventSet.xsd">
+  <Enumeration>FanDriveState_Stopped,FanDriveState_Operating,FanDriveState_Fault</Enumeration>
+  <Enumeration>VentGateState_Closed,VentGateState_PartiallyOpen,VentGateState_Opened</Enumeration>
   <SALEvent>
     <Subsystem>ATBuilding</Subsystem>
     <EFDB_Topic>ATBuilding_logevent_internalCommand</EFDB_Topic>
@@ -46,6 +48,42 @@
       <EFDB_Name>timestamp</EFDB_Name>
       <Description>Timestamp of the rejected command.</Description>
       <IDL_Type>double</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+  </SALEvent>
+  <SALEvent>
+    <Subsystem>ATBuilding</Subsystem>
+    <EFDB_Topic>ATBuilding_logevent_ventGateState</EFDB_Topic>
+    <Description>Vent gate states (gates numbered 0-3, counter-clockwise from door).</Description>
+    <item>
+      <EFDB_Name>state</EFDB_Name>
+      <Description>Current state. A VentGateState enumeration.</Description>
+      <IDL_Type>long</IDL_Type>
+      <Units>unitless</Units>
+      <Count>4</Count>
+    </item>
+  </SALEvent>
+  <SALEvent>
+    <Subsystem>ATBuilding</Subsystem>
+    <EFDB_Topic>ATBuilding_logevent_extractionFanDriveState</EFDB_Topic>
+    <Description>Current state of the extraction fan drive.</Description>
+    <item>
+      <EFDB_Name>state</EFDB_Name>
+      <Description>Current state. A FanDriveState enumeration.</Description>
+      <IDL_Type>long</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+  </SALEvent>
+  <SALEvent>
+    <Subsystem>ATBuilding</Subsystem>
+    <EFDB_Topic>ATBuilding_logevent_extractionFanDriveFaultCode</EFDB_Topic>
+    <Description>Most recent fault code reported by extraction fan drive.</Description>
+    <item>
+      <EFDB_Name>state</EFDB_Name>
+      <Description>Most recent fault code reported. See VFD documentation for interpretation.</Description>
+      <IDL_Type>long</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
     </item>
