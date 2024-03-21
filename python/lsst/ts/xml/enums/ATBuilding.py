@@ -18,43 +18,14 @@
 #
 # You should have received a copy of the GNU General Public License
 
-from . import (
-    ATMCS,
-    DREAM,
-    GIS,
-    HVAC,
-    MTAOS,
-    MTM1M3,
-    MTM2,
-    MTVMS,
-    PMD,
-    ATBuilding,
-    ATCamera,
-    ATDome,
-    ATDomeTrajectory,
-    ATHexapod,
-    ATMonochromator,
-    ATPneumatics,
-    ATPtg,
-    ATSpectrograph,
-    ATThermoelectricCooler,
-    ATWhiteLight,
-    Electrometer,
-    FiberSpectrograph,
-    Guider,
-    LaserTracker,
-    LEDProjector,
-    LinearStage,
-    MTDome,
-    MTDomeTrajectory,
-    MTHexapod,
-    MTMount,
-    MTPtg,
-    MTRotator,
-    Scheduler,
-    Script,
-    ScriptQueue,
-    Test,
-    TunableLaser,
-    Watcher,
-)
+__all__ = [
+    "FanDriveState",
+]
+
+import enum
+
+
+class FanDriveState(enum.IntEnum):
+    STOPPED = 1
+    OPERATING = 2
+    FAULT = 3
