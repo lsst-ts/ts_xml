@@ -2,6 +2,7 @@
 <?xml-stylesheet type="text/xsl" href="http://lsst-sal.tuc.noao.edu/schema/SALEventSet.xsl"?>
 <SALEventSet xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://lsst-sal.tuc.noao.edu/schema/SALEventSet.xsd">
   <Enumeration>FanDriveState_Stopped,FanDriveState_Operating,FanDriveState_Fault</Enumeration>
+  <Enumeration>VentGateState_Closed,VentGateState_PartiallyOpen,VentGateState_Opened</Enumeration>
   <SALEvent>
     <Subsystem>ATBuilding</Subsystem>
     <EFDB_Topic>ATBuilding_logevent_internalCommand</EFDB_Topic>
@@ -53,24 +54,12 @@
   </SALEvent>
   <SALEvent>
     <Subsystem>ATBuilding</Subsystem>
-    <EFDB_Topic>ATBuilding_logevent_ventGateLimitSwitchFullyClosed</EFDB_Topic>
-    <Description>State of fully closed vent gate limit switch.</Description>
+    <EFDB_Topic>ATBuilding_logevent_ventGateState</EFDB_Topic>
+    <Description>Vent gate states (gates numbered 0-3, counter-clockwise from door).</Description>
     <item>
-      <EFDB_Name>active</EFDB_Name>
-      <Description>True if vent gate is fully closed.</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>4</Count>
-    </item>
-  </SALEvent>
-  <SALEvent>
-    <Subsystem>ATBuilding</Subsystem>
-    <EFDB_Topic>ATBuilding_logevent_ventGateLimitSwitchFullyOpen</EFDB_Topic>
-    <Description>State of fully open vent gate limit switch.</Description>
-    <item>
-      <EFDB_Name>active</EFDB_Name>
-      <Description>True if vent gate is fully open.</Description>
-      <IDL_Type>boolean</IDL_Type>
+      <EFDB_Name>state</EFDB_Name>
+      <Description>Current state. A VentGateState enumeration.</Description>
+      <IDL_Type>long</IDL_Type>
       <Units>unitless</Units>
       <Count>4</Count>
     </item>

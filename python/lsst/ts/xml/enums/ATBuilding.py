@@ -20,6 +20,7 @@
 
 __all__ = [
     "FanDriveState",
+    "VentGateState",
 ]
 
 import enum
@@ -29,3 +30,9 @@ class FanDriveState(enum.IntEnum):
     STOPPED = 1
     OPERATING = 2
     FAULT = 3
+
+
+class VentGateState(enum.IntEnum):
+    CLOSED = 1
+    PARTIALLY_OPEN = 2
+    OPENED = 3
