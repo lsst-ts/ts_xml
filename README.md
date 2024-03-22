@@ -119,6 +119,10 @@ Adding, renaming or deleting a CSC, involve operations on files and directories 
 * Delete directory and files in data/sal_interfaces corresponding to CSC
 * Delete CSC entry from testutils.py list
 
+## Unit definitions policy
+
+The policy governing the units assigned to CSC attributes is defined in the [XML Unit Standards](https://obs-controls.lsst.io/Control-User-Interfaces/XML_Units.html) document.
+
 ## Enums and other constants
 
 This repository contains the enumeration values and tables used by other projects.
