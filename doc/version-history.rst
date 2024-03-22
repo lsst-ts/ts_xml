@@ -102,6 +102,7 @@ MTMount
 - Update MTMount interface with latest telemetry from Tekniker.
   Add new commands to reset and load new settings, as well as commands to park and unpark the telescope.
   Add new enumeration with park positions. (`DM-43192 <https://rubinobs.atlassian.net/browse/DM-43192>`_)
+- Fix MTMount telemetry interface. (`DM-43192 <https://rubinobs.atlassian.net/browse/DM-43192>`_)
 
 
 MTRotator
