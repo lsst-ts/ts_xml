@@ -15,7 +15,7 @@ Version History
 
 .. towncrier release notes start
 
-v20.3.0 (2024-03-21)
+v20.3.0 (2024-03-22)
 ====================
 Package Level
 -------------
@@ -126,8 +126,9 @@ TunableLaser
 ~~~~~~~~~~~~
 
 - Added new command ``setOpticalConfiguration`` to change the optical alignment configuration.
-
   Added new log event ``opticalConfiguration`` which reflects the set optical alignment configuration. (`DM-41678 <https://rubinobs.atlassian.net/browse/DM-41678>`_)
+- Fix duplicate temperature topic by renaming one to scannerTemperature. (`DM-43446 <https://rubinobs.atlassian.net/browse/DM-43446>`_)
+- Add missing descriptions to all TunableLaser telemetry topics. (`DM-43446 <https://rubinobs.atlassian.net/browse/DM-43446>`_)
 
 
 ? (2024-03-21)
