@@ -132,10 +132,22 @@
     <Description>Hardpoint list in the low-level controller.</Description>
     <item>
       <EFDB_Name>actuators</EFDB_Name>
-      <Description>Actuator Ids to be the hardpoint.</Description>
+      <Description>1-based actuator Ids to be the hardpoints.</Description>
       <IDL_Type>unsigned short</IDL_Type>
       <Units>unitless</Units>
       <Count>6</Count>
+    </item>
+  </SALEvent>
+  <SALEvent>
+    <Subsystem>MTM2</Subsystem>
+    <EFDB_Topic>MTM2_logevent_bypassedIlc</EFDB_Topic>
+    <Description>Bypassed inner-loop controller (ILC) in the cell control system. If any actuator ILC is bypassed, it should belong to the hardpoints.</Description>
+    <item>
+      <EFDB_Name>ilc</EFDB_Name>
+      <Description>1-based ILC.</Description>
+      <IDL_Type>unsigned short</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
     </item>
   </SALEvent>
   <SALEvent>
