@@ -27,6 +27,7 @@ __all__ = [
     "PowerState",
     "System",
     "ThermalCommandState",
+    "ParkPosition",
 ]
 
 import enum
@@ -155,3 +156,10 @@ class ThermalCommandState(enum.IntEnum):
     NO_CHANGE = 0
     OFF = 1
     ON = 2
+
+
+class ParkPosition(enum.IntEnum):
+    """Park positions."""
+
+    ZENITH = enum.auto()
+    HORIZON = enum.auto()

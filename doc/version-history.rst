@@ -4,6 +4,243 @@
 Version History
 ===============
 
+.. WARNING: DO NOT MANUALLY EDIT THIS FILE.
+
+   Release notes are now managed using towncrier.
+   The following comment marks the start of the automatically managed content.
+   For help in how to create the "news fragments" see the README page in the
+   doc directory.
+
+   Do not remove the following comment line.
+
+.. towncrier release notes start
+
+v20.3.0 (2024-03-22)
+====================
+Package Level
+-------------
+
+New Features
+~~~~~~~~~~~~
+
+- Fix many missing units/descriptions
+  Add mpm subsystem for MTCamera
+  Update MTCamera telemetry/events for filter changer subsystem
+  Update MTCamera telemetry/events for shutter subsystem
+  Update MTCamera telemetry/events for refrig/chiller subsystems (`CAP-1029 <https://rubinobs.atlassian.net/browse/CAP-1029>`_)
+- Add support for towncrier to manage release notes. (`DM-42658 <https://rubinobs.atlassian.net/browse/DM-42658>`_)
+- Remove support for null values for float and double.
+  After investigating the issue, we realized that AVRO supports setting the values to NaN (as well as +/-Infinity), which covers the conditions we were trying to support with the null values. (`DM-42789 <https://rubinobs.atlassian.net/browse/DM-42789>`_)
+- Update the version of the ts-conda-build dependency to 0.4. (`DM-43331 <https://rubinobs.atlassian.net/browse/DM-43331>`_)
+- Adding 2 events and 1 telemetry for the Interlock Monitor to capture when the fan turns on/off, interlock turns on/off, and the rolling average of all probes on the temperature scanner. (`dm-42237 <https://rubinobs.atlassian.net/browse/dm-42237>`_)
+
+
+Documentation
+~~~~~~~~~~~~~
+
+- Adds a reference to the XML Unit Standards policy to README.md. (`DM-43089 <https://rubinobs.atlassian.net/browse/DM-43089>`_)
+
+
+Interface Changes
+-----------------
+
+ATBuilding
+~~~~~~~~~~
+
+- Add interfaces for upcoming auxtel vent gate and fan automation. (`DM-43428 <https://rubinobs.atlassian.net/browse/DM-43428>`_)
+
+
+CCCamera
+~~~~~~~~
+
+- Add new telemetry for the refrigeration pathfinder (considered part of ComCam) (`CAP-1026 <https://rubinobs.atlassian.net/browse/CAP-1026>`_)
+
+
+ESS
+~~~
+
+- Add telemetry for the Q330 earthquake monitor. (`DM-43018 <https://rubinobs.atlassian.net/browse/DM-43018>`_)
+
+
+Electrometer
+~~~~~~~~~~~~
+
+- Add logicTimerStart and logicTimerEnd events. (`DM-42856 <https://rubinobs.atlassian.net/browse/DM-42856>`_)
+
+
+GIS
+~~~
+
+- Fix gnetAuxFree item count in auxCpuInputs. (`DM-43260 <https://rubinobs.atlassian.net/browse/DM-43260>`_)
+
+
+GenericCamera
+~~~~~~~~~~~~~
+
+- Add new event ``endOfStreaming`` to denote that camera has stopped streaming but image file(s) not constructed yet.
+
+  Add ``imageName`` attribute to ``logevent_streamingModeStarted`` and ``logevent_streamingModeStopped``. (`DM-43360 <https://rubinobs.atlassian.net/browse/DM-43360>`_)
+
+
+MTCamera
+~~~~~~~~
+
+- Add support for filter changer low power mode (`CAP-1024 <https://rubinobs.atlassian.net/browse/CAP-1024>`_)
+- Add support for filter changer degraded mode (`CAP-1025 <https://rubinobs.atlassian.net/browse/CAP-1025>`_)
+- Fix issues related to MTCamera thermal patterns for rtd and trim heaters (`CAP-1030 <https://rubinobs.atlassian.net/browse/CAP-1030>`_)
+
+
+MTDome
+~~~~~~
+
+- Add new and correct existing MotionState enum values. (`DM-42686 <https://rubinobs.atlassian.net/browse/DM-42686>`_)
+
+
+MTMount
+~~~~~~~
+
+- Update MTMount interface with latest telemetry from Tekniker.
+  Add new commands to reset and load new settings, as well as commands to park and unpark the telescope.
+  Add new enumeration with park positions. (`DM-43192 <https://rubinobs.atlassian.net/browse/DM-43192>`_)
+- Fix MTMount telemetry interface. (`DM-43192 <https://rubinobs.atlassian.net/browse/DM-43192>`_)
+
+
+MTRotator
+~~~~~~~~~
+
+- Add configureJerk command. (`DM-43265 <https://rubinobs.atlassian.net/browse/DM-43265>`_)
+
+
+Scheduler
+~~~~~~~~~
+
+- Update SalIndex Scheduler enumeration to include the "OCS" instance of the scheduler, with index=3. (`DM-42183 <https://rubinobs.atlassian.net/browse/DM-42183>`_)
+
+
+ScriptQueue
+~~~~~~~~~~~
+
+- Update SalIndex ScriptQueue enumeration to include the "OCS" instance with index=3. (`DM-42183 <https://rubinobs.atlassian.net/browse/DM-42183>`_)
+
+
+TunableLaser
+~~~~~~~~~~~~
+
+- Added new command ``setOpticalConfiguration`` to change the optical alignment configuration.
+  Added new log event ``opticalConfiguration`` which reflects the set optical alignment configuration. (`DM-41678 <https://rubinobs.atlassian.net/browse/DM-41678>`_)
+- Fix duplicate temperature topic by renaming one to scannerTemperature. (`DM-43446 <https://rubinobs.atlassian.net/browse/DM-43446>`_)
+- Add missing descriptions to all TunableLaser telemetry topics. (`DM-43446 <https://rubinobs.atlassian.net/browse/DM-43446>`_)
+
+
+? (2024-03-21)
+==============
+Package Level
+-------------
+
+New Features
+~~~~~~~~~~~~
+
+- Fix many missing units/descriptions
+  Add mpm subsystem for MTCamera
+  Update MTCamera telemetry/events for filter changer subsystem
+  Update MTCamera telemetry/events for shutter subsystem
+  Update MTCamera telemetry/events for refrig/chiller subsystems (`CAP-1029 <https://rubinobs.atlassian.net/browse/CAP-1029>`_)
+- Add support for towncrier to manage release notes. (`DM-42658 <https://rubinobs.atlassian.net/browse/DM-42658>`_)
+- Remove support for null values for float and double.
+  After investigating the issue, we realized that AVRO supports setting the values to NaN (as well as +/-Infinity), which covers the conditions we were trying to support with the null values. (`DM-42789 <https://rubinobs.atlassian.net/browse/DM-42789>`_)
+- Update the version of the ts-conda-build dependency to 0.4. (`DM-43331 <https://rubinobs.atlassian.net/browse/DM-43331>`_)
+- Adding 2 events and 1 telemetry for the Interlock Monitor to capture when the fan turns on/off, interlock turns on/off, and the rolling average of all probes on the temperature scanner. (`dm-42237 <https://rubinobs.atlassian.net/browse/dm-42237>`_)
+
+
+Interface Changes
+-----------------
+
+ATBuilding
+~~~~~~~~~~
+
+- Add interfaces for upcoming auxtel vent gate and fan automation. (`DM-43428 <https://rubinobs.atlassian.net/browse/DM-43428>`_)
+
+
+CCCamera
+~~~~~~~~
+
+- Add new telemetry for the refrigeration pathfinder (considered part of ComCam) (`CAP-1026 <https://rubinobs.atlassian.net/browse/CAP-1026>`_)
+
+
+ESS
+~~~
+
+- Add telemetry for the Q330 earthquake monitor. (`DM-43018 <https://rubinobs.atlassian.net/browse/DM-43018>`_)
+
+
+Electrometer
+~~~~~~~~~~~~
+
+- Add logicTimerStart and logicTimerEnd events. (`DM-42856 <https://rubinobs.atlassian.net/browse/DM-42856>`_)
+
+
+GIS
+~~~
+
+- Fix gnetAuxFree item count in auxCpuInputs. (`DM-43260 <https://rubinobs.atlassian.net/browse/DM-43260>`_)
+
+
+GenericCamera
+~~~~~~~~~~~~~
+
+- Add new event ``endOfStreaming`` to denote that camera has stopped streaming but image file(s) not constructed yet.
+
+  Add ``imageName`` attribute to ``logevent_streamingModeStarted`` and ``logevent_streamingModeStopped``. (`DM-43360 <https://rubinobs.atlassian.net/browse/DM-43360>`_)
+
+
+MTCamera
+~~~~~~~~
+
+- Add support for filter changer low power mode (`CAP-1024 <https://rubinobs.atlassian.net/browse/CAP-1024>`_)
+- Add support for filter changer degraded mode (`CAP-1025 <https://rubinobs.atlassian.net/browse/CAP-1025>`_)
+- Fix issues related to MTCamera thermal patterns for rtd and trim heaters (`CAP-1030 <https://rubinobs.atlassian.net/browse/CAP-1030>`_)
+
+
+MTDome
+~~~~~~
+
+- Add new and correct existing MotionState enum values. (`DM-42686 <https://rubinobs.atlassian.net/browse/DM-42686>`_)
+
+
+MTMount
+~~~~~~~
+
+- Update MTMount interface with latest telemetry from Tekniker.
+  Add new commands to reset and load new settings, as well as commands to park and unpark the telescope.
+  Add new enumeration with park positions. (`DM-43192 <https://rubinobs.atlassian.net/browse/DM-43192>`_)
+
+
+MTRotator
+~~~~~~~~~
+
+- Add configureJerk command. (`DM-43265 <https://rubinobs.atlassian.net/browse/DM-43265>`_)
+
+
+Scheduler
+~~~~~~~~~
+
+- Update SalIndex Scheduler enumeration to include the "OCS" instance of the scheduler, with index=3. (`DM-42183 <https://rubinobs.atlassian.net/browse/DM-42183>`_)
+
+
+ScriptQueue
+~~~~~~~~~~~
+
+- Update SalIndex ScriptQueue enumeration to include the "OCS" instance with index=3. (`DM-42183 <https://rubinobs.atlassian.net/browse/DM-42183>`_)
+
+
+TunableLaser
+~~~~~~~~~~~~
+
+- Added new command ``setOpticalConfiguration`` to change the optical alignment configuration.
+
+  Added new log event ``opticalConfiguration`` which reflects the set optical alignment configuration. (`DM-41678 <https://rubinobs.atlassian.net/browse/DM-41678>`_)
+
+
 v20.2.0
 -------
 
@@ -20,7 +257,7 @@ v20.2.0
 
   * MTM2
 
-    * Improve the description of ``MTM2_forceErrorTangent`` topic.     
+    * Improve the description of ``MTM2_forceErrorTangent`` topic.
 
   * CBP
 

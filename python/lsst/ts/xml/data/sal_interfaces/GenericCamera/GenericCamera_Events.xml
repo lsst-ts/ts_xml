@@ -888,6 +888,14 @@
       <Units>second</Units>
       <Count>1</Count>
     </item>
+    <item>
+      <EFDB_Name>imageName</EFDB_Name>
+      <Description>The imageName for this specific exposure, assigned by the camera</Description>
+      <IDL_Type>string</IDL_Type>
+      <IDL_Size>32</IDL_Size>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
   </SALEvent>
   <SALEvent>
     <Subsystem>GenericCamera</Subsystem>
@@ -912,6 +920,27 @@
       <Description>The average frame rate during streaming mode acquisition.</Description>
       <IDL_Type>double</IDL_Type>
       <Units>Hz</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>imageName</EFDB_Name>
+      <Description>The imageName for this specific exposure, assigned by the camera</Description>
+      <IDL_Type>string</IDL_Type>
+      <IDL_Size>32</IDL_Size>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+  </SALEvent>
+  <SALEvent>
+    <Subsystem>GenericCamera</Subsystem>
+    <EFDB_Topic>GenericCamera_logevent_endOfStreaming</EFDB_Topic>
+    <Description>Notification event that camera has stopped streaming, but construction of image file(s) still pending.</Description>
+    <item>
+      <EFDB_Name>imageName</EFDB_Name>
+      <Description>The imageName for this specific exposure, assigned by the camera</Description>
+      <IDL_Type>string</IDL_Type>
+      <IDL_Size>32</IDL_Size>
+      <Units>unitless</Units>
       <Count>1</Count>
     </item>
   </SALEvent>

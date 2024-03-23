@@ -58,8 +58,8 @@ AVRO_TYPES = {
     "long long": "long",
     "unsigned short": "int",
     "unsigned int": "long",
-    "float": ["float", "null"],
-    "double": ["double", "null"],
+    "float": "float",
+    "double": "double",
     "string": "string",
 }
 
@@ -138,6 +138,7 @@ class FieldInfo:
     def make_avro_schema(self) -> dict[str, typing.Any]:
         """Return an Avro schema for this field."""
         scalar_type = AVRO_TYPES[self.sal_type]
+
         if self.count > 1:
             avro_type: typing.Any = {"type": "array", "items": scalar_type}
             default: typing.Any = [self.default_scalar_value] * self.count

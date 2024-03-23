@@ -4,6 +4,7 @@
   <SALTelemetry>
     <Subsystem>TunableLaser</Subsystem>
     <EFDB_Topic>TunableLaser_temperature</EFDB_Topic>
+    <Description>The temperature sensors that are available from the laser. (deg_C)</Description>
     <item>
       <EFDB_Name>tk6_temperature</EFDB_Name>
       <Description>The temperature sensors for the laser.</Description>
@@ -57,11 +58,24 @@
   <SALTelemetry>
     <Subsystem>TunableLaser</Subsystem>
     <EFDB_Topic>TunableLaser_wavelength</EFDB_Topic>
+    <Description>The wavelength of the laser.</Description>
     <item>
       <EFDB_Name>wavelength</EFDB_Name>
       <Description>The wavelength for the laser</Description>
       <IDL_Type>double</IDL_Type>
       <Units>nanometer</Units>
+      <Count>1</Count>
+    </item>
+  </SALTelemetry>
+  <SALTelemetry>
+    <Subsystem>TunableLaser</Subsystem>
+    <EFDB_Topic>TunableLaser_scannerTemperature</EFDB_Topic>
+    <Description>The average temperature of the Omrom scanner for measuring the cooling performance of the laser.</Description>
+    <item>
+      <EFDB_Name>scanner_temperature</EFDB_Name>
+      <Description>Rolling average temperature of all temps on the scanner.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>deg_C</Units>
       <Count>1</Count>
     </item>
   </SALTelemetry>

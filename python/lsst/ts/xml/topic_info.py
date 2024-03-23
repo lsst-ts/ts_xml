@@ -161,7 +161,9 @@ ACKCMD_FIELDS = {info.name: info for info in _ACKCMD_FIELDS_LIST}
 
 
 def make_ackcmd_topic_info(
-    component_name: str, topic_subname: str, indexed: bool
+    component_name: str,
+    topic_subname: str,
+    indexed: bool,
 ) -> TopicInfo:
     """Make an ackcmd topic for a given component.
 
@@ -380,7 +382,6 @@ class TopicInfo:
     def make_avro_schema(self) -> dict[str, typing.Any]:
         """Create an avro schema."""
         avro_schema = self._avro_schema_cache.get(self._cache_key)
-
         if avro_schema is None:
             avro_schema = dict(
                 type="record",

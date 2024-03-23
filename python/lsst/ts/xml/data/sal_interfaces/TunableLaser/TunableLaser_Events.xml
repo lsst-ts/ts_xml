@@ -36,6 +36,18 @@ LaserErrorCode_HW_CPU_ERROR = 7304
   </SALEvent>
   <SALEvent>
     <Subsystem>TunableLaser</Subsystem>
+    <EFDB_Topic>TunableLaser_logevent_opticalConfiguration</EFDB_Topic>
+    <item>
+      <EFDB_Name>configuration</EFDB_Name>
+      <Description>The new optical alignment configuration.</Description>
+      <IDL_Type>string</IDL_Type>
+      <IDL_Size>1</IDL_Size>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+  </SALEvent>
+  <SALEvent>
+    <Subsystem>TunableLaser</Subsystem>
     <EFDB_Topic>TunableLaser_logevent_burstModeSet</EFDB_Topic>
   </SALEvent>
   <SALEvent>
@@ -71,5 +83,27 @@ LaserErrorCode_HW_CPU_ERROR = 7304
   <SALEvent>
     <Subsystem>TunableLaser</Subsystem>
     <EFDB_Topic>TunableLaser_logevent_tempCtrlOff</EFDB_Topic>
+  </SALEvent>
+  <SALEvent>
+    <Subsystem>TunableLaser</Subsystem>
+    <EFDB_Topic>TunableLaser_logevent_laserFanState</EFDB_Topic>
+    <item>
+      <EFDB_Name>laserFanState</EFDB_Name>
+      <Description>State of the fan, True of ON, False if OFF.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+  </SALEvent>
+  <SALEvent>
+    <Subsystem>TunableLaser</Subsystem>
+    <EFDB_Topic>TunableLaser_logevent_interlockState</EFDB_Topic>
+    <item>
+      <EFDB_Name>interlockState</EFDB_Name>
+      <Description>State of the interlock, True of ON, False if OFF.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
   </SALEvent>
 </SALEventSet>
