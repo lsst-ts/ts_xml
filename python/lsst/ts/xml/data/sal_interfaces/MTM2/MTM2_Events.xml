@@ -132,10 +132,22 @@
     <Description>Hardpoint list in the low-level controller.</Description>
     <item>
       <EFDB_Name>actuators</EFDB_Name>
-      <Description>Actuator Ids to be the hardpoint.</Description>
+      <Description>1-based actuator Ids to be the hardpoints.</Description>
       <IDL_Type>unsigned short</IDL_Type>
       <Units>unitless</Units>
       <Count>6</Count>
+    </item>
+  </SALEvent>
+  <SALEvent>
+    <Subsystem>MTM2</Subsystem>
+    <EFDB_Topic>MTM2_logevent_disabledILC</EFDB_Topic>
+    <Description>Disabled/bypassed inner-loop controllers (ILCs) in the cell control system. If any actuator ILC is disabled/bypassed, it should belong to the hardpoints. It is noted that the cell control system needs the measurements of hardpoints in the hardpoint compensation. That means the actuator ILCs need to be Enabled to get the readings of load cells under the closed-loop control.</Description>
+    <item>
+      <EFDB_Name>ilcs</EFDB_Name>
+      <Description>Disabled/bypassed ILCs.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>84</Count>
     </item>
   </SALEvent>
   <SALEvent>
