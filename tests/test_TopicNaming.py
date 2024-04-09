@@ -137,3 +137,40 @@ def test_topic_naming_alias(xmlfile: pathlib.Path, csc: str, topic: str) -> None
             f"{name.text} in {xmlfile.name} does not begin with a lowercase letter "
             "and/or contains non-alphanumeric characters."
         )
+
+
+@pytest.mark.parametrize("xmlfile,csc,topic", ts_xml.get_xmlfile_csc_topic())
+def test_topic_naming_duplicate(xmlfile: pathlib.Path, csc: str, topic: str) -> None:
+    """Test that the <EFDB_Topic> field for topics is properly formed.
+    The <EFDB_Topic> is a compound word comprising the CSC Name,
+    the topic type, if applicable, and the topic name.
+    Names begin with a lowercase letter and contain only alphanumeric
+    and underscore characters.
+
+    This test makes sure that there are no duplicate topic names.
+
+    Parameters
+    ----------
+    xmlfile : `pathlib.Path`
+        Full filepath to the Commands or Events XML file for the CSC.
+    csc : `str`
+        Name of the CSC
+    topic : `str`
+        One of ['Commands','Events','Telemetry']
+    """
+    saltype = "SAL" + topic.rstrip("s")
+    # Check for known issues.
+    jira = check_for_issues(csc, topic, "alias")
+    if jira:
+        pytest.skip(f"{jira}: {xmlfile.name} <EFDB_Topic> is not properly formed.")
+    # Test the topic <EFDB_Name> field.
+    with open(str(xmlfile), "r", encoding="utf-8") as f:
+        tree = et.parse(f)
+    root = tree.getroot()
+    topic_names = []
+    for name in root.findall(f"./{saltype}/EFDB_Topic"):
+        assert name.text is not None
+        topic_names.append(name.text)
+    assert len(topic_names) == len(
+        set(topic_names)
+    ), f"The {xmlfile} file contains duplicate topic names."
