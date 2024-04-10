@@ -55,8 +55,6 @@ def check_for_issues(csc: str, topic: str) -> str:
             return "DM-43815"
         case "MTCamera-Telemetry" | "MTCamera-Commands" | "MTCamera-Events":
             return "DM-43816"
-        case "MTDome-Events" | "MTDome-Telemetry":
-            return "DM-43676"
         case "MTEEC-Commands" | "MTEEC-Events":
             return "DM-43817"
         case "MTHexapod-Telemetry":
