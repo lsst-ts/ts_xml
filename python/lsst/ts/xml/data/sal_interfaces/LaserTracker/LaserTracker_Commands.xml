@@ -44,6 +44,7 @@
   <SALCommand>
     <Subsystem>LaserTracker</Subsystem>
     <EFDB_Topic>LaserTracker_command_measurePoint</EFDB_Topic>
+    <Description>Measure a single point</Description>
     <item>
       <EFDB_Name>collection</EFDB_Name>
       <Description>Name of collection containing target point</Description>
@@ -69,6 +70,7 @@
   <SALCommand>
     <Subsystem>LaserTracker</Subsystem>
     <EFDB_Topic>LaserTracker_command_pointDelta</EFDB_Topic>
+    <Description>Measure offset of a point A from point B</Description>
     <item>
       <EFDB_Name>collection_A</EFDB_Name>
       <Description>Name of collection containing target point A</Description>
@@ -115,6 +117,7 @@
   <SALCommand>
     <Subsystem>LaserTracker</Subsystem>
     <EFDB_Topic>LaserTracker_command_laserPower</EFDB_Topic>
+    <Description>Control LaserTracker power state</Description>
     <item>
       <EFDB_Name>power</EFDB_Name>
       <Description>Turn laser on and off</Description>
@@ -126,7 +129,8 @@
   <SALCommand>
     <Subsystem>LaserTracker</Subsystem>
     <EFDB_Topic>LaserTracker_command_powerOff</EFDB_Topic>
-    <item>
+    <Description>Power LaserTracker off</Description>
+   <item>
       <EFDB_Name>powerOff</EFDB_Name>
       <Description>Power off the tracker and controller, and close the interface</Description>
       <IDL_Type>boolean</IDL_Type>
@@ -137,6 +141,8 @@
   <SALCommand>
     <Subsystem>LaserTracker</Subsystem>
     <EFDB_Topic>LaserTracker_command_healthCheck</EFDB_Topic>
+    <Description>Perform internal health check    <Description></Description>
+</Description>
     <item>
       <EFDB_Name>healthCheck</EFDB_Name>
       <Description>Execute the health check script</Description>
@@ -148,6 +154,7 @@
   <SALCommand>
     <Subsystem>LaserTracker</Subsystem>
     <EFDB_Topic>LaserTracker_command_setReferenceGroup</EFDB_Topic>
+    <Description>Set the reference group</Description>
     <item>
       <EFDB_Name>referenceGroup</EFDB_Name>
       <Description>Nominal point group to locate tracker station to and provide data relative to</Description>
@@ -159,6 +166,7 @@
   <SALCommand>
     <Subsystem>LaserTracker</Subsystem>
     <EFDB_Topic>LaserTracker_command_halt</EFDB_Topic>
+    <Description>Halt any running command</Description>
     <item>
       <EFDB_Name>halt</EFDB_Name>
       <Description>Halt any executing measurement plan and return to ready state</Description>
@@ -170,6 +178,7 @@
   <SALCommand>
     <Subsystem>LaserTracker</Subsystem>
     <EFDB_Topic>LaserTracker_command_setWorkingFrame</EFDB_Topic>
+    <Description>Set the working frame</Description>
     <item>
       <EFDB_Name>workingFrame</EFDB_Name>
       <Description>Attempt to set the passed string as the SpatialAnalyzer working frame</Description>
@@ -181,6 +190,7 @@
   <SALCommand>
     <Subsystem>LaserTracker</Subsystem>
     <EFDB_Topic>LaserTracker_command_loadSATemplateFile</EFDB_Topic>
+    <Description>Load a template file</Description>
     <item>
       <EFDB_Name>file</EFDB_Name>
       <Description>SA Template file path and name. This is in the filesystem on the T2SA host.</Description>
@@ -192,6 +202,7 @@
   <SALCommand>
     <Subsystem>LaserTracker</Subsystem>
     <EFDB_Topic>LaserTracker_command_measureDrift</EFDB_Topic>
+    <Description>Measure the drift</Description>
     <item>
       <EFDB_Name>pointgroup</EFDB_Name>
       <Description>Nominal point group name in the default A collection to measure drift against.</Description>
@@ -203,6 +214,7 @@
   <SALCommand>
     <Subsystem>LaserTracker</Subsystem>
     <EFDB_Topic>LaserTracker_command_resetT2SA</EFDB_Topic>
+    <Description>Reset the T2SA interface</Description>
     <item>
       <EFDB_Name>resetT2SA</EFDB_Name>
       <Description>Reboot T2SA and SA components</Description>
@@ -214,6 +226,7 @@
   <SALCommand>
     <Subsystem>LaserTracker</Subsystem>
     <EFDB_Topic>LaserTracker_command_newStation</EFDB_Topic>
+    <Description>Create a new station</Description>
     <item>
       <EFDB_Name>newStation</EFDB_Name>
       <Description>Add a new station and make it the active instrument</Description>
@@ -225,6 +238,7 @@
   <SALCommand>
     <Subsystem>LaserTracker</Subsystem>
     <EFDB_Topic>LaserTracker_command_saveJobfile</EFDB_Topic>
+    <Description>Save the jobfile</Description>
     <item>
       <EFDB_Name>file</EFDB_Name>
       <Description>SA Job file name and path</Description>
