@@ -24,6 +24,7 @@ __all__ = [
     "MotionState",
     "OnOff",
     "OperationalMode",
+    "PowerManagementMode",
     "RadLockingPinState",
     "SubSystemId",
 ]
@@ -163,9 +164,18 @@ class OperationalMode(enum.IntEnum):
 class RadLockingPinState(enum.IntEnum):
     """Rear Access Door locking pin state."""
 
-    ENGAGED = 0
-    FLOATING = 1
-    DISENGAGED = 2
+    ENGAGED = 1
+    FLOATING = 2
+    DISENGAGED = 3
+
+
+class PowerManagementMode(enum.IntEnum):
+    """Power management mode."""
+
+    NO_POWER_MANAGEMENT = 1
+    OPERATIONS = 2
+    EMERGENCY = 3
+    MAINTENANCE = 4
 
 
 class SubSystemId(enum.IntEnum):
