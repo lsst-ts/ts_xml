@@ -33,8 +33,6 @@ def check_for_issues(csc: str, topic: str) -> str:
             return "DM-43806"
         case "DIMM-Events" | "DIMM-Telemetry":
             return "DM-43807"
-        case "DSM-Events" | "DSM-Telemetry":
-            return "DM-43808"
         case "EAS-Events" | "EAS-Telemetry":
             return "DM-43809"
         case "Electrometer-Events":
