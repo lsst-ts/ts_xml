@@ -4,6 +4,7 @@
   <SALEvent>
     <Subsystem>GenericCamera</Subsystem>
     <EFDB_Topic>GenericCamera_logevent_cameraInfo</EFDB_Topic>
+    <Description>Collection of camera and/or optical system related information</Description>
     <item>
       <EFDB_Name>cameraMakeAndModel</EFDB_Name>
       <Description>This is the make and model of the current camera.</Description>
@@ -56,6 +57,7 @@
   <SALEvent>
     <Subsystem>GenericCamera</Subsystem>
     <EFDB_Topic>GenericCamera_logevent_cameraSpecificProperty</EFDB_Topic>
+    <Description>Information about a specific camera property</Description>
     <item>
       <EFDB_Name>propertyName</EFDB_Name>
       <Description>This is the name of the property specific to this camera.</Description>
@@ -76,6 +78,7 @@
   <SALEvent>
     <Subsystem>GenericCamera</Subsystem>
     <EFDB_Topic>GenericCamera_logevent_roi</EFDB_Topic>
+    <Description>Information about the region-of-interest</Description>
     <item>
       <EFDB_Name>topPixel</EFDB_Name>
       <Description>This is the regions top most pixel number (base 0).</Description>
@@ -108,6 +111,7 @@
   <SALEvent>
     <Subsystem>GenericCamera</Subsystem>
     <EFDB_Topic>GenericCamera_logevent_startLiveView</EFDB_Topic>
+    <Description>Notification event about the starting of the live view mode</Description>
     <item>
       <EFDB_Name>ip</EFDB_Name>
       <Description>This is the ip address for the live view data.</Description>
@@ -127,6 +131,7 @@
   <SALEvent>
     <Subsystem>GenericCamera</Subsystem>
     <EFDB_Topic>GenericCamera_logevent_endLiveView</EFDB_Topic>
+    <Description>Notification event about the ending of the live view mode</Description>
     <item>
       <EFDB_Name>ignored</EFDB_Name>
       <Description>Attribute required by the SAL API, but is unused.</Description>
@@ -138,14 +143,17 @@
   <SALEvent>
     <Subsystem>GenericCamera</Subsystem>
     <EFDB_Topic>GenericCamera_logevent_startTakeImage</EFDB_Topic>
+    <Description>Notification event about the camera starting to take an image</Description>
   </SALEvent>
   <SALEvent>
     <Subsystem>GenericCamera</Subsystem>
     <EFDB_Topic>GenericCamera_logevent_startShutterOpen</EFDB_Topic>
+    <Description>Notification event about the camera starting to open the shutter</Description>
   </SALEvent>
   <SALEvent>
     <Subsystem>GenericCamera</Subsystem>
     <EFDB_Topic>GenericCamera_logevent_endShutterOpen</EFDB_Topic>
+    <Description>Notification event about the camera ending the shutter opening</Description>
   </SALEvent>
   <SALEvent>
     <Subsystem>GenericCamera</Subsystem>
@@ -267,10 +275,12 @@
   <SALEvent>
     <Subsystem>GenericCamera</Subsystem>
     <EFDB_Topic>GenericCamera_logevent_startShutterClose</EFDB_Topic>
+    <Description>Notification event about the camera starting to close the shutter</Description>
   </SALEvent>
   <SALEvent>
     <Subsystem>GenericCamera</Subsystem>
     <EFDB_Topic>GenericCamera_logevent_endShutterClose</EFDB_Topic>
+    <Description>Notification event about the camera ending the closing of the shutter</Description>
   </SALEvent>
   <SALEvent>
     <Subsystem>GenericCamera</Subsystem>
@@ -468,6 +478,7 @@
   <SALEvent>
     <Subsystem>GenericCamera</Subsystem>
     <EFDB_Topic>GenericCamera_logevent_endTakeImage</EFDB_Topic>
+    <Description>Notification event about the camera ending the process of taking an image</Description>
   </SALEvent>
   <SALEvent>
     <Subsystem>GenericCamera</Subsystem>
@@ -740,6 +751,7 @@
   <SALEvent>
     <Subsystem>GenericCamera</Subsystem>
     <EFDB_Topic>GenericCamera_logevent_offlineDetailedState</EFDB_Topic>
+    <Description>Information regarding the camera substate in OFFLINE state</Description>
     <item>
       <EFDB_Name>substate</EFDB_Name>
       <Description>Enumeration of valid substates</Description>
@@ -759,6 +771,7 @@
   <SALEvent>
     <Subsystem>GenericCamera</Subsystem>
     <EFDB_Topic>GenericCamera_logevent_imageReadinessDetailedState</EFDB_Topic>
+    <Description>Information about the readiness of the camera image system</Description>
     <item>
       <EFDB_Name>substate</EFDB_Name>
       <Description>Enumeration of valid substates</Description>
@@ -778,10 +791,12 @@
   <SALEvent>
     <Subsystem>GenericCamera</Subsystem>
     <EFDB_Topic>GenericCamera_logevent_notReadyToTakeImage</EFDB_Topic>
+    <Description>Notification event that the camera is not ready to take an image.</Description>
   </SALEvent>
   <SALEvent>
     <Subsystem>GenericCamera</Subsystem>
     <EFDB_Topic>GenericCamera_logevent_calibrationDetailedState</EFDB_Topic>
+    <Description>Information about the camera's calibration state</Description>
     <item>
       <EFDB_Name>substate</EFDB_Name>
       <Description>Enumeration of valid substates</Description>
@@ -801,6 +816,7 @@
   <SALEvent>
     <Subsystem>GenericCamera</Subsystem>
     <EFDB_Topic>GenericCamera_logevent_shutterDetailedState</EFDB_Topic>
+    <Description>Information about the camera's shutter state</Description>
     <item>
       <EFDB_Name>substate</EFDB_Name>
       <Description>Enumeration of valid substates</Description>
@@ -820,10 +836,12 @@
   <SALEvent>
     <Subsystem>GenericCamera</Subsystem>
     <EFDB_Topic>GenericCamera_logevent_readyToTakeImage</EFDB_Topic>
+    <Description>Notification event that the camera is ready to take an image</Description>
   </SALEvent>
   <SALEvent>
     <Subsystem>GenericCamera</Subsystem>
     <EFDB_Topic>GenericCamera_logevent_ccsCommandState</EFDB_Topic>
+    <Description>Information about the camera control systems' command state</Description>
     <item>
       <EFDB_Name>substate</EFDB_Name>
       <Description>Substate of the CCS command.</Description>
@@ -843,14 +861,17 @@
   <SALEvent>
     <Subsystem>GenericCamera</Subsystem>
     <EFDB_Topic>GenericCamera_logevent_prepareToTakeImage</EFDB_Topic>
+    <Description>Notification event that the camera is preparing to take an image</Description>
   </SALEvent>
   <SALEvent>
     <Subsystem>GenericCamera</Subsystem>
     <EFDB_Topic>GenericCamera_logevent_ccsConfigured</EFDB_Topic>
+    <Description>Information about the camera control systems' configured state</Description>
   </SALEvent>
   <SALEvent>
     <Subsystem>GenericCamera</Subsystem>
     <EFDB_Topic>GenericCamera_logevent_autoExposureStarted</EFDB_Topic>
+    <Description>Notification event that the camera has started auto exposure mode</Description>
     <item>
       <EFDB_Name>minExpTime</EFDB_Name>
       <Description>Minimum exposure time</Description>
@@ -876,6 +897,7 @@
   <SALEvent>
     <Subsystem>GenericCamera</Subsystem>
     <EFDB_Topic>GenericCamera_logevent_autoExposureStopped</EFDB_Topic>
+    <Description>Notification event that the camera has stopped auto exposure mode</Description>
   </SALEvent>
   <SALEvent>
     <Subsystem>GenericCamera</Subsystem>
