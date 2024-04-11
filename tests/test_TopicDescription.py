@@ -57,8 +57,6 @@ def check_for_issues(csc: str, topic: str) -> str:
             return "DM-43816"
         case "MTEEC-Commands" | "MTEEC-Events":
             return "DM-43817"
-        case "MTHexapod-Telemetry":
-            return "DM-43818"
         case "MTM1M3-Telemetry" | "MTM1M3-Events" | "MTM1M3-Commands":
             return "DM-43819"
         case "MTM1M3TS-Commands" | "MTM1M3TS-Telemetry" | "MTM1M3TS-Events":
@@ -67,8 +65,6 @@ def check_for_issues(csc: str, topic: str) -> str:
             return "DM-43821"
         case "MTOODS-Events":
             return "DM-43822"
-        case "MTRotator-Telemetry":
-            return "DM-43823"
         case "OCPS-Events":
             return "DM-43824"
         case "PMD-Events" | "PMD-Telemetry":
