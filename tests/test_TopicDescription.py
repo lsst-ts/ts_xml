@@ -37,12 +37,6 @@ def check_for_issues(csc: str, topic: str) -> str:
             return "DM-43809"
         case "Electrometer-Events":
             return "DM-43811"
-        case (
-            "GenericCamera-Events"
-            | "GenericCamera-Telemetry"
-            | "GenericCamera-Commands"
-        ):
-            return "DM-43810"
         case "GIS-Events":
             return "DM-43812"
         case "LaserTracker-Events" | "LaserTracker-Telemetry" | "LaserTracker-Commands":
