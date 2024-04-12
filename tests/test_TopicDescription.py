@@ -19,8 +19,6 @@ def check_for_issues(csc: str, topic: str) -> str:
             return "DM-43794"
         case "ATMonochromator-Telemetry":
             return "DM-43795"
-        case "ATOODS-Events":
-            return "DM-43797"
         case "ATPneumatics-Commands":
             return "DM-43798"
         case "ATSpectrograph-Events" | "ATSpectrograph-Commands":
