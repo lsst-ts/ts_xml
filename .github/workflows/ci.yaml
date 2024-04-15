@@ -18,11 +18,8 @@ jobs:
       - name: Install Python dependencies
         run: |
           python -m pip install --upgrade pip setuptools
-          python -m pip install -e .[dev]
-          python -m pip install -e .[test]
+          python -m pip install -e .[dev,test]
           python -m pip install ltd-conveyor
-          python -m pip install sphinxext-rediraffe
-          python -m pip install myst_nb
       - name: Build documentation
         run: |
           cd doc
