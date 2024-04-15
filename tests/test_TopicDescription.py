@@ -33,8 +33,6 @@ def check_for_issues(csc: str, topic: str) -> str:
             return "DM-43811"
         case "GIS-Events":
             return "DM-43812"
-        case "LaserTracker-Events" | "LaserTracker-Telemetry" | "LaserTracker-Commands":
-            return "DM-43813"
         case "LinearStage-Events" | "LinearStage-Commands" | "LinearStage-Telemetry":
             return "DM-43814"
         case "MTAirCompressor-Events":
