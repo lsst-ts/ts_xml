@@ -48,7 +48,6 @@ subsystems = [
     "ATPtg",
     "ATSpectrograph",
     "ATWhiteLight",
-    "Authorize",
     "GCHeaderService",
     "CCCamera",
     "CCHeaderService",
