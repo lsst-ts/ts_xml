@@ -58,6 +58,7 @@ subsystems = [
     "DSM",
     "EAS",
     "Electrometer",
+    "EPM",
     "ESS",
     "FiberSpectrograph",
     "GenericCamera",

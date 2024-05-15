@@ -1,0 +1,414 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="http://lsst-sal.tuc.noao.edu/schema/SALTelemetrySet.xsl"?>
+<SALTelemetrySet xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://lsst-sal.tuc.noao.edu/schema/SALTelemetrySet.xsd">
+  <Enumeration>
+    BatteryStatus_Charging=1,
+    BatteryStatus_Discharging=2,
+    BatteryStatus_Floating=3,
+    BatteryStatus_Resting=4
+  </Enumeration>
+  <Enumeration>
+    OnOff_ON=1,
+    OnOff_OFF=2
+  </Enumeration>
+  <SALTelemetry>
+    <Subsystem>EPM</Subsystem>
+    <EFDB_Topic>EPM_pdu</EFDB_Topic>
+    <Description>Telemetry for Netbooter PDU devices.</Description>
+    <item>
+      <EFDB_Name>acCurrentDraw</EFDB_Name>
+      <Description>AC current draw.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>A</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>acMaxDraw</EFDB_Name>
+      <Description>AC maximum current draw detected.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>A</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>powerOutletStatus</EFDB_Name>
+      <Description>Power Outlet Status.</Description>
+      <IDL_Type>int</IDL_Type>
+      <Units>unitless</Units>
+      <Count>2</Count>
+    </item>
+  </SALTelemetry>
+  <SALTelemetry>
+    <Subsystem>EPM</Subsystem>
+    <EFDB_Topic>EPM_scheiderPm5xxx</EFDB_Topic>
+    <Description>Telemetry for Scheider PM5XXX devices.</Description>
+    <item>
+      <EFDB_Name>systemDescription</EFDB_Name>
+      <Description>System Description.</Description>
+      <IDL_Type>string</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>serialNumber</EFDB_Name>
+      <Description>PM556x - Unit Serial Number</Description>
+      <IDL_Type>string</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>measuredLineVoltageVan</EFDB_Name>
+      <Description>Measured Line Voltage - Van - (Volts)</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>V</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>measuredLineVoltageVbn</EFDB_Name>
+      <Description>Measured Line Voltage - Vbn - (Volts)</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>V</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>measuredLineVoltageVcn</EFDB_Name>
+      <Description>Measured Line Voltage - Vcn - (Volts)</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>V</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>measuredLineVoltageVab</EFDB_Name>
+      <Description>Measured Line Voltage - Vab - (Volts)</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>V</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>measuredLineVoltageVbc</EFDB_Name>
+      <Description>Measured Line Voltage - Vbc - (Volts)</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>V</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>measuredLineVoltageVca</EFDB_Name>
+      <Description>Measured Line Voltage - Vca - (Volts)</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>V</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>loadCurrentA</EFDB_Name>
+      <Description>Measured Load Current - Phase A - (Amps)</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>A</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>loadCurrentB</EFDB_Name>
+      <Description>Measured Load Current - Phase B - (Amps)</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>A</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>loadCurrentC</EFDB_Name>
+      <Description>Measured Load Current - Phase C - (Amps)</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>A</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>neutralCurrent</EFDB_Name>
+      <Description>Measured Neutral Current - (Amps)</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>A</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>systemFrequency</EFDB_Name>
+      <Description>Measured System Frequency (Hz)</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>Hz</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>activePowerA</EFDB_Name>
+      <Description>Active Power - Phase A - (kW)</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>kW</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>activePowerB</EFDB_Name>
+      <Description>Active Power - Phase B - (kW)</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>kW</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>activePowerC</EFDB_Name>
+      <Description>Active Power - Phase C - (kW)</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>kW</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>reactivePowerA</EFDB_Name>
+      <Description>Reactive Power - Phase A - (kVar)</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>kW</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>reactivePowerB</EFDB_Name>
+      <Description>Reactive Power - Phase B - (kVar)</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>kW</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>reactivePowerC</EFDB_Name>
+      <Description>Reactive Power - Phase C - (kVar)</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>kW</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>apparentPowerA</EFDB_Name>
+      <Description>Apparent Power - Phase A - (kVA)</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>kW</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>apparentPowerB</EFDB_Name>
+      <Description>Apparent Power - Phase B - (kVA)</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>kW</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>apparentPowerC</EFDB_Name>
+      <Description>Apparent Power - Phase C - (kVA)</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>kW</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>powerFactorA</EFDB_Name>
+      <Description>Power Factor - Phase A</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>powerFactorB</EFDB_Name>
+      <Description>Power Factor - Phase B</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>powerFactorC</EFDB_Name>
+      <Description>Power Factor - Phase C</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>displacementPowerFactorA</EFDB_Name>
+      <Description>Displacement Power Factor - Phase A</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>displacementPowerFactorB</EFDB_Name>
+      <Description>Displacement Power Factor - Phase B</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>displacementPowerFactorC</EFDB_Name>
+      <Description>Displacement Power Factor - Phase C</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>totalPowerFactor</EFDB_Name>
+      <Description>Total Power Factor - Phase (A, B, C)</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>totalDisplacementPowerFactor</EFDB_Name>
+      <Description>Total Displacement Power Factor - Phase (A, B, C)</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>totalActivePower</EFDB_Name>
+      <Description>Total Active Power - Phase (A,B,C) - (kW)</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>kW</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>totalReactivePower</EFDB_Name>
+      <Description>Total Reactive Power - Phase (A,B,C) - (kVar)</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>kW</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>totalApparentPower</EFDB_Name>
+      <Description>Total Apparent Power - Phase (A,B,C) - (kVA)</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>kW</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>activeEnergyDelivered</EFDB_Name>
+      <Description>Accumulated Energy - Active Energy Delivered - (Wh)</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>J</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>reactiveEnergyDelivered</EFDB_Name>
+      <Description>Accumulated Energy - Reactive Energy Delivered - (VARh)</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>J</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>apparentEnergyDelivered</EFDB_Name>
+      <Description>Accumulated Energy - Apparent Energy Delivered - (VAh)</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>J</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>resetDateTime</EFDB_Name>
+      <Description>Accumulated Energy - Date /Time of Last Reset</Description>
+      <IDL_Type>string</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+  </SALTelemetry>
+  <SALTelemetry>
+    <Subsystem>EPM</Subsystem>
+    <EFDB_Topic>EPM_xups</EFDB_Topic>
+    <Description>Telemetry for XUPS devices.</Description>
+    <item>
+      <EFDB_Name>systemDescription</EFDB_Name>
+      <Description>System Description.</Description>
+      <IDL_Type>string</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>batteryCapacity</EFDB_Name>
+      <Description>Battery percent charge.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>batteryTimeRemaining</EFDB_Name>
+      <Description>Battery run time in seconds before UPS turns off due to low battery.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>s</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>batteryVoltage</EFDB_Name>
+      <Description>Battery voltage as reported by the UPS meters.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>V</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>envAmbientTemp</EFDB_Name>
+      <Description>The reading of the ambient temperature in the vicinity of the UPS or SNMP agent.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>deg_C</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>batteryCurrent</EFDB_Name>
+      <Description>Battery Current as reported by the UPS metering. Current is positive when discharging, negative when recharging the battery.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>A</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>inputTable</EFDB_Name>
+      <Description>A list of input table entries. The number of entries is given by the value of xupsInputNumPhases.</Description>
+      <IDL_Type>string</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>inputVoltage</EFDB_Name>
+      <Description>The measured input voltage from the UPS meters in volts.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>V</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>inputFrequency</EFDB_Name>
+      <Description>The utility line frequency in tenths of Hz.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>Hz</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>outputTable</EFDB_Name>
+      <Description>A list of output table entries. The number of entries is given by the value of xupsOutputNumPhases.</Description>
+      <IDL_Type>string</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>outputFrequency</EFDB_Name>
+      <Description>The measured UPS output frequency in tenths of Hz.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>Hz</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>outputLoad</EFDB_Name>
+      <Description>The UPS output load in percent of rated capacity.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>bypassTable</EFDB_Name>
+      <Description>A list of bypass table entries. The number of entries is given by the value of xupsBypassNumPhases.</Description>
+      <IDL_Type>string</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>bypassFrequency</EFDB_Name>
+      <Description>The bypass frequency in tenths of Hz.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>Hz</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>batteryAbmStatus</EFDB_Name>
+      <Description>Gives the status of the Advanced Battery Management; batteryFloating(3) status means that the charger is temporarily charging the battery to its float voltage; batteryResting(4) is the state when the battery is fully charged and none of the other actions (charging/discharging/floating) is being done.</Description>
+      <IDL_Type>int</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+  </SALTelemetry>
+</SALTelemetrySet>
