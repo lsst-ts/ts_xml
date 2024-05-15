@@ -107,13 +107,11 @@ generic_commands = [
     "start",
     "enterControl",
     "setLogLevel",
-    "setAuthList",
 ]
 
 """Define the list of Generic Events."""
 
 generic_events = [
-    "authList",
     "clockOffset",
     "configurationApplied",
     "configurationsAvailable",
@@ -125,7 +123,6 @@ generic_events = [
     "softwareVersions",
     "statusCode",
     "summaryState",
-    "authList",
     "largeFileObjectAvailable",
 ]
 
@@ -172,7 +169,6 @@ added_generics_csc_commands = [
     "disable",
     "enable",
     "exitControl",
-    "setAuthList",
     "setLogLevel",
     "standby",
     "start",
@@ -181,7 +177,6 @@ added_generics_csc_commands = [
 """Define list of events for csc category."""
 
 added_generics_csc_events = [
-    "authList",
     "errorCode",
     "simulationMode",
     "summaryState",
