@@ -14,18 +14,12 @@
   <SALCommand>
     <Subsystem>LEDProjector</Subsystem>
     <EFDB_Topic>LEDProjector_command_switchOn</EFDB_Topic>
-    <Description>Switch on specific LED, named by serial number or numerical ID.</Description>
+    <Description>Switch on list of LEDs, named by serial number.</Description>
     <item>
-      <EFDB_Name>serialNumber</EFDB_Name>
-      <Description>Serial number of LED to switch on.</Description>
+      <EFDB_Name>serialNumbers</EFDB_Name>
+      <Description>Comma-separated list of LED serial numbers to be turned on.</Description>
       <IDL_Type>string</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>index</EFDB_Name>
-      <Description>Index number of LED to switch on.</Description>
-      <IDL_Type>int</IDL_Type>
+      <IDL_Size>1</IDL_Size>
       <Units>unitless</Units>
       <Count>1</Count>
     </item>
@@ -33,19 +27,47 @@
   <SALCommand>
     <Subsystem>LEDProjector</Subsystem>
     <EFDB_Topic>LEDProjector_command_switchOff</EFDB_Topic>
-    <Description>Switch off specific LED, named by serial number or numerical ID.</Description>
+    <Description>Switch off list of LEDs, named by serial number.</Description>
     <item>
-      <EFDB_Name>serialNumber</EFDB_Name>
-      <Description>Serial number of LED to switch off.</Description>
+      <EFDB_Name>serialNumbers</EFDB_Name>
+      <Description>Comma-separated list of LED serial numbers to be turned off.</Description>
       <IDL_Type>string</IDL_Type>
+      <IDL_Size>1</IDL_Size>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+  </SALCommand>
+  <SALCommand>
+    <Subsystem>LEDProjector</Subsystem>
+    <EFDB_Topic>LEDProjector_command_adjustDACPower</EFDB_Topic>
+    <Description>adjust DAC power.</Description>
+    <item>
+      <EFDB_Name>serialNumbers</EFDB_Name>
+      <Description>Comma-separated list of LED serial numbers to be adjusted</Description>
+      <IDL_Type>string</IDL_Type>
+      <IDL_Size>1</IDL_Size>
       <Units>unitless</Units>
       <Count>1</Count>
     </item>
     <item>
-      <EFDB_Name>index</EFDB_Name>
-      <Description>Index number of LED to switch off.</Description>
-      <IDL_Type>int</IDL_Type>
+      <EFDB_Name>dacValues</EFDB_Name>
+      <Description>Comma-separated list of dac values in float or int to be adjusted</Description>
+      <IDL_Type>string</IDL_Type>
+      <IDL_Size>1</IDL_Size>
       <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+  </SALCommand>
+  <SALCommand>
+    <Subsystem>LEDProjector</Subsystem>
+    <EFDB_Topic>LEDProjector_command_adjustAllDACPower</EFDB_Topic>
+    <Description>adjust All DAC channel power.</Description>
+    <item>
+      <EFDB_Name>dacValue</EFDB_Name>
+      <Description>dac value to be adjusted</Description>
+      <IDL_Type>float</IDL_Type>
+      <IDL_Size>1</IDL_Size>
+      <Units>Volt</Units>
       <Count>1</Count>
     </item>
   </SALCommand>
