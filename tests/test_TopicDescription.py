@@ -11,8 +11,6 @@ def check_for_issues(csc: str, topic: str) -> str:
     match f"{csc}-{topic}":
         case "ATAOS-Telemetry" | "ATAOS-Commands" | "ATAOS-Events":
             return "DM-43789"
-        case "ATBuilding-Telemetry" | "ATBuilding-Events":
-            return "DM-43792"
         case "ATCamera-Commands" | "ATCamera-Telemetry" | "ATCamera-Events":
             return "DM-43793"
         case "ATHexapod-Commands" | "ATHexapod-Telemetry" | "ATHexapod-Events":
