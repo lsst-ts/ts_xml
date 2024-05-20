@@ -13,8 +13,6 @@ def check_for_issues(csc: str, topic: str) -> str:
             return "DM-43789"
         case "ATCamera-Commands" | "ATCamera-Telemetry" | "ATCamera-Events":
             return "DM-43793"
-        case "ATHexapod-Commands" | "ATHexapod-Telemetry" | "ATHexapod-Events":
-            return "DM-43794"
         case "ATMonochromator-Telemetry":
             return "DM-43795"
         case "ATPneumatics-Commands":
