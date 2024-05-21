@@ -23,8 +23,6 @@ def check_for_issues(csc: str, topic: str) -> str:
             return "DM-43804"
         case "EAS-Events" | "EAS-Telemetry":
             return "DM-43809"
-        case "LinearStage-Events" | "LinearStage-Commands" | "LinearStage-Telemetry":
-            return "DM-43814"
         case "MTAirCompressor-Events":
             return "DM-43815"
         case "MTCamera-Telemetry" | "MTCamera-Commands" | "MTCamera-Events":
