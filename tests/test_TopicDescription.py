@@ -27,8 +27,6 @@ def check_for_issues(csc: str, topic: str) -> str:
             return "DM-43817"
         case "MTMount-Events" | "MTMount-Telemetry":
             return "DM-43821"
-        case "MTOODS-Events":
-            return "DM-43822"
         case _:
             return ""
 
