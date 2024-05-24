@@ -74,7 +74,7 @@ class GlobalEnumInfo:
         prefixes, items = zip(*prefix_item_list)
         if not all(prefix == prefixes[0] for prefix in prefixes):
             raise RuntimeError(f"One or more inconsistent prefixes in {enum_text}")
-        return cls(class_name=prefixes[0], items=items)
+        return cls(class_name=prefixes[0], items=list(items))
 
 
 def get_field_enums_from_file_root(

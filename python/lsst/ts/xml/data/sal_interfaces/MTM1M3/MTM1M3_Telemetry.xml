@@ -4,6 +4,7 @@
   <SALTelemetry>
     <Subsystem>MTM1M3</Subsystem>
     <EFDB_Topic>MTM1M3_forceActuatorData</EFDB_Topic>
+    <Description>Force actuator data - cylinder forces.</Description>
     <item>
       <EFDB_Name>timestamp</EFDB_Name>
       <Description>Force actuator data timestamp.</Description>
@@ -113,6 +114,7 @@
   <SALTelemetry>
     <Subsystem>MTM1M3</Subsystem>
     <EFDB_Topic>MTM1M3_inclinometerData</EFDB_Topic>
+    <Description>Inclinometer data - mirror inclination.</Description>
     <item>
       <EFDB_Name>timestamp</EFDB_Name>
       <Description>Inclinometer data timestamp.</Description>
@@ -131,6 +133,7 @@
   <SALTelemetry>
     <Subsystem>MTM1M3</Subsystem>
     <EFDB_Topic>MTM1M3_outerLoopData</EFDB_Topic>
+    <Description>Outer loop data - counters and execution time.</Description>
     <item>
       <EFDB_Name>timestamp</EFDB_Name>
       <Description>Outer Loop Data timestamp.</Description>
@@ -156,6 +159,7 @@
   <SALTelemetry>
     <Subsystem>MTM1M3</Subsystem>
     <EFDB_Topic>MTM1M3_accelerometerData</EFDB_Topic>
+    <Description>DC accelerometer data - mirror cell acceleration.</Description>
     <item>
       <EFDB_Name>timestamp</EFDB_Name>
       <Description>Accelerometer Data timestamp.</Description>
@@ -202,6 +206,7 @@
   <SALTelemetry>
     <Subsystem>MTM1M3</Subsystem>
     <EFDB_Topic>MTM1M3_hardpointActuatorData</EFDB_Topic>
+    <Description>Hardpoint acctuator data - steps queued, current position and sensed forces.</Description>
     <item>
       <EFDB_Name>timestamp</EFDB_Name>
       <Description>Hardpoint Actuator data timestamp.</Description>
@@ -339,6 +344,7 @@
   <SALTelemetry>
     <Subsystem>MTM1M3</Subsystem>
     <EFDB_Topic>MTM1M3_imsData</EFDB_Topic>
+    <Description>IMS data - XYZ mirror position and rotation.</Description>
     <item>
       <EFDB_Name>timestamp</EFDB_Name>
       <Description>IMS Data timestamp.</Description>
@@ -439,6 +445,7 @@
   <SALTelemetry>
     <Subsystem>MTM1M3</Subsystem>
     <EFDB_Topic>MTM1M3_gyroData</EFDB_Topic>
+    <Description>Gyroscope data - mirror cell velocity.</Description>
     <item>
       <EFDB_Name>timestamp</EFDB_Name>
       <Description>Gyro Data timestamp.</Description>
@@ -485,6 +492,7 @@
   <SALTelemetry>
     <Subsystem>MTM1M3</Subsystem>
     <EFDB_Topic>MTM1M3_powerSupplyData</EFDB_Topic>
+    <Description>Power supplies currents.</Description>
     <item>
       <EFDB_Name>timestamp</EFDB_Name>
       <Description>Power Supply Data timestamp.</Description>
@@ -538,6 +546,7 @@
   <SALTelemetry>
     <Subsystem>MTM1M3</Subsystem>
     <EFDB_Topic>MTM1M3_pidData</EFDB_Topic>
+    <Description>Dorce Balance System PID data.</Description>
     <item>
       <EFDB_Name>timestamp</EFDB_Name>
       <Description>PID Data timestamp.</Description>
@@ -605,6 +614,7 @@
   <SALTelemetry>
     <Subsystem>MTM1M3</Subsystem>
     <EFDB_Topic>MTM1M3_hardpointMonitorData</EFDB_Topic>
+    <Description>Hardpoint monitor data - LVDT displacement, pressures inside hardpoint cylinders.</Description>
     <item>
       <EFDB_Name>timestamp</EFDB_Name>
       <Description>Hardpoint Monitor Data timestamp.</Description>
@@ -658,6 +668,7 @@
   <SALTelemetry>
     <Subsystem>MTM1M3</Subsystem>
     <EFDB_Topic>MTM1M3_appliedAzimuthForces</EFDB_Topic>
+    <Description>Applied M1M3 azimuth forces.</Description>
     <item>
       <EFDB_Name>timestamp</EFDB_Name>
       <Description>Applied azimuth forces timestamp.</Description>
@@ -739,6 +750,10 @@
   <SALTelemetry>
     <Subsystem>MTM1M3</Subsystem>
     <EFDB_Topic>MTM1M3_appliedAccelerationForces</EFDB_Topic>
+    <Description>
+      Applied M1M3 acceleration forces. Those shall counteract mirror inertia
+      as its acceleration is changing.
+    </Description>
     <item>
       <EFDB_Name>timestamp</EFDB_Name>
       <Description>Applied acceleration forces timestamp.</Description>
@@ -820,6 +835,11 @@
   <SALTelemetry>
     <Subsystem>MTM1M3</Subsystem>
     <EFDB_Topic>MTM1M3_appliedBalanceForces</EFDB_Topic>
+    <Description>
+      M1M3 applied balance forces. Those forces are calculated from the forces
+      sensed on top of the hardopoints, and shall remove force excess from the
+      hardpoints.
+    </Description>
     <item>
       <EFDB_Name>timestamp</EFDB_Name>
       <Description>Applied balance forces timestamp.</Description>
@@ -901,6 +921,7 @@
   <SALTelemetry>
     <Subsystem>MTM1M3</Subsystem>
     <EFDB_Topic>MTM1M3_appliedCylinderForces</EFDB_Topic>
+    <Description>Forces applied to the Force Actuator cylinders. Those are the forces the control system sends to actuators.</Description>
     <item>
       <EFDB_Name>timestamp</EFDB_Name>
       <Description>Applied Cylinder Forces timestamp.</Description>
@@ -926,6 +947,7 @@
   <SALTelemetry>
     <Subsystem>MTM1M3</Subsystem>
     <EFDB_Topic>MTM1M3_appliedElevationForces</EFDB_Topic>
+    <Description>Applied gravity distribution / elevation forces. Those shall change as mirror changes its inclination.</Description>
     <item>
       <EFDB_Name>timestamp</EFDB_Name>
       <Description>Applied elevation forces timestamp.</Description>
@@ -1007,6 +1029,10 @@
   <SALTelemetry>
     <Subsystem>MTM1M3</Subsystem>
     <EFDB_Topic>MTM1M3_appliedForces</EFDB_Topic>
+    <Description>
+      Total applied forces in XYZ space. See appliedCylinderForces for forces
+      commanded to the force actuator cylinders.\
+    </Description>
     <item>
       <EFDB_Name>timestamp</EFDB_Name>
       <Description>Applied forces timestamp.</Description>
@@ -1088,6 +1114,7 @@
   <SALTelemetry>
     <Subsystem>MTM1M3</Subsystem>
     <EFDB_Topic>MTM1M3_appliedThermalForces</EFDB_Topic>
+    <Description>Forces calculated from measured mirror temperatures.</Description>
     <item>
       <EFDB_Name>timestamp</EFDB_Name>
       <Description>Applied thermal forces timestamp.</Description>
@@ -1169,6 +1196,7 @@
   <SALTelemetry>
     <Subsystem>MTM1M3</Subsystem>
     <EFDB_Topic>MTM1M3_appliedVelocityForces</EFDB_Topic>
+    <Description>Forces counteracting mirror inertia as the TMA slew to a new position.</Description>
     <item>
       <EFDB_Name>timestamp</EFDB_Name>
       <Description>Applied velocity forces timestamp.</Description>

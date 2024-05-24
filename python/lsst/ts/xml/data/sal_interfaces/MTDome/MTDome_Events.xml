@@ -113,6 +113,12 @@
     RadLockingPinState_FLOATING,
     RadLockingPinState_DISENGAGED
   </Enumeration>
+  <Enumeration>
+    PowerManagementMode_NO_POWER_MANAGEMENT,
+    PowerManagementMode_OPERATIONS,
+    PowerManagementMode_EMERGENCY,
+    PowerManagementMode_MAINTENANCE
+  </Enumeration>
   <SALEvent>
     <Subsystem>MTDome</Subsystem>
     <EFDB_Topic>MTDome_logevent_azEnabled</EFDB_Topic>
@@ -287,6 +293,7 @@
   <SALEvent>
     <Subsystem>MTDome</Subsystem>
     <EFDB_Topic>MTDome_logevent_brakesEngaged</EFDB_Topic>
+    <Description>Reports whether the brakes are engaged or not.</Description>
     <item>
       <EFDB_Name>brakes</EFDB_Name>
       <Description>Bitmask of brakes that are engaged.
@@ -299,6 +306,7 @@
   <SALEvent>
     <Subsystem>MTDome</Subsystem>
     <EFDB_Topic>MTDome_logevent_lockingPinsEngaged</EFDB_Topic>
+    <Description>Reports whether the locking pins are engaged or not.</Description>
     <item>
       <EFDB_Name>engaged</EFDB_Name>
       <Description>Bitmask of locking pins that have been engaged.
@@ -311,6 +319,7 @@
   <SALEvent>
     <Subsystem>MTDome</Subsystem>
     <EFDB_Topic>MTDome_logevent_interlocks</EFDB_Topic>
+    <Description>Reports whether the interlocks are latched or not.</Description>
     <item>
       <EFDB_Name>interlocks</EFDB_Name>
       <Description>Bitmask of safety interlocks that are latched.
@@ -343,6 +352,18 @@
       <Description>The maximum applicable velocity.</Description>
       <IDL_Type>float</IDL_Type>
       <Units>deg/second</Units>
+      <Count>1</Count>
+    </item>
+  </SALEvent>
+  <SALEvent>
+    <Subsystem>MTDome</Subsystem>
+    <EFDB_Topic>MTDome_logevent_powerManagementMode</EFDB_Topic>
+    <Description>Information about the power management mode.</Description>
+    <item>
+      <EFDB_Name>mode</EFDB_Name>
+      <Description>PowerManagementMode value; a PowerManagementMode enum.</Description>
+      <IDL_Type>int</IDL_Type>
+      <Units>unitless</Units>
       <Count>1</Count>
     </item>
   </SALEvent>

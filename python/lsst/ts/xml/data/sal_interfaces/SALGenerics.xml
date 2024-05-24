@@ -80,41 +80,6 @@
         <Count>1</Count>
       </item>
     </SALCommand>
-    <SALCommand>
-      <Subsystem>SALGeneric</Subsystem>
-      <EFDB_Topic>SALGeneric_command_setAuthList</EFDB_Topic>
-      <Description>Specify who can command this CSC.</Description>
-      <Category>csc</Category>
-      <item>
-        <EFDB_Name>authorizedUsers</EFDB_Name>
-        <Description>Comma seperated list of authorized users currently allowed to command this CSC,
-            in the form user@host.
-            If the first character is +/- then the specified users are added/removed.
-            Duplicates are silently ignored.
-            The CSC's own user@host is silently ignored, because it is always authorized.
-            For removal, CSCs that are not in the list are silently ignored.
-            Whitespace is allowed after the optional initial +/- and after each comma.
-        </Description>
-        <IDL_Type>string</IDL_Type>
-        <IDL_Size>1</IDL_Size>
-        <Units>unitless</Units>
-        <Count>1</Count>
-      </item>
-      <item>
-        <EFDB_Name>nonAuthorizedCSCs</EFDB_Name>
-        <Description>Comma seperated list of CSC's not currently allowed to command this CSC,
-            in the form name[:index]. An index of 0 is stripped (name:0 becomes name).
-            If the first character is +/- then the specified CSCs are added/removed.
-            Duplicates are silently ignored.
-            For removal, CSCs that are not in the list are silently ignored.
-            Whitespace is allowed after the optional initial +/- and after each comma.
-        </Description>
-        <IDL_Type>string</IDL_Type>
-        <IDL_Size>1</IDL_Size>
-        <Units>unitless</Units>
-        <Count>1</Count>
-      </item>
-    </SALCommand>
   </SALCommandSet>
   <SALEventSet xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://project.lsst.org/ts/sal_objects/schema/SALEventSet.xsd">
     <Enumeration>SummaryStates_DisabledState,SummaryStates_EnabledState,SummaryStates_FaultState,SummaryStates_OfflineState,SummaryStates_StandbyState</Enumeration>
@@ -419,28 +384,6 @@
         <EFDB_Name>heartbeat</EFDB_Name>
         <Description>Deprecated field that you should ignore.</Description>
         <IDL_Type>boolean</IDL_Type>
-        <Units>unitless</Units>
-        <Count>1</Count>
-      </item>
-    </SALEvent>
-    <SALEvent>
-      <Subsystem>SALGeneric</Subsystem>
-      <EFDB_Topic>SALGeneric_logevent_authList</EFDB_Topic>
-      <Description>Who can command this CSC.</Description>
-      <Category>csc</Category>
-      <item>
-        <EFDB_Name>authorizedUsers</EFDB_Name>
-        <Description>Comma seperated list of authorized users currently allowed to command this CSC.</Description>
-        <IDL_Type>string</IDL_Type>
-        <IDL_Size>1</IDL_Size>
-        <Units>unitless</Units>
-        <Count>1</Count>
-      </item>
-      <item>
-        <EFDB_Name>nonAuthorizedCSCs</EFDB_Name>
-        <Description>Comma seperated list of CSC's not currently allowed to command this CSC.</Description>
-        <IDL_Type>string</IDL_Type>
-        <IDL_Size>1</IDL_Size>
         <Units>unitless</Units>
         <Count>1</Count>
       </item>

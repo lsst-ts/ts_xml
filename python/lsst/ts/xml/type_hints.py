@@ -40,6 +40,7 @@ class BaseMsgType:
     It includes salIndex, which is only present for indexed
     SAL components.
     """
+
     private_sndStamp: float = 0
     private_rcvStamp: float = 0
     private_efdStamp: float = 0

@@ -57,14 +57,12 @@ The categories are:
 
 csc
 
-  * command_setAuthList
   * command_disable
   * command_enable
   * command_exitControl
   * command_setLogLevel
   * command_standby
   * command_start
-  * logevent_authList
   * logevent_errorCode
   * logevent_simulationMode
   * logevent_summaryState

@@ -1,7 +1,7 @@
 [build-system]
 requires = [ "setuptools", "setuptools_scm" ]
 build-backend = "setuptools.build_meta"
- 
+
 [project]
 name = "ts_xml"
 description = "Contains all the interface definition files for all the CSCs of the LSST."
@@ -12,15 +12,15 @@ dynamic = [ "version" ]
 [project.urls]
 Homepage = "https://ts-xml.lsst.io"
 Source = "https://github.com/lsst-ts/ts_xml"
-documentation = "https://jira.lsstcorp.org/secure/Dashboard.jspa"
-repository = "https://github.com/lsst-ts/ts_xml" 
+documentation = "https://rubinobs.atlassian.net/secure/Dashboard.jspa"
+repository = "https://github.com/lsst-ts/ts_xml"
 
 [project.scripts]
 get_component_info = "lsst.ts.xml.get_component_info:get_component_info"
 
 [project.optional-dependencies]
 dev = [
-  "documenteer[pipelines]",
+  "documenteer[pipelines,guide]",
 ]
 test = [
   "astropy", "lxml"
@@ -28,13 +28,13 @@ test = [
 
 [tools.setuptools]
 package-data = { "" = "*.xml, *.xsd" }
- 
+
 [tool.setuptools.dynamic]
 version = { attr = "setuptools_scm.get_version" }
- 
+
 [tool.setuptools.packages.find]
 where = [ "python" ]
- 
+
 [tool.setuptools_scm]
 write_to = "python/lsst/ts/xml/version.py"
 write_to_template = """
@@ -42,6 +42,6 @@ write_to_template = """
 __all__ = ["__version__"]
 __version__ = "{version}"
 """
- 
+
 [tool.pytest.ini_options]
 asyncio_mode = "auto"
