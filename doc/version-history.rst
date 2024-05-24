@@ -15,6 +15,251 @@ Version History
 
 .. towncrier release notes start
 
+21.0.0 (2024-05-24)
+===================
+Package Level
+-------------
+
+New Features
+~~~~~~~~~~~~
+
+- Add topic description test. (`DM-43452 <https://rubinobs.atlassian.net/browse/DM-43452>`_)
+- Add duplicate topic name test. (`DM-43452 <https://rubinobs.atlassian.net/browse/DM-43452>`_)
+- Adding ability for ledprojector to adjust DAC values of labjack (`dm-43459 <https://rubinobs.atlassian.net/browse/dm-43459>`_)
+
+
+Bug Fixes
+~~~~~~~~~
+
+- Fix the github action for building the documentation. (`DM-43452 <https://rubinobs.atlassian.net/browse/DM-43452>`_)
+
+
+Documentation
+~~~~~~~~~~~~~
+
+- Add guide dependency group to documenteer dependency. (`DM-43861 <https://rubinobs.atlassian.net/browse/DM-43861>`_)
+
+
+Other Changes and Additions
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+- Format code with black. (`DM-43452 <https://rubinobs.atlassian.net/browse/DM-43452>`_)
+- Fix the Jira URL in pyproject.toml (`DM-43452 <https://rubinobs.atlassian.net/browse/DM-43452>`_)
+- Fix mypy typing issue. (`DM-43452 <https://rubinobs.atlassian.net/browse/DM-43452>`_)
+- Remove myst_nb and sphinx-rediraffe from ci.yaml and make package install one line by installing both groups. (`DM-43861 <https://rubinobs.atlassian.net/browse/DM-43861>`_)
+- Add dependabot checks on GitHub actions. (`DM-44359 <https://rubinobs.atlassian.net/browse/DM-44359>`_)
+- Ignore dependabot branches for news fragments. (`DM-44359 <https://rubinobs.atlassian.net/browse/DM-44359>`_)
+- Fixed GitHub Actions configuration. (`DM-44359 <https://rubinobs.atlassian.net/browse/DM-44359>`_)
+- Fixed GitHub Actions configuration, again. (`DM-44359_2 <https://rubinobs.atlassian.net/browse/DM-44359_2>`_)
+
+
+MTAirCompressor
+~~~~~~~~~~~~~~~
+
+- Added missing description entries to XML. (`DM-43815 <https://rubinobs.atlassian.net/browse/DM-43815>`_)
+
+
+MTM1M3
+~~~~~~
+
+- Add missing Description XML entries. (`DM-43819 <https://rubinobs.atlassian.net/browse/DM-43819>`_)
+
+
+Interface Changes
+-----------------
+
+ATAOS
+~~~~~
+
+- Add topics descriptions. (`DM-43789 <https://rubinobs.atlassian.net/browse/DM-43789>`_)
+
+
+ATBuilding
+~~~~~~~~~~
+
+- Add missing descriptions to event and telemetry topics. (`DM-43792 <https://rubinobs.atlassian.net/browse/DM-43792>`_)
+
+
+ATHexapod
+~~~~~~~~~
+
+- Add missing descriptions to event, telemetry & command topics. (`DM-43794 <https://rubinobs.atlassian.net/browse/DM-43794>`_)
+
+
+ATMonochromator
+~~~~~~~~~~~~~~~
+
+- Add topics description. (`DM-43795 <https://rubinobs.atlassian.net/browse/DM-43795>`_)
+
+
+ATOODS
+~~~~~~
+
+- Add required description to ATOODS event (`DM-43797 <https://rubinobs.atlassian.net/browse/DM-43797>`_)
+
+
+ATSpectrograph
+~~~~~~~~~~~~~~
+
+- Add topics description and remove unnecessary topic attributes to empty topics. (`DM-43803 <https://rubinobs.atlassian.net/browse/DM-43803>`_)
+
+
+Authorize
+~~~~~~~~~
+
+- Remove Authorize CSC. (`DM-44340 <https://rubinobs.atlassian.net/browse/DM-44340>`_)
+- Remove AuthList references from unit tests, documentation and SALGenerics and SALSubsystems.xml. (`DM-44359 <https://rubinobs.atlassian.net/browse/DM-44359>`_)
+
+
+CBP
+~~~
+
+- Add missing descriptions to telemetry topics. (`DM-43806 <https://rubinobs.atlassian.net/browse/DM-43806>`_)
+
+
+CCOODS
+~~~~~~
+
+- Add required description to CCOODS event (`DM-43805 <https://rubinobs.atlassian.net/browse/DM-43805>`_)
+
+
+DIMM
+~~~~
+
+- Add required descriptions to DIMM topics. (`DM-43807 <https://rubinobs.atlassian.net/browse/DM-43807>`_)
+
+
+DSM
+~~~
+
+- Add required descriptions to DSM topics. (`DM-43808 <https://rubinobs.atlassian.net/browse/DM-43808>`_)
+
+
+EPM
+~~~
+
+- Add EPM CSC. (`DM-44117 <https://rubinobs.atlassian.net/browse/DM-44117>`_)
+
+
+Electrometer
+~~~~~~~~~~~~
+
+- Add missing descriptions to event topics. (`DM-43811 <https://rubinobs.atlassian.net/browse/DM-43811>`_)
+
+
+GIS
+~~~
+
+- Add missing descriptions to event topics. (`DM-43812 <https://rubinobs.atlassian.net/browse/DM-43812>`_)
+
+
+GenericCamera
+~~~~~~~~~~~~~
+
+- Add required descriptions to GenericCamera topics. (`DM-43810 <https://rubinobs.atlassian.net/browse/DM-43810>`_)
+
+
+HVAC
+~~~~
+
+- Add glycol sensor telemetry. (`DM-43775 <https://rubinobs.atlassian.net/browse/DM-43775>`_)
+- Add more glycol sensor telemetry. (`DM-44356 <https://rubinobs.atlassian.net/browse/DM-44356>`_)
+
+
+LaserTracker
+~~~~~~~~~~~~
+
+- Add required descriptions to LaserTracker topics. (`DM-43813 <https://rubinobs.atlassian.net/browse/DM-43813>`_)
+
+
+LinearStage
+~~~~~~~~~~~
+
+- Add missing descriptions for command, event & telemetry topics. (`DM-43814 <https://rubinobs.atlassian.net/browse/DM-43814>`_)
+- Remove LinearStage from description check test. (`DM-43814-1 <https://rubinobs.atlassian.net/browse/DM-43814-1>`_)
+
+
+MTDome
+~~~~~~
+
+- Add setPowerManagementMode command and event and PowerManagementMode enum. (`DM-43676 <https://rubinobs.atlassian.net/browse/DM-43676>`_)
+- Add missing descriptions to all topics. (`DM-43676 <https://rubinobs.atlassian.net/browse/DM-43676>`_)
+
+
+MTHexapod
+~~~~~~~~~
+
+- Add the missing description of MTHexapod, and remove the MTHexapod-Telemetry from check_for_issues(). (`DM-43823 <https://rubinobs.atlassian.net/browse/DM-43823>`_)
+
+
+MTM1M3TS
+~~~~~~~~
+
+- Add missing Description entries. (`DM-43820 <https://rubinobs.atlassian.net/browse/DM-43820>`_)
+
+
+MTM2
+~~~~
+
+- Add the MTM2_logevent_disabledILC event. (`DM-42566 <https://rubinobs.atlassian.net/browse/DM-42566>`_)
+
+
+MTMount
+~~~~~~~
+
+- Add required descriptions to MTMount topics. (`DM-43821 <https://rubinobs.atlassian.net/browse/DM-43821>`_)
+
+
+MTOODS
+~~~~~~
+
+- Add required description to MTOODS event (`DM-43822 <https://rubinobs.atlassian.net/browse/DM-43822>`_)
+- Remove MTOODS from descriptions check test. (`DM-43822-1 <https://rubinobs.atlassian.net/browse/DM-43822-1>`_)
+
+
+MTRotator
+~~~~~~~~~
+
+- Add the missing description of MTRotator, and remove the MTRotator-Telemetry from check_for_issues(). (`DM-43823 <https://rubinobs.atlassian.net/browse/DM-43823>`_)
+
+
+OCPS
+~~~~
+
+- Add descriptions for the two OCPS events. (`DM-43824 <https://rubinobs.atlassian.net/browse/DM-43824>`_)
+
+
+PMD
+~~~
+
+- Add missing descriptions to event and telemetry topics. (`DM-43825 <https://rubinobs.atlassian.net/browse/DM-43825>`_)
+
+
+SummitFacility
+~~~~~~~~~~~~~~
+
+- Add missing descriptions to telemetry topics. (`DM-43826 <https://rubinobs.atlassian.net/browse/DM-43826>`_)
+
+
+TunableLaser
+~~~~~~~~~~~~
+
+- Add missing descriptions to command and event topics. (`DM-43827 <https://rubinobs.atlassian.net/browse/DM-43827>`_)
+- Changed state names for TunableLaser (`DM-44083 <https://rubinobs.atlassian.net/browse/DM-44083>`_)
+
+
+Watcher
+~~~~~~~
+
+- Add command to create a narrative log entry for one or more alarms. (`DM-44066 <https://rubinobs.atlassian.net/browse/DM-44066>`_)
+
+
+WeatherForecast
+~~~~~~~~~~~~~~~
+
+- Add missing descriptions to telemetry topics. (`DM-43828 <https://rubinobs.atlassian.net/browse/DM-43828>`_)
+
+
 v20.3.0 (2024-03-22)
 ====================
 Package Level
