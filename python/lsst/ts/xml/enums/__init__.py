@@ -51,6 +51,7 @@ from . import (
     MTHexapod,
     MTMount,
     MTPtg,
+    MTReflector,
     MTRotator,
     Scheduler,
     Script,
