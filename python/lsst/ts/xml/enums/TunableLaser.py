@@ -28,6 +28,7 @@ class LaserDetailedState(enum.IntEnum):
     PROPAGATING_CONTINUOUS_MODE = 3
     PROPAGATING_BURST_MODE = 4
 
+
 class LaserErrorCode(enum.IntEnum):
     """Laser error codes"""
 
