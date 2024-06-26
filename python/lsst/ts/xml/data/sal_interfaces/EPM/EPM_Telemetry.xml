@@ -16,6 +16,13 @@
     <EFDB_Topic>EPM_pdu</EFDB_Topic>
     <Description>Telemetry for Netbooter PDU devices.</Description>
     <item>
+      <EFDB_Name>systemDescription</EFDB_Name>
+      <Description>The value of the SNMP System Description field.</Description>
+      <IDL_Type>string</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
       <EFDB_Name>acCurrentDraw</EFDB_Name>
       <Description>AC current draw.</Description>
       <IDL_Type>float</IDL_Type>
@@ -43,7 +50,7 @@
     <Description>Telemetry for Scheider PM5XXX devices.</Description>
     <item>
       <EFDB_Name>systemDescription</EFDB_Name>
-      <Description>System Description.</Description>
+      <Description>The value of the SNMP System Description field.</Description>
       <IDL_Type>string</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
@@ -307,7 +314,7 @@
     <Description>Telemetry for XUPS devices.</Description>
     <item>
       <EFDB_Name>systemDescription</EFDB_Name>
-      <Description>System Description.</Description>
+      <Description>The value of the SNMP System Description field.</Description>
       <IDL_Type>string</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
@@ -348,18 +355,25 @@
       <Count>1</Count>
     </item>
     <item>
-      <EFDB_Name>inputTable</EFDB_Name>
-      <Description>A list of input table entries. The number of entries is given by the value of xupsInputNumPhases.</Description>
-      <IDL_Type>string</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
+      <EFDB_Name>inputCurrent</EFDB_Name>
+      <Description>The measured input current from the UPS meters in amps.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>A</Units>
+      <Count>3</Count>
+    </item>
+    <item>
+      <EFDB_Name>inputPower</EFDB_Name>
+      <Description>The measured input real power in watts.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>W</Units>
+      <Count>3</Count>
     </item>
     <item>
       <EFDB_Name>inputVoltage</EFDB_Name>
       <Description>The measured input voltage from the UPS meters in volts.</Description>
       <IDL_Type>float</IDL_Type>
       <Units>V</Units>
-      <Count>1</Count>
+      <Count>3</Count>
     </item>
     <item>
       <EFDB_Name>inputFrequency</EFDB_Name>
@@ -369,11 +383,25 @@
       <Count>1</Count>
     </item>
     <item>
-      <EFDB_Name>outputTable</EFDB_Name>
-      <Description>A list of output table entries. The number of entries is given by the value of xupsOutputNumPhases.</Description>
-      <IDL_Type>string</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
+      <EFDB_Name>outputCurrent</EFDB_Name>
+      <Description>The measured UPS output current in amps.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>A</Units>
+      <Count>3</Count>
+    </item>
+    <item>
+      <EFDB_Name>outputPower</EFDB_Name>
+      <Description>The measured real output power in watts.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>W</Units>
+      <Count>3</Count>
+    </item>
+    <item>
+      <EFDB_Name>outputVoltage</EFDB_Name>
+      <Description>The measured output voltage from the UPS metering in volts.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>V</Units>
+      <Count>3</Count>
     </item>
     <item>
       <EFDB_Name>outputFrequency</EFDB_Name>
@@ -390,11 +418,11 @@
       <Count>1</Count>
     </item>
     <item>
-      <EFDB_Name>bypassTable</EFDB_Name>
-      <Description>A list of bypass table entries. The number of entries is given by the value of xupsBypassNumPhases.</Description>
-      <IDL_Type>string</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
+      <EFDB_Name>bypassVoltage</EFDB_Name>
+      <Description>The measured UPS bypass voltage in volts.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>V</Units>
+      <Count>3</Count>
     </item>
     <item>
       <EFDB_Name>bypassFrequency</EFDB_Name>
