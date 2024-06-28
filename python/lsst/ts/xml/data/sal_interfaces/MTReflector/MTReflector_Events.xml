@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="http://lsst-sal.tuc.noao.edu/schema/SALEventSet.xsl"?>
+<SALEventSet xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://lsst-sal.tuc.noao.edu/schema/SALEventSet.xsd">
+  <Enumeration>
+    MTReflectorStatus_Off=0,
+    MTReflectorStatus_On=1,
+    MTReflectorStatus_Unknown=2
+  </Enumeration>
+  <SALEvent>
+    <Subsystem>MTReflector</Subsystem>
+    <EFDB_Topic>MTReflector_logevent_reflectorState</EFDB_Topic>
+    <Description>MTReflector state change</Description>
+    <item>
+      <EFDB_Name>reflectorState</EFDB_Name>
+      <Description>MTReflector state; a ReflectorState enum.</Description>
+      <IDL_Type>int</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+  </SALEvent>
+</SALEventSet>
