@@ -120,6 +120,16 @@
     PowerManagementMode_EMERGENCY,
     PowerManagementMode_MAINTENANCE
   </Enumeration>
+  <Enumeration>
+    ResponseCode_OK=0,
+    ResponseCode_UNSUPPORTED=2,
+    ResponseCode_INCORRECT_PARAMETERS=3,
+    ResponseCode_INCORRECT_SOURCE=4,
+    ResponseCode_INCORRECT_STATE5=5,
+    ResponseCode_ROTATING_PART_NOT_RECEIVED=6,
+    ResponseCode_ROTATING_PART_NOT_REPLIED=7,
+    ResponseCode_DUPLICATE_COMMAND=8
+  </Enumeration>
   <SALEvent>
     <Subsystem>MTDome</Subsystem>
     <EFDB_Topic>MTDome_logevent_azEnabled</EFDB_Topic>
@@ -409,6 +419,32 @@
       <Description>Time at which the data was determined (TAI unix seconds).</Description>
       <IDL_Type>double</IDL_Type>
       <Units>second</Units>
+      <Count>1</Count>
+    </item>
+  </SALEvent>
+  <SALEvent>
+    <Subsystem>MTDome</Subsystem>
+    <EFDB_Topic>MTDome_logevent_responseCode</EFDB_Topic>
+    <Description>The response code received from a sub-system.</Description>
+    <item>
+      <EFDB_Name>command</EFDB_Name>
+      <Description>The command that was issued.</Description>
+      <IDL_Type>string</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>responseCode</EFDB_Name>
+      <Description>Response code; a ResponseCode enum.</Description>
+      <IDL_Type>int</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>subSystemId</EFDB_Name>
+      <Description>The subsystem, as a single SubSystemID value.</Description>
+      <IDL_Type>int</IDL_Type>
+      <Units>unitless</Units>
       <Count>1</Count>
     </item>
   </SALEvent>
