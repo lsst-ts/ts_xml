@@ -35,6 +35,37 @@ def test_enumeration(xmlfile: pathlib.Path, csc: str, topic: str) -> None:
             ), f"Invalid enumeration in {csc}/{topic}: {enum_value.strip()} :: {sal_enum.text}."
 
 
+@pytest.mark.parametrize("xmlfile,csc,topic", get_xmlfile_csc_topic())
+def test_enumeration_consistency(xmlfile: pathlib.Path, csc: str, topic: str) -> None:
+    """Test that the enumeration lines either all declare a value or none do.
+
+    Parameters
+    ----------
+    xmlfile : `pathlib.Path`
+        Full filepath to the Events XML file for the CSC.
+    csc : `csc`
+        Name of the CSC
+    """
+    # Test the topic <EFDB_Name> field.
+    with open(str(xmlfile), "r", encoding="utf-8") as f:
+        tree = et.parse(f)
+    root = tree.getroot()
+
+    for sal_enum in root.findall("Enumeration"):
+        assert sal_enum.text is not None
+        num_lines_with_explicit_value = 0
+        num_lines_without_explicit_value = 0
+        for enum_value in sal_enum.text.split(","):
+            if "=" in enum_value:
+                num_lines_with_explicit_value += 1
+            else:
+                num_lines_without_explicit_value += 1
+
+        assert (
+            num_lines_with_explicit_value == 0 or num_lines_without_explicit_value == 0
+        ), f"Enumeration in {csc}/{topic} has mixed use cases."
+
+
 @pytest.mark.parametrize("csc", subsystems)
 def test_enum_classes(csc: str) -> None:
     _, global_enums = get_field_and_global_enums(csc)
