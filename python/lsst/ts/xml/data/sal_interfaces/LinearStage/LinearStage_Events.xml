@@ -2,6 +2,17 @@
 <?xml-stylesheet type="text/xsl" href="http://lsst-sal.tuc.noao.edu/schema/SALEventSet.xsl"?>
 <SALEventSet xmlns:xsi="http://lsst-sal.tuc.noao.edu/schema/SALEventSet.xsd">
   <Enumeration>DetailedState_NotMovingState, DetailedState_MovingState</Enumeration>
+  <Enumeration>
+    ErrorCode_ConnectionFailed=1,
+    ErrorCode_DisableMotor=2,
+    ErrorCode_EnableMotor=3,
+    ErrorCode_Home=4,
+    ErrorCode_MoveAbsolute=5,
+    ErrorCode_MoveRelative=6,
+    ErrorCode_Position=7,
+    ErrorCode_Telemetry=8,
+    ErrorCode_Stop=9
+  </Enumeration>
   <SALEvent>
     <Subsystem>LinearStage</Subsystem>
     <EFDB_Topic>LinearStage_logevent_detailedState</EFDB_Topic>
