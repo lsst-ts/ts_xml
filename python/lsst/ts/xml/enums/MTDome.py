@@ -199,3 +199,5 @@ class SubSystemId(enum.IntEnum):
     CSCS = 0x80
     # Overhead Bridge Crane
     OBC = 0x100
+    # Capacitor Banks Control System
+    CBCS = 0x200

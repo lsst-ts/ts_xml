@@ -60,41 +60,41 @@
     MotionState_Enabling
   </Enumeration>
   <Enumeration>
-        Louver_A1=0,
-        Louver_A2=1,
-        Louver_B1=2,
-        Louver_B2=3,
-        Louver_B3=4,
-        Louver_C1=5,
-        Louver_C2=6,
-        Louver_C3=7,
-        Louver_D1=8,
-        Louver_D2=9,
-        Louver_D3=10,
-        Louver_E1=11,
-        Louver_E2=12,
-        Louver_E3=13,
-        Louver_F1=14,
-        Louver_F2=15,
-        Louver_F3=16,
-        Louver_G1=17,
-        Louver_G2=18,
-        Louver_G3=19,
-        Louver_H1=20,
-        Louver_H2=21,
-        Louver_H3=22,
-        Louver_I1=23,
-        Louver_I2=24,
-        Louver_I3=25,
-        Louver_L1=26,
-        Louver_L2=27,
-        Louver_L3=28,
-        Louver_M1=29,
-        Louver_M2=30,
-        Louver_M3=31,
-        Louver_N1=32,
-        Louver_N2=33
-    </Enumeration>
+    Louver_A1=0,
+    Louver_A2=1,
+    Louver_B1=2,
+    Louver_B2=3,
+    Louver_B3=4,
+    Louver_C1=5,
+    Louver_C2=6,
+    Louver_C3=7,
+    Louver_D1=8,
+    Louver_D2=9,
+    Louver_D3=10,
+    Louver_E1=11,
+    Louver_E2=12,
+    Louver_E3=13,
+    Louver_F1=14,
+    Louver_F2=15,
+    Louver_F3=16,
+    Louver_G1=17,
+    Louver_G2=18,
+    Louver_G3=19,
+    Louver_H1=20,
+    Louver_H2=21,
+    Louver_H3=22,
+    Louver_I1=23,
+    Louver_I2=24,
+    Louver_I3=25,
+    Louver_L1=26,
+    Louver_L2=27,
+    Louver_L3=28,
+    Louver_M1=29,
+    Louver_M2=30,
+    Louver_M3=31,
+    Louver_N1=32,
+    Louver_N2=33
+  </Enumeration>
   <Enumeration>
     SubSystemId_AMCS=0x1,
     SubSystemId_LWSCS=0x2,
@@ -104,7 +104,8 @@
     SubSystemId_MONCS=0x20,
     SubSystemId_RAD=0x40,
     SubSystemId_CSCS=0x80,
-    SubSystemId_OBC=0x100
+    SubSystemId_OBC=0x100,
+    SubSystemId_CBCS=0x200
   </Enumeration>
   <Enumeration>OnOff_On, OnOff_Off</Enumeration>
   <Enumeration>OperationalMode_Normal, OperationalMode_Degraded</Enumeration>
@@ -296,8 +297,7 @@
     <Description>Reports whether the brakes are engaged or not.</Description>
     <item>
       <EFDB_Name>brakes</EFDB_Name>
-      <Description>Bitmask of brakes that are engaged.
-            The bits are defined by the Brake enum.</Description>
+      <Description>Bitmask of brakes that are engaged. The bits are defined by the Brake enum.</Description>
       <IDL_Type>int</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
@@ -309,8 +309,7 @@
     <Description>Reports whether the locking pins are engaged or not.</Description>
     <item>
       <EFDB_Name>engaged</EFDB_Name>
-      <Description>Bitmask of locking pins that have been engaged.
-            The bits are defined by the LockingPin enum.</Description>
+      <Description>Bitmask of locking pins that have been engaged. The bits are defined by the LockingPin enum.</Description>
       <IDL_Type>int</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
@@ -322,8 +321,7 @@
     <Description>Reports whether the interlocks are latched or not.</Description>
     <item>
       <EFDB_Name>interlocks</EFDB_Name>
-      <Description>Bitmask of safety interlocks that are latched.
-            The bits are defined by the Interlock enum.</Description>
+      <Description>Bitmask of safety interlocks that are latched. The bits are defined by the Interlock enum.</Description>
       <IDL_Type>int</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
@@ -364,6 +362,53 @@
       <Description>PowerManagementMode value; a PowerManagementMode enum.</Description>
       <IDL_Type>int</IDL_Type>
       <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+  </SALEvent>
+  <SALEvent>
+    <Subsystem>MTDome</Subsystem>
+    <EFDB_Topic>MTDome_logevent_capacitorBanks</EFDB_Topic>
+    <Description>Status of the capacitor banks.</Description>
+    <item>
+      <EFDB_Name>fuseIntervention</EFDB_Name>
+      <Description>At least one fuse has broken in one or more of the cabinets. It cannot be detected which fuse is broken, just that at least one broke, or that they are all working well.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>2</Count>
+    </item>
+    <item>
+      <EFDB_Name>smokeDetected</EFDB_Name>
+      <Description>Smoke detected in one or more of the cabinets.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>2</Count>
+    </item>
+    <item>
+      <EFDB_Name>highTemperature</EFDB_Name>
+      <Description>Temperature too high in one or more of the cabinets. No temperature values are measured.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>2</Count>
+    </item>
+    <item>
+      <EFDB_Name>lowResidualVoltage</EFDB_Name>
+      <Description>Residual voltage lower than 25 V. No voltage values are measured.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>2</Count>
+    </item>
+    <item>
+      <EFDB_Name>doorOpen</EFDB_Name>
+      <Description>Cabinet door open (True) or not (False).</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>2</Count>
+    </item>
+    <item>
+      <EFDB_Name>timestamp</EFDB_Name>
+      <Description>Time at which the data was determined (TAI unix seconds).</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>second</Units>
       <Count>1</Count>
     </item>
   </SALEvent>

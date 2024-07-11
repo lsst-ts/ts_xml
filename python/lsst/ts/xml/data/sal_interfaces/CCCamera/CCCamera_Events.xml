@@ -713,11 +713,47 @@
     <EFDB_Topic>CCCamera_logevent_availableFilters</EFDB_Topic>
     <item>
       <EFDB_Name>filterNames</EFDB_Name>
-      <Description>A list of installed filter names (comma delimimted, U-001,G-004,R-010,Z-012,Y-014), in the same order as the list of filter types.</Description>
+      <Description>A list of names of available filters (: delimited, U-001,G-004,R-010,Z-012,Y-014, NONE), in the same order as the list of filter types.</Description>
       <IDL_Type>string</IDL_Type>
       <IDL_Size>256</IDL_Size>
       <Units>unitless</Units>
       <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>filterTypes</EFDB_Name>
+      <Description>A list of types of available filters in the same order as the list of available filters  (: delimited)</Description>
+      <IDL_Type>string</IDL_Type>
+      <IDL_Size>256</IDL_Size>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>maxChangeAngle</EFDB_Name>
+      <Description>The maximum camera angle (in degrees) away from vertical that a filter change can be requested.</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>degree</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>maxFastChangeAngle</EFDB_Name>
+      <Description>The maximum camera angle (in degrees) away from vertical that a fast filter change can be performed.</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>degree</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>maxSlowChangeTime</EFDB_Name>
+      <Description>The maximum estimated time (in seconds) for a setFilter command, when in degraded (slow) mode (per filter).</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>second</Units>
+      <Count>6</Count>
+    </item>
+    <item>
+      <EFDB_Name>maxFastChangeTime</EFDB_Name>
+      <Description>The maximum estimated time (in seconds) for a setFilter command, when in fast mode (per filter).</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>second</Units>
+      <Count>6</Count>
     </item>
   </SALEvent>
   <SALEvent>
@@ -4946,7 +4982,7 @@
   <SALEvent>
     <Subsystem>CCCamera</Subsystem>
     <EFDB_Topic>CCCamera_logevent_vacuum_PeriodicTasks_timersConfiguration</EFDB_Topic>
-    <!--CCS: Dictionary_Checksum: 3610869269L -->
+    <!--CCS: Dictionary_Checksum: 2166055173L -->
     <item>
       <EFDB_Name>version</EFDB_Name>
       <Description>Version of the settings, formatted using CCS conventions</Description>
@@ -4985,6 +5021,13 @@
     <item>
       <EFDB_Name>monitor_update_taskPeriodMillis</EFDB_Name>
       <Description>period for task monitor-update</Description>
+      <IDL_Type>long long</IDL_Type>
+      <Units>ms</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>rtds_check_status_taskPeriodMillis</EFDB_Name>
+      <Description>period for task rtds-check-status</Description>
       <IDL_Type>long long</IDL_Type>
       <Units>ms</Units>
       <Count>1</Count>
@@ -5177,7 +5220,7 @@
   <SALEvent>
     <Subsystem>CCCamera</Subsystem>
     <EFDB_Topic>CCCamera_logevent_vacuum_Turbo_GeneralConfiguration</EFDB_Topic>
-    <!--CCS: Dictionary_Checksum: 2761092564L -->
+    <!--CCS: Dictionary_Checksum: 3955323662L -->
     <item>
       <EFDB_Name>version</EFDB_Name>
       <Description>Version of the settings, formatted using CCS conventions</Description>
@@ -5200,13 +5243,6 @@
       <Count>1</Count>
     </item>
     <item>
-      <EFDB_Name>interlockType</EFDB_Name>
-      <Description>true/false for continuous/impulse</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
       <EFDB_Name>lowSpeedMode</EFDB_Name>
       <Description>true/false for low/normal speed</Description>
       <IDL_Type>boolean</IDL_Type>
@@ -5214,29 +5250,15 @@
       <Count>1</Count>
     </item>
     <item>
-      <EFDB_Name>model304</EFDB_Name>
-      <Description>true/false for model 304/84 pump</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
+      <EFDB_Name>setpointValue</EFDB_Name>
+      <Description>Setpoint value for digital outout</Description>
+      <IDL_Type>long</IDL_Type>
+      <Units>Hz</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>softStartMode</EFDB_Name>
       <Description>Soft-Start mode &lt;true|false&gt;, settable only if pump is stopped</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>ventValveByCmnd</EFDB_Name>
-      <Description>true/false for manual/auto</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>waterCooling</EFDB_Name>
-      <Description>true/false for water/air cooling</Description>
       <IDL_Type>boolean</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
@@ -5378,6 +5400,27 @@
       <EFDB_Name>status_limitLo</EFDB_Name>
       <Description>TurboPump status: 5=normal, 6=fail low alarm level</Description>
       <IDL_Type>double</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+  </SALEvent>
+  <!--Created by xmlmaker2 for subsystem CCCamera class CCCamera_logevent_vacuum_Turbo_buildConfiguration using level 1 for category build-->
+  <!--====================================================================================================================================-->
+  <SALEvent>
+    <Subsystem>CCCamera</Subsystem>
+    <EFDB_Topic>CCCamera_logevent_vacuum_Turbo_buildConfiguration</EFDB_Topic>
+    <!--CCS: Dictionary_Checksum: 1257163577L -->
+    <item>
+      <EFDB_Name>version</EFDB_Name>
+      <Description>Version of the settings, formatted using CCS conventions</Description>
+      <IDL_Type>string</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>model</EFDB_Name>
+      <Description>enumerated pump model</Description>
+      <IDL_Type>string</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
     </item>
@@ -8356,6 +8399,35 @@
     <item>
       <EFDB_Name>location</EFDB_Name>
       <Description>reb location</Description>
+      <IDL_Type>string</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+  </SALEvent>
+  <!--Created by xmlmaker2 for subsystem CCCamera class CCCamera_logevent_focal_plane_Reb_GeneralConfiguration using level 1 for category General-->
+  <!--===========================================================================================================================================-->
+  <SALEvent>
+    <Subsystem>CCCamera</Subsystem>
+    <EFDB_Topic>CCCamera_logevent_focal_plane_Reb_GeneralConfiguration</EFDB_Topic>
+    <!--CCS: Dictionary_Checksum: 2781647658L -->
+    <item>
+      <EFDB_Name>version</EFDB_Name>
+      <Description>Version of the settings, formatted using CCS conventions</Description>
+      <IDL_Type>string</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>location</EFDB_Name>
+      <Description>reb location</Description>
+      <IDL_Type>string</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <!--CCSMETA: Array tempavg_temperatureNames indexed by location-->
+    <item>
+      <EFDB_Name>tempavg_temperatureNames</EFDB_Name>
+      <Description>List of sibling temperature channels to average (colon delimited array)</Description>
       <IDL_Type>string</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
