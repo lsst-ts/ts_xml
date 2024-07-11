@@ -15,6 +15,106 @@ Version History
 
 .. towncrier release notes start
 
+v22.0.0 (2024-07-11)
+====================
+Package Level
+-------------
+
+New Features
+~~~~~~~~~~~~
+
+- Updated definition of AvailableFilters logevent (`AvailableFilters <https://rubinobs.atlassian.net/browse/AvailableFilters>`_)
+- Add lint GitHub workflow. (`DM-44918 <https://rubinobs.atlassian.net/browse/DM-44918>`_)
+- Add enumaration consistency test. (`DM-45170 <https://rubinobs.atlassian.net/browse/DM-45170>`_)
+
+
+Bug Fixes
+~~~~~~~~~
+
+- Make sure that the doc build GitHub workflow only runs once for PR pushes. (`DM-44980 <https://rubinobs.atlassian.net/browse/DM-44980>`_)
+
+
+ATCamera
+~~~~~~~~
+
+- Update ATCamera xml for XML 22 (`CAP-1047 <https://rubinobs.atlassian.net/browse/CAP-1047>`_)
+
+
+CCCamera
+~~~~~~~~
+
+- Update CCCamera xml for XML 22 (`CAP-1047 <https://rubinobs.atlassian.net/browse/CAP-1047>`_)
+
+
+MTCamera
+~~~~~~~~
+
+- Update MTCamera xml for XML 22 (`CAP-1047 <https://rubinobs.atlassian.net/browse/CAP-1047>`_)
+
+
+Interface Changes
+-----------------
+
+EAS
+~~~
+
+- Add topics descriptions. (`DM-43809 <https://rubinobs.atlassian.net/browse/DM-43809>`_)
+
+
+EPM
+~~~
+
+- Improve PDU and XUPS telemetry. (`DM-44577 <https://rubinobs.atlassian.net/browse/DM-44577>`_)
+
+
+Electrometer
+~~~~~~~~~~~~
+
+- Add optional groupID to startScan and startScanDt. (`DM-44757 <https://rubinobs.atlassian.net/browse/DM-44757>`_)
+
+
+FiberSpectrograph
+~~~~~~~~~~~~~~~~~
+
+- Add optional groupID to the expose command. (`DM-44757 <https://rubinobs.atlassian.net/browse/DM-44757>`_)
+
+
+LinearStage
+~~~~~~~~~~~
+
+- Add ErrorCode enum. (`DM-45062 <https://rubinobs.atlassian.net/browse/DM-45062>`_)
+
+
+MTAirCompressor
+~~~~~~~~~~~~~~~
+
+- Add URL for MTAirCompressor configuration (`DM-47000.rst <https://rubinobs.atlassian.net/browse/DM-47000.rst>`_)
+
+
+MTDome
+~~~~~~
+
+- Add event for the capacitor banks state. (`DM-44289 <https://rubinobs.atlassian.net/browse/DM-44289>`_)
+
+
+MTEEC
+~~~~~
+
+- Add topics descriptions. (`DM-43817 <https://rubinobs.atlassian.net/browse/DM-43817>`_)
+
+
+MTReflector
+~~~~~~~~~~~
+
+- Adding MTReflector xml which allows opening and closing the flatfield reflector (`DM-43456 <https://rubinobs.atlassian.net/browse/DM-43456>`_)
+
+
+TunableLaser
+~~~~~~~~~~~~
+
+- Fix black formatting. (`DM-44918 <https://rubinobs.atlassian.net/browse/DM-44918>`_)
+
+
 21.0.0 (2024-05-24)
 ===================
 Package Level
