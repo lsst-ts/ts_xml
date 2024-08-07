@@ -22,7 +22,6 @@ __all__ = [
     "ApplicationStatus",
     "ControllerState",
     "EnabledSubstate",
-    "OfflineSubstate",
     "SalIndex",
     "ErrorCode",
 ]
@@ -30,8 +29,8 @@ __all__ = [
 import enum
 
 # MTHexapod and MTRotator have the same enum values for
-# ControllerState, OfflineSubstate, and EnabledSubstate.
-from .MTRotator import ControllerState, EnabledSubstate, OfflineSubstate
+# ControllerState and EnabledSubstate.
+from .MTRotator import ControllerState, EnabledSubstate
 
 
 class ApplicationStatus(enum.IntFlag):

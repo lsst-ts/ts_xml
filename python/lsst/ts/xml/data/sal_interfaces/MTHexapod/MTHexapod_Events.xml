@@ -9,10 +9,6 @@
     ControllerState_Fault=4
 </Enumeration>
   <Enumeration>
-    OfflineSubstate_PublishOnly=0,
-    OfflineSubstate_Available=1
-</Enumeration>
-  <Enumeration>
     EnabledSubstate_Stationary=0,
     EnabledSubstate_MovingPointToPoint=1,
     EnabledSubstate_SlewingOrTracking=2,
@@ -255,6 +251,13 @@
       <Units>um/s2</Units>
       <Count>1</Count>
     </item>
+    <item>
+      <EFDB_Name>drivesEnabled</EFDB_Name>
+      <Description>Drives are enabled or not.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
   </SALEvent>
   <SALEvent>
     <Subsystem>MTHexapod</Subsystem>
@@ -275,13 +278,6 @@
     <item>
       <EFDB_Name>controllerState</EFDB_Name>
       <Description>Basic state, a ControllerState enumeration value. The state names and meanings are the same as standard CSC summaryState, but the numeric values differ. We report the controller state in addition to summaryState because we need to report a summaryState even when the controller is not connected, and to aid diagnostics, e.g. in case the controller reports an unrecognized state.</Description>
-      <IDL_Type>long</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>offlineSubstate</EFDB_Name>
-      <Description>Substate in OFFLINE mode, an OfflineSubstate enumeration value.</Description>
       <IDL_Type>long</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
