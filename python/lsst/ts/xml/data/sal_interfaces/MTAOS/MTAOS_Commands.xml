@@ -147,10 +147,24 @@
     <Description>Utility command to add aberration to the system based on user provided wavefront errors. The command assume uniform aberration on all sensors.</Description>
     <item>
       <EFDB_Name>wf</EFDB_Name>
-      <Description>Array with z4-z22 terms of wavefront errors. Indexes are considered to be ANSI (https://en.wikipedia.org/wiki/Zernike_polynomials#OSA/ANSI_standard_indices).</Description>
+      <Description>Array with z4-z22 terms of wavefront errors. Indexes are considered to be ANSI (https://en.wikipedia.org/wiki/Zernike_polynomials#OSA/ANSI_standard_indices). This attribute will be deprecated in favor of nollZernikeIndices and nollZernikeValues.</Description>
       <IDL_Type>double</IDL_Type>
       <Units>micron</Units>
       <Count>19</Count>
+    </item>
+    <item>
+      <EFDB_Name>nollZernikeIndices</EFDB_Name>
+      <Description>Array with zernike noll indices used for the wavefront errors. Indices can be any sparse list comprising zernikes above zk4.</Description>
+      <IDL_Type>int</IDL_Type>
+      <Units>unitless</Units>
+      <Count>100</Count>
+    </item>
+    <item>
+      <EFDB_Name>nollZernikeValues</EFDB_Name>
+      <Description>Array with wavefront errors expressed in the zernike coefficient values that map to the specified nollZernikeIndices. </Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>micron</Units>
+      <Count>100</Count>
     </item>
     <item>
       <EFDB_Name>config</EFDB_Name>
