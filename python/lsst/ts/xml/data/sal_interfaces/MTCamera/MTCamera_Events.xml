@@ -713,7 +713,7 @@
     <EFDB_Topic>MTCamera_logevent_availableFilters</EFDB_Topic>
     <item>
       <EFDB_Name>filterNames</EFDB_Name>
-      <Description>A list of names of available filters (: delimited, U-001,G-004,R-010,Z-012,Y-014, NONE), in the same order as the list of filter types.</Description>
+      <Description>A list of names of available filters (comma delimited, U-001,G-004,R-010,Z-012,Y-014, NONE), in the same order as the list of filter types.</Description>
       <IDL_Type>string</IDL_Type>
       <IDL_Size>256</IDL_Size>
       <Units>unitless</Units>
@@ -721,7 +721,7 @@
     </item>
     <item>
       <EFDB_Name>filterTypes</EFDB_Name>
-      <Description>A list of types of available filters in the same order as the list of available filters  (: delimited)</Description>
+      <Description>A list of types of available filters in the same order as the list of available filters  (comma delimited)</Description>
       <IDL_Type>string</IDL_Type>
       <IDL_Size>256</IDL_Size>
       <Units>unitless</Units>
@@ -5200,7 +5200,7 @@
   <SALEvent>
     <Subsystem>MTCamera</Subsystem>
     <EFDB_Topic>MTCamera_logevent_rebpower_Power_timersConfiguration</EFDB_Topic>
-    <!--CCS: Dictionary_Checksum: 225162483L -->
+    <!--CCS: Dictionary_Checksum: 3720383903L -->
     <item>
       <EFDB_Name>version</EFDB_Name>
       <Description>Version of the settings, formatted using CCS conventions</Description>
@@ -5215,10 +5215,18 @@
       <Units>unitless</Units>
       <Count>1</Count>
     </item>
-    <!--CCSMETA: Array periodictasks_monitor_check_taskPeriodMillis indexed by location-->
+    <!--CCSMETA: Array periodictasks_monitor_publish_taskPeriodMillis indexed by location-->
     <item>
-      <EFDB_Name>periodictasks_monitor_check_taskPeriodMillis</EFDB_Name>
+      <EFDB_Name>periodictasks_monitor_publish_taskPeriodMillis</EFDB_Name>
       <Description>period for task monitor-publish/r01-reb1</Description>
+      <IDL_Type>long long</IDL_Type>
+      <Units>ms</Units>
+      <Count>63</Count>
+    </item>
+    <!--CCSMETA: Array periodictasks_monitor_update_taskPeriodMillis indexed by location-->
+    <item>
+      <EFDB_Name>periodictasks_monitor_update_taskPeriodMillis</EFDB_Name>
+      <Description>period for task monitor-update/r01-reb1</Description>
       <IDL_Type>long long</IDL_Type>
       <Units>ms</Units>
       <Count>63</Count>
@@ -13357,7 +13365,7 @@
   <SALEvent>
     <Subsystem>MTCamera</Subsystem>
     <EFDB_Topic>MTCamera_logevent_vacuum_CryoTurboPump_GeneralConfiguration</EFDB_Topic>
-    <!--CCS: Dictionary_Checksum: 3965114384L -->
+    <!--CCS: Dictionary_Checksum: 777674098L -->
     <item>
       <EFDB_Name>version</EFDB_Name>
       <Description>Version of the settings, formatted using CCS conventions</Description>
@@ -13367,8 +13375,22 @@
     </item>
     <item>
       <EFDB_Name>activeStopMode</EFDB_Name>
-      <Description>Active-Stop mode &lt;true|false&gt;, settable only if pump is stopped</Description>
+      <Description>Active-Stop mode &lt;true|false&gt;, req pump stopped</Description>
       <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>analogOutput</EFDB_Name>
+      <Description>0 = freq, 1 = power</Description>
+      <IDL_Type>long</IDL_Type>
+      <Units>Hz</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>baudRate</EFDB_Name>
+      <Description>Baudrate, 4=9600 </Description>
+      <IDL_Type>long</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
     </item>
@@ -13380,8 +13402,29 @@
       <Count>1</Count>
     </item>
     <item>
+      <EFDB_Name>extFanConfig</EFDB_Name>
+      <Description>0 = always on,1 = controlled</Description>
+      <IDL_Type>long</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>gasType</EFDB_Name>
+      <Description>0,1,2 for Ar/N2/He</Description>
+      <IDL_Type>long</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>gasTypeArgon</EFDB_Name>
+      <Description>true/false for Ar/N2</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
       <EFDB_Name>interlockType</EFDB_Name>
-      <Description>true/false for continuous/impulse</Description>
+      <Description>interlock type ... normally continuous</Description>
       <IDL_Type>boolean</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
@@ -13394,29 +13437,120 @@
       <Count>1</Count>
     </item>
     <item>
-      <EFDB_Name>model304</EFDB_Name>
-      <Description>true/false for model 304/84 pump</Description>
+      <EFDB_Name>maxpower</EFDB_Name>
+      <Description>max power cutoff (read-only)</Description>
+      <IDL_Type>long</IDL_Type>
+      <Units>Watt</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>openPeriod</EFDB_Name>
+      <Description>vent open period</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>s</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>rotfreqLow</EFDB_Name>
+      <Description>Rotation Freq Low limit</Description>
+      <IDL_Type>long</IDL_Type>
+      <Units>Hz</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>rotfreqMax</EFDB_Name>
+      <Description>Rotation Freq Max limit</Description>
+      <IDL_Type>long</IDL_Type>
+      <Units>Hz</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>rotfreqSet</EFDB_Name>
+      <Description>Rotation Freq Set limit</Description>
+      <IDL_Type>long</IDL_Type>
+      <Units>Hz</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>setpointActive</EFDB_Name>
+      <Description>0|1 = active(High|Low)</Description>
       <IDL_Type>boolean</IDL_Type>
       <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>setpointDelay</EFDB_Name>
+      <Description>delay to activate</Description>
+      <IDL_Type>long</IDL_Type>
+      <Units>s</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>setpointHyst</EFDB_Name>
+      <Description>Setpoint value for digital outout</Description>
+      <IDL_Type>long</IDL_Type>
+      <Units>Hz</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>setpointThresh</EFDB_Name>
+      <Description>Threshold to activate digital outout</Description>
+      <IDL_Type>long</IDL_Type>
+      <Units>Hz</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>setpointType</EFDB_Name>
+      <Description>0:freq, 1:current, ...</Description>
+      <IDL_Type>long</IDL_Type>
+      <Units>Hz</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>softStartMode</EFDB_Name>
-      <Description>Soft-Start mode &lt;true|false&gt;, settable only if pump is stopped</Description>
+      <Description>Soft-Start mode &lt;true|false&gt;, req pump stopped</Description>
       <IDL_Type>boolean</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
     </item>
     <item>
-      <EFDB_Name>ventValveByCmnd</EFDB_Name>
-      <Description>true/false for manual/auto</Description>
+      <EFDB_Name>speedReadActivate</EFDB_Name>
+      <Description>Read speed after Stop</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>ventDelay</EFDB_Name>
+      <Description>opening delay count</Description>
+      <IDL_Type>long</IDL_Type>
+      <Units>0.2s/count</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>ventOpentime</EFDB_Name>
+      <Description>opening time, 74,84 models only</Description>
+      <IDL_Type>long</IDL_Type>
+      <Units>0.2s/count</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>ventvalveByCmnd</EFDB_Name>
+      <Description>By-command mode</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>ventvalveType</EFDB_Name>
+      <Description>critical value per model</Description>
       <IDL_Type>boolean</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>waterCooling</EFDB_Name>
-      <Description>true/false for water/air cooling</Description>
+      <Description>water cooling</Description>
       <IDL_Type>boolean</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
@@ -14288,7 +14422,7 @@
   <SALEvent>
     <Subsystem>MTCamera</Subsystem>
     <EFDB_Topic>MTCamera_logevent_vacuum_HexTurboPump_GeneralConfiguration</EFDB_Topic>
-    <!--CCS: Dictionary_Checksum: 4115640989L -->
+    <!--CCS: Dictionary_Checksum: 444522057L -->
     <item>
       <EFDB_Name>version</EFDB_Name>
       <Description>Version of the settings, formatted using CCS conventions</Description>
@@ -14298,8 +14432,22 @@
     </item>
     <item>
       <EFDB_Name>activeStopMode</EFDB_Name>
-      <Description>Active-Stop mode &lt;true|false&gt;, settable only if pump is stopped</Description>
+      <Description>Active-Stop mode &lt;true|false&gt;, req pump stopped</Description>
       <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>analogOutput</EFDB_Name>
+      <Description>0 = freq, 1 = power</Description>
+      <IDL_Type>long</IDL_Type>
+      <Units>Hz</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>baudRate</EFDB_Name>
+      <Description>Baudrate, 4=9600 </Description>
+      <IDL_Type>long</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
     </item>
@@ -14311,8 +14459,29 @@
       <Count>1</Count>
     </item>
     <item>
+      <EFDB_Name>extFanConfig</EFDB_Name>
+      <Description>0 = always on,1 = controlled</Description>
+      <IDL_Type>long</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>gasType</EFDB_Name>
+      <Description>0,1,2 for Ar/N2/He</Description>
+      <IDL_Type>long</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>gasTypeArgon</EFDB_Name>
+      <Description>true/false for Ar/N2</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
       <EFDB_Name>interlockType</EFDB_Name>
-      <Description>true/false for continuous/impulse</Description>
+      <Description>interlock type ... normally continuous</Description>
       <IDL_Type>boolean</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
@@ -14325,29 +14494,120 @@
       <Count>1</Count>
     </item>
     <item>
-      <EFDB_Name>model304</EFDB_Name>
-      <Description>true/false for model 304/84 pump</Description>
+      <EFDB_Name>maxpower</EFDB_Name>
+      <Description>max power cutoff (read-only)</Description>
+      <IDL_Type>long</IDL_Type>
+      <Units>Watt</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>openPeriod</EFDB_Name>
+      <Description>vent open period</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>s</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>rotfreqLow</EFDB_Name>
+      <Description>Rotation Freq Low limit</Description>
+      <IDL_Type>long</IDL_Type>
+      <Units>Hz</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>rotfreqMax</EFDB_Name>
+      <Description>Rotation Freq Max limit</Description>
+      <IDL_Type>long</IDL_Type>
+      <Units>Hz</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>rotfreqSet</EFDB_Name>
+      <Description>Rotation Freq Set limit</Description>
+      <IDL_Type>long</IDL_Type>
+      <Units>Hz</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>setpointActive</EFDB_Name>
+      <Description>0|1 = active(High|Low)</Description>
       <IDL_Type>boolean</IDL_Type>
       <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>setpointDelay</EFDB_Name>
+      <Description>delay to activate</Description>
+      <IDL_Type>long</IDL_Type>
+      <Units>s</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>setpointHyst</EFDB_Name>
+      <Description>Setpoint value for digital outout</Description>
+      <IDL_Type>long</IDL_Type>
+      <Units>Hz</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>setpointThresh</EFDB_Name>
+      <Description>Threshold to activate digital outout</Description>
+      <IDL_Type>long</IDL_Type>
+      <Units>Hz</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>setpointType</EFDB_Name>
+      <Description>0:freq, 1:current, ...</Description>
+      <IDL_Type>long</IDL_Type>
+      <Units>Hz</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>softStartMode</EFDB_Name>
-      <Description>Soft-Start mode &lt;true|false&gt;, settable only if pump is stopped</Description>
+      <Description>Soft-Start mode &lt;true|false&gt;, req pump stopped</Description>
       <IDL_Type>boolean</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
     </item>
     <item>
-      <EFDB_Name>ventValveByCmnd</EFDB_Name>
-      <Description>true/false for manual/auto</Description>
+      <EFDB_Name>speedReadActivate</EFDB_Name>
+      <Description>Read speed after Stop</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>ventDelay</EFDB_Name>
+      <Description>opening delay count</Description>
+      <IDL_Type>long</IDL_Type>
+      <Units>0.2s/count</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>ventOpentime</EFDB_Name>
+      <Description>opening time, 74,84 models only</Description>
+      <IDL_Type>long</IDL_Type>
+      <Units>0.2s/count</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>ventvalveByCmnd</EFDB_Name>
+      <Description>By-command mode</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>ventvalveType</EFDB_Name>
+      <Description>critical value per model</Description>
       <IDL_Type>boolean</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>waterCooling</EFDB_Name>
-      <Description>true/false for water/air cooling</Description>
+      <Description>water cooling</Description>
       <IDL_Type>boolean</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
@@ -15249,7 +15509,7 @@
   <SALEvent>
     <Subsystem>MTCamera</Subsystem>
     <EFDB_Topic>MTCamera_logevent_vacuum_PeriodicTasks_timersConfiguration</EFDB_Topic>
-    <!--CCS: Dictionary_Checksum: 1666473865L -->
+    <!--CCS: Dictionary_Checksum: 1626590675L -->
     <item>
       <EFDB_Name>version</EFDB_Name>
       <Description>Version of the settings, formatted using CCS conventions</Description>
@@ -15267,6 +15527,20 @@
     <item>
       <EFDB_Name>heartbeat_taskPeriodMillis</EFDB_Name>
       <Description>period for task heartbeat</Description>
+      <IDL_Type>long long</IDL_Type>
+      <Units>ms</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>maq20cryo_check_status_taskPeriodMillis</EFDB_Name>
+      <Description>period for task Maq20Cryo-check-status</Description>
+      <IDL_Type>long long</IDL_Type>
+      <Units>ms</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>maq20ut_check_status_taskPeriodMillis</EFDB_Name>
+      <Description>period for task Maq20Ut-check-status</Description>
       <IDL_Type>long long</IDL_Type>
       <Units>ms</Units>
       <Count>1</Count>
@@ -17038,6 +17312,35 @@
     <item>
       <EFDB_Name>location</EFDB_Name>
       <Description>reb location</Description>
+      <IDL_Type>string</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+  </SALEvent>
+  <!--Created by xmlmaker2 for subsystem MTCamera class MTCamera_logevent_focal_plane_Reb_GeneralConfiguration using level 1 for category General-->
+  <!--===========================================================================================================================================-->
+  <SALEvent>
+    <Subsystem>MTCamera</Subsystem>
+    <EFDB_Topic>MTCamera_logevent_focal_plane_Reb_GeneralConfiguration</EFDB_Topic>
+    <!--CCS: Dictionary_Checksum: 1125789776L -->
+    <item>
+      <EFDB_Name>version</EFDB_Name>
+      <Description>Version of the settings, formatted using CCS conventions</Description>
+      <IDL_Type>string</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>location</EFDB_Name>
+      <Description>reb location</Description>
+      <IDL_Type>string</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <!--CCSMETA: Array tempavg_temperatureNames indexed by location-->
+    <item>
+      <EFDB_Name>tempavg_temperatureNames</EFDB_Name>
+      <Description>List of sibling temperature channels to average (colon delimited array)</Description>
       <IDL_Type>string</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
@@ -21745,21 +22048,21 @@
     </item>
     <item>
       <EFDB_Name>autochangertrucks_adjustmentFactor</EFDB_Name>
-      <Description>adjustment factor.</Description>
+      <Description>Adjustment factor.</Description>
       <IDL_Type>double</IDL_Type>
       <Units>micron/V</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>autochangertrucks_approachOnlinePosition</EFDB_Name>
-      <Description>approach ONLINE position</Description>
+      <Description>Approach ONLINE position</Description>
       <IDL_Type>long</IDL_Type>
       <Units>micron</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>autochangertrucks_approachStandbyPosition</EFDB_Name>
-      <Description>approach STANDBY position</Description>
+      <Description>Approach STANDBY position</Description>
       <IDL_Type>long</IDL_Type>
       <Units>micron</Units>
       <Count>1</Count>
@@ -21787,7 +22090,7 @@
     </item>
     <item>
       <EFDB_Name>autochangertrucks_deltaPreliminaryTargetPosition</EFDB_Name>
-      <Description>proximity to preliminaryTargetPosition to allow to find the true ONLINE position</Description>
+      <Description>Proximity to preliminaryTargetPosition to allow to find the true ONLINE position</Description>
       <IDL_Type>long</IDL_Type>
       <Units>micron</Units>
       <Count>1</Count>
@@ -21808,70 +22111,70 @@
     </item>
     <item>
       <EFDB_Name>autochangertrucks_highAcceleration</EFDB_Name>
-      <Description>high acceleration to approach STANDBY position</Description>
+      <Description>High acceleration to approach STANDBY position</Description>
       <IDL_Type>long</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>autochangertrucks_highDeceleration</EFDB_Name>
-      <Description>high deceleration to approach STANDBY position</Description>
+      <Description>High deceleration to approach STANDBY position</Description>
       <IDL_Type>long</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>autochangertrucks_highSpeed</EFDB_Name>
-      <Description>high speed to approach STANDBY position</Description>
+      <Description>High speed to approach STANDBY position</Description>
       <IDL_Type>long</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>autochangertrucks_lowAcceleration</EFDB_Name>
-      <Description>low acceleration to approach STANDBY position</Description>
+      <Description>Low acceleration to approach STANDBY position</Description>
       <IDL_Type>long</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>autochangertrucks_lowDeceleration</EFDB_Name>
-      <Description>low deceleration to approach STANDBY position</Description>
+      <Description>Low deceleration to approach STANDBY position</Description>
       <IDL_Type>long</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>autochangertrucks_lowSpeed</EFDB_Name>
-      <Description>low speed to approach STANDBY position</Description>
+      <Description>Low speed to approach STANDBY position</Description>
       <IDL_Type>long</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>autochangertrucks_maxActualPositionValue</EFDB_Name>
-      <Description>maximal position for autochanger trucks</Description>
+      <Description>Maximal position for autochanger trucks</Description>
       <IDL_Type>long</IDL_Type>
       <Units>micron</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>autochangertrucks_minActualPositionValue</EFDB_Name>
-      <Description>minimal position for autochanger trucks</Description>
+      <Description>Minimal position for autochanger trucks</Description>
       <IDL_Type>long</IDL_Type>
       <Units>micron</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>autochangertrucks_minTargetPosition</EFDB_Name>
-      <Description>lowest position to be used by command moveAndClampFilterOnline.</Description>
+      <Description>Lowest position to be used by command moveAndClampFilterOnline.</Description>
       <IDL_Type>long</IDL_Type>
       <Units>micron</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>autochangertrucks_naturalPosition</EFDB_Name>
-      <Description>natural position at ONLINE position used by process whichmoves a filter at ONLINE position.</Description>
+      <Description>Natural position at ONLINE position used by process whichmoves a filter at ONLINE position.</Description>
       <IDL_Type>long</IDL_Type>
       <Units>micron</Units>
       <Count>1</Count>
@@ -21885,49 +22188,49 @@
     </item>
     <item>
       <EFDB_Name>autochangertrucks_positionRangeAtHandoff</EFDB_Name>
-      <Description>position is reached at HANDOFF if |targetPosition - driverPosition| &lt; positionRangeAtOnHandoff</Description>
+      <Description>Position is reached at HANDOFF if |targetPosition - driverPosition| &lt; positionRangeAtOnHandoff</Description>
       <IDL_Type>long</IDL_Type>
       <Units>micron</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>autochangertrucks_positionRangeAtOnline</EFDB_Name>
-      <Description>position is reached at ONLINE if |targetPosition - driverPosition| &lt; positionRangeAtOnline</Description>
+      <Description>Position is reached at ONLINE if |targetPosition - driverPosition| &lt; positionRangeAtOnline</Description>
       <IDL_Type>long</IDL_Type>
       <Units>micron</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>autochangertrucks_positionRangeAtStandby</EFDB_Name>
-      <Description>position is reached at STANDBY if |targetPosition - driverPosition| &lt; positionRangeAtStandby</Description>
+      <Description>Position is reached at STANDBY if |targetPosition - driverPosition| &lt; positionRangeAtStandby</Description>
       <IDL_Type>long</IDL_Type>
       <Units>micron</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>autochangertrucks_positionRangeInTravel</EFDB_Name>
-      <Description>position is reached in TRAVEL if |targetPosition - driverPosition| &lt; positionRangeAtOnline</Description>
+      <Description>Position is reached in TRAVEL if |targetPosition - driverPosition| &lt; positionRangeAtOnline</Description>
       <IDL_Type>long</IDL_Type>
       <Units>micron</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>autochangertrucks_prelimaryTargetPosition</EFDB_Name>
-      <Description>preliminary ONLINE position, used by process whichmoves a filter at ONLINE position.</Description>
+      <Description>Preliminary ONLINE position, used by process whichmoves a filter at ONLINE position.</Description>
       <IDL_Type>long</IDL_Type>
       <Units>micron</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>autochangertrucks_proximitySensorInput</EFDB_Name>
-      <Description>input number on the ADC where proximity sensor is plugged</Description>
+      <Description>Input number on the ADC where proximity sensor is plugged</Description>
       <IDL_Type>long</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>autochangertrucks_slowMotionPosition</EFDB_Name>
-      <Description>slow motion point until online</Description>
+      <Description>Slow motion point until online</Description>
       <IDL_Type>long</IDL_Type>
       <Units>micron</Units>
       <Count>1</Count>
@@ -21948,371 +22251,371 @@
     </item>
     <item>
       <EFDB_Name>autochangertrucks_timeoutForAlignFollower</EFDB_Name>
-      <Description>time to align follower on driver controller</Description>
+      <Description>Time to align follower on driver controller</Description>
       <IDL_Type>long long</IDL_Type>
       <Units>millisecond</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>autochangertrucks_timeoutForTrucksMotion</EFDB_Name>
-      <Description>time for trucks motion from ONLINE to STANDBY</Description>
+      <Description>Time for trucks motion from ONLINE to STANDBY</Description>
       <IDL_Type>long long</IDL_Type>
       <Units>millisecond</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>autochangertrucks_umax</EFDB_Name>
-      <Description>maximum value of voltage read on proximitySensor.</Description>
+      <Description>Maximum value of voltage read on proximitySensor.</Description>
       <IDL_Type>double</IDL_Type>
       <Units>V</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>autochangertrucks_umin</EFDB_Name>
-      <Description>minimum value of voltage read on proximitySensor.</Description>
+      <Description>Minimum value of voltage read on proximitySensor.</Description>
       <IDL_Type>double</IDL_Type>
       <Units>V</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>autochangertrucks_utarget</EFDB_Name>
-      <Description>voltage target on proximitySensor.</Description>
+      <Description>Voltage target on proximitySensor.</Description>
       <IDL_Type>double</IDL_Type>
       <Units>V</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>latches_latchXminus_currentToOpen</EFDB_Name>
-      <Description>current to be sent to the controller to open the latch.</Description>
+      <Description>Current to be sent to the controller to open the latch.</Description>
       <IDL_Type>long</IDL_Type>
       <Units>mA</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>latches_latchXminus_timeoutForLatchMotion</EFDB_Name>
-      <Description>timeout for opening or closing latch</Description>
+      <Description>Timeout for opening or closing latch.</Description>
       <IDL_Type>long long</IDL_Type>
       <Units>millisecond</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>latches_latchXplus_currentToOpen</EFDB_Name>
-      <Description>current to be sent to the controller to open the latch.</Description>
+      <Description>Current to be sent to the controller to open the latch.</Description>
       <IDL_Type>long</IDL_Type>
       <Units>mA</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>latches_latchXplus_timeoutForLatchMotion</EFDB_Name>
-      <Description>timeout for opening or closing latch</Description>
+      <Description>Timeout for opening or closing latch.</Description>
       <IDL_Type>long long</IDL_Type>
       <Units>millisecond</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>onlineclamps_maxClosedStrain</EFDB_Name>
-      <Description>if strain &gt;= maxClosedStrain, clamps are OPENED</Description>
+      <Description>If strain superior to maxClosedStrain, clamps are OPENED</Description>
       <IDL_Type>short</IDL_Type>
       <Units>mV</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>onlineclamps_maxLockedStrain</EFDB_Name>
-      <Description>if strain &lt; maxLockedStrain, clamps are LOCKED</Description>
+      <Description>If strain strictly inferior to maxLockedStrain, clamps are LOCKED</Description>
       <IDL_Type>short</IDL_Type>
       <Units>mV</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>onlineclamps_maxTimeToCloseClampsX</EFDB_Name>
-      <Description>maximum time in milliseconds to close the 3 clamps</Description>
+      <Description>Maximum time in milliseconds to close the 3 clamps</Description>
       <IDL_Type>long</IDL_Type>
       <Units>millisecond</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>onlineclamps_maxTimeToLockAllClamps</EFDB_Name>
-      <Description>maximum time in milliseconds to lock the 3 clamps</Description>
+      <Description>Maximum time in milliseconds to lock the 3 clamps</Description>
       <IDL_Type>long</IDL_Type>
       <Units>millisecond</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>onlineclamps_maxTimeToOpenClampsX</EFDB_Name>
-      <Description>maximum time in milliseconds to open the 3 clamps</Description>
+      <Description>Maximum time in milliseconds to open the 3 clamps</Description>
       <IDL_Type>long</IDL_Type>
       <Units>millisecond</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>onlineclamps_maxTimeToUnlockAllClamps</EFDB_Name>
-      <Description>maximum time in milliseconds to unlock the 3 clamps</Description>
+      <Description>Maximum time in milliseconds to unlock the 3 clamps</Description>
       <IDL_Type>long</IDL_Type>
       <Units>millisecond</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>onlineclamps_minLockedStrain</EFDB_Name>
-      <Description>if strain &lt; minLockedStrain, clamps may be in ERROR</Description>
+      <Description>If strain strictly inferior to minLockedStrain, clamps may be in ERROR</Description>
       <IDL_Type>short</IDL_Type>
       <Units>mV</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>onlineclamps_minPeriod</EFDB_Name>
-      <Description>minimal period for current ramps. should be &gt; 50</Description>
+      <Description>Minimal period for current ramps. Should be &gt; 50</Description>
       <IDL_Type>long</IDL_Type>
       <Units>millisecond</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>onlineclamps_onlineClampXminus_currentToClamp</EFDB_Name>
-      <Description>current to clamp ONLINE clamp</Description>
+      <Description>Current to clamp ONLINE clamp</Description>
       <IDL_Type>long</IDL_Type>
       <Units>mA</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>onlineclamps_onlineClampXminus_currentToOpen</EFDB_Name>
-      <Description>current to open ONLINE clamp</Description>
+      <Description>Current to open ONLINE clamp</Description>
       <IDL_Type>long</IDL_Type>
       <Units>mA</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>onlineclamps_onlineClampXminus_deltaCurrent</EFDB_Name>
-      <Description>delta of current between target current and current read on controller. Used to know if action is completed for homing.</Description>
+      <Description>Delta of current between target current and current read on controller. Used to know if action is completed for homing.</Description>
       <IDL_Type>long</IDL_Type>
       <Units>mA</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>onlineclamps_onlineClampXminus_finalCurrentToClose</EFDB_Name>
-      <Description>final current to close clamp in a current ramp</Description>
+      <Description>Final current to close clamp in a current ramp</Description>
       <IDL_Type>long</IDL_Type>
       <Units>mA</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>onlineclamps_onlineClampXminus_incrementCurrentToClamp</EFDB_Name>
-      <Description>increment of current to lock in a current ramp</Description>
+      <Description>Increment of current to lock in a current ramp</Description>
       <IDL_Type>long</IDL_Type>
       <Units>mA</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>onlineclamps_onlineClampXminus_incrementCurrentToClose</EFDB_Name>
-      <Description>increment of current to close clamp in a current ramp</Description>
+      <Description>Increment of current to close clamp in a current ramp</Description>
       <IDL_Type>long</IDL_Type>
       <Units>mA</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>onlineclamps_onlineClampXminus_incrementCurrentToOpen</EFDB_Name>
-      <Description>increment of current to open clamp in a current ramp</Description>
+      <Description>Increment of current to open clamp in a current ramp</Description>
       <IDL_Type>long</IDL_Type>
       <Units>mA</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>onlineclamps_onlineClampXminus_initialCurrentToClose</EFDB_Name>
-      <Description>initial current to close clamp in a current ramp</Description>
+      <Description>Initial current to close clamp in a current ramp</Description>
       <IDL_Type>long</IDL_Type>
       <Units>mA</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>onlineclamps_onlineClampXminus_targetPositionToClose</EFDB_Name>
-      <Description>absolute target position to close clamp</Description>
+      <Description>Absolute target position to close clamp</Description>
       <IDL_Type>long</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>onlineclamps_onlineClampXminus_targetPositionToOpen</EFDB_Name>
-      <Description>absolute target position to open clamp</Description>
+      <Description>Absolute target position to open clamp</Description>
       <IDL_Type>long</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>onlineclamps_onlineClampXplus_currentToClamp</EFDB_Name>
-      <Description>current to clamp ONLINE clamp</Description>
+      <Description>Current to clamp ONLINE clamp</Description>
       <IDL_Type>long</IDL_Type>
       <Units>mA</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>onlineclamps_onlineClampXplus_currentToOpen</EFDB_Name>
-      <Description>current to open ONLINE clamp</Description>
+      <Description>Current to open ONLINE clamp</Description>
       <IDL_Type>long</IDL_Type>
       <Units>mA</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>onlineclamps_onlineClampXplus_deltaCurrent</EFDB_Name>
-      <Description>delta of current between target current and current read on controller. Used to know if action is completed for homing.</Description>
+      <Description>Delta of current between target current and current read on controller. Used to know if action is completed for homing.</Description>
       <IDL_Type>long</IDL_Type>
       <Units>mA</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>onlineclamps_onlineClampXplus_finalCurrentToClose</EFDB_Name>
-      <Description>final current to close clamp in a current ramp</Description>
+      <Description>Final current to close clamp in a current ramp</Description>
       <IDL_Type>long</IDL_Type>
       <Units>mA</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>onlineclamps_onlineClampXplus_incrementCurrentToClamp</EFDB_Name>
-      <Description>increment of current to lock in a current ramp</Description>
+      <Description>Increment of current to lock in a current ramp</Description>
       <IDL_Type>long</IDL_Type>
       <Units>mA</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>onlineclamps_onlineClampXplus_incrementCurrentToClose</EFDB_Name>
-      <Description>increment of current to close clamp in a current ramp</Description>
+      <Description>Increment of current to close clamp in a current ramp</Description>
       <IDL_Type>long</IDL_Type>
       <Units>mA</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>onlineclamps_onlineClampXplus_incrementCurrentToOpen</EFDB_Name>
-      <Description>increment of current to open clamp in a current ramp</Description>
+      <Description>Increment of current to open clamp in a current ramp</Description>
       <IDL_Type>long</IDL_Type>
       <Units>mA</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>onlineclamps_onlineClampXplus_initialCurrentToClose</EFDB_Name>
-      <Description>initial current to close clamp in a current ramp</Description>
+      <Description>Initial current to close clamp in a current ramp</Description>
       <IDL_Type>long</IDL_Type>
       <Units>mA</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>onlineclamps_onlineClampXplus_targetPositionToClose</EFDB_Name>
-      <Description>absolute target position to close clamp</Description>
+      <Description>Absolute target position to close clamp</Description>
       <IDL_Type>long</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>onlineclamps_onlineClampXplus_targetPositionToOpen</EFDB_Name>
-      <Description>absolute target position to open clamp</Description>
+      <Description>Absolute target position to open clamp</Description>
       <IDL_Type>long</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>onlineclamps_onlineClampYminus_currentToClamp</EFDB_Name>
-      <Description>current to clamp ONLINE clamp</Description>
+      <Description>Current to clamp ONLINE clamp</Description>
       <IDL_Type>long</IDL_Type>
       <Units>mA</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>onlineclamps_onlineClampYminus_currentToOpen</EFDB_Name>
-      <Description>current to open ONLINE clamp</Description>
+      <Description>Current to open ONLINE clamp</Description>
       <IDL_Type>long</IDL_Type>
       <Units>mA</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>onlineclamps_onlineClampYminus_deltaCurrent</EFDB_Name>
-      <Description>delta of current between target current and current read on controller. Used to know if action is completed for homing.</Description>
+      <Description>Delta of current between target current and current read on controller. Used to know if action is completed for homing.</Description>
       <IDL_Type>long</IDL_Type>
       <Units>mA</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>onlineclamps_onlineClampYminus_finalCurrentToClose</EFDB_Name>
-      <Description>final current to close clamp in a current ramp</Description>
+      <Description>Final current to close clamp in a current ramp</Description>
       <IDL_Type>long</IDL_Type>
       <Units>mA</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>onlineclamps_onlineClampYminus_incrementCurrentToClamp</EFDB_Name>
-      <Description>increment of current to lock in a current ramp</Description>
+      <Description>Increment of current to lock in a current ramp</Description>
       <IDL_Type>long</IDL_Type>
       <Units>mA</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>onlineclamps_onlineClampYminus_incrementCurrentToClose</EFDB_Name>
-      <Description>increment of current to close clamp in a current ramp</Description>
+      <Description>Increment of current to close clamp in a current ramp</Description>
       <IDL_Type>long</IDL_Type>
       <Units>mA</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>onlineclamps_onlineClampYminus_incrementCurrentToOpen</EFDB_Name>
-      <Description>increment of current to open clamp in a current ramp</Description>
+      <Description>Increment of current to open clamp in a current ramp</Description>
       <IDL_Type>long</IDL_Type>
       <Units>mA</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>onlineclamps_onlineClampYminus_initialCurrentToClose</EFDB_Name>
-      <Description>initial current to close clamp in a current ramp</Description>
+      <Description>Initial current to close clamp in a current ramp</Description>
       <IDL_Type>long</IDL_Type>
       <Units>mA</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>onlineclamps_onlineClampYminus_targetPositionToClose</EFDB_Name>
-      <Description>absolute target position to close clamp</Description>
+      <Description>Absolute target position to close clamp</Description>
       <IDL_Type>long</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>onlineclamps_onlineClampYminus_targetPositionToOpen</EFDB_Name>
-      <Description>absolute target position to open clamp</Description>
+      <Description>Absolute target position to open clamp</Description>
       <IDL_Type>long</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>onlineclamps_strainGain</EFDB_Name>
-      <Description>gain to convert from raw strain to temperature-aware strain</Description>
+      <Description>Gain to convert from raw strain to temperature-aware strain</Description>
       <IDL_Type>double</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>onlineclamps_timeoutForLockingClamps</EFDB_Name>
-      <Description>timeout in milliseconds : if closing the clamps last more than this amount of time, then the subsystem goes in ERROR.</Description>
+      <Description>Timeout in milliseconds : if closing the clamps last more than this amount of time, then the subsystem goes in ERROR.</Description>
       <IDL_Type>long</IDL_Type>
       <Units>millisecond</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>onlineclamps_timeoutForUnlockingClamps</EFDB_Name>
-      <Description>timeout in milliseconds : if unlocking the clamps last more than this amount of time, then the subsystem goes in ERROR.</Description>
+      <Description>Timeout in milliseconds : if unlocking the clamps last more than this amount of time, then the subsystem goes in ERROR.</Description>
       <IDL_Type>long</IDL_Type>
       <Units>millisecond</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>timeToUpdateProtectionSystem</EFDB_Name>
-      <Description>time to wait until protection system signals are updated</Description>
+      <Description>Time to wait until protection system signals are updated</Description>
       <IDL_Type>long long</IDL_Type>
       <Units>millisecond</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>waitTimeForBrakeLR</EFDB_Name>
-      <Description>time to wait between activateBrake and disableOperation for linear rails</Description>
+      <Description>Time to wait between activateBrake and disableOperation for linear rails</Description>
       <IDL_Type>long</IDL_Type>
       <Units>millisecond</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>waitTimeForBrakeOC</EFDB_Name>
-      <Description>time to wait between activateBrake and disableOperation for online clamps</Description>
+      <Description>Time to wait between activateBrake and disableOperation for online clamps</Description>
       <IDL_Type>long</IDL_Type>
       <Units>millisecond</Units>
       <Count>1</Count>
@@ -22333,42 +22636,42 @@
     </item>
     <item>
       <EFDB_Name>autochangertrucks_readSensorsRate</EFDB_Name>
-      <Description>define time interval between two consecutive sensor readouts</Description>
+      <Description>Time interval between two consecutive sensor readouts</Description>
       <IDL_Type>long</IDL_Type>
       <Units>millisecond</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>latches_latchXminus_readSensorsRate</EFDB_Name>
-      <Description>define time interval between two consecutive sensor readouts</Description>
+      <Description>Time interval between two consecutive sensor readouts</Description>
       <IDL_Type>long</IDL_Type>
       <Units>millisecond</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>latches_latchXplus_readSensorsRate</EFDB_Name>
-      <Description>define time interval between two consecutive sensor readouts</Description>
+      <Description>Time interval between two consecutive sensor readouts</Description>
       <IDL_Type>long</IDL_Type>
       <Units>millisecond</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>onlineclamps_onlineClampXminus_readSensorsRate</EFDB_Name>
-      <Description>define time interval between two consecutive sensor readouts</Description>
+      <Description>Time interval between two consecutive sensor readouts</Description>
       <IDL_Type>long</IDL_Type>
       <Units>millisecond</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>onlineclamps_onlineClampXplus_readSensorsRate</EFDB_Name>
-      <Description>define time interval between two consecutive sensor readouts</Description>
+      <Description>Time interval between two consecutive sensor readouts</Description>
       <IDL_Type>long</IDL_Type>
       <Units>millisecond</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>onlineclamps_onlineClampYminus_readSensorsRate</EFDB_Name>
-      <Description>define time interval between two consecutive sensor readouts</Description>
+      <Description>Time interval between two consecutive sensor readouts</Description>
       <IDL_Type>long</IDL_Type>
       <Units>millisecond</Units>
       <Count>1</Count>
@@ -24006,7 +24309,7 @@
     </item>
     <item>
       <EFDB_Name>actruckxminuscontroller_encoderRibbonMinValue</EFDB_Name>
-      <Description>minimal position of the encoder ribbon.</Description>
+      <Description>Minimal position of the encoder ribbon.</Description>
       <IDL_Type>long</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
@@ -24034,7 +24337,7 @@
     </item>
     <item>
       <EFDB_Name>actruckxpluscontroller_encoderRibbonMinValue</EFDB_Name>
-      <Description>minimal position of the encoder ribbon.</Description>
+      <Description>Minimal position of the encoder ribbon.</Description>
       <IDL_Type>long</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
@@ -24419,140 +24722,140 @@
     </item>
     <item>
       <EFDB_Name>acsensorsgateway_serialNB</EFDB_Name>
-      <Description>serial number of this CANOpen device</Description>
+      <Description>Serial number of this CANOpen device</Description>
       <IDL_Type>string</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>actruckxminuscontroller_serialNB</EFDB_Name>
-      <Description>serial number of this CANOpen device</Description>
+      <Description>Serial number of this CANOpen device</Description>
       <IDL_Type>string</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>actruckxpluscontroller_serialNB</EFDB_Name>
-      <Description>serial number of this CANOpen device</Description>
+      <Description>Serial number of this CANOpen device</Description>
       <IDL_Type>string</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>accelerobf_serialNB</EFDB_Name>
-      <Description>serial number of this CANOpen device</Description>
+      <Description>Serial number of this CANOpen device</Description>
       <IDL_Type>string</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>ai814_serialNB</EFDB_Name>
-      <Description>serial number of this CANOpen device</Description>
+      <Description>Serial number of this CANOpen device</Description>
       <IDL_Type>string</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>brakesystemgateway_serialNB</EFDB_Name>
-      <Description>serial number of this CANOpen device</Description>
+      <Description>Serial number of this CANOpen device</Description>
       <IDL_Type>string</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>carouselcontroller_serialNB</EFDB_Name>
-      <Description>serial number of this CANOpen device</Description>
+      <Description>Serial number of this CANOpen device</Description>
       <IDL_Type>string</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>clampxminuscontroller_serialNB</EFDB_Name>
-      <Description>serial number of this CANOpen device</Description>
+      <Description>Serial number of this CANOpen device</Description>
       <IDL_Type>string</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>clampxpluscontroller_serialNB</EFDB_Name>
-      <Description>serial number of this CANOpen device</Description>
+      <Description>Serial number of this CANOpen device</Description>
       <IDL_Type>string</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>hyttc580_serialNB</EFDB_Name>
-      <Description>serial number of this CANOpen device</Description>
+      <Description>Serial number of this CANOpen device</Description>
       <IDL_Type>string</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>latchxminuscontroller_serialNB</EFDB_Name>
-      <Description>serial number of this CANOpen device</Description>
+      <Description>Serial number of this CANOpen device</Description>
       <IDL_Type>string</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>latchxpluscontroller_serialNB</EFDB_Name>
-      <Description>serial number of this CANOpen device</Description>
+      <Description>Serial number of this CANOpen device</Description>
       <IDL_Type>string</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>onlineclampxminuscontroller_serialNB</EFDB_Name>
-      <Description>serial number of this CANOpen device</Description>
+      <Description>Serial number of this CANOpen device</Description>
       <IDL_Type>string</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>onlineclampxpluscontroller_serialNB</EFDB_Name>
-      <Description>serial number of this CANOpen device</Description>
+      <Description>Serial number of this CANOpen device</Description>
       <IDL_Type>string</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>onlineclampyminuscontroller_serialNB</EFDB_Name>
-      <Description>serial number of this CANOpen device</Description>
+      <Description>Serial number of this CANOpen device</Description>
       <IDL_Type>string</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>onlinestraingauge_serialNB</EFDB_Name>
-      <Description>serial number of this CANOpen device</Description>
+      <Description>Serial number of this CANOpen device</Description>
       <IDL_Type>string</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>proximitysensorsdevice_serialNB</EFDB_Name>
-      <Description>serial number of this CANOpen device</Description>
+      <Description>Serial number of this CANOpen device</Description>
       <IDL_Type>string</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>pt100_serialNB</EFDB_Name>
-      <Description>serial number of this CANOpen device</Description>
+      <Description>Serial number of this CANOpen device</Description>
       <IDL_Type>string</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>tempsensorsdevice1_serialNB</EFDB_Name>
-      <Description>serial number of this CANOpen device</Description>
+      <Description>Serial number of this CANOpen device</Description>
       <IDL_Type>string</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>tempsensorsdevice2_serialNB</EFDB_Name>
-      <Description>serial number of this CANOpen device</Description>
+      <Description>Serial number of this CANOpen device</Description>
       <IDL_Type>string</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
@@ -24706,21 +25009,21 @@
     </item>
     <item>
       <EFDB_Name>carriercontroller_serialNB</EFDB_Name>
-      <Description>serial number of this CANOpen device</Description>
+      <Description>Serial number of this CANOpen device</Description>
       <IDL_Type>string</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>hookscontroller_serialNB</EFDB_Name>
-      <Description>serial number of this CANOpen device</Description>
+      <Description>Serial number of this CANOpen device</Description>
       <IDL_Type>string</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>loaderplutogateway_serialNB</EFDB_Name>
-      <Description>serial number of this CANOpen device</Description>
+      <Description>Serial number of this CANOpen device</Description>
       <IDL_Type>string</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
@@ -24741,58 +25044,58 @@
     </item>
     <item>
       <EFDB_Name>brake1Limit</EFDB_Name>
-      <Description>upper brake1 (bay I) limit for state CLOSED</Description>
+      <Description>Upper brake1 (bay I) limit for state CLOSED</Description>
       <IDL_Type>long</IDL_Type>
       <Units>mV</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>brake2Limit</EFDB_Name>
-      <Description>upper brake2 (bay N) limit for state CLOSED</Description>
+      <Description>Upper brake2 (bay N) limit for state CLOSED</Description>
       <IDL_Type>long</IDL_Type>
       <Units>mV</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>brake3Limit</EFDB_Name>
-      <Description>upper brake3 (bay X) limit for state CLOSED</Description>
+      <Description>Upper brake3 (bay X) limit for state CLOSED</Description>
       <IDL_Type>long</IDL_Type>
       <Units>mV</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>currentToPrepareUnlock</EFDB_Name>
-      <Description>for command unlock of carousel clamp : current to send to prepare unlock</Description>
+      <Description>For command unlock of carousel clamp : current to send to prepare unlock</Description>
       <IDL_Type>long</IDL_Type>
       <Units>mA</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>fastAcceleration</EFDB_Name>
-      <Description>acceleration in fast mode [rpm/s]</Description>
+      <Description>Acceleration in fast mode.</Description>
       <IDL_Type>long</IDL_Type>
-      <Units>unitless</Units>
+      <Units>rpm/s</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>fastDeceleration</EFDB_Name>
-      <Description>deceleration in fast mode [rpm/s]</Description>
+      <Description>Deceleration in fast mode.</Description>
       <IDL_Type>long</IDL_Type>
-      <Units>unitless</Units>
+      <Units>rpm/s</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>fastRotationTimeout</EFDB_Name>
-      <Description>in milliseconds; timeout for the rotation in fast mode</Description>
+      <Description>Timeout for the rotation in fast mode.</Description>
       <IDL_Type>long</IDL_Type>
       <Units>millisecond</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>fastVelocity</EFDB_Name>
-      <Description>velocity in fast mode [rpm]</Description>
+      <Description>Velocity in fast mode.</Description>
       <IDL_Type>long</IDL_Type>
-      <Units>unitless</Units>
+      <Units>rpm</Units>
       <Count>1</Count>
     </item>
     <item>
@@ -24832,37 +25135,37 @@
     </item>
     <item>
       <EFDB_Name>maxClampsOffsetDelta</EFDB_Name>
-      <Description>if difference between offset read on hyttc580 and persisted offset is over this limit an ALARM is launched</Description>
+      <Description>If difference between offset read on hyttc580 and persisted offset is over this limit an ALARM is launched</Description>
       <IDL_Type>long</IDL_Type>
       <Units>mV</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>maxStandbyDeltaPosition</EFDB_Name>
-      <Description>over this value of deltaPosition after recovery procedure, we cancel any action [carousel encoder step]</Description>
+      <Description>If the value of deltaPosition exceeds this threshold after the recovery procedure, cancel any rotation action.</Description>
       <IDL_Type>long</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>powerSaveAllowed</EFDB_Name>
-      <Description>if true powerSaveActivate is activated at the end of setFilter command.</Description>
+      <Description>If true powerSaveActivate is activated at the end of setFilter command.</Description>
       <IDL_Type>boolean</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>recoveryBackwardStep</EFDB_Name>
-      <Description>A number of steps to go back if after rotation carousel position has exceeded standbyPosition by more than maxStandbyDeltaPosition. [carousel encoder step]</Description>
+      <Description>A number of steps to go back if after rotation carousel position has exceeded standbyPosition by more than maxStandbyDeltaPosition.</Description>
       <IDL_Type>long</IDL_Type>
-      <Units>unitless</Units>
+      <Units>micron</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>recoveryForwardStep</EFDB_Name>
-      <Description>A number of steps to go back if after rotation carousel position has exceeded standbyPosition by more than maxStandbyDeltaPosition. [carousel encoder step]</Description>
+      <Description>Number of steps to go forward if after rotation carousel position has exceeded standbyPosition by more than maxStandbyDeltaPosition.</Description>
       <IDL_Type>long</IDL_Type>
-      <Units>unitless</Units>
+      <Units>micron</Units>
       <Count>1</Count>
     </item>
     <item>
@@ -24881,37 +25184,37 @@
     </item>
     <item>
       <EFDB_Name>recoveryStandbyDeltaPosition</EFDB_Name>
-      <Description>over this value of deltaPosition, a rotation recovery procedure is executed [carousel encoder step]</Description>
+      <Description>When deltaPosition exceeds this threshold, a rotation recovery procedure is initiated</Description>
       <IDL_Type>long</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>slowAcceleration</EFDB_Name>
-      <Description>acceleration in slow mode [rpm/s]</Description>
+      <Description>Acceleration in slow mode.</Description>
       <IDL_Type>long</IDL_Type>
-      <Units>unitless</Units>
+      <Units>rpm/s</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>slowDeceleration</EFDB_Name>
-      <Description>deceleration in slow mode [rpm/s]</Description>
+      <Description>Deceleration in slow mode.</Description>
       <IDL_Type>long</IDL_Type>
-      <Units>unitless</Units>
+      <Units>rpm/s</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>slowRotationTimeout</EFDB_Name>
-      <Description>in milliseconds; timeout for the rotation in slow mode</Description>
+      <Description>Timeout for the rotation in slow mode.</Description>
       <IDL_Type>long</IDL_Type>
       <Units>millisecond</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>slowVelocity</EFDB_Name>
-      <Description>velocity in slow mode [rpm]</Description>
+      <Description>Velocity in slow mode.</Description>
       <IDL_Type>long</IDL_Type>
-      <Units>unitless</Units>
+      <Units>rpm</Units>
       <Count>1</Count>
     </item>
     <item>
@@ -24930,7 +25233,7 @@
     </item>
     <item>
       <EFDB_Name>socket1_clampXminus1_filterPresenceOffset3</EFDB_Name>
-      <Description>an offset for tests after carousel has been transported</Description>
+      <Description>An offset to account for a discrepancy in a given clamp filter presence sensor</Description>
       <IDL_Type>long</IDL_Type>
       <Units>mV</Units>
       <Count>1</Count>
@@ -24965,7 +25268,7 @@
     </item>
     <item>
       <EFDB_Name>socket1_clampXplus1_filterPresenceOffset3</EFDB_Name>
-      <Description>an offset for tests after carousel has been transported</Description>
+      <Description>An offset to account for a discrepancy in a given clamp filter presence sensor</Description>
       <IDL_Type>long</IDL_Type>
       <Units>mV</Units>
       <Count>1</Count>
@@ -25014,7 +25317,7 @@
     </item>
     <item>
       <EFDB_Name>socket2_clampXminus2_filterPresenceOffset3</EFDB_Name>
-      <Description>an offset for tests after carousel has been transported</Description>
+      <Description>An offset to account for a discrepancy in a given clamp filter presence sensor</Description>
       <IDL_Type>long</IDL_Type>
       <Units>mV</Units>
       <Count>1</Count>
@@ -25049,7 +25352,7 @@
     </item>
     <item>
       <EFDB_Name>socket2_clampXplus2_filterPresenceOffset3</EFDB_Name>
-      <Description>an offset for tests after carousel has been transported</Description>
+      <Description>An offset to account for a discrepancy in a given clamp filter presence sensor</Description>
       <IDL_Type>long</IDL_Type>
       <Units>mV</Units>
       <Count>1</Count>
@@ -25098,7 +25401,7 @@
     </item>
     <item>
       <EFDB_Name>socket3_clampXminus3_filterPresenceOffset3</EFDB_Name>
-      <Description>an offset for tests after carousel has been transported</Description>
+      <Description>An offset to account for a discrepancy in a given clamp filter presence sensor</Description>
       <IDL_Type>long</IDL_Type>
       <Units>mV</Units>
       <Count>1</Count>
@@ -25133,7 +25436,7 @@
     </item>
     <item>
       <EFDB_Name>socket3_clampXplus3_filterPresenceOffset3</EFDB_Name>
-      <Description>an offset for tests after carousel has been transported</Description>
+      <Description>An offset to account for a discrepancy in a given clamp filter presence sensor</Description>
       <IDL_Type>long</IDL_Type>
       <Units>mV</Units>
       <Count>1</Count>
@@ -25182,7 +25485,7 @@
     </item>
     <item>
       <EFDB_Name>socket4_clampXminus4_filterPresenceOffset3</EFDB_Name>
-      <Description>an offset for tests after carousel has been transported</Description>
+      <Description>An offset to account for a discrepancy in a given clamp filter presence sensor</Description>
       <IDL_Type>long</IDL_Type>
       <Units>mV</Units>
       <Count>1</Count>
@@ -25217,7 +25520,7 @@
     </item>
     <item>
       <EFDB_Name>socket4_clampXplus4_filterPresenceOffset3</EFDB_Name>
-      <Description>an offset for tests after carousel has been transported</Description>
+      <Description>An offset to account for a discrepancy in a given clamp filter presence sensor</Description>
       <IDL_Type>long</IDL_Type>
       <Units>mV</Units>
       <Count>1</Count>
@@ -25266,7 +25569,7 @@
     </item>
     <item>
       <EFDB_Name>socket5_clampXminus5_filterPresenceOffset3</EFDB_Name>
-      <Description>an offset for tests after carousel has been transported</Description>
+      <Description>An offset to account for a discrepancy in a given clamp filter presence sensor</Description>
       <IDL_Type>long</IDL_Type>
       <Units>mV</Units>
       <Count>1</Count>
@@ -25301,7 +25604,7 @@
     </item>
     <item>
       <EFDB_Name>socket5_clampXplus5_filterPresenceOffset3</EFDB_Name>
-      <Description>an offset for tests after carousel has been transported</Description>
+      <Description>An offset to account for a discrepancy in a given clamp filter presence sensor</Description>
       <IDL_Type>long</IDL_Type>
       <Units>mV</Units>
       <Count>1</Count>
@@ -25336,14 +25639,14 @@
     </item>
     <item>
       <EFDB_Name>timeToPrepareUnlock</EFDB_Name>
-      <Description>for command unlock of carousel clamp : time between little current to prepare hardware and currentToLock </Description>
+      <Description>For command unlock of carousel clamp : time between little current to prepare hardware and currentToLock </Description>
       <IDL_Type>long</IDL_Type>
       <Units>millisecond</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>timeToUpdateProtectionSystem</EFDB_Name>
-      <Description>This is the time to wait until protection system changes its status after motions.</Description>
+      <Description>Time to wait for the protection system to update its status after motion events.</Description>
       <IDL_Type>long long</IDL_Type>
       <Units>millisecond</Units>
       <Count>1</Count>
@@ -25364,77 +25667,77 @@
     </item>
     <item>
       <EFDB_Name>readSensorsRate</EFDB_Name>
-      <Description>define time interval between two consecutive sensor readouts</Description>
+      <Description>Time interval between two consecutive sensor readouts</Description>
       <IDL_Type>long</IDL_Type>
       <Units>millisecond</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>socket1_clampXminus1_readSensorsRate</EFDB_Name>
-      <Description>define time interval between two consecutive sensor readouts</Description>
+      <Description>Time interval between two consecutive sensor readouts</Description>
       <IDL_Type>long</IDL_Type>
       <Units>millisecond</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>socket1_clampXplus1_readSensorsRate</EFDB_Name>
-      <Description>define time interval between two consecutive sensor readouts</Description>
+      <Description>Time interval between two consecutive sensor readouts</Description>
       <IDL_Type>long</IDL_Type>
       <Units>millisecond</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>socket2_clampXminus2_readSensorsRate</EFDB_Name>
-      <Description>define time interval between two consecutive sensor readouts</Description>
+      <Description>Time interval between two consecutive sensor readouts</Description>
       <IDL_Type>long</IDL_Type>
       <Units>millisecond</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>socket2_clampXplus2_readSensorsRate</EFDB_Name>
-      <Description>define time interval between two consecutive sensor readouts</Description>
+      <Description>Time interval between two consecutive sensor readouts</Description>
       <IDL_Type>long</IDL_Type>
       <Units>millisecond</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>socket3_clampXminus3_readSensorsRate</EFDB_Name>
-      <Description>define time interval between two consecutive sensor readouts</Description>
+      <Description>Time interval between two consecutive sensor readouts</Description>
       <IDL_Type>long</IDL_Type>
       <Units>millisecond</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>socket3_clampXplus3_readSensorsRate</EFDB_Name>
-      <Description>define time interval between two consecutive sensor readouts</Description>
+      <Description>Time interval between two consecutive sensor readouts</Description>
       <IDL_Type>long</IDL_Type>
       <Units>millisecond</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>socket4_clampXminus4_readSensorsRate</EFDB_Name>
-      <Description>define time interval between two consecutive sensor readouts</Description>
+      <Description>Time interval between two consecutive sensor readouts</Description>
       <IDL_Type>long</IDL_Type>
       <Units>millisecond</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>socket4_clampXplus4_readSensorsRate</EFDB_Name>
-      <Description>define time interval between two consecutive sensor readouts</Description>
+      <Description>Time interval between two consecutive sensor readouts</Description>
       <IDL_Type>long</IDL_Type>
       <Units>millisecond</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>socket5_clampXminus5_readSensorsRate</EFDB_Name>
-      <Description>define time interval between two consecutive sensor readouts</Description>
+      <Description>Time interval between two consecutive sensor readouts</Description>
       <IDL_Type>long</IDL_Type>
       <Units>millisecond</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>socket5_clampXplus5_readSensorsRate</EFDB_Name>
-      <Description>define time interval between two consecutive sensor readouts</Description>
+      <Description>Time interval between two consecutive sensor readouts</Description>
       <IDL_Type>long</IDL_Type>
       <Units>millisecond</Units>
       <Count>1</Count>
@@ -27100,7 +27403,7 @@
     </item>
     <item>
       <EFDB_Name>carrier_deltaPosition</EFDB_Name>
-      <Description>relative tolerance used for the carrier to reach a given position</Description>
+      <Description>Relative tolerance used for the carrier to reach a given position</Description>
       <IDL_Type>long</IDL_Type>
       <Units>micron</Units>
       <Count>1</Count>
@@ -27121,44 +27424,44 @@
     </item>
     <item>
       <EFDB_Name>carrier_highAcceleration</EFDB_Name>
-      <Description>high acceleration to move carrier empty from ENGAGED to STORAGE position</Description>
+      <Description>High acceleration to move carrier empty from ENGAGED to STORAGE position</Description>
       <IDL_Type>long</IDL_Type>
-      <Units>unitless</Units>
+      <Units>rpm/s</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>carrier_highDeceleration</EFDB_Name>
-      <Description>high deceleration to move carrier with a filter from ENGAGED to STORAGE position</Description>
+      <Description>High deceleration to move carrier with a filter from ENGAGED to STORAGE position</Description>
       <IDL_Type>long</IDL_Type>
-      <Units>unitless</Units>
+      <Units>rpm/s</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>carrier_highSpeed</EFDB_Name>
-      <Description>high speed to move carrier when it's empty or with a filter from ENGAGED to STORAGE position [rpm]</Description>
+      <Description>High speed to move carrier when it's empty or with a filter from ENGAGED to STORAGE position</Description>
       <IDL_Type>long</IDL_Type>
-      <Units>unitless</Units>
+      <Units>rpm</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>carrier_lowAcceleration</EFDB_Name>
-      <Description>low acceleration to move carrier with a filter from ENGAGED to STORAGE position</Description>
+      <Description>Low acceleration to move carrier with a filter from ENGAGED to STORAGE position</Description>
       <IDL_Type>long</IDL_Type>
-      <Units>unitless</Units>
+      <Units>rpm/s</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>carrier_lowDeceleration</EFDB_Name>
-      <Description>low deceleration to move carrier with a filter from ENGAGED to STORAGE position</Description>
+      <Description>Low deceleration to move carrier with a filter from ENGAGED to STORAGE position</Description>
       <IDL_Type>long</IDL_Type>
-      <Units>unitless</Units>
+      <Units>rpm/s</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>carrier_lowSpeed</EFDB_Name>
-      <Description>low speed to go with a filter from ENGAGED to HANDOFF position [rpm]</Description>
+      <Description>Low speed to move a filter from ENGAGED to HANDOFF position</Description>
       <IDL_Type>long</IDL_Type>
-      <Units>unitless</Units>
+      <Units>rpm</Units>
       <Count>1</Count>
     </item>
     <item>
@@ -27170,9 +27473,9 @@
     </item>
     <item>
       <EFDB_Name>carrier_maxSpeed</EFDB_Name>
-      <Description>For the Loader GUI : Loader Carrier Maximum speed. [rpm]</Description>
+      <Description>For the Loader GUI : Loader Carrier Maximum speed.</Description>
       <IDL_Type>long</IDL_Type>
-      <Units>unitless</Units>
+      <Units>rpm</Units>
       <Count>1</Count>
     </item>
     <item>
@@ -27184,56 +27487,56 @@
     </item>
     <item>
       <EFDB_Name>carrier_timeoutForGoingToEngaged</EFDB_Name>
-      <Description>timeout in milliseconds to go from storage to engaged on loader</Description>
+      <Description>Timeout to go from storage to engaged on loader</Description>
       <IDL_Type>long long</IDL_Type>
       <Units>millisecond</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>carrier_timeoutForGoingToHandOff</EFDB_Name>
-      <Description>timeout in milliseconds to go from storage to handoff on loader</Description>
+      <Description>Timeout to go from storage to handoff on loader</Description>
       <IDL_Type>long long</IDL_Type>
       <Units>millisecond</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>carrier_timeoutForGoingToStorage</EFDB_Name>
-      <Description>timeout in milliseconds to go from handoff to storage on loader</Description>
+      <Description>Timeout to go from handoff to storage on loader</Description>
       <IDL_Type>long long</IDL_Type>
       <Units>millisecond</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>filterDistanceMin</EFDB_Name>
-      <Description>maximum position of the filter</Description>
+      <Description>Maximum value of the position sensor for the filter</Description>
       <IDL_Type>long</IDL_Type>
       <Units>mV</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>hooks_absolutePositionToClose</EFDB_Name>
-      <Description>target encoder absolute value in qc when hooks are CLOSED</Description>
+      <Description>Target encoder absolute value in qc when hooks are CLOSED</Description>
       <IDL_Type>long</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>hooks_currentThreshold</EFDB_Name>
-      <Description>current to open hooks in homing mode</Description>
+      <Description>Current to open hooks in homing mode</Description>
       <IDL_Type>long</IDL_Type>
       <Units>mA</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>hooks_currentToClamp</EFDB_Name>
-      <Description>current to clamp hooks</Description>
+      <Description>Current to clamp hooks</Description>
       <IDL_Type>long</IDL_Type>
       <Units>mA</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>hooks_currentToOpen</EFDB_Name>
-      <Description>current to open hooks</Description>
+      <Description>Current to open hooks</Description>
       <IDL_Type>long</IDL_Type>
       <Units>mA</Units>
       <Count>1</Count>
@@ -27247,28 +27550,28 @@
     </item>
     <item>
       <EFDB_Name>hooks_relativePositionToUnclamp</EFDB_Name>
-      <Description>relative position in qc to unclamp when hooks are CLAMPED</Description>
+      <Description>Relative position in qc to unclamp when hooks are CLAMPED</Description>
       <IDL_Type>long</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>hooks_timeoutForClampingHooks</EFDB_Name>
-      <Description>timeout : if closing strongly the clamp last more than this amount of time, then the subsystem goes in ERROR.</Description>
+      <Description>Timeout : if closing strongly the clamp last more than this amount of time, then the subsystem goes in ERROR.</Description>
       <IDL_Type>long</IDL_Type>
       <Units>millisecond</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>hooks_timeoutForClosingHooks</EFDB_Name>
-      <Description>timeout : if closing the clamp last more than this amount of time, then the subsystem goes in ERROR.</Description>
+      <Description>Timeout : if closing the clamp last more than this amount of time, then the subsystem goes in ERROR.</Description>
       <IDL_Type>long</IDL_Type>
       <Units>millisecond</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>hooks_timeoutForOpeningHooks</EFDB_Name>
-      <Description>timeout : if opening the clamp last more than this amount of time, then the subsystem goes in ERROR.</Description>
+      <Description>Timeout : if opening the clamp last more than this amount of time, then the subsystem goes in ERROR.</Description>
       <IDL_Type>long</IDL_Type>
       <Units>millisecond</Units>
       <Count>1</Count>
@@ -27289,14 +27592,14 @@
     </item>
     <item>
       <EFDB_Name>carrier_readSensorsRate</EFDB_Name>
-      <Description>define time interval between two consecutive sensor readouts</Description>
+      <Description>Time interval between two consecutive sensor readouts</Description>
       <IDL_Type>long</IDL_Type>
       <Units>millisecond</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>hooks_readSensorsRate</EFDB_Name>
-      <Description>define time interval between two consecutive sensor readouts</Description>
+      <Description>Time interval between two consecutive sensor readouts</Description>
       <IDL_Type>long</IDL_Type>
       <Units>millisecond</Units>
       <Count>1</Count>
@@ -27464,28 +27767,28 @@
     </item>
     <item>
       <EFDB_Name>hooks_forceSensor0_byteNumero</EFDB_Name>
-      <Description>byte number on the gateway</Description>
+      <Description>Byte number on the gateway</Description>
       <IDL_Type>long</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>hooks_forceSensor0_deviceName</EFDB_Name>
-      <Description>name of the gateway this sensor is plugged on</Description>
+      <Description>Name of the gateway this sensor is plugged on</Description>
       <IDL_Type>string</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>hooks_forceSensor1_byteNumero</EFDB_Name>
-      <Description>byte number on the gateway</Description>
+      <Description>Byte number on the gateway</Description>
       <IDL_Type>long</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>hooks_forceSensor1_deviceName</EFDB_Name>
-      <Description>name of the gateway this sensor is plugged on</Description>
+      <Description>Name of the gateway this sensor is plugged on</Description>
       <IDL_Type>string</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
@@ -28122,14 +28425,14 @@
     </item>
     <item>
       <EFDB_Name>plc_loaderFilterDistanceSensor_byteNumero</EFDB_Name>
-      <Description>byte number on the gateway</Description>
+      <Description>Byte number on the gateway</Description>
       <IDL_Type>long</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>plc_loaderFilterDistanceSensor_deviceName</EFDB_Name>
-      <Description>name of the gateway this sensor is plugged on</Description>
+      <Description>Name of the gateway this sensor is plugged on</Description>
       <IDL_Type>string</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
