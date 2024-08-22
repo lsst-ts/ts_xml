@@ -1,4 +1,4 @@
-__all__ = ["DetailedState", "UnitToRead"]
+__all__ = ["DetailedState"]
 
 import enum
 
@@ -14,8 +14,3 @@ class DetailedState(enum.IntEnum):
     MANUALREADINGSTATE = 8
     READINGBUFFERSTATE = 9
     SETDURATIONREADINGSTATE = 10
-
-
-class UnitToRead(enum.IntEnum):
-    CURRENT = 1
-    CHARGE = 2

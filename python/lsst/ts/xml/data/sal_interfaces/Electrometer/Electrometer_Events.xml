@@ -2,7 +2,6 @@
 <?xml-stylesheet type="text/xsl" href="http://lsst-sal.tuc.noao.edu/schema/SALEventSet.xsl"?>
 <SALEventSet xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://lsst-sal.tuc.noao.edu/schema/SALEventSet.xsd">
   <Enumeration>DetailedState_DisabledState,DetailedState_EnabledState,DetailedState_FaultState,DetailedState_OfflineState,DetailedState_StandbyState,DetailedState_NotReadingState,DetailedState_ConfiguringState,DetailedState_ManualReadingState,DetailedState_ReadingBufferState,DetailedState_SetDurationReadingState</Enumeration>
-  <Enumeration>UnitToRead_Current,UnitToRead_Charge</Enumeration>
   <SALEvent>
     <Subsystem>Electrometer</Subsystem>
     <EFDB_Topic>Electrometer_logevent_detailedState</EFDB_Topic>
@@ -99,9 +98,8 @@
     <Description>Current mode selected to read from the photodiode. Options are Current, Charge, Voltage and Resistance. </Description>
     <item>
       <EFDB_Name>mode</EFDB_Name>
-      <Description>mode: 0- Current, 1- Charge, 2- Voltage, 3- Resistance</Description>
-      <!-- Enumeration: UnitToRead -->
-      <IDL_Type>long</IDL_Type>
+      <Description>mode: 'CURR'- Current, 'CHAR'- Charge, 'VOLT'- Voltage, 'RES'- Resistance</Description>
+      <IDL_Type>string</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
     </item>
@@ -147,9 +145,8 @@
     </item>
     <item>
       <EFDB_Name>mode</EFDB_Name>
-      <Description>Mode used in the configuration file, 0-Current, 1-Charge, 2-Voltage, 3-Resistance</Description>
-      <!-- Enumeration: UnitToRead -->
-      <IDL_Type>long</IDL_Type>
+      <Description>Mode used in the configuration file, CURR, CHAR, VOLT, RES</Description>
+      <IDL_Type>string</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
     </item>
