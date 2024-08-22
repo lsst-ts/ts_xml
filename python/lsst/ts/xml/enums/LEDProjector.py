@@ -40,8 +40,8 @@ class LEDBasicState(enum.IntEnum):
     """
 
     UNKNOWN = 0
-    OFF = 1
-    ON = 2
+    OFF = 2
+    ON = 1
     ERROR = 3
     LABJACK_CONNECTED = 4
     LABJACK_DISCONNECTED = 5
