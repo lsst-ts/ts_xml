@@ -12782,7 +12782,7 @@
   <SALEvent>
     <Subsystem>MTCamera</Subsystem>
     <EFDB_Topic>MTCamera_logevent_refrig_PeriodicTasks_timersConfiguration</EFDB_Topic>
-    <!--CCS: Dictionary_Checksum: 1378583947L -->
+    <!--CCS: Dictionary_Checksum: 2216043242L -->
     <item>
       <EFDB_Name>version</EFDB_Name>
       <Description>Version of the settings, formatted using CCS conventions</Description>
@@ -12800,6 +12800,48 @@
     <item>
       <EFDB_Name>compressor_state_taskPeriodMillis</EFDB_Name>
       <Description>period for task compressor-state</Description>
+      <IDL_Type>long long</IDL_Type>
+      <Units>ms</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>cryo1_Maq20_check_status_taskPeriodMillis</EFDB_Name>
+      <Description>period for task Cryo1/Maq20-check-status</Description>
+      <IDL_Type>long long</IDL_Type>
+      <Units>ms</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>cryo2_Maq20_check_status_taskPeriodMillis</EFDB_Name>
+      <Description>period for task Cryo2/Maq20-check-status</Description>
+      <IDL_Type>long long</IDL_Type>
+      <Units>ms</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>cryo3_Maq20_check_status_taskPeriodMillis</EFDB_Name>
+      <Description>period for task Cryo3/Maq20-check-status</Description>
+      <IDL_Type>long long</IDL_Type>
+      <Units>ms</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>cryo4_Maq20_check_status_taskPeriodMillis</EFDB_Name>
+      <Description>period for task Cryo4/Maq20-check-status</Description>
+      <IDL_Type>long long</IDL_Type>
+      <Units>ms</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>cryo5_Maq20_check_status_taskPeriodMillis</EFDB_Name>
+      <Description>period for task Cryo5/Maq20-check-status</Description>
+      <IDL_Type>long long</IDL_Type>
+      <Units>ms</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>cryo6_Maq20_check_status_taskPeriodMillis</EFDB_Name>
+      <Description>period for task Cryo6/Maq20-check-status</Description>
       <IDL_Type>long long</IDL_Type>
       <Units>ms</Units>
       <Count>1</Count>
@@ -13365,7 +13407,7 @@
   <SALEvent>
     <Subsystem>MTCamera</Subsystem>
     <EFDB_Topic>MTCamera_logevent_vacuum_CryoTurboPump_GeneralConfiguration</EFDB_Topic>
-    <!--CCS: Dictionary_Checksum: 777674098L -->
+    <!--CCS: Dictionary_Checksum: 2957539535L -->
     <item>
       <EFDB_Name>version</EFDB_Name>
       <Description>Version of the settings, formatted using CCS conventions</Description>
@@ -13441,13 +13483,6 @@
       <Description>max power cutoff (read-only)</Description>
       <IDL_Type>long</IDL_Type>
       <Units>Watt</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>openPeriod</EFDB_Name>
-      <Description>vent open period</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>s</Units>
       <Count>1</Count>
     </item>
     <item>
@@ -14422,7 +14457,7 @@
   <SALEvent>
     <Subsystem>MTCamera</Subsystem>
     <EFDB_Topic>MTCamera_logevent_vacuum_HexTurboPump_GeneralConfiguration</EFDB_Topic>
-    <!--CCS: Dictionary_Checksum: 444522057L -->
+    <!--CCS: Dictionary_Checksum: 3374434573L -->
     <item>
       <EFDB_Name>version</EFDB_Name>
       <Description>Version of the settings, formatted using CCS conventions</Description>
@@ -14498,13 +14533,6 @@
       <Description>max power cutoff (read-only)</Description>
       <IDL_Type>long</IDL_Type>
       <Units>Watt</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>openPeriod</EFDB_Name>
-      <Description>vent open period</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>s</Units>
       <Count>1</Count>
     </item>
     <item>
@@ -29292,17 +29320,129 @@
       <Count>1</Count>
     </item>
   </SALEvent>
-  <!--Created by xmlmaker2 for subsystem MTCamera class MTCamera_logevent_chiller_timersConfiguration using level 0 for category timers-->
-  <!--=================================================================================================================================-->
+  <!--Created by xmlmaker2 for subsystem MTCamera class MTCamera_logevent_chiller_PicConfiguration using level 0 for category Pic-->
+  <!--===========================================================================================================================-->
   <SALEvent>
     <Subsystem>MTCamera</Subsystem>
-    <EFDB_Topic>MTCamera_logevent_chiller_timersConfiguration</EFDB_Topic>
-    <!--CCS: Dictionary_Checksum: 1910215140L -->
+    <EFDB_Topic>MTCamera_logevent_chiller_PicConfiguration</EFDB_Topic>
+    <!--CCS: Dictionary_Checksum: 3337261848L -->
     <item>
       <EFDB_Name>version</EFDB_Name>
       <Description>Version of the settings, formatted using CCS conventions</Description>
       <IDL_Type>string</IDL_Type>
       <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>fanctrl_awGain</EFDB_Name>
+      <Description>anti-windup gain</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>fanctrl_baseDuty</EFDB_Name>
+      <Description>base duty cycle</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>fanctrl_gain</EFDB_Name>
+      <Description>loop gain</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>fanctrl_maxInput</EFDB_Name>
+      <Description>maximum input (temp. difference)</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>Celsius</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>fanctrl_maxOutput</EFDB_Name>
+      <Description>maximum PID output (duty cycle)</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>fanctrl_minInput</EFDB_Name>
+      <Description>minimum input (temp. difference)</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>Celsius</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>fanctrl_minOutput</EFDB_Name>
+      <Description>minimum PID output (duty cycle)</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>fanctrl_setTemp</EFDB_Name>
+      <Description>Temperature set point</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>Celsius</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>fanctrl_smoothTime</EFDB_Name>
+      <Description>input smoothing time</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>second</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>fanctrl_timeConst</EFDB_Name>
+      <Description>Integration time constant</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>second</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>fanctrl_tolerance</EFDB_Name>
+      <Description>maximum on-target error (%)</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>fanctrl_useAbsTemp</EFDB_Name>
+      <Description>true/false to use absolute temperature set point, not difference</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>periodictasks_FanCtrl_iterate_updateTime</EFDB_Name>
+      <Description>Periodic task FanCtrl update time</Description>
+      <IDL_Type>long long</IDL_Type>
+      <Units>ms</Units>
+      <Count>1</Count>
+    </item>
+  </SALEvent>
+  <!--Created by xmlmaker2 for subsystem MTCamera class MTCamera_logevent_chiller_timersConfiguration using level 0 for category timers-->
+  <!--=================================================================================================================================-->
+  <SALEvent>
+    <Subsystem>MTCamera</Subsystem>
+    <EFDB_Topic>MTCamera_logevent_chiller_timersConfiguration</EFDB_Topic>
+    <!--CCS: Dictionary_Checksum: 845686271L -->
+    <item>
+      <EFDB_Name>version</EFDB_Name>
+      <Description>Version of the settings, formatted using CCS conventions</Description>
+      <IDL_Type>string</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>periodictasks_Maq20_check_status_taskPeriodMillis</EFDB_Name>
+      <Description>period for task Maq20-check-status</Description>
+      <IDL_Type>long long</IDL_Type>
+      <Units>ms</Units>
       <Count>1</Count>
     </item>
     <item>
