@@ -19,3 +19,5 @@ class DetailedState(enum.IntEnum):
 class UnitToRead(enum.IntEnum):
     CURRENT = 1
     CHARGE = 2
+    VOLTAGE = 3
+    RESISTANCE = 4
