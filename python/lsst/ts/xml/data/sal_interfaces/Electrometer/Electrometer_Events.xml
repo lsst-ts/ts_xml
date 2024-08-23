@@ -2,6 +2,12 @@
 <?xml-stylesheet type="text/xsl" href="http://lsst-sal.tuc.noao.edu/schema/SALEventSet.xsl"?>
 <SALEventSet xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://lsst-sal.tuc.noao.edu/schema/SALEventSet.xsd">
   <Enumeration>DetailedState_DisabledState,DetailedState_EnabledState,DetailedState_FaultState,DetailedState_OfflineState,DetailedState_StandbyState,DetailedState_NotReadingState,DetailedState_ConfiguringState,DetailedState_ManualReadingState,DetailedState_ReadingBufferState,DetailedState_SetDurationReadingState</Enumeration>
+  <Enumeration>
+    UnitToRead_Current,
+    UnitToRead_Charge,
+    UnitToRead_Voltage,
+    UnitToRead_Resistance
+  </Enumeration>
   <SALEvent>
     <Subsystem>Electrometer</Subsystem>
     <EFDB_Topic>Electrometer_logevent_detailedState</EFDB_Topic>
@@ -99,7 +105,7 @@
     <item>
       <EFDB_Name>mode</EFDB_Name>
       <Description>mode: 'CURR'- Current, 'CHAR'- Charge, 'VOLT'- Voltage, 'RES'- Resistance</Description>
-      <IDL_Type>string</IDL_Type>
+      <IDL_Type>long</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
     </item>
