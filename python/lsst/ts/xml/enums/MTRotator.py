@@ -20,7 +20,6 @@
 
 __all__ = [
     "ControllerState",
-    "OfflineSubstate",
     "EnabledSubstate",
     "FaultSubstate",
     "ApplicationStatus",
@@ -42,26 +41,10 @@ class ControllerState(enum.IntEnum):
     """
 
     STANDBY = 0
-    DISABLED = enum.auto()  # Deprecated in rotator
+    DISABLED = enum.auto()  # Deprecated in rotator/hexapod
     ENABLED = enum.auto()
-    OFFLINE = enum.auto()  # Deprecated in rotator
+    OFFLINE = enum.auto()  # Deprecated in rotator/hexapod
     FAULT = enum.auto()
-
-
-class OfflineSubstate(enum.IntEnum):
-    """Controller substate for the OFFLINE state.
-
-    Value reported in ``telemetry.offline_substate``.
-
-    This is enum ``OfflineSubStates`` in Moog code.
-
-    Deprecated in the rotator.
-
-    TODO: Remove this after simplifying the state machine in hexapod, DM-39787.
-    """
-
-    PUBLISH_ONLY = 0
-    AVAILABLE = enum.auto()
 
 
 class EnabledSubstate(enum.IntEnum):
@@ -74,11 +57,11 @@ class EnabledSubstate(enum.IntEnum):
 
     STATIONARY = 0
     MOVING_POINT_TO_POINT = enum.auto()
-    SLEWING_OR_TRACKING = enum.auto()
-    CONTROLLED_STOPPING = enum.auto()
-    INITIALIZING = enum.auto()  # Deprecated in rotator
-    RELATIVE = enum.auto()  # Deprecated in rotator
-    CONSTANT_VELOCITY = enum.auto()
+    SLEWING_OR_TRACKING = enum.auto()  # hexapod does not have this
+    CONTROLLED_STOPPING = enum.auto()  # hexapod does not have this
+    INITIALIZING = enum.auto()  # Deprecated in rotator/hexapod
+    RELATIVE = enum.auto()  # Deprecated in rotator/hexapod
+    CONSTANT_VELOCITY = enum.auto()  # hexapod does not have this
 
 
 class FaultSubstate(enum.IntEnum):

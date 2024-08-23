@@ -15,6 +15,131 @@ Version History
 
 .. towncrier release notes start
 
+v22.1.0 (2024-08-23)
+====================
+Package Level
+-------------
+
+New Features
+~~~~~~~~~~~~
+
+- The XML Conda package build will now use the XmlPipeline.groovy script. (`DM-45496 <https://rubinobs.atlassian.net/browse/DM-45496>`_)
+
+
+Interface Changes
+-----------------
+
+ATBuilding
+~~~~~~~~~~
+
+- Make ATBuilding a configurable CSC. (`DM-45395 <https://rubinobs.atlassian.net/browse/DM-45395>`_)
+
+
+ATCamera
+~~~~~~~~
+
+- Remove obsolete ATCamera_logevent_shutterMotionProfile (`CAP-1050 <https://rubinobs.atlassian.net/browse/CAP-1050>`_)
+- Make initGuiders roiSpec length 1 (unlimited) (`CAP-1051 <https://rubinobs.atlassian.net/browse/CAP-1051>`_)
+- Update ATCamera xml for XML 22.1 (`CAP-1056 <https://rubinobs.atlassian.net/browse/CAP-1056>`_)
+
+
+ATMonochromator
+~~~~~~~~~~~~~~~
+
+- Updated grating enumeration for ATMonochromator (`DM-45475 <https://rubinobs.atlassian.net/browse/DM-45475>`_)
+
+
+CCCamera
+~~~~~~~~
+
+- Make initGuiders roiSpec length 1 (unlimited) (`CAP-1051 <https://rubinobs.atlassian.net/browse/CAP-1051>`_)
+- Update CCCamera xml for XML 22.1 (`CAP-1056 <https://rubinobs.atlassian.net/browse/CAP-1056>`_)
+
+
+Electrometer
+~~~~~~~~~~~~
+
+- Add Voltage and Resistance to UnitToRead enum. (`DM-45177 <https://rubinobs.atlassian.net/browse/DM-45177>`_)
+
+
+LEDProjector
+~~~~~~~~~~~~
+
+- Swapped the ON/OFF enumeration for the LEDProjector. They are currently switched (`DM-45766 <https://rubinobs.atlassian.net/browse/DM-45766>`_)
+
+
+LinearStage
+~~~~~~~~~~~
+
+- Included axis in the move commands (`DM-45754 <https://rubinobs.atlassian.net/browse/DM-45754>`_)
+
+
+MTAOS
+~~~~~
+
+- Add support for sparse zernike coefficients to MTAOS_command_addAberration, MTAOS_logevent_wavefrontError and MTAOS_logevent_rejectedWavefrontError. (`DM-45883 <https://rubinobs.atlassian.net/browse/DM-45883>`_)
+- Add pubEvent to publish calculated mirror stresses from MTAOS. (`DM-45890 <https://rubinobs.atlassian.net/browse/DM-45890>`_)
+
+
+MTCamera
+~~~~~~~~
+
+- Make initGuiders roiSpec length 1 (unlimited) (`CAP-1051 <https://rubinobs.atlassian.net/browse/CAP-1051>`_)
+- Update MTCamera xml for XML 22.1 (`CAP-1056 <https://rubinobs.atlassian.net/browse/CAP-1056>`_)
+
+
+MTHexapod
+~~~~~~~~~
+
+- Remove the MTHexapod_logevent_controllerState.offlineSubstate and add the MTHexapod_logevent_configuration.drivesEnabled.
+  Remove the OfflineSubstate enum in MTHexapod and MTRotator. (`DM-45566 <https://rubinobs.atlassian.net/browse/DM-45566>`_)
+
+
+MTM1M3
+~~~~~~
+
+- Changed and corrected M1M3's FCUTable. (`DM-45598 <https://rubinobs.atlassian.net/browse/DM-45598>`_)
+
+
+MTM2
+~~~~
+
+- Add the MTM2_command_enableLutTemperature. (`DM-45202 <https://rubinobs.atlassian.net/browse/DM-45202>`_)
+
+
+MTMount
+~~~~~~~
+
+- Update MTMount openMirrorCovers command to allow specifying a single leaf to open. (`DM-45874 <https://rubinobs.atlassian.net/browse/DM-45874>`_)
+- Update telemetry with the lastest version provided by Tekniker. (`DM-45874 <https://rubinobs.atlassian.net/browse/DM-45874>`_)
+
+
+MTRotator
+~~~~~~~~~
+
+- Add the MTRotator_logevent_lowFrequencyVibration. (`DM-45758 <https://rubinobs.atlassian.net/browse/DM-45758>`_)
+
+
+Scheduler
+~~~~~~~~~
+
+- Add civil, nautical and astronomical twilight information to the generalInfo event. (`DM-45499 <https://rubinobs.atlassian.net/browse/DM-45499>`_)
+- Add additional metadata to the target event. (`DM-45499 <https://rubinobs.atlassian.net/browse/DM-45499>`_)
+- Add support for execution id. (`DM-45686 <https://rubinobs.atlassian.net/browse/DM-45686>`_)
+
+
+Script
+~~~~~~
+
+- Add support for execution id. (`DM-45686 <https://rubinobs.atlassian.net/browse/DM-45686>`_)
+
+
+ScriptQueue
+~~~~~~~~~~~
+
+- Add support for execution id. (`DM-45686 <https://rubinobs.atlassian.net/browse/DM-45686>`_)
+
+
 v22.0.0 (2024-07-11)
 ====================
 Package Level

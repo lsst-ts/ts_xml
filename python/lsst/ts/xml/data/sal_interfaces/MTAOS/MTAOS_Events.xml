@@ -16,10 +16,24 @@
     </item>
     <item>
       <EFDB_Name>annularZernikeCoeff</EFDB_Name>
-      <Description>z4-z22 terms of annular Zernike polynomials.</Description>
+      <Description>z4-z22 terms of annular Zernike polynomials. This attribute will be deprecated in favor of nollZernikeIndices and nollZernikeValues.</Description>
       <IDL_Type>double</IDL_Type>
       <Units>micron</Units>
       <Count>19</Count>
+    </item>
+    <item>
+      <EFDB_Name>nollZernikeIndices</EFDB_Name>
+      <Description>Array with zernike noll indices used for the wavefront errors. Indices can be any sparse list comprising zernikes above zk4.</Description>
+      <IDL_Type>int</IDL_Type>
+      <Units>unitless</Units>
+      <Count>100</Count>
+    </item>
+    <item>
+      <EFDB_Name>nollZernikeValues</EFDB_Name>
+      <Description>Array with annular Zernike polynomials that map to the specified nollZernikeIndices. </Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>micron</Units>
+      <Count>100</Count>
     </item>
   </SALEvent>
   <SALEvent>
@@ -35,10 +49,24 @@
     </item>
     <item>
       <EFDB_Name>annularZernikeCoeff</EFDB_Name>
-      <Description>z4-z22 terms of annular Zernike polynomials.</Description>
+      <Description>z4-z22 terms of annular Zernike polynomials. This attribute will be deprecated in favor of nollZernikeIndices and nollZernikeValues.</Description>
       <IDL_Type>double</IDL_Type>
       <Units>micron</Units>
       <Count>19</Count>
+    </item>
+    <item>
+      <EFDB_Name>nollZernikeIndices</EFDB_Name>
+      <Description>Array with zernike noll indices used for the wavefront errors. Indices can be any sparse list comprising zernikes above zk4.</Description>
+      <IDL_Type>int</IDL_Type>
+      <Units>unitless</Units>
+      <Count>100</Count>
+    </item>
+    <item>
+      <EFDB_Name>nollZernikeValues</EFDB_Name>
+      <Description>Array with annular Zernike polynomials that map to the specified nollZernikeIndices. </Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>micron</Units>
+      <Count>100</Count>
     </item>
   </SALEvent>
   <SALEvent>
@@ -65,6 +93,25 @@
       <IDL_Type>double</IDL_Type>
       <Units>micron</Units>
       <Count>50</Count>
+    </item>
+  </SALEvent>
+  <SALEvent>
+    <Subsystem>MTAOS</Subsystem>
+    <EFDB_Topic>MTAOS_logevent_mirrorStresses</EFDB_Topic>
+    <Description>Calculated mirror stresses computed RSS the stress of individual bending modes.</Description>
+    <item>
+      <EFDB_Name>stressM2</EFDB_Name>
+      <Description>Calculate M2 stress computed RSS the stress contribution of each bending mode.</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>psi</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>stressM1M3</EFDB_Name>
+      <Description>Calculate M1M3 stress computed RSS the stress contribution of each bending mode.</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>micron</Units>
+      <Count>1</Count>
     </item>
   </SALEvent>
   <SALEvent>

@@ -28,6 +28,7 @@ __all__ = [
     "System",
     "ThermalCommandState",
     "ParkPosition",
+    "MirrorCover",
 ]
 
 import enum
@@ -163,3 +164,13 @@ class ParkPosition(enum.IntEnum):
 
     ZENITH = enum.auto()
     HORIZON = enum.auto()
+
+
+class MirrorCover(enum.IntEnum):
+    """Mirror cover."""
+
+    ALL = 0
+    XPlus = 1
+    YPlus = 2
+    XMinus = 3
+    YMinus = 4

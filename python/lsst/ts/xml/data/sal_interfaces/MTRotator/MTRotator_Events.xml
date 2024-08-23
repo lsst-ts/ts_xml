@@ -9,10 +9,6 @@
     ControllerState_Fault=4
 </Enumeration>
   <Enumeration>
-    OfflineSubstate_PublishOnly=0,
-    OfflineSubstate_Available=1
-</Enumeration>
-  <Enumeration>
     EnabledSubstate_Stationary=0,
     EnabledSubstate_MovingPointToPoint=1,
     EnabledSubstate_SlewingOrTracking=2,
@@ -266,6 +262,18 @@
       <Description>If true the CSC can control the MTRotator; else the Engineering User Interface has control.</Description>
       <IDL_Type>boolean</IDL_Type>
       <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+  </SALEvent>
+  <SALEvent>
+    <Subsystem>MTRotator</Subsystem>
+    <EFDB_Topic>MTRotator_logevent_lowFrequencyVibration</EFDB_Topic>
+    <Description>Current low frequency vibration in Hz.</Description>
+    <item>
+      <EFDB_Name>frequency</EFDB_Name>
+      <Description>The strongest frequency in the detection range. If the value is 0.0, it means no vibration is detected or the current telemetry data might not give a reliable FFT result.</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>Hz</Units>
       <Count>1</Count>
     </item>
   </SALEvent>

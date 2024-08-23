@@ -32,9 +32,9 @@ import enum
 
 
 class Grating(enum.IntEnum):
-    BLUE = 0
+    MIRROR = 0
     RED = 1
-    MIRROR = 2
+    BLUE = 2
 
 
 class Slit(enum.IntEnum):
