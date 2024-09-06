@@ -28,6 +28,7 @@ class LaserDetailedState(enum.IntEnum):
     PROPAGATING_CONTINUOUS_MODE = 3
     PROPAGATING_BURST_MODE = 4
 
+
 class OpticalConfiguration(enum.StrEnum):
     """Configuration of the optical output
 
@@ -55,6 +56,7 @@ class OpticalConfiguration(enum.StrEnum):
     NO_SCU = "No SCU"
     F1_NO_SCU = "F1 No SCU"
     F2_NO_SCU = "F2 No SCU"
+
 
 class LaserErrorCode(enum.IntEnum):
     """Laser error codes"""
