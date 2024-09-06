@@ -28,6 +28,21 @@ class LaserDetailedState(enum.IntEnum):
     PROPAGATING_CONTINUOUS_MODE = 3
     PROPAGATING_BURST_MODE = 4
 
+class OpticalConfiguration(enum.StrEnum):
+    """Configuration of the optical output"""
+
+    SCU = "SCU"
+    """Pass the beam straight-through the SCU."""
+    F1_SCU = "F1 SCU"
+    """Direct the beam through the F1 after passing through the SCU."""
+    F2_SCU = "F2 SCU"
+    """Direct the beam through the F2 after passing through the SCU."""
+    NO_SCU = "No SCU"
+    """Pass the beam straight-through."""
+    F1_NO_SCU = "F1 No SCU"
+    """Pass the beam to F1 output."""
+    F2_NO_SCU = "F2 No SCU"
+    """Pass the beam to F2 output."""
 
 class LaserErrorCode(enum.IntEnum):
     """Laser error codes"""
