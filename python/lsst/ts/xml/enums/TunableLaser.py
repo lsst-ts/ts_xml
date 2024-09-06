@@ -1,4 +1,4 @@
-__all__ = ["LaserDetailedState", "LaserErrorCode"]
+__all__ = ["LaserDetailedState", "OpticalConfiguration", "LaserErrorCode"]
 import enum
 
 
