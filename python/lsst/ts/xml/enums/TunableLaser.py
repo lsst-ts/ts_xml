@@ -1,4 +1,4 @@
-__all__ = ["LaserDetailedState", "LaserErrorCode"]
+__all__ = ["LaserDetailedState", "OpticalConfiguration", "LaserErrorCode"]
 import enum
 
 
@@ -27,6 +27,35 @@ class LaserDetailedState(enum.IntEnum):
     NONPROPAGATING_BURST_MODE = 2
     PROPAGATING_CONTINUOUS_MODE = 3
     PROPAGATING_BURST_MODE = 4
+
+
+class OpticalConfiguration(enum.StrEnum):
+    """Configuration of the optical output
+
+    Attributes
+    ----------
+
+    SCU: `str`
+        Pass the beam straight-through the SCU.
+    F1_SCU: `str`
+        Direct the beam through the F1 after passing through the SCU.
+    F2_SCU: `str`
+        Direct the beam through the F2 after passing through the SCU.
+    NO_SCU: `str`
+        Pass the beam straight-through.
+    F1_NO_SCU: `str`
+        Pass the beam to F1 output.
+    F2_NO_SCU: `str`
+        Pass the beam to F2 output.
+
+    """
+
+    SCU = "SCU"
+    F1_SCU = "F1 SCU"
+    F2_SCU = "F2 SCU"
+    NO_SCU = "No SCU"
+    F1_NO_SCU = "F1 No SCU"
+    F2_NO_SCU = "F2 No SCU"
 
 
 class LaserErrorCode(enum.IntEnum):
