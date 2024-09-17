@@ -19,12 +19,12 @@
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-__all__ = ["ErrorCode"]
+__all__ = ["BatteryStatus", "ErrorCode", "OnOff"]
 
-from enum import IntEnum
+import enum
 
 
-class ErrorCode(IntEnum):
+class ErrorCode(enum.IntEnum):
     """Error codes that can be used by the ESS CSC.
 
     Values:
@@ -40,3 +40,34 @@ class ErrorCode(IntEnum):
     ConnectionLost = 2
     StartFailed = 3
     RunFailed = 4
+
+
+class BatteryStatus(enum.IntEnum):
+    """Battery statuses that can be used by the ESS CSC.
+
+    Values:
+
+    * Charging: The battery is charging.
+    * Discharging: The battery is discharging.
+    * Floating: The battery is charging to its float voltage.
+    * Resting: The battery is fully charged and not
+      charging/discharging/floating.
+    """
+
+    Charging = 1
+    Discharging = 2
+    Floating = 3
+    Resting = 4
+
+
+class OnOff(enum.IntEnum):
+    """On/Off statuses that can be used by the ESS CSC.
+
+    Values:
+
+    * ON: The device is on.
+    * OFF: The device is off.
+    """
+
+    ON = 1
+    OFF = 2

@@ -24,6 +24,7 @@ __all__ = ["BatteryStatus", "OnOff"]
 import enum
 
 
+# @TODO DM-46349 Remove this enum.
 class BatteryStatus(enum.IntEnum):
     """Battery statuses that can be used by the EPM CSC.
 
@@ -42,6 +43,7 @@ class BatteryStatus(enum.IntEnum):
     Resting = 4
 
 
+# @TODO DM-46349 Remove this enum.
 class OnOff(enum.IntEnum):
     """On/Off statuses that can be used by the EPM CSC.
 
