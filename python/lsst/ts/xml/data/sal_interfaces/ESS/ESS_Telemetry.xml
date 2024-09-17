@@ -1011,7 +1011,7 @@
   </SALTelemetry>
   <SALTelemetry>
     <Subsystem>ESS</Subsystem>
-    <EFDB_Topic>ESS_pdu</EFDB_Topic>
+    <EFDB_Topic>ESS_netbooter</EFDB_Topic>
     <Description>Telemetry for Netbooter PDU devices.</Description>
     <item>
       <EFDB_Name>systemDescription</EFDB_Name>
@@ -1040,6 +1040,158 @@
       <IDL_Type>int</IDL_Type>
       <Units>unitless</Units>
       <Count>2</Count>
+    </item>
+    <item>
+      <EFDB_Name>sensorName</EFDB_Name>
+      <Description>The name of the device (usually the hostname).</Description>
+      <IDL_Type>string</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+  </SALTelemetry>
+  <SALTelemetry>
+    <Subsystem>ESS</Subsystem>
+    <EFDB_Topic>ESS_raritan</EFDB_Topic>
+    <Description>Telemetry for Raritan devices.</Description>
+    <item>
+      <EFDB_Name>systemDescription</EFDB_Name>
+      <Description>The value of the SNMP System Description field.</Description>
+      <IDL_Type>string</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>inletRmsCurrent</EFDB_Name>
+      <Description>The value of the SNMP Inlet rmsCurrent field.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>A</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>inletUnbalancedCurrent</EFDB_Name>
+      <Description>The value of the SNMP Inlet unbalancedCurrent field.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>%</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>inletRmsVoltage</EFDB_Name>
+      <Description>The value of the SNMP Inlet rmsVoltage field.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>V</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>inletActivePower</EFDB_Name>
+      <Description>The value of the SNMP Inlet activePower field.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>W</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>inletApparentPower</EFDB_Name>
+      <Description>The value of the SNMP Inlet apparentPower field.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>V * A</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>inletPowerFactor</EFDB_Name>
+      <Description>The value of the SNMP Inlet powerFactor field.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>inletActiveEnergy</EFDB_Name>
+      <Description>The value of the SNMP Inlet activeEnergy field.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>W * h</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>inletFrequency</EFDB_Name>
+      <Description>The value of the SNMP Inlet frequency field.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>Hz</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>inletUnbalancedVoltage</EFDB_Name>
+      <Description>The value of the SNMP Inlet unbalancedVoltage field.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>%</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>inletUnbalancedLineLineVoltage</EFDB_Name>
+      <Description>The value of the SNMP Inlet unbalancedLineLineVoltage field.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>%</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>outletRmsCurrent</EFDB_Name>
+      <Description>The value of the SNMP Outlet rmsCurrent field.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>A</Units>
+      <Count>48</Count>
+    </item>
+    <item>
+      <EFDB_Name>outletRmsVoltage</EFDB_Name>
+      <Description>The value of the SNMP Outlet rmsVoltage field.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>V</Units>
+      <Count>48</Count>
+    </item>
+    <item>
+      <EFDB_Name>outletActivePower</EFDB_Name>
+      <Description>The value of the SNMP Outlet activePower field.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>W</Units>
+      <Count>48</Count>
+    </item>
+    <item>
+      <EFDB_Name>outletApparentPower</EFDB_Name>
+      <Description>The value of the SNMP Outlet apparentPower field.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>V * A</Units>
+      <Count>48</Count>
+    </item>
+    <item>
+      <EFDB_Name>outletPowerFactor</EFDB_Name>
+      <Description>The value of the SNMP Outlet powerFactor field.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>unitless</Units>
+      <Count>48</Count>
+    </item>
+    <item>
+      <EFDB_Name>outletActiveEnergy</EFDB_Name>
+      <Description>The value of the SNMP Outlet activeEnergy field.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>W * h</Units>
+      <Count>48</Count>
+    </item>
+    <item>
+      <EFDB_Name>outletOnOff</EFDB_Name>
+      <Description>The value of the SNMP Outlet onOff field.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>48</Count>
+    </item>
+    <item>
+      <EFDB_Name>outletFrequency</EFDB_Name>
+      <Description>The value of the SNMP Outlet frequency field.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>Hz</Units>
+      <Count>48</Count>
+    </item>
+    <item>
+      <EFDB_Name>sensorName</EFDB_Name>
+      <Description>The name of the device (usually the hostname).</Description>
+      <IDL_Type>string</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
     </item>
   </SALTelemetry>
   <SALTelemetry>
@@ -1305,6 +1457,13 @@
       <Units>unitless</Units>
       <Count>1</Count>
     </item>
+    <item>
+      <EFDB_Name>sensorName</EFDB_Name>
+      <Description>The name of the device (usually the hostname).</Description>
+      <IDL_Type>string</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
   </SALTelemetry>
   <SALTelemetry>
     <Subsystem>ESS</Subsystem>
@@ -1321,7 +1480,7 @@
       <EFDB_Name>batteryCapacity</EFDB_Name>
       <Description>Battery percent charge.</Description>
       <IDL_Type>float</IDL_Type>
-      <Units>unitless</Units>
+      <Units>%</Units>
       <Count>1</Count>
     </item>
     <item>
@@ -1433,6 +1592,13 @@
       <EFDB_Name>batteryAbmStatus</EFDB_Name>
       <Description>Gives the status of the Advanced Battery Management; batteryFloating(3) status means that the charger is temporarily charging the battery to its float voltage; batteryResting(4) is the state when the battery is fully charged and none of the other actions (charging/discharging/floating) is being done.</Description>
       <IDL_Type>int</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>sensorName</EFDB_Name>
+      <Description>The name of the device (usually the hostname).</Description>
+      <IDL_Type>string</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
     </item>
