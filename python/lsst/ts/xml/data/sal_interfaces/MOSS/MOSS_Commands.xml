@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="http://lsst-sal.tuc.noao.edu/schema/SALCommandSet.xsl"?>
+<SALCommandSet xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://lsst-sal.tuc.noao.edu/schema/SALCommandSet.xsd">
+  <SALCommand>
+    <Subsystem>MOSS</Subsystem>
+    <EFDB_Topic>MOSS_command_moveBeam</EFDB_Topic>
+    <Description>Move the beam by a relative angle.</Description>
+    <item>
+      <EFDB_Name>index</EFDB_Name>
+      <Description>Beam number</Description>
+      <IDL_Type>int</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>tip</EFDB_Name>
+      <Description>Relative tip (azimuth) angle in degrees</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>degree</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>tilt</EFDB_Name>
+      <Description>Relative tilt (elevation) angle in degrees</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>degree</Units>
+      <Count>1</Count>
+    </item>
+  </SALCommand>
+  <SALCommand>
+    <Subsystem>MOSS</Subsystem>
+    <EFDB_Topic>MOSS_command_runPulsedBeam</EFDB_Topic>
+    <Description>Run the commanded pulse beam with the given settings.</Description>
+    <item>
+      <EFDB_Name>intensity</EFDB_Name>
+      <Description>Intensity of the beam. The same intensity applies to all the beams and is not callibrated to a known IS units.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>number</EFDB_Name>
+      <Description>Number of pulses to be emitted</Description>
+      <IDL_Type>int</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>frequency</EFDB_Name>
+      <Description>Frequency of the beam (number of pulses per second)</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>hertz</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>pulseLength</EFDB_Name>
+      <Description>Length of the pulses</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>millisecond</Units>
+      <Count>1</Count>
+    </item>
+  </SALCommand>
+  <SALCommand>
+    <Subsystem>MOSS</Subsystem>
+    <EFDB_Topic>MOSS_command_stopPulsedBeam</EFDB_Topic>
+    <Description>Stop the commanded pulse beam.</Description>
+  </SALCommand>
+  <SALCommand>
+    <Subsystem>MOSS</Subsystem>
+    <EFDB_Topic>MOSS_command_insertFlipAttenuator</EFDB_Topic>
+    <Description>Insert the flip attenuator.</Description>
+  </SALCommand>
+  <SALCommand>
+    <Subsystem>MOSS</Subsystem>
+    <EFDB_Topic>MOSS_command_removeFlipAttenuator</EFDB_Topic>
+    <Description>Remove the flip attenuator.</Description>
+  </SALCommand>
+  <SALCommand>
+    <Subsystem>MOSS</Subsystem>
+    <EFDB_Topic>MOSS_command_powerOff</EFDB_Topic>
+    <Description>Turn off the PDU of MOSS.</Description>
+  </SALCommand>
+  <SALCommand>
+    <Subsystem>MOSS</Subsystem>
+    <EFDB_Topic>MOSS_command_powerOn</EFDB_Topic>
+    <Description>Turn on the PDU of MOSS.</Description>
+  </SALCommand>
+</SALCommandSet>

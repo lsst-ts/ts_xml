@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="http://lsst-sal.tuc.noao.edu/schema/SALEventSet.xsl"?>
+<SALEventSet xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://lsst-sal.tuc.noao.edu/schema/SALEventSet.xsd">
+  <Enumeration>AttenuatorState_inPlace,AttenuatorState_removed</Enumeration>
+  <Enumeration>BeamStatus_ON,BeamStatus_OFF</Enumeration>
+  <SALEvent>
+    <Subsystem>MOSS</Subsystem>
+    <EFDB_Topic>MOSS_logevent_beamIntensity</EFDB_Topic>
+    <Description>Report the intensity of the beam</Description>
+    <item>
+      <EFDB_Name>intensity</EFDB_Name>
+      <Description>Intensity of the beam. The same intensity applies to all the beams and is not calibrated to a known IS units.</Description>
+      <IDL_Type>int</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+  </SALEvent>
+  <SALEvent>
+    <Subsystem>MOSS</Subsystem>
+    <EFDB_Topic>MOSS_logevent_pulseLength</EFDB_Topic>
+    <Description>Report the length of the pulse</Description>
+    <item>
+      <EFDB_Name>pulseLength</EFDB_Name>
+      <Description>Length of the pulse in seconds</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>millisecond</Units>
+      <Count>1</Count>
+    </item>
+  </SALEvent>
+  <SALEvent>
+    <Subsystem>MOSS</Subsystem>
+    <EFDB_Topic>MOSS_logevent_pulseFrequency</EFDB_Topic>
+    <Description>Report the frequency of the pulse</Description>
+    <item>
+      <EFDB_Name>frequency</EFDB_Name>
+      <Description>Frequency of the pulse (number of pulses per second)</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>hertz</Units>
+      <Count>1</Count>
+    </item>
+  </SALEvent>
+  <SALEvent>
+    <Subsystem>MOSS</Subsystem>
+    <EFDB_Topic>MOSS_logevent_beamState</EFDB_Topic>
+    <Description>Report the state of the beam</Description>
+    <item>
+      <EFDB_Name>state</EFDB_Name>
+      <Description>BeamStatus enumeration.</Description>
+      <IDL_Type>long</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+  </SALEvent>
+  <SALEvent>
+    <Subsystem>MOSS</Subsystem>
+    <EFDB_Topic>MOSS_logevent_flipAttenuatorState</EFDB_Topic>
+    <Description>Report the state of the flip attenuator</Description>
+    <item>
+      <EFDB_Name>state</EFDB_Name>
+      <Description>AttenuatorState enumeration.</Description>
+      <IDL_Type>long</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+  </SALEvent>
+</SALEventSet>
