@@ -2,16 +2,16 @@
 <?xml-stylesheet type="text/xsl" href="http://lsst-sal.tuc.noao.edu/schema/SALEventSet.xsl"?>
 <SALEventSet xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://lsst-sal.tuc.noao.edu/schema/SALEventSet.xsd">
   <Enumeration>
-    DeviceId_bombaAguaFriaP01=1,
+    DeviceId_coldWaterPump01=1,
     DeviceId_generalP01=2,
-    DeviceId_valvulaP01=3,
+    DeviceId_valveP01=3,
     DeviceId_dynaleneP05=4,
     DeviceId_glycolSensor=5,
     DeviceId_chiller01P01=101,
     DeviceId_chiller02P01=102,
     DeviceId_chiller03P01=103,
-    DeviceId_crack01P02=201,
-    DeviceId_crack02P02=202,
+    DeviceId_crac01P02=201,
+    DeviceId_crac02P02=202,
     DeviceId_fancoil01P02=301,
     DeviceId_fancoil02P02=302,
     DeviceId_fancoil03P02=303,
@@ -24,28 +24,28 @@
     DeviceId_fancoil10P02=310,
     DeviceId_fancoil11P02=311,
     DeviceId_fancoil12P02=312,
-    DeviceId_manejadoraLower01P05=401,
-    DeviceId_manejadoraLower02P05=402,
-    DeviceId_manejadoraLower03P05=403,
-    DeviceId_manejadoraLower04P05=404,
-    DeviceId_manejadoraSblancaP04=501,
-    DeviceId_manejadoraSlimpiaP04=502,
-    DeviceId_vea01P05=601,
-    DeviceId_vea08P05=602,
-    DeviceId_vea09P05=603,
-    DeviceId_vea10P05=604,
-    DeviceId_vea11P05=605,
-    DeviceId_vea12P05=606,
-    DeviceId_vea13P05=607,
-    DeviceId_vea14P05=608,
-    DeviceId_vea15P05=609,
-    DeviceId_vea16P05=610,
-    DeviceId_vea17P05=611,
-    DeviceId_vea01P01=701,
-    DeviceId_vec01P01=702,
-    DeviceId_vin01P01=703,
-    DeviceId_vex03LowerP04=801,
-    DeviceId_vex04CargaP04=802
+    DeviceId_lowerAHU01P05=401,
+    DeviceId_lowerAHU02P05=402,
+    DeviceId_lowerAHU03P05=403,
+    DeviceId_lowerAHU04P05=404,
+    DeviceId_whiteRoomAHU01P05=501,
+    DeviceId_cleanRoomAHU01P05=502,
+    DeviceId_airInletFan01P05=601,
+    DeviceId_airInletFan08P05=602,
+    DeviceId_airInletFan09P05=603,
+    DeviceId_airInletFan10P05=604,
+    DeviceId_airInletFan11P05=605,
+    DeviceId_airInletFan12P05=606,
+    DeviceId_airInletFan13P05=607,
+    DeviceId_airInletFan14P05=608,
+    DeviceId_airInletFan15P05=609,
+    DeviceId_airInletFan16P05=610,
+    DeviceId_airInletFan17P05=611,
+    DeviceId_airInletFan01P01=701,
+    DeviceId_centrifugalExtractionFan01P01=702,
+    DeviceId_centrifugalSupplyFan01P01=703,
+    DeviceId_lowerDamperFan03P04=801,
+    DeviceId_loadingBayFan04P04=802
   </Enumeration>
   <Enumeration>
     DynaleneState_Initialized=0,
@@ -92,7 +92,7 @@
     UnitState_OFF_FROM_TIME_BANDS=6,
     UnitState_OFF_FROM_DIGITAL_INPUTS=7,
     UnitState_OFF_FROM_KEYBOARD=8,
-    UnitState_MANUALL_MODE=9,
+    UnitState_MANUAL_MODE=9,
     UnitState_OFF=10
   </Enumeration>
   <SALEvent>
@@ -110,7 +110,7 @@
   <SALEvent>
     <Subsystem>HVAC</Subsystem>
     <EFDB_Topic>HVAC_logevent_chillerConfiguration</EFDB_Topic>
-    <Description>Configuration of a CHILLER device.</Description>
+    <Description>Configuration of a Chiller device.</Description>
     <item>
       <EFDB_Name>device_id</EFDB_Name>
       <Description>Device ID; one of the DeviceId_chiller enums.</Description>
@@ -119,8 +119,8 @@
       <Count>1</Count>
     </item>
     <item>
-      <EFDB_Name>setpointActivo</EFDB_Name>
-      <Description>Setpoint Active</Description>
+      <EFDB_Name>activeSetpoint</EFDB_Name>
+      <Description>Active Setpoint.</Description>
       <IDL_Type>float</IDL_Type>
       <Units>deg_C</Units>
       <Count>1</Count>
@@ -128,39 +128,39 @@
   </SALEvent>
   <SALEvent>
     <Subsystem>HVAC</Subsystem>
-    <EFDB_Topic>HVAC_logevent_crackConfiguration</EFDB_Topic>
-    <Description>Configuration of a CRACK device.</Description>
+    <EFDB_Topic>HVAC_logevent_cracConfiguration</EFDB_Topic>
+    <Description>Configuration of a CRAC (Computer Room Air Conditioning) device.</Description>
     <item>
       <EFDB_Name>device_id</EFDB_Name>
-      <Description>Device ID; one of the DeviceId_crack enums.</Description>
+      <Description>Device ID; one of the DeviceId_crac enums.</Description>
       <IDL_Type>int</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
     </item>
     <item>
-      <EFDB_Name>setpointCooling</EFDB_Name>
-      <Description>Setpoint Cooling</Description>
+      <EFDB_Name>coolingSetpoint</EFDB_Name>
+      <Description>Cooling Setpoint.</Description>
       <IDL_Type>float</IDL_Type>
       <Units>deg_C</Units>
       <Count>1</Count>
     </item>
     <item>
-      <EFDB_Name>setpointDeshumidificador</EFDB_Name>
-      <Description>Setpoint Dehumidifier</Description>
+      <EFDB_Name>dehumidifierSetpoint</EFDB_Name>
+      <Description>Dehumidifier Setpoint.</Description>
       <IDL_Type>float</IDL_Type>
       <Units>%</Units>
       <Count>1</Count>
     </item>
     <item>
-      <EFDB_Name>setpointHeating</EFDB_Name>
-      <Description>Setpoint Heating</Description>
+      <EFDB_Name>heatingSetpoint</EFDB_Name>
+      <Description>Heating Setpoint.</Description>
       <IDL_Type>float</IDL_Type>
       <Units>deg_C</Units>
       <Count>1</Count>
     </item>
     <item>
-      <EFDB_Name>setpointHumidificador</EFDB_Name>
-      <Description>Setpoint Humidifier</Description>
+      <EFDB_Name>humidifierSetpoint</EFDB_Name>
+      <Description>Humidifier Setpoint.</Description>
       <IDL_Type>float</IDL_Type>
       <Units>%</Units>
       <Count>1</Count>
@@ -169,7 +169,7 @@
   <SALEvent>
     <Subsystem>HVAC</Subsystem>
     <EFDB_Topic>HVAC_logevent_fancoilConfiguration</EFDB_Topic>
-    <Description>Configuration of a FANCOIL device.</Description>
+    <Description>Configuration of a Fancoil device.</Description>
     <item>
       <EFDB_Name>device_id</EFDB_Name>
       <Description>Device ID; one of the DeviceId_fancoil enums.</Description>
@@ -178,43 +178,43 @@
       <Count>1</Count>
     </item>
     <item>
-      <EFDB_Name>aperturaValvulaFrio</EFDB_Name>
-      <Description>Opening Valve Cold</Description>
+      <EFDB_Name>openColdValve</EFDB_Name>
+      <Description>Open Cold Valve.</Description>
       <IDL_Type>float</IDL_Type>
       <Units>%</Units>
       <Count>1</Count>
     </item>
     <item>
-      <EFDB_Name>setpointCoolingDay</EFDB_Name>
-      <Description>Setpoint Cooling Day</Description>
+      <EFDB_Name>dayCoolingSetpoint</EFDB_Name>
+      <Description>Day Cooling Setpoint.</Description>
       <IDL_Type>float</IDL_Type>
       <Units>deg_C</Units>
       <Count>1</Count>
     </item>
     <item>
-      <EFDB_Name>setpointCoolingNight</EFDB_Name>
-      <Description>Setpoint Cooling Night</Description>
+      <EFDB_Name>nightCoolingSetpoint</EFDB_Name>
+      <Description>Night Cooling Setpoint.</Description>
       <IDL_Type>float</IDL_Type>
       <Units>deg_C</Units>
       <Count>1</Count>
     </item>
     <item>
-      <EFDB_Name>setpointHeatingDay</EFDB_Name>
-      <Description>Setpoint Heating Day</Description>
+      <EFDB_Name>dayHeatingSetpoint</EFDB_Name>
+      <Description>Day Heating Setpoint.</Description>
       <IDL_Type>float</IDL_Type>
       <Units>deg_C</Units>
       <Count>1</Count>
     </item>
     <item>
-      <EFDB_Name>setpointHeatingNight</EFDB_Name>
-      <Description>Setpoint Heating Night</Description>
+      <EFDB_Name>nightHeatingSetpoint</EFDB_Name>
+      <Description>Night Heating Setpoint.</Description>
       <IDL_Type>float</IDL_Type>
       <Units>deg_C</Units>
       <Count>1</Count>
     </item>
     <item>
-      <EFDB_Name>setpointTrabajo</EFDB_Name>
-      <Description>Setpoint Work</Description>
+      <EFDB_Name>workingSetpoint</EFDB_Name>
+      <Description>Working Setpoint.</Description>
       <IDL_Type>float</IDL_Type>
       <Units>deg_C</Units>
       <Count>1</Count>
@@ -222,32 +222,32 @@
   </SALEvent>
   <SALEvent>
     <Subsystem>HVAC</Subsystem>
-    <EFDB_Topic>HVAC_logevent_manejadoraConfiguration</EFDB_Topic>
-    <Description>Configuration of a MANEJADORA device.</Description>
+    <EFDB_Topic>HVAC_logevent_ahuConfiguration</EFDB_Topic>
+    <Description>Configuration of a AHU (Air Handling Unit) device.</Description>
     <item>
       <EFDB_Name>device_id</EFDB_Name>
-      <Description>Device ID; one of the DeviceId_manejadora enums.</Description>
+      <Description>Device ID; one of the DeviceId_ahu enums.</Description>
       <IDL_Type>int</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
     </item>
     <item>
-      <EFDB_Name>setpointVentiladorMax</EFDB_Name>
-      <Description>Setpoint Fan Max</Description>
+      <EFDB_Name>maxFanSetpoint</EFDB_Name>
+      <Description>Max Fan Setpoint.</Description>
       <IDL_Type>float</IDL_Type>
       <Units>%</Units>
       <Count>1</Count>
     </item>
     <item>
-      <EFDB_Name>setpointVentiladorMin</EFDB_Name>
-      <Description>Setpoint Fan Min</Description>
+      <EFDB_Name>minFanSetpoint</EFDB_Name>
+      <Description>Min Fan Setpoint.</Description>
       <IDL_Type>float</IDL_Type>
       <Units>%</Units>
       <Count>1</Count>
     </item>
     <item>
-      <EFDB_Name>valorConsigna</EFDB_Name>
-      <Description>Value Setpoint</Description>
+      <EFDB_Name>roomSetpoint</EFDB_Name>
+      <Description>Room Setpoint.</Description>
       <IDL_Type>float</IDL_Type>
       <Units>deg_C</Units>
       <Count>1</Count>
@@ -255,39 +255,39 @@
   </SALEvent>
   <SALEvent>
     <Subsystem>HVAC</Subsystem>
-    <EFDB_Topic>HVAC_logevent_manejadoraLowerConfiguration</EFDB_Topic>
-    <Description>Configuration of a MANEJADORA_LOWER device.</Description>
+    <EFDB_Topic>HVAC_logevent_lowerAhuConfiguration</EFDB_Topic>
+    <Description>Configuration of a LowerAhu device.</Description>
     <item>
       <EFDB_Name>device_id</EFDB_Name>
-      <Description>Device ID; one of the DeviceId_manejadoraLower enums.</Description>
+      <Description>Device ID; one of the DeviceId_lowerAhu enums.</Description>
       <IDL_Type>int</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
     </item>
     <item>
-      <EFDB_Name>setpointTrabajo</EFDB_Name>
-      <Description>Setpoint Work</Description>
+      <EFDB_Name>workingSetpoint</EFDB_Name>
+      <Description>Working Setpoint.</Description>
       <IDL_Type>float</IDL_Type>
       <Units>deg_C</Units>
       <Count>1</Count>
     </item>
     <item>
-      <EFDB_Name>setpointVentiladorMax</EFDB_Name>
-      <Description>Setpoint Fan Max</Description>
+      <EFDB_Name>maxFanSetpoint</EFDB_Name>
+      <Description>Max Fan Setpoint.</Description>
       <IDL_Type>float</IDL_Type>
       <Units>%</Units>
       <Count>1</Count>
     </item>
     <item>
-      <EFDB_Name>setpointVentiladorMin</EFDB_Name>
-      <Description>Setpoint Fan Min</Description>
+      <EFDB_Name>minFanSetpoint</EFDB_Name>
+      <Description>Min Fan Setpoint.</Description>
       <IDL_Type>float</IDL_Type>
       <Units>%</Units>
       <Count>1</Count>
     </item>
     <item>
-      <EFDB_Name>temperaturaAnticongelante</EFDB_Name>
-      <Description>Temperature Anti-freeze</Description>
+      <EFDB_Name>antiFreezeTemperature</EFDB_Name>
+      <Description>Anti-Freeze Temperature.</Description>
       <IDL_Type>float</IDL_Type>
       <Units>deg_C</Units>
       <Count>1</Count>
@@ -3049,7 +3049,7 @@
   </SALEvent>
   <SALEvent>
     <Subsystem>HVAC</Subsystem>
-    <EFDB_Topic>HVAC_logevent_crack01P02</EFDB_Topic>
+    <EFDB_Topic>HVAC_logevent_crac01P02</EFDB_Topic>
     <Description>C</Description>
     <item>
       <EFDB_Name>alarmDevice</EFDB_Name>
@@ -3075,7 +3075,7 @@
   </SALEvent>
   <SALEvent>
     <Subsystem>HVAC</Subsystem>
-    <EFDB_Topic>HVAC_logevent_crack02P02</EFDB_Topic>
+    <EFDB_Topic>HVAC_logevent_crac02P02</EFDB_Topic>
     <Description>C</Description>
     <item>
       <EFDB_Name>alarmDevice</EFDB_Name>
@@ -3413,8 +3413,8 @@
   </SALEvent>
   <SALEvent>
     <Subsystem>HVAC</Subsystem>
-    <EFDB_Topic>HVAC_logevent_manejadoraSblancaP04</EFDB_Topic>
-    <Description>M</Description>
+    <EFDB_Topic>HVAC_logevent_whiteRoomAHU01P05</EFDB_Topic>
+    <Description>W</Description>
     <item>
       <EFDB_Name>alarmDevice</EFDB_Name>
       <Description>Alarm Device</Description>
@@ -3439,8 +3439,8 @@
   </SALEvent>
   <SALEvent>
     <Subsystem>HVAC</Subsystem>
-    <EFDB_Topic>HVAC_logevent_manejadoraSlimpiaP04</EFDB_Topic>
-    <Description>M</Description>
+    <EFDB_Topic>HVAC_logevent_cleanRoomAHU01P05</EFDB_Topic>
+    <Description>C</Description>
     <item>
       <EFDB_Name>alarmDevice</EFDB_Name>
       <Description>Alarm Device</Description>
@@ -3465,8 +3465,8 @@
   </SALEvent>
   <SALEvent>
     <Subsystem>HVAC</Subsystem>
-    <EFDB_Topic>HVAC_logevent_manejadoraLower01P05</EFDB_Topic>
-    <Description>M</Description>
+    <EFDB_Topic>HVAC_logevent_lowerAHU01P05</EFDB_Topic>
+    <Description>L</Description>
     <item>
       <EFDB_Name>alarmDevice</EFDB_Name>
       <Description>Alarm Device</Description>
@@ -3491,8 +3491,8 @@
   </SALEvent>
   <SALEvent>
     <Subsystem>HVAC</Subsystem>
-    <EFDB_Topic>HVAC_logevent_manejadoraLower02P05</EFDB_Topic>
-    <Description>M</Description>
+    <EFDB_Topic>HVAC_logevent_lowerAHU02P05</EFDB_Topic>
+    <Description>L</Description>
     <item>
       <EFDB_Name>alarmDevice</EFDB_Name>
       <Description>Alarm Device</Description>
@@ -3517,8 +3517,8 @@
   </SALEvent>
   <SALEvent>
     <Subsystem>HVAC</Subsystem>
-    <EFDB_Topic>HVAC_logevent_manejadoraLower03P05</EFDB_Topic>
-    <Description>M</Description>
+    <EFDB_Topic>HVAC_logevent_lowerAHU03P05</EFDB_Topic>
+    <Description>L</Description>
     <item>
       <EFDB_Name>alarmDevice</EFDB_Name>
       <Description>Alarm Device</Description>
@@ -3543,8 +3543,8 @@
   </SALEvent>
   <SALEvent>
     <Subsystem>HVAC</Subsystem>
-    <EFDB_Topic>HVAC_logevent_manejadoraLower04P05</EFDB_Topic>
-    <Description>M</Description>
+    <EFDB_Topic>HVAC_logevent_lowerAHU04P05</EFDB_Topic>
+    <Description>L</Description>
     <item>
       <EFDB_Name>alarmDevice</EFDB_Name>
       <Description>Alarm Device</Description>
