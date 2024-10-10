@@ -31,16 +31,16 @@ from enum import IntEnum
 
 
 class DeviceId(IntEnum):
-    bombaAguaFriaP01 = 1
+    coldWaterPump01 = 1
     generalP01 = 2
-    valvulaP01 = 3
+    valveP01 = 3
     dynaleneP05 = 4
     glycolSensor = 5
     chiller01P01 = 101
     chiller02P01 = 102
     chiller03P01 = 103
-    crack01P02 = 201
-    crack02P02 = 202
+    crac01P02 = 201
+    crac02P02 = 202
     fancoil01P02 = 301
     fancoil02P02 = 302
     fancoil03P02 = 303
@@ -53,28 +53,28 @@ class DeviceId(IntEnum):
     fancoil10P02 = 310
     fancoil11P02 = 311
     fancoil12P02 = 312
-    manejadoraLower01P05 = 401
-    manejadoraLower02P05 = 402
-    manejadoraLower03P05 = 403
-    manejadoraLower04P05 = 404
-    manejadoraSblancaP04 = 501
-    manejadoraSlimpiaP04 = 502
-    vea01P05 = 601
-    vea08P05 = 602
-    vea09P05 = 603
-    vea10P05 = 604
-    vea11P05 = 605
-    vea12P05 = 606
-    vea13P05 = 607
-    vea14P05 = 608
-    vea15P05 = 609
-    vea16P05 = 610
-    vea17P05 = 611
-    vea01P01 = 701
-    vec01P01 = 702
-    vin01P01 = 703
-    vex03LowerP04 = 801
-    vex04CargaP04 = 802
+    lowerAHU01P05 = 401
+    lowerAHU02P05 = 402
+    lowerAHU03P05 = 403
+    lowerAHU04P05 = 404
+    whiteRoomAHU01P05 = 501
+    cleanRoomAHU01P05 = 502
+    airInletFan01P05 = 601
+    airInletFan08P05 = 602
+    airInletFan09P05 = 603
+    airInletFan10P05 = 604
+    airInletFan11P05 = 605
+    airInletFan12P05 = 606
+    airInletFan13P05 = 607
+    airInletFan14P05 = 608
+    airInletFan15P05 = 609
+    airInletFan16P05 = 610
+    airInletFan17P05 = 611
+    airInletFan01P01 = 701
+    centrifugalExtractionFan01P01 = 702
+    centrifugalSupplyFan01P01 = 703
+    lowerDamperFan03P04 = 801
+    loadingBayFan04P04 = 802
 
 
 class DynaleneState(IntEnum):
@@ -133,5 +133,5 @@ class UnitState(IntEnum):
     OFF_FROM_TIME_BANDS = 6
     OFF_FROM_DIGITAL_INPUTS = 7
     OFF_FROM_KEYBOARD = 8
-    MANUALL_MODE = 9
+    MANUAL_MODE = 9
     OFF = 10
