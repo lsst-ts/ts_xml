@@ -23,6 +23,8 @@ __all__ = [
     "DeviceId",
     "DynaleneState",
     "DynaleneTankLevel",
+    "OperatingMode",
+    "UnitState",
 ]
 
 from enum import IntEnum
@@ -95,3 +97,41 @@ class DynaleneTankLevel(IntEnum):
     OK = 0
     Warning = 1
     Alarm = 2
+
+
+class OperatingMode(IntEnum):
+    """General operating mode."""
+
+    AUTO = 0
+    RECOVERY = 1
+    CHILLER_RECOVERY = 2
+    CHILLER = 3
+    HEATPUMP = 4
+    UNUSED_1 = 5
+    UNUSED_2 = 6
+    UNUSED_3 = 7
+    CHILLER_FREE_COOLING = 8
+    UNUSED_4 = 9
+    SUMMER_AUTO = 10
+    SUMMER_RECOVERY = 11
+    SUMMER_CHILLER_RECOVERY = 12
+    SUMMER_CHILLER = 13
+    WINTER_HEATPUMP = 14
+    WINTER_RECOVERY = 15
+    WINTER_AUTO = 16
+
+
+class UnitState(IntEnum):
+    """General state of all units."""
+
+    ON_FROM_KEYBOARD = 0
+    ON_FROM_DIGITAL_INPUT = 1
+    ON_FROM_TIME_BANDS = 2
+    ON_FROM_SUPERVISOR = 3
+    OFF_FROM_ALARM = 4
+    OFF_FROM_SUPERVISOR = 5
+    OFF_FROM_TIME_BANDS = 6
+    OFF_FROM_DIGITAL_INPUTS = 7
+    OFF_FROM_KEYBOARD = 8
+    MANUALL_MODE = 9
+    OFF = 10
