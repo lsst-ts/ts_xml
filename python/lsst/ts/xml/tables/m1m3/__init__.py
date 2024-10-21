@@ -34,3 +34,4 @@ from .fa_table import (
     force_actuator_from_id,
 )
 from .fcu_table import FCUData, FCUTable, fcu_from_address
+from .thermocouple_table import ThermocoupleData, ThermocoupleTable

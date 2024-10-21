@@ -114,4 +114,51 @@
       <Count>1</Count>
     </item>
   </SALEvent>
+  <Enumeration>
+    HONEYCOMB_TOP=1,
+    HONEYCOMB_MIDDLE=2,
+    HONEYCOMB_BOTTOM=3,
+    PLENUM=4,
+    CELL_TOP=5,
+    CELL_BOTTOM=6
+  </Enumeration>
+  <SALEvent>
+    <Subsystem>ESS</Subsystem>
+    <EFDB_Topic>ESS_logevent_thermocouples</EFDB_Topic>
+    <Description>Details about M1M3 thermocouples. Thermal scanner is provided in topic's index, and port number is the item's index.</Description>
+    <item>
+      <EFDB_Name>name</EFDB_Name>
+      <Description>Comma separated lists of thermocouple name/ID.</Description>
+      <IDL_Type>string</IDL_Type>
+      <Units>unitless</Units>
+    </item>
+    <item>
+      <EFDB_Name>location</EFDB_Name>
+      <Description>Thermocouple location. One of the HONEYCOMB_XXX,PLENUM or CELL_XXX enumerations.</Description>
+      <IDL_Type>int</IDL_Type>
+      <Units>unitless</Units>
+      <Count>94</Count>
+    </item>
+    <item>
+      <EFDB_Name>xPosition</EFDB_Name>
+      <Description>Thermocouple X position in meters.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>m</Units>
+      <Count>94</Count>
+    </item>
+    <item>
+      <EFDB_Name>yPosition</EFDB_Name>
+      <Description>Thermocouple Y position in meters.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>m</Units>
+      <Count>94</Count>
+    </item>
+    <item>
+      <EFDB_Name>zPosition</EFDB_Name>
+      <Description>Thermocouple Z position in meters.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>m</Units>
+      <Count>94</Count>
+    </item>
+  </SALEvent>
 </SALEventSet>

@@ -71,3 +71,25 @@ class OnOff(enum.IntEnum):
 
     ON = 1
     OFF = 2
+
+
+class M1M3Thermocouple(enum.IntEnum):
+    """M1M3 Thermocouple location.
+
+    Values:
+
+    * HONEYCOMB_TOP: Top of the mirror's honeycomb.
+    * HONEYCOMB_MIDDLE: Middle in the mirror's honeycomb.
+    * HONEYCOMB_BOTTOM: Bottom of the mirror's honeycomb.
+    * PLENUM: Air plenum (area between the glass mirror and top of the mirror
+      cell, where conditioned air enters).
+    * CELL_TOP: Top of the mirror cell.
+    * CELL_BOTTOMz: Bottom of the mirror cell.
+    """
+
+    HONEYCOMB_TOP = 1
+    HONEYCOMB_MIDDLE = 2
+    HONEYCOMB_BOTTOM = 3
+    PLENUM = 4
+    CELL_TOP = 5
+    CELL_BOTTOM = 6
