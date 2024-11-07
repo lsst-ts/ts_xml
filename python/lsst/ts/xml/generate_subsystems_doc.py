@@ -316,7 +316,7 @@ SAL Interfaces for all CSCs and other SAL components.
                             # and all whitespace is optional and of
                             # arbitrary length.
                             state = state.split("_", 1)[
-                                1
+                                -1
                             ]  # strip the beginning through the first underscore.
                             cf.write(f"  * {state}\n")  # noqa
                         cf.write("\n")
