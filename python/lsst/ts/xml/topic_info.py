@@ -27,6 +27,7 @@ import dataclasses
 import hashlib
 import json
 import typing
+import warnings
 from xml.etree import ElementTree
 
 from .field_info import FieldInfo
@@ -368,8 +369,9 @@ class TopicInfo:
                     if len(getattr(model, field_name)) != array_fields[field_name]
                 ]
                 if bad_arrays:
-                    raise ValueError(
-                        f"Array fields with incorrect length: {bad_arrays}"
+                    warnings.warn(
+                        f"Array fields with incorrect length: {bad_arrays}. "
+                        "This used to be an error condition in past versions of salobj."
                     )
 
             dataclass = dataclasses.make_dataclass(
