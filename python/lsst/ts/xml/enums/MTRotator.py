@@ -109,8 +109,18 @@ class ErrorCode(enum.IntEnum):
       controller.
     * NO_CONFIG: The CSC did not receive configuration from the low-level
       controller shortly after connecting to it.
+    * NO_NEW_CCW_TELEMETRY: The CSC did not receive new telemetry from the
+      camera cable wrapper (CCW) before the timeout.
+    * OLD_CCW_TELEMETRY: The CCW telemetry was too old.
+    * CCW_FOLLOWING_ERROR: The CCW did not follow the rotator's movement.
+    * NO_NEW_TRACK_COMMAND: The CSC did not receive a new track command before
+      the timeout.
     """
 
     CONTROLLER_FAULT = 1
     CONNECTION_LOST = 2
     NO_CONFIG = 3
+    NO_NEW_CCW_TELEMETRY = 4
+    OLD_CCW_TELEMETRY = 5
+    CCW_FOLLOWING_ERROR = 6
+    NO_NEW_TRACK_COMMAND = 7
