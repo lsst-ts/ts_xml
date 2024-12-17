@@ -21,7 +21,6 @@
 
 __all__ = [
     "DeviceId",
-    "DynaleneState",
     "DynaleneTankLevel",
     "OperatingMode",
     "UnitState",
@@ -39,6 +38,7 @@ class DeviceId(IntEnum):
     chiller01P01 = 101
     chiller02P01 = 102
     chiller03P01 = 103
+    chiller04P01 = 104
     crac01P02 = 201
     crac02P02 = 202
     fancoil01P02 = 301
@@ -75,20 +75,6 @@ class DeviceId(IntEnum):
     centrifugalSupplyFan01P01 = 703
     lowerDamperFan03P04 = 801
     loadingBayFan04P04 = 802
-
-
-class DynaleneState(IntEnum):
-    """Dynalene state."""
-
-    Initialized = 0
-    ShuttingDown = 1
-    PoweringOn = 2
-    PoweredOn = 3
-    PoweringOff = 4
-    PoweredOff = 5
-    Warning = 6
-    Alarm = 7
-    ShutOff = 8
 
 
 class DynaleneTankLevel(IntEnum):
