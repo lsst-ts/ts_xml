@@ -411,4 +411,28 @@
       <Count>1</Count>
     </item>
   </SALEvent>
+  <SALEvent>
+    <Subsystem>MTHexapod</Subsystem>
+    <EFDB_Topic>MTHexapod_logevent_highCurrent</EFDB_Topic>
+    <Description>Indicates whether or not that the actuators are experiencing the high current that might come from the unbalanced loading, the cooling greasing, or others when the hexapod stills.</Description>
+    <item>
+      <EFDB_Name>highCurrent</EFDB_Name>
+      <Description>True if the actuators experience the high current. Otherwise, False.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+  </SALEvent>
+  <SALEvent>
+    <Subsystem>MTHexapod</Subsystem>
+    <EFDB_Topic>MTHexapod_logevent_transitionToIdle</EFDB_Topic>
+    <Description>Indicates whether or not that the Copley drivers transition to the idle (disabled) state by CSC after the timeout under the Enabled state when the hexapod stills.</Description>
+    <item>
+      <EFDB_Name>transitionToIdle</EFDB_Name>
+      <Description>True if the Copley drives transition to the idle (disabled) state. Otherwise, False.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+  </SALEvent>
 </SALEventSet>
