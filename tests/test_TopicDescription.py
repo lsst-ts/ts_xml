@@ -9,12 +9,6 @@ import pytest
 
 def check_for_issues(csc: str, topic: str) -> str:
     match f"{csc}-{topic}":
-        case "ATCamera-Commands" | "ATCamera-Telemetry" | "ATCamera-Events":
-            return "DM-43793"
-        case "CCCamera-Commands" | "CCCamera-Telemetry" | "CCCamera-Events":
-            return "DM-43804"
-        case "MTCamera-Telemetry" | "MTCamera-Commands" | "MTCamera-Events":
-            return "DM-43816"
         case "MTMount-Events" | "MTMount-Telemetry":
             return "DM-43821"
         case _:
