@@ -3,6 +3,7 @@
 import pathlib
 import xml.etree.ElementTree as et
 
+import astropy.constants
 import astropy.units
 import lsst.ts.xml as ts_xml
 import pytest
@@ -17,7 +18,8 @@ rpm = astropy.units.def_unit("rpm", (astropy.units.cycle * 60) / astropy.units.s
 gpm = astropy.units.def_unit(
     "gallon/min", (astropy.units.imperial.gallon * 60) / astropy.units.s
 )
-astropy.units.add_enabled_units([rpm, gpm])
+g0 = astropy.units.def_unit("g0", astropy.constants.g0)
+astropy.units.add_enabled_units([rpm, g0, gpm])
 
 
 def check_for_issues(csc: str, topic: str) -> str:
