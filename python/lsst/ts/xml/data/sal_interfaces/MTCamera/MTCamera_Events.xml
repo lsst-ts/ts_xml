@@ -8872,7 +8872,7 @@
     <Subsystem>MTCamera</Subsystem>
     <EFDB_Topic>MTCamera_logevent_hex_PeriodicTasks_GeneralConfiguration</EFDB_Topic>
     <Description>subsystem MTCamera class MTCamera_logevent_hex_PeriodicTasks_GeneralConfiguration for category General</Description>
-    <!--CCS: Dictionary_Checksum: 1435761504L -->
+    <!--CCS: Dictionary_Checksum: 339925376L -->
     <item>
       <EFDB_Name>version</EFDB_Name>
       <Description>Version of the settings, formatted using CCS conventions</Description>
@@ -8889,6 +8889,20 @@
     </item>
     <item>
       <EFDB_Name>schedulers_default_nThreads</EFDB_Name>
+      <Description>Number of threads assigned to the Scheduler.</Description>
+      <IDL_Type>long</IDL_Type>
+      <Units>count</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>schedulers_monitor_check_scheduler_nTasks</EFDB_Name>
+      <Description>Number of tasks assigned to the Scheduler.</Description>
+      <IDL_Type>long</IDL_Type>
+      <Units>count</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>schedulers_monitor_check_scheduler_nThreads</EFDB_Name>
       <Description>Number of threads assigned to the Scheduler.</Description>
       <IDL_Type>long</IDL_Type>
       <Units>count</Units>
@@ -8915,7 +8929,7 @@
     <Subsystem>MTCamera</Subsystem>
     <EFDB_Topic>MTCamera_logevent_hex_PeriodicTasks_timersConfiguration</EFDB_Topic>
     <Description>subsystem MTCamera class MTCamera_logevent_hex_PeriodicTasks_timersConfiguration for category timers</Description>
-    <!--CCS: Dictionary_Checksum: 465559570L -->
+    <!--CCS: Dictionary_Checksum: 4169343318L -->
     <item>
       <EFDB_Name>version</EFDB_Name>
       <Description>Version of the settings, formatted using CCS conventions</Description>
@@ -8952,8 +8966,8 @@
       <Count>1</Count>
     </item>
     <item>
-      <EFDB_Name>monitor_check_taskPeriodMillis</EFDB_Name>
-      <Description>period for task monitor-check</Description>
+      <EFDB_Name>monitor_check_Maq20_taskPeriodMillis</EFDB_Name>
+      <Description>period for task monitor-check/Maq20</Description>
       <IDL_Type>long long</IDL_Type>
       <Units>ms</Units>
       <Count>1</Count>
@@ -21389,6 +21403,35 @@
       <Count>1</Count>
     </item>
   </SALEvent>
+  <!--Created by xmlmaker2 for subsystem MTCamera class MTCamera_logevent_image_handling_ImageHandler_GeneralConfiguration for category General using level 1-->
+  <!--=======================================================================================================================================================-->
+  <SALEvent>
+    <Subsystem>MTCamera</Subsystem>
+    <EFDB_Topic>MTCamera_logevent_image_handling_ImageHandler_GeneralConfiguration</EFDB_Topic>
+    <Description>subsystem MTCamera class MTCamera_logevent_image_handling_ImageHandler_GeneralConfiguration for category General</Description>
+    <!--CCS: Dictionary_Checksum: 1567574898L -->
+    <item>
+      <EFDB_Name>version</EFDB_Name>
+      <Description>Version of the settings, formatted using CCS conventions</Description>
+      <IDL_Type>string</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>imagedatabaseservice_dbURL</EFDB_Name>
+      <Description>Image Database URL</Description>
+      <IDL_Type>string</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>imagedatabaseservice_enabled</EFDB_Name>
+      <Description>true/false Image Database enable flag</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+  </SALEvent>
   <!--Created by xmlmaker2 for subsystem MTCamera class MTCamera_logevent_image_handling_ImageHandler_GuiderConfiguration for category Guider using level 1-->
   <!--=====================================================================================================================================================-->
   <SALEvent>
@@ -29010,7 +29053,7 @@
     <Subsystem>MTCamera</Subsystem>
     <EFDB_Topic>MTCamera_logevent_shutter_GeneralConfiguration</EFDB_Topic>
     <Description>subsystem MTCamera class MTCamera_logevent_shutter_GeneralConfiguration for category General</Description>
-    <!--CCS: Dictionary_Checksum: 2549365055L -->
+    <!--CCS: Dictionary_Checksum: 3301213074L -->
     <item>
       <EFDB_Name>version</EFDB_Name>
       <Description>Version of the settings, formatted using CCS conventions</Description>
@@ -29133,6 +29176,34 @@
     <item>
       <EFDB_Name>publisher_configurationName</EFDB_Name>
       <Description>The name of the subsystem configuration in effect.</Description>
+      <IDL_Type>string</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>publisher_maxStrokeTime</EFDB_Name>
+      <Description>Strokes taking longer than this won't be counted.</Description>
+      <IDL_Type>string</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>publisher_minStrokeLength</EFDB_Name>
+      <Description>Strokes shorter than this won't be counted.</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>mm</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>publisher_minusXStrokeCounterPath</EFDB_Name>
+      <Description>The path name for the -X stroke counter (also its trending name).</Description>
+      <IDL_Type>string</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>publisher_plusXStrokeCounterPath</EFDB_Name>
+      <Description>The path name for the +X stroke counter (also its trending name).</Description>
       <IDL_Type>string</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
@@ -29491,7 +29562,7 @@
     <Subsystem>MTCamera</Subsystem>
     <EFDB_Topic>MTCamera_logevent_chiller_LimitsConfiguration</EFDB_Topic>
     <Description>subsystem MTCamera class MTCamera_logevent_chiller_LimitsConfiguration for category Limits</Description>
-    <!--CCS: Dictionary_Checksum: 1457208418L -->
+    <!--CCS: Dictionary_Checksum: 188752282L -->
     <item>
       <EFDB_Name>version</EFDB_Name>
       <Description>Version of the settings, formatted using CCS conventions</Description>
@@ -29511,6 +29582,62 @@
       <Description>last DUT input temperature high alarm level</Description>
       <IDL_Type>double</IDL_Type>
       <Units>Celsius</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>maq20_GlycChillerIn_warnHi</EFDB_Name>
+      <Description>TC1: Glycol into Chiller high warning level</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>Celsius</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>maq20_GlycChillerIn_warnLo</EFDB_Name>
+      <Description>TC1: Glycol into Chiller low warning level</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>Celsius</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>maq20_GlycChillerIn_limitHi</EFDB_Name>
+      <Description>TC1: Glycol into Chiller high alarm level</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>Celsius</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>maq20_GlycChillerIn_limitLo</EFDB_Name>
+      <Description>TC1: Glycol into Chiller low alarm level</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>Celsius</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>maq20_GlycChillerOut_warnHi</EFDB_Name>
+      <Description>TC4: Glycol out of Chiller high warning level</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>Celsius</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>maq20_GlycChillerOut_limitHi</EFDB_Name>
+      <Description>TC4: Glycol out of Chiller high alarm level</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>Celsius</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>maq20_GlycInputFlow_warnLo</EFDB_Name>
+      <Description>Glycol flow rate into Chiller low warning level</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>gallon/min</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>maq20_GlycInputFlow_limitLo</EFDB_Name>
+      <Description>Glycol flow rate into Chiller low alarm level</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>gallon/min</Units>
       <Count>1</Count>
     </item>
     <item>
@@ -29539,6 +29666,20 @@
       <Description>Burst disc pressure supply line high alarm level</Description>
       <IDL_Type>double</IDL_Type>
       <Units>psig</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>maq20_Stg1TXVBulb_warnHi</EFDB_Name>
+      <Description>TC7: Stage1 TXV Thermal Bulb high warning level</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>Celsius</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>maq20_Stg1TXVBulb_limitHi</EFDB_Name>
+      <Description>TC7: Stage1 TXV Thermal Bulb high alarm level</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>Celsius</Units>
       <Count>1</Count>
     </item>
   </SALEvent>
@@ -32182,49 +32323,6 @@
       <Count>1</Count>
     </item>
   </SALEvent>
-  <!--Created by xmlmaker2 for subsystem MTCamera class MTCamera_logevent_utiltrunk_Body_L2YMinusTemp_LimitsConfiguration for category Limits using level 2-->
-  <!--=====================================================================================================================================================-->
-  <SALEvent>
-    <Subsystem>MTCamera</Subsystem>
-    <EFDB_Topic>MTCamera_logevent_utiltrunk_Body_L2YMinusTemp_LimitsConfiguration</EFDB_Topic>
-    <Description>subsystem MTCamera class MTCamera_logevent_utiltrunk_Body_L2YMinusTemp_LimitsConfiguration for category Limits</Description>
-    <!--CCS: Dictionary_Checksum: 2561930519L -->
-    <item>
-      <EFDB_Name>version</EFDB_Name>
-      <Description>Version of the settings, formatted using CCS conventions</Description>
-      <IDL_Type>string</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>warnHi</EFDB_Name>
-      <Description>L2 Y- temperature high warning level</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>Celsius</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>warnLo</EFDB_Name>
-      <Description>L2 Y- temperature low warning level</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>Celsius</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>limitHi</EFDB_Name>
-      <Description>L2 Y- temperature high alarm level</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>Celsius</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>limitLo</EFDB_Name>
-      <Description>L2 Y- temperature low alarm level</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>Celsius</Units>
-      <Count>1</Count>
-    </item>
-  </SALEvent>
   <!--Created by xmlmaker2 for subsystem MTCamera class MTCamera_logevent_utiltrunk_Body_L2YPlusTemp_LimitsConfiguration for category Limits using level 2-->
   <!--====================================================================================================================================================-->
   <SALEvent>
@@ -32652,57 +32750,6 @@
       <Description>VP plenum in temperature low alarm level</Description>
       <IDL_Type>double</IDL_Type>
       <Units>Celsius</Units>
-      <Count>1</Count>
-    </item>
-  </SALEvent>
-  <!--Created by xmlmaker2 for subsystem MTCamera class MTCamera_logevent_utiltrunk_CryoMaq20_DeviceConfiguration for category Device using level 2-->
-  <!--=============================================================================================================================================-->
-  <SALEvent>
-    <Subsystem>MTCamera</Subsystem>
-    <EFDB_Topic>MTCamera_logevent_utiltrunk_CryoMaq20_DeviceConfiguration</EFDB_Topic>
-    <Description>subsystem MTCamera class MTCamera_logevent_utiltrunk_CryoMaq20_DeviceConfiguration for category Device</Description>
-    <!--CCS: Dictionary_Checksum: 2109991521L -->
-    <item>
-      <EFDB_Name>version</EFDB_Name>
-      <Description>Version of the settings, formatted using CCS conventions</Description>
-      <IDL_Type>string</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>node</EFDB_Name>
-      <Description>Maq20 IP address</Description>
-      <IDL_Type>string</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>serials</EFDB_Name>
-      <Description>serial numbers of MAQ20 modules (colon delimited array)</Description>
-      <IDL_Type>string</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-  </SALEvent>
-  <!--Created by xmlmaker2 for subsystem MTCamera class MTCamera_logevent_utiltrunk_CryoMaq20_DevicesConfiguration for category Devices using level 2-->
-  <!--===============================================================================================================================================-->
-  <SALEvent>
-    <Subsystem>MTCamera</Subsystem>
-    <EFDB_Topic>MTCamera_logevent_utiltrunk_CryoMaq20_DevicesConfiguration</EFDB_Topic>
-    <Description>subsystem MTCamera class MTCamera_logevent_utiltrunk_CryoMaq20_DevicesConfiguration for category Devices</Description>
-    <!--CCS: Dictionary_Checksum: 242690159L -->
-    <item>
-      <EFDB_Name>version</EFDB_Name>
-      <Description>Version of the settings, formatted using CCS conventions</Description>
-      <IDL_Type>string</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>disabled</EFDB_Name>
-      <Description>If true, Device is diabled</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
       <Count>1</Count>
     </item>
   </SALEvent>
@@ -33466,28 +33513,6 @@
       <Count>1</Count>
     </item>
   </SALEvent>
-  <!--Created by xmlmaker2 for subsystem MTCamera class MTCamera_logevent_utiltrunk_PeriodicTasks_CryoMaq20_check_status_timersConfiguration for category timers using level 2-->
-  <!--========================================================================================================================================================================-->
-  <SALEvent>
-    <Subsystem>MTCamera</Subsystem>
-    <EFDB_Topic>MTCamera_logevent_utiltrunk_PeriodicTasks_CryoMaq20_check_status_timersConfiguration</EFDB_Topic>
-    <Description>subsystem MTCamera class MTCamera_logevent_utiltrunk_PeriodicTasks_CryoMaq20_check_status_timersConfiguration for category timers</Description>
-    <!--CCS: Dictionary_Checksum: 4212087235L -->
-    <item>
-      <EFDB_Name>version</EFDB_Name>
-      <Description>Version of the settings, formatted using CCS conventions</Description>
-      <IDL_Type>string</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>taskPeriodMillis</EFDB_Name>
-      <Description>period for task CryoMaq20-check-status</Description>
-      <IDL_Type>long long</IDL_Type>
-      <Units>ms</Units>
-      <Count>1</Count>
-    </item>
-  </SALEvent>
   <!--Created by xmlmaker2 for subsystem MTCamera class MTCamera_logevent_utiltrunk_PeriodicTasks_Fan_loop_MPCFan_PicConfiguration for category Pic using level 2-->
   <!--===========================================================================================================================================================-->
   <SALEvent>
@@ -33582,7 +33607,7 @@
     <Subsystem>MTCamera</Subsystem>
     <EFDB_Topic>MTCamera_logevent_utiltrunk_PeriodicTasks_Monitor_check_timersConfiguration</EFDB_Topic>
     <Description>subsystem MTCamera class MTCamera_logevent_utiltrunk_PeriodicTasks_Monitor_check_timersConfiguration for category timers</Description>
-    <!--CCS: Dictionary_Checksum: 3016586699L -->
+    <!--CCS: Dictionary_Checksum: 3079093893L -->
     <item>
       <EFDB_Name>version</EFDB_Name>
       <Description>Version of the settings, formatted using CCS conventions</Description>
@@ -33605,22 +33630,8 @@
       <Count>1</Count>
     </item>
     <item>
-      <EFDB_Name>cryomaq20_taskPeriodMillis</EFDB_Name>
-      <Description>period for task monitor-check/CryoMaq20</Description>
-      <IDL_Type>long long</IDL_Type>
-      <Units>ms</Units>
-      <Count>1</Count>
-    </item>
-    <item>
       <EFDB_Name>pdu_48V_taskPeriodMillis</EFDB_Name>
       <Description>period for task monitor-check/PDU_48V</Description>
-      <IDL_Type>long long</IDL_Type>
-      <Units>ms</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>pluto_taskPeriodMillis</EFDB_Name>
-      <Description>period for task monitor-check/Pluto</Description>
       <IDL_Type>long long</IDL_Type>
       <Units>ms</Units>
       <Count>1</Count>
@@ -33646,7 +33657,7 @@
     <Subsystem>MTCamera</Subsystem>
     <EFDB_Topic>MTCamera_logevent_utiltrunk_PeriodicTasks_Monitor_publish_timersConfiguration</EFDB_Topic>
     <Description>subsystem MTCamera class MTCamera_logevent_utiltrunk_PeriodicTasks_Monitor_publish_timersConfiguration for category timers</Description>
-    <!--CCS: Dictionary_Checksum: 1883185629L -->
+    <!--CCS: Dictionary_Checksum: 3277303603L -->
     <item>
       <EFDB_Name>version</EFDB_Name>
       <Description>Version of the settings, formatted using CCS conventions</Description>
@@ -33664,13 +33675,6 @@
     <item>
       <EFDB_Name>bodymaq20_taskPeriodMillis</EFDB_Name>
       <Description>period for task monitor-publish/BodyMaq20</Description>
-      <IDL_Type>long long</IDL_Type>
-      <Units>ms</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>cryomaq20_taskPeriodMillis</EFDB_Name>
-      <Description>period for task monitor-publish/CryoMaq20</Description>
       <IDL_Type>long long</IDL_Type>
       <Units>ms</Units>
       <Count>1</Count>
@@ -33703,7 +33707,7 @@
     <Subsystem>MTCamera</Subsystem>
     <EFDB_Topic>MTCamera_logevent_utiltrunk_PeriodicTasks_Monitor_update_timersConfiguration</EFDB_Topic>
     <Description>subsystem MTCamera class MTCamera_logevent_utiltrunk_PeriodicTasks_Monitor_update_timersConfiguration for category timers</Description>
-    <!--CCS: Dictionary_Checksum: 165896484L -->
+    <!--CCS: Dictionary_Checksum: 2851169741L -->
     <item>
       <EFDB_Name>version</EFDB_Name>
       <Description>Version of the settings, formatted using CCS conventions</Description>
@@ -33721,13 +33725,6 @@
     <item>
       <EFDB_Name>bodymaq20_taskPeriodMillis</EFDB_Name>
       <Description>period for task monitor-update/BodyMaq20</Description>
-      <IDL_Type>long long</IDL_Type>
-      <Units>ms</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>cryomaq20_taskPeriodMillis</EFDB_Name>
-      <Description>period for task monitor-update/CryoMaq20</Description>
       <IDL_Type>long long</IDL_Type>
       <Units>ms</Units>
       <Count>1</Count>
@@ -33918,50 +33915,6 @@
       <Description>period for task vpc-loop-VPCHtrs</Description>
       <IDL_Type>long long</IDL_Type>
       <Units>ms</Units>
-      <Count>1</Count>
-    </item>
-  </SALEvent>
-  <!--Created by xmlmaker2 for subsystem MTCamera class MTCamera_logevent_utiltrunk_Pluto_DeviceConfiguration for category Device using level 2-->
-  <!--=========================================================================================================================================-->
-  <SALEvent>
-    <Subsystem>MTCamera</Subsystem>
-    <EFDB_Topic>MTCamera_logevent_utiltrunk_Pluto_DeviceConfiguration</EFDB_Topic>
-    <Description>subsystem MTCamera class MTCamera_logevent_utiltrunk_Pluto_DeviceConfiguration for category Device</Description>
-    <!--CCS: Dictionary_Checksum: 415812354L -->
-    <item>
-      <EFDB_Name>version</EFDB_Name>
-      <Description>Version of the settings, formatted using CCS conventions</Description>
-      <IDL_Type>string</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>node</EFDB_Name>
-      <Description>Pluto IP address</Description>
-      <IDL_Type>string</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-  </SALEvent>
-  <!--Created by xmlmaker2 for subsystem MTCamera class MTCamera_logevent_utiltrunk_Pluto_DevicesConfiguration for category Devices using level 2-->
-  <!--===========================================================================================================================================-->
-  <SALEvent>
-    <Subsystem>MTCamera</Subsystem>
-    <EFDB_Topic>MTCamera_logevent_utiltrunk_Pluto_DevicesConfiguration</EFDB_Topic>
-    <Description>subsystem MTCamera class MTCamera_logevent_utiltrunk_Pluto_DevicesConfiguration for category Devices</Description>
-    <!--CCS: Dictionary_Checksum: 3820514651L -->
-    <item>
-      <EFDB_Name>version</EFDB_Name>
-      <Description>Version of the settings, formatted using CCS conventions</Description>
-      <IDL_Type>string</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>disabled</EFDB_Name>
-      <Description>If true, Device is diabled</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
       <Count>1</Count>
     </item>
   </SALEvent>
@@ -34269,92 +34222,6 @@
       <Description>UT coolant pipe supply temperature low alarm level</Description>
       <IDL_Type>double</IDL_Type>
       <Units>Celsius</Units>
-      <Count>1</Count>
-    </item>
-  </SALEvent>
-  <!--Created by xmlmaker2 for subsystem MTCamera class MTCamera_logevent_utiltrunk_UT_CoolReturnPrs_LimitsConfiguration for category Limits using level 2-->
-  <!--====================================================================================================================================================-->
-  <SALEvent>
-    <Subsystem>MTCamera</Subsystem>
-    <EFDB_Topic>MTCamera_logevent_utiltrunk_UT_CoolReturnPrs_LimitsConfiguration</EFDB_Topic>
-    <Description>subsystem MTCamera class MTCamera_logevent_utiltrunk_UT_CoolReturnPrs_LimitsConfiguration for category Limits</Description>
-    <!--CCS: Dictionary_Checksum: 1351702081L -->
-    <item>
-      <EFDB_Name>version</EFDB_Name>
-      <Description>Version of the settings, formatted using CCS conventions</Description>
-      <IDL_Type>string</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>warnHi</EFDB_Name>
-      <Description>UT coolant return pressure high warning level</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>psia</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>warnLo</EFDB_Name>
-      <Description>UT coolant return pressure low warning level</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>psia</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>limitHi</EFDB_Name>
-      <Description>UT coolant return pressure high alarm level</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>psia</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>limitLo</EFDB_Name>
-      <Description>UT coolant return pressure low alarm level</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>psia</Units>
-      <Count>1</Count>
-    </item>
-  </SALEvent>
-  <!--Created by xmlmaker2 for subsystem MTCamera class MTCamera_logevent_utiltrunk_UT_CoolSupplyPrs_LimitsConfiguration for category Limits using level 2-->
-  <!--====================================================================================================================================================-->
-  <SALEvent>
-    <Subsystem>MTCamera</Subsystem>
-    <EFDB_Topic>MTCamera_logevent_utiltrunk_UT_CoolSupplyPrs_LimitsConfiguration</EFDB_Topic>
-    <Description>subsystem MTCamera class MTCamera_logevent_utiltrunk_UT_CoolSupplyPrs_LimitsConfiguration for category Limits</Description>
-    <!--CCS: Dictionary_Checksum: 3030079617L -->
-    <item>
-      <EFDB_Name>version</EFDB_Name>
-      <Description>Version of the settings, formatted using CCS conventions</Description>
-      <IDL_Type>string</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>warnHi</EFDB_Name>
-      <Description>UT coolant supply pressure high warning level</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>psia</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>warnLo</EFDB_Name>
-      <Description>UT coolant supply pressure low warning level</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>psia</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>limitHi</EFDB_Name>
-      <Description>UT coolant supply pressure high alarm level</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>psia</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>limitLo</EFDB_Name>
-      <Description>UT coolant supply pressure low alarm level</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>psia</Units>
       <Count>1</Count>
     </item>
   </SALEvent>
