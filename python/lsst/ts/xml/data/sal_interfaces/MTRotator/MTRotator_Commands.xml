@@ -114,4 +114,14 @@
     <EFDB_Topic>MTRotator_command_stop</EFDB_Topic>
     <Description>Stop the MTRotator and go to enabled substate Stationary.</Description>
   </SALCommand>
+  <SALCommand>
+    <Subsystem>MTRotator</Subsystem>
+    <EFDB_Topic>MTRotator_command_lockMotion</EFDB_Topic>
+    <Description>Stop any existing motion and prevent any new motion from happening. The CSC will reject any move or track related command. The command is a noop if CSC is already locked.</Description>
+  </SALCommand>
+  <SALCommand>
+    <Subsystem>MTRotator</Subsystem>
+    <EFDB_Topic>MTRotator_command_unlockMotion</EFDB_Topic>
+    <Description>If motion is locked, unlock and allow the CSC to accept move or track related commands again. This command is a noop if CSC is not locked.</Description>
+  </SALCommand>
 </SALCommandSet>

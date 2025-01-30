@@ -22,6 +22,7 @@ __all__ = [
     "ControllerState",
     "EnabledSubstate",
     "FaultSubstate",
+    "MotionLockState",
     "ApplicationStatus",
     "ErrorCode",
 ]
@@ -75,6 +76,18 @@ class FaultSubstate(enum.IntEnum):
     NO_ERROR = 0
     EMERGENCY_STOPPING = enum.auto()
     WAIT_CLEAR_ERROR = enum.auto()
+
+
+class MotionLockState(enum.IntEnum):
+    """Motion lock state.
+
+    This state is managed entirely by the CSC.
+    """
+
+    UNLOCKED = 0
+    LOCKING = 1
+    UNLOCKING = 2
+    LOCKED = 3
 
 
 class ApplicationStatus(enum.IntFlag):
