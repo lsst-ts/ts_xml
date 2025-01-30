@@ -29,6 +29,7 @@ __all__ = [
     "ThermalCommandState",
     "ParkPosition",
     "MirrorCover",
+    "MotionLockState",
 ]
 
 import enum
@@ -174,3 +175,12 @@ class MirrorCover(enum.IntEnum):
     YPlus = 2
     XMinus = 3
     YMinus = 4
+
+
+class MotionLockState(enum.IntEnum):
+    """Motion lock state."""
+
+    UNLOCKED = 0
+    LOCKING = 1
+    UNLOCKING = 2
+    LOCKED = 3
