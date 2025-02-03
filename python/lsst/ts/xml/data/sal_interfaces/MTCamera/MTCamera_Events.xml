@@ -153,10 +153,10 @@
   <SALEvent>
     <Subsystem>MTCamera</Subsystem>
     <EFDB_Topic>MTCamera_logevent_startSetFilter</EFDB_Topic>
-    <Description>Event generated at the begining of a setFilter operation</Description>
+    <Description>Event generated at the beginning of a setFilter operation</Description>
     <item>
       <EFDB_Name>filterName</EFDB_Name>
-      <Description>The name of the filter being installed (e.g. U-001)</Description>
+      <Description>The name of the filter being installed (e.g. u_24)</Description>
       <IDL_Type>string</IDL_Type>
       <IDL_Size>1</IDL_Size>
       <Units>unitless</Units>
@@ -433,7 +433,7 @@
       <IDL_Type>long</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
-      <Enumeration>UNLOADING,LOADING,LOADED,UNLOADED,ROTATING</Enumeration>
+      <Enumeration>UNLOADING,LOADING,LOADED,UNLOADED,ROTATING,NOFILTER,UNKNOWN</Enumeration>
     </item>
     <item>
       <EFDB_Name>timestampTransition</EFDB_Name>
@@ -668,7 +668,7 @@
     <Description>Event issued once the new filter is in its final position</Description>
     <item>
       <EFDB_Name>filterName</EFDB_Name>
-      <Description>The name of the filter being installed (e.g. U-001)</Description>
+      <Description>The name of the filter being installed (e.g. u_24)</Description>
       <IDL_Type>string</IDL_Type>
       <IDL_Size>1</IDL_Size>
       <Units>unitless</Units>
@@ -685,7 +685,7 @@
     </item>
     <item>
       <EFDB_Name>filterSlot</EFDB_Name>
-      <Description>The slot which the filter is in (ComCam) or came from (Main Camera)</Description>
+      <Description>The slot which the filter is in (ComCam) or carousel socket it came from (Main Camera).</Description>
       <IDL_Type>int</IDL_Type>
       <IDL_Size>1</IDL_Size>
       <Units>unitless</Units>
@@ -693,7 +693,7 @@
     </item>
     <item>
       <EFDB_Name>filterPosition</EFDB_Name>
-      <Description>For ComCam this is the measured linear encoder position once the filter in in place. For Main Camera it may be unused.</Description>
+      <Description>For ComCam this is the measured linear encoder position once the filter in in place. For then Main Camera it is the value of the proximity sensor positioned at online.</Description>
       <IDL_Type>double</IDL_Type>
       <IDL_Size>1</IDL_Size>
       <Units>mm</Units>
@@ -735,10 +735,10 @@
   <SALEvent>
     <Subsystem>MTCamera</Subsystem>
     <EFDB_Topic>MTCamera_logevent_availableFilters</EFDB_Topic>
-    <Description>Event listing the filters available to be selected</Description>
+    <Description>Event listing the filters available to be selected, including NONE which corresponds to no filter.</Description>
     <item>
       <EFDB_Name>filterNames</EFDB_Name>
-      <Description>A list of names of available filters (comma delimited, U-001,G-004,R-010,Z-012,Y-014, NONE), in the same order as the list of filter types.</Description>
+      <Description>A list of names of available filters (e.g. u_24,g_6,ef_43,NONE), in the same order as the list of filter types (comma delimited).</Description>
       <IDL_Type>string</IDL_Type>
       <IDL_Size>256</IDL_Size>
       <Units>unitless</Units>
@@ -768,7 +768,7 @@
     </item>
     <item>
       <EFDB_Name>maxSlowChangeTime</EFDB_Name>
-      <Description>The maximum estimated time (in seconds) for a setFilter command, when in degraded (slow) mode (per filter).</Description>
+      <Description>The maximum estimated time (in seconds) for a setFilter command, when in degraded mode (per filter).</Description>
       <IDL_Type>double</IDL_Type>
       <Units>second</Units>
       <Count>6</Count>
@@ -35782,7 +35782,7 @@
       <IDL_Type>long</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
-      <Enumeration>LOW_POWER,HIGH_POWER</Enumeration>
+      <Enumeration>LOW_POWER,REGULAR</Enumeration>
     </item>
   </SALEvent>
 </SALEventSet>
