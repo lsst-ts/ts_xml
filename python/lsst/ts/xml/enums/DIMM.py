@@ -17,49 +17,59 @@
 # GNU General Public License for more details.
 #
 # You should have received a copy of the GNU General Public License
+# along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-from . import (
-    ATMCS,
-    DIMM,
-    DREAM,
-    EPM,
-    ESS,
-    GIS,
-    HVAC,
-    MOSS,
-    MTAOS,
-    MTM1M3,
-    MTM2,
-    MTVMS,
-    PMD,
-    ATBuilding,
-    ATCamera,
-    ATDome,
-    ATDomeTrajectory,
-    ATHexapod,
-    ATMonochromator,
-    ATPneumatics,
-    ATPtg,
-    ATSpectrograph,
-    ATThermoelectricCooler,
-    ATWhiteLight,
-    Electrometer,
-    FiberSpectrograph,
-    Guider,
-    LaserTracker,
-    LEDProjector,
-    LinearStage,
-    MTDome,
-    MTDomeTrajectory,
-    MTHexapod,
-    MTMount,
-    MTPtg,
-    MTReflector,
-    MTRotator,
-    Scheduler,
-    Script,
-    ScriptQueue,
-    Test,
-    TunableLaser,
-    Watcher,
-)
+__all__ = [
+    "AmebaMode",
+    "ScopeMotion",
+    "Dome",
+    "AmebaState",
+    "ProgramControl",
+    "SkyStatus",
+]
+
+import enum
+
+
+class AmebaMode(enum.IntEnum):
+    Off = 0
+    Auto = 1
+    Manual = 2
+
+
+class ScopeMotion(enum.IntEnum):
+    Park = 0
+    Slew = 1
+    Stand = 2
+    Tracking = 3
+
+
+class Dome(enum.IntEnum):
+    Undefined = 0
+    Opened = 1
+    Closed = 2
+    Stated = 3
+
+
+class AmebaState(enum.IntEnum):
+    Inactive = 0
+    Waiting = 1
+    Slewing = 2
+    Tracking = 3
+    Focusing = 4
+    Monitoring = 5
+
+
+class ProgramControl(enum.IntEnum):
+    Stop = 0
+    Start = 1
+    Restart = 2
+    NoAction = 3
+
+
+class SkyStatus(enum.IntEnum):
+    Clear = 0
+    LightCoverage = 1
+    Cloudy = 2
+    Rain = 3
+    Snow = 4
