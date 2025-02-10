@@ -3,6 +3,164 @@
 <SALTelemetrySet xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://lsst-sal.tuc.noao.edu/schema/SALTelemetrySet.xsd">
   <SALTelemetry>
     <Subsystem>DIMM</Subsystem>
+    <EFDB_Topic>DIMM_ameba</EFDB_Topic>
+    <Description>Telemetry data for Ameba system</Description>
+    <item>
+      <EFDB_Name>mode</EFDB_Name>
+      <Description>The target state of DIMM monitoring, an AmebaMode enumeration.</Description>
+      <IDL_Type>long</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+      <!-- <Enumeration> AmebaMode </Enumeration> -->
+    </item>
+    <item>
+      <EFDB_Name>state</EFDB_Name>
+      <Description>The current working state, an AmebaState enumeration.</Description>
+      <IDL_Type>long</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+      <!-- <Enumeration> AmebaMode </Enumeration> -->
+    </item>
+    <item>
+      <EFDB_Name>sunAltitude</EFDB_Name>
+      <Description>Current sun altitude at the site.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>deg</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>condition</EFDB_Name>
+      <Description>
+        Current status of the ambient conditions as a bit-mask. Monitoring will start if all condition bits 
+        are set. The following bits are possible: Bit 0 (value 1) - Humidity is OK; Bit 1 (value 2) - Wind
+        is OK; Bit 2 (value 4) - Sky is clear.
+      </Description>
+      <IDL_Type>long</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>startTime</EFDB_Name>
+      <Description>
+        Time when system will power up, dome will open and automatic monitoring will start.
+      </Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>second</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>finishTime</EFDB_Name>
+      <Description>
+        Time when automatic monitoring will end, dome will close and system will park and power off.
+      </Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>second</Units>
+      <Count>1</Count>
+    </item>
+  </SALTelemetry>
+  <SALTelemetry>
+    <Subsystem>DIMM</Subsystem>
+    <EFDB_Topic>DIMM_cloudSensor</EFDB_Topic>
+    <Description>Cloud/rain sensor status</Description>
+    <item>
+      <EFDB_Name>ambientTemperature</EFDB_Name>
+      <Description>Cloud sensor temperature measurement.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>deg_C</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>skyTemperature</EFDB_Name>
+      <Description>Sky temperature measured by the cloud sensor.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>deg_C</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>deltaTemperature</EFDB_Name>
+      <Description>Difference between sky temperature and ambient temperature.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>deg_C</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>lightLevel</EFDB_Name>
+      <Description>Light intensity in arbitrary units.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>rainLevel</EFDB_Name>
+      <Description>Rain intensity in arbitrary units.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+  </SALTelemetry>
+  <SALTelemetry>
+    <Subsystem>DIMM</Subsystem>
+    <EFDB_Topic>DIMM_dome</EFDB_Topic>
+    <Description>Dome status</Description>
+    <item>
+      <EFDB_Name>status</EFDB_Name>
+      <Description>Current status of the dome, a Dome enumeration.</Description>
+      <IDL_Type>long</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>position</EFDB_Name>
+      <Description>Position of the dome, where 0.0 is fully closed and 1.0 is fully open.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>positionSideA</EFDB_Name>
+      <Description>Position of the first dome part, where 0.0 is fully closed and 1.0 is fully open.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>positionSideB</EFDB_Name>
+      <Description>Position of the second dome part, where 0.0 is fully closed and 1.0 is fully open.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>temperature</EFDB_Name>
+      <Description>Dome temperature</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>deg_C</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>powerState</EFDB_Name>
+      <Description>True if the dome is currently powered up.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>zenithDistanceA</EFDB_Name>
+      <Description>Zenith distance angle of dome side A, where 0=fully closed and 90=fully opened.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>deg</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>zenithDistanceB</EFDB_Name>
+      <Description>Zenith distance angle of dome side B, where 0=fully closed and 90=fully opened.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>deg</Units>
+      <Count>1</Count>
+    </item>
+  </SALTelemetry>
+  <SALTelemetry>
+    <Subsystem>DIMM</Subsystem>
     <EFDB_Topic>DIMM_sky</EFDB_Topic>
     <Description>Sky status</Description>
     <item>
@@ -13,51 +171,11 @@
       <Count>1</Count>
       <Enumeration>clear=0,lightcoverage=1,cloudy=2,rain=3,snow=4</Enumeration>
     </item>
-  </SALTelemetry>
-  <SALTelemetry>
-    <Subsystem>DIMM</Subsystem>
-    <EFDB_Topic>DIMM_meterology</EFDB_Topic>
-    <Description>Meterology data</Description>
     <item>
-      <EFDB_Name>ambientTemperature</EFDB_Name>
-      <Description>The ambient temperature.</Description>
+      <EFDB_Name>temperature</EFDB_Name>
+      <Description>The current sky temperature measured by the cloud sensor.</Description>
       <IDL_Type>float</IDL_Type>
       <Units>deg_C</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>dewpointTemperature</EFDB_Name>
-      <Description>The dewpoint temperature.</Description>
-      <IDL_Type>float</IDL_Type>
-      <Units>deg_C</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>pressure</EFDB_Name>
-      <Description>The pressure outside.</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>mbar</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>humidity</EFDB_Name>
-      <Description>The humidity outside.</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>%</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>windSpeed</EFDB_Name>
-      <Description>The wind speed.</Description>
-      <IDL_Type>float</IDL_Type>
-      <Units>m/s</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>windDirection</EFDB_Name>
-      <Description>The wind direction.</Description>
-      <IDL_Type>float</IDL_Type>
-      <Units>deg</Units>
       <Count>1</Count>
     </item>
   </SALTelemetry>
@@ -68,13 +186,6 @@
     <item>
       <EFDB_Name>status</EFDB_Name>
       <Description>The status of the DIMM.</Description>
-      <IDL_Type>long</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>hrNum</EFDB_Name>
-      <Description>HR star number</Description>
       <IDL_Type>long</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
@@ -105,6 +216,28 @@
       <Description>The declination position of the DIMM</Description>
       <IDL_Type>float</IDL_Type>
       <Units>degree</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>focus</EFDB_Name>
+      <Description>Current focus position in arbitrary units.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>motionState</EFDB_Name>
+      <Description>Current motion state of the telescope, a ScopeMotion enumeration.</Description>
+      <IDL_Type>long</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+      <!-- <Enumeration>ScopeMotion</Enumeration>-->
+    </item>
+    <item>
+      <EFDB_Name>powerState</EFDB_Name>
+      <Description>True if the telescope is currently powered up.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
       <Count>1</Count>
     </item>
   </SALTelemetry>

@@ -27,6 +27,11 @@
   </SALCommand>
   <SALCommand>
     <Subsystem>DIMM</Subsystem>
+    <EFDB_Topic>DIMM_command_clearMountError</EFDB_Topic>
+    <Description>Reset telescope error conditions.</Description>
+  </SALCommand>
+  <SALCommand>
+    <Subsystem>DIMM</Subsystem>
     <EFDB_Topic>DIMM_command_gotoAltAz</EFDB_Topic>
     <Description>Slew telescope to target Alt/Az.</Description>
     <item>
@@ -41,6 +46,13 @@
       <Description>Azimuth of target.</Description>
       <IDL_Type>double</IDL_Type>
       <Units>deg</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>track</EFDB_Name>
+      <Description>Enable equatorial tracking after the telescope arrives at the commanded position?</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
       <Count>1</Count>
     </item>
   </SALCommand>
@@ -66,6 +78,332 @@
       <EFDB_Name>track</EFDB_Name>
       <Description>Track target.</Description>
       <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+  </SALCommand>
+  <SALCommand>
+    <Subsystem>DIMM</Subsystem>
+    <EFDB_Topic>DIMM_command_point</EFDB_Topic>
+    <Description>Start equatorial tracking at the set up location.</Description>
+  </SALCommand>
+  <SALCommand>
+    <Subsystem>DIMM</Subsystem>
+    <EFDB_Topic>DIMM_command_stop</EFDB_Topic>
+    <Description>Discontinue tracking without parking or otherwise moving the telescope.</Description>
+  </SALCommand>
+  <SALCommand>
+    <Subsystem>DIMM</Subsystem>
+    <EFDB_Topic>DIMM_command_setManualTarget</EFDB_Topic>
+    <Description>Set up a manual target in the AMEBA module.</Description>
+    <item>
+      <EFDB_Name>targetName</EFDB_Name>
+      <Description>Name of the manual target.</Description>
+      <IDL_Type>string</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>rightAscension</EFDB_Name>
+      <Description>Right ascension (equinox of J2000.0).</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>deg</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>declination</EFDB_Name>
+      <Description>Declination (equinox of J2000.0).</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>deg</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>brightness</EFDB_Name>
+      <Description>Apparent visual brightness in the V-band.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>mag</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>color</EFDB_Name>
+      <Description>Object color difference between the B- and V-band.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>mag</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>stellarClass</EFDB_Name>
+      <Description>Yerkes spectral classification of the object, e.g., 'G5III'.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>mag</Units>
+      <Count>1</Count>
+    </item>
+  </SALCommand>
+  <SALCommand>
+    <Subsystem>DIMM</Subsystem>
+    <EFDB_Topic>DIMM_command_setAmebaMode</EFDB_Topic>
+    <Description>Set ameba mode (off, auto, or manual) through tt-master.</Description>
+    <item>
+      <EFDB_Name>mode</EFDB_Name>
+      <Description>Ameba mode, an AmebaMode enumeration.</Description>
+      <IDL_Type>long</IDL_Type>
+      <!-- <Enumeration> AmebaMode </Enumeration> -->
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+  </SALCommand>
+  <SALCommand>
+    <Subsystem>DIMM</Subsystem>
+    <EFDB_Topic>DIMM_command_runDimmManual</EFDB_Topic>
+    <Description>Manually begin the DIMM control loop.</Description>
+    <item>
+      <EFDB_Name>mode</EFDB_Name>
+      <Description>Operation mode for the DIMM control loop.</Description>
+      <IDL_Type>long</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+  </SALCommand>
+  <SALCommand>
+    <Subsystem>DIMM</Subsystem>
+    <EFDB_Topic>DIMM_command_stopDimmManual</EFDB_Topic>
+    <Description>Manually stop the DIMM control loop.</Description>
+  </SALCommand>
+  <SALCommand>
+    <Subsystem>DIMM</Subsystem>
+    <EFDB_Topic>DIMM_command_setProgramStatus</EFDB_Topic>
+    <Description>
+      Send command(s) to change the state of program(s) running on the DIMM. For each item, use a value
+      from the ProgramControl enumeration to specify the desired action, or NoAction to leave the
+      state of the program as it was.
+    </Description>
+    <item>
+      <EFDB_Name>ameba</EFDB_Name>
+      <Description>The commanded status for the AMEBA program.</Description>
+      <IDL_Type>long</IDL_Type>
+      <!-- <Enumeration> ProgramControl </Enumeration> -->
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>dimm</EFDB_Name>
+      <Description>The commanded status for the DIMM program.</Description>
+      <IDL_Type>long</IDL_Type>
+      <!-- <Enumeration> ProgramControl </Enumeration> -->
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>dome</EFDB_Name>
+      <Description>The commanded status for the DOME program.</Description>
+      <IDL_Type>long</IDL_Type>
+      <!-- <Enumeration> ProgramControl </Enumeration> -->
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>meteo</EFDB_Name>
+      <Description>The commanded status for the METEO program.</Description>
+      <IDL_Type>long</IDL_Type>
+      <!-- <Enumeration> ProgramControl </Enumeration> -->
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>scope</EFDB_Name>
+      <Description>The commanded status for the SCOPE program.</Description>
+      <IDL_Type>long</IDL_Type>
+      <!-- <Enumeration> ProgramControl </Enumeration> -->
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+  </SALCommand>
+  <SALCommand>
+    <Subsystem>DIMM</Subsystem>
+    <EFDB_Topic>DIMM_command_init</EFDB_Topic>
+    <Description>Initialize program(s) on the DIMM by sending INIT via the Kornilov protocol.</Description>
+    <item>
+      <EFDB_Name>initProgram</EFDB_Name>
+      <Description>
+          Which program(s) to initialize, indicated by setting the argument to True in the array. The array
+          indices correspond to (0) dimm-tool, (1) ameba, (2) tt-meteo, (3) tt-dome-astrohaven, and
+          (4) tt-scope.
+      </Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>5</Count>
+    </item>
+  </SALCommand>
+  <SALCommand>
+    <Subsystem>DIMM</Subsystem>
+    <EFDB_Topic>DIMM_command_park</EFDB_Topic>
+    <Description>Park program(s) on the DIMM by sending PARK via the Kornilov protocol.</Description>
+    <item>
+      <EFDB_Name>parkProgram</EFDB_Name>
+      <Description>
+          Which program(s) to park, indicated by setting the argument to True in the array. The array
+          indices correspond to (0) dimm-tool, (1) ameba, (2) tt-meteo, (3) tt-dome-astrohaven, and
+          (4) tt-scope.
+      </Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>5</Count>
+    </item>
+  </SALCommand>
+  <SALCommand>
+    <Subsystem>DIMM</Subsystem>
+    <EFDB_Topic>DIMM_command_parkMount</EFDB_Topic>
+    <Description>Physically park the telescope mount.</Description>
+  </SALCommand>
+  <SALCommand>
+    <Subsystem>DIMM</Subsystem>
+    <EFDB_Topic>DIMM_command_setWeather</EFDB_Topic>
+    <Description>Send weather data to the DIMM.</Description>
+    <item>
+      <EFDB_Name>ambientTemperature</EFDB_Name>
+      <Description>The ambient temperature.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>deg_C</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>dewpointTemperature</EFDB_Name>
+      <Description>The dewpoint temperature (currently unused).</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>deg_C</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>pressure</EFDB_Name>
+      <Description>The pressure outside.</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>mbar</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>humidity</EFDB_Name>
+      <Description>The humidity outside.</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>%</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>windSpeed</EFDB_Name>
+      <Description>The wind speed.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>m/s</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>windDirection</EFDB_Name>
+      <Description>The wind direction (currently unused).</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>deg</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>rain</EFDB_Name>
+      <Description>True if the DIMM meteorology module is reporting rain.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+  </SALCommand>
+  <SALCommand>
+    <Subsystem>DIMM</Subsystem>
+    <EFDB_Topic>DIMM_command_setSky</EFDB_Topic>
+    <Description>Send sky sensor data to the DIMM.</Description>
+    <item>
+      <EFDB_Name>status</EFDB_Name>
+      <Description>The current sky status.</Description>
+      <IDL_Type>long</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+      <!-- <Enumeration> SkyStatus </Enumeration> -->
+    </item>
+    <item>
+      <EFDB_Name>temperature</EFDB_Name>
+      <Description>The current sky temperature measured by the cloud sensor.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>deg_C</Units>
+      <Count>1</Count>
+    </item>
+  </SALCommand>
+  <SALCommand>
+    <Subsystem>DIMM</Subsystem>
+    <EFDB_Topic>DIMM_command_offsetPointing</EFDB_Topic>
+    <Description>Apply an offset to the telescope's pointing.</Description>
+    <item>
+      <EFDB_Name>offsetX</EFDB_Name>
+      <Description>The instrumental offset to be applied in the hour angle axis.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>deg</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>offsetY</EFDB_Name>
+      <Description>The instrumental offset to be applied in the declination axis.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>deg</Units>
+      <Count>1</Count>
+    </item>
+  </SALCommand>
+  <SALCommand>
+    <Subsystem>DIMM</Subsystem>
+    <EFDB_Topic>DIMM_command_offsetFocus</EFDB_Topic>
+    <Description>Apply an offset to the focuser position.</Description>
+    <item>
+      <EFDB_Name>offsetSteps</EFDB_Name>
+      <Description>
+        The amount of offset to be applied, in steps. Setting this to zero has no effect on the focus position.
+      </Description>
+      <IDL_Type>long long</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+  </SALCommand>
+  <SALCommand>
+    <Subsystem>DIMM</Subsystem>
+    <EFDB_Topic>DIMM_command_defineFocus</EFDB_Topic>
+    <Description>
+      Defines the current focus position to the position specified by the argument. Future
+      telemetry will show the focuser at this position. The focuser is not physically moved by
+      this command.
+    </Description>
+    <item>
+      <EFDB_Name>newSteps</EFDB_Name>
+      <Description>
+        The desired new position for the focuser.
+      </Description>
+      <IDL_Type>long long</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+  </SALCommand>
+  <SALCommand>
+    <Subsystem>DIMM</Subsystem>
+    <EFDB_Topic>DIMM_command_moveDomeSideA</EFDB_Topic>
+    <Description>Manually move the first dome side to the requested position.</Description>
+    <item>
+      <EFDB_Name>position</EFDB_Name>
+      <Description>
+        The desired dome position, with 0.0 representing fully closed and 1.0 being fully opened.
+      </Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+  </SALCommand>
+  <SALCommand>
+    <Subsystem>DIMM</Subsystem>
+    <EFDB_Topic>DIMM_command_moveDomeSideB</EFDB_Topic>
+    <Description>Manually move the second dome side to the requested position.</Description>
+    <item>
+      <EFDB_Name>position</EFDB_Name>
+      <Description>
+        The desired dome position, with 0.0 representing fully closed and 1.0 being fully opened.
+      </Description>
+      <IDL_Type>float</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
     </item>
