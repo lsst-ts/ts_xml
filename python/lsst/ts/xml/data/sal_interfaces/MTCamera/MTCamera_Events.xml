@@ -1132,6 +1132,785 @@
       <Count>1</Count>
     </item>
   </SALEvent>
+  <SALEvent>
+    <Subsystem>MTCamera</Subsystem>
+    <EFDB_Topic>MTCamera_logevent_rebCond</EFDB_Topic>
+    <Description>Event sent at start of readout with the REB conditions (as written to FITS files REB_COND extension)
+    Primarily sent for consumption by header service as a way of getting data into the consolidated database</Description>
+    <item>
+      <EFDB_Name>imageName</EFDB_Name>
+      <Description>The imageName for this specific exposure</Description>
+      <IDL_Type>string</IDL_Type>
+      <IDL_Size>1</IDL_Size>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>rebLocation</EFDB_Name>
+      <Description>REB location (: delimited)</Description>
+      <IDL_Type>string</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>ccdLocation</EFDB_Name>
+      <Description>CCD location (: delimited)</Description>
+      <IDL_Type>string</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <!--CCSMETA: Array temp1 indexed by reblocation-->
+    <item>
+      <EFDB_Name>reb_temp1</EFDB_Name>
+      <Description>REB Board temperature 1</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>degree</Units>
+      <Count>71</Count>
+    </item>
+    <!--CCSMETA: Array temp2 indexed by reblocation-->
+    <item>
+      <EFDB_Name>reb_temp2</EFDB_Name>
+      <Description>REB Board temperature 2</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>degree</Units>
+      <Count>71</Count>
+    </item>
+    <!--CCSMETA: Array temp3 indexed by reblocation-->
+    <item>
+      <EFDB_Name>reb_temp3</EFDB_Name>
+      <Description>REB Board temperature 3</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>degree</Units>
+      <Count>71</Count>
+    </item>
+    <!--CCSMETA: Array temp4 indexed by reblocation-->
+    <item>
+      <EFDB_Name>reb_temp4</EFDB_Name>
+      <Description>REB Board temperature 4</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>degree</Units>
+      <Count>71</Count>
+    </item>
+    <!--CCSMETA: Array temp5 indexed by reblocation-->
+    <item>
+      <EFDB_Name>reb_temp5</EFDB_Name>
+      <Description>REB Board temperature 5</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>degree</Units>
+      <Count>71</Count>
+    </item>
+    <!--CCSMETA: Array temp6 indexed by reblocation-->
+    <item>
+      <EFDB_Name>reb_temp6</EFDB_Name>
+      <Description>REB Board temperature 6</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>degree</Units>
+      <Count>71</Count>
+    </item>
+    <!--CCSMETA: Array temp7 indexed by reblocation-->
+    <item>
+      <EFDB_Name>reb_temp7</EFDB_Name>
+      <Description>REB Board temperature 7</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>degree</Units>
+      <Count>71</Count>
+    </item>
+    <!--CCSMETA: Array temp8 indexed by reblocation-->
+    <item>
+      <EFDB_Name>reb_temp8</EFDB_Name>
+      <Description>REB Board temperature 8</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>degree</Units>
+      <Count>71</Count>
+    </item>
+    <!--CCSMETA: Array temp9 indexed by reblocation-->
+    <item>
+      <EFDB_Name>reb_temp9</EFDB_Name>
+      <Description>REB Board temperature 9</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>degree</Units>
+      <Count>71</Count>
+    </item>
+    <!--CCSMETA: Array temp10 indexed by reblocation-->
+    <item>
+      <EFDB_Name>reb_temp10</EFDB_Name>
+      <Description>REB Board temperature 10</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>degree</Units>
+      <Count>71</Count>
+    </item>
+    <!--CCSMETA: Array atempu indexed by reblocation-->
+    <item>
+      <EFDB_Name>reb_atempu</EFDB_Name>
+      <Description>ASPIC 0 upper temperature</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>degree</Units>
+      <Count>71</Count>
+    </item>
+    <!--CCSMETA: Array atempl indexed by reblocation-->
+    <item>
+      <EFDB_Name>reb_atempl</EFDB_Name>
+      <Description>ASPIC 0 lower temperature</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>degree</Units>
+      <Count>71</Count>
+    </item>
+    <!--CCSMETA: Array ccdtemp indexed by ccdlocation-->
+    <item>
+      <EFDB_Name>ccd_ccdtemp</EFDB_Name>
+      <Description>CCD temperature</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>degree</Units>
+      <Count>205</Count>
+    </item>
+    <!--CCSMETA: Array rtdtemp indexed by reblocation-->
+    <item>
+      <EFDB_Name>reb_rtdtemp</EFDB_Name>
+      <Description>RTD temperature</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>degree</Units>
+      <Count>71</Count>
+    </item>
+    <!--CCSMETA: Array digps_v indexed by reblocation-->
+    <item>
+      <EFDB_Name>reb_digps_v</EFDB_Name>
+      <Description>REB Digital PS voltage</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>volt</Units>
+      <Count>71</Count>
+    </item>
+    <!--CCSMETA: Array digps_i indexed by reblocation-->
+    <item>
+      <EFDB_Name>reb_digps_i</EFDB_Name>
+      <Description>REB Digital PS current</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>mA</Units>
+      <Count>71</Count>
+    </item>
+    <!--CCSMETA: Array anaps_v indexed by reblocation-->
+    <item>
+      <EFDB_Name>reb_anaps_v</EFDB_Name>
+      <Description>REB Analog PS voltage</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>volt</Units>
+      <Count>71</Count>
+    </item>
+    <!--CCSMETA: Array anaps_i indexed by reblocation-->
+    <item>
+      <EFDB_Name>reb_anaps_i</EFDB_Name>
+      <Description>REB Analog PS current</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>mA</Units>
+      <Count>71</Count>
+    </item>
+    <!--CCSMETA: Array clkhps_v indexed by reblocation-->
+    <item>
+      <EFDB_Name>reb_clkhps_v</EFDB_Name>
+      <Description>REB CLK_H PS voltage</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>volt</Units>
+      <Count>71</Count>
+    </item>
+    <!--CCSMETA: Array clkhps_i indexed by reblocation-->
+    <item>
+      <EFDB_Name>reb_clkhps_i</EFDB_Name>
+      <Description>REB CLK_H PS current</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>mA</Units>
+      <Count>71</Count>
+    </item>
+    <!--CCSMETA: Array clklps_v indexed by reblocation-->
+    <item>
+      <EFDB_Name>reb_clklps_v</EFDB_Name>
+      <Description>REB CLK_L PS voltage</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>volt</Units>
+      <Count>71</Count>
+    </item>
+    <!--CCSMETA: Array clklps_i indexed by reblocation-->
+    <item>
+      <EFDB_Name>reb_clklps_i</EFDB_Name>
+      <Description>REB CLK_L PS current</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>mA</Units>
+      <Count>71</Count>
+    </item>
+    <!--CCSMETA: Array odps_v indexed by reblocation-->
+    <item>
+      <EFDB_Name>reb_odps_v</EFDB_Name>
+      <Description>REB OD PS voltage</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>volt</Units>
+      <Count>71</Count>
+    </item>
+    <!--CCSMETA: Array odps_i indexed by reblocation-->
+    <item>
+      <EFDB_Name>reb_odps_i</EFDB_Name>
+      <Description>REB OD PS current</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>mA</Units>
+      <Count>71</Count>
+    </item>
+    <!--CCSMETA: Array htrps_v indexed by reblocation-->
+    <item>
+      <EFDB_Name>reb_htrps_v</EFDB_Name>
+      <Description>REB Heater PS voltage</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>volt</Units>
+      <Count>71</Count>
+    </item>
+    <!--CCSMETA: Array htrps_w indexed by reblocation-->
+    <item>
+      <EFDB_Name>reb_htrps_w</EFDB_Name>
+      <Description>REB Heater PS power</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>Watt</Units>
+      <Count>71</Count>
+    </item>
+    <!--CCSMETA: Array pcku_v indexed by reblocation-->
+    <item>
+      <EFDB_Name>reb_pcku_v</EFDB_Name>
+      <Description>REB clock rails PCK_U Voltage</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>volt</Units>
+      <Count>71</Count>
+    </item>
+    <!--CCSMETA: Array pckl_v indexed by reblocation-->
+    <item>
+      <EFDB_Name>reb_pckl_v</EFDB_Name>
+      <Description>REB clock rails PCK_L Voltage</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>volt</Units>
+      <Count>71</Count>
+    </item>
+    <!--CCSMETA: Array scku_v indexed by reblocation-->
+    <item>
+      <EFDB_Name>reb_scku_v</EFDB_Name>
+      <Description>REB clock rails SCK_U Voltage</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>volt</Units>
+      <Count>71</Count>
+    </item>
+    <!--CCSMETA: Array sckl_v indexed by reblocation-->
+    <item>
+      <EFDB_Name>reb_sckl_v</EFDB_Name>
+      <Description>REB clock rails SCK_L Voltage</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>volt</Units>
+      <Count>71</Count>
+    </item>
+    <!--CCSMETA: Array rgu_v indexed by reblocation-->
+    <item>
+      <EFDB_Name>reb_rgu_v</EFDB_Name>
+      <Description>REB clock rails RG_U Voltage</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>volt</Units>
+      <Count>71</Count>
+    </item>
+    <!--CCSMETA: Array rgl_v indexed by reblocation-->
+    <item>
+      <EFDB_Name>reb_rgl_v</EFDB_Name>
+      <Description>REB clock rails RG_L Voltage</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>volt</Units>
+      <Count>71</Count>
+    </item>
+    <!--CCSMETA: Array odv indexed by ccdlocation-->
+    <item>
+      <EFDB_Name>ccd_odv</EFDB_Name>
+      <Description>REB bias OD voltage</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>volt</Units>
+      <Count>205</Count>
+    </item>
+    <!--CCSMETA: Array ogv indexed by ccdlocation-->
+    <item>
+      <EFDB_Name>ccd_ogv</EFDB_Name>
+      <Description>REB bias OG voltage</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>volt</Units>
+      <Count>205</Count>
+    </item>
+    <!--CCSMETA: Array rdv indexed by ccdlocation-->
+    <item>
+      <EFDB_Name>ccd_rdv</EFDB_Name>
+      <Description>REB bias RD voltage</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>volt</Units>
+      <Count>205</Count>
+    </item>
+    <!--CCSMETA: Array gdv indexed by ccdlocation-->
+    <item>
+      <EFDB_Name>ccd_gdv</EFDB_Name>
+      <Description>REB bias GD voltage</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>volt</Units>
+      <Count>205</Count>
+    </item>
+    <!--CCSMETA: Array gdp indexed by ccdlocation-->
+    <item>
+      <EFDB_Name>ccd_gdp</EFDB_Name>
+      <Description>REB config bias GD (requested)</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>volt</Units>
+      <Count>205</Count>
+    </item>
+    <!--CCSMETA: Array rdp indexed by ccdlocation-->
+    <item>
+      <EFDB_Name>ccd_rdp</EFDB_Name>
+      <Description>REB config bias RD (requested)</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>volt</Units>
+      <Count>205</Count>
+    </item>
+    <!--CCSMETA: Array ogp indexed by ccdlocation-->
+    <item>
+      <EFDB_Name>ccd_ogp</EFDB_Name>
+      <Description>REB config bias OG (requested)</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>volt</Units>
+      <Count>205</Count>
+    </item>
+    <!--CCSMETA: Array odp indexed by ccdlocation-->
+    <item>
+      <EFDB_Name>ccd_odp</EFDB_Name>
+      <Description>REB config bias OD (requested)</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>volt</Units>
+      <Count>205</Count>
+    </item>
+    <!--CCSMETA: Array csgatep indexed by ccdlocation-->
+    <item>
+      <EFDB_Name>ccd_csgatep</EFDB_Name>
+      <Description>REB config bias CS gate (requested)</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>mA</Units>
+      <Count>205</Count>
+    </item>
+    <!--CCSMETA: Array sck_lowp indexed by reblocation-->
+    <item>
+      <EFDB_Name>reb_sck_lowp</EFDB_Name>
+      <Description>REB DAC SCLK Low (requested)</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>volt</Units>
+      <Count>71</Count>
+    </item>
+    <!--CCSMETA: Array sck_hip indexed by reblocation-->
+    <item>
+      <EFDB_Name>reb_sck_hip</EFDB_Name>
+      <Description>REB DAC SCLK High (requested)</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>volt</Units>
+      <Count>71</Count>
+    </item>
+    <!--CCSMETA: Array pck_lowp indexed by reblocation-->
+    <item>
+      <EFDB_Name>reb_pck_lowp</EFDB_Name>
+      <Description>REB DAC PCLK Low (requested)</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>volt</Units>
+      <Count>71</Count>
+    </item>
+    <!--CCSMETA: Array pck_hip indexed by reblocation-->
+    <item>
+      <EFDB_Name>reb_pck_hip</EFDB_Name>
+      <Description>REB DAC PCLK High (requested)</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>volt</Units>
+      <Count>71</Count>
+    </item>
+    <!--CCSMETA: Array rg_lowp indexed by reblocation-->
+    <item>
+      <EFDB_Name>reb_rg_lowp</EFDB_Name>
+      <Description>REB DAC RG Low (requested)</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>volt</Units>
+      <Count>71</Count>
+    </item>
+    <!--CCSMETA: Array rg_hip indexed by reblocation-->
+    <item>
+      <EFDB_Name>reb_rg_hip</EFDB_Name>
+      <Description>REB DAC RG High (requested)</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>volt</Units>
+      <Count>71</Count>
+    </item>
+    <!--CCSMETA: Array ap0_rc indexed by ccdlocation-->
+    <item>
+      <EFDB_Name>ccd_ap0_rc</EFDB_Name>
+      <Description>CCD ASPIC 0 RC</Description>
+      <IDL_Type>int</IDL_Type>
+      <Units>unitless</Units>
+      <Count>205</Count>
+    </item>
+    <!--CCSMETA: Array ap1_rc indexed by ccdlocation-->
+    <item>
+      <EFDB_Name>ccd_ap1_rc</EFDB_Name>
+      <Description>CCD ASPIC 1 RC</Description>
+      <IDL_Type>int</IDL_Type>
+      <Units>unitless</Units>
+      <Count>205</Count>
+    </item>
+    <!--CCSMETA: Array ap0_gain indexed by ccdlocation-->
+    <item>
+      <EFDB_Name>ccd_ap0_gain</EFDB_Name>
+      <Description>CCD ASPIC 0 gain</Description>
+      <IDL_Type>int</IDL_Type>
+      <Units>unitless</Units>
+      <Count>205</Count>
+    </item>
+    <!--CCSMETA: Array ap1_gain indexed by ccdlocation-->
+    <item>
+      <EFDB_Name>ccd_ap1_gain</EFDB_Name>
+      <Description>CCD ASPIC 1 gain</Description>
+      <IDL_Type>int</IDL_Type>
+      <Units>unitless</Units>
+      <Count>205</Count>
+    </item>
+    <!--CCSMETA: Array ap0_clmp indexed by ccdlocation-->
+    <item>
+      <EFDB_Name>ccd_ap0_clmp</EFDB_Name>
+      <Description>CCD ASPIC 0 clamp</Description>
+      <IDL_Type>int</IDL_Type>
+      <Units>unitless</Units>
+      <Count>205</Count>
+    </item>
+    <!--CCSMETA: Array ap1_clmp indexed by ccdlocation-->
+    <item>
+      <EFDB_Name>ccd_ap1_clmp</EFDB_Name>
+      <Description>CCD ASPIC 1 clamp</Description>
+      <IDL_Type>int</IDL_Type>
+      <Units>unitless</Units>
+      <Count>205</Count>
+    </item>
+    <!--CCSMETA: Array ap0_af1 indexed by ccdlocation-->
+    <item>
+      <EFDB_Name>ccd_ap0_af1</EFDB_Name>
+      <Description>CCD ASPIC 0 af1</Description>
+      <IDL_Type>int</IDL_Type>
+      <Units>unitless</Units>
+      <Count>205</Count>
+    </item>
+    <!--CCSMETA: Array ap1_af1 indexed by ccdlocation-->
+    <item>
+      <EFDB_Name>ccd_ap1_af1</EFDB_Name>
+      <Description>CCD ASPIC 1 af1</Description>
+      <IDL_Type>int</IDL_Type>
+      <Units>unitless</Units>
+      <Count>205</Count>
+    </item>
+    <!--CCSMETA: Array ap0_tm indexed by ccdlocation-->
+    <item>
+      <EFDB_Name>ccd_ap0_tm</EFDB_Name>
+      <Description>CCD ASPIC 0 Transparent Mode</Description>
+      <IDL_Type>int</IDL_Type>
+      <Units>unitless</Units>
+      <Count>205</Count>
+    </item>
+    <!--CCSMETA: Array ap1_tm indexed by ccdlocation-->
+    <item>
+      <EFDB_Name>ccd_ap1_tm</EFDB_Name>
+      <Description>CCD ASPIC 1 Transparent Mode</Description>
+      <IDL_Type>int</IDL_Type>
+      <Units>unitless</Units>
+      <Count>205</Count>
+    </item>
+    <!--CCSMETA: Array hvbias indexed by reblocation-->
+    <item>
+      <EFDB_Name>reb_hvbias</EFDB_Name>
+      <Description>REB HVBias Switch state</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>71</Count>
+    </item>
+    <item>
+      <EFDB_Name>idleflsh</EFDB_Name>
+      <Description>IDLE FLUSH setting</Description>
+      <IDL_Type>int</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <!--CCSMETA: Array power indexed by reblocation-->
+    <item>
+      <EFDB_Name>reb_power</EFDB_Name>
+      <Description>Total REB PS power</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>Watt</Units>
+      <Count>71</Count>
+    </item>
+    <!--CCSMETA: Array digvb indexed by reblocation-->
+    <item>
+      <EFDB_Name>reb_digvb</EFDB_Name>
+      <Description>REB PS Digi Voltage before LDO</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>volt</Units>
+      <Count>71</Count>
+    </item>
+    <!--CCSMETA: Array digib indexed by reblocation-->
+    <item>
+      <EFDB_Name>reb_digib</EFDB_Name>
+      <Description>REB PS Digi Current before LDO</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>mA</Units>
+      <Count>71</Count>
+    </item>
+    <!--CCSMETA: Array digva indexed by reblocation-->
+    <item>
+      <EFDB_Name>reb_digva</EFDB_Name>
+      <Description>REB PS Digi Voltage after LDO</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>volt</Units>
+      <Count>71</Count>
+    </item>
+    <!--CCSMETA: Array digia indexed by reblocation-->
+    <item>
+      <EFDB_Name>reb_digia</EFDB_Name>
+      <Description>REB PS Digi Current after LDO</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>mA</Units>
+      <Count>71</Count>
+    </item>
+    <!--CCSMETA: Array digvs indexed by reblocation-->
+    <item>
+      <EFDB_Name>reb_digvs</EFDB_Name>
+      <Description>REB PS Digi Voltage after Switch</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>volt</Units>
+      <Count>71</Count>
+    </item>
+    <!--CCSMETA: Array anavb indexed by reblocation-->
+    <item>
+      <EFDB_Name>reb_anavb</EFDB_Name>
+      <Description>REB PS Ana Voltage before LDO</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>volt</Units>
+      <Count>71</Count>
+    </item>
+    <!--CCSMETA: Array anaib indexed by reblocation-->
+    <item>
+      <EFDB_Name>reb_anaib</EFDB_Name>
+      <Description>REB PS Ana Current before LDO</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>mA</Units>
+      <Count>71</Count>
+    </item>
+    <!--CCSMETA: Array anava indexed by reblocation-->
+    <item>
+      <EFDB_Name>reb_anava</EFDB_Name>
+      <Description>REB PS Ana Voltage after LDO</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>volt</Units>
+      <Count>71</Count>
+    </item>
+    <!--CCSMETA: Array anaia indexed by reblocation-->
+    <item>
+      <EFDB_Name>reb_anaia</EFDB_Name>
+      <Description>REB PS Ana  Current after LDO</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>mA</Units>
+      <Count>71</Count>
+    </item>
+    <!--CCSMETA: Array anais indexed by reblocation-->
+    <item>
+      <EFDB_Name>reb_anais</EFDB_Name>
+      <Description>REB PS Ana Voltage after Switch</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>volt</Units>
+      <Count>71</Count>
+    </item>
+    <!--CCSMETA: Array odvb indexed by reblocation-->
+    <item>
+      <EFDB_Name>reb_odvb</EFDB_Name>
+      <Description>REB PS OD Voltage before LDO</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>volt</Units>
+      <Count>71</Count>
+    </item>
+    <!--CCSMETA: Array odib indexed by reblocation-->
+    <item>
+      <EFDB_Name>reb_odib</EFDB_Name>
+      <Description>REB PS OD Current before LDO</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>mA</Units>
+      <Count>71</Count>
+    </item>
+    <!--CCSMETA: Array odva indexed by reblocation-->
+    <item>
+      <EFDB_Name>reb_odva</EFDB_Name>
+      <Description>REB PS OD Voltage after LDO</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>volt</Units>
+      <Count>71</Count>
+    </item>
+    <!--CCSMETA: Array odva2 indexed by reblocation-->
+    <item>
+      <EFDB_Name>reb_odva2</EFDB_Name>
+      <Description>REB PS OD Voltage after LDO2</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>volt</Units>
+      <Count>71</Count>
+    </item>
+    <!--CCSMETA: Array odia indexed by reblocation-->
+    <item>
+      <EFDB_Name>reb_odia</EFDB_Name>
+      <Description>REB PS OD Current after LDO</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>mA</Units>
+      <Count>71</Count>
+    </item>
+    <!--CCSMETA: Array odvs indexed by reblocation-->
+    <item>
+      <EFDB_Name>reb_odvs</EFDB_Name>
+      <Description>REB PS OD Voltage after Switch</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>volt</Units>
+      <Count>71</Count>
+    </item>
+    <!--CCSMETA: Array ckhvb indexed by reblocation-->
+    <item>
+      <EFDB_Name>reb_ckhvb</EFDB_Name>
+      <Description>REB PS Clk HI Voltage before LDO</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>volt</Units>
+      <Count>71</Count>
+    </item>
+    <!--CCSMETA: Array ckhib indexed by reblocation-->
+    <item>
+      <EFDB_Name>reb_ckhib</EFDB_Name>
+      <Description>REB PS Clk HI Current before LDO</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>mA</Units>
+      <Count>71</Count>
+    </item>
+    <!--CCSMETA: Array ckhva indexed by reblocation-->
+    <item>
+      <EFDB_Name>reb_ckhva</EFDB_Name>
+      <Description>REB PS Clk HI Voltage after LDO</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>volt</Units>
+      <Count>71</Count>
+    </item>
+    <!--CCSMETA: Array ckhia indexed by reblocation-->
+    <item>
+      <EFDB_Name>reb_ckhia</EFDB_Name>
+      <Description>REB PS Clk HI Current after LDO</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>mA</Units>
+      <Count>71</Count>
+    </item>
+    <!--CCSMETA: Array ckhvs indexed by reblocation-->
+    <item>
+      <EFDB_Name>reb_ckhvs</EFDB_Name>
+      <Description>REB PS Clk HI Voltage after Switch</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>volt</Units>
+      <Count>71</Count>
+    </item>
+    <!--CCSMETA: Array cklvb indexed by reblocation-->
+    <item>
+      <EFDB_Name>reb_cklvb</EFDB_Name>
+      <Description>REB PS Clk LO Voltage before LDO</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>volt</Units>
+      <Count>71</Count>
+    </item>
+    <!--CCSMETA: Array cklib indexed by reblocation-->
+    <item>
+      <EFDB_Name>reb_cklib</EFDB_Name>
+      <Description>REB PS Clk LO Current before LDO</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>mA</Units>
+      <Count>71</Count>
+    </item>
+    <!--CCSMETA: Array cklva indexed by reblocation-->
+    <item>
+      <EFDB_Name>reb_cklva</EFDB_Name>
+      <Description>REB PS Clk LO Voltage after LDO</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>volt</Units>
+      <Count>71</Count>
+    </item>
+    <!--CCSMETA: Array cklv2 indexed by reblocation-->
+    <item>
+      <EFDB_Name>reb_cklv2</EFDB_Name>
+      <Description>REB PS Clk LO Voltage after LDO2</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>volt</Units>
+      <Count>71</Count>
+    </item>
+    <!--CCSMETA: Array cklia indexed by reblocation-->
+    <item>
+      <EFDB_Name>reb_cklia</EFDB_Name>
+      <Description>REB PS Clk LO Current after LDO</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>mA</Units>
+      <Count>71</Count>
+    </item>
+    <!--CCSMETA: Array cklvs indexed by reblocation-->
+    <item>
+      <EFDB_Name>reb_cklvs</EFDB_Name>
+      <Description>REB PS Clk LO Voltage after Switch</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>volt</Units>
+      <Count>71</Count>
+    </item>
+    <!--CCSMETA: Array htrvb indexed by reblocation-->
+    <item>
+      <EFDB_Name>reb_htrvb</EFDB_Name>
+      <Description>REB PS Clk Heater Voltage before LDO</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>volt</Units>
+      <Count>71</Count>
+    </item>
+    <!--CCSMETA: Array htrib indexed by reblocation-->
+    <item>
+      <EFDB_Name>reb_htrib</EFDB_Name>
+      <Description>REB PS Clk Heater Current before LDO</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>mA</Units>
+      <Count>71</Count>
+    </item>
+    <!--CCSMETA: Array htrva indexed by reblocation-->
+    <item>
+      <EFDB_Name>reb_htrva</EFDB_Name>
+      <Description>REB PS Clk Heater Voltage after LDO</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>volt</Units>
+      <Count>71</Count>
+    </item>
+    <!--CCSMETA: Array htria indexed by reblocation-->
+    <item>
+      <EFDB_Name>reb_htria</EFDB_Name>
+      <Description>REB PS Clk Heater Current after LDO</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>mA</Units>
+      <Count>71</Count>
+    </item>
+    <!--CCSMETA: Array htrvas indexed by reblocation-->
+    <item>
+      <EFDB_Name>reb_htrvas</EFDB_Name>
+      <Description>REB PS Clk Heater Voltage after Switch</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>volt</Units>
+      <Count>71</Count>
+    </item>
+    <!--CCSMETA: Array bssvbs indexed by reblocation-->
+    <item>
+      <EFDB_Name>reb_bssvbs</EFDB_Name>
+      <Description>REB PS HV Bias Voltage before Switch</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>volt</Units>
+      <Count>71</Count>
+    </item>
+    <!--CCSMETA: Array bssibs indexed by reblocation-->
+    <item>
+      <EFDB_Name>reb_bssibs</EFDB_Name>
+      <Description>REB PS HV Bias Current before Switch</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>mA</Units>
+      <Count>71</Count>
+    </item>
+  </SALEvent>
   <!-- CONFIGURATION Do not remove this line -->
   <!--Created by xmlmaker2 for subsystem MTCamera class MTCamera_logevent_quadbox_BFR_DevicesConfiguration for category Devices using level 1-->
   <!--=======================================================================================================================================-->
