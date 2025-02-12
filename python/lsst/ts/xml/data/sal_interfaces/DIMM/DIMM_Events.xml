@@ -2,15 +2,22 @@
 <?xml-stylesheet type="text/xsl" href="http://lsst-sal.tuc.noao.edu/schema/SALEventSet.xsl"?>
 <SALEventSet xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://lsst-sal.tuc.noao.edu/schema/SALEventSet.xsd">
   <Enumeration>AmebaMode_Off,AmebaMode_Auto,AmebaMode_Manual</Enumeration>
+  <Enumeration>AmebaState_Inactive,AmebaState_Waiting,AmebaState_Slewing,AmebaState_Tracking,AmebaState_Focusing,AmebaState_Monitoring</Enumeration>
+  <Enumeration>Dome_Undefined,Dome_Opened,Dome_Closed,Dome_Stated</Enumeration>
   <Enumeration>ProgramControl_Stop,ProgramControl_Start,ProgramControl_Restart,ProgramControl_NoAction</Enumeration>
   <Enumeration>SkyStatus_Clear,SkyStatus_LightCoverage,SkyStatus_Cloudy,SkyStatus_Rain,SkyStatus_Snow</Enumeration>
   <Enumeration>ScopeMotion_Park,ScopeMotion_Slew,ScopeMotion_Stand,ScopeMotion_Tracking</Enumeration>
-  <Enumeration>Dome_Undefined,Dome_Opened,Dome_Closed,Dome_Stated</Enumeration>
-  <Enumeration>AmebaState_Inactive,AmebaState_Waiting,AmebaState_Slewing,AmebaState_Tracking,AmebaState_Focusing,AmebaState_Monitoring</Enumeration>
   <SALEvent>
     <Subsystem>DIMM</Subsystem>
     <EFDB_Topic>DIMM_logevent_moduleStatus</EFDB_Topic>
     <Description>Module statuses</Description>
+    <item>
+      <EFDB_Name>scopeStatus</EFDB_Name>
+      <Description>Subsystem status for Scope module.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
     <item>
       <EFDB_Name>masterStatus</EFDB_Name>
       <Description>Subsystem status for Master module.</Description>
@@ -19,26 +26,15 @@
       <Count>1</Count>
     </item>
     <item>
-      <EFDB_Name>masterFailState</EFDB_Name>
-      <Description>
-        Failure status for the Master module. This state resembles the is-failed property of systemctl.
-      </Description>
+      <EFDB_Name>metrologyStatus</EFDB_Name>
+      <Description>Subsystem status for Metrology module.</Description>
       <IDL_Type>boolean</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
     </item>
     <item>
-      <EFDB_Name>amebaStatus</EFDB_Name>
-      <Description>Subsystem status for AMEBA module.</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>amebaFailState</EFDB_Name>
-      <Description>
-        Failure status for the AMEBA module. This state resembles the is-failed property of systemctl.
-      </Description>
+      <EFDB_Name>domeStatus</EFDB_Name>
+      <Description>Subsystem status for Metrology module.</Description>
       <IDL_Type>boolean</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
@@ -50,123 +46,6 @@
       <Units>unitless</Units>
       <Count>1</Count>
     </item>
-    <item>
-      <EFDB_Name>dimmFailState</EFDB_Name>
-      <Description>
-        Failure status for the DIMM module. This state resembles the is-failed property of systemctl.
-      </Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>domeStatus</EFDB_Name>
-      <Description>Subsystem status for Dome module.</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>domeFailState</EFDB_Name>
-      <Description>
-        Failure status for the Dome module. This state resembles the is-failed property of systemctl.
-      </Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>meteorologyStatus</EFDB_Name>
-      <Description>Subsystem status for Meteorology module. Note the spelling of this topic name.</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>meteorologyFailState</EFDB_Name>
-      <Description>
-        Failure status for the Meteorology module. This state resembles the is-failed property of systemctl.
-      </Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>scopeStatus</EFDB_Name>
-      <Description>Subsystem status for Scope module.</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>scopeFailState</EFDB_Name>
-      <Description>
-        Failure status for the Scope module. This state resembles the is-failed property of systemctl.
-      </Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>dimmKornilovErrors</EFDB_Name>
-      <Description>
-        Error messages, if any, for the dimm-tool Kornilov server, or an empty string if there is no error for
-        that server.
-      </Description>
-      <IDL_Type>string</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>amebaKornilovErrors</EFDB_Name>
-      <Description>
-        Error messages, if any, for the ameba Kornilov server, or an empty string if there is no error for
-        that server.
-      </Description>
-      <IDL_Type>string</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>meteoKornilovErrors</EFDB_Name>
-      <Description>
-        Error messages, if any, for the tt-meteo Kornilov server, or an empty string if there is no error for
-        that server.
-      </Description>
-      <IDL_Type>string</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>domeKornilovErrors</EFDB_Name>
-      <Description>
-        Error messages, if any, for the tt-dome-astrohaven Kornilov server, or an empty string if there is no error
-        for that server.
-      </Description>
-      <IDL_Type>string</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>scopeKornilovErrors</EFDB_Name>
-      <Description>
-        Error messages, if any, for the tt-scope Kornilov server, or an empty string if there is no error
-        for that server.
-      </Description>
-      <IDL_Type>string</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>scopeErrors</EFDB_Name>
-      <Description><![CDATA[
-          Telescope status and error reset reported by DIMM. This is a comma separated list of all
-          saved error events in the format <error>:<status>:<device>[:<comment>][,...].
-          ]]></Description>
-      <IDL_Type>string</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
   </SALEvent>
   <SALEvent>
     <Subsystem>DIMM</Subsystem>
@@ -174,7 +53,7 @@
     <Description>A DIMM measurement</Description>
     <item>
       <EFDB_Name>timestamp</EFDB_Name>
-      <Description>The time of the event. (DIMM.TIMESTAMP)</Description>
+      <Description>The time of the event.</Description>
       <IDL_Type>double</IDL_Type>
       <Units>second</Units>
       <Count>1</Count>
@@ -194,22 +73,64 @@
       <Count>1</Count>
     </item>
     <item>
+      <EFDB_Name>hrNum</EFDB_Name>
+      <Description>HR star number</Description>
+      <IDL_Type>long</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
       <EFDB_Name>secz</EFDB_Name>
-      <Description>Airmass of the observation (DIMM.AIRMASS)</Description>
+      <Description>Airmass of the observation</Description>
       <IDL_Type>float</IDL_Type>
       <Units>am</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>fwhm</EFDB_Name>
-      <Description>Combined full width half maximum. (DIMM.SEEING)</Description>
+      <Description>Combined full width half maximum.</Description>
       <IDL_Type>float</IDL_Type>
       <Units>arcsec</Units>
       <Count>1</Count>
     </item>
     <item>
-      <EFDB_Name>fwhmLowFrequency</EFDB_Name>
-      <Description>Low-frequency part of the last seeing estimation. (DIMM.SEEING_LOWFREQ)</Description>
+      <EFDB_Name>fwhmx</EFDB_Name>
+      <Description>Full width half maximum in the x-axis.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>arcsec</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>fwhmy</EFDB_Name>
+      <Description>Full width half maximum in the y-axis.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>arcsec</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>r0</EFDB_Name>
+      <Description>Fried parameter</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>cm</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>nimg</EFDB_Name>
+      <Description>Number of images used.</Description>
+      <IDL_Type>long</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>dx</EFDB_Name>
+      <Description>Distance between spots in the x-axis</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>arcsec</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>dy</EFDB_Name>
+      <Description>Distance between spots in the y-axis</Description>
       <IDL_Type>float</IDL_Type>
       <Units>arcsec</Units>
       <Count>1</Count>
@@ -223,42 +144,42 @@
     </item>
     <item>
       <EFDB_Name>fluxL</EFDB_Name>
-      <Description>Flux (left spot) (DIMM.FLUX_LEFT)</Description>
+      <Description>Flux (left spot)</Description>
       <IDL_Type>float</IDL_Type>
       <Units>adu</Units>
       <Count>1</Count>
     </item>
     <item>
+      <EFDB_Name>scintL</EFDB_Name>
+      <Description>Scintillation-ratio (left spot)</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
       <EFDB_Name>strehlL</EFDB_Name>
-      <Description>Strehl-ratio (left spot) (DIMM.STREHL_LEFT)</Description>
+      <Description>Strehl-ratio (left spot)</Description>
       <IDL_Type>float</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>fluxR</EFDB_Name>
-      <Description>Flux (right spot) (DIMM.FLUX_RIGHT)</Description>
+      <Description>Flux (right spot)</Description>
       <IDL_Type>float</IDL_Type>
       <Units>adu</Units>
       <Count>1</Count>
     </item>
     <item>
-      <EFDB_Name>rootMeanSquareFluxLeft</EFDB_Name>
-      <Description>Integral flux root mean square for the left aperture image (DIMM.FLUX_RMS_LEFT)</Description>
+      <EFDB_Name>scintR</EFDB_Name>
+      <Description>Scintillation-ratio (right spot)</Description>
       <IDL_Type>float</IDL_Type>
-      <Units>adu</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>rootMeanSquareFluxRight</EFDB_Name>
-      <Description>Integral flux root mean square for the right aperture image (DIMM.FLUX_RMS_RIGHT)</Description>
-      <IDL_Type>float</IDL_Type>
-      <Units>adu</Units>
+      <Units>unitless</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>strehlR</EFDB_Name>
-      <Description>Strehl-ratio (right spot) (DIMM.STREHL_RIGHT)</Description>
+      <Description>Strehl-ratio (right spot)</Description>
       <IDL_Type>float</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
@@ -266,109 +187,181 @@
   </SALEvent>
   <SALEvent>
     <Subsystem>DIMM</Subsystem>
-    <EFDB_Topic>DIMM_logevent_manualTarget</EFDB_Topic>
-    <Description>The most recently specified manual pointing target.</Description>
+    <EFDB_Topic>DIMM_logevent_dimmData</EFDB_Topic>
+    <Description>DIMM data details</Description>
     <item>
-      <EFDB_Name>targetName</EFDB_Name>
-      <Description>Manual target name.</Description>
-      <IDL_Type>string</IDL_Type>
+      <EFDB_Name>numFrames</EFDB_Name>
+      <Description>The number of frames.</Description>
+      <IDL_Type>long</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
     </item>
     <item>
-      <EFDB_Name>rightAscension</EFDB_Name>
-      <Description>Right ascension (J2000.0).</Description>
-      <IDL_Type>float</IDL_Type>
-      <Units>deg</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>declination</EFDB_Name>
-      <Description>Declination (J2000.0).</Description>
-      <IDL_Type>float</IDL_Type>
-      <Units>deg</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>brightness</EFDB_Name>
-      <Description>Apparent visual brightness in the V-band.</Description>
-      <IDL_Type>float</IDL_Type>
-      <Units>mag</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>color</EFDB_Name>
-      <Description>Object color in difference between the B- and V-band.</Description>
-      <IDL_Type>float</IDL_Type>
-      <Units>mag</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>stellarClass</EFDB_Name>
-      <Description>Yerkes spectral classification of the object, e.g., 'G5III'.</Description>
-      <IDL_Type>string</IDL_Type>
+      <EFDB_Name>spot1Flux</EFDB_Name>
+      <Description>The flux of spot 1</Description>
+      <IDL_Type>long</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
     </item>
     <item>
-      <EFDB_Name>stellarClassFile</EFDB_Name>
-      <Description>Selected spectral file on the DIMM filesystem.</Description>
-      <IDL_Type>string</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-  </SALEvent>
-  <SALEvent>
-    <Subsystem>DIMM</Subsystem>
-    <EFDB_Topic>DIMM_logevent_currentTarget</EFDB_Topic>
-    <Description>The current target under observation.</Description>
-    <item>
-      <EFDB_Name>targetName</EFDB_Name>
-      <Description>Current target name.</Description>
-      <IDL_Type>string</IDL_Type>
+      <EFDB_Name>splot2Flux</EFDB_Name>
+      <Description>The flux of splot2.</Description>
+      <IDL_Type>long</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
     </item>
     <item>
-      <EFDB_Name>rightAscension</EFDB_Name>
-      <Description>Right ascension (J2000.0).</Description>
-      <IDL_Type>float</IDL_Type>
-      <Units>deg</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>declination</EFDB_Name>
-      <Description>Declination (J2000.0).</Description>
-      <IDL_Type>float</IDL_Type>
-      <Units>deg</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>brightness</EFDB_Name>
-      <Description>Apparent visual brightness in the V-band.</Description>
-      <IDL_Type>float</IDL_Type>
-      <Units>mag</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>color</EFDB_Name>
-      <Description>Object color in difference between the B- and V-band.</Description>
-      <IDL_Type>float</IDL_Type>
-      <Units>mag</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>stellarClassFile</EFDB_Name>
-      <Description>Current target selected spectral file on the DIMM filesystem.</Description>
-      <IDL_Type>string</IDL_Type>
+      <EFDB_Name>spot1RMSFlux</EFDB_Name>
+      <Description>The RMS flux of spot1.</Description>
+      <IDL_Type>long</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
     </item>
     <item>
-      <EFDB_Name>startTime</EFDB_Name>
-      <Description>Time when the scope was requested to track the object.</Description>
-      <IDL_Type>float</IDL_Type>
-      <Units>second</Units>
+      <EFDB_Name>spot2RMSFlux</EFDB_Name>
+      <Description>The RMS flux of spot2.</Description>
+      <IDL_Type>long</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>spot1MaxInten</EFDB_Name>
+      <Description>The maximum Intention of spot 1.</Description>
+      <IDL_Type>long</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>spot2MaxInten</EFDB_Name>
+      <Description>The maximum intention of spot 2.</Description>
+      <IDL_Type>long</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>seperationX</EFDB_Name>
+      <Description>The separation of x axis.</Description>
+      <IDL_Type>long</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>seperationY</EFDB_Name>
+      <Description>The separation of the y axis.</Description>
+      <IDL_Type>long</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>seperationRMSX</EFDB_Name>
+      <Description>The separation of the RMS X axis.</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>seperationRMSY</EFDB_Name>
+      <Description>The seperation of the RMS Y axis.</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>covarianceX</EFDB_Name>
+      <Description>The covariance of the X axis.</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>covarianceY</EFDB_Name>
+      <Description>The covariance of the Y axis.</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>noiseRMSX</EFDB_Name>
+      <Description>The noise RMS of the X axis.</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>noiseRMSY</EFDB_Name>
+      <Description>The noise RMS of axis Y.</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>averagePositionX</EFDB_Name>
+      <Description>The average position of the X axis.</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>averagePositionY</EFDB_Name>
+      <Description>The average position of Y axis.</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>averagePositionRMSX</EFDB_Name>
+      <Description>The average position RMS of axis X.</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>averagePositionRMSY</EFDB_Name>
+      <Description>The average position RMS Y.</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>averageFWHMspot1</EFDB_Name>
+      <Description>The average FWHM of spot 1.</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>averageFWHMspot2</EFDB_Name>
+      <Description>The average FWHM of spot 2.</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>averageEllipticityspot1</EFDB_Name>
+      <Description>The average ellipticity of spot 1.</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>averageEllipticityspot2</EFDB_Name>
+      <Description>The average ellipticity of spot 2.</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>averageBackground</EFDB_Name>
+      <Description>The average background</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>backgroundRMS</EFDB_Name>
+      <Description>The background RMS.</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>unitless</Units>
       <Count>1</Count>
     </item>
   </SALEvent>
