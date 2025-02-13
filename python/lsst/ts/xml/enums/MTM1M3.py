@@ -52,12 +52,13 @@ class DetailedStates(enum.IntEnum):
 
 class BumpTest(enum.IntEnum):
     NOTTESTED = 1
-    TESTINGPOSITIVE = 2
-    TESTINGPOSITIVEWAIT = 3
-    TESTINGNEGATIVE = 4
-    TESTINGNEGATIVEWAIT = 5
-    PASSED = 6
-    FAILED = 7
+    TRIGGERED = 2
+    TESTINGPOSITIVE = 3
+    TESTINGPOSITIVEWAIT = 4
+    TESTINGNEGATIVE = 5
+    TESTINGNEGATIVEWAIT = 6
+    PASSED = 7
+    FAILED = 8
 
 
 class HardpointActuatorMotionState(enum.IntEnum):
