@@ -69,6 +69,7 @@ subsystems = [
     "LEDProjector",
     "LinearStage",
     "LOVE",
+    "MOSS",
     "MTAOS",
     "MTCamera",
     "MTDome",

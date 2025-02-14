@@ -22,6 +22,7 @@ __all__ = [
     "ControllerState",
     "EnabledSubstate",
     "FaultSubstate",
+    "MotionLockState",
     "ApplicationStatus",
     "ErrorCode",
 ]
@@ -40,11 +41,11 @@ class ControllerState(enum.IntEnum):
     Called ``States`` in Moog code.
     """
 
+    # Use the following values to be consistent with the Simulink model as the
+    # history reason.
     STANDBY = 0
-    DISABLED = enum.auto()  # Deprecated in rotator/hexapod
-    ENABLED = enum.auto()
-    OFFLINE = enum.auto()  # Deprecated in rotator/hexapod
-    FAULT = enum.auto()
+    ENABLED = 2
+    FAULT = 4
 
 
 class EnabledSubstate(enum.IntEnum):
@@ -55,13 +56,13 @@ class EnabledSubstate(enum.IntEnum):
     This is enum ``EnabledSubStates`` in Moog code.
     """
 
+    # Use the following values to be consistent with the Simulink model as the
+    # history reason.
     STATIONARY = 0
-    MOVING_POINT_TO_POINT = enum.auto()
-    SLEWING_OR_TRACKING = enum.auto()  # hexapod does not have this
-    CONTROLLED_STOPPING = enum.auto()  # hexapod does not have this
-    INITIALIZING = enum.auto()  # Deprecated in rotator/hexapod
-    RELATIVE = enum.auto()  # Deprecated in rotator/hexapod
-    CONSTANT_VELOCITY = enum.auto()  # hexapod does not have this
+    MOVING_POINT_TO_POINT = 1
+    SLEWING_OR_TRACKING = 2  # hexapod does not have this
+    CONTROLLED_STOPPING = 3  # hexapod does not have this
+    CONSTANT_VELOCITY = 6  # hexapod does not have this
 
 
 class FaultSubstate(enum.IntEnum):
@@ -75,6 +76,18 @@ class FaultSubstate(enum.IntEnum):
     NO_ERROR = 0
     EMERGENCY_STOPPING = enum.auto()
     WAIT_CLEAR_ERROR = enum.auto()
+
+
+class MotionLockState(enum.IntEnum):
+    """Motion lock state.
+
+    This state is managed entirely by the CSC.
+    """
+
+    UNLOCKED = 0
+    LOCKING = 1
+    UNLOCKING = 2
+    LOCKED = 3
 
 
 class ApplicationStatus(enum.IntFlag):
@@ -109,8 +122,18 @@ class ErrorCode(enum.IntEnum):
       controller.
     * NO_CONFIG: The CSC did not receive configuration from the low-level
       controller shortly after connecting to it.
+    * NO_NEW_CCW_TELEMETRY: The CSC did not receive new telemetry from the
+      camera cable wrapper (CCW) before the timeout.
+    * OLD_CCW_TELEMETRY: The CCW telemetry was too old.
+    * CCW_FOLLOWING_ERROR: The CCW did not follow the rotator's movement.
+    * NO_NEW_TRACK_COMMAND: The CSC did not receive a new track command before
+      the timeout.
     """
 
     CONTROLLER_FAULT = 1
     CONNECTION_LOST = 2
     NO_CONFIG = 3
+    NO_NEW_CCW_TELEMETRY = 4
+    OLD_CCW_TELEMETRY = 5
+    CCW_FOLLOWING_ERROR = 6
+    NO_NEW_TRACK_COMMAND = 7

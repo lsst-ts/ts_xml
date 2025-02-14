@@ -3,6 +3,7 @@
   <SALEvent>
     <Subsystem>CCCamera</Subsystem>
     <EFDB_Topic>CCCamera_logevent_offlineDetailedState</EFDB_Topic>
+    <Description>Event generated when the OFFLINE state changes</Description>
     <item>
       <EFDB_Name>substate</EFDB_Name>
       <Description>Enumeration of valid substates</Description>
@@ -120,6 +121,7 @@
   <SALEvent>
     <Subsystem>CCCamera</Subsystem>
     <EFDB_Topic>CCCamera_logevent_endTakeImage</EFDB_Topic>
+    <Description>Event generated at the end of an image</Description>
     <item>
       <EFDB_Name>timestampTransition</EFDB_Name>
       <Description>The time at which the state transition occurred</Description>
@@ -131,6 +133,7 @@
   <SALEvent>
     <Subsystem>CCCamera</Subsystem>
     <EFDB_Topic>CCCamera_logevent_imageReadinessDetailedState</EFDB_Topic>
+    <Description>Event which reflects the readiness of the camera to take an image with no additional time overhead</Description>
     <item>
       <EFDB_Name>substate</EFDB_Name>
       <Description>Enumeration of valid substates</Description>
@@ -150,6 +153,7 @@
   <SALEvent>
     <Subsystem>CCCamera</Subsystem>
     <EFDB_Topic>CCCamera_logevent_startSetFilter</EFDB_Topic>
+    <Description>Event generated at the begining of a setFilter operation</Description>
     <item>
       <EFDB_Name>filterName</EFDB_Name>
       <Description>The name of the filter being installed (e.g. U-001)</Description>
@@ -171,6 +175,7 @@
   <SALEvent>
     <Subsystem>CCCamera</Subsystem>
     <EFDB_Topic>CCCamera_logevent_startUnloadFilter</EFDB_Topic>
+    <Description>Event generated when a filter is starting to be unloaded.</Description>
     <item>
       <EFDB_Name>timestampTransition</EFDB_Name>
       <Description>The time at which the state transition occurred</Description>
@@ -182,6 +187,7 @@
   <SALEvent>
     <Subsystem>CCCamera</Subsystem>
     <EFDB_Topic>CCCamera_logevent_notReadyToTakeImage</EFDB_Topic>
+    <Description>Event which indicates camera is not ready to take an image without overhead</Description>
     <item>
       <EFDB_Name>timestampTransition</EFDB_Name>
       <Description>The time at which the state transition occurred</Description>
@@ -193,6 +199,7 @@
   <SALEvent>
     <Subsystem>CCCamera</Subsystem>
     <EFDB_Topic>CCCamera_logevent_startShutterClose</EFDB_Topic>
+    <Description>Event indicating the start of a shutter close operation</Description>
     <item>
       <EFDB_Name>timestampTransition</EFDB_Name>
       <Description>The time at which the state transition occurred</Description>
@@ -204,6 +211,7 @@
   <SALEvent>
     <Subsystem>CCCamera</Subsystem>
     <EFDB_Topic>CCCamera_logevent_endInitializeGuider</EFDB_Topic>
+    <Description>???</Description>
     <item>
       <EFDB_Name>timestampTransition</EFDB_Name>
       <Description>The time at which the state transition occurred</Description>
@@ -215,6 +223,7 @@
   <SALEvent>
     <Subsystem>CCCamera</Subsystem>
     <EFDB_Topic>CCCamera_logevent_endShutterClose</EFDB_Topic>
+    <Description>Event generated at the end of a shutter close operation</Description>
     <item>
       <EFDB_Name>timestampTransition</EFDB_Name>
       <Description>The time at which the state transition occurred</Description>
@@ -361,6 +370,7 @@
   <SALEvent>
     <Subsystem>CCCamera</Subsystem>
     <EFDB_Topic>CCCamera_logevent_endUnloadFilter</EFDB_Topic>
+    <Description>Event generated at the end of an unload filter operation</Description>
     <item>
       <EFDB_Name>timestampTransition</EFDB_Name>
       <Description>The time at which the state transition occurred</Description>
@@ -372,6 +382,7 @@
   <SALEvent>
     <Subsystem>CCCamera</Subsystem>
     <EFDB_Topic>CCCamera_logevent_calibrationDetailedState</EFDB_Topic>
+    <Description>Event indicating the calibration state</Description>
     <item>
       <EFDB_Name>substate</EFDB_Name>
       <Description>Enumeration of valid substates</Description>
@@ -391,6 +402,7 @@
   <SALEvent>
     <Subsystem>CCCamera</Subsystem>
     <EFDB_Topic>CCCamera_logevent_endRotateCarousel</EFDB_Topic>
+    <Description>Event generated at the end of a carousel rotation operation</Description>
     <item>
       <EFDB_Name>timestampTransition</EFDB_Name>
       <Description>The time at which the state transition occurred</Description>
@@ -402,6 +414,7 @@
   <SALEvent>
     <Subsystem>CCCamera</Subsystem>
     <EFDB_Topic>CCCamera_logevent_startLoadFilter</EFDB_Topic>
+    <Description>Event generated at the beginning of a filter load operation</Description>
     <item>
       <EFDB_Name>timestampTransition</EFDB_Name>
       <Description>The time at which the state transition occurred</Description>
@@ -413,13 +426,14 @@
   <SALEvent>
     <Subsystem>CCCamera</Subsystem>
     <EFDB_Topic>CCCamera_logevent_filterChangerDetailedState</EFDB_Topic>
+    <Description>Event reflecting the filter changer state</Description>
     <item>
       <EFDB_Name>substate</EFDB_Name>
       <Description>The filter changer state</Description>
       <IDL_Type>long</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
-      <Enumeration>UNLOADING,LOADING,LOADED,UNLOADED,ROTATING</Enumeration>
+      <Enumeration>UNLOADING,LOADING,LOADED,UNLOADED,ROTATING,NOFILTER,UNKNOWN</Enumeration>
     </item>
     <item>
       <EFDB_Name>timestampTransition</EFDB_Name>
@@ -432,6 +446,7 @@
   <SALEvent>
     <Subsystem>CCCamera</Subsystem>
     <EFDB_Topic>CCCamera_logevent_shutterDetailedState</EFDB_Topic>
+    <Description>Event reflecting the shutter state</Description>
     <item>
       <EFDB_Name>substate</EFDB_Name>
       <Description>Enumeration of valid substates</Description>
@@ -451,6 +466,7 @@
   <SALEvent>
     <Subsystem>CCCamera</Subsystem>
     <EFDB_Topic>CCCamera_logevent_readyToTakeImage</EFDB_Topic>
+    <Description>Event indicating the camera is ready to take an image with no time overhead</Description>
     <item>
       <EFDB_Name>timestampTransition</EFDB_Name>
       <Description>The time at which the state transition occurred</Description>
@@ -462,6 +478,7 @@
   <SALEvent>
     <Subsystem>CCCamera</Subsystem>
     <EFDB_Topic>CCCamera_logevent_ccsCommandState</EFDB_Topic>
+    <Description>Event indicating the camera command state</Description>
     <item>
       <EFDB_Name>substate</EFDB_Name>
       <Description>Substate of the CCS command.</Description>
@@ -481,6 +498,7 @@
   <SALEvent>
     <Subsystem>CCCamera</Subsystem>
     <EFDB_Topic>CCCamera_logevent_prepareToTakeImage</EFDB_Topic>
+    <Description>????</Description>
     <item>
       <EFDB_Name>timestampTransition</EFDB_Name>
       <Description>The time at which the state transition occurred</Description>
@@ -492,6 +510,7 @@
   <SALEvent>
     <Subsystem>CCCamera</Subsystem>
     <EFDB_Topic>CCCamera_logevent_ccsConfigured</EFDB_Topic>
+    <Description>???</Description>
     <item>
       <EFDB_Name>timestampTransition</EFDB_Name>
       <Description>The time at which the state transition occurred</Description>
@@ -503,6 +522,7 @@
   <SALEvent>
     <Subsystem>CCCamera</Subsystem>
     <EFDB_Topic>CCCamera_logevent_endLoadFilter</EFDB_Topic>
+    <Description>Event indicating the camera has finished loading a filter</Description>
     <item>
       <EFDB_Name>timestampTransition</EFDB_Name>
       <Description>The time at which the state transition occurred</Description>
@@ -514,6 +534,7 @@
   <SALEvent>
     <Subsystem>CCCamera</Subsystem>
     <EFDB_Topic>CCCamera_logevent_endShutterOpen</EFDB_Topic>
+    <Description>Event issued when the shutter open operation completes</Description>
     <item>
       <EFDB_Name>timestampTransition</EFDB_Name>
       <Description>The time at which the state transition occurred</Description>
@@ -632,6 +653,7 @@
   <SALEvent>
     <Subsystem>CCCamera</Subsystem>
     <EFDB_Topic>CCCamera_logevent_endInitializeImage</EFDB_Topic>
+    <Description>???</Description>
     <item>
       <EFDB_Name>timestampTransition</EFDB_Name>
       <Description>The time at which the state transition occurred</Description>
@@ -681,6 +703,7 @@
   <SALEvent>
     <Subsystem>CCCamera</Subsystem>
     <EFDB_Topic>CCCamera_logevent_startShutterOpen</EFDB_Topic>
+    <Description>Event issued when we start to open the shutter</Description>
     <item>
       <EFDB_Name>timestampTransition</EFDB_Name>
       <Description>The time at which the state transition occurred</Description>
@@ -692,6 +715,7 @@
   <SALEvent>
     <Subsystem>CCCamera</Subsystem>
     <EFDB_Topic>CCCamera_logevent_raftsDetailedState</EFDB_Topic>
+    <Description>Event indicating the state of the focal-plane</Description>
     <item>
       <EFDB_Name>substate</EFDB_Name>
       <Description>Enumeration of valid substates</Description>
@@ -711,6 +735,7 @@
   <SALEvent>
     <Subsystem>CCCamera</Subsystem>
     <EFDB_Topic>CCCamera_logevent_availableFilters</EFDB_Topic>
+    <Description>Event listing the filters available to be selected</Description>
     <item>
       <EFDB_Name>filterNames</EFDB_Name>
       <Description>A list of names of available filters (comma delimited, U-001,G-004,R-010,Z-012,Y-014, NONE), in the same order as the list of filter types.</Description>
@@ -856,6 +881,7 @@
   <SALEvent>
     <Subsystem>CCCamera</Subsystem>
     <EFDB_Topic>CCCamera_logevent_startRotateCarousel</EFDB_Topic>
+    <Description>Event generated when the filter changer carousel starts to rotate</Description>
     <item>
       <EFDB_Name>timestampTransition</EFDB_Name>
       <Description>The time at which the state transition occurred</Description>
@@ -1098,11 +1124,12 @@
     </item>
   </SALEvent>
   <!-- CONFIGURATION Do not remove this line -->
-  <!--Created by xmlmaker2 for subsystem CCCamera class CCCamera_logevent_fcs_GeneralConfiguration using level 1 for category General-->
+  <!--Created by xmlmaker2 for subsystem CCCamera class CCCamera_logevent_fcs_GeneralConfiguration for category General using level 1-->
   <!--===============================================================================================================================-->
   <SALEvent>
     <Subsystem>CCCamera</Subsystem>
     <EFDB_Topic>CCCamera_logevent_fcs_GeneralConfiguration</EFDB_Topic>
+    <Description>subsystem CCCamera class CCCamera_logevent_fcs_GeneralConfiguration for category General</Description>
     <!--CCS: Dictionary_Checksum: 177498527L -->
     <item>
       <EFDB_Name>version</EFDB_Name>
@@ -1189,11 +1216,12 @@
       <Count>1</Count>
     </item>
   </SALEvent>
-  <!--Created by xmlmaker2 for subsystem CCCamera class CCCamera_logevent_fcs_LinearEncoder_DevicesConfiguration using level 1 for category Devices-->
+  <!--Created by xmlmaker2 for subsystem CCCamera class CCCamera_logevent_fcs_LinearEncoder_DevicesConfiguration for category Devices using level 1-->
   <!--=============================================================================================================================================-->
   <SALEvent>
     <Subsystem>CCCamera</Subsystem>
     <EFDB_Topic>CCCamera_logevent_fcs_LinearEncoder_DevicesConfiguration</EFDB_Topic>
+    <Description>subsystem CCCamera class CCCamera_logevent_fcs_LinearEncoder_DevicesConfiguration for category Devices</Description>
     <!--CCS: Dictionary_Checksum: 402932488L -->
     <item>
       <EFDB_Name>version</EFDB_Name>
@@ -1210,11 +1238,12 @@
       <Count>1</Count>
     </item>
   </SALEvent>
-  <!--Created by xmlmaker2 for subsystem CCCamera class CCCamera_logevent_fcs_LinearEncoder_GeneralConfiguration using level 1 for category General-->
+  <!--Created by xmlmaker2 for subsystem CCCamera class CCCamera_logevent_fcs_LinearEncoder_GeneralConfiguration for category General using level 1-->
   <!--=============================================================================================================================================-->
   <SALEvent>
     <Subsystem>CCCamera</Subsystem>
     <EFDB_Topic>CCCamera_logevent_fcs_LinearEncoder_GeneralConfiguration</EFDB_Topic>
+    <Description>subsystem CCCamera class CCCamera_logevent_fcs_LinearEncoder_GeneralConfiguration for category General</Description>
     <!--CCS: Dictionary_Checksum: 1177922513L -->
     <item>
       <EFDB_Name>version</EFDB_Name>
@@ -1231,11 +1260,12 @@
       <Count>1</Count>
     </item>
   </SALEvent>
-  <!--Created by xmlmaker2 for subsystem CCCamera class CCCamera_logevent_fcs_PeriodicTasks_GeneralConfiguration using level 1 for category General-->
+  <!--Created by xmlmaker2 for subsystem CCCamera class CCCamera_logevent_fcs_PeriodicTasks_GeneralConfiguration for category General using level 1-->
   <!--=============================================================================================================================================-->
   <SALEvent>
     <Subsystem>CCCamera</Subsystem>
     <EFDB_Topic>CCCamera_logevent_fcs_PeriodicTasks_GeneralConfiguration</EFDB_Topic>
+    <Description>subsystem CCCamera class CCCamera_logevent_fcs_PeriodicTasks_GeneralConfiguration for category General</Description>
     <!--CCS: Dictionary_Checksum: 4049810286L -->
     <item>
       <EFDB_Name>version</EFDB_Name>
@@ -1273,11 +1303,12 @@
       <Count>1</Count>
     </item>
   </SALEvent>
-  <!--Created by xmlmaker2 for subsystem CCCamera class CCCamera_logevent_fcs_PeriodicTasks_timersConfiguration using level 1 for category timers-->
+  <!--Created by xmlmaker2 for subsystem CCCamera class CCCamera_logevent_fcs_PeriodicTasks_timersConfiguration for category timers using level 1-->
   <!--===========================================================================================================================================-->
   <SALEvent>
     <Subsystem>CCCamera</Subsystem>
     <EFDB_Topic>CCCamera_logevent_fcs_PeriodicTasks_timersConfiguration</EFDB_Topic>
+    <Description>subsystem CCCamera class CCCamera_logevent_fcs_PeriodicTasks_timersConfiguration for category timers</Description>
     <!--CCS: Dictionary_Checksum: 3281060040L -->
     <item>
       <EFDB_Name>version</EFDB_Name>
@@ -1329,11 +1360,12 @@
       <Count>1</Count>
     </item>
   </SALEvent>
-  <!--Created by xmlmaker2 for subsystem CCCamera class CCCamera_logevent_fcs_StepperMotor_DevicesConfiguration using level 1 for category Devices-->
+  <!--Created by xmlmaker2 for subsystem CCCamera class CCCamera_logevent_fcs_StepperMotor_DevicesConfiguration for category Devices using level 1-->
   <!--============================================================================================================================================-->
   <SALEvent>
     <Subsystem>CCCamera</Subsystem>
     <EFDB_Topic>CCCamera_logevent_fcs_StepperMotor_DevicesConfiguration</EFDB_Topic>
+    <Description>subsystem CCCamera class CCCamera_logevent_fcs_StepperMotor_DevicesConfiguration for category Devices</Description>
     <!--CCS: Dictionary_Checksum: 129012656L -->
     <item>
       <EFDB_Name>version</EFDB_Name>
@@ -1350,11 +1382,12 @@
       <Count>1</Count>
     </item>
   </SALEvent>
-  <!--Created by xmlmaker2 for subsystem CCCamera class CCCamera_logevent_fcs_StepperMotor_GeneralConfiguration using level 1 for category General-->
+  <!--Created by xmlmaker2 for subsystem CCCamera class CCCamera_logevent_fcs_StepperMotor_GeneralConfiguration for category General using level 1-->
   <!--============================================================================================================================================-->
   <SALEvent>
     <Subsystem>CCCamera</Subsystem>
     <EFDB_Topic>CCCamera_logevent_fcs_StepperMotor_GeneralConfiguration</EFDB_Topic>
+    <Description>subsystem CCCamera class CCCamera_logevent_fcs_StepperMotor_GeneralConfiguration for category General</Description>
     <!--CCS: Dictionary_Checksum: 2863423268L -->
     <item>
       <EFDB_Name>version</EFDB_Name>
@@ -1371,11 +1404,12 @@
       <Count>1</Count>
     </item>
   </SALEvent>
-  <!--Created by xmlmaker2 for subsystem CCCamera class CCCamera_logevent_fcs_StepperMotor_LimitsConfiguration using level 1 for category Limits-->
+  <!--Created by xmlmaker2 for subsystem CCCamera class CCCamera_logevent_fcs_StepperMotor_LimitsConfiguration for category Limits using level 1-->
   <!--==========================================================================================================================================-->
   <SALEvent>
     <Subsystem>CCCamera</Subsystem>
     <EFDB_Topic>CCCamera_logevent_fcs_StepperMotor_LimitsConfiguration</EFDB_Topic>
+    <Description>subsystem CCCamera class CCCamera_logevent_fcs_StepperMotor_LimitsConfiguration for category Limits</Description>
     <!--CCS: Dictionary_Checksum: 587810611L -->
     <item>
       <EFDB_Name>version</EFDB_Name>
@@ -1399,11 +1433,12 @@
       <Count>1</Count>
     </item>
   </SALEvent>
-  <!--Created by xmlmaker2 for subsystem CCCamera class CCCamera_logevent_fcs_StepperMotor_MotorConfiguration using level 1 for category Motor-->
+  <!--Created by xmlmaker2 for subsystem CCCamera class CCCamera_logevent_fcs_StepperMotor_MotorConfiguration for category Motor using level 1-->
   <!--========================================================================================================================================-->
   <SALEvent>
     <Subsystem>CCCamera</Subsystem>
     <EFDB_Topic>CCCamera_logevent_fcs_StepperMotor_MotorConfiguration</EFDB_Topic>
+    <Description>subsystem CCCamera class CCCamera_logevent_fcs_StepperMotor_MotorConfiguration for category Motor</Description>
     <!--CCS: Dictionary_Checksum: 656342921L -->
     <item>
       <EFDB_Name>version</EFDB_Name>
@@ -1511,11 +1546,12 @@
       <Count>1</Count>
     </item>
   </SALEvent>
-  <!--Created by xmlmaker2 for subsystem CCCamera class CCCamera_logevent_bonn_shutter_Device_DevicesConfiguration using level 1 for category Devices-->
+  <!--Created by xmlmaker2 for subsystem CCCamera class CCCamera_logevent_bonn_shutter_Device_DevicesConfiguration for category Devices using level 1-->
   <!--===============================================================================================================================================-->
   <SALEvent>
     <Subsystem>CCCamera</Subsystem>
     <EFDB_Topic>CCCamera_logevent_bonn_shutter_Device_DevicesConfiguration</EFDB_Topic>
+    <Description>subsystem CCCamera class CCCamera_logevent_bonn_shutter_Device_DevicesConfiguration for category Devices</Description>
     <!--CCS: Dictionary_Checksum: 1899674305L -->
     <item>
       <EFDB_Name>version</EFDB_Name>
@@ -1532,11 +1568,12 @@
       <Count>1</Count>
     </item>
   </SALEvent>
-  <!--Created by xmlmaker2 for subsystem CCCamera class CCCamera_logevent_bonn_shutter_Device_GeneralConfiguration using level 1 for category General-->
+  <!--Created by xmlmaker2 for subsystem CCCamera class CCCamera_logevent_bonn_shutter_Device_GeneralConfiguration for category General using level 1-->
   <!--===============================================================================================================================================-->
   <SALEvent>
     <Subsystem>CCCamera</Subsystem>
     <EFDB_Topic>CCCamera_logevent_bonn_shutter_Device_GeneralConfiguration</EFDB_Topic>
+    <Description>subsystem CCCamera class CCCamera_logevent_bonn_shutter_Device_GeneralConfiguration for category General</Description>
     <!--CCS: Dictionary_Checksum: 1964148534L -->
     <item>
       <EFDB_Name>version</EFDB_Name>
@@ -1553,11 +1590,12 @@
       <Count>1</Count>
     </item>
   </SALEvent>
-  <!--Created by xmlmaker2 for subsystem CCCamera class CCCamera_logevent_bonn_shutter_Device_LimitsConfiguration using level 1 for category Limits-->
+  <!--Created by xmlmaker2 for subsystem CCCamera class CCCamera_logevent_bonn_shutter_Device_LimitsConfiguration for category Limits using level 1-->
   <!--=============================================================================================================================================-->
   <SALEvent>
     <Subsystem>CCCamera</Subsystem>
     <EFDB_Topic>CCCamera_logevent_bonn_shutter_Device_LimitsConfiguration</EFDB_Topic>
+    <Description>subsystem CCCamera class CCCamera_logevent_bonn_shutter_Device_LimitsConfiguration for category Limits</Description>
     <!--CCS: Dictionary_Checksum: 1369580573L -->
     <item>
       <EFDB_Name>version</EFDB_Name>
@@ -1623,11 +1661,12 @@
       <Count>1</Count>
     </item>
   </SALEvent>
-  <!--Created by xmlmaker2 for subsystem CCCamera class CCCamera_logevent_bonn_shutter_GeneralConfiguration using level 1 for category General-->
+  <!--Created by xmlmaker2 for subsystem CCCamera class CCCamera_logevent_bonn_shutter_GeneralConfiguration for category General using level 1-->
   <!--========================================================================================================================================-->
   <SALEvent>
     <Subsystem>CCCamera</Subsystem>
     <EFDB_Topic>CCCamera_logevent_bonn_shutter_GeneralConfiguration</EFDB_Topic>
+    <Description>subsystem CCCamera class CCCamera_logevent_bonn_shutter_GeneralConfiguration for category General</Description>
     <!--CCS: Dictionary_Checksum: 718269393L -->
     <item>
       <EFDB_Name>version</EFDB_Name>
@@ -1658,11 +1697,12 @@
       <Count>1</Count>
     </item>
   </SALEvent>
-  <!--Created by xmlmaker2 for subsystem CCCamera class CCCamera_logevent_bonn_shutter_PeriodicTasks_GeneralConfiguration using level 1 for category General-->
+  <!--Created by xmlmaker2 for subsystem CCCamera class CCCamera_logevent_bonn_shutter_PeriodicTasks_GeneralConfiguration for category General using level 1-->
   <!--======================================================================================================================================================-->
   <SALEvent>
     <Subsystem>CCCamera</Subsystem>
     <EFDB_Topic>CCCamera_logevent_bonn_shutter_PeriodicTasks_GeneralConfiguration</EFDB_Topic>
+    <Description>subsystem CCCamera class CCCamera_logevent_bonn_shutter_PeriodicTasks_GeneralConfiguration for category General</Description>
     <!--CCS: Dictionary_Checksum: 2858353959L -->
     <item>
       <EFDB_Name>version</EFDB_Name>
@@ -1700,11 +1740,12 @@
       <Count>1</Count>
     </item>
   </SALEvent>
-  <!--Created by xmlmaker2 for subsystem CCCamera class CCCamera_logevent_bonn_shutter_PeriodicTasks_timersConfiguration using level 1 for category timers-->
+  <!--Created by xmlmaker2 for subsystem CCCamera class CCCamera_logevent_bonn_shutter_PeriodicTasks_timersConfiguration for category timers using level 1-->
   <!--====================================================================================================================================================-->
   <SALEvent>
     <Subsystem>CCCamera</Subsystem>
     <EFDB_Topic>CCCamera_logevent_bonn_shutter_PeriodicTasks_timersConfiguration</EFDB_Topic>
+    <Description>subsystem CCCamera class CCCamera_logevent_bonn_shutter_PeriodicTasks_timersConfiguration for category timers</Description>
     <!--CCS: Dictionary_Checksum: 3814009004L -->
     <item>
       <EFDB_Name>version</EFDB_Name>
@@ -1756,11 +1797,12 @@
       <Count>1</Count>
     </item>
   </SALEvent>
-  <!--Created by xmlmaker2 for subsystem CCCamera class CCCamera_logevent_daq_monitor_PeriodicTasks_GeneralConfiguration using level 1 for category General-->
+  <!--Created by xmlmaker2 for subsystem CCCamera class CCCamera_logevent_daq_monitor_PeriodicTasks_GeneralConfiguration for category General using level 1-->
   <!--=====================================================================================================================================================-->
   <SALEvent>
     <Subsystem>CCCamera</Subsystem>
     <EFDB_Topic>CCCamera_logevent_daq_monitor_PeriodicTasks_GeneralConfiguration</EFDB_Topic>
+    <Description>subsystem CCCamera class CCCamera_logevent_daq_monitor_PeriodicTasks_GeneralConfiguration for category General</Description>
     <!--CCS: Dictionary_Checksum: 420408614L -->
     <item>
       <EFDB_Name>version</EFDB_Name>
@@ -1798,11 +1840,12 @@
       <Count>1</Count>
     </item>
   </SALEvent>
-  <!--Created by xmlmaker2 for subsystem CCCamera class CCCamera_logevent_daq_monitor_PeriodicTasks_timersConfiguration using level 1 for category timers-->
+  <!--Created by xmlmaker2 for subsystem CCCamera class CCCamera_logevent_daq_monitor_PeriodicTasks_timersConfiguration for category timers using level 1-->
   <!--===================================================================================================================================================-->
   <SALEvent>
     <Subsystem>CCCamera</Subsystem>
     <EFDB_Topic>CCCamera_logevent_daq_monitor_PeriodicTasks_timersConfiguration</EFDB_Topic>
+    <Description>subsystem CCCamera class CCCamera_logevent_daq_monitor_PeriodicTasks_timersConfiguration for category timers</Description>
     <!--CCS: Dictionary_Checksum: 3019136670L -->
     <item>
       <EFDB_Name>version</EFDB_Name>
@@ -1868,11 +1911,12 @@
       <Count>1</Count>
     </item>
   </SALEvent>
-  <!--Created by xmlmaker2 for subsystem CCCamera class CCCamera_logevent_daq_monitor_Stats_StatisticsConfiguration using level 1 for category Statistics-->
+  <!--Created by xmlmaker2 for subsystem CCCamera class CCCamera_logevent_daq_monitor_Stats_StatisticsConfiguration for category Statistics using level 1-->
   <!--===================================================================================================================================================-->
   <SALEvent>
     <Subsystem>CCCamera</Subsystem>
     <EFDB_Topic>CCCamera_logevent_daq_monitor_Stats_StatisticsConfiguration</EFDB_Topic>
+    <Description>subsystem CCCamera class CCCamera_logevent_daq_monitor_Stats_StatisticsConfiguration for category Statistics</Description>
     <!--CCS: Dictionary_Checksum: 1197481613L -->
     <item>
       <EFDB_Name>version</EFDB_Name>
@@ -1952,11 +1996,12 @@
       <Count>1</Count>
     </item>
   </SALEvent>
-  <!--Created by xmlmaker2 for subsystem CCCamera class CCCamera_logevent_daq_monitor_StoreConfiguration using level 1 for category Store-->
+  <!--Created by xmlmaker2 for subsystem CCCamera class CCCamera_logevent_daq_monitor_StoreConfiguration for category Store using level 1-->
   <!--===================================================================================================================================-->
   <SALEvent>
     <Subsystem>CCCamera</Subsystem>
     <EFDB_Topic>CCCamera_logevent_daq_monitor_StoreConfiguration</EFDB_Topic>
+    <Description>subsystem CCCamera class CCCamera_logevent_daq_monitor_StoreConfiguration for category Store</Description>
     <!--CCS: Dictionary_Checksum: 2888189970L -->
     <item>
       <EFDB_Name>version</EFDB_Name>
@@ -1980,11 +2025,12 @@
       <Count>1</Count>
     </item>
   </SALEvent>
-  <!--Created by xmlmaker2 for subsystem CCCamera class CCCamera_logevent_daq_monitor_Store_DevicesConfiguration using level 1 for category Devices-->
+  <!--Created by xmlmaker2 for subsystem CCCamera class CCCamera_logevent_daq_monitor_Store_DevicesConfiguration for category Devices using level 1-->
   <!--=============================================================================================================================================-->
   <SALEvent>
     <Subsystem>CCCamera</Subsystem>
     <EFDB_Topic>CCCamera_logevent_daq_monitor_Store_DevicesConfiguration</EFDB_Topic>
+    <Description>subsystem CCCamera class CCCamera_logevent_daq_monitor_Store_DevicesConfiguration for category Devices</Description>
     <!--CCS: Dictionary_Checksum: 1030676591L -->
     <item>
       <EFDB_Name>version</EFDB_Name>
@@ -2001,11 +2047,12 @@
       <Count>1</Count>
     </item>
   </SALEvent>
-  <!--Created by xmlmaker2 for subsystem CCCamera class CCCamera_logevent_daq_monitor_Store_LimitsConfiguration using level 1 for category Limits-->
+  <!--Created by xmlmaker2 for subsystem CCCamera class CCCamera_logevent_daq_monitor_Store_LimitsConfiguration for category Limits using level 1-->
   <!--===========================================================================================================================================-->
   <SALEvent>
     <Subsystem>CCCamera</Subsystem>
     <EFDB_Topic>CCCamera_logevent_daq_monitor_Store_LimitsConfiguration</EFDB_Topic>
+    <Description>subsystem CCCamera class CCCamera_logevent_daq_monitor_Store_LimitsConfiguration for category Limits</Description>
     <!--CCS: Dictionary_Checksum: 3586793202L -->
     <item>
       <EFDB_Name>version</EFDB_Name>
@@ -2029,11 +2076,12 @@
       <Count>1</Count>
     </item>
   </SALEvent>
-  <!--Created by xmlmaker2 for subsystem CCCamera class CCCamera_logevent_daq_monitor_Store_StoreConfiguration using level 1 for category Store-->
+  <!--Created by xmlmaker2 for subsystem CCCamera class CCCamera_logevent_daq_monitor_Store_StoreConfiguration for category Store using level 1-->
   <!--=========================================================================================================================================-->
   <SALEvent>
     <Subsystem>CCCamera</Subsystem>
     <EFDB_Topic>CCCamera_logevent_daq_monitor_Store_StoreConfiguration</EFDB_Topic>
+    <Description>subsystem CCCamera class CCCamera_logevent_daq_monitor_Store_StoreConfiguration for category Store</Description>
     <!--CCS: Dictionary_Checksum: 2176996133L -->
     <item>
       <EFDB_Name>version</EFDB_Name>
@@ -2071,11 +2119,12 @@
       <Count>1</Count>
     </item>
   </SALEvent>
-  <!--Created by xmlmaker2 for subsystem CCCamera class CCCamera_logevent_rebpower_EmergencyResponseManager_GeneralConfiguration using level 1 for category General-->
+  <!--Created by xmlmaker2 for subsystem CCCamera class CCCamera_logevent_rebpower_EmergencyResponseManager_GeneralConfiguration for category General using level 1-->
   <!--=============================================================================================================================================================-->
   <SALEvent>
     <Subsystem>CCCamera</Subsystem>
     <EFDB_Topic>CCCamera_logevent_rebpower_EmergencyResponseManager_GeneralConfiguration</EFDB_Topic>
+    <Description>subsystem CCCamera class CCCamera_logevent_rebpower_EmergencyResponseManager_GeneralConfiguration for category General</Description>
     <!--CCS: Dictionary_Checksum: 3935330107L -->
     <item>
       <EFDB_Name>version</EFDB_Name>
@@ -2092,11 +2141,12 @@
       <Count>1</Count>
     </item>
   </SALEvent>
-  <!--Created by xmlmaker2 for subsystem CCCamera class CCCamera_logevent_rebpower_GeneralConfiguration using level 1 for category General-->
+  <!--Created by xmlmaker2 for subsystem CCCamera class CCCamera_logevent_rebpower_GeneralConfiguration for category General using level 1-->
   <!--====================================================================================================================================-->
   <SALEvent>
     <Subsystem>CCCamera</Subsystem>
     <EFDB_Topic>CCCamera_logevent_rebpower_GeneralConfiguration</EFDB_Topic>
+    <Description>subsystem CCCamera class CCCamera_logevent_rebpower_GeneralConfiguration for category General</Description>
     <!--CCS: Dictionary_Checksum: 2305091023L -->
     <item>
       <EFDB_Name>version</EFDB_Name>
@@ -2127,11 +2177,12 @@
       <Count>1</Count>
     </item>
   </SALEvent>
-  <!--Created by xmlmaker2 for subsystem CCCamera class CCCamera_logevent_rebpower_PeriodicTasks_GeneralConfiguration using level 1 for category General-->
+  <!--Created by xmlmaker2 for subsystem CCCamera class CCCamera_logevent_rebpower_PeriodicTasks_GeneralConfiguration for category General using level 1-->
   <!--==================================================================================================================================================-->
   <SALEvent>
     <Subsystem>CCCamera</Subsystem>
     <EFDB_Topic>CCCamera_logevent_rebpower_PeriodicTasks_GeneralConfiguration</EFDB_Topic>
+    <Description>subsystem CCCamera class CCCamera_logevent_rebpower_PeriodicTasks_GeneralConfiguration for category General</Description>
     <!--CCS: Dictionary_Checksum: 508712045L -->
     <item>
       <EFDB_Name>version</EFDB_Name>
@@ -2183,11 +2234,12 @@
       <Count>1</Count>
     </item>
   </SALEvent>
-  <!--Created by xmlmaker2 for subsystem CCCamera class CCCamera_logevent_rebpower_PeriodicTasks_timersConfiguration using level 1 for category timers-->
+  <!--Created by xmlmaker2 for subsystem CCCamera class CCCamera_logevent_rebpower_PeriodicTasks_timersConfiguration for category timers using level 1-->
   <!--================================================================================================================================================-->
   <SALEvent>
     <Subsystem>CCCamera</Subsystem>
     <EFDB_Topic>CCCamera_logevent_rebpower_PeriodicTasks_timersConfiguration</EFDB_Topic>
+    <Description>subsystem CCCamera class CCCamera_logevent_rebpower_PeriodicTasks_timersConfiguration for category timers</Description>
     <!--CCS: Dictionary_Checksum: 4147396540L -->
     <item>
       <EFDB_Name>version</EFDB_Name>
@@ -2260,11 +2312,12 @@
       <Count>1</Count>
     </item>
   </SALEvent>
-  <!--Created by xmlmaker2 for subsystem CCCamera class CCCamera_logevent_rebpower_RebTotalPower_LimitsConfiguration using level 1 for category Limits-->
+  <!--Created by xmlmaker2 for subsystem CCCamera class CCCamera_logevent_rebpower_RebTotalPower_LimitsConfiguration for category Limits using level 1-->
   <!--================================================================================================================================================-->
   <SALEvent>
     <Subsystem>CCCamera</Subsystem>
     <EFDB_Topic>CCCamera_logevent_rebpower_RebTotalPower_LimitsConfiguration</EFDB_Topic>
+    <Description>subsystem CCCamera class CCCamera_logevent_rebpower_RebTotalPower_LimitsConfiguration for category Limits</Description>
     <!--CCS: Dictionary_Checksum: 3592222472L -->
     <item>
       <EFDB_Name>version</EFDB_Name>
@@ -2302,11 +2355,12 @@
       <Count>1</Count>
     </item>
   </SALEvent>
-  <!--Created by xmlmaker2 for subsystem CCCamera class CCCamera_logevent_rebpower_Reb_GeneralConfiguration using level 1 for category General-->
+  <!--Created by xmlmaker2 for subsystem CCCamera class CCCamera_logevent_rebpower_Reb_GeneralConfiguration for category General using level 1-->
   <!--========================================================================================================================================-->
   <SALEvent>
     <Subsystem>CCCamera</Subsystem>
     <EFDB_Topic>CCCamera_logevent_rebpower_Reb_GeneralConfiguration</EFDB_Topic>
+    <Description>subsystem CCCamera class CCCamera_logevent_rebpower_Reb_GeneralConfiguration for category General</Description>
     <!--CCS: Dictionary_Checksum: 2327678282L -->
     <item>
       <EFDB_Name>version</EFDB_Name>
@@ -2331,11 +2385,12 @@
       <Count>1</Count>
     </item>
   </SALEvent>
-  <!--Created by xmlmaker2 for subsystem CCCamera class CCCamera_logevent_rebpower_Reb_LimitsConfiguration using level 1 for category Limits-->
+  <!--Created by xmlmaker2 for subsystem CCCamera class CCCamera_logevent_rebpower_Reb_LimitsConfiguration for category Limits using level 1-->
   <!--======================================================================================================================================-->
   <SALEvent>
     <Subsystem>CCCamera</Subsystem>
     <EFDB_Topic>CCCamera_logevent_rebpower_Reb_LimitsConfiguration</EFDB_Topic>
+    <Description>subsystem CCCamera class CCCamera_logevent_rebpower_Reb_LimitsConfiguration for category Limits</Description>
     <!--CCS: Dictionary_Checksum: 4066292126L -->
     <item>
       <EFDB_Name>version</EFDB_Name>
@@ -3440,11 +3495,12 @@
       <Count>6</Count>
     </item>
   </SALEvent>
-  <!--Created by xmlmaker2 for subsystem CCCamera class CCCamera_logevent_rebpower_Rebps_DevicesConfiguration using level 1 for category Devices-->
+  <!--Created by xmlmaker2 for subsystem CCCamera class CCCamera_logevent_rebpower_Rebps_DevicesConfiguration for category Devices using level 1-->
   <!--==========================================================================================================================================-->
   <SALEvent>
     <Subsystem>CCCamera</Subsystem>
     <EFDB_Topic>CCCamera_logevent_rebpower_Rebps_DevicesConfiguration</EFDB_Topic>
+    <Description>subsystem CCCamera class CCCamera_logevent_rebpower_Rebps_DevicesConfiguration for category Devices</Description>
     <!--CCS: Dictionary_Checksum: 1287318876L -->
     <item>
       <EFDB_Name>version</EFDB_Name>
@@ -3470,11 +3526,12 @@
       <Count>1</Count>
     </item>
   </SALEvent>
-  <!--Created by xmlmaker2 for subsystem CCCamera class CCCamera_logevent_rebpower_Rebps_GeneralConfiguration using level 1 for category General-->
+  <!--Created by xmlmaker2 for subsystem CCCamera class CCCamera_logevent_rebpower_Rebps_GeneralConfiguration for category General using level 1-->
   <!--==========================================================================================================================================-->
   <SALEvent>
     <Subsystem>CCCamera</Subsystem>
     <EFDB_Topic>CCCamera_logevent_rebpower_Rebps_GeneralConfiguration</EFDB_Topic>
+    <Description>subsystem CCCamera class CCCamera_logevent_rebpower_Rebps_GeneralConfiguration for category General</Description>
     <!--CCS: Dictionary_Checksum: 4105572892L -->
     <item>
       <EFDB_Name>version</EFDB_Name>
@@ -3500,11 +3557,12 @@
       <IsJavaArray>yes</IsJavaArray>
     </item>
   </SALEvent>
-  <!--Created by xmlmaker2 for subsystem CCCamera class CCCamera_logevent_rebpower_Rebps_LimitsConfiguration using level 1 for category Limits-->
+  <!--Created by xmlmaker2 for subsystem CCCamera class CCCamera_logevent_rebpower_Rebps_LimitsConfiguration for category Limits using level 1-->
   <!--========================================================================================================================================-->
   <SALEvent>
     <Subsystem>CCCamera</Subsystem>
     <EFDB_Topic>CCCamera_logevent_rebpower_Rebps_LimitsConfiguration</EFDB_Topic>
+    <Description>subsystem CCCamera class CCCamera_logevent_rebpower_Rebps_LimitsConfiguration for category Limits</Description>
     <!--CCS: Dictionary_Checksum: 1122639152L -->
     <item>
       <EFDB_Name>version</EFDB_Name>
@@ -3809,11 +3867,12 @@
       <Count>1</Count>
     </item>
   </SALEvent>
-  <!--Created by xmlmaker2 for subsystem CCCamera class CCCamera_logevent_rebpower_Rebps_PowerConfiguration using level 1 for category Power-->
+  <!--Created by xmlmaker2 for subsystem CCCamera class CCCamera_logevent_rebpower_Rebps_PowerConfiguration for category Power using level 1-->
   <!--======================================================================================================================================-->
   <SALEvent>
     <Subsystem>CCCamera</Subsystem>
     <EFDB_Topic>CCCamera_logevent_rebpower_Rebps_PowerConfiguration</EFDB_Topic>
+    <Description>subsystem CCCamera class CCCamera_logevent_rebpower_Rebps_PowerConfiguration for category Power</Description>
     <!--CCS: Dictionary_Checksum: 4095085868L -->
     <item>
       <EFDB_Name>version</EFDB_Name>
@@ -3848,11 +3907,12 @@
       <IsJavaArray>yes</IsJavaArray>
     </item>
   </SALEvent>
-  <!--Created by xmlmaker2 for subsystem CCCamera class CCCamera_logevent_rebpower_Rebps_buildConfiguration using level 1 for category build-->
+  <!--Created by xmlmaker2 for subsystem CCCamera class CCCamera_logevent_rebpower_Rebps_buildConfiguration for category build using level 1-->
   <!--======================================================================================================================================-->
   <SALEvent>
     <Subsystem>CCCamera</Subsystem>
     <EFDB_Topic>CCCamera_logevent_rebpower_Rebps_buildConfiguration</EFDB_Topic>
+    <Description>subsystem CCCamera class CCCamera_logevent_rebpower_Rebps_buildConfiguration for category build</Description>
     <!--CCS: Dictionary_Checksum: 3504572576L -->
     <item>
       <EFDB_Name>version</EFDB_Name>
@@ -3878,11 +3938,12 @@
       <IsJavaArray>yes</IsJavaArray>
     </item>
   </SALEvent>
-  <!--Created by xmlmaker2 for subsystem CCCamera class CCCamera_logevent_vacuum_Cold1_CryoconConfiguration using level 1 for category Cryocon-->
+  <!--Created by xmlmaker2 for subsystem CCCamera class CCCamera_logevent_vacuum_Cold1_CryoconConfiguration for category Cryocon using level 1-->
   <!--========================================================================================================================================-->
   <SALEvent>
     <Subsystem>CCCamera</Subsystem>
     <EFDB_Topic>CCCamera_logevent_vacuum_Cold1_CryoconConfiguration</EFDB_Topic>
+    <Description>subsystem CCCamera class CCCamera_logevent_vacuum_Cold1_CryoconConfiguration for category Cryocon</Description>
     <!--CCS: Dictionary_Checksum: 3096116489L -->
     <item>
       <EFDB_Name>version</EFDB_Name>
@@ -3913,11 +3974,12 @@
       <Count>1</Count>
     </item>
   </SALEvent>
-  <!--Created by xmlmaker2 for subsystem CCCamera class CCCamera_logevent_vacuum_Cold1_DevicesConfiguration using level 1 for category Devices-->
+  <!--Created by xmlmaker2 for subsystem CCCamera class CCCamera_logevent_vacuum_Cold1_DevicesConfiguration for category Devices using level 1-->
   <!--========================================================================================================================================-->
   <SALEvent>
     <Subsystem>CCCamera</Subsystem>
     <EFDB_Topic>CCCamera_logevent_vacuum_Cold1_DevicesConfiguration</EFDB_Topic>
+    <Description>subsystem CCCamera class CCCamera_logevent_vacuum_Cold1_DevicesConfiguration for category Devices</Description>
     <!--CCS: Dictionary_Checksum: 2962678614L -->
     <item>
       <EFDB_Name>version</EFDB_Name>
@@ -3934,11 +3996,12 @@
       <Count>1</Count>
     </item>
   </SALEvent>
-  <!--Created by xmlmaker2 for subsystem CCCamera class CCCamera_logevent_vacuum_Cold1_LimitsConfiguration using level 1 for category Limits-->
+  <!--Created by xmlmaker2 for subsystem CCCamera class CCCamera_logevent_vacuum_Cold1_LimitsConfiguration for category Limits using level 1-->
   <!--======================================================================================================================================-->
   <SALEvent>
     <Subsystem>CCCamera</Subsystem>
     <EFDB_Topic>CCCamera_logevent_vacuum_Cold1_LimitsConfiguration</EFDB_Topic>
+    <Description>subsystem CCCamera class CCCamera_logevent_vacuum_Cold1_LimitsConfiguration for category Limits</Description>
     <!--CCS: Dictionary_Checksum: 3536441556L -->
     <item>
       <EFDB_Name>version</EFDB_Name>
@@ -4186,11 +4249,12 @@
       <Count>1</Count>
     </item>
   </SALEvent>
-  <!--Created by xmlmaker2 for subsystem CCCamera class CCCamera_logevent_vacuum_Cold2_CryoconConfiguration using level 1 for category Cryocon-->
+  <!--Created by xmlmaker2 for subsystem CCCamera class CCCamera_logevent_vacuum_Cold2_CryoconConfiguration for category Cryocon using level 1-->
   <!--========================================================================================================================================-->
   <SALEvent>
     <Subsystem>CCCamera</Subsystem>
     <EFDB_Topic>CCCamera_logevent_vacuum_Cold2_CryoconConfiguration</EFDB_Topic>
+    <Description>subsystem CCCamera class CCCamera_logevent_vacuum_Cold2_CryoconConfiguration for category Cryocon</Description>
     <!--CCS: Dictionary_Checksum: 1394652596L -->
     <item>
       <EFDB_Name>version</EFDB_Name>
@@ -4221,11 +4285,12 @@
       <Count>1</Count>
     </item>
   </SALEvent>
-  <!--Created by xmlmaker2 for subsystem CCCamera class CCCamera_logevent_vacuum_Cold2_DevicesConfiguration using level 1 for category Devices-->
+  <!--Created by xmlmaker2 for subsystem CCCamera class CCCamera_logevent_vacuum_Cold2_DevicesConfiguration for category Devices using level 1-->
   <!--========================================================================================================================================-->
   <SALEvent>
     <Subsystem>CCCamera</Subsystem>
     <EFDB_Topic>CCCamera_logevent_vacuum_Cold2_DevicesConfiguration</EFDB_Topic>
+    <Description>subsystem CCCamera class CCCamera_logevent_vacuum_Cold2_DevicesConfiguration for category Devices</Description>
     <!--CCS: Dictionary_Checksum: 1407145204L -->
     <item>
       <EFDB_Name>version</EFDB_Name>
@@ -4242,11 +4307,12 @@
       <Count>1</Count>
     </item>
   </SALEvent>
-  <!--Created by xmlmaker2 for subsystem CCCamera class CCCamera_logevent_vacuum_Cold2_LimitsConfiguration using level 1 for category Limits-->
+  <!--Created by xmlmaker2 for subsystem CCCamera class CCCamera_logevent_vacuum_Cold2_LimitsConfiguration for category Limits using level 1-->
   <!--======================================================================================================================================-->
   <SALEvent>
     <Subsystem>CCCamera</Subsystem>
     <EFDB_Topic>CCCamera_logevent_vacuum_Cold2_LimitsConfiguration</EFDB_Topic>
+    <Description>subsystem CCCamera class CCCamera_logevent_vacuum_Cold2_LimitsConfiguration for category Limits</Description>
     <!--CCS: Dictionary_Checksum: 57321546L -->
     <item>
       <EFDB_Name>version</EFDB_Name>
@@ -4494,11 +4560,12 @@
       <Count>1</Count>
     </item>
   </SALEvent>
-  <!--Created by xmlmaker2 for subsystem CCCamera class CCCamera_logevent_vacuum_Cryo_CryoconConfiguration using level 1 for category Cryocon-->
+  <!--Created by xmlmaker2 for subsystem CCCamera class CCCamera_logevent_vacuum_Cryo_CryoconConfiguration for category Cryocon using level 1-->
   <!--=======================================================================================================================================-->
   <SALEvent>
     <Subsystem>CCCamera</Subsystem>
     <EFDB_Topic>CCCamera_logevent_vacuum_Cryo_CryoconConfiguration</EFDB_Topic>
+    <Description>subsystem CCCamera class CCCamera_logevent_vacuum_Cryo_CryoconConfiguration for category Cryocon</Description>
     <!--CCS: Dictionary_Checksum: 504527416L -->
     <item>
       <EFDB_Name>version</EFDB_Name>
@@ -4529,11 +4596,12 @@
       <Count>1</Count>
     </item>
   </SALEvent>
-  <!--Created by xmlmaker2 for subsystem CCCamera class CCCamera_logevent_vacuum_Cryo_DevicesConfiguration using level 1 for category Devices-->
+  <!--Created by xmlmaker2 for subsystem CCCamera class CCCamera_logevent_vacuum_Cryo_DevicesConfiguration for category Devices using level 1-->
   <!--=======================================================================================================================================-->
   <SALEvent>
     <Subsystem>CCCamera</Subsystem>
     <EFDB_Topic>CCCamera_logevent_vacuum_Cryo_DevicesConfiguration</EFDB_Topic>
+    <Description>subsystem CCCamera class CCCamera_logevent_vacuum_Cryo_DevicesConfiguration for category Devices</Description>
     <!--CCS: Dictionary_Checksum: 2797631718L -->
     <item>
       <EFDB_Name>version</EFDB_Name>
@@ -4550,11 +4618,12 @@
       <Count>1</Count>
     </item>
   </SALEvent>
-  <!--Created by xmlmaker2 for subsystem CCCamera class CCCamera_logevent_vacuum_Cryo_LimitsConfiguration using level 1 for category Limits-->
+  <!--Created by xmlmaker2 for subsystem CCCamera class CCCamera_logevent_vacuum_Cryo_LimitsConfiguration for category Limits using level 1-->
   <!--=====================================================================================================================================-->
   <SALEvent>
     <Subsystem>CCCamera</Subsystem>
     <EFDB_Topic>CCCamera_logevent_vacuum_Cryo_LimitsConfiguration</EFDB_Topic>
+    <Description>subsystem CCCamera class CCCamera_logevent_vacuum_Cryo_LimitsConfiguration for category Limits</Description>
     <!--CCS: Dictionary_Checksum: 4228367874L -->
     <item>
       <EFDB_Name>version</EFDB_Name>
@@ -4802,11 +4871,12 @@
       <Count>1</Count>
     </item>
   </SALEvent>
-  <!--Created by xmlmaker2 for subsystem CCCamera class CCCamera_logevent_vacuum_IonPumps_CryoConfiguration using level 1 for category Cryo-->
+  <!--Created by xmlmaker2 for subsystem CCCamera class CCCamera_logevent_vacuum_IonPumps_CryoConfiguration for category Cryo using level 1-->
   <!--=====================================================================================================================================-->
   <SALEvent>
     <Subsystem>CCCamera</Subsystem>
     <EFDB_Topic>CCCamera_logevent_vacuum_IonPumps_CryoConfiguration</EFDB_Topic>
+    <Description>subsystem CCCamera class CCCamera_logevent_vacuum_IonPumps_CryoConfiguration for category Cryo</Description>
     <!--CCS: Dictionary_Checksum: 2731350552L -->
     <item>
       <EFDB_Name>version</EFDB_Name>
@@ -4844,11 +4914,12 @@
       <Count>1</Count>
     </item>
   </SALEvent>
-  <!--Created by xmlmaker2 for subsystem CCCamera class CCCamera_logevent_vacuum_IonPumps_DevicesConfiguration using level 1 for category Devices-->
+  <!--Created by xmlmaker2 for subsystem CCCamera class CCCamera_logevent_vacuum_IonPumps_DevicesConfiguration for category Devices using level 1-->
   <!--===========================================================================================================================================-->
   <SALEvent>
     <Subsystem>CCCamera</Subsystem>
     <EFDB_Topic>CCCamera_logevent_vacuum_IonPumps_DevicesConfiguration</EFDB_Topic>
+    <Description>subsystem CCCamera class CCCamera_logevent_vacuum_IonPumps_DevicesConfiguration for category Devices</Description>
     <!--CCS: Dictionary_Checksum: 162968392L -->
     <item>
       <EFDB_Name>version</EFDB_Name>
@@ -4865,11 +4936,12 @@
       <Count>1</Count>
     </item>
   </SALEvent>
-  <!--Created by xmlmaker2 for subsystem CCCamera class CCCamera_logevent_vacuum_IonPumps_LimitsConfiguration using level 1 for category Limits-->
+  <!--Created by xmlmaker2 for subsystem CCCamera class CCCamera_logevent_vacuum_IonPumps_LimitsConfiguration for category Limits using level 1-->
   <!--=========================================================================================================================================-->
   <SALEvent>
     <Subsystem>CCCamera</Subsystem>
     <EFDB_Topic>CCCamera_logevent_vacuum_IonPumps_LimitsConfiguration</EFDB_Topic>
+    <Description>subsystem CCCamera class CCCamera_logevent_vacuum_IonPumps_LimitsConfiguration for category Limits</Description>
     <!--CCS: Dictionary_Checksum: 2595718281L -->
     <item>
       <EFDB_Name>version</EFDB_Name>
@@ -4935,11 +5007,12 @@
       <Count>1</Count>
     </item>
   </SALEvent>
-  <!--Created by xmlmaker2 for subsystem CCCamera class CCCamera_logevent_vacuum_PeriodicTasks_GeneralConfiguration using level 1 for category General-->
+  <!--Created by xmlmaker2 for subsystem CCCamera class CCCamera_logevent_vacuum_PeriodicTasks_GeneralConfiguration for category General using level 1-->
   <!--================================================================================================================================================-->
   <SALEvent>
     <Subsystem>CCCamera</Subsystem>
     <EFDB_Topic>CCCamera_logevent_vacuum_PeriodicTasks_GeneralConfiguration</EFDB_Topic>
+    <Description>subsystem CCCamera class CCCamera_logevent_vacuum_PeriodicTasks_GeneralConfiguration for category General</Description>
     <!--CCS: Dictionary_Checksum: 302302131L -->
     <item>
       <EFDB_Name>version</EFDB_Name>
@@ -4977,11 +5050,12 @@
       <Count>1</Count>
     </item>
   </SALEvent>
-  <!--Created by xmlmaker2 for subsystem CCCamera class CCCamera_logevent_vacuum_PeriodicTasks_timersConfiguration using level 1 for category timers-->
+  <!--Created by xmlmaker2 for subsystem CCCamera class CCCamera_logevent_vacuum_PeriodicTasks_timersConfiguration for category timers using level 1-->
   <!--==============================================================================================================================================-->
   <SALEvent>
     <Subsystem>CCCamera</Subsystem>
     <EFDB_Topic>CCCamera_logevent_vacuum_PeriodicTasks_timersConfiguration</EFDB_Topic>
+    <Description>subsystem CCCamera class CCCamera_logevent_vacuum_PeriodicTasks_timersConfiguration for category timers</Description>
     <!--CCS: Dictionary_Checksum: 2166055173L -->
     <item>
       <EFDB_Name>version</EFDB_Name>
@@ -5047,11 +5121,12 @@
       <Count>1</Count>
     </item>
   </SALEvent>
-  <!--Created by xmlmaker2 for subsystem CCCamera class CCCamera_logevent_vacuum_Rtds_DeviceConfiguration using level 1 for category Device-->
+  <!--Created by xmlmaker2 for subsystem CCCamera class CCCamera_logevent_vacuum_Rtds_DeviceConfiguration for category Device using level 1-->
   <!--=====================================================================================================================================-->
   <SALEvent>
     <Subsystem>CCCamera</Subsystem>
     <EFDB_Topic>CCCamera_logevent_vacuum_Rtds_DeviceConfiguration</EFDB_Topic>
+    <Description>subsystem CCCamera class CCCamera_logevent_vacuum_Rtds_DeviceConfiguration for category Device</Description>
     <!--CCS: Dictionary_Checksum: 4091982545L -->
     <item>
       <EFDB_Name>version</EFDB_Name>
@@ -5075,11 +5150,12 @@
       <Count>1</Count>
     </item>
   </SALEvent>
-  <!--Created by xmlmaker2 for subsystem CCCamera class CCCamera_logevent_vacuum_Rtds_DevicesConfiguration using level 1 for category Devices-->
+  <!--Created by xmlmaker2 for subsystem CCCamera class CCCamera_logevent_vacuum_Rtds_DevicesConfiguration for category Devices using level 1-->
   <!--=======================================================================================================================================-->
   <SALEvent>
     <Subsystem>CCCamera</Subsystem>
     <EFDB_Topic>CCCamera_logevent_vacuum_Rtds_DevicesConfiguration</EFDB_Topic>
+    <Description>subsystem CCCamera class CCCamera_logevent_vacuum_Rtds_DevicesConfiguration for category Devices</Description>
     <!--CCS: Dictionary_Checksum: 959829602L -->
     <item>
       <EFDB_Name>version</EFDB_Name>
@@ -5096,11 +5172,12 @@
       <Count>1</Count>
     </item>
   </SALEvent>
-  <!--Created by xmlmaker2 for subsystem CCCamera class CCCamera_logevent_vacuum_Rtds_LimitsConfiguration using level 1 for category Limits-->
+  <!--Created by xmlmaker2 for subsystem CCCamera class CCCamera_logevent_vacuum_Rtds_LimitsConfiguration for category Limits using level 1-->
   <!--=====================================================================================================================================-->
   <SALEvent>
     <Subsystem>CCCamera</Subsystem>
     <EFDB_Topic>CCCamera_logevent_vacuum_Rtds_LimitsConfiguration</EFDB_Topic>
+    <Description>subsystem CCCamera class CCCamera_logevent_vacuum_Rtds_LimitsConfiguration for category Limits</Description>
     <!--CCS: Dictionary_Checksum: 1372314865L -->
     <item>
       <EFDB_Name>version</EFDB_Name>
@@ -5194,11 +5271,12 @@
       <Count>1</Count>
     </item>
   </SALEvent>
-  <!--Created by xmlmaker2 for subsystem CCCamera class CCCamera_logevent_vacuum_Turbo_DevicesConfiguration using level 1 for category Devices-->
+  <!--Created by xmlmaker2 for subsystem CCCamera class CCCamera_logevent_vacuum_Turbo_DevicesConfiguration for category Devices using level 1-->
   <!--========================================================================================================================================-->
   <SALEvent>
     <Subsystem>CCCamera</Subsystem>
     <EFDB_Topic>CCCamera_logevent_vacuum_Turbo_DevicesConfiguration</EFDB_Topic>
+    <Description>subsystem CCCamera class CCCamera_logevent_vacuum_Turbo_DevicesConfiguration for category Devices</Description>
     <!--CCS: Dictionary_Checksum: 1485792936L -->
     <item>
       <EFDB_Name>version</EFDB_Name>
@@ -5215,11 +5293,12 @@
       <Count>1</Count>
     </item>
   </SALEvent>
-  <!--Created by xmlmaker2 for subsystem CCCamera class CCCamera_logevent_vacuum_Turbo_GeneralConfiguration using level 1 for category General-->
+  <!--Created by xmlmaker2 for subsystem CCCamera class CCCamera_logevent_vacuum_Turbo_GeneralConfiguration for category General using level 1-->
   <!--========================================================================================================================================-->
   <SALEvent>
     <Subsystem>CCCamera</Subsystem>
     <EFDB_Topic>CCCamera_logevent_vacuum_Turbo_GeneralConfiguration</EFDB_Topic>
+    <Description>subsystem CCCamera class CCCamera_logevent_vacuum_Turbo_GeneralConfiguration for category General</Description>
     <!--CCS: Dictionary_Checksum: 3955323662L -->
     <item>
       <EFDB_Name>version</EFDB_Name>
@@ -5264,11 +5343,12 @@
       <Count>1</Count>
     </item>
   </SALEvent>
-  <!--Created by xmlmaker2 for subsystem CCCamera class CCCamera_logevent_vacuum_Turbo_LimitsConfiguration using level 1 for category Limits-->
+  <!--Created by xmlmaker2 for subsystem CCCamera class CCCamera_logevent_vacuum_Turbo_LimitsConfiguration for category Limits using level 1-->
   <!--======================================================================================================================================-->
   <SALEvent>
     <Subsystem>CCCamera</Subsystem>
     <EFDB_Topic>CCCamera_logevent_vacuum_Turbo_LimitsConfiguration</EFDB_Topic>
+    <Description>subsystem CCCamera class CCCamera_logevent_vacuum_Turbo_LimitsConfiguration for category Limits</Description>
     <!--CCS: Dictionary_Checksum: 1219716956L -->
     <item>
       <EFDB_Name>version</EFDB_Name>
@@ -5404,11 +5484,12 @@
       <Count>1</Count>
     </item>
   </SALEvent>
-  <!--Created by xmlmaker2 for subsystem CCCamera class CCCamera_logevent_vacuum_Turbo_buildConfiguration using level 1 for category build-->
+  <!--Created by xmlmaker2 for subsystem CCCamera class CCCamera_logevent_vacuum_Turbo_buildConfiguration for category build using level 1-->
   <!--====================================================================================================================================-->
   <SALEvent>
     <Subsystem>CCCamera</Subsystem>
     <EFDB_Topic>CCCamera_logevent_vacuum_Turbo_buildConfiguration</EFDB_Topic>
+    <Description>subsystem CCCamera class CCCamera_logevent_vacuum_Turbo_buildConfiguration for category build</Description>
     <!--CCS: Dictionary_Checksum: 1257163577L -->
     <item>
       <EFDB_Name>version</EFDB_Name>
@@ -5425,11 +5506,12 @@
       <Count>1</Count>
     </item>
   </SALEvent>
-  <!--Created by xmlmaker2 for subsystem CCCamera class CCCamera_logevent_vacuum_VQMonitor_CryoConfiguration using level 1 for category Cryo-->
+  <!--Created by xmlmaker2 for subsystem CCCamera class CCCamera_logevent_vacuum_VQMonitor_CryoConfiguration for category Cryo using level 1-->
   <!--======================================================================================================================================-->
   <SALEvent>
     <Subsystem>CCCamera</Subsystem>
     <EFDB_Topic>CCCamera_logevent_vacuum_VQMonitor_CryoConfiguration</EFDB_Topic>
+    <Description>subsystem CCCamera class CCCamera_logevent_vacuum_VQMonitor_CryoConfiguration for category Cryo</Description>
     <!--CCS: Dictionary_Checksum: 3602168792L -->
     <item>
       <EFDB_Name>version</EFDB_Name>
@@ -5460,11 +5542,12 @@
       <Count>3</Count>
     </item>
   </SALEvent>
-  <!--Created by xmlmaker2 for subsystem CCCamera class CCCamera_logevent_vacuum_VQMonitor_DevicesConfiguration using level 1 for category Devices-->
+  <!--Created by xmlmaker2 for subsystem CCCamera class CCCamera_logevent_vacuum_VQMonitor_DevicesConfiguration for category Devices using level 1-->
   <!--============================================================================================================================================-->
   <SALEvent>
     <Subsystem>CCCamera</Subsystem>
     <EFDB_Topic>CCCamera_logevent_vacuum_VQMonitor_DevicesConfiguration</EFDB_Topic>
+    <Description>subsystem CCCamera class CCCamera_logevent_vacuum_VQMonitor_DevicesConfiguration for category Devices</Description>
     <!--CCS: Dictionary_Checksum: 2969595748L -->
     <item>
       <EFDB_Name>version</EFDB_Name>
@@ -5481,11 +5564,12 @@
       <Count>1</Count>
     </item>
   </SALEvent>
-  <!--Created by xmlmaker2 for subsystem CCCamera class CCCamera_logevent_vacuum_VQMonitor_LimitsConfiguration using level 1 for category Limits-->
+  <!--Created by xmlmaker2 for subsystem CCCamera class CCCamera_logevent_vacuum_VQMonitor_LimitsConfiguration for category Limits using level 1-->
   <!--==========================================================================================================================================-->
   <SALEvent>
     <Subsystem>CCCamera</Subsystem>
     <EFDB_Topic>CCCamera_logevent_vacuum_VQMonitor_LimitsConfiguration</EFDB_Topic>
+    <Description>subsystem CCCamera class CCCamera_logevent_vacuum_VQMonitor_LimitsConfiguration for category Limits</Description>
     <!--CCS: Dictionary_Checksum: 4106696061L -->
     <item>
       <EFDB_Name>version</EFDB_Name>
@@ -5523,11 +5607,12 @@
       <Count>1</Count>
     </item>
   </SALEvent>
-  <!--Created by xmlmaker2 for subsystem CCCamera class CCCamera_logevent_vacuum_VacPluto_DeviceConfiguration using level 1 for category Device-->
+  <!--Created by xmlmaker2 for subsystem CCCamera class CCCamera_logevent_vacuum_VacPluto_DeviceConfiguration for category Device using level 1-->
   <!--=========================================================================================================================================-->
   <SALEvent>
     <Subsystem>CCCamera</Subsystem>
     <EFDB_Topic>CCCamera_logevent_vacuum_VacPluto_DeviceConfiguration</EFDB_Topic>
+    <Description>subsystem CCCamera class CCCamera_logevent_vacuum_VacPluto_DeviceConfiguration for category Device</Description>
     <!--CCS: Dictionary_Checksum: 3444967668L -->
     <item>
       <EFDB_Name>version</EFDB_Name>
@@ -5544,11 +5629,12 @@
       <Count>1</Count>
     </item>
   </SALEvent>
-  <!--Created by xmlmaker2 for subsystem CCCamera class CCCamera_logevent_vacuum_VacPluto_DevicesConfiguration using level 1 for category Devices-->
+  <!--Created by xmlmaker2 for subsystem CCCamera class CCCamera_logevent_vacuum_VacPluto_DevicesConfiguration for category Devices using level 1-->
   <!--===========================================================================================================================================-->
   <SALEvent>
     <Subsystem>CCCamera</Subsystem>
     <EFDB_Topic>CCCamera_logevent_vacuum_VacPluto_DevicesConfiguration</EFDB_Topic>
+    <Description>subsystem CCCamera class CCCamera_logevent_vacuum_VacPluto_DevicesConfiguration for category Devices</Description>
     <!--CCS: Dictionary_Checksum: 3095500826L -->
     <item>
       <EFDB_Name>version</EFDB_Name>
@@ -5565,11 +5651,12 @@
       <Count>1</Count>
     </item>
   </SALEvent>
-  <!--Created by xmlmaker2 for subsystem CCCamera class CCCamera_logevent_vacuum_VacuumConfiguration using level 1 for category Vacuum-->
+  <!--Created by xmlmaker2 for subsystem CCCamera class CCCamera_logevent_vacuum_VacuumConfiguration for category Vacuum using level 1-->
   <!--================================================================================================================================-->
   <SALEvent>
     <Subsystem>CCCamera</Subsystem>
     <EFDB_Topic>CCCamera_logevent_vacuum_VacuumConfiguration</EFDB_Topic>
+    <Description>subsystem CCCamera class CCCamera_logevent_vacuum_VacuumConfiguration for category Vacuum</Description>
     <!--CCS: Dictionary_Checksum: 1726312746L -->
     <item>
       <EFDB_Name>version</EFDB_Name>
@@ -5635,11 +5722,12 @@
       <Count>1</Count>
     </item>
   </SALEvent>
-  <!--Created by xmlmaker2 for subsystem CCCamera class CCCamera_logevent_quadbox_BFR_DevicesConfiguration using level 1 for category Devices-->
+  <!--Created by xmlmaker2 for subsystem CCCamera class CCCamera_logevent_quadbox_BFR_DevicesConfiguration for category Devices using level 1-->
   <!--=======================================================================================================================================-->
   <SALEvent>
     <Subsystem>CCCamera</Subsystem>
     <EFDB_Topic>CCCamera_logevent_quadbox_BFR_DevicesConfiguration</EFDB_Topic>
+    <Description>subsystem CCCamera class CCCamera_logevent_quadbox_BFR_DevicesConfiguration for category Devices</Description>
     <!--CCS: Dictionary_Checksum: 3602386531L -->
     <item>
       <EFDB_Name>version</EFDB_Name>
@@ -5656,11 +5744,12 @@
       <Count>1</Count>
     </item>
   </SALEvent>
-  <!--Created by xmlmaker2 for subsystem CCCamera class CCCamera_logevent_quadbox_BFR_LimitsConfiguration using level 1 for category Limits-->
+  <!--Created by xmlmaker2 for subsystem CCCamera class CCCamera_logevent_quadbox_BFR_LimitsConfiguration for category Limits using level 1-->
   <!--=====================================================================================================================================-->
   <SALEvent>
     <Subsystem>CCCamera</Subsystem>
     <EFDB_Topic>CCCamera_logevent_quadbox_BFR_LimitsConfiguration</EFDB_Topic>
+    <Description>subsystem CCCamera class CCCamera_logevent_quadbox_BFR_LimitsConfiguration for category Limits</Description>
     <!--CCS: Dictionary_Checksum: 1388589038L -->
     <item>
       <EFDB_Name>version</EFDB_Name>
@@ -5894,11 +5983,12 @@
       <Count>1</Count>
     </item>
   </SALEvent>
-  <!--Created by xmlmaker2 for subsystem CCCamera class CCCamera_logevent_quadbox_BFR_QuadboxConfiguration using level 1 for category Quadbox-->
+  <!--Created by xmlmaker2 for subsystem CCCamera class CCCamera_logevent_quadbox_BFR_QuadboxConfiguration for category Quadbox using level 1-->
   <!--=======================================================================================================================================-->
   <SALEvent>
     <Subsystem>CCCamera</Subsystem>
     <EFDB_Topic>CCCamera_logevent_quadbox_BFR_QuadboxConfiguration</EFDB_Topic>
+    <Description>subsystem CCCamera class CCCamera_logevent_quadbox_BFR_QuadboxConfiguration for category Quadbox</Description>
     <!--CCS: Dictionary_Checksum: 1073754593L -->
     <item>
       <EFDB_Name>version</EFDB_Name>
@@ -5915,11 +6005,12 @@
       <Count>1</Count>
     </item>
   </SALEvent>
-  <!--Created by xmlmaker2 for subsystem CCCamera class CCCamera_logevent_quadbox_PDU_24VC_DevicesConfiguration using level 1 for category Devices-->
+  <!--Created by xmlmaker2 for subsystem CCCamera class CCCamera_logevent_quadbox_PDU_24VC_DevicesConfiguration for category Devices using level 1-->
   <!--============================================================================================================================================-->
   <SALEvent>
     <Subsystem>CCCamera</Subsystem>
     <EFDB_Topic>CCCamera_logevent_quadbox_PDU_24VC_DevicesConfiguration</EFDB_Topic>
+    <Description>subsystem CCCamera class CCCamera_logevent_quadbox_PDU_24VC_DevicesConfiguration for category Devices</Description>
     <!--CCS: Dictionary_Checksum: 1394263366L -->
     <item>
       <EFDB_Name>version</EFDB_Name>
@@ -5936,11 +6027,12 @@
       <Count>1</Count>
     </item>
   </SALEvent>
-  <!--Created by xmlmaker2 for subsystem CCCamera class CCCamera_logevent_quadbox_PDU_24VC_LimitsConfiguration using level 1 for category Limits-->
+  <!--Created by xmlmaker2 for subsystem CCCamera class CCCamera_logevent_quadbox_PDU_24VC_LimitsConfiguration for category Limits using level 1-->
   <!--==========================================================================================================================================-->
   <SALEvent>
     <Subsystem>CCCamera</Subsystem>
     <EFDB_Topic>CCCamera_logevent_quadbox_PDU_24VC_LimitsConfiguration</EFDB_Topic>
+    <Description>subsystem CCCamera class CCCamera_logevent_quadbox_PDU_24VC_LimitsConfiguration for category Limits</Description>
     <!--CCS: Dictionary_Checksum: 2496062068L -->
     <item>
       <EFDB_Name>version</EFDB_Name>
@@ -6762,11 +6854,12 @@
       <Count>1</Count>
     </item>
   </SALEvent>
-  <!--Created by xmlmaker2 for subsystem CCCamera class CCCamera_logevent_quadbox_PDU_24VC_QuadboxConfiguration using level 1 for category Quadbox-->
+  <!--Created by xmlmaker2 for subsystem CCCamera class CCCamera_logevent_quadbox_PDU_24VC_QuadboxConfiguration for category Quadbox using level 1-->
   <!--============================================================================================================================================-->
   <SALEvent>
     <Subsystem>CCCamera</Subsystem>
     <EFDB_Topic>CCCamera_logevent_quadbox_PDU_24VC_QuadboxConfiguration</EFDB_Topic>
+    <Description>subsystem CCCamera class CCCamera_logevent_quadbox_PDU_24VC_QuadboxConfiguration for category Quadbox</Description>
     <!--CCS: Dictionary_Checksum: 2302178379L -->
     <item>
       <EFDB_Name>version</EFDB_Name>
@@ -6783,11 +6876,12 @@
       <Count>1</Count>
     </item>
   </SALEvent>
-  <!--Created by xmlmaker2 for subsystem CCCamera class CCCamera_logevent_quadbox_PDU_24VD_DevicesConfiguration using level 1 for category Devices-->
+  <!--Created by xmlmaker2 for subsystem CCCamera class CCCamera_logevent_quadbox_PDU_24VD_DevicesConfiguration for category Devices using level 1-->
   <!--============================================================================================================================================-->
   <SALEvent>
     <Subsystem>CCCamera</Subsystem>
     <EFDB_Topic>CCCamera_logevent_quadbox_PDU_24VD_DevicesConfiguration</EFDB_Topic>
+    <Description>subsystem CCCamera class CCCamera_logevent_quadbox_PDU_24VD_DevicesConfiguration for category Devices</Description>
     <!--CCS: Dictionary_Checksum: 2800696546L -->
     <item>
       <EFDB_Name>version</EFDB_Name>
@@ -6804,11 +6898,12 @@
       <Count>1</Count>
     </item>
   </SALEvent>
-  <!--Created by xmlmaker2 for subsystem CCCamera class CCCamera_logevent_quadbox_PDU_24VD_LimitsConfiguration using level 1 for category Limits-->
+  <!--Created by xmlmaker2 for subsystem CCCamera class CCCamera_logevent_quadbox_PDU_24VD_LimitsConfiguration for category Limits using level 1-->
   <!--==========================================================================================================================================-->
   <SALEvent>
     <Subsystem>CCCamera</Subsystem>
     <EFDB_Topic>CCCamera_logevent_quadbox_PDU_24VD_LimitsConfiguration</EFDB_Topic>
+    <Description>subsystem CCCamera class CCCamera_logevent_quadbox_PDU_24VD_LimitsConfiguration for category Limits</Description>
     <!--CCS: Dictionary_Checksum: 4213993875L -->
     <item>
       <EFDB_Name>version</EFDB_Name>
@@ -7014,11 +7109,12 @@
       <Count>1</Count>
     </item>
   </SALEvent>
-  <!--Created by xmlmaker2 for subsystem CCCamera class CCCamera_logevent_quadbox_PDU_24VD_QuadboxConfiguration using level 1 for category Quadbox-->
+  <!--Created by xmlmaker2 for subsystem CCCamera class CCCamera_logevent_quadbox_PDU_24VD_QuadboxConfiguration for category Quadbox using level 1-->
   <!--============================================================================================================================================-->
   <SALEvent>
     <Subsystem>CCCamera</Subsystem>
     <EFDB_Topic>CCCamera_logevent_quadbox_PDU_24VD_QuadboxConfiguration</EFDB_Topic>
+    <Description>subsystem CCCamera class CCCamera_logevent_quadbox_PDU_24VD_QuadboxConfiguration for category Quadbox</Description>
     <!--CCS: Dictionary_Checksum: 1277575729L -->
     <item>
       <EFDB_Name>version</EFDB_Name>
@@ -7035,11 +7131,12 @@
       <Count>1</Count>
     </item>
   </SALEvent>
-  <!--Created by xmlmaker2 for subsystem CCCamera class CCCamera_logevent_quadbox_PDU_48V_DevicesConfiguration using level 1 for category Devices-->
+  <!--Created by xmlmaker2 for subsystem CCCamera class CCCamera_logevent_quadbox_PDU_48V_DevicesConfiguration for category Devices using level 1-->
   <!--===========================================================================================================================================-->
   <SALEvent>
     <Subsystem>CCCamera</Subsystem>
     <EFDB_Topic>CCCamera_logevent_quadbox_PDU_48V_DevicesConfiguration</EFDB_Topic>
+    <Description>subsystem CCCamera class CCCamera_logevent_quadbox_PDU_48V_DevicesConfiguration for category Devices</Description>
     <!--CCS: Dictionary_Checksum: 901519920L -->
     <item>
       <EFDB_Name>version</EFDB_Name>
@@ -7056,11 +7153,12 @@
       <Count>1</Count>
     </item>
   </SALEvent>
-  <!--Created by xmlmaker2 for subsystem CCCamera class CCCamera_logevent_quadbox_PDU_48V_LimitsConfiguration using level 1 for category Limits-->
+  <!--Created by xmlmaker2 for subsystem CCCamera class CCCamera_logevent_quadbox_PDU_48V_LimitsConfiguration for category Limits using level 1-->
   <!--=========================================================================================================================================-->
   <SALEvent>
     <Subsystem>CCCamera</Subsystem>
     <EFDB_Topic>CCCamera_logevent_quadbox_PDU_48V_LimitsConfiguration</EFDB_Topic>
+    <Description>subsystem CCCamera class CCCamera_logevent_quadbox_PDU_48V_LimitsConfiguration for category Limits</Description>
     <!--CCS: Dictionary_Checksum: 3535542928L -->
     <item>
       <EFDB_Name>version</EFDB_Name>
@@ -7434,11 +7532,12 @@
       <Count>1</Count>
     </item>
   </SALEvent>
-  <!--Created by xmlmaker2 for subsystem CCCamera class CCCamera_logevent_quadbox_PDU_48V_QuadboxConfiguration using level 1 for category Quadbox-->
+  <!--Created by xmlmaker2 for subsystem CCCamera class CCCamera_logevent_quadbox_PDU_48V_QuadboxConfiguration for category Quadbox using level 1-->
   <!--===========================================================================================================================================-->
   <SALEvent>
     <Subsystem>CCCamera</Subsystem>
     <EFDB_Topic>CCCamera_logevent_quadbox_PDU_48V_QuadboxConfiguration</EFDB_Topic>
+    <Description>subsystem CCCamera class CCCamera_logevent_quadbox_PDU_48V_QuadboxConfiguration for category Quadbox</Description>
     <!--CCS: Dictionary_Checksum: 2075951956L -->
     <item>
       <EFDB_Name>version</EFDB_Name>
@@ -7455,11 +7554,12 @@
       <Count>1</Count>
     </item>
   </SALEvent>
-  <!--Created by xmlmaker2 for subsystem CCCamera class CCCamera_logevent_quadbox_PDU_5V_DevicesConfiguration using level 1 for category Devices-->
+  <!--Created by xmlmaker2 for subsystem CCCamera class CCCamera_logevent_quadbox_PDU_5V_DevicesConfiguration for category Devices using level 1-->
   <!--==========================================================================================================================================-->
   <SALEvent>
     <Subsystem>CCCamera</Subsystem>
     <EFDB_Topic>CCCamera_logevent_quadbox_PDU_5V_DevicesConfiguration</EFDB_Topic>
+    <Description>subsystem CCCamera class CCCamera_logevent_quadbox_PDU_5V_DevicesConfiguration for category Devices</Description>
     <!--CCS: Dictionary_Checksum: 638908239L -->
     <item>
       <EFDB_Name>version</EFDB_Name>
@@ -7476,11 +7576,12 @@
       <Count>1</Count>
     </item>
   </SALEvent>
-  <!--Created by xmlmaker2 for subsystem CCCamera class CCCamera_logevent_quadbox_PDU_5V_LimitsConfiguration using level 1 for category Limits-->
+  <!--Created by xmlmaker2 for subsystem CCCamera class CCCamera_logevent_quadbox_PDU_5V_LimitsConfiguration for category Limits using level 1-->
   <!--========================================================================================================================================-->
   <SALEvent>
     <Subsystem>CCCamera</Subsystem>
     <EFDB_Topic>CCCamera_logevent_quadbox_PDU_5V_LimitsConfiguration</EFDB_Topic>
+    <Description>subsystem CCCamera class CCCamera_logevent_quadbox_PDU_5V_LimitsConfiguration for category Limits</Description>
     <!--CCS: Dictionary_Checksum: 3923793477L -->
     <item>
       <EFDB_Name>version</EFDB_Name>
@@ -7546,11 +7647,12 @@
       <Count>1</Count>
     </item>
   </SALEvent>
-  <!--Created by xmlmaker2 for subsystem CCCamera class CCCamera_logevent_quadbox_PDU_5V_QuadboxConfiguration using level 1 for category Quadbox-->
+  <!--Created by xmlmaker2 for subsystem CCCamera class CCCamera_logevent_quadbox_PDU_5V_QuadboxConfiguration for category Quadbox using level 1-->
   <!--==========================================================================================================================================-->
   <SALEvent>
     <Subsystem>CCCamera</Subsystem>
     <EFDB_Topic>CCCamera_logevent_quadbox_PDU_5V_QuadboxConfiguration</EFDB_Topic>
+    <Description>subsystem CCCamera class CCCamera_logevent_quadbox_PDU_5V_QuadboxConfiguration for category Quadbox</Description>
     <!--CCS: Dictionary_Checksum: 3342013421L -->
     <item>
       <EFDB_Name>version</EFDB_Name>
@@ -7567,11 +7669,12 @@
       <Count>1</Count>
     </item>
   </SALEvent>
-  <!--Created by xmlmaker2 for subsystem CCCamera class CCCamera_logevent_quadbox_PeriodicTasks_GeneralConfiguration using level 1 for category General-->
+  <!--Created by xmlmaker2 for subsystem CCCamera class CCCamera_logevent_quadbox_PeriodicTasks_GeneralConfiguration for category General using level 1-->
   <!--=================================================================================================================================================-->
   <SALEvent>
     <Subsystem>CCCamera</Subsystem>
     <EFDB_Topic>CCCamera_logevent_quadbox_PeriodicTasks_GeneralConfiguration</EFDB_Topic>
+    <Description>subsystem CCCamera class CCCamera_logevent_quadbox_PeriodicTasks_GeneralConfiguration for category General</Description>
     <!--CCS: Dictionary_Checksum: 951203098L -->
     <item>
       <EFDB_Name>version</EFDB_Name>
@@ -7609,11 +7712,12 @@
       <Count>1</Count>
     </item>
   </SALEvent>
-  <!--Created by xmlmaker2 for subsystem CCCamera class CCCamera_logevent_quadbox_PeriodicTasks_timersConfiguration using level 1 for category timers-->
+  <!--Created by xmlmaker2 for subsystem CCCamera class CCCamera_logevent_quadbox_PeriodicTasks_timersConfiguration for category timers using level 1-->
   <!--===============================================================================================================================================-->
   <SALEvent>
     <Subsystem>CCCamera</Subsystem>
     <EFDB_Topic>CCCamera_logevent_quadbox_PeriodicTasks_timersConfiguration</EFDB_Topic>
+    <Description>subsystem CCCamera class CCCamera_logevent_quadbox_PeriodicTasks_timersConfiguration for category timers</Description>
     <!--CCS: Dictionary_Checksum: 2062114513L -->
     <item>
       <EFDB_Name>version</EFDB_Name>
@@ -7665,11 +7769,12 @@
       <Count>1</Count>
     </item>
   </SALEvent>
-  <!--Created by xmlmaker2 for subsystem CCCamera class CCCamera_logevent_focal_plane_Ccd_HardwareIdConfiguration using level 1 for category HardwareId-->
+  <!--Created by xmlmaker2 for subsystem CCCamera class CCCamera_logevent_focal_plane_Ccd_HardwareIdConfiguration for category HardwareId using level 1-->
   <!--=================================================================================================================================================-->
   <SALEvent>
     <Subsystem>CCCamera</Subsystem>
     <EFDB_Topic>CCCamera_logevent_focal_plane_Ccd_HardwareIdConfiguration</EFDB_Topic>
+    <Description>subsystem CCCamera class CCCamera_logevent_focal_plane_Ccd_HardwareIdConfiguration for category HardwareId</Description>
     <!--CCS: Dictionary_Checksum: 870842743L -->
     <item>
       <EFDB_Name>version</EFDB_Name>
@@ -7702,11 +7807,12 @@
       <Count>1</Count>
     </item>
   </SALEvent>
-  <!--Created by xmlmaker2 for subsystem CCCamera class CCCamera_logevent_focal_plane_Ccd_LimitsConfiguration using level 1 for category Limits-->
+  <!--Created by xmlmaker2 for subsystem CCCamera class CCCamera_logevent_focal_plane_Ccd_LimitsConfiguration for category Limits using level 1-->
   <!--=========================================================================================================================================-->
   <SALEvent>
     <Subsystem>CCCamera</Subsystem>
     <EFDB_Topic>CCCamera_logevent_focal_plane_Ccd_LimitsConfiguration</EFDB_Topic>
+    <Description>subsystem CCCamera class CCCamera_logevent_focal_plane_Ccd_LimitsConfiguration for category Limits</Description>
     <!--CCS: Dictionary_Checksum: 1282336460L -->
     <item>
       <EFDB_Name>version</EFDB_Name>
@@ -7883,11 +7989,12 @@
       <Count>9</Count>
     </item>
   </SALEvent>
-  <!--Created by xmlmaker2 for subsystem CCCamera class CCCamera_logevent_focal_plane_ImageDatabaseService_GeneralConfiguration using level 1 for category General-->
+  <!--Created by xmlmaker2 for subsystem CCCamera class CCCamera_logevent_focal_plane_ImageDatabaseService_GeneralConfiguration for category General using level 1-->
   <!--============================================================================================================================================================-->
   <SALEvent>
     <Subsystem>CCCamera</Subsystem>
     <EFDB_Topic>CCCamera_logevent_focal_plane_ImageDatabaseService_GeneralConfiguration</EFDB_Topic>
+    <Description>subsystem CCCamera class CCCamera_logevent_focal_plane_ImageDatabaseService_GeneralConfiguration for category General</Description>
     <!--CCS: Dictionary_Checksum: 3966880200L -->
     <item>
       <EFDB_Name>version</EFDB_Name>
@@ -7911,11 +8018,12 @@
       <Count>1</Count>
     </item>
   </SALEvent>
-  <!--Created by xmlmaker2 for subsystem CCCamera class CCCamera_logevent_focal_plane_ImageNameService_GeneralConfiguration using level 1 for category General-->
+  <!--Created by xmlmaker2 for subsystem CCCamera class CCCamera_logevent_focal_plane_ImageNameService_GeneralConfiguration for category General using level 1-->
   <!--========================================================================================================================================================-->
   <SALEvent>
     <Subsystem>CCCamera</Subsystem>
     <EFDB_Topic>CCCamera_logevent_focal_plane_ImageNameService_GeneralConfiguration</EFDB_Topic>
+    <Description>subsystem CCCamera class CCCamera_logevent_focal_plane_ImageNameService_GeneralConfiguration for category General</Description>
     <!--CCS: Dictionary_Checksum: 1820292887L -->
     <item>
       <EFDB_Name>version</EFDB_Name>
@@ -7960,11 +8068,12 @@
       <Count>1</Count>
     </item>
   </SALEvent>
-  <!--Created by xmlmaker2 for subsystem CCCamera class CCCamera_logevent_focal_plane_InstrumentConfig_InstrumentConfiguration using level 1 for category Instrument-->
+  <!--Created by xmlmaker2 for subsystem CCCamera class CCCamera_logevent_focal_plane_InstrumentConfig_InstrumentConfiguration for category Instrument using level 1-->
   <!--==============================================================================================================================================================-->
   <SALEvent>
     <Subsystem>CCCamera</Subsystem>
     <EFDB_Topic>CCCamera_logevent_focal_plane_InstrumentConfig_InstrumentConfiguration</EFDB_Topic>
+    <Description>subsystem CCCamera class CCCamera_logevent_focal_plane_InstrumentConfig_InstrumentConfiguration for category Instrument</Description>
     <!--CCS: Dictionary_Checksum: 2262490442L -->
     <item>
       <EFDB_Name>version</EFDB_Name>
@@ -7995,11 +8104,12 @@
       <Count>1</Count>
     </item>
   </SALEvent>
-  <!--Created by xmlmaker2 for subsystem CCCamera class CCCamera_logevent_focal_plane_MonitoringConfig_MonitoringConfiguration using level 1 for category Monitoring-->
+  <!--Created by xmlmaker2 for subsystem CCCamera class CCCamera_logevent_focal_plane_MonitoringConfig_MonitoringConfiguration for category Monitoring using level 1-->
   <!--==============================================================================================================================================================-->
   <SALEvent>
     <Subsystem>CCCamera</Subsystem>
     <EFDB_Topic>CCCamera_logevent_focal_plane_MonitoringConfig_MonitoringConfiguration</EFDB_Topic>
+    <Description>subsystem CCCamera class CCCamera_logevent_focal_plane_MonitoringConfig_MonitoringConfiguration for category Monitoring</Description>
     <!--CCS: Dictionary_Checksum: 2605392367L -->
     <item>
       <EFDB_Name>version</EFDB_Name>
@@ -8023,11 +8133,12 @@
       <Count>1</Count>
     </item>
   </SALEvent>
-  <!--Created by xmlmaker2 for subsystem CCCamera class CCCamera_logevent_focal_plane_PeriodicTasks_GeneralConfiguration using level 1 for category General-->
+  <!--Created by xmlmaker2 for subsystem CCCamera class CCCamera_logevent_focal_plane_PeriodicTasks_GeneralConfiguration for category General using level 1-->
   <!--=====================================================================================================================================================-->
   <SALEvent>
     <Subsystem>CCCamera</Subsystem>
     <EFDB_Topic>CCCamera_logevent_focal_plane_PeriodicTasks_GeneralConfiguration</EFDB_Topic>
+    <Description>subsystem CCCamera class CCCamera_logevent_focal_plane_PeriodicTasks_GeneralConfiguration for category General</Description>
     <!--CCS: Dictionary_Checksum: 2558579456L -->
     <item>
       <EFDB_Name>version</EFDB_Name>
@@ -8079,11 +8190,12 @@
       <Count>1</Count>
     </item>
   </SALEvent>
-  <!--Created by xmlmaker2 for subsystem CCCamera class CCCamera_logevent_focal_plane_PeriodicTasks_timersConfiguration using level 1 for category timers-->
+  <!--Created by xmlmaker2 for subsystem CCCamera class CCCamera_logevent_focal_plane_PeriodicTasks_timersConfiguration for category timers using level 1-->
   <!--===================================================================================================================================================-->
   <SALEvent>
     <Subsystem>CCCamera</Subsystem>
     <EFDB_Topic>CCCamera_logevent_focal_plane_PeriodicTasks_timersConfiguration</EFDB_Topic>
+    <Description>subsystem CCCamera class CCCamera_logevent_focal_plane_PeriodicTasks_timersConfiguration for category timers</Description>
     <!--CCS: Dictionary_Checksum: 1582128896L -->
     <item>
       <EFDB_Name>version</EFDB_Name>
@@ -8135,11 +8247,12 @@
       <Count>1</Count>
     </item>
   </SALEvent>
-  <!--Created by xmlmaker2 for subsystem CCCamera class CCCamera_logevent_focal_plane_Raft_HardwareIdConfiguration using level 1 for category HardwareId-->
+  <!--Created by xmlmaker2 for subsystem CCCamera class CCCamera_logevent_focal_plane_Raft_HardwareIdConfiguration for category HardwareId using level 1-->
   <!--==================================================================================================================================================-->
   <SALEvent>
     <Subsystem>CCCamera</Subsystem>
     <EFDB_Topic>CCCamera_logevent_focal_plane_Raft_HardwareIdConfiguration</EFDB_Topic>
+    <Description>subsystem CCCamera class CCCamera_logevent_focal_plane_Raft_HardwareIdConfiguration for category HardwareId</Description>
     <!--CCS: Dictionary_Checksum: 4170714371L -->
     <item>
       <EFDB_Name>version</EFDB_Name>
@@ -8165,11 +8278,12 @@
       <IsJavaArray>yes</IsJavaArray>
     </item>
   </SALEvent>
-  <!--Created by xmlmaker2 for subsystem CCCamera class CCCamera_logevent_focal_plane_Raft_RaftTempControlConfiguration using level 1 for category RaftTempControl-->
+  <!--Created by xmlmaker2 for subsystem CCCamera class CCCamera_logevent_focal_plane_Raft_RaftTempControlConfiguration for category RaftTempControl using level 1-->
   <!--============================================================================================================================================================-->
   <SALEvent>
     <Subsystem>CCCamera</Subsystem>
     <EFDB_Topic>CCCamera_logevent_focal_plane_Raft_RaftTempControlConfiguration</EFDB_Topic>
+    <Description>subsystem CCCamera class CCCamera_logevent_focal_plane_Raft_RaftTempControlConfiguration for category RaftTempControl</Description>
     <!--CCS: Dictionary_Checksum: 663431800L -->
     <item>
       <EFDB_Name>version</EFDB_Name>
@@ -8303,11 +8417,12 @@
       <IsJavaArray>yes</IsJavaArray>
     </item>
   </SALEvent>
-  <!--Created by xmlmaker2 for subsystem CCCamera class CCCamera_logevent_focal_plane_Raft_RaftTempControlStatusConfiguration using level 1 for category RaftTempControlStatus-->
+  <!--Created by xmlmaker2 for subsystem CCCamera class CCCamera_logevent_focal_plane_Raft_RaftTempControlStatusConfiguration for category RaftTempControlStatus using level 1-->
   <!--========================================================================================================================================================================-->
   <SALEvent>
     <Subsystem>CCCamera</Subsystem>
     <EFDB_Topic>CCCamera_logevent_focal_plane_Raft_RaftTempControlStatusConfiguration</EFDB_Topic>
+    <Description>subsystem CCCamera class CCCamera_logevent_focal_plane_Raft_RaftTempControlStatusConfiguration for category RaftTempControlStatus</Description>
     <!--CCS: Dictionary_Checksum: 1317421370L -->
     <item>
       <EFDB_Name>version</EFDB_Name>
@@ -8333,11 +8448,12 @@
       <IsJavaArray>yes</IsJavaArray>
     </item>
   </SALEvent>
-  <!--Created by xmlmaker2 for subsystem CCCamera class CCCamera_logevent_focal_plane_RebTotalPower_LimitsConfiguration using level 1 for category Limits-->
+  <!--Created by xmlmaker2 for subsystem CCCamera class CCCamera_logevent_focal_plane_RebTotalPower_LimitsConfiguration for category Limits using level 1-->
   <!--===================================================================================================================================================-->
   <SALEvent>
     <Subsystem>CCCamera</Subsystem>
     <EFDB_Topic>CCCamera_logevent_focal_plane_RebTotalPower_LimitsConfiguration</EFDB_Topic>
+    <Description>subsystem CCCamera class CCCamera_logevent_focal_plane_RebTotalPower_LimitsConfiguration for category Limits</Description>
     <!--CCS: Dictionary_Checksum: 958204913L -->
     <item>
       <EFDB_Name>version</EFDB_Name>
@@ -8375,11 +8491,12 @@
       <Count>1</Count>
     </item>
   </SALEvent>
-  <!--Created by xmlmaker2 for subsystem CCCamera class CCCamera_logevent_focal_plane_Reb_DevicesConfiguration using level 1 for category Devices-->
+  <!--Created by xmlmaker2 for subsystem CCCamera class CCCamera_logevent_focal_plane_Reb_DevicesConfiguration for category Devices using level 1-->
   <!--===========================================================================================================================================-->
   <SALEvent>
     <Subsystem>CCCamera</Subsystem>
     <EFDB_Topic>CCCamera_logevent_focal_plane_Reb_DevicesConfiguration</EFDB_Topic>
+    <Description>subsystem CCCamera class CCCamera_logevent_focal_plane_Reb_DevicesConfiguration for category Devices</Description>
     <!--CCS: Dictionary_Checksum: 1232484397L -->
     <item>
       <EFDB_Name>version</EFDB_Name>
@@ -8404,11 +8521,12 @@
       <Count>1</Count>
     </item>
   </SALEvent>
-  <!--Created by xmlmaker2 for subsystem CCCamera class CCCamera_logevent_focal_plane_Reb_GeneralConfiguration using level 1 for category General-->
+  <!--Created by xmlmaker2 for subsystem CCCamera class CCCamera_logevent_focal_plane_Reb_GeneralConfiguration for category General using level 1-->
   <!--===========================================================================================================================================-->
   <SALEvent>
     <Subsystem>CCCamera</Subsystem>
     <EFDB_Topic>CCCamera_logevent_focal_plane_Reb_GeneralConfiguration</EFDB_Topic>
+    <Description>subsystem CCCamera class CCCamera_logevent_focal_plane_Reb_GeneralConfiguration for category General</Description>
     <!--CCS: Dictionary_Checksum: 2781647658L -->
     <item>
       <EFDB_Name>version</EFDB_Name>
@@ -8433,11 +8551,12 @@
       <Count>1</Count>
     </item>
   </SALEvent>
-  <!--Created by xmlmaker2 for subsystem CCCamera class CCCamera_logevent_focal_plane_Reb_HardwareIdConfiguration using level 1 for category HardwareId-->
+  <!--Created by xmlmaker2 for subsystem CCCamera class CCCamera_logevent_focal_plane_Reb_HardwareIdConfiguration for category HardwareId using level 1-->
   <!--=================================================================================================================================================-->
   <SALEvent>
     <Subsystem>CCCamera</Subsystem>
     <EFDB_Topic>CCCamera_logevent_focal_plane_Reb_HardwareIdConfiguration</EFDB_Topic>
+    <Description>subsystem CCCamera class CCCamera_logevent_focal_plane_Reb_HardwareIdConfiguration for category HardwareId</Description>
     <!--CCS: Dictionary_Checksum: 1058351474L -->
     <item>
       <EFDB_Name>version</EFDB_Name>
@@ -8462,11 +8581,12 @@
       <Count>1</Count>
     </item>
   </SALEvent>
-  <!--Created by xmlmaker2 for subsystem CCCamera class CCCamera_logevent_focal_plane_Reb_LimitsConfiguration using level 1 for category Limits-->
+  <!--Created by xmlmaker2 for subsystem CCCamera class CCCamera_logevent_focal_plane_Reb_LimitsConfiguration for category Limits using level 1-->
   <!--=========================================================================================================================================-->
   <SALEvent>
     <Subsystem>CCCamera</Subsystem>
     <EFDB_Topic>CCCamera_logevent_focal_plane_Reb_LimitsConfiguration</EFDB_Topic>
+    <Description>subsystem CCCamera class CCCamera_logevent_focal_plane_Reb_LimitsConfiguration for category Limits</Description>
     <!--CCS: Dictionary_Checksum: 1292968762L -->
     <item>
       <EFDB_Name>version</EFDB_Name>
@@ -9859,11 +9979,12 @@
       <Count>3</Count>
     </item>
   </SALEvent>
-  <!--Created by xmlmaker2 for subsystem CCCamera class CCCamera_logevent_focal_plane_Reb_RaftsConfiguration using level 1 for category Rafts-->
+  <!--Created by xmlmaker2 for subsystem CCCamera class CCCamera_logevent_focal_plane_Reb_RaftsConfiguration for category Rafts using level 1-->
   <!--=======================================================================================================================================-->
   <SALEvent>
     <Subsystem>CCCamera</Subsystem>
     <EFDB_Topic>CCCamera_logevent_focal_plane_Reb_RaftsConfiguration</EFDB_Topic>
+    <Description>subsystem CCCamera class CCCamera_logevent_focal_plane_Reb_RaftsConfiguration for category Rafts</Description>
     <!--CCS: Dictionary_Checksum: 3352229690L -->
     <item>
       <EFDB_Name>version</EFDB_Name>
@@ -10064,11 +10185,12 @@
       <Count>3</Count>
     </item>
   </SALEvent>
-  <!--Created by xmlmaker2 for subsystem CCCamera class CCCamera_logevent_focal_plane_Reb_RaftsLimitsConfiguration using level 1 for category RaftsLimits-->
+  <!--Created by xmlmaker2 for subsystem CCCamera class CCCamera_logevent_focal_plane_Reb_RaftsLimitsConfiguration for category RaftsLimits using level 1-->
   <!--===================================================================================================================================================-->
   <SALEvent>
     <Subsystem>CCCamera</Subsystem>
     <EFDB_Topic>CCCamera_logevent_focal_plane_Reb_RaftsLimitsConfiguration</EFDB_Topic>
+    <Description>subsystem CCCamera class CCCamera_logevent_focal_plane_Reb_RaftsLimitsConfiguration for category RaftsLimits</Description>
     <!--CCS: Dictionary_Checksum: 698001149L -->
     <item>
       <EFDB_Name>version</EFDB_Name>
@@ -10373,11 +10495,12 @@
       <Count>1</Count>
     </item>
   </SALEvent>
-  <!--Created by xmlmaker2 for subsystem CCCamera class CCCamera_logevent_focal_plane_Reb_RaftsPowerConfiguration using level 1 for category RaftsPower-->
+  <!--Created by xmlmaker2 for subsystem CCCamera class CCCamera_logevent_focal_plane_Reb_RaftsPowerConfiguration for category RaftsPower using level 1-->
   <!--=================================================================================================================================================-->
   <SALEvent>
     <Subsystem>CCCamera</Subsystem>
     <EFDB_Topic>CCCamera_logevent_focal_plane_Reb_RaftsPowerConfiguration</EFDB_Topic>
+    <Description>subsystem CCCamera class CCCamera_logevent_focal_plane_Reb_RaftsPowerConfiguration for category RaftsPower</Description>
     <!--CCS: Dictionary_Checksum: 542347311L -->
     <item>
       <EFDB_Name>version</EFDB_Name>
@@ -11186,11 +11309,12 @@
       <Count>3</Count>
     </item>
   </SALEvent>
-  <!--Created by xmlmaker2 for subsystem CCCamera class CCCamera_logevent_focal_plane_Reb_timersConfiguration using level 1 for category timers-->
+  <!--Created by xmlmaker2 for subsystem CCCamera class CCCamera_logevent_focal_plane_Reb_timersConfiguration for category timers using level 1-->
   <!--=========================================================================================================================================-->
   <SALEvent>
     <Subsystem>CCCamera</Subsystem>
     <EFDB_Topic>CCCamera_logevent_focal_plane_Reb_timersConfiguration</EFDB_Topic>
+    <Description>subsystem CCCamera class CCCamera_logevent_focal_plane_Reb_timersConfiguration for category timers</Description>
     <!--CCS: Dictionary_Checksum: 2280700147L -->
     <item>
       <EFDB_Name>version</EFDB_Name>
@@ -11311,11 +11435,12 @@
       <Count>3</Count>
     </item>
   </SALEvent>
-  <!--Created by xmlmaker2 for subsystem CCCamera class CCCamera_logevent_focal_plane_RebsAverageTemp6_GeneralConfiguration using level 1 for category General-->
+  <!--Created by xmlmaker2 for subsystem CCCamera class CCCamera_logevent_focal_plane_RebsAverageTemp6_GeneralConfiguration for category General using level 1-->
   <!--========================================================================================================================================================-->
   <SALEvent>
     <Subsystem>CCCamera</Subsystem>
     <EFDB_Topic>CCCamera_logevent_focal_plane_RebsAverageTemp6_GeneralConfiguration</EFDB_Topic>
+    <Description>subsystem CCCamera class CCCamera_logevent_focal_plane_RebsAverageTemp6_GeneralConfiguration for category General</Description>
     <!--CCS: Dictionary_Checksum: 2546914247L -->
     <item>
       <EFDB_Name>version</EFDB_Name>
@@ -11346,11 +11471,12 @@
       <Count>1</Count>
     </item>
   </SALEvent>
-  <!--Created by xmlmaker2 for subsystem CCCamera class CCCamera_logevent_focal_plane_RebsAverageTemp6_LimitsConfiguration using level 1 for category Limits-->
+  <!--Created by xmlmaker2 for subsystem CCCamera class CCCamera_logevent_focal_plane_RebsAverageTemp6_LimitsConfiguration for category Limits using level 1-->
   <!--======================================================================================================================================================-->
   <SALEvent>
     <Subsystem>CCCamera</Subsystem>
     <EFDB_Topic>CCCamera_logevent_focal_plane_RebsAverageTemp6_LimitsConfiguration</EFDB_Topic>
+    <Description>subsystem CCCamera class CCCamera_logevent_focal_plane_RebsAverageTemp6_LimitsConfiguration for category Limits</Description>
     <!--CCS: Dictionary_Checksum: 3650548710L -->
     <item>
       <EFDB_Name>version</EFDB_Name>
@@ -11388,11 +11514,12 @@
       <Count>1</Count>
     </item>
   </SALEvent>
-  <!--Created by xmlmaker2 for subsystem CCCamera class CCCamera_logevent_focal_plane_Segment_LimitsConfiguration using level 1 for category Limits-->
+  <!--Created by xmlmaker2 for subsystem CCCamera class CCCamera_logevent_focal_plane_Segment_LimitsConfiguration for category Limits using level 1-->
   <!--=============================================================================================================================================-->
   <SALEvent>
     <Subsystem>CCCamera</Subsystem>
     <EFDB_Topic>CCCamera_logevent_focal_plane_Segment_LimitsConfiguration</EFDB_Topic>
+    <Description>subsystem CCCamera class CCCamera_logevent_focal_plane_Segment_LimitsConfiguration for category Limits</Description>
     <!--CCS: Dictionary_Checksum: 3464766984L -->
     <item>
       <EFDB_Name>version</EFDB_Name>
@@ -11441,11 +11568,12 @@
       <Count>1</Count>
     </item>
   </SALEvent>
-  <!--Created by xmlmaker2 for subsystem CCCamera class CCCamera_logevent_focal_plane_SequencerConfig_DAQConfiguration using level 1 for category DAQ-->
+  <!--Created by xmlmaker2 for subsystem CCCamera class CCCamera_logevent_focal_plane_SequencerConfig_DAQConfiguration for category DAQ using level 1-->
   <!--===============================================================================================================================================-->
   <SALEvent>
     <Subsystem>CCCamera</Subsystem>
     <EFDB_Topic>CCCamera_logevent_focal_plane_SequencerConfig_DAQConfiguration</EFDB_Topic>
+    <Description>subsystem CCCamera class CCCamera_logevent_focal_plane_SequencerConfig_DAQConfiguration for category DAQ</Description>
     <!--CCS: Dictionary_Checksum: 3286780070L -->
     <item>
       <EFDB_Name>version</EFDB_Name>
@@ -11504,11 +11632,12 @@
       <Count>1</Count>
     </item>
   </SALEvent>
-  <!--Created by xmlmaker2 for subsystem CCCamera class CCCamera_logevent_focal_plane_SequencerConfig_GuiderConfiguration using level 1 for category Guider-->
+  <!--Created by xmlmaker2 for subsystem CCCamera class CCCamera_logevent_focal_plane_SequencerConfig_GuiderConfiguration for category Guider using level 1-->
   <!--=====================================================================================================================================================-->
   <SALEvent>
     <Subsystem>CCCamera</Subsystem>
     <EFDB_Topic>CCCamera_logevent_focal_plane_SequencerConfig_GuiderConfiguration</EFDB_Topic>
+    <Description>subsystem CCCamera class CCCamera_logevent_focal_plane_SequencerConfig_GuiderConfiguration for category Guider</Description>
     <!--CCS: Dictionary_Checksum: 534651081L -->
     <item>
       <EFDB_Name>version</EFDB_Name>
@@ -11532,11 +11661,12 @@
       <Count>1</Count>
     </item>
   </SALEvent>
-  <!--Created by xmlmaker2 for subsystem CCCamera class CCCamera_logevent_focal_plane_SequencerConfig_SequencerConfiguration using level 1 for category Sequencer-->
+  <!--Created by xmlmaker2 for subsystem CCCamera class CCCamera_logevent_focal_plane_SequencerConfig_SequencerConfiguration for category Sequencer using level 1-->
   <!--===========================================================================================================================================================-->
   <SALEvent>
     <Subsystem>CCCamera</Subsystem>
     <EFDB_Topic>CCCamera_logevent_focal_plane_SequencerConfig_SequencerConfiguration</EFDB_Topic>
+    <Description>subsystem CCCamera class CCCamera_logevent_focal_plane_SequencerConfig_SequencerConfiguration for category Sequencer</Description>
     <!--CCS: Dictionary_Checksum: 247729283L -->
     <item>
       <EFDB_Name>version</EFDB_Name>
@@ -11735,11 +11865,12 @@
       <Count>1</Count>
     </item>
   </SALEvent>
-  <!--Created by xmlmaker2 for subsystem CCCamera class CCCamera_logevent_focal_plane_WebHooksConfig_VisualizationConfiguration using level 1 for category Visualization-->
+  <!--Created by xmlmaker2 for subsystem CCCamera class CCCamera_logevent_focal_plane_WebHooksConfig_VisualizationConfiguration for category Visualization using level 1-->
   <!--==================================================================================================================================================================-->
   <SALEvent>
     <Subsystem>CCCamera</Subsystem>
     <EFDB_Topic>CCCamera_logevent_focal_plane_WebHooksConfig_VisualizationConfiguration</EFDB_Topic>
+    <Description>subsystem CCCamera class CCCamera_logevent_focal_plane_WebHooksConfig_VisualizationConfiguration for category Visualization</Description>
     <!--CCS: Dictionary_Checksum: 223538209L -->
     <item>
       <EFDB_Name>version</EFDB_Name>
@@ -11756,11 +11887,12 @@
       <Count>1</Count>
     </item>
   </SALEvent>
-  <!--Created by xmlmaker2 for subsystem CCCamera class CCCamera_logevent_image_handling_FitsService_GeneralConfiguration using level 1 for category General-->
+  <!--Created by xmlmaker2 for subsystem CCCamera class CCCamera_logevent_image_handling_FitsService_GeneralConfiguration for category General using level 1-->
   <!--======================================================================================================================================================-->
   <SALEvent>
     <Subsystem>CCCamera</Subsystem>
     <EFDB_Topic>CCCamera_logevent_image_handling_FitsService_GeneralConfiguration</EFDB_Topic>
+    <Description>subsystem CCCamera class CCCamera_logevent_image_handling_FitsService_GeneralConfiguration for category General</Description>
     <!--CCS: Dictionary_Checksum: 3143876673L -->
     <item>
       <EFDB_Name>version</EFDB_Name>
@@ -11784,11 +11916,12 @@
       <Count>1</Count>
     </item>
   </SALEvent>
-  <!--Created by xmlmaker2 for subsystem CCCamera class CCCamera_logevent_image_handling_ImageHandler_CommandsConfiguration using level 1 for category Commands-->
+  <!--Created by xmlmaker2 for subsystem CCCamera class CCCamera_logevent_image_handling_ImageHandler_CommandsConfiguration for category Commands using level 1-->
   <!--=========================================================================================================================================================-->
   <SALEvent>
     <Subsystem>CCCamera</Subsystem>
     <EFDB_Topic>CCCamera_logevent_image_handling_ImageHandler_CommandsConfiguration</EFDB_Topic>
+    <Description>subsystem CCCamera class CCCamera_logevent_image_handling_ImageHandler_CommandsConfiguration for category Commands</Description>
     <!--CCS: Dictionary_Checksum: 843025526L -->
     <item>
       <EFDB_Name>version</EFDB_Name>
@@ -11840,11 +11973,12 @@
       <Count>1</Count>
     </item>
   </SALEvent>
-  <!--Created by xmlmaker2 for subsystem CCCamera class CCCamera_logevent_image_handling_ImageHandler_DAQConfiguration using level 1 for category DAQ-->
+  <!--Created by xmlmaker2 for subsystem CCCamera class CCCamera_logevent_image_handling_ImageHandler_DAQConfiguration for category DAQ using level 1-->
   <!--===============================================================================================================================================-->
   <SALEvent>
     <Subsystem>CCCamera</Subsystem>
     <EFDB_Topic>CCCamera_logevent_image_handling_ImageHandler_DAQConfiguration</EFDB_Topic>
+    <Description>subsystem CCCamera class CCCamera_logevent_image_handling_ImageHandler_DAQConfiguration for category DAQ</Description>
     <!--CCS: Dictionary_Checksum: 3508616947L -->
     <item>
       <EFDB_Name>version</EFDB_Name>
@@ -11924,11 +12058,12 @@
       <Count>1</Count>
     </item>
   </SALEvent>
-  <!--Created by xmlmaker2 for subsystem CCCamera class CCCamera_logevent_image_handling_ImageHandler_FitsHandlingConfiguration using level 1 for category FitsHandling-->
+  <!--Created by xmlmaker2 for subsystem CCCamera class CCCamera_logevent_image_handling_ImageHandler_FitsHandlingConfiguration for category FitsHandling using level 1-->
   <!--=================================================================================================================================================================-->
   <SALEvent>
     <Subsystem>CCCamera</Subsystem>
     <EFDB_Topic>CCCamera_logevent_image_handling_ImageHandler_FitsHandlingConfiguration</EFDB_Topic>
+    <Description>subsystem CCCamera class CCCamera_logevent_image_handling_ImageHandler_FitsHandlingConfiguration for category FitsHandling</Description>
     <!--CCS: Dictionary_Checksum: 2066138206L -->
     <item>
       <EFDB_Name>version</EFDB_Name>
@@ -12001,11 +12136,41 @@
       <Count>1</Count>
     </item>
   </SALEvent>
-  <!--Created by xmlmaker2 for subsystem CCCamera class CCCamera_logevent_image_handling_ImageHandler_GuiderConfiguration using level 1 for category Guider-->
+  <!--Created by xmlmaker2 for subsystem CCCamera class CCCamera_logevent_image_handling_ImageHandler_GeneralConfiguration for category General using level 1-->
+  <!--=======================================================================================================================================================-->
+  <SALEvent>
+    <Subsystem>CCCamera</Subsystem>
+    <EFDB_Topic>CCCamera_logevent_image_handling_ImageHandler_GeneralConfiguration</EFDB_Topic>
+    <Description>subsystem CCCamera class CCCamera_logevent_image_handling_ImageHandler_GeneralConfiguration for category General</Description>
+    <!--CCS: Dictionary_Checksum: 547224349L -->
+    <item>
+      <EFDB_Name>version</EFDB_Name>
+      <Description>Version of the settings, formatted using CCS conventions</Description>
+      <IDL_Type>string</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>imagedatabaseservice_dbURL</EFDB_Name>
+      <Description>Image Database URL</Description>
+      <IDL_Type>string</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>imagedatabaseservice_enabled</EFDB_Name>
+      <Description>true/false Image Database enable flag</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+  </SALEvent>
+  <!--Created by xmlmaker2 for subsystem CCCamera class CCCamera_logevent_image_handling_ImageHandler_GuiderConfiguration for category Guider using level 1-->
   <!--=====================================================================================================================================================-->
   <SALEvent>
     <Subsystem>CCCamera</Subsystem>
     <EFDB_Topic>CCCamera_logevent_image_handling_ImageHandler_GuiderConfiguration</EFDB_Topic>
+    <Description>subsystem CCCamera class CCCamera_logevent_image_handling_ImageHandler_GuiderConfiguration for category Guider</Description>
     <!--CCS: Dictionary_Checksum: 1728381398L -->
     <item>
       <EFDB_Name>version</EFDB_Name>
@@ -12043,11 +12208,12 @@
       <Count>1</Count>
     </item>
   </SALEvent>
-  <!--Created by xmlmaker2 for subsystem CCCamera class CCCamera_logevent_image_handling_PeriodicTasks_GeneralConfiguration using level 1 for category General-->
+  <!--Created by xmlmaker2 for subsystem CCCamera class CCCamera_logevent_image_handling_PeriodicTasks_GeneralConfiguration for category General using level 1-->
   <!--========================================================================================================================================================-->
   <SALEvent>
     <Subsystem>CCCamera</Subsystem>
     <EFDB_Topic>CCCamera_logevent_image_handling_PeriodicTasks_GeneralConfiguration</EFDB_Topic>
+    <Description>subsystem CCCamera class CCCamera_logevent_image_handling_PeriodicTasks_GeneralConfiguration for category General</Description>
     <!--CCS: Dictionary_Checksum: 3197235453L -->
     <item>
       <EFDB_Name>version</EFDB_Name>
@@ -12071,11 +12237,12 @@
       <Count>1</Count>
     </item>
   </SALEvent>
-  <!--Created by xmlmaker2 for subsystem CCCamera class CCCamera_logevent_image_handling_PeriodicTasks_timersConfiguration using level 1 for category timers-->
+  <!--Created by xmlmaker2 for subsystem CCCamera class CCCamera_logevent_image_handling_PeriodicTasks_timersConfiguration for category timers using level 1-->
   <!--======================================================================================================================================================-->
   <SALEvent>
     <Subsystem>CCCamera</Subsystem>
     <EFDB_Topic>CCCamera_logevent_image_handling_PeriodicTasks_timersConfiguration</EFDB_Topic>
+    <Description>subsystem CCCamera class CCCamera_logevent_image_handling_PeriodicTasks_timersConfiguration for category timers</Description>
     <!--CCS: Dictionary_Checksum: 3929922340L -->
     <item>
       <EFDB_Name>version</EFDB_Name>
@@ -12106,11 +12273,12 @@
       <Count>1</Count>
     </item>
   </SALEvent>
-  <!--Created by xmlmaker2 for subsystem CCCamera class CCCamera_logevent_image_handling_StatusAggregator_GeneralConfiguration using level 1 for category General-->
+  <!--Created by xmlmaker2 for subsystem CCCamera class CCCamera_logevent_image_handling_StatusAggregator_GeneralConfiguration for category General using level 1-->
   <!--===========================================================================================================================================================-->
   <SALEvent>
     <Subsystem>CCCamera</Subsystem>
     <EFDB_Topic>CCCamera_logevent_image_handling_StatusAggregator_GeneralConfiguration</EFDB_Topic>
+    <Description>subsystem CCCamera class CCCamera_logevent_image_handling_StatusAggregator_GeneralConfiguration for category General</Description>
     <!--CCS: Dictionary_Checksum: 1829680725L -->
     <item>
       <EFDB_Name>version</EFDB_Name>
@@ -12127,11 +12295,12 @@
       <Count>1</Count>
     </item>
   </SALEvent>
-  <!--Created by xmlmaker2 for subsystem CCCamera class CCCamera_logevent_mpm_PeriodicTasks_GeneralConfiguration using level 1 for category General-->
+  <!--Created by xmlmaker2 for subsystem CCCamera class CCCamera_logevent_mpm_PeriodicTasks_GeneralConfiguration for category General using level 1-->
   <!--=============================================================================================================================================-->
   <SALEvent>
     <Subsystem>CCCamera</Subsystem>
     <EFDB_Topic>CCCamera_logevent_mpm_PeriodicTasks_GeneralConfiguration</EFDB_Topic>
+    <Description>subsystem CCCamera class CCCamera_logevent_mpm_PeriodicTasks_GeneralConfiguration for category General</Description>
     <!--CCS: Dictionary_Checksum: 3752204175L -->
     <item>
       <EFDB_Name>version</EFDB_Name>
@@ -12169,11 +12338,12 @@
       <Count>1</Count>
     </item>
   </SALEvent>
-  <!--Created by xmlmaker2 for subsystem CCCamera class CCCamera_logevent_mpm_PeriodicTasks_timersConfiguration using level 1 for category timers-->
+  <!--Created by xmlmaker2 for subsystem CCCamera class CCCamera_logevent_mpm_PeriodicTasks_timersConfiguration for category timers using level 1-->
   <!--===========================================================================================================================================-->
   <SALEvent>
     <Subsystem>CCCamera</Subsystem>
     <EFDB_Topic>CCCamera_logevent_mpm_PeriodicTasks_timersConfiguration</EFDB_Topic>
+    <Description>subsystem CCCamera class CCCamera_logevent_mpm_PeriodicTasks_timersConfiguration for category timers</Description>
     <!--CCS: Dictionary_Checksum: 1363999428L -->
     <item>
       <EFDB_Name>version</EFDB_Name>
@@ -12232,11 +12402,12 @@
       <Count>1</Count>
     </item>
   </SALEvent>
-  <!--Created by xmlmaker2 for subsystem CCCamera class CCCamera_logevent_mpm_Pluto_DeviceConfiguration using level 1 for category Device-->
+  <!--Created by xmlmaker2 for subsystem CCCamera class CCCamera_logevent_mpm_Pluto_DeviceConfiguration for category Device using level 1-->
   <!--===================================================================================================================================-->
   <SALEvent>
     <Subsystem>CCCamera</Subsystem>
     <EFDB_Topic>CCCamera_logevent_mpm_Pluto_DeviceConfiguration</EFDB_Topic>
+    <Description>subsystem CCCamera class CCCamera_logevent_mpm_Pluto_DeviceConfiguration for category Device</Description>
     <!--CCS: Dictionary_Checksum: 538856650L -->
     <item>
       <EFDB_Name>version</EFDB_Name>
@@ -12253,11 +12424,12 @@
       <Count>1</Count>
     </item>
   </SALEvent>
-  <!--Created by xmlmaker2 for subsystem CCCamera class CCCamera_logevent_mpm_Pluto_DevicesConfiguration using level 1 for category Devices-->
+  <!--Created by xmlmaker2 for subsystem CCCamera class CCCamera_logevent_mpm_Pluto_DevicesConfiguration for category Devices using level 1-->
   <!--=====================================================================================================================================-->
   <SALEvent>
     <Subsystem>CCCamera</Subsystem>
     <EFDB_Topic>CCCamera_logevent_mpm_Pluto_DevicesConfiguration</EFDB_Topic>
+    <Description>subsystem CCCamera class CCCamera_logevent_mpm_Pluto_DevicesConfiguration for category Devices</Description>
     <!--CCS: Dictionary_Checksum: 1617359185L -->
     <item>
       <EFDB_Name>version</EFDB_Name>
@@ -12274,11 +12446,12 @@
       <Count>1</Count>
     </item>
   </SALEvent>
-  <!--Created by xmlmaker2 for subsystem CCCamera class CCCamera_logevent_pathfinder_refrig_Cold1_DeviceConfiguration using level 1 for category Device-->
+  <!--Created by xmlmaker2 for subsystem CCCamera class CCCamera_logevent_pathfinder_refrig_Cold1_DeviceConfiguration for category Device using level 1-->
   <!--=================================================================================================================================================-->
   <SALEvent>
     <Subsystem>CCCamera</Subsystem>
     <EFDB_Topic>CCCamera_logevent_pathfinder_refrig_Cold1_DeviceConfiguration</EFDB_Topic>
+    <Description>subsystem CCCamera class CCCamera_logevent_pathfinder_refrig_Cold1_DeviceConfiguration for category Device</Description>
     <!--CCS: Dictionary_Checksum: 2187049303L -->
     <item>
       <EFDB_Name>version</EFDB_Name>
@@ -12330,11 +12503,12 @@
       <Count>1</Count>
     </item>
   </SALEvent>
-  <!--Created by xmlmaker2 for subsystem CCCamera class CCCamera_logevent_pathfinder_refrig_Cold1_DevicesConfiguration using level 1 for category Devices-->
+  <!--Created by xmlmaker2 for subsystem CCCamera class CCCamera_logevent_pathfinder_refrig_Cold1_DevicesConfiguration for category Devices using level 1-->
   <!--===================================================================================================================================================-->
   <SALEvent>
     <Subsystem>CCCamera</Subsystem>
     <EFDB_Topic>CCCamera_logevent_pathfinder_refrig_Cold1_DevicesConfiguration</EFDB_Topic>
+    <Description>subsystem CCCamera class CCCamera_logevent_pathfinder_refrig_Cold1_DevicesConfiguration for category Devices</Description>
     <!--CCS: Dictionary_Checksum: 18995751L -->
     <item>
       <EFDB_Name>version</EFDB_Name>
@@ -12365,11 +12539,12 @@
       <Count>1</Count>
     </item>
   </SALEvent>
-  <!--Created by xmlmaker2 for subsystem CCCamera class CCCamera_logevent_pathfinder_refrig_Cold1_LimitsConfiguration using level 1 for category Limits-->
+  <!--Created by xmlmaker2 for subsystem CCCamera class CCCamera_logevent_pathfinder_refrig_Cold1_LimitsConfiguration for category Limits using level 1-->
   <!--=================================================================================================================================================-->
   <SALEvent>
     <Subsystem>CCCamera</Subsystem>
     <EFDB_Topic>CCCamera_logevent_pathfinder_refrig_Cold1_LimitsConfiguration</EFDB_Topic>
+    <Description>subsystem CCCamera class CCCamera_logevent_pathfinder_refrig_Cold1_LimitsConfiguration for category Limits</Description>
     <!--CCS: Dictionary_Checksum: 1917751078L -->
     <item>
       <EFDB_Name>version</EFDB_Name>
@@ -13163,11 +13338,12 @@
       <Count>1</Count>
     </item>
   </SALEvent>
-  <!--Created by xmlmaker2 for subsystem CCCamera class CCCamera_logevent_pathfinder_refrig_Cold1_PicConfiguration using level 1 for category Pic-->
+  <!--Created by xmlmaker2 for subsystem CCCamera class CCCamera_logevent_pathfinder_refrig_Cold1_PicConfiguration for category Pic using level 1-->
   <!--===========================================================================================================================================-->
   <SALEvent>
     <Subsystem>CCCamera</Subsystem>
     <EFDB_Topic>CCCamera_logevent_pathfinder_refrig_Cold1_PicConfiguration</EFDB_Topic>
+    <Description>subsystem CCCamera class CCCamera_logevent_pathfinder_refrig_Cold1_PicConfiguration for category Pic</Description>
     <!--CCS: Dictionary_Checksum: 1939745585L -->
     <item>
       <EFDB_Name>version</EFDB_Name>
@@ -13261,11 +13437,12 @@
       <Count>1</Count>
     </item>
   </SALEvent>
-  <!--Created by xmlmaker2 for subsystem CCCamera class CCCamera_logevent_pathfinder_refrig_Cold2_DeviceConfiguration using level 1 for category Device-->
+  <!--Created by xmlmaker2 for subsystem CCCamera class CCCamera_logevent_pathfinder_refrig_Cold2_DeviceConfiguration for category Device using level 1-->
   <!--=================================================================================================================================================-->
   <SALEvent>
     <Subsystem>CCCamera</Subsystem>
     <EFDB_Topic>CCCamera_logevent_pathfinder_refrig_Cold2_DeviceConfiguration</EFDB_Topic>
+    <Description>subsystem CCCamera class CCCamera_logevent_pathfinder_refrig_Cold2_DeviceConfiguration for category Device</Description>
     <!--CCS: Dictionary_Checksum: 1232535576L -->
     <item>
       <EFDB_Name>version</EFDB_Name>
@@ -13317,11 +13494,12 @@
       <Count>1</Count>
     </item>
   </SALEvent>
-  <!--Created by xmlmaker2 for subsystem CCCamera class CCCamera_logevent_pathfinder_refrig_Cold2_DevicesConfiguration using level 1 for category Devices-->
+  <!--Created by xmlmaker2 for subsystem CCCamera class CCCamera_logevent_pathfinder_refrig_Cold2_DevicesConfiguration for category Devices using level 1-->
   <!--===================================================================================================================================================-->
   <SALEvent>
     <Subsystem>CCCamera</Subsystem>
     <EFDB_Topic>CCCamera_logevent_pathfinder_refrig_Cold2_DevicesConfiguration</EFDB_Topic>
+    <Description>subsystem CCCamera class CCCamera_logevent_pathfinder_refrig_Cold2_DevicesConfiguration for category Devices</Description>
     <!--CCS: Dictionary_Checksum: 4084462604L -->
     <item>
       <EFDB_Name>version</EFDB_Name>
@@ -13352,11 +13530,12 @@
       <Count>1</Count>
     </item>
   </SALEvent>
-  <!--Created by xmlmaker2 for subsystem CCCamera class CCCamera_logevent_pathfinder_refrig_Cold2_LimitsConfiguration using level 1 for category Limits-->
+  <!--Created by xmlmaker2 for subsystem CCCamera class CCCamera_logevent_pathfinder_refrig_Cold2_LimitsConfiguration for category Limits using level 1-->
   <!--=================================================================================================================================================-->
   <SALEvent>
     <Subsystem>CCCamera</Subsystem>
     <EFDB_Topic>CCCamera_logevent_pathfinder_refrig_Cold2_LimitsConfiguration</EFDB_Topic>
+    <Description>subsystem CCCamera class CCCamera_logevent_pathfinder_refrig_Cold2_LimitsConfiguration for category Limits</Description>
     <!--CCS: Dictionary_Checksum: 965266985L -->
     <item>
       <EFDB_Name>version</EFDB_Name>
@@ -14150,11 +14329,12 @@
       <Count>1</Count>
     </item>
   </SALEvent>
-  <!--Created by xmlmaker2 for subsystem CCCamera class CCCamera_logevent_pathfinder_refrig_Cold2_PicConfiguration using level 1 for category Pic-->
+  <!--Created by xmlmaker2 for subsystem CCCamera class CCCamera_logevent_pathfinder_refrig_Cold2_PicConfiguration for category Pic using level 1-->
   <!--===========================================================================================================================================-->
   <SALEvent>
     <Subsystem>CCCamera</Subsystem>
     <EFDB_Topic>CCCamera_logevent_pathfinder_refrig_Cold2_PicConfiguration</EFDB_Topic>
+    <Description>subsystem CCCamera class CCCamera_logevent_pathfinder_refrig_Cold2_PicConfiguration for category Pic</Description>
     <!--CCS: Dictionary_Checksum: 1463501244L -->
     <item>
       <EFDB_Name>version</EFDB_Name>
@@ -14248,11 +14428,12 @@
       <Count>1</Count>
     </item>
   </SALEvent>
-  <!--Created by xmlmaker2 for subsystem CCCamera class CCCamera_logevent_pathfinder_refrig_ColdCompLimits_CompLimitsConfiguration using level 1 for category CompLimits-->
+  <!--Created by xmlmaker2 for subsystem CCCamera class CCCamera_logevent_pathfinder_refrig_ColdCompLimits_CompLimitsConfiguration for category CompLimits using level 1-->
   <!--==================================================================================================================================================================-->
   <SALEvent>
     <Subsystem>CCCamera</Subsystem>
     <EFDB_Topic>CCCamera_logevent_pathfinder_refrig_ColdCompLimits_CompLimitsConfiguration</EFDB_Topic>
+    <Description>subsystem CCCamera class CCCamera_logevent_pathfinder_refrig_ColdCompLimits_CompLimitsConfiguration for category CompLimits</Description>
     <!--CCS: Dictionary_Checksum: 773851517L -->
     <item>
       <EFDB_Name>version</EFDB_Name>
@@ -14353,11 +14534,12 @@
       <Count>1</Count>
     </item>
   </SALEvent>
-  <!--Created by xmlmaker2 for subsystem CCCamera class CCCamera_logevent_pathfinder_refrig_CoolMaq20_DeviceConfiguration using level 1 for category Device-->
+  <!--Created by xmlmaker2 for subsystem CCCamera class CCCamera_logevent_pathfinder_refrig_CoolMaq20_DeviceConfiguration for category Device using level 1-->
   <!--=====================================================================================================================================================-->
   <SALEvent>
     <Subsystem>CCCamera</Subsystem>
     <EFDB_Topic>CCCamera_logevent_pathfinder_refrig_CoolMaq20_DeviceConfiguration</EFDB_Topic>
+    <Description>subsystem CCCamera class CCCamera_logevent_pathfinder_refrig_CoolMaq20_DeviceConfiguration for category Device</Description>
     <!--CCS: Dictionary_Checksum: 2605418343L -->
     <item>
       <EFDB_Name>version</EFDB_Name>
@@ -14381,11 +14563,12 @@
       <Count>1</Count>
     </item>
   </SALEvent>
-  <!--Created by xmlmaker2 for subsystem CCCamera class CCCamera_logevent_pathfinder_refrig_CoolMaq20_DevicesConfiguration using level 1 for category Devices-->
+  <!--Created by xmlmaker2 for subsystem CCCamera class CCCamera_logevent_pathfinder_refrig_CoolMaq20_DevicesConfiguration for category Devices using level 1-->
   <!--=======================================================================================================================================================-->
   <SALEvent>
     <Subsystem>CCCamera</Subsystem>
     <EFDB_Topic>CCCamera_logevent_pathfinder_refrig_CoolMaq20_DevicesConfiguration</EFDB_Topic>
+    <Description>subsystem CCCamera class CCCamera_logevent_pathfinder_refrig_CoolMaq20_DevicesConfiguration for category Devices</Description>
     <!--CCS: Dictionary_Checksum: 536001946L -->
     <item>
       <EFDB_Name>version</EFDB_Name>
@@ -14402,11 +14585,12 @@
       <Count>1</Count>
     </item>
   </SALEvent>
-  <!--Created by xmlmaker2 for subsystem CCCamera class CCCamera_logevent_pathfinder_refrig_Cryo1_DeviceConfiguration using level 1 for category Device-->
+  <!--Created by xmlmaker2 for subsystem CCCamera class CCCamera_logevent_pathfinder_refrig_Cryo1_DeviceConfiguration for category Device using level 1-->
   <!--=================================================================================================================================================-->
   <SALEvent>
     <Subsystem>CCCamera</Subsystem>
     <EFDB_Topic>CCCamera_logevent_pathfinder_refrig_Cryo1_DeviceConfiguration</EFDB_Topic>
+    <Description>subsystem CCCamera class CCCamera_logevent_pathfinder_refrig_Cryo1_DeviceConfiguration for category Device</Description>
     <!--CCS: Dictionary_Checksum: 1755998804L -->
     <item>
       <EFDB_Name>version</EFDB_Name>
@@ -14437,11 +14621,12 @@
       <Count>1</Count>
     </item>
   </SALEvent>
-  <!--Created by xmlmaker2 for subsystem CCCamera class CCCamera_logevent_pathfinder_refrig_Cryo1_DevicesConfiguration using level 1 for category Devices-->
+  <!--Created by xmlmaker2 for subsystem CCCamera class CCCamera_logevent_pathfinder_refrig_Cryo1_DevicesConfiguration for category Devices using level 1-->
   <!--===================================================================================================================================================-->
   <SALEvent>
     <Subsystem>CCCamera</Subsystem>
     <EFDB_Topic>CCCamera_logevent_pathfinder_refrig_Cryo1_DevicesConfiguration</EFDB_Topic>
+    <Description>subsystem CCCamera class CCCamera_logevent_pathfinder_refrig_Cryo1_DevicesConfiguration for category Devices</Description>
     <!--CCS: Dictionary_Checksum: 268699736L -->
     <item>
       <EFDB_Name>version</EFDB_Name>
@@ -14465,11 +14650,12 @@
       <Count>1</Count>
     </item>
   </SALEvent>
-  <!--Created by xmlmaker2 for subsystem CCCamera class CCCamera_logevent_pathfinder_refrig_Cryo1_LimitsConfiguration using level 1 for category Limits-->
+  <!--Created by xmlmaker2 for subsystem CCCamera class CCCamera_logevent_pathfinder_refrig_Cryo1_LimitsConfiguration for category Limits using level 1-->
   <!--=================================================================================================================================================-->
   <SALEvent>
     <Subsystem>CCCamera</Subsystem>
     <EFDB_Topic>CCCamera_logevent_pathfinder_refrig_Cryo1_LimitsConfiguration</EFDB_Topic>
+    <Description>subsystem CCCamera class CCCamera_logevent_pathfinder_refrig_Cryo1_LimitsConfiguration for category Limits</Description>
     <!--CCS: Dictionary_Checksum: 2428077541L -->
     <item>
       <EFDB_Name>version</EFDB_Name>
@@ -14955,11 +15141,12 @@
       <Count>1</Count>
     </item>
   </SALEvent>
-  <!--Created by xmlmaker2 for subsystem CCCamera class CCCamera_logevent_pathfinder_refrig_Cryo2_DeviceConfiguration using level 1 for category Device-->
+  <!--Created by xmlmaker2 for subsystem CCCamera class CCCamera_logevent_pathfinder_refrig_Cryo2_DeviceConfiguration for category Device using level 1-->
   <!--=================================================================================================================================================-->
   <SALEvent>
     <Subsystem>CCCamera</Subsystem>
     <EFDB_Topic>CCCamera_logevent_pathfinder_refrig_Cryo2_DeviceConfiguration</EFDB_Topic>
+    <Description>subsystem CCCamera class CCCamera_logevent_pathfinder_refrig_Cryo2_DeviceConfiguration for category Device</Description>
     <!--CCS: Dictionary_Checksum: 1763906306L -->
     <item>
       <EFDB_Name>version</EFDB_Name>
@@ -14990,11 +15177,12 @@
       <Count>1</Count>
     </item>
   </SALEvent>
-  <!--Created by xmlmaker2 for subsystem CCCamera class CCCamera_logevent_pathfinder_refrig_Cryo2_DevicesConfiguration using level 1 for category Devices-->
+  <!--Created by xmlmaker2 for subsystem CCCamera class CCCamera_logevent_pathfinder_refrig_Cryo2_DevicesConfiguration for category Devices using level 1-->
   <!--===================================================================================================================================================-->
   <SALEvent>
     <Subsystem>CCCamera</Subsystem>
     <EFDB_Topic>CCCamera_logevent_pathfinder_refrig_Cryo2_DevicesConfiguration</EFDB_Topic>
+    <Description>subsystem CCCamera class CCCamera_logevent_pathfinder_refrig_Cryo2_DevicesConfiguration for category Devices</Description>
     <!--CCS: Dictionary_Checksum: 4222501093L -->
     <item>
       <EFDB_Name>version</EFDB_Name>
@@ -15018,11 +15206,12 @@
       <Count>1</Count>
     </item>
   </SALEvent>
-  <!--Created by xmlmaker2 for subsystem CCCamera class CCCamera_logevent_pathfinder_refrig_Cryo2_LimitsConfiguration using level 1 for category Limits-->
+  <!--Created by xmlmaker2 for subsystem CCCamera class CCCamera_logevent_pathfinder_refrig_Cryo2_LimitsConfiguration for category Limits using level 1-->
   <!--=================================================================================================================================================-->
   <SALEvent>
     <Subsystem>CCCamera</Subsystem>
     <EFDB_Topic>CCCamera_logevent_pathfinder_refrig_Cryo2_LimitsConfiguration</EFDB_Topic>
+    <Description>subsystem CCCamera class CCCamera_logevent_pathfinder_refrig_Cryo2_LimitsConfiguration for category Limits</Description>
     <!--CCS: Dictionary_Checksum: 3417555947L -->
     <item>
       <EFDB_Name>version</EFDB_Name>
@@ -15564,11 +15753,12 @@
       <Count>1</Count>
     </item>
   </SALEvent>
-  <!--Created by xmlmaker2 for subsystem CCCamera class CCCamera_logevent_pathfinder_refrig_Cryo2_PicConfiguration using level 1 for category Pic-->
+  <!--Created by xmlmaker2 for subsystem CCCamera class CCCamera_logevent_pathfinder_refrig_Cryo2_PicConfiguration for category Pic using level 1-->
   <!--===========================================================================================================================================-->
   <SALEvent>
     <Subsystem>CCCamera</Subsystem>
     <EFDB_Topic>CCCamera_logevent_pathfinder_refrig_Cryo2_PicConfiguration</EFDB_Topic>
+    <Description>subsystem CCCamera class CCCamera_logevent_pathfinder_refrig_Cryo2_PicConfiguration for category Pic</Description>
     <!--CCS: Dictionary_Checksum: 2167014123L -->
     <item>
       <EFDB_Name>version</EFDB_Name>
@@ -15662,11 +15852,12 @@
       <Count>1</Count>
     </item>
   </SALEvent>
-  <!--Created by xmlmaker2 for subsystem CCCamera class CCCamera_logevent_pathfinder_refrig_Cryo3_DeviceConfiguration using level 1 for category Device-->
+  <!--Created by xmlmaker2 for subsystem CCCamera class CCCamera_logevent_pathfinder_refrig_Cryo3_DeviceConfiguration for category Device using level 1-->
   <!--=================================================================================================================================================-->
   <SALEvent>
     <Subsystem>CCCamera</Subsystem>
     <EFDB_Topic>CCCamera_logevent_pathfinder_refrig_Cryo3_DeviceConfiguration</EFDB_Topic>
+    <Description>subsystem CCCamera class CCCamera_logevent_pathfinder_refrig_Cryo3_DeviceConfiguration for category Device</Description>
     <!--CCS: Dictionary_Checksum: 3748972047L -->
     <item>
       <EFDB_Name>version</EFDB_Name>
@@ -15697,11 +15888,12 @@
       <Count>1</Count>
     </item>
   </SALEvent>
-  <!--Created by xmlmaker2 for subsystem CCCamera class CCCamera_logevent_pathfinder_refrig_Cryo3_DevicesConfiguration using level 1 for category Devices-->
+  <!--Created by xmlmaker2 for subsystem CCCamera class CCCamera_logevent_pathfinder_refrig_Cryo3_DevicesConfiguration for category Devices using level 1-->
   <!--===================================================================================================================================================-->
   <SALEvent>
     <Subsystem>CCCamera</Subsystem>
     <EFDB_Topic>CCCamera_logevent_pathfinder_refrig_Cryo3_DevicesConfiguration</EFDB_Topic>
+    <Description>subsystem CCCamera class CCCamera_logevent_pathfinder_refrig_Cryo3_DevicesConfiguration for category Devices</Description>
     <!--CCS: Dictionary_Checksum: 2731047054L -->
     <item>
       <EFDB_Name>version</EFDB_Name>
@@ -15725,11 +15917,12 @@
       <Count>1</Count>
     </item>
   </SALEvent>
-  <!--Created by xmlmaker2 for subsystem CCCamera class CCCamera_logevent_pathfinder_refrig_Cryo3_LimitsConfiguration using level 1 for category Limits-->
+  <!--Created by xmlmaker2 for subsystem CCCamera class CCCamera_logevent_pathfinder_refrig_Cryo3_LimitsConfiguration for category Limits using level 1-->
   <!--=================================================================================================================================================-->
   <SALEvent>
     <Subsystem>CCCamera</Subsystem>
     <EFDB_Topic>CCCamera_logevent_pathfinder_refrig_Cryo3_LimitsConfiguration</EFDB_Topic>
+    <Description>subsystem CCCamera class CCCamera_logevent_pathfinder_refrig_Cryo3_LimitsConfiguration for category Limits</Description>
     <!--CCS: Dictionary_Checksum: 4177642521L -->
     <item>
       <EFDB_Name>version</EFDB_Name>
@@ -16271,11 +16464,12 @@
       <Count>1</Count>
     </item>
   </SALEvent>
-  <!--Created by xmlmaker2 for subsystem CCCamera class CCCamera_logevent_pathfinder_refrig_Cryo3_PicConfiguration using level 1 for category Pic-->
+  <!--Created by xmlmaker2 for subsystem CCCamera class CCCamera_logevent_pathfinder_refrig_Cryo3_PicConfiguration for category Pic using level 1-->
   <!--===========================================================================================================================================-->
   <SALEvent>
     <Subsystem>CCCamera</Subsystem>
     <EFDB_Topic>CCCamera_logevent_pathfinder_refrig_Cryo3_PicConfiguration</EFDB_Topic>
+    <Description>subsystem CCCamera class CCCamera_logevent_pathfinder_refrig_Cryo3_PicConfiguration for category Pic</Description>
     <!--CCS: Dictionary_Checksum: 2638816400L -->
     <item>
       <EFDB_Name>version</EFDB_Name>
@@ -16369,11 +16563,12 @@
       <Count>1</Count>
     </item>
   </SALEvent>
-  <!--Created by xmlmaker2 for subsystem CCCamera class CCCamera_logevent_pathfinder_refrig_Cryo4_DeviceConfiguration using level 1 for category Device-->
+  <!--Created by xmlmaker2 for subsystem CCCamera class CCCamera_logevent_pathfinder_refrig_Cryo4_DeviceConfiguration for category Device using level 1-->
   <!--=================================================================================================================================================-->
   <SALEvent>
     <Subsystem>CCCamera</Subsystem>
     <EFDB_Topic>CCCamera_logevent_pathfinder_refrig_Cryo4_DeviceConfiguration</EFDB_Topic>
+    <Description>subsystem CCCamera class CCCamera_logevent_pathfinder_refrig_Cryo4_DeviceConfiguration for category Device</Description>
     <!--CCS: Dictionary_Checksum: 1781653934L -->
     <item>
       <EFDB_Name>version</EFDB_Name>
@@ -16404,11 +16599,12 @@
       <Count>1</Count>
     </item>
   </SALEvent>
-  <!--Created by xmlmaker2 for subsystem CCCamera class CCCamera_logevent_pathfinder_refrig_Cryo4_DevicesConfiguration using level 1 for category Devices-->
+  <!--Created by xmlmaker2 for subsystem CCCamera class CCCamera_logevent_pathfinder_refrig_Cryo4_DevicesConfiguration for category Devices using level 1-->
   <!--===================================================================================================================================================-->
   <SALEvent>
     <Subsystem>CCCamera</Subsystem>
     <EFDB_Topic>CCCamera_logevent_pathfinder_refrig_Cryo4_DevicesConfiguration</EFDB_Topic>
+    <Description>subsystem CCCamera class CCCamera_logevent_pathfinder_refrig_Cryo4_DevicesConfiguration for category Devices</Description>
     <!--CCS: Dictionary_Checksum: 4153137118L -->
     <item>
       <EFDB_Name>version</EFDB_Name>
@@ -16432,11 +16628,12 @@
       <Count>1</Count>
     </item>
   </SALEvent>
-  <!--Created by xmlmaker2 for subsystem CCCamera class CCCamera_logevent_pathfinder_refrig_Cryo4_LimitsConfiguration using level 1 for category Limits-->
+  <!--Created by xmlmaker2 for subsystem CCCamera class CCCamera_logevent_pathfinder_refrig_Cryo4_LimitsConfiguration for category Limits using level 1-->
   <!--=================================================================================================================================================-->
   <SALEvent>
     <Subsystem>CCCamera</Subsystem>
     <EFDB_Topic>CCCamera_logevent_pathfinder_refrig_Cryo4_LimitsConfiguration</EFDB_Topic>
+    <Description>subsystem CCCamera class CCCamera_logevent_pathfinder_refrig_Cryo4_LimitsConfiguration for category Limits</Description>
     <!--CCS: Dictionary_Checksum: 498296405L -->
     <item>
       <EFDB_Name>version</EFDB_Name>
@@ -16922,11 +17119,12 @@
       <Count>1</Count>
     </item>
   </SALEvent>
-  <!--Created by xmlmaker2 for subsystem CCCamera class CCCamera_logevent_pathfinder_refrig_Cryo5_DeviceConfiguration using level 1 for category Device-->
+  <!--Created by xmlmaker2 for subsystem CCCamera class CCCamera_logevent_pathfinder_refrig_Cryo5_DeviceConfiguration for category Device using level 1-->
   <!--=================================================================================================================================================-->
   <SALEvent>
     <Subsystem>CCCamera</Subsystem>
     <EFDB_Topic>CCCamera_logevent_pathfinder_refrig_Cryo5_DeviceConfiguration</EFDB_Topic>
+    <Description>subsystem CCCamera class CCCamera_logevent_pathfinder_refrig_Cryo5_DeviceConfiguration for category Device</Description>
     <!--CCS: Dictionary_Checksum: 3697685667L -->
     <item>
       <EFDB_Name>version</EFDB_Name>
@@ -16957,11 +17155,12 @@
       <Count>1</Count>
     </item>
   </SALEvent>
-  <!--Created by xmlmaker2 for subsystem CCCamera class CCCamera_logevent_pathfinder_refrig_Cryo5_DevicesConfiguration using level 1 for category Devices-->
+  <!--Created by xmlmaker2 for subsystem CCCamera class CCCamera_logevent_pathfinder_refrig_Cryo5_DevicesConfiguration for category Devices using level 1-->
   <!--===================================================================================================================================================-->
   <SALEvent>
     <Subsystem>CCCamera</Subsystem>
     <EFDB_Topic>CCCamera_logevent_pathfinder_refrig_Cryo5_DevicesConfiguration</EFDB_Topic>
+    <Description>subsystem CCCamera class CCCamera_logevent_pathfinder_refrig_Cryo5_DevicesConfiguration for category Devices</Description>
     <!--CCS: Dictionary_Checksum: 2934828981L -->
     <item>
       <EFDB_Name>version</EFDB_Name>
@@ -16985,11 +17184,12 @@
       <Count>1</Count>
     </item>
   </SALEvent>
-  <!--Created by xmlmaker2 for subsystem CCCamera class CCCamera_logevent_pathfinder_refrig_Cryo5_LimitsConfiguration using level 1 for category Limits-->
+  <!--Created by xmlmaker2 for subsystem CCCamera class CCCamera_logevent_pathfinder_refrig_Cryo5_LimitsConfiguration for category Limits using level 1-->
   <!--=================================================================================================================================================-->
   <SALEvent>
     <Subsystem>CCCamera</Subsystem>
     <EFDB_Topic>CCCamera_logevent_pathfinder_refrig_Cryo5_LimitsConfiguration</EFDB_Topic>
+    <Description>subsystem CCCamera class CCCamera_logevent_pathfinder_refrig_Cryo5_LimitsConfiguration for category Limits</Description>
     <!--CCS: Dictionary_Checksum: 2187439642L -->
     <item>
       <EFDB_Name>version</EFDB_Name>
@@ -17475,11 +17675,12 @@
       <Count>1</Count>
     </item>
   </SALEvent>
-  <!--Created by xmlmaker2 for subsystem CCCamera class CCCamera_logevent_pathfinder_refrig_Cryo6_DeviceConfiguration using level 1 for category Device-->
+  <!--Created by xmlmaker2 for subsystem CCCamera class CCCamera_logevent_pathfinder_refrig_Cryo6_DeviceConfiguration for category Device using level 1-->
   <!--=================================================================================================================================================-->
   <SALEvent>
     <Subsystem>CCCamera</Subsystem>
     <EFDB_Topic>CCCamera_logevent_pathfinder_refrig_Cryo6_DeviceConfiguration</EFDB_Topic>
+    <Description>subsystem CCCamera class CCCamera_logevent_pathfinder_refrig_Cryo6_DeviceConfiguration for category Device</Description>
     <!--CCS: Dictionary_Checksum: 3723447797L -->
     <item>
       <EFDB_Name>version</EFDB_Name>
@@ -17510,11 +17711,12 @@
       <Count>1</Count>
     </item>
   </SALEvent>
-  <!--Created by xmlmaker2 for subsystem CCCamera class CCCamera_logevent_pathfinder_refrig_Cryo6_DevicesConfiguration using level 1 for category Devices-->
+  <!--Created by xmlmaker2 for subsystem CCCamera class CCCamera_logevent_pathfinder_refrig_Cryo6_DevicesConfiguration for category Devices using level 1-->
   <!--===================================================================================================================================================-->
   <SALEvent>
     <Subsystem>CCCamera</Subsystem>
     <EFDB_Topic>CCCamera_logevent_pathfinder_refrig_Cryo6_DevicesConfiguration</EFDB_Topic>
+    <Description>subsystem CCCamera class CCCamera_logevent_pathfinder_refrig_Cryo6_DevicesConfiguration for category Devices</Description>
     <!--CCS: Dictionary_Checksum: 1162323720L -->
     <item>
       <EFDB_Name>version</EFDB_Name>
@@ -17538,11 +17740,12 @@
       <Count>1</Count>
     </item>
   </SALEvent>
-  <!--Created by xmlmaker2 for subsystem CCCamera class CCCamera_logevent_pathfinder_refrig_Cryo6_LimitsConfiguration using level 1 for category Limits-->
+  <!--Created by xmlmaker2 for subsystem CCCamera class CCCamera_logevent_pathfinder_refrig_Cryo6_LimitsConfiguration for category Limits using level 1-->
   <!--=================================================================================================================================================-->
   <SALEvent>
     <Subsystem>CCCamera</Subsystem>
     <EFDB_Topic>CCCamera_logevent_pathfinder_refrig_Cryo6_LimitsConfiguration</EFDB_Topic>
+    <Description>subsystem CCCamera class CCCamera_logevent_pathfinder_refrig_Cryo6_LimitsConfiguration for category Limits</Description>
     <!--CCS: Dictionary_Checksum: 4184338570L -->
     <item>
       <EFDB_Name>version</EFDB_Name>
@@ -18028,11 +18231,12 @@
       <Count>1</Count>
     </item>
   </SALEvent>
-  <!--Created by xmlmaker2 for subsystem CCCamera class CCCamera_logevent_pathfinder_refrig_CryoCompLimits_CompLimitsConfiguration using level 1 for category CompLimits-->
+  <!--Created by xmlmaker2 for subsystem CCCamera class CCCamera_logevent_pathfinder_refrig_CryoCompLimits_CompLimitsConfiguration for category CompLimits using level 1-->
   <!--==================================================================================================================================================================-->
   <SALEvent>
     <Subsystem>CCCamera</Subsystem>
     <EFDB_Topic>CCCamera_logevent_pathfinder_refrig_CryoCompLimits_CompLimitsConfiguration</EFDB_Topic>
+    <Description>subsystem CCCamera class CCCamera_logevent_pathfinder_refrig_CryoCompLimits_CompLimitsConfiguration for category CompLimits</Description>
     <!--CCS: Dictionary_Checksum: 1953953015L -->
     <item>
       <EFDB_Name>version</EFDB_Name>
@@ -18161,11 +18365,12 @@
       <Count>1</Count>
     </item>
   </SALEvent>
-  <!--Created by xmlmaker2 for subsystem CCCamera class CCCamera_logevent_pathfinder_refrig_PeriodicTasks_GeneralConfiguration using level 1 for category General-->
+  <!--Created by xmlmaker2 for subsystem CCCamera class CCCamera_logevent_pathfinder_refrig_PeriodicTasks_GeneralConfiguration for category General using level 1-->
   <!--===========================================================================================================================================================-->
   <SALEvent>
     <Subsystem>CCCamera</Subsystem>
     <EFDB_Topic>CCCamera_logevent_pathfinder_refrig_PeriodicTasks_GeneralConfiguration</EFDB_Topic>
+    <Description>subsystem CCCamera class CCCamera_logevent_pathfinder_refrig_PeriodicTasks_GeneralConfiguration for category General</Description>
     <!--CCS: Dictionary_Checksum: 608818486L -->
     <item>
       <EFDB_Name>version</EFDB_Name>
@@ -18217,11 +18422,12 @@
       <Count>1</Count>
     </item>
   </SALEvent>
-  <!--Created by xmlmaker2 for subsystem CCCamera class CCCamera_logevent_pathfinder_refrig_PeriodicTasks_PicConfiguration using level 1 for category Pic-->
+  <!--Created by xmlmaker2 for subsystem CCCamera class CCCamera_logevent_pathfinder_refrig_PeriodicTasks_PicConfiguration for category Pic using level 1-->
   <!--===================================================================================================================================================-->
   <SALEvent>
     <Subsystem>CCCamera</Subsystem>
     <EFDB_Topic>CCCamera_logevent_pathfinder_refrig_PeriodicTasks_PicConfiguration</EFDB_Topic>
+    <Description>subsystem CCCamera class CCCamera_logevent_pathfinder_refrig_PeriodicTasks_PicConfiguration for category Pic</Description>
     <!--CCS: Dictionary_Checksum: 2252880418L -->
     <item>
       <EFDB_Name>version</EFDB_Name>
@@ -18259,11 +18465,12 @@
       <Count>1</Count>
     </item>
   </SALEvent>
-  <!--Created by xmlmaker2 for subsystem CCCamera class CCCamera_logevent_pathfinder_refrig_PeriodicTasks_timersConfiguration using level 1 for category timers-->
+  <!--Created by xmlmaker2 for subsystem CCCamera class CCCamera_logevent_pathfinder_refrig_PeriodicTasks_timersConfiguration for category timers using level 1-->
   <!--=========================================================================================================================================================-->
   <SALEvent>
     <Subsystem>CCCamera</Subsystem>
     <EFDB_Topic>CCCamera_logevent_pathfinder_refrig_PeriodicTasks_timersConfiguration</EFDB_Topic>
+    <Description>subsystem CCCamera class CCCamera_logevent_pathfinder_refrig_PeriodicTasks_timersConfiguration for category timers</Description>
     <!--CCS: Dictionary_Checksum: 439653494L -->
     <item>
       <EFDB_Name>version</EFDB_Name>

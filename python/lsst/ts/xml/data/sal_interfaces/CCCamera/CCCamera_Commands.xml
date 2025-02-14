@@ -3,6 +3,7 @@
   <SALCommand>
     <Subsystem>CCCamera</Subsystem>
     <EFDB_Topic>CCCamera_command_discardRows</EFDB_Topic>
+    <Description>LSE-71 discardRows command</Description>
     <item>
       <EFDB_Name>nRows</EFDB_Name>
       <Description>Number of rows to discard</Description>
@@ -14,6 +15,7 @@
   <SALCommand>
     <Subsystem>CCCamera</Subsystem>
     <EFDB_Topic>CCCamera_command_startImage</EFDB_Topic>
+    <Description>LSE-71 startImage command</Description>
     <item>
       <EFDB_Name>shutter</EFDB_Name>
       <Description>True if the shutter should be opened/closed</Description>
@@ -56,10 +58,12 @@
   <SALCommand>
     <Subsystem>CCCamera</Subsystem>
     <EFDB_Topic>CCCamera_command_disableCalibration</EFDB_Topic>
+    <Description>LSE-71 disableCalibration command</Description>
   </SALCommand>
   <SALCommand>
     <Subsystem>CCCamera</Subsystem>
     <EFDB_Topic>CCCamera_command_initGuiders</EFDB_Topic>
+    <Description>LSE-71 initGuiders command</Description>
     <item>
       <EFDB_Name>roiSpec</EFDB_Name>
       <Description>Specification for region of interest</Description>
@@ -72,10 +76,12 @@
   <SALCommand>
     <Subsystem>CCCamera</Subsystem>
     <EFDB_Topic>CCCamera_command_enableCalibration</EFDB_Topic>
+    <Description>LSE-71 enableCalibration command</Description>
   </SALCommand>
   <SALCommand>
     <Subsystem>CCCamera</Subsystem>
     <EFDB_Topic>CCCamera_command_initImage</EFDB_Topic>
+    <Description>LSE-71 initImage command</Description>
     <item>
       <EFDB_Name>deltaT</EFDB_Name>
       <Description>Estimate of time period before takeImages will be issued</Description>
@@ -87,10 +93,12 @@
   <SALCommand>
     <Subsystem>CCCamera</Subsystem>
     <EFDB_Topic>CCCamera_command_endImage</EFDB_Topic>
+    <Description>LSE-71 endImage command</Description>
   </SALCommand>
   <SALCommand>
     <Subsystem>CCCamera</Subsystem>
     <EFDB_Topic>CCCamera_command_setFilter</EFDB_Topic>
+    <Description>LSE-71 setFilter command</Description>
     <item>
       <EFDB_Name>name</EFDB_Name>
       <Description>The filter name to install</Description>
@@ -103,6 +111,7 @@
   <SALCommand>
     <Subsystem>CCCamera</Subsystem>
     <EFDB_Topic>CCCamera_command_clear</EFDB_Topic>
+    <Description>LSE-71 clear command</Description>
     <item>
       <EFDB_Name>nClears</EFDB_Name>
       <Description>Number of consecutive clear operations to perform</Description>
@@ -114,6 +123,7 @@
   <SALCommand>
     <Subsystem>CCCamera</Subsystem>
     <EFDB_Topic>CCCamera_command_takeImages</EFDB_Topic>
+    <Description>LSE-71 takeImages command</Description>
     <item>
       <EFDB_Name>numImages</EFDB_Name>
       <Description>Number of consecutive images to take</Description>
@@ -163,11 +173,13 @@
   <SALCommand>
     <Subsystem>CCCamera</Subsystem>
     <EFDB_Topic>CCCamera_command_stop</EFDB_Topic>
+    <Description>LSE-71 stop command</Description>
   </SALCommand>
   <!-- Playlist related commands, only valid when using emulated DAQ -->
   <SALCommand>
     <Subsystem>CCCamera</Subsystem>
     <EFDB_Topic>CCCamera_command_play</EFDB_Topic>
+    <Description>Play specified playlist</Description>
     <item>
       <EFDB_Name>playlist</EFDB_Name>
       <Description>Name of an existing DAQ playlist to play</Description>
@@ -186,6 +198,7 @@
   <SALCommand>
     <Subsystem>CCCamera</Subsystem>
     <EFDB_Topic>CCCamera_command_playlist</EFDB_Topic>
+    <Description>Define a new playlist</Description>
     <item>
       <EFDB_Name>playlist</EFDB_Name>
       <Description>Name of a DAQ playlist to be defined (replaced if exists)</Description>
@@ -212,6 +225,7 @@
   <SALCommand>
     <Subsystem>CCCamera</Subsystem>
     <EFDB_Topic>CCCamera_command_alert</EFDB_Topic>
+    <Description>Experimental command -- not currently implemented</Description>
     <item>
       <EFDB_Name>alertId</EFDB_Name>
       <Description>The alertId for which this command applies (or *)</Description>
@@ -223,6 +237,30 @@
       <EFDB_Name>action</EFDB_Name>
       <Description>The action to take on the specified alert (TBD)</Description>
       <IDL_Type>string</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+  </SALCommand>
+  <!-- Generic command added for CAP-1062  -->
+  <!-- Example: generic resetFesPLC -->
+  <!-- This is to allow us to rapidly support new commands, which, if useful, maybe included explicitly in future cycle releases -->
+  <SALCommand>
+    <Subsystem>CCCamera</Subsystem>
+    <EFDB_Topic>CCCamera_command_generic</EFDB_Topic>
+    <Description>Generic command for sending arbitrary (but allowed by configuration) commands to the camera.</Description>
+    <item>
+      <EFDB_Name>command</EFDB_Name>
+      <Description>The command to be sent to the MCM. Must be listed as allowed in the ocs-bridge configuration.</Description>
+      <IDL_Type>string</IDL_Type>
+      <IDL_Size>1</IDL_Size>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>arguments</EFDB_Name>
+      <Description>Any arguments required by the command (empty string if none)</Description>
+      <IDL_Type>string</IDL_Type>
+      <IDL_Size>1</IDL_Size>
       <Units>unitless</Units>
       <Count>1</Count>
     </item>

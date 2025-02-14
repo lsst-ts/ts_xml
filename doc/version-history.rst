@@ -15,6 +15,160 @@ Version History
 
 .. towncrier release notes start
 
+v23.0.0 (2025-02-13)
+====================
+Package Level
+-------------
+
+New Features
+~~~~~~~~~~~~
+
+- CSC for the Multi Beam Optical Seeing Sensor (MOSS) (`DM-46263 <https://rubinobs.atlassian.net/browse/DM-46263>`_)
+- * add hardpointBalanceForcesOnInActiveState to ForceActuatorSettings (`DM-47803 <https://rubinobs.atlassian.net/browse/DM-47803>`_)
+- Add C++ runtime asset flags for MTM1M3TS and MTVMS (`DM-47996 <https://rubinobs.atlassian.net/browse/DM-47996>`_)
+- Updated TopicInfo to no longer raise an exception when data arrays lenght are different from the defined in the xml. This will now issue a warning but will no longer fail. (`DM-48149 <https://rubinobs.atlassian.net/browse/DM-48149>`_)
+
+
+Bug Fixes
+~~~~~~~~~
+
+- Fix the container username in Jenkinfile. (`DM-47806 <https://rubinobs.atlassian.net/browse/DM-47806>`_)
+
+
+Other Changes and Additions
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+- Remove DM-43821 from test_TopicDescription.py as the MTMount was fixed. (`DM-46026 <https://rubinobs.atlassian.net/browse/DM-46026>`_)
+- Switched to astropy-base instead of astropy in conda recipe. (`DM-47999 <https://rubinobs.atlassian.net/browse/DM-47999>`_)
+- Updated pyproject to add astropy and lxml as dependencies and allow package to be fully installed with pip. (`DM-48681 <https://rubinobs.atlassian.net/browse/DM-48681>`_)
+- Add Java to the list of runtime languages for MTMount. (`DM-48681 <https://rubinobs.atlassian.net/browse/DM-48681>`_)
+
+
+Interface Changes
+-----------------
+
+Bug Fixes
+~~~~~~~~~
+
+- Make Description and EFDB_Topic mandatory for Command/Event/TelemetryType in schema (`DM-43829 <https://rubinobs.atlassian.net/browse/DM-43829>`_)
+
+
+ATAOS
+~~~~~
+
+- Add temperature attribute to ATAOS_command_applyCorrection and to CorrectionStarted and CorrectionCompleted ATAOS_logevents. (`DM-46190 <https://rubinobs.atlassian.net/browse/DM-46190>`_)
+
+
+ATBuilding
+~~~~~~~~~~
+
+- Added maximumDriveFrequency event and driveVoltage telemetry for ATBuilding. (`DM-47930 <https://rubinobs.atlassian.net/browse/DM-47930>`_)
+
+
+ATCamera
+~~~~~~~~
+
+- Implement generic command (`CAP-1062 <https://rubinobs.atlassian.net/browse/CAP-1062>`_)
+- Updates for CCS changes. (`CAP-1065 <https://rubinobs.atlassian.net/browse/CAP-1065>`_)
+- Fix missing descriptions. (`DM-43793 <https://rubinobs.atlassian.net/browse/DM-43793>`_)
+
+
+ATPneumatics
+~~~~~~~~~~~~
+
+- Add command descriptions. (`DM-43798 <https://rubinobs.atlassian.net/browse/DM-43798>`_)
+
+
+CCCamera
+~~~~~~~~
+
+- Implement generic command (`CAP-1062 <https://rubinobs.atlassian.net/browse/CAP-1062>`_)
+- Fix filter changer descriptions and states (`CAP-1064 <https://rubinobs.atlassian.net/browse/CAP-1064>`_)
+- Updates for CCS changes. (`CAP-1065 <https://rubinobs.atlassian.net/browse/CAP-1065>`_)
+- Fix missing descriptions. (`DM-43804 <https://rubinobs.atlassian.net/browse/DM-43804>`_)
+
+
+DIMM
+~~~~
+
+- Applied modifications for DIMM to bring the interface in line with DIMM as actually implemented. (`DM-48784 <https://rubinobs.atlassian.net/browse/DM-48784>`_)
+- Remove some of the commands and events from DM-48784 and postpone them for later consideration. (`DM-48917 <https://rubinobs.atlassian.net/browse/DM-48917>`_)
+
+
+EPM
+~~~
+
+- Merge EPM enums and telemetry into ESS. (`DM-46348 <https://rubinobs.atlassian.net/browse/DM-46348>`_)
+
+
+ESS
+~~~
+
+- Add Raritan PDU telemetry. (`DM-46041 <https://rubinobs.atlassian.net/browse/DM-46041>`_)
+- Add aircraft tracking data to the ESS. (`DM-46087 <https://rubinobs.atlassian.net/browse/DM-46087>`_)
+- Merge EPM enums and telemetry into ESS. (`DM-46348 <https://rubinobs.atlassian.net/browse/DM-46348>`_)
+
+
+HVAC
+~~~~
+
+- Add OperatingMode and UnitState enums.
+  Translate all topics, items and descriptions to proper English. (`DM-46739 <https://rubinobs.atlassian.net/browse/DM-46739>`_)
+- Add Chiller04 and Dynalene telemetry.
+  Add and remove enums. (`DM-48157 <https://rubinobs.atlassian.net/browse/DM-48157>`_)
+- Add glycol sensor telemetry. (`DM-48157 <https://rubinobs.atlassian.net/browse/DM-48157>`_)
+
+
+MTAOS
+~~~~~
+
+- Remove `annularZernikeCoeff` event from MTAOS xml. (`DM-48750 <https://rubinobs.atlassian.net/browse/DM-48750>`_)
+
+
+MTCamera
+~~~~~~~~
+
+- Implement generic command (`CAP-1062 <https://rubinobs.atlassian.net/browse/CAP-1062>`_)
+- Fix filter changer descriptions and states and update the telemetry and events (`CAP-1064 <https://rubinobs.atlassian.net/browse/CAP-1064>`_)
+- Updates for CCS changes. (`CAP-1065 <https://rubinobs.atlassian.net/browse/CAP-1065>`_)
+- Add MTCamera_logevent_rebCond (`CAP-1066 <https://rubinobs.atlassian.net/browse/CAP-1066>`_)
+- Fix missing descriptions. (`DM-43816 <https://rubinobs.atlassian.net/browse/DM-43816>`_)
+
+
+MTM1M3
+~~~~~~
+
+- Rective misleading comment in MTM1M3 DetailedState documentation. (`DM-46022 <https://rubinobs.atlassian.net/browse/DM-46022>`_)
+- Gyroscope velocities are reported in deg/sec. (`DM-47616 <https://rubinobs.atlassian.net/browse/DM-47616>`_)
+
+
+MTMount
+~~~~~~~
+
+- Add new interface to lock/unlock motion. (`DM-48681 <https://rubinobs.atlassian.net/browse/DM-48681>`_)
+
+
+MTRotator
+~~~~~~~~~
+
+- Remove the deprecated states in ControllerState and EnabledSubstate in MTRotator.py. (`DM-45603 <https://rubinobs.atlassian.net/browse/DM-45603>`_)
+- Update the ErrorCode enum in MTRotator.py. (`DM-47994 <https://rubinobs.atlassian.net/browse/DM-47994>`_)
+- Add new interface to lock/unlock motion. (`DM-48681 <https://rubinobs.atlassian.net/browse/DM-48681>`_)
+
+
+Scheduler
+~~~~~~~~~
+
+- Add failureStrategy parameter to the addBlock command and blockStatus event.
+  This parameter allows users to specify how the Scheduler should handle script failures when executing a block. (`DM-48100 <https://rubinobs.atlassian.net/browse/DM-48100>`_)
+
+
+TunableLaser
+~~~~~~~~~~~~
+
+- Adding in Optical Configuration enum for TunableLaser (`DM-46165 <https://rubinobs.atlassian.net/browse/DM-46165>`_)
+
+
 v22.1.0 (2024-08-23)
 ====================
 Package Level

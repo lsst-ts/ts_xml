@@ -1,6 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-stylesheet type="text/xsl" href="http://lsst-sal.tuc.noao.edu/schema/SALTelemetrySet.xsl"?>
 <SALTelemetrySet xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://lsst-sal.tuc.noao.edu/schema/SALTelemetrySet.xsd">
+  <Enumeration>
+    BatteryStatus_Charging=1,
+    BatteryStatus_Discharging=2,
+    BatteryStatus_Floating=3,
+    BatteryStatus_Resting=4
+  </Enumeration>
+  <Enumeration>
+    ErrorCode_ConnectionFailed=1,
+    ErrorCode_ConnectionLost=2,
+    ErrorCode_StartFailed=3,
+    ErrorCode_RunFailed=4
+  </Enumeration>
+  <Enumeration>
+    OnOff_ON=1,
+    OnOff_OFF=2
+  </Enumeration>
   <SALTelemetry>
     <Subsystem>ESS</Subsystem>
     <EFDB_Topic>ESS_airTurbulence</EFDB_Topic>
@@ -990,6 +1006,674 @@
       <Description>Physical location of the sensor (e.g. AuxTel Truss).</Description>
       <IDL_Type>string</IDL_Type>
       <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+  </SALTelemetry>
+  <SALTelemetry>
+    <Subsystem>ESS</Subsystem>
+    <EFDB_Topic>ESS_netbooter</EFDB_Topic>
+    <Description>Telemetry for Netbooter PDU devices.</Description>
+    <item>
+      <EFDB_Name>systemDescription</EFDB_Name>
+      <Description>The value of the SNMP System Description field.</Description>
+      <IDL_Type>string</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>acCurrentDraw</EFDB_Name>
+      <Description>AC current draw.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>A</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>acMaxDraw</EFDB_Name>
+      <Description>AC maximum current draw detected.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>A</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>powerOutletStatus</EFDB_Name>
+      <Description>Power Outlet Status.</Description>
+      <IDL_Type>int</IDL_Type>
+      <Units>unitless</Units>
+      <Count>2</Count>
+    </item>
+    <item>
+      <EFDB_Name>sensorName</EFDB_Name>
+      <Description>The name of the device (usually the hostname).</Description>
+      <IDL_Type>string</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+  </SALTelemetry>
+  <SALTelemetry>
+    <Subsystem>ESS</Subsystem>
+    <EFDB_Topic>ESS_raritan</EFDB_Topic>
+    <Description>Telemetry for Raritan devices.</Description>
+    <item>
+      <EFDB_Name>systemDescription</EFDB_Name>
+      <Description>The value of the SNMP System Description field.</Description>
+      <IDL_Type>string</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>inletRmsCurrent</EFDB_Name>
+      <Description>The value of the SNMP Inlet rmsCurrent field.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>A</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>inletUnbalancedCurrent</EFDB_Name>
+      <Description>The value of the SNMP Inlet unbalancedCurrent field.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>%</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>inletRmsVoltage</EFDB_Name>
+      <Description>The value of the SNMP Inlet rmsVoltage field.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>V</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>inletActivePower</EFDB_Name>
+      <Description>The value of the SNMP Inlet activePower field.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>W</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>inletApparentPower</EFDB_Name>
+      <Description>The value of the SNMP Inlet apparentPower field.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>V * A</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>inletPowerFactor</EFDB_Name>
+      <Description>The value of the SNMP Inlet powerFactor field.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>inletActiveEnergy</EFDB_Name>
+      <Description>The value of the SNMP Inlet activeEnergy field.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>W * h</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>inletFrequency</EFDB_Name>
+      <Description>The value of the SNMP Inlet frequency field.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>Hz</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>inletUnbalancedVoltage</EFDB_Name>
+      <Description>The value of the SNMP Inlet unbalancedVoltage field.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>%</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>inletUnbalancedLineLineVoltage</EFDB_Name>
+      <Description>The value of the SNMP Inlet unbalancedLineLineVoltage field.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>%</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>outletRmsCurrent</EFDB_Name>
+      <Description>The value of the SNMP Outlet rmsCurrent field.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>A</Units>
+      <Count>48</Count>
+    </item>
+    <item>
+      <EFDB_Name>outletRmsVoltage</EFDB_Name>
+      <Description>The value of the SNMP Outlet rmsVoltage field.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>V</Units>
+      <Count>48</Count>
+    </item>
+    <item>
+      <EFDB_Name>outletActivePower</EFDB_Name>
+      <Description>The value of the SNMP Outlet activePower field.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>W</Units>
+      <Count>48</Count>
+    </item>
+    <item>
+      <EFDB_Name>outletApparentPower</EFDB_Name>
+      <Description>The value of the SNMP Outlet apparentPower field.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>V * A</Units>
+      <Count>48</Count>
+    </item>
+    <item>
+      <EFDB_Name>outletPowerFactor</EFDB_Name>
+      <Description>The value of the SNMP Outlet powerFactor field.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>unitless</Units>
+      <Count>48</Count>
+    </item>
+    <item>
+      <EFDB_Name>outletActiveEnergy</EFDB_Name>
+      <Description>The value of the SNMP Outlet activeEnergy field.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>W * h</Units>
+      <Count>48</Count>
+    </item>
+    <item>
+      <EFDB_Name>outletOnOff</EFDB_Name>
+      <Description>The value of the SNMP Outlet onOff field.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>48</Count>
+    </item>
+    <item>
+      <EFDB_Name>outletFrequency</EFDB_Name>
+      <Description>The value of the SNMP Outlet frequency field.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>Hz</Units>
+      <Count>48</Count>
+    </item>
+    <item>
+      <EFDB_Name>sensorName</EFDB_Name>
+      <Description>The name of the device (usually the hostname).</Description>
+      <IDL_Type>string</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+  </SALTelemetry>
+  <SALTelemetry>
+    <Subsystem>ESS</Subsystem>
+    <EFDB_Topic>ESS_schneiderPm5xxx</EFDB_Topic>
+    <Description>Telemetry for Schneider PM5XXX devices.</Description>
+    <item>
+      <EFDB_Name>systemDescription</EFDB_Name>
+      <Description>The value of the SNMP System Description field.</Description>
+      <IDL_Type>string</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>serialNumber</EFDB_Name>
+      <Description>PM556x - Unit Serial Number</Description>
+      <IDL_Type>string</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>measuredLineVoltageVan</EFDB_Name>
+      <Description>Measured Line Voltage - Van - (Volts)</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>V</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>measuredLineVoltageVbn</EFDB_Name>
+      <Description>Measured Line Voltage - Vbn - (Volts)</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>V</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>measuredLineVoltageVcn</EFDB_Name>
+      <Description>Measured Line Voltage - Vcn - (Volts)</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>V</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>measuredLineVoltageVab</EFDB_Name>
+      <Description>Measured Line Voltage - Vab - (Volts)</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>V</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>measuredLineVoltageVbc</EFDB_Name>
+      <Description>Measured Line Voltage - Vbc - (Volts)</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>V</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>measuredLineVoltageVca</EFDB_Name>
+      <Description>Measured Line Voltage - Vca - (Volts)</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>V</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>loadCurrentA</EFDB_Name>
+      <Description>Measured Load Current - Phase A - (Amps)</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>A</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>loadCurrentB</EFDB_Name>
+      <Description>Measured Load Current - Phase B - (Amps)</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>A</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>loadCurrentC</EFDB_Name>
+      <Description>Measured Load Current - Phase C - (Amps)</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>A</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>neutralCurrent</EFDB_Name>
+      <Description>Measured Neutral Current - (Amps)</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>A</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>systemFrequency</EFDB_Name>
+      <Description>Measured System Frequency (Hz)</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>Hz</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>activePowerA</EFDB_Name>
+      <Description>Active Power - Phase A - (kW)</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>kW</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>activePowerB</EFDB_Name>
+      <Description>Active Power - Phase B - (kW)</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>kW</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>activePowerC</EFDB_Name>
+      <Description>Active Power - Phase C - (kW)</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>kW</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>reactivePowerA</EFDB_Name>
+      <Description>Reactive Power - Phase A - (kVar)</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>kW</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>reactivePowerB</EFDB_Name>
+      <Description>Reactive Power - Phase B - (kVar)</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>kW</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>reactivePowerC</EFDB_Name>
+      <Description>Reactive Power - Phase C - (kVar)</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>kW</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>apparentPowerA</EFDB_Name>
+      <Description>Apparent Power - Phase A - (kVA)</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>kW</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>apparentPowerB</EFDB_Name>
+      <Description>Apparent Power - Phase B - (kVA)</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>kW</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>apparentPowerC</EFDB_Name>
+      <Description>Apparent Power - Phase C - (kVA)</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>kW</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>powerFactorA</EFDB_Name>
+      <Description>Power Factor - Phase A</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>powerFactorB</EFDB_Name>
+      <Description>Power Factor - Phase B</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>powerFactorC</EFDB_Name>
+      <Description>Power Factor - Phase C</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>displacementPowerFactorA</EFDB_Name>
+      <Description>Displacement Power Factor - Phase A</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>displacementPowerFactorB</EFDB_Name>
+      <Description>Displacement Power Factor - Phase B</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>displacementPowerFactorC</EFDB_Name>
+      <Description>Displacement Power Factor - Phase C</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>totalPowerFactor</EFDB_Name>
+      <Description>Total Power Factor - Phase (A, B, C)</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>totalDisplacementPowerFactor</EFDB_Name>
+      <Description>Total Displacement Power Factor - Phase (A, B, C)</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>totalActivePower</EFDB_Name>
+      <Description>Total Active Power - Phase (A,B,C) - (kW)</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>kW</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>totalReactivePower</EFDB_Name>
+      <Description>Total Reactive Power - Phase (A,B,C) - (kVar)</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>kW</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>totalApparentPower</EFDB_Name>
+      <Description>Total Apparent Power - Phase (A,B,C) - (kVA)</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>kW</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>activeEnergyDelivered</EFDB_Name>
+      <Description>Accumulated Energy - Active Energy Delivered - (Wh)</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>J</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>reactiveEnergyDelivered</EFDB_Name>
+      <Description>Accumulated Energy - Reactive Energy Delivered - (VARh)</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>J</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>apparentEnergyDelivered</EFDB_Name>
+      <Description>Accumulated Energy - Apparent Energy Delivered - (VAh)</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>J</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>resetDateTime</EFDB_Name>
+      <Description>Accumulated Energy - Date /Time of Last Reset</Description>
+      <IDL_Type>string</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>sensorName</EFDB_Name>
+      <Description>The name of the device (usually the hostname).</Description>
+      <IDL_Type>string</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+  </SALTelemetry>
+  <SALTelemetry>
+    <Subsystem>ESS</Subsystem>
+    <EFDB_Topic>ESS_xups</EFDB_Topic>
+    <Description>Telemetry for XUPS devices.</Description>
+    <item>
+      <EFDB_Name>systemDescription</EFDB_Name>
+      <Description>The value of the SNMP System Description field.</Description>
+      <IDL_Type>string</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>batteryCapacity</EFDB_Name>
+      <Description>Battery percent charge.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>%</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>batteryTimeRemaining</EFDB_Name>
+      <Description>Battery run time in seconds before UPS turns off due to low battery.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>s</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>batteryVoltage</EFDB_Name>
+      <Description>Battery voltage as reported by the UPS meters.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>V</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>envAmbientTemp</EFDB_Name>
+      <Description>The reading of the ambient temperature in the vicinity of the UPS or SNMP agent.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>deg_C</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>batteryCurrent</EFDB_Name>
+      <Description>Battery Current as reported by the UPS metering. Current is positive when discharging, negative when recharging the battery.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>A</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>inputCurrent</EFDB_Name>
+      <Description>The measured input current from the UPS meters in amps.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>A</Units>
+      <Count>3</Count>
+    </item>
+    <item>
+      <EFDB_Name>inputPower</EFDB_Name>
+      <Description>The measured input real power in watts.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>W</Units>
+      <Count>3</Count>
+    </item>
+    <item>
+      <EFDB_Name>inputVoltage</EFDB_Name>
+      <Description>The measured input voltage from the UPS meters in volts.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>V</Units>
+      <Count>3</Count>
+    </item>
+    <item>
+      <EFDB_Name>inputFrequency</EFDB_Name>
+      <Description>The utility line frequency in tenths of Hz.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>Hz</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>outputCurrent</EFDB_Name>
+      <Description>The measured UPS output current in amps.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>A</Units>
+      <Count>3</Count>
+    </item>
+    <item>
+      <EFDB_Name>outputPower</EFDB_Name>
+      <Description>The measured real output power in watts.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>W</Units>
+      <Count>3</Count>
+    </item>
+    <item>
+      <EFDB_Name>outputVoltage</EFDB_Name>
+      <Description>The measured output voltage from the UPS metering in volts.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>V</Units>
+      <Count>3</Count>
+    </item>
+    <item>
+      <EFDB_Name>outputFrequency</EFDB_Name>
+      <Description>The measured UPS output frequency in tenths of Hz.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>Hz</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>outputLoad</EFDB_Name>
+      <Description>The UPS output load in percent of rated capacity.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>bypassVoltage</EFDB_Name>
+      <Description>The measured UPS bypass voltage in volts.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>V</Units>
+      <Count>3</Count>
+    </item>
+    <item>
+      <EFDB_Name>bypassFrequency</EFDB_Name>
+      <Description>The bypass frequency in tenths of Hz.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>Hz</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>batteryAbmStatus</EFDB_Name>
+      <Description>Gives the status of the Advanced Battery Management; batteryFloating(3) status means that the charger is temporarily charging the battery to its float voltage; batteryResting(4) is the state when the battery is fully charged and none of the other actions (charging/discharging/floating) is being done.</Description>
+      <IDL_Type>int</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>sensorName</EFDB_Name>
+      <Description>The name of the device (usually the hostname).</Description>
+      <IDL_Type>string</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+  </SALTelemetry>
+  <SALTelemetry>
+    <EFDB_Topic>ESS_aircraftTrack</EFDB_Topic>
+    <Description>Aircraft track read from DGAC radars.</Description>
+    <item>
+      <EFDB_Name>timestamp</EFDB_Name>
+      <Description>Time of data acqusition (TAI Unix seconds).</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>second</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>track</EFDB_Name>
+      <Description>The id of the radar and aircraft.</Description>
+      <IDL_Type>string</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>transponder</EFDB_Name>
+      <Description>The id of the aircraft assigned by the secondary surveillance radar (SSR).</Description>
+      <IDL_Type>string</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>azimuth</EFDB_Name>
+      <Description>The azimuth of the aircraft.</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>degree</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>altitude</EFDB_Name>
+      <Description>The altitude of the aircraft.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>m</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>speed</EFDB_Name>
+      <Description>The speed of the aircraft.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>m/s</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>latitude</EFDB_Name>
+      <Description>The latitude position of the aircraft.</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>degree</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>longitude</EFDB_Name>
+      <Description>The longitude position of the aircraft.</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>degree</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>velocityX</EFDB_Name>
+      <Description>The velocity of the aircraft in the x axis.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>m/s</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>velocityY</EFDB_Name>
+      <Description>The velocity of the aircraft in the Y axis.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>m/s</Units>
       <Count>1</Count>
     </item>
   </SALTelemetry>

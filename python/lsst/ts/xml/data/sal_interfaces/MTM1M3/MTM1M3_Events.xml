@@ -62,7 +62,7 @@
   <SALEvent>
     <Subsystem>MTM1M3</Subsystem>
     <EFDB_Topic>MTM1M3_logevent_detailedState</EFDB_Topic>
-    <Description>M1M3 detailtedState - lowered, raised, lowering, raising, engineering raised, ..</Description>
+    <Description>M1M3 detailtedState - lowered, acitve (=raised), lowering, raising, active engineering (=raised), ..</Description>
     <item>
       <EFDB_Name>timestamp</EFDB_Name>
       <Description>Detailed State timestamp.</Description>
@@ -5432,6 +5432,13 @@
       <Description>Force actuator following error limit applied during mirror raising and lowering.</Description>
       <IDL_Type>float</IDL_Type>
       <Units>%</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>hardpointBalanceForcesOnInActiveState</EFDB_Name>
+      <Description>If true, hardpoint balance forces will be turned on in raised (active) non-engineering state.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
       <Count>1</Count>
     </item>
     <item>

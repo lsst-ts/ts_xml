@@ -27,8 +27,8 @@
   </SALCommand>
   <SALCommand>
     <Subsystem>HVAC</Subsystem>
-    <EFDB_Topic>HVAC_command_configChillers</EFDB_Topic>
-    <Description>Configure a CHILLER device.</Description>
+    <EFDB_Topic>HVAC_command_configChiller</EFDB_Topic>
+    <Description>Configure a Chiller device.</Description>
     <item>
       <EFDB_Name>device_id</EFDB_Name>
       <Description>Device ID; one of the DeviceId_chiller enums.</Description>
@@ -37,8 +37,8 @@
       <Count>1</Count>
     </item>
     <item>
-      <EFDB_Name>setpointActivo</EFDB_Name>
-      <Description>Setpoint Active</Description>
+      <EFDB_Name>activeSetpoint</EFDB_Name>
+      <Description>Active Setpoint.</Description>
       <IDL_Type>float</IDL_Type>
       <Units>deg_C</Units>
       <Count>1</Count>
@@ -46,39 +46,39 @@
   </SALCommand>
   <SALCommand>
     <Subsystem>HVAC</Subsystem>
-    <EFDB_Topic>HVAC_command_configCracks</EFDB_Topic>
-    <Description>Configure a CRACK device.</Description>
+    <EFDB_Topic>HVAC_command_configCrac</EFDB_Topic>
+    <Description>Configure a CRAC (Computer Room Air Conditioning) device.</Description>
     <item>
       <EFDB_Name>device_id</EFDB_Name>
-      <Description>Device ID; one of the DeviceId_crack enums.</Description>
+      <Description>Device ID; one of the DeviceId_crac enums.</Description>
       <IDL_Type>int</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
     </item>
     <item>
-      <EFDB_Name>setpointCooling</EFDB_Name>
-      <Description>Setpoint Cooling</Description>
+      <EFDB_Name>coolingSetpoint</EFDB_Name>
+      <Description>Cooling Setpoint.</Description>
       <IDL_Type>float</IDL_Type>
       <Units>deg_C</Units>
       <Count>1</Count>
     </item>
     <item>
-      <EFDB_Name>setpointDeshumidificador</EFDB_Name>
-      <Description>Setpoint Dehumidifier</Description>
+      <EFDB_Name>dehumidifierSetpoint</EFDB_Name>
+      <Description>Dehumidifier Setpoint.</Description>
       <IDL_Type>float</IDL_Type>
       <Units>%</Units>
       <Count>1</Count>
     </item>
     <item>
-      <EFDB_Name>setpointHeating</EFDB_Name>
-      <Description>Setpoint Heating</Description>
+      <EFDB_Name>heatingSetpoint</EFDB_Name>
+      <Description>Heating Setpoint.</Description>
       <IDL_Type>float</IDL_Type>
       <Units>deg_C</Units>
       <Count>1</Count>
     </item>
     <item>
-      <EFDB_Name>setpointHumidificador</EFDB_Name>
-      <Description>Setpoint Humidifier</Description>
+      <EFDB_Name>humidifierSetpoint</EFDB_Name>
+      <Description>Humidifier Setpoint.</Description>
       <IDL_Type>float</IDL_Type>
       <Units>%</Units>
       <Count>1</Count>
@@ -86,8 +86,8 @@
   </SALCommand>
   <SALCommand>
     <Subsystem>HVAC</Subsystem>
-    <EFDB_Topic>HVAC_command_configFancoils</EFDB_Topic>
-    <Description>Configure a FANCOIL device.</Description>
+    <EFDB_Topic>HVAC_command_configFancoil</EFDB_Topic>
+    <Description>Configure a Fancoil device.</Description>
     <item>
       <EFDB_Name>device_id</EFDB_Name>
       <Description>Device ID; one of the DeviceId_fancoil enums.</Description>
@@ -96,43 +96,43 @@
       <Count>1</Count>
     </item>
     <item>
-      <EFDB_Name>aperturaValvulaFrio</EFDB_Name>
-      <Description>Opening Valve Cold</Description>
+      <EFDB_Name>openColdValve</EFDB_Name>
+      <Description>Open Cold Valve.</Description>
       <IDL_Type>float</IDL_Type>
       <Units>%</Units>
       <Count>1</Count>
     </item>
     <item>
-      <EFDB_Name>setpointCoolingDay</EFDB_Name>
-      <Description>Setpoint Cooling Day</Description>
+      <EFDB_Name>dayCoolingSetpoint</EFDB_Name>
+      <Description>Day Cooling Setpoint.</Description>
       <IDL_Type>float</IDL_Type>
       <Units>deg_C</Units>
       <Count>1</Count>
     </item>
     <item>
-      <EFDB_Name>setpointCoolingNight</EFDB_Name>
-      <Description>Setpoint Cooling Night</Description>
+      <EFDB_Name>nightCoolingSetpoint</EFDB_Name>
+      <Description>Night Cooling Setpoint.</Description>
       <IDL_Type>float</IDL_Type>
       <Units>deg_C</Units>
       <Count>1</Count>
     </item>
     <item>
-      <EFDB_Name>setpointHeatingDay</EFDB_Name>
-      <Description>Setpoint Heating Day</Description>
+      <EFDB_Name>dayHeatingSetpoint</EFDB_Name>
+      <Description>Day Heating Setpoint.</Description>
       <IDL_Type>float</IDL_Type>
       <Units>deg_C</Units>
       <Count>1</Count>
     </item>
     <item>
-      <EFDB_Name>setpointHeatingNight</EFDB_Name>
-      <Description>Setpoint Heating Night</Description>
+      <EFDB_Name>nightHeatingSetpoint</EFDB_Name>
+      <Description>Night Heating Setpoint.</Description>
       <IDL_Type>float</IDL_Type>
       <Units>deg_C</Units>
       <Count>1</Count>
     </item>
     <item>
-      <EFDB_Name>setpointTrabajo</EFDB_Name>
-      <Description>Setpoint Work</Description>
+      <EFDB_Name>workingSetpoint</EFDB_Name>
+      <Description>Working Setpoint.</Description>
       <IDL_Type>float</IDL_Type>
       <Units>deg_C</Units>
       <Count>1</Count>
@@ -140,32 +140,32 @@
   </SALCommand>
   <SALCommand>
     <Subsystem>HVAC</Subsystem>
-    <EFDB_Topic>HVAC_command_configManejadoras</EFDB_Topic>
-    <Description>Configure a MANEJADORA device.</Description>
+    <EFDB_Topic>HVAC_command_configAhu</EFDB_Topic>
+    <Description>Configure a AHU (Air Handling Unit) device.</Description>
     <item>
       <EFDB_Name>device_id</EFDB_Name>
-      <Description>Device ID; one of the DeviceId_manejadora enums.</Description>
+      <Description>Device ID; one of the DeviceId_ahu enums.</Description>
       <IDL_Type>int</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
     </item>
     <item>
-      <EFDB_Name>setpointVentiladorMax</EFDB_Name>
-      <Description>Setpoint Fan Max</Description>
+      <EFDB_Name>maxFanSetpoint</EFDB_Name>
+      <Description>Max Fan Setpoint.</Description>
       <IDL_Type>float</IDL_Type>
       <Units>%</Units>
       <Count>1</Count>
     </item>
     <item>
-      <EFDB_Name>setpointVentiladorMin</EFDB_Name>
-      <Description>Setpoint Fan Min</Description>
+      <EFDB_Name>minFanSetpoint</EFDB_Name>
+      <Description>Min Fan Setpoint.</Description>
       <IDL_Type>float</IDL_Type>
       <Units>%</Units>
       <Count>1</Count>
     </item>
     <item>
-      <EFDB_Name>valorConsigna</EFDB_Name>
-      <Description>Value Setpoint</Description>
+      <EFDB_Name>roomSetpoint</EFDB_Name>
+      <Description>Room Setpoint.</Description>
       <IDL_Type>float</IDL_Type>
       <Units>deg_C</Units>
       <Count>1</Count>
@@ -173,39 +173,39 @@
   </SALCommand>
   <SALCommand>
     <Subsystem>HVAC</Subsystem>
-    <EFDB_Topic>HVAC_command_configManejadoraLowers</EFDB_Topic>
-    <Description>Configure a MANEJADORA_LOWER device.</Description>
+    <EFDB_Topic>HVAC_command_configLowerAhu</EFDB_Topic>
+    <Description>Configure a LowerAhu device.</Description>
     <item>
       <EFDB_Name>device_id</EFDB_Name>
-      <Description>Device ID; one of the DeviceId_manejadoraLower enums.</Description>
+      <Description>Device ID; one of the DeviceId_lowerAhu enums.</Description>
       <IDL_Type>int</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
     </item>
     <item>
-      <EFDB_Name>setpointTrabajo</EFDB_Name>
-      <Description>Setpoint Work</Description>
+      <EFDB_Name>workingSetpoint</EFDB_Name>
+      <Description>Working Setpoint.</Description>
       <IDL_Type>float</IDL_Type>
       <Units>deg_C</Units>
       <Count>1</Count>
     </item>
     <item>
-      <EFDB_Name>setpointVentiladorMax</EFDB_Name>
-      <Description>Setpoint Fan Max</Description>
+      <EFDB_Name>maxFanSetpoint</EFDB_Name>
+      <Description>Max Fan Setpoint.</Description>
       <IDL_Type>float</IDL_Type>
       <Units>%</Units>
       <Count>1</Count>
     </item>
     <item>
-      <EFDB_Name>setpointVentiladorMin</EFDB_Name>
-      <Description>Setpoint Fan Min</Description>
+      <EFDB_Name>minFanSetpoint</EFDB_Name>
+      <Description>Min Fan Setpoint.</Description>
       <IDL_Type>float</IDL_Type>
       <Units>%</Units>
       <Count>1</Count>
     </item>
     <item>
-      <EFDB_Name>temperaturaAnticongelante</EFDB_Name>
-      <Description>Temperature Anti-freeze</Description>
+      <EFDB_Name>antiFreezeTemperature</EFDB_Name>
+      <Description>Anti-Freeze Temperature.</Description>
       <IDL_Type>float</IDL_Type>
       <Units>deg_C</Units>
       <Count>1</Count>

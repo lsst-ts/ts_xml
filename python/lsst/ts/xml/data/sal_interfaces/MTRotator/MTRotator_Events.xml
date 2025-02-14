@@ -3,9 +3,7 @@
 <SALEventSet xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://lsst-sal.tuc.noao.edu/schema/SALEventSet.xsd">
   <Enumeration>
     ControllerState_Standby=0,
-    ControllerState_Disabled=1,
     ControllerState_Enabled=2,
-    ControllerState_Offline=3,
     ControllerState_Fault=4
 </Enumeration>
   <Enumeration>
@@ -13,14 +11,18 @@
     EnabledSubstate_MovingPointToPoint=1,
     EnabledSubstate_SlewingOrTracking=2,
     EnabledSubstate_ControlledStopping=3,
-    EnabledSubstate_Initializing=4,
-    EnabledSubstate_Relative=5,
     EnabledSubstate_ConstantVelocity=6
 </Enumeration>
   <Enumeration>
     FaultSubstate_NoError=0,
     FaultSubstate_EmergencyStopping=1,
     FaultSubstate_WaitClearError=2
+</Enumeration>
+  <Enumeration>
+    MotionLockState_UNLOCKED=0,
+    MotionLockState_LOCKING=1,
+    MotionLockState_UNLOCKING=2,
+    MotionLockState_LOCKED=3
 </Enumeration>
   <Enumeration>
     ApplicationStatus_EUI_CONNECTED = 0x4,
@@ -274,6 +276,25 @@
       <Description>The strongest frequency in the detection range. If the value is 0.0, it means no vibration is detected or the current telemetry data might not give a reliable FFT result.</Description>
       <IDL_Type>double</IDL_Type>
       <Units>Hz</Units>
+      <Count>1</Count>
+    </item>
+  </SALEvent>
+  <SALEvent>
+    <Subsystem>MTRotator</Subsystem>
+    <EFDB_Topic>MTRotator_logevent_motionLockState</EFDB_Topic>
+    <Description>Information about motion lock.</Description>
+    <item>
+      <EFDB_Name>lockState</EFDB_Name>
+      <Description>Motion lock state.</Description>
+      <IDL_Type>long</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>identity</EFDB_Name>
+      <Description>Identity of the entity that locked/unlocked.</Description>
+      <IDL_Type>string</IDL_Type>
+      <Units>unitless</Units>
       <Count>1</Count>
     </item>
   </SALEvent>

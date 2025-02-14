@@ -86,6 +86,12 @@
       MirrorCover_XMinus = 3,
       MirrorCover_YMinus = 4
   </Enumeration>
+  <Enumeration>
+    MotionLockState_UNLOCKED=0,
+    MotionLockState_LOCKING=1,
+    MotionLockState_UNLOCKING=2,
+    MotionLockState_LOCKED=3
+  </Enumeration>
   <SALEvent>
     <Subsystem>MTMount</Subsystem>
     <EFDB_Topic>MTMount_logevent_availableSettings</EFDB_Topic>
@@ -1484,6 +1490,25 @@
       <EFDB_Name>subsystem</EFDB_Name>
       <Description>Subsystem that produced the warning; a single System enumeration value.</Description>
       <IDL_Type>long</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+  </SALEvent>
+  <SALEvent>
+    <Subsystem>MTMount</Subsystem>
+    <EFDB_Topic>MTMount_logevent_motionLockState</EFDB_Topic>
+    <Description>Information about motion lock.</Description>
+    <item>
+      <EFDB_Name>lockState</EFDB_Name>
+      <Description>Motion lock state.</Description>
+      <IDL_Type>long</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>identity</EFDB_Name>
+      <Description>Identity of the entity that locked/unlocked.</Description>
+      <IDL_Type>string</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
     </item>

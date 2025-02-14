@@ -18,48 +18,16 @@
 #
 # You should have received a copy of the GNU General Public License
 
-from . import (
-    ATMCS,
-    DIMM,
-    DREAM,
-    EPM,
-    ESS,
-    GIS,
-    HVAC,
-    MOSS,
-    MTAOS,
-    MTM1M3,
-    MTM2,
-    MTVMS,
-    PMD,
-    ATBuilding,
-    ATCamera,
-    ATDome,
-    ATDomeTrajectory,
-    ATHexapod,
-    ATMonochromator,
-    ATPneumatics,
-    ATPtg,
-    ATSpectrograph,
-    ATThermoelectricCooler,
-    ATWhiteLight,
-    Electrometer,
-    FiberSpectrograph,
-    Guider,
-    LaserTracker,
-    LEDProjector,
-    LinearStage,
-    MTDome,
-    MTDomeTrajectory,
-    MTHexapod,
-    MTMount,
-    MTPtg,
-    MTReflector,
-    MTRotator,
-    Scheduler,
-    Script,
-    ScriptQueue,
-    Test,
-    TunableLaser,
-    Watcher,
-)
+__all__ = ["BeamStatus", "AttenuatorState"]
+
+import enum
+
+
+class BeamStatus(enum.IntEnum):
+    OFF = enum.auto()
+    ON = enum.auto()
+
+
+class AttenuatorState(enum.IntEnum):
+    inPlace = 1
+    removed = enum.auto()

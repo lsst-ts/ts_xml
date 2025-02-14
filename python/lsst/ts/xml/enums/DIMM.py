@@ -1,6 +1,6 @@
 # This file is part of ts_xml.
 #
-# Developed for the Vera C. Rubin Observatory Telescope and Site Systems.
+# Developed for Vera Rubin Observatory.
 # This product includes software developed by the LSST Project
 # (https://www.lsst.org).
 # See the COPYRIGHT file at the top-level directory of this distribution
@@ -19,39 +19,57 @@
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-__all__ = ["BatteryStatus", "OnOff"]
+__all__ = [
+    "AmebaMode",
+    "ScopeMotion",
+    "Dome",
+    "AmebaState",
+    "ProgramControl",
+    "SkyStatus",
+]
 
 import enum
 
 
-# @TODO DM-46349 Remove this enum.
-class BatteryStatus(enum.IntEnum):
-    """Battery statuses that can be used by the EPM CSC.
-
-    Values:
-
-    * Charging: The battery is charging.
-    * Discharging: The battery is discharging.
-    * Floating: The battery is charging to its float voltage.
-    * Resting: The battery is fully charged and not
-      charging/discharging/floating.
-    """
-
-    Charging = 1
-    Discharging = 2
-    Floating = 3
-    Resting = 4
+class AmebaMode(enum.IntEnum):
+    Off = 0
+    Auto = 1
+    Manual = 2
 
 
-# @TODO DM-46349 Remove this enum.
-class OnOff(enum.IntEnum):
-    """On/Off statuses that can be used by the EPM CSC.
+class ScopeMotion(enum.IntEnum):
+    Park = 0
+    Slew = 1
+    Stand = 2
+    Tracking = 3
 
-    Values:
 
-    * ON: The device is on.
-    * OFF: The device is off.
-    """
+class Dome(enum.IntEnum):
+    Undefined = 0
+    Opened = 1
+    Closed = 2
+    Stated = 3
 
-    ON = 1
-    OFF = 2
+
+class AmebaState(enum.IntEnum):
+    Inactive = 0
+    Waiting = 1
+    Slewing = 2
+    Tracking = 3
+    Focusing = 4
+    Monitoring = 5
+
+
+class ProgramControl(enum.IntEnum):
+    Stop = 0
+    Start = 1
+    Restart = 2
+    NoAction = 3
+
+
+class SkyStatus(enum.IntEnum):
+    Clear = 0
+    LightCoverage = 1
+    Cloudy = 2
+    Rain = 3
+    Snow = 4

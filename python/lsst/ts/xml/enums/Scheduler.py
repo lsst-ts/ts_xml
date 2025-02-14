@@ -21,6 +21,7 @@
 __all__ = [
     "SalIndex",
     "DetailedState",
+    "FailureStrategy",
 ]
 
 import enum
@@ -54,3 +55,23 @@ class DetailedState(enum.IntEnum):
     COMPUTING_PREDICTED_SCHEDULE = enum.auto()
     # Scheduler is queueing targets.
     QUEUEING_TARGET = enum.auto()
+
+
+class FailureStrategy(enum.IntEnum):
+    """Strategy to employ when there is a script failure
+    while executing block.
+    """
+
+    # No error recoverable.
+    # This is the current behavior and causes the Scheduler to remove all
+    # scripts from the queue and mark the execution as failed.
+    NONE = enum.auto()
+    # Will preserve the scripts currently queue and continue to queue them
+    # if the queue makes progress. If a script is stopped the scheduler will
+    # cleanup the remaining scripts, stop the block execution and mark it as
+    # failed.
+    ON_SCRIPT_FAILURE = enum.auto()
+    # This will basically instruct the scheduler to ignore any type of error
+    # or interruption. It will continue to put scripts in the queue until all
+    # scripts from a block finished.
+    KEEP_GOING = enum.auto()

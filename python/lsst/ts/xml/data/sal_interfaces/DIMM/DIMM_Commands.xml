@@ -43,6 +43,13 @@
       <Units>deg</Units>
       <Count>1</Count>
     </item>
+    <item>
+      <EFDB_Name>track</EFDB_Name>
+      <Description>Enable equatorial tracking after the telescope arrives at the commanded position?</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
   </SALCommand>
   <SALCommand>
     <Subsystem>DIMM</Subsystem>
@@ -66,6 +73,42 @@
       <EFDB_Name>track</EFDB_Name>
       <Description>Track target.</Description>
       <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+  </SALCommand>
+  <SALCommand>
+    <Subsystem>DIMM</Subsystem>
+    <EFDB_Topic>DIMM_command_setAmebaMode</EFDB_Topic>
+    <Description>Set ameba mode (off, auto, or manual) through tt-master.</Description>
+    <item>
+      <EFDB_Name>mode</EFDB_Name>
+      <Description>Ameba mode, an AmebaMode enumeration.</Description>
+      <IDL_Type>long</IDL_Type>
+      <!-- <Enumeration> AmebaMode </Enumeration> -->
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+  </SALCommand>
+  <SALCommand>
+    <Subsystem>DIMM</Subsystem>
+    <EFDB_Topic>DIMM_command_moveDome</EFDB_Topic>
+    <Description>Manually move the first dome side to the requested position.</Description>
+    <item>
+      <EFDB_Name>sideA</EFDB_Name>
+      <Description>
+        The desired dome side A position, with 0.0 representing fully closed and 1.0 being fully opened.
+      </Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>sideB</EFDB_Name>
+      <Description>
+        The desired dome side B position, with 0.0 representing fully closed and 1.0 being fully opened.
+      </Description>
+      <IDL_Type>float</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
     </item>

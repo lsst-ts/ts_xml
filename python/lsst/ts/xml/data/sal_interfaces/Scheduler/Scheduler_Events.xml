@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-stylesheet type="text/xsl" href="http://lsst-sal.tuc.noao.edu/schema/SALEventSet.xsl"?>
 <SALEventSet xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://lsst-sal.tuc.noao.edu/schema/SALEventSet.xsd">
+  <Enumeration>DetailedState_IDLE,DetailedState_RUNNING,DetailedState_WAITING_NEXT_TARGET_TIMER_TASK,DetailedState_GENERATING_TARGET_QUEUE,DetailedState_COMPUTING_PREDICTED_SCHEDULE,DetailedState_QUEUEING_TARGET</Enumeration>
+  <Enumeration>FailureStrategy_NONE,FailureStrategy_ON_SCRIPT_FAILURE,FailureStrategy_KEEP_GOING</Enumeration>
   <SALEvent>
     <Subsystem>Scheduler</Subsystem>
     <EFDB_Topic>Scheduler_logevent_detailedState</EFDB_Topic>
@@ -1347,6 +1349,14 @@
       <EFDB_Name>definition</EFDB_Name>
       <Description>The full block definition.</Description>
       <IDL_Type>string</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>failureStrategy</EFDB_Name>
+      <Description>Strategy used when there is a script failure.</Description>
+      <!-- <Enumeration> FailureStrategy </Enumeration> -->
+      <IDL_Type>long</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
     </item>

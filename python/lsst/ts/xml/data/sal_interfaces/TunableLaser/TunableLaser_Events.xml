@@ -8,6 +8,14 @@ LaserErrorCode_GENERAL_ERROR = 7302,
 LaserErrorCode_TIMEOUT_ERROR = 7303,
 LaserErrorCode_HW_CPU_ERROR = 7304
   </Enumeration>
+  <Enumeration>
+OpticalConfiguration_SCU,
+OpticalConfiguration_F1_SCU,
+OpticalConfiguration_F2_SCU,
+OpticalConfiguration_NO_SCU,
+OpticalConfiguration_F1_NO_SCU,
+OpticalConfiguration_F2_NO_SCU
+  </Enumeration>
   <SALEvent>
     <Subsystem>TunableLaser</Subsystem>
     <EFDB_Topic>TunableLaser_logevent_laserInstabilityFlag</EFDB_Topic>
@@ -40,10 +48,10 @@ LaserErrorCode_HW_CPU_ERROR = 7304
   <SALEvent>
     <Subsystem>TunableLaser</Subsystem>
     <EFDB_Topic>TunableLaser_logevent_opticalConfiguration</EFDB_Topic>
-    <Description>The optical configuration.</Description>
+    <Description>The optical configuration; an OpticalConfiguration enum.</Description>
     <item>
       <EFDB_Name>configuration</EFDB_Name>
-      <Description>The new optical alignment configuration.</Description>
+      <Description>The optical alignment configuration; a OpticalConfiguration enum.</Description>
       <IDL_Type>string</IDL_Type>
       <IDL_Size>1</IDL_Size>
       <Units>unitless</Units>
