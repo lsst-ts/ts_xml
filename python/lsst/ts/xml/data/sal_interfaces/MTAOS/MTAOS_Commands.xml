@@ -191,4 +191,21 @@
     <EFDB_Topic>MTAOS_command_resetOffsetDOF</EFDB_Topic>
     <Description>Reset user applied offsets to the degrees of freedom (DOF).</Description>
   </SALCommand>
+  <SALCommand>
+    <Subsystem>MTAOS</Subsystem>
+    <EFDB_Topic>MTAOS_command_startClosedLoop</EFDB_Topic>
+    <Description>Start the closed loop operation of the system. This command will start the loop that will run the WEP, OFC and issueCorrection commands as images roll in. The loop will run until the stopClosedLoop command is issued.</Description>
+    <item>
+      <EFDB_Name>config</EFDB_Name>
+      <Description>Yaml configuration string with additional parameters to be passed to the closed loop.</Description>
+      <IDL_Type>string</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+  </SALCommand>
+  <SALCommand>
+    <Subsystem>MTAOS</Subsystem>
+    <EFDB_Topic>MTAOS_command_stopClosedLoop</EFDB_Topic>
+    <Description>Stop the closed loop operation of the system.</Description>
+  </SALCommand>
 </SALCommandSet>
