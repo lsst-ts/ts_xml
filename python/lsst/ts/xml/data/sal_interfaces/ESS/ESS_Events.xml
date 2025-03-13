@@ -90,6 +90,106 @@
   </SALEvent>
   <SALEvent>
     <Subsystem>ESS</Subsystem>
+    <EFDB_Topic>ESS_logevent_ringssMeasurement</EFDB_Topic>
+    <Description>A RINGSS measurement</Description>
+    <item>
+      <EFDB_Name>timestamp</EFDB_Name>
+      <Description>The time of the event.</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>second</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>hrNum</EFDB_Name>
+      <Description>Target HR catalog number.</Description>
+      <IDL_Type>short</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>zenithDistance</EFDB_Name>
+      <Description>Star zenith distance.</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>deg</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>flux</EFDB_Name>
+      <Description>Measured star flux.</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>electron</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>fwhmScintillation</EFDB_Name>
+      <Description>Seeing derived from the turbulence profile.</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>arcsec</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>fwhmSector</EFDB_Name>
+      <Description>Alternative seeing estimate from differential sector motion.</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>arcsec</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>fwhmFree</EFDB_Name>
+      <Description>Free-atmosphere seeing, 1 km and above.</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>arcsec</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>wind</EFDB_Name>
+      <Description>Effective windspeed associated with this measurement.</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>m/s</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>tau0</EFDB_Name>
+      <Description>Atmospheric time constant.</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>ms</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>theta0</EFDB_Name>
+      <Description>Atmospheric isoplanatic angle.</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>arcsec</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>totalVariance</EFDB_Name>
+      <Description>Total variance strength of scintillation.</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>m(2/3)</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>eRMS</EFDB_Name>
+      <Description>Error RMS residual between measured and fitted moments.</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>m(1/3)</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>turbulenceProfiles</EFDB_Name>
+      <Description>
+        Zenith corrected turbulence profile integrals at 0 km, 0.25 km, 0.5 km, 1 km, 
+        2 km, 4 km, 8 km and 16 km. These are scaled from the original values in the
+        SOAR database by a factor of 1e-13 for correctness of units.
+      </Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>m(1/3)</Units>
+      <Count>8</Count>
+    </item>
+  </SALEvent>
+  <SALEvent>
+    <Subsystem>ESS</Subsystem>
     <EFDB_Topic>ESS_logevent_sensorStatus</EFDB_Topic>
     <Description>Status of a sensor and its data server.</Description>
     <item>
