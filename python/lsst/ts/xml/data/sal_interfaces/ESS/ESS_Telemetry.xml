@@ -2682,4 +2682,58 @@
       <Count>1</Count>
     </item>
   </SALTelemetry>
+  <SALTelemetry>
+    <Subsystem>ESS</Subsystem>
+    <EFDB_Topic>ESS_particleMeasurements</EFDB_Topic>
+    <Description>Particle measurements from the SPS30 Sensirion particle sensor.</Description>
+    <item>
+      <EFDB_Name>sensorName</EFDB_Name>
+      <Description>The user-defined name of the sensor.</Description>
+      <IDL_Type>string</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>timestamp</EFDB_Name>
+      <Description>Time at which the data was read (TAI unix seconds).</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>second</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>particleSizes</EFDB_Name>
+      <Description>The particle sizes corresponding to the concentration data.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>um</Units>
+      <Count>5</Count>
+    </item>
+    <item>
+      <EFDB_Name>matterConcentration</EFDB_Name>
+      <Description>Particulate matter concentrations for sizes specified in particleSizes.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>ug/m3</Units>
+      <Count>5</Count>
+    </item>
+    <item>
+      <EFDB_Name>numberConcentration</EFDB_Name>
+      <Description>Number concentrations of particles for sizes specified in particleSizes.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>1/cm3</Units>
+      <Count>5</Count>
+    </item>
+    <item>
+      <EFDB_Name>typicalParticleSize</EFDB_Name>
+      <Description>Indicator of weighted average particle size detected by the sensor.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>um</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>location</EFDB_Name>
+      <Description>The location of the sensor.</Description>
+      <IDL_Type>string</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+  </SALTelemetry>
 </SALTelemetrySet>
