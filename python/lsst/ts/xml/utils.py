@@ -22,6 +22,7 @@ __all__ = [
     "get_pkg_root",
     "get_data_dir",
     "get_sal_interfaces_dir",
+    "get_interfaces_dir",
     "find_in_xml",
     "find_tag_in_xml",
     "find_text_in_xml",
@@ -44,6 +45,11 @@ def get_data_dir() -> pathlib.Path:
 def get_sal_interfaces_dir() -> pathlib.Path:
     """Return the path to the ``sal_interfaces`` dir within this package."""
     return get_data_dir() / "sal_interfaces"
+
+
+def get_interfaces_dir() -> pathlib.Path:
+    """Return the path to the ``interfaces`` dir within this package."""
+    return get_data_dir() / "interfaces"
 
 
 def find_in_xml(element: ElementTree.Element, item: str) -> ElementTree.Element:
