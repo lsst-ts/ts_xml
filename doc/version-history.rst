@@ -15,6 +15,95 @@ Version History
 
 .. towncrier release notes start
 
+v23.1.0 (2025-03-19)
+====================
+Package Level
+-------------
+
+Documentation
+~~~~~~~~~~~~~
+
+- Update RuntimeLanguages in SALSubsystems.xml to replace IDL with Python. (`DM-48864 <https://rubinobs.atlassian.net/browse/DM-48864>`_)
+
+
+Interface Changes
+-----------------
+
+ATSpectrograph
+~~~~~~~~~~~~~~
+
+- Added new filterChangePermitted event which publishes whether a filter can be changed. (`DM-49435 <https://rubinobs.atlassian.net/browse/DM-49435>`_)
+
+
+ESS
+~~~
+
+- Add particulate sensor telemetry to ESS. (`DM-49395 <https://rubinobs.atlassian.net/browse/DM-49395>`_)
+- Added ringssMeasurement event to ESS for SOAR RINGSS data. (`DM-49413 <https://rubinobs.atlassian.net/browse/DM-49413>`_)
+- Add new interface for generator set devices. (`DM-49415 <https://rubinobs.atlassian.net/browse/DM-49415>`_)
+
+
+HVAC
+~~~~
+
+- Add glycol sensors telemetry for white room and clean room. (`DM-49494 <https://rubinobs.atlassian.net/browse/DM-49494>`_)
+
+
+LinearStage
+~~~~~~~~~~~
+
+- Made position field inside of position topic into array. (`DM-48609 <https://rubinobs.atlassian.net/browse/DM-48609>`_)
+
+
+MTAOS
+~~~~~
+
+- * Add `command_startClosedLoop`, `command_stopClosedLoop`, and `logevent_closedLoopState` to the `MTAOS` interface. (`DM-49035 <https://rubinobs.atlassian.net/browse/DM-49035>`_)
+
+
+MTCamera
+~~~~~~~~
+
+- Changes for final (first photon) MTCamera configuration (`CAP-1073 <https://rubinobs.atlassian.net/browse/CAP-1073>`_)
+
+
+MTDome
+~~~~~~
+
+- Change the unit of torque to be Nm. (`DM-48969 <https://rubinobs.atlassian.net/browse/DM-48969>`_)
+
+
+MTM1M3
+~~~~~~
+
+- Add MinimalDistance for bump tests, removed timestamp and actuatorId from BumpTestStatus. (`DM-48237 <https://rubinobs.atlassian.net/browse/DM-48237>`_)
+
+
+MTM1M3TS
+~~~~~~~~
+
+- Add FCU heater target temperature to the M1M3TS applySetpoint command. (`DM-49538 <https://rubinobs.atlassian.net/browse/DM-49538>`_)
+
+
+MTMount
+~~~~~~~
+
+- Adds capacitor bank telemetry. (`DM-49468 <https://rubinobs.atlassian.net/browse/DM-49468>`_)
+
+
+MTRotator
+~~~~~~~~~
+
+- Add the new error code to the MTRotator ErrorCode enum. (`DM-48161 <https://rubinobs.atlassian.net/browse/DM-48161>`_)
+
+
+Scheduler
+~~~~~~~~~
+
+- Adds blockId to the Scheduler observation event. (`DM-39506 <https://rubinobs.atlassian.net/browse/DM-39506>`_)
+- Adds expected physical rotator angle to the Scheduler target event. (`DM-39506 <https://rubinobs.atlassian.net/browse/DM-39506>`_)
+
+
 v23.0.0 (2025-02-13)
 ====================
 Package Level
