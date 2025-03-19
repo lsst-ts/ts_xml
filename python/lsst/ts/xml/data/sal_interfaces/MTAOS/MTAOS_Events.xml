@@ -3,6 +3,7 @@
 <SALEventSet xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://lsst-sal.tuc.noao.edu/schema/SALEventSet.xsd">
   <Enumeration>FilterType_u,FilterType_g,FilterType_r,FilterType_i,FilterType_z,FilterType_y,FilterType_ref</Enumeration>
   <Enumeration>Mode_LsstCamFAM,Mode_LsstCamCWS,Mode_ComCam</Enumeration>
+  <Enumeration>ClosedLoopState_IDLE,ClosedLoopState_WAITING_IMAGE,ClosedLoopState_PROCESSING,ClosedLoopState_WAITING_APPLY,ClosedLoopState_APPLYING_CORRECTION,ClosedLoopState_ERROR</Enumeration>
   <SALEvent>
     <Subsystem>MTAOS</Subsystem>
     <EFDB_Topic>MTAOS_logevent_wavefrontError</EFDB_Topic>
@@ -376,6 +377,18 @@
       <Description>Latest execution time.</Description>
       <IDL_Type>float</IDL_Type>
       <Units>second</Units>
+      <Count>1</Count>
+    </item>
+  </SALEvent>
+  <SALEvent>
+    <Subsystem>MTAOS</Subsystem>
+    <EFDB_Topic>MTAOS_logevent_closedLoopState</EFDB_Topic>
+    <Description>State of the closed loop.</Description>
+    <item>
+      <EFDB_Name>state</EFDB_Name>
+      <Description>ClosedLoopState enumeration.</Description>
+      <IDL_Type>int</IDL_Type>
+      <Units>unitless</Units>
       <Count>1</Count>
     </item>
   </SALEvent>

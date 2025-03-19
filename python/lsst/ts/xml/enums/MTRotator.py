@@ -128,6 +128,8 @@ class ErrorCode(enum.IntEnum):
     * CCW_FOLLOWING_ERROR: The CCW did not follow the rotator's movement.
     * NO_NEW_TRACK_COMMAND: The CSC did not receive a new track command before
       the timeout.
+    * FAIL_TO_LOCK: Fail to lock the rotator motion.
+    * FAIL_TO_UNLOCK: Fail to unlock the rotator motion.
     """
 
     CONTROLLER_FAULT = 1
@@ -137,3 +139,5 @@ class ErrorCode(enum.IntEnum):
     OLD_CCW_TELEMETRY = 5
     CCW_FOLLOWING_ERROR = 6
     NO_NEW_TRACK_COMMAND = 7
+    FAIL_TO_LOCK = 8
+    FAIL_TO_UNLOCK = 9

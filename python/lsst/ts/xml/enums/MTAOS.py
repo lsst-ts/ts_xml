@@ -18,7 +18,7 @@
 #
 # You should have received a copy of the GNU General Public License
 
-__all__ = ["Mode", "FilterType"]
+__all__ = ["Mode", "FilterType", "ClosedLoopState"]
 
 import enum
 
@@ -45,3 +45,12 @@ class FilterType(enum.IntEnum):
     z = enum.auto()
     y = enum.auto()
     ref = enum.auto()
+
+
+class ClosedLoopState(enum.IntEnum):
+    IDLE = enum.auto()
+    WAITING_IMAGE = enum.auto()
+    PROCESSING = enum.auto()
+    WAITING_APPLY = enum.auto()
+    APPLYING_CORRECTION = enum.auto()
+    ERROR = enum.auto()

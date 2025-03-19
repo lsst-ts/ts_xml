@@ -30,11 +30,18 @@
   </Enumeration>
   <Enumeration>
     BumpTest_NotTested,
+    BumpTest_Triggered,
     BumpTest_TestingPositive,
     BumpTest_TestingPositiveWait,
     BumpTest_TestingNegative,
     BumpTest_TestingNegativeWait,
-    BumpTest_Passed,BumpTest_Failed
+    BumpTest_Passed,
+    BumpTest_Failed_Timeout,
+    BumpTest_Failed_TestedPositive_Overshoot,
+    BumpTest_Failed_TestedPositive_Undershoot,
+    BumpTest_Failed_TestedNegative_Overshoot,
+    BumpTest_Failed_TestedNegative_Undershoot,
+    BumpTest_Failed_NonTestedProblem
   </Enumeration>
   <Enumeration>
     HardpointTest_NotTested,
@@ -42,7 +49,8 @@
     HardpointTest_TestingPositive,
     HardpointTest_TestingNegative,
     HardpointTest_MovingReference,
-    HardpointTest_Passed,HardpointTest_Failed
+    HardpointTest_Passed,
+    HardpointTest_Failed
   </Enumeration>
   <Enumeration>
     HardpointActuatorMotionState_Standby=0,
@@ -5063,20 +5071,6 @@
     <EFDB_Topic>MTM1M3_logevent_forceActuatorBumpTestStatus</EFDB_Topic>
     <Description>Record bump test progress and final status.</Description>
     <item>
-      <EFDB_Name>timestamp</EFDB_Name>
-      <Description>Bump Test Result timestam.</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>s</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>actuatorId</EFDB_Name>
-      <Description>ID of actuator being tested. -1 if no actuator is being tested.</Description>
-      <IDL_Type>short</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
       <EFDB_Name>primaryTestTimestamps</EFDB_Name>
       <Description>Timestamps of the last bump test.</Description>
       <IDL_Type>double</IDL_Type>
@@ -5453,6 +5447,13 @@
       <Description>Number of measurements performed after bump test force was applied to confirm measured values matches target values.</Description>
       <IDL_Type>float</IDL_Type>
       <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>bumpTestMinimalDistance</EFDB_Name>
+      <Description>Minimal distance between force actuators which can be bump tested simultaneously.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>m</Units>
       <Count>1</Count>
     </item>
   </SALEvent>

@@ -10,10 +10,10 @@ from lxml import etree
 
 INDEX_ENUM_CHECK = re.compile(r"[^,= \w]+")
 
-# These are the "languages" we need to build libraries for. Note we removed
-# support for python runtime (previously SALPY) and the python/salobj
-# components uses IDL at runtime.
-VALID_RUNTIME_LANGUAGES = {"CPP", "Java", "LabVIEW", "IDL"}
+# These are the "languages" we need to build libraries for.
+# Note: SalObj CSCs use Python as the RuntimeLanguage. They
+# used to define IDL as the RuntimeLanguage.
+VALID_RUNTIME_LANGUAGES = {"CPP", "Java", "LabVIEW", "Python"}
 
 
 def get_salsubsystems_file() -> pathlib.Path:

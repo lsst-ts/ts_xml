@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-stylesheet type="text/xsl" href="http://lsst-sal.tuc.noao.edu/schema/SALEventSet.xsl"?>
-<SALEventSet xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://lsst-sal.tuc.noao.edu/schema/SALEventSet.xsd">
+<SALEventSet xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://github.com/lsst-ts/ts_xml/raw/refs/heads/develop/python/lsst/ts/xml/data/schema/SALEventSet.xsd">
   <Enumeration>Status_Homing,Status_Moving,Status_Stationary,Status_NotInPosition</Enumeration>
   <Enumeration>Error_None,Error_Busy,Error_NotInitialized,Error_MoveTimeout</Enumeration>
   <Enumeration>Port_Nasmyth1,Port_Nasmyth2</Enumeration>
@@ -332,6 +332,18 @@
       <Description>Port the instrument is mounted in.</Description>
       <!-- Enumeration: InstrumentPort -->
       <IDL_Type>long</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+  </SALEvent>
+  <SALEvent>
+    <Subsystem>ATSpectrograph</Subsystem>
+    <EFDB_Topic>ATSpectrograph_logevent_filterChangePermitted</EFDB_Topic>
+    <Description>Are filter changes permitted?</Description>
+    <item>
+      <EFDB_Name>value</EFDB_Name>
+      <Description>Boolean value for true = filter can be changed and false = filter cannot be changed.</Description>
+      <IDL_Type>boolean</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
     </item>
