@@ -1,7 +1,7 @@
 {
   "type" : "record",
-  "name" : "focal_plane_sensor",
-  "namespace" : "lsst.sal.ATCamera",
+  "name" : "thermal_trim_bulk",
+  "namespace" : "lsst.sal.MTCamera",
   "fields" : [
     {
       "name" : "timestamp",
@@ -10,139 +10,144 @@
       "units" : "millisecond"
     },
     {
-      "name" : "Temp",
+      "name" : "ColdTotal_P",
       "type" : [
         "null",
         "double"
       ],
       "default" : null,
-      "description" : "SW temperature",
+      "description" : "Cold Total Power",
+      "units" : "Watt"
+    },
+    {
+      "name" : "ColdTotal_P_state",
+      "type" : [
+        "null",
+        "string"
+      ],
+      "default" : null,
+      "description" : "Monitoring state for Trim_Htrs/ColdTotal_P",
+      "units" : "unitless"
+    },
+    {
+      "name" : "CryoTotal_P",
+      "type" : [
+        "null",
+        "double"
+      ],
+      "default" : null,
+      "description" : "Cryo Total Power",
+      "units" : "Watt"
+    },
+    {
+      "name" : "CryoTotal_P_state",
+      "type" : [
+        "null",
+        "string"
+      ],
+      "default" : null,
+      "description" : "Monitoring state for Trim_Htrs/CryoTotal_P",
+      "units" : "unitless"
+    },
+    {
+      "name" : "HtrBulk_V",
+      "type" : [
+        "null",
+        "double"
+      ],
+      "default" : null,
+      "description" : "Heater Bulk PS Voltage",
+      "units" : "Volt"
+    },
+    {
+      "name" : "HtrBulk_V_state",
+      "type" : [
+        "null",
+        "string"
+      ],
+      "default" : null,
+      "description" : "Monitoring state for Trim_Htrs/HtrBulk_V",
+      "units" : "unitless"
+    },
+    {
+      "name" : "HtrBulk_I",
+      "type" : [
+        "null",
+        "double"
+      ],
+      "default" : null,
+      "description" : "Heater Bulk PS Current",
+      "units" : "A"
+    },
+    {
+      "name" : "HtrBulk_I_state",
+      "type" : [
+        "null",
+        "string"
+      ],
+      "default" : null,
+      "description" : "Monitoring state for Trim_Htrs/HtrBulk_I",
+      "units" : "unitless"
+    },
+    {
+      "name" : "HtrBulk_P",
+      "type" : [
+        "null",
+        "double"
+      ],
+      "default" : null,
+      "description" : "Heater Bulk PS Power",
+      "units" : "Watt"
+    },
+    {
+      "name" : "HtrBulk_P_state",
+      "type" : [
+        "null",
+        "string"
+      ],
+      "default" : null,
+      "description" : "Monitoring state for Trim_Htrs/HtrBulk_P",
+      "units" : "unitless"
+    },
+    {
+      "name" : "HtrBulkTmp",
+      "type" : [
+        "null",
+        "double"
+      ],
+      "default" : null,
+      "description" : "Heater Bulk PS Temperature",
       "units" : "Celsius"
     },
     {
-      "name" : "Temp_state",
+      "name" : "HtrBulkTmp_state",
       "type" : [
         "null",
         "string"
       ],
       "default" : null,
-      "description" : "Monitoring state for R00/RebW/SW/Temp",
+      "description" : "Monitoring state for Trim_Htrs/HtrBulkTmp",
       "units" : "unitless"
     },
     {
-      "name" : "ODV",
+      "name" : "HtrPsTmp",
       "type" : [
         "null",
         "double"
       ],
       "default" : null,
-      "description" : "R00/RebW bias voltages OD 0 voltage",
-      "units" : "Volt"
+      "description" : "Heater PS Temperature",
+      "units" : "Celsius"
     },
     {
-      "name" : "ODV_state",
+      "name" : "HtrPsTmp_state",
       "type" : [
         "null",
         "string"
       ],
       "default" : null,
-      "description" : "Monitoring state for R00/RebW/SW/ODV",
+      "description" : "Monitoring state for Trim_Htrs/HtrPsTmp",
       "units" : "unitless"
-    },
-    {
-      "name" : "OGV",
-      "type" : [
-        "null",
-        "double"
-      ],
-      "default" : null,
-      "description" : "OG 0 voltage",
-      "units" : "Volt"
-    },
-    {
-      "name" : "OGV_state",
-      "type" : [
-        "null",
-        "string"
-      ],
-      "default" : null,
-      "description" : "Monitoring state for R00/RebW/SW/OGV",
-      "units" : "unitless"
-    },
-    {
-      "name" : "RDV",
-      "type" : [
-        "null",
-        "double"
-      ],
-      "default" : null,
-      "description" : "RD 0 voltage",
-      "units" : "Volt"
-    },
-    {
-      "name" : "RDV_state",
-      "type" : [
-        "null",
-        "string"
-      ],
-      "default" : null,
-      "description" : "Monitoring state for R00/RebW/SW/RDV",
-      "units" : "unitless"
-    },
-    {
-      "name" : "GDV",
-      "type" : [
-        "null",
-        "double"
-      ],
-      "default" : null,
-      "description" : "GD 0 voltage",
-      "units" : "Volt"
-    },
-    {
-      "name" : "GDV_state",
-      "type" : [
-        "null",
-        "string"
-      ],
-      "default" : null,
-      "description" : "Monitoring state for R00/RebW/SW/GDV",
-      "units" : "unitless"
-    },
-    {
-      "name" : "ODI",
-      "type" : [
-        "null",
-        "double"
-      ],
-      "default" : null,
-      "description" : "OD 0 current",
-      "units" : "mA"
-    },
-    {
-      "name" : "ODI_state",
-      "type" : [
-        "null",
-        "string"
-      ],
-      "default" : null,
-      "description" : "Monitoring state for R00/RebW/SW/ODI",
-      "units" : "unitless"
-    },
-    {
-      "name" : "Raft",
-      "type" : "string",
-      "description" : "This is a tag"
-    },
-    {
-      "name" : "Reb",
-      "type" : "string",
-      "description" : "This is a tag"
-    },
-    {
-      "name" : "Sensor",
-      "type" : "string",
-      "description" : "This is a tag"
     },
     {
       "name" : "Agent",

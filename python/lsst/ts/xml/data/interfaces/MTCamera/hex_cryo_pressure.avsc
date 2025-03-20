@@ -1,0 +1,48 @@
+{
+  "type" : "record",
+  "name" : "hex_cryo_pressure",
+  "namespace" : "lsst.sal.MTCamera",
+  "fields" : [
+    {
+      "name" : "timestamp",
+      "type" : "long",
+      "description" : "UTC timestamp",
+      "units" : "millisecond"
+    },
+    {
+      "name" : "pressure",
+      "type" : [
+        "null",
+        "double"
+      ],
+      "default" : null,
+      "description" : "Vapor Pressure",
+      "units" : "psia"
+    },
+    {
+      "name" : "pressure_state",
+      "type" : [
+        "null",
+        "string"
+      ],
+      "default" : null,
+      "description" : "Monitoring state for Cryo5/VaporPrs",
+      "units" : "unitless"
+    },
+    {
+      "name" : "Cryo",
+      "type" : "string",
+      "description" : "This is a tag"
+    },
+    {
+      "name" : "Source",
+      "type" : "string",
+      "description" : "This is a tag"
+    },
+    {
+      "name" : "Agent",
+      "type" : "string",
+      "description" : "This is a tag"
+    }
+  ]
+}

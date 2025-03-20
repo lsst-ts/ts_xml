@@ -1,0 +1,73 @@
+{
+  "type" : "record",
+  "name" : "fcs_loader_carrier",
+  "namespace" : "lsst.sal.MTCamera",
+  "fields" : [
+    {
+      "name" : "timestamp",
+      "type" : "long",
+      "description" : "UTC timestamp",
+      "units" : "millisecond"
+    },
+    {
+      "name" : "atStorage",
+      "type" : [
+        "null",
+        "boolean"
+      ],
+      "default" : null,
+      "description" : "Loader carrier is at STORAGE position",
+      "units" : "unitless"
+    },
+    {
+      "name" : "atHandoff",
+      "type" : [
+        "null",
+        "boolean"
+      ],
+      "default" : null,
+      "description" : "Loader carrier is at HANDOFF position",
+      "units" : "unitless"
+    },
+    {
+      "name" : "atEngaged",
+      "type" : [
+        "null",
+        "boolean"
+      ],
+      "default" : null,
+      "description" : "Loader carrier is at ENGAGED position",
+      "units" : "unitless"
+    },
+    {
+      "name" : "controllerInError",
+      "type" : [
+        "null",
+        "boolean"
+      ],
+      "default" : null,
+      "description" : "Loader carrier controller is in error",
+      "units" : "unitless"
+    },
+    {
+      "name" : "engagedSensorOn",
+      "type" : [
+        "null",
+        "boolean"
+      ],
+      "default" : null,
+      "description" : "Loader carrier engaged position sensor is on",
+      "units" : "unitless"
+    },
+    {
+      "name" : "Hardware",
+      "type" : "string",
+      "description" : "This is a tag"
+    },
+    {
+      "name" : "Agent",
+      "type" : "string",
+      "description" : "This is a tag"
+    }
+  ]
+}

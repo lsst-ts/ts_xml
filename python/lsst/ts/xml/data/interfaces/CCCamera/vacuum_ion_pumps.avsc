@@ -1,0 +1,58 @@
+{
+  "type" : "record",
+  "name" : "vacuum_ion_pumps",
+  "namespace" : "lsst.sal.CCCamera",
+  "fields" : [
+    {
+      "name" : "timestamp",
+      "type" : "long",
+      "description" : "UTC timestamp",
+      "units" : "millisecond"
+    },
+    {
+      "name" : "current",
+      "type" : [
+        "null",
+        "double"
+      ],
+      "default" : null,
+      "description" : "Cryo ion pump current",
+      "units" : "mA"
+    },
+    {
+      "name" : "current_state",
+      "type" : [
+        "null",
+        "string"
+      ],
+      "default" : null,
+      "description" : "Monitoring state for IonPumps/current",
+      "units" : "unitless"
+    },
+    {
+      "name" : "voltage",
+      "type" : [
+        "null",
+        "double"
+      ],
+      "default" : null,
+      "description" : "Cryo ion pump voltage",
+      "units" : "Volt"
+    },
+    {
+      "name" : "voltage_state",
+      "type" : [
+        "null",
+        "string"
+      ],
+      "default" : null,
+      "description" : "Monitoring state for IonPumps/voltage",
+      "units" : "unitless"
+    },
+    {
+      "name" : "Agent",
+      "type" : "string",
+      "description" : "This is a tag"
+    }
+  ]
+}
