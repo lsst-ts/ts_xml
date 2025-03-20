@@ -1,0 +1,58 @@
+{
+  "type" : "record",
+  "name" : "bonn_shutter",
+  "namespace" : "lsst.sal.CCCamera",
+  "fields" : [
+    {
+      "name" : "timestamp",
+      "type" : "long",
+      "description" : "UTC timestamp",
+      "units" : "millisecond"
+    },
+    {
+      "name" : "V5",
+      "type" : [
+        "null",
+        "double"
+      ],
+      "default" : null,
+      "description" : "BonnShutter 5-volt reading",
+      "units" : "volts"
+    },
+    {
+      "name" : "V5_state",
+      "type" : [
+        "null",
+        "string"
+      ],
+      "default" : null,
+      "description" : "Monitoring state for Device/Bonn_V5",
+      "units" : "unitless"
+    },
+    {
+      "name" : "V36",
+      "type" : [
+        "null",
+        "double"
+      ],
+      "default" : null,
+      "description" : "BonnShutter 36-volt reading",
+      "units" : "volts"
+    },
+    {
+      "name" : "V36_state",
+      "type" : [
+        "null",
+        "string"
+      ],
+      "default" : null,
+      "description" : "Monitoring state for Device/Bonn_V36",
+      "units" : "unitless"
+    },
+    {
+      "name" : "Agent",
+      "type" : "string",
+      "description" : "This is a tag"
+    }
+  ]
+}

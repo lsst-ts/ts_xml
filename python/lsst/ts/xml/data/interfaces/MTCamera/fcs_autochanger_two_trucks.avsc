@@ -1,0 +1,113 @@
+{
+  "type" : "record",
+  "name" : "fcs_autochanger_two_trucks",
+  "namespace" : "lsst.sal.MTCamera",
+  "fields" : [
+    {
+      "name" : "timestamp",
+      "type" : "long",
+      "description" : "UTC timestamp",
+      "units" : "millisecond"
+    },
+    {
+      "name" : "driverPosition",
+      "type" : [
+        "null",
+        "int"
+      ],
+      "default" : null,
+      "description" : "Position of autochanger driver truck along linear rails",
+      "units" : "micron"
+    },
+    {
+      "name" : "followerPosition",
+      "type" : [
+        "null",
+        "int"
+      ],
+      "default" : null,
+      "description" : "Position of autochanger follower truck along linear rails",
+      "units" : "micron"
+    },
+    {
+      "name" : "homingDone",
+      "type" : [
+        "null",
+        "boolean"
+      ],
+      "default" : null,
+      "description" : "Homing on both autochanger truck controllers is done",
+      "units" : "unitless"
+    },
+    {
+      "name" : "atHandoff",
+      "type" : [
+        "null",
+        "boolean"
+      ],
+      "default" : null,
+      "description" : "Both autochanger trucks are at handoff position",
+      "units" : "unitless"
+    },
+    {
+      "name" : "atOnline",
+      "type" : [
+        "null",
+        "boolean"
+      ],
+      "default" : null,
+      "description" : "Both autochanger trucks are at online position",
+      "units" : "unitless"
+    },
+    {
+      "name" : "atStandby",
+      "type" : [
+        "null",
+        "boolean"
+      ],
+      "default" : null,
+      "description" : "Both autochanger trucks are at standby position",
+      "units" : "unitless"
+    },
+    {
+      "name" : "inError",
+      "type" : [
+        "null",
+        "boolean"
+      ],
+      "default" : null,
+      "description" : "Autochanger trucks position sensors are in error",
+      "units" : "unitless"
+    },
+    {
+      "name" : "proximityVoltage",
+      "type" : [
+        "null",
+        "double"
+      ],
+      "default" : null,
+      "description" : "Voltage value read on proximity sensor device",
+      "units" : "V"
+    },
+    {
+      "name" : "proximityDistance",
+      "type" : [
+        "null",
+        "int"
+      ],
+      "default" : null,
+      "description" : "Distance computed from proximityVoltage read on proximity sensor device",
+      "units" : "micron"
+    },
+    {
+      "name" : "Hardware",
+      "type" : "string",
+      "description" : "This is a tag"
+    },
+    {
+      "name" : "Agent",
+      "type" : "string",
+      "description" : "This is a tag"
+    }
+  ]
+}

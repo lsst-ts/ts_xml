@@ -1,0 +1,123 @@
+{
+  "type" : "record",
+  "name" : "fcs_loader_hooks",
+  "namespace" : "lsst.sal.MTCamera",
+  "fields" : [
+    {
+      "name" : "timestamp",
+      "type" : "long",
+      "description" : "UTC timestamp",
+      "units" : "millisecond"
+    },
+    {
+      "name" : "clampState",
+      "type" : [
+        "null",
+        "string"
+      ],
+      "default" : null,
+      "description" : "Loader clamp lock status {CLAMPED; UNCLAMPED; CLOSED; OPENED; UNKNOWN; ERROR}",
+      "units" : "unitless"
+    },
+    {
+      "name" : "forceSensorVoltage0",
+      "type" : [
+        "null",
+        "int"
+      ],
+      "default" : null,
+      "description" : "Voltage returned by loader clamp forceSensor0",
+      "units" : "mV"
+    },
+    {
+      "name" : "forceSensorVoltage1",
+      "type" : [
+        "null",
+        "int"
+      ],
+      "default" : null,
+      "description" : "Voltage returned by loader clamp forceSensor1",
+      "units" : "mV"
+    },
+    {
+      "name" : "forceClampedStatus",
+      "type" : [
+        "null",
+        "boolean"
+      ],
+      "default" : null,
+      "description" : "Loader clamp force sensors \u2013 enough force to hold filter",
+      "units" : "unitless"
+    },
+    {
+      "name" : "forceUnclampedStatus",
+      "type" : [
+        "null",
+        "boolean"
+      ],
+      "default" : null,
+      "description" : "Loader clamp force sensors \u2013 not enough force to hold filter",
+      "units" : "unitless"
+    },
+    {
+      "name" : "forceUnderClampedStatus",
+      "type" : [
+        "null",
+        "boolean"
+      ],
+      "default" : null,
+      "description" : "Loader clamp force sensors \u2013 filter between engaged and storage position but insufficient force to properly hold filter",
+      "units" : "unitless"
+    },
+    {
+      "name" : "forceOverClampedStatus",
+      "type" : [
+        "null",
+        "boolean"
+      ],
+      "default" : null,
+      "description" : "Loader clamp force sensors \u2013 too much force on the hooks \u2013 risk of damaging both the hooks and the filter interfaces",
+      "units" : "unitless"
+    },
+    {
+      "name" : "allHooksInStateCLOSED",
+      "type" : [
+        "null",
+        "boolean"
+      ],
+      "default" : null,
+      "description" : "All the loader hooks are in CLOSED state",
+      "units" : "unitless"
+    },
+    {
+      "name" : "forceStatus",
+      "type" : [
+        "null",
+        "string"
+      ],
+      "default" : null,
+      "description" : "Loader clamp force lock status {UNCLAMPED; CLAMPED; UNDER_CLAMPED; OVER_CLAMPED; ERROR}",
+      "units" : "unitless"
+    },
+    {
+      "name" : "controllerInError",
+      "type" : [
+        "null",
+        "boolean"
+      ],
+      "default" : null,
+      "description" : "Loader clamp controller is in error",
+      "units" : "unitless"
+    },
+    {
+      "name" : "Hardware",
+      "type" : "string",
+      "description" : "This is a tag"
+    },
+    {
+      "name" : "Agent",
+      "type" : "string",
+      "description" : "This is a tag"
+    }
+  ]
+}

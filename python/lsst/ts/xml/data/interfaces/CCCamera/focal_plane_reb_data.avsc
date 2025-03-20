@@ -1,0 +1,528 @@
+{
+  "type" : "record",
+  "name" : "focal_plane_reb_data",
+  "namespace" : "lsst.sal.CCCamera",
+  "fields" : [
+    {
+      "name" : "timestamp",
+      "type" : "long",
+      "description" : "UTC timestamp",
+      "units" : "millisecond"
+    },
+    {
+      "name" : "HVBiasSwitch",
+      "type" : [
+        "null",
+        "double"
+      ],
+      "default" : null,
+      "description" : "HV bias switch",
+      "units" : "unitless"
+    },
+    {
+      "name" : "HVBiasSwitch_state",
+      "type" : [
+        "null",
+        "string"
+      ],
+      "default" : null,
+      "description" : "Monitoring state for R22/Reb0/HVBiasSwitch",
+      "units" : "unitless"
+    },
+    {
+      "name" : "HtrV",
+      "type" : [
+        "null",
+        "double"
+      ],
+      "default" : null,
+      "description" : "R22/Reb0 heater Heater voltage",
+      "units" : "Volts"
+    },
+    {
+      "name" : "HtrV_state",
+      "type" : [
+        "null",
+        "string"
+      ],
+      "default" : null,
+      "description" : "Monitoring state for R22/Reb0/HtrV",
+      "units" : "unitless"
+    },
+    {
+      "name" : "HtrW",
+      "type" : [
+        "null",
+        "double"
+      ],
+      "default" : null,
+      "description" : "Heater power",
+      "units" : "Watts"
+    },
+    {
+      "name" : "HtrW_state",
+      "type" : [
+        "null",
+        "string"
+      ],
+      "default" : null,
+      "description" : "Monitoring state for R22/Reb0/HtrW",
+      "units" : "unitless"
+    },
+    {
+      "name" : "DigV",
+      "type" : [
+        "null",
+        "double"
+      ],
+      "default" : null,
+      "description" : "R22/Reb0 board power Digital PS voltage",
+      "units" : "Volts"
+    },
+    {
+      "name" : "DigV_state",
+      "type" : [
+        "null",
+        "string"
+      ],
+      "default" : null,
+      "description" : "Monitoring state for R22/Reb0/DigV",
+      "units" : "unitless"
+    },
+    {
+      "name" : "DigI",
+      "type" : [
+        "null",
+        "double"
+      ],
+      "default" : null,
+      "description" : "Digital PS current",
+      "units" : "mA"
+    },
+    {
+      "name" : "DigI_state",
+      "type" : [
+        "null",
+        "string"
+      ],
+      "default" : null,
+      "description" : "Monitoring state for R22/Reb0/DigI",
+      "units" : "unitless"
+    },
+    {
+      "name" : "AnaV",
+      "type" : [
+        "null",
+        "double"
+      ],
+      "default" : null,
+      "description" : "Analog PS voltage",
+      "units" : "Volts"
+    },
+    {
+      "name" : "AnaV_state",
+      "type" : [
+        "null",
+        "string"
+      ],
+      "default" : null,
+      "description" : "Monitoring state for R22/Reb0/AnaV",
+      "units" : "unitless"
+    },
+    {
+      "name" : "AnaI",
+      "type" : [
+        "null",
+        "double"
+      ],
+      "default" : null,
+      "description" : "Analog PS current",
+      "units" : "mA"
+    },
+    {
+      "name" : "AnaI_state",
+      "type" : [
+        "null",
+        "string"
+      ],
+      "default" : null,
+      "description" : "Monitoring state for R22/Reb0/AnaI",
+      "units" : "unitless"
+    },
+    {
+      "name" : "ClkHV",
+      "type" : [
+        "null",
+        "double"
+      ],
+      "default" : null,
+      "description" : "Clock High PS voltage",
+      "units" : "Volts"
+    },
+    {
+      "name" : "ClkHV_state",
+      "type" : [
+        "null",
+        "string"
+      ],
+      "default" : null,
+      "description" : "Monitoring state for R22/Reb0/ClkHV",
+      "units" : "unitless"
+    },
+    {
+      "name" : "ClkHI",
+      "type" : [
+        "null",
+        "double"
+      ],
+      "default" : null,
+      "description" : "Clock High PS current",
+      "units" : "mA"
+    },
+    {
+      "name" : "ClkHI_state",
+      "type" : [
+        "null",
+        "string"
+      ],
+      "default" : null,
+      "description" : "Monitoring state for R22/Reb0/ClkHI",
+      "units" : "unitless"
+    },
+    {
+      "name" : "ClkLV",
+      "type" : [
+        "null",
+        "double"
+      ],
+      "default" : null,
+      "description" : "Clock Low PS voltage",
+      "units" : "Volts"
+    },
+    {
+      "name" : "ClkLV_state",
+      "type" : [
+        "null",
+        "string"
+      ],
+      "default" : null,
+      "description" : "Monitoring state for R22/Reb0/ClkLV",
+      "units" : "unitless"
+    },
+    {
+      "name" : "ClkLI",
+      "type" : [
+        "null",
+        "double"
+      ],
+      "default" : null,
+      "description" : "Clock Low PS current",
+      "units" : "mA"
+    },
+    {
+      "name" : "ClkLI_state",
+      "type" : [
+        "null",
+        "string"
+      ],
+      "default" : null,
+      "description" : "Monitoring state for R22/Reb0/ClkLI",
+      "units" : "unitless"
+    },
+    {
+      "name" : "ODV",
+      "type" : [
+        "null",
+        "double"
+      ],
+      "default" : null,
+      "description" : "OD PS voltage",
+      "units" : "Volts"
+    },
+    {
+      "name" : "ODV_state",
+      "type" : [
+        "null",
+        "string"
+      ],
+      "default" : null,
+      "description" : "Monitoring state for R22/Reb0/ODV",
+      "units" : "unitless"
+    },
+    {
+      "name" : "ODI",
+      "type" : [
+        "null",
+        "double"
+      ],
+      "default" : null,
+      "description" : "OD PS current",
+      "units" : "mA"
+    },
+    {
+      "name" : "ODI_state",
+      "type" : [
+        "null",
+        "string"
+      ],
+      "default" : null,
+      "description" : "Monitoring state for R22/Reb0/ODI",
+      "units" : "unitless"
+    },
+    {
+      "name" : "PClkU",
+      "type" : [
+        "null",
+        "double"
+      ],
+      "default" : null,
+      "description" : "R22/Reb0 clock rails Parallel upper",
+      "units" : "Volts"
+    },
+    {
+      "name" : "PClkU_state",
+      "type" : [
+        "null",
+        "string"
+      ],
+      "default" : null,
+      "description" : "Monitoring state for R22/Reb0/PClkU",
+      "units" : "unitless"
+    },
+    {
+      "name" : "PClkL",
+      "type" : [
+        "null",
+        "double"
+      ],
+      "default" : null,
+      "description" : "R22/Reb0 clock rails Parallel lower",
+      "units" : "Volts"
+    },
+    {
+      "name" : "PClkL_state",
+      "type" : [
+        "null",
+        "string"
+      ],
+      "default" : null,
+      "description" : "Monitoring state for R22/Reb0/PClkL",
+      "units" : "unitless"
+    },
+    {
+      "name" : "SClkU",
+      "type" : [
+        "null",
+        "double"
+      ],
+      "default" : null,
+      "description" : "Serial upper",
+      "units" : "Volts"
+    },
+    {
+      "name" : "SClkU_state",
+      "type" : [
+        "null",
+        "string"
+      ],
+      "default" : null,
+      "description" : "Monitoring state for R22/Reb0/SClkU",
+      "units" : "unitless"
+    },
+    {
+      "name" : "SClkL",
+      "type" : [
+        "null",
+        "double"
+      ],
+      "default" : null,
+      "description" : "Serial lower",
+      "units" : "Volts"
+    },
+    {
+      "name" : "SClkL_state",
+      "type" : [
+        "null",
+        "string"
+      ],
+      "default" : null,
+      "description" : "Monitoring state for R22/Reb0/SClkL",
+      "units" : "unitless"
+    },
+    {
+      "name" : "RGU",
+      "type" : [
+        "null",
+        "double"
+      ],
+      "default" : null,
+      "description" : "Reset gate upper",
+      "units" : "Volts"
+    },
+    {
+      "name" : "RGU_state",
+      "type" : [
+        "null",
+        "string"
+      ],
+      "default" : null,
+      "description" : "Monitoring state for R22/Reb0/RGU",
+      "units" : "unitless"
+    },
+    {
+      "name" : "RGL",
+      "type" : [
+        "null",
+        "double"
+      ],
+      "default" : null,
+      "description" : "Reset gate lower",
+      "units" : "Volts"
+    },
+    {
+      "name" : "RGL_state",
+      "type" : [
+        "null",
+        "string"
+      ],
+      "default" : null,
+      "description" : "Monitoring state for R22/Reb0/RGL",
+      "units" : "unitless"
+    },
+    {
+      "name" : "RefP12",
+      "type" : [
+        "null",
+        "double"
+      ],
+      "default" : null,
+      "description" : "Positive 12 ref",
+      "units" : "Volts"
+    },
+    {
+      "name" : "RefP12_state",
+      "type" : [
+        "null",
+        "string"
+      ],
+      "default" : null,
+      "description" : "Monitoring state for R22/Reb0/RefP12",
+      "units" : "unitless"
+    },
+    {
+      "name" : "RefN12",
+      "type" : [
+        "null",
+        "double"
+      ],
+      "default" : null,
+      "description" : "Negative 12 ref",
+      "units" : "Volts"
+    },
+    {
+      "name" : "RefN12_state",
+      "type" : [
+        "null",
+        "string"
+      ],
+      "default" : null,
+      "description" : "Monitoring state for R22/Reb0/RefN12",
+      "units" : "unitless"
+    },
+    {
+      "name" : "Ref05V",
+      "type" : [
+        "null",
+        "double"
+      ],
+      "default" : null,
+      "description" : "5V ref 0 voltage",
+      "units" : "Volts"
+    },
+    {
+      "name" : "Ref05V_state",
+      "type" : [
+        "null",
+        "string"
+      ],
+      "default" : null,
+      "description" : "Monitoring state for R22/Reb0/Ref05V",
+      "units" : "unitless"
+    },
+    {
+      "name" : "Ref15V",
+      "type" : [
+        "null",
+        "double"
+      ],
+      "default" : null,
+      "description" : "5V ref 1 voltage",
+      "units" : "Volts"
+    },
+    {
+      "name" : "Ref15V_state",
+      "type" : [
+        "null",
+        "string"
+      ],
+      "default" : null,
+      "description" : "Monitoring state for R22/Reb0/Ref15V",
+      "units" : "unitless"
+    },
+    {
+      "name" : "Ref25V",
+      "type" : [
+        "null",
+        "double"
+      ],
+      "default" : null,
+      "description" : "5V ref 2 voltage",
+      "units" : "Volts"
+    },
+    {
+      "name" : "Ref25V_state",
+      "type" : [
+        "null",
+        "string"
+      ],
+      "default" : null,
+      "description" : "Monitoring state for R22/Reb0/Ref25V",
+      "units" : "unitless"
+    },
+    {
+      "name" : "Ref125V",
+      "type" : [
+        "null",
+        "double"
+      ],
+      "default" : null,
+      "description" : "2.5V ref 1 voltage",
+      "units" : "Volts"
+    },
+    {
+      "name" : "Ref125V_state",
+      "type" : [
+        "null",
+        "string"
+      ],
+      "default" : null,
+      "description" : "Monitoring state for R22/Reb0/Ref125V",
+      "units" : "unitless"
+    },
+    {
+      "name" : "Raft",
+      "type" : "string",
+      "description" : "This is a tag"
+    },
+    {
+      "name" : "Reb",
+      "type" : "string",
+      "description" : "This is a tag"
+    },
+    {
+      "name" : "Agent",
+      "type" : "string",
+      "description" : "This is a tag"
+    }
+  ]
+}

@@ -1,0 +1,408 @@
+{
+  "type" : "record",
+  "name" : "chiller_maq20",
+  "namespace" : "lsst.sal.MTCamera",
+  "fields" : [
+    {
+      "name" : "timestamp",
+      "type" : "long",
+      "description" : "UTC timestamp",
+      "units" : "millisecond"
+    },
+    {
+      "name" : "Stg1Discharge",
+      "type" : [
+        "null",
+        "double"
+      ],
+      "default" : null,
+      "description" : "TC5: Stage1 Discharge Temp",
+      "units" : "\u00b0C"
+    },
+    {
+      "name" : "Stg1CondensOut",
+      "type" : [
+        "null",
+        "double"
+      ],
+      "default" : null,
+      "description" : "TC6: Stage1 Condenser out",
+      "units" : "\u00b0C"
+    },
+    {
+      "name" : "Stg1TXVBulb",
+      "type" : [
+        "null",
+        "double"
+      ],
+      "default" : null,
+      "description" : "TC7: Stage1 TXV Thermal Bulb",
+      "units" : "\u00b0C"
+    },
+    {
+      "name" : "Stg1TXVBulb_state",
+      "type" : [
+        "null",
+        "string"
+      ],
+      "default" : null,
+      "description" : "Monitoring state for Maq20/Stg1TXVBulb",
+      "units" : "unitless"
+    },
+    {
+      "name" : "Stg1Return",
+      "type" : [
+        "null",
+        "double"
+      ],
+      "default" : null,
+      "description" : "TC8: Stage1 Return",
+      "units" : "\u00b0C"
+    },
+    {
+      "name" : "Stg2Discharge",
+      "type" : [
+        "null",
+        "double"
+      ],
+      "default" : null,
+      "description" : "TC9: Stage2 Discharge Temp",
+      "units" : "\u00b0C"
+    },
+    {
+      "name" : "Stg2DeSuHtrOut",
+      "type" : [
+        "null",
+        "double"
+      ],
+      "default" : null,
+      "description" : "TC10: Stage2 DeSuperHeater out",
+      "units" : "\u00b0C"
+    },
+    {
+      "name" : "Stg2EvapIn",
+      "type" : [
+        "null",
+        "double"
+      ],
+      "default" : null,
+      "description" : "TC11: Stage2 Evaporator in",
+      "units" : "\u00b0C"
+    },
+    {
+      "name" : "Stg2EvapOut",
+      "type" : [
+        "null",
+        "double"
+      ],
+      "default" : null,
+      "description" : "TC12: Stage2 Evaporator out",
+      "units" : "\u00b0C"
+    },
+    {
+      "name" : "Stg2Return",
+      "type" : [
+        "null",
+        "double"
+      ],
+      "default" : null,
+      "description" : "TC13: Stage2 Return",
+      "units" : "\u00b0C"
+    },
+    {
+      "name" : "Stg2DischargeP",
+      "type" : [
+        "null",
+        "double"
+      ],
+      "default" : null,
+      "description" : "Stage 2 Dicharge Pressure",
+      "units" : "psia"
+    },
+    {
+      "name" : "CoolantPumpOut",
+      "type" : [
+        "null",
+        "double"
+      ],
+      "default" : null,
+      "description" : "TC14: Pumped Coolant Pump out",
+      "units" : "\u00b0C"
+    },
+    {
+      "name" : "CoolantHXOut",
+      "type" : [
+        "null",
+        "double"
+      ],
+      "default" : null,
+      "description" : "TC15: Pumped Coolant HX out",
+      "units" : "\u00b0C"
+    },
+    {
+      "name" : "CoolantReturn",
+      "type" : [
+        "null",
+        "double"
+      ],
+      "default" : null,
+      "description" : "TC16: Pumped Coolant Return",
+      "units" : "\u00b0C"
+    },
+    {
+      "name" : "CoolantSupply",
+      "type" : [
+        "null",
+        "double"
+      ],
+      "default" : null,
+      "description" : "TC17: Pumped Coolant Supply",
+      "units" : "\u00b0C"
+    },
+    {
+      "name" : "CoolantPumpIn",
+      "type" : [
+        "null",
+        "double"
+      ],
+      "default" : null,
+      "description" : "TC18: Pumped Coolant into Pump",
+      "units" : "\u00b0C"
+    },
+    {
+      "name" : "CoolantHeatXfer",
+      "type" : [
+        "null",
+        "double"
+      ],
+      "default" : null,
+      "description" : "Total heat transfer rate to coolant",
+      "units" : "Watt"
+    },
+    {
+      "name" : "ColdPlHeatXfer",
+      "type" : [
+        "null",
+        "double"
+      ],
+      "default" : null,
+      "description" : "Heat transfer rate from coldplate",
+      "units" : "Watt"
+    },
+    {
+      "name" : "GlycSupplyP",
+      "type" : [
+        "null",
+        "double"
+      ],
+      "default" : null,
+      "description" : "Glycol Supply Pressure",
+      "units" : "psig"
+    },
+    {
+      "name" : "GlycChillerIn",
+      "type" : [
+        "null",
+        "double"
+      ],
+      "default" : null,
+      "description" : "TC1: Glycol into Chiller",
+      "units" : "\u00b0C"
+    },
+    {
+      "name" : "GlycChillerIn_state",
+      "type" : [
+        "null",
+        "string"
+      ],
+      "default" : null,
+      "description" : "Monitoring state for Maq20/GlycChillerIn",
+      "units" : "unitless"
+    },
+    {
+      "name" : "GlycCondensOut",
+      "type" : [
+        "null",
+        "double"
+      ],
+      "default" : null,
+      "description" : "TC2: Glycol out of Condenser",
+      "units" : "\u00b0C"
+    },
+    {
+      "name" : "GlycDeSuHtrOut",
+      "type" : [
+        "null",
+        "double"
+      ],
+      "default" : null,
+      "description" : "TC3: Glycol out of DeSuperHeater",
+      "units" : "\u00b0C"
+    },
+    {
+      "name" : "GlycChillerOut",
+      "type" : [
+        "null",
+        "double"
+      ],
+      "default" : null,
+      "description" : "TC4: Glycol out of Chiller",
+      "units" : "\u00b0C"
+    },
+    {
+      "name" : "GlycChillerOut_state",
+      "type" : [
+        "null",
+        "string"
+      ],
+      "default" : null,
+      "description" : "Monitoring state for Maq20/GlycChillerOut",
+      "units" : "unitless"
+    },
+    {
+      "name" : "GlycFanIn",
+      "type" : [
+        "null",
+        "double"
+      ],
+      "default" : null,
+      "description" : "TC20: Glycol into Fan",
+      "units" : "\u00b0C"
+    },
+    {
+      "name" : "GlycFanOut",
+      "type" : [
+        "null",
+        "double"
+      ],
+      "default" : null,
+      "description" : "TC21: Glycol out of Fan",
+      "units" : "\u00b0C"
+    },
+    {
+      "name" : "GlycInputFlow",
+      "type" : [
+        "null",
+        "double"
+      ],
+      "default" : null,
+      "description" : "Glycol flow rate into Chiller",
+      "units" : "gallon/min"
+    },
+    {
+      "name" : "GlycInputFlow_state",
+      "type" : [
+        "null",
+        "string"
+      ],
+      "default" : null,
+      "description" : "Monitoring state for Maq20/GlycInputFlow",
+      "units" : "unitless"
+    },
+    {
+      "name" : "GlycHeatXfer",
+      "type" : [
+        "null",
+        "double"
+      ],
+      "default" : null,
+      "description" : "Heat transfer rate to cooling glycol",
+      "units" : "Watt"
+    },
+    {
+      "name" : "GlycDeSuHtrFlow",
+      "type" : [
+        "null",
+        "double"
+      ],
+      "default" : null,
+      "description" : "Glycol flow at Stg 2 DeSuperHtr",
+      "units" : "gallon/min"
+    },
+    {
+      "name" : "AmbientTemp",
+      "type" : [
+        "null",
+        "double"
+      ],
+      "default" : null,
+      "description" : "TC19: Ambient",
+      "units" : "\u00b0C"
+    },
+    {
+      "name" : "CabinetTemp",
+      "type" : [
+        "null",
+        "double"
+      ],
+      "default" : null,
+      "description" : "TC22: Cabinet ambient",
+      "units" : "\u00b0C"
+    },
+    {
+      "name" : "PBurstSupply",
+      "type" : [
+        "null",
+        "double"
+      ],
+      "default" : null,
+      "description" : "Burst disc pressure supply line",
+      "units" : "psig"
+    },
+    {
+      "name" : "PBurstSupply_state",
+      "type" : [
+        "null",
+        "string"
+      ],
+      "default" : null,
+      "description" : "Monitoring state for Maq20/PBurstSupply",
+      "units" : "unitless"
+    },
+    {
+      "name" : "PBurstReturn",
+      "type" : [
+        "null",
+        "double"
+      ],
+      "default" : null,
+      "description" : "Burst disc pressure return line",
+      "units" : "psig"
+    },
+    {
+      "name" : "PBurstReturn_state",
+      "type" : [
+        "null",
+        "string"
+      ],
+      "default" : null,
+      "description" : "Monitoring state for Maq20/PBurstReturn",
+      "units" : "unitless"
+    },
+    {
+      "name" : "Fan1Speed",
+      "type" : [
+        "null",
+        "double"
+      ],
+      "default" : null,
+      "description" : "Fan 1 speed",
+      "units" : "rpm"
+    },
+    {
+      "name" : "Fan2Speed",
+      "type" : [
+        "null",
+        "double"
+      ],
+      "default" : null,
+      "description" : "Fan 2 speed",
+      "units" : "rpm"
+    },
+    {
+      "name" : "Agent",
+      "type" : "string",
+      "description" : "This is a tag"
+    }
+  ]
+}

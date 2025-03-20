@@ -1,0 +1,63 @@
+{
+  "type" : "record",
+  "name" : "fcs_autochanger_two_latches",
+  "namespace" : "lsst.sal.MTCamera",
+  "fields" : [
+    {
+      "name" : "timestamp",
+      "type" : "long",
+      "description" : "UTC timestamp",
+      "units" : "millisecond"
+    },
+    {
+      "name" : "lockStatus",
+      "type" : [
+        "null",
+        "string"
+      ],
+      "default" : null,
+      "description" : "Autochanger latches lockStatus {OPENED; CLOSED; IN_TRAVEL; UNKNOWN; ERROR}",
+      "units" : "unitless"
+    },
+    {
+      "name" : "filterPresenceStatus",
+      "type" : [
+        "null",
+        "string"
+      ],
+      "default" : null,
+      "description" : "Autochanger latches filter presence status {ENGAGED; NO_FILTER; UNKNOWN; ERROR}",
+      "units" : "unitless"
+    },
+    {
+      "name" : "filterName",
+      "type" : [
+        "null",
+        "string"
+      ],
+      "default" : null,
+      "description" : "Name of filter on autochanger trucks",
+      "units" : "unitless"
+    },
+    {
+      "name" : "filterId",
+      "type" : [
+        "null",
+        "int"
+      ],
+      "default" : null,
+      "description" : "ID of filter on autochanger trucks",
+      "units" : "unitless"
+    },
+    {
+      "name" : "Hardware",
+      "type" : "string",
+      "description" : "This is a tag"
+    },
+    {
+      "name" : "Agent",
+      "type" : "string",
+      "description" : "This is a tag"
+    }
+  ]
+}

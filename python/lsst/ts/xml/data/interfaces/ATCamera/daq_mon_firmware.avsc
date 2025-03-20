@@ -1,0 +1,258 @@
+{
+  "type" : "record",
+  "name" : "daq_mon_firmware",
+  "namespace" : "lsst.sal.ATCamera",
+  "fields" : [
+    {
+      "name" : "timestamp",
+      "type" : "long",
+      "description" : "UTC timestamp",
+      "units" : "millisecond"
+    },
+    {
+      "name" : "link_status",
+      "type" : [
+        "null",
+        "long"
+      ],
+      "default" : null,
+      "description" : "State of the PGP link (bitfield)",
+      "units" : "unitless"
+    },
+    {
+      "name" : "rlink_data",
+      "type" : [
+        "null",
+        "long"
+      ],
+      "default" : null,
+      "description" : "Remote Link Data",
+      "units" : "unitless"
+    },
+    {
+      "name" : "cell_errors",
+      "type" : [
+        "null",
+        "long"
+      ],
+      "default" : null,
+      "description" : "PGP Cell Error Counter. This error counter increments when the lowest level PGP protocol quantum is in error. Examples of errors that would cause this counter to increment are, framing violations, incompatible protocol versions, CRC error, incorrect Cell size.",
+      "units" : "unitless"
+    },
+    {
+      "name" : "link_down",
+      "type" : [
+        "null",
+        "long"
+      ],
+      "default" : null,
+      "description" : "Link Down Counter. This should increment by 1 every time the PGP link transitions from UP to DOWN. Unfortunately, it does not use the LSST DAQ definition of UP, but rather only bits 1..0 of the state. Though normal initialization of the link causes only a single increment, on occasion a REB power cycle can cause the counter to increment more than once.",
+      "units" : "unitless"
+    },
+    {
+      "name" : "link_errors",
+      "type" : [
+        "null",
+        "long"
+      ],
+      "default" : null,
+      "description" : " Link Error Counter. This counter represents a lower level error than the Cell Error. This error is caused by 8B10B errors on the high speed serial line such as disparity errors or symbol decode errors. Sometimes this counter can increment during the link establishment process, though I have tried to change the firmware to eliminate this.",
+      "units" : "unitless"
+    },
+    {
+      "name" : "overflow_remote0",
+      "type" : [
+        "null",
+        "long"
+      ],
+      "default" : null,
+      "description" : "Remote Overflow Counters (channel 0). These four counters measure the number of times the firmware on the remote side of the link has overflowed its buffers for each virtual channel.",
+      "units" : "unitless"
+    },
+    {
+      "name" : "overflow_remote1",
+      "type" : [
+        "null",
+        "long"
+      ],
+      "default" : null,
+      "description" : "Remote Overflow Counters (channel 1). These four counters measure the number of times the firmware on the remote side of the link has overflowed its buffers for each virtual channel.",
+      "units" : "unitless"
+    },
+    {
+      "name" : "overflow_remote2",
+      "type" : [
+        "null",
+        "long"
+      ],
+      "default" : null,
+      "description" : "Remote Overflow Counters (channel 2). These four counters measure the number of times the firmware on the remote side of the link has overflowed its buffers for each virtual channel.",
+      "units" : "unitless"
+    },
+    {
+      "name" : "overflow_remote3",
+      "type" : [
+        "null",
+        "long"
+      ],
+      "default" : null,
+      "description" : "Remote Overflow Counters (channel 3). These four counters measure the number of times the firmware on the remote side of the link has overflowed its buffers for each virtual channel.",
+      "units" : "unitless"
+    },
+    {
+      "name" : "rx_errors",
+      "type" : [
+        "null",
+        "long"
+      ],
+      "default" : null,
+      "description" : "Receive Errors. This is the highest level PGP protocol error. This counter increments when a PGP frame has been successfully received, but was marked with an error when it was sent by the REB.",
+      "units" : "unitless"
+    },
+    {
+      "name" : "rx_frames",
+      "type" : [
+        "null",
+        "long"
+      ],
+      "default" : null,
+      "description" : "Received Frames. This is the number of PGP Frames received from the REB. (I don't recall if it is mutually exclusive with rx_errors)",
+      "units" : "unitless"
+    },
+    {
+      "name" : "overflow_local0",
+      "type" : [
+        "null",
+        "long"
+      ],
+      "default" : null,
+      "description" : "Local Overflow Counters (channel 0). These four counters measure the number of times the firmware on the local side of the link has overflowed its buffers for each virtual channel.",
+      "units" : "unitless"
+    },
+    {
+      "name" : "overflow_local1",
+      "type" : [
+        "null",
+        "long"
+      ],
+      "default" : null,
+      "description" : "Local Overflow Counters (channel 1). These four counters measure the number of times the firmware on the local side of the link has overflowed its buffers for each virtual channel.",
+      "units" : "unitless"
+    },
+    {
+      "name" : "overflow_local2",
+      "type" : [
+        "null",
+        "long"
+      ],
+      "default" : null,
+      "description" : "Local Overflow Counters (channel 2). These four counters measure the number of times the firmware on the local side of the link has overflowed its buffers for each virtual channel.",
+      "units" : "unitless"
+    },
+    {
+      "name" : "overflow_local3",
+      "type" : [
+        "null",
+        "long"
+      ],
+      "default" : null,
+      "description" : "Local Overflow Counters (channel 3). These four counters measure the number of times the firmware on the local side of the link has overflowed its buffers for each virtual channel.",
+      "units" : "unitless"
+    },
+    {
+      "name" : "tx_errors",
+      "type" : [
+        "null",
+        "long"
+      ],
+      "default" : null,
+      "description" : "Transmit Errors. This counter increments when a frame is transmitted with the error bit set. (Analog to rx_errors.)",
+      "units" : "unitless"
+    },
+    {
+      "name" : "tx_frames",
+      "type" : [
+        "null",
+        "long"
+      ],
+      "default" : null,
+      "description" : "Transmitted Frames: This is the number of PGP Frame transmitted to the REB.",
+      "units" : "unitless"
+    },
+    {
+      "name" : "rx_clock",
+      "type" : [
+        "null",
+        "long"
+      ],
+      "default" : null,
+      "description" : "Receive Clock Frequency. These quantities reflect the frequency of the clocks used by the Receive and Transmit sides of the transceivers. (Should be around 156.25 MHz)",
+      "units" : "Hz"
+    },
+    {
+      "name" : "tx_clock",
+      "type" : [
+        "null",
+        "long"
+      ],
+      "default" : null,
+      "description" : "Transmit Clock Frequency. These quantities reflect the frequency of the clocks used by the Receive and Transmit sides of the transceivers. (Should be around 156.25 MHz)",
+      "units" : "Hz"
+    },
+    {
+      "name" : "last_tx",
+      "type" : [
+        "null",
+        "long"
+      ],
+      "default" : null,
+      "description" : "Last transmitted Opcode. The value of the most recent command sent from the REB.",
+      "units" : "unitless"
+    },
+    {
+      "name" : "last_rx",
+      "type" : [
+        "null",
+        "long"
+      ],
+      "default" : null,
+      "description" : "Last Received Opcode. The value of the most recently received Opcode.",
+      "units" : "unitless"
+    },
+    {
+      "name" : "tx_op",
+      "type" : [
+        "null",
+        "long"
+      ],
+      "default" : null,
+      "description" : "Transmit Opcode Count. These count the number of synchronous commands sent from the REB to the RCE. We do not use this functionality. ",
+      "units" : "unitless"
+    },
+    {
+      "name" : "rx_op",
+      "type" : [
+        "null",
+        "long"
+      ],
+      "default" : null,
+      "description" : " Description: Received Opcode Count. The number of synchronous commands sent to the REB.",
+      "units" : "unitless"
+    },
+    {
+      "name" : "Raft",
+      "type" : "string",
+      "description" : "This is a tag"
+    },
+    {
+      "name" : "Reb",
+      "type" : "string",
+      "description" : "This is a tag"
+    },
+    {
+      "name" : "Agent",
+      "type" : "string",
+      "description" : "This is a tag"
+    }
+  ]
+}

@@ -1,0 +1,68 @@
+{
+  "type" : "record",
+  "name" : "fcs_loader_hook_status",
+  "namespace" : "lsst.sal.MTCamera",
+  "fields" : [
+    {
+      "name" : "timestamp",
+      "type" : "long",
+      "description" : "UTC timestamp",
+      "units" : "millisecond"
+    },
+    {
+      "name" : "lockSensorOn",
+      "type" : [
+        "null",
+        "boolean"
+      ],
+      "default" : null,
+      "description" : "Loader hook locked",
+      "units" : "unitless"
+    },
+    {
+      "name" : "unlockSensorOn",
+      "type" : [
+        "null",
+        "boolean"
+      ],
+      "default" : null,
+      "description" : "Loader hook unlocked",
+      "units" : "unitless"
+    },
+    {
+      "name" : "inError",
+      "type" : [
+        "null",
+        "boolean"
+      ],
+      "default" : null,
+      "description" : "Loader hook sensors in error",
+      "units" : "unitless"
+    },
+    {
+      "name" : "lockStatus",
+      "type" : [
+        "null",
+        "string"
+      ],
+      "default" : null,
+      "description" : "Loader hook lock status {OPENED; CLOSED; IN_TRAVEL; UNKNOWN; ERROR}",
+      "units" : "unitless"
+    },
+    {
+      "name" : "Hook",
+      "type" : "string",
+      "description" : "This is a tag"
+    },
+    {
+      "name" : "Hardware",
+      "type" : "string",
+      "description" : "This is a tag"
+    },
+    {
+      "name" : "Agent",
+      "type" : "string",
+      "description" : "This is a tag"
+    }
+  ]
+}

@@ -1,0 +1,48 @@
+{
+  "type" : "record",
+  "name" : "refrig_cryo_temp",
+  "namespace" : "lsst.sal.MTCamera",
+  "fields" : [
+    {
+      "name" : "timestamp",
+      "type" : "long",
+      "description" : "UTC timestamp",
+      "units" : "millisecond"
+    },
+    {
+      "name" : "temperature",
+      "type" : [
+        "null",
+        "double"
+      ],
+      "default" : null,
+      "description" : "Discharge Temperature (PLC)",
+      "units" : "\u00b0C"
+    },
+    {
+      "name" : "temperature_state",
+      "type" : [
+        "null",
+        "string"
+      ],
+      "default" : null,
+      "description" : "Monitoring state for Cryo5/DischrgTmp_P",
+      "units" : "unitless"
+    },
+    {
+      "name" : "Cryo",
+      "type" : "string",
+      "description" : "This is a tag"
+    },
+    {
+      "name" : "Source",
+      "type" : "string",
+      "description" : "This is a tag"
+    },
+    {
+      "name" : "Agent",
+      "type" : "string",
+      "description" : "This is a tag"
+    }
+  ]
+}

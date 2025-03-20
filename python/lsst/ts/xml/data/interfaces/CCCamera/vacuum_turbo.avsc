@@ -1,0 +1,158 @@
+{
+  "type" : "record",
+  "name" : "vacuum_turbo",
+  "namespace" : "lsst.sal.CCCamera",
+  "fields" : [
+    {
+      "name" : "timestamp",
+      "type" : "long",
+      "description" : "UTC timestamp",
+      "units" : "millisecond"
+    },
+    {
+      "name" : "current",
+      "type" : [
+        "null",
+        "double"
+      ],
+      "default" : null,
+      "description" : "TurboPump current",
+      "units" : "mA"
+    },
+    {
+      "name" : "voltage",
+      "type" : [
+        "null",
+        "double"
+      ],
+      "default" : null,
+      "description" : "TurboPump voltage",
+      "units" : "Volt"
+    },
+    {
+      "name" : "power",
+      "type" : [
+        "null",
+        "double"
+      ],
+      "default" : null,
+      "description" : "TurboPump power",
+      "units" : "Watt"
+    },
+    {
+      "name" : "power_state",
+      "type" : [
+        "null",
+        "string"
+      ],
+      "default" : null,
+      "description" : "Monitoring state for turbo/power",
+      "units" : "unitless"
+    },
+    {
+      "name" : "driveFrequency",
+      "type" : [
+        "null",
+        "double"
+      ],
+      "default" : null,
+      "description" : "TurboPump drive frequency",
+      "units" : "Hz"
+    },
+    {
+      "name" : "pumpTemperature",
+      "type" : [
+        "null",
+        "double"
+      ],
+      "default" : null,
+      "description" : "TurboPump pump temperature",
+      "units" : "\u00b0C"
+    },
+    {
+      "name" : "pumpTemperature_state",
+      "type" : [
+        "null",
+        "string"
+      ],
+      "default" : null,
+      "description" : "Monitoring state for turbo/pumpTemperature",
+      "units" : "unitless"
+    },
+    {
+      "name" : "cntrlrSinkTemperature",
+      "type" : [
+        "null",
+        "double"
+      ],
+      "default" : null,
+      "description" : "TurboPump controller sink temp.",
+      "units" : "\u00b0C"
+    },
+    {
+      "name" : "cntrlrSinkTemperature_state",
+      "type" : [
+        "null",
+        "string"
+      ],
+      "default" : null,
+      "description" : "Monitoring state for turbo/cntrlrSinkTemperature",
+      "units" : "unitless"
+    },
+    {
+      "name" : "cntrlrAirTemperature",
+      "type" : [
+        "null",
+        "double"
+      ],
+      "default" : null,
+      "description" : "TurboPump controller air temp.",
+      "units" : "\u00b0C"
+    },
+    {
+      "name" : "cntrlrAirTemperature_state",
+      "type" : [
+        "null",
+        "string"
+      ],
+      "default" : null,
+      "description" : "Monitoring state for turbo/cntrlrAirTemperature",
+      "units" : "unitless"
+    },
+    {
+      "name" : "rpm",
+      "type" : [
+        "null",
+        "double"
+      ],
+      "default" : null,
+      "description" : "TurboPump speed in RPM",
+      "units" : "unitless"
+    },
+    {
+      "name" : "status",
+      "type" : [
+        "null",
+        "double"
+      ],
+      "default" : null,
+      "description" : "TurboPump status: 5=normal, 6=fail",
+      "units" : "unitless"
+    },
+    {
+      "name" : "status_state",
+      "type" : [
+        "null",
+        "string"
+      ],
+      "default" : null,
+      "description" : "Monitoring state for turbo/status",
+      "units" : "unitless"
+    },
+    {
+      "name" : "Agent",
+      "type" : "string",
+      "description" : "This is a tag"
+    }
+  ]
+}

@@ -1,0 +1,48 @@
+{
+  "type" : "record",
+  "name" : "fcs_duration_autochanger_latches",
+  "namespace" : "lsst.sal.MTCamera",
+  "fields" : [
+    {
+      "name" : "timestamp",
+      "type" : "long",
+      "description" : "UTC timestamp",
+      "units" : "millisecond"
+    },
+    {
+      "name" : "OPEN",
+      "type" : [
+        "null",
+        "long"
+      ],
+      "default" : null,
+      "description" : "Duration of the action OPEN",
+      "units" : "millisecond"
+    },
+    {
+      "name" : "CLOSE",
+      "type" : [
+        "null",
+        "long"
+      ],
+      "default" : null,
+      "description" : "Duration of the action CLOSE",
+      "units" : "millisecond"
+    },
+    {
+      "name" : "Latch",
+      "type" : "string",
+      "description" : "This is a tag"
+    },
+    {
+      "name" : "Hardware",
+      "type" : "string",
+      "description" : "This is a tag"
+    },
+    {
+      "name" : "Agent",
+      "type" : "string",
+      "description" : "This is a tag"
+    }
+  ]
+}

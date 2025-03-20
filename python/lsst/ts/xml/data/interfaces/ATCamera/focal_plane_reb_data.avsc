@@ -1,0 +1,488 @@
+{
+  "type" : "record",
+  "name" : "focal_plane_reb_data",
+  "namespace" : "lsst.sal.ATCamera",
+  "fields" : [
+    {
+      "name" : "timestamp",
+      "type" : "long",
+      "description" : "UTC timestamp",
+      "units" : "millisecond"
+    },
+    {
+      "name" : "HVBiasSwitch",
+      "type" : [
+        "null",
+        "double"
+      ],
+      "default" : null,
+      "description" : "HV bias switch",
+      "units" : "unitless"
+    },
+    {
+      "name" : "HVBiasSwitch_state",
+      "type" : [
+        "null",
+        "string"
+      ],
+      "default" : null,
+      "description" : "Monitoring state for R00/RebW/HVBiasSwitch",
+      "units" : "unitless"
+    },
+    {
+      "name" : "HtrV",
+      "type" : [
+        "null",
+        "double"
+      ],
+      "default" : null,
+      "description" : "R00/RebW heater Heater voltage",
+      "units" : "Volts"
+    },
+    {
+      "name" : "HtrV_state",
+      "type" : [
+        "null",
+        "string"
+      ],
+      "default" : null,
+      "description" : "Monitoring state for R00/RebW/HtrV",
+      "units" : "unitless"
+    },
+    {
+      "name" : "HtrW",
+      "type" : [
+        "null",
+        "double"
+      ],
+      "default" : null,
+      "description" : "Heater power",
+      "units" : "Watts"
+    },
+    {
+      "name" : "HtrW_state",
+      "type" : [
+        "null",
+        "string"
+      ],
+      "default" : null,
+      "description" : "Monitoring state for R00/RebW/HtrW",
+      "units" : "unitless"
+    },
+    {
+      "name" : "DigV",
+      "type" : [
+        "null",
+        "double"
+      ],
+      "default" : null,
+      "description" : "R00/RebW board power Digital PS voltage",
+      "units" : "Volts"
+    },
+    {
+      "name" : "DigV_state",
+      "type" : [
+        "null",
+        "string"
+      ],
+      "default" : null,
+      "description" : "Monitoring state for R00/RebW/DigV",
+      "units" : "unitless"
+    },
+    {
+      "name" : "DigI",
+      "type" : [
+        "null",
+        "double"
+      ],
+      "default" : null,
+      "description" : "Digital PS current",
+      "units" : "mA"
+    },
+    {
+      "name" : "DigI_state",
+      "type" : [
+        "null",
+        "string"
+      ],
+      "default" : null,
+      "description" : "Monitoring state for R00/RebW/DigI",
+      "units" : "unitless"
+    },
+    {
+      "name" : "AnaV",
+      "type" : [
+        "null",
+        "double"
+      ],
+      "default" : null,
+      "description" : "Analog PS voltage",
+      "units" : "Volts"
+    },
+    {
+      "name" : "AnaV_state",
+      "type" : [
+        "null",
+        "string"
+      ],
+      "default" : null,
+      "description" : "Monitoring state for R00/RebW/AnaV",
+      "units" : "unitless"
+    },
+    {
+      "name" : "AnaI",
+      "type" : [
+        "null",
+        "double"
+      ],
+      "default" : null,
+      "description" : "Analog PS current",
+      "units" : "mA"
+    },
+    {
+      "name" : "AnaI_state",
+      "type" : [
+        "null",
+        "string"
+      ],
+      "default" : null,
+      "description" : "Monitoring state for R00/RebW/AnaI",
+      "units" : "unitless"
+    },
+    {
+      "name" : "ClkHV",
+      "type" : [
+        "null",
+        "double"
+      ],
+      "default" : null,
+      "description" : "Clock High PS voltage",
+      "units" : "Volts"
+    },
+    {
+      "name" : "ClkHV_state",
+      "type" : [
+        "null",
+        "string"
+      ],
+      "default" : null,
+      "description" : "Monitoring state for R00/RebW/ClkHV",
+      "units" : "unitless"
+    },
+    {
+      "name" : "ClkHI",
+      "type" : [
+        "null",
+        "double"
+      ],
+      "default" : null,
+      "description" : "Clock High PS current",
+      "units" : "mA"
+    },
+    {
+      "name" : "ClkHI_state",
+      "type" : [
+        "null",
+        "string"
+      ],
+      "default" : null,
+      "description" : "Monitoring state for R00/RebW/ClkHI",
+      "units" : "unitless"
+    },
+    {
+      "name" : "ClkLV",
+      "type" : [
+        "null",
+        "double"
+      ],
+      "default" : null,
+      "description" : "Clock Low PS voltage",
+      "units" : "Volts"
+    },
+    {
+      "name" : "ClkLV_state",
+      "type" : [
+        "null",
+        "string"
+      ],
+      "default" : null,
+      "description" : "Monitoring state for R00/RebW/ClkLV",
+      "units" : "unitless"
+    },
+    {
+      "name" : "ODV",
+      "type" : [
+        "null",
+        "double"
+      ],
+      "default" : null,
+      "description" : "OD PS voltage",
+      "units" : "Volts"
+    },
+    {
+      "name" : "ODV_state",
+      "type" : [
+        "null",
+        "string"
+      ],
+      "default" : null,
+      "description" : "Monitoring state for R00/RebW/ODV",
+      "units" : "unitless"
+    },
+    {
+      "name" : "ODI",
+      "type" : [
+        "null",
+        "double"
+      ],
+      "default" : null,
+      "description" : "OD PS current",
+      "units" : "mA"
+    },
+    {
+      "name" : "ODI_state",
+      "type" : [
+        "null",
+        "string"
+      ],
+      "default" : null,
+      "description" : "Monitoring state for R00/RebW/ODI",
+      "units" : "unitless"
+    },
+    {
+      "name" : "HtrPV",
+      "type" : [
+        "null",
+        "double"
+      ],
+      "default" : null,
+      "description" : "R00/RebW heater Heater PS voltage",
+      "units" : "Volts"
+    },
+    {
+      "name" : "HtrPV_state",
+      "type" : [
+        "null",
+        "string"
+      ],
+      "default" : null,
+      "description" : "Monitoring state for R00/RebW/HtrPV",
+      "units" : "unitless"
+    },
+    {
+      "name" : "HtrPI",
+      "type" : [
+        "null",
+        "double"
+      ],
+      "default" : null,
+      "description" : "R00/RebW heater Heater PS current",
+      "units" : "mA"
+    },
+    {
+      "name" : "HtrPI_state",
+      "type" : [
+        "null",
+        "string"
+      ],
+      "default" : null,
+      "description" : "Monitoring state for R00/RebW/HtrPI",
+      "units" : "unitless"
+    },
+    {
+      "name" : "PClkU",
+      "type" : [
+        "null",
+        "double"
+      ],
+      "default" : null,
+      "description" : "R00/RebW clock rails Parallel upper",
+      "units" : "Volts"
+    },
+    {
+      "name" : "PClkU_state",
+      "type" : [
+        "null",
+        "string"
+      ],
+      "default" : null,
+      "description" : "Monitoring state for R00/RebW/PClkU",
+      "units" : "unitless"
+    },
+    {
+      "name" : "PClkL",
+      "type" : [
+        "null",
+        "double"
+      ],
+      "default" : null,
+      "description" : "R00/RebW clock rails Parallel lower",
+      "units" : "Volts"
+    },
+    {
+      "name" : "PClkL_state",
+      "type" : [
+        "null",
+        "string"
+      ],
+      "default" : null,
+      "description" : "Monitoring state for R00/RebW/PClkL",
+      "units" : "unitless"
+    },
+    {
+      "name" : "SClkU",
+      "type" : [
+        "null",
+        "double"
+      ],
+      "default" : null,
+      "description" : "Serial upper",
+      "units" : "Volts"
+    },
+    {
+      "name" : "SClkU_state",
+      "type" : [
+        "null",
+        "string"
+      ],
+      "default" : null,
+      "description" : "Monitoring state for R00/RebW/SClkU",
+      "units" : "unitless"
+    },
+    {
+      "name" : "SClkL",
+      "type" : [
+        "null",
+        "double"
+      ],
+      "default" : null,
+      "description" : "Serial lower",
+      "units" : "Volts"
+    },
+    {
+      "name" : "SClkL_state",
+      "type" : [
+        "null",
+        "string"
+      ],
+      "default" : null,
+      "description" : "Monitoring state for R00/RebW/SClkL",
+      "units" : "unitless"
+    },
+    {
+      "name" : "RGU",
+      "type" : [
+        "null",
+        "double"
+      ],
+      "default" : null,
+      "description" : "Reset gate upper",
+      "units" : "Volts"
+    },
+    {
+      "name" : "RGU_state",
+      "type" : [
+        "null",
+        "string"
+      ],
+      "default" : null,
+      "description" : "Monitoring state for R00/RebW/RGU",
+      "units" : "unitless"
+    },
+    {
+      "name" : "RGL",
+      "type" : [
+        "null",
+        "double"
+      ],
+      "default" : null,
+      "description" : "Reset gate lower",
+      "units" : "Volts"
+    },
+    {
+      "name" : "RGL_state",
+      "type" : [
+        "null",
+        "string"
+      ],
+      "default" : null,
+      "description" : "Monitoring state for R00/RebW/RGL",
+      "units" : "unitless"
+    },
+    {
+      "name" : "PClk0",
+      "type" : [
+        "null",
+        "double"
+      ],
+      "default" : null,
+      "description" : "Clock states Parallel 0",
+      "units" : "Volts"
+    },
+    {
+      "name" : "PClk0_state",
+      "type" : [
+        "null",
+        "string"
+      ],
+      "default" : null,
+      "description" : "Monitoring state for R00/RebW/PClk0",
+      "units" : "unitless"
+    },
+    {
+      "name" : "SClk0",
+      "type" : [
+        "null",
+        "double"
+      ],
+      "default" : null,
+      "description" : "Serial 0",
+      "units" : "Volts"
+    },
+    {
+      "name" : "SClk0_state",
+      "type" : [
+        "null",
+        "string"
+      ],
+      "default" : null,
+      "description" : "Monitoring state for R00/RebW/SClk0",
+      "units" : "unitless"
+    },
+    {
+      "name" : "RG0",
+      "type" : [
+        "null",
+        "double"
+      ],
+      "default" : null,
+      "description" : "RG 0",
+      "units" : "Volts"
+    },
+    {
+      "name" : "RG0_state",
+      "type" : [
+        "null",
+        "string"
+      ],
+      "default" : null,
+      "description" : "Monitoring state for R00/RebW/RG0",
+      "units" : "unitless"
+    },
+    {
+      "name" : "Raft",
+      "type" : "string",
+      "description" : "This is a tag"
+    },
+    {
+      "name" : "Reb",
+      "type" : "string",
+      "description" : "This is a tag"
+    },
+    {
+      "name" : "Agent",
+      "type" : "string",
+      "description" : "This is a tag"
+    }
+  ]
+}

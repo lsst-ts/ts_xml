@@ -1,0 +1,583 @@
+{
+  "type" : "record",
+  "name" : "refrig_cold",
+  "namespace" : "lsst.sal.CCCamera",
+  "fields" : [
+    {
+      "name" : "timestamp",
+      "type" : "long",
+      "description" : "UTC timestamp",
+      "units" : "millisecond"
+    },
+    {
+      "name" : "DischrgTmp_P",
+      "type" : [
+        "null",
+        "double"
+      ],
+      "default" : null,
+      "description" : "Discharge Temperature (PLC)",
+      "units" : "\u00b0C"
+    },
+    {
+      "name" : "DischrgTmp_P_state",
+      "type" : [
+        "null",
+        "string"
+      ],
+      "default" : null,
+      "description" : "Monitoring state for Cold1/DischrgTmp_P",
+      "units" : "unitless"
+    },
+    {
+      "name" : "DischrgTmp_M",
+      "type" : [
+        "null",
+        "double"
+      ],
+      "default" : null,
+      "description" : "Discharge Temperature (Maq20)",
+      "units" : "\u00b0C"
+    },
+    {
+      "name" : "DischrgTmp_M_state",
+      "type" : [
+        "null",
+        "string"
+      ],
+      "default" : null,
+      "description" : "Monitoring state for Cold1/DischrgTmp_M",
+      "units" : "unitless"
+    },
+    {
+      "name" : "DischrgPrs",
+      "type" : [
+        "null",
+        "double"
+      ],
+      "default" : null,
+      "description" : "Discharge Pressure",
+      "units" : "psia"
+    },
+    {
+      "name" : "DischrgPrs_state",
+      "type" : [
+        "null",
+        "string"
+      ],
+      "default" : null,
+      "description" : "Monitoring state for Cold1/DischrgPrs",
+      "units" : "unitless"
+    },
+    {
+      "name" : "SuctionTmp_P",
+      "type" : [
+        "null",
+        "double"
+      ],
+      "default" : null,
+      "description" : "Suction Temperature (PLC)",
+      "units" : "\u00b0C"
+    },
+    {
+      "name" : "SuctionTmp_P_state",
+      "type" : [
+        "null",
+        "string"
+      ],
+      "default" : null,
+      "description" : "Monitoring state for Cold1/SuctionTmp_P",
+      "units" : "unitless"
+    },
+    {
+      "name" : "SuctionPrs",
+      "type" : [
+        "null",
+        "double"
+      ],
+      "default" : null,
+      "description" : "Suction Pressure",
+      "units" : "psia"
+    },
+    {
+      "name" : "SuctionPrs_state",
+      "type" : [
+        "null",
+        "string"
+      ],
+      "default" : null,
+      "description" : "Monitoring state for Cold1/SuctionPrs",
+      "units" : "unitless"
+    },
+    {
+      "name" : "LiquidTmp_P",
+      "type" : [
+        "null",
+        "double"
+      ],
+      "default" : null,
+      "description" : "Liquid Temperature (PLC)",
+      "units" : "\u00b0C"
+    },
+    {
+      "name" : "LiquidTmp_P_state",
+      "type" : [
+        "null",
+        "string"
+      ],
+      "default" : null,
+      "description" : "Monitoring state for Cold1/LiquidTmp_P",
+      "units" : "unitless"
+    },
+    {
+      "name" : "LiquidTmp_M",
+      "type" : [
+        "null",
+        "double"
+      ],
+      "default" : null,
+      "description" : "Liquid Temperature (Maq20)",
+      "units" : "\u00b0C"
+    },
+    {
+      "name" : "LiquidTmp_M_state",
+      "type" : [
+        "null",
+        "string"
+      ],
+      "default" : null,
+      "description" : "Monitoring state for Cold1/LiquidTmp_M",
+      "units" : "unitless"
+    },
+    {
+      "name" : "PriOilSepTmp",
+      "type" : [
+        "null",
+        "double"
+      ],
+      "default" : null,
+      "description" : "Primary Oil Separator Temp",
+      "units" : "\u00b0C"
+    },
+    {
+      "name" : "PriOilSepTmp_state",
+      "type" : [
+        "null",
+        "string"
+      ],
+      "default" : null,
+      "description" : "Monitoring state for Cold1/PriOilSepTmp",
+      "units" : "unitless"
+    },
+    {
+      "name" : "SecOilSepTmp",
+      "type" : [
+        "null",
+        "double"
+      ],
+      "default" : null,
+      "description" : "Secondary Oil Separator Temp",
+      "units" : "\u00b0C"
+    },
+    {
+      "name" : "SecOilSepTmp_state",
+      "type" : [
+        "null",
+        "string"
+      ],
+      "default" : null,
+      "description" : "Monitoring state for Cold1/SecOilSepTmp",
+      "units" : "unitless"
+    },
+    {
+      "name" : "CompVoltage",
+      "type" : [
+        "null",
+        "double"
+      ],
+      "default" : null,
+      "description" : "Compressor Voltage",
+      "units" : "Volts"
+    },
+    {
+      "name" : "CompVoltage_state",
+      "type" : [
+        "null",
+        "string"
+      ],
+      "default" : null,
+      "description" : "Monitoring state for Cold1/CompVoltage",
+      "units" : "unitless"
+    },
+    {
+      "name" : "CompCurrent",
+      "type" : [
+        "null",
+        "double"
+      ],
+      "default" : null,
+      "description" : "Compressor Current",
+      "units" : "Amps"
+    },
+    {
+      "name" : "CompCurrent_state",
+      "type" : [
+        "null",
+        "string"
+      ],
+      "default" : null,
+      "description" : "Monitoring state for Cold1/CompCurrent",
+      "units" : "unitless"
+    },
+    {
+      "name" : "CompPower",
+      "type" : [
+        "null",
+        "double"
+      ],
+      "default" : null,
+      "description" : "Compressor Power",
+      "units" : "VA"
+    },
+    {
+      "name" : "CompPower_state",
+      "type" : [
+        "null",
+        "string"
+      ],
+      "default" : null,
+      "description" : "Monitoring state for Cold1/CompPower",
+      "units" : "unitless"
+    },
+    {
+      "name" : "CompVfdVolt",
+      "type" : [
+        "null",
+        "double"
+      ],
+      "default" : null,
+      "description" : "Compressor VFD Voltage",
+      "units" : "Volts"
+    },
+    {
+      "name" : "CompVfdVolt_state",
+      "type" : [
+        "null",
+        "string"
+      ],
+      "default" : null,
+      "description" : "Monitoring state for Cold1/CompVfdVolt",
+      "units" : "unitless"
+    },
+    {
+      "name" : "CompVfdCurr",
+      "type" : [
+        "null",
+        "double"
+      ],
+      "default" : null,
+      "description" : "Compressor VFD Current",
+      "units" : "Amps"
+    },
+    {
+      "name" : "CompVfdCurr_state",
+      "type" : [
+        "null",
+        "string"
+      ],
+      "default" : null,
+      "description" : "Monitoring state for Cold1/CompVfdCurr",
+      "units" : "unitless"
+    },
+    {
+      "name" : "CompVfdFreq",
+      "type" : [
+        "null",
+        "double"
+      ],
+      "default" : null,
+      "description" : "Compressor VFD Frequency",
+      "units" : "Hz"
+    },
+    {
+      "name" : "CompVfdFreq_state",
+      "type" : [
+        "null",
+        "string"
+      ],
+      "default" : null,
+      "description" : "Monitoring state for Cold1/CompVfdFreq",
+      "units" : "unitless"
+    },
+    {
+      "name" : "CompVfdTemp",
+      "type" : [
+        "null",
+        "double"
+      ],
+      "default" : null,
+      "description" : "Compressor VFD Temperature",
+      "units" : "\u00b0C"
+    },
+    {
+      "name" : "CompVfdTemp_state",
+      "type" : [
+        "null",
+        "string"
+      ],
+      "default" : null,
+      "description" : "Monitoring state for Cold1/CompVfdTemp",
+      "units" : "unitless"
+    },
+    {
+      "name" : "HGBValvePosn",
+      "type" : [
+        "null",
+        "double"
+      ],
+      "default" : null,
+      "description" : "HGB Valve Position",
+      "units" : "%"
+    },
+    {
+      "name" : "HGBValvePosn_state",
+      "type" : [
+        "null",
+        "string"
+      ],
+      "default" : null,
+      "description" : "Monitoring state for Cold1/HGBValvePosn",
+      "units" : "unitless"
+    },
+    {
+      "name" : "EEPRValvePosn",
+      "type" : [
+        "null",
+        "double"
+      ],
+      "default" : null,
+      "description" : "EEPR Valve Position",
+      "units" : "%"
+    },
+    {
+      "name" : "EEPRValvePosn_state",
+      "type" : [
+        "null",
+        "string"
+      ],
+      "default" : null,
+      "description" : "Monitoring state for Cold1/EEPRValvePosn",
+      "units" : "unitless"
+    },
+    {
+      "name" : "CoolValvePosn",
+      "type" : [
+        "null",
+        "double"
+      ],
+      "default" : null,
+      "description" : "Coolant Valve Position",
+      "units" : "%"
+    },
+    {
+      "name" : "CoolValvePosn_state",
+      "type" : [
+        "null",
+        "string"
+      ],
+      "default" : null,
+      "description" : "Monitoring state for Cold1/CoolValvePosn",
+      "units" : "unitless"
+    },
+    {
+      "name" : "CoolFlowRate",
+      "type" : [
+        "null",
+        "double"
+      ],
+      "default" : null,
+      "description" : "Coolant Flow Rate",
+      "units" : "l/min"
+    },
+    {
+      "name" : "CoolFlowRate_state",
+      "type" : [
+        "null",
+        "string"
+      ],
+      "default" : null,
+      "description" : "Monitoring state for Cold1/CoolFlowRate",
+      "units" : "unitless"
+    },
+    {
+      "name" : "WaterInTmp",
+      "type" : [
+        "null",
+        "double"
+      ],
+      "default" : null,
+      "description" : "Water Inlet Temperature",
+      "units" : "\u00b0C"
+    },
+    {
+      "name" : "WaterInTmp_state",
+      "type" : [
+        "null",
+        "string"
+      ],
+      "default" : null,
+      "description" : "Monitoring state for Cold1/WaterInTmp",
+      "units" : "unitless"
+    },
+    {
+      "name" : "WaterOutTmp",
+      "type" : [
+        "null",
+        "double"
+      ],
+      "default" : null,
+      "description" : "Water Outlet Temperature",
+      "units" : "\u00b0C"
+    },
+    {
+      "name" : "WaterOutTmp_state",
+      "type" : [
+        "null",
+        "string"
+      ],
+      "default" : null,
+      "description" : "Monitoring state for Cold1/WaterOutTmp",
+      "units" : "unitless"
+    },
+    {
+      "name" : "CabinetTmp",
+      "type" : [
+        "null",
+        "double"
+      ],
+      "default" : null,
+      "description" : "Cabinet Temperature",
+      "units" : "\u00b0C"
+    },
+    {
+      "name" : "CabinetTmp_state",
+      "type" : [
+        "null",
+        "string"
+      ],
+      "default" : null,
+      "description" : "Monitoring state for Cold1/CabinetTmp",
+      "units" : "unitless"
+    },
+    {
+      "name" : "AmbientTmp",
+      "type" : [
+        "null",
+        "double"
+      ],
+      "default" : null,
+      "description" : "Ambient Temperature",
+      "units" : "\u00b0C"
+    },
+    {
+      "name" : "AmbientTmp_state",
+      "type" : [
+        "null",
+        "string"
+      ],
+      "default" : null,
+      "description" : "Monitoring state for Cold1/AmbientTmp",
+      "units" : "unitless"
+    },
+    {
+      "name" : "Fan1Speed",
+      "type" : [
+        "null",
+        "double"
+      ],
+      "default" : null,
+      "description" : "Fan 1 Speed",
+      "units" : "rpm"
+    },
+    {
+      "name" : "Fan1Speed_state",
+      "type" : [
+        "null",
+        "string"
+      ],
+      "default" : null,
+      "description" : "Monitoring state for Cold1/Fan1Speed",
+      "units" : "unitless"
+    },
+    {
+      "name" : "Fan2Speed",
+      "type" : [
+        "null",
+        "double"
+      ],
+      "default" : null,
+      "description" : "Fan 2 Speed",
+      "units" : "rpm"
+    },
+    {
+      "name" : "Fan2Speed_state",
+      "type" : [
+        "null",
+        "string"
+      ],
+      "default" : null,
+      "description" : "Monitoring state for Cold1/Fan2Speed",
+      "units" : "unitless"
+    },
+    {
+      "name" : "Fan3Speed",
+      "type" : [
+        "null",
+        "double"
+      ],
+      "default" : null,
+      "description" : "Fan 3 Speed",
+      "units" : "rpm"
+    },
+    {
+      "name" : "Fan3Speed_state",
+      "type" : [
+        "null",
+        "string"
+      ],
+      "default" : null,
+      "description" : "Monitoring state for Cold1/Fan3Speed",
+      "units" : "unitless"
+    },
+    {
+      "name" : "LiquidSubCooling",
+      "type" : [
+        "null",
+        "double"
+      ],
+      "default" : null,
+      "description" : "Cold1 SubCooling",
+      "units" : "\u00b0C"
+    },
+    {
+      "name" : "LiquidSubCooling_state",
+      "type" : [
+        "null",
+        "string"
+      ],
+      "default" : null,
+      "description" : "Monitoring state for Cold1/LiquidSubCooling",
+      "units" : "unitless"
+    },
+    {
+      "name" : "Cold",
+      "type" : "string",
+      "description" : "This is a tag"
+    },
+    {
+      "name" : "Agent",
+      "type" : "string",
+      "description" : "This is a tag"
+    }
+  ]
+}

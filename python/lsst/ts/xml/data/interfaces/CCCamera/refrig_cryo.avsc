@@ -1,7 +1,7 @@
 {
   "type" : "record",
-  "name" : "focal_plane_sensor",
-  "namespace" : "lsst.sal.ATCamera",
+  "name" : "refrig_cryo",
+  "namespace" : "lsst.sal.CCCamera",
   "fields" : [
     {
       "name" : "timestamp",
@@ -10,137 +10,147 @@
       "units" : "millisecond"
     },
     {
-      "name" : "Temp",
+      "name" : "DischrgPrs",
       "type" : [
         "null",
         "double"
       ],
       "default" : null,
-      "description" : "SW temperature",
-      "units" : "\u00b0C"
+      "description" : "Discharge Pressure",
+      "units" : "psia"
     },
     {
-      "name" : "Temp_state",
+      "name" : "DischrgPrs_state",
       "type" : [
         "null",
         "string"
       ],
       "default" : null,
-      "description" : "Monitoring state for R00/RebW/SW/Temp",
+      "description" : "Monitoring state for Cryo1/DischrgPrs",
       "units" : "unitless"
     },
     {
-      "name" : "ODV",
+      "name" : "SuctionPrs",
       "type" : [
         "null",
         "double"
       ],
       "default" : null,
-      "description" : "R00/RebW bias voltages OD 0 voltage",
+      "description" : "Suction Pressure",
+      "units" : "psia"
+    },
+    {
+      "name" : "SuctionPrs_state",
+      "type" : [
+        "null",
+        "string"
+      ],
+      "default" : null,
+      "description" : "Monitoring state for Cryo1/SuctionPrs",
+      "units" : "unitless"
+    },
+    {
+      "name" : "OilLevel",
+      "type" : [
+        "null",
+        "double"
+      ],
+      "default" : null,
+      "description" : "Oil Level",
+      "units" : "mm"
+    },
+    {
+      "name" : "OilLevel_state",
+      "type" : [
+        "null",
+        "string"
+      ],
+      "default" : null,
+      "description" : "Monitoring state for Cryo1/OilLevel",
+      "units" : "unitless"
+    },
+    {
+      "name" : "CompVoltage",
+      "type" : [
+        "null",
+        "double"
+      ],
+      "default" : null,
+      "description" : "Compressor Voltage",
       "units" : "Volts"
     },
     {
-      "name" : "ODV_state",
+      "name" : "CompVoltage_state",
       "type" : [
         "null",
         "string"
       ],
       "default" : null,
-      "description" : "Monitoring state for R00/RebW/SW/ODV",
+      "description" : "Monitoring state for Cryo1/CompVoltage",
       "units" : "unitless"
     },
     {
-      "name" : "OGV",
+      "name" : "CompCurrent",
       "type" : [
         "null",
         "double"
       ],
       "default" : null,
-      "description" : "OG 0 voltage",
-      "units" : "Volts"
+      "description" : "Compressor Current",
+      "units" : "Amps"
     },
     {
-      "name" : "OGV_state",
+      "name" : "CompCurrent_state",
       "type" : [
         "null",
         "string"
       ],
       "default" : null,
-      "description" : "Monitoring state for R00/RebW/SW/OGV",
+      "description" : "Monitoring state for Cryo1/CompCurrent",
       "units" : "unitless"
     },
     {
-      "name" : "RDV",
+      "name" : "CompPower",
       "type" : [
         "null",
         "double"
       ],
       "default" : null,
-      "description" : "RD 0 voltage",
-      "units" : "Volts"
+      "description" : "Compressor Power",
+      "units" : "VA"
     },
     {
-      "name" : "RDV_state",
+      "name" : "CompPower_state",
       "type" : [
         "null",
         "string"
       ],
       "default" : null,
-      "description" : "Monitoring state for R00/RebW/SW/RDV",
+      "description" : "Monitoring state for Cryo1/CompPower",
       "units" : "unitless"
     },
     {
-      "name" : "GDV",
+      "name" : "FanSpeed",
       "type" : [
         "null",
         "double"
       ],
       "default" : null,
-      "description" : "GD 0 voltage",
-      "units" : "Volts"
+      "description" : "Fan Speed",
+      "units" : "rpm"
     },
     {
-      "name" : "GDV_state",
+      "name" : "FanSpeed_state",
       "type" : [
         "null",
         "string"
       ],
       "default" : null,
-      "description" : "Monitoring state for R00/RebW/SW/GDV",
+      "description" : "Monitoring state for Cryo1/FanSpeed",
       "units" : "unitless"
     },
     {
-      "name" : "ODI",
-      "type" : [
-        "null",
-        "double"
-      ],
-      "default" : null,
-      "description" : "OD 0 current",
-      "units" : "mA"
-    },
-    {
-      "name" : "ODI_state",
-      "type" : [
-        "null",
-        "string"
-      ],
-      "default" : null,
-      "description" : "Monitoring state for R00/RebW/SW/ODI",
-      "units" : "unitless"
-    },
-    {
-      "name" : "Raft",
-      "type" : "string",
-      "description" : "This is a tag"
-    },
-    {
-      "name" : "Reb",
-      "type" : "string",
-      "description" : "This is a tag"
-    },
-    {
-      "name" : "Sensor",
+      "name" : "Cryo",
       "type" : "string",
       "description" : "This is a tag"
     },

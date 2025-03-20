@@ -1,0 +1,248 @@
+{
+  "type" : "record",
+  "name" : "chiller",
+  "namespace" : "lsst.sal.MTCamera",
+  "fields" : [
+    {
+      "name" : "timestamp",
+      "type" : "long",
+      "description" : "UTC timestamp",
+      "units" : "millisecond"
+    },
+    {
+      "name" : "FluidTemperature",
+      "type" : [
+        "null",
+        "double"
+      ],
+      "default" : null,
+      "description" : "temperature of chiller output",
+      "units" : "\u00b0C"
+    },
+    {
+      "name" : "ImportedColdTemp",
+      "type" : [
+        "null",
+        "double"
+      ],
+      "default" : null,
+      "description" : "coldplate temp from listener",
+      "units" : "\u00b0C"
+    },
+    {
+      "name" : "TempDUTInput",
+      "type" : [
+        "null",
+        "double"
+      ],
+      "default" : null,
+      "description" : "last DUT input temperature",
+      "units" : "\u00b0C"
+    },
+    {
+      "name" : "TempDUTInput_state",
+      "type" : [
+        "null",
+        "string"
+      ],
+      "default" : null,
+      "description" : "Monitoring state for Chiller/TempDUTInput",
+      "units" : "unitless"
+    },
+    {
+      "name" : "TempCondenser",
+      "type" : [
+        "null",
+        "double"
+      ],
+      "default" : null,
+      "description" : "temperature condenser outlet",
+      "units" : "\u00b0C"
+    },
+    {
+      "name" : "TempTXVBulb",
+      "type" : [
+        "null",
+        "double"
+      ],
+      "default" : null,
+      "description" : "temperature chiller TXV bulb",
+      "units" : "\u00b0C"
+    },
+    {
+      "name" : "TempStage2Evap",
+      "type" : [
+        "null",
+        "double"
+      ],
+      "default" : null,
+      "description" : "temperature chiller Stage2Evap",
+      "units" : "\u00b0C"
+    },
+    {
+      "name" : "TempSetPoint",
+      "type" : [
+        "null",
+        "double"
+      ],
+      "default" : null,
+      "description" : "temperature setpoint",
+      "units" : "\u00b0C"
+    },
+    {
+      "name" : "TempDynamicSetPt",
+      "type" : [
+        "null",
+        "double"
+      ],
+      "default" : null,
+      "description" : "dynamic temperature setpoint",
+      "units" : "\u00b0C"
+    },
+    {
+      "name" : "CascadeSetPoint",
+      "type" : [
+        "null",
+        "double"
+      ],
+      "default" : null,
+      "description" : "cascade setpoint used in DUT",
+      "units" : "\u00b0C"
+    },
+    {
+      "name" : "HeatPercentage",
+      "type" : [
+        "null",
+        "double"
+      ],
+      "default" : null,
+      "description" : "heating as percentage of max",
+      "units" : "%"
+    },
+    {
+      "name" : "CoolPercentage",
+      "type" : [
+        "null",
+        "double"
+      ],
+      "default" : null,
+      "description" : "cooling as percentage of max",
+      "units" : "%"
+    },
+    {
+      "name" : "FlowRate",
+      "type" : [
+        "null",
+        "double"
+      ],
+      "default" : null,
+      "description" : "chiller flow rate",
+      "units" : "gallon/min"
+    },
+    {
+      "name" : "FlowSetPoint",
+      "type" : [
+        "null",
+        "double"
+      ],
+      "default" : null,
+      "description" : "chiller flow setpoint",
+      "units" : "gallon/min"
+    },
+    {
+      "name" : "PressureIn",
+      "type" : [
+        "null",
+        "double"
+      ],
+      "default" : null,
+      "description" : "chiller input pressure",
+      "units" : "psig"
+    },
+    {
+      "name" : "PressureOut",
+      "type" : [
+        "null",
+        "double"
+      ],
+      "default" : null,
+      "description" : "chiller output pressure",
+      "units" : "psig"
+    },
+    {
+      "name" : "PressureTank",
+      "type" : [
+        "null",
+        "double"
+      ],
+      "default" : null,
+      "description" : "chiller tank pressure",
+      "units" : "psig"
+    },
+    {
+      "name" : "TankSetPoint",
+      "type" : [
+        "null",
+        "double"
+      ],
+      "default" : null,
+      "description" : "tank pressure setpoint",
+      "units" : "psig"
+    },
+    {
+      "name" : "TankLevel",
+      "type" : [
+        "null",
+        "double"
+      ],
+      "default" : null,
+      "description" : "tank fluid level in percent",
+      "units" : "%"
+    },
+    {
+      "name" : "ControllerLife",
+      "type" : [
+        "null",
+        "double"
+      ],
+      "default" : null,
+      "description" : "chiller controller hours",
+      "units" : "h"
+    },
+    {
+      "name" : "CompressorLife",
+      "type" : [
+        "null",
+        "double"
+      ],
+      "default" : null,
+      "description" : "chiller compressorOne hours",
+      "units" : "h"
+    },
+    {
+      "name" : "ChillerPumpLife",
+      "type" : [
+        "null",
+        "double"
+      ],
+      "default" : null,
+      "description" : "chiller pump hours",
+      "units" : "h"
+    },
+    {
+      "name" : "ChillerValveAct",
+      "type" : [
+        "null",
+        "double"
+      ],
+      "default" : null,
+      "description" : "current valve activations",
+      "units" : "unitless"
+    },
+    {
+      "name" : "Agent",
+      "type" : "string",
+      "description" : "This is a tag"
+    }
+  ]
+}

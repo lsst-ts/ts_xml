@@ -1,0 +1,133 @@
+{
+  "type" : "record",
+  "name" : "shutter_status",
+  "namespace" : "lsst.sal.MTCamera",
+  "fields" : [
+    {
+      "name" : "timestamp",
+      "type" : "long",
+      "description" : "UTC timestamp",
+      "units" : "millisecond"
+    },
+    {
+      "name" : "actPos",
+      "type" : [
+        "null",
+        "double"
+      ],
+      "default" : null,
+      "description" : "The actual blade set axis encoder reading.",
+      "units" : "mm"
+    },
+    {
+      "name" : "actVel",
+      "type" : [
+        "null",
+        "double"
+      ],
+      "default" : null,
+      "description" : "The actual blade set velocity from the encoder.",
+      "units" : "mm/s"
+    },
+    {
+      "name" : "setAcc",
+      "type" : [
+        "null",
+        "double"
+      ],
+      "default" : null,
+      "description" : "The requested blade set acceleration.",
+      "units" : "mm/s2"
+    },
+    {
+      "name" : "enabled",
+      "type" : [
+        "null",
+        "int"
+      ],
+      "default" : null,
+      "description" : "Is the motor enabled? 0 = no, 1 = yes.",
+      "units" : "unitless"
+    },
+    {
+      "name" : "brakeEngaged",
+      "type" : [
+        "null",
+        "int"
+      ],
+      "default" : null,
+      "description" : "Is the motor brake engaged? 0 = no, 1 = yes.",
+      "units" : "unitless"
+    },
+    {
+      "name" : "lowLimit",
+      "type" : [
+        "null",
+        "int"
+      ],
+      "default" : null,
+      "description" : "Is the blade set at its low motion limit? 0 = no, 1 = yes. ",
+      "units" : "unitless"
+    },
+    {
+      "name" : "highLimit",
+      "type" : [
+        "null",
+        "int"
+      ],
+      "default" : null,
+      "description" : "Is the blade set at its high motion limit? 0 = no, 1 = yes. ",
+      "units" : "unitless"
+    },
+    {
+      "name" : "isHomed",
+      "type" : [
+        "null",
+        "int"
+      ],
+      "default" : null,
+      "description" : "Has the axis been calibrated? 0 = no, 1 = yes.",
+      "units" : "unitless"
+    },
+    {
+      "name" : "errorID",
+      "type" : [
+        "null",
+        "int"
+      ],
+      "default" : null,
+      "description" : "Beckhoff error code for last operation. 0 = OK.",
+      "units" : "unitless"
+    },
+    {
+      "name" : "ctrlTemp",
+      "type" : [
+        "null",
+        "double"
+      ],
+      "default" : null,
+      "description" : "Temperature of the motor controller chip. ",
+      "units" : "Celsius"
+    },
+    {
+      "name" : "hasSafeTemp",
+      "type" : [
+        "null",
+        "int"
+      ],
+      "default" : null,
+      "description" : "Is the temperature of the motor controller in the safe range? 0 = no, 1 = yes.",
+      "units" : "unitless"
+    },
+    {
+      "name" : "Axis",
+      "type" : "string",
+      "description" : "This is a tag"
+    },
+    {
+      "name" : "Agent",
+      "type" : "string",
+      "description" : "This is a tag"
+    }
+  ]
+}

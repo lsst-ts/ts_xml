@@ -1,0 +1,343 @@
+{
+  "type" : "record",
+  "name" : "fcs_canbus_controller",
+  "namespace" : "lsst.sal.MTCamera",
+  "fields" : [
+    {
+      "name" : "timestamp",
+      "type" : "long",
+      "description" : "UTC timestamp",
+      "units" : "millisecond"
+    },
+    {
+      "name" : "inError",
+      "type" : [
+        "null",
+        "boolean"
+      ],
+      "default" : null,
+      "description" : "Device is in error",
+      "units" : "unitless"
+    },
+    {
+      "name" : "errorRegister",
+      "type" : [
+        "null",
+        "string"
+      ],
+      "default" : null,
+      "description" : "Error register read on controller",
+      "units" : "unitless"
+    },
+    {
+      "name" : "errorHistoryNB",
+      "type" : [
+        "null",
+        "int"
+      ],
+      "default" : null,
+      "description" : "Number of errors read on the controller",
+      "units" : "unitless"
+    },
+    {
+      "name" : "lastErrorCode",
+      "type" : [
+        "null",
+        "int"
+      ],
+      "default" : null,
+      "description" : "Code from the last error read on controller",
+      "units" : "unitless"
+    },
+    {
+      "name" : "lastErrorName",
+      "type" : [
+        "null",
+        "string"
+      ],
+      "default" : null,
+      "description" : "Name of the last error corresponding to lastErrorCode",
+      "units" : "unitless"
+    },
+    {
+      "name" : "mode",
+      "type" : [
+        "null",
+        "string"
+      ],
+      "default" : null,
+      "description" : "EPOS controller mode {HOMING; PROFILE_POSITION; PROFILE_VELOCITY; POSITION; MASTER_ENCODER; VELOCITY; CURRENT}",
+      "units" : "unitless"
+    },
+    {
+      "name" : "brakeActivated",
+      "type" : [
+        "null",
+        "boolean"
+      ],
+      "default" : null,
+      "description" : "Brakes activated by the controller if controllerWithBrake is true",
+      "units" : "unitless"
+    },
+    {
+      "name" : "state",
+      "type" : [
+        "null",
+        "string"
+      ],
+      "default" : null,
+      "description" : "State of the EPOS controller {SWITCH_ON_DISABLED; READY_TO_SWITCH_ON; SWITCHED_ON; OPERATION_ENABLE; FAULT; QUICKSTOP; UNKNOWN_STATE}",
+      "units" : "unitless"
+    },
+    {
+      "name" : "current",
+      "type" : [
+        "null",
+        "int"
+      ],
+      "default" : null,
+      "description" : "Current read on controller : index 0x6078",
+      "units" : "mA"
+    },
+    {
+      "name" : "position",
+      "type" : [
+        "null",
+        "int"
+      ],
+      "default" : null,
+      "description" : "Position read on controller : index 0x6064 subindex 0",
+      "units" : "micron"
+    },
+    {
+      "name" : "velocity",
+      "type" : [
+        "null",
+        "int"
+      ],
+      "default" : null,
+      "description" : "Velocity read on controller : index 0x2028 subindex 0",
+      "units" : "rpm"
+    },
+    {
+      "name" : "profileVelocity",
+      "type" : [
+        "null",
+        "long"
+      ],
+      "default" : null,
+      "description" : "Value of controller parameter ProfileVelocity : index 0x6081 subindex 0. Set to either slowVelocity or fastVelocity",
+      "units" : "rpm"
+    },
+    {
+      "name" : "profileAcceleration",
+      "type" : [
+        "null",
+        "long"
+      ],
+      "default" : null,
+      "description" : "Value of controller parameter ProfileAcceleration : index 0x6083 subindex 0. Set to slowAcceleration or fast acceleration.",
+      "units" : "rpm/s"
+    },
+    {
+      "name" : "profileDeceleration",
+      "type" : [
+        "null",
+        "long"
+      ],
+      "default" : null,
+      "description" : "Value of controller parameter ProfileDeceleration index 0x6084 subindex 0. Set to slowDeceleration or fastDeceleration.",
+      "units" : "rpm/s"
+    },
+    {
+      "name" : "averageCurrent",
+      "type" : [
+        "null",
+        "int"
+      ],
+      "default" : null,
+      "description" : "Average current read on autochanger truck controller : index 0x2027",
+      "units" : "mA"
+    },
+    {
+      "name" : "followingError",
+      "type" : [
+        "null",
+        "int"
+      ],
+      "default" : null,
+      "description" : "Following error read on autochanger truck controller : index 0x20F4",
+      "units" : "micron"
+    },
+    {
+      "name" : "positionSensorType",
+      "type" : [
+        "null",
+        "int"
+      ],
+      "default" : null,
+      "description" : "Position sensor type on carousel controller",
+      "units" : "unitless"
+    },
+    {
+      "name" : "angularVelocityX",
+      "type" : [
+        "null",
+        "double"
+      ],
+      "default" : null,
+      "description" : "Angular velocity along the X axis",
+      "units" : "deg/s"
+    },
+    {
+      "name" : "angularVelocityY",
+      "type" : [
+        "null",
+        "double"
+      ],
+      "default" : null,
+      "description" : "Angular velocity along the Y axis",
+      "units" : "deg/s"
+    },
+    {
+      "name" : "angularVelocityZ",
+      "type" : [
+        "null",
+        "double"
+      ],
+      "default" : null,
+      "description" : "Angular velocity along the Z axis",
+      "units" : "deg/s"
+    },
+    {
+      "name" : "accelerationX",
+      "type" : [
+        "null",
+        "double"
+      ],
+      "default" : null,
+      "description" : "Angular acceleration along the X axis",
+      "units" : "g0"
+    },
+    {
+      "name" : "accelerationY",
+      "type" : [
+        "null",
+        "double"
+      ],
+      "default" : null,
+      "description" : "Angular acceleration along the Y axis",
+      "units" : "g0"
+    },
+    {
+      "name" : "accelerationZ",
+      "type" : [
+        "null",
+        "double"
+      ],
+      "default" : null,
+      "description" : "Angular acceleration along the Z axis",
+      "units" : "g0"
+    },
+    {
+      "name" : "normalizedAccelerationX",
+      "type" : [
+        "null",
+        "double"
+      ],
+      "default" : null,
+      "description" : "Angular acceleration along the X axis in normalized (converted) units",
+      "units" : "m/s^2"
+    },
+    {
+      "name" : "normalizedAccelerationY",
+      "type" : [
+        "null",
+        "double"
+      ],
+      "default" : null,
+      "description" : "Angular acceleration along the Y axis in normalized (converted) units",
+      "units" : "m/s^2"
+    },
+    {
+      "name" : "normalizedAccelerationZ",
+      "type" : [
+        "null",
+        "double"
+      ],
+      "default" : null,
+      "description" : "Angular acceleration along the Z axis in normalized (converted) units",
+      "units" : "m/s^2"
+    },
+    {
+      "name" : "gravity",
+      "type" : [
+        "null",
+        "double"
+      ],
+      "default" : null,
+      "description" : "Camera body norm of the gravity vector",
+      "units" : "g0"
+    },
+    {
+      "name" : "normalizedGravity",
+      "type" : [
+        "null",
+        "double"
+      ],
+      "default" : null,
+      "description" : "Camera body norm of the gravity vector in normalized (converted) units",
+      "units" : "m/s^2"
+    },
+    {
+      "name" : "elevation",
+      "type" : [
+        "null",
+        "double"
+      ],
+      "default" : null,
+      "description" : "Camera body elevation from the Z axis",
+      "units" : "degree"
+    },
+    {
+      "name" : "azimut",
+      "type" : [
+        "null",
+        "double"
+      ],
+      "default" : null,
+      "description" : "Camera body azimut from the Z axis",
+      "units" : "degree"
+    },
+    {
+      "name" : "airmass",
+      "type" : [
+        "null",
+        "double"
+      ],
+      "default" : null,
+      "description" : "Camera body airmass indication",
+      "units" : "unitless"
+    },
+    {
+      "name" : "Canbus",
+      "type" : "string",
+      "description" : "This is a tag"
+    },
+    {
+      "name" : "Controller",
+      "type" : "string",
+      "description" : "This is a tag"
+    },
+    {
+      "name" : "Hardware",
+      "type" : "string",
+      "description" : "This is a tag"
+    },
+    {
+      "name" : "Agent",
+      "type" : "string",
+      "description" : "This is a tag"
+    }
+  ]
+}

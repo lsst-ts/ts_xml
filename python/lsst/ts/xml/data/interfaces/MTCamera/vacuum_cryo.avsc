@@ -1,0 +1,338 @@
+{
+  "type" : "record",
+  "name" : "vacuum_cryo",
+  "namespace" : "lsst.sal.MTCamera",
+  "fields" : [
+    {
+      "name" : "timestamp",
+      "type" : "long",
+      "description" : "UTC timestamp",
+      "units" : "millisecond"
+    },
+    {
+      "name" : "CryoVac",
+      "type" : [
+        "null",
+        "double"
+      ],
+      "default" : null,
+      "description" : "Cryostat vacuum",
+      "units" : "Torr"
+    },
+    {
+      "name" : "CryoVac_state",
+      "type" : [
+        "null",
+        "string"
+      ],
+      "default" : null,
+      "description" : "Monitoring state for Cryo/CryoVac",
+      "units" : "unitless"
+    },
+    {
+      "name" : "TurboVac",
+      "type" : [
+        "null",
+        "double"
+      ],
+      "default" : null,
+      "description" : "Turbo pump vacuum",
+      "units" : "Torr"
+    },
+    {
+      "name" : "TurboVac_state",
+      "type" : [
+        "null",
+        "string"
+      ],
+      "default" : null,
+      "description" : "Monitoring state for Cryo/TurboVac",
+      "units" : "unitless"
+    },
+    {
+      "name" : "ForelineVac",
+      "type" : [
+        "null",
+        "double"
+      ],
+      "default" : null,
+      "description" : "Foreline pump vacuum",
+      "units" : "Torr"
+    },
+    {
+      "name" : "ForelineVac_state",
+      "type" : [
+        "null",
+        "string"
+      ],
+      "default" : null,
+      "description" : "Monitoring state for Cryo/ForelineVac",
+      "units" : "unitless"
+    },
+    {
+      "name" : "PumpCartPressure",
+      "type" : [
+        "null",
+        "double"
+      ],
+      "default" : null,
+      "description" : "Pump Cart Inlet Pressure",
+      "units" : "Torr"
+    },
+    {
+      "name" : "PumpCartPressure_state",
+      "type" : [
+        "null",
+        "string"
+      ],
+      "default" : null,
+      "description" : "Monitoring state for Cryo/PumpCartPressure",
+      "units" : "unitless"
+    },
+    {
+      "name" : "TurboSpeed",
+      "type" : [
+        "null",
+        "double"
+      ],
+      "default" : null,
+      "description" : "Cryo turbo pump speed",
+      "units" : "rpm"
+    },
+    {
+      "name" : "TurboSpeed_state",
+      "type" : [
+        "null",
+        "string"
+      ],
+      "default" : null,
+      "description" : "Monitoring state for Cryo/TurboSpeed",
+      "units" : "unitless"
+    },
+    {
+      "name" : "TurboHours",
+      "type" : [
+        "null",
+        "double"
+      ],
+      "default" : null,
+      "description" : "Cryo turbo pump hours",
+      "units" : "hour"
+    },
+    {
+      "name" : "TurboHours_state",
+      "type" : [
+        "null",
+        "string"
+      ],
+      "default" : null,
+      "description" : "Monitoring state for Cryo/TurboHours",
+      "units" : "unitless"
+    },
+    {
+      "name" : "TurboCycleNumber",
+      "type" : [
+        "null",
+        "double"
+      ],
+      "default" : null,
+      "description" : "Cryo turbo cycle number",
+      "units" : "count"
+    },
+    {
+      "name" : "TurboCycleTime",
+      "type" : [
+        "null",
+        "double"
+      ],
+      "default" : null,
+      "description" : "Cryo turbo latest cycle time",
+      "units" : "minute"
+    },
+    {
+      "name" : "TurboCurrent",
+      "type" : [
+        "null",
+        "double"
+      ],
+      "default" : null,
+      "description" : "Cryo turbo pump current",
+      "units" : "mA dc"
+    },
+    {
+      "name" : "TurboVoltage",
+      "type" : [
+        "null",
+        "double"
+      ],
+      "default" : null,
+      "description" : "Cryo turbo pump voltage",
+      "units" : "V dc"
+    },
+    {
+      "name" : "TurboPower",
+      "type" : [
+        "null",
+        "double"
+      ],
+      "default" : null,
+      "description" : "Cryo turbo pump power",
+      "units" : "W"
+    },
+    {
+      "name" : "TurboPower_state",
+      "type" : [
+        "null",
+        "string"
+      ],
+      "default" : null,
+      "description" : "Monitoring state for Cryo/TurboPower",
+      "units" : "unitless"
+    },
+    {
+      "name" : "TurboPumpTemp",
+      "type" : [
+        "null",
+        "double"
+      ],
+      "default" : null,
+      "description" : "Cryo turbo pump temperature",
+      "units" : "deg C"
+    },
+    {
+      "name" : "TurboPumpTemp_state",
+      "type" : [
+        "null",
+        "string"
+      ],
+      "default" : null,
+      "description" : "Monitoring state for Cryo/TurboPumpTemp",
+      "units" : "unitless"
+    },
+    {
+      "name" : "TurboPumpStatus",
+      "type" : [
+        "null",
+        "double"
+      ],
+      "default" : null,
+      "description" : "Cryo turbo pump status",
+      "units" : "unitless"
+    },
+    {
+      "name" : "TurboPumpStatus_state",
+      "type" : [
+        "null",
+        "string"
+      ],
+      "default" : null,
+      "description" : "Monitoring state for Cryo/TurboPumpStatus",
+      "units" : "unitless"
+    },
+    {
+      "name" : "GaugeDose",
+      "type" : [
+        "null",
+        "double"
+      ],
+      "default" : null,
+      "description" : "Cryostat vacuum gauge pressure dose",
+      "units" : "Torr-hrs"
+    },
+    {
+      "name" : "GaugeDose_state",
+      "type" : [
+        "null",
+        "string"
+      ],
+      "default" : null,
+      "description" : "Monitoring state for Cryo/GaugeDose",
+      "units" : "unitless"
+    },
+    {
+      "name" : "TurboGaugeDose",
+      "type" : [
+        "null",
+        "double"
+      ],
+      "default" : null,
+      "description" : "Cryostat turbo vacuum gauge pressure dose",
+      "units" : "Torr-hrs"
+    },
+    {
+      "name" : "TurboGaugeDose_state",
+      "type" : [
+        "null",
+        "string"
+      ],
+      "default" : null,
+      "description" : "Monitoring state for Cryo/TurboGaugeDose",
+      "units" : "unitless"
+    },
+    {
+      "name" : "FlineVoltage",
+      "type" : [
+        "null",
+        "double"
+      ],
+      "default" : null,
+      "description" : "Cryo foreline pump voltage",
+      "units" : "Volt"
+    },
+    {
+      "name" : "FlineCurrent",
+      "type" : [
+        "null",
+        "double"
+      ],
+      "default" : null,
+      "description" : "Cryo foreline pump current",
+      "units" : "mA"
+    },
+    {
+      "name" : "FlinePower",
+      "type" : [
+        "null",
+        "double"
+      ],
+      "default" : null,
+      "description" : "Cryo foreline pump power",
+      "units" : "Watt"
+    },
+    {
+      "name" : "FlinePower_state",
+      "type" : [
+        "null",
+        "string"
+      ],
+      "default" : null,
+      "description" : "Monitoring state for Cryo/FlinePower",
+      "units" : "unitless"
+    },
+    {
+      "name" : "AirPressure",
+      "type" : [
+        "null",
+        "double"
+      ],
+      "default" : null,
+      "description" : "UT compressed air pressure",
+      "units" : "psig"
+    },
+    {
+      "name" : "AirPressure_state",
+      "type" : [
+        "null",
+        "string"
+      ],
+      "default" : null,
+      "description" : "Monitoring state for Cryo/AirPressure",
+      "units" : "unitless"
+    },
+    {
+      "name" : "Agent",
+      "type" : "string",
+      "description" : "This is a tag"
+    }
+  ]
+}

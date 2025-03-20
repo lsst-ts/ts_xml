@@ -1,0 +1,103 @@
+{
+  "type" : "record",
+  "name" : "fcs_carousel_clamp",
+  "namespace" : "lsst.sal.MTCamera",
+  "fields" : [
+    {
+      "name" : "timestamp",
+      "type" : "long",
+      "description" : "UTC timestamp",
+      "units" : "millisecond"
+    },
+    {
+      "name" : "clampState",
+      "type" : [
+        "null",
+        "string"
+      ],
+      "default" : null,
+      "description" : "Carousel clamp state {READY_TO_CLAMP; UNCLAMPED_ON_FILTER; UNCLAMPED_EMPTY; CLAMPED_ON_FILTER; UNDEFINED; ERROR; UNLOCKABLE}",
+      "units" : "unitless"
+    },
+    {
+      "name" : "filterPresenceStatus",
+      "type" : [
+        "null",
+        "string"
+      ],
+      "default" : null,
+      "description" : "Carousel clamp filter presence status {NOFILTER; ENGAGED; LOCKABLE; NOT_LOCKABLE; ERROR; UNKNOWN}",
+      "units" : "unitless"
+    },
+    {
+      "name" : "filterPositionSensorValue",
+      "type" : [
+        "null",
+        "int"
+      ],
+      "default" : null,
+      "description" : "Filter position sensor value in carousel clamp",
+      "units" : "unitless"
+    },
+    {
+      "name" : "lockStatus",
+      "type" : [
+        "null",
+        "string"
+      ],
+      "default" : null,
+      "description" : "Carousel clamp filter lock status {UNLOCKED; LOCKED; RELAXED; OPENED; CLOSED; UNKNOWN; ERROR}",
+      "units" : "unitless"
+    },
+    {
+      "name" : "lockSensorValue",
+      "type" : [
+        "null",
+        "int"
+      ],
+      "default" : null,
+      "description" : "Carousel clamp filter lock sensor value",
+      "units" : "unitless"
+    },
+    {
+      "name" : "lockSensorOffset1",
+      "type" : [
+        "null",
+        "int"
+      ],
+      "default" : null,
+      "description" : "Offset1 for carousel clamp lock sensor read on hyttc580",
+      "units" : "unitless"
+    },
+    {
+      "name" : "filterPresenceOffset2",
+      "type" : [
+        "null",
+        "int"
+      ],
+      "default" : null,
+      "description" : "Offset2 for filter presence sensor read on hyttc580: if filter presence sensor returns a value between filterPresenceOffset1 and filterPresenceOffset2 then the filter is engaged and lockable.",
+      "units" : "unitless"
+    },
+    {
+      "name" : "Socket",
+      "type" : "string",
+      "description" : "This is a tag"
+    },
+    {
+      "name" : "Clamp",
+      "type" : "string",
+      "description" : "This is a tag"
+    },
+    {
+      "name" : "Hardware",
+      "type" : "string",
+      "description" : "This is a tag"
+    },
+    {
+      "name" : "Agent",
+      "type" : "string",
+      "description" : "This is a tag"
+    }
+  ]
+}

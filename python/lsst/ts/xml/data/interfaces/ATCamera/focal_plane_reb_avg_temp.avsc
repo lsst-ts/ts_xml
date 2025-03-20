@@ -1,0 +1,38 @@
+{
+  "type" : "record",
+  "name" : "focal_plane_reb_avg_temp",
+  "namespace" : "lsst.sal.ATCamera",
+  "fields" : [
+    {
+      "name" : "timestamp",
+      "type" : "long",
+      "description" : "UTC timestamp",
+      "units" : "millisecond"
+    },
+    {
+      "name" : "temperature",
+      "type" : [
+        "null",
+        "double"
+      ],
+      "default" : null,
+      "description" : "Average Rebs Temp6",
+      "units" : "\u00b0C"
+    },
+    {
+      "name" : "temperature_state",
+      "type" : [
+        "null",
+        "string"
+      ],
+      "default" : null,
+      "description" : "Monitoring state for RebsAverageTemp6",
+      "units" : "unitless"
+    },
+    {
+      "name" : "Agent",
+      "type" : "string",
+      "description" : "This is a tag"
+    }
+  ]
+}

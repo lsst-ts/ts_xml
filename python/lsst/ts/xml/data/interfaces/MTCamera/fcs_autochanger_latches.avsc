@@ -1,0 +1,108 @@
+{
+  "type" : "record",
+  "name" : "fcs_autochanger_latches",
+  "namespace" : "lsst.sal.MTCamera",
+  "fields" : [
+    {
+      "name" : "timestamp",
+      "type" : "long",
+      "description" : "UTC timestamp",
+      "units" : "millisecond"
+    },
+    {
+      "name" : "lockSensorOn",
+      "type" : [
+        "null",
+        "boolean"
+      ],
+      "default" : null,
+      "description" : "Autochanger latch is locked",
+      "units" : "unitless"
+    },
+    {
+      "name" : "lockSensorsInError",
+      "type" : [
+        "null",
+        "boolean"
+      ],
+      "default" : null,
+      "description" : "Autochanger latch lock sensors are in error",
+      "units" : "unitless"
+    },
+    {
+      "name" : "unlockSensorOn",
+      "type" : [
+        "null",
+        "boolean"
+      ],
+      "default" : null,
+      "description" : "Autochanger latch is unlocked",
+      "units" : "unitless"
+    },
+    {
+      "name" : "unlockSensorsInError",
+      "type" : [
+        "null",
+        "boolean"
+      ],
+      "default" : null,
+      "description" : "Autochanger latch unlock sensors are in error",
+      "units" : "unitless"
+    },
+    {
+      "name" : "lockStatus",
+      "type" : [
+        "null",
+        "string"
+      ],
+      "default" : null,
+      "description" : "Autochanger latch lock status {OPENED; CLOSED; IN_TRAVEL; ERROR; UNKNOWN}",
+      "units" : "unitless"
+    },
+    {
+      "name" : "filterPresenceSensorOn",
+      "type" : [
+        "null",
+        "boolean"
+      ],
+      "default" : null,
+      "description" : "Filter is detected by the autochanger latch sensors",
+      "units" : "unitless"
+    },
+    {
+      "name" : "inError",
+      "type" : [
+        "null",
+        "boolean"
+      ],
+      "default" : null,
+      "description" : "Autochanger latch sensors are in error",
+      "units" : "unitless"
+    },
+    {
+      "name" : "filterEngagedSensorsInError",
+      "type" : [
+        "null",
+        "boolean"
+      ],
+      "default" : null,
+      "description" : "Autochanger latch filter engaged sensors are in error",
+      "units" : "unitless"
+    },
+    {
+      "name" : "Latch",
+      "type" : "string",
+      "description" : "This is a tag"
+    },
+    {
+      "name" : "Hardware",
+      "type" : "string",
+      "description" : "This is a tag"
+    },
+    {
+      "name" : "Agent",
+      "type" : "string",
+      "description" : "This is a tag"
+    }
+  ]
+}

@@ -1,0 +1,123 @@
+{
+  "type" : "record",
+  "name" : "fcs_carousel",
+  "namespace" : "lsst.sal.MTCamera",
+  "fields" : [
+    {
+      "name" : "timestamp",
+      "type" : "long",
+      "description" : "UTC timestamp",
+      "units" : "millisecond"
+    },
+    {
+      "name" : "estimatedPosition",
+      "type" : [
+        "null",
+        "int"
+      ],
+      "default" : null,
+      "description" : "Carousel estimated position",
+      "units" : "micron"
+    },
+    {
+      "name" : "deltaPositionAtStandby",
+      "type" : [
+        "null",
+        "int"
+      ],
+      "default" : null,
+      "description" : "Carousel position tolerance at STANDBY",
+      "units" : "micron"
+    },
+    {
+      "name" : "atStandby",
+      "type" : [
+        "null",
+        "boolean"
+      ],
+      "default" : null,
+      "description" : "A carousel socket is at STANDBY position",
+      "units" : "unitless"
+    },
+    {
+      "name" : "emptyAtStandby",
+      "type" : [
+        "null",
+        "boolean"
+      ],
+      "default" : null,
+      "description" : "The carousel socket at STANDBY is empty",
+      "units" : "unitless"
+    },
+    {
+      "name" : "filterAtStandbyId",
+      "type" : [
+        "null",
+        "int"
+      ],
+      "default" : null,
+      "description" : "ID of filter at STANDBY position",
+      "units" : "unitless"
+    },
+    {
+      "name" : "socketAtStandbyName",
+      "type" : [
+        "null",
+        "string"
+      ],
+      "default" : null,
+      "description" : "Name of carousel socket at STANDBY position",
+      "units" : "unitless"
+    },
+    {
+      "name" : "socketAtStandbyID",
+      "type" : [
+        "null",
+        "int"
+      ],
+      "default" : null,
+      "description" : "ID of carousel socket at STANDBY position",
+      "units" : "unitless"
+    },
+    {
+      "name" : "minLocked",
+      "type" : [
+        "null",
+        "long"
+      ],
+      "default" : null,
+      "description" : "Threshold value corresponding to the carousel clamps locked status as read on TTC580",
+      "units" : "mV"
+    },
+    {
+      "name" : "clampsStateAtStandby",
+      "type" : [
+        "null",
+        "string"
+      ],
+      "default" : null,
+      "description" : "State of the clamps for the socket at STANDBY position {READY_TO_CLAMP; UNCLAMPED_ON_FILTER; UNCLAMPED_EMPTY; CLAMPED_ON_FILTER; UNDEFINED; ERROR; UNLOCKABLE}",
+      "units" : "unitless"
+    },
+    {
+      "name" : "filterOnAutochangerName",
+      "type" : [
+        "null",
+        "string"
+      ],
+      "default" : null,
+      "description" : "Name of filter on autochanger trucks",
+      "units" : "unitless"
+    },
+    {
+      "name" : "Hardware",
+      "type" : "string",
+      "description" : "This is a tag"
+    },
+    {
+      "name" : "Agent",
+      "type" : "string",
+      "description" : "This is a tag"
+    }
+  ]
+}

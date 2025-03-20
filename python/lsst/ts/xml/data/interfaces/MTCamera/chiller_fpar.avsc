@@ -1,0 +1,278 @@
+{
+  "type" : "record",
+  "name" : "chiller_fpar",
+  "namespace" : "lsst.sal.MTCamera",
+  "fields" : [
+    {
+      "name" : "timestamp",
+      "type" : "long",
+      "description" : "UTC timestamp",
+      "units" : "millisecond"
+    },
+    {
+      "name" : "PID_KP",
+      "type" : [
+        "null",
+        "double"
+      ],
+      "default" : null,
+      "description" : "F00: PID proportional coeff",
+      "units" : "unitless"
+    },
+    {
+      "name" : "COLD_PERIOD",
+      "type" : [
+        "null",
+        "double"
+      ],
+      "default" : null,
+      "description" : "F02: Cold valve period (s)",
+      "units" : "s"
+    },
+    {
+      "name" : "CLR_KI_SETPT",
+      "type" : [
+        "null",
+        "double"
+      ],
+      "default" : null,
+      "description" : "F05: If 1, clear Ki at setpoint",
+      "units" : "unitless"
+    },
+    {
+      "name" : "PID_KI",
+      "type" : [
+        "null",
+        "double"
+      ],
+      "default" : null,
+      "description" : "F10: PID integral coeff",
+      "units" : "unitless"
+    },
+    {
+      "name" : "PID_KD",
+      "type" : [
+        "null",
+        "double"
+      ],
+      "default" : null,
+      "description" : "F11: PID differential coeff",
+      "units" : "unitless"
+    },
+    {
+      "name" : "PID_GAINFAC",
+      "type" : [
+        "null",
+        "double"
+      ],
+      "default" : null,
+      "description" : "F12: PID cool (<0)/heat (>0) factor",
+      "units" : "unitless"
+    },
+    {
+      "name" : "HEAT_CAPACITY",
+      "type" : [
+        "null",
+        "double"
+      ],
+      "default" : null,
+      "description" : "F15: Heat capacity, % of max",
+      "units" : "unitless"
+    },
+    {
+      "name" : "DUT_TMIN",
+      "type" : [
+        "null",
+        "double"
+      ],
+      "default" : null,
+      "description" : "F27: DUT lower temp limit",
+      "units" : "\u00b0C"
+    },
+    {
+      "name" : "DUT_TMAX",
+      "type" : [
+        "null",
+        "double"
+      ],
+      "default" : null,
+      "description" : "F28: DUT upper temp limit",
+      "units" : "\u00b0C"
+    },
+    {
+      "name" : "DUT_DT_LO",
+      "type" : [
+        "null",
+        "double"
+      ],
+      "default" : null,
+      "description" : "F29: DUT lower DeltaT limit",
+      "units" : "\u00b0C"
+    },
+    {
+      "name" : "DUT_DT_HI",
+      "type" : [
+        "null",
+        "double"
+      ],
+      "default" : null,
+      "description" : "F30: DUT upper DeltaT limit",
+      "units" : "\u00b0C"
+    },
+    {
+      "name" : "SETPT_TOL",
+      "type" : [
+        "null",
+        "double"
+      ],
+      "default" : null,
+      "description" : "F31: SetPoint tolerance (deg-C)",
+      "units" : "\u00b0C"
+    },
+    {
+      "name" : "SETPT_SETTLE",
+      "type" : [
+        "null",
+        "double"
+      ],
+      "default" : null,
+      "description" : "F32: Min SetPoint stable time (s)",
+      "units" : "s"
+    },
+    {
+      "name" : "THERMSL_MASS",
+      "type" : [
+        "null",
+        "double"
+      ],
+      "default" : null,
+      "description" : "F34: Thermal mass (DUT damping)",
+      "units" : "unitless"
+    },
+    {
+      "name" : "REFRIG_OFF",
+      "type" : [
+        "null",
+        "double"
+      ],
+      "default" : null,
+      "description" : "F36: Refrig-off timer (min)",
+      "units" : "min"
+    },
+    {
+      "name" : "RAMP_DEFAULT",
+      "type" : [
+        "null",
+        "double"
+      ],
+      "default" : null,
+      "description" : "F37: Default ramp rate (deg/min)",
+      "units" : "\u00b0C/min"
+    },
+    {
+      "name" : "FLOWMETER_LO",
+      "type" : [
+        "null",
+        "double"
+      ],
+      "default" : null,
+      "description" : "F38: Low-flow-meter alarm thresh",
+      "units" : "gal/min"
+    },
+    {
+      "name" : "T_CTRL_MODE",
+      "type" : [
+        "null",
+        "double"
+      ],
+      "default" : null,
+      "description" : "F40: T-control Normal (0)/DUT (1)",
+      "units" : "unitless"
+    },
+    {
+      "name" : "FLOW_ERR_MASK",
+      "type" : [
+        "null",
+        "double"
+      ],
+      "default" : null,
+      "description" : "F58: Flow-switch error mask time (s)",
+      "units" : "s"
+    },
+    {
+      "name" : "DUT_KP",
+      "type" : [
+        "null",
+        "double"
+      ],
+      "default" : null,
+      "description" : "F59: DUT proportional coeff",
+      "units" : "unitless"
+    },
+    {
+      "name" : "DUT_KI",
+      "type" : [
+        "null",
+        "double"
+      ],
+      "default" : null,
+      "description" : "F60: DUT integral coeff",
+      "units" : "unitless"
+    },
+    {
+      "name" : "COOL_CAPACITY",
+      "type" : [
+        "null",
+        "double"
+      ],
+      "default" : null,
+      "description" : "F64: Cool capacity, % of max",
+      "units" : "unitless"
+    },
+    {
+      "name" : "HEAT_PERIOD",
+      "type" : [
+        "null",
+        "double"
+      ],
+      "default" : null,
+      "description" : "F66: Period for heat application",
+      "units" : "s"
+    },
+    {
+      "name" : "BUBBLEV_TIME",
+      "type" : [
+        "null",
+        "double"
+      ],
+      "default" : null,
+      "description" : "F72: Bubble valve open duration",
+      "units" : "min"
+    },
+    {
+      "name" : "TANK_SETPOINT",
+      "type" : [
+        "null",
+        "double"
+      ],
+      "default" : null,
+      "description" : "F73: Tank pressure setpoint",
+      "units" : "psig"
+    },
+    {
+      "name" : "PURGE_TIME",
+      "type" : [
+        "null",
+        "double"
+      ],
+      "default" : null,
+      "description" : "F77: Time purge lasts after start",
+      "units" : "min"
+    },
+    {
+      "name" : "Agent",
+      "type" : "string",
+      "description" : "This is a tag"
+    }
+  ]
+}

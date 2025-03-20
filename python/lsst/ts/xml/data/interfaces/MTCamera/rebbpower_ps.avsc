@@ -1,0 +1,48 @@
+{
+  "type" : "record",
+  "name" : "rebbpower_ps",
+  "namespace" : "lsst.sal.MTCamera",
+  "fields" : [
+    {
+      "name" : "timestamp",
+      "type" : "long",
+      "description" : "UTC timestamp",
+      "units" : "millisecond"
+    },
+    {
+      "name" : "temperature",
+      "type" : [
+        "null",
+        "double"
+      ],
+      "default" : null,
+      "description" : "Board temperature 0",
+      "units" : "\u00b0C"
+    },
+    {
+      "name" : "temperature_state",
+      "type" : [
+        "null",
+        "string"
+      ],
+      "default" : null,
+      "description" : "Monitoring state for RebPS/P00/BoardTemp0",
+      "units" : "unitless"
+    },
+    {
+      "name" : "Ps",
+      "type" : "string",
+      "description" : "This is a tag"
+    },
+    {
+      "name" : "Location",
+      "type" : "string",
+      "description" : "This is a tag"
+    },
+    {
+      "name" : "Agent",
+      "type" : "string",
+      "description" : "This is a tag"
+    }
+  ]
+}

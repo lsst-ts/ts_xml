@@ -1,0 +1,83 @@
+{
+  "type" : "record",
+  "name" : "fcs_mcm",
+  "namespace" : "lsst.sal.MTCamera",
+  "fields" : [
+    {
+      "name" : "timestamp",
+      "type" : "long",
+      "description" : "UTC timestamp",
+      "units" : "millisecond"
+    },
+    {
+      "name" : "filter_on_autochanger",
+      "type" : [
+        "null",
+        "string"
+      ],
+      "default" : null,
+      "description" : "OCS name of the filter currently on the autochanger",
+      "units" : "unitless"
+    },
+    {
+      "name" : "filter_previous_socketID",
+      "type" : [
+        "null",
+        "int"
+      ],
+      "default" : null,
+      "description" : "ID of the socket on which the current filter used to sit",
+      "units" : "unitless"
+    },
+    {
+      "name" : "autochanger_trucks_position",
+      "type" : [
+        "null",
+        "int"
+      ],
+      "default" : null,
+      "description" : "Absolute position of the autochanger trucks",
+      "units" : "micron"
+    },
+    {
+      "name" : "autochanger_trucks_state",
+      "type" : [
+        "null",
+        "string"
+      ],
+      "default" : null,
+      "description" : "Known autochanger position (STANDBY, HANDOFF, ONLINE) or IN_TRAVEL",
+      "units" : "unitless"
+    },
+    {
+      "name" : "setFilter_percentage",
+      "type" : [
+        "null",
+        "int"
+      ],
+      "default" : null,
+      "description" : "Progress of the setFilter command [%]",
+      "units" : "unitless"
+    },
+    {
+      "name" : "proximity",
+      "type" : [
+        "null",
+        "int"
+      ],
+      "default" : null,
+      "description" : "Value of the autochanger proximity sensor",
+      "units" : "unitless"
+    },
+    {
+      "name" : "Hardware",
+      "type" : "string",
+      "description" : "This is a tag"
+    },
+    {
+      "name" : "Agent",
+      "type" : "string",
+      "description" : "This is a tag"
+    }
+  ]
+}

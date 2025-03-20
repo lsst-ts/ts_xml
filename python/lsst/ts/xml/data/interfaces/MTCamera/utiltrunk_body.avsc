@@ -1,0 +1,618 @@
+{
+  "type" : "record",
+  "name" : "utiltrunk_body",
+  "namespace" : "lsst.sal.MTCamera",
+  "fields" : [
+    {
+      "name" : "timestamp",
+      "type" : "long",
+      "description" : "UTC timestamp",
+      "units" : "millisecond"
+    },
+    {
+      "name" : "VPPlenumInTemp",
+      "type" : [
+        "null",
+        "double"
+      ],
+      "default" : null,
+      "description" : "VP plenum in temperature",
+      "units" : "\u00b0C"
+    },
+    {
+      "name" : "VPPlenumInTemp_state",
+      "type" : [
+        "null",
+        "string"
+      ],
+      "default" : null,
+      "description" : "Monitoring state for Body/VPPlenumInTemp",
+      "units" : "unitless"
+    },
+    {
+      "name" : "BackFlngYMinusTemp",
+      "type" : [
+        "null",
+        "double"
+      ],
+      "default" : null,
+      "description" : "Back flange Y- in temperature",
+      "units" : "\u00b0C"
+    },
+    {
+      "name" : "BackFlngYMinusTemp_state",
+      "type" : [
+        "null",
+        "string"
+      ],
+      "default" : null,
+      "description" : "Monitoring state for Body/BackFlngYMinusTemp",
+      "units" : "unitless"
+    },
+    {
+      "name" : "BackFlngXMinusTemp",
+      "type" : [
+        "null",
+        "double"
+      ],
+      "default" : null,
+      "description" : "Back flange X- in temperature",
+      "units" : "\u00b0C"
+    },
+    {
+      "name" : "BackFlngXMinusTemp_state",
+      "type" : [
+        "null",
+        "string"
+      ],
+      "default" : null,
+      "description" : "Monitoring state for Body/BackFlngXMinusTemp",
+      "units" : "unitless"
+    },
+    {
+      "name" : "BackFlngXPlusTemp",
+      "type" : [
+        "null",
+        "double"
+      ],
+      "default" : null,
+      "description" : "Back flange X+ in temperature",
+      "units" : "\u00b0C"
+    },
+    {
+      "name" : "BackFlngXPlusTemp_state",
+      "type" : [
+        "null",
+        "string"
+      ],
+      "default" : null,
+      "description" : "Monitoring state for Body/BackFlngXPlusTemp",
+      "units" : "unitless"
+    },
+    {
+      "name" : "DomeXMinusTemp",
+      "type" : [
+        "null",
+        "double"
+      ],
+      "default" : null,
+      "description" : "Dome X- air temperature",
+      "units" : "\u00b0C"
+    },
+    {
+      "name" : "DomeXMinusTemp_state",
+      "type" : [
+        "null",
+        "string"
+      ],
+      "default" : null,
+      "description" : "Monitoring state for Body/DomeXMinusTemp",
+      "units" : "unitless"
+    },
+    {
+      "name" : "DomeYMinusTemp",
+      "type" : [
+        "null",
+        "double"
+      ],
+      "default" : null,
+      "description" : "Dome Y- air temperature",
+      "units" : "\u00b0C"
+    },
+    {
+      "name" : "DomeYMinusTemp_state",
+      "type" : [
+        "null",
+        "string"
+      ],
+      "default" : null,
+      "description" : "Monitoring state for Body/DomeYMinusTemp",
+      "units" : "unitless"
+    },
+    {
+      "name" : "CamHousXMinusTemp",
+      "type" : [
+        "null",
+        "double"
+      ],
+      "default" : null,
+      "description" : "Camera housing X- temperature",
+      "units" : "\u00b0C"
+    },
+    {
+      "name" : "CamHousXMinusTemp_state",
+      "type" : [
+        "null",
+        "string"
+      ],
+      "default" : null,
+      "description" : "Monitoring state for Body/CamHousXMinusTemp",
+      "units" : "unitless"
+    },
+    {
+      "name" : "CamHousXPlusTemp",
+      "type" : [
+        "null",
+        "double"
+      ],
+      "default" : null,
+      "description" : "Camera housing X+ temperature",
+      "units" : "\u00b0C"
+    },
+    {
+      "name" : "CamHousXPlusTemp_state",
+      "type" : [
+        "null",
+        "string"
+      ],
+      "default" : null,
+      "description" : "Monitoring state for Body/CamHousXPlusTemp",
+      "units" : "unitless"
+    },
+    {
+      "name" : "CamHousYMinusTemp",
+      "type" : [
+        "null",
+        "double"
+      ],
+      "default" : null,
+      "description" : "Camera housing Y- temperature",
+      "units" : "\u00b0C"
+    },
+    {
+      "name" : "CamHousYMinusTemp_state",
+      "type" : [
+        "null",
+        "string"
+      ],
+      "default" : null,
+      "description" : "Monitoring state for Body/CamHousYMinusTemp",
+      "units" : "unitless"
+    },
+    {
+      "name" : "CamHousYPlusTemp",
+      "type" : [
+        "null",
+        "double"
+      ],
+      "default" : null,
+      "description" : "Camera housing Y+ temperature",
+      "units" : "\u00b0C"
+    },
+    {
+      "name" : "CamHousYPlusTemp_state",
+      "type" : [
+        "null",
+        "string"
+      ],
+      "default" : null,
+      "description" : "Monitoring state for Body/CamHousYPlusTemp",
+      "units" : "unitless"
+    },
+    {
+      "name" : "CamBodyXPlusTemp",
+      "type" : [
+        "null",
+        "double"
+      ],
+      "default" : null,
+      "description" : "Camera body X+ air temperature",
+      "units" : "\u00b0C"
+    },
+    {
+      "name" : "CamBodyXPlusTemp_state",
+      "type" : [
+        "null",
+        "string"
+      ],
+      "default" : null,
+      "description" : "Monitoring state for Body/CamBodyXPlusTemp",
+      "units" : "unitless"
+    },
+    {
+      "name" : "CamBodyYMinusTemp",
+      "type" : [
+        "null",
+        "double"
+      ],
+      "default" : null,
+      "description" : "Camera body Y- air temperature",
+      "units" : "\u00b0C"
+    },
+    {
+      "name" : "CamBodyYMinusTemp_state",
+      "type" : [
+        "null",
+        "string"
+      ],
+      "default" : null,
+      "description" : "Monitoring state for Body/CamBodyYMinusTemp",
+      "units" : "unitless"
+    },
+    {
+      "name" : "CamBodyYPlusTemp",
+      "type" : [
+        "null",
+        "double"
+      ],
+      "default" : null,
+      "description" : "Camera body Y+ air temperature",
+      "units" : "\u00b0C"
+    },
+    {
+      "name" : "CamBodyYPlusTemp_state",
+      "type" : [
+        "null",
+        "string"
+      ],
+      "default" : null,
+      "description" : "Monitoring state for Body/CamBodyYPlusTemp",
+      "units" : "unitless"
+    },
+    {
+      "name" : "ShrdRngXMinusTemp",
+      "type" : [
+        "null",
+        "double"
+      ],
+      "default" : null,
+      "description" : "Shroud ring X- temperature",
+      "units" : "\u00b0C"
+    },
+    {
+      "name" : "ShrdRngXMinusTemp_state",
+      "type" : [
+        "null",
+        "string"
+      ],
+      "default" : null,
+      "description" : "Monitoring state for Body/ShrdRngXMinusTemp",
+      "units" : "unitless"
+    },
+    {
+      "name" : "ShrdRngXPlusTemp",
+      "type" : [
+        "null",
+        "double"
+      ],
+      "default" : null,
+      "description" : "Shroud ring X+ temperature",
+      "units" : "\u00b0C"
+    },
+    {
+      "name" : "ShrdRngXPlusTemp_state",
+      "type" : [
+        "null",
+        "string"
+      ],
+      "default" : null,
+      "description" : "Monitoring state for Body/ShrdRngXPlusTemp",
+      "units" : "unitless"
+    },
+    {
+      "name" : "ShrdRngYMinusTemp",
+      "type" : [
+        "null",
+        "double"
+      ],
+      "default" : null,
+      "description" : "Shroud ring Y- temperature",
+      "units" : "\u00b0C"
+    },
+    {
+      "name" : "ShrdRngYMinusTemp_state",
+      "type" : [
+        "null",
+        "string"
+      ],
+      "default" : null,
+      "description" : "Monitoring state for Body/ShrdRngYMinusTemp",
+      "units" : "unitless"
+    },
+    {
+      "name" : "ShrdRngYPlusTemp",
+      "type" : [
+        "null",
+        "double"
+      ],
+      "default" : null,
+      "description" : "Shroud ring Y+ temperature",
+      "units" : "\u00b0C"
+    },
+    {
+      "name" : "ShrdRngYPlusTemp_state",
+      "type" : [
+        "null",
+        "string"
+      ],
+      "default" : null,
+      "description" : "Monitoring state for Body/ShrdRngYPlusTemp",
+      "units" : "unitless"
+    },
+    {
+      "name" : "L2XMinusTemp",
+      "type" : [
+        "null",
+        "double"
+      ],
+      "default" : null,
+      "description" : "L2 X- temperature",
+      "units" : "\u00b0C"
+    },
+    {
+      "name" : "L2XMinusTemp_state",
+      "type" : [
+        "null",
+        "string"
+      ],
+      "default" : null,
+      "description" : "Monitoring state for Body/L2XMinusTemp",
+      "units" : "unitless"
+    },
+    {
+      "name" : "L2XPlusTemp",
+      "type" : [
+        "null",
+        "double"
+      ],
+      "default" : null,
+      "description" : "L2 X+ temperature",
+      "units" : "\u00b0C"
+    },
+    {
+      "name" : "L2XPlusTemp_state",
+      "type" : [
+        "null",
+        "string"
+      ],
+      "default" : null,
+      "description" : "Monitoring state for Body/L2XPlusTemp",
+      "units" : "unitless"
+    },
+    {
+      "name" : "L2YPlusTemp",
+      "type" : [
+        "null",
+        "double"
+      ],
+      "default" : null,
+      "description" : "L2 Y+ temperature",
+      "units" : "\u00b0C"
+    },
+    {
+      "name" : "L2YPlusTemp_state",
+      "type" : [
+        "null",
+        "string"
+      ],
+      "default" : null,
+      "description" : "Monitoring state for Body/L2YPlusTemp",
+      "units" : "unitless"
+    },
+    {
+      "name" : "L1XMinusTemp",
+      "type" : [
+        "null",
+        "double"
+      ],
+      "default" : null,
+      "description" : "L1 X- temperature",
+      "units" : "\u00b0C"
+    },
+    {
+      "name" : "L1XMinusTemp_state",
+      "type" : [
+        "null",
+        "string"
+      ],
+      "default" : null,
+      "description" : "Monitoring state for Body/L1XMinusTemp",
+      "units" : "unitless"
+    },
+    {
+      "name" : "L1YMinusTemp",
+      "type" : [
+        "null",
+        "double"
+      ],
+      "default" : null,
+      "description" : "L1 Y- temperature",
+      "units" : "\u00b0C"
+    },
+    {
+      "name" : "L1YMinusTemp_state",
+      "type" : [
+        "null",
+        "string"
+      ],
+      "default" : null,
+      "description" : "Monitoring state for Body/L1YMinusTemp",
+      "units" : "unitless"
+    },
+    {
+      "name" : "ShtrEboxRtnAirVel",
+      "type" : [
+        "null",
+        "double"
+      ],
+      "default" : null,
+      "description" : "Shutter electronics return air velocity",
+      "units" : "m/s"
+    },
+    {
+      "name" : "ShtrEboxRtnAirVel_state",
+      "type" : [
+        "null",
+        "string"
+      ],
+      "default" : null,
+      "description" : "Monitoring state for Body/ShtrEboxRtnAirVel",
+      "units" : "unitless"
+    },
+    {
+      "name" : "ShtrEboxRtnAirTemp",
+      "type" : [
+        "null",
+        "double"
+      ],
+      "default" : null,
+      "description" : "Shutter electronics return air temperature",
+      "units" : "\u00b0C"
+    },
+    {
+      "name" : "ShtrEboxRtnAirTemp_state",
+      "type" : [
+        "null",
+        "string"
+      ],
+      "default" : null,
+      "description" : "Monitoring state for Body/ShtrEboxRtnAirTemp",
+      "units" : "unitless"
+    },
+    {
+      "name" : "ShtrMtrRtnAirVel",
+      "type" : [
+        "null",
+        "double"
+      ],
+      "default" : null,
+      "description" : "Shutter motors return air velocity",
+      "units" : "m/s"
+    },
+    {
+      "name" : "ShtrMtrRtnAirVel_state",
+      "type" : [
+        "null",
+        "string"
+      ],
+      "default" : null,
+      "description" : "Monitoring state for Body/ShtrMtrRtnAirVel",
+      "units" : "unitless"
+    },
+    {
+      "name" : "ShtrMtrRtnAirTemp",
+      "type" : [
+        "null",
+        "double"
+      ],
+      "default" : null,
+      "description" : "Shutter motors return air temperature",
+      "units" : "\u00b0C"
+    },
+    {
+      "name" : "ShtrMtrRtnAirTemp_state",
+      "type" : [
+        "null",
+        "string"
+      ],
+      "default" : null,
+      "description" : "Monitoring state for Body/ShtrMtrRtnAirTemp",
+      "units" : "unitless"
+    },
+    {
+      "name" : "ChgrYMinusRtnAirVel",
+      "type" : [
+        "null",
+        "double"
+      ],
+      "default" : null,
+      "description" : "Autochanger Y- return air velocity",
+      "units" : "m/s"
+    },
+    {
+      "name" : "ChgrYMinusRtnAirVel_state",
+      "type" : [
+        "null",
+        "string"
+      ],
+      "default" : null,
+      "description" : "Monitoring state for Body/ChgrYMinusRtnAirVel",
+      "units" : "unitless"
+    },
+    {
+      "name" : "ChgrYMinusRtnAirTemp",
+      "type" : [
+        "null",
+        "double"
+      ],
+      "default" : null,
+      "description" : "Autochanger Y- return air temperature",
+      "units" : "\u00b0C"
+    },
+    {
+      "name" : "ChgrYMinusRtnAirTemp_state",
+      "type" : [
+        "null",
+        "string"
+      ],
+      "default" : null,
+      "description" : "Monitoring state for Body/ChgrYMinusRtnAirTemp",
+      "units" : "unitless"
+    },
+    {
+      "name" : "AverageTemp",
+      "type" : [
+        "null",
+        "double"
+      ],
+      "default" : null,
+      "description" : "Camera average temperature",
+      "units" : "\u00b0C"
+    },
+    {
+      "name" : "AverageTemp_state",
+      "type" : [
+        "null",
+        "string"
+      ],
+      "default" : null,
+      "description" : "Monitoring state for Body/AverageTemp",
+      "units" : "unitless"
+    },
+    {
+      "name" : "AmbAirtemp",
+      "type" : [
+        "null",
+        "double"
+      ],
+      "default" : null,
+      "description" : "Ambient air temperature",
+      "units" : "\u00b0C"
+    },
+    {
+      "name" : "AmbAirtemp_state",
+      "type" : [
+        "null",
+        "string"
+      ],
+      "default" : null,
+      "description" : "Monitoring state for Body/AmbAirtemp",
+      "units" : "unitless"
+    },
+    {
+      "name" : "Agent",
+      "type" : "string",
+      "description" : "This is a tag"
+    }
+  ]
+}

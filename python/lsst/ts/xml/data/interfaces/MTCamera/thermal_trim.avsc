@@ -1,0 +1,83 @@
+{
+  "type" : "record",
+  "name" : "thermal_trim",
+  "namespace" : "lsst.sal.MTCamera",
+  "fields" : [
+    {
+      "name" : "timestamp",
+      "type" : "long",
+      "description" : "UTC timestamp",
+      "units" : "millisecond"
+    },
+    {
+      "name" : "V",
+      "type" : [
+        "null",
+        "double"
+      ],
+      "default" : null,
+      "description" : "Cold Heater 0 Voltage",
+      "units" : "Volts"
+    },
+    {
+      "name" : "V_state",
+      "type" : [
+        "null",
+        "string"
+      ],
+      "default" : null,
+      "description" : "Monitoring state for Trim_Htrs/ColdHtr0_V",
+      "units" : "unitless"
+    },
+    {
+      "name" : "I",
+      "type" : [
+        "null",
+        "double"
+      ],
+      "default" : null,
+      "description" : "Cold Heater 0 Current",
+      "units" : "Amps"
+    },
+    {
+      "name" : "I_state",
+      "type" : [
+        "null",
+        "string"
+      ],
+      "default" : null,
+      "description" : "Monitoring state for Trim_Htrs/ColdHtr0_I",
+      "units" : "unitless"
+    },
+    {
+      "name" : "P",
+      "type" : [
+        "null",
+        "double"
+      ],
+      "default" : null,
+      "description" : "Cold Heater 0 Power",
+      "units" : "Watts"
+    },
+    {
+      "name" : "P_state",
+      "type" : [
+        "null",
+        "string"
+      ],
+      "default" : null,
+      "description" : "Monitoring state for Trim_Htrs/ColdHtr0_P",
+      "units" : "unitless"
+    },
+    {
+      "name" : "Source",
+      "type" : "string",
+      "description" : "This is a tag"
+    },
+    {
+      "name" : "Agent",
+      "type" : "string",
+      "description" : "This is a tag"
+    }
+  ]
+}

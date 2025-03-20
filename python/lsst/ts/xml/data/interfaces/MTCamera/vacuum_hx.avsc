@@ -1,0 +1,338 @@
+{
+  "type" : "record",
+  "name" : "vacuum_hx",
+  "namespace" : "lsst.sal.MTCamera",
+  "fields" : [
+    {
+      "name" : "timestamp",
+      "type" : "long",
+      "description" : "UTC timestamp",
+      "units" : "millisecond"
+    },
+    {
+      "name" : "HexVac",
+      "type" : [
+        "null",
+        "double"
+      ],
+      "default" : null,
+      "description" : "Heat exchanger vacuum",
+      "units" : "Torr"
+    },
+    {
+      "name" : "HexVac_state",
+      "type" : [
+        "null",
+        "string"
+      ],
+      "default" : null,
+      "description" : "Monitoring state for HX/HexVac",
+      "units" : "unitless"
+    },
+    {
+      "name" : "TurboVac",
+      "type" : [
+        "null",
+        "double"
+      ],
+      "default" : null,
+      "description" : "HX turbo pump vacuum",
+      "units" : "Torr"
+    },
+    {
+      "name" : "TurboVac_state",
+      "type" : [
+        "null",
+        "string"
+      ],
+      "default" : null,
+      "description" : "Monitoring state for HX/TurboVac",
+      "units" : "unitless"
+    },
+    {
+      "name" : "ForelineVac",
+      "type" : [
+        "null",
+        "double"
+      ],
+      "default" : null,
+      "description" : "HX foreline pump vacuum",
+      "units" : "Torr"
+    },
+    {
+      "name" : "ForelineVac_state",
+      "type" : [
+        "null",
+        "string"
+      ],
+      "default" : null,
+      "description" : "Monitoring state for HX/ForelineVac",
+      "units" : "unitless"
+    },
+    {
+      "name" : "PumpCartPressure",
+      "type" : [
+        "null",
+        "double"
+      ],
+      "default" : null,
+      "description" : "Pump Cart Inlet Pressure",
+      "units" : "Torr"
+    },
+    {
+      "name" : "PumpCartPressure_state",
+      "type" : [
+        "null",
+        "string"
+      ],
+      "default" : null,
+      "description" : "Monitoring state for HX/PumpCartPressure",
+      "units" : "unitless"
+    },
+    {
+      "name" : "TurboSpeed",
+      "type" : [
+        "null",
+        "double"
+      ],
+      "default" : null,
+      "description" : "HX turbo pump speed",
+      "units" : "rpm"
+    },
+    {
+      "name" : "TurboSpeed_state",
+      "type" : [
+        "null",
+        "string"
+      ],
+      "default" : null,
+      "description" : "Monitoring state for HX/TurboSpeed",
+      "units" : "unitless"
+    },
+    {
+      "name" : "TurboHours",
+      "type" : [
+        "null",
+        "double"
+      ],
+      "default" : null,
+      "description" : "HX turbo pump hours",
+      "units" : "hour"
+    },
+    {
+      "name" : "TurboHours_state",
+      "type" : [
+        "null",
+        "string"
+      ],
+      "default" : null,
+      "description" : "Monitoring state for HX/TurboHours",
+      "units" : "unitless"
+    },
+    {
+      "name" : "TurboCycleNumber",
+      "type" : [
+        "null",
+        "double"
+      ],
+      "default" : null,
+      "description" : "HX turbo cycle number",
+      "units" : "count"
+    },
+    {
+      "name" : "TurboCycleTime",
+      "type" : [
+        "null",
+        "double"
+      ],
+      "default" : null,
+      "description" : "HX turbo latest cycle time",
+      "units" : "minute"
+    },
+    {
+      "name" : "TurboCurrent",
+      "type" : [
+        "null",
+        "double"
+      ],
+      "default" : null,
+      "description" : "HX turbo pump current",
+      "units" : "mA dc"
+    },
+    {
+      "name" : "TurboVoltage",
+      "type" : [
+        "null",
+        "double"
+      ],
+      "default" : null,
+      "description" : "HX turbo pump voltage",
+      "units" : "V dc"
+    },
+    {
+      "name" : "TurboPower",
+      "type" : [
+        "null",
+        "double"
+      ],
+      "default" : null,
+      "description" : "HX turbo pump power",
+      "units" : "W"
+    },
+    {
+      "name" : "TurboPower_state",
+      "type" : [
+        "null",
+        "string"
+      ],
+      "default" : null,
+      "description" : "Monitoring state for HX/TurboPower",
+      "units" : "unitless"
+    },
+    {
+      "name" : "TurboPumpTemp",
+      "type" : [
+        "null",
+        "double"
+      ],
+      "default" : null,
+      "description" : "HX turbo pump temperature",
+      "units" : "deg C"
+    },
+    {
+      "name" : "TurboPumpTemp_state",
+      "type" : [
+        "null",
+        "string"
+      ],
+      "default" : null,
+      "description" : "Monitoring state for HX/TurboPumpTemp",
+      "units" : "unitless"
+    },
+    {
+      "name" : "TurboPumpStatus",
+      "type" : [
+        "null",
+        "double"
+      ],
+      "default" : null,
+      "description" : "HX turbo pump status",
+      "units" : "unitless"
+    },
+    {
+      "name" : "TurboPumpStatus_state",
+      "type" : [
+        "null",
+        "string"
+      ],
+      "default" : null,
+      "description" : "Monitoring state for HX/TurboPumpStatus",
+      "units" : "unitless"
+    },
+    {
+      "name" : "GaugeDose",
+      "type" : [
+        "null",
+        "double"
+      ],
+      "default" : null,
+      "description" : "HX vacuum gauge pressure dose",
+      "units" : "Torr-hrs"
+    },
+    {
+      "name" : "GaugeDose_state",
+      "type" : [
+        "null",
+        "string"
+      ],
+      "default" : null,
+      "description" : "Monitoring state for HX/GaugeDose",
+      "units" : "unitless"
+    },
+    {
+      "name" : "TurboGaugeDose",
+      "type" : [
+        "null",
+        "double"
+      ],
+      "default" : null,
+      "description" : "HX turbo vacuum gauge pressure dose",
+      "units" : "Torr-hrs"
+    },
+    {
+      "name" : "TurboGaugeDose_state",
+      "type" : [
+        "null",
+        "string"
+      ],
+      "default" : null,
+      "description" : "Monitoring state for HX/TurboGaugeDose",
+      "units" : "unitless"
+    },
+    {
+      "name" : "FlineVoltage",
+      "type" : [
+        "null",
+        "double"
+      ],
+      "default" : null,
+      "description" : "HX foreline pump voltage",
+      "units" : "Volt"
+    },
+    {
+      "name" : "FlineCurrent",
+      "type" : [
+        "null",
+        "double"
+      ],
+      "default" : null,
+      "description" : "HX foreline pump current",
+      "units" : "mA"
+    },
+    {
+      "name" : "FlinePower",
+      "type" : [
+        "null",
+        "double"
+      ],
+      "default" : null,
+      "description" : "HX foreline pump power",
+      "units" : "Watt"
+    },
+    {
+      "name" : "FlinePower_state",
+      "type" : [
+        "null",
+        "string"
+      ],
+      "default" : null,
+      "description" : "Monitoring state for HX/FlinePower",
+      "units" : "unitless"
+    },
+    {
+      "name" : "AirPressure",
+      "type" : [
+        "null",
+        "double"
+      ],
+      "default" : null,
+      "description" : "UT compressed air pressure",
+      "units" : "psig"
+    },
+    {
+      "name" : "AirPressure_state",
+      "type" : [
+        "null",
+        "string"
+      ],
+      "default" : null,
+      "description" : "Monitoring state for HX/AirPressure",
+      "units" : "unitless"
+    },
+    {
+      "name" : "Agent",
+      "type" : "string",
+      "description" : "This is a tag"
+    }
+  ]
+}
