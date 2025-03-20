@@ -33,7 +33,7 @@ from .sal_topic_utils import (
     find_required_text,
 )
 from .topic_info import TopicInfo, make_ackcmd_topic_info
-from .utils import get_sal_interfaces_dir
+from .utils import get_interfaces_dir, get_sal_interfaces_dir
 
 
 class ComponentInfo:
@@ -151,6 +151,20 @@ class ComponentInfo:
                 indexed=self.indexed,
             )
         )
+
+        if self.name in ["ATCamera", "CCCamera", "MTCamera"]:
+            avro_path = get_interfaces_dir() / self.name
+            avro_files = avro_path.glob("*.avsc")
+            for avro_file in avro_files:
+                topics_list.append(
+                    TopicInfo.from_avro(
+                        topic_file=avro_file.name,
+                        component_name=self.name,
+                        indexed=self.indexed,
+                        topic_subname=self.topic_subname,
+                    )
+                )
+
         return {info.attr_name: info for info in topics_list}
 
     def _set_basics(self) -> None:
