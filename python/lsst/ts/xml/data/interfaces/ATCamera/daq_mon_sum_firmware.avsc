@@ -1,0 +1,128 @@
+{
+  "type" : "record",
+  "name" : "daq_mon_sum_firmware",
+  "namespace" : "lsst.sal.ATCamera",
+  "fields" : [
+    {
+      "name" : "timestamp",
+      "type" : "long",
+      "description" : "UTC timestamp",
+      "units" : "millisecond"
+    },
+    {
+      "name" : "cell_errors",
+      "type" : [
+        "null",
+        "long"
+      ],
+      "default" : null,
+      "description" : "Sum over locations: PGP Cell Error Counter. This error counter increments when the lowest level PGP protocol quantum is in error. Examples of errors that would cause this counter to increment are, framing violations, incompatible protocol versions, CRC error, incorrect Cell size.",
+      "units" : "unitless"
+    },
+    {
+      "name" : "link_down",
+      "type" : [
+        "null",
+        "long"
+      ],
+      "default" : null,
+      "description" : "Sum over locations: Link Down Counter. This should increment by 1 every time the PGP link transitions from UP to DOWN. Unfortunately, it does not use the LSST DAQ definition of UP, but rather only bits 1..0 of the state. Though normal initialization of the link causes only a single increment, on occasion a REB power cycle can cause the counter to increment more than once.",
+      "units" : "unitless"
+    },
+    {
+      "name" : "link_errors",
+      "type" : [
+        "null",
+        "long"
+      ],
+      "default" : null,
+      "description" : "Sum over locations:  Link Error Counter. This counter represents a lower level error than the Cell Error. This error is caused by 8B10B errors on the high speed serial line such as disparity errors or symbol decode errors. Sometimes this counter can increment during the link establishment process, though I have tried to change the firmware to eliminate this.",
+      "units" : "unitless"
+    },
+    {
+      "name" : "overflow_remote0",
+      "type" : [
+        "null",
+        "long"
+      ],
+      "default" : null,
+      "description" : "Sum over locations: Remote Overflow Counters (channel 0). These four counters measure the number of times the firmware on the remote side of the link has overflowed its buffers for each virtual channel.",
+      "units" : "unitless"
+    },
+    {
+      "name" : "overflow_remote1",
+      "type" : [
+        "null",
+        "long"
+      ],
+      "default" : null,
+      "description" : "Sum over locations: Remote Overflow Counters (channel 1). These four counters measure the number of times the firmware on the remote side of the link has overflowed its buffers for each virtual channel.",
+      "units" : "unitless"
+    },
+    {
+      "name" : "overflow_remote2",
+      "type" : [
+        "null",
+        "long"
+      ],
+      "default" : null,
+      "description" : "Sum over locations: Remote Overflow Counters (channel 2). These four counters measure the number of times the firmware on the remote side of the link has overflowed its buffers for each virtual channel.",
+      "units" : "unitless"
+    },
+    {
+      "name" : "rx_errors",
+      "type" : [
+        "null",
+        "long"
+      ],
+      "default" : null,
+      "description" : "Sum over locations: Receive Errors. This is the highest level PGP protocol error. This counter increments when a PGP frame has been successfully received, but was marked with an error when it was sent by the REB.",
+      "units" : "unitless"
+    },
+    {
+      "name" : "overflow_local0",
+      "type" : [
+        "null",
+        "long"
+      ],
+      "default" : null,
+      "description" : "Sum over locations: Local Overflow Counters (channel 0). These four counters measure the number of times the firmware on the local side of the link has overflowed its buffers for each virtual channel.",
+      "units" : "unitless"
+    },
+    {
+      "name" : "overflow_local1",
+      "type" : [
+        "null",
+        "long"
+      ],
+      "default" : null,
+      "description" : "Sum over locations: Local Overflow Counters (channel 1). These four counters measure the number of times the firmware on the local side of the link has overflowed its buffers for each virtual channel.",
+      "units" : "unitless"
+    },
+    {
+      "name" : "overflow_local2",
+      "type" : [
+        "null",
+        "long"
+      ],
+      "default" : null,
+      "description" : "Sum over locations: Local Overflow Counters (channel 2). These four counters measure the number of times the firmware on the local side of the link has overflowed its buffers for each virtual channel.",
+      "units" : "unitless"
+    },
+    {
+      "name" : "tx_errors",
+      "type" : [
+        "null",
+        "long"
+      ],
+      "default" : null,
+      "description" : "Sum over locations: Transmit Errors. This counter increments when a frame is transmitted with the error bit set. (Analog to rx_errors.)",
+      "units" : "unitless"
+    },
+    {
+      "name" : "Agent",
+      "type" : "string",
+      "description" : "This is a tag"
+    }
+  ]
+}

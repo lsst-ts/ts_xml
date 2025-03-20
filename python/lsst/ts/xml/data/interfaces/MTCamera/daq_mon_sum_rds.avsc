@@ -1,0 +1,68 @@
+{
+  "type" : "record",
+  "name" : "daq_mon_sum_rds",
+  "namespace" : "lsst.sal.MTCamera",
+  "fields" : [
+    {
+      "name" : "timestamp",
+      "type" : "long",
+      "description" : "UTC timestamp",
+      "units" : "millisecond"
+    },
+    {
+      "name" : "discards",
+      "type" : [
+        "null",
+        "long"
+      ],
+      "default" : null,
+      "description" : "Sum over locations: Discards count. The number of times the Server tried to insert Image Metadata into the processing queue but failed to do so. (Presumably because the queue was full.)",
+      "units" : "unitless"
+    },
+    {
+      "name" : "no_event",
+      "type" : [
+        "null",
+        "long"
+      ],
+      "default" : null,
+      "description" : "Sum over locations: No Event count. Upon the arrival of pixel data, there was no Image Metadata available to associate with it. The pixel data is discarded.",
+      "units" : "unitless"
+    },
+    {
+      "name" : "bdi_nulls",
+      "type" : [
+        "null",
+        "long"
+      ],
+      "default" : null,
+      "description" : "Sum over locations: BDI Null Pages count. The BDI woke up but no data was present.",
+      "units" : "unitless"
+    },
+    {
+      "name" : "bdi_seq_errors",
+      "type" : [
+        "null",
+        "long"
+      ],
+      "default" : null,
+      "description" : "Sum over locations: BDI Sequence Errors count. The BDI can mark pages as coming out of sequence. ",
+      "units" : "unitless"
+    },
+    {
+      "name" : "bdi_overflows",
+      "type" : [
+        "null",
+        "long"
+      ],
+      "default" : null,
+      "description" : "Sum over locations: BDI Overflows count. The BDI can report that its data buffers have overflowed.",
+      "units" : "unitless"
+    },
+    {
+      "name" : "Agent",
+      "type" : "string",
+      "description" : "This is a tag"
+    }
+  ]
+}

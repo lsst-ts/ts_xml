@@ -1,0 +1,38 @@
+{
+  "type" : "record",
+  "name" : "vacuum_vqm",
+  "namespace" : "lsst.sal.CCCamera",
+  "fields" : [
+    {
+      "name" : "timestamp",
+      "type" : "long",
+      "description" : "UTC timestamp",
+      "units" : "millisecond"
+    },
+    {
+      "name" : "vqmpressure",
+      "type" : [
+        "null",
+        "double"
+      ],
+      "default" : null,
+      "description" : "Pressure Reading",
+      "units" : "Torr"
+    },
+    {
+      "name" : "vqmpressure_state",
+      "type" : [
+        "null",
+        "string"
+      ],
+      "default" : null,
+      "description" : "Monitoring state for VQMonitor/vqmpressure",
+      "units" : "unitless"
+    },
+    {
+      "name" : "Agent",
+      "type" : "string",
+      "description" : "This is a tag"
+    }
+  ]
+}

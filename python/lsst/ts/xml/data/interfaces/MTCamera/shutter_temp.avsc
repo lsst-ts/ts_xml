@@ -1,0 +1,43 @@
+{
+  "type" : "record",
+  "name" : "shutter_temp",
+  "namespace" : "lsst.sal.MTCamera",
+  "fields" : [
+    {
+      "name" : "timestamp",
+      "type" : "long",
+      "description" : "UTC timestamp",
+      "units" : "millisecond"
+    },
+    {
+      "name" : "temperature",
+      "type" : [
+        "null",
+        "double"
+      ],
+      "default" : null,
+      "description" : "RTD temperatures.",
+      "units" : "Celsius"
+    },
+    {
+      "name" : "temp_is_safe",
+      "type" : [
+        "null",
+        "int"
+      ],
+      "default" : null,
+      "description" : "RTD temperature in safe range? 0 = no, 1 = yes.",
+      "units" : "unitless"
+    },
+    {
+      "name" : "Source",
+      "type" : "string",
+      "description" : "This is a tag"
+    },
+    {
+      "name" : "Agent",
+      "type" : "string",
+      "description" : "This is a tag"
+    }
+  ]
+}
