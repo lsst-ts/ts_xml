@@ -17,12 +17,12 @@ jobs:
       - name: Set up python
         uses: actions/setup-python@v5
         with:
-          python-version: '3.11'
+          python-version: '3.12'
 
       - name: Install towncrier
         run: |
           $CONDA/bin/conda install -c conda-forge towncrier=23 -y
-  
+
       - name: Run towncrier check command
         run: |
           $CONDA/bin/towncrier check --compare-with origin/develop
