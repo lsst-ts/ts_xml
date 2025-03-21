@@ -196,12 +196,10 @@ class ComponentInfo:
         self.indexed = find_required_text(element, "IndexEnumeration").strip() != "no"
 
 
-def parse_sal_generics() -> (
-    tuple[
-        dict[str, ElementTree.Element],
-        dict[str, list[ElementTree.Element]],
-    ]
-):
+def parse_sal_generics() -> tuple[
+    dict[str, ElementTree.Element],
+    dict[str, list[ElementTree.Element]],
+]:
     """Parse SALGenerics.xml.
 
     Return two dicts:
