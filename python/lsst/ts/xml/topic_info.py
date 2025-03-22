@@ -372,17 +372,22 @@ class TopicInfo:
 
         for field in avro_schema["fields"]:
             name = field["name"]
-            ttype = field["type"]
-            if isinstance(ttype, list):
-                ttype.remove("null")
-                ttype = ttype[0]
+            ftypes = field["type"]
+            fitype = ""
+            if isinstance(ftypes, list):
+                for ftype in ftypes:
+                    if ftype != "null":
+                        fitype = ftype
+                        break
+            else:
+                fitype = ftypes
             try:
                 units = field["units"]
             except KeyError:
                 units = "unitless"
             fields[name] = FieldInfo(
                 name,
-                ttype,
+                fitype,
                 units=units,
                 description=field["description"],
             )

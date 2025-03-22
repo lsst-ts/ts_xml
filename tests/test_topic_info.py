@@ -33,3 +33,5 @@ def test_topic_from_avro() -> None:
         topic_info._avro_schema_cache[("ATCamera", "tel_focal_plane_sensor")]
         is not None
     )
+    schema = topic_info.make_avro_schema()
+    assert len(schema["fields"][1]["type"]) == 2
