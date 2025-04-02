@@ -317,4 +317,117 @@
       <Count>1</Count>
     </item>
   </SALEvent>
+  <SALEvent>
+    <Subsystem>DREAM</Subsystem>
+    <EFDB_Topic>DREAM_logevent_camera</EFDB_Topic>
+    <Description>DREAM camera imaging events. Each attribute contains five values, one for each camera:
+
+      0. East
+      1. West
+      2. North
+      3. Central
+      4. South
+    </Description>
+    <item>
+      <EFDB_Name>cameraMode</EFDB_Name>
+      <Description>Current operating mode of the camera. A CameraServerMode enumeration.</Description>
+      <IDL_Type>int</IDL_Type>
+      <Units>unitless</Units>
+      <Count>5</Count>
+    </item>
+    <item>
+      <EFDB_Name>nBlank</EFDB_Name>
+      <Description>
+        Number of images of type "blank" collected by the camera. These images are not
+        saved but their collection is recorded for completeness.
+      </Description>
+      <IDL_Type>int</IDL_Type>
+      <Units>unitless</Units>
+      <Count>5</Count>
+    </item>
+    <item>
+      <EFDB_Name>nDark</EFDB_Name>
+      <Description>Number of dark images collected by the camera.</Description>
+      <IDL_Type>int</IDL_Type>
+      <Units>unitless</Units>
+      <Count>5</Count>
+    </item>
+    <item>
+      <EFDB_Name>nBias</EFDB_Name>
+      <Description>Number of bias images collected by the camera.</Description>
+      <IDL_Type>int</IDL_Type>
+      <Units>unitless</Units>
+      <Count>5</Count>
+    </item>
+    <item>
+      <EFDB_Name>nFlat</EFDB_Name>
+      <Description>Number of flat field images collected by the camera.</Description>
+      <IDL_Type>int</IDL_Type>
+      <Units>unitless</Units>
+      <Count>5</Count>
+    </item>
+    <item>
+      <EFDB_Name>nScience</EFDB_Name>
+      <Description>Number of science images collected by the camera.</Description>
+      <IDL_Type>int</IDL_Type>
+      <Units>unitless</Units>
+      <Count>5</Count>
+    </item>
+    <item>
+      <EFDB_Name>nMissed</EFDB_Name>
+      <Description>Number of images that were "missed" by the pipeline.</Description>
+      <IDL_Type>int</IDL_Type>
+      <Units>unitless</Units>
+      <Count>5</Count>
+    </item>
+    <item>
+      <EFDB_Name>lastSequenceNumber</EFDB_Name>
+      <Description>Sequence number of the most recent collected image.</Description>
+      <IDL_Type>int</IDL_Type>
+      <Units>unitless</Units>
+      <Count>5</Count>
+    </item>
+    <item>
+      <EFDB_Name>lastTriggerTime</EFDB_Name>
+      <Description>Trigger time (TAI) of the most recent collected image.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>second</Units>
+      <Count>5</Count>
+    </item>
+    <item>
+      <EFDB_Name>lastImageTimingLatency</EFDB_Name>
+      <Description>Timing latency of the most recent collected image.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>second</Units>
+      <Count>5</Count>
+    </item>
+    <item>
+      <EFDB_Name>lastImageUSBLatency</EFDB_Name>
+      <Description>USB latency of the most recent collected image.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>second</Units>
+      <Count>5</Count>
+    </item>
+    <item>
+      <EFDB_Name>lastImageArtificialLatency</EFDB_Name>
+      <Description>Artificial latency of the most recent collected image.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>second</Units>
+      <Count>5</Count>
+    </item>
+    <item>
+      <EFDB_Name>lastImageType</EFDB_Name>
+      <Description>Image type of the most recent collected image. A CameraServerMode enumeration.</Description>
+      <IDL_Type>int</IDL_Type>
+      <Units>unitless</Units>
+      <Count>5</Count>
+    </item>
+    <item>
+      <EFDB_Name>lastImagePixelMedian</EFDB_Name>
+      <Description>Median pixel value of the most recent collected image.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>unitless</Units>
+      <Count>5</Count>
+    </item>
+  </SALEvent>
 </SALEventSet>

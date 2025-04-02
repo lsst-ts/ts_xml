@@ -130,4 +130,30 @@
       <Count>1</Count>
     </item>
   </SALTelemetry>
+  <SALTelemetry>
+    <Subsystem>DREAM</Subsystem>
+    <EFDB_Topic>DREAM_camera</EFDB_Topic>
+    <Description>Telemetry for the DREAM cameras. Each attribute has five values, one for each camera:
+
+      0. East
+      1. West
+      2. North
+      3. Central
+      4. South
+    </Description>
+    <item>
+      <EFDB_Name>heartbeat</EFDB_Name>
+      <Description>Time (TAI) of last camera server heartbeat.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>second</Units>
+      <Count>5</Count>
+    </item>
+    <item>
+      <EFDB_Name>ccdTemperature</EFDB_Name>
+      <Description>CCD temperature.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>deg_C</Units>
+      <Count>5</Count>
+    </item>
+  </SALTelemetry>
 </SALTelemetrySet>
