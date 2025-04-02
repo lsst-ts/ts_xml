@@ -19,67 +19,156 @@
       <Count>1</Count>
     </item>
     <item>
-      <EFDB_Name>environmentOK</EFDB_Name>
-      <Description>DREAM environmental OK flag. Indexed by location - 0 Dome, 1 Electronics Box, 2 Enclosure. True means OK.</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>3</Count>
-    </item>
-    <item>
-      <EFDB_Name>powerDistributionUnitOnline</EFDB_Name>
-      <Description>Power distribution unit online flag. True is online.</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>2</Count>
-    </item>
-    <item>
-      <EFDB_Name>domeStatus</EFDB_Name>
-      <Description>DREAM dome status. Closed/Opening/Opened/Closing.</Description>
+      <EFDB_Name>observingMode</EFDB_Name>
+      <Description>
+        The current observing mode for DREAM. A CameraServerMode enumeration.
+      </Description>
       <IDL_Type>int</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
     </item>
     <item>
-      <EFDB_Name>domeOpenLimitSwitch</EFDB_Name>
-      <Description>Opened dome limit switch state. True for triggered, dome is opened.</Description>
-      <IDL_Type>boolean</IDL_Type>
+      <EFDB_Name>targetObservingMode</EFDB_Name>
+      <Description>
+        The desired mode for DREAM, which DREAM should be working to enter. A CameraServerMode enumeration.
+      </Description>
+      <IDL_Type>int</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
     </item>
     <item>
-      <EFDB_Name>domeCloseLimitSwitch</EFDB_Name>
-      <Description>Closed dome limit switch state. True for triggered, dome is closed.</Description>
-      <IDL_Type>boolean</IDL_Type>
+      <EFDB_Name>domeState</EFDB_Name>
+      <Description>
+        The current state of the enclosure. A DomeState enumeration.
+      </Description>
+      <IDL_Type>int</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
     </item>
     <item>
-      <EFDB_Name>frontDoorOpen</EFDB_Name>
-      <Description>Front door opened switch. True for triggered, front door is opened.</Description>
-      <IDL_Type>boolean</IDL_Type>
+      <EFDB_Name>targetDomeState</EFDB_Name>
+      <Description>
+        The desired state of the enclosure, which DREAM should be working to enter. A DomeTargetState enumeration.
+      </Description>
+      <IDL_Type>int</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
     </item>
     <item>
-      <EFDB_Name>backDoorOpen</EFDB_Name>
-      <Description>Back door opened switch. True for triggered, back door is opened.</Description>
-      <IDL_Type>boolean</IDL_Type>
+      <EFDB_Name>heaterState</EFDB_Name>
+      <Description>
+        The current state of the heater. A HeaterState enumeration.
+      </Description>
+      <IDL_Type>int</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
     </item>
     <item>
-      <EFDB_Name>daq</EFDB_Name>
-      <Description>Digital Acquisition (DAQ) status. True if DAQ is working as expected.</Description>
-      <IDL_Type>boolean</IDL_Type>
+      <EFDB_Name>targetHeaterState</EFDB_Name>
+      <Description>
+        The desired state of the heater, which DREAM should be working to enter. A HeaterState enumeration.
+      </Description>
+      <IDL_Type>int</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
     </item>
     <item>
-      <EFDB_Name>cameraLEDStatus</EFDB_Name>
-      <Description>Camera LED status. True when LED is on.</Description>
+      <EFDB_Name>peltierState</EFDB_Name>
+      <Description>
+        The current state of the peltier regulator. A PeltierState enumeration.
+      </Description>
+      <IDL_Type>int</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>targetPeltierState</EFDB_Name>
+      <Description>
+        The desired state of the peltier regulator, which DREAM should be working to enter. A PeltierState
+        enumeration.
+      </Description>
+      <IDL_Type>int</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>powerState</EFDB_Name>
+      <Description>
+        For each of the devices controlled by the power distribution unit, true if the PDU is supplying power
+        to that device. The devices are:
+
+          0.  Switch
+          1.  USB hub
+          2.  PSU 1
+          3.  PSU 2
+          4.  Central Camera
+          5.  North Camera
+          6.  East Camera
+          7.  South Camera
+          8.  West Camera
+          9.  Command Server
+          10. Central Server
+          11. North Server
+          12. East Server
+          13. South Server
+          14. West Server
+      </Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>15</Count>
+    </item>
+    <item>
+      <EFDB_Name>electronicsActive</EFDB_Name>
+      <Description>
+        Whether each of DREAM's relays are switched. The relay controls are:
+
+          0. Motor power
+          1. Motor direction
+          2. Peltier power
+          3. Peltier direction
+          4. Window heater power
+      </Description>
       <IDL_Type>boolean</IDL_Type>
       <Units>unitless</Units>
       <Count>5</Count>
+    </item>
+    <item>
+      <EFDB_Name>errorFlags</EFDB_Name>
+      <Description>
+        A bit flag indicating errors reported by DREAM, defined by the DreamError enumeration.
+      </Description>
+      <IDL_Type>long long</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>warningFlags</EFDB_Name>
+      <Description>
+        A bit flag indicating warnings reported by DREAM, defined by the DreamWarning enumeration.
+      </Description>
+      <IDL_Type>long long</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>additionalErrors</EFDB_Name>
+      <Description>
+        Any errors reported by DREAM that are not in the DreamError enumeration. The string contains
+        a brief text description of the each error, with the errors separated by semicolons.
+      </Description>
+      <IDL_Type>string</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>additionalWarnings</EFDB_Name>
+      <Description>
+        Any warnings reported by DREAM that are not in the DreamWarning enumeration. The string contains
+        a brief text description of the each warning, with the warnings separated by semicolons.
+      </Description>
+      <IDL_Type>string</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
     </item>
   </SALEvent>
   <SALEvent>
