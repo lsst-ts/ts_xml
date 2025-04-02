@@ -193,7 +193,7 @@
   <SALEvent>
     <Subsystem>DREAM</Subsystem>
     <EFDB_Topic>DREAM_logevent_ups</EFDB_Topic>
-    <Description>DREAM ups status.</Description>
+    <Description>DREAM Uninterruptible Power Supply (UPS) status.</Description>
     <item>
       <EFDB_Name>online</EFDB_Name>
       <Description>True when UPS is online. False when UPS is offline.</Description>
@@ -209,8 +209,22 @@
       <Count>1</Count>
     </item>
     <item>
+      <EFDB_Name>batteryNeedsReplacing</EFDB_Name>
+      <Description>True when UPS reports that it needs a new battery.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>inputLastError</EFDB_Name>
+      <Description>The last reason reported by the UPS for switching to battery.</Description>
+      <IDL_Type>string</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
       <EFDB_Name>notOnMains</EFDB_Name>
-      <Description>True when UPS commercial power isn't running, the UPS is providing power from its battery..</Description>
+      <Description>True when UPS commercial power isn't running, the UPS is providing power from its battery.</Description>
       <IDL_Type>boolean</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
