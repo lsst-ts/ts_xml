@@ -32,15 +32,33 @@
     <EFDB_Topic>DREAM_powerSupply</EFDB_Topic>
     <Description>DREAM power supply status.</Description>
     <item>
+      <EFDB_Name>temperatureError</EFDB_Name>
+      <Description>
+        If true, the temperature status feedback channel for the power supply has become active.
+      </Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>inputVoltageError</EFDB_Name>
+      <Description>
+        If true, the input voltage status feedback channel for the power supply has become active.
+      </Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
       <EFDB_Name>voltage</EFDB_Name>
-      <Description>Power supply output voltage.</Description>
+      <Description>Power supply output voltage (0) feedback and (1) setpoint.</Description>
       <IDL_Type>float</IDL_Type>
       <Units>V</Units>
       <Count>2</Count>
     </item>
     <item>
       <EFDB_Name>current</EFDB_Name>
-      <Description>Power supply output current.</Description>
+      <Description>Power supply output current (0) feedback and (1) setpoint.</Description>
       <IDL_Type>float</IDL_Type>
       <Units>A</Units>
       <Count>2</Count>
