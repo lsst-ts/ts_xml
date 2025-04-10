@@ -510,4 +510,29 @@
       <Count>5</Count>
     </item>
   </SALEvent>
+  <SALEvent>
+    <Subsystem>DREAM</Subsystem>
+    <EFDB_Topic>DREAM_logevent_cscCommand</EFDB_Topic>
+    <Description>Most recent commands from the CSC to the DREAM controller.</Description>
+    <item>
+      <EFDB_Name>weather</EFDB_Name>
+      <Description>
+        Most recent data sent to DREAM with the `setWeather` command,
+        indicating that it is okay to open.
+      </Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>roof</EFDB_Name>
+      <Description>
+        Most recent data sent to DREAM with the `setRoof` command,
+        indicating whether DREAM should proceed with observing.
+      </Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+  </SALEvent>
 </SALEventSet>
