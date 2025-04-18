@@ -22,6 +22,7 @@
 import enum
 import typing
 from dataclasses import dataclass
+from math import sqrt
 
 __all__ = [
     "FAType",
@@ -255,6 +256,25 @@ class ForceActuatorData:
                 index = actuator_id_to_index(fa_id, index_type)
                 if index is not None:
                     yield index
+
+    def distance(self, another: typing.Self) -> float:
+        """Returns distance between the actuators in the X and Y plane. All
+        actuators shall be placed at the same Z plane, so Z is not considered
+        in the calculation.
+
+        Parameters
+        ----------
+        another : ForceActuatorData
+            Force actuator to which distance will be measured.
+
+        Returns
+        distance : `float`
+            Distance (in meters) between this and another force actuator.
+        """
+        return sqrt(
+            (self.x_position - another.x_position) ** 2
+            + (self.y_position - another.y_position) ** 2
+        )
 
 
 FATable = [
