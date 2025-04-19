@@ -58,7 +58,8 @@
     HardpointActuatorMotionState_Stepping=2,
     HardpointActuatorMotionState_QuickPositioning=3,
     HardpointActuatorMotionState_FinePositioning=4,
-    HardpointActuatorMotionState_WaitingTension=5
+    HardpointActuatorMotionState_WaitingTension=5,
+    HardpointActuatorMotionState_WaitingCompression=6
   </Enumeration>
   <Enumeration>
     ILCState_STANDBY,
@@ -5574,8 +5575,15 @@
       <Count>1</Count>
     </item>
     <item>
-      <EFDB_Name>ignoreTensionRaisingLowering</EFDB_Name>
-      <Description>Excessive tension below that elevation will be ignored when raising/lowering the mirror.</Description>
+      <EFDB_Name>ignoreTensionRaisingLoweringElevation</EFDB_Name>
+      <Description>Excessive tension below this elevation will be ignored when raising/lowering the mirror.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>deg</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>ignoreCompressionRaisingLoweringElevation</EFDB_Name>
+      <Description>Excessive compression below this elevation will be ignored when raising/lowering the mirror.</Description>
       <IDL_Type>float</IDL_Type>
       <Units>deg</Units>
       <Count>1</Count>
@@ -5583,6 +5591,13 @@
     <item>
       <EFDB_Name>inRangeReadoutsToChaseFromWaitingTension</EFDB_Name>
       <Description>Number of correct (in-range) HP force readouts before Hp can transiton from WaitingTension to Chase.</Description>
+      <IDL_Type>int</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>inRangeReadoutsToChaseFromWaitingCompression</EFDB_Name>
+      <Description>Number of correct (in-range) HP force readouts before Hp can transiton from WaitingCompression to Chase.</Description>
       <IDL_Type>int</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
