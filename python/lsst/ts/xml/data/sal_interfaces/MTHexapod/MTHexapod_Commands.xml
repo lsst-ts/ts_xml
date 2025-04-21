@@ -149,6 +149,95 @@
   </SALCommand>
   <SALCommand>
     <Subsystem>MTHexapod</Subsystem>
+    <EFDB_Topic>MTHexapod_command_moveInSteps</EFDB_Topic>
+    <Description>Move the Hexapod to a specified position and orientation in steps. This sets the uncompensated position; if compensation is enabled, the actual position will be slightly different.</Description>
+    <item>
+      <EFDB_Name>x</EFDB_Name>
+      <Description>x position</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>um</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>y</EFDB_Name>
+      <Description>y position</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>um</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>z</EFDB_Name>
+      <Description>z position</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>um</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>u</EFDB_Name>
+      <Description>Rotation about x</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>deg</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>v</EFDB_Name>
+      <Description>Rotation about y</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>deg</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>w</EFDB_Name>
+      <Description>Rotation about z</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>deg</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>stepSizeXY</EFDB_Name>
+      <Description>Step size of x-, y-direction. Put 0 if you want to do the movement in a single step.</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>um</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>stepSizeZ</EFDB_Name>
+      <Description>Step size of z-direction. Put 0 if you want to do the movement in a single step.</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>um</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>stepSizeUV</EFDB_Name>
+      <Description>Step size of rotation about x and y axes. Put 0 if you want to do the movement in a single step.</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>deg</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>stepSizeW</EFDB_Name>
+      <Description>Step size of rotation about z axis. Put 0 if you want to do the movement in a single step.</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>deg</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>overwriteStepSizeFromConfig</EFDB_Name>
+      <Description>If True then the step size passed to this function are overwritten from the configuration.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>sync</EFDB_Name>
+      <Description>Synchronize motion so that all actuators start and stop moving at the same time? Synchronize motion is our normal operating mode.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+  </SALCommand>
+  <SALCommand>
+    <Subsystem>MTHexapod</Subsystem>
     <EFDB_Topic>MTHexapod_command_offset</EFDB_Topic>
     <Description>Offset the Hexapod by a specified change in position and orientation.</Description>
     <item>
@@ -191,6 +280,95 @@
       <Description>Offset of rotation about z</Description>
       <IDL_Type>double</IDL_Type>
       <Units>deg</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>sync</EFDB_Name>
+      <Description>Synchronize motion so that all actuators start and stop moving at the same time? Synchronize motion is our normal operating mode.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+  </SALCommand>
+  <SALCommand>
+    <Subsystem>MTHexapod</Subsystem>
+    <EFDB_Topic>MTHexapod_command_offsetInSteps</EFDB_Topic>
+    <Description>Offset the Hexapod by a specified change in position and orientation in steps.</Description>
+    <item>
+      <EFDB_Name>x</EFDB_Name>
+      <Description>Offset in x</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>um</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>y</EFDB_Name>
+      <Description>Offset in y</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>um</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>z</EFDB_Name>
+      <Description>Offset in z</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>um</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>u</EFDB_Name>
+      <Description>Offset of rotation about x</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>deg</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>v</EFDB_Name>
+      <Description>Offset of rotation about y</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>deg</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>w</EFDB_Name>
+      <Description>Offset of rotation about z</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>deg</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>stepSizeXY</EFDB_Name>
+      <Description>Step size of x-, y-direction. Put 0 if you want to do the movement in a single step.</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>um</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>stepSizeZ</EFDB_Name>
+      <Description>Step size of z-direction. Put 0 if you want to do the movement in a single step.</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>um</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>stepSizeUV</EFDB_Name>
+      <Description>Step size of rotation about x and y axes. Put 0 if you want to do the movement in a single step.</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>deg</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>stepSizeW</EFDB_Name>
+      <Description>Step size of rotation about z axis. Put 0 if you want to do the movement in a single step.</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>deg</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>overwriteStepSizeFromConfig</EFDB_Name>
+      <Description>If True then the step size passed to this function are overwritten from the configuration.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
       <Count>1</Count>
     </item>
     <item>
