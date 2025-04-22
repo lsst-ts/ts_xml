@@ -1,6 +1,6 @@
 {
   "type" : "record",
-  "name" : "hex_cryo_temp",
+  "name" : "runtimeInfo_buffer_pool",
   "namespace" : "lsst.sal.MTCamera",
   "fields" : [
     {
@@ -10,32 +10,37 @@
       "units" : "millisecond"
     },
     {
-      "name" : "temperature",
+      "name" : "nBuffers",
       "type" : [
         "null",
-        "double"
+        "long"
       ],
       "default" : null,
-      "description" : "C3 Exit Temperature",
-      "units" : "Celsius"
-    },
-    {
-      "name" : "temperature_state",
-      "type" : [
-        "null",
-        "string"
-      ],
-      "default" : null,
-      "description" : "Monitoring state for Cryo5/C3ExitTmp",
+      "description" : "Estimated number of buffers in pool",
       "units" : "unitless"
     },
     {
-      "name" : "Cryo",
-      "type" : "string",
-      "description" : "This is a tag"
+      "name" : "memoryUsed",
+      "type" : [
+        "null",
+        "long"
+      ],
+      "default" : null,
+      "description" : "Memory used by this buffer pool",
+      "units" : "bytes"
     },
     {
-      "name" : "Source",
+      "name" : "totalCapacity",
+      "type" : [
+        "null",
+        "long"
+      ],
+      "default" : null,
+      "description" : "Total capacity for this buffer pool",
+      "units" : "bytes"
+    },
+    {
+      "name" : "Buffer",
       "type" : "string",
       "description" : "This is a tag"
     },

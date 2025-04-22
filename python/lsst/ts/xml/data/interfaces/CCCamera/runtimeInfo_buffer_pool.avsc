@@ -1,6 +1,6 @@
 {
   "type" : "record",
-  "name" : "vacuum_rtds",
+  "name" : "runtimeInfo_buffer_pool",
   "namespace" : "lsst.sal.CCCamera",
   "fields" : [
     {
@@ -10,27 +10,37 @@
       "units" : "millisecond"
     },
     {
-      "name" : "temperature",
+      "name" : "nBuffers",
       "type" : [
         "null",
-        "double"
+        "long"
       ],
       "default" : null,
-      "description" : "Cold Plate A Temperature",
-      "units" : "Celsius"
-    },
-    {
-      "name" : "temperature_state",
-      "type" : [
-        "null",
-        "string"
-      ],
-      "default" : null,
-      "description" : "Monitoring state for rtds/temperatureCold2",
+      "description" : "Estimated number of buffers in pool",
       "units" : "unitless"
     },
     {
-      "name" : "RTD",
+      "name" : "memoryUsed",
+      "type" : [
+        "null",
+        "long"
+      ],
+      "default" : null,
+      "description" : "Memory used by this buffer pool",
+      "units" : "bytes"
+    },
+    {
+      "name" : "totalCapacity",
+      "type" : [
+        "null",
+        "long"
+      ],
+      "default" : null,
+      "description" : "Total capacity for this buffer pool",
+      "units" : "bytes"
+    },
+    {
+      "name" : "Buffer",
       "type" : "string",
       "description" : "This is a tag"
     },

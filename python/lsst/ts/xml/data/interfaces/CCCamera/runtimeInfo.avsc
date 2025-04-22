@@ -1,0 +1,88 @@
+{
+  "type" : "record",
+  "name" : "runtimeInfo",
+  "namespace" : "lsst.sal.CCCamera",
+  "fields" : [
+    {
+      "name" : "timestamp",
+      "type" : "long",
+      "description" : "UTC timestamp",
+      "units" : "millisecond"
+    },
+    {
+      "name" : "nThreads",
+      "type" : [
+        "null",
+        "int"
+      ],
+      "default" : null,
+      "description" : "Number of Threads allocated by the CCS process",
+      "units" : "unitless"
+    },
+    {
+      "name" : "maxMemory",
+      "type" : [
+        "null",
+        "long"
+      ],
+      "default" : null,
+      "description" : "Maximum Memory available to the JVM",
+      "units" : "bytes"
+    },
+    {
+      "name" : "totalMemory",
+      "type" : [
+        "null",
+        "long"
+      ],
+      "default" : null,
+      "description" : "Total Memory allocated by JVM",
+      "units" : "bytes"
+    },
+    {
+      "name" : "freeMemory",
+      "type" : [
+        "null",
+        "long"
+      ],
+      "default" : null,
+      "description" : "Free Memory available that could be used by the JVM",
+      "units" : "bytes"
+    },
+    {
+      "name" : "processCpuLoad",
+      "type" : [
+        "null",
+        "double"
+      ],
+      "default" : null,
+      "description" : "Recent cpu usage for the whole system. This value is a double in the [0.0,1.0] interval.",
+      "units" : "unitless"
+    },
+    {
+      "name" : "systemCpuLoad",
+      "type" : [
+        "null",
+        "double"
+      ],
+      "default" : null,
+      "description" : "Recent cpu usage for the JVM process. This value is a double in the [0.0,1.0] interval.",
+      "units" : "unitless"
+    },
+    {
+      "name" : "uptime",
+      "type" : [
+        "null",
+        "long"
+      ],
+      "default" : null,
+      "description" : "Number of seconds since the CCS process was started",
+      "units" : "s"
+    },
+    {
+      "name" : "Agent",
+      "type" : "string",
+      "description" : "This is a tag"
+    }
+  ]
+}
