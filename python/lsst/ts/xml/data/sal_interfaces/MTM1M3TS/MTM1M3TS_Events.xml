@@ -22,14 +22,40 @@
   </SALEvent>
   <SALEvent>
     <Subsystem>MTM1M3TS</Subsystem>
-    <EFDB_Topic>MTM1M3TS_logevent_appliedSetpoint</EFDB_Topic>
-    <Description>Current target temperature setpoint.</Description>
+    <EFDB_Topic>MTM1M3TS_logevent_appliedSetpoints</EFDB_Topic>
+    <Description>Current glycol loop and FCU heaters target temperature setpoints.</Description>
     <item>
-      <EFDB_Name>setpoint</EFDB_Name>
-      <Description>Applied setpoint.</Description>
+      <EFDB_Name>glycolSetpoint</EFDB_Name>
+      <Description>Applied glycol loop setpoint.</Description>
       <IDL_Type>float</IDL_Type>
       <Units>deg_C</Units>
       <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>heatersSetpoint</EFDB_Name>
+      <Description>Applied FCU heaters setpoint.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>deg_C</Units>
+      <Count>1</Count>
+    </item>
+  </SALEvent>
+  <SALEvent>
+    <Subsystem>MTM1M3TS</Subsystem>
+    <EFDB_Topic>MTM1M3TS_logevent_fcuTargets</EFDB_Topic>
+    <Description>Targets (setpoints) for FCU heaters and fans.</Description>
+    <item>
+      <EFDB_Name>heaterPWM</EFDB_Name>
+      <Description>Target FCUs heater PWM percentage.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>%</Units>
+      <Count>96</Count>
+    </item>
+    <item>
+      <EFDB_Name>fanRPM</EFDB_Name>
+      <Description>Target FCUs fan RPM.</Description>
+      <IDL_Type>int</IDL_Type>
+      <Units>1 / min</Units>
+      <Count>96</Count>
     </item>
   </SALEvent>
   <SALEvent>
@@ -505,74 +531,6 @@
   </SALEvent>
   <SALEvent>
     <Subsystem>MTM1M3TS</Subsystem>
-    <EFDB_Topic>MTM1M3TS_logevent_flowMeterMPUStatus</EFDB_Topic>
-    <Description>Flow meter MPU status and warnings. Send when errors are detected.</Description>
-    <item>
-      <EFDB_Name>instructionPointer</EFDB_Name>
-      <Description>Current MPU instruction pointer.</Description>
-      <IDL_Type>int</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>outputCounter</EFDB_Name>
-      <Description>Current MPU output counter.</Description>
-      <IDL_Type>int</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>inputCounter</EFDB_Name>
-      <Description>Current MPU input counter.</Description>
-      <IDL_Type>int</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>outputTimeouts</EFDB_Name>
-      <Description>Current MPU output timeouts counter.</Description>
-      <IDL_Type>int</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>inputTimeouts</EFDB_Name>
-      <Description>Current MPU input timeouts counter.</Description>
-      <IDL_Type>int</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>instructionPointerOnError</EFDB_Name>
-      <Description>Current MPU instruction pointer when error was detected.</Description>
-      <IDL_Type>int</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>writeTimeout</EFDB_Name>
-      <Description>Current MPU write timeout.</Description>
-      <IDL_Type>int</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>readTimeout</EFDB_Name>
-      <Description>Current MPU read timeout.</Description>
-      <IDL_Type>int</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>errorCode</EFDB_Name>
-      <Description>MPU error code.</Description>
-      <IDL_Type>int</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-  </SALEvent>
-  <SALEvent>
-    <Subsystem>MTM1M3TS</Subsystem>
     <EFDB_Topic>MTM1M3TS_logevent_glycolPumpStatus</EFDB_Topic>
     <Description>Glycol pump status.</Description>
     <item>
@@ -648,74 +606,6 @@
     <item>
       <EFDB_Name>errorCode</EFDB_Name>
       <Description>Motor controller error code. Please see VFD documentation for details.</Description>
-      <IDL_Type>int</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-  </SALEvent>
-  <SALEvent>
-    <Subsystem>MTM1M3TS</Subsystem>
-    <EFDB_Topic>MTM1M3TS_logevent_glycolPumpMPUStatus</EFDB_Topic>
-    <Description>Glycol pump MPU status and warnings. Send when errors are detected.</Description>
-    <item>
-      <EFDB_Name>instructionPointer</EFDB_Name>
-      <Description>Current MPU instruction pointer.</Description>
-      <IDL_Type>int</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>outputCounter</EFDB_Name>
-      <Description>Current MPU output counter.</Description>
-      <IDL_Type>int</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>inputCounter</EFDB_Name>
-      <Description>Current MPU input counter.</Description>
-      <IDL_Type>int</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>outputTimeouts</EFDB_Name>
-      <Description>Current MPU output timeouts counter.</Description>
-      <IDL_Type>int</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>inputTimeouts</EFDB_Name>
-      <Description>Current MPU input timeouts counter.</Description>
-      <IDL_Type>int</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>instructionPointerOnError</EFDB_Name>
-      <Description>Current MPU instruction pointer when error was detected.</Description>
-      <IDL_Type>int</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>writeTimeout</EFDB_Name>
-      <Description>Current MPU write timeout.</Description>
-      <IDL_Type>int</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>readTimeout</EFDB_Name>
-      <Description>Current MPU read timeout.</Description>
-      <IDL_Type>int</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>errorCode</EFDB_Name>
-      <Description>MPU error code.</Description>
       <IDL_Type>int</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
