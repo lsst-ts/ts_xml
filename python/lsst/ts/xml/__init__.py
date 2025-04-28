@@ -25,7 +25,7 @@ if typing.TYPE_CHECKING:
     __version__ = "?"
 else:
     try:
-        from .version import *
+        from .version import __version__
     except ImportError:
         __version__ = "?"
 
