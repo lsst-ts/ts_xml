@@ -204,7 +204,7 @@
   <SALEvent>
     <Subsystem>ATPneumatics</Subsystem>
     <EFDB_Topic>ATPneumatics_logevent_m1VentsPosition</EFDB_Topic>
-    <Description> State of M1 vents: 1:VentsPosition_Opened, 2:VentsPosition_Closed, 3:VentsPosition_PartiallyOpened</Description>
+    <Description>State of M1 vents: 1:VentsPosition_Opened, 2:VentsPosition_Closed, 3:VentsPosition_PartiallyOpened</Description>
     <item>
       <EFDB_Name>position</EFDB_Name>
       <Description>Substate of M1 vents</Description>
@@ -235,6 +235,18 @@
       <Description>Pressure to M2 mirror (Hardware not functional, see DM-20577).</Description>
       <IDL_Type>double</IDL_Type>
       <Units>Pa</Units>
+      <Count>1</Count>
+    </item>
+  </SALEvent>
+  <SALEvent>
+    <Subsystem>ATPneumatics</Subsystem>
+    <EFDB_Topic>ATPneumatics_logevent_crioSummaryState</EFDB_Topic>
+    <Description>Current summary state of the cRIO commanded by this CSC.</Description>
+    <item>
+      <EFDB_Name>summaryState</EFDB_Name>
+      <Description>High level state machine state identifier.</Description>
+      <IDL_Type>long</IDL_Type>
+      <Units>unitless</Units>
       <Count>1</Count>
     </item>
   </SALEvent>
