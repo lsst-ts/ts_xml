@@ -73,6 +73,7 @@ class HardpointActuatorMotionState(enum.IntEnum):
     QUICKPOSITIONING = 3
     FINEPOSITIONING = 4
     WAITINGTENSION = 5
+    WAITINGCOMPRESSION = 6
 
 
 class HardpointTest(enum.IntEnum):
