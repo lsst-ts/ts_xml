@@ -20,6 +20,7 @@
 # along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 from dataclasses import dataclass
+from math import sqrt
 
 __all__ = ["FCUData", "FCUTable", "fcu_from_address"]
 
@@ -31,6 +32,17 @@ class FCUData:
     y_position: float
     z_position: float
     name: str
+
+    def center_distance(self) -> float:
+        """Calculate distance from mirror center. Usefull for obtaining mirror
+        thickness above the FCU input.
+
+        Returns
+        -------
+        distance : float
+            Distance from mirror center in the XY plane.
+        """
+        return sqrt(self.x_position**2 + self.y_position**2)
 
 
 FCUTable = [
