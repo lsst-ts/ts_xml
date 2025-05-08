@@ -22,7 +22,8 @@
 import typing
 import unittest
 
-from lsst.ts.xml.tables.m1m3 import FAIndex, FATable, FCUTable, fill_m1_m3
+from lsst.ts.xml.tables.m1m3 import FAIndex, FATable, FCUTable
+
 from pytest import approx
 
 
