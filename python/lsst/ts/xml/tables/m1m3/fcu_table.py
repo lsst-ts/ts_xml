@@ -22,7 +22,9 @@
 from dataclasses import dataclass
 from math import sqrt
 
-__all__ = ["FCUData", "FCUTable", "fcu_from_address"]
+from . import M3_R
+
+__all__ = ["FCUData", "FCUTable", "fcu_from_address", "fill_m1_m3"]
 
 
 @dataclass
@@ -43,6 +45,26 @@ class FCUData:
             Distance from mirror center in the XY plane.
         """
         return sqrt(self.x_position**2 + self.y_position**2)
+
+    def is_m1(self) -> bool:
+        """Returns true if the given FCU intake is below the M1 surface.
+
+        Returns
+        -------
+        m1 : bool
+            True if the given FCU intake is below the M1 surface.
+        """
+        return self.center_distance() > M3_R
+
+    def is_m3(self) -> bool:
+        """Returns true if the given FCU intake is below the M3 surface.
+
+        Returns
+        -------
+        m3 : bool
+            True if the given FCU intake is below the M3 surface.
+        """
+        return not (self.is_m1())
 
 
 FCUTable = [
@@ -86,7 +108,7 @@ FCUTable = [
     FCUData(37, -3.1091378, 1.149858, 0, "F38"),
     FCUData(38, 3.7607494, 0.2855976, 0, "F39"),
     FCUData(39, 2.774188, 0.3846322, 0, "F40"),
-    FCUData(40, -2.1083778, 0.3846322, 0, "F41"),
+    FCUData(40, 2.1083778, 0.3846322, 0, "F41"),
     FCUData(41, 0.891032, 0.3866134, 0, "F42"),
     FCUData(42, -0.891032, 0.3866134, 0, "F43"),
     FCUData(43, -2.1083778, 0.3846322, 0, "F44"),
@@ -146,4 +168,26 @@ FCUTable = [
 
 
 def fcu_from_address(address: int) -> FCUData:
+    """Returns FCU with the given address."""
     return next(fcu for fcu in FCUTable if fcu.index == address - 1)
+
+
+def fill_m1_m3(m1_value: float, m3_value: float) -> list[float]:
+    """Returns array with values filled for FCUs below M1 and M3. This function
+    should be best used with the heaterFanDemand command, to set different
+    values for the M1 and M3 FCUs.
+
+    Parameters
+    ----------
+    m1_value : float
+        Value to use below the M1 mirror surface.
+    m3_value : float
+        Value to use below the M3 mirror surface.
+
+    Returns
+    -------
+    values : list[float]
+        List of values, containg at indices of FCU below the M1 surface the
+        m1_value, and for those blow the M3 surface the m3_value.
+    """
+    return [m1_value if fcu.is_m1() else m3_value for fcu in FCUTable]

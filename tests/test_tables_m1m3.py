@@ -22,7 +22,7 @@
 import typing
 import unittest
 
-from lsst.ts.xml.tables.m1m3 import FAIndex, FATable, FCUTable
+from lsst.ts.xml.tables.m1m3 import FAIndex, FATable, FCUTable, fill_m1_m3
 from pytest import approx
 
 
@@ -63,6 +63,18 @@ class M1M3FATableTestCase(unittest.TestCase):
     def test_center_distance_fcu(self) -> None:
         assert FCUTable[1].center_distance() == approx(3.78, 0.01)
         assert FCUTable[95].center_distance() == approx(3.96, 0.01)
+
+    def test_fcu_is_m1_m3(self) -> None:
+        assert FCUTable[1].is_m1() is True
+        assert FCUTable[42].is_m1() is False
+
+        assert FCUTable[94].is_m3() is False
+        assert FCUTable[41].is_m3() is True
+
+    def test_fill_m1_m3(self) -> None:
+        data = fill_m1_m3(1, 2)
+        for fcu in FCUTable:
+            assert data[fcu.index] == 1 if fcu.is_m1() else 2
 
 
 if __name__ == "__main__":
