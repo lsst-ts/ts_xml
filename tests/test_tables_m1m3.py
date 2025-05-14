@@ -22,7 +22,16 @@
 import typing
 import unittest
 
-from lsst.ts.xml.tables.m1m3 import FAIndex, FATable, FCUTable, fill_m1_m3
+from lsst.ts.xml.tables.m1m3 import (
+    FAIndex,
+    FATable,
+    FCUTable,
+    Level,
+    Scanner,
+    ThermocoupleTable,
+    fill_m1_m3,
+    find_thermocouple,
+)
 from pytest import approx
 
 
@@ -75,6 +84,27 @@ class M1M3FATableTestCase(unittest.TestCase):
         data = fill_m1_m3(1, 2)
         for fcu in FCUTable:
             assert data[fcu.index] == 1 if fcu.is_m1() else 2
+
+    def test_thermocouple_table(self) -> None:
+        assert len([t for t in ThermocoupleTable if t.scanner == Scanner.TS_01]) == 37
+        assert len([t for t in ThermocoupleTable if t.scanner == Scanner.TS_02]) == 36
+        assert len([t for t in ThermocoupleTable if t.scanner == Scanner.TS_03]) == 37
+        assert len([t for t in ThermocoupleTable if t.scanner == Scanner.TS_04]) == 36
+
+        assert len([t for t in ThermocoupleTable if t.level == Level.FRONT]) == 50
+        assert len([t for t in ThermocoupleTable if t.level == Level.MIDDLE]) == 26
+        assert len([t for t in ThermocoupleTable if t.level == Level.BACK]) == 70
+
+        assert find_thermocouple(Scanner.TS_04, 0) is None
+        assert find_thermocouple(Scanner.TS_02, 18) is None
+
+        tc = find_thermocouple(Scanner.TS_01, 37)
+        assert tc is not None
+        assert tc.index == 8
+
+        tc = find_thermocouple(Scanner.TS_04, 39)
+        assert tc is not None
+        assert tc.index == 145
 
 
 if __name__ == "__main__":
