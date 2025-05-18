@@ -22,7 +22,7 @@
 import enum
 from dataclasses import dataclass
 
-__all__ = ["ThermocoupleTable"]
+__all__ = ["ThermocoupleTable", "find_thermocouple"]
 
 
 class Scanner(enum.IntEnum):
@@ -32,6 +32,12 @@ class Scanner(enum.IntEnum):
     TS_02 = 115
     TS_03 = 116
     TS_04 = 117
+
+
+class Level(enum.StrEnum):
+    FRONT = "F"
+    MIDDLE = "M"
+    BACK = "B"
 
 
 @dataclass
@@ -55,8 +61,23 @@ class ThermocoupleData:
     z_position: float
     name: str
     core_location: str
-    scanner: int
+    scanner: Scanner
     channel: int
+
+    @property
+    def level(self) -> Level:
+        if self.name[-1].isnumeric():
+            return Level(self.name[-2])
+        return Level(self.name[-1])
+
+    def is_front(self) -> bool:
+        return self.level == Level.FRONT
+
+    def is_middle(self) -> bool:
+        return self.level == Level.MIDDLE
+
+    def is_back(self) -> bool:
+        return self.level == Level.BACK
 
 
 ThermocoupleTable = [
@@ -219,3 +240,14 @@ ThermocoupleTable = [
     ThermocoupleData(144, 0, 0, 0, "MTC040M", "F111", Scanner.TS_04, 38),
     ThermocoupleData(145, 0, 0, 0, "MTC040F", "F111", Scanner.TS_04, 39),
 ]
+
+
+def find_thermocouple(scanner: Scanner, channel: int) -> ThermocoupleData | None:
+    try:
+        return next(
+            tc
+            for tc in ThermocoupleTable
+            if tc.scanner == scanner and tc.channel == channel
+        )
+    except StopIteration:
+        return None
