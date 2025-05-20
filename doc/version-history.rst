@@ -15,6 +15,41 @@ Version History
 
 .. towncrier release notes start
 
+v23.2.0 (2025-05-20)
+====================
+Package Level
+-------------
+
+Bug Fixes
+~~~~~~~~~
+
+- Fixed issue with version file. (`DM-50524 <https://rubinobs.atlassian.net/browse/DM-50524>`_)
+- Fixed issue with version import in __init__.py. (`DM-50524 <https://rubinobs.atlassian.net/browse/DM-50524>`_)
+
+
+Other Changes and Additions
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+- FCUTable center_distance method, revive MTM1M3TS.applySetpoint command (`DM-50734 <https://rubinobs.atlassian.net/browse/DM-50734>`_)
+
+
+Interface Changes
+-----------------
+
+MTM1M3
+~~~~~~
+
+- * distance method for M1M3 FA data (class). (`DM-48237-II <https://rubinobs.atlassian.net/browse/DM-48237-II>`_)
+
+
+MTM1M3TS
+~~~~~~~~
+
+- Add FCU heater target temperature to the M1M3TS applySetpoint command. (`DM-49538 <https://rubinobs.atlassian.net/browse/DM-49538>`_)
+- * Event for target FCU values.
+  * Split logging of glycol and FCU heater's target temperatures. (`DM-49538-II <https://rubinobs.atlassian.net/browse/DM-49538-II>`_)
+
+
 v23.1.0 (2025-03-19)
 ====================
 Package Level
