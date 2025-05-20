@@ -19,6 +19,15 @@
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+"""M1 radius in m."""
+M1_R = 4.1988
+
+"""M3 Radius in m."""
+M3_R = 2.5337
+
+"""Radisu of center hole in m."""
+CENTER_HOLE_R = 1.0547 / 2.0
+
 from .fa_table import (
     FATABLE_XFA,
     FATABLE_YFA,
@@ -33,4 +42,4 @@ from .fa_table import (
     actuator_id_to_index,
     force_actuator_from_id,
 )
-from .fcu_table import FCUData, FCUTable, fcu_from_address
+from .fcu_table import FCUData, FCUTable, fcu_from_address, fill_m1_m3
