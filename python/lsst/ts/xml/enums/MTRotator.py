@@ -115,6 +115,8 @@ class ErrorCode(enum.IntEnum):
 
     The values are:
 
+    * INTERLOCK_OPEN: The safety interlock was open. Note the value here is to
+      align with the MTHexapod.
     * CONTROLLER_FAULT: The low-level controller went to fault state.
       Note that the CSC will trigger this if the camera cable wrap is not
       following closely enough, or if a user issues the ``fault`` command.
@@ -132,6 +134,7 @@ class ErrorCode(enum.IntEnum):
     * FAIL_TO_UNLOCK: Fail to unlock the rotator motion.
     """
 
+    INTERLOCK_OPEN = -3
     CONTROLLER_FAULT = 1
     CONNECTION_LOST = 2
     NO_CONFIG = 3

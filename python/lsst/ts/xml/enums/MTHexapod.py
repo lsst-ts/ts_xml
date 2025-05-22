@@ -76,6 +76,10 @@ class ErrorCode(enum.IntEnum):
 
     The values are:
 
+    * INTERLOCK_OPEN: The safety interlock was open.
+    * COMPENSATION_FAULT: The compensation failed.
+    * CAMERA_FILTER_MONITOR_FAULT: The camera filter monitor reported an
+      fault.
     * CONTROLLER_FAULT: The low-level controller went to fault state.
     * CONNECTION_LOST: The CSC lost communication with the low-level
       controller.
@@ -83,6 +87,9 @@ class ErrorCode(enum.IntEnum):
       controller shortly after connecting to it.
     """
 
+    INTERLOCK_OPEN = -3
+    COMPENSATION_FAULT = -2
+    CAMERA_FILTER_MONITOR_FAULT = -1
     CONTROLLER_FAULT = 1
     CONNECTION_LOST = 2
     NO_CONFIG = 3

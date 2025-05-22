@@ -22,7 +22,17 @@
 import typing
 import unittest
 
-from lsst.ts.xml.tables.m1m3 import FAIndex, FATable, FCUTable, fill_m1_m3
+from lsst.ts.xml.tables.m1m3 import (
+    FAIndex,
+    FATable,
+    FCUTable,
+    Level,
+    Scanner,
+    ThermocoupleTable,
+    calibration_pairs,
+    fill_m1_m3,
+    find_thermocouple,
+)
 from pytest import approx
 
 
@@ -75,6 +85,44 @@ class M1M3FATableTestCase(unittest.TestCase):
         data = fill_m1_m3(1, 2)
         for fcu in FCUTable:
             assert data[fcu.index] == 1 if fcu.is_m1() else 2
+
+    def test_thermocouple_table(self) -> None:
+        assert len([t for t in ThermocoupleTable if t.scanner == Scanner.TS_01]) == 37
+        assert len([t for t in ThermocoupleTable if t.scanner == Scanner.TS_02]) == 36
+        assert len([t for t in ThermocoupleTable if t.scanner == Scanner.TS_03]) == 37
+        assert len([t for t in ThermocoupleTable if t.scanner == Scanner.TS_04]) == 36
+
+        assert len([t for t in ThermocoupleTable if t.level == Level.FRONT]) == 50
+        assert len([t for t in ThermocoupleTable if t.level == Level.MIDDLE]) == 26
+        assert len([t for t in ThermocoupleTable if t.level == Level.BACK]) == 70
+
+        assert find_thermocouple(Scanner.TS_04, 0) is None
+        assert find_thermocouple(Scanner.TS_02, 18) is None
+
+        tc = find_thermocouple(Scanner.TS_01, 37)
+        assert tc is not None
+        assert tc.index == 8
+
+        tc = find_thermocouple(Scanner.TS_04, 39)
+        assert tc is not None
+        assert tc.index == 145
+
+        assert find_thermocouple(Scanner.TS_01, 28).is_calibration() is False
+        assert find_thermocouple(Scanner.TS_01, 29).is_calibration() is True
+
+        assert find_thermocouple(Scanner.TS_04, 37).is_calibration() is True
+        assert find_thermocouple(Scanner.TS_04, 39).is_calibration() is False
+
+        assert len([tc for tc in ThermocoupleTable if tc.is_calibration()]) == 16
+        assert len(calibration_pairs()) == 8
+
+        for cp in calibration_pairs():
+            assert cp[0].name[:-1] == cp[1].name[:-1]
+            assert cp[0].core_location == cp[1].core_location
+            assert cp[0].x_position == cp[1].x_position
+            assert cp[0].y_position == cp[1].y_position
+            assert cp[0].z_position == cp[1].z_position
+            assert cp[0].scanner != cp[1].scanner
 
 
 if __name__ == "__main__":
