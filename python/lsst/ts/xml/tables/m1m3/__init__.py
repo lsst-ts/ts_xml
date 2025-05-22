@@ -48,5 +48,6 @@ from .thermocouple_table import (
     Scanner,
     ThermocoupleData,
     ThermocoupleTable,
+    calibration_pairs,
     find_thermocouple,
 )

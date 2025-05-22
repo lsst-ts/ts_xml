@@ -22,7 +22,7 @@
 import enum
 from dataclasses import dataclass
 
-__all__ = ["ThermocoupleTable", "find_thermocouple"]
+__all__ = ["ThermocoupleTable", "find_thermocouple", "calibration_pairs"]
 
 
 class Scanner(enum.IntEnum):
@@ -134,14 +134,14 @@ ThermocoupleTable = [
     #
     # Thermal Scanner 1
     #
-    ThermocoupleData(0, 1.16550, 1.24874, 0, "MTC038B1", "F64", Scanner.TS_01, 27),
-    ThermocoupleData(1, 1.16550, 1.24874, 0.409, "MTC038F", "F64", Scanner.TS_01, 28),
-    ThermocoupleData(2, 2.49710, 2.40198, 0, "MTC040B2", "F111", Scanner.TS_01, 29),
-    ThermocoupleData(3, 1.670, 2.499, 0, "MTC041B1", "F157", Scanner.TS_01, 31),
-    ThermocoupleData(4, 1.00404, 2.30642, 0, "MTC043B", "F169", Scanner.TS_01, 33),
-    ThermocoupleData(5, 1.00404, 2.30642, 0.612, "MTC043F", "F169", Scanner.TS_01, 34),
-    ThermocoupleData(6, 1.33444, 2.88303, 0, "MTC042B", "F200", Scanner.TS_01, 35),
-    ThermocoupleData(7, 1.89106, 3.74709, 0, "MTCOW11B", "F228", Scanner.TS_01, 36),
+    ThermocoupleData(0, 1.166, 1.249, 0, "MTC038B1", "F64", Scanner.TS_01, 27),
+    ThermocoupleData(1, 1.166, 1.249, 0.409, "MTC038F", "F64", Scanner.TS_01, 28),
+    ThermocoupleData(2, 2.497, 2.402, 0, "MTC040B2", "F111", Scanner.TS_01, 29),
+    ThermocoupleData(3, 1.670, 2.499, 0, "MTC041B", "F157", Scanner.TS_01, 31),
+    ThermocoupleData(4, 1.004, 2.306, 0, "MTC043B", "F169", Scanner.TS_01, 33),
+    ThermocoupleData(5, 1.004, 2.306, 0.612, "MTC043F", "F169", Scanner.TS_01, 34),
+    ThermocoupleData(6, 1.334, 2.883, 0, "MTC042B", "F200", Scanner.TS_01, 35),
+    ThermocoupleData(7, 1.891, 3.747, 0, "MTCOW11B", "F228", Scanner.TS_01, 36),
     ThermocoupleData(8, 1.891, 3.747, 0.440, "MTCOW11M", "F228", Scanner.TS_01, 37),
     ThermocoupleData(9, 1.891, 3.747, 0.880, "MTCOW11F", "F228", Scanner.TS_01, 38),
     ThermocoupleData(10, 1.081, 3.267, 0, "MTC044B", "F234", Scanner.TS_01, 39),
@@ -316,3 +316,29 @@ def find_thermocouple(scanner: Scanner, channel: int) -> ThermocoupleData | None
         )
     except StopIteration:
         return None
+
+
+def calibration_pairs() -> list[tuple[ThermocoupleData, ThermocoupleData]]:
+    """Find and returns calibration pairs of thermocouples.
+
+    Returns
+    -------
+    calibration_pairs : list[tuple[ThermocoupleData, ThermocoupleData]]
+        Pairs of calibration TCs.
+    """
+    calib_tc = [tc for tc in ThermocoupleTable if tc.is_calibration()]
+    pairs: list[tuple[ThermocoupleData, ThermocoupleData]] = []
+    for i, tc in enumerate(calib_tc):
+        try:
+            # ignore if already processed
+            next(p for p in pairs if p[1].name.startswith(tc.name[:-1]))
+        except StopIteration:
+            try:
+                # find
+                c_p = next(
+                    c for c in calib_tc[i + 1 :] if c.name.startswith(tc.name[:-1])
+                )
+                pairs.append((tc, c_p))
+            except StopIteration:
+                raise Exception(f"Cannot find pair for {tc.name}.")
+    return pairs
