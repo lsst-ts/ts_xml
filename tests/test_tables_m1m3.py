@@ -106,6 +106,12 @@ class M1M3FATableTestCase(unittest.TestCase):
         assert tc is not None
         assert tc.index == 145
 
+        assert find_thermocouple(Scanner.TS_01, 28).is_calibration() is False
+        assert find_thermocouple(Scanner.TS_01, 31).is_calibration() is True
+
+        assert find_thermocouple(Scanner.TS_04, 37).is_calibration() is True
+        assert find_thermocouple(Scanner.TS_04, 39).is_calibration() is False
+
 
 if __name__ == "__main__":
     unittest.main()
