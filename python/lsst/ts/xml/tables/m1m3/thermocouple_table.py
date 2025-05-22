@@ -35,6 +35,8 @@ class Scanner(enum.IntEnum):
 
 
 class Level(enum.StrEnum):
+    """Level of the thermocouple."""
+
     FRONT = "F"
     MIDDLE = "M"
     BACK = "B"
@@ -47,12 +49,23 @@ class ThermocoupleData:
     Attributes
     ----------
     index : int
+        Thermocouple's index, 0 - 145
     x_position : float
+        Thermocouple's X position in the mirror, in meters.
     y_position : float
+        Thermocouple's Y position in the mirror, in meters.
     z_position : float
+        Thermocouple's Z position in the mirror, in meters.
     name : str
-    scanner : int
+        Thermocouple's name, extracted from the spec sheets. Contains cell in
+        which the thermocouple is located. If that ends with 1 or 2, the
+        thermocouple is one of the few used to cross-calibrate the thermal
+        scanners.
+    scanner : Scanner
+        Scanner unit. There are four scanners in the mirror.
     channel : int
+        Channel number inside the scanner. 1 -~46. There are 95 channels in
+        total. Channel 0 is always reference (cold junction temperature).
     """
 
     index: int
@@ -66,18 +79,55 @@ class ThermocoupleData:
 
     @property
     def level(self) -> Level:
-        if self.name[-1].isnumeric():
+        """Level at which the thermocouple is located."""
+        if self.is_calibration():
             return Level(self.name[-2])
         return Level(self.name[-1])
 
     def is_front(self) -> bool:
+        """Returns True when the thermocouple is in front (nearest the mirror
+        active surface)
+
+        Returns
+        -------
+        front : bool
+            True if the TC is in front, closest to the mirror active surface.
+        """
         return self.level == Level.FRONT
 
     def is_middle(self) -> bool:
+        """Returns True when the thermocouple is in middle (at midpoint between
+        fron and back TC).
+
+        Returns
+        -------
+        middle : bool
+            True if the TC is in midpoint between front and back TCs.
+        """
         return self.level == Level.MIDDLE
 
     def is_back(self) -> bool:
+        """Returns True when the thermocouple is in back (closed to the FCUs)
+
+        Returns
+        -------
+        back : bool
+            True if the TC is in back, closest to the FCUs and static support
+            system coils.
+        """
         return self.level == Level.BACK
+
+    def is_calibration(self) -> bool:
+        """Returns true if the TC is calibration TC, sharing location with TC
+        connected to another scanner unit.
+
+        Returns
+        -------
+        caliration : bool
+            True if the TC is calibration TC, sharing location with another TC
+            connected to a different scanner unit.
+        """
+        return self.name[-1].isnumeric()
 
 
 ThermocoupleTable = [
@@ -91,75 +141,75 @@ ThermocoupleTable = [
     ThermocoupleData(4, 1.00404, 2.30642, 0, "MTC043B", "F169", Scanner.TS_01, 33),
     ThermocoupleData(5, 1.00404, 2.30642, 0, "MTC043F", "F169", Scanner.TS_01, 34),
     ThermocoupleData(6, 1.33444, 2.88303, 0, "MTC042B", "F200", Scanner.TS_01, 35),
-    ThermocoupleData(7, 3.74709, 1.89106, 0, "MTCOW11B", "F228", Scanner.TS_01, 36),
-    ThermocoupleData(8, 0, 0, 0, "MTCOW11M", "F228", Scanner.TS_01, 37),
-    ThermocoupleData(9, 0, 0, 0, "MTCOW11F", "F228", Scanner.TS_01, 38),
-    ThermocoupleData(10, 0, 0, 0, "MTC044B", "F234", Scanner.TS_01, 39),
-    ThermocoupleData(11, 0, 0, 0, "MTC044F", "F234", Scanner.TS_01, 40),
-    ThermocoupleData(12, 0, 0, 0, "MTCOW12B", "F275", Scanner.TS_01, 43),
-    ThermocoupleData(13, 0, 0, 0, "MTCOW12M", "F275", Scanner.TS_01, 44),
-    ThermocoupleData(14, 0, 0, 0, "MTCOW12F", "F275", Scanner.TS_01, 45),
-    ThermocoupleData(15, 0, 0, 0, "MTCIW1B", "A1", Scanner.TS_01, 1),
-    ThermocoupleData(16, 0, 0, 0, "MTCIW1F", "A1", Scanner.TS_01, 2),
-    ThermocoupleData(17, 0, 0, 0, "MTC001B", "A7", Scanner.TS_01, 3),
-    ThermocoupleData(18, 0, 0, 0, "MTC001M", "A7", Scanner.TS_01, 4),
-    ThermocoupleData(19, 0, 0, 0, "MTC001F", "A7", Scanner.TS_01, 5),
-    ThermocoupleData(20, 0, 0, 0, "MTC002B", "A49", Scanner.TS_01, 7),
-    ThermocoupleData(21, 0, 0, 0, "MTC002F", "A49", Scanner.TS_01, 8),
-    ThermocoupleData(22, 0, 0, 0, "MTC003B", "A127", Scanner.TS_01, 9),
-    ThermocoupleData(23, 0, 0, 0, "MTC003F", "A127", Scanner.TS_01, 10),
-    ThermocoupleData(24, 0, 0, 0, "MTC007B1", "A133", Scanner.TS_01, 13),
-    ThermocoupleData(25, 0, 0, 0, "MTC007F", "A133", Scanner.TS_01, 14),
-    ThermocoupleData(26, 0, 0, 0, "MTC004B", "A157", Scanner.TS_01, 15),
-    ThermocoupleData(27, 0, 0, 0, "MTC006B", "A169", Scanner.TS_01, 16),
-    ThermocoupleData(28, 0, 0, 0, "MTC006M", "A169", Scanner.TS_01, 17),
-    ThermocoupleData(29, 0, 0, 0, "MTC006F", "A169", Scanner.TS_01, 18),
-    ThermocoupleData(30, 0, 0, 0, "MTC005B", "A200", Scanner.TS_01, 19),
-    ThermocoupleData(31, 0, 0, 0, "MTCOW1B", "A205", Scanner.TS_01, 20),
-    ThermocoupleData(32, 0, 0, 0, "MTCOW1M", "A205", Scanner.TS_01, 21),
-    ThermocoupleData(33, 0, 0, 0, "MTCOW1F", "A205", Scanner.TS_01, 22),
-    ThermocoupleData(34, 0, 0, 0, "MTC008B1", "A234", Scanner.TS_01, 24),
-    ThermocoupleData(35, 0, 0, 0, "MTC008M", "A234", Scanner.TS_01, 25),
-    ThermocoupleData(36, 0, 0, 0, "MTC008F", "A234", Scanner.TS_01, 26),
+    ThermocoupleData(7, 1.89106, 3.74709, 0, "MTCOW11B", "F228", Scanner.TS_01, 36),
+    ThermocoupleData(8, 1.891, 3.747, 0.440, "MTCOW11M", "F228", Scanner.TS_01, 37),
+    ThermocoupleData(9, 1.891, 3.747, 0.880, "MTCOW11F", "F228", Scanner.TS_01, 38),
+    ThermocoupleData(10, 1.081, 3.267, 0, "MTC044B", "F234", Scanner.TS_01, 39),
+    ThermocoupleData(11, 1.001, 3.267, 0.739, "MTC044F", "F234", Scanner.TS_01, 40),
+    ThermocoupleData(12, 0.144, 4.154, 0, "MTCOW12B", "F275", Scanner.TS_01, 43),
+    ThermocoupleData(13, 0.144, 4.154, 0.440, "MTCOW12M", "F275", Scanner.TS_01, 44),
+    ThermocoupleData(14, 0.144, 4.154, 0.880, "MTCOW12F", "F275", Scanner.TS_01, 45),
+    ThermocoupleData(15, 0, 0.555, 0, "MTCIW1B", "A1", Scanner.TS_01, 1),
+    ThermocoupleData(16, 0, 0.555, 0.237, "MTCIW1F", "A1", Scanner.TS_01, 2),
+    ThermocoupleData(17, 0, 1.918, 0, "MTC001B", "A7", Scanner.TS_01, 3),
+    ThermocoupleData(18, 0, 1.918, 0.205, "MTC001M", "A7", Scanner.TS_01, 4),
+    ThermocoupleData(19, 0, 1.918, 0.409, "MTC001F", "A7", Scanner.TS_01, 5),
+    ThermocoupleData(20, -0.332, 2.499, 0, "MTC002B", "A49", Scanner.TS_01, 7),
+    ThermocoupleData(21, -0.332, 2.499, 0.612, "MTC002F", "A49", Scanner.TS_01, 8),
+    ThermocoupleData(22, -0.993, 3.267, 0, "MTC003B", "A127", Scanner.TS_01, 9),
+    ThermocoupleData(23, -0.993, 3.267, 0.739, "MTC003F", "A127", Scanner.TS_01, 10),
+    ThermocoupleData(24, -1.166, 1.249, 0, "MTC007B1", "A133", Scanner.TS_01, 13),
+    ThermocoupleData(25, -1.166, 1.249, 0.409, "MTC007F", "A133", Scanner.TS_01, 14),
+    ThermocoupleData(26, -1.326, 2.691, 0, "MTC004B", "A157", Scanner.TS_01, 15),
+    ThermocoupleData(27, -1.498, 2.019, 0, "MTC006B", "A169", Scanner.TS_01, 16),
+    ThermocoupleData(28, -1.498, 2.019, 0.306, "MTC006M", "A169", Scanner.TS_01, 17),
+    ThermocoupleData(29, -1.498, 2.019, 0.612, "MTC006F", "A169", Scanner.TS_01, 18),
+    ThermocoupleData(30, -1.831, 2.595, 0, "MTC005B", "A200", Scanner.TS_01, 19),
+    ThermocoupleData(31, -1.916, 3.682, 0, "MTCOW1B", "A205", Scanner.TS_01, 20),
+    ThermocoupleData(32, -1.916, 3.682, 0.440, "MTCOW1M", "A205", Scanner.TS_01, 21),
+    ThermocoupleData(33, -1.916, 3.682, 0.880, "MTCOW1F", "A205", Scanner.TS_01, 22),
+    ThermocoupleData(34, -2.330, 2.499, 0, "MTC008B1", "A234", Scanner.TS_01, 24),
+    ThermocoupleData(35, -2.330, 2.499, 0.370, "MTC008M", "A234", Scanner.TS_01, 25),
+    ThermocoupleData(36, -2.330, 2.499, 0.739, "MTC008F", "A234", Scanner.TS_01, 26),
     #
     # Thermal Scanner 2
     #
-    ThermocoupleData(37, 0, 0, 0, "MTC007B2", "A133", Scanner.TS_02, 1),
-    ThermocoupleData(38, 0, 0, 0, "MTC008B2", "A234", Scanner.TS_02, 2),
-    ThermocoupleData(39, 0, 0, 0, "MTCIW2B", "B1", Scanner.TS_02, 5),
-    ThermocoupleData(40, 0, 0, 0, "MTCIW2F", "B1", Scanner.TS_02, 6),
-    ThermocoupleData(41, 0, 0, 0, "MTCOW2B", "B19", Scanner.TS_02, 7),
-    ThermocoupleData(42, 0, 0, 0, "MTCOW2M", "B19", Scanner.TS_02, 8),
-    ThermocoupleData(43, 0, 0, 0, "MTCOW2F", "B19", Scanner.TS_02, 9),
-    ThermocoupleData(44, 0, 0, 0, "MTC009B", "B49", Scanner.TS_02, 10),
-    ThermocoupleData(45, 0, 0, 0, "MTC009F", "B49", Scanner.TS_02, 11),
-    ThermocoupleData(46, 0, 0, 0, "MTC011B", "B102", Scanner.TS_02, 12),
-    ThermocoupleData(47, 0, 0, 0, "MTC011M", "B102", Scanner.TS_02, 13),
-    ThermocoupleData(48, 0, 0, 0, "MTC011F", "B102", Scanner.TS_02, 14),
-    ThermocoupleData(49, 0, 0, 0, "MTC010B", "B111", Scanner.TS_02, 15),
-    ThermocoupleData(50, 0, 0, 0, "MTC010F", "B111", Scanner.TS_02, 16),
-    ThermocoupleData(51, 0, 0, 0, "MTC012B", "B157", Scanner.TS_02, 17),
-    ThermocoupleData(52, 0, 0, 0, "MTC014B", "B169", Scanner.TS_02, 19),
-    ThermocoupleData(53, 0, 0, 0, "MTC014F", "B169", Scanner.TS_02, 20),
-    ThermocoupleData(54, 0, 0, 0, "MTC013B", "B200", Scanner.TS_02, 21),
-    ThermocoupleData(55, 0, 0, 0, "MTCOW3B", "B217", Scanner.TS_02, 22),
-    ThermocoupleData(56, 0, 0, 0, "MTCOW3M", "B217", Scanner.TS_02, 24),
-    ThermocoupleData(57, 0, 0, 0, "MTCOW3F", "B217", Scanner.TS_02, 25),
-    ThermocoupleData(58, 0, 0, 0, "MTC015B", "B234", Scanner.TS_02, 27),
-    ThermocoupleData(59, 0, 0, 0, "MTC015F", "B234", Scanner.TS_02, 29),
-    ThermocoupleData(60, 0, 0, 0, "MTCOW4B", "B275", Scanner.TS_02, 30),
-    ThermocoupleData(61, 0, 0, 0, "MTCOW4M", "B275", Scanner.TS_02, 31),
-    ThermocoupleData(62, 0, 0, 0, "MTCOW4F", "B275", Scanner.TS_02, 32),
-    ThermocoupleData(63, 0, 0, 0, "MTCIW3B", "C1", Scanner.TS_02, 34),
-    ThermocoupleData(64, 0, 0, 0, "MTCIW3M", "C1", Scanner.TS_02, 35),
-    ThermocoupleData(65, 0, 0, 0, "MTCIW3F", "C1", Scanner.TS_02, 36),
-    ThermocoupleData(66, 0, 0, 0, "MTC016B", "C49", Scanner.TS_02, 37),
-    ThermocoupleData(67, 0, 0, 0, "MTC016M", "C49", Scanner.TS_02, 38),
-    ThermocoupleData(68, 0, 0, 0, "MTC016F", "C49", Scanner.TS_02, 39),
-    ThermocoupleData(69, 0, 0, 0, "MTC017B2", "C64", Scanner.TS_02, 40),
-    ThermocoupleData(70, 0, 0, 0, "MTC018B1", "C111", Scanner.TS_02, 41),
-    ThermocoupleData(71, 0, 0, 0, "MTC018M", "C111", Scanner.TS_02, 42),
-    ThermocoupleData(72, 0, 0, 0, "MTC018F", "C111", Scanner.TS_02, 43),
+    ThermocoupleData(37, -1.166, 1.249, 0, "MTC007B2", "A133", Scanner.TS_02, 1),
+    ThermocoupleData(38, -2.330, 2.499, 0, "MTC008B2", "A234", Scanner.TS_02, 2),
+    ThermocoupleData(39, -0.504, 0.286, 0, "MTCIW2B", "B1", Scanner.TS_02, 5),
+    ThermocoupleData(40, -0.504, 0.286, 0.237, "MTCIW2F", "B1", Scanner.TS_02, 6),
+    ThermocoupleData(41, -3.633, 2.009, 0, "MTCOW2B", "B19", Scanner.TS_02, 7),
+    ThermocoupleData(42, -3.633, 2.009, 0.440, "MTCOW2M", "B19", Scanner.TS_02, 8),
+    ThermocoupleData(43, -3.633, 2.009, 0.880, "MTCOW2F", "B19", Scanner.TS_02, 9),
+    ThermocoupleData(44, -2.330, -0.961, 0, "MTC009B", "B49", Scanner.TS_02, 10),
+    ThermocoupleData(45, -2.330, -0.961, 0.612, "MTC009F", "B49", Scanner.TS_02, 11),
+    ThermocoupleData(46, -1.829, 0.099, 0, "MTC011B", "B102", Scanner.TS_02, 12),
+    ThermocoupleData(47, -1.829, 0.099, 0.205, "MTC011M", "B102", Scanner.TS_02, 13),
+    ThermocoupleData(48, -1.829, 0.099, 0.409, "MTC011F", "B102", Scanner.TS_02, 14),
+    ThermocoupleData(49, -3.324, 0.961, 0, "MTC010B", "B111", Scanner.TS_02, 15),
+    ThermocoupleData(50, -3.324, 0.961, 0.739, "MTC010F", "B111", Scanner.TS_02, 16),
+    ThermocoupleData(51, -2.991, 0.192, 0, "MTC012B", "B157", Scanner.TS_02, 17),
+    ThermocoupleData(52, -2.491, -0.288, 0, "MTC014B", "B169", Scanner.TS_02, 19),
+    ThermocoupleData(53, -2.491, -0.288, 0.612, "MTC014F", "B169", Scanner.TS_02, 20),
+    ThermocoupleData(54, -3.160, -0.288, 0, "MTC013B", "B200", Scanner.TS_02, 21),
+    ThermocoupleData(55, -4.138, 0.057, 0, "MTCOW3B", "B217", Scanner.TS_02, 22),
+    ThermocoupleData(56, -4.138, 0.057, 0.440, "MTCOW3M", "B217", Scanner.TS_02, 24),
+    ThermocoupleData(57, -4.138, 0.057, 0.880, "MTCOW3F", "B217", Scanner.TS_02, 25),
+    ThermocoupleData(58, -3.326, -0.769, 0, "MTC015B", "B234", Scanner.TS_02, 27),
+    ThermocoupleData(59, -3.326, -0.769, 0.739, "MTC015F", "B234", Scanner.TS_02, 29),
+    ThermocoupleData(60, -3.651, -2.009, 0, "MTCOW4B", "B275", Scanner.TS_02, 30),
+    ThermocoupleData(61, -3.651, -2.009, 0.440, "MTCOW4M", "B275", Scanner.TS_02, 31),
+    ThermocoupleData(62, -3.651, -2.009, 0.880, "MTCOW4F", "B275", Scanner.TS_02, 32),
+    ThermocoupleData(63, -0.480, -0.336, 0, "MTCIW3B", "C1", Scanner.TS_02, 34),
+    ThermocoupleData(64, -0.480, -0.336, 0.119, "MTCIW3M", "C1", Scanner.TS_02, 35),
+    ThermocoupleData(65, -0.480, -0.336, 0.237, "MTCIW3F", "C1", Scanner.TS_02, 36),
+    ThermocoupleData(66, -1.997, -1.538, 0, "MTC016B", "C49", Scanner.TS_02, 37),
+    ThermocoupleData(67, -1.997, -1.538, 0.306, "MTC016M", "C49", Scanner.TS_02, 38),
+    ThermocoupleData(68, -1.997, -1.538, 0.612, "MTC016F", "C49", Scanner.TS_02, 39),
+    ThermocoupleData(69, -1.166, -1.249, 0, "MTC017B2", "C64", Scanner.TS_02, 40),
+    ThermocoupleData(70, -2.497, 2.402, 0, "MTC018B1", "C111", Scanner.TS_02, 41),
+    ThermocoupleData(71, -2.497, 2.402, 0.370, "MTC018M", "C111", Scanner.TS_02, 42),
+    ThermocoupleData(72, -2.497, 2.402, 0.739, "MTC018F", "C111", Scanner.TS_02, 43),
     #
     # Thermal Scanner 3
     #
@@ -243,6 +293,21 @@ ThermocoupleTable = [
 
 
 def find_thermocouple(scanner: Scanner, channel: int) -> ThermocoupleData | None:
+    """Return ThermocoupleData at given scanner and channel location.
+
+    Parameters
+    ----------
+    scanner : Scanner
+        Scanner unit - one of the Scanner enum values.
+    channel : int
+        Channel index. Channel 0 at every scanner is a thermal junction, for
+        which None is returned.
+    Returns
+    -------
+    tc : ThermocoupleData | None
+        ThermocoupleData associated with TC at given scanner and channel. None
+        if such TC doesn't exists.
+    """
     try:
         return next(
             tc
