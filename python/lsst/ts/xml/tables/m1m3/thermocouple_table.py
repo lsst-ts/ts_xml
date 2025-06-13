@@ -207,9 +207,9 @@ ThermocoupleTable = [
     ThermocoupleData(67, -1.997, -1.538, 0.306, "MTC016M", "C49", Scanner.TS_02, 38),
     ThermocoupleData(68, -1.997, -1.538, 0.612, "MTC016F", "C49", Scanner.TS_02, 39),
     ThermocoupleData(69, -1.166, -1.249, 0, "MTC017B2", "C64", Scanner.TS_02, 40),
-    ThermocoupleData(70, -2.497, 2.402, 0, "MTC018B1", "C111", Scanner.TS_02, 41),
-    ThermocoupleData(71, -2.497, 2.402, 0.370, "MTC018M", "C111", Scanner.TS_02, 42),
-    ThermocoupleData(72, -2.497, 2.402, 0.739, "MTC018F", "C111", Scanner.TS_02, 43),
+    ThermocoupleData(70, -2.497, -2.402, 0, "MTC018B1", "C111", Scanner.TS_02, 41),
+    ThermocoupleData(71, -2.497, -2.402, 0.370, "MTC018M", "C111", Scanner.TS_02, 42),
+    ThermocoupleData(72, -2.497, -2.402, 0.739, "MTC018F", "C111", Scanner.TS_02, 43),
     #
     # Thermal Scanner 3
     #
