@@ -207,15 +207,15 @@ ThermocoupleTable = [
     ThermocoupleData(67, -1.997, -1.538, 0.306, "MTC016M", "C49", Scanner.TS_02, 38),
     ThermocoupleData(68, -1.997, -1.538, 0.612, "MTC016F", "C49", Scanner.TS_02, 39),
     ThermocoupleData(69, -1.166, -1.249, 0, "MTC017B2", "C64", Scanner.TS_02, 40),
-    ThermocoupleData(70, -2.497, 2.402, 0, "MTC018B1", "C111", Scanner.TS_02, 41),
-    ThermocoupleData(71, -2.497, 2.402, 0.370, "MTC018M", "C111", Scanner.TS_02, 42),
-    ThermocoupleData(72, -2.497, 2.402, 0.739, "MTC018F", "C111", Scanner.TS_02, 43),
+    ThermocoupleData(70, -2.497, -2.402, 0, "MTC018B1", "C111", Scanner.TS_02, 41),
+    ThermocoupleData(71, -2.497, -2.402, 0.370, "MTC018M", "C111", Scanner.TS_02, 42),
+    ThermocoupleData(72, -2.497, -2.402, 0.739, "MTC018F", "C111", Scanner.TS_02, 43),
     #
     # Thermal Scanner 3
     #
     ThermocoupleData(73, -1.166, -1.249, 0, "MTC017B1", "C64", Scanner.TS_03, 2),
     ThermocoupleData(74, -1.166, -1.249, 0.409, "MTC017F", "C64", Scanner.TS_03, 3),
-    ThermocoupleData(75, -2.497, 2.402, 0, "MTC018B2", "C111", Scanner.TS_03, 4),
+    ThermocoupleData(75, -2.497, -2.402, 0, "MTC018B2", "C111", Scanner.TS_03, 4),
     ThermocoupleData(76, -1.664, -2.499, 0, "MTC019B", "C157", Scanner.TS_03, 5),
     ThermocoupleData(77, -0.993, -2.306, 0, "MTC021B", "C169", Scanner.TS_03, 6),
     ThermocoupleData(78, -0.993, -2.306, 0.612, "MTC021F", "C169", Scanner.TS_03, 7),
@@ -239,7 +239,7 @@ ThermocoupleTable = [
     ThermocoupleData(96, 1.004, -3.267, 0.739, "MTC025F", "D127", Scanner.TS_03, 26),
     ThermocoupleData(97, 1.171, -1.249, 0, "MTC026B1", "D133", Scanner.TS_03, 28),
     ThermocoupleData(98, 1.171, -1.249, 0.409, "MTC026F", "D133", Scanner.TS_03, 30),
-    ThermocoupleData(99, 1.337, 2.691, 0, "MTC027B", "D157", Scanner.TS_03, 31),
+    ThermocoupleData(99, 1.337, -2.691, 0, "MTC027B", "D157", Scanner.TS_03, 31),
     ThermocoupleData(100, 1.503, -2.018, 0, "MTC029B", "D169", Scanner.TS_03, 32),
     ThermocoupleData(101, 1.503, -2.018, 0.306, "MTC029M", "D169", Scanner.TS_03, 33),
     ThermocoupleData(102, 1.503, -2.018, 0.612, "MTC029F", "D169", Scanner.TS_03, 42),
