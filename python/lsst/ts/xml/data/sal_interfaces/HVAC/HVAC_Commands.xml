@@ -96,45 +96,52 @@
       <Count>1</Count>
     </item>
     <item>
-      <EFDB_Name>openColdValve</EFDB_Name>
-      <Description>Open Cold Valve.</Description>
-      <IDL_Type>float</IDL_Type>
-      <Units>%</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>dayCoolingSetpoint</EFDB_Name>
-      <Description>Day Cooling Setpoint.</Description>
+      <EFDB_Name>coolingProportionalBand</EFDB_Name>
+      <Description>Set the cooling proportional band.</Description>
       <IDL_Type>float</IDL_Type>
       <Units>deg_C</Units>
       <Count>1</Count>
     </item>
     <item>
-      <EFDB_Name>nightCoolingSetpoint</EFDB_Name>
-      <Description>Night Cooling Setpoint.</Description>
+      <EFDB_Name>fanOperationType</EFDB_Name>
+      <Description>Set the fan operation type.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>heatingProportionalBand</EFDB_Name>
+      <Description>Set the heating proportional band.</Description>
       <IDL_Type>float</IDL_Type>
       <Units>deg_C</Units>
       <Count>1</Count>
     </item>
     <item>
-      <EFDB_Name>dayHeatingSetpoint</EFDB_Name>
-      <Description>Day Heating Setpoint.</Description>
+      <EFDB_Name>maxSetpoint</EFDB_Name>
+      <Description>Set the max setpoint.</Description>
       <IDL_Type>float</IDL_Type>
       <Units>deg_C</Units>
       <Count>1</Count>
     </item>
     <item>
-      <EFDB_Name>nightHeatingSetpoint</EFDB_Name>
-      <Description>Night Heating Setpoint.</Description>
+      <EFDB_Name>minSetpoint</EFDB_Name>
+      <Description>Set the min setpoint.</Description>
       <IDL_Type>float</IDL_Type>
       <Units>deg_C</Units>
       <Count>1</Count>
     </item>
     <item>
-      <EFDB_Name>workingSetpoint</EFDB_Name>
-      <Description>Working Setpoint.</Description>
+      <EFDB_Name>temperatureSetpoint</EFDB_Name>
+      <Description>Set the temperature setpoint.</Description>
       <IDL_Type>float</IDL_Type>
       <Units>deg_C</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>selectFanSpeed</EFDB_Name>
+      <Description>Select the fan speed.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>unitless</Units>
       <Count>1</Count>
     </item>
   </SALCommand>
@@ -168,6 +175,25 @@
       <Description>Room Setpoint.</Description>
       <IDL_Type>float</IDL_Type>
       <Units>deg_C</Units>
+      <Count>1</Count>
+    </item>
+  </SALCommand>
+  <SALCommand>
+    <Subsystem>HVAC</Subsystem>
+    <EFDB_Topic>HVAC_command_configFan</EFDB_Topic>
+    <Description>Configure a Fan device.</Description>
+    <item>
+      <EFDB_Name>device_id</EFDB_Name>
+      <Description>Device ID; one of the DeviceId_fan enums.</Description>
+      <IDL_Type>int</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>frequency</EFDB_Name>
+      <Description>Set the frequency.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>Hz</Units>
       <Count>1</Count>
     </item>
   </SALCommand>
