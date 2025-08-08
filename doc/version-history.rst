@@ -15,6 +15,23 @@ Version History
 
 .. towncrier release notes start
 
+23.3.1 (2025-08-08)
+===================
+Package Level
+-------------
+
+No significant changes.
+
+
+Interface Changes
+-----------------
+
+HVAC
+~~~~
+
+- Find a better name for external and ambient temperature parameter of HVAC_lowerAHU0XP05 topics. (`DM-49940 <https://rubinobs.atlassian.net/browse/DM-49940>`_)
+
+
 v23.3.0 (2025-08-08)
 ====================
 Package Level
