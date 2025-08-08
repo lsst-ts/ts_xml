@@ -15,6 +15,32 @@ Version History
 
 .. towncrier release notes start
 
+v23.3.0 (2025-08-08)
+====================
+Package Level
+-------------
+
+No significant changes.
+
+
+Interface Changes
+-----------------
+
+HVAC
+~~~~
+
+- HVAC: Updated commands, events and telemetry. (`OSW-823.hvac <https://rubinobs.atlassian.net/browse/OSW-823.hvac>`_)
+
+Performance Enhancement
+~~~~~~~~~~~~~~~~~~~~~~~
+
+MTAOS
+~~~~~
+
+- Added visitId and extraId topic to MTAOS events.
+  Added gains topics to degree of freedom events in MTAOS. (`DM-52031 <https://rubinobs.atlassian.net/browse/DM-52031>`_)
+
+
 v23.2.0 (2025-05-20)
 ====================
 Package Level
