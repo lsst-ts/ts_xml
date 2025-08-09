@@ -2,10 +2,90 @@
 <?xml-stylesheet type="text/xsl" href="http://lsst-sal.tuc.noao.edu/schema/SALEventSet.xsl"?>
 <SALEventSet xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://lsst-sal.tuc.noao.edu/schema/SALEventSet.xsd">
   <Enumeration>
-    DREAMDome_Closed=0,
-    DREAMDome_Opening=1,
-    DREAMDome_Opened=2,
-    DREAMDome_Closing=3
+    CameraServerMode_Auto=0,
+    CameraServerMode_Idle=1,
+    CameraServerMode_Standby=2,
+    CameraServerMode_Blanks=3,
+    CameraServerMode_Bias=4,
+    CameraServerMode_Flats=5,
+    CameraServerMode_Darks=6,
+    CameraServerMode_Science=7,
+    CameraServerMode_Shutdown=8
+  </Enumeration>
+  <Enumeration>
+    DomeTargetState_Auto=0,
+    DomeTargetState_Open=1,
+    DomeTargetState_Closed=2,
+    DomeTargetState_Stop=3,
+    DomeTargetState_ForceOpen=4
+  </Enumeration>
+  <Enumeration>
+    DomeState_Open=0,
+    DomeState_Closed=1,
+    DomeState_Opening=2,
+    DomeState_Closing=3,
+    DomeState_Stop=4
+  </Enumeration>
+  <Enumeration>
+    HeaterState_Auto=0,
+    HeaterState_On=1,
+    HeaterState_Off=2,
+    HeaterState_Unknown=3
+  </Enumeration>
+  <Enumeration>
+    PeltierState_Auto=0,
+    PeltierState_Cool=1,
+    PeltierState_Heat=2,
+    PeltierState_Off=3,
+    PeltierState_Unknown=4
+  </Enumeration>
+  <Enumeration>
+    DreamWarning_PowersavingActivated=0x01,
+    DreamWarning_UpsOnBattery=0x02,
+    DreamWarning_DomeClosedByNogo=0x04,
+    DreamWarning_DomeClosedBySun=0x08,
+    DreamWarning_DomeClosedByEnv=0x10,
+    DreamWarning_DomeClosedByUps=0x20,
+    DreamWarning_DomeClosedByTimer=0x40,
+    DreamWarning_DomeStopped=0x80,
+    DreamWarning_DomeForcedOped=0x100,
+    DreamWarning_DomeClosedByDoor=0x200,
+    DreamWarning_RubinNoClient=0x400,
+    DreamWarning_RubinMultipleClients=0x800,
+    DreamWarning_RubinClientStale=0x1000,
+    DreamWarning_RubinWeatherTooOld=0x2000,
+    DreamWarning_RubinBadWeather=0x4000,
+    DreamWarning_RubinNogo=0x8000,
+    DreamWarning_ScriptClientActive=0x10000,
+    DreamWarning_InletHumWarning=0x20000,
+    DreamWarning_InletTempWarning=0x40000,
+    DreamWarning_CameraNNotConnected=0x80000,
+    DreamWarning_CameraSNotConnected=0x100000,
+    DreamWarning_CameraENotConnected=0x200000,
+    DreamWarning_CameraWNotConnected=0x400000,
+    DreamWarning_CameraCNotConnected=0x800000,
+    DreamWarning_SimulatedDome=0x1000000,
+    DreamWarning_SimulatedLeds=0x2000000,
+    DreamWarning_SimulatedUps=0x4000000,
+    DreamWarning_SimulatedPdu=0x8000000,
+    DreamWarning_SimulatedEnv=0x10000000,
+    DreamWarning_SimulatedSun=0x20000000
+  </Enumeration>
+  <Enumeration>
+    DreamError_LimitSwitchError=0x01,
+    DreamError_DomeError=0x02,
+    DreamError_BackdoorOpen=0x04,
+    DreamError_DoorOpen=0x08,
+    DreamError_UpsError=0x10,
+    DreamError_Pdu1Error=0x20,
+    DreamError_Pdu2Error=0x40,
+    DreamError_TemphumError=0x80,
+    DreamError_PsuError=0x100,
+    DreamError_UpsBatteryNeedsReplace=0x200,
+    DreamError_CameraBayTempError=0x400,
+    DreamError_CameraBayHumError=0x800,
+    DreamError_ElectronicsHumidityError=0x1000,
+    DreamError_DomeHumidityError=0x2000
   </Enumeration>
   <SALEvent>
     <Subsystem>DREAM</Subsystem>
@@ -19,67 +99,156 @@
       <Count>1</Count>
     </item>
     <item>
-      <EFDB_Name>environmentOK</EFDB_Name>
-      <Description>DREAM environmental OK flag. Indexed by location - 0 Dome, 1 Electronics Box, 2 Enclosure. True means OK.</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>3</Count>
-    </item>
-    <item>
-      <EFDB_Name>powerDistributionUnitOnline</EFDB_Name>
-      <Description>Power distribution unit online flag. True is online.</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>2</Count>
-    </item>
-    <item>
-      <EFDB_Name>domeStatus</EFDB_Name>
-      <Description>DREAM dome status. Closed/Opening/Opened/Closing.</Description>
+      <EFDB_Name>observingMode</EFDB_Name>
+      <Description>
+        The current observing mode for DREAM. A CameraServerMode enumeration.
+      </Description>
       <IDL_Type>int</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
     </item>
     <item>
-      <EFDB_Name>domeOpenLimitSwitch</EFDB_Name>
-      <Description>Opened dome limit switch state. True for triggered, dome is opened.</Description>
-      <IDL_Type>boolean</IDL_Type>
+      <EFDB_Name>targetObservingMode</EFDB_Name>
+      <Description>
+        The desired mode for DREAM, which DREAM should be working to enter. A CameraServerMode enumeration.
+      </Description>
+      <IDL_Type>int</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
     </item>
     <item>
-      <EFDB_Name>domeCloseLimitSwitch</EFDB_Name>
-      <Description>Closed dome limit switch state. True for triggered, dome is closed.</Description>
-      <IDL_Type>boolean</IDL_Type>
+      <EFDB_Name>domeState</EFDB_Name>
+      <Description>
+        The current state of the enclosure. A DomeState enumeration.
+      </Description>
+      <IDL_Type>int</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
     </item>
     <item>
-      <EFDB_Name>frontDoorOpen</EFDB_Name>
-      <Description>Front door opened switch. True for triggered, front door is opened.</Description>
-      <IDL_Type>boolean</IDL_Type>
+      <EFDB_Name>targetDomeState</EFDB_Name>
+      <Description>
+        The desired state of the enclosure, which DREAM should be working to enter. A DomeTargetState enumeration.
+      </Description>
+      <IDL_Type>int</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
     </item>
     <item>
-      <EFDB_Name>backDoorOpen</EFDB_Name>
-      <Description>Back door opened switch. True for triggered, back door is opened.</Description>
-      <IDL_Type>boolean</IDL_Type>
+      <EFDB_Name>heaterState</EFDB_Name>
+      <Description>
+        The current state of the heater. A HeaterState enumeration.
+      </Description>
+      <IDL_Type>int</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
     </item>
     <item>
-      <EFDB_Name>daq</EFDB_Name>
-      <Description>Digital Acquisition (DAQ) status. True if DAQ is working as expected.</Description>
-      <IDL_Type>boolean</IDL_Type>
+      <EFDB_Name>targetHeaterState</EFDB_Name>
+      <Description>
+        The desired state of the heater, which DREAM should be working to enter. A HeaterState enumeration.
+      </Description>
+      <IDL_Type>int</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
     </item>
     <item>
-      <EFDB_Name>cameraLEDStatus</EFDB_Name>
-      <Description>Camera LED status. True when LED is on.</Description>
+      <EFDB_Name>peltierState</EFDB_Name>
+      <Description>
+        The current state of the peltier regulator. A PeltierState enumeration.
+      </Description>
+      <IDL_Type>int</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>targetPeltierState</EFDB_Name>
+      <Description>
+        The desired state of the peltier regulator, which DREAM should be working to enter. A PeltierState
+        enumeration.
+      </Description>
+      <IDL_Type>int</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>powerState</EFDB_Name>
+      <Description>
+        For each of the devices controlled by the power distribution unit, true if the PDU is supplying power
+        to that device. The devices are:
+
+          0.  Switch
+          1.  USB hub
+          2.  PSU 1
+          3.  PSU 2
+          4.  Central Camera
+          5.  North Camera
+          6.  East Camera
+          7.  South Camera
+          8.  West Camera
+          9.  Command Server
+          10. Central Server
+          11. North Server
+          12. East Server
+          13. South Server
+          14. West Server
+      </Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>15</Count>
+    </item>
+    <item>
+      <EFDB_Name>electronicsActive</EFDB_Name>
+      <Description>
+        Whether each of DREAM's relays are switched. The relay controls are:
+
+          0. Motor power
+          1. Motor direction
+          2. Peltier power
+          3. Peltier direction
+          4. Window heater power
+      </Description>
       <IDL_Type>boolean</IDL_Type>
       <Units>unitless</Units>
       <Count>5</Count>
+    </item>
+    <item>
+      <EFDB_Name>errorFlags</EFDB_Name>
+      <Description>
+        A bit flag indicating errors reported by DREAM, defined by the DreamError enumeration.
+      </Description>
+      <IDL_Type>long long</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>warningFlags</EFDB_Name>
+      <Description>
+        A bit flag indicating warnings reported by DREAM, defined by the DreamWarning enumeration.
+      </Description>
+      <IDL_Type>long long</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>additionalErrors</EFDB_Name>
+      <Description>
+        Any errors reported by DREAM that are not in the DreamError enumeration. The string contains
+        a brief text description of the each error, with the errors separated by semicolons.
+      </Description>
+      <IDL_Type>string</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>additionalWarnings</EFDB_Name>
+      <Description>
+        Any warnings reported by DREAM that are not in the DreamWarning enumeration. The string contains
+        a brief text description of the each warning, with the warnings separated by semicolons.
+      </Description>
+      <IDL_Type>string</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
     </item>
   </SALEvent>
   <SALEvent>
@@ -104,7 +273,7 @@
   <SALEvent>
     <Subsystem>DREAM</Subsystem>
     <EFDB_Topic>DREAM_logevent_ups</EFDB_Topic>
-    <Description>DREAM ups status.</Description>
+    <Description>DREAM Uninterruptible Power Supply (UPS) status.</Description>
     <item>
       <EFDB_Name>online</EFDB_Name>
       <Description>True when UPS is online. False when UPS is offline.</Description>
@@ -120,8 +289,22 @@
       <Count>1</Count>
     </item>
     <item>
+      <EFDB_Name>batteryNeedsReplacing</EFDB_Name>
+      <Description>True when UPS reports that it needs a new battery.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>inputLastError</EFDB_Name>
+      <Description>The last reason reported by the UPS for switching to battery.</Description>
+      <IDL_Type>string</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
       <EFDB_Name>notOnMains</EFDB_Name>
-      <Description>True when UPS commercial power isn't running, the UPS is providing power from its battery..</Description>
+      <Description>True when UPS commercial power isn't running, the UPS is providing power from its battery.</Description>
       <IDL_Type>boolean</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
@@ -209,6 +392,144 @@
     <item>
       <EFDB_Name>pduCommunication</EFDB_Name>
       <Description>True if communication with the Power Distribution Unit (PDU) is lost.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+  </SALEvent>
+  <SALEvent>
+    <Subsystem>DREAM</Subsystem>
+    <EFDB_Topic>DREAM_logevent_camera</EFDB_Topic>
+    <Description>DREAM camera imaging events. Each attribute contains five values, one for each camera:
+
+      0. East
+      1. West
+      2. North
+      3. Central
+      4. South
+    </Description>
+    <item>
+      <EFDB_Name>cameraMode</EFDB_Name>
+      <Description>Current operating mode of the camera. A CameraServerMode enumeration.</Description>
+      <IDL_Type>int</IDL_Type>
+      <Units>unitless</Units>
+      <Count>5</Count>
+    </item>
+    <item>
+      <EFDB_Name>nBlank</EFDB_Name>
+      <Description>
+        Number of images of type "blank" collected by the camera. These images are not
+        saved but their collection is recorded for completeness.
+      </Description>
+      <IDL_Type>int</IDL_Type>
+      <Units>unitless</Units>
+      <Count>5</Count>
+    </item>
+    <item>
+      <EFDB_Name>nDark</EFDB_Name>
+      <Description>Number of dark images collected by the camera.</Description>
+      <IDL_Type>int</IDL_Type>
+      <Units>unitless</Units>
+      <Count>5</Count>
+    </item>
+    <item>
+      <EFDB_Name>nBias</EFDB_Name>
+      <Description>Number of bias images collected by the camera.</Description>
+      <IDL_Type>int</IDL_Type>
+      <Units>unitless</Units>
+      <Count>5</Count>
+    </item>
+    <item>
+      <EFDB_Name>nFlat</EFDB_Name>
+      <Description>Number of flat field images collected by the camera.</Description>
+      <IDL_Type>int</IDL_Type>
+      <Units>unitless</Units>
+      <Count>5</Count>
+    </item>
+    <item>
+      <EFDB_Name>nScience</EFDB_Name>
+      <Description>Number of science images collected by the camera.</Description>
+      <IDL_Type>int</IDL_Type>
+      <Units>unitless</Units>
+      <Count>5</Count>
+    </item>
+    <item>
+      <EFDB_Name>nMissed</EFDB_Name>
+      <Description>Number of images that were "missed" by the pipeline.</Description>
+      <IDL_Type>int</IDL_Type>
+      <Units>unitless</Units>
+      <Count>5</Count>
+    </item>
+    <item>
+      <EFDB_Name>lastSequenceNumber</EFDB_Name>
+      <Description>Sequence number of the most recent collected image.</Description>
+      <IDL_Type>int</IDL_Type>
+      <Units>unitless</Units>
+      <Count>5</Count>
+    </item>
+    <item>
+      <EFDB_Name>lastTriggerTime</EFDB_Name>
+      <Description>Trigger time (TAI) of the most recent collected image.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>second</Units>
+      <Count>5</Count>
+    </item>
+    <item>
+      <EFDB_Name>lastImageTimingLatency</EFDB_Name>
+      <Description>Timing latency of the most recent collected image.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>second</Units>
+      <Count>5</Count>
+    </item>
+    <item>
+      <EFDB_Name>lastImageUSBLatency</EFDB_Name>
+      <Description>USB latency of the most recent collected image.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>second</Units>
+      <Count>5</Count>
+    </item>
+    <item>
+      <EFDB_Name>lastImageArtificialLatency</EFDB_Name>
+      <Description>Artificial latency of the most recent collected image.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>second</Units>
+      <Count>5</Count>
+    </item>
+    <item>
+      <EFDB_Name>lastImageType</EFDB_Name>
+      <Description>Image type of the most recent collected image. A CameraServerMode enumeration.</Description>
+      <IDL_Type>int</IDL_Type>
+      <Units>unitless</Units>
+      <Count>5</Count>
+    </item>
+    <item>
+      <EFDB_Name>lastImagePixelMedian</EFDB_Name>
+      <Description>Median pixel value of the most recent collected image.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>unitless</Units>
+      <Count>5</Count>
+    </item>
+  </SALEvent>
+  <SALEvent>
+    <Subsystem>DREAM</Subsystem>
+    <EFDB_Topic>DREAM_logevent_cscCommand</EFDB_Topic>
+    <Description>Most recent commands from the CSC to the DREAM controller.</Description>
+    <item>
+      <EFDB_Name>weather</EFDB_Name>
+      <Description>
+        Most recent data sent to DREAM with the `setWeather` command,
+        indicating that it is okay to open.
+      </Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>roof</EFDB_Name>
+      <Description>
+        Most recent data sent to DREAM with the `setRoof` command,
+        indicating whether DREAM should proceed with observing.
+      </Description>
       <IDL_Type>boolean</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
