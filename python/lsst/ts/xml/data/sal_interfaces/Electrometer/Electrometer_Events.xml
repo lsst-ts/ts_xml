@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-stylesheet type="text/xsl" href="http://lsst-sal.tuc.noao.edu/schema/SALEventSet.xsl"?>
 <SALEventSet xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://lsst-sal.tuc.noao.edu/schema/SALEventSet.xsd">
-  <Enumeration>DetailedState_DisabledState,DetailedState_EnabledState,DetailedState_FaultState,DetailedState_OfflineState,DetailedState_StandbyState,DetailedState_NotReadingState,DetailedState_ConfiguringState,DetailedState_ManualReadingState,DetailedState_ReadingBufferState,DetailedState_SetDurationReadingState</Enumeration>
+  <Enumeration>DetailedState_NotReadingState,DetailedState_ConfiguringState,DetailedState_ManualReadingState,DetailedState_ReadingBufferState,DetailedState_SetDurationReadingState</Enumeration>
   <Enumeration>
     UnitToRead_Current,
     UnitToRead_Charge,
@@ -307,6 +307,18 @@
       <Description>The TAI time that the logic timer ended.</Description>
       <IDL_Type>long</IDL_Type>
       <Units>second</Units>
+      <Count>1</Count>
+    </item>
+  </SALEvent>
+  <SALEvent>
+    <Subsystem>Electrometer</Subsystem>
+    <EFDB_Topic>Electrometer_logevent_changedNPLC</EFDB_Topic>
+    <Description>Changed the Number of Power Line Cycles.</Description>
+    <item>
+      <EFDB_Name>value</EFDB_Name>
+      <Description>The changed value.</Description>
+      <IDL_Type>long</IDL_Type>
+      <Units>unitless</Units>
       <Count>1</Count>
     </item>
   </SALEvent>
