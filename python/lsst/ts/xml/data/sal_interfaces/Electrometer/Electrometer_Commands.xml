@@ -5,13 +5,6 @@
     <Subsystem>Electrometer</Subsystem>
     <EFDB_Topic>Electrometer_command_performZeroCalib</EFDB_Topic>
     <Description>Performs a zero correction in the device. This will correct any internal offsets that might upset accuracy for voltage and current measurements. It's recommended to perform this zero correction every time the range changes. The steps taken to perform this comes from the datasheet 6517B-901-01 Rev. B / June 2009 under Zero correct. It is as following. 1- Enable Zero check, 2- Set mode, 3- Set range, 4- Enable Zero Correction, 5- Disable Zero check. For unit and range, it uses the last values selected, either via command or from the configuration file. A zero calibration is performed any time the mode or range is set.</Description>
-    <item>
-      <EFDB_Name>value</EFDB_Name>
-      <Description>Attribute required by the API, but is unused</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
   </SALCommand>
   <SALCommand>
     <Subsystem>Electrometer</Subsystem>
@@ -117,13 +110,6 @@
     <Subsystem>Electrometer</Subsystem>
     <EFDB_Topic>Electrometer_command_stopScan</EFDB_Topic>
     <Description>Command to stop a current reading process. When it finishes stopping the process, it will read the data from the buffer and will publish the LFA event.</Description>
-    <item>
-      <EFDB_Name>value</EFDB_Name>
-      <Description>Attribute required by the API, but is unused.</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
   </SALCommand>
   <SALCommand>
     <Subsystem>Electrometer</Subsystem>
@@ -155,6 +141,18 @@
       <Description>Set the voltage limit that can be used.</Description>
       <IDL_Type>long</IDL_Type>
       <Units>V</Units>
+      <Count>1</Count>
+    </item>
+  </SALCommand>
+  <SALCommand>
+    <Subsystem>Electrometer</Subsystem>
+    <EFDB_Topic>Electrometer_command_changeNPLC</EFDB_Topic>
+    <Description>Change the Number of Power Line Cycles which affects the performance of the scan. Lower value is faster and higher value is more accurate.</Description>
+    <item>
+      <EFDB_Name>value</EFDB_Name>
+      <Description>The value to be set.</Description>
+      <IDL_Type>long</IDL_Type>
+      <Units>unitless</Units>
       <Count>1</Count>
     </item>
   </SALCommand>
