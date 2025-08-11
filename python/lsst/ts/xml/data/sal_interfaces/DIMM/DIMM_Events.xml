@@ -9,6 +9,33 @@
   <Enumeration>ScopeMotion_Park,ScopeMotion_Slew,ScopeMotion_Stand,ScopeMotion_Tracking</Enumeration>
   <SALEvent>
     <Subsystem>DIMM</Subsystem>
+    <EFDB_Topic>DIMM_logevent_automationState</EFDB_Topic>
+    <Description>Most recent automation state commanded by the CSC.</Description>
+    <item>
+      <EFDB_Name>state</EFDB_Name>
+      <Description>Most recent automation state commanded by the CSC, an AmebaMode enumeration.</Description>
+      <IDL_Type>int</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+  </SALEvent>
+  <SALEvent>
+    <Subsystem>DIMM</Subsystem>
+    <EFDB_Topic>DIMM_logevent_scopeEvents</EFDB_Topic>
+    <Description>Reported error events from the telescope.</Description>
+    <item>
+      <EFDB_Name>eventList</EFDB_Name>
+      <Description>
+        A comma separated list of all saved error events in the format
+        &lt;error&gt;:&lt;status&gt;:&lt;device&gt;[:&lt;comment&gt;][,...].
+      </Description>
+      <IDL_Type>string</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+  </SALEvent>
+  <SALEvent>
+    <Subsystem>DIMM</Subsystem>
     <EFDB_Topic>DIMM_logevent_moduleStatus</EFDB_Topic>
     <Description>Module statuses</Description>
     <item>
