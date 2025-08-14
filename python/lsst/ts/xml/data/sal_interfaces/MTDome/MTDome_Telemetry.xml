@@ -55,13 +55,6 @@
       <Count>5</Count>
     </item>
     <item>
-      <EFDB_Name>driveTemperature</EFDB_Name>
-      <Description>Measured temperature of each azimuth drive.</Description>
-      <IDL_Type>float</IDL_Type>
-      <Units>deg_C</Units>
-      <Count>13</Count>
-    </item>
-    <item>
       <EFDB_Name>encoderHeadRaw</EFDB_Name>
       <Description>Raw readout of each azimuth encoder head.</Description>
       <IDL_Type>float</IDL_Type>
@@ -381,11 +374,25 @@
     <EFDB_Topic>MTDome_thermal</EFDB_Topic>
     <Description>Status of the thermal system.</Description>
     <item>
-      <EFDB_Name>temperature</EFDB_Name>
-      <Description>Measured temperature of each heat source.</Description>
+      <EFDB_Name>cabinetTemperature</EFDB_Name>
+      <Description>Measured temperature of each heat source in the cooling cabinet on the 6th floor.</Description>
       <IDL_Type>float</IDL_Type>
       <Units>deg_C</Units>
-      <Count>13</Count>
+      <Count>3</Count>
+    </item>
+    <item>
+      <EFDB_Name>driveTemperature</EFDB_Name>
+      <Description>Measured temperature of each sensor of each azimuth drive motor. There are two sensors per motor.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>deg_C</Units>
+      <Count>10</Count>
+    </item>
+    <item>
+      <EFDB_Name>motorCoilTemperature</EFDB_Name>
+      <Description>Measured temperature of each motor coil of each azimuth drive motor. There is one motor coil per motor.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>deg_C</Units>
+      <Count>5</Count>
     </item>
     <item>
       <EFDB_Name>timestamp</EFDB_Name>
