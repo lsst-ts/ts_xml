@@ -15,6 +15,26 @@ Version History
 
 .. towncrier release notes start
 
+v23.3.2 (2025-08-14)
+====================
+Package Level
+-------------
+
+Other Changes and Additions
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+- Added the M1M3 ThermocoupleTable table. (`DM-50884 <https://rubinobs.atlassian.net/browse/DM-50884>`_)
+
+
+Interface Changes
+-----------------
+
+MTM1M3
+~~~~~~
+
+- Fix M1M3 thermocouple table values. (`DM-51385 <https://rubinobs.atlassian.net/browse/DM-51385>`_, `DM-52055 <https://rubinobs.atlassian.net/browse/DM-52055>`_)
+
+
 23.3.1 (2025-08-08)
 ===================
 Package Level
