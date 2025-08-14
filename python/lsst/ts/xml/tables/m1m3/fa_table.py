@@ -106,38 +106,38 @@ class ForceActuatorData:
 
     Attributes
     ----------
-    index : `int`
+    index : int
         Force actuator 0-based index
-    actuator_id : `int`
+    actuator_id : int
         Force actuator ID. Those are 3-digit numbers, where the first digit
         (hundreds) is force actuator quadrant, following two digits are its
         index in the quadrant.
-    x_position : `int`
+    x_position : float
         X position in mirror cell.
-    y_position : `int`
+    y_position : float
         Y position in mirror cell.
-    z_position : `int`
+    z_position : float
         Z position in mirror cell.
     actuator_type : FAType
         Dual/single force actuator.
     subnet : FASubnet
         ILC subnet (1-4, A-D).
-    address : `int`
+    address : int
         ILC Modbus address on subnet.
     orientation : FAOrientation
         X/Y force actuator orientation.
-    x_index : `int`
+    x_index : int
         Force actuator X index. None if there isn't a cylinder in X direction.
-    y_index : `int`
+    y_index : int
         Force actuator Y index. None if there isn't a cylinder in Y direction.
-    z_index : `int`
+    z_index : int
         Force actuator Z index.
-    s_index : `int`
+    s_index : int
         Force actuator secondary cylinder index. None for single axis FAs.
-    near_neighbors : `[int]`
+    near_neighbors : [int]
         Actuator ID of adjacent force actuators. This is primarily used in
         mirror safety checks.
-    far_neighbors : `[int]`
+    far_neighbors : [int]
         Actuator ID of force actuators adjacent to near neighbors. Used
         primarily to mirror safety checks, together with near_neighbors.
     """

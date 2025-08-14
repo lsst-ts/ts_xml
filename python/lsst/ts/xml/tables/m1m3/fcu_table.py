@@ -29,6 +29,7 @@ __all__ = ["FCUData", "FCUTable", "fcu_from_address", "fill_m1_m3"]
 
 @dataclass
 class FCUData:
+
     index: int
     x_position: float
     y_position: float
