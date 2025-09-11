@@ -19,10 +19,14 @@
 # You should have received a copy of the GNU General Public License
 
 __all__ = [
+    "AzimuthMotor",
+    "AzimuthMotorSensor",
+    "CabinetSensor",
     "EnabledState",
     "Louver",
     "MotionState",
     "OnOff",
+    "OpenClose",
     "OperationalMode",
     "PowerManagementMode",
     "RadLockingPinState",
@@ -30,6 +34,39 @@ __all__ = [
 ]
 
 import enum
+
+
+class AzimuthMotor(enum.IntEnum):
+    """Azimuth motor."""
+
+    Motor1 = 1
+    Motor2 = 2
+    Motor3 = 3
+    Motor4 = 4
+    Motor5 = 5
+
+
+class AzimuthMotorSensor(enum.IntEnum):
+    """Azimuth motor sensor."""
+
+    Sensor1Motor1_104T4 = 1
+    Sensor2Motor1_104T5 = 2
+    Sensor1Motor2_104T6 = 3
+    Sensor2Motor2_104T7 = 4
+    Sensor1Motor3_106T1 = 5
+    Sensor2Motor3_106T2 = 6
+    Sensor1Motor4_106T3 = 7
+    Sensor2Motor4_106T4 = 8
+    Sensor1Motor5_106T5 = 9
+    Sensor2Motor5_106T6 = 10
+
+
+class CabinetSensor(enum.IntEnum):
+    """Cabinet sensor."""
+
+    Sensor1_104T1 = 1
+    Sensor2_104T2 = 2
+    Sensor3_104T3 = 3
 
 
 class EnabledState(enum.IntEnum):
@@ -152,6 +189,13 @@ class OnOff(enum.Enum):
 
     ON = True
     OFF = False
+
+
+class OpenClose(enum.StrEnum):
+    """Aperture shutter home command OPEN or CLOSE direction."""
+
+    OPEN = "OPEN"
+    CLOSE = "CLOSE"
 
 
 class OperationalMode(enum.IntEnum):
