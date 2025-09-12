@@ -181,12 +181,31 @@
   </SALCommand>
   <SALCommand>
     <Subsystem>MTDome</Subsystem>
+    <EFDB_Topic>MTDome_command_resetDrivesLouvers</EFDB_Topic>
+    <Description>Reset one or more Louver drives. This is necessary when exiting from FAULT state without going to Degraded Mode since the drives don't reset themselves.</Description>
+    <item>
+      <EFDB_Name>reset</EFDB_Name>
+      <Description>Desired reset action to execute on each Louver drive: false means don't reset, true means reset.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>68</Count>
+    </item>
+  </SALCommand>
+  <SALCommand>
+    <Subsystem>MTDome</Subsystem>
     <EFDB_Topic>MTDome_command_home</EFDB_Topic>
-    <Description>Make the indicated subsystems go to the home position.</Description>
+    <Description>Make the indicated subsystems go to the home position. Currently only works with the aperture shutter.</Description>
     <item>
       <EFDB_Name>subSystemIds</EFDB_Name>
       <Description>Bitmask of SubSystemId.</Description>
       <IDL_Type>int</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>direction</EFDB_Name>
+      <Description>Direction to home to. An OpenClose enum value.</Description>
+      <IDL_Type>string</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
     </item>
