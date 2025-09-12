@@ -80,40 +80,40 @@ class EnabledState(enum.IntEnum):
 class Louver(enum.IntEnum):
     """Louver name and associated array index."""
 
-    A1 = 0
-    A2 = 1
-    B1 = 2
-    B2 = 3
-    B3 = 4
-    C1 = 5
-    C2 = 6
-    C3 = 7
-    D1 = 8
-    D2 = 9
-    D3 = 10
-    E1 = 11
-    E2 = 12
-    E3 = 13
-    F1 = 14
-    F2 = 15
-    F3 = 16
-    G1 = 17
-    G2 = 18
-    G3 = 19
-    H1 = 20
-    H2 = 21
-    H3 = 22
-    I1 = 23
-    I2 = 24
-    I3 = 25
-    L1 = 26
-    L2 = 27
-    L3 = 28
-    M1 = 29
-    M2 = 30
-    M3 = 31
-    N1 = 32
-    N2 = 33
+    A1 = 1
+    A2 = 2
+    B1 = 3
+    B2 = 4
+    B3 = 5
+    C1 = 6
+    C2 = 7
+    C3 = 8
+    D1 = 9
+    D2 = 10
+    D3 = 11
+    E1 = 12
+    E2 = 13
+    E3 = 14
+    F1 = 15
+    F2 = 16
+    F3 = 17
+    G1 = 18
+    G2 = 19
+    G3 = 20
+    H1 = 21
+    H2 = 22
+    H3 = 23
+    I1 = 24
+    I2 = 25
+    I3 = 26
+    L1 = 27
+    L2 = 28
+    L3 = 29
+    M1 = 30
+    M2 = 31
+    M3 = 32
+    N1 = 33
+    N2 = 34
 
 
 class MotionState(enum.IntEnum):
