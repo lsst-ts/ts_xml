@@ -4,20 +4,27 @@
   <SALTelemetry>
     <Subsystem>DREAM</Subsystem>
     <EFDB_Topic>DREAM_environment</EFDB_Topic>
-    <Description>Ambient environment measured in various locations within DREAM. Indexed by location - 0 Dome, 1 Electronics Box, 2 Enclosure.</Description>
+    <Description>Ambient environment measured in various locations within DREAM. Indexed by location:
+      0. Electronics top
+      1. Camera bay
+      2. Electronics box
+      3. Rack top
+      4. Rack bottom
+      5. DREAM inlet
+    </Description>
     <item>
       <EFDB_Name>temperature</EFDB_Name>
       <Description>Measured temperature.</Description>
       <IDL_Type>float</IDL_Type>
       <Units>deg_C</Units>
-      <Count>3</Count>
+      <Count>6</Count>
     </item>
     <item>
       <EFDB_Name>humidity</EFDB_Name>
       <Description>Measured humidity.</Description>
       <IDL_Type>float</IDL_Type>
       <Units>%</Units>
-      <Count>3</Count>
+      <Count>6</Count>
     </item>
   </SALTelemetry>
   <SALTelemetry>
@@ -26,14 +33,14 @@
     <Description>DREAM power supply status.</Description>
     <item>
       <EFDB_Name>voltage</EFDB_Name>
-      <Description>Power supply output voltage.</Description>
+      <Description>Power supply output voltage (0) feedback and (1) setpoint.</Description>
       <IDL_Type>float</IDL_Type>
       <Units>V</Units>
       <Count>2</Count>
     </item>
     <item>
       <EFDB_Name>current</EFDB_Name>
-      <Description>Power supply output current.</Description>
+      <Description>Power supply output current (0) feedback and (1) setpoint.</Description>
       <IDL_Type>float</IDL_Type>
       <Units>A</Units>
       <Count>2</Count>
@@ -61,6 +68,74 @@
       <IDL_Type>float</IDL_Type>
       <Units>%</Units>
       <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>batteryTemperature</EFDB_Name>
+      <Description>Battery temperature reported by the UPS.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>deg_C</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>batteryVoltage</EFDB_Name>
+      <Description>Battery voltage reported by the UPS.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>V</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>timeRemaining</EFDB_Name>
+      <Description>Estimated run time remaining, reported by the UPS.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>min</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>outputLoad</EFDB_Name>
+      <Description>Output load currently reported by the UPS as a percent of total capacity.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>%</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>outputCurrent</EFDB_Name>
+      <Description>Output current reported by the UPS.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>amp</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>lastOnline</EFDB_Name>
+      <Description>Timestamp (TAI) of the most recent information update from the UPS.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>second</Units>
+      <Count>1</Count>
+    </item>
+  </SALTelemetry>
+  <SALTelemetry>
+    <Subsystem>DREAM</Subsystem>
+    <EFDB_Topic>DREAM_camera</EFDB_Topic>
+    <Description>Telemetry for the DREAM cameras. Each attribute has five values, one for each camera:
+
+      0. East
+      1. West
+      2. North
+      3. Central
+      4. South
+    </Description>
+    <item>
+      <EFDB_Name>lastCameraHeartbeatTimestamp</EFDB_Name>
+      <Description>Time (TAI) of last camera server heartbeat.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>second</Units>
+      <Count>5</Count>
+    </item>
+    <item>
+      <EFDB_Name>ccdTemperature</EFDB_Name>
+      <Description>CCD temperature.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>deg_C</Units>
+      <Count>5</Count>
     </item>
   </SALTelemetry>
 </SALTelemetrySet>
