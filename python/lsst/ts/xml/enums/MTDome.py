@@ -195,7 +195,7 @@ class OpenClose(enum.StrEnum):
     """Aperture shutter home command OPEN or CLOSE direction."""
 
     OPEN = "OPEN"
-    CLOSE = "CLOSE"
+    CLOSE = "CLOSED"
 
 
 class OperationalMode(enum.IntEnum):
