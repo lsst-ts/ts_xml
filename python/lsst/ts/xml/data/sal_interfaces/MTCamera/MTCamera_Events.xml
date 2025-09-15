@@ -433,7 +433,7 @@
       <IDL_Type>long</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
-      <Enumeration>UNLOADING,LOADING,LOADED,UNLOADED,ROTATING,NOFILTER,UNKNOWN</Enumeration>
+      <Enumeration>UNLOADING,LOADING,LOADED,UNLOADED,ROTATING,SWAPPING,UNKNOWN</Enumeration>
     </item>
     <item>
       <EFDB_Name>timestampTransition</EFDB_Name>
@@ -35570,6 +35570,52 @@
       <Units>unitless</Units>
       <Count>1</Count>
       <Enumeration>LOW_POWER,REGULAR</Enumeration>
+    </item>
+  </SALEvent>
+  <SALEvent>
+    <Subsystem>MTCamera</Subsystem>
+    <EFDB_Topic>MTCamera_logevent_filterSwapDetails</EFDB_Topic>
+    <Description>Event sent when a filter is inserted in, or extracted from the camera
+    </Description>
+    <item>
+      <EFDB_Name>timestampStatusChanged</EFDB_Name>
+      <Description>The time when the swap operation ended.</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>second</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>loaderHardware</EFDB_Name>
+      <Description>The filter loader used for the swap operation.</Description>
+      <IDL_Type>long</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+      <Enumeration>LOADER1,LOADER2</Enumeration>
+    </item>
+    <item>
+      <EFDB_Name>swapDirection</EFDB_Name>
+      <Description>The operation purpose.</Description>
+      <IDL_Type>long</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+      <Enumeration>INSERTING,EXTRACTING</Enumeration>
+    </item>
+    <item>
+      <EFDB_Name>filterName</EFDB_Name>
+      <Description>The name of the filter being swapped (e.g. u_24)</Description>
+      <IDL_Type>string</IDL_Type>
+      <IDL_Size>1</IDL_Size>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>filterType</EFDB_Name>
+      <Description>The type of the filter being swapped (e.g. g,r,i,z,y,u,none,other). If other it can optionally be
+            followed by a : delimited qualifier, e.g. other:pinhole</Description>
+      <IDL_Type>string</IDL_Type>
+      <IDL_Size>1</IDL_Size>
+      <Units>unitless</Units>
+      <Count>1</Count>
     </item>
   </SALEvent>
 </SALEventSet>
