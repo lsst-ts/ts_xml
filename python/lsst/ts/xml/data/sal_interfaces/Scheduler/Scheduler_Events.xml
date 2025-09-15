@@ -1282,6 +1282,67 @@
   </SALEvent>
   <SALEvent>
     <Subsystem>Scheduler</Subsystem>
+    <EFDB_Topic>Scheduler_logevent_nextTargetQueue</EFDB_Topic>
+    <Description>Contains the current internal target queue of the Scheduler. These are be the upcoming targets the scheduler will send to the ScriptQueue.</Description>
+    <item>
+      <EFDB_Name>numberOfTargets</EFDB_Name>
+      <Description>Number of targets in the scheduler queue.</Description>
+      <IDL_Type>long</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>ra</EFDB_Name>
+      <Description>List of Right Ascension for the targets.</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>deg</Units>
+      <Count>1000</Count>
+    </item>
+    <item>
+      <EFDB_Name>decl</EFDB_Name>
+      <Description>List of Declination for the targets.</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>deg</Units>
+      <Count>1000</Count>
+    </item>
+    <item>
+      <EFDB_Name>rotSkyPos</EFDB_Name>
+      <Description>List of rotation angle of the camera relative to the sky E of N (degrees).</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>deg</Units>
+      <Count>1000</Count>
+    </item>
+    <item>
+      <EFDB_Name>mjd</EFDB_Name>
+      <Description>List of Modified Julian Date at the start of the observations.</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>day</Units>
+      <Count>1000</Count>
+    </item>
+    <item>
+      <EFDB_Name>exptime</EFDB_Name>
+      <Description>List of total exposure time for each visit.</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>second</Units>
+      <Count>1000</Count>
+    </item>
+    <item>
+      <EFDB_Name>instrumentConfiguration</EFDB_Name>
+      <Description>Comma-separated List of filters/instrument configuration used for each observation.</Description>
+      <IDL_Type>string</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>nexp</EFDB_Name>
+      <Description>List of number of exposures for each visit.</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1000</Count>
+    </item>
+  </SALEvent>
+  <SALEvent>
+    <Subsystem>Scheduler</Subsystem>
     <EFDB_Topic>Scheduler_logevent_observingMode</EFDB_Topic>
     <Description>Information about the current observing mode.</Description>
     <item>
