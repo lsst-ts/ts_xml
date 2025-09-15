@@ -11,6 +11,9 @@
     DeviceId_chiller02P01=102,
     DeviceId_chiller03P01=103,
     DeviceId_chiller04P01=104,
+    DeviceId_chillerValve=111,
+    DeviceId_compair01=121,
+    DeviceId_compair02=122,
     DeviceId_crac01P02=201,
     DeviceId_crac02P02=202,
     DeviceId_fancoil01P02=301,
@@ -118,46 +121,6 @@
   </SALEvent>
   <SALEvent>
     <Subsystem>HVAC</Subsystem>
-    <EFDB_Topic>HVAC_logevent_cracConfiguration</EFDB_Topic>
-    <Description>Configuration of a CRAC (Computer Room Air Conditioning) device.</Description>
-    <item>
-      <EFDB_Name>device_id</EFDB_Name>
-      <Description>Device ID; one of the DeviceId_crac enums.</Description>
-      <IDL_Type>int</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>coolingSetpoint</EFDB_Name>
-      <Description>Cooling Setpoint.</Description>
-      <IDL_Type>float</IDL_Type>
-      <Units>deg_C</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>dehumidifierSetpoint</EFDB_Name>
-      <Description>Dehumidifier Setpoint.</Description>
-      <IDL_Type>float</IDL_Type>
-      <Units>%</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>heatingSetpoint</EFDB_Name>
-      <Description>Heating Setpoint.</Description>
-      <IDL_Type>float</IDL_Type>
-      <Units>deg_C</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>humidifierSetpoint</EFDB_Name>
-      <Description>Humidifier Setpoint.</Description>
-      <IDL_Type>float</IDL_Type>
-      <Units>%</Units>
-      <Count>1</Count>
-    </item>
-  </SALEvent>
-  <SALEvent>
-    <Subsystem>HVAC</Subsystem>
     <EFDB_Topic>HVAC_logevent_fancoilConfiguration</EFDB_Topic>
     <Description>Configuration of a Fancoil device.</Description>
     <item>
@@ -168,22 +131,8 @@
       <Count>1</Count>
     </item>
     <item>
-      <EFDB_Name>coolingProportionalBand</EFDB_Name>
-      <Description>Set the cooling proportional band.</Description>
-      <IDL_Type>float</IDL_Type>
-      <Units>deg_C</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>fanOperationType</EFDB_Name>
-      <Description>Set the fan operation type.</Description>
-      <IDL_Type>float</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>heatingProportionalBand</EFDB_Name>
-      <Description>Set the heating proportional band.</Description>
+      <EFDB_Name>minSetpoint</EFDB_Name>
+      <Description>Set the min setpoint.</Description>
       <IDL_Type>float</IDL_Type>
       <Units>deg_C</Units>
       <Count>1</Count>
@@ -196,10 +145,31 @@
       <Count>1</Count>
     </item>
     <item>
-      <EFDB_Name>minSetpoint</EFDB_Name>
-      <Description>Set the min setpoint.</Description>
+      <EFDB_Name>coolingProportionalBand</EFDB_Name>
+      <Description>Set the cooling proportional band.</Description>
       <IDL_Type>float</IDL_Type>
       <Units>deg_C</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>heatingProportionalBand</EFDB_Name>
+      <Description>Set the heating proportional band.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>deg_C</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>fanOperationType</EFDB_Name>
+      <Description>Set the fan operation type.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>selectFanSpeed</EFDB_Name>
+      <Description>Select the fan speed.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>unitless</Units>
       <Count>1</Count>
     </item>
     <item>
@@ -209,10 +179,22 @@
       <Units>deg_C</Units>
       <Count>1</Count>
     </item>
+  </SALEvent>
+  <SALEvent>
+    <Subsystem>HVAC</Subsystem>
+    <EFDB_Topic>HVAC_logevent_chillerValveConfiguration</EFDB_Topic>
+    <Description>Configuration of a ChillerValve device.</Description>
     <item>
-      <EFDB_Name>selectFanSpeed</EFDB_Name>
-      <Description>Select the fan speed.</Description>
-      <IDL_Type>float</IDL_Type>
+      <EFDB_Name>device_id</EFDB_Name>
+      <Description>Device ID; one of the DeviceId_chillerValve enums.</Description>
+      <IDL_Type>int</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>closeAperture</EFDB_Name>
+      <Description>Close the aperture.</Description>
+      <IDL_Type>boolean</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
     </item>
@@ -229,10 +211,10 @@
       <Count>1</Count>
     </item>
     <item>
-      <EFDB_Name>maxFanSetpoint</EFDB_Name>
-      <Description>Max Fan Setpoint.</Description>
+      <EFDB_Name>roomSetpoint</EFDB_Name>
+      <Description>Room Setpoint.</Description>
       <IDL_Type>float</IDL_Type>
-      <Units>%</Units>
+      <Units>deg_C</Units>
       <Count>1</Count>
     </item>
     <item>
@@ -243,8 +225,48 @@
       <Count>1</Count>
     </item>
     <item>
-      <EFDB_Name>roomSetpoint</EFDB_Name>
-      <Description>Room Setpoint.</Description>
+      <EFDB_Name>maxFanSetpoint</EFDB_Name>
+      <Description>Max Fan Setpoint.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>%</Units>
+      <Count>1</Count>
+    </item>
+  </SALEvent>
+  <SALEvent>
+    <Subsystem>HVAC</Subsystem>
+    <EFDB_Topic>HVAC_logevent_cracConfiguration</EFDB_Topic>
+    <Description>Configuration of a CRAC (Computer Room Air Conditioning) device.</Description>
+    <item>
+      <EFDB_Name>device_id</EFDB_Name>
+      <Description>Device ID; one of the DeviceId_crac enums.</Description>
+      <IDL_Type>int</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>humidifierSetpoint</EFDB_Name>
+      <Description>Humidifier Setpoint.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>%</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>dehumidifierSetpoint</EFDB_Name>
+      <Description>Dehumidifier Setpoint.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>%</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>coolingSetpoint</EFDB_Name>
+      <Description>Cooling Setpoint.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>deg_C</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>heatingSetpoint</EFDB_Name>
+      <Description>Heating Setpoint.</Description>
       <IDL_Type>float</IDL_Type>
       <Units>deg_C</Units>
       <Count>1</Count>
@@ -288,13 +310,6 @@
       <Count>1</Count>
     </item>
     <item>
-      <EFDB_Name>maxFanSetpoint</EFDB_Name>
-      <Description>Max Fan Setpoint.</Description>
-      <IDL_Type>float</IDL_Type>
-      <Units>%</Units>
-      <Count>1</Count>
-    </item>
-    <item>
       <EFDB_Name>minFanSetpoint</EFDB_Name>
       <Description>Min Fan Setpoint.</Description>
       <IDL_Type>float</IDL_Type>
@@ -302,8 +317,51 @@
       <Count>1</Count>
     </item>
     <item>
+      <EFDB_Name>maxFanSetpoint</EFDB_Name>
+      <Description>Max Fan Setpoint.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>%</Units>
+      <Count>1</Count>
+    </item>
+    <item>
       <EFDB_Name>antiFreezeTemperature</EFDB_Name>
       <Description>Anti-Freeze Temperature.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>deg_C</Units>
+      <Count>1</Count>
+    </item>
+  </SALEvent>
+  <SALEvent>
+    <Subsystem>HVAC</Subsystem>
+    <EFDB_Topic>HVAC_logevent_dynTmaRemoteSP</EFDB_Topic>
+    <Description>Set Dynalene dynTmaRemoteSP.</Description>
+    <item>
+      <EFDB_Name>dynTmaRemoteSP</EFDB_Name>
+      <Description>TMA setpoint.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>deg_C</Units>
+      <Count>1</Count>
+    </item>
+  </SALEvent>
+  <SALEvent>
+    <Subsystem>HVAC</Subsystem>
+    <EFDB_Topic>HVAC_logevent_dynTaRemoteSP</EFDB_Topic>
+    <Description>Set Dynalene dynTaRemoteSP.</Description>
+    <item>
+      <EFDB_Name>dynTaRemoteSP</EFDB_Name>
+      <Description>TA setpoint.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>deg_C</Units>
+      <Count>1</Count>
+    </item>
+  </SALEvent>
+  <SALEvent>
+    <Subsystem>HVAC</Subsystem>
+    <EFDB_Topic>HVAC_logevent_dynExtAirRemoteSP</EFDB_Topic>
+    <Description>Set Dynalene dynExtAirRemoteSP.</Description>
+    <item>
+      <EFDB_Name>dynExtAirRemoteSP</EFDB_Name>
+      <Description>Exit air setpoint.</Description>
       <IDL_Type>float</IDL_Type>
       <Units>deg_C</Units>
       <Count>1</Count>
@@ -347,37 +405,13 @@
   </SALEvent>
   <SALEvent>
     <Subsystem>HVAC</Subsystem>
-    <EFDB_Topic>HVAC_logevent_dynTaRemoteSP</EFDB_Topic>
-    <Description>Set Dynalene dynTaRemoteSP.</Description>
+    <EFDB_Topic>HVAC_logevent_dynTelemetryEnable</EFDB_Topic>
+    <Description>Set Dynalene dynTelemetryEnable.</Description>
     <item>
-      <EFDB_Name>dynTaRemoteSP</EFDB_Name>
-      <Description>TA setpoint.</Description>
-      <IDL_Type>float</IDL_Type>
-      <Units>deg_C</Units>
-      <Count>1</Count>
-    </item>
-  </SALEvent>
-  <SALEvent>
-    <Subsystem>HVAC</Subsystem>
-    <EFDB_Topic>HVAC_logevent_dynTmaRemoteSP</EFDB_Topic>
-    <Description>Set Dynalene dynTmaRemoteSP.</Description>
-    <item>
-      <EFDB_Name>dynTmaRemoteSP</EFDB_Name>
-      <Description>TMA setpoint.</Description>
-      <IDL_Type>float</IDL_Type>
-      <Units>deg_C</Units>
-      <Count>1</Count>
-    </item>
-  </SALEvent>
-  <SALEvent>
-    <Subsystem>HVAC</Subsystem>
-    <EFDB_Topic>HVAC_logevent_dynExtAirRemoteSP</EFDB_Topic>
-    <Description>Set Dynalene dynExtAirRemoteSP.</Description>
-    <item>
-      <EFDB_Name>dynExtAirRemoteSP</EFDB_Name>
-      <Description>Exit air setpoint.</Description>
-      <IDL_Type>float</IDL_Type>
-      <Units>deg_C</Units>
+      <EFDB_Name>dynTelemetryEnable</EFDB_Name>
+      <Description>Enable telemetry.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
       <Count>1</Count>
     </item>
   </SALEvent>
@@ -395,19 +429,7 @@
   </SALEvent>
   <SALEvent>
     <Subsystem>HVAC</Subsystem>
-    <EFDB_Topic>HVAC_logevent_dynTelemetryEnable</EFDB_Topic>
-    <Description>Set Dynalene dynTelemetryEnable.</Description>
-    <item>
-      <EFDB_Name>dynTelemetryEnable</EFDB_Name>
-      <Description>Enable telemetry.</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-  </SALEvent>
-  <SALEvent>
-    <Subsystem>HVAC</Subsystem>
-    <EFDB_Topic>HVAC_logevent_dynaleneTankLevel</EFDB_Topic>
+    <EFDB_Topic>HVAC_logevent_dynaleneTankLevelAlarm</EFDB_Topic>
     <Description>Dynalene Tank Level Alarm State.</Description>
     <item>
       <EFDB_Name>state</EFDB_Name>
@@ -612,10 +634,10 @@
   <SALEvent>
     <Subsystem>HVAC</Subsystem>
     <EFDB_Topic>HVAC_logevent_dynPoweringOn</EFDB_Topic>
-    <Description>Powering On</Description>
+    <Description>Powering ON</Description>
     <item>
       <EFDB_Name>state</EFDB_Name>
-      <Description>Powering On On (true) or Off (false).</Description>
+      <Description>Powering ON On (true) or Off (false).</Description>
       <IDL_Type>boolean</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
@@ -624,10 +646,10 @@
   <SALEvent>
     <Subsystem>HVAC</Subsystem>
     <EFDB_Topic>HVAC_logevent_dynPoweredOn</EFDB_Topic>
-    <Description>Powered On</Description>
+    <Description>Powered ON</Description>
     <item>
       <EFDB_Name>state</EFDB_Name>
-      <Description>Powered On On (true) or Off (false).</Description>
+      <Description>Powered ON On (true) or Off (false).</Description>
       <IDL_Type>boolean</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
@@ -636,10 +658,10 @@
   <SALEvent>
     <Subsystem>HVAC</Subsystem>
     <EFDB_Topic>HVAC_logevent_dynPoweringOff</EFDB_Topic>
-    <Description>Powering Off</Description>
+    <Description>Powering OFF</Description>
     <item>
       <EFDB_Name>state</EFDB_Name>
-      <Description>Powering Off On (true) or Off (false).</Description>
+      <Description>Powering OFF On (true) or Off (false).</Description>
       <IDL_Type>boolean</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
@@ -648,10 +670,10 @@
   <SALEvent>
     <Subsystem>HVAC</Subsystem>
     <EFDB_Topic>HVAC_logevent_dynPoweredOff</EFDB_Topic>
-    <Description>Powered Off</Description>
+    <Description>Powered OFF</Description>
     <item>
       <EFDB_Name>state</EFDB_Name>
-      <Description>Powered Off On (true) or Off (false).</Description>
+      <Description>Powered OFF On (true) or Off (false).</Description>
       <IDL_Type>boolean</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
@@ -684,10 +706,10 @@
   <SALEvent>
     <Subsystem>HVAC</Subsystem>
     <EFDB_Topic>HVAC_logevent_dynShutOff</EFDB_Topic>
-    <Description>Shut Off</Description>
+    <Description>Shutted OFF</Description>
     <item>
       <EFDB_Name>state</EFDB_Name>
-      <Description>Shut Off On (true) or Off (false).</Description>
+      <Description>Shutted OFF On (true) or Off (false).</Description>
       <IDL_Type>boolean</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
@@ -741,454 +763,6 @@
       <Count>1</Count>
     </item>
     <item>
-      <EFDB_Name>compressor1Plus2pEnabledWhole</EFDB_Name>
-      <Description>Compressor1 Plus 2p Enabled Whole</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>compressor1Plus2pEnabledWith1StepActive</EFDB_Name>
-      <Description>Compressor1 Plus 2p Enabled With 1 Step Active</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>compressor1Plus2pEnabledWith2StepsActive</EFDB_Name>
-      <Description>Compressor1 Plus 2p Enabled With 2 Steps Active</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>compressor1Plus2pEnabledWith3StepsActive</EFDB_Name>
-      <Description>Compressor1 Plus 2p Enabled With 3 Steps Active</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>compressor1StatusAlarmActive</EFDB_Name>
-      <Description>Compressor1 Status Alarm Active</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>compressor1StatusChiller</EFDB_Name>
-      <Description>Compressor1 Status Chiller</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>compressor1StatusConfigured</EFDB_Name>
-      <Description>Compressor1 Status Configured</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>compressor1StatusDefrosting</EFDB_Name>
-      <Description>Compressor1 Status Defrosting</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>compressor1StatusDripping</EFDB_Name>
-      <Description>Compressor1 Status Dripping</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>compressor1StatusEnabled</EFDB_Name>
-      <Description>Compressor1 Status Enabled</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>compressor1StatusEnabledStatusPumpDownActive</EFDB_Name>
-      <Description>Compressor1 Status Enabled Status Pump Down Active</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>compressor1StatusFreeCooling</EFDB_Name>
-      <Description>Compressor1 Status Free Cooling</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>compressor1StatusHeatpump</EFDB_Name>
-      <Description>Compressor1 Status Heatpump</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>compressor1StatusOn</EFDB_Name>
-      <Description>Compressor1 Status On</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>compressor1StatusRecovery</EFDB_Name>
-      <Description>Compressor1 Status Recovery</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>compressor1StatusRequest</EFDB_Name>
-      <Description>Compressor1 Status Request</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>compressor2Plus2pEnabledWhole</EFDB_Name>
-      <Description>Compressor2 Plus 2p Enabled Whole</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>compressor2Plus2pEnabledWith1StepActive</EFDB_Name>
-      <Description>Compressor2 Plus 2p Enabled With 1 Step Active</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>compressor2Plus2pEnabledWith2StepsActive</EFDB_Name>
-      <Description>Compressor2 Plus 2p Enabled With 2 Steps Active</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>compressor2Plus2pEnabledWith3StepsActive</EFDB_Name>
-      <Description>Compressor2 Plus 2p Enabled With 3 Steps Active</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>compressor2StatusAlarmActive</EFDB_Name>
-      <Description>Compressor2 Status Alarm Active</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>compressor2StatusChiller</EFDB_Name>
-      <Description>Compressor2 Status Chiller</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>compressor2StatusConfigured</EFDB_Name>
-      <Description>Compressor2 Status Configured</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>compressor2StatusDefrosting</EFDB_Name>
-      <Description>Compressor2 Status Defrosting</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>compressor2StatusDripping</EFDB_Name>
-      <Description>Compressor2 Status Dripping</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>compressor2StatusEnabled</EFDB_Name>
-      <Description>Compressor2 Status Enabled</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>compressor2StatusEnabledStatusPumpDownActive</EFDB_Name>
-      <Description>Compressor2 Status Enabled Status Pump Down Active</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>compressor2StatusFreeCooling</EFDB_Name>
-      <Description>Compressor2 Status Free Cooling</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>compressor2StatusHeatpump</EFDB_Name>
-      <Description>Compressor2 Status Heatpump</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>compressor2StatusOn</EFDB_Name>
-      <Description>Compressor2 Status On</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>compressor2StatusRecovery</EFDB_Name>
-      <Description>Compressor2 Status Recovery</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>compressor2StatusRequest</EFDB_Name>
-      <Description>Compressor2 Status Request</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>compressor3Plus2pEnabledWhole</EFDB_Name>
-      <Description>Compressor3 Plus 2p Enabled Whole</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>compressor3Plus2pEnabledWith1StepActive</EFDB_Name>
-      <Description>Compressor3 Plus 2p Enabled With 1 Step Active</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>compressor3Plus2pEnabledWith2StepsActive</EFDB_Name>
-      <Description>Compressor3 Plus 2p Enabled With 2 Steps Active</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>compressor3Plus2pEnabledWith3StepsActive</EFDB_Name>
-      <Description>Compressor3 Plus 2p Enabled With 3 Steps Active</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>compressor3StatusAlarmActive</EFDB_Name>
-      <Description>Compressor3 Status Alarm Active</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>compressor3StatusChiller</EFDB_Name>
-      <Description>Compressor3 Status Chiller</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>compressor3StatusConfigured</EFDB_Name>
-      <Description>Compressor3 Status Configured</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>compressor3StatusDefrosting</EFDB_Name>
-      <Description>Compressor3 Status Defrosting</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>compressor3StatusDripping</EFDB_Name>
-      <Description>Compressor3 Status Dripping</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>compressor3StatusEnabled</EFDB_Name>
-      <Description>Compressor3 Status Enabled</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>compressor3StatusEnabledStatusPumpDownActive</EFDB_Name>
-      <Description>Compressor3 Status Enabled Status Pump Down Active</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>compressor3StatusFreeCooling</EFDB_Name>
-      <Description>Compressor3 Status Free Cooling</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>compressor3StatusHeatpump</EFDB_Name>
-      <Description>Compressor3 Status Heatpump</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>compressor3StatusOn</EFDB_Name>
-      <Description>Compressor3 Status On</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>compressor3StatusRecovery</EFDB_Name>
-      <Description>Compressor3 Status Recovery</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>compressor3StatusRequest</EFDB_Name>
-      <Description>Compressor3 Status Request</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>compressor4Plus2pEnabledWhole</EFDB_Name>
-      <Description>Compressor4 Plus 2p Enabled Whole</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>compressor4Plus2pEnabledWith1StepActive</EFDB_Name>
-      <Description>Compressor4 Plus 2p Enabled With 1 Step Active</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>compressor4Plus2pEnabledWith2StepsActive</EFDB_Name>
-      <Description>Compressor4 Plus 2p Enabled With 2 Steps Active</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>compressor4Plus2pEnabledWith3StepsActive</EFDB_Name>
-      <Description>Compressor4 Plus 2p Enabled With 3 Steps Active</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>compressor4StatusAlarmActive</EFDB_Name>
-      <Description>Compressor4 Status Alarm Active</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>compressor4StatusChiller</EFDB_Name>
-      <Description>Compressor4 Status Chiller</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>compressor4StatusConfigured</EFDB_Name>
-      <Description>Compressor4 Status Configured</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>compressor4StatusDefrosting</EFDB_Name>
-      <Description>Compressor4 Status Defrosting</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>compressor4StatusDripping</EFDB_Name>
-      <Description>Compressor4 Status Dripping</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>compressor4StatusEnabled</EFDB_Name>
-      <Description>Compressor4 Status Enabled</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>compressor4StatusEnabledStatusPumpDownActive</EFDB_Name>
-      <Description>Compressor4 Status Enabled Status Pump Down Active</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>compressor4StatusFreeCooling</EFDB_Name>
-      <Description>Compressor4 Status Free Cooling</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>compressor4StatusHeatpump</EFDB_Name>
-      <Description>Compressor4 Status Heatpump</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>compressor4StatusOn</EFDB_Name>
-      <Description>Compressor4 Status On</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>compressor4StatusRecovery</EFDB_Name>
-      <Description>Compressor4 Status Recovery</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>compressor4StatusRequest</EFDB_Name>
-      <Description>Compressor4 Status Request</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
       <EFDB_Name>downDevice</EFDB_Name>
       <Description>Down Device</Description>
       <IDL_Type>boolean</IDL_Type>
@@ -1203,43 +777,449 @@
       <Count>1</Count>
     </item>
     <item>
-      <EFDB_Name>pumpCodesBit11Unused</EFDB_Name>
-      <Description>Pump Codes Bit 11 Unused</Description>
+      <EFDB_Name>compressor1StatusConfigured</EFDB_Name>
+      <Description>Compressor1 Status Configured</Description>
       <IDL_Type>boolean</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
     </item>
     <item>
-      <EFDB_Name>pumpCodesBit3Unused</EFDB_Name>
-      <Description>Pump Codes Bit 3 Unused</Description>
+      <EFDB_Name>compressor1StatusEnabled</EFDB_Name>
+      <Description>Compressor1 Status Enabled</Description>
       <IDL_Type>boolean</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
     </item>
     <item>
-      <EFDB_Name>pumpCodesBit5Unused</EFDB_Name>
-      <Description>Pump Codes Bit 5 Unused</Description>
+      <EFDB_Name>compressor1StatusOn</EFDB_Name>
+      <Description>Compressor1 Status On</Description>
       <IDL_Type>boolean</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
     </item>
     <item>
-      <EFDB_Name>pumpCodesCondenserPumpAlarm</EFDB_Name>
-      <Description>Pump Codes Condenser Pump Alarm</Description>
+      <EFDB_Name>compressor1StatusEnabledStatusPumpDownActive</EFDB_Name>
+      <Description>Compressor1 Status Enabled Status Pump Down Active</Description>
       <IDL_Type>boolean</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
     </item>
     <item>
-      <EFDB_Name>pumpCodesCondenserPumpFlowAlarm</EFDB_Name>
-      <Description>Pump Codes Condenser Pump Flow Alarm</Description>
+      <EFDB_Name>compressor1StatusAlarmActive</EFDB_Name>
+      <Description>Compressor1 Status Alarm Active</Description>
       <IDL_Type>boolean</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
     </item>
     <item>
-      <EFDB_Name>pumpCodesEnableConsenserPump</EFDB_Name>
-      <Description>Pump Codes Enable Consenser Pump</Description>
+      <EFDB_Name>compressor1Plus2pEnabledWith3StepsActive</EFDB_Name>
+      <Description>Compressor1 Plus 2p Enabled With 3 Steps Active</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>compressor1Plus2pEnabledWith2StepsActive</EFDB_Name>
+      <Description>Compressor1 Plus 2p Enabled With 2 Steps Active</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>compressor1Plus2pEnabledWith1StepActive</EFDB_Name>
+      <Description>Compressor1 Plus 2p Enabled With 1 Step Active</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>compressor1Plus2pEnabledWhole</EFDB_Name>
+      <Description>Compressor1 Plus 2p Enabled Whole</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>compressor1StatusChiller</EFDB_Name>
+      <Description>Compressor1 Status Chiller</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>compressor1StatusHeatpump</EFDB_Name>
+      <Description>Compressor1 Status Heatpump</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>compressor1StatusRecovery</EFDB_Name>
+      <Description>Compressor1 Status Recovery</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>compressor1StatusDefrosting</EFDB_Name>
+      <Description>Compressor1 Status Defrosting</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>compressor1StatusFreeCooling</EFDB_Name>
+      <Description>Compressor1 Status Free Cooling</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>compressor1StatusDripping</EFDB_Name>
+      <Description>Compressor1 Status Dripping</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>compressor1StatusRequest</EFDB_Name>
+      <Description>Compressor1 Status Request</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>compressor2StatusConfigured</EFDB_Name>
+      <Description>Compressor2 Status Configured</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>compressor2StatusEnabled</EFDB_Name>
+      <Description>Compressor2 Status Enabled</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>compressor2StatusOn</EFDB_Name>
+      <Description>Compressor2 Status On</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>compressor2StatusEnabledStatusPumpDownActive</EFDB_Name>
+      <Description>Compressor2 Status Enabled Status Pump Down Active</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>compressor2StatusAlarmActive</EFDB_Name>
+      <Description>Compressor2 Status Alarm Active</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>compressor2Plus2pEnabledWith3StepsActive</EFDB_Name>
+      <Description>Compressor2 Plus 2p Enabled With 3 Steps Active</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>compressor2Plus2pEnabledWith2StepsActive</EFDB_Name>
+      <Description>Compressor2 Plus 2p Enabled With 2 Steps Active</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>compressor2Plus2pEnabledWith1StepActive</EFDB_Name>
+      <Description>Compressor2 Plus 2p Enabled With 1 Step Active</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>compressor2Plus2pEnabledWhole</EFDB_Name>
+      <Description>Compressor2 Plus 2p Enabled Whole</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>compressor2StatusChiller</EFDB_Name>
+      <Description>Compressor2 Status Chiller</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>compressor2StatusHeatpump</EFDB_Name>
+      <Description>Compressor2 Status Heatpump</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>compressor2StatusRecovery</EFDB_Name>
+      <Description>Compressor2 Status Recovery</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>compressor2StatusDefrosting</EFDB_Name>
+      <Description>Compressor2 Status Defrosting</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>compressor2StatusFreeCooling</EFDB_Name>
+      <Description>Compressor2 Status Free Cooling</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>compressor2StatusDripping</EFDB_Name>
+      <Description>Compressor2 Status Dripping</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>compressor2StatusRequest</EFDB_Name>
+      <Description>Compressor2 Status Request</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>compressor3StatusConfigured</EFDB_Name>
+      <Description>Compressor3 Status Configured</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>compressor3StatusEnabled</EFDB_Name>
+      <Description>Compressor3 Status Enabled</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>compressor3StatusOn</EFDB_Name>
+      <Description>Compressor3 Status On</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>compressor3StatusEnabledStatusPumpDownActive</EFDB_Name>
+      <Description>Compressor3 Status Enabled Status Pump Down Active</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>compressor3StatusAlarmActive</EFDB_Name>
+      <Description>Compressor3 Status Alarm Active</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>compressor3Plus2pEnabledWith3StepsActive</EFDB_Name>
+      <Description>Compressor3 Plus 2p Enabled With 3 Steps Active</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>compressor3Plus2pEnabledWith2StepsActive</EFDB_Name>
+      <Description>Compressor3 Plus 2p Enabled With 2 Steps Active</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>compressor3Plus2pEnabledWith1StepActive</EFDB_Name>
+      <Description>Compressor3 Plus 2p Enabled With 1 Step Active</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>compressor3Plus2pEnabledWhole</EFDB_Name>
+      <Description>Compressor3 Plus 2p Enabled Whole</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>compressor3StatusChiller</EFDB_Name>
+      <Description>Compressor3 Status Chiller</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>compressor3StatusHeatpump</EFDB_Name>
+      <Description>Compressor3 Status Heatpump</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>compressor3StatusRecovery</EFDB_Name>
+      <Description>Compressor3 Status Recovery</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>compressor3StatusDefrosting</EFDB_Name>
+      <Description>Compressor3 Status Defrosting</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>compressor3StatusFreeCooling</EFDB_Name>
+      <Description>Compressor3 Status Free Cooling</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>compressor3StatusDripping</EFDB_Name>
+      <Description>Compressor3 Status Dripping</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>compressor3StatusRequest</EFDB_Name>
+      <Description>Compressor3 Status Request</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>compressor4StatusConfigured</EFDB_Name>
+      <Description>Compressor4 Status Configured</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>compressor4StatusEnabled</EFDB_Name>
+      <Description>Compressor4 Status Enabled</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>compressor4StatusOn</EFDB_Name>
+      <Description>Compressor4 Status On</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>compressor4StatusEnabledStatusPumpDownActive</EFDB_Name>
+      <Description>Compressor4 Status Enabled Status Pump Down Active</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>compressor4StatusAlarmActive</EFDB_Name>
+      <Description>Compressor4 Status Alarm Active</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>compressor4Plus2pEnabledWith3StepsActive</EFDB_Name>
+      <Description>Compressor4 Plus 2p Enabled With 3 Steps Active</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>compressor4Plus2pEnabledWith2StepsActive</EFDB_Name>
+      <Description>Compressor4 Plus 2p Enabled With 2 Steps Active</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>compressor4Plus2pEnabledWith1StepActive</EFDB_Name>
+      <Description>Compressor4 Plus 2p Enabled With 1 Step Active</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>compressor4Plus2pEnabledWhole</EFDB_Name>
+      <Description>Compressor4 Plus 2p Enabled Whole</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>compressor4StatusChiller</EFDB_Name>
+      <Description>Compressor4 Status Chiller</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>compressor4StatusHeatpump</EFDB_Name>
+      <Description>Compressor4 Status Heatpump</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>compressor4StatusRecovery</EFDB_Name>
+      <Description>Compressor4 Status Recovery</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>compressor4StatusDefrosting</EFDB_Name>
+      <Description>Compressor4 Status Defrosting</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>compressor4StatusFreeCooling</EFDB_Name>
+      <Description>Compressor4 Status Free Cooling</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>compressor4StatusDripping</EFDB_Name>
+      <Description>Compressor4 Status Dripping</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>compressor4StatusRequest</EFDB_Name>
+      <Description>Compressor4 Status Request</Description>
       <IDL_Type>boolean</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
@@ -1266,8 +1246,22 @@
       <Count>1</Count>
     </item>
     <item>
-      <EFDB_Name>pumpCodesGeneralAlarm</EFDB_Name>
-      <Description>Pump Codes General Alarm</Description>
+      <EFDB_Name>pumpCodesBit3Unused</EFDB_Name>
+      <Description>Pump Codes Bit 3 Unused</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>pumpCodesEnableConsenserPump</EFDB_Name>
+      <Description>Pump Codes Enable Consenser Pump</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>pumpCodesBit5Unused</EFDB_Name>
+      <Description>Pump Codes Bit 5 Unused</Description>
       <IDL_Type>boolean</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
@@ -1275,6 +1269,13 @@
     <item>
       <EFDB_Name>pumpCodesPumps12Stopped</EFDB_Name>
       <Description>Pump Codes Pumps 12 Stopped</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>pumpCodesRecoveryPumpStopped</EFDB_Name>
+      <Description>Pump Codes Recovery Pump Stopped</Description>
       <IDL_Type>boolean</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
@@ -1301,8 +1302,22 @@
       <Count>1</Count>
     </item>
     <item>
-      <EFDB_Name>pumpCodesRecoveryPumpStopped</EFDB_Name>
-      <Description>Pump Codes Recovery Pump Stopped</Description>
+      <EFDB_Name>pumpCodesBit11Unused</EFDB_Name>
+      <Description>Pump Codes Bit 11 Unused</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>pumpCodesCondenserPumpAlarm</EFDB_Name>
+      <Description>Pump Codes Condenser Pump Alarm</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>pumpCodesCondenserPumpFlowAlarm</EFDB_Name>
+      <Description>Pump Codes Condenser Pump Flow Alarm</Description>
       <IDL_Type>boolean</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
@@ -1315,36 +1330,36 @@
       <Count>1</Count>
     </item>
     <item>
-      <EFDB_Name>unitConfigurationStatus1Bit10Unused</EFDB_Name>
-      <Description>Unit Configuration Status 1 Bit 10 Unused</Description>
+      <EFDB_Name>pumpCodesGeneralAlarm</EFDB_Name>
+      <Description>Pump Codes General Alarm</Description>
       <IDL_Type>boolean</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
     </item>
     <item>
-      <EFDB_Name>unitConfigurationStatus1Bit12Unused</EFDB_Name>
-      <Description>Unit Configuration Status 1 Bit 12 Unused</Description>
+      <EFDB_Name>unitConfigurationStatus1HeatPumpEnabled</EFDB_Name>
+      <Description>Unit Configuration Status 1 Heat Pump Enabled</Description>
       <IDL_Type>boolean</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
     </item>
     <item>
-      <EFDB_Name>unitConfigurationStatus1Bit13Unused</EFDB_Name>
-      <Description>Unit Configuration Status 1 Bit 13 Unused</Description>
+      <EFDB_Name>unitConfigurationStatus1QuickMindEnabled</EFDB_Name>
+      <Description>Unit Configuration Status 1 Quick Mind Enabled</Description>
       <IDL_Type>boolean</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
     </item>
     <item>
-      <EFDB_Name>unitConfigurationStatus1Bit14Unused</EFDB_Name>
-      <Description>Unit Configuration Status 1 Bit 14 Unused</Description>
+      <EFDB_Name>unitConfigurationStatus1InletOutlet</EFDB_Name>
+      <Description>Unit Configuration Status 1 Inlet Outlet</Description>
       <IDL_Type>boolean</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
     </item>
     <item>
-      <EFDB_Name>unitConfigurationStatus1Bit15Unused</EFDB_Name>
-      <Description>Unit Configuration Status 1 Bit 15 Unused</Description>
+      <EFDB_Name>unitConfigurationStatus1FreeCoolingEnabled</EFDB_Name>
+      <Description>Unit Configuration Status 1 Free Cooling Enabled</Description>
       <IDL_Type>boolean</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
@@ -1392,29 +1407,8 @@
       <Count>1</Count>
     </item>
     <item>
-      <EFDB_Name>unitConfigurationStatus1FreeCoolingEnabled</EFDB_Name>
-      <Description>Unit Configuration Status 1 Free Cooling Enabled</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>unitConfigurationStatus1HeatPumpEnabled</EFDB_Name>
-      <Description>Unit Configuration Status 1 Heat Pump Enabled</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>unitConfigurationStatus1InletOutlet</EFDB_Name>
-      <Description>Unit Configuration Status 1 Inlet Outlet</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>unitConfigurationStatus1QuickMindEnabled</EFDB_Name>
-      <Description>Unit Configuration Status 1 Quick Mind Enabled</Description>
+      <EFDB_Name>unitConfigurationStatus1Bit10Unused</EFDB_Name>
+      <Description>Unit Configuration Status 1 Bit 10 Unused</Description>
       <IDL_Type>boolean</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
@@ -1427,36 +1421,64 @@
       <Count>1</Count>
     </item>
     <item>
-      <EFDB_Name>unitConfigurationStatus2Bit10Unused</EFDB_Name>
-      <Description>Unit Configuration Status 2 Bit 10 Unused</Description>
+      <EFDB_Name>unitConfigurationStatus1Bit12Unused</EFDB_Name>
+      <Description>Unit Configuration Status 1 Bit 12 Unused</Description>
       <IDL_Type>boolean</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
     </item>
     <item>
-      <EFDB_Name>unitConfigurationStatus2Bit12Unused</EFDB_Name>
-      <Description>Unit Configuration Status 2 Bit 12 Unused</Description>
+      <EFDB_Name>unitConfigurationStatus1Bit13Unused</EFDB_Name>
+      <Description>Unit Configuration Status 1 Bit 13 Unused</Description>
       <IDL_Type>boolean</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
     </item>
     <item>
-      <EFDB_Name>unitConfigurationStatus2Bit13Unused</EFDB_Name>
-      <Description>Unit Configuration Status 2 Bit 13 Unused</Description>
+      <EFDB_Name>unitConfigurationStatus1Bit14Unused</EFDB_Name>
+      <Description>Unit Configuration Status 1 Bit 14 Unused</Description>
       <IDL_Type>boolean</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
     </item>
     <item>
-      <EFDB_Name>unitConfigurationStatus2Bit14Unused</EFDB_Name>
-      <Description>Unit Configuration Status 2 Bit 14 Unused</Description>
+      <EFDB_Name>unitConfigurationStatus1Bit15Unused</EFDB_Name>
+      <Description>Unit Configuration Status 1 Bit 15 Unused</Description>
       <IDL_Type>boolean</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
     </item>
     <item>
-      <EFDB_Name>unitConfigurationStatus2Bit15Unused</EFDB_Name>
-      <Description>Unit Configuration Status 2 Bit 15 Unused</Description>
+      <EFDB_Name>unitConfigurationStatus2TimeBandsEnabled</EFDB_Name>
+      <Description>Unit Configuration Status 2 Time Bands Enabled</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>unitConfigurationStatus2PumpdownEnabled</EFDB_Name>
+      <Description>Unit Configuration Status 2 Pumpdown Enabled</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>unitConfigurationStatus2SetpointModificationEnabled</EFDB_Name>
+      <Description>Unit Configuration Status 2 Setpoint Modification Enabled</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>unitConfigurationStatus2SequencerEnabled</EFDB_Name>
+      <Description>Unit Configuration Status 2 Sequencer Enabled</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>unitConfigurationStatus2DhwEnabled</EFDB_Name>
+      <Description>Unit Configuration Status 2 Dhw Enabled</Description>
       <IDL_Type>boolean</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
@@ -1497,8 +1519,8 @@
       <Count>1</Count>
     </item>
     <item>
-      <EFDB_Name>unitConfigurationStatus2DhwEnabled</EFDB_Name>
-      <Description>Unit Configuration Status 2 Dhw Enabled</Description>
+      <EFDB_Name>unitConfigurationStatus2Bit10Unused</EFDB_Name>
+      <Description>Unit Configuration Status 2 Bit 10 Unused</Description>
       <IDL_Type>boolean</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
@@ -1511,29 +1533,29 @@
       <Count>1</Count>
     </item>
     <item>
-      <EFDB_Name>unitConfigurationStatus2PumpdownEnabled</EFDB_Name>
-      <Description>Unit Configuration Status 2 Pumpdown Enabled</Description>
+      <EFDB_Name>unitConfigurationStatus2Bit12Unused</EFDB_Name>
+      <Description>Unit Configuration Status 2 Bit 12 Unused</Description>
       <IDL_Type>boolean</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
     </item>
     <item>
-      <EFDB_Name>unitConfigurationStatus2SequencerEnabled</EFDB_Name>
-      <Description>Unit Configuration Status 2 Sequencer Enabled</Description>
+      <EFDB_Name>unitConfigurationStatus2Bit13Unused</EFDB_Name>
+      <Description>Unit Configuration Status 2 Bit 13 Unused</Description>
       <IDL_Type>boolean</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
     </item>
     <item>
-      <EFDB_Name>unitConfigurationStatus2SetpointModificationEnabled</EFDB_Name>
-      <Description>Unit Configuration Status 2 Setpoint Modification Enabled</Description>
+      <EFDB_Name>unitConfigurationStatus2Bit14Unused</EFDB_Name>
+      <Description>Unit Configuration Status 2 Bit 14 Unused</Description>
       <IDL_Type>boolean</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
     </item>
     <item>
-      <EFDB_Name>unitConfigurationStatus2TimeBandsEnabled</EFDB_Name>
-      <Description>Unit Configuration Status 2 Time Bands Enabled</Description>
+      <EFDB_Name>unitConfigurationStatus2Bit15Unused</EFDB_Name>
+      <Description>Unit Configuration Status 2 Bit 15 Unused</Description>
       <IDL_Type>boolean</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
@@ -1551,454 +1573,6 @@
       <Count>1</Count>
     </item>
     <item>
-      <EFDB_Name>compressor1Plus2pEnabledWhole</EFDB_Name>
-      <Description>Compressor1 Plus 2p Enabled Whole</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>compressor1Plus2pEnabledWith1StepActive</EFDB_Name>
-      <Description>Compressor1 Plus 2p Enabled With 1 Step Active</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>compressor1Plus2pEnabledWith2StepsActive</EFDB_Name>
-      <Description>Compressor1 Plus 2p Enabled With 2 Steps Active</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>compressor1Plus2pEnabledWith3StepsActive</EFDB_Name>
-      <Description>Compressor1 Plus 2p Enabled With 3 Steps Active</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>compressor1StatusAlarmActive</EFDB_Name>
-      <Description>Compressor1 Status Alarm Active</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>compressor1StatusChiller</EFDB_Name>
-      <Description>Compressor1 Status Chiller</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>compressor1StatusConfigured</EFDB_Name>
-      <Description>Compressor1 Status Configured</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>compressor1StatusDefrosting</EFDB_Name>
-      <Description>Compressor1 Status Defrosting</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>compressor1StatusDripping</EFDB_Name>
-      <Description>Compressor1 Status Dripping</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>compressor1StatusEnabled</EFDB_Name>
-      <Description>Compressor1 Status Enabled</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>compressor1StatusEnabledStatusPumpDownActive</EFDB_Name>
-      <Description>Compressor1 Status Enabled Status Pump Down Active</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>compressor1StatusFreeCooling</EFDB_Name>
-      <Description>Compressor1 Status Free Cooling</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>compressor1StatusHeatpump</EFDB_Name>
-      <Description>Compressor1 Status Heatpump</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>compressor1StatusOn</EFDB_Name>
-      <Description>Compressor1 Status On</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>compressor1StatusRecovery</EFDB_Name>
-      <Description>Compressor1 Status Recovery</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>compressor1StatusRequest</EFDB_Name>
-      <Description>Compressor1 Status Request</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>compressor2Plus2pEnabledWhole</EFDB_Name>
-      <Description>Compressor2 Plus 2p Enabled Whole</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>compressor2Plus2pEnabledWith1StepActive</EFDB_Name>
-      <Description>Compressor2 Plus 2p Enabled With 1 Step Active</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>compressor2Plus2pEnabledWith2StepsActive</EFDB_Name>
-      <Description>Compressor2 Plus 2p Enabled With 2 Steps Active</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>compressor2Plus2pEnabledWith3StepsActive</EFDB_Name>
-      <Description>Compressor2 Plus 2p Enabled With 3 Steps Active</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>compressor2StatusAlarmActive</EFDB_Name>
-      <Description>Compressor2 Status Alarm Active</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>compressor2StatusChiller</EFDB_Name>
-      <Description>Compressor2 Status Chiller</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>compressor2StatusConfigured</EFDB_Name>
-      <Description>Compressor2 Status Configured</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>compressor2StatusDefrosting</EFDB_Name>
-      <Description>Compressor2 Status Defrosting</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>compressor2StatusDripping</EFDB_Name>
-      <Description>Compressor2 Status Dripping</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>compressor2StatusEnabled</EFDB_Name>
-      <Description>Compressor2 Status Enabled</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>compressor2StatusEnabledStatusPumpDownActive</EFDB_Name>
-      <Description>Compressor2 Status Enabled Status Pump Down Active</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>compressor2StatusFreeCooling</EFDB_Name>
-      <Description>Compressor2 Status Free Cooling</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>compressor2StatusHeatpump</EFDB_Name>
-      <Description>Compressor2 Status Heatpump</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>compressor2StatusOn</EFDB_Name>
-      <Description>Compressor2 Status On</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>compressor2StatusRecovery</EFDB_Name>
-      <Description>Compressor2 Status Recovery</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>compressor2StatusRequest</EFDB_Name>
-      <Description>Compressor2 Status Request</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>compressor3Plus2pEnabledWhole</EFDB_Name>
-      <Description>Compressor3 Plus 2p Enabled Whole</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>compressor3Plus2pEnabledWith1StepActive</EFDB_Name>
-      <Description>Compressor3 Plus 2p Enabled With 1 Step Active</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>compressor3Plus2pEnabledWith2StepsActive</EFDB_Name>
-      <Description>Compressor3 Plus 2p Enabled With 2 Steps Active</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>compressor3Plus2pEnabledWith3StepsActive</EFDB_Name>
-      <Description>Compressor3 Plus 2p Enabled With 3 Steps Active</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>compressor3StatusAlarmActive</EFDB_Name>
-      <Description>Compressor3 Status Alarm Active</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>compressor3StatusChiller</EFDB_Name>
-      <Description>Compressor3 Status Chiller</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>compressor3StatusConfigured</EFDB_Name>
-      <Description>Compressor3 Status Configured</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>compressor3StatusDefrosting</EFDB_Name>
-      <Description>Compressor3 Status Defrosting</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>compressor3StatusDripping</EFDB_Name>
-      <Description>Compressor3 Status Dripping</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>compressor3StatusEnabled</EFDB_Name>
-      <Description>Compressor3 Status Enabled</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>compressor3StatusEnabledStatusPumpDownActive</EFDB_Name>
-      <Description>Compressor3 Status Enabled Status Pump Down Active</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>compressor3StatusFreeCooling</EFDB_Name>
-      <Description>Compressor3 Status Free Cooling</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>compressor3StatusHeatpump</EFDB_Name>
-      <Description>Compressor3 Status Heatpump</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>compressor3StatusOn</EFDB_Name>
-      <Description>Compressor3 Status On</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>compressor3StatusRecovery</EFDB_Name>
-      <Description>Compressor3 Status Recovery</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>compressor3StatusRequest</EFDB_Name>
-      <Description>Compressor3 Status Request</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>compressor4Plus2pEnabledWhole</EFDB_Name>
-      <Description>Compressor4 Plus 2p Enabled Whole</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>compressor4Plus2pEnabledWith1StepActive</EFDB_Name>
-      <Description>Compressor4 Plus 2p Enabled With 1 Step Active</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>compressor4Plus2pEnabledWith2StepsActive</EFDB_Name>
-      <Description>Compressor4 Plus 2p Enabled With 2 Steps Active</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>compressor4Plus2pEnabledWith3StepsActive</EFDB_Name>
-      <Description>Compressor4 Plus 2p Enabled With 3 Steps Active</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>compressor4StatusAlarmActive</EFDB_Name>
-      <Description>Compressor4 Status Alarm Active</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>compressor4StatusChiller</EFDB_Name>
-      <Description>Compressor4 Status Chiller</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>compressor4StatusConfigured</EFDB_Name>
-      <Description>Compressor4 Status Configured</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>compressor4StatusDefrosting</EFDB_Name>
-      <Description>Compressor4 Status Defrosting</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>compressor4StatusDripping</EFDB_Name>
-      <Description>Compressor4 Status Dripping</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>compressor4StatusEnabled</EFDB_Name>
-      <Description>Compressor4 Status Enabled</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>compressor4StatusEnabledStatusPumpDownActive</EFDB_Name>
-      <Description>Compressor4 Status Enabled Status Pump Down Active</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>compressor4StatusFreeCooling</EFDB_Name>
-      <Description>Compressor4 Status Free Cooling</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>compressor4StatusHeatpump</EFDB_Name>
-      <Description>Compressor4 Status Heatpump</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>compressor4StatusOn</EFDB_Name>
-      <Description>Compressor4 Status On</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>compressor4StatusRecovery</EFDB_Name>
-      <Description>Compressor4 Status Recovery</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>compressor4StatusRequest</EFDB_Name>
-      <Description>Compressor4 Status Request</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
       <EFDB_Name>downDevice</EFDB_Name>
       <Description>Down Device</Description>
       <IDL_Type>boolean</IDL_Type>
@@ -2013,43 +1587,449 @@
       <Count>1</Count>
     </item>
     <item>
-      <EFDB_Name>pumpCodesBit11Unused</EFDB_Name>
-      <Description>Pump Codes Bit 11 Unused</Description>
+      <EFDB_Name>compressor1StatusConfigured</EFDB_Name>
+      <Description>Compressor1 Status Configured</Description>
       <IDL_Type>boolean</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
     </item>
     <item>
-      <EFDB_Name>pumpCodesBit3Unused</EFDB_Name>
-      <Description>Pump Codes Bit 3 Unused</Description>
+      <EFDB_Name>compressor1StatusEnabled</EFDB_Name>
+      <Description>Compressor1 Status Enabled</Description>
       <IDL_Type>boolean</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
     </item>
     <item>
-      <EFDB_Name>pumpCodesBit5Unused</EFDB_Name>
-      <Description>Pump Codes Bit 5 Unused</Description>
+      <EFDB_Name>compressor1StatusOn</EFDB_Name>
+      <Description>Compressor1 Status On</Description>
       <IDL_Type>boolean</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
     </item>
     <item>
-      <EFDB_Name>pumpCodesCondenserPumpAlarm</EFDB_Name>
-      <Description>Pump Codes Condenser Pump Alarm</Description>
+      <EFDB_Name>compressor1StatusEnabledStatusPumpDownActive</EFDB_Name>
+      <Description>Compressor1 Status Enabled Status Pump Down Active</Description>
       <IDL_Type>boolean</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
     </item>
     <item>
-      <EFDB_Name>pumpCodesCondenserPumpFlowAlarm</EFDB_Name>
-      <Description>Pump Codes Condenser Pump Flow Alarm</Description>
+      <EFDB_Name>compressor1StatusAlarmActive</EFDB_Name>
+      <Description>Compressor1 Status Alarm Active</Description>
       <IDL_Type>boolean</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
     </item>
     <item>
-      <EFDB_Name>pumpCodesEnableConsenserPump</EFDB_Name>
-      <Description>Pump Codes Enable Consenser Pump</Description>
+      <EFDB_Name>compressor1Plus2pEnabledWith3StepsActive</EFDB_Name>
+      <Description>Compressor1 Plus 2p Enabled With 3 Steps Active</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>compressor1Plus2pEnabledWith2StepsActive</EFDB_Name>
+      <Description>Compressor1 Plus 2p Enabled With 2 Steps Active</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>compressor1Plus2pEnabledWith1StepActive</EFDB_Name>
+      <Description>Compressor1 Plus 2p Enabled With 1 Step Active</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>compressor1Plus2pEnabledWhole</EFDB_Name>
+      <Description>Compressor1 Plus 2p Enabled Whole</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>compressor1StatusChiller</EFDB_Name>
+      <Description>Compressor1 Status Chiller</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>compressor1StatusHeatpump</EFDB_Name>
+      <Description>Compressor1 Status Heatpump</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>compressor1StatusRecovery</EFDB_Name>
+      <Description>Compressor1 Status Recovery</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>compressor1StatusDefrosting</EFDB_Name>
+      <Description>Compressor1 Status Defrosting</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>compressor1StatusFreeCooling</EFDB_Name>
+      <Description>Compressor1 Status Free Cooling</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>compressor1StatusDripping</EFDB_Name>
+      <Description>Compressor1 Status Dripping</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>compressor1StatusRequest</EFDB_Name>
+      <Description>Compressor1 Status Request</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>compressor2StatusConfigured</EFDB_Name>
+      <Description>Compressor2 Status Configured</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>compressor2StatusEnabled</EFDB_Name>
+      <Description>Compressor2 Status Enabled</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>compressor2StatusOn</EFDB_Name>
+      <Description>Compressor2 Status On</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>compressor2StatusEnabledStatusPumpDownActive</EFDB_Name>
+      <Description>Compressor2 Status Enabled Status Pump Down Active</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>compressor2StatusAlarmActive</EFDB_Name>
+      <Description>Compressor2 Status Alarm Active</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>compressor2Plus2pEnabledWith3StepsActive</EFDB_Name>
+      <Description>Compressor2 Plus 2p Enabled With 3 Steps Active</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>compressor2Plus2pEnabledWith2StepsActive</EFDB_Name>
+      <Description>Compressor2 Plus 2p Enabled With 2 Steps Active</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>compressor2Plus2pEnabledWith1StepActive</EFDB_Name>
+      <Description>Compressor2 Plus 2p Enabled With 1 Step Active</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>compressor2Plus2pEnabledWhole</EFDB_Name>
+      <Description>Compressor2 Plus 2p Enabled Whole</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>compressor2StatusChiller</EFDB_Name>
+      <Description>Compressor2 Status Chiller</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>compressor2StatusHeatpump</EFDB_Name>
+      <Description>Compressor2 Status Heatpump</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>compressor2StatusRecovery</EFDB_Name>
+      <Description>Compressor2 Status Recovery</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>compressor2StatusDefrosting</EFDB_Name>
+      <Description>Compressor2 Status Defrosting</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>compressor2StatusFreeCooling</EFDB_Name>
+      <Description>Compressor2 Status Free Cooling</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>compressor2StatusDripping</EFDB_Name>
+      <Description>Compressor2 Status Dripping</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>compressor2StatusRequest</EFDB_Name>
+      <Description>Compressor2 Status Request</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>compressor3StatusConfigured</EFDB_Name>
+      <Description>Compressor3 Status Configured</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>compressor3StatusEnabled</EFDB_Name>
+      <Description>Compressor3 Status Enabled</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>compressor3StatusOn</EFDB_Name>
+      <Description>Compressor3 Status On</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>compressor3StatusEnabledStatusPumpDownActive</EFDB_Name>
+      <Description>Compressor3 Status Enabled Status Pump Down Active</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>compressor3StatusAlarmActive</EFDB_Name>
+      <Description>Compressor3 Status Alarm Active</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>compressor3Plus2pEnabledWith3StepsActive</EFDB_Name>
+      <Description>Compressor3 Plus 2p Enabled With 3 Steps Active</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>compressor3Plus2pEnabledWith2StepsActive</EFDB_Name>
+      <Description>Compressor3 Plus 2p Enabled With 2 Steps Active</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>compressor3Plus2pEnabledWith1StepActive</EFDB_Name>
+      <Description>Compressor3 Plus 2p Enabled With 1 Step Active</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>compressor3Plus2pEnabledWhole</EFDB_Name>
+      <Description>Compressor3 Plus 2p Enabled Whole</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>compressor3StatusChiller</EFDB_Name>
+      <Description>Compressor3 Status Chiller</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>compressor3StatusHeatpump</EFDB_Name>
+      <Description>Compressor3 Status Heatpump</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>compressor3StatusRecovery</EFDB_Name>
+      <Description>Compressor3 Status Recovery</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>compressor3StatusDefrosting</EFDB_Name>
+      <Description>Compressor3 Status Defrosting</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>compressor3StatusFreeCooling</EFDB_Name>
+      <Description>Compressor3 Status Free Cooling</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>compressor3StatusDripping</EFDB_Name>
+      <Description>Compressor3 Status Dripping</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>compressor3StatusRequest</EFDB_Name>
+      <Description>Compressor3 Status Request</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>compressor4StatusConfigured</EFDB_Name>
+      <Description>Compressor4 Status Configured</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>compressor4StatusEnabled</EFDB_Name>
+      <Description>Compressor4 Status Enabled</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>compressor4StatusOn</EFDB_Name>
+      <Description>Compressor4 Status On</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>compressor4StatusEnabledStatusPumpDownActive</EFDB_Name>
+      <Description>Compressor4 Status Enabled Status Pump Down Active</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>compressor4StatusAlarmActive</EFDB_Name>
+      <Description>Compressor4 Status Alarm Active</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>compressor4Plus2pEnabledWith3StepsActive</EFDB_Name>
+      <Description>Compressor4 Plus 2p Enabled With 3 Steps Active</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>compressor4Plus2pEnabledWith2StepsActive</EFDB_Name>
+      <Description>Compressor4 Plus 2p Enabled With 2 Steps Active</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>compressor4Plus2pEnabledWith1StepActive</EFDB_Name>
+      <Description>Compressor4 Plus 2p Enabled With 1 Step Active</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>compressor4Plus2pEnabledWhole</EFDB_Name>
+      <Description>Compressor4 Plus 2p Enabled Whole</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>compressor4StatusChiller</EFDB_Name>
+      <Description>Compressor4 Status Chiller</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>compressor4StatusHeatpump</EFDB_Name>
+      <Description>Compressor4 Status Heatpump</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>compressor4StatusRecovery</EFDB_Name>
+      <Description>Compressor4 Status Recovery</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>compressor4StatusDefrosting</EFDB_Name>
+      <Description>Compressor4 Status Defrosting</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>compressor4StatusFreeCooling</EFDB_Name>
+      <Description>Compressor4 Status Free Cooling</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>compressor4StatusDripping</EFDB_Name>
+      <Description>Compressor4 Status Dripping</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>compressor4StatusRequest</EFDB_Name>
+      <Description>Compressor4 Status Request</Description>
       <IDL_Type>boolean</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
@@ -2076,8 +2056,22 @@
       <Count>1</Count>
     </item>
     <item>
-      <EFDB_Name>pumpCodesGeneralAlarm</EFDB_Name>
-      <Description>Pump Codes General Alarm</Description>
+      <EFDB_Name>pumpCodesBit3Unused</EFDB_Name>
+      <Description>Pump Codes Bit 3 Unused</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>pumpCodesEnableConsenserPump</EFDB_Name>
+      <Description>Pump Codes Enable Consenser Pump</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>pumpCodesBit5Unused</EFDB_Name>
+      <Description>Pump Codes Bit 5 Unused</Description>
       <IDL_Type>boolean</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
@@ -2085,6 +2079,13 @@
     <item>
       <EFDB_Name>pumpCodesPumps12Stopped</EFDB_Name>
       <Description>Pump Codes Pumps 12 Stopped</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>pumpCodesRecoveryPumpStopped</EFDB_Name>
+      <Description>Pump Codes Recovery Pump Stopped</Description>
       <IDL_Type>boolean</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
@@ -2111,8 +2112,22 @@
       <Count>1</Count>
     </item>
     <item>
-      <EFDB_Name>pumpCodesRecoveryPumpStopped</EFDB_Name>
-      <Description>Pump Codes Recovery Pump Stopped</Description>
+      <EFDB_Name>pumpCodesBit11Unused</EFDB_Name>
+      <Description>Pump Codes Bit 11 Unused</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>pumpCodesCondenserPumpAlarm</EFDB_Name>
+      <Description>Pump Codes Condenser Pump Alarm</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>pumpCodesCondenserPumpFlowAlarm</EFDB_Name>
+      <Description>Pump Codes Condenser Pump Flow Alarm</Description>
       <IDL_Type>boolean</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
@@ -2125,36 +2140,36 @@
       <Count>1</Count>
     </item>
     <item>
-      <EFDB_Name>unitConfigurationStatus1Bit10Unused</EFDB_Name>
-      <Description>Unit Configuration Status 1 Bit 10 Unused</Description>
+      <EFDB_Name>pumpCodesGeneralAlarm</EFDB_Name>
+      <Description>Pump Codes General Alarm</Description>
       <IDL_Type>boolean</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
     </item>
     <item>
-      <EFDB_Name>unitConfigurationStatus1Bit12Unused</EFDB_Name>
-      <Description>Unit Configuration Status 1 Bit 12 Unused</Description>
+      <EFDB_Name>unitConfigurationStatus1HeatPumpEnabled</EFDB_Name>
+      <Description>Unit Configuration Status 1 Heat Pump Enabled</Description>
       <IDL_Type>boolean</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
     </item>
     <item>
-      <EFDB_Name>unitConfigurationStatus1Bit13Unused</EFDB_Name>
-      <Description>Unit Configuration Status 1 Bit 13 Unused</Description>
+      <EFDB_Name>unitConfigurationStatus1QuickMindEnabled</EFDB_Name>
+      <Description>Unit Configuration Status 1 Quick Mind Enabled</Description>
       <IDL_Type>boolean</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
     </item>
     <item>
-      <EFDB_Name>unitConfigurationStatus1Bit14Unused</EFDB_Name>
-      <Description>Unit Configuration Status 1 Bit 14 Unused</Description>
+      <EFDB_Name>unitConfigurationStatus1InletOutlet</EFDB_Name>
+      <Description>Unit Configuration Status 1 Inlet Outlet</Description>
       <IDL_Type>boolean</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
     </item>
     <item>
-      <EFDB_Name>unitConfigurationStatus1Bit15Unused</EFDB_Name>
-      <Description>Unit Configuration Status 1 Bit 15 Unused</Description>
+      <EFDB_Name>unitConfigurationStatus1FreeCoolingEnabled</EFDB_Name>
+      <Description>Unit Configuration Status 1 Free Cooling Enabled</Description>
       <IDL_Type>boolean</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
@@ -2202,29 +2217,8 @@
       <Count>1</Count>
     </item>
     <item>
-      <EFDB_Name>unitConfigurationStatus1FreeCoolingEnabled</EFDB_Name>
-      <Description>Unit Configuration Status 1 Free Cooling Enabled</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>unitConfigurationStatus1HeatPumpEnabled</EFDB_Name>
-      <Description>Unit Configuration Status 1 Heat Pump Enabled</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>unitConfigurationStatus1InletOutlet</EFDB_Name>
-      <Description>Unit Configuration Status 1 Inlet Outlet</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>unitConfigurationStatus1QuickMindEnabled</EFDB_Name>
-      <Description>Unit Configuration Status 1 Quick Mind Enabled</Description>
+      <EFDB_Name>unitConfigurationStatus1Bit10Unused</EFDB_Name>
+      <Description>Unit Configuration Status 1 Bit 10 Unused</Description>
       <IDL_Type>boolean</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
@@ -2237,36 +2231,64 @@
       <Count>1</Count>
     </item>
     <item>
-      <EFDB_Name>unitConfigurationStatus2Bit10Unused</EFDB_Name>
-      <Description>Unit Configuration Status 2 Bit 10 Unused</Description>
+      <EFDB_Name>unitConfigurationStatus1Bit12Unused</EFDB_Name>
+      <Description>Unit Configuration Status 1 Bit 12 Unused</Description>
       <IDL_Type>boolean</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
     </item>
     <item>
-      <EFDB_Name>unitConfigurationStatus2Bit12Unused</EFDB_Name>
-      <Description>Unit Configuration Status 2 Bit 12 Unused</Description>
+      <EFDB_Name>unitConfigurationStatus1Bit13Unused</EFDB_Name>
+      <Description>Unit Configuration Status 1 Bit 13 Unused</Description>
       <IDL_Type>boolean</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
     </item>
     <item>
-      <EFDB_Name>unitConfigurationStatus2Bit13Unused</EFDB_Name>
-      <Description>Unit Configuration Status 2 Bit 13 Unused</Description>
+      <EFDB_Name>unitConfigurationStatus1Bit14Unused</EFDB_Name>
+      <Description>Unit Configuration Status 1 Bit 14 Unused</Description>
       <IDL_Type>boolean</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
     </item>
     <item>
-      <EFDB_Name>unitConfigurationStatus2Bit14Unused</EFDB_Name>
-      <Description>Unit Configuration Status 2 Bit 14 Unused</Description>
+      <EFDB_Name>unitConfigurationStatus1Bit15Unused</EFDB_Name>
+      <Description>Unit Configuration Status 1 Bit 15 Unused</Description>
       <IDL_Type>boolean</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
     </item>
     <item>
-      <EFDB_Name>unitConfigurationStatus2Bit15Unused</EFDB_Name>
-      <Description>Unit Configuration Status 2 Bit 15 Unused</Description>
+      <EFDB_Name>unitConfigurationStatus2TimeBandsEnabled</EFDB_Name>
+      <Description>Unit Configuration Status 2 Time Bands Enabled</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>unitConfigurationStatus2PumpdownEnabled</EFDB_Name>
+      <Description>Unit Configuration Status 2 Pumpdown Enabled</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>unitConfigurationStatus2SetpointModificationEnabled</EFDB_Name>
+      <Description>Unit Configuration Status 2 Setpoint Modification Enabled</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>unitConfigurationStatus2SequencerEnabled</EFDB_Name>
+      <Description>Unit Configuration Status 2 Sequencer Enabled</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>unitConfigurationStatus2DhwEnabled</EFDB_Name>
+      <Description>Unit Configuration Status 2 Dhw Enabled</Description>
       <IDL_Type>boolean</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
@@ -2307,8 +2329,8 @@
       <Count>1</Count>
     </item>
     <item>
-      <EFDB_Name>unitConfigurationStatus2DhwEnabled</EFDB_Name>
-      <Description>Unit Configuration Status 2 Dhw Enabled</Description>
+      <EFDB_Name>unitConfigurationStatus2Bit10Unused</EFDB_Name>
+      <Description>Unit Configuration Status 2 Bit 10 Unused</Description>
       <IDL_Type>boolean</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
@@ -2321,29 +2343,29 @@
       <Count>1</Count>
     </item>
     <item>
-      <EFDB_Name>unitConfigurationStatus2PumpdownEnabled</EFDB_Name>
-      <Description>Unit Configuration Status 2 Pumpdown Enabled</Description>
+      <EFDB_Name>unitConfigurationStatus2Bit12Unused</EFDB_Name>
+      <Description>Unit Configuration Status 2 Bit 12 Unused</Description>
       <IDL_Type>boolean</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
     </item>
     <item>
-      <EFDB_Name>unitConfigurationStatus2SequencerEnabled</EFDB_Name>
-      <Description>Unit Configuration Status 2 Sequencer Enabled</Description>
+      <EFDB_Name>unitConfigurationStatus2Bit13Unused</EFDB_Name>
+      <Description>Unit Configuration Status 2 Bit 13 Unused</Description>
       <IDL_Type>boolean</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
     </item>
     <item>
-      <EFDB_Name>unitConfigurationStatus2SetpointModificationEnabled</EFDB_Name>
-      <Description>Unit Configuration Status 2 Setpoint Modification Enabled</Description>
+      <EFDB_Name>unitConfigurationStatus2Bit14Unused</EFDB_Name>
+      <Description>Unit Configuration Status 2 Bit 14 Unused</Description>
       <IDL_Type>boolean</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
     </item>
     <item>
-      <EFDB_Name>unitConfigurationStatus2TimeBandsEnabled</EFDB_Name>
-      <Description>Unit Configuration Status 2 Time Bands Enabled</Description>
+      <EFDB_Name>unitConfigurationStatus2Bit15Unused</EFDB_Name>
+      <Description>Unit Configuration Status 2 Bit 15 Unused</Description>
       <IDL_Type>boolean</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
@@ -2361,454 +2383,6 @@
       <Count>1</Count>
     </item>
     <item>
-      <EFDB_Name>compressor1Plus2pEnabledWhole</EFDB_Name>
-      <Description>Compressor1 Plus 2p Enabled Whole</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>compressor1Plus2pEnabledWith1StepActive</EFDB_Name>
-      <Description>Compressor1 Plus 2p Enabled With 1 Step Active</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>compressor1Plus2pEnabledWith2StepsActive</EFDB_Name>
-      <Description>Compressor1 Plus 2p Enabled With 2 Steps Active</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>compressor1Plus2pEnabledWith3StepsActive</EFDB_Name>
-      <Description>Compressor1 Plus 2p Enabled With 3 Steps Active</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>compressor1StatusAlarmActive</EFDB_Name>
-      <Description>Compressor1 Status Alarm Active</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>compressor1StatusChiller</EFDB_Name>
-      <Description>Compressor1 Status Chiller</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>compressor1StatusConfigured</EFDB_Name>
-      <Description>Compressor1 Status Configured</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>compressor1StatusDefrosting</EFDB_Name>
-      <Description>Compressor1 Status Defrosting</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>compressor1StatusDripping</EFDB_Name>
-      <Description>Compressor1 Status Dripping</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>compressor1StatusEnabled</EFDB_Name>
-      <Description>Compressor1 Status Enabled</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>compressor1StatusEnabledStatusPumpDownActive</EFDB_Name>
-      <Description>Compressor1 Status Enabled Status Pump Down Active</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>compressor1StatusFreeCooling</EFDB_Name>
-      <Description>Compressor1 Status Free Cooling</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>compressor1StatusHeatpump</EFDB_Name>
-      <Description>Compressor1 Status Heatpump</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>compressor1StatusOn</EFDB_Name>
-      <Description>Compressor1 Status On</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>compressor1StatusRecovery</EFDB_Name>
-      <Description>Compressor1 Status Recovery</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>compressor1StatusRequest</EFDB_Name>
-      <Description>Compressor1 Status Request</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>compressor2Plus2pEnabledWhole</EFDB_Name>
-      <Description>Compressor2 Plus 2p Enabled Whole</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>compressor2Plus2pEnabledWith1StepActive</EFDB_Name>
-      <Description>Compressor2 Plus 2p Enabled With 1 Step Active</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>compressor2Plus2pEnabledWith2StepsActive</EFDB_Name>
-      <Description>Compressor2 Plus 2p Enabled With 2 Steps Active</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>compressor2Plus2pEnabledWith3StepsActive</EFDB_Name>
-      <Description>Compressor2 Plus 2p Enabled With 3 Steps Active</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>compressor2StatusAlarmActive</EFDB_Name>
-      <Description>Compressor2 Status Alarm Active</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>compressor2StatusChiller</EFDB_Name>
-      <Description>Compressor2 Status Chiller</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>compressor2StatusConfigured</EFDB_Name>
-      <Description>Compressor2 Status Configured</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>compressor2StatusDefrosting</EFDB_Name>
-      <Description>Compressor2 Status Defrosting</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>compressor2StatusDripping</EFDB_Name>
-      <Description>Compressor2 Status Dripping</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>compressor2StatusEnabled</EFDB_Name>
-      <Description>Compressor2 Status Enabled</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>compressor2StatusEnabledStatusPumpDownActive</EFDB_Name>
-      <Description>Compressor2 Status Enabled Status Pump Down Active</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>compressor2StatusFreeCooling</EFDB_Name>
-      <Description>Compressor2 Status Free Cooling</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>compressor2StatusHeatpump</EFDB_Name>
-      <Description>Compressor2 Status Heatpump</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>compressor2StatusOn</EFDB_Name>
-      <Description>Compressor2 Status On</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>compressor2StatusRecovery</EFDB_Name>
-      <Description>Compressor2 Status Recovery</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>compressor2StatusRequest</EFDB_Name>
-      <Description>Compressor2 Status Request</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>compressor3Plus2pEnabledWhole</EFDB_Name>
-      <Description>Compressor3 Plus 2p Enabled Whole</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>compressor3Plus2pEnabledWith1StepActive</EFDB_Name>
-      <Description>Compressor3 Plus 2p Enabled With 1 Step Active</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>compressor3Plus2pEnabledWith2StepsActive</EFDB_Name>
-      <Description>Compressor3 Plus 2p Enabled With 2 Steps Active</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>compressor3Plus2pEnabledWith3StepsActive</EFDB_Name>
-      <Description>Compressor3 Plus 2p Enabled With 3 Steps Active</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>compressor3StatusAlarmActive</EFDB_Name>
-      <Description>Compressor3 Status Alarm Active</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>compressor3StatusChiller</EFDB_Name>
-      <Description>Compressor3 Status Chiller</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>compressor3StatusConfigured</EFDB_Name>
-      <Description>Compressor3 Status Configured</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>compressor3StatusDefrosting</EFDB_Name>
-      <Description>Compressor3 Status Defrosting</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>compressor3StatusDripping</EFDB_Name>
-      <Description>Compressor3 Status Dripping</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>compressor3StatusEnabled</EFDB_Name>
-      <Description>Compressor3 Status Enabled</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>compressor3StatusEnabledStatusPumpDownActive</EFDB_Name>
-      <Description>Compressor3 Status Enabled Status Pump Down Active</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>compressor3StatusFreeCooling</EFDB_Name>
-      <Description>Compressor3 Status Free Cooling</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>compressor3StatusHeatpump</EFDB_Name>
-      <Description>Compressor3 Status Heatpump</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>compressor3StatusOn</EFDB_Name>
-      <Description>Compressor3 Status On</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>compressor3StatusRecovery</EFDB_Name>
-      <Description>Compressor3 Status Recovery</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>compressor3StatusRequest</EFDB_Name>
-      <Description>Compressor3 Status Request</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>compressor4Plus2pEnabledWhole</EFDB_Name>
-      <Description>Compressor4 Plus 2p Enabled Whole</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>compressor4Plus2pEnabledWith1StepActive</EFDB_Name>
-      <Description>Compressor4 Plus 2p Enabled With 1 Step Active</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>compressor4Plus2pEnabledWith2StepsActive</EFDB_Name>
-      <Description>Compressor4 Plus 2p Enabled With 2 Steps Active</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>compressor4Plus2pEnabledWith3StepsActive</EFDB_Name>
-      <Description>Compressor4 Plus 2p Enabled With 3 Steps Active</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>compressor4StatusAlarmActive</EFDB_Name>
-      <Description>Compressor4 Status Alarm Active</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>compressor4StatusChiller</EFDB_Name>
-      <Description>Compressor4 Status Chiller</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>compressor4StatusConfigured</EFDB_Name>
-      <Description>Compressor4 Status Configured</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>compressor4StatusDefrosting</EFDB_Name>
-      <Description>Compressor4 Status Defrosting</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>compressor4StatusDripping</EFDB_Name>
-      <Description>Compressor4 Status Dripping</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>compressor4StatusEnabled</EFDB_Name>
-      <Description>Compressor4 Status Enabled</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>compressor4StatusEnabledStatusPumpDownActive</EFDB_Name>
-      <Description>Compressor4 Status Enabled Status Pump Down Active</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>compressor4StatusFreeCooling</EFDB_Name>
-      <Description>Compressor4 Status Free Cooling</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>compressor4StatusHeatpump</EFDB_Name>
-      <Description>Compressor4 Status Heatpump</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>compressor4StatusOn</EFDB_Name>
-      <Description>Compressor4 Status On</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>compressor4StatusRecovery</EFDB_Name>
-      <Description>Compressor4 Status Recovery</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>compressor4StatusRequest</EFDB_Name>
-      <Description>Compressor4 Status Request</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
       <EFDB_Name>downDevice</EFDB_Name>
       <Description>Down Device</Description>
       <IDL_Type>boolean</IDL_Type>
@@ -2823,43 +2397,449 @@
       <Count>1</Count>
     </item>
     <item>
-      <EFDB_Name>pumpCodesBit11Unused</EFDB_Name>
-      <Description>Pump Codes Bit 11 Unused</Description>
+      <EFDB_Name>compressor1StatusConfigured</EFDB_Name>
+      <Description>Compressor1 Status Configured</Description>
       <IDL_Type>boolean</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
     </item>
     <item>
-      <EFDB_Name>pumpCodesBit3Unused</EFDB_Name>
-      <Description>Pump Codes Bit 3 Unused</Description>
+      <EFDB_Name>compressor1StatusEnabled</EFDB_Name>
+      <Description>Compressor1 Status Enabled</Description>
       <IDL_Type>boolean</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
     </item>
     <item>
-      <EFDB_Name>pumpCodesBit5Unused</EFDB_Name>
-      <Description>Pump Codes Bit 5 Unused</Description>
+      <EFDB_Name>compressor1StatusOn</EFDB_Name>
+      <Description>Compressor1 Status On</Description>
       <IDL_Type>boolean</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
     </item>
     <item>
-      <EFDB_Name>pumpCodesCondenserPumpAlarm</EFDB_Name>
-      <Description>Pump Codes Condenser Pump Alarm</Description>
+      <EFDB_Name>compressor1StatusEnabledStatusPumpDownActive</EFDB_Name>
+      <Description>Compressor1 Status Enabled Status Pump Down Active</Description>
       <IDL_Type>boolean</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
     </item>
     <item>
-      <EFDB_Name>pumpCodesCondenserPumpFlowAlarm</EFDB_Name>
-      <Description>Pump Codes Condenser Pump Flow Alarm</Description>
+      <EFDB_Name>compressor1StatusAlarmActive</EFDB_Name>
+      <Description>Compressor1 Status Alarm Active</Description>
       <IDL_Type>boolean</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
     </item>
     <item>
-      <EFDB_Name>pumpCodesEnableConsenserPump</EFDB_Name>
-      <Description>Pump Codes Enable Consenser Pump</Description>
+      <EFDB_Name>compressor1Plus2pEnabledWith3StepsActive</EFDB_Name>
+      <Description>Compressor1 Plus 2p Enabled With 3 Steps Active</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>compressor1Plus2pEnabledWith2StepsActive</EFDB_Name>
+      <Description>Compressor1 Plus 2p Enabled With 2 Steps Active</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>compressor1Plus2pEnabledWith1StepActive</EFDB_Name>
+      <Description>Compressor1 Plus 2p Enabled With 1 Step Active</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>compressor1Plus2pEnabledWhole</EFDB_Name>
+      <Description>Compressor1 Plus 2p Enabled Whole</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>compressor1StatusChiller</EFDB_Name>
+      <Description>Compressor1 Status Chiller</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>compressor1StatusHeatpump</EFDB_Name>
+      <Description>Compressor1 Status Heatpump</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>compressor1StatusRecovery</EFDB_Name>
+      <Description>Compressor1 Status Recovery</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>compressor1StatusDefrosting</EFDB_Name>
+      <Description>Compressor1 Status Defrosting</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>compressor1StatusFreeCooling</EFDB_Name>
+      <Description>Compressor1 Status Free Cooling</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>compressor1StatusDripping</EFDB_Name>
+      <Description>Compressor1 Status Dripping</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>compressor1StatusRequest</EFDB_Name>
+      <Description>Compressor1 Status Request</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>compressor2StatusConfigured</EFDB_Name>
+      <Description>Compressor2 Status Configured</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>compressor2StatusEnabled</EFDB_Name>
+      <Description>Compressor2 Status Enabled</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>compressor2StatusOn</EFDB_Name>
+      <Description>Compressor2 Status On</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>compressor2StatusEnabledStatusPumpDownActive</EFDB_Name>
+      <Description>Compressor2 Status Enabled Status Pump Down Active</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>compressor2StatusAlarmActive</EFDB_Name>
+      <Description>Compressor2 Status Alarm Active</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>compressor2Plus2pEnabledWith3StepsActive</EFDB_Name>
+      <Description>Compressor2 Plus 2p Enabled With 3 Steps Active</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>compressor2Plus2pEnabledWith2StepsActive</EFDB_Name>
+      <Description>Compressor2 Plus 2p Enabled With 2 Steps Active</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>compressor2Plus2pEnabledWith1StepActive</EFDB_Name>
+      <Description>Compressor2 Plus 2p Enabled With 1 Step Active</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>compressor2Plus2pEnabledWhole</EFDB_Name>
+      <Description>Compressor2 Plus 2p Enabled Whole</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>compressor2StatusChiller</EFDB_Name>
+      <Description>Compressor2 Status Chiller</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>compressor2StatusHeatpump</EFDB_Name>
+      <Description>Compressor2 Status Heatpump</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>compressor2StatusRecovery</EFDB_Name>
+      <Description>Compressor2 Status Recovery</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>compressor2StatusDefrosting</EFDB_Name>
+      <Description>Compressor2 Status Defrosting</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>compressor2StatusFreeCooling</EFDB_Name>
+      <Description>Compressor2 Status Free Cooling</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>compressor2StatusDripping</EFDB_Name>
+      <Description>Compressor2 Status Dripping</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>compressor2StatusRequest</EFDB_Name>
+      <Description>Compressor2 Status Request</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>compressor3StatusConfigured</EFDB_Name>
+      <Description>Compressor3 Status Configured</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>compressor3StatusEnabled</EFDB_Name>
+      <Description>Compressor3 Status Enabled</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>compressor3StatusOn</EFDB_Name>
+      <Description>Compressor3 Status On</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>compressor3StatusEnabledStatusPumpDownActive</EFDB_Name>
+      <Description>Compressor3 Status Enabled Status Pump Down Active</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>compressor3StatusAlarmActive</EFDB_Name>
+      <Description>Compressor3 Status Alarm Active</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>compressor3Plus2pEnabledWith3StepsActive</EFDB_Name>
+      <Description>Compressor3 Plus 2p Enabled With 3 Steps Active</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>compressor3Plus2pEnabledWith2StepsActive</EFDB_Name>
+      <Description>Compressor3 Plus 2p Enabled With 2 Steps Active</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>compressor3Plus2pEnabledWith1StepActive</EFDB_Name>
+      <Description>Compressor3 Plus 2p Enabled With 1 Step Active</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>compressor3Plus2pEnabledWhole</EFDB_Name>
+      <Description>Compressor3 Plus 2p Enabled Whole</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>compressor3StatusChiller</EFDB_Name>
+      <Description>Compressor3 Status Chiller</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>compressor3StatusHeatpump</EFDB_Name>
+      <Description>Compressor3 Status Heatpump</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>compressor3StatusRecovery</EFDB_Name>
+      <Description>Compressor3 Status Recovery</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>compressor3StatusDefrosting</EFDB_Name>
+      <Description>Compressor3 Status Defrosting</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>compressor3StatusFreeCooling</EFDB_Name>
+      <Description>Compressor3 Status Free Cooling</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>compressor3StatusDripping</EFDB_Name>
+      <Description>Compressor3 Status Dripping</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>compressor3StatusRequest</EFDB_Name>
+      <Description>Compressor3 Status Request</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>compressor4StatusConfigured</EFDB_Name>
+      <Description>Compressor4 Status Configured</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>compressor4StatusEnabled</EFDB_Name>
+      <Description>Compressor4 Status Enabled</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>compressor4StatusOn</EFDB_Name>
+      <Description>Compressor4 Status On</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>compressor4StatusEnabledStatusPumpDownActive</EFDB_Name>
+      <Description>Compressor4 Status Enabled Status Pump Down Active</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>compressor4StatusAlarmActive</EFDB_Name>
+      <Description>Compressor4 Status Alarm Active</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>compressor4Plus2pEnabledWith3StepsActive</EFDB_Name>
+      <Description>Compressor4 Plus 2p Enabled With 3 Steps Active</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>compressor4Plus2pEnabledWith2StepsActive</EFDB_Name>
+      <Description>Compressor4 Plus 2p Enabled With 2 Steps Active</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>compressor4Plus2pEnabledWith1StepActive</EFDB_Name>
+      <Description>Compressor4 Plus 2p Enabled With 1 Step Active</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>compressor4Plus2pEnabledWhole</EFDB_Name>
+      <Description>Compressor4 Plus 2p Enabled Whole</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>compressor4StatusChiller</EFDB_Name>
+      <Description>Compressor4 Status Chiller</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>compressor4StatusHeatpump</EFDB_Name>
+      <Description>Compressor4 Status Heatpump</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>compressor4StatusRecovery</EFDB_Name>
+      <Description>Compressor4 Status Recovery</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>compressor4StatusDefrosting</EFDB_Name>
+      <Description>Compressor4 Status Defrosting</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>compressor4StatusFreeCooling</EFDB_Name>
+      <Description>Compressor4 Status Free Cooling</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>compressor4StatusDripping</EFDB_Name>
+      <Description>Compressor4 Status Dripping</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>compressor4StatusRequest</EFDB_Name>
+      <Description>Compressor4 Status Request</Description>
       <IDL_Type>boolean</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
@@ -2886,8 +2866,22 @@
       <Count>1</Count>
     </item>
     <item>
-      <EFDB_Name>pumpCodesGeneralAlarm</EFDB_Name>
-      <Description>Pump Codes General Alarm</Description>
+      <EFDB_Name>pumpCodesBit3Unused</EFDB_Name>
+      <Description>Pump Codes Bit 3 Unused</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>pumpCodesEnableConsenserPump</EFDB_Name>
+      <Description>Pump Codes Enable Consenser Pump</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>pumpCodesBit5Unused</EFDB_Name>
+      <Description>Pump Codes Bit 5 Unused</Description>
       <IDL_Type>boolean</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
@@ -2895,6 +2889,13 @@
     <item>
       <EFDB_Name>pumpCodesPumps12Stopped</EFDB_Name>
       <Description>Pump Codes Pumps 12 Stopped</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>pumpCodesRecoveryPumpStopped</EFDB_Name>
+      <Description>Pump Codes Recovery Pump Stopped</Description>
       <IDL_Type>boolean</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
@@ -2921,8 +2922,22 @@
       <Count>1</Count>
     </item>
     <item>
-      <EFDB_Name>pumpCodesRecoveryPumpStopped</EFDB_Name>
-      <Description>Pump Codes Recovery Pump Stopped</Description>
+      <EFDB_Name>pumpCodesBit11Unused</EFDB_Name>
+      <Description>Pump Codes Bit 11 Unused</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>pumpCodesCondenserPumpAlarm</EFDB_Name>
+      <Description>Pump Codes Condenser Pump Alarm</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>pumpCodesCondenserPumpFlowAlarm</EFDB_Name>
+      <Description>Pump Codes Condenser Pump Flow Alarm</Description>
       <IDL_Type>boolean</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
@@ -2935,36 +2950,36 @@
       <Count>1</Count>
     </item>
     <item>
-      <EFDB_Name>unitConfigurationStatus1Bit10Unused</EFDB_Name>
-      <Description>Unit Configuration Status 1 Bit 10 Unused</Description>
+      <EFDB_Name>pumpCodesGeneralAlarm</EFDB_Name>
+      <Description>Pump Codes General Alarm</Description>
       <IDL_Type>boolean</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
     </item>
     <item>
-      <EFDB_Name>unitConfigurationStatus1Bit12Unused</EFDB_Name>
-      <Description>Unit Configuration Status 1 Bit 12 Unused</Description>
+      <EFDB_Name>unitConfigurationStatus1HeatPumpEnabled</EFDB_Name>
+      <Description>Unit Configuration Status 1 Heat Pump Enabled</Description>
       <IDL_Type>boolean</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
     </item>
     <item>
-      <EFDB_Name>unitConfigurationStatus1Bit13Unused</EFDB_Name>
-      <Description>Unit Configuration Status 1 Bit 13 Unused</Description>
+      <EFDB_Name>unitConfigurationStatus1QuickMindEnabled</EFDB_Name>
+      <Description>Unit Configuration Status 1 Quick Mind Enabled</Description>
       <IDL_Type>boolean</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
     </item>
     <item>
-      <EFDB_Name>unitConfigurationStatus1Bit14Unused</EFDB_Name>
-      <Description>Unit Configuration Status 1 Bit 14 Unused</Description>
+      <EFDB_Name>unitConfigurationStatus1InletOutlet</EFDB_Name>
+      <Description>Unit Configuration Status 1 Inlet Outlet</Description>
       <IDL_Type>boolean</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
     </item>
     <item>
-      <EFDB_Name>unitConfigurationStatus1Bit15Unused</EFDB_Name>
-      <Description>Unit Configuration Status 1 Bit 15 Unused</Description>
+      <EFDB_Name>unitConfigurationStatus1FreeCoolingEnabled</EFDB_Name>
+      <Description>Unit Configuration Status 1 Free Cooling Enabled</Description>
       <IDL_Type>boolean</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
@@ -3012,29 +3027,8 @@
       <Count>1</Count>
     </item>
     <item>
-      <EFDB_Name>unitConfigurationStatus1FreeCoolingEnabled</EFDB_Name>
-      <Description>Unit Configuration Status 1 Free Cooling Enabled</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>unitConfigurationStatus1HeatPumpEnabled</EFDB_Name>
-      <Description>Unit Configuration Status 1 Heat Pump Enabled</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>unitConfigurationStatus1InletOutlet</EFDB_Name>
-      <Description>Unit Configuration Status 1 Inlet Outlet</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>unitConfigurationStatus1QuickMindEnabled</EFDB_Name>
-      <Description>Unit Configuration Status 1 Quick Mind Enabled</Description>
+      <EFDB_Name>unitConfigurationStatus1Bit10Unused</EFDB_Name>
+      <Description>Unit Configuration Status 1 Bit 10 Unused</Description>
       <IDL_Type>boolean</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
@@ -3047,36 +3041,64 @@
       <Count>1</Count>
     </item>
     <item>
-      <EFDB_Name>unitConfigurationStatus2Bit10Unused</EFDB_Name>
-      <Description>Unit Configuration Status 2 Bit 10 Unused</Description>
+      <EFDB_Name>unitConfigurationStatus1Bit12Unused</EFDB_Name>
+      <Description>Unit Configuration Status 1 Bit 12 Unused</Description>
       <IDL_Type>boolean</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
     </item>
     <item>
-      <EFDB_Name>unitConfigurationStatus2Bit12Unused</EFDB_Name>
-      <Description>Unit Configuration Status 2 Bit 12 Unused</Description>
+      <EFDB_Name>unitConfigurationStatus1Bit13Unused</EFDB_Name>
+      <Description>Unit Configuration Status 1 Bit 13 Unused</Description>
       <IDL_Type>boolean</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
     </item>
     <item>
-      <EFDB_Name>unitConfigurationStatus2Bit13Unused</EFDB_Name>
-      <Description>Unit Configuration Status 2 Bit 13 Unused</Description>
+      <EFDB_Name>unitConfigurationStatus1Bit14Unused</EFDB_Name>
+      <Description>Unit Configuration Status 1 Bit 14 Unused</Description>
       <IDL_Type>boolean</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
     </item>
     <item>
-      <EFDB_Name>unitConfigurationStatus2Bit14Unused</EFDB_Name>
-      <Description>Unit Configuration Status 2 Bit 14 Unused</Description>
+      <EFDB_Name>unitConfigurationStatus1Bit15Unused</EFDB_Name>
+      <Description>Unit Configuration Status 1 Bit 15 Unused</Description>
       <IDL_Type>boolean</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
     </item>
     <item>
-      <EFDB_Name>unitConfigurationStatus2Bit15Unused</EFDB_Name>
-      <Description>Unit Configuration Status 2 Bit 15 Unused</Description>
+      <EFDB_Name>unitConfigurationStatus2TimeBandsEnabled</EFDB_Name>
+      <Description>Unit Configuration Status 2 Time Bands Enabled</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>unitConfigurationStatus2PumpdownEnabled</EFDB_Name>
+      <Description>Unit Configuration Status 2 Pumpdown Enabled</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>unitConfigurationStatus2SetpointModificationEnabled</EFDB_Name>
+      <Description>Unit Configuration Status 2 Setpoint Modification Enabled</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>unitConfigurationStatus2SequencerEnabled</EFDB_Name>
+      <Description>Unit Configuration Status 2 Sequencer Enabled</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>unitConfigurationStatus2DhwEnabled</EFDB_Name>
+      <Description>Unit Configuration Status 2 Dhw Enabled</Description>
       <IDL_Type>boolean</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
@@ -3117,8 +3139,8 @@
       <Count>1</Count>
     </item>
     <item>
-      <EFDB_Name>unitConfigurationStatus2DhwEnabled</EFDB_Name>
-      <Description>Unit Configuration Status 2 Dhw Enabled</Description>
+      <EFDB_Name>unitConfigurationStatus2Bit10Unused</EFDB_Name>
+      <Description>Unit Configuration Status 2 Bit 10 Unused</Description>
       <IDL_Type>boolean</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
@@ -3131,29 +3153,29 @@
       <Count>1</Count>
     </item>
     <item>
-      <EFDB_Name>unitConfigurationStatus2PumpdownEnabled</EFDB_Name>
-      <Description>Unit Configuration Status 2 Pumpdown Enabled</Description>
+      <EFDB_Name>unitConfigurationStatus2Bit12Unused</EFDB_Name>
+      <Description>Unit Configuration Status 2 Bit 12 Unused</Description>
       <IDL_Type>boolean</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
     </item>
     <item>
-      <EFDB_Name>unitConfigurationStatus2SequencerEnabled</EFDB_Name>
-      <Description>Unit Configuration Status 2 Sequencer Enabled</Description>
+      <EFDB_Name>unitConfigurationStatus2Bit13Unused</EFDB_Name>
+      <Description>Unit Configuration Status 2 Bit 13 Unused</Description>
       <IDL_Type>boolean</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
     </item>
     <item>
-      <EFDB_Name>unitConfigurationStatus2SetpointModificationEnabled</EFDB_Name>
-      <Description>Unit Configuration Status 2 Setpoint Modification Enabled</Description>
+      <EFDB_Name>unitConfigurationStatus2Bit14Unused</EFDB_Name>
+      <Description>Unit Configuration Status 2 Bit 14 Unused</Description>
       <IDL_Type>boolean</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
     </item>
     <item>
-      <EFDB_Name>unitConfigurationStatus2TimeBandsEnabled</EFDB_Name>
-      <Description>Unit Configuration Status 2 Time Bands Enabled</Description>
+      <EFDB_Name>unitConfigurationStatus2Bit15Unused</EFDB_Name>
+      <Description>Unit Configuration Status 2 Bit 15 Unused</Description>
       <IDL_Type>boolean</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
@@ -3950,60 +3972,22 @@
   </SALEvent>
   <SALEvent>
     <Subsystem>HVAC</Subsystem>
-    <EFDB_Topic>HVAC_logevent_crac01P02</EFDB_Topic>
-    <Description>C</Description>
-    <item>
-      <EFDB_Name>alarmDevice</EFDB_Name>
-      <Description>Alarm Device</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>downDevice</EFDB_Name>
-      <Description>Down Device</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>faultDevice</EFDB_Name>
-      <Description>Fault Device</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-  </SALEvent>
-  <SALEvent>
-    <Subsystem>HVAC</Subsystem>
-    <EFDB_Topic>HVAC_logevent_crac02P02</EFDB_Topic>
-    <Description>C</Description>
-    <item>
-      <EFDB_Name>alarmDevice</EFDB_Name>
-      <Description>Alarm Device</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>downDevice</EFDB_Name>
-      <Description>Down Device</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>faultDevice</EFDB_Name>
-      <Description>Fault Device</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-  </SALEvent>
-  <SALEvent>
-    <Subsystem>HVAC</Subsystem>
     <EFDB_Topic>HVAC_logevent_fancoil01P02</EFDB_Topic>
     <Description>F</Description>
+    <item>
+      <EFDB_Name>fanOperationType</EFDB_Name>
+      <Description>Fan Operation Type</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>selectFanSpeed</EFDB_Name>
+      <Description>Select Fan Speed</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
     <item>
       <EFDB_Name>alarmDevice</EFDB_Name>
       <Description>Alarm Device</Description>
@@ -4031,6 +4015,20 @@
     <EFDB_Topic>HVAC_logevent_fancoil02P02</EFDB_Topic>
     <Description>F</Description>
     <item>
+      <EFDB_Name>fanOperationType</EFDB_Name>
+      <Description>Fan Operation Type</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>selectFanSpeed</EFDB_Name>
+      <Description>Select Fan Speed</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
       <EFDB_Name>alarmDevice</EFDB_Name>
       <Description>Alarm Device</Description>
       <IDL_Type>boolean</IDL_Type>
@@ -4056,6 +4054,20 @@
     <Subsystem>HVAC</Subsystem>
     <EFDB_Topic>HVAC_logevent_fancoil03P02</EFDB_Topic>
     <Description>F</Description>
+    <item>
+      <EFDB_Name>fanOperationType</EFDB_Name>
+      <Description>Fan Operation Type</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>selectFanSpeed</EFDB_Name>
+      <Description>Select Fan Speed</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
     <item>
       <EFDB_Name>alarmDevice</EFDB_Name>
       <Description>Alarm Device</Description>
@@ -4083,6 +4095,20 @@
     <EFDB_Topic>HVAC_logevent_fancoil04P02</EFDB_Topic>
     <Description>F</Description>
     <item>
+      <EFDB_Name>fanOperationType</EFDB_Name>
+      <Description>Fan Operation Type</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>selectFanSpeed</EFDB_Name>
+      <Description>Select Fan Speed</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
       <EFDB_Name>alarmDevice</EFDB_Name>
       <Description>Alarm Device</Description>
       <IDL_Type>boolean</IDL_Type>
@@ -4108,6 +4134,20 @@
     <Subsystem>HVAC</Subsystem>
     <EFDB_Topic>HVAC_logevent_fancoil05P02</EFDB_Topic>
     <Description>F</Description>
+    <item>
+      <EFDB_Name>fanOperationType</EFDB_Name>
+      <Description>Fan Operation Type</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>selectFanSpeed</EFDB_Name>
+      <Description>Select Fan Speed</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
     <item>
       <EFDB_Name>alarmDevice</EFDB_Name>
       <Description>Alarm Device</Description>
@@ -4135,6 +4175,20 @@
     <EFDB_Topic>HVAC_logevent_fancoil06P02</EFDB_Topic>
     <Description>F</Description>
     <item>
+      <EFDB_Name>fanOperationType</EFDB_Name>
+      <Description>Fan Operation Type</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>selectFanSpeed</EFDB_Name>
+      <Description>Select Fan Speed</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
       <EFDB_Name>alarmDevice</EFDB_Name>
       <Description>Alarm Device</Description>
       <IDL_Type>boolean</IDL_Type>
@@ -4160,6 +4214,20 @@
     <Subsystem>HVAC</Subsystem>
     <EFDB_Topic>HVAC_logevent_fancoil07P02</EFDB_Topic>
     <Description>F</Description>
+    <item>
+      <EFDB_Name>fanOperationType</EFDB_Name>
+      <Description>Fan Operation Type</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>selectFanSpeed</EFDB_Name>
+      <Description>Select Fan Speed</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
     <item>
       <EFDB_Name>alarmDevice</EFDB_Name>
       <Description>Alarm Device</Description>
@@ -4187,6 +4255,20 @@
     <EFDB_Topic>HVAC_logevent_fancoil08P02</EFDB_Topic>
     <Description>F</Description>
     <item>
+      <EFDB_Name>fanOperationType</EFDB_Name>
+      <Description>Fan Operation Type</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>selectFanSpeed</EFDB_Name>
+      <Description>Select Fan Speed</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
       <EFDB_Name>alarmDevice</EFDB_Name>
       <Description>Alarm Device</Description>
       <IDL_Type>boolean</IDL_Type>
@@ -4212,6 +4294,20 @@
     <Subsystem>HVAC</Subsystem>
     <EFDB_Topic>HVAC_logevent_fancoil09P02</EFDB_Topic>
     <Description>F</Description>
+    <item>
+      <EFDB_Name>fanOperationType</EFDB_Name>
+      <Description>Fan Operation Type</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>selectFanSpeed</EFDB_Name>
+      <Description>Select Fan Speed</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
     <item>
       <EFDB_Name>alarmDevice</EFDB_Name>
       <Description>Alarm Device</Description>
@@ -4239,6 +4335,20 @@
     <EFDB_Topic>HVAC_logevent_fancoil10P02</EFDB_Topic>
     <Description>F</Description>
     <item>
+      <EFDB_Name>fanOperationType</EFDB_Name>
+      <Description>Fan Operation Type</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>selectFanSpeed</EFDB_Name>
+      <Description>Select Fan Speed</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
       <EFDB_Name>alarmDevice</EFDB_Name>
       <Description>Alarm Device</Description>
       <IDL_Type>boolean</IDL_Type>
@@ -4265,6 +4375,20 @@
     <EFDB_Topic>HVAC_logevent_fancoil11P02</EFDB_Topic>
     <Description>F</Description>
     <item>
+      <EFDB_Name>fanOperationType</EFDB_Name>
+      <Description>Fan Operation Type</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>selectFanSpeed</EFDB_Name>
+      <Description>Select Fan Speed</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
       <EFDB_Name>alarmDevice</EFDB_Name>
       <Description>Alarm Device</Description>
       <IDL_Type>boolean</IDL_Type>
@@ -4290,6 +4414,20 @@
     <Subsystem>HVAC</Subsystem>
     <EFDB_Topic>HVAC_logevent_fancoil12P02</EFDB_Topic>
     <Description>F</Description>
+    <item>
+      <EFDB_Name>fanOperationType</EFDB_Name>
+      <Description>Fan Operation Type</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>selectFanSpeed</EFDB_Name>
+      <Description>Select Fan Speed</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
     <item>
       <EFDB_Name>alarmDevice</EFDB_Name>
       <Description>Alarm Device</Description>
@@ -4366,193 +4504,51 @@
   </SALEvent>
   <SALEvent>
     <Subsystem>HVAC</Subsystem>
-    <EFDB_Topic>HVAC_logevent_dynaleneP05</EFDB_Topic>
-    <Description>D</Description>
+    <EFDB_Topic>HVAC_logevent_crac01P02</EFDB_Topic>
+    <Description>C</Description>
     <item>
-      <EFDB_Name>dynInitialized</EFDB_Name>
-      <Description>Dyn Initialized</Description>
+      <EFDB_Name>alarmDevice</EFDB_Name>
+      <Description>Alarm Device</Description>
       <IDL_Type>boolean</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
     </item>
     <item>
-      <EFDB_Name>dynShuttingDown</EFDB_Name>
-      <Description>Dyn Shutting Down</Description>
+      <EFDB_Name>downDevice</EFDB_Name>
+      <Description>Down Device</Description>
       <IDL_Type>boolean</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
     </item>
     <item>
-      <EFDB_Name>dynPoweringOn</EFDB_Name>
-      <Description>Dyn Powering On</Description>
+      <EFDB_Name>faultDevice</EFDB_Name>
+      <Description>Fault Device</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+  </SALEvent>
+  <SALEvent>
+    <Subsystem>HVAC</Subsystem>
+    <EFDB_Topic>HVAC_logevent_crac02P02</EFDB_Topic>
+    <Description>C</Description>
+    <item>
+      <EFDB_Name>alarmDevice</EFDB_Name>
+      <Description>Alarm Device</Description>
       <IDL_Type>boolean</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
     </item>
     <item>
-      <EFDB_Name>dynPoweredOn</EFDB_Name>
-      <Description>Dyn Powered On</Description>
+      <EFDB_Name>downDevice</EFDB_Name>
+      <Description>Down Device</Description>
       <IDL_Type>boolean</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
     </item>
     <item>
-      <EFDB_Name>dynPoweringOff</EFDB_Name>
-      <Description>Dyn Powering Off</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>dynPoweredOff</EFDB_Name>
-      <Description>Dyn Powered Off</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>dynWarning</EFDB_Name>
-      <Description>Dyn Warning</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>dynAlarm</EFDB_Name>
-      <Description>Dyn Alarm</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>dynShutOff</EFDB_Name>
-      <Description>Dyn Shut Off</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>dynTMAalarm</EFDB_Name>
-      <Description>Dyn TM Aalarm</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>dynTMAalarmCMD</EFDB_Name>
-      <Description>Dyn TM Aalarm CMD</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>dynTMAalarmMonitor</EFDB_Name>
-      <Description>Dyn TM Aalarm Monitor</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>dynTAalarm</EFDB_Name>
-      <Description>Dyn T Aalarm</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>dynTAalarmCMD</EFDB_Name>
-      <Description>Dyn T Aalarm CMD</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>dynTAalarmMonitor</EFDB_Name>
-      <Description>Dyn T Aalarm Monitor</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>dynMainGridAlarm</EFDB_Name>
-      <Description>Dyn Main Grid Alarm</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>dynMainGridAlarmCMD</EFDB_Name>
-      <Description>Dyn Main Grid Alarm CMD</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>dynMainGridFailureFlag</EFDB_Name>
-      <Description>Dyn Main Grid Failure Flag</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>dynTankLevel</EFDB_Name>
-      <Description>Dyn Tank Level</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>dynTankLevelAlarmCMD</EFDB_Name>
-      <Description>Dyn Tank Level Alarm CMD</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>dynSafetyResetFlag</EFDB_Name>
-      <Description>Dyn Safety Reset Flag</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>dynSysFault</EFDB_Name>
-      <Description>Dyn Sys Fault</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>dynSysWarning</EFDB_Name>
-      <Description>Dyn Sys Warning</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>dynSysOK</EFDB_Name>
-      <Description>Dyn Sys OK</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>dynRemoteLocalModeStatus</EFDB_Name>
-      <Description>Dyn Remote Local Mode Status</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>dynAmbientDeltaModeStatus</EFDB_Name>
-      <Description>Dyn Ambient Delta Mode Status</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>dynExhaustAirBackupModeStatus</EFDB_Name>
-      <Description>Dyn Exhaust Air Backup Mode Status</Description>
+      <EFDB_Name>faultDevice</EFDB_Name>
+      <Description>Fault Device</Description>
       <IDL_Type>boolean</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
