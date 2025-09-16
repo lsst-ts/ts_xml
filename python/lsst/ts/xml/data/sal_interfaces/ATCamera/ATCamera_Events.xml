@@ -4152,10 +4152,24 @@
     <Subsystem>ATCamera</Subsystem>
     <EFDB_Topic>ATCamera_logevent_focal_plane_SequencerConfig_GuiderConfiguration</EFDB_Topic>
     <Description>subsystem ATCamera class ATCamera_logevent_focal_plane_SequencerConfig_GuiderConfiguration for category Guider</Description>
-    <!--CCS: Dictionary_Checksum: 1714148447L -->
+    <!--CCS: Dictionary_Checksum: 4142992035L -->
     <item>
       <EFDB_Name>version</EFDB_Name>
       <Description>Version of the settings, formatted using CCS conventions</Description>
+      <IDL_Type>string</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>commandedClearParameters</EFDB_Name>
+      <Description>The default parameters used for commanded clearing</Description>
+      <IDL_Type>string</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>extendedROIParameters</EFDB_Name>
+      <Description>Extended ROI parameters</Description>
       <IDL_Type>string</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
@@ -4174,6 +4188,13 @@
       <Units>unitless</Units>
       <Count>1</Count>
     </item>
+    <item>
+      <EFDB_Name>idleClearParameters</EFDB_Name>
+      <Description>The parameters used for guider idle clearing</Description>
+      <IDL_Type>string</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
   </SALEvent>
   <!--Created by xmlmaker2 for subsystem ATCamera class ATCamera_logevent_focal_plane_SequencerConfig_SequencerConfiguration for category Sequencer using level 1-->
   <!--===========================================================================================================================================================-->
@@ -4181,7 +4202,7 @@
     <Subsystem>ATCamera</Subsystem>
     <EFDB_Topic>ATCamera_logevent_focal_plane_SequencerConfig_SequencerConfiguration</EFDB_Topic>
     <Description>subsystem ATCamera class ATCamera_logevent_focal_plane_SequencerConfig_SequencerConfiguration for category Sequencer</Description>
-    <!--CCS: Dictionary_Checksum: 4112623107L -->
+    <!--CCS: Dictionary_Checksum: 3662355493L -->
     <item>
       <EFDB_Name>version</EFDB_Name>
       <Description>Version of the settings, formatted using CCS conventions</Description>
@@ -4204,17 +4225,38 @@
       <Count>1</Count>
     </item>
     <item>
-      <EFDB_Name>idleFlushMain</EFDB_Name>
+      <EFDB_Name>clearRowsParameter</EFDB_Name>
+      <Description>Name of the clear rows parameter (used for idle clear)</Description>
+      <IDL_Type>string</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>idleClearMain</EFDB_Name>
       <Description>Name of the idle flush main</Description>
       <IDL_Type>string</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
     </item>
     <item>
-      <EFDB_Name>idleFlushTimeout</EFDB_Name>
-      <Description>Idle time in milliseconds before sequencer will enter IDLE_FLUSH. Can be zero (enter immeidately) or negative (never)</Description>
+      <EFDB_Name>idleClearPeriod</EFDB_Name>
+      <Description>Period in milliseconds at which the periodic idle clear is run when focal-plane is in IDLE_CLEAR state</Description>
       <IDL_Type>long long</IDL_Type>
+      <Units>ms</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>idleClearRows</EFDB_Name>
+      <Description>Value to set the idleRows parameter to during idle clear</Description>
+      <IDL_Type>long</IDL_Type>
       <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>idleClearTimeout</EFDB_Name>
+      <Description>QUIESCENT time in milliseconds before sequencer will transition to IDLE_CLEAR state. Can be zero (enter immediately) or negative (never)</Description>
+      <IDL_Type>long long</IDL_Type>
+      <Units>ms</Units>
       <Count>1</Count>
     </item>
     <item>
@@ -4347,13 +4389,6 @@
       <EFDB_Name>shiftCountParameter</EFDB_Name>
       <Description>Name of the shift count parameter</Description>
       <IDL_Type>string</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>stepAfterIntegrate</EFDB_Name>
-      <Description>Perform a step rather than stop after integrate</Description>
-      <IDL_Type>boolean</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
     </item>
@@ -4521,7 +4556,7 @@
     <Subsystem>ATCamera</Subsystem>
     <EFDB_Topic>ATCamera_logevent_daq_monitor_Stats_StatisticsConfiguration</EFDB_Topic>
     <Description>subsystem ATCamera class ATCamera_logevent_daq_monitor_Stats_StatisticsConfiguration for category Statistics</Description>
-    <!--CCS: Dictionary_Checksum: 1384850593L -->
+    <!--CCS: Dictionary_Checksum: 2239708401L -->
     <item>
       <EFDB_Name>version</EFDB_Name>
       <Description>Version of the settings, formatted using CCS conventions</Description>
@@ -4596,6 +4631,13 @@
       <EFDB_Name>sumRmsStats</EFDB_Name>
       <Description>Rms Stats for sums over location (colon delimited array)</Description>
       <IDL_Type>string</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>suppressReadErrorAlerts</EFDB_Name>
+      <Description>Suppress register reed errors by checking additional update</Description>
+      <IDL_Type>boolean</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
     </item>
@@ -7680,7 +7722,7 @@
       <IDL_Type>long</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
-      <Enumeration>WARNING, SERIOUS, CRITICAL, NOMINAL</Enumeration>
+      <Enumeration>NOMINAL,WARNING, ALARM</Enumeration>
     </item>
     <item>
       <EFDB_Name>highestSeverity</EFDB_Name>
@@ -7688,7 +7730,7 @@
       <IDL_Type>long</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
-      <!-- <Enumeration>WARNING, SERIOUS, CRITICAL, NOMINAL</Enumeration> -->
+      <!-- <Enumeration>NOMINAL,WARNING, ALARM</Enumeration> -->
     </item>
     <item>
       <EFDB_Name>isCleared</EFDB_Name>

@@ -4832,6 +4832,49 @@
       <Count>1</Count>
     </item>
   </SALEvent>
+  <!--Created by xmlmaker2 for subsystem MTCamera class MTCamera_logevent_rebpower_HVRegulator_HVRegulationConfiguration for category HVRegulation using level 1-->
+  <!--==========================================================================================================================================================-->
+  <SALEvent>
+    <Subsystem>MTCamera</Subsystem>
+    <EFDB_Topic>MTCamera_logevent_rebpower_HVRegulator_HVRegulationConfiguration</EFDB_Topic>
+    <Description>subsystem MTCamera class MTCamera_logevent_rebpower_HVRegulator_HVRegulationConfiguration for category HVRegulation</Description>
+    <!--CCS: Dictionary_Checksum: 2435542193L -->
+    <item>
+      <EFDB_Name>version</EFDB_Name>
+      <Description>Version of the settings, formatted using CCS conventions</Description>
+      <IDL_Type>string</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>deltaI</EFDB_Name>
+      <Description>allowed excess current margin</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>maxDeltaVolt</EFDB_Name>
+      <Description>allowed excess current margin</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>minUpdateDelay</EFDB_Name>
+      <Description>minimum time since last update (settle time)</Description>
+      <IDL_Type>long</IDL_Type>
+      <Units>ms</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>staleMillis</EFDB_Name>
+      <Description>max time for data freshness in V/step calc</Description>
+      <IDL_Type>long</IDL_Type>
+      <Units>ms</Units>
+      <Count>1</Count>
+    </item>
+  </SALEvent>
   <!--Created by xmlmaker2 for subsystem MTCamera class MTCamera_logevent_rebpower_PeriodicTasks_GeneralConfiguration for category General using level 1-->
   <!--==================================================================================================================================================-->
   <SALEvent>
@@ -4895,7 +4938,7 @@
     <Subsystem>MTCamera</Subsystem>
     <EFDB_Topic>MTCamera_logevent_rebpower_PeriodicTasks_timersConfiguration</EFDB_Topic>
     <Description>subsystem MTCamera class MTCamera_logevent_rebpower_PeriodicTasks_timersConfiguration for category timers</Description>
-    <!--CCS: Dictionary_Checksum: 2646060098L -->
+    <!--CCS: Dictionary_Checksum: 1763221121L -->
     <item>
       <EFDB_Name>version</EFDB_Name>
       <Description>Version of the settings, formatted using CCS conventions</Description>
@@ -5261,8 +5304,8 @@
       <Count>1</Count>
     </item>
     <item>
-      <EFDB_Name>reb_power_state_taskPeriodMillis</EFDB_Name>
-      <Description>period for task reb-power-state</Description>
+      <EFDB_Name>reb_hv_update_taskPeriodMillis</EFDB_Name>
+      <Description>period for task reb-hv-update</Description>
       <IDL_Type>long long</IDL_Type>
       <Units>ms</Units>
       <Count>1</Count>
@@ -5362,7 +5405,7 @@
     <Subsystem>MTCamera</Subsystem>
     <EFDB_Topic>MTCamera_logevent_rebpower_Reb_GeneralConfiguration</EFDB_Topic>
     <Description>subsystem MTCamera class MTCamera_logevent_rebpower_Reb_GeneralConfiguration for category General</Description>
-    <!--CCS: Dictionary_Checksum: 2277039115L -->
+    <!--CCS: Dictionary_Checksum: 1643282362L -->
     <item>
       <EFDB_Name>version</EFDB_Name>
       <Description>Version of the settings, formatted using CCS conventions</Description>
@@ -5376,14 +5419,44 @@
       <Description>Delta voltage between Parallel High and Low</Description>
       <IDL_Type>long</IDL_Type>
       <Units>Volt</Units>
+      <Count>8</Count>
+    </item>
+    <item>
+      <EFDB_Name>location</EFDB_Name>
+      <Description>reb location</Description>
+      <IDL_Type>string</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+  </SALEvent>
+  <!--Created by xmlmaker2 for subsystem MTCamera class MTCamera_logevent_rebpower_Reb_HVRegulationConfiguration for category HVRegulation using level 1-->
+  <!--==================================================================================================================================================-->
+  <SALEvent>
+    <Subsystem>MTCamera</Subsystem>
+    <EFDB_Topic>MTCamera_logevent_rebpower_Reb_HVRegulationConfiguration</EFDB_Topic>
+    <Description>subsystem MTCamera class MTCamera_logevent_rebpower_Reb_HVRegulationConfiguration for category HVRegulation</Description>
+    <!--CCS: Dictionary_Checksum: 2122428541L -->
+    <item>
+      <EFDB_Name>version</EFDB_Name>
+      <Description>Version of the settings, formatted using CCS conventions</Description>
+      <IDL_Type>string</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <!--CCSMETA: Array firstDac indexed by location-->
+    <item>
+      <EFDB_Name>firstDac</EFDB_Name>
+      <Description>REB first dac step</Description>
+      <IDL_Type>long</IDL_Type>
+      <Units>unitless</Units>
       <Count>71</Count>
     </item>
-    <!--CCSMETA: Array hvBias indexed by location-->
+    <!--CCSMETA: Array hvBiasSetPoint indexed by location-->
     <item>
-      <EFDB_Name>hvBias</EFDB_Name>
+      <EFDB_Name>hvBiasSetPoint</EFDB_Name>
       <Description>REB bias voltage</Description>
-      <IDL_Type>long</IDL_Type>
-      <Units>V</Units>
+      <IDL_Type>double</IDL_Type>
+      <Units>unitless</Units>
       <Count>71</Count>
     </item>
     <item>
@@ -5392,6 +5465,38 @@
       <IDL_Type>string</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
+    </item>
+    <!--CCSMETA: Array maxDac indexed by location-->
+    <item>
+      <EFDB_Name>maxDac</EFDB_Name>
+      <Description>REB maximum allowed</Description>
+      <IDL_Type>long</IDL_Type>
+      <Units>unitless</Units>
+      <Count>71</Count>
+    </item>
+    <!--CCSMETA: Array reff indexed by location-->
+    <item>
+      <EFDB_Name>reff</EFDB_Name>
+      <Description>slope of V = reff * I</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>unitless</Units>
+      <Count>71</Count>
+    </item>
+    <!--CCSMETA: Array useVoltsPerStepCal indexed by location-->
+    <item>
+      <EFDB_Name>useVoltsPerStepCal</EFDB_Name>
+      <Description>Whether to use VoltsPerStepCal: true or false</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>V</Units>
+      <Count>71</Count>
+    </item>
+    <!--CCSMETA: Array voltsPerStepCal indexed by location-->
+    <item>
+      <EFDB_Name>voltsPerStepCal</EFDB_Name>
+      <Description>Calibrated Volts per HV regulation step</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>V</Units>
+      <Count>71</Count>
     </item>
   </SALEvent>
   <!--Created by xmlmaker2 for subsystem MTCamera class MTCamera_logevent_rebpower_Reb_LimitsConfiguration for category Limits using level 1-->
@@ -9122,7 +9227,7 @@
     <Subsystem>MTCamera</Subsystem>
     <EFDB_Topic>MTCamera_logevent_refrig_Cryo1_LimitsConfiguration</EFDB_Topic>
     <Description>subsystem MTCamera class MTCamera_logevent_refrig_Cryo1_LimitsConfiguration for category Limits</Description>
-    <!--CCS: Dictionary_Checksum: 2968384280L -->
+    <!--CCS: Dictionary_Checksum: 2005870463L -->
     <item>
       <EFDB_Name>version</EFDB_Name>
       <Description>Version of the settings, formatted using CCS conventions</Description>
@@ -9154,6 +9259,62 @@
     <item>
       <EFDB_Name>aftercooltmp_limitLo</EFDB_Name>
       <Description>After Cooler Temperature low alarm level</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>Celsius</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>ambienttmp_warnHi</EFDB_Name>
+      <Description>Ambient Temperature high warning level</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>Celsius</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>ambienttmp_warnLo</EFDB_Name>
+      <Description>Ambient Temperature low warning level</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>Celsius</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>ambienttmp_limitHi</EFDB_Name>
+      <Description>Ambient Temperature high alarm level</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>Celsius</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>ambienttmp_limitLo</EFDB_Name>
+      <Description>Ambient Temperature low alarm level</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>Celsius</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>cabinettmp_warnHi</EFDB_Name>
+      <Description>Cabinet Temperature high warning level</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>Celsius</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>cabinettmp_warnLo</EFDB_Name>
+      <Description>Cabinet Temperature low warning level</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>Celsius</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>cabinettmp_limitHi</EFDB_Name>
+      <Description>Cabinet Temperature high alarm level</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>Celsius</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>cabinettmp_limitLo</EFDB_Name>
+      <Description>Cabinet Temperature low alarm level</Description>
       <IDL_Type>double</IDL_Type>
       <Units>Celsius</Units>
       <Count>1</Count>
@@ -9604,6 +9765,105 @@
       <Description>Water Outlet Temperature low alarm level</Description>
       <IDL_Type>double</IDL_Type>
       <Units>Celsius</Units>
+      <Count>1</Count>
+    </item>
+  </SALEvent>
+  <!--Created by xmlmaker2 for subsystem MTCamera class MTCamera_logevent_refrig_Cryo1_PicConfiguration for category Pic using level 1-->
+  <!--================================================================================================================================-->
+  <SALEvent>
+    <Subsystem>MTCamera</Subsystem>
+    <EFDB_Topic>MTCamera_logevent_refrig_Cryo1_PicConfiguration</EFDB_Topic>
+    <Description>subsystem MTCamera class MTCamera_logevent_refrig_Cryo1_PicConfiguration for category Pic</Description>
+    <!--CCS: Dictionary_Checksum: 4061010445L -->
+    <item>
+      <EFDB_Name>version</EFDB_Name>
+      <Description>Version of the settings, formatted using CCS conventions</Description>
+      <IDL_Type>string</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>fanctrl_awGain</EFDB_Name>
+      <Description>anti-windup gain</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>fanctrl_baseDuty</EFDB_Name>
+      <Description>base duty cycle</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>fanctrl_gain</EFDB_Name>
+      <Description>loop gain</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>fanctrl_maxInput</EFDB_Name>
+      <Description>maximum input (temp. difference)</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>Celsius</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>fanctrl_maxOutput</EFDB_Name>
+      <Description>maximum PID output (duty cycle)</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>fanctrl_minInput</EFDB_Name>
+      <Description>minimum input (temp. difference)</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>Celsius</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>fanctrl_minOutput</EFDB_Name>
+      <Description>minimum PID output (duty cycle)</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>fanctrl_setTemp</EFDB_Name>
+      <Description>Temperature set point</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>Celsius</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>fanctrl_smoothTime</EFDB_Name>
+      <Description>input smoothing time</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>second</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>fanctrl_timeConst</EFDB_Name>
+      <Description>Integration time constant</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>second</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>fanctrl_tolerance</EFDB_Name>
+      <Description>maximum on-target error (%)</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>fanctrl_useAbsTemp</EFDB_Name>
+      <Description>true/false to use absolute temperature set point, not difference</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
       <Count>1</Count>
     </item>
   </SALEvent>
@@ -10234,7 +10494,7 @@
     <Subsystem>MTCamera</Subsystem>
     <EFDB_Topic>MTCamera_logevent_refrig_Cryo3_LimitsConfiguration</EFDB_Topic>
     <Description>subsystem MTCamera class MTCamera_logevent_refrig_Cryo3_LimitsConfiguration for category Limits</Description>
-    <!--CCS: Dictionary_Checksum: 317401243L -->
+    <!--CCS: Dictionary_Checksum: 1413047751L -->
     <item>
       <EFDB_Name>version</EFDB_Name>
       <Description>Version of the settings, formatted using CCS conventions</Description>
@@ -10266,62 +10526,6 @@
     <item>
       <EFDB_Name>aftercooltmp_limitLo</EFDB_Name>
       <Description>After Cooler Temperature low alarm level</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>Celsius</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>ambienttmp_warnHi</EFDB_Name>
-      <Description>Ambient Temperature high warning level</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>Celsius</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>ambienttmp_warnLo</EFDB_Name>
-      <Description>Ambient Temperature low warning level</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>Celsius</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>ambienttmp_limitHi</EFDB_Name>
-      <Description>Ambient Temperature high alarm level</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>Celsius</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>ambienttmp_limitLo</EFDB_Name>
-      <Description>Ambient Temperature low alarm level</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>Celsius</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>cabinettmp_warnHi</EFDB_Name>
-      <Description>Cabinet Temperature high warning level</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>Celsius</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>cabinettmp_warnLo</EFDB_Name>
-      <Description>Cabinet Temperature low warning level</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>Celsius</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>cabinettmp_limitHi</EFDB_Name>
-      <Description>Cabinet Temperature high alarm level</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>Celsius</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>cabinettmp_limitLo</EFDB_Name>
-      <Description>Cabinet Temperature low alarm level</Description>
       <IDL_Type>double</IDL_Type>
       <Units>Celsius</Units>
       <Count>1</Count>
@@ -10772,105 +10976,6 @@
       <Description>Water Outlet Temperature low alarm level</Description>
       <IDL_Type>double</IDL_Type>
       <Units>Celsius</Units>
-      <Count>1</Count>
-    </item>
-  </SALEvent>
-  <!--Created by xmlmaker2 for subsystem MTCamera class MTCamera_logevent_refrig_Cryo3_PicConfiguration for category Pic using level 1-->
-  <!--================================================================================================================================-->
-  <SALEvent>
-    <Subsystem>MTCamera</Subsystem>
-    <EFDB_Topic>MTCamera_logevent_refrig_Cryo3_PicConfiguration</EFDB_Topic>
-    <Description>subsystem MTCamera class MTCamera_logevent_refrig_Cryo3_PicConfiguration for category Pic</Description>
-    <!--CCS: Dictionary_Checksum: 3402127099L -->
-    <item>
-      <EFDB_Name>version</EFDB_Name>
-      <Description>Version of the settings, formatted using CCS conventions</Description>
-      <IDL_Type>string</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>fanctrl_awGain</EFDB_Name>
-      <Description>anti-windup gain</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>fanctrl_baseDuty</EFDB_Name>
-      <Description>base duty cycle</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>fanctrl_gain</EFDB_Name>
-      <Description>loop gain</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>fanctrl_maxInput</EFDB_Name>
-      <Description>maximum input (temp. difference)</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>Celsius</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>fanctrl_maxOutput</EFDB_Name>
-      <Description>maximum PID output (duty cycle)</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>fanctrl_minInput</EFDB_Name>
-      <Description>minimum input (temp. difference)</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>Celsius</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>fanctrl_minOutput</EFDB_Name>
-      <Description>minimum PID output (duty cycle)</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>fanctrl_setTemp</EFDB_Name>
-      <Description>Temperature set point</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>Celsius</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>fanctrl_smoothTime</EFDB_Name>
-      <Description>input smoothing time</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>second</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>fanctrl_timeConst</EFDB_Name>
-      <Description>Integration time constant</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>second</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>fanctrl_tolerance</EFDB_Name>
-      <Description>maximum on-target error (%)</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>fanctrl_useAbsTemp</EFDB_Name>
-      <Description>true/false to use absolute temperature set point, not difference</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
       <Count>1</Count>
     </item>
   </SALEvent>
@@ -12703,7 +12808,7 @@
     <Subsystem>MTCamera</Subsystem>
     <EFDB_Topic>MTCamera_logevent_refrig_CryoCompLimits_CompLimitsConfiguration</EFDB_Topic>
     <Description>subsystem MTCamera class MTCamera_logevent_refrig_CryoCompLimits_CompLimitsConfiguration for category CompLimits</Description>
-    <!--CCS: Dictionary_Checksum: 1390129142L -->
+    <!--CCS: Dictionary_Checksum: 244928127L -->
     <item>
       <EFDB_Name>version</EFDB_Name>
       <Description>Version of the settings, formatted using CCS conventions</Description>
@@ -12772,6 +12877,20 @@
       <Description>Low discharge temperature limit inhibiting compressor startup</Description>
       <IDL_Type>double</IDL_Type>
       <Units>Celsius</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>dryerCheckHighPress</EFDB_Name>
+      <Description>Discharge pressure above which filter dryer warning is issued</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>psia</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>dryerCheckLowPress</EFDB_Name>
+      <Description>Suction pressure below which filter dryer warning is issued</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>psia</Units>
       <Count>1</Count>
     </item>
     <item>
@@ -12894,7 +13013,7 @@
     <Subsystem>MTCamera</Subsystem>
     <EFDB_Topic>MTCamera_logevent_refrig_PeriodicTasks_PicConfiguration</EFDB_Topic>
     <Description>subsystem MTCamera class MTCamera_logevent_refrig_PeriodicTasks_PicConfiguration for category Pic</Description>
-    <!--CCS: Dictionary_Checksum: 1012741945L -->
+    <!--CCS: Dictionary_Checksum: 699659214L -->
     <item>
       <EFDB_Name>version</EFDB_Name>
       <Description>Version of the settings, formatted using CCS conventions</Description>
@@ -12903,8 +13022,8 @@
       <Count>1</Count>
     </item>
     <item>
-      <EFDB_Name>cryo3_FanCtrl_iterate_updateTime</EFDB_Name>
-      <Description>Periodic task Cryo3/FanCtrl update time</Description>
+      <EFDB_Name>cryo1_FanCtrl_iterate_updateTime</EFDB_Name>
+      <Description>Periodic task Cryo1/FanCtrl update time</Description>
       <IDL_Type>long long</IDL_Type>
       <Units>ms</Units>
       <Count>1</Count>
@@ -16013,7 +16132,7 @@
     <Subsystem>MTCamera</Subsystem>
     <EFDB_Topic>MTCamera_logevent_vacuum_PumpCart_CryoConfiguration</EFDB_Topic>
     <Description>subsystem MTCamera class MTCamera_logevent_vacuum_PumpCart_CryoConfiguration for category Cryo</Description>
-    <!--CCS: Dictionary_Checksum: 2020908612L -->
+    <!--CCS: Dictionary_Checksum: 1260551578L -->
     <item>
       <EFDB_Name>version</EFDB_Name>
       <Description>Version of the settings, formatted using CCS conventions</Description>
@@ -16025,6 +16144,13 @@
       <EFDB_Name>devcId</EFDB_Name>
       <Description>The device id</Description>
       <IDL_Type>string</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>inletPressureScaleCorrection</EFDB_Name>
+      <Description>Correction factor for ambient pressure calibration (P_summit/P_sealevel)</Description>
+      <IDL_Type>double</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
     </item>
@@ -16405,7 +16531,7 @@
     <Subsystem>MTCamera</Subsystem>
     <EFDB_Topic>MTCamera_logevent_daq_monitor_Stats_StatisticsConfiguration</EFDB_Topic>
     <Description>subsystem MTCamera class MTCamera_logevent_daq_monitor_Stats_StatisticsConfiguration for category Statistics</Description>
-    <!--CCS: Dictionary_Checksum: 3891351454L -->
+    <!--CCS: Dictionary_Checksum: 779585402L -->
     <item>
       <EFDB_Name>version</EFDB_Name>
       <Description>Version of the settings, formatted using CCS conventions</Description>
@@ -16480,6 +16606,13 @@
       <EFDB_Name>sumRmsStats</EFDB_Name>
       <Description>Rms Stats for sums over location (colon delimited array)</Description>
       <IDL_Type>string</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>suppressReadErrorAlerts</EFDB_Name>
+      <Description>Suppress register reed errors by checking additional update</Description>
+      <IDL_Type>boolean</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
     </item>
@@ -20971,7 +21104,7 @@
     </item>
     <item>
       <EFDB_Name>idleClearParameters</EFDB_Name>
-      <Description>The parameters used for idle clearing</Description>
+      <Description>The parameters used for guider idle clearing</Description>
       <IDL_Type>string</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
@@ -20983,7 +21116,7 @@
     <Subsystem>MTCamera</Subsystem>
     <EFDB_Topic>MTCamera_logevent_focal_plane_SequencerConfig_SequencerConfiguration</EFDB_Topic>
     <Description>subsystem MTCamera class MTCamera_logevent_focal_plane_SequencerConfig_SequencerConfiguration for category Sequencer</Description>
-    <!--CCS: Dictionary_Checksum: 1247479346L -->
+    <!--CCS: Dictionary_Checksum: 2111718602L -->
     <item>
       <EFDB_Name>version</EFDB_Name>
       <Description>Version of the settings, formatted using CCS conventions</Description>
@@ -21006,17 +21139,38 @@
       <Count>1</Count>
     </item>
     <item>
-      <EFDB_Name>idleFlushMain</EFDB_Name>
+      <EFDB_Name>clearRowsParameter</EFDB_Name>
+      <Description>Name of the clear rows parameter (used for idle clear)</Description>
+      <IDL_Type>string</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>idleClearMain</EFDB_Name>
       <Description>Name of the idle flush main</Description>
       <IDL_Type>string</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
     </item>
     <item>
-      <EFDB_Name>idleFlushTimeout</EFDB_Name>
-      <Description>Idle time in milliseconds before sequencer will enter IDLE_FLUSH. Can be zero (enter immeidately) or negative (never)</Description>
+      <EFDB_Name>idleClearPeriod</EFDB_Name>
+      <Description>Period in milliseconds at which the periodic idle clear is run when focal-plane is in IDLE_CLEAR state</Description>
       <IDL_Type>long long</IDL_Type>
+      <Units>ms</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>idleClearRows</EFDB_Name>
+      <Description>Value to set the idleRows parameter to during idle clear</Description>
+      <IDL_Type>long</IDL_Type>
       <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>idleClearTimeout</EFDB_Name>
+      <Description>QUIESCENT time in milliseconds before sequencer will transition to IDLE_CLEAR state. Can be zero (enter immediately) or negative (never)</Description>
+      <IDL_Type>long long</IDL_Type>
+      <Units>ms</Units>
       <Count>1</Count>
     </item>
     <item>
@@ -21149,13 +21303,6 @@
       <EFDB_Name>shiftCountParameter</EFDB_Name>
       <Description>Name of the shift count parameter</Description>
       <IDL_Type>string</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>stepAfterIntegrate</EFDB_Name>
-      <Description>Perform a step rather than stop after integrate</Description>
-      <IDL_Type>boolean</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
     </item>
@@ -26905,609 +27052,609 @@
     </item>
     <item>
       <EFDB_Name>a_family</EFDB_Name>
-      <Description>Filter family: S ; D ; F ; T ; O; U; N</Description>
+      <Description>Filter family: Science | Dummy | French dummy | Test | Open | Unknown | None</Description>
       <IDL_Type>string</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>a_filterID</EFDB_Name>
-      <Description>Filter identification number as coded on its frame and read with 6 hall effect sensors.</Description>
+      <Description>Filter identification number as coded on its frame and read with 6 hall effect sensors</Description>
       <IDL_Type>long</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>a_weight</EFDB_Name>
-      <Description>weight of this filter</Description>
+      <Description>Weight of the filter</Description>
       <IDL_Type>double</IDL_Type>
       <Units>kg</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>da1_family</EFDB_Name>
-      <Description>Filter family: S ; D ; F ; T ; O; U; N</Description>
+      <Description>Filter family: Science | Dummy | French dummy | Test | Open | Unknown | None</Description>
       <IDL_Type>string</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>da1_filterID</EFDB_Name>
-      <Description>Filter identification number as coded on its frame and read with 6 hall effect sensors.</Description>
+      <Description>Filter identification number as coded on its frame and read with 6 hall effect sensors</Description>
       <IDL_Type>long</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>da1_weight</EFDB_Name>
-      <Description>weight of this filter</Description>
+      <Description>Weight of the filter</Description>
       <IDL_Type>double</IDL_Type>
       <Units>kg</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>da2_family</EFDB_Name>
-      <Description>Filter family: S ; D ; F ; T ; O; U; N</Description>
+      <Description>Filter family: Science | Dummy | French dummy | Test | Open | Unknown | None</Description>
       <IDL_Type>string</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>da2_filterID</EFDB_Name>
-      <Description>Filter identification number as coded on its frame and read with 6 hall effect sensors.</Description>
+      <Description>Filter identification number as coded on its frame and read with 6 hall effect sensors</Description>
       <IDL_Type>long</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>da2_weight</EFDB_Name>
-      <Description>weight of this filter</Description>
+      <Description>Weight of the filter</Description>
       <IDL_Type>double</IDL_Type>
       <Units>kg</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>dr1_family</EFDB_Name>
-      <Description>Filter family: S ; D ; F ; T ; O; U; N</Description>
+      <Description>Filter family: Science | Dummy | French dummy | Test | Open | Unknown | None</Description>
       <IDL_Type>string</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>dr1_filterID</EFDB_Name>
-      <Description>Filter identification number as coded on its frame and read with 6 hall effect sensors.</Description>
+      <Description>Filter identification number as coded on its frame and read with 6 hall effect sensors</Description>
       <IDL_Type>long</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>dr1_weight</EFDB_Name>
-      <Description>weight of this filter</Description>
+      <Description>Weight of the filter</Description>
       <IDL_Type>double</IDL_Type>
       <Units>kg</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>du1_family</EFDB_Name>
-      <Description>Filter family: S ; D ; F ; T ; O; U; N</Description>
+      <Description>Filter family: Science | Dummy | French dummy | Test | Open | Unknown | None</Description>
       <IDL_Type>string</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>du1_filterID</EFDB_Name>
-      <Description>Filter identification number as coded on its frame and read with 6 hall effect sensors.</Description>
+      <Description>Filter identification number as coded on its frame and read with 6 hall effect sensors</Description>
       <IDL_Type>long</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>du1_weight</EFDB_Name>
-      <Description>weight of this filter</Description>
+      <Description>Weight of the filter</Description>
       <IDL_Type>double</IDL_Type>
       <Units>kg</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>du2_family</EFDB_Name>
-      <Description>Filter family: S ; D ; F ; T ; O; U; N</Description>
+      <Description>Filter family: Science | Dummy | French dummy | Test | Open | Unknown | None</Description>
       <IDL_Type>string</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>du2_filterID</EFDB_Name>
-      <Description>Filter identification number as coded on its frame and read with 6 hall effect sensors.</Description>
+      <Description>Filter identification number as coded on its frame and read with 6 hall effect sensors</Description>
       <IDL_Type>long</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>du2_weight</EFDB_Name>
-      <Description>weight of this filter</Description>
+      <Description>Weight of the filter</Description>
       <IDL_Type>double</IDL_Type>
       <Units>kg</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>dz1_family</EFDB_Name>
-      <Description>Filter family: S ; D ; F ; T ; O; U; N</Description>
+      <Description>Filter family: Science | Dummy | French dummy | Test | Open | Unknown | None</Description>
       <IDL_Type>string</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>dz1_filterID</EFDB_Name>
-      <Description>Filter identification number as coded on its frame and read with 6 hall effect sensors.</Description>
+      <Description>Filter identification number as coded on its frame and read with 6 hall effect sensors</Description>
       <IDL_Type>long</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>dz1_weight</EFDB_Name>
-      <Description>weight of this filter</Description>
+      <Description>Weight of the filter</Description>
       <IDL_Type>double</IDL_Type>
       <Units>kg</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>ef_family</EFDB_Name>
-      <Description>Filter family: S ; D ; F ; T ; O; U; N</Description>
+      <Description>Filter family: Science | Dummy | French dummy | Test | Open | Unknown | None</Description>
       <IDL_Type>string</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>ef_filterID</EFDB_Name>
-      <Description>Filter identification number as coded on its frame and read with 6 hall effect sensors.</Description>
+      <Description>Filter identification number as coded on its frame and read with 6 hall effect sensors</Description>
       <IDL_Type>long</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>ef_weight</EFDB_Name>
-      <Description>weight of this filter</Description>
+      <Description>Weight of the filter</Description>
       <IDL_Type>double</IDL_Type>
       <Units>kg</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>f15_family</EFDB_Name>
-      <Description>Filter family: S ; D ; F ; T ; O; U; N</Description>
+      <Description>Filter family: Science | Dummy | French dummy | Test | Open | Unknown | None</Description>
       <IDL_Type>string</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>f15_filterID</EFDB_Name>
-      <Description>Filter identification number as coded on its frame and read with 6 hall effect sensors.</Description>
+      <Description>Filter identification number as coded on its frame and read with 6 hall effect sensors</Description>
       <IDL_Type>long</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>f15_weight</EFDB_Name>
-      <Description>weight of this filter</Description>
+      <Description>Weight of the filter</Description>
       <IDL_Type>double</IDL_Type>
       <Units>kg</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>f17_family</EFDB_Name>
-      <Description>Filter family: S ; D ; F ; T ; O; U; N</Description>
+      <Description>Filter family: Science | Dummy | French dummy | Test | Open | Unknown | None</Description>
       <IDL_Type>string</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>f17_filterID</EFDB_Name>
-      <Description>Filter identification number as coded on its frame and read with 6 hall effect sensors.</Description>
+      <Description>Filter identification number as coded on its frame and read with 6 hall effect sensors</Description>
       <IDL_Type>long</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>f17_weight</EFDB_Name>
-      <Description>weight of this filter</Description>
+      <Description>Weight of the filter</Description>
       <IDL_Type>double</IDL_Type>
       <Units>kg</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>f29_family</EFDB_Name>
-      <Description>Filter family: S ; D ; F ; T ; O; U; N</Description>
+      <Description>Filter family: Science | Dummy | French dummy | Test | Open | Unknown | None</Description>
       <IDL_Type>string</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>f29_filterID</EFDB_Name>
-      <Description>Filter identification number as coded on its frame and read with 6 hall effect sensors.</Description>
+      <Description>Filter identification number as coded on its frame and read with 6 hall effect sensors</Description>
       <IDL_Type>long</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>f29_weight</EFDB_Name>
-      <Description>weight of this filter</Description>
+      <Description>Weight of the filter</Description>
       <IDL_Type>double</IDL_Type>
       <Units>kg</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>f34_family</EFDB_Name>
-      <Description>Filter family: S ; D ; F ; T ; O; U; N</Description>
+      <Description>Filter family: Science | Dummy | French dummy | Test | Open | Unknown | None</Description>
       <IDL_Type>string</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>f34_filterID</EFDB_Name>
-      <Description>Filter identification number as coded on its frame and read with 6 hall effect sensors.</Description>
+      <Description>Filter identification number as coded on its frame and read with 6 hall effect sensors</Description>
       <IDL_Type>long</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>f34_weight</EFDB_Name>
-      <Description>weight of this filter</Description>
+      <Description>Weight of the filter</Description>
       <IDL_Type>double</IDL_Type>
       <Units>kg</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>f3_family</EFDB_Name>
-      <Description>Filter family: S ; D ; F ; T ; O; U; N</Description>
+      <Description>Filter family: Science | Dummy | French dummy | Test | Open | Unknown | None</Description>
       <IDL_Type>string</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>f3_filterID</EFDB_Name>
-      <Description>Filter identification number as coded on its frame and read with 6 hall effect sensors.</Description>
+      <Description>Filter identification number as coded on its frame and read with 6 hall effect sensors</Description>
       <IDL_Type>long</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>f3_weight</EFDB_Name>
-      <Description>weight of this filter</Description>
+      <Description>Weight of the filter</Description>
       <IDL_Type>double</IDL_Type>
       <Units>kg</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>f46_family</EFDB_Name>
-      <Description>Filter family: S ; D ; F ; T ; O; U; N</Description>
+      <Description>Filter family: Science | Dummy | French dummy | Test | Open | Unknown | None</Description>
       <IDL_Type>string</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>f46_filterID</EFDB_Name>
-      <Description>Filter identification number as coded on its frame and read with 6 hall effect sensors.</Description>
+      <Description>Filter identification number as coded on its frame and read with 6 hall effect sensors</Description>
       <IDL_Type>long</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>f46_weight</EFDB_Name>
-      <Description>weight of this filter</Description>
+      <Description>Weight of the filter</Description>
       <IDL_Type>double</IDL_Type>
       <Units>kg</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>f48_family</EFDB_Name>
-      <Description>Filter family: S ; D ; F ; T ; O; U; N</Description>
+      <Description>Filter family: Science | Dummy | French dummy | Test | Open | Unknown | None</Description>
       <IDL_Type>string</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>f48_filterID</EFDB_Name>
-      <Description>Filter identification number as coded on its frame and read with 6 hall effect sensors.</Description>
+      <Description>Filter identification number as coded on its frame and read with 6 hall effect sensors</Description>
       <IDL_Type>long</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>f48_weight</EFDB_Name>
-      <Description>weight of this filter</Description>
+      <Description>Weight of the filter</Description>
       <IDL_Type>double</IDL_Type>
       <Units>kg</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>f60_family</EFDB_Name>
-      <Description>Filter family: S ; D ; F ; T ; O; U; N</Description>
+      <Description>Filter family: Science | Dummy | French dummy | Test | Open | Unknown | None</Description>
       <IDL_Type>string</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>f60_filterID</EFDB_Name>
-      <Description>Filter identification number as coded on its frame and read with 6 hall effect sensors.</Description>
+      <Description>Filter identification number as coded on its frame and read with 6 hall effect sensors</Description>
       <IDL_Type>long</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>f60_weight</EFDB_Name>
-      <Description>weight of this filter</Description>
+      <Description>Weight of the filter</Description>
       <IDL_Type>double</IDL_Type>
       <Units>kg</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>g_family</EFDB_Name>
-      <Description>Filter family: S ; D ; F ; T ; O; U; N</Description>
+      <Description>Filter family: Science | Dummy | French dummy | Test | Open | Unknown | None</Description>
       <IDL_Type>string</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>g_filterID</EFDB_Name>
-      <Description>Filter identification number as coded on its frame and read with 6 hall effect sensors.</Description>
+      <Description>Filter identification number as coded on its frame and read with 6 hall effect sensors</Description>
       <IDL_Type>long</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>g_weight</EFDB_Name>
-      <Description>weight of this filter</Description>
+      <Description>Weight of the filter</Description>
       <IDL_Type>double</IDL_Type>
       <Units>kg</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>i_family</EFDB_Name>
-      <Description>Filter family: S ; D ; F ; T ; O; U; N</Description>
+      <Description>Filter family: Science | Dummy | French dummy | Test | Open | Unknown | None</Description>
       <IDL_Type>string</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>i_filterID</EFDB_Name>
-      <Description>Filter identification number as coded on its frame and read with 6 hall effect sensors.</Description>
+      <Description>Filter identification number as coded on its frame and read with 6 hall effect sensors</Description>
       <IDL_Type>long</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>i_weight</EFDB_Name>
-      <Description>weight of this filter</Description>
+      <Description>Weight of the filter</Description>
       <IDL_Type>double</IDL_Type>
       <Units>kg</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>none_family</EFDB_Name>
-      <Description>Filter family: S ; D ; F ; T ; O; U; N</Description>
+      <Description>Filter family: Science | Dummy | French dummy | Test | Open | Unknown | None</Description>
       <IDL_Type>string</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>none_filterID</EFDB_Name>
-      <Description>Filter identification number as coded on its frame and read with 6 hall effect sensors.</Description>
+      <Description>Filter identification number as coded on its frame and read with 6 hall effect sensors</Description>
       <IDL_Type>long</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>none_weight</EFDB_Name>
-      <Description>weight of this filter</Description>
+      <Description>Weight of the filter</Description>
       <IDL_Type>double</IDL_Type>
       <Units>kg</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>oa_family</EFDB_Name>
-      <Description>Filter family: S ; D ; F ; T ; O; U; N</Description>
+      <Description>Filter family: Science | Dummy | French dummy | Test | Open | Unknown | None</Description>
       <IDL_Type>string</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>oa_filterID</EFDB_Name>
-      <Description>Filter identification number as coded on its frame and read with 6 hall effect sensors.</Description>
+      <Description>Filter identification number as coded on its frame and read with 6 hall effect sensors</Description>
       <IDL_Type>long</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>oa_weight</EFDB_Name>
-      <Description>weight of this filter</Description>
+      <Description>Weight of the filter</Description>
       <IDL_Type>double</IDL_Type>
       <Units>kg</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>ob_family</EFDB_Name>
-      <Description>Filter family: S ; D ; F ; T ; O; U; N</Description>
+      <Description>Filter family: Science | Dummy | French dummy | Test | Open | Unknown | None</Description>
       <IDL_Type>string</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>ob_filterID</EFDB_Name>
-      <Description>Filter identification number as coded on its frame and read with 6 hall effect sensors.</Description>
+      <Description>Filter identification number as coded on its frame and read with 6 hall effect sensors</Description>
       <IDL_Type>long</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>ob_weight</EFDB_Name>
-      <Description>weight of this filter</Description>
+      <Description>Weight of the filter</Description>
       <IDL_Type>double</IDL_Type>
       <Units>kg</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>oc_family</EFDB_Name>
-      <Description>Filter family: S ; D ; F ; T ; O; U; N</Description>
+      <Description>Filter family: Science | Dummy | French dummy | Test | Open | Unknown | None</Description>
       <IDL_Type>string</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>oc_filterID</EFDB_Name>
-      <Description>Filter identification number as coded on its frame and read with 6 hall effect sensors.</Description>
+      <Description>Filter identification number as coded on its frame and read with 6 hall effect sensors</Description>
       <IDL_Type>long</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>oc_weight</EFDB_Name>
-      <Description>weight of this filter</Description>
+      <Description>Weight of the filter</Description>
       <IDL_Type>double</IDL_Type>
       <Units>kg</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>ph_family</EFDB_Name>
-      <Description>Filter family: S ; D ; F ; T ; O; U; N</Description>
+      <Description>Filter family: Science | Dummy | French dummy | Test | Open | Unknown | None</Description>
       <IDL_Type>string</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>ph_filterID</EFDB_Name>
-      <Description>Filter identification number as coded on its frame and read with 6 hall effect sensors.</Description>
+      <Description>Filter identification number as coded on its frame and read with 6 hall effect sensors</Description>
       <IDL_Type>long</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>ph_weight</EFDB_Name>
-      <Description>weight of this filter</Description>
+      <Description>Weight of the filter</Description>
       <IDL_Type>double</IDL_Type>
       <Units>kg</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>r_family</EFDB_Name>
-      <Description>Filter family: S ; D ; F ; T ; O; U; N</Description>
+      <Description>Filter family: Science | Dummy | French dummy | Test | Open | Unknown | None</Description>
       <IDL_Type>string</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>r_filterID</EFDB_Name>
-      <Description>Filter identification number as coded on its frame and read with 6 hall effect sensors.</Description>
+      <Description>Filter identification number as coded on its frame and read with 6 hall effect sensors</Description>
       <IDL_Type>long</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>r_weight</EFDB_Name>
-      <Description>weight of this filter</Description>
+      <Description>Weight of the filter</Description>
       <IDL_Type>double</IDL_Type>
       <Units>kg</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>tu_family</EFDB_Name>
-      <Description>Filter family: S ; D ; F ; T ; O; U; N</Description>
+      <Description>Filter family: Science | Dummy | French dummy | Test | Open | Unknown | None</Description>
       <IDL_Type>string</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>tu_filterID</EFDB_Name>
-      <Description>Filter identification number as coded on its frame and read with 6 hall effect sensors.</Description>
+      <Description>Filter identification number as coded on its frame and read with 6 hall effect sensors</Description>
       <IDL_Type>long</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>tu_weight</EFDB_Name>
-      <Description>weight of this filter</Description>
+      <Description>Weight of the filter</Description>
       <IDL_Type>double</IDL_Type>
       <Units>kg</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>ty_family</EFDB_Name>
-      <Description>Filter family: S ; D ; F ; T ; O; U; N</Description>
+      <Description>Filter family: Science | Dummy | French dummy | Test | Open | Unknown | None</Description>
       <IDL_Type>string</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>ty_filterID</EFDB_Name>
-      <Description>Filter identification number as coded on its frame and read with 6 hall effect sensors.</Description>
+      <Description>Filter identification number as coded on its frame and read with 6 hall effect sensors</Description>
       <IDL_Type>long</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>ty_weight</EFDB_Name>
-      <Description>weight of this filter</Description>
+      <Description>Weight of the filter</Description>
       <IDL_Type>double</IDL_Type>
       <Units>kg</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>u_family</EFDB_Name>
-      <Description>Filter family: S ; D ; F ; T ; O; U; N</Description>
+      <Description>Filter family: Science | Dummy | French dummy | Test | Open | Unknown | None</Description>
       <IDL_Type>string</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>u_filterID</EFDB_Name>
-      <Description>Filter identification number as coded on its frame and read with 6 hall effect sensors.</Description>
+      <Description>Filter identification number as coded on its frame and read with 6 hall effect sensors</Description>
       <IDL_Type>long</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>u_weight</EFDB_Name>
-      <Description>weight of this filter</Description>
+      <Description>Weight of the filter</Description>
       <IDL_Type>double</IDL_Type>
       <Units>kg</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>y_family</EFDB_Name>
-      <Description>Filter family: S ; D ; F ; T ; O; U; N</Description>
+      <Description>Filter family: Science | Dummy | French dummy | Test | Open | Unknown | None</Description>
       <IDL_Type>string</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>y_filterID</EFDB_Name>
-      <Description>Filter identification number as coded on its frame and read with 6 hall effect sensors.</Description>
+      <Description>Filter identification number as coded on its frame and read with 6 hall effect sensors</Description>
       <IDL_Type>long</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>y_weight</EFDB_Name>
-      <Description>weight of this filter</Description>
+      <Description>Weight of the filter</Description>
       <IDL_Type>double</IDL_Type>
       <Units>kg</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>z_family</EFDB_Name>
-      <Description>Filter family: S ; D ; F ; T ; O; U; N</Description>
+      <Description>Filter family: Science | Dummy | French dummy | Test | Open | Unknown | None</Description>
       <IDL_Type>string</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>z_filterID</EFDB_Name>
-      <Description>Filter identification number as coded on its frame and read with 6 hall effect sensors.</Description>
+      <Description>Filter identification number as coded on its frame and read with 6 hall effect sensors</Description>
       <IDL_Type>long</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>z_weight</EFDB_Name>
-      <Description>weight of this filter</Description>
+      <Description>Weight of the filter</Description>
       <IDL_Type>double</IDL_Type>
       <Units>kg</Units>
       <Count>1</Count>
@@ -28769,7 +28916,7 @@
     <Subsystem>MTCamera</Subsystem>
     <EFDB_Topic>MTCamera_logevent_fcs_PeriodicTasks_timersConfiguration</EFDB_Topic>
     <Description>subsystem MTCamera class MTCamera_logevent_fcs_PeriodicTasks_timersConfiguration for category timers</Description>
-    <!--CCS: Dictionary_Checksum: 4217962141L -->
+    <!--CCS: Dictionary_Checksum: 641258320L -->
     <item>
       <EFDB_Name>version</EFDB_Name>
       <Description>Version of the settings, formatted using CCS conventions</Description>
@@ -28808,6 +28955,13 @@
     <item>
       <EFDB_Name>publishautochangertemperatures_taskPeriodMillis</EFDB_Name>
       <Description>period for task PublishAutochangerTemperatures</Description>
+      <IDL_Type>long long</IDL_Type>
+      <Units>ms</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>publishcarouselslipringcurrent_taskPeriodMillis</EFDB_Name>
+      <Description>period for task PublishCarouselSlipRingCurrent</Description>
       <IDL_Type>long long</IDL_Type>
       <Units>ms</Units>
       <Count>1</Count>
@@ -29152,7 +29306,7 @@
     <Subsystem>MTCamera</Subsystem>
     <EFDB_Topic>MTCamera_logevent_chiller_GeneralConfiguration</EFDB_Topic>
     <Description>subsystem MTCamera class MTCamera_logevent_chiller_GeneralConfiguration for category General</Description>
-    <!--CCS: Dictionary_Checksum: 3531999427L -->
+    <!--CCS: Dictionary_Checksum: 774005837L -->
     <item>
       <EFDB_Name>version</EFDB_Name>
       <Description>Version of the settings, formatted using CCS conventions</Description>
@@ -29294,6 +29448,13 @@
       <Count>1</Count>
     </item>
     <item>
+      <EFDB_Name>minGlycolFlowToStart</EFDB_Name>
+      <Description>minimum glycol flow to allow starting chiller</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>gallon/min</Units>
+      <Count>1</Count>
+    </item>
+    <item>
       <EFDB_Name>periodictasks_schedulers_default_nTasks</EFDB_Name>
       <Description>Number of tasks assigned to the Scheduler.</Description>
       <IDL_Type>long</IDL_Type>
@@ -29349,7 +29510,7 @@
     <Subsystem>MTCamera</Subsystem>
     <EFDB_Topic>MTCamera_logevent_chiller_LimitsConfiguration</EFDB_Topic>
     <Description>subsystem MTCamera class MTCamera_logevent_chiller_LimitsConfiguration for category Limits</Description>
-    <!--CCS: Dictionary_Checksum: 188752282L -->
+    <!--CCS: Dictionary_Checksum: 1189134400L -->
     <item>
       <EFDB_Name>version</EFDB_Name>
       <Description>Version of the settings, formatted using CCS conventions</Description>
@@ -29407,10 +29568,38 @@
       <Count>1</Count>
     </item>
     <item>
+      <EFDB_Name>maq20_GlycChillerOut_warnLo</EFDB_Name>
+      <Description>TC4: Glycol out of Chiller low warning level</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>Celsius</Units>
+      <Count>1</Count>
+    </item>
+    <item>
       <EFDB_Name>maq20_GlycChillerOut_limitHi</EFDB_Name>
       <Description>TC4: Glycol out of Chiller high alarm level</Description>
       <IDL_Type>double</IDL_Type>
       <Units>Celsius</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>maq20_GlycChillerOut_limitLo</EFDB_Name>
+      <Description>TC4: Glycol out of Chiller low alarm level</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>Celsius</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>maq20_GlycDeSuHtrFlow_warnLo</EFDB_Name>
+      <Description>Glycol flow at Stg 2 DeSuperHtr low warning level</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>gallon/min</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>maq20_GlycDeSuHtrFlow_limitLo</EFDB_Name>
+      <Description>Glycol flow at Stg 2 DeSuperHtr low alarm level</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>gallon/min</Units>
       <Count>1</Count>
     </item>
     <item>
@@ -31379,49 +31568,6 @@
       <Count>1</Count>
     </item>
   </SALEvent>
-  <!--Created by xmlmaker2 for subsystem MTCamera class MTCamera_logevent_utiltrunk_Body_BackFlngXPlusTemp_LimitsConfiguration for category Limits using level 2-->
-  <!--==========================================================================================================================================================-->
-  <SALEvent>
-    <Subsystem>MTCamera</Subsystem>
-    <EFDB_Topic>MTCamera_logevent_utiltrunk_Body_BackFlngXPlusTemp_LimitsConfiguration</EFDB_Topic>
-    <Description>subsystem MTCamera class MTCamera_logevent_utiltrunk_Body_BackFlngXPlusTemp_LimitsConfiguration for category Limits</Description>
-    <!--CCS: Dictionary_Checksum: 617135785L -->
-    <item>
-      <EFDB_Name>version</EFDB_Name>
-      <Description>Version of the settings, formatted using CCS conventions</Description>
-      <IDL_Type>string</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>warnHi</EFDB_Name>
-      <Description>Back flange X+ in temperature high warning level</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>Celsius</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>warnLo</EFDB_Name>
-      <Description>Back flange X+ in temperature low warning level</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>Celsius</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>limitHi</EFDB_Name>
-      <Description>Back flange X+ in temperature high alarm level</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>Celsius</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>limitLo</EFDB_Name>
-      <Description>Back flange X+ in temperature low alarm level</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>Celsius</Units>
-      <Count>1</Count>
-    </item>
-  </SALEvent>
   <!--Created by xmlmaker2 for subsystem MTCamera class MTCamera_logevent_utiltrunk_Body_BackFlngYMinusTemp_LimitsConfiguration for category Limits using level 2-->
   <!--===========================================================================================================================================================-->
   <SALEvent>
@@ -32239,49 +32385,6 @@
       <Count>1</Count>
     </item>
   </SALEvent>
-  <!--Created by xmlmaker2 for subsystem MTCamera class MTCamera_logevent_utiltrunk_Body_ShrdRngYMinusTemp_LimitsConfiguration for category Limits using level 2-->
-  <!--==========================================================================================================================================================-->
-  <SALEvent>
-    <Subsystem>MTCamera</Subsystem>
-    <EFDB_Topic>MTCamera_logevent_utiltrunk_Body_ShrdRngYMinusTemp_LimitsConfiguration</EFDB_Topic>
-    <Description>subsystem MTCamera class MTCamera_logevent_utiltrunk_Body_ShrdRngYMinusTemp_LimitsConfiguration for category Limits</Description>
-    <!--CCS: Dictionary_Checksum: 4163972077L -->
-    <item>
-      <EFDB_Name>version</EFDB_Name>
-      <Description>Version of the settings, formatted using CCS conventions</Description>
-      <IDL_Type>string</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>warnHi</EFDB_Name>
-      <Description>Shroud ring Y- temperature high warning level</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>Celsius</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>warnLo</EFDB_Name>
-      <Description>Shroud ring Y- temperature low warning level</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>Celsius</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>limitHi</EFDB_Name>
-      <Description>Shroud ring Y- temperature high alarm level</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>Celsius</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>limitLo</EFDB_Name>
-      <Description>Shroud ring Y- temperature low alarm level</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>Celsius</Units>
-      <Count>1</Count>
-    </item>
-  </SALEvent>
   <!--Created by xmlmaker2 for subsystem MTCamera class MTCamera_logevent_utiltrunk_Body_ShrdRngYPlusTemp_LimitsConfiguration for category Limits using level 2-->
   <!--=========================================================================================================================================================-->
   <SALEvent>
@@ -32868,6 +32971,35 @@
       <Count>1</Count>
     </item>
   </SALEvent>
+  <!--Created by xmlmaker2 for subsystem MTCamera class MTCamera_logevent_utiltrunk_MPC_FanSpeedError_LimitsConfiguration for category Limits using level 2-->
+  <!--=====================================================================================================================================================-->
+  <SALEvent>
+    <Subsystem>MTCamera</Subsystem>
+    <EFDB_Topic>MTCamera_logevent_utiltrunk_MPC_FanSpeedError_LimitsConfiguration</EFDB_Topic>
+    <Description>subsystem MTCamera class MTCamera_logevent_utiltrunk_MPC_FanSpeedError_LimitsConfiguration for category Limits</Description>
+    <!--CCS: Dictionary_Checksum: 2672432332L -->
+    <item>
+      <EFDB_Name>version</EFDB_Name>
+      <Description>Version of the settings, formatted using CCS conventions</Description>
+      <IDL_Type>string</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>warnHi</EFDB_Name>
+      <Description>MPC fan speed error high warning level</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>%</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>limitHi</EFDB_Name>
+      <Description>MPC fan speed error high alarm level</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>%</Units>
+      <Count>1</Count>
+    </item>
+  </SALEvent>
   <!--Created by xmlmaker2 for subsystem MTCamera class MTCamera_logevent_utiltrunk_MPC_FanSpeed_LimitsConfiguration for category Limits using level 2-->
   <!--================================================================================================================================================-->
   <SALEvent>
@@ -33166,6 +33298,35 @@
       <Description>MPC supply air pressure low alarm level</Description>
       <IDL_Type>double</IDL_Type>
       <Units>in. H₂O</Units>
+      <Count>1</Count>
+    </item>
+  </SALEvent>
+  <!--Created by xmlmaker2 for subsystem MTCamera class MTCamera_logevent_utiltrunk_MPC_ValvePosnError_LimitsConfiguration for category Limits using level 2-->
+  <!--======================================================================================================================================================-->
+  <SALEvent>
+    <Subsystem>MTCamera</Subsystem>
+    <EFDB_Topic>MTCamera_logevent_utiltrunk_MPC_ValvePosnError_LimitsConfiguration</EFDB_Topic>
+    <Description>subsystem MTCamera class MTCamera_logevent_utiltrunk_MPC_ValvePosnError_LimitsConfiguration for category Limits</Description>
+    <!--CCS: Dictionary_Checksum: 737608615L -->
+    <item>
+      <EFDB_Name>version</EFDB_Name>
+      <Description>Version of the settings, formatted using CCS conventions</Description>
+      <IDL_Type>string</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>warnHi</EFDB_Name>
+      <Description>MPC coolant valve position error high warning level</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>%</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>limitHi</EFDB_Name>
+      <Description>MPC coolant valve position error high alarm level</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>%</Units>
       <Count>1</Count>
     </item>
   </SALEvent>
@@ -34184,6 +34345,35 @@
       <Count>1</Count>
     </item>
   </SALEvent>
+  <!--Created by xmlmaker2 for subsystem MTCamera class MTCamera_logevent_utiltrunk_UT_FanSpeedError_LimitsConfiguration for category Limits using level 2-->
+  <!--====================================================================================================================================================-->
+  <SALEvent>
+    <Subsystem>MTCamera</Subsystem>
+    <EFDB_Topic>MTCamera_logevent_utiltrunk_UT_FanSpeedError_LimitsConfiguration</EFDB_Topic>
+    <Description>subsystem MTCamera class MTCamera_logevent_utiltrunk_UT_FanSpeedError_LimitsConfiguration for category Limits</Description>
+    <!--CCS: Dictionary_Checksum: 3286148356L -->
+    <item>
+      <EFDB_Name>version</EFDB_Name>
+      <Description>Version of the settings, formatted using CCS conventions</Description>
+      <IDL_Type>string</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>warnHi</EFDB_Name>
+      <Description>UT fan speed error high warning level</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>%</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>limitHi</EFDB_Name>
+      <Description>UT fan speed error high alarm level</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>%</Units>
+      <Count>1</Count>
+    </item>
+  </SALEvent>
   <!--Created by xmlmaker2 for subsystem MTCamera class MTCamera_logevent_utiltrunk_UT_FanSpeed_LimitsConfiguration for category Limits using level 2-->
   <!--===============================================================================================================================================-->
   <SALEvent>
@@ -34482,6 +34672,35 @@
       <Description>UT Top end X+ temperature low alarm level</Description>
       <IDL_Type>double</IDL_Type>
       <Units>Celsius</Units>
+      <Count>1</Count>
+    </item>
+  </SALEvent>
+  <!--Created by xmlmaker2 for subsystem MTCamera class MTCamera_logevent_utiltrunk_UT_ValvePosnError_LimitsConfiguration for category Limits using level 2-->
+  <!--=====================================================================================================================================================-->
+  <SALEvent>
+    <Subsystem>MTCamera</Subsystem>
+    <EFDB_Topic>MTCamera_logevent_utiltrunk_UT_ValvePosnError_LimitsConfiguration</EFDB_Topic>
+    <Description>subsystem MTCamera class MTCamera_logevent_utiltrunk_UT_ValvePosnError_LimitsConfiguration for category Limits</Description>
+    <!--CCS: Dictionary_Checksum: 2220372146L -->
+    <item>
+      <EFDB_Name>version</EFDB_Name>
+      <Description>Version of the settings, formatted using CCS conventions</Description>
+      <IDL_Type>string</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>warnHi</EFDB_Name>
+      <Description>UT coolant valve position error high warning level</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>%</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>limitHi</EFDB_Name>
+      <Description>UT coolant valve position error high alarm level</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>%</Units>
       <Count>1</Count>
     </item>
   </SALEvent>
@@ -35001,6 +35220,35 @@
       <Count>1</Count>
     </item>
   </SALEvent>
+  <!--Created by xmlmaker2 for subsystem MTCamera class MTCamera_logevent_utiltrunk_VPC_FanSpeedError_LimitsConfiguration for category Limits using level 2-->
+  <!--=====================================================================================================================================================-->
+  <SALEvent>
+    <Subsystem>MTCamera</Subsystem>
+    <EFDB_Topic>MTCamera_logevent_utiltrunk_VPC_FanSpeedError_LimitsConfiguration</EFDB_Topic>
+    <Description>subsystem MTCamera class MTCamera_logevent_utiltrunk_VPC_FanSpeedError_LimitsConfiguration for category Limits</Description>
+    <!--CCS: Dictionary_Checksum: 412586982L -->
+    <item>
+      <EFDB_Name>version</EFDB_Name>
+      <Description>Version of the settings, formatted using CCS conventions</Description>
+      <IDL_Type>string</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>warnHi</EFDB_Name>
+      <Description>VPC fan speed error high warning level</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>%</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>limitHi</EFDB_Name>
+      <Description>VPC fan speed error high alarm level</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>%</Units>
+      <Count>1</Count>
+    </item>
+  </SALEvent>
   <!--Created by xmlmaker2 for subsystem MTCamera class MTCamera_logevent_utiltrunk_VPC_FanSpeed_LimitsConfiguration for category Limits using level 2-->
   <!--================================================================================================================================================-->
   <SALEvent>
@@ -35385,6 +35633,35 @@
       <Description>VPC supply air pressure low alarm level</Description>
       <IDL_Type>double</IDL_Type>
       <Units>in. H₂O</Units>
+      <Count>1</Count>
+    </item>
+  </SALEvent>
+  <!--Created by xmlmaker2 for subsystem MTCamera class MTCamera_logevent_utiltrunk_VPC_ValvePosnError_LimitsConfiguration for category Limits using level 2-->
+  <!--======================================================================================================================================================-->
+  <SALEvent>
+    <Subsystem>MTCamera</Subsystem>
+    <EFDB_Topic>MTCamera_logevent_utiltrunk_VPC_ValvePosnError_LimitsConfiguration</EFDB_Topic>
+    <Description>subsystem MTCamera class MTCamera_logevent_utiltrunk_VPC_ValvePosnError_LimitsConfiguration for category Limits</Description>
+    <!--CCS: Dictionary_Checksum: 4039841782L -->
+    <item>
+      <EFDB_Name>version</EFDB_Name>
+      <Description>Version of the settings, formatted using CCS conventions</Description>
+      <IDL_Type>string</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>warnHi</EFDB_Name>
+      <Description>VPC coolant valve position error high warning level</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>%</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>limitHi</EFDB_Name>
+      <Description>VPC coolant valve position error high alarm level</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>%</Units>
       <Count>1</Count>
     </item>
   </SALEvent>
