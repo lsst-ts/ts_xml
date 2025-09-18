@@ -29,3 +29,4 @@ class SalIndex(enum.IntEnum):
     LATISS = 1
     LSSTComCam = 2
     LSSTCam = 3
+    RA = 101

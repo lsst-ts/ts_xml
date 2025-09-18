@@ -50,6 +50,30 @@
       <Units>unitless</Units>
       <Count>1</Count>
     </item>
+    <item>
+      <!-- Optional item that may be omitted. -->
+      <EFDB_Name>mag</EFDB_Name>
+      <Description>Magnitude of target. (optional)</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>mag</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <!-- Optional item that may be omitted. -->
+      <EFDB_Name>bv</EFDB_Name>
+      <Description>B-V color index of target. (optional)</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>mag</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <!-- Optional item that may be omitted. -->
+      <EFDB_Name>stype</EFDB_Name>
+      <Description>Stellar classification of target. (optional)</Description>
+      <IDL_Type>string</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
   </SALCommand>
   <SALCommand>
     <Subsystem>DIMM</Subsystem>
@@ -76,6 +100,30 @@
       <Units>unitless</Units>
       <Count>1</Count>
     </item>
+    <item>
+      <!-- Optional item that may be omitted. -->
+      <EFDB_Name>mag</EFDB_Name>
+      <Description>Magnitude of target. (optional)</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>mag</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <!-- Optional item that may be omitted. -->
+      <EFDB_Name>bv</EFDB_Name>
+      <Description>B-V color index of target. (optional)</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>mag</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <!-- Optional item that may be omitted. -->
+      <EFDB_Name>stype</EFDB_Name>
+      <Description>Stellar classification of target. (optional)</Description>
+      <IDL_Type>string</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
   </SALCommand>
   <SALCommand>
     <Subsystem>DIMM</Subsystem>
@@ -92,8 +140,48 @@
   </SALCommand>
   <SALCommand>
     <Subsystem>DIMM</Subsystem>
+    <EFDB_Topic>DIMM_command_controllerCommand</EFDB_Topic>
+    <Description>Send a generic command string to the specified controller.</Description>
+    <item>
+      <EFDB_Name>cmd</EFDB_Name>
+      <Description>Command to send (e.g., "get scope.status.list").</Description>
+      <IDL_Type>string</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>parameters</EFDB_Name>
+      <Description>Special command parameters as a JSON string.</Description>
+      <IDL_Type>string</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+  </SALCommand>
+  <SALCommand>
+    <Subsystem>DIMM</Subsystem>
+    <EFDB_Topic>DIMM_command_recover</EFDB_Topic>
+    <Description>Run a predefined internal recovery sequence.</Description>
+  </SALCommand>
+  <SALCommand>
+    <Subsystem>DIMM</Subsystem>
+    <EFDB_Topic>DIMM_command_park</EFDB_Topic>
+    <Description>Stop observations and park the telescope.</Description>
+  </SALCommand>
+  <SALCommand>
+    <Subsystem>DIMM</Subsystem>
     <EFDB_Topic>DIMM_command_moveDome</EFDB_Topic>
     <Description>Manually move the first dome side to the requested position.</Description>
+    <item>
+      <EFDB_Name>open</EFDB_Name>
+      <Description>
+        If true, `sideA` and `sideB` below are ignored and the dome is fully opened as though
+        1.0 were supplied for both `sideA` and `sideB`. If false, the targeted dome position
+        will be determined using the `sideA` and `sideB` arguments.
+      </Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
     <item>
       <EFDB_Name>sideA</EFDB_Name>
       <Description>

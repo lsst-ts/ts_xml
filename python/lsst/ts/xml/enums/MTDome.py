@@ -19,10 +19,14 @@
 # You should have received a copy of the GNU General Public License
 
 __all__ = [
+    "AzimuthMotor",
+    "AzimuthMotorSensor",
+    "CabinetSensor",
     "EnabledState",
     "Louver",
     "MotionState",
     "OnOff",
+    "OpenClose",
     "OperationalMode",
     "PowerManagementMode",
     "RadLockingPinState",
@@ -30,6 +34,39 @@ __all__ = [
 ]
 
 import enum
+
+
+class AzimuthMotor(enum.IntEnum):
+    """Azimuth motor."""
+
+    Motor1 = 1
+    Motor2 = 2
+    Motor3 = 3
+    Motor4 = 4
+    Motor5 = 5
+
+
+class AzimuthMotorSensor(enum.IntEnum):
+    """Azimuth motor sensor."""
+
+    Sensor1Motor1_104T4 = 1
+    Sensor2Motor1_104T5 = 2
+    Sensor1Motor2_104T6 = 3
+    Sensor2Motor2_104T7 = 4
+    Sensor1Motor3_106T1 = 5
+    Sensor2Motor3_106T2 = 6
+    Sensor1Motor4_106T3 = 7
+    Sensor2Motor4_106T4 = 8
+    Sensor1Motor5_106T5 = 9
+    Sensor2Motor5_106T6 = 10
+
+
+class CabinetSensor(enum.IntEnum):
+    """Cabinet sensor."""
+
+    Sensor1_104T1 = 1
+    Sensor2_104T2 = 2
+    Sensor3_104T3 = 3
 
 
 class EnabledState(enum.IntEnum):
@@ -43,40 +80,40 @@ class EnabledState(enum.IntEnum):
 class Louver(enum.IntEnum):
     """Louver name and associated array index."""
 
-    A1 = 0
-    A2 = 1
-    B1 = 2
-    B2 = 3
-    B3 = 4
-    C1 = 5
-    C2 = 6
-    C3 = 7
-    D1 = 8
-    D2 = 9
-    D3 = 10
-    E1 = 11
-    E2 = 12
-    E3 = 13
-    F1 = 14
-    F2 = 15
-    F3 = 16
-    G1 = 17
-    G2 = 18
-    G3 = 19
-    H1 = 20
-    H2 = 21
-    H3 = 22
-    I1 = 23
-    I2 = 24
-    I3 = 25
-    L1 = 26
-    L2 = 27
-    L3 = 28
-    M1 = 29
-    M2 = 30
-    M3 = 31
-    N1 = 32
-    N2 = 33
+    A1 = 1
+    A2 = 2
+    B1 = 3
+    B2 = 4
+    B3 = 5
+    C1 = 6
+    C2 = 7
+    C3 = 8
+    D1 = 9
+    D2 = 10
+    D3 = 11
+    E1 = 12
+    E2 = 13
+    E3 = 14
+    F1 = 15
+    F2 = 16
+    F3 = 17
+    G1 = 18
+    G2 = 19
+    G3 = 20
+    H1 = 21
+    H2 = 22
+    H3 = 23
+    I1 = 24
+    I2 = 25
+    I3 = 26
+    L1 = 27
+    L2 = 28
+    L3 = 29
+    M1 = 30
+    M2 = 31
+    M3 = 32
+    N1 = 33
+    N2 = 34
 
 
 class MotionState(enum.IntEnum):
@@ -115,8 +152,8 @@ class MotionState(enum.IntEnum):
     ENABLING_MOTOR_POWER = enum.auto()
     ENGAGING_BRAKE = enum.auto()
     ENGAGING_BRAKES = enum.auto()
-    FINAL_DOWN_CLOSE_LS_ENGAGED = enum.auto()
-    FINAL_DOWN_OPEN_LS_ENGAGED = enum.auto()
+    FINAL_LOW_CLOSE_LS_ENGAGED = enum.auto()
+    FINAL_LOW_OPEN_LS_ENGAGED = enum.auto()
     FINAL_UP_CLOSE_LS_ENGAGED = enum.auto()
     FINAL_UP_OPEN_LS_ENGAGED = enum.auto()
     GLYCOL_FLOWING = enum.auto()
@@ -152,6 +189,13 @@ class OnOff(enum.Enum):
 
     ON = True
     OFF = False
+
+
+class OpenClose(enum.StrEnum):
+    """Aperture shutter home command OPEN or CLOSE direction."""
+
+    OPEN = "OPEN"
+    CLOSE = "CLOSED"
 
 
 class OperationalMode(enum.IntEnum):

@@ -46,46 +46,6 @@
   </SALCommand>
   <SALCommand>
     <Subsystem>HVAC</Subsystem>
-    <EFDB_Topic>HVAC_command_configCrac</EFDB_Topic>
-    <Description>Configure a CRAC (Computer Room Air Conditioning) device.</Description>
-    <item>
-      <EFDB_Name>device_id</EFDB_Name>
-      <Description>Device ID; one of the DeviceId_crac enums.</Description>
-      <IDL_Type>int</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>coolingSetpoint</EFDB_Name>
-      <Description>Cooling Setpoint.</Description>
-      <IDL_Type>float</IDL_Type>
-      <Units>deg_C</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>dehumidifierSetpoint</EFDB_Name>
-      <Description>Dehumidifier Setpoint.</Description>
-      <IDL_Type>float</IDL_Type>
-      <Units>%</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>heatingSetpoint</EFDB_Name>
-      <Description>Heating Setpoint.</Description>
-      <IDL_Type>float</IDL_Type>
-      <Units>deg_C</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>humidifierSetpoint</EFDB_Name>
-      <Description>Humidifier Setpoint.</Description>
-      <IDL_Type>float</IDL_Type>
-      <Units>%</Units>
-      <Count>1</Count>
-    </item>
-  </SALCommand>
-  <SALCommand>
-    <Subsystem>HVAC</Subsystem>
     <EFDB_Topic>HVAC_command_configFancoil</EFDB_Topic>
     <Description>Configure a Fancoil device.</Description>
     <item>
@@ -96,22 +56,8 @@
       <Count>1</Count>
     </item>
     <item>
-      <EFDB_Name>coolingProportionalBand</EFDB_Name>
-      <Description>Set the cooling proportional band.</Description>
-      <IDL_Type>float</IDL_Type>
-      <Units>deg_C</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>fanOperationType</EFDB_Name>
-      <Description>Set the fan operation type.</Description>
-      <IDL_Type>float</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>heatingProportionalBand</EFDB_Name>
-      <Description>Set the heating proportional band.</Description>
+      <EFDB_Name>minSetpoint</EFDB_Name>
+      <Description>Set the min setpoint.</Description>
       <IDL_Type>float</IDL_Type>
       <Units>deg_C</Units>
       <Count>1</Count>
@@ -124,10 +70,31 @@
       <Count>1</Count>
     </item>
     <item>
-      <EFDB_Name>minSetpoint</EFDB_Name>
-      <Description>Set the min setpoint.</Description>
+      <EFDB_Name>coolingProportionalBand</EFDB_Name>
+      <Description>Set the cooling proportional band.</Description>
       <IDL_Type>float</IDL_Type>
       <Units>deg_C</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>heatingProportionalBand</EFDB_Name>
+      <Description>Set the heating proportional band.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>deg_C</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>fanOperationType</EFDB_Name>
+      <Description>Set the fan operation type.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>selectFanSpeed</EFDB_Name>
+      <Description>Select the fan speed.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>unitless</Units>
       <Count>1</Count>
     </item>
     <item>
@@ -137,10 +104,22 @@
       <Units>deg_C</Units>
       <Count>1</Count>
     </item>
+  </SALCommand>
+  <SALCommand>
+    <Subsystem>HVAC</Subsystem>
+    <EFDB_Topic>HVAC_command_configChillerValve</EFDB_Topic>
+    <Description>Configure a ChillerValve device.</Description>
     <item>
-      <EFDB_Name>selectFanSpeed</EFDB_Name>
-      <Description>Select the fan speed.</Description>
-      <IDL_Type>float</IDL_Type>
+      <EFDB_Name>device_id</EFDB_Name>
+      <Description>Device ID; one of the DeviceId_chillerValve enums.</Description>
+      <IDL_Type>int</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>closeAperture</EFDB_Name>
+      <Description>Close the aperture.</Description>
+      <IDL_Type>boolean</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
     </item>
@@ -157,10 +136,10 @@
       <Count>1</Count>
     </item>
     <item>
-      <EFDB_Name>maxFanSetpoint</EFDB_Name>
-      <Description>Max Fan Setpoint.</Description>
+      <EFDB_Name>roomSetpoint</EFDB_Name>
+      <Description>Room Setpoint.</Description>
       <IDL_Type>float</IDL_Type>
-      <Units>%</Units>
+      <Units>deg_C</Units>
       <Count>1</Count>
     </item>
     <item>
@@ -171,8 +150,48 @@
       <Count>1</Count>
     </item>
     <item>
-      <EFDB_Name>roomSetpoint</EFDB_Name>
-      <Description>Room Setpoint.</Description>
+      <EFDB_Name>maxFanSetpoint</EFDB_Name>
+      <Description>Max Fan Setpoint.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>%</Units>
+      <Count>1</Count>
+    </item>
+  </SALCommand>
+  <SALCommand>
+    <Subsystem>HVAC</Subsystem>
+    <EFDB_Topic>HVAC_command_configCrac</EFDB_Topic>
+    <Description>Configure a CRAC (Computer Room Air Conditioning) device.</Description>
+    <item>
+      <EFDB_Name>device_id</EFDB_Name>
+      <Description>Device ID; one of the DeviceId_crac enums.</Description>
+      <IDL_Type>int</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>humidifierSetpoint</EFDB_Name>
+      <Description>Humidifier Setpoint.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>%</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>dehumidifierSetpoint</EFDB_Name>
+      <Description>Dehumidifier Setpoint.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>%</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>coolingSetpoint</EFDB_Name>
+      <Description>Cooling Setpoint.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>deg_C</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>heatingSetpoint</EFDB_Name>
+      <Description>Heating Setpoint.</Description>
       <IDL_Type>float</IDL_Type>
       <Units>deg_C</Units>
       <Count>1</Count>
@@ -216,13 +235,6 @@
       <Count>1</Count>
     </item>
     <item>
-      <EFDB_Name>maxFanSetpoint</EFDB_Name>
-      <Description>Max Fan Setpoint.</Description>
-      <IDL_Type>float</IDL_Type>
-      <Units>%</Units>
-      <Count>1</Count>
-    </item>
-    <item>
       <EFDB_Name>minFanSetpoint</EFDB_Name>
       <Description>Min Fan Setpoint.</Description>
       <IDL_Type>float</IDL_Type>
@@ -230,8 +242,51 @@
       <Count>1</Count>
     </item>
     <item>
+      <EFDB_Name>maxFanSetpoint</EFDB_Name>
+      <Description>Max Fan Setpoint.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>%</Units>
+      <Count>1</Count>
+    </item>
+    <item>
       <EFDB_Name>antiFreezeTemperature</EFDB_Name>
       <Description>Anti-Freeze Temperature.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>deg_C</Units>
+      <Count>1</Count>
+    </item>
+  </SALCommand>
+  <SALCommand>
+    <Subsystem>HVAC</Subsystem>
+    <EFDB_Topic>HVAC_command_dynTmaRemoteSP</EFDB_Topic>
+    <Description>Set Dynalene dynTmaRemoteSP.</Description>
+    <item>
+      <EFDB_Name>dynTmaRemoteSP</EFDB_Name>
+      <Description>TMA setpoint.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>deg_C</Units>
+      <Count>1</Count>
+    </item>
+  </SALCommand>
+  <SALCommand>
+    <Subsystem>HVAC</Subsystem>
+    <EFDB_Topic>HVAC_command_dynTaRemoteSP</EFDB_Topic>
+    <Description>Set Dynalene dynTaRemoteSP.</Description>
+    <item>
+      <EFDB_Name>dynTaRemoteSP</EFDB_Name>
+      <Description>TA setpoint.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>deg_C</Units>
+      <Count>1</Count>
+    </item>
+  </SALCommand>
+  <SALCommand>
+    <Subsystem>HVAC</Subsystem>
+    <EFDB_Topic>HVAC_command_dynExtAirRemoteSP</EFDB_Topic>
+    <Description>Set Dynalene dynExtAirRemoteSP.</Description>
+    <item>
+      <EFDB_Name>dynExtAirRemoteSP</EFDB_Name>
+      <Description>Exit air setpoint.</Description>
       <IDL_Type>float</IDL_Type>
       <Units>deg_C</Units>
       <Count>1</Count>
@@ -275,37 +330,13 @@
   </SALCommand>
   <SALCommand>
     <Subsystem>HVAC</Subsystem>
-    <EFDB_Topic>HVAC_command_dynTaRemoteSP</EFDB_Topic>
-    <Description>Set Dynalene dynTaRemoteSP.</Description>
+    <EFDB_Topic>HVAC_command_dynTelemetryEnable</EFDB_Topic>
+    <Description>Set Dynalene dynTelemetryEnable.</Description>
     <item>
-      <EFDB_Name>dynTaRemoteSP</EFDB_Name>
-      <Description>TA setpoint.</Description>
-      <IDL_Type>float</IDL_Type>
-      <Units>deg_C</Units>
-      <Count>1</Count>
-    </item>
-  </SALCommand>
-  <SALCommand>
-    <Subsystem>HVAC</Subsystem>
-    <EFDB_Topic>HVAC_command_dynTmaRemoteSP</EFDB_Topic>
-    <Description>Set Dynalene dynTmaRemoteSP.</Description>
-    <item>
-      <EFDB_Name>dynTmaRemoteSP</EFDB_Name>
-      <Description>TMA setpoint.</Description>
-      <IDL_Type>float</IDL_Type>
-      <Units>deg_C</Units>
-      <Count>1</Count>
-    </item>
-  </SALCommand>
-  <SALCommand>
-    <Subsystem>HVAC</Subsystem>
-    <EFDB_Topic>HVAC_command_dynExtAirRemoteSP</EFDB_Topic>
-    <Description>Set Dynalene dynExtAirRemoteSP.</Description>
-    <item>
-      <EFDB_Name>dynExtAirRemoteSP</EFDB_Name>
-      <Description>Exit air setpoint.</Description>
-      <IDL_Type>float</IDL_Type>
-      <Units>deg_C</Units>
+      <EFDB_Name>dynTelemetryEnable</EFDB_Name>
+      <Description>Enable telemetry.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
       <Count>1</Count>
     </item>
   </SALCommand>
@@ -316,18 +347,6 @@
     <item>
       <EFDB_Name>dynPierFansOnOff</EFDB_Name>
       <Description>Switch the pier fans on or off.</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-  </SALCommand>
-  <SALCommand>
-    <Subsystem>HVAC</Subsystem>
-    <EFDB_Topic>HVAC_command_dynTelemetryEnable</EFDB_Topic>
-    <Description>Set Dynalene dynTelemetryEnable.</Description>
-    <item>
-      <EFDB_Name>dynTelemetryEnable</EFDB_Name>
-      <Description>Enable telemetry.</Description>
       <IDL_Type>boolean</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>

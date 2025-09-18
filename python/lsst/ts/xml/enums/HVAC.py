@@ -39,6 +39,9 @@ class DeviceId(IntEnum):
     chiller02P01 = 102
     chiller03P01 = 103
     chiller04P01 = 104
+    chillerValve = 111
+    compair01 = 121
+    compair02 = 122
     crac01P02 = 201
     crac02P02 = 202
     fancoil01P02 = 301

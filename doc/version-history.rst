@@ -15,6 +15,184 @@ Version History
 
 .. towncrier release notes start
 
+v24.0.0 (2025-09-17)
+====================
+Package Level
+-------------
+
+Bug Fixes
+~~~~~~~~~
+
+- Removed git hash from setuptools_scm version generation. (`OSW-1034 <https://rubinobs.atlassian.net/browse/OSW-1034>`_)
+
+
+Documentation
+~~~~~~~~~~~~~
+
+- Pinned documenteer to 1.4.
+
+
+API Removal or Deprecation
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+- Remove the openSpliceVersion attribute from the softwareVersions Event in SALGenerics.xml. (`OSW-1000 <https://rubinobs.atlassian.net/browse/OSW-1000>`_)
+
+
+Other Changes and Additions
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+- Update GitHub workflows to Python 3.12 (`DM-49621 <https://rubinobs.atlassian.net/browse/DM-49621>`_)
+- FCUTable center_distance method, revive MTM1M3TS.applySetpoint command (`DM-50734 <https://rubinobs.atlassian.net/browse/DM-50734>`_)
+- Added the M1M3 ThermocoupleTable table. (`DM-50884 <https://rubinobs.atlassian.net/browse/DM-50884>`_)
+- Change OCPS developer and contact and update index enumeration (`OSW-946 <https://rubinobs.atlassian.net/browse/OSW-946>`_)
+
+
+MTAOS
+~~~~~
+
+- Update topic type for visitId and extraId in MTAOS events. (`DM-52185 <https://rubinobs.atlassian.net/browse/DM-52185>`_)
+
+
+Watcher
+~~~~~~~
+
+- Add Java as a runtime language for watcher (`CAP-1085 <https://rubinobs.atlassian.net/browse/CAP-1085>`_)
+
+
+Interface Changes
+-----------------
+
+Performance Enhancement
+~~~~~~~~~~~~~~~~~~~~~~~
+
+- HVAC: Updated commands, events and telemetry. (`OSW-823.hvac <https://rubinobs.atlassian.net/browse/OSW-823.hvac>`_)
+
+
+API Removal or Deprecation
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+- Removed the EPM CSC. (`OSW-716.epm <https://rubinobs.atlassian.net/browse/OSW-716.epm>`_)
+
+
+ATCamera
+~~~~~~~~
+
+- Automatically generated changes to bring ATCamera up to date with CCS dictionaries (`CAP-1084 <https://rubinobs.atlassian.net/browse/CAP-1084>`_)
+- Adjust enumerations for watcher compatibility (`CAP-1085 <https://rubinobs.atlassian.net/browse/CAP-1085>`_)
+
+
+ATMCS
+~~~~~
+
+- Added a new crioSummaryState event. (`DM-49880 <https://rubinobs.atlassian.net/browse/DM-49880>`_)
+- Removed deprecated 'value' command parameters. (`OSW-1044 <https://rubinobs.atlassian.net/browse/OSW-1044>`_)
+
+
+ATPneumatics
+~~~~~~~~~~~~
+
+- Removed deprecated 'value' command parameters. (`OSW-1044 <https://rubinobs.atlassian.net/browse/OSW-1044>`_)
+
+
+CCCamera
+~~~~~~~~
+
+- Automatically generated changes to bring CCCamera up to date with CCS dictionaries (`CAP-1084 <https://rubinobs.atlassian.net/browse/CAP-1084>`_)
+- Adjust enumerations for watcher compatibility (`CAP-1085 <https://rubinobs.atlassian.net/browse/CAP-1085>`_)
+
+
+DIMM
+~~~~
+
+- Updated DIMM commands: `gotoRaDec`, `gotoAltAz`, `moveDome` (`OSW-29 <https://rubinobs.atlassian.net/browse/OSW-29>`_)
+- New DIMM events: `automationState`. `scopeEvents` (`OSW-29 <https://rubinobs.atlassian.net/browse/OSW-29>`_)
+- New commands for DIMM: `controllerCommand`, `recover`, `park` (`OSW-29 <https://rubinobs.atlassian.net/browse/OSW-29>`_)
+
+
+DREAM
+~~~~~
+
+- * Updated DREAM interface so that it is not indexed. (`DM-49783 <https://rubinobs.atlassian.net/browse/DM-49783>`_)
+- * Updated DREAM interface so that it is indexed. (`DM-51223 <https://rubinobs.atlassian.net/browse/DM-51223>`_)
+- Fill out DREAM topics based on status information received by the CSC. (`OSW-20 <https://rubinobs.atlassian.net/browse/OSW-20>`_)
+
+
+Electrometer
+~~~~~~~~~~~~
+
+- Added changeNPLC command and changedNPLC event. (`OSW-65 <https://rubinobs.atlassian.net/browse/OSW-65>`_)
+
+
+HVAC
+~~~~
+
+- Find a better name for external and ambient temperature parameter of HVAC_lowerAHU0XP05 topics. (`DM-49940 <https://rubinobs.atlassian.net/browse/DM-49940>`_)
+- Added new telemetry, event and command topics. (`OSW-912 <https://rubinobs.atlassian.net/browse/OSW-912>`_)
+
+
+MTAOS
+~~~~~
+
+- Added visitId and extraId topic to MTAOS events.
+  Added gains topics to degree of freedom events in MTAOS. (`DM-52031 <https://rubinobs.atlassian.net/browse/DM-52031>`_)
+
+
+MTCamera
+~~~~~~~~
+
+- Filter exchange: add filter state and event for filter swapping. (`CAP-1083 <https://rubinobs.atlassian.net/browse/CAP-1083>`_)
+- Automatically generated changes to bring MTCamera up to date with CCS dictionaries (`CAP-1084 <https://rubinobs.atlassian.net/browse/CAP-1084>`_)
+- Adjust enumerations for watcher compatibility (`CAP-1085 <https://rubinobs.atlassian.net/browse/CAP-1085>`_)
+
+
+MTDome
+~~~~~~
+
+- Extend description for MTDome_apertureShutter position parameters. (`DM-50412 <https://rubinobs.atlassian.net/browse/DM-50412>`_)
+- Fixed typos in the MotionState enum. (`DM-50509 <https://rubinobs.atlassian.net/browse/DM-50509>`_)
+- Added capacitor banks telemetry topic. (`OSW-331 <https://rubinobs.atlassian.net/browse/OSW-331>`_)
+- Improved azimuth and thermal temperature telemetry. (`OSW-331 <https://rubinobs.atlassian.net/browse/OSW-331>`_)
+- Added OpenClose direction parameter to home command. (`OSW-1042 <https://rubinobs.atlassian.net/browse/OSW-1042>`_)
+- Added resetDrivesLouvers command. (`OSW-1042 <https://rubinobs.atlassian.net/browse/OSW-1042>`_)
+- Added sensor enums. (`OSW-1042 <https://rubinobs.atlassian.net/browse/OSW-1042>`_)
+- Added louvers events. (`OSW-1042 <https://rubinobs.atlassian.net/browse/OSW-1042>`_)
+- Made Louver enum 1-based. (`OSW-1059 <https://rubinobs.atlassian.net/browse/OSW-1059>`_)
+- Fixed typo in OpenClose enum. (`OSW-1065 <https://rubinobs.atlassian.net/browse/OSW-1065>`_)
+
+
+MTHexapod
+~~~~~~~~~
+
+- Add the ``MTHexapod_command_moveInSteps`` and ``MTHexapod_command_offsetInSteps`` topics. (`DM-50296 <https://rubinobs.atlassian.net/browse/DM-50296>`_)
+- Update the MTHexapod ErrorCode enum. (`DM-50684 <https://rubinobs.atlassian.net/browse/DM-50684>`_)
+
+
+MTM1M3
+~~~~~~
+
+- WaitsCompression, WaitingTension renamed (`DM-33284 <https://rubinobs.atlassian.net/browse/DM-33284>`_)
+- Fix M1M3 thermocouple table values. (`DM-51385 <https://rubinobs.atlassian.net/browse/DM-51385>`_, `DM-52055 <https://rubinobs.atlassian.net/browse/DM-52055>`_)
+- Added preclippedIgnoreChanges and preclippedMaxDelay to forceActruatorSettings. (`OSW-640 <https://rubinobs.atlassian.net/browse/OSW-640>`_)
+
+
+MTRotator
+~~~~~~~~~
+
+- Update the MTRotator ErrorCode enum. (`DM-50684 <https://rubinobs.atlassian.net/browse/DM-50684>`_)
+
+
+OCPS
+~~~~
+
+- Add RA to OCPS SalIndex enum (`OSW-946 <https://rubinobs.atlassian.net/browse/OSW-946>`_)
+
+
+Scheduler
+~~~~~~~~~
+
+- Included command to flush the Scheduler internal queue and additional event with information on the Scheduler internal queue. (`OSW-670 <https://rubinobs.atlassian.net/browse/OSW-670>`_)
+
+
 v23.3.2 (2025-08-14)
 ====================
 Package Level

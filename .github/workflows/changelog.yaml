@@ -10,19 +10,19 @@ jobs:
     runs-on: ubuntu-latest
     if: ${{ !startsWith(github.head_ref, 'dependabot/') }}
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
         with:
           fetch-depth: 0
 
       - name: Set up python
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@v6
         with:
-          python-version: '3.11'
+          python-version: '3.12'
 
       - name: Install towncrier
         run: |
           $CONDA/bin/conda install -c conda-forge towncrier=23 -y
-  
+
       - name: Run towncrier check command
         run: |
           $CONDA/bin/towncrier check --compare-with origin/develop

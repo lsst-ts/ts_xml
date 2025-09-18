@@ -803,7 +803,7 @@
     <Subsystem>MTCamera</Subsystem>
     <EFDB_Topic>MTCamera_rebpower_Reb</EFDB_Topic>
     <Description>subsystem MTCamera class MTCamera_rebpower_Reb</Description>
-    <!--CCS: Dictionary_Checksum: 72957452L -->
+    <!--CCS: Dictionary_Checksum: 2604994575L -->
     <!--CCSMETA: Array analog_IaftLDO indexed by location-->
     <item>
       <EFDB_Name>analog_IaftLDO</EFDB_Name>
@@ -1050,6 +1050,14 @@
       <Description>Voltage before LDO</Description>
       <IDL_Type>double</IDL_Type>
       <Units>Volt</Units>
+      <Count>71</Count>
+    </item>
+    <!--CCSMETA: Array hvbias_DAC indexed by location-->
+    <item>
+      <EFDB_Name>hvbias_DAC</EFDB_Name>
+      <Description>DAC setting</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>unitless</Units>
       <Count>71</Count>
     </item>
     <!--CCSMETA: Array hvbias_IbefSwch indexed by location-->
@@ -1702,10 +1710,24 @@
     <Subsystem>MTCamera</Subsystem>
     <EFDB_Topic>MTCamera_refrig_Cryo1</EFDB_Topic>
     <Description>subsystem MTCamera class MTCamera_refrig_Cryo1</Description>
-    <!--CCS: Dictionary_Checksum: 869246017L -->
+    <!--CCS: Dictionary_Checksum: 4199104483L -->
     <item>
       <EFDB_Name>afterCoolTmp</EFDB_Name>
       <Description>After Cooler Temperature</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>Celsius</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>ambientTmp</EFDB_Name>
+      <Description>Ambient Temperature</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>Celsius</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>cabinetTmp</EFDB_Name>
+      <Description>Cabinet Temperature</Description>
       <IDL_Type>double</IDL_Type>
       <Units>Celsius</Units>
       <Count>1</Count>
@@ -1956,24 +1978,10 @@
     <Subsystem>MTCamera</Subsystem>
     <EFDB_Topic>MTCamera_refrig_Cryo3</EFDB_Topic>
     <Description>subsystem MTCamera class MTCamera_refrig_Cryo3</Description>
-    <!--CCS: Dictionary_Checksum: 773606185L -->
+    <!--CCS: Dictionary_Checksum: 4281376255L -->
     <item>
       <EFDB_Name>afterCoolTmp</EFDB_Name>
       <Description>After Cooler Temperature</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>Celsius</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>ambientTmp</EFDB_Name>
-      <Description>Ambient Temperature</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>Celsius</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>cabinetTmp</EFDB_Name>
-      <Description>Cabinet Temperature</Description>
       <IDL_Type>double</IDL_Type>
       <Units>Celsius</Units>
       <Count>1</Count>
@@ -4219,7 +4227,7 @@
     <Subsystem>MTCamera</Subsystem>
     <EFDB_Topic>MTCamera_fcs_Autochanger_AutochangerTrucks_Trending</EFDB_Topic>
     <Description>subsystem MTCamera class MTCamera_fcs_Autochanger_AutochangerTrucks_Trending for category Trending</Description>
-    <!--CCS: Dictionary_Checksum: 2202000250L -->
+    <!--CCS: Dictionary_Checksum: 3529804578L -->
     <item>
       <EFDB_Name>actruckxminus_handoffInError</EFDB_Name>
       <Description>Autochanger truck position sensors at handoff are in error</Description>
@@ -4323,6 +4331,13 @@
       <Description>Both autochanger trucks are at standby position</Description>
       <IDL_Type>boolean</IDL_Type>
       <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>deltaDriverFollowerPosition</EFDB_Name>
+      <Description>Difference of position between autochanger driver and follower trucks along linear rails</Description>
+      <IDL_Type>long</IDL_Type>
+      <Units>micron</Units>
       <Count>1</Count>
     </item>
     <item>
@@ -4814,7 +4829,7 @@
     <!--CCS: Dictionary_Checksum: 3264837383L -->
     <item>
       <EFDB_Name>id</EFDB_Name>
-      <Description>Identifier of autochangerusing serialNB of plutoGateway device</Description>
+      <Description>Identifier of autochanger using serialNB of plutoGateway device</Description>
       <IDL_Type>string</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
@@ -5027,14 +5042,14 @@
       <EFDB_Name>inclinometerXminus</EFDB_Name>
       <Description>Value of Digital Sensor inclinometerXminus</Description>
       <IDL_Type>double</IDL_Type>
-      <Units>unitless</Units>
+      <Units>degree</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>inclinometerXplus</EFDB_Name>
       <Description>Value of Digital Sensor inclinometerXplus</Description>
       <IDL_Type>double</IDL_Type>
-      <Units>unitless</Units>
+      <Units>degree</Units>
       <Count>1</Count>
     </item>
     <item>
@@ -6192,7 +6207,14 @@
     <Subsystem>MTCamera</Subsystem>
     <EFDB_Topic>MTCamera_fcs_Canbus0_Hyttc580_Trending</EFDB_Topic>
     <Description>subsystem MTCamera class MTCamera_fcs_Canbus0_Hyttc580_Trending for category Trending</Description>
-    <!--CCS: Dictionary_Checksum: 3071168627L -->
+    <!--CCS: Dictionary_Checksum: 3405652215L -->
+    <item>
+      <EFDB_Name>currentSlipRing</EFDB_Name>
+      <Description>Output current from the slip ring</Description>
+      <IDL_Type>long</IDL_Type>
+      <Units>mA</Units>
+      <Count>1</Count>
+    </item>
     <item>
       <EFDB_Name>plc_caAF3</EFDB_Name>
       <Description>Value of Digital Sensor caAF3</Description>
@@ -7610,14 +7632,14 @@
       <EFDB_Name>forceSensor0</EFDB_Name>
       <Description>Value of Digital Sensor forceSensor0</Description>
       <IDL_Type>long</IDL_Type>
-      <Units>unitless</Units>
+      <Units>mV</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>forceSensor1</EFDB_Name>
       <Description>Value of Digital Sensor forceSensor1</Description>
       <IDL_Type>long</IDL_Type>
-      <Units>unitless</Units>
+      <Units>mV</Units>
       <Count>1</Count>
     </item>
     <item>
@@ -7743,7 +7765,7 @@
       <EFDB_Name>loaderFilterDistanceSensor</EFDB_Name>
       <Description>Value of Digital Sensor loaderFilterDistanceSensor</Description>
       <IDL_Type>long</IDL_Type>
-      <Units>unitless</Units>
+      <Units>mV</Units>
       <Count>1</Count>
     </item>
     <item>
@@ -7981,7 +8003,7 @@
     </item>
     <item>
       <EFDB_Name>clampxminus1_clampState</EFDB_Name>
-      <Description>Carousel clamp state {READY_TO_CLAMP; UNCLAMPED_ON_FILTER; UNCLAMPED_EMPTY; CLAMPED_ON_FILTER; UNDEFINED; ERROR; UNLOCKABLE}</Description>
+      <Description>Carousel clamp state {READY_TO_LOCK; UNLOCKED_ON_FILTER; UNLOCKED_EMPTY; LOCKED_ON_FILTER; UNDEFINED; ERROR; UNLOCKABLE}</Description>
       <IDL_Type>string</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
@@ -8030,7 +8052,7 @@
     </item>
     <item>
       <EFDB_Name>clampxplus1_clampState</EFDB_Name>
-      <Description>Carousel clamp state {READY_TO_CLAMP; UNCLAMPED_ON_FILTER; UNCLAMPED_EMPTY; CLAMPED_ON_FILTER; UNDEFINED; ERROR; UNLOCKABLE}</Description>
+      <Description>Carousel clamp state {READY_TO_LOCK; UNLOCKED_ON_FILTER; UNLOCKED_EMPTY; LOCKED_ON_FILTER; UNDEFINED; ERROR; UNLOCKABLE}</Description>
       <IDL_Type>string</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
@@ -8079,7 +8101,7 @@
     </item>
     <item>
       <EFDB_Name>clampsState</EFDB_Name>
-      <Description>Clamps state on this socket {READY_TO_CLAMP; UNCLAMPED_ON_FILTER; UNCLAMPED_EMPTY; CLAMPED_ON_FILTER; UNDEFINED; ERROR; UNLOCKABLE}</Description>
+      <Description>Clamps state on this socket {READY_TO_LOCK; UNLOCKED_ON_FILTER; UNLOCKED_EMPTY; LOCKED_ON_FILTER; UNDEFINED; ERROR; UNLOCKABLE}</Description>
       <IDL_Type>string</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
@@ -8143,7 +8165,7 @@
     </item>
     <item>
       <EFDB_Name>clampxminus2_clampState</EFDB_Name>
-      <Description>Carousel clamp state {READY_TO_CLAMP; UNCLAMPED_ON_FILTER; UNCLAMPED_EMPTY; CLAMPED_ON_FILTER; UNDEFINED; ERROR; UNLOCKABLE}</Description>
+      <Description>Carousel clamp state {READY_TO_LOCK; UNLOCKED_ON_FILTER; UNLOCKED_EMPTY; LOCKED_ON_FILTER; UNDEFINED; ERROR; UNLOCKABLE}</Description>
       <IDL_Type>string</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
@@ -8192,7 +8214,7 @@
     </item>
     <item>
       <EFDB_Name>clampxplus2_clampState</EFDB_Name>
-      <Description>Carousel clamp state {READY_TO_CLAMP; UNCLAMPED_ON_FILTER; UNCLAMPED_EMPTY; CLAMPED_ON_FILTER; UNDEFINED; ERROR; UNLOCKABLE}</Description>
+      <Description>Carousel clamp state {READY_TO_LOCK; UNLOCKED_ON_FILTER; UNLOCKED_EMPTY; LOCKED_ON_FILTER; UNDEFINED; ERROR; UNLOCKABLE}</Description>
       <IDL_Type>string</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
@@ -8241,7 +8263,7 @@
     </item>
     <item>
       <EFDB_Name>clampsState</EFDB_Name>
-      <Description>Clamps state on this socket {READY_TO_CLAMP; UNCLAMPED_ON_FILTER; UNCLAMPED_EMPTY; CLAMPED_ON_FILTER; UNDEFINED; ERROR; UNLOCKABLE}</Description>
+      <Description>Clamps state on this socket {READY_TO_LOCK; UNLOCKED_ON_FILTER; UNLOCKED_EMPTY; LOCKED_ON_FILTER; UNDEFINED; ERROR; UNLOCKABLE}</Description>
       <IDL_Type>string</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
@@ -8305,7 +8327,7 @@
     </item>
     <item>
       <EFDB_Name>clampxminus3_clampState</EFDB_Name>
-      <Description>Carousel clamp state {READY_TO_CLAMP; UNCLAMPED_ON_FILTER; UNCLAMPED_EMPTY; CLAMPED_ON_FILTER; UNDEFINED; ERROR; UNLOCKABLE}</Description>
+      <Description>Carousel clamp state {READY_TO_LOCK; UNLOCKED_ON_FILTER; UNLOCKED_EMPTY; LOCKED_ON_FILTER; UNDEFINED; ERROR; UNLOCKABLE}</Description>
       <IDL_Type>string</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
@@ -8354,7 +8376,7 @@
     </item>
     <item>
       <EFDB_Name>clampxplus3_clampState</EFDB_Name>
-      <Description>Carousel clamp state {READY_TO_CLAMP; UNCLAMPED_ON_FILTER; UNCLAMPED_EMPTY; CLAMPED_ON_FILTER; UNDEFINED; ERROR; UNLOCKABLE}</Description>
+      <Description>Carousel clamp state {READY_TO_LOCK; UNLOCKED_ON_FILTER; UNLOCKED_EMPTY; LOCKED_ON_FILTER; UNDEFINED; ERROR; UNLOCKABLE}</Description>
       <IDL_Type>string</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
@@ -8403,7 +8425,7 @@
     </item>
     <item>
       <EFDB_Name>clampsState</EFDB_Name>
-      <Description>Clamps state on this socket {READY_TO_CLAMP; UNCLAMPED_ON_FILTER; UNCLAMPED_EMPTY; CLAMPED_ON_FILTER; UNDEFINED; ERROR; UNLOCKABLE}</Description>
+      <Description>Clamps state on this socket {READY_TO_LOCK; UNLOCKED_ON_FILTER; UNLOCKED_EMPTY; LOCKED_ON_FILTER; UNDEFINED; ERROR; UNLOCKABLE}</Description>
       <IDL_Type>string</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
@@ -8467,7 +8489,7 @@
     </item>
     <item>
       <EFDB_Name>clampxminus4_clampState</EFDB_Name>
-      <Description>Carousel clamp state {READY_TO_CLAMP; UNCLAMPED_ON_FILTER; UNCLAMPED_EMPTY; CLAMPED_ON_FILTER; UNDEFINED; ERROR; UNLOCKABLE}</Description>
+      <Description>Carousel clamp state {READY_TO_LOCK; UNLOCKED_ON_FILTER; UNLOCKED_EMPTY; LOCKED_ON_FILTER; UNDEFINED; ERROR; UNLOCKABLE}</Description>
       <IDL_Type>string</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
@@ -8516,7 +8538,7 @@
     </item>
     <item>
       <EFDB_Name>clampxplus4_clampState</EFDB_Name>
-      <Description>Carousel clamp state {READY_TO_CLAMP; UNCLAMPED_ON_FILTER; UNCLAMPED_EMPTY; CLAMPED_ON_FILTER; UNDEFINED; ERROR; UNLOCKABLE}</Description>
+      <Description>Carousel clamp state {READY_TO_LOCK; UNLOCKED_ON_FILTER; UNLOCKED_EMPTY; LOCKED_ON_FILTER; UNDEFINED; ERROR; UNLOCKABLE}</Description>
       <IDL_Type>string</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
@@ -8565,7 +8587,7 @@
     </item>
     <item>
       <EFDB_Name>clampsState</EFDB_Name>
-      <Description>Clamps state on this socket {READY_TO_CLAMP; UNCLAMPED_ON_FILTER; UNCLAMPED_EMPTY; CLAMPED_ON_FILTER; UNDEFINED; ERROR; UNLOCKABLE}</Description>
+      <Description>Clamps state on this socket {READY_TO_LOCK; UNLOCKED_ON_FILTER; UNLOCKED_EMPTY; LOCKED_ON_FILTER; UNDEFINED; ERROR; UNLOCKABLE}</Description>
       <IDL_Type>string</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
@@ -8629,7 +8651,7 @@
     </item>
     <item>
       <EFDB_Name>clampxminus5_clampState</EFDB_Name>
-      <Description>Carousel clamp state {READY_TO_CLAMP; UNCLAMPED_ON_FILTER; UNCLAMPED_EMPTY; CLAMPED_ON_FILTER; UNDEFINED; ERROR; UNLOCKABLE}</Description>
+      <Description>Carousel clamp state {READY_TO_LOCK; UNLOCKED_ON_FILTER; UNLOCKED_EMPTY; LOCKED_ON_FILTER; UNDEFINED; ERROR; UNLOCKABLE}</Description>
       <IDL_Type>string</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
@@ -8678,7 +8700,7 @@
     </item>
     <item>
       <EFDB_Name>clampxplus5_clampState</EFDB_Name>
-      <Description>Carousel clamp state {READY_TO_CLAMP; UNCLAMPED_ON_FILTER; UNCLAMPED_EMPTY; CLAMPED_ON_FILTER; UNDEFINED; ERROR; UNLOCKABLE}</Description>
+      <Description>Carousel clamp state {READY_TO_LOCK; UNLOCKED_ON_FILTER; UNLOCKED_EMPTY; LOCKED_ON_FILTER; UNDEFINED; ERROR; UNLOCKABLE}</Description>
       <IDL_Type>string</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
@@ -8727,7 +8749,7 @@
     </item>
     <item>
       <EFDB_Name>clampsState</EFDB_Name>
-      <Description>Clamps state on this socket {READY_TO_CLAMP; UNCLAMPED_ON_FILTER; UNCLAMPED_EMPTY; CLAMPED_ON_FILTER; UNDEFINED; ERROR; UNLOCKABLE}</Description>
+      <Description>Clamps state on this socket {READY_TO_LOCK; UNLOCKED_ON_FILTER; UNLOCKED_EMPTY; LOCKED_ON_FILTER; UNDEFINED; ERROR; UNLOCKABLE}</Description>
       <IDL_Type>string</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
@@ -8791,7 +8813,7 @@
     </item>
     <item>
       <EFDB_Name>clampsStateAtStandby</EFDB_Name>
-      <Description>State of the clamps for the socket at STANDBY position {READY_TO_CLAMP; UNCLAMPED_ON_FILTER; UNCLAMPED_EMPTY; CLAMPED_ON_FILTER; UNDEFINED; ERROR; UNLOCKABLE}</Description>
+      <Description>State of the clamps for the socket at STANDBY position {READY_TO_LOCK; UNLOCKED_ON_FILTER; UNLOCKED_EMPTY; LOCKED_ON_FILTER; UNDEFINED; ERROR; UNLOCKABLE}</Description>
       <IDL_Type>string</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
@@ -8859,10 +8881,17 @@
     <Subsystem>MTCamera</Subsystem>
     <EFDB_Topic>MTCamera_fcs_Counters_Autochanger_Trending</EFDB_Topic>
     <Description>subsystem MTCamera class MTCamera_fcs_Counters_Autochanger_Trending for category Trending</Description>
-    <!--CCS: Dictionary_Checksum: 1345145492L -->
+    <!--CCS: Dictionary_Checksum: 1395154614L -->
     <item>
       <EFDB_Name>autochangertrucks_ALIGN_FOLLOWER</EFDB_Name>
       <Description>Counter for the action ALIGN_FOLLOWER</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>autochangertrucks_MOVE_DRIVER_TRUCK_ALONE</EFDB_Name>
+      <Description>Counter for the action MOVE_DRIVER_TRUCK_ALONE</Description>
       <IDL_Type>double</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
@@ -8931,8 +8960,29 @@
       <Count>1</Count>
     </item>
     <item>
+      <EFDB_Name>onlineclamps_onlineClampXminus_OPEN_HALFWAY_RELATIVE_POSITION</EFDB_Name>
+      <Description>Counter for the action OPEN_HALFWAY_RELATIVE_POSITION</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>onlineclamps_onlineClampXminus_OPEN_HOMING_ONLINECLAMP</EFDB_Name>
+      <Description>Counter for the action OPEN_HOMING_ONLINECLAMP</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
       <EFDB_Name>onlineclamps_onlineClampXminus_OPEN_ONLINECLAMP_MODE_CURRENT</EFDB_Name>
       <Description>Counter for the action OPEN_ONLINECLAMP_MODE_CURRENT</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>onlineclamps_onlineClampXminus_OPEN_ONLINECLAMP_MODE_PROFILE_NOBRAKE</EFDB_Name>
+      <Description>Counter for the action OPEN_ONLINECLAMP_MODE_PROFILE_NOBRAKE</Description>
       <IDL_Type>double</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
@@ -8980,8 +9030,29 @@
       <Count>1</Count>
     </item>
     <item>
+      <EFDB_Name>onlineclamps_onlineClampXplus_OPEN_HALFWAY_RELATIVE_POSITION</EFDB_Name>
+      <Description>Counter for the action OPEN_HALFWAY_RELATIVE_POSITION</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>onlineclamps_onlineClampXplus_OPEN_HOMING_ONLINECLAMP</EFDB_Name>
+      <Description>Counter for the action OPEN_HOMING_ONLINECLAMP</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
       <EFDB_Name>onlineclamps_onlineClampXplus_OPEN_ONLINECLAMP_MODE_CURRENT</EFDB_Name>
       <Description>Counter for the action OPEN_ONLINECLAMP_MODE_CURRENT</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>onlineclamps_onlineClampXplus_OPEN_ONLINECLAMP_MODE_PROFILE_NOBRAKE</EFDB_Name>
+      <Description>Counter for the action OPEN_ONLINECLAMP_MODE_PROFILE_NOBRAKE</Description>
       <IDL_Type>double</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
@@ -9029,8 +9100,29 @@
       <Count>1</Count>
     </item>
     <item>
+      <EFDB_Name>onlineclamps_onlineClampYminus_OPEN_HALFWAY_RELATIVE_POSITION</EFDB_Name>
+      <Description>Counter for the action OPEN_HALFWAY_RELATIVE_POSITION</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>onlineclamps_onlineClampYminus_OPEN_HOMING_ONLINECLAMP</EFDB_Name>
+      <Description>Counter for the action OPEN_HOMING_ONLINECLAMP</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
       <EFDB_Name>onlineclamps_onlineClampYminus_OPEN_ONLINECLAMP_MODE_CURRENT</EFDB_Name>
       <Description>Counter for the action OPEN_ONLINECLAMP_MODE_CURRENT</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>onlineclamps_onlineClampYminus_OPEN_ONLINECLAMP_MODE_PROFILE_NOBRAKE</EFDB_Name>
+      <Description>Counter for the action OPEN_ONLINECLAMP_MODE_PROFILE_NOBRAKE</Description>
       <IDL_Type>double</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
@@ -9063,7 +9155,28 @@
     <Subsystem>MTCamera</Subsystem>
     <EFDB_Topic>MTCamera_fcs_Counters_Carousel_Trending</EFDB_Topic>
     <Description>subsystem MTCamera class MTCamera_fcs_Counters_Carousel_Trending for category Trending</Description>
-    <!--CCS: Dictionary_Checksum: 770763357L -->
+    <!--CCS: Dictionary_Checksum: 2344222059L -->
+    <item>
+      <EFDB_Name>recovery_ROTATION_BACKWARD</EFDB_Name>
+      <Description>Counter for the action RECOVERY_ROTATION_BACKWARD</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>recovery_ROTATION_FORWARD</EFDB_Name>
+      <Description>Counter for the action RECOVERY_ROTATION_FORWARD</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>recovery_ROTATION_STRAIGHT</EFDB_Name>
+      <Description>Counter for the action RECOVERY_ROTATION_STRAIGHT</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
     <item>
       <EFDB_Name>rotate_CAROUSEL_TO_ABSOLUTE_POSITION</EFDB_Name>
       <Description>Counter for the action ROTATE_CAROUSEL_TO_ABSOLUTE_POSITION</Description>
@@ -9086,8 +9199,29 @@
       <Count>1</Count>
     </item>
     <item>
+      <EFDB_Name>socket1_STORE_FILTER_ON_CAROUSEL</EFDB_Name>
+      <Description>Counter for the action STORE_FILTER_ON_CAROUSEL</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
       <EFDB_Name>socket1_UNLOCK_CLAMPS</EFDB_Name>
       <Description>Counter for the action UNLOCK_CLAMPS</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>socket1_clampXminus1_RECOVERY_CLAMP_XMINUS</EFDB_Name>
+      <Description>Counter for the action RECOVERY_CLAMP_XMINUS</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>socket1_clampXminus1_RECOVERY_UNCLAMP</EFDB_Name>
+      <Description>Counter for the action RECOVERY_UNCLAMP</Description>
       <IDL_Type>double</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
@@ -9102,6 +9236,13 @@
     <item>
       <EFDB_Name>socket1_clampXminus1_UNLOCK</EFDB_Name>
       <Description>Counter for the action UNLOCK</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>socket1_clampXplus1_RECOVERY_UNCLAMP</EFDB_Name>
+      <Description>Counter for the action RECOVERY_UNCLAMP</Description>
       <IDL_Type>double</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
@@ -9128,8 +9269,29 @@
       <Count>1</Count>
     </item>
     <item>
+      <EFDB_Name>socket2_STORE_FILTER_ON_CAROUSEL</EFDB_Name>
+      <Description>Counter for the action STORE_FILTER_ON_CAROUSEL</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
       <EFDB_Name>socket2_UNLOCK_CLAMPS</EFDB_Name>
       <Description>Counter for the action UNLOCK_CLAMPS</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>socket2_clampXminus2_RECOVERY_CLAMP_XMINUS</EFDB_Name>
+      <Description>Counter for the action RECOVERY_CLAMP_XMINUS</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>socket2_clampXminus2_RECOVERY_UNCLAMP</EFDB_Name>
+      <Description>Counter for the action RECOVERY_UNCLAMP</Description>
       <IDL_Type>double</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
@@ -9144,6 +9306,13 @@
     <item>
       <EFDB_Name>socket2_clampXminus2_UNLOCK</EFDB_Name>
       <Description>Counter for the action UNLOCK</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>socket2_clampXplus2_RECOVERY_UNCLAMP</EFDB_Name>
+      <Description>Counter for the action RECOVERY_UNCLAMP</Description>
       <IDL_Type>double</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
@@ -9170,8 +9339,29 @@
       <Count>1</Count>
     </item>
     <item>
+      <EFDB_Name>socket3_STORE_FILTER_ON_CAROUSEL</EFDB_Name>
+      <Description>Counter for the action STORE_FILTER_ON_CAROUSEL</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
       <EFDB_Name>socket3_UNLOCK_CLAMPS</EFDB_Name>
       <Description>Counter for the action UNLOCK_CLAMPS</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>socket3_clampXminus3_RECOVERY_CLAMP_XMINUS</EFDB_Name>
+      <Description>Counter for the action RECOVERY_CLAMP_XMINUS</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>socket3_clampXminus3_RECOVERY_UNCLAMP</EFDB_Name>
+      <Description>Counter for the action RECOVERY_UNCLAMP</Description>
       <IDL_Type>double</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
@@ -9186,6 +9376,13 @@
     <item>
       <EFDB_Name>socket3_clampXminus3_UNLOCK</EFDB_Name>
       <Description>Counter for the action UNLOCK</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>socket3_clampXplus3_RECOVERY_UNCLAMP</EFDB_Name>
+      <Description>Counter for the action RECOVERY_UNCLAMP</Description>
       <IDL_Type>double</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
@@ -9212,8 +9409,29 @@
       <Count>1</Count>
     </item>
     <item>
+      <EFDB_Name>socket4_STORE_FILTER_ON_CAROUSEL</EFDB_Name>
+      <Description>Counter for the action STORE_FILTER_ON_CAROUSEL</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
       <EFDB_Name>socket4_UNLOCK_CLAMPS</EFDB_Name>
       <Description>Counter for the action UNLOCK_CLAMPS</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>socket4_clampXminus4_RECOVERY_CLAMP_XMINUS</EFDB_Name>
+      <Description>Counter for the action RECOVERY_CLAMP_XMINUS</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>socket4_clampXminus4_RECOVERY_UNCLAMP</EFDB_Name>
+      <Description>Counter for the action RECOVERY_UNCLAMP</Description>
       <IDL_Type>double</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
@@ -9228,6 +9446,13 @@
     <item>
       <EFDB_Name>socket4_clampXminus4_UNLOCK</EFDB_Name>
       <Description>Counter for the action UNLOCK</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>socket4_clampXplus4_RECOVERY_UNCLAMP</EFDB_Name>
+      <Description>Counter for the action RECOVERY_UNCLAMP</Description>
       <IDL_Type>double</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
@@ -9254,8 +9479,29 @@
       <Count>1</Count>
     </item>
     <item>
+      <EFDB_Name>socket5_STORE_FILTER_ON_CAROUSEL</EFDB_Name>
+      <Description>Counter for the action STORE_FILTER_ON_CAROUSEL</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
       <EFDB_Name>socket5_UNLOCK_CLAMPS</EFDB_Name>
       <Description>Counter for the action UNLOCK_CLAMPS</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>socket5_clampXminus5_RECOVERY_CLAMP_XMINUS</EFDB_Name>
+      <Description>Counter for the action RECOVERY_CLAMP_XMINUS</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>socket5_clampXminus5_RECOVERY_UNCLAMP</EFDB_Name>
+      <Description>Counter for the action RECOVERY_UNCLAMP</Description>
       <IDL_Type>double</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
@@ -9270,6 +9516,13 @@
     <item>
       <EFDB_Name>socket5_clampXminus5_UNLOCK</EFDB_Name>
       <Description>Counter for the action UNLOCK</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>socket5_clampXplus5_RECOVERY_UNCLAMP</EFDB_Name>
+      <Description>Counter for the action RECOVERY_UNCLAMP</Description>
       <IDL_Type>double</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
@@ -9451,10 +9704,17 @@
     <Subsystem>MTCamera</Subsystem>
     <EFDB_Topic>MTCamera_fcs_Duration_Autochanger_Trending</EFDB_Topic>
     <Description>subsystem MTCamera class MTCamera_fcs_Duration_Autochanger_Trending for category Trending</Description>
-    <!--CCS: Dictionary_Checksum: 2716061563L -->
+    <!--CCS: Dictionary_Checksum: 4122358223L -->
     <item>
       <EFDB_Name>autochangertrucks_ALIGN_FOLLOWER</EFDB_Name>
       <Description>Duration of the action ALIGN_FOLLOWER</Description>
+      <IDL_Type>long long</IDL_Type>
+      <Units>millisecond</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>autochangertrucks_MOVE_DRIVER_TRUCK_ALONE</EFDB_Name>
+      <Description>Duration of the action MOVE_DRIVER_TRUCK_ALONE</Description>
       <IDL_Type>long long</IDL_Type>
       <Units>millisecond</Units>
       <Count>1</Count>
@@ -9470,13 +9730,6 @@
       <EFDB_Name>autochangertrucks_MOVE_TO_ABSOLUTE_POSITION</EFDB_Name>
       <Description>Duration of the action MOVE_TO_ABSOLUTE_POSITION</Description>
       <IDL_Type>long long</IDL_Type>
-      <Units>millisecond</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>grab_FILTER_AT_STANDBY</EFDB_Name>
-      <Description>Duration of the action GRAB_FILTER_AT_STANDBY</Description>
-      <IDL_Type>double</IDL_Type>
       <Units>millisecond</Units>
       <Count>1</Count>
     </item>
@@ -9509,13 +9762,6 @@
       <Count>1</Count>
     </item>
     <item>
-      <EFDB_Name>move_AND_CLAMP_FILTER_ONLINE</EFDB_Name>
-      <Description>Duration of the action MOVE_AND_CLAMP_FILTER_ONLINE</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>millisecond</Units>
-      <Count>1</Count>
-    </item>
-    <item>
       <EFDB_Name>onlineclamps_onlineClampXminus_CLOSE_ONLINECLAMP_MODE_CURRENT</EFDB_Name>
       <Description>Duration of the action CLOSE_ONLINECLAMP_MODE_CURRENT</Description>
       <IDL_Type>long long</IDL_Type>
@@ -9537,8 +9783,29 @@
       <Count>1</Count>
     </item>
     <item>
+      <EFDB_Name>onlineclamps_onlineClampXminus_OPEN_HALFWAY_RELATIVE_POSITION</EFDB_Name>
+      <Description>Duration of the action OPEN_HALFWAY_RELATIVE_POSITION</Description>
+      <IDL_Type>long long</IDL_Type>
+      <Units>millisecond</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>onlineclamps_onlineClampXminus_OPEN_HOMING_ONLINECLAMP</EFDB_Name>
+      <Description>Duration of the action OPEN_HOMING_ONLINECLAMP</Description>
+      <IDL_Type>long long</IDL_Type>
+      <Units>millisecond</Units>
+      <Count>1</Count>
+    </item>
+    <item>
       <EFDB_Name>onlineclamps_onlineClampXminus_OPEN_ONLINECLAMP_MODE_CURRENT</EFDB_Name>
       <Description>Duration of the action OPEN_ONLINECLAMP_MODE_CURRENT</Description>
+      <IDL_Type>long long</IDL_Type>
+      <Units>millisecond</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>onlineclamps_onlineClampXminus_OPEN_ONLINECLAMP_MODE_PROFILE_NOBRAKE</EFDB_Name>
+      <Description>Duration of the action OPEN_ONLINECLAMP_MODE_PROFILE_NOBRAKE</Description>
       <IDL_Type>long long</IDL_Type>
       <Units>millisecond</Units>
       <Count>1</Count>
@@ -9586,8 +9853,29 @@
       <Count>1</Count>
     </item>
     <item>
+      <EFDB_Name>onlineclamps_onlineClampXplus_OPEN_HALFWAY_RELATIVE_POSITION</EFDB_Name>
+      <Description>Duration of the action OPEN_HALFWAY_RELATIVE_POSITION</Description>
+      <IDL_Type>long long</IDL_Type>
+      <Units>millisecond</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>onlineclamps_onlineClampXplus_OPEN_HOMING_ONLINECLAMP</EFDB_Name>
+      <Description>Duration of the action OPEN_HOMING_ONLINECLAMP</Description>
+      <IDL_Type>long long</IDL_Type>
+      <Units>millisecond</Units>
+      <Count>1</Count>
+    </item>
+    <item>
       <EFDB_Name>onlineclamps_onlineClampXplus_OPEN_ONLINECLAMP_MODE_CURRENT</EFDB_Name>
       <Description>Duration of the action OPEN_ONLINECLAMP_MODE_CURRENT</Description>
+      <IDL_Type>long long</IDL_Type>
+      <Units>millisecond</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>onlineclamps_onlineClampXplus_OPEN_ONLINECLAMP_MODE_PROFILE_NOBRAKE</EFDB_Name>
+      <Description>Duration of the action OPEN_ONLINECLAMP_MODE_PROFILE_NOBRAKE</Description>
       <IDL_Type>long long</IDL_Type>
       <Units>millisecond</Units>
       <Count>1</Count>
@@ -9635,8 +9923,29 @@
       <Count>1</Count>
     </item>
     <item>
+      <EFDB_Name>onlineclamps_onlineClampYminus_OPEN_HALFWAY_RELATIVE_POSITION</EFDB_Name>
+      <Description>Duration of the action OPEN_HALFWAY_RELATIVE_POSITION</Description>
+      <IDL_Type>long long</IDL_Type>
+      <Units>millisecond</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>onlineclamps_onlineClampYminus_OPEN_HOMING_ONLINECLAMP</EFDB_Name>
+      <Description>Duration of the action OPEN_HOMING_ONLINECLAMP</Description>
+      <IDL_Type>long long</IDL_Type>
+      <Units>millisecond</Units>
+      <Count>1</Count>
+    </item>
+    <item>
       <EFDB_Name>onlineclamps_onlineClampYminus_OPEN_ONLINECLAMP_MODE_CURRENT</EFDB_Name>
       <Description>Duration of the action OPEN_ONLINECLAMP_MODE_CURRENT</Description>
+      <IDL_Type>long long</IDL_Type>
+      <Units>millisecond</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>onlineclamps_onlineClampYminus_OPEN_ONLINECLAMP_MODE_PROFILE_NOBRAKE</EFDB_Name>
+      <Description>Duration of the action OPEN_ONLINECLAMP_MODE_PROFILE_NOBRAKE</Description>
       <IDL_Type>long long</IDL_Type>
       <Units>millisecond</Units>
       <Count>1</Count>
@@ -9669,7 +9978,28 @@
     <Subsystem>MTCamera</Subsystem>
     <EFDB_Topic>MTCamera_fcs_Duration_Carousel_Trending</EFDB_Topic>
     <Description>subsystem MTCamera class MTCamera_fcs_Duration_Carousel_Trending for category Trending</Description>
-    <!--CCS: Dictionary_Checksum: 932454045L -->
+    <!--CCS: Dictionary_Checksum: 4143368437L -->
+    <item>
+      <EFDB_Name>recovery_ROTATION_BACKWARD</EFDB_Name>
+      <Description>Duration of the action RECOVERY_ROTATION_BACKWARD</Description>
+      <IDL_Type>long long</IDL_Type>
+      <Units>millisecond</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>recovery_ROTATION_FORWARD</EFDB_Name>
+      <Description>Duration of the action RECOVERY_ROTATION_FORWARD</Description>
+      <IDL_Type>long long</IDL_Type>
+      <Units>millisecond</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>recovery_ROTATION_STRAIGHT</EFDB_Name>
+      <Description>Duration of the action RECOVERY_ROTATION_STRAIGHT</Description>
+      <IDL_Type>long long</IDL_Type>
+      <Units>millisecond</Units>
+      <Count>1</Count>
+    </item>
     <item>
       <EFDB_Name>rotate_CAROUSEL_TO_ABSOLUTE_POSITION</EFDB_Name>
       <Description>Duration of the action ROTATE_CAROUSEL_TO_ABSOLUTE_POSITION</Description>
@@ -9686,15 +10016,36 @@
     </item>
     <item>
       <EFDB_Name>socket1_RELEASE_CLAMPS</EFDB_Name>
-      <Description>Duration of action RELEASE_CLAMPS</Description>
-      <IDL_Type>long</IDL_Type>
+      <Description>Duration of the action RELEASE_CLAMPS</Description>
+      <IDL_Type>long long</IDL_Type>
+      <Units>millisecond</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>socket1_STORE_FILTER_ON_CAROUSEL</EFDB_Name>
+      <Description>Duration of the action STORE_FILTER_ON_CAROUSEL</Description>
+      <IDL_Type>long long</IDL_Type>
       <Units>millisecond</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>socket1_UNLOCK_CLAMPS</EFDB_Name>
-      <Description>Duration of action UNLOCK_CLAMPS</Description>
-      <IDL_Type>long</IDL_Type>
+      <Description>Duration of the action UNLOCK_CLAMPS</Description>
+      <IDL_Type>long long</IDL_Type>
+      <Units>millisecond</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>socket1_clampXminus1_RECOVERY_CLAMP_XMINUS</EFDB_Name>
+      <Description>Duration of the action RECOVERY_CLAMP_XMINUS</Description>
+      <IDL_Type>long long</IDL_Type>
+      <Units>millisecond</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>socket1_clampXminus1_RECOVERY_UNCLAMP</EFDB_Name>
+      <Description>Duration of the action RECOVERY_UNCLAMP</Description>
+      <IDL_Type>long long</IDL_Type>
       <Units>millisecond</Units>
       <Count>1</Count>
     </item>
@@ -9708,6 +10059,13 @@
     <item>
       <EFDB_Name>socket1_clampXminus1_UNLOCK</EFDB_Name>
       <Description>Duration of the action UNLOCK</Description>
+      <IDL_Type>long long</IDL_Type>
+      <Units>millisecond</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>socket1_clampXplus1_RECOVERY_UNCLAMP</EFDB_Name>
+      <Description>Duration of the action RECOVERY_UNCLAMP</Description>
       <IDL_Type>long long</IDL_Type>
       <Units>millisecond</Units>
       <Count>1</Count>
@@ -9728,15 +10086,36 @@
     </item>
     <item>
       <EFDB_Name>socket2_RELEASE_CLAMPS</EFDB_Name>
-      <Description>Duration of action RELEASE_CLAMPS</Description>
-      <IDL_Type>long</IDL_Type>
+      <Description>Duration of the action RELEASE_CLAMPS</Description>
+      <IDL_Type>long long</IDL_Type>
+      <Units>millisecond</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>socket2_STORE_FILTER_ON_CAROUSEL</EFDB_Name>
+      <Description>Duration of the action STORE_FILTER_ON_CAROUSEL</Description>
+      <IDL_Type>long long</IDL_Type>
       <Units>millisecond</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>socket2_UNLOCK_CLAMPS</EFDB_Name>
-      <Description>Duration of action UNLOCK_CLAMPS</Description>
-      <IDL_Type>long</IDL_Type>
+      <Description>Duration of the action UNLOCK_CLAMPS</Description>
+      <IDL_Type>long long</IDL_Type>
+      <Units>millisecond</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>socket2_clampXminus2_RECOVERY_CLAMP_XMINUS</EFDB_Name>
+      <Description>Duration of the action RECOVERY_CLAMP_XMINUS</Description>
+      <IDL_Type>long long</IDL_Type>
+      <Units>millisecond</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>socket2_clampXminus2_RECOVERY_UNCLAMP</EFDB_Name>
+      <Description>Duration of the action RECOVERY_UNCLAMP</Description>
+      <IDL_Type>long long</IDL_Type>
       <Units>millisecond</Units>
       <Count>1</Count>
     </item>
@@ -9750,6 +10129,13 @@
     <item>
       <EFDB_Name>socket2_clampXminus2_UNLOCK</EFDB_Name>
       <Description>Duration of the action UNLOCK</Description>
+      <IDL_Type>long long</IDL_Type>
+      <Units>millisecond</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>socket2_clampXplus2_RECOVERY_UNCLAMP</EFDB_Name>
+      <Description>Duration of the action RECOVERY_UNCLAMP</Description>
       <IDL_Type>long long</IDL_Type>
       <Units>millisecond</Units>
       <Count>1</Count>
@@ -9770,15 +10156,36 @@
     </item>
     <item>
       <EFDB_Name>socket3_RELEASE_CLAMPS</EFDB_Name>
-      <Description>Duration of action RELEASE_CLAMPS</Description>
-      <IDL_Type>long</IDL_Type>
+      <Description>Duration of the action RELEASE_CLAMPS</Description>
+      <IDL_Type>long long</IDL_Type>
+      <Units>millisecond</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>socket3_STORE_FILTER_ON_CAROUSEL</EFDB_Name>
+      <Description>Duration of the action STORE_FILTER_ON_CAROUSEL</Description>
+      <IDL_Type>long long</IDL_Type>
       <Units>millisecond</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>socket3_UNLOCK_CLAMPS</EFDB_Name>
-      <Description>Duration of action UNLOCK_CLAMPS</Description>
-      <IDL_Type>long</IDL_Type>
+      <Description>Duration of the action UNLOCK_CLAMPS</Description>
+      <IDL_Type>long long</IDL_Type>
+      <Units>millisecond</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>socket3_clampXminus3_RECOVERY_CLAMP_XMINUS</EFDB_Name>
+      <Description>Duration of the action RECOVERY_CLAMP_XMINUS</Description>
+      <IDL_Type>long long</IDL_Type>
+      <Units>millisecond</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>socket3_clampXminus3_RECOVERY_UNCLAMP</EFDB_Name>
+      <Description>Duration of the action RECOVERY_UNCLAMP</Description>
+      <IDL_Type>long long</IDL_Type>
       <Units>millisecond</Units>
       <Count>1</Count>
     </item>
@@ -9792,6 +10199,13 @@
     <item>
       <EFDB_Name>socket3_clampXminus3_UNLOCK</EFDB_Name>
       <Description>Duration of the action UNLOCK</Description>
+      <IDL_Type>long long</IDL_Type>
+      <Units>millisecond</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>socket3_clampXplus3_RECOVERY_UNCLAMP</EFDB_Name>
+      <Description>Duration of the action RECOVERY_UNCLAMP</Description>
       <IDL_Type>long long</IDL_Type>
       <Units>millisecond</Units>
       <Count>1</Count>
@@ -9812,15 +10226,36 @@
     </item>
     <item>
       <EFDB_Name>socket4_RELEASE_CLAMPS</EFDB_Name>
-      <Description>Duration of action RELEASE_CLAMPS</Description>
-      <IDL_Type>long</IDL_Type>
+      <Description>Duration of the action RELEASE_CLAMPS</Description>
+      <IDL_Type>long long</IDL_Type>
+      <Units>millisecond</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>socket4_STORE_FILTER_ON_CAROUSEL</EFDB_Name>
+      <Description>Duration of the action STORE_FILTER_ON_CAROUSEL</Description>
+      <IDL_Type>long long</IDL_Type>
       <Units>millisecond</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>socket4_UNLOCK_CLAMPS</EFDB_Name>
-      <Description>Duration of action UNLOCK_CLAMPS</Description>
-      <IDL_Type>long</IDL_Type>
+      <Description>Duration of the action UNLOCK_CLAMPS</Description>
+      <IDL_Type>long long</IDL_Type>
+      <Units>millisecond</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>socket4_clampXminus4_RECOVERY_CLAMP_XMINUS</EFDB_Name>
+      <Description>Duration of the action RECOVERY_CLAMP_XMINUS</Description>
+      <IDL_Type>long long</IDL_Type>
+      <Units>millisecond</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>socket4_clampXminus4_RECOVERY_UNCLAMP</EFDB_Name>
+      <Description>Duration of the action RECOVERY_UNCLAMP</Description>
+      <IDL_Type>long long</IDL_Type>
       <Units>millisecond</Units>
       <Count>1</Count>
     </item>
@@ -9834,6 +10269,13 @@
     <item>
       <EFDB_Name>socket4_clampXminus4_UNLOCK</EFDB_Name>
       <Description>Duration of the action UNLOCK</Description>
+      <IDL_Type>long long</IDL_Type>
+      <Units>millisecond</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>socket4_clampXplus4_RECOVERY_UNCLAMP</EFDB_Name>
+      <Description>Duration of the action RECOVERY_UNCLAMP</Description>
       <IDL_Type>long long</IDL_Type>
       <Units>millisecond</Units>
       <Count>1</Count>
@@ -9854,15 +10296,36 @@
     </item>
     <item>
       <EFDB_Name>socket5_RELEASE_CLAMPS</EFDB_Name>
-      <Description>Duration of action RELEASE_CLAMPS</Description>
-      <IDL_Type>long</IDL_Type>
+      <Description>Duration of the action RELEASE_CLAMPS</Description>
+      <IDL_Type>long long</IDL_Type>
+      <Units>millisecond</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>socket5_STORE_FILTER_ON_CAROUSEL</EFDB_Name>
+      <Description>Duration of the action STORE_FILTER_ON_CAROUSEL</Description>
+      <IDL_Type>long long</IDL_Type>
       <Units>millisecond</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>socket5_UNLOCK_CLAMPS</EFDB_Name>
-      <Description>Duration of action UNLOCK_CLAMPS</Description>
-      <IDL_Type>long</IDL_Type>
+      <Description>Duration of the action UNLOCK_CLAMPS</Description>
+      <IDL_Type>long long</IDL_Type>
+      <Units>millisecond</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>socket5_clampXminus5_RECOVERY_CLAMP_XMINUS</EFDB_Name>
+      <Description>Duration of the action RECOVERY_CLAMP_XMINUS</Description>
+      <IDL_Type>long long</IDL_Type>
+      <Units>millisecond</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>socket5_clampXminus5_RECOVERY_UNCLAMP</EFDB_Name>
+      <Description>Duration of the action RECOVERY_UNCLAMP</Description>
+      <IDL_Type>long long</IDL_Type>
       <Units>millisecond</Units>
       <Count>1</Count>
     </item>
@@ -9876,6 +10339,13 @@
     <item>
       <EFDB_Name>socket5_clampXminus5_UNLOCK</EFDB_Name>
       <Description>Duration of the action UNLOCK</Description>
+      <IDL_Type>long long</IDL_Type>
+      <Units>millisecond</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>socket5_clampXplus5_RECOVERY_UNCLAMP</EFDB_Name>
+      <Description>Duration of the action RECOVERY_UNCLAMP</Description>
       <IDL_Type>long long</IDL_Type>
       <Units>millisecond</Units>
       <Count>1</Count>
@@ -9965,31 +10435,45 @@
     <Subsystem>MTCamera</Subsystem>
     <EFDB_Topic>MTCamera_fcs_Duration_Trending</EFDB_Topic>
     <Description>subsystem MTCamera class MTCamera_fcs_Duration_Trending for category Trending</Description>
-    <!--CCS: Dictionary_Checksum: 252611752L -->
+    <!--CCS: Dictionary_Checksum: 3254638265L -->
     <item>
       <EFDB_Name>connect_LOADER</EFDB_Name>
-      <Description>Duration of CONNECT_LOADER</Description>
+      <Description>Duration of the action CONNECT_LOADER</Description>
       <IDL_Type>long long</IDL_Type>
       <Units>millisecond</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>disconnect_LOADER</EFDB_Name>
-      <Description>Duration of DISCONNECT_LOADER</Description>
+      <Description>Duration of the action DISCONNECT_LOADER</Description>
       <IDL_Type>long long</IDL_Type>
       <Units>millisecond</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>disengage_FILTER_FROM_CAROUSEL</EFDB_Name>
-      <Description>Duration of DISENGAGE_FILTER_FROM_CAROUSEL</Description>
+      <Description>Duration of the action DISENGAGE_FILTER_FROM_CAROUSEL</Description>
+      <IDL_Type>long long</IDL_Type>
+      <Units>millisecond</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>grab_FILTER_AT_STANDBY</EFDB_Name>
+      <Description>Duration of the action GRAB_FILTER_AT_STANDBY</Description>
       <IDL_Type>long long</IDL_Type>
       <Units>millisecond</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>load_FILTER</EFDB_Name>
-      <Description>Duration of LOAD_FILTER</Description>
+      <Description>Duration of the action LOAD_FILTER</Description>
+      <IDL_Type>long long</IDL_Type>
+      <Units>millisecond</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>move_AND_CLAMP_FILTER_ONLINE</EFDB_Name>
+      <Description>Duration of the action MOVE_AND_CLAMP_FILTER_ONLINE</Description>
       <IDL_Type>long long</IDL_Type>
       <Units>millisecond</Units>
       <Count>1</Count>
@@ -9997,41 +10481,41 @@
     <item>
       <EFDB_Name>rotate_SOCKET_TO_STANDBY</EFDB_Name>
       <Description>Duration of the action ROTATE_SOCKET_TO_STANDBY</Description>
-      <IDL_Type>double</IDL_Type>
+      <IDL_Type>long long</IDL_Type>
       <Units>millisecond</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>set_FILTER</EFDB_Name>
-      <Description>Duration of SET_FILTER</Description>
+      <Description>Duration of the action SET_FILTER</Description>
       <IDL_Type>long long</IDL_Type>
       <Units>millisecond</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>set_FILTER_AT_HANDOFF_FOR_LOADER</EFDB_Name>
-      <Description>Duration of SET_FILTER_AT_HANDOFF_FOR_LOADER</Description>
+      <Description>Duration of the action SET_FILTER_AT_HANDOFF_FOR_LOADER</Description>
       <IDL_Type>long long</IDL_Type>
       <Units>millisecond</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>set_NO_FILTER</EFDB_Name>
-      <Description>Duration of SET_NO_FILTER</Description>
+      <Description>Duration of the action SET_NO_FILTER</Description>
       <IDL_Type>long long</IDL_Type>
       <Units>millisecond</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>store_FILTER_ON_CAROUSEL</EFDB_Name>
-      <Description>Duration of STORE_FILTER_ON_CAROUSEL</Description>
+      <Description>Duration of the action STORE_FILTER_ON_CAROUSEL</Description>
       <IDL_Type>long long</IDL_Type>
       <Units>millisecond</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>unload_FILTER</EFDB_Name>
-      <Description>Duration of UNLOAD_FILTER</Description>
+      <Description>Duration of the action UNLOAD_FILTER</Description>
       <IDL_Type>long long</IDL_Type>
       <Units>millisecond</Units>
       <Count>1</Count>
@@ -10043,7 +10527,7 @@
     <Subsystem>MTCamera</Subsystem>
     <EFDB_Topic>MTCamera_fcs_Fcs_Mcm_Trending</EFDB_Topic>
     <Description>subsystem MTCamera class MTCamera_fcs_Fcs_Mcm_Trending for category Trending</Description>
-    <!--CCS: Dictionary_Checksum: 104252808L -->
+    <!--CCS: Dictionary_Checksum: 591873251L -->
     <item>
       <EFDB_Name>autochanger_trucks_position</EFDB_Name>
       <Description>Absolute position of the autochanger trucks</Description>
@@ -10075,13 +10559,6 @@
     <item>
       <EFDB_Name>proximity</EFDB_Name>
       <Description>Value of the autochanger proximity sensor</Description>
-      <IDL_Type>long</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>setfilter_percentage</EFDB_Name>
-      <Description>Progress of the setFilter command [%]</Description>
       <IDL_Type>long</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
@@ -10344,7 +10821,7 @@
     <!--CCS: Dictionary_Checksum: 3495373320L -->
     <item>
       <EFDB_Name>id</EFDB_Name>
-      <Description>Identifier of loaderusing serialNB of plutoGateway device</Description>
+      <Description>Identifier of loader using serialNB of plutoGateway device</Description>
       <IDL_Type>string</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
@@ -11455,7 +11932,7 @@
     <Subsystem>MTCamera</Subsystem>
     <EFDB_Topic>MTCamera_utiltrunk_Body</EFDB_Topic>
     <Description>subsystem MTCamera class MTCamera_utiltrunk_Body</Description>
-    <!--CCS: Dictionary_Checksum: 853845456L -->
+    <!--CCS: Dictionary_Checksum: 42717592L -->
     <item>
       <EFDB_Name>ambAirtemp</EFDB_Name>
       <Description>Ambient air temperature</Description>
@@ -11473,13 +11950,6 @@
     <item>
       <EFDB_Name>backFlngXMinusTemp</EFDB_Name>
       <Description>Back flange X- in temperature</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>Celsius</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>backFlngXPlusTemp</EFDB_Name>
-      <Description>Back flange X+ in temperature</Description>
       <IDL_Type>double</IDL_Type>
       <Units>Celsius</Units>
       <Count>1</Count>
@@ -11618,13 +12088,6 @@
       <Count>1</Count>
     </item>
     <item>
-      <EFDB_Name>shrdRngYMinusTemp</EFDB_Name>
-      <Description>Shroud ring Y- temperature</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>Celsius</Units>
-      <Count>1</Count>
-    </item>
-    <item>
       <EFDB_Name>shrdRngYPlusTemp</EFDB_Name>
       <Description>Shroud ring Y+ temperature</Description>
       <IDL_Type>double</IDL_Type>
@@ -11673,7 +12136,7 @@
     <Subsystem>MTCamera</Subsystem>
     <EFDB_Topic>MTCamera_utiltrunk_MPC</EFDB_Topic>
     <Description>subsystem MTCamera class MTCamera_utiltrunk_MPC</Description>
-    <!--CCS: Dictionary_Checksum: 3295711856L -->
+    <!--CCS: Dictionary_Checksum: 2454498131L -->
     <item>
       <EFDB_Name>avgAirtempOut</EFDB_Name>
       <Description>MPC average air temperature</Description>
@@ -11714,6 +12177,13 @@
       <Description>MPC fan speed</Description>
       <IDL_Type>double</IDL_Type>
       <Units>rpm</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>fanSpeedError</EFDB_Name>
+      <Description>MPC fan speed error</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>%</Units>
       <Count>1</Count>
     </item>
     <item>
@@ -11765,6 +12235,13 @@
       <Units>%</Units>
       <Count>1</Count>
     </item>
+    <item>
+      <EFDB_Name>valvePosnError</EFDB_Name>
+      <Description>MPC coolant valve position error</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>%</Units>
+      <Count>1</Count>
+    </item>
   </SALTelemetry>
   <!--Created by xmlmaker2 for subsystem MTCamera class MTCamera_utiltrunk_UT using level 1-->
   <!--=====================================================================================-->
@@ -11772,7 +12249,7 @@
     <Subsystem>MTCamera</Subsystem>
     <EFDB_Topic>MTCamera_utiltrunk_UT</EFDB_Topic>
     <Description>subsystem MTCamera class MTCamera_utiltrunk_UT</Description>
-    <!--CCS: Dictionary_Checksum: 446270777L -->
+    <!--CCS: Dictionary_Checksum: 1019154847L -->
     <item>
       <EFDB_Name>averageTemp</EFDB_Name>
       <Description>UT weighted average temperature</Description>
@@ -11844,6 +12321,13 @@
       <Count>1</Count>
     </item>
     <item>
+      <EFDB_Name>fanSpeedError</EFDB_Name>
+      <Description>UT fan speed error</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>%</Units>
+      <Count>1</Count>
+    </item>
+    <item>
       <EFDB_Name>midXMinusTemp</EFDB_Name>
       <Description>UT Mid-plate X- temperature</Description>
       <IDL_Type>double</IDL_Type>
@@ -11893,6 +12377,13 @@
       <Count>1</Count>
     </item>
     <item>
+      <EFDB_Name>valvePosnError</EFDB_Name>
+      <Description>UT coolant valve position error</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>%</Units>
+      <Count>1</Count>
+    </item>
+    <item>
       <EFDB_Name>w2Q1Temp</EFDB_Name>
       <Description>UT W2 Q1 temperature</Description>
       <IDL_Type>double</IDL_Type>
@@ -11913,7 +12404,7 @@
     <Subsystem>MTCamera</Subsystem>
     <EFDB_Topic>MTCamera_utiltrunk_VPC</EFDB_Topic>
     <Description>subsystem MTCamera class MTCamera_utiltrunk_VPC</Description>
-    <!--CCS: Dictionary_Checksum: 1724543484L -->
+    <!--CCS: Dictionary_Checksum: 3117930011L -->
     <item>
       <EFDB_Name>deltaPressFilt</EFDB_Name>
       <Description>VPC filter delta pressure</Description>
@@ -11947,6 +12438,13 @@
       <Description>VPC fan speed</Description>
       <IDL_Type>double</IDL_Type>
       <Units>rpm</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>fanSpeedError</EFDB_Name>
+      <Description>VPC fan speed error</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>%</Units>
       <Count>1</Count>
     </item>
     <item>
@@ -12008,6 +12506,13 @@
     <item>
       <EFDB_Name>valvePosn</EFDB_Name>
       <Description>VPC coolant valve position</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>%</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>valvePosnError</EFDB_Name>
+      <Description>VPC coolant valve position error</Description>
       <IDL_Type>double</IDL_Type>
       <Units>%</Units>
       <Count>1</Count>
