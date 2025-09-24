@@ -28,6 +28,7 @@ M3_R = 2.5337
 """Radisu of center hole in m."""
 CENTER_HOLE_R = 1.0547 / 2.0
 
+from .air_nozzle_table import AirNozzleTable, Nozzle, find_air_nozzle
 from .fa_table import (
     FATABLE_XFA,
     FATABLE_YFA,
