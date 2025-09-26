@@ -15,6 +15,26 @@ Version History
 
 .. towncrier release notes start
 
+v24.1.0 (2025-09-26)
+====================
+Package Level
+-------------
+
+Bug Fixes
+~~~~~~~~~
+
+- Set local_scheme to none in pyproject.toml configuration. (`OSW-1034 <https://rubinobs.atlassian.net/browse/OSW-1034>`_)
+
+
+Interface Changes
+-----------------
+
+DREAM
+~~~~~
+
+- Changed DREAM timestamps from `float` to `double`. (`OSW-1138 <https://rubinobs.atlassian.net/browse/OSW-1138>`_)
+
+
 v24.0.0 (2025-09-17)
 ====================
 Package Level
