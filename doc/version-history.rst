@@ -15,6 +15,26 @@ Version History
 
 .. towncrier release notes start
 
+v24.2.0 (2025-09-29)
+====================
+Package Level
+-------------
+
+New Features
+~~~~~~~~~~~~
+
+- Added test that rejects SAL timestamp attributes with type float. (`OSW-1141 <https://rubinobs.atlassian.net/browse/OSW-1141>`_)
+
+
+Interface Changes
+-----------------
+
+MTM1M3TS
+~~~~~~~~
+
+- M1M3TS positionFeedback[A|B] parameters. (`OSW-805 <https://rubinobs.atlassian.net/browse/OSW-805>`_)
+
+
 v24.1.0 (2025-09-26)
 ====================
 Package Level
