@@ -26,6 +26,8 @@ import setuptools_scm
 
 setuptools.setup(
     version=setuptools_scm.get_version(
-        write_to="python/lsst/ts/xml/version.py", local_scheme="no-local-version"
+        write_to="python/lsst/ts/xml/version.py",
+        local_scheme="no-local-version",
+        version_scheme="release-branch-semver",
     )
 )
