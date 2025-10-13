@@ -33,18 +33,12 @@ def test_idl_type_exists(xmlfile: pathlib.Path, csc: str, topic: str) -> None:
     with open(str(xmlfile), "r", encoding="utf-8") as f:
         tree = et.parse(f)
     root = tree.getroot()
-    untyped_field_names = []
     for attrib in root.findall(f"./{saltype}/item"):
         name = attrib.find("EFDB_Name")
         assert name is not None
         idltype = attrib.find("IDL_Type")
         assert idltype is not None
         assert idltype.text is not None
-        if idltype is None:
-            untyped_field_names.append(name.text)
-    assert (
-        len(untyped_field_names) == 0
-    ), f"IDL_Type for {untyped_field_names} must be defined."
 
 
 @pytest.mark.parametrize("xmlfile,csc,topic", ts_xml.get_xmlfile_csc_topic())
