@@ -24,6 +24,7 @@ Other Changes and Additions
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 - Updated ts-conda-build to 0.5. (`OSW-1205 <https://rubinobs.atlassian.net/browse/OSW-1205>`_)
+- Remove all references to untyped_field_names from test_IDL_Type.py. (`OSW-1225 <https://rubinobs.atlassian.net/browse/OSW-1225>`_)
 
 
 Interface Changes
