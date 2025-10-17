@@ -73,7 +73,6 @@ subsystems = [
     "MTCamera",
     "MTDome",
     "MTDomeTrajectory",
-    "MTEEC",
     "MTHeaderService",
     "MTHexapod",
     "MTM1M3",
