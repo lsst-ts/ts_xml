@@ -22,7 +22,9 @@
 import typing
 import unittest
 
+from lsst.ts.xml.enums.MTM1M3TS import AirNozzle
 from lsst.ts.xml.tables.m1m3 import (
+    NOZZLES_NUM,
     FAIndex,
     FATable,
     FCUTable,
@@ -31,7 +33,9 @@ from lsst.ts.xml.tables.m1m3 import (
     ThermocoupleTable,
     calibration_pairs,
     fill_m1_m3,
+    find_air_nozzle,
     find_thermocouple,
+    set_air_nozzles_types,
 )
 from pytest import approx
 
@@ -123,6 +127,33 @@ class M1M3FATableTestCase(unittest.TestCase):
             assert cp[0].y_position == cp[1].y_position
             assert cp[0].z_position == cp[1].z_position
             assert cp[0].scanner != cp[1].scanner
+
+    def test_air_nozzle_table(self) -> None:
+        for sector in "ABCDEF":
+            for i in range(1, NOZZLES_NUM + 1):
+                cell = find_air_nozzle(f"{sector}{i}")
+                assert cell is not None
+                assert cell.nozzle == AirNozzle.UNKNOWN
+            cell = find_air_nozzle(sector + "300")
+            assert cell is None
+
+        class Data:
+            nozzlesA = [AirNozzle.SUPER_SHORT] * NOZZLES_NUM
+            nozzlesB = [AirNozzle.BLOCKED] * NOZZLES_NUM
+            nozzlesC = [AirNozzle.OFFSET] * NOZZLES_NUM
+            nozzlesD = [AirNozzle.INSTALLED] * NOZZLES_NUM
+            nozzlesE = [AirNozzle.COVERED] * NOZZLES_NUM
+            nozzlesF = [AirNozzle.SUPER_SHORT] * NOZZLES_NUM
+
+        set_air_nozzles_types(Data())
+
+        for i in range(1, NOZZLES_NUM + 1):
+            assert find_air_nozzle(f"A{i}").nozzle == AirNozzle.SUPER_SHORT
+            assert find_air_nozzle(f"B{i}").nozzle == AirNozzle.BLOCKED
+            assert find_air_nozzle(f"C{i}").nozzle == AirNozzle.OFFSET
+            assert find_air_nozzle(f"D{i}").nozzle == AirNozzle.INSTALLED
+            assert find_air_nozzle(f"E{i}").nozzle == AirNozzle.COVERED
+            assert find_air_nozzle(f"F{i}").nozzle == AirNozzle.SUPER_SHORT
 
 
 if __name__ == "__main__":

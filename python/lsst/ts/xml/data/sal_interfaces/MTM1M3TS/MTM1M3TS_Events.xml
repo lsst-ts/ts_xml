@@ -8,6 +8,20 @@
     SummaryStates_OfflineState=4,
     SummaryStates_StandbyState=5
   </Enumeration>
+  <Enumeration>
+    AirNozzle_SuperShort=1,
+    AirNozzle_Blocked=2,
+    AirNozzle_Offset=3,
+    AirNozzle_Installed=4,
+    AirNozzle_Covered=5
+  </Enumeration>
+  <Enumeration>
+    ILCState_STANDBY,
+    ILCState_DISABLED,
+    ILCState_ENABLED,
+    ILCState_FIRMWAREUPDATE,
+    ILCState_FAULT
+  </Enumeration>
   <SALEvent>
     <Subsystem>MTM1M3TS</Subsystem>
     <EFDB_Topic>MTM1M3TS_logevent_engineeringMode</EFDB_Topic>
@@ -623,6 +637,53 @@
       <IDL_Type>int</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
+    </item>
+  </SALEvent>
+  <SALEvent>
+    <Subsystem>MTM1M3TS</Subsystem>
+    <EFDB_Topic>MTM1M3TS_logevent_airNozzles</EFDB_Topic>
+    <Description>Air nozzles types. Published as set of 5 lettered (A-F) arrays of 275 integeres - AirNozzle types.</Description>
+    <item>
+      <EFDB_Name>nozzlesA</EFDB_Name>
+      <Description>Nozzle types of the A sector nozzles.</Description>
+      <IDL_Type>int</IDL_Type>
+      <Units>unitless</Units>
+      <Count>275</Count>
+    </item>
+    <item>
+      <EFDB_Name>nozzlesB</EFDB_Name>
+      <Description>Nozzle types of the B sector nozzles.</Description>
+      <IDL_Type>int</IDL_Type>
+      <Units>unitless</Units>
+      <Count>275</Count>
+    </item>
+    <item>
+      <EFDB_Name>nozzlesC</EFDB_Name>
+      <Description>Nozzle types of the C sector nozzles.</Description>
+      <IDL_Type>int</IDL_Type>
+      <Units>unitless</Units>
+      <Count>275</Count>
+    </item>
+    <item>
+      <EFDB_Name>nozzlesD</EFDB_Name>
+      <Description>Nozzle types of the D sector nozzles.</Description>
+      <IDL_Type>int</IDL_Type>
+      <Units>unitless</Units>
+      <Count>275</Count>
+    </item>
+    <item>
+      <EFDB_Name>nozzlesE</EFDB_Name>
+      <Description>Nozzle types of the E sector nozzles.</Description>
+      <IDL_Type>int</IDL_Type>
+      <Units>unitless</Units>
+      <Count>275</Count>
+    </item>
+    <item>
+      <EFDB_Name>nozzlesF</EFDB_Name>
+      <Description>Nozzle types of the F sector nozzles.</Description>
+      <IDL_Type>int</IDL_Type>
+      <Units>unitless</Units>
+      <Count>275</Count>
     </item>
   </SALEvent>
 </SALEventSet>
