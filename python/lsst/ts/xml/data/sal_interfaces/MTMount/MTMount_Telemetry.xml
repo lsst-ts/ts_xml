@@ -952,7 +952,7 @@
     </item>
     <item>
       <EFDB_Name>azimuthEncoderRelativePosition</EFDB_Name>
-      <Description>Azimuth relative position read by each encoder head.</Description>
+      <Description>Actual position read by each encoder head.</Description>
       <IDL_Type>double</IDL_Type>
       <Units>deg</Units>
       <Count>4</Count>
@@ -994,7 +994,7 @@
     </item>
     <item>
       <EFDB_Name>elevationEncoderRelativePosition</EFDB_Name>
-      <Description>Elevation relative position read by each encoder head.</Description>
+      <Description>Actual position read by each encoder head.</Description>
       <IDL_Type>double</IDL_Type>
       <Units>deg</Units>
       <Count>4</Count>
@@ -1300,6 +1300,34 @@
     <item>
       <EFDB_Name>actualTemperatureAmbientTimestamp</EFDB_Name>
       <Description>Time at which actualTemperatureAmbient was measured (TAI, unix seconds).</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>second</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>airCompressedValveFailure</EFDB_Name>
+      <Description>Compressed air valve failure.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>airCompressedValveFailureTimestamp</EFDB_Name>
+      <Description>Time at which airCompressedValveFailure was measured (TAI, unix seconds).</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>second</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>airCompressedValveStatus</EFDB_Name>
+      <Description>Compressed air valve status.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>airCompressedValveStatusTimestamp</EFDB_Name>
+      <Description>Time at which airCompressedValveStatus was measured (TAI, unix seconds).</Description>
       <IDL_Type>double</IDL_Type>
       <Units>second</Units>
       <Count>1</Count>
@@ -5335,6 +5363,20 @@
       <IDL_Type>double</IDL_Type>
       <Units>second</Units>
       <Count>5</Count>
+    </item>
+    <item>
+      <EFDB_Name>fuseCapacitorBank</EFDB_Name>
+      <Description>Blown status capacitor bank cabinet 1.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>8</Count>
+    </item>
+    <item>
+      <EFDB_Name>fuseCapacitorBankTimestamp</EFDB_Name>
+      <Description>Time at which fuseCapacitorBank was measured (TAI, unix seconds).</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>second</Units>
+      <Count>8</Count>
     </item>
     <item>
       <EFDB_Name>internalTemperatureCapacitorBank</EFDB_Name>
