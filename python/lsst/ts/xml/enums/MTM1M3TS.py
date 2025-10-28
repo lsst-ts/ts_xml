@@ -18,9 +18,18 @@
 #
 # You should have received a copy of the GNU General Public License
 
-__all__ = ["ILCState"]
+__all__ = ["AirNozzle", "ILCState"]
 
 import enum
+
+
+class AirNozzle(enum.IntEnum):
+    UNKNOWN = 0
+    SUPER_SHORT = 1
+    BLOCKED = 2
+    OFFSET = 3
+    INSTALLED = 4
+    COVERED = 5  # covered means it was sshort before 9/3, now blocked
 
 
 class ILCState(enum.IntEnum):
