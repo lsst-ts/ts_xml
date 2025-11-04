@@ -129,6 +129,26 @@ class ThermocoupleData:
         """
         return self.name[-1].isnumeric()
 
+    def cell(self) -> str:
+        """Returns thermocouple's cell identifier.
+
+        Returns
+        -------
+        scanner : `str`
+            Cell name. Thermocouple name without location (F, M, B, B1 or B2).
+        """
+        return self.name[: (-2 if self.is_calibration() else -1)]
+
+    def location(self) -> str:
+        """Returns thermocouple's location.
+
+        Returns
+        -------
+        location : `str`
+            Themocouple location - one of the F, M, B, B1 or B2 strings.
+        """
+        return self.name[(-2 if self.is_calibration() else -1) :]
+
 
 ThermocoupleTable = [
     #
