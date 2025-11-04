@@ -110,9 +110,17 @@ class M1M3FATableTestCase(unittest.TestCase):
         tc = find_thermocouple(Scanner.TS_04, 39)
         assert tc is not None
         assert tc.index == 145
+        assert tc.name == "MTC040F"
+        assert tc.cell() == "MTC040"
+        assert tc.location() == "F"
 
         assert find_thermocouple(Scanner.TS_01, 28).is_calibration() is False
-        assert find_thermocouple(Scanner.TS_01, 29).is_calibration() is True
+
+        tc = find_thermocouple(Scanner.TS_01, 29)
+        assert tc.is_calibration() is True
+        assert tc.name == "MTC040B2"
+        assert tc.cell() == "MTC040"
+        assert tc.location() == "B2"
 
         assert find_thermocouple(Scanner.TS_04, 37).is_calibration() is True
         assert find_thermocouple(Scanner.TS_04, 39).is_calibration() is False
@@ -122,6 +130,10 @@ class M1M3FATableTestCase(unittest.TestCase):
 
         for cp in calibration_pairs():
             assert cp[0].name[:-1] == cp[1].name[:-1]
+            assert cp[0].is_calibration() is True
+            assert cp[1].is_calibration() is True
+            assert cp[0].location() in ["B1", "B2"]
+            assert cp[1].location() in ["B1", "B2"]
             assert cp[0].core_location == cp[1].core_location
             assert cp[0].x_position == cp[1].x_position
             assert cp[0].y_position == cp[1].y_position
