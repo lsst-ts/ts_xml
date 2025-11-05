@@ -28,6 +28,7 @@ from . import (
     MOSS,
     MTAOS,
     MTM1M3,
+    MTM1M3TS,
     MTM2,
     MTVMS,
     PMD,
