@@ -15,6 +15,40 @@ Version History
 
 .. towncrier release notes start
 
+24.3.0 (2025-11-05)
+===================
+Package Level
+-------------
+
+New Features
+~~~~~~~~~~~~
+
+- Add air nozzle table to the m1m3 table collection. (`OSW-1266 <https://rubinobs.atlassian.net/browse/OSW-1266>`_)
+- * add cell() and location() method to ThermocoupleData (`OSW-1304 <https://rubinobs.atlassian.net/browse/OSW-1304>`_)
+
+
+API Removal or Deprecation
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+- Removed the MTEEC CSC. (`OSW-1237 <https://rubinobs.atlassian.net/browse/OSW-1237>`_)
+
+
+MTMount
+~~~~~~~
+
+- Synchronized MTMount telemetry with latest version from Tekniker. (`OSW-1302 <https://rubinobs.atlassian.net/browse/OSW-1302>`_)
+
+
+Interface Changes
+-----------------
+
+MTCamera
+~~~~~~~~
+
+- Added acknowledgement fields to MTCamera_Event.xml
+  Removed acknoledgment fields from MTCamera_Event.xml (`OSW-1350 <https://rubinobs.atlassian.net/browse/OSW-1350>`_)
+
+
 v24.2.1 (2025-10-13)
 ====================
 Package Level
