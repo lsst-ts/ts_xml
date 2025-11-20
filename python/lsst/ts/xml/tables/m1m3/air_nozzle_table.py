@@ -24,7 +24,11 @@ from dataclasses import dataclass
 
 from lsst.ts.xml.enums.MTM1M3TS import AirNozzle
 
-__all__ = ["AirNozzleTable", "set_air_nozzles_types", "find_air_nozzle"]
+__all__ = [
+    "AirNozzleTable",
+    "set_air_nozzles_types_and_orifice_diameters",
+    "find_air_nozzle",
+]
 
 NOZZLES_NUM = 275
 
@@ -35,20 +39,23 @@ class AirNozzleData:
 
     Attributes
     ----------
-    cell : str
+    cell : `str`
         Cell name. Letter corresponds to the sector it's in.
-    x_position : float
+    x_position : `float`
         Thermocouple's X position in the mirror, in meters.
-    y_position : float
+    y_position : `float`
         Thermocouple's Y position in the mirror, in meters.
-    nozzle : AirNozzle
+    nozzle : `AirNozzle`
         Air nozzle information. Defaults to AirNozzle.UNKNOWN.
+    orifice_diameter : `int`
+        Diameter of the orifice in um. Defaults to -1.
     """
 
     cell: str
     x_position: float
     y_position: float
     nozzle: AirNozzle = AirNozzle.UNKNOWN
+    orifice_diameter: int = -1
 
 
 AirNozzleTable = [
@@ -1724,21 +1731,24 @@ def find_air_nozzle(cell: str) -> AirNozzleData | None:
         return None
 
 
-def set_air_nozzles_types(data: typing.Any) -> None:
-    """Assign nozzle types. This shall be used after air nozzle configuration
-    is obtained (either as SAL message, or as Panda's DataFrame from EFD) to
-    set nozzle kinds.
+def set_air_nozzles_types_and_orifice_diameters(data: typing.Any) -> None:
+    """Assign nozzle types and orifice diameters. This shall be used after air
+    nozzle configuration is obtained (either as SAL message, or as Panda's
+    DataFrame from EFD) to set nozzle kinds and orifice diameters.
 
     Parameters
     ----------
     data : `Any`
         Data to fill. Expected is either a structure or Panda DataFrame - the
-        passed object shall have nozzles[A-F] variables, which are used to fill
-        the data.
+        passed object shall have nozzles[A-F] and orificesDiameter[A-F]
+        variables, which are used to fill the nozzle data and the orifices
+        diameters.
     """
     for sector in "ABCDEF":
         nozzles = getattr(data, "nozzles" + sector)
+        orifice_diameters = getattr(data, "orificesDiameter" + sector)
         for i in range(NOZZLES_NUM):
             cell = find_air_nozzle(f"{sector}{i + 1}")
             assert cell is not None
             cell.nozzle = AirNozzle(nozzles[i])
+            cell.orifice_diameter = orifice_diameters[i]

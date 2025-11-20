@@ -35,7 +35,7 @@ from lsst.ts.xml.tables.m1m3 import (
     fill_m1_m3,
     find_air_nozzle,
     find_thermocouple,
-    set_air_nozzles_types,
+    set_air_nozzles_types_and_orifice_diameters,
 )
 from pytest import approx
 
@@ -146,6 +146,8 @@ class M1M3FATableTestCase(unittest.TestCase):
                 cell = find_air_nozzle(f"{sector}{i}")
                 assert cell is not None
                 assert cell.nozzle == AirNozzle.UNKNOWN
+                assert cell.orifice_diameter == -1
+
             cell = find_air_nozzle(sector + "300")
             assert cell is None
 
@@ -157,7 +159,14 @@ class M1M3FATableTestCase(unittest.TestCase):
             nozzlesE = [AirNozzle.COVERED] * NOZZLES_NUM
             nozzlesF = [AirNozzle.SUPER_SHORT] * NOZZLES_NUM
 
-        set_air_nozzles_types(Data())
+            orificesDiameterA = [0] * NOZZLES_NUM
+            orificesDiameterB = [1] * NOZZLES_NUM
+            orificesDiameterC = [0] * NOZZLES_NUM
+            orificesDiameterD = [2] * NOZZLES_NUM
+            orificesDiameterE = [0.5] * NOZZLES_NUM
+            orificesDiameterF = [3] * NOZZLES_NUM
+
+        set_air_nozzles_types_and_orifice_diameters(Data())
 
         for i in range(1, NOZZLES_NUM + 1):
             assert find_air_nozzle(f"A{i}").nozzle == AirNozzle.SUPER_SHORT
@@ -166,6 +175,13 @@ class M1M3FATableTestCase(unittest.TestCase):
             assert find_air_nozzle(f"D{i}").nozzle == AirNozzle.INSTALLED
             assert find_air_nozzle(f"E{i}").nozzle == AirNozzle.COVERED
             assert find_air_nozzle(f"F{i}").nozzle == AirNozzle.SUPER_SHORT
+
+            assert find_air_nozzle(f"A{i}").orifice_diameter == 0
+            assert find_air_nozzle(f"B{i}").orifice_diameter == 1
+            assert find_air_nozzle(f"C{i}").orifice_diameter == 0
+            assert find_air_nozzle(f"D{i}").orifice_diameter == 2
+            assert find_air_nozzle(f"E{i}").orifice_diameter == 0.5
+            assert find_air_nozzle(f"F{i}").orifice_diameter == 3
 
 
 if __name__ == "__main__":

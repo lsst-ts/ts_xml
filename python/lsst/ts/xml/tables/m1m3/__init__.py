@@ -32,7 +32,7 @@ from .air_nozzle_table import (
     NOZZLES_NUM,
     AirNozzleTable,
     find_air_nozzle,
-    set_air_nozzles_types,
+    set_air_nozzles_types_and_orifice_diameters,
 )
 from .fa_table import (
     FATABLE_XFA,
