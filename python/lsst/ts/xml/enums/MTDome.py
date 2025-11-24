@@ -21,6 +21,7 @@
 __all__ = [
     "AzimuthMotor",
     "AzimuthMotorSensor",
+    "Brake",
     "CabinetSensor",
     "EnabledState",
     "Louver",
@@ -67,6 +68,56 @@ class CabinetSensor(enum.IntEnum):
     Sensor1_104T1 = 1
     Sensor2_104T2 = 2
     Sensor3_104T3 = 3
+
+
+class Brake(enum.IntEnum):
+    """Engagable brakes.
+
+    Each item represents multiple brakes that are always engaged at the same
+    time.
+    """
+
+    AMCS = 1
+    APSCS_LEFT_DOOR = 2
+    APSCS_RIGHT_DOOR = 3
+    LWSCS = 4
+    LOUVER_A1 = 5
+    LOUVER_A2 = 6
+    LOUVER_B1 = 7
+    LOUVER_B2 = 8
+    LOUVER_B3 = 9
+    LOUVER_C1 = 10
+    LOUVER_C2 = 11
+    LOUVER_C3 = 12
+    LOUVER_D1 = 13
+    LOUVER_D2 = 14
+    LOUVER_D3 = 15
+    LOUVER_E1 = 16
+    LOUVER_E2 = 17
+    LOUVER_E3 = 18
+    LOUVER_F1 = 19
+    LOUVER_F2 = 20
+    LOUVER_F3 = 21
+    LOUVER_G1 = 22
+    LOUVER_G2 = 23
+    LOUVER_G3 = 24
+    LOUVER_H1 = 25
+    LOUVER_H2 = 26
+    LOUVER_H3 = 27
+    LOUVER_I1 = 28
+    LOUVER_I2 = 29
+    LOUVER_I3 = 30
+    LOUVER_L1 = 31
+    LOUVER_L2 = 32
+    LOUVER_L3 = 33
+    LOUVER_M1 = 34
+    LOUVER_M2 = 35
+    LOUVER_M3 = 36
+    LOUVER_N1 = 37
+    LOUVER_N2 = 38
+    CSCS = 39
+    RAD_LEFT_DOOR = 40
+    RAD_RIGHT_DOOR = 41
 
 
 class EnabledState(enum.IntEnum):
@@ -138,8 +189,8 @@ class MotionState(enum.IntEnum):
     STOPPING = enum.auto()
     STOPPING_BRAKING = enum.auto()
     STOPPED_BRAKED = enum.auto()
-    # Technically speaking these next states are regarded intermediary states
-    # but they are added here to avoid too much hassle dealing with two enums
+    # Technically speaking these next states are regarded intermediary states,
+    # but they are added here to avoid too much hassle dealing with two enums.
     BRAKE_DISENGAGED = enum.auto()
     BRAKES_DISENGAGED = enum.auto()
     BRAKE_ENGAGED = enum.auto()
