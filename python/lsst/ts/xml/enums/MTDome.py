@@ -62,14 +62,6 @@ class AzimuthMotorSensor(enum.IntEnum):
     Sensor2Motor5_106T6 = 10
 
 
-class CabinetSensor(enum.IntEnum):
-    """Cabinet sensor."""
-
-    Sensor1_104T1 = 1
-    Sensor2_104T2 = 2
-    Sensor3_104T3 = 3
-
-
 class Brake(enum.IntEnum):
     """Engagable brakes.
 
@@ -118,6 +110,14 @@ class Brake(enum.IntEnum):
     CSCS = 39
     RAD_LEFT_DOOR = 40
     RAD_RIGHT_DOOR = 41
+
+
+class CabinetSensor(enum.IntEnum):
+    """Cabinet sensor."""
+
+    Sensor1_104T1 = 1
+    Sensor2_104T2 = 2
+    Sensor3_104T3 = 3
 
 
 class EnabledState(enum.IntEnum):
