@@ -188,6 +188,12 @@
     Brake_RAD_LEFT_DOOR,
     Brake_RAD_RIGHT_DOOR
   </Enumeration>
+  <Enumeration>
+    ControlMode_Remote,
+    ControlMode_LocalPushButtons,
+    ControlMode_LocalKeba,
+    ControlMode_LocalEui
+  </Enumeration>
   <SALEvent>
     <Subsystem>MTDome</Subsystem>
     <EFDB_Topic>MTDome_logevent_azEnabled</EFDB_Topic>
@@ -591,6 +597,18 @@
       <Description>Time at which the data was determined (TAI unix seconds).</Description>
       <IDL_Type>double</IDL_Type>
       <Units>second</Units>
+      <Count>1</Count>
+    </item>
+  </SALEvent>
+  <SALEvent>
+    <Subsystem>MTDome</Subsystem>
+    <EFDB_Topic>MTDome_logevent_controlMode</EFDB_Topic>
+    <Description>Control mode. A ControlMode enum.</Description>
+    <item>
+      <EFDB_Name>mode</EFDB_Name>
+      <Description>The control mode.</Description>
+      <IDL_Type>int</IDL_Type>
+      <Units>unitless</Units>
       <Count>1</Count>
     </item>
   </SALEvent>

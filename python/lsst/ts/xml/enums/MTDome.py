@@ -23,6 +23,7 @@ __all__ = [
     "AzimuthMotorSensor",
     "Brake",
     "CabinetSensor",
+    "ControlMode",
     "EnabledState",
     "Louver",
     "MotionState",
@@ -118,6 +119,15 @@ class CabinetSensor(enum.IntEnum):
     Sensor1_104T1 = 1
     Sensor2_104T2 = 2
     Sensor3_104T3 = 3
+
+
+class ControlMode(enum.IntEnum):
+    """Control mode."""
+
+    Remote = 1
+    LocalPushButtons = 2
+    LocalKeba = 3
+    LocalEui = 4
 
 
 class EnabledState(enum.IntEnum):
@@ -296,3 +306,5 @@ class SubSystemId(enum.IntEnum):
     OBC = 0x100
     # Capacitor Banks Control System
     CBCS = 0x200
+    # Software Control System
+    CONTROL = 0x400
