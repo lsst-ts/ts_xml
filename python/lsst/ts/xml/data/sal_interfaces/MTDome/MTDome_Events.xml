@@ -145,6 +145,55 @@
     CabinetSensor_Sensor2_104T2,
     CabinetSensor_Sensor3_104T3
   </Enumeration>
+  <Enumeration>
+    Brake_AMCS,
+    Brake_APSCS_LEFT_DOOR,
+    Brake_APSCS_RIGHT_DOOR,
+    Brake_LWS,
+    Brake_LOUVER_A1,
+    Brake_LOUVER_A2,
+    Brake_LOUVER_B1,
+    Brake_LOUVER_B2,
+    Brake_LOUVER_B3,
+    Brake_LOUVER_C1,
+    Brake_LOUVER_C2,
+    Brake_LOUVER_C3,
+    Brake_LOUVER_D1,
+    Brake_LOUVER_D2,
+    Brake_LOUVER_D3,
+    Brake_LOUVER_E1,
+    Brake_LOUVER_E2,
+    Brake_LOUVER_E3,
+    Brake_LOUVER_F1,
+    Brake_LOUVER_F2,
+    Brake_LOUVER_F3,
+    Brake_LOUVER_G1,
+    Brake_LOUVER_G2,
+    Brake_LOUVER_G3,
+    Brake_LOUVER_H1,
+    Brake_LOUVER_H2,
+    Brake_LOUVER_H3,
+    Brake_LOUVER_I1,
+    Brake_LOUVER_I2,
+    Brake_LOUVER_I3,
+    Brake_LOUVER_L1,
+    Brake_LOUVER_L2,
+    Brake_LOUVER_L3,
+    Brake_LOUVER_M1,
+    Brake_LOUVER_M2,
+    Brake_LOUVER_M3,
+    Brake_LOUVER_N1,
+    Brake_LOUVER_N2,
+    Brake_CSCS,
+    Brake_RAD_LEFT_DOOR,
+    Brake_RAD_RIGHT_DOOR
+  </Enumeration>
+  <Enumeration>
+    ControlMode_Remote,
+    ControlMode_LocalPushButtons,
+    ControlMode_LocalKeba,
+    ControlMode_LocalEui
+  </Enumeration>
   <SALEvent>
     <Subsystem>MTDome</Subsystem>
     <EFDB_Topic>MTDome_logevent_azEnabled</EFDB_Topic>
@@ -206,6 +255,44 @@
     <Subsystem>MTDome</Subsystem>
     <EFDB_Topic>MTDome_logevent_louversEnabled</EFDB_Topic>
     <Description>Louvers enabled state.</Description>
+    <item>
+      <EFDB_Name>state</EFDB_Name>
+      <Description>Enabled state; an EnabledState enum.</Description>
+      <IDL_Type>int</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>faultCode</EFDB_Name>
+      <Description>The fault code; ignore if not in Fault state.</Description>
+      <IDL_Type>string</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+  </SALEvent>
+  <SALEvent>
+    <Subsystem>MTDome</Subsystem>
+    <EFDB_Topic>MTDome_logevent_radEnabled</EFDB_Topic>
+    <Description>Rear Access Door enabled state.</Description>
+    <item>
+      <EFDB_Name>state</EFDB_Name>
+      <Description>Enabled state; an EnabledState enum.</Description>
+      <IDL_Type>int</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>faultCode</EFDB_Name>
+      <Description>The fault code; ignore if not in Fault state.</Description>
+      <IDL_Type>string</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+  </SALEvent>
+  <SALEvent>
+    <Subsystem>MTDome</Subsystem>
+    <EFDB_Topic>MTDome_logevent_calibrationScreenEnabled</EFDB_Topic>
+    <Description>Calibration Screen enabled state.</Description>
     <item>
       <EFDB_Name>state</EFDB_Name>
       <Description>Enabled state; an EnabledState enum.</Description>
@@ -299,6 +386,44 @@
   </SALEvent>
   <SALEvent>
     <Subsystem>MTDome</Subsystem>
+    <EFDB_Topic>MTDome_logevent_radMotion</EFDB_Topic>
+    <Description>Rear Access Door motion state.</Description>
+    <item>
+      <EFDB_Name>state</EFDB_Name>
+      <Description>The motion state; a MotionState enum. First element in the array corresponds to the left door and the second one to the right door, as seen from inside the dome.</Description>
+      <IDL_Type>int</IDL_Type>
+      <Units>unitless</Units>
+      <Count>2</Count>
+    </item>
+    <item>
+      <EFDB_Name>inPosition</EFDB_Name>
+      <Description>Is the rear access door in position? First element in the array corresponds to the left door and the second one to the right door, as seen from inside the dome.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>2</Count>
+    </item>
+  </SALEvent>
+  <SALEvent>
+    <Subsystem>MTDome</Subsystem>
+    <EFDB_Topic>MTDome_logevent_calibrationScreenMotion</EFDB_Topic>
+    <Description>Calibration Screen motion state.</Description>
+    <item>
+      <EFDB_Name>state</EFDB_Name>
+      <Description>The motion state; a MotionState enum.</Description>
+      <IDL_Type>int</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>inPosition</EFDB_Name>
+      <Description>Is the calibration screen in position?</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+  </SALEvent>
+  <SALEvent>
+    <Subsystem>MTDome</Subsystem>
     <EFDB_Topic>MTDome_logevent_azTarget</EFDB_Topic>
     <Description>Azimuth axis target position and velocity.</Description>
     <item>
@@ -357,7 +482,7 @@
   <SALEvent>
     <Subsystem>MTDome</Subsystem>
     <EFDB_Topic>MTDome_logevent_brakesEngaged</EFDB_Topic>
-    <Description>Reports whether the brakes are engaged or not.</Description>
+    <Description>Reports which brakes are engaged.</Description>
     <item>
       <EFDB_Name>brakes</EFDB_Name>
       <Description>Bitmask of brakes that are engaged. The bits are defined by the Brake enum.</Description>
@@ -472,6 +597,18 @@
       <Description>Time at which the data was determined (TAI unix seconds).</Description>
       <IDL_Type>double</IDL_Type>
       <Units>second</Units>
+      <Count>1</Count>
+    </item>
+  </SALEvent>
+  <SALEvent>
+    <Subsystem>MTDome</Subsystem>
+    <EFDB_Topic>MTDome_logevent_controlMode</EFDB_Topic>
+    <Description>Control mode. A ControlMode enum.</Description>
+    <item>
+      <EFDB_Name>mode</EFDB_Name>
+      <Description>The control mode.</Description>
+      <IDL_Type>int</IDL_Type>
+      <Units>unitless</Units>
       <Count>1</Count>
     </item>
   </SALEvent>
