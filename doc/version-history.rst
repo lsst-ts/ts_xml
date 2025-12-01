@@ -15,6 +15,23 @@ Version History
 
 .. towncrier release notes start
 
+v24.4.0 (2025-12-01)
+====================
+Package Level
+-------------
+
+No significant changes.
+
+
+Interface Changes
+-----------------
+
+MTM1M3TS
+~~~~~~~~
+
+- Add orifice diameters to M1M3TS air nozzles. (`RSO-8 <https://rubinobs.atlassian.net/browse/RSO-8>`_)
+
+
 24.3.0 (2025-11-05)
 ===================
 Package Level

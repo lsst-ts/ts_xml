@@ -29,7 +29,7 @@ class AirNozzle(enum.IntEnum):
     BLOCKED = 2
     OFFSET = 3
     INSTALLED = 4
-    COVERED = 5  # covered means it was sshort before 9/3, now blocked
+    COVERED = 5  # covered means it was sshort before 11/7, now blocked
 
 
 class ILCState(enum.IntEnum):
