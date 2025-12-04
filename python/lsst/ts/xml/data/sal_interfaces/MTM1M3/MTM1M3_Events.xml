@@ -5102,6 +5102,46 @@
   </SALEvent>
   <SALEvent>
     <Subsystem>MTM1M3</Subsystem>
+    <EFDB_Topic>MTM1M3_logevent_forceActuatorBumpTestStatistics</EFDB_Topic>
+    <Description>Record bump test progress and final status.</Description>
+    <item>
+      <EFDB_Name>actuatorId</EFDB_Name>
+      <Description>Force actuator ID.</Description>
+      <IDL_Type>int</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>primaryCylinder</EFDB_Name>
+      <Description>True if the statistics is for the primary cylinder.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>stage</EFDB_Name>
+      <Description>Bump test stage.</Description>
+      <IDL_Type>int</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>settleTime</EFDB_Name>
+      <Description>Settle time of the force actuator.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>s</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>errorRMS</EFDB_Name>
+      <Description>RMS statistics of the cylinder following error.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>N</Units>
+      <Count>1</Count>
+    </item>
+  </SALEvent>
+  <SALEvent>
+    <Subsystem>MTM1M3</Subsystem>
     <EFDB_Topic>MTM1M3_logevent_hardpointTestStatus</EFDB_Topic>
     <Description>Progress of hardpoint tests.</Description>
     <item>
