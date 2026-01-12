@@ -22,6 +22,7 @@ __all__ = [
     "SalIndex",
     "DetailedState",
     "FailureStrategy",
+    "ObservatoryStatus",
 ]
 
 import enum
@@ -75,3 +76,27 @@ class FailureStrategy(enum.IntEnum):
     # or interruption. It will continue to put scripts in the queue until all
     # scripts from a block finished.
     KEEP_GOING = enum.auto()
+
+
+class ObservatoryStatus(enum.IntEnum):
+    """Enumeration with the valid observatory status values."""
+
+    # Observatory status is unknown.
+    UNKNOWN = 0
+
+    # Observatory in regular daytime.
+    DAYTIME = 1
+
+    # Observatory in regular night-time scheduler-driven
+    # operations.
+    GOOD = 2
+
+    # Fault detected on one or more critical component during
+    # night-time operations.
+    FAULT = 4
+
+    # Observatory closed due to weather.
+    WEATHER = 5
+
+    # Observatory closed.
+    DOWNTIME = 6
