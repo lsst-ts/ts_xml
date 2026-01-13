@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="http://lsst-sal.tuc.noao.edu/schema/SALCommandSet.xsl"?>
+<SALCommandSet xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://lsst-sal.tuc.noao.edu/schema/SALCommandSet.xsd">
+  <Enumeration>ControlFeature_RoomSetpoint,ControlFeature_Ahu,ControlFeature_Vec04,ControlFeature_GlycolChillers,ControlFeature_FanSpeed,ControlFeature_M1M3TS,ControlFeature_RequireDomeOpen</Enumeration>
+  <SALCommand>
+    <Subsystem>EAS</Subsystem>
+    <EFDB_Topic>EAS_command_disableFeatures</EFDB_Topic>
+    <Description>Add a feature to the disable list.</Description>
+    <item>
+      <EFDB_Name>features</EFDB_Name>
+      <Description>
+        Features to add to the disable list. A bitmask of ControlFeature enum values.
+
+        Current options are:
+          - ROOM_SETPOINT (0x1): The dome room setpoint controlled by the HVAC AHUs 1-4.
+          - AHU (0x2): Enabling/disabling the HVAC AHUs when the dome opens or closes.
+          - VEC04 (0x4): The VEC-04 exhaust fan on level 5.
+          - GLYCOL_CHILLERS (0x8): The EGW mixture chiller temperature regulated by the HVAC.
+          - FANSPEED (0x10): The M1M3 thermal system fan speed; also controls tuning of the gap between EGW temperature and
+            heater setpoint in M1M3TS.
+          - M1M3TS (0x20): All M1M3TS control functions.
+          - REQUIRE_DOME_OPEN (0x40): Disable the dome open requirement; system operates as if the dome were open.
+      </Description>
+      <IDL_Type>int</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+  </SALCommand>
+  <SALCommand>
+    <Subsystem>EAS</Subsystem>
+    <EFDB_Topic>EAS_command_enableFeatures</EFDB_Topic>
+    <Description>Remove a feature from the disable list.</Description>
+    <item>
+      <EFDB_Name>features</EFDB_Name>
+      <Description>
+        Features to remove from the disable list. A bitmask of ControlFeature enum values.
+
+        Current options are:
+          - ROOM_SETPOINT (0x1): The dome room setpoint controlled by the HVAC AHUs 1-4.
+          - AHU (0x2): Enabling/disabling the HVAC AHUs when the dome opens or closes.
+          - VEC04 (0x4): The VEC-04 exhaust fan on level 5.
+          - GLYCOL_CHILLERS (0x8): The EGW mixture chiller temperature regulated by the HVAC.
+          - FANSPEED (0x10): The M1M3 thermal system fan speed; also controls tuning of the gap between EGW temperature and
+            heater setpoint in M1M3TS.
+          - M1M3TS (0x20): All M1M3TS control functions.
+          - REQUIRE_DOME_OPEN (0x40): Disable the dome open requirement; system operates as if the dome were open.
+      </Description>
+      <IDL_Type>int</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+  </SALCommand>
+</SALCommandSet>
