@@ -124,10 +124,10 @@ class CabinetSensor(enum.IntEnum):
 class ControlMode(enum.IntEnum):
     """Control mode."""
 
-    Remote = 1
-    LocalPushButtons = 2
-    LocalKeba = 3
-    LocalEui = 4
+    remote = 1
+    local_pushbuttons = 2
+    local_keba = 3
+    local_eui = 4
 
 
 class EnabledState(enum.IntEnum):
@@ -306,5 +306,5 @@ class SubSystemId(enum.IntEnum):
     OBC = 0x100
     # Capacitor Banks Control System
     CBCS = 0x200
-    # Software Control System
-    CONTROL = 0x400
+    # Low Level Control
+    LLC = 0x400
