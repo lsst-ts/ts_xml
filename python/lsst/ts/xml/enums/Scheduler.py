@@ -96,7 +96,7 @@ class ObservatoryStatus(enum.IntEnum):
     FAULT = 4
 
     # Observatory closed due to weather.
-    WEATHER = 5
+    WEATHER = 8
 
     # Observatory closed.
-    DOWNTIME = 6
+    DOWNTIME = 16
