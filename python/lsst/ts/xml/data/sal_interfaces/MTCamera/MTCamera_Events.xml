@@ -1500,6 +1500,28 @@
       <Count>1</Count>
     </item>
   </SALEvent>
+  <!--Created by xmlmaker2 for subsystem MTCamera class MTCamera_logevent_quadbox_GeneralConfiguration for category General using level 1-->
+  <!--===================================================================================================================================-->
+  <SALEvent>
+    <Subsystem>MTCamera</Subsystem>
+    <EFDB_Topic>MTCamera_logevent_quadbox_GeneralConfiguration</EFDB_Topic>
+    <Description>subsystem MTCamera class MTCamera_logevent_quadbox_GeneralConfiguration for category General</Description>
+    <!--CCS: Dictionary_Checksum: 1133281245L -->
+    <item>
+      <EFDB_Name>version</EFDB_Name>
+      <Description>Version of the settings, formatted using CCS conventions</Description>
+      <IDL_Type>string</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>switchesCustomLevels</EFDB_Name>
+      <Description>Switches Custom Levels</Description>
+      <IDL_Type>string</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+  </SALEvent>
   <!--Created by xmlmaker2 for subsystem MTCamera class MTCamera_logevent_quadbox_Maq20_DeviceConfiguration for category Device using level 1-->
   <!--=======================================================================================================================================-->
   <SALEvent>
@@ -4848,21 +4870,21 @@
     </item>
     <item>
       <EFDB_Name>deltaI</EFDB_Name>
-      <Description>allowed excess current margin</Description>
+      <Description>allowed fractional excess current</Description>
       <IDL_Type>double</IDL_Type>
-      <Units>mA</Units>
+      <Units>unitless</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>maxDeltaVolt</EFDB_Name>
-      <Description>allowed excess voltage margin</Description>
+      <Description>maximum voltage step per update</Description>
       <IDL_Type>double</IDL_Type>
       <Units>Volt</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>minUpdateDelay</EFDB_Name>
-      <Description>minimum time since last update (settle time)</Description>
+      <Description>minimum time required before next update</Description>
       <IDL_Type>long</IDL_Type>
       <Units>ms</Units>
       <Count>1</Count>
@@ -5456,7 +5478,7 @@
       <EFDB_Name>hvBiasSetPoint</EFDB_Name>
       <Description>REB bias voltage</Description>
       <IDL_Type>double</IDL_Type>
-      <Units>unitless</Units>
+      <Units>Volt</Units>
       <Count>71</Count>
     </item>
     <item>
@@ -5477,25 +5499,25 @@
     <!--CCSMETA: Array reff indexed by location-->
     <item>
       <EFDB_Name>reff</EFDB_Name>
-      <Description>slope of V = reff * I</Description>
+      <Description>slope of V = reff * I * 1000</Description>
       <IDL_Type>double</IDL_Type>
-      <Units>kOhm</Units>
+      <Units>unitless</Units>
       <Count>71</Count>
     </item>
     <!--CCSMETA: Array useVoltsPerStepCal indexed by location-->
     <item>
       <EFDB_Name>useVoltsPerStepCal</EFDB_Name>
-      <Description>Whether to use VoltsPerStepCal: true or false</Description>
+      <Description>Use VoltsPerStepCal: true|false</Description>
       <IDL_Type>boolean</IDL_Type>
-      <Units>V</Units>
+      <Units>unitless</Units>
       <Count>71</Count>
     </item>
     <!--CCSMETA: Array voltsPerStepCal indexed by location-->
     <item>
       <EFDB_Name>voltsPerStepCal</EFDB_Name>
-      <Description>Calibrated Volts per HV regulation step</Description>
+      <Description>slope of volts vs. DAC counts at setpoint</Description>
       <IDL_Type>double</IDL_Type>
-      <Units>V</Units>
+      <Units>unitless</Units>
       <Count>71</Count>
     </item>
   </SALEvent>
@@ -9867,6 +9889,28 @@
       <Count>1</Count>
     </item>
   </SALEvent>
+  <!--Created by xmlmaker2 for subsystem MTCamera class MTCamera_logevent_refrig_Cryo1_SwitchesConfiguration for category Switches using level 1-->
+  <!--==========================================================================================================================================-->
+  <SALEvent>
+    <Subsystem>MTCamera</Subsystem>
+    <EFDB_Topic>MTCamera_logevent_refrig_Cryo1_SwitchesConfiguration</EFDB_Topic>
+    <Description>subsystem MTCamera class MTCamera_logevent_refrig_Cryo1_SwitchesConfiguration for category Switches</Description>
+    <!--CCS: Dictionary_Checksum: 53003197L -->
+    <item>
+      <EFDB_Name>version</EFDB_Name>
+      <Description>Version of the settings, formatted using CCS conventions</Description>
+      <IDL_Type>string</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>switchLevels</EFDB_Name>
+      <Description>Custom levels for Commands to set switches On/Off</Description>
+      <IDL_Type>string</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+  </SALEvent>
   <!--Created by xmlmaker2 for subsystem MTCamera class MTCamera_logevent_refrig_Cryo2_DeviceConfiguration for category Device using level 1-->
   <!--======================================================================================================================================-->
   <SALEvent>
@@ -10420,6 +10464,28 @@
       <Description>Water Outlet Temperature low alarm level</Description>
       <IDL_Type>double</IDL_Type>
       <Units>Celsius</Units>
+      <Count>1</Count>
+    </item>
+  </SALEvent>
+  <!--Created by xmlmaker2 for subsystem MTCamera class MTCamera_logevent_refrig_Cryo2_SwitchesConfiguration for category Switches using level 1-->
+  <!--==========================================================================================================================================-->
+  <SALEvent>
+    <Subsystem>MTCamera</Subsystem>
+    <EFDB_Topic>MTCamera_logevent_refrig_Cryo2_SwitchesConfiguration</EFDB_Topic>
+    <Description>subsystem MTCamera class MTCamera_logevent_refrig_Cryo2_SwitchesConfiguration for category Switches</Description>
+    <!--CCS: Dictionary_Checksum: 384533130L -->
+    <item>
+      <EFDB_Name>version</EFDB_Name>
+      <Description>Version of the settings, formatted using CCS conventions</Description>
+      <IDL_Type>string</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>switchLevels</EFDB_Name>
+      <Description>Custom levels for Commands to set switches On/Off</Description>
+      <IDL_Type>string</IDL_Type>
+      <Units>unitless</Units>
       <Count>1</Count>
     </item>
   </SALEvent>
@@ -10979,6 +11045,28 @@
       <Count>1</Count>
     </item>
   </SALEvent>
+  <!--Created by xmlmaker2 for subsystem MTCamera class MTCamera_logevent_refrig_Cryo3_SwitchesConfiguration for category Switches using level 1-->
+  <!--==========================================================================================================================================-->
+  <SALEvent>
+    <Subsystem>MTCamera</Subsystem>
+    <EFDB_Topic>MTCamera_logevent_refrig_Cryo3_SwitchesConfiguration</EFDB_Topic>
+    <Description>subsystem MTCamera class MTCamera_logevent_refrig_Cryo3_SwitchesConfiguration for category Switches</Description>
+    <!--CCS: Dictionary_Checksum: 441795175L -->
+    <item>
+      <EFDB_Name>version</EFDB_Name>
+      <Description>Version of the settings, formatted using CCS conventions</Description>
+      <IDL_Type>string</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>switchLevels</EFDB_Name>
+      <Description>Custom levels for Commands to set switches On/Off</Description>
+      <IDL_Type>string</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+  </SALEvent>
   <!--Created by xmlmaker2 for subsystem MTCamera class MTCamera_logevent_refrig_Cryo4_DeviceConfiguration for category Device using level 1-->
   <!--======================================================================================================================================-->
   <SALEvent>
@@ -11532,6 +11620,28 @@
       <Description>Water Outlet Temperature low alarm level</Description>
       <IDL_Type>double</IDL_Type>
       <Units>Celsius</Units>
+      <Count>1</Count>
+    </item>
+  </SALEvent>
+  <!--Created by xmlmaker2 for subsystem MTCamera class MTCamera_logevent_refrig_Cryo4_SwitchesConfiguration for category Switches using level 1-->
+  <!--==========================================================================================================================================-->
+  <SALEvent>
+    <Subsystem>MTCamera</Subsystem>
+    <EFDB_Topic>MTCamera_logevent_refrig_Cryo4_SwitchesConfiguration</EFDB_Topic>
+    <Description>subsystem MTCamera class MTCamera_logevent_refrig_Cryo4_SwitchesConfiguration for category Switches</Description>
+    <!--CCS: Dictionary_Checksum: 1030553828L -->
+    <item>
+      <EFDB_Name>version</EFDB_Name>
+      <Description>Version of the settings, formatted using CCS conventions</Description>
+      <IDL_Type>string</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>switchLevels</EFDB_Name>
+      <Description>Custom levels for Commands to set switches On/Off</Description>
+      <IDL_Type>string</IDL_Type>
+      <Units>unitless</Units>
       <Count>1</Count>
     </item>
   </SALEvent>
@@ -12246,6 +12356,28 @@
       <Count>1</Count>
     </item>
   </SALEvent>
+  <!--Created by xmlmaker2 for subsystem MTCamera class MTCamera_logevent_refrig_Cryo5_SwitchesConfiguration for category Switches using level 1-->
+  <!--==========================================================================================================================================-->
+  <SALEvent>
+    <Subsystem>MTCamera</Subsystem>
+    <EFDB_Topic>MTCamera_logevent_refrig_Cryo5_SwitchesConfiguration</EFDB_Topic>
+    <Description>subsystem MTCamera class MTCamera_logevent_refrig_Cryo5_SwitchesConfiguration for category Switches</Description>
+    <!--CCS: Dictionary_Checksum: 835960841L -->
+    <item>
+      <EFDB_Name>version</EFDB_Name>
+      <Description>Version of the settings, formatted using CCS conventions</Description>
+      <IDL_Type>string</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>switchLevels</EFDB_Name>
+      <Description>Custom levels for Commands to set switches On/Off</Description>
+      <IDL_Type>string</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+  </SALEvent>
   <!--Created by xmlmaker2 for subsystem MTCamera class MTCamera_logevent_refrig_Cryo6_DeviceConfiguration for category Device using level 1-->
   <!--======================================================================================================================================-->
   <SALEvent>
@@ -12799,6 +12931,28 @@
       <Description>Water Outlet Temperature low alarm level</Description>
       <IDL_Type>double</IDL_Type>
       <Units>Celsius</Units>
+      <Count>1</Count>
+    </item>
+  </SALEvent>
+  <!--Created by xmlmaker2 for subsystem MTCamera class MTCamera_logevent_refrig_Cryo6_SwitchesConfiguration for category Switches using level 1-->
+  <!--==========================================================================================================================================-->
+  <SALEvent>
+    <Subsystem>MTCamera</Subsystem>
+    <EFDB_Topic>MTCamera_logevent_refrig_Cryo6_SwitchesConfiguration</EFDB_Topic>
+    <Description>subsystem MTCamera class MTCamera_logevent_refrig_Cryo6_SwitchesConfiguration for category Switches</Description>
+    <!--CCS: Dictionary_Checksum: 605061438L -->
+    <item>
+      <EFDB_Name>version</EFDB_Name>
+      <Description>Version of the settings, formatted using CCS conventions</Description>
+      <IDL_Type>string</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>switchLevels</EFDB_Name>
+      <Description>Custom levels for Commands to set switches On/Off</Description>
+      <IDL_Type>string</IDL_Type>
+      <Units>unitless</Units>
       <Count>1</Count>
     </item>
   </SALEvent>
@@ -14250,6 +14404,28 @@
       <Description>Turbo pump vacuum low alarm level</Description>
       <IDL_Type>double</IDL_Type>
       <Units>Torr</Units>
+      <Count>1</Count>
+    </item>
+  </SALEvent>
+  <!--Created by xmlmaker2 for subsystem MTCamera class MTCamera_logevent_vacuum_GeneralConfiguration for category General using level 1-->
+  <!--==================================================================================================================================-->
+  <SALEvent>
+    <Subsystem>MTCamera</Subsystem>
+    <EFDB_Topic>MTCamera_logevent_vacuum_GeneralConfiguration</EFDB_Topic>
+    <Description>subsystem MTCamera class MTCamera_logevent_vacuum_GeneralConfiguration for category General</Description>
+    <!--CCS: Dictionary_Checksum: 478925341L -->
+    <item>
+      <EFDB_Name>version</EFDB_Name>
+      <Description>Version of the settings, formatted using CCS conventions</Description>
+      <IDL_Type>string</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>switchesCustomLevels</EFDB_Name>
+      <Description>Switches Custom Levels</Description>
+      <IDL_Type>string</IDL_Type>
+      <Units>unitless</Units>
       <Count>1</Count>
     </item>
   </SALEvent>
@@ -21066,7 +21242,7 @@
     <Subsystem>MTCamera</Subsystem>
     <EFDB_Topic>MTCamera_logevent_focal_plane_SequencerConfig_GuiderConfiguration</EFDB_Topic>
     <Description>subsystem MTCamera class MTCamera_logevent_focal_plane_SequencerConfig_GuiderConfiguration for category Guider</Description>
-    <!--CCS: Dictionary_Checksum: 2997290547L -->
+    <!--CCS: Dictionary_Checksum: 329793213L -->
     <item>
       <EFDB_Name>version</EFDB_Name>
       <Description>Version of the settings, formatted using CCS conventions</Description>
@@ -21103,6 +21279,13 @@
       <Count>1</Count>
     </item>
     <item>
+      <EFDB_Name>guiderPauseTimeout</EFDB_Name>
+      <Description>PAUSED time in milliseconds before guider will timeout in and return to IDLE_CLEARING. Zero indicates no timeout</Description>
+      <IDL_Type>long long</IDL_Type>
+      <Units>ms</Units>
+      <Count>1</Count>
+    </item>
+    <item>
       <EFDB_Name>idleClearParameters</EFDB_Name>
       <Description>The parameters used for guider idle clearing</Description>
       <IDL_Type>string</IDL_Type>
@@ -21116,7 +21299,7 @@
     <Subsystem>MTCamera</Subsystem>
     <EFDB_Topic>MTCamera_logevent_focal_plane_SequencerConfig_SequencerConfiguration</EFDB_Topic>
     <Description>subsystem MTCamera class MTCamera_logevent_focal_plane_SequencerConfig_SequencerConfiguration for category Sequencer</Description>
-    <!--CCS: Dictionary_Checksum: 2111718602L -->
+    <!--CCS: Dictionary_Checksum: 2589035849L -->
     <item>
       <EFDB_Name>version</EFDB_Name>
       <Description>Version of the settings, formatted using CCS conventions</Description>
@@ -21143,6 +21326,13 @@
       <Description>Name of the clear rows parameter (used for idle clear)</Description>
       <IDL_Type>string</IDL_Type>
       <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>clockPeriod</EFDB_Name>
+      <Description>Clock period to use when compiling sequencer files (6400, 10000, 0)</Description>
+      <IDL_Type>long</IDL_Type>
+      <Units>ps</Units>
       <Count>1</Count>
     </item>
     <item>
@@ -25281,7 +25471,7 @@
     <Subsystem>MTCamera</Subsystem>
     <EFDB_Topic>MTCamera_logevent_fcs_Carousel_carouselConfiguration</EFDB_Topic>
     <Description>subsystem MTCamera class MTCamera_logevent_fcs_Carousel_carouselConfiguration for category carousel</Description>
-    <!--CCS: Dictionary_Checksum: 3665931458L -->
+    <!--CCS: Dictionary_Checksum: 1164529138L -->
     <item>
       <EFDB_Name>version</EFDB_Name>
       <Description>Version of the settings, formatted using CCS conventions</Description>
@@ -25395,8 +25585,8 @@
       <Count>1</Count>
     </item>
     <item>
-      <EFDB_Name>powerSaveAllowed</EFDB_Name>
-      <Description>If true powerSaveActivate is activated at the end of setFilter command.</Description>
+      <EFDB_Name>powerSaveEnabled</EFDB_Name>
+      <Description>Let the carousel switch to power save when requested</Description>
       <IDL_Type>boolean</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
@@ -25882,6 +26072,27 @@
       <Description> carousel position when this socket is at standby [carousel encoder step]</Description>
       <IDL_Type>long</IDL_Type>
       <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>socketClampSensorWakeUpTimeout</EFDB_Name>
+      <Description>Maximum duration for the carousel socket clamps sensor value to stabilize after clamps are waken up</Description>
+      <IDL_Type>long</IDL_Type>
+      <Units>millisecond</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>socketClampWakeUpTimeout</EFDB_Name>
+      <Description>Maximum duration for the carousel socket clamps to start being responsive after sockets are waken up</Description>
+      <IDL_Type>long</IDL_Type>
+      <Units>millisecond</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>socketWakeUpTimeout</EFDB_Name>
+      <Description>Maximum duration for the carousel sockets to start being responsive after wake up</Description>
+      <IDL_Type>long</IDL_Type>
+      <Units>millisecond</Units>
       <Count>1</Count>
     </item>
     <item>
@@ -27042,12 +27253,19 @@
     <Subsystem>MTCamera</Subsystem>
     <EFDB_Topic>MTCamera_logevent_fcs_FilterManager_filterConfiguration</EFDB_Topic>
     <Description>subsystem MTCamera class MTCamera_logevent_fcs_FilterManager_filterConfiguration for category filter</Description>
-    <!--CCS: Dictionary_Checksum: 3335656989L -->
+    <!--CCS: Dictionary_Checksum: 1232434545L -->
     <item>
       <EFDB_Name>version</EFDB_Name>
       <Description>Version of the settings, formatted using CCS conventions</Description>
       <IDL_Type>string</IDL_Type>
       <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>a_deltaAutochangerStandbyPosition</EFDB_Name>
+      <Description>Autochanger delta STANDBY position to be used to store this filter on carousel</Description>
+      <IDL_Type>long</IDL_Type>
+      <Units>micron</Units>
       <Count>1</Count>
     </item>
     <item>
@@ -27072,6 +27290,13 @@
       <Count>1</Count>
     </item>
     <item>
+      <EFDB_Name>da1_deltaAutochangerStandbyPosition</EFDB_Name>
+      <Description>Autochanger delta STANDBY position to be used to store this filter on carousel</Description>
+      <IDL_Type>long</IDL_Type>
+      <Units>micron</Units>
+      <Count>1</Count>
+    </item>
+    <item>
       <EFDB_Name>da1_family</EFDB_Name>
       <Description>Filter family: Science | Dummy | French dummy | Test | Open | Unknown | None</Description>
       <IDL_Type>string</IDL_Type>
@@ -27090,6 +27315,13 @@
       <Description>Weight of the filter</Description>
       <IDL_Type>double</IDL_Type>
       <Units>kg</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>da2_deltaAutochangerStandbyPosition</EFDB_Name>
+      <Description>Autochanger delta STANDBY position to be used to store this filter on carousel</Description>
+      <IDL_Type>long</IDL_Type>
+      <Units>micron</Units>
       <Count>1</Count>
     </item>
     <item>
@@ -27114,6 +27346,13 @@
       <Count>1</Count>
     </item>
     <item>
+      <EFDB_Name>dr1_deltaAutochangerStandbyPosition</EFDB_Name>
+      <Description>Autochanger delta STANDBY position to be used to store this filter on carousel</Description>
+      <IDL_Type>long</IDL_Type>
+      <Units>micron</Units>
+      <Count>1</Count>
+    </item>
+    <item>
       <EFDB_Name>dr1_family</EFDB_Name>
       <Description>Filter family: Science | Dummy | French dummy | Test | Open | Unknown | None</Description>
       <IDL_Type>string</IDL_Type>
@@ -27132,6 +27371,13 @@
       <Description>Weight of the filter</Description>
       <IDL_Type>double</IDL_Type>
       <Units>kg</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>du1_deltaAutochangerStandbyPosition</EFDB_Name>
+      <Description>Autochanger delta STANDBY position to be used to store this filter on carousel</Description>
+      <IDL_Type>long</IDL_Type>
+      <Units>micron</Units>
       <Count>1</Count>
     </item>
     <item>
@@ -27156,6 +27402,13 @@
       <Count>1</Count>
     </item>
     <item>
+      <EFDB_Name>du2_deltaAutochangerStandbyPosition</EFDB_Name>
+      <Description>Autochanger delta STANDBY position to be used to store this filter on carousel</Description>
+      <IDL_Type>long</IDL_Type>
+      <Units>micron</Units>
+      <Count>1</Count>
+    </item>
+    <item>
       <EFDB_Name>du2_family</EFDB_Name>
       <Description>Filter family: Science | Dummy | French dummy | Test | Open | Unknown | None</Description>
       <IDL_Type>string</IDL_Type>
@@ -27174,6 +27427,13 @@
       <Description>Weight of the filter</Description>
       <IDL_Type>double</IDL_Type>
       <Units>kg</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>dz1_deltaAutochangerStandbyPosition</EFDB_Name>
+      <Description>Autochanger delta STANDBY position to be used to store this filter on carousel</Description>
+      <IDL_Type>long</IDL_Type>
+      <Units>micron</Units>
       <Count>1</Count>
     </item>
     <item>
@@ -27198,6 +27458,13 @@
       <Count>1</Count>
     </item>
     <item>
+      <EFDB_Name>ef_deltaAutochangerStandbyPosition</EFDB_Name>
+      <Description>Autochanger delta STANDBY position to be used to store this filter on carousel</Description>
+      <IDL_Type>long</IDL_Type>
+      <Units>micron</Units>
+      <Count>1</Count>
+    </item>
+    <item>
       <EFDB_Name>ef_family</EFDB_Name>
       <Description>Filter family: Science | Dummy | French dummy | Test | Open | Unknown | None</Description>
       <IDL_Type>string</IDL_Type>
@@ -27216,6 +27483,13 @@
       <Description>Weight of the filter</Description>
       <IDL_Type>double</IDL_Type>
       <Units>kg</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>f15_deltaAutochangerStandbyPosition</EFDB_Name>
+      <Description>Autochanger delta STANDBY position to be used to store this filter on carousel</Description>
+      <IDL_Type>long</IDL_Type>
+      <Units>micron</Units>
       <Count>1</Count>
     </item>
     <item>
@@ -27240,6 +27514,13 @@
       <Count>1</Count>
     </item>
     <item>
+      <EFDB_Name>f17_deltaAutochangerStandbyPosition</EFDB_Name>
+      <Description>Autochanger delta STANDBY position to be used to store this filter on carousel</Description>
+      <IDL_Type>long</IDL_Type>
+      <Units>micron</Units>
+      <Count>1</Count>
+    </item>
+    <item>
       <EFDB_Name>f17_family</EFDB_Name>
       <Description>Filter family: Science | Dummy | French dummy | Test | Open | Unknown | None</Description>
       <IDL_Type>string</IDL_Type>
@@ -27258,6 +27539,13 @@
       <Description>Weight of the filter</Description>
       <IDL_Type>double</IDL_Type>
       <Units>kg</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>f29_deltaAutochangerStandbyPosition</EFDB_Name>
+      <Description>Autochanger delta STANDBY position to be used to store this filter on carousel</Description>
+      <IDL_Type>long</IDL_Type>
+      <Units>micron</Units>
       <Count>1</Count>
     </item>
     <item>
@@ -27282,6 +27570,13 @@
       <Count>1</Count>
     </item>
     <item>
+      <EFDB_Name>f34_deltaAutochangerStandbyPosition</EFDB_Name>
+      <Description>Autochanger delta STANDBY position to be used to store this filter on carousel</Description>
+      <IDL_Type>long</IDL_Type>
+      <Units>micron</Units>
+      <Count>1</Count>
+    </item>
+    <item>
       <EFDB_Name>f34_family</EFDB_Name>
       <Description>Filter family: Science | Dummy | French dummy | Test | Open | Unknown | None</Description>
       <IDL_Type>string</IDL_Type>
@@ -27300,6 +27595,13 @@
       <Description>Weight of the filter</Description>
       <IDL_Type>double</IDL_Type>
       <Units>kg</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>f3_deltaAutochangerStandbyPosition</EFDB_Name>
+      <Description>Autochanger delta STANDBY position to be used to store this filter on carousel</Description>
+      <IDL_Type>long</IDL_Type>
+      <Units>micron</Units>
       <Count>1</Count>
     </item>
     <item>
@@ -27324,6 +27626,13 @@
       <Count>1</Count>
     </item>
     <item>
+      <EFDB_Name>f46_deltaAutochangerStandbyPosition</EFDB_Name>
+      <Description>Autochanger delta STANDBY position to be used to store this filter on carousel</Description>
+      <IDL_Type>long</IDL_Type>
+      <Units>micron</Units>
+      <Count>1</Count>
+    </item>
+    <item>
       <EFDB_Name>f46_family</EFDB_Name>
       <Description>Filter family: Science | Dummy | French dummy | Test | Open | Unknown | None</Description>
       <IDL_Type>string</IDL_Type>
@@ -27342,6 +27651,13 @@
       <Description>Weight of the filter</Description>
       <IDL_Type>double</IDL_Type>
       <Units>kg</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>f48_deltaAutochangerStandbyPosition</EFDB_Name>
+      <Description>Autochanger delta STANDBY position to be used to store this filter on carousel</Description>
+      <IDL_Type>long</IDL_Type>
+      <Units>micron</Units>
       <Count>1</Count>
     </item>
     <item>
@@ -27366,6 +27682,13 @@
       <Count>1</Count>
     </item>
     <item>
+      <EFDB_Name>f60_deltaAutochangerStandbyPosition</EFDB_Name>
+      <Description>Autochanger delta STANDBY position to be used to store this filter on carousel</Description>
+      <IDL_Type>long</IDL_Type>
+      <Units>micron</Units>
+      <Count>1</Count>
+    </item>
+    <item>
       <EFDB_Name>f60_family</EFDB_Name>
       <Description>Filter family: Science | Dummy | French dummy | Test | Open | Unknown | None</Description>
       <IDL_Type>string</IDL_Type>
@@ -27384,6 +27707,13 @@
       <Description>Weight of the filter</Description>
       <IDL_Type>double</IDL_Type>
       <Units>kg</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>g_deltaAutochangerStandbyPosition</EFDB_Name>
+      <Description>Autochanger delta STANDBY position to be used to store this filter on carousel</Description>
+      <IDL_Type>long</IDL_Type>
+      <Units>micron</Units>
       <Count>1</Count>
     </item>
     <item>
@@ -27408,6 +27738,13 @@
       <Count>1</Count>
     </item>
     <item>
+      <EFDB_Name>i_deltaAutochangerStandbyPosition</EFDB_Name>
+      <Description>Autochanger delta STANDBY position to be used to store this filter on carousel</Description>
+      <IDL_Type>long</IDL_Type>
+      <Units>micron</Units>
+      <Count>1</Count>
+    </item>
+    <item>
       <EFDB_Name>i_family</EFDB_Name>
       <Description>Filter family: Science | Dummy | French dummy | Test | Open | Unknown | None</Description>
       <IDL_Type>string</IDL_Type>
@@ -27426,6 +27763,13 @@
       <Description>Weight of the filter</Description>
       <IDL_Type>double</IDL_Type>
       <Units>kg</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>none_deltaAutochangerStandbyPosition</EFDB_Name>
+      <Description>Autochanger delta STANDBY position to be used to store this filter on carousel</Description>
+      <IDL_Type>long</IDL_Type>
+      <Units>micron</Units>
       <Count>1</Count>
     </item>
     <item>
@@ -27450,6 +27794,13 @@
       <Count>1</Count>
     </item>
     <item>
+      <EFDB_Name>oa_deltaAutochangerStandbyPosition</EFDB_Name>
+      <Description>Autochanger delta STANDBY position to be used to store this filter on carousel</Description>
+      <IDL_Type>long</IDL_Type>
+      <Units>micron</Units>
+      <Count>1</Count>
+    </item>
+    <item>
       <EFDB_Name>oa_family</EFDB_Name>
       <Description>Filter family: Science | Dummy | French dummy | Test | Open | Unknown | None</Description>
       <IDL_Type>string</IDL_Type>
@@ -27468,6 +27819,13 @@
       <Description>Weight of the filter</Description>
       <IDL_Type>double</IDL_Type>
       <Units>kg</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>ob_deltaAutochangerStandbyPosition</EFDB_Name>
+      <Description>Autochanger delta STANDBY position to be used to store this filter on carousel</Description>
+      <IDL_Type>long</IDL_Type>
+      <Units>micron</Units>
       <Count>1</Count>
     </item>
     <item>
@@ -27492,6 +27850,13 @@
       <Count>1</Count>
     </item>
     <item>
+      <EFDB_Name>oc_deltaAutochangerStandbyPosition</EFDB_Name>
+      <Description>Autochanger delta STANDBY position to be used to store this filter on carousel</Description>
+      <IDL_Type>long</IDL_Type>
+      <Units>micron</Units>
+      <Count>1</Count>
+    </item>
+    <item>
       <EFDB_Name>oc_family</EFDB_Name>
       <Description>Filter family: Science | Dummy | French dummy | Test | Open | Unknown | None</Description>
       <IDL_Type>string</IDL_Type>
@@ -27510,6 +27875,13 @@
       <Description>Weight of the filter</Description>
       <IDL_Type>double</IDL_Type>
       <Units>kg</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>ph_deltaAutochangerStandbyPosition</EFDB_Name>
+      <Description>Autochanger delta STANDBY position to be used to store this filter on carousel</Description>
+      <IDL_Type>long</IDL_Type>
+      <Units>micron</Units>
       <Count>1</Count>
     </item>
     <item>
@@ -27534,6 +27906,13 @@
       <Count>1</Count>
     </item>
     <item>
+      <EFDB_Name>r_deltaAutochangerStandbyPosition</EFDB_Name>
+      <Description>Autochanger delta STANDBY position to be used to store this filter on carousel</Description>
+      <IDL_Type>long</IDL_Type>
+      <Units>micron</Units>
+      <Count>1</Count>
+    </item>
+    <item>
       <EFDB_Name>r_family</EFDB_Name>
       <Description>Filter family: Science | Dummy | French dummy | Test | Open | Unknown | None</Description>
       <IDL_Type>string</IDL_Type>
@@ -27552,6 +27931,13 @@
       <Description>Weight of the filter</Description>
       <IDL_Type>double</IDL_Type>
       <Units>kg</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>tu_deltaAutochangerStandbyPosition</EFDB_Name>
+      <Description>Autochanger delta STANDBY position to be used to store this filter on carousel</Description>
+      <IDL_Type>long</IDL_Type>
+      <Units>micron</Units>
       <Count>1</Count>
     </item>
     <item>
@@ -27576,6 +27962,13 @@
       <Count>1</Count>
     </item>
     <item>
+      <EFDB_Name>ty_deltaAutochangerStandbyPosition</EFDB_Name>
+      <Description>Autochanger delta STANDBY position to be used to store this filter on carousel</Description>
+      <IDL_Type>long</IDL_Type>
+      <Units>micron</Units>
+      <Count>1</Count>
+    </item>
+    <item>
       <EFDB_Name>ty_family</EFDB_Name>
       <Description>Filter family: Science | Dummy | French dummy | Test | Open | Unknown | None</Description>
       <IDL_Type>string</IDL_Type>
@@ -27594,6 +27987,13 @@
       <Description>Weight of the filter</Description>
       <IDL_Type>double</IDL_Type>
       <Units>kg</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>u_deltaAutochangerStandbyPosition</EFDB_Name>
+      <Description>Autochanger delta STANDBY position to be used to store this filter on carousel</Description>
+      <IDL_Type>long</IDL_Type>
+      <Units>micron</Units>
       <Count>1</Count>
     </item>
     <item>
@@ -27618,6 +28018,13 @@
       <Count>1</Count>
     </item>
     <item>
+      <EFDB_Name>y_deltaAutochangerStandbyPosition</EFDB_Name>
+      <Description>Autochanger delta STANDBY position to be used to store this filter on carousel</Description>
+      <IDL_Type>long</IDL_Type>
+      <Units>micron</Units>
+      <Count>1</Count>
+    </item>
+    <item>
       <EFDB_Name>y_family</EFDB_Name>
       <Description>Filter family: Science | Dummy | French dummy | Test | Open | Unknown | None</Description>
       <IDL_Type>string</IDL_Type>
@@ -27639,6 +28046,13 @@
       <Count>1</Count>
     </item>
     <item>
+      <EFDB_Name>z_deltaAutochangerStandbyPosition</EFDB_Name>
+      <Description>Autochanger delta STANDBY position to be used to store this filter on carousel</Description>
+      <IDL_Type>long</IDL_Type>
+      <Units>micron</Units>
+      <Count>1</Count>
+    </item>
+    <item>
       <EFDB_Name>z_family</EFDB_Name>
       <Description>Filter family: Science | Dummy | French dummy | Test | Open | Unknown | None</Description>
       <IDL_Type>string</IDL_Type>
@@ -27657,6 +28071,42 @@
       <Description>Weight of the filter</Description>
       <IDL_Type>double</IDL_Type>
       <Units>kg</Units>
+      <Count>1</Count>
+    </item>
+  </SALEvent>
+  <!--Created by xmlmaker2 for subsystem MTCamera class MTCamera_logevent_fcs_GeneralConfiguration for category General using level 1-->
+  <!--===============================================================================================================================-->
+  <SALEvent>
+    <Subsystem>MTCamera</Subsystem>
+    <EFDB_Topic>MTCamera_logevent_fcs_GeneralConfiguration</EFDB_Topic>
+    <Description>subsystem MTCamera class MTCamera_logevent_fcs_GeneralConfiguration for category General</Description>
+    <!--CCS: Dictionary_Checksum: 1753677514L -->
+    <item>
+      <EFDB_Name>version</EFDB_Name>
+      <Description>Version of the settings, formatted using CCS conventions</Description>
+      <IDL_Type>string</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>loadUnloadFilterMaxDuration</EFDB_Name>
+      <Description>Expected max duration of a filter swap with loader (load or unload)</Description>
+      <IDL_Type>long</IDL_Type>
+      <Units>millisecond</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>setFilterFastDuration</EFDB_Name>
+      <Description>Expected max duration for a filter exchange at zenith</Description>
+      <IDL_Type>long</IDL_Type>
+      <Units>millisecond</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>setFilterSlowDuration</EFDB_Name>
+      <Description>Expected max duration for a filter exchange at horizon</Description>
+      <IDL_Type>long</IDL_Type>
+      <Units>millisecond</Units>
       <Count>1</Count>
     </item>
   </SALEvent>
@@ -29510,7 +29960,7 @@
     <Subsystem>MTCamera</Subsystem>
     <EFDB_Topic>MTCamera_logevent_chiller_LimitsConfiguration</EFDB_Topic>
     <Description>subsystem MTCamera class MTCamera_logevent_chiller_LimitsConfiguration for category Limits</Description>
-    <!--CCS: Dictionary_Checksum: 1189134400L -->
+    <!--CCS: Dictionary_Checksum: 2561468596L -->
     <item>
       <EFDB_Name>version</EFDB_Name>
       <Description>Version of the settings, formatted using CCS conventions</Description>
@@ -29600,6 +30050,20 @@
       <Description>Glycol flow at Stg 2 DeSuperHtr low alarm level</Description>
       <IDL_Type>double</IDL_Type>
       <Units>gallon/min</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>maq20_GlycFanMinusAmb_warnHi</EFDB_Name>
+      <Description>GlycFanIn - AmbientTemp high warning level</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>Celsius</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>maq20_GlycFanMinusAmb_limitHi</EFDB_Name>
+      <Description>GlycFanIn - AmbientTemp high alarm level</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>Celsius</Units>
       <Count>1</Count>
     </item>
     <item>
