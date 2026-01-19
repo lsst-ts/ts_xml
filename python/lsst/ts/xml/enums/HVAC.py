@@ -35,6 +35,9 @@ class DeviceId(IntEnum):
     valveP01 = 3
     dynaleneP05 = 4
     glycolSensor = 5
+    rotork01P01 = 6
+    rotork02P01 = 7
+    emergencyPumpP01 = 8
     chiller01P01 = 101
     chiller02P01 = 102
     chiller03P01 = 103
