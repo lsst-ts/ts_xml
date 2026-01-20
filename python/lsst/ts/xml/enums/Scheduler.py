@@ -89,7 +89,7 @@ class ObservatoryStatus(enum.IntEnum):
 
     # Observatory in regular night-time scheduler-driven
     # operations.
-    GOOD = 2
+    OPERATIONAL = 2
 
     # Fault detected on one or more critical component during
     # night-time operations.
