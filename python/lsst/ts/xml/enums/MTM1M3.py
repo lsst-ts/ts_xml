@@ -21,6 +21,7 @@
 __all__ = [
     "DetailedStates",
     "BumpTest",
+    "BumpTestType",
     "HardpointActuatorMotionState",
     "HardpointTest",
     "ILCState",
@@ -64,6 +65,14 @@ class BumpTest(enum.IntEnum):
     FAILED_TESTEDNEGATIVE_OVERSHOOT = 11
     FAILED_TESTEDNEGATIVE_UNDERSHOOT = 12
     FAILED_NONTESTEDPROBLEM = 13
+
+
+class BumpTestType(enum.IntEnum):
+    PRIMARY = 1
+    SECONDARY = 2
+    Z = 3
+    Y = 4
+    X = 5
 
 
 class HardpointActuatorMotionState(enum.IntEnum):

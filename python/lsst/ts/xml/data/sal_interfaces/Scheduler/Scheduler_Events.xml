@@ -3,6 +3,14 @@
 <SALEventSet xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://lsst-sal.tuc.noao.edu/schema/SALEventSet.xsd">
   <Enumeration>DetailedState_IDLE,DetailedState_RUNNING,DetailedState_WAITING_NEXT_TARGET_TIMER_TASK,DetailedState_GENERATING_TARGET_QUEUE,DetailedState_COMPUTING_PREDICTED_SCHEDULE,DetailedState_QUEUEING_TARGET</Enumeration>
   <Enumeration>FailureStrategy_NONE,FailureStrategy_ON_SCRIPT_FAILURE,FailureStrategy_KEEP_GOING</Enumeration>
+  <Enumeration>
+      ObservatoryStatus_UNKNOWN=0,
+      ObservatoryStatus_DAYTIME=1,
+      ObservatoryStatus_OPERATIONAL=2,
+      ObservatoryStatus_FAULT=4,
+      ObservatoryStatus_WEATHER=8,
+      ObservatoryStatus_DOWNTIME=16
+  </Enumeration>
   <SALEvent>
     <Subsystem>Scheduler</Subsystem>
     <EFDB_Topic>Scheduler_logevent_detailedState</EFDB_Topic>
@@ -11,6 +19,32 @@
       <EFDB_Name>substate</EFDB_Name>
       <Description>The substate or extra states of the CSC </Description>
       <IDL_Type>long</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+  </SALEvent>
+  <SALEvent>
+    <Subsystem>Scheduler</Subsystem>
+    <EFDB_Topic>Scheduler_logevent_observatoryStatus</EFDB_Topic>
+    <Description>The observatory status as determined by the Scheduler. This is a semi-automated flag which is set by the Scheduler CSC for some pre-determined conditions and can be overriden-set by observers to add additional context.</Description>
+    <item>
+      <EFDB_Name>status</EFDB_Name>
+      <Description>A bitmask indicating which status are active.</Description>
+      <IDL_Type>long</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>statusLabels</EFDB_Name>
+      <Description>A comma-separated string with all the names of all active status labels.</Description>
+      <IDL_Type>string</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>note</EFDB_Name>
+      <Description>Additional information about the status.</Description>
+      <IDL_Type>string</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
     </item>

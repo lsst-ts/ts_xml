@@ -44,6 +44,13 @@
     BumpTest_Failed_NonTestedProblem
   </Enumeration>
   <Enumeration>
+    BumpTestType_Primary,
+    BumpTestType_Secondary,
+    BumpTestType_Z,
+    BumpTestType_Y,
+    BumpTestType_X
+  </Enumeration>
+  <Enumeration>
     HardpointTest_NotTested,
     HardpointTest_MovingNegative,
     HardpointTest_TestingPositive,
@@ -5102,6 +5109,67 @@
   </SALEvent>
   <SALEvent>
     <Subsystem>MTM1M3</Subsystem>
+    <EFDB_Topic>MTM1M3_logevent_forceActuatorBumpTestStatistics</EFDB_Topic>
+    <Description>Record bump test progress and final status.</Description>
+    <item>
+      <EFDB_Name>actuatorId</EFDB_Name>
+      <Description>Force actuator ID.</Description>
+      <IDL_Type>int</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>testType</EFDB_Name>
+      <Description>Test type - one of BumpTest_Type_* enumeration.</Description>
+      <IDL_Type>int</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>stage</EFDB_Name>
+      <Description>Bump test stage - one of BumpTest_ enumeration.</Description>
+      <IDL_Type>int</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>settleTime</EFDB_Name>
+      <Description>Settle time of the force actuator.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>s</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>minimum</EFDB_Name>
+      <Description>Minimum of the measured force.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>N</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>maximum</EFDB_Name>
+      <Description>Maximum of the measured force.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>N</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>average</EFDB_Name>
+      <Description>Average of the measured force.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>N</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>errorRMS</EFDB_Name>
+      <Description>RMS of the measured following error.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>N</Units>
+      <Count>1</Count>
+    </item>
+  </SALEvent>
+  <SALEvent>
+    <Subsystem>MTM1M3</Subsystem>
     <EFDB_Topic>MTM1M3_logevent_hardpointTestStatus</EFDB_Topic>
     <Description>Progress of hardpoint tests.</Description>
     <item>
@@ -5434,6 +5502,34 @@
       <Description>If true, hardpoint balance forces will be turned on in raised (active) non-engineering state.</Description>
       <IDL_Type>boolean</IDL_Type>
       <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>bumpTestTestedWarning</EFDB_Name>
+      <Description>Warning level for actuator being bump tested. If following error crosses this, a warnign is issued.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>N</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>bumpTestTestedError</EFDB_Name>
+      <Description>Error level for actuator being bump tested. If following error crosses this, a error is issued - FA doesn't pass the test then.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>N</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>bumpTestNonTestedWarning</EFDB_Name>
+      <Description>Warning level for actuators not bump tested. If following error crosses this, a warning is issued.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>N</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>bumpTestNonTestedError</EFDB_Name>
+      <Description>Error level for actuators not bump tested. If following error crosses this, a error is issued - FA doesn't pass the test then.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>N</Units>
       <Count>1</Count>
     </item>
     <item>

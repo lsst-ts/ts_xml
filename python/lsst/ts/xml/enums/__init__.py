@@ -22,6 +22,7 @@ from . import (
     ATMCS,
     DIMM,
     DREAM,
+    EAS,
     ESS,
     GIS,
     HVAC,

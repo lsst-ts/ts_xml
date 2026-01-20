@@ -4152,7 +4152,7 @@
     <Subsystem>ATCamera</Subsystem>
     <EFDB_Topic>ATCamera_logevent_focal_plane_SequencerConfig_GuiderConfiguration</EFDB_Topic>
     <Description>subsystem ATCamera class ATCamera_logevent_focal_plane_SequencerConfig_GuiderConfiguration for category Guider</Description>
-    <!--CCS: Dictionary_Checksum: 4142992035L -->
+    <!--CCS: Dictionary_Checksum: 3499432949L -->
     <item>
       <EFDB_Name>version</EFDB_Name>
       <Description>Version of the settings, formatted using CCS conventions</Description>
@@ -4189,6 +4189,13 @@
       <Count>1</Count>
     </item>
     <item>
+      <EFDB_Name>guiderPauseTimeout</EFDB_Name>
+      <Description>PAUSED time in milliseconds before guider will timeout in and return to IDLE_CLEARING. Zero indicates no timeout</Description>
+      <IDL_Type>long long</IDL_Type>
+      <Units>ms</Units>
+      <Count>1</Count>
+    </item>
+    <item>
       <EFDB_Name>idleClearParameters</EFDB_Name>
       <Description>The parameters used for guider idle clearing</Description>
       <IDL_Type>string</IDL_Type>
@@ -4202,7 +4209,7 @@
     <Subsystem>ATCamera</Subsystem>
     <EFDB_Topic>ATCamera_logevent_focal_plane_SequencerConfig_SequencerConfiguration</EFDB_Topic>
     <Description>subsystem ATCamera class ATCamera_logevent_focal_plane_SequencerConfig_SequencerConfiguration for category Sequencer</Description>
-    <!--CCS: Dictionary_Checksum: 3662355493L -->
+    <!--CCS: Dictionary_Checksum: 340360100L -->
     <item>
       <EFDB_Name>version</EFDB_Name>
       <Description>Version of the settings, formatted using CCS conventions</Description>
@@ -4229,6 +4236,13 @@
       <Description>Name of the clear rows parameter (used for idle clear)</Description>
       <IDL_Type>string</IDL_Type>
       <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>clockPeriod</EFDB_Name>
+      <Description>Clock period to use when compiling sequencer files (6400, 10000, 0)</Description>
+      <IDL_Type>long</IDL_Type>
+      <Units>ps</Units>
       <Count>1</Count>
     </item>
     <item>
@@ -7722,7 +7736,7 @@
       <IDL_Type>long</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
-      <Enumeration>NOMINAL,WARNING, ALARM</Enumeration>
+      <Enumeration>WARNING, SERIOUS, CRITICAL, NOMINAL</Enumeration>
     </item>
     <item>
       <EFDB_Name>highestSeverity</EFDB_Name>
@@ -7730,7 +7744,7 @@
       <IDL_Type>long</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
-      <!-- <Enumeration>NOMINAL,WARNING, ALARM</Enumeration> -->
+      <!-- <Enumeration>WARNING, SERIOUS, CRITICAL, NOMINAL</Enumeration> -->
     </item>
     <item>
       <EFDB_Name>isCleared</EFDB_Name>

@@ -556,6 +556,48 @@
       <Units>unitless</Units>
       <Count>1</Count>
     </item>
+    <item>
+      <EFDB_Name>inPosition</EFDB_Name>
+      <Description>Range of absolute error when the mixing valve will be considered in position. CSC fails if mixing valve error is larger than this value.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>percent</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>backlashStep</EFDB_Name>
+      <Description>Valve backlash/hysteresis in percentage of the valve output.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>percent</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>minimalMove</EFDB_Name>
+      <Description>Minimal move (in percent) the mixing valve handles with proper backlash control.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>percent</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>maxMovingTime</EFDB_Name>
+      <Description>Maximal time valve can move from one position to another. If move takes longer, the CSC is faulted.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>second</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>clearPIDGlycol</EFDB_Name>
+      <Description>When glycol/EGW setpoint absolute change is above that value, PID loop controlling the mixing valve is reset.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>deg_C</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>clearPIDHeaters</EFDB_Name>
+      <Description>When FCU's heaters setpoint absolute change is above that value, PID loop controlling the mixing valve is reset.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>deg_C</Units>
+      <Count>1</Count>
+    </item>
   </SALEvent>
   <SALEvent>
     <Subsystem>MTM1M3TS</Subsystem>
@@ -726,6 +768,102 @@
       <IDL_Type>float</IDL_Type>
       <Units>inch</Units>
       <Count>275</Count>
+    </item>
+  </SALEvent>
+  <SALEvent>
+    <Subsystem>MTM1M3TS</Subsystem>
+    <EFDB_Topic>MTM1M3TS_logevent_driveStatus2</EFDB_Topic>
+    <Description>Glycol pump drive status 2. Bits from VFD register 393.</Description>
+    <item>
+      <EFDB_Name>jogging</EFDB_Name>
+      <Description>Drive is in jogging mode - allowing directional control.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>fluxBreaking</EFDB_Name>
+      <Description>Flux breaking enabled.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>motorOverload</EFDB_Name>
+      <Description>Internal electronic overload trip.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>autoRestartCountdown</EFDB_Name>
+      <Description>Drive is counting down to an automatic restart.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>dcBraking</EFDB_Name>
+      <Description>DC Brake is active to hold the motor at position.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>atFrequency</EFDB_Name>
+      <Description>Drive reaches commanded frequency.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>autoTuning</EFDB_Name>
+      <Description>Drive auto tuning is being performed.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>emBraking</EFDB_Name>
+      <Description>Emergency braking is active.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>currentLimit</EFDB_Name>
+      <Description>Current hits a preset limit and is being limited.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>safetyS1</EFDB_Name>
+      <Description>Safety signal 1 is closed.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>safetyS2</EFDB_Name>
+      <Description>Safety signal 2 is closed.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>f111Status</EFDB_Name>
+      <Description>Safety input enable hardware malfunction. One of the safety inputs is not enabled.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>safeTqPermit</EFDB_Name>
+      <Description>Both safe-off inputs are inactive (closed).</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
     </item>
   </SALEvent>
 </SALEventSet>

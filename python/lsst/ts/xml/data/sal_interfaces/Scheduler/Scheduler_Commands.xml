@@ -20,6 +20,25 @@
   </SALCommand>
   <SALCommand>
     <Subsystem>Scheduler</Subsystem>
+    <EFDB_Topic>Scheduler_command_updateObservatoryStatus</EFDB_Topic>
+    <Description>Update the observatory status.</Description>
+    <item>
+      <EFDB_Name>status</EFDB_Name>
+      <Description>A bitmask indicating which status are active. If set to 0=UNKNOWN, it will not change the status, only the observer note.</Description>
+      <IDL_Type>long</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>note</EFDB_Name>
+      <Description>Additional information about the status.</Description>
+      <IDL_Type>string</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+  </SALCommand>
+  <SALCommand>
+    <Subsystem>Scheduler</Subsystem>
     <EFDB_Topic>Scheduler_command_flush</EFDB_Topic>
     <Description>Flush the scheduler internal queue. This only affects the internal target list. Queued observation will be left in the queue.</Description>
   </SALCommand>
