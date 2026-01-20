@@ -15,6 +15,82 @@ Version History
 
 .. towncrier release notes start
 
+v25.0.0 (2026-01-20)
+====================
+Package Level
+-------------
+
+No significant changes.
+
+
+Interface Changes
+-----------------
+
+ATCamera
+~~~~~~~~
+
+- Updated XML for cycle 43 (`CAP-1097 <https://rubinobs.atlassian.net/browse/CAP-1097>`_)
+
+
+EAS
+~~~
+
+- Added the EAS ControlFeature enum and disable-list commands. (`OSW-1678 <https://rubinobs.atlassian.net/browse/OSW-1678>`_)
+
+
+HVAC
+~~~~
+
+- Restored Dynalene events. (`OSW-1232 <https://rubinobs.atlassian.net/browse/OSW-1232>`_)
+- Added more telemetry. (`OSW-1703 <https://rubinobs.atlassian.net/browse/OSW-1703>`_)
+- Added new telemetry and updated enums. (`OSW-1703 <https://rubinobs.atlassian.net/browse/OSW-1703>`_)
+
+
+MTCamera
+~~~~~~~~
+
+- Updated XML for cycle 43 (`CAP-1097 <https://rubinobs.atlassian.net/browse/CAP-1097>`_)
+
+
+MTDome
+~~~~~~
+
+- Added enabled and motion events for RAD and CS. (`OSW-1408 <https://rubinobs.atlassian.net/browse/OSW-1408>`_)
+- Added ControlMode event and enum. (`OSW-1408 <https://rubinobs.atlassian.net/browse/OSW-1408>`_)
+- Added Brake enum. (`OSW-1408 <https://rubinobs.atlassian.net/browse/OSW-1408>`_)
+- Fixed typos in enums. (`OSW-1681 <https://rubinobs.atlassian.net/browse/OSW-1681>`_)
+- Fixed brakesEngaged data type. (`OSW-1681 <https://rubinobs.atlassian.net/browse/OSW-1681>`_)
+
+
+MTM1M3
+~~~~~~
+
+- * ForceActuatorBumpTestStatistics.
+  * bumpTestTested and bumpTestNonTested wearning and error levels in forceActuatorSetttings event. (`OSW-1548 <https://rubinobs.atlassian.net/browse/OSW-1548>`_)
+
+
+MTM1M3TS
+~~~~~~~~
+
+- * Added mixingValveSettings items and Drive Status 2 topic. (`OSW-1311 <https://rubinobs.atlassian.net/browse/OSW-1311>`_)
+- * EGW pump speedFeedback telemetry item. (`OSW-1529 <https://rubinobs.atlassian.net/browse/OSW-1529>`_)
+- Add orifice diameters to M1M3TS air nozzles. (`RSO-8 <https://rubinobs.atlassian.net/browse/RSO-8>`_)
+
+
+Scheduler
+~~~~~~~~~
+
+- Fixed ObservatoryStatus enumeration values. (`OSW-1659 <https://rubinobs.atlassian.net/browse/OSW-1659>`_)
+- Enhanced the Scheduler command interface by adding a specific command to update the observatory status. (`OSW-1659 <https://rubinobs.atlassian.net/browse/OSW-1659>`_)
+- Renamed ``ObservatoryStatus.GOOD`` -> ``ObservatoryStatus.OPERATIONAL``. (`OSW-1659 <https://rubinobs.atlassian.net/browse/OSW-1659>`_)
+
+
+WFOODS
+~~~~~~
+
+- Adding new wavefront OODS: wfoods (`CAP-1096 <https://rubinobs.atlassian.net/browse/CAP-1096>`_)
+
+
 v24.4.0 (2025-12-01)
 ====================
 Package Level
