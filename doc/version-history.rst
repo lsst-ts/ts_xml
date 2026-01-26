@@ -15,6 +15,23 @@ Version History
 
 .. towncrier release notes start
 
+v26.0.0 (2026-01-26)
+====================
+Package Level
+-------------
+
+No significant changes.
+
+
+Interface Changes
+-----------------
+
+MTAOS
+~~~~~
+
+- Updated gains in MTAOS events to arrays instead of scalars. (`DM-53929 <https://rubinobs.atlassian.net/browse/DM-53929>`_)
+
+
 v25.0.0 (2026-01-20)
 ====================
 Package Level
