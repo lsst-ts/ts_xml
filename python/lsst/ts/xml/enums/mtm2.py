@@ -10,7 +10,7 @@ __all__ = [
 import enum
 
 # Use the same enum of "BumpTest" in MTM1M3
-from .MTM1M3 import BumpTest
+from .mtm1m3 import BumpTest
 
 
 class InclinationTelemetrySource(enum.IntEnum):

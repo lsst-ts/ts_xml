@@ -119,9 +119,7 @@ def get_field_enums_from_topic_element(
             continue
         field_name = find_required_text(item_element, "EFDB_Name")
         items = re.split(r" *, *\n? *", enum_text)
-        field_enums.append(
-            FieldEnumInfo(topic_name=topic_name, field_name=field_name, items=items)
-        )
+        field_enums.append(FieldEnumInfo(topic_name=topic_name, field_name=field_name, items=items))
     return field_enums
 
 
@@ -167,8 +165,6 @@ def get_field_and_global_enums(
         if not filepath.is_file():
             continue
         file_root = ElementTree.parse(filepath).getroot()
-        field_enums += get_field_enums_from_file_root(
-            topic_type=topic_type, file_root=file_root
-        )
+        field_enums += get_field_enums_from_file_root(topic_type=topic_type, file_root=file_root)
         global_enums += get_global_enums_from_file_root(file_root)
     return field_enums, global_enums

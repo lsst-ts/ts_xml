@@ -22,7 +22,9 @@
 import typing
 import unittest
 
-from lsst.ts.xml.enums.MTM1M3TS import AirNozzle
+from pytest import approx
+
+from lsst.ts.xml.enums.mtm1m3ts import AirNozzle
 from lsst.ts.xml.tables.m1m3 import (
     NOZZLES_NUM,
     FAIndex,
@@ -37,13 +39,10 @@ from lsst.ts.xml.tables.m1m3 import (
     find_thermocouple,
     set_air_nozzles_types_and_orifice_diameters,
 )
-from pytest import approx
 
 
 class M1M3FATableTestCase(unittest.TestCase):
-    def assert_sorted(
-        self, gen: typing.Generator[int, None, None], array: list[int]
-    ) -> None:
+    def assert_sorted(self, gen: typing.Generator[int, None, None], array: list[int]) -> None:
         a1 = list(gen)
         a1.sort()
         self.assertEqual(a1, array)
@@ -51,14 +50,10 @@ class M1M3FATableTestCase(unittest.TestCase):
     def test_neighbors(self) -> None:
         item = FATable[4]
 
-        self.assert_sorted(
-            item.near_neighbors_indices(FAIndex.Z), [3, 5, 10, 11, 125, 126]
-        )
+        self.assert_sorted(item.near_neighbors_indices(FAIndex.Z), [3, 5, 10, 11, 125, 126])
         self.assert_sorted(item.near_neighbors_indices(FAIndex.Y), [2, 7, 81])
 
-        self.assert_sorted(
-            item.far_neighbors_indices(FAIndex.Y), [2, 6, 7, 13, 80, 81, 86]
-        )
+        self.assert_sorted(item.far_neighbors_indices(FAIndex.Y), [2, 6, 7, 13, 80, 81, 86])
         self.assert_sorted(item.only_far_neighbors_indices(FAIndex.Y), [6, 13, 80, 86])
 
         item2 = FATable[11]

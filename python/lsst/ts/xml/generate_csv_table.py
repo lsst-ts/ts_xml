@@ -100,9 +100,7 @@ def generate_csv_table() -> None:
             # Use find_text_in_xml if field text is required,
             # find_in_xml if not
             name = find_text_in_xml(member, "Name")
-            subsystem.append(
-                f".. _index:csc-table:{name.lower()}:\n\n:doc:`/sal_interfaces/{name}`"
-            )
+            subsystem.append(f".. _index:csc-table:{name.lower()}:\n\n:doc:`/sal_interfaces/{name}`")
 
             active_developers = find_text_in_xml(member, "ActiveDevelopers")
             subsystem.append(active_developers)
@@ -170,9 +168,7 @@ def generate_csv_table() -> None:
                 # Note: the key function is only applied to elements
                 # of the sorted list (first argument), not the item
                 # being inserted (second argument).
-                insertion_index = bisect.bisect_left(
-                    ordered_data, row[0], key=lambda x: x[0]
-                )
+                insertion_index = bisect.bisect_left(ordered_data, row[0], key=lambda x: x[0])
                 ordered_data.insert(insertion_index, row)
 
     # Write the ordered data into file

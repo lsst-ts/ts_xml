@@ -4,8 +4,9 @@ import pathlib
 import re
 import xml.etree.ElementTree as et
 
-import lsst.ts.xml as ts_xml
 import pytest
+
+import lsst.ts.xml as ts_xml
 
 
 def check_for_issues(csc: str, topic: str) -> str:
@@ -13,22 +14,20 @@ def check_for_issues(csc: str, topic: str) -> str:
     return jira
 
 
-def check_subsystem(
-    xmlfile: pathlib.Path, saltype: str, element_root: et.Element
-) -> None:
+def check_subsystem(xmlfile: pathlib.Path, saltype: str, element_root: et.Element) -> None:
     for subsystem in element_root.findall(f"./{saltype}/Subsystem"):
         assert subsystem.text is not None
-        assert (
-            re.search(r"\s", subsystem.text) is None
-        ), f"<Subsystem> '{subsystem.text}' in {xmlfile.name} contains a whitespace character."
+        assert re.search(r"\s", subsystem.text) is None, (
+            f"<Subsystem> '{subsystem.text}' in {xmlfile.name} contains a whitespace character."
+        )
 
 
 def check_topic(xmlfile: pathlib.Path, saltype: str, element_root: et.Element) -> None:
     for topic in element_root.findall(f"./{saltype}/EFDB_Topic"):
         assert topic.text is not None
-        assert (
-            re.search(r"\s", topic.text) is None
-        ), f"<EFDB_Topic> '{topic.text}' in {xmlfile.name} contains a whitespace character."
+        assert re.search(r"\s", topic.text) is None, (
+            f"<EFDB_Topic> '{topic.text}' in {xmlfile.name} contains a whitespace character."
+        )
 
 
 @pytest.mark.parametrize("xmlfile,csc,topic", ts_xml.get_xmlfile_csc_topic())
@@ -49,9 +48,7 @@ def test_no_spaces(xmlfile: pathlib.Path, csc: str, topic: str) -> None:
     # Check for known issues.
     jira = check_for_issues(csc, topic)
     if jira:
-        pytest.skip(
-            f"{jira}: {xmlfile.name}.xml <Subsystem> field contains whitespace."
-        )
+        pytest.skip(f"{jira}: {xmlfile.name}.xml <Subsystem> field contains whitespace.")
     with open(str(xmlfile), "r", encoding="utf-8") as f:
         tree = et.parse(f)
     root = tree.getroot()
@@ -59,6 +56,6 @@ def test_no_spaces(xmlfile: pathlib.Path, csc: str, topic: str) -> None:
     check_topic(xmlfile, saltype, root)
     for name in root.findall(f"./{saltype}/item/EFDB_Name"):
         assert name.text is not None
-        assert (
-            re.search(r"\s", name.text) is None
-        ), f"<EFDB_Name> {name.text!r} in {xmlfile.name} contains a whitespace character."
+        assert re.search(r"\s", name.text) is None, (
+            f"<EFDB_Name> {name.text!r} in {xmlfile.name} contains a whitespace character."
+        )

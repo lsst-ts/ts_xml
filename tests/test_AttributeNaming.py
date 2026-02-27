@@ -4,8 +4,9 @@ import pathlib
 import re
 import xml.etree.ElementTree as et
 
-import lsst.ts.xml as ts_xml
 import pytest
+
+import lsst.ts.xml as ts_xml
 
 
 def check_for_issues(csc: str, topic: str) -> str:

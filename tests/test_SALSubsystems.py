@@ -4,9 +4,10 @@ import pathlib
 import re
 import xml.etree.ElementTree as et
 
-import lsst.ts.xml as ts_xml
 import pytest
 from lxml import etree
+
+import lsst.ts.xml as ts_xml
 
 INDEX_ENUM_CHECK = re.compile(r"[^,= \w]+")
 
@@ -77,9 +78,9 @@ def test_salsubsystems_count() -> None:
     skip_if_known_issue("count", "none")
     # Test SALGenerics.xml contains the expected commands.
     root = get_file_root_element()
-    assert len(root.findall("./SALSubsystem/Name")) == len(
-        ts_xml.subsystems
-    ), "There is an unexpected number of CSCs."
+    assert len(root.findall("./SALSubsystem/Name")) == len(ts_xml.subsystems), (
+        "There is an unexpected number of CSCs."
+    )
 
 
 def test_salsubsystems_uniq_cscs() -> None:
@@ -88,11 +89,9 @@ def test_salsubsystems_uniq_cscs() -> None:
     skip_if_known_issue("uniq", "none")
     # Test SALGenerics.xml contains unique CSCs.
     root = get_file_root_element()
-    assert len(root.findall("./SALSubsystem/Name")) == len(
-        set(root.findall("./SALSubsystem/Name"))
-    ) and len(ts_xml.subsystems) == len(
-        set(ts_xml.subsystems)
-    ), "SALSubsystems.xml or testutils.subsystems contains duplicate entries"
+    assert len(root.findall("./SALSubsystem/Name")) == len(set(root.findall("./SALSubsystem/Name"))) and len(
+        ts_xml.subsystems
+    ) == len(set(ts_xml.subsystems)), "SALSubsystems.xml or testutils.subsystems contains duplicate entries"
 
 
 def test_each_csc_defined() -> None:
@@ -129,17 +128,11 @@ def test_description_tag(root: et.Element, csc: str, description: str) -> None:
     skip_if_known_issue("description", csc)
     # Verify the <Description> tag is properly defined.
     whitespace_checks(description, "Description", csc)
-    assert (
-        description.isprintable()
-    ), f"{csc} <Description> must have a name associated!"
+    assert description.isprintable(), f"{csc} <Description> must have a name associated!"
 
 
-@pytest.mark.parametrize(
-    "root,csc,index_enumeration", get_csc_attr_content("IndexEnumeration")
-)
-def test_index_enumeration_tag(
-    root: et.Element, csc: str, index_enumeration: str
-) -> None:
+@pytest.mark.parametrize("root,csc,index_enumeration", get_csc_attr_content("IndexEnumeration"))
+def test_index_enumeration_tag(root: et.Element, csc: str, index_enumeration: str) -> None:
     """Test that the <IndexEnumeration> tag is correctly defined for each
        CSC.
 
@@ -177,14 +170,10 @@ def test_index_enumeration_tag(
         "a possible comma-separated list of names,",
         "a possible comma-separated list of key=value pairs and never ever 0!",
     ]
-    assert no_zero and (
-        content_checks or format_valid or name_valid or kv_pair_valid
-    ), " ".join(message)
+    assert no_zero and (content_checks or format_valid or name_valid or kv_pair_valid), " ".join(message)
 
 
-@pytest.mark.parametrize(
-    "root,csc,added_generics", get_csc_attr_content("AddedGenerics")
-)
+@pytest.mark.parametrize("root,csc,added_generics", get_csc_attr_content("AddedGenerics"))
 def test_generics_tag(root: et.Element, csc: str, added_generics: str) -> None:
     """Test that the <AddedGenerics> tag is correctly defined for each CSC.
 
@@ -203,29 +192,20 @@ def test_generics_tag(root: et.Element, csc: str, added_generics: str) -> None:
         return
     generics_set = set(val.strip() for val in added_generics.split(","))
     for generic_name in generics_set:
-        assert (
-            " " not in generic_name
-        ), f"csc {csc} <AddedGenerics> tag '{generic_name}' need a comma"
-    no_mandatory_topics = generics_set.intersection(
-        ts_xml.added_generics_mandatory_topics
-    )
+        assert " " not in generic_name, f"csc {csc} <AddedGenerics> tag '{generic_name}' need a comma"
+    no_mandatory_topics = generics_set.intersection(ts_xml.added_generics_mandatory_topics)
     assert no_mandatory_topics == set(), (
         f"The <AddedGenerics> tag for csc {csc} contains mandatory topics: "
         f"{no_mandatory_topics}. It is not necessary to specify these."
     )
     invalid_topics = generics_set - ts_xml.added_generics_items
     assert invalid_topics == set(), (
-        f"The <AddedGenerics> tag for csc {csc} has one or more non-generic topics: "
-        f"{sorted(invalid_topics)}"
+        f"The <AddedGenerics> tag for csc {csc} has one or more non-generic topics: {sorted(invalid_topics)}"
     )
 
 
-@pytest.mark.parametrize(
-    "root,csc,active_developers", get_csc_attr_content("ActiveDevelopers")
-)
-def test_active_developers_tag(
-    root: et.Element, csc: str, active_developers: str
-) -> None:
+@pytest.mark.parametrize("root,csc,active_developers", get_csc_attr_content("ActiveDevelopers"))
+def test_active_developers_tag(root: et.Element, csc: str, active_developers: str) -> None:
     """Test that the <ActiveDevelopers> tag is correctly defined for each
        CSC.
 
@@ -242,9 +222,7 @@ def test_active_developers_tag(
     skip_if_known_issue("active_developers", csc)
     # Verify the <ActiveDevelopers> tag is properly defined.
     whitespace_checks(active_developers, "ActiveDevelopers", csc)
-    assert (
-        active_developers.isprintable()
-    ), f"{csc} <ActiveDevelopers> must have a name associated!"
+    assert active_developers.isprintable(), f"{csc} <ActiveDevelopers> must have a name associated!"
 
 
 @pytest.mark.parametrize("root,csc,github", get_csc_attr_content("Github"))
@@ -265,9 +243,9 @@ def test_github_tag(root: et.Element, csc: str, github: str) -> None:
     skip_if_known_issue("github", csc)
     # Verify the <Github> tag is properly defined.
     whitespace_checks(github, "Github", csc)
-    assert (
-        "http" in github or github.isprintable()
-    ), f"{csc} <Github> must have a URL associated or informative text!"
+    assert "http" in github or github.isprintable(), (
+        f"{csc} <Github> must have a URL associated or informative text!"
+    )
 
 
 @pytest.mark.parametrize("root,csc,languages", get_csc_attr_content("RuntimeLanguages"))
@@ -287,17 +265,13 @@ def test_runtimelanguages_tag(root: et.Element, csc: str, languages: str) -> Non
     skip_if_known_issue("languages", csc)
     # Verify each CSC is explicitly defined.
     for language in languages.split(","):
-        assert (
-            language in VALID_RUNTIME_LANGUAGES
-        ), f"{csc}: {language} is not a valid value for <RuntimeLanguages>."
+        assert language in VALID_RUNTIME_LANGUAGES, (
+            f"{csc}: {language} is not a valid value for <RuntimeLanguages>."
+        )
 
 
-@pytest.mark.parametrize(
-    "root,csc,jenkins_test_results", get_csc_attr_content("JenkinsTestResults")
-)
-def test_jenkins_test_results_tag(
-    root: et.Element, csc: str, jenkins_test_results: str
-) -> None:
+@pytest.mark.parametrize("root,csc,jenkins_test_results", get_csc_attr_content("JenkinsTestResults"))
+def test_jenkins_test_results_tag(root: et.Element, csc: str, jenkins_test_results: str) -> None:
     """Test that the <JenkinsTestResults> tag is correctly defined for each
        CSC.
 
@@ -314,9 +288,9 @@ def test_jenkins_test_results_tag(
     skip_if_known_issue("jenkins_test_results", csc)
     # Verify the <JenkinsTestResults> tag is properly defined.
     whitespace_checks(jenkins_test_results, "JenkinsTestResults", csc)
-    assert (
-        jenkins_test_results == "Not Available" or "http" in jenkins_test_results
-    ), f"{csc} <JenkinsTestResults> must have a URL or Not Available as content"
+    assert jenkins_test_results == "Not Available" or "http" in jenkins_test_results, (
+        f"{csc} <JenkinsTestResults> must have a URL or Not Available as content"
+    )
 
 
 @pytest.mark.parametrize("root,csc,product_owner", get_csc_attr_content("ProductOwner"))
@@ -337,17 +311,11 @@ def test_product_owner_tag(root: et.Element, csc: str, product_owner: str) -> No
     skip_if_known_issue("product_owner", csc)
     # Verify the <ProductOwner> tag is properly defined.
     whitespace_checks(product_owner, "ProductOwner", csc)
-    assert (
-        product_owner.isprintable()
-    ), f"{csc} <ProductOwner> must have a name associated!"
+    assert product_owner.isprintable(), f"{csc} <ProductOwner> must have a name associated!"
 
 
-@pytest.mark.parametrize(
-    "root,csc,rubin_obs_contact", get_csc_attr_content("RubinObsContact")
-)
-def test_rubin_obs_contact_tag(
-    root: et.Element, csc: str, rubin_obs_contact: str
-) -> None:
+@pytest.mark.parametrize("root,csc,rubin_obs_contact", get_csc_attr_content("RubinObsContact"))
+def test_rubin_obs_contact_tag(root: et.Element, csc: str, rubin_obs_contact: str) -> None:
     """Test that the <RubinObsContact> tag is correctly defined for each CSC.
 
     Parameters
@@ -363,14 +331,10 @@ def test_rubin_obs_contact_tag(
     skip_if_known_issue("rubin_obs_contact", csc)
     # Verify the <RubinObsContact> tag is properly defined.
     whitespace_checks(rubin_obs_contact, "RubinObsContact", csc)
-    assert (
-        rubin_obs_contact.isprintable()
-    ), f"{csc} <RubinObsContact> must have a name (string) associated!"
+    assert rubin_obs_contact.isprintable(), f"{csc} <RubinObsContact> must have a name (string) associated!"
 
 
-@pytest.mark.parametrize(
-    "root,csc,vendor_contact", get_csc_attr_content("VendorContact")
-)
+@pytest.mark.parametrize("root,csc,vendor_contact", get_csc_attr_content("VendorContact"))
 def test_vendor_contact_tag(root: et.Element, csc: str, vendor_contact: str) -> None:
     """Test that the <VendorContact> tag is correctly defined for each CSC.
 
@@ -387,9 +351,9 @@ def test_vendor_contact_tag(root: et.Element, csc: str, vendor_contact: str) -> 
     skip_if_known_issue("vendor_contact", csc)
     # Verify the <VendorContact> tag is properly defined.
     whitespace_checks(vendor_contact, "VendorContact", csc)
-    assert (
-        vendor_contact == "Not Applicable" or vendor_contact.isprintable()
-    ), f"{csc} <VendorContact> must have a name (string) or Not Applicable as content"
+    assert vendor_contact == "Not Applicable" or vendor_contact.isprintable(), (
+        f"{csc} <VendorContact> must have a name (string) or Not Applicable as content"
+    )
 
 
 @pytest.mark.parametrize("root,csc,simulator", get_csc_attr_content("Simulator"))
@@ -408,19 +372,17 @@ def test_simulator_tag(root: et.Element, csc: str, simulator: str) -> None:
     # Check for known issues.
     skip_if_known_issue("simulator", csc)
     # Verify each CSC is explicitly defined.
-    assert (
-        type(root.find(f"./SALSubsystem/[Name='{csc}']/Simulator")) is et.Element
-    ), f"{csc} <Simulator> tag is NOT defined."
+    assert type(root.find(f"./SALSubsystem/[Name='{csc}']/Simulator")) is et.Element, (
+        f"{csc} <Simulator> tag is NOT defined."
+    )
     whitespace_checks(simulator, "Simulator", csc)
     content_checks = ["Internal to CSC", "Not Required", "Not Provided"]
-    assert (
-        simulator in content_checks or "http" in simulator
-    ), f"{csc} <Simulator> have a URL or one of the following: {', '.join(content_checks)}"
+    assert simulator in content_checks or "http" in simulator, (
+        f"{csc} <Simulator> have a URL or one of the following: {', '.join(content_checks)}"
+    )
 
 
-@pytest.mark.parametrize(
-    "root,csc,configuration", get_csc_attr_content("Configuration")
-)
+@pytest.mark.parametrize("root,csc,configuration", get_csc_attr_content("Configuration"))
 def test_configuration_tag(root: et.Element, csc: str, configuration: str) -> None:
     """Test that the <Configuration> tag is correctly defined for each CSC.
 
@@ -437,8 +399,6 @@ def test_configuration_tag(root: et.Element, csc: str, configuration: str) -> No
     skip_if_known_issue("configuration", csc)
     # Verify the <Configuration> tag is properly defined.
     whitespace_checks(configuration, "Configuration", csc)
-    assert (
-        configuration == "Not Configurable"
-        or "Database" in configuration
-        or "http" in configuration
-    ), f"{csc} <Configuration> text must either be 'Not Configurable' or a URL to configuration DB or repo"
+    assert configuration == "Not Configurable" or "Database" in configuration or "http" in configuration, (
+        f"{csc} <Configuration> text must either be 'Not Configurable' or a URL to configuration DB or repo"
+    )

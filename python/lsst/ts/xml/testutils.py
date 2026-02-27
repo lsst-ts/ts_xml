@@ -20,6 +20,7 @@
 import pathlib
 
 import astropy.units
+
 from lsst.ts.xml import utils
 
 """This library defines common variables and functions used by the various
@@ -97,6 +98,55 @@ subsystems = [
     "WFOODS",
 ]
 
+"""Defines the dict of CSC name to enum."""
+
+subsystems_to_enums = {
+    "ATMCS": "atmcs",
+    "DIMM": "dimm",
+    "DREAM": "dream",
+    "EAS": "eas",
+    "ESS": "ess",
+    "GIS": "gis",
+    "HVAC": "hvac",
+    "MOSS": "moss",
+    "MTAOS": "mtaos",
+    "MTM1M3": "mtm1m3",
+    "MTM1M3TS": "mtm1m3ts",
+    "MTM2": "mtm2",
+    "MTVMS": "mtvms",
+    "PMD": "pmd",
+    "ATBuilding": "atbuilding",
+    "ATCamera": "atcamera",
+    "ATDome": "atdome",
+    "ATDomeTrajectory": "atdome_trajectory",
+    "ATHexapod": "athexapod",
+    "ATMonochromator": "atmonochromator",
+    "ATPneumatics": "atpneumatics",
+    "ATPtg": "atptg",
+    "ATSpectrograph": "atspectrograph",
+    "ATThermoelectricCooler": "atthermoelectric_cooler",
+    "ATWhiteLight": "atwhite_light",
+    "Electrometer": "electrometer",
+    "FiberSpectrograph": "fiber_spectrograph",
+    "Guider": "guider",
+    "LaserTracker": "laser_tracker",
+    "LEDProjector": "led_projector",
+    "LinearStage": "linear_stage",
+    "MTDome": "mtdome",
+    "MTDomeTrajectory": "mtdome_trajectory",
+    "MTHexapod": "mthexapod",
+    "MTMount": "mtmount",
+    "MTPtg": "mtptg",
+    "MTReflector": "mtreflector",
+    "MTRotator": "mtrotator",
+    "Scheduler": "scheduler",
+    "Script": "script",
+    "ScriptQueue": "script_queue",
+    "Test": "test",
+    "TunableLaser": "tunable_laser",
+    "Watcher": "watcher",
+}
+
 """Define the list of Generic Commands."""
 
 generic_commands = [
@@ -128,8 +178,7 @@ generic_events = [
 ]
 
 generic_topics = set(
-    [f"command_{val}" for val in generic_commands]
-    + [f"logevent_{val}" for val in generic_events]
+    [f"command_{val}" for val in generic_commands] + [f"logevent_{val}" for val in generic_events]
 )
 
 """Define the list of AddedGenerics categories."""

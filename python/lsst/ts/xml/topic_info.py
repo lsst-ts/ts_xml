@@ -88,8 +88,7 @@ _PRIVATE_FIELD_LIST = [
     ),
     FieldInfo(
         name="private_identity",
-        description="Identity of publisher: "
-        "SAL component name for a CSC or user@host for a user",
+        description="Identity of publisher: SAL component name for a CSC or user@host for a user",
         count=1,
         sal_type="string",
         units="unitless",
@@ -253,15 +252,9 @@ class TopicInfo:
         partitions: int = 1,
     ) -> None:
         if partitions != 1 and sal_name.startswith("logevent_"):
-            raise ValueError(
-                f"invalid partitions={partitions} for sal_name={sal_name}: "
-                "must be 1 for events"
-            )
+            raise ValueError(f"invalid partitions={partitions} for sal_name={sal_name}: must be 1 for events")
         if partitions < 1:
-            raise ValueError(
-                f"invalid partitions={partitions} for sal_name={sal_name}: "
-                "must be > 0"
-            )
+            raise ValueError(f"invalid partitions={partitions} for sal_name={sal_name}: must be > 0")
 
         self.component_name = component_name
         self.topic_subname = topic_subname
@@ -279,9 +272,7 @@ class TopicInfo:
         else:
             attr_name = "tel_" + sal_name
         self.attr_name = attr_name
-        self.kafka_name = (
-            f"lsst.{self.topic_subname}.{self.component_name}.{self.sal_name}"
-        )
+        self.kafka_name = f"lsst.{self.topic_subname}.{self.component_name}.{self.sal_name}"
         self.avro_subject = f"{self.kafka_name}-value"
         array_fields = dict()
         for field_info in self.fields.values():
@@ -338,9 +329,7 @@ class TopicInfo:
         dataclass = self._dataclass_cache.get(self._cache_key)
 
         if dataclass is None:
-            field_args = [
-                field_info.make_dataclass_tuple() for field_info in self.fields.values()
-            ]
+            field_args = [field_info.make_dataclass_tuple() for field_info in self.fields.values()]
 
             def validate(
                 model: typing.Any,
@@ -389,9 +378,7 @@ class TopicInfo:
                 type="record",
                 name=self.sal_name,
                 namespace=f"lsst.sal.{self.component_name}",
-                fields=[
-                    field_info.make_avro_schema() for field_info in self.fields.values()
-                ],
+                fields=[field_info.make_avro_schema() for field_info in self.fields.values()],
                 description=self.description,
             )
 

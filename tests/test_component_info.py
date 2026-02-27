@@ -185,10 +185,7 @@ class ComponentInfoTestCase(unittest.TestCase):
                         expected_units = "unitless"
                     assert field_info.units == expected_units
                     assert isinstance(field_info.description, str)
-                    assert (
-                        field_info.sal_type
-                        == ARRAYS_AND_SCALARS_SAL_FIELD_TYPES[field_name]
-                    )
+                    assert field_info.sal_type == ARRAYS_AND_SCALARS_SAL_FIELD_TYPES[field_name]
                     if isarray and field_name.endswith("0"):
                         expected_count = 5
                     else:
@@ -266,9 +263,7 @@ class ComponentInfoTestCase(unittest.TestCase):
             else:
                 assert instance_dict.keys() == SCALARS_FIELD_NAMES
             avro_schema = topic_info.make_avro_schema()
-            expected_default_values = {
-                field["name"]: field["default"] for field in avro_schema["fields"]
-            }
+            expected_default_values = {field["name"]: field["default"] for field in avro_schema["fields"]}
             for field_name, value in instance_dict.items():
                 field_info = topic_info.fields[field_name]
                 assert value == expected_default_values[field_name]

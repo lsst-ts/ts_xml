@@ -4,8 +4,9 @@ import enum
 import pathlib
 import xml.etree.ElementTree as et
 
-import lsst.ts.xml as ts_xml
 import pytest
+
+import lsst.ts.xml as ts_xml
 
 
 class Restriction(enum.Enum):
@@ -19,29 +20,15 @@ class Restriction(enum.Enum):
 
 def check_for_issues(csc: str, topic: str, restriction: Restriction) -> str:
     restriction = Restriction(restriction)  # check the argument
-    if (
-        csc == "ATAOS"
-        and topic == "Commands"
-        and restriction is Restriction.DB_OPTIONAL
-    ):
+    if csc == "ATAOS" and topic == "Commands" and restriction is Restriction.DB_OPTIONAL:
         jira = "DM-22612"
-    elif (
-        csc == "ATMCS"
-        and topic in ("Commands", "Events")
-        and restriction is Restriction.DB_CRITICAL
-    ):
+    elif csc == "ATMCS" and topic in ("Commands", "Events") and restriction is Restriction.DB_CRITICAL:
         jira = "DM-22613"
     elif (
-        csc == "ATSpectrograph"
-        and topic in ("Commands", "Events")
-        and restriction is Restriction.DB_OPTIONAL
+        csc == "ATSpectrograph" and topic in ("Commands", "Events") and restriction is Restriction.DB_OPTIONAL
     ):
         jira = "DM-22614"
-    elif (
-        csc == "FiberSpectrograph"
-        and topic == "Commands"
-        and restriction is Restriction.DB_OPTIONAL
-    ):
+    elif csc == "FiberSpectrograph" and topic == "Commands" and restriction is Restriction.DB_OPTIONAL:
         jira = "DM-22616"
     elif csc == "LOVE" and topic == "Events" and restriction is Restriction.DB_OPTIONAL:
         jira = "DM-22617"
@@ -51,27 +38,13 @@ def check_for_issues(csc: str, topic: str, restriction: Restriction) -> str:
         jira = "CAP-397"
     elif csc == "CCCamera" and restriction is Restriction.DB_OPTIONAL:
         jira = "CAP-402"
-    elif (
-        csc == "Scheduler"
-        and topic == "Telemetry"
-        and restriction is Restriction.DB_OPTIONAL
-    ):
+    elif csc == "Scheduler" and topic == "Telemetry" and restriction is Restriction.DB_OPTIONAL:
         jira = "DM-22625"
-    elif (
-        csc in ("Script", "ScriptQueue")
-        and topic == "Events"
-        and restriction is Restriction.DB_OPTIONAL
-    ):
+    elif csc in ("Script", "ScriptQueue") and topic == "Events" and restriction is Restriction.DB_OPTIONAL:
         jira = "DM-22626"
-    elif (
-        csc == "Test" and topic == "Commands" and restriction is Restriction.DB_OPTIONAL
-    ):
+    elif csc == "Test" and topic == "Commands" and restriction is Restriction.DB_OPTIONAL:
         jira = "DM-22627"
-    elif (
-        csc == "Watcher"
-        and topic in ("Commands", "Events")
-        and restriction is Restriction.DB_OPTIONAL
-    ):
+    elif csc == "Watcher" and topic in ("Commands", "Events") and restriction is Restriction.DB_OPTIONAL:
         jira = "DM-22628"
     else:
         jira = ""
@@ -87,9 +60,7 @@ def test_reserved_words(xmlfile: pathlib.Path, csc: str, topic: str) -> None:
         reserved_words(xmlfile=xmlfile, csc=csc, topic=topic, restriction=restriction)
 
 
-def reserved_words(
-    xmlfile: pathlib.Path, csc: str, topic: str, restriction: Restriction
-) -> None:
+def reserved_words(xmlfile: pathlib.Path, csc: str, topic: str, restriction: Restriction) -> None:
     """Test that the <EFDB_Name> field does not use any Reserved Words.
 
     Parameters
@@ -110,9 +81,7 @@ def reserved_words(
     if restriction in {Restriction.DB_CRITICAL, Restriction.DB_OPTIONAL}:
         jira = check_for_issues(csc, topic, restriction)
         if jira:
-            pytest.skip(
-                f"{jira}: {xmlfile.name} <EFDB_Name> uses {restriction.name} reserved word."
-            )
+            pytest.skip(f"{jira}: {xmlfile.name} <EFDB_Name> uses {restriction.name} reserved word.")
     # Test the <EFDB_Name> fields do not use Reserved Words.
     with open(str(xmlfile), "r", encoding="utf-8") as f:
         tree = et.parse(f)
@@ -129,6 +98,4 @@ def reserved_words(
         assert name.text is not None
         if name.text.upper() in word_list:
             bad_names.append(name.text.upper())
-    assert (
-        bad_names == []
-    ), f"{restriction.name} Reserved Words used one or more times: {(bad_names)}"
+    assert bad_names == [], f"{restriction.name} Reserved Words used one or more times: {(bad_names)}"

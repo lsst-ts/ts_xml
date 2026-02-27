@@ -194,9 +194,7 @@ class ForceActuatorData:
             return self.s_index
         raise RuntimeError(f"Unknow index type {index_type}.")
 
-    def near_neighbors_indices(
-        self, index_type: FAIndex
-    ) -> typing.Generator[int, None, None]:
+    def near_neighbors_indices(self, index_type: FAIndex) -> typing.Generator[int, None, None]:
         """Returns indices of near neighbors actuators.
 
         Parameters
@@ -214,9 +212,7 @@ class ForceActuatorData:
             if index is not None:
                 yield index
 
-    def far_neighbors_indices(
-        self, index_type: FAIndex
-    ) -> typing.Generator[int, None, None]:
+    def far_neighbors_indices(self, index_type: FAIndex) -> typing.Generator[int, None, None]:
         """Returns far neighbor indices.
 
         Parameters
@@ -235,9 +231,7 @@ class ForceActuatorData:
             if index is not None:
                 yield index
 
-    def only_far_neighbors_indices(
-        self, index_type: FAIndex
-    ) -> typing.Generator[int, None, None]:
+    def only_far_neighbors_indices(self, index_type: FAIndex) -> typing.Generator[int, None, None]:
         """Returns only far neighbor indices. Compared to far_neighbors_indices
         method, near neighbors are not returned.
 
@@ -271,10 +265,7 @@ class ForceActuatorData:
         distance : `float`
             Distance (in meters) between this and another force actuator.
         """
-        return sqrt(
-            (self.x_position - another.x_position) ** 2
-            + (self.y_position - another.y_position) ** 2
-        )
+        return sqrt((self.x_position - another.x_position) ** 2 + (self.y_position - another.y_position) ** 2)
 
 
 FATable = [
@@ -2958,9 +2949,7 @@ def force_actuator_from_id(actuator_id: int) -> ForceActuatorData:
         raise RuntimeError(f"Cannot find force actuator with ID {actuator_id}")
 
 
-def actuator_id_to_index(
-    actuator_id: int, index_type: FAIndex = FAIndex.PRIMARY
-) -> int | None:
+def actuator_id_to_index(actuator_id: int, index_type: FAIndex = FAIndex.PRIMARY) -> int | None:
     """Returns index for given actuator ID.
 
     Parameters

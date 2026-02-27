@@ -64,8 +64,7 @@ def get_component_info() -> None:
     parser.add_argument(
         "components",
         nargs="*",
-        help="Names of SAL components, e.g. 'Script ScriptQueue'. "
-        "Ignored if --all is specified",
+        help="Names of SAL components, e.g. 'Script ScriptQueue'. Ignored if --all is specified",
     )
     parser.add_argument(
         "--all",
@@ -114,8 +113,7 @@ def generate_component_info(name: str, output_dir: pathlib.PosixPath) -> None:
         "field_enums": [info.as_tuple() for info in field_enums],
         "global_enums": [info.as_tuple() for info in global_enums],
         "hash_table": {
-            topic_info.sal_name: topic_info.get_revcode()
-            for topic_info in component_info.topics.values()
+            topic_info.sal_name: topic_info.get_revcode() for topic_info in component_info.topics.values()
         },
     }
 
@@ -190,16 +188,9 @@ def generate_component_info(name: str, output_dir: pathlib.PosixPath) -> None:
             topic_name_str = topic_name_sub_element.text
 
             category_element = element.find("Category")
-            category = (
-                category_element.text
-                if category_element is not None
-                else topic_name_str
-            )
+            category = category_element.text if category_element is not None else topic_name_str
 
-            if (
-                category not in component_info.added_generics
-                and category != "mandatory"
-            ):
+            if category not in component_info.added_generics and category != "mandatory":
                 elements_to_delete.append(element)
 
         for element in elements_to_delete:
@@ -214,9 +205,7 @@ def generate_component_info(name: str, output_dir: pathlib.PosixPath) -> None:
                     new_text = generics_root[set_index][topic_index][attr_index].text
                     if new_text is not None:
                         new_text = new_text.replace("SALGeneric", f"{name}")
-                        generics_root[set_index][topic_index][
-                            attr_index
-                        ].text = new_text
+                        generics_root[set_index][topic_index][attr_index].text = new_text
 
     generics.write(
         component_output_dir / f"{name}_Generics.xml",

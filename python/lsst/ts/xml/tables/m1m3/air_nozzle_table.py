@@ -22,7 +22,7 @@
 import typing
 from dataclasses import dataclass
 
-from lsst.ts.xml.enums.MTM1M3TS import AirNozzle
+from lsst.ts.xml.enums.mtm1m3ts import AirNozzle
 
 __all__ = [
     "AirNozzleTable",
