@@ -30,6 +30,8 @@ import typing
 import warnings
 from xml.etree import ElementTree
 
+import numpy as np
+
 from .field_info import FieldInfo
 from .sal_topic_utils import find_optional_text, find_required_text
 from .type_hints import BaseMsgType
@@ -237,10 +239,16 @@ class TopicInfo:
     # Cache of (component_name, attr_name): avro schema
     _avro_schema_cache: dict[tuple[str, str], dict[str, typing.Any]] = dict()
 
+    # TODO OSW-1915 Remove backward compatibility with python data types.
     # Cache of (component_name, attr_name): dataclass
     # This cache is necessary, so that different SalInfo instances
     # have the same data classes.
     _dataclass_cache: dict[tuple[str, str], typing.Type[BaseMsgType]] = dict()
+
+    # Cache of (component_name, attr_name): dataclass with numpy data types
+    # This cache is necessary, so that different SalInfo instances
+    # have the same data classes.
+    _numpy_dataclass_cache: dict[tuple[str, str], typing.Type[BaseMsgType]] = dict()
 
     def __init__(
         self,
@@ -324,12 +332,26 @@ class TopicInfo:
             fields=fields,
         )
 
-    def make_dataclass(self) -> typing.Type[BaseMsgType]:
-        """Create a dataclass."""
-        dataclass = self._dataclass_cache.get(self._cache_key)
+    def make_dataclass(self, with_numpy_types: bool = False) -> typing.Type[BaseMsgType]:
+        """Create a dataclass.
+
+        Parameters
+        ----------
+        with_numpy_types : `bool`
+            If True, create a dataclass with numpy types. Default is False.
+        """
+        if with_numpy_types:
+            dataclass = self._numpy_dataclass_cache.get(self._cache_key)
+        else:
+            # TODO OSW-1915 Remove backward compatibility with python data
+            #  types.
+            warnings.warn("Set with_numpy_datatypes=True instead.", DeprecationWarning)
+            dataclass = self._dataclass_cache.get(self._cache_key)
 
         if dataclass is None:
-            field_args = [field_info.make_dataclass_tuple() for field_info in self.fields.values()]
+            field_args = [
+                field_info.make_dataclass_tuple(with_numpy_types) for field_info in self.fields.values()
+            ]
 
             def validate(
                 model: typing.Any,
@@ -366,7 +388,12 @@ class TopicInfo:
             dataclass = dataclasses.make_dataclass(
                 self.attr_name, field_args, namespace={"__post_init__": validate}
             )
-            self._dataclass_cache[self._cache_key] = dataclass
+            if with_numpy_types:
+                self._numpy_dataclass_cache[self._cache_key] = dataclass
+            else:
+                # TODO OSW-1915 Remove backward compatibility with python
+                #  data types.
+                self._dataclass_cache[self._cache_key] = dataclass
 
         return dataclass
 
@@ -387,14 +414,51 @@ class TopicInfo:
         return avro_schema
 
     def make_avro_schema_as_json(self) -> str:
-        """Convert the avro schema to a json string.
+        """Convert the avro schema to a JSON string.
 
         Returns
         -------
         `str`
-            Avro schema as a json formatted string.
+            Avro schema as a JSON formatted string.
         """
         return json.dumps(self.make_avro_schema(), indent=4)
+
+    def convert_to_numpy_dict(self, data_dict: dict[str, typing.Any]) -> dict[str, typing.Any]:
+        """Convert the data dict with python types to a dict with numpy types.
+
+        Parameters
+        ----------
+        data_dict : `dict` [ `str`, `typing.Any` ]
+            The data dict with python types to convert.
+
+        Returns
+        -------
+        dict[str, typing.Any]
+            The converted data dict.
+
+        Raises
+        ------
+        TypeError
+            In case the data_dict contains data of the wrong type.
+        """
+        numpy_data_dic: dict[str, typing.Any] = {}
+        for name in data_dict:
+            field = self.fields[name]
+            _, numpy_type, _ = field.make_dataclass_tuple(with_numpy_types=True)
+            if name in self.array_fields:
+                # This next construction is necessary because the python
+                # GenericAlias class doesn't have a method to get the data
+                # type inside it.
+                try:
+                    numpy_data_dic[name] = np.array(data_dict[name], dtype=numpy_type.__args__[0])
+                except ValueError as e:
+                    raise TypeError(e)
+            else:
+                try:
+                    numpy_data_dic[name] = numpy_type(data_dict[name])
+                except ValueError as e:
+                    raise TypeError(e)
+        return numpy_data_dic
 
     def get_revcode(self) -> str:
         """Compute the revcode for this topic.

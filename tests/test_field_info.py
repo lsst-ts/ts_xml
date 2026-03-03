@@ -19,12 +19,17 @@
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-from lsst.ts.xml.field_info import AVRO_TYPES, PYTHON_TYPES
+from lsst.ts.xml.field_info import AVRO_TYPES, NUMPY_TYPES, PYTHON_TYPES
 from lsst.ts.xml.testutils import idl_types
 
 
+# TODO OSW-1915 Remove backward compatibility with python data types.
 def test_python_types() -> None:
     assert set(idl_types) == set(PYTHON_TYPES.keys())
+
+
+def test_numpy_types() -> None:
+    assert set(idl_types) == set(NUMPY_TYPES.keys())
 
 
 def test_avro_types() -> None:
