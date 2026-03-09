@@ -169,6 +169,23 @@
   </SALCommand>
   <SALCommand>
     <Subsystem>MTDome</Subsystem>
+    <EFDB_Topic>MTDome_command_resetDrivesEl</EFDB_Topic>
+    <Description>Reset one or more EL drives. This is necessary when exiting from FAULT state without going to Degraded Mode since the drives don't reset themselves.</Description>
+    <item>
+      <EFDB_Name>reset</EFDB_Name>
+      <Description>Desired reset action to execute on each EL drive: false means don't reset, true means reset.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>2</Count>
+    </item>
+  </SALCommand>
+  <SALCommand>
+    <Subsystem>MTDome</Subsystem>
+    <EFDB_Topic>MTDome_command_calibrateEl</EFDB_Topic>
+    <Description>Move both EL drives towards zero until the limit switches engage. This may be necessary to avoid skew in the light/windscreen panels.</Description>
+  </SALCommand>
+  <SALCommand>
+    <Subsystem>MTDome</Subsystem>
     <EFDB_Topic>MTDome_command_resetDrivesShutter</EFDB_Topic>
     <Description>Reset one or more Aperture Shutter drives. This is necessary when exiting from FAULT state without going to Degraded Mode since the drives don't reset themselves.</Description>
     <item>
