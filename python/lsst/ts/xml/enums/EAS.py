@@ -19,9 +19,16 @@
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-__all__ = ["ControlFeature"]
+__all__ = ["AHU", "ControlFeature"]
 
 import enum
+
+
+class AHU(enum.IntEnum):
+    lowerAHU01P05 = 1
+    lowerAHU02P05 = 2
+    lowerAHU03P05 = 3
+    lowerAHU04P05 = 4
 
 
 class ControlFeature(enum.IntFlag):
