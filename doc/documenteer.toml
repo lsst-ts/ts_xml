@@ -1,7 +1,17 @@
+
+# This template contains enough information for documenteer to build
+
 [project]
+# The title of the index page.
 title = "XML schema for Vera Rubin Observatory Telescope Software Components"
-copyright = "2015-2024 Association of Universities for Research in Astronomy, Inc. (AURA)"
+# Copyright information displayed on the footer of each page
+copyright = "2015-2026 Association of Universities for Research in Astronomy, Inc. (AURA)"
 
 [project.python]
+# pyproject.toml package name, fills out unseen metadata
 package = "ts_xml"
+documentation_url_key = "documentation"
+github_url_key = "repository"
 
+[sphinx]
+extensions = ["sphinx-jsonschema"]
