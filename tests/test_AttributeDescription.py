@@ -3,8 +3,9 @@
 import pathlib
 import xml.etree.ElementTree as et
 
-import lsst.ts.xml as ts_xml
 import pytest
+
+import lsst.ts.xml as ts_xml
 
 
 def check_for_issues(csc: str, topic: str) -> str:
@@ -36,6 +37,4 @@ def test_attribute_description(xmlfile: pathlib.Path, csc: str, topic: str) -> N
     root = tree.getroot()
     for description in root.findall(f"./{saltype}/item/Description"):
         assert description.text is not None, "Description cannot be blank."
-        assert (
-            description.text.replace(" ", "") != ""
-        ), "Description cannot contain only whitespace."
+        assert description.text.replace(" ", "") != "", "Description cannot contain only whitespace."

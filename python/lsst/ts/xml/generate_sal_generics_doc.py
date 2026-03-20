@@ -49,9 +49,7 @@ def write_generic_page() -> None:
     write_heading(cf, "SAL Generics", char="*", overline=True)
     cf.write("Generic topics can be included with any CSC.\n")
     cf.write("Generic topics can be categorized or not.\n")
-    cf.write(
-        "A CSC can declare which categories or individual generics are supported.\n"
-    )
+    cf.write("A CSC can declare which categories or individual generics are supported.\n")
     cf.write("More information can be found in the document LSE-209.\n")
     cf.write("\n")
     xml_dir = utils.get_sal_interfaces_dir()
@@ -84,9 +82,7 @@ def write_generic_page() -> None:
                             if gen_attribute.text == "1":
                                 pass
                             else:
-                                cf.write(
-                                    f":{gen_attribute.tag}: {gen_attribute.text}\n"
-                                )
+                                cf.write(f":{gen_attribute.tag}: {gen_attribute.text}\n")
                         elif gen_attribute.tag in IGNORED_ATTRIBUTES:
                             pass
                         else:

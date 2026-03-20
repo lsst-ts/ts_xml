@@ -329,11 +329,7 @@ def find_thermocouple(scanner: Scanner, channel: int) -> ThermocoupleData | None
         if such TC doesn't exists.
     """
     try:
-        return next(
-            tc
-            for tc in ThermocoupleTable
-            if tc.scanner == scanner and tc.channel == channel
-        )
+        return next(tc for tc in ThermocoupleTable if tc.scanner == scanner and tc.channel == channel)
     except StopIteration:
         return None
 
@@ -355,9 +351,7 @@ def calibration_pairs() -> list[tuple[ThermocoupleData, ThermocoupleData]]:
         except StopIteration:
             try:
                 # find
-                c_p = next(
-                    c for c in calib_tc[i + 1 :] if c.name.startswith(tc.name[:-1])
-                )
+                c_p = next(c for c in calib_tc[i + 1 :] if c.name.startswith(tc.name[:-1]))
                 pairs.append((tc, c_p))
             except StopIteration:
                 raise Exception(f"Cannot find pair for {tc.name}.")

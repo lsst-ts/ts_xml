@@ -73,10 +73,7 @@ class ComponentInfo:
 
     def make_avro_schema_dict(self) -> dict[str, dict[str, typing.Any]]:
         """Create a dict of topic attr name: Avro schema dict."""
-        return {
-            topic_info.attr_name: topic_info.make_avro_schema()
-            for topic_info in self.topics.values()
-        }
+        return {topic_info.attr_name: topic_info.make_avro_schema() for topic_info in self.topics.values()}
 
     def _get_topic_elements(self) -> list[ElementTree.Element]:
         """Get component-specific topic elements.
@@ -160,14 +157,8 @@ class ComponentInfo:
         The ``name`` field must be set before calling this.
         """
         interfaces_dir = get_sal_interfaces_dir()
-        subsystems_root = ElementTree.parse(
-            interfaces_dir / "SALSubsystems.xml"
-        ).getroot()
-        elements = [
-            elt
-            for elt in subsystems_root
-            if find_required_text(elt, "Name") == self.name
-        ]
+        subsystems_root = ElementTree.parse(interfaces_dir / "SALSubsystems.xml").getroot()
+        elements = [elt for elt in subsystems_root if find_required_text(elt, "Name") == self.name]
         if not elements:
             raise ValueError(f"No such component {self.name}")
         if len(elements) > 1:
@@ -176,8 +167,7 @@ class ComponentInfo:
 
         self.description = find_optional_text(element, "Description", "")
         self.added_generics = ["mandatory"] + [
-            item.strip()
-            for item in find_required_text(element, "AddedGenerics").split(",")
+            item.strip() for item in find_required_text(element, "AddedGenerics").split(",")
         ]
         self.indexed = find_required_text(element, "IndexEnumeration").strip() != "no"
 

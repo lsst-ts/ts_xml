@@ -30,7 +30,7 @@ import enum
 
 # MTHexapod and MTRotator have the same enum values for
 # ControllerState and EnabledSubstate.
-from .MTRotator import ControllerState, EnabledSubstate
+from .mtrotator import ControllerState, EnabledSubstate
 
 
 class ApplicationStatus(enum.IntFlag):

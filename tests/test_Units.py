@@ -5,8 +5,9 @@ import xml.etree.ElementTree as et
 
 import astropy.constants
 import astropy.units
-import lsst.ts.xml as ts_xml
 import pytest
+
+import lsst.ts.xml as ts_xml
 
 # These nonstandard units are explicitly allowed.
 # Remove entries if and when astropy adds support for them.
@@ -15,9 +16,7 @@ NONSTANDARD_UNITS = {"unitless", "psia", "psig", "VA", "carousel steps", "in. Hâ
 astropy.units.imperial.enable()
 # Add rpm and gpm (gallon/min).
 rpm = astropy.units.def_unit("rpm", (astropy.units.cycle * 60) / astropy.units.s)
-gpm = astropy.units.def_unit(
-    "gallon/min", (astropy.units.imperial.gallon * 60) / astropy.units.s
-)
+gpm = astropy.units.def_unit("gallon/min", (astropy.units.imperial.gallon * 60) / astropy.units.s)
 g0 = astropy.units.def_unit("g0", astropy.constants.g0)
 astropy.units.add_enabled_units([rpm, g0, gpm])
 
@@ -45,9 +44,7 @@ def test_units(xmlfile: pathlib.Path, csc: str, topic: str) -> None:
     # Check for known issues.
     jira = check_for_issues(csc, topic)
     if jira:
-        pytest.skip(
-            f"{jira}: {xmlfile.name} <Unit> fields do not conform to astropy standards."
-        )
+        pytest.skip(f"{jira}: {xmlfile.name} <Unit> fields do not conform to astropy standards.")
     # Test the attribute <Description> fields.
     with open(str(xmlfile), "r", encoding="utf-8") as f:
         tree = et.parse(f)
@@ -80,9 +77,7 @@ def test_string_units(xmlfile: pathlib.Path, csc: str, topic: str) -> None:
     # Check for known issues.
     jira = check_for_issues(csc, topic)
     if jira:
-        pytest.skip(
-            f"{jira}: {xmlfile.name} <Unit> fields do not conform to astropy standards."
-        )
+        pytest.skip(f"{jira}: {xmlfile.name} <Unit> fields do not conform to astropy standards.")
     # Test the attribute <Units> fields.
     with open(str(xmlfile), "r", encoding="utf-8") as f:
         tree = et.parse(f)
@@ -97,6 +92,4 @@ def test_string_units(xmlfile: pathlib.Path, csc: str, topic: str) -> None:
             if csc in ["ATPtg", "MTPtg"] and name in ts_xml.strings_with_units:
                 assert True
             else:
-                assert (
-                    unit == "unitless"
-                ), f"{csc}: string-type attribute {name!r} has the unit {unit!r}"
+                assert unit == "unitless", f"{csc}: string-type attribute {name!r} has the unit {unit!r}"

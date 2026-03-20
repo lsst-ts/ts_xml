@@ -3,8 +3,9 @@
 import pathlib
 import xml.etree.ElementTree as et
 
-import lsst.ts.xml as ts_xml
 import pytest
+
+import lsst.ts.xml as ts_xml
 
 
 def get_salgenerics_file() -> pathlib.Path:
@@ -35,25 +36,23 @@ def test_salgenerics_topics() -> None:
     command_prefix = required_prefix + "command_"
     for topic in root.findall("./SALCommandSet/SALCommand/EFDB_Topic"):
         assert topic.text is not None
-        assert topic.text.startswith(
-            command_prefix
-        ), f"Generic command '{topic.text}' does not start with '{command_prefix}'"
+        assert topic.text.startswith(command_prefix), (
+            f"Generic command '{topic.text}' does not start with '{command_prefix}'"
+        )
         topics.add(topic.text[topic_name_start_ind:])
 
     event_prefix = required_prefix + "logevent_"
     for topic in root.findall("./SALEventSet/SALEvent/EFDB_Topic"):
         assert topic.text is not None
-        assert topic.text.startswith(
-            event_prefix
-        ), f"Generic event '{topic.text}' does not start with '{event_prefix}'"
+        assert topic.text.startswith(event_prefix), (
+            f"Generic event '{topic.text}' does not start with '{event_prefix}'"
+        )
         topics.add(topic.text[topic_name_start_ind:])
     assert sorted(topics) == sorted(ts_xml.generic_topics)
 
 
 @pytest.mark.parametrize("xmlfile,csc,topic", ts_xml.get_xmlfile_csc_topic())
-def test_xmlfiles_do_not_define_generic_topics(
-    xmlfile: pathlib.Path, csc: str, topic: str
-) -> None:
+def test_xmlfiles_do_not_define_generic_topics(xmlfile: pathlib.Path, csc: str, topic: str) -> None:
     """Test that CSC XML files do not define any of the generic topics.
 
     NOTE: Telemetry is skipped because there is no generic telemetry.

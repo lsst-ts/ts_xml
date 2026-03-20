@@ -4,8 +4,9 @@ import pathlib
 import re
 import xml.etree.ElementTree as et
 
-import lsst.ts.xml as ts_xml
 import pytest
+
+import lsst.ts.xml as ts_xml
 
 
 def check_for_issues(csc: str, topic: str, test: str) -> str:
@@ -45,8 +46,7 @@ def test_topic_naming_csc(xmlfile: pathlib.Path, csc: str, topic: str) -> None:
         assert name.text is not None
         index = 0
         assert name.text.split("_")[index] == csc, (
-            f"<EFDB_Topic> {name.text} in {xmlfile.name} "
-            "does not properly contain the CSC name."
+            f"<EFDB_Topic> {name.text} in {xmlfile.name} does not properly contain the CSC name."
         )
 
 
@@ -88,8 +88,7 @@ def test_topic_naming_type(xmlfile: pathlib.Path, csc: str, topic: str) -> None:
             topictype = "command"
         index = 1
         assert name.text.split("_")[index] == topictype, (
-            f"<EFDB_Topic> {name.text} in {xmlfile.name} "
-            "does not properly contain the topicType string."
+            f"<EFDB_Topic> {name.text} in {xmlfile.name} does not properly contain the topicType string."
         )
 
 
@@ -128,12 +127,7 @@ def test_topic_naming_alias(xmlfile: pathlib.Path, csc: str, topic: str) -> None
             index = 1
         else:
             index = 2
-        assert (
-            re.match(
-                r"^[a-z]([a-zA-Z0-9_]*$)", name.text.split("_", maxsplit=index)[index]
-            )
-            is not None
-        ), (
+        assert re.match(r"^[a-z]([a-zA-Z0-9_]*$)", name.text.split("_", maxsplit=index)[index]) is not None, (
             f"{name.text} in {xmlfile.name} does not begin with a lowercase letter "
             "and/or contains non-alphanumeric characters."
         )
@@ -171,6 +165,4 @@ def test_topic_naming_duplicate(xmlfile: pathlib.Path, csc: str, topic: str) -> 
     for name in root.findall(f"./{saltype}/EFDB_Topic"):
         assert name.text is not None
         topic_names.append(name.text)
-    assert len(topic_names) == len(
-        set(topic_names)
-    ), f"The {xmlfile} file contains duplicate topic names."
+    assert len(topic_names) == len(set(topic_names)), f"The {xmlfile} file contains duplicate topic names."

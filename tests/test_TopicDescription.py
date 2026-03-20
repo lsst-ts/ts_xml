@@ -3,8 +3,9 @@
 import pathlib
 import xml.etree.ElementTree as et
 
-import lsst.ts.xml as ts_xml
 import pytest
+
+import lsst.ts.xml as ts_xml
 
 
 def check_for_issues(csc: str, topic: str) -> str:
@@ -44,9 +45,7 @@ def test_topic_description(xmlfile: pathlib.Path, csc: str, topic: str) -> None:
         elif description.text is None:
             faulty_descriptions.append(f"Description of {name.text} cannot be blank.")
         elif description.text.replace(" ", "") == "":
-            faulty_descriptions.append(
-                f"Description of {name.text} cannot contain only whitespace."
-            )
+            faulty_descriptions.append(f"Description of {name.text} cannot contain only whitespace.")
 
     # Check for known issues.
     jira = check_for_issues(csc, topic)

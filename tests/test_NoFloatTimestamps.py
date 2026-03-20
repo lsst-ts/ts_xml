@@ -4,8 +4,9 @@ import pathlib
 import re
 import xml.etree.ElementTree as et
 
-import lsst.ts.xml as ts_xml
 import pytest
+
+import lsst.ts.xml as ts_xml
 
 TAI_REGEX = re.compile(r"\bTAI\b", re.IGNORECASE)
 
@@ -67,11 +68,9 @@ def test_no_float_timestamps(xmlfile: pathlib.Path, csc: str, topic: str) -> Non
             has_timestamp_in_name = "timestamp" in efdb_name.lower()
             has_tai_in_description = bool(TAI_REGEX.search(description))
 
-            if (
-                has_timestamp_in_name or has_tai_in_description
-            ) and idl_type == "float":
+            if (has_timestamp_in_name or has_tai_in_description) and idl_type == "float":
                 violators.append(f"{topic_name}:{efdb_name}")
 
-    assert (
-        not violators
-    ), f"IDL_Type must not be `float` for timestamp. Use `double` instead: {'; '.join(violators)}"
+    assert not violators, (
+        f"IDL_Type must not be `float` for timestamp. Use `double` instead: {'; '.join(violators)}"
+    )

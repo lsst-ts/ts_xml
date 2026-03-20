@@ -25,10 +25,14 @@ __all__ = ["FieldInfo"]
 
 import dataclasses
 import typing
+import warnings
 from xml.etree import ElementTree
+
+import numpy as np
 
 from .sal_topic_utils import find_optional_text, find_required_text
 
+# TODO OSW-1915 Remove backward compatibility with python data types.
 # Dict of SAL type: python type
 PYTHON_TYPES = {
     "boolean": bool,
@@ -42,6 +46,21 @@ PYTHON_TYPES = {
     "float": float,
     "double": float,
     "string": str,
+}
+
+# Dict of SAL type: numpy type
+NUMPY_TYPES = {
+    "boolean": np.bool,
+    "byte": np.uint8,
+    "short": np.short,
+    "int": np.int32,
+    "long": np.int64,
+    "long long": np.longlong,
+    "unsigned short": np.ushort,
+    "unsigned int": np.uint32,
+    "float": np.float32,
+    "double": np.double,
+    "string": np.str_,
 }
 
 # Dict of SAL type: Avro type
@@ -86,6 +105,9 @@ class FieldInfo:
     default_scalar_value : `typing.Any`
         For a scalar: the default value.
         For an array: the default value of one element.
+    default_numpy_scalar_value : `typing.Any`
+        For a numpy scalar: the default value.
+        For a numpy array: the default value of one element.
     """
 
     name: str
@@ -94,6 +116,7 @@ class FieldInfo:
     units: str = "unitless"
     description: str = ""
     default_scalar_value: typing.Any = dataclasses.field(init=False)
+    default_numpy_scalar_value: typing.Any = dataclasses.field(init=False)
 
     def __post_init__(self) -> None:
         if self.sal_type == "string":
@@ -103,6 +126,8 @@ class FieldInfo:
                 self.count = 1
         python_type = PYTHON_TYPES[self.sal_type]
         self.default_scalar_value = python_type()
+        numpy_type = NUMPY_TYPES[self.sal_type]
+        self.default_numpy_scalar_value = numpy_type()
 
     @classmethod
     def from_xml_element(cls, element: ElementTree.Element) -> FieldInfo:
@@ -121,18 +146,33 @@ class FieldInfo:
         )
 
     def make_dataclass_tuple(
-        self,
+        self, with_numpy_types: bool = False
     ) -> tuple[str, typing.Type[typing.Any], dataclasses.Field]:
-        """Create field data for topic_info.make_dataclasses."""
-        scalar_type = PYTHON_TYPES[self.sal_type]
+        """Create field data for topic_info.make_dataclasses.
+
+        Parameters
+        ----------
+        with_numpy_types : `bool`
+            If True, create a dataclass tuple with numpy datatypes. Default is
+            False.
+        """
+        if with_numpy_types:
+            scalar_type = NUMPY_TYPES[self.sal_type]
+            default_value = self.default_numpy_scalar_value
+        else:
+            # TODO OSW-1915 Remove backward compatibility with python data
+            #  types.
+            warnings.warn("Set with_numpy_types=True instead.", DeprecationWarning)
+            scalar_type = PYTHON_TYPES[self.sal_type]
+            default_value = self.default_scalar_value
         if self.count > 1:
             dtype: typing.Type[typing.Any] = list[scalar_type]  # type: ignore
             field: dataclasses.Field = dataclasses.field(
-                default_factory=lambda: [self.default_scalar_value] * self.count  # type: ignore
+                default_factory=lambda: [default_value] * self.count  # type: ignore
             )
         else:
             dtype = scalar_type
-            field = dataclasses.field(default=self.default_scalar_value)
+            field = dataclasses.field(default=default_value)
         return (self.name, dtype, field)
 
     def make_avro_schema(self) -> dict[str, typing.Any]:

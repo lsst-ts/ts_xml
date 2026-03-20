@@ -3,8 +3,9 @@
 import pathlib
 import xml.etree.ElementTree as et
 
-import lsst.ts.xml as ts_xml
 import pytest
+
+import lsst.ts.xml as ts_xml
 
 
 def check_for_issues(test: str, csc: str, topic: str) -> str:
@@ -59,15 +60,13 @@ def test_idl_type(xmlfile: pathlib.Path, csc: str, topic: str) -> None:
     # Check for known issues.
     jira = check_for_issues("type", csc, topic)
     if jira:
-        pytest.skip(
-            f"{jira}: {xmlfile.name} <IDL_Type> fields do not conform to IDL standards."
-        )
+        pytest.skip(f"{jira}: {xmlfile.name} <IDL_Type> fields do not conform to IDL standards.")
     # Test the attribute <Description> fields.
     with open(str(xmlfile), "r", encoding="utf-8") as f:
         tree = et.parse(f)
     root = tree.getroot()
     for idl_type in root.findall(f"./{saltype}/item/IDL_Type"):
         assert idl_type.text is not None, "IDL_Type cannot be blank."
-        assert (
-            idl_type.text in ts_xml.idl_types
-        ), f"IDL_Type {idl_type.text} needs to be one of {ts_xml.idl_types}"
+        assert idl_type.text in ts_xml.idl_types, (
+            f"IDL_Type {idl_type.text} needs to be one of {ts_xml.idl_types}"
+        )

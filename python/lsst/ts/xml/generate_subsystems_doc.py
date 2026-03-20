@@ -61,9 +61,7 @@ def topic_sort_key(child: ElementTree.Element) -> tuple[str, str]:
     return (child.tag, second_value)
 
 
-def write_heading(
-    f: TextIO, name: str, char: str = "-", overline: bool = False
-) -> None:
+def write_heading(f: TextIO, name: str, char: str = "-", overline: bool = False) -> None:
     """Write a heading with specified underline and optional overline.
 
     Parameters
@@ -127,9 +125,7 @@ def create_generics_dict(generics: str | None) -> dict[str, list[str]]:
         for generic in generics.split(","):
             generic = generic.strip()
             try:
-                commands.extend(
-                    getattr(testutils, f"added_generics_{generic}_commands")
-                )
+                commands.extend(getattr(testutils, f"added_generics_{generic}_commands"))
                 events.extend(getattr(testutils, f"added_generics_{generic}_events"))
             except AttributeError:
                 if generic.startswith("command"):
@@ -196,27 +192,19 @@ def add_generics(
                 for gen_field in gen_topic:
                     if gen_field.tag == "item":
                         gen_field_name_text = find_text_in_xml(gen_field, "EFDB_Name")
-                        gen_field_description_text = find_text_in_xml(
-                            gen_field, "Description"
-                        )
-                        cf.write(
-                            f"\n.. _{subsystem}:{short_name}:{gen_field_name_text}:\n\n"
-                        )
+                        gen_field_description_text = find_text_in_xml(gen_field, "Description")
+                        cf.write(f"\n.. _{subsystem}:{short_name}:{gen_field_name_text}:\n\n")
                         write_heading(cf, gen_field_name_text, char="*")
                         for gen_attribute in gen_field:
                             if gen_attribute.tag in ["Count", "IDL_Size"]:
                                 if gen_attribute.text == "1":
                                     pass
                                 else:
-                                    cf.write(
-                                        f":{gen_attribute.tag}: {gen_attribute.text}\n"
-                                    )
+                                    cf.write(f":{gen_attribute.tag}: {gen_attribute.text}\n")
                             elif gen_attribute.tag in IGNORED_ATTRIBUTES:
                                 pass
                             else:
-                                cf.write(
-                                    f":{gen_attribute.tag}: {gen_attribute.text}\n"
-                                )
+                                cf.write(f":{gen_attribute.tag}: {gen_attribute.text}\n")
                         cf.write(f"\n**Description**: {gen_field_description_text}\n\n")
                     elif gen_field.tag in IGNORED_FIELDS:
                         pass
@@ -337,9 +325,7 @@ SAL Interfaces for all CSCs and other SAL components.
                     for field in topic:
                         if field.tag == "item":
                             efdb_name = find_text_in_xml(field, "EFDB_Name")
-                            cf.write(
-                                f"\n.. _{subsystem}:{dds_type}:{short_name}:{efdb_name}:\n\n"
-                            )
+                            cf.write(f"\n.. _{subsystem}:{dds_type}:{short_name}:{efdb_name}:\n\n")
                             write_heading(cf, name=efdb_name, char="*")
                             for attribute in field:
                                 if attribute.tag in IGNORED_ATTRIBUTES:
@@ -348,9 +334,7 @@ SAL Interfaces for all CSCs and other SAL components.
                                     if attribute.text == "1":
                                         pass
                                     else:
-                                        cf.write(
-                                            f":{attribute.tag}: {attribute.text}\n"
-                                        )
+                                        cf.write(f":{attribute.tag}: {attribute.text}\n")
                                 else:
                                     cf.write(f":{attribute.tag}: {attribute.text}\n")
                             description = find_text_in_xml(field, "Description")
@@ -360,6 +344,4 @@ SAL Interfaces for all CSCs and other SAL components.
                         else:
                             cf.write(f":{field.tag}: {field.text}\n")
                         cf.write("\n")
-                add_generics(
-                    cf, subsystem, set_name, has_generics, has_specific_topic_type
-                )
+                add_generics(cf, subsystem, set_name, has_generics, has_specific_topic_type)

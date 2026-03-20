@@ -2,9 +2,10 @@
 # -*- coding: utf-8 -*-
 import pathlib
 
-import lsst.ts.xml as ts_xml
 import pytest
 from lxml import etree
+
+import lsst.ts.xml as ts_xml
 
 
 def check_for_issues(csc: str, topic: str) -> str:

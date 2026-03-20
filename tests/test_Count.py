@@ -3,8 +3,9 @@
 import pathlib
 import xml.etree.ElementTree as et
 
-import lsst.ts.xml as ts_xml
 import pytest
+
+import lsst.ts.xml as ts_xml
 
 
 @pytest.mark.parametrize("xmlfile,csc,topic", ts_xml.get_xmlfile_csc_topic())
@@ -30,15 +31,11 @@ def test_count(xmlfile: pathlib.Path, csc: str, topic: str) -> None:
         for attrib in root.findall(f"./{saltype}/item"):
             count = attrib.find("Count")
             assert count is not None
-            assert (
-                count.text is not None
-            ), f"The <Count> tag cannot be blank: {xmlfile.name}"
+            assert count.text is not None, f"The <Count> tag cannot be blank: {xmlfile.name}"
             assert count.text.isdigit()
             int_count = int(count.text)
             assert int_count > 0
             idltype = attrib.find("IDL_Type")
             assert idltype is not None
             if idltype is not None and idltype.text == "string":
-                assert (
-                    int_count == 1
-                ), f"The <Count> for a string must be 1, not {count.text}: {xmlfile.name}"
+                assert int_count == 1, f"The <Count> for a string must be 1, not {count.text}: {xmlfile.name}"

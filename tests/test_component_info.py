@@ -21,9 +21,10 @@
 
 import typing
 import unittest
+import warnings
 
 from lsst.ts.xml.component_info import ComponentInfo
-from lsst.ts.xml.field_info import AVRO_TYPES, PYTHON_TYPES
+from lsst.ts.xml.field_info import AVRO_TYPES, NUMPY_TYPES, PYTHON_TYPES
 
 #: Generic topic attr names used by the Test SAL component.
 GENERIC_TOPICS = {
@@ -185,10 +186,7 @@ class ComponentInfoTestCase(unittest.TestCase):
                         expected_units = "unitless"
                     assert field_info.units == expected_units
                     assert isinstance(field_info.description, str)
-                    assert (
-                        field_info.sal_type
-                        == ARRAYS_AND_SCALARS_SAL_FIELD_TYPES[field_name]
-                    )
+                    assert field_info.sal_type == ARRAYS_AND_SCALARS_SAL_FIELD_TYPES[field_name]
                     if isarray and field_name.endswith("0"):
                         expected_count = 5
                     else:
@@ -257,23 +255,29 @@ class ComponentInfoTestCase(unittest.TestCase):
         component_info = ComponentInfo(name="Test", topic_subname=topic_subname)
         for attr_name, isarray in ARRAYS_AND_SCALARS_TOPICS:
             topic_info = component_info.topics[attr_name]
-            dataclass = topic_info.make_dataclass()
-            assert isinstance(dataclass, type)
-            instance = dataclass()
-            instance_dict = vars(instance)
-            if isarray:
-                assert instance_dict.keys() == ARRAYS_FIELD_NAMES
-            else:
-                assert instance_dict.keys() == SCALARS_FIELD_NAMES
-            avro_schema = topic_info.make_avro_schema()
-            expected_default_values = {
-                field["name"]: field["default"] for field in avro_schema["fields"]
-            }
-            for field_name, value in instance_dict.items():
-                field_info = topic_info.fields[field_name]
-                assert value == expected_default_values[field_name]
-                expected_python_type = PYTHON_TYPES[field_info.sal_type]
-                if isarray and field_name.endswith("0"):
-                    assert all(isinstance(item, expected_python_type) for item in value)
+
+            # TODO OSW-1915 Remove backward compatibility with python data
+            #  types.
+            for with_numpy_types in [False, True]:
+                dataclass = topic_info.make_dataclass(with_numpy_types=with_numpy_types)
+                assert isinstance(dataclass, type)
+                instance = dataclass()
+                instance_dict = vars(instance)
+                if isarray:
+                    assert instance_dict.keys() == ARRAYS_FIELD_NAMES
                 else:
-                    assert isinstance(value, expected_python_type)
+                    assert instance_dict.keys() == SCALARS_FIELD_NAMES
+                avro_schema = topic_info.make_avro_schema()
+                expected_default_values = {field["name"]: field["default"] for field in avro_schema["fields"]}
+                for field_name, value in instance_dict.items():
+                    field_info = topic_info.fields[field_name]
+                    assert value == expected_default_values[field_name]
+                    if with_numpy_types:
+                        expected_python_type = NUMPY_TYPES[field_info.sal_type]
+                    else:
+                        warnings.warn("Set with_numpy_types=True instead.", DeprecationWarning)
+                        expected_python_type = PYTHON_TYPES[field_info.sal_type]
+                    if isarray and field_name.endswith("0"):
+                        assert all(isinstance(item, expected_python_type) for item in value)
+                    else:
+                        assert isinstance(value, expected_python_type)

@@ -61,9 +61,7 @@ class GetComponentInfoTestCase(unittest.TestCase):
 
         topics = result["topics"]
         component_info = ComponentInfo(name=name, topic_subname="")
-        all_sal_topic_names = {
-            topic_info.sal_name for topic_info in component_info.topics.values()
-        }
+        all_sal_topic_names = {topic_info.sal_name for topic_info in component_info.topics.values()}
         assert topics.keys() == all_sal_topic_names
         for topic_info in component_info.topics.values():
             topic_info_dict = topics[topic_info.sal_name]
