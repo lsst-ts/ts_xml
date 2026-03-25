@@ -100,3 +100,6 @@ class ObservatoryStatus(enum.IntEnum):
 
     # Observatory closed.
     DOWNTIME = 16
+
+    # Observatory idle.
+    IDLE = 32
