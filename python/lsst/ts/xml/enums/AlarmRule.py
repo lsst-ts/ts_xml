@@ -1,6 +1,6 @@
 # This file is part of ts_xml.
 #
-# Developed for Vera Rubin Observatory.
+# Developed for the LSST Telescope and Site Systems.
 # This product includes software developed by the LSST Project
 # (https://www.lsst.org).
 # See the COPYRIGHT file at the top-level directory of this distribution
@@ -17,51 +17,24 @@
 # GNU General Public License for more details.
 #
 # You should have received a copy of the GNU General Public License
+# along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-from . import (
-    ATMCS,
-    DIMM,
-    DREAM,
-    EAS,
-    ESS,
-    GIS,
-    HVAC,
-    MOSS,
-    MTAOS,
-    MTM1M3,
-    MTM1M3TS,
-    MTM2,
-    MTVMS,
-    PMD,
-    AlarmRule,
-    ATBuilding,
-    ATCamera,
-    ATDome,
-    ATDomeTrajectory,
-    ATHexapod,
-    ATMonochromator,
-    ATPneumatics,
-    ATPtg,
-    ATSpectrograph,
-    ATThermoelectricCooler,
-    ATWhiteLight,
-    Electrometer,
-    FiberSpectrograph,
-    Guider,
-    LaserTracker,
-    LEDProjector,
-    LinearStage,
-    MTDome,
-    MTDomeTrajectory,
-    MTHexapod,
-    MTMount,
-    MTPtg,
-    MTReflector,
-    MTRotator,
-    Scheduler,
-    Script,
-    ScriptQueue,
-    Test,
-    TunableLaser,
-    Watcher,
-)
+__all__ = ["AlarmRuleState"]
+
+import enum
+
+
+class AlarmRuleState(enum.IntEnum):
+    """AlarmRuleState constants."""
+
+    UNKNOWN = 0
+    UNCONFIGURED = 1
+    CONFIGURING = 2
+    CONFIGURED = 3
+    RUNNING = 4
+    ENDING = 5
+    STOPPING = 6
+    FAILING = 7
+    STOPPED = 8
+    FAILED = 9
+    CONFIGURE_FAILED = 10
