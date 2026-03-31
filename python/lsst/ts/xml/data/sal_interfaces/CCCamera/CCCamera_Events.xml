@@ -19219,4 +19219,300 @@
       <Count>1</Count>
     </item>
   </SALEvent>
+  <!-- Events added for reporting file transfers. All events may be sent multiple times, for the most
+   recent status request the most recent event of a particular topic -->
+  <SALEvent>
+    <Subsystem>CCCamera</Subsystem>
+    <EFDB_Topic>CCCamera_logevent_fileTransferNightlySummary</EFDB_Topic>
+    <Description>Event sent to summarize the nightly file transfers. This will normally be sent either when all files
+      were tranferred succesfully or after the daily morning catchup job has been run. If any subsequent manual transfer
+      is required the event may be sent more than once.
+    </Description>
+    <item>
+      <EFDB_Name>site</EFDB_Name>
+      <Description>The site the files were sent to (normally always USDF).</Description>
+      <IDL_Type>string</IDL_Type>
+      <IDL_Size>1</IDL_Size>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>dayObs</EFDB_Name>
+      <Description>The date component of the images (YYYYMMDD)</Description>
+      <IDL_Type>string</IDL_Type>
+      <IDL_Size>8</IDL_Size>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <!-- The following refer to FITS files (only) -->
+    <item>
+      <EFDB_Name>expected</EFDB_Name>
+      <Description>The total number of files expected to be written.</Description>
+      <IDL_Type>long</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>written</EFDB_Name>
+      <Description>The total number of files actually written. Any difference to expected indicates DAQ/camera problems.</Description>
+      <IDL_Type>long</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <!-- The following refer to all files, FITS files, sidecar json files, additional files (e.g. expected sensors) -->
+    <item>
+      <EFDB_Name>transferredBeforeResend</EFDB_Name>
+      <Description>The number of files successfully transferred before resends.</Description>
+      <IDL_Type>long</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>missingBeforeResend</EFDB_Name>
+      <Description>The number of files missing before any resends.</Description>
+      <IDL_Type>long</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>resendCount</EFDB_Name>
+      <Description>The total number of resends attempted when this event was sent (0 for initial send).</Description>
+      <IDL_Type>long</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>transferredAfterResend</EFDB_Name>
+      <Description>The number of files successfully transferred after resends.</Description>
+      <IDL_Type>long</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>missingAfterResend</EFDB_Name>
+      <Description>The number of files missing after resends.</Description>
+      <IDL_Type>long</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>maxFullDiskNode</EFDB_Name>
+      <Description>The node which is closest to full.</Description>
+      <IDL_Type>string</IDL_Type>
+      <IDL_Size>1</IDL_Size>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>maxFullDiskPercent</EFDB_Name>
+      <Description>The percent full for the node closest to full.</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>metaData</EFDB_Name>
+      <Description>Catchall for additional data, if needed, sent as json.</Description>
+      <IDL_Type>string</IDL_Type>
+      <IDL_Size>1</IDL_Size>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+  </SALEvent>
+  <SALEvent>
+    <Subsystem>CCCamera</Subsystem>
+    <EFDB_Topic>CCCamera_logevent_fileTransferPerImageSummary</EFDB_Topic>
+    <Description>Event sent to summarize the file transfers for each image. This event may be send multiple times
+      if image transfers take a significant time, or as a result of resends.
+    </Description>
+    <item>
+      <EFDB_Name>site</EFDB_Name>
+      <Description>The site the files were sent to (normally only USDF).</Description>
+      <IDL_Type>string</IDL_Type>
+      <IDL_Size>1</IDL_Size>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>dayObs</EFDB_Name>
+      <Description>The date component of the images (YYYYMMDD)</Description>
+      <IDL_Type>string</IDL_Type>
+      <IDL_Size>8</IDL_Size>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>obsId</EFDB_Name>
+      <Description>The obsId for this specific image</Description>
+      <IDL_Type>string</IDL_Type>
+      <IDL_Size>32</IDL_Size>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <!-- The following refer to FITS files (only) -->
+    <item>
+      <EFDB_Name>expected</EFDB_Name>
+      <Description>The total number of files expected to be written.</Description>
+      <IDL_Type>long</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>written</EFDB_Name>
+      <Description>The total number of files actually written. Any difference to expected indicates DAQ/camera problems.</Description>
+      <IDL_Type>long</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <!-- The following refer to all files, FITS files, sidecar json files, additional files (e.g. expected sensors) -->
+    <item>
+      <EFDB_Name>transferredBeforeResend</EFDB_Name>
+      <Description>The number of files successfully transferred before resends.</Description>
+      <IDL_Type>long</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>missingBeforeResend</EFDB_Name>
+      <Description>The number of files missing before any resends.</Description>
+      <IDL_Type>long</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>resendCount</EFDB_Name>
+      <Description>The total number of resends attempted when this event was sent.</Description>
+      <IDL_Type>long</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>transferredAfterResend</EFDB_Name>
+      <Description>The number of files successfully transferred after resends.</Description>
+      <IDL_Type>long</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>missingAfterResend</EFDB_Name>
+      <Description>The number of files missing after resends.</Description>
+      <IDL_Type>long</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>metaData</EFDB_Name>
+      <Description>Catchall for additional data, if needed, sent as json.</Description>
+      <IDL_Type>string</IDL_Type>
+      <IDL_Size>1</IDL_Size>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+  </SALEvent>
+  <SALEvent>
+    <Subsystem>CCCamera</Subsystem>
+    <EFDB_Topic>CCCamera_logevent_fileTransfer</EFDB_Topic>
+    <Description>Event sent for individual file transfers. Normally sent only on file transfer failure.
+    </Description>
+    <item>
+      <EFDB_Name>site</EFDB_Name>
+      <Description>The site the files were sent to (normally always USDF).</Description>
+      <IDL_Type>string</IDL_Type>
+      <IDL_Size>1</IDL_Size>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>dayObs</EFDB_Name>
+      <Description>The date component of the images (YYYYMMDD)</Description>
+      <IDL_Type>string</IDL_Type>
+      <IDL_Size>8</IDL_Size>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>resendCount</EFDB_Name>
+      <Description>The total number of resends attempted when this event was sent.</Description>
+      <IDL_Type>long</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>raft</EFDB_Name>
+      <Description>The raft to which this file belongs (e.g. R22 or NR if no raft).</Description>
+      <IDL_Type>string</IDL_Type>
+      <IDL_Size>3</IDL_Size>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>sensor</EFDB_Name>
+      <Description>The sensor to which this file belongs (e.g. S11 or NS if no sensor).</Description>
+      <IDL_Type>string</IDL_Type>
+      <IDL_Size>3</IDL_Size>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>fileType</EFDB_Name>
+      <Description>The fileType for this file.</Description>
+      <IDL_Type>string</IDL_Type>
+      <IDL_Size>1</IDL_Size>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>operation</EFDB_Name>
+      <Description>The operation being performed on this file.</Description>
+      <IDL_Type>string</IDL_Type>
+      <IDL_Size>1</IDL_Size>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>rc</EFDB_Name>
+      <Description>The return code (0 = success).</Description>
+      <IDL_Type>long</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>writeHost</EFDB_Name>
+      <Description>The host performing the operation.</Description>
+      <IDL_Type>string</IDL_Type>
+      <IDL_Size>1</IDL_Size>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>fileName</EFDB_Name>
+      <Description>The full file name.</Description>
+      <IDL_Type>string</IDL_Type>
+      <IDL_Size>1</IDL_Size>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>reason</EFDB_Name>
+      <Description>Additional meta-data corresponding to the operation.</Description>
+      <IDL_Type>string</IDL_Type>
+      <IDL_Size>1</IDL_Size>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>timestamp</EFDB_Name>
+      <Description>The timestamp when the operation started</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>second</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>duration</EFDB_Name>
+      <Description>The duration of the operation</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>second</Units>
+      <Count>1</Count>
+    </item>
+  </SALEvent>
 </SALEventSet>
