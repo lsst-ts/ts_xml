@@ -25,10 +25,10 @@ import enum
 
 
 class AHU(enum.IntEnum):
-    lowerAHU01P05 = 1
-    lowerAHU02P05 = 2
-    lowerAHU03P05 = 3
-    lowerAHU04P05 = 4
+    airHandlingUnit01Dome = 1
+    airHandlingUnit02Dome = 2
+    airHandlingUnit03Dome = 3
+    airHandlingUnit04Dome = 4
 
 
 class ControlFeature(enum.IntFlag):
