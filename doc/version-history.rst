@@ -15,6 +15,99 @@ Version History
 
 .. towncrier release notes start
 
+v27.0.0 (2026-03-31)
+====================
+Package Level
+-------------
+
+Performance Enhancement
+~~~~~~~~~~~~~~~~~~~~~~~
+
+- Fixed the doc build. (`OSW-2023 <https://rubinobs.atlassian.net/browse/OSW-2023>`_)
+
+
+Interface Changes
+-----------------
+
+AlarmRule
+~~~~~~~~~
+
+- Added the AlarmRule run and stop commands. (`OSW-2025 <https://rubinobs.atlassian.net/browse/OSW-2025>`_)
+- Added the AlarmRule SAL component. (`OSW-2025 <https://rubinobs.atlassian.net/browse/OSW-2025>`_)
+
+
+ATCamera
+~~~~~~~~
+
+- Add events for describing file transfers to USDF (or potentially other locations) (`CAP-1101 <https://rubinobs.atlassian.net/browse/CAP-1101>`_)
+
+
+CCCamera
+~~~~~~~~
+
+- Add events for describing file transfers to USDF (or potentially other locations) (`CAP-1101 <https://rubinobs.atlassian.net/browse/CAP-1101>`_)
+- Upated CCCamera Events and Telemetry XML (`CAP-1106 <https://rubinobs.atlassian.net/browse/CAP-1106>`_)
+
+
+EAS
+~~~
+
+- Added AHU enum to EAS. (`OSW-1999 <https://rubinobs.atlassian.net/browse/OSW-1999>`_)
+- Renamed the EAS AHU enumeration entries to match the HVAC device names. (`OSW-2085 <https://rubinobs.atlassian.net/browse/OSW-2085>`_)
+
+
+ESS
+~~~
+
+- ESS.m1m3ThermalGradients telemetry. (`OSW-1809 <https://rubinobs.atlassian.net/browse/OSW-1809>`_)
+- FlowMeter interface (telemetry, events). (`OSW-1925 <https://rubinobs.atlassian.net/browse/OSW-1925>`_)
+
+
+GIS
+~~~
+
+- Added A22 to effects2 event. (`OSW-1845 <https://rubinobs.atlassian.net/browse/OSW-1845>`_)
+- Added acks and auxTel events. (`OSW-1845 <https://rubinobs.atlassian.net/browse/OSW-1845>`_)
+- Added D20, D25, D26 fields to causes2, overrides2 events. (`OSW-1845 <https://rubinobs.atlassian.net/browse/OSW-1845>`_)
+
+
+HVAC
+~~~~
+
+- Renamed HVAC devices, (`OSW-1895 <https://rubinobs.atlassian.net/browse/OSW-1895>`_)
+
+
+MTAOS
+~~~~~
+
+- Added integralError, integralErrorClipped, opticalState, derivativeTerm, and derivativeTermFiltered to MTAOS events. (`DM-54503 <https://rubinobs.atlassian.net/browse/DM-54503>`_)
+
+
+MTCamera
+~~~~~~~~
+
+- Add events for describing file transfers to USDF (or potentially other locations) (`CAP-1101 <https://rubinobs.atlassian.net/browse/CAP-1101>`_)
+- Upated MTCamera Events and Telemetry XML (`CAP-1106 <https://rubinobs.atlassian.net/browse/CAP-1106>`_)
+
+
+MTDome
+~~~~~~
+
+- Added the resetDrivesEl and calibrateEl commands. (`OSW-1927 <https://rubinobs.atlassian.net/browse/OSW-1927>`_)
+
+
+MTM1M3
+~~~~~~
+
+- Added bumpTestPushForce and bumpTestPullForce to the forceActuatorSettings event. (`OSW-2073 <https://rubinobs.atlassian.net/browse/OSW-2073>`_)
+
+
+Scheduler
+~~~~~~~~~
+
+- Added ``IDLE`` to the Scheduler ``ObservatoryStatus`` enumeration. (`OSW-2062 <https://rubinobs.atlassian.net/browse/OSW-2062>`_)
+
+
 v26.0.0 (2026-01-26)
 ====================
 Package Level
