@@ -1710,24 +1710,10 @@
     <Subsystem>MTCamera</Subsystem>
     <EFDB_Topic>MTCamera_refrig_Cryo1</EFDB_Topic>
     <Description>subsystem MTCamera class MTCamera_refrig_Cryo1</Description>
-    <!--CCS: Dictionary_Checksum: 4199104483L -->
+    <!--CCS: Dictionary_Checksum: 869246017L -->
     <item>
       <EFDB_Name>afterCoolTmp</EFDB_Name>
       <Description>After Cooler Temperature</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>Celsius</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>ambientTmp</EFDB_Name>
-      <Description>Ambient Temperature</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>Celsius</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>cabinetTmp</EFDB_Name>
-      <Description>Cabinet Temperature</Description>
       <IDL_Type>double</IDL_Type>
       <Units>Celsius</Units>
       <Count>1</Count>
@@ -1978,10 +1964,24 @@
     <Subsystem>MTCamera</Subsystem>
     <EFDB_Topic>MTCamera_refrig_Cryo3</EFDB_Topic>
     <Description>subsystem MTCamera class MTCamera_refrig_Cryo3</Description>
-    <!--CCS: Dictionary_Checksum: 4281376255L -->
+    <!--CCS: Dictionary_Checksum: 773606185L -->
     <item>
       <EFDB_Name>afterCoolTmp</EFDB_Name>
       <Description>After Cooler Temperature</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>Celsius</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>ambientTmp</EFDB_Name>
+      <Description>Ambient Temperature</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>Celsius</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>cabinetTmp</EFDB_Name>
+      <Description>Cabinet Temperature</Description>
       <IDL_Type>double</IDL_Type>
       <Units>Celsius</Units>
       <Count>1</Count>
@@ -11194,7 +11194,7 @@
     <Subsystem>MTCamera</Subsystem>
     <EFDB_Topic>MTCamera_chiller_Chiller</EFDB_Topic>
     <Description>subsystem MTCamera class MTCamera_chiller_Chiller</Description>
-    <!--CCS: Dictionary_Checksum: 2045677159L -->
+    <!--CCS: Dictionary_Checksum: 1054023041L -->
     <item>
       <EFDB_Name>cascadeSetPoint</EFDB_Name>
       <Description>cascade setpoint used in DUT</Description>
@@ -11207,6 +11207,13 @@
       <Description>chiller pump hours</Description>
       <IDL_Type>double</IDL_Type>
       <Units>h</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>chillerStatus</EFDB_Name>
+      <Description>Chiller status register</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>unitless</Units>
       <Count>1</Count>
     </item>
     <item>
@@ -12580,6 +12587,42 @@
       <Description>VPC coolant valve position error</Description>
       <IDL_Type>double</IDL_Type>
       <Units>%</Units>
+      <Count>1</Count>
+    </item>
+  </SALTelemetry>
+  <!--Created by xmlmaker2 for subsystem MTCamera class MTCamera_camenv_DracalPTH using level 1-->
+  <!--=========================================================================================-->
+  <SALTelemetry>
+    <Subsystem>MTCamera</Subsystem>
+    <EFDB_Topic>MTCamera_camenv_DracalPTH</EFDB_Topic>
+    <Description>subsystem MTCamera class MTCamera_camenv_DracalPTH</Description>
+    <!--CCS: Dictionary_Checksum: 3001824579L -->
+    <item>
+      <EFDB_Name>dew_Point</EFDB_Name>
+      <Description>Dew Point</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>Celsius</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>pressure</EFDB_Name>
+      <Description>MS5611 Pressure</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>kPa</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>relative_Humidity</EFDB_Name>
+      <Description>SHT31 Relative Humidity</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>%</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>temperature</EFDB_Name>
+      <Description>SHT31 Temperature</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>Celsius</Units>
       <Count>1</Count>
     </item>
   </SALTelemetry>

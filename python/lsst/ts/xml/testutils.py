@@ -33,6 +33,7 @@ XML test suite generator scripts.
 """Defines the list of Commandable SAL Components, or CSCs."""
 
 subsystems = [
+    "AlarmRule",
     "ATAOS",
     "MTAirCompressor",
     "ATBuilding",

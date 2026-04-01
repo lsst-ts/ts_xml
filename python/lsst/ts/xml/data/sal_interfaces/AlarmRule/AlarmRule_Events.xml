@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="http://lsst-sal.tuc.noao.edu/schema/SALEventSet.xsl"?>
+<SALEventSet xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://lsst-sal.tuc.noao.edu/schema/SALEventSet.xsd">
+  <Enumeration>AlarmRuleState_Unconfigured,AlarmRuleState_Configuring,AlarmRuleState_Configured,AlarmRuleState_Running,AlarmRuleState_Ending,AlarmRuleState_Stopping,AlarmRuleState_Failing,AlarmRuleState_Stopped,AlarmRuleState_Failed,AlarmRuleState_ConfigureFailed</Enumeration>
+  <SALEvent>
+    <Subsystem>AlarmRule</Subsystem>
+    <EFDB_Topic>AlarmRule_logevent_description</EFDB_Topic>
+    <Description>Class name, description, and a list of the remotes it uses -- basically metadata that does not usually depend on configuration.</Description>
+    <item>
+      <EFDB_Name>classname</EFDB_Name>
+      <Description>Name of alarm rule class.</Description>
+      <IDL_Type>string</IDL_Type>
+      <IDL_Size>1</IDL_Size>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>description</EFDB_Name>
+      <Description>Brief description of the alarm rule.</Description>
+      <IDL_Type>string</IDL_Type>
+      <IDL_Size>1</IDL_Size>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>remotes</EFDB_Name>
+      <Description>Names of remote SAL components used by the alarm rule as a comma-separated list. Each name is appended with :&lt;index&gt; if the component is indexed (and possibly with :0 if not indexed).</Description>
+      <IDL_Type>string</IDL_Type>
+      <IDL_Size>1</IDL_Size>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+  </SALEvent>
+  <SALEvent>
+    <Subsystem>AlarmRule</Subsystem>
+    <EFDB_Topic>AlarmRule_logevent_state</EFDB_Topic>
+    <Description>AlarmRule state.</Description>
+    <item>
+      <EFDB_Name>classname</EFDB_Name>
+      <Description>Name of alarm rule class.</Description>
+      <IDL_Type>string</IDL_Type>
+      <IDL_Size>1</IDL_Size>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>state</EFDB_Name>
+      <Description>An AlarmRuleState enum indicating the alarm rule state.</Description>
+      <IDL_Type>byte</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+      <Enumeration>Unconfigured,Configured,Running,Paused,Ending,Stopping,Failing,Stopped,Failed,ConfigureFailed</Enumeration>
+    </item>
+    <item>
+      <EFDB_Name>reason</EFDB_Name>
+      <Description>More information about the state change; typically a reason for failure if the state is FAILED.</Description>
+      <IDL_Type>string</IDL_Type>
+      <IDL_Size>1</IDL_Size>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+  </SALEvent>
+  <SALEvent>
+    <Subsystem>AlarmRule</Subsystem>
+    <EFDB_Topic>AlarmRule_logevent_alarm</EFDB_Topic>
+    <Description>AlarmRule alarm.</Description>
+    <item>
+      <EFDB_Name>classname</EFDB_Name>
+      <Description>Name of alarm rule class.</Description>
+      <IDL_Type>string</IDL_Type>
+      <IDL_Size>1</IDL_Size>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>severity</EFDB_Name>
+      <Description>An AlarmSeverity enum indicating the alarm rule severity.</Description>
+      <IDL_Type>byte</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+      <Enumeration>NONE,WARNING,SERIOUS,CRITICAL</Enumeration>
+    </item>
+    <item>
+      <EFDB_Name>reason</EFDB_Name>
+      <Description>The reason for the alarm.</Description>
+      <IDL_Type>string</IDL_Type>
+      <IDL_Size>1</IDL_Size>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>muted</EFDB_Name>
+      <Description>Was the alarm muted or not?</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <IDL_Size>1</IDL_Size>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>acknowledged</EFDB_Name>
+      <Description>Was the alarm acknowledged or not?</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <IDL_Size>1</IDL_Size>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+  </SALEvent>
+</SALEventSet>
