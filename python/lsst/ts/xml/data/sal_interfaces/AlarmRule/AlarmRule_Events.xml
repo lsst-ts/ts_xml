@@ -5,10 +5,10 @@
   <SALEvent>
     <Subsystem>AlarmRule</Subsystem>
     <EFDB_Topic>AlarmRule_logevent_description</EFDB_Topic>
-    <Description>Class name, description, and a list of the remotes it uses -- basically metadata that does not usually depend on configuration.</Description>
+    <Description>Alarm name, description, and a list of the remotes it uses -- basically metadata that does not usually depend on configuration.</Description>
     <item>
-      <EFDB_Name>classname</EFDB_Name>
-      <Description>Name of alarm rule class.</Description>
+      <EFDB_Name>alarmName</EFDB_Name>
+      <Description>Name of alarm.</Description>
       <IDL_Type>string</IDL_Type>
       <IDL_Size>1</IDL_Size>
       <Units>unitless</Units>
@@ -36,8 +36,8 @@
     <EFDB_Topic>AlarmRule_logevent_state</EFDB_Topic>
     <Description>AlarmRule state.</Description>
     <item>
-      <EFDB_Name>classname</EFDB_Name>
-      <Description>Name of alarm rule class.</Description>
+      <EFDB_Name>alarmName</EFDB_Name>
+      <Description>Name of alarm.</Description>
       <IDL_Type>string</IDL_Type>
       <IDL_Size>1</IDL_Size>
       <Units>unitless</Units>
@@ -65,8 +65,8 @@
     <EFDB_Topic>AlarmRule_logevent_alarm</EFDB_Topic>
     <Description>AlarmRule alarm.</Description>
     <item>
-      <EFDB_Name>classname</EFDB_Name>
-      <Description>Name of alarm rule class.</Description>
+      <EFDB_Name>alarmName</EFDB_Name>
+      <Description>Name of alarm.</Description>
       <IDL_Type>string</IDL_Type>
       <IDL_Size>1</IDL_Size>
       <Units>unitless</Units>
@@ -89,19 +89,124 @@
       <Count>1</Count>
     </item>
     <item>
-      <EFDB_Name>muted</EFDB_Name>
-      <Description>Was the alarm muted or not?</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <IDL_Size>1</IDL_Size>
+      <EFDB_Name>maxSeverity</EFDB_Name>
+      <Description>The maximum severity seen for this alarm.
+            Reset to `AlarmSeverity_None` if alarm is aknowledged while the `severity` is `AlarmSeverity_None`.
+            An AlarmSeverity enum.</Description>
+      <IDL_Type>int</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>acknowledged</EFDB_Name>
-      <Description>Was the alarm acknowledged or not?</Description>
+      <Description>Has this alarm been acknowledged? true=yes, false=no.
+            Irrelevant if `severity` and `maxSeverity` are both `AlarmSeverity_None`.</Description>
       <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>acknowledgedBy</EFDB_Name>
+      <Description>User who acknowledged the alarm.
+            Irrelevant if `acknowledged` is false.</Description>
+      <IDL_Type>string</IDL_Type>
       <IDL_Size>1</IDL_Size>
       <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>escalatedId</EFDB_Name>
+      <Description>Blank if escalation not attempted.
+            The ID of the OpsGenie alert, if successfully escalated.
+            "Failed: (...reason...)" if escalation was attempted and failed.</Description>
+      <IDL_Type>string</IDL_Type>
+      <IDL_Size>1</IDL_Size>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>escalateTo</EFDB_Name>
+      <Description>Designated responder, should this alarm be escalated. Blank if this alarm will never be escalated.</Description>
+      <IDL_Type>string</IDL_Type>
+      <IDL_Size>1</IDL_Size>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>mutedSeverity</EFDB_Name>
+      <Description>Severity at which this alarm is muted.
+             A value of `AlarmSeverity_None` means not muted.
+             If `severity ≤ mutedSeverity` then the alarm is considered muted and should not be displayed by default.</Description>
+      <IDL_Type>long</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>mutedBy</EFDB_Name>
+      <Description>User who muted the alarm.
+            Irrelevant if `mutedSeverity` is `AlarmSeverity_None`.</Description>
+      <IDL_Type>string</IDL_Type>
+      <IDL_Size>1</IDL_Size>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>timestampSeverityOldest</EFDB_Name>
+      <Description>Time at which severity was originally set to its current value.</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>second</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>timestampSeverityNewest</EFDB_Name>
+      <Description>Time at which severity was most recently found to still have its current value.</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>second</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>timestampMaxSeverity</EFDB_Name>
+      <Description>Time at which maxSeverity was last changed.</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>second</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>timestampAcknowledged</EFDB_Name>
+      <Description>Time at which acknowledged was last changed.</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>second</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>timestampAutoAcknowledge</EFDB_Name>
+      <Description>Time at which the alarm will be automatically acknowledged if still stale (not active and not acknowledged).
+            0 if not relevant in this state or the alarm does not support automatic acknowledgement of stale alarms.</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>second</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>timestampAutoUnacknowledge</EFDB_Name>
+      <Description>Time at which the alarm will be automatically unacknowledged if still active. 0 if not relevant in this state or the alarm does not support automatic unacknowledgement.</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>second</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>timestampEscalate</EFDB_Name>
+      <Description>Time at which the alarm was or will be escalated to backup personnel (if `escalated` is true or false, respectively).
+            0 if not relevant in this state or the alarm does not support escalation.</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>second</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>timestampUnmute</EFDB_Name>
+      <Description>Time at which the alarm will be unmuted.
+            Irrelevant if `mutedSeverity = AlarmSeverity_None`.</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>second</Units>
       <Count>1</Count>
     </item>
   </SALEvent>
