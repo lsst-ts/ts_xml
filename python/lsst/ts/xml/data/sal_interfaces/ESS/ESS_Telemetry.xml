@@ -1679,7 +1679,7 @@
   </SALTelemetry>
   <SALTelemetry>
     <EFDB_Topic>ESS_agcGenset150</EFDB_Topic>
-    <Description>Telemetry for generator set devices using Advanced Genset Controller (AGC) 150.</Description>
+    <Description>Telemetry for electric devices using Advanced Genset Controller (AGC) 150.</Description>
     <item>
       <EFDB_Name>timestamp</EFDB_Name>
       <Description>Time of data acqusition (TAI Unix seconds).</Description>
@@ -1688,15 +1688,22 @@
       <Count>1</Count>
     </item>
     <item>
+      <EFDB_Name>tbPositionOn</EFDB_Name>
+      <Description>Tie Breaker (TB) position ON.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
       <EFDB_Name>gbPositionOn</EFDB_Name>
-      <Description>General Breaker (GB) position ON.</Description>
+      <Description>Generator Breaker (GB) position ON.</Description>
       <IDL_Type>boolean</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>mbPositionOn</EFDB_Name>
-      <Description>Main Breaker (MB) position ON.</Description>
+      <Description>Mains Breaker (MB) position ON.</Description>
       <IDL_Type>boolean</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
@@ -1711,6 +1718,13 @@
     <item>
       <EFDB_Name>generatorVoltageFrequencyOk</EFDB_Name>
       <Description>Generator voltage/frequency OK.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>busBarVoltageFrequencyOk</EFDB_Name>
+      <Description>Busbar voltage/frequency OK.</Description>
       <IDL_Type>boolean</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
@@ -1758,15 +1772,22 @@
       <Count>1</Count>
     </item>
     <item>
+      <EFDB_Name>tbPositionOff</EFDB_Name>
+      <Description>Tie Breaker (TB) position OFF.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
       <EFDB_Name>gbPositionOff</EFDB_Name>
-      <Description>General Breaker (GB) position OFF.</Description>
+      <Description>Generator Breaker (GB) position OFF.</Description>
       <IDL_Type>boolean</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>mbPositionOff</EFDB_Name>
-      <Description>Main Breaker (MB) position OFF.</Description>
+      <Description>Mains Breaker (MB) position OFF.</Description>
       <IDL_Type>boolean</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
@@ -1866,6 +1887,216 @@
       <EFDB_Name>applicationVersion</EFDB_Name>
       <Description>Application version.</Description>
       <IDL_Type>int</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>mainsVoltageL1L2</EFDB_Name>
+      <Description>Mains voltage L1-L2.</Description>
+      <IDL_Type>int</IDL_Type>
+      <Units>V</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>mainsVoltageL1L3</EFDB_Name>
+      <Description>Mains voltage L2-L3.</Description>
+      <IDL_Type>int</IDL_Type>
+      <Units>V</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>mainsVoltageL3L1</EFDB_Name>
+      <Description>Mains voltage L3-L1.</Description>
+      <IDL_Type>int</IDL_Type>
+      <Units>V</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>mainsVoltageL1N</EFDB_Name>
+      <Description>Mains voltage L1-N.</Description>
+      <IDL_Type>int</IDL_Type>
+      <Units>V</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>mainsVoltageL2N</EFDB_Name>
+      <Description>Mains voltage L2-N.</Description>
+      <IDL_Type>int</IDL_Type>
+      <Units>V</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>mainsVoltageL3N</EFDB_Name>
+      <Description>Mains voltage L3-N.</Description>
+      <IDL_Type>int</IDL_Type>
+      <Units>V</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>mainsFrequencyL1</EFDB_Name>
+      <Description>Mains frequency L1.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>Hz</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>mainsFrequencyL2</EFDB_Name>
+      <Description>Mains frequency L2.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>Hz</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>mainsFrequencyL3</EFDB_Name>
+      <Description>Mains frequency L3.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>Hz</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>mainsCurrentL1</EFDB_Name>
+      <Description>Mains current L1.</Description>
+      <IDL_Type>int</IDL_Type>
+      <Units>A</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>mainsCurrentL2</EFDB_Name>
+      <Description>Mains current L2.</Description>
+      <IDL_Type>int</IDL_Type>
+      <Units>A</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>mainsCurrentL3</EFDB_Name>
+      <Description>Mains current L3.</Description>
+      <IDL_Type>int</IDL_Type>
+      <Units>A</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>mainsPowerL1</EFDB_Name>
+      <Description>Mains power L1.</Description>
+      <IDL_Type>int</IDL_Type>
+      <Units>kW</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>mainsPowerL2</EFDB_Name>
+      <Description>Mains power L2.</Description>
+      <IDL_Type>int</IDL_Type>
+      <Units>kW</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>mainsPowerL3</EFDB_Name>
+      <Description>Mains power L3.</Description>
+      <IDL_Type>int</IDL_Type>
+      <Units>kW</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>mainsPower</EFDB_Name>
+      <Description>Mains power.</Description>
+      <IDL_Type>int</IDL_Type>
+      <Units>kW</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>mainsReactivePowerL1</EFDB_Name>
+      <Description>Mains reactive power L1 (kVAr).</Description>
+      <IDL_Type>int</IDL_Type>
+      <Units>kW</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>mainsReactivePowerL2</EFDB_Name>
+      <Description>Mains reactive power L2 (kVAr).</Description>
+      <IDL_Type>int</IDL_Type>
+      <Units>kW</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>mainsReactivePowerL3</EFDB_Name>
+      <Description>Mains reactive power L3 (kVAr).</Description>
+      <IDL_Type>int</IDL_Type>
+      <Units>kW</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>mainsReactivePower</EFDB_Name>
+      <Description>Mains reactive power (kVAr).</Description>
+      <IDL_Type>int</IDL_Type>
+      <Units>kW</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>mainsApparentPowerL1</EFDB_Name>
+      <Description>Mains apparent power L1 (kVA).</Description>
+      <IDL_Type>int</IDL_Type>
+      <Units>kW</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>mainsApparentPowerL2</EFDB_Name>
+      <Description>Mains apparent power L2 (kVA).</Description>
+      <IDL_Type>int</IDL_Type>
+      <Units>kW</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>mainsApparentPowerL3</EFDB_Name>
+      <Description>Mains apparent power L3 (kVA).</Description>
+      <IDL_Type>int</IDL_Type>
+      <Units>kW</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>mainsApparentPower</EFDB_Name>
+      <Description>Mains apparent power (kVA).</Description>
+      <IDL_Type>int</IDL_Type>
+      <Units>kW</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>mainsExportReactiveEnergyCounterTotal</EFDB_Name>
+      <Description>Mains Export reactive energy counter, total (kVArh).</Description>
+      <IDL_Type>int</IDL_Type>
+      <Units>kW * h</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>mainsExportActiveEnergyCounterDay</EFDB_Name>
+      <Description>Mains Export, active energy counter, day.</Description>
+      <IDL_Type>int</IDL_Type>
+      <Units>kW * h</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>mainsExportActiveEnergyCounterWeek</EFDB_Name>
+      <Description>Mains Export, active energy counter, week.</Description>
+      <IDL_Type>int</IDL_Type>
+      <Units>kW * h</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>mainsExportActiveEnergyCounterMonth</EFDB_Name>
+      <Description>Mains Export, active energy counter, month.</Description>
+      <IDL_Type>int</IDL_Type>
+      <Units>kW * h</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>mainsExportActiveEnergyCounterTotal</EFDB_Name>
+      <Description>Mains Export, active energy counter, total.</Description>
+      <IDL_Type>int</IDL_Type>
+      <Units>kW * h</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>mainsPF</EFDB_Name>
+      <Description>Mains Power Factor.</Description>
+      <IDL_Type>float</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
     </item>
@@ -2062,124 +2293,124 @@
       <EFDB_Name>generatorExportReactiveEnergyCounterTotal</EFDB_Name>
       <Description>Generator Export, reactive energy counter, total (kVArh).</Description>
       <IDL_Type>int</IDL_Type>
-      <Units>kW</Units>
+      <Units>kW * h</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>generatorExportActiveEnergyCounterDay</EFDB_Name>
-      <Description>Generator Export, active energy counter, day (kWh).</Description>
+      <Description>Generator Export, active energy counter, day.</Description>
       <IDL_Type>int</IDL_Type>
-      <Units>kW</Units>
+      <Units>kW * h</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>generatorExportActiveEnergyCounterWeek</EFDB_Name>
-      <Description>Generator Export, active energy counter, week (kWh).</Description>
+      <Description>Generator Export, active energy counter, week.</Description>
       <IDL_Type>int</IDL_Type>
-      <Units>kW</Units>
+      <Units>kW * h</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>generatorExportActiveEnergyCounterMonth</EFDB_Name>
-      <Description>Generator Export, active energy counter, month (kWh).</Description>
+      <Description>Generator Export, active energy counter, month.</Description>
       <IDL_Type>int</IDL_Type>
-      <Units>kW</Units>
+      <Units>kW * h</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>generatorExportActiveEnergyCounterTotal</EFDB_Name>
-      <Description>Generator Export, active energy counter, total (kWh).</Description>
+      <Description>Generator Export, active energy counter, total.</Description>
       <IDL_Type>int</IDL_Type>
-      <Units>kW</Units>
+      <Units>kW * h</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>generatorPF</EFDB_Name>
-      <Description>Generator PF.</Description>
+      <Description>Generator Power Factor.</Description>
       <IDL_Type>int</IDL_Type>
-      <Units>PF</Units>
+      <Units>unitless</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>busBVoltageL1L2</EFDB_Name>
-      <Description>Bus B voltage L1-L2.</Description>
+      <Description>Busbar voltage L1-L2.</Description>
       <IDL_Type>int</IDL_Type>
       <Units>V</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>busBVoltageL2L3</EFDB_Name>
-      <Description>Bus B voltage L2-L3.</Description>
+      <Description>Busbar voltage L2-L3.</Description>
       <IDL_Type>int</IDL_Type>
       <Units>V</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>busBVoltageL3L1</EFDB_Name>
-      <Description>Bus B voltage L3-L1.</Description>
+      <Description>Busbar voltage L3-L1.</Description>
       <IDL_Type>int</IDL_Type>
       <Units>V</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>busBVoltageL1N</EFDB_Name>
-      <Description>Bus B voltage L1-N.</Description>
+      <Description>Busbar voltage L1-N.</Description>
       <IDL_Type>int</IDL_Type>
       <Units>V</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>busBVoltageL2N</EFDB_Name>
-      <Description>Bus B voltage L2-N.</Description>
+      <Description>Busbar voltage L2-N.</Description>
       <IDL_Type>int</IDL_Type>
       <Units>V</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>busBVoltageL3N</EFDB_Name>
-      <Description>Bus B voltage L3-N.</Description>
+      <Description>Busbar voltage L3-N.</Description>
       <IDL_Type>int</IDL_Type>
       <Units>V</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>busBFrequencyL1</EFDB_Name>
-      <Description>Bus B frequency L1.</Description>
+      <Description>Busbar frequency L1.</Description>
       <IDL_Type>float</IDL_Type>
       <Units>Hz</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>busBFrequencyL2</EFDB_Name>
-      <Description>Bus B frequency L2.</Description>
+      <Description>Busbar frequency L2.</Description>
       <IDL_Type>float</IDL_Type>
       <Units>Hz</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>busBFrequencyL3</EFDB_Name>
-      <Description>Bus B frequency L3.</Description>
+      <Description>Busbar frequency L3.</Description>
       <IDL_Type>float</IDL_Type>
       <Units>Hz</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>busBVoltagePhaseAngleL1L2</EFDB_Name>
-      <Description>Bus B voltage phase angle L1-L2.</Description>
+      <Description>Busbar voltage phase angle L1-L2.</Description>
       <IDL_Type>float</IDL_Type>
       <Units>deg</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>busBVoltagePhaseAngleL2L3</EFDB_Name>
-      <Description>Bus B voltage phase angle L2-L3.</Description>
+      <Description>Busbar voltage phase angle L2-L3.</Description>
       <IDL_Type>float</IDL_Type>
       <Units>deg</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>busBVoltagePhaseAngleL3L1</EFDB_Name>
-      <Description>Bus B voltage phase angle L3-L1.</Description>
+      <Description>Busbar voltage phase angle L3-L1.</Description>
       <IDL_Type>float</IDL_Type>
       <Units>deg</Units>
       <Count>1</Count>
@@ -2241,15 +2472,22 @@
       <Count>1</Count>
     </item>
     <item>
+      <EFDB_Name>numberTBOperations</EFDB_Name>
+      <Description>No. of Tie Breaker operations.</Description>
+      <IDL_Type>int</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
       <EFDB_Name>numberGBOperations</EFDB_Name>
-      <Description>No. of GB operations.</Description>
+      <Description>No. of Generator Breaker operations.</Description>
       <IDL_Type>int</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
     </item>
     <item>
       <EFDB_Name>numberMBOperations</EFDB_Name>
-      <Description>No. of MB operations.</Description>
+      <Description>No. of Mains Breaker operations.</Description>
       <IDL_Type>int</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
@@ -2353,10 +2591,360 @@
       <Count>1</Count>
     </item>
     <item>
-      <EFDB_Name>mainsPower</EFDB_Name>
-      <Description>Mains power: Multi-input 20 or 4th CT input.</Description>
-      <IDL_Type>int</IDL_Type>
-      <Units>kW</Units>
+      <EFDB_Name>reversePowerMains1</EFDB_Name>
+      <Description>Reverse power (exported) to the grid, level 1 (M -P&gt; 1).</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>reversePowerMains2</EFDB_Name>
+      <Description>Reverse power (exported) to the grid, level 2 (M -P&gt; 2).</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>reversePowerMains3</EFDB_Name>
+      <Description>Reverse power (exported) to the grid, level 3 (M -P&gt; 3).</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>overcurrentMains1</EFDB_Name>
+      <Description>Grid overcurrent in the grid, level 1 (M I&gt; 1).</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>overcurrentMains2</EFDB_Name>
+      <Description>Grid overcurrent in the grid, level 2 (M I&gt; 2).</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>overcurrentMains3</EFDB_Name>
+      <Description>Grid overcurrent in the grid, level 3 (M I&gt; 3).</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>overcurrentMains4</EFDB_Name>
+      <Description>Grid overcurrent in the grid, level 4 (M I&gt; 4).</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>voltDepOvercurrentMains</EFDB_Name>
+      <Description>Voltage-dependent overcurrent in the grid (M Iv&gt;).</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>shortCircuitMains1</EFDB_Name>
+      <Description>Short-circuit (Instantaneous overcurrent) in the grid, level 1 (M I&gt;&gt; 1).</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>shortCircuitMains2</EFDB_Name>
+      <Description>Short-circuit (Instantaneous overcurrent) in the grid, level 2 (M I&gt;&gt; 2).</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>overvoltageMains1</EFDB_Name>
+      <Description>Grid overvoltage, level 1 (M U&gt; 1).</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>overvoltageMains2</EFDB_Name>
+      <Description>Grid overvoltage, level 2 (M U&gt; 2).</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>undervoltageMains1</EFDB_Name>
+      <Description>Grid undervoltage, level 1 (M U&lt; 1).</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>undervoltageMains2</EFDB_Name>
+      <Description>Grid undervoltage, level 2 (M U&lt; 2).</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>undervoltageMains3</EFDB_Name>
+      <Description>Grid undervoltage, level 3 (M U&lt; 3).</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>overfrequencyMains1</EFDB_Name>
+      <Description>Grid overfrequency, level 1 (M f&gt; 1).</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>overfrequencyMains2</EFDB_Name>
+      <Description>Grid overfrequency, level 2 (M f&gt; 2).</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>overfrequencyMains3</EFDB_Name>
+      <Description>Grid overfrequency, level 3 (M f&gt; 3).</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>underfrequencyMains1</EFDB_Name>
+      <Description>Grid underfrequency, level 1 (M f&lt; 1).</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>underfrequencyMains2</EFDB_Name>
+      <Description>Grid underfrequency, level 2 (M f&lt; 2).</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>underfrequencyMains3</EFDB_Name>
+      <Description>Grid underfrequency, level 3 (M f&lt; 3).</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>overvoltageBusbar1</EFDB_Name>
+      <Description>Busbar overvoltage, level 1 (BB U&gt; 1).</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>overvoltageBusbar2</EFDB_Name>
+      <Description>Busbar overvoltage, level 2 (BB U&gt; 2).</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>overvoltageBusbar3</EFDB_Name>
+      <Description>Busbar overvoltage, level 3 (BB U&gt; 3).</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>undervoltageBusbar1</EFDB_Name>
+      <Description>Busbar undervoltage, level 1 (BB U&lt; 1).</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>undervoltageBusbar2</EFDB_Name>
+      <Description>Busbar undervoltage, level 2 (BB U&lt; 2).</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>undervoltageBusbar3</EFDB_Name>
+      <Description>Busbar undervoltage, level 3 (BB U&lt; 3).</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>undervoltageBusbar4</EFDB_Name>
+      <Description>Busbar undervoltage, level 4 (BB U&lt; 4).</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>overfrequencyBusbar1</EFDB_Name>
+      <Description>Busbar overfrequency, level 1 (BB f&gt; 1).</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>overfrequencyBusbar2</EFDB_Name>
+      <Description>Busbar overfrequency, level 2 (BB f&gt; 2).</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>overfrequencyBusbar3</EFDB_Name>
+      <Description>Busbar overfrequency, level 3 (BB f&gt; 3).</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>underfrequencyBusbar1</EFDB_Name>
+      <Description>Busbar underfrequency, level 1 (BB f&lt; 1).</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>underfrequencyBusbar2</EFDB_Name>
+      <Description>Busbar underfrequency, level 2 (BB f&lt; 2).</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>underfrequencyBusbar3</EFDB_Name>
+      <Description>Busbar underfrequency, level 3 (BB f&lt; 3).</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>underfrequencyBusbar4</EFDB_Name>
+      <Description>Busbar underfrequency, level 4 (BB f&lt; 4).</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>unbalanceCurrent</EFDB_Name>
+      <Description>Unbalance current 1.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>unbalanceVoltage</EFDB_Name>
+      <Description>Unbalance voltage.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>directionalOvercurrent1</EFDB_Name>
+      <Description>Directional overcurrent 1.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>directionalOvercurrent2</EFDB_Name>
+      <Description>Directional overcurrent 2.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>busbarVoltageUnbalance</EFDB_Name>
+      <Description>BB unbalance U.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>tieBreakerExternalTrip</EFDB_Name>
+      <Description>Tie Breaker (TB) external trip.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>mainBreakerExternalTrip</EFDB_Name>
+      <Description>Mains Breaker (MB) external trip.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>synchronizingWindow</EFDB_Name>
+      <Description>Synchronizing window.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>synchronizingWindowFailureTB</EFDB_Name>
+      <Description>Synchronizing failure Tie Breaker (TB).</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>synchronizingWindowFailureMB</EFDB_Name>
+      <Description>Synchronizing failure Mains Breaker (MB).</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>tieBreakerOpenFailure</EFDB_Name>
+      <Description>Tie Breaker (TB) open failure.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>tieBreakerCloseFailure</EFDB_Name>
+      <Description>Tie Breaker (TB) close failure.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>tieBreakerPositionFailure</EFDB_Name>
+      <Description>Tie Breaker (TB) position failure.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>mainBreakerOpenFailure</EFDB_Name>
+      <Description>Mains Breaker (MB) open failure.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>mainBreakerCloseFailure</EFDB_Name>
+      <Description>Mains Breaker (MB) close failure.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>mainBreakerPositionFailure</EFDB_Name>
+      <Description>Mains Breaker (MB) position failure.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
       <Count>1</Count>
     </item>
     <item>
@@ -2681,6 +3269,13 @@
       <Units>kg</Units>
       <Count>1</Count>
     </item>
+    <item>
+      <EFDB_Name>sensorName</EFDB_Name>
+      <Description>The name of the device (usually the hostname).</Description>
+      <IDL_Type>string</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
   </SALTelemetry>
   <SALTelemetry>
     <Subsystem>ESS</Subsystem>
@@ -2834,6 +3429,543 @@
       <Description>Total negative flow.</Description>
       <IDL_Type>float</IDL_Type>
       <Units>liter</Units>
+      <Count>1</Count>
+    </item>
+  </SALTelemetry>
+  <SALTelemetry>
+    <Subsystem>ESS</Subsystem>
+    <EFDB_Topic>ESS_e9sxups</EFDB_Topic>
+    <Description>Telemetry for Eaton 9SX 20KPMS UPS devices.</Description>
+    <item>
+      <EFDB_Name>loadProtectedStatus</EFDB_Name>
+      <Description>Load protected status.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>upsCoupled</EFDB_Name>
+      <Description>UPS coupled.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>unitGeneralAlarm</EFDB_Name>
+      <Description>Unit general alarm.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>configurationFirmwareFault</EFDB_Name>
+      <Description>Configuration firmware fault.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>upsInBackupStatus</EFDB_Name>
+      <Description>UPS in backup status.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>batteryLowWarning</EFDB_Name>
+      <Description>Battery low warning.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>lowBattery</EFDB_Name>
+      <Description>Low battery.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>communicationFault</EFDB_Name>
+      <Description>Communication fault.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>upsOverload</EFDB_Name>
+      <Description>UPS overload.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>emergencyStop</EFDB_Name>
+      <Description>Emergency stop.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>batteryToBeChecked</EFDB_Name>
+      <Description>Battery to be checked.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>deviceVerificationFault</EFDB_Name>
+      <Description>Device verification fault.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>upsClass</EFDB_Name>
+      <Description>Ups Class.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>manualBypassPresent</EFDB_Name>
+      <Description>Manual bypass present.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>modeEco</EFDB_Name>
+      <Description>Mode ECO = 1.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>batteryPresent</EFDB_Name>
+      <Description>Battery present.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>batteryTestFault</EFDB_Name>
+      <Description>Battery test fault.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>wiringFault</EFDB_Name>
+      <Description>Wiring fault.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>main1VoltageOutOfTolerance</EFDB_Name>
+      <Description>Main 1 voltage out of tolerance.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>main1FuseFault</EFDB_Name>
+      <Description>Main 1 fuse fault.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>chargerOverTemperatureFault</EFDB_Name>
+      <Description>Charger over temperature fault.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>mainFrequencyTolerance</EFDB_Name>
+      <Description>Main 1 frequency out of tolerance.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>redundancyLost</EFDB_Name>
+      <Description>Redundancy lost.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>maintenancePosition</EFDB_Name>
+      <Description>Maintenance position.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>main2Overload</EFDB_Name>
+      <Description>Main 2 overload.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>outputOnBypass</EFDB_Name>
+      <Description>Output on bypass.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>main2FrequencyOutOfTolerance</EFDB_Name>
+      <Description>Main 2 frequency out of tolerance.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>phaseM2OutOfTolerance</EFDB_Name>
+      <Description>Phase M2 out of tolerance.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>internalFault</EFDB_Name>
+      <Description>Internal fault.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>main2InternalFault</EFDB_Name>
+      <Description>Main 2 internal fault.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>chargerGeneralFault</EFDB_Name>
+      <Description>Charger general fault.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>batteryCharge1</EFDB_Name>
+      <Description>Battery charge 1.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>batteryCharge2</EFDB_Name>
+      <Description>Battery charge 2.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>inverterMajorFault</EFDB_Name>
+      <Description>Inverter major fault.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>iverterOverload</EFDB_Name>
+      <Description>Inverter overload.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>inverterOverTemperature</EFDB_Name>
+      <Description>Inverter over temperature.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>shortCircuit</EFDB_Name>
+      <Description>Short circuit.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>electronicPowerSupplyFault</EFDB_Name>
+      <Description>Electronic power supply fault.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>bypassWiringFault</EFDB_Name>
+      <Description>Bypass wiring fault.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>currentPhase1Output</EFDB_Name>
+      <Description>Output phase 1 current.</Description>
+      <IDL_Type>int</IDL_Type>
+      <Units>A</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>currentPhase2Output</EFDB_Name>
+      <Description>Output phase 2 current.</Description>
+      <IDL_Type>int</IDL_Type>
+      <Units>A</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>currentPhase3Output</EFDB_Name>
+      <Description>Output phase 3 current.</Description>
+      <IDL_Type>int</IDL_Type>
+      <Units>A</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>voltagePhase1Main2</EFDB_Name>
+      <Description>Bypass input phase 1 voltage.</Description>
+      <IDL_Type>int</IDL_Type>
+      <Units>V</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>voltagePhase2Main2</EFDB_Name>
+      <Description>Bypass input phase 2 voltage.</Description>
+      <IDL_Type>int</IDL_Type>
+      <Units>V</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>voltagePhase3Main2</EFDB_Name>
+      <Description>Bypass input phase 3 voltage.</Description>
+      <IDL_Type>int</IDL_Type>
+      <Units>V</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>outputVoltage1N</EFDB_Name>
+      <Description>Output phase 1 voltage.</Description>
+      <IDL_Type>int</IDL_Type>
+      <Units>V</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>outputVoltage2N</EFDB_Name>
+      <Description>Output phase 2 voltage.</Description>
+      <IDL_Type>int</IDL_Type>
+      <Units>V</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>outputVoltage3N</EFDB_Name>
+      <Description>Output phase 3 voltage.</Description>
+      <IDL_Type>int</IDL_Type>
+      <Units>V</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>batteryVoltage</EFDB_Name>
+      <Description>Battery Voltage.</Description>
+      <IDL_Type>int</IDL_Type>
+      <Units>V</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>outputActivePowerPhase1</EFDB_Name>
+      <Description>Output active power phase 1.</Description>
+      <IDL_Type>int</IDL_Type>
+      <Units>W</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>outputActivePowerPhase2</EFDB_Name>
+      <Description>Output active power phase 2.</Description>
+      <IDL_Type>int</IDL_Type>
+      <Units>W</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>outputActivePowerPhase3</EFDB_Name>
+      <Description>Output active power phase 3.</Description>
+      <IDL_Type>int</IDL_Type>
+      <Units>W</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>outputApparentPowerPhase1</EFDB_Name>
+      <Description>Output apparent power phase 1 (VA).</Description>
+      <IDL_Type>int</IDL_Type>
+      <Units>W</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>outputApparentPowerPhase2</EFDB_Name>
+      <Description>Output apparent power phase 2 (VA).</Description>
+      <IDL_Type>int</IDL_Type>
+      <Units>W</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>outputApparentPowerPhase3</EFDB_Name>
+      <Description>Output apparent power phase 3 (VA).</Description>
+      <IDL_Type>int</IDL_Type>
+      <Units>W</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>outputTotalActivePower</EFDB_Name>
+      <Description>Output total active power.</Description>
+      <IDL_Type>int</IDL_Type>
+      <Units>W</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>outputTotalApparentPower</EFDB_Name>
+      <Description>Output total apparent power (VA).</Description>
+      <IDL_Type>int</IDL_Type>
+      <Units>W</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>outputLoadLevel</EFDB_Name>
+      <Description>% output load level.</Description>
+      <IDL_Type>int</IDL_Type>
+      <Units>%</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>powerFactory</EFDB_Name>
+      <Description>Power factor x 100.</Description>
+      <IDL_Type>int</IDL_Type>
+      <Units>%</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>main1Frequency</EFDB_Name>
+      <Description>Input frequency.</Description>
+      <IDL_Type>int</IDL_Type>
+      <Units>Hz</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>main2Frequency</EFDB_Name>
+      <Description>Bypass input frequency.</Description>
+      <IDL_Type>int</IDL_Type>
+      <Units>Hz</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>outputFrequency</EFDB_Name>
+      <Description>Output frequency.</Description>
+      <IDL_Type>int</IDL_Type>
+      <Units>Hz</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>batteryBackupTime</EFDB_Name>
+      <Description>Battery backup time.</Description>
+      <IDL_Type>int</IDL_Type>
+      <Units>minute</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>batteryChargingLevel</EFDB_Name>
+      <Description>Battery charging level.</Description>
+      <IDL_Type>int</IDL_Type>
+      <Units>%</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>voltageMain1Phase1</EFDB_Name>
+      <Description>Input voltage phase 1.</Description>
+      <IDL_Type>int</IDL_Type>
+      <Units>V</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>voltageMain1Phase2</EFDB_Name>
+      <Description>Input voltage phase 2.</Description>
+      <IDL_Type>int</IDL_Type>
+      <Units>V</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>voltageMain1Phase3</EFDB_Name>
+      <Description>Input voltage phase 3.</Description>
+      <IDL_Type>int</IDL_Type>
+      <Units>V</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>manufacturerName</EFDB_Name>
+      <Description>Manufacturer Name.</Description>
+      <IDL_Type>int</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>productName</EFDB_Name>
+      <Description>Product Name.</Description>
+      <IDL_Type>int</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>upsModel</EFDB_Name>
+      <Description>UPS Model.</Description>
+      <IDL_Type>int</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>serialNumber</EFDB_Name>
+      <Description>Serial Number.</Description>
+      <IDL_Type>int</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>partNumber</EFDB_Name>
+      <Description>Part Number.</Description>
+      <IDL_Type>int</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>nominalApparentPower</EFDB_Name>
+      <Description>Nominal value of apparent power (VA).</Description>
+      <IDL_Type>int</IDL_Type>
+      <Units>W</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>nominalActivePower</EFDB_Name>
+      <Description>Nominal value of active power.</Description>
+      <IDL_Type>int</IDL_Type>
+      <Units>W</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>nominalBatteryVoltage</EFDB_Name>
+      <Description>Nominal voltage of battery element.</Description>
+      <IDL_Type>int</IDL_Type>
+      <Units>V</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>sensorName</EFDB_Name>
+      <Description>The name of the device (usually the hostname).</Description>
+      <IDL_Type>string</IDL_Type>
+      <Units>unitless</Units>
       <Count>1</Count>
     </item>
   </SALTelemetry>
