@@ -18,7 +18,7 @@
 #
 # You should have received a copy of the GNU General Public License
 
-__all__ = ["GuiderStatus", "SalIndex"]
+__all__ = ["GuiderStatus", "SalIndex", "GuiderState"]
 
 import enum
 
@@ -31,6 +31,14 @@ class GuiderStatus(enum.IntEnum):
     GUIDING = enum.auto()
     ERROR = enum.auto()
 
+class GuiderState(enum.IntEnum):
+    """Guider state."""
+
+    STAMP = 1
+    START = enum.auto()
+    STOP = enum.auto()
+    PAUSE = enum.auto()
+    RESUME = enum.auto()
 
 class SalIndex(enum.IntEnum):
     """Allowed SAL indices."""
