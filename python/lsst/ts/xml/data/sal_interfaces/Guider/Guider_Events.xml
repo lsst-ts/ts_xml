@@ -12,7 +12,7 @@
     <Description>Published once on each guider start/stop/pause/resume/stamp</Description>
     <item>
       <EFDB_Name>status</EFDB_Name>
-      <Description>Enumeration with the current guiding status. When guider is not running status will be GuiderStatus_Stopped, this could either be when the guider is first enabled or after a stopGuiding command. When guider is initializing a guider sequence but has not achieved stable guiding operation status will be GuiderStatus_Starting. When stable guiding operation is stabilished, status will be GuiderStatus_Guiding. If an error occurred, and the guider is going to FAULT state, status is GuiderStatus_Error. Information about errors will be available in errorCode topic.</Description>
+      <Description>Enumeration with the current guiding status. </Description>
       <!-- Enumeration: GuiderState -->
       <IDL_Type>long</IDL_Type>
       <Units>unitless</Units>
@@ -114,6 +114,177 @@
       <EFDB_Name>splitroi</EFDB_Name>
       <Description>True if the ROI is split across segments</Description>
       <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>8</Count>
+    </item>
+  </SALEvent>
+  <SALEvent>
+    <Subsystem>Guider</Subsystem>
+    <EFDB_Topic>Guider_logevent_perGuiderResults</EFDB_Topic>
+    <Description>Results of analysis on each guider</Description>
+    <item>
+      <EFDB_Name>seqno</EFDB_Name>
+      <Description>DAQ provided sequence number</Description>
+      <IDL_Type>long</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>stamp</EFDB_Name>
+      <Description>DAQ provided stamp number</Description>
+      <IDL_Type>long</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>timestamp</EFDB_Name>
+      <Description>DAQ provided timestamp (TAI)</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>second</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>obsid</EFDB_Name>
+      <Description>OBSID corresponding to this stamp (derived from DAQ comment field)</Description>
+      <IDL_Type>string</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>sensor</EFDB_Name>
+      <Description>Sensor, e.g. R00_SG0 (: delimited list)</Description>
+      <IDL_Type>string</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>flux</EFDB_Name>
+      <Description>Flux in each sensor</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>unitless</Units>
+      <Count>8</Count>
+    </item>
+    <item>
+      <EFDB_Name>centroid_x</EFDB_Name>
+      <Description>Centroid x position in each sensor (in Focal Plane DVCS coordinates)</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>mm</Units>
+      <Count>8</Count>
+    </item>
+    <item>
+      <EFDB_Name>centroid_y</EFDB_Name>
+      <Description>Centroid y position in each sensor (in Focal Plane DVCS coordinates)</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>mm</Units>
+      <Count>8</Count>
+    </item>
+        <item>
+      <EFDB_Name>centroid_dx</EFDB_Name>
+      <Description>Error in Centroid x</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>mm</Units>
+      <Count>8</Count>
+    </item>
+    <item>
+      <EFDB_Name>centroid_dy</EFDB_Name>
+      <Description>Error in Centroid x</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>mm</Units>
+      <Count>8</Count>
+    </item>
+    <item>
+      <EFDB_Name>moment_xx</EFDB_Name>
+      <Description>2nd moment xx</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>mm</Units>
+      <Count>8</Count>
+    </item>
+    <item>
+      <EFDB_Name>moment_yy</EFDB_Name>
+      <Description>2nd moment yy</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>mm</Units>
+      <Count>8</Count>
+    </item>
+    <item>
+      <EFDB_Name>moment_xy</EFDB_Name>
+      <Description>2nd moment xy</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>mm</Units>
+      <Count>8</Count>
+    </item>
+    <item>
+      <EFDB_Name>centroid_fit_quality</EFDB_Name>
+      <Description>Flag for good Centroid finding (details TBD)</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>unitless</Units>
+      <Count>8</Count>
+    </item>
+  </SALEvent>
+  <SALEvent>
+    <Subsystem>Guider</Subsystem>
+    <EFDB_Topic>Guider_logevent_summaryResults</EFDB_Topic>
+    <Description>Results of analysis on all guiders</Description>
+    <item>
+      <EFDB_Name>seqno</EFDB_Name>
+      <Description>DAQ provided sequence number</Description>
+      <IDL_Type>long</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>stamp</EFDB_Name>
+      <Description>DAQ provided stamp number</Description>
+      <IDL_Type>long</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>timestamp</EFDB_Name>
+      <Description>DAQ provided timestamp (TAI)</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>second</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>obsid</EFDB_Name>
+      <Description>OBSID corresponding to this stamp (derived from DAQ comment field)</Description>
+      <IDL_Type>string</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>delta_x</EFDB_Name>
+      <Description>Centroid Delta X relative to first good Stamp (also in DVCS coordinates)</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>mm</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>delta_y</EFDB_Name>
+      <Description>Centroid Delta Y relative to first good Stamp (also in DVCS coordinates)</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>mm</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>delta_rotation</EFDB_Name>
+      <Description>Delta rotation relative to first good Stamp</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>arcsec</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>good_stamps</EFDB_Name>
+      <Description>number of good ROIs over the 8 CCDs</Description>
+      <IDL_Type>int</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>quality_flag</EFDB_Name>
+      <Description>Quality Flag (overall quality of Centroid,Angle information) (details TBD)</Description>
+      <IDL_Type>double</IDL_Type>
       <Units>unitless</Units>
       <Count>8</Count>
     </item>
