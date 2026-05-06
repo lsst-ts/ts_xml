@@ -31,6 +31,7 @@ class GuiderStatus(enum.IntEnum):
     GUIDING = enum.auto()
     ERROR = enum.auto()
 
+
 class GuiderState(enum.IntEnum):
     """Guider state."""
 
@@ -39,6 +40,7 @@ class GuiderState(enum.IntEnum):
     STOP = enum.auto()
     PAUSE = enum.auto()
     RESUME = enum.auto()
+
 
 class SalIndex(enum.IntEnum):
     """Allowed SAL indices."""
