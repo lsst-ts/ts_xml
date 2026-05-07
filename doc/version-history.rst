@@ -15,6 +15,34 @@ Version History
 
 .. towncrier release notes start
 
+v27.1.0 (2026-05-07)
+====================
+Package Level
+-------------
+
+Bug Fixes
+~~~~~~~~~
+
+- Fixed AlarmRule command and event XML. (`OSW-2151 <https://rubinobs.atlassian.net/browse/OSW-2151>`_)
+
+
+Interface Changes
+-----------------
+
+ESS
+~~~
+
+- Extended ESS_agcGenset150 telemetry. (`OSW-2233 <https://rubinobs.atlassian.net/browse/OSW-2233>`_)
+- Added new ESS_e9sxups telemetry. (`OSW-2233 <https://rubinobs.atlassian.net/browse/OSW-2233>`_)
+- Rolled back ESS_agcGenset150 fields extension in favor of new telemetry ESS_agcMains150. (`OSW-2266 <https://rubinobs.atlassian.net/browse/OSW-2266>`_)
+
+
+Guider
+~~~~~~
+
+- Update Guider CSC with new events for use with as built DAQ and expanded fitting results (`CAP-1108 <https://rubinobs.atlassian.net/browse/CAP-1108>`_)
+
+
 v27.0.0 (2026-03-31)
 ====================
 Package Level

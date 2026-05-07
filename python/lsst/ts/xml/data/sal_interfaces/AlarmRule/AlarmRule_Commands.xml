@@ -28,20 +28,89 @@
     <Subsystem>AlarmRule</Subsystem>
     <EFDB_Topic>AlarmRule_command_mute</EFDB_Topic>
     <Description>Mute the alarm of the rule.</Description>
+    <item>
+      <EFDB_Name>alarmName</EFDB_Name>
+      <Description>Name of alarm or alarms to mute. Specify a regular expression for multiple alarms.</Description>
+      <IDL_Type>string</IDL_Type>
+      <IDL_Size>1</IDL_Size>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>muteDuration</EFDB_Name>
+      <Description>Duration of mute.</Description>
+      <IDL_Type>float</IDL_Type>
+      <Units>second</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>severity</EFDB_Name>
+      <Description>Severity level being muted. An AlarmSeverity enum.</Description>
+      <IDL_Type>int</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>mutedBy</EFDB_Name>
+      <Description>User who muted the alarm.</Description>
+      <IDL_Type>string</IDL_Type>
+      <IDL_Size>1</IDL_Size>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
   </SALCommand>
   <SALCommand>
     <Subsystem>AlarmRule</Subsystem>
     <EFDB_Topic>AlarmRule_command_unmute</EFDB_Topic>
     <Description>Unmute the alarm of the rule.</Description>
+    <item>
+      <EFDB_Name>alarmName</EFDB_Name>
+      <Description>Name of alarm or alarms to unmute. Specify a regular expression for multiple alarms; ".*" to unmute all alarms.</Description>
+      <IDL_Type>string</IDL_Type>
+      <IDL_Size>1</IDL_Size>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
   </SALCommand>
   <SALCommand>
     <Subsystem>AlarmRule</Subsystem>
     <EFDB_Topic>AlarmRule_command_acknowledge</EFDB_Topic>
     <Description>Acknowledge the alarm of the rule.</Description>
+    <item>
+      <EFDB_Name>alarmName</EFDB_Name>
+      <Description>Name of alarm or alarms to acknowledge. Specify a regular expression for multiple alarms.</Description>
+      <IDL_Type>string</IDL_Type>
+      <IDL_Size>1</IDL_Size>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>severity</EFDB_Name>
+      <Description>Severity level being acknowledged. An AlarmSeverity enum.</Description>
+      <IDL_Type>int</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>acknowledgedBy</EFDB_Name>
+      <Description>User who acknowledged the alarm.</Description>
+      <IDL_Type>string</IDL_Type>
+      <IDL_Size>1</IDL_Size>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
   </SALCommand>
   <SALCommand>
     <Subsystem>AlarmRule</Subsystem>
     <EFDB_Topic>AlarmRule_command_unacknowledge</EFDB_Topic>
     <Description>Unacknowledge the alarm of the rule.</Description>
+    <item>
+      <EFDB_Name>alarmName</EFDB_Name>
+      <Description>Name of alarm or alarms to unacknowledge. Specify a regular expression for multiple alarms.</Description>
+      <IDL_Type>string</IDL_Type>
+      <IDL_Size>1</IDL_Size>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
   </SALCommand>
 </SALCommandSet>
