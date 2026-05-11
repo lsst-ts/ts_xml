@@ -15,6 +15,18 @@ Version History
 
 .. towncrier release notes start
 
+v27.1.1 (2026-05-11)
+====================
+
+Interface Changes
+-----------------
+
+Guider
+~~~~~~
+
+- Revert changes from previous release.
+
+
 v27.1.0 (2026-05-07)
 ====================
 Package Level
