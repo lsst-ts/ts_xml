@@ -20,6 +20,7 @@
 # along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 """M1 radius in m."""
+
 M1_R = 4.1988
 
 """M3 Radius in m."""
