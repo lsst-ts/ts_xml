@@ -277,3 +277,9 @@ class ComponentInfoTestCase(unittest.TestCase):
                     assert all(isinstance(item, expected_python_type) for item in value)
                 else:
                     assert isinstance(value, expected_python_type)
+
+    def test_component_info_includes_avro(self) -> None:
+        topic_subname = "arbitrary_subname"
+        component_info = ComponentInfo(name="ATCamera", topic_subname=topic_subname)
+        topics = list(component_info.topics.keys())
+        assert "tel_focal_plane_sensor" in topics

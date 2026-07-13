@@ -1,0 +1,48 @@
+{
+  "type" : "record",
+  "name" : "comcam_fcs_stepper_motor",
+  "namespace" : "lsst.sal.CCCamera",
+  "fields" : [
+    {
+      "name" : "timestamp",
+      "type" : "long",
+      "description" : "UTC timestamp",
+      "units" : "millisecond"
+    },
+    {
+      "name" : "MotorTemperature",
+      "type" : [
+        "null",
+        "double"
+      ],
+      "default" : null,
+      "description" : "motor temperature",
+      "units" : "Celsius"
+    },
+    {
+      "name" : "MotorTemperature_state",
+      "type" : [
+        "null",
+        "string"
+      ],
+      "default" : null,
+      "description" : "Monitoring state for StepperMotor/MotorTemperature",
+      "units" : "unitless"
+    },
+    {
+      "name" : "MotorEncoder",
+      "type" : [
+        "null",
+        "double"
+      ],
+      "default" : null,
+      "description" : "motor encoder reading in steps",
+      "units" : "unitless"
+    },
+    {
+      "name" : "Agent",
+      "type" : "string",
+      "description" : "This is a tag"
+    }
+  ]
+}

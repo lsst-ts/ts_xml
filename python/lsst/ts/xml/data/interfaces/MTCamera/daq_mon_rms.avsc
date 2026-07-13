@@ -1,0 +1,148 @@
+{
+  "type" : "record",
+  "name" : "daq_mon_rms",
+  "namespace" : "lsst.sal.MTCamera",
+  "fields" : [
+    {
+      "name" : "timestamp",
+      "type" : "long",
+      "description" : "UTC timestamp",
+      "units" : "millisecond"
+    },
+    {
+      "name" : "probes",
+      "type" : [
+        "null",
+        "long"
+      ],
+      "default" : null,
+      "description" : "Probe Counter. The number of times the RMS server has been probed by Clients. Normally this is once per posted list, but can also be done to detect the presence of RMS servers.",
+      "units" : "unitless"
+    },
+    {
+      "name" : "unopened",
+      "type" : [
+        "null",
+        "long"
+      ],
+      "default" : null,
+      "description" : "Plugin Unopened error count. The window for this error to be encountered is very small. When a request cannot be fulfilled because the Plugin is not yet initialized.",
+      "units" : "unitless"
+    },
+    {
+      "name" : "in_reset",
+      "type" : [
+        "null",
+        "long"
+      ],
+      "default" : null,
+      "description" : "Link In Reset error count. When a request cannot be fulfilled because the link is being reset.",
+      "units" : "unitless"
+    },
+    {
+      "name" : "link_down",
+      "type" : [
+        "null",
+        "long"
+      ],
+      "default" : null,
+      "description" : "Link is Down error count. When a request cannot be fulfilled because the PGP Link is down.",
+      "units" : "unitless"
+    },
+    {
+      "name" : "lists_posted",
+      "type" : [
+        "null",
+        "long"
+      ],
+      "default" : null,
+      "description" : "Lists Posted count. The number of requests (Lists of register operations) posted the Server.",
+      "units" : "unitless"
+    },
+    {
+      "name" : "ops_posted",
+      "type" : [
+        "null",
+        "long"
+      ],
+      "default" : null,
+      "description" : "Register Operation Requests count. The number of register operation requests sent to the REB.",
+      "units" : "unitless"
+    },
+    {
+      "name" : "waits",
+      "type" : [
+        "null",
+        "long"
+      ],
+      "default" : null,
+      "description" : "Waits count. The number of times RMS has been presented with a PGP frame from the firmware.",
+      "units" : "unitless"
+    },
+    {
+      "name" : "responses",
+      "type" : [
+        "null",
+        "long"
+      ],
+      "default" : null,
+      "description" : "Register Operation Responses count. The number of register operation responses from the REB. Should be equal to the number of Waits and Operation Requests.",
+      "units" : "unitless"
+    },
+    {
+      "name" : "inv_tids",
+      "type" : [
+        "null",
+        "long"
+      ],
+      "default" : null,
+      "description" : "Invalid Task ID count. A Response was received that does not have a valid identifier to use to pair it with a Request.",
+      "units" : "unitless"
+    },
+    {
+      "name" : "orphans",
+      "type" : [
+        "null",
+        "long"
+      ],
+      "default" : null,
+      "description" : "Invalid Task ID count. A Response was received that does not have a valid identifier to use to pair it with a Request.",
+      "units" : "unitless"
+    },
+    {
+      "name" : "rundowns",
+      "type" : [
+        "null",
+        "long"
+      ],
+      "default" : null,
+      "description" : "Orphaned Response count. A Response was received for which there was no corresponding request.",
+      "units" : "unitless"
+    },
+    {
+      "name" : "tid_hwm",
+      "type" : [
+        "null",
+        "long"
+      ],
+      "default" : null,
+      "description" : "Task ID High Water Mark. There is a fixed number of buffers available to store outstanding requests while waiting for responses. If the REB does not respond to a request, then a buffer resource is lost. This counter reflects the largest number of outstanding requests. Currently, in a properly functioning system there should never be more than one outstanding request at a time, and the High Water Mark should never be more than 1.",
+      "units" : "unitless"
+    },
+    {
+      "name" : "Raft",
+      "type" : "string",
+      "description" : "This is a tag"
+    },
+    {
+      "name" : "Reb",
+      "type" : "string",
+      "description" : "This is a tag"
+    },
+    {
+      "name" : "Agent",
+      "type" : "string",
+      "description" : "This is a tag"
+    }
+  ]
+}

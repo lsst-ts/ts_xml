@@ -1,0 +1,88 @@
+{
+  "type" : "record",
+  "name" : "fcs_autochanger_trucks",
+  "namespace" : "lsst.sal.MTCamera",
+  "fields" : [
+    {
+      "name" : "timestamp",
+      "type" : "long",
+      "description" : "UTC timestamp",
+      "units" : "millisecond"
+    },
+    {
+      "name" : "standbySensorValue",
+      "type" : [
+        "null",
+        "boolean"
+      ],
+      "default" : null,
+      "description" : "Autochanger truck is at standby position",
+      "units" : "unitless"
+    },
+    {
+      "name" : "standbyInError",
+      "type" : [
+        "null",
+        "boolean"
+      ],
+      "default" : null,
+      "description" : "Autochanger truck position sensors at standby are in error",
+      "units" : "unitless"
+    },
+    {
+      "name" : "handoffSensorValue",
+      "type" : [
+        "null",
+        "boolean"
+      ],
+      "default" : null,
+      "description" : "Autochanger truck is at handoff position",
+      "units" : "unitless"
+    },
+    {
+      "name" : "handoffInError",
+      "type" : [
+        "null",
+        "boolean"
+      ],
+      "default" : null,
+      "description" : "Autochanger truck position sensors at handoff are in error",
+      "units" : "unitless"
+    },
+    {
+      "name" : "onlineSensorValue",
+      "type" : [
+        "null",
+        "boolean"
+      ],
+      "default" : null,
+      "description" : "Autochanger truck is at online position",
+      "units" : "unitless"
+    },
+    {
+      "name" : "onlineInError",
+      "type" : [
+        "null",
+        "boolean"
+      ],
+      "default" : null,
+      "description" : "Autochanger truck position sensors at online are in error",
+      "units" : "unitless"
+    },
+    {
+      "name" : "Truck",
+      "type" : "string",
+      "description" : "This is a tag"
+    },
+    {
+      "name" : "Hardware",
+      "type" : "string",
+      "description" : "This is a tag"
+    },
+    {
+      "name" : "Agent",
+      "type" : "string",
+      "description" : "This is a tag"
+    }
+  ]
+}

@@ -1,0 +1,128 @@
+{
+  "type" : "record",
+  "name" : "daq_mon_rds",
+  "namespace" : "lsst.sal.CCCamera",
+  "fields" : [
+    {
+      "name" : "timestamp",
+      "type" : "long",
+      "description" : "UTC timestamp",
+      "units" : "millisecond"
+    },
+    {
+      "name" : "wakes",
+      "type" : [
+        "null",
+        "long"
+      ],
+      "default" : null,
+      "description" : "Wakes count. This counts the number of times the RDS server was awakened to put Image Metadata into it's processing queue.",
+      "units" : "unitless"
+    },
+    {
+      "name" : "discards",
+      "type" : [
+        "null",
+        "long"
+      ],
+      "default" : null,
+      "description" : "Discards count. The number of times the Server tried to insert Image Metadata into the processing queue but failed to do so. (Presumably because the queue was full.)",
+      "units" : "unitless"
+    },
+    {
+      "name" : "no_event",
+      "type" : [
+        "null",
+        "long"
+      ],
+      "default" : null,
+      "description" : "No Event count. Upon the arrival of pixel data, there was no Image Metadata available to associate with it. The pixel data is discarded.",
+      "units" : "unitless"
+    },
+    {
+      "name" : "bdi_waits",
+      "type" : [
+        "null",
+        "long"
+      ],
+      "default" : null,
+      "description" : "Bulk Data Interface Waits count. The number of times we have waited for a page of pixel data from the Bulk Data Interface.",
+      "units" : "unitless"
+    },
+    {
+      "name" : "bdi_nulls",
+      "type" : [
+        "null",
+        "long"
+      ],
+      "default" : null,
+      "description" : "BDI Null Pages count. The BDI woke up but no data was present.",
+      "units" : "unitless"
+    },
+    {
+      "name" : "bdi_seq_errors",
+      "type" : [
+        "null",
+        "long"
+      ],
+      "default" : null,
+      "description" : "BDI Sequence Errors count. The BDI can mark pages as coming out of sequence. ",
+      "units" : "unitless"
+    },
+    {
+      "name" : "bdi_overflows",
+      "type" : [
+        "null",
+        "long"
+      ],
+      "default" : null,
+      "description" : "BDI Overflows count. The BDI can report that its data buffers have overflowed.",
+      "units" : "unitless"
+    },
+    {
+      "name" : "bdi_firsts",
+      "type" : [
+        "null",
+        "long"
+      ],
+      "default" : null,
+      "description" : "BDI Firsts count. The number of BDI pages marked as First (Start of Image flag is set.)",
+      "units" : "unitless"
+    },
+    {
+      "name" : "bdi_lasts",
+      "type" : [
+        "null",
+        "long"
+      ],
+      "default" : null,
+      "description" : "BDI Lasts count. The number of BDI pages marked as last (End of Image flag is set.)",
+      "units" : "unitless"
+    },
+    {
+      "name" : "bdi_frees",
+      "type" : [
+        "null",
+        "long"
+      ],
+      "default" : null,
+      "description" : "BDI Frees count. The number of BDI pages processed.",
+      "units" : "unitless"
+    },
+    {
+      "name" : "Raft",
+      "type" : "string",
+      "description" : "This is a tag"
+    },
+    {
+      "name" : "Reb",
+      "type" : "string",
+      "description" : "This is a tag"
+    },
+    {
+      "name" : "Agent",
+      "type" : "string",
+      "description" : "This is a tag"
+    }
+  ]
+}
