@@ -4897,6 +4897,35 @@
       <Count>1</Count>
     </item>
   </SALEvent>
+  <!--Created by xmlmaker2 for subsystem MTCamera class MTCamera_logevent_rebpower_HighHVBiasCurrentCounter_LimitsConfiguration for category Limits using level 1-->
+  <!--===========================================================================================================================================================-->
+  <SALEvent>
+    <Subsystem>MTCamera</Subsystem>
+    <EFDB_Topic>MTCamera_logevent_rebpower_HighHVBiasCurrentCounter_LimitsConfiguration</EFDB_Topic>
+    <Description>subsystem MTCamera class MTCamera_logevent_rebpower_HighHVBiasCurrentCounter_LimitsConfiguration for category Limits</Description>
+    <!--CCS: Dictionary_Checksum: 81824688L -->
+    <item>
+      <EFDB_Name>version</EFDB_Name>
+      <Description>Version of the settings, formatted using CCS conventions</Description>
+      <IDL_Type>string</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>warnHi</EFDB_Name>
+      <Description>High HVBias Current Counter high warning level</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>limitHi</EFDB_Name>
+      <Description>High HVBias Current Counter high alarm level</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+  </SALEvent>
   <!--Created by xmlmaker2 for subsystem MTCamera class MTCamera_logevent_rebpower_PeriodicTasks_GeneralConfiguration for category General using level 1-->
   <!--==================================================================================================================================================-->
   <SALEvent>
@@ -5364,7 +5393,7 @@
     <!--CCSMETA: Array periodictasks_monitor_publish_taskPeriodMillis indexed by location-->
     <item>
       <EFDB_Name>periodictasks_monitor_publish_taskPeriodMillis</EFDB_Name>
-      <Description>period for task monitor-publish/r01-reb1</Description>
+      <Description>period for task monitor-publish/r01-reb0</Description>
       <IDL_Type>long long</IDL_Type>
       <Units>ms</Units>
       <Count>63</Count>
@@ -5372,7 +5401,7 @@
     <!--CCSMETA: Array periodictasks_monitor_update_taskPeriodMillis indexed by location-->
     <item>
       <EFDB_Name>periodictasks_monitor_update_taskPeriodMillis</EFDB_Name>
-      <Description>period for task monitor-update/r01-reb1</Description>
+      <Description>period for task monitor-update/r01-reb0</Description>
       <IDL_Type>long long</IDL_Type>
       <Units>ms</Units>
       <Count>63</Count>
@@ -9249,7 +9278,7 @@
     <Subsystem>MTCamera</Subsystem>
     <EFDB_Topic>MTCamera_logevent_refrig_Cryo1_LimitsConfiguration</EFDB_Topic>
     <Description>subsystem MTCamera class MTCamera_logevent_refrig_Cryo1_LimitsConfiguration for category Limits</Description>
-    <!--CCS: Dictionary_Checksum: 2968384280L -->
+    <!--CCS: Dictionary_Checksum: 2005870463L -->
     <item>
       <EFDB_Name>version</EFDB_Name>
       <Description>Version of the settings, formatted using CCS conventions</Description>
@@ -9281,6 +9310,62 @@
     <item>
       <EFDB_Name>aftercooltmp_limitLo</EFDB_Name>
       <Description>After Cooler Temperature low alarm level</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>Celsius</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>ambienttmp_warnHi</EFDB_Name>
+      <Description>Ambient Temperature high warning level</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>Celsius</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>ambienttmp_warnLo</EFDB_Name>
+      <Description>Ambient Temperature low warning level</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>Celsius</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>ambienttmp_limitHi</EFDB_Name>
+      <Description>Ambient Temperature high alarm level</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>Celsius</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>ambienttmp_limitLo</EFDB_Name>
+      <Description>Ambient Temperature low alarm level</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>Celsius</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>cabinettmp_warnHi</EFDB_Name>
+      <Description>Cabinet Temperature high warning level</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>Celsius</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>cabinettmp_warnLo</EFDB_Name>
+      <Description>Cabinet Temperature low warning level</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>Celsius</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>cabinettmp_limitHi</EFDB_Name>
+      <Description>Cabinet Temperature high alarm level</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>Celsius</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>cabinettmp_limitLo</EFDB_Name>
+      <Description>Cabinet Temperature low alarm level</Description>
       <IDL_Type>double</IDL_Type>
       <Units>Celsius</Units>
       <Count>1</Count>
@@ -9731,6 +9816,105 @@
       <Description>Water Outlet Temperature low alarm level</Description>
       <IDL_Type>double</IDL_Type>
       <Units>Celsius</Units>
+      <Count>1</Count>
+    </item>
+  </SALEvent>
+  <!--Created by xmlmaker2 for subsystem MTCamera class MTCamera_logevent_refrig_Cryo1_PicConfiguration for category Pic using level 1-->
+  <!--================================================================================================================================-->
+  <SALEvent>
+    <Subsystem>MTCamera</Subsystem>
+    <EFDB_Topic>MTCamera_logevent_refrig_Cryo1_PicConfiguration</EFDB_Topic>
+    <Description>subsystem MTCamera class MTCamera_logevent_refrig_Cryo1_PicConfiguration for category Pic</Description>
+    <!--CCS: Dictionary_Checksum: 4061010445L -->
+    <item>
+      <EFDB_Name>version</EFDB_Name>
+      <Description>Version of the settings, formatted using CCS conventions</Description>
+      <IDL_Type>string</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>fanctrl_awGain</EFDB_Name>
+      <Description>anti-windup gain</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>fanctrl_baseDuty</EFDB_Name>
+      <Description>base duty cycle</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>fanctrl_gain</EFDB_Name>
+      <Description>loop gain</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>fanctrl_maxInput</EFDB_Name>
+      <Description>maximum input (temp. difference)</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>Celsius</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>fanctrl_maxOutput</EFDB_Name>
+      <Description>maximum PID output (duty cycle)</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>fanctrl_minInput</EFDB_Name>
+      <Description>minimum input (temp. difference)</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>Celsius</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>fanctrl_minOutput</EFDB_Name>
+      <Description>minimum PID output (duty cycle)</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>fanctrl_setTemp</EFDB_Name>
+      <Description>Temperature set point</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>Celsius</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>fanctrl_smoothTime</EFDB_Name>
+      <Description>input smoothing time</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>second</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>fanctrl_timeConst</EFDB_Name>
+      <Description>Integration time constant</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>second</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>fanctrl_tolerance</EFDB_Name>
+      <Description>maximum on-target error (%)</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>fanctrl_useAbsTemp</EFDB_Name>
+      <Description>true/false to use absolute temperature set point, not difference</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
       <Count>1</Count>
     </item>
   </SALEvent>
@@ -10405,7 +10589,7 @@
     <Subsystem>MTCamera</Subsystem>
     <EFDB_Topic>MTCamera_logevent_refrig_Cryo3_LimitsConfiguration</EFDB_Topic>
     <Description>subsystem MTCamera class MTCamera_logevent_refrig_Cryo3_LimitsConfiguration for category Limits</Description>
-    <!--CCS: Dictionary_Checksum: 317401243L -->
+    <!--CCS: Dictionary_Checksum: 1413047751L -->
     <item>
       <EFDB_Name>version</EFDB_Name>
       <Description>Version of the settings, formatted using CCS conventions</Description>
@@ -10437,62 +10621,6 @@
     <item>
       <EFDB_Name>aftercooltmp_limitLo</EFDB_Name>
       <Description>After Cooler Temperature low alarm level</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>Celsius</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>ambienttmp_warnHi</EFDB_Name>
-      <Description>Ambient Temperature high warning level</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>Celsius</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>ambienttmp_warnLo</EFDB_Name>
-      <Description>Ambient Temperature low warning level</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>Celsius</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>ambienttmp_limitHi</EFDB_Name>
-      <Description>Ambient Temperature high alarm level</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>Celsius</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>ambienttmp_limitLo</EFDB_Name>
-      <Description>Ambient Temperature low alarm level</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>Celsius</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>cabinettmp_warnHi</EFDB_Name>
-      <Description>Cabinet Temperature high warning level</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>Celsius</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>cabinettmp_warnLo</EFDB_Name>
-      <Description>Cabinet Temperature low warning level</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>Celsius</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>cabinettmp_limitHi</EFDB_Name>
-      <Description>Cabinet Temperature high alarm level</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>Celsius</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>cabinettmp_limitLo</EFDB_Name>
-      <Description>Cabinet Temperature low alarm level</Description>
       <IDL_Type>double</IDL_Type>
       <Units>Celsius</Units>
       <Count>1</Count>
@@ -10943,105 +11071,6 @@
       <Description>Water Outlet Temperature low alarm level</Description>
       <IDL_Type>double</IDL_Type>
       <Units>Celsius</Units>
-      <Count>1</Count>
-    </item>
-  </SALEvent>
-  <!--Created by xmlmaker2 for subsystem MTCamera class MTCamera_logevent_refrig_Cryo3_PicConfiguration for category Pic using level 1-->
-  <!--================================================================================================================================-->
-  <SALEvent>
-    <Subsystem>MTCamera</Subsystem>
-    <EFDB_Topic>MTCamera_logevent_refrig_Cryo3_PicConfiguration</EFDB_Topic>
-    <Description>subsystem MTCamera class MTCamera_logevent_refrig_Cryo3_PicConfiguration for category Pic</Description>
-    <!--CCS: Dictionary_Checksum: 3402127099L -->
-    <item>
-      <EFDB_Name>version</EFDB_Name>
-      <Description>Version of the settings, formatted using CCS conventions</Description>
-      <IDL_Type>string</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>fanctrl_awGain</EFDB_Name>
-      <Description>anti-windup gain</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>fanctrl_baseDuty</EFDB_Name>
-      <Description>base duty cycle</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>fanctrl_gain</EFDB_Name>
-      <Description>loop gain</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>fanctrl_maxInput</EFDB_Name>
-      <Description>maximum input (temp. difference)</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>Celsius</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>fanctrl_maxOutput</EFDB_Name>
-      <Description>maximum PID output (duty cycle)</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>fanctrl_minInput</EFDB_Name>
-      <Description>minimum input (temp. difference)</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>Celsius</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>fanctrl_minOutput</EFDB_Name>
-      <Description>minimum PID output (duty cycle)</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>fanctrl_setTemp</EFDB_Name>
-      <Description>Temperature set point</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>Celsius</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>fanctrl_smoothTime</EFDB_Name>
-      <Description>input smoothing time</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>second</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>fanctrl_timeConst</EFDB_Name>
-      <Description>Integration time constant</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>second</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>fanctrl_tolerance</EFDB_Name>
-      <Description>maximum on-target error (%)</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>fanctrl_useAbsTemp</EFDB_Name>
-      <Description>true/false to use absolute temperature set point, not difference</Description>
-      <IDL_Type>boolean</IDL_Type>
-      <Units>unitless</Units>
       <Count>1</Count>
     </item>
   </SALEvent>
@@ -13167,7 +13196,7 @@
     <Subsystem>MTCamera</Subsystem>
     <EFDB_Topic>MTCamera_logevent_refrig_PeriodicTasks_PicConfiguration</EFDB_Topic>
     <Description>subsystem MTCamera class MTCamera_logevent_refrig_PeriodicTasks_PicConfiguration for category Pic</Description>
-    <!--CCS: Dictionary_Checksum: 1012741945L -->
+    <!--CCS: Dictionary_Checksum: 699659214L -->
     <item>
       <EFDB_Name>version</EFDB_Name>
       <Description>Version of the settings, formatted using CCS conventions</Description>
@@ -13176,8 +13205,8 @@
       <Count>1</Count>
     </item>
     <item>
-      <EFDB_Name>cryo3_FanCtrl_iterate_updateTime</EFDB_Name>
-      <Description>Periodic task Cryo3/FanCtrl update time</Description>
+      <EFDB_Name>cryo1_FanCtrl_iterate_updateTime</EFDB_Name>
+      <Description>Periodic task Cryo1/FanCtrl update time</Description>
       <IDL_Type>long long</IDL_Type>
       <Units>ms</Units>
       <Count>1</Count>
@@ -23095,7 +23124,7 @@
     <Subsystem>MTCamera</Subsystem>
     <EFDB_Topic>MTCamera_logevent_fcs_Autochanger_sensorConfiguration</EFDB_Topic>
     <Description>subsystem MTCamera class MTCamera_logevent_fcs_Autochanger_sensorConfiguration for category sensor</Description>
-    <!--CCS: Dictionary_Checksum: 2769748111L -->
+    <!--CCS: Dictionary_Checksum: 3952243296L -->
     <item>
       <EFDB_Name>version</EFDB_Name>
       <Description>Version of the settings, formatted using CCS conventions</Description>
@@ -24336,6 +24365,20 @@
       <Count>1</Count>
     </item>
     <item>
+      <EFDB_Name>plc_inclinometerXminus_maxDeg</EFDB_Name>
+      <Description>Upper limit of PLC accepted</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>degrees</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>plc_inclinometerXminus_minDeg</EFDB_Name>
+      <Description>Lower limit of PLC accepted</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>degrees</Units>
+      <Count>1</Count>
+    </item>
+    <item>
       <EFDB_Name>plc_inclinometerXplus_byteNumero</EFDB_Name>
       <Description>Inclinometer byte number</Description>
       <IDL_Type>long</IDL_Type>
@@ -24347,6 +24390,20 @@
       <Description>Inclinometer device name</Description>
       <IDL_Type>string</IDL_Type>
       <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>plc_inclinometerXplus_maxDeg</EFDB_Name>
+      <Description>Upper limit of PLC accepted</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>degrees</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>plc_inclinometerXplus_minDeg</EFDB_Name>
+      <Description>Lower limit of PLC accepted</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>degrees</Units>
       <Count>1</Count>
     </item>
     <item>
@@ -24661,6 +24718,49 @@
       <EFDB_Name>plc_lpmOnlineClampsStatus_inputNumero</EFDB_Name>
       <Description>The input number on DIO device where this sensor is plugged on.</Description>
       <IDL_Type>long</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+  </SALEvent>
+  <!--Created by xmlmaker2 for subsystem MTCamera class MTCamera_logevent_fcs_Canbus0_LimitsConfiguration for category Limits using level 1-->
+  <!--=====================================================================================================================================-->
+  <SALEvent>
+    <Subsystem>MTCamera</Subsystem>
+    <EFDB_Topic>MTCamera_logevent_fcs_Canbus0_LimitsConfiguration</EFDB_Topic>
+    <Description>subsystem MTCamera class MTCamera_logevent_fcs_Canbus0_LimitsConfiguration for category Limits</Description>
+    <!--CCS: Dictionary_Checksum: 3171138750L -->
+    <item>
+      <EFDB_Name>version</EFDB_Name>
+      <Description>Version of the settings, formatted using CCS conventions</Description>
+      <IDL_Type>string</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>tempsensorsdevice1_warnHiByDevice</EFDB_Name>
+      <Description>High temperature warning thresholds in °C, keyed by sensor name. Raises AC_TEMPERATURE_WARNING when temperature exceeds the threshold. (colon delimited array)</Description>
+      <IDL_Type>string</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>tempsensorsdevice1_warnLoByDevice</EFDB_Name>
+      <Description>Low temperature warning thresholds in °C, keyed by sensor name. Raises AC_TEMPERATURE_WARNING when temperature drops below the threshold. (colon delimited array)</Description>
+      <IDL_Type>string</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>tempsensorsdevice2_warnHiByDevice</EFDB_Name>
+      <Description>High temperature warning thresholds in °C, keyed by sensor name. Raises AC_TEMPERATURE_WARNING when temperature exceeds the threshold. (colon delimited array)</Description>
+      <IDL_Type>string</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>tempsensorsdevice2_warnLoByDevice</EFDB_Name>
+      <Description>Low temperature warning thresholds in °C, keyed by sensor name. Raises AC_TEMPERATURE_WARNING when temperature drops below the threshold. (colon delimited array)</Description>
+      <IDL_Type>string</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
     </item>
