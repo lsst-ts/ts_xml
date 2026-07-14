@@ -15,6 +15,79 @@ Version History
 
 .. towncrier release notes start
 
+v28.0.0 (2026-07-14)
+====================
+Package Level
+-------------
+
+New Features
+~~~~~~~~~~~~
+
+- Added Camera Avro schema for telemetry and code to handle it for Python. (`OSW-2648 <https://rubinobs.atlassian.net/browse/OSW-2648>`_)
+
+
+Bug Fixes
+~~~~~~~~~
+
+- Changed the type definition of currentSeverity and highestSeverity to int. Removed enumerated values for currentSeverity. (`OSW-2364 <https://rubinobs.atlassian.net/browse/OSW-2364>`_)
+- Changed type for alertRaised event fields currentSeverity and highestSeverity back to long, was int, to ensure backward compatibility. (`OSW-2385 <https://rubinobs.atlassian.net/browse/OSW-2385>`_)
+- Added missing setuptools version pins to conda/meta.yaml. (`OSW-2427 <https://rubinobs.atlassian.net/browse/OSW-2427>`_)
+
+
+Other Changes and Additions
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+- Added ``lsst.ts.xml.tables.mtdome`` with a ``LouverTable`` describing dome louver names, azimuth normals, and mechanical properties. (`OSW-1555 <https://rubinobs.atlassian.net/browse/OSW-1555>`_)
+
+
+Interface Changes
+-----------------
+
+ESS
+~~~
+
+- Added rainLevel and lightLevel telemetry topics for the dimensionless rain and light data provided by the Aurora Cloud Sensor. (`OSW-2485 <https://rubinobs.atlassian.net/browse/OSW-2485>`_)
+
+
+Guider
+~~~~~~
+
+- Remove deprecated events and commands, including all (non lifeyce) commands
+  Rename GuiderState back to GuiderStatus
+  Change units of 2nd moments to mm^2 (`CAP-1108 <https://rubinobs.atlassian.net/browse/CAP-1108>`_)
+
+
+HVAC
+~~~~
+
+- Added event items for HVAC command replies. (`OSW-2230 <https://rubinobs.atlassian.net/browse/OSW-2230>`_)
+- Corrected several descriptions. (`OSW-2550 <https://rubinobs.atlassian.net/browse/OSW-2550>`_)
+- Updated the OperatingMode enum. (`OSW-2550 <https://rubinobs.atlassian.net/browse/OSW-2550>`_)
+
+
+LEDProjector
+~~~~~~~~~~~~
+
+- Added a new ledsOn event that reports which LEDs are on and their DAC values when the LED state changes. (`OSW-2379 <https://rubinobs.atlassian.net/browse/OSW-2379>`_)
+
+
+MTCamera
+~~~~~~~~
+
+- Updated camera XML (`CAP-1111 <https://rubinobs.atlassian.net/browse/CAP-1111>`_)
+
+
+v27.1.1 (2026-05-11)
+====================
+Interface Changes
+-----------------
+
+Guider
+~~~~~~
+
+- Revert changes from previous release.
+
+
 v27.1.0 (2026-05-07)
 ====================
 Package Level
