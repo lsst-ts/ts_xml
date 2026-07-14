@@ -28,12 +28,13 @@ requirements:
     - setuptools
   build:
     - python {{ python }}
-    - setuptools_scm
-    - setuptools
+    - setuptools {{ setuptools }}
+    - setuptools_scm {{ setuptools_scm }}
   run:
     - python {{ python }}
     - astropy-base
     - lxml
+    - fastavro
 
 about:
   home: https://github.com/lsst-ts/ts_xml

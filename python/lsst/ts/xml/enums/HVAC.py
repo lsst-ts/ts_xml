@@ -92,7 +92,10 @@ class DynaleneTankLevel(IntEnum):
 
 
 class OperatingMode(IntEnum):
-    """General operating mode."""
+    """General operating mode.
+
+    The values can be found on page 13 of the W3000 manual in DocuShare.
+    """
 
     AUTO = 0
     RECOVERY = 1
@@ -101,7 +104,7 @@ class OperatingMode(IntEnum):
     HEATPUMP = 4
     UNUSED_1 = 5
     UNUSED_2 = 6
-    UNUSED_3 = 7
+    COOLING_AND_HUMIDIFICATION = 7
     CHILLER_FREE_COOLING = 8
     UNUSED_4 = 9
     SUMMER_AUTO = 10

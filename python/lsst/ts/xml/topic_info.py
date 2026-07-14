@@ -30,9 +30,12 @@ import typing
 import warnings
 from xml.etree import ElementTree
 
+from fastavro.schema import load_schema
+
 from .field_info import FieldInfo
 from .sal_topic_utils import find_optional_text, find_required_text
 from .type_hints import BaseMsgType
+from .utils import get_interfaces_dir
 
 _PRIVATE_FIELD_LIST = [
     FieldInfo(
@@ -332,6 +335,79 @@ class TopicInfo:
             description=description,
             fields=fields,
         )
+
+    @classmethod
+    def from_avro(
+        cls,
+        topic_file: str,
+        component_name: str,
+        topic_subname: str,
+        indexed: bool,
+    ) -> TopicInfo:
+        """Construct a TopicInfo from a topic AVSC file.
+
+        Parameters
+        ----------
+        topic_file : `str`
+            The topic AVSC file to read.
+        component_name : `str`
+            SAL component name, e.g. MTMount
+        topic_subname : `str`
+            Sub-namespace for topic names and schema subject and namespace.
+        indexed : `str`
+            Is this component indexed?
+        """
+        fields = PRIVATE_FIELDS.copy()
+        if not indexed:
+            del fields["salIndex"]
+        private_fields_avro = [pf.make_avro_schema() for pf in fields.values()]
+
+        avro_schema_file = get_interfaces_dir() / component_name / topic_file
+        avro_schema = load_schema(avro_schema_file, _write_hint=False)
+        sal_name = topic_file.split(".")[0]
+        try:
+            description = avro_schema["description"]
+        except KeyError:
+            description = "No description given"
+
+        # load_schema combines name and namespace and writes back to name
+        # undo that
+        name = avro_schema["name"]
+        avro_schema["name"] = sal_name
+        avro_schema["namespace"] = ".".join(name.split(".")[:-1])
+        for field in avro_schema["fields"]:
+            name = field["name"]
+            ftypes = field["type"]
+            fitype = ""
+            if isinstance(ftypes, list):
+                for ftype in ftypes:
+                    if ftype != "null":
+                        fitype = ftype
+                        break
+            else:
+                fitype = ftypes
+            try:
+                units = field["units"]
+            except KeyError:
+                units = "unitless"
+            fields[name] = FieldInfo(
+                name,
+                fitype,
+                units=units,
+                description=field["description"],
+            )
+
+        avro_schema["fields"].extend(private_fields_avro)
+
+        t = cls(
+            component_name=component_name,
+            topic_subname=topic_subname,
+            sal_name=sal_name,
+            description=description,
+            fields=fields,
+        )
+        t._avro_schema_cache[(component_name, t.attr_name)] = avro_schema
+        return t
 
     def make_dataclass(self) -> typing.Type[BaseMsgType]:
         """Create a dataclass."""

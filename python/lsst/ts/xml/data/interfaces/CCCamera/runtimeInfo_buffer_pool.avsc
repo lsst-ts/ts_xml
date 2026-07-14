@@ -1,0 +1,53 @@
+{
+  "type" : "record",
+  "name" : "runtimeInfo_buffer_pool",
+  "namespace" : "lsst.sal.CCCamera",
+  "fields" : [
+    {
+      "name" : "timestamp",
+      "type" : "long",
+      "description" : "UTC timestamp",
+      "units" : "millisecond"
+    },
+    {
+      "name" : "nBuffers",
+      "type" : [
+        "null",
+        "long"
+      ],
+      "default" : null,
+      "description" : "Estimated number of buffers in pool",
+      "units" : "unitless"
+    },
+    {
+      "name" : "memoryUsed",
+      "type" : [
+        "null",
+        "long"
+      ],
+      "default" : null,
+      "description" : "Memory used by this buffer pool",
+      "units" : "bytes"
+    },
+    {
+      "name" : "totalCapacity",
+      "type" : [
+        "null",
+        "long"
+      ],
+      "default" : null,
+      "description" : "Total capacity for this buffer pool",
+      "units" : "bytes"
+    },
+    {
+      "name" : "Buffer",
+      "type" : "string",
+      "description" : "This is a tag"
+    },
+    {
+      "name" : "Agent",
+      "type" : "string",
+      "description" : "This is a tag"
+    }
+  ]
+}

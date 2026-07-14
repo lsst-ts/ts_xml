@@ -1,0 +1,108 @@
+{
+  "type" : "record",
+  "name" : "shutter",
+  "namespace" : "lsst.sal.MTCamera",
+  "fields" : [
+    {
+      "name" : "timestamp",
+      "type" : "long",
+      "description" : "UTC timestamp",
+      "units" : "millisecond"
+    },
+    {
+      "name" : "motionProfile",
+      "type" : [
+        "null",
+        "int"
+      ],
+      "default" : null,
+      "description" : "Type of motion profile. 0 = S-curve.",
+      "units" : "unitless"
+    },
+    {
+      "name" : "isCalibrated",
+      "type" : [
+        "null",
+        "int"
+      ],
+      "default" : null,
+      "description" : "Hall switch positions calibrated? 0 = no, 1 = yes.",
+      "units" : "unitless"
+    },
+    {
+      "name" : "smState",
+      "type" : [
+        "null",
+        "int"
+      ],
+      "default" : null,
+      "description" : "The state of the shutter controller's state machine.",
+      "units" : "unitless"
+    },
+    {
+      "name" : "isSafetyOn",
+      "type" : [
+        "null",
+        "int"
+      ],
+      "default" : null,
+      "description" : "0 for shutter safety checks disable, 1 for enabled.",
+      "units" : "unitless"
+    },
+    {
+      "name" : "brakePowerIsOn",
+      "type" : [
+        "null",
+        "int"
+      ],
+      "default" : null,
+      "description" : "Is brake power on? 0 = no, 1 = yes.",
+      "units" : "unitless"
+    },
+    {
+      "name" : "creationTime",
+      "type" : [
+        "null",
+        "double"
+      ],
+      "default" : null,
+      "description" : "The time at which this message was created or last updated. The output of CCSTimeStamp.getTAIDouble().",
+      "units" : "s"
+    },
+    {
+      "name" : "ptpState",
+      "type" : [
+        "null",
+        "int"
+      ],
+      "default" : null,
+      "description" : "The state of the PTP module.",
+      "units" : "unitless"
+    },
+    {
+      "name" : "leapSeconds",
+      "type" : [
+        "null",
+        "int"
+      ],
+      "default" : null,
+      "description" : "The current number of leap seconds from the PTP module.",
+      "units" : "count"
+    },
+    {
+      "name" : "leapIsValid",
+      "type" : [
+        "null",
+        "int"
+      ],
+      "default" : null,
+      "description" : "Is the PTP leap-second count valid? 0 = no, 1 = yes.",
+      "units" : "unitless"
+    },
+    {
+      "name" : "Agent",
+      "type" : "string",
+      "description" : "This is a tag"
+    }
+  ]
+}

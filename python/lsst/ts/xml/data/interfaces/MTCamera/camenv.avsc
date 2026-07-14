@@ -1,0 +1,103 @@
+{
+  "type" : "record",
+  "name" : "camenv",
+  "namespace" : "lsst.sal.MTCamera",
+  "fields" : [
+    {
+      "name" : "timestamp",
+      "type" : "long",
+      "description" : "UTC timestamp",
+      "units" : "millisecond"
+    },
+    {
+      "name" : "Pressure",
+      "type" : [
+        "null",
+        "double"
+      ],
+      "default" : null,
+      "description" : "MS5611 Pressure",
+      "units" : "kPa"
+    },
+    {
+      "name" : "Pressure_state",
+      "type" : [
+        "null",
+        "string"
+      ],
+      "default" : null,
+      "description" : "Monitoring state for DracalPTH/Pressure",
+      "units" : "unitless"
+    },
+    {
+      "name" : "Temperature",
+      "type" : [
+        "null",
+        "double"
+      ],
+      "default" : null,
+      "description" : "SHT31 Temperature",
+      "units" : "Celsius"
+    },
+    {
+      "name" : "Temperature_state",
+      "type" : [
+        "null",
+        "string"
+      ],
+      "default" : null,
+      "description" : "Monitoring state for DracalPTH/Temperature",
+      "units" : "unitless"
+    },
+    {
+      "name" : "Relative_Humidity",
+      "type" : [
+        "null",
+        "double"
+      ],
+      "default" : null,
+      "description" : "SHT31 Relative Humidity",
+      "units" : "%"
+    },
+    {
+      "name" : "Relative_Humidity_state",
+      "type" : [
+        "null",
+        "string"
+      ],
+      "default" : null,
+      "description" : "Monitoring state for DracalPTH/Relative_Humidity",
+      "units" : "unitless"
+    },
+    {
+      "name" : "Dew_Point",
+      "type" : [
+        "null",
+        "double"
+      ],
+      "default" : null,
+      "description" : "Dew Point",
+      "units" : "Celsius"
+    },
+    {
+      "name" : "Dew_Point_state",
+      "type" : [
+        "null",
+        "string"
+      ],
+      "default" : null,
+      "description" : "Monitoring state for DracalPTH/Dew_Point",
+      "units" : "unitless"
+    },
+    {
+      "name" : "Sensor",
+      "type" : "string",
+      "description" : "This is a tag"
+    },
+    {
+      "name" : "Agent",
+      "type" : "string",
+      "description" : "This is a tag"
+    }
+  ]
+}

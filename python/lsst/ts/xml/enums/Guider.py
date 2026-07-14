@@ -26,10 +26,11 @@ import enum
 class GuiderStatus(enum.IntEnum):
     """Guider status."""
 
-    STOPPED = 1
-    STARTING = enum.auto()
-    GUIDING = enum.auto()
-    ERROR = enum.auto()
+    STAMP = 1
+    START = enum.auto()
+    STOP = enum.auto()
+    PAUSE = enum.auto()
+    RESUME = enum.auto()
 
 
 class SalIndex(enum.IntEnum):
