@@ -15,6 +15,23 @@ Version History
 
 .. towncrier release notes start
 
+v28.0.1 (2026-07-15)
+====================
+Package Level
+-------------
+
+No significant changes.
+
+
+Interface Changes
+-----------------
+
+HVAC
+~~~~
+
+- Fixed the unit of a telemetry item of two air handling units. (`OSW-2702 <https://rubinobs.atlassian.net/browse/OSW-2702>`_)
+
+
 v28.0.0 (2026-07-14)
 ====================
 Package Level
