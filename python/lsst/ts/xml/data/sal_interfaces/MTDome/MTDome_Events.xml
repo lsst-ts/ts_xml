@@ -493,30 +493,6 @@
   </SALEvent>
   <SALEvent>
     <Subsystem>MTDome</Subsystem>
-    <EFDB_Topic>MTDome_logevent_lockingPinsEngaged</EFDB_Topic>
-    <Description>Reports whether the locking pins are engaged or not.</Description>
-    <item>
-      <EFDB_Name>engaged</EFDB_Name>
-      <Description>Bitmask of locking pins that have been engaged. The bits are defined by the LockingPin enum.</Description>
-      <IDL_Type>int</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-  </SALEvent>
-  <SALEvent>
-    <Subsystem>MTDome</Subsystem>
-    <EFDB_Topic>MTDome_logevent_interlocks</EFDB_Topic>
-    <Description>Reports whether the interlocks are latched or not.</Description>
-    <item>
-      <EFDB_Name>interlocks</EFDB_Name>
-      <Description>Bitmask of safety interlocks that are latched. The bits are defined by the Interlock enum.</Description>
-      <IDL_Type>int</IDL_Type>
-      <Units>unitless</Units>
-      <Count>1</Count>
-    </item>
-  </SALEvent>
-  <SALEvent>
-    <Subsystem>MTDome</Subsystem>
     <EFDB_Topic>MTDome_logevent_azConfigurationApplied</EFDB_Topic>
     <Description>Azimuth configuration applied.</Description>
     <item>
@@ -609,6 +585,2674 @@
       <Description>The control mode.</Description>
       <IDL_Type>int</IDL_Type>
       <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+  </SALEvent>
+  <SALEvent>
+    <Subsystem>MTDome</Subsystem>
+    <EFDB_Topic>MTDome_logevent_interlocksAMCS</EFDB_Topic>
+    <Description>Interlocks for the Azimuth Motion Control System.</Description>
+    <item>
+      <EFDB_Name>gisA3Active</EFDB_Name>
+      <Description>Value of gisA3Active.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>gisA11Active</EFDB_Name>
+      <Description>Value of gisA11Active.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>emergencyPushbuttonPressed</EFDB_Name>
+      <Description>Value of emergencyPushbuttonPressed.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>cabinetDoorsOpenOnRotatingPart</EFDB_Name>
+      <Description>Value of cabinetDoorsOpenOnRotatingPart.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>sealNotDeflated</EFDB_Name>
+      <Description>Value of sealNotDeflated.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>craneNotParkedOverrideNotActive</EFDB_Name>
+      <Description>Value of craneNotParkedOverrideNotActive.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>smallAuxiliaryCraneNotParked</EFDB_Name>
+      <Description>Value of smallAuxiliaryCraneNotParked.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>azLockingPinNotRetracted</EFDB_Name>
+      <Description>Value of azLockingPinNotRetracted.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>lightBafflesNotClosed</EFDB_Name>
+      <Description>Value of lightBafflesNotClosed.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>apsLowerGangwayHatchNotClosed</EFDB_Name>
+      <Description>Value of apsLowerGangwayHatchNotClosed.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>apsTopExteriorLeftHatchNotClosed</EFDB_Name>
+      <Description>Value of apsTopExteriorLeftHatchNotClosed.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>apsTopExteriorRightHatchNotClosed</EFDB_Name>
+      <Description>Value of apsTopExteriorRightHatchNotClosed.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>radNotClosed</EFDB_Name>
+      <Description>Value of radNotClosed.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>timestamp</EFDB_Name>
+      <Description>Time at which the data was determined (TAI unix seconds).</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>second</Units>
+      <Count>1</Count>
+    </item>
+  </SALEvent>
+  <SALEvent>
+    <Subsystem>MTDome</Subsystem>
+    <EFDB_Topic>MTDome_logevent_interlocksLWSCS</EFDB_Topic>
+    <Description>Interlocks for the Light Wind Screen Control System.</Description>
+    <item>
+      <EFDB_Name>gisA7Active</EFDB_Name>
+      <Description>Value of gisA7Active.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>emergencyPushbuttonPressed</EFDB_Name>
+      <Description>Value of emergencyPushbuttonPressed.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>lockingPinsNotRetracted</EFDB_Name>
+      <Description>Value of lockingPinsNotRetracted.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>upperPowerOffLsEngaged</EFDB_Name>
+      <Description>Value of upperPowerOffLsEngaged.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>lowerPowerOffLsEngaged</EFDB_Name>
+      <Description>Value of lowerPowerOffLsEngaged.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>chainNotPresentLeftSide</EFDB_Name>
+      <Description>Value of chainNotPresentLeftSide.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>chainNotPresentRightSide</EFDB_Name>
+      <Description>Value of chainNotPresentRightSide.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>timestamp</EFDB_Name>
+      <Description>Time at which the data was determined (TAI unix seconds).</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>second</Units>
+      <Count>1</Count>
+    </item>
+  </SALEvent>
+  <SALEvent>
+    <Subsystem>MTDome</Subsystem>
+    <EFDB_Topic>MTDome_logevent_interlocksApSCS</EFDB_Topic>
+    <Description>Interlocks for the Aperture Shutter Control System.</Description>
+    <item>
+      <EFDB_Name>gisA7Active</EFDB_Name>
+      <Description>Value of gisA7Active.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>gisA9Active</EFDB_Name>
+      <Description>Value of gisA9Active.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>emergencyPushbuttonPressed</EFDB_Name>
+      <Description>Value of emergencyPushbuttonPressed.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>lockingPinsNotRetracted</EFDB_Name>
+      <Description>Value of lockingPinsNotRetracted.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>apsLowerGangwayHatchNotClosedOverrideNotActive</EFDB_Name>
+      <Description>Value of apsLowerGangwayHatchNotClosedOverrideNotActive.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>apsTopExteriorLeftHatchNotClosedOverrideNotActive</EFDB_Name>
+      <Description>Value of apsTopExteriorLeftHatchNotClosedOverrideNotActive.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>apsTopExteriorRightHatchNotClosedOverrideNotActive</EFDB_Name>
+      <Description>Value of apsTopExteriorRightHatchNotClosedOverrideNotActive.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>upperPhotocellInterrupted</EFDB_Name>
+      <Description>Value of upperPhotocellInterrupted.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>lowerPhotocellInterrupted</EFDB_Name>
+      <Description>Value of lowerPhotocellInterrupted.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>timestamp</EFDB_Name>
+      <Description>Time at which the data was determined (TAI unix seconds).</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>second</Units>
+      <Count>1</Count>
+    </item>
+  </SALEvent>
+  <SALEvent>
+    <Subsystem>MTDome</Subsystem>
+    <EFDB_Topic>MTDome_logevent_interlocksLCS</EFDB_Topic>
+    <Description>Interlocks for the Louvers Control System.</Description>
+    <item>
+      <EFDB_Name>gisA9Active</EFDB_Name>
+      <Description>Value of gisA9Active.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>emergencyPushbuttonPressed</EFDB_Name>
+      <Description>Value of emergencyPushbuttonPressed.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>timestamp</EFDB_Name>
+      <Description>Time at which the data was determined (TAI unix seconds).</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>second</Units>
+      <Count>1</Count>
+    </item>
+  </SALEvent>
+  <SALEvent>
+    <Subsystem>MTDome</Subsystem>
+    <EFDB_Topic>MTDome_logevent_interlocksOBC</EFDB_Topic>
+    <Description>Interlocks for the Overhead Bridge Crane.</Description>
+    <item>
+      <EFDB_Name>gisA8Active</EFDB_Name>
+      <Description>Value of gisA8Active.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>emergencyPushbuttonPressed</EFDB_Name>
+      <Description>Value of emergencyPushbuttonPressed.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>timestamp</EFDB_Name>
+      <Description>Time at which the data was determined (TAI unix seconds).</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>second</Units>
+      <Count>1</Count>
+    </item>
+  </SALEvent>
+  <SALEvent>
+    <Subsystem>MTDome</Subsystem>
+    <EFDB_Topic>MTDome_logevent_interlocksRAD</EFDB_Topic>
+    <Description>Interlocks for the Rear Access Door.</Description>
+    <item>
+      <EFDB_Name>gisA10Active</EFDB_Name>
+      <Description>Value of gisA10Active.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>emergencyPushbuttonPressed</EFDB_Name>
+      <Description>Value of emergencyPushbuttonPressed.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>lockingPinsNotRetracted</EFDB_Name>
+      <Description>Value of lockingPinsNotRetracted.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>driveOverspeed</EFDB_Name>
+      <Description>Value of driveOverspeed.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>photocellInterrupted</EFDB_Name>
+      <Description>Value of photocellInterrupted.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>lightCurtainInterrupted</EFDB_Name>
+      <Description>Value of lightCurtainInterrupted.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>timestamp</EFDB_Name>
+      <Description>Time at which the data was determined (TAI unix seconds).</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>second</Units>
+      <Count>1</Count>
+    </item>
+  </SALEvent>
+  <SALEvent>
+    <Subsystem>MTDome</Subsystem>
+    <EFDB_Topic>MTDome_logevent_interlocksCSCS</EFDB_Topic>
+    <Description>Interlocks for the Calibration Screen Control System.</Description>
+    <item>
+      <EFDB_Name>driveOverspeed</EFDB_Name>
+      <Description>Value of driveOverspeed.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>emergencyPushbuttonPressed</EFDB_Name>
+      <Description>Value of emergencyPushbuttonPressed.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>timestamp</EFDB_Name>
+      <Description>Time at which the data was determined (TAI unix seconds).</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>second</Units>
+      <Count>1</Count>
+    </item>
+  </SALEvent>
+  <SALEvent>
+    <Subsystem>MTDome</Subsystem>
+    <EFDB_Topic>MTDome_logevent_interlocksLockingPins</EFDB_Topic>
+    <Description>Interlocks for the Locking Pins.</Description>
+    <item>
+      <EFDB_Name>gisA9Active</EFDB_Name>
+      <Description>Value of gisA9Active.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>emergencyPushbuttonPressed</EFDB_Name>
+      <Description>Value of emergencyPushbuttonPressed.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>azCenteringLsNotEngaged</EFDB_Name>
+      <Description>Value of azCenteringLsNotEngaged.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>azDomeNotParked</EFDB_Name>
+      <Description>Value of azDomeNotParked.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>azPositionOutOfTolerance</EFDB_Name>
+      <Description>Value of azPositionOutOfTolerance.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>azNotInLocalEui</EFDB_Name>
+      <Description>Value of azNotInLocalEui.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>apsFinalLsNotEngaged</EFDB_Name>
+      <Description>Value of apsFinalLsNotEngaged.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>radFinalLsNotEngaged</EFDB_Name>
+      <Description>Value of radFinalLsNotEngaged.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>timestamp</EFDB_Name>
+      <Description>Time at which the data was determined (TAI unix seconds).</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>second</Units>
+      <Count>1</Count>
+    </item>
+  </SALEvent>
+  <SALEvent>
+    <Subsystem>MTDome</Subsystem>
+    <EFDB_Topic>MTDome_logevent_sensorsFixedPartLines24V</EFDB_Topic>
+    <Description>Sensors for the 24V lines on the fixed part of the dome.</Description>
+    <item>
+      <EFDB_Name>crioPilzValves</EFDB_Name>
+      <Description>Value of crioPilzValves. True means that the line is on 24 V.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>motorsSolenoids</EFDB_Name>
+      <Description>Value of motorsSolenoids. True means that the line is on 24 V.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>drives</EFDB_Name>
+      <Description>Value of drives. True means that the line is on 24 V.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>thermal</EFDB_Name>
+      <Description>Value of thermal. True means that the line is on 24 V.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>timestamp</EFDB_Name>
+      <Description>Time at which the data was determined (TAI unix seconds).</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>second</Units>
+      <Count>1</Count>
+    </item>
+  </SALEvent>
+  <SALEvent>
+    <Subsystem>MTDome</Subsystem>
+    <EFDB_Topic>MTDome_logevent_sensorsFixedPartAlarms</EFDB_Topic>
+    <Description>Sensors for the alarms of the fixed part of the dome.</Description>
+    <item>
+      <EFDB_Name>accessPoint</EFDB_Name>
+      <Description>Value of accessPoint.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>surgeArrester</EFDB_Name>
+      <Description>Value of surgeArrester.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>ethernetSwitch</EFDB_Name>
+      <Description>Value of ethernetSwitch.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>insulationMonitorTrip</EFDB_Name>
+      <Description>Value of insulationMonitorTrip.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>timestamp</EFDB_Name>
+      <Description>Time at which the data was determined (TAI unix seconds).</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>second</Units>
+      <Count>1</Count>
+    </item>
+  </SALEvent>
+  <SALEvent>
+    <Subsystem>MTDome</Subsystem>
+    <EFDB_Topic>MTDome_logevent_sensorsFixedPartSelectors</EFDB_Topic>
+    <Description>Sensors for the selectors on the fixed part of the dome.</Description>
+    <item>
+      <EFDB_Name>remoteOn</EFDB_Name>
+      <Description>Value of remoteOn.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>hmiEnable</EFDB_Name>
+      <Description>Value of hmiEnable.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>manualRotation</EFDB_Name>
+      <Description>Value of manualRotation. True means manual rotation is active.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>timestamp</EFDB_Name>
+      <Description>Time at which the data was determined (TAI unix seconds).</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>second</Units>
+      <Count>1</Count>
+    </item>
+  </SALEvent>
+  <SALEvent>
+    <Subsystem>MTDome</Subsystem>
+    <EFDB_Topic>MTDome_logevent_sensorsFixedPartInflatableSeal</EFDB_Topic>
+    <Description>Sensors for the inflatable seal on the fixed part of the dome.</Description>
+    <item>
+      <EFDB_Name>compressedAirLinePressureOk</EFDB_Name>
+      <Description>Value of compressedAirLinePressureOk.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>compressedAirTankPressureOk</EFDB_Name>
+      <Description>Value of compressedAirTankPressureOk.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>sealInflated</EFDB_Name>
+      <Description>Value of sealInflated.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>sealDeflated</EFDB_Name>
+      <Description>Value of sealDeflated.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>timestamp</EFDB_Name>
+      <Description>Time at which the data was determined (TAI unix seconds).</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>second</Units>
+      <Count>1</Count>
+    </item>
+  </SALEvent>
+  <SALEvent>
+    <Subsystem>MTDome</Subsystem>
+    <EFDB_Topic>MTDome_logevent_sensorsFixedPartValves</EFDB_Topic>
+    <Description>Sensors for the valves on the fixed part of the dome.</Description>
+    <item>
+      <EFDB_Name>valve1AdbsCabinetValue</EFDB_Name>
+      <Description>Value of valve1AdbsCabinetValue. Percentage value of the valves used for thermal control of +IFTP.PDC1 cabinet and azimuth motors.</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>%</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>valve2AdbsCabinetValue</EFDB_Name>
+      <Description>Value of valve2AdbsCabinetValue. Percentage value of the valves used for thermal control of +IFTP.PDC1 cabinet and azimuth motors.</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>%</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>valveAdbsMotor1Value</EFDB_Name>
+      <Description>Value of valveAdbsMotor1Value. Percentage value of the valves used for thermal control of +IFTP.PDC1 cabinet and azimuth motors.</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>%</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>valveAdbsMotor2Value</EFDB_Name>
+      <Description>Value of valveAdbsMotor2Value. Percentage value of the valves used for thermal control of +IFTP.PDC1 cabinet and azimuth motors.</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>%</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>valveAdbsMotor3Value</EFDB_Name>
+      <Description>Value of valveAdbsMotor3Value. Percentage value of the valves used for thermal control of +IFTP.PDC1 cabinet and azimuth motors.</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>%</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>valveAdbsMotor4Value</EFDB_Name>
+      <Description>Value of valveAdbsMotor4Value. Percentage value of the valves used for thermal control of +IFTP.PDC1 cabinet and azimuth motors.</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>%</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>valveAdbsMotor5Value</EFDB_Name>
+      <Description>Value of valveAdbsMotor5Value. Percentage value of the valves used for thermal control of +IFTP.PDC1 cabinet and azimuth motors.</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>%</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>timestamp</EFDB_Name>
+      <Description>Time at which the data was determined (TAI unix seconds).</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>second</Units>
+      <Count>1</Count>
+    </item>
+  </SALEvent>
+  <SALEvent>
+    <Subsystem>MTDome</Subsystem>
+    <EFDB_Topic>MTDome_logevent_sensorsFixedPart</EFDB_Topic>
+    <Description>Sensors for the fixed part of the dome that do not belong to the 24V lines, alarms, selectors, inflatable seal or valves.</Description>
+    <item>
+      <EFDB_Name>adbsLocalBoxEmergencyPushbutton</EFDB_Name>
+      <Description>Value of adbsLocalBoxEmergencyPushbutton. True means the emergency pushbutton is pressed.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>iftpPdc1Doors</EFDB_Name>
+      <Description>Value of iftpPdc1Doors. True means the cabinet doors are closed.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>adbsLoto</EFDB_Name>
+      <Description>Value of adbsLoto. True if external LOTO mechanism at 6th floor is active.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>brakes</EFDB_Name>
+      <Description>Value of brakes. True if az brakes are disengaged.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>timestamp</EFDB_Name>
+      <Description>Time at which the data was determined (TAI unix seconds).</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>second</Units>
+      <Count>1</Count>
+    </item>
+  </SALEvent>
+  <SALEvent>
+    <Subsystem>MTDome</Subsystem>
+    <EFDB_Topic>MTDome_logevent_sensorsRotatingPartLines24V</EFDB_Topic>
+    <Description>Sensors for the 24V lines on the rotating part of the dome.</Description>
+    <item>
+      <EFDB_Name>pilzHmi</EFDB_Name>
+      <Description>Value of pilzHmi. True means that the line is on 24 V.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>sensors</EFDB_Name>
+      <Description>Value of sensors. True means that the line is on 24 V.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>niCards</EFDB_Name>
+      <Description>Value of niCards. True means that the line is on 24 V.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>tmplPdc1</EFDB_Name>
+      <Description>Value of tmplPdc1. True means that the line is on 24 V.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>tmplAc1Redundancy</EFDB_Name>
+      <Description>Value of tmplAc1Redundancy. True means that the line is on 24 V.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>tmplPdc1Redundancy</EFDB_Name>
+      <Description>Value of tmplPdc1Redundancy. True means that the line is on 24 V.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>tmplPdc2Redundancy</EFDB_Name>
+      <Description>Value of tmplPdc2Redundancy. True means that the line is on 24 V.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>tmplPdc5Ups</EFDB_Name>
+      <Description>Value of tmplPdc5Ups. True means that the line is on 24 V.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>tmplPdc5Aux</EFDB_Name>
+      <Description>Value of tmplPdc5Aux. True means that the line is on 24 V.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>tmplPdc6Ups</EFDB_Name>
+      <Description>Value of tmplPdc6Ups. True means that the line is on 24 V.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>tmplPdc6Aux</EFDB_Name>
+      <Description>Value of tmplPdc6Aux. True means that the line is on 24 V.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>tmplPdc7Drives</EFDB_Name>
+      <Description>Value of tmplPdc7Drives. True means that the line is on 24 V.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>tmplPdc7Pushbuttons</EFDB_Name>
+      <Description>Value of tmplPdc7Pushbuttons. True means that the line is on 24 V.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>tmplPdc8Ups</EFDB_Name>
+      <Description>Value of tmplPdc8Ups. True means that the line is on 24 V.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>tmplPdc8Aux</EFDB_Name>
+      <Description>Value of tmplPdc8Aux. True means that the line is on 24 V.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>tmplPdc9Ups</EFDB_Name>
+      <Description>Value of tmplPdc9Ups. True means that the line is on 24 V.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>tmplPdc9Aux</EFDB_Name>
+      <Description>Value of tmplPdc9Aux. True means that the line is on 24 V.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>tmplPdc10Ups</EFDB_Name>
+      <Description>Value of tmplPdc10Ups. True means that the line is on 24 V.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>tmplPdc10Aux</EFDB_Name>
+      <Description>Value of tmplPdc10Aux. True means that the line is on 24 V.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>tmplPdc11Drives</EFDB_Name>
+      <Description>Value of tmplPdc11Drives. True means that the line is on 24 V.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>tmplPdc11Pushbuttons</EFDB_Name>
+      <Description>Value of tmplPdc11Pushbuttons. True means that the line is on 24 V.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>tmplPdc12Ups</EFDB_Name>
+      <Description>Value of tmplPdc12Ups. True means that the line is on 24 V.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>tmplPdc12Aux</EFDB_Name>
+      <Description>Value of tmplPdc12Aux. True means that the line is on 24 V.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>tmplPdc13Ups</EFDB_Name>
+      <Description>Value of tmplPdc13Ups. True means that the line is on 24 V.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>tmplPdc13Aux</EFDB_Name>
+      <Description>Value of tmplPdc13Aux. True means that the line is on 24 V.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>tmplPdc14Ups</EFDB_Name>
+      <Description>Value of tmplPdc14Ups. True means that the line is on 24 V.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>tmplPdc14Aux</EFDB_Name>
+      <Description>Value of tmplPdc14Aux. True means that the line is on 24 V.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>tmplPdc15Ups</EFDB_Name>
+      <Description>Value of tmplPdc15Ups. True means that the line is on 24 V.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>tmplPdc15Aux</EFDB_Name>
+      <Description>Value of tmplPdc15Aux. True means that the line is on 24 V.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>tmplPdc16Ups</EFDB_Name>
+      <Description>Value of tmplPdc16Ups. True means that the line is on 24 V.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>tmplPdc16Aux</EFDB_Name>
+      <Description>Value of tmplPdc16Aux. True means that the line is on 24 V.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>tmplPdc17Ups</EFDB_Name>
+      <Description>Value of tmplPdc17Ups. True means that the line is on 24 V.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>tmplPdc17Aux</EFDB_Name>
+      <Description>Value of tmplPdc17Aux. True means that the line is on 24 V.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>tmplPdc18Drives</EFDB_Name>
+      <Description>Value of tmplPdc18Drives. True means that the line is on 24 V.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>tmplPdc18Pushbuttons</EFDB_Name>
+      <Description>Value of tmplPdc18Pushbuttons. True means that the line is on 24 V.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>tmplPdc19Ups</EFDB_Name>
+      <Description>Value of tmplPdc19Ups. True means that the line is on 24 V.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>tmplPdc19Aux</EFDB_Name>
+      <Description>Value of tmplPdc19Aux. True means that the line is on 24 V.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>tmplPdc20Ups</EFDB_Name>
+      <Description>Value of tmplPdc20Ups. True means that the line is on 24 V.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>tmplPdc20Aux</EFDB_Name>
+      <Description>Value of tmplPdc20Aux. True means that the line is on 24 V.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>tmplPdc21Ups</EFDB_Name>
+      <Description>Value of tmplPdc21Ups. True means that the line is on 24 V.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>tmplPdc21Aux</EFDB_Name>
+      <Description>Value of tmplPdc21Aux. True means that the line is on 24 V.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>tmplPdc22Drives</EFDB_Name>
+      <Description>Value of tmplPdc22Drives. True means that the line is on 24 V.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>tmplPdc22Pushbuttons</EFDB_Name>
+      <Description>Value of tmplPdc22Pushbuttons. True means that the line is on 24 V.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>tmplPdc23Ups</EFDB_Name>
+      <Description>Value of tmplPdc23Ups. True means that the line is on 24 V.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>tmplPdc23Aux</EFDB_Name>
+      <Description>Value of tmplPdc23Aux. True means that the line is on 24 V.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>tmplPdc24Ups</EFDB_Name>
+      <Description>Value of tmplPdc24Ups. True means that the line is on 24 V.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>tmplPdc24Aux</EFDB_Name>
+      <Description>Value of tmplPdc24Aux. True means that the line is on 24 V.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>timestamp</EFDB_Name>
+      <Description>Time at which the data was determined (TAI unix seconds).</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>second</Units>
+      <Count>1</Count>
+    </item>
+  </SALEvent>
+  <SALEvent>
+    <Subsystem>MTDome</Subsystem>
+    <EFDB_Topic>MTDome_logevent_sensorsRotatingPartLockingPins</EFDB_Topic>
+    <Description>Sensors for the locking pins on the rotating part of the dome.</Description>
+    <item>
+      <EFDB_Name>azFault</EFDB_Name>
+      <Description>Value of azFault. Groups the status of all locking pins.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>azRunning</EFDB_Name>
+      <Description>Value of azRunning. Groups the status of all locking pins.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>azTorque</EFDB_Name>
+      <Description>Value of azTorque. Groups the status of all locking pins.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>azEngaged</EFDB_Name>
+      <Description>Value of azEngaged. Groups the status of all locking pins.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>azDisengaged</EFDB_Name>
+      <Description>Value of azDisengaged. Groups the status of all locking pins.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>azEnabled</EFDB_Name>
+      <Description>Value of azEnabled. Groups the status of all locking pins.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>apsLp1RightFault</EFDB_Name>
+      <Description>Value of apsLp1RightFault. Groups the status of all locking pins.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>apsLp1RightRunning</EFDB_Name>
+      <Description>Value of apsLp1RightRunning. Groups the status of all locking pins.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>apsLp1RightTorque</EFDB_Name>
+      <Description>Value of apsLp1RightTorque. Groups the status of all locking pins.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>apsLp1RightEngaged</EFDB_Name>
+      <Description>Value of apsLp1RightEngaged. Groups the status of all locking pins.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>apsLp1RightDisengaged</EFDB_Name>
+      <Description>Value of apsLp1RightDisengaged. Groups the status of all locking pins.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>apsLp2RightFault</EFDB_Name>
+      <Description>Value of apsLp2RightFault. Groups the status of all locking pins.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>apsLp2RightRunning</EFDB_Name>
+      <Description>Value of apsLp2RightRunning. Groups the status of all locking pins.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>apsLp2RightTorque</EFDB_Name>
+      <Description>Value of apsLp2RightTorque. Groups the status of all locking pins.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>apsLp2RightEngaged</EFDB_Name>
+      <Description>Value of apsLp2RightEngaged. Groups the status of all locking pins.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>apsLp2RightDisengaged</EFDB_Name>
+      <Description>Value of apsLp2RightDisengaged. Groups the status of all locking pins.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>apsLp3RightFault</EFDB_Name>
+      <Description>Value of apsLp3RightFault. Groups the status of all locking pins.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>apsLp3RightRunning</EFDB_Name>
+      <Description>Value of apsLp3RightRunning. Groups the status of all locking pins.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>apsLp3RightTorque</EFDB_Name>
+      <Description>Value of apsLp3RightTorque. Groups the status of all locking pins.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>apsLp3RightEngaged</EFDB_Name>
+      <Description>Value of apsLp3RightEngaged. Groups the status of all locking pins.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>apsLp3RightDisengaged</EFDB_Name>
+      <Description>Value of apsLp3RightDisengaged. Groups the status of all locking pins.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>apsLp1LeftFault</EFDB_Name>
+      <Description>Value of apsLp1LeftFault. Groups the status of all locking pins.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>apsLp1LeftRunning</EFDB_Name>
+      <Description>Value of apsLp1LeftRunning. Groups the status of all locking pins.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>apsLp1LeftTorque</EFDB_Name>
+      <Description>Value of apsLp1LeftTorque. Groups the status of all locking pins.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>apsLp1LeftEngaged</EFDB_Name>
+      <Description>Value of apsLp1LeftEngaged. Groups the status of all locking pins.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>apsLp1LeftDisengaged</EFDB_Name>
+      <Description>Value of apsLp1LeftDisengaged. Groups the status of all locking pins.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>apsLp2LeftFault</EFDB_Name>
+      <Description>Value of apsLp2LeftFault. Groups the status of all locking pins.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>apsLp2LeftRunning</EFDB_Name>
+      <Description>Value of apsLp2LeftRunning. Groups the status of all locking pins.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>apsLp2LeftTorque</EFDB_Name>
+      <Description>Value of apsLp2LeftTorque. Groups the status of all locking pins.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>apsLp2LeftEngaged</EFDB_Name>
+      <Description>Value of apsLp2LeftEngaged. Groups the status of all locking pins.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>apsLp2LeftDisengaged</EFDB_Name>
+      <Description>Value of apsLp2LeftDisengaged. Groups the status of all locking pins.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>apsLp3LeftFault</EFDB_Name>
+      <Description>Value of apsLp3LeftFault. Groups the status of all locking pins.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>apsLp3LeftRunning</EFDB_Name>
+      <Description>Value of apsLp3LeftRunning. Groups the status of all locking pins.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>apsLp3LeftTorque</EFDB_Name>
+      <Description>Value of apsLp3LeftTorque. Groups the status of all locking pins.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>apsLp3LeftEngaged</EFDB_Name>
+      <Description>Value of apsLp3LeftEngaged. Groups the status of all locking pins.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>apsLp3LeftDisengaged</EFDB_Name>
+      <Description>Value of apsLp3LeftDisengaged. Groups the status of all locking pins.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>apsCentralFault</EFDB_Name>
+      <Description>Value of apsCentralFault. Groups the status of all locking pins.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>apsCentralRunning</EFDB_Name>
+      <Description>Value of apsCentralRunning. Groups the status of all locking pins.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>apsCentralTorque</EFDB_Name>
+      <Description>Value of apsCentralTorque. Groups the status of all locking pins.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>apsCentralEngaged</EFDB_Name>
+      <Description>Value of apsCentralEngaged. Groups the status of all locking pins.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>apsCentralDisengaged</EFDB_Name>
+      <Description>Value of apsCentralDisengaged. Groups the status of all locking pins.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>apsEnabled</EFDB_Name>
+      <Description>Value of apsEnabled. Groups the status of all locking pins.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>lwsLp1LowRightEngaged</EFDB_Name>
+      <Description>Value of lwsLp1LowRightEngaged. Groups the status of all locking pins.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>lwsLp1LowRightDisengaged</EFDB_Name>
+      <Description>Value of lwsLp1LowRightDisengaged. Groups the status of all locking pins.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>lwsLp2LowRightEngaged</EFDB_Name>
+      <Description>Value of lwsLp2LowRightEngaged. Groups the status of all locking pins.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>lwsLp2LowRightDisengaged</EFDB_Name>
+      <Description>Value of lwsLp2LowRightDisengaged. Groups the status of all locking pins.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>lwsLp3LowRightEngaged</EFDB_Name>
+      <Description>Value of lwsLp3LowRightEngaged. Groups the status of all locking pins.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>lwsLp3LowRightDisengaged</EFDB_Name>
+      <Description>Value of lwsLp3LowRightDisengaged. Groups the status of all locking pins.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>lwsLp1LowLeftEngaged</EFDB_Name>
+      <Description>Value of lwsLp1LowLeftEngaged. Groups the status of all locking pins.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>lwsLp1LowLeftDisengaged</EFDB_Name>
+      <Description>Value of lwsLp1LowLeftDisengaged. Groups the status of all locking pins.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>lwsLp2LowLeftEngaged</EFDB_Name>
+      <Description>Value of lwsLp2LowLeftEngaged. Groups the status of all locking pins.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>lwsLp2LowLeftDisengaged</EFDB_Name>
+      <Description>Value of lwsLp2LowLeftDisengaged. Groups the status of all locking pins.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>lwsLp3LowLeftEngaged</EFDB_Name>
+      <Description>Value of lwsLp3LowLeftEngaged. Groups the status of all locking pins.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>lwsLp3LowLeftDisengaged</EFDB_Name>
+      <Description>Value of lwsLp3LowLeftDisengaged. Groups the status of all locking pins.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>lwsLp1UpRightEngaged</EFDB_Name>
+      <Description>Value of lwsLp1UpRightEngaged. Groups the status of all locking pins.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>lwsLp1UpRightDisengaged</EFDB_Name>
+      <Description>Value of lwsLp1UpRightDisengaged. Groups the status of all locking pins.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>lwsLp2UpRightEngaged</EFDB_Name>
+      <Description>Value of lwsLp2UpRightEngaged. Groups the status of all locking pins.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>lwsLp2UpRightDisengaged</EFDB_Name>
+      <Description>Value of lwsLp2UpRightDisengaged. Groups the status of all locking pins.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>lwsLp3UpRightEngaged</EFDB_Name>
+      <Description>Value of lwsLp3UpRightEngaged. Groups the status of all locking pins.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>lwsLp3UpRightDisengaged</EFDB_Name>
+      <Description>Value of lwsLp3UpRightDisengaged. Groups the status of all locking pins.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>lwsLp1UpLeftEngaged</EFDB_Name>
+      <Description>Value of lwsLp1UpLeftEngaged. Groups the status of all locking pins.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>lwsLp1UpLeftDisengaged</EFDB_Name>
+      <Description>Value of lwsLp1UpLeftDisengaged. Groups the status of all locking pins.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>lwsLp2UpLeftEngaged</EFDB_Name>
+      <Description>Value of lwsLp2UpLeftEngaged. Groups the status of all locking pins.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>lwsLp2UpLeftDisengaged</EFDB_Name>
+      <Description>Value of lwsLp2UpLeftDisengaged. Groups the status of all locking pins.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>lwsLp3UpLeftEngaged</EFDB_Name>
+      <Description>Value of lwsLp3UpLeftEngaged. Groups the status of all locking pins.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>lwsLp3UpLeftDisengaged</EFDB_Name>
+      <Description>Value of lwsLp3UpLeftDisengaged. Groups the status of all locking pins.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>radRightEngaged</EFDB_Name>
+      <Description>Value of radRightEngaged. Groups the status of all locking pins.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>radRightDisengaged</EFDB_Name>
+      <Description>Value of radRightDisengaged. Groups the status of all locking pins.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>radLeftEngaged</EFDB_Name>
+      <Description>Value of radLeftEngaged. Groups the status of all locking pins.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>radLeftDisengaged</EFDB_Name>
+      <Description>Value of radLeftDisengaged. Groups the status of all locking pins.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>timestamp</EFDB_Name>
+      <Description>Time at which the data was determined (TAI unix seconds).</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>second</Units>
+      <Count>1</Count>
+    </item>
+  </SALEvent>
+  <SALEvent>
+    <Subsystem>MTDome</Subsystem>
+    <EFDB_Topic>MTDome_logevent_sensorsRotatingPartAlarms</EFDB_Topic>
+    <Description>Sensors for the alarms on the rotating part of the dome.</Description>
+    <item>
+      <EFDB_Name>accessPoint</EFDB_Name>
+      <Description>Value of accessPoint. Indicates hardware alarms. True means the alarm is active.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>mainEthernetSwitch</EFDB_Name>
+      <Description>Value of mainEthernetSwitch. Indicates hardware alarms. True means the alarm is active.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>secondaryEthernetSwitch</EFDB_Name>
+      <Description>Value of secondaryEthernetSwitch. Indicates hardware alarms. True means the alarm is active.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>timestamp</EFDB_Name>
+      <Description>Time at which the data was determined (TAI unix seconds).</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>second</Units>
+      <Count>1</Count>
+    </item>
+  </SALEvent>
+  <SALEvent>
+    <Subsystem>MTDome</Subsystem>
+    <EFDB_Topic>MTDome_logevent_sensorsRotatingPartDoorsClosed</EFDB_Topic>
+    <Description>Sensors for the doors on the rotating part of the dome.</Description>
+    <item>
+      <EFDB_Name>tmplAc1</EFDB_Name>
+      <Description>Value of tmplAc1. Indicates what cabinet doors are closed. True means the door is closed.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>tmplPdc1</EFDB_Name>
+      <Description>Value of tmplPdc1. Indicates what cabinet doors are closed. True means the door is closed.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>tmplPdc2</EFDB_Name>
+      <Description>Value of tmplPdc2. Indicates what cabinet doors are closed. True means the door is closed.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>tmplPdc3</EFDB_Name>
+      <Description>Value of tmplPdc3. Indicates what cabinet doors are closed. True means the door is closed.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>tmplPdc4</EFDB_Name>
+      <Description>Value of tmplPdc4. Indicates what cabinet doors are closed. True means the door is closed.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>tmplPdc5</EFDB_Name>
+      <Description>Value of tmplPdc5. Indicates what cabinet doors are closed. True means the door is closed.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>tmplPdc6</EFDB_Name>
+      <Description>Value of tmplPdc6. Indicates what cabinet doors are closed. True means the door is closed.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>tmplPdc7</EFDB_Name>
+      <Description>Value of tmplPdc7. Indicates what cabinet doors are closed. True means the door is closed.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>tmplPdc8</EFDB_Name>
+      <Description>Value of tmplPdc8. Indicates what cabinet doors are closed. True means the door is closed.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>tmplPdc9</EFDB_Name>
+      <Description>Value of tmplPdc9. Indicates what cabinet doors are closed. True means the door is closed.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>tmplPdc10</EFDB_Name>
+      <Description>Value of tmplPdc10. Indicates what cabinet doors are closed. True means the door is closed.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>tmplPdc11</EFDB_Name>
+      <Description>Value of tmplPdc11. Indicates what cabinet doors are closed. True means the door is closed.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>tmplPdc12</EFDB_Name>
+      <Description>Value of tmplPdc12. Indicates what cabinet doors are closed. True means the door is closed.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>tmplPdc13</EFDB_Name>
+      <Description>Value of tmplPdc13. Indicates what cabinet doors are closed. True means the door is closed.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>tmplPdc14</EFDB_Name>
+      <Description>Value of tmplPdc14. Indicates what cabinet doors are closed. True means the door is closed.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>tmplPdc15</EFDB_Name>
+      <Description>Value of tmplPdc15. Indicates what cabinet doors are closed. True means the door is closed.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>tmplPdc16</EFDB_Name>
+      <Description>Value of tmplPdc16. Indicates what cabinet doors are closed. True means the door is closed.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>tmplPdc17</EFDB_Name>
+      <Description>Value of tmplPdc17. Indicates what cabinet doors are closed. True means the door is closed.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>tmplPdc18</EFDB_Name>
+      <Description>Value of tmplPdc18. Indicates what cabinet doors are closed. True means the door is closed.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>tmplPdc19</EFDB_Name>
+      <Description>Value of tmplPdc19. Indicates what cabinet doors are closed. True means the door is closed.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>tmplPdc20</EFDB_Name>
+      <Description>Value of tmplPdc20. Indicates what cabinet doors are closed. True means the door is closed.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>tmplPdc21</EFDB_Name>
+      <Description>Value of tmplPdc21. Indicates what cabinet doors are closed. True means the door is closed.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>tmplPdc22</EFDB_Name>
+      <Description>Value of tmplPdc22. Indicates what cabinet doors are closed. True means the door is closed.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>tmplPdc23</EFDB_Name>
+      <Description>Value of tmplPdc23. Indicates what cabinet doors are closed. True means the door is closed.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>tmplPdc24</EFDB_Name>
+      <Description>Value of tmplPdc24. Indicates what cabinet doors are closed. True means the door is closed.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>timestamp</EFDB_Name>
+      <Description>Time at which the data was determined (TAI unix seconds).</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>second</Units>
+      <Count>1</Count>
+    </item>
+  </SALEvent>
+  <SALEvent>
+    <Subsystem>MTDome</Subsystem>
+    <EFDB_Topic>MTDome_logevent_sensorsRotatingPartCabinetFan</EFDB_Topic>
+    <Description>Sensors for the cabinet fan on the rotating part of the dome.</Description>
+    <item>
+      <EFDB_Name>tmplAc1</EFDB_Name>
+      <Description>Value of tmplAc1. Indicates if the fans of the following cabinets are running. True means fan running.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>tmplPdc1</EFDB_Name>
+      <Description>Value of tmplPdc1. Indicates if the fans of the following cabinets are running. True means fan running.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>timestamp</EFDB_Name>
+      <Description>Time at which the data was determined (TAI unix seconds).</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>second</Units>
+      <Count>1</Count>
+    </item>
+  </SALEvent>
+  <SALEvent>
+    <Subsystem>MTDome</Subsystem>
+    <EFDB_Topic>MTDome_logevent_sensorsRotatingPartLimitSwitches</EFDB_Topic>
+    <Description>Sensors for the limit switches on the rotating part of the dome.</Description>
+    <item>
+      <EFDB_Name>azLpCentered</EFDB_Name>
+      <Description>Value of azLpCentered. Indicates the status of the limit switches in the dome. True means limit switch engaged.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>apsRightPrelimitOpen</EFDB_Name>
+      <Description>Value of apsRightPrelimitOpen. Indicates the status of the limit switches in the dome. True means limit switch engaged.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>apsRightPrelimitClosed</EFDB_Name>
+      <Description>Value of apsRightPrelimitClosed. Indicates the status of the limit switches in the dome. True means limit switch engaged.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>apsLeftPrelimitOpen</EFDB_Name>
+      <Description>Value of apsLeftPrelimitOpen. Indicates the status of the limit switches in the dome. True means limit switch engaged.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>apsLeftPrelimitClosed</EFDB_Name>
+      <Description>Value of apsLeftPrelimitClosed. Indicates the status of the limit switches in the dome. True means limit switch engaged.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>apsRightUpOpenFinal</EFDB_Name>
+      <Description>Value of apsRightUpOpenFinal. Indicates the status of the limit switches in the dome. True means limit switch engaged.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>apsRightUpClosedFinal</EFDB_Name>
+      <Description>Value of apsRightUpClosedFinal. Indicates the status of the limit switches in the dome. True means limit switch engaged.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>apsRightLowOpenFinal</EFDB_Name>
+      <Description>Value of apsRightLowOpenFinal. Indicates the status of the limit switches in the dome. True means limit switch engaged.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>apsRightLowClosedFinal</EFDB_Name>
+      <Description>Value of apsRightLowClosedFinal. Indicates the status of the limit switches in the dome. True means limit switch engaged.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>apsLeftUpOpenFinal</EFDB_Name>
+      <Description>Value of apsLeftUpOpenFinal. Indicates the status of the limit switches in the dome. True means limit switch engaged.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>apsLeftUpClosedFinal</EFDB_Name>
+      <Description>Value of apsLeftUpClosedFinal. Indicates the status of the limit switches in the dome. True means limit switch engaged.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>apsLeftLowOpenFinal</EFDB_Name>
+      <Description>Value of apsLeftLowOpenFinal. Indicates the status of the limit switches in the dome. True means limit switch engaged.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>apsLeftLowClosedFinal</EFDB_Name>
+      <Description>Value of apsLeftLowClosedFinal. Indicates the status of the limit switches in the dome. True means limit switch engaged.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>lwsLowRightDirectional</EFDB_Name>
+      <Description>Value of lwsLowRightDirectional. Indicates the status of the limit switches in the dome. True means limit switch engaged.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>lwsUpLeftDirectional</EFDB_Name>
+      <Description>Value of lwsUpLeftDirectional. Indicates the status of the limit switches in the dome. True means limit switch engaged.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>lwsLowLeftDirectional</EFDB_Name>
+      <Description>Value of lwsLowLeftDirectional. Indicates the status of the limit switches in the dome. True means limit switch engaged.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>lwsUpPowerOff</EFDB_Name>
+      <Description>Value of lwsUpPowerOff. Indicates the status of the limit switches in the dome. True means limit switch engaged.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>lwsLowPowerOff</EFDB_Name>
+      <Description>Value of lwsLowPowerOff. Indicates the status of the limit switches in the dome. True means limit switch engaged.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>radClosed</EFDB_Name>
+      <Description>Value of radClosed. Signal D11 sent to GIS. Indicates the status of the limit switches in the dome. True means limit switch engaged.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>louverF1</EFDB_Name>
+      <Description>Value of louverF1. Indicates the status of the limit switches in the dome. True means limit switch engaged.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>louverG1</EFDB_Name>
+      <Description>Value of louverG1. Indicates the status of the limit switches in the dome. True means limit switch engaged.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>lightBafflesA1A2</EFDB_Name>
+      <Description>Value of lightBafflesA1A2. Indicates the status of the limit switches in the dome. True means limit switch engaged.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>lightBafflesB1B2B3</EFDB_Name>
+      <Description>Value of lightBafflesB1B2B3. Indicates the status of the limit switches in the dome. True means limit switch engaged.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>lightBafflesC1C2C3</EFDB_Name>
+      <Description>Value of lightBafflesC1C2C3. Indicates the status of the limit switches in the dome. True means limit switch engaged.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>lightBafflesD3</EFDB_Name>
+      <Description>Value of lightBafflesD3. Indicates the status of the limit switches in the dome. True means limit switch engaged.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>lightBafflesD1D2</EFDB_Name>
+      <Description>Value of lightBafflesD1D2. Indicates the status of the limit switches in the dome. True means limit switch engaged.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>lightBafflesE1E2E3</EFDB_Name>
+      <Description>Value of lightBafflesE1E2E3. Indicates the status of the limit switches in the dome. True means limit switch engaged.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>lightBafflesF1F2F3</EFDB_Name>
+      <Description>Value of lightBafflesF1F2F3. Indicates the status of the limit switches in the dome. True means limit switch engaged.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>lightBafflesG1G2G3</EFDB_Name>
+      <Description>Value of lightBafflesG1G2G3. Indicates the status of the limit switches in the dome. True means limit switch engaged.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>lightBafflesH1H2H3</EFDB_Name>
+      <Description>Value of lightBafflesH1H2H3. Indicates the status of the limit switches in the dome. True means limit switch engaged.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>lightBafflesI1I2</EFDB_Name>
+      <Description>Value of lightBafflesI1I2. Indicates the status of the limit switches in the dome. True means limit switch engaged.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>lightBafflesI3</EFDB_Name>
+      <Description>Value of lightBafflesI3. Indicates the status of the limit switches in the dome. True means limit switch engaged.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>lightBafflesL1L2L3</EFDB_Name>
+      <Description>Value of lightBafflesL1L2L3. Indicates the status of the limit switches in the dome. True means limit switch engaged.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>lightBafflesM1M2M3</EFDB_Name>
+      <Description>Value of lightBafflesM1M2M3. Indicates the status of the limit switches in the dome. True means limit switch engaged.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>lightBafflesN1N2</EFDB_Name>
+      <Description>Value of lightBafflesN1N2. Indicates the status of the limit switches in the dome. True means limit switch engaged.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>timestamp</EFDB_Name>
+      <Description>Time at which the data was determined (TAI unix seconds).</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>second</Units>
+      <Count>1</Count>
+    </item>
+  </SALEvent>
+  <SALEvent>
+    <Subsystem>MTDome</Subsystem>
+    <EFDB_Topic>MTDome_logevent_sensorsRotatingPartSelectors</EFDB_Topic>
+    <Description>Sensors for the selectors on the rotating part of the dome.</Description>
+    <item>
+      <EFDB_Name>apsPushbuttonEnable</EFDB_Name>
+      <Description>Value of apsPushbuttonEnable. Indicates the status of the selectors that enable the local pushbuttons of the cabinet.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>hmiEnable</EFDB_Name>
+      <Description>Value of hmiEnable. Indicates the status of the selectors that enable the local pushbuttons of the cabinet.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>lwsPushbuttonEnable</EFDB_Name>
+      <Description>Value of lwsPushbuttonEnable. Indicates the status of the selectors that enable the local pushbuttons of the cabinet.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>llbvRadPushbuttonEnable</EFDB_Name>
+      <Description>Value of llbvRadPushbuttonEnable. Indicates the status of the selectors that enable the local pushbuttons of the cabinet.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>llbvRadLouverSelected</EFDB_Name>
+      <Description>Value of llbvRadLouverSelected. Index of louver selected. Possible values are F1 (15), G1 (18), or none (value 0).</Description>
+      <IDL_Type>int</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>llbvLocalBox1Enable</EFDB_Name>
+      <Description>Value of llbvLocalBox1Enable.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>llbvLocalBox1LouverSelected</EFDB_Name>
+      <Description>Value of llbvLocalBox1LouverSelected. Index of louver selected. Possible values are A1 (1), A2 (2), B1 (3), B2 (4), B3 (5), or none (value 0).</Description>
+      <IDL_Type>int</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>llbvLocalBox2Enable</EFDB_Name>
+      <Description>Value of llbvLocalBox2Enable.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>llbvLocalBox2LouverSelected</EFDB_Name>
+      <Description>Value of llbvLocalBox2LouverSelected. Index of louver selected. Possible values are C1 (6), C2 (7), C3 (8), D1 (9), D2 (10), D3 (11) or none (value 0).</Description>
+      <IDL_Type>int</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>llbvLocalBox3Enable</EFDB_Name>
+      <Description>Value of llbvLocalBox3Enable.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>llbvLocalBox3LouverSelected</EFDB_Name>
+      <Description>Value of llbvLocalBox3LouverSelected. Index of louver selected. Possible values are E1 (12), E2 (13), E3 (14), F2 (16), F3 (17), or none (value 0).</Description>
+      <IDL_Type>int</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>llbvLocalBox4Enable</EFDB_Name>
+      <Description>Value of llbvLocalBox4Enable.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>llbvLocalBox4LouverSelected</EFDB_Name>
+      <Description>Value of llbvLocalBox4LouverSelected. Index of louver selected. Possible values are G2 (19), G3 (20), H1 (21), H2 (22), H3 (23), or none (value 0).</Description>
+      <IDL_Type>int</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>llbvLocalBox5Enable</EFDB_Name>
+      <Description>Value of llbvLocalBox5Enable.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>llbvLocalBox5LouverSelected</EFDB_Name>
+      <Description>Value of llbvLocalBox5LouverSelected. Index of louver selected. Possible values are I1 (24), I2 (25), I3 (26), L1 (27), L2 (28), L3 (29) or none (value 0).</Description>
+      <IDL_Type>int</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>llbvLocalBox6Enable</EFDB_Name>
+      <Description>Value of llbvLocalBox6Enable.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>llbvLocalBox6LouverSelected</EFDB_Name>
+      <Description>Value of llbvLocalBox6LouverSelected. Index of louver selected. Possible values are M1 (30), M2 (31), M3 (32), N1 (33), N2 (34), or none (value 0).</Description>
+      <IDL_Type>int</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>tmplAc1LampControl</EFDB_Name>
+      <Description>Value of tmplAc1LampControl.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>timestamp</EFDB_Name>
+      <Description>Time at which the data was determined (TAI unix seconds).</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>second</Units>
+      <Count>1</Count>
+    </item>
+  </SALEvent>
+  <SALEvent>
+    <Subsystem>MTDome</Subsystem>
+    <EFDB_Topic>MTDome_logevent_sensorsRotatingPartEmergencyPushbuttons</EFDB_Topic>
+    <Description>Sensors for the emergency push buttons on the rotating part of the dome.</Description>
+    <item>
+      <EFDB_Name>apsLowRight</EFDB_Name>
+      <Description>Value of apsLowRight. Indicates which emergency pushbuttons are pressed. True means emergency pushbutton pressed</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>apsLowLeft</EFDB_Name>
+      <Description>Value of apsLowLeft. Indicates which emergency pushbuttons are pressed. True means emergency pushbutton pressed</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>apsUpRight</EFDB_Name>
+      <Description>Value of apsUpRight. Indicates which emergency pushbuttons are pressed. True means emergency pushbutton pressed</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>apsUpLeft</EFDB_Name>
+      <Description>Value of apsUpLeft. Indicates which emergency pushbuttons are pressed. True means emergency pushbutton pressed</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>lwsRight</EFDB_Name>
+      <Description>Value of lwsRight. Indicates which emergency pushbuttons are pressed. True means emergency pushbutton pressed</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>lwsLeft</EFDB_Name>
+      <Description>Value of lwsLeft. Indicates which emergency pushbuttons are pressed. True means emergency pushbutton pressed</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>tmplPdc1</EFDB_Name>
+      <Description>Value of tmplPdc1. Indicates which emergency pushbuttons are pressed. True means emergency pushbutton pressed</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>tmplAc1</EFDB_Name>
+      <Description>Value of tmplAc1. Indicates which emergency pushbuttons are pressed. True means emergency pushbutton pressed</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>llbvLocalBox1</EFDB_Name>
+      <Description>Value of llbvLocalBox1. Indicates which emergency pushbuttons are pressed. True means emergency pushbutton pressed</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>llbvLocalBox2</EFDB_Name>
+      <Description>Value of llbvLocalBox2. Indicates which emergency pushbuttons are pressed. True means emergency pushbutton pressed</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>llbvLocalBox3</EFDB_Name>
+      <Description>Value of llbvLocalBox3. Indicates which emergency pushbuttons are pressed. True means emergency pushbutton pressed</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>llbvLocalBox4</EFDB_Name>
+      <Description>Value of llbvLocalBox4. Indicates which emergency pushbuttons are pressed. True means emergency pushbutton pressed</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>llbvLocalBox5</EFDB_Name>
+      <Description>Value of llbvLocalBox5. Indicates which emergency pushbuttons are pressed. True means emergency pushbutton pressed</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>llbvLocalBox6</EFDB_Name>
+      <Description>Value of llbvLocalBox6. Indicates which emergency pushbuttons are pressed. True means emergency pushbutton pressed</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>timestamp</EFDB_Name>
+      <Description>Time at which the data was determined (TAI unix seconds).</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>second</Units>
+      <Count>1</Count>
+    </item>
+  </SALEvent>
+  <SALEvent>
+    <Subsystem>MTDome</Subsystem>
+    <EFDB_Topic>MTDome_logevent_sensorsRotatingPartPowerAvailable</EFDB_Topic>
+    <Description>Sensors for if power is available on the rotating part of the dome.</Description>
+    <item>
+      <EFDB_Name>sraTemporaryBypass</EFDB_Name>
+      <Description>Value of sraTemporaryBypass. Indicates if the given subsystem receives input power. True means power is received.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>aps</EFDB_Name>
+      <Description>Value of aps. Indicates if the given subsystem receives input power. True means power is received.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>lws</EFDB_Name>
+      <Description>Value of lws. Indicates if the given subsystem receives input power. True means power is received.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>obcFromTmplPdc1</EFDB_Name>
+      <Description>Value of obcFromTmplPdc1. Indicates if the given subsystem receives input power. True means power is received.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>obcFromObcLocalBox</EFDB_Name>
+      <Description>Value of obcFromObcLocalBox. Indicates if the given subsystem receives input power. True means power is received.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>obcFromTelescopePlatformOn</EFDB_Name>
+      <Description>Value of obcFromTelescopePlatformOn. Indicates if the given subsystem receives input power. True means power is received.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>timestamp</EFDB_Name>
+      <Description>Time at which the data was determined (TAI unix seconds).</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>second</Units>
+      <Count>1</Count>
+    </item>
+  </SALEvent>
+  <SALEvent>
+    <Subsystem>MTDome</Subsystem>
+    <EFDB_Topic>MTDome_logevent_sensorsRotatingPartHatches</EFDB_Topic>
+    <Description>Sensors for the hatches on the rotating part of the dome.</Description>
+    <item>
+      <EFDB_Name>apsLowerGangway</EFDB_Name>
+      <Description>Value of apsLowerGangway. Indicates what hatches are closed and if the corresponding override is active. True means hatch closed, for the override signals it means override active.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>apsLowerGangwayOverride</EFDB_Name>
+      <Description>Value of apsLowerGangwayOverride. Indicates what hatches are closed and if the corresponding override is active. True means hatch closed, for the override signals it means override active.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>apsTopExteriorRight</EFDB_Name>
+      <Description>Value of apsTopExteriorRight. Indicates what hatches are closed and if the corresponding override is active. True means hatch closed, for the override signals it means override active.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>apsTopExteriorLeft</EFDB_Name>
+      <Description>Value of apsTopExteriorLeft. Indicates what hatches are closed and if the corresponding override is active. True means hatch closed, for the override signals it means override active.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>apsTopExteriorOverride</EFDB_Name>
+      <Description>Value of apsTopExteriorOverride. Indicates what hatches are closed and if the corresponding override is active. True means hatch closed, for the override signals it means override active.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>lowPlatformOverride</EFDB_Name>
+      <Description>Value of lowPlatformOverride. Indicates what hatches are closed and if the corresponding override is active. True means hatch closed, for the override signals it means override active.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>upperPlatformOverride</EFDB_Name>
+      <Description>Value of upperPlatformOverride. Indicates what hatches are closed and if the corresponding override is active. True means hatch closed, for the override signals it means override active.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>timestamp</EFDB_Name>
+      <Description>Time at which the data was determined (TAI unix seconds).</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>second</Units>
+      <Count>1</Count>
+    </item>
+  </SALEvent>
+  <SALEvent>
+    <Subsystem>MTDome</Subsystem>
+    <EFDB_Topic>MTDome_logevent_sensorsRotatingPartPhotocells</EFDB_Topic>
+    <Description>Sensors for the photo cells on the rotating part of the dome.</Description>
+    <item>
+      <EFDB_Name>apsLower</EFDB_Name>
+      <Description>Value of apsLower. Indicates if the photocell is not blocked by something. True means photocell clear.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>apsUpper</EFDB_Name>
+      <Description>Value of apsUpper. Indicates if the photocell is not blocked by something. True means photocell clear.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>apsSwitchedOn</EFDB_Name>
+      <Description>Value of apsSwitchedOn. True means that the photocells are switched on. False means that the photocells are switched off to avoid light emission. Indicates if the photocell is not blocked by something. True means photocell clear.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>rad</EFDB_Name>
+      <Description>Value of rad. Indicates if the photocell is not blocked by something. True means photocell clear.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>timestamp</EFDB_Name>
+      <Description>Time at which the data was determined (TAI unix seconds).</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>second</Units>
+      <Count>1</Count>
+    </item>
+  </SALEvent>
+  <SALEvent>
+    <Subsystem>MTDome</Subsystem>
+    <EFDB_Topic>MTDome_logevent_sensorsRotatingPartLightCurtain</EFDB_Topic>
+    <Description>Sensors for the light curtain on the rotating part of the dome.</Description>
+    <item>
+      <EFDB_Name>rad</EFDB_Name>
+      <Description>Value of rad. Indicates if the light curtain is not blocked by something. True means light curtain clear.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>timestamp</EFDB_Name>
+      <Description>Time at which the data was determined (TAI unix seconds).</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>second</Units>
+      <Count>1</Count>
+    </item>
+  </SALEvent>
+  <SALEvent>
+    <Subsystem>MTDome</Subsystem>
+    <EFDB_Topic>MTDome_logevent_sensorsRotatingPartOBC</EFDB_Topic>
+    <Description>Sensors for the overhead bridge crane on the rotating part of the dome.</Description>
+    <item>
+      <EFDB_Name>parked</EFDB_Name>
+      <Description>Value of parked.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>overrideActive</EFDB_Name>
+      <Description>Value of overrideActive.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>smallCraneParked</EFDB_Name>
+      <Description>Value of smallCraneParked.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>enabled</EFDB_Name>
+      <Description>Value of enabled.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>timestamp</EFDB_Name>
+      <Description>Time at which the data was determined (TAI unix seconds).</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>second</Units>
+      <Count>1</Count>
+    </item>
+  </SALEvent>
+  <SALEvent>
+    <Subsystem>MTDome</Subsystem>
+    <EFDB_Topic>MTDome_logevent_sensorsRotatingPartAxialFans</EFDB_Topic>
+    <Description>Sensors for the axian fans on the rotating part of the dome.</Description>
+    <item>
+      <EFDB_Name>enabled</EFDB_Name>
+      <Description>Value of enabled.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>timestamp</EFDB_Name>
+      <Description>Time at which the data was determined (TAI unix seconds).</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>second</Units>
+      <Count>1</Count>
+    </item>
+  </SALEvent>
+  <SALEvent>
+    <Subsystem>MTDome</Subsystem>
+    <EFDB_Topic>MTDome_logevent_sensorsRotatingPartLights</EFDB_Topic>
+    <Description>Sensors for the lights on the rotating part of the dome.</Description>
+    <item>
+      <EFDB_Name>middle</EFDB_Name>
+      <Description>Value of middle. Indicates which light circuit is switched on at the moment. True means circuit switched on.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>high</EFDB_Name>
+      <Description>Value of high. Indicates which light circuit is switched on at the moment. True means circuit switched on.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>apsPlatform</EFDB_Name>
+      <Description>Value of apsPlatform. Indicates which light circuit is switched on at the moment. True means circuit switched on.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>leftAccess</EFDB_Name>
+      <Description>Value of leftAccess. Indicates which light circuit is switched on at the moment. True means circuit switched on.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>rightAccess</EFDB_Name>
+      <Description>Value of rightAccess. Indicates which light circuit is switched on at the moment. True means circuit switched on.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>obc</EFDB_Name>
+      <Description>Value of Overhead Bridge Crane. Indicates which light circuit is switched on at the moment. True means circuit switched on.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>mdp</EFDB_Name>
+      <Description>Value of Main Dome Platform. Indicates which light circuit is switched on at the moment. True means circuit switched on.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>overrideActive</EFDB_Name>
+      <Description>Value of overrideActive. Indicates which light circuit is switched on at the moment. True means circuit switched on.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>timestamp</EFDB_Name>
+      <Description>Time at which the data was determined (TAI unix seconds).</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>second</Units>
+      <Count>1</Count>
+    </item>
+  </SALEvent>
+  <SALEvent>
+    <Subsystem>MTDome</Subsystem>
+    <EFDB_Topic>MTDome_logevent_sensorsRotatingPartHeatingCables</EFDB_Topic>
+    <Description>Sensors for the heating cables on the rotating part of the dome.</Description>
+    <item>
+      <EFDB_Name>right</EFDB_Name>
+      <Description>Value of right. Indicates which heating cable is active. True means cable is heating.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>rightCentral</EFDB_Name>
+      <Description>Value of rightCentral. Indicates which heating cable is active. True means cable is heating.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>left</EFDB_Name>
+      <Description>Value of left. Indicates which heating cable is active. True means cable is heating.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>timestamp</EFDB_Name>
+      <Description>Time at which the data was determined (TAI unix seconds).</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>second</Units>
+      <Count>1</Count>
+    </item>
+  </SALEvent>
+  <SALEvent>
+    <Subsystem>MTDome</Subsystem>
+    <EFDB_Topic>MTDome_logevent_sensorsRotatingPartBrakes</EFDB_Topic>
+    <Description>Sensors for the brakes on the rotating part of the dome.</Description>
+    <item>
+      <EFDB_Name>apsLeft</EFDB_Name>
+      <Description>Value of apsLeft. Indicates which brakes are disengaged. True means brakes disengaged.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>apsRight</EFDB_Name>
+      <Description>Value of apsRight. Indicates which brakes are disengaged. True means brakes disengaged.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>apsManualDisengage</EFDB_Name>
+      <Description>Value of apsManualDisengage. Indicates which brakes are disengaged. True means brakes disengaged.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>lws</EFDB_Name>
+      <Description>Value of lws. Indicates which brakes are disengaged. True means brakes disengaged.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>rad</EFDB_Name>
+      <Description>Value of rad. Indicates which brakes are disengaged. True means brakes disengaged.</Description>
+      <IDL_Type>boolean</IDL_Type>
+      <Units>unitless</Units>
+      <Count>1</Count>
+    </item>
+    <item>
+      <EFDB_Name>timestamp</EFDB_Name>
+      <Description>Time at which the data was determined (TAI unix seconds).</Description>
+      <IDL_Type>double</IDL_Type>
+      <Units>second</Units>
       <Count>1</Count>
     </item>
   </SALEvent>
