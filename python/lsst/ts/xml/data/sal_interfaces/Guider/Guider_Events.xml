@@ -57,21 +57,21 @@
     <Description>Published once on each start of the guider (corresponding to initGuiders command)</Description>
     <!-- TODO: For now I have omitted information about DAQ firmware/versions etc, and concentrated on essentials -->
     <item>
-      <EFDB_Name>roi_common_nrows</EFDB_Name>
+      <EFDB_Name>roiCommonNrows</EFDB_Name>
       <Description>The number of rows</Description>
       <IDL_Type>long</IDL_Type>
       <Units>pixel</Units>
       <Count>1</Count>
     </item>
     <item>
-      <EFDB_Name>roi_common_ncols</EFDB_Name>
+      <EFDB_Name>roiCommonNcols</EFDB_Name>
       <Description>The number of columns</Description>
       <IDL_Type>long</IDL_Type>
       <Units>pixel</Units>
       <Count>1</Count>
     </item>
     <item>
-      <EFDB_Name>roi_common_integration</EFDB_Name>
+      <EFDB_Name>roiCommonIntegration</EFDB_Name>
       <Description>Integration time</Description>
       <IDL_Type>long</IDL_Type>
       <Units>ms</Units>
@@ -162,77 +162,77 @@
       <Count>8</Count>
     </item>
     <item>
-      <EFDB_Name>flux_err</EFDB_Name>
+      <EFDB_Name>fluxErr</EFDB_Name>
       <Description>Error on flux in each sensor</Description>
       <IDL_Type>double</IDL_Type>
       <Units>electron</Units>
       <Count>8</Count>
     </item>
     <item>
-      <EFDB_Name>centroid_x</EFDB_Name>
+      <EFDB_Name>centroidX</EFDB_Name>
       <Description>Centroid x position in each sensor (in Focal Plane DVCS coordinates)</Description>
       <IDL_Type>double</IDL_Type>
       <Units>mm</Units>
       <Count>8</Count>
     </item>
     <item>
-      <EFDB_Name>centroid_y</EFDB_Name>
+      <EFDB_Name>centroidY</EFDB_Name>
       <Description>Centroid y position in each sensor (in Focal Plane DVCS coordinates)</Description>
       <IDL_Type>double</IDL_Type>
       <Units>mm</Units>
       <Count>8</Count>
     </item>
     <item>
-      <EFDB_Name>centroid_x_err</EFDB_Name>
+      <EFDB_Name>centroidXErr</EFDB_Name>
       <Description>Error in Centroid x</Description>
       <IDL_Type>double</IDL_Type>
       <Units>mm</Units>
       <Count>8</Count>
     </item>
     <item>
-      <EFDB_Name>centroid_y_err</EFDB_Name>
+      <EFDB_Name>centroidYErr</EFDB_Name>
       <Description>Error in Centroid x</Description>
       <IDL_Type>double</IDL_Type>
       <Units>mm</Units>
       <Count>8</Count>
     </item>
     <item>
-      <EFDB_Name>centroid_dx</EFDB_Name>
+      <EFDB_Name>centroidDx</EFDB_Name>
       <Description>x offset from first good stamp</Description>
       <IDL_Type>double</IDL_Type>
       <Units>mm</Units>
       <Count>8</Count>
     </item>
     <item>
-      <EFDB_Name>centroid_dy</EFDB_Name>
+      <EFDB_Name>centroidDy</EFDB_Name>
       <Description>y offset from first good stamp</Description>
       <IDL_Type>double</IDL_Type>
       <Units>mm</Units>
       <Count>8</Count>
     </item>
     <item>
-      <EFDB_Name>moment_xx</EFDB_Name>
+      <EFDB_Name>momentXx</EFDB_Name>
       <Description>2nd moment xx</Description>
       <IDL_Type>double</IDL_Type>
       <Units>mm^2</Units>
       <Count>8</Count>
     </item>
     <item>
-      <EFDB_Name>moment_yy</EFDB_Name>
+      <EFDB_Name>momentYy</EFDB_Name>
       <Description>2nd moment yy</Description>
       <IDL_Type>double</IDL_Type>
       <Units>mm^2</Units>
       <Count>8</Count>
     </item>
     <item>
-      <EFDB_Name>moment_xy</EFDB_Name>
+      <EFDB_Name>momentXy</EFDB_Name>
       <Description>2nd moment xy</Description>
       <IDL_Type>double</IDL_Type>
       <Units>mm^2</Units>
       <Count>8</Count>
     </item>
     <item>
-      <EFDB_Name>centroid_fit_quality</EFDB_Name>
+      <EFDB_Name>centroidFitQuality</EFDB_Name>
       <Description>Flag for good Centroid finding (details TBD)</Description>
       <IDL_Type>double</IDL_Type>
       <Units>unitless</Units>
@@ -272,63 +272,35 @@
       <Count>1</Count>
     </item>
     <item>
-      <EFDB_Name>delta_x</EFDB_Name>
+      <EFDB_Name>deltaX</EFDB_Name>
       <Description>Centroid Delta X relative to first good Stamp (also in DVCS coordinates)</Description>
       <IDL_Type>double</IDL_Type>
       <Units>mm</Units>
       <Count>1</Count>
     </item>
     <item>
-      <EFDB_Name>delta_y</EFDB_Name>
+      <EFDB_Name>deltaY</EFDB_Name>
       <Description>Centroid Delta Y relative to first good Stamp (also in DVCS coordinates)</Description>
       <IDL_Type>double</IDL_Type>
       <Units>mm</Units>
       <Count>1</Count>
     </item>
     <item>
-      <EFDB_Name>delta_x_err</EFDB_Name>
-      <Description>Uncertainty on delta_x (standard error of the mean over the contributing guide sensors)</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>mm</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>delta_y_err</EFDB_Name>
-      <Description>Uncertainty on delta_y (standard error of the mean over the contributing guide sensors)</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>mm</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>scatter_x</EFDB_Name>
-      <Description>Sample standard deviation of the per-sensor x offsets (how much the guide sensors disagree)</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>mm</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>scatter_y</EFDB_Name>
-      <Description>Sample standard deviation of the per-sensor y offsets (how much the guide sensors disagree)</Description>
-      <IDL_Type>double</IDL_Type>
-      <Units>mm</Units>
-      <Count>1</Count>
-    </item>
-    <item>
-      <EFDB_Name>delta_rotation</EFDB_Name>
+      <EFDB_Name>deltaRotation</EFDB_Name>
       <Description>Delta rotation relative to first good Stamp</Description>
       <IDL_Type>double</IDL_Type>
       <Units>arcsec</Units>
       <Count>1</Count>
     </item>
     <item>
-      <EFDB_Name>good_stamps</EFDB_Name>
+      <EFDB_Name>goodStamps</EFDB_Name>
       <Description>number of good ROIs over the 8 CCDs</Description>
       <IDL_Type>int</IDL_Type>
       <Units>unitless</Units>
       <Count>1</Count>
     </item>
     <item>
-      <EFDB_Name>quality_flag</EFDB_Name>
+      <EFDB_Name>qualityFlag</EFDB_Name>
       <Description>Quality Flag (overall quality of Centroid,Angle information) (details TBD)</Description>
       <IDL_Type>double</IDL_Type>
       <Units>unitless</Units>
