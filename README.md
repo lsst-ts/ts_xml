@@ -71,6 +71,16 @@ If you wish to have these checks run locally with each commit, please follow the
 
 * [Pre-Commit](https://tssw-developer.lsst.io/procedures/pre_commit.html)
 
+### Database Reserved Words
+
+The use of InfluxDB has imposed naming restrictions on topics and attributes. The list of these words is found in the
+[InfluxDB Keywords documentation](https://docs.influxdata.com/influxdb3/enterprise/reference/influxql/#keywords).
+
+The use of these words is PROHIBITED and this is enforced by the unit tests.
+
+There is a small set of very specific exemptions that are allowed by the system. No new exemptions will be granted.
+Please see [SSW-250](https://rubinobs.atlassian.net/browse/SSW-250) for details.
+
 ### Test Utilities
 
 The testutils.py file, located in python/lsst/ts/xml, contains functions and variables used throughout the testing.
