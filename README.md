@@ -3,7 +3,6 @@
 ## Glossary
 
 - CSC  -   Commandable SAL Component
-- DDS  -   Data Distribution Services
 - LSST -   Large Synoptic Survey Telescope
 - SAL  -   Service Abstraction Layer
 - TSSW -   LSST Telescope & Site Software
@@ -12,14 +11,14 @@
 ## Description
 
 This repository contains all the interface definition files for all the CSCs of the LSST.
-All of the CSCs communicate using the DDS protocol.
-TSSW provides a wrapper utility around DDS, called the Service Abstraction Layer or SAL.
+All of the CSCs communicate using the Kafka protocol.
+TSSW provides a wrapper utility around Kafka, called the Service Abstraction Layer or SAL.
 
 * [ts_sal](https://github.com/lsst-ts/ts_sal) 
 
 The SAL produces libraries in C++, LabVIEW, and Java for each CSC.
 These libraries are then used by all the CSCs that need to publish or subscribe to any message topic.
-The Python interface to DDS is handled by [ts_salobj](https://github.com/lsst-ts/ts_salobj)
+The Python interface to Kafka is handled by [ts_salobj](https://github.com/lsst-ts/ts_salobj)
 
 ## Installation and Usage
 
