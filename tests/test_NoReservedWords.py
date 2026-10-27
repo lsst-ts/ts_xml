@@ -32,7 +32,6 @@ import pytest
 class Restriction(enum.Enum):
     """Field naming restriction categories."""
 
-    IDL = enum.auto()
     SAL = enum.auto()
     DB_CRITICAL = enum.auto()
     DB_OPTIONAL = enum.auto()
@@ -101,8 +100,8 @@ def check_for_issues(csc: str, topic: str, restriction: Restriction) -> str:
 
 @pytest.mark.parametrize("xmlfile,csc,topic", ts_xml.get_xmlfile_csc_topic())
 def test_reserved_words(xmlfile: pathlib.Path, csc: str, topic: str) -> None:
-    """Control function to execute the IDL, and
-    database reserved words tests.
+    """Control function to execute the database
+    reserved words tests.
     """
     for restriction in Restriction:
         reserved_words(xmlfile=xmlfile, csc=csc, topic=topic, restriction=restriction)
@@ -127,7 +126,7 @@ def reserved_words(
     restriction = Restriction(restriction)  # check the argument
     saltype = "SAL" + topic.rstrip("s")
     # Check for known issues with database reserved words.
-    # The IDL and SAL reserved words are non-negotiable.
+    # The DB_CRITICAL and SAL reserved words are non-negotiable.
     if restriction in {Restriction.DB_CRITICAL, Restriction.DB_OPTIONAL}:
         jira = check_for_issues(csc, topic, restriction)
         if jira:
@@ -141,7 +140,6 @@ def reserved_words(
     bad_names: list[str] = []
     # Set the list based on the restriction type.
     word_list = {
-        Restriction.IDL: ts_xml.idl_reserved,
         Restriction.SAL: ts_xml.sal_reserved,
         Restriction.DB_CRITICAL: ts_xml.db_critical_reserved,
         Restriction.DB_OPTIONAL: ts_xml.db_optional_reserved,
