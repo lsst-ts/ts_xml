@@ -37,65 +37,59 @@ class Restriction(enum.Enum):
     DB_OPTIONAL = enum.auto()
 
 
-def check_for_issues(csc: str, topic: str, restriction: Restriction) -> str:
-    restriction = Restriction(restriction)  # check the argument
+def check_for_exemption(csc: str, topic: str, attribute: str) -> bool:
+    """Function to check if the CSC has an exemption for the use
+    of specific database reserved words. This is a static list of
+    grandfathered exemptions and SHOULD NOT BE CHANGED.
+    """
     if (
-        csc == "ATAOS"
-        and topic == "Commands"
-        and restriction is Restriction.DB_OPTIONAL
+        (csc == "ATAOS" and topic == "Commands" and attribute == "OFFSET")
+        or (
+            csc == "ATSpectrograph"
+            and topic in ("Commands", "Events")
+            and attribute == "NAME"
+        )
+        or (
+            csc == "FiberSpectrograph"
+            and topic == "Commands"
+            and attribute == "DURATION"
+        )
+        or (csc == "LOVE" and topic == "Events" and attribute == "USER")
+        or (csc == "ATCamera" and topic == "Commands" and attribute == "NAME")
+        or (
+            csc == "ATCamera"
+            and topic == "Events"
+            and attribute in ("DURATION", "NAME", "OFFSET")
+        )
+        or (csc == "MTCamera" and topic == "Commands" and attribute == "NAME")
+        or (
+            csc == "MTCamera"
+            and topic == "Events"
+            and attribute in ("DURATION", "NAME", "OFFSET")
+        )
+        or (csc == "CCCamera" and topic == "Commands" and attribute == "NAME")
+        or (
+            csc == "CCCamera"
+            and topic == "Events"
+            and attribute in ("DURATION", "NAME", "OFFSET")
+        )
+        or (
+            csc in ("Script", "ScriptQueue")
+            and topic == "Events"
+            and attribute == "DURATION"
+        )
+        or (csc == "Test" and topic == "Commands" and attribute == "DURATION")
+        or (
+            csc == "Watcher"
+            and topic == "Commands"
+            and attribute in ("DURATION", "NAME")
+        )
+        or (csc == "Watcher" and topic == "Events" and attribute == "NAME")
     ):
-        jira = "DM-22612"
-    elif (
-        csc == "ATMCS"
-        and topic in ("Commands", "Events")
-        and restriction is Restriction.DB_CRITICAL
-    ):
-        jira = "DM-22613"
-    elif (
-        csc == "ATSpectrograph"
-        and topic in ("Commands", "Events")
-        and restriction is Restriction.DB_OPTIONAL
-    ):
-        jira = "DM-22614"
-    elif (
-        csc == "FiberSpectrograph"
-        and topic == "Commands"
-        and restriction is Restriction.DB_OPTIONAL
-    ):
-        jira = "DM-22616"
-    elif csc == "LOVE" and topic == "Events" and restriction is Restriction.DB_OPTIONAL:
-        jira = "DM-22617"
-    elif csc == "ATCamera" and restriction is Restriction.DB_OPTIONAL:
-        jira = "CAP-793"
-    elif csc == "MTCamera" and restriction is Restriction.DB_OPTIONAL:
-        jira = "CAP-397"
-    elif csc == "CCCamera" and restriction is Restriction.DB_OPTIONAL:
-        jira = "CAP-402"
-    elif (
-        csc == "Scheduler"
-        and topic == "Telemetry"
-        and restriction is Restriction.DB_OPTIONAL
-    ):
-        jira = "DM-22625"
-    elif (
-        csc in ("Script", "ScriptQueue")
-        and topic == "Events"
-        and restriction is Restriction.DB_OPTIONAL
-    ):
-        jira = "DM-22626"
-    elif (
-        csc == "Test" and topic == "Commands" and restriction is Restriction.DB_OPTIONAL
-    ):
-        jira = "DM-22627"
-    elif (
-        csc == "Watcher"
-        and topic in ("Commands", "Events")
-        and restriction is Restriction.DB_OPTIONAL
-    ):
-        jira = "DM-22628"
+        exemption = True
     else:
-        jira = ""
-    return jira
+        exemption = False
+    return exemption
 
 
 @pytest.mark.parametrize("xmlfile,csc,topic", ts_xml.get_xmlfile_csc_topic())
@@ -127,12 +121,8 @@ def reserved_words(
     saltype = "SAL" + topic.rstrip("s")
     # Check for known issues with database reserved words.
     # The DB_CRITICAL and SAL reserved words are non-negotiable.
-    if restriction in {Restriction.DB_CRITICAL, Restriction.DB_OPTIONAL}:
-        jira = check_for_issues(csc, topic, restriction)
-        if jira:
-            pytest.skip(
-                f"{jira}: {xmlfile.name} <EFDB_Name> uses {restriction.name} reserved word."
-            )
+    # f"""
+    # """
     # Test the <EFDB_Name> fields do not use Reserved Words.
     with open(str(xmlfile), "r", encoding="utf-8") as f:
         tree = et.parse(f)
@@ -147,7 +137,15 @@ def reserved_words(
     for name in root.findall(f"./{saltype}/item/EFDB_Name"):
         assert name.text is not None
         if name.text.upper() in word_list:
-            bad_names.append(name.text.upper())
+            exemption = check_for_exemption(csc, topic, name.text.upper())
+            if exemption:
+                pytest.skip(
+                    f"""Please see https://rubinobs.atlassian.net/browse/SSW-250 for details.
+                    {xmlfile.name} has an exemption for the use of the {name.text.upper()} reserved word.
+                    """
+                )
+            else:
+                bad_names.append(name.text.upper())
     assert (
         bad_names == []
     ), f"{restriction.name} Reserved Words used one or more times: {(bad_names)}"
