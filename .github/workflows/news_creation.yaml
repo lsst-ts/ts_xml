@@ -1,0 +1,9 @@
+name: news_creation
+
+on:
+  pull_request:
+    types: [opened, reopened, synchronize]
+
+jobs:
+  call-workflow:
+    uses: lsst-ts/tssw_workflows/.github/workflows/news_creation.yaml@main
